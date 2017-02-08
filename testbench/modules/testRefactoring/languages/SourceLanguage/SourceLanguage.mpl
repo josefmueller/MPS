@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="main" generatorUID="SourceLanguage#3334961109014792699" uuid="ab4b39d5-c990-4997-a7ce-6cfe3ea55c85">
+    <generator namespace="SourceLanguage#1631028407715559067" uuid="ab4b39d5-c990-4997-a7ce-6cfe3ea55c85">
       <models>
         <modelRoot contentPath="${module}/generator/template" type="default">
           <sourceRoot location="." />
@@ -37,7 +37,7 @@
         <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="0e4cf406-fc7e-4ee7-a6f3-93f8c8dbdc64(SourceLanguage)" version="0" />
-        <module reference="ab4b39d5-c990-4997-a7ce-6cfe3ea55c85(SourceLanguage#3334961109014792699)" version="0" />
+        <module reference="ab4b39d5-c990-4997-a7ce-6cfe3ea55c85(SourceLanguage#1631028407715559067)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
         <module reference="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" version="0" />
         <module reference="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" version="0" />
