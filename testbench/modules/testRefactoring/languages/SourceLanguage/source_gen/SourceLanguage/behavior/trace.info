@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <root>
+    <file name="A_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="SourceLanguage.behavior.A_BehaviorDescriptor" />
+    </file>
+    <file name="B_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="SourceLanguage.behavior.B_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="11,0,22,0" name="SourceLanguage.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="C_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="SourceLanguage.behavior.C_BehaviorDescriptor" />
+    </file>
+    <file name="I1_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="SourceLanguage.behavior.I1_BehaviorDescriptor" />
+    </file>
+    <file name="I2_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="SourceLanguage.behavior.I2_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
+
