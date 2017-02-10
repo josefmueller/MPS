@@ -18,7 +18,7 @@
     </file>
   </root>
   <root nodeRef="r:3a85a332-d9ac-4332-b817-0bc70c21b404(SourceLanguage.structure)/3334961109014792767">
-    <file name="dt_PropertySupport.java">
+    <file name="somedatatype_PropertySupport.java">
       <node id="3334961109014792767" at="8,44,9,28" concept="4" />
       <node id="3334961109014792767" at="10,24,11,21" concept="1" />
       <node id="3334961109014792767" at="12,12,13,24" concept="1" />
@@ -34,7 +34,7 @@
       <scope id="3334961109014792767" at="8,0,17,0">
         <var name="value" id="3334961109014792767" />
       </scope>
-      <unit id="3334961109014792767" at="7,0,18,0" name="SourceLanguage.structure.dt_PropertySupport" />
+      <unit id="3334961109014792767" at="7,0,18,0" name="SourceLanguage.structure.somedatatype_PropertySupport" />
     </file>
   </root>
 </debug-info>

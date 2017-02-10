@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root>
-    <file name="A_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="SourceLanguage.behavior.A_BehaviorDescriptor" />
-    </file>
-    <file name="B_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="SourceLanguage.behavior.B_BehaviorDescriptor" />
-    </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="SourceLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="C_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="SourceLanguage.behavior.C_BehaviorDescriptor" />
+    <file name="ConceptA_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="SourceLanguage.behavior.ConceptA_BehaviorDescriptor" />
     </file>
-    <file name="I1_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="SourceLanguage.behavior.I1_BehaviorDescriptor" />
+    <file name="ConceptB_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="SourceLanguage.behavior.ConceptB_BehaviorDescriptor" />
     </file>
-    <file name="I2_BehaviorDescriptor.java">
-      <unit at="11,0,14,0" name="SourceLanguage.behavior.I2_BehaviorDescriptor" />
+    <file name="ConceptC_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="SourceLanguage.behavior.ConceptC_BehaviorDescriptor" />
+    </file>
+    <file name="Interface1_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="SourceLanguage.behavior.Interface1_BehaviorDescriptor" />
+    </file>
+    <file name="Interface2_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="SourceLanguage.behavior.Interface2_BehaviorDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)/6426415869175149441">
+    <file name="SomeClass.java">
+      <node id="6426415869175152793" at="7,22,8,42" concept="2" />
+      <node id="6426415869175193598" at="8,42,9,21" concept="0" />
+      <node id="6426415869175152726" at="7,0,11,0" concept="1" trace="main#()V" />
+      <scope id="6426415869175152730" at="7,22,9,21">
+        <var name="someClass" id="6426415869175152794" />
+      </scope>
+      <scope id="6426415869175152726" at="7,0,11,0" />
+      <unit id="6426415869175149441" at="6,0,12,0" name="SourceLanguage.behavior.SomeClass" />
+    </file>
+  </root>
+  <root nodeRef="r:4e3bafe1-1c8c-4aa2-ba02-dfb8dad32daa(SourceLanguage.behavior)/6426415869175194521">
+    <file name="OtherClass.java">
+      <node id="6426415869175194760" at="7,10,8,42" concept="2" />
+      <node id="6426415869175195126" at="8,42,9,21" concept="0" />
+      <scope id="6426415869175194735" at="7,10,9,21">
+        <var name="someClass" id="6426415869175194761" />
+      </scope>
+      <unit id="6426415869175194521" at="6,0,12,0" name="SourceLanguage.behavior.OtherClass" />
     </file>
   </root>
 </debug-info>

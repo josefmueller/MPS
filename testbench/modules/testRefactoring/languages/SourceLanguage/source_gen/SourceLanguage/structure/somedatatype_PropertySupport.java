@@ -4,7 +4,7 @@ package SourceLanguage.structure;
 
 import jetbrains.mps.smodel.PropertySupport;
 
-public class dt_PropertySupport extends PropertySupport {
+public class somedatatype_PropertySupport extends PropertySupport {
   public boolean canSetValue(String value) {
     String testValue = null;
     if (value == null) {

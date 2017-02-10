@@ -47,7 +47,7 @@
   </registry>
   <node concept="1TIwiD" id="2T8anmi$sBX">
     <property role="EcuMT" value="3334961109014792701" />
-    <property role="TrG5h" value="A" />
+    <property role="TrG5h" value="ConceptA" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2T8anmi$sD4" role="1TKVEi">
@@ -55,12 +55,12 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childA1" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" node="2T8anmi$sBX" resolve="A" />
+      <ref role="20lvS9" node="2T8anmi$sBX" resolve="ConceptA" />
     </node>
     <node concept="1TJgyi" id="2T8anmi$sD2" role="1TKVEl">
       <property role="IQ2nx" value="3334961109014792770" />
       <property role="TrG5h" value="propAcustom" />
-      <ref role="AX2Wp" node="2T8anmi$sCZ" resolve="dt" />
+      <ref role="AX2Wp" node="2T8anmi$sCZ" resolve="somedatatype" />
     </node>
     <node concept="1TJgyi" id="2T8anmi$sDw" role="1TKVEl">
       <property role="IQ2nx" value="3334961109014792800" />
@@ -70,35 +70,35 @@
   </node>
   <node concept="1TIwiD" id="2T8anmi$sBY">
     <property role="EcuMT" value="3334961109014792702" />
-    <property role="TrG5h" value="B" />
-    <ref role="1TJDcQ" node="2T8anmi$sBX" resolve="A" />
+    <property role="TrG5h" value="ConceptB" />
+    <ref role="1TJDcQ" node="2T8anmi$sBX" resolve="ConceptA" />
     <node concept="1TJgyi" id="2T8anmi$sD0" role="1TKVEl">
       <property role="IQ2nx" value="3334961109014792768" />
       <property role="TrG5h" value="propB" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
     <node concept="PrWs8" id="2T8anmi$sCR" role="PzmwI">
-      <ref role="PrY4T" node="2T8anmi$sC0" resolve="I1" />
+      <ref role="PrY4T" node="2T8anmi$sC0" resolve="Interface1" />
     </node>
   </node>
   <node concept="1TIwiD" id="2T8anmi$sBZ">
     <property role="EcuMT" value="3334961109014792703" />
-    <property role="TrG5h" value="C" />
-    <ref role="1TJDcQ" node="2T8anmi$sBY" resolve="B" />
+    <property role="TrG5h" value="ConceptC" />
+    <ref role="1TJDcQ" node="2T8anmi$sBY" resolve="ConceptB" />
     <node concept="PrWs8" id="2T8anmi$sCT" role="PzmwI">
-      <ref role="PrY4T" node="2T8anmi$sC0" resolve="I1" />
+      <ref role="PrY4T" node="2T8anmi$sC0" resolve="Interface1" />
     </node>
   </node>
   <node concept="PlHQZ" id="2T8anmi$sC0">
     <property role="EcuMT" value="3334961109014792704" />
-    <property role="TrG5h" value="I1" />
+    <property role="TrG5h" value="Interface1" />
   </node>
   <node concept="PlHQZ" id="2T8anmi$sCV">
     <property role="EcuMT" value="3334961109014792763" />
-    <property role="TrG5h" value="I2" />
+    <property role="TrG5h" value="Interface2" />
   </node>
   <node concept="Az7Fb" id="2T8anmi$sCZ">
-    <property role="TrG5h" value="dt" />
+    <property role="TrG5h" value="somedatatype" />
     <property role="FLfZY" value=".*" />
   </node>
 </model>

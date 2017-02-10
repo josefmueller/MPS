@@ -9,27 +9,27 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_A = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_B = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_C = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_I1 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_I2 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptA = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptB = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptC = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Interface1 = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Interface2 = new ConceptPresentationBuilder().create();
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.A:
-        return props_A;
-      case LanguageConceptSwitch.B:
-        return props_B;
-      case LanguageConceptSwitch.C:
-        return props_C;
-      case LanguageConceptSwitch.I1:
-        return props_I1;
-      case LanguageConceptSwitch.I2:
-        return props_I2;
+      case LanguageConceptSwitch.ConceptA:
+        return props_ConceptA;
+      case LanguageConceptSwitch.ConceptB:
+        return props_ConceptB;
+      case LanguageConceptSwitch.ConceptC:
+        return props_ConceptC;
+      case LanguageConceptSwitch.Interface1:
+        return props_Interface1;
+      case LanguageConceptSwitch.Interface2:
+        return props_Interface2;
     }
     return null;
   }
