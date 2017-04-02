@@ -54,6 +54,7 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
@@ -209,7 +210,8 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       }
     });
 
-    rebuildTreeLater();
+    assert ThreadUtils.isInEDT();
+    getTree().rebuildNow();
     myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     return myScrollPane;
   }
@@ -350,25 +352,24 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   public void selectNode(@NotNull final VirtualFile file, final boolean changeView) {
     ToolWindowManager windowManager = ToolWindowManager.getInstance(getProject());
     ToolWindow projectViewToolWindow = windowManager.getToolWindow(ToolWindowId.PROJECT_VIEW);
-    projectViewToolWindow.activate(new Runnable() {
-      @Override
-      public void run() {
-        myProjectView.changeView(getId());
-        MPSTreeNode nodeToSelect = getNode(file);
+    Runnable selectionRunnable = () -> {
+      MPSTreeNode nodeToSelect = getNode(file);
 
-        if (nodeToSelect != null) {
-          TreePath treePath = new TreePath(nodeToSelect.getPath());
-          getTree().setSelectionPath(treePath);
-          getTree().scrollPathToVisible(treePath);
-          getTree().selectNode(nodeToSelect);
-          if (changeView) {
-            myProjectView.changeView(getId());
-          }
-        } else {
-          LOG.info("Can not find file " + file + " in tree.");
-        }
+      if (nodeToSelect != null) {
+        TreePath treePath = new TreePath(nodeToSelect.getPath());
+        getTree().setSelectionPath(treePath);
+        getTree().scrollPathToVisible(treePath);
+        getTree().selectNode(nodeToSelect);
+      } else {
+        LOG.info("Can not find file " + file + " in tree.");
       }
-    }, false);
+    };
+    if (changeView) {
+      projectViewToolWindow.activate(() -> myProjectView.changeViewCB(getId(), null)
+                                                        .doWhenDone(selectionRunnable), true);
+    } else {
+      selectionRunnable.run();
+    }
   }
 
   @Nullable
