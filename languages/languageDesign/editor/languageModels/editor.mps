@@ -25320,5 +25320,24 @@
   <node concept="3p36aQ" id="31F3x8CXY$Y">
     <ref role="aqKnT" to="tpc2:31F3x8CXY$U" resolve="CellMenuPart_ReplaceChild_defaultChildConcept" />
   </node>
+  <node concept="24kQdi" id="7jQE8Y9h$Zi">
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <ref role="1XX52x" to="tpc2:7jQE8Y9gpPl" resolve="SubstituteMenuPart_ReferenceScope" />
+    <node concept="3EZMnI" id="7jQE8Y9h$Zn" role="2wV5jI">
+      <node concept="PMmxH" id="7jQE8Y9h$Zu" role="3EZMnx">
+        <ref role="PMmxG" node="4VK1yxGXpwr" resolve="SubstituteMenuPartAlias" />
+      </node>
+      <node concept="1iCGBv" id="7jQE8Y9h_dX" role="3EZMnx">
+        <ref role="1NtTu8" to="tpc2:7jQE8Y9h_dD" resolve="reference" />
+        <node concept="1sVBvm" id="7jQE8Y9h_dZ" role="1sWHZn">
+          <node concept="3F0A7n" id="7jQE8Y9h_e7" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7jQE8Y9h$Zq" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

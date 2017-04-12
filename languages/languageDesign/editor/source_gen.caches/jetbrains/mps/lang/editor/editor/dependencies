@@ -3890,6 +3890,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Parameterized_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Placeholder_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Placeholder_SubstituteMenu" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_ReferenceScope_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Subconcepts_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Wrapper_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SubstituteMenuReference_DefaultWithFunction_Editor" />
@@ -6529,6 +6530,29 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_ReferenceScope_Editor" file="SubstituteMenuPart_ReferenceScope_Editor.java">
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_ReferenceScope_EditorBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_ReferenceScope_EditorBuilder_a" file="SubstituteMenuPart_ReferenceScope_EditorBuilder_a.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.impl.CellUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Subconcepts_Editor" file="SubstituteMenuPart_Subconcepts_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SubstituteMenuPart_Subconcepts_EditorBuilder_a" />

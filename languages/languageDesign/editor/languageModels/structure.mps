@@ -6456,5 +6456,20 @@
     <property role="EcuMT" value="3488897807488117050" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
+  <node concept="1TIwiD" id="7jQE8Y9gpPl">
+    <property role="EcuMT" value="8428109087107030357" />
+    <property role="3GE5qa" value="Menu.Substitute" />
+    <property role="TrG5h" value="SubstituteMenuPart_ReferenceScope" />
+    <property role="34LRSv" value="reference actions" />
+    <property role="R4oN_" value="creates a new instance referenced to a particular node from the scope" />
+    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
+    <node concept="1TJgyj" id="7jQE8Y9h_dD" role="1TKVEi">
+      <property role="IQ2ns" value="8428109087107339113" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="reference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+  </node>
 </model>
 
