@@ -40,4 +40,23 @@ public final class Reference<T> {
   public boolean isNull() {
     return myValue == null;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    Reference<?> reference = (Reference<?>) o;
+
+    return myValue != null ? myValue.equals(reference.myValue) : reference.myValue == null;
+  }
+
+  @Override
+  public int hashCode() {
+    return myValue != null ? myValue.hashCode() : 0;
+  }
 }

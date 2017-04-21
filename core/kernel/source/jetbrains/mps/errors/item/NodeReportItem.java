@@ -36,7 +36,7 @@ public abstract class NodeReportItem extends ReportItem {
   }
 
   @Override
-  public Set<ReportItemFlavour<?, ?>> getFlavours() {
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
     return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_NODE));
   }
 

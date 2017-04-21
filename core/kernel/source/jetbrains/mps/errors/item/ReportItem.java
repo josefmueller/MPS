@@ -17,6 +17,8 @@ package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.Reference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,7 +41,7 @@ public abstract class ReportItem {
     return mySeverity;
   }
 
-  public Set<ReportItemFlavour<?, ?>> getFlavours() {
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
     return new HashSet<>(Arrays.asList(FLAVOUR_CLASS));
   }
 
@@ -48,10 +50,10 @@ public abstract class ReportItem {
     if (!(that instanceof ReportItem)) {
       return false;
     }
-    if (!EqualUtil.equals(this.getFlavours(), ((ReportItem) that).getFlavours())) {
+    if (!EqualUtil.equals(this.getIdFlavours(), ((ReportItem) that).getIdFlavours())) {
       return false;
     }
-    for (ReportItemFlavour<?, ?> flavour: this.getFlavours()) {
+    for (ReportItemFlavour<?, ?> flavour: this.getIdFlavours()) {
       if (EqualUtil.equals(flavour.tryToGet(this), flavour.tryToGet((ReportItem) that))) {
         return false;
       }
@@ -59,15 +61,19 @@ public abstract class ReportItem {
     return true;
   }
 
+  @Override
+  public int hashCode() {
+    return IterableUtil.asList(getIdFlavours()).hashCode();
+  }
+
   public static abstract class ReportItemFlavour<I extends ReportItem, T> {
-    @NotNull
     public abstract T get(I reportItem);
     @NotNull
     public abstract Class<I> getApplicableClass();
     @Nullable
-    public T tryToGet(ReportItem reportItem) {
+    public Reference<T> tryToGet(ReportItem reportItem) {
       if (getApplicableClass().isAssignableFrom(reportItem.getClass())) {
-        return get((I) reportItem);
+        return new Reference<T>(get((I) reportItem));
       } else {
         return null;
       }

@@ -15,35 +15,33 @@
  */
 package jetbrains.mps.typesystem.checking;
 
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.item.NodeFeatureReportItem;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
-import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.openapi.editor.ColorConstants;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.util.Reference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class HighlightUtil {
   public static HighlighterMessage createHighlighterMessage(SNode node, String message, NodeReportItem errorReporter, EditorMessageOwner checker) {
     return createHighlighterMessage(node, message, errorReporter != null ? errorReporter.getSeverity() : MessageStatus.ERROR, errorReporter, checker);
   }
 
-  private static HighlighterMessage createHighlighterMessage(SNode node, String message, MessageStatus status, NodeReportItem errorReporter,
-      EditorMessageOwner owner) {
-    if (errorReporter == null) {
-      errorReporter = new NodeReportItem(status, node) {
+  private static HighlighterMessage createHighlighterMessage(SNode node, String message, MessageStatus status, NodeReportItem reportItem,
+                                                             EditorMessageOwner owner) {
+    if (reportItem == null) {
+      reportItem = new NodeReportItem(status, node) {
         @Override
         public String getMessage() {
           return message;
@@ -52,37 +50,20 @@ public class HighlightUtil {
     }
 
     HighlighterMessage error = new HighlighterMessage(
-        node,
-        status,
-        sConceptFeatureToMessageTarget(errorReporter),
-        getMessageColor(status),
-        message,
-        owner);
-    error.setErrorReporter(errorReporter);
-    for (QuickFixProvider quickFixProvider : errorReporter.getIntentionProviders()) {
+                                                         node,
+                                                         status,
+                                                         NodeFeatureReportItem.MESSAGE_TARGET_FEATURE.get(reportItem),
+                                                         getMessageColor(status),
+                                                         message,
+                                                         owner);
+    error.setErrorReporter(reportItem);
+    Reference<IErrorReporter> errorReporter = TypesystemReportItemAdapter.ERROR_REPORTER_FEATURE.tryToGet(reportItem);
+    Collection<QuickFixProvider> quickFixProviders = errorReporter == null ? Collections.emptyList() : errorReporter.get().getIntentionProviders();
+    for (QuickFixProvider quickFixProvider : quickFixProviders) {
       quickFixProvider.setIsError(error.getStatus() == MessageStatus.ERROR);
       error.addIntentionProvider(quickFixProvider);
     }
     return error;
-  }
-
-  private static MessageTarget sConceptFeatureToMessageTarget(NodeReportItem errorReporter) {
-    SConceptFeature nodeFeature = NodeFeatureReportItem.FLAVOUR_NODE_FEATURE.tryToGet(errorReporter);
-    MessageTarget messageTarget = null;
-    if (nodeFeature != null && nodeFeature instanceof SContainmentLink) {
-      //todo: we use ReferenceMessageTarget for containment links as well as for references
-      messageTarget = new ReferenceMessageTarget(((SContainmentLink) nodeFeature).getRoleName());
-    }
-    if (nodeFeature != null && nodeFeature instanceof SReferenceLink) {
-      messageTarget = new ReferenceMessageTarget(((SReferenceLink) nodeFeature).getRoleName());
-    }
-    if (nodeFeature != null && nodeFeature instanceof SProperty) {
-      messageTarget = new PropertyMessageTarget(nodeFeature.getName());
-    }
-    if (messageTarget == null) {
-      messageTarget = new NodeMessageTarget();
-    }
-    return messageTarget;
   }
 
   public static HighlighterMessage createHighlighterMessage(SNode node, String message, EditorMessageOwner owner) {
