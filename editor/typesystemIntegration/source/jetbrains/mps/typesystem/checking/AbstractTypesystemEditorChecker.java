@@ -111,14 +111,8 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
       });
       boolean instantIntentionApplied = false;
       for (IErrorReporter errorReporter : errors) {
-
-        MessageStatus status = errorReporter.getMessageStatus();
-        String errorString = errorReporter.reportError();
-        HighlighterMessage message = HighlightUtil.createHighlighterMessage(
-            errorNode.o1,
-            NameUtil.capitalize(status.getPresentation()) + ": " + errorString,
-            new TypesystemReportItemAdapter(errorReporter),
-            AbstractTypesystemEditorChecker.this
+        TypesystemReportItemAdapter reportItem = new TypesystemReportItemAdapter(errorReporter);
+        HighlighterMessage message = HighlightUtil.createHighlighterMessage(reportItem, AbstractTypesystemEditorChecker.this
         );
 
         List<QuickFixProvider> intentionProviders = message.getIntentionProviders();

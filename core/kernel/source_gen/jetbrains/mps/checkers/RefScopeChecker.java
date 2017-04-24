@@ -63,8 +63,7 @@ public class RefScopeChecker extends AbstractNodeChecker {
   protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
     return new RefScopeChecker.ResolveReferenceQuickFix(reference, repository, executeImmediately);
   }
-  protected class ResolveReferenceQuickFix implements QuickFixProvider {
-    private boolean myIsError;
+  protected static class ResolveReferenceQuickFix implements QuickFixProvider {
     protected SReference myReference;
     protected SRepository myRepository;
     private boolean myExecuteImmediately;
@@ -89,14 +88,6 @@ public class RefScopeChecker extends AbstractNodeChecker {
     @Override
     public boolean isExecutedImmediately() {
       return myExecuteImmediately;
-    }
-    @Override
-    public void setIsError(boolean isError) {
-      myIsError = isError;
-    }
-    @Override
-    public boolean isError() {
-      return myIsError;
     }
   }
 }

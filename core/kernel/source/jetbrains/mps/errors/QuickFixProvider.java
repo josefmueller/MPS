@@ -17,11 +17,8 @@ package jetbrains.mps.errors;
 
 public interface QuickFixProvider {
 
-  public QuickFix_Runtime getQuickFix();
+  QuickFix_Runtime getQuickFix();
 
-  public boolean isExecutedImmediately();
+  boolean isExecutedImmediately();
 
-  void setIsError(boolean isError);
-
-  boolean isError();
 }

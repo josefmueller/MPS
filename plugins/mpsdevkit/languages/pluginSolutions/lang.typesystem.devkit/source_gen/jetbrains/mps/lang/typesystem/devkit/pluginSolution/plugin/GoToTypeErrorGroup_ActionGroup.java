@@ -15,8 +15,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.errors.IErrorReporter;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.errors.item.ReportItem;
+import java.util.List;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.openapi.extensions.PluginId;
 import org.jetbrains.annotations.Nullable;
 
@@ -41,15 +44,24 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
       GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
       return;
     }
-    IErrorReporter error = editorComponent.getErrorReporterFor(editorComponent.getSelectedCell());
-    if (error == null || error.getRuleNode() == null || error.getAdditionalRulesIds().isEmpty()) {
+    ReportItem mostRelevantReportItem = new GoToTypeErrorHelper(editorComponent).getMostRelevantReportItem();
+    if (mostRelevantReportItem == null) {
       GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
       return;
     }
-    for (SNodeReference id : error.getAdditionalRulesIds()) {
-      GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(id, false), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), id, false);
+    List<TypesystemReportItemAdapter.TypesystemRuleId> navigationData = ListSequence.fromListWithValues(new ArrayList<TypesystemReportItemAdapter.TypesystemRuleId>(), TypesystemReportItemAdapter.FLAVOUR_RULE_ID.getCollection(mostRelevantReportItem));
+    if (ListSequence.fromList(navigationData).count() <= 1) {
+      GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
+      return;
     }
-    GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(error.getRuleNode(), true), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), error.getRuleNode(), true);
+    for (TypesystemReportItemAdapter.TypesystemRuleId id : ListSequence.fromList(navigationData).take(ListSequence.fromList(navigationData).count() - 1)) {
+      if (id.getSourceNode() != null) {
+        GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(id.getSourceNode(), false), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), id.getSourceNode(), false);
+      }
+    }
+    if (ListSequence.fromList(navigationData).last().getSourceNode() != null) {
+      GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(ListSequence.fromList(navigationData).last().getSourceNode(), true), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), ListSequence.fromList(navigationData).last().getSourceNode(), true);
+    }
     for (Pair<ActionPlace, Condition<BaseAction>> p : this.myPlaces) {
       this.addPlace(p.first, p.second);
     }

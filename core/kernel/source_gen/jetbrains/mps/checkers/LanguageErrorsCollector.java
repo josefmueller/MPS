@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -35,7 +36,7 @@ public abstract class LanguageErrorsCollector {
       reporter.setIntentionProvider(intentionProvider);
     }
 
-    addError(reporter);
+    addError(new TypesystemReportItemAdapter(reporter));
   }
 
   protected abstract void addError(NodeReportItem errorReporter);

@@ -6,9 +6,13 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.List;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
@@ -29,8 +33,12 @@ public class GoToTypeErrorRule_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IErrorReporter error = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell());
-    return !((error == null || error.getRuleNode() == null || !(error.getAdditionalRulesIds().isEmpty())));
+    ReportItem mostRelevantReportItem = new GoToTypeErrorHelper(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))).getMostRelevantReportItem();
+    if (mostRelevantReportItem == null) {
+      return false;
+    }
+    List<TypesystemReportItemAdapter.TypesystemRuleId> navigationData = ListSequence.fromListWithValues(new ArrayList<TypesystemReportItemAdapter.TypesystemRuleId>(), TypesystemReportItemAdapter.FLAVOUR_RULE_ID.getCollection(mostRelevantReportItem));
+    return ListSequence.fromList(navigationData).count() == 1;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -62,7 +70,8 @@ public class GoToTypeErrorRule_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    IErrorReporter error = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell());
-    new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallSelect(true).open(error.getRuleNode());
+    ReportItem mostRelevantReportItem = new GoToTypeErrorHelper(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))).getMostRelevantReportItem();
+    List<TypesystemReportItemAdapter.TypesystemRuleId> navigationData = ListSequence.fromListWithValues(new ArrayList<TypesystemReportItemAdapter.TypesystemRuleId>(), TypesystemReportItemAdapter.FLAVOUR_RULE_ID.getCollection(mostRelevantReportItem));
+    new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallSelect(true).open(ListSequence.fromList(navigationData).first().getSourceNode());
   }
 }

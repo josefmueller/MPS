@@ -40,10 +40,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.checkers.ErrorReportUtil;
-import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.application.ApplicationManager;
@@ -175,9 +173,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
         // in inspector skipping all messages for invisible nodes 
         continue;
       }
-      MessageStatus status = errorReporter.getSeverity();
-      String errorString = errorReporter.getMessage();
-      HighlighterMessage message = HighlightUtil.createHighlighterMessage(nodeWithError, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, LanguageEditorChecker.this);
+      HighlighterMessage message = HighlightUtil.createHighlighterMessage(errorReporter, LanguageEditorChecker.this);
       List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
       if (runQuickFixes && intentionProviders.size() == 1 && intentionProviders.get(0).isExecutedImmediately()) {
         QuickFix_Runtime quickFix = intentionProviders.get(0).getQuickFix();

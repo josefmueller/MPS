@@ -17,7 +17,11 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.item.NodeFeatureReportItem;
 import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.ReportItem;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -25,11 +29,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
+import jetbrains.mps.openapi.editor.ColorConstants;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
@@ -42,18 +49,39 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class HighlighterMessage extends EditorMessageWithTarget {
-  private NodeReportItem myErrorReporter;
+  private final NodeReportItem myReportItem;
 
-  public HighlighterMessage(SNode errorNode, MessageStatus status, MessageTarget target, Color color, String string, EditorMessageOwner owner) {
-    super(errorNode, status, target, color, string, owner);
+  public static Color getMessageColor(MessageStatus messageStatus) {
+    if (messageStatus == MessageStatus.ERROR) {
+      return new Color(ColorConstants.ERROR);
+    }
+    if (messageStatus == MessageStatus.WARNING) {
+      return new Color(StyleRegistry.getInstance().isDarkTheme() ? ColorConstants.WARNING_DARK : ColorConstants.WARNING);
+    }
+    if (messageStatus == MessageStatus.OK) {
+      return new Color(ColorConstants.OK);
+    }
+    return Color.BLACK;
   }
 
-  public void setErrorReporter(NodeReportItem errorReporter) {
-    myErrorReporter = errorReporter;
+  @Override
+  public List<QuickFixProvider> getIntentionProviders() {
+    return new ArrayList<>(TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getCollection(myReportItem));
   }
 
+  public HighlighterMessage(EditorMessageOwner owner, NodeReportItem reportItem) {
+    super(reportItem.getNode(), reportItem.getSeverity(), NodeFeatureReportItem.MESSAGE_TARGET_FEATURE.get(reportItem), getMessageColor(reportItem.getSeverity()), reportItem.getMessage(), owner);
+    myReportItem = reportItem;
+  }
+
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public IErrorReporter getErrorReporter() {
-    return myErrorReporter;
+    return TypesystemReportItemAdapter.FLAVOUR_ERROR_REPORTER.tryToGet(getReportItem());
+  }
+
+  public ReportItem getReportItem() {
+    return myReportItem;
   }
 
   @Override

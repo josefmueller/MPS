@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.intentions.IntentionsVisitor.CollectAvailableIntentionsVisitor;
@@ -181,7 +182,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       //TODO remove this cast
       List<QuickFixProvider> intentionProviders = ((EditorMessage) message).getIntentionProviders();
       for (QuickFixProvider intentionProvider : intentionProviders) {
-        QuickFixAdapter intention = new QuickFixAdapter(intentionProvider.getQuickFix(), intentionProvider.isError());
+        QuickFixAdapter intention = new QuickFixAdapter(intentionProvider.getQuickFix(), message.getStatus().equals(MessageStatus.ERROR));
         if ((isAncestor && !intention.isAvailableInChildNodes()) || !intention.isApplicable(node, context)) {
           continue;
         }

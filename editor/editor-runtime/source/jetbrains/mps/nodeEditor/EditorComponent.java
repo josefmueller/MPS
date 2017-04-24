@@ -56,6 +56,7 @@ import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentCurrentSelectedNode;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.MPSActions;
@@ -132,7 +133,6 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.update.Updater;
-import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -164,7 +164,6 @@ import org.jetbrains.mps.util.Condition;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
@@ -197,7 +196,6 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Toolkit;
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -222,6 +220,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
                                                                     jetbrains.mps.openapi.editor.EditorComponent {
@@ -1066,12 +1065,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public IErrorReporter getErrorReporterFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     HighlighterMessage message = getHighlighterMessageFor(cell);
     if (message == null) {
       return null;
     }
     return message.getErrorReporter();
+  }
+
+  /*
+    sorted by severity, from lower to high
+   */
+  public Collection<ReportItem> getReportItemsForCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+    List<HighlighterMessage> messages = getHighlighterMessagesFor(cell);
+    return messages.stream().map(HighlighterMessage::getReportItem).collect(Collectors.toList());
   }
 
   public void showMessageTooltip() {
@@ -1948,54 +1957,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         @Override
         public void run() {
           final HighlighterMessage message = getHighlighterMessageFor(selectedCell);
-          if (message == null || message.getErrorReporter() == null) {
-            return;
-          }
-          final IErrorReporter herror = message.getErrorReporter();
-          ThreadUtils.runInUIThreadNoWait(() -> {
-            String s = message.getMessage();
-            final Window window = SwingUtilities.windowForComponent(EditorComponent.this);
-            final MPSErrorDialog dialog = new MPSErrorDialog(window, s, message.getStatus().getPresentation(), false);
-            if (herror.getRuleNode() != null) {
-              final boolean hasAdditionalRuleIds = !herror.getAdditionalRulesIds().isEmpty();
-              final JButton button = new JButton();
-              class ToRuleAction extends AbstractAction {
-                private final SNodeReference myRule;
-                private final JDialog myToDispose;
-
-                public ToRuleAction(String title, SNodeReference rule, JDialog toDispose) {
-                  super(title);
-                  myRule = rule;
-                  myToDispose = toDispose;
-                }
-
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                  new EditorNavigator(getCurrentProject()).shallSelect(true).open(myRule);
-                  myToDispose.dispose();
-                }
-              }
-              AbstractAction action = new ToRuleAction("Go To Rule", herror.getRuleNode(), dialog) {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                  if (hasAdditionalRuleIds) {
-                    JPopupMenu popupMenu = new JPopupMenu();
-                    for (final SNodeReference id : herror.getAdditionalRulesIds()) {
-                      popupMenu.add(new ToRuleAction("Go To Rule " + id.getNodeId(), id, dialog));
-                    }
-                    popupMenu.add(new ToRuleAction("Go To Immediate Rule", herror.getRuleNode(), dialog));
-                    popupMenu.show(button, 0, button.getHeight());
-                  } else {
-                    super.actionPerformed(e);
-                  }
-                }
-              };
-              button.setAction(action);
-              dialog.addButton(button);
-            }
-            dialog.initializeUI();
-            dialog.setVisible(true);
-          });
+          MPSErrorDialog.showCellErrorDialog(getCurrentProject(), SwingUtilities.windowForComponent(EditorComponent.this), message);
         }
       });
     }

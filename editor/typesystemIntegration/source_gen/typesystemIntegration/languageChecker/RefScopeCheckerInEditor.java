@@ -25,7 +25,7 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
     return new RefScopeCheckerInEditor.ResolveReferenceEditorBasedQuickFix(reference, repository, executeImmediately, myEditorComponent);
   }
 
-  private class ResolveReferenceEditorBasedQuickFix extends RefScopeChecker.ResolveReferenceQuickFix {
+  private static class ResolveReferenceEditorBasedQuickFix extends RefScopeChecker.ResolveReferenceQuickFix {
     private EditorComponent myEditorComponent;
 
     public ResolveReferenceEditorBasedQuickFix(SReference reference, SRepository repository, boolean executeImmediately, EditorComponent editorComponent) {

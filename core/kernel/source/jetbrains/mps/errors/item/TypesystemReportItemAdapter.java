@@ -17,27 +17,74 @@ package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class TypesystemReportItemAdapter extends NodeReportItem {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
-  public final IErrorReporter myErrorReporter;
+public class TypesystemReportItemAdapter extends ReportItemBase implements NodeReportItem {
 
-  public TypesystemReportItemAdapter(IErrorReporter errorReporter) {
-    super(errorReporter.getMessageStatus(), errorReporter.getSNode());
+  private final IErrorReporter myErrorReporter;
+
+  public TypesystemReportItemAdapter(@NotNull IErrorReporter errorReporter) {
+    super(errorReporter.getMessageStatus());
     myErrorReporter = errorReporter;
   }
 
   @Override
-  public String getMessage() {
-    return myErrorReporter.reportError();
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
+    return new HashSet<>(Arrays.asList(ReportItemBase.FLAVOUR_CLASS, NodeReportItem.FLAVOUR_NODE, FLAVOUR_RULE_ID));
   }
 
+  @Override
+  public String getMessage() {
+    return NameUtil.capitalize(getSeverity().getPresentation()) + ": " + myErrorReporter.reportError();
+  }
+
+  @NotNull
   public IErrorReporter getErrorReporter() {
     return myErrorReporter;
   }
 
-  public static final ReportItemFlavour<TypesystemReportItemAdapter, IErrorReporter> ERROR_REPORTER_FEATURE = new SimpleReportItemFlavour<>(TypesystemReportItemAdapter.class,
-                                                                                                                                            TypesystemReportItemAdapter::getErrorReporter);
+  public static final ReportItemFlavour<TypesystemReportItemAdapter, IErrorReporter> FLAVOUR_ERROR_REPORTER =
+      new SimpleReportItemFlavour<>(TypesystemReportItemAdapter.class, TypesystemReportItemAdapter::getErrorReporter);
+
+  public static final MultipleReportItemFlavour<TypesystemReportItemAdapter, QuickFixProvider> FLAVOUR_QUICKFIX =
+      new MultipleReportItemFlavour<>(TypesystemReportItemAdapter.class, typesystemReportItemAdapter -> typesystemReportItemAdapter.getErrorReporter().getIntentionProviders());
+
+  public static class TypesystemRuleId {
+    public TypesystemRuleId(SNodeReference nodeReference) {
+      myNodeReference = nodeReference;
+    }
+    private final SNodeReference myNodeReference;
+    public SNodeReference getSourceNode() {
+      return myNodeReference;
+    }
+  }
+
+  public static final MultipleReportItemFlavour<TypesystemReportItemAdapter, TypesystemRuleId> FLAVOUR_RULE_ID =
+      new MultipleReportItemFlavour<>(TypesystemReportItemAdapter.class, typesystemReportItemAdapter -> {
+        ArrayList<TypesystemRuleId> result = new ArrayList<>();
+        SNodeReference ruleNode = typesystemReportItemAdapter.getErrorReporter().getRuleNode();
+        if (ruleNode == null) {
+          return Collections.emptyList();
+        }
+        result.add(new TypesystemRuleId(ruleNode));
+        for (SNodeReference additional : typesystemReportItemAdapter.getErrorReporter().getAdditionalRulesIds()) {
+          result.add(new TypesystemRuleId(additional));
+        }
+        return result;
+      });
+
+  @Override
+  public SNode getNode() {
+    return getErrorReporter().getSNode();
+  }
 
 }

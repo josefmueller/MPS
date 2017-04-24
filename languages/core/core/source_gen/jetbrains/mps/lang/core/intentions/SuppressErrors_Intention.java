@@ -40,10 +40,7 @@ public final class SuppressErrors_Intention extends AbstractIntentionDescriptor 
       return true;
     }
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
-    if (editorComponent.getErrorReporterFor(editorComponent.getSelectedCell()) != null) {
-      return true;
-    }
-    return false;
+    return !(editorComponent.getReportItemsForCell(editorComponent.getSelectedCell()).isEmpty());
   }
   @Override
   public boolean isSurroundWith() {

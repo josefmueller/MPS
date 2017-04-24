@@ -15,14 +15,30 @@
  */
 package jetbrains.mps.errors.item;
 
-import jetbrains.mps.errors.item.ReportItemBase.ReportItemFlavour;
-import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public interface NodeReportItem extends ReportItem {
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.function.Function;
 
-  SNode getNode();
+public abstract class NodeReportItemBase extends ReportItemBase implements NodeReportItem {
 
-  ReportItemFlavour<NodeReportItem, SNode> FLAVOUR_NODE = new SimpleReportItemFlavour<>(NodeReportItem.class, NodeReportItem::getNode);
+  private final SNode myNode;
 
+  public NodeReportItemBase(MessageStatus severity, SNode node) {
+    super(severity);
+    myNode = node;
+  }
+
+  @Override
+  public SNode getNode() {
+    return myNode;
+  }
 }
+

@@ -60,9 +60,7 @@ public class UsedLanguagesChecker extends AbstractNodeChecker {
     }
   }
 
-  private class LangImportQFixProvider implements QuickFixProvider {
-    public LangImportQFixProvider() {
-    }
+  private static class LangImportQFixProvider implements QuickFixProvider {
     public QuickFix_Runtime getQuickFix() {
       return new QuickFix_Runtime() {
         @Override
@@ -77,11 +75,6 @@ public class UsedLanguagesChecker extends AbstractNodeChecker {
     }
     public boolean isExecutedImmediately() {
       return false;
-    }
-    public void setIsError(boolean val) {
-    }
-    public boolean isError() {
-      return true;
     }
   }
 }

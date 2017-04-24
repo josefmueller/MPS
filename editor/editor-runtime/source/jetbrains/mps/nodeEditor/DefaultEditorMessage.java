@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.item.ReportItemBase;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
@@ -27,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,25 +39,24 @@ import java.util.Map;
 public class DefaultEditorMessage implements EditorMessage {
   private static final int DEFAULT_MESSAGE_PRIORITY = 0;
 
-  private Color myColor;
-  private String myMessage;
-  private EditorMessageOwner myOwner;
-  private SNode myNode;
-  private List<QuickFixProvider> myIntentionProviders;
-  private MessageStatus myStatus = MessageStatus.OK;
+  private final Color myColor;
+  private final String myMessage;
+  private final EditorMessageOwner myOwner;
+  private final SNode myNode;
+  private final MessageStatus myStatus;
 
   private Map<Object, Object> myUserObjects;
 
   public DefaultEditorMessage(SNode node, Color color, String message, EditorMessageOwner owner) {
+    this(node, MessageStatus.OK, color, message, owner);
+  }
+
+  public DefaultEditorMessage(SNode node, MessageStatus status, Color color, String message, EditorMessageOwner owner) {
+    myStatus = status;
     myNode = node;
     myColor = color;
     myMessage = message;
     myOwner = owner;
-  }
-
-  public DefaultEditorMessage(SNode node, MessageStatus status, Color color, String message, EditorMessageOwner owner) {
-    this(node, color, message, owner);
-    myStatus = status;
   }
 
   @Override
@@ -207,35 +208,21 @@ public class DefaultEditorMessage implements EditorMessage {
     return false;
   }
 
-  public void setIntentionProvider(QuickFixProvider intentionProvider) {
-    addIntentionProvider(intentionProvider);
-  }
-
-  public void addIntentionProvider(QuickFixProvider intentionProvider) {
-    if (myIntentionProviders == null) {
-      myIntentionProviders = new ArrayList<>(1);
-    }
-    myIntentionProviders.add(intentionProvider);
-  }
-
   @Override
-  public QuickFixProvider getIntentionProvider() {
-    if (myIntentionProviders == null) {
+  public final QuickFixProvider getIntentionProvider() {
+    List<QuickFixProvider> intentionProviders = getIntentionProviders();
+    if (intentionProviders == null) {
       return null;
     }
-    if (myIntentionProviders.isEmpty()) {
+    if (intentionProviders.isEmpty()) {
       return null;
     }
-    return myIntentionProviders.get(0);
+    return intentionProviders.get(0);
   }
 
   @Override
   public List<QuickFixProvider> getIntentionProviders() {
-    ArrayList<QuickFixProvider> result = new ArrayList<>(1);
-    if (myIntentionProviders != null) {
-      result.addAll(myIntentionProviders);
-    }
-    return result;
+    return Collections.emptyList();
   }
 
   @Override

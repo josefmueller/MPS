@@ -15,7 +15,6 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -66,7 +65,7 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         SearchScope scope = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getScope();
         query.value = new SearchQuery(((SNode) MapSequence.fromMap(_params).get("node")), scope);

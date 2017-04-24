@@ -15,11 +15,19 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
+import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Dialog;
@@ -64,6 +72,56 @@ public class MPSErrorDialog extends JDialog {
       initializeUI();
       setVisible(true);
     }
+  }
+
+  static void showCellErrorDialog(Project project, Window window, HighlighterMessage message) {
+    if (message == null || message.getErrorReporter() == null) {
+      return;
+    }
+    final IErrorReporter herror = message.getErrorReporter();
+    ThreadUtils.runInUIThreadNoWait(() -> {
+      String s = message.getMessage();
+      final MPSErrorDialog dialog = new MPSErrorDialog(window, s, message.getStatus().getPresentation(), false);
+      if (herror.getRuleNode() != null) {
+        final boolean hasAdditionalRuleIds = !herror.getAdditionalRulesIds().isEmpty();
+        final JButton button = new JButton();
+        class ToRuleAction extends AbstractAction {
+          private final SNodeReference myRule;
+          private final JDialog myToDispose;
+
+          ToRuleAction(String title, SNodeReference rule, JDialog toDispose) {
+            super(title);
+            myRule = rule;
+            myToDispose = toDispose;
+          }
+
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            new EditorNavigator(project).shallSelect(true).open(myRule);
+            myToDispose.dispose();
+          }
+        }
+        AbstractAction action = new ToRuleAction("Go To Rule", herror.getRuleNode(), dialog) {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            if (hasAdditionalRuleIds) {
+              JPopupMenu popupMenu = new JPopupMenu();
+              for (final SNodeReference id : herror.getAdditionalRulesIds()) {
+                popupMenu.add(new ToRuleAction("Go To Rule " + id.getNodeId(), id, dialog));
+              }
+              popupMenu.add(new ToRuleAction("Go To Immediate Rule", herror.getRuleNode(), dialog));
+              popupMenu.show(button, 0, button.getHeight());
+            } else {
+              super.actionPerformed(e);
+            }
+          }
+        };
+        button.setAction(action);
+        dialog.addButton(button);
+      }
+      dialog.initializeUI();
+      dialog.setVisible(true);
+    });
   }
 
   private void init(String error) {

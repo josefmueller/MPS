@@ -37,8 +37,6 @@ public class BaseQuickFixProvider implements QuickFixProvider {
   private boolean myExecuteImmediately = false;
   private Map<String, Object> myMap = new HashMap<String, Object>();
 
-  private boolean myIsError = false;
-
   public BaseQuickFixProvider(String classFQName) {
     myClassFQName = classFQName;
     myQuickFix = null;
@@ -48,10 +46,6 @@ public class BaseQuickFixProvider implements QuickFixProvider {
   public BaseQuickFixProvider(String classFQName, boolean executeImmediately) {
     this(classFQName);
     myExecuteImmediately = executeImmediately;
-  }
-
-  public void setIsError(boolean isError) {
-    myIsError = isError;
   }
 
   public void putArgument(String key, Object argument) {
@@ -89,10 +83,5 @@ public class BaseQuickFixProvider implements QuickFixProvider {
       myQuickFixTaken = true;
       return null;
     }
-  }
-
-  @Override
-  public boolean isError() {
-    return myIsError;
   }
 }
