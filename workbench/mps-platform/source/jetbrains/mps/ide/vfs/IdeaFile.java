@@ -386,7 +386,7 @@ public class IdeaFile implements IFileEx, CachingFile {
       }
     } else {
       if (myPath.contains("!")) {
-        return new IdeaFile(myFileSystem, myPath.substring(0, myPath.indexOf("!")));
+        return new IdeaFile(myFileSystem, myPath.substring(0, myPath.indexOf('!')));
       } else {
         return getParent();
       }
@@ -412,7 +412,7 @@ public class IdeaFile implements IFileEx, CachingFile {
   private static VirtualFile findIdeaFile(String path, boolean withRefresh) {
     LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
     if (path.contains("!")) {
-      int index = path.indexOf("!");
+      int index = path.indexOf('!');
       String jarPath = path.substring(0, index);
       String entryPath = path.substring(index + 1);
 
