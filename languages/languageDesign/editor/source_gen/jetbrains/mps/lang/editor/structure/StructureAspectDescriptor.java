@@ -4524,7 +4524,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForSubstituteMenuPart_ReferenceScope() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor", "SubstituteMenuPart_ReferenceScope", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x74f6a88f89419d55L);
     b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.editor.structure.SubstituteMenuPart", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL);
+    b.super_("jetbrains.mps.lang.editor.structure.AbstractOutputConceptContainerSubstituteMenuPart", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x326f55034e5c1baaL);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/8428109087107030357");
     b.associate("reference", 0x74f6a88f89465369L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("8428109087107339113").done();
     b.aggregate("matchingTextFunction", 0x3bc83bac473451e5L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3bc83bac473584f8L).optional(true).ordered(true).multiple(false).origin("4307758654694904293").done();

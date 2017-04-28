@@ -69,6 +69,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createComponent_nxj2k8_a0a());
     editorCell.addEditorCell(createRefCell_nxj2k8_b0a());
+    editorCell.addEditorCell(createComponent_nxj2k8_c0a());
     return editorCell;
   }
   private EditorCell createComponent_nxj2k8_a0a() {
@@ -144,6 +145,10 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       } else
       return editorCell;
     }
+  }
+  private EditorCell createComponent_nxj2k8_c0a() {
+    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor.IOutputConcept_Component");
+    return editorCell;
   }
   private EditorCell createCollection_nxj2k8_b0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());

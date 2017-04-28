@@ -6466,7 +6466,7 @@
     <property role="TrG5h" value="SubstituteMenuPart_ReferenceScope" />
     <property role="34LRSv" value="reference actions" />
     <property role="R4oN_" value="creates a new instance referenced to a particular node from the scope" />
-    <ref role="1TJDcQ" node="n0c53aH5hE" resolve="SubstituteMenuPart" />
+    <ref role="1TJDcQ" node="39Jlgden1IE" resolve="AbstractOutputConceptContainerSubstituteMenuPart" />
     <node concept="1TJgyj" id="7jQE8Y9h_dD" role="1TKVEi">
       <property role="IQ2ns" value="8428109087107339113" />
       <property role="20lmBu" value="reference" />
@@ -6486,6 +6486,38 @@
       <property role="20kJfa" value="descriptionTextFunction" />
       <ref role="20lvS9" node="3J8eUL7l10E" resolve="ISubstituteMenu_RefDescription" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="3J8eUL7dojS">
+    <property role="EcuMT" value="4307758654694982904" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="ISubstituteMenu_RefPresentation" />
+  </node>
+  <node concept="1TIwiD" id="3J8eUL7kPHX">
+    <property role="EcuMT" value="4307758654696938365" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_SubstituteMenu_RefPresentation" />
+    <property role="34LRSv" value="query" />
+    <property role="R4oN_" value="return custom text" />
+    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
+    <node concept="PrWs8" id="3J8eUL7kPOf" role="PzmwI">
+      <ref role="PrY4T" node="3J8eUL7dojS" resolve="ISubstituteMenu_RefPresentation" />
+    </node>
+    <node concept="PrWs8" id="3J8eUL7l11e" role="PzmwI">
+      <ref role="PrY4T" node="3J8eUL7l10E" resolve="ISubstituteMenu_RefDescription" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3J8eUL7kThX">
+    <property role="EcuMT" value="4307758654696952957" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_ReferencedNode" />
+    <property role="34LRSv" value="referencedNode" />
+    <property role="R4oN_" value="node&lt;&gt; referenced with node&lt;&gt; to substitute" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="PlHQZ" id="3J8eUL7l10E">
+    <property role="EcuMT" value="4307758654696984618" />
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
+    <property role="TrG5h" value="ISubstituteMenu_RefDescription" />
   </node>
   <node concept="1TIwiD" id="3J8eUL7n4GQ">
     <property role="EcuMT" value="4307758654697524022" />
@@ -6507,38 +6539,6 @@
     <node concept="PrWs8" id="3J8eUL7n4GX" role="PzmwI">
       <ref role="PrY4T" node="3J8eUL7dojS" resolve="ISubstituteMenu_RefPresentation" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="3J8eUL7kPHX">
-    <property role="EcuMT" value="4307758654696938365" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="TrG5h" value="QueryFunction_SubstituteMenu_RefPresentation" />
-    <property role="34LRSv" value="query" />
-    <property role="R4oN_" value="return custom text" />
-    <ref role="1TJDcQ" node="5EbKzCm8o62" resolve="QueryFunction_SubstituteMenuPart" />
-    <node concept="PrWs8" id="3J8eUL7kPOf" role="PzmwI">
-      <ref role="PrY4T" node="3J8eUL7dojS" resolve="ISubstituteMenu_RefPresentation" />
-    </node>
-    <node concept="PrWs8" id="3J8eUL7l11e" role="PzmwI">
-      <ref role="PrY4T" node="3J8eUL7l10E" resolve="ISubstituteMenu_RefDescription" />
-    </node>
-  </node>
-  <node concept="PlHQZ" id="3J8eUL7l10E">
-    <property role="EcuMT" value="4307758654696984618" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="TrG5h" value="ISubstituteMenu_RefDescription" />
-  </node>
-  <node concept="1TIwiD" id="3J8eUL7kThX">
-    <property role="EcuMT" value="4307758654696952957" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
-    <property role="TrG5h" value="QueryFunctionParameter_SubstituteMenu_ReferencedNode" />
-    <property role="34LRSv" value="referencedNode" />
-    <property role="R4oN_" value="node&lt;&gt; referenced with node&lt;&gt; to substitute" />
-    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-  </node>
-  <node concept="PlHQZ" id="3J8eUL7dojS">
-    <property role="EcuMT" value="4307758654694982904" />
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <property role="TrG5h" value="ISubstituteMenu_RefPresentation" />
   </node>
 </model>
 

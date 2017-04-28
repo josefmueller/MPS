@@ -41726,28 +41726,6 @@
       <ref role="3uigEE" to="qtqj:~WrapperSubstituteMenuPart" resolve="WrapperSubstituteMenuPart" />
     </node>
   </node>
-  <node concept="13MO4I" id="3e7sY3zDjpZ">
-    <property role="TrG5h" value="weave_ReadOnlyModelAccessor" />
-    <property role="3GE5qa" value="CellModel" />
-    <ref role="3gUMe" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
-    <node concept="1HlG4h" id="3e7sY3zDk8l" role="13RCb5">
-      <node concept="1HfYo3" id="3e7sY3zDk8o" role="1HlULh">
-        <node concept="3TQlhw" id="3e7sY3zDk8p" role="1Hhtcw">
-          <node concept="3clFbS" id="3e7sY3zDk8q" role="2VODD2">
-            <node concept="3clFbF" id="3e7sY3zDkgX" role="3cqZAp">
-              <node concept="Xl_RD" id="3e7sY3zDkgW" role="3clFbG">
-                <property role="Xl_RC" value="" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="VPxyj" id="3e7sY3zDkp_" role="3F10Kt">
-        <property role="VOm3f" value="false" />
-        <node concept="raruj" id="3e7sY3zDkpF" role="lGtFl" />
-      </node>
-    </node>
-  </node>
   <node concept="13MO4I" id="SDmlC7xas5">
     <property role="3GE5qa" value="Menu.Substitute" />
     <property role="TrG5h" value="SubstituteMenuPart_ReferenceScope_declare" />
@@ -41798,19 +41776,10 @@
                   <node concept="3$xsQk" id="SDmlC7xrfF" role="3$ytzL">
                     <node concept="3clFbS" id="SDmlC7xrfG" role="2VODD2">
                       <node concept="3clFbF" id="SDmlC7xrfM" role="3cqZAp">
-                        <node concept="2OqwBi" id="SDmlC7xu_I" role="3clFbG">
-                          <node concept="2OqwBi" id="SDmlC7xrfH" role="2Oq$k0">
-                            <node concept="30H73N" id="SDmlC7xrfL" role="2Oq$k0" />
-                            <node concept="2Xjw5R" id="SDmlC7xugf" role="2OqNvi">
-                              <node concept="1xMEDy" id="SDmlC7xugh" role="1xVPHs">
-                                <node concept="chp4Y" id="SDmlC7xulA" role="ri$Ld">
-                                  <ref role="cht4Q" to="tpc2:1J2KHYpABsB" resolve="ISubstituteMenu" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="2qgKlT" id="SDmlC7xuRh" role="2OqNvi">
-                            <ref role="37wK5l" to="tpcb:1quYWAD18xk" resolve="getApplicableConcept" />
+                        <node concept="2OqwBi" id="SDmlC7xrfH" role="3clFbG">
+                          <node concept="30H73N" id="SDmlC7xrfL" role="2Oq$k0" />
+                          <node concept="2qgKlT" id="2jhpiNnZisC" role="2OqNvi">
+                            <ref role="37wK5l" to="tpcb:3mnwiBI8ZE2" resolve="getOutputConcept" />
                           </node>
                         </node>
                       </node>
@@ -42165,6 +42134,28 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="SDmlC7xasb" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="13MO4I" id="3e7sY3zDjpZ">
+    <property role="TrG5h" value="weave_ReadOnlyModelAccessor" />
+    <property role="3GE5qa" value="CellModel" />
+    <ref role="3gUMe" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+    <node concept="1HlG4h" id="3e7sY3zDk8l" role="13RCb5">
+      <node concept="1HfYo3" id="3e7sY3zDk8o" role="1HlULh">
+        <node concept="3TQlhw" id="3e7sY3zDk8p" role="1Hhtcw">
+          <node concept="3clFbS" id="3e7sY3zDk8q" role="2VODD2">
+            <node concept="3clFbF" id="3e7sY3zDkgX" role="3cqZAp">
+              <node concept="Xl_RD" id="3e7sY3zDkgW" role="3clFbG">
+                <property role="Xl_RC" value="" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="VPxyj" id="3e7sY3zDkp_" role="3F10Kt">
+        <property role="VOm3f" value="false" />
+        <node concept="raruj" id="3e7sY3zDkpF" role="lGtFl" />
+      </node>
     </node>
   </node>
   <node concept="jVnub" id="46uHAFj9Zby">
