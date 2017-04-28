@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.scope.Scope;
@@ -59,8 +60,23 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
     Iterable<SNode> referents = scope.getAvailableElements(null);
     List<SubstituteMenuItem> result = new ArrayList<>();
     for (SNode referent: referents) {
-      result.add(new ReferenceScopeSubstituteMenuItem(myConcept, parentNode, currentTarget, referent, myReferenceLink, context.getEditorContext()));
+      result.add(createItem(context.getEditorContext(), parentNode, currentTarget, referent));
     }
     return result;
+  }
+
+  @NotNull
+  protected final SConcept getConcept() {
+    return myConcept;
+  }
+
+  @NotNull
+  protected final SReferenceLink getReferenceLink() {
+    return myReferenceLink;
+  }
+
+  @NotNull
+  protected ReferenceScopeSubstituteMenuItem createItem(EditorContext context, SNode parentNode, SNode currentTarget, SNode referent) {
+    return new ReferenceScopeSubstituteMenuItem(myConcept, parentNode, currentTarget, referent, myReferenceLink, context);
   }
 }

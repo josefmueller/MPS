@@ -70,4 +70,14 @@ public class ReferenceScopeSubstituteMenuItem extends DefaultSubstituteMenuItem 
     SNodeAccessUtil.setReferenceTarget(node, myReferenceLink, myReferent);
     return node;
   }
+
+  @NotNull
+  protected SNode getReferent() {
+    return myReferent;
+  }
+
+  @NotNull
+  protected SReferenceLink getReferenceLink() {
+    return myReferenceLink;
+  }
 }
