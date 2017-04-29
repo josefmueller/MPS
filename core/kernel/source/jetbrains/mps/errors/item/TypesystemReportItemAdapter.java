@@ -17,16 +17,20 @@ package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.Function;
 
 public class TypesystemReportItemAdapter extends ReportItemBase implements NodeReportItem {
 
@@ -55,8 +59,27 @@ public class TypesystemReportItemAdapter extends ReportItemBase implements NodeR
   public static final ReportItemFlavour<TypesystemReportItemAdapter, IErrorReporter> FLAVOUR_ERROR_REPORTER =
       new SimpleReportItemFlavour<>(TypesystemReportItemAdapter.class, TypesystemReportItemAdapter::getErrorReporter);
 
-  public static final MultipleReportItemFlavour<TypesystemReportItemAdapter, QuickFixProvider> FLAVOUR_QUICKFIX =
-      new MultipleReportItemFlavour<>(TypesystemReportItemAdapter.class, typesystemReportItemAdapter -> typesystemReportItemAdapter.getErrorReporter().getIntentionProviders());
+  public static class QuickFixFlavour extends MultipleReportItemFlavour<TypesystemReportItemAdapter, QuickFixProvider> {
+    public QuickFixFlavour(Class<TypesystemReportItemAdapter> applicableClass, Function<TypesystemReportItemAdapter, Collection<QuickFixProvider>> getter) {
+      super(applicableClass, getter);
+    }
+    @Nullable
+    public QuickFix_Runtime getAutoApplicable(ReportItem reportItem) {
+      Collection<QuickFixProvider> allQuickfixes = this.getCollection(reportItem);
+      if (allQuickfixes.size() != 1) {
+        return null;
+      }
+      QuickFixProvider singleQuickFix = allQuickfixes.iterator().next();
+      if (singleQuickFix.isExecutedImmediately()) {
+        return singleQuickFix.getQuickFix();
+      } else {
+        return null;
+      }
+    }
+  }
+
+  public static final QuickFixFlavour FLAVOUR_QUICKFIX =
+      new QuickFixFlavour(TypesystemReportItemAdapter.class, typesystemReportItemAdapter -> typesystemReportItemAdapter.getErrorReporter().getIntentionProviders());
 
   public static class TypesystemRuleId {
     public TypesystemRuleId(SNodeReference nodeReference) {

@@ -6247,8 +6247,8 @@
         <property role="TrG5h" value="processor" />
         <node concept="3uibUv" id="45Q6RD6mTM8" role="1tU5fm">
           <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
-          <node concept="3uibUv" id="45Q6RD6mTQT" role="11_B2D">
-            <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+          <node concept="3uibUv" id="2PIlT5TAp8e" role="11_B2D">
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
         </node>
       </node>
@@ -6603,8 +6603,8 @@
                   <property role="2bfB8j" value="true" />
                   <ref role="1Y3XeK" to="yyf4:~Processor" resolve="Processor" />
                   <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                  <node concept="3uibUv" id="kgRRK9hBno" role="2Ghqu4">
-                    <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+                  <node concept="3uibUv" id="2PIlT5TAyMk" role="2Ghqu4">
+                    <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
                   </node>
                   <node concept="3Tm1VV" id="45Q6RD6njvL" role="1B3o_S" />
                   <node concept="3clFb_" id="45Q6RD6njvM" role="jymVt">
@@ -6615,9 +6615,9 @@
                     <node concept="3Tm1VV" id="45Q6RD6njvN" role="1B3o_S" />
                     <node concept="10P_77" id="45Q6RD6njvP" role="3clF45" />
                     <node concept="37vLTG" id="45Q6RD6njvQ" role="3clF46">
-                      <property role="TrG5h" value="error" />
-                      <node concept="3uibUv" id="kgRRK9hBwb" role="1tU5fm">
-                        <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+                      <property role="TrG5h" value="reportItem" />
+                      <node concept="3uibUv" id="2PIlT5TAyVb" role="1tU5fm">
+                        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="45Q6RD6njvS" role="3clF47">
@@ -6627,8 +6627,17 @@
                             <ref role="3cqZAo" node="45Q6RD6ncmr" resolve="result" />
                           </node>
                           <node concept="TSZUe" id="45Q6RD6no8w" role="2OqNvi">
-                            <node concept="37vLTw" id="45Q6RD6noID" role="25WWJ7">
-                              <ref role="3cqZAo" node="45Q6RD6njvQ" resolve="error" />
+                            <node concept="2OqwBi" id="kgRRK9fLM$" role="25WWJ7">
+                              <node concept="10M0yZ" id="kgRRK9fLMz" role="2Oq$k0">
+                                <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
+                                <ref role="3cqZAo" to="d6hs:~TypesystemReportItemAdapter.FLAVOUR_ERROR_REPORTER" resolve="FLAVOUR_ERROR_REPORTER" />
+                              </node>
+                              <node concept="liA8E" id="kgRRK9fLM_" role="2OqNvi">
+                                <ref role="37wK5l" to="d6hs:~ReportItemBase$ReportItemFlavour.tryToGet(jetbrains.mps.errors.item.ReportItem):java.lang.Object" resolve="tryToGet" />
+                                <node concept="37vLTw" id="2PIlT5TAzEO" role="37wK5m">
+                                  <ref role="3cqZAo" node="45Q6RD6njvQ" resolve="reportItem" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -6689,8 +6698,8 @@
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="45Q6RD6mVwb" role="1tU5fm">
           <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
-          <node concept="3uibUv" id="TwHClCDtcC" role="11_B2D">
-            <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+          <node concept="3uibUv" id="2PIlT5TAuMU" role="11_B2D">
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
         </node>
       </node>
@@ -6828,17 +6837,8 @@
                                   </node>
                                   <node concept="liA8E" id="7nm1uttBuMl" role="2OqNvi">
                                     <ref role="37wK5l" to="yyf4:~Processor.process(java.lang.Object):boolean" resolve="process" />
-                                    <node concept="2OqwBi" id="kgRRK9fLM$" role="37wK5m">
-                                      <node concept="10M0yZ" id="kgRRK9fLMz" role="2Oq$k0">
-                                        <ref role="3cqZAo" to="d6hs:~TypesystemReportItemAdapter.FLAVOUR_ERROR_REPORTER" resolve="FLAVOUR_ERROR_REPORTER" />
-                                        <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
-                                      </node>
-                                      <node concept="liA8E" id="kgRRK9fLM_" role="2OqNvi">
-                                        <ref role="37wK5l" to="d6hs:~ReportItemBase$ReportItemFlavour.tryToGet(jetbrains.mps.errors.item.ReportItem):java.lang.Object" resolve="tryToGet" />
-                                        <node concept="37vLTw" id="kgRRK9fM6P" role="37wK5m">
-                                          <ref role="3cqZAo" node="45Q6RD6qnnL" resolve="reportItem" />
-                                        </node>
-                                      </node>
+                                    <node concept="37vLTw" id="2PIlT5TAyhl" role="37wK5m">
+                                      <ref role="3cqZAo" node="45Q6RD6qnnL" resolve="reportItem" />
                                     </node>
                                   </node>
                                 </node>
@@ -7123,8 +7123,8 @@
         <property role="TrG5h" value="processor" />
         <node concept="3uibUv" id="45Q6RD6qPDl" role="1tU5fm">
           <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
-          <node concept="3uibUv" id="45Q6RD6qPDm" role="11_B2D">
-            <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+          <node concept="3uibUv" id="2PIlT5TAF0B" role="11_B2D">
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
         </node>
       </node>
@@ -7152,8 +7152,13 @@
                       </node>
                       <node concept="liA8E" id="45Q6RD6qZeM" role="2OqNvi">
                         <ref role="37wK5l" to="yyf4:~Processor.process(java.lang.Object):boolean" resolve="process" />
-                        <node concept="37vLTw" id="45Q6RD6qZqu" role="37wK5m">
-                          <ref role="3cqZAo" node="45Q6RD6qYil" resolve="it" />
+                        <node concept="2ShNRf" id="2PIlT5TAFch" role="37wK5m">
+                          <node concept="1pGfFk" id="2PIlT5TAGMg" role="2ShVmc">
+                            <ref role="37wK5l" to="d6hs:~TypesystemReportItemAdapter.&lt;init&gt;(jetbrains.mps.errors.IErrorReporter)" resolve="TypesystemReportItemAdapter" />
+                            <node concept="37vLTw" id="2PIlT5TAGRk" role="37wK5m">
+                              <ref role="3cqZAo" node="45Q6RD6qYil" resolve="it" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>

@@ -42,7 +42,7 @@ import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
-import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -174,9 +174,8 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
         continue;
       }
       HighlighterMessage message = HighlightUtil.createHighlighterMessage(errorReporter, LanguageEditorChecker.this);
-      List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
-      if (runQuickFixes && intentionProviders.size() == 1 && intentionProviders.get(0).isExecutedImmediately()) {
-        QuickFix_Runtime quickFix = intentionProviders.get(0).getQuickFix();
+      if (runQuickFixes) {
+        QuickFix_Runtime quickFix = TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getAutoApplicable(message.getReportItem());
         if (quickFix != null) {
           ListSequence.fromList(quickFixesToExecute).addElement(MultiTuple.<QuickFix_Runtime,SNode>from(quickFix, nodeWithError));
         }

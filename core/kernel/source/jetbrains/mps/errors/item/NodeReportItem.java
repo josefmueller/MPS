@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public interface NodeReportItem extends ReportItem {
 
+  // currently we cannot make this method NotNull because we are not sure when IErrorReporter can return null
   SNode getNode();
 
   ReportItemFlavour<NodeReportItem, SNode> FLAVOUR_NODE = new SimpleReportItemFlavour<>(NodeReportItem.class, NodeReportItem::getNode);

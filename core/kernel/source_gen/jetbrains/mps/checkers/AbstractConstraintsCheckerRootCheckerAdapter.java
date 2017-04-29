@@ -13,11 +13,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import jetbrains.mps.util.Reference;
-import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 
 public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecker {
   private Set<AbstractNodeChecker> myRules;
@@ -66,16 +66,16 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
   @Override
   public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repository) {
     final Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
-    processErrors(rootNode, repository, new Processor<IErrorReporter>() {
-      public boolean process(IErrorReporter error) {
-        SetSequence.fromSet(result).addElement(error);
+    processErrors(rootNode, repository, new Processor<NodeReportItem>() {
+      public boolean process(NodeReportItem reportItem) {
+        SetSequence.fromSet(result).addElement(TypesystemReportItemAdapter.FLAVOUR_ERROR_REPORTER.tryToGet(reportItem));
         return true;
       }
     });
     return result;
   }
   @Override
-  public void processErrors(SNode rootNode, SRepository repository, final Processor<IErrorReporter> processor) {
+  public void processErrors(SNode rootNode, SRepository repository, final Processor<NodeReportItem> processor) {
     SModel model = SNodeOperations.getModel(rootNode);
     assert model != null;
 
@@ -88,7 +88,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
         if (mySkipCondition.skipSingleNode(reportItem.getNode())) {
           return;
         }
-        cancelled.set(cancelled.get() || !(processor.process(TypesystemReportItemAdapter.FLAVOUR_ERROR_REPORTER.tryToGet(reportItem))));
+        cancelled.set(cancelled.get() || !(processor.process(reportItem)));
       }
     };
 

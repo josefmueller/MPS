@@ -22,6 +22,8 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.item.ReportItem;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.intentions.IntentionsVisitor.CollectAvailableIntentionsVisitor;
 import jetbrains.mps.intentions.IntentionsVisitor.GetHighestAvailableIntentionTypeVisitor;
@@ -30,6 +32,8 @@ import jetbrains.mps.lang.script.runtime.RefactoringScript;
 import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.nodeEditor.Highlighter;
+import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
@@ -68,6 +72,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 @State(
@@ -177,12 +182,17 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
     }
 
-    List<SimpleEditorMessage> messages = ((EditorComponent) context.getEditorComponent()).getHighlightManager().getMessagesFor(node);
-    for (SimpleEditorMessage message : messages) {
-      //TODO remove this cast
-      List<QuickFixProvider> intentionProviders = ((EditorMessage) message).getIntentionProviders();
+    List<ReportItem> messages = new ArrayList<>();
+    for (SimpleEditorMessage simpleEditorMessage : ((EditorComponent) context.getEditorComponent()).getHighlightManager().getMessagesFor(node)) {
+      if (simpleEditorMessage instanceof HighlighterMessage) {
+        HighlighterMessage highlighterMessage = (HighlighterMessage) simpleEditorMessage;
+        messages.add(highlighterMessage.getReportItem());
+      }
+    }
+    for (ReportItem message : messages) {
+      Collection<QuickFixProvider> intentionProviders = TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getCollection(message);
       for (QuickFixProvider intentionProvider : intentionProviders) {
-        QuickFixAdapter intention = new QuickFixAdapter(intentionProvider.getQuickFix(), message.getStatus().equals(MessageStatus.ERROR));
+        QuickFixAdapter intention = new QuickFixAdapter(intentionProvider.getQuickFix(), message.getSeverity().equals(MessageStatus.ERROR));
         if ((isAncestor && !intention.isAvailableInChildNodes()) || !intention.isApplicable(node, context)) {
           continue;
         }

@@ -7,8 +7,9 @@ import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.errors.item.NodeReportItem;
 
 public interface IRootChecker {
   Set<IErrorReporter> getErrors(SNode root, SRepository repository);
-  void processErrors(SNode root, SRepository repository, Processor<IErrorReporter> processor);
+  void processErrors(SNode root, SRepository repository, Processor<NodeReportItem> processor);
 }

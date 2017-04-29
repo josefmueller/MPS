@@ -115,19 +115,13 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
         HighlighterMessage message = HighlightUtil.createHighlighterMessage(reportItem, AbstractTypesystemEditorChecker.this
         );
 
-        List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
+        QuickFix_Runtime quickfix = TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getAutoApplicable(message.getReportItem());
         final SNode quickFixNode = errorNode.o1;
-        if (applyQuickFixes && !instantIntentionApplied) {
-          if (intentionProviders.size() == 1 &&
-              intentionProviders.get(0) != null &&
-              intentionProviders.get(0).isExecutedImmediately() &&
-              !AbstractTypesystemEditorChecker.IMMEDIATE_QFIX_DISABLED) {
-            QuickFixProvider intentionProvider = intentionProviders.get(0);
-            instantIntentionApplied = applyInstantIntention(editorContext, quickFixNode, intentionProvider);
-            if (instantIntentionApplied) {
-              // skip the message
-              continue;
-            }
+        if (quickfix != null && applyQuickFixes && !instantIntentionApplied && !AbstractTypesystemEditorChecker.IMMEDIATE_QFIX_DISABLED) {
+          instantIntentionApplied = applyInstantIntention(editorContext, quickFixNode, quickfix);
+          if (instantIntentionApplied) {
+            // skip the message
+            continue;
           }
         }
 
@@ -138,43 +132,39 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
   }
 
   private boolean applyInstantIntention(final EditorContext editorContext, final SNode quickFixNode,
-      QuickFixProvider intentionProvider) {
-    final QuickFix_Runtime intention = intentionProvider.getQuickFix();
-    if (intention != null) {
-      if (!myOnceExecutedQuickFixes.contains(intention)) {
-        myOnceExecutedQuickFixes.add(intention);
-        // XXX why Application.invokeLater, not ThreadUtils or ModelAccess (likely, shall use SNodeReference for quickFixNode, not SNode, and resolve inside)
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            EditorCell selectedCell = editorContext.getSelectedCell();
-            if (selectedCell == null) {
-              return;
+      @NotNull final QuickFix_Runtime intention) {
+    if (!myOnceExecutedQuickFixes.contains(intention)) {
+      myOnceExecutedQuickFixes.add(intention);
+      // XXX why Application.invokeLater, not ThreadUtils or ModelAccess (likely, shall use SNodeReference for quickFixNode, not SNode, and resolve inside)
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
+        public void run() {
+          EditorCell selectedCell = editorContext.getSelectedCell();
+          if (selectedCell == null) {
+            return;
+          }
+          int caretX = selectedCell.getCaretX();
+          int caretY = selectedCell.getBaseline();
+
+          editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
+            @Override
+            public void run() {
+              intention.execute(quickFixNode);
             }
-            int caretX = selectedCell.getCaretX();
-            int caretY = selectedCell.getBaseline();
+          });
 
-            editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
-              @Override
-              public void run() {
-                intention.execute(quickFixNode);
-              }
-            });
-
-            editorContext.flushEvents();
-            if (editorContext.getSelectionManager().getSelection() == null) {
-              EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
-              EditorCell leaf = rootCell.findLeaf(caretX, caretY);
-              if (leaf != null) {
-                editorContext.getEditorComponent().changeSelection(leaf);
-                leaf.setCaretX(caretX);
-              }
+          editorContext.flushEvents();
+          if (editorContext.getSelectionManager().getSelection() == null) {
+            EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
+            EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+            if (leaf != null) {
+              editorContext.getEditorComponent().changeSelection(leaf);
+              leaf.setCaretX(caretX);
             }
           }
-        }, ModalityState.NON_MODAL);
-      }
-      return true;
+        }
+      }, ModalityState.NON_MODAL);
     }
-    return false;
+    return true;
   }
 }

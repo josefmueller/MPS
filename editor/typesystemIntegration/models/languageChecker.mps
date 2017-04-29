@@ -40,6 +40,7 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
+    <import index="wexy" ref="r:74808b88-3d1c-4dc8-8642-164154f3f3a7(typesystemIntegration.languageChecker)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1463,48 +1464,33 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="2v0ve8x$pim" role="3cqZAp">
-              <node concept="3cpWsn" id="2v0ve8x$pin" role="3cpWs9">
-                <property role="TrG5h" value="intentionProviders" />
-                <node concept="3uibUv" id="2v0ve8x$pio" role="1tU5fm">
-                  <ref role="3uigEE" to="33ny:~List" resolve="List" />
-                  <node concept="3uibUv" id="2v0ve8x$pip" role="11_B2D">
-                    <ref role="3uigEE" to="2gg1:~QuickFixProvider" resolve="QuickFixProvider" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="2v0ve8x$piq" role="33vP2m">
-                  <node concept="37vLTw" id="2v0ve8x$pir" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2v0ve8x$pi8" resolve="message" />
-                  </node>
-                  <node concept="liA8E" id="2v0ve8x$pis" role="2OqNvi">
-                    <ref role="37wK5l" to="exr9:~HighlighterMessage.getIntentionProviders():java.util.List" resolve="getIntentionProviders" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbJ" id="2v0ve8x$pit" role="3cqZAp">
+              <node concept="37vLTw" id="2v0ve8x$piW" role="3clFbw">
+                <ref role="3cqZAo" node="2v0ve8x$ph7" resolve="runQuickFixes" />
+              </node>
               <node concept="3clFbS" id="2v0ve8x$piu" role="3clFbx">
                 <node concept="3cpWs8" id="2v0ve8x$piv" role="3cqZAp">
                   <node concept="3cpWsn" id="2v0ve8x$piw" role="3cpWs9">
                     <property role="TrG5h" value="quickFix" />
-                    <node concept="3uibUv" id="2v0ve8x$pix" role="1tU5fm">
-                      <ref role="3uigEE" to="2gg1:~QuickFix_Runtime" resolve="QuickFix_Runtime" />
-                    </node>
-                    <node concept="2OqwBi" id="2v0ve8x$piy" role="33vP2m">
-                      <node concept="2OqwBi" id="2v0ve8x$piz" role="2Oq$k0">
-                        <node concept="37vLTw" id="2v0ve8x$pi$" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2v0ve8x$pin" resolve="intentionProviders" />
-                        </node>
-                        <node concept="liA8E" id="2v0ve8x$pi_" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
-                          <node concept="3cmrfG" id="2v0ve8x$piA" role="37wK5m">
-                            <property role="3cmrfH" value="0" />
+                    <node concept="2OqwBi" id="2PIlT5TBqxN" role="33vP2m">
+                      <node concept="10M0yZ" id="2PIlT5TBqxM" role="2Oq$k0">
+                        <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
+                        <ref role="3cqZAo" to="d6hs:~TypesystemReportItemAdapter.FLAVOUR_QUICKFIX" resolve="FLAVOUR_QUICKFIX" />
+                      </node>
+                      <node concept="liA8E" id="2PIlT5TBqxO" role="2OqNvi">
+                        <ref role="37wK5l" to="d6hs:~TypesystemReportItemAdapter$QuickFixFlavour.getAutoApplicable(jetbrains.mps.errors.item.ReportItem):jetbrains.mps.errors.QuickFix_Runtime" resolve="getAutoApplicable" />
+                        <node concept="2OqwBi" id="2PIlT5TBqBW" role="37wK5m">
+                          <node concept="37vLTw" id="2PIlT5TBqBV" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2v0ve8x$pi8" resolve="message" />
+                          </node>
+                          <node concept="liA8E" id="2PIlT5TBqBX" role="2OqNvi">
+                            <ref role="37wK5l" to="exr9:~HighlighterMessage.getReportItem():jetbrains.mps.errors.item.ReportItem" resolve="getReportItem" />
                           </node>
                         </node>
                       </node>
-                      <node concept="liA8E" id="2v0ve8x$piB" role="2OqNvi">
-                        <ref role="37wK5l" to="2gg1:~QuickFixProvider.getQuickFix():jetbrains.mps.errors.QuickFix_Runtime" resolve="getQuickFix" />
-                      </node>
+                    </node>
+                    <node concept="3uibUv" id="2v0ve8x$pix" role="1tU5fm">
+                      <ref role="3uigEE" to="2gg1:~QuickFix_Runtime" resolve="QuickFix_Runtime" />
                     </node>
                   </node>
                 </node>
@@ -1532,42 +1518,6 @@
                     <node concept="10Nm6u" id="2v0ve8x$piM" role="3uHU7w" />
                     <node concept="37vLTw" id="2v0ve8x$piN" role="3uHU7B">
                       <ref role="3cqZAo" node="2v0ve8x$piw" resolve="quickFix" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="1Wc70l" id="2v0ve8x$piO" role="3clFbw">
-                <node concept="2OqwBi" id="2v0ve8x$piP" role="3uHU7w">
-                  <node concept="2OqwBi" id="2v0ve8x$piQ" role="2Oq$k0">
-                    <node concept="37vLTw" id="2v0ve8x$piR" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2v0ve8x$pin" resolve="intentionProviders" />
-                    </node>
-                    <node concept="liA8E" id="2v0ve8x$piS" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~List.get(int):java.lang.Object" resolve="get" />
-                      <node concept="3cmrfG" id="2v0ve8x$piT" role="37wK5m">
-                        <property role="3cmrfH" value="0" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="2v0ve8x$piU" role="2OqNvi">
-                    <ref role="37wK5l" to="2gg1:~QuickFixProvider.isExecutedImmediately():boolean" resolve="isExecutedImmediately" />
-                  </node>
-                </node>
-                <node concept="1Wc70l" id="2v0ve8x$piV" role="3uHU7B">
-                  <node concept="37vLTw" id="2v0ve8x$piW" role="3uHU7B">
-                    <ref role="3cqZAo" node="2v0ve8x$ph7" resolve="runQuickFixes" />
-                  </node>
-                  <node concept="3clFbC" id="2v0ve8x$piX" role="3uHU7w">
-                    <node concept="2OqwBi" id="2v0ve8x$piY" role="3uHU7B">
-                      <node concept="37vLTw" id="2v0ve8x$piZ" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2v0ve8x$pin" resolve="intentionProviders" />
-                      </node>
-                      <node concept="liA8E" id="2v0ve8x$pj0" role="2OqNvi">
-                        <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                      </node>
-                    </node>
-                    <node concept="3cmrfG" id="2v0ve8x$pj1" role="3uHU7w">
-                      <property role="3cmrfH" value="1" />
                     </node>
                   </node>
                 </node>

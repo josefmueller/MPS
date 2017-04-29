@@ -31,7 +31,7 @@ public abstract class NodeReportItemBase extends ReportItemBase implements NodeR
 
   private final SNode myNode;
 
-  public NodeReportItemBase(MessageStatus severity, SNode node) {
+  public NodeReportItemBase(MessageStatus severity, @NotNull SNode node) {
     super(severity);
     myNode = node;
   }
