@@ -37,6 +37,14 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.scope.EmptyScope" />
   </dependency>
+  <dependency className="jetbrains.mps.scope.FilteringByConceptScope" file="FilteringByConceptScope.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.scope.FilteringScope" />
+  </dependency>
   <dependency className="jetbrains.mps.scope.FilteringByNameScope" file="FilteringByNameScope.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />

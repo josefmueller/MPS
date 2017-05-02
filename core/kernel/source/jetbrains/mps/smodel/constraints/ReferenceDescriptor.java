@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.constraints;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.ErrorScope;
+import jetbrains.mps.scope.FilteringByConceptScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.DynamicReference;
@@ -157,7 +158,7 @@ public abstract class ReferenceDescriptor {
             if (myReference != null && searchScope instanceof Adapter) {
               return new RefAdapter(((Adapter) searchScope).getSearchScope(), myReference);
             }
-            return searchScope;
+            return new FilteringByConceptScope(searchScope, myLinkTarget);
           }
         }
         // global search scope
