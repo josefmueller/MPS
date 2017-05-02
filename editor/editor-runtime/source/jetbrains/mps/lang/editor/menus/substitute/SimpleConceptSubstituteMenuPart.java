@@ -44,11 +44,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   private SConcept myConcept;
 
   public SimpleConceptSubstituteMenuPart(@NotNull SAbstractConcept concept) {
-    if (concept instanceof SConcept) {
-      myConcept = ((SConcept) concept);
-    } else {
-      myConcept = MetaAdapterByDeclaration.asInstanceConcept(concept);
-    }
+    myConcept = MetaAdapterByDeclaration.asInstanceConcept(concept);
   }
 
   @NotNull
@@ -65,24 +61,24 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
 
   @Nullable
   private List<SubstituteMenuItem> createSmartItemsItems(SubstituteMenuContext context) {
-    SReferenceLink smartReference = ReferenceConceptUtil.getCharacteristicReference(myConcept);
-    SNode smartReferenceNode = getSmartReferenceNode(context);
-    final SAbstractConcept smartReferenceNodeTargetConcept = getSpecialSmartReferenceTargetConcept(smartReferenceNode);
-
+    SReferenceLink smartReference = getCharacteristicReference(context);
     if (smartReference != null) {
-      SAbstractConcept targetConcept = smartReference.getTargetConcept();
-      if (smartReferenceNodeTargetConcept != null && checkSmartReferenceNodeSpecializesSmartReference(smartReferenceNode, smartReference)) {
-        targetConcept = smartReferenceNodeTargetConcept;
-      }
-      return createSmartSubstituteMenuItems(context, smartReference, targetConcept, createSmartReferenceDescriptor(context));
-    } else if (smartReferenceNode != null && smartReferenceNodeTargetConcept != null) {
-      final SReferenceLink smartReferenceNodeReference = getReferenceLink(smartReferenceNode);
-      if (smartReferenceNodeReference != null) {
-        return createSmartSubstituteMenuItems(context, smartReferenceNodeReference,
-            smartReferenceNodeTargetConcept, createSmartReferenceDescriptorByNode(context, getMyConceptSourceNode(context)));
-      }
+      return createSmartSubstituteMenuItems(context, smartReference);
     }
     return null;
+  }
+
+  @Nullable
+  private SReferenceLink getCharacteristicReference(SubstituteMenuContext context) {
+    SReferenceLink smartReference = ReferenceConceptUtil.getCharacteristicReference(myConcept);
+    if (smartReference == null) {
+      // handling the case when smart alias template uses role of the special link which is dropped during compilation
+      SNode smartReferenceNode = getSmartReferenceNode(context);
+      if (smartReferenceNode != null) {
+        smartReference = getReferenceLink(smartReferenceNode);
+      }
+    }
+    return smartReference;
   }
 
   private SNode getSmartReferenceNode(SubstituteMenuContext context) {
@@ -109,28 +105,6 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   }
 
   //todo remove this method when we will get rid of specialized concepts
-  @Nullable
-  private SAbstractConcept getSpecialSmartReferenceTargetConcept(SNode specialSmartReference) {
-    final SNode specializedTargetConceptNode = SModelUtil.getLinkDeclarationTarget(specialSmartReference);
-    if (specializedTargetConceptNode == null) {
-      return null;
-    }
-    return MetaAdapterByDeclaration.getConcept(specializedTargetConceptNode);
-  }
-
-  //todo remove this method when we will get rid of specialized concepts
-  private boolean checkSmartReferenceNodeSpecializesSmartReference(SNode specialSmartReference, @NotNull SReferenceLink smartReference) {
-    if (specialSmartReference == null) {
-      return false;
-    }
-    final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(specialSmartReference);
-    if (genuineLinkDeclaration == null || genuineLinkDeclaration == specialSmartReference) {
-      return false;
-    }
-    return smartReference.equals(MetaAdapterByDeclaration.getReferenceLink(genuineLinkDeclaration));
-  }
-
-  //todo remove this method when we will get rid of specialized concepts
   private SReferenceLink getReferenceLink(SNode referenceNode) {
     final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(referenceNode);
     if (genuineLinkDeclaration == null) {
@@ -140,43 +114,19 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   }
 
   @NotNull
-  private List<SubstituteMenuItem> createSmartSubstituteMenuItems(SubstituteMenuContext context, SReferenceLink smartReference,
-      SAbstractConcept targetConcept, ReferenceDescriptor refDescriptor) {
+  private List<SubstituteMenuItem> createSmartSubstituteMenuItems(SubstituteMenuContext context, SReferenceLink smartReference) {
     SNode currentChild = context.getCurrentTargetNode();
     SNode parentNode = context.getParentNode();
+    int index = getIndex(currentChild, parentNode);
+    ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(parentNode, context.getLink(), index, smartReference, myConcept);
 
     List<SubstituteMenuItem> result = new ArrayList<>();
     Iterable<SNode> referentNodes = refDescriptor.getScope().getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
-      if (referentNode == null ||
-          !checkForSubconcept(targetConcept, referentNode)) {
-        continue;
-      }
       result.add(new SmartReferenceSubstituteMenuItem(referentNode, parentNode,
           currentChild, myConcept, smartReference, refDescriptor, context.getEditorContext()));
     }
     return result;
-  }
-
-  @NotNull
-  private ReferenceDescriptor createSmartReferenceDescriptor(SubstituteMenuContext context) {
-    SNode currentChild = context.getCurrentTargetNode();
-    final SNode parentNode = context.getParentNode();
-
-    int index = getIndex(currentChild, parentNode);
-    return ModelConstraints.getSmartReferenceDescriptor(parentNode,
-        context.getLink(), index, myConcept, context.getEditorContext().getRepository());
-  }
-
-  @NotNull
-  private ReferenceDescriptor createSmartReferenceDescriptorByNode(SubstituteMenuContext context, SNode conceptNode) {
-    SNode currentChild = context.getCurrentTargetNode();
-    final SNode parentNode = context.getParentNode();
-
-    int index = getIndex(currentChild, parentNode);
-
-    return ModelConstraints.getSmartReferenceDescriptor(parentNode,
-        context.getLink() != null ? context.getLink().getName() : null, index, conceptNode);
   }
 
   private int getIndex(@Nullable SNode currentChild, @NotNull SNode parentNode) {
@@ -187,9 +137,4 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
     }
     return index;
   }
-
-  private boolean checkForSubconcept(SAbstractConcept concept, SNode referentNode) {
-    return referentNode.getConcept().isSubConceptOf(concept);
-  }
-
 }
