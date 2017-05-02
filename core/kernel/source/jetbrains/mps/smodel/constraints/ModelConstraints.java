@@ -238,10 +238,21 @@ public class ModelConstraints {
 
 
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode contextNode, /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink,
-      int position, @NotNull SReferenceLink association) {
-    return new OkReferenceDescriptor(association.getOwner(), association, contextNode, containmentLink, position);
+                                                           int position, @NotNull SReferenceLink association) {
+    return getReferenceDescriptor(contextNode, containmentLink, position, association, association.getOwner());
   }
 
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode contextNode, /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink,
+                                                           int position, @NotNull SReferenceLink association, @NotNull SAbstractConcept concept) {
+    return new OkReferenceDescriptor(concept, association, contextNode, containmentLink, position);
+  }
+
+  /**
+   * @deprecated Smart-concept heuristics at runtime will be dropped in next releases.
+   *             Use {@link #getReferenceDescriptor(SNode, SContainmentLink, int, SReferenceLink, SAbstractConcept)} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode contextNode,
       /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position,
       @NotNull SAbstractConcept smartConcept) {
@@ -249,12 +260,12 @@ public class ModelConstraints {
     if (smartReferenceLink == null) {
       return new ErrorReferenceDescriptor("smart concept '" + smartConcept.getName() + "' has no characteristic reference");
     }
-    return new OkReferenceDescriptor(smartConcept, smartReferenceLink, contextNode, containmentLink, position);
+    return getReferenceDescriptor(contextNode, containmentLink, position, smartReferenceLink, smartConcept);
   }
 
   /**
-   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} instead.
-   * It doesn't work for specialized links.
+   * @deprecated Smart-concept heuristics at runtime will be dropped in next releases.
+   *             Use {@link #getReferenceDescriptor(SNode, SContainmentLink, int, SReferenceLink, SAbstractConcept)} instead.
    */
   @NotNull
   @Deprecated
@@ -269,7 +280,8 @@ public class ModelConstraints {
   }
 
   /**
-   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} instead.
+   * @deprecated Smart-concept heuristics at runtime will be dropped in next releases.
+   *             Use {@link #getReferenceDescriptor(SNode, SContainmentLink, int, SReferenceLink, SAbstractConcept)} instead.
    */
   @NotNull
   @Deprecated
