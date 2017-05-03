@@ -6540,5 +6540,59 @@
       <ref role="PrY4T" node="3J8eUL7dojS" resolve="ISubstituteMenu_RefPresentation" />
     </node>
   </node>
+  <node concept="1TIwiD" id="2Bx95km$HUU">
+    <property role="EcuMT" value="3017733173184487098" />
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="SmartRefMigrationData" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2Bx95km$HVh" role="1TKVEi">
+      <property role="IQ2ns" value="3017733173184487121" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="entities" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="2Bx95km$HUV" resolve="SmartRefMigrationDataEntity" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2Bx95km$HUV">
+    <property role="EcuMT" value="3017733173184487099" />
+    <property role="3GE5qa" value="migration" />
+    <property role="TrG5h" value="SmartRefMigrationDataEntity" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="2Bx95km$HVc" role="1TKVEl">
+      <property role="IQ2nx" value="3017733173184487116" />
+      <property role="TrG5h" value="prefix" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="2Bx95km$HVe" role="1TKVEl">
+      <property role="IQ2nx" value="3017733173184487118" />
+      <property role="TrG5h" value="suffix" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="2Bx95km$HUY" role="1TKVEi">
+      <property role="IQ2ns" value="3017733173184487102" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="characteristicLink" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="2Bx95km$HV1" role="1TKVEi">
+      <property role="IQ2ns" value="3017733173184487105" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="generatedMenu" />
+      <ref role="20lvS9" node="3fw9B$5YUrX" resolve="SubstituteMenu_Named" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Pr44Jlk_YB">
+    <property role="EcuMT" value="2115302367868116903" />
+    <property role="TrG5h" value="GeneratedSubstituteMenuAttribute" />
+    <property role="3GE5qa" value="migration" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="1Pr44Jlk_YC" role="lGtFl">
+      <property role="Hh88m" value="generatedNode" />
+      <node concept="trNpa" id="1Pr44Jlk_YE" role="EQaZv">
+        <ref role="trN6q" node="1J2KHYpABsB" resolve="ISubstituteMenu" />
+      </node>
+    </node>
+  </node>
 </model>
 

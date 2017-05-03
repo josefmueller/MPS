@@ -25429,5 +25429,41 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="1Pr44Jlk_Z5">
+    <property role="3GE5qa" value="migration" />
+    <ref role="1XX52x" to="tpc2:1Pr44Jlk_YB" resolve="GeneratedSubstituteMenuAttribute" />
+    <node concept="3EZMnI" id="1Pr44Jlk_Za" role="2wV5jI">
+      <node concept="3EZMnI" id="1Pr44JlkA16" role="3EZMnx">
+        <node concept="VPM3Z" id="1Pr44JlkA18" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3XFhqQ" id="1Pr44JlkA1t" role="3EZMnx" />
+        <node concept="3EZMnI" id="1Pr44JlkA1z" role="3EZMnx">
+          <node concept="VPM3Z" id="1Pr44JlkA1_" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="VPXOz" id="1Pr44JlkUhz" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="3F0ifn" id="1Pr44Jlk_ZN" role="3EZMnx">
+            <property role="3F0ifm" value="This substitute menu has been automaticaly generated during migration." />
+            <ref role="1k5W1q" node="hoxUe05" resolve="item" />
+          </node>
+          <node concept="3F0ifn" id="1Pr44JlkA05" role="3EZMnx">
+            <property role="3F0ifm" value="You can drop/inline the menu or just remove the annotation." />
+            <ref role="1k5W1q" node="hoxUe05" resolve="item" />
+          </node>
+          <node concept="3F0ifn" id="1Pr44JlkA1K" role="3EZMnx">
+            <property role="3F0ifm" value="Use migration intentions for such proposals." />
+            <ref role="1k5W1q" node="hoxUe05" resolve="item" />
+          </node>
+          <node concept="2iRkQZ" id="1Pr44JlkA1C" role="2iSdaV" />
+        </node>
+        <node concept="2iRfu4" id="1Pr44JlkA1b" role="2iSdaV" />
+      </node>
+      <node concept="2SsqMj" id="1Pr44Jlk_Zt" role="3EZMnx" />
+      <node concept="2iRkQZ" id="1Pr44Jlk_Zk" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

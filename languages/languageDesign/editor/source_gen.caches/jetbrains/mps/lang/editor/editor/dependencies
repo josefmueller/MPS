@@ -3823,6 +3823,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.FloatStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.FontSizeStyleClassItem_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.FontStyleStyleClassItem_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.GeneratedSubstituteMenuAttribute_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.HorizontalAlign_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.IOutputConcept_Component" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.ISubstituteMenu_PartsComponent" />
@@ -4405,6 +4406,32 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SEnumerationLiteral" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editor.GeneratedSubstituteMenuAttribute_Editor" file="GeneratedSubstituteMenuAttribute_Editor.java">
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.GeneratedSubstituteMenuAttribute_EditorBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editor.GeneratedSubstituteMenuAttribute_EditorBuilder_a" file="GeneratedSubstituteMenuAttribute_EditorBuilder_a.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.Styles_StyleSheet.itemStyleClass" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Indent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.update.AttributeKind" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
