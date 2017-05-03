@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/mps-core/lib/jetbrains.mps.lang.test.util.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util/source_gen" />
+    </SOURCES>
   </library>
 </component>

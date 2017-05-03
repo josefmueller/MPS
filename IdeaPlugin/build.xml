@@ -16,21 +16,21 @@
 <project name="IDEA-plugin-compile" default="build" basedir=".">
 
   <!--
-     To pass IDEA locations to the script run it with the following Java system properties:
+     1. To pass IDEA locations to the script run it with the following Java system properties:
+        ant -Dhome.idea_ce={IDEA_HOME_DIR} -Dhome.idea_ce.plugins={IDEA_PLUGINS_FOLDER} <task>
 
-        ant -Dhome.idea_ce=/opt/IDEA12 -Dhome.idea_ce.plugins=/opt/plugins/IDEA12 <task>
+        e.g. for MacOs it will be:
+        ant -Dhome.idea_ce=/Applications/IntelliJ\ IDEA\ CE\ 2017.1.app/Contents/ -Dhome.idea_ce.plugins=~/Library/Application Support/IdeaIC2017.1 <task>
 
-
-     To run tests locally, it's sufficient to set home.idea_ce and home.jdk:
+     2. To run tests locally, it's sufficient to set home.idea_ce and home.jdk:
         ant -Dhome.idea_ce=/IDEA13/ -Dhome.jdk=/Library/Java/Home/ -f IdeaPlugin/build.xml clean zip runTests
 
      To connect to running tests and debug with Idea, uncomment/modify 'junit.debug.arg' property below
   -->
 
-
   <property name="base_dir" value="${basedir}/.."/>
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
-  <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
+  <property name="test.platform.sandbox.dir" value="${base_dir}/IdeaPlugin/sandbox/tests.ant"/>
   <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5051"/>-->
   <property name="junit.debug.arg"
             value="-D"/> <!--Value for JUnit test JVM launcher. Use -D as empty jvmarg value is treated as classname to run-->
@@ -38,6 +38,7 @@
             description="Allows to modify getDependencies.xml target to download only 3rd party libraries without IDEA platform on Team City build"/>
 
   <property environment="env"/>
+
 
   <target name="loadIdeaPathVar">
     <fail message="I need a system property: home.idea_ce = path to your Idea installation" unless="home.idea_ce"/>
@@ -52,7 +53,6 @@
     <echo message="Plugins: ${ideaPlugins}"/>
   </target>
 
-  <target name="loadVars" depends="loadIdeaPathVar, loadIdeaPluginsPathVar"/>
 
   <target name="loadJavaHomeEnv" unless="home.jdk" if="env.JAVA_HOME">
     <property name="jdkPath" value="${env.JAVA_HOME}"/>
@@ -68,10 +68,20 @@
     <echo message="JDK: ${jdkPath}"/>
   </target>
 
-  <target name="preBuildCore" depends="buildCore">
+
+  <target name="checkLibs">
+    <available file="${base_dir}/IdeaPlugin/mps-core/lib/build.properties" property="core.libs.found"/>
+  </target>
+
+  <target name="buildLibs" depends="checkLibs" unless="core.libs.found">
+    <antcall target="copyLibsFromLocalBuild"/>
+  </target>
+
+  <target name="copyLibsFromLocalBuild" depends="buildCore">
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
+      <fileset file="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/build.properties"/>
     </copy>
     <!-- messages, which are packaged by mpsWorkbench build script, which we don't invoke when building plugin -->
     <!-- it seems, they should end-up in mps-platform.jar, will be no need to copy -->
@@ -89,17 +99,27 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-testing">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing"/>
     </copy>
-    <copy todir="${base_dir}/IdeaPlugin/mps-java/META-INF/platform/actions">
-      <file file="${base_dir}/plugins/mps-java-workbench/META-INF/platform/actions/JavaActions.xml"/>
-    </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-java/META-INF">
-      <file file="${base_dir}/plugins/mps-java-workbench/META-INF/JavaPlatform.xml"/>
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsJavaPlatform/META-INF/JavaPlatform.xml"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-java/META-INF/platform">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsJavaPlatform/META-INF/platform">
+        <include name="**/*.xml"/>
+      </fileset>
     </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-java/lib">
       <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsJavaPlatform/lib/mps-java-platform.jar"/>
     </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/META-INF">
-      <file file="${base_dir}/plugins/vcs/META-INF/MPSVcs.xml"/>
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/META-INF/MPSVcs.xml"/>
+    </copy>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps-vcs/languages"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps-vcs/languages">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/languages"/>
+    </copy>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps-vcs/lib"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps-vcs/lib">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/lib"/>
     </copy>
     <!-- only for running tests in mps-core -->
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
@@ -109,9 +129,10 @@
     </copy>
   </target>
 
-  <target name="copyCoreFromDist" depends="loadIdeaPluginsPathVar">
+  <target name="copyLibsFromDist" depends="loadIdeaPluginsPathVar">
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${ideaPlugins}/mps-core/lib"/>
+      <fileset file="${ideaPlugins}/mps-core/build.properties"/>
     </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${ideaPlugins}/mps-core/languages"/>
@@ -127,8 +148,27 @@
     </copy>
   </target>
 
-  <target name="clean">
+  <target name="clean" depends="cleanLibs">
     <delete dir="${build.home}"/>
+  </target>
+
+  <target name="cleanLibs">
+    <delete>
+      <!-- TODO: remove jps-build-test-139.1117.1.jar file & this exclusion -->
+      <fileset dir="${base_dir}/IdeaPlugin/mps-core/lib">
+        <exclude name="jps/**"/>
+      </fileset>
+    </delete>
+    <!-- TODO: create separate root for resources copied from the 'main' MPS -->
+    <delete dir="${base_dir}/IdeaPlugin/mps-core/resources/messages"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps-testing"/>
+    <delete file="${base_dir}/IdeaPlugin/mps-java/META-INF/JavaPlatform.xml"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps-java/META-INF/platform"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps-java/lib"/>
+    <delete file="${base_dir}/IdeaPlugin/mps-vcs/META-INF/MPSVcs.xml"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps-vcs/languages"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps-vcs/lib"/>
   </target>
 
   <target name="buildCore" depends="loadIdeaPathVar" unless="buildCoreProcessed">
@@ -141,7 +181,7 @@
     </ant>
   </target>
 
-  <target name="build" depends="buildCore">
+  <target name="build" depends="loadIdeaPathVar, buildCore">
     <ant antfile="mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" target="assemble">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
@@ -156,22 +196,20 @@
     </ant>
   </target>
 
-  <target name="preparePluginsSandbox" depends="build, buildTests">
-    <delete dir="${plugins.sandbox.dir}"/>
-    <mkdir dir="${plugins.sandbox.dir}/plugins"/>
-    <copy todir="${plugins.sandbox.dir}/plugins">
+  <target name="runTests" depends="loadJdkPath, loadIdeaPathVar, build, buildTests, buildLibs">
+    <delete dir="${test.platform.sandbox.dir}"/>
+    <mkdir dir="${test.platform.sandbox.dir}/plugins"/>
+    <copy todir="${test.platform.sandbox.dir}/plugins">
       <fileset dir="${build.home}/artifacts/mpsPlugin"/>
       <fileset dir="${build.home}/artifacts/mpsPlugin.tests"/>
     </copy>
-    <copy todir="${plugins.sandbox.dir}/plugins/tests/projectView">
+    <copy todir="${test.platform.sandbox.dir}/plugins/tests/projectView">
       <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>
     </copy>
-    <copy todir="${plugins.sandbox.dir}/plugins/tests/blProject">
+    <copy todir="${test.platform.sandbox.dir}/plugins/tests/blProject">
       <fileset dir="${base_dir}/IdeaPlugin/tests/blProject"/>
     </copy>
-  </target>
 
-  <target name="runTests" depends="loadJdkPath, loadIdeaPathVar, preparePluginsSandbox">
     <mkdir dir="${ideaPath}/java/mockJDK-1.7/jre/lib"/>
 
     <junit fork="true"
@@ -186,10 +224,10 @@
       <formatter type="xml"/>
       <sysproperty key="log4j.configuration" value="file:///${ideaPath}/bin/log.xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
-      <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
-      <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
-      <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
-      <sysproperty key="idea.log.path" value="${plugins.sandbox.dir}/log"/>
+      <sysproperty key="idea.config.path" value="${test.platform.sandbox.dir}/config"/>
+      <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
+      <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
+      <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.idea.java"/>
       <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
@@ -202,10 +240,10 @@
           <include name="junit-rt.jar"/>
         </fileset>
         <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-core/lib">
           <include name="*.jar"/>
         </fileset>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-idea-java/lib">
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-idea-java/lib">
           <include name="*.jar"/>
         </fileset>
         <pathelement path="${java.class.path}"/>
@@ -226,10 +264,10 @@
       <formatter type="xml"/>
       <sysproperty key="log4j.configuration" value="file:///${ideaPath}/bin/log.xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
-      <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
-      <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
-      <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
-      <sysproperty key="idea.log.path" value="${plugins.sandbox.dir}/log"/>
+      <sysproperty key="idea.config.path" value="${test.platform.sandbox.dir}/config"/>
+      <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
+      <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
+      <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
       <sysproperty key="idea.load.plugins.id"
                    value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.lang.editor.tests"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
@@ -245,10 +283,10 @@
           <include name="junit-rt.jar"/>
         </fileset>
         <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-core/lib">
           <include name="*.jar"/>
         </fileset>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-testing">
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-testing">
           <include name="**/*.jar"/>
         </fileset>
         <pathelement path="${java.class.path}"/>
@@ -267,10 +305,10 @@
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
-      <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
-      <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
-      <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
-      <sysproperty key="idea.log.path" value="${plugins.sandbox.dir}/log"/>
+      <sysproperty key="idea.config.path" value="${test.platform.sandbox.dir}/config"/>
+      <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
+      <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
+      <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.idea.java"/>
       <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="jdk.home.path" value="${jdkPath}"/>
@@ -293,7 +331,7 @@
         <!--The goal is to catch problems caused by NoClassDefFound in jps tests.-->
         <!--Keep in sync with plugin.xml-->
         <!--FIXME and it is an awful design AP-->
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-core/lib">
           <include name="mps-common.jar"/>
           <include name="mps-tool.jar"/>
           <include name="mps-core.jar"/>
@@ -310,10 +348,10 @@
           <include name="mps-behavior-api.jar"/>
           <include name="mps-behavior-runtime.jar"/>
         </fileset>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib/jps">
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-core/lib/jps">
           <include name="*.jar"/>
         </fileset>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-idea-java/lib">
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-idea-java/lib">
           <include name="**/*.jar"/>
         </fileset>
         <pathelement path="${java.class.path}"/>
@@ -323,7 +361,7 @@
 
   </target>
 
-  <target name="zip" depends="build">
+  <target name="zip" depends="loadIdeaPathVar, build">
     <ant antfile="mpsPluginDist.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
@@ -331,14 +369,14 @@
     </ant>
   </target>
 
-  <target name="install-plugin" depends="loadVars, build">
+  <target name="install-plugin" depends="loadIdeaPluginsPathVar, build, uninstall-plugin">
     <property name="pluginPath" value="${ideaPlugins}"/>
     <copy todir="${pluginPath}">
       <fileset dir="${build.home}/artifacts/mpsPlugin"/>
     </copy>
   </target>
 
-  <target name="uninstall-plugin" depends="loadVars">
+  <target name="uninstall-plugin" depends="loadIdeaPluginsPathVar">
     <property name="pluginPath" value="${ideaPlugins}"/>
     <delete dir="${pluginPath}/mps-build"/>
     <delete dir="${pluginPath}/mps-core"/>

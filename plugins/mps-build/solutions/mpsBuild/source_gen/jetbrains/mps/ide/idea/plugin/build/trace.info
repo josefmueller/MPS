@@ -17,12 +17,12 @@
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/5148601452480491524">
     <file name="mpsPlugin.xml">
-      <unit id="5148601452480491524" at="1,0,117,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPlugin" />
+      <unit id="5148601452480491524" at="1,0,113,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPlugin" />
     </file>
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/6936091511561272758">
     <file name="mpsPluginCore.xml">
-      <unit id="6936091511561272758" at="1,0,176,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPluginCore" />
+      <unit id="6936091511561272758" at="1,0,178,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPluginCore" />
     </file>
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/6977615362525216882">

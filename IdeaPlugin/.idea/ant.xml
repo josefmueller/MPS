@@ -11,7 +11,7 @@
         <property name="plugin.prefix" value="" />
         <property name="home.jdk" value="$JDKPath$" />
       </properties>
-      <executeOn event="beforeCompilation" target="preBuildCore" />
+      <executeOn event="beforeCompilation" target="buildLibs" />
     </buildFile>
   </component>
 </project>

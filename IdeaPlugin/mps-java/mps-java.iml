@@ -41,16 +41,9 @@
       <sourceFolder url="file://$MODULE_DIR$/models" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/mpsjava/basePlatform">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/basePlatform/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../plugins/mpsjava/platform">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source_gen" isTestSource="false" />
-    </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-core" />
-    <orderEntry type="module" module-name="mps-java-common" />
     <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.collections" level="project" />
     <orderEntry type="library" name="mps-collections" level="project" />
@@ -59,5 +52,7 @@
     <orderEntry type="library" name="mps-tuples" level="project" />
     <orderEntry type="library" name="mps-icons" level="project" />
     <orderEntry type="library" name="mps-openapi" level="project" />
+    <orderEntry type="library" name="mps-java-platform" level="project" />
+    <orderEntry type="library" name="mps-core-jars" level="project" />
   </component>
 </module>
