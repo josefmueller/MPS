@@ -236,7 +236,7 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
@@ -1386,6 +1386,41 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="4M8rp3EBytt" role="3cqZAp" />
+        <node concept="3SKdUt" id="4M8rp3EBzo9" role="3cqZAp">
+          <node concept="3SKdUq" id="4M8rp3EBzo8" role="3SKWNk">
+            <property role="3SKdUp" value="On new (171.4249) platform post startup activities frequently do not pass before waiter.wait0() check, so have to add flushAllEvents() here" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4M8rp3EBznY" role="3cqZAp">
+          <node concept="3fqX7Q" id="4M8rp3EBznZ" role="3clFbw">
+            <node concept="2OqwBi" id="4M8rp3EBzo0" role="3fr31v">
+              <node concept="2YIFZM" id="4M8rp3EB_IH" role="2Oq$k0">
+                <ref role="1Pybhc" to="zymn:~StartupManagerEx" resolve="StartupManagerEx" />
+                <ref role="37wK5l" to="zymn:~StartupManagerEx.getInstanceEx(com.intellij.openapi.project.Project):com.intellij.ide.startup.StartupManagerEx" resolve="getInstanceEx" />
+                <node concept="2OqwBi" id="4M8rp3EB_II" role="37wK5m">
+                  <node concept="37vLTw" id="4M8rp3EB_IJ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4_TMdeLkOoi" resolve="project" />
+                  </node>
+                  <node concept="liA8E" id="4M8rp3EB_IK" role="2OqNvi">
+                    <ref role="37wK5l" to="18ew:~Reference.get():java.lang.Object" resolve="get" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="4M8rp3EBzo3" role="2OqNvi">
+                <ref role="37wK5l" to="zymn:~StartupManagerEx.postStartupActivityPassed():boolean" resolve="postStartupActivityPassed" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="4M8rp3EBzo5" role="3clFbx">
+            <node concept="3clFbF" id="4M8rp3EBzo6" role="3cqZAp">
+              <node concept="1rXfSq" id="4M8rp3EBzo7" role="3clFbG">
+                <ref role="37wK5l" node="3eUNqOk4GBH" resolve="flushAllEvents" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="4M8rp3EByvs" role="3cqZAp" />
         <node concept="3clFbH" id="2u34iHEuLy5" role="3cqZAp" />
         <node concept="3clFbF" id="2u34iHEuLKn" role="3cqZAp">
           <node concept="2OqwBi" id="2u34iHEuMdr" role="3clFbG">
