@@ -17,6 +17,7 @@ package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.mps.openapi.persistence.NullDataSource.NullDataSourceType;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
@@ -225,7 +226,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   public DataSourceType getType() {
     String extension = FileUtil.getExtension(myFile.getPath());
     if (extension == null) {
-      throw new IllegalArgumentException("Null extension: " + myFile);
+      return NullDataSourceType.INSTANCE;
     }
     return FileExtensionDataSourceType.of(extension);
   }
