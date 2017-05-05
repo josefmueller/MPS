@@ -4793,17 +4793,12 @@
             <node concept="37vLTw" id="4hH4xQo_Mez" role="37wK5m">
               <ref role="3cqZAo" node="4hH4xQo_Mes" resolve="modules" />
             </node>
-            <node concept="2YIFZM" id="4hH4xQo_Me_" role="37wK5m">
-              <ref role="1Pybhc" to="t99v:3n7MNzO_xDq" resolve="MigrationCheckUtil" />
-              <ref role="37wK5l" to="t99v:3LLIJZBXV90" resolve="progressIndicatorToCallback" />
-              <node concept="37vLTw" id="4hH4xQo_MeA" role="37wK5m">
-                <ref role="3cqZAo" node="4hH4xQo_Mel" resolve="progressIndicator" />
-              </node>
-              <node concept="3cmrfG" id="4hH4xQo_MeB" role="37wK5m">
-                <property role="3cmrfH" value="0" />
-              </node>
-              <node concept="3cmrfG" id="4hH4xQo_MeC" role="37wK5m">
-                <property role="3cmrfH" value="1" />
+            <node concept="2ShNRf" id="2nQGvk0yrJl" role="37wK5m">
+              <node concept="1pGfFk" id="2nQGvk0yKjC" role="2ShVmc">
+                <ref role="37wK5l" to="mk8z:~ProgressMonitorAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolve="ProgressMonitorAdapter" />
+                <node concept="37vLTw" id="2nQGvk0yKBk" role="37wK5m">
+                  <ref role="3cqZAo" node="4hH4xQo_Mel" resolve="progressIndicator" />
+                </node>
               </node>
             </node>
             <node concept="3cmrfG" id="4hH4xQo_MeD" role="37wK5m">
@@ -7636,34 +7631,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3cpWs8" id="PobQbObbjU" role="3cqZAp">
-                <node concept="3cpWsn" id="PobQbObbjV" role="3cpWs9">
-                  <property role="TrG5h" value="count" />
-                  <node concept="10Oyi0" id="PobQbObbjT" role="1tU5fm" />
-                  <node concept="2OqwBi" id="PobQbObbjW" role="33vP2m">
-                    <node concept="37vLTw" id="PobQbObbjX" role="2Oq$k0">
-                      <ref role="3cqZAo" node="PobQbOawwl" resolve="modules" />
-                    </node>
-                    <node concept="34oBXx" id="PobQbObbjY" role="2OqNvi" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="PobQbOasux" role="3cqZAp">
-                <node concept="2OqwBi" id="PobQbOasAd" role="3clFbG">
-                  <node concept="37vLTw" id="PobQbOasuv" role="2Oq$k0">
-                    <ref role="3cqZAo" node="PobQbO9sX6" resolve="m" />
-                  </node>
-                  <node concept="liA8E" id="PobQbOasDy" role="2OqNvi">
-                    <ref role="37wK5l" to="yyf4:~ProgressMonitor.start(java.lang.String,int):void" resolve="start" />
-                    <node concept="Xl_RD" id="PobQbO9sW$" role="37wK5m">
-                      <property role="Xl_RC" value="Checking models..." />
-                    </node>
-                    <node concept="37vLTw" id="PobQbObbjZ" role="37wK5m">
-                      <ref role="3cqZAo" node="PobQbObbjV" resolve="count" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="PobQbOaWoa" role="3cqZAp">
                 <node concept="37vLTI" id="PobQbOaWBd" role="3clFbG">
                   <node concept="37vLTw" id="PobQbOaWo8" role="37vLTJ">
@@ -7675,43 +7642,9 @@
                     <node concept="37vLTw" id="PobQbOaVE8" role="37wK5m">
                       <ref role="3cqZAo" node="PobQbOawwl" resolve="modules" />
                     </node>
-                    <node concept="1rXfSq" id="6dkZ8D0EN1m" role="37wK5m">
-                      <ref role="37wK5l" node="78xBDbKao$f" resolve="frac2inc" />
-                      <node concept="37vLTw" id="78xBDbKaOUn" role="37wK5m">
-                        <ref role="3cqZAo" node="PobQbObbjV" resolve="count" />
-                      </node>
-                      <node concept="1bVj0M" id="78xBDbKaOhX" role="37wK5m">
-                        <node concept="37vLTG" id="78xBDbKaOhY" role="1bW2Oz">
-                          <property role="TrG5h" value="processed" />
-                          <node concept="10Oyi0" id="78xBDbKaOhZ" role="1tU5fm" />
-                        </node>
-                        <node concept="3clFbS" id="78xBDbKaOi0" role="1bW5cS">
-                          <node concept="3clFbF" id="78xBDbKaOi1" role="3cqZAp">
-                            <node concept="2OqwBi" id="78xBDbKaOi2" role="3clFbG">
-                              <node concept="37vLTw" id="78xBDbKaOi3" role="2Oq$k0">
-                                <ref role="3cqZAo" node="PobQbO9sX6" resolve="m" />
-                              </node>
-                              <node concept="liA8E" id="78xBDbKaOi4" role="2OqNvi">
-                                <ref role="37wK5l" to="yyf4:~ProgressMonitor.advance(int):void" resolve="advance" />
-                                <node concept="37vLTw" id="78xBDbKaOi5" role="37wK5m">
-                                  <ref role="3cqZAo" node="78xBDbKaOhY" resolve="processed" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="2nQGvk0yM33" role="37wK5m">
+                      <ref role="3cqZAo" node="PobQbO9sX6" resolve="m" />
                     </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="PobQbOaXI_" role="3cqZAp">
-                <node concept="2OqwBi" id="PobQbOaXQI" role="3clFbG">
-                  <node concept="37vLTw" id="PobQbOaXIz" role="2Oq$k0">
-                    <ref role="3cqZAo" node="PobQbO9sX6" resolve="m" />
-                  </node>
-                  <node concept="liA8E" id="PobQbOaY2j" role="2OqNvi">
-                    <ref role="37wK5l" to="yyf4:~ProgressMonitor.done():void" resolve="done" />
                   </node>
                 </node>
               </node>

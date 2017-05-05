@@ -167,7 +167,6 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
-      <concept id="1070534513062" name="jetbrains.mps.baseLanguage.structure.DoubleType" flags="in" index="10P55v" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
@@ -4797,11 +4796,9 @@
                       <node concept="37vLTw" id="3n7MNzOJZrc" role="37wK5m">
                         <ref role="3cqZAo" node="6Sxc5MiBujK" resolve="modules" />
                       </node>
-                      <node concept="1bVj0M" id="6JtYk_H6EcX" role="37wK5m">
-                        <node concept="3clFbS" id="6JtYk_H6EcZ" role="1bW5cS" />
-                        <node concept="37vLTG" id="6JtYk_H6Ehe" role="1bW2Oz">
-                          <property role="TrG5h" value="fraction" />
-                          <node concept="10P55v" id="6JtYk_H7SlD" role="1tU5fm" />
+                      <node concept="2ShNRf" id="2nQGvk0yR15" role="37wK5m">
+                        <node concept="1pGfFk" id="2nQGvk0z6ZC" role="2ShVmc">
+                          <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
                         </node>
                       </node>
                     </node>
@@ -5076,11 +5073,9 @@
                     <node concept="37vLTw" id="3n7MNzOJZQZ" role="37wK5m">
                       <ref role="3cqZAo" node="6Sxc5MitX7j" resolve="modules" />
                     </node>
-                    <node concept="1bVj0M" id="6JtYk_H6Wl9" role="37wK5m">
-                      <node concept="3clFbS" id="6JtYk_H6Wla" role="1bW5cS" />
-                      <node concept="37vLTG" id="6JtYk_H6Wlo" role="1bW2Oz">
-                        <property role="TrG5h" value="fraction" />
-                        <node concept="10P55v" id="6JtYk_H7T0g" role="1tU5fm" />
+                    <node concept="2ShNRf" id="2nQGvk0z7fO" role="37wK5m">
+                      <node concept="1pGfFk" id="2nQGvk0z7fP" role="2ShVmc">
+                        <ref role="37wK5l" to="mk8z:~EmptyProgressMonitor.&lt;init&gt;()" resolve="EmptyProgressMonitor" />
                       </node>
                     </node>
                   </node>

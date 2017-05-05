@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class AntTaskExecutionUtil {
   public static boolean migrate(final Project project) throws Exception {
@@ -43,10 +43,7 @@ public class AntTaskExecutionUtil {
         }
 
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
-        ok.value = !(MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
-          public void invoke(Double fraction) {
-          }
-        }));
+        ok.value = !(MigrationCheckUtil.haveProblems(modules, new EmptyProgressMonitor()));
 
         if (!(ok.value)) {
           throw new RuntimeException("Pre-check failed");
@@ -87,10 +84,7 @@ public class AntTaskExecutionUtil {
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
-        ok.value = MigrationCheckUtil.haveProblems(modules, new _FunctionTypes._void_P1_E0<Double>() {
-          public void invoke(Double fraction) {
-          }
-        });
+        ok.value = MigrationCheckUtil.haveProblems(modules, new EmptyProgressMonitor());
       }
     });
     if (!(ok.value)) {

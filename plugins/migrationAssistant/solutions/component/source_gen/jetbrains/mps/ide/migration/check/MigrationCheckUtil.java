@@ -26,14 +26,16 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.migration.runtime.base.MigrateManually;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
@@ -109,11 +111,12 @@ public class MigrationCheckUtil {
     return result;
   }
 
-  public static boolean haveProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback) {
-    return CollectionSequence.fromCollection(getProblems(modules, progressCallback, 1)).isNotEmpty();
+  public static boolean haveProblems(Iterable<SModule> modules, @NotNull ProgressMonitor pm) {
+    return CollectionSequence.fromCollection(getProblems(modules, pm, 1)).isNotEmpty();
   }
 
-  public static Collection<Problem> getProblems(Iterable<SModule> modules, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, final int maxErrors) {
+  public static Collection<Problem> getProblems(Iterable<SModule> modules, @NotNull ProgressMonitor pm, final int maxErrors) {
+    pm.start("Checking...", 10 + Sequence.fromIterable(modules).count());
     final List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
 
     Collection<DependencyProblem> badModuleProblems = findBadModules(modules, maxErrors);
@@ -123,75 +126,66 @@ public class MigrationCheckUtil {
       return result;
     }
 
-    if (progressCallback != null) {
-      progressCallback.invoke(0.1);
-    }
+    pm.advance(10);
 
     final Set<SLanguage> missingLangs = SetSequence.fromSet(new HashSet<SLanguage>());
     final Set<SAbstractConcept> missingConcepts = SetSequence.fromSet(new HashSet<SAbstractConcept>());
     final Set<SConceptFeature> missingFeatures = SetSequence.fromSet(new HashSet<SConceptFeature>());
 
-    Iterable<EditableSModel> models = Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {
-      public Iterable<SModel> translate(SModule it) {
-        return it.getModels();
-      }
-    }).ofType(EditableSModel.class);
-    int modelsCount = Sequence.fromIterable(models).count();
-    int processedModels = 0;
-
-    // find missing concepts, when language's not missing 
-    // find missing concept features when concept's not missing 
-    for (EditableSModel model : Sequence.fromIterable(models)) {
-      ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<ValidationProblem>() {
-        public boolean process(ValidationProblem vp) {
-          if (vp instanceof LanguageMissingError) {
-            LanguageMissingError err = (LanguageMissingError) vp;
-            if (SetSequence.fromSet(missingLangs).contains(err.getLanguage())) {
-              return true;
-            }
-            SetSequence.fromSet(missingLangs).addElement(err.getLanguage());
-            if (err.isCompletelyAbsent()) {
-              ListSequence.fromList(result).addElement(new LanguageAbsentInRepoProblem(err.getLanguage(), err.getNode()));
+    for (SModule module : Sequence.fromIterable(modules)) {
+      pm.step(NameUtil.compactNamespace(module.getModuleName()));
+      // find missing concepts, when language's not missing 
+      // find missing concept features when concept's not missing 
+      for (EditableSModel model : Sequence.fromIterable(((Iterable<SModel>) module.getModels())).ofType(EditableSModel.class)) {
+        ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<ValidationProblem>() {
+          public boolean process(ValidationProblem vp) {
+            if (vp instanceof LanguageMissingError) {
+              LanguageMissingError err = (LanguageMissingError) vp;
+              if (SetSequence.fromSet(missingLangs).contains(err.getLanguage())) {
+                return true;
+              }
+              SetSequence.fromSet(missingLangs).addElement(err.getLanguage());
+              if (err.isCompletelyAbsent()) {
+                ListSequence.fromList(result).addElement(new LanguageAbsentInRepoProblem(err.getLanguage(), err.getNode()));
+              } else {
+                ListSequence.fromList(result).addElement(new LanguageNotLoadedProblem(err.getLanguage(), err.getNode()));
+              }
+            } else if (vp instanceof ConceptMissingError) {
+              ConceptMissingError err = (ConceptMissingError) vp;
+              SConcept concept = err.getConcept();
+              if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept)) {
+                return true;
+              }
+              SetSequence.fromSet(missingConcepts).addElement(concept);
+              ListSequence.fromList(result).addElement(new ConceptMissingProblem(concept, err.getNode()));
+            } else if (vp instanceof ConceptFeatureMissingError) {
+              ConceptFeatureMissingError err = (ConceptFeatureMissingError) vp;
+              SAbstractConcept concept = err.getFeature().getOwner();
+              if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept) || SetSequence.fromSet(missingFeatures).contains(err.getFeature())) {
+                return true;
+              }
+              SetSequence.fromSet(missingFeatures).addElement(err.getFeature());
+              ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getFeature(), err.getNode(), err.getMessage()));
+            } else if (vp instanceof BrokenReferenceError) {
+              BrokenReferenceError err = (BrokenReferenceError) vp;
+              ListSequence.fromList(result).addElement(new BrokenReferenceProblem(err.getReference(), err.getMessage()));
             } else {
-              ListSequence.fromList(result).addElement(new LanguageNotLoadedProblem(err.getLanguage(), err.getNode()));
-            }
-          } else if (vp instanceof ConceptMissingError) {
-            ConceptMissingError err = (ConceptMissingError) vp;
-            SConcept concept = err.getConcept();
-            if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept)) {
+              // ignore other errors 
               return true;
             }
-            SetSequence.fromSet(missingConcepts).addElement(concept);
-            ListSequence.fromList(result).addElement(new ConceptMissingProblem(concept, err.getNode()));
-          } else if (vp instanceof ConceptFeatureMissingError) {
-            ConceptFeatureMissingError err = (ConceptFeatureMissingError) vp;
-            SAbstractConcept concept = err.getFeature().getOwner();
-            if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept) || SetSequence.fromSet(missingFeatures).contains(err.getFeature())) {
-              return true;
-            }
-            SetSequence.fromSet(missingFeatures).addElement(err.getFeature());
-            ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getFeature(), err.getNode(), err.getMessage()));
-          } else if (vp instanceof BrokenReferenceError) {
-            BrokenReferenceError err = (BrokenReferenceError) vp;
-            ListSequence.fromList(result).addElement(new BrokenReferenceProblem(err.getReference(), err.getMessage()));
-          } else {
-            // ignore other errors 
-            return true;
+
+            return ListSequence.fromList(result).count() < maxErrors;
           }
-
-          return ListSequence.fromList(result).count() < maxErrors;
+        });
+        pm.advance(1);
+        if (ListSequence.fromList(result).count() >= maxErrors) {
+          pm.done();
+          return result;
         }
-      });
-      if (ListSequence.fromList(result).count() >= maxErrors) {
-        return result;
-      }
-
-      processedModels++;
-      if (progressCallback != null) {
-        progressCallback.invoke(0.1 + 0.9 * processedModels / modelsCount);
       }
     }
 
+    pm.done();
     return result;
   }
 

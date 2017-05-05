@@ -291,14 +291,7 @@ public class MigrationTask {
     mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         List<SModule> modules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).toListSequence();
-        int count = ListSequence.fromList(modules).count();
-        m.start("Checking models...", count);
-        hasErrors.value = MigrationCheckUtil.haveProblems(modules, frac2inc(count, new _FunctionTypes._void_P1_E0<Integer>() {
-          public void invoke(Integer processed) {
-            m.advance(processed);
-          }
-        }));
-        m.done();
+        hasErrors.value = MigrationCheckUtil.haveProblems(modules, m);
       }
     });
     return hasErrors.value;

@@ -8,6 +8,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 
 public class PreCheckError extends MigrationErrorDescriptor {
   private boolean myCanIgnore;
@@ -21,7 +22,7 @@ public class PreCheckError extends MigrationErrorDescriptor {
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
     Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myProject);
-    return MigrationCheckUtil.getProblems(modules, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 1), 100);
+    return MigrationCheckUtil.getProblems(modules, new ProgressMonitorAdapter(progressIndicator), 100);
   }
 
   @Override
