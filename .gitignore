@@ -41,5 +41,5 @@ teamcity-info.xml
 /bin/linux
 /bin/mac
 /bin/win
-/build/conf
+/build/dependencies
 /build/resources/mps
