@@ -132,6 +132,7 @@
 
     <!--
     <applicationService serviceImplementation="com.intellij.codeInsight.CodeInsightSettings"/>
+    <projectService serviceImplementation="com.intellij.codeInsight.CodeInsightWorkspaceSettings"/>
 
     <applicationService serviceInterface="com.intellij.openapi.roots.impl.libraries.ApplicationLibraryTable"
                         serviceImplementation="com.intellij.openapi.roots.impl.libraries.ExportableApplicationLibraryTable"/>
@@ -397,9 +398,11 @@
     <projectService serviceInterface="com.intellij.slicer.SliceManager"
                     serviceImplementation="com.intellij.slicer.SliceManager"/>
 
+    <applicationService serviceInterface="com.intellij.openapi.roots.ExternalProjectSystemRegistry"
+                        serviceImplementation="com.intellij.openapi.roots.impl.ExternalProjectSystemRegistryImpl"/>
     <moduleService serviceInterface="com.intellij.openapi.components.impl.stores.IComponentStore"
                    serviceImplementation="com.intellij.configurationStore.ModuleStoreImpl"
-                   testServiceImplementation="com.intellij.configurationStore.ModuleStoreImpl$TestModuleStore"/>
+                   testServiceImplementation="com.intellij.configurationStore.TestModuleStore"/>
     <moduleService serviceInterface="com.intellij.openapi.roots.TestModuleProperties"
                    serviceImplementation="com.intellij.openapi.roots.impl.TestModulePropertiesImpl"/>
 
@@ -762,6 +765,7 @@
 
     <editorOptionsProvider instance="com.intellij.application.options.editor.GutterIconsConfigurable" id="editor.preferences.gutterIcons"
                            displayName="Gutter Icons"/>
+    <search.optionContributor implementation="com.intellij.application.options.editor.GutterIconsSearchableOptionContributor"/>
     -->
 
     <!-- Colors & Fonts-->
@@ -795,6 +799,12 @@
     </intentionAction>
     <intentionAction>
       <className>com.intellij.codeInsight.hints.BlacklistCurrentMethodIntention</className>
+    </intentionAction>
+    <intentionAction>
+      <className>com.intellij.codeInsight.hints.DisableCustomHintsOption</className>
+    </intentionAction>
+    <intentionAction>
+      <className>com.intellij.codeInsight.hints.EnableCustomHintsOption</className>
     </intentionAction>
     <intentionAction>
       <className>com.intellij.codeInsight.intention.impl.QuickEditAction</className>
@@ -891,6 +901,9 @@
     <!--
     <toolWindow id="Favorites" anchor="left" icon="AllIcons.Toolwindows.ToolWindowFavorites" secondary="true"
                 factoryClass="com.intellij.ide.projectView.impl.FavoritesViewToolWindowFactory"/>
+    <toolWindow id="Run Dashboard" anchor="bottom" icon="AllIcons.Toolwindows.ToolWindowRun"
+                factoryClass="com.intellij.execution.dashboard.RunDashboardToolWindowFactory"
+                conditionClass="com.intellij.execution.dashboard.RunDashboardToolWindowFactory" />
 
     <psi.fileReferenceHelper implementation="com.intellij.psi.impl.source.resolve.reference.impl.providers.PsiFileReferenceHelper"/>
     <psi.fileReferenceHelper implementation="com.intellij.psi.impl.source.resolve.reference.impl.providers.JarFileReferenceHelper"/>
@@ -932,7 +945,7 @@
                      level="WARNING" implementationClass="com.intellij.codeInspection.TodoCommentInspection"/>
     <localInspection shortName="LongLine" bundle="messages.InspectionsBundle" key="long.line.display.name"
                      groupKey="inspection.general.tools.group.name" enabledByDefault="false"
-                     level="WARNING" implementationClass="com.intellij.codeInspection.LongLineInspection"/>
+                     level="WARNING" implementationClass="com.intellij.codeInspection.longLine.LongLineInspection"/>
 
     <annotator language="TEXT" implementationClass="com.intellij.codeInsight.highlighting.LargeFilesAnnotator"/>
 
@@ -972,6 +985,7 @@
     <statistics.usagesCollector implementation="com.intellij.execution.impl.statistics.TemporaryRunConfigurationTypeUsagesCollector"/>
     <statistics.usagesCollector implementation="com.intellij.openapi.fileTypes.FileTypeUsagesCollector"/>
     <statistics.usagesCollector implementation="com.intellij.internal.statistic.editor.EditorSettingsStatisticsCollector"/>
+    <statistics.usagesCollector implementation="com.intellij.internal.statistic.editor.EditorSettingsStatisticsCollector$ProjectUsages"/>
 
     <renamePsiElementProcessor implementation="com.intellij.refactoring.rename.RenamePsiFileProcessor" order="last"/>
     <renameInputValidator implementation="com.intellij.refactoring.rename.RenameToIgnoredDirectoryFileInputValidator" order="last"/>
@@ -1080,6 +1094,9 @@
     <projectService serviceInterface="com.intellij.openapi.preview.PreviewManager"
                     serviceImplementation="com.intellij.openapi.preview.impl.PreviewManagerImpl"/>
 
+    <applicationService serviceInterface="com.intellij.find.impl.FindPopupScopeUIProvider"
+                        serviceImplementation="com.intellij.find.impl.FindPopupScopeUIProviderImpl"/>
+
     <search.optionContributor implementation="com.intellij.codeInspection.ex.InspectionSearchableOptionContributor"/>
 
     <fileIndentOptionsProvider implementation="com.intellij.psi.codeStyle.DetectableIndentOptionsProvider" order="last"/>
@@ -1092,10 +1109,18 @@
       name="Intellij IDEA code style XML"
       schemeClass="com.intellij.psi.codeStyle.CodeStyleScheme"
       implementationClass="com.intellij.application.options.schemes.SerializableSchemeExporter"/>
+    <schemeExporter
+      name="Intellij IDEA color scheme (.icls)"
+      schemeClass="com.intellij.openapi.editor.colors.EditorColorsScheme"
+      implementationClass="com.intellij.application.options.colors.ColorSchemeExporter"/>
     <schemeImporter
       name="Intellij IDEA code style XML"
       schemeClass="com.intellij.psi.codeStyle.CodeStyleScheme"
       implementationClass="com.intellij.psi.impl.source.codeStyle.CodeStyleSchemeXmlImporter"/>
+    <schemeImporter
+      name="Intellij IDEA color scheme (.icls) or settings (.jar)"
+      schemeClass="com.intellij.openapi.editor.colors.EditorColorsScheme"
+      implementationClass="com.intellij.application.options.colors.ColorSchemeImporter"/>
 
     <schemeExporter
       name="Intellij IDEA inspection profile XML"
