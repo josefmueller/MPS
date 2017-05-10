@@ -68,7 +68,7 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
               for (final Method method : methods) {
                 if (method.getName().equals("execute")) {
                   beforeCallback.run();
-                  model.getRepository().getModelAccess().executeCommand(new Runnable() {
+                  context.getProject().getRepository().getModelAccess().executeCommand(new Runnable() {
                     public void run() {
                       try {
                         method.invoke(null, new Object[]{context, console});

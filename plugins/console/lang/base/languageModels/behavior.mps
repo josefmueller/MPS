@@ -708,14 +708,17 @@
                                                   </node>
                                                 </node>
                                               </node>
-                                              <node concept="2OqwBi" id="4tEWdMGBhqE" role="ukAjM">
-                                                <node concept="2JrnkZ" id="4tEWdMGBfO6" role="2Oq$k0">
-                                                  <node concept="37vLTw" id="4tEWdMGBdIH" role="2JrQYb">
-                                                    <ref role="3cqZAo" node="1BJjlnrBHXK" resolve="model" />
+                                              <node concept="2OqwBi" id="7W5C2rLZcqh" role="ukAjM">
+                                                <node concept="2OqwBi" id="7W5C2rLZbgx" role="2Oq$k0">
+                                                  <node concept="37vLTw" id="7W5C2rLZaA2" role="2Oq$k0">
+                                                    <ref role="3cqZAo" node="3MPHfSuOT_T" resolve="context" />
+                                                  </node>
+                                                  <node concept="liA8E" id="7W5C2rLZbMs" role="2OqNvi">
+                                                    <ref role="37wK5l" to="qgo0:3MPHfSuPT3Y" resolve="getProject" />
                                                   </node>
                                                 </node>
-                                                <node concept="liA8E" id="4tEWdMGBi3X" role="2OqNvi">
-                                                  <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                                <node concept="liA8E" id="7W5C2rLZd2s" role="2OqNvi">
+                                                  <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                                                 </node>
                                               </node>
                                             </node>
