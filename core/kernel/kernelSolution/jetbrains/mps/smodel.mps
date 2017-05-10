@@ -469,6 +469,23 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="29TU51taVp1" role="jymVt">
+      <property role="TrG5h" value="getLanguageDescriptorDevKit" />
+      <node concept="3uibUv" id="29TU51taVt2" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3Tm1VV" id="29TU51taVp4" role="1B3o_S" />
+      <node concept="3clFbS" id="29TU51taVp5" role="3clF47">
+        <node concept="3clFbF" id="29TU51taVx6" role="3cqZAp">
+          <node concept="37shsh" id="29TU51taVx4" role="3clFbG">
+            <node concept="20RdaH" id="29TU51taVyE" role="37shsm">
+              <property role="20Rdg5" value="00000000-0000-4000-0000-3c66972ccb47" />
+              <property role="20Rdg7" value="jetbrains.mps.devkit.language-descriptor" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2YIFZL" id="5HHFAyrKchd" role="jymVt">
       <property role="TrG5h" value="getGeneralPurposeDevKit" />
       <node concept="3uibUv" id="5HHFAyrKcnK" role="3clF45">

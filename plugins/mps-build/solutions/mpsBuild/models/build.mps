@@ -2936,6 +2936,20 @@
               </node>
             </node>
           </node>
+          <node concept="28jJK3" id="XNypp41pcH" role="39821P">
+            <node concept="398BVA" id="XNypp41pcI" role="28jJRO">
+              <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+              <node concept="2Ry0Ak" id="XNypp41pcJ" role="iGT6I">
+                <property role="2Ry0Am" value="core" />
+                <node concept="2Ry0Ak" id="XNypp41pcK" role="2Ry0An">
+                  <property role="2Ry0Am" value="devkits" />
+                  <node concept="2Ry0Ak" id="XNypp41pHp" role="2Ry0An">
+                    <property role="2Ry0Am" value="jetbrains.mps.devkit.language-descriptor.devkit" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="3_J27D" id="16hzwWwBajW" role="Nbhlr">
           <node concept="3Mxwew" id="16hzwWwBajX" role="3MwsjC">
@@ -6148,6 +6162,26 @@
         </node>
         <node concept="3LEDTy" id="4cy5EtF8bFn" role="3LEDUa">
           <ref role="3LEDTV" node="7Kfy9QB6L9I" resolve="jetbrains.mps.lang.sharedConcepts" />
+        </node>
+      </node>
+      <node concept="3LEwk6" id="XNypp41qIN" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.devkit.language-descriptor" />
+        <property role="3LESm3" value="00000000-0000-4000-0000-3c66972ccb47" />
+        <node concept="398BVA" id="XNypp41rfZ" role="3LF7KH">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="XNypp41rKh" role="iGT6I">
+            <property role="2Ry0Am" value="core" />
+            <node concept="2Ry0Ak" id="XNypp41rKk" role="2Ry0An">
+              <property role="2Ry0Am" value="devkits" />
+              <node concept="2Ry0Ak" id="XNypp41th3" role="2Ry0An">
+                <property role="2Ry0Am" value="jetbrains.mps.devkit.language-descriptor.devkit" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3LEDTy" id="XNypp41tLj" role="3LEDUa">
+          <ref role="3LEDTV" node="7Kfy9QB6L68" resolve="jetbrains.mps.lang.descriptor" />
         </node>
       </node>
     </node>

@@ -13518,6 +13518,130 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="XNypp45ZYy" role="3cqZAp">
+          <node concept="3SKdUq" id="XNypp45ZY$" role="3SKWNk">
+            <property role="3SKdUp" value="any language module needs a devkit LDMP injects into lang@descriptor model." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="XNypp47BRQ" role="3cqZAp">
+          <node concept="3SKdUq" id="XNypp47BRS" role="3SKWNk">
+            <property role="3SKdUp" value=" Do I care if I add it twice (if there's one already)?" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="XNypp45W5h" role="3cqZAp">
+          <node concept="3cpWsn" id="XNypp45W5i" role="3cpWs9">
+            <property role="TrG5h" value="langDescriptorDevkit" />
+            <node concept="3Tqbb2" id="XNypp45W5f" role="1tU5fm">
+              <ref role="ehGHo" to="kdzh:hS0KzPOwoe" resolve="BuildMps_DevKit" />
+            </node>
+            <node concept="1PxgMI" id="XNypp45W5j" role="33vP2m">
+              <property role="1BlNFB" value="true" />
+              <node concept="chp4Y" id="XNypp45W5k" role="3oSUPX">
+                <ref role="cht4Q" to="kdzh:hS0KzPOwoe" resolve="BuildMps_DevKit" />
+              </node>
+              <node concept="2OqwBi" id="XNypp45W5l" role="1m5AlR">
+                <node concept="37vLTw" id="XNypp45W5m" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6m8wrPAU3pr" resolve="myVisibleModules" />
+                </node>
+                <node concept="liA8E" id="XNypp45W5n" role="2OqNvi">
+                  <ref role="37wK5l" node="4fCiNXDAqpX" resolve="resolve" />
+                  <node concept="2YIFZM" id="XNypp45W5o" role="37wK5m">
+                    <ref role="37wK5l" to="cttk:29TU51taVp1" resolve="getLanguageDescriptorDevKit" />
+                    <ref role="1Pybhc" to="cttk:4pBxc6EfAk4" resolve="BootstrapLanguages" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="XNypp45XRD" role="3cqZAp">
+          <node concept="3clFbS" id="XNypp45XRF" role="3clFbx">
+            <node concept="3clFbF" id="XNypp460IS" role="3cqZAp">
+              <node concept="1rXfSq" id="XNypp460IQ" role="3clFbG">
+                <ref role="37wK5l" node="6m8wrPAU4fb" resolve="report" />
+                <node concept="3cpWs3" id="XNypp4620S" role="37wK5m">
+                  <node concept="Xl_RD" id="XNypp460Pk" role="3uHU7B">
+                    <property role="Xl_RC" value="cannot find language descriptor devkit in dependencies for " />
+                  </node>
+                  <node concept="2OqwBi" id="XNypp462t7" role="3uHU7w">
+                    <node concept="37vLTw" id="XNypp462aH" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
+                    </node>
+                    <node concept="3TrcHB" id="XNypp462FM" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="XNypp45Z5y" role="3clFbw">
+            <node concept="10Nm6u" id="XNypp460Bz" role="3uHU7w" />
+            <node concept="37vLTw" id="XNypp45YBu" role="3uHU7B">
+              <ref role="3cqZAo" node="XNypp45W5i" resolve="langDescriptorDevkit" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="XNypp464Se" role="9aQIa">
+            <node concept="3clFbS" id="XNypp464Sf" role="9aQI4">
+              <node concept="3cpWs8" id="XNypp465HL" role="3cqZAp">
+                <node concept="3cpWsn" id="XNypp465HM" role="3cpWs9">
+                  <property role="TrG5h" value="dk" />
+                  <node concept="3Tqbb2" id="XNypp465HN" role="1tU5fm">
+                    <ref role="ehGHo" to="kdzh:hS0KzPPrL9" resolve="BuildMps_ModuleDependencyOnDevKit" />
+                  </node>
+                  <node concept="2OqwBi" id="XNypp465HO" role="33vP2m">
+                    <node concept="2OqwBi" id="XNypp465HP" role="2Oq$k0">
+                      <node concept="37vLTw" id="XNypp465HQ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
+                      </node>
+                      <node concept="I4A8Y" id="XNypp465HR" role="2OqNvi" />
+                    </node>
+                    <node concept="I8ghe" id="XNypp465HS" role="2OqNvi">
+                      <ref role="I8UWU" to="kdzh:hS0KzPPrL9" resolve="BuildMps_ModuleDependencyOnDevKit" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="XNypp466nd" role="3cqZAp">
+                <node concept="37vLTI" id="XNypp4678G" role="3clFbG">
+                  <node concept="37vLTw" id="XNypp467le" role="37vLTx">
+                    <ref role="3cqZAo" node="XNypp45W5i" resolve="langDescriptorDevkit" />
+                  </node>
+                  <node concept="2OqwBi" id="XNypp466Fo" role="37vLTJ">
+                    <node concept="37vLTw" id="XNypp466nb" role="2Oq$k0">
+                      <ref role="3cqZAo" node="XNypp465HM" resolve="dk" />
+                    </node>
+                    <node concept="3TrEf2" id="XNypp466SG" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:hS0KzPPrLa" resolve="devkit" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="XNypp465dH" role="3cqZAp">
+                <node concept="2OqwBi" id="XNypp465dI" role="3clFbG">
+                  <node concept="2OqwBi" id="XNypp465dJ" role="2Oq$k0">
+                    <node concept="1PxgMI" id="XNypp465dK" role="2Oq$k0">
+                      <node concept="37vLTw" id="XNypp465dL" role="1m5AlR">
+                        <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
+                      </node>
+                      <node concept="chp4Y" id="XNypp465dM" role="3oSUPX">
+                        <ref role="cht4Q" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
+                      </node>
+                    </node>
+                    <node concept="3Tsc0h" id="XNypp465dN" role="2OqNvi">
+                      <ref role="3TtcxE" to="kdzh:4zCbl23d1MS" resolve="dependencies" />
+                    </node>
+                  </node>
+                  <node concept="TSZUe" id="XNypp465dO" role="2OqNvi">
+                    <node concept="37vLTw" id="XNypp467tH" role="25WWJ7">
+                      <ref role="3cqZAo" node="XNypp465HM" resolve="dk" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm6S6" id="41_NtKZ_pUd" role="1B3o_S" />
       <node concept="3cqZAl" id="41_NtKZ_Ggp" role="3clF45" />

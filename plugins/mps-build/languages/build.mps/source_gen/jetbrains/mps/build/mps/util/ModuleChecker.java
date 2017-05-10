@@ -333,6 +333,16 @@ public class ModuleChecker {
         ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"))).addElement(ul);
       }
     }
+    // any language module needs a devkit LDMP injects into lang@descriptor model. 
+    //  Do I care if I add it twice (if there's one already)? 
+    SNode langDescriptorDevkit = SNodeOperations.as(myVisibleModules.resolve(BootstrapLanguages.getLanguageDescriptorDevKit()), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"));
+    if (langDescriptorDevkit == null) {
+      report("cannot find language descriptor devkit in dependencies for " + SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    } else {
+      SNode dk = SModelOperations.createNewNode(SNodeOperations.getModel(myModule), null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d5bc49L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit"));
+      SLinkOperations.setTarget(dk, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d5bc49L, 0x4780308f5d5bc4aL, "devkit"), langDescriptorDevkit);
+      ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"))).addElement(dk);
+    }
   }
 
   private void processExtendedLanguages(ModuleChecker.CheckType type, List<SNode> previous) {

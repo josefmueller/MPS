@@ -32,8 +32,12 @@ import jetbrains.mps.smodel.SnapshotModelData;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
+import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.Logger;
+import org.jdom.Document;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.event.SNodeAddEvent;
 import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
@@ -236,7 +240,8 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
      */
     void updateGenerationLanguages() {
       jetbrains.mps.smodel.SModel m = getSModel();
-      addEngagedOnGenerationLanguage(BootstrapLanguages.getLanguageDescriptorLang());
+      m.addDevKit(BootstrapLanguages.getLanguageDescriptorDevKit());
+      m.addEngagedOnGenerationLanguage(BootstrapLanguages.getLanguageDescriptorLang());
       Set<SLanguage> importsToRemove = new HashSet<>(m.usedLanguages()); // calculating the delta
       Set<SLanguage> importsToAdd = new HashSet<>();
       Collection<SModel> aspectModels = LanguageAspectSupport.getAspectModels(myModule);
@@ -276,13 +281,21 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     @Override
     public String getModelHash() {
       String hash = myHash;
-      if (hash != null) return hash;
+      if (hash != null) {
+        return hash;
+      }
 
       IFile descriptorFile = myModule.getDescriptorFile();
 
-      ByteArrayOutputStream output = new ByteArrayOutputStream();
-      LanguageDescriptorPersistence.saveLanguageDescriptor(output, myModule.getModuleDescriptor(), MacrosFactory.forModuleFile(descriptorFile));
-      hash = ModelDigestUtil.hashText(output.toString());
+      try {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        Element xmlElement = new LanguageDescriptorPersistence(MacrosFactory.forModuleFile(descriptorFile)).save(myModule.getModuleDescriptor());
+        JDOMUtil.writeDocument(new Document(xmlElement), output);
+        hash = ModelDigestUtil.hashText(output.toString());
+      } catch (Exception ex) {
+        Logger.getLogger(LanguageDescriptorModelProvider.class).error("Failed to detect changes in a module descriptor", ex);
+        return null;
+      }
 
       BigInteger modelHash = new BigInteger(hash, Character.MAX_RADIX);
       for (SModel aspModel : LanguageAspectSupport.getAspectModels(myModule)) {

@@ -456,6 +456,9 @@
     <copy todir="${build.layout}/languages/devkits">
       <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.templates.devkit" />
     </copy>
+    <copy todir="${build.layout}/languages/devkits">
+      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-descriptor.devkit" />
+    </copy>
     <mkdir dir="${build.layout}/languages/make" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.make.facet.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.make.facet.jar/META-INF" />
@@ -5761,6 +5764,7 @@
         <module file="${mps_home}/languages/baseLanguage/baseLanguageInternal/jetbrains.mps.baseLanguageInternal.mpl" bootstrap="true" />
         <module file="${mps_home}/plugins/mps-core/languages/core.xml.sax/jetbrains.mps.core.xml.sax.mpl" bootstrap="true" />
         <module file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-descriptor.devkit" />
         <module file="${mps_home}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" bootstrap="true" />

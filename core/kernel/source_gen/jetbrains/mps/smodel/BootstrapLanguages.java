@@ -32,6 +32,9 @@ public class BootstrapLanguages {
   public static SLanguage getLanguageDescriptorLang() {
     return MetaAdapterFactory.getLanguage(0xf4ad079dbc714ffbL, 0x96009328705cf998L, "jetbrains.mps.lang.descriptor");
   }
+  public static SModuleReference getLanguageDescriptorDevKit() {
+    return PersistenceFacade.getInstance().createModuleReference("00000000-0000-4000-0000-3c66972ccb47(jetbrains.mps.devkit.language-descriptor)");
+  }
   public static SModuleReference getGeneralPurposeDevKit() {
     return PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)");
   }
