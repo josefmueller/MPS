@@ -209,7 +209,7 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -806,7 +806,7 @@
                         <ref role="37wK5l" node="4tDMPuHd$TR" resolve="getRunManager" />
                       </node>
                       <node concept="liA8E" id="3PIszklmntM" role="2OqNvi">
-                        <ref role="37wK5l" to="zjj4:~RunManagerImpl.getAllConfigurations():com.intellij.execution.configurations.RunConfiguration[]" resolve="getAllConfigurations" />
+                        <ref role="37wK5l" to="3v5a:~RunManager.getAllConfigurations():com.intellij.execution.configurations.RunConfiguration[]" resolve="getAllConfigurations" />
                       </node>
                     </node>
                     <node concept="39bAoz" id="3PIszklmntN" role="2OqNvi" />
