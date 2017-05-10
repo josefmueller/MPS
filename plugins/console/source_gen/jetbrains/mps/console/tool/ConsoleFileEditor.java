@@ -18,6 +18,7 @@ import com.intellij.openapi.fileEditor.FileEditorLocation;
 import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.util.Key;
 import com.intellij.openapi.editor.Document;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 
 public class ConsoleFileEditor implements DocumentsEditor {
@@ -131,7 +132,8 @@ public class ConsoleFileEditor implements DocumentsEditor {
     if (myDisposed) {
       return new Document[0];
     }
-    Document doc = MPSUndoUtil.getDoc(myEditor.getEditorContext().getRepository(), myEditor.getEditedNodePointer());
+    SNodeReference contextNode = myEditor.getCommandContext().getContextNode().getReference();
+    Document doc = MPSUndoUtil.getDoc(myEditor.getEditorContext().getRepository(), contextNode);
     return (doc == null ? new Document[0] : new Document[]{doc});
   }
 }
