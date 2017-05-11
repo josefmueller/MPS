@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 
@@ -50,22 +51,39 @@ import java.util.Collection;
  * @since 2017.1
  */
 public interface GenerationPlanBuilder {
+  /**
+   * Apply generators of languages specified to reduce their concepts.
+   * FIXME It's unspecified at the moment what happens with generators that are extended or referenced from those involved (i.e. if they are part of the step).
+   * @param languages languages to reduce
+   */
   void transformLanguage(@NotNull SLanguage ... languages);
 
   /**
-   * Specified generators (exact set, inlike {@link #applyGeneratorWithExtended(SModule...)} no extended relation between generators is taken into account)
+   * Specified generators (exact set, unlike {@link #applyGeneratorWithExtended(SModule...)} no extended relation between generators is taken into account)
    * applied as a single transformation step.
+   * FIXME shall decide what happens if a generator references/extends another one, not mentioned.
    * @param generators generator modules
    */
   void applyGenerator(@NotNull SModule ... generators);
 
   /**
    * Specified generators and those extending them AND visible from scope applied as a single transformation step.
-   * PENDING: we may want to respect generator priority rules of involved generators to address extensibility scenarios like that of lang.editor here.
-   *   * What constitutes this 'scope' is up to plan builder implementation.
+   * What constitutes this 'scope' is up to plan builder implementation.
+   *
+   * To respect generator priority rules of involved generators to address extensibility scenarios like that of lang.editor, consider
+   * {@link #applyGenerators(Collection, BuilderOption...)} with {@link BuilderOption#WithPriorityRules} and {@link BuilderOption#WithExtendedGenerators}.
    * @param generators generator modules
    */
   void applyGeneratorWithExtended(@NotNull SModule ... generators);
+
+  /**
+   * New approach to plan builder. As there's SLanguage for deployed language, there's SModuleReference to identify deployed generator, why
+   * would I need to get a module then?
+   * @param generators deployed generator identities for the step
+   * @param options optional set of options to further specify processing of {@code generators} set
+   * @since 2017.2
+   */
+  void applyGenerators(@NotNull Collection<SModuleReference> generators, @NotNull BuilderOption ... options);
 
   /**
    * IMPORTANT: USE OF THIS METHOD IS DISCOURAGED AS IT AFFECTS CONSISTENCY OF PLAN SPECIFICATION (namely, if applyGeneratorWithExtended() shall consider
@@ -113,4 +131,25 @@ public interface GenerationPlanBuilder {
    */
   @NotNull
   ModelGenerationPlan wrapUp(@NotNull PlanIdentity planIdentity);
+
+  /**
+   * options of {@link #applyGenerators(Collection, BuilderOption...)}
+   * <p/>
+   * {@link #WithExtendedGenerators} means not only explicitly specified generator shall take part in a transformation process, but other generators that
+   * extend it (transitively) shall take part as well
+   * <p/>
+   * {@link #WithPriorityRules} means priority rules of involved generators (those explicitly specified and extending) are respected.
+   */
+  enum BuilderOption {
+    None, WithExtendedGenerators, WithPriorityRules;
+
+    public boolean presentIn(BuilderOption... options) {
+      for (BuilderOption o : options) {
+        if (o == this) {
+          return true;
+        }
+      }
+      return false;
+    }
+  }
 }

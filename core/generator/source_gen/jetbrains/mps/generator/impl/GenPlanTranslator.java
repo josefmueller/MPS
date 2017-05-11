@@ -10,15 +10,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.GenerationPlanBuilder;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 
 /**
@@ -47,7 +44,7 @@ public class GenPlanTranslator {
    */
   public GenPlanTranslator feed(@NotNull GenerationPlanBuilder planBuilder) {
     ArrayList<SLanguage> langueges = new ArrayList<SLanguage>();
-    ArrayList<SModule> generators = new ArrayList<SModule>();
+    ArrayList<SModuleReference> generators = new ArrayList<SModuleReference>();
 
     for (SNode stepNode : SLinkOperations.getChildren(myPlanDeclaration, MetaAdapterFactory.getContainmentLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fbL, 0x19443180a2071807L, "steps"))) {
       if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a2071801L, "jetbrains.mps.lang.generator.plan.structure.Checkpoint"))) {
@@ -59,21 +56,20 @@ public class GenPlanTranslator {
         planBuilder.transformLanguage(langueges.toArray(new SLanguage[langueges.size()]));
         langueges.clear();
       } else if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, "jetbrains.mps.lang.generator.plan.structure.ApplyGenerators"))) {
-        SRepository repository = SNodeOperations.getModel(myPlanDeclaration).getRepository();
         SNode applyGeneratorsStep = SNodeOperations.as(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, "jetbrains.mps.lang.generator.plan.structure.ApplyGenerators"));
         final boolean withExtended = SPropertyOperations.getBoolean(applyGeneratorsStep, MetaAdapterFactory.getProperty(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, 0xc11e5088a799353L, "withExtended"));
         for (SNode generator : Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(applyGeneratorsStep, MetaAdapterFactory.getContainmentLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, 0x73246de9adf5a45cL, "generator")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, "jetbrains.mps.lang.smodel.structure.GeneratorModulePointer")))) {
           SModuleReference mr = ((SModuleReference) BHReflection.invoke(SLinkOperations.getTarget(generator, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73246de9adecb80dL, 0x73246de9adecb874L, "module")), SMethodTrimmedId.create("getModuleReference", null, "nJmxU5cSSU")));
-          SModule module = (mr == null ? null : mr.resolve(repository));
-          if (!(module instanceof Generator)) {
+          if (mr == null) {
             continue;
           }
-          generators.add(module);
+          generators.add(mr);
         }
         if (withExtended) {
-          planBuilder.applyGeneratorWithExtended(generators.toArray(new SModule[generators.size()]));
+          final boolean withPriorityRules = SPropertyOperations.getBoolean(applyGeneratorsStep, MetaAdapterFactory.getProperty(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x73246de9adeca171L, 0xf738996443c35afL, "withPriorityRules"));
+          planBuilder.applyGenerators(generators, GenerationPlanBuilder.BuilderOption.WithExtendedGenerators, (withPriorityRules ? GenerationPlanBuilder.BuilderOption.WithPriorityRules : GenerationPlanBuilder.BuilderOption.None));
         } else {
-          planBuilder.applyGenerator(generators.toArray(new SModule[generators.size()]));
+          planBuilder.applyGenerators(generators);
         }
         generators.clear();
       } else if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc11e5088a794d07L, "jetbrains.mps.lang.generator.plan.structure.CheckpointSynchronization"))) {

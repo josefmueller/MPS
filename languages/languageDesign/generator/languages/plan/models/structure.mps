@@ -120,6 +120,17 @@
       <property role="IQ2nx" value="869728027904938835" />
       <property role="TrG5h" value="withExtended" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <node concept="t5JxF" id="XNypp4f6rF" role="lGtFl">
+        <property role="t5JxN" value="Look into all generators engaged on generation of a model and pick generators that extend generators mentioned in this step" />
+      </node>
+    </node>
+    <node concept="1TJgyi" id="XNypp4f3mJ" role="1TKVEl">
+      <property role="IQ2nx" value="1113384811373540783" />
+      <property role="TrG5h" value="withPriorityRules" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <node concept="t5JxF" id="XNypp4f6rD" role="lGtFl">
+        <property role="t5JxN" value="Take priority rules from the generators activated for the step, and break the step further down acording to the rules. Ignores unrelated rules (for non-activated generators). Makes sense for open-scope steps only." />
+      </node>
     </node>
     <node concept="1TJgyj" id="7c$ruAHXqhs" role="1TKVEi">
       <property role="IQ2ns" value="8296877263936660572" />

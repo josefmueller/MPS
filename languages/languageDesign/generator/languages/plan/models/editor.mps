@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="8" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -15,6 +16,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -62,6 +64,9 @@
       <concept id="1165270999881" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create" flags="in" index="1f$696" />
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
+      </concept>
+      <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
+        <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
@@ -573,6 +578,43 @@
         </node>
         <node concept="3F0A7n" id="KhTgyausXb" role="3EZMnx">
           <ref role="1NtTu8" to="bjdw:KhTgyaupdj" resolve="withExtended" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="XNypp4f3mm" role="3EZMnx">
+        <node concept="2iRfu4" id="XNypp4f3mn" role="2iSdaV" />
+        <node concept="3F0ifn" id="XNypp4f3mo" role="3EZMnx">
+          <property role="3F0ifm" value="respect priority rules for acivated generators:" />
+        </node>
+        <node concept="3F0A7n" id="XNypp4f3mp" role="3EZMnx">
+          <ref role="1NtTu8" to="bjdw:XNypp4f3mJ" resolve="withPriorityRules" />
+        </node>
+        <node concept="pkWqt" id="XNypp4f4Ez" role="pqm2j">
+          <node concept="3clFbS" id="XNypp4f4E$" role="2VODD2">
+            <node concept="3clFbF" id="XNypp4f4LH" role="3cqZAp">
+              <node concept="2OqwBi" id="XNypp4f52j" role="3clFbG">
+                <node concept="pncrf" id="XNypp4f4LG" role="2Oq$k0" />
+                <node concept="3TrcHB" id="XNypp4f6be" role="2OqNvi">
+                  <ref role="3TsBF5" to="bjdw:KhTgyaupdj" resolve="withExtended" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="XNypp4fozX" role="3EZMnx">
+        <property role="3F0ifm" value="Note, it's not recommended to rely on priority rules, the idea of a Generation Plan is to control order explicitly and from outside, rather than delegate this control to generators" />
+        <ref role="1k5W1q" to="tpco:3VARyd8XcQs" resolve="Comment" />
+        <node concept="pkWqt" id="XNypp4foQD" role="pqm2j">
+          <node concept="3clFbS" id="XNypp4foQE" role="2VODD2">
+            <node concept="3clFbF" id="XNypp4foXN" role="3cqZAp">
+              <node concept="2OqwBi" id="XNypp4fpep" role="3clFbG">
+                <node concept="pncrf" id="XNypp4foXM" role="2Oq$k0" />
+                <node concept="3TrcHB" id="XNypp4fqnD" role="2OqNvi">
+                  <ref role="3TsBF5" to="bjdw:XNypp4f3mJ" resolve="withPriorityRules" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

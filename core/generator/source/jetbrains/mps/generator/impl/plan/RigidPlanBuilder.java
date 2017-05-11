@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -88,6 +89,11 @@ public class RigidPlanBuilder implements GenerationPlanBuilder {
 
   @Override
   public void applyGeneratorWithExtended(@NotNull SModule ... generator) {
+    throw new UnsupportedOperationException("This implementation of plan builder doesn't support requested functionality");
+  }
+
+  @Override
+  public void applyGenerators(@NotNull Collection<SModuleReference> generators, @NotNull BuilderOption... options) {
     throw new UnsupportedOperationException("This implementation of plan builder doesn't support requested functionality");
   }
 

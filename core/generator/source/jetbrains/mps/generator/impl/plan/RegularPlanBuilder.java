@@ -98,17 +98,24 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
       lr.getGenerators().stream().filter(TemplateModule.class::isInstance).map(TemplateModule.class::cast).forEach(tm::add);
     }
     // Perhaps, shall record LanguageEntry and build set of templates when required?
-    mySteps.add(new TransformEntry(tm, true));
+    mySteps.add(new TransformEntry(tm, true, false));
   }
 
   @Override
   public void applyGenerator(@NotNull SModule... generators) {
-    mySteps.add(new TransformEntry(asTemplateModules(generators), true));
+    mySteps.add(new TransformEntry(asTemplateModules(generators), true, false));
   }
 
   @Override
   public void applyGeneratorWithExtended(@NotNull SModule ... generator) {
-    mySteps.add(new TransformEntry(asTemplateModules(generator), false));
+    mySteps.add(new TransformEntry(asTemplateModules(generator), false, false));
+  }
+
+  @Override
+  public void applyGenerators(@NotNull Collection<SModuleReference> generators, @NotNull BuilderOption... options) {
+    boolean withExtended = BuilderOption.WithExtendedGenerators.presentIn(options);
+    boolean respectPriorityRules = withExtended && BuilderOption.WithPriorityRules.presentIn(options);
+    mySteps.add(new TransformEntry(asTemplateModules(generators), !withExtended, respectPriorityRules));
   }
 
   @Override
@@ -196,6 +203,17 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     return new RigidGenerationPlan(planIdentity, steps);
   }
 
+  private Collection<TemplateModule> asTemplateModules(@NotNull Collection<SModuleReference> generators) {
+    ArrayList<TemplateModule> tm = new ArrayList<>(generators.size());
+    for (SModuleReference generatorIdentity : generators) {
+      TemplateModule gr = findDeployedGenerator(generatorIdentity);
+      if (gr != null) {
+        tm.add(gr);
+      }
+    }
+    return tm;
+  }
+
   private Collection<TemplateModule> asTemplateModules(@NotNull SModule... generators) {
     ArrayList<TemplateModule> tm = new ArrayList<>(generators.length);
     for (SModule generator : generators) {
@@ -203,15 +221,23 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
         myMessageHandler.handle(new Message(MessageKind.ERROR, RegularPlanBuilder.class, "Request to transform with null generator"));
         continue;
       }
-      GeneratorRuntime gr = myLanguageRegistry.getGenerator(generator.getModuleReference());
-      if (false == gr instanceof TemplateModule) {
-        String msg = String.format(gr == null ? "Generator %s not found among deployed" : "Generator %s is not a TemplateModule", generator.getModuleName());
-        myMessageHandler.handle(new Message(MessageKind.ERROR, RegularPlanBuilder.class, msg).setHintObject(generator.getModuleReference()));
-        continue;
+      TemplateModule gr = findDeployedGenerator(generator.getModuleReference());
+      if (gr != null) {
+        tm.add(gr);
       }
-      tm.add(((TemplateModule) gr));
     }
     return tm;
+  }
+
+  @Nullable
+  private TemplateModule findDeployedGenerator(SModuleReference deployedGeneratorIdentity) {
+    GeneratorRuntime gr = myLanguageRegistry.getGenerator(deployedGeneratorIdentity);
+    if (gr instanceof TemplateModule) {
+      return ((TemplateModule) gr);
+    }
+    String msg = String.format(gr == null ? "Generator %s not found among deployed" : "Generator %s is not a TemplateModule", deployedGeneratorIdentity.getModuleName());
+    myMessageHandler.handle(new Message(MessageKind.ERROR, RegularPlanBuilder.class, msg).setHintObject(deployedGeneratorIdentity));
+    return null;
   }
 
   private interface StepEntry {
@@ -237,11 +263,14 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
   private static class TransformEntry implements StepEntry {
     private final ArrayList<TemplateModule> myGenerators;
     private final boolean myIsSealed; // true if no extensions are considered.
+    // true if shall read priority rules from specified generators and break this step further down to smaller according to these rules.
+    private final boolean myRespectPriorityRules;
     private final ArrayList<TemplateModule> myExtensions = new ArrayList<>(4);
 
-    TransformEntry(Collection<TemplateModule> generators, boolean isSealed) {
+    TransformEntry(Collection<TemplateModule> generators, boolean isSealed, boolean respectPriorityRules) {
       myGenerators = new ArrayList<>(generators);
       myIsSealed = isSealed;
+      myRespectPriorityRules = respectPriorityRules;
     }
 
     @Override
@@ -267,10 +296,7 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     @Override
     public void createStep(RegularPlanBuilder planBuilder, List<Step> steps) {
       Stream<TemplateModule> generators = Stream.concat(myGenerators.stream(), myExtensions.stream());
-      if (!myIsSealed) {
-        // re-arrange MCs based on priorities
-        // XXX perhaps, isSealed is not sufficient to decide whether to look into priorities or not, and an explicit property
-        // in the plan language would be better.
+      if (!myIsSealed && myRespectPriorityRules) {
         GenerationPartitioner gp = new GenerationPartitioner(generators.collect(Collectors.toList()));
         for (List<TemplateMappingConfiguration> tmc4Step : gp.createMappingSets()) {
           steps.add(new Transform(tmc4Step));
