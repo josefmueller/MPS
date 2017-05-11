@@ -64,17 +64,16 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
           }
 
           @Override
-          public SNode createChildNode(Object parameterConcept, SModel model, String pattern) {
-            SNode parameterNode = (SNode) parameterConcept;
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             if (isCustomCreateChildNode()) {
               SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild,
                   parentNode.getModel(), context, editorContext);
               if (newChild != null) {
-                NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model);
+                NodeFactoryManager.setupNode(defaultConceptOfChild, newChild, currentChild, parentNode, model);
               }
               return newChild;
             }
-            return NodeFactoryManager.createNode(parameterNode, currentChild, parentNode, parentNode.getModel());
+            return NodeFactoryManager.createNode(defaultConceptOfChild, currentChild, parentNode, parentNode.getModel());
           }
         });
   }
