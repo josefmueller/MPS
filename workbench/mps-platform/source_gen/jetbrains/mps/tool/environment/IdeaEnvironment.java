@@ -22,6 +22,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.util.Reference;
+import com.intellij.ide.startup.StartupManagerEx;
 import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.vfs.DefaultCachingContext;
@@ -31,7 +32,6 @@ import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.Semaphore;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.ide.startup.StartupManagerEx;
 
 /**
  * Use #getOrCreate method to construct this kind of environment
@@ -198,6 +198,12 @@ public class IdeaEnvironment extends EnvironmentBase {
     if (!(exc.isNull())) {
       throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc.get());
     }
+
+    // On new (171.4249) platform post startup activities frequently do not pass before waiter.wait0() check, so have to add flushAllEvents() here 
+    if (!(StartupManagerEx.getInstanceEx(project.get()).postStartupActivityPassed())) {
+      flushAllEvents();
+    }
+
 
     waiter.wait0();
 
