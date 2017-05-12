@@ -49,5 +49,6 @@
     <orderEntry type="library" scope="TEST" name="mps-behavior-api" level="project" />
     <orderEntry type="library" scope="TEST" name="mps-behavior-runtime" level="project" />
     <orderEntry type="library" scope="TEST" name="mps-boot-util" level="project" />
+    <orderEntry type="library" name="mps-editor-api" level="project" />
   </component>
 </module>
