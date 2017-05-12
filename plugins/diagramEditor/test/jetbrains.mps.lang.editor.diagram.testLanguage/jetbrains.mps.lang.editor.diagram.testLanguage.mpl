@@ -43,6 +43,7 @@
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetbrains.jetpad)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
+    <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />
     <module reference="5a283d13-799d-4cf6-a6a7-5c3e11d79dcb(jetbrains.mps.lang.editor.diagram.runtime)" version="0" />
     <module reference="050560c9-658e-49c5-b8e7-9e4db4c7e97f(jetbrains.mps.lang.editor.diagram.testLanguage)" version="0" />
     <module reference="9fc6ac35-295d-4fb8-8210-ba026790e4a0(jetbrains.mps.lang.editor.figures.library)" version="0" />
