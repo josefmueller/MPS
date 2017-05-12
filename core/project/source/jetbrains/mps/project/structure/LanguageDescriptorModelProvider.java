@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,6 +226,13 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
   public static final class LanguageModelDescriptor extends TrivialModelDescriptor implements GeneratableSModel {
     private final Language myModule;
     private String myHash;
+    /*
+     * Module file keeps closure of its dependencies, and the change in the closure is not propagated as a module changed event.
+     * (e.g. if used devkit got new exported solution, version of the solution module is recorded under dependencyVersions tag)
+     * Without module change, hash has not been re-calculated and no 'generation required' status show up. To mitigate,
+     * record timestamp of a module file the moment hash is calculated.
+     */
+    private long myHashTimestamp;
 
     private LanguageModelDescriptor(SModelReference ref, Language module) {
       super(new SnapshotModelData(ref));
@@ -281,11 +288,12 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
     @Override
     public String getModelHash() {
       String hash = myHash;
-      if (hash != null) {
+      IFile descriptorFile = myModule.getDescriptorFile();
+      long hashTimestamp = descriptorFile.lastModified();
+      if (hash != null && hashTimestamp == myHashTimestamp) {
         return hash;
       }
 
-      IFile descriptorFile = myModule.getDescriptorFile();
 
       try {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
@@ -306,6 +314,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
 
       hash = modelHash.toString(Character.MAX_RADIX);
       myHash = hash;
+      myHashTimestamp = hashTimestamp;
       return hash;
     }
 
