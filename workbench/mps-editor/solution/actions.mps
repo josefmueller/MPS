@@ -68,6 +68,7 @@
     <import index="n7yi" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells.optional(MPS.Editor/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="nlpl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.commands(MPS.Editor/)" />
+    <import index="nddn" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.intentions(MPS.Editor/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="oulx" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.commands(MPS.Editor/)" implicit="true" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
@@ -8278,8 +8279,8 @@
             <node concept="A3Dl8" id="2M3H3BXpUFV" role="1tU5fm">
               <node concept="3uibUv" id="2M3H3BXpUFW" role="A3Ik2">
                 <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                <node concept="3uibUv" id="1Sq22HInOmc" role="11_B2D">
-                  <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+                <node concept="3uibUv" id="250UcJfNiqh" role="11_B2D">
+                  <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
                 </node>
                 <node concept="3uibUv" id="2M3H3BXpUFY" role="11_B2D">
                   <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -8353,8 +8354,8 @@
                 <property role="3TUv4t" value="true" />
                 <node concept="3uibUv" id="2M3H3BXpUGt" role="1tU5fm">
                   <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                  <node concept="3uibUv" id="1Sq22HInQ2l" role="11_B2D">
-                    <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+                  <node concept="3uibUv" id="250UcJfNrhu" role="11_B2D">
+                    <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
                   </node>
                   <node concept="3uibUv" id="2M3H3BXpUGv" role="11_B2D">
                     <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -8423,7 +8424,7 @@
                                             <node concept="3clFbF" id="2M3H3BXpUGJ" role="3cqZAp">
                                               <node concept="2OqwBi" id="2M3H3BXpUGK" role="3clFbG">
                                                 <node concept="liA8E" id="2M3H3BXpUGO" role="2OqNvi">
-                                                  <ref role="37wK5l" to="91lp:~IntentionExecutable.execute(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                                                  <ref role="37wK5l" to="nddn:~IntentionExecutable.execute(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
                                                   <node concept="2OqwBi" id="2M3H3BXpUGP" role="37wK5m">
                                                     <node concept="37vLTw" id="3GM_nagTshb" role="2Oq$k0">
                                                       <ref role="3cqZAo" node="2M3H3BXpUGs" resolve="finalPair" />
@@ -8595,8 +8596,8 @@
                     <node concept="A3Dl8" id="3goR6KHCeyk" role="2Ghqu4">
                       <node concept="3uibUv" id="3goR6KHCeyl" role="A3Ik2">
                         <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                        <node concept="3uibUv" id="3goR6KHCeym" role="11_B2D">
-                          <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+                        <node concept="3uibUv" id="250UcJfNjE5" role="11_B2D">
+                          <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
                         </node>
                         <node concept="3uibUv" id="3goR6KHCeyn" role="11_B2D">
                           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -8612,8 +8613,8 @@
                       <node concept="A3Dl8" id="3goR6KHCfuZ" role="3clF45">
                         <node concept="3uibUv" id="3goR6KHCgnr" role="A3Ik2">
                           <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                          <node concept="3uibUv" id="3goR6KHCgns" role="11_B2D">
-                            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+                          <node concept="3uibUv" id="250UcJfNmfY" role="11_B2D">
+                            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
                           </node>
                           <node concept="3uibUv" id="3goR6KHCgnt" role="11_B2D">
                             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -8676,8 +8677,8 @@
       <node concept="A3Dl8" id="2M3H3BXpUH_" role="3clF45">
         <node concept="3uibUv" id="2M3H3BXpUHA" role="A3Ik2">
           <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-          <node concept="3uibUv" id="1Sq22HInK5G" role="11_B2D">
-            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+          <node concept="3uibUv" id="250UcJfNiPK" role="11_B2D">
+            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
           </node>
           <node concept="3uibUv" id="2M3H3BXpUHC" role="11_B2D">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -8691,8 +8692,8 @@
         <property role="TrG5h" value="pair" />
         <node concept="3uibUv" id="2M3H3BXpUHF" role="1tU5fm">
           <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-          <node concept="3uibUv" id="1Sq22HInM7V" role="11_B2D">
-            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+          <node concept="3uibUv" id="250UcJfNorV" role="11_B2D">
+            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
           </node>
           <node concept="3uibUv" id="2M3H3BXpUHH" role="11_B2D">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -8712,7 +8713,7 @@
               </node>
             </node>
             <node concept="liA8E" id="2M3H3BXpUHP" role="2OqNvi">
-              <ref role="37wK5l" to="91lp:~IntentionExecutable.getDescription(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext):java.lang.String" resolve="getDescription" />
+              <ref role="37wK5l" to="nddn:~IntentionExecutable.getDescription(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext):java.lang.String" resolve="getDescription" />
               <node concept="2OqwBi" id="2M3H3BXpUHQ" role="37wK5m">
                 <node concept="2OwXpG" id="3LAh39byUuX" role="2OqNvi">
                   <ref role="2Oxat5" to="18ew:~Pair.o2" resolve="o2" />

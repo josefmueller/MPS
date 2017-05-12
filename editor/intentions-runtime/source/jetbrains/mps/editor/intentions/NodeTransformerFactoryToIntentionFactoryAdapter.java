@@ -27,8 +27,13 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * @deprecated since MPS 2017.2 use {@link NodeTransformerBasedIntentionFactory}
+ */
+@Deprecated
 public class NodeTransformerFactoryToIntentionFactoryAdapter implements IntentionFactory {
   private NodeTransformerFactory myFactory;
+
   public NodeTransformerFactoryToIntentionFactoryAdapter(NodeTransformerFactory factory) {
     myFactory = factory;
   }
@@ -100,8 +105,8 @@ public class NodeTransformerFactoryToIntentionFactoryAdapter implements Intentio
 
   @Override
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    if (isAvailableInChildNodes() && node!=editorContext.getSelectedNode()){
-      return myFactory.isAvailableInChild(node,editorContext.getSelectedNode(),editorContext);
+    if (isAvailableInChildNodes() && node != editorContext.getSelectedNode()) {
+      return myFactory.isAvailableInChild(node, editorContext.getSelectedNode(), editorContext);
     }
     return myFactory.isApplicable(node, editorContext);
   }

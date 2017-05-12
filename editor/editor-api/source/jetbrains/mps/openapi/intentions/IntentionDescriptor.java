@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,22 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions;
+package jetbrains.mps.openapi.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * User: shatalin
- * Date: 11/9/12
- *
- * @deprecated since MPS 2017.2 use {@link jetbrains.mps.openapi.intentions.IntentionExecutable}
+ * Date: 11.05.17
  */
-@Deprecated
-public interface IntentionExecutable extends jetbrains.mps.openapi.intentions.IntentionExecutable {
-  String getDescription(SNode node, EditorContext editorContext);
+public interface IntentionDescriptor {
+  /**
+   * @return name of the intention visible in general UI (without any context, as opposed to
+   * {@link IntentionExecutable#getDescription(SNode, EditorContext)})
+   */
+  String getPresentation();
 
-  void execute(SNode node, EditorContext editorContext);
+  String getPersistentStateKey();
 
-  IntentionDescriptor getDescriptor();
+  Kind getKind();
+
+  boolean isAvailableInChildNodes();
+
+  boolean isApplicable(SNode node, EditorContext editorContext);
+
+  @Nullable
+  SNodeReference getIntentionNodeReference();
 }

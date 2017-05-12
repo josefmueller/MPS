@@ -131,6 +131,8 @@
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
+    <import index="nddn" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.intentions(MPS.Editor/)" />
+    <import index="8b49" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions.icons(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -12825,8 +12827,8 @@
       <node concept="37vLTG" id="5Szoie_lL$d" role="3clF46">
         <property role="TrG5h" value="intention" />
         <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="5Szoie_lL$e" role="1tU5fm">
-          <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+        <node concept="3uibUv" id="250UcJfLEkv" role="1tU5fm">
+          <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
         </node>
         <node concept="2AHcQZ" id="5Szoie_lL$f" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -12843,22 +12845,27 @@
             <node concept="3uibUv" id="5Szoie_psFX" role="1tU5fm">
               <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
             </node>
-            <node concept="2OqwBi" id="5Szoie_psFY" role="33vP2m">
-              <node concept="2OqwBi" id="5Szoie_psFZ" role="2Oq$k0">
-                <node concept="2OqwBi" id="5Szoie_psG6" role="2Oq$k0">
-                  <node concept="37vLTw" id="5Szoie_psG5" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5Szoie_lL$d" resolve="intention" />
+            <node concept="2OqwBi" id="250UcJfMrE8" role="33vP2m">
+              <node concept="2ShNRf" id="250UcJfLFZ8" role="2Oq$k0">
+                <node concept="1pGfFk" id="250UcJfMreo" role="2ShVmc">
+                  <ref role="37wK5l" to="8b49:~IntentionIconProvider.&lt;init&gt;(jetbrains.mps.openapi.intentions.Kind)" resolve="IntentionIconProvider" />
+                  <node concept="2OqwBi" id="250UcJfMrni" role="37wK5m">
+                    <node concept="2OqwBi" id="250UcJfMrfY" role="2Oq$k0">
+                      <node concept="37vLTw" id="250UcJfMrfZ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5Szoie_lL$d" resolve="intention" />
+                      </node>
+                      <node concept="liA8E" id="250UcJfMrg0" role="2OqNvi">
+                        <ref role="37wK5l" to="nddn:~IntentionExecutable.getDescriptor():jetbrains.mps.openapi.intentions.IntentionDescriptor" resolve="getDescriptor" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="250UcJfMrzb" role="2OqNvi">
+                      <ref role="37wK5l" to="nddn:~IntentionDescriptor.getKind():jetbrains.mps.openapi.intentions.Kind" resolve="getKind" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="5Szoie_psG7" role="2OqNvi">
-                    <ref role="37wK5l" to="91lp:~IntentionExecutable.getDescriptor():jetbrains.mps.intentions.IntentionDescriptor" resolve="getDescriptor" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="5Szoie_psG1" role="2OqNvi">
-                  <ref role="37wK5l" to="91lp:~IntentionDescriptor.getType():jetbrains.mps.intentions.IntentionType" resolve="getType" />
                 </node>
               </node>
-              <node concept="liA8E" id="5Szoie_psG2" role="2OqNvi">
-                <ref role="37wK5l" to="91lp:~IntentionType.getIcon():javax.swing.Icon" resolve="getIcon" />
+              <node concept="liA8E" id="250UcJfMs27" role="2OqNvi">
+                <ref role="37wK5l" to="8b49:~IntentionIconProvider.getIcon():javax.swing.Icon" resolve="getIcon" />
               </node>
             </node>
           </node>
@@ -12910,9 +12917,7 @@
                         <property role="3TUv4t" value="false" />
                         <node concept="3uibUv" id="5Szoie_o6L9" role="1tU5fm">
                           <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-                          <node concept="3uibUv" id="5Szoie_o6La" role="11_B2D">
-                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                          </node>
+                          <node concept="17QB3L" id="250UcJfMsUQ" role="11_B2D" />
                           <node concept="3uibUv" id="5Szoie_o6Lb" role="11_B2D">
                             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                           </node>
@@ -12964,14 +12969,14 @@
                                       <node concept="2OqwBi" id="5Szoie_o8Z_" role="33vP2m">
                                         <node concept="2OqwBi" id="5Szoie_o8ZA" role="2Oq$k0">
                                           <node concept="liA8E" id="5Szoie_o8ZE" role="2OqNvi">
-                                            <ref role="37wK5l" to="91lp:~IntentionExecutable.getDescriptor():jetbrains.mps.intentions.IntentionDescriptor" resolve="getDescriptor" />
+                                            <ref role="37wK5l" to="nddn:~IntentionExecutable.getDescriptor():jetbrains.mps.openapi.intentions.IntentionDescriptor" resolve="getDescriptor" />
                                           </node>
                                           <node concept="37vLTw" id="5Szoie_oasG" role="2Oq$k0">
                                             <ref role="3cqZAo" node="5Szoie_lL$d" resolve="intention" />
                                           </node>
                                         </node>
                                         <node concept="liA8E" id="5Szoie_o8ZF" role="2OqNvi">
-                                          <ref role="37wK5l" to="91lp:~IntentionDescriptor.getIntentionNodeReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getIntentionNodeReference" />
+                                          <ref role="37wK5l" to="nddn:~IntentionDescriptor.getIntentionNodeReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getIntentionNodeReference" />
                                         </node>
                                       </node>
                                     </node>
@@ -13154,9 +13159,7 @@
                         <property role="3TUv4t" value="false" />
                         <node concept="3uibUv" id="5Szoie_p8iE" role="1tU5fm">
                           <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-                          <node concept="3uibUv" id="5Szoie_p8iF" role="11_B2D">
-                            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                          </node>
+                          <node concept="17QB3L" id="250UcJfMsZR" role="11_B2D" />
                           <node concept="3uibUv" id="5Szoie_p8iG" role="11_B2D">
                             <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
                           </node>
@@ -13177,11 +13180,11 @@
                                     <ref role="3cqZAo" node="5Szoie_lL$d" resolve="intention" />
                                   </node>
                                   <node concept="liA8E" id="5Szoie_pb1e" role="2OqNvi">
-                                    <ref role="37wK5l" to="91lp:~IntentionExecutable.getDescriptor():jetbrains.mps.intentions.IntentionDescriptor" resolve="getDescriptor" />
+                                    <ref role="37wK5l" to="nddn:~IntentionExecutable.getDescriptor():jetbrains.mps.openapi.intentions.IntentionDescriptor" resolve="getDescriptor" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="5Szoie_pb1f" role="2OqNvi">
-                                  <ref role="37wK5l" to="91lp:~IntentionDescriptor.getPersistentStateKey():java.lang.String" resolve="getPersistentStateKey" />
+                                  <ref role="37wK5l" to="nddn:~IntentionDescriptor.getPersistentStateKey():java.lang.String" resolve="getPersistentStateKey" />
                                 </node>
                               </node>
                             </node>

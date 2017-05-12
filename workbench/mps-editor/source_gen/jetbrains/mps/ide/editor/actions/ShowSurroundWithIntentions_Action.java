@@ -27,7 +27,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import java.util.Comparator;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.intentions.IntentionsManager;

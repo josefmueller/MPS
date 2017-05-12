@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,30 +15,24 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.openapi.intentions.IntentionDescriptor;
+import jetbrains.mps.openapi.intentions.Kind;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
- * Base class for all generated intentions
- *
- * @author Artem Tikhomirov
- * @deprecated since MPS 2017.2 use {@link AbstractIntentionDescriptor}
+ * User: shatalin
+ * Date: 11.05.17
  */
-@Deprecated
-public abstract class IntentionDescriptorBase implements IntentionDescriptor {
-  private final SAbstractConcept myConcept;
-  private final IntentionType myType;
+public abstract class AbstractIntentionDescriptor implements IntentionDescriptor {
+  private final Kind myKind;
   private final boolean myAvailableInChildren;
-  private final SNodeReference myImplementationNode;
+  private final SNodeReference myImplementationNodeRef;
 
-  protected IntentionDescriptorBase(@NotNull SAbstractConcept concept, @NotNull IntentionType type, boolean availableInChildren,
-                                    @Nullable SNodeReference implementationNode) {
-    myConcept = concept;
-    myType = type;
+  public AbstractIntentionDescriptor(@NotNull Kind kind, boolean availableInChildren, @NotNull SNodeReference implementationNodeRef) {
+    myKind = kind;
     myAvailableInChildren = availableInChildren;
-    myImplementationNode = implementationNode;
+    myImplementationNodeRef = implementationNodeRef;
   }
 
   @Override
@@ -53,13 +47,8 @@ public abstract class IntentionDescriptorBase implements IntentionDescriptor {
   }
 
   @Override
-  public String getLanguageFqName() {
-    return myConcept.getLanguage().getQualifiedName();
-  }
-
-  @Override
-  public IntentionType getType() {
-    return myType;
+  public Kind getKind() {
+    return myKind;
   }
 
   @Override
@@ -67,9 +56,9 @@ public abstract class IntentionDescriptorBase implements IntentionDescriptor {
     return myAvailableInChildren;
   }
 
-  @Nullable
+  @NotNull
   @Override
   public SNodeReference getIntentionNodeReference() {
-    return myImplementationNode;
+    return myImplementationNodeRef;
   }
 }

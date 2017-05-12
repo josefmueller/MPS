@@ -21,7 +21,9 @@ package jetbrains.mps.intentions;
  *
  * @author Artem Tikhomirov
  * @since 3.3
+ * @deprecated since MPS 2017.2 use {@link AbstractIntentionAspectDescriptor}
  */
+@Deprecated
 public abstract class IntentionAspectBase implements IntentionAspectDescriptor {
 
 }

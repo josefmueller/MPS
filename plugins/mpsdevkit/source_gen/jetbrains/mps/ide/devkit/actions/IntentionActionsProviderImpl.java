@@ -5,8 +5,9 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.nodeEditor.IntentionActionsProvider;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import javax.swing.Icon;
+import jetbrains.mps.intentions.icons.IntentionIconProvider;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -22,7 +23,7 @@ import jetbrains.mps.intentions.IntentionsManager;
 public class IntentionActionsProviderImpl implements IntentionActionsProvider {
   @NotNull
   public AnAction[] getIntentionActions(@NotNull final IntentionExecutable intention) {
-    Icon icon = intention.getDescriptor().getType().getIcon();
+    Icon icon = new IntentionIconProvider(intention.getDescriptor().getKind()).getIcon();
 
     AnAction[] actions = {new BaseAction("Go to Intention Declaration", "Go to declaration of this intention", icon) {
       @Override

@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.openapi.intentions.IntentionFactory;
+import jetbrains.mps.openapi.intentions.Kind;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,7 +29,7 @@ interface IntentionsVisitor {
   boolean visit(IntentionFactory intentionFactory);
 
   class CollectAvailableIntentionsVisitor implements IntentionsVisitor {
-    private Set<IntentionFactory> myAvailableIntentionFactories = new HashSet<IntentionFactory>();
+    private Set<IntentionFactory> myAvailableIntentionFactories = new HashSet<>();
 
     @Override
     public boolean visit(IntentionFactory intentionFactory) {
@@ -40,29 +43,29 @@ interface IntentionsVisitor {
   }
 
   class GetHighestAvailableIntentionTypeVisitor implements IntentionsVisitor {
-    private IntentionType myIntentionType = null;
+    private Kind myIntentionKind = null;
 
     @Override
     public boolean visit(IntentionFactory intentionFactory) {
-      return visit(intentionFactory.getType());
+      return visit(intentionFactory.getKind());
     }
 
-    public IntentionType getIntentionType() {
-      return myIntentionType;
+    public Kind getIntentionKind() {
+      return myIntentionKind;
     }
 
-    private boolean visit(IntentionType intentionType) {
-      if (hasHigherPriority(intentionType)) {
-        myIntentionType = intentionType;
+    private boolean visit(Kind intentionKind) {
+      if (hasHigherPriority(intentionKind)) {
+        myIntentionKind = intentionKind;
       }
-      return myIntentionType.getPriority() > 0;
+      return myIntentionKind.ordinal() > 0;
     }
 
     /**
      * return true if passed intentionType has higher priority then one currently stored by this visitor
      */
-    public boolean hasHigherPriority(IntentionType intentionType) {
-      return myIntentionType == null || myIntentionType.getPriority() < intentionType.getPriority();
+    public boolean hasHigherPriority(Kind intentionType) {
+      return myIntentionKind == null || myIntentionKind.ordinal() < intentionType.ordinal();
     }
   }
 }

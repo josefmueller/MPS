@@ -35,7 +35,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import java.awt.Component;
 import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ActionManager;

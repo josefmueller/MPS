@@ -7,7 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.util.Pair;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

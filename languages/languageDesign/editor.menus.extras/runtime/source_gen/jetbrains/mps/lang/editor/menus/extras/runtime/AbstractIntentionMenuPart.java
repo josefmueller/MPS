@@ -14,16 +14,10 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 
-/**
- * 
- * @deprecated since MPS 2017.2 use AbstractIntentionMenuPart
- */
-@Deprecated
-public abstract class IntentionMenuPartBase implements MenuPart<TransformationMenuItem, TransformationMenuContext> {
+public abstract class AbstractIntentionMenuPart implements MenuPart<TransformationMenuItem, TransformationMenuContext> {
   private final String myIntentionId;
 
-  @Deprecated
-  public IntentionMenuPartBase(String intentionId) {
+  public AbstractIntentionMenuPart(String intentionId) {
     myIntentionId = intentionId;
   }
 
@@ -33,24 +27,22 @@ public abstract class IntentionMenuPartBase implements MenuPart<TransformationMe
 
     List<TransformationMenuItem> result = new ArrayList<TransformationMenuItem>();
     for (IntentionExecutable executable : executables) {
-      if (executable instanceof jetbrains.mps.intentions.IntentionExecutable) {
-        TransformationMenuItem item = createItem(context, (jetbrains.mps.intentions.IntentionExecutable) executable);
-        if (item != null) {
-          result.add(item);
-        }
+      TransformationMenuItem item = createItem(context, executable);
+      if (item != null) {
+        result.add(item);
       }
     }
     return result;
   }
 
   @Nullable
-  protected abstract TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull jetbrains.mps.intentions.IntentionExecutable executable);
+  protected abstract TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable);
 
   protected static class ItemBase extends ActionItemBase {
     protected final TransformationMenuContext _context;
-    protected final jetbrains.mps.intentions.IntentionExecutable myExecutable;
+    protected final IntentionExecutable myExecutable;
 
-    protected ItemBase(TransformationMenuContext context, jetbrains.mps.intentions.IntentionExecutable executable) {
+    protected ItemBase(TransformationMenuContext context, IntentionExecutable executable) {
       _context = context;
       myExecutable = executable;
     }

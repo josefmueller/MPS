@@ -18,6 +18,6 @@ package jetbrains.mps.intentions;
 /**
  * Gives access to the parameter value of a parameterized intention.
  */
-public interface ParameterizedIntentionExecutable extends IntentionExecutable {
+public interface ParameterizedIntentionExecutable extends IntentionExecutable, jetbrains.mps.openapi.intentions.ParameterizedIntentionExecutable {
   Object getParameter();
 }

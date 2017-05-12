@@ -18,6 +18,9 @@ package jetbrains.mps.intentions;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.intentions.IntentionDescriptor;
+import jetbrains.mps.openapi.intentions.IntentionExecutable;
+import jetbrains.mps.openapi.intentions.Kind;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -53,17 +56,8 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
   }
 
   @Override
-  public String getLanguageFqName() {
-    // base implementation used to look for intention's language, but QuickFix doesn't get any associated
-    // as it is created n demand and is not registered with IntentionsManager.
-    // Besides, the way return value is used makes me think it's merely filtering, and as thus not relevant for quick fixes
-    return null;
-  }
-
-  @Override
-  public IntentionType getType() {
-    return myIsError ? IntentionType.ERROR : IntentionType.NORMAL;
-    //return IntentionType.QUICKFIX;
+  public Kind getKind() {
+    return myIsError ? Kind.ERROR : Kind.NORMAL;
   }
 
   @Override
@@ -83,7 +77,7 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
 
   @Override
   public Collection<IntentionExecutable> instances(SNode node, EditorContext editorContext) {
-    return Collections.<IntentionExecutable>singleton(new Executable());
+    return Collections.singleton(new Executable());
   }
 
   private class Executable implements IntentionExecutable {

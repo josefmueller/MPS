@@ -23,8 +23,11 @@ import java.util.Collection;
 /**
  * User: shatalin
  * Date: 10/31/12
+ *
+ * @deprecated since MPS 2017.2 use {@link jetbrains.mps.openapi.intentions.IntentionFactory}
  */
-public interface IntentionFactory extends IntentionDescriptor {
+@Deprecated
+public interface IntentionFactory extends IntentionDescriptor, jetbrains.mps.openapi.intentions.IntentionFactory {
   boolean isSurroundWith();
 
   Collection<IntentionExecutable> instances(SNode node, EditorContext editorContext);

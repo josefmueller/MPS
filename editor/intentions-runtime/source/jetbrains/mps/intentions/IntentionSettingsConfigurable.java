@@ -26,8 +26,10 @@ import com.intellij.ui.ColoredTreeCellRenderer;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.tree.TreeUtil;
+import jetbrains.mps.openapi.intentions.IntentionDescriptor;
+import jetbrains.mps.openapi.intentions.IntentionFactory;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.Nls;
 
@@ -35,7 +37,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTree;
-import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
@@ -74,35 +77,33 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
     myTree.setRootVisible(false);
     TreeUtil.expandAll(myTree);
 
-    JPanel mainPanel = new JPanel(new GridLayoutManager(1,1));
+    JPanel mainPanel = new JPanel(new GridLayoutManager(1, 1));
 
-    mainPanel.add(ScrollPaneFactory.createScrollPane(myTree), new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null));
+    mainPanel.add(ScrollPaneFactory.createScrollPane(myTree), new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_BOTH,
+                                                                                  GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                                                  GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                                                  null, null, null));
     return mainPanel;
   }
 
   private void initCheckBoxes() {
-    List<IntentionDescriptor> intentionList = new SortedList<IntentionDescriptor>(new Comparator<IntentionDescriptor>() {
-      @Override
-      public int compare(IntentionDescriptor o1, IntentionDescriptor o2) {
-        int langCompare = StringUtil.compare(o1.getLanguageFqName(), o2.getLanguageFqName());
-        return langCompare != 0 ? langCompare : StringUtil.compare(o1.getPresentation().toLowerCase(), o2.getPresentation().toLowerCase());
+    Map<LanguageRuntime, Collection<IntentionFactory>> allIntentionFactories = myIntentionsManager.getAllIntentionFactories();
+    List<LanguageRuntime> runtimes = new ArrayList<>(allIntentionFactories.keySet());
+    runtimes.sort((LanguageRuntime l1, LanguageRuntime l2) -> StringUtil.compare(l1.getNamespace(), l2.getNamespace()));
+    for (LanguageRuntime runtime : runtimes) {
+      List<IntentionDescriptor> intentions = new ArrayList<>(allIntentionFactories.get(runtime));
+      intentions.sort(
+          (IntentionDescriptor i1, IntentionDescriptor i2) -> StringUtil.compare(i1.getPresentation().toLowerCase(), i2.getPresentation().toLowerCase()));
+      for (IntentionDescriptor descriptor : intentions) {
+        LanguageTreeNode langTreeNode = myLanguageTreeNodes.computeIfAbsent(runtime.getNamespace(), k -> new LanguageTreeNode(runtime.getNamespace()));
+        langTreeNode.add(new IntentionTreeNode(descriptor));
       }
-    });
-    intentionList.addAll(myIntentionsManager.getAllIntentionFactories());
-    for(IntentionDescriptor descriptor : intentionList) {
-      final String languageFqName = descriptor.getLanguageFqName() != null ? descriptor.getLanguageFqName() : "Unspecified Language";
-      LanguageTreeNode langTreeNode = myLanguageTreeNodes.get(languageFqName);
-      if(langTreeNode == null) {
-        langTreeNode = new LanguageTreeNode(languageFqName);
-        myLanguageTreeNodes.put(languageFqName, langTreeNode);
-      }
-      langTreeNode.add(new IntentionTreeNode(descriptor));
     }
   }
 
   @Override
   public boolean isModified() {
-    for(LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
+    for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
       Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
       while (intentionTreeNode.hasMoreElements()) {
         if (intentionTreeNode.nextElement().isModified()) {
@@ -115,7 +116,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
 
   @Override
   public void apply() throws ConfigurationException {
-    for(LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
+    for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
       Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
       while (intentionTreeNode.hasMoreElements()) {
         intentionTreeNode.nextElement().apply();
@@ -125,7 +126,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
 
   @Override
   public void reset() {
-    for(LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
+    for (LanguageTreeNode languageTreeNode : myLanguageTreeNodes.values()) {
       Enumeration<IntentionTreeNode> intentionTreeNode = languageTreeNode.children();
       while (intentionTreeNode.hasMoreElements()) {
         intentionTreeNode.nextElement().reset();
@@ -151,7 +152,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
 
     @Override
     public String getUserObject() {
-      return (String)super.getUserObject();
+      return (String) super.getUserObject();
     }
   }
 
@@ -165,7 +166,7 @@ public class IntentionSettingsConfigurable implements Configurable, Composite {
 
     @Override
     public IntentionDescriptor getUserObject() {
-      return (IntentionDescriptor)super.getUserObject();
+      return (IntentionDescriptor) super.getUserObject();
     }
 
     private boolean isModified() {

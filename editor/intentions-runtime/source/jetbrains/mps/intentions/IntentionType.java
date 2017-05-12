@@ -19,6 +19,10 @@ import jetbrains.mps.intentions.icons.Icons;
 
 import javax.swing.Icon;
 
+/**
+ * @deprecated since MPS 2017.2 use {@link jetbrains.mps.openapi.intentions.Kind} or {@link jetbrains.mps.intentions.icons.IntentionIconProvider}
+ */
+@Deprecated
 public enum IntentionType {
   NORMAL(Icons.REAL_INTENTION, 3),
   MIGRATION(Icons.MIGRATION, 2),

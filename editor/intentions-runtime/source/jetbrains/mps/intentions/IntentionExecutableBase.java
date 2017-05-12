@@ -17,8 +17,11 @@ package jetbrains.mps.intentions;
 
 /**
  * Base class for {@link IntentionExecutable} to use in generated code, to facilitate API changes
+ *
  * @author Artem Tikhomirov
  * @since 3.3
+ * @deprecated since MPS 2017.2 use {@link AbstractIntentionExecutable}
  */
+@Deprecated
 public abstract class IntentionExecutableBase implements IntentionExecutable {
 }

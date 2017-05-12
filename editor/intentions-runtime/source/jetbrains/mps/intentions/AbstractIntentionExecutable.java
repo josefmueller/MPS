@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.openapi.intentions.IntentionFactory;
+import jetbrains.mps.openapi.intentions.IntentionExecutable;
 
 /**
- * Superclass for all IntentionFactory subclasses to facilitate future API changes.
- * FIXME update generated code to use this class
- *
- * @author Artem Tikhomirov
+ * User: shatalin
+ * Date: 11.05.17
  */
-public abstract class OldBaseIntentionFactory implements IntentionFactory {
+public abstract class AbstractIntentionExecutable implements IntentionExecutable {
 }

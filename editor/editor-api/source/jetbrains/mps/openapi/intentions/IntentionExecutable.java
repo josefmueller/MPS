@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions;
+package jetbrains.mps.openapi.intentions;
 
-import jetbrains.mps.openapi.intentions.IntentionFactory;
+import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * Superclass for all IntentionFactory subclasses to facilitate future API changes.
- * FIXME update generated code to use this class
- *
- * @author Artem Tikhomirov
+ * User: shatalin
+ * Date: 11.05.17
  */
-public abstract class OldBaseIntentionFactory implements IntentionFactory {
+public interface IntentionExecutable {
+  String getDescription(SNode node, EditorContext editorContext);
+
+  void execute(SNode node, EditorContext editorContext);
+
+  IntentionDescriptor getDescriptor();
 }

@@ -1346,7 +1346,7 @@
       <node id="592868908270847715" at="16,53,17,82" concept="12" />
       <node id="592868908270847729" at="20,28,21,33" concept="12" />
       <node id="592868908270852644" at="11,0,14,0" concept="3" trace="MatchIntentionById#(Ljava/lang/String;)V" />
-      <node id="592868908270847709" at="15,0,19,0" concept="10" trace="met#(Ljetbrains/mps/intentions/IntentionExecutable;)Z" />
+      <node id="592868908270847709" at="15,0,19,0" concept="10" trace="met#(Ljetbrains/mps/openapi/intentions/IntentionExecutable;)Z" />
       <node id="592868908270847725" at="19,0,23,0" concept="10" trace="toString#()Ljava/lang/String;" />
       <scope id="592868908270852648" at="11,48,12,30" />
       <scope id="592868908270847714" at="16,53,17,82" />
@@ -1369,7 +1369,7 @@
       <node id="592868908270878280" at="20,53,21,232" concept="12" />
       <node id="592868908270878309" at="25,28,26,85" concept="12" />
       <node id="592868908270884906" at="12,0,14,0" concept="7" trace="myExpectedParameter" />
-      <node id="592868908270878274" at="20,0,23,0" concept="10" trace="met#(Ljetbrains/mps/intentions/IntentionExecutable;)Z" />
+      <node id="592868908270878274" at="20,0,23,0" concept="10" trace="met#(Ljetbrains/mps/openapi/intentions/IntentionExecutable;)Z" />
       <node id="592868908270895133" at="15,0,19,0" concept="3" trace="MatchIntentionByIdAndParameter#(Ljava/lang/String;Ljava/lang/Object;)V" />
       <node id="592868908270878305" at="24,0,28,0" concept="10" trace="toString#()Ljava/lang/String;" />
       <scope id="592868908270878279" at="20,53,21,232" />

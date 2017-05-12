@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.intentions;
+package jetbrains.mps.openapi.intentions;
 
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import org.jetbrains.annotations.NotNull;
@@ -23,21 +23,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collection;
 
 /**
- * Entry for runtime with intentions.
- *
- * @author Artem Tikhomirov
- * @since 3.3
- * @deprecated since MPS 2017.2 use {@link jetbrains.mps.openapi.intentions.IntentionAspectDescriptor}
+ * User: shatalin
+ * Date: 11.05.17
  */
-@Deprecated
 public interface IntentionAspectDescriptor extends ILanguageAspect {
-
   @Nullable
   Collection<IntentionFactory> getIntentions(@NotNull SAbstractConcept concept);
-
-  default Collection<jetbrains.mps.openapi.intentions.IntentionFactory> getAPIIntentions(@NotNull SAbstractConcept concept) {
-    return (Collection<jetbrains.mps.openapi.intentions.IntentionFactory>) (Collection) getIntentions(concept);
-  }
 
   /**
    * PROVISIONAL API.
@@ -49,8 +40,4 @@ public interface IntentionAspectDescriptor extends ILanguageAspect {
    */
   @NotNull
   Collection<IntentionFactory> getAllIntentions();
-
-  default Collection<jetbrains.mps.openapi.intentions.IntentionFactory> getAllAPIIntentions() {
-    return (Collection<jetbrains.mps.openapi.intentions.IntentionFactory>) (Collection) getAllIntentions();
-  }
 }

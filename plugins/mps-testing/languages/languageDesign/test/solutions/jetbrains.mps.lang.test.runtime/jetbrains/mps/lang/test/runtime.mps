@@ -81,6 +81,7 @@
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="rjhg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="nddn" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.intentions(MPS.Editor/)" />
     <import index="tp5o" ref="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -3201,8 +3202,8 @@
         <property role="TrG5h" value="intentionCondition" />
         <node concept="3uibUv" id="7GTm$3eBajl" role="1tU5fm">
           <ref role="3uigEE" to="y49u:~Condition" resolve="Condition" />
-          <node concept="3uibUv" id="7GTm$3eBati" role="11_B2D">
-            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+          <node concept="3uibUv" id="E4JlmYtFze" role="11_B2D">
+            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
           </node>
         </node>
       </node>
@@ -12536,8 +12537,8 @@
       <node concept="10P_77" id="wUiM63QZT4" role="3clF45" />
       <node concept="37vLTG" id="wUiM63QZT5" role="3clF46">
         <property role="TrG5h" value="intention" />
-        <node concept="3uibUv" id="wUiM63QZT6" role="1tU5fm">
-          <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+        <node concept="3uibUv" id="E4JlmYtMCa" role="1tU5fm">
+          <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
         </node>
       </node>
       <node concept="3clFbS" id="wUiM63QZT7" role="3clF47">
@@ -12556,14 +12557,14 @@
                 <node concept="2OqwBi" id="wUiM63QZTf" role="2Oq$k0">
                   <node concept="2OqwBi" id="wUiM63QZTg" role="2Oq$k0">
                     <node concept="liA8E" id="wUiM63QZTh" role="2OqNvi">
-                      <ref role="37wK5l" to="91lp:~IntentionExecutable.getDescriptor():jetbrains.mps.intentions.IntentionDescriptor" resolve="getDescriptor" />
+                      <ref role="37wK5l" to="nddn:~IntentionExecutable.getDescriptor():jetbrains.mps.openapi.intentions.IntentionDescriptor" resolve="getDescriptor" />
                     </node>
                     <node concept="37vLTw" id="wUiM63QZTi" role="2Oq$k0">
                       <ref role="3cqZAo" node="wUiM63QZT5" resolve="intention" />
                     </node>
                   </node>
                   <node concept="liA8E" id="wUiM63QZTj" role="2OqNvi">
-                    <ref role="37wK5l" to="91lp:~IntentionDescriptor.getPersistentStateKey():java.lang.String" resolve="getPersistentStateKey" />
+                    <ref role="37wK5l" to="nddn:~IntentionDescriptor.getPersistentStateKey():java.lang.String" resolve="getPersistentStateKey" />
                   </node>
                 </node>
                 <node concept="liA8E" id="wUiM63QZTk" role="2OqNvi">
@@ -12634,8 +12635,8 @@
     <node concept="3Tm1VV" id="wUiM63QZr_" role="1B3o_S" />
     <node concept="3uibUv" id="wUiM63R09H" role="EKbjA">
       <ref role="3uigEE" to="y49u:~Condition" resolve="Condition" />
-      <node concept="3uibUv" id="wUiM63R0lZ" role="11_B2D">
-        <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+      <node concept="3uibUv" id="E4JlmYtMlT" role="11_B2D">
+        <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
       </node>
     </node>
   </node>
@@ -12681,8 +12682,8 @@
       <node concept="10P_77" id="wUiM63QSrv" role="3clF45" />
       <node concept="37vLTG" id="wUiM63QSrw" role="3clF46">
         <property role="TrG5h" value="intention" />
-        <node concept="3uibUv" id="wUiM63QSrx" role="1tU5fm">
-          <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+        <node concept="3uibUv" id="E4JlmYtbAd" role="1tU5fm">
+          <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
         </node>
       </node>
       <node concept="3clFbS" id="wUiM63QSry" role="3clF47">
@@ -12691,14 +12692,14 @@
             <node concept="2OqwBi" id="wUiM63QSr_" role="2Oq$k0">
               <node concept="2OqwBi" id="wUiM63QSrA" role="2Oq$k0">
                 <node concept="liA8E" id="wUiM63QSrB" role="2OqNvi">
-                  <ref role="37wK5l" to="91lp:~IntentionExecutable.getDescriptor():jetbrains.mps.intentions.IntentionDescriptor" resolve="getDescriptor" />
+                  <ref role="37wK5l" to="nddn:~IntentionExecutable.getDescriptor():jetbrains.mps.openapi.intentions.IntentionDescriptor" resolve="getDescriptor" />
                 </node>
                 <node concept="37vLTw" id="wUiM63QSrC" role="2Oq$k0">
                   <ref role="3cqZAo" node="wUiM63QSrw" resolve="intention" />
                 </node>
               </node>
               <node concept="liA8E" id="wUiM63QSrD" role="2OqNvi">
-                <ref role="37wK5l" to="91lp:~IntentionDescriptor.getPersistentStateKey():java.lang.String" resolve="getPersistentStateKey" />
+                <ref role="37wK5l" to="nddn:~IntentionDescriptor.getPersistentStateKey():java.lang.String" resolve="getPersistentStateKey" />
               </node>
             </node>
             <node concept="liA8E" id="wUiM63QSrE" role="2OqNvi">
@@ -12741,8 +12742,8 @@
     <node concept="3Tm1VV" id="wUiM63QRY8" role="1B3o_S" />
     <node concept="3uibUv" id="wUiM63QSH3" role="EKbjA">
       <ref role="3uigEE" to="y49u:~Condition" resolve="Condition" />
-      <node concept="3uibUv" id="wUiM63QSTl" role="11_B2D">
-        <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+      <node concept="3uibUv" id="E4JlmYtbIX" role="11_B2D">
+        <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
       </node>
     </node>
   </node>
@@ -12901,8 +12902,8 @@
                       <property role="TrG5h" value="singleMatch" />
                       <node concept="3uibUv" id="wUiM63SxiS" role="1tU5fm">
                         <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                        <node concept="3uibUv" id="wUiM63SxiT" role="11_B2D">
-                          <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+                        <node concept="3uibUv" id="E4JlmYtkTM" role="11_B2D">
+                          <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
                         </node>
                         <node concept="3uibUv" id="wUiM63SxiU" role="11_B2D">
                           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -12930,7 +12931,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="wUiM63Sxj3" role="2OqNvi">
-                        <ref role="37wK5l" to="91lp:~IntentionExecutable.execute(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
+                        <ref role="37wK5l" to="nddn:~IntentionExecutable.execute(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.openapi.editor.EditorContext):void" resolve="execute" />
                         <node concept="2OqwBi" id="wUiM63Sxj4" role="37wK5m">
                           <node concept="37vLTw" id="wUiM63Sxj5" role="2Oq$k0">
                             <ref role="3cqZAo" node="wUiM63SxiR" resolve="singleMatch" />
@@ -12965,8 +12966,8 @@
         <property role="TrG5h" value="intentionCondition" />
         <node concept="3uibUv" id="wUiM63PU8x" role="1tU5fm">
           <ref role="3uigEE" to="y49u:~Condition" resolve="Condition" />
-          <node concept="3uibUv" id="wUiM63PU8y" role="11_B2D">
-            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+          <node concept="3uibUv" id="E4JlmYtkGp" role="11_B2D">
+            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
           </node>
         </node>
       </node>
@@ -12992,8 +12993,8 @@
         <property role="TrG5h" value="intentionCondition" />
         <node concept="3uibUv" id="wUiM63PU8H" role="1tU5fm">
           <ref role="3uigEE" to="y49u:~Condition" resolve="Condition" />
-          <node concept="3uibUv" id="wUiM63PU8I" role="11_B2D">
-            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+          <node concept="3uibUv" id="E4JlmYtfFW" role="11_B2D">
+            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
           </node>
         </node>
       </node>
@@ -13004,8 +13005,8 @@
             <node concept="_YKpA" id="wUiM63PU8V" role="1tU5fm">
               <node concept="3uibUv" id="wUiM63PU8W" role="_ZDj9">
                 <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                <node concept="3uibUv" id="wUiM63PU8X" role="11_B2D">
-                  <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+                <node concept="3uibUv" id="E4JlmYtgky" role="11_B2D">
+                  <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
                 </node>
                 <node concept="3uibUv" id="wUiM63PU8Y" role="11_B2D">
                   <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -13084,8 +13085,8 @@
       </node>
       <node concept="3uibUv" id="wUiM63PU9C" role="3clF45">
         <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-        <node concept="3uibUv" id="wUiM63PU9D" role="11_B2D">
-          <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+        <node concept="3uibUv" id="E4JlmYtiy8" role="11_B2D">
+          <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
         </node>
         <node concept="3uibUv" id="wUiM63PU9E" role="11_B2D">
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -13106,8 +13107,8 @@
             <node concept="3vKaQO" id="wUiM63S_HY" role="1tU5fm">
               <node concept="3uibUv" id="wUiM63S_HZ" role="3O5elw">
                 <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-                <node concept="3uibUv" id="wUiM63S_I0" role="11_B2D">
-                  <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+                <node concept="3uibUv" id="E4JlmYtb7w" role="11_B2D">
+                  <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
                 </node>
                 <node concept="3uibUv" id="wUiM63S_I1" role="11_B2D">
                   <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -13162,8 +13163,8 @@
       <node concept="A3Dl8" id="wUiM63S$fS" role="3clF45">
         <node concept="3uibUv" id="wUiM63S$hK" role="A3Ik2">
           <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-          <node concept="3uibUv" id="wUiM63S$hL" role="11_B2D">
-            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+          <node concept="3uibUv" id="E4JlmYte8k" role="11_B2D">
+            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
           </node>
           <node concept="3uibUv" id="wUiM63S$hM" role="11_B2D">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
@@ -13178,8 +13179,8 @@
         <property role="TrG5h" value="condition" />
         <node concept="3uibUv" id="wUiM63SAvJ" role="1tU5fm">
           <ref role="3uigEE" to="y49u:~Condition" resolve="Condition" />
-          <node concept="3uibUv" id="wUiM63SAzM" role="11_B2D">
-            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+          <node concept="3uibUv" id="E4JlmYtdvB" role="11_B2D">
+            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
           </node>
         </node>
       </node>
@@ -13247,8 +13248,8 @@
       <node concept="3vKaQO" id="wUiM63PUa4" role="3clF45">
         <node concept="3uibUv" id="wUiM63PUa5" role="3O5elw">
           <ref role="3uigEE" to="18ew:~Pair" resolve="Pair" />
-          <node concept="3uibUv" id="wUiM63PUa6" role="11_B2D">
-            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+          <node concept="3uibUv" id="E4JlmYt9h3" role="11_B2D">
+            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
           </node>
           <node concept="3uibUv" id="wUiM63PUa7" role="11_B2D">
             <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />

@@ -16,7 +16,7 @@
 package jetbrains.mps.intentions;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.openapi.intentions.Kind;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -25,8 +25,11 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 /**
  * User: shatalin
  * Date: 11/9/12
+ *
+ * @deprecated since MPS 2017.2 use {@link jetbrains.mps.openapi.intentions.IntentionDescriptor}
  */
-public interface IntentionDescriptor {
+@Deprecated
+public interface IntentionDescriptor extends jetbrains.mps.openapi.intentions.IntentionDescriptor {
   /**
    * @return name of the intention visible in general UI (without any context, as opposed to {@link IntentionExecutable#getDescription(SNode, EditorContext)})
    */
@@ -35,10 +38,10 @@ public interface IntentionDescriptor {
   String getPersistentStateKey();
 
   /**
-   * @deprecated we don't use this value to filter out intentions, language is implied by aspect which provides the intention.
    * @return name of the language this intention is active for.
    * IMPORTANT Does not necessarily match that of applicable concept (e.g. intentions in lang.generator for core.BaseConcept)
    * FIXME the only use is to group intentions in UI now. IntentionsManager shall do better job about access to intention origin
+   * @deprecated we don't use this value to filter out intentions, language is implied by aspect which provides the intention.
    */
   @Deprecated
   @ToRemove(version = 3.3)
@@ -52,4 +55,9 @@ public interface IntentionDescriptor {
 
   @Nullable
   SNodeReference getIntentionNodeReference();
+
+  @Override
+  default Kind getKind() {
+    return Kind.valueOf(getType().name());
+  }
 }

@@ -82,65 +82,67 @@
   </root>
   <root nodeRef="r:a3b5964c-2d88-4fe7-9fde-b377ee252f13(jetbrains.mps.lang.editor.menus.extras.runtime)/2926686622729974591">
     <file name="IntentionMenuPartBase.java">
-      <node id="2926686622729975844" at="18,0,19,0" concept="2" trace="myIntentionId" />
-      <node id="2926686622729976030" at="20,52,21,32" concept="1" />
-      <node id="6820996345401694240" at="25,86,26,162" concept="6" />
-      <node id="2468431357014617900" at="26,162,27,0" concept="8" />
-      <node id="2468431357014622616" at="27,0,28,82" concept="6" />
-      <node id="2468431357014656843" at="29,56,30,68" concept="6" />
-      <node id="2468431357014653029" at="31,25,32,25" concept="1" />
-      <node id="2468431357014659496" at="34,5,35,18" concept="7" />
-      <node id="7291101478621741043" at="42,0,43,0" concept="2" trace="_context" />
-      <node id="7291101478621741046" at="43,0,44,0" concept="2" trace="myExecutable" />
-      <node id="7291101478621741054" at="45,91,46,25" concept="1" />
-      <node id="7291101478621741058" at="46,25,47,32" concept="1" />
-      <node id="7291101478621741071" at="52,57,53,90" concept="7" />
-      <node id="7291101478621741091" at="57,50,58,76" concept="1" />
-      <node id="7291101478621663302" at="38,0,40,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/intentions/IntentionExecutable;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
-      <node id="2926686622729976022" at="20,0,23,0" concept="0" trace="IntentionMenuPartBase#(Ljava/lang/String;)V" />
-      <node id="2468431357014657562" at="30,68,33,7" concept="4" />
-      <node id="7291101478621741050" at="45,0,49,0" concept="0" trace="ItemBase#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/intentions/IntentionExecutable;)V" />
-      <node id="7291101478621741087" at="56,0,60,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
-      <node id="7291101478621741067" at="50,0,55,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="2468431357014648974" at="28,82,34,5" concept="3" />
-      <node id="2468431357014615527" at="24,0,37,0" concept="5" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
-      <scope id="2926686622729976026" at="20,52,21,32" />
-      <scope id="2468431357014657564" at="31,25,32,25" />
-      <scope id="7291101478621741070" at="52,57,53,90" />
-      <scope id="7291101478621741090" at="57,50,58,76" />
-      <scope id="7291101478621663302" at="38,0,40,0">
+      <node id="2926686622729975844" at="23,0,24,0" concept="2" trace="myIntentionId" />
+      <node id="2926686622729976030" at="26,52,27,32" concept="1" />
+      <node id="6820996345401694240" at="31,86,32,162" concept="6" />
+      <node id="2468431357014617900" at="32,162,33,0" concept="8" />
+      <node id="2468431357014622616" at="33,0,34,82" concept="6" />
+      <node id="2468431357014656843" at="36,79,37,117" concept="6" />
+      <node id="2468431357014653029" at="38,27,39,27" concept="1" />
+      <node id="2468431357014659496" at="42,5,43,18" concept="7" />
+      <node id="7291101478621741043" at="50,0,51,0" concept="2" trace="_context" />
+      <node id="7291101478621741046" at="51,0,52,0" concept="2" trace="myExecutable" />
+      <node id="7291101478621741054" at="53,116,54,25" concept="1" />
+      <node id="7291101478621741058" at="54,25,55,32" concept="1" />
+      <node id="7291101478621741071" at="60,57,61,90" concept="7" />
+      <node id="7291101478621741091" at="65,50,66,76" concept="1" />
+      <node id="7291101478621663302" at="46,0,48,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/intentions/IntentionExecutable;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
+      <node id="2468431357014657562" at="37,117,40,9" concept="4" />
+      <node id="2926686622729976022" at="25,0,29,0" concept="0" trace="IntentionMenuPartBase#(Ljava/lang/String;)V" />
+      <node id="7291101478621741050" at="53,0,57,0" concept="0" trace="ItemBase#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/intentions/IntentionExecutable;)V" />
+      <node id="7291101478621741087" at="64,0,68,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
+      <node id="7291101478621741067" at="58,0,63,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="757938813268662366" at="35,56,41,7" concept="4" />
+      <node id="2468431357014648974" at="34,82,42,5" concept="3" />
+      <node id="2468431357014615527" at="30,0,45,0" concept="5" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <scope id="2926686622729976026" at="26,52,27,32" />
+      <scope id="2468431357014657564" at="38,27,39,27" />
+      <scope id="7291101478621741070" at="60,57,61,90" />
+      <scope id="7291101478621741090" at="65,50,66,76" />
+      <scope id="7291101478621663302" at="46,0,48,0">
         <var name="context" id="7291101478621663161" />
         <var name="executable" id="7291101478621663163" />
       </scope>
-      <scope id="7291101478621741053" at="45,91,47,32" />
-      <scope id="2926686622729976022" at="20,0,23,0">
+      <scope id="7291101478621741053" at="53,116,55,32" />
+      <scope id="2926686622729976022" at="25,0,29,0">
         <var name="intentionId" id="2926686622729976029" />
       </scope>
-      <scope id="2468431357014648976" at="29,56,33,7">
+      <scope id="757938813268662368" at="36,79,40,9">
         <var name="item" id="2468431357014656844" />
       </scope>
-      <scope id="7291101478621741050" at="45,0,49,0">
+      <scope id="7291101478621741050" at="53,0,57,0">
         <var name="context" id="7291101478621741062" />
         <var name="executable" id="7291101478621741064" />
       </scope>
-      <scope id="7291101478621741087" at="56,0,60,0">
+      <scope id="7291101478621741087" at="64,0,68,0">
         <var name="pattern" id="7291101478621741102" />
       </scope>
-      <scope id="7291101478621741067" at="50,0,55,0">
+      <scope id="7291101478621741067" at="58,0,63,0">
         <var name="pattern" id="7291101478621741083" />
       </scope>
-      <scope id="2468431357014648974" at="28,82,34,5">
+      <scope id="2468431357014648976" at="35,56,41,7" />
+      <scope id="2468431357014648974" at="34,82,42,5">
         <var name="executable" id="2468431357014648977" />
       </scope>
-      <scope id="2468431357014615535" at="25,86,35,18">
+      <scope id="2468431357014615535" at="31,86,43,18">
         <var name="executables" id="6820996345401694246" />
         <var name="result" id="2468431357014622622" />
       </scope>
-      <scope id="2468431357014615527" at="24,0,37,0">
+      <scope id="2468431357014615527" at="30,0,45,0">
         <var name="context" id="2468431357014615533" />
       </scope>
-      <unit id="7291101478621741042" at="41,0,61,0" name="jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase$ItemBase" />
-      <unit id="2926686622729974591" at="17,0,63,0" name="jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase" />
+      <unit id="7291101478621741042" at="49,0,69,0" name="jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase$ItemBase" />
+      <unit id="2926686622729974591" at="21,0,71,0" name="jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase" />
     </file>
   </root>
   <root nodeRef="r:a3b5964c-2d88-4fe7-9fde-b377ee252f13(jetbrains.mps.lang.editor.menus.extras.runtime)/4736696158595708593">
@@ -226,6 +228,69 @@
         <var name="refactoring" id="8874023590561222356" />
       </scope>
       <unit id="6820996345401189065" at="21,0,59,0" name="jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuItemBase" />
+    </file>
+  </root>
+  <root nodeRef="r:a3b5964c-2d88-4fe7-9fde-b377ee252f13(jetbrains.mps.lang.editor.menus.extras.runtime)/757938813268651316">
+    <file name="AbstractIntentionMenuPart.java">
+      <node id="757938813268651317" at="18,0,19,0" concept="2" trace="myIntentionId" />
+      <node id="757938813268651325" at="20,56,21,32" concept="1" />
+      <node id="757938813268651340" at="25,86,26,162" concept="6" />
+      <node id="757938813268651354" at="26,162,27,0" concept="8" />
+      <node id="757938813268651355" at="27,0,28,82" concept="6" />
+      <node id="757938813268651364" at="29,56,30,68" concept="6" />
+      <node id="757938813268651372" at="31,25,32,25" concept="1" />
+      <node id="757938813268651383" at="34,5,35,18" concept="7" />
+      <node id="757938813268651399" at="42,0,43,0" concept="2" trace="_context" />
+      <node id="757938813268651402" at="43,0,44,0" concept="2" trace="myExecutable" />
+      <node id="757938813268651410" at="45,91,46,25" concept="1" />
+      <node id="757938813268651414" at="46,25,47,32" concept="1" />
+      <node id="757938813268651427" at="52,57,53,90" concept="7" />
+      <node id="757938813268651447" at="57,50,58,76" concept="1" />
+      <node id="757938813268651386" at="38,0,40,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/openapi/intentions/IntentionExecutable;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
+      <node id="757938813268651321" at="20,0,23,0" concept="0" trace="AbstractIntentionMenuPart#(Ljava/lang/String;)V" />
+      <node id="757938813268651370" at="30,68,33,7" concept="4" />
+      <node id="757938813268651406" at="45,0,49,0" concept="0" trace="ItemBase#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;Ljetbrains/mps/openapi/intentions/IntentionExecutable;)V" />
+      <node id="757938813268651443" at="56,0,60,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
+      <node id="757938813268651423" at="50,0,55,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="757938813268651362" at="28,82,34,5" concept="3" />
+      <node id="757938813268651332" at="24,0,37,0" concept="5" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <scope id="757938813268651324" at="20,56,21,32" />
+      <scope id="757938813268651371" at="31,25,32,25" />
+      <scope id="757938813268651426" at="52,57,53,90" />
+      <scope id="757938813268651446" at="57,50,58,76" />
+      <scope id="757938813268651386" at="38,0,40,0">
+        <var name="context" id="757938813268651389" />
+        <var name="executable" id="757938813268651392" />
+      </scope>
+      <scope id="757938813268651409" at="45,91,47,32" />
+      <scope id="757938813268651321" at="20,0,23,0">
+        <var name="intentionId" id="757938813268651329" />
+      </scope>
+      <scope id="757938813268651363" at="29,56,33,7">
+        <var name="item" id="757938813268651365" />
+      </scope>
+      <scope id="757938813268651406" at="45,0,49,0">
+        <var name="context" id="757938813268651418" />
+        <var name="executable" id="757938813268651420" />
+      </scope>
+      <scope id="757938813268651443" at="56,0,60,0">
+        <var name="pattern" id="757938813268651458" />
+      </scope>
+      <scope id="757938813268651423" at="50,0,55,0">
+        <var name="pattern" id="757938813268651439" />
+      </scope>
+      <scope id="757938813268651362" at="28,82,34,5">
+        <var name="executable" id="757938813268651380" />
+      </scope>
+      <scope id="757938813268651339" at="25,86,35,18">
+        <var name="executables" id="757938813268651341" />
+        <var name="result" id="757938813268651356" />
+      </scope>
+      <scope id="757938813268651332" at="24,0,37,0">
+        <var name="context" id="757938813268651337" />
+      </scope>
+      <unit id="757938813268651398" at="41,0,61,0" name="jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart$ItemBase" />
+      <unit id="757938813268651316" at="17,0,63,0" name="jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart" />
     </file>
   </root>
 </debug-info>
