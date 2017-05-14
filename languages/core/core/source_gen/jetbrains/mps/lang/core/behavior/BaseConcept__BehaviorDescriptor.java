@@ -25,9 +25,6 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -83,25 +80,7 @@ public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
     return new ArrayList<Icon>();
   }
   /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
-      String name = SPropertyOperations.getString(SNodeOperations.cast(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-      if (name != null) {
-        return name;
-      }
-      return "<no name>[" + SNodeOperations.getConcept(__thisNode__).getName() + "]";
-    }
-    // -- 
-    String smartRefPresentation = ReferenceConceptUtil.getPresentation(__thisNode__);
-    if (smartRefPresentation != null) {
-      return smartRefPresentation;
-    }
-    // -- 
-    String conceptAlias = SConceptOperations.conceptAlias(SNodeOperations.getConcept(__thisNode__));
-    if ((conceptAlias != null && conceptAlias.length() > 0)) {
-      return conceptAlias;
-    }
-    // -- 
-    return SNodeOperations.getConcept(__thisNode__).getName();
+    return ConceptRegistry.getInstance().getConceptProperties(SNodeOperations.getConcept(__thisNode__)).getPresentationFor(__thisNode__);
   }
   /*package*/ static String getDetailedPresentation_id22G2W3WJ92t(@NotNull SNode __thisNode__) {
     return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(__thisNode__);

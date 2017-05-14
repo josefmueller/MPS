@@ -32,16 +32,18 @@ public final class ConceptPresentationBuilder {
   private IconResource myIcon;
   private boolean myIsDeprecated;
   private List<SConceptFeature> myDeprecatedFeatures;
+  private NodePresentationProvider myPresentationProvider = NodePresentationProviders.LEGACY;
 
   /**
-   * Use this cons when there are no deprecated features in the concept
+   * Use this cons when there are neither deprecated features in the concept nor 'by-reference' presentation
    */
   public ConceptPresentationBuilder() {
     myConcept = null;
   }
 
   /**
-   * Use this cons instead of the {@linkplain #ConceptPresentationBuilder() default} one when there are deprecated features to register
+   * Use this cons instead of the {@linkplain #ConceptPresentationBuilder() default} one
+   * when there are deprecated features or 'by-reference' presentation to register
    * @since 2017.2
    */
   public ConceptPresentationBuilder(long langIdHigh, long langIdLow, long conceptId) {
@@ -115,7 +117,25 @@ public final class ConceptPresentationBuilder {
     }
   }
 
+  public ConceptPresentationBuilder rawPresentation(String presentation) {
+    return presentation(NodePresentationProviders.raw(presentation));
+  }
+
+  public ConceptPresentationBuilder presentationByName() {
+   return presentation(NodePresentationProviders.BY_NAME);
+  }
+
+  public ConceptPresentationBuilder presentationByReference(long rid, String name, String prefix, String suffix) {
+    assert myConcept != null;
+    return presentation(NodePresentationProviders.byReference(MetaAdapterFactory.getReferenceLink(MetaIdFactory.refId(myConcept, rid), name), prefix, suffix));
+  }
+
+  public ConceptPresentationBuilder presentation(NodePresentationProvider provider) {
+    myPresentationProvider = provider;
+    return this;
+  }
+
   public ConceptPresentation create(){
-    return new ConceptPresentation(myHelpUrl, myShortDescription, myIcon, myIsDeprecated, myDeprecatedFeatures);
+    return new ConceptPresentation(myHelpUrl, myShortDescription, myIcon, myIsDeprecated, myDeprecatedFeatures, myPresentationProvider);
   }
 }
