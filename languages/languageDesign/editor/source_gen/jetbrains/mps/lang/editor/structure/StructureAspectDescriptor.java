@@ -4670,10 +4670,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForSubstituteMenu_RefPresentationTemplate() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor", "SubstituteMenu_RefPresentationTemplate", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3bc83bac475c4b36L);
     b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.structure.structure.RefPresentationTemplate", 0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL);
     b.parent(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3bc83bac473584f8L);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/4307758654697524022");
-    b.prop("prefix", 0x3bc83bac475c4b59L, "4307758654697524057");
-    b.prop("suffix", 0x3bc83bac475c4b5cL, "4307758654697524060");
     b.alias("simple");
     return b.create();
   }

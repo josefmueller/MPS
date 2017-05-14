@@ -725,5 +725,48 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7ERGDLdpClu">
+    <property role="EcuMT" value="8842732777748464990" />
+    <property role="3GE5qa" value="smartReference" />
+    <property role="TrG5h" value="RefPresentationTemplate" />
+    <property role="34LRSv" value="template" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3J8eUL7n4Hp" role="1TKVEl">
+      <property role="IQ2nx" value="4307758654697524057" />
+      <property role="TrG5h" value="prefix" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="3J8eUL7n4Hs" role="1TKVEl">
+      <property role="IQ2nx" value="4307758654697524060" />
+      <property role="TrG5h" value="suffix" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7ERGDLdoDvC">
+    <property role="EcuMT" value="8842732777748207592" />
+    <property role="TrG5h" value="SmartReferenceAttribute" />
+    <property role="34LRSv" value="@smart reference" />
+    <property role="3GE5qa" value="smartReference" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="7ERGDLdoDvH" role="1TKVEi">
+      <property role="IQ2ns" value="8842732777748207597" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="charactersticReference" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+    <node concept="M6xJ_" id="7ERGDLdoDvD" role="lGtFl">
+      <property role="Hh88m" value="smartReference" />
+      <node concept="trNpa" id="7ERGDLdoDvF" role="EQaZv">
+        <ref role="trN6q" node="f_TIwhg" resolve="ConceptDeclaration" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="7ERGDLdpEKR" role="1TKVEi">
+      <property role="IQ2ns" value="8842732777748474935" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="refPresentationTemplate" />
+      <ref role="20lvS9" node="7ERGDLdpClu" resolve="RefPresentationTemplate" />
+    </node>
+  </node>
 </model>
 

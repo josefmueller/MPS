@@ -25396,39 +25396,6 @@
       <node concept="2iRkQZ" id="3J8eUL7d614" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="3J8eUL7n4HU">
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
-    <ref role="1XX52x" to="tpc2:3J8eUL7n4GQ" resolve="SubstituteMenu_RefPresentationTemplate" />
-    <node concept="3EZMnI" id="3J8eUL7n4Js" role="2wV5jI">
-      <node concept="2iRfu4" id="3J8eUL7n4Jt" role="2iSdaV" />
-      <node concept="3F0A7n" id="3J8eUL7n4Ic" role="3EZMnx">
-        <property role="1O74Pk" value="true" />
-        <property role="1$x2rV" value="&lt;empty prefix&gt;" />
-        <ref role="1NtTu8" to="tpc2:3J8eUL7n4Hp" resolve="prefix" />
-        <node concept="VechU" id="3J8eUL7sKN0" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="3J8eUL7n4Il" role="3EZMnx">
-        <property role="3F0ifm" value="&lt;ref. presentation&gt;" />
-        <ref role="1k5W1q" to="tpen:hgVSdfU" resolve="StringLiteral" />
-        <node concept="11L4FC" id="3J8eUL7pZYZ" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-        <node concept="11LMrY" id="3J8eUL7pZZ7" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
-      </node>
-      <node concept="3F0A7n" id="3J8eUL7n4Iy" role="3EZMnx">
-        <property role="1O74Pk" value="true" />
-        <property role="1$x2rV" value="&lt;empty suffix&gt;" />
-        <ref role="1NtTu8" to="tpc2:3J8eUL7n4Hs" resolve="suffix" />
-        <node concept="VechU" id="3J8eUL7sKMW" role="3F10Kt">
-          <property role="Vb096" value="DARK_GREEN" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="24kQdi" id="1Pr44Jlk_Z5">
     <property role="3GE5qa" value="migration" />
     <ref role="1XX52x" to="tpc2:1Pr44Jlk_YB" resolve="GeneratedSubstituteMenuAttribute" />

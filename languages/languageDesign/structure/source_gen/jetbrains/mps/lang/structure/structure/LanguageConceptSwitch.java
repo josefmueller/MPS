@@ -30,7 +30,9 @@ public final class LanguageConceptSwitch {
   public static final int LinkDeclaration = 18;
   public static final int PrimitiveDataTypeDeclaration = 19;
   public static final int PropertyDeclaration = 20;
-  public static final int ReferenceLinkDeclartionScopeKind = 21;
+  public static final int RefPresentationTemplate = 21;
+  public static final int ReferenceLinkDeclartionScopeKind = 22;
+  public static final int SmartReferenceAttribute = 23;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xc72da2b97cce4447L, 0x8389f407dc1158b7L);
@@ -55,7 +57,9 @@ public final class LanguageConceptSwitch {
     builder.put(0xf979bd086aL, LinkDeclaration);
     builder.put(0xfc3652de27L, PrimitiveDataTypeDeclaration);
     builder.put(0xf979bd086bL, PropertyDeclaration);
+    builder.put(0x7ab7b29c4d66855eL, RefPresentationTemplate);
     builder.put(0x4f57884e07c08838L, ReferenceLinkDeclartionScopeKind);
+    builder.put(0x7ab7b29c4d6297e8L, SmartReferenceAttribute);
     myIndex = builder.seal();
   }
 

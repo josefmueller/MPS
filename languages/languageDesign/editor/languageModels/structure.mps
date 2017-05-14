@@ -6525,19 +6525,21 @@
     <property role="TrG5h" value="SubstituteMenu_RefPresentationTemplate" />
     <property role="34LRSv" value="simple" />
     <property role="R4oN_" value="text literal template" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="3J8eUL7n4Hp" role="1TKVEl">
-      <property role="IQ2nx" value="4307758654697524057" />
-      <property role="TrG5h" value="prefix" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="3J8eUL7n4Hs" role="1TKVEl">
-      <property role="IQ2nx" value="4307758654697524060" />
-      <property role="TrG5h" value="suffix" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
+    <ref role="1TJDcQ" to="tpce:7ERGDLdpClu" resolve="RefPresentationTemplate" />
     <node concept="PrWs8" id="3J8eUL7n4GX" role="PzmwI">
       <ref role="PrY4T" node="3J8eUL7dojS" resolve="ISubstituteMenu_RefPresentation" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Pr44Jlk_YB">
+    <property role="EcuMT" value="2115302367868116903" />
+    <property role="TrG5h" value="GeneratedSubstituteMenuAttribute" />
+    <property role="3GE5qa" value="migration" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="1Pr44Jlk_YC" role="lGtFl">
+      <property role="Hh88m" value="generatedNode" />
+      <node concept="trNpa" id="1Pr44Jlk_YE" role="EQaZv">
+        <ref role="trN6q" node="1J2KHYpABsB" resolve="ISubstituteMenu" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="2Bx95km$HUU">
@@ -6580,18 +6582,6 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="generatedMenu" />
       <ref role="20lvS9" node="3fw9B$5YUrX" resolve="SubstituteMenu_Named" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="1Pr44Jlk_YB">
-    <property role="EcuMT" value="2115302367868116903" />
-    <property role="TrG5h" value="GeneratedSubstituteMenuAttribute" />
-    <property role="3GE5qa" value="migration" />
-    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
-    <node concept="M6xJ_" id="1Pr44Jlk_YC" role="lGtFl">
-      <property role="Hh88m" value="generatedNode" />
-      <node concept="trNpa" id="1Pr44Jlk_YE" role="EQaZv">
-        <ref role="trN6q" node="1J2KHYpABsB" resolve="ISubstituteMenu" />
-      </node>
     </node>
   </node>
 </model>

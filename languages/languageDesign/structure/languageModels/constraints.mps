@@ -169,6 +169,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -324,6 +327,7 @@
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
         <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -354,6 +358,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -2696,6 +2701,39 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="50vK5Yaqshm" role="1B3o_S" />
+    </node>
+  </node>
+  <node concept="1M2fIO" id="7ERGDLdpEYp">
+    <property role="3GE5qa" value="smartReference" />
+    <ref role="1M2myG" to="tpce:7ERGDLdoDvC" resolve="SmartReferenceAttribute" />
+    <node concept="1N5Pfh" id="7ERGDLdpEYq" role="1Mr941">
+      <ref role="1N5Vy1" to="tpce:7ERGDLdoDvH" resolve="charactersticReference" />
+      <node concept="3dgokm" id="7ERGDLdpEYu" role="1N6uqs">
+        <node concept="3clFbS" id="7ERGDLdpEYw" role="2VODD2">
+          <node concept="3clFbF" id="7ERGDLdpF1q" role="3cqZAp">
+            <node concept="2YIFZM" id="7ERGDLdq8yE" role="3clFbG">
+              <ref role="37wK5l" to="o8zo:4IP40Bi3eAf" resolve="forNamedElements" />
+              <ref role="1Pybhc" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
+              <node concept="2OqwBi" id="7ERGDLdpFII" role="37wK5m">
+                <node concept="1eOMI4" id="7ERGDLdpHb5" role="2Oq$k0">
+                  <node concept="1PxgMI" id="7ERGDLdpHxb" role="1eOMHV">
+                    <node concept="chp4Y" id="7ERGDLdpH$Y" role="3oSUPX">
+                      <ref role="cht4Q" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                    </node>
+                    <node concept="2OqwBi" id="7ERGDLdpHb1" role="1m5AlR">
+                      <node concept="3kakTB" id="7ERGDLdpHb2" role="2Oq$k0" />
+                      <node concept="1mfA1w" id="7ERGDLdpHb3" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2qgKlT" id="7ERGDLdpHS1" role="2OqNvi">
+                  <ref role="37wK5l" to="tpcn:hEwILL0" resolve="getReferenceLinkDeclarations" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
