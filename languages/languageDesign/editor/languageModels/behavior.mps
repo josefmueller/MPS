@@ -23002,56 +23002,6 @@
       </node>
     </node>
   </node>
-  <node concept="13h7C7" id="3J8eUL7kTiQ">
-    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
-    <ref role="13h7C2" to="tpc2:3J8eUL7kThX" resolve="QueryFunctionParameter_SubstituteMenu_ReferencedNode" />
-    <node concept="13hLZK" id="3J8eUL7kTiR" role="13h7CW">
-      <node concept="3clFbS" id="3J8eUL7kTiS" role="2VODD2" />
-    </node>
-    <node concept="13i0hz" id="3J8eUL7kTjF" role="13h7CS">
-      <property role="TrG5h" value="getType" />
-      <property role="13i0it" value="false" />
-      <property role="13i0iv" value="false" />
-      <ref role="13i0hy" to="tpek:27DJnJtIQ9C" resolve="getType" />
-      <node concept="3Tm1VV" id="3J8eUL7kTjG" role="1B3o_S" />
-      <node concept="3clFbS" id="3J8eUL7kTjL" role="3clF47">
-        <node concept="3clFbF" id="3J8eUL7kTqS" role="3cqZAp">
-          <node concept="2c44tf" id="3J8eUL7kTqQ" role="3clFbG">
-            <node concept="3Tqbb2" id="3J8eUL7kTsJ" role="2c44tc">
-              <ref role="ehGHo" to="tpc2:1GaASKeIesA" resolve="AbstractCellSelector" />
-              <node concept="2c44tb" id="3J8eUL7kT$8" role="lGtFl">
-                <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
-                <property role="2qtEX8" value="concept" />
-                <node concept="2OqwBi" id="3J8eUL7kZDD" role="2c44t1">
-                  <node concept="2OqwBi" id="3J8eUL7kUnI" role="2Oq$k0">
-                    <node concept="2OqwBi" id="3J8eUL7kTKN" role="2Oq$k0">
-                      <node concept="13iPFW" id="3J8eUL7kT$L" role="2Oq$k0" />
-                      <node concept="2Xjw5R" id="3J8eUL7kUc5" role="2OqNvi">
-                        <node concept="1xMEDy" id="3J8eUL7kUc7" role="1xVPHs">
-                          <node concept="chp4Y" id="3J8eUL7kUez" role="ri$Ld">
-                            <ref role="cht4Q" to="tpc2:7jQE8Y9gpPl" resolve="SubstituteMenuPart_ReferenceScope" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3TrEf2" id="3J8eUL7kZkL" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpc2:7jQE8Y9h_dD" resolve="reference" />
-                    </node>
-                  </node>
-                  <node concept="3TrEf2" id="3J8eUL7kZXD" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="3J8eUL7kTjM" role="3clF45">
-        <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
-      </node>
-    </node>
-  </node>
   <node concept="13h7C7" id="3J8eUL7kPNY">
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <ref role="13h7C2" to="tpc2:3J8eUL7kPHX" resolve="QueryFunction_SubstituteMenu_RefPresentation" />
@@ -23107,10 +23057,11 @@
       </node>
     </node>
     <node concept="13i0hz" id="3J8eUL7kPPC" role="13h7CS">
-      <property role="TrG5h" value="getExpectedRetType" />
+      <property role="TrG5h" value="getExpectedReturnType" />
       <property role="13i0iv" value="false" />
       <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpek:i2fhBNC" resolve="getExpectedRetType" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tqbb2" id="7ERGDLdmHfP" role="3clF45" />
       <node concept="3Tm1VV" id="3J8eUL7kPPD" role="1B3o_S" />
       <node concept="3clFbS" id="3J8eUL7kPPI" role="3clF47">
         <node concept="3clFbF" id="3J8eUL7kQ87" role="3cqZAp">
@@ -23119,7 +23070,56 @@
           </node>
         </node>
       </node>
-      <node concept="3Tqbb2" id="3J8eUL7kPPJ" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="3J8eUL7kTiQ">
+    <property role="3GE5qa" value="Menu.Substitute.QueryFunctionParameters" />
+    <ref role="13h7C2" to="tpc2:3J8eUL7kThX" resolve="QueryFunctionParameter_SubstituteMenu_ReferencedNode" />
+    <node concept="13hLZK" id="3J8eUL7kTiR" role="13h7CW">
+      <node concept="3clFbS" id="3J8eUL7kTiS" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="3J8eUL7kTjF" role="13h7CS">
+      <property role="TrG5h" value="getType" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:27DJnJtIQ9C" resolve="getType" />
+      <node concept="3Tm1VV" id="3J8eUL7kTjG" role="1B3o_S" />
+      <node concept="3clFbS" id="3J8eUL7kTjL" role="3clF47">
+        <node concept="3clFbF" id="3J8eUL7kTqS" role="3cqZAp">
+          <node concept="2c44tf" id="3J8eUL7kTqQ" role="3clFbG">
+            <node concept="3Tqbb2" id="3J8eUL7kTsJ" role="2c44tc">
+              <ref role="ehGHo" to="tpc2:1GaASKeIesA" resolve="AbstractCellSelector" />
+              <node concept="2c44tb" id="3J8eUL7kT$8" role="lGtFl">
+                <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
+                <property role="2qtEX8" value="concept" />
+                <node concept="2OqwBi" id="3J8eUL7kZDD" role="2c44t1">
+                  <node concept="2OqwBi" id="3J8eUL7kUnI" role="2Oq$k0">
+                    <node concept="2OqwBi" id="3J8eUL7kTKN" role="2Oq$k0">
+                      <node concept="13iPFW" id="3J8eUL7kT$L" role="2Oq$k0" />
+                      <node concept="2Xjw5R" id="3J8eUL7kUc5" role="2OqNvi">
+                        <node concept="1xMEDy" id="3J8eUL7kUc7" role="1xVPHs">
+                          <node concept="chp4Y" id="3J8eUL7kUez" role="ri$Ld">
+                            <ref role="cht4Q" to="tpc2:7jQE8Y9gpPl" resolve="SubstituteMenuPart_ReferenceScope" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="3J8eUL7kZkL" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpc2:7jQE8Y9h_dD" resolve="reference" />
+                    </node>
+                  </node>
+                  <node concept="3TrEf2" id="3J8eUL7kZXD" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="3J8eUL7kTjM" role="3clF45">
+        <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
+      </node>
     </node>
   </node>
 </model>
