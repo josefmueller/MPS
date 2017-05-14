@@ -264,11 +264,15 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
   }
 
   public static SNode smartRefMenu(SNode conceptNode, SNode menuPart) {
-    return _quotation_createNode_b3phj_a0a03(menuPart, SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_SmartReference", conceptNode);
+    SNode menu = _quotation_createNode_b3phj_a0a0eb(menuPart, SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_SmartReference", conceptNode);
+    SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
+    return menu;
   }
 
   private SNode defaultMenu(SNode conceptNode, SNode includedMenu) {
-    return _quotation_createNode_b3phj_a0a23(conceptNode, includedMenu);
+    SNode menu = _quotation_createNode_b3phj_a0a0gb(conceptNode, includedMenu);
+    SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
+    return menu;
   }
 
   private static final Pattern SMART_ALIAS_PATTERN = Pattern.compile("(.*)\\{(.+)\\}(.*)");
@@ -427,7 +431,7 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
   private static boolean eq_b3phj_a0a0a0a0a0a0a62(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNode _quotation_createNode_b3phj_a0a03(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_b3phj_a0a0eb(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -443,7 +447,7 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
     quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), quotedNode_6);
     return quotedNode_4;
   }
-  private static SNode _quotation_createNode_b3phj_a0a23(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_b3phj_a0a0gb(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
