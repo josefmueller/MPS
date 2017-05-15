@@ -318,6 +318,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myShiftY = 10;
 
   private SelectionManagerImpl mySelectionManager = new SelectionManagerImpl(this);
+  @NotNull
   private final CommandContextImpl myCommandContext;
   private final UpdaterImpl myUpdater;
 
@@ -2881,6 +2882,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myEditorContext = createEditorContext(myNode == null ? null : myNode.getModel(), myRepository);
       myUpdater.clearExplicitHints();
     }
+    myCommandContext.updateContextNode();
     acquireTypeCheckingContext();
   }
 
