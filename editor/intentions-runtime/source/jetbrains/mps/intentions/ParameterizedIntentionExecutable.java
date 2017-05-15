@@ -17,7 +17,10 @@ package jetbrains.mps.intentions;
 
 /**
  * Gives access to the parameter value of a parameterized intention.
+ *
+ * @deprecated since MPS 2017.2 use {@link jetbrains.mps.openapi.intentions.IntentionFactory}
  */
+@Deprecated
 public interface ParameterizedIntentionExecutable extends IntentionExecutable, jetbrains.mps.openapi.intentions.ParameterizedIntentionExecutable {
   Object getParameter();
 }

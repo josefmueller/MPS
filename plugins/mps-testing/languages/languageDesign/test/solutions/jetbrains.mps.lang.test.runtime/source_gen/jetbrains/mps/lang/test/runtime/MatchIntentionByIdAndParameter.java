@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.intentions.ParameterizedIntentionExecutable;
+import jetbrains.mps.openapi.intentions.ParameterizedIntentionExecutable;
 
 public class MatchIntentionByIdAndParameter implements Condition<IntentionExecutable> {
   private final String myExpectedId;

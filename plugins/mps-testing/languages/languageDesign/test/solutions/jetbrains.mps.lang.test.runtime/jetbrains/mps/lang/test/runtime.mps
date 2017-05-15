@@ -12546,8 +12546,8 @@
           <node concept="1Wc70l" id="wUiM63QZT9" role="3clFbG">
             <node concept="1Wc70l" id="wUiM63QZTa" role="3uHU7B">
               <node concept="2ZW3vV" id="wUiM63QZTb" role="3uHU7B">
-                <node concept="3uibUv" id="wUiM63QZTc" role="2ZW6by">
-                  <ref role="3uigEE" to="91lp:~ParameterizedIntentionExecutable" resolve="ParameterizedIntentionExecutable" />
+                <node concept="3uibUv" id="5hh3YxavA3z" role="2ZW6by">
+                  <ref role="3uigEE" to="nddn:~ParameterizedIntentionExecutable" resolve="ParameterizedIntentionExecutable" />
                 </node>
                 <node concept="37vLTw" id="wUiM63QZTd" role="2ZW6bz">
                   <ref role="3cqZAo" node="wUiM63QZT5" resolve="intention" />
@@ -12583,12 +12583,12 @@
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="2OqwBi" id="wUiM63QZTp" role="37wK5m">
                   <node concept="liA8E" id="wUiM63QZTq" role="2OqNvi">
-                    <ref role="37wK5l" to="91lp:~ParameterizedIntentionExecutable.getParameter():java.lang.Object" resolve="getParameter" />
+                    <ref role="37wK5l" to="nddn:~ParameterizedIntentionExecutable.getParameter():java.lang.Object" resolve="getParameter" />
                   </node>
                   <node concept="1eOMI4" id="wUiM63QZTr" role="2Oq$k0">
                     <node concept="10QFUN" id="wUiM63QZTs" role="1eOMHV">
-                      <node concept="3uibUv" id="wUiM63QZTt" role="10QFUM">
-                        <ref role="3uigEE" to="91lp:~ParameterizedIntentionExecutable" resolve="ParameterizedIntentionExecutable" />
+                      <node concept="3uibUv" id="5hh3YxavAav" role="10QFUM">
+                        <ref role="3uigEE" to="nddn:~ParameterizedIntentionExecutable" resolve="ParameterizedIntentionExecutable" />
                       </node>
                       <node concept="37vLTw" id="wUiM63QZTu" role="10QFUP">
                         <ref role="3cqZAo" node="wUiM63QZT5" resolve="intention" />
