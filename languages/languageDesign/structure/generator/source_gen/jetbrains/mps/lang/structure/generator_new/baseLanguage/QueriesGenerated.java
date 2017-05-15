@@ -272,10 +272,21 @@ public class QueriesGenerated extends QueryProviderBase {
     return (SPropertyOperations.hasValue(cd, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), "none", null) ? "NONE" : "ROOT");
   }
   public static Object referenceMacro_GetReferent_4147950839246952264(final ReferenceMacroContext _context) {
-    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".StructureAspectDescriptor";
+    SNode xmodelTarget = _context.getOutputNodeByMappingLabel("StructureAspectDescriptorCons", ((SModel) _context.getVariable("model")));
+    if ((xmodelTarget == null)) {
+      // Compatibility code for non-migrated structure aspect models (those without devkit/plan) 
+      return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".StructureAspectDescriptor";
+    }
+    return xmodelTarget;
   }
   public static Object referenceMacro_GetReferent_4147950839246989517(final ReferenceMacroContext _context) {
-    return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".ConceptPresentationAspectImpl";
+    SNode xmodelTarget = _context.getOutputNodeByMappingLabel("ConceptPresentationAspectClass", ((SModel) _context.getVariable("model")));
+    if ((xmodelTarget == null)) {
+      // Compatibility code for non-migrated structure aspect models (those without devkit/plan) 
+      return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".ConceptPresentationAspectImpl";
+    } else {
+      return xmodelTarget;
+    }
   }
   public static boolean ifMacro_Condition_1212083662247(final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember")));

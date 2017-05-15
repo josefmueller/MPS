@@ -501,13 +501,6 @@
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
-      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -2082,7 +2075,7 @@
   <node concept="bUwia" id="2JhcMFotRh_">
     <property role="TrG5h" value="MAPPING_descriptors" />
     <node concept="2rT7sh" id="3AguOYZ63Kg" role="2rTMjI">
-      <property role="TrG5h" value="SructureAspectDescriptorCons" />
+      <property role="TrG5h" value="StructureAspectDescriptorCons" />
       <ref role="2rZz_L" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
     </node>
     <node concept="2rT7sh" id="3AguOYZ63Qh" role="2rTMjI">
@@ -2290,7 +2283,7 @@
       </node>
       <node concept="2ZBi8u" id="3AguOYZ6ldr" role="lGtFl">
         <property role="34cw8o" value="for a class with explicit default constructor, can't use ML for the class to restore reference in new &lt;ClassCreator&gt; expression, therefore, ML for the cons." />
-        <ref role="2rW$FS" node="3AguOYZ63Kg" resolve="SructureAspectDescriptorCons" />
+        <ref role="2rW$FS" node="3AguOYZ63Kg" resolve="StructureAspectDescriptorCons" />
       </node>
     </node>
     <node concept="2tJIrI" id="414gMbD5Kau" role="jymVt" />
@@ -5401,32 +5394,54 @@
                             <property role="2qtEX8" value="baseMethodDeclaration" />
                             <node concept="3$xsQk" id="3AguOYZ6ht8" role="3$ytzL">
                               <node concept="3clFbS" id="3AguOYZ6ht9" role="2VODD2">
-                                <node concept="1X3_iC" id="71FvR51faFD" role="lGtFl">
-                                  <property role="3V$3am" value="statement" />
-                                  <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                                  <node concept="3clFbF" id="3AguOYZ6mkY" role="8Wnug">
-                                    <node concept="2OqwBi" id="3AguOYZ6mPQ" role="3clFbG">
-                                      <node concept="1iwH7S" id="3AguOYZ6mkX" role="2Oq$k0" />
-                                      <node concept="1iwH7d" id="3AguOYZ6mUW" role="2OqNvi">
-                                        <ref role="1iwH7c" node="3AguOYZ63Kg" resolve="SructureAspectDescriptorCons" />
-                                        <node concept="v3LJS" id="3AguOYZ6ntx" role="DUT31">
+                                <node concept="3cpWs8" id="yEe$4QTgag" role="3cqZAp">
+                                  <node concept="3cpWsn" id="yEe$4QTgah" role="3cpWs9">
+                                    <property role="TrG5h" value="xmodelTarget" />
+                                    <node concept="3Tqbb2" id="yEe$4QTgad" role="1tU5fm">
+                                      <ref role="ehGHo" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
+                                    </node>
+                                    <node concept="2OqwBi" id="yEe$4QTgai" role="33vP2m">
+                                      <node concept="1iwH7S" id="yEe$4QTgaj" role="2Oq$k0" />
+                                      <node concept="1iwH7d" id="yEe$4QTgak" role="2OqNvi">
+                                        <ref role="1iwH7c" node="3AguOYZ63Kg" resolve="StructureAspectDescriptorCons" />
+                                        <node concept="v3LJS" id="yEe$4QTgal" role="DUT31">
                                           <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
                                         </node>
                                       </node>
                                     </node>
                                   </node>
                                 </node>
-                                <node concept="3cpWs6" id="71FvR51faQV" role="3cqZAp">
-                                  <node concept="3cpWs3" id="71FvR51fckV" role="3cqZAk">
-                                    <node concept="Xl_RD" id="71FvR51fcvz" role="3uHU7w">
-                                      <property role="Xl_RC" value=".StructureAspectDescriptor" />
-                                    </node>
-                                    <node concept="2OqwBi" id="71FvR51fbH0" role="3uHU7B">
-                                      <node concept="v3LJS" id="71FvR51fbQK" role="2Oq$k0">
-                                        <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+                                <node concept="3clFbJ" id="yEe$4QTyK6" role="3cqZAp">
+                                  <node concept="3clFbS" id="yEe$4QTyK8" role="3clFbx">
+                                    <node concept="3SKdUt" id="yEe$4QU3pK" role="3cqZAp">
+                                      <node concept="3SKdUq" id="yEe$4QU3pM" role="3SKWNk">
+                                        <property role="3SKdUp" value="Compatibility code for non-migrated structure aspect models (those without devkit/plan)" />
                                       </node>
-                                      <node concept="LkI2h" id="71FvR51fbMg" role="2OqNvi" />
                                     </node>
+                                    <node concept="3cpWs6" id="yEe$4QTDkV" role="3cqZAp">
+                                      <node concept="3cpWs3" id="yEe$4QTs2n" role="3cqZAk">
+                                        <node concept="Xl_RD" id="yEe$4QTs2H" role="3uHU7w">
+                                          <property role="Xl_RC" value=".StructureAspectDescriptor" />
+                                        </node>
+                                        <node concept="2OqwBi" id="yEe$4QTpp3" role="3uHU7B">
+                                          <node concept="v3LJS" id="yEe$4QToWE" role="2Oq$k0">
+                                            <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+                                          </node>
+                                          <node concept="LkI2h" id="yEe$4QTpFY" role="2OqNvi" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="2OqwBi" id="yEe$4QTiPi" role="3clFbw">
+                                    <node concept="37vLTw" id="yEe$4QTgam" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="yEe$4QTgah" resolve="xmodelTarget" />
+                                    </node>
+                                    <node concept="3w_OXm" id="yEe$4QTjX5" role="2OqNvi" />
+                                  </node>
+                                </node>
+                                <node concept="3cpWs6" id="yEe$4QTJWN" role="3cqZAp">
+                                  <node concept="37vLTw" id="yEe$4QTOfq" role="3cqZAk">
+                                    <ref role="3cqZAo" node="yEe$4QTgah" resolve="xmodelTarget" />
                                   </node>
                                 </node>
                               </node>
@@ -5465,31 +5480,57 @@
                             <property role="2qtEX8" value="classifier" />
                             <node concept="3$xsQk" id="3AguOYZ6qzd" role="3$ytzL">
                               <node concept="3clFbS" id="3AguOYZ6qze" role="2VODD2">
-                                <node concept="1X3_iC" id="71FvR51fge_" role="lGtFl">
-                                  <property role="3V$3am" value="statement" />
-                                  <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-                                  <node concept="3clFbF" id="3AguOYZ6qM6" role="8Wnug">
-                                    <node concept="2OqwBi" id="3AguOYZ6rKI" role="3clFbG">
-                                      <node concept="1iwH7S" id="3AguOYZ6rkG" role="2Oq$k0" />
-                                      <node concept="1iwH7d" id="3AguOYZ6rPO" role="2OqNvi">
+                                <node concept="3cpWs8" id="yEe$4QU5PY" role="3cqZAp">
+                                  <node concept="3cpWsn" id="yEe$4QU5PZ" role="3cpWs9">
+                                    <property role="TrG5h" value="xmodelTarget" />
+                                    <node concept="3Tqbb2" id="yEe$4QU5PT" role="1tU5fm">
+                                      <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                                    </node>
+                                    <node concept="2OqwBi" id="yEe$4QU5Q0" role="33vP2m">
+                                      <node concept="1iwH7S" id="yEe$4QU5Q1" role="2Oq$k0" />
+                                      <node concept="1iwH7d" id="yEe$4QU5Q2" role="2OqNvi">
                                         <ref role="1iwH7c" node="3AguOYZ63Qh" resolve="ConceptPresentationAspectClass" />
-                                        <node concept="v3LJS" id="3AguOYZ6s4k" role="DUT31">
+                                        <node concept="v3LJS" id="yEe$4QU5Q3" role="DUT31">
                                           <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
                                         </node>
                                       </node>
                                     </node>
                                   </node>
                                 </node>
-                                <node concept="3clFbF" id="71FvR51fgwd" role="3cqZAp">
-                                  <node concept="3cpWs3" id="71FvR51fhG1" role="3clFbG">
-                                    <node concept="Xl_RD" id="71FvR51fhGn" role="3uHU7w">
-                                      <property role="Xl_RC" value=".ConceptPresentationAspectImpl" />
-                                    </node>
-                                    <node concept="2OqwBi" id="71FvR51fgEu" role="3uHU7B">
-                                      <node concept="v3LJS" id="71FvR51fgwb" role="2Oq$k0">
-                                        <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+                                <node concept="3clFbJ" id="yEe$4QUaph" role="3cqZAp">
+                                  <node concept="3clFbS" id="yEe$4QUapj" role="3clFbx">
+                                    <node concept="3SKdUt" id="yEe$4QUep5" role="3cqZAp">
+                                      <node concept="3SKdUq" id="yEe$4QUep6" role="3SKWNk">
+                                        <property role="3SKdUp" value="Compatibility code for non-migrated structure aspect models (those without devkit/plan)" />
                                       </node>
-                                      <node concept="LkI2h" id="71FvR51fgWa" role="2OqNvi" />
+                                    </node>
+                                    <node concept="3cpWs6" id="yEe$4QUbLR" role="3cqZAp">
+                                      <node concept="3cpWs3" id="yEe$4QUmCu" role="3cqZAk">
+                                        <node concept="2OqwBi" id="yEe$4QUopv" role="3uHU7B">
+                                          <node concept="v3LJS" id="yEe$4QUmEV" role="2Oq$k0">
+                                            <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+                                          </node>
+                                          <node concept="LkI2h" id="yEe$4QUqA$" role="2OqNvi" />
+                                        </node>
+                                        <node concept="Xl_RD" id="yEe$4QUg9F" role="3uHU7w">
+                                          <property role="Xl_RC" value=".ConceptPresentationAspectImpl" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="2OqwBi" id="yEe$4QUaIF" role="3clFbw">
+                                    <node concept="37vLTw" id="yEe$4QU5Q4" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="yEe$4QU5PZ" resolve="xmodelTarget" />
+                                    </node>
+                                    <node concept="3w_OXm" id="yEe$4QUbBk" role="2OqNvi" />
+                                  </node>
+                                  <node concept="9aQIb" id="yEe$4QUhKm" role="9aQIa">
+                                    <node concept="3clFbS" id="yEe$4QUhKn" role="9aQI4">
+                                      <node concept="3cpWs6" id="yEe$4QUbH$" role="3cqZAp">
+                                        <node concept="37vLTw" id="yEe$4QUbJY" role="3cqZAk">
+                                          <ref role="3cqZAo" node="yEe$4QU5PZ" resolve="xmodelTarget" />
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
