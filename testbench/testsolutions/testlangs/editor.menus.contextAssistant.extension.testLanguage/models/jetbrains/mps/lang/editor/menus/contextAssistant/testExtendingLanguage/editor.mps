@@ -20,6 +20,7 @@
     <import index="7e53" ref="r:e11988ca-dd7b-49ce-b283-28b999b925ea(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions)" />
     <import index="91lp" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="nddn" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.intentions(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -127,7 +128,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
       </concept>
@@ -332,11 +333,11 @@
                   <node concept="2OqwBi" id="291CjQFiAED" role="2Oq$k0">
                     <node concept="291QRk" id="291CjQFiArt" role="2Oq$k0" />
                     <node concept="liA8E" id="291CjQFiBrn" role="2OqNvi">
-                      <ref role="37wK5l" to="91lp:~IntentionExecutable.getDescriptor():jetbrains.mps.intentions.IntentionDescriptor" resolve="getDescriptor" />
+                      <ref role="37wK5l" to="nddn:~IntentionExecutable.getDescriptor():jetbrains.mps.openapi.intentions.IntentionDescriptor" resolve="getDescriptor" />
                     </node>
                   </node>
                   <node concept="liA8E" id="291CjQFiCHQ" role="2OqNvi">
-                    <ref role="37wK5l" to="91lp:~IntentionDescriptor.getPresentation():java.lang.String" resolve="getPresentation" />
+                    <ref role="37wK5l" to="nddn:~IntentionDescriptor.getPresentation():java.lang.String" resolve="getPresentation" />
                   </node>
                 </node>
               </node>
