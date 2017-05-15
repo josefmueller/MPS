@@ -16,7 +16,7 @@
   </root>
   <root nodeRef="r:e11988ca-dd7b-49ce-b283-28b999b925ea(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions)/7291101478621544792">
     <file name="AddLetterToName_Intention.java">
-      <node id="7291101478621544792" at="23,38,24,371" concept="8" />
+      <node id="7291101478621544792" at="23,38,24,187" concept="8" />
       <node id="7291101478621544792" at="27,35,28,29" concept="7" />
       <node id="7291101478621544792" at="31,84,32,16" concept="7" />
       <node id="7291101478621544792" at="35,35,36,17" concept="7" />
@@ -41,10 +41,10 @@
       <node id="7291101478621544792" at="34,0,38,0" concept="5" trace="isSurroundWith#()Z" />
       <node id="7291101478621544792" at="56,0,60,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="7291101478621544792" at="60,0,64,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="7291101478621544792" at="64,0,68,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="7291101478621544792" at="64,0,68,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="7291101478621544792" at="40,57,45,5" concept="4" />
       <node id="7291101478621544792" at="38,0,48,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-      <scope id="7291101478621544792" at="23,38,24,371" />
+      <scope id="7291101478621544792" at="23,38,24,187" />
       <scope id="7291101478621544792" at="27,35,28,29" />
       <scope id="7291101478621544792" at="31,84,32,16" />
       <scope id="7291101478621544792" at="35,35,36,17" />

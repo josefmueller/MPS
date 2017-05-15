@@ -22,8 +22,8 @@ import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuPartBase;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuItemBase;
-import jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase;
-import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart;
+import jetbrains.mps.openapi.intentions.IntentionExecutable;
 
 public class Extras extends TransformationMenuBase {
   public Extras() {
@@ -97,7 +97,7 @@ public class Extras extends TransformationMenuBase {
       }
     }
   }
-  public class TMP_Intention_ha3uwx_c0 extends IntentionMenuPartBase {
+  public class TMP_Intention_ha3uwx_c0 extends AbstractIntentionMenuPart {
     public TMP_Intention_ha3uwx_c0() {
       super("jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention");
     }
@@ -107,7 +107,7 @@ public class Extras extends TransformationMenuBase {
       return new Extras.TMP_Intention_ha3uwx_c0.Item(context, executable);
     }
 
-    private class Item extends IntentionMenuPartBase.ItemBase implements SidebarActionItem {
+    private class Item extends AbstractIntentionMenuPart.ItemBase implements SidebarActionItem {
       private Item(TransformationMenuContext context, IntentionExecutable executable) {
         super(context, executable);
       }

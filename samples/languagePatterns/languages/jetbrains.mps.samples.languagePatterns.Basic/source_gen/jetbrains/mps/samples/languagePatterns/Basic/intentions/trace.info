@@ -17,7 +17,7 @@
   <root nodeRef="r:c5491b56-9eb5-4130-90fd-7da3cef76a4e(jetbrains.mps.samples.languagePatterns.Basic.intentions)/6918512748467657857">
     <file name="IntroduceSinger_Intention.java">
       <node id="6918512748467657857" at="24,0,25,0" concept="2" trace="myCachedExecutable" />
-      <node id="6918512748467657857" at="25,38,26,351" concept="8" />
+      <node id="6918512748467657857" at="25,38,26,170" concept="8" />
       <node id="6918512748467657857" at="29,35,30,29" concept="6" />
       <node id="6918512748467657857" at="34,53,35,19" concept="6" />
       <node id="6918512748467657857" at="36,5,37,16" concept="6" />
@@ -44,12 +44,12 @@
       <node id="6918512748467657857" at="28,0,32,0" concept="4" trace="getPresentation#()Ljava/lang/String;" />
       <node id="6918512748467657857" at="42,0,46,0" concept="4" trace="isSurroundWith#()Z" />
       <node id="6918512748467657857" at="55,0,59,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="6918512748467657857" at="69,0,73,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="6918512748467657857" at="69,0,73,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="6918512748467657857" at="46,0,52,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="6918512748467657857" at="32,0,39,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="6918512748467657857" at="59,0,69,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="6918512748467657857" at="53,38,53,38" />
-      <scope id="6918512748467657857" at="25,38,26,351" />
+      <scope id="6918512748467657857" at="25,38,26,170" />
       <scope id="6918512748467657857" at="29,35,30,29" />
       <scope id="6918512748467657857" at="34,53,35,19" />
       <scope id="6918512748467811156" at="39,91,40,155" />

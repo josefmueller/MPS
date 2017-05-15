@@ -16,7 +16,7 @@
   <root nodeRef="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)/3986994675334573650">
     <file name="InlineConstant_Intention.java">
       <node id="3986994675334573650" at="21,0,22,0" concept="2" trace="myCachedExecutable" />
-      <node id="3986994675334573650" at="22,37,23,330" concept="7" />
+      <node id="3986994675334573650" at="22,37,23,161" concept="7" />
       <node id="3986994675334573650" at="26,35,27,28" concept="6" />
       <node id="3986994675334573650" at="30,84,31,16" concept="6" />
       <node id="3986994675334573650" at="34,35,35,17" concept="6" />
@@ -33,11 +33,11 @@
       <node id="3986994675334573650" at="29,0,33,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="3986994675334573650" at="33,0,37,0" concept="4" trace="isSurroundWith#()Z" />
       <node id="3986994675334573650" at="46,0,50,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="3986994675334573650" at="55,0,59,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="3986994675334573650" at="55,0,59,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="3986994675334573650" at="50,0,55,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3986994675334573650" at="37,0,43,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <scope id="3986994675334573650" at="44,38,44,38" />
-      <scope id="3986994675334573650" at="22,37,23,330" />
+      <scope id="3986994675334573650" at="22,37,23,161" />
       <scope id="3986994675334573650" at="26,35,27,28" />
       <scope id="3986994675334573650" at="30,84,31,16" />
       <scope id="3986994675334573650" at="34,35,35,17" />
@@ -76,7 +76,7 @@
   <root nodeRef="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)/3986994675334573802">
     <file name="SafeRemoveConstant_Intention.java">
       <node id="3986994675334573802" at="26,0,27,0" concept="2" trace="myCachedExecutable" />
-      <node id="3986994675334573802" at="27,41,28,321" concept="7" />
+      <node id="3986994675334573802" at="27,41,28,161" concept="7" />
       <node id="3986994675334573802" at="31,35,32,32" concept="6" />
       <node id="3986994675334573802" at="35,84,36,16" concept="6" />
       <node id="3986994675334573802" at="39,35,40,17" concept="6" />
@@ -96,13 +96,13 @@
       <node id="3986994675334573802" at="34,0,38,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="3986994675334573802" at="38,0,42,0" concept="4" trace="isSurroundWith#()Z" />
       <node id="3986994675334573802" at="51,0,55,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="3986994675334573802" at="69,0,73,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="3986994675334573802" at="69,0,73,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="3986994675334573849" at="56,78,61,9" concept="5" />
       <node id="3986994675334573876" at="61,9,66,9" concept="1" />
       <node id="3986994675334573802" at="42,0,48,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="3986994675334573802" at="55,0,69,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="3986994675334573802" at="49,38,49,38" />
-      <scope id="3986994675334573802" at="27,41,28,321" />
+      <scope id="3986994675334573802" at="27,41,28,161" />
       <scope id="3986994675334573802" at="31,35,32,32" />
       <scope id="3986994675334573802" at="35,84,36,16" />
       <scope id="3986994675334573802" at="39,35,40,17" />
@@ -151,7 +151,7 @@
   <root nodeRef="r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)/3986994675334574125">
     <file name="IntroduceConstant_Intention.java">
       <node id="3986994675334574125" at="22,0,23,0" concept="2" trace="myCachedExecutable" />
-      <node id="3986994675334574125" at="23,40,24,309" concept="7" />
+      <node id="3986994675334574125" at="23,40,24,161" concept="7" />
       <node id="3986994675334574125" at="27,35,28,31" concept="6" />
       <node id="3986994675334574125" at="32,53,33,19" concept="6" />
       <node id="3986994675334574125" at="34,5,35,16" concept="6" />
@@ -176,12 +176,12 @@
       <node id="3986994675334574125" at="26,0,30,0" concept="4" trace="getPresentation#()Ljava/lang/String;" />
       <node id="3986994675334574125" at="40,0,44,0" concept="4" trace="isSurroundWith#()Z" />
       <node id="3986994675334574125" at="53,0,57,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="3986994675334574125" at="67,0,71,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="3986994675334574125" at="67,0,71,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="3986994675334574125" at="44,0,50,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="3986994675334574125" at="30,0,37,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="3986994675334574125" at="57,0,67,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="3986994675334574125" at="51,38,51,38" />
-      <scope id="3986994675334574125" at="23,40,24,309" />
+      <scope id="3986994675334574125" at="23,40,24,161" />
       <scope id="3986994675334574125" at="27,35,28,31" />
       <scope id="3986994675334574125" at="32,53,33,19" />
       <scope id="3986994675334574133" at="37,91,38,222" />

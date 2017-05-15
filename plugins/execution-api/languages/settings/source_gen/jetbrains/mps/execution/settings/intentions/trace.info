@@ -16,7 +16,7 @@
   <root nodeRef="r:2f15cca9-9d4b-4caa-8c6d-31f12b9faf00(jetbrains.mps.execution.settings.intentions)/9191251033651652580">
     <file name="ToggleDeprecatedAnnotation_Intention.java">
       <node id="9191251033651652580" at="23,0,24,0" concept="3" trace="myCachedExecutable" />
-      <node id="9191251033651652580" at="24,49,25,330" concept="7" />
+      <node id="9191251033651652580" at="24,49,25,158" concept="7" />
       <node id="9191251033651652580" at="28,35,29,40" concept="6" />
       <node id="9191251033651652580" at="32,84,33,16" concept="6" />
       <node id="9191251033651652580" at="36,35,37,17" concept="6" />
@@ -35,13 +35,13 @@
       <node id="9191251033651652580" at="27,0,31,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
       <node id="9191251033651652580" at="31,0,35,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="9191251033651652580" at="35,0,39,0" concept="5" trace="isSurroundWith#()Z" />
-      <node id="9191251033651652580" at="63,0,67,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="9191251033651652580" at="63,0,67,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="9191251033651652715" at="56,78,61,7" concept="4" />
       <node id="9191251033651652580" at="39,0,45,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="9191251033651652580" at="48,0,55,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="9191251033651652580" at="55,0,63,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="9191251033651652580" at="46,38,46,38" />
-      <scope id="9191251033651652580" at="24,49,25,330" />
+      <scope id="9191251033651652580" at="24,49,25,158" />
       <scope id="9191251033651652580" at="28,35,29,40" />
       <scope id="9191251033651652580" at="32,84,33,16" />
       <scope id="9191251033651652580" at="36,35,37,17" />

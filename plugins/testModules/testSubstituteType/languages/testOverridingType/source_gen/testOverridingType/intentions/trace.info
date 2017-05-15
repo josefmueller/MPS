@@ -17,7 +17,7 @@
   <root nodeRef="r:d884d12b-f79a-4b35-a8fe-63e10e0c9c8d(testOverridingType.intentions)/1870027727456307005">
     <file name="AddRemoveUnconditionalPresenceAnnotation_Intention.java">
       <node id="1870027727456307005" at="22,0,23,0" concept="3" trace="myCachedExecutable" />
-      <node id="1870027727456307005" at="23,63,24,294" concept="8" />
+      <node id="1870027727456307005" at="23,63,24,144" concept="8" />
       <node id="1870027727456307005" at="27,35,28,54" concept="6" />
       <node id="1870027727456307005" at="31,84,32,16" concept="6" />
       <node id="1870027727456307005" at="35,35,36,17" concept="6" />
@@ -36,12 +36,12 @@
       <node id="1870027727456307005" at="30,0,34,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1870027727456307005" at="34,0,38,0" concept="5" trace="isSurroundWith#()Z" />
       <node id="1870027727456307005" at="47,0,51,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="1870027727456307005" at="60,0,64,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="1870027727456307005" at="60,0,64,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="1870027727456307005" at="38,0,44,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="1870027727456307020" at="52,78,58,7" concept="4" />
       <node id="1870027727456307005" at="51,0,60,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="1870027727456307005" at="45,38,45,38" />
-      <scope id="1870027727456307005" at="23,63,24,294" />
+      <scope id="1870027727456307005" at="23,63,24,144" />
       <scope id="1870027727456307005" at="27,35,28,54" />
       <scope id="1870027727456307005" at="31,84,32,16" />
       <scope id="1870027727456307005" at="35,35,36,17" />
@@ -80,7 +80,7 @@
   <root nodeRef="r:d884d12b-f79a-4b35-a8fe-63e10e0c9c8d(testOverridingType.intentions)/4113274076525537945">
     <file name="AddRemovePresenceAnnotation_Intention.java">
       <node id="4113274076525537945" at="22,0,23,0" concept="3" trace="myCachedExecutable" />
-      <node id="4113274076525537945" at="23,50,24,294" concept="8" />
+      <node id="4113274076525537945" at="23,50,24,144" concept="8" />
       <node id="4113274076525537945" at="27,35,28,41" concept="6" />
       <node id="4113274076525537945" at="31,84,32,16" concept="6" />
       <node id="4113274076525537945" at="35,35,36,17" concept="6" />
@@ -99,12 +99,12 @@
       <node id="4113274076525537945" at="30,0,34,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="4113274076525537945" at="34,0,38,0" concept="5" trace="isSurroundWith#()Z" />
       <node id="4113274076525537945" at="47,0,51,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="4113274076525537945" at="60,0,64,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="4113274076525537945" at="60,0,64,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="4113274076525537945" at="38,0,44,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="4113274076525575064" at="52,78,58,7" concept="4" />
       <node id="4113274076525537945" at="51,0,60,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="4113274076525537945" at="45,38,45,38" />
-      <scope id="4113274076525537945" at="23,50,24,294" />
+      <scope id="4113274076525537945" at="23,50,24,144" />
       <scope id="4113274076525537945" at="27,35,28,41" />
       <scope id="4113274076525537945" at="31,84,32,16" />
       <scope id="4113274076525537945" at="35,35,36,17" />

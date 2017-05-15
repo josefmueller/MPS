@@ -20,8 +20,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase;
-import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart;
+import jetbrains.mps.openapi.intentions.IntentionExecutable;
 
 public class NamedMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.CONTEXT_ASSISTANT, MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM);
@@ -78,7 +78,7 @@ public class NamedMenu extends TransformationMenuBase {
       }
     }
   }
-  public class TMP_Intention_qsw3kc_b0 extends IntentionMenuPartBase {
+  public class TMP_Intention_qsw3kc_b0 extends AbstractIntentionMenuPart {
     public TMP_Intention_qsw3kc_b0() {
       super("jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.intentions.AddLetterToName_Intention");
     }
@@ -88,7 +88,7 @@ public class NamedMenu extends TransformationMenuBase {
       return new NamedMenu.TMP_Intention_qsw3kc_b0.Item(context, executable);
     }
 
-    private class Item extends IntentionMenuPartBase.ItemBase implements SideTransformCompletionActionItem {
+    private class Item extends AbstractIntentionMenuPart.ItemBase implements SideTransformCompletionActionItem {
       private Item(TransformationMenuContext context, IntentionExecutable executable) {
         super(context, executable);
       }

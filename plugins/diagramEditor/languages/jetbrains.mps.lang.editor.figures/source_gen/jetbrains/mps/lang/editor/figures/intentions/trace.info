@@ -18,7 +18,7 @@
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/2084788800270642821">
     <file name="AddRemoveFigureParameterAttributeMethod_Intention.java">
       <node id="2084788800270642821" at="27,0,28,0" concept="3" trace="myCachedExecutable" />
-      <node id="2084788800270642821" at="28,62,29,322" concept="9" />
+      <node id="2084788800270642821" at="28,62,29,159" concept="9" />
       <node id="2084788800270642821" at="32,35,33,53" concept="7" />
       <node id="2084788800270642821" at="37,53,38,19" concept="7" />
       <node id="2084788800270642821" at="39,5,40,16" concept="7" />
@@ -47,14 +47,14 @@
       <node id="2084788800270642821" at="31,0,35,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
       <node id="2084788800270642821" at="57,0,61,0" concept="5" trace="isSurroundWith#()Z" />
       <node id="2084788800270642821" at="70,0,74,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="2084788800270642821" at="82,0,86,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="2084788800270642821" at="82,0,86,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="2084788800270642836" at="75,78,80,7" concept="4" />
       <node id="2084788800270642821" at="61,0,67,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="2084788800270642821" at="35,0,42,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="2084788800270642821" at="74,0,82,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="2084788800270642821" at="42,0,57,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <scope id="2084788800270642821" at="68,38,68,38" />
-      <scope id="2084788800270642821" at="28,62,29,322" />
+      <scope id="2084788800270642821" at="28,62,29,159" />
       <scope id="2084788800270642821" at="32,35,33,53" />
       <scope id="2084788800270642821" at="37,53,38,19" />
       <scope id="2084788800270642865" at="43,348,44,19" />
@@ -105,7 +105,7 @@
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/5422656561926830596">
     <file name="AddRemoveFigureAttribute_Intention.java">
       <node id="5422656561926830596" at="25,0,26,0" concept="3" trace="myCachedExecutable" />
-      <node id="5422656561926830596" at="26,47,27,309" concept="9" />
+      <node id="5422656561926830596" at="26,47,27,159" concept="9" />
       <node id="5422656561926830596" at="30,35,31,38" concept="7" />
       <node id="5422656561926830596" at="35,53,36,19" concept="7" />
       <node id="5422656561926830596" at="37,5,38,16" concept="7" />
@@ -126,13 +126,13 @@
       <node id="5422656561926830596" at="29,0,33,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
       <node id="5422656561926830596" at="43,0,47,0" concept="5" trace="isSurroundWith#()Z" />
       <node id="5422656561926830596" at="56,0,60,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="5422656561926830596" at="68,0,72,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="5422656561926830596" at="68,0,72,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="5422656561927820724" at="61,78,66,7" concept="4" />
       <node id="5422656561926830596" at="47,0,53,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="5422656561926830596" at="33,0,40,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="5422656561926830596" at="60,0,68,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="5422656561926830596" at="54,38,54,38" />
-      <scope id="5422656561926830596" at="26,47,27,309" />
+      <scope id="5422656561926830596" at="26,47,27,159" />
       <scope id="5422656561926830596" at="30,35,31,38" />
       <scope id="5422656561926830596" at="35,53,36,19" />
       <scope id="5422656561928437706" at="40,91,41,259" />
@@ -177,7 +177,7 @@
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/5422656561930152815">
     <file name="AddRemoveFigureParameterAttributeField_Intention.java">
       <node id="5422656561930152815" at="27,0,28,0" concept="3" trace="myCachedExecutable" />
-      <node id="5422656561930152815" at="28,61,29,313" concept="9" />
+      <node id="5422656561930152815" at="28,61,29,159" concept="9" />
       <node id="5422656561930152815" at="32,35,33,52" concept="7" />
       <node id="5422656561930152815" at="37,53,38,19" concept="7" />
       <node id="5422656561930152815" at="39,5,40,16" concept="7" />
@@ -206,14 +206,14 @@
       <node id="5422656561930152815" at="31,0,35,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
       <node id="5422656561930152815" at="57,0,61,0" concept="5" trace="isSurroundWith#()Z" />
       <node id="5422656561930152815" at="70,0,74,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="5422656561930152815" at="82,0,86,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="5422656561930152815" at="82,0,86,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="5422656561930173561" at="75,78,80,7" concept="4" />
       <node id="5422656561930152815" at="61,0,67,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="5422656561930152815" at="35,0,42,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="5422656561930152815" at="74,0,82,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="5422656561930152815" at="42,0,57,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <scope id="5422656561930152815" at="68,38,68,38" />
-      <scope id="5422656561930152815" at="28,61,29,313" />
+      <scope id="5422656561930152815" at="28,61,29,159" />
       <scope id="5422656561930152815" at="32,35,33,52" />
       <scope id="5422656561930152815" at="37,53,38,19" />
       <scope id="9026300686792598480" at="43,348,44,19" />
@@ -264,7 +264,7 @@
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/7319867929567458791">
     <file name="AddRemoveFigureParameterAttributePropertySpecification_Intention.java">
       <node id="7319867929567458791" at="27,0,28,0" concept="3" trace="myCachedExecutable" />
-      <node id="7319867929567458791" at="28,77,29,318" concept="9" />
+      <node id="7319867929567458791" at="28,77,29,158" concept="9" />
       <node id="7319867929567458791" at="32,35,33,68" concept="7" />
       <node id="7319867929567458791" at="37,53,38,19" concept="7" />
       <node id="7319867929567458791" at="39,5,40,16" concept="7" />
@@ -291,7 +291,7 @@
       <node id="7319867929567458791" at="58,99,61,5" concept="4" />
       <node id="7319867929567458791" at="31,0,35,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
       <node id="7319867929567458791" at="54,0,58,0" concept="5" trace="isSurroundWith#()Z" />
-      <node id="7319867929567458791" at="80,0,84,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="7319867929567458791" at="80,0,84,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="7319867929567458791" at="67,0,72,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
       <node id="7319867929567458806" at="73,78,78,7" concept="4" />
       <node id="7319867929567458791" at="58,0,64,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
@@ -299,7 +299,7 @@
       <node id="7319867929567458791" at="72,0,80,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="7319867929567458791" at="42,0,54,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <scope id="7319867929567458791" at="65,38,65,38" />
-      <scope id="7319867929567458791" at="28,77,29,318" />
+      <scope id="7319867929567458791" at="28,77,29,158" />
       <scope id="7319867929567458791" at="32,35,33,68" />
       <scope id="7319867929567458791" at="37,53,38,19" />
       <scope id="7319867929567458835" at="43,348,44,19" />

@@ -17,7 +17,7 @@
   <root nodeRef="r:4df57e9b-2a09-44c7-b16d-4af6620e3aaa(jetbrains.mps.lang.access.intentions)/1616052750811363739">
     <file name="SurroundWithExecuteLightweightCommandStatement_Intention.java">
       <node id="1616052750811363739" at="24,0,25,0" concept="2" trace="myCachedExecutable" />
-      <node id="1616052750811363739" at="25,69,26,298" concept="8" />
+      <node id="1616052750811363739" at="25,69,26,151" concept="8" />
       <node id="1616052750811363739" at="29,35,30,60" concept="7" />
       <node id="1616052750811363739" at="33,84,34,16" concept="7" />
       <node id="1616052750811363739" at="37,35,38,16" concept="7" />
@@ -38,11 +38,11 @@
       <node id="1616052750811363739" at="32,0,36,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1616052750811363739" at="36,0,40,0" concept="5" trace="isSurroundWith#()Z" />
       <node id="1616052750811363739" at="49,0,53,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="1616052750811363739" at="63,0,67,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="1616052750811363739" at="63,0,67,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="1616052750811363739" at="40,0,46,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="1616052750811363739" at="53,0,63,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="1616052750811363739" at="47,38,47,38" />
-      <scope id="1616052750811363739" at="25,69,26,298" />
+      <scope id="1616052750811363739" at="25,69,26,151" />
       <scope id="1616052750811363739" at="29,35,30,60" />
       <scope id="1616052750811363739" at="33,84,34,16" />
       <scope id="1616052750811363739" at="37,35,38,16" />

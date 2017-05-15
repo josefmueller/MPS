@@ -16,7 +16,7 @@
   <root nodeRef="r:b1dbf313-2794-40ca-90ec-f498ea7f9c90(jetbrains.mps.lang.resources.intentions)/3524064283240511589">
     <file name="Icon2Resource_Intention.java">
       <node id="3524064283240511589" at="21,0,22,0" concept="2" trace="myCachedExecutable" />
-      <node id="3524064283240511589" at="22,36,23,314" concept="7" />
+      <node id="3524064283240511589" at="22,36,23,154" concept="7" />
       <node id="3524064283240511589" at="26,35,27,27" concept="6" />
       <node id="3524064283240511589" at="30,84,31,16" concept="6" />
       <node id="3524064283240511589" at="34,35,35,17" concept="6" />
@@ -33,11 +33,11 @@
       <node id="3524064283240511589" at="29,0,33,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="3524064283240511589" at="33,0,37,0" concept="4" trace="isSurroundWith#()Z" />
       <node id="3524064283240511589" at="46,0,50,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="3524064283240511589" at="55,0,59,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="3524064283240511589" at="55,0,59,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="3524064283240511589" at="50,0,55,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="3524064283240511589" at="37,0,43,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <scope id="3524064283240511589" at="44,38,44,38" />
-      <scope id="3524064283240511589" at="22,36,23,314" />
+      <scope id="3524064283240511589" at="22,36,23,154" />
       <scope id="3524064283240511589" at="26,35,27,27" />
       <scope id="3524064283240511589" at="30,84,31,16" />
       <scope id="3524064283240511589" at="34,35,35,17" />

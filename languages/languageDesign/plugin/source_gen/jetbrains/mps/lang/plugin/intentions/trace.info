@@ -16,7 +16,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590365(jetbrains.mps.lang.plugin.intentions)/1204990433124">
     <file name="ExtractGroup_Intention.java">
       <node id="1204990433124" at="23,0,24,0" concept="2" trace="myCachedExecutable" />
-      <node id="1204990433124" at="24,35,25,305" concept="7" />
+      <node id="1204990433124" at="24,35,25,145" concept="7" />
       <node id="1204990433124" at="28,35,29,26" concept="6" />
       <node id="1204990433124" at="33,53,34,19" concept="6" />
       <node id="1204990433124" at="35,5,36,16" concept="6" />
@@ -38,12 +38,12 @@
       <node id="1204990433124" at="27,0,31,0" concept="4" trace="getPresentation#()Ljava/lang/String;" />
       <node id="1204990433124" at="41,0,45,0" concept="4" trace="isSurroundWith#()Z" />
       <node id="1204990433124" at="54,0,58,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-      <node id="1204990433124" at="65,0,69,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="1204990433124" at="65,0,69,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/openapi/intentions/IntentionDescriptor;" />
       <node id="1204990433124" at="45,0,51,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
       <node id="1204990433124" at="31,0,38,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1204990433124" at="58,0,65,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <scope id="1204990433124" at="52,38,52,38" />
-      <scope id="1204990433124" at="24,35,25,305" />
+      <scope id="1204990433124" at="24,35,25,145" />
       <scope id="1204990433124" at="28,35,29,26" />
       <scope id="1204990433124" at="33,53,34,19" />
       <scope id="1205510378351" at="38,91,39,51" />
