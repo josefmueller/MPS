@@ -9,13 +9,13 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase;
+import jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
-import jetbrains.mps.intentions.IntentionExecutable;
+import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.menus.transformation.DefaultTransformationMenuContext;
 import junit.framework.Assert;
@@ -38,7 +38,7 @@ public class InapplicableIntention_NotIncludedInMenu_Test extends BaseTransforma
       final SRepository repository = getEditorComponent().getEditorContext().getRepository();
       repository.getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          IntentionMenuPartBase part = new IntentionMenuPartBase(ActionLookupUtils.getIntentionId(repository, new SNodePointer("r:8d2a217a-f2d0-4d4a-b867-e2dd2ddb731c(jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions)", "6820996345401618935"))) {
+          AbstractIntentionMenuPart part = new AbstractIntentionMenuPart(ActionLookupUtils.getIntentionId(repository, new SNodePointer("r:8d2a217a-f2d0-4d4a-b867-e2dd2ddb731c(jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions)", "6820996345401618935"))) {
             @Nullable
             @Override
             protected TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {

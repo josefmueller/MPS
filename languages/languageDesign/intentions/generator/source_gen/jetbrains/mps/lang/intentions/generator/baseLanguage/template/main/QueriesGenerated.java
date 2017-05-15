@@ -144,9 +144,6 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_1738609523201655646(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_newIntentionFactoryConstructor");
   }
-  public static Object referenceMacro_GetReferent_3927053800880514570(final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3e6812L, "forConcept"));
-  }
   public static Object referenceMacro_GetReferent_2230972008180633738(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IntentionConstructor");
   }
@@ -169,7 +166,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean ifMacro_Condition_2230972008180147293(final IfMacroContext _context) {
     return !(SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration")));
   }
-  public static boolean ifMacro_Condition_3927053800880514578(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_6960679590829154139(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L, 0x2303633a9c3cc679L, "isErrorIntention"));
   }
   public static boolean ifMacro_Condition_3641631367668343949(final IfMacroContext _context) {
@@ -581,7 +578,7 @@ public class QueriesGenerated extends QueryProviderBase {
   {
     int i = 0;
     imcMethods.put("2230972008180147291", new QueriesGenerated.IfMC(i++));
-    imcMethods.put("3927053800880514577", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("6960679590829154137", new QueriesGenerated.IfMC(i++));
     imcMethods.put("3641631367668343948", new QueriesGenerated.IfMC(i++));
     imcMethods.put("3641631367668343974", new QueriesGenerated.IfMC(i++));
     imcMethods.put("6718223406753528000", new QueriesGenerated.IfMC(i++));
@@ -617,7 +614,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 0:
           return QueriesGenerated.ifMacro_Condition_2230972008180147293(ctx);
         case 1:
-          return QueriesGenerated.ifMacro_Condition_3927053800880514578(ctx);
+          return QueriesGenerated.ifMacro_Condition_6960679590829154139(ctx);
         case 2:
           return QueriesGenerated.ifMacro_Condition_3641631367668343949(ctx);
         case 3:
@@ -660,13 +657,12 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("6551427688186219814", new QueriesGenerated.RTQ(4, "BaseConcept"));
     rtqMethods.put("5378595502815589450", new QueriesGenerated.RTQ(5, "IntentionFactoryClass"));
     rtqMethods.put("1738609523201655645", new QueriesGenerated.RTQ(6, "Object"));
-    rtqMethods.put("3927053800880514569", new QueriesGenerated.RTQ(7, "BaseConcept"));
-    rtqMethods.put("2230972008180633737", new QueriesGenerated.RTQ(8, "IntentionImplementationStub"));
-    rtqMethods.put("1145475927579234606", new QueriesGenerated.RTQ(9, "BaseConcept"));
-    rtqMethods.put("2230972008180658533", new QueriesGenerated.RTQ(10, "IntentionImplementationStub"));
-    rtqMethods.put("581316143750725399", new QueriesGenerated.RTQ(11, "BaseConcept"));
-    rtqMethods.put("7311909354344303051", new QueriesGenerated.RTQ(12, "isSurroundWith"));
-    rtqMethods.put("4147950839246952263", new QueriesGenerated.RTQ(13, "IntentionsDescriptor"));
+    rtqMethods.put("2230972008180633737", new QueriesGenerated.RTQ(7, "IntentionImplementationStub"));
+    rtqMethods.put("1145475927579234606", new QueriesGenerated.RTQ(8, "BaseConcept"));
+    rtqMethods.put("2230972008180658533", new QueriesGenerated.RTQ(9, "IntentionImplementationStub"));
+    rtqMethods.put("581316143750725399", new QueriesGenerated.RTQ(10, "BaseConcept"));
+    rtqMethods.put("7311909354344303051", new QueriesGenerated.RTQ(11, "isSurroundWith"));
+    rtqMethods.put("4147950839246952263", new QueriesGenerated.RTQ(12, "IntentionsDescriptor"));
   }
   @NotNull
   @Override
@@ -701,18 +697,16 @@ public class QueriesGenerated extends QueryProviderBase {
         case 6:
           return QueriesGenerated.referenceMacro_GetReferent_1738609523201655646(ctx);
         case 7:
-          return QueriesGenerated.referenceMacro_GetReferent_3927053800880514570(ctx);
-        case 8:
           return QueriesGenerated.referenceMacro_GetReferent_2230972008180633738(ctx);
-        case 9:
+        case 8:
           return QueriesGenerated.referenceMacro_GetReferent_1145475927579234607(ctx);
-        case 10:
+        case 9:
           return QueriesGenerated.referenceMacro_GetReferent_2230972008180658534(ctx);
-        case 11:
+        case 10:
           return QueriesGenerated.referenceMacro_GetReferent_581316143750725400(ctx);
-        case 12:
+        case 11:
           return QueriesGenerated.referenceMacro_GetReferent_7311909354344303052(ctx);
-        case 13:
+        case 12:
           return QueriesGenerated.referenceMacro_GetReferent_4147950839246952264(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));

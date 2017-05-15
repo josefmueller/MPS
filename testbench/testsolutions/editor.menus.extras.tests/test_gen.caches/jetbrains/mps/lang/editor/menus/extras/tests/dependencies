@@ -16,8 +16,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.tests.ActionLookupUtils" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
@@ -25,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
@@ -40,8 +40,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
-    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.runtime.IntentionMenuPartBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.extras.tests.ActionLookupUtils" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.tests.UsedLanguagesUtils" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
@@ -49,6 +48,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />

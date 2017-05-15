@@ -13,16 +13,10 @@
     <import index="tp3m" ref="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" />
     <import index="tpc3" ref="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <import index="uddc" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus.transformation(MPS.Editor/)" />
-    <import index="91lp" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="ge2m" ref="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" />
-    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
-    <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
-    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
-    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
-    <import index="y38" ref="r:4c8c6241-8bf4-4d04-84a1-f7fd7fcbdc2c(jetbrains.mps.refactoring.runtime.access)" />
+    <import index="nddn" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.intentions(MPS.Editor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
     <import index="tpcb" ref="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" implicit="true" />
@@ -196,8 +190,8 @@
       <node concept="gft3U" id="291CjQFhH4F" role="1lVwrX">
         <node concept="3VmV3z" id="291CjQFhH5Z" role="gfFT$">
           <property role="3VnrPo" value="myExecutable" />
-          <node concept="3uibUv" id="291CjQFhH67" role="3Vn4Tt">
-            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+          <node concept="3uibUv" id="1OFqWOBMmmj" role="3Vn4Tt">
+            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
           </node>
         </node>
       </node>
@@ -223,7 +217,7 @@
           <node concept="3Tm1VV" id="6kJcyCQ$JZj" role="1B3o_S" />
           <node concept="3clFbS" id="6kJcyCQ$JZk" role="3clF47">
             <node concept="XkiVB" id="6kJcyCQ$JZl" role="3cqZAp">
-              <ref role="37wK5l" to="qwun:2ytFvC$Hjzm" resolve="IntentionMenuPartBase" />
+              <ref role="37wK5l" to="qwun:E4JlmYmYOT" resolve="AbstractIntentionMenuPart" />
               <node concept="Xl_RD" id="6kJcyCQ$JZm" role="37wK5m">
                 <property role="Xl_RC" value="intentionId" />
                 <node concept="17Uvod" id="6kJcyCQ$JZn" role="lGtFl">
@@ -270,8 +264,8 @@
           <node concept="37vLTG" id="6kJcyCQ$JZC" role="3clF46">
             <property role="TrG5h" value="executable" />
             <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="6kJcyCQ$JZD" role="1tU5fm">
-              <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+            <node concept="3uibUv" id="1OFqWOBMniJ" role="1tU5fm">
+              <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
             </node>
             <node concept="2AHcQZ" id="291CjQFhwsK" role="2AJF6D">
               <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -307,7 +301,7 @@
             <node concept="3Tm6S6" id="6kJcyCQ$JZW" role="1B3o_S" />
             <node concept="3clFbS" id="6kJcyCQ$JZX" role="3clF47">
               <node concept="XkiVB" id="46W80XA5_At" role="3cqZAp">
-                <ref role="37wK5l" to="qwun:6kJcyCQ$JZU" resolve="IntentionMenuPartBase.ItemBase" />
+                <ref role="37wK5l" to="qwun:E4JlmYmYQe" resolve="AbstractIntentionMenuPart.ItemBase" />
                 <node concept="37vLTw" id="46W80XA5_ID" role="37wK5m">
                   <ref role="3cqZAo" node="6kJcyCQ$K06" resolve="context" />
                 </node>
@@ -324,8 +318,8 @@
             </node>
             <node concept="37vLTG" id="6kJcyCQ$K08" role="3clF46">
               <property role="TrG5h" value="executable" />
-              <node concept="3uibUv" id="6kJcyCQ$K09" role="1tU5fm">
-                <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+              <node concept="3uibUv" id="1OFqWOBMnKT" role="1tU5fm">
+                <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
               </node>
             </node>
           </node>
@@ -350,8 +344,8 @@
             </node>
           </node>
           <node concept="3Tm6S6" id="6kJcyCQ$K0L" role="1B3o_S" />
-          <node concept="3uibUv" id="46W80XA5yVj" role="1zkMxy">
-            <ref role="3uigEE" to="qwun:6kJcyCQ$JZM" resolve="IntentionMenuPartBase.ItemBase" />
+          <node concept="3uibUv" id="1OFqWOBMoZl" role="1zkMxy">
+            <ref role="3uigEE" to="qwun:E4JlmYmYQ6" resolve="AbstractIntentionMenuPart.ItemBase" />
           </node>
           <node concept="3uibUv" id="4sA1wzjmpCr" role="EKbjA">
             <ref role="3uigEE" to="uddc:~ActionItem" resolve="ActionItem" />
@@ -375,8 +369,8 @@
           </node>
         </node>
         <node concept="3Tm1VV" id="6kJcyCQ$K0N" role="1B3o_S" />
-        <node concept="3uibUv" id="6kJcyCQ$K0O" role="1zkMxy">
-          <ref role="3uigEE" to="qwun:2ytFvC$HjcZ" resolve="IntentionMenuPartBase" />
+        <node concept="3uibUv" id="1OFqWOBMmPn" role="1zkMxy">
+          <ref role="3uigEE" to="qwun:E4JlmYmYOO" resolve="AbstractIntentionMenuPart" />
         </node>
         <node concept="17Uvod" id="6kJcyCQ$K0Q" role="lGtFl">
           <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />

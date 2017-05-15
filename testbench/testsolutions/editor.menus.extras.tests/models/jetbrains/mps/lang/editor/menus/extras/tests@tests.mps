@@ -22,9 +22,9 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="tp3j" ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
     <import index="nht" ref="r:8d2a217a-f2d0-4d4a-b867-e2dd2ddb731c(jetbrains.mps.lang.editor.menus.extras.testLanguage.intentions)" />
-    <import index="91lp" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.intentions(MPS.Editor/)" />
     <import index="vd7r" ref="r:4f8193a2-048e-4ddf-b505-dfca00e8c910(jetbrains.mps.lang.editor.menus.tests@tests)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
+    <import index="nddn" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.intentions(MPS.Editor/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp3m" ref="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -604,15 +604,15 @@
             <node concept="3cpWs8" id="5UD30_PTG4m" role="3cqZAp">
               <node concept="3cpWsn" id="5UD30_PTG4n" role="3cpWs9">
                 <property role="TrG5h" value="part" />
-                <node concept="3uibUv" id="5UD30_PTG4o" role="1tU5fm">
-                  <ref role="3uigEE" to="qwun:2ytFvC$HjcZ" resolve="IntentionMenuPartBase" />
+                <node concept="3uibUv" id="1OFqWOBMjnk" role="1tU5fm">
+                  <ref role="3uigEE" to="qwun:E4JlmYmYOO" resolve="AbstractIntentionMenuPart" />
                 </node>
                 <node concept="2ShNRf" id="5UD30_PTG5A" role="33vP2m">
                   <node concept="YeOm9" id="5UD30_PTHr6" role="2ShVmc">
                     <node concept="1Y3b0j" id="5UD30_PTHr9" role="YeSDq">
                       <property role="2bfB8j" value="true" />
-                      <ref role="1Y3XeK" to="qwun:2ytFvC$HjcZ" resolve="IntentionMenuPartBase" />
-                      <ref role="37wK5l" to="qwun:2ytFvC$Hjzm" resolve="IntentionMenuPartBase" />
+                      <ref role="1Y3XeK" to="qwun:E4JlmYmYOO" resolve="AbstractIntentionMenuPart" />
+                      <ref role="37wK5l" to="qwun:E4JlmYmYOT" resolve="AbstractIntentionMenuPart" />
                       <node concept="3Tm1VV" id="5UD30_PTHra" role="1B3o_S" />
                       <node concept="3clFb_" id="5UD30_PTHtn" role="jymVt">
                         <property role="TrG5h" value="createItem" />
@@ -633,8 +633,8 @@
                         <node concept="37vLTG" id="5UD30_PTHtt" role="3clF46">
                           <property role="TrG5h" value="executable" />
                           <property role="3TUv4t" value="false" />
-                          <node concept="3uibUv" id="5UD30_PTHtu" role="1tU5fm">
-                            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+                          <node concept="3uibUv" id="1OFqWOBMjER" role="1tU5fm">
+                            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
                           </node>
                           <node concept="2AHcQZ" id="5UD30_PTHtv" role="2AJF6D">
                             <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -701,7 +701,7 @@
                     <ref role="3cqZAo" node="5UD30_PTG4n" resolve="part" />
                   </node>
                   <node concept="liA8E" id="5UD30_PTPAf" role="2OqNvi">
-                    <ref role="37wK5l" to="qwun:291CjQFiEnB" resolve="createItems" />
+                    <ref role="37wK5l" to="qwun:E4JlmYmYP4" resolve="createItems" />
                     <node concept="37vLTw" id="5UD30_PTPH9" role="37wK5m">
                       <ref role="3cqZAo" node="5UD30_PTG0K" resolve="context" />
                     </node>
@@ -774,15 +774,15 @@
             <node concept="3cpWs8" id="7GARn1zME54" role="3cqZAp">
               <node concept="3cpWsn" id="7GARn1zME55" role="3cpWs9">
                 <property role="TrG5h" value="part" />
-                <node concept="3uibUv" id="7GARn1zME56" role="1tU5fm">
-                  <ref role="3uigEE" to="qwun:2ytFvC$HjcZ" resolve="IntentionMenuPartBase" />
+                <node concept="3uibUv" id="1OFqWOBMirt" role="1tU5fm">
+                  <ref role="3uigEE" to="qwun:E4JlmYmYOO" resolve="AbstractIntentionMenuPart" />
                 </node>
                 <node concept="2ShNRf" id="7GARn1zME57" role="33vP2m">
                   <node concept="YeOm9" id="7GARn1zME58" role="2ShVmc">
                     <node concept="1Y3b0j" id="7GARn1zME59" role="YeSDq">
                       <property role="2bfB8j" value="true" />
-                      <ref role="1Y3XeK" to="qwun:2ytFvC$HjcZ" resolve="IntentionMenuPartBase" />
-                      <ref role="37wK5l" to="qwun:2ytFvC$Hjzm" resolve="IntentionMenuPartBase" />
+                      <ref role="1Y3XeK" to="qwun:E4JlmYmYOO" resolve="AbstractIntentionMenuPart" />
+                      <ref role="37wK5l" to="qwun:E4JlmYmYOT" resolve="AbstractIntentionMenuPart" />
                       <node concept="3Tm1VV" id="7GARn1zME5a" role="1B3o_S" />
                       <node concept="3clFb_" id="7GARn1zME5b" role="jymVt">
                         <property role="TrG5h" value="createItem" />
@@ -803,8 +803,8 @@
                         <node concept="37vLTG" id="7GARn1zME5h" role="3clF46">
                           <property role="TrG5h" value="executable" />
                           <property role="3TUv4t" value="false" />
-                          <node concept="3uibUv" id="7GARn1zME5i" role="1tU5fm">
-                            <ref role="3uigEE" to="91lp:~IntentionExecutable" resolve="IntentionExecutable" />
+                          <node concept="3uibUv" id="1OFqWOBMiVa" role="1tU5fm">
+                            <ref role="3uigEE" to="nddn:~IntentionExecutable" resolve="IntentionExecutable" />
                           </node>
                           <node concept="2AHcQZ" id="7GARn1zME5j" role="2AJF6D">
                             <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
@@ -871,7 +871,7 @@
                     <ref role="3cqZAo" node="7GARn1zME55" resolve="part" />
                   </node>
                   <node concept="liA8E" id="7GARn1zME5F" role="2OqNvi">
-                    <ref role="37wK5l" to="qwun:291CjQFiEnB" resolve="createItems" />
+                    <ref role="37wK5l" to="qwun:E4JlmYmYP4" resolve="createItems" />
                     <node concept="37vLTw" id="7GARn1zME5G" role="37wK5m">
                       <ref role="3cqZAo" node="7GARn1zME5v" resolve="context" />
                     </node>
