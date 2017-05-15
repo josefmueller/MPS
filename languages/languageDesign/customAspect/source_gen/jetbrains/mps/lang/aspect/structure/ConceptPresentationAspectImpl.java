@@ -5,7 +5,6 @@ package jetbrains.mps.lang.aspect.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -19,7 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_LanguageAspectDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LanguageReference = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_SimpleAspectOrderRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SimpleLanguageAspectDescriptor = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b099L, "helpUrl")).icon(IconContainer.RESOURCE_a0a0j).create();
+  private final ConceptPresentation props_SimpleLanguageAspectDescriptor = new ConceptPresentationBuilder(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L).deprecateProperty(0x2fa4a8cdf0c9b099L, "helpUrl").deprecateAggregation(0x2fa4a8cdf0c9b094L, "oldMainLanguages").icon(IconContainer.RESOURCE_a0a0j).create();
 
   @Override
   @Nullable

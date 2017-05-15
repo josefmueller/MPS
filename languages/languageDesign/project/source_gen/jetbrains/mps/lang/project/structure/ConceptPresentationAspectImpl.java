@@ -5,14 +5,13 @@ package jetbrains.mps.lang.project.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_DevKit = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Generator = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x3be012d639e8a44L, "generatorUID"), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x2cf7cb696461a282L, "generatorAlias"), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x29a5716c5dfed280L, "generateTemplates"), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L, 0x64a78ad4da8f85a6L, "reflectiveQueries")).create();
-  private final ConceptPresentation props_Language = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x3be012d639e820aL, "genPath"), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x5edd58f612649635L, "languagePath"), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL, 0x50317e9064ec725dL, "version")).create();
+  private final ConceptPresentation props_Generator = new ConceptPresentationBuilder(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L).deprecateProperty(0x3be012d639e8a44L, "generatorUID").create();
+  private final ConceptPresentation props_Language = new ConceptPresentationBuilder(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL).deprecateAggregation(0x3be012d639dff83L, "runtimeStubModels").create();
   private final ConceptPresentation props_MappingConfigExternalRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MappingConfigNormalRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MappingConfigRefAllGlobal = new ConceptPresentationBuilder().create();

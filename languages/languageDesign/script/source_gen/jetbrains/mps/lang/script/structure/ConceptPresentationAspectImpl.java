@@ -5,7 +5,6 @@ package jetbrains.mps.lang.script.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -19,7 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_FQNameClassifierSpecification = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FQNameMethodSpecification = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FactoryMigrationScriptPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MigrationScript = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x11225f2354aL, "title"), MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x118d28c5944L, "migrationFromBuild"), MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x118d28cf5b3L, "category"), MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081153L, "type"), MetaAdapterFactory.getProperty(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL, 0x498b4f71ee081155L, "toBuild")).icon(IconContainer.RESOURCE_a0a0j).create();
+  private final ConceptPresentation props_MigrationScript = new ConceptPresentationBuilder(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL).deprecateProperty(0x118d28c5944L, "migrationFromBuild").icon(IconContainer.RESOURCE_a0a0j).create();
   private final ConceptPresentation props_MigrationScriptPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MigrationScriptPart_Instance = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MigrationScriptPart_Instance_Predicate = new ConceptPresentationBuilder().create();

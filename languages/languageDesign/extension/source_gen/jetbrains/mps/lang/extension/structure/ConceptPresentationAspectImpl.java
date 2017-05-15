@@ -5,7 +5,6 @@ package jetbrains.mps.lang.extension.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -16,7 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ExtensionFieldReference = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ExtensionFunction = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ExtensionObjectGetter = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ExtensionPointDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L, 0x520ae19dd2771b96L, "extensionName")).create();
+  private final ConceptPresentation props_ExtensionPointDeclaration = new ConceptPresentationBuilder(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L).deprecateProperty(0x520ae19dd2771b96L, "extensionName").create();
   private final ConceptPresentation props_ExtensionPointExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExtensionPointType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GetExtensionObjectsOperation = new ConceptPresentationBuilder().create();

@@ -5,17 +5,16 @@ package jetbrains.mps.lang.structure.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractConceptDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec7L, "final"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x16096a174f259419L, "intConceptId"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x5d2e6079771f8cc0L, "conceptId"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x7cf94884f2237423L, "languageId"), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x45b8a887cfd27b2cL, "sourceNode")).create();
+  private final ConceptPresentation props_AbstractConceptDeclaration = new ConceptPresentationBuilder(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).deprecateProperty(0x16096a174f259419L, "intConceptId").create();
   private final ConceptPresentation props_AggregationLinkDeclarationScopeKind = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributeInfo = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributeInfo_AttributedConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributeInfo_IsMultiple = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptDeclaration = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xff49c1d648L, "rootable"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x10e328118ddL, "iconPath"), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x4b014033eedc8a48L, "staticScope"), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends")).icon(IconContainer.RESOURCE_a0a0f).create();
+  private final ConceptPresentation props_ConceptDeclaration = new ConceptPresentationBuilder(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L).deprecateProperty(0x10e328118ddL, "iconPath").icon(IconContainer.RESOURCE_a0a0f).create();
   private final ConceptPresentation props_ConstrainedDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
   private final ConceptPresentation props_DataTypeDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DeprecatedNodeAnnotation = new ConceptPresentationBuilder().create();

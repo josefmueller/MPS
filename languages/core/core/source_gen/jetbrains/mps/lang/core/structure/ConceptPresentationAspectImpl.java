@@ -5,15 +5,14 @@ package jetbrains.mps.lang.core.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Attribute = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
   private final ConceptPresentation props_BaseCommentAttribute = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BaseConcept = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")).create();
-  private final ConceptPresentation props_ChildAttribute = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "linkRole"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId")).create();
+  private final ConceptPresentation props_BaseConcept = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).deprecateProperty(0x10d34f97574L, "shortDescription").create();
+  private final ConceptPresentation props_ChildAttribute = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL).deprecateProperty(0x9d98713f249b585L, "linkRole").create();
   private final ConceptPresentation props_ExportScope = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExportScopeModule = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExportScopeNamespace = new ConceptPresentationBuilder().create();
@@ -39,14 +38,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ImplementationPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ImplementationWithStubPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InterfacePart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LinkAttribute = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x18649a5c82123514L, "linkRole"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, 0x129f3f612792fc5cL, "linkId")).create();
+  private final ConceptPresentation props_LinkAttribute = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L).deprecateProperty(0x18649a5c82123514L, "linkRole").create();
   private final ConceptPresentation props_MigrationAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeAttribute = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PropertyAttribute = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x18649a5c82123515L, "propertyName"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, 0x129f3f61278d556dL, "propertyId")).create();
+  private final ConceptPresentation props_PropertyAttribute = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L).deprecateProperty(0x18649a5c82123515L, "propertyName").create();
   private final ConceptPresentation props_ReviewMigration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ScopeFacade = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ScopeProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SideTransformInfo = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7aee2321L, "side"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1b9bbL, "cellId"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, 0xad0053c7af1bf58L, "anchorTag")).create();
+  private final ConceptPresentation props_SideTransformInfo = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL).deprecateProperty(0xad0053c7af1bf58L, "anchorTag").create();
   private final ConceptPresentation props_SuppressErrorsAnnotation = new ConceptPresentationBuilder().create();
 
   @Override

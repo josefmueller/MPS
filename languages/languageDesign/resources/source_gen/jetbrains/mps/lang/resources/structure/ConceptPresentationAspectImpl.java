@@ -5,7 +5,6 @@ package jetbrains.mps.lang.resources.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -13,8 +12,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Circle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Color = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ColorLiteral = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptIconResourceExpression = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x7ce01982590bd48L, "concept_old")).create();
-  private final ConceptPresentation props_FileIcon = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")).create();
+  private final ConceptPresentation props_ConceptIconResourceExpression = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL).deprecateAssociation(0x7ce01982590bd48L, "concept_old").create();
+  private final ConceptPresentation props_FileIcon = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL).deprecateAggregation(0x60d1cf8c81faea09L, "iconExpression").create();
   private final ConceptPresentation props_Icon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconLayerDescription = new ConceptPresentationBuilder().create();
@@ -26,7 +25,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_OldIconReference = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Primitive = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Rect = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Resource = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")).create();
+  private final ConceptPresentation props_Resource = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL).deprecateProperty(0x7c8b08a50a39c6cbL, "path").create();
   private final ConceptPresentation props_Text = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TextIcon = new ConceptPresentationBuilder().create();
 

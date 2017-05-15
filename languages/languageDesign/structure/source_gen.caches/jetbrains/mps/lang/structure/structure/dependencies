@@ -31,7 +31,6 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.IconContainer" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.StructureAspectDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentation" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

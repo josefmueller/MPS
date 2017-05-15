@@ -5,7 +5,6 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -86,7 +85,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CellMenuPart_ReplaceNode_CustomNodeConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_ReplaceNode_Group = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_ReplaceNode_Group_Create = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CellModel_AbstractLabel = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb4e7c3a4cL, 0x116e805ff79L, "defaultCaretPosition")).create();
+  private final ConceptPresentation props_CellModel_AbstractLabel = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb4e7c3a4cL).deprecateProperty(0x116e805ff79L, "defaultCaretPosition").create();
   private final ConceptPresentation props_CellModel_Alternation = new ConceptPresentationBuilder().shortDesc("cell alternation").create();
   private final ConceptPresentation props_CellModel_AttributedLinkCell = new ConceptPresentationBuilder().shortDesc("cell for attributed link").create();
   private final ConceptPresentation props_CellModel_AttributedNodeCell = new ConceptPresentationBuilder().shortDesc("cell for attributed node").create();
@@ -94,7 +93,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CellModel_Block = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellModel_BlockEnd = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellModel_BlockStart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CellModel_Collection = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff2519L, "vertical"), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0xf9eaff251aL, "gridLayout"), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x1094a893c4dL, "usesBraces"), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10e3893660fL, "usesFolding"), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x569b712fbc6ece21L, "collapseByDefault")).shortDesc("collection of cells").create();
+  private final ConceptPresentation props_CellModel_Collection = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L).deprecateProperty(0xf9eaff2519L, "vertical").shortDesc("collection of cells").create();
   private final ConceptPresentation props_CellModel_Component = new ConceptPresentationBuilder().shortDesc("reference to editor component").create();
   private final ConceptPresentation props_CellModel_Constant = new ConceptPresentationBuilder().shortDesc("text label").create();
   private final ConceptPresentation props_CellModel_ContextAssistant = new ConceptPresentationBuilder().create();
@@ -104,7 +103,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CellModel_Image = new ConceptPresentationBuilder().shortDesc("cell for an image").create();
   private final ConceptPresentation props_CellModel_Indent = new ConceptPresentationBuilder().shortDesc("indent").create();
   private final ConceptPresentation props_CellModel_JComponent = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CellModel_ListWithRole = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e02faL, "vertical"), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e02fbL, "gridLayout"), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e02fcL, "usesBraces"), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x10e3892b1d5L, "usesFolding"), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e02fdL, "separatorText"), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x10d360ae180L, "separatorLayoutConstraint")).create();
+  private final ConceptPresentation props_CellModel_ListWithRole = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL).deprecateProperty(0x1098c8e02faL, "vertical").create();
   private final ConceptPresentation props_CellModel_ModelAccess = new ConceptPresentationBuilder().shortDesc("reference to accessor").create();
   private final ConceptPresentation props_CellModel_NextEditor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellModel_NonEmptyProperty = new ConceptPresentationBuilder().shortDesc("not empty property").create();

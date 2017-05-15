@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -13,7 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AbstractClassifierReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AbstractCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AbstractForStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AbstractLoopStatement = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, 0x11745b5371dL, "label")).create();
+  private final ConceptPresentation props_AbstractLoopStatement = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL).deprecateProperty(0x11745b5371dL, "label").create();
   private final ConceptPresentation props_AbstractOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AbstractUnaryNumberOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AdditionalForLoopVariable = new ConceptPresentationBuilder().create();
@@ -24,7 +23,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AnnotationInstanceExpression = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_AnnotationInstanceValue = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AnnotationMethodDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnonymousClass = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier")).shortDesc("anonymous class").icon(IconContainer.RESOURCE_a0a0o).create();
+  private final ConceptPresentation props_AnonymousClass = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L).deprecateAggregation(0x1107e104a89L, "parameter").shortDesc("anonymous class").icon(IconContainer.RESOURCE_a0a0o).create();
   private final ConceptPresentation props_AnonymousClassCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ArrayAccessExpression = new ConceptPresentationBuilder().shortDesc("array access expression").create();
   private final ConceptPresentation props_ArrayClassExpression = new ConceptPresentationBuilder().create();
@@ -54,15 +53,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BlockStatement = new ConceptPresentationBuilder().shortDesc("block statement").create();
   private final ConceptPresentation props_BooleanConstant = new ConceptPresentationBuilder().shortDesc("boolean constant").create();
   private final ConceptPresentation props_BooleanType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BreakStatement = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x11745bfb2d8L, "label")).create();
+  private final ConceptPresentation props_BreakStatement = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL).deprecateProperty(0x11745bfb2d8L, "label").create();
   private final ConceptPresentation props_ByteType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CastExpression = new ConceptPresentationBuilder().shortDesc("type cast expression").create();
   private final ConceptPresentation props_CatchClause = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CharConstant = new ConceptPresentationBuilder().shortDesc("char constant").create();
   private final ConceptPresentation props_CharType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ClassConcept = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x11c6af4b284L, "isFinal"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x451f9e9f920b7f7dL, "isStatic")).shortDesc("Class declaration").icon(IconContainer.RESOURCE_a0a0yb).create();
+  private final ConceptPresentation props_ClassConcept = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L).deprecateAggregation(0xf8c108ca67L, "field").shortDesc("Class declaration").icon(IconContainer.RESOURCE_a0a0yb).create();
   private final ConceptPresentation props_ClassCreator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Classifier = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11ce63f4b3bL, "isDeprecated"), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x73c6d8a8c021f99L, "nonStatic")).create();
+  private final ConceptPresentation props_Classifier = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L).deprecateAggregation(0x106c32c4395L, "staticField").create();
   private final ConceptPresentation props_ClassifierClassExpression = new ConceptPresentationBuilder().shortDesc("class of node operation").create();
   private final ConceptPresentation props_ClassifierMember = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ClassifierType = new ConceptPresentationBuilder().shortDesc("reference to classifier").create();
@@ -78,7 +77,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConstructorDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstructorInvocationStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ContextClassifierKind = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ContinueStatement = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L, 0x11745fca58eL, "label")).create();
+  private final ConceptPresentation props_ContinueStatement = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbf3043726L).deprecateProperty(0x11745fca58eL, "label").create();
   private final ConceptPresentation props_CustomPropertyImplementation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CustomSetterPropertyImplementation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DefaultClassCreator = new ConceptPresentationBuilder().create();
@@ -116,7 +115,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_HasAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HexIntegerLiteral = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IAnonymousClass = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IBLDeprecatable = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L, 0x11d2ea948a4L, "isDeprecated")).create();
+  private final ConceptPresentation props_IBLDeprecatable = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d2ea8a339L).deprecateProperty(0x11d2ea948a4L, "isDeprecated").create();
   private final ConceptPresentation props_IBinaryLike = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IClassifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IClassifierMember = new ConceptPresentationBuilder().create();
@@ -257,7 +256,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SuperMethodCall = new ConceptPresentationBuilder().shortDesc("super method invocation").create();
   private final ConceptPresentation props_SuperMethodKind = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SwitchCase = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SwitchStatement = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL, 0x117b7e94b9bL, "label")).create();
+  private final ConceptPresentation props_SwitchStatement = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10ef02a8c6aL).deprecateProperty(0x117b7e94b9bL, "label").create();
   private final ConceptPresentation props_SynchronizedStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TernaryOperatorExpression = new ConceptPresentationBuilder().shortDesc("ternary operator").create();
   private final ConceptPresentation props_TextCommentPart = new ConceptPresentationBuilder().create();
