@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,18 +15,38 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
-public class ConceptPresentationBuilder {
+public final class ConceptPresentationBuilder {
+  private final SConceptId myConcept; // != null when there are deprecated
   private String myHelpUrl;
   private String myShortDescription;
   private IconResource myIcon;
   private boolean myIsDeprecated;
-  private Set<SConceptFeature> myDeprecatedFeatures = new HashSet<>(2);
+  private List<SConceptFeature> myDeprecatedFeatures;
+
+  /**
+   * Use this cons when there are no deprecated features in the concept
+   */
+  public ConceptPresentationBuilder() {
+    myConcept = null;
+  }
+
+  /**
+   * Use this cons instead of the {@linkplain #ConceptPresentationBuilder() default} one when there are deprecated features to register
+   * @since 2017.2
+   */
+  public ConceptPresentationBuilder(long langIdHigh, long langIdLow, long conceptId) {
+    myConcept = MetaIdFactory.conceptId(langIdHigh, langIdLow, conceptId);
+  }
 
   public ConceptPresentationBuilder helpUrl(String helpUrl) {
     myHelpUrl = helpUrl;
@@ -53,9 +73,46 @@ public class ConceptPresentationBuilder {
     return this;
   }
 
+  /**
+   * @deprecated use {@link #deprecateProperty(long, String)} or {@link #deprecateAggregation(long, String)} instead
+   *             Keep it until 2017.2 is out; code generated with 2017.1 uses this method
+   */
+  @ToRemove(version = 2017.2)
+  @Deprecated
   public ConceptPresentationBuilder deprecated(SConceptFeature ... f) {
+    initDeprecatedFeaturesList();
     myDeprecatedFeatures.addAll(Arrays.asList(f));
     return this;
+  }
+
+  /**
+   * @since 2017.2
+   */
+  public ConceptPresentationBuilder deprecateProperty(long pid, String name) {
+    assert myConcept != null; // cons with ConceptDescriptor was added along with this method
+    initDeprecatedFeaturesList();
+    myDeprecatedFeatures.add(MetaAdapterFactory.getProperty(MetaIdFactory.propId(myConcept, pid), name));
+    return this;
+  }
+
+  public ConceptPresentationBuilder deprecateAggregation(long lid, String name) {
+    assert myConcept != null;
+    initDeprecatedFeaturesList();
+    myDeprecatedFeatures.add(MetaAdapterFactory.getContainmentLink(MetaIdFactory.linkId(myConcept, lid), name));
+    return this;
+  }
+
+  public ConceptPresentationBuilder deprecateAssociation(long lid, String name) {
+    assert myConcept != null;
+    initDeprecatedFeaturesList();
+    myDeprecatedFeatures.add(MetaAdapterFactory.getReferenceLink(MetaIdFactory.refId(myConcept, lid), name));
+    return this;
+  }
+
+  private void initDeprecatedFeaturesList() {
+    if (myDeprecatedFeatures == null) {
+      myDeprecatedFeatures = new ArrayList<>(4);
+    }
   }
 
   public ConceptPresentation create(){

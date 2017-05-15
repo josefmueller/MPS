@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +17,16 @@ package jetbrains.mps.smodel.runtime;
 
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collection;
 
-public class ConceptPresentation {
+public final class ConceptPresentation {
   private String myHelpUrl;
   private String myShortDescription;
   private IconResource myIcon;
   private boolean myIsDeprecated;
-  private Set<SConceptFeature> myDeprecatedFeatures = new HashSet<>(2);
+  private Collection<SConceptFeature> myDeprecatedFeatures; // could be null
 
-  public ConceptPresentation(String helpUrl, String shortDescription, IconResource icon, boolean isDeprecated,
-      Set<SConceptFeature> deprecatedFeatures) {
+  /*package*/ ConceptPresentation(String helpUrl, String shortDescription, IconResource icon, boolean isDeprecated, Collection<SConceptFeature> deprecatedFeatures) {
     myHelpUrl = helpUrl;
     myShortDescription = shortDescription;
     myIcon = icon;
@@ -54,6 +52,6 @@ public class ConceptPresentation {
   }
 
   public boolean isDeprecated(SConceptFeature f) {
-    return myDeprecatedFeatures.contains(f);
+    return myDeprecatedFeatures != null && myDeprecatedFeatures.contains(f);
   }
 }
