@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -182,7 +183,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
     IFile outputPath = myCreatedSolution.getFacet(JavaModuleFacet.class).getOutputRoot();
     outputPath.getDescendant(TEST_JAVA_FILE).delete();
 
-    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.singleton((SModule) myCreatedSolution)));
+    ModuleSources sources = new ModelAccessHelper(ourModelAccess).runReadAction(() -> new ModuleSources(myCreatedSolution, new Dependencies(Collections.singleton((SModule) myCreatedSolution))));
     Collection<File> filesToDelete = sources.getFilesToDelete();
     Assert.assertEquals(1, filesToDelete.size());
   }

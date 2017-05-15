@@ -8,14 +8,17 @@ import jetbrains.mps.project.Project;
 import java.io.File;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -38,31 +41,33 @@ public class MainClass {
     assert project != null;
 
     System.out.println("Test model access...");
-    final List<SModel> projectModels = ListSequence.fromListWithValues(new ArrayList<SModel>(), project.getProjectModels());
+    final List<SModel> projectModels = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<IListSequence<SModel>>() {
+      public IListSequence<SModel> compute() {
+        return ListSequence.fromListWithValues(new ArrayList<SModel>(), project.getProjectModels());
+      }
+    });
     assert ListSequence.fromList(projectModels).count() == 1;
-    final Wrappers._T<SModel> model = new Wrappers._T<SModel>(null);
-    project.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        model.value = ListSequence.fromList(projectModels).findFirst(new IWhereFilter<SModel>() {
+    final SModel model = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<SModel>() {
+      public SModel compute() {
+        return ListSequence.fromList(projectModels).findFirst(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
-            return MPS_MODEL.equals(it.getModelName());
+            return MPS_MODEL.equals(it.getName().getValue());
           }
         });
       }
     });
-    assert model.value != null;
+    assert model != null;
     // check model content 
-    final Wrappers._T<SNode> node = new Wrappers._T<SNode>(null);
-    project.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        node.value = ListSequence.fromList(SModelOperations.roots(model.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
+    final SNode node = new ModelAccessHelper(project.getModelAccess()).runReadAction(new Computable<SNode>() {
+      public SNode compute() {
+        return ListSequence.fromList(SModelOperations.roots(model, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return MODEL_CLASSNAME.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
           }
         });
       }
     });
-    assert node.value != null;
+    assert node != null;
 
     // test write access 
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>(null);
@@ -70,8 +75,8 @@ public class MainClass {
       public void run() {
         project.getModelAccess().executeCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
           public SNode invoke() {
-            ListSequence.fromList(SLinkOperations.getChildren(node.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(_quotation_createNode_ea23db_a0a0a0a0a0a0t0e());
-            return result.value = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))).findFirst(new IWhereFilter<SNode>() {
+            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(_quotation_createNode_ea23db_a0a0a0a0a0a0r0e());
+            return result.value = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"))).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return "n".equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
               }
@@ -85,7 +90,7 @@ public class MainClass {
     // create resulting file to signal everything is OK 
     jetbrains.mps.build.mps.runner.test.test1.MainClass.mpsMain();
   }
-  private static SNode _quotation_createNode_ea23db_a0a0a0a0a0a0t0e() {
+  private static SNode _quotation_createNode_ea23db_a0a0a0a0a0a0r0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

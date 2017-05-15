@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,9 +30,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -45,8 +45,7 @@ public abstract class SModuleBase implements SModule {
 
   private List<SModuleListener> myListeners = new CopyOnWriteArrayList<>();
 
-  private final Object LOCK = new Object();
-  private final Set<SModelBase> myModels = new TreeSet<>(MODEL_BY_NAME_COMPARATOR);
+  private final Set<SModelBase> myModels = new LinkedHashSet<>();
   private final ConcurrentMap<SModelId, SModel> myIdToModelMap = new ConcurrentHashMap<>();
 
   protected SModuleBase() {
@@ -65,40 +64,36 @@ public abstract class SModuleBase implements SModule {
   @Override
   @NotNull
   public final List<SModel> getModels() {
-//    TODO assertCanRead();
+    assertCanRead();
 
-    synchronized (LOCK) {
-      return new ArrayList<>(myModels);
-    }
+    ArrayList<SModel> models = new ArrayList<>(myModels);
+    models.sort(MODEL_BY_NAME_COMPARATOR);
+    return models;
   }
 
   public void attach(@NotNull SRepository repo) {
-    synchronized (LOCK) {
-      if (myRepository != null) {
-        throw new IllegalStateException("Already attached.");
-      }
+    if (myRepository != null) {
+      throw new IllegalStateException("Already attached.");
+    }
 
-      repo.getModelAccess().checkWriteAccess();
+    repo.getModelAccess().checkWriteAccess();
 
-      myRepository = repo;
-      for (SModelBase m : myModels) {
-        m.attach(repo);
-      }
+    myRepository = repo;
+    for (SModelBase m : myModels) {
+      m.attach(repo);
     }
   }
 
   public void dispose() {
-    synchronized (LOCK) {
-      assert myRepository != null;
-      assertCanChange();
+    assert myRepository != null;
+    assertCanChange();
 
-      for (SModelBase m : myModels) {
-        m.detach();
-      }
-      myModels.clear();
-      myIdToModelMap.clear();
-      myRepository = null;
+    for (SModelBase m : myModels) {
+      m.detach();
     }
+    myModels.clear();
+    myIdToModelMap.clear();
+    myRepository = null;
   }
 
   @Override
@@ -244,15 +239,13 @@ public abstract class SModuleBase implements SModule {
                                                        model.getModelName(), model.getModule(), this));
     }
 
-    synchronized (LOCK) {
-      myModels.add(model);
-      myIdToModelMap.put(model.getModelId(), model);
+    myModels.add(model);
+    myIdToModelMap.put(model.getModelId(), model);
 
-      if (myRepository != null) {
-        model.attach(myRepository);
-      }
-      model.setModule(this);
+    if (myRepository != null) {
+      model.attach(myRepository);
     }
+    model.setModule(this);
     fireModelAdded(model);
   }
 
@@ -264,11 +257,9 @@ public abstract class SModuleBase implements SModule {
 
     fireBeforeModelRemoved(model);
     SModelReference reference = model.getReference();
-    synchronized (LOCK) {
-      myIdToModelMap.remove(reference.getModelId());
-      myModels.remove(model);
-      model.detach();
-    }
+    myIdToModelMap.remove(reference.getModelId());
+    myModels.remove(model);
+    model.detach();
     fireModelRemoved(reference);
   }
 

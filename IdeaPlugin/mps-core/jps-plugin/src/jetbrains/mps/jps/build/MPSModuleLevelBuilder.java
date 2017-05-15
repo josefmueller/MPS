@@ -25,6 +25,7 @@ import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
 import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -327,7 +328,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         } // fixme obviously
 
         String path = FileUtil.toCanonicalPath(file.getPath());
-        SModel model = solution.getModelByPath(path);
+        SModel model = new ModelAccessHelper(JpsMPSRepositoryFacade.getInstance().getProject().getModelAccess()).runReadAction(() -> solution.getModelByPath(path));
         if (model == null) {
           compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "cannot find MPS model for " + path));
           return true;

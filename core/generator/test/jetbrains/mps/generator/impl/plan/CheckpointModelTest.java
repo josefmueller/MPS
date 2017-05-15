@@ -125,15 +125,17 @@ public class CheckpointModelTest extends PlatformMpsTest {
     CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider, new ModelStreamProviderImpl());
     // XXX shall it be CME to give access to module with checkpoint models? Is there better way to find out cpModel?
 
-    SModule checkpointModule = tmProvider.getCheckpointsModule();
-    final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), cp1.getIdentity());
-    SModel cpModel = null;
-    for (SModel trm : checkpointModule.getModels()) {
-      if (cpModelName.equals(trm.getName())) {
-        cpModel = trm;
-        break;
+    SModel cpModel = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(() -> {
+      SModule checkpointModule = tmProvider.getCheckpointsModule();
+      final SModelName cpModelName = CrossModelEnvironment.createCheckpointModelName(m.getReference(), cp1.getIdentity());
+
+      for (SModel trm : checkpointModule.getModels()) {
+        if (cpModelName.equals(trm.getName())) {
+          return trm;
+        }
       }
-    }
+      return null;
+    });
     myErrors.checkThat("Checkpoint model", cpModel, CoreMatchers.notNullValue());
     ModelCheckpoints modelCheckpoints = cme.getState(m);
     myErrors.checkThat("CrossModelEnvironment: state present", modelCheckpoints, CoreMatchers.notNullValue());
