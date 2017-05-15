@@ -13,12 +13,13 @@ import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -49,21 +50,26 @@ public class Migrate_SCAPartsForSmartReferences extends MigrationScriptBase {
       };
       Collection<SNode> SCAs = CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), false);
 
-      for (final SNode sca : CollectionSequence.fromCollection(SCAs)) {
-        SNode entity = ListSequence.fromList(SLinkOperations.getChildren(MapSequence.fromMap(data).get(check_6mkphx_a0a0a0a0c0b0d(SNodeOperations.getModel(SLinkOperations.getTarget(sca, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept"))))), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return eq_6mkphx_a0a0a0a0a0a0a0e0b0d(LinkDeclaration__BehaviorDescriptor.getConceptDeclaration_id7jb4LXpbWaP.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "characteristicLink"))), SLinkOperations.getTarget(sca, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept")));
-          }
-        }).first();
+      for (SNode sca : CollectionSequence.fromCollection(SCAs)) {
+        final SNode conceptNode = SLinkOperations.getTarget(sca, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept"));
 
-        if ((entity != null)) {
-          if ((SLinkOperations.getTarget(entity, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692dec1L, "generatedMenu")) != null)) {
-            SNodeOperations.replaceWithAnother(sca, _quotation_createNode_6mkphx_a0a0a0a2a2a0a6(SLinkOperations.getTarget(entity, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692dec1L, "generatedMenu"))));
-          } else
-          if (isEmptyString(SPropertyOperations.getString(entity, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692deccL, "prefix"))) && isEmptyString(SPropertyOperations.getString(entity, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692deceL, "suffix")))) {
-            SNodeOperations.replaceWithAnother(sca, RefScopeFactories.simple(SLinkOperations.getTarget(entity, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "characteristicLink"))));
+        if ((AttributeOperations.getAttribute(conceptNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"))) != null)) {
+          SNode smartRefAttr = AttributeOperations.getAttribute(conceptNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute")));
+          SNode charactersticReference = SLinkOperations.getTarget(smartRefAttr, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d6297edL, "charactersticReference"));
+          SNode template = SLinkOperations.getTarget(smartRefAttr, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d66ac37L, "refPresentationTemplate"));
+
+          SNode entity = ListSequence.fromList(SLinkOperations.getChildren(MapSequence.fromMap(data).get(check_6mkphx_a0a0a0e0c0c0b0d(SNodeOperations.getModel(SLinkOperations.getTarget(sca, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept"))))), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return eq_6mkphx_a0a0a0a0a0a0e0c0e0b0d(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "conceptNode")), conceptNode);
+            }
+          }).first();
+
+          if ((entity != null)) {
+            SNodeOperations.replaceWithAnother(sca, _quotation_createNode_6mkphx_a0a0a6a2a2a0a6(SLinkOperations.getTarget(entity, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692dec1L, "generatedMenu"))));
+          } else if ((template != null)) {
+            SNodeOperations.replaceWithAnother(sca, RefScopeFactories.template(charactersticReference, SPropertyOperations.getString(template, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b59L, "prefix")), SPropertyOperations.getString(template, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b5cL, "suffix")), conceptNode));
           } else {
-            SNodeOperations.replaceWithAnother(sca, RefScopeFactories.template(SLinkOperations.getTarget(entity, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "characteristicLink")), SPropertyOperations.getString(entity, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692deccL, "prefix")), SPropertyOperations.getString(entity, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692deceL, "suffix"))));
+            SNodeOperations.replaceWithAnother(sca, RefScopeFactories.simple(charactersticReference, conceptNode));
           }
         }
       }
@@ -78,16 +84,16 @@ public class Migrate_SCAPartsForSmartReferences extends MigrationScriptBase {
 
 
 
-  private static SModule check_6mkphx_a0a0a0a0c0b0d(SModel checkedDotOperand) {
+  private static SModule check_6mkphx_a0a0a0e0c0c0b0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static boolean eq_6mkphx_a0a0a0a0a0a0a0e0b0d(Object a, Object b) {
+  private static boolean eq_6mkphx_a0a0a0a0a0a0e0c0e0b0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNode _quotation_createNode_6mkphx_a0a0a0a2a2a0a6(Object parameter_1) {
+  private static SNode _quotation_createNode_6mkphx_a0a0a6a2a2a0a6(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -96,8 +102,5 @@ public class Migrate_SCAPartsForSmartReferences extends MigrationScriptBase {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1fL, 0x5480a271c0d2a27eL, "menu"), (SNode) parameter_1);
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa22200b56b57990L, 0xa22200b56b57993L, "menuReference"), quotedNode_3);
     return quotedNode_2;
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
 }

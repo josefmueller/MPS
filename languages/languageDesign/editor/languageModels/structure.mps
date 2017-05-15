@@ -6560,27 +6560,18 @@
     <property role="3GE5qa" value="migration" />
     <property role="TrG5h" value="SmartRefMigrationDataEntity" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="2Bx95km$HVc" role="1TKVEl">
-      <property role="IQ2nx" value="3017733173184487116" />
-      <property role="TrG5h" value="prefix" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="2Bx95km$HVe" role="1TKVEl">
-      <property role="IQ2nx" value="3017733173184487118" />
-      <property role="TrG5h" value="suffix" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
     <node concept="1TJgyj" id="2Bx95km$HUY" role="1TKVEi">
       <property role="IQ2ns" value="3017733173184487102" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="characteristicLink" />
+      <property role="20kJfa" value="conceptNode" />
       <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
     <node concept="1TJgyj" id="2Bx95km$HV1" role="1TKVEi">
       <property role="IQ2ns" value="3017733173184487105" />
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="generatedMenu" />
+      <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3fw9B$5YUrX" resolve="SubstituteMenu_Named" />
     </node>
   </node>

@@ -4074,10 +4074,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor", "SmartRefMigrationDataEntity", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL);
     b.class_(false, false, false);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/3017733173184487099");
-    b.prop("prefix", 0x29e124551692deccL, "3017733173184487116");
-    b.prop("suffix", 0x29e124551692deceL, "3017733173184487118");
-    b.associate("characteristicLink", 0x29e124551692debeL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL).optional(false).origin("3017733173184487102").done();
-    b.associate("generatedMenu", 0x29e124551692dec1L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL).optional(true).origin("3017733173184487105").done();
+    b.associate("conceptNode", 0x29e124551692debeL).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("3017733173184487102").done();
+    b.associate("generatedMenu", 0x29e124551692dec1L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL).optional(false).origin("3017733173184487105").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForStrikeOutStyleSheet() {

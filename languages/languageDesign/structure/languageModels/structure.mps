@@ -244,55 +244,6 @@
       <ref role="PrY4T" node="hOIDzy1" resolve="IStructureDeprecatable" />
     </node>
   </node>
-  <node concept="1TIwiD" id="fKAxPRV">
-    <property role="19KtqR" value="true" />
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="EnumerationDataTypeDeclaration" />
-    <property role="34LRSv" value="Enum Data Type" />
-    <property role="EcuMT" value="1082978164219" />
-    <ref role="1TJDcQ" node="fKAxPRU" resolve="DataTypeDeclaration" />
-    <node concept="1TJgyi" id="hrlZH32" role="1TKVEl">
-      <property role="TrG5h" value="memberIdentifierPolicy" />
-      <property role="IQ2nx" value="1197591154882" />
-      <ref role="AX2Wp" node="hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
-    </node>
-    <node concept="1TJgyi" id="hCPDuZq" role="1TKVEl">
-      <property role="TrG5h" value="hasNoDefaultMember" />
-      <property role="IQ2nx" value="1212080844762" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="hCQ2FqA" role="1TKVEl">
-      <property role="TrG5h" value="noValueText" />
-      <property role="IQ2nx" value="1212087449254" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyj" id="fKM4eW5" role="1TKVEi">
-      <property role="20kJfa" value="memberDataType" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1083171729157" />
-      <ref role="20lvS9" node="fKQkHSB" resolve="PrimitiveDataTypeDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="fKQgatX" role="1TKVEi">
-      <property role="20kJfa" value="defaultMember" />
-      <property role="20lbJX" value="0..1" />
-      <property role="IQ2ns" value="1083241965437" />
-      <ref role="20lvS9" node="fKM4N6M" resolve="EnumerationMemberDeclaration" />
-    </node>
-    <node concept="1TJgyj" id="fKM5hVY" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="member" />
-      <property role="20lbJX" value="1..n" />
-      <property role="IQ2ns" value="1083172003582" />
-      <ref role="20lvS9" node="fKM4N6M" resolve="EnumerationMemberDeclaration" />
-    </node>
-    <node concept="PrWs8" id="yuXZmMPAu4" role="PzmwI">
-      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
-    </node>
-    <node concept="1QGGSu" id="4Q8sAA5iJRG" role="rwd14">
-      <property role="1iqoE4" value="${module}/icons/enum.png" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="fKAz7CR">
     <property role="19KtqR" value="true" />
     <property role="R5$K7" value="false" />
@@ -725,23 +676,6 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7ERGDLdpClu">
-    <property role="EcuMT" value="8842732777748464990" />
-    <property role="3GE5qa" value="smartReference" />
-    <property role="TrG5h" value="RefPresentationTemplate" />
-    <property role="34LRSv" value="template" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="3J8eUL7n4Hp" role="1TKVEl">
-      <property role="IQ2nx" value="4307758654697524057" />
-      <property role="TrG5h" value="prefix" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="3J8eUL7n4Hs" role="1TKVEl">
-      <property role="IQ2nx" value="4307758654697524060" />
-      <property role="TrG5h" value="suffix" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="7ERGDLdoDvC">
     <property role="EcuMT" value="8842732777748207592" />
     <property role="TrG5h" value="SmartReferenceAttribute" />
@@ -766,6 +700,72 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="refPresentationTemplate" />
       <ref role="20lvS9" node="7ERGDLdpClu" resolve="RefPresentationTemplate" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7ERGDLdpClu">
+    <property role="EcuMT" value="8842732777748464990" />
+    <property role="3GE5qa" value="smartReference" />
+    <property role="TrG5h" value="RefPresentationTemplate" />
+    <property role="34LRSv" value="template" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3J8eUL7n4Hp" role="1TKVEl">
+      <property role="IQ2nx" value="4307758654697524057" />
+      <property role="TrG5h" value="prefix" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="3J8eUL7n4Hs" role="1TKVEl">
+      <property role="IQ2nx" value="4307758654697524060" />
+      <property role="TrG5h" value="suffix" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="fKAxPRV">
+    <property role="19KtqR" value="true" />
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="EnumerationDataTypeDeclaration" />
+    <property role="34LRSv" value="Enum Data Type" />
+    <property role="EcuMT" value="1082978164219" />
+    <ref role="1TJDcQ" node="fKAxPRU" resolve="DataTypeDeclaration" />
+    <node concept="1TJgyi" id="hrlZH32" role="1TKVEl">
+      <property role="TrG5h" value="memberIdentifierPolicy" />
+      <property role="IQ2nx" value="1197591154882" />
+      <ref role="AX2Wp" node="hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
+    </node>
+    <node concept="1TJgyi" id="hCPDuZq" role="1TKVEl">
+      <property role="TrG5h" value="hasNoDefaultMember" />
+      <property role="IQ2nx" value="1212080844762" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="hCQ2FqA" role="1TKVEl">
+      <property role="TrG5h" value="noValueText" />
+      <property role="IQ2nx" value="1212087449254" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="fKM4eW5" role="1TKVEi">
+      <property role="20kJfa" value="memberDataType" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="1083171729157" />
+      <ref role="20lvS9" node="fKQkHSB" resolve="PrimitiveDataTypeDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="fKQgatX" role="1TKVEi">
+      <property role="20kJfa" value="defaultMember" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="1083241965437" />
+      <ref role="20lvS9" node="fKM4N6M" resolve="EnumerationMemberDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="fKM5hVY" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="member" />
+      <property role="20lbJX" value="1..n" />
+      <property role="IQ2ns" value="1083172003582" />
+      <ref role="20lvS9" node="fKM4N6M" resolve="EnumerationMemberDeclaration" />
+    </node>
+    <node concept="PrWs8" id="yuXZmMPAu4" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="1QGGSu" id="4Q8sAA5iJRG" role="rwd14">
+      <property role="1iqoE4" value="${module}/icons/enum.png" />
     </node>
   </node>
 </model>

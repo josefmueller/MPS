@@ -12,24 +12,22 @@ import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import java.util.List;
-import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
-import java.util.regex.Matcher;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.constraints.migration.ConstraintsMigrationUtil;
 import jetbrains.mps.project.GlobalScope;
-import java.util.regex.Pattern;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -57,58 +55,43 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
           return scope;
         }
       };
-      Collection<SNode> conceptNodes = CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
+      Collection<SNode> conceptNodes = CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
 
       for (SNode conceptNode : CollectionSequence.fromCollection(conceptNodes)) {
-        List<SNode> referenceLinks = AbstractConceptDeclaration__BehaviorDescriptor.getReferenceLinkDeclarations_idhEwILL0.invoke(conceptNode);
-        SNode characteristicLink = null;
-        String prefix = "";
-        String suffix = "";
+        if ((AttributeOperations.getAttribute(conceptNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"))) != null)) {
+          SNode characteristicLink = SLinkOperations.getTarget(AttributeOperations.getAttribute(conceptNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"))), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d6297edL, "charactersticReference"));
+          String prefix = SPropertyOperations.getString(SLinkOperations.getTarget(AttributeOperations.getAttribute(conceptNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"))), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d66ac37L, "refPresentationTemplate")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b59L, "prefix"));
+          String suffix = SPropertyOperations.getString(SLinkOperations.getTarget(AttributeOperations.getAttribute(conceptNode, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, "jetbrains.mps.lang.structure.structure.SmartReferenceAttribute"))), MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d66ac37L, "refPresentationTemplate")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b5cL, "suffix"));
 
-        if (isEmptyString(SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")))) {
-          if (ListSequence.fromList(referenceLinks).count() == 1 && (boolean) LinkDeclaration__BehaviorDescriptor.isAtLeastOneCardinality_id2VYdUfnkjmB.invoke(ListSequence.fromList(referenceLinks).getElement(0))) {
-            characteristicLink = ListSequence.fromList(referenceLinks).getElement(0);
-          }
-        } else {
-          Matcher smartAliasMatcher = getSmartAliasMatcher(SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")));
-
-          if (smartAliasMatcher.matches()) {
-            final String role = smartAliasMatcher.group(2);
-            characteristicLink = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getReferenceLinkDeclarations_idhEwILL0.invoke(conceptNode)).findFirst(new IWhereFilter<SNode>() {
-              public boolean accept(SNode it) {
-                return eq_b3phj_a0a0a0a0a0a1a2a0f0e0c0d(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), role);
-              }
-            });
-            prefix = smartAliasMatcher.group(1);
-            suffix = smartAliasMatcher.group(3);
-          }
-        }
-
-        if (characteristicLink != null) {
           SModel editorModel = SModuleOperations.getAspect(SNodeOperations.getModel(conceptNode).getModule(), "editor");
           SNode menu = null;
 
           SNode presentationFromConstraint = extractSmartPresentationFromConstraints(conceptNode, characteristicLink);
           if (presentationFromConstraint != null) {
-            menu = smartRefMenu(conceptNode, RefScopeFactories.query(characteristicLink, presentationFromConstraint));
+            menu = smartRefMenu(conceptNode, RefScopeFactories.query(characteristicLink, presentationFromConstraint, null));
 
             if (!(hasDefaultMenu(editorModel, conceptNode))) {
               SModelOperations.addRootNode(editorModel, defaultMenu(conceptNode, menu));
             }
           } else if (hasSCAUsages(conceptNode)) {
             if ((prefix == null || prefix.length() == 0) && (suffix == null || suffix.length() == 0)) {
-              menu = smartRefMenu(conceptNode, RefScopeFactories.simple(characteristicLink));
+              menu = smartRefMenu(conceptNode, RefScopeFactories.simple(characteristicLink, null));
             } else {
-              menu = smartRefMenu(conceptNode, RefScopeFactories.template(characteristicLink, prefix, suffix));
+              menu = smartRefMenu(conceptNode, RefScopeFactories.template(characteristicLink, prefix, suffix, null));
             }
           }
-          SModelOperations.addRootNode(editorModel, menu);
+          if ((menu != null)) {
+            SModelOperations.addRootNode(editorModel, menu);
 
-          ListSequence.fromList(SLinkOperations.getChildren(data, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).addElement(createSmartRefMigrationDataEntity_b3phj_a0a7a7a2a2a6(characteristicLink, prefix, suffix, menu));
+            ListSequence.fromList(SLinkOperations.getChildren(data, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).addElement(createSmartRefMigrationDataEntity_b3phj_a0a2a9a0a2a2a6(conceptNode, menu));
+          }
         }
       }
     }
-    return data;
+    return (ListSequence.fromList(SLinkOperations.getChildren(data, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).isEmpty() ? null : data);
+  }
+  public Iterable<MigrationScriptReference> executeAfter() {
+    return ListSequence.fromListAndArray(new ArrayList<MigrationScriptReference>(), new MigrationScriptReference(MetaAdapterFactory.getLanguage(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, "jetbrains.mps.lang.structure"), 4));
   }
   public MigrationScriptReference getDescriptor() {
     return new MigrationScriptReference(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 8);
@@ -119,12 +102,12 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
     SModel constraintsAspect = SModuleOperations.getAspect(SNodeOperations.getModel(conceptNode).getModule(), "constraints");
     SNode constraintsNode = ListSequence.fromList(SModelOperations.roots(constraintsAspect, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b3phj_a0a0a0a0a0a1a7(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept")), conceptNode);
+        return eq_b3phj_a0a0a0a0a0a1a8(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept")), conceptNode);
       }
     });
     SNode refConstraintNode = ListSequence.fromList(SLinkOperations.getChildren(constraintsNode, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a726c901bL, "referent"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b3phj_a0a0a0a0a0a2a7(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7317b98aL, "applicableLink")), referenceNode);
+        return eq_b3phj_a0a0a0a0a0a2a8(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7317b98aL, "applicableLink")), referenceNode);
       }
     });
     SNode presentationFunctionBody = SLinkOperations.getTarget(SLinkOperations.getTarget(refConstraintNode, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x36367902116a44c4L, "presentation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
@@ -250,7 +233,7 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
     Collection<SNode> SCAs = CommandUtil.instances(GlobalScope.getInstance(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), true);
     return CollectionSequence.fromCollection(SCAs).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b3phj_a0a0a0a0a0a1a42(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept")), conceptNode);
+        return eq_b3phj_a0a0a0a0a0a1a52(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept")), conceptNode);
       }
     }).isNotEmpty();
   }
@@ -258,7 +241,7 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
   private boolean hasDefaultMenu(SModel editorModel, final SNode conceptNode) {
     return ListSequence.fromList(SModelOperations.roots(editorModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b3phj_a0a0a0a0a0a0a62(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), conceptNode);
+        return eq_b3phj_a0a0a0a0a0a0a72(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), conceptNode);
       }
     }).isNotEmpty();
   }
@@ -275,30 +258,17 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
     return menu;
   }
 
-  private static final Pattern SMART_ALIAS_PATTERN = Pattern.compile("(.*)\\{(.+)\\}(.*)");
-
-  private Matcher getSmartAliasMatcher(String alias) {
-    return SMART_ALIAS_PATTERN.matcher(alias);
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
-  private static boolean eq_b3phj_a0a0a0a0a0a1a2a0f0e0c0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static SNode createSmartRefMigrationDataEntity_b3phj_a0a7a7a2a2a6(Object p0, Object p1, Object p2, Object p3) {
+  private static SNode createSmartRefMigrationDataEntity_b3phj_a0a2a9a0a2a2a6(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, "jetbrains.mps.lang.editor.structure.SmartRefMigrationDataEntity"), null, null, false);
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "characteristicLink"), (SNode) p0);
-    n1.setProperty(MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692deccL, "prefix"), p1 + "");
-    n1.setProperty(MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692deceL, "suffix"), p2 + "");
-    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692dec1L, "generatedMenu"), (SNode) p3);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "conceptNode"), (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692dec1L, "generatedMenu"), (SNode) p1);
     return n1;
   }
-  private static boolean eq_b3phj_a0a0a0a0a0a1a7(Object a, Object b) {
+  private static boolean eq_b3phj_a0a0a0a0a0a1a8(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_b3phj_a0a0a0a0a0a2a7(Object a, Object b) {
+  private static boolean eq_b3phj_a0a0a0a0a0a2a8(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_b3phj_a0a0a0a0a0l() {
@@ -425,10 +395,10 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression"), quotedNode_2);
     return quotedNode_1;
   }
-  private static boolean eq_b3phj_a0a0a0a0a0a1a42(Object a, Object b) {
+  private static boolean eq_b3phj_a0a0a0a0a0a1a52(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_b3phj_a0a0a0a0a0a0a62(Object a, Object b) {
+  private static boolean eq_b3phj_a0a0a0a0a0a0a72(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_b3phj_a0a0eb(Object parameter_1, Object parameter_2, Object parameter_3) {
