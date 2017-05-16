@@ -60,7 +60,7 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
     Iterable<SNode> referents = scope.getAvailableElements(null);
     List<SubstituteMenuItem> result = new ArrayList<>();
     for (SNode referent: referents) {
-      result.add(createItem(context.getEditorContext(), parentNode, currentTarget, referent));
+      result.add(createItem(context, referent));
     }
     return result;
   }
@@ -76,7 +76,7 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
   }
 
   @NotNull
-  protected ReferenceScopeSubstituteMenuItem createItem(EditorContext context, SNode parentNode, SNode currentTarget, SNode referent) {
-    return new ReferenceScopeSubstituteMenuItem(myConcept, parentNode, currentTarget, referent, myReferenceLink, context);
+  protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referent) {
+    return new ReferenceScopeSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentTargetNode(), referent, myReferenceLink, context.getEditorContext());
   }
 }
