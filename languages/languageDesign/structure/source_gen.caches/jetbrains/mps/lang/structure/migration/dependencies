@@ -36,6 +36,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.CopyIconsToResources" />
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.SetOldConceptIds_Empty" />
     <classNode dependClassName="jetbrains.mps.lang.structure.migration.SetSIds" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.migration.UseDevkit" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.migration.SetOldConceptIds_Empty" file="SetOldConceptIds_Empty.java">
@@ -69,6 +70,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
+    <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.structure.migration.UseDevkit" file="UseDevkit.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
 </dependenciesRoot>

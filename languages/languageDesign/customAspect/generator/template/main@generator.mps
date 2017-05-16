@@ -14,7 +14,7 @@
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="4" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
@@ -860,7 +860,7 @@
                   </node>
                 </node>
                 <node concept="1sPUBX" id="5iYmYly3ovT" role="lGtFl">
-                  <ref role="v9R2y" to="tp27:2ztrlDPhXlD" resolve="switch_LanguageIdentity_SLanguage" />
+                  <ref role="v9R2y" to="tp27:2ztrlDPhXlD" resolve="switch_AbstractLanguageIdentity_SLanguage" />
                 </node>
               </node>
               <node concept="3uibUv" id="2Y$EcRKOdDw" role="HW$YZ">
@@ -920,7 +920,7 @@
                   </node>
                 </node>
                 <node concept="1sPUBX" id="5iYmYly3oOM" role="lGtFl">
-                  <ref role="v9R2y" to="tp27:2ztrlDPhXlD" resolve="switch_LanguageIdentity_SLanguage" />
+                  <ref role="v9R2y" to="tp27:2ztrlDPhXlD" resolve="switch_AbstractLanguageIdentity_SLanguage" />
                 </node>
               </node>
               <node concept="3uibUv" id="2Y$EcRKOoB$" role="HW$YZ">

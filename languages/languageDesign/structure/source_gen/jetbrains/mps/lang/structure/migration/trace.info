@@ -168,6 +168,49 @@
       <unit id="5091239957908801103" at="28,0,105,0" name="jetbrains.mps.lang.structure.migration.CopyIconsToResources" />
     </file>
   </root>
+  <root nodeRef="r:33eabb60-7192-4d12-ba46-11dacf966b3e(jetbrains.mps.lang.structure.migration)/6565560734624444363">
+    <file name="UseDevkit.java">
+      <node id="6565560734624444363" at="16,30,17,63" concept="6" />
+      <node id="6565560734624444363" at="20,33,21,16" concept="6" />
+      <node id="6565560734624444363" at="23,41,24,17" concept="1" />
+      <node id="6565560734624444363" at="24,17,25,16" concept="6" />
+      <node id="6565560734624514582" at="27,42,28,78" concept="5" />
+      <node id="6565560734624511463" at="29,66,30,13" concept="6" />
+      <node id="6565560734624522688" at="31,5,32,62" concept="5" />
+      <node id="6565560734624359188" at="32,62,33,130" concept="1" />
+      <node id="6565560734624359195" at="33,130,34,130" concept="1" />
+      <node id="6565560734624561326" at="34,130,35,137" concept="7" />
+      <node id="6565560734624555207" at="35,137,36,153" concept="1" />
+      <node id="6565560734624550443" at="36,153,37,153" concept="1" />
+      <node id="6565560734624541753" at="37,153,38,151" concept="1" />
+      <node id="6565560734624444363" at="40,51,41,149" concept="6" />
+      <node id="6565560734624444363" at="16,0,19,0" concept="4" trace="getCaption#()Ljava/lang/String;" />
+      <node id="6565560734624510499" at="28,78,31,5" concept="3" />
+      <node id="6565560734624444363" at="40,0,43,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="6565560734624444363" at="19,0,23,0" concept="4" trace="isRerunnable#()Z" />
+      <node id="6565560734624444363" at="23,0,27,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6565560734624444363" at="27,0,40,0" concept="4" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <scope id="6565560734624444363" at="16,30,17,63" />
+      <scope id="6565560734624444363" at="20,33,21,16" />
+      <scope id="6565560734624510501" at="29,66,30,13" />
+      <scope id="6565560734624444363" at="40,51,41,149" />
+      <scope id="6565560734624444363" at="23,41,25,16" />
+      <scope id="6565560734624444363" at="16,0,19,0" />
+      <scope id="6565560734624444363" at="40,0,43,0" />
+      <scope id="6565560734624444363" at="19,0,23,0" />
+      <scope id="6565560734624444363" at="23,0,27,0">
+        <var name="m" id="6565560734624444363" />
+      </scope>
+      <scope id="6565560734624444363" at="27,42,38,151">
+        <var name="mi" id="6565560734624359424" />
+        <var name="structureAspectModel" id="6565560734624514583" />
+      </scope>
+      <scope id="6565560734624444363" at="27,0,40,0">
+        <var name="m" id="6565560734624444363" />
+      </scope>
+      <unit id="6565560734624444363" at="15,0,45,0" name="jetbrains.mps.lang.structure.migration.UseDevkit" />
+    </file>
+  </root>
   <root nodeRef="r:33eabb60-7192-4d12-ba46-11dacf966b3e(jetbrains.mps.lang.structure.migration)/6714410169262118807">
     <file name="SetSIds.java">
       <node id="6714410169262118807" at="26,30,27,21" concept="6" />
