@@ -18,6 +18,7 @@ package jetbrains.mps.idea.java.tests;
 
 import com.intellij.codeInsight.daemon.impl.quickfix.ImportClassFix;
 import com.intellij.codeInsight.intention.IntentionAction;
+import com.intellij.codeInsight.intention.IntentionActionDelegate;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -70,6 +71,9 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
 
     ImportClassFix fix = null;
     for (IntentionAction intent : myFixture.getAvailableIntentions()) {
+      while (intent instanceof IntentionActionDelegate) {
+        intent = ((IntentionActionDelegate) intent).getDelegate();
+      }
       if (intent instanceof ImportClassFix) {
         fix = (ImportClassFix) intent;
         break;
