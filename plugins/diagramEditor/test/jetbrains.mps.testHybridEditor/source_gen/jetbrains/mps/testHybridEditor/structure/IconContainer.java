@@ -5,7 +5,7 @@ package jetbrains.mps.testHybridEditor.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a0d = new IconResource("connector.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0f = new IconResource("connector.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0i = new IconResource("block.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a3b0m = new IconResource("connector.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a5b0m = new IconResource("connector.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a8b0m = new IconResource("block.png", IconContainer.class);
 }

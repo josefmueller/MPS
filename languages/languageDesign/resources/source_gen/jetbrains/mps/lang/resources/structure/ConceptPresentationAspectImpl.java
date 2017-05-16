@@ -4,30 +4,30 @@ package jetbrains.mps.lang.resources.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Circle = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Color = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ColorLiteral = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptIconResourceExpression = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL).deprecateAssociation(0x7ce01982590bd48L, "concept_old").create();
-  private final ConceptPresentation props_FileIcon = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL).deprecateAggregation(0x60d1cf8c81faea09L, "iconExpression").create();
-  private final ConceptPresentation props_Icon = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IconExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IconLayerDescription = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IconResourceExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Image = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeIconResourceExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated(true).icon(IconContainer.RESOURCE_a0a0l).create();
-  private final ConceptPresentation props_OldIconDeclaration = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_OldIconReference = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_Primitive = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Rect = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Resource = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL).deprecateProperty(0x7c8b08a50a39c6cbL, "path").create();
-  private final ConceptPresentation props_Text = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TextIcon = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Circle;
+  private ConceptPresentation props_Color;
+  private ConceptPresentation props_ColorLiteral;
+  private ConceptPresentation props_ConceptIconResourceExpression;
+  private ConceptPresentation props_FileIcon;
+  private ConceptPresentation props_Icon;
+  private ConceptPresentation props_IconExpression;
+  private ConceptPresentation props_IconLayerDescription;
+  private ConceptPresentation props_IconResourceExpression;
+  private ConceptPresentation props_Image;
+  private ConceptPresentation props_NodeIconResourceExpression;
+  private ConceptPresentation props_OldIconBundle;
+  private ConceptPresentation props_OldIconDeclaration;
+  private ConceptPresentation props_OldIconReference;
+  private ConceptPresentation props_Primitive;
+  private ConceptPresentation props_Rect;
+  private ConceptPresentation props_Resource;
+  private ConceptPresentation props_Text;
+  private ConceptPresentation props_TextIcon;
 
   @Override
   @Nullable
@@ -35,42 +35,125 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Circle:
+        if (props_Circle == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Circle = cpb.create();
+        }
         return props_Circle;
       case LanguageConceptSwitch.Color:
+        if (props_Color == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Color = cpb.create();
+        }
         return props_Color;
       case LanguageConceptSwitch.ColorLiteral:
+        if (props_ColorLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ColorLiteral = cpb.create();
+        }
         return props_ColorLiteral;
       case LanguageConceptSwitch.ConceptIconResourceExpression:
+        if (props_ConceptIconResourceExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL);
+          cpb.deprecateAssociation(0x7ce01982590bd48L, "concept_old");
+          props_ConceptIconResourceExpression = cpb.create();
+        }
         return props_ConceptIconResourceExpression;
       case LanguageConceptSwitch.FileIcon:
+        if (props_FileIcon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL);
+          cpb.deprecateAggregation(0x60d1cf8c81faea09L, "iconExpression");
+          props_FileIcon = cpb.create();
+        }
         return props_FileIcon;
       case LanguageConceptSwitch.Icon:
+        if (props_Icon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Icon = cpb.create();
+        }
         return props_Icon;
       case LanguageConceptSwitch.IconExpression:
+        if (props_IconExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IconExpression = cpb.create();
+        }
         return props_IconExpression;
       case LanguageConceptSwitch.IconLayerDescription:
+        if (props_IconLayerDescription == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IconLayerDescription = cpb.create();
+        }
         return props_IconLayerDescription;
       case LanguageConceptSwitch.IconResourceExpression:
+        if (props_IconResourceExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IconResourceExpression = cpb.create();
+        }
         return props_IconResourceExpression;
       case LanguageConceptSwitch.Image:
+        if (props_Image == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Image = cpb.create();
+        }
         return props_Image;
       case LanguageConceptSwitch.NodeIconResourceExpression:
+        if (props_NodeIconResourceExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeIconResourceExpression = cpb.create();
+        }
         return props_NodeIconResourceExpression;
       case LanguageConceptSwitch.OldIconBundle:
+        if (props_OldIconBundle == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a11b0u);
+          props_OldIconBundle = cpb.create();
+        }
         return props_OldIconBundle;
       case LanguageConceptSwitch.OldIconDeclaration:
+        if (props_OldIconDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_OldIconDeclaration = cpb.create();
+        }
         return props_OldIconDeclaration;
       case LanguageConceptSwitch.OldIconReference:
+        if (props_OldIconReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_OldIconReference = cpb.create();
+        }
         return props_OldIconReference;
       case LanguageConceptSwitch.Primitive:
+        if (props_Primitive == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Primitive = cpb.create();
+        }
         return props_Primitive;
       case LanguageConceptSwitch.Rect:
+        if (props_Rect == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Rect = cpb.create();
+        }
         return props_Rect;
       case LanguageConceptSwitch.Resource:
+        if (props_Resource == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL);
+          cpb.deprecateProperty(0x7c8b08a50a39c6cbL, "path");
+          props_Resource = cpb.create();
+        }
         return props_Resource;
       case LanguageConceptSwitch.Text:
+        if (props_Text == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Text = cpb.create();
+        }
         return props_Text;
       case LanguageConceptSwitch.TextIcon:
+        if (props_TextIcon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TextIcon = cpb.create();
+        }
         return props_TextIcon;
     }
     return null;

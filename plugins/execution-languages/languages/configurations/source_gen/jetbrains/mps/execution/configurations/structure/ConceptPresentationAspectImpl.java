@@ -4,47 +4,47 @@ package jetbrains.mps.execution.configurations.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractRunConfigurationExecutor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BeforeTask = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BeforeTaskCall = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BeforeTaskParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BeforeTaskParameterReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConfigurationFromExecutorReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Configuration_Parameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConsoleCreator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConsoleType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ContextConfiguration_Parameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ContextExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Create_ConceptFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DebuggerSettings_Parameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EnvironmentExpression = new ConceptPresentationBuilder().shortDesc("execution environment").create();
-  private final ConceptPresentation props_ExecuteBeforeTask_ConceptFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExecuteConfiguration_Function = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Executor_Parameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GetProjectOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IsConfigurationFromContext_ConceptFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModelSource = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ModuleSource = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_NodeListSource = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeSource = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ProjectSource = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Project_Parameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RunConfiguration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0z).create();
-  private final ConceptPresentation props_RunConfigurationCreator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RunConfigurationExecutor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RunConfigurationKind = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RunConfigurationProducer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RunConfigurationProducerPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RunConfigurationSource = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SModelSource = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SModuleSource = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Source_ConceptFunctionParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StartProcessHandlerStatement = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_AbstractRunConfigurationExecutor;
+  private ConceptPresentation props_BeforeTask;
+  private ConceptPresentation props_BeforeTaskCall;
+  private ConceptPresentation props_BeforeTaskParameter;
+  private ConceptPresentation props_BeforeTaskParameterReference;
+  private ConceptPresentation props_ConfigurationFromExecutorReference;
+  private ConceptPresentation props_Configuration_Parameter;
+  private ConceptPresentation props_ConsoleCreator;
+  private ConceptPresentation props_ConsoleType;
+  private ConceptPresentation props_ContextConfiguration_Parameter;
+  private ConceptPresentation props_ContextExpression;
+  private ConceptPresentation props_Create_ConceptFunction;
+  private ConceptPresentation props_DebuggerSettings_Parameter;
+  private ConceptPresentation props_EnvironmentExpression;
+  private ConceptPresentation props_ExecuteBeforeTask_ConceptFunction;
+  private ConceptPresentation props_ExecuteConfiguration_Function;
+  private ConceptPresentation props_Executor_Parameter;
+  private ConceptPresentation props_GetProjectOperation;
+  private ConceptPresentation props_IsConfigurationFromContext_ConceptFunction;
+  private ConceptPresentation props_ModelSource;
+  private ConceptPresentation props_ModuleSource;
+  private ConceptPresentation props_NodeListSource;
+  private ConceptPresentation props_NodeSource;
+  private ConceptPresentation props_ProjectSource;
+  private ConceptPresentation props_Project_Parameter;
+  private ConceptPresentation props_RunConfiguration;
+  private ConceptPresentation props_RunConfigurationCreator;
+  private ConceptPresentation props_RunConfigurationExecutor;
+  private ConceptPresentation props_RunConfigurationKind;
+  private ConceptPresentation props_RunConfigurationProducer;
+  private ConceptPresentation props_RunConfigurationProducerPart;
+  private ConceptPresentation props_RunConfigurationSource;
+  private ConceptPresentation props_SModelSource;
+  private ConceptPresentation props_SModuleSource;
+  private ConceptPresentation props_Source_ConceptFunctionParameter;
+  private ConceptPresentation props_StartProcessHandlerStatement;
 
   @Override
   @Nullable
@@ -52,76 +52,224 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbstractRunConfigurationExecutor:
+        if (props_AbstractRunConfigurationExecutor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractRunConfigurationExecutor = cpb.create();
+        }
         return props_AbstractRunConfigurationExecutor;
       case LanguageConceptSwitch.BeforeTask:
+        if (props_BeforeTask == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BeforeTask = cpb.create();
+        }
         return props_BeforeTask;
       case LanguageConceptSwitch.BeforeTaskCall:
+        if (props_BeforeTaskCall == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BeforeTaskCall = cpb.create();
+        }
         return props_BeforeTaskCall;
       case LanguageConceptSwitch.BeforeTaskParameter:
+        if (props_BeforeTaskParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BeforeTaskParameter = cpb.create();
+        }
         return props_BeforeTaskParameter;
       case LanguageConceptSwitch.BeforeTaskParameterReference:
+        if (props_BeforeTaskParameterReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BeforeTaskParameterReference = cpb.create();
+        }
         return props_BeforeTaskParameterReference;
       case LanguageConceptSwitch.ConfigurationFromExecutorReference:
+        if (props_ConfigurationFromExecutorReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConfigurationFromExecutorReference = cpb.create();
+        }
         return props_ConfigurationFromExecutorReference;
       case LanguageConceptSwitch.Configuration_Parameter:
+        if (props_Configuration_Parameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Configuration_Parameter = cpb.create();
+        }
         return props_Configuration_Parameter;
       case LanguageConceptSwitch.ConsoleCreator:
+        if (props_ConsoleCreator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConsoleCreator = cpb.create();
+        }
         return props_ConsoleCreator;
       case LanguageConceptSwitch.ConsoleType:
+        if (props_ConsoleType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConsoleType = cpb.create();
+        }
         return props_ConsoleType;
       case LanguageConceptSwitch.ContextConfiguration_Parameter:
+        if (props_ContextConfiguration_Parameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ContextConfiguration_Parameter = cpb.create();
+        }
         return props_ContextConfiguration_Parameter;
       case LanguageConceptSwitch.ContextExpression:
+        if (props_ContextExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ContextExpression = cpb.create();
+        }
         return props_ContextExpression;
       case LanguageConceptSwitch.Create_ConceptFunction:
+        if (props_Create_ConceptFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Create_ConceptFunction = cpb.create();
+        }
         return props_Create_ConceptFunction;
       case LanguageConceptSwitch.DebuggerSettings_Parameter:
+        if (props_DebuggerSettings_Parameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DebuggerSettings_Parameter = cpb.create();
+        }
         return props_DebuggerSettings_Parameter;
       case LanguageConceptSwitch.EnvironmentExpression:
+        if (props_EnvironmentExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("execution environment");
+          props_EnvironmentExpression = cpb.create();
+        }
         return props_EnvironmentExpression;
       case LanguageConceptSwitch.ExecuteBeforeTask_ConceptFunction:
+        if (props_ExecuteBeforeTask_ConceptFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExecuteBeforeTask_ConceptFunction = cpb.create();
+        }
         return props_ExecuteBeforeTask_ConceptFunction;
       case LanguageConceptSwitch.ExecuteConfiguration_Function:
+        if (props_ExecuteConfiguration_Function == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExecuteConfiguration_Function = cpb.create();
+        }
         return props_ExecuteConfiguration_Function;
       case LanguageConceptSwitch.Executor_Parameter:
+        if (props_Executor_Parameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Executor_Parameter = cpb.create();
+        }
         return props_Executor_Parameter;
       case LanguageConceptSwitch.GetProjectOperation:
+        if (props_GetProjectOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GetProjectOperation = cpb.create();
+        }
         return props_GetProjectOperation;
       case LanguageConceptSwitch.IsConfigurationFromContext_ConceptFunction:
+        if (props_IsConfigurationFromContext_ConceptFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IsConfigurationFromContext_ConceptFunction = cpb.create();
+        }
         return props_IsConfigurationFromContext_ConceptFunction;
       case LanguageConceptSwitch.ModelSource:
+        if (props_ModelSource == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ModelSource = cpb.create();
+        }
         return props_ModelSource;
       case LanguageConceptSwitch.ModuleSource:
+        if (props_ModuleSource == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ModuleSource = cpb.create();
+        }
         return props_ModuleSource;
       case LanguageConceptSwitch.NodeListSource:
+        if (props_NodeListSource == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeListSource = cpb.create();
+        }
         return props_NodeListSource;
       case LanguageConceptSwitch.NodeSource:
+        if (props_NodeSource == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeSource = cpb.create();
+        }
         return props_NodeSource;
       case LanguageConceptSwitch.ProjectSource:
+        if (props_ProjectSource == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ProjectSource = cpb.create();
+        }
         return props_ProjectSource;
       case LanguageConceptSwitch.Project_Parameter:
+        if (props_Project_Parameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Project_Parameter = cpb.create();
+        }
         return props_Project_Parameter;
       case LanguageConceptSwitch.RunConfiguration:
+        if (props_RunConfiguration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a52b0lb);
+          props_RunConfiguration = cpb.create();
+        }
         return props_RunConfiguration;
       case LanguageConceptSwitch.RunConfigurationCreator:
+        if (props_RunConfigurationCreator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RunConfigurationCreator = cpb.create();
+        }
         return props_RunConfigurationCreator;
       case LanguageConceptSwitch.RunConfigurationExecutor:
+        if (props_RunConfigurationExecutor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RunConfigurationExecutor = cpb.create();
+        }
         return props_RunConfigurationExecutor;
       case LanguageConceptSwitch.RunConfigurationKind:
+        if (props_RunConfigurationKind == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RunConfigurationKind = cpb.create();
+        }
         return props_RunConfigurationKind;
       case LanguageConceptSwitch.RunConfigurationProducer:
+        if (props_RunConfigurationProducer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RunConfigurationProducer = cpb.create();
+        }
         return props_RunConfigurationProducer;
       case LanguageConceptSwitch.RunConfigurationProducerPart:
+        if (props_RunConfigurationProducerPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RunConfigurationProducerPart = cpb.create();
+        }
         return props_RunConfigurationProducerPart;
       case LanguageConceptSwitch.RunConfigurationSource:
+        if (props_RunConfigurationSource == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RunConfigurationSource = cpb.create();
+        }
         return props_RunConfigurationSource;
       case LanguageConceptSwitch.SModelSource:
+        if (props_SModelSource == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SModelSource = cpb.create();
+        }
         return props_SModelSource;
       case LanguageConceptSwitch.SModuleSource:
+        if (props_SModuleSource == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SModuleSource = cpb.create();
+        }
         return props_SModuleSource;
       case LanguageConceptSwitch.Source_ConceptFunctionParameter:
+        if (props_Source_ConceptFunctionParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Source_ConceptFunctionParameter = cpb.create();
+        }
         return props_Source_ConceptFunctionParameter;
       case LanguageConceptSwitch.StartProcessHandlerStatement:
+        if (props_StartProcessHandlerStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_StartProcessHandlerStatement = cpb.create();
+        }
         return props_StartProcessHandlerStatement;
     }
     return null;

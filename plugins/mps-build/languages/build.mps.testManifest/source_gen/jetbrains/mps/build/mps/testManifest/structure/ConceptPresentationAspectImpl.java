@@ -4,14 +4,14 @@ package jetbrains.mps.build.mps.testManifest.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_TestModuleManifest = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestModuleManifestRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestProjectConfiguration = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_TestModuleManifest;
+  private ConceptPresentation props_TestModuleManifestRef;
+  private ConceptPresentation props_TestProjectConfiguration;
 
   @Override
   @Nullable
@@ -19,10 +19,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.TestModuleManifest:
+        if (props_TestModuleManifest == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestModuleManifest = cpb.create();
+        }
         return props_TestModuleManifest;
       case LanguageConceptSwitch.TestModuleManifestRef:
+        if (props_TestModuleManifestRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestModuleManifestRef = cpb.create();
+        }
         return props_TestModuleManifestRef;
       case LanguageConceptSwitch.TestProjectConfiguration:
+        if (props_TestProjectConfiguration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestProjectConfiguration = cpb.create();
+        }
         return props_TestProjectConfiguration;
     }
     return null;

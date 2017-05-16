@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.varVariable.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_VarVariableDeclaration = new ConceptPresentationBuilder().shortDesc("var definition").create();
+  private ConceptPresentation props_VarVariableDeclaration;
 
   @Override
   @Nullable
@@ -17,6 +17,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.VarVariableDeclaration:
+        if (props_VarVariableDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("var definition");
+          props_VarVariableDeclaration = cpb.create();
+        }
         return props_VarVariableDeclaration;
     }
     return null;

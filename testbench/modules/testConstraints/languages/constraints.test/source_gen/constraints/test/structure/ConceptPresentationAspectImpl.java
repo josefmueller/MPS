@@ -4,24 +4,24 @@ package constraints.test.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Base = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CanBeAncestorFail = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CanBeChildFail = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CanBeParentFail = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Child = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Concept_CC = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Concept_CI = new ConceptPresentationBuilder().shortDesc("CF - composition of D1 & D2 CFs. D2 inherites Base CF. Hence, CF - composition of D1 & Base CFs").create();
-  private final ConceptPresentation props_Concept_II = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Container = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Derived1_Constrained = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Derived1_Inherited = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Derived2_Constrained = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Derived2_Inherited = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Base;
+  private ConceptPresentation props_CanBeAncestorFail;
+  private ConceptPresentation props_CanBeChildFail;
+  private ConceptPresentation props_CanBeParentFail;
+  private ConceptPresentation props_Child;
+  private ConceptPresentation props_Concept_CC;
+  private ConceptPresentation props_Concept_CI;
+  private ConceptPresentation props_Concept_II;
+  private ConceptPresentation props_Container;
+  private ConceptPresentation props_Derived1_Constrained;
+  private ConceptPresentation props_Derived1_Inherited;
+  private ConceptPresentation props_Derived2_Constrained;
+  private ConceptPresentation props_Derived2_Inherited;
 
   @Override
   @Nullable
@@ -29,30 +29,83 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Base:
+        if (props_Base == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Base = cpb.create();
+        }
         return props_Base;
       case LanguageConceptSwitch.CanBeAncestorFail:
+        if (props_CanBeAncestorFail == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CanBeAncestorFail = cpb.create();
+        }
         return props_CanBeAncestorFail;
       case LanguageConceptSwitch.CanBeChildFail:
+        if (props_CanBeChildFail == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CanBeChildFail = cpb.create();
+        }
         return props_CanBeChildFail;
       case LanguageConceptSwitch.CanBeParentFail:
+        if (props_CanBeParentFail == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CanBeParentFail = cpb.create();
+        }
         return props_CanBeParentFail;
       case LanguageConceptSwitch.Child:
+        if (props_Child == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Child = cpb.create();
+        }
         return props_Child;
       case LanguageConceptSwitch.Concept_CC:
+        if (props_Concept_CC == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Concept_CC = cpb.create();
+        }
         return props_Concept_CC;
       case LanguageConceptSwitch.Concept_CI:
+        if (props_Concept_CI == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("CF - composition of D1 & D2 CFs. D2 inherites Base CF. Hence, CF - composition of D1 & Base CFs");
+          props_Concept_CI = cpb.create();
+        }
         return props_Concept_CI;
       case LanguageConceptSwitch.Concept_II:
+        if (props_Concept_II == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Concept_II = cpb.create();
+        }
         return props_Concept_II;
       case LanguageConceptSwitch.Container:
+        if (props_Container == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Container = cpb.create();
+        }
         return props_Container;
       case LanguageConceptSwitch.Derived1_Constrained:
+        if (props_Derived1_Constrained == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Derived1_Constrained = cpb.create();
+        }
         return props_Derived1_Constrained;
       case LanguageConceptSwitch.Derived1_Inherited:
+        if (props_Derived1_Inherited == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Derived1_Inherited = cpb.create();
+        }
         return props_Derived1_Inherited;
       case LanguageConceptSwitch.Derived2_Constrained:
+        if (props_Derived2_Constrained == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Derived2_Constrained = cpb.create();
+        }
         return props_Derived2_Constrained;
       case LanguageConceptSwitch.Derived2_Inherited:
+        if (props_Derived2_Inherited == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Derived2_Inherited = cpb.create();
+        }
         return props_Derived2_Inherited;
     }
     return null;

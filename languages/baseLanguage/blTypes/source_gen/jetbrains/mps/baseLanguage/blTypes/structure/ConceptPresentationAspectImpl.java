@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_PrimitiveTypeDescriptor = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
-  private final ConceptPresentation props_PrimitiveTypeRef = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_PrimitiveTypeDescriptor;
+  private ConceptPresentation props_PrimitiveTypeRef;
 
   @Override
   @Nullable
@@ -18,8 +18,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.PrimitiveTypeDescriptor:
+        if (props_PrimitiveTypeDescriptor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0d);
+          props_PrimitiveTypeDescriptor = cpb.create();
+        }
         return props_PrimitiveTypeDescriptor;
       case LanguageConceptSwitch.PrimitiveTypeRef:
+        if (props_PrimitiveTypeRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrimitiveTypeRef = cpb.create();
+        }
         return props_PrimitiveTypeRef;
     }
     return null;

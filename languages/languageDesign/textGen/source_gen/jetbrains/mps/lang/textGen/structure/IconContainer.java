@@ -5,6 +5,6 @@ package jetbrains.mps.lang.textGen.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a0h = new IconResource("textGen.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0w = new IconResource("textGenComponent.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a7b0nb = new IconResource("textGen.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a22b0nb = new IconResource("textGenComponent.png", IconContainer.class);
 }

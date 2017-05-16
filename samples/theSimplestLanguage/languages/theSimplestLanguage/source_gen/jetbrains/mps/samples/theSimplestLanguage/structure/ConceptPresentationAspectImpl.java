@@ -4,12 +4,12 @@ package jetbrains.mps.samples.theSimplestLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_TheSimplestConcept = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_TheSimplestConcept;
 
   @Override
   @Nullable
@@ -17,6 +17,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.TheSimplestConcept:
+        if (props_TheSimplestConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TheSimplestConcept = cpb.create();
+        }
         return props_TheSimplestConcept;
     }
     return null;

@@ -4,49 +4,49 @@ package jetbrains.mps.lang.textGen.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractAppendPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AbstractTextGenDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AbstractTextGenParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AppendOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AttributedNodePart = new ConceptPresentationBuilder().shortDesc("next attribute or parent node").create();
-  private final ConceptPresentation props_ClassConceptUnitContext = new ConceptPresentationBuilder().shortDesc("Instantiate a class as unit context object").create();
-  private final ConceptPresentation props_CollectionAppendPart = new ConceptPresentationBuilder().shortDesc("collection").create();
-  private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0h).create();
-  private final ConceptPresentation props_ConstantStringAppendPart = new ConceptPresentationBuilder().shortDesc("constant string").create();
-  private final ConceptPresentation props_ContextInstanceSpecification = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DecreaseDepthOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EncodingDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EncodingDeclarationBase = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EncodingLiteral = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExtensionDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FilenameFunction = new ConceptPresentationBuilder().shortDesc("name of output file").create();
-  private final ConceptPresentation props_FoundErrorOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerateTextDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IncreaseDepthOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IndentBufferOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IndentPart = new ConceptPresentationBuilder().shortDesc("append indentation").create();
-  private final ConceptPresentation props_InstancePerUnitContextObject = new ConceptPresentationBuilder().shortDesc("Associate new instance of a context object with a text unit (one context object for each text unit)").create();
-  private final ConceptPresentation props_LanguageTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0w).create();
-  private final ConceptPresentation props_LayoutPart = new ConceptPresentationBuilder().shortDesc("area within text unit layout").create();
-  private final ConceptPresentation props_NewLineAppendPart = new ConceptPresentationBuilder().shortDesc("new line").create();
-  private final ConceptPresentation props_NodeAppendPart = new ConceptPresentationBuilder().shortDesc("node or property").create();
-  private final ConceptPresentation props_NodeParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OperationCall = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OperationDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SimpleTextGenOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StubOperationDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TextUnitLayout = new ConceptPresentationBuilder().shortDesc("outline named text areas outcome unit consists of").create();
-  private final ConceptPresentation props_UnitContextDeclaration = new ConceptPresentationBuilder().shortDesc("Define a context object for a text unit").create();
-  private final ConceptPresentation props_UnitContextObject = new ConceptPresentationBuilder().shortDesc("Tells text unit has a context object according to the given declaration").create();
-  private final ConceptPresentation props_UnitContextReference = new ConceptPresentationBuilder().shortDesc("reference to unit context object").create();
-  private final ConceptPresentation props_UtilityMethodCall = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UtilityMethodDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_WithIndentOperation = new ConceptPresentationBuilder().shortDesc("code block").create();
+  private ConceptPresentation props_AbstractAppendPart;
+  private ConceptPresentation props_AbstractTextGenDeclaration;
+  private ConceptPresentation props_AbstractTextGenParameter;
+  private ConceptPresentation props_AppendOperation;
+  private ConceptPresentation props_AttributedNodePart;
+  private ConceptPresentation props_ClassConceptUnitContext;
+  private ConceptPresentation props_CollectionAppendPart;
+  private ConceptPresentation props_ConceptTextGenDeclaration;
+  private ConceptPresentation props_ConstantStringAppendPart;
+  private ConceptPresentation props_ContextInstanceSpecification;
+  private ConceptPresentation props_DecreaseDepthOperation;
+  private ConceptPresentation props_EncodingDeclaration;
+  private ConceptPresentation props_EncodingDeclarationBase;
+  private ConceptPresentation props_EncodingLiteral;
+  private ConceptPresentation props_ExtensionDeclaration;
+  private ConceptPresentation props_FilenameFunction;
+  private ConceptPresentation props_FoundErrorOperation;
+  private ConceptPresentation props_GenerateTextDeclaration;
+  private ConceptPresentation props_IncreaseDepthOperation;
+  private ConceptPresentation props_IndentBufferOperation;
+  private ConceptPresentation props_IndentPart;
+  private ConceptPresentation props_InstancePerUnitContextObject;
+  private ConceptPresentation props_LanguageTextGenDeclaration;
+  private ConceptPresentation props_LayoutPart;
+  private ConceptPresentation props_NewLineAppendPart;
+  private ConceptPresentation props_NodeAppendPart;
+  private ConceptPresentation props_NodeParameter;
+  private ConceptPresentation props_OperationCall;
+  private ConceptPresentation props_OperationDeclaration;
+  private ConceptPresentation props_SimpleTextGenOperation;
+  private ConceptPresentation props_StubOperationDeclaration;
+  private ConceptPresentation props_TextUnitLayout;
+  private ConceptPresentation props_UnitContextDeclaration;
+  private ConceptPresentation props_UnitContextObject;
+  private ConceptPresentation props_UnitContextReference;
+  private ConceptPresentation props_UtilityMethodCall;
+  private ConceptPresentation props_UtilityMethodDeclaration;
+  private ConceptPresentation props_WithIndentOperation;
 
   @Override
   @Nullable
@@ -54,80 +54,249 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbstractAppendPart:
+        if (props_AbstractAppendPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractAppendPart = cpb.create();
+        }
         return props_AbstractAppendPart;
       case LanguageConceptSwitch.AbstractTextGenDeclaration:
+        if (props_AbstractTextGenDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractTextGenDeclaration = cpb.create();
+        }
         return props_AbstractTextGenDeclaration;
       case LanguageConceptSwitch.AbstractTextGenParameter:
+        if (props_AbstractTextGenParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractTextGenParameter = cpb.create();
+        }
         return props_AbstractTextGenParameter;
       case LanguageConceptSwitch.AppendOperation:
+        if (props_AppendOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AppendOperation = cpb.create();
+        }
         return props_AppendOperation;
       case LanguageConceptSwitch.AttributedNodePart:
+        if (props_AttributedNodePart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("next attribute or parent node");
+          props_AttributedNodePart = cpb.create();
+        }
         return props_AttributedNodePart;
       case LanguageConceptSwitch.ClassConceptUnitContext:
+        if (props_ClassConceptUnitContext == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Instantiate a class as unit context object");
+          props_ClassConceptUnitContext = cpb.create();
+        }
         return props_ClassConceptUnitContext;
       case LanguageConceptSwitch.CollectionAppendPart:
+        if (props_CollectionAppendPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("collection");
+          props_CollectionAppendPart = cpb.create();
+        }
         return props_CollectionAppendPart;
       case LanguageConceptSwitch.ConceptTextGenDeclaration:
+        if (props_ConceptTextGenDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a7b0nb);
+          props_ConceptTextGenDeclaration = cpb.create();
+        }
         return props_ConceptTextGenDeclaration;
       case LanguageConceptSwitch.ConstantStringAppendPart:
+        if (props_ConstantStringAppendPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("constant string");
+          props_ConstantStringAppendPart = cpb.create();
+        }
         return props_ConstantStringAppendPart;
       case LanguageConceptSwitch.ContextInstanceSpecification:
+        if (props_ContextInstanceSpecification == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ContextInstanceSpecification = cpb.create();
+        }
         return props_ContextInstanceSpecification;
       case LanguageConceptSwitch.DecreaseDepthOperation:
+        if (props_DecreaseDepthOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DecreaseDepthOperation = cpb.create();
+        }
         return props_DecreaseDepthOperation;
       case LanguageConceptSwitch.EncodingDeclaration:
+        if (props_EncodingDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EncodingDeclaration = cpb.create();
+        }
         return props_EncodingDeclaration;
       case LanguageConceptSwitch.EncodingDeclarationBase:
+        if (props_EncodingDeclarationBase == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EncodingDeclarationBase = cpb.create();
+        }
         return props_EncodingDeclarationBase;
       case LanguageConceptSwitch.EncodingLiteral:
+        if (props_EncodingLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EncodingLiteral = cpb.create();
+        }
         return props_EncodingLiteral;
       case LanguageConceptSwitch.ExtensionDeclaration:
+        if (props_ExtensionDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExtensionDeclaration = cpb.create();
+        }
         return props_ExtensionDeclaration;
       case LanguageConceptSwitch.FilenameFunction:
+        if (props_FilenameFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("name of output file");
+          props_FilenameFunction = cpb.create();
+        }
         return props_FilenameFunction;
       case LanguageConceptSwitch.FoundErrorOperation:
+        if (props_FoundErrorOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FoundErrorOperation = cpb.create();
+        }
         return props_FoundErrorOperation;
       case LanguageConceptSwitch.GenerateTextDeclaration:
+        if (props_GenerateTextDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerateTextDeclaration = cpb.create();
+        }
         return props_GenerateTextDeclaration;
       case LanguageConceptSwitch.IncreaseDepthOperation:
+        if (props_IncreaseDepthOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IncreaseDepthOperation = cpb.create();
+        }
         return props_IncreaseDepthOperation;
       case LanguageConceptSwitch.IndentBufferOperation:
+        if (props_IndentBufferOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IndentBufferOperation = cpb.create();
+        }
         return props_IndentBufferOperation;
       case LanguageConceptSwitch.IndentPart:
+        if (props_IndentPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("append indentation");
+          props_IndentPart = cpb.create();
+        }
         return props_IndentPart;
       case LanguageConceptSwitch.InstancePerUnitContextObject:
+        if (props_InstancePerUnitContextObject == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Associate new instance of a context object with a text unit (one context object for each text unit)");
+          props_InstancePerUnitContextObject = cpb.create();
+        }
         return props_InstancePerUnitContextObject;
       case LanguageConceptSwitch.LanguageTextGenDeclaration:
+        if (props_LanguageTextGenDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a22b0nb);
+          props_LanguageTextGenDeclaration = cpb.create();
+        }
         return props_LanguageTextGenDeclaration;
       case LanguageConceptSwitch.LayoutPart:
+        if (props_LayoutPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("area within text unit layout");
+          props_LayoutPart = cpb.create();
+        }
         return props_LayoutPart;
       case LanguageConceptSwitch.NewLineAppendPart:
+        if (props_NewLineAppendPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("new line");
+          props_NewLineAppendPart = cpb.create();
+        }
         return props_NewLineAppendPart;
       case LanguageConceptSwitch.NodeAppendPart:
+        if (props_NodeAppendPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("node or property");
+          props_NodeAppendPart = cpb.create();
+        }
         return props_NodeAppendPart;
       case LanguageConceptSwitch.NodeParameter:
+        if (props_NodeParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeParameter = cpb.create();
+        }
         return props_NodeParameter;
       case LanguageConceptSwitch.OperationCall:
+        if (props_OperationCall == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OperationCall = cpb.create();
+        }
         return props_OperationCall;
       case LanguageConceptSwitch.OperationDeclaration:
+        if (props_OperationDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OperationDeclaration = cpb.create();
+        }
         return props_OperationDeclaration;
       case LanguageConceptSwitch.SimpleTextGenOperation:
+        if (props_SimpleTextGenOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SimpleTextGenOperation = cpb.create();
+        }
         return props_SimpleTextGenOperation;
       case LanguageConceptSwitch.StubOperationDeclaration:
+        if (props_StubOperationDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_StubOperationDeclaration = cpb.create();
+        }
         return props_StubOperationDeclaration;
       case LanguageConceptSwitch.TextUnitLayout:
+        if (props_TextUnitLayout == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("outline named text areas outcome unit consists of");
+          props_TextUnitLayout = cpb.create();
+        }
         return props_TextUnitLayout;
       case LanguageConceptSwitch.UnitContextDeclaration:
+        if (props_UnitContextDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Define a context object for a text unit");
+          props_UnitContextDeclaration = cpb.create();
+        }
         return props_UnitContextDeclaration;
       case LanguageConceptSwitch.UnitContextObject:
+        if (props_UnitContextObject == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Tells text unit has a context object according to the given declaration");
+          props_UnitContextObject = cpb.create();
+        }
         return props_UnitContextObject;
       case LanguageConceptSwitch.UnitContextReference:
+        if (props_UnitContextReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("reference to unit context object");
+          props_UnitContextReference = cpb.create();
+        }
         return props_UnitContextReference;
       case LanguageConceptSwitch.UtilityMethodCall:
+        if (props_UtilityMethodCall == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_UtilityMethodCall = cpb.create();
+        }
         return props_UtilityMethodCall;
       case LanguageConceptSwitch.UtilityMethodDeclaration:
+        if (props_UtilityMethodDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_UtilityMethodDeclaration = cpb.create();
+        }
         return props_UtilityMethodDeclaration;
       case LanguageConceptSwitch.WithIndentOperation:
+        if (props_WithIndentOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("code block");
+          props_WithIndentOperation = cpb.create();
+        }
         return props_WithIndentOperation;
     }
     return null;

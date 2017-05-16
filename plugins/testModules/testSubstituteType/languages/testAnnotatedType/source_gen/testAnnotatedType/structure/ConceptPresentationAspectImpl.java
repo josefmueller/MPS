@@ -4,19 +4,19 @@ package testAnnotatedType.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_PresenceCondition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrimDoubleType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrimFloatType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrimIntType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrimLongType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrimNumConstant = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrimType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteAnnotation = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_PresenceCondition;
+  private ConceptPresentation props_PrimDoubleType;
+  private ConceptPresentation props_PrimFloatType;
+  private ConceptPresentation props_PrimIntType;
+  private ConceptPresentation props_PrimLongType;
+  private ConceptPresentation props_PrimNumConstant;
+  private ConceptPresentation props_PrimType;
+  private ConceptPresentation props_SubstituteAnnotation;
 
   @Override
   @Nullable
@@ -24,20 +24,52 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.PresenceCondition:
+        if (props_PresenceCondition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PresenceCondition = cpb.create();
+        }
         return props_PresenceCondition;
       case LanguageConceptSwitch.PrimDoubleType:
+        if (props_PrimDoubleType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrimDoubleType = cpb.create();
+        }
         return props_PrimDoubleType;
       case LanguageConceptSwitch.PrimFloatType:
+        if (props_PrimFloatType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrimFloatType = cpb.create();
+        }
         return props_PrimFloatType;
       case LanguageConceptSwitch.PrimIntType:
+        if (props_PrimIntType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrimIntType = cpb.create();
+        }
         return props_PrimIntType;
       case LanguageConceptSwitch.PrimLongType:
+        if (props_PrimLongType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrimLongType = cpb.create();
+        }
         return props_PrimLongType;
       case LanguageConceptSwitch.PrimNumConstant:
+        if (props_PrimNumConstant == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrimNumConstant = cpb.create();
+        }
         return props_PrimNumConstant;
       case LanguageConceptSwitch.PrimType:
+        if (props_PrimType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrimType = cpb.create();
+        }
         return props_PrimType;
       case LanguageConceptSwitch.SubstituteAnnotation:
+        if (props_SubstituteAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SubstituteAnnotation = cpb.create();
+        }
         return props_SubstituteAnnotation;
     }
     return null;

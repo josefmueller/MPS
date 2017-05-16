@@ -5,21 +5,21 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a0r = new IconResource("actionMap.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0x = new IconResource("keyMap.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0nb = new IconResource("menuComponent.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0ee = new IconResource("editorContextHints.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0fe = new IconResource("editor.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0if = new IconResource("editorComponent.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0bi = new IconResource("parametersInformation.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0rm = new IconResource("styleKeyPack.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0tm = new IconResource("editorStylesheet.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0cn = new IconResource("substituteMenu.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0yn = new IconResource("substituteMenuContribution.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0zn = new IconResource("substituteMenu.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0ao = new IconResource("substituteMenu.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0so = new IconResource("transformationMenu.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0to = new IconResource("transformationMenuContribution.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0jp = new IconResource("transformationMenu.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0kp = new IconResource("transformationMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a71b0op = new IconResource("actionMap.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a32b0op = new IconResource("keyMap.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a93b0op = new IconResource("menuComponent.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a801b0op = new IconResource("editorContextHints.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a901b0op = new IconResource("editor.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a831b0op = new IconResource("editorComponent.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a902b0op = new IconResource("parametersInformation.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a923b0op = new IconResource("styleKeyPack.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a133b0op = new IconResource("editorStylesheet.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a043b0op = new IconResource("substituteMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a263b0op = new IconResource("substituteMenuContribution.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a363b0op = new IconResource("substituteMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a463b0op = new IconResource("substituteMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a283b0op = new IconResource("transformationMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a383b0op = new IconResource("transformationMenuContribution.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a993b0op = new IconResource("transformationMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a004b0op = new IconResource("transformationMenu.png", IconContainer.class);
 }

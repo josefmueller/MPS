@@ -4,22 +4,22 @@ package BHL4.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_C1 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_C2 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_C3 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_C4 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_C5 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_I = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_I1 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_I2 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_I3 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_I4 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_I5 = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_C1;
+  private ConceptPresentation props_C2;
+  private ConceptPresentation props_C3;
+  private ConceptPresentation props_C4;
+  private ConceptPresentation props_C5;
+  private ConceptPresentation props_I;
+  private ConceptPresentation props_I1;
+  private ConceptPresentation props_I2;
+  private ConceptPresentation props_I3;
+  private ConceptPresentation props_I4;
+  private ConceptPresentation props_I5;
 
   @Override
   @Nullable
@@ -27,26 +27,70 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.C1:
+        if (props_C1 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_C1 = cpb.create();
+        }
         return props_C1;
       case LanguageConceptSwitch.C2:
+        if (props_C2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_C2 = cpb.create();
+        }
         return props_C2;
       case LanguageConceptSwitch.C3:
+        if (props_C3 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_C3 = cpb.create();
+        }
         return props_C3;
       case LanguageConceptSwitch.C4:
+        if (props_C4 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_C4 = cpb.create();
+        }
         return props_C4;
       case LanguageConceptSwitch.C5:
+        if (props_C5 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_C5 = cpb.create();
+        }
         return props_C5;
       case LanguageConceptSwitch.I:
+        if (props_I == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_I = cpb.create();
+        }
         return props_I;
       case LanguageConceptSwitch.I1:
+        if (props_I1 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_I1 = cpb.create();
+        }
         return props_I1;
       case LanguageConceptSwitch.I2:
+        if (props_I2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_I2 = cpb.create();
+        }
         return props_I2;
       case LanguageConceptSwitch.I3:
+        if (props_I3 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_I3 = cpb.create();
+        }
         return props_I3;
       case LanguageConceptSwitch.I4:
+        if (props_I4 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_I4 = cpb.create();
+        }
         return props_I4;
       case LanguageConceptSwitch.I5:
+        if (props_I5 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_I5 = cpb.create();
+        }
         return props_I5;
     }
     return null;

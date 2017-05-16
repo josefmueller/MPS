@@ -4,13 +4,13 @@ package updatedLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_MigratingConcept = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RootConcept = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_MigratingConcept;
+  private ConceptPresentation props_RootConcept;
 
   @Override
   @Nullable
@@ -18,8 +18,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.MigratingConcept:
+        if (props_MigratingConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MigratingConcept = cpb.create();
+        }
         return props_MigratingConcept;
       case LanguageConceptSwitch.RootConcept:
+        if (props_RootConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RootConcept = cpb.create();
+        }
         return props_RootConcept;
     }
     return null;

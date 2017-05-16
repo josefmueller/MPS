@@ -4,48 +4,48 @@ package jetbrains.mps.lang.dataFlow.analyzers.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AnalysisDirection = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Analyzer = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0b).create();
-  private final ConceptPresentation props_AnalyzerConstructorParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerConstructorParameterReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerFunFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerFunParameterInput = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerFunParameterProgramState = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerFunParameterStateValues = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerFunctionResultType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerInitialFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerMergeFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerMergeParameterInput = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerParameterProgram = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerRunnerAnalyzeOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerRunnerClassKeeper = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerRunnerCreator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnalyzerRunnerType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ApplicableCondition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ApplicableNodeReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BackwardDirection = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptCondition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CustomInstructionsContainer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CustomInstructionsContainerReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EmitInstruction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ForwardDirection = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InsertAfterPosition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InsertBeforePosition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InsertPosition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Instruction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InstructionClassKeeper = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InstructionParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InstructionReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IsOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PatternCondition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ProgramParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Rule = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0jb).create();
-  private final ConceptPresentation props_RuleReference = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_AnalysisDirection;
+  private ConceptPresentation props_Analyzer;
+  private ConceptPresentation props_AnalyzerConstructorParameter;
+  private ConceptPresentation props_AnalyzerConstructorParameterReference;
+  private ConceptPresentation props_AnalyzerFunFunction;
+  private ConceptPresentation props_AnalyzerFunParameterInput;
+  private ConceptPresentation props_AnalyzerFunParameterProgramState;
+  private ConceptPresentation props_AnalyzerFunParameterStateValues;
+  private ConceptPresentation props_AnalyzerFunctionResultType;
+  private ConceptPresentation props_AnalyzerInitialFunction;
+  private ConceptPresentation props_AnalyzerMergeFunction;
+  private ConceptPresentation props_AnalyzerMergeParameterInput;
+  private ConceptPresentation props_AnalyzerParameterProgram;
+  private ConceptPresentation props_AnalyzerRunnerAnalyzeOperation;
+  private ConceptPresentation props_AnalyzerRunnerClassKeeper;
+  private ConceptPresentation props_AnalyzerRunnerCreator;
+  private ConceptPresentation props_AnalyzerRunnerType;
+  private ConceptPresentation props_ApplicableCondition;
+  private ConceptPresentation props_ApplicableNodeReference;
+  private ConceptPresentation props_BackwardDirection;
+  private ConceptPresentation props_ConceptCondition;
+  private ConceptPresentation props_CustomInstructionsContainer;
+  private ConceptPresentation props_CustomInstructionsContainerReference;
+  private ConceptPresentation props_EmitInstruction;
+  private ConceptPresentation props_ForwardDirection;
+  private ConceptPresentation props_InsertAfterPosition;
+  private ConceptPresentation props_InsertBeforePosition;
+  private ConceptPresentation props_InsertPosition;
+  private ConceptPresentation props_Instruction;
+  private ConceptPresentation props_InstructionClassKeeper;
+  private ConceptPresentation props_InstructionParameter;
+  private ConceptPresentation props_InstructionReference;
+  private ConceptPresentation props_IsOperation;
+  private ConceptPresentation props_PatternCondition;
+  private ConceptPresentation props_ProgramParameter;
+  private ConceptPresentation props_Rule;
+  private ConceptPresentation props_RuleReference;
 
   @Override
   @Nullable
@@ -53,78 +53,228 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AnalysisDirection:
+        if (props_AnalysisDirection == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalysisDirection = cpb.create();
+        }
         return props_AnalysisDirection;
       case LanguageConceptSwitch.Analyzer:
+        if (props_Analyzer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a1b0mb);
+          props_Analyzer = cpb.create();
+        }
         return props_Analyzer;
       case LanguageConceptSwitch.AnalyzerConstructorParameter:
+        if (props_AnalyzerConstructorParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerConstructorParameter = cpb.create();
+        }
         return props_AnalyzerConstructorParameter;
       case LanguageConceptSwitch.AnalyzerConstructorParameterReference:
+        if (props_AnalyzerConstructorParameterReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerConstructorParameterReference = cpb.create();
+        }
         return props_AnalyzerConstructorParameterReference;
       case LanguageConceptSwitch.AnalyzerFunFunction:
+        if (props_AnalyzerFunFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerFunFunction = cpb.create();
+        }
         return props_AnalyzerFunFunction;
       case LanguageConceptSwitch.AnalyzerFunParameterInput:
+        if (props_AnalyzerFunParameterInput == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerFunParameterInput = cpb.create();
+        }
         return props_AnalyzerFunParameterInput;
       case LanguageConceptSwitch.AnalyzerFunParameterProgramState:
+        if (props_AnalyzerFunParameterProgramState == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerFunParameterProgramState = cpb.create();
+        }
         return props_AnalyzerFunParameterProgramState;
       case LanguageConceptSwitch.AnalyzerFunParameterStateValues:
+        if (props_AnalyzerFunParameterStateValues == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerFunParameterStateValues = cpb.create();
+        }
         return props_AnalyzerFunParameterStateValues;
       case LanguageConceptSwitch.AnalyzerFunctionResultType:
+        if (props_AnalyzerFunctionResultType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerFunctionResultType = cpb.create();
+        }
         return props_AnalyzerFunctionResultType;
       case LanguageConceptSwitch.AnalyzerInitialFunction:
+        if (props_AnalyzerInitialFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerInitialFunction = cpb.create();
+        }
         return props_AnalyzerInitialFunction;
       case LanguageConceptSwitch.AnalyzerMergeFunction:
+        if (props_AnalyzerMergeFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerMergeFunction = cpb.create();
+        }
         return props_AnalyzerMergeFunction;
       case LanguageConceptSwitch.AnalyzerMergeParameterInput:
+        if (props_AnalyzerMergeParameterInput == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerMergeParameterInput = cpb.create();
+        }
         return props_AnalyzerMergeParameterInput;
       case LanguageConceptSwitch.AnalyzerParameterProgram:
+        if (props_AnalyzerParameterProgram == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerParameterProgram = cpb.create();
+        }
         return props_AnalyzerParameterProgram;
       case LanguageConceptSwitch.AnalyzerRunnerAnalyzeOperation:
+        if (props_AnalyzerRunnerAnalyzeOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerRunnerAnalyzeOperation = cpb.create();
+        }
         return props_AnalyzerRunnerAnalyzeOperation;
       case LanguageConceptSwitch.AnalyzerRunnerClassKeeper:
+        if (props_AnalyzerRunnerClassKeeper == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerRunnerClassKeeper = cpb.create();
+        }
         return props_AnalyzerRunnerClassKeeper;
       case LanguageConceptSwitch.AnalyzerRunnerCreator:
+        if (props_AnalyzerRunnerCreator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerRunnerCreator = cpb.create();
+        }
         return props_AnalyzerRunnerCreator;
       case LanguageConceptSwitch.AnalyzerRunnerType:
+        if (props_AnalyzerRunnerType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AnalyzerRunnerType = cpb.create();
+        }
         return props_AnalyzerRunnerType;
       case LanguageConceptSwitch.ApplicableCondition:
+        if (props_ApplicableCondition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ApplicableCondition = cpb.create();
+        }
         return props_ApplicableCondition;
       case LanguageConceptSwitch.ApplicableNodeReference:
+        if (props_ApplicableNodeReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ApplicableNodeReference = cpb.create();
+        }
         return props_ApplicableNodeReference;
       case LanguageConceptSwitch.BackwardDirection:
+        if (props_BackwardDirection == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BackwardDirection = cpb.create();
+        }
         return props_BackwardDirection;
       case LanguageConceptSwitch.ConceptCondition:
+        if (props_ConceptCondition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptCondition = cpb.create();
+        }
         return props_ConceptCondition;
       case LanguageConceptSwitch.CustomInstructionsContainer:
+        if (props_CustomInstructionsContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CustomInstructionsContainer = cpb.create();
+        }
         return props_CustomInstructionsContainer;
       case LanguageConceptSwitch.CustomInstructionsContainerReference:
+        if (props_CustomInstructionsContainerReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CustomInstructionsContainerReference = cpb.create();
+        }
         return props_CustomInstructionsContainerReference;
       case LanguageConceptSwitch.EmitInstruction:
+        if (props_EmitInstruction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EmitInstruction = cpb.create();
+        }
         return props_EmitInstruction;
       case LanguageConceptSwitch.ForwardDirection:
+        if (props_ForwardDirection == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ForwardDirection = cpb.create();
+        }
         return props_ForwardDirection;
       case LanguageConceptSwitch.InsertAfterPosition:
+        if (props_InsertAfterPosition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InsertAfterPosition = cpb.create();
+        }
         return props_InsertAfterPosition;
       case LanguageConceptSwitch.InsertBeforePosition:
+        if (props_InsertBeforePosition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InsertBeforePosition = cpb.create();
+        }
         return props_InsertBeforePosition;
       case LanguageConceptSwitch.InsertPosition:
+        if (props_InsertPosition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InsertPosition = cpb.create();
+        }
         return props_InsertPosition;
       case LanguageConceptSwitch.Instruction:
+        if (props_Instruction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Instruction = cpb.create();
+        }
         return props_Instruction;
       case LanguageConceptSwitch.InstructionClassKeeper:
+        if (props_InstructionClassKeeper == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InstructionClassKeeper = cpb.create();
+        }
         return props_InstructionClassKeeper;
       case LanguageConceptSwitch.InstructionParameter:
+        if (props_InstructionParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InstructionParameter = cpb.create();
+        }
         return props_InstructionParameter;
       case LanguageConceptSwitch.InstructionReference:
+        if (props_InstructionReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InstructionReference = cpb.create();
+        }
         return props_InstructionReference;
       case LanguageConceptSwitch.IsOperation:
+        if (props_IsOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IsOperation = cpb.create();
+        }
         return props_IsOperation;
       case LanguageConceptSwitch.PatternCondition:
+        if (props_PatternCondition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PatternCondition = cpb.create();
+        }
         return props_PatternCondition;
       case LanguageConceptSwitch.ProgramParameter:
+        if (props_ProgramParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ProgramParameter = cpb.create();
+        }
         return props_ProgramParameter;
       case LanguageConceptSwitch.Rule:
+        if (props_Rule == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a53b0mb);
+          props_Rule = cpb.create();
+        }
         return props_Rule;
       case LanguageConceptSwitch.RuleReference:
+        if (props_RuleReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RuleReference = cpb.create();
+        }
         return props_RuleReference;
     }
     return null;

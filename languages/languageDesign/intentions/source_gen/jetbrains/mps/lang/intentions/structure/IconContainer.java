@@ -5,7 +5,7 @@ package jetbrains.mps.lang.intentions.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a0j = new IconResource("intentionBulb.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0k = new IconResource("intentionBulb.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0t = new IconResource("surroundWithIntention.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a9b0v = new IconResource("intentionBulb.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a01b0v = new IconResource("intentionBulb.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a91b0v = new IconResource("surroundWithIntention.png", IconContainer.class);
 }

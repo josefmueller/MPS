@@ -4,128 +4,128 @@ package jetbrains.mps.lang.actions.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AddMenuPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptFunctionParameter_EditorCell = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptFunctionParameter_OperationContext = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptFunctionParameter_childConcept = new ConceptPresentationBuilder().deprecated(true).shortDesc("substitution node<> should be instance of this concept or one of it's subconcepts").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_childSetter = new ConceptPresentationBuilder().deprecated(true).shortDesc("IChildNodeSetter instance which should be used to set new child for this parent node").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_concept = new ConceptPresentationBuilder().deprecated(true).shortDesc("outputConcept of substitute action").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_createdNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("node<> returned from create child node block").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_currentTargetNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("node<> to substitute").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_link = new ConceptPresentationBuilder().deprecated(true).shortDesc("containment LinkDeclaration for where result of this substitution will be saved or null if LinkDeclaration was not determined").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_nodeToCopyPreProcess = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_nodeToCopyPreProcessOriginal = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_nodeToPastePostProcess = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_nodeToPasteWrap = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_nodeToWrap = new ConceptPresentationBuilder().deprecated(true).shortDesc("instance of wrapped concept created by another substitute action").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_parameterObject = new ConceptPresentationBuilder().deprecated(true).shortDesc("one of parameters returned from the parameters query").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_parentNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("the parent node<> of the node<> to substitute").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_pattern = new ConceptPresentationBuilder().deprecated(true).shortDesc("string entered by user inside competion pop-up, used to hide those actions which matching text was not matched with the pattern").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_result = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptFunctionParameter_sourceNode = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptFunctionParameter_strictly = new ConceptPresentationBuilder().deprecated(true).shortDesc("true if matching text should match specified pattern completely, false if only beggining of matching text should match this pattern").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_targetNode = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptFunctionParameter_wrapped = new ConceptPresentationBuilder().deprecated(true).shortDesc("boolean property specifying if the result of this substite action will be wrapped into another concept instance before injecting it into the model").create();
-  private final ConceptPresentation props_ConceptPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptRightTransformPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptSubstitutePart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptsSubstituteMenuPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_CopyPasteHandlers = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CopyPreProcessFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CopyPreProcessor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExecuteSmartActionFunction = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_GenerateCodeAction = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_GenericSubstituteMenuPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_GetActionUIFunction = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ICouldBeAnnotatedWithMigrateManually = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ISideTransform_String = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ISubstitute_String = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_IncludeRightTransformForNodePart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_IsSmartActionApplicableFunction = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_MenuPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_MigrateManuallyAnnotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MigratedToAnnotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NF_Concept_NewInstance = new ConceptPresentationBuilder().shortDesc("create new initialized node").create();
-  private final ConceptPresentation props_NF_LinkList_AddNewChildOperation = new ConceptPresentationBuilder().shortDesc("add new initialized child").create();
-  private final ConceptPresentation props_NF_Link_SetNewChildOperation = new ConceptPresentationBuilder().shortDesc("set new initialized child").create();
-  private final ConceptPresentation props_NF_Model_CreateNewNodeOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NF_Model_CreateNewRootNodeOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NF_Node_InsertNewNextSiblingOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NF_Node_InsertNewPrevSiblingOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NF_Node_ReplaceWithNewOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeFactories = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0xb).create();
-  private final ConceptPresentation props_NodeFactory = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeSetupFunction = new ConceptPresentationBuilder().shortDesc("initialize newly created concept instance").create();
-  private final ConceptPresentation props_NodeSetupFunction_EnclosingNode = new ConceptPresentationBuilder().shortDesc("node to be used as a parent of newly creted one, can be null").create();
-  private final ConceptPresentation props_NodeSetupFunction_NewNode = new ConceptPresentationBuilder().shortDesc("newly created node").create();
-  private final ConceptPresentation props_NodeSetupFunction_SampleNode = new ConceptPresentationBuilder().shortDesc("existing node which will be replaced by new node, can be null").create();
-  private final ConceptPresentation props_NodeSubstituteActions = new ConceptPresentationBuilder().deprecated(true).icon(IconContainer.RESOURCE_a0a0dc).create();
-  private final ConceptPresentation props_NodeSubstituteActionsBuilder = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_NodeSubstituteMenuBuilderPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_NodeSubstitutePreconditionFunction = new ConceptPresentationBuilder().deprecated(true).shortDesc("return true if this substitute actions builder should be used to build substitute menu").create();
-  private final ConceptPresentation props_ParameterizedSideTransformMenuPart = new ConceptPresentationBuilder().deprecated(true).deprecated().create();
-  private final ConceptPresentation props_ParameterizedSubstituteMenuPart = new ConceptPresentationBuilder().deprecated(true).deprecated().create();
-  private final ConceptPresentation props_PastePostProcessFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PastePostProcessor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PasteWrapper = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PasteWrappers = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0mc).create();
-  private final ConceptPresentation props_QueryFunction_ActionType = new ConceptPresentationBuilder().deprecated(true).shortDesc("return result type for this action, used for smart completion").create();
-  private final ConceptPresentation props_QueryFunction_CanSubstitute = new ConceptPresentationBuilder().deprecated(true).shortDesc("return false if this action should be excluded from the substitute menu").create();
-  private final ConceptPresentation props_QueryFunction_GenericSubstituteMenuPart = new ConceptPresentationBuilder().deprecated(true).shortDesc("return collection of custom SubstituteActions").create();
-  private final ConceptPresentation props_QueryFunction_IconNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("return concept<> or node<>. Icon associated with this concept<> or a concept of this node<> will be used for this menu item.").create();
-  private final ConceptPresentation props_QueryFunction_ParameterizedSideTransform_Handler = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_ParameterizedSideTransform_Query = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Handler = new ConceptPresentationBuilder().deprecated(true).shortDesc("return node<> to substitute currentTargetNode with").create();
-  private final ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Icon = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Query = new ConceptPresentationBuilder().deprecated(true).shortDesc("return collection of substitute menu part parameters").create();
-  private final ConceptPresentation props_QueryFunction_ParameterizedSubstitute_String = new ConceptPresentationBuilder().deprecated(true).shortDesc("return text string").create();
-  private final ConceptPresentation props_QueryFunction_PasteWrapper = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QueryFunction_RemoveBy_Condition = new ConceptPresentationBuilder().deprecated(true).shortDesc("return true if corresponding substitute action should be removed from the completion menu").create();
-  private final ConceptPresentation props_QueryFunction_ReturnSmallPart = new ConceptPresentationBuilder().deprecated(true).shortDesc("return true if wrapped node should be used to setup selection in editor").create();
-  private final ConceptPresentation props_QueryFunction_STVariableInitializer = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_ST_CommonInitializer = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_ST_RemoveBy_Condition = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_SideTransform_ConceptHandler = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_SideTransform_Handler = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_SideTransform_Icon = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_SideTransform_NodeQuery = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_SideTransform_String = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_SubstituteIcon = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_QueryFunction_SubstituteString = new ConceptPresentationBuilder().deprecated(true).shortDesc("return text string").create();
-  private final ConceptPresentation props_QueryFunction_SubstituteVariableInitializer = new ConceptPresentationBuilder().deprecated(true).shortDesc("return initial value of the variable").create();
-  private final ConceptPresentation props_QueryFunction_SubstituteWrapper = new ConceptPresentationBuilder().deprecated(true).shortDesc("create new instance of output concept wrapping (containing) passed nodeToWrap").create();
-  private final ConceptPresentation props_QueryFunction_Substitute_CommonInitializer = new ConceptPresentationBuilder().deprecated(true).shortDesc("common init block").create();
-  private final ConceptPresentation props_QueryFunction_Substitute_Handler = new ConceptPresentationBuilder().deprecated(true).shortDesc("return node<> to substitute currentTargetNode with").create();
-  private final ConceptPresentation props_QueryFunction_Substitute_SelectionHandler = new ConceptPresentationBuilder().deprecated(true).shortDesc("return node to select or null if selection API was directly called from the query").create();
-  private final ConceptPresentation props_RemoveByConditionPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_RemoveDefaultsPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_RemovePart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_RemoveSTByConditionPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SNodeCreatorAndInitializer = new ConceptPresentationBuilder().shortDesc("create new initialized node").create();
-  private final ConceptPresentation props_SideTransformHintSubstituteActions = new ConceptPresentationBuilder().deprecated(true).icon(IconContainer.RESOURCE_a0a0ud).create();
-  private final ConceptPresentation props_SideTransformHintSubstituteActionsBuilder = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SideTransformHintSubstitutePreconditionFunction = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SideTransformMenuBuilderPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SideTransformMenuPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SideTransformVariableDeclaration = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SideTransformVariableReference = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SideTransform_SimpleString = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SimpleItemSubstitutePart = new ConceptPresentationBuilder().deprecated(true).deprecated().create();
-  private final ConceptPresentation props_SimpleSideTransformMenuPart = new ConceptPresentationBuilder().deprecated(true).deprecated().create();
-  private final ConceptPresentation props_SmartActionParameter = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SmartActionParameterReference = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SmartEditorActions = new ConceptPresentationBuilder().deprecated(true).icon(IconContainer.RESOURCE_a0a0ge).create();
-  private final ConceptPresentation props_SubstituteMenuPart = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SubstituteNodeBuilderVariableDeclaration = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SubstituteNodeBuilderVariableReference = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_Substitute_SimpleString = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SurroundWithAction = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_WrapperSubstituteMenuPart = new ConceptPresentationBuilder().deprecated(true).create();
+  private ConceptPresentation props_AddMenuPart;
+  private ConceptPresentation props_ConceptFunctionParameter_EditorCell;
+  private ConceptPresentation props_ConceptFunctionParameter_OperationContext;
+  private ConceptPresentation props_ConceptFunctionParameter_childConcept;
+  private ConceptPresentation props_ConceptFunctionParameter_childSetter;
+  private ConceptPresentation props_ConceptFunctionParameter_concept;
+  private ConceptPresentation props_ConceptFunctionParameter_createdNode;
+  private ConceptPresentation props_ConceptFunctionParameter_currentTargetNode;
+  private ConceptPresentation props_ConceptFunctionParameter_link;
+  private ConceptPresentation props_ConceptFunctionParameter_nodeToCopyPreProcess;
+  private ConceptPresentation props_ConceptFunctionParameter_nodeToCopyPreProcessOriginal;
+  private ConceptPresentation props_ConceptFunctionParameter_nodeToPastePostProcess;
+  private ConceptPresentation props_ConceptFunctionParameter_nodeToPasteWrap;
+  private ConceptPresentation props_ConceptFunctionParameter_nodeToWrap;
+  private ConceptPresentation props_ConceptFunctionParameter_parameterObject;
+  private ConceptPresentation props_ConceptFunctionParameter_parentNode;
+  private ConceptPresentation props_ConceptFunctionParameter_pattern;
+  private ConceptPresentation props_ConceptFunctionParameter_result;
+  private ConceptPresentation props_ConceptFunctionParameter_sourceNode;
+  private ConceptPresentation props_ConceptFunctionParameter_strictly;
+  private ConceptPresentation props_ConceptFunctionParameter_targetNode;
+  private ConceptPresentation props_ConceptFunctionParameter_wrapped;
+  private ConceptPresentation props_ConceptPart;
+  private ConceptPresentation props_ConceptRightTransformPart;
+  private ConceptPresentation props_ConceptSubstitutePart;
+  private ConceptPresentation props_ConceptsSubstituteMenuPart;
+  private ConceptPresentation props_CopyPasteHandlers;
+  private ConceptPresentation props_CopyPreProcessFunction;
+  private ConceptPresentation props_CopyPreProcessor;
+  private ConceptPresentation props_ExecuteSmartActionFunction;
+  private ConceptPresentation props_GenerateCodeAction;
+  private ConceptPresentation props_GenericSubstituteMenuPart;
+  private ConceptPresentation props_GetActionUIFunction;
+  private ConceptPresentation props_ICouldBeAnnotatedWithMigrateManually;
+  private ConceptPresentation props_ISideTransform_String;
+  private ConceptPresentation props_ISubstitute_String;
+  private ConceptPresentation props_IncludeRightTransformForNodePart;
+  private ConceptPresentation props_IsSmartActionApplicableFunction;
+  private ConceptPresentation props_MenuPart;
+  private ConceptPresentation props_MigrateManuallyAnnotation;
+  private ConceptPresentation props_MigratedToAnnotation;
+  private ConceptPresentation props_NF_Concept_NewInstance;
+  private ConceptPresentation props_NF_LinkList_AddNewChildOperation;
+  private ConceptPresentation props_NF_Link_SetNewChildOperation;
+  private ConceptPresentation props_NF_Model_CreateNewNodeOperation;
+  private ConceptPresentation props_NF_Model_CreateNewRootNodeOperation;
+  private ConceptPresentation props_NF_Node_InsertNewNextSiblingOperation;
+  private ConceptPresentation props_NF_Node_InsertNewPrevSiblingOperation;
+  private ConceptPresentation props_NF_Node_ReplaceWithNewOperation;
+  private ConceptPresentation props_NodeFactories;
+  private ConceptPresentation props_NodeFactory;
+  private ConceptPresentation props_NodeSetupFunction;
+  private ConceptPresentation props_NodeSetupFunction_EnclosingNode;
+  private ConceptPresentation props_NodeSetupFunction_NewNode;
+  private ConceptPresentation props_NodeSetupFunction_SampleNode;
+  private ConceptPresentation props_NodeSubstituteActions;
+  private ConceptPresentation props_NodeSubstituteActionsBuilder;
+  private ConceptPresentation props_NodeSubstituteMenuBuilderPart;
+  private ConceptPresentation props_NodeSubstitutePreconditionFunction;
+  private ConceptPresentation props_ParameterizedSideTransformMenuPart;
+  private ConceptPresentation props_ParameterizedSubstituteMenuPart;
+  private ConceptPresentation props_PastePostProcessFunction;
+  private ConceptPresentation props_PastePostProcessor;
+  private ConceptPresentation props_PasteWrapper;
+  private ConceptPresentation props_PasteWrappers;
+  private ConceptPresentation props_QueryFunction_ActionType;
+  private ConceptPresentation props_QueryFunction_CanSubstitute;
+  private ConceptPresentation props_QueryFunction_GenericSubstituteMenuPart;
+  private ConceptPresentation props_QueryFunction_IconNode;
+  private ConceptPresentation props_QueryFunction_ParameterizedSideTransform_Handler;
+  private ConceptPresentation props_QueryFunction_ParameterizedSideTransform_Query;
+  private ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Handler;
+  private ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Icon;
+  private ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Query;
+  private ConceptPresentation props_QueryFunction_ParameterizedSubstitute_String;
+  private ConceptPresentation props_QueryFunction_PasteWrapper;
+  private ConceptPresentation props_QueryFunction_RemoveBy_Condition;
+  private ConceptPresentation props_QueryFunction_ReturnSmallPart;
+  private ConceptPresentation props_QueryFunction_STVariableInitializer;
+  private ConceptPresentation props_QueryFunction_ST_CommonInitializer;
+  private ConceptPresentation props_QueryFunction_ST_RemoveBy_Condition;
+  private ConceptPresentation props_QueryFunction_SideTransform_ConceptHandler;
+  private ConceptPresentation props_QueryFunction_SideTransform_Handler;
+  private ConceptPresentation props_QueryFunction_SideTransform_Icon;
+  private ConceptPresentation props_QueryFunction_SideTransform_NodeQuery;
+  private ConceptPresentation props_QueryFunction_SideTransform_String;
+  private ConceptPresentation props_QueryFunction_SubstituteIcon;
+  private ConceptPresentation props_QueryFunction_SubstituteString;
+  private ConceptPresentation props_QueryFunction_SubstituteVariableInitializer;
+  private ConceptPresentation props_QueryFunction_SubstituteWrapper;
+  private ConceptPresentation props_QueryFunction_Substitute_CommonInitializer;
+  private ConceptPresentation props_QueryFunction_Substitute_Handler;
+  private ConceptPresentation props_QueryFunction_Substitute_SelectionHandler;
+  private ConceptPresentation props_RemoveByConditionPart;
+  private ConceptPresentation props_RemoveDefaultsPart;
+  private ConceptPresentation props_RemovePart;
+  private ConceptPresentation props_RemoveSTByConditionPart;
+  private ConceptPresentation props_SNodeCreatorAndInitializer;
+  private ConceptPresentation props_SideTransformHintSubstituteActions;
+  private ConceptPresentation props_SideTransformHintSubstituteActionsBuilder;
+  private ConceptPresentation props_SideTransformHintSubstitutePreconditionFunction;
+  private ConceptPresentation props_SideTransformMenuBuilderPart;
+  private ConceptPresentation props_SideTransformMenuPart;
+  private ConceptPresentation props_SideTransformVariableDeclaration;
+  private ConceptPresentation props_SideTransformVariableReference;
+  private ConceptPresentation props_SideTransform_SimpleString;
+  private ConceptPresentation props_SimpleItemSubstitutePart;
+  private ConceptPresentation props_SimpleSideTransformMenuPart;
+  private ConceptPresentation props_SmartActionParameter;
+  private ConceptPresentation props_SmartActionParameterReference;
+  private ConceptPresentation props_SmartEditorActions;
+  private ConceptPresentation props_SubstituteMenuPart;
+  private ConceptPresentation props_SubstituteNodeBuilderVariableDeclaration;
+  private ConceptPresentation props_SubstituteNodeBuilderVariableReference;
+  private ConceptPresentation props_Substitute_SimpleString;
+  private ConceptPresentation props_SurroundWithAction;
+  private ConceptPresentation props_WrapperSubstituteMenuPart;
 
   @Override
   @Nullable
@@ -133,238 +133,838 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AddMenuPart:
+        if (props_AddMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_AddMenuPart = cpb.create();
+        }
         return props_AddMenuPart;
       case LanguageConceptSwitch.ConceptFunctionParameter_EditorCell:
+        if (props_ConceptFunctionParameter_EditorCell == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConceptFunctionParameter_EditorCell = cpb.create();
+        }
         return props_ConceptFunctionParameter_EditorCell;
       case LanguageConceptSwitch.ConceptFunctionParameter_OperationContext:
+        if (props_ConceptFunctionParameter_OperationContext == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConceptFunctionParameter_OperationContext = cpb.create();
+        }
         return props_ConceptFunctionParameter_OperationContext;
       case LanguageConceptSwitch.ConceptFunctionParameter_childConcept:
+        if (props_ConceptFunctionParameter_childConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("substitution node<> should be instance of this concept or one of it's subconcepts");
+          props_ConceptFunctionParameter_childConcept = cpb.create();
+        }
         return props_ConceptFunctionParameter_childConcept;
       case LanguageConceptSwitch.ConceptFunctionParameter_childSetter:
+        if (props_ConceptFunctionParameter_childSetter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("IChildNodeSetter instance which should be used to set new child for this parent node");
+          props_ConceptFunctionParameter_childSetter = cpb.create();
+        }
         return props_ConceptFunctionParameter_childSetter;
       case LanguageConceptSwitch.ConceptFunctionParameter_concept:
+        if (props_ConceptFunctionParameter_concept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("outputConcept of substitute action");
+          props_ConceptFunctionParameter_concept = cpb.create();
+        }
         return props_ConceptFunctionParameter_concept;
       case LanguageConceptSwitch.ConceptFunctionParameter_createdNode:
+        if (props_ConceptFunctionParameter_createdNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("node<> returned from create child node block");
+          props_ConceptFunctionParameter_createdNode = cpb.create();
+        }
         return props_ConceptFunctionParameter_createdNode;
       case LanguageConceptSwitch.ConceptFunctionParameter_currentTargetNode:
+        if (props_ConceptFunctionParameter_currentTargetNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("node<> to substitute");
+          props_ConceptFunctionParameter_currentTargetNode = cpb.create();
+        }
         return props_ConceptFunctionParameter_currentTargetNode;
       case LanguageConceptSwitch.ConceptFunctionParameter_link:
+        if (props_ConceptFunctionParameter_link == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("containment LinkDeclaration for where result of this substitution will be saved or null if LinkDeclaration was not determined");
+          props_ConceptFunctionParameter_link = cpb.create();
+        }
         return props_ConceptFunctionParameter_link;
       case LanguageConceptSwitch.ConceptFunctionParameter_nodeToCopyPreProcess:
+        if (props_ConceptFunctionParameter_nodeToCopyPreProcess == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptFunctionParameter_nodeToCopyPreProcess = cpb.create();
+        }
         return props_ConceptFunctionParameter_nodeToCopyPreProcess;
       case LanguageConceptSwitch.ConceptFunctionParameter_nodeToCopyPreProcessOriginal:
+        if (props_ConceptFunctionParameter_nodeToCopyPreProcessOriginal == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptFunctionParameter_nodeToCopyPreProcessOriginal = cpb.create();
+        }
         return props_ConceptFunctionParameter_nodeToCopyPreProcessOriginal;
       case LanguageConceptSwitch.ConceptFunctionParameter_nodeToPastePostProcess:
+        if (props_ConceptFunctionParameter_nodeToPastePostProcess == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptFunctionParameter_nodeToPastePostProcess = cpb.create();
+        }
         return props_ConceptFunctionParameter_nodeToPastePostProcess;
       case LanguageConceptSwitch.ConceptFunctionParameter_nodeToPasteWrap:
+        if (props_ConceptFunctionParameter_nodeToPasteWrap == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptFunctionParameter_nodeToPasteWrap = cpb.create();
+        }
         return props_ConceptFunctionParameter_nodeToPasteWrap;
       case LanguageConceptSwitch.ConceptFunctionParameter_nodeToWrap:
+        if (props_ConceptFunctionParameter_nodeToWrap == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("instance of wrapped concept created by another substitute action");
+          props_ConceptFunctionParameter_nodeToWrap = cpb.create();
+        }
         return props_ConceptFunctionParameter_nodeToWrap;
       case LanguageConceptSwitch.ConceptFunctionParameter_parameterObject:
+        if (props_ConceptFunctionParameter_parameterObject == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("one of parameters returned from the parameters query");
+          props_ConceptFunctionParameter_parameterObject = cpb.create();
+        }
         return props_ConceptFunctionParameter_parameterObject;
       case LanguageConceptSwitch.ConceptFunctionParameter_parentNode:
+        if (props_ConceptFunctionParameter_parentNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("the parent node<> of the node<> to substitute");
+          props_ConceptFunctionParameter_parentNode = cpb.create();
+        }
         return props_ConceptFunctionParameter_parentNode;
       case LanguageConceptSwitch.ConceptFunctionParameter_pattern:
+        if (props_ConceptFunctionParameter_pattern == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("string entered by user inside competion pop-up, used to hide those actions which matching text was not matched with the pattern");
+          props_ConceptFunctionParameter_pattern = cpb.create();
+        }
         return props_ConceptFunctionParameter_pattern;
       case LanguageConceptSwitch.ConceptFunctionParameter_result:
+        if (props_ConceptFunctionParameter_result == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConceptFunctionParameter_result = cpb.create();
+        }
         return props_ConceptFunctionParameter_result;
       case LanguageConceptSwitch.ConceptFunctionParameter_sourceNode:
+        if (props_ConceptFunctionParameter_sourceNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConceptFunctionParameter_sourceNode = cpb.create();
+        }
         return props_ConceptFunctionParameter_sourceNode;
       case LanguageConceptSwitch.ConceptFunctionParameter_strictly:
+        if (props_ConceptFunctionParameter_strictly == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("true if matching text should match specified pattern completely, false if only beggining of matching text should match this pattern");
+          props_ConceptFunctionParameter_strictly = cpb.create();
+        }
         return props_ConceptFunctionParameter_strictly;
       case LanguageConceptSwitch.ConceptFunctionParameter_targetNode:
+        if (props_ConceptFunctionParameter_targetNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConceptFunctionParameter_targetNode = cpb.create();
+        }
         return props_ConceptFunctionParameter_targetNode;
       case LanguageConceptSwitch.ConceptFunctionParameter_wrapped:
+        if (props_ConceptFunctionParameter_wrapped == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("boolean property specifying if the result of this substite action will be wrapped into another concept instance before injecting it into the model");
+          props_ConceptFunctionParameter_wrapped = cpb.create();
+        }
         return props_ConceptFunctionParameter_wrapped;
       case LanguageConceptSwitch.ConceptPart:
+        if (props_ConceptPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConceptPart = cpb.create();
+        }
         return props_ConceptPart;
       case LanguageConceptSwitch.ConceptRightTransformPart:
+        if (props_ConceptRightTransformPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConceptRightTransformPart = cpb.create();
+        }
         return props_ConceptRightTransformPart;
       case LanguageConceptSwitch.ConceptSubstitutePart:
+        if (props_ConceptSubstitutePart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConceptSubstitutePart = cpb.create();
+        }
         return props_ConceptSubstitutePart;
       case LanguageConceptSwitch.ConceptsSubstituteMenuPart:
+        if (props_ConceptsSubstituteMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConceptsSubstituteMenuPart = cpb.create();
+        }
         return props_ConceptsSubstituteMenuPart;
       case LanguageConceptSwitch.CopyPasteHandlers:
+        if (props_CopyPasteHandlers == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CopyPasteHandlers = cpb.create();
+        }
         return props_CopyPasteHandlers;
       case LanguageConceptSwitch.CopyPreProcessFunction:
+        if (props_CopyPreProcessFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CopyPreProcessFunction = cpb.create();
+        }
         return props_CopyPreProcessFunction;
       case LanguageConceptSwitch.CopyPreProcessor:
+        if (props_CopyPreProcessor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CopyPreProcessor = cpb.create();
+        }
         return props_CopyPreProcessor;
       case LanguageConceptSwitch.ExecuteSmartActionFunction:
+        if (props_ExecuteSmartActionFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ExecuteSmartActionFunction = cpb.create();
+        }
         return props_ExecuteSmartActionFunction;
       case LanguageConceptSwitch.GenerateCodeAction:
+        if (props_GenerateCodeAction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_GenerateCodeAction = cpb.create();
+        }
         return props_GenerateCodeAction;
       case LanguageConceptSwitch.GenericSubstituteMenuPart:
+        if (props_GenericSubstituteMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_GenericSubstituteMenuPart = cpb.create();
+        }
         return props_GenericSubstituteMenuPart;
       case LanguageConceptSwitch.GetActionUIFunction:
+        if (props_GetActionUIFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_GetActionUIFunction = cpb.create();
+        }
         return props_GetActionUIFunction;
       case LanguageConceptSwitch.ICouldBeAnnotatedWithMigrateManually:
+        if (props_ICouldBeAnnotatedWithMigrateManually == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ICouldBeAnnotatedWithMigrateManually = cpb.create();
+        }
         return props_ICouldBeAnnotatedWithMigrateManually;
       case LanguageConceptSwitch.ISideTransform_String:
+        if (props_ISideTransform_String == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ISideTransform_String = cpb.create();
+        }
         return props_ISideTransform_String;
       case LanguageConceptSwitch.ISubstitute_String:
+        if (props_ISubstitute_String == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ISubstitute_String = cpb.create();
+        }
         return props_ISubstitute_String;
       case LanguageConceptSwitch.IncludeRightTransformForNodePart:
+        if (props_IncludeRightTransformForNodePart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_IncludeRightTransformForNodePart = cpb.create();
+        }
         return props_IncludeRightTransformForNodePart;
       case LanguageConceptSwitch.IsSmartActionApplicableFunction:
+        if (props_IsSmartActionApplicableFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_IsSmartActionApplicableFunction = cpb.create();
+        }
         return props_IsSmartActionApplicableFunction;
       case LanguageConceptSwitch.MenuPart:
+        if (props_MenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_MenuPart = cpb.create();
+        }
         return props_MenuPart;
       case LanguageConceptSwitch.MigrateManuallyAnnotation:
+        if (props_MigrateManuallyAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MigrateManuallyAnnotation = cpb.create();
+        }
         return props_MigrateManuallyAnnotation;
       case LanguageConceptSwitch.MigratedToAnnotation:
+        if (props_MigratedToAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MigratedToAnnotation = cpb.create();
+        }
         return props_MigratedToAnnotation;
       case LanguageConceptSwitch.NF_Concept_NewInstance:
+        if (props_NF_Concept_NewInstance == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("create new initialized node");
+          props_NF_Concept_NewInstance = cpb.create();
+        }
         return props_NF_Concept_NewInstance;
       case LanguageConceptSwitch.NF_LinkList_AddNewChildOperation:
+        if (props_NF_LinkList_AddNewChildOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("add new initialized child");
+          props_NF_LinkList_AddNewChildOperation = cpb.create();
+        }
         return props_NF_LinkList_AddNewChildOperation;
       case LanguageConceptSwitch.NF_Link_SetNewChildOperation:
+        if (props_NF_Link_SetNewChildOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("set new initialized child");
+          props_NF_Link_SetNewChildOperation = cpb.create();
+        }
         return props_NF_Link_SetNewChildOperation;
       case LanguageConceptSwitch.NF_Model_CreateNewNodeOperation:
+        if (props_NF_Model_CreateNewNodeOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NF_Model_CreateNewNodeOperation = cpb.create();
+        }
         return props_NF_Model_CreateNewNodeOperation;
       case LanguageConceptSwitch.NF_Model_CreateNewRootNodeOperation:
+        if (props_NF_Model_CreateNewRootNodeOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NF_Model_CreateNewRootNodeOperation = cpb.create();
+        }
         return props_NF_Model_CreateNewRootNodeOperation;
       case LanguageConceptSwitch.NF_Node_InsertNewNextSiblingOperation:
+        if (props_NF_Node_InsertNewNextSiblingOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NF_Node_InsertNewNextSiblingOperation = cpb.create();
+        }
         return props_NF_Node_InsertNewNextSiblingOperation;
       case LanguageConceptSwitch.NF_Node_InsertNewPrevSiblingOperation:
+        if (props_NF_Node_InsertNewPrevSiblingOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NF_Node_InsertNewPrevSiblingOperation = cpb.create();
+        }
         return props_NF_Node_InsertNewPrevSiblingOperation;
       case LanguageConceptSwitch.NF_Node_ReplaceWithNewOperation:
+        if (props_NF_Node_ReplaceWithNewOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NF_Node_ReplaceWithNewOperation = cpb.create();
+        }
         return props_NF_Node_ReplaceWithNewOperation;
       case LanguageConceptSwitch.NodeFactories:
+        if (props_NodeFactories == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a94b0oe);
+          props_NodeFactories = cpb.create();
+        }
         return props_NodeFactories;
       case LanguageConceptSwitch.NodeFactory:
+        if (props_NodeFactory == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeFactory = cpb.create();
+        }
         return props_NodeFactory;
       case LanguageConceptSwitch.NodeSetupFunction:
+        if (props_NodeSetupFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("initialize newly created concept instance");
+          props_NodeSetupFunction = cpb.create();
+        }
         return props_NodeSetupFunction;
       case LanguageConceptSwitch.NodeSetupFunction_EnclosingNode:
+        if (props_NodeSetupFunction_EnclosingNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("node to be used as a parent of newly creted one, can be null");
+          props_NodeSetupFunction_EnclosingNode = cpb.create();
+        }
         return props_NodeSetupFunction_EnclosingNode;
       case LanguageConceptSwitch.NodeSetupFunction_NewNode:
+        if (props_NodeSetupFunction_NewNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("newly created node");
+          props_NodeSetupFunction_NewNode = cpb.create();
+        }
         return props_NodeSetupFunction_NewNode;
       case LanguageConceptSwitch.NodeSetupFunction_SampleNode:
+        if (props_NodeSetupFunction_SampleNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("existing node which will be replaced by new node, can be null");
+          props_NodeSetupFunction_SampleNode = cpb.create();
+        }
         return props_NodeSetupFunction_SampleNode;
       case LanguageConceptSwitch.NodeSubstituteActions:
+        if (props_NodeSubstituteActions == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a55b0oe);
+          props_NodeSubstituteActions = cpb.create();
+        }
         return props_NodeSubstituteActions;
       case LanguageConceptSwitch.NodeSubstituteActionsBuilder:
+        if (props_NodeSubstituteActionsBuilder == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_NodeSubstituteActionsBuilder = cpb.create();
+        }
         return props_NodeSubstituteActionsBuilder;
       case LanguageConceptSwitch.NodeSubstituteMenuBuilderPart:
+        if (props_NodeSubstituteMenuBuilderPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_NodeSubstituteMenuBuilderPart = cpb.create();
+        }
         return props_NodeSubstituteMenuBuilderPart;
       case LanguageConceptSwitch.NodeSubstitutePreconditionFunction:
+        if (props_NodeSubstitutePreconditionFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return true if this substitute actions builder should be used to build substitute menu");
+          props_NodeSubstitutePreconditionFunction = cpb.create();
+        }
         return props_NodeSubstitutePreconditionFunction;
       case LanguageConceptSwitch.ParameterizedSideTransformMenuPart:
+        if (props_ParameterizedSideTransformMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11228fddb03L);
+          cpb.deprecated(true);
+          cpb.deprecateAggregation(0x1181cd08338L, "icon");
+          props_ParameterizedSideTransformMenuPart = cpb.create();
+        }
         return props_ParameterizedSideTransformMenuPart;
       case LanguageConceptSwitch.ParameterizedSubstituteMenuPart:
+        if (props_ParameterizedSubstituteMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121ecab8a6L);
+          cpb.deprecated(true);
+          cpb.deprecateAggregation(0x1181cbb67c5L, "icon");
+          props_ParameterizedSubstituteMenuPart = cpb.create();
+        }
         return props_ParameterizedSubstituteMenuPart;
       case LanguageConceptSwitch.PastePostProcessFunction:
+        if (props_PastePostProcessFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PastePostProcessFunction = cpb.create();
+        }
         return props_PastePostProcessFunction;
       case LanguageConceptSwitch.PastePostProcessor:
+        if (props_PastePostProcessor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PastePostProcessor = cpb.create();
+        }
         return props_PastePostProcessor;
       case LanguageConceptSwitch.PasteWrapper:
+        if (props_PasteWrapper == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PasteWrapper = cpb.create();
+        }
         return props_PasteWrapper;
       case LanguageConceptSwitch.PasteWrappers:
+        if (props_PasteWrappers == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a46b0oe);
+          props_PasteWrappers = cpb.create();
+        }
         return props_PasteWrappers;
       case LanguageConceptSwitch.QueryFunction_ActionType:
+        if (props_QueryFunction_ActionType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return result type for this action, used for smart completion");
+          props_QueryFunction_ActionType = cpb.create();
+        }
         return props_QueryFunction_ActionType;
       case LanguageConceptSwitch.QueryFunction_CanSubstitute:
+        if (props_QueryFunction_CanSubstitute == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return false if this action should be excluded from the substitute menu");
+          props_QueryFunction_CanSubstitute = cpb.create();
+        }
         return props_QueryFunction_CanSubstitute;
       case LanguageConceptSwitch.QueryFunction_GenericSubstituteMenuPart:
+        if (props_QueryFunction_GenericSubstituteMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return collection of custom SubstituteActions");
+          props_QueryFunction_GenericSubstituteMenuPart = cpb.create();
+        }
         return props_QueryFunction_GenericSubstituteMenuPart;
       case LanguageConceptSwitch.QueryFunction_IconNode:
+        if (props_QueryFunction_IconNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return concept<> or node<>. Icon associated with this concept<> or a concept of this node<> will be used for this menu item.");
+          props_QueryFunction_IconNode = cpb.create();
+        }
         return props_QueryFunction_IconNode;
       case LanguageConceptSwitch.QueryFunction_ParameterizedSideTransform_Handler:
+        if (props_QueryFunction_ParameterizedSideTransform_Handler == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_ParameterizedSideTransform_Handler = cpb.create();
+        }
         return props_QueryFunction_ParameterizedSideTransform_Handler;
       case LanguageConceptSwitch.QueryFunction_ParameterizedSideTransform_Query:
+        if (props_QueryFunction_ParameterizedSideTransform_Query == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_ParameterizedSideTransform_Query = cpb.create();
+        }
         return props_QueryFunction_ParameterizedSideTransform_Query;
       case LanguageConceptSwitch.QueryFunction_ParameterizedSubstitute_Handler:
+        if (props_QueryFunction_ParameterizedSubstitute_Handler == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return node<> to substitute currentTargetNode with");
+          props_QueryFunction_ParameterizedSubstitute_Handler = cpb.create();
+        }
         return props_QueryFunction_ParameterizedSubstitute_Handler;
       case LanguageConceptSwitch.QueryFunction_ParameterizedSubstitute_Icon:
+        if (props_QueryFunction_ParameterizedSubstitute_Icon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_ParameterizedSubstitute_Icon = cpb.create();
+        }
         return props_QueryFunction_ParameterizedSubstitute_Icon;
       case LanguageConceptSwitch.QueryFunction_ParameterizedSubstitute_Query:
+        if (props_QueryFunction_ParameterizedSubstitute_Query == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return collection of substitute menu part parameters");
+          props_QueryFunction_ParameterizedSubstitute_Query = cpb.create();
+        }
         return props_QueryFunction_ParameterizedSubstitute_Query;
       case LanguageConceptSwitch.QueryFunction_ParameterizedSubstitute_String:
+        if (props_QueryFunction_ParameterizedSubstitute_String == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return text string");
+          props_QueryFunction_ParameterizedSubstitute_String = cpb.create();
+        }
         return props_QueryFunction_ParameterizedSubstitute_String;
       case LanguageConceptSwitch.QueryFunction_PasteWrapper:
+        if (props_QueryFunction_PasteWrapper == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_QueryFunction_PasteWrapper = cpb.create();
+        }
         return props_QueryFunction_PasteWrapper;
       case LanguageConceptSwitch.QueryFunction_RemoveBy_Condition:
+        if (props_QueryFunction_RemoveBy_Condition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return true if corresponding substitute action should be removed from the completion menu");
+          props_QueryFunction_RemoveBy_Condition = cpb.create();
+        }
         return props_QueryFunction_RemoveBy_Condition;
       case LanguageConceptSwitch.QueryFunction_ReturnSmallPart:
+        if (props_QueryFunction_ReturnSmallPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return true if wrapped node should be used to setup selection in editor");
+          props_QueryFunction_ReturnSmallPart = cpb.create();
+        }
         return props_QueryFunction_ReturnSmallPart;
       case LanguageConceptSwitch.QueryFunction_STVariableInitializer:
+        if (props_QueryFunction_STVariableInitializer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_STVariableInitializer = cpb.create();
+        }
         return props_QueryFunction_STVariableInitializer;
       case LanguageConceptSwitch.QueryFunction_ST_CommonInitializer:
+        if (props_QueryFunction_ST_CommonInitializer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_ST_CommonInitializer = cpb.create();
+        }
         return props_QueryFunction_ST_CommonInitializer;
       case LanguageConceptSwitch.QueryFunction_ST_RemoveBy_Condition:
+        if (props_QueryFunction_ST_RemoveBy_Condition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_ST_RemoveBy_Condition = cpb.create();
+        }
         return props_QueryFunction_ST_RemoveBy_Condition;
       case LanguageConceptSwitch.QueryFunction_SideTransform_ConceptHandler:
+        if (props_QueryFunction_SideTransform_ConceptHandler == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_SideTransform_ConceptHandler = cpb.create();
+        }
         return props_QueryFunction_SideTransform_ConceptHandler;
       case LanguageConceptSwitch.QueryFunction_SideTransform_Handler:
+        if (props_QueryFunction_SideTransform_Handler == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_SideTransform_Handler = cpb.create();
+        }
         return props_QueryFunction_SideTransform_Handler;
       case LanguageConceptSwitch.QueryFunction_SideTransform_Icon:
+        if (props_QueryFunction_SideTransform_Icon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_SideTransform_Icon = cpb.create();
+        }
         return props_QueryFunction_SideTransform_Icon;
       case LanguageConceptSwitch.QueryFunction_SideTransform_NodeQuery:
+        if (props_QueryFunction_SideTransform_NodeQuery == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_SideTransform_NodeQuery = cpb.create();
+        }
         return props_QueryFunction_SideTransform_NodeQuery;
       case LanguageConceptSwitch.QueryFunction_SideTransform_String:
+        if (props_QueryFunction_SideTransform_String == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_SideTransform_String = cpb.create();
+        }
         return props_QueryFunction_SideTransform_String;
       case LanguageConceptSwitch.QueryFunction_SubstituteIcon:
+        if (props_QueryFunction_SubstituteIcon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_QueryFunction_SubstituteIcon = cpb.create();
+        }
         return props_QueryFunction_SubstituteIcon;
       case LanguageConceptSwitch.QueryFunction_SubstituteString:
+        if (props_QueryFunction_SubstituteString == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return text string");
+          props_QueryFunction_SubstituteString = cpb.create();
+        }
         return props_QueryFunction_SubstituteString;
       case LanguageConceptSwitch.QueryFunction_SubstituteVariableInitializer:
+        if (props_QueryFunction_SubstituteVariableInitializer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return initial value of the variable");
+          props_QueryFunction_SubstituteVariableInitializer = cpb.create();
+        }
         return props_QueryFunction_SubstituteVariableInitializer;
       case LanguageConceptSwitch.QueryFunction_SubstituteWrapper:
+        if (props_QueryFunction_SubstituteWrapper == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("create new instance of output concept wrapping (containing) passed nodeToWrap");
+          props_QueryFunction_SubstituteWrapper = cpb.create();
+        }
         return props_QueryFunction_SubstituteWrapper;
       case LanguageConceptSwitch.QueryFunction_Substitute_CommonInitializer:
+        if (props_QueryFunction_Substitute_CommonInitializer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("common init block");
+          props_QueryFunction_Substitute_CommonInitializer = cpb.create();
+        }
         return props_QueryFunction_Substitute_CommonInitializer;
       case LanguageConceptSwitch.QueryFunction_Substitute_Handler:
+        if (props_QueryFunction_Substitute_Handler == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return node<> to substitute currentTargetNode with");
+          props_QueryFunction_Substitute_Handler = cpb.create();
+        }
         return props_QueryFunction_Substitute_Handler;
       case LanguageConceptSwitch.QueryFunction_Substitute_SelectionHandler:
+        if (props_QueryFunction_Substitute_SelectionHandler == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return node to select or null if selection API was directly called from the query");
+          props_QueryFunction_Substitute_SelectionHandler = cpb.create();
+        }
         return props_QueryFunction_Substitute_SelectionHandler;
       case LanguageConceptSwitch.RemoveByConditionPart:
+        if (props_RemoveByConditionPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_RemoveByConditionPart = cpb.create();
+        }
         return props_RemoveByConditionPart;
       case LanguageConceptSwitch.RemoveDefaultsPart:
+        if (props_RemoveDefaultsPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_RemoveDefaultsPart = cpb.create();
+        }
         return props_RemoveDefaultsPart;
       case LanguageConceptSwitch.RemovePart:
+        if (props_RemovePart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_RemovePart = cpb.create();
+        }
         return props_RemovePart;
       case LanguageConceptSwitch.RemoveSTByConditionPart:
+        if (props_RemoveSTByConditionPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_RemoveSTByConditionPart = cpb.create();
+        }
         return props_RemoveSTByConditionPart;
       case LanguageConceptSwitch.SNodeCreatorAndInitializer:
+        if (props_SNodeCreatorAndInitializer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("create new initialized node");
+          props_SNodeCreatorAndInitializer = cpb.create();
+        }
         return props_SNodeCreatorAndInitializer;
       case LanguageConceptSwitch.SideTransformHintSubstituteActions:
+        if (props_SideTransformHintSubstituteActions == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a89b0oe);
+          props_SideTransformHintSubstituteActions = cpb.create();
+        }
         return props_SideTransformHintSubstituteActions;
       case LanguageConceptSwitch.SideTransformHintSubstituteActionsBuilder:
+        if (props_SideTransformHintSubstituteActionsBuilder == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SideTransformHintSubstituteActionsBuilder = cpb.create();
+        }
         return props_SideTransformHintSubstituteActionsBuilder;
       case LanguageConceptSwitch.SideTransformHintSubstitutePreconditionFunction:
+        if (props_SideTransformHintSubstitutePreconditionFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SideTransformHintSubstitutePreconditionFunction = cpb.create();
+        }
         return props_SideTransformHintSubstitutePreconditionFunction;
       case LanguageConceptSwitch.SideTransformMenuBuilderPart:
+        if (props_SideTransformMenuBuilderPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SideTransformMenuBuilderPart = cpb.create();
+        }
         return props_SideTransformMenuBuilderPart;
       case LanguageConceptSwitch.SideTransformMenuPart:
+        if (props_SideTransformMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SideTransformMenuPart = cpb.create();
+        }
         return props_SideTransformMenuPart;
       case LanguageConceptSwitch.SideTransformVariableDeclaration:
+        if (props_SideTransformVariableDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SideTransformVariableDeclaration = cpb.create();
+        }
         return props_SideTransformVariableDeclaration;
       case LanguageConceptSwitch.SideTransformVariableReference:
+        if (props_SideTransformVariableReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SideTransformVariableReference = cpb.create();
+        }
         return props_SideTransformVariableReference;
       case LanguageConceptSwitch.SideTransform_SimpleString:
+        if (props_SideTransform_SimpleString == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SideTransform_SimpleString = cpb.create();
+        }
         return props_SideTransform_SimpleString;
       case LanguageConceptSwitch.SimpleItemSubstitutePart:
+        if (props_SimpleItemSubstitutePart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1121e328443L);
+          cpb.deprecated(true);
+          cpb.deprecateAggregation(0x1181cc0042aL, "icon");
+          props_SimpleItemSubstitutePart = cpb.create();
+        }
         return props_SimpleItemSubstitutePart;
       case LanguageConceptSwitch.SimpleSideTransformMenuPart:
+        if (props_SimpleSideTransformMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122859d0ecL);
+          cpb.deprecated(true);
+          cpb.deprecateAggregation(0x1181cc8b9c7L, "icon");
+          props_SimpleSideTransformMenuPart = cpb.create();
+        }
         return props_SimpleSideTransformMenuPart;
       case LanguageConceptSwitch.SmartActionParameter:
+        if (props_SmartActionParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SmartActionParameter = cpb.create();
+        }
         return props_SmartActionParameter;
       case LanguageConceptSwitch.SmartActionParameterReference:
+        if (props_SmartActionParameterReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SmartActionParameterReference = cpb.create();
+        }
         return props_SmartActionParameterReference;
       case LanguageConceptSwitch.SmartEditorActions:
+        if (props_SmartEditorActions == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a011b0oe);
+          props_SmartEditorActions = cpb.create();
+        }
         return props_SmartEditorActions;
       case LanguageConceptSwitch.SubstituteMenuPart:
+        if (props_SubstituteMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SubstituteMenuPart = cpb.create();
+        }
         return props_SubstituteMenuPart;
       case LanguageConceptSwitch.SubstituteNodeBuilderVariableDeclaration:
+        if (props_SubstituteNodeBuilderVariableDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SubstituteNodeBuilderVariableDeclaration = cpb.create();
+        }
         return props_SubstituteNodeBuilderVariableDeclaration;
       case LanguageConceptSwitch.SubstituteNodeBuilderVariableReference:
+        if (props_SubstituteNodeBuilderVariableReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SubstituteNodeBuilderVariableReference = cpb.create();
+        }
         return props_SubstituteNodeBuilderVariableReference;
       case LanguageConceptSwitch.Substitute_SimpleString:
+        if (props_Substitute_SimpleString == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_Substitute_SimpleString = cpb.create();
+        }
         return props_Substitute_SimpleString;
       case LanguageConceptSwitch.SurroundWithAction:
+        if (props_SurroundWithAction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_SurroundWithAction = cpb.create();
+        }
         return props_SurroundWithAction;
       case LanguageConceptSwitch.WrapperSubstituteMenuPart:
+        if (props_WrapperSubstituteMenuPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_WrapperSubstituteMenuPart = cpb.create();
+        }
         return props_WrapperSubstituteMenuPart;
     }
     return null;

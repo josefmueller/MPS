@@ -4,46 +4,46 @@ package jetbrains.mps.console.base.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractPrintExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BLCommand = new ConceptPresentationBuilder().shortDesc("baseLanguage statements").create();
-  private final ConceptPresentation props_BLExpression = new ConceptPresentationBuilder().shortDesc("baseLanguage expression").create();
-  private final ConceptPresentation props_Command = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CommandHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CommandHolderRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConsoleRoot = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExceptionHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GeneratedCommand = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_HelpCommand = new ConceptPresentationBuilder().shortDesc("help").create();
-  private final ConceptPresentation props_HelpConceptReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_History = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_HistoryItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IActionHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IClickable = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_INodeWithReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InterpretedCommand = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModifiedCommandHistoryItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NewLineResponseItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeReferencePresentation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeReferenceString = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeResponseItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeWithClosure = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OutputConsoleRoot = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PastedNodeReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrintExpression = new ConceptPresentationBuilder().shortDesc("smart print depending on content").create();
-  private final ConceptPresentation props_PrintNodeExpression = new ConceptPresentationBuilder().shortDesc("print node copy").create();
-  private final ConceptPresentation props_PrintNodeReferenceExpression = new ConceptPresentationBuilder().shortDesc("print reference to the node").create();
-  private final ConceptPresentation props_PrintSequenceExpression = new ConceptPresentationBuilder().shortDesc("print size with link to usages view").create();
-  private final ConceptPresentation props_PrintTextExpression = new ConceptPresentationBuilder().shortDesc("print as string").create();
-  private final ConceptPresentation props_ProjectExpression = new ConceptPresentationBuilder().shortDesc("the current project").create();
-  private final ConceptPresentation props_ProjectScope = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Response = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ResponseItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TextResponseItem = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_AbstractPrintExpression;
+  private ConceptPresentation props_BLCommand;
+  private ConceptPresentation props_BLExpression;
+  private ConceptPresentation props_Command;
+  private ConceptPresentation props_CommandHolder;
+  private ConceptPresentation props_CommandHolderRef;
+  private ConceptPresentation props_ConsoleRoot;
+  private ConceptPresentation props_ExceptionHolder;
+  private ConceptPresentation props_GeneratedCommand;
+  private ConceptPresentation props_HelpCommand;
+  private ConceptPresentation props_HelpConceptReference;
+  private ConceptPresentation props_History;
+  private ConceptPresentation props_HistoryItem;
+  private ConceptPresentation props_IActionHolder;
+  private ConceptPresentation props_IClickable;
+  private ConceptPresentation props_INodeWithReference;
+  private ConceptPresentation props_InterpretedCommand;
+  private ConceptPresentation props_ModifiedCommandHistoryItem;
+  private ConceptPresentation props_NewLineResponseItem;
+  private ConceptPresentation props_NodeReferencePresentation;
+  private ConceptPresentation props_NodeReferenceString;
+  private ConceptPresentation props_NodeResponseItem;
+  private ConceptPresentation props_NodeWithClosure;
+  private ConceptPresentation props_OutputConsoleRoot;
+  private ConceptPresentation props_PastedNodeReference;
+  private ConceptPresentation props_PrintExpression;
+  private ConceptPresentation props_PrintNodeExpression;
+  private ConceptPresentation props_PrintNodeReferenceExpression;
+  private ConceptPresentation props_PrintSequenceExpression;
+  private ConceptPresentation props_PrintTextExpression;
+  private ConceptPresentation props_ProjectExpression;
+  private ConceptPresentation props_ProjectScope;
+  private ConceptPresentation props_Response;
+  private ConceptPresentation props_ResponseItem;
+  private ConceptPresentation props_TextResponseItem;
 
   @Override
   @Nullable
@@ -51,74 +51,223 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbstractPrintExpression:
+        if (props_AbstractPrintExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractPrintExpression = cpb.create();
+        }
         return props_AbstractPrintExpression;
       case LanguageConceptSwitch.BLCommand:
+        if (props_BLCommand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("baseLanguage statements");
+          props_BLCommand = cpb.create();
+        }
         return props_BLCommand;
       case LanguageConceptSwitch.BLExpression:
+        if (props_BLExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("baseLanguage expression");
+          props_BLExpression = cpb.create();
+        }
         return props_BLExpression;
       case LanguageConceptSwitch.Command:
+        if (props_Command == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Command = cpb.create();
+        }
         return props_Command;
       case LanguageConceptSwitch.CommandHolder:
+        if (props_CommandHolder == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CommandHolder = cpb.create();
+        }
         return props_CommandHolder;
       case LanguageConceptSwitch.CommandHolderRef:
+        if (props_CommandHolderRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CommandHolderRef = cpb.create();
+        }
         return props_CommandHolderRef;
       case LanguageConceptSwitch.ConsoleRoot:
+        if (props_ConsoleRoot == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConsoleRoot = cpb.create();
+        }
         return props_ConsoleRoot;
       case LanguageConceptSwitch.ExceptionHolder:
+        if (props_ExceptionHolder == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExceptionHolder = cpb.create();
+        }
         return props_ExceptionHolder;
       case LanguageConceptSwitch.GeneratedCommand:
+        if (props_GeneratedCommand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratedCommand = cpb.create();
+        }
         return props_GeneratedCommand;
       case LanguageConceptSwitch.HelpCommand:
+        if (props_HelpCommand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("help");
+          props_HelpCommand = cpb.create();
+        }
         return props_HelpCommand;
       case LanguageConceptSwitch.HelpConceptReference:
+        if (props_HelpConceptReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_HelpConceptReference = cpb.create();
+        }
         return props_HelpConceptReference;
       case LanguageConceptSwitch.History:
+        if (props_History == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_History = cpb.create();
+        }
         return props_History;
       case LanguageConceptSwitch.HistoryItem:
+        if (props_HistoryItem == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_HistoryItem = cpb.create();
+        }
         return props_HistoryItem;
       case LanguageConceptSwitch.IActionHolder:
+        if (props_IActionHolder == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IActionHolder = cpb.create();
+        }
         return props_IActionHolder;
       case LanguageConceptSwitch.IClickable:
+        if (props_IClickable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IClickable = cpb.create();
+        }
         return props_IClickable;
       case LanguageConceptSwitch.INodeWithReference:
+        if (props_INodeWithReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_INodeWithReference = cpb.create();
+        }
         return props_INodeWithReference;
       case LanguageConceptSwitch.InterpretedCommand:
+        if (props_InterpretedCommand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InterpretedCommand = cpb.create();
+        }
         return props_InterpretedCommand;
       case LanguageConceptSwitch.ModifiedCommandHistoryItem:
+        if (props_ModifiedCommandHistoryItem == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModifiedCommandHistoryItem = cpb.create();
+        }
         return props_ModifiedCommandHistoryItem;
       case LanguageConceptSwitch.NewLineResponseItem:
+        if (props_NewLineResponseItem == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NewLineResponseItem = cpb.create();
+        }
         return props_NewLineResponseItem;
       case LanguageConceptSwitch.NodeReferencePresentation:
+        if (props_NodeReferencePresentation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeReferencePresentation = cpb.create();
+        }
         return props_NodeReferencePresentation;
       case LanguageConceptSwitch.NodeReferenceString:
+        if (props_NodeReferenceString == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeReferenceString = cpb.create();
+        }
         return props_NodeReferenceString;
       case LanguageConceptSwitch.NodeResponseItem:
+        if (props_NodeResponseItem == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeResponseItem = cpb.create();
+        }
         return props_NodeResponseItem;
       case LanguageConceptSwitch.NodeWithClosure:
+        if (props_NodeWithClosure == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeWithClosure = cpb.create();
+        }
         return props_NodeWithClosure;
       case LanguageConceptSwitch.OutputConsoleRoot:
+        if (props_OutputConsoleRoot == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OutputConsoleRoot = cpb.create();
+        }
         return props_OutputConsoleRoot;
       case LanguageConceptSwitch.PastedNodeReference:
+        if (props_PastedNodeReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PastedNodeReference = cpb.create();
+        }
         return props_PastedNodeReference;
       case LanguageConceptSwitch.PrintExpression:
+        if (props_PrintExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("smart print depending on content");
+          props_PrintExpression = cpb.create();
+        }
         return props_PrintExpression;
       case LanguageConceptSwitch.PrintNodeExpression:
+        if (props_PrintNodeExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("print node copy");
+          props_PrintNodeExpression = cpb.create();
+        }
         return props_PrintNodeExpression;
       case LanguageConceptSwitch.PrintNodeReferenceExpression:
+        if (props_PrintNodeReferenceExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("print reference to the node");
+          props_PrintNodeReferenceExpression = cpb.create();
+        }
         return props_PrintNodeReferenceExpression;
       case LanguageConceptSwitch.PrintSequenceExpression:
+        if (props_PrintSequenceExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("print size with link to usages view");
+          props_PrintSequenceExpression = cpb.create();
+        }
         return props_PrintSequenceExpression;
       case LanguageConceptSwitch.PrintTextExpression:
+        if (props_PrintTextExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("print as string");
+          props_PrintTextExpression = cpb.create();
+        }
         return props_PrintTextExpression;
       case LanguageConceptSwitch.ProjectExpression:
+        if (props_ProjectExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("the current project");
+          props_ProjectExpression = cpb.create();
+        }
         return props_ProjectExpression;
       case LanguageConceptSwitch.ProjectScope:
+        if (props_ProjectScope == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ProjectScope = cpb.create();
+        }
         return props_ProjectScope;
       case LanguageConceptSwitch.Response:
+        if (props_Response == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Response = cpb.create();
+        }
         return props_Response;
       case LanguageConceptSwitch.ResponseItem:
+        if (props_ResponseItem == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ResponseItem = cpb.create();
+        }
         return props_ResponseItem;
       case LanguageConceptSwitch.TextResponseItem:
+        if (props_TextResponseItem == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TextResponseItem = cpb.create();
+        }
         return props_TextResponseItem;
     }
     return null;

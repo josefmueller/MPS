@@ -4,13 +4,13 @@ package jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_TestSideTransform_Node = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestSideTransform_Root = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_TestSideTransform_Node;
+  private ConceptPresentation props_TestSideTransform_Root;
 
   @Override
   @Nullable
@@ -18,8 +18,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.TestSideTransform_Node:
+        if (props_TestSideTransform_Node == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestSideTransform_Node = cpb.create();
+        }
         return props_TestSideTransform_Node;
       case LanguageConceptSwitch.TestSideTransform_Root:
+        if (props_TestSideTransform_Root == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestSideTransform_Root = cpb.create();
+        }
         return props_TestSideTransform_Root;
     }
     return null;

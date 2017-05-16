@@ -4,24 +4,24 @@ package jetbrains.mps.debugger.api.lang.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_BreakpointCreator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BreakpointableNodeItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptDeclarationReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_Concept = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_Debug_Project = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_DebuggableNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunction_CreateBreakpoint = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunction_IsApplicableBreakpoint = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CreateBreakpointOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DebuggerConfiguration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DebuggerReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DebuggerType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GetDebuggerSettings_Function = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_BreakpointCreator;
+  private ConceptPresentation props_BreakpointableNodeItem;
+  private ConceptPresentation props_ConceptDeclarationReference;
+  private ConceptPresentation props_ConceptFunctionParameter_Concept;
+  private ConceptPresentation props_ConceptFunctionParameter_Debug_Project;
+  private ConceptPresentation props_ConceptFunctionParameter_DebuggableNode;
+  private ConceptPresentation props_ConceptFunction_CreateBreakpoint;
+  private ConceptPresentation props_ConceptFunction_IsApplicableBreakpoint;
+  private ConceptPresentation props_CreateBreakpointOperation;
+  private ConceptPresentation props_DebuggerConfiguration;
+  private ConceptPresentation props_DebuggerReference;
+  private ConceptPresentation props_DebuggerType;
+  private ConceptPresentation props_GetDebuggerSettings_Function;
 
   @Override
   @Nullable
@@ -29,30 +29,82 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.BreakpointCreator:
+        if (props_BreakpointCreator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BreakpointCreator = cpb.create();
+        }
         return props_BreakpointCreator;
       case LanguageConceptSwitch.BreakpointableNodeItem:
+        if (props_BreakpointableNodeItem == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BreakpointableNodeItem = cpb.create();
+        }
         return props_BreakpointableNodeItem;
       case LanguageConceptSwitch.ConceptDeclarationReference:
+        if (props_ConceptDeclarationReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptDeclarationReference = cpb.create();
+        }
         return props_ConceptDeclarationReference;
       case LanguageConceptSwitch.ConceptFunctionParameter_Concept:
+        if (props_ConceptFunctionParameter_Concept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptFunctionParameter_Concept = cpb.create();
+        }
         return props_ConceptFunctionParameter_Concept;
       case LanguageConceptSwitch.ConceptFunctionParameter_Debug_Project:
+        if (props_ConceptFunctionParameter_Debug_Project == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptFunctionParameter_Debug_Project = cpb.create();
+        }
         return props_ConceptFunctionParameter_Debug_Project;
       case LanguageConceptSwitch.ConceptFunctionParameter_DebuggableNode:
+        if (props_ConceptFunctionParameter_DebuggableNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptFunctionParameter_DebuggableNode = cpb.create();
+        }
         return props_ConceptFunctionParameter_DebuggableNode;
       case LanguageConceptSwitch.ConceptFunction_CreateBreakpoint:
+        if (props_ConceptFunction_CreateBreakpoint == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptFunction_CreateBreakpoint = cpb.create();
+        }
         return props_ConceptFunction_CreateBreakpoint;
       case LanguageConceptSwitch.ConceptFunction_IsApplicableBreakpoint:
+        if (props_ConceptFunction_IsApplicableBreakpoint == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptFunction_IsApplicableBreakpoint = cpb.create();
+        }
         return props_ConceptFunction_IsApplicableBreakpoint;
       case LanguageConceptSwitch.CreateBreakpointOperation:
+        if (props_CreateBreakpointOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CreateBreakpointOperation = cpb.create();
+        }
         return props_CreateBreakpointOperation;
       case LanguageConceptSwitch.DebuggerConfiguration:
+        if (props_DebuggerConfiguration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DebuggerConfiguration = cpb.create();
+        }
         return props_DebuggerConfiguration;
       case LanguageConceptSwitch.DebuggerReference:
+        if (props_DebuggerReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DebuggerReference = cpb.create();
+        }
         return props_DebuggerReference;
       case LanguageConceptSwitch.DebuggerType:
+        if (props_DebuggerType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DebuggerType = cpb.create();
+        }
         return props_DebuggerType;
       case LanguageConceptSwitch.GetDebuggerSettings_Function:
+        if (props_GetDebuggerSettings_Function == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GetDebuggerSettings_Function = cpb.create();
+        }
         return props_GetDebuggerSettings_Function;
     }
     return null;

@@ -4,28 +4,28 @@ package jetbrains.mps.lang.findUsages.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractFinderDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CategorizeBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CheckCancelledStatusStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_node = new ConceptPresentationBuilder().shortDesc("function parameter").create();
-  private final ConceptPresentation props_ExecuteFinderExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExecuteFindersGetSearchResults = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FindBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FinderDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0h).create();
-  private final ConceptPresentation props_FinderReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FinderReferenceExpression = new ConceptPresentationBuilder().shortDesc("Access to an instance of linked FinderDeclaration").create();
-  private final ConceptPresentation props_IsApplicableBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IsUsedByDefault = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IsVisibleBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MakeResultProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ResultStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SearchedNodesBlock = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_AbstractFinderDeclaration;
+  private ConceptPresentation props_CategorizeBlock;
+  private ConceptPresentation props_CheckCancelledStatusStatement;
+  private ConceptPresentation props_ConceptFunctionParameter_node;
+  private ConceptPresentation props_ExecuteFinderExpression;
+  private ConceptPresentation props_ExecuteFindersGetSearchResults;
+  private ConceptPresentation props_FindBlock;
+  private ConceptPresentation props_FinderDeclaration;
+  private ConceptPresentation props_FinderReference;
+  private ConceptPresentation props_FinderReferenceExpression;
+  private ConceptPresentation props_IsApplicableBlock;
+  private ConceptPresentation props_IsUsedByDefault;
+  private ConceptPresentation props_IsVisibleBlock;
+  private ConceptPresentation props_MakeResultProvider;
+  private ConceptPresentation props_NodeStatement;
+  private ConceptPresentation props_ResultStatement;
+  private ConceptPresentation props_SearchedNodesBlock;
 
   @Override
   @Nullable
@@ -33,38 +33,109 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbstractFinderDeclaration:
+        if (props_AbstractFinderDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractFinderDeclaration = cpb.create();
+        }
         return props_AbstractFinderDeclaration;
       case LanguageConceptSwitch.CategorizeBlock:
+        if (props_CategorizeBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CategorizeBlock = cpb.create();
+        }
         return props_CategorizeBlock;
       case LanguageConceptSwitch.CheckCancelledStatusStatement:
+        if (props_CheckCancelledStatusStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CheckCancelledStatusStatement = cpb.create();
+        }
         return props_CheckCancelledStatusStatement;
       case LanguageConceptSwitch.ConceptFunctionParameter_node:
+        if (props_ConceptFunctionParameter_node == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("function parameter");
+          props_ConceptFunctionParameter_node = cpb.create();
+        }
         return props_ConceptFunctionParameter_node;
       case LanguageConceptSwitch.ExecuteFinderExpression:
+        if (props_ExecuteFinderExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExecuteFinderExpression = cpb.create();
+        }
         return props_ExecuteFinderExpression;
       case LanguageConceptSwitch.ExecuteFindersGetSearchResults:
+        if (props_ExecuteFindersGetSearchResults == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExecuteFindersGetSearchResults = cpb.create();
+        }
         return props_ExecuteFindersGetSearchResults;
       case LanguageConceptSwitch.FindBlock:
+        if (props_FindBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FindBlock = cpb.create();
+        }
         return props_FindBlock;
       case LanguageConceptSwitch.FinderDeclaration:
+        if (props_FinderDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a7b0s);
+          props_FinderDeclaration = cpb.create();
+        }
         return props_FinderDeclaration;
       case LanguageConceptSwitch.FinderReference:
+        if (props_FinderReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FinderReference = cpb.create();
+        }
         return props_FinderReference;
       case LanguageConceptSwitch.FinderReferenceExpression:
+        if (props_FinderReferenceExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Access to an instance of linked FinderDeclaration");
+          props_FinderReferenceExpression = cpb.create();
+        }
         return props_FinderReferenceExpression;
       case LanguageConceptSwitch.IsApplicableBlock:
+        if (props_IsApplicableBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IsApplicableBlock = cpb.create();
+        }
         return props_IsApplicableBlock;
       case LanguageConceptSwitch.IsUsedByDefault:
+        if (props_IsUsedByDefault == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IsUsedByDefault = cpb.create();
+        }
         return props_IsUsedByDefault;
       case LanguageConceptSwitch.IsVisibleBlock:
+        if (props_IsVisibleBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IsVisibleBlock = cpb.create();
+        }
         return props_IsVisibleBlock;
       case LanguageConceptSwitch.MakeResultProvider:
+        if (props_MakeResultProvider == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MakeResultProvider = cpb.create();
+        }
         return props_MakeResultProvider;
       case LanguageConceptSwitch.NodeStatement:
+        if (props_NodeStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeStatement = cpb.create();
+        }
         return props_NodeStatement;
       case LanguageConceptSwitch.ResultStatement:
+        if (props_ResultStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ResultStatement = cpb.create();
+        }
         return props_ResultStatement;
       case LanguageConceptSwitch.SearchedNodesBlock:
+        if (props_SearchedNodesBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SearchedNodesBlock = cpb.create();
+        }
         return props_SearchedNodesBlock;
     }
     return null;

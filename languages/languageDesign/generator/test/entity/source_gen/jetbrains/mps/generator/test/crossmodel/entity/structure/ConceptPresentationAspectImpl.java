@@ -4,14 +4,14 @@ package jetbrains.mps.generator.test.crossmodel.entity.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Entry = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeA = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TrivialKeeper = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Entry;
+  private ConceptPresentation props_NodeA;
+  private ConceptPresentation props_TrivialKeeper;
 
   @Override
   @Nullable
@@ -19,10 +19,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Entry:
+        if (props_Entry == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Entry = cpb.create();
+        }
         return props_Entry;
       case LanguageConceptSwitch.NodeA:
+        if (props_NodeA == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeA = cpb.create();
+        }
         return props_NodeA;
       case LanguageConceptSwitch.TrivialKeeper:
+        if (props_TrivialKeeper == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TrivialKeeper = cpb.create();
+        }
         return props_TrivialKeeper;
     }
     return null;

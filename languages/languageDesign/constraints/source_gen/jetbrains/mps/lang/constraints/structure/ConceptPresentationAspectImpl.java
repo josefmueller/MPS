@@ -4,64 +4,63 @@ package jetbrains.mps.lang.constraints.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ConceptConstraints = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept"), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a72ce9037L, "defaultConcreteConcept")).icon(IconContainer.RESOURCE_a0a0a).create();
-  private final ConceptPresentation props_ConceptParameter_ReferentSearchScope_enclosingNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("parent of the referenceNode, useful when the reference node is not defined yet (null)").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_checkedNode = new ConceptPresentationBuilder().shortDesc("node to be validated").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_childConcept = new ConceptPresentationBuilder().shortDesc("the concept of the child/descendant node to test against").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_childConceptNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("the concept of the child/descendant node to test against").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_childNode = new ConceptPresentationBuilder().shortDesc("the child/descendant node to test against, may be null if is yet to be created").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_containingLink = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_containmentLink = new ConceptPresentationBuilder().shortDesc("containment link between contextNode and its child").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_contextNode = new ConceptPresentationBuilder().shortDesc("node with the reference, or closest not-null context node").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_contextRole = new ConceptPresentationBuilder().deprecated(true).shortDesc("target role in contextNode").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_exists = new ConceptPresentationBuilder().deprecated(true).shortDesc("false when reference is being created").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_inEditor = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_link = new ConceptPresentationBuilder().shortDesc("the containment link in question between the parent and the (potential or existing) child").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_linkNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("the containment link in question between the parent and the (potential or existing) child").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_linkTarget = new ConceptPresentationBuilder().shortDesc("target concept (useful for specialized links)").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_linkTargetNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("target concept node (useful for specialized links)").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_newReferentNode = new ConceptPresentationBuilder().shortDesc("new value of the reference").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_oldReferentNode = new ConceptPresentationBuilder().shortDesc("old value of the reference").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_parameterNode = new ConceptPresentationBuilder().shortDesc("node to present (target of the referenceNode's reference)").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_parentNode = new ConceptPresentationBuilder().shortDesc("parent node to check").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_position = new ConceptPresentationBuilder().shortDesc("target index in contextRole").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_referenceNode = new ConceptPresentationBuilder().shortDesc("node with the reference").create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_smartReference = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_visible = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeAChild = new ConceptPresentationBuilder().shortDesc("return false if node cannot be a child of parentNode").create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeAChild_Old = new ConceptPresentationBuilder().deprecated(true).shortDesc("return false if node cannot be a child of parentNode").create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeAParent = new ConceptPresentationBuilder().shortDesc("return false if node cannot be a parent of given node").create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeAParent_Old = new ConceptPresentationBuilder().deprecated(true).shortDesc("return false if node cannot be a parent of given node").create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeARoot = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeAnAncestor = new ConceptPresentationBuilder().shortDesc("return false if node cannot be a ancestor of given node").create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeAnAncestor_Old = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConstraintFunction_GetAlternativeIcon = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_GetInstanceIcon = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_PropertyGetter = new ConceptPresentationBuilder().shortDesc("property getter").create();
-  private final ConceptPresentation props_ConstraintFunction_PropertySetter = new ConceptPresentationBuilder().shortDesc("property setter").create();
-  private final ConceptPresentation props_ConstraintFunction_PropertyValidator = new ConceptPresentationBuilder().shortDesc("property validator").create();
-  private final ConceptPresentation props_ConstraintFunction_RefSetHandlerKeepsReference = new ConceptPresentationBuilder().shortDesc("whether reference set handler keeps original reference").create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_AbstractBase = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Factory = new ConceptPresentationBuilder().deprecated(true).shortDesc("return list of nodes that can be referenced from given node").create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Presentation = new ConceptPresentationBuilder().deprecated(true).shortDesc("reference presentation in completion list (default - reference name)").create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Scope = new ConceptPresentationBuilder().shortDesc("creates scope for the reference (jetbrains.mps.scope.Scope)").create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Scope_Old = new ConceptPresentationBuilder().deprecated(true).shortDesc("creates scope for the reference (jetbrains.mps.scope.Scope)").create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Validator = new ConceptPresentationBuilder().deprecated(true).shortDesc("return true if the reference is in scope").create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSetHandler = new ConceptPresentationBuilder().shortDesc("executed on every link assignment").create();
-  private final ConceptPresentation props_ConstraintsFunctionParameter_node = new ConceptPresentationBuilder().shortDesc("the node in question").create();
-  private final ConceptPresentation props_ConstraintsFunctionParameter_propertyValue = new ConceptPresentationBuilder().shortDesc("new value of the node").create();
-  private final ConceptPresentation props_ConstraintsMigration = new ConceptPresentationBuilder().shortDesc("expression can be simplified or uses deprecated instances").create();
-  private final ConceptPresentation props_InheritedNodeScopeFactory = new ConceptPresentationBuilder().shortDesc("scope provided by parent elements").create();
-  private final ConceptPresentation props_NodeDefaultSearchScope = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodePropertyConstraint = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeReferentConstraint = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeScopeFactory = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_ConceptConstraints;
+  private ConceptPresentation props_ConceptParameter_ReferentSearchScope_enclosingNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_checkedNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_childConcept;
+  private ConceptPresentation props_ConstraintFunctionParameter_childConceptNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_childNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_containingLink;
+  private ConceptPresentation props_ConstraintFunctionParameter_containmentLink;
+  private ConceptPresentation props_ConstraintFunctionParameter_contextNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_contextRole;
+  private ConceptPresentation props_ConstraintFunctionParameter_exists;
+  private ConceptPresentation props_ConstraintFunctionParameter_inEditor;
+  private ConceptPresentation props_ConstraintFunctionParameter_link;
+  private ConceptPresentation props_ConstraintFunctionParameter_linkNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_linkTarget;
+  private ConceptPresentation props_ConstraintFunctionParameter_linkTargetNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_newReferentNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_oldReferentNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_parameterNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_parentNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_position;
+  private ConceptPresentation props_ConstraintFunctionParameter_referenceNode;
+  private ConceptPresentation props_ConstraintFunctionParameter_smartReference;
+  private ConceptPresentation props_ConstraintFunctionParameter_visible;
+  private ConceptPresentation props_ConstraintFunction_CanBeAChild;
+  private ConceptPresentation props_ConstraintFunction_CanBeAChild_Old;
+  private ConceptPresentation props_ConstraintFunction_CanBeAParent;
+  private ConceptPresentation props_ConstraintFunction_CanBeAParent_Old;
+  private ConceptPresentation props_ConstraintFunction_CanBeARoot;
+  private ConceptPresentation props_ConstraintFunction_CanBeAnAncestor;
+  private ConceptPresentation props_ConstraintFunction_CanBeAnAncestor_Old;
+  private ConceptPresentation props_ConstraintFunction_GetAlternativeIcon;
+  private ConceptPresentation props_ConstraintFunction_GetInstanceIcon;
+  private ConceptPresentation props_ConstraintFunction_PropertyGetter;
+  private ConceptPresentation props_ConstraintFunction_PropertySetter;
+  private ConceptPresentation props_ConstraintFunction_PropertyValidator;
+  private ConceptPresentation props_ConstraintFunction_RefSetHandlerKeepsReference;
+  private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_AbstractBase;
+  private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Factory;
+  private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Presentation;
+  private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Scope;
+  private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Scope_Old;
+  private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Validator;
+  private ConceptPresentation props_ConstraintFunction_ReferentSetHandler;
+  private ConceptPresentation props_ConstraintsFunctionParameter_node;
+  private ConceptPresentation props_ConstraintsFunctionParameter_propertyValue;
+  private ConceptPresentation props_ConstraintsMigration;
+  private ConceptPresentation props_InheritedNodeScopeFactory;
+  private ConceptPresentation props_NodeDefaultSearchScope;
+  private ConceptPresentation props_NodePropertyConstraint;
+  private ConceptPresentation props_NodeReferentConstraint;
+  private ConceptPresentation props_NodeScopeFactory;
 
   @Override
   @Nullable
@@ -69,108 +68,377 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ConceptConstraints:
+        if (props_ConceptConstraints == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL);
+          cpb.deprecateAggregation(0x11a72c7a3f1L, "canBeChild_Old");
+          cpb.deprecateAggregation(0x11a72c7dc2aL, "canBeParent_Old");
+          cpb.deprecateAggregation(0x6cfa709738a97560L, "canBeAncestor_Old");
+          cpb.deprecateAggregation(0x341b038f9307e5d8L, "alternativeIcon");
+          cpb.icon(IconContainer.RESOURCE_a0a5a0a0b0bc);
+          props_ConceptConstraints = cpb.create();
+        }
         return props_ConceptConstraints;
       case LanguageConceptSwitch.ConceptParameter_ReferentSearchScope_enclosingNode:
+        if (props_ConceptParameter_ReferentSearchScope_enclosingNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("parent of the referenceNode, useful when the reference node is not defined yet (null)");
+          props_ConceptParameter_ReferentSearchScope_enclosingNode = cpb.create();
+        }
         return props_ConceptParameter_ReferentSearchScope_enclosingNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_checkedNode:
+        if (props_ConstraintFunctionParameter_checkedNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("node to be validated");
+          props_ConstraintFunctionParameter_checkedNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_checkedNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_childConcept:
+        if (props_ConstraintFunctionParameter_childConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("the concept of the child/descendant node to test against");
+          props_ConstraintFunctionParameter_childConcept = cpb.create();
+        }
         return props_ConstraintFunctionParameter_childConcept;
       case LanguageConceptSwitch.ConstraintFunctionParameter_childConceptNode:
+        if (props_ConstraintFunctionParameter_childConceptNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("the concept of the child/descendant node to test against");
+          props_ConstraintFunctionParameter_childConceptNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_childConceptNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_childNode:
+        if (props_ConstraintFunctionParameter_childNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("the child/descendant node to test against, may be null if is yet to be created");
+          props_ConstraintFunctionParameter_childNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_childNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_containingLink:
+        if (props_ConstraintFunctionParameter_containingLink == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConstraintFunctionParameter_containingLink = cpb.create();
+        }
         return props_ConstraintFunctionParameter_containingLink;
       case LanguageConceptSwitch.ConstraintFunctionParameter_containmentLink:
+        if (props_ConstraintFunctionParameter_containmentLink == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("containment link between contextNode and its child");
+          props_ConstraintFunctionParameter_containmentLink = cpb.create();
+        }
         return props_ConstraintFunctionParameter_containmentLink;
       case LanguageConceptSwitch.ConstraintFunctionParameter_contextNode:
+        if (props_ConstraintFunctionParameter_contextNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("node with the reference, or closest not-null context node");
+          props_ConstraintFunctionParameter_contextNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_contextNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_contextRole:
+        if (props_ConstraintFunctionParameter_contextRole == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("target role in contextNode");
+          props_ConstraintFunctionParameter_contextRole = cpb.create();
+        }
         return props_ConstraintFunctionParameter_contextRole;
       case LanguageConceptSwitch.ConstraintFunctionParameter_exists:
+        if (props_ConstraintFunctionParameter_exists == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("false when reference is being created");
+          props_ConstraintFunctionParameter_exists = cpb.create();
+        }
         return props_ConstraintFunctionParameter_exists;
       case LanguageConceptSwitch.ConstraintFunctionParameter_inEditor:
+        if (props_ConstraintFunctionParameter_inEditor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConstraintFunctionParameter_inEditor = cpb.create();
+        }
         return props_ConstraintFunctionParameter_inEditor;
       case LanguageConceptSwitch.ConstraintFunctionParameter_link:
+        if (props_ConstraintFunctionParameter_link == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("the containment link in question between the parent and the (potential or existing) child");
+          props_ConstraintFunctionParameter_link = cpb.create();
+        }
         return props_ConstraintFunctionParameter_link;
       case LanguageConceptSwitch.ConstraintFunctionParameter_linkNode:
+        if (props_ConstraintFunctionParameter_linkNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("the containment link in question between the parent and the (potential or existing) child");
+          props_ConstraintFunctionParameter_linkNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_linkNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_linkTarget:
+        if (props_ConstraintFunctionParameter_linkTarget == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("target concept (useful for specialized links)");
+          props_ConstraintFunctionParameter_linkTarget = cpb.create();
+        }
         return props_ConstraintFunctionParameter_linkTarget;
       case LanguageConceptSwitch.ConstraintFunctionParameter_linkTargetNode:
+        if (props_ConstraintFunctionParameter_linkTargetNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("target concept node (useful for specialized links)");
+          props_ConstraintFunctionParameter_linkTargetNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_linkTargetNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_newReferentNode:
+        if (props_ConstraintFunctionParameter_newReferentNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("new value of the reference");
+          props_ConstraintFunctionParameter_newReferentNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_newReferentNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_oldReferentNode:
+        if (props_ConstraintFunctionParameter_oldReferentNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("old value of the reference");
+          props_ConstraintFunctionParameter_oldReferentNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_oldReferentNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_parameterNode:
+        if (props_ConstraintFunctionParameter_parameterNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("node to present (target of the referenceNode's reference)");
+          props_ConstraintFunctionParameter_parameterNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_parameterNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_parentNode:
+        if (props_ConstraintFunctionParameter_parentNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("parent node to check");
+          props_ConstraintFunctionParameter_parentNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_parentNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_position:
+        if (props_ConstraintFunctionParameter_position == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("target index in contextRole");
+          props_ConstraintFunctionParameter_position = cpb.create();
+        }
         return props_ConstraintFunctionParameter_position;
       case LanguageConceptSwitch.ConstraintFunctionParameter_referenceNode:
+        if (props_ConstraintFunctionParameter_referenceNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("node with the reference");
+          props_ConstraintFunctionParameter_referenceNode = cpb.create();
+        }
         return props_ConstraintFunctionParameter_referenceNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_smartReference:
+        if (props_ConstraintFunctionParameter_smartReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConstraintFunctionParameter_smartReference = cpb.create();
+        }
         return props_ConstraintFunctionParameter_smartReference;
       case LanguageConceptSwitch.ConstraintFunctionParameter_visible:
+        if (props_ConstraintFunctionParameter_visible == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConstraintFunctionParameter_visible = cpb.create();
+        }
         return props_ConstraintFunctionParameter_visible;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAChild:
+        if (props_ConstraintFunction_CanBeAChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("return false if node cannot be a child of parentNode");
+          props_ConstraintFunction_CanBeAChild = cpb.create();
+        }
         return props_ConstraintFunction_CanBeAChild;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAChild_Old:
+        if (props_ConstraintFunction_CanBeAChild_Old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return false if node cannot be a child of parentNode");
+          props_ConstraintFunction_CanBeAChild_Old = cpb.create();
+        }
         return props_ConstraintFunction_CanBeAChild_Old;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAParent:
+        if (props_ConstraintFunction_CanBeAParent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("return false if node cannot be a parent of given node");
+          props_ConstraintFunction_CanBeAParent = cpb.create();
+        }
         return props_ConstraintFunction_CanBeAParent;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAParent_Old:
+        if (props_ConstraintFunction_CanBeAParent_Old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return false if node cannot be a parent of given node");
+          props_ConstraintFunction_CanBeAParent_Old = cpb.create();
+        }
         return props_ConstraintFunction_CanBeAParent_Old;
       case LanguageConceptSwitch.ConstraintFunction_CanBeARoot:
+        if (props_ConstraintFunction_CanBeARoot == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConstraintFunction_CanBeARoot = cpb.create();
+        }
         return props_ConstraintFunction_CanBeARoot;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAnAncestor:
+        if (props_ConstraintFunction_CanBeAnAncestor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("return false if node cannot be a ancestor of given node");
+          props_ConstraintFunction_CanBeAnAncestor = cpb.create();
+        }
         return props_ConstraintFunction_CanBeAnAncestor;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAnAncestor_Old:
+        if (props_ConstraintFunction_CanBeAnAncestor_Old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConstraintFunction_CanBeAnAncestor_Old = cpb.create();
+        }
         return props_ConstraintFunction_CanBeAnAncestor_Old;
       case LanguageConceptSwitch.ConstraintFunction_GetAlternativeIcon:
+        if (props_ConstraintFunction_GetAlternativeIcon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConstraintFunction_GetAlternativeIcon = cpb.create();
+        }
         return props_ConstraintFunction_GetAlternativeIcon;
       case LanguageConceptSwitch.ConstraintFunction_GetInstanceIcon:
+        if (props_ConstraintFunction_GetInstanceIcon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConstraintFunction_GetInstanceIcon = cpb.create();
+        }
         return props_ConstraintFunction_GetInstanceIcon;
       case LanguageConceptSwitch.ConstraintFunction_PropertyGetter:
+        if (props_ConstraintFunction_PropertyGetter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("property getter");
+          props_ConstraintFunction_PropertyGetter = cpb.create();
+        }
         return props_ConstraintFunction_PropertyGetter;
       case LanguageConceptSwitch.ConstraintFunction_PropertySetter:
+        if (props_ConstraintFunction_PropertySetter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("property setter");
+          props_ConstraintFunction_PropertySetter = cpb.create();
+        }
         return props_ConstraintFunction_PropertySetter;
       case LanguageConceptSwitch.ConstraintFunction_PropertyValidator:
+        if (props_ConstraintFunction_PropertyValidator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("property validator");
+          props_ConstraintFunction_PropertyValidator = cpb.create();
+        }
         return props_ConstraintFunction_PropertyValidator;
       case LanguageConceptSwitch.ConstraintFunction_RefSetHandlerKeepsReference:
+        if (props_ConstraintFunction_RefSetHandlerKeepsReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("whether reference set handler keeps original reference");
+          props_ConstraintFunction_RefSetHandlerKeepsReference = cpb.create();
+        }
         return props_ConstraintFunction_RefSetHandlerKeepsReference;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_AbstractBase:
+        if (props_ConstraintFunction_ReferentSearchScope_AbstractBase == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ConstraintFunction_ReferentSearchScope_AbstractBase = cpb.create();
+        }
         return props_ConstraintFunction_ReferentSearchScope_AbstractBase;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Factory:
+        if (props_ConstraintFunction_ReferentSearchScope_Factory == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return list of nodes that can be referenced from given node");
+          props_ConstraintFunction_ReferentSearchScope_Factory = cpb.create();
+        }
         return props_ConstraintFunction_ReferentSearchScope_Factory;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Presentation:
+        if (props_ConstraintFunction_ReferentSearchScope_Presentation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("reference presentation in completion list (default - reference name)");
+          props_ConstraintFunction_ReferentSearchScope_Presentation = cpb.create();
+        }
         return props_ConstraintFunction_ReferentSearchScope_Presentation;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Scope:
+        if (props_ConstraintFunction_ReferentSearchScope_Scope == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("creates scope for the reference (jetbrains.mps.scope.Scope)");
+          props_ConstraintFunction_ReferentSearchScope_Scope = cpb.create();
+        }
         return props_ConstraintFunction_ReferentSearchScope_Scope;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Scope_Old:
+        if (props_ConstraintFunction_ReferentSearchScope_Scope_Old == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("creates scope for the reference (jetbrains.mps.scope.Scope)");
+          props_ConstraintFunction_ReferentSearchScope_Scope_Old = cpb.create();
+        }
         return props_ConstraintFunction_ReferentSearchScope_Scope_Old;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Validator:
+        if (props_ConstraintFunction_ReferentSearchScope_Validator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("return true if the reference is in scope");
+          props_ConstraintFunction_ReferentSearchScope_Validator = cpb.create();
+        }
         return props_ConstraintFunction_ReferentSearchScope_Validator;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSetHandler:
+        if (props_ConstraintFunction_ReferentSetHandler == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("executed on every link assignment");
+          props_ConstraintFunction_ReferentSetHandler = cpb.create();
+        }
         return props_ConstraintFunction_ReferentSetHandler;
       case LanguageConceptSwitch.ConstraintsFunctionParameter_node:
+        if (props_ConstraintsFunctionParameter_node == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("the node in question");
+          props_ConstraintsFunctionParameter_node = cpb.create();
+        }
         return props_ConstraintsFunctionParameter_node;
       case LanguageConceptSwitch.ConstraintsFunctionParameter_propertyValue:
+        if (props_ConstraintsFunctionParameter_propertyValue == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("new value of the node");
+          props_ConstraintsFunctionParameter_propertyValue = cpb.create();
+        }
         return props_ConstraintsFunctionParameter_propertyValue;
       case LanguageConceptSwitch.ConstraintsMigration:
+        if (props_ConstraintsMigration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("expression can be simplified or uses deprecated instances");
+          props_ConstraintsMigration = cpb.create();
+        }
         return props_ConstraintsMigration;
       case LanguageConceptSwitch.InheritedNodeScopeFactory:
+        if (props_InheritedNodeScopeFactory == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("scope provided by parent elements");
+          props_InheritedNodeScopeFactory = cpb.create();
+        }
         return props_InheritedNodeScopeFactory;
       case LanguageConceptSwitch.NodeDefaultSearchScope:
+        if (props_NodeDefaultSearchScope == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeDefaultSearchScope = cpb.create();
+        }
         return props_NodeDefaultSearchScope;
       case LanguageConceptSwitch.NodePropertyConstraint:
+        if (props_NodePropertyConstraint == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodePropertyConstraint = cpb.create();
+        }
         return props_NodePropertyConstraint;
       case LanguageConceptSwitch.NodeReferentConstraint:
+        if (props_NodeReferentConstraint == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeReferentConstraint = cpb.create();
+        }
         return props_NodeReferentConstraint;
       case LanguageConceptSwitch.NodeScopeFactory:
+        if (props_NodeScopeFactory == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeScopeFactory = cpb.create();
+        }
         return props_NodeScopeFactory;
     }
     return null;

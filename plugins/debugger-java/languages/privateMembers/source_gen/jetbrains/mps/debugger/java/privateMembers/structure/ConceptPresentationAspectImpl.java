@@ -4,15 +4,15 @@ package jetbrains.mps.debugger.java.privateMembers.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_PrivateFieldReferenceOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrivateInstanceMethodCallOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrivateStaticFieldReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrivateStaticMethodCall = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_PrivateFieldReferenceOperation;
+  private ConceptPresentation props_PrivateInstanceMethodCallOperation;
+  private ConceptPresentation props_PrivateStaticFieldReference;
+  private ConceptPresentation props_PrivateStaticMethodCall;
 
   @Override
   @Nullable
@@ -20,12 +20,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.PrivateFieldReferenceOperation:
+        if (props_PrivateFieldReferenceOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrivateFieldReferenceOperation = cpb.create();
+        }
         return props_PrivateFieldReferenceOperation;
       case LanguageConceptSwitch.PrivateInstanceMethodCallOperation:
+        if (props_PrivateInstanceMethodCallOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrivateInstanceMethodCallOperation = cpb.create();
+        }
         return props_PrivateInstanceMethodCallOperation;
       case LanguageConceptSwitch.PrivateStaticFieldReference:
+        if (props_PrivateStaticFieldReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrivateStaticFieldReference = cpb.create();
+        }
         return props_PrivateStaticFieldReference;
       case LanguageConceptSwitch.PrivateStaticMethodCall:
+        if (props_PrivateStaticMethodCall == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PrivateStaticMethodCall = cpb.create();
+        }
         return props_PrivateStaticMethodCall;
     }
     return null;

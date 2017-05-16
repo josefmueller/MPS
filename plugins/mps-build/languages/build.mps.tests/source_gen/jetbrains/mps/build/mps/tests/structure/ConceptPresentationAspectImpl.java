@@ -4,16 +4,16 @@ package jetbrains.mps.build.mps.tests.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_BuildModuleTestsPlugin = new ConceptPresentationBuilder().shortDesc("adds ability to execute module tests to the project").create();
-  private final ConceptPresentation props_BuildMpsLayout_TestModule = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildMpsLayout_TestModuleGroup = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildMpsLayout_TestModules = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildMpsLayout_TestModules_Content = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_BuildModuleTestsPlugin;
+  private ConceptPresentation props_BuildMpsLayout_TestModule;
+  private ConceptPresentation props_BuildMpsLayout_TestModuleGroup;
+  private ConceptPresentation props_BuildMpsLayout_TestModules;
+  private ConceptPresentation props_BuildMpsLayout_TestModules_Content;
 
   @Override
   @Nullable
@@ -21,14 +21,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.BuildModuleTestsPlugin:
+        if (props_BuildModuleTestsPlugin == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("adds ability to execute module tests to the project");
+          props_BuildModuleTestsPlugin = cpb.create();
+        }
         return props_BuildModuleTestsPlugin;
       case LanguageConceptSwitch.BuildMpsLayout_TestModule:
+        if (props_BuildMpsLayout_TestModule == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BuildMpsLayout_TestModule = cpb.create();
+        }
         return props_BuildMpsLayout_TestModule;
       case LanguageConceptSwitch.BuildMpsLayout_TestModuleGroup:
+        if (props_BuildMpsLayout_TestModuleGroup == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BuildMpsLayout_TestModuleGroup = cpb.create();
+        }
         return props_BuildMpsLayout_TestModuleGroup;
       case LanguageConceptSwitch.BuildMpsLayout_TestModules:
+        if (props_BuildMpsLayout_TestModules == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BuildMpsLayout_TestModules = cpb.create();
+        }
         return props_BuildMpsLayout_TestModules;
       case LanguageConceptSwitch.BuildMpsLayout_TestModules_Content:
+        if (props_BuildMpsLayout_TestModules_Content == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BuildMpsLayout_TestModules_Content = cpb.create();
+        }
         return props_BuildMpsLayout_TestModules_Content;
     }
     return null;

@@ -4,22 +4,22 @@ package jetbrains.mps.testHybridEditor.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Block = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BlockExt = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BlockInstance = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Connector = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0d).create();
-  private final ConceptPresentation props_ConnectorEndInstance = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConnectorInstance = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0f).create();
-  private final ConceptPresentation props_Diagram = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InputPort = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MetaBlock = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0i).create();
-  private final ConceptPresentation props_MetaPort = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OutputPort = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Block;
+  private ConceptPresentation props_BlockExt;
+  private ConceptPresentation props_BlockInstance;
+  private ConceptPresentation props_Connector;
+  private ConceptPresentation props_ConnectorEndInstance;
+  private ConceptPresentation props_ConnectorInstance;
+  private ConceptPresentation props_Diagram;
+  private ConceptPresentation props_InputPort;
+  private ConceptPresentation props_MetaBlock;
+  private ConceptPresentation props_MetaPort;
+  private ConceptPresentation props_OutputPort;
 
   @Override
   @Nullable
@@ -27,26 +27,73 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Block:
+        if (props_Block == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Block = cpb.create();
+        }
         return props_Block;
       case LanguageConceptSwitch.BlockExt:
+        if (props_BlockExt == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BlockExt = cpb.create();
+        }
         return props_BlockExt;
       case LanguageConceptSwitch.BlockInstance:
+        if (props_BlockInstance == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BlockInstance = cpb.create();
+        }
         return props_BlockInstance;
       case LanguageConceptSwitch.Connector:
+        if (props_Connector == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a3b0m);
+          props_Connector = cpb.create();
+        }
         return props_Connector;
       case LanguageConceptSwitch.ConnectorEndInstance:
+        if (props_ConnectorEndInstance == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConnectorEndInstance = cpb.create();
+        }
         return props_ConnectorEndInstance;
       case LanguageConceptSwitch.ConnectorInstance:
+        if (props_ConnectorInstance == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a5b0m);
+          props_ConnectorInstance = cpb.create();
+        }
         return props_ConnectorInstance;
       case LanguageConceptSwitch.Diagram:
+        if (props_Diagram == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Diagram = cpb.create();
+        }
         return props_Diagram;
       case LanguageConceptSwitch.InputPort:
+        if (props_InputPort == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InputPort = cpb.create();
+        }
         return props_InputPort;
       case LanguageConceptSwitch.MetaBlock:
+        if (props_MetaBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a8b0m);
+          props_MetaBlock = cpb.create();
+        }
         return props_MetaBlock;
       case LanguageConceptSwitch.MetaPort:
+        if (props_MetaPort == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MetaPort = cpb.create();
+        }
         return props_MetaPort;
       case LanguageConceptSwitch.OutputPort:
+        if (props_OutputPort == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OutputPort = cpb.create();
+        }
         return props_OutputPort;
     }
     return null;

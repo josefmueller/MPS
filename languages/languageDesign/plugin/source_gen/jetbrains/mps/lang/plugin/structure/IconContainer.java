@@ -5,11 +5,11 @@ package jetbrains.mps.lang.plugin.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a0h = new IconResource("actionNew.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0i = new IconResource("actionGroupNew.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0ab = new IconResource("tool.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0yb = new IconResource("tabbedEditor.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0pc = new IconResource("ideaPluginDeclaration.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0yc = new IconResource("keymapChangesDeclaration.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0wd = new IconResource("preferences.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a7b0ue = new IconResource("actionNew.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a8b0ue = new IconResource("actionGroupNew.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a62b0ue = new IconResource("tool.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a05b0ue = new IconResource("tabbedEditor.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a76b0ue = new IconResource("ideaPluginDeclaration.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a67b0ue = new IconResource("keymapChangesDeclaration.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a1a0a001b0ue = new IconResource("preferences.png", IconContainer.class);
 }

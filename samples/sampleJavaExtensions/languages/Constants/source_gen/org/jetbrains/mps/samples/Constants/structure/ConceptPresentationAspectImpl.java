@@ -4,17 +4,17 @@ package org.jetbrains.mps.samples.Constants.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Constant = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstantReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstantReferenceKeeper = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Constants = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DistantConstantReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GeneratedClassKeeper = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Constant;
+  private ConceptPresentation props_ConstantReference;
+  private ConceptPresentation props_ConstantReferenceKeeper;
+  private ConceptPresentation props_Constants;
+  private ConceptPresentation props_DistantConstantReference;
+  private ConceptPresentation props_GeneratedClassKeeper;
 
   @Override
   @Nullable
@@ -22,16 +22,40 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Constant:
+        if (props_Constant == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Constant = cpb.create();
+        }
         return props_Constant;
       case LanguageConceptSwitch.ConstantReference:
+        if (props_ConstantReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConstantReference = cpb.create();
+        }
         return props_ConstantReference;
       case LanguageConceptSwitch.ConstantReferenceKeeper:
+        if (props_ConstantReferenceKeeper == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConstantReferenceKeeper = cpb.create();
+        }
         return props_ConstantReferenceKeeper;
       case LanguageConceptSwitch.Constants:
+        if (props_Constants == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Constants = cpb.create();
+        }
         return props_Constants;
       case LanguageConceptSwitch.DistantConstantReference:
+        if (props_DistantConstantReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DistantConstantReference = cpb.create();
+        }
         return props_DistantConstantReference;
       case LanguageConceptSwitch.GeneratedClassKeeper:
+        if (props_GeneratedClassKeeper == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratedClassKeeper = cpb.create();
+        }
         return props_GeneratedClassKeeper;
     }
     return null;

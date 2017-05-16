@@ -4,20 +4,20 @@ package jetbrains.mps.lang.editor.figures.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ExternalViewFigure = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExternalViewFigureParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Figure = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FigureAttribute = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FigureParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FigureParameterAttribute = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FigureParameterAttributeField = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FigureParameterAttributeMethod = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FigureParameterAttributeViewProperty = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_ExternalViewFigure;
+  private ConceptPresentation props_ExternalViewFigureParameter;
+  private ConceptPresentation props_Figure;
+  private ConceptPresentation props_FigureAttribute;
+  private ConceptPresentation props_FigureParameter;
+  private ConceptPresentation props_FigureParameterAttribute;
+  private ConceptPresentation props_FigureParameterAttributeField;
+  private ConceptPresentation props_FigureParameterAttributeMethod;
+  private ConceptPresentation props_FigureParameterAttributeViewProperty;
 
   @Override
   @Nullable
@@ -25,22 +25,58 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ExternalViewFigure:
+        if (props_ExternalViewFigure == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExternalViewFigure = cpb.create();
+        }
         return props_ExternalViewFigure;
       case LanguageConceptSwitch.ExternalViewFigureParameter:
+        if (props_ExternalViewFigureParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ExternalViewFigureParameter = cpb.create();
+        }
         return props_ExternalViewFigureParameter;
       case LanguageConceptSwitch.Figure:
+        if (props_Figure == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Figure = cpb.create();
+        }
         return props_Figure;
       case LanguageConceptSwitch.FigureAttribute:
+        if (props_FigureAttribute == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FigureAttribute = cpb.create();
+        }
         return props_FigureAttribute;
       case LanguageConceptSwitch.FigureParameter:
+        if (props_FigureParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FigureParameter = cpb.create();
+        }
         return props_FigureParameter;
       case LanguageConceptSwitch.FigureParameterAttribute:
+        if (props_FigureParameterAttribute == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FigureParameterAttribute = cpb.create();
+        }
         return props_FigureParameterAttribute;
       case LanguageConceptSwitch.FigureParameterAttributeField:
+        if (props_FigureParameterAttributeField == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FigureParameterAttributeField = cpb.create();
+        }
         return props_FigureParameterAttributeField;
       case LanguageConceptSwitch.FigureParameterAttributeMethod:
+        if (props_FigureParameterAttributeMethod == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FigureParameterAttributeMethod = cpb.create();
+        }
         return props_FigureParameterAttributeMethod;
       case LanguageConceptSwitch.FigureParameterAttributeViewProperty:
+        if (props_FigureParameterAttributeViewProperty == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FigureParameterAttributeViewProperty = cpb.create();
+        }
         return props_FigureParameterAttributeViewProperty;
     }
     return null;

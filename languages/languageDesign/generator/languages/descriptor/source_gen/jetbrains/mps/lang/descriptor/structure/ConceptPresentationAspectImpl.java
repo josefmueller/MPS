@@ -4,14 +4,14 @@ package jetbrains.mps.lang.descriptor.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_GeneratorDescriptor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GeneratorInternal_Aspect = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LanguageDescriptor = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_GeneratorDescriptor;
+  private ConceptPresentation props_GeneratorInternal_Aspect;
+  private ConceptPresentation props_LanguageDescriptor;
 
   @Override
   @Nullable
@@ -19,10 +19,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.GeneratorDescriptor:
+        if (props_GeneratorDescriptor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratorDescriptor = cpb.create();
+        }
         return props_GeneratorDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_Aspect:
+        if (props_GeneratorInternal_Aspect == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratorInternal_Aspect = cpb.create();
+        }
         return props_GeneratorInternal_Aspect;
       case LanguageConceptSwitch.LanguageDescriptor:
+        if (props_LanguageDescriptor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_LanguageDescriptor = cpb.create();
+        }
         return props_LanguageDescriptor;
     }
     return null;

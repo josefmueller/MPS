@@ -4,20 +4,20 @@ package jetbrains.mps.lang.behavior.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ConceptBehavior = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
-  private final ConceptPresentation props_ConceptConstructorDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptMethodDeclaration = new ConceptPresentationBuilder(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL).deprecateProperty(0x11d43480581L, "isPrivate").create();
-  private final ConceptPresentation props_LocalBehaviorMethodCall = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SuperConceptExpression = new ConceptPresentationBuilder().shortDesc("super concept").create();
-  private final ConceptPresentation props_SuperExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SuperNodeExpression = new ConceptPresentationBuilder().shortDesc("super node").create();
-  private final ConceptPresentation props_ThisConceptExpression = new ConceptPresentationBuilder().shortDesc("this concept").create();
-  private final ConceptPresentation props_ThisNodeExpression = new ConceptPresentationBuilder().shortDesc("this node").create();
+  private ConceptPresentation props_ConceptBehavior;
+  private ConceptPresentation props_ConceptConstructorDeclaration;
+  private ConceptPresentation props_ConceptMethodDeclaration;
+  private ConceptPresentation props_LocalBehaviorMethodCall;
+  private ConceptPresentation props_SuperConceptExpression;
+  private ConceptPresentation props_SuperExpression;
+  private ConceptPresentation props_SuperNodeExpression;
+  private ConceptPresentation props_ThisConceptExpression;
+  private ConceptPresentation props_ThisNodeExpression;
 
   @Override
   @Nullable
@@ -25,22 +25,64 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ConceptBehavior:
+        if (props_ConceptBehavior == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0k);
+          props_ConceptBehavior = cpb.create();
+        }
         return props_ConceptBehavior;
       case LanguageConceptSwitch.ConceptConstructorDeclaration:
+        if (props_ConceptConstructorDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptConstructorDeclaration = cpb.create();
+        }
         return props_ConceptConstructorDeclaration;
       case LanguageConceptSwitch.ConceptMethodDeclaration:
+        if (props_ConceptMethodDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL);
+          cpb.deprecateProperty(0x11d43480581L, "isPrivate");
+          props_ConceptMethodDeclaration = cpb.create();
+        }
         return props_ConceptMethodDeclaration;
       case LanguageConceptSwitch.LocalBehaviorMethodCall:
+        if (props_LocalBehaviorMethodCall == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_LocalBehaviorMethodCall = cpb.create();
+        }
         return props_LocalBehaviorMethodCall;
       case LanguageConceptSwitch.SuperConceptExpression:
+        if (props_SuperConceptExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("super concept");
+          props_SuperConceptExpression = cpb.create();
+        }
         return props_SuperConceptExpression;
       case LanguageConceptSwitch.SuperExpression:
+        if (props_SuperExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SuperExpression = cpb.create();
+        }
         return props_SuperExpression;
       case LanguageConceptSwitch.SuperNodeExpression:
+        if (props_SuperNodeExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("super node");
+          props_SuperNodeExpression = cpb.create();
+        }
         return props_SuperNodeExpression;
       case LanguageConceptSwitch.ThisConceptExpression:
+        if (props_ThisConceptExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("this concept");
+          props_ThisConceptExpression = cpb.create();
+        }
         return props_ThisConceptExpression;
       case LanguageConceptSwitch.ThisNodeExpression:
+        if (props_ThisNodeExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("this node");
+          props_ThisNodeExpression = cpb.create();
+        }
         return props_ThisNodeExpression;
     }
     return null;

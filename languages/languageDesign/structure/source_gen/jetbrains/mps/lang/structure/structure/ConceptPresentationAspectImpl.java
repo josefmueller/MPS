@@ -4,33 +4,33 @@ package jetbrains.mps.lang.structure.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractConceptDeclaration = new ConceptPresentationBuilder(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).deprecateProperty(0x16096a174f259419L, "intConceptId").create();
-  private final ConceptPresentation props_AggregationLinkDeclarationScopeKind = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AttributeInfo = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AttributeInfo_AttributedConcept = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AttributeInfo_IsMultiple = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptDeclaration = new ConceptPresentationBuilder(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L).deprecateProperty(0x10e328118ddL, "iconPath").icon(IconContainer.RESOURCE_a0a0f).create();
-  private final ConceptPresentation props_ConstrainedDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
-  private final ConceptPresentation props_DataTypeDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DeprecatedNodeAnnotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DocumentationObjective = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DocumentationObjectiveRef = new ConceptPresentationBuilder().shortDesc("smart reference to documentable target").create();
-  private final ConceptPresentation props_DocumentedNodeAnnotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EnumerationDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0m).create();
-  private final ConceptPresentation props_EnumerationMemberDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IConceptAspect = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IStructureDeprecatable = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InterfaceConceptDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0q).create();
-  private final ConceptPresentation props_InterfaceConceptReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LinkDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0s).create();
-  private final ConceptPresentation props_PrimitiveDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0t).create();
-  private final ConceptPresentation props_PropertyDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0u).create();
-  private final ConceptPresentation props_ReferenceLinkDeclartionScopeKind = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_AbstractConceptDeclaration;
+  private ConceptPresentation props_AggregationLinkDeclarationScopeKind;
+  private ConceptPresentation props_AttributeInfo;
+  private ConceptPresentation props_AttributeInfo_AttributedConcept;
+  private ConceptPresentation props_AttributeInfo_IsMultiple;
+  private ConceptPresentation props_ConceptDeclaration;
+  private ConceptPresentation props_ConstrainedDataTypeDeclaration;
+  private ConceptPresentation props_DataTypeDeclaration;
+  private ConceptPresentation props_DeprecatedNodeAnnotation;
+  private ConceptPresentation props_DocumentationObjective;
+  private ConceptPresentation props_DocumentationObjectiveRef;
+  private ConceptPresentation props_DocumentedNodeAnnotation;
+  private ConceptPresentation props_EnumerationDataTypeDeclaration;
+  private ConceptPresentation props_EnumerationMemberDeclaration;
+  private ConceptPresentation props_IConceptAspect;
+  private ConceptPresentation props_IStructureDeprecatable;
+  private ConceptPresentation props_InterfaceConceptDeclaration;
+  private ConceptPresentation props_InterfaceConceptReference;
+  private ConceptPresentation props_LinkDeclaration;
+  private ConceptPresentation props_PrimitiveDataTypeDeclaration;
+  private ConceptPresentation props_PropertyDeclaration;
+  private ConceptPresentation props_ReferenceLinkDeclartionScopeKind;
 
   @Override
   @Nullable
@@ -38,48 +38,146 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbstractConceptDeclaration:
+        if (props_AbstractConceptDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL);
+          cpb.deprecateProperty(0x16096a174f259419L, "intConceptId");
+          props_AbstractConceptDeclaration = cpb.create();
+        }
         return props_AbstractConceptDeclaration;
       case LanguageConceptSwitch.AggregationLinkDeclarationScopeKind:
+        if (props_AggregationLinkDeclarationScopeKind == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AggregationLinkDeclarationScopeKind = cpb.create();
+        }
         return props_AggregationLinkDeclarationScopeKind;
       case LanguageConceptSwitch.AttributeInfo:
+        if (props_AttributeInfo == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AttributeInfo = cpb.create();
+        }
         return props_AttributeInfo;
       case LanguageConceptSwitch.AttributeInfo_AttributedConcept:
+        if (props_AttributeInfo_AttributedConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AttributeInfo_AttributedConcept = cpb.create();
+        }
         return props_AttributeInfo_AttributedConcept;
       case LanguageConceptSwitch.AttributeInfo_IsMultiple:
+        if (props_AttributeInfo_IsMultiple == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AttributeInfo_IsMultiple = cpb.create();
+        }
         return props_AttributeInfo_IsMultiple;
       case LanguageConceptSwitch.ConceptDeclaration:
+        if (props_ConceptDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L);
+          cpb.deprecateProperty(0x10e328118ddL, "iconPath");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a5b0x);
+          props_ConceptDeclaration = cpb.create();
+        }
         return props_ConceptDeclaration;
       case LanguageConceptSwitch.ConstrainedDataTypeDeclaration:
+        if (props_ConstrainedDataTypeDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a6b0x);
+          props_ConstrainedDataTypeDeclaration = cpb.create();
+        }
         return props_ConstrainedDataTypeDeclaration;
       case LanguageConceptSwitch.DataTypeDeclaration:
+        if (props_DataTypeDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DataTypeDeclaration = cpb.create();
+        }
         return props_DataTypeDeclaration;
       case LanguageConceptSwitch.DeprecatedNodeAnnotation:
+        if (props_DeprecatedNodeAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DeprecatedNodeAnnotation = cpb.create();
+        }
         return props_DeprecatedNodeAnnotation;
       case LanguageConceptSwitch.DocumentationObjective:
+        if (props_DocumentationObjective == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DocumentationObjective = cpb.create();
+        }
         return props_DocumentationObjective;
       case LanguageConceptSwitch.DocumentationObjectiveRef:
+        if (props_DocumentationObjectiveRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("smart reference to documentable target");
+          props_DocumentationObjectiveRef = cpb.create();
+        }
         return props_DocumentationObjectiveRef;
       case LanguageConceptSwitch.DocumentedNodeAnnotation:
+        if (props_DocumentedNodeAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DocumentedNodeAnnotation = cpb.create();
+        }
         return props_DocumentedNodeAnnotation;
       case LanguageConceptSwitch.EnumerationDataTypeDeclaration:
+        if (props_EnumerationDataTypeDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a21b0x);
+          props_EnumerationDataTypeDeclaration = cpb.create();
+        }
         return props_EnumerationDataTypeDeclaration;
       case LanguageConceptSwitch.EnumerationMemberDeclaration:
+        if (props_EnumerationMemberDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EnumerationMemberDeclaration = cpb.create();
+        }
         return props_EnumerationMemberDeclaration;
       case LanguageConceptSwitch.IConceptAspect:
+        if (props_IConceptAspect == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IConceptAspect = cpb.create();
+        }
         return props_IConceptAspect;
       case LanguageConceptSwitch.IStructureDeprecatable:
+        if (props_IStructureDeprecatable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IStructureDeprecatable = cpb.create();
+        }
         return props_IStructureDeprecatable;
       case LanguageConceptSwitch.InterfaceConceptDeclaration:
+        if (props_InterfaceConceptDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a61b0x);
+          props_InterfaceConceptDeclaration = cpb.create();
+        }
         return props_InterfaceConceptDeclaration;
       case LanguageConceptSwitch.InterfaceConceptReference:
+        if (props_InterfaceConceptReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InterfaceConceptReference = cpb.create();
+        }
         return props_InterfaceConceptReference;
       case LanguageConceptSwitch.LinkDeclaration:
+        if (props_LinkDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a81b0x);
+          props_LinkDeclaration = cpb.create();
+        }
         return props_LinkDeclaration;
       case LanguageConceptSwitch.PrimitiveDataTypeDeclaration:
+        if (props_PrimitiveDataTypeDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a91b0x);
+          props_PrimitiveDataTypeDeclaration = cpb.create();
+        }
         return props_PrimitiveDataTypeDeclaration;
       case LanguageConceptSwitch.PropertyDeclaration:
+        if (props_PropertyDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a02b0x);
+          props_PropertyDeclaration = cpb.create();
+        }
         return props_PropertyDeclaration;
       case LanguageConceptSwitch.ReferenceLinkDeclartionScopeKind:
+        if (props_ReferenceLinkDeclartionScopeKind == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ReferenceLinkDeclartionScopeKind = cpb.create();
+        }
         return props_ReferenceLinkDeclartionScopeKind;
     }
     return null;

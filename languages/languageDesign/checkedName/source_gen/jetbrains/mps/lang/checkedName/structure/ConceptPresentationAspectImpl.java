@@ -4,14 +4,14 @@ package jetbrains.mps.lang.checkedName.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ICheckedNamePolicy = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PropertyRefExpression = new ConceptPresentationBuilder().shortDesc("property reference").create();
-  private final ConceptPresentation props_PropertyRefType = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_ICheckedNamePolicy;
+  private ConceptPresentation props_PropertyRefExpression;
+  private ConceptPresentation props_PropertyRefType;
 
   @Override
   @Nullable
@@ -19,10 +19,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ICheckedNamePolicy:
+        if (props_ICheckedNamePolicy == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ICheckedNamePolicy = cpb.create();
+        }
         return props_ICheckedNamePolicy;
       case LanguageConceptSwitch.PropertyRefExpression:
+        if (props_PropertyRefExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("property reference");
+          props_PropertyRefExpression = cpb.create();
+        }
         return props_PropertyRefExpression;
       case LanguageConceptSwitch.PropertyRefType:
+        if (props_PropertyRefType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PropertyRefType = cpb.create();
+        }
         return props_PropertyRefType;
     }
     return null;

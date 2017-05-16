@@ -4,30 +4,30 @@ package jetbrains.mps.lang.project.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_DevKit = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Generator = new ConceptPresentationBuilder(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L).deprecateProperty(0x3be012d639e8a44L, "generatorUID").create();
-  private final ConceptPresentation props_Language = new ConceptPresentationBuilder(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL).deprecateAggregation(0x3be012d639dff83L, "runtimeStubModels").create();
-  private final ConceptPresentation props_MappingConfigExternalRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MappingConfigNormalRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MappingConfigRefAllGlobal = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MappingConfigRefAllLocal = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MappingConfigRefBase = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MappingConfigRefSet = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MappingPriorityRule = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModelReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModelRoot = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Module = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModuleDependency = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModuleReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Solution = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SourcePath = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StubEntry = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StubSolution = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_DevKit;
+  private ConceptPresentation props_Generator;
+  private ConceptPresentation props_Language;
+  private ConceptPresentation props_MappingConfigExternalRef;
+  private ConceptPresentation props_MappingConfigNormalRef;
+  private ConceptPresentation props_MappingConfigRefAllGlobal;
+  private ConceptPresentation props_MappingConfigRefAllLocal;
+  private ConceptPresentation props_MappingConfigRefBase;
+  private ConceptPresentation props_MappingConfigRefSet;
+  private ConceptPresentation props_MappingPriorityRule;
+  private ConceptPresentation props_ModelReference;
+  private ConceptPresentation props_ModelRoot;
+  private ConceptPresentation props_Module;
+  private ConceptPresentation props_ModuleDependency;
+  private ConceptPresentation props_ModuleReference;
+  private ConceptPresentation props_Solution;
+  private ConceptPresentation props_SourcePath;
+  private ConceptPresentation props_StubEntry;
+  private ConceptPresentation props_StubSolution;
 
   @Override
   @Nullable
@@ -35,42 +35,120 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.DevKit:
+        if (props_DevKit == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DevKit = cpb.create();
+        }
         return props_DevKit;
       case LanguageConceptSwitch.Generator:
+        if (props_Generator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L);
+          cpb.deprecateProperty(0x3be012d639e8a44L, "generatorUID");
+          props_Generator = cpb.create();
+        }
         return props_Generator;
       case LanguageConceptSwitch.Language:
+        if (props_Language == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL);
+          cpb.deprecateAggregation(0x3be012d639dff83L, "runtimeStubModels");
+          props_Language = cpb.create();
+        }
         return props_Language;
       case LanguageConceptSwitch.MappingConfigExternalRef:
+        if (props_MappingConfigExternalRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MappingConfigExternalRef = cpb.create();
+        }
         return props_MappingConfigExternalRef;
       case LanguageConceptSwitch.MappingConfigNormalRef:
+        if (props_MappingConfigNormalRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MappingConfigNormalRef = cpb.create();
+        }
         return props_MappingConfigNormalRef;
       case LanguageConceptSwitch.MappingConfigRefAllGlobal:
+        if (props_MappingConfigRefAllGlobal == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MappingConfigRefAllGlobal = cpb.create();
+        }
         return props_MappingConfigRefAllGlobal;
       case LanguageConceptSwitch.MappingConfigRefAllLocal:
+        if (props_MappingConfigRefAllLocal == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MappingConfigRefAllLocal = cpb.create();
+        }
         return props_MappingConfigRefAllLocal;
       case LanguageConceptSwitch.MappingConfigRefBase:
+        if (props_MappingConfigRefBase == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MappingConfigRefBase = cpb.create();
+        }
         return props_MappingConfigRefBase;
       case LanguageConceptSwitch.MappingConfigRefSet:
+        if (props_MappingConfigRefSet == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MappingConfigRefSet = cpb.create();
+        }
         return props_MappingConfigRefSet;
       case LanguageConceptSwitch.MappingPriorityRule:
+        if (props_MappingPriorityRule == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MappingPriorityRule = cpb.create();
+        }
         return props_MappingPriorityRule;
       case LanguageConceptSwitch.ModelReference:
+        if (props_ModelReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModelReference = cpb.create();
+        }
         return props_ModelReference;
       case LanguageConceptSwitch.ModelRoot:
+        if (props_ModelRoot == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModelRoot = cpb.create();
+        }
         return props_ModelRoot;
       case LanguageConceptSwitch.Module:
+        if (props_Module == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Module = cpb.create();
+        }
         return props_Module;
       case LanguageConceptSwitch.ModuleDependency:
+        if (props_ModuleDependency == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModuleDependency = cpb.create();
+        }
         return props_ModuleDependency;
       case LanguageConceptSwitch.ModuleReference:
+        if (props_ModuleReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModuleReference = cpb.create();
+        }
         return props_ModuleReference;
       case LanguageConceptSwitch.Solution:
+        if (props_Solution == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Solution = cpb.create();
+        }
         return props_Solution;
       case LanguageConceptSwitch.SourcePath:
+        if (props_SourcePath == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SourcePath = cpb.create();
+        }
         return props_SourcePath;
       case LanguageConceptSwitch.StubEntry:
+        if (props_StubEntry == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_StubEntry = cpb.create();
+        }
         return props_StubEntry;
       case LanguageConceptSwitch.StubSolution:
+        if (props_StubSolution == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_StubSolution = cpb.create();
+        }
         return props_StubSolution;
     }
     return null;

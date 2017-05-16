@@ -4,31 +4,31 @@ package jetbrains.mps.lang.pattern.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ActionAsPattern = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AsPattern = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GeneratorInternal_ChildDescriptor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GeneratorInternal_PropertyDescriptor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GeneratorInternal_ReferenceDescriptor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InsertAfterPosition = new ConceptPresentationBuilder().shortDesc("after").create();
-  private final ConceptPresentation props_InsertBeforePosition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InsertPosition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LinkPatternVariableDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ListPattern = new ConceptPresentationBuilder().shortDesc("list pattern").create();
-  private final ConceptPresentation props_OrPattern = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OrPatternClause = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OrPatternVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Pattern = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PatternExpression = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_PatternVariableDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PatternVariableReference = new ConceptPresentationBuilder().shortDesc("pattern variable reference").create();
-  private final ConceptPresentation props_PropertyPatternVariableDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_WildcardPattern = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_ActionAsPattern;
+  private ConceptPresentation props_ActionStatement;
+  private ConceptPresentation props_AsPattern;
+  private ConceptPresentation props_GeneratorInternal_ChildDescriptor;
+  private ConceptPresentation props_GeneratorInternal_PropertyDescriptor;
+  private ConceptPresentation props_GeneratorInternal_ReferenceDescriptor;
+  private ConceptPresentation props_InsertAfterPosition;
+  private ConceptPresentation props_InsertBeforePosition;
+  private ConceptPresentation props_InsertPosition;
+  private ConceptPresentation props_LinkPatternVariableDeclaration;
+  private ConceptPresentation props_ListPattern;
+  private ConceptPresentation props_OrPattern;
+  private ConceptPresentation props_OrPatternClause;
+  private ConceptPresentation props_OrPatternVariableReference;
+  private ConceptPresentation props_Pattern;
+  private ConceptPresentation props_PatternExpression;
+  private ConceptPresentation props_PatternVariableDeclaration;
+  private ConceptPresentation props_PatternVariableReference;
+  private ConceptPresentation props_PropertyPatternVariableDeclaration;
+  private ConceptPresentation props_WildcardPattern;
 
   @Override
   @Nullable
@@ -36,44 +36,128 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ActionAsPattern:
+        if (props_ActionAsPattern == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ActionAsPattern = cpb.create();
+        }
         return props_ActionAsPattern;
       case LanguageConceptSwitch.ActionStatement:
+        if (props_ActionStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ActionStatement = cpb.create();
+        }
         return props_ActionStatement;
       case LanguageConceptSwitch.AsPattern:
+        if (props_AsPattern == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AsPattern = cpb.create();
+        }
         return props_AsPattern;
       case LanguageConceptSwitch.GeneratorInternal_ChildDescriptor:
+        if (props_GeneratorInternal_ChildDescriptor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratorInternal_ChildDescriptor = cpb.create();
+        }
         return props_GeneratorInternal_ChildDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
+        if (props_GeneratorInternal_PropertyDescriptor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratorInternal_PropertyDescriptor = cpb.create();
+        }
         return props_GeneratorInternal_PropertyDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
+        if (props_GeneratorInternal_ReferenceDescriptor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratorInternal_ReferenceDescriptor = cpb.create();
+        }
         return props_GeneratorInternal_ReferenceDescriptor;
       case LanguageConceptSwitch.InsertAfterPosition:
+        if (props_InsertAfterPosition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("after");
+          props_InsertAfterPosition = cpb.create();
+        }
         return props_InsertAfterPosition;
       case LanguageConceptSwitch.InsertBeforePosition:
+        if (props_InsertBeforePosition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InsertBeforePosition = cpb.create();
+        }
         return props_InsertBeforePosition;
       case LanguageConceptSwitch.InsertPosition:
+        if (props_InsertPosition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InsertPosition = cpb.create();
+        }
         return props_InsertPosition;
       case LanguageConceptSwitch.LinkPatternVariableDeclaration:
+        if (props_LinkPatternVariableDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_LinkPatternVariableDeclaration = cpb.create();
+        }
         return props_LinkPatternVariableDeclaration;
       case LanguageConceptSwitch.ListPattern:
+        if (props_ListPattern == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("list pattern");
+          props_ListPattern = cpb.create();
+        }
         return props_ListPattern;
       case LanguageConceptSwitch.OrPattern:
+        if (props_OrPattern == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OrPattern = cpb.create();
+        }
         return props_OrPattern;
       case LanguageConceptSwitch.OrPatternClause:
+        if (props_OrPatternClause == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OrPatternClause = cpb.create();
+        }
         return props_OrPatternClause;
       case LanguageConceptSwitch.OrPatternVariableReference:
+        if (props_OrPatternVariableReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OrPatternVariableReference = cpb.create();
+        }
         return props_OrPatternVariableReference;
       case LanguageConceptSwitch.Pattern:
+        if (props_Pattern == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Pattern = cpb.create();
+        }
         return props_Pattern;
       case LanguageConceptSwitch.PatternExpression:
+        if (props_PatternExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L);
+          cpb.deprecateAggregation(0x108a9cb4792L, "patternNode");
+          props_PatternExpression = cpb.create();
+        }
         return props_PatternExpression;
       case LanguageConceptSwitch.PatternVariableDeclaration:
+        if (props_PatternVariableDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PatternVariableDeclaration = cpb.create();
+        }
         return props_PatternVariableDeclaration;
       case LanguageConceptSwitch.PatternVariableReference:
+        if (props_PatternVariableReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("pattern variable reference");
+          props_PatternVariableReference = cpb.create();
+        }
         return props_PatternVariableReference;
       case LanguageConceptSwitch.PropertyPatternVariableDeclaration:
+        if (props_PropertyPatternVariableDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PropertyPatternVariableDeclaration = cpb.create();
+        }
         return props_PropertyPatternVariableDeclaration;
       case LanguageConceptSwitch.WildcardPattern:
+        if (props_WildcardPattern == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_WildcardPattern = cpb.create();
+        }
         return props_WildcardPattern;
     }
     return null;

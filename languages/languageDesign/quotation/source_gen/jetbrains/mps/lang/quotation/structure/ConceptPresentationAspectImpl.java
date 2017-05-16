@@ -4,28 +4,28 @@ package jetbrains.mps.lang.quotation.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractAntiquotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Antiquotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GeneratorInternal_InternalReferenceHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GeneratorInternal_PropertyDescriptor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GeneratorInternal_ReferenceDescriptor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ListAntiquotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeBuilder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeBuilderExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeBuilderInitLink = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeBuilderInitPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeBuilderInitProperty = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeBuilderList = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeBuilderNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeBuilderRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PropertyAntiquotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Quotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ReferenceAntiquotation = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_AbstractAntiquotation;
+  private ConceptPresentation props_Antiquotation;
+  private ConceptPresentation props_GeneratorInternal_InternalReferenceHolder;
+  private ConceptPresentation props_GeneratorInternal_PropertyDescriptor;
+  private ConceptPresentation props_GeneratorInternal_ReferenceDescriptor;
+  private ConceptPresentation props_ListAntiquotation;
+  private ConceptPresentation props_NodeBuilder;
+  private ConceptPresentation props_NodeBuilderExpression;
+  private ConceptPresentation props_NodeBuilderInitLink;
+  private ConceptPresentation props_NodeBuilderInitPart;
+  private ConceptPresentation props_NodeBuilderInitProperty;
+  private ConceptPresentation props_NodeBuilderList;
+  private ConceptPresentation props_NodeBuilderNode;
+  private ConceptPresentation props_NodeBuilderRef;
+  private ConceptPresentation props_PropertyAntiquotation;
+  private ConceptPresentation props_Quotation;
+  private ConceptPresentation props_ReferenceAntiquotation;
 
   @Override
   @Nullable
@@ -33,38 +33,106 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbstractAntiquotation:
+        if (props_AbstractAntiquotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractAntiquotation = cpb.create();
+        }
         return props_AbstractAntiquotation;
       case LanguageConceptSwitch.Antiquotation:
+        if (props_Antiquotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Antiquotation = cpb.create();
+        }
         return props_Antiquotation;
       case LanguageConceptSwitch.GeneratorInternal_InternalReferenceHolder:
+        if (props_GeneratorInternal_InternalReferenceHolder == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratorInternal_InternalReferenceHolder = cpb.create();
+        }
         return props_GeneratorInternal_InternalReferenceHolder;
       case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
+        if (props_GeneratorInternal_PropertyDescriptor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratorInternal_PropertyDescriptor = cpb.create();
+        }
         return props_GeneratorInternal_PropertyDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
+        if (props_GeneratorInternal_ReferenceDescriptor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GeneratorInternal_ReferenceDescriptor = cpb.create();
+        }
         return props_GeneratorInternal_ReferenceDescriptor;
       case LanguageConceptSwitch.ListAntiquotation:
+        if (props_ListAntiquotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ListAntiquotation = cpb.create();
+        }
         return props_ListAntiquotation;
       case LanguageConceptSwitch.NodeBuilder:
+        if (props_NodeBuilder == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeBuilder = cpb.create();
+        }
         return props_NodeBuilder;
       case LanguageConceptSwitch.NodeBuilderExpression:
+        if (props_NodeBuilderExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeBuilderExpression = cpb.create();
+        }
         return props_NodeBuilderExpression;
       case LanguageConceptSwitch.NodeBuilderInitLink:
+        if (props_NodeBuilderInitLink == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeBuilderInitLink = cpb.create();
+        }
         return props_NodeBuilderInitLink;
       case LanguageConceptSwitch.NodeBuilderInitPart:
+        if (props_NodeBuilderInitPart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeBuilderInitPart = cpb.create();
+        }
         return props_NodeBuilderInitPart;
       case LanguageConceptSwitch.NodeBuilderInitProperty:
+        if (props_NodeBuilderInitProperty == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeBuilderInitProperty = cpb.create();
+        }
         return props_NodeBuilderInitProperty;
       case LanguageConceptSwitch.NodeBuilderList:
+        if (props_NodeBuilderList == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeBuilderList = cpb.create();
+        }
         return props_NodeBuilderList;
       case LanguageConceptSwitch.NodeBuilderNode:
+        if (props_NodeBuilderNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeBuilderNode = cpb.create();
+        }
         return props_NodeBuilderNode;
       case LanguageConceptSwitch.NodeBuilderRef:
+        if (props_NodeBuilderRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeBuilderRef = cpb.create();
+        }
         return props_NodeBuilderRef;
       case LanguageConceptSwitch.PropertyAntiquotation:
+        if (props_PropertyAntiquotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PropertyAntiquotation = cpb.create();
+        }
         return props_PropertyAntiquotation;
       case LanguageConceptSwitch.Quotation:
+        if (props_Quotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Quotation = cpb.create();
+        }
         return props_Quotation;
       case LanguageConceptSwitch.ReferenceAntiquotation:
+        if (props_ReferenceAntiquotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ReferenceAntiquotation = cpb.create();
+        }
         return props_ReferenceAntiquotation;
     }
     return null;

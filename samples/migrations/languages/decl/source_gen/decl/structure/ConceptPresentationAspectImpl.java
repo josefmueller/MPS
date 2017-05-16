@@ -4,17 +4,17 @@ package decl.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_DeclMigrationData_Component = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DeclMigrationData_WholeModule = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NewComponent = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NewComponentMember = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OldComponent = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_OldComponentMember = new ConceptPresentationBuilder().deprecated(true).create();
+  private ConceptPresentation props_DeclMigrationData_Component;
+  private ConceptPresentation props_DeclMigrationData_WholeModule;
+  private ConceptPresentation props_NewComponent;
+  private ConceptPresentation props_NewComponentMember;
+  private ConceptPresentation props_OldComponent;
+  private ConceptPresentation props_OldComponentMember;
 
   @Override
   @Nullable
@@ -22,16 +22,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.DeclMigrationData_Component:
+        if (props_DeclMigrationData_Component == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DeclMigrationData_Component = cpb.create();
+        }
         return props_DeclMigrationData_Component;
       case LanguageConceptSwitch.DeclMigrationData_WholeModule:
+        if (props_DeclMigrationData_WholeModule == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DeclMigrationData_WholeModule = cpb.create();
+        }
         return props_DeclMigrationData_WholeModule;
       case LanguageConceptSwitch.NewComponent:
+        if (props_NewComponent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NewComponent = cpb.create();
+        }
         return props_NewComponent;
       case LanguageConceptSwitch.NewComponentMember:
+        if (props_NewComponentMember == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NewComponentMember = cpb.create();
+        }
         return props_NewComponentMember;
       case LanguageConceptSwitch.OldComponent:
+        if (props_OldComponent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_OldComponent = cpb.create();
+        }
         return props_OldComponent;
       case LanguageConceptSwitch.OldComponentMember:
+        if (props_OldComponentMember == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_OldComponentMember = cpb.create();
+        }
         return props_OldComponentMember;
     }
     return null;

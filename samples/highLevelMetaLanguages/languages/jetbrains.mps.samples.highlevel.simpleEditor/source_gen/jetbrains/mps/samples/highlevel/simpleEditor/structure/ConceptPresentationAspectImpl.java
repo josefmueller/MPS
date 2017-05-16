@@ -4,14 +4,14 @@ package jetbrains.mps.samples.highlevel.simpleEditor.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_EditorAspectDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SimpleEditorDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SimplePropertyReference = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_EditorAspectDeclaration;
+  private ConceptPresentation props_SimpleEditorDeclaration;
+  private ConceptPresentation props_SimplePropertyReference;
 
   @Override
   @Nullable
@@ -19,10 +19,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.EditorAspectDeclaration:
+        if (props_EditorAspectDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EditorAspectDeclaration = cpb.create();
+        }
         return props_EditorAspectDeclaration;
       case LanguageConceptSwitch.SimpleEditorDeclaration:
+        if (props_SimpleEditorDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SimpleEditorDeclaration = cpb.create();
+        }
         return props_SimpleEditorDeclaration;
       case LanguageConceptSwitch.SimplePropertyReference:
+        if (props_SimplePropertyReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SimplePropertyReference = cpb.create();
+        }
         return props_SimplePropertyReference;
     }
     return null;

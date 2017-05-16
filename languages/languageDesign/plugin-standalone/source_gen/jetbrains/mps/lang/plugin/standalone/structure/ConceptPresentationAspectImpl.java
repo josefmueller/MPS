@@ -4,22 +4,22 @@ package jetbrains.mps.lang.plugin.standalone.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ApplicationPluginDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
-  private final ConceptPresentation props_ApplicationPluginDisposeBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ApplicationPluginInitBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ApplicationPluginType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GetPreferencesComponentInProjectOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GetToolInProjectOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ProjectPluginDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
-  private final ConceptPresentation props_ProjectPluginDisposeBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ProjectPluginInitBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ProjectPluginType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StandalonePluginDescriptor = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_ApplicationPluginDeclaration;
+  private ConceptPresentation props_ApplicationPluginDisposeBlock;
+  private ConceptPresentation props_ApplicationPluginInitBlock;
+  private ConceptPresentation props_ApplicationPluginType;
+  private ConceptPresentation props_GetPreferencesComponentInProjectOperation;
+  private ConceptPresentation props_GetToolInProjectOperation;
+  private ConceptPresentation props_ProjectPluginDeclaration;
+  private ConceptPresentation props_ProjectPluginDisposeBlock;
+  private ConceptPresentation props_ProjectPluginInitBlock;
+  private ConceptPresentation props_ProjectPluginType;
+  private ConceptPresentation props_StandalonePluginDescriptor;
 
   @Override
   @Nullable
@@ -27,26 +27,72 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ApplicationPluginDeclaration:
+        if (props_ApplicationPluginDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0m);
+          props_ApplicationPluginDeclaration = cpb.create();
+        }
         return props_ApplicationPluginDeclaration;
       case LanguageConceptSwitch.ApplicationPluginDisposeBlock:
+        if (props_ApplicationPluginDisposeBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ApplicationPluginDisposeBlock = cpb.create();
+        }
         return props_ApplicationPluginDisposeBlock;
       case LanguageConceptSwitch.ApplicationPluginInitBlock:
+        if (props_ApplicationPluginInitBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ApplicationPluginInitBlock = cpb.create();
+        }
         return props_ApplicationPluginInitBlock;
       case LanguageConceptSwitch.ApplicationPluginType:
+        if (props_ApplicationPluginType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ApplicationPluginType = cpb.create();
+        }
         return props_ApplicationPluginType;
       case LanguageConceptSwitch.GetPreferencesComponentInProjectOperation:
+        if (props_GetPreferencesComponentInProjectOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GetPreferencesComponentInProjectOperation = cpb.create();
+        }
         return props_GetPreferencesComponentInProjectOperation;
       case LanguageConceptSwitch.GetToolInProjectOperation:
+        if (props_GetToolInProjectOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GetToolInProjectOperation = cpb.create();
+        }
         return props_GetToolInProjectOperation;
       case LanguageConceptSwitch.ProjectPluginDeclaration:
+        if (props_ProjectPluginDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a6b0m);
+          props_ProjectPluginDeclaration = cpb.create();
+        }
         return props_ProjectPluginDeclaration;
       case LanguageConceptSwitch.ProjectPluginDisposeBlock:
+        if (props_ProjectPluginDisposeBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ProjectPluginDisposeBlock = cpb.create();
+        }
         return props_ProjectPluginDisposeBlock;
       case LanguageConceptSwitch.ProjectPluginInitBlock:
+        if (props_ProjectPluginInitBlock == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ProjectPluginInitBlock = cpb.create();
+        }
         return props_ProjectPluginInitBlock;
       case LanguageConceptSwitch.ProjectPluginType:
+        if (props_ProjectPluginType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ProjectPluginType = cpb.create();
+        }
         return props_ProjectPluginType;
       case LanguageConceptSwitch.StandalonePluginDescriptor:
+        if (props_StandalonePluginDescriptor == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_StandalonePluginDescriptor = cpb.create();
+        }
         return props_StandalonePluginDescriptor;
     }
     return null;

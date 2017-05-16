@@ -4,18 +4,18 @@ package jetbrains.mps.lang.pattern.testLang.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ListValue = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PatternTest = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PropertyValue = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestListReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestPropertyVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_VariableValue = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_ListValue;
+  private ConceptPresentation props_PatternTest;
+  private ConceptPresentation props_PropertyValue;
+  private ConceptPresentation props_TestListReference;
+  private ConceptPresentation props_TestPropertyVariableReference;
+  private ConceptPresentation props_TestVariableReference;
+  private ConceptPresentation props_VariableValue;
 
   @Override
   @Nullable
@@ -23,18 +23,46 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ListValue:
+        if (props_ListValue == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ListValue = cpb.create();
+        }
         return props_ListValue;
       case LanguageConceptSwitch.PatternTest:
+        if (props_PatternTest == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PatternTest = cpb.create();
+        }
         return props_PatternTest;
       case LanguageConceptSwitch.PropertyValue:
+        if (props_PropertyValue == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PropertyValue = cpb.create();
+        }
         return props_PropertyValue;
       case LanguageConceptSwitch.TestListReference:
+        if (props_TestListReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestListReference = cpb.create();
+        }
         return props_TestListReference;
       case LanguageConceptSwitch.TestPropertyVariableReference:
+        if (props_TestPropertyVariableReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestPropertyVariableReference = cpb.create();
+        }
         return props_TestPropertyVariableReference;
       case LanguageConceptSwitch.TestVariableReference:
+        if (props_TestVariableReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestVariableReference = cpb.create();
+        }
         return props_TestVariableReference;
       case LanguageConceptSwitch.VariableValue:
+        if (props_VariableValue == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_VariableValue = cpb.create();
+        }
         return props_VariableValue;
     }
     return null;

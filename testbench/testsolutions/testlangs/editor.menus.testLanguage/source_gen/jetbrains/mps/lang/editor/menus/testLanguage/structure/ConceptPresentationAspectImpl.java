@@ -4,21 +4,21 @@ package jetbrains.mps.lang.editor.menus.testLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Base = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BaseWithNonEmptyMenu = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ChildOfParentWithEmptyCell = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptWithoutDefaultMenu = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Derived = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DerivedWithEmptyMenu = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParentWithEmptyCell = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ScopesTestConceptBase = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenuTestConcept = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Base;
+  private ConceptPresentation props_BaseWithNonEmptyMenu;
+  private ConceptPresentation props_ChildOfParentWithEmptyCell;
+  private ConceptPresentation props_ConceptWithoutDefaultMenu;
+  private ConceptPresentation props_Derived;
+  private ConceptPresentation props_DerivedWithEmptyMenu;
+  private ConceptPresentation props_NodeHolder;
+  private ConceptPresentation props_ParentWithEmptyCell;
+  private ConceptPresentation props_ScopesTestConceptBase;
+  private ConceptPresentation props_TransformationMenuTestConcept;
 
   @Override
   @Nullable
@@ -26,24 +26,64 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Base:
+        if (props_Base == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Base = cpb.create();
+        }
         return props_Base;
       case LanguageConceptSwitch.BaseWithNonEmptyMenu:
+        if (props_BaseWithNonEmptyMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BaseWithNonEmptyMenu = cpb.create();
+        }
         return props_BaseWithNonEmptyMenu;
       case LanguageConceptSwitch.ChildOfParentWithEmptyCell:
+        if (props_ChildOfParentWithEmptyCell == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ChildOfParentWithEmptyCell = cpb.create();
+        }
         return props_ChildOfParentWithEmptyCell;
       case LanguageConceptSwitch.ConceptWithoutDefaultMenu:
+        if (props_ConceptWithoutDefaultMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ConceptWithoutDefaultMenu = cpb.create();
+        }
         return props_ConceptWithoutDefaultMenu;
       case LanguageConceptSwitch.Derived:
+        if (props_Derived == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Derived = cpb.create();
+        }
         return props_Derived;
       case LanguageConceptSwitch.DerivedWithEmptyMenu:
+        if (props_DerivedWithEmptyMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DerivedWithEmptyMenu = cpb.create();
+        }
         return props_DerivedWithEmptyMenu;
       case LanguageConceptSwitch.NodeHolder:
+        if (props_NodeHolder == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeHolder = cpb.create();
+        }
         return props_NodeHolder;
       case LanguageConceptSwitch.ParentWithEmptyCell:
+        if (props_ParentWithEmptyCell == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ParentWithEmptyCell = cpb.create();
+        }
         return props_ParentWithEmptyCell;
       case LanguageConceptSwitch.ScopesTestConceptBase:
+        if (props_ScopesTestConceptBase == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ScopesTestConceptBase = cpb.create();
+        }
         return props_ScopesTestConceptBase;
       case LanguageConceptSwitch.TransformationMenuTestConcept:
+        if (props_TransformationMenuTestConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TransformationMenuTestConcept = cpb.create();
+        }
         return props_TransformationMenuTestConcept;
     }
     return null;

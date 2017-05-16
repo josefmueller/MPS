@@ -4,39 +4,39 @@ package jetbrains.mps.ide.httpsupport.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_CanHandleRequestFunction = new ConceptPresentationBuilder().shortDesc("Checks that handler can handle given HTTP Request").create();
-  private final ConceptPresentation props_DefaultParameterConverter = new ConceptPresentationBuilder().shortDesc("Default Parameter Converter").create();
-  private final ConceptPresentation props_DefaultValueFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DeserializeFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_HandleRequestFunction = new ConceptPresentationBuilder().shortDesc("Handle given HTTP Request").create();
-  private final ConceptPresentation props_HttpRequestOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().shortDesc("Incoming HTTP Request").create();
-  private final ConceptPresentation props_IDEAPlatformPortProvider = new ConceptPresentationBuilder().shortDesc("current bound port by IDEA Platform").create();
-  private final ConceptPresentation props_IParameterConverter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MPSIntegrationPortProvider = new ConceptPresentationBuilder().shortDesc("current bound port by MPS to integrate with YouTrack/TeamCity").create();
-  private final ConceptPresentation props_MPSInternalPortProvider = new ConceptPresentationBuilder().shortDesc("current bound port by MPS for internal features").create();
-  private final ConceptPresentation props_Node_getURLOperation = new ConceptPresentationBuilder().shortDesc("provides URL to this node").create();
-  private final ConceptPresentation props_ParameterConverterDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParameterConverterReference = new ConceptPresentationBuilder().shortDesc("Parameter Converter").create();
-  private final ConceptPresentation props_ParameterInitializer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Port = new ConceptPresentationBuilder().shortDesc("port defined by user").create();
-  private final ConceptPresentation props_PortProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().shortDesc("Query Parameter").create();
-  private final ConceptPresentation props_QueryParameterReference = new ConceptPresentationBuilder().shortDesc("reference to query parameter").create();
-  private final ConceptPresentation props_QueryPath = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QuerySegment = new ConceptPresentationBuilder().shortDesc("query segment").create();
-  private final ConceptPresentation props_RequestHandler = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RequestType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RequestURLBuilderExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ResponseSendOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SerializeFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SerializedValueParameter = new ConceptPresentationBuilder().shortDesc("Serialized Value").create();
-  private final ConceptPresentation props_ValueToSerializeParameter = new ConceptPresentationBuilder().shortDesc("Value to Serialize").create();
+  private ConceptPresentation props_CanHandleRequestFunction;
+  private ConceptPresentation props_DefaultParameterConverter;
+  private ConceptPresentation props_DefaultValueFunction;
+  private ConceptPresentation props_DeserializeFunction;
+  private ConceptPresentation props_HandleRequestFunction;
+  private ConceptPresentation props_HttpRequestOperation;
+  private ConceptPresentation props_HttpRequestParameter;
+  private ConceptPresentation props_IDEAPlatformPortProvider;
+  private ConceptPresentation props_IParameterConverter;
+  private ConceptPresentation props_MPSIntegrationPortProvider;
+  private ConceptPresentation props_MPSInternalPortProvider;
+  private ConceptPresentation props_Node_getURLOperation;
+  private ConceptPresentation props_ParameterConverterDeclaration;
+  private ConceptPresentation props_ParameterConverterReference;
+  private ConceptPresentation props_ParameterInitializer;
+  private ConceptPresentation props_Port;
+  private ConceptPresentation props_PortProvider;
+  private ConceptPresentation props_QueryParameter;
+  private ConceptPresentation props_QueryParameterReference;
+  private ConceptPresentation props_QueryPath;
+  private ConceptPresentation props_QuerySegment;
+  private ConceptPresentation props_RequestHandler;
+  private ConceptPresentation props_RequestType;
+  private ConceptPresentation props_RequestURLBuilderExpression;
+  private ConceptPresentation props_ResponseSendOperation;
+  private ConceptPresentation props_SerializeFunction;
+  private ConceptPresentation props_SerializedValueParameter;
+  private ConceptPresentation props_ValueToSerializeParameter;
 
   @Override
   @Nullable
@@ -44,60 +44,187 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.CanHandleRequestFunction:
+        if (props_CanHandleRequestFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Checks that handler can handle given HTTP Request");
+          props_CanHandleRequestFunction = cpb.create();
+        }
         return props_CanHandleRequestFunction;
       case LanguageConceptSwitch.DefaultParameterConverter:
+        if (props_DefaultParameterConverter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Default Parameter Converter");
+          props_DefaultParameterConverter = cpb.create();
+        }
         return props_DefaultParameterConverter;
       case LanguageConceptSwitch.DefaultValueFunction:
+        if (props_DefaultValueFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DefaultValueFunction = cpb.create();
+        }
         return props_DefaultValueFunction;
       case LanguageConceptSwitch.DeserializeFunction:
+        if (props_DeserializeFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DeserializeFunction = cpb.create();
+        }
         return props_DeserializeFunction;
       case LanguageConceptSwitch.HandleRequestFunction:
+        if (props_HandleRequestFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Handle given HTTP Request");
+          props_HandleRequestFunction = cpb.create();
+        }
         return props_HandleRequestFunction;
       case LanguageConceptSwitch.HttpRequestOperation:
+        if (props_HttpRequestOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_HttpRequestOperation = cpb.create();
+        }
         return props_HttpRequestOperation;
       case LanguageConceptSwitch.HttpRequestParameter:
+        if (props_HttpRequestParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Incoming HTTP Request");
+          props_HttpRequestParameter = cpb.create();
+        }
         return props_HttpRequestParameter;
       case LanguageConceptSwitch.IDEAPlatformPortProvider:
+        if (props_IDEAPlatformPortProvider == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("current bound port by IDEA Platform");
+          props_IDEAPlatformPortProvider = cpb.create();
+        }
         return props_IDEAPlatformPortProvider;
       case LanguageConceptSwitch.IParameterConverter:
+        if (props_IParameterConverter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IParameterConverter = cpb.create();
+        }
         return props_IParameterConverter;
       case LanguageConceptSwitch.MPSIntegrationPortProvider:
+        if (props_MPSIntegrationPortProvider == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("current bound port by MPS to integrate with YouTrack/TeamCity");
+          props_MPSIntegrationPortProvider = cpb.create();
+        }
         return props_MPSIntegrationPortProvider;
       case LanguageConceptSwitch.MPSInternalPortProvider:
+        if (props_MPSInternalPortProvider == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("current bound port by MPS for internal features");
+          props_MPSInternalPortProvider = cpb.create();
+        }
         return props_MPSInternalPortProvider;
       case LanguageConceptSwitch.Node_getURLOperation:
+        if (props_Node_getURLOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("provides URL to this node");
+          props_Node_getURLOperation = cpb.create();
+        }
         return props_Node_getURLOperation;
       case LanguageConceptSwitch.ParameterConverterDeclaration:
+        if (props_ParameterConverterDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ParameterConverterDeclaration = cpb.create();
+        }
         return props_ParameterConverterDeclaration;
       case LanguageConceptSwitch.ParameterConverterReference:
+        if (props_ParameterConverterReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Parameter Converter");
+          props_ParameterConverterReference = cpb.create();
+        }
         return props_ParameterConverterReference;
       case LanguageConceptSwitch.ParameterInitializer:
+        if (props_ParameterInitializer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ParameterInitializer = cpb.create();
+        }
         return props_ParameterInitializer;
       case LanguageConceptSwitch.Port:
+        if (props_Port == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("port defined by user");
+          props_Port = cpb.create();
+        }
         return props_Port;
       case LanguageConceptSwitch.PortProvider:
+        if (props_PortProvider == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PortProvider = cpb.create();
+        }
         return props_PortProvider;
       case LanguageConceptSwitch.QueryParameter:
+        if (props_QueryParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Query Parameter");
+          props_QueryParameter = cpb.create();
+        }
         return props_QueryParameter;
       case LanguageConceptSwitch.QueryParameterReference:
+        if (props_QueryParameterReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("reference to query parameter");
+          props_QueryParameterReference = cpb.create();
+        }
         return props_QueryParameterReference;
       case LanguageConceptSwitch.QueryPath:
+        if (props_QueryPath == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_QueryPath = cpb.create();
+        }
         return props_QueryPath;
       case LanguageConceptSwitch.QuerySegment:
+        if (props_QuerySegment == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("query segment");
+          props_QuerySegment = cpb.create();
+        }
         return props_QuerySegment;
       case LanguageConceptSwitch.RequestHandler:
+        if (props_RequestHandler == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RequestHandler = cpb.create();
+        }
         return props_RequestHandler;
       case LanguageConceptSwitch.RequestType:
+        if (props_RequestType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RequestType = cpb.create();
+        }
         return props_RequestType;
       case LanguageConceptSwitch.RequestURLBuilderExpression:
+        if (props_RequestURLBuilderExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RequestURLBuilderExpression = cpb.create();
+        }
         return props_RequestURLBuilderExpression;
       case LanguageConceptSwitch.ResponseSendOperation:
+        if (props_ResponseSendOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ResponseSendOperation = cpb.create();
+        }
         return props_ResponseSendOperation;
       case LanguageConceptSwitch.SerializeFunction:
+        if (props_SerializeFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SerializeFunction = cpb.create();
+        }
         return props_SerializeFunction;
       case LanguageConceptSwitch.SerializedValueParameter:
+        if (props_SerializedValueParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Serialized Value");
+          props_SerializedValueParameter = cpb.create();
+        }
         return props_SerializedValueParameter;
       case LanguageConceptSwitch.ValueToSerializeParameter:
+        if (props_ValueToSerializeParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Value to Serialize");
+          props_ValueToSerializeParameter = cpb.create();
+        }
         return props_ValueToSerializeParameter;
     }
     return null;

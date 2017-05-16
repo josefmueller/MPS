@@ -4,32 +4,32 @@ package jetbrains.mps.baseLanguage.closures.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractFunctionType = new ConceptPresentationBuilder().deprecated(true).shortDesc("abstract function type").create();
-  private final ConceptPresentation props_ClosureArgReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ClosureControlStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ClosureLiteral = new ConceptPresentationBuilder().shortDesc("closure literal").create();
-  private final ConceptPresentation props_ClosureLiteralType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CompactInvokeFunctionExpression = new ConceptPresentationBuilder().shortDesc("invoke function").create();
-  private final ConceptPresentation props_ControlAbstractionContainer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ControlAbstractionDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ControlClosureLiteral = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FunctionMethodDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FunctionType = new ConceptPresentationBuilder().shortDesc("function type").create();
-  private final ConceptPresentation props_InvokeExpression = new ConceptPresentationBuilder().shortDesc("this function invocation expression").create();
-  private final ConceptPresentation props_InvokeFunctionExpression = new ConceptPresentationBuilder().deprecated(true).shortDesc("function invocation expression").create();
-  private final ConceptPresentation props_InvokeFunctionOperation = new ConceptPresentationBuilder().shortDesc("invoke function").create();
-  private final ConceptPresentation props_PairOfInts = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StringPropertyHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnboundClosureParameterDeclaration = new ConceptPresentationBuilder().shortDesc("unbound closure parameter declaration").create();
-  private final ConceptPresentation props_UnrestrictedClosureLiteral = new ConceptPresentationBuilder().shortDesc("unrestricted closure literal").create();
-  private final ConceptPresentation props_UnrestrictedFunctionType = new ConceptPresentationBuilder().shortDesc("unrestricted function type").create();
-  private final ConceptPresentation props_YieldAllStatement = new ConceptPresentationBuilder().shortDesc("yield all elements in a sequence").create();
-  private final ConceptPresentation props_YieldStatement = new ConceptPresentationBuilder().shortDesc("yield next element").create();
+  private ConceptPresentation props_AbstractFunctionType;
+  private ConceptPresentation props_ClosureArgReference;
+  private ConceptPresentation props_ClosureControlStatement;
+  private ConceptPresentation props_ClosureLiteral;
+  private ConceptPresentation props_ClosureLiteralType;
+  private ConceptPresentation props_CompactInvokeFunctionExpression;
+  private ConceptPresentation props_ControlAbstractionContainer;
+  private ConceptPresentation props_ControlAbstractionDeclaration;
+  private ConceptPresentation props_ControlClosureLiteral;
+  private ConceptPresentation props_FunctionMethodDeclaration;
+  private ConceptPresentation props_FunctionType;
+  private ConceptPresentation props_InvokeExpression;
+  private ConceptPresentation props_InvokeFunctionExpression;
+  private ConceptPresentation props_InvokeFunctionOperation;
+  private ConceptPresentation props_PairOfInts;
+  private ConceptPresentation props_StringPropertyHolder;
+  private ConceptPresentation props_UnboundClosureParameterDeclaration;
+  private ConceptPresentation props_UnrestrictedClosureLiteral;
+  private ConceptPresentation props_UnrestrictedFunctionType;
+  private ConceptPresentation props_YieldAllStatement;
+  private ConceptPresentation props_YieldStatement;
 
   @Override
   @Nullable
@@ -37,46 +37,144 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbstractFunctionType:
+        if (props_AbstractFunctionType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("abstract function type");
+          props_AbstractFunctionType = cpb.create();
+        }
         return props_AbstractFunctionType;
       case LanguageConceptSwitch.ClosureArgReference:
+        if (props_ClosureArgReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ClosureArgReference = cpb.create();
+        }
         return props_ClosureArgReference;
       case LanguageConceptSwitch.ClosureControlStatement:
+        if (props_ClosureControlStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ClosureControlStatement = cpb.create();
+        }
         return props_ClosureControlStatement;
       case LanguageConceptSwitch.ClosureLiteral:
+        if (props_ClosureLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("closure literal");
+          props_ClosureLiteral = cpb.create();
+        }
         return props_ClosureLiteral;
       case LanguageConceptSwitch.ClosureLiteralType:
+        if (props_ClosureLiteralType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ClosureLiteralType = cpb.create();
+        }
         return props_ClosureLiteralType;
       case LanguageConceptSwitch.CompactInvokeFunctionExpression:
+        if (props_CompactInvokeFunctionExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("invoke function");
+          props_CompactInvokeFunctionExpression = cpb.create();
+        }
         return props_CompactInvokeFunctionExpression;
       case LanguageConceptSwitch.ControlAbstractionContainer:
+        if (props_ControlAbstractionContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ControlAbstractionContainer = cpb.create();
+        }
         return props_ControlAbstractionContainer;
       case LanguageConceptSwitch.ControlAbstractionDeclaration:
+        if (props_ControlAbstractionDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ControlAbstractionDeclaration = cpb.create();
+        }
         return props_ControlAbstractionDeclaration;
       case LanguageConceptSwitch.ControlClosureLiteral:
+        if (props_ControlClosureLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ControlClosureLiteral = cpb.create();
+        }
         return props_ControlClosureLiteral;
       case LanguageConceptSwitch.FunctionMethodDeclaration:
+        if (props_FunctionMethodDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_FunctionMethodDeclaration = cpb.create();
+        }
         return props_FunctionMethodDeclaration;
       case LanguageConceptSwitch.FunctionType:
+        if (props_FunctionType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("function type");
+          props_FunctionType = cpb.create();
+        }
         return props_FunctionType;
       case LanguageConceptSwitch.InvokeExpression:
+        if (props_InvokeExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("this function invocation expression");
+          props_InvokeExpression = cpb.create();
+        }
         return props_InvokeExpression;
       case LanguageConceptSwitch.InvokeFunctionExpression:
+        if (props_InvokeFunctionExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("function invocation expression");
+          props_InvokeFunctionExpression = cpb.create();
+        }
         return props_InvokeFunctionExpression;
       case LanguageConceptSwitch.InvokeFunctionOperation:
+        if (props_InvokeFunctionOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("invoke function");
+          props_InvokeFunctionOperation = cpb.create();
+        }
         return props_InvokeFunctionOperation;
       case LanguageConceptSwitch.PairOfInts:
+        if (props_PairOfInts == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PairOfInts = cpb.create();
+        }
         return props_PairOfInts;
       case LanguageConceptSwitch.StringPropertyHolder:
+        if (props_StringPropertyHolder == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_StringPropertyHolder = cpb.create();
+        }
         return props_StringPropertyHolder;
       case LanguageConceptSwitch.UnboundClosureParameterDeclaration:
+        if (props_UnboundClosureParameterDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("unbound closure parameter declaration");
+          props_UnboundClosureParameterDeclaration = cpb.create();
+        }
         return props_UnboundClosureParameterDeclaration;
       case LanguageConceptSwitch.UnrestrictedClosureLiteral:
+        if (props_UnrestrictedClosureLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("unrestricted closure literal");
+          props_UnrestrictedClosureLiteral = cpb.create();
+        }
         return props_UnrestrictedClosureLiteral;
       case LanguageConceptSwitch.UnrestrictedFunctionType:
+        if (props_UnrestrictedFunctionType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("unrestricted function type");
+          props_UnrestrictedFunctionType = cpb.create();
+        }
         return props_UnrestrictedFunctionType;
       case LanguageConceptSwitch.YieldAllStatement:
+        if (props_YieldAllStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("yield all elements in a sequence");
+          props_YieldAllStatement = cpb.create();
+        }
         return props_YieldAllStatement;
       case LanguageConceptSwitch.YieldStatement:
+        if (props_YieldStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("yield next element");
+          props_YieldStatement = cpb.create();
+        }
         return props_YieldStatement;
     }
     return null;

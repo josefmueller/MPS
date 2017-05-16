@@ -4,17 +4,17 @@ package testOverridingType.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ErrorType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OverrideAnnotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OverridingPrimFloatType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OverridingPrimIntType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OverridingPrimNumConstant = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnconditionalOverrideAnnotation = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_ErrorType;
+  private ConceptPresentation props_OverrideAnnotation;
+  private ConceptPresentation props_OverridingPrimFloatType;
+  private ConceptPresentation props_OverridingPrimIntType;
+  private ConceptPresentation props_OverridingPrimNumConstant;
+  private ConceptPresentation props_UnconditionalOverrideAnnotation;
 
   @Override
   @Nullable
@@ -22,16 +22,40 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ErrorType:
+        if (props_ErrorType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ErrorType = cpb.create();
+        }
         return props_ErrorType;
       case LanguageConceptSwitch.OverrideAnnotation:
+        if (props_OverrideAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OverrideAnnotation = cpb.create();
+        }
         return props_OverrideAnnotation;
       case LanguageConceptSwitch.OverridingPrimFloatType:
+        if (props_OverridingPrimFloatType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OverridingPrimFloatType = cpb.create();
+        }
         return props_OverridingPrimFloatType;
       case LanguageConceptSwitch.OverridingPrimIntType:
+        if (props_OverridingPrimIntType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OverridingPrimIntType = cpb.create();
+        }
         return props_OverridingPrimIntType;
       case LanguageConceptSwitch.OverridingPrimNumConstant:
+        if (props_OverridingPrimNumConstant == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OverridingPrimNumConstant = cpb.create();
+        }
         return props_OverridingPrimNumConstant;
       case LanguageConceptSwitch.UnconditionalOverrideAnnotation:
+        if (props_UnconditionalOverrideAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_UnconditionalOverrideAnnotation = cpb.create();
+        }
         return props_UnconditionalOverrideAnnotation;
     }
     return null;

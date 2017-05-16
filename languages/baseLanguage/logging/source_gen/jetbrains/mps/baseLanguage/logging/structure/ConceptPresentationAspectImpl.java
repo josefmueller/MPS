@@ -4,16 +4,16 @@ package jetbrains.mps.baseLanguage.logging.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_IMessage = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LogLowLevelStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LogStatement = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_MsgStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrintStatement = new ConceptPresentationBuilder().deprecated(true).create();
+  private ConceptPresentation props_IMessage;
+  private ConceptPresentation props_LogLowLevelStatement;
+  private ConceptPresentation props_LogStatement;
+  private ConceptPresentation props_MsgStatement;
+  private ConceptPresentation props_PrintStatement;
 
   @Override
   @Nullable
@@ -21,14 +21,36 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.IMessage:
+        if (props_IMessage == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IMessage = cpb.create();
+        }
         return props_IMessage;
       case LanguageConceptSwitch.LogLowLevelStatement:
+        if (props_LogLowLevelStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_LogLowLevelStatement = cpb.create();
+        }
         return props_LogLowLevelStatement;
       case LanguageConceptSwitch.LogStatement:
+        if (props_LogStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_LogStatement = cpb.create();
+        }
         return props_LogStatement;
       case LanguageConceptSwitch.MsgStatement:
+        if (props_MsgStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_MsgStatement = cpb.create();
+        }
         return props_MsgStatement;
       case LanguageConceptSwitch.PrintStatement:
+        if (props_PrintStatement == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_PrintStatement = cpb.create();
+        }
         return props_PrintStatement;
     }
     return null;

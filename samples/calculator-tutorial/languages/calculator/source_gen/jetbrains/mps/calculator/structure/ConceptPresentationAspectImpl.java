@@ -4,15 +4,15 @@ package jetbrains.mps.calculator.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Calculator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InputField = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InputFieldReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OutputField = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Calculator;
+  private ConceptPresentation props_InputField;
+  private ConceptPresentation props_InputFieldReference;
+  private ConceptPresentation props_OutputField;
 
   @Override
   @Nullable
@@ -20,12 +20,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Calculator:
+        if (props_Calculator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Calculator = cpb.create();
+        }
         return props_Calculator;
       case LanguageConceptSwitch.InputField:
+        if (props_InputField == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InputField = cpb.create();
+        }
         return props_InputField;
       case LanguageConceptSwitch.InputFieldReference:
+        if (props_InputFieldReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InputFieldReference = cpb.create();
+        }
         return props_InputFieldReference;
       case LanguageConceptSwitch.OutputField:
+        if (props_OutputField == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OutputField = cpb.create();
+        }
         return props_OutputField;
     }
     return null;

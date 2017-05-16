@@ -4,22 +4,22 @@ package jetbrains.mps.lang.editor.diagram.testLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Diagram1 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Diagram2 = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InputPort = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Node = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeWithName = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeWithPortQueries = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeWithPorts = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeWithSize = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OutputPort = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OutputToInputPortConnector = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RectangleNode = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Diagram1;
+  private ConceptPresentation props_Diagram2;
+  private ConceptPresentation props_InputPort;
+  private ConceptPresentation props_Node;
+  private ConceptPresentation props_NodeWithName;
+  private ConceptPresentation props_NodeWithPortQueries;
+  private ConceptPresentation props_NodeWithPorts;
+  private ConceptPresentation props_NodeWithSize;
+  private ConceptPresentation props_OutputPort;
+  private ConceptPresentation props_OutputToInputPortConnector;
+  private ConceptPresentation props_RectangleNode;
 
   @Override
   @Nullable
@@ -27,26 +27,70 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Diagram1:
+        if (props_Diagram1 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Diagram1 = cpb.create();
+        }
         return props_Diagram1;
       case LanguageConceptSwitch.Diagram2:
+        if (props_Diagram2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Diagram2 = cpb.create();
+        }
         return props_Diagram2;
       case LanguageConceptSwitch.InputPort:
+        if (props_InputPort == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_InputPort = cpb.create();
+        }
         return props_InputPort;
       case LanguageConceptSwitch.Node:
+        if (props_Node == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Node = cpb.create();
+        }
         return props_Node;
       case LanguageConceptSwitch.NodeWithName:
+        if (props_NodeWithName == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeWithName = cpb.create();
+        }
         return props_NodeWithName;
       case LanguageConceptSwitch.NodeWithPortQueries:
+        if (props_NodeWithPortQueries == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeWithPortQueries = cpb.create();
+        }
         return props_NodeWithPortQueries;
       case LanguageConceptSwitch.NodeWithPorts:
+        if (props_NodeWithPorts == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeWithPorts = cpb.create();
+        }
         return props_NodeWithPorts;
       case LanguageConceptSwitch.NodeWithSize:
+        if (props_NodeWithSize == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeWithSize = cpb.create();
+        }
         return props_NodeWithSize;
       case LanguageConceptSwitch.OutputPort:
+        if (props_OutputPort == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OutputPort = cpb.create();
+        }
         return props_OutputPort;
       case LanguageConceptSwitch.OutputToInputPortConnector:
+        if (props_OutputToInputPortConnector == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OutputToInputPortConnector = cpb.create();
+        }
         return props_OutputToInputPortConnector;
       case LanguageConceptSwitch.RectangleNode:
+        if (props_RectangleNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_RectangleNode = cpb.create();
+        }
         return props_RectangleNode;
     }
     return null;

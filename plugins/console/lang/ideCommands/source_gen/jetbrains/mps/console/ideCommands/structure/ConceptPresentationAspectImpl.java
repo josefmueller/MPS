@@ -4,40 +4,39 @@ package jetbrains.mps.console.ideCommands.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbsractMake = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionCallDeclaredParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionCallGlobalParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ActionCallParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CallActionExpression = new ConceptPresentationBuilder().shortDesc("call an IDE action with custom parameters").create();
-  private final ConceptPresentation props_Clean = new ConceptPresentationBuilder().shortDesc("clean files *.generated").create();
-  private final ConceptPresentation props_ClickableGenerator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GlobalScope = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GlobalStatisticTarget = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_INodeSetReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IStatisticsTarget = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Make = new ConceptPresentationBuilder().shortDesc("make models").create();
-  private final ConceptPresentation props_ModelProperties = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModelReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModelStatisticsTarget = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModuleProperties = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OfAspectOperation = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x5252d9021b8c25b0L, "requestedAspect_old"), MetaAdapterFactory.getReferenceLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L, 0x7cd422dbfa7b06f8L, "requestedAspect")).shortDesc("filter models by their aspect").create();
-  private final ConceptPresentation props_ProjectStatisticsTarget = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RebuildProjectCommand = new ConceptPresentationBuilder().shortDesc("clean and make").create();
-  private final ConceptPresentation props_RemoveGenSources = new ConceptPresentationBuilder().shortDesc("remove source_gen").create();
-  private final ConceptPresentation props_ShowBrokenReferences = new ConceptPresentationBuilder().shortDesc("show broken references").create();
-  private final ConceptPresentation props_ShowExpression = new ConceptPresentationBuilder().shortDesc("show in usage view").create();
-  private final ConceptPresentation props_ShowGenPlan = new ConceptPresentationBuilder().shortDesc("show the generation plan").create();
-  private final ConceptPresentation props_StatCommand = new ConceptPresentationBuilder().shortDesc("display useful statistics").create();
-  private final ConceptPresentation props_SubtreeStatisticsTarget = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnloadModelsCommand = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_WithDependencies = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_AbsractMake;
+  private ConceptPresentation props_ActionCallDeclaredParameter;
+  private ConceptPresentation props_ActionCallGlobalParameter;
+  private ConceptPresentation props_ActionCallParameter;
+  private ConceptPresentation props_CallActionExpression;
+  private ConceptPresentation props_Clean;
+  private ConceptPresentation props_ClickableGenerator;
+  private ConceptPresentation props_GlobalScope;
+  private ConceptPresentation props_GlobalStatisticTarget;
+  private ConceptPresentation props_INodeSetReference;
+  private ConceptPresentation props_IStatisticsTarget;
+  private ConceptPresentation props_Make;
+  private ConceptPresentation props_ModelProperties;
+  private ConceptPresentation props_ModelReference;
+  private ConceptPresentation props_ModelStatisticsTarget;
+  private ConceptPresentation props_ModuleProperties;
+  private ConceptPresentation props_NodeReference;
+  private ConceptPresentation props_OfAspectOperation;
+  private ConceptPresentation props_ProjectStatisticsTarget;
+  private ConceptPresentation props_RebuildProjectCommand;
+  private ConceptPresentation props_RemoveGenSources;
+  private ConceptPresentation props_ShowBrokenReferences;
+  private ConceptPresentation props_ShowExpression;
+  private ConceptPresentation props_ShowGenPlan;
+  private ConceptPresentation props_StatCommand;
+  private ConceptPresentation props_SubtreeStatisticsTarget;
+  private ConceptPresentation props_UnloadModelsCommand;
+  private ConceptPresentation props_WithDependencies;
 
   @Override
   @Nullable
@@ -45,60 +44,183 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbsractMake:
+        if (props_AbsractMake == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbsractMake = cpb.create();
+        }
         return props_AbsractMake;
       case LanguageConceptSwitch.ActionCallDeclaredParameter:
+        if (props_ActionCallDeclaredParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ActionCallDeclaredParameter = cpb.create();
+        }
         return props_ActionCallDeclaredParameter;
       case LanguageConceptSwitch.ActionCallGlobalParameter:
+        if (props_ActionCallGlobalParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ActionCallGlobalParameter = cpb.create();
+        }
         return props_ActionCallGlobalParameter;
       case LanguageConceptSwitch.ActionCallParameter:
+        if (props_ActionCallParameter == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ActionCallParameter = cpb.create();
+        }
         return props_ActionCallParameter;
       case LanguageConceptSwitch.CallActionExpression:
+        if (props_CallActionExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("call an IDE action with custom parameters");
+          props_CallActionExpression = cpb.create();
+        }
         return props_CallActionExpression;
       case LanguageConceptSwitch.Clean:
+        if (props_Clean == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("clean files *.generated");
+          props_Clean = cpb.create();
+        }
         return props_Clean;
       case LanguageConceptSwitch.ClickableGenerator:
+        if (props_ClickableGenerator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ClickableGenerator = cpb.create();
+        }
         return props_ClickableGenerator;
       case LanguageConceptSwitch.GlobalScope:
+        if (props_GlobalScope == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GlobalScope = cpb.create();
+        }
         return props_GlobalScope;
       case LanguageConceptSwitch.GlobalStatisticTarget:
+        if (props_GlobalStatisticTarget == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GlobalStatisticTarget = cpb.create();
+        }
         return props_GlobalStatisticTarget;
       case LanguageConceptSwitch.INodeSetReference:
+        if (props_INodeSetReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_INodeSetReference = cpb.create();
+        }
         return props_INodeSetReference;
       case LanguageConceptSwitch.IStatisticsTarget:
+        if (props_IStatisticsTarget == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IStatisticsTarget = cpb.create();
+        }
         return props_IStatisticsTarget;
       case LanguageConceptSwitch.Make:
+        if (props_Make == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("make models");
+          props_Make = cpb.create();
+        }
         return props_Make;
       case LanguageConceptSwitch.ModelProperties:
+        if (props_ModelProperties == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModelProperties = cpb.create();
+        }
         return props_ModelProperties;
       case LanguageConceptSwitch.ModelReference:
+        if (props_ModelReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModelReference = cpb.create();
+        }
         return props_ModelReference;
       case LanguageConceptSwitch.ModelStatisticsTarget:
+        if (props_ModelStatisticsTarget == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModelStatisticsTarget = cpb.create();
+        }
         return props_ModelStatisticsTarget;
       case LanguageConceptSwitch.ModuleProperties:
+        if (props_ModuleProperties == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModuleProperties = cpb.create();
+        }
         return props_ModuleProperties;
       case LanguageConceptSwitch.NodeReference:
+        if (props_NodeReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeReference = cpb.create();
+        }
         return props_NodeReference;
       case LanguageConceptSwitch.OfAspectOperation:
+        if (props_OfAspectOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x5252d9021b8b45a8L);
+          cpb.deprecateAssociation(0x5252d9021b8c25b0L, "requestedAspect_old");
+          cpb.shortDesc("filter models by their aspect");
+          props_OfAspectOperation = cpb.create();
+        }
         return props_OfAspectOperation;
       case LanguageConceptSwitch.ProjectStatisticsTarget:
+        if (props_ProjectStatisticsTarget == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ProjectStatisticsTarget = cpb.create();
+        }
         return props_ProjectStatisticsTarget;
       case LanguageConceptSwitch.RebuildProjectCommand:
+        if (props_RebuildProjectCommand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("clean and make");
+          props_RebuildProjectCommand = cpb.create();
+        }
         return props_RebuildProjectCommand;
       case LanguageConceptSwitch.RemoveGenSources:
+        if (props_RemoveGenSources == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("remove source_gen");
+          props_RemoveGenSources = cpb.create();
+        }
         return props_RemoveGenSources;
       case LanguageConceptSwitch.ShowBrokenReferences:
+        if (props_ShowBrokenReferences == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("show broken references");
+          props_ShowBrokenReferences = cpb.create();
+        }
         return props_ShowBrokenReferences;
       case LanguageConceptSwitch.ShowExpression:
+        if (props_ShowExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("show in usage view");
+          props_ShowExpression = cpb.create();
+        }
         return props_ShowExpression;
       case LanguageConceptSwitch.ShowGenPlan:
+        if (props_ShowGenPlan == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("show the generation plan");
+          props_ShowGenPlan = cpb.create();
+        }
         return props_ShowGenPlan;
       case LanguageConceptSwitch.StatCommand:
+        if (props_StatCommand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("display useful statistics");
+          props_StatCommand = cpb.create();
+        }
         return props_StatCommand;
       case LanguageConceptSwitch.SubtreeStatisticsTarget:
+        if (props_SubtreeStatisticsTarget == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SubtreeStatisticsTarget = cpb.create();
+        }
         return props_SubtreeStatisticsTarget;
       case LanguageConceptSwitch.UnloadModelsCommand:
+        if (props_UnloadModelsCommand == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_UnloadModelsCommand = cpb.create();
+        }
         return props_UnloadModelsCommand;
       case LanguageConceptSwitch.WithDependencies:
+        if (props_WithDependencies == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_WithDependencies = cpb.create();
+        }
         return props_WithDependencies;
     }
     return null;

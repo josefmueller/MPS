@@ -4,46 +4,46 @@ package jetbrains.mps.lang.generator.generationContext.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_GenerationContextOp_Base = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_ContextVarRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_CopyWithTrace = new ConceptPresentationBuilder().shortDesc("Analog of $TRACE$ to use in mapping scripts").create();
-  private final ConceptPresentation props_GenerationContextOp_CreateUniqueName = new ConceptPresentationBuilder().shortDesc("generate unique name ").create();
-  private final ConceptPresentation props_GenerationContextOp_DirtyNode = new ConceptPresentationBuilder().shortDesc("checks if node is not ignored by generator").create();
-  private final ConceptPresentation props_GenerationContextOp_GenParameterRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_GetCopiedOutputByInput = new ConceptPresentationBuilder().shortDesc("search output node").create();
-  private final ConceptPresentation props_GenerationContextOp_GetExport = new ConceptPresentationBuilder().shortDesc("retrieve proxy object for cross-model reference target").create();
-  private final ConceptPresentation props_GenerationContextOp_GetInputModel = new ConceptPresentationBuilder().shortDesc("current input model").create();
-  private final ConceptPresentation props_GenerationContextOp_GetOriginalCopiedInputByOutput = new ConceptPresentationBuilder().shortDesc("original input node copied to output").create();
-  private final ConceptPresentation props_GenerationContextOp_GetOriginalInputModel = new ConceptPresentationBuilder().shortDesc("original input model").create();
-  private final ConceptPresentation props_GenerationContextOp_GetOutputByLabel = new ConceptPresentationBuilder().shortDesc("search output node").create();
-  private final ConceptPresentation props_GenerationContextOp_GetOutputByLabelAndInput = new ConceptPresentationBuilder().shortDesc("search output node").create();
-  private final ConceptPresentation props_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope = new ConceptPresentationBuilder().shortDesc("search output node using ref.scope").create();
-  private final ConceptPresentation props_GenerationContextOp_GetOutputListByLabelAndInput = new ConceptPresentationBuilder().shortDesc("search output nodes").create();
-  private final ConceptPresentation props_GenerationContextOp_GetOutputModel = new ConceptPresentationBuilder().shortDesc("current output model").create();
-  private final ConceptPresentation props_GenerationContextOp_GetPrevInputByLabel = new ConceptPresentationBuilder().shortDesc("search preceding input node").create();
-  private final ConceptPresentation props_GenerationContextOp_GetTemplateNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("template node under macro").create();
-  private final ConceptPresentation props_GenerationContextOp_LinkPatternRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_NodePatternRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_ParameterRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_PatternRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_PropertyPatternRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_RegisterLabel = new ConceptPresentationBuilder().shortDesc("register mapping label").create();
-  private final ConceptPresentation props_GenerationContextOp_SessionObjectAccess = new ConceptPresentationBuilder().shortDesc("access to user object").create();
-  private final ConceptPresentation props_GenerationContextOp_ShowErrorMessage = new ConceptPresentationBuilder().shortDesc("logging").create();
-  private final ConceptPresentation props_GenerationContextOp_ShowInfoMessage = new ConceptPresentationBuilder().shortDesc("logging").create();
-  private final ConceptPresentation props_GenerationContextOp_ShowMessageBase = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_ShowWarningMessage = new ConceptPresentationBuilder().shortDesc("logging").create();
-  private final ConceptPresentation props_GenerationContextOp_StepObjectAccess = new ConceptPresentationBuilder().shortDesc("access to user object").create();
-  private final ConceptPresentation props_GenerationContextOp_TransientObjectAccess = new ConceptPresentationBuilder().shortDesc("access to user object").create();
-  private final ConceptPresentation props_GenerationContextOp_UserObjectAccessBase = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_VarRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextType = new ConceptPresentationBuilder().shortDesc("generation context type").create();
-  private final ConceptPresentation props_TemplateFunctionParameter_generationContext = new ConceptPresentationBuilder().shortDesc("generation context parameter").create();
+  private ConceptPresentation props_GenerationContextOp_Base;
+  private ConceptPresentation props_GenerationContextOp_ContextVarRef;
+  private ConceptPresentation props_GenerationContextOp_CopyWithTrace;
+  private ConceptPresentation props_GenerationContextOp_CreateUniqueName;
+  private ConceptPresentation props_GenerationContextOp_DirtyNode;
+  private ConceptPresentation props_GenerationContextOp_GenParameterRef;
+  private ConceptPresentation props_GenerationContextOp_GetCopiedOutputByInput;
+  private ConceptPresentation props_GenerationContextOp_GetExport;
+  private ConceptPresentation props_GenerationContextOp_GetInputModel;
+  private ConceptPresentation props_GenerationContextOp_GetOriginalCopiedInputByOutput;
+  private ConceptPresentation props_GenerationContextOp_GetOriginalInputModel;
+  private ConceptPresentation props_GenerationContextOp_GetOutputByLabel;
+  private ConceptPresentation props_GenerationContextOp_GetOutputByLabelAndInput;
+  private ConceptPresentation props_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope;
+  private ConceptPresentation props_GenerationContextOp_GetOutputListByLabelAndInput;
+  private ConceptPresentation props_GenerationContextOp_GetOutputModel;
+  private ConceptPresentation props_GenerationContextOp_GetPrevInputByLabel;
+  private ConceptPresentation props_GenerationContextOp_GetTemplateNode;
+  private ConceptPresentation props_GenerationContextOp_LinkPatternRef;
+  private ConceptPresentation props_GenerationContextOp_NodePatternRef;
+  private ConceptPresentation props_GenerationContextOp_ParameterRef;
+  private ConceptPresentation props_GenerationContextOp_PatternRef;
+  private ConceptPresentation props_GenerationContextOp_PropertyPatternRef;
+  private ConceptPresentation props_GenerationContextOp_RegisterLabel;
+  private ConceptPresentation props_GenerationContextOp_SessionObjectAccess;
+  private ConceptPresentation props_GenerationContextOp_ShowErrorMessage;
+  private ConceptPresentation props_GenerationContextOp_ShowInfoMessage;
+  private ConceptPresentation props_GenerationContextOp_ShowMessageBase;
+  private ConceptPresentation props_GenerationContextOp_ShowWarningMessage;
+  private ConceptPresentation props_GenerationContextOp_StepObjectAccess;
+  private ConceptPresentation props_GenerationContextOp_TransientObjectAccess;
+  private ConceptPresentation props_GenerationContextOp_UserObjectAccessBase;
+  private ConceptPresentation props_GenerationContextOp_VarRef;
+  private ConceptPresentation props_GenerationContextType;
+  private ConceptPresentation props_TemplateFunctionParameter_generationContext;
 
   @Override
   @Nullable
@@ -51,74 +51,239 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.GenerationContextOp_Base:
+        if (props_GenerationContextOp_Base == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_Base = cpb.create();
+        }
         return props_GenerationContextOp_Base;
       case LanguageConceptSwitch.GenerationContextOp_ContextVarRef:
+        if (props_GenerationContextOp_ContextVarRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_ContextVarRef = cpb.create();
+        }
         return props_GenerationContextOp_ContextVarRef;
       case LanguageConceptSwitch.GenerationContextOp_CopyWithTrace:
+        if (props_GenerationContextOp_CopyWithTrace == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Analog of $TRACE$ to use in mapping scripts");
+          props_GenerationContextOp_CopyWithTrace = cpb.create();
+        }
         return props_GenerationContextOp_CopyWithTrace;
       case LanguageConceptSwitch.GenerationContextOp_CreateUniqueName:
+        if (props_GenerationContextOp_CreateUniqueName == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("generate unique name ");
+          props_GenerationContextOp_CreateUniqueName = cpb.create();
+        }
         return props_GenerationContextOp_CreateUniqueName;
       case LanguageConceptSwitch.GenerationContextOp_DirtyNode:
+        if (props_GenerationContextOp_DirtyNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("checks if node is not ignored by generator");
+          props_GenerationContextOp_DirtyNode = cpb.create();
+        }
         return props_GenerationContextOp_DirtyNode;
       case LanguageConceptSwitch.GenerationContextOp_GenParameterRef:
+        if (props_GenerationContextOp_GenParameterRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_GenParameterRef = cpb.create();
+        }
         return props_GenerationContextOp_GenParameterRef;
       case LanguageConceptSwitch.GenerationContextOp_GetCopiedOutputByInput:
+        if (props_GenerationContextOp_GetCopiedOutputByInput == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("search output node");
+          props_GenerationContextOp_GetCopiedOutputByInput = cpb.create();
+        }
         return props_GenerationContextOp_GetCopiedOutputByInput;
       case LanguageConceptSwitch.GenerationContextOp_GetExport:
+        if (props_GenerationContextOp_GetExport == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("retrieve proxy object for cross-model reference target");
+          props_GenerationContextOp_GetExport = cpb.create();
+        }
         return props_GenerationContextOp_GetExport;
       case LanguageConceptSwitch.GenerationContextOp_GetInputModel:
+        if (props_GenerationContextOp_GetInputModel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("current input model");
+          props_GenerationContextOp_GetInputModel = cpb.create();
+        }
         return props_GenerationContextOp_GetInputModel;
       case LanguageConceptSwitch.GenerationContextOp_GetOriginalCopiedInputByOutput:
+        if (props_GenerationContextOp_GetOriginalCopiedInputByOutput == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("original input node copied to output");
+          props_GenerationContextOp_GetOriginalCopiedInputByOutput = cpb.create();
+        }
         return props_GenerationContextOp_GetOriginalCopiedInputByOutput;
       case LanguageConceptSwitch.GenerationContextOp_GetOriginalInputModel:
+        if (props_GenerationContextOp_GetOriginalInputModel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("original input model");
+          props_GenerationContextOp_GetOriginalInputModel = cpb.create();
+        }
         return props_GenerationContextOp_GetOriginalInputModel;
       case LanguageConceptSwitch.GenerationContextOp_GetOutputByLabel:
+        if (props_GenerationContextOp_GetOutputByLabel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("search output node");
+          props_GenerationContextOp_GetOutputByLabel = cpb.create();
+        }
         return props_GenerationContextOp_GetOutputByLabel;
       case LanguageConceptSwitch.GenerationContextOp_GetOutputByLabelAndInput:
+        if (props_GenerationContextOp_GetOutputByLabelAndInput == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("search output node");
+          props_GenerationContextOp_GetOutputByLabelAndInput = cpb.create();
+        }
         return props_GenerationContextOp_GetOutputByLabelAndInput;
       case LanguageConceptSwitch.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope:
+        if (props_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("search output node using ref.scope");
+          props_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope = cpb.create();
+        }
         return props_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope;
       case LanguageConceptSwitch.GenerationContextOp_GetOutputListByLabelAndInput:
+        if (props_GenerationContextOp_GetOutputListByLabelAndInput == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("search output nodes");
+          props_GenerationContextOp_GetOutputListByLabelAndInput = cpb.create();
+        }
         return props_GenerationContextOp_GetOutputListByLabelAndInput;
       case LanguageConceptSwitch.GenerationContextOp_GetOutputModel:
+        if (props_GenerationContextOp_GetOutputModel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("current output model");
+          props_GenerationContextOp_GetOutputModel = cpb.create();
+        }
         return props_GenerationContextOp_GetOutputModel;
       case LanguageConceptSwitch.GenerationContextOp_GetPrevInputByLabel:
+        if (props_GenerationContextOp_GetPrevInputByLabel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("search preceding input node");
+          props_GenerationContextOp_GetPrevInputByLabel = cpb.create();
+        }
         return props_GenerationContextOp_GetPrevInputByLabel;
       case LanguageConceptSwitch.GenerationContextOp_GetTemplateNode:
+        if (props_GenerationContextOp_GetTemplateNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.shortDesc("template node under macro");
+          props_GenerationContextOp_GetTemplateNode = cpb.create();
+        }
         return props_GenerationContextOp_GetTemplateNode;
       case LanguageConceptSwitch.GenerationContextOp_LinkPatternRef:
+        if (props_GenerationContextOp_LinkPatternRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_LinkPatternRef = cpb.create();
+        }
         return props_GenerationContextOp_LinkPatternRef;
       case LanguageConceptSwitch.GenerationContextOp_NodePatternRef:
+        if (props_GenerationContextOp_NodePatternRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_NodePatternRef = cpb.create();
+        }
         return props_GenerationContextOp_NodePatternRef;
       case LanguageConceptSwitch.GenerationContextOp_ParameterRef:
+        if (props_GenerationContextOp_ParameterRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_ParameterRef = cpb.create();
+        }
         return props_GenerationContextOp_ParameterRef;
       case LanguageConceptSwitch.GenerationContextOp_PatternRef:
+        if (props_GenerationContextOp_PatternRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_PatternRef = cpb.create();
+        }
         return props_GenerationContextOp_PatternRef;
       case LanguageConceptSwitch.GenerationContextOp_PropertyPatternRef:
+        if (props_GenerationContextOp_PropertyPatternRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_PropertyPatternRef = cpb.create();
+        }
         return props_GenerationContextOp_PropertyPatternRef;
       case LanguageConceptSwitch.GenerationContextOp_RegisterLabel:
+        if (props_GenerationContextOp_RegisterLabel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("register mapping label");
+          props_GenerationContextOp_RegisterLabel = cpb.create();
+        }
         return props_GenerationContextOp_RegisterLabel;
       case LanguageConceptSwitch.GenerationContextOp_SessionObjectAccess:
+        if (props_GenerationContextOp_SessionObjectAccess == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("access to user object");
+          props_GenerationContextOp_SessionObjectAccess = cpb.create();
+        }
         return props_GenerationContextOp_SessionObjectAccess;
       case LanguageConceptSwitch.GenerationContextOp_ShowErrorMessage:
+        if (props_GenerationContextOp_ShowErrorMessage == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("logging");
+          props_GenerationContextOp_ShowErrorMessage = cpb.create();
+        }
         return props_GenerationContextOp_ShowErrorMessage;
       case LanguageConceptSwitch.GenerationContextOp_ShowInfoMessage:
+        if (props_GenerationContextOp_ShowInfoMessage == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("logging");
+          props_GenerationContextOp_ShowInfoMessage = cpb.create();
+        }
         return props_GenerationContextOp_ShowInfoMessage;
       case LanguageConceptSwitch.GenerationContextOp_ShowMessageBase:
+        if (props_GenerationContextOp_ShowMessageBase == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_ShowMessageBase = cpb.create();
+        }
         return props_GenerationContextOp_ShowMessageBase;
       case LanguageConceptSwitch.GenerationContextOp_ShowWarningMessage:
+        if (props_GenerationContextOp_ShowWarningMessage == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("logging");
+          props_GenerationContextOp_ShowWarningMessage = cpb.create();
+        }
         return props_GenerationContextOp_ShowWarningMessage;
       case LanguageConceptSwitch.GenerationContextOp_StepObjectAccess:
+        if (props_GenerationContextOp_StepObjectAccess == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("access to user object");
+          props_GenerationContextOp_StepObjectAccess = cpb.create();
+        }
         return props_GenerationContextOp_StepObjectAccess;
       case LanguageConceptSwitch.GenerationContextOp_TransientObjectAccess:
+        if (props_GenerationContextOp_TransientObjectAccess == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("access to user object");
+          props_GenerationContextOp_TransientObjectAccess = cpb.create();
+        }
         return props_GenerationContextOp_TransientObjectAccess;
       case LanguageConceptSwitch.GenerationContextOp_UserObjectAccessBase:
+        if (props_GenerationContextOp_UserObjectAccessBase == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_UserObjectAccessBase = cpb.create();
+        }
         return props_GenerationContextOp_UserObjectAccessBase;
       case LanguageConceptSwitch.GenerationContextOp_VarRef:
+        if (props_GenerationContextOp_VarRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationContextOp_VarRef = cpb.create();
+        }
         return props_GenerationContextOp_VarRef;
       case LanguageConceptSwitch.GenerationContextType:
+        if (props_GenerationContextType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("generation context type");
+          props_GenerationContextType = cpb.create();
+        }
         return props_GenerationContextType;
       case LanguageConceptSwitch.TemplateFunctionParameter_generationContext:
+        if (props_TemplateFunctionParameter_generationContext == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("generation context parameter");
+          props_TemplateFunctionParameter_generationContext = cpb.create();
+        }
         return props_TemplateFunctionParameter_generationContext;
     }
     return null;

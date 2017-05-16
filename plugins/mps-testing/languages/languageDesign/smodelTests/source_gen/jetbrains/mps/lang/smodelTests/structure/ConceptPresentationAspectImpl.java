@@ -4,17 +4,17 @@ package jetbrains.mps.lang.smodelTests.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Child = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ChildSubConcept = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GrandChild = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ReferenceContainer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ReferenceContainerSubConcept = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Root = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Child;
+  private ConceptPresentation props_ChildSubConcept;
+  private ConceptPresentation props_GrandChild;
+  private ConceptPresentation props_ReferenceContainer;
+  private ConceptPresentation props_ReferenceContainerSubConcept;
+  private ConceptPresentation props_Root;
 
   @Override
   @Nullable
@@ -22,16 +22,40 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Child:
+        if (props_Child == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Child = cpb.create();
+        }
         return props_Child;
       case LanguageConceptSwitch.ChildSubConcept:
+        if (props_ChildSubConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ChildSubConcept = cpb.create();
+        }
         return props_ChildSubConcept;
       case LanguageConceptSwitch.GrandChild:
+        if (props_GrandChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GrandChild = cpb.create();
+        }
         return props_GrandChild;
       case LanguageConceptSwitch.ReferenceContainer:
+        if (props_ReferenceContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ReferenceContainer = cpb.create();
+        }
         return props_ReferenceContainer;
       case LanguageConceptSwitch.ReferenceContainerSubConcept:
+        if (props_ReferenceContainerSubConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ReferenceContainerSubConcept = cpb.create();
+        }
         return props_ReferenceContainerSubConcept;
       case LanguageConceptSwitch.Root:
+        if (props_Root == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Root = cpb.create();
+        }
         return props_Root;
     }
     return null;

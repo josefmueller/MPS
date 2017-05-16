@@ -4,15 +4,15 @@ package jetbrains.mps.ide.vcs.modelmetadata.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_LanguageDependency = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Model = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModelReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModuleReference = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_LanguageDependency;
+  private ConceptPresentation props_Model;
+  private ConceptPresentation props_ModelReference;
+  private ConceptPresentation props_ModuleReference;
 
   @Override
   @Nullable
@@ -20,12 +20,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.LanguageDependency:
+        if (props_LanguageDependency == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_LanguageDependency = cpb.create();
+        }
         return props_LanguageDependency;
       case LanguageConceptSwitch.Model:
+        if (props_Model == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Model = cpb.create();
+        }
         return props_Model;
       case LanguageConceptSwitch.ModelReference:
+        if (props_ModelReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModelReference = cpb.create();
+        }
         return props_ModelReference;
       case LanguageConceptSwitch.ModuleReference:
+        if (props_ModuleReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ModuleReference = cpb.create();
+        }
         return props_ModuleReference;
     }
     return null;

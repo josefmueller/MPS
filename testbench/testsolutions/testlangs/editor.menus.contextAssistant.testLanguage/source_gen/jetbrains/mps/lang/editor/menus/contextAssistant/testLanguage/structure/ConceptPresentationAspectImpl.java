@@ -4,15 +4,15 @@ package jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Child = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OtherSubconceptOfChild = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Parent = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubconceptOfChild = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_Child;
+  private ConceptPresentation props_OtherSubconceptOfChild;
+  private ConceptPresentation props_Parent;
+  private ConceptPresentation props_SubconceptOfChild;
 
   @Override
   @Nullable
@@ -20,12 +20,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Child:
+        if (props_Child == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Child = cpb.create();
+        }
         return props_Child;
       case LanguageConceptSwitch.OtherSubconceptOfChild:
+        if (props_OtherSubconceptOfChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OtherSubconceptOfChild = cpb.create();
+        }
         return props_OtherSubconceptOfChild;
       case LanguageConceptSwitch.Parent:
+        if (props_Parent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Parent = cpb.create();
+        }
         return props_Parent;
       case LanguageConceptSwitch.SubconceptOfChild:
+        if (props_SubconceptOfChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SubconceptOfChild = cpb.create();
+        }
         return props_SubconceptOfChild;
     }
     return null;

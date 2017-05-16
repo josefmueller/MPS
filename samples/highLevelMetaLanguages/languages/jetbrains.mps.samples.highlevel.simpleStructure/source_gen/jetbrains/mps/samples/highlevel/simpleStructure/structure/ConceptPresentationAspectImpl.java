@@ -4,15 +4,15 @@ package jetbrains.mps.samples.highlevel.simpleStructure.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_CDHolder_GeneratorInternal = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SimpleConceptDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SimplePropertyDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StructureAspectDeclaration = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_CDHolder_GeneratorInternal;
+  private ConceptPresentation props_SimpleConceptDeclaration;
+  private ConceptPresentation props_SimplePropertyDeclaration;
+  private ConceptPresentation props_StructureAspectDeclaration;
 
   @Override
   @Nullable
@@ -20,12 +20,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.CDHolder_GeneratorInternal:
+        if (props_CDHolder_GeneratorInternal == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_CDHolder_GeneratorInternal = cpb.create();
+        }
         return props_CDHolder_GeneratorInternal;
       case LanguageConceptSwitch.SimpleConceptDeclaration:
+        if (props_SimpleConceptDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SimpleConceptDeclaration = cpb.create();
+        }
         return props_SimpleConceptDeclaration;
       case LanguageConceptSwitch.SimplePropertyDeclaration:
+        if (props_SimplePropertyDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SimplePropertyDeclaration = cpb.create();
+        }
         return props_SimplePropertyDeclaration;
       case LanguageConceptSwitch.StructureAspectDeclaration:
+        if (props_StructureAspectDeclaration == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_StructureAspectDeclaration = cpb.create();
+        }
         return props_StructureAspectDeclaration;
     }
     return null;

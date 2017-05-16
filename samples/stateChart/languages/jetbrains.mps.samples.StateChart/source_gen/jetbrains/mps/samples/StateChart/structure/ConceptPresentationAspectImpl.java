@@ -4,20 +4,20 @@ package jetbrains.mps.samples.StateChart.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ChartOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EmptyOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Event = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Log = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OperationsList = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Raise = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_State = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StateChart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Transition = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_ChartOperation;
+  private ConceptPresentation props_EmptyOperation;
+  private ConceptPresentation props_Event;
+  private ConceptPresentation props_Log;
+  private ConceptPresentation props_OperationsList;
+  private ConceptPresentation props_Raise;
+  private ConceptPresentation props_State;
+  private ConceptPresentation props_StateChart;
+  private ConceptPresentation props_Transition;
 
   @Override
   @Nullable
@@ -25,22 +25,58 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ChartOperation:
+        if (props_ChartOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ChartOperation = cpb.create();
+        }
         return props_ChartOperation;
       case LanguageConceptSwitch.EmptyOperation:
+        if (props_EmptyOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EmptyOperation = cpb.create();
+        }
         return props_EmptyOperation;
       case LanguageConceptSwitch.Event:
+        if (props_Event == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Event = cpb.create();
+        }
         return props_Event;
       case LanguageConceptSwitch.Log:
+        if (props_Log == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Log = cpb.create();
+        }
         return props_Log;
       case LanguageConceptSwitch.OperationsList:
+        if (props_OperationsList == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_OperationsList = cpb.create();
+        }
         return props_OperationsList;
       case LanguageConceptSwitch.Raise:
+        if (props_Raise == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Raise = cpb.create();
+        }
         return props_Raise;
       case LanguageConceptSwitch.State:
+        if (props_State == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_State = cpb.create();
+        }
         return props_State;
       case LanguageConceptSwitch.StateChart:
+        if (props_StateChart == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_StateChart = cpb.create();
+        }
         return props_StateChart;
       case LanguageConceptSwitch.Transition:
+        if (props_Transition == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Transition = cpb.create();
+        }
         return props_Transition;
     }
     return null;

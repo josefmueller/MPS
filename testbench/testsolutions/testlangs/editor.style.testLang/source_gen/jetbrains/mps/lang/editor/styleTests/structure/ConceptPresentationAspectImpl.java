@@ -4,20 +4,20 @@ package jetbrains.mps.lang.editor.styleTests.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_HugePriorityStyle = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LeafNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeContainer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PriorityStyle = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PriorityStyleCopy = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestConceptWithStyleAttributes = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestInheritedAttribute = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestSimpleAttribute = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnapplyPriorityStyleCopy = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_HugePriorityStyle;
+  private ConceptPresentation props_LeafNode;
+  private ConceptPresentation props_NodeContainer;
+  private ConceptPresentation props_PriorityStyle;
+  private ConceptPresentation props_PriorityStyleCopy;
+  private ConceptPresentation props_TestConceptWithStyleAttributes;
+  private ConceptPresentation props_TestInheritedAttribute;
+  private ConceptPresentation props_TestSimpleAttribute;
+  private ConceptPresentation props_UnapplyPriorityStyleCopy;
 
   @Override
   @Nullable
@@ -25,22 +25,58 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.HugePriorityStyle:
+        if (props_HugePriorityStyle == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_HugePriorityStyle = cpb.create();
+        }
         return props_HugePriorityStyle;
       case LanguageConceptSwitch.LeafNode:
+        if (props_LeafNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_LeafNode = cpb.create();
+        }
         return props_LeafNode;
       case LanguageConceptSwitch.NodeContainer:
+        if (props_NodeContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_NodeContainer = cpb.create();
+        }
         return props_NodeContainer;
       case LanguageConceptSwitch.PriorityStyle:
+        if (props_PriorityStyle == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PriorityStyle = cpb.create();
+        }
         return props_PriorityStyle;
       case LanguageConceptSwitch.PriorityStyleCopy:
+        if (props_PriorityStyleCopy == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_PriorityStyleCopy = cpb.create();
+        }
         return props_PriorityStyleCopy;
       case LanguageConceptSwitch.TestConceptWithStyleAttributes:
+        if (props_TestConceptWithStyleAttributes == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestConceptWithStyleAttributes = cpb.create();
+        }
         return props_TestConceptWithStyleAttributes;
       case LanguageConceptSwitch.TestInheritedAttribute:
+        if (props_TestInheritedAttribute == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestInheritedAttribute = cpb.create();
+        }
         return props_TestInheritedAttribute;
       case LanguageConceptSwitch.TestSimpleAttribute:
+        if (props_TestSimpleAttribute == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestSimpleAttribute = cpb.create();
+        }
         return props_TestSimpleAttribute;
       case LanguageConceptSwitch.UnapplyPriorityStyleCopy:
+        if (props_UnapplyPriorityStyleCopy == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_UnapplyPriorityStyleCopy = cpb.create();
+        }
         return props_UnapplyPriorityStyleCopy;
     }
     return null;

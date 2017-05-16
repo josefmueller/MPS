@@ -4,24 +4,24 @@ package jetbrains.mps.debugger.java.evaluation.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_DebuggedType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DoNotTransformAnnotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DownCastToLowLevel = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Evaluator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EvaluatorConcept = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EvaluatorsSuperMethodCall = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EvaluatorsThisExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationHelperAnnotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IEvaluatorConcept = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LowLevelVariable = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LowLevelVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnitNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnprocessedAnnotation = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_DebuggedType;
+  private ConceptPresentation props_DoNotTransformAnnotation;
+  private ConceptPresentation props_DownCastToLowLevel;
+  private ConceptPresentation props_Evaluator;
+  private ConceptPresentation props_EvaluatorConcept;
+  private ConceptPresentation props_EvaluatorsSuperMethodCall;
+  private ConceptPresentation props_EvaluatorsThisExpression;
+  private ConceptPresentation props_GenerationHelperAnnotation;
+  private ConceptPresentation props_IEvaluatorConcept;
+  private ConceptPresentation props_LowLevelVariable;
+  private ConceptPresentation props_LowLevelVariableReference;
+  private ConceptPresentation props_UnitNode;
+  private ConceptPresentation props_UnprocessedAnnotation;
 
   @Override
   @Nullable
@@ -29,30 +29,82 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.DebuggedType:
+        if (props_DebuggedType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DebuggedType = cpb.create();
+        }
         return props_DebuggedType;
       case LanguageConceptSwitch.DoNotTransformAnnotation:
+        if (props_DoNotTransformAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DoNotTransformAnnotation = cpb.create();
+        }
         return props_DoNotTransformAnnotation;
       case LanguageConceptSwitch.DownCastToLowLevel:
+        if (props_DownCastToLowLevel == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DownCastToLowLevel = cpb.create();
+        }
         return props_DownCastToLowLevel;
       case LanguageConceptSwitch.Evaluator:
+        if (props_Evaluator == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Evaluator = cpb.create();
+        }
         return props_Evaluator;
       case LanguageConceptSwitch.EvaluatorConcept:
+        if (props_EvaluatorConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EvaluatorConcept = cpb.create();
+        }
         return props_EvaluatorConcept;
       case LanguageConceptSwitch.EvaluatorsSuperMethodCall:
+        if (props_EvaluatorsSuperMethodCall == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EvaluatorsSuperMethodCall = cpb.create();
+        }
         return props_EvaluatorsSuperMethodCall;
       case LanguageConceptSwitch.EvaluatorsThisExpression:
+        if (props_EvaluatorsThisExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_EvaluatorsThisExpression = cpb.create();
+        }
         return props_EvaluatorsThisExpression;
       case LanguageConceptSwitch.GenerationHelperAnnotation:
+        if (props_GenerationHelperAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_GenerationHelperAnnotation = cpb.create();
+        }
         return props_GenerationHelperAnnotation;
       case LanguageConceptSwitch.IEvaluatorConcept:
+        if (props_IEvaluatorConcept == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IEvaluatorConcept = cpb.create();
+        }
         return props_IEvaluatorConcept;
       case LanguageConceptSwitch.LowLevelVariable:
+        if (props_LowLevelVariable == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_LowLevelVariable = cpb.create();
+        }
         return props_LowLevelVariable;
       case LanguageConceptSwitch.LowLevelVariableReference:
+        if (props_LowLevelVariableReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_LowLevelVariableReference = cpb.create();
+        }
         return props_LowLevelVariableReference;
       case LanguageConceptSwitch.UnitNode:
+        if (props_UnitNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_UnitNode = cpb.create();
+        }
         return props_UnitNode;
       case LanguageConceptSwitch.UnprocessedAnnotation:
+        if (props_UnprocessedAnnotation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_UnprocessedAnnotation = cpb.create();
+        }
         return props_UnprocessedAnnotation;
     }
     return null;

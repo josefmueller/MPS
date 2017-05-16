@@ -4,18 +4,18 @@ package jetbrains.mps.testbench.suite.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_IModuleRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ITestRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_JUnit3TestCaseRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_JUnit4TestCaseRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModuleSuite = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_SolutionRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestCaseRef = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_IModuleRef;
+  private ConceptPresentation props_ITestRef;
+  private ConceptPresentation props_JUnit3TestCaseRef;
+  private ConceptPresentation props_JUnit4TestCaseRef;
+  private ConceptPresentation props_ModuleSuite;
+  private ConceptPresentation props_SolutionRef;
+  private ConceptPresentation props_TestCaseRef;
 
   @Override
   @Nullable
@@ -23,18 +23,47 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.IModuleRef:
+        if (props_IModuleRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_IModuleRef = cpb.create();
+        }
         return props_IModuleRef;
       case LanguageConceptSwitch.ITestRef:
+        if (props_ITestRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ITestRef = cpb.create();
+        }
         return props_ITestRef;
       case LanguageConceptSwitch.JUnit3TestCaseRef:
+        if (props_JUnit3TestCaseRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_JUnit3TestCaseRef = cpb.create();
+        }
         return props_JUnit3TestCaseRef;
       case LanguageConceptSwitch.JUnit4TestCaseRef:
+        if (props_JUnit4TestCaseRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_JUnit4TestCaseRef = cpb.create();
+        }
         return props_JUnit4TestCaseRef;
       case LanguageConceptSwitch.ModuleSuite:
+        if (props_ModuleSuite == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          props_ModuleSuite = cpb.create();
+        }
         return props_ModuleSuite;
       case LanguageConceptSwitch.SolutionRef:
+        if (props_SolutionRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_SolutionRef = cpb.create();
+        }
         return props_SolutionRef;
       case LanguageConceptSwitch.TestCaseRef:
+        if (props_TestCaseRef == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestCaseRef = cpb.create();
+        }
         return props_TestCaseRef;
     }
     return null;

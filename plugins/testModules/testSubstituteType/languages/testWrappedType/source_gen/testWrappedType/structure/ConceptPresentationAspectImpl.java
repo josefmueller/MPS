@@ -4,13 +4,13 @@ package testWrappedType.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_TypeWithUnits = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_WrapperType = new ConceptPresentationBuilder().create();
+  private ConceptPresentation props_TypeWithUnits;
+  private ConceptPresentation props_WrapperType;
 
   @Override
   @Nullable
@@ -18,8 +18,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.TypeWithUnits:
+        if (props_TypeWithUnits == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TypeWithUnits = cpb.create();
+        }
         return props_TypeWithUnits;
       case LanguageConceptSwitch.WrapperType:
+        if (props_WrapperType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_WrapperType = cpb.create();
+        }
         return props_WrapperType;
     }
     return null;

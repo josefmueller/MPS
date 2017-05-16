@@ -4,16 +4,16 @@ package jetbrains.mps.editor.contextActionsTool.lang.menus.structure;
 
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_QueryFunction_TransformationMenu_Icon = new ConceptPresentationBuilder().shortDesc("a block of code").create();
-  private final ConceptPresentation props_QueryFunction_TransformationMenu_Tooltip = new ConceptPresentationBuilder().shortDesc("a block of code").create();
-  private final ConceptPresentation props_TransformationFeature_Icon = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationFeature_Tooltip = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationLocation_ContextActionsTool = new ConceptPresentationBuilder().shortDesc("context actions tool window").create();
+  private ConceptPresentation props_QueryFunction_TransformationMenu_Icon;
+  private ConceptPresentation props_QueryFunction_TransformationMenu_Tooltip;
+  private ConceptPresentation props_TransformationFeature_Icon;
+  private ConceptPresentation props_TransformationFeature_Tooltip;
+  private ConceptPresentation props_TransformationLocation_ContextActionsTool;
 
   @Override
   @Nullable
@@ -21,14 +21,37 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.QueryFunction_TransformationMenu_Icon:
+        if (props_QueryFunction_TransformationMenu_Icon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("a block of code");
+          props_QueryFunction_TransformationMenu_Icon = cpb.create();
+        }
         return props_QueryFunction_TransformationMenu_Icon;
       case LanguageConceptSwitch.QueryFunction_TransformationMenu_Tooltip:
+        if (props_QueryFunction_TransformationMenu_Tooltip == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("a block of code");
+          props_QueryFunction_TransformationMenu_Tooltip = cpb.create();
+        }
         return props_QueryFunction_TransformationMenu_Tooltip;
       case LanguageConceptSwitch.TransformationFeature_Icon:
+        if (props_TransformationFeature_Icon == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TransformationFeature_Icon = cpb.create();
+        }
         return props_TransformationFeature_Icon;
       case LanguageConceptSwitch.TransformationFeature_Tooltip:
+        if (props_TransformationFeature_Tooltip == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TransformationFeature_Tooltip = cpb.create();
+        }
         return props_TransformationFeature_Tooltip;
       case LanguageConceptSwitch.TransformationLocation_ContextActionsTool:
+        if (props_TransformationLocation_ContextActionsTool == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("context actions tool window");
+          props_TransformationLocation_ContextActionsTool = cpb.create();
+        }
         return props_TransformationLocation_ContextActionsTool;
     }
     return null;
