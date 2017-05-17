@@ -129,6 +129,8 @@ import jetbrains.mps.editor.runtime.style.Measure;
     editorCell.setCellId("Constant_a7pinn_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
