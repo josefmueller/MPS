@@ -11,6 +11,17 @@
 SET IDE_BIN_DIR=%~dp0
 SET IDE_HOME=%IDE_BIN_DIR%\..
 
+IF "%IDE_BIN_DIR:~-8%" == "bin\win\" (
+  echo.
+  echo    You are trying to run MPS from generic distribution
+  echo Please first copy content of "%IDE_BIN_DIR%"
+  echo into its parent directory ("%IDE_BIN_DIR:~0,-4%"^)
+  echo and then run mps.bat from there
+  echo.
+  pause
+  exit
+)
+
 :: ---------------------------------------------------------------------
 :: Locate a JDK installation directory which will be used to run the IDE.
 :: Try (in order): MPS_JDK, idea%BITS%.exe.jdk, ..\jre, JDK_HOME, JAVA_HOME.
