@@ -29,10 +29,10 @@ SYSTEM REQUIREMENTS
 HOW TO START
     1. Unpack the JetBrains MPS distribution file to whenever you wish to install the program.
        We will refer to this destination location as your {installation home} below.
-    2. a) [WINDOWS] Open console window and start mps.bat file, located in {installation home}.
+    2. a) [WINDOWS] Open console window and start mps.bat file, located in {installation home}/bin.
     2. b) [MAC OS X] Execute JetBrains MPS application.
-    2. c) [UNIX] Open console window and start mps.sh file, located in {installation home}.
-    3. [OPTIONAL] Add the "{installation home}" to your PATH environmental
+    2. c) [UNIX] Open console window and start mps.sh file, located in {installation home}/bin.
+    3. [OPTIONAL] Add the "{installation home}/bin" to your PATH environmental
        variable so that you may start JetBrains MPS from any directory.
 
 HOW TO ADJUST JVM OPTIONS
