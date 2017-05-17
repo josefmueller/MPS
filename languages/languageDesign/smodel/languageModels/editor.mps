@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="8" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
@@ -387,7 +387,7 @@
         <child id="7783170064869818501" name="referentPresentation" index="2N1_XE" />
       </concept>
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
-      <concept id="4307758654696938365" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_RefPresentation" flags="ig" index="1WAQ3h" />
+      <concept id="4307758654696938365" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_RefPresentation" flags="ng" index="1WAQ3h" />
       <concept id="4307758654696952957" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ReferencedNode" flags="ng" index="1WAUZh" />
       <concept id="1166040637528" name="jetbrains.mps.lang.editor.structure.CellMenuComponent" flags="ng" index="1Xs25n">
         <child id="1166041505377" name="menuDescriptor" index="1XvlXI" />
@@ -1168,6 +1168,12 @@
         <property role="3F0ifm" value=":" />
         <node concept="VPM3Z" id="hEU$Pm6" role="3F10Kt">
           <property role="VOm3f" value="false" />
+        </node>
+        <node concept="11L4FC" id="4kNoC6bJyjx" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="11LMrY" id="4kNoC6bJyAV" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
         <node concept="pkWqt" id="i1BlVs6" role="pqm2j">
           <node concept="3clFbS" id="i1BlVs7" role="2VODD2">

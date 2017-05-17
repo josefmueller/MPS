@@ -141,6 +141,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     editorCell.setCellId("Constant_x0l1fn_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
