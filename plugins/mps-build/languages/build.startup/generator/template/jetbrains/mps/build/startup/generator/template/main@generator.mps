@@ -1099,6 +1099,37 @@
     <node concept="2DRAP_" id="4eWOtElZKrh" role="2DRAPQ">
       <property role="2DPR8u" value="SET IDE_HOME=%IDE_BIN_DIR%\.." />
     </node>
+    <node concept="2DRAP_" id="61awNsXLWq4" role="2DRAPQ" />
+    <node concept="2DRAP_" id="61awNsXLYMH" role="2DRAPQ">
+      <property role="2DPR8u" value="IF &quot;%IDE_BIN_DIR:~-8%&quot; == &quot;bin\win\&quot; (" />
+    </node>
+    <node concept="2DRAP_" id="61awNsXLZZ6" role="2DRAPQ">
+      <property role="2DPR8u" value="  echo." />
+    </node>
+    <node concept="2DRAP_" id="61awNsXM1bw" role="2DRAPQ">
+      <property role="2DPR8u" value="  echo    You are trying to run MPS from generic distribution" />
+    </node>
+    <node concept="2DRAP_" id="61awNsXM2nV" role="2DRAPQ">
+      <property role="2DPR8u" value="  echo Please first copy content of &quot;%IDE_BIN_DIR%&quot;" />
+    </node>
+    <node concept="2DRAP_" id="61awNsXM3$n" role="2DRAPQ">
+      <property role="2DPR8u" value="  echo into its parent directory (&quot;%IDE_BIN_DIR:~0,-4%&quot;^)" />
+    </node>
+    <node concept="2DRAP_" id="61awNsXM4KO" role="2DRAPQ">
+      <property role="2DPR8u" value="  echo and then run mps.bat from there" />
+    </node>
+    <node concept="2DRAP_" id="61awNsXM5Xi" role="2DRAPQ">
+      <property role="2DPR8u" value="  echo." />
+    </node>
+    <node concept="2DRAP_" id="61awNsXM79L" role="2DRAPQ">
+      <property role="2DPR8u" value="  pause" />
+    </node>
+    <node concept="2DRAP_" id="61awNsXM8mh" role="2DRAPQ">
+      <property role="2DPR8u" value="  exit" />
+    </node>
+    <node concept="2DRAP_" id="61awNsXM9yM" role="2DRAPQ">
+      <property role="2DPR8u" value=")" />
+    </node>
     <node concept="2DRAP_" id="4eWOtElZLxX" role="2DRAPQ" />
     <node concept="2DRAP_" id="4eWOtElZL_W" role="2DRAPQ">
       <property role="2DPR8u" value=":: ---------------------------------------------------------------------" />
