@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.ArrayList;
+import jetbrains.mps.util.SNodePresentationComparator;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -37,16 +39,19 @@ public class DebugMappingsBuilder {
       SNode labelEntry = SModelOperations.createNewNode(nodeFactory, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_LabelEntry"));
       SPropertyOperations.set(labelEntry, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810e9L, "label"), label);
       ListSequence.fromList(SLinkOperations.getChildren(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L, 0x35a02f6bfc9806c5L, "labels"))).addElement(labelEntry);
-      for (Map.Entry<SNode, Object> e : mappings.getMappings(label).entrySet()) {
+      ArrayList<SNode> keys = new ArrayList<SNode>(mappings.getMappings(label).keySet());
+      // XXX just need an same order each time, don't care about particular one 
+      keys.sort(new SNodePresentationComparator());
+      for (SNode keyInputNode : keys) {
         SNode entry = SModelOperations.createNewNode(nodeFactory, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeMapEntry"));
         ListSequence.fromList(SLinkOperations.getChildren(labelEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810ebL, "entries"))).addElement(entry);
-        if (e.getKey() != null) {
+        if (keyInputNode != null) {
           // FIXME map of input+ML->output shall no longer list null keys (once I've added dedicated handling for conditional roots) 
           //       however, just don't want to break anything right now, shall assert key!= null later 
           SLinkOperations.setNewChild(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_InputNode"));
-          SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f0aeL, "node"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), "7PoJpZpIp9n"), nodeFactory, e.getKey())));
-          SPropertyOperations.set(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f702L, "presentation"), e.getKey().getPresentation());
-          SModel inputNodeModel = e.getKey().getModel();
+          SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f0aeL, "node"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), "7PoJpZpIp9n"), nodeFactory, keyInputNode)));
+          SPropertyOperations.set(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f702L, "presentation"), keyInputNode.getPresentation());
+          SModel inputNodeModel = keyInputNode.getModel();
           if (inputNodeModel != null) {
             SPropertyOperations.set(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a9989481dbL, "modelName"), inputNodeModel.getName().getValue());
             if (!(inputNodeModel instanceof TransientSModel)) {
@@ -56,18 +61,19 @@ public class DebugMappingsBuilder {
               // Perhaps, once I start to keep attributes in a CP model (like name of checkpoint in SModelHeader.properties) 
               // I can have better logic here (would need t respect change in model reference for persisted CP model 
               // exposed in transients, though). 
-              SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr"), e.getKey());
+              SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr"), keyInputNode);
             }
           }
-          SNodeReference origin = TracingUtil.getInput(e.getKey());
+          SNodeReference origin = TracingUtil.getInput(keyInputNode);
           SLinkOperations.setTarget(entry, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806dbL, "inputOrigin"), (origin == null ? null : origin.resolve(myRepo)));
         }
         Collection<SNode> c;
-        if (e.getValue() instanceof SNode) {
-          SNode n = ((SNode) e.getValue());
+        Object valueOutputNode = mappings.getMappings(label).get(keyInputNode);
+        if (valueOutputNode instanceof SNode) {
+          SNode n = ((SNode) valueOutputNode);
           c = Collections.singleton(n);
-        } else if (e.getValue() instanceof Collection) {
-          c = (Collection<SNode>) e.getValue();
+        } else if (valueOutputNode instanceof Collection) {
+          c = (Collection<SNode>) valueOutputNode;
         } else {
           c = Collections.emptyList();
         }
