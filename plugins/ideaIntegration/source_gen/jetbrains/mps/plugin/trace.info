@@ -592,85 +592,90 @@
   </root>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131071966">
     <file name="IdeaJavaCompilerImpl.java">
-      <node id="8632185942131071984" at="23,0,24,0" concept="4" trace="myProject" />
-      <node id="8632185942131071987" at="24,0,25,0" concept="4" trace="myIdeaProjectHandler" />
-      <node id="8632185942131071996" at="25,48,26,24" concept="3" />
-      <node id="8632185942131072146" at="32,25,33,81" concept="3" />
-      <node id="4255423530121211561" at="38,31,39,32" concept="3" />
-      <node id="8632185942131072023" at="43,36,44,32" concept="9" />
-      <node id="4255423530121220790" at="53,28,54,72" concept="9" />
-      <node id="4652478519508028116" at="58,23,59,18" concept="9" />
-      <node id="6338816248140568476" at="60,5,61,73" concept="8" />
-      <node id="6338816248140957411" at="63,70,64,95" concept="3" />
-      <node id="4652478519508028128" at="67,9,68,138" concept="8" />
-      <node id="4652478519508028142" at="69,31,70,217" concept="9" />
-      <node id="4652478519508028121" at="72,33,73,26" concept="3" />
-      <node id="4652478519508028157" at="74,5,75,16" concept="9" />
-      <node id="8632185942131072069" at="78,36,79,18" concept="9" />
-      <node id="8632185942131072071" at="80,5,81,78" concept="9" />
-      <node id="8632185942131071990" at="25,0,28,0" concept="1" trace="IdeaJavaCompilerImpl#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="8632185942131072026" at="46,0,49,0" concept="7" trace="initComponent#()V" />
-      <node id="8632185942131072030" at="49,0,52,0" concept="7" trace="disposeComponent#()V" />
-      <node id="4652478519508028112" at="57,65,60,5" concept="6" />
-      <node id="6338816248140731489" at="62,36,65,7" concept="5" />
-      <node id="4652478519508028137" at="68,138,71,7" concept="6" />
-      <node id="8632185942131072064" at="77,51,80,5" concept="6" />
-      <node id="8632185942131072011" at="31,0,35,0" concept="7" trace="run#()V" />
-      <node id="8632185942131072015" at="37,0,41,0" concept="7" trace="projectClosed#()V" />
-      <node id="8632185942131072041" at="52,0,56,0" concept="7" trace="isValid#()Z" />
-      <node id="8632185942131072019" at="41,0,46,0" concept="7" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="6338816248140680340" at="61,73,66,5" concept="5" />
-      <node id="8632185942131072004" at="29,31,35,15" concept="3" />
-      <node id="8632185942131072060" at="77,0,83,0" concept="7" trace="getIdeaProjectHandler#()Ljetbrains/mps/plugin/IProjectHandler;" />
-      <node id="4652478519508028118" at="66,5,74,5" concept="16" />
-      <node id="8632185942131072000" at="28,0,37,0" concept="7" trace="projectOpened#()V" />
-      <node id="4255423530121198822" at="56,0,77,0" concept="7" trace="compileModules#([Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
-      <scope id="8632185942131072029" at="47,31,47,31" />
-      <scope id="8632185942131072033" at="50,34,50,34" />
-      <scope id="8632185942131071995" at="25,48,26,24" />
-      <scope id="8632185942131072145" at="32,25,33,81" />
-      <scope id="8632185942131072018" at="38,31,39,32" />
-      <scope id="8632185942131072022" at="43,36,44,32" />
-      <scope id="8632185942131072044" at="53,28,54,72" />
-      <scope id="4652478519508028115" at="58,23,59,18" />
-      <scope id="6338816248140731492" at="63,70,64,95" />
-      <scope id="4652478519508028141" at="69,31,70,217" />
-      <scope id="4652478519508028119" at="72,0,73,26">
+      <node id="8632185942131071984" at="24,0,25,0" concept="4" trace="myProject" />
+      <node id="8632185942131071987" at="25,0,26,0" concept="4" trace="myIdeaProjectHandler" />
+      <node id="8632185942131071996" at="26,48,27,24" concept="3" />
+      <node id="8632185942131072146" at="33,25,34,81" concept="3" />
+      <node id="4255423530121211561" at="39,31,40,32" concept="3" />
+      <node id="8632185942131072023" at="44,36,45,32" concept="9" />
+      <node id="4255423530121220790" at="54,28,55,72" concept="9" />
+      <node id="4652478519508028116" at="59,23,60,18" concept="9" />
+      <node id="6338816248140568476" at="61,5,62,73" concept="8" />
+      <node id="3589878583403791414" at="64,70,65,73" concept="8" />
+      <node id="6338816248140957411" at="66,37,67,80" concept="3" />
+      <node id="4652478519508028128" at="71,9,72,138" concept="8" />
+      <node id="4652478519508028142" at="73,31,74,217" concept="9" />
+      <node id="4652478519508028121" at="76,33,77,26" concept="3" />
+      <node id="4652478519508028157" at="78,5,79,16" concept="9" />
+      <node id="8632185942131072069" at="82,36,83,18" concept="9" />
+      <node id="8632185942131072071" at="84,5,85,78" concept="9" />
+      <node id="8632185942131071990" at="26,0,29,0" concept="1" trace="IdeaJavaCompilerImpl#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="8632185942131072026" at="47,0,50,0" concept="7" trace="initComponent#()V" />
+      <node id="8632185942131072030" at="50,0,53,0" concept="7" trace="disposeComponent#()V" />
+      <node id="4652478519508028112" at="58,65,61,5" concept="6" />
+      <node id="3589878583403804849" at="65,73,68,9" concept="6" />
+      <node id="4652478519508028137" at="72,138,75,7" concept="6" />
+      <node id="8632185942131072064" at="81,51,84,5" concept="6" />
+      <node id="8632185942131072011" at="32,0,36,0" concept="7" trace="run#()V" />
+      <node id="8632185942131072015" at="38,0,42,0" concept="7" trace="projectClosed#()V" />
+      <node id="8632185942131072041" at="53,0,57,0" concept="7" trace="isValid#()Z" />
+      <node id="8632185942131072019" at="42,0,47,0" concept="7" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="8632185942131072004" at="30,31,36,15" concept="3" />
+      <node id="6338816248140731489" at="63,36,69,7" concept="5" />
+      <node id="8632185942131072060" at="81,0,87,0" concept="7" trace="getIdeaProjectHandler#()Ljetbrains/mps/plugin/IProjectHandler;" />
+      <node id="6338816248140680340" at="62,73,70,5" concept="5" />
+      <node id="4652478519508028118" at="70,5,78,5" concept="16" />
+      <node id="8632185942131072000" at="29,0,38,0" concept="7" trace="projectOpened#()V" />
+      <node id="4255423530121198822" at="57,0,81,0" concept="7" trace="compileModules#([Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
+      <scope id="8632185942131072029" at="48,31,48,31" />
+      <scope id="8632185942131072033" at="51,34,51,34" />
+      <scope id="8632185942131071995" at="26,48,27,24" />
+      <scope id="8632185942131072145" at="33,25,34,81" />
+      <scope id="8632185942131072018" at="39,31,40,32" />
+      <scope id="8632185942131072022" at="44,36,45,32" />
+      <scope id="8632185942131072044" at="54,28,55,72" />
+      <scope id="4652478519508028115" at="59,23,60,18" />
+      <scope id="3589878583403804851" at="66,37,67,80" />
+      <scope id="4652478519508028141" at="73,31,74,217" />
+      <scope id="4652478519508028119" at="76,0,77,26">
         <var name="e" id="4652478519508028125" />
       </scope>
-      <scope id="4652478519508028120" at="72,33,73,26" />
-      <scope id="8632185942131072068" at="78,36,79,18" />
-      <scope id="8632185942131071990" at="25,0,28,0">
+      <scope id="4652478519508028120" at="76,33,77,26" />
+      <scope id="8632185942131072068" at="82,36,83,18" />
+      <scope id="8632185942131071990" at="26,0,29,0">
         <var name="project" id="8632185942131071993" />
       </scope>
-      <scope id="8632185942131072026" at="46,0,49,0" />
-      <scope id="8632185942131072030" at="49,0,52,0" />
-      <scope id="6338816248140680346" at="62,36,65,7" />
-      <scope id="6338816248140731489" at="62,36,65,7">
-        <var name="model" id="6338816248140731490" />
+      <scope id="8632185942131072026" at="47,0,50,0" />
+      <scope id="8632185942131072030" at="50,0,53,0" />
+      <scope id="8632185942131072011" at="32,0,36,0" />
+      <scope id="8632185942131072015" at="38,0,42,0" />
+      <scope id="8632185942131072041" at="53,0,57,0" />
+      <scope id="6338816248140731492" at="64,70,68,9">
+        <var name="outputLocation" id="3589878583403791415" />
       </scope>
-      <scope id="8632185942131072011" at="31,0,35,0" />
-      <scope id="8632185942131072015" at="37,0,41,0" />
-      <scope id="8632185942131072041" at="52,0,56,0" />
-      <scope id="4652478519508028127" at="67,9,71,7">
+      <scope id="4652478519508028127" at="71,9,75,7">
         <var name="ideaResult" id="4652478519508028129" />
       </scope>
-      <scope id="8632185942131072063" at="77,51,81,78" />
-      <scope id="8632185942131072019" at="41,0,46,0" />
-      <scope id="6338816248140680340" at="61,73,66,5">
+      <scope id="8632185942131072063" at="81,51,85,78" />
+      <scope id="8632185942131072019" at="42,0,47,0" />
+      <scope id="8632185942131072003" at="30,31,36,15" />
+      <scope id="6338816248140680346" at="63,36,69,7" />
+      <scope id="6338816248140731489" at="63,36,69,7">
+        <var name="model" id="6338816248140731490" />
+      </scope>
+      <scope id="8632185942131072060" at="81,0,87,0" />
+      <scope id="6338816248140680340" at="62,73,70,5">
         <var name="module" id="6338816248140680342" />
       </scope>
-      <scope id="8632185942131072003" at="29,31,35,15" />
-      <scope id="8632185942131072060" at="77,0,83,0" />
-      <scope id="8632185942131072000" at="28,0,37,0" />
-      <scope id="4255423530121198830" at="57,65,75,16">
+      <scope id="8632185942131072000" at="29,0,38,0" />
+      <scope id="4255423530121198830" at="58,65,79,16">
         <var name="modulePaths" id="6338816248140568479" />
       </scope>
-      <scope id="4255423530121198822" at="56,0,77,0">
+      <scope id="4255423530121198822" at="57,0,81,0">
         <var name="modules" id="4255423530121198826" />
       </scope>
-      <unit id="8632185942131072010" at="30,19,35,5" name="jetbrains.mps.plugin.IdeaJavaCompilerImpl$1" />
-      <unit id="8632185942131071966" at="22,0,84,0" name="jetbrains.mps.plugin.IdeaJavaCompilerImpl" />
+      <unit id="8632185942131072010" at="31,19,36,5" name="jetbrains.mps.plugin.IdeaJavaCompilerImpl$1" />
+      <unit id="8632185942131071966" at="23,0,88,0" name="jetbrains.mps.plugin.IdeaJavaCompilerImpl" />
     </file>
   </root>
   <root nodeRef="r:20925211-384c-4c5f-b751-56b79dd3b32e(jetbrains.mps.plugin)/8632185942131072152">

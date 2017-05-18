@@ -14,7 +14,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.SModelOperations;
 import java.util.Arrays;
 import java.util.Collections;
 import java.rmi.RemoteException;
@@ -61,7 +62,10 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
     Set<String> modulePaths = SetSequence.fromSet(new HashSet<String>());
     for (SModule module : modules) {
       for (SModel model : Sequence.fromIterable(module.getModels())) {
-        SetSequence.fromSet(modulePaths).addElement(SModuleOperations.getOutputPathFor(model));
+        IFile outputLocation = SModelOperations.getOutputLocation(model);
+        if (outputLocation != null) {
+          SetSequence.fromSet(modulePaths).addElement(outputLocation.getPath());
+        }
       }
     }
     try {

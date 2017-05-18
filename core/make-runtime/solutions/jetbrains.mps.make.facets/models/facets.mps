@@ -1059,39 +1059,66 @@
                 <node concept="3uibUv" id="3E_ABgyy$bm" role="1tU5fm">
                   <ref role="3uigEE" to="vqh0:~CompilationResult" resolve="CompilationResult" />
                 </node>
-                <node concept="2OqwBi" id="5L5h3brvDUE" role="33vP2m">
-                  <node concept="37vLTw" id="3GM_nagT_Cc" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5L5h3brvDTg" resolve="compiler" />
+                <node concept="2OqwBi" id="37hNSOQ$Lm6" role="33vP2m">
+                  <node concept="2ShNRf" id="37hNSOQ$JIp" role="2Oq$k0">
+                    <node concept="1pGfFk" id="37hNSOQ$KcK" role="2ShVmc">
+                      <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
+                      <node concept="2OqwBi" id="37hNSOQ$KVV" role="37wK5m">
+                        <node concept="2OqwBi" id="37hNSOQ$Kw2" role="2Oq$k0">
+                          <node concept="2_BwXt" id="37hNSOQ$KkV" role="2Oq$k0" />
+                          <node concept="liA8E" id="37hNSOQ$KGs" role="2OqNvi">
+                            <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="37hNSOQ$Lab" role="2OqNvi">
+                          <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
-                  <node concept="liA8E" id="5L5h3brvDUI" role="2OqNvi">
-                    <ref role="37wK5l" to="iqmz:42gV918qhxZ" resolve="compileModules" />
-                    <node concept="2OqwBi" id="61Cu8BBBvml" role="37wK5m">
-                      <node concept="2OqwBi" id="61Cu8BBEPSB" role="2Oq$k0">
-                        <node concept="3$u5V9" id="61Cu8BBEQFs" role="2OqNvi">
-                          <node concept="1bVj0M" id="61Cu8BBEQFu" role="23t8la">
-                            <node concept="3clFbS" id="61Cu8BBEQFv" role="1bW5cS">
-                              <node concept="3clFbF" id="61Cu8BBEQYx" role="3cqZAp">
-                                <node concept="2OqwBi" id="61Cu8BBERUV" role="3clFbG">
-                                  <node concept="2sxana" id="61Cu8BBET0q" role="2OqNvi">
-                                    <ref role="2sxfKC" to="fn29:1Xl3kQ1uadw" resolve="module" />
+                  <node concept="liA8E" id="37hNSOQ$LzD" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                    <node concept="1bVj0M" id="37hNSOQ$Maq" role="37wK5m">
+                      <node concept="3clFbS" id="37hNSOQ$Mar" role="1bW5cS">
+                        <node concept="3clFbF" id="37hNSOQ$Mme" role="3cqZAp">
+                          <node concept="2OqwBi" id="5L5h3brvDUE" role="3clFbG">
+                            <node concept="37vLTw" id="3GM_nagT_Cc" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5L5h3brvDTg" resolve="compiler" />
+                            </node>
+                            <node concept="liA8E" id="5L5h3brvDUI" role="2OqNvi">
+                              <ref role="37wK5l" to="iqmz:42gV918qhxZ" resolve="compileModules" />
+                              <node concept="2OqwBi" id="61Cu8BBBvml" role="37wK5m">
+                                <node concept="2OqwBi" id="61Cu8BBEPSB" role="2Oq$k0">
+                                  <node concept="3$u5V9" id="61Cu8BBEQFs" role="2OqNvi">
+                                    <node concept="1bVj0M" id="61Cu8BBEQFu" role="23t8la">
+                                      <node concept="3clFbS" id="61Cu8BBEQFv" role="1bW5cS">
+                                        <node concept="3clFbF" id="61Cu8BBEQYx" role="3cqZAp">
+                                          <node concept="2OqwBi" id="61Cu8BBERUV" role="3clFbG">
+                                            <node concept="2sxana" id="61Cu8BBET0q" role="2OqNvi">
+                                              <ref role="2sxfKC" to="fn29:1Xl3kQ1uadw" resolve="module" />
+                                            </node>
+                                            <node concept="37vLTw" id="61Cu8BBEQYw" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="61Cu8BBEQFw" resolve="it" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="Rh6nW" id="61Cu8BBEQFw" role="1bW2Oz">
+                                        <property role="TrG5h" value="it" />
+                                        <node concept="2jxLKc" id="61Cu8BBEQFx" role="1tU5fm" />
+                                      </node>
+                                    </node>
                                   </node>
-                                  <node concept="37vLTw" id="61Cu8BBEQYw" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="61Cu8BBEQFw" resolve="it" />
+                                  <node concept="37vLTw" id="61Cu8BBEOYR" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="61Cu8BBDRYR" resolve="toCompile" />
                                   </node>
                                 </node>
+                                <node concept="3_kTaI" id="61Cu8BBBvNE" role="2OqNvi" />
                               </node>
-                            </node>
-                            <node concept="Rh6nW" id="61Cu8BBEQFw" role="1bW2Oz">
-                              <property role="TrG5h" value="it" />
-                              <node concept="2jxLKc" id="61Cu8BBEQFx" role="1tU5fm" />
                             </node>
                           </node>
                         </node>
-                        <node concept="37vLTw" id="61Cu8BBEOYR" role="2Oq$k0">
-                          <ref role="3cqZAo" node="61Cu8BBDRYR" resolve="toCompile" />
-                        </node>
                       </node>
-                      <node concept="3_kTaI" id="61Cu8BBBvNE" role="2OqNvi" />
                     </node>
                   </node>
                 </node>

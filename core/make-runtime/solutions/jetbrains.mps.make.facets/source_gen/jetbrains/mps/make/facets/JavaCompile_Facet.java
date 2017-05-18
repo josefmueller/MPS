@@ -242,7 +242,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               }
 
               // collect modules to compile 
-              Iterable<TResource> toCompile = Sequence.fromIterable(input).where(new IWhereFilter<TResource>() {
+              final Iterable<TResource> toCompile = Sequence.fromIterable(input).where(new IWhereFilter<TResource>() {
                 public boolean accept(TResource it) {
                   return SModuleOperations.isCompileInIdea(it.module());
                 }
@@ -256,7 +256,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
               }
 
-              IdeaJavaCompiler compiler = monitor.getSession().getProject().getComponent(IdeaJavaCompiler.class);
+              final IdeaJavaCompiler compiler = monitor.getSession().getProject().getComponent(IdeaJavaCompiler.class);
               if (compiler == null || !(compiler.isValid())) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                 return new IResult.FAILURE(_output_wf1ya0_a0b);
@@ -266,11 +266,15 @@ public class JavaCompile_Facet extends IFacet.Stub {
               subProgress_p0a0b.start("Compiling in IntelliJ IDEA", 1);
 
               subProgress_p0a0b.advance(1);
-              CompilationResult cr = compiler.compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, SModule>() {
-                public SModule select(TResource it) {
-                  return it.module();
+              CompilationResult cr = new ModelAccessHelper(monitor.getSession().getProject().getModelAccess()).runReadAction(new Computable<CompilationResult>() {
+                public CompilationResult compute() {
+                  return compiler.compileModules(Sequence.fromIterable(toCompile).select(new ISelector<TResource, SModule>() {
+                    public SModule select(TResource it) {
+                      return it.module();
+                    }
+                  }).toGenericArray(SModule.class));
                 }
-              }).toGenericArray(SModule.class));
+              });
               if (!(cr.isOk())) {
                 if (cr.getErrorsCount() > 0) {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(cr)));

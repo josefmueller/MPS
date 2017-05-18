@@ -48,6 +48,7 @@
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
+    <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2466,19 +2467,45 @@
                 <property role="TrG5h" value="model" />
               </node>
               <node concept="3clFbS" id="5vRZWGeTLh$" role="2LFqv$">
-                <node concept="3clFbF" id="5vRZWGeUCrz" role="3cqZAp">
-                  <node concept="2OqwBi" id="5vRZWGeUPMD" role="3clFbG">
-                    <node concept="TSZUe" id="5vRZWGeV5Iv" role="2OqNvi">
-                      <node concept="2YIFZM" id="5vRZWGeVv3D" role="25WWJ7">
-                        <ref role="37wK5l" to="z1c3:~SModuleOperations.getOutputPathFor(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getOutputPathFor" />
-                        <ref role="1Pybhc" to="z1c3:~SModuleOperations" resolve="SModuleOperations" />
-                        <node concept="2GrUjf" id="5vRZWGeVv3X" role="37wK5m">
-                          <ref role="2Gs0qQ" node="5vRZWGeTLhy" resolve="model" />
+                <node concept="3cpWs8" id="37hNSOQ$cgQ" role="3cqZAp">
+                  <node concept="3cpWsn" id="37hNSOQ$cgR" role="3cpWs9">
+                    <property role="TrG5h" value="outputLocation" />
+                    <node concept="3uibUv" id="37hNSOQ$cgH" role="1tU5fm">
+                      <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+                    </node>
+                    <node concept="2YIFZM" id="37hNSOQ$cgS" role="33vP2m">
+                      <ref role="37wK5l" to="w1kc:~SModelOperations.getOutputLocation(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.vfs.IFile" resolve="getOutputLocation" />
+                      <ref role="1Pybhc" to="w1kc:~SModelOperations" resolve="SModelOperations" />
+                      <node concept="2GrUjf" id="37hNSOQ$cgT" role="37wK5m">
+                        <ref role="2Gs0qQ" node="5vRZWGeTLhy" resolve="model" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="37hNSOQ$fyL" role="3cqZAp">
+                  <node concept="3clFbS" id="37hNSOQ$fyN" role="3clFbx">
+                    <node concept="3clFbF" id="5vRZWGeUCrz" role="3cqZAp">
+                      <node concept="2OqwBi" id="5vRZWGeUPMD" role="3clFbG">
+                        <node concept="TSZUe" id="5vRZWGeV5Iv" role="2OqNvi">
+                          <node concept="2OqwBi" id="37hNSOQ$iwK" role="25WWJ7">
+                            <node concept="37vLTw" id="37hNSOQ$cgU" role="2Oq$k0">
+                              <ref role="3cqZAo" node="37hNSOQ$cgR" resolve="outputLocation" />
+                            </node>
+                            <node concept="liA8E" id="37hNSOQ$jr1" role="2OqNvi">
+                              <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="5vRZWGeUCry" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5vRZWGeT9uv" resolve="modulePaths" />
                         </node>
                       </node>
                     </node>
-                    <node concept="37vLTw" id="5vRZWGeUCry" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5vRZWGeT9uv" resolve="modulePaths" />
+                  </node>
+                  <node concept="3y3z36" id="37hNSOQ$h3A" role="3clFbw">
+                    <node concept="10Nm6u" id="37hNSOQ$hfD" role="3uHU7w" />
+                    <node concept="37vLTw" id="37hNSOQ$gMm" role="3uHU7B">
+                      <ref role="3cqZAo" node="37hNSOQ$cgR" resolve="outputLocation" />
                     </node>
                   </node>
                 </node>
