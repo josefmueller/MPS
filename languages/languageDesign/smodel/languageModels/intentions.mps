@@ -101,6 +101,8 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions">
+      <concept id="3618415754251190715" name="jetbrains.mps.lang.intentions.structure.ChildFilterFunction" flags="in" index="zTJ1e" />
+      <concept id="3618415754251192144" name="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode" flags="nn" index="zTJq_" />
       <concept id="1192794744107" name="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" flags="ig" index="2S6QgY" />
       <concept id="1192794782375" name="jetbrains.mps.lang.intentions.structure.DescriptionBlock" flags="in" index="2S6ZIM" />
       <concept id="1192795771125" name="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" flags="in" index="2SaL7w" />
@@ -110,6 +112,7 @@
         <property id="2522969319638091386" name="isAvailableInChildNodes" index="2ZfUl0" />
         <reference id="2522969319638198290" name="forConcept" index="2ZfgGC" />
         <child id="2522969319638198291" name="executeFunction" index="2ZfgGD" />
+        <child id="2522969319638093994" name="childFilterFunction" index="2ZfVeg" />
         <child id="2522969319638093995" name="isApplicableFunction" index="2ZfVeh" />
         <child id="2522969319638093993" name="descriptionFunction" index="2ZfVej" />
       </concept>
@@ -162,6 +165,10 @@
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
       <concept id="1139867745658" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" flags="nn" index="1_qnLN">
         <reference id="1139867957129" name="concept" index="1_rbq0" />
+      </concept>
+      <concept id="1144195091934" name="jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation" flags="nn" index="1BlSNk">
+        <reference id="1144195362400" name="conceptOfParent" index="1BmUXE" />
+        <reference id="1144195396777" name="linkInParent" index="1Bn3mz" />
       </concept>
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
@@ -1241,6 +1248,7 @@
   </node>
   <node concept="2S6QgY" id="i1Bm78T">
     <property role="TrG5h" value="ChangeAsCast" />
+    <property role="2ZfUl0" value="true" />
     <ref role="2ZfgGC" to="tp25:g_PxgQB" resolve="SNodeTypeCastExpression" />
     <node concept="2S6ZIM" id="i1Bm78U" role="2ZfVej">
       <node concept="3clFbS" id="i1Bm78V" role="2VODD2">
@@ -1287,6 +1295,19 @@
               <node concept="3TrcHB" id="i1BmfQu" role="2OqNvi">
                 <ref role="3TsBF5" to="tp25:i1BlNJ7" resolve="asCast" />
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="zTJ1e" id="1elipamVO1e" role="2ZfVeg">
+      <node concept="3clFbS" id="1elipamVO1f" role="2VODD2">
+        <node concept="3clFbF" id="1elipamVQgU" role="3cqZAp">
+          <node concept="2OqwBi" id="1elipamVQuu" role="3clFbG">
+            <node concept="zTJq_" id="1elipamVQgT" role="2Oq$k0" />
+            <node concept="1BlSNk" id="1elipamVQRM" role="2OqNvi">
+              <ref role="1BmUXE" to="tp25:g_PxgQB" resolve="SNodeTypeCastExpression" />
+              <ref role="1Bn3mz" to="tp25:3oQEojIPgjT" resolve="conceptArgument" />
             </node>
           </node>
         </node>

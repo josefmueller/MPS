@@ -10,16 +10,17 @@ import jetbrains.mps.openapi.intentions.Kind;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
 public final class ChangeAsCast_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
   public ChangeAsCast_Intention() {
-    super(Kind.NORMAL, false, new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "1238684430905"));
+    super(Kind.NORMAL, true, new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "1238684430905"));
   }
   @Override
   public String getPresentation() {
@@ -27,7 +28,13 @@ public final class ChangeAsCast_Intention extends AbstractIntentionDescriptor im
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (editorContext.getSelectedNode() != node && !(isVisibleInChild(node, editorContext.getSelectedNode(), editorContext))) {
+      return false;
+    }
     return true;
+  }
+  private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
+    return SNodeOperations.hasRole(childNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x3636a984eed504f9L, "conceptArgument"));
   }
   @Override
   public boolean isSurroundWith() {
