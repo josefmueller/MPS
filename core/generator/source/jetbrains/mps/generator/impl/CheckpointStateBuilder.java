@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.ModelImports;
+import jetbrains.mps.util.SNodePresentationComparator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -120,6 +121,7 @@ class CheckpointStateBuilder {
 
   /*package*/ CheckpointState create(CheckpointIdentity step) {
     cloneTransientToCheckpoint();
+    new ConsistentNodeIdentityHelper(new SNodePresentationComparator()).apply(myCheckpointModel);
     return new CheckpointState(myMemento, myCheckpointModel, step);
   }
 

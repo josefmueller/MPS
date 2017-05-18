@@ -744,8 +744,8 @@
       <node id="3864140621130092805" at="39,237,40,174" concept="4" />
       <node id="3864140621130081819" at="40,174,41,217" concept="4" />
       <node id="7110157163401034701" at="41,217,42,89" concept="10" />
-      <node id="7110157163401216277" at="42,89,43,80" concept="12" />
-      <node id="7110157163401058866" at="43,80,44,51" concept="4" />
+      <node id="7110157163401216277" at="42,89,43,81" concept="12" />
+      <node id="7110157163401058866" at="43,81,44,54" concept="4" />
       <node id="3864140621130101591" at="45,39,46,236" concept="10" />
       <node id="3864140621130091905" at="46,236,47,223" concept="4" />
       <node id="5843998055530178589" at="48,35,49,133" concept="12" />
@@ -788,19 +788,30 @@
       <node id="910520772653513176" at="106,38,107,42" concept="10" />
       <node id="910520772653536961" at="108,23,109,18" concept="11" />
       <node id="910520772653588231" at="111,5,112,13" concept="11" />
+      <node id="2593065435985090352" at="118,44,119,67" concept="10" />
+      <node id="2593065435985128591" at="120,19,121,115" concept="12" />
+      <node id="2593065435985128947" at="121,115,122,90" concept="12" />
+      <node id="6249734663491534332" at="122,90,123,53" concept="10" />
+      <node id="6249734663491539248" at="123,53,124,53" concept="10" />
+      <node id="6249734663491565607" at="125,39,126,84" concept="12" />
+      <node id="6249734663491543779" at="126,84,127,77" concept="4" />
+      <node id="2593065435985100922" at="129,7,130,15" concept="11" />
       <node id="3864140621130127043" at="77,14,79,9" concept="0" />
       <node id="910520772653513185" at="107,42,110,7" concept="8" />
       <node id="910520772653423075" at="31,0,35,0" concept="2" trace="DebugMappingsBuilder#(Lorg/jetbrains/mps/openapi/module/SRepository;Ljava/util/Map;)V" />
+      <node id="6249734663491540220" at="124,53,128,9" concept="8" />
       <node id="3864140621130117905" at="79,9,84,9" concept="7" />
       <node id="910520772653513167" at="104,28,111,5" concept="8" />
       <node id="3864140621130109410" at="71,79,79,9" concept="8" />
       <node id="5843998055530234854" at="90,217,98,7" concept="7" />
       <node id="5808518347810423652" at="56,372,65,13" concept="8" />
+      <node id="2593065435985090967" at="119,67,129,7" concept="8" />
       <node id="910520772653510859" at="103,0,114,0" concept="9" trace="substitute#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="739095059048774096" at="54,58,66,11" concept="8" />
       <node id="5843998055530222643" at="86,5,99,5" concept="7" />
+      <node id="2593065435985080224" at="117,0,132,0" concept="9" trace="compare#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)I" />
       <node id="5843998055530166195" at="47,223,69,9" concept="8" />
-      <node id="3864140621130080536" at="44,51,85,7" concept="7" />
+      <node id="3864140621130080536" at="44,54,85,7" concept="7" />
       <node id="3864140621130075696" at="37,225,86,5" concept="7" />
       <node id="3864140621130068099" at="36,0,102,0" concept="9" trace="build#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/generator/impl/GeneratorMappings;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="3864140621130110155" at="75,59,76,50" />
@@ -810,6 +821,7 @@
       <scope id="3864140621130109412" at="72,47,74,39">
         <var name="n" id="3864140621130113845" />
       </scope>
+      <scope id="6249734663491540222" at="125,39,127,77" />
       <scope id="3864140621130117909" at="80,62,83,219">
         <var name="r" id="3864140621130114947" />
       </scope>
@@ -832,6 +844,10 @@
       <scope id="5843998055530234854" at="90,217,98,7">
         <var name="cr" id="5843998055530234858" />
       </scope>
+      <scope id="2593065435985090969" at="120,19,128,9">
+        <var name="o1" id="6249734663491534333" />
+        <var name="o2" id="6249734663491539249" />
+      </scope>
       <scope id="910520772653510862" at="103,37,112,13">
         <var name="m" id="910520772653513162" />
       </scope>
@@ -842,8 +858,15 @@
       <scope id="910520772653510859" at="103,0,114,0">
         <var name="n" id="910520772653512135" />
       </scope>
+      <scope id="2593065435985080234" at="118,44,130,15">
+        <var name="v" id="2593065435985090353" />
+      </scope>
       <scope id="5843998055530222643" at="86,5,99,5">
         <var name="label" id="5843998055530222647" />
+      </scope>
+      <scope id="2593065435985080224" at="117,0,132,0">
+        <var name="n1" id="2593065435985080228" />
+        <var name="n2" id="2593065435985080230" />
       </scope>
       <scope id="5843998055530166197" at="48,35,68,229">
         <var name="inputNodeModel" id="739095059048752377" />
@@ -854,7 +877,7 @@
         <var name="entry" id="3864140621130101594" />
         <var name="valueOutputNode" id="7110157163401018536" />
       </scope>
-      <scope id="3864140621130080536" at="44,51,85,7">
+      <scope id="3864140621130080536" at="44,54,85,7">
         <var name="keyInputNode" id="3864140621130080540" />
       </scope>
       <scope id="3864140621130075698" at="38,56,85,7">
@@ -871,7 +894,8 @@
         <var name="mappings" id="3864140621130068163" />
         <var name="nodeFactory" id="3864140621130068129" />
       </scope>
-      <unit id="3864140621130068067" at="27,0,115,0" name="jetbrains.mps.generator.impl.DebugMappingsBuilder" />
+      <unit id="2593065435985078646" at="115,0,133,0" name="jetbrains.mps.generator.impl.DebugMappingsBuilder$NodeOrder" />
+      <unit id="3864140621130068067" at="27,0,134,0" name="jetbrains.mps.generator.impl.DebugMappingsBuilder" />
     </file>
   </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/404112845802897353">

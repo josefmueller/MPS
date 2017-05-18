@@ -28,6 +28,7 @@ import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -178,8 +179,13 @@ public class CrossModelEnvironment {
   // originalModel is just to construct name/reference of the checkpoint model
   public SModel createBlankCheckpointModel(SModelReference originalModel, CheckpointIdentity step) {
     final SModelName transientModelName = createCheckpointModelName(originalModel, step);
+    // I'd like to have stable model id to minimize number of changes in CP models
+    int mid = originalModel.getModelId().hashCode() ^ step.getName().hashCode();
+    // make sure value fits into MPS reserved range, see IntegerSModelId doc.
+    mid &= 0x0FFFFFFF;
+    mid |= 0x0F000000;
     final SModelReference mr = PersistenceFacade.getInstance()
-                                                .createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(),
+                                                .createModelReference(myModule.getModuleReference(), new IntegerSModelId(mid),
                                                                       transientModelName.getValue());
     SModel checkpointModel = myModule.createTransientModel(mr);
     assert checkpointModel instanceof ModelWithAttributes;

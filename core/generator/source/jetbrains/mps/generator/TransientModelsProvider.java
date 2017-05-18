@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -145,6 +146,8 @@ public class TransientModelsProvider {
     return myCheckpointsModule;
   }
 
+  private final UUID myCheckpointModuleId = new UUID(0x0000000000004000L, ((long) "checkpoints".hashCode()) << 32 | "checkpoints".hashCode());
+
   /**
    * Requires model write to register checkpoint module with a {@linkplain #getRepository() repository}.
    */
@@ -159,7 +162,7 @@ public class TransientModelsProvider {
           return;
         }
       }
-      SModuleReference cpModuleRef = new ModuleReference(checkpointModuleName, ModuleId.regular());
+      SModuleReference cpModuleRef = new ModuleReference(checkpointModuleName, ModuleId.regular(myCheckpointModuleId));
       // I could have used custom subclass of AbstractModule and regular models (instanceof extapi.TransientSModel, not necessarily
       // the same as generator.TransientSModel TransientModelsModule class produces), there's no true need in TransientModelsModule, however,
       // (a) don't want to refactor right now; (b) perhaps, could use swap mechanism of TransientModelsModule in future to keep checkpoint models
