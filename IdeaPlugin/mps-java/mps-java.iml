@@ -53,6 +53,12 @@
     <orderEntry type="library" name="mps-icons" level="project" />
     <orderEntry type="library" name="mps-openapi" level="project" />
     <orderEntry type="library" name="mps-java-platform" level="project" />
-    <orderEntry type="library" name="mps-core-jars" level="project" />
+    <orderEntry type="library" name="mps-core" level="project" />
+    <orderEntry type="library" name="mps-logging" level="project" />
+    <orderEntry type="library" name="mps-messaging" level="project" />
+    <orderEntry type="library" name="ant-mps" level="project" />
+    <orderEntry type="library" name="mps-annotations" level="project" />
+    <orderEntry type="library" name="diffutils" level="project" />
+    <orderEntry type="library" name="mps-test" level="project" />
   </component>
 </module>

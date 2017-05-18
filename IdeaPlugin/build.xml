@@ -270,10 +270,6 @@
         <fileset dir="${ideaPath}/lib">
           <include name="**/*.jar"/>
         </fileset>
-        <fileset dir="${ideaPath}/plugins/junit/lib">
-          <include name="junit-rt.jar"/>
-        </fileset>
-        <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
         <fileset dir="${test.platform.sandbox.dir}/plugins/mps-core/lib">
           <include name="*.jar"/>
         </fileset>
@@ -313,10 +309,6 @@
         <fileset dir="${ideaPath}/lib">
           <include name="**/*.jar"/>
         </fileset>
-        <fileset dir="${ideaPath}/plugins/junit/lib">
-          <include name="junit-rt.jar"/>
-        </fileset>
-        <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
         <fileset dir="${test.platform.sandbox.dir}/plugins/mps-core/lib">
           <include name="*.jar"/>
         </fileset>
@@ -354,13 +346,9 @@
           <include name="**/*.jar"/>
           <exclude name="rt/jps-plugin-system.jar"/>
         </fileset>
-        <fileset dir="${ideaPath}/plugins/junit/lib">
-          <include name="junit-rt.jar"/>
-        </fileset>
         <fileset dir="${ideaPath}/plugins/devkit/lib">
           <include name="devkit-jps-plugin.jar"/>
         </fileset>
-        <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
         <!-- all JPS jars as specified in plugin.xmlS -->
         <pathelement path="${jps.classpath}"/>
         <!-- enumerating additional jard for testing -->

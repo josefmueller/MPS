@@ -26,7 +26,7 @@
     <import index="yyf4" ref="~mps-openapi/java:org.jetbrains.mps.openapi.util(mps-openapi/)" />
     <import index="alof" ref="~mps-platform/java:jetbrains.mps.ide.project(mps-platform/)" />
     <import index="lui2" ref="~mps-openapi/java:org.jetbrains.mps.openapi.module(mps-openapi/)" />
-    <import index="pa16" ref="~mps-core-jars/java:jetbrains.mps.persistence(mps-core-jars/)" />
+    <import index="pa16" ref="~mps-core/java:jetbrains.mps.persistence(mps-core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tci" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.refactoring(mps-core/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -609,7 +609,7 @@
       <node concept="3clFbS" id="57h3E7t_nBF" role="3clF47">
         <node concept="3clFbF" id="76R7UQw_goz" role="3cqZAp">
           <node concept="2OqwBi" id="76R7UQw_gzQ" role="3clFbG">
-            <node concept="2YIFZM" id="1PyPUch0G9k" role="2Oq$k0">
+            <node concept="2YIFZM" id="43T6ls5vFSZ" role="2Oq$k0">
               <ref role="37wK5l" to="pa16:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
               <ref role="1Pybhc" to="pa16:~PersistenceRegistry" resolve="PersistenceRegistry" />
             </node>
@@ -631,7 +631,7 @@
       <node concept="3clFbS" id="57h3E7t_nBL" role="3clF47">
         <node concept="3clFbF" id="76R7UQw_h1J" role="3cqZAp">
           <node concept="2OqwBi" id="76R7UQw_hdj" role="3clFbG">
-            <node concept="2YIFZM" id="1PyPUch0Gcn" role="2Oq$k0">
+            <node concept="2YIFZM" id="43T6ls5vFVM" role="2Oq$k0">
               <ref role="37wK5l" to="pa16:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
               <ref role="1Pybhc" to="pa16:~PersistenceRegistry" resolve="PersistenceRegistry" />
             </node>
@@ -1264,7 +1264,7 @@
       <node concept="3clFbS" id="2gqezBWaGQV" role="3clF47">
         <node concept="3clFbF" id="77V35QMLsxG" role="3cqZAp">
           <node concept="2OqwBi" id="77V35QMLsLc" role="3clFbG">
-            <node concept="2YIFZM" id="1PyPUch0$Hw" role="2Oq$k0">
+            <node concept="2YIFZM" id="43T6ls5v$YX" role="2Oq$k0">
               <ref role="37wK5l" to="pa16:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
               <ref role="1Pybhc" to="pa16:~PersistenceRegistry" resolve="PersistenceRegistry" />
             </node>
@@ -1286,7 +1286,7 @@
       <node concept="3clFbS" id="2gqezBWaGR1" role="3clF47">
         <node concept="3clFbF" id="77V35QMLte2" role="3cqZAp">
           <node concept="2OqwBi" id="77V35QMLte3" role="3clFbG">
-            <node concept="2YIFZM" id="1PyPUch0$LQ" role="2Oq$k0">
+            <node concept="2YIFZM" id="43T6ls5v_20" role="2Oq$k0">
               <ref role="37wK5l" to="pa16:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
               <ref role="1Pybhc" to="pa16:~PersistenceRegistry" resolve="PersistenceRegistry" />
             </node>

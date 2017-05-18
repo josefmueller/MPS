@@ -43,5 +43,6 @@
     <orderEntry type="library" scope="TEST" name="mps-collections" level="project" />
     <orderEntry type="library" scope="TEST" name="mps-tuples" level="project" />
     <orderEntry type="library" name="mps-boot-util" level="project" />
+    <orderEntry type="library" name="mps-annotations" level="project" />
   </component>
 </module>
