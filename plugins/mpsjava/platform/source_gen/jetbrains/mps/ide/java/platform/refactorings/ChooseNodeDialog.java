@@ -11,15 +11,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.ui.treeStructure.SimpleTree;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.awt.HeadlessException;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.project.dependency.VisibilityUtil;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeNode;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -29,7 +23,9 @@ import javax.swing.JComponent;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.event.TreeSelectionListener;
@@ -46,13 +42,17 @@ import org.jetbrains.annotations.NonNls;
   private final Set<SModel> myVisibleModels;
   private SimpleTree myTree;
   private SNodeReference mySelectedNode;
-  public ChooseNodeDialog(MPSProject project, Condition<SNode> applicabilityCondition, SModel contextModel, String title) throws HeadlessException {
+
+  /**
+   * FIXME why not regular NodeChooserDialog, why dedicated class with custom tree?
+   * FIXME we use project here to access repository, although outer code uses repository from EditorContext
+   */
+  public ChooseNodeDialog(MPSProject project, Condition<SNode> applicabilityCondition, Set<SModel> visibleModels, String title) throws HeadlessException {
     super(project.getProject(), true);
     setTitle(title);
     myProject = project;
     myApplicableNodes = applicabilityCondition;
-    //  perhaps, shall resolve with repository of EditorContext from ExtractMethodDialog, but it used to be global, hence project's is not that bad 
-    myVisibleModels = initVisibleModels(project.getRepository(), contextModel);
+    myVisibleModels = visibleModels;
 
     init();
   }
@@ -60,20 +60,6 @@ import org.jetbrains.annotations.NonNls;
     return myApplicableNodes.met(node);
   }
 
-  private static Set<SModel> initVisibleModels(SRepository repo, SModel model) {
-    Set<SModel> rv = SetSequence.fromSet(new HashSet<SModel>());
-    SetSequence.fromSet(rv).addElement(model);
-    for (SModel nextOwnModel : Sequence.fromIterable(model.getModule().getModels())) {
-      SetSequence.fromSet(rv).addElement(nextOwnModel);
-    }
-    for (SModelReference sm : SModelOperations.getImportedModelUIDs(model)) {
-      SModel m = sm.resolve(repo);
-      if (VisibilityUtil.isVisible(model.getModule(), m)) {
-        SetSequence.fromSet(rv).addElement(m);
-      }
-    }
-    return rv;
-  }
   private DefaultMutableTreeNode createRootNode() {
     ModelTreeNode rootNode = new ModelTreeNode("Root");
     for (SModel descriptor : SetSequence.fromSet(myVisibleModels).where(new IWhereFilter<SModel>() {
@@ -115,7 +101,7 @@ import org.jetbrains.annotations.NonNls;
       }
       private void initModelDescriptorNode(ModelTreeNode node, SModel descriptor) {
         SModel sModel = descriptor;
-        for (SNode nextRoot : Sequence.fromIterable(ModelTreeBuilder.sortChildNodes(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))).where(new IWhereFilter<SNode>() {
+        for (SNode nextRoot : Sequence.fromIterable(ModelTreeBuilder.sortChildNodes(ListSequence.fromList(SModelOperations.roots(sModel, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return isAcceptable(it);
           }

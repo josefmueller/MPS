@@ -35,15 +35,22 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.Set;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.util.InstanceOfCondition;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.project.dependency.VisibilityUtil;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -299,15 +306,14 @@ public class ExtractMethodDialog extends RefactoringDialog {
     });
   }
   public void chooseStaticContainer() {
-    final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
-    myContext.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
+    Set<SModel> models = new ModelAccessHelper(myContext.getRepository()).runReadAction(new Computable<Set<SModel>>() {
+      public Set<SModel> compute() {
         myRefactoringModel = SNodeOperations.getModel(ListSequence.fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first());
-        model.value = myRefactoringModel;
+        return collectVisibleModels(myRefactoringModel);
       }
     });
 
-    final ChooseNodeDialog dialog = new ChooseNodeDialog(myMPSProject, new InstanceOfCondition(new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c8f444674L, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods")}), model.value, "Choose class");
+    final ChooseNodeDialog dialog = new ChooseNodeDialog(myMPSProject, new InstanceOfCondition(new SAbstractConcept[]{MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c8f444674L, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods")}), models, "Choose class");
     dialog.show();
 
     myContext.getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -319,6 +325,23 @@ public class ExtractMethodDialog extends RefactoringDialog {
       myRefactoringModel = null;
     }
   }
+
+  private Set<SModel> collectVisibleModels(SModel model) {
+    Set<SModel> rv = SetSequence.fromSet(new HashSet<SModel>());
+    SetSequence.fromSet(rv).addElement(model);
+    for (SModel nextOwnModel : Sequence.fromIterable(model.getModule().getModels())) {
+      SetSequence.fromSet(rv).addElement(nextOwnModel);
+    }
+    for (SModelReference sm : SModelOperations.getImportedModelUIDs(model)) {
+      SModel m = sm.resolve(myContext.getRepository());
+      if (VisibilityUtil.isVisible(model.getModule(), m)) {
+        SetSequence.fromSet(rv).addElement(m);
+      }
+    }
+    return rv;
+  }
+
+
   @Nullable
   @NonNls
   @Override
@@ -351,7 +374,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
           myContext.select(result);
           if ((myRefactoringModel != null) && myExtractIntoOuterContainer) {
             SModelReference ref = SNodeOperations.getModel(myStaticTarget).getReference();
-            ((SModelInternal) myRefactoringModel).addModelImport(ref, false);
+            new ModelImports(myRefactoringModel).addModelImport(ref);
           }
           if ((result != null)) {
             new ExtractMethodDialog.MyMethodDuplicatesProcessor(myContext, result).process(ExtractMethodDialog.this.myRefactoring.getMatches(), myProject);
