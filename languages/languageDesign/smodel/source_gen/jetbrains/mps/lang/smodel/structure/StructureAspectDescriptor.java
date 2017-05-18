@@ -707,6 +707,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("conceptName", 0x5fea1eb9fefb73d7L, "6911370362349122519");
     b.prop("isInterface", 0x5fea1eb9fefb9fecL, "6911370362349133804");
     b.aggregate("languageIdentity", 0x5fea1eb9fefb6feaL).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c318L).optional(false).ordered(true).multiple(false).origin("6911370362349121514").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConceptIdRefExpression() {
@@ -1014,6 +1015,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("namespace", 0x312abca18ab8ccd7L, "3542851458883439831");
     b.prop("languageId", 0x312abca18ab8ccd8L, "3542851458883439832");
     b.prop("version", 0x312abca18ab8ccd9L, "3542851458883439833");
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForLanguageIdentity() {

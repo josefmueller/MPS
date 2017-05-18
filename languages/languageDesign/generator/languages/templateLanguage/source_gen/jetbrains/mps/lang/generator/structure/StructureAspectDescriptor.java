@@ -565,6 +565,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("modelName", 0x509c00a9989481dbL, "5808518347810439643");
     b.associate("nodePtr", 0x509c00a99889f6ffL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(true).origin("5808518347809748735").done();
     b.aggregate("node", 0x509c00a99889f0aeL).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L).optional(true).ordered(true).multiple(false).origin("5808518347809747118").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGeneratorDebug_LabelEntry() {
@@ -573,6 +574,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/3864140621129713348");
     b.prop("label", 0x35a02f6bfc9810e9L, "3864140621129715945");
     b.aggregate("entries", 0x35a02f6bfc9810ebL).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L).optional(true).ordered(true).multiple(true).origin("3864140621129715947").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGeneratorDebug_Mappings() {
@@ -580,6 +582,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/3864140621129707969");
     b.aggregate("labels", 0x35a02f6bfc9806c5L).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L).optional(true).ordered(true).multiple(true).origin("3864140621129713349").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGeneratorDebug_NodeMapEntry() {
@@ -590,6 +593,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("inputOrigin", 0x35a02f6bfc9806dbL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(true).origin("3864140621129713371").done();
     b.aggregate("inputNode", 0x509c00a99889f77eL).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L).optional(true).ordered(true).multiple(false).origin("5808518347809748862").done();
     b.aggregate("outputNode", 0x35a02f6bfc9806d5L).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806d2L).optional(false).ordered(true).multiple(true).origin("3864140621129713365").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGeneratorDebug_NodeRef() {
@@ -597,6 +601,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)/3864140621129713362");
     b.associate("node", 0x35a02f6bfc9806d3L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).origin("3864140621129713363").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGeneratorInternal_AbstractReferenceDescriptor() {
@@ -1316,6 +1321,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("conceptId", 0x7d58bd9fd9b64466L, "9032177546941580390");
     b.prop("nodeId", 0x7d58bd9fd9b64468L, "9032177546941580392");
     b.aggregate("cncpt", 0x76c27c67a4605f07L).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb4642L).optional(false).ordered(true).multiple(false).origin("8557539026538618631").done();
+    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUnmarshalFunction() {

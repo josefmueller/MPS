@@ -2385,6 +2385,7 @@
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="LanguageId" />
     <property role="EcuMT" value="3542851458883438784" />
+    <property role="2_RsDV" value="none" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="34EJa6aIcNn" role="1TKVEl">
       <property role="TrG5h" value="namespace" />
@@ -2584,6 +2585,7 @@
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="ConceptId" />
     <property role="EcuMT" value="6911370362349121511" />
+    <property role="2_RsDV" value="none" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5ZE7FBYYQZG" role="1TKVEl">
       <property role="TrG5h" value="conceptId" />
