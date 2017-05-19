@@ -11,14 +11,16 @@ import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
@@ -34,7 +36,6 @@ import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.ide.GeneralSettings;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
-import jetbrains.mps.ide.platform.watching.ReloadManager;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -62,6 +63,7 @@ import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.ModelsEventsCollector;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.extapi.module.TransientSModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -85,8 +87,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
   private final ClassLoaderManager myClassLoaderManager;
   private MigrationOptions myOptions = new MigrationOptions();
 
-  private MPSProject myMpsProject;
+  private final MPSProject myMpsProject;
   private final MigrationManager myMigrationManager;
+  private final ReloadManager myReloadManager;
   private MigrationTrigger.MyState myState = new MigrationTrigger.MyState();
 
   private boolean myMigrationQueued = false;
@@ -101,12 +104,13 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   private MigrationErrorDescriptor myErrors = null;
 
-  public MigrationTrigger(Project ideaProject, MPSProject p, MigrationManager migrationManager, ProjectMigrationProperties props) {
+  public MigrationTrigger(Project ideaProject, MPSProject p, MigrationManager migrationManager, ProjectMigrationProperties props, MPSCoreComponents mpsCore, ReloadManagerComponent reloadManager) {
     super(ideaProject);
     myMpsProject = p;
     myMigrationManager = migrationManager;
     myProperties = props;
-    myClassLoaderManager = ApplicationManager.getApplication().getComponent(MPSCoreComponents.class).getClassLoaderManager();
+    myClassLoaderManager = mpsCore.getClassLoaderManager();
+    myReloadManager = reloadManager;
   }
 
   private final AtomicInteger myBlocked = new AtomicInteger(0);
@@ -219,7 +223,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).attach();
     myClassLoaderManager.addClassesHandler(this.myClassesListener);
     myProperties.addListener(myPropertiesListener);
-    ReloadManager.getInstance().addReloadListener(myReloadListener);
+    myReloadManager.addReloadListener(myReloadListener);
   }
 
   private boolean removeListeners() {
@@ -229,7 +233,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     myProperties.removeListener(myPropertiesListener);
     myClassLoaderManager.removeClassesHandler(myClassesListener);
     new RepoListenerRegistrar(myMpsProject.getRepository(), myRepoListener).detach();
-    ReloadManager.getInstance().removeReloadListener(myReloadListener);
+    myReloadManager.removeReloadListener(myReloadListener);
     return false;
   }
 
@@ -482,16 +486,28 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         });
       }
     };
+
+
+    @Override
+    protected boolean isIncluded(SModule module) {
+      // we don't care about changes in transient modules 
+      return !(module instanceof TransientSModule);
+    }
+
     @Override
     public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
-      triggerOnModuleChanged(module);
+      if (isIncluded(module)) {
+        triggerOnModuleChanged(module);
+      }
     }
 
     @Override
     public void moduleChanged(@NotNull SModule module) {
       super.moduleChanged(module);
-      triggerOnModuleChanged(module);
+      if (isIncluded(module)) {
+        triggerOnModuleChanged(module);
+      }
     }
     @Override
     protected void startListening(SModel model) {
@@ -512,12 +528,18 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   private class MyClassesListener extends MPSClassesListenerAdapter {
     @Override
-    public void afterClassesLoaded(final Set<? extends ReloadableModuleBase> modules) {
+    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
+      // do not hold set of modules from notification, make a local copy 
+      final List<Language> list = SetSequence.fromSet(modules).ofType(Language.class).toListSequence();
+      if (ListSequence.fromList(list).isEmpty()) {
+        return;
+      }
+      // XXX does invokeLater here means 'later' or 'in EDT'? If latter, why not runWriteInEDT then? 
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
             public void run() {
-              postponeMigrationIfNeededOnLanguageReload(SetSequence.fromSet(modules).ofType(Language.class));
+              postponeMigrationIfNeededOnLanguageReload(list);
             }
           });
         }
