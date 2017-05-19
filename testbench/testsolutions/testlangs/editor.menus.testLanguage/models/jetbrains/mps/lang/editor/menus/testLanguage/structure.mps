@@ -17,8 +17,12 @@
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
+      <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
+        <reference id="1169127628841" name="intfc" index="PrY4T" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
+        <child id="1169129564478" name="implements" index="PzmwI" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
@@ -54,6 +58,18 @@
     <property role="3GE5qa" value="Scopes" />
     <property role="34LRSv" value="scopes test concept - base" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3z8xuiBWPEK" role="1TKVEi">
+      <property role="IQ2ns" value="4091667478582876848" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="3z8xuiBWPEI" resolve="ScopesTestConceptChild" />
+    </node>
+    <node concept="1TJgyj" id="3z8xuiBWPEM" role="1TKVEi">
+      <property role="IQ2ns" value="4091667478582876850" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="reference" />
+      <ref role="20lvS9" node="3z8xuiBWPEJ" resolve="ScopesTestConceptReference" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2mcvySy0$_j">
     <property role="EcuMT" value="2705676212746996051" />
@@ -108,6 +124,26 @@
     <property role="3GE5qa" value="EmptyCell" />
     <property role="TrG5h" value="ChildOfParentWithEmptyCell" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="3z8xuiBWPEI">
+    <property role="EcuMT" value="4091667478582876846" />
+    <property role="TrG5h" value="ScopesTestConceptChild" />
+    <property role="3GE5qa" value="Scopes" />
+    <property role="34LRSv" value="scopes test concept - child" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="3z8xuiBWQoO" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3z8xuiBWPEJ">
+    <property role="EcuMT" value="4091667478582876847" />
+    <property role="TrG5h" value="ScopesTestConceptReference" />
+    <property role="3GE5qa" value="Scopes" />
+    <property role="34LRSv" value="scopes test concept - reference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="3z8xuiBWQoK" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
 </model>
 

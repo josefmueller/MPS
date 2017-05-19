@@ -782,5 +782,10 @@
       </node>
     </node>
   </node>
+  <node concept="3ICXOK" id="3z8xuiBWQpL">
+    <property role="3GE5qa" value="Scopes" />
+    <property role="TrG5h" value="NamedMenuForChild" />
+    <ref role="aqKnT" to="wtc3:3z8xuiBWPEI" resolve="ScopesTestConceptChild" />
+  </node>
 </model>
 

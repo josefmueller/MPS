@@ -44,17 +44,53 @@
     <node concept="1TJgyj" id="5o7iAW5ntGC" role="1TKVEi">
       <property role="IQ2ns" value="6199005252790639400" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="nodes" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="5o7iAW5ntGB" resolve="TestSideTransform_Node" />
+      <property role="20kJfa" value="simpleNode" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="5o7iAW5ntGB" resolve="TestSideTransform_SimpleNode" />
+    </node>
+    <node concept="1TJgyj" id="3z8xuiBZfLo" role="1TKVEi">
+      <property role="IQ2ns" value="4091667478583508056" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="nodeWithReference" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="3z8xuiBZfIS" resolve="TestSideTransform_NodeWithReference" />
+    </node>
+    <node concept="1TJgyj" id="3z8xuiBZfua" role="1TKVEi">
+      <property role="IQ2ns" value="4091667478583506826" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="nodeToReference" />
+      <ref role="20lvS9" node="3z8xuiBZfu8" resolve="TestSideTransform_NodeToReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="5o7iAW5ntGB">
     <property role="EcuMT" value="6199005252790639399" />
-    <property role="TrG5h" value="TestSideTransform_Node" />
+    <property role="TrG5h" value="TestSideTransform_SimpleNode" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="5o7iAW5ntIa" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3z8xuiBZfu8">
+    <property role="EcuMT" value="4091667478583506824" />
+    <property role="TrG5h" value="TestSideTransform_NodeToReference" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="3z8xuiBZfu9" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3z8xuiBZfIS">
+    <property role="EcuMT" value="4091667478583507896" />
+    <property role="TrG5h" value="TestSideTransform_NodeWithReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="3z8xuiBZfIT" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="3z8xuiBZfIU" role="1TKVEi">
+      <property role="IQ2ns" value="4091667478583507898" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="reference" />
+      <ref role="20lvS9" node="3z8xuiBZfu8" resolve="TestSideTransform_NodeToReference" />
     </node>
   </node>
 </model>

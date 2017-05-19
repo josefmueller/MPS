@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
-public class TestSideTransform_Node_TransformationMenu extends TransformationMenuBase {
+public class TestSideTransform_SimpleNode_TransformationMenu extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM, MenuLocations.LEFT_SIDE_TRANSFORM);
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
@@ -35,18 +35,18 @@ public class TestSideTransform_Node_TransformationMenu extends TransformationMen
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new TestSideTransform_Node_TransformationMenu.TMP_Action_awul6c_a0());
+      result.add(new TestSideTransform_SimpleNode_TransformationMenu.TMP_Action_9pizaj_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new TestSideTransform_Node_TransformationMenu.TMP_Action_awul6c_a1());
+      result.add(new TestSideTransform_SimpleNode_TransformationMenu.TMP_Action_9pizaj_a1());
     }
     return result;
   }
 
-  private class TMP_Action_awul6c_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_9pizaj_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new TestSideTransform_Node_TransformationMenu.TMP_Action_awul6c_a0.Item(context);
+      return new TestSideTransform_SimpleNode_TransformationMenu.TMP_Action_9pizaj_a0.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
@@ -71,10 +71,10 @@ public class TestSideTransform_Node_TransformationMenu extends TransformationMen
 
     }
   }
-  private class TMP_Action_awul6c_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+  private class TMP_Action_9pizaj_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new TestSideTransform_Node_TransformationMenu.TMP_Action_awul6c_a1.Item(context);
+      return new TestSideTransform_SimpleNode_TransformationMenu.TMP_Action_9pizaj_a1.Item(context);
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
