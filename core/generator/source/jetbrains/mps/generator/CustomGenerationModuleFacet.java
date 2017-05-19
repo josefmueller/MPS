@@ -35,6 +35,7 @@ public class CustomGenerationModuleFacet extends ModuleFacetBase implements Mode
   public static final String FACET_TYPE = "generator";
   private SModelReference myPlanModel;
   private ModelGenerationPlan myCachedPlanInstance;
+  private long myCachedPlanTimestamp;
 
   public CustomGenerationModuleFacet() {
     super(FACET_TYPE);
@@ -50,14 +51,17 @@ public class CustomGenerationModuleFacet extends ModuleFacetBase implements Mode
     if (myPlanModel == null) {
       return null;
     }
-    if (myCachedPlanInstance != null) {
-      // as long as there's single plan per module, no need to create MGP instance for each model, reuse.
-      return myCachedPlanInstance;
-    }
     SModel planModel = myPlanModel.resolve(model.getRepository());
     if (planModel == null || !planModel.getRootNodes().iterator().hasNext()) {
       return null;
     }
+
+    final long modelActualTimestamp = planModel.getSource().getTimestamp();
+    if (myCachedPlanInstance != null && myCachedPlanTimestamp == modelActualTimestamp) {
+      // as long as there's single plan per module, no need to create MGP instance for each model, reuse.
+      return myCachedPlanInstance;
+    }
+    myCachedPlanTimestamp = modelActualTimestamp;
 
     GenPlanTranslator gpt = new GenPlanTranslator(planModel.getRootNodes().iterator().next());
     EngagedGeneratorCollector egc = new EngagedGeneratorCollector(model, null); // see comment in GenPlanExtractor regarding additional languages
