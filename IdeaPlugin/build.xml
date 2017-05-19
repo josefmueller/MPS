@@ -330,15 +330,7 @@
       <jvmarg value="-Xmx1024m"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
-      <sysproperty key="idea.platform.prefix" value="Idea"/>
-      <sysproperty key="idea.config.path" value="${test.platform.sandbox.dir}/config"/>
-      <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
-      <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
-      <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
-      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.idea.java"/>
-      <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="jdk.home.path" value="${jdkPath}"/>
-      <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
 
       <classpath>
