@@ -308,6 +308,10 @@
       <modulePath path="$PROJECT_DIR$/samples/complexLanguage/solutions/sandbox/jetbrains.mps.samples.complex.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/jetbrains.mps.samples.componentDependencies.mpl" folder="samples.componentDependencies" />
       <modulePath path="$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/jetbrains.mps.samples.componentDependencies.sandbox.msd" folder="samples.componentDependencies" />
+      <modulePath path="$PROJECT_DIR$/samples/crossModelGeneration/devkits/EntitiesKit/EntitiesKit.devkit" folder="samples.crossModelGeneration" />
+      <modulePath path="$PROJECT_DIR$/samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/jetbrains.mps.samples.Entities.mpl" folder="samples.crossModelGeneration" />
+      <modulePath path="$PROJECT_DIR$/samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/sandbox/jetbrains.mps.samples.Entities.sandbox.msd" folder="samples.crossModelGeneration" />
+      <modulePath path="$PROJECT_DIR$/samples/crossModelGeneration/solutions/Plan/Plan.msd" folder="samples.crossModelGeneration" />
       <modulePath path="$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/jetbrains.mps.samples.customAspect.documentation.mpl" folder="samples.customAspect" />
       <modulePath path="$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/jetbrains.mps.samples.customAspect.sampleLanguage.mpl" folder="samples.customAspect" />
       <modulePath path="$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/sandbox/jetbrains.mps.samples.customAspect.sampleLanguage.sandbox.msd" folder="samples.customAspect" />

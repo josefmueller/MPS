@@ -681,6 +681,10 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/generator/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/crossModelGeneration/solutions/Plan/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/sandbox/source_gen" isTestSource="false" />
@@ -834,6 +838,10 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/crossModelGeneration/solutions/Plan/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/classes_gen" />

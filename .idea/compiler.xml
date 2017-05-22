@@ -420,6 +420,12 @@
       <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/componentDependencies/languages/jetbrains.mps.samples.componentDependencies/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/crossModelGeneration/languages/jetbrains.mps.samples.Entities/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/crossModelGeneration/solutions/Plan/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/crossModelGeneration/solutions/Plan/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.docLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/customAspect/languages/jetbrains.mps.samples.customAspect.sampleLanguage/sandbox/source_gen" includeSubdirectories="true" />
