@@ -38,6 +38,9 @@ import java.util.Collections;
 class CheckpointStateBuilder {
   // FIXME refactor/replace MappingsMemento with more sophisticated storage, with ML objects instead of Map/String/Object.
   //       Shall support origins other than coming from previous inputModel (either original or checkpoint) - i.e. xModel references to unrelated models
+  /*
+   * FIXME myMemento is of no use unless we uncomment stepLabels.export(this) call in addMappings() below.
+   */
   private final MappingsMemento myMemento;
   private final SModelReference myOutputModel;
   private final TransitionTrace myTransitionTrace;
@@ -109,7 +112,11 @@ class CheckpointStateBuilder {
    */
   /*package*/ void addMappings(SModel originalInputModel, GeneratorMappings stepLabels) {
     // FIXME likely, GeneratorMappings shall care about MappingMemento only (pass TransitionTrace there as well).
-    stepLabels.export(this);
+    //
+    // FIXME stepLabels.export is commented out as we restore MappingsMemento for the CPState through persisted state and MappingLabelExtractor, to get
+    // correct node ids (those changed to pre-ordered values for CP models to stay the same on regeneration). Another alternative would be to keep
+    // SNodeId->SNodeId map in ConsistentNodeIdentityHelper and update values in myMemento, which seems too much work for me now.
+//    stepLabels.export(this);
     // IMPORTANT need to create CP model first, as DebugMappingsBuilder need cloned nodes to substitute
     // reference targets from transient model to that in CP model (see DMB.substitute)
     cloneTransientToCheckpoint();
@@ -122,7 +129,8 @@ class CheckpointStateBuilder {
   /*package*/ CheckpointState create(CheckpointIdentity step) {
     cloneTransientToCheckpoint();
     new ConsistentNodeIdentityHelper(new SNodePresentationComparator()).apply(myCheckpointModel);
-    return new CheckpointState(myMemento, myCheckpointModel, step);
+    MappingsMemento mm = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(myCheckpointModel));
+    return new CheckpointState(mm, myCheckpointModel, step);
   }
 
   private void cloneTransientToCheckpoint() {
