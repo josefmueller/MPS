@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import org.apache.log4j.Level;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -26,6 +25,7 @@ import javax.swing.JComponent;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.ApplicationManager;
+import org.apache.log4j.Level;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
 import java.util.HashMap;
@@ -38,9 +38,9 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 
 public class MigrationTask {
   private static final Logger LOG = LogManager.getLogger(MigrationTask.class);
@@ -68,12 +68,9 @@ public class MigrationTask {
     try {
       mySession.setErrorDescriptor(null);
       myIsComplete = doRun();
-    } catch (Throwable t) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("exception occurred on pre-migration check", t);
-      }
+    } finally {
+      PersistenceRegistry.getInstance().enableFastFindUsages();
     }
-    PersistenceRegistry.getInstance().enableFastFindUsages();
   }
 
   protected boolean doRun() {
@@ -285,16 +282,8 @@ public class MigrationTask {
     return errsToShow;
   }
 
-  private boolean checkModels(final ProgressMonitor m) {
-    final Wrappers._boolean hasErrors = new Wrappers._boolean();
-    final Project mpsProject = mySession.getProject();
-    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        List<SModule> modules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).toListSequence();
-        hasErrors.value = MigrationCheckUtil.haveProblems(modules, m);
-      }
-    });
-    return hasErrors.value;
+  private boolean checkModels(ProgressMonitor m) {
+    return mySession.getMigrationManager().checkProject(mySession.getProject(), m);
   }
 
   private boolean runProjectMigrations(ProgressMonitor m) {

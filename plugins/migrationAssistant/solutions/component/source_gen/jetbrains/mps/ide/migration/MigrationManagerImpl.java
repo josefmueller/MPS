@@ -59,6 +59,8 @@ import jetbrains.mps.refactoring.participant.RefactoringUI;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 
 public class MigrationManagerImpl extends AbstractProjectComponent implements MigrationManager {
   private static final Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
@@ -563,6 +565,18 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     }
     int dv = Math.max(0, ((AbstractModule) m).getDependencyVersion(ref.getModule(), false));
     return dv <= ref.getFromVersion();
+  }
+
+  @Override
+  public boolean checkProject(final Project p, final ProgressMonitor m) {
+    final Wrappers._boolean hasErrors = new Wrappers._boolean();
+    p.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        List<SModule> modules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(p)).toListSequence();
+        hasErrors.value = MigrationCheckUtil.haveProblems(modules, m);
+      }
+    });
+    return hasErrors.value;
   }
   private static <T> T as_yvrsrz_a0a0a4a0a0a0a1a34(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

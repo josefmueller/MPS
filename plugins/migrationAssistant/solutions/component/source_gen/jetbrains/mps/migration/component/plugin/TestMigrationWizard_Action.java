@@ -11,6 +11,7 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 
 public class TestMigrationWizard_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,6 +46,11 @@ public class TestMigrationWizard_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    new TestMigrationHelper(event.getData(CommonDataKeys.PROJECT), event.getData(MPSCommonDataKeys.MPS_PROJECT)).main();
+    MigrationTestConfigDialog settingsDialog = new MigrationTestConfigDialog(event.getData(CommonDataKeys.PROJECT));
+    if (!(settingsDialog.showAndGet())) {
+      return;
+    }
+    MyMigrationSession session = new MyMigrationSession(event.getData(MPSCommonDataKeys.MPS_PROJECT), settingsDialog.getResult());
+    new MigrationWizard(event.getData(CommonDataKeys.PROJECT), session).showAndGet();
   }
 }

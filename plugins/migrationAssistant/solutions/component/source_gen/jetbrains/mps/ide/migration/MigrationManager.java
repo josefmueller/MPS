@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.global.ProjectMigration;
 import java.util.List;
 import jetbrains.mps.migration.global.MigrationOptions;
+import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 
@@ -31,6 +33,12 @@ public interface MigrationManager {
   ProjectMigration nextProjectStep(MigrationOptions options, boolean cleanup);
 
   int moduleStepsCount();
+
+  /**
+   * TODO!! this is a tmp solution for testing purposes. The result is coupled with PreCheckError.getProblems(), 
+   * should be refactored during MigrationManager's refactorinf
+   */
+  boolean checkProject(Project p, ProgressMonitor m);
 
   ScriptApplied nextModuleStep(@Nullable BaseScriptReference preferredId);
 }
