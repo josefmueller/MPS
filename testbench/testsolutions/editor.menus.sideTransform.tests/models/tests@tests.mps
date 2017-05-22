@@ -43,9 +43,14 @@
       </concept>
     </language>
     <language id="14a4b501-59f6-4c39-b5de-4a5d59477831" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage">
-      <concept id="6199005252790639399" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestSideTransform_Node" flags="ng" index="1jmD58" />
+      <concept id="4091667478583506824" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestSideTransform_NodeToReference" flags="ng" index="2vd79G" />
+      <concept id="4091667478583507896" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestSideTransform_NodeWithReference" flags="ng" index="2vd7Ts">
+        <reference id="4091667478583507898" name="reference" index="2vd7Tu" />
+      </concept>
+      <concept id="6199005252790639399" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestSideTransform_SimpleNode" flags="ng" index="1jmD58" />
       <concept id="6199005252790639398" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestSideTransform_Root" flags="ng" index="1jmD59">
-        <child id="6199005252790639400" name="nodes" index="1jmD57" />
+        <child id="4091667478583508056" name="nodeWithReference" index="2vd7AW" />
+        <child id="6199005252790639400" name="simpleNode" index="1jmD57" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -61,16 +66,16 @@
     <property role="2XOHcw" value="${mps_home}" />
   </node>
   <node concept="LiM7Y" id="5o7iAW5ntIK">
-    <property role="TrG5h" value="TestSideTransform_DefaultRightAction" />
+    <property role="TrG5h" value="TestSideTransform_SimpleNode_DefaultRightAction" />
     <node concept="1jmD59" id="5o7iAW5nxfz" role="LiRBU">
       <node concept="1jmD58" id="5o7iAW5nxf_" role="1jmD57">
         <property role="TrG5h" value="default action" />
-        <node concept="LIFWc" id="1Ll9NxXispY" role="lGtFl">
+        <node concept="LIFWc" id="3z8xuiC2RDD" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="10" />
           <property role="p6zMs" value="10" />
-          <property role="LIFWd" value="Constant_gfy813_e0" />
+          <property role="LIFWd" value="Constant_2dajvi_e0" />
         </node>
       </node>
     </node>
@@ -98,16 +103,16 @@
     </node>
   </node>
   <node concept="LiM7Y" id="5o7iAW5pbbF">
-    <property role="TrG5h" value="TestSideTransform_CustomRightAction" />
+    <property role="TrG5h" value="TestSideTransform_SimpleNode_CustomRightAction" />
     <node concept="1jmD59" id="5o7iAW5pbbG" role="LiRBU">
       <node concept="1jmD58" id="5o7iAW5pbbH" role="1jmD57">
         <property role="TrG5h" value="default action" />
-        <node concept="LIFWc" id="1Ll9NxXijTZ" role="lGtFl">
+        <node concept="LIFWc" id="3z8xuiC2RD_" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="11" />
           <property role="p6zMs" value="11" />
-          <property role="LIFWd" value="Constant_gfy813_b0" />
+          <property role="LIFWd" value="Constant_2dajvi_b0" />
         </node>
       </node>
     </node>
@@ -135,16 +140,16 @@
     </node>
   </node>
   <node concept="LiM7Y" id="fujF8uLRZ0">
-    <property role="TrG5h" value="TestSideTransform_DefaultLeftAction" />
+    <property role="TrG5h" value="TestSideTransform_SimpleNode_DefaultLeftAction" />
     <node concept="1jmD59" id="fujF8uLRZ1" role="LiRBU">
       <node concept="1jmD58" id="fujF8uLRZ2" role="1jmD57">
         <property role="TrG5h" value="default action" />
-        <node concept="LIFWc" id="1Ll9NxXim8Q" role="lGtFl">
+        <node concept="LIFWc" id="3z8xuiC2RDB" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
           <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="Constant_gfy813_a0" />
+          <property role="LIFWd" value="Constant_2dajvi_a0" />
         </node>
       </node>
     </node>
@@ -172,16 +177,16 @@
     </node>
   </node>
   <node concept="LiM7Y" id="fujF8uLRZj">
-    <property role="TrG5h" value="TestSideTransform_CustomLeftAction" />
+    <property role="TrG5h" value="TestSideTransform_SimpleNode_CustomLeftAction" />
     <node concept="1jmD59" id="fujF8uLRZk" role="LiRBU">
       <node concept="1jmD58" id="fujF8uLRZl" role="1jmD57">
         <property role="TrG5h" value="default action" />
-        <node concept="LIFWc" id="1Ll9NxXijTX" role="lGtFl">
+        <node concept="LIFWc" id="3z8xuiC2RDz" role="lGtFl">
           <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
           <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="Constant_gfy813_b0" />
+          <property role="LIFWd" value="Constant_2dajvi_b0" />
         </node>
       </node>
     </node>
@@ -207,6 +212,161 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="LiM7Y" id="3z8xuiBZgpJ">
+    <property role="TrG5h" value="TestSideTransform_NodeWithSimpleReference_CustomLeftAction" />
+    <node concept="1jmD59" id="3z8xuiBZgpK" role="LiRBU">
+      <node concept="2vd7Ts" id="3z8xuiBZiK5" role="2vd7AW">
+        <ref role="2vd7Tu" node="3z8xuiC2T0x" resolve="nodeToReference" />
+        <node concept="LIFWc" id="3z8xuiC2T0A" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="property_name_1" />
+        </node>
+      </node>
+    </node>
+    <node concept="1jmD59" id="3z8xuiBZgpN" role="LiZbd">
+      <node concept="2vd7Ts" id="3z8xuiBZlcw" role="2vd7AW">
+        <property role="TrG5h" value="custom left action" />
+        <ref role="2vd7Tu" node="3z8xuiC2T0x" resolve="nodeToReference" />
+        <node concept="LIFWc" id="3z8xuiBZlcC" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="18" />
+          <property role="p6zMs" value="18" />
+          <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="3z8xuiBZgpQ" role="LjaKd">
+      <node concept="2TK7Tu" id="3z8xuiBZgpR" role="3cqZAp">
+        <property role="2TTd_B" value="custom left" />
+      </node>
+      <node concept="2HxZob" id="3z8xuiBZgpS" role="3cqZAp">
+        <node concept="1iFQzN" id="3z8xuiBZgpT" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3z8xuiBZlcE">
+    <property role="TrG5h" value="TestSideTransform_NodeWithSimpleReference_CustomRightAction" />
+    <node concept="1jmD59" id="3z8xuiBZlcF" role="LiRBU">
+      <node concept="2vd7Ts" id="3z8xuiBZlcG" role="2vd7AW">
+        <ref role="2vd7Tu" node="3z8xuiC2T0x" resolve="nodeToReference" />
+        <node concept="LIFWc" id="3z8xuiC2T0C" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="15" />
+          <property role="p6zMs" value="15" />
+          <property role="LIFWd" value="property_name_1" />
+        </node>
+      </node>
+    </node>
+    <node concept="1jmD59" id="3z8xuiBZlcJ" role="LiZbd">
+      <node concept="2vd7Ts" id="3z8xuiBZlcL" role="2vd7AW">
+        <property role="TrG5h" value="custom right action" />
+        <ref role="2vd7Tu" node="3z8xuiC2T0x" resolve="nodeToReference" />
+        <node concept="LIFWc" id="3z8xuiBZlcX" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="19" />
+          <property role="p6zMs" value="19" />
+          <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="3z8xuiBZlcN" role="LjaKd">
+      <node concept="2TK7Tu" id="3z8xuiBZlcO" role="3cqZAp">
+        <property role="2TTd_B" value="custom right" />
+      </node>
+      <node concept="2HxZob" id="3z8xuiBZlcP" role="3cqZAp">
+        <node concept="1iFQzN" id="3z8xuiBZlcQ" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3z8xuiBZlcZ">
+    <property role="TrG5h" value="TestSideTransform_NodeWithComplexReference_CustomLeftAction" />
+    <node concept="1jmD59" id="3z8xuiBZld0" role="LiRBU">
+      <node concept="2vd7Ts" id="3z8xuiBZld1" role="2vd7AW">
+        <ref role="2vd7Tu" node="3z8xuiC2T0x" resolve="nodeToReference" />
+        <node concept="LIFWc" id="3z8xuiC2T0y" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_p1fnwy_a0a6a" />
+        </node>
+      </node>
+    </node>
+    <node concept="1jmD59" id="3z8xuiBZld4" role="LiZbd">
+      <node concept="2vd7Ts" id="3z8xuiBZld6" role="2vd7AW">
+        <property role="TrG5h" value="custom left action" />
+        <ref role="2vd7Tu" node="3z8xuiC2T0x" resolve="nodeToReference" />
+        <node concept="LIFWc" id="3z8xuiBZldv" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="18" />
+          <property role="p6zMs" value="18" />
+          <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="3z8xuiBZld8" role="LjaKd">
+      <node concept="2TK7Tu" id="3z8xuiBZld9" role="3cqZAp">
+        <property role="2TTd_B" value="custom left" />
+      </node>
+      <node concept="2HxZob" id="3z8xuiBZlda" role="3cqZAp">
+        <node concept="1iFQzN" id="3z8xuiBZldb" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3z8xuiBZldc">
+    <property role="TrG5h" value="TestSideTransform_NodeWithComplexReference_CustomRightAction" />
+    <node concept="1jmD59" id="3z8xuiBZldd" role="LiRBU">
+      <node concept="2vd7Ts" id="3z8xuiBZlde" role="2vd7AW">
+        <ref role="2vd7Tu" node="3z8xuiC2T0x" resolve="nodeToReference" />
+        <node concept="LIFWc" id="3z8xuiC2T0$" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="8" />
+          <property role="p6zMs" value="8" />
+          <property role="LIFWd" value="Constant_p1fnwy_a0a6a" />
+        </node>
+      </node>
+    </node>
+    <node concept="1jmD59" id="3z8xuiBZldh" role="LiZbd">
+      <node concept="2vd7Ts" id="3z8xuiBZldj" role="2vd7AW">
+        <property role="TrG5h" value="custom right action" />
+        <ref role="2vd7Tu" node="3z8xuiC2T0x" resolve="nodeToReference" />
+        <node concept="LIFWc" id="3z8xuiBZld_" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="19" />
+          <property role="p6zMs" value="19" />
+          <property role="LIFWd" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="3z8xuiBZldl" role="LjaKd">
+      <node concept="2TK7Tu" id="3z8xuiBZldm" role="3cqZAp">
+        <property role="2TTd_B" value="custom right" />
+      </node>
+      <node concept="2HxZob" id="3z8xuiBZldn" role="3cqZAp">
+        <node concept="1iFQzN" id="3z8xuiBZldo" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2vd79G" id="3z8xuiC2T0x">
+    <property role="TrG5h" value="nodeToReference" />
   </node>
 </model>
 

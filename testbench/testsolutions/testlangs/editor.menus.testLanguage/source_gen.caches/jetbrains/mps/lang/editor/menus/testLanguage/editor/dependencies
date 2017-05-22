@@ -152,6 +152,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.Derived_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.MenuForEmptyCell" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedMenuForBase" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedMenuForChild" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedTestMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.NodeHolder_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.testLanguage.editor.ParameterizedByPrimitiveType" />
@@ -190,6 +191,20 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedMenuForBase" file="NamedMenuForBase.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.testLanguage.editor.NamedMenuForChild" file="NamedMenuForChild.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

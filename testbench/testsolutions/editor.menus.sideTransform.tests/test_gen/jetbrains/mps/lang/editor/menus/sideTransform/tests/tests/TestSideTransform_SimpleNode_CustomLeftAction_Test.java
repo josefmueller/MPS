@@ -8,19 +8,19 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class TestSideTransform_DefaultLeftAction_Test extends BaseTransformationTest {
+public class TestSideTransform_SimpleNode_CustomLeftAction_Test extends BaseTransformationTest {
   @Test
-  public void test_TestSideTransform_DefaultLeftAction() throws Throwable {
+  public void test_TestSideTransform_SimpleNode_CustomLeftAction() throws Throwable {
     initTest("${mps_home}", "r:b4f50ed2-df75-4f06-8889-d503cb129f2d(jetbrains.mps.lang.editor.menus.sideTransform.tests.tests@tests)");
-    runTest("jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_DefaultLeftAction_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_SimpleNode_CustomLeftAction_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("278746753871085505", "278746753871085508");
-      typeString("default left");
+      initEditorComponent("278746753871085524", "278746753871085527");
+      typeString("custom left");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }

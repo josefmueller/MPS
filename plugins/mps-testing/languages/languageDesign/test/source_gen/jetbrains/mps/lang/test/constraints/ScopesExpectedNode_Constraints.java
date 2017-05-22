@@ -20,7 +20,9 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.test.behavior.ScopesTest__BehaviorDescriptor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ScopesExpectedNode_Constraints extends BaseConstraintsDescriptor {
@@ -52,7 +54,7 @@ public class ScopesExpectedNode_Constraints extends BaseConstraintsDescriptor {
                 return null;
               }
               SNode scopesTest = SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, "jetbrains.mps.lang.test.structure.ScopesTest"));
-              ModelPlusImportedScope modelPlusImportedScope = new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), false, SNodeOperations.getConcept(SLinkOperations.getTarget(scopesTest, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L, 0x4b9f88d62c795596L, "checkingReference"))));
+              ModelPlusImportedScope modelPlusImportedScope = new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), false, check_1jj8js_c0a0d0a0(check_1jj8js_a2a0a3a0a(ScopesTest__BehaviorDescriptor.getCheckingReference_id4IvydoGvimX.invoke(scopesTest))));
               return modelPlusImportedScope;
             }
           }
@@ -60,6 +62,18 @@ public class ScopesExpectedNode_Constraints extends BaseConstraintsDescriptor {
       }
     });
     return references;
+  }
+  private static SAbstractConcept check_1jj8js_c0a0d0a0(SReferenceLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getTargetConcept();
+    }
+    return null;
+  }
+  private static SReferenceLink check_1jj8js_a2a0a3a0a(SReference checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getLink();
+    }
+    return null;
   }
   private static SNodePointer breakingNode_1jj8js_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)", "6836281137582846233");
 }

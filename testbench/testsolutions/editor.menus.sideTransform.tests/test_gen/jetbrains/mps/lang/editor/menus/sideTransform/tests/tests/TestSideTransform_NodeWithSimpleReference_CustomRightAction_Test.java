@@ -8,18 +8,18 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class TestSideTransform_CustomRightAction_Test extends BaseTransformationTest {
+public class TestSideTransform_NodeWithSimpleReference_CustomRightAction_Test extends BaseTransformationTest {
   @Test
-  public void test_TestSideTransform_CustomRightAction() throws Throwable {
+  public void test_TestSideTransform_NodeWithSimpleReference_CustomRightAction() throws Throwable {
     initTest("${mps_home}", "r:b4f50ed2-df75-4f06-8889-d503cb129f2d(jetbrains.mps.lang.editor.menus.sideTransform.tests.tests@tests)");
-    runTest("jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_CustomRightAction_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.menus.sideTransform.tests.tests.TestSideTransform_NodeWithSimpleReference_CustomRightAction_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("6199005252791087852", "6199005252791087855");
+      initEditorComponent("4091667478583530283", "4091667478583530287");
       typeString("custom right");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }

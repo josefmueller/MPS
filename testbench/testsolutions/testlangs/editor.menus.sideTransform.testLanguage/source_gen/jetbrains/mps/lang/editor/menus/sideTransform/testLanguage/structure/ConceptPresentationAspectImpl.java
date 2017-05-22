@@ -9,26 +9,40 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_TestSideTransform_Node;
+  private ConceptPresentation props_TestSideTransform_NodeToReference;
+  private ConceptPresentation props_TestSideTransform_NodeWithReference;
   private ConceptPresentation props_TestSideTransform_Root;
+  private ConceptPresentation props_TestSideTransform_SimpleNode;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.TestSideTransform_Node:
-        if (props_TestSideTransform_Node == null) {
+      case LanguageConceptSwitch.TestSideTransform_NodeToReference:
+        if (props_TestSideTransform_NodeToReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_TestSideTransform_Node = cpb.create();
+          props_TestSideTransform_NodeToReference = cpb.create();
         }
-        return props_TestSideTransform_Node;
+        return props_TestSideTransform_NodeToReference;
+      case LanguageConceptSwitch.TestSideTransform_NodeWithReference:
+        if (props_TestSideTransform_NodeWithReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestSideTransform_NodeWithReference = cpb.create();
+        }
+        return props_TestSideTransform_NodeWithReference;
       case LanguageConceptSwitch.TestSideTransform_Root:
         if (props_TestSideTransform_Root == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           props_TestSideTransform_Root = cpb.create();
         }
         return props_TestSideTransform_Root;
+      case LanguageConceptSwitch.TestSideTransform_SimpleNode:
+        if (props_TestSideTransform_SimpleNode == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TestSideTransform_SimpleNode = cpb.create();
+        }
+        return props_TestSideTransform_SimpleNode;
     }
     return null;
   }

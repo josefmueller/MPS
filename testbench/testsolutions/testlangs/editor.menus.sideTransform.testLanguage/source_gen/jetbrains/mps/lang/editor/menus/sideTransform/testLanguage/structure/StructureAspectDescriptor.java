@@ -12,8 +12,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptTestSideTransform_Node = createDescriptorForTestSideTransform_Node();
+  /*package*/ final ConceptDescriptor myConceptTestSideTransform_NodeToReference = createDescriptorForTestSideTransform_NodeToReference();
+  /*package*/ final ConceptDescriptor myConceptTestSideTransform_NodeWithReference = createDescriptorForTestSideTransform_NodeWithReference();
   /*package*/ final ConceptDescriptor myConceptTestSideTransform_Root = createDescriptorForTestSideTransform_Root();
+  /*package*/ final ConceptDescriptor myConceptTestSideTransform_SimpleNode = createDescriptorForTestSideTransform_SimpleNode();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -22,17 +24,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptTestSideTransform_Node, myConceptTestSideTransform_Root);
+    return Arrays.asList(myConceptTestSideTransform_NodeToReference, myConceptTestSideTransform_NodeWithReference, myConceptTestSideTransform_Root, myConceptTestSideTransform_SimpleNode);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
-      case LanguageConceptSwitch.TestSideTransform_Node:
-        return myConceptTestSideTransform_Node;
+      case LanguageConceptSwitch.TestSideTransform_NodeToReference:
+        return myConceptTestSideTransform_NodeToReference;
+      case LanguageConceptSwitch.TestSideTransform_NodeWithReference:
+        return myConceptTestSideTransform_NodeWithReference;
       case LanguageConceptSwitch.TestSideTransform_Root:
         return myConceptTestSideTransform_Root;
+      case LanguageConceptSwitch.TestSideTransform_SimpleNode:
+        return myConceptTestSideTransform_SimpleNode;
       default:
         return null;
     }
@@ -42,18 +48,35 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForTestSideTransform_Node() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestSideTransform_Node", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x56074a6f055ddb27L);
+  private static ConceptDescriptor createDescriptorForTestSideTransform_NodeToReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestSideTransform_NodeToReference", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x38c885e4a7fcf788L);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/4091667478583506824");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSideTransform_NodeWithReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestSideTransform_NodeWithReference", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x38c885e4a7fcfbb8L);
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/6199005252790639399");
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/4091667478583507896");
+    b.associate("reference", 0x38c885e4a7fcfbbaL).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x38c885e4a7fcf788L).optional(true).origin("4091667478583507898").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestSideTransform_Root() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestSideTransform_Root", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x56074a6f055ddb26L);
     b.class_(false, false, true);
     b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/6199005252790639398");
-    b.aggregate("nodes", 0x56074a6f055ddb28L).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x56074a6f055ddb27L).optional(true).ordered(true).multiple(true).origin("6199005252790639400").done();
+    b.aggregate("simpleNode", 0x56074a6f055ddb28L).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x56074a6f055ddb27L).optional(true).ordered(true).multiple(false).origin("6199005252790639400").done();
+    b.aggregate("nodeWithReference", 0x38c885e4a7fcfc58L).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x38c885e4a7fcfbb8L).optional(true).ordered(true).multiple(false).origin("4091667478583508056").done();
+    b.aggregate("nodeToReference", 0x38c885e4a7fcf78aL).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x38c885e4a7fcf788L).optional(true).ordered(true).multiple(false).origin("4091667478583506826").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSideTransform_SimpleNode() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestSideTransform_SimpleNode", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x56074a6f055ddb27L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/6199005252790639399");
     return b.create();
   }
 }

@@ -18,6 +18,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_NodeHolder;
   private ConceptPresentation props_ParentWithEmptyCell;
   private ConceptPresentation props_ScopesTestConceptBase;
+  private ConceptPresentation props_ScopesTestConceptChild;
+  private ConceptPresentation props_ScopesTestConceptReference;
   private ConceptPresentation props_TransformationMenuTestConcept;
 
   @Override
@@ -79,6 +81,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ScopesTestConceptBase = cpb.create();
         }
         return props_ScopesTestConceptBase;
+      case LanguageConceptSwitch.ScopesTestConceptChild:
+        if (props_ScopesTestConceptChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ScopesTestConceptChild = cpb.create();
+        }
+        return props_ScopesTestConceptChild;
+      case LanguageConceptSwitch.ScopesTestConceptReference:
+        if (props_ScopesTestConceptReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ScopesTestConceptReference = cpb.create();
+        }
+        return props_ScopesTestConceptReference;
       case LanguageConceptSwitch.TransformationMenuTestConcept:
         if (props_TransformationMenuTestConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -7,8 +7,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class TestSideTransform_Node_Editor extends DefaultNodeEditor {
+public class TestSideTransform_SimpleNode_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new TestSideTransform_Node_EditorBuilder_a(editorContext, node).createCell();
+    return new TestSideTransform_SimpleNode_EditorBuilder_a(editorContext, node).createCell();
   }
 }

@@ -21,6 +21,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNodeHolder = createDescriptorForNodeHolder();
   /*package*/ final ConceptDescriptor myConceptParentWithEmptyCell = createDescriptorForParentWithEmptyCell();
   /*package*/ final ConceptDescriptor myConceptScopesTestConceptBase = createDescriptorForScopesTestConceptBase();
+  /*package*/ final ConceptDescriptor myConceptScopesTestConceptChild = createDescriptorForScopesTestConceptChild();
+  /*package*/ final ConceptDescriptor myConceptScopesTestConceptReference = createDescriptorForScopesTestConceptReference();
   /*package*/ final ConceptDescriptor myConceptTransformationMenuTestConcept = createDescriptorForTransformationMenuTestConcept();
   private final LanguageConceptSwitch myConceptIndex;
 
@@ -30,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptBase, myConceptBaseWithNonEmptyMenu, myConceptChildOfParentWithEmptyCell, myConceptConceptWithoutDefaultMenu, myConceptDerived, myConceptDerivedWithEmptyMenu, myConceptNodeHolder, myConceptParentWithEmptyCell, myConceptScopesTestConceptBase, myConceptTransformationMenuTestConcept);
+    return Arrays.asList(myConceptBase, myConceptBaseWithNonEmptyMenu, myConceptChildOfParentWithEmptyCell, myConceptConceptWithoutDefaultMenu, myConceptDerived, myConceptDerivedWithEmptyMenu, myConceptNodeHolder, myConceptParentWithEmptyCell, myConceptScopesTestConceptBase, myConceptScopesTestConceptChild, myConceptScopesTestConceptReference, myConceptTransformationMenuTestConcept);
   }
 
   @Override
@@ -55,6 +57,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptParentWithEmptyCell;
       case LanguageConceptSwitch.ScopesTestConceptBase:
         return myConceptScopesTestConceptBase;
+      case LanguageConceptSwitch.ScopesTestConceptChild:
+        return myConceptScopesTestConceptChild;
+      case LanguageConceptSwitch.ScopesTestConceptReference:
+        return myConceptScopesTestConceptReference;
       case LanguageConceptSwitch.TransformationMenuTestConcept:
         return myConceptTransformationMenuTestConcept;
       default:
@@ -123,7 +129,25 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testLanguage", "ScopesTestConceptBase", 0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0xed49174618e8812L);
     b.class_(false, false, false);
     b.origin("r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)/1068638940632614930");
+    b.associate("reference", 0x38c885e4a7f35ab2L).target(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x38c885e4a7f35aafL).optional(true).origin("4091667478582876850").done();
+    b.aggregate("child", 0x38c885e4a7f35ab0L).target(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x38c885e4a7f35aaeL).optional(true).ordered(true).multiple(false).origin("4091667478582876848").done();
     b.alias("scopes test concept - base");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForScopesTestConceptChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testLanguage", "ScopesTestConceptChild", 0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x38c885e4a7f35aaeL);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)/4091667478582876846");
+    b.alias("scopes test concept - child");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForScopesTestConceptReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.testLanguage", "ScopesTestConceptReference", 0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x38c885e4a7f35aafL);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:c6b5a119-ed4d-420e-b7df-fa1b4101c68f(jetbrains.mps.lang.editor.menus.testLanguage.structure)/4091667478582876847");
+    b.alias("scopes test concept - reference");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransformationMenuTestConcept() {

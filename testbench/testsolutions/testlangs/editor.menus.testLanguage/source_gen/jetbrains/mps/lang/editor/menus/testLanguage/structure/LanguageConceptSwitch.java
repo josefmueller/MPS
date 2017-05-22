@@ -18,7 +18,9 @@ public final class LanguageConceptSwitch {
   public static final int NodeHolder = 6;
   public static final int ParentWithEmptyCell = 7;
   public static final int ScopesTestConceptBase = 8;
-  public static final int TransformationMenuTestConcept = 9;
+  public static final int ScopesTestConceptChild = 9;
+  public static final int ScopesTestConceptReference = 10;
+  public static final int TransformationMenuTestConcept = 11;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x4eb772b04df3414aL, 0xb89463abeb912f56L);
@@ -31,6 +33,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x4a19acf9397f4948L, NodeHolder);
     builder.put(0x7cc9c0c2af1b18c2L, ParentWithEmptyCell);
     builder.put(0xed49174618e8812L, ScopesTestConceptBase);
+    builder.put(0x38c885e4a7f35aaeL, ScopesTestConceptChild);
+    builder.put(0x38c885e4a7f35aafL, ScopesTestConceptReference);
     builder.put(0x208970783ba43296L, TransformationMenuTestConcept);
     myIndex = builder.seal();
   }
