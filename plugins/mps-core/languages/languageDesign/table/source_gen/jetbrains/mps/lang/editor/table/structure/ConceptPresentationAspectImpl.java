@@ -21,18 +21,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CellModel_HierarchycalTable:
         if (props_CellModel_HierarchycalTable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("hierarchycal table");
           props_CellModel_HierarchycalTable = cpb.create();
         }
         return props_CellModel_HierarchycalTable;
       case LanguageConceptSwitch.CellModel_Table:
         if (props_CellModel_Table == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("table");
           props_CellModel_Table = cpb.create();
         }
         return props_CellModel_Table;
       case LanguageConceptSwitch.QueryFunction_TableModel:
         if (props_QueryFunction_TableModel == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("getTableModel");
           props_QueryFunction_TableModel = cpb.create();
         }
         return props_QueryFunction_TableModel;

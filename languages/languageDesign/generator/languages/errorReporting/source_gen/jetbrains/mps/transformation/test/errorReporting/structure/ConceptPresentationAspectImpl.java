@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ErrorReportingRoot:
         if (props_ErrorReportingRoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ErrorReportingRoot = cpb.create();
         }
         return props_ErrorReportingRoot;

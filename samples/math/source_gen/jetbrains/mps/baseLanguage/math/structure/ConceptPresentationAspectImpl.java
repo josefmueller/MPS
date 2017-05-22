@@ -78,6 +78,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AbsExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Absolute value of a number");
+          cpb.rawPresentation("abs");
           props_AbsExpression = cpb.create();
         }
         return props_AbsExpression;
@@ -97,6 +98,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BigComplexType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Arbitrary precision complex number");
+          cpb.rawPresentation("bigcomplex");
           props_BigComplexType = cpb.create();
         }
         return props_BigComplexType;
@@ -104,6 +106,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BigDecimalType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Arbitrary precision signed decimal number");
+          cpb.rawPresentation("bigdecimal");
           props_BigDecimalType = cpb.create();
         }
         return props_BigDecimalType;
@@ -111,6 +114,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BigIntegerType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Arbitrary precision integer");
+          cpb.rawPresentation("biginteger");
           props_BigIntegerType = cpb.create();
         }
         return props_BigIntegerType;
@@ -118,6 +122,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BigMaxExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Maximum of expressions");
+          cpb.rawPresentation("max");
           props_BigMaxExpression = cpb.create();
         }
         return props_BigMaxExpression;
@@ -125,6 +130,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BigMinExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Minimum of expressions");
+          cpb.rawPresentation("min");
           props_BigMinExpression = cpb.create();
         }
         return props_BigMinExpression;
@@ -132,6 +138,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BigProdExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Product of expressions");
+          cpb.rawPresentation("prod");
           props_BigProdExpression = cpb.create();
         }
         return props_BigProdExpression;
@@ -139,12 +146,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BigSumExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Sum of expressions");
+          cpb.rawPresentation("sum");
           props_BigSumExpression = cpb.create();
         }
         return props_BigSumExpression;
       case LanguageConceptSwitch.ComplexLiteral:
         if (props_ComplexLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ComplexLiteral");
           props_ComplexLiteral = cpb.create();
         }
         return props_ComplexLiteral;
@@ -152,6 +161,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ComplexType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Double precision complex number");
+          cpb.rawPresentation("complex");
           props_ComplexType = cpb.create();
         }
         return props_ComplexType;
@@ -159,6 +169,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConjugateOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Matrix conjugate");
+          cpb.rawPresentation("ConjugateOperation");
           props_ConjugateOperation = cpb.create();
         }
         return props_ConjugateOperation;
@@ -166,6 +177,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CosineExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Trigonometric cosine of a value");
+          cpb.rawPresentation("cos");
           props_CosineExpression = cpb.create();
         }
         return props_CosineExpression;
@@ -179,6 +191,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DecimalDivExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("divide operation for big decimal types");
+          cpb.rawPresentation(":/d");
           props_DecimalDivExpression = cpb.create();
         }
         return props_DecimalDivExpression;
@@ -186,6 +199,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DecimalMinusExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("minus operation for big decimal types");
+          cpb.rawPresentation(":-d");
           props_DecimalMinusExpression = cpb.create();
         }
         return props_DecimalMinusExpression;
@@ -193,6 +207,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DecimalMulExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("multiplication operation for big decimal types");
+          cpb.rawPresentation(":*d");
           props_DecimalMulExpression = cpb.create();
         }
         return props_DecimalMulExpression;
@@ -200,6 +215,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DecimalPlusExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("plus operation for bigdecimal types");
+          cpb.rawPresentation(":+d");
           props_DecimalPlusExpression = cpb.create();
         }
         return props_DecimalPlusExpression;
@@ -207,12 +223,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Determinant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Matrix determinant");
+          cpb.rawPresentation("det");
           props_Determinant = cpb.create();
         }
         return props_Determinant;
       case LanguageConceptSwitch.DivExpressionFraction:
         if (props_DivExpressionFraction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("frac");
           props_DivExpressionFraction = cpb.create();
         }
         return props_DivExpressionFraction;
@@ -220,6 +238,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExponentExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Exponent of a value");
+          cpb.rawPresentation("exp");
           props_ExponentExpression = cpb.create();
         }
         return props_ExponentExpression;
@@ -239,6 +258,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InIntervalExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("is in interval");
+          cpb.rawPresentation(":in:");
           props_InIntervalExpression = cpb.create();
         }
         return props_InIntervalExpression;
@@ -246,6 +266,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IntervalContainsExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("(?) interval contains");
+          cpb.rawPresentation(":contains:");
           props_IntervalContainsExpression = cpb.create();
         }
         return props_IntervalContainsExpression;
@@ -253,6 +274,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IntervalLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Interval literal");
+          cpb.rawPresentation("interval");
           props_IntervalLiteral = cpb.create();
         }
         return props_IntervalLiteral;
@@ -260,12 +282,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IntervalType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Interval type");
+          cpb.rawPresentation("interval");
           props_IntervalType = cpb.create();
         }
         return props_IntervalType;
       case LanguageConceptSwitch.LinearSolveOperation:
         if (props_LinearSolveOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_LinearSolveOperation = cpb.create();
         }
         return props_LinearSolveOperation;
@@ -273,6 +297,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LiteralI == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Imaginary unit");
+          cpb.rawPresentation("I");
           props_LiteralI = cpb.create();
         }
         return props_LiteralI;
@@ -280,12 +305,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LogExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Natural logarithm of a value");
+          cpb.rawPresentation("ln");
           props_LogExpression = cpb.create();
         }
         return props_LogExpression;
       case LanguageConceptSwitch.MathContext:
         if (props_MathContext == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MathContext");
           props_MathContext = cpb.create();
         }
         return props_MathContext;
@@ -311,6 +338,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MathSymbolFromToIndex == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("iterate over interval of integers");
+          cpb.presentationByName();
           props_MathSymbolFromToIndex = cpb.create();
         }
         return props_MathSymbolFromToIndex;
@@ -318,18 +346,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MathSymbolIndex == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("iterate over arbitrary iterable class");
+          cpb.presentationByName();
           props_MathSymbolIndex = cpb.create();
         }
         return props_MathSymbolIndex;
       case LanguageConceptSwitch.MathSymbolIndexReference:
         if (props_MathSymbolIndexReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MathSymbolIndexReference");
           props_MathSymbolIndexReference = cpb.create();
         }
         return props_MathSymbolIndexReference;
       case LanguageConceptSwitch.MathTypeCast:
         if (props_MathTypeCast == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MathTypeCast");
           props_MathTypeCast = cpb.create();
         }
         return props_MathTypeCast;
@@ -337,12 +368,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MatrixConstructor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Matrix row constructor");
+          cpb.rawPresentation("[");
           props_MatrixConstructor = cpb.create();
         }
         return props_MatrixConstructor;
       case LanguageConceptSwitch.MatrixElementAccessExpression:
         if (props_MatrixElementAccessExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MatrixElementAccessExpression");
           props_MatrixElementAccessExpression = cpb.create();
         }
         return props_MatrixElementAccessExpression;
@@ -356,6 +389,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MatrixIndexWildcard == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Wildcard index");
+          cpb.rawPresentation("*");
           props_MatrixIndexWildcard = cpb.create();
         }
         return props_MatrixIndexWildcard;
@@ -363,18 +397,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MatrixInitializer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Matrix initializer");
+          cpb.rawPresentation("matrix");
           props_MatrixInitializer = cpb.create();
         }
         return props_MatrixInitializer;
       case LanguageConceptSwitch.MatrixInitializerIndex:
         if (props_MatrixInitializerIndex == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_MatrixInitializerIndex = cpb.create();
         }
         return props_MatrixInitializerIndex;
       case LanguageConceptSwitch.MatrixInitializerIndexReference:
         if (props_MatrixInitializerIndexReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MatrixInitializerIndexReference");
           props_MatrixInitializerIndexReference = cpb.create();
         }
         return props_MatrixInitializerIndexReference;
@@ -382,12 +419,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MatrixInverseOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Matrix inverse operation");
+          cpb.rawPresentation("MatrixInverseOperation");
           props_MatrixInverseOperation = cpb.create();
         }
         return props_MatrixInverseOperation;
       case LanguageConceptSwitch.MatrixNorm:
         if (props_MatrixNorm == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("norm");
           props_MatrixNorm = cpb.create();
         }
         return props_MatrixNorm;
@@ -406,6 +445,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MatrixType:
         if (props_MatrixType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("matrix");
           props_MatrixType = cpb.create();
         }
         return props_MatrixType;
@@ -413,6 +453,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MatrixUnit == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Identity matrix");
+          cpb.rawPresentation("identity");
           props_MatrixUnit = cpb.create();
         }
         return props_MatrixUnit;
@@ -420,6 +461,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MatrixZero == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Zero matrix");
+          cpb.rawPresentation("zero");
           props_MatrixZero = cpb.create();
         }
         return props_MatrixZero;
@@ -427,6 +469,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PowExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Power expression");
+          cpb.rawPresentation("^");
           props_PowExpression = cpb.create();
         }
         return props_PowExpression;
@@ -434,6 +477,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SineExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Trigonometric sine of a value");
+          cpb.rawPresentation("sin");
           props_SineExpression = cpb.create();
         }
         return props_SineExpression;
@@ -441,6 +485,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TangentExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Trigonometric tangent of a value");
+          cpb.rawPresentation("tan");
           props_TangentExpression = cpb.create();
         }
         return props_TangentExpression;
@@ -448,6 +493,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransposeOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Transpose operation");
+          cpb.rawPresentation("TransposeOperation");
           props_TransposeOperation = cpb.create();
         }
         return props_TransposeOperation;
@@ -455,12 +501,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_VectorInitializer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Vector initializer");
+          cpb.rawPresentation("vector");
           props_VectorInitializer = cpb.create();
         }
         return props_VectorInitializer;
       case LanguageConceptSwitch.VectorType:
         if (props_VectorType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("vector");
           props_VectorType = cpb.create();
         }
         return props_VectorType;

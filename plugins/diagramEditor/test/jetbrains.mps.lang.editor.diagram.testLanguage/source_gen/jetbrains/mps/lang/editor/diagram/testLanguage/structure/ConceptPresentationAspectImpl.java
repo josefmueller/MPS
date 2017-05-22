@@ -29,66 +29,77 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Diagram1:
         if (props_Diagram1 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Diagram1");
           props_Diagram1 = cpb.create();
         }
         return props_Diagram1;
       case LanguageConceptSwitch.Diagram2:
         if (props_Diagram2 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Diagram2");
           props_Diagram2 = cpb.create();
         }
         return props_Diagram2;
       case LanguageConceptSwitch.InputPort:
         if (props_InputPort == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_InputPort = cpb.create();
         }
         return props_InputPort;
       case LanguageConceptSwitch.Node:
         if (props_Node == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Node");
           props_Node = cpb.create();
         }
         return props_Node;
       case LanguageConceptSwitch.NodeWithName:
         if (props_NodeWithName == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_NodeWithName = cpb.create();
         }
         return props_NodeWithName;
       case LanguageConceptSwitch.NodeWithPortQueries:
         if (props_NodeWithPortQueries == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NodeWithPortQueries");
           props_NodeWithPortQueries = cpb.create();
         }
         return props_NodeWithPortQueries;
       case LanguageConceptSwitch.NodeWithPorts:
         if (props_NodeWithPorts == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NodeWithPorts");
           props_NodeWithPorts = cpb.create();
         }
         return props_NodeWithPorts;
       case LanguageConceptSwitch.NodeWithSize:
         if (props_NodeWithSize == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NodeWithSize");
           props_NodeWithSize = cpb.create();
         }
         return props_NodeWithSize;
       case LanguageConceptSwitch.OutputPort:
         if (props_OutputPort == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_OutputPort = cpb.create();
         }
         return props_OutputPort;
       case LanguageConceptSwitch.OutputToInputPortConnector:
         if (props_OutputToInputPortConnector == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OutputToInputPortConnector");
           props_OutputToInputPortConnector = cpb.create();
         }
         return props_OutputToInputPortConnector;
       case LanguageConceptSwitch.RectangleNode:
         if (props_RectangleNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("RectangleNode");
           props_RectangleNode = cpb.create();
         }
         return props_RectangleNode;

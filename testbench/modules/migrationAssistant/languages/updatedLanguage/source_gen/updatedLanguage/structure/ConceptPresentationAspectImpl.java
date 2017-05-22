@@ -20,12 +20,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MigratingConcept:
         if (props_MigratingConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MigratingConcept");
           props_MigratingConcept = cpb.create();
         }
         return props_MigratingConcept;
       case LanguageConceptSwitch.RootConcept:
         if (props_RootConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("RootConcept");
           props_RootConcept = cpb.create();
         }
         return props_RootConcept;

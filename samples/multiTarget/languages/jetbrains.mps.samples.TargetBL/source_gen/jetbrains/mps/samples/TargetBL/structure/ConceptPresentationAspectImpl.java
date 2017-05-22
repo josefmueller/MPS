@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IncludeBLTarget:
         if (props_IncludeBLTarget == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IncludeBLTarget");
           props_IncludeBLTarget = cpb.create();
         }
         return props_IncludeBLTarget;

@@ -27,13 +27,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ConceptBehavior:
         if (props_ConceptBehavior == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0k);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a0b0k);
           props_ConceptBehavior = cpb.create();
         }
         return props_ConceptBehavior;
       case LanguageConceptSwitch.ConceptConstructorDeclaration:
         if (props_ConceptConstructorDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConceptConstructorDeclaration");
           props_ConceptConstructorDeclaration = cpb.create();
         }
         return props_ConceptConstructorDeclaration;
@@ -41,12 +43,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptMethodDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL);
           cpb.deprecateProperty(0x11d43480581L, "isPrivate");
+          cpb.presentationByName();
           props_ConceptMethodDeclaration = cpb.create();
         }
         return props_ConceptMethodDeclaration;
       case LanguageConceptSwitch.LocalBehaviorMethodCall:
         if (props_LocalBehaviorMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LocalBehaviorMethodCall");
           props_LocalBehaviorMethodCall = cpb.create();
         }
         return props_LocalBehaviorMethodCall;
@@ -54,6 +58,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SuperConceptExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("super concept");
+          cpb.rawPresentation("super");
           props_SuperConceptExpression = cpb.create();
         }
         return props_SuperConceptExpression;
@@ -67,6 +72,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SuperNodeExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("super node");
+          cpb.rawPresentation("super");
           props_SuperNodeExpression = cpb.create();
         }
         return props_SuperNodeExpression;
@@ -74,6 +80,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ThisConceptExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("this concept");
+          cpb.rawPresentation("this");
           props_ThisConceptExpression = cpb.create();
         }
         return props_ThisConceptExpression;
@@ -81,6 +88,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ThisNodeExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("this node");
+          cpb.rawPresentation("this");
           props_ThisNodeExpression = cpb.create();
         }
         return props_ThisNodeExpression;

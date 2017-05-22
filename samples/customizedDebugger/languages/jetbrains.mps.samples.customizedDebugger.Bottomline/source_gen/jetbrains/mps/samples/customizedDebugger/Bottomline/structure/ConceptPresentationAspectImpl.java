@@ -20,12 +20,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MessageSequence:
         if (props_MessageSequence == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_MessageSequence = cpb.create();
         }
         return props_MessageSequence;
       case LanguageConceptSwitch.OutputMessage:
         if (props_OutputMessage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("output message");
           props_OutputMessage = cpb.create();
         }
         return props_OutputMessage;

@@ -74,7 +74,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           cpb.deprecateAggregation(0x11a72c7dc2aL, "canBeParent_Old");
           cpb.deprecateAggregation(0x6cfa709738a97560L, "canBeAncestor_Old");
           cpb.deprecateAggregation(0x341b038f9307e5d8L, "alternativeIcon");
-          cpb.icon(IconContainer.RESOURCE_a0a5a0a0b0bc);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a6a0a0b0bc);
           props_ConceptConstraints = cpb.create();
         }
         return props_ConceptConstraints;
@@ -83,6 +84,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("parent of the referenceNode, useful when the reference node is not defined yet (null)");
+          cpb.rawPresentation("enclosingNode");
           props_ConceptParameter_ReferentSearchScope_enclosingNode = cpb.create();
         }
         return props_ConceptParameter_ReferentSearchScope_enclosingNode;
@@ -90,6 +92,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_checkedNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("node to be validated");
+          cpb.rawPresentation("checkedNode");
           props_ConstraintFunctionParameter_checkedNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_checkedNode;
@@ -97,6 +100,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_childConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("the concept of the child/descendant node to test against");
+          cpb.rawPresentation("childConcept");
           props_ConstraintFunctionParameter_childConcept = cpb.create();
         }
         return props_ConstraintFunctionParameter_childConcept;
@@ -105,6 +109,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("the concept of the child/descendant node to test against");
+          cpb.rawPresentation("childConcept");
           props_ConstraintFunctionParameter_childConceptNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_childConceptNode;
@@ -112,6 +117,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_childNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("the child/descendant node to test against, may be null if is yet to be created");
+          cpb.rawPresentation("childNode");
           props_ConstraintFunctionParameter_childNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_childNode;
@@ -119,6 +125,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_containingLink == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("containingLink");
           props_ConstraintFunctionParameter_containingLink = cpb.create();
         }
         return props_ConstraintFunctionParameter_containingLink;
@@ -126,6 +133,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_containmentLink == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("containment link between contextNode and its child");
+          cpb.rawPresentation("containmentLink");
           props_ConstraintFunctionParameter_containmentLink = cpb.create();
         }
         return props_ConstraintFunctionParameter_containmentLink;
@@ -133,6 +141,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_contextNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("node with the reference, or closest not-null context node");
+          cpb.rawPresentation("contextNode");
           props_ConstraintFunctionParameter_contextNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_contextNode;
@@ -141,6 +150,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("target role in contextNode");
+          cpb.rawPresentation("contextRole");
           props_ConstraintFunctionParameter_contextRole = cpb.create();
         }
         return props_ConstraintFunctionParameter_contextRole;
@@ -149,6 +159,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("false when reference is being created");
+          cpb.rawPresentation("exists");
           props_ConstraintFunctionParameter_exists = cpb.create();
         }
         return props_ConstraintFunctionParameter_exists;
@@ -156,6 +167,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_inEditor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("inEditor");
           props_ConstraintFunctionParameter_inEditor = cpb.create();
         }
         return props_ConstraintFunctionParameter_inEditor;
@@ -163,6 +175,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_link == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("the containment link in question between the parent and the (potential or existing) child");
+          cpb.rawPresentation("link");
           props_ConstraintFunctionParameter_link = cpb.create();
         }
         return props_ConstraintFunctionParameter_link;
@@ -171,6 +184,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("the containment link in question between the parent and the (potential or existing) child");
+          cpb.rawPresentation("link");
           props_ConstraintFunctionParameter_linkNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_linkNode;
@@ -178,6 +192,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_linkTarget == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("target concept (useful for specialized links)");
+          cpb.rawPresentation("linkTarget");
           props_ConstraintFunctionParameter_linkTarget = cpb.create();
         }
         return props_ConstraintFunctionParameter_linkTarget;
@@ -186,6 +201,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("target concept node (useful for specialized links)");
+          cpb.rawPresentation("linkTarget");
           props_ConstraintFunctionParameter_linkTargetNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_linkTargetNode;
@@ -193,6 +209,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_newReferentNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("new value of the reference");
+          cpb.rawPresentation("newReferentNode");
           props_ConstraintFunctionParameter_newReferentNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_newReferentNode;
@@ -200,6 +217,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_oldReferentNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("old value of the reference");
+          cpb.rawPresentation("oldReferentNode");
           props_ConstraintFunctionParameter_oldReferentNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_oldReferentNode;
@@ -207,6 +225,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_parameterNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("node to present (target of the referenceNode's reference)");
+          cpb.rawPresentation("parameterNode");
           props_ConstraintFunctionParameter_parameterNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_parameterNode;
@@ -214,6 +233,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_parentNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("parent node to check");
+          cpb.rawPresentation("parentNode");
           props_ConstraintFunctionParameter_parentNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_parentNode;
@@ -221,6 +241,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_position == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("target index in contextRole");
+          cpb.rawPresentation("position");
           props_ConstraintFunctionParameter_position = cpb.create();
         }
         return props_ConstraintFunctionParameter_position;
@@ -228,6 +249,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_referenceNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("node with the reference");
+          cpb.rawPresentation("referenceNode");
           props_ConstraintFunctionParameter_referenceNode = cpb.create();
         }
         return props_ConstraintFunctionParameter_referenceNode;
@@ -235,6 +257,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_smartReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("smartReference");
           props_ConstraintFunctionParameter_smartReference = cpb.create();
         }
         return props_ConstraintFunctionParameter_smartReference;
@@ -242,6 +265,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunctionParameter_visible == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("visible");
           props_ConstraintFunctionParameter_visible = cpb.create();
         }
         return props_ConstraintFunctionParameter_visible;
@@ -249,6 +273,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_CanBeAChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("return false if node cannot be a child of parentNode");
+          cpb.rawPresentation("ConstraintFunction_CanBeAChild");
           props_ConstraintFunction_CanBeAChild = cpb.create();
         }
         return props_ConstraintFunction_CanBeAChild;
@@ -257,6 +282,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("return false if node cannot be a child of parentNode");
+          cpb.rawPresentation("ConstraintFunction_CanBeAChild_Old");
           props_ConstraintFunction_CanBeAChild_Old = cpb.create();
         }
         return props_ConstraintFunction_CanBeAChild_Old;
@@ -264,6 +290,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_CanBeAParent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("return false if node cannot be a parent of given node");
+          cpb.rawPresentation("ConstraintFunction_CanBeAParent");
           props_ConstraintFunction_CanBeAParent = cpb.create();
         }
         return props_ConstraintFunction_CanBeAParent;
@@ -272,12 +299,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("return false if node cannot be a parent of given node");
+          cpb.rawPresentation("ConstraintFunction_CanBeAParent_Old");
           props_ConstraintFunction_CanBeAParent_Old = cpb.create();
         }
         return props_ConstraintFunction_CanBeAParent_Old;
       case LanguageConceptSwitch.ConstraintFunction_CanBeARoot:
         if (props_ConstraintFunction_CanBeARoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConstraintFunction_CanBeARoot");
           props_ConstraintFunction_CanBeARoot = cpb.create();
         }
         return props_ConstraintFunction_CanBeARoot;
@@ -285,6 +314,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_CanBeAnAncestor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("return false if node cannot be a ancestor of given node");
+          cpb.rawPresentation("ConstraintFunction_CanBeAnAncestor");
           props_ConstraintFunction_CanBeAnAncestor = cpb.create();
         }
         return props_ConstraintFunction_CanBeAnAncestor;
@@ -292,18 +322,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_CanBeAnAncestor_Old == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("ConstraintFunction_CanBeAnAncestor_Old");
           props_ConstraintFunction_CanBeAnAncestor_Old = cpb.create();
         }
         return props_ConstraintFunction_CanBeAnAncestor_Old;
       case LanguageConceptSwitch.ConstraintFunction_GetAlternativeIcon:
         if (props_ConstraintFunction_GetAlternativeIcon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConstraintFunction_GetAlternativeIcon");
           props_ConstraintFunction_GetAlternativeIcon = cpb.create();
         }
         return props_ConstraintFunction_GetAlternativeIcon;
       case LanguageConceptSwitch.ConstraintFunction_GetInstanceIcon:
         if (props_ConstraintFunction_GetInstanceIcon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConstraintFunction_GetInstanceIcon");
           props_ConstraintFunction_GetInstanceIcon = cpb.create();
         }
         return props_ConstraintFunction_GetInstanceIcon;
@@ -311,6 +344,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_PropertyGetter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("property getter");
+          cpb.rawPresentation("getter");
           props_ConstraintFunction_PropertyGetter = cpb.create();
         }
         return props_ConstraintFunction_PropertyGetter;
@@ -318,6 +352,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_PropertySetter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("property setter");
+          cpb.rawPresentation("setter");
           props_ConstraintFunction_PropertySetter = cpb.create();
         }
         return props_ConstraintFunction_PropertySetter;
@@ -325,6 +360,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_PropertyValidator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("property validator");
+          cpb.rawPresentation("validator");
           props_ConstraintFunction_PropertyValidator = cpb.create();
         }
         return props_ConstraintFunction_PropertyValidator;
@@ -332,6 +368,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_RefSetHandlerKeepsReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("whether reference set handler keeps original reference");
+          cpb.rawPresentation("keeps reference");
           props_ConstraintFunction_RefSetHandlerKeepsReference = cpb.create();
         }
         return props_ConstraintFunction_RefSetHandlerKeepsReference;
@@ -347,6 +384,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("return list of nodes that can be referenced from given node");
+          cpb.rawPresentation("search scope (deprecated)");
           props_ConstraintFunction_ReferentSearchScope_Factory = cpb.create();
         }
         return props_ConstraintFunction_ReferentSearchScope_Factory;
@@ -355,6 +393,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("reference presentation in completion list (default - reference name)");
+          cpb.rawPresentation("search scope item presentation");
           props_ConstraintFunction_ReferentSearchScope_Presentation = cpb.create();
         }
         return props_ConstraintFunction_ReferentSearchScope_Presentation;
@@ -362,6 +401,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_ReferentSearchScope_Scope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("creates scope for the reference (jetbrains.mps.scope.Scope)");
+          cpb.rawPresentation("reference scope");
           props_ConstraintFunction_ReferentSearchScope_Scope = cpb.create();
         }
         return props_ConstraintFunction_ReferentSearchScope_Scope;
@@ -370,6 +410,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("creates scope for the reference (jetbrains.mps.scope.Scope)");
+          cpb.rawPresentation("reference scope (deprecated)");
           props_ConstraintFunction_ReferentSearchScope_Scope_Old = cpb.create();
         }
         return props_ConstraintFunction_ReferentSearchScope_Scope_Old;
@@ -378,6 +419,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("return true if the reference is in scope");
+          cpb.rawPresentation("reference validity");
           props_ConstraintFunction_ReferentSearchScope_Validator = cpb.create();
         }
         return props_ConstraintFunction_ReferentSearchScope_Validator;
@@ -385,6 +427,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintFunction_ReferentSetHandler == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("executed on every link assignment");
+          cpb.rawPresentation("'referent set' event handler");
           props_ConstraintFunction_ReferentSetHandler = cpb.create();
         }
         return props_ConstraintFunction_ReferentSetHandler;
@@ -392,6 +435,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintsFunctionParameter_node == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("the node in question");
+          cpb.rawPresentation("node");
           props_ConstraintsFunctionParameter_node = cpb.create();
         }
         return props_ConstraintsFunctionParameter_node;
@@ -399,6 +443,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintsFunctionParameter_propertyValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("new value of the node");
+          cpb.rawPresentation("propertyValue");
           props_ConstraintsFunctionParameter_propertyValue = cpb.create();
         }
         return props_ConstraintsFunctionParameter_propertyValue;
@@ -406,6 +451,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConstraintsMigration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("expression can be simplified or uses deprecated instances");
+          cpb.rawPresentation("migrate manually");
           props_ConstraintsMigration = cpb.create();
         }
         return props_ConstraintsMigration;
@@ -413,24 +459,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InheritedNodeScopeFactory == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("scope provided by parent elements");
+          cpb.rawPresentation("inherited");
           props_InheritedNodeScopeFactory = cpb.create();
         }
         return props_InheritedNodeScopeFactory;
       case LanguageConceptSwitch.NodeDefaultSearchScope:
         if (props_NodeDefaultSearchScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("default search scope");
           props_NodeDefaultSearchScope = cpb.create();
         }
         return props_NodeDefaultSearchScope;
       case LanguageConceptSwitch.NodePropertyConstraint:
         if (props_NodePropertyConstraint == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("property {<{applicableProperty}>}");
           props_NodePropertyConstraint = cpb.create();
         }
         return props_NodePropertyConstraint;
       case LanguageConceptSwitch.NodeReferentConstraint:
         if (props_NodeReferentConstraint == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("link {<{applicableLink}>}");
           props_NodeReferentConstraint = cpb.create();
         }
         return props_NodeReferentConstraint;

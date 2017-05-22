@@ -22,24 +22,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PrivateFieldReferenceOperation:
         if (props_PrivateFieldReferenceOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PrivateFieldReferenceOperation");
           props_PrivateFieldReferenceOperation = cpb.create();
         }
         return props_PrivateFieldReferenceOperation;
       case LanguageConceptSwitch.PrivateInstanceMethodCallOperation:
         if (props_PrivateInstanceMethodCallOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PrivateInstanceMethodCallOperation");
           props_PrivateInstanceMethodCallOperation = cpb.create();
         }
         return props_PrivateInstanceMethodCallOperation;
       case LanguageConceptSwitch.PrivateStaticFieldReference:
         if (props_PrivateStaticFieldReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PrivateStaticFieldReference");
           props_PrivateStaticFieldReference = cpb.create();
         }
         return props_PrivateStaticFieldReference;
       case LanguageConceptSwitch.PrivateStaticMethodCall:
         if (props_PrivateStaticMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PrivateStaticMethodCall");
           props_PrivateStaticMethodCall = cpb.create();
         }
         return props_PrivateStaticMethodCall;

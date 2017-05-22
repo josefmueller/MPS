@@ -35,60 +35,70 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ChangeEvent:
         if (props_ChangeEvent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ChangeEvent");
           props_ChangeEvent = cpb.create();
         }
         return props_ChangeEvent;
       case LanguageConceptSwitch.DailyPlan:
         if (props_DailyPlan == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_DailyPlan = cpb.create();
         }
         return props_DailyPlan;
       case LanguageConceptSwitch.DailyPlanReference:
         if (props_DailyPlanReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DailyPlanReference");
           props_DailyPlanReference = cpb.create();
         }
         return props_DailyPlanReference;
       case LanguageConceptSwitch.DayRange:
         if (props_DayRange == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("range");
           props_DayRange = cpb.create();
         }
         return props_DayRange;
       case LanguageConceptSwitch.HeatingPlan:
         if (props_HeatingPlan == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_HeatingPlan = cpb.create();
         }
         return props_HeatingPlan;
       case LanguageConceptSwitch.NotSpecified:
         if (props_NotSpecified == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("not specified");
           props_NotSpecified = cpb.create();
         }
         return props_NotSpecified;
       case LanguageConceptSwitch.Slot:
         if (props_Slot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Slot");
           props_Slot = cpb.create();
         }
         return props_Slot;
       case LanguageConceptSwitch.SpecificDay:
         if (props_SpecificDay == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("specific day");
           props_SpecificDay = cpb.create();
         }
         return props_SpecificDay;
       case LanguageConceptSwitch.WeekDays:
         if (props_WeekDays == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("week days");
           props_WeekDays = cpb.create();
         }
         return props_WeekDays;
       case LanguageConceptSwitch.WeekendDay:
         if (props_WeekendDay == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("weekend day");
           props_WeekendDay = cpb.create();
         }
         return props_WeekendDay;

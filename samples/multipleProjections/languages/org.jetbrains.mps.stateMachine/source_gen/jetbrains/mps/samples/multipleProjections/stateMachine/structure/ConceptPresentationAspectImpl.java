@@ -31,36 +31,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Event:
         if (props_Event == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Event = cpb.create();
         }
         return props_Event;
       case LanguageConceptSwitch.EventReference:
         if (props_EventReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("EventReference");
           props_EventReference = cpb.create();
         }
         return props_EventReference;
       case LanguageConceptSwitch.State:
         if (props_State == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_State = cpb.create();
         }
         return props_State;
       case LanguageConceptSwitch.StateMachine:
         if (props_StateMachine == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StateMachine");
           props_StateMachine = cpb.create();
         }
         return props_StateMachine;
       case LanguageConceptSwitch.StateReference:
         if (props_StateReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StateReference");
           props_StateReference = cpb.create();
         }
         return props_StateReference;
       case LanguageConceptSwitch.Transition:
         if (props_Transition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Transition");
           props_Transition = cpb.create();
         }
         return props_Transition;

@@ -38,61 +38,71 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AfterTest:
         if (props_AfterTest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("afterTest");
           props_AfterTest = cpb.create();
         }
         return props_AfterTest;
       case LanguageConceptSwitch.AssertEquals:
         if (props_AssertEquals == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("assert equals");
           props_AssertEquals = cpb.create();
         }
         return props_AssertEquals;
       case LanguageConceptSwitch.AssertFalse:
         if (props_AssertFalse == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("assert false");
           props_AssertFalse = cpb.create();
         }
         return props_AssertFalse;
       case LanguageConceptSwitch.AssertIsNotNull:
         if (props_AssertIsNotNull == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("assert is not null");
           props_AssertIsNotNull = cpb.create();
         }
         return props_AssertIsNotNull;
       case LanguageConceptSwitch.AssertIsNull:
         if (props_AssertIsNull == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("assert is null");
           props_AssertIsNull = cpb.create();
         }
         return props_AssertIsNull;
       case LanguageConceptSwitch.AssertSame:
         if (props_AssertSame == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("assert same (\"==\")");
           props_AssertSame = cpb.create();
         }
         return props_AssertSame;
       case LanguageConceptSwitch.AssertThrows:
         if (props_AssertThrows == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("assert throws");
           props_AssertThrows = cpb.create();
         }
         return props_AssertThrows;
       case LanguageConceptSwitch.AssertTrue:
         if (props_AssertTrue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("assert true");
           props_AssertTrue = cpb.create();
         }
         return props_AssertTrue;
       case LanguageConceptSwitch.BTestCase:
         if (props_BTestCase == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a8b0v);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a8b0v);
           props_BTestCase = cpb.create();
         }
         return props_BTestCase;
       case LanguageConceptSwitch.BeforeTest:
         if (props_BeforeTest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("beforeTest");
           props_BeforeTest = cpb.create();
         }
         return props_BeforeTest;
@@ -105,6 +115,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Fail:
         if (props_Fail == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("fail");
           props_Fail = cpb.create();
         }
         return props_Fail;
@@ -129,6 +140,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Message:
         if (props_Message == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("message");
           props_Message = cpb.create();
         }
         return props_Message;
@@ -147,12 +159,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TestMethod:
         if (props_TestMethod == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TestMethod = cpb.create();
         }
         return props_TestMethod;
       case LanguageConceptSwitch.TestMethodList:
         if (props_TestMethodList == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestMethodList");
           props_TestMethodList = cpb.create();
         }
         return props_TestMethodList;

@@ -19,7 +19,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TestConcept:
         if (props_TestConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0c);
+          cpb.rawPresentation("TestConcept");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a0b0c);
           props_TestConcept = cpb.create();
         }
         return props_TestConcept;

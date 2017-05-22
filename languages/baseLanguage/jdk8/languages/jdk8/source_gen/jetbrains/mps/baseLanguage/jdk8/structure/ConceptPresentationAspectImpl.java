@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SuperInterfaceMethodCall:
         if (props_SuperInterfaceMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SuperInterfaceMethodCall");
           props_SuperInterfaceMethodCall = cpb.create();
         }
         return props_SuperInterfaceMethodCall;

@@ -22,18 +22,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ComeFromExpression:
         if (props_ComeFromExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("come from");
           props_ComeFromExpression = cpb.create();
         }
         return props_ComeFromExpression;
       case LanguageConceptSwitch.CompositeWithParentScopeExpression:
         if (props_CompositeWithParentScopeExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("composite with");
           props_CompositeWithParentScopeExpression = cpb.create();
         }
         return props_CompositeWithParentScopeExpression;
       case LanguageConceptSwitch.ParentScope:
         if (props_ParentScope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("parent scope");
           props_ParentScope = cpb.create();
         }
         return props_ParentScope;

@@ -34,54 +34,63 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CustomArgumentClause:
         if (props_CustomArgumentClause == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CustomArgumentClause");
           props_CustomArgumentClause = cpb.create();
         }
         return props_CustomArgumentClause;
       case LanguageConceptSwitch.CustomConstructor:
         if (props_CustomConstructor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CustomConstructor = cpb.create();
         }
         return props_CustomConstructor;
       case LanguageConceptSwitch.CustomConstructorContainer:
         if (props_CustomConstructorContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CustomConstructorContainer = cpb.create();
         }
         return props_CustomConstructorContainer;
       case LanguageConceptSwitch.CustomConstructorParameter:
         if (props_CustomConstructorParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CustomConstructorParameter = cpb.create();
         }
         return props_CustomConstructorParameter;
       case LanguageConceptSwitch.CustomConstructorParameterReference:
         if (props_CustomConstructorParameterReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CustomConstructorParameterReference");
           props_CustomConstructorParameterReference = cpb.create();
         }
         return props_CustomConstructorParameterReference;
       case LanguageConceptSwitch.CustomConstructorUsage:
         if (props_CustomConstructorUsage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CustomConstructorUsage");
           props_CustomConstructorUsage = cpb.create();
         }
         return props_CustomConstructorUsage;
       case LanguageConceptSwitch.ListArgumentsClause:
         if (props_ListArgumentsClause == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ListArgumentsClause");
           props_ListArgumentsClause = cpb.create();
         }
         return props_ListArgumentsClause;
       case LanguageConceptSwitch.ListCustomParameter:
         if (props_ListCustomParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ListCustomParameter = cpb.create();
         }
         return props_ListCustomParameter;
       case LanguageConceptSwitch.ListParameterReference:
         if (props_ListParameterReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ListParameterReference");
           props_ListParameterReference = cpb.create();
         }
         return props_ListParameterReference;

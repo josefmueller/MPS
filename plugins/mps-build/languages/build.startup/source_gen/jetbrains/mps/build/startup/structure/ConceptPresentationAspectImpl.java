@@ -24,6 +24,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ClassPathItem:
         if (props_ClassPathItem == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ClassPathItem");
           props_ClassPathItem = cpb.create();
         }
         return props_ClassPathItem;
@@ -31,24 +32,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MpsStartupScript == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L);
           cpb.deprecateProperty(0x35ebd6e5b343750bL, "startupFolder");
+          cpb.presentationByName();
           props_MpsStartupScript = cpb.create();
         }
         return props_MpsStartupScript;
       case LanguageConceptSwitch.SimpleVmOptions:
         if (props_SimpleVmOptions == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SimpleVmOptions");
           props_SimpleVmOptions = cpb.create();
         }
         return props_SimpleVmOptions;
       case LanguageConceptSwitch.TextFile:
         if (props_TextFile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TextFile = cpb.create();
         }
         return props_TextFile;
       case LanguageConceptSwitch.TextLine:
         if (props_TextLine == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TextLine");
           props_TextLine = cpb.create();
         }
         return props_TextLine;

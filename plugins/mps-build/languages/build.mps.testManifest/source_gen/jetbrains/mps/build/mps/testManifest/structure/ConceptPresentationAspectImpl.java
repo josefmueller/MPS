@@ -21,18 +21,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TestModuleManifest:
         if (props_TestModuleManifest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TestModuleManifest = cpb.create();
         }
         return props_TestModuleManifest;
       case LanguageConceptSwitch.TestModuleManifestRef:
         if (props_TestModuleManifestRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestModuleManifestRef");
           props_TestModuleManifestRef = cpb.create();
         }
         return props_TestModuleManifestRef;
       case LanguageConceptSwitch.TestProjectConfiguration:
         if (props_TestProjectConfiguration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TestProjectConfiguration = cpb.create();
         }
         return props_TestProjectConfiguration;

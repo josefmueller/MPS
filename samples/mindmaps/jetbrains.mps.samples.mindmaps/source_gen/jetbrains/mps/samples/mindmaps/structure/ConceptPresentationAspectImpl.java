@@ -24,30 +24,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CoreThrought:
         if (props_CoreThrought == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CoreThrought = cpb.create();
         }
         return props_CoreThrought;
       case LanguageConceptSwitch.MindMap:
         if (props_MindMap == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_MindMap = cpb.create();
         }
         return props_MindMap;
       case LanguageConceptSwitch.Relationship:
         if (props_Relationship == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("relationship");
           props_Relationship = cpb.create();
         }
         return props_Relationship;
       case LanguageConceptSwitch.Specializes:
         if (props_Specializes == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Specializes");
           props_Specializes = cpb.create();
         }
         return props_Specializes;
       case LanguageConceptSwitch.Thought:
         if (props_Thought == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Thought = cpb.create();
         }
         return props_Thought;

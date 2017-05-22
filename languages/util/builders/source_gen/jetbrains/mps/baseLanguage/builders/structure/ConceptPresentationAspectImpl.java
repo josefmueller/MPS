@@ -43,12 +43,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AsBuilderStatement:
         if (props_AsBuilderStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("as builder");
           props_AsBuilderStatement = cpb.create();
         }
         return props_AsBuilderStatement;
       case LanguageConceptSwitch.AsTypeBuilder:
         if (props_AsTypeBuilder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("AsTypeBuilder");
           props_AsTypeBuilder = cpb.create();
         }
         return props_AsTypeBuilder;
@@ -61,12 +63,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BeanBuilder:
         if (props_BeanBuilder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("builder for");
           props_BeanBuilder = cpb.create();
         }
         return props_BeanBuilder;
       case LanguageConceptSwitch.BeanPropertyBuilder:
         if (props_BeanPropertyBuilder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BeanPropertyBuilder");
           props_BeanPropertyBuilder = cpb.create();
         }
         return props_BeanPropertyBuilder;
@@ -85,42 +89,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuilderCreator:
         if (props_BuilderCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuilderCreator");
           props_BuilderCreator = cpb.create();
         }
         return props_BuilderCreator;
       case LanguageConceptSwitch.BuilderStatement:
         if (props_BuilderStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuilderStatement");
           props_BuilderStatement = cpb.create();
         }
         return props_BuilderStatement;
       case LanguageConceptSwitch.ResultExpression:
         if (props_ResultExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("result");
           props_ResultExpression = cpb.create();
         }
         return props_ResultExpression;
       case LanguageConceptSwitch.SimpleBuilder:
         if (props_SimpleBuilder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SimpleBuilder");
           props_SimpleBuilder = cpb.create();
         }
         return props_SimpleBuilder;
       case LanguageConceptSwitch.SimpleBuilderChild:
         if (props_SimpleBuilderChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SimpleBuilderChild");
           props_SimpleBuilderChild = cpb.create();
         }
         return props_SimpleBuilderChild;
       case LanguageConceptSwitch.SimpleBuilderChildExpression:
         if (props_SimpleBuilderChildExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("child");
           props_SimpleBuilderChildExpression = cpb.create();
         }
         return props_SimpleBuilderChildExpression;
       case LanguageConceptSwitch.SimpleBuilderDeclaration:
         if (props_SimpleBuilderDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SimpleBuilderDeclaration = cpb.create();
         }
         return props_SimpleBuilderDeclaration;
@@ -133,36 +144,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SimpleBuilderExtensionDeclaration:
         if (props_SimpleBuilderExtensionDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SimpleBuilderExtensionDeclaration");
           props_SimpleBuilderExtensionDeclaration = cpb.create();
         }
         return props_SimpleBuilderExtensionDeclaration;
       case LanguageConceptSwitch.SimpleBuilderParameter:
         if (props_SimpleBuilderParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SimpleBuilderParameter = cpb.create();
         }
         return props_SimpleBuilderParameter;
       case LanguageConceptSwitch.SimpleBuilderParameterReference:
         if (props_SimpleBuilderParameterReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SimpleBuilderParameterReference");
           props_SimpleBuilderParameterReference = cpb.create();
         }
         return props_SimpleBuilderParameterReference;
       case LanguageConceptSwitch.SimpleBuilderParentExpression:
         if (props_SimpleBuilderParentExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("parent");
           props_SimpleBuilderParentExpression = cpb.create();
         }
         return props_SimpleBuilderParentExpression;
       case LanguageConceptSwitch.SimpleBuilderProperty:
         if (props_SimpleBuilderProperty == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SimpleBuilderProperty = cpb.create();
         }
         return props_SimpleBuilderProperty;
       case LanguageConceptSwitch.SimpleBuilderPropertyBuilder:
         if (props_SimpleBuilderPropertyBuilder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SimpleBuilderPropertyBuilder");
           props_SimpleBuilderPropertyBuilder = cpb.create();
         }
         return props_SimpleBuilderPropertyBuilder;
@@ -175,18 +192,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SimpleBuilderPropertyParent:
         if (props_SimpleBuilderPropertyParent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("parent");
           props_SimpleBuilderPropertyParent = cpb.create();
         }
         return props_SimpleBuilderPropertyParent;
       case LanguageConceptSwitch.SimpleBuilderPropertyValue:
         if (props_SimpleBuilderPropertyValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("value");
           props_SimpleBuilderPropertyValue = cpb.create();
         }
         return props_SimpleBuilderPropertyValue;
       case LanguageConceptSwitch.SimpleBuilders:
         if (props_SimpleBuilders == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SimpleBuilders = cpb.create();
         }
         return props_SimpleBuilders;

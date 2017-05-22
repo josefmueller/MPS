@@ -5,21 +5,21 @@ package jetbrains.mps.lang.editor.structure;
 import jetbrains.mps.smodel.runtime.IconResource;
 
 public class IconContainer {
-  protected static IconResource RESOURCE_a0a1a0a71b0xp = new IconResource("actionMap.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a32b0xp = new IconResource("keyMap.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a93b0xp = new IconResource("menuComponent.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a801b0xp = new IconResource("editorContextHints.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a901b0xp = new IconResource("editor.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a831b0xp = new IconResource("editorComponent.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a212b0xp = new IconResource("parametersInformation.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a633b0xp = new IconResource("styleKeyPack.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a833b0xp = new IconResource("editorStylesheet.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a71b0xp = new IconResource("actionMap.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a32b0xp = new IconResource("keyMap.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a93b0xp = new IconResource("menuComponent.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a801b0xp = new IconResource("editorContextHints.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a901b0xp = new IconResource("editor.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a831b0xp = new IconResource("editorComponent.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a212b0xp = new IconResource("parametersInformation.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a633b0xp = new IconResource("styleKeyPack.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a833b0xp = new IconResource("editorStylesheet.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a1a0a743b0xp = new IconResource("substituteMenu.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a073b0xp = new IconResource("substituteMenuContribution.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a173b0xp = new IconResource("substituteMenu.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a273b0xp = new IconResource("substituteMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a073b0xp = new IconResource("substituteMenuContribution.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a173b0xp = new IconResource("substituteMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a273b0xp = new IconResource("substituteMenu.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a1a0a193b0xp = new IconResource("transformationMenu.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a293b0xp = new IconResource("transformationMenuContribution.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a804b0xp = new IconResource("transformationMenu.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a1a0a904b0xp = new IconResource("transformationMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a293b0xp = new IconResource("transformationMenuContribution.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a804b0xp = new IconResource("transformationMenu.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a2a0a904b0xp = new IconResource("transformationMenu.png", IconContainer.class);
 }

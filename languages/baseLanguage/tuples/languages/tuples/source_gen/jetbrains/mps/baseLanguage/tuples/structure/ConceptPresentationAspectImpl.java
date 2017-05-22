@@ -28,6 +28,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IndexedTupleLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("indexed tuple");
+          cpb.rawPresentation("[");
           props_IndexedTupleLiteral = cpb.create();
         }
         return props_IndexedTupleLiteral;
@@ -35,6 +36,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IndexedTupleMemberAccessExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("access tuple member by index");
+          cpb.rawPresentation("[");
           props_IndexedTupleMemberAccessExpression = cpb.create();
         }
         return props_IndexedTupleMemberAccessExpression;
@@ -42,24 +44,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IndexedTupleType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("indexed tuple type");
+          cpb.rawPresentation("[");
           props_IndexedTupleType = cpb.create();
         }
         return props_IndexedTupleType;
       case LanguageConceptSwitch.NamedTupleComponentAccessOperation:
         if (props_NamedTupleComponentAccessOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NamedTupleComponentAccessOperation");
           props_NamedTupleComponentAccessOperation = cpb.create();
         }
         return props_NamedTupleComponentAccessOperation;
       case LanguageConceptSwitch.NamedTupleComponentDeclaration:
         if (props_NamedTupleComponentDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_NamedTupleComponentDeclaration = cpb.create();
         }
         return props_NamedTupleComponentDeclaration;
       case LanguageConceptSwitch.NamedTupleComponentReference:
         if (props_NamedTupleComponentReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NamedTupleComponentReference");
           props_NamedTupleComponentReference = cpb.create();
         }
         return props_NamedTupleComponentReference;
@@ -67,7 +73,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NamedTupleDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Named tuple declaration");
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a6b0k);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a6b0k);
           props_NamedTupleDeclaration = cpb.create();
         }
         return props_NamedTupleDeclaration;
@@ -75,6 +82,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NamedTupleLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("tuple literal");
+          cpb.rawPresentation("<{tupleDeclaration}> literal");
           props_NamedTupleLiteral = cpb.create();
         }
         return props_NamedTupleLiteral;
@@ -82,6 +90,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NamedTupleType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference to named tuple declaration");
+          cpb.rawPresentation("<{classifier}> type");
           props_NamedTupleType = cpb.create();
         }
         return props_NamedTupleType;

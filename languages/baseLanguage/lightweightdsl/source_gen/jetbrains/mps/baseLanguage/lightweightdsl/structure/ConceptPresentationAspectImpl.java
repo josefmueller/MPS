@@ -48,18 +48,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BooleanPropertyInstance:
         if (props_BooleanPropertyInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_BooleanPropertyInstance = cpb.create();
         }
         return props_BooleanPropertyInstance;
       case LanguageConceptSwitch.CustomMemberDescriptor:
         if (props_CustomMemberDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CustomMemberDescriptor = cpb.create();
         }
         return props_CustomMemberDescriptor;
       case LanguageConceptSwitch.DSLAnnotation:
         if (props_DSLAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DSLAnnotation");
           props_DSLAnnotation = cpb.create();
         }
         return props_DSLAnnotation;
@@ -72,24 +75,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DSLDescriptor:
         if (props_DSLDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_DSLDescriptor = cpb.create();
         }
         return props_DSLDescriptor;
       case LanguageConceptSwitch.DependentTypeDescriptor:
         if (props_DependentTypeDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("deptype");
           props_DependentTypeDescriptor = cpb.create();
         }
         return props_DependentTypeDescriptor;
       case LanguageConceptSwitch.DependentTypeInstance:
         if (props_DependentTypeInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DependentTypeInstance");
           props_DependentTypeInstance = cpb.create();
         }
         return props_DependentTypeInstance;
       case LanguageConceptSwitch.EmptyMemberDescriptor:
         if (props_EmptyMemberDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("empty line");
           props_EmptyMemberDescriptor = cpb.create();
         }
         return props_EmptyMemberDescriptor;
@@ -97,12 +104,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GenerateModifier == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("generate");
           props_GenerateModifier = cpb.create();
         }
         return props_GenerateModifier;
       case LanguageConceptSwitch.IntegerPropertyInstance:
         if (props_IntegerPropertyInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_IntegerPropertyInstance = cpb.create();
         }
         return props_IntegerPropertyInstance;
@@ -121,48 +130,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MemberPlaceholder:
         if (props_MemberPlaceholder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MemberPlaceholder");
           props_MemberPlaceholder = cpb.create();
         }
         return props_MemberPlaceholder;
       case LanguageConceptSwitch.MethodDescriptor:
         if (props_MethodDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_MethodDescriptor = cpb.create();
         }
         return props_MethodDescriptor;
       case LanguageConceptSwitch.MethodInstance:
         if (props_MethodInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_MethodInstance = cpb.create();
         }
         return props_MethodInstance;
       case LanguageConceptSwitch.MethodParameterInstance:
         if (props_MethodParameterInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_MethodParameterInstance = cpb.create();
         }
         return props_MethodParameterInstance;
       case LanguageConceptSwitch.MultipleModifier:
         if (props_MultipleModifier == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("multiple");
           props_MultipleModifier = cpb.create();
         }
         return props_MultipleModifier;
       case LanguageConceptSwitch.ParameterDescriptor:
         if (props_ParameterDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ParameterDescriptor = cpb.create();
         }
         return props_ParameterDescriptor;
       case LanguageConceptSwitch.PlaceholderModifier:
         if (props_PlaceholderModifier == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("placeholder");
           props_PlaceholderModifier = cpb.create();
         }
         return props_PlaceholderModifier;
       case LanguageConceptSwitch.PropertyDescriptor:
         if (props_PropertyDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PropertyDescriptor = cpb.create();
         }
         return props_PropertyDescriptor;
@@ -175,12 +192,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.RequiredModifier:
         if (props_RequiredModifier == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("required");
           props_RequiredModifier = cpb.create();
         }
         return props_RequiredModifier;
       case LanguageConceptSwitch.StringPropertyInstance:
         if (props_StringPropertyInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_StringPropertyInstance = cpb.create();
         }
         return props_StringPropertyInstance;

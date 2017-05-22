@@ -44,30 +44,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AdvanceWorkStatement:
         if (props_AdvanceWorkStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("advance");
           props_AdvanceWorkStatement = cpb.create();
         }
         return props_AdvanceWorkStatement;
       case LanguageConceptSwitch.AllWorkLeftExpression:
         if (props_AllWorkLeftExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ALL");
           props_AllWorkLeftExpression = cpb.create();
         }
         return props_AllWorkLeftExpression;
       case LanguageConceptSwitch.BeginWorkStatement:
         if (props_BeginWorkStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("begin work");
           props_BeginWorkStatement = cpb.create();
         }
         return props_BeginWorkStatement;
       case LanguageConceptSwitch.ConceptFunctionParameter_progressMonitor:
         if (props_ConceptFunctionParameter_progressMonitor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("progressMonitor");
           props_ConceptFunctionParameter_progressMonitor = cpb.create();
         }
         return props_ConceptFunctionParameter_progressMonitor;
       case LanguageConceptSwitch.ConfigDefinition:
         if (props_ConfigDefinition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConfigDefinition");
           props_ConfigDefinition = cpb.create();
         }
         return props_ConfigDefinition;
@@ -80,24 +85,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ExpectedInput:
         if (props_ExpectedInput == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExpectedInput");
           props_ExpectedInput = cpb.create();
         }
         return props_ExpectedInput;
       case LanguageConceptSwitch.ExpectedOption:
         if (props_ExpectedOption == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ExpectedOption = cpb.create();
         }
         return props_ExpectedOption;
       case LanguageConceptSwitch.FinishWorkStatement:
         if (props_FinishWorkStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("finish");
           props_FinishWorkStatement = cpb.create();
         }
         return props_FinishWorkStatement;
       case LanguageConceptSwitch.GetMakeSessionExpression:
         if (props_GetMakeSessionExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("makeSession");
           props_GetMakeSessionExpression = cpb.create();
         }
         return props_GetMakeSessionExpression;
@@ -110,90 +119,105 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.InputResourcesParameter:
         if (props_InputResourcesParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("input");
           props_InputResourcesParameter = cpb.create();
         }
         return props_InputResourcesParameter;
       case LanguageConceptSwitch.JobDeclaration:
         if (props_JobDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("JobDeclaration");
           props_JobDeclaration = cpb.create();
         }
         return props_JobDeclaration;
       case LanguageConceptSwitch.JobDefinition:
         if (props_JobDefinition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("JobDefinition");
           props_JobDefinition = cpb.create();
         }
         return props_JobDefinition;
       case LanguageConceptSwitch.Option:
         if (props_Option == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Option = cpb.create();
         }
         return props_Option;
       case LanguageConceptSwitch.OptionExpression:
         if (props_OptionExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OptionExpression");
           props_OptionExpression = cpb.create();
         }
         return props_OptionExpression;
       case LanguageConceptSwitch.OptionType:
         if (props_OptionType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("option");
           props_OptionType = cpb.create();
         }
         return props_OptionType;
       case LanguageConceptSwitch.OutputResources:
         if (props_OutputResources == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("output");
           props_OutputResources = cpb.create();
         }
         return props_OutputResources;
       case LanguageConceptSwitch.PropertiesAccessorParameter:
         if (props_PropertiesAccessorParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("__pa__");
           props_PropertiesAccessorParameter = cpb.create();
         }
         return props_PropertiesAccessorParameter;
       case LanguageConceptSwitch.QueryDefinition:
         if (props_QueryDefinition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_QueryDefinition = cpb.create();
         }
         return props_QueryDefinition;
       case LanguageConceptSwitch.QueryParameterDeclaration:
         if (props_QueryParameterDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_QueryParameterDeclaration = cpb.create();
         }
         return props_QueryParameterDeclaration;
       case LanguageConceptSwitch.RelayQueryExpression:
         if (props_RelayQueryExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("relay query");
           props_RelayQueryExpression = cpb.create();
         }
         return props_RelayQueryExpression;
       case LanguageConceptSwitch.ReportFeedbackStatement:
         if (props_ReportFeedbackStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("report");
           props_ReportFeedbackStatement = cpb.create();
         }
         return props_ReportFeedbackStatement;
       case LanguageConceptSwitch.ResourceType:
         if (props_ResourceType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("resource");
           props_ResourceType = cpb.create();
         }
         return props_ResourceType;
       case LanguageConceptSwitch.ResultStatement:
         if (props_ResultStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ResultStatement");
           props_ResultStatement = cpb.create();
         }
         return props_ResultStatement;
       case LanguageConceptSwitch.Text:
         if (props_Text == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Text");
           props_Text = cpb.create();
         }
         return props_Text;

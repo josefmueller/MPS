@@ -26,6 +26,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationFeature_Optional == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("optional feature");
+          cpb.rawPresentation("optional");
           props_TransformationFeature_Optional = cpb.create();
         }
         return props_TransformationFeature_Optional;
@@ -33,6 +34,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationFeature_Required == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("required feature");
+          cpb.rawPresentation("required");
           props_TransformationFeature_Required = cpb.create();
         }
         return props_TransformationFeature_Required;
@@ -40,6 +42,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationFeature_Unavailable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("unavailable feature");
+          cpb.rawPresentation("unavailable");
           props_TransformationFeature_Unavailable = cpb.create();
         }
         return props_TransformationFeature_Unavailable;
@@ -47,24 +50,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationLocation_Test == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("location for use in tests");
+          cpb.rawPresentation("test location");
           props_TransformationLocation_Test = cpb.create();
         }
         return props_TransformationLocation_Test;
       case LanguageConceptSwitch.TransformationLocation_WithFeatures:
         if (props_TransformationLocation_WithFeatures == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("location with a required and an optional feature");
           props_TransformationLocation_WithFeatures = cpb.create();
         }
         return props_TransformationLocation_WithFeatures;
       case LanguageConceptSwitch.TransformationLocation_WithoutFeatures:
         if (props_TransformationLocation_WithoutFeatures == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("location with no available features");
           props_TransformationLocation_WithoutFeatures = cpb.create();
         }
         return props_TransformationLocation_WithoutFeatures;
       case LanguageConceptSwitch.TransformationMenu_Test:
         if (props_TransformationMenu_Test == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TransformationMenu_Test = cpb.create();
         }
         return props_TransformationMenu_Test;

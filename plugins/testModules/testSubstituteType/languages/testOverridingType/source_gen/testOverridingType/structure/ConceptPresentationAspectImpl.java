@@ -24,36 +24,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ErrorType:
         if (props_ErrorType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("error");
           props_ErrorType = cpb.create();
         }
         return props_ErrorType;
       case LanguageConceptSwitch.OverrideAnnotation:
         if (props_OverrideAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OverrideAnnotation");
           props_OverrideAnnotation = cpb.create();
         }
         return props_OverrideAnnotation;
       case LanguageConceptSwitch.OverridingPrimFloatType:
         if (props_OverridingPrimFloatType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_float_overridden");
           props_OverridingPrimFloatType = cpb.create();
         }
         return props_OverridingPrimFloatType;
       case LanguageConceptSwitch.OverridingPrimIntType:
         if (props_OverridingPrimIntType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_int_overridden");
           props_OverridingPrimIntType = cpb.create();
         }
         return props_OverridingPrimIntType;
       case LanguageConceptSwitch.OverridingPrimNumConstant:
         if (props_OverridingPrimNumConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OverridingPrimNumConstant");
           props_OverridingPrimNumConstant = cpb.create();
         }
         return props_OverridingPrimNumConstant;
       case LanguageConceptSwitch.UnconditionalOverrideAnnotation:
         if (props_UnconditionalOverrideAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("UnconditionalOverrideAnnotation");
           props_UnconditionalOverrideAnnotation = cpb.create();
         }
         return props_UnconditionalOverrideAnnotation;

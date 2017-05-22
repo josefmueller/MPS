@@ -37,6 +37,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Circle:
         if (props_Circle == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Circle");
           props_Circle = cpb.create();
         }
         return props_Circle;
@@ -49,6 +50,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ColorLiteral:
         if (props_ColorLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("#");
           props_ColorLiteral = cpb.create();
         }
         return props_ColorLiteral;
@@ -56,6 +58,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptIconResourceExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL);
           cpb.deprecateAssociation(0x7ce01982590bd48L, "concept_old");
+          cpb.rawPresentation("conceptIcon");
           props_ConceptIconResourceExpression = cpb.create();
         }
         return props_ConceptIconResourceExpression;
@@ -63,6 +66,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_FileIcon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL);
           cpb.deprecateAggregation(0x60d1cf8c81faea09L, "iconExpression");
+          cpb.rawPresentation("file");
           props_FileIcon = cpb.create();
         }
         return props_FileIcon;
@@ -75,6 +79,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IconExpression:
         if (props_IconExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("icon");
           props_IconExpression = cpb.create();
         }
         return props_IconExpression;
@@ -87,18 +92,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IconResourceExpression:
         if (props_IconResourceExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("iconResource");
           props_IconResourceExpression = cpb.create();
         }
         return props_IconResourceExpression;
       case LanguageConceptSwitch.Image:
         if (props_Image == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Image");
           props_Image = cpb.create();
         }
         return props_Image;
       case LanguageConceptSwitch.NodeIconResourceExpression:
         if (props_NodeIconResourceExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("nodeIcon");
           props_NodeIconResourceExpression = cpb.create();
         }
         return props_NodeIconResourceExpression;
@@ -106,7 +114,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_OldIconBundle == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a11b0u);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a11b0u);
           props_OldIconBundle = cpb.create();
         }
         return props_OldIconBundle;
@@ -114,6 +123,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_OldIconDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.presentationByName();
           props_OldIconDeclaration = cpb.create();
         }
         return props_OldIconDeclaration;
@@ -121,6 +131,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_OldIconReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("icon");
           props_OldIconReference = cpb.create();
         }
         return props_OldIconReference;
@@ -133,6 +144,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Rect:
         if (props_Rect == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Rect");
           props_Rect = cpb.create();
         }
         return props_Rect;
@@ -146,12 +158,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Text:
         if (props_Text == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Text");
           props_Text = cpb.create();
         }
         return props_Text;
       case LanguageConceptSwitch.TextIcon:
         if (props_TextIcon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("describe");
           props_TextIcon = cpb.create();
         }
         return props_TextIcon;

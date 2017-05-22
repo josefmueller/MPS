@@ -33,24 +33,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ExtensionMethodCall:
         if (props_ExtensionMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExtensionMethodCall");
           props_ExtensionMethodCall = cpb.create();
         }
         return props_ExtensionMethodCall;
       case LanguageConceptSwitch.ExtensionMethodDeclaration:
         if (props_ExtensionMethodDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ExtensionMethodDeclaration = cpb.create();
         }
         return props_ExtensionMethodDeclaration;
       case LanguageConceptSwitch.ExtensionStaticFieldDeclaration:
         if (props_ExtensionStaticFieldDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ExtensionStaticFieldDeclaration = cpb.create();
         }
         return props_ExtensionStaticFieldDeclaration;
       case LanguageConceptSwitch.ExtensionStaticFieldReference:
         if (props_ExtensionStaticFieldReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExtensionStaticFieldReference");
           props_ExtensionStaticFieldReference = cpb.create();
         }
         return props_ExtensionStaticFieldReference;
@@ -58,24 +62,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LocalExtendedMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("local extended method call");
+          cpb.rawPresentation("LocalExtendedMethodCall");
           props_LocalExtendedMethodCall = cpb.create();
         }
         return props_LocalExtendedMethodCall;
       case LanguageConceptSwitch.SimpleExtensionMethodsContainer:
         if (props_SimpleExtensionMethodsContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SimpleExtensionMethodsContainer = cpb.create();
         }
         return props_SimpleExtensionMethodsContainer;
       case LanguageConceptSwitch.ThisExtensionExpression:
         if (props_ThisExtensionExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("this");
           props_ThisExtensionExpression = cpb.create();
         }
         return props_ThisExtensionExpression;
       case LanguageConceptSwitch.TypeExtension:
         if (props_TypeExtension == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TypeExtension = cpb.create();
         }
         return props_TypeExtension;

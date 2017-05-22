@@ -125,6 +125,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AbandonInput_RuleConsequence:
         if (props_AbandonInput_RuleConsequence == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<abandon input>");
           props_AbandonInput_RuleConsequence = cpb.create();
         }
         return props_AbandonInput_RuleConsequence;
@@ -143,12 +144,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BaseMappingRule_Condition:
         if (props_BaseMappingRule_Condition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("condition");
           props_BaseMappingRule_Condition = cpb.create();
         }
         return props_BaseMappingRule_Condition;
       case LanguageConceptSwitch.ContextVariableDeclaration:
         if (props_ContextVariableDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ContextVariableDeclaration = cpb.create();
         }
         return props_ContextVariableDeclaration;
@@ -162,6 +165,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CopySrcListMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("copy list of nodes from source");
+          cpb.rawPresentation("$COPY_SRCL$");
           props_CopySrcListMacro = cpb.create();
         }
         return props_CopySrcListMacro;
@@ -169,48 +173,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CopySrcNodeMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("copy source node macro");
+          cpb.rawPresentation("$COPY_SRC$");
           props_CopySrcNodeMacro = cpb.create();
         }
         return props_CopySrcNodeMacro;
       case LanguageConceptSwitch.CreateRootRule:
         if (props_CreateRootRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("create root");
           props_CreateRootRule = cpb.create();
         }
         return props_CreateRootRule;
       case LanguageConceptSwitch.CreateRootRule_Condition:
         if (props_CreateRootRule_Condition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("condition");
           props_CreateRootRule_Condition = cpb.create();
         }
         return props_CreateRootRule_Condition;
       case LanguageConceptSwitch.DismissTopMappingRule:
         if (props_DismissTopMappingRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<dismiss top rule>");
           props_DismissTopMappingRule = cpb.create();
         }
         return props_DismissTopMappingRule;
       case LanguageConceptSwitch.DropAttributeRule:
         if (props_DropAttributeRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DropAttributeRule");
           props_DropAttributeRule = cpb.create();
         }
         return props_DropAttributeRule;
       case LanguageConceptSwitch.DropAttributeRule_Condition:
         if (props_DropAttributeRule_Condition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DropAttributeRule_Condition");
           props_DropAttributeRule_Condition = cpb.create();
         }
         return props_DropAttributeRule_Condition;
       case LanguageConceptSwitch.DropRootRule:
         if (props_DropRootRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DropRootRule");
           props_DropRootRule = cpb.create();
         }
         return props_DropRootRule;
       case LanguageConceptSwitch.DropRootRule_Condition:
         if (props_DropRootRule_Condition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("condition");
           props_DropRootRule_Condition = cpb.create();
         }
         return props_DropRootRule_Condition;
@@ -218,6 +230,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExportEntry == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("persistence of generator exports");
+          cpb.rawPresentation("ExportEntry");
           props_ExportEntry = cpb.create();
         }
         return props_ExportEntry;
@@ -225,24 +238,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExportLabel == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.presentationByName();
           props_ExportLabel = cpb.create();
         }
         return props_ExportLabel;
       case LanguageConceptSwitch.ExportLabelParameter_inputNode:
         if (props_ExportLabelParameter_inputNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("inputNode");
           props_ExportLabelParameter_inputNode = cpb.create();
         }
         return props_ExportLabelParameter_inputNode;
       case LanguageConceptSwitch.ExportLabelParameter_keeper:
         if (props_ExportLabelParameter_keeper == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("keeper");
           props_ExportLabelParameter_keeper = cpb.create();
         }
         return props_ExportLabelParameter_keeper;
       case LanguageConceptSwitch.ExportLabelParameter_outputNode:
         if (props_ExportLabelParameter_outputNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("outputNode");
           props_ExportLabelParameter_outputNode = cpb.create();
         }
         return props_ExportLabelParameter_outputNode;
@@ -251,6 +268,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("expose output node to facilitate external references to generator outcome");
+          cpb.rawPresentation("$EXPORT$");
           props_ExportMacro = cpb.create();
         }
         return props_ExportMacro;
@@ -258,6 +276,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GeneratorDebug_InputNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("input nodes generally come from transient model, we can't keep direct reference to BaseConcept, hence this descriptor");
+          cpb.rawPresentation("GeneratorDebug_InputNode");
           props_GeneratorDebug_InputNode = cpb.create();
         }
         return props_GeneratorDebug_InputNode;
@@ -265,6 +284,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GeneratorDebug_LabelEntry == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Entry for MappingLabel");
+          cpb.rawPresentation("GeneratorDebug_LabelEntry");
           props_GeneratorDebug_LabelEntry = cpb.create();
         }
         return props_GeneratorDebug_LabelEntry;
@@ -272,6 +292,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GeneratorDebug_Mappings == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Container for generator mappings produced during transformation step");
+          cpb.rawPresentation("GeneratorDebug_Mappings");
           props_GeneratorDebug_Mappings = cpb.create();
         }
         return props_GeneratorDebug_Mappings;
@@ -279,6 +300,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GeneratorDebug_NodeMapEntry == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Records input node to output mapping, with origin of the input node (if any).");
+          cpb.rawPresentation("GeneratorDebug_NodeMapEntry");
           props_GeneratorDebug_NodeMapEntry = cpb.create();
         }
         return props_GeneratorDebug_NodeMapEntry;
@@ -286,6 +308,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GeneratorDebug_NodeRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Need multiple references to node<>, this is how they do it with MPS");
+          cpb.rawPresentation("GeneratorDebug_NodeRef");
           props_GeneratorDebug_NodeRef = cpb.create();
         }
         return props_GeneratorDebug_NodeRef;
@@ -298,30 +321,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GeneratorInternal_InternalReferenceDescriptor:
         if (props_GeneratorInternal_InternalReferenceDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_InternalReferenceDescriptor");
           props_GeneratorInternal_InternalReferenceDescriptor = cpb.create();
         }
         return props_GeneratorInternal_InternalReferenceDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
         if (props_GeneratorInternal_PropertyDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_PropertyDescriptor");
           props_GeneratorInternal_PropertyDescriptor = cpb.create();
         }
         return props_GeneratorInternal_PropertyDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
         if (props_GeneratorInternal_ReferenceDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_ReferenceDescriptor");
           props_GeneratorInternal_ReferenceDescriptor = cpb.create();
         }
         return props_GeneratorInternal_ReferenceDescriptor;
       case LanguageConceptSwitch.GeneratorMessage:
         if (props_GeneratorMessage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("generator message");
           props_GeneratorMessage = cpb.create();
         }
         return props_GeneratorMessage;
       case LanguageConceptSwitch.GeneratorParameterReference:
         if (props_GeneratorParameterReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorParameterReference");
           props_GeneratorParameterReference = cpb.create();
         }
         return props_GeneratorParameterReference;
@@ -347,12 +375,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IfMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("conditional macro");
+          cpb.rawPresentation("$IF$");
           props_IfMacro = cpb.create();
         }
         return props_IfMacro;
       case LanguageConceptSwitch.IfMacro_Condition:
         if (props_IfMacro_Condition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("condition");
           props_IfMacro_Condition = cpb.create();
         }
         return props_IfMacro_Condition;
@@ -360,30 +390,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IncludeMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("include template macro");
+          cpb.rawPresentation("$INCLUDE$");
           props_IncludeMacro = cpb.create();
         }
         return props_IncludeMacro;
       case LanguageConceptSwitch.InlineSwitch_Case:
         if (props_InlineSwitch_Case == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("InlineSwitch_Case");
           props_InlineSwitch_Case = cpb.create();
         }
         return props_InlineSwitch_Case;
       case LanguageConceptSwitch.InlineSwitch_RuleConsequence:
         if (props_InlineSwitch_RuleConsequence == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<in-line switch>");
           props_InlineSwitch_RuleConsequence = cpb.create();
         }
         return props_InlineSwitch_RuleConsequence;
       case LanguageConceptSwitch.InlineTemplateWithContext_RuleConsequence:
         if (props_InlineTemplateWithContext_RuleConsequence == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<in-line template with context>");
           props_InlineTemplateWithContext_RuleConsequence = cpb.create();
         }
         return props_InlineTemplateWithContext_RuleConsequence;
       case LanguageConceptSwitch.InlineTemplate_RuleConsequence:
         if (props_InlineTemplate_RuleConsequence == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<in-line template>");
           props_InlineTemplate_RuleConsequence = cpb.create();
         }
         return props_InlineTemplate_RuleConsequence;
@@ -391,12 +426,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InsertMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create an arbitrary node in output model");
+          cpb.rawPresentation("$INSERT$");
           props_InsertMacro = cpb.create();
         }
         return props_InsertMacro;
       case LanguageConceptSwitch.InsertMacro_CreateNodeQuery:
         if (props_InsertMacro_CreateNodeQuery == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("query");
           props_InsertMacro_CreateNodeQuery = cpb.create();
         }
         return props_InsertMacro_CreateNodeQuery;
@@ -404,6 +441,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LabelMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("attach label to output node");
+          cpb.rawPresentation("$LABEL$");
           props_LabelMacro = cpb.create();
         }
         return props_LabelMacro;
@@ -411,6 +449,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LoopMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("loop macro");
+          cpb.rawPresentation("$LOOP$");
           props_LoopMacro = cpb.create();
         }
         return props_LoopMacro;
@@ -418,18 +457,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MapSrcListMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("map nodes form source list macro");
+          cpb.rawPresentation("$MAP_SRCL$");
           props_MapSrcListMacro = cpb.create();
         }
         return props_MapSrcListMacro;
       case LanguageConceptSwitch.MapSrcMacro_MapperFunction:
         if (props_MapSrcMacro_MapperFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("create output node");
           props_MapSrcMacro_MapperFunction = cpb.create();
         }
         return props_MapSrcMacro_MapperFunction;
       case LanguageConceptSwitch.MapSrcMacro_PostMapperFunction:
         if (props_MapSrcMacro_PostMapperFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("post-process output node");
           props_MapSrcMacro_PostMapperFunction = cpb.create();
         }
         return props_MapSrcMacro_PostMapperFunction;
@@ -437,19 +479,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MapSrcNodeMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("map source node macro");
+          cpb.rawPresentation("$MAP_SRC$");
           props_MapSrcNodeMacro = cpb.create();
         }
         return props_MapSrcNodeMacro;
       case LanguageConceptSwitch.MappingConfiguration:
         if (props_MappingConfiguration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a05b0ee);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a05b0ee);
           props_MappingConfiguration = cpb.create();
         }
         return props_MappingConfiguration;
       case LanguageConceptSwitch.MappingConfiguration_Condition:
         if (props_MappingConfiguration_Condition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("condition");
           props_MappingConfiguration_Condition = cpb.create();
         }
         return props_MappingConfiguration_Condition;
@@ -457,25 +502,29 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MappingLabelDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("mapping label declaration");
+          cpb.presentationByName();
           props_MappingLabelDeclaration = cpb.create();
         }
         return props_MappingLabelDeclaration;
       case LanguageConceptSwitch.MappingScript:
         if (props_MappingScript == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a35b0ee);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a35b0ee);
           props_MappingScript = cpb.create();
         }
         return props_MappingScript;
       case LanguageConceptSwitch.MappingScriptReference:
         if (props_MappingScriptReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MappingScriptReference");
           props_MappingScriptReference = cpb.create();
         }
         return props_MappingScriptReference;
       case LanguageConceptSwitch.MappingScript_CodeBlock:
         if (props_MappingScript_CodeBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MappingScript_CodeBlock");
           props_MappingScript_CodeBlock = cpb.create();
         }
         return props_MappingScript_CodeBlock;
@@ -483,6 +532,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MarshalFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("MarshalFunction");
           props_MarshalFunction = cpb.create();
         }
         return props_MarshalFunction;
@@ -508,18 +558,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PatternReduction_MappingRule:
         if (props_PatternReduction_MappingRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("pattern reduce");
           props_PatternReduction_MappingRule = cpb.create();
         }
         return props_PatternReduction_MappingRule;
       case LanguageConceptSwitch.PropertyMacro:
         if (props_PropertyMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PropertyMacro");
           props_PropertyMacro = cpb.create();
         }
         return props_PropertyMacro;
       case LanguageConceptSwitch.PropertyMacro_GetPropertyValue:
         if (props_PropertyMacro_GetPropertyValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("property value");
           props_PropertyMacro_GetPropertyValue = cpb.create();
         }
         return props_PropertyMacro_GetPropertyValue;
@@ -532,30 +585,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Reduction_MappingRule:
         if (props_Reduction_MappingRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("reduce");
           props_Reduction_MappingRule = cpb.create();
         }
         return props_Reduction_MappingRule;
       case LanguageConceptSwitch.ReferenceMacro:
         if (props_ReferenceMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ReferenceMacro");
           props_ReferenceMacro = cpb.create();
         }
         return props_ReferenceMacro;
       case LanguageConceptSwitch.ReferenceMacro_GetReferent:
         if (props_ReferenceMacro_GetReferent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("get referent");
           props_ReferenceMacro_GetReferent = cpb.create();
         }
         return props_ReferenceMacro_GetReferent;
       case LanguageConceptSwitch.RootTemplateAnnotation:
         if (props_RootTemplateAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("RootTemplateAnnotation");
           props_RootTemplateAnnotation = cpb.create();
         }
         return props_RootTemplateAnnotation;
       case LanguageConceptSwitch.Root_MappingRule:
         if (props_Root_MappingRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("map");
           props_Root_MappingRule = cpb.create();
         }
         return props_Root_MappingRule;
@@ -574,24 +632,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SourceSubstituteMacro_SourceNodeQuery:
         if (props_SourceSubstituteMacro_SourceNodeQuery == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("query");
           props_SourceSubstituteMacro_SourceNodeQuery = cpb.create();
         }
         return props_SourceSubstituteMacro_SourceNodeQuery;
       case LanguageConceptSwitch.SourceSubstituteMacro_SourceNodesQuery:
         if (props_SourceSubstituteMacro_SourceNodesQuery == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("query");
           props_SourceSubstituteMacro_SourceNodesQuery = cpb.create();
         }
         return props_SourceSubstituteMacro_SourceNodesQuery;
       case LanguageConceptSwitch.TemplateArgumentLinkPatternRefExpression:
         if (props_TemplateArgumentLinkPatternRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TemplateArgumentLinkPatternRefExpression");
           props_TemplateArgumentLinkPatternRefExpression = cpb.create();
         }
         return props_TemplateArgumentLinkPatternRefExpression;
       case LanguageConceptSwitch.TemplateArgumentParameterExpression:
         if (props_TemplateArgumentParameterExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TemplateArgumentParameterExpression");
           props_TemplateArgumentParameterExpression = cpb.create();
         }
         return props_TemplateArgumentParameterExpression;
@@ -604,30 +666,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TemplateArgumentPatternVarRefExpression:
         if (props_TemplateArgumentPatternVarRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TemplateArgumentPatternVarRefExpression");
           props_TemplateArgumentPatternVarRefExpression = cpb.create();
         }
         return props_TemplateArgumentPatternVarRefExpression;
       case LanguageConceptSwitch.TemplateArgumentPropertyPatternRefExpression:
         if (props_TemplateArgumentPropertyPatternRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TemplateArgumentPropertyPatternRefExpression");
           props_TemplateArgumentPropertyPatternRefExpression = cpb.create();
         }
         return props_TemplateArgumentPropertyPatternRefExpression;
       case LanguageConceptSwitch.TemplateArgumentQuery:
         if (props_TemplateArgumentQuery == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("query");
           props_TemplateArgumentQuery = cpb.create();
         }
         return props_TemplateArgumentQuery;
       case LanguageConceptSwitch.TemplateArgumentQueryExpression:
         if (props_TemplateArgumentQueryExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("query");
           props_TemplateArgumentQueryExpression = cpb.create();
         }
         return props_TemplateArgumentQueryExpression;
       case LanguageConceptSwitch.TemplateArgumentVariableRefExpression:
         if (props_TemplateArgumentVariableRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TemplateArgumentVariableRefExpression");
           props_TemplateArgumentVariableRefExpression = cpb.create();
         }
         return props_TemplateArgumentVariableRefExpression;
@@ -635,61 +702,71 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TemplateCallMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("call template macro");
+          cpb.rawPresentation("$CALL$");
           props_TemplateCallMacro = cpb.create();
         }
         return props_TemplateCallMacro;
       case LanguageConceptSwitch.TemplateDeclaration:
         if (props_TemplateDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a28b0ee);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a28b0ee);
           props_TemplateDeclaration = cpb.create();
         }
         return props_TemplateDeclaration;
       case LanguageConceptSwitch.TemplateDeclarationReference:
         if (props_TemplateDeclarationReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TemplateDeclarationReference");
           props_TemplateDeclarationReference = cpb.create();
         }
         return props_TemplateDeclarationReference;
       case LanguageConceptSwitch.TemplateFragment:
         if (props_TemplateFragment == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TemplateFragment");
           props_TemplateFragment = cpb.create();
         }
         return props_TemplateFragment;
       case LanguageConceptSwitch.TemplateFunctionParameter_mainContextNode:
         if (props_TemplateFunctionParameter_mainContextNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("mainContextNode");
           props_TemplateFunctionParameter_mainContextNode = cpb.create();
         }
         return props_TemplateFunctionParameter_mainContextNode;
       case LanguageConceptSwitch.TemplateFunctionParameter_outputNode:
         if (props_TemplateFunctionParameter_outputNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("outputNode");
           props_TemplateFunctionParameter_outputNode = cpb.create();
         }
         return props_TemplateFunctionParameter_outputNode;
       case LanguageConceptSwitch.TemplateFunctionParameter_parentOutputNode:
         if (props_TemplateFunctionParameter_parentOutputNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("parentOutputNode");
           props_TemplateFunctionParameter_parentOutputNode = cpb.create();
         }
         return props_TemplateFunctionParameter_parentOutputNode;
       case LanguageConceptSwitch.TemplateFunctionParameter_sourceNode:
         if (props_TemplateFunctionParameter_sourceNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("node");
           props_TemplateFunctionParameter_sourceNode = cpb.create();
         }
         return props_TemplateFunctionParameter_sourceNode;
       case LanguageConceptSwitch.TemplateFunctionParameter_templatePropertyValue:
         if (props_TemplateFunctionParameter_templatePropertyValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("templateValue");
           props_TemplateFunctionParameter_templatePropertyValue = cpb.create();
         }
         return props_TemplateFunctionParameter_templatePropertyValue;
       case LanguageConceptSwitch.TemplateFunctionParameter_templateReferent:
         if (props_TemplateFunctionParameter_templateReferent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("templateValue");
           props_TemplateFunctionParameter_templateReferent = cpb.create();
         }
         return props_TemplateFunctionParameter_templateReferent;
@@ -697,6 +774,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TemplateParameterDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("parameter");
+          cpb.presentationByName();
           props_TemplateParameterDeclaration = cpb.create();
         }
         return props_TemplateParameterDeclaration;
@@ -709,7 +787,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TemplateSwitch:
         if (props_TemplateSwitch == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a39b0ee);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a39b0ee);
           props_TemplateSwitch = cpb.create();
         }
         return props_TemplateSwitch;
@@ -717,12 +796,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TemplateSwitchMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("template switch macro");
+          cpb.rawPresentation("$SWITCH$");
           props_TemplateSwitchMacro = cpb.create();
         }
         return props_TemplateSwitchMacro;
       case LanguageConceptSwitch.TemplateSwitchReference:
         if (props_TemplateSwitchReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TemplateSwitchReference");
           props_TemplateSwitchReference = cpb.create();
         }
         return props_TemplateSwitchReference;
@@ -730,18 +811,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TraceMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("specify input for the attributed node for tracing purposes");
+          cpb.rawPresentation("$TRACE$");
           props_TraceMacro = cpb.create();
         }
         return props_TraceMacro;
       case LanguageConceptSwitch.TrivialModelId:
         if (props_TrivialModelId == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TrivialModelId");
           props_TrivialModelId = cpb.create();
         }
         return props_TrivialModelId;
       case LanguageConceptSwitch.TrivialNodeId:
         if (props_TrivialNodeId == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TrivialNodeId");
           props_TrivialNodeId = cpb.create();
         }
         return props_TrivialNodeId;
@@ -749,6 +833,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_UnmarshalFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("UnmarshalFunction");
           props_UnmarshalFunction = cpb.create();
         }
         return props_UnmarshalFunction;
@@ -756,18 +841,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_VarMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("compute and store value in variable");
+          cpb.presentationByName();
           props_VarMacro = cpb.create();
         }
         return props_VarMacro;
       case LanguageConceptSwitch.VarMacro_ValueQuery:
         if (props_VarMacro_ValueQuery == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("query");
           props_VarMacro_ValueQuery = cpb.create();
         }
         return props_VarMacro_ValueQuery;
       case LanguageConceptSwitch.WeaveEach_RuleConsequence:
         if (props_WeaveEach_RuleConsequence == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<weave each>");
           props_WeaveEach_RuleConsequence = cpb.create();
         }
         return props_WeaveEach_RuleConsequence;
@@ -775,6 +863,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_WeaveMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("weave additional children");
+          cpb.rawPresentation("$WEAVE$");
           props_WeaveMacro = cpb.create();
         }
         return props_WeaveMacro;
@@ -782,18 +871,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_WeavingAnchorQuery == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("controls exact location in parent where child is weaved to");
+          cpb.rawPresentation("weaving anchor node ");
           props_WeavingAnchorQuery = cpb.create();
         }
         return props_WeavingAnchorQuery;
       case LanguageConceptSwitch.Weaving_MappingRule:
         if (props_Weaving_MappingRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("weave");
           props_Weaving_MappingRule = cpb.create();
         }
         return props_Weaving_MappingRule;
       case LanguageConceptSwitch.Weaving_MappingRule_ContextNodeQuery:
         if (props_Weaving_MappingRule_ContextNodeQuery == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("weaving context node");
           props_Weaving_MappingRule_ContextNodeQuery = cpb.create();
         }
         return props_Weaving_MappingRule_ContextNodeQuery;

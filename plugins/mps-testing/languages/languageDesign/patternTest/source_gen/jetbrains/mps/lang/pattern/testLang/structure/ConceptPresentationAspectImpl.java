@@ -25,42 +25,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ListValue:
         if (props_ListValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ListValue");
           props_ListValue = cpb.create();
         }
         return props_ListValue;
       case LanguageConceptSwitch.PatternTest:
         if (props_PatternTest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PatternTest = cpb.create();
         }
         return props_PatternTest;
       case LanguageConceptSwitch.PropertyValue:
         if (props_PropertyValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PropertyValue");
           props_PropertyValue = cpb.create();
         }
         return props_PropertyValue;
       case LanguageConceptSwitch.TestListReference:
         if (props_TestListReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestListReference");
           props_TestListReference = cpb.create();
         }
         return props_TestListReference;
       case LanguageConceptSwitch.TestPropertyVariableReference:
         if (props_TestPropertyVariableReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestPropertyVariableReference");
           props_TestPropertyVariableReference = cpb.create();
         }
         return props_TestPropertyVariableReference;
       case LanguageConceptSwitch.TestVariableReference:
         if (props_TestVariableReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestVariableReference");
           props_TestVariableReference = cpb.create();
         }
         return props_TestVariableReference;
       case LanguageConceptSwitch.VariableValue:
         if (props_VariableValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("VariableValue");
           props_VariableValue = cpb.create();
         }
         return props_VariableValue;

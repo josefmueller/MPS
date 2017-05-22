@@ -25,42 +25,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ABC:
         if (props_ABC == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("abc");
           props_ABC = cpb.create();
         }
         return props_ABC;
       case LanguageConceptSwitch.ABCDE:
         if (props_ABCDE == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("abc de");
           props_ABCDE = cpb.create();
         }
         return props_ABCDE;
       case LanguageConceptSwitch.ABCDEF:
         if (props_ABCDEF == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("abc de f");
           props_ABCDEF = cpb.create();
         }
         return props_ABCDEF;
       case LanguageConceptSwitch.ABCDEG:
         if (props_ABCDEG == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("abc de g");
           props_ABCDEG = cpb.create();
         }
         return props_ABCDEG;
       case LanguageConceptSwitch.ABCEEG:
         if (props_ABCEEG == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("abc Ee G");
           props_ABCEEG = cpb.create();
         }
         return props_ABCEEG;
       case LanguageConceptSwitch.BAC:
         if (props_BAC == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("bac");
           props_BAC = cpb.create();
         }
         return props_BAC;
       case LanguageConceptSwitch.BCA:
         if (props_BCA == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("bca");
           props_BCA = cpb.create();
         }
         return props_BCA;

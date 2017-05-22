@@ -158,12 +158,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildCompositePath:
         if (props_BuildCompositePath == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuildCompositePath");
           props_BuildCompositePath = cpb.create();
         }
         return props_BuildCompositePath;
       case LanguageConceptSwitch.BuildCustomWorkflow:
         if (props_BuildCustomWorkflow == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("workflow");
           props_BuildCustomWorkflow = cpb.create();
         }
         return props_BuildCustomWorkflow;
@@ -182,32 +184,37 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildExternalLayout:
         if (props_BuildExternalLayout == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a5b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a5b0ff);
           props_BuildExternalLayout = cpb.create();
         }
         return props_BuildExternalLayout;
       case LanguageConceptSwitch.BuildExternalLayoutDependency:
         if (props_BuildExternalLayoutDependency == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a6b0ff);
+          cpb.rawPresentation("BuildExternalLayoutDependency");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a6b0ff);
           props_BuildExternalLayoutDependency = cpb.create();
         }
         return props_BuildExternalLayoutDependency;
       case LanguageConceptSwitch.BuildFileExcludeSelector:
         if (props_BuildFileExcludeSelector == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("exclude");
           props_BuildFileExcludeSelector = cpb.create();
         }
         return props_BuildFileExcludeSelector;
       case LanguageConceptSwitch.BuildFileIncludeSelector:
         if (props_BuildFileIncludeSelector == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("include");
           props_BuildFileIncludeSelector = cpb.create();
         }
         return props_BuildFileIncludeSelector;
       case LanguageConceptSwitch.BuildFileIncludesSelector:
         if (props_BuildFileIncludesSelector == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("includes");
           props_BuildFileIncludesSelector = cpb.create();
         }
         return props_BuildFileIncludesSelector;
@@ -227,7 +234,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildFolderMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("defines folder macro with default value (for local build)");
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a21b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a21b0ff);
           props_BuildFolderMacro = cpb.create();
         }
         return props_BuildFolderMacro;
@@ -241,6 +249,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildInputFiles == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("folder on local filesystem");
+          cpb.rawPresentation("files from");
           props_BuildInputFiles = cpb.create();
         }
         return props_BuildInputFiles;
@@ -253,6 +262,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildInputFolders:
         if (props_BuildInputFolders == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("folders");
           props_BuildInputFolders = cpb.create();
         }
         return props_BuildInputFolders;
@@ -266,12 +276,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildInputSingleFile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("single file on local filesystem");
+          cpb.rawPresentation("file");
           props_BuildInputSingleFile = cpb.create();
         }
         return props_BuildInputSingleFile;
       case LanguageConceptSwitch.BuildInputSingleFolder:
         if (props_BuildInputSingleFolder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("folder");
           props_BuildInputSingleFolder = cpb.create();
         }
         return props_BuildInputSingleFolder;
@@ -279,13 +291,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildJavaPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("adds Java capabilities (compile, test & bundling) to the project");
+          cpb.rawPresentation("java");
           props_BuildJavaPlugin = cpb.create();
         }
         return props_BuildJavaPlugin;
       case LanguageConceptSwitch.BuildLayout:
         if (props_BuildLayout == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a12b0ff);
+          cpb.rawPresentation("BuildLayout");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a12b0ff);
           props_BuildLayout = cpb.create();
         }
         return props_BuildLayout;
@@ -304,12 +318,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_Comment:
         if (props_BuildLayout_Comment == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("#");
           props_BuildLayout_Comment = cpb.create();
         }
         return props_BuildLayout_Comment;
       case LanguageConceptSwitch.BuildLayout_CompileOutputOf:
         if (props_BuildLayout_CompileOutputOf == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("compile output of");
           props_BuildLayout_CompileOutputOf = cpb.create();
         }
         return props_BuildLayout_CompileOutputOf;
@@ -328,6 +344,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_Copy:
         if (props_BuildLayout_Copy == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuildLayout_Copy");
           props_BuildLayout_Copy = cpb.create();
         }
         return props_BuildLayout_Copy;
@@ -340,30 +357,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_CopyFilterFixCRLF:
         if (props_BuildLayout_CopyFilterFixCRLF == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("fix eol");
           props_BuildLayout_CopyFilterFixCRLF = cpb.create();
         }
         return props_BuildLayout_CopyFilterFixCRLF;
       case LanguageConceptSwitch.BuildLayout_CopyFilterReplaceRegex:
         if (props_BuildLayout_CopyFilterReplaceRegex == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("replace regex");
           props_BuildLayout_CopyFilterReplaceRegex = cpb.create();
         }
         return props_BuildLayout_CopyFilterReplaceRegex;
       case LanguageConceptSwitch.BuildLayout_CopyFilterReplaceTokens:
         if (props_BuildLayout_CopyFilterReplaceTokens == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("replace");
           props_BuildLayout_CopyFilterReplaceTokens = cpb.create();
         }
         return props_BuildLayout_CopyFilterReplaceTokens;
       case LanguageConceptSwitch.BuildLayout_CopyFlattenMapper:
         if (props_BuildLayout_CopyFlattenMapper == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("flatten");
           props_BuildLayout_CopyFlattenMapper = cpb.create();
         }
         return props_BuildLayout_CopyFlattenMapper;
       case LanguageConceptSwitch.BuildLayout_CopyGlobMapper:
         if (props_BuildLayout_CopyGlobMapper == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("filename glob mapper");
           props_BuildLayout_CopyGlobMapper = cpb.create();
         }
         return props_BuildLayout_CopyGlobMapper;
@@ -394,42 +416,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_CopyRegexMapper:
         if (props_BuildLayout_CopyRegexMapper == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("filename regex mapper");
           props_BuildLayout_CopyRegexMapper = cpb.create();
         }
         return props_BuildLayout_CopyRegexMapper;
       case LanguageConceptSwitch.BuildLayout_CustomCopy:
         if (props_BuildLayout_CustomCopy == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuildLayout_CustomCopy");
           props_BuildLayout_CustomCopy = cpb.create();
         }
         return props_BuildLayout_CustomCopy;
       case LanguageConceptSwitch.BuildLayout_EchoProperties:
         if (props_BuildLayout_EchoProperties == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("properties file");
           props_BuildLayout_EchoProperties = cpb.create();
         }
         return props_BuildLayout_EchoProperties;
       case LanguageConceptSwitch.BuildLayout_EchoPropertyEntry:
         if (props_BuildLayout_EchoPropertyEntry == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("entry");
           props_BuildLayout_EchoPropertyEntry = cpb.create();
         }
         return props_BuildLayout_EchoPropertyEntry;
       case LanguageConceptSwitch.BuildLayout_EchoXml:
         if (props_BuildLayout_EchoXml == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("xml file");
           props_BuildLayout_EchoXml = cpb.create();
         }
         return props_BuildLayout_EchoXml;
       case LanguageConceptSwitch.BuildLayout_ExportAsJavaLibrary:
         if (props_BuildLayout_ExportAsJavaLibrary == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("export as java library");
           props_BuildLayout_ExportAsJavaLibrary = cpb.create();
         }
         return props_BuildLayout_ExportAsJavaLibrary;
       case LanguageConceptSwitch.BuildLayout_File:
         if (props_BuildLayout_File == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("file");
           props_BuildLayout_File = cpb.create();
         }
         return props_BuildLayout_File;
@@ -442,6 +471,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_FileStub:
         if (props_BuildLayout_FileStub == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("file");
           props_BuildLayout_FileStub = cpb.create();
         }
         return props_BuildLayout_FileStub;
@@ -449,12 +479,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildLayout_Filemode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("customize file modes in archive");
+          cpb.rawPresentation("filemode");
           props_BuildLayout_Filemode = cpb.create();
         }
         return props_BuildLayout_Filemode;
       case LanguageConceptSwitch.BuildLayout_Files:
         if (props_BuildLayout_Files == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("files from");
           props_BuildLayout_Files = cpb.create();
         }
         return props_BuildLayout_Files;
@@ -462,6 +494,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildLayout_FilesOf == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("copy files of project element");
+          cpb.rawPresentation("files of");
           props_BuildLayout_FilesOf = cpb.create();
         }
         return props_BuildLayout_FilesOf;
@@ -469,19 +502,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildLayout_Folder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create a folder");
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a15b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a15b0ff);
           props_BuildLayout_Folder = cpb.create();
         }
         return props_BuildLayout_Folder;
       case LanguageConceptSwitch.BuildLayout_Import:
         if (props_BuildLayout_Import == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("import");
           props_BuildLayout_Import = cpb.create();
         }
         return props_BuildLayout_Import;
       case LanguageConceptSwitch.BuildLayout_ImportContent:
         if (props_BuildLayout_ImportContent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("import files from");
           props_BuildLayout_ImportContent = cpb.create();
         }
         return props_BuildLayout_ImportContent;
@@ -494,7 +530,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_Jar:
         if (props_BuildLayout_Jar == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a55b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a55b0ff);
           props_BuildLayout_Jar = cpb.create();
         }
         return props_BuildLayout_Jar;
@@ -502,6 +539,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildLayout_JarManifest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("jar manifest file");
+          cpb.rawPresentation("manifest");
           props_BuildLayout_JarManifest = cpb.create();
         }
         return props_BuildLayout_JarManifest;
@@ -509,6 +547,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildLayout_JarManifest_Attribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("jar manifest attribute");
+          cpb.rawPresentation("<name>: <value>");
           props_BuildLayout_JarManifest_Attribute = cpb.create();
         }
         return props_BuildLayout_JarManifest_Attribute;
@@ -522,6 +561,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildLayout_JarManifest_Section == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("jar manifest section");
+          cpb.rawPresentation("section");
           props_BuildLayout_JarManifest_Section = cpb.create();
         }
         return props_BuildLayout_JarManifest_Section;
@@ -552,7 +592,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_Tar:
         if (props_BuildLayout_Tar == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a46b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a46b0ff);
           props_BuildLayout_Tar = cpb.create();
         }
         return props_BuildLayout_Tar;
@@ -565,13 +606,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildLayout_War:
         if (props_BuildLayout_War == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_BuildLayout_War = cpb.create();
         }
         return props_BuildLayout_War;
       case LanguageConceptSwitch.BuildLayout_Zip:
         if (props_BuildLayout_Zip == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a76b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a76b0ff);
           props_BuildLayout_Zip = cpb.create();
         }
         return props_BuildLayout_Zip;
@@ -585,6 +628,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildNamedLayout == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("custom named layout");
+          cpb.presentationByName();
           props_BuildNamedLayout = cpb.create();
         }
         return props_BuildNamedLayout;
@@ -597,14 +641,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildProject:
         if (props_BuildProject == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a17b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a17b0ff);
           props_BuildProject = cpb.create();
         }
         return props_BuildProject;
       case LanguageConceptSwitch.BuildProjectDependency:
         if (props_BuildProjectDependency == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a27b0ff);
+          cpb.rawPresentation("BuildProjectDependency");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a27b0ff);
           props_BuildProjectDependency = cpb.create();
         }
         return props_BuildProjectDependency;
@@ -623,13 +669,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildSourceArchiveRelativePath:
         if (props_BuildSourceArchiveRelativePath == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("*.zip!/");
           props_BuildSourceArchiveRelativePath = cpb.create();
         }
         return props_BuildSourceArchiveRelativePath;
       case LanguageConceptSwitch.BuildSourceMacroRelativePath:
         if (props_BuildSourceMacroRelativePath == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a67b0ff);
+          cpb.rawPresentation("BuildSourceMacroRelativePath");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a67b0ff);
           props_BuildSourceMacroRelativePath = cpb.create();
         }
         return props_BuildSourceMacroRelativePath;
@@ -642,7 +690,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildSourceProjectRelativePath:
         if (props_BuildSourceProjectRelativePath == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a87b0ff);
+          cpb.rawPresentation(".");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a87b0ff);
           props_BuildSourceProjectRelativePath = cpb.create();
         }
         return props_BuildSourceProjectRelativePath;
@@ -673,18 +722,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildSource_JavaClassFolder:
         if (props_BuildSource_JavaClassFolder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("classes");
           props_BuildSource_JavaClassFolder = cpb.create();
         }
         return props_BuildSource_JavaClassFolder;
       case LanguageConceptSwitch.BuildSource_JavaContentFolder:
         if (props_BuildSource_JavaContentFolder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("source");
           props_BuildSource_JavaContentFolder = cpb.create();
         }
         return props_BuildSource_JavaContentFolder;
       case LanguageConceptSwitch.BuildSource_JavaContentRoot:
         if (props_BuildSource_JavaContentRoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("content root");
           props_BuildSource_JavaContentRoot = cpb.create();
         }
         return props_BuildSource_JavaContentRoot;
@@ -697,79 +749,92 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildSource_JavaDependencyExternalJar:
         if (props_BuildSource_JavaDependencyExternalJar == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("external jar");
           props_BuildSource_JavaDependencyExternalJar = cpb.create();
         }
         return props_BuildSource_JavaDependencyExternalJar;
       case LanguageConceptSwitch.BuildSource_JavaDependencyExternalJarInFolder:
         if (props_BuildSource_JavaDependencyExternalJarInFolder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("external jar in folder");
           props_BuildSource_JavaDependencyExternalJarInFolder = cpb.create();
         }
         return props_BuildSource_JavaDependencyExternalJarInFolder;
       case LanguageConceptSwitch.BuildSource_JavaDependencyFileset:
         if (props_BuildSource_JavaDependencyFileset == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("classpath");
           props_BuildSource_JavaDependencyFileset = cpb.create();
         }
         return props_BuildSource_JavaDependencyFileset;
       case LanguageConceptSwitch.BuildSource_JavaDependencyJar:
         if (props_BuildSource_JavaDependencyJar == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuildSource_JavaDependencyJar");
           props_BuildSource_JavaDependencyJar = cpb.create();
         }
         return props_BuildSource_JavaDependencyJar;
       case LanguageConceptSwitch.BuildSource_JavaDependencyLibrary:
         if (props_BuildSource_JavaDependencyLibrary == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("library");
           props_BuildSource_JavaDependencyLibrary = cpb.create();
         }
         return props_BuildSource_JavaDependencyLibrary;
       case LanguageConceptSwitch.BuildSource_JavaDependencyModule:
         if (props_BuildSource_JavaDependencyModule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("module");
           props_BuildSource_JavaDependencyModule = cpb.create();
         }
         return props_BuildSource_JavaDependencyModule;
       case LanguageConceptSwitch.BuildSource_JavaExternalJarFolderRef:
         if (props_BuildSource_JavaExternalJarFolderRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuildSource_JavaExternalJarFolderRef");
           props_BuildSource_JavaExternalJarFolderRef = cpb.create();
         }
         return props_BuildSource_JavaExternalJarFolderRef;
       case LanguageConceptSwitch.BuildSource_JavaExternalJarRef:
         if (props_BuildSource_JavaExternalJarRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuildSource_JavaExternalJarRef");
           props_BuildSource_JavaExternalJarRef = cpb.create();
         }
         return props_BuildSource_JavaExternalJarRef;
       case LanguageConceptSwitch.BuildSource_JavaFiles:
         if (props_BuildSource_JavaFiles == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("java files");
           props_BuildSource_JavaFiles = cpb.create();
         }
         return props_BuildSource_JavaFiles;
       case LanguageConceptSwitch.BuildSource_JavaJar:
         if (props_BuildSource_JavaJar == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("jar");
           props_BuildSource_JavaJar = cpb.create();
         }
         return props_BuildSource_JavaJar;
       case LanguageConceptSwitch.BuildSource_JavaJars:
         if (props_BuildSource_JavaJars == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("jars");
           props_BuildSource_JavaJars = cpb.create();
         }
         return props_BuildSource_JavaJars;
       case LanguageConceptSwitch.BuildSource_JavaLibrary:
         if (props_BuildSource_JavaLibrary == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a89b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a89b0ff);
           props_BuildSource_JavaLibrary = cpb.create();
         }
         return props_BuildSource_JavaLibrary;
       case LanguageConceptSwitch.BuildSource_JavaLibraryCP:
         if (props_BuildSource_JavaLibraryCP == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuildSource_JavaLibraryCP");
           props_BuildSource_JavaLibraryCP = cpb.create();
         }
         return props_BuildSource_JavaLibraryCP;
@@ -782,38 +847,44 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildSource_JavaLibraryExternalJar:
         if (props_BuildSource_JavaLibraryExternalJar == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("external jar");
           props_BuildSource_JavaLibraryExternalJar = cpb.create();
         }
         return props_BuildSource_JavaLibraryExternalJar;
       case LanguageConceptSwitch.BuildSource_JavaLibraryExternalJarFolder:
         if (props_BuildSource_JavaLibraryExternalJarFolder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("external jars");
           props_BuildSource_JavaLibraryExternalJarFolder = cpb.create();
         }
         return props_BuildSource_JavaLibraryExternalJarFolder;
       case LanguageConceptSwitch.BuildSource_JavaModule:
         if (props_BuildSource_JavaModule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a301b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a301b0ff);
           props_BuildSource_JavaModule = cpb.create();
         }
         return props_BuildSource_JavaModule;
       case LanguageConceptSwitch.BuildSource_JavaModuleOptions:
         if (props_BuildSource_JavaModuleOptions == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("apply compiler options");
           props_BuildSource_JavaModuleOptions = cpb.create();
         }
         return props_BuildSource_JavaModuleOptions;
       case LanguageConceptSwitch.BuildSource_JavaOptions:
         if (props_BuildSource_JavaOptions == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a501b0ff);
+          cpb.rawPresentation("java options");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a501b0ff);
           props_BuildSource_JavaOptions = cpb.create();
         }
         return props_BuildSource_JavaOptions;
       case LanguageConceptSwitch.BuildSource_JavaResources:
         if (props_BuildSource_JavaResources == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("resources");
           props_BuildSource_JavaResources = cpb.create();
         }
         return props_BuildSource_JavaResources;
@@ -838,7 +909,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildString:
         if (props_BuildString == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a011b0ff);
+          cpb.rawPresentation("BuildString");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a011b0ff);
           props_BuildString = cpb.create();
         }
         return props_BuildString;
@@ -851,6 +923,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildStringNotEmpty:
         if (props_BuildStringNotEmpty == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuildStringNotEmpty");
           props_BuildStringNotEmpty = cpb.create();
         }
         return props_BuildStringNotEmpty;
@@ -863,12 +936,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildTextStringPart:
         if (props_BuildTextStringPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_BuildTextStringPart = cpb.create();
         }
         return props_BuildTextStringPart;
       case LanguageConceptSwitch.BuildVarRefStringPart:
         if (props_BuildVarRefStringPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_BuildVarRefStringPart = cpb.create();
         }
         return props_BuildVarRefStringPart;
@@ -876,7 +951,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildVariableMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("defines variable macro");
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a611b0ff);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a611b0ff);
           props_BuildVariableMacro = cpb.create();
         }
         return props_BuildVariableMacro;
@@ -889,90 +965,105 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildVariableMacroInitWithDate:
         if (props_BuildVariableMacroInitWithDate == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("date");
           props_BuildVariableMacroInitWithDate = cpb.create();
         }
         return props_BuildVariableMacroInitWithDate;
       case LanguageConceptSwitch.BuildVariableMacroInitWithFileContent:
         if (props_BuildVariableMacroInitWithFileContent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("load file");
           props_BuildVariableMacroInitWithFileContent = cpb.create();
         }
         return props_BuildVariableMacroInitWithFileContent;
       case LanguageConceptSwitch.BuildVariableMacroInitWithString:
         if (props_BuildVariableMacroInitWithString == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("string");
           props_BuildVariableMacroInitWithString = cpb.create();
         }
         return props_BuildVariableMacroInitWithString;
       case LanguageConceptSwitch.BuildVariableMacroInitWithValueFromFile:
         if (props_BuildVariableMacroInitWithValueFromFile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("load from file");
           props_BuildVariableMacroInitWithValueFromFile = cpb.create();
         }
         return props_BuildVariableMacroInitWithValueFromFile;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_Folder:
         if (props_GeneratorInternal_BuildSource_Folder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_BuildSource_Folder");
           props_GeneratorInternal_BuildSource_Folder = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_Folder;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_JarFolder:
         if (props_GeneratorInternal_BuildSource_JarFolder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_BuildSource_JarFolder");
           props_GeneratorInternal_BuildSource_JarFolder = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_JarFolder;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaJar:
         if (props_GeneratorInternal_BuildSource_JavaJar == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_BuildSource_JavaJar");
           props_GeneratorInternal_BuildSource_JavaJar = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_JavaJar;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaLibrary:
         if (props_GeneratorInternal_BuildSource_JavaLibrary == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_BuildSource_JavaLibrary");
           props_GeneratorInternal_BuildSource_JavaLibrary = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_JavaLibrary;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaModule:
         if (props_GeneratorInternal_BuildSource_JavaModule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_BuildSource_JavaModule");
           props_GeneratorInternal_BuildSource_JavaModule = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_JavaModule;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_SingleFile:
         if (props_GeneratorInternal_BuildSource_SingleFile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_BuildSource_SingleFile");
           props_GeneratorInternal_BuildSource_SingleFile = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_SingleFile;
       case LanguageConceptSwitch.GeneratorInternal_IWorkflowParticipantReference:
         if (props_GeneratorInternal_IWorkflowParticipantReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_IWorkflowParticipantReference");
           props_GeneratorInternal_IWorkflowParticipantReference = cpb.create();
         }
         return props_GeneratorInternal_IWorkflowParticipantReference;
       case LanguageConceptSwitch.GeneratorInternal_IWorkfowParticipants:
         if (props_GeneratorInternal_IWorkfowParticipants == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_IWorkfowParticipants");
           props_GeneratorInternal_IWorkfowParticipants = cpb.create();
         }
         return props_GeneratorInternal_IWorkfowParticipants;
       case LanguageConceptSwitch.GeneratorInternal_LibraryArtifacts:
         if (props_GeneratorInternal_LibraryArtifacts == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_LibraryArtifacts");
           props_GeneratorInternal_LibraryArtifacts = cpb.create();
         }
         return props_GeneratorInternal_LibraryArtifacts;
       case LanguageConceptSwitch.GeneratorInternal_Mapping:
         if (props_GeneratorInternal_Mapping == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_Mapping");
           props_GeneratorInternal_Mapping = cpb.create();
         }
         return props_GeneratorInternal_Mapping;
       case LanguageConceptSwitch.GeneratorInternal_ProjectDependency:
         if (props_GeneratorInternal_ProjectDependency == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_ProjectDependency");
           props_GeneratorInternal_ProjectDependency = cpb.create();
         }
         return props_GeneratorInternal_ProjectDependency;

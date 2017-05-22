@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ExportAsImage:
         if (props_ExportAsImage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExportAsImage");
           props_ExportAsImage = cpb.create();
         }
         return props_ExportAsImage;

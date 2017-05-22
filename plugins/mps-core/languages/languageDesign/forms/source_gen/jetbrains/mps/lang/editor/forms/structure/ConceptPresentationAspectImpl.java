@@ -30,6 +30,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CellModel_Checkbox == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("checkbox");
+          cpb.rawPresentation("checkbox");
           props_CellModel_Checkbox = cpb.create();
         }
         return props_CellModel_Checkbox;
@@ -37,6 +38,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CheckboxUI_Platform == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("platform checkbox UI");
+          cpb.rawPresentation("platform");
           props_CheckboxUI_Platform = cpb.create();
         }
         return props_CheckboxUI_Platform;
@@ -44,12 +46,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CheckboxUI_Text == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("text checkbox UI");
+          cpb.rawPresentation("text");
           props_CheckboxUI_Text = cpb.create();
         }
         return props_CheckboxUI_Text;
       case LanguageConceptSwitch.StubCellModel_Checkbox:
         if (props_StubCellModel_Checkbox == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StubCellModel_Checkbox");
           props_StubCellModel_Checkbox = cpb.create();
         }
         return props_StubCellModel_Checkbox;

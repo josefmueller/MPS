@@ -22,6 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Container:
         if (props_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Container = cpb.create();
         }
         return props_Container;
@@ -34,12 +35,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NumericValue:
         if (props_NumericValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("numeric value");
           props_NumericValue = cpb.create();
         }
         return props_NumericValue;
       case LanguageConceptSwitch.StringValue:
         if (props_StringValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("string value");
           props_StringValue = cpb.create();
         }
         return props_StringValue;

@@ -47,6 +47,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CanHandleRequestFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Checks that handler can handle given HTTP Request");
+          cpb.rawPresentation("canHandle");
           props_CanHandleRequestFunction = cpb.create();
         }
         return props_CanHandleRequestFunction;
@@ -54,18 +55,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DefaultParameterConverter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Default Parameter Converter");
+          cpb.rawPresentation("default");
           props_DefaultParameterConverter = cpb.create();
         }
         return props_DefaultParameterConverter;
       case LanguageConceptSwitch.DefaultValueFunction:
         if (props_DefaultValueFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("default");
           props_DefaultValueFunction = cpb.create();
         }
         return props_DefaultValueFunction;
       case LanguageConceptSwitch.DeserializeFunction:
         if (props_DeserializeFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("deserialize");
           props_DeserializeFunction = cpb.create();
         }
         return props_DeserializeFunction;
@@ -73,6 +77,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_HandleRequestFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Handle given HTTP Request");
+          cpb.rawPresentation("handle");
           props_HandleRequestFunction = cpb.create();
         }
         return props_HandleRequestFunction;
@@ -86,6 +91,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_HttpRequestParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Incoming HTTP Request");
+          cpb.rawPresentation("request");
           props_HttpRequestParameter = cpb.create();
         }
         return props_HttpRequestParameter;
@@ -93,6 +99,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IDEAPlatformPortProvider == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("current bound port by IDEA Platform");
+          cpb.rawPresentation("IDEA Platform port");
           props_IDEAPlatformPortProvider = cpb.create();
         }
         return props_IDEAPlatformPortProvider;
@@ -106,6 +113,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MPSIntegrationPortProvider == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("current bound port by MPS to integrate with YouTrack/TeamCity");
+          cpb.rawPresentation("MPS Integration port");
           props_MPSIntegrationPortProvider = cpb.create();
         }
         return props_MPSIntegrationPortProvider;
@@ -113,6 +121,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MPSInternalPortProvider == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("current bound port by MPS for internal features");
+          cpb.rawPresentation("MPS Internal Port");
           props_MPSInternalPortProvider = cpb.create();
         }
         return props_MPSInternalPortProvider;
@@ -120,12 +129,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Node_getURLOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("provides URL to this node");
+          cpb.rawPresentation("getURL");
           props_Node_getURLOperation = cpb.create();
         }
         return props_Node_getURLOperation;
       case LanguageConceptSwitch.ParameterConverterDeclaration:
         if (props_ParameterConverterDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ParameterConverterDeclaration = cpb.create();
         }
         return props_ParameterConverterDeclaration;
@@ -133,12 +144,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ParameterConverterReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Parameter Converter");
+          cpb.rawPresentation("ParameterConverterReference");
           props_ParameterConverterReference = cpb.create();
         }
         return props_ParameterConverterReference;
       case LanguageConceptSwitch.ParameterInitializer:
         if (props_ParameterInitializer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ParameterInitializer");
           props_ParameterInitializer = cpb.create();
         }
         return props_ParameterInitializer;
@@ -146,6 +159,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Port == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("port defined by user");
+          cpb.rawPresentation("custom port");
           props_Port = cpb.create();
         }
         return props_Port;
@@ -159,6 +173,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_QueryParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Query Parameter");
+          cpb.presentationByName();
           props_QueryParameter = cpb.create();
         }
         return props_QueryParameter;
@@ -166,12 +181,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_QueryParameterReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference to query parameter");
+          cpb.rawPresentation("QueryParameterReference");
           props_QueryParameterReference = cpb.create();
         }
         return props_QueryParameterReference;
       case LanguageConceptSwitch.QueryPath:
         if (props_QueryPath == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("QueryPath");
           props_QueryPath = cpb.create();
         }
         return props_QueryPath;
@@ -179,36 +196,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_QuerySegment == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("query segment");
+          cpb.rawPresentation("/");
           props_QuerySegment = cpb.create();
         }
         return props_QuerySegment;
       case LanguageConceptSwitch.RequestHandler:
         if (props_RequestHandler == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_RequestHandler = cpb.create();
         }
         return props_RequestHandler;
       case LanguageConceptSwitch.RequestType:
         if (props_RequestType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("request");
           props_RequestType = cpb.create();
         }
         return props_RequestType;
       case LanguageConceptSwitch.RequestURLBuilderExpression:
         if (props_RequestURLBuilderExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("request URL");
           props_RequestURLBuilderExpression = cpb.create();
         }
         return props_RequestURLBuilderExpression;
       case LanguageConceptSwitch.ResponseSendOperation:
         if (props_ResponseSendOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("send response");
           props_ResponseSendOperation = cpb.create();
         }
         return props_ResponseSendOperation;
       case LanguageConceptSwitch.SerializeFunction:
         if (props_SerializeFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("serialize");
           props_SerializeFunction = cpb.create();
         }
         return props_SerializeFunction;
@@ -216,6 +239,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SerializedValueParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Serialized Value");
+          cpb.rawPresentation("string");
           props_SerializedValueParameter = cpb.create();
         }
         return props_SerializedValueParameter;
@@ -223,6 +247,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ValueToSerializeParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Value to Serialize");
+          cpb.rawPresentation("value");
           props_ValueToSerializeParameter = cpb.create();
         }
         return props_ValueToSerializeParameter;

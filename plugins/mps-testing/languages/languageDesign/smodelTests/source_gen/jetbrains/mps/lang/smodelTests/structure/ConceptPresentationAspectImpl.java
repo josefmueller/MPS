@@ -24,36 +24,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Child:
         if (props_Child == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Child = cpb.create();
         }
         return props_Child;
       case LanguageConceptSwitch.ChildSubConcept:
         if (props_ChildSubConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ChildSubConcept = cpb.create();
         }
         return props_ChildSubConcept;
       case LanguageConceptSwitch.GrandChild:
         if (props_GrandChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GrandChild");
           props_GrandChild = cpb.create();
         }
         return props_GrandChild;
       case LanguageConceptSwitch.ReferenceContainer:
         if (props_ReferenceContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ReferenceContainer");
           props_ReferenceContainer = cpb.create();
         }
         return props_ReferenceContainer;
       case LanguageConceptSwitch.ReferenceContainerSubConcept:
         if (props_ReferenceContainerSubConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ReferenceContainerSubConcept");
           props_ReferenceContainerSubConcept = cpb.create();
         }
         return props_ReferenceContainerSubConcept;
       case LanguageConceptSwitch.Root:
         if (props_Root == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Root = cpb.create();
         }
         return props_Root;

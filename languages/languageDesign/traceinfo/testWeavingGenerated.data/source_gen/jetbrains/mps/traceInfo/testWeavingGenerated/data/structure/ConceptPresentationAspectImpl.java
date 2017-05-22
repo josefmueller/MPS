@@ -23,30 +23,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ChildConceptWeave:
         if (props_ChildConceptWeave == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ChildConceptWeave = cpb.create();
         }
         return props_ChildConceptWeave;
       case LanguageConceptSwitch.ChildConceptWeaveEach:
         if (props_ChildConceptWeaveEach == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ChildConceptWeaveEach = cpb.create();
         }
         return props_ChildConceptWeaveEach;
       case LanguageConceptSwitch.ChildConceptWeaveEachMany:
         if (props_ChildConceptWeaveEachMany == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ChildConceptWeaveEachMany = cpb.create();
         }
         return props_ChildConceptWeaveEachMany;
       case LanguageConceptSwitch.ChildConceptWeaveMany:
         if (props_ChildConceptWeaveMany == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ChildConceptWeaveMany = cpb.create();
         }
         return props_ChildConceptWeaveMany;
       case LanguageConceptSwitch.RootConcept:
         if (props_RootConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_RootConcept = cpb.create();
         }
         return props_RootConcept;

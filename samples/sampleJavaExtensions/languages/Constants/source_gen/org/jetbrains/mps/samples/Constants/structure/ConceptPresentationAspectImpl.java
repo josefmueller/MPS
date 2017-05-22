@@ -24,36 +24,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Constant:
         if (props_Constant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Constant = cpb.create();
         }
         return props_Constant;
       case LanguageConceptSwitch.ConstantReference:
         if (props_ConstantReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConstantReference");
           props_ConstantReference = cpb.create();
         }
         return props_ConstantReference;
       case LanguageConceptSwitch.ConstantReferenceKeeper:
         if (props_ConstantReferenceKeeper == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConstantReferenceKeeper");
           props_ConstantReferenceKeeper = cpb.create();
         }
         return props_ConstantReferenceKeeper;
       case LanguageConceptSwitch.Constants:
         if (props_Constants == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Constants = cpb.create();
         }
         return props_Constants;
       case LanguageConceptSwitch.DistantConstantReference:
         if (props_DistantConstantReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("distant");
           props_DistantConstantReference = cpb.create();
         }
         return props_DistantConstantReference;
       case LanguageConceptSwitch.GeneratedClassKeeper:
         if (props_GeneratedClassKeeper == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratedClassKeeper");
           props_GeneratedClassKeeper = cpb.create();
         }
         return props_GeneratedClassKeeper;

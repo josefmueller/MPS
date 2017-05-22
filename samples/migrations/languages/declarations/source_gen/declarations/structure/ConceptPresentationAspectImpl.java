@@ -22,6 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NewComponent:
         if (props_NewComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_NewComponent = cpb.create();
         }
         return props_NewComponent;
@@ -35,6 +36,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_OldComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.presentationByName();
           props_OldComponent = cpb.create();
         }
         return props_OldComponent;

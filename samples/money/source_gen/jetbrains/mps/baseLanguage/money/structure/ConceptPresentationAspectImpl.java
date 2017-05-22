@@ -26,30 +26,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MoneyCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("money type constructor");
+          cpb.rawPresentation("Money");
           props_MoneyCreator = cpb.create();
         }
         return props_MoneyCreator;
       case LanguageConceptSwitch.MoneyGetAmountMethodCall:
         if (props_MoneyGetAmountMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation(". amount");
           props_MoneyGetAmountMethodCall = cpb.create();
         }
         return props_MoneyGetAmountMethodCall;
       case LanguageConceptSwitch.MoneyGetCurrencyMethodCall:
         if (props_MoneyGetCurrencyMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation(". currency");
           props_MoneyGetCurrencyMethodCall = cpb.create();
         }
         return props_MoneyGetCurrencyMethodCall;
       case LanguageConceptSwitch.MoneyIsZeroMethodCall:
         if (props_MoneyIsZeroMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation(". isZero");
           props_MoneyIsZeroMethodCall = cpb.create();
         }
         return props_MoneyIsZeroMethodCall;
       case LanguageConceptSwitch.MoneyLiteral:
         if (props_MoneyLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MoneyLiteral");
           props_MoneyLiteral = cpb.create();
         }
         return props_MoneyLiteral;
@@ -62,6 +67,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MoneyType:
         if (props_MoneyType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Money");
           props_MoneyType = cpb.create();
         }
         return props_MoneyType;

@@ -31,78 +31,91 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BreakpointCreator:
         if (props_BreakpointCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("breakpoint creators");
           props_BreakpointCreator = cpb.create();
         }
         return props_BreakpointCreator;
       case LanguageConceptSwitch.BreakpointableNodeItem:
         if (props_BreakpointableNodeItem == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BreakpointableNodeItem");
           props_BreakpointableNodeItem = cpb.create();
         }
         return props_BreakpointableNodeItem;
       case LanguageConceptSwitch.ConceptDeclarationReference:
         if (props_ConceptDeclarationReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConceptDeclarationReference");
           props_ConceptDeclarationReference = cpb.create();
         }
         return props_ConceptDeclarationReference;
       case LanguageConceptSwitch.ConceptFunctionParameter_Concept:
         if (props_ConceptFunctionParameter_Concept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("concept");
           props_ConceptFunctionParameter_Concept = cpb.create();
         }
         return props_ConceptFunctionParameter_Concept;
       case LanguageConceptSwitch.ConceptFunctionParameter_Debug_Project:
         if (props_ConceptFunctionParameter_Debug_Project == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("project");
           props_ConceptFunctionParameter_Debug_Project = cpb.create();
         }
         return props_ConceptFunctionParameter_Debug_Project;
       case LanguageConceptSwitch.ConceptFunctionParameter_DebuggableNode:
         if (props_ConceptFunctionParameter_DebuggableNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("debuggableNode");
           props_ConceptFunctionParameter_DebuggableNode = cpb.create();
         }
         return props_ConceptFunctionParameter_DebuggableNode;
       case LanguageConceptSwitch.ConceptFunction_CreateBreakpoint:
         if (props_ConceptFunction_CreateBreakpoint == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConceptFunction_CreateBreakpoint");
           props_ConceptFunction_CreateBreakpoint = cpb.create();
         }
         return props_ConceptFunction_CreateBreakpoint;
       case LanguageConceptSwitch.ConceptFunction_IsApplicableBreakpoint:
         if (props_ConceptFunction_IsApplicableBreakpoint == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("isApplicable");
           props_ConceptFunction_IsApplicableBreakpoint = cpb.create();
         }
         return props_ConceptFunction_IsApplicableBreakpoint;
       case LanguageConceptSwitch.CreateBreakpointOperation:
         if (props_CreateBreakpointOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("create breakpoint");
           props_CreateBreakpointOperation = cpb.create();
         }
         return props_CreateBreakpointOperation;
       case LanguageConceptSwitch.DebuggerConfiguration:
         if (props_DebuggerConfiguration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DebuggerConfiguration");
           props_DebuggerConfiguration = cpb.create();
         }
         return props_DebuggerConfiguration;
       case LanguageConceptSwitch.DebuggerReference:
         if (props_DebuggerReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("debugger");
           props_DebuggerReference = cpb.create();
         }
         return props_DebuggerReference;
       case LanguageConceptSwitch.DebuggerType:
         if (props_DebuggerType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("debugger type");
           props_DebuggerType = cpb.create();
         }
         return props_DebuggerType;
       case LanguageConceptSwitch.GetDebuggerSettings_Function:
         if (props_GetDebuggerSettings_Function == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("get debugger settings");
           props_GetDebuggerSettings_Function = cpb.create();
         }
         return props_GetDebuggerSettings_Function;

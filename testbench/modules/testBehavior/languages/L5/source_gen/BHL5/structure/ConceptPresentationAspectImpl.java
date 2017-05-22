@@ -30,48 +30,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.C0:
         if (props_C0 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("C0");
           props_C0 = cpb.create();
         }
         return props_C0;
       case LanguageConceptSwitch.C1:
         if (props_C1 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("C1");
           props_C1 = cpb.create();
         }
         return props_C1;
       case LanguageConceptSwitch.C2:
         if (props_C2 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("C2");
           props_C2 = cpb.create();
         }
         return props_C2;
       case LanguageConceptSwitch.C3:
         if (props_C3 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("C3");
           props_C3 = cpb.create();
         }
         return props_C3;
       case LanguageConceptSwitch.C4:
         if (props_C4 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("C4");
           props_C4 = cpb.create();
         }
         return props_C4;
       case LanguageConceptSwitch.C5:
         if (props_C5 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("C5");
           props_C5 = cpb.create();
         }
         return props_C5;
       case LanguageConceptSwitch.C6:
         if (props_C6 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("C6");
           props_C6 = cpb.create();
         }
         return props_C6;
       case LanguageConceptSwitch.C7:
         if (props_C7 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("C7");
           props_C7 = cpb.create();
         }
         return props_C7;

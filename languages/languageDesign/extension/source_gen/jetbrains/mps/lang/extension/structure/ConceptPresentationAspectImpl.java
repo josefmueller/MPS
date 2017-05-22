@@ -29,6 +29,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Extension:
         if (props_Extension == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Extension = cpb.create();
         }
         return props_Extension;
@@ -36,6 +37,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExtensionDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.presentationByName();
           props_ExtensionDeclaration = cpb.create();
         }
         return props_ExtensionDeclaration;
@@ -43,6 +45,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExtensionFieldDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.presentationByName();
           props_ExtensionFieldDeclaration = cpb.create();
         }
         return props_ExtensionFieldDeclaration;
@@ -50,6 +53,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExtensionFieldReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("ExtensionFieldReference");
           props_ExtensionFieldReference = cpb.create();
         }
         return props_ExtensionFieldReference;
@@ -57,6 +61,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExtensionFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("ExtensionFunction");
           props_ExtensionFunction = cpb.create();
         }
         return props_ExtensionFunction;
@@ -64,6 +69,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExtensionObjectGetter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("ExtensionObjectGetter");
           props_ExtensionObjectGetter = cpb.create();
         }
         return props_ExtensionObjectGetter;
@@ -71,24 +77,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExtensionPointDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L);
           cpb.deprecateProperty(0x520ae19dd2771b96L, "extensionName");
+          cpb.presentationByName();
           props_ExtensionPointDeclaration = cpb.create();
         }
         return props_ExtensionPointDeclaration;
       case LanguageConceptSwitch.ExtensionPointExpression:
         if (props_ExtensionPointExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("extensionPoint");
           props_ExtensionPointExpression = cpb.create();
         }
         return props_ExtensionPointExpression;
       case LanguageConceptSwitch.ExtensionPointType:
         if (props_ExtensionPointType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("extensionPoint");
           props_ExtensionPointType = cpb.create();
         }
         return props_ExtensionPointType;
       case LanguageConceptSwitch.GetExtensionObjectsOperation:
         if (props_GetExtensionObjectsOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("objects");
           props_GetExtensionObjectsOperation = cpb.create();
         }
         return props_GetExtensionObjectsOperation;

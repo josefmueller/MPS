@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DecisionTable:
         if (props_DecisionTable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("dectab");
           props_DecisionTable = cpb.create();
         }
         return props_DecisionTable;

@@ -28,18 +28,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BaseExecuteCommandStatement:
         if (props_BaseExecuteCommandStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BaseExecuteCommandStatement");
           props_BaseExecuteCommandStatement = cpb.create();
         }
         return props_BaseExecuteCommandStatement;
       case LanguageConceptSwitch.BaseExecuteCommandStatementSync:
         if (props_BaseExecuteCommandStatementSync == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BaseExecuteCommandStatementSync");
           props_BaseExecuteCommandStatementSync = cpb.create();
         }
         return props_BaseExecuteCommandStatementSync;
       case LanguageConceptSwitch.CommandClosureLiteral:
         if (props_CommandClosureLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CommandClosureLiteral");
           props_CommandClosureLiteral = cpb.create();
         }
         return props_CommandClosureLiteral;
@@ -48,6 +51,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20eL);
           cpb.deprecateAggregation(0x7c8b08a50a3ea20fL, "project");
           cpb.shortDesc("Schedule command to run from EDT asynchronously");
+          cpb.rawPresentation("execute command in EDT");
           props_ExecuteCommandInEDTStatement = cpb.create();
         }
         return props_ExecuteCommandInEDTStatement;
@@ -55,6 +59,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExecuteCommandStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Synchronous model command");
+          cpb.rawPresentation("command");
           props_ExecuteCommandStatement = cpb.create();
         }
         return props_ExecuteCommandStatement;
@@ -62,6 +67,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExecuteEDTCommandStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Schedule asynchronous model read from EDT");
+          cpb.rawPresentation("execute in EDT");
           props_ExecuteEDTCommandStatement = cpb.create();
         }
         return props_ExecuteEDTCommandStatement;
@@ -69,12 +75,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExecuteLightweightCommandStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Synchronous model read");
+          cpb.rawPresentation("read action");
           props_ExecuteLightweightCommandStatement = cpb.create();
         }
         return props_ExecuteLightweightCommandStatement;
       case LanguageConceptSwitch.ExecuteTransparentCommandStatement:
         if (props_ExecuteTransparentCommandStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("undo-transparent command");
           props_ExecuteTransparentCommandStatement = cpb.create();
         }
         return props_ExecuteTransparentCommandStatement;
@@ -82,6 +90,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExecuteWriteActionStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Synchronous model write");
+          cpb.rawPresentation("write action");
           props_ExecuteWriteActionStatement = cpb.create();
         }
         return props_ExecuteWriteActionStatement;

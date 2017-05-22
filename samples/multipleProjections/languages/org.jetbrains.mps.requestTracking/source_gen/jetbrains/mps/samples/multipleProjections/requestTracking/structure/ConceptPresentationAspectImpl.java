@@ -20,12 +20,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Workflow:
         if (props_Workflow == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Workflow = cpb.create();
         }
         return props_Workflow;
       case LanguageConceptSwitch.WorkflowContainer:
         if (props_WorkflowContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_WorkflowContainer = cpb.create();
         }
         return props_WorkflowContainer;

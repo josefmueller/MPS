@@ -20,12 +20,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Car:
         if (props_Car == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Car");
           props_Car = cpb.create();
         }
         return props_Car;
       case LanguageConceptSwitch.Person:
         if (props_Person == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Person");
           props_Person = cpb.create();
         }
         return props_Person;

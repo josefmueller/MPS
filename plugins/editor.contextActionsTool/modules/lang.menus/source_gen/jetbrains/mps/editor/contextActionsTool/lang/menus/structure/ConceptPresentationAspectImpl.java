@@ -24,6 +24,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_QueryFunction_TransformationMenu_Icon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("a block of code");
+          cpb.rawPresentation("query");
           props_QueryFunction_TransformationMenu_Icon = cpb.create();
         }
         return props_QueryFunction_TransformationMenu_Icon;
@@ -31,18 +32,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_QueryFunction_TransformationMenu_Tooltip == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("a block of code");
+          cpb.rawPresentation("query");
           props_QueryFunction_TransformationMenu_Tooltip = cpb.create();
         }
         return props_QueryFunction_TransformationMenu_Tooltip;
       case LanguageConceptSwitch.TransformationFeature_Icon:
         if (props_TransformationFeature_Icon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("icon");
           props_TransformationFeature_Icon = cpb.create();
         }
         return props_TransformationFeature_Icon;
       case LanguageConceptSwitch.TransformationFeature_Tooltip:
         if (props_TransformationFeature_Tooltip == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("tooltip");
           props_TransformationFeature_Tooltip = cpb.create();
         }
         return props_TransformationFeature_Tooltip;
@@ -50,6 +54,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationLocation_ContextActionsTool == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("context actions tool window");
+          cpb.rawPresentation("context actions tool");
           props_TransformationLocation_ContextActionsTool = cpb.create();
         }
         return props_TransformationLocation_ContextActionsTool;

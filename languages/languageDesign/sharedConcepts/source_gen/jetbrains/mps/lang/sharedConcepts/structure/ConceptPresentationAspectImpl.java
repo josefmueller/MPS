@@ -25,6 +25,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptFunctionParameter_editorContext == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("current EditorContext instance");
+          cpb.rawPresentation("editorContext");
           props_ConceptFunctionParameter_editorContext = cpb.create();
         }
         return props_ConceptFunctionParameter_editorContext;
@@ -32,12 +33,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptFunctionParameter_model == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("model of the reference node");
+          cpb.rawPresentation("model");
           props_ConceptFunctionParameter_model = cpb.create();
         }
         return props_ConceptFunctionParameter_model;
       case LanguageConceptSwitch.ConceptFunctionParameter_node:
         if (props_ConceptFunctionParameter_node == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("node");
           props_ConceptFunctionParameter_node = cpb.create();
         }
         return props_ConceptFunctionParameter_node;
@@ -46,6 +49,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("IOperationContext");
+          cpb.rawPresentation("operationContext");
           props_ConceptFunctionParameter_operationContext = cpb.create();
         }
         return props_ConceptFunctionParameter_operationContext;
@@ -53,6 +57,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptFunctionParameter_progressMonitor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("progress monitor");
+          cpb.rawPresentation("monitor");
           props_ConceptFunctionParameter_progressMonitor = cpb.create();
         }
         return props_ConceptFunctionParameter_progressMonitor;
@@ -60,6 +65,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptFunctionParameter_scope == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("context (SearchScope)");
+          cpb.rawPresentation("scope");
           props_ConceptFunctionParameter_scope = cpb.create();
         }
         return props_ConceptFunctionParameter_scope;

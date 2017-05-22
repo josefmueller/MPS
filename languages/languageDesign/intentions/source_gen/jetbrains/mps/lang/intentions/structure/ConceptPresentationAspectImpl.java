@@ -38,6 +38,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BaseIntentionDeclaration:
         if (props_BaseIntentionDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_BaseIntentionDeclaration = cpb.create();
         }
         return props_BaseIntentionDeclaration;
@@ -50,6 +51,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ChildFilterFunction:
         if (props_ChildFilterFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("child filter function");
           props_ChildFilterFunction = cpb.create();
         }
         return props_ChildFilterFunction;
@@ -57,6 +59,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptFunctionParameter_childNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("function parameter");
+          cpb.rawPresentation("childNode");
           props_ConceptFunctionParameter_childNode = cpb.create();
         }
         return props_ConceptFunctionParameter_childNode;
@@ -64,44 +67,51 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptFunctionParameter_node == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("function parameter");
+          cpb.rawPresentation("node");
           props_ConceptFunctionParameter_node = cpb.create();
         }
         return props_ConceptFunctionParameter_node;
       case LanguageConceptSwitch.DescriptionBlock:
         if (props_DescriptionBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("description");
           props_DescriptionBlock = cpb.create();
         }
         return props_DescriptionBlock;
       case LanguageConceptSwitch.ErrorIntentionPriority:
         if (props_ErrorIntentionPriority == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("error");
           props_ErrorIntentionPriority = cpb.create();
         }
         return props_ErrorIntentionPriority;
       case LanguageConceptSwitch.ExecuteBlock:
         if (props_ExecuteBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("execute");
           props_ExecuteBlock = cpb.create();
         }
         return props_ExecuteBlock;
       case LanguageConceptSwitch.ForConceptMethodParameter:
         if (props_ForConceptMethodParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ForConceptMethodParameter = cpb.create();
         }
         return props_ForConceptMethodParameter;
       case LanguageConceptSwitch.Intention:
         if (props_Intention == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a9b0v);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a9b0v);
           props_Intention = cpb.create();
         }
         return props_Intention;
       case LanguageConceptSwitch.IntentionDeclaration:
         if (props_IntentionDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a01b0v);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a01b0v);
           props_IntentionDeclaration = cpb.create();
         }
         return props_IntentionDeclaration;
@@ -109,6 +119,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IntentionParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("intention parameter");
+          cpb.rawPresentation("parameter");
           props_IntentionParameter = cpb.create();
         }
         return props_IntentionParameter;
@@ -121,43 +132,50 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IsApplicableBlock:
         if (props_IsApplicableBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("isApplicable");
           props_IsApplicableBlock = cpb.create();
         }
         return props_IsApplicableBlock;
       case LanguageConceptSwitch.Parameter:
         if (props_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Parameter = cpb.create();
         }
         return props_Parameter;
       case LanguageConceptSwitch.ParameterizedDescriptionBlock:
         if (props_ParameterizedDescriptionBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("description");
           props_ParameterizedDescriptionBlock = cpb.create();
         }
         return props_ParameterizedDescriptionBlock;
       case LanguageConceptSwitch.ParameterizedExecuteBlock:
         if (props_ParameterizedExecuteBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("execute");
           props_ParameterizedExecuteBlock = cpb.create();
         }
         return props_ParameterizedExecuteBlock;
       case LanguageConceptSwitch.ParameterizedIntentionDeclaration:
         if (props_ParameterizedIntentionDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ParameterizedIntentionDeclaration = cpb.create();
         }
         return props_ParameterizedIntentionDeclaration;
       case LanguageConceptSwitch.QueryBlock:
         if (props_QueryBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("parameter");
           props_QueryBlock = cpb.create();
         }
         return props_QueryBlock;
       case LanguageConceptSwitch.SurroundWithIntentionDeclaration:
         if (props_SurroundWithIntentionDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a91b0v);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a91b0v);
           props_SurroundWithIntentionDeclaration = cpb.create();
         }
         return props_SurroundWithIntentionDeclaration;

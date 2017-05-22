@@ -22,18 +22,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ConsoleModelExpression:
         if (props_ConsoleModelExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("#consoleModel");
           props_ConsoleModelExpression = cpb.create();
         }
         return props_ConsoleModelExpression;
       case LanguageConceptSwitch.InternalMode:
         if (props_InternalMode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("#internalMode");
           props_InternalMode = cpb.create();
         }
         return props_InternalMode;
       case LanguageConceptSwitch.ReloadClassesCommand:
         if (props_ReloadClassesCommand == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("#reloadClasses");
           props_ReloadClassesCommand = cpb.create();
         }
         return props_ReloadClassesCommand;

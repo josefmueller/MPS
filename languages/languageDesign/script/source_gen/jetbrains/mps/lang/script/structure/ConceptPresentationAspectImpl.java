@@ -47,42 +47,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CommentMigrationScriptPart:
         if (props_CommentMigrationScriptPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("//");
           props_CommentMigrationScriptPart = cpb.create();
         }
         return props_CommentMigrationScriptPart;
       case LanguageConceptSwitch.DirectClassifierSpecification:
         if (props_DirectClassifierSpecification == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DirectClassifierSpecification");
           props_DirectClassifierSpecification = cpb.create();
         }
         return props_DirectClassifierSpecification;
       case LanguageConceptSwitch.DirectMethodSpecification:
         if (props_DirectMethodSpecification == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DirectMethodSpecification");
           props_DirectMethodSpecification = cpb.create();
         }
         return props_DirectMethodSpecification;
       case LanguageConceptSwitch.ExtractInterfaceMigration:
         if (props_ExtractInterfaceMigration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("extract interface");
           props_ExtractInterfaceMigration = cpb.create();
         }
         return props_ExtractInterfaceMigration;
       case LanguageConceptSwitch.FQNameClassifierSpecification:
         if (props_FQNameClassifierSpecification == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("FQNameClassifierSpecification");
           props_FQNameClassifierSpecification = cpb.create();
         }
         return props_FQNameClassifierSpecification;
       case LanguageConceptSwitch.FQNameMethodSpecification:
         if (props_FQNameMethodSpecification == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("FQNameMethodSpecification");
           props_FQNameMethodSpecification = cpb.create();
         }
         return props_FQNameMethodSpecification;
       case LanguageConceptSwitch.FactoryMigrationScriptPart:
         if (props_FactoryMigrationScriptPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("factory migration script part");
           props_FactoryMigrationScriptPart = cpb.create();
         }
         return props_FactoryMigrationScriptPart;
@@ -91,7 +98,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x11225e9072dL);
           cpb.deprecateProperty(0x118d28c5944L, "migrationFromBuild");
           cpb.deprecateProperty(0x118d28cf5b3L, "category");
-          cpb.icon(IconContainer.RESOURCE_a0a3a0a9b0s);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a4a0a9b0s);
           props_MigrationScript = cpb.create();
         }
         return props_MigrationScript;
@@ -104,36 +112,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MigrationScriptPart_Instance:
         if (props_MigrationScriptPart_Instance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("concept instances updater");
           props_MigrationScriptPart_Instance = cpb.create();
         }
         return props_MigrationScriptPart_Instance;
       case LanguageConceptSwitch.MigrationScriptPart_Instance_Predicate:
         if (props_MigrationScriptPart_Instance_Predicate == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("instance predicate");
           props_MigrationScriptPart_Instance_Predicate = cpb.create();
         }
         return props_MigrationScriptPart_Instance_Predicate;
       case LanguageConceptSwitch.MigrationScriptPart_Instance_Updater:
         if (props_MigrationScriptPart_Instance_Updater == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("instance predicate");
           props_MigrationScriptPart_Instance_Updater = cpb.create();
         }
         return props_MigrationScriptPart_Instance_Updater;
       case LanguageConceptSwitch.MigrationScriptPart_node:
         if (props_MigrationScriptPart_node == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("node");
           props_MigrationScriptPart_node = cpb.create();
         }
         return props_MigrationScriptPart_node;
       case LanguageConceptSwitch.PullUpMethod:
         if (props_PullUpMethod == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("pull up method");
           props_PullUpMethod = cpb.create();
         }
         return props_PullUpMethod;
       case LanguageConceptSwitch.WhitespaceMigrationScriptPart:
         if (props_WhitespaceMigrationScriptPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("whitespace");
           props_WhitespaceMigrationScriptPart = cpb.create();
         }
         return props_WhitespaceMigrationScriptPart;

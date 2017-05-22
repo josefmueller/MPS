@@ -20,6 +20,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TypeWithUnits:
         if (props_TypeWithUnits == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TypeWithUnits");
           props_TypeWithUnits = cpb.create();
         }
         return props_TypeWithUnits;

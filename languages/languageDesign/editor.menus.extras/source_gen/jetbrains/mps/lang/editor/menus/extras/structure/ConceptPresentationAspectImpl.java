@@ -23,6 +23,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_QueryFunctionParameter_IntentionExecutable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("the runtime representation of the intention");
+          cpb.rawPresentation("intentionExecutable");
           props_QueryFunctionParameter_IntentionExecutable = cpb.create();
         }
         return props_QueryFunctionParameter_IntentionExecutable;
@@ -30,6 +31,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationMenuPart_Intention == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("performs an intention");
+          cpb.rawPresentation("intention");
           props_TransformationMenuPart_Intention = cpb.create();
         }
         return props_TransformationMenuPart_Intention;
@@ -37,6 +39,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationMenuPart_PluginAction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("plugin action item");
+          cpb.rawPresentation("plugin action");
           props_TransformationMenuPart_PluginAction = cpb.create();
         }
         return props_TransformationMenuPart_PluginAction;
@@ -44,6 +47,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationMenuPart_Refactoring == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("performs a refactoring");
+          cpb.rawPresentation("refactoring");
           props_TransformationMenuPart_Refactoring = cpb.create();
         }
         return props_TransformationMenuPart_Refactoring;

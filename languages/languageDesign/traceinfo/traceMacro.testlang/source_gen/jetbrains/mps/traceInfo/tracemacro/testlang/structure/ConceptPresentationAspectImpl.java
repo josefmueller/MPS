@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GeneratedForeach:
         if (props_GeneratedForeach == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratedForeach");
           props_GeneratedForeach = cpb.create();
         }
         return props_GeneratedForeach;

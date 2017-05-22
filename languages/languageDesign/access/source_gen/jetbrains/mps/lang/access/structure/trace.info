@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="11,0,98,0" name="jetbrains.mps.lang.access.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,107,0" name="jetbrains.mps.lang.access.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <unit at="10,0,46,0" name="jetbrains.mps.lang.access.structure.LanguageConceptSwitch" />

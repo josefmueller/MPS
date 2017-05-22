@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IntraProceduralSpecific_BuilderMode:
         if (props_IntraProceduralSpecific_BuilderMode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("intra-procedural-specific");
           props_IntraProceduralSpecific_BuilderMode = cpb.create();
         }
         return props_IntraProceduralSpecific_BuilderMode;

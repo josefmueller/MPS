@@ -22,24 +22,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TestSideTransform_NodeToReference:
         if (props_TestSideTransform_NodeToReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TestSideTransform_NodeToReference = cpb.create();
         }
         return props_TestSideTransform_NodeToReference;
       case LanguageConceptSwitch.TestSideTransform_NodeWithReference:
         if (props_TestSideTransform_NodeWithReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TestSideTransform_NodeWithReference = cpb.create();
         }
         return props_TestSideTransform_NodeWithReference;
       case LanguageConceptSwitch.TestSideTransform_Root:
         if (props_TestSideTransform_Root == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestSideTransform_Root");
           props_TestSideTransform_Root = cpb.create();
         }
         return props_TestSideTransform_Root;
       case LanguageConceptSwitch.TestSideTransform_SimpleNode:
         if (props_TestSideTransform_SimpleNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TestSideTransform_SimpleNode = cpb.create();
         }
         return props_TestSideTransform_SimpleNode;

@@ -27,12 +27,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.HugePriorityStyle:
         if (props_HugePriorityStyle == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("hugePriorityStyle");
           props_HugePriorityStyle = cpb.create();
         }
         return props_HugePriorityStyle;
       case LanguageConceptSwitch.LeafNode:
         if (props_LeafNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("leaf");
           props_LeafNode = cpb.create();
         }
         return props_LeafNode;
@@ -45,36 +47,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PriorityStyle:
         if (props_PriorityStyle == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("priorityStyle");
           props_PriorityStyle = cpb.create();
         }
         return props_PriorityStyle;
       case LanguageConceptSwitch.PriorityStyleCopy:
         if (props_PriorityStyleCopy == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("priorityStyleCopy");
           props_PriorityStyleCopy = cpb.create();
         }
         return props_PriorityStyleCopy;
       case LanguageConceptSwitch.TestConceptWithStyleAttributes:
         if (props_TestConceptWithStyleAttributes == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestConceptWithStyleAttributes");
           props_TestConceptWithStyleAttributes = cpb.create();
         }
         return props_TestConceptWithStyleAttributes;
       case LanguageConceptSwitch.TestInheritedAttribute:
         if (props_TestInheritedAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("test-inherited-attribute");
           props_TestInheritedAttribute = cpb.create();
         }
         return props_TestInheritedAttribute;
       case LanguageConceptSwitch.TestSimpleAttribute:
         if (props_TestSimpleAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("test-simple-attribute");
           props_TestSimpleAttribute = cpb.create();
         }
         return props_TestSimpleAttribute;
       case LanguageConceptSwitch.UnapplyPriorityStyleCopy:
         if (props_UnapplyPriorityStyleCopy == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("unapplyPriorityStyleCopy");
           props_UnapplyPriorityStyleCopy = cpb.create();
         }
         return props_UnapplyPriorityStyleCopy;

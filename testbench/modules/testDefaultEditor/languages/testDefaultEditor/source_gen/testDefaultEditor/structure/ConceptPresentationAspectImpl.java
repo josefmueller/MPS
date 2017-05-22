@@ -49,72 +49,84 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BaseChild:
         if (props_BaseChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BaseChild");
           props_BaseChild = cpb.create();
         }
         return props_BaseChild;
       case LanguageConceptSwitch.Canvas:
         if (props_Canvas == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Canvas");
           props_Canvas = cpb.create();
         }
         return props_Canvas;
       case LanguageConceptSwitch.Company:
         if (props_Company == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Company = cpb.create();
         }
         return props_Company;
       case LanguageConceptSwitch.ConcreteChild:
         if (props_ConcreteChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConcreteChild");
           props_ConcreteChild = cpb.create();
         }
         return props_ConcreteChild;
       case LanguageConceptSwitch.Container:
         if (props_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Container");
           props_Container = cpb.create();
         }
         return props_Container;
       case LanguageConceptSwitch.DefaultNodeAttribute:
         if (props_DefaultNodeAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DefaultNodeAttribute");
           props_DefaultNodeAttribute = cpb.create();
         }
         return props_DefaultNodeAttribute;
       case LanguageConceptSwitch.DefaultPropertyAttribute:
         if (props_DefaultPropertyAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DefaultPropertyAttribute");
           props_DefaultPropertyAttribute = cpb.create();
         }
         return props_DefaultPropertyAttribute;
       case LanguageConceptSwitch.DefaultReferenceAttribute:
         if (props_DefaultReferenceAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DefaultReferenceAttribute");
           props_DefaultReferenceAttribute = cpb.create();
         }
         return props_DefaultReferenceAttribute;
       case LanguageConceptSwitch.Developer:
         if (props_Developer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Developer = cpb.create();
         }
         return props_Developer;
       case LanguageConceptSwitch.DummyMethod:
         if (props_DummyMethod == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DummyMethod");
           props_DummyMethod = cpb.create();
         }
         return props_DummyMethod;
       case LanguageConceptSwitch.Friend:
         if (props_Friend == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Friend");
           props_Friend = cpb.create();
         }
         return props_Friend;
       case LanguageConceptSwitch.IConcreteChild:
         if (props_IConcreteChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IConcreteChild");
           props_IConcreteChild = cpb.create();
         }
         return props_IConcreteChild;
@@ -127,24 +139,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NotSubstitutableDeveloper:
         if (props_NotSubstitutableDeveloper == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_NotSubstitutableDeveloper = cpb.create();
         }
         return props_NotSubstitutableDeveloper;
       case LanguageConceptSwitch.Parent:
         if (props_Parent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Parent");
           props_Parent = cpb.create();
         }
         return props_Parent;
       case LanguageConceptSwitch.Shape:
         if (props_Shape == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Shape");
           props_Shape = cpb.create();
         }
         return props_Shape;
       case LanguageConceptSwitch.Team:
         if (props_Team == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Team = cpb.create();
         }
         return props_Team;

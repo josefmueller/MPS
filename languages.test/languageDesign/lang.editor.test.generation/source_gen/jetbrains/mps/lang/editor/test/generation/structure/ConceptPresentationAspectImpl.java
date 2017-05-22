@@ -33,48 +33,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Constant:
         if (props_Constant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Constant");
           props_Constant = cpb.create();
         }
         return props_Constant;
       case LanguageConceptSwitch.Error:
         if (props_Error == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Error");
           props_Error = cpb.create();
         }
         return props_Error;
       case LanguageConceptSwitch.ModelAccess:
         if (props_ModelAccess == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ModelAccess");
           props_ModelAccess = cpb.create();
         }
         return props_ModelAccess;
       case LanguageConceptSwitch.Property:
         if (props_Property == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Property");
           props_Property = cpb.create();
         }
         return props_Property;
       case LanguageConceptSwitch.ReadOnlyModelAccessor:
         if (props_ReadOnlyModelAccessor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ReadOnlyModelAccessor");
           props_ReadOnlyModelAccessor = cpb.create();
         }
         return props_ReadOnlyModelAccessor;
       case LanguageConceptSwitch.RefNodeList:
         if (props_RefNodeList == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("RefNodeList");
           props_RefNodeList = cpb.create();
         }
         return props_RefNodeList;
       case LanguageConceptSwitch.TestTargetConcept:
         if (props_TestTargetConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTargetConcept");
           props_TestTargetConcept = cpb.create();
         }
         return props_TestTargetConcept;
       case LanguageConceptSwitch.TransactionalProperty:
         if (props_TransactionalProperty == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TransactionalProperty");
           props_TransactionalProperty = cpb.create();
         }
         return props_TransactionalProperty;

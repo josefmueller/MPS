@@ -41,48 +41,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Antiquotation:
         if (props_Antiquotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Antiquotation");
           props_Antiquotation = cpb.create();
         }
         return props_Antiquotation;
       case LanguageConceptSwitch.GeneratorInternal_InternalReferenceHolder:
         if (props_GeneratorInternal_InternalReferenceHolder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_InternalReferenceHolder");
           props_GeneratorInternal_InternalReferenceHolder = cpb.create();
         }
         return props_GeneratorInternal_InternalReferenceHolder;
       case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
         if (props_GeneratorInternal_PropertyDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_PropertyDescriptor");
           props_GeneratorInternal_PropertyDescriptor = cpb.create();
         }
         return props_GeneratorInternal_PropertyDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
         if (props_GeneratorInternal_ReferenceDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_ReferenceDescriptor");
           props_GeneratorInternal_ReferenceDescriptor = cpb.create();
         }
         return props_GeneratorInternal_ReferenceDescriptor;
       case LanguageConceptSwitch.ListAntiquotation:
         if (props_ListAntiquotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ListAntiquotation");
           props_ListAntiquotation = cpb.create();
         }
         return props_ListAntiquotation;
       case LanguageConceptSwitch.NodeBuilder:
         if (props_NodeBuilder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<light quotation>");
           props_NodeBuilder = cpb.create();
         }
         return props_NodeBuilder;
       case LanguageConceptSwitch.NodeBuilderExpression:
         if (props_NodeBuilderExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("#");
           props_NodeBuilderExpression = cpb.create();
         }
         return props_NodeBuilderExpression;
       case LanguageConceptSwitch.NodeBuilderInitLink:
         if (props_NodeBuilderInitLink == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NodeBuilderInitLink");
           props_NodeBuilderInitLink = cpb.create();
         }
         return props_NodeBuilderInitLink;
@@ -95,42 +103,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NodeBuilderInitProperty:
         if (props_NodeBuilderInitProperty == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<{property}>");
           props_NodeBuilderInitProperty = cpb.create();
         }
         return props_NodeBuilderInitProperty;
       case LanguageConceptSwitch.NodeBuilderList:
         if (props_NodeBuilderList == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("[list]");
           props_NodeBuilderList = cpb.create();
         }
         return props_NodeBuilderList;
       case LanguageConceptSwitch.NodeBuilderNode:
         if (props_NodeBuilderNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NodeBuilderNode");
           props_NodeBuilderNode = cpb.create();
         }
         return props_NodeBuilderNode;
       case LanguageConceptSwitch.NodeBuilderRef:
         if (props_NodeBuilderRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NodeBuilderRef");
           props_NodeBuilderRef = cpb.create();
         }
         return props_NodeBuilderRef;
       case LanguageConceptSwitch.PropertyAntiquotation:
         if (props_PropertyAntiquotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PropertyAntiquotation");
           props_PropertyAntiquotation = cpb.create();
         }
         return props_PropertyAntiquotation;
       case LanguageConceptSwitch.Quotation:
         if (props_Quotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<quotation>");
           props_Quotation = cpb.create();
         }
         return props_Quotation;
       case LanguageConceptSwitch.ReferenceAntiquotation:
         if (props_ReferenceAntiquotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ReferenceAntiquotation");
           props_ReferenceAntiquotation = cpb.create();
         }
         return props_ReferenceAntiquotation;

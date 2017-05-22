@@ -41,18 +41,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("abstract function type");
+          cpb.rawPresentation("{ ~~> }");
           props_AbstractFunctionType = cpb.create();
         }
         return props_AbstractFunctionType;
       case LanguageConceptSwitch.ClosureArgReference:
         if (props_ClosureArgReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ClosureArgReference");
           props_ClosureArgReference = cpb.create();
         }
         return props_ClosureArgReference;
       case LanguageConceptSwitch.ClosureControlStatement:
         if (props_ClosureControlStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ClosureControlStatement");
           props_ClosureControlStatement = cpb.create();
         }
         return props_ClosureControlStatement;
@@ -60,12 +63,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ClosureLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("closure literal");
+          cpb.rawPresentation("{ => <body> }");
           props_ClosureLiteral = cpb.create();
         }
         return props_ClosureLiteral;
       case LanguageConceptSwitch.ClosureLiteralType:
         if (props_ClosureLiteralType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ClosureLiteralType");
           props_ClosureLiteralType = cpb.create();
         }
         return props_ClosureLiteralType;
@@ -73,30 +78,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CompactInvokeFunctionExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("invoke function");
+          cpb.rawPresentation("CompactInvokeFunctionExpression");
           props_CompactInvokeFunctionExpression = cpb.create();
         }
         return props_CompactInvokeFunctionExpression;
       case LanguageConceptSwitch.ControlAbstractionContainer:
         if (props_ControlAbstractionContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ControlAbstractionContainer = cpb.create();
         }
         return props_ControlAbstractionContainer;
       case LanguageConceptSwitch.ControlAbstractionDeclaration:
         if (props_ControlAbstractionDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ControlAbstractionDeclaration = cpb.create();
         }
         return props_ControlAbstractionDeclaration;
       case LanguageConceptSwitch.ControlClosureLiteral:
         if (props_ControlClosureLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ControlClosureLiteral");
           props_ControlClosureLiteral = cpb.create();
         }
         return props_ControlClosureLiteral;
       case LanguageConceptSwitch.FunctionMethodDeclaration:
         if (props_FunctionMethodDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_FunctionMethodDeclaration = cpb.create();
         }
         return props_FunctionMethodDeclaration;
@@ -104,6 +114,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_FunctionType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("function type");
+          cpb.rawPresentation("{ => }");
           props_FunctionType = cpb.create();
         }
         return props_FunctionType;
@@ -111,6 +122,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InvokeExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("this function invocation expression");
+          cpb.rawPresentation("invoke");
           props_InvokeExpression = cpb.create();
         }
         return props_InvokeExpression;
@@ -119,6 +131,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("function invocation expression");
+          cpb.rawPresentation("invoke");
           props_InvokeFunctionExpression = cpb.create();
         }
         return props_InvokeFunctionExpression;
@@ -126,18 +139,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InvokeFunctionOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("invoke function");
+          cpb.rawPresentation("invoke");
           props_InvokeFunctionOperation = cpb.create();
         }
         return props_InvokeFunctionOperation;
       case LanguageConceptSwitch.PairOfInts:
         if (props_PairOfInts == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PairOfInts");
           props_PairOfInts = cpb.create();
         }
         return props_PairOfInts;
       case LanguageConceptSwitch.StringPropertyHolder:
         if (props_StringPropertyHolder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StringPropertyHolder");
           props_StringPropertyHolder = cpb.create();
         }
         return props_StringPropertyHolder;
@@ -152,6 +168,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_UnrestrictedClosureLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("unrestricted closure literal");
+          cpb.rawPresentation("{ ==> <body> }");
           props_UnrestrictedClosureLiteral = cpb.create();
         }
         return props_UnrestrictedClosureLiteral;
@@ -159,6 +176,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_UnrestrictedFunctionType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("unrestricted function type");
+          cpb.rawPresentation("{ ==> }");
           props_UnrestrictedFunctionType = cpb.create();
         }
         return props_UnrestrictedFunctionType;
@@ -166,6 +184,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_YieldAllStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("yield all elements in a sequence");
+          cpb.rawPresentation("yieldAll");
           props_YieldAllStatement = cpb.create();
         }
         return props_YieldAllStatement;
@@ -173,6 +192,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_YieldStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("yield next element");
+          cpb.rawPresentation("yield");
           props_YieldStatement = cpb.create();
         }
         return props_YieldStatement;

@@ -28,18 +28,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DeletedChild:
         if (props_DeletedChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DeletedChild");
           props_DeletedChild = cpb.create();
         }
         return props_DeletedChild;
       case LanguageConceptSwitch.DeletedParent:
         if (props_DeletedParent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DeletedParent");
           props_DeletedParent = cpb.create();
         }
         return props_DeletedParent;
       case LanguageConceptSwitch.DeletedParentContainer:
         if (props_DeletedParentContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DeletedParentContainer");
           props_DeletedParentContainer = cpb.create();
         }
         return props_DeletedParentContainer;

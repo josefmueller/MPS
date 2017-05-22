@@ -22,24 +22,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CDHolder_GeneratorInternal:
         if (props_CDHolder_GeneratorInternal == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CDHolder_GeneratorInternal");
           props_CDHolder_GeneratorInternal = cpb.create();
         }
         return props_CDHolder_GeneratorInternal;
       case LanguageConceptSwitch.SimpleConceptDeclaration:
         if (props_SimpleConceptDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SimpleConceptDeclaration = cpb.create();
         }
         return props_SimpleConceptDeclaration;
       case LanguageConceptSwitch.SimplePropertyDeclaration:
         if (props_SimplePropertyDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SimplePropertyDeclaration = cpb.create();
         }
         return props_SimplePropertyDeclaration;
       case LanguageConceptSwitch.StructureAspectDeclaration:
         if (props_StructureAspectDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StructureAspectDeclaration");
           props_StructureAspectDeclaration = cpb.create();
         }
         return props_StructureAspectDeclaration;

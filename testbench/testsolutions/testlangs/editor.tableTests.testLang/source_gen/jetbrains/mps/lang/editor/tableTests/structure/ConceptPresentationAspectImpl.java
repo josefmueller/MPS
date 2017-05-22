@@ -41,96 +41,112 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ContentElement:
         if (props_ContentElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ContentElement = cpb.create();
         }
         return props_ContentElement;
       case LanguageConceptSwitch.DataCell:
         if (props_DataCell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DataCell");
           props_DataCell = cpb.create();
         }
         return props_DataCell;
       case LanguageConceptSwitch.Event:
         if (props_Event == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Event = cpb.create();
         }
         return props_Event;
       case LanguageConceptSwitch.EventReference:
         if (props_EventReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("EventReference");
           props_EventReference = cpb.create();
         }
         return props_EventReference;
       case LanguageConceptSwitch.HierarchycalTable:
         if (props_HierarchycalTable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_HierarchycalTable = cpb.create();
         }
         return props_HierarchycalTable;
       case LanguageConceptSwitch.LightWeightDecisionTable:
         if (props_LightWeightDecisionTable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("decTable");
           props_LightWeightDecisionTable = cpb.create();
         }
         return props_LightWeightDecisionTable;
       case LanguageConceptSwitch.Matrix:
         if (props_Matrix == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Matrix = cpb.create();
         }
         return props_Matrix;
       case LanguageConceptSwitch.Row:
         if (props_Row == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Row");
           props_Row = cpb.create();
         }
         return props_Row;
       case LanguageConceptSwitch.State:
         if (props_State == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_State = cpb.create();
         }
         return props_State;
       case LanguageConceptSwitch.StateMachine:
         if (props_StateMachine == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_StateMachine = cpb.create();
         }
         return props_StateMachine;
       case LanguageConceptSwitch.StateReference:
         if (props_StateReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StateReference");
           props_StateReference = cpb.create();
         }
         return props_StateReference;
       case LanguageConceptSwitch.Table:
         if (props_Table == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Table = cpb.create();
         }
         return props_Table;
       case LanguageConceptSwitch.Transition:
         if (props_Transition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Transition");
           props_Transition = cpb.create();
         }
         return props_Transition;
       case LanguageConceptSwitch.UltimateContainer:
         if (props_UltimateContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("UltimateContainer");
           props_UltimateContainer = cpb.create();
         }
         return props_UltimateContainer;
       case LanguageConceptSwitch.XElement:
         if (props_XElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_XElement = cpb.create();
         }
         return props_XElement;
       case LanguageConceptSwitch.YElement:
         if (props_YElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_YElement = cpb.create();
         }
         return props_YElement;

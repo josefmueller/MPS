@@ -28,60 +28,70 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ConvertTo:
         if (props_ConvertTo == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("convert to");
           props_ConvertTo = cpb.create();
         }
         return props_ConvertTo;
       case LanguageConceptSwitch.CurrencyDefTable:
         if (props_CurrencyDefTable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CurrencyDefTable");
           props_CurrencyDefTable = cpb.create();
         }
         return props_CurrencyDefTable;
       case LanguageConceptSwitch.CurrencyUnit:
         if (props_CurrencyUnit == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CurrencyUnit = cpb.create();
         }
         return props_CurrencyUnit;
       case LanguageConceptSwitch.CurrentStockPrice:
         if (props_CurrentStockPrice == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("current stock price");
           props_CurrentStockPrice = cpb.create();
         }
         return props_CurrentStockPrice;
       case LanguageConceptSwitch.GetAmount:
         if (props_GetAmount == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("amount");
           props_GetAmount = cpb.create();
         }
         return props_GetAmount;
       case LanguageConceptSwitch.GetCurrency:
         if (props_GetCurrency == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("currency");
           props_GetCurrency = cpb.create();
         }
         return props_GetCurrency;
       case LanguageConceptSwitch.MoneyLiteral:
         if (props_MoneyLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("money");
           props_MoneyLiteral = cpb.create();
         }
         return props_MoneyLiteral;
       case LanguageConceptSwitch.MoneyType:
         if (props_MoneyType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Money");
           props_MoneyType = cpb.create();
         }
         return props_MoneyType;
       case LanguageConceptSwitch.MovingAverage:
         if (props_MovingAverage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("moving average");
           props_MovingAverage = cpb.create();
         }
         return props_MovingAverage;
       case LanguageConceptSwitch.StockSymbol:
         if (props_StockSymbol == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("symbol");
           props_StockSymbol = cpb.create();
         }
         return props_StockSymbol;

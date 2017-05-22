@@ -27,12 +27,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ExternalViewFigure:
         if (props_ExternalViewFigure == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ExternalViewFigure = cpb.create();
         }
         return props_ExternalViewFigure;
       case LanguageConceptSwitch.ExternalViewFigureParameter:
         if (props_ExternalViewFigureParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ExternalViewFigureParameter = cpb.create();
         }
         return props_ExternalViewFigureParameter;
@@ -45,6 +47,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.FigureAttribute:
         if (props_FigureAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("@Figure");
           props_FigureAttribute = cpb.create();
         }
         return props_FigureAttribute;
@@ -63,18 +66,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.FigureParameterAttributeField:
         if (props_FigureParameterAttributeField == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("FigureParameterAttributeField");
           props_FigureParameterAttributeField = cpb.create();
         }
         return props_FigureParameterAttributeField;
       case LanguageConceptSwitch.FigureParameterAttributeMethod:
         if (props_FigureParameterAttributeMethod == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("FigureParameterAttributeMethod");
           props_FigureParameterAttributeMethod = cpb.create();
         }
         return props_FigureParameterAttributeMethod;
       case LanguageConceptSwitch.FigureParameterAttributeViewProperty:
         if (props_FigureParameterAttributeViewProperty == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("FigureParameterAttributeViewProperty");
           props_FigureParameterAttributeViewProperty = cpb.create();
         }
         return props_FigureParameterAttributeViewProperty;

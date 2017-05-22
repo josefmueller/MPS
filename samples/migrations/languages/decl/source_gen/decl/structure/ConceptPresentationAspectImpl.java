@@ -24,18 +24,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DeclMigrationData_Component:
         if (props_DeclMigrationData_Component == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DeclMigrationData_Component");
           props_DeclMigrationData_Component = cpb.create();
         }
         return props_DeclMigrationData_Component;
       case LanguageConceptSwitch.DeclMigrationData_WholeModule:
         if (props_DeclMigrationData_WholeModule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DeclMigrationData_WholeModule");
           props_DeclMigrationData_WholeModule = cpb.create();
         }
         return props_DeclMigrationData_WholeModule;
       case LanguageConceptSwitch.NewComponent:
         if (props_NewComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_NewComponent = cpb.create();
         }
         return props_NewComponent;
@@ -49,6 +52,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_OldComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.presentationByName();
           props_OldComponent = cpb.create();
         }
         return props_OldComponent;

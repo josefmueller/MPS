@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TheSimplestConcept:
         if (props_TheSimplestConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TheSimplestConcept = cpb.create();
         }
         return props_TheSimplestConcept;

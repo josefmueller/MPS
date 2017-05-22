@@ -31,6 +31,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ApplyGenerators == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Collection of generators to apply directly");
+          cpb.rawPresentation("ApplyGenerators");
           props_ApplyGenerators = cpb.create();
         }
         return props_ApplyGenerators;
@@ -38,6 +39,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Checkpoint == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Synchronization point of a generation plan");
+          cpb.presentationByName();
           props_Checkpoint = cpb.create();
         }
         return props_Checkpoint;
@@ -45,6 +47,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CheckpointDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Declaration of a checkpoint suitable for reuse, with no persistence/synchronization semantics attached.");
+          cpb.presentationByName();
           props_CheckpointDeclaration = cpb.create();
         }
         return props_CheckpointDeclaration;
@@ -58,6 +61,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CheckpointSynchronization == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Take external references associated with the given checkpoint");
+          cpb.rawPresentation("synchronize with checkpoint");
           props_CheckpointSynchronization = cpb.create();
         }
         return props_CheckpointSynchronization;
@@ -65,6 +69,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DeclaredCheckpointSpec == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("use a pure checkpoint declared elsewhere");
+          cpb.rawPresentation("DeclaredCheckpointSpec");
           props_DeclaredCheckpointSpec = cpb.create();
         }
         return props_DeclaredCheckpointSpec;
@@ -72,6 +77,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InPlaceCheckpointRefSpec == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference another checkpoint step with in-place declaration");
+          cpb.rawPresentation("InPlaceCheckpointRefSpec");
           props_InPlaceCheckpointRefSpec = cpb.create();
         }
         return props_InPlaceCheckpointRefSpec;
@@ -79,6 +85,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InPlaceCheckpointSpec == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("define checkpoint right here");
+          cpb.presentationByName();
           props_InPlaceCheckpointSpec = cpb.create();
         }
         return props_InPlaceCheckpointSpec;
@@ -86,6 +93,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IncludePlan == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("aggregate existing plan");
+          cpb.rawPresentation("include plan");
           props_IncludePlan = cpb.create();
         }
         return props_IncludePlan;
@@ -93,6 +101,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Plan == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Sequence of transformation steps");
+          cpb.presentationByName();
           props_Plan = cpb.create();
         }
         return props_Plan;
@@ -106,6 +115,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Transform == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Collection of languages to reduce (iow, generators to apply)");
+          cpb.rawPresentation("Transform");
           props_Transform = cpb.create();
         }
         return props_Transform;

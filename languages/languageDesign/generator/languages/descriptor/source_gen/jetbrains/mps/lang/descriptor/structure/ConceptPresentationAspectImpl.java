@@ -21,18 +21,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GeneratorDescriptor:
         if (props_GeneratorDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_GeneratorDescriptor = cpb.create();
         }
         return props_GeneratorDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_Aspect:
         if (props_GeneratorInternal_Aspect == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_Aspect");
           props_GeneratorInternal_Aspect = cpb.create();
         }
         return props_GeneratorInternal_Aspect;
       case LanguageConceptSwitch.LanguageDescriptor:
         if (props_LanguageDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_LanguageDescriptor = cpb.create();
         }
         return props_LanguageDescriptor;

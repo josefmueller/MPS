@@ -20,12 +20,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AspectModelRefExpression:
         if (props_AspectModelRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("aspectModel");
           props_AspectModelRefExpression = cpb.create();
         }
         return props_AspectModelRefExpression;
       case LanguageConceptSwitch.Model_IsAspectOperation:
         if (props_Model_IsAspectOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("isAspectModel");
           props_Model_IsAspectOperation = cpb.create();
         }
         return props_Model_IsAspectOperation;

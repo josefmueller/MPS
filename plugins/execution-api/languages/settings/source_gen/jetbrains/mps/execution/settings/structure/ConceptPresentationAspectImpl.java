@@ -49,18 +49,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ApplyTo_Function:
         if (props_ApplyTo_Function == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("apply to");
           props_ApplyTo_Function = cpb.create();
         }
         return props_ApplyTo_Function;
       case LanguageConceptSwitch.CheckProperitesOperation:
         if (props_CheckProperitesOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("check configuration");
           props_CheckProperitesOperation = cpb.create();
         }
         return props_CheckProperitesOperation;
       case LanguageConceptSwitch.CheckProperties_Function:
         if (props_CheckProperties_Function == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CheckProperties_Function = cpb.create();
         }
         return props_CheckProperties_Function;
@@ -68,36 +71,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Configuration_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("configuration");
           props_Configuration_Parameter = cpb.create();
         }
         return props_Configuration_Parameter;
       case LanguageConceptSwitch.CreateEditor_Function:
         if (props_CreateEditor_Function == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("create");
           props_CreateEditor_Function = cpb.create();
         }
         return props_CreateEditor_Function;
       case LanguageConceptSwitch.DeprecatedAnnotation:
         if (props_DeprecatedAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DeprecatedAnnotation");
           props_DeprecatedAnnotation = cpb.create();
         }
         return props_DeprecatedAnnotation;
       case LanguageConceptSwitch.Dispose_Function:
         if (props_Dispose_Function == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("dispose");
           props_Dispose_Function = cpb.create();
         }
         return props_Dispose_Function;
       case LanguageConceptSwitch.EditorExpression:
         if (props_EditorExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("editor");
           props_EditorExpression = cpb.create();
         }
         return props_EditorExpression;
       case LanguageConceptSwitch.EditorOperationCall:
         if (props_EditorOperationCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("EditorOperationCall");
           props_EditorOperationCall = cpb.create();
         }
         return props_EditorOperationCall;
@@ -110,24 +119,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.EditorPropertyDeclaration:
         if (props_EditorPropertyDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_EditorPropertyDeclaration = cpb.create();
         }
         return props_EditorPropertyDeclaration;
       case LanguageConceptSwitch.EditorPropertyReference:
         if (props_EditorPropertyReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("EditorPropertyReference");
           props_EditorPropertyReference = cpb.create();
         }
         return props_EditorPropertyReference;
       case LanguageConceptSwitch.GetEditorOperation:
         if (props_GetEditorOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("editor");
           props_GetEditorOperation = cpb.create();
         }
         return props_GetEditorOperation;
       case LanguageConceptSwitch.GridBagConstraints:
         if (props_GridBagConstraints == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("grid bag constraints");
           props_GridBagConstraints = cpb.create();
         }
         return props_GridBagConstraints;
@@ -140,6 +153,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PersistentConfiguration:
         if (props_PersistentConfiguration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PersistentConfiguration = cpb.create();
         }
         return props_PersistentConfiguration;
@@ -152,18 +166,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PersistentConfigurationMethod:
         if (props_PersistentConfigurationMethod == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PersistentConfigurationMethod = cpb.create();
         }
         return props_PersistentConfigurationMethod;
       case LanguageConceptSwitch.PersistentConfigurationTemplate:
         if (props_PersistentConfigurationTemplate == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PersistentConfigurationTemplate = cpb.create();
         }
         return props_PersistentConfigurationTemplate;
       case LanguageConceptSwitch.PersistentConfigurationTemplateInitializer:
         if (props_PersistentConfigurationTemplateInitializer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PersistentConfigurationTemplateInitializer");
           props_PersistentConfigurationTemplateInitializer = cpb.create();
         }
         return props_PersistentConfigurationTemplateInitializer;
@@ -171,12 +188,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PersistentConfigurationType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("persistent configuration type");
+          cpb.rawPresentation("configuration");
           props_PersistentConfigurationType = cpb.create();
         }
         return props_PersistentConfigurationType;
       case LanguageConceptSwitch.PersistentPropertyDeclaration:
         if (props_PersistentPropertyDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PersistentPropertyDeclaration = cpb.create();
         }
         return props_PersistentPropertyDeclaration;
@@ -184,48 +203,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PersistentPropertyReferenceOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("persistent property reference");
+          cpb.rawPresentation("PersistentPropertyReferenceOperation");
           props_PersistentPropertyReferenceOperation = cpb.create();
         }
         return props_PersistentPropertyReferenceOperation;
       case LanguageConceptSwitch.ProjectAccessExpression:
         if (props_ProjectAccessExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("project");
           props_ProjectAccessExpression = cpb.create();
         }
         return props_ProjectAccessExpression;
       case LanguageConceptSwitch.ReportConfigurationErrorStatement:
         if (props_ReportConfigurationErrorStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("report error");
           props_ReportConfigurationErrorStatement = cpb.create();
         }
         return props_ReportConfigurationErrorStatement;
       case LanguageConceptSwitch.ResetFrom_Function:
         if (props_ResetFrom_Function == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("reset from");
           props_ResetFrom_Function = cpb.create();
         }
         return props_ResetFrom_Function;
       case LanguageConceptSwitch.SettingsEditor:
         if (props_SettingsEditor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SettingsEditor");
           props_SettingsEditor = cpb.create();
         }
         return props_SettingsEditor;
       case LanguageConceptSwitch.SettingsEditorType:
         if (props_SettingsEditorType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("editor");
           props_SettingsEditorType = cpb.create();
         }
         return props_SettingsEditorType;
       case LanguageConceptSwitch.TemplateParameter:
         if (props_TemplateParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_TemplateParameter = cpb.create();
         }
         return props_TemplateParameter;
       case LanguageConceptSwitch.TemplateParameterReference:
         if (props_TemplateParameterReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TemplateParameterReference");
           props_TemplateParameterReference = cpb.create();
         }
         return props_TemplateParameterReference;
@@ -233,6 +260,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TemplatePersistentConfigurationType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("template configuration reference");
+          cpb.rawPresentation("template configuration");
           props_TemplatePersistentConfigurationType = cpb.create();
         }
         return props_TemplatePersistentConfigurationType;

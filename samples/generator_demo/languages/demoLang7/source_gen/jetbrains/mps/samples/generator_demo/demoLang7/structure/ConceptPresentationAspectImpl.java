@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.XMLDocument:
         if (props_XMLDocument == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XMLDocument");
           props_XMLDocument = cpb.create();
         }
         return props_XMLDocument;

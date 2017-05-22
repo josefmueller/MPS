@@ -23,30 +23,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NonThreadSafeClass:
         if (props_NonThreadSafeClass == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NonThreadSafeClass");
           props_NonThreadSafeClass = cpb.create();
         }
         return props_NonThreadSafeClass;
       case LanguageConceptSwitch.ParallelFor:
         if (props_ParallelFor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("parallelFor");
           props_ParallelFor = cpb.create();
         }
         return props_ParallelFor;
       case LanguageConceptSwitch.ParallelLoopVariable:
         if (props_ParallelLoopVariable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ParallelLoopVariable = cpb.create();
         }
         return props_ParallelLoopVariable;
       case LanguageConceptSwitch.ThreadPool:
         if (props_ThreadPool == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("thread pool");
           props_ThreadPool = cpb.create();
         }
         return props_ThreadPool;
       case LanguageConceptSwitch.ThreadSafe:
         if (props_ThreadSafe == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ThreadSafe");
           props_ThreadSafe = cpb.create();
         }
         return props_ThreadSafe;

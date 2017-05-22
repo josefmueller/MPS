@@ -29,6 +29,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.OrderDeclaration:
         if (props_OrderDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_OrderDeclaration = cpb.create();
         }
         return props_OrderDeclaration;
@@ -47,6 +48,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.OrderReference:
         if (props_OrderReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OrderReference");
           props_OrderReference = cpb.create();
         }
         return props_OrderReference;

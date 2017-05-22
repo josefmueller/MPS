@@ -37,36 +37,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DefaultClassifier:
         if (props_DefaultClassifier == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_DefaultClassifier = cpb.create();
         }
         return props_DefaultClassifier;
       case LanguageConceptSwitch.DefaultClassifierFieldAccessOperation:
         if (props_DefaultClassifierFieldAccessOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DefaultClassifierFieldAccessOperation");
           props_DefaultClassifierFieldAccessOperation = cpb.create();
         }
         return props_DefaultClassifierFieldAccessOperation;
       case LanguageConceptSwitch.DefaultClassifierFieldDeclaration:
         if (props_DefaultClassifierFieldDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_DefaultClassifierFieldDeclaration = cpb.create();
         }
         return props_DefaultClassifierFieldDeclaration;
       case LanguageConceptSwitch.DefaultClassifierMethodCallOperation:
         if (props_DefaultClassifierMethodCallOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DefaultClassifierMethodCallOperation");
           props_DefaultClassifierMethodCallOperation = cpb.create();
         }
         return props_DefaultClassifierMethodCallOperation;
       case LanguageConceptSwitch.DefaultClassifierMethodDeclaration:
         if (props_DefaultClassifierMethodDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_DefaultClassifierMethodDeclaration = cpb.create();
         }
         return props_DefaultClassifierMethodDeclaration;
       case LanguageConceptSwitch.DefaultClassifierType:
         if (props_DefaultClassifierType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DefaultClassifierType");
           props_DefaultClassifierType = cpb.create();
         }
         return props_DefaultClassifierType;
@@ -98,6 +104,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SuperClassifierExpresson == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("super classifier");
+          cpb.rawPresentation("super");
           props_SuperClassifierExpresson = cpb.create();
         }
         return props_SuperClassifierExpresson;
@@ -105,6 +112,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ThisClassifierExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("this classifier");
+          cpb.rawPresentation("this");
           props_ThisClassifierExpression = cpb.create();
         }
         return props_ThisClassifierExpression;

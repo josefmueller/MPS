@@ -27,36 +27,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AbsExpression:
         if (props_AbsExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("abs");
           props_AbsExpression = cpb.create();
         }
         return props_AbsExpression;
       case LanguageConceptSwitch.ArgExpression:
         if (props_ArgExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("arg");
           props_ArgExpression = cpb.create();
         }
         return props_ArgExpression;
       case LanguageConceptSwitch.ComplexType:
         if (props_ComplexType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("complex");
           props_ComplexType = cpb.create();
         }
         return props_ComplexType;
       case LanguageConceptSwitch.ConjugateComplexExpression:
         if (props_ConjugateComplexExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("conj");
           props_ConjugateComplexExpression = cpb.create();
         }
         return props_ConjugateComplexExpression;
       case LanguageConceptSwitch.DegreeComplexExpression:
         if (props_DegreeComplexExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("deg");
           props_DegreeComplexExpression = cpb.create();
         }
         return props_DegreeComplexExpression;
       case LanguageConceptSwitch.ImExpression:
         if (props_ImExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("im");
           props_ImExpression = cpb.create();
         }
         return props_ImExpression;
@@ -64,12 +70,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ImaginaryUnit == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("complex imaginary unit");
+          cpb.rawPresentation("i");
           props_ImaginaryUnit = cpb.create();
         }
         return props_ImaginaryUnit;
       case LanguageConceptSwitch.ReExpression:
         if (props_ReExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("re");
           props_ReExpression = cpb.create();
         }
         return props_ReExpression;

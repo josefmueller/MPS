@@ -28,18 +28,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Category:
         if (props_Category == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Category = cpb.create();
         }
         return props_Category;
       case LanguageConceptSwitch.CategoryReference:
         if (props_CategoryReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CategoryReference");
           props_CategoryReference = cpb.create();
         }
         return props_CategoryReference;
       case LanguageConceptSwitch.Note:
         if (props_Note == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("note");
           props_Note = cpb.create();
         }
         return props_Note;
@@ -59,30 +62,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Notes == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Notes list");
+          cpb.presentationByName();
           props_Notes = cpb.create();
         }
         return props_Notes;
       case LanguageConceptSwitch.NotesConfiguration:
         if (props_NotesConfiguration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_NotesConfiguration = cpb.create();
         }
         return props_NotesConfiguration;
       case LanguageConceptSwitch.Priority:
         if (props_Priority == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Priority = cpb.create();
         }
         return props_Priority;
       case LanguageConceptSwitch.Status:
         if (props_Status == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Status = cpb.create();
         }
         return props_Status;
       case LanguageConceptSwitch.TextNotePart:
         if (props_TextNotePart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TextNotePart");
           props_TextNotePart = cpb.create();
         }
         return props_TextNotePart;

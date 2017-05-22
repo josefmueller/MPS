@@ -21,18 +21,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.EditorAspectDeclaration:
         if (props_EditorAspectDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("EditorAspectDeclaration");
           props_EditorAspectDeclaration = cpb.create();
         }
         return props_EditorAspectDeclaration;
       case LanguageConceptSwitch.SimpleEditorDeclaration:
         if (props_SimpleEditorDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SimpleEditorDeclaration");
           props_SimpleEditorDeclaration = cpb.create();
         }
         return props_SimpleEditorDeclaration;
       case LanguageConceptSwitch.SimplePropertyReference:
         if (props_SimplePropertyReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SimplePropertyReference");
           props_SimplePropertyReference = cpb.create();
         }
         return props_SimplePropertyReference;

@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MergeHint:
         if (props_MergeHint == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MergeHint");
           props_MergeHint = cpb.create();
         }
         return props_MergeHint;

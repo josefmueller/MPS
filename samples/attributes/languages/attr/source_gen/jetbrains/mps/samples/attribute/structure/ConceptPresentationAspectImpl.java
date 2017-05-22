@@ -24,36 +24,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CommentAttribute:
         if (props_CommentAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CommentAttribute");
           props_CommentAttribute = cpb.create();
         }
         return props_CommentAttribute;
       case LanguageConceptSwitch.CommentAttribute2:
         if (props_CommentAttribute2 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CommentAttribute2");
           props_CommentAttribute2 = cpb.create();
         }
         return props_CommentAttribute2;
       case LanguageConceptSwitch.HandlerAsChild:
         if (props_HandlerAsChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_HandlerAsChild = cpb.create();
         }
         return props_HandlerAsChild;
       case LanguageConceptSwitch.HandlerAsRoot:
         if (props_HandlerAsRoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_HandlerAsRoot = cpb.create();
         }
         return props_HandlerAsRoot;
       case LanguageConceptSwitch.SubConceptToTransform:
         if (props_SubConceptToTransform == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SubConceptToTransform = cpb.create();
         }
         return props_SubConceptToTransform;
       case LanguageConceptSwitch.SubConceptToTransformNested:
         if (props_SubConceptToTransformNested == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_SubConceptToTransformNested = cpb.create();
         }
         return props_SubConceptToTransformNested;

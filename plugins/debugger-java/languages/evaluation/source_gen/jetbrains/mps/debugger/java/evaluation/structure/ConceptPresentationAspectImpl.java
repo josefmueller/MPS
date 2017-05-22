@@ -31,48 +31,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DebuggedType:
         if (props_DebuggedType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("debugged type");
           props_DebuggedType = cpb.create();
         }
         return props_DebuggedType;
       case LanguageConceptSwitch.DoNotTransformAnnotation:
         if (props_DoNotTransformAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("do not transform");
           props_DoNotTransformAnnotation = cpb.create();
         }
         return props_DoNotTransformAnnotation;
       case LanguageConceptSwitch.DownCastToLowLevel:
         if (props_DownCastToLowLevel == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("downcast");
           props_DownCastToLowLevel = cpb.create();
         }
         return props_DownCastToLowLevel;
       case LanguageConceptSwitch.Evaluator:
         if (props_Evaluator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Evaluator");
           props_Evaluator = cpb.create();
         }
         return props_Evaluator;
       case LanguageConceptSwitch.EvaluatorConcept:
         if (props_EvaluatorConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("EvaluatorConcept");
           props_EvaluatorConcept = cpb.create();
         }
         return props_EvaluatorConcept;
       case LanguageConceptSwitch.EvaluatorsSuperMethodCall:
         if (props_EvaluatorsSuperMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("super");
           props_EvaluatorsSuperMethodCall = cpb.create();
         }
         return props_EvaluatorsSuperMethodCall;
       case LanguageConceptSwitch.EvaluatorsThisExpression:
         if (props_EvaluatorsThisExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("this");
           props_EvaluatorsThisExpression = cpb.create();
         }
         return props_EvaluatorsThisExpression;
       case LanguageConceptSwitch.GenerationHelperAnnotation:
         if (props_GenerationHelperAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GenerationHelperAnnotation");
           props_GenerationHelperAnnotation = cpb.create();
         }
         return props_GenerationHelperAnnotation;
@@ -85,24 +93,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.LowLevelVariable:
         if (props_LowLevelVariable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_LowLevelVariable = cpb.create();
         }
         return props_LowLevelVariable;
       case LanguageConceptSwitch.LowLevelVariableReference:
         if (props_LowLevelVariableReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LowLevelVariableReference");
           props_LowLevelVariableReference = cpb.create();
         }
         return props_LowLevelVariableReference;
       case LanguageConceptSwitch.UnitNode:
         if (props_UnitNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("UnitNode");
           props_UnitNode = cpb.create();
         }
         return props_UnitNode;
       case LanguageConceptSwitch.UnprocessedAnnotation:
         if (props_UnprocessedAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("unprocessed");
           props_UnprocessedAnnotation = cpb.create();
         }
         return props_UnprocessedAnnotation;

@@ -20,12 +20,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NullSafeDotExpression:
         if (props_NullSafeDotExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("safe");
           props_NullSafeDotExpression = cpb.create();
         }
         return props_NullSafeDotExpression;
       case LanguageConceptSwitch.NullUnsafeDotExpression:
         if (props_NullUnsafeDotExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("unsafe");
           props_NullUnsafeDotExpression = cpb.create();
         }
         return props_NullUnsafeDotExpression;

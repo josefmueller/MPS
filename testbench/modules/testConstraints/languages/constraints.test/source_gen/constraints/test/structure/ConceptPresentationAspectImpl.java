@@ -37,30 +37,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CanBeAncestorFail:
         if (props_CanBeAncestorFail == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CanBeAncestorFail");
           props_CanBeAncestorFail = cpb.create();
         }
         return props_CanBeAncestorFail;
       case LanguageConceptSwitch.CanBeChildFail:
         if (props_CanBeChildFail == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CanBeChildFail");
           props_CanBeChildFail = cpb.create();
         }
         return props_CanBeChildFail;
       case LanguageConceptSwitch.CanBeParentFail:
         if (props_CanBeParentFail == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CanBeParentFail");
           props_CanBeParentFail = cpb.create();
         }
         return props_CanBeParentFail;
       case LanguageConceptSwitch.Child:
         if (props_Child == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Child");
           props_Child = cpb.create();
         }
         return props_Child;
       case LanguageConceptSwitch.Concept_CC:
         if (props_Concept_CC == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CF - composition of D1 & D2 CFs");
           props_Concept_CC = cpb.create();
         }
         return props_Concept_CC;
@@ -68,18 +73,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Concept_CI == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("CF - composition of D1 & D2 CFs. D2 inherites Base CF. Hence, CF - composition of D1 & Base CFs");
+          cpb.rawPresentation("Concept_CI");
           props_Concept_CI = cpb.create();
         }
         return props_Concept_CI;
       case LanguageConceptSwitch.Concept_II:
         if (props_Concept_II == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CF - composition of D1 & D2 CFs. D2 & D1 inherites Base CF. Hence, CF - Base CF ");
           props_Concept_II = cpb.create();
         }
         return props_Concept_II;
       case LanguageConceptSwitch.Container:
         if (props_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Container");
           props_Container = cpb.create();
         }
         return props_Container;

@@ -41,6 +41,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AndOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("and operation");
+          cpb.rawPresentation("&&");
           props_AndOperation = cpb.create();
         }
         return props_AndOperation;
@@ -54,6 +55,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_EqualsOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("equals operation");
+          cpb.rawPresentation("==");
           props_EqualsOperation = cpb.create();
         }
         return props_EqualsOperation;
@@ -67,12 +69,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_FloatingPointConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("floating point constant");
+          cpb.rawPresentation("FloatingPointConstant");
           props_FloatingPointConstant = cpb.create();
         }
         return props_FloatingPointConstant;
       case LanguageConceptSwitch.Formula:
         if (props_Formula == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Formula");
           props_Formula = cpb.create();
         }
         return props_Formula;
@@ -86,6 +90,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GreaterThanOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("greater than operation");
+          cpb.rawPresentation(">");
           props_GreaterThanOperation = cpb.create();
         }
         return props_GreaterThanOperation;
@@ -93,6 +98,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IfFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("if-function");
+          cpb.rawPresentation("IF(,,)");
           props_IfFunction = cpb.create();
         }
         return props_IfFunction;
@@ -100,12 +106,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IntegerConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("integer constant");
+          cpb.rawPresentation("IntegerConstant");
           props_IntegerConstant = cpb.create();
         }
         return props_IntegerConstant;
       case LanguageConceptSwitch.IsNullOperation:
         if (props_IsNullOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation(".isNull");
           props_IsNullOperation = cpb.create();
         }
         return props_IsNullOperation;
@@ -113,6 +121,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LessThanOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("less than operation");
+          cpb.rawPresentation("<");
           props_LessThanOperation = cpb.create();
         }
         return props_LessThanOperation;
@@ -120,6 +129,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MinusOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("minus operation");
+          cpb.rawPresentation("-");
           props_MinusOperation = cpb.create();
         }
         return props_MinusOperation;
@@ -127,6 +137,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MultOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("multiply operation");
+          cpb.rawPresentation("*");
           props_MultOperation = cpb.create();
         }
         return props_MultOperation;
@@ -134,6 +145,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NotOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("not operation (formula language)");
+          cpb.rawPresentation("!");
           props_NotOperation = cpb.create();
         }
         return props_NotOperation;
@@ -141,6 +153,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NullConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("null expression");
+          cpb.rawPresentation("null");
           props_NullConstant = cpb.create();
         }
         return props_NullConstant;
@@ -154,6 +167,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_OrOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("or operation");
+          cpb.rawPresentation("||");
           props_OrOperation = cpb.create();
         }
         return props_OrOperation;
@@ -161,6 +175,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ParenthisizedExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("(expr)");
+          cpb.rawPresentation("(");
           props_ParenthisizedExpression = cpb.create();
         }
         return props_ParenthisizedExpression;
@@ -168,6 +183,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PlusOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("plus operation");
+          cpb.rawPresentation("+");
           props_PlusOperation = cpb.create();
         }
         return props_PlusOperation;
@@ -181,6 +197,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_StringConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("string constant");
+          cpb.rawPresentation("\"");
           props_StringConstant = cpb.create();
         }
         return props_StringConstant;

@@ -53,51 +53,59 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ActionTestChild1:
         if (props_ActionTestChild1 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a2b0y);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a2b0y);
           props_ActionTestChild1 = cpb.create();
         }
         return props_ActionTestChild1;
       case LanguageConceptSwitch.ActionTestChild1Child:
         if (props_ActionTestChild1Child == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ActionTestChild1Child = cpb.create();
         }
         return props_ActionTestChild1Child;
       case LanguageConceptSwitch.ActionTestChild1SubConcept:
         if (props_ActionTestChild1SubConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a4b0y);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a4b0y);
           props_ActionTestChild1SubConcept = cpb.create();
         }
         return props_ActionTestChild1SubConcept;
       case LanguageConceptSwitch.ActionTestChild2:
         if (props_ActionTestChild2 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a5b0y);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a5b0y);
           props_ActionTestChild2 = cpb.create();
         }
         return props_ActionTestChild2;
       case LanguageConceptSwitch.ActionTestChildToWrap1:
         if (props_ActionTestChildToWrap1 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ActionTestChildToWrap1 = cpb.create();
         }
         return props_ActionTestChildToWrap1;
       case LanguageConceptSwitch.ActionTestChildToWrap2:
         if (props_ActionTestChildToWrap2 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ActionTestChildToWrap2 = cpb.create();
         }
         return props_ActionTestChildToWrap2;
       case LanguageConceptSwitch.ActionTestChildWrapper:
         if (props_ActionTestChildWrapper == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ActionTestChildWrapper = cpb.create();
         }
         return props_ActionTestChildWrapper;
       case LanguageConceptSwitch.ActionTestContainer:
         if (props_ActionTestContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ActionTestContainer = cpb.create();
         }
         return props_ActionTestContainer;
@@ -110,12 +118,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ActionTestDefaultChild1:
         if (props_ActionTestDefaultChild1 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ActionTestDefaultChild1 = cpb.create();
         }
         return props_ActionTestDefaultChild1;
       case LanguageConceptSwitch.ActionTestDefaultChild2:
         if (props_ActionTestDefaultChild2 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ActionTestDefaultChild2 = cpb.create();
         }
         return props_ActionTestDefaultChild2;
@@ -134,6 +144,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ActionTestSidetransformAddConceptChild:
         if (props_ActionTestSidetransformAddConceptChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("addConceptChild");
           props_ActionTestSidetransformAddConceptChild = cpb.create();
         }
         return props_ActionTestSidetransformAddConceptChild;
@@ -146,12 +157,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ActionTestSidetransformAnotherChild1:
         if (props_ActionTestSidetransformAnotherChild1 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("anotherChild1");
           props_ActionTestSidetransformAnotherChild1 = cpb.create();
         }
         return props_ActionTestSidetransformAnotherChild1;
       case LanguageConceptSwitch.ActionTestSidetransformAnotherChild2:
         if (props_ActionTestSidetransformAnotherChild2 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("anotherChild2");
           props_ActionTestSidetransformAnotherChild2 = cpb.create();
         }
         return props_ActionTestSidetransformAnotherChild2;
@@ -164,18 +177,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ActionTestSidetransformChild1:
         if (props_ActionTestSidetransformChild1 == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ActionTestSidetransformChild1 = cpb.create();
         }
         return props_ActionTestSidetransformChild1;
       case LanguageConceptSwitch.ActionTestSidetransformTestAncestor:
         if (props_ActionTestSidetransformTestAncestor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ActionTestSidetransformTestAncestor");
           props_ActionTestSidetransformTestAncestor = cpb.create();
         }
         return props_ActionTestSidetransformTestAncestor;
       case LanguageConceptSwitch.ActionTestSidetransformTestContainer:
         if (props_ActionTestSidetransformTestContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ActionTestSidetransformTestContainer");
           props_ActionTestSidetransformTestContainer = cpb.create();
         }
         return props_ActionTestSidetransformTestContainer;

@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IncludeXMLTarget:
         if (props_IncludeXMLTarget == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("IncludeXMLTarget");
           props_IncludeXMLTarget = cpb.create();
         }
         return props_IncludeXMLTarget;

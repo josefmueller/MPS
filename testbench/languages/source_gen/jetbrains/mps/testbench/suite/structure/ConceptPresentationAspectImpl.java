@@ -37,12 +37,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.JUnit3TestCaseRef:
         if (props_JUnit3TestCaseRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("JUnit3TestCaseRef");
           props_JUnit3TestCaseRef = cpb.create();
         }
         return props_JUnit3TestCaseRef;
       case LanguageConceptSwitch.JUnit4TestCaseRef:
         if (props_JUnit4TestCaseRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("JUnit4TestCaseRef");
           props_JUnit4TestCaseRef = cpb.create();
         }
         return props_JUnit4TestCaseRef;
@@ -50,18 +52,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ModuleSuite == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.presentationByName();
           props_ModuleSuite = cpb.create();
         }
         return props_ModuleSuite;
       case LanguageConceptSwitch.SolutionRef:
         if (props_SolutionRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SolutionRef");
           props_SolutionRef = cpb.create();
         }
         return props_SolutionRef;
       case LanguageConceptSwitch.TestCaseRef:
         if (props_TestCaseRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestCaseRef");
           props_TestCaseRef = cpb.create();
         }
         return props_TestCaseRef;

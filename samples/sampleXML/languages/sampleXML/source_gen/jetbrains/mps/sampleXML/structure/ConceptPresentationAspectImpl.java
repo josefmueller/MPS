@@ -24,12 +24,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Attribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("attribute");
+          cpb.presentationByName();
           props_Attribute = cpb.create();
         }
         return props_Attribute;
       case LanguageConceptSwitch.Document:
         if (props_Document == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Document = cpb.create();
         }
         return props_Document;
@@ -37,6 +39,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Element == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("element");
+          cpb.presentationByName();
           props_Element = cpb.create();
         }
         return props_Element;
@@ -50,6 +53,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Text == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("text");
+          cpb.presentationByName();
           props_Text = cpb.create();
         }
         return props_Text;

@@ -29,69 +29,80 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Block:
         if (props_Block == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Block = cpb.create();
         }
         return props_Block;
       case LanguageConceptSwitch.BlockExt:
         if (props_BlockExt == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_BlockExt = cpb.create();
         }
         return props_BlockExt;
       case LanguageConceptSwitch.BlockInstance:
         if (props_BlockInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_BlockInstance = cpb.create();
         }
         return props_BlockInstance;
       case LanguageConceptSwitch.Connector:
         if (props_Connector == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a3b0m);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a3b0m);
           props_Connector = cpb.create();
         }
         return props_Connector;
       case LanguageConceptSwitch.ConnectorEndInstance:
         if (props_ConnectorEndInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConnectorEndInstance");
           props_ConnectorEndInstance = cpb.create();
         }
         return props_ConnectorEndInstance;
       case LanguageConceptSwitch.ConnectorInstance:
         if (props_ConnectorInstance == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a5b0m);
+          cpb.rawPresentation("ConnectorInstance");
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a5b0m);
           props_ConnectorInstance = cpb.create();
         }
         return props_ConnectorInstance;
       case LanguageConceptSwitch.Diagram:
         if (props_Diagram == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Diagram = cpb.create();
         }
         return props_Diagram;
       case LanguageConceptSwitch.InputPort:
         if (props_InputPort == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_InputPort = cpb.create();
         }
         return props_InputPort;
       case LanguageConceptSwitch.MetaBlock:
         if (props_MetaBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a8b0m);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a8b0m);
           props_MetaBlock = cpb.create();
         }
         return props_MetaBlock;
       case LanguageConceptSwitch.MetaPort:
         if (props_MetaPort == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_MetaPort = cpb.create();
         }
         return props_MetaPort;
       case LanguageConceptSwitch.OutputPort:
         if (props_OutputPort == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_OutputPort = cpb.create();
         }
         return props_OutputPort;

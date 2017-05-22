@@ -63,6 +63,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BaseCommentAttribute:
         if (props_BaseCommentAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BaseCommentAttribute");
           props_BaseCommentAttribute = cpb.create();
         }
         return props_BaseCommentAttribute;
@@ -78,6 +79,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ChildAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL);
           cpb.deprecateProperty(0x9d98713f249b585L, "linkRole");
+          cpb.rawPresentation("ChildAttribute");
           props_ChildAttribute = cpb.create();
         }
         return props_ChildAttribute;
@@ -90,18 +92,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ExportScopeModule:
         if (props_ExportScopeModule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("@export(module)");
           props_ExportScopeModule = cpb.create();
         }
         return props_ExportScopeModule;
       case LanguageConceptSwitch.ExportScopeNamespace:
         if (props_ExportScopeNamespace == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("@export(namespace)");
           props_ExportScopeNamespace = cpb.create();
         }
         return props_ExportScopeNamespace;
       case LanguageConceptSwitch.ExportScopePublic:
         if (props_ExportScopePublic == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("@export(public)");
           props_ExportScopePublic = cpb.create();
         }
         return props_ExportScopePublic;
@@ -237,6 +242,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LinkAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L);
           cpb.deprecateProperty(0x18649a5c82123514L, "linkRole");
+          cpb.rawPresentation("LinkAttribute");
           props_LinkAttribute = cpb.create();
         }
         return props_LinkAttribute;
@@ -249,6 +255,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NodeAttribute:
         if (props_NodeAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("NodeAttribute");
           props_NodeAttribute = cpb.create();
         }
         return props_NodeAttribute;
@@ -256,12 +263,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PropertyAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L);
           cpb.deprecateProperty(0x18649a5c82123515L, "propertyName");
+          cpb.rawPresentation("PropertyAttribute");
           props_PropertyAttribute = cpb.create();
         }
         return props_PropertyAttribute;
       case LanguageConceptSwitch.ReviewMigration:
         if (props_ReviewMigration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ReviewMigration");
           props_ReviewMigration = cpb.create();
         }
         return props_ReviewMigration;
@@ -281,12 +290,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SideTransformInfo == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL);
           cpb.deprecateProperty(0xad0053c7af1bf58L, "anchorTag");
+          cpb.rawPresentation("SideTransformInfo");
           props_SideTransformInfo = cpb.create();
         }
         return props_SideTransformInfo;
       case LanguageConceptSwitch.SuppressErrorsAnnotation:
         if (props_SuppressErrorsAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SuppressErrorsAnnotation");
           props_SuppressErrorsAnnotation = cpb.create();
         }
         return props_SuppressErrorsAnnotation;

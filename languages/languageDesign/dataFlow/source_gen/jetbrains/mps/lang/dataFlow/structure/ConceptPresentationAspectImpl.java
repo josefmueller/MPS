@@ -52,6 +52,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AfterPosition:
         if (props_AfterPosition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("after");
           props_AfterPosition = cpb.create();
         }
         return props_AfterPosition;
@@ -76,6 +77,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BeforePosition:
         if (props_BeforePosition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("before");
           props_BeforePosition = cpb.create();
         }
         return props_BeforePosition;
@@ -88,37 +90,43 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuilderBlock:
         if (props_BuilderBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BuilderBlock");
           props_BuilderBlock = cpb.create();
         }
         return props_BuilderBlock;
       case LanguageConceptSwitch.DataFlowBuilderDeclaration:
         if (props_DataFlowBuilderDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a7b0jb);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a7b0jb);
           props_DataFlowBuilderDeclaration = cpb.create();
         }
         return props_DataFlowBuilderDeclaration;
       case LanguageConceptSwitch.EmitCodeForStatement:
         if (props_EmitCodeForStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("code for");
           props_EmitCodeForStatement = cpb.create();
         }
         return props_EmitCodeForStatement;
       case LanguageConceptSwitch.EmitIfJumpStatement:
         if (props_EmitIfJumpStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ifjump");
           props_EmitIfJumpStatement = cpb.create();
         }
         return props_EmitIfJumpStatement;
       case LanguageConceptSwitch.EmitJumpStatement:
         if (props_EmitJumpStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("jump");
           props_EmitJumpStatement = cpb.create();
         }
         return props_EmitJumpStatement;
       case LanguageConceptSwitch.EmitLabelStatement:
         if (props_EmitLabelStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_EmitLabelStatement = cpb.create();
         }
         return props_EmitLabelStatement;
@@ -126,24 +134,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_EmitMayBeUnreachable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("emit maybe unreachable command");
+          cpb.rawPresentation("{ <emit> }");
           props_EmitMayBeUnreachable = cpb.create();
         }
         return props_EmitMayBeUnreachable;
       case LanguageConceptSwitch.EmitNopStatement:
         if (props_EmitNopStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("nop");
           props_EmitNopStatement = cpb.create();
         }
         return props_EmitNopStatement;
       case LanguageConceptSwitch.EmitReadStatement:
         if (props_EmitReadStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("read");
           props_EmitReadStatement = cpb.create();
         }
         return props_EmitReadStatement;
       case LanguageConceptSwitch.EmitRetStatement:
         if (props_EmitRetStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ret");
           props_EmitRetStatement = cpb.create();
         }
         return props_EmitRetStatement;
@@ -156,18 +168,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.EmitTryFinallyStatement:
         if (props_EmitTryFinallyStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("try");
           props_EmitTryFinallyStatement = cpb.create();
         }
         return props_EmitTryFinallyStatement;
       case LanguageConceptSwitch.EmitWriteStatement:
         if (props_EmitWriteStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("write");
           props_EmitWriteStatement = cpb.create();
         }
         return props_EmitWriteStatement;
       case LanguageConceptSwitch.GetCodeForExpression:
         if (props_GetCodeForExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("get code for");
           props_GetCodeForExpression = cpb.create();
         }
         return props_GetCodeForExpression;
@@ -180,12 +195,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.InsertAfter:
         if (props_InsertAfter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("after");
           props_InsertAfter = cpb.create();
         }
         return props_InsertAfter;
       case LanguageConceptSwitch.InsertBefore:
         if (props_InsertBefore == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("before");
           props_InsertBefore = cpb.create();
         }
         return props_InsertBefore;
@@ -198,42 +215,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.InstructionGetSourceOperation:
         if (props_InstructionGetSourceOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("getSource");
           props_InstructionGetSourceOperation = cpb.create();
         }
         return props_InstructionGetSourceOperation;
       case LanguageConceptSwitch.InstructionIsJump:
         if (props_InstructionIsJump == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("isJump");
           props_InstructionIsJump = cpb.create();
         }
         return props_InstructionIsJump;
       case LanguageConceptSwitch.InstructionIsNop:
         if (props_InstructionIsNop == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("isNop");
           props_InstructionIsNop = cpb.create();
         }
         return props_InstructionIsNop;
       case LanguageConceptSwitch.InstructionIsRet:
         if (props_InstructionIsRet == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("isRet");
           props_InstructionIsRet = cpb.create();
         }
         return props_InstructionIsRet;
       case LanguageConceptSwitch.InstructionType:
         if (props_InstructionType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("instruction");
           props_InstructionType = cpb.create();
         }
         return props_InstructionType;
       case LanguageConceptSwitch.IntraProcedural_BuilderMode:
         if (props_IntraProcedural_BuilderMode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("intra-procedural");
           props_IntraProcedural_BuilderMode = cpb.create();
         }
         return props_IntraProcedural_BuilderMode;
       case LanguageConceptSwitch.LabelPosition:
         if (props_LabelPosition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("after label");
           props_LabelPosition = cpb.create();
         }
         return props_LabelPosition;
@@ -241,6 +265,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NodeParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("node to build DFA for");
+          cpb.rawPresentation("node");
           props_NodeParameter = cpb.create();
         }
         return props_NodeParameter;

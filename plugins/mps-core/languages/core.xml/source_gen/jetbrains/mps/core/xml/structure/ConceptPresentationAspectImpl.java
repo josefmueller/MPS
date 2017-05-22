@@ -45,6 +45,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.XmlAttribute:
         if (props_XmlAttribute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("attribute");
           props_XmlAttribute = cpb.create();
         }
         return props_XmlAttribute;
@@ -69,6 +70,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.XmlCDATA:
         if (props_XmlCDATA == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<![CDATA");
           props_XmlCDATA = cpb.create();
         }
         return props_XmlCDATA;
@@ -76,6 +78,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlCharRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("single character");
+          cpb.rawPresentation("&#");
           props_XmlCharRef = cpb.create();
         }
         return props_XmlCharRef;
@@ -83,18 +86,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlCharRefValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("single character");
+          cpb.rawPresentation("&#");
           props_XmlCharRefValue = cpb.create();
         }
         return props_XmlCharRefValue;
       case LanguageConceptSwitch.XmlComment:
         if (props_XmlComment == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<!--");
           props_XmlComment = cpb.create();
         }
         return props_XmlComment;
       case LanguageConceptSwitch.XmlCommentLine:
         if (props_XmlCommentLine == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XmlCommentLine");
           props_XmlCommentLine = cpb.create();
         }
         return props_XmlCommentLine;
@@ -108,6 +114,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("xml declaration");
+          cpb.rawPresentation("<?xml");
           props_XmlDeclaration = cpb.create();
         }
         return props_XmlDeclaration;
@@ -115,18 +122,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlDoctypeDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("xml doctype declaration");
+          cpb.rawPresentation("<!DOCTYPE");
           props_XmlDoctypeDeclaration = cpb.create();
         }
         return props_XmlDoctypeDeclaration;
       case LanguageConceptSwitch.XmlDocument:
         if (props_XmlDocument == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XmlDocument");
           props_XmlDocument = cpb.create();
         }
         return props_XmlDocument;
       case LanguageConceptSwitch.XmlElement:
         if (props_XmlElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<element/>");
           props_XmlElement = cpb.create();
         }
         return props_XmlElement;
@@ -134,6 +144,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlEntityRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("entity reference");
+          cpb.rawPresentation("&");
           props_XmlEntityRef = cpb.create();
         }
         return props_XmlEntityRef;
@@ -141,18 +152,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlEntityRefValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("entity reference");
+          cpb.rawPresentation("&");
           props_XmlEntityRefValue = cpb.create();
         }
         return props_XmlEntityRefValue;
       case LanguageConceptSwitch.XmlExternalId:
         if (props_XmlExternalId == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XmlExternalId");
           props_XmlExternalId = cpb.create();
         }
         return props_XmlExternalId;
       case LanguageConceptSwitch.XmlFile:
         if (props_XmlFile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_XmlFile = cpb.create();
         }
         return props_XmlFile;
@@ -160,6 +174,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlNoSpaceValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("concatenates two values without spaces");
+          cpb.rawPresentation("<-no space->");
           props_XmlNoSpaceValue = cpb.create();
         }
         return props_XmlNoSpaceValue;
@@ -173,12 +188,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlProcessingInstruction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("processing instruction");
+          cpb.rawPresentation("<?");
           props_XmlProcessingInstruction = cpb.create();
         }
         return props_XmlProcessingInstruction;
       case LanguageConceptSwitch.XmlProlog:
         if (props_XmlProlog == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XmlProlog");
           props_XmlProlog = cpb.create();
         }
         return props_XmlProlog;
@@ -192,6 +209,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlText == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("plain text");
+          cpb.rawPresentation("text");
           props_XmlText = cpb.create();
         }
         return props_XmlText;
@@ -199,6 +217,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XmlTextValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("attribute value contains of text and entity references");
+          cpb.rawPresentation("text");
           props_XmlTextValue = cpb.create();
         }
         return props_XmlTextValue;
@@ -212,6 +231,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.XmlWhitespace:
         if (props_XmlWhitespace == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XmlWhitespace");
           props_XmlWhitespace = cpb.create();
         }
         return props_XmlWhitespace;

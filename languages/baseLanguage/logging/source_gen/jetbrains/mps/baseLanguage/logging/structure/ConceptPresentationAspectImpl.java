@@ -29,6 +29,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.LogLowLevelStatement:
         if (props_LogLowLevelStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LogLowLevelStatement");
           props_LogLowLevelStatement = cpb.create();
         }
         return props_LogLowLevelStatement;
@@ -36,12 +37,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LogStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("LogStatement");
           props_LogStatement = cpb.create();
         }
         return props_LogStatement;
       case LanguageConceptSwitch.MsgStatement:
         if (props_MsgStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MsgStatement");
           props_MsgStatement = cpb.create();
         }
         return props_MsgStatement;
@@ -49,6 +52,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PrintStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("print");
           props_PrintStatement = cpb.create();
         }
         return props_PrintStatement;

@@ -44,6 +44,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.XMLSAXAttributeHandler:
         if (props_XMLSAXAttributeHandler == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("attribute handler");
           props_XMLSAXAttributeHandler = cpb.create();
         }
         return props_XMLSAXAttributeHandler;
@@ -51,30 +52,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XMLSAXAttributeHandler_value == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("attribute value");
+          cpb.rawPresentation("value");
           props_XMLSAXAttributeHandler_value = cpb.create();
         }
         return props_XMLSAXAttributeHandler_value;
       case LanguageConceptSwitch.XMLSAXAttributeReference:
         if (props_XMLSAXAttributeReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XMLSAXAttributeReference");
           props_XMLSAXAttributeReference = cpb.create();
         }
         return props_XMLSAXAttributeReference;
       case LanguageConceptSwitch.XMLSAXAttributeRule:
         if (props_XMLSAXAttributeRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_XMLSAXAttributeRule = cpb.create();
         }
         return props_XMLSAXAttributeRule;
       case LanguageConceptSwitch.XMLSAXBreakStatement:
         if (props_XMLSAXBreakStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("break parser");
           props_XMLSAXBreakStatement = cpb.create();
         }
         return props_XMLSAXBreakStatement;
       case LanguageConceptSwitch.XMLSAXChildHandler:
         if (props_XMLSAXChildHandler == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("child handler");
           props_XMLSAXChildHandler = cpb.create();
         }
         return props_XMLSAXChildHandler;
@@ -82,24 +88,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XMLSAXChildHandler_childObject == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("parsed child object");
+          cpb.rawPresentation("child");
           props_XMLSAXChildHandler_childObject = cpb.create();
         }
         return props_XMLSAXChildHandler_childObject;
       case LanguageConceptSwitch.XMLSAXChildRule:
         if (props_XMLSAXChildRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XMLSAXChildRule");
           props_XMLSAXChildRule = cpb.create();
         }
         return props_XMLSAXChildRule;
       case LanguageConceptSwitch.XMLSAXChildRuleCondition:
         if (props_XMLSAXChildRuleCondition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XMLSAXChildRuleCondition");
           props_XMLSAXChildRuleCondition = cpb.create();
         }
         return props_XMLSAXChildRuleCondition;
       case LanguageConceptSwitch.XMLSAXDefaultChildHandler:
         if (props_XMLSAXDefaultChildHandler == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("child handler");
           props_XMLSAXDefaultChildHandler = cpb.create();
         }
         return props_XMLSAXDefaultChildHandler;
@@ -107,24 +117,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XMLSAXDefaultChildHandler_tagName == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("tag name");
+          cpb.rawPresentation("name");
           props_XMLSAXDefaultChildHandler_tagName = cpb.create();
         }
         return props_XMLSAXDefaultChildHandler_tagName;
       case LanguageConceptSwitch.XMLSAXDefaultChildRule:
         if (props_XMLSAXDefaultChildRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XMLSAXDefaultChildRule");
           props_XMLSAXDefaultChildRule = cpb.create();
         }
         return props_XMLSAXDefaultChildRule;
       case LanguageConceptSwitch.XMLSAXFieldDeclaration:
         if (props_XMLSAXFieldDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_XMLSAXFieldDeclaration = cpb.create();
         }
         return props_XMLSAXFieldDeclaration;
       case LanguageConceptSwitch.XMLSAXFieldReference:
         if (props_XMLSAXFieldReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XMLSAXFieldReference");
           props_XMLSAXFieldReference = cpb.create();
         }
         return props_XMLSAXFieldReference;
@@ -138,24 +152,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XMLSAXHandler_resultObject == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("an object");
+          cpb.rawPresentation("result");
           props_XMLSAXHandler_resultObject = cpb.create();
         }
         return props_XMLSAXHandler_resultObject;
       case LanguageConceptSwitch.XMLSAXLocatorExpression:
         if (props_XMLSAXLocatorExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("locator");
           props_XMLSAXLocatorExpression = cpb.create();
         }
         return props_XMLSAXLocatorExpression;
       case LanguageConceptSwitch.XMLSAXNodeCreator:
         if (props_XMLSAXNodeCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("create");
           props_XMLSAXNodeCreator = cpb.create();
         }
         return props_XMLSAXNodeCreator;
       case LanguageConceptSwitch.XMLSAXNodeRule:
         if (props_XMLSAXNodeRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_XMLSAXNodeRule = cpb.create();
         }
         return props_XMLSAXNodeRule;
@@ -163,30 +181,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XMLSAXNodeRuleParam == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("parameter");
+          cpb.presentationByName();
           props_XMLSAXNodeRuleParam = cpb.create();
         }
         return props_XMLSAXNodeRuleParam;
       case LanguageConceptSwitch.XMLSAXNodeRuleParamRef:
         if (props_XMLSAXNodeRuleParamRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XMLSAXNodeRuleParamRef");
           props_XMLSAXNodeRuleParamRef = cpb.create();
         }
         return props_XMLSAXNodeRuleParamRef;
       case LanguageConceptSwitch.XMLSAXNodeValidator:
         if (props_XMLSAXNodeValidator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("validate");
           props_XMLSAXNodeValidator = cpb.create();
         }
         return props_XMLSAXNodeValidator;
       case LanguageConceptSwitch.XMLSAXParser:
         if (props_XMLSAXParser == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_XMLSAXParser = cpb.create();
         }
         return props_XMLSAXParser;
       case LanguageConceptSwitch.XMLSAXTextHandler:
         if (props_XMLSAXTextHandler == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("text handler");
           props_XMLSAXTextHandler = cpb.create();
         }
         return props_XMLSAXTextHandler;
@@ -194,12 +217,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_XMLSAXTextHandler_value == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("text value");
+          cpb.rawPresentation("value");
           props_XMLSAXTextHandler_value = cpb.create();
         }
         return props_XMLSAXTextHandler_value;
       case LanguageConceptSwitch.XMLSAXTextRule:
         if (props_XMLSAXTextRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("XMLSAXTextRule");
           props_XMLSAXTextRule = cpb.create();
         }
         return props_XMLSAXTextRule;

@@ -20,12 +20,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.StepData:
         if (props_StepData == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StepData");
           props_StepData = cpb.create();
         }
         return props_StepData;
       case LanguageConceptSwitch.StringData:
         if (props_StringData == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StringData");
           props_StringData = cpb.create();
         }
         return props_StringData;

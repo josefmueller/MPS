@@ -21,18 +21,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Conversation:
         if (props_Conversation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Conversation = cpb.create();
         }
         return props_Conversation;
       case LanguageConceptSwitch.Message:
         if (props_Message == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Message");
           props_Message = cpb.create();
         }
         return props_Message;
       case LanguageConceptSwitch.Participant:
         if (props_Participant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Participant = cpb.create();
         }
         return props_Participant;

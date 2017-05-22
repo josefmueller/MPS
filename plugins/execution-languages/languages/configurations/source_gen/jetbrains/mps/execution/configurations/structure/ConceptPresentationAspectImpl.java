@@ -60,72 +60,84 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BeforeTask:
         if (props_BeforeTask == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_BeforeTask = cpb.create();
         }
         return props_BeforeTask;
       case LanguageConceptSwitch.BeforeTaskCall:
         if (props_BeforeTaskCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BeforeTaskCall");
           props_BeforeTaskCall = cpb.create();
         }
         return props_BeforeTaskCall;
       case LanguageConceptSwitch.BeforeTaskParameter:
         if (props_BeforeTaskParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_BeforeTaskParameter = cpb.create();
         }
         return props_BeforeTaskParameter;
       case LanguageConceptSwitch.BeforeTaskParameterReference:
         if (props_BeforeTaskParameterReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BeforeTaskParameterReference");
           props_BeforeTaskParameterReference = cpb.create();
         }
         return props_BeforeTaskParameterReference;
       case LanguageConceptSwitch.ConfigurationFromExecutorReference:
         if (props_ConfigurationFromExecutorReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ConfigurationFromExecutorReference = cpb.create();
         }
         return props_ConfigurationFromExecutorReference;
       case LanguageConceptSwitch.Configuration_Parameter:
         if (props_Configuration_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("configuration");
           props_Configuration_Parameter = cpb.create();
         }
         return props_Configuration_Parameter;
       case LanguageConceptSwitch.ConsoleCreator:
         if (props_ConsoleCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("console");
           props_ConsoleCreator = cpb.create();
         }
         return props_ConsoleCreator;
       case LanguageConceptSwitch.ConsoleType:
         if (props_ConsoleType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("console");
           props_ConsoleType = cpb.create();
         }
         return props_ConsoleType;
       case LanguageConceptSwitch.ContextConfiguration_Parameter:
         if (props_ContextConfiguration_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("context");
           props_ContextConfiguration_Parameter = cpb.create();
         }
         return props_ContextConfiguration_Parameter;
       case LanguageConceptSwitch.ContextExpression:
         if (props_ContextExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("context");
           props_ContextExpression = cpb.create();
         }
         return props_ContextExpression;
       case LanguageConceptSwitch.Create_ConceptFunction:
         if (props_Create_ConceptFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("create");
           props_Create_ConceptFunction = cpb.create();
         }
         return props_Create_ConceptFunction;
       case LanguageConceptSwitch.DebuggerSettings_Parameter:
         if (props_DebuggerSettings_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("debuggerSettings");
           props_DebuggerSettings_Parameter = cpb.create();
         }
         return props_DebuggerSettings_Parameter;
@@ -133,36 +145,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_EnvironmentExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("execution environment");
+          cpb.rawPresentation("environment");
           props_EnvironmentExpression = cpb.create();
         }
         return props_EnvironmentExpression;
       case LanguageConceptSwitch.ExecuteBeforeTask_ConceptFunction:
         if (props_ExecuteBeforeTask_ConceptFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("execute");
           props_ExecuteBeforeTask_ConceptFunction = cpb.create();
         }
         return props_ExecuteBeforeTask_ConceptFunction;
       case LanguageConceptSwitch.ExecuteConfiguration_Function:
         if (props_ExecuteConfiguration_Function == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("execute");
           props_ExecuteConfiguration_Function = cpb.create();
         }
         return props_ExecuteConfiguration_Function;
       case LanguageConceptSwitch.Executor_Parameter:
         if (props_Executor_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("executor");
           props_Executor_Parameter = cpb.create();
         }
         return props_Executor_Parameter;
       case LanguageConceptSwitch.GetProjectOperation:
         if (props_GetProjectOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("project");
           props_GetProjectOperation = cpb.create();
         }
         return props_GetProjectOperation;
       case LanguageConceptSwitch.IsConfigurationFromContext_ConceptFunction:
         if (props_IsConfigurationFromContext_ConceptFunction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("isConfigurationFromContext");
           props_IsConfigurationFromContext_ConceptFunction = cpb.create();
         }
         return props_IsConfigurationFromContext_ConceptFunction;
@@ -170,6 +188,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ModelSource == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("model (deprecated)");
           props_ModelSource = cpb.create();
         }
         return props_ModelSource;
@@ -177,67 +196,78 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ModuleSource == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
+          cpb.rawPresentation("module (deprecated)");
           props_ModuleSource = cpb.create();
         }
         return props_ModuleSource;
       case LanguageConceptSwitch.NodeListSource:
         if (props_NodeListSource == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("nlist");
           props_NodeListSource = cpb.create();
         }
         return props_NodeListSource;
       case LanguageConceptSwitch.NodeSource:
         if (props_NodeSource == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("node");
           props_NodeSource = cpb.create();
         }
         return props_NodeSource;
       case LanguageConceptSwitch.ProjectSource:
         if (props_ProjectSource == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("project");
           props_ProjectSource = cpb.create();
         }
         return props_ProjectSource;
       case LanguageConceptSwitch.Project_Parameter:
         if (props_Project_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("project");
           props_Project_Parameter = cpb.create();
         }
         return props_Project_Parameter;
       case LanguageConceptSwitch.RunConfiguration:
         if (props_RunConfiguration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a52b0lb);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a52b0lb);
           props_RunConfiguration = cpb.create();
         }
         return props_RunConfiguration;
       case LanguageConceptSwitch.RunConfigurationCreator:
         if (props_RunConfigurationCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("RunConfigurationCreator");
           props_RunConfigurationCreator = cpb.create();
         }
         return props_RunConfigurationCreator;
       case LanguageConceptSwitch.RunConfigurationExecutor:
         if (props_RunConfigurationExecutor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_RunConfigurationExecutor = cpb.create();
         }
         return props_RunConfigurationExecutor;
       case LanguageConceptSwitch.RunConfigurationKind:
         if (props_RunConfigurationKind == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_RunConfigurationKind = cpb.create();
         }
         return props_RunConfigurationKind;
       case LanguageConceptSwitch.RunConfigurationProducer:
         if (props_RunConfigurationProducer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_RunConfigurationProducer = cpb.create();
         }
         return props_RunConfigurationProducer;
       case LanguageConceptSwitch.RunConfigurationProducerPart:
         if (props_RunConfigurationProducerPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_RunConfigurationProducerPart = cpb.create();
         }
         return props_RunConfigurationProducerPart;
@@ -250,24 +280,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SModelSource:
         if (props_SModelSource == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("model");
           props_SModelSource = cpb.create();
         }
         return props_SModelSource;
       case LanguageConceptSwitch.SModuleSource:
         if (props_SModuleSource == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("module");
           props_SModuleSource = cpb.create();
         }
         return props_SModuleSource;
       case LanguageConceptSwitch.Source_ConceptFunctionParameter:
         if (props_Source_ConceptFunctionParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("source");
           props_Source_ConceptFunctionParameter = cpb.create();
         }
         return props_Source_ConceptFunctionParameter;
       case LanguageConceptSwitch.StartProcessHandlerStatement:
         if (props_StartProcessHandlerStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("start process handler");
           props_StartProcessHandlerStatement = cpb.create();
         }
         return props_StartProcessHandlerStatement;

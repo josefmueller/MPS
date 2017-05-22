@@ -26,42 +26,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CustomRoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("root for tests");
+          cpb.rawPresentation("custom root");
           props_CustomRoot = cpb.create();
         }
         return props_CustomRoot;
       case LanguageConceptSwitch.CustomStatement:
         if (props_CustomStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CustomStatement = cpb.create();
         }
         return props_CustomStatement;
       case LanguageConceptSwitch.CustomStatementRef:
         if (props_CustomStatementRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CustomStatementRef");
           props_CustomStatementRef = cpb.create();
         }
         return props_CustomStatementRef;
       case LanguageConceptSwitch.OutputNode:
         if (props_OutputNode == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OutputNode");
           props_OutputNode = cpb.create();
         }
         return props_OutputNode;
       case LanguageConceptSwitch.OutputNode_forDontApplyReductionTwice_test:
         if (props_OutputNode_forDontApplyReductionTwice_test == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OutputNode_forDontApplyReductionTwice_test");
           props_OutputNode_forDontApplyReductionTwice_test = cpb.create();
         }
         return props_OutputNode_forDontApplyReductionTwice_test;
       case LanguageConceptSwitch.OutputRoot:
         if (props_OutputRoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_OutputRoot = cpb.create();
         }
         return props_OutputRoot;
       case LanguageConceptSwitch.TwoVarStatement:
         if (props_TwoVarStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TwoVarStatement");
           props_TwoVarStatement = cpb.create();
         }
         return props_TwoVarStatement;

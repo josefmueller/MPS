@@ -20,13 +20,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PrimitiveTypeDescriptor:
         if (props_PrimitiveTypeDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a0b0d);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a0b0d);
           props_PrimitiveTypeDescriptor = cpb.create();
         }
         return props_PrimitiveTypeDescriptor;
       case LanguageConceptSwitch.PrimitiveTypeRef:
         if (props_PrimitiveTypeRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PrimitiveTypeRef");
           props_PrimitiveTypeRef = cpb.create();
         }
         return props_PrimitiveTypeRef;

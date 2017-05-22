@@ -24,24 +24,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Canvas:
         if (props_Canvas == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Canvas = cpb.create();
         }
         return props_Canvas;
       case LanguageConceptSwitch.Circle:
         if (props_Circle == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("circle");
           props_Circle = cpb.create();
         }
         return props_Circle;
       case LanguageConceptSwitch.Color:
         if (props_Color == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Color = cpb.create();
         }
         return props_Color;
       case LanguageConceptSwitch.ColorReference:
         if (props_ColorReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ColorReference");
           props_ColorReference = cpb.create();
         }
         return props_ColorReference;
@@ -54,6 +58,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Square:
         if (props_Square == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("square");
           props_Square = cpb.create();
         }
         return props_Square;

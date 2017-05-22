@@ -21,18 +21,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.UsesPlatformCheckbox:
         if (props_UsesPlatformCheckbox == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("UsesPlatformCheckbox");
           props_UsesPlatformCheckbox = cpb.create();
         }
         return props_UsesPlatformCheckbox;
       case LanguageConceptSwitch.UsesTextCheckbox:
         if (props_UsesTextCheckbox == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("UsesTextCheckbox");
           props_UsesTextCheckbox = cpb.create();
         }
         return props_UsesTextCheckbox;
       case LanguageConceptSwitch.VariousCheckboxes:
         if (props_VariousCheckboxes == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("VariousCheckboxes");
           props_VariousCheckboxes = cpb.create();
         }
         return props_VariousCheckboxes;

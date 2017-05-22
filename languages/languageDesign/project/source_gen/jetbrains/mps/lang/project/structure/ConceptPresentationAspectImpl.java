@@ -37,6 +37,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DevKit:
         if (props_DevKit == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_DevKit = cpb.create();
         }
         return props_DevKit;
@@ -44,6 +45,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Generator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe21L);
           cpb.deprecateProperty(0x3be012d639e8a44L, "generatorUID");
+          cpb.presentationByName();
           props_Generator = cpb.create();
         }
         return props_Generator;
@@ -51,30 +53,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Language == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1fL);
           cpb.deprecateAggregation(0x3be012d639dff83L, "runtimeStubModels");
+          cpb.presentationByName();
           props_Language = cpb.create();
         }
         return props_Language;
       case LanguageConceptSwitch.MappingConfigExternalRef:
         if (props_MappingConfigExternalRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MappingConfigExternalRef");
           props_MappingConfigExternalRef = cpb.create();
         }
         return props_MappingConfigExternalRef;
       case LanguageConceptSwitch.MappingConfigNormalRef:
         if (props_MappingConfigNormalRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ref");
           props_MappingConfigNormalRef = cpb.create();
         }
         return props_MappingConfigNormalRef;
       case LanguageConceptSwitch.MappingConfigRefAllGlobal:
         if (props_MappingConfigRefAllGlobal == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("all global");
           props_MappingConfigRefAllGlobal = cpb.create();
         }
         return props_MappingConfigRefAllGlobal;
       case LanguageConceptSwitch.MappingConfigRefAllLocal:
         if (props_MappingConfigRefAllLocal == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("all local");
           props_MappingConfigRefAllLocal = cpb.create();
         }
         return props_MappingConfigRefAllLocal;
@@ -87,24 +94,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MappingConfigRefSet:
         if (props_MappingConfigRefSet == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("set");
           props_MappingConfigRefSet = cpb.create();
         }
         return props_MappingConfigRefSet;
       case LanguageConceptSwitch.MappingPriorityRule:
         if (props_MappingPriorityRule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MappingPriorityRule");
           props_MappingPriorityRule = cpb.create();
         }
         return props_MappingPriorityRule;
       case LanguageConceptSwitch.ModelReference:
         if (props_ModelReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ModelReference");
           props_ModelReference = cpb.create();
         }
         return props_ModelReference;
       case LanguageConceptSwitch.ModelRoot:
         if (props_ModelRoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ModelRoot");
           props_ModelRoot = cpb.create();
         }
         return props_ModelRoot;
@@ -117,36 +128,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ModuleDependency:
         if (props_ModuleDependency == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ModuleDependency");
           props_ModuleDependency = cpb.create();
         }
         return props_ModuleDependency;
       case LanguageConceptSwitch.ModuleReference:
         if (props_ModuleReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ModuleReference");
           props_ModuleReference = cpb.create();
         }
         return props_ModuleReference;
       case LanguageConceptSwitch.Solution:
         if (props_Solution == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Solution = cpb.create();
         }
         return props_Solution;
       case LanguageConceptSwitch.SourcePath:
         if (props_SourcePath == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SourcePath");
           props_SourcePath = cpb.create();
         }
         return props_SourcePath;
       case LanguageConceptSwitch.StubEntry:
         if (props_StubEntry == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StubEntry");
           props_StubEntry = cpb.create();
         }
         return props_StubEntry;
       case LanguageConceptSwitch.StubSolution:
         if (props_StubSolution == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StubSolution");
           props_StubSolution = cpb.create();
         }
         return props_StubSolution;

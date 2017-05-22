@@ -22,18 +22,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ElementMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("element macro");
+          cpb.rawPresentation("$${");
           props_ElementMacro = cpb.create();
         }
         return props_ElementMacro;
       case LanguageConceptSwitch.TextMacro:
         if (props_TextMacro == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("${");
           props_TextMacro = cpb.create();
         }
         return props_TextMacro;
       case LanguageConceptSwitch.XmlLiteral:
         if (props_XmlLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("xml literal");
           props_XmlLiteral = cpb.create();
         }
         return props_XmlLiteral;

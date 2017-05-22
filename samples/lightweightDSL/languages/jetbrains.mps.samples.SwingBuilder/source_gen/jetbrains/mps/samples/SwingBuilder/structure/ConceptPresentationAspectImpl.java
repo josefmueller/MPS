@@ -34,6 +34,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Button:
         if (props_Button == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("button");
           props_Button = cpb.create();
         }
         return props_Button;
@@ -46,84 +47,98 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Converter:
         if (props_Converter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Converter = cpb.create();
         }
         return props_Converter;
       case LanguageConceptSwitch.ElementReference:
         if (props_ElementReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ElementReference");
           props_ElementReference = cpb.create();
         }
         return props_ElementReference;
       case LanguageConceptSwitch.EmptyComponent:
         if (props_EmptyComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<empty>");
           props_EmptyComponent = cpb.create();
         }
         return props_EmptyComponent;
       case LanguageConceptSwitch.Filter:
         if (props_Filter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Filter = cpb.create();
         }
         return props_Filter;
       case LanguageConceptSwitch.Frame:
         if (props_Frame == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("frame");
           props_Frame = cpb.create();
         }
         return props_Frame;
       case LanguageConceptSwitch.Label:
         if (props_Label == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("label");
           props_Label = cpb.create();
         }
         return props_Label;
       case LanguageConceptSwitch.Map:
         if (props_Map == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Map = cpb.create();
         }
         return props_Map;
       case LanguageConceptSwitch.Panel:
         if (props_Panel == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("panel");
           props_Panel = cpb.create();
         }
         return props_Panel;
       case LanguageConceptSwitch.Pipeline:
         if (props_Pipeline == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Pipeline = cpb.create();
         }
         return props_Pipeline;
       case LanguageConceptSwitch.SourceDataType:
         if (props_SourceDataType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("source data type");
           props_SourceDataType = cpb.create();
         }
         return props_SourceDataType;
       case LanguageConceptSwitch.SwingBuilderMember:
         if (props_SwingBuilderMember == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("UI Builder");
           props_SwingBuilderMember = cpb.create();
         }
         return props_SwingBuilderMember;
       case LanguageConceptSwitch.TargetDataType:
         if (props_TargetDataType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("target data type");
           props_TargetDataType = cpb.create();
         }
         return props_TargetDataType;
       case LanguageConceptSwitch.TextField:
         if (props_TextField == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("text field");
           props_TextField = cpb.create();
         }
         return props_TextField;
       case LanguageConceptSwitch.Transformers:
         if (props_Transformers == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("transformers");
           props_Transformers = cpb.create();
         }
         return props_Transformers;

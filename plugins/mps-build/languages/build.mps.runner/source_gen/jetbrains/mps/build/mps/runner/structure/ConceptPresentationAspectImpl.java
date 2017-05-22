@@ -20,6 +20,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildSolutionRunnerAspect:
         if (props_BuildSolutionRunnerAspect == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("run code");
           props_BuildSolutionRunnerAspect = cpb.create();
         }
         return props_BuildSolutionRunnerAspect;
@@ -27,6 +28,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildSolutionRunnerPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("adds ability to run MPS code after build");
+          cpb.rawPresentation("mps-runner");
           props_BuildSolutionRunnerPlugin = cpb.create();
         }
         return props_BuildSolutionRunnerPlugin;

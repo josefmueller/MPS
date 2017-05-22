@@ -23,30 +23,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Child:
         if (props_Child == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Child");
           props_Child = cpb.create();
         }
         return props_Child;
       case LanguageConceptSwitch.OtherChild:
         if (props_OtherChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OtherChild");
           props_OtherChild = cpb.create();
         }
         return props_OtherChild;
       case LanguageConceptSwitch.OtherRoot:
         if (props_OtherRoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OtherRoot");
           props_OtherRoot = cpb.create();
         }
         return props_OtherRoot;
       case LanguageConceptSwitch.OtherSubChild:
         if (props_OtherSubChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OtherSubChild");
           props_OtherSubChild = cpb.create();
         }
         return props_OtherSubChild;
       case LanguageConceptSwitch.Root:
         if (props_Root == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Root");
           props_Root = cpb.create();
         }
         return props_Root;

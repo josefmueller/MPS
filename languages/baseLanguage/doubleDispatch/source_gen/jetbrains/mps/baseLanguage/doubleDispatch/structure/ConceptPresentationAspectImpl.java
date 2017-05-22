@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DispatchModifier:
         if (props_DispatchModifier == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("dispatch");
           props_DispatchModifier = cpb.create();
         }
         return props_DispatchModifier;

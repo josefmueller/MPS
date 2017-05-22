@@ -29,24 +29,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildWall:
         if (props_BuildWall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("build wall");
           props_BuildWall = cpb.create();
         }
         return props_BuildWall;
       case LanguageConceptSwitch.DestroyWall:
         if (props_DestroyWall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("destroy wall");
           props_DestroyWall = cpb.create();
         }
         return props_DestroyWall;
       case LanguageConceptSwitch.DropMark:
         if (props_DropMark == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("drop mark");
           props_DropMark = cpb.create();
         }
         return props_DropMark;
       case LanguageConceptSwitch.PickMark:
         if (props_PickMark == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("pick mark");
           props_PickMark = cpb.create();
         }
         return props_PickMark;

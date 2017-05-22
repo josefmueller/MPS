@@ -22,24 +22,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PropertiesComment:
         if (props_PropertiesComment == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("#");
           props_PropertiesComment = cpb.create();
         }
         return props_PropertiesComment;
       case LanguageConceptSwitch.PropertiesDeclaration:
         if (props_PropertiesDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PropertiesDeclaration = cpb.create();
         }
         return props_PropertiesDeclaration;
       case LanguageConceptSwitch.PropertiesFile:
         if (props_PropertiesFile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PropertiesFile = cpb.create();
         }
         return props_PropertiesFile;
       case LanguageConceptSwitch.PropertiesLine:
         if (props_PropertiesLine == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<empty line>");
           props_PropertiesLine = cpb.create();
         }
         return props_PropertiesLine;

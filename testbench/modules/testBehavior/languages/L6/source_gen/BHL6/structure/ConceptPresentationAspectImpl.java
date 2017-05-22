@@ -30,48 +30,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.A:
         if (props_A == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("A");
           props_A = cpb.create();
         }
         return props_A;
       case LanguageConceptSwitch.B:
         if (props_B == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("B");
           props_B = cpb.create();
         }
         return props_B;
       case LanguageConceptSwitch.C:
         if (props_C == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("C");
           props_C = cpb.create();
         }
         return props_C;
       case LanguageConceptSwitch.D:
         if (props_D == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("D");
           props_D = cpb.create();
         }
         return props_D;
       case LanguageConceptSwitch.E:
         if (props_E == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("E");
           props_E = cpb.create();
         }
         return props_E;
       case LanguageConceptSwitch.F:
         if (props_F == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("F");
           props_F = cpb.create();
         }
         return props_F;
       case LanguageConceptSwitch.G:
         if (props_G == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("G");
           props_G = cpb.create();
         }
         return props_G;
       case LanguageConceptSwitch.H:
         if (props_H == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("H");
           props_H = cpb.create();
         }
         return props_H;
@@ -96,6 +104,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.J:
         if (props_J == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("J");
           props_J = cpb.create();
         }
         return props_J;

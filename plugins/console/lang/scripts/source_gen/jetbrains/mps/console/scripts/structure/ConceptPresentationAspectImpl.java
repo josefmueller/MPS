@@ -28,6 +28,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ConsoleScript:
         if (props_ConsoleScript == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ConsoleScript = cpb.create();
         }
         return props_ConsoleScript;
@@ -35,6 +36,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Execute == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("execute a script");
+          cpb.rawPresentation("#exec");
           props_Execute = cpb.create();
         }
         return props_Execute;
@@ -42,6 +44,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_RefactorOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("perform changes on selected nodes");
+          cpb.rawPresentation("refactor");
           props_RefactorOperation = cpb.create();
         }
         return props_RefactorOperation;

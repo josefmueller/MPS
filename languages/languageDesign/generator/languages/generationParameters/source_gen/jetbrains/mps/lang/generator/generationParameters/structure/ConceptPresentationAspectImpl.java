@@ -21,6 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DefaultGenerationParameterId:
         if (props_DefaultGenerationParameterId == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("genParameter<..>");
           props_DefaultGenerationParameterId = cpb.create();
         }
         return props_DefaultGenerationParameterId;
@@ -28,13 +29,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DefaultGeneratorParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("generation parameter");
+          cpb.presentationByName();
           props_DefaultGeneratorParameter = cpb.create();
         }
         return props_DefaultGeneratorParameter;
       case LanguageConceptSwitch.DefaultGeneratorParameterContainer:
         if (props_DefaultGeneratorParameterContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a2b0e);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a2b0e);
           props_DefaultGeneratorParameterContainer = cpb.create();
         }
         return props_DefaultGeneratorParameterContainer;

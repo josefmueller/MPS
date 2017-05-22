@@ -25,42 +25,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Event:
         if (props_Event == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Event = cpb.create();
         }
         return props_Event;
       case LanguageConceptSwitch.HandleEvent:
         if (props_HandleEvent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("HandleEvent");
           props_HandleEvent = cpb.create();
         }
         return props_HandleEvent;
       case LanguageConceptSwitch.State:
         if (props_State == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_State = cpb.create();
         }
         return props_State;
       case LanguageConceptSwitch.StateMachine:
         if (props_StateMachine == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_StateMachine = cpb.create();
         }
         return props_StateMachine;
       case LanguageConceptSwitch.StateMachineTest:
         if (props_StateMachineTest == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_StateMachineTest = cpb.create();
         }
         return props_StateMachineTest;
       case LanguageConceptSwitch.StateMachineTestMethod:
         if (props_StateMachineTestMethod == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("StateMachineTestMethod");
           props_StateMachineTestMethod = cpb.create();
         }
         return props_StateMachineTestMethod;
       case LanguageConceptSwitch.Transition:
         if (props_Transition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Transition");
           props_Transition = cpb.create();
         }
         return props_Transition;

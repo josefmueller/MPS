@@ -33,48 +33,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.EmptyOperation:
         if (props_EmptyOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("<empty>");
           props_EmptyOperation = cpb.create();
         }
         return props_EmptyOperation;
       case LanguageConceptSwitch.Event:
         if (props_Event == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Event = cpb.create();
         }
         return props_Event;
       case LanguageConceptSwitch.Log:
         if (props_Log == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("log");
           props_Log = cpb.create();
         }
         return props_Log;
       case LanguageConceptSwitch.OperationsList:
         if (props_OperationsList == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OperationsList");
           props_OperationsList = cpb.create();
         }
         return props_OperationsList;
       case LanguageConceptSwitch.Raise:
         if (props_Raise == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("raise");
           props_Raise = cpb.create();
         }
         return props_Raise;
       case LanguageConceptSwitch.State:
         if (props_State == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_State = cpb.create();
         }
         return props_State;
       case LanguageConceptSwitch.StateChart:
         if (props_StateChart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_StateChart = cpb.create();
         }
         return props_StateChart;
       case LanguageConceptSwitch.Transition:
         if (props_Transition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("transition");
           props_Transition = cpb.create();
         }
         return props_Transition;

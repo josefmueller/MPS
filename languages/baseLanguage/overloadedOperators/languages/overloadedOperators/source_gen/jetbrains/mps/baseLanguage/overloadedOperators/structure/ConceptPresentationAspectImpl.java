@@ -28,36 +28,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BinaryOperationReference:
         if (props_BinaryOperationReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BinaryOperationReference");
           props_BinaryOperationReference = cpb.create();
         }
         return props_BinaryOperationReference;
       case LanguageConceptSwitch.ContainerImport:
         if (props_ContainerImport == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ContainerImport");
           props_ContainerImport = cpb.create();
         }
         return props_ContainerImport;
       case LanguageConceptSwitch.CustomOperator:
         if (props_CustomOperator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CustomOperator");
           props_CustomOperator = cpb.create();
         }
         return props_CustomOperator;
       case LanguageConceptSwitch.CustomOperatorDeclaration:
         if (props_CustomOperatorDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CustomOperatorDeclaration = cpb.create();
         }
         return props_CustomOperatorDeclaration;
       case LanguageConceptSwitch.CustomOperatorUsage:
         if (props_CustomOperatorUsage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CustomOperatorUsage");
           props_CustomOperatorUsage = cpb.create();
         }
         return props_CustomOperatorUsage;
       case LanguageConceptSwitch.LeftOperand:
         if (props_LeftOperand == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_LeftOperand = cpb.create();
         }
         return props_LeftOperand;
@@ -70,18 +76,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.OverloadedBinaryOperator:
         if (props_OverloadedBinaryOperator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OverloadedBinaryOperator");
           props_OverloadedBinaryOperator = cpb.create();
         }
         return props_OverloadedBinaryOperator;
       case LanguageConceptSwitch.OverloadedOperatorContainer:
         if (props_OverloadedOperatorContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_OverloadedOperatorContainer = cpb.create();
         }
         return props_OverloadedOperatorContainer;
       case LanguageConceptSwitch.RightOperand:
         if (props_RightOperand == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("right");
           props_RightOperand = cpb.create();
         }
         return props_RightOperand;

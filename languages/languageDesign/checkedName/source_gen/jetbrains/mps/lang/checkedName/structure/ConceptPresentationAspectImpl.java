@@ -28,12 +28,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PropertyRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("property reference");
+          cpb.rawPresentation("property/<node>,<role>/");
           props_PropertyRefExpression = cpb.create();
         }
         return props_PropertyRefExpression;
       case LanguageConceptSwitch.PropertyRefType:
         if (props_PropertyRefType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("propRef");
           props_PropertyRefType = cpb.create();
         }
         return props_PropertyRefType;

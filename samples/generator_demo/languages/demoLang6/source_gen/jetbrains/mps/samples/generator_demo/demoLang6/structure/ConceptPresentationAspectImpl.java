@@ -20,12 +20,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Button:
         if (props_Button == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Button = cpb.create();
         }
         return props_Button;
       case LanguageConceptSwitch.Label:
         if (props_Label == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Label = cpb.create();
         }
         return props_Label;

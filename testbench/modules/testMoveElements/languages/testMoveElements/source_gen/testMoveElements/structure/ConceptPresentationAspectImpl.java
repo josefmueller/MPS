@@ -21,18 +21,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.DummyBlock:
         if (props_DummyBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("dummy");
           props_DummyBlock = cpb.create();
         }
         return props_DummyBlock;
       case LanguageConceptSwitch.ManyStatements:
         if (props_ManyStatements == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ManyStatements");
           props_ManyStatements = cpb.create();
         }
         return props_ManyStatements;
       case LanguageConceptSwitch.ManyStatementsContainer:
         if (props_ManyStatementsContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ManyStatementsContainer");
           props_ManyStatementsContainer = cpb.create();
         }
         return props_ManyStatementsContainer;

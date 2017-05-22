@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.CheckedDotExpression:
         if (props_CheckedDotExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CheckedDotExpression");
           props_CheckedDotExpression = cpb.create();
         }
         return props_CheckedDotExpression;

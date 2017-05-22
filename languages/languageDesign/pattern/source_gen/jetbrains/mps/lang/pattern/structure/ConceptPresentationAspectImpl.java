@@ -38,6 +38,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ActionAsPattern:
         if (props_ActionAsPattern == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ActionAsPattern = cpb.create();
         }
         return props_ActionAsPattern;
@@ -50,24 +51,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AsPattern:
         if (props_AsPattern == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_AsPattern = cpb.create();
         }
         return props_AsPattern;
       case LanguageConceptSwitch.GeneratorInternal_ChildDescriptor:
         if (props_GeneratorInternal_ChildDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_ChildDescriptor");
           props_GeneratorInternal_ChildDescriptor = cpb.create();
         }
         return props_GeneratorInternal_ChildDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_PropertyDescriptor:
         if (props_GeneratorInternal_PropertyDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_PropertyDescriptor");
           props_GeneratorInternal_PropertyDescriptor = cpb.create();
         }
         return props_GeneratorInternal_PropertyDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_ReferenceDescriptor:
         if (props_GeneratorInternal_ReferenceDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("GeneratorInternal_ReferenceDescriptor");
           props_GeneratorInternal_ReferenceDescriptor = cpb.create();
         }
         return props_GeneratorInternal_ReferenceDescriptor;
@@ -75,12 +80,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InsertAfterPosition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("after");
+          cpb.rawPresentation("after");
           props_InsertAfterPosition = cpb.create();
         }
         return props_InsertAfterPosition;
       case LanguageConceptSwitch.InsertBeforePosition:
         if (props_InsertBeforePosition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("before");
           props_InsertBeforePosition = cpb.create();
         }
         return props_InsertBeforePosition;
@@ -93,6 +100,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.LinkPatternVariableDeclaration:
         if (props_LinkPatternVariableDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_LinkPatternVariableDeclaration = cpb.create();
         }
         return props_LinkPatternVariableDeclaration;
@@ -100,24 +108,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ListPattern == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("list pattern");
+          cpb.presentationByName();
           props_ListPattern = cpb.create();
         }
         return props_ListPattern;
       case LanguageConceptSwitch.OrPattern:
         if (props_OrPattern == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("[|]");
           props_OrPattern = cpb.create();
         }
         return props_OrPattern;
       case LanguageConceptSwitch.OrPatternClause:
         if (props_OrPatternClause == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OrPatternClause");
           props_OrPatternClause = cpb.create();
         }
         return props_OrPatternClause;
       case LanguageConceptSwitch.OrPatternVariableReference:
         if (props_OrPatternVariableReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("OrPatternVariableReference");
           props_OrPatternVariableReference = cpb.create();
         }
         return props_OrPatternVariableReference;
@@ -131,12 +143,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PatternExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L);
           cpb.deprecateAggregation(0x108a9cb4792L, "patternNode");
+          cpb.rawPresentation(">pattern<");
           props_PatternExpression = cpb.create();
         }
         return props_PatternExpression;
       case LanguageConceptSwitch.PatternVariableDeclaration:
         if (props_PatternVariableDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PatternVariableDeclaration = cpb.create();
         }
         return props_PatternVariableDeclaration;
@@ -144,18 +158,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PatternVariableReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("pattern variable reference");
+          cpb.rawPresentation("PatternVariableReference");
           props_PatternVariableReference = cpb.create();
         }
         return props_PatternVariableReference;
       case LanguageConceptSwitch.PropertyPatternVariableDeclaration:
         if (props_PropertyPatternVariableDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PropertyPatternVariableDeclaration = cpb.create();
         }
         return props_PropertyPatternVariableDeclaration;
       case LanguageConceptSwitch.WildcardPattern:
         if (props_WildcardPattern == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_");
           props_WildcardPattern = cpb.create();
         }
         return props_WildcardPattern;

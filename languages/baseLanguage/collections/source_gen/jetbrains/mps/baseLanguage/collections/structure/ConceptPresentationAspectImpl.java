@@ -227,6 +227,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AddAllElementsOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("add all elements");
+          cpb.rawPresentation("addAll");
           props_AddAllElementsOperation = cpb.create();
         }
         return props_AddAllElementsOperation;
@@ -235,6 +236,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("add all elements");
+          cpb.rawPresentation("addAll");
           props_AddAllSetElementsOperation = cpb.create();
         }
         return props_AddAllSetElementsOperation;
@@ -242,6 +244,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AddElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("add an element");
+          cpb.rawPresentation("add");
           props_AddElementOperation = cpb.create();
         }
         return props_AddElementOperation;
@@ -249,6 +252,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AddFirstElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("add element as first");
+          cpb.rawPresentation("addFirst");
           props_AddFirstElementOperation = cpb.create();
         }
         return props_AddFirstElementOperation;
@@ -256,6 +260,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AddLastElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("add element as last");
+          cpb.rawPresentation("addLast");
           props_AddLastElementOperation = cpb.create();
         }
         return props_AddLastElementOperation;
@@ -264,6 +269,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("add an element");
+          cpb.rawPresentation("add");
           props_AddSetElementOperation = cpb.create();
         }
         return props_AddSetElementOperation;
@@ -271,6 +277,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AllConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("all elements");
+          cpb.rawPresentation("ALL");
           props_AllConstant = cpb.create();
         }
         return props_AllConstant;
@@ -278,6 +285,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AllOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("check if all elements match the condition");
+          cpb.rawPresentation("all");
           props_AllOperation = cpb.create();
         }
         return props_AllOperation;
@@ -285,6 +293,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AlsoSortOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("sort by secondary key");
+          cpb.rawPresentation("alsoSortBy");
           props_AlsoSortOperation = cpb.create();
         }
         return props_AlsoSortOperation;
@@ -292,12 +301,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AnyOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("check if there are any elements matching the condition");
+          cpb.rawPresentation("any");
           props_AnyOperation = cpb.create();
         }
         return props_AnyOperation;
       case LanguageConceptSwitch.AsSequenceOperation:
         if (props_AsSequenceOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("asSequence");
           props_AsSequenceOperation = cpb.create();
         }
         return props_AsSequenceOperation;
@@ -305,6 +316,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AsSynchronizedOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("synchronized collection");
+          cpb.rawPresentation("asSynchronized");
           props_AsSynchronizedOperation = cpb.create();
         }
         return props_AsSynchronizedOperation;
@@ -312,6 +324,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AsUnmodifiableOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("unmodifiable collection");
+          cpb.rawPresentation("asUnmodifiable");
           props_AsUnmodifiableOperation = cpb.create();
         }
         return props_AsUnmodifiableOperation;
@@ -331,6 +344,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ClearAllElementsOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("clear all elements");
+          cpb.rawPresentation("clear");
           props_ClearAllElementsOperation = cpb.create();
         }
         return props_ClearAllElementsOperation;
@@ -338,6 +352,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ClearSetOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("clear all elements");
+          cpb.rawPresentation("clear");
           props_ClearSetOperation = cpb.create();
         }
         return props_ClearSetOperation;
@@ -345,6 +360,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CollectionType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("abstract collection type");
+          cpb.rawPresentation("collection");
           props_CollectionType = cpb.create();
         }
         return props_CollectionType;
@@ -352,6 +368,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ComparatorSortOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("sort using comparator");
+          cpb.rawPresentation("sort");
           props_ComparatorSortOperation = cpb.create();
         }
         return props_ComparatorSortOperation;
@@ -359,12 +376,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConcatOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("produce a sequence concatenation");
+          cpb.rawPresentation("concat");
           props_ConcatOperation = cpb.create();
         }
         return props_ConcatOperation;
       case LanguageConceptSwitch.ContainerIteratorType:
         if (props_ContainerIteratorType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("modifying_iterator");
           props_ContainerIteratorType = cpb.create();
         }
         return props_ContainerIteratorType;
@@ -372,12 +391,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ContainsAllOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("test if sequence contains all element");
+          cpb.rawPresentation("containsAll");
           props_ContainsAllOperation = cpb.create();
         }
         return props_ContainsAllOperation;
       case LanguageConceptSwitch.ContainsKeyOperation:
         if (props_ContainsKeyOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("containsKey");
           props_ContainsKeyOperation = cpb.create();
         }
         return props_ContainsKeyOperation;
@@ -385,36 +406,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ContainsOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("test if sequence contains an element");
+          cpb.rawPresentation("contains");
           props_ContainsOperation = cpb.create();
         }
         return props_ContainsOperation;
       case LanguageConceptSwitch.ContainsValueOperation:
         if (props_ContainsValueOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("containsValue");
           props_ContainsValueOperation = cpb.create();
         }
         return props_ContainsValueOperation;
       case LanguageConceptSwitch.CustomContainerCreator:
         if (props_CustomContainerCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CustomContainerCreator");
           props_CustomContainerCreator = cpb.create();
         }
         return props_CustomContainerCreator;
       case LanguageConceptSwitch.CustomContainerDeclaration:
         if (props_CustomContainerDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CustomContainerDeclaration = cpb.create();
         }
         return props_CustomContainerDeclaration;
       case LanguageConceptSwitch.CustomContainers:
         if (props_CustomContainers == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_CustomContainers = cpb.create();
         }
         return props_CustomContainers;
       case LanguageConceptSwitch.CustomMapCreator:
         if (props_CustomMapCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CustomMapCreator");
           props_CustomMapCreator = cpb.create();
         }
         return props_CustomMapCreator;
@@ -422,12 +449,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CutOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("exclude elements from the end");
+          cpb.rawPresentation("cut");
           props_CutOperation = cpb.create();
         }
         return props_CutOperation;
       case LanguageConceptSwitch.DequeType:
         if (props_DequeType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("deque");
           props_DequeType = cpb.create();
         }
         return props_DequeType;
@@ -435,6 +464,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DisjunctOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("produce an exclusive disjunction");
+          cpb.rawPresentation("disjunction");
           props_DisjunctOperation = cpb.create();
         }
         return props_DisjunctOperation;
@@ -442,18 +472,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DistinctOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("produce sequence with unique elements");
+          cpb.rawPresentation("distinct");
           props_DistinctOperation = cpb.create();
         }
         return props_DistinctOperation;
       case LanguageConceptSwitch.DowncastExpression:
         if (props_DowncastExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("downcast");
           props_DowncastExpression = cpb.create();
         }
         return props_DowncastExpression;
       case LanguageConceptSwitch.EnumeratorType:
         if (props_EnumeratorType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("enumerator");
           props_EnumeratorType = cpb.create();
         }
         return props_EnumeratorType;
@@ -461,6 +494,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExcludeOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("subtract a sequence");
+          cpb.rawPresentation("except");
           props_ExcludeOperation = cpb.create();
         }
         return props_ExcludeOperation;
@@ -468,6 +502,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_FindFirstOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("find first element that matches");
+          cpb.rawPresentation("findFirst");
           props_FindFirstOperation = cpb.create();
         }
         return props_FindFirstOperation;
@@ -475,6 +510,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_FindLastOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("find last element that matches");
+          cpb.rawPresentation("findLast");
           props_FindLastOperation = cpb.create();
         }
         return props_FindLastOperation;
@@ -482,6 +518,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_FoldLeftOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("perform left folding");
+          cpb.rawPresentation("foldLeft");
           props_FoldLeftOperation = cpb.create();
         }
         return props_FoldLeftOperation;
@@ -489,6 +526,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_FoldRightOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("perform right folding");
+          cpb.rawPresentation("foldRight");
           props_FoldRightOperation = cpb.create();
         }
         return props_FoldRightOperation;
@@ -496,25 +534,29 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ForEachStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("foreach <e> in <sequence>");
+          cpb.rawPresentation("foreach");
           props_ForEachStatement = cpb.create();
         }
         return props_ForEachStatement;
       case LanguageConceptSwitch.ForEachVariable:
         if (props_ForEachVariable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a74b0qg);
+          cpb.presentationByName();
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a74b0qg);
           props_ForEachVariable = cpb.create();
         }
         return props_ForEachVariable;
       case LanguageConceptSwitch.ForEachVariableReference:
         if (props_ForEachVariableReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ForEachVariableReference");
           props_ForEachVariableReference = cpb.create();
         }
         return props_ForEachVariableReference;
       case LanguageConceptSwitch.GetCurrentOperation:
         if (props_GetCurrentOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("current");
           props_GetCurrentOperation = cpb.create();
         }
         return props_GetCurrentOperation;
@@ -522,6 +564,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GetElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("get element by index");
+          cpb.rawPresentation("get");
           props_GetElementOperation = cpb.create();
         }
         return props_GetElementOperation;
@@ -529,6 +572,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GetEnumeratorOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("get the enumerator");
+          cpb.rawPresentation("enumerator");
           props_GetEnumeratorOperation = cpb.create();
         }
         return props_GetEnumeratorOperation;
@@ -536,6 +580,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GetFirstOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("get the first element");
+          cpb.rawPresentation("first");
           props_GetFirstOperation = cpb.create();
         }
         return props_GetFirstOperation;
@@ -543,6 +588,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GetIndexOfOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("get the index of an element");
+          cpb.rawPresentation("indexOf");
           props_GetIndexOfOperation = cpb.create();
         }
         return props_GetIndexOfOperation;
@@ -550,12 +596,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GetIteratorOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("get the iterator");
+          cpb.rawPresentation("iterator");
           props_GetIteratorOperation = cpb.create();
         }
         return props_GetIteratorOperation;
       case LanguageConceptSwitch.GetKeysOperation:
         if (props_GetKeysOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("keys");
           props_GetKeysOperation = cpb.create();
         }
         return props_GetKeysOperation;
@@ -563,6 +611,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GetLastIndexOfOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("get the index of an element");
+          cpb.rawPresentation("lastIndexOf");
           props_GetLastIndexOfOperation = cpb.create();
         }
         return props_GetLastIndexOfOperation;
@@ -570,12 +619,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GetLastOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("get the last element");
+          cpb.rawPresentation("last");
           props_GetLastOperation = cpb.create();
         }
         return props_GetLastOperation;
       case LanguageConceptSwitch.GetNextOperation:
         if (props_GetNextOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("next");
           props_GetNextOperation = cpb.create();
         }
         return props_GetNextOperation;
@@ -583,24 +634,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_GetSizeOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("get the sequence size");
+          cpb.rawPresentation("size");
           props_GetSizeOperation = cpb.create();
         }
         return props_GetSizeOperation;
       case LanguageConceptSwitch.GetValuesOperation:
         if (props_GetValuesOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("values");
           props_GetValuesOperation = cpb.create();
         }
         return props_GetValuesOperation;
       case LanguageConceptSwitch.HasNextOperation:
         if (props_HasNextOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("hasNext");
           props_HasNextOperation = cpb.create();
         }
         return props_HasNextOperation;
       case LanguageConceptSwitch.HashMapCreator:
         if (props_HashMapCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("hashmap");
           props_HashMapCreator = cpb.create();
         }
         return props_HashMapCreator;
@@ -608,6 +663,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_HashSetCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create new hashset");
+          cpb.rawPresentation("hashset");
           props_HashSetCreator = cpb.create();
         }
         return props_HashSetCreator;
@@ -615,18 +671,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_HeadListOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("head list");
+          cpb.rawPresentation("headList");
           props_HeadListOperation = cpb.create();
         }
         return props_HeadListOperation;
       case LanguageConceptSwitch.HeadMapOperation:
         if (props_HeadMapOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("headMap");
           props_HeadMapOperation = cpb.create();
         }
         return props_HeadMapOperation;
       case LanguageConceptSwitch.HeadSetOperation:
         if (props_HeadSetOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("headSet");
           props_HeadSetOperation = cpb.create();
         }
         return props_HeadSetOperation;
@@ -706,6 +765,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InsertElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("insert element at an index");
+          cpb.rawPresentation("insert");
           props_InsertElementOperation = cpb.create();
         }
         return props_InsertElementOperation;
@@ -719,6 +779,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IntersectOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("produce an intersection");
+          cpb.rawPresentation("intersect");
           props_IntersectOperation = cpb.create();
         }
         return props_IntersectOperation;
@@ -726,6 +787,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IsEmptyOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("test if sequence is empty");
+          cpb.rawPresentation("isEmpty");
           props_IsEmptyOperation = cpb.create();
         }
         return props_IsEmptyOperation;
@@ -733,30 +795,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IsNotEmptyOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("test if sequence is not empty");
+          cpb.rawPresentation("isNotEmpty");
           props_IsNotEmptyOperation = cpb.create();
         }
         return props_IsNotEmptyOperation;
       case LanguageConceptSwitch.IteratorType:
         if (props_IteratorType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("iterator");
           props_IteratorType = cpb.create();
         }
         return props_IteratorType;
       case LanguageConceptSwitch.JoinOperation:
         if (props_JoinOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("join");
           props_JoinOperation = cpb.create();
         }
         return props_JoinOperation;
       case LanguageConceptSwitch.KeyAccessOperation:
         if (props_KeyAccessOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("key");
           props_KeyAccessOperation = cpb.create();
         }
         return props_KeyAccessOperation;
       case LanguageConceptSwitch.LinkedHashMapCreator:
         if (props_LinkedHashMapCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("linked_hashmap");
           props_LinkedHashMapCreator = cpb.create();
         }
         return props_LinkedHashMapCreator;
@@ -764,6 +831,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LinkedHashSetCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create new linked hashset");
+          cpb.rawPresentation("linked_hashset");
           props_LinkedHashSetCreator = cpb.create();
         }
         return props_LinkedHashSetCreator;
@@ -771,12 +839,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LinkedListCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create new linked list");
+          cpb.rawPresentation("linkedlist");
           props_LinkedListCreator = cpb.create();
         }
         return props_LinkedListCreator;
       case LanguageConceptSwitch.LinkedListType:
         if (props_LinkedListType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("linkedlist");
           props_LinkedListType = cpb.create();
         }
         return props_LinkedListType;
@@ -784,48 +854,56 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ListCreatorWithInit == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create new array list");
+          cpb.rawPresentation("arraylist");
           props_ListCreatorWithInit = cpb.create();
         }
         return props_ListCreatorWithInit;
       case LanguageConceptSwitch.ListElementAccessExpression:
         if (props_ListElementAccessExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ListElementAccessExpression");
           props_ListElementAccessExpression = cpb.create();
         }
         return props_ListElementAccessExpression;
       case LanguageConceptSwitch.ListType:
         if (props_ListType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("list");
           props_ListType = cpb.create();
         }
         return props_ListType;
       case LanguageConceptSwitch.MapAsSequenceVarRef:
         if (props_MapAsSequenceVarRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MapAsSequenceVarRef");
           props_MapAsSequenceVarRef = cpb.create();
         }
         return props_MapAsSequenceVarRef;
       case LanguageConceptSwitch.MapClearOperation:
         if (props_MapClearOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("clear");
           props_MapClearOperation = cpb.create();
         }
         return props_MapClearOperation;
       case LanguageConceptSwitch.MapElement:
         if (props_MapElement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MapElement");
           props_MapElement = cpb.create();
         }
         return props_MapElement;
       case LanguageConceptSwitch.MapEntry:
         if (props_MapEntry == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MapEntry");
           props_MapEntry = cpb.create();
         }
         return props_MapEntry;
       case LanguageConceptSwitch.MapInitializer:
         if (props_MapInitializer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MapInitializer");
           props_MapInitializer = cpb.create();
         }
         return props_MapInitializer;
@@ -838,42 +916,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.MapOperationExpression:
         if (props_MapOperationExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MapOperationExpression");
           props_MapOperationExpression = cpb.create();
         }
         return props_MapOperationExpression;
       case LanguageConceptSwitch.MapRemoveOperation:
         if (props_MapRemoveOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("removeKey");
           props_MapRemoveOperation = cpb.create();
         }
         return props_MapRemoveOperation;
       case LanguageConceptSwitch.MapType:
         if (props_MapType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("map");
           props_MapType = cpb.create();
         }
         return props_MapType;
       case LanguageConceptSwitch.MappingType:
         if (props_MappingType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("mapping");
           props_MappingType = cpb.create();
         }
         return props_MappingType;
       case LanguageConceptSwitch.MappingsSetOperation:
         if (props_MappingsSetOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("mappings");
           props_MappingsSetOperation = cpb.create();
         }
         return props_MappingsSetOperation;
       case LanguageConceptSwitch.MoveNextOperation:
         if (props_MoveNextOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("moveNext");
           props_MoveNextOperation = cpb.create();
         }
         return props_MoveNextOperation;
       case LanguageConceptSwitch.MultiForEachPair:
         if (props_MultiForEachPair == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MultiForEachPair");
           props_MultiForEachPair = cpb.create();
         }
         return props_MultiForEachPair;
@@ -881,18 +966,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MultiForEachStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("foreach loop over multiple variables");
+          cpb.rawPresentation("foreach");
           props_MultiForEachStatement = cpb.create();
         }
         return props_MultiForEachStatement;
       case LanguageConceptSwitch.MultiForEachVariable:
         if (props_MultiForEachVariable == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_MultiForEachVariable = cpb.create();
         }
         return props_MultiForEachVariable;
       case LanguageConceptSwitch.MultiForEachVariableReference:
         if (props_MultiForEachVariableReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MultiForEachVariableReference");
           props_MultiForEachVariableReference = cpb.create();
         }
         return props_MultiForEachVariableReference;
@@ -906,6 +994,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_OfTypeOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("select elements of the specified type");
+          cpb.rawPresentation("ofType");
           props_OfTypeOperation = cpb.create();
         }
         return props_OfTypeOperation;
@@ -913,18 +1002,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PageOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("select a subsequence");
+          cpb.rawPresentation("page");
           props_PageOperation = cpb.create();
         }
         return props_PageOperation;
       case LanguageConceptSwitch.PeekOperation:
         if (props_PeekOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("peek");
           props_PeekOperation = cpb.create();
         }
         return props_PeekOperation;
       case LanguageConceptSwitch.PopOperation:
         if (props_PopOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("pop");
           props_PopOperation = cpb.create();
         }
         return props_PopOperation;
@@ -932,24 +1024,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PriorityQueueCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create new priority queue");
+          cpb.rawPresentation("priority_queue");
           props_PriorityQueueCreator = cpb.create();
         }
         return props_PriorityQueueCreator;
       case LanguageConceptSwitch.PushOperation:
         if (props_PushOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("push");
           props_PushOperation = cpb.create();
         }
         return props_PushOperation;
       case LanguageConceptSwitch.PutAllOperation:
         if (props_PutAllOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("putAll");
           props_PutAllOperation = cpb.create();
         }
         return props_PutAllOperation;
       case LanguageConceptSwitch.QueueType:
         if (props_QueueType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("queue");
           props_QueueType = cpb.create();
         }
         return props_QueueType;
@@ -957,6 +1053,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ReduceLeftOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("perform left reduction");
+          cpb.rawPresentation("reduceLeft");
           props_ReduceLeftOperation = cpb.create();
         }
         return props_ReduceLeftOperation;
@@ -964,6 +1061,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ReduceRightOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("perform right reduction");
+          cpb.rawPresentation("reduceRight");
           props_ReduceRightOperation = cpb.create();
         }
         return props_ReduceRightOperation;
@@ -971,6 +1069,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_RemoveAllElementsOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("remove all elements");
+          cpb.rawPresentation("removeAll");
           props_RemoveAllElementsOperation = cpb.create();
         }
         return props_RemoveAllElementsOperation;
@@ -979,6 +1078,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("remove all elements");
+          cpb.rawPresentation("removeAll");
           props_RemoveAllSetElementsOperation = cpb.create();
         }
         return props_RemoveAllSetElementsOperation;
@@ -986,6 +1086,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_RemoveAtElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("remove element at an index");
+          cpb.rawPresentation("removeAt");
           props_RemoveAtElementOperation = cpb.create();
         }
         return props_RemoveAtElementOperation;
@@ -993,6 +1094,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_RemoveElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("remove an element");
+          cpb.rawPresentation("remove");
           props_RemoveElementOperation = cpb.create();
         }
         return props_RemoveElementOperation;
@@ -1000,6 +1102,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_RemoveFirstElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("remove first element");
+          cpb.rawPresentation("removeFirst");
           props_RemoveFirstElementOperation = cpb.create();
         }
         return props_RemoveFirstElementOperation;
@@ -1007,12 +1110,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_RemoveLastElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("remove last element");
+          cpb.rawPresentation("removeLast");
           props_RemoveLastElementOperation = cpb.create();
         }
         return props_RemoveLastElementOperation;
       case LanguageConceptSwitch.RemoveOperation:
         if (props_RemoveOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("remove");
           props_RemoveOperation = cpb.create();
         }
         return props_RemoveOperation;
@@ -1021,6 +1126,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("remove an element");
+          cpb.rawPresentation("remove");
           props_RemoveSetElementOperation = cpb.create();
         }
         return props_RemoveSetElementOperation;
@@ -1028,6 +1134,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_RemoveWhereOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("filter out the matched elements");
+          cpb.rawPresentation("removeWhere");
           props_RemoveWhereOperation = cpb.create();
         }
         return props_RemoveWhereOperation;
@@ -1035,6 +1142,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ReverseOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create a list with elements in reverse order");
+          cpb.rawPresentation("reverse");
           props_ReverseOperation = cpb.create();
         }
         return props_ReverseOperation;
@@ -1042,6 +1150,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SelectNotNullOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("exclude null elements");
+          cpb.rawPresentation("withoutNull");
           props_SelectNotNullOperation = cpb.create();
         }
         return props_SelectNotNullOperation;
@@ -1049,6 +1158,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SelectOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("transform each element to another type");
+          cpb.rawPresentation("select");
           props_SelectOperation = cpb.create();
         }
         return props_SelectOperation;
@@ -1056,6 +1166,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SequenceCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create new sequence");
+          cpb.rawPresentation("sequence");
           props_SequenceCreator = cpb.create();
         }
         return props_SequenceCreator;
@@ -1068,6 +1179,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SequenceType:
         if (props_SequenceType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("sequence");
           props_SequenceType = cpb.create();
         }
         return props_SequenceType;
@@ -1075,12 +1187,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SetElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("set an element at an index");
+          cpb.rawPresentation("set");
           props_SetElementOperation = cpb.create();
         }
         return props_SetElementOperation;
       case LanguageConceptSwitch.SetType:
         if (props_SetType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("set");
           props_SetType = cpb.create();
         }
         return props_SetType;
@@ -1094,6 +1208,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SingletonSequenceCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create singleton sequence");
+          cpb.rawPresentation("singleton");
           props_SingletonSequenceCreator = cpb.create();
         }
         return props_SingletonSequenceCreator;
@@ -1101,6 +1216,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SkipOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("exclude elements from the beginning");
+          cpb.rawPresentation("skip");
           props_SkipOperation = cpb.create();
         }
         return props_SkipOperation;
@@ -1108,6 +1224,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SkipStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("skip to next element in input sequence");
+          cpb.rawPresentation("skip");
           props_SkipStatement = cpb.create();
         }
         return props_SkipStatement;
@@ -1115,12 +1232,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SmartClosureParameterDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("smart closure parameter");
+          cpb.presentationByName();
           props_SmartClosureParameterDeclaration = cpb.create();
         }
         return props_SmartClosureParameterDeclaration;
       case LanguageConceptSwitch.SortDirection:
         if (props_SortDirection == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SortDirection");
           props_SortDirection = cpb.create();
         }
         return props_SortDirection;
@@ -1128,6 +1247,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SortOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("sort by key");
+          cpb.rawPresentation("sortBy");
           props_SortOperation = cpb.create();
         }
         return props_SortOperation;
@@ -1140,6 +1260,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SortedMapType:
         if (props_SortedMapType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("sorted_map");
           props_SortedMapType = cpb.create();
         }
         return props_SortedMapType;
@@ -1152,12 +1273,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SortedSetType:
         if (props_SortedSetType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("sorted_set");
           props_SortedSetType = cpb.create();
         }
         return props_SortedSetType;
       case LanguageConceptSwitch.StackType:
         if (props_StackType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("stack");
           props_StackType = cpb.create();
         }
         return props_StackType;
@@ -1165,6 +1288,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_StopStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("stop iterating input sequence");
+          cpb.rawPresentation("stop");
           props_StopStatement = cpb.create();
         }
         return props_StopStatement;
@@ -1172,18 +1296,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SubListOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("sub list");
+          cpb.rawPresentation("subList");
           props_SubListOperation = cpb.create();
         }
         return props_SubListOperation;
       case LanguageConceptSwitch.SubMapOperation:
         if (props_SubMapOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("subMap");
           props_SubMapOperation = cpb.create();
         }
         return props_SubMapOperation;
       case LanguageConceptSwitch.SubSetOperation:
         if (props_SubSetOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("subSet");
           props_SubSetOperation = cpb.create();
         }
         return props_SubSetOperation;
@@ -1191,12 +1318,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TailListOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("tail list");
+          cpb.rawPresentation("tailList");
           props_TailListOperation = cpb.create();
         }
         return props_TailListOperation;
       case LanguageConceptSwitch.TailMapOperation:
         if (props_TailMapOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("tailMap");
           props_TailMapOperation = cpb.create();
         }
         return props_TailMapOperation;
@@ -1204,12 +1333,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TailOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("include elements at the end");
+          cpb.rawPresentation("tail");
           props_TailOperation = cpb.create();
         }
         return props_TailOperation;
       case LanguageConceptSwitch.TailSetOperation:
         if (props_TailSetOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("tailSet");
           props_TailSetOperation = cpb.create();
         }
         return props_TailSetOperation;
@@ -1217,6 +1348,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TakeOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("include elements at the beginning");
+          cpb.rawPresentation("take");
           props_TakeOperation = cpb.create();
         }
         return props_TakeOperation;
@@ -1224,6 +1356,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TestAddElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("add an element and test the outcome");
+          cpb.rawPresentation("testAdd");
           props_TestAddElementOperation = cpb.create();
         }
         return props_TestAddElementOperation;
@@ -1231,6 +1364,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TestRemoveElementOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("remove an element and test the outcome");
+          cpb.rawPresentation("testRemove");
           props_TestRemoveElementOperation = cpb.create();
         }
         return props_TestRemoveElementOperation;
@@ -1238,6 +1372,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ToArrayOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("convert to an array");
+          cpb.rawPresentation("toArray");
           props_ToArrayOperation = cpb.create();
         }
         return props_ToArrayOperation;
@@ -1245,6 +1380,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ToIteratorOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("convert to an iterator");
+          cpb.rawPresentation("iterator");
           props_ToIteratorOperation = cpb.create();
         }
         return props_ToIteratorOperation;
@@ -1252,6 +1388,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ToListOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("convert to a list");
+          cpb.rawPresentation("toList");
           props_ToListOperation = cpb.create();
         }
         return props_ToListOperation;
@@ -1259,12 +1396,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TranslateOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("transform each element to a sequence");
+          cpb.rawPresentation("selectMany");
           props_TranslateOperation = cpb.create();
         }
         return props_TranslateOperation;
       case LanguageConceptSwitch.TreeMapCreator:
         if (props_TreeMapCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("treemap");
           props_TreeMapCreator = cpb.create();
         }
         return props_TreeMapCreator;
@@ -1272,6 +1411,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TreeSetCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("create new treeset");
+          cpb.rawPresentation("treeset");
           props_TreeSetCreator = cpb.create();
         }
         return props_TreeSetCreator;
@@ -1279,12 +1419,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_UnionOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("produce an union");
+          cpb.rawPresentation("union");
           props_UnionOperation = cpb.create();
         }
         return props_UnionOperation;
       case LanguageConceptSwitch.ValueAccessOperation:
         if (props_ValueAccessOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("value");
           props_ValueAccessOperation = cpb.create();
         }
         return props_ValueAccessOperation;
@@ -1292,6 +1434,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_VisitAllOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("execute for each element");
+          cpb.rawPresentation("forEach");
           props_VisitAllOperation = cpb.create();
         }
         return props_VisitAllOperation;
@@ -1299,6 +1442,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_WhereOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("include only matched element");
+          cpb.rawPresentation("where");
           props_WhereOperation = cpb.create();
         }
         return props_WhereOperation;

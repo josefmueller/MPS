@@ -19,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.StringSwitchStatement:
         if (props_StringSwitchStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("switch");
           props_StringSwitchStatement = cpb.create();
         }
         return props_StringSwitchStatement;

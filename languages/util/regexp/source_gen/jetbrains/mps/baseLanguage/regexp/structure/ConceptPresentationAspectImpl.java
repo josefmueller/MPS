@@ -80,6 +80,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_AtLeastNTimesRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("at least n times");
+          cpb.rawPresentation("{n,}");
           props_AtLeastNTimesRegexp = cpb.create();
         }
         return props_AtLeastNTimesRegexp;
@@ -93,6 +94,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CharacterSymbolClassPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("character");
+          cpb.rawPresentation("'");
           props_CharacterSymbolClassPart = cpb.create();
         }
         return props_CharacterSymbolClassPart;
@@ -100,24 +102,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_DotRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("dot regexp (any character)");
+          cpb.rawPresentation(".");
           props_DotRegexp = cpb.create();
         }
         return props_DotRegexp;
       case LanguageConceptSwitch.FindMatchExpression:
         if (props_FindMatchExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("=~");
           props_FindMatchExpression = cpb.create();
         }
         return props_FindMatchExpression;
       case LanguageConceptSwitch.FindMatchStatement:
         if (props_FindMatchStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("if (expr =~ regex) {");
           props_FindMatchStatement = cpb.create();
         }
         return props_FindMatchStatement;
       case LanguageConceptSwitch.ForEachMatchStatement:
         if (props_ForEachMatchStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("while (expr =~ regex) {");
           props_ForEachMatchStatement = cpb.create();
         }
         return props_ForEachMatchStatement;
@@ -125,12 +131,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_FromNToMTimesRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("at least n but not more than m times");
+          cpb.rawPresentation("{n,m}");
           props_FromNToMTimesRegexp = cpb.create();
         }
         return props_FromNToMTimesRegexp;
       case LanguageConceptSwitch.InlineRegexpExpression:
         if (props_InlineRegexpExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("/regexp/");
           props_InlineRegexpExpression = cpb.create();
         }
         return props_InlineRegexpExpression;
@@ -138,6 +146,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IntersectionSymbolClassPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("intersection of classes");
+          cpb.rawPresentation("&&");
           props_IntersectionSymbolClassPart = cpb.create();
         }
         return props_IntersectionSymbolClassPart;
@@ -145,6 +154,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IntervalSymbolClassPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("character range");
+          cpb.rawPresentation("-");
           props_IntervalSymbolClassPart = cpb.create();
         }
         return props_IntervalSymbolClassPart;
@@ -152,6 +162,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LazyPlusRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("one or more times, reluctant");
+          cpb.rawPresentation("+?");
           props_LazyPlusRegexp = cpb.create();
         }
         return props_LazyPlusRegexp;
@@ -159,6 +170,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LazyQuestionRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("once or not at all, reluctant");
+          cpb.rawPresentation("??");
           props_LazyQuestionRegexp = cpb.create();
         }
         return props_LazyQuestionRegexp;
@@ -166,6 +178,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LazyStarRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("zero or more times, reluctant");
+          cpb.rawPresentation("*?");
           props_LazyStarRegexp = cpb.create();
         }
         return props_LazyStarRegexp;
@@ -173,6 +186,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LineEndRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("line end");
+          cpb.rawPresentation("$");
           props_LineEndRegexp = cpb.create();
         }
         return props_LineEndRegexp;
@@ -180,12 +194,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_LineStartRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("line start");
+          cpb.rawPresentation("^");
           props_LineStartRegexp = cpb.create();
         }
         return props_LineStartRegexp;
       case LanguageConceptSwitch.LiteralReplacement:
         if (props_LiteralReplacement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("LiteralReplacement");
           props_LiteralReplacement = cpb.create();
         }
         return props_LiteralReplacement;
@@ -199,18 +215,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MatchParensRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("matching parens");
+          cpb.presentationByName();
           props_MatchParensRegexp = cpb.create();
         }
         return props_MatchParensRegexp;
       case LanguageConceptSwitch.MatchRegexpExpression:
         if (props_MatchRegexpExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("matches");
           props_MatchRegexpExpression = cpb.create();
         }
         return props_MatchRegexpExpression;
       case LanguageConceptSwitch.MatchRegexpOperation:
         if (props_MatchRegexpOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("matches");
           props_MatchRegexpOperation = cpb.create();
         }
         return props_MatchRegexpOperation;
@@ -218,24 +237,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MatchRegexpStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("match with regexp");
+          cpb.rawPresentation("if (expr matches regexp) {");
           props_MatchRegexpStatement = cpb.create();
         }
         return props_MatchRegexpStatement;
       case LanguageConceptSwitch.MatchVariableReference:
         if (props_MatchVariableReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MatchVariableReference");
           props_MatchVariableReference = cpb.create();
         }
         return props_MatchVariableReference;
       case LanguageConceptSwitch.MatchVariableReferenceRegexp:
         if (props_MatchVariableReferenceRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MatchVariableReferenceRegexp");
           props_MatchVariableReferenceRegexp = cpb.create();
         }
         return props_MatchVariableReferenceRegexp;
       case LanguageConceptSwitch.MatchVariableReferenceReplacement:
         if (props_MatchVariableReferenceReplacement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MatchVariableReferenceReplacement");
           props_MatchVariableReferenceReplacement = cpb.create();
         }
         return props_MatchVariableReferenceReplacement;
@@ -243,6 +266,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NTimesRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("exactly n times");
+          cpb.rawPresentation("{n}");
           props_NTimesRegexp = cpb.create();
         }
         return props_NTimesRegexp;
@@ -250,6 +274,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NegativeLookAheadRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("negative look ahead");
+          cpb.rawPresentation("(?!");
           props_NegativeLookAheadRegexp = cpb.create();
         }
         return props_NegativeLookAheadRegexp;
@@ -257,6 +282,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NegativeLookBehindRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("negative look behind");
+          cpb.rawPresentation("(?<!");
           props_NegativeLookBehindRegexp = cpb.create();
         }
         return props_NegativeLookBehindRegexp;
@@ -264,12 +290,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NegativeSymbolClassRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("negative symbol class");
+          cpb.rawPresentation("[^");
           props_NegativeSymbolClassRegexp = cpb.create();
         }
         return props_NegativeSymbolClassRegexp;
       case LanguageConceptSwitch.OrRegexp:
         if (props_OrRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("|");
           props_OrRegexp = cpb.create();
         }
         return props_OrRegexp;
@@ -277,6 +305,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ParensRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("parens");
+          cpb.rawPresentation("(");
           props_ParensRegexp = cpb.create();
         }
         return props_ParensRegexp;
@@ -284,12 +313,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PlusRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("one or more times");
+          cpb.rawPresentation("+");
           props_PlusRegexp = cpb.create();
         }
         return props_PlusRegexp;
       case LanguageConceptSwitch.PositiveLookAheadRegexp:
         if (props_PositiveLookAheadRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("(?=");
           props_PositiveLookAheadRegexp = cpb.create();
         }
         return props_PositiveLookAheadRegexp;
@@ -297,6 +328,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PositiveLookBehindRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("positive look behind");
+          cpb.rawPresentation("(?<=");
           props_PositiveLookBehindRegexp = cpb.create();
         }
         return props_PositiveLookBehindRegexp;
@@ -304,30 +336,35 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_PositiveSymbolClassRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("positive symbol class");
+          cpb.rawPresentation("[");
           props_PositiveSymbolClassRegexp = cpb.create();
         }
         return props_PositiveSymbolClassRegexp;
       case LanguageConceptSwitch.PredefinedSymbolClassDeclaration:
         if (props_PredefinedSymbolClassDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PredefinedSymbolClassDeclaration = cpb.create();
         }
         return props_PredefinedSymbolClassDeclaration;
       case LanguageConceptSwitch.PredefinedSymbolClassRegexp:
         if (props_PredefinedSymbolClassRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PredefinedSymbolClassRegexp");
           props_PredefinedSymbolClassRegexp = cpb.create();
         }
         return props_PredefinedSymbolClassRegexp;
       case LanguageConceptSwitch.PredefinedSymbolClassSymbolClassPart:
         if (props_PredefinedSymbolClassSymbolClassPart == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PredefinedSymbolClassSymbolClassPart");
           props_PredefinedSymbolClassSymbolClassPart = cpb.create();
         }
         return props_PredefinedSymbolClassSymbolClassPart;
       case LanguageConceptSwitch.PredefinedSymbolClasses:
         if (props_PredefinedSymbolClasses == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PredefinedSymbolClasses = cpb.create();
         }
         return props_PredefinedSymbolClasses;
@@ -335,6 +372,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_QuestionRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("once or not at all");
+          cpb.rawPresentation("?");
           props_QuestionRegexp = cpb.create();
         }
         return props_QuestionRegexp;
@@ -347,12 +385,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.RegexpDeclaration:
         if (props_RegexpDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_RegexpDeclaration = cpb.create();
         }
         return props_RegexpDeclaration;
       case LanguageConceptSwitch.RegexpDeclarationReferenceRegexp:
         if (props_RegexpDeclarationReferenceRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("RegexpDeclarationReferenceRegexp");
           props_RegexpDeclarationReferenceRegexp = cpb.create();
         }
         return props_RegexpDeclarationReferenceRegexp;
@@ -371,24 +411,28 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Regexps:
         if (props_Regexps == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_Regexps = cpb.create();
         }
         return props_Regexps;
       case LanguageConceptSwitch.ReplaceBlock:
         if (props_ReplaceBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ReplaceBlock");
           props_ReplaceBlock = cpb.create();
         }
         return props_ReplaceBlock;
       case LanguageConceptSwitch.ReplaceRegexpOperation:
         if (props_ReplaceRegexpOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("s/regexp/replacement/");
           props_ReplaceRegexpOperation = cpb.create();
         }
         return props_ReplaceRegexpOperation;
       case LanguageConceptSwitch.ReplaceWithRegexpExpression:
         if (props_ReplaceWithRegexpExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("replace with regexp");
           props_ReplaceWithRegexpExpression = cpb.create();
         }
         return props_ReplaceWithRegexpExpression;
@@ -396,6 +440,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ReplaceWithRegexpOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("replace with regexp");
+          cpb.rawPresentation("replace with");
           props_ReplaceWithRegexpOperation = cpb.create();
         }
         return props_ReplaceWithRegexpOperation;
@@ -408,6 +453,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SeqRegexp:
         if (props_SeqRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("seq");
           props_SeqRegexp = cpb.create();
         }
         return props_SeqRegexp;
@@ -415,6 +461,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SplitExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("split with regexp");
+          cpb.rawPresentation("split with");
           props_SplitExpression = cpb.create();
         }
         return props_SplitExpression;
@@ -422,6 +469,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SplitOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("split with regexp");
+          cpb.rawPresentation("split with");
           props_SplitOperation = cpb.create();
         }
         return props_SplitOperation;
@@ -429,12 +477,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_StarRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("zero or more times");
+          cpb.rawPresentation("*");
           props_StarRegexp = cpb.create();
         }
         return props_StarRegexp;
       case LanguageConceptSwitch.StringLiteralRegexp:
         if (props_StringLiteralRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("'");
           props_StringLiteralRegexp = cpb.create();
         }
         return props_StringLiteralRegexp;
@@ -465,6 +515,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.UnicodeCharacterRegexp:
         if (props_UnicodeCharacterRegexp == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("\\uhhhh");
           props_UnicodeCharacterRegexp = cpb.create();
         }
         return props_UnicodeCharacterRegexp;

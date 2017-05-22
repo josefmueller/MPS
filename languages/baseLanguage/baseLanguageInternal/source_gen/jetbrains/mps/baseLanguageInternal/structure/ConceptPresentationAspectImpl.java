@@ -44,42 +44,49 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ConstantValue:
         if (props_ConstantValue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("constant value");
           props_ConstantValue = cpb.create();
         }
         return props_ConstantValue;
       case LanguageConceptSwitch.ExtractStatementListExpression:
         if (props_ExtractStatementListExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("extract statements");
           props_ExtractStatementListExpression = cpb.create();
         }
         return props_ExtractStatementListExpression;
       case LanguageConceptSwitch.ExtractStatementListInnerExpression:
         if (props_ExtractStatementListInnerExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExtractStatementListInnerExpression");
           props_ExtractStatementListInnerExpression = cpb.create();
         }
         return props_ExtractStatementListInnerExpression;
       case LanguageConceptSwitch.ExtractStaticInnerClassConcept:
         if (props_ExtractStaticInnerClassConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ExtractStaticInnerClassConcept = cpb.create();
         }
         return props_ExtractStaticInnerClassConcept;
       case LanguageConceptSwitch.ExtractStaticInnerClassCreator:
         if (props_ExtractStaticInnerClassCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExtractStaticInnerClassCreator");
           props_ExtractStaticInnerClassCreator = cpb.create();
         }
         return props_ExtractStaticInnerClassCreator;
       case LanguageConceptSwitch.ExtractStaticInnerClassExpression:
         if (props_ExtractStaticInnerClassExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("extract static inner class");
           props_ExtractStaticInnerClassExpression = cpb.create();
         }
         return props_ExtractStaticInnerClassExpression;
       case LanguageConceptSwitch.ExtractStaticMethodExpression:
         if (props_ExtractStaticMethodExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("extract static method");
           props_ExtractStaticMethodExpression = cpb.create();
         }
         return props_ExtractStaticMethodExpression;
@@ -87,18 +94,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ExtractStaticMethod_CallExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("extract static method invocation");
+          cpb.rawPresentation("ExtractStaticMethod_CallExpression");
           props_ExtractStaticMethod_CallExpression = cpb.create();
         }
         return props_ExtractStaticMethod_CallExpression;
       case LanguageConceptSwitch.ExtractToConstantExpression:
         if (props_ExtractToConstantExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("extract to constant");
           props_ExtractToConstantExpression = cpb.create();
         }
         return props_ExtractToConstantExpression;
       case LanguageConceptSwitch.ExtractToConstantRefExpression:
         if (props_ExtractToConstantRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ExtractToConstantRefExpression");
           props_ExtractToConstantRefExpression = cpb.create();
         }
         return props_ExtractToConstantRefExpression;
@@ -106,12 +116,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InternalAnonymousClass == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("_anonymous class");
+          cpb.presentationByName();
           props_InternalAnonymousClass = cpb.create();
         }
         return props_InternalAnonymousClass;
       case LanguageConceptSwitch.InternalAnonymousClassCreator:
         if (props_InternalAnonymousClassCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_anonymous class");
           props_InternalAnonymousClassCreator = cpb.create();
         }
         return props_InternalAnonymousClassCreator;
@@ -119,6 +131,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InternalClassCreator == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("internal class creator");
+          cpb.rawPresentation("_class");
           props_InternalClassCreator = cpb.create();
         }
         return props_InternalClassCreator;
@@ -126,12 +139,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InternalClassExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("internal class expression");
+          cpb.rawPresentation("_<type>.class");
           props_InternalClassExpression = cpb.create();
         }
         return props_InternalClassExpression;
       case LanguageConceptSwitch.InternalClassifierType:
         if (props_InternalClassifierType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_classifier type");
           props_InternalClassifierType = cpb.create();
         }
         return props_InternalClassifierType;
@@ -139,18 +154,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InternalNewExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("internal new expression");
+          cpb.rawPresentation("_new");
           props_InternalNewExpression = cpb.create();
         }
         return props_InternalNewExpression;
       case LanguageConceptSwitch.InternalPartialFieldReference:
         if (props_InternalPartialFieldReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_field reference");
           props_InternalPartialFieldReference = cpb.create();
         }
         return props_InternalPartialFieldReference;
       case LanguageConceptSwitch.InternalPartialInstanceMethodCall:
         if (props_InternalPartialInstanceMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_method call");
           props_InternalPartialInstanceMethodCall = cpb.create();
         }
         return props_InternalPartialInstanceMethodCall;
@@ -158,6 +176,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InternalStaticFieldReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("internal static field reference");
+          cpb.rawPresentation("_static field reference");
           props_InternalStaticFieldReference = cpb.create();
         }
         return props_InternalStaticFieldReference;
@@ -165,18 +184,21 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InternalStaticMethodCall == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("internal static method call");
+          cpb.rawPresentation("_static method call");
           props_InternalStaticMethodCall = cpb.create();
         }
         return props_InternalStaticMethodCall;
       case LanguageConceptSwitch.InternalSuperMethodCallOperation:
         if (props_InternalSuperMethodCallOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_super method call");
           props_InternalSuperMethodCallOperation = cpb.create();
         }
         return props_InternalSuperMethodCallOperation;
       case LanguageConceptSwitch.InternalThisExpression:
         if (props_InternalThisExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_this");
           props_InternalThisExpression = cpb.create();
         }
         return props_InternalThisExpression;
@@ -184,6 +206,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InternalTypedStaticFieldReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("internal typed static field reference");
+          cpb.rawPresentation("_typed static field reference");
           props_InternalTypedStaticFieldReference = cpb.create();
         }
         return props_InternalTypedStaticFieldReference;
@@ -191,12 +214,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_InternalVariableReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("internal variable/parameter reference");
+          cpb.rawPresentation("_<variable reference>");
           props_InternalVariableReference = cpb.create();
         }
         return props_InternalVariableReference;
       case LanguageConceptSwitch.TypeHintExpression:
         if (props_TypeHintExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TypeHintExpression");
           props_TypeHintExpression = cpb.create();
         }
         return props_TypeHintExpression;
@@ -204,6 +229,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_WeakClassReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("weak reference to a class");
+          cpb.rawPresentation("class name");
           props_WeakClassReference = cpb.create();
         }
         return props_WeakClassReference;

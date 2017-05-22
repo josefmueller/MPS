@@ -30,72 +30,84 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Base:
         if (props_Base == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Base");
           props_Base = cpb.create();
         }
         return props_Base;
       case LanguageConceptSwitch.BaseWithNonEmptyMenu:
         if (props_BaseWithNonEmptyMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("BaseWithNonEmptyMenu");
           props_BaseWithNonEmptyMenu = cpb.create();
         }
         return props_BaseWithNonEmptyMenu;
       case LanguageConceptSwitch.ChildOfParentWithEmptyCell:
         if (props_ChildOfParentWithEmptyCell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ChildOfParentWithEmptyCell");
           props_ChildOfParentWithEmptyCell = cpb.create();
         }
         return props_ChildOfParentWithEmptyCell;
       case LanguageConceptSwitch.ConceptWithoutDefaultMenu:
         if (props_ConceptWithoutDefaultMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ConceptWithoutDefaultMenu");
           props_ConceptWithoutDefaultMenu = cpb.create();
         }
         return props_ConceptWithoutDefaultMenu;
       case LanguageConceptSwitch.Derived:
         if (props_Derived == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Derived");
           props_Derived = cpb.create();
         }
         return props_Derived;
       case LanguageConceptSwitch.DerivedWithEmptyMenu:
         if (props_DerivedWithEmptyMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("DerivedWithEmptyMenu");
           props_DerivedWithEmptyMenu = cpb.create();
         }
         return props_DerivedWithEmptyMenu;
       case LanguageConceptSwitch.NodeHolder:
         if (props_NodeHolder == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("node holder");
           props_NodeHolder = cpb.create();
         }
         return props_NodeHolder;
       case LanguageConceptSwitch.ParentWithEmptyCell:
         if (props_ParentWithEmptyCell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("ParentWithEmptyCell");
           props_ParentWithEmptyCell = cpb.create();
         }
         return props_ParentWithEmptyCell;
       case LanguageConceptSwitch.ScopesTestConceptBase:
         if (props_ScopesTestConceptBase == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("scopes test concept - base");
           props_ScopesTestConceptBase = cpb.create();
         }
         return props_ScopesTestConceptBase;
       case LanguageConceptSwitch.ScopesTestConceptChild:
         if (props_ScopesTestConceptChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ScopesTestConceptChild = cpb.create();
         }
         return props_ScopesTestConceptChild;
       case LanguageConceptSwitch.ScopesTestConceptReference:
         if (props_ScopesTestConceptReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_ScopesTestConceptReference = cpb.create();
         }
         return props_ScopesTestConceptReference;
       case LanguageConceptSwitch.TransformationMenuTestConcept:
         if (props_TransformationMenuTestConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("transformation menu test concept");
           props_TransformationMenuTestConcept = cpb.create();
         }
         return props_TransformationMenuTestConcept;

@@ -26,36 +26,42 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PresenceCondition:
         if (props_PresenceCondition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
           props_PresenceCondition = cpb.create();
         }
         return props_PresenceCondition;
       case LanguageConceptSwitch.PrimDoubleType:
         if (props_PrimDoubleType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_double");
           props_PrimDoubleType = cpb.create();
         }
         return props_PrimDoubleType;
       case LanguageConceptSwitch.PrimFloatType:
         if (props_PrimFloatType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_float");
           props_PrimFloatType = cpb.create();
         }
         return props_PrimFloatType;
       case LanguageConceptSwitch.PrimIntType:
         if (props_PrimIntType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_int");
           props_PrimIntType = cpb.create();
         }
         return props_PrimIntType;
       case LanguageConceptSwitch.PrimLongType:
         if (props_PrimLongType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("_long");
           props_PrimLongType = cpb.create();
         }
         return props_PrimLongType;
       case LanguageConceptSwitch.PrimNumConstant:
         if (props_PrimNumConstant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("PrimNumConstant");
           props_PrimNumConstant = cpb.create();
         }
         return props_PrimNumConstant;
@@ -68,6 +74,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SubstituteAnnotation:
         if (props_SubstituteAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SubstituteAnnotation");
           props_SubstituteAnnotation = cpb.create();
         }
         return props_SubstituteAnnotation;
