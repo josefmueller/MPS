@@ -50,7 +50,7 @@ public class TestMigrationWizard_Action extends BaseAction {
     if (!(settingsDialog.showAndGet())) {
       return;
     }
-    MyMigrationSession session = new MyMigrationSession(event.getData(MPSCommonDataKeys.MPS_PROJECT), settingsDialog.getResult());
+    TestMigrationSession session = new TestMigrationSession(event.getData(MPSCommonDataKeys.MPS_PROJECT), settingsDialog.getResult());
     new MigrationWizard(event.getData(CommonDataKeys.PROJECT), session).showAndGet();
   }
 }

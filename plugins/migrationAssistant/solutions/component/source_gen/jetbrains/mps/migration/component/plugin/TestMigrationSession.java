@@ -8,14 +8,16 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.migration.global.MigrationOptions;
+import jetbrains.mps.migration.global.ProjectMigration;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
-import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -31,15 +33,14 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import java.util.Collection;
 
-/*package*/ class MyMigrationSession implements MigrationSession {
+/*package*/ class TestMigrationSession implements MigrationSession {
   private MigrationErrorDescriptor myD;
-  private MyMigrationSession.MyMigrationManager myManager = new MyMigrationSession.MyMigrationManager();
+  private TestMigrationSession.MyMigrationManager myManager = new TestMigrationSession.MyMigrationManager();
   private MigrationTestConfigDialog.Result mySettings;
   private MPSProject myProject;
-  public MyMigrationSession(MPSProject p, MigrationTestConfigDialog.Result settings) {
+  public TestMigrationSession(MPSProject p, MigrationTestConfigDialog.Result settings) {
     mySettings = settings;
     myProject = p;
   }
@@ -50,15 +51,23 @@ import java.util.Collection;
     return this.myManager;
   }
   public MigrationOptions getOptions() {
-    return new MigrationOptions();
+    MigrationOptions res = new MigrationOptions();
+    for (ProjectMigration pm : Sequence.fromIterable(getMigrationManager().getProjectMigrationsToApply())) {
+      if (pm instanceof ProjectMigrationWithOptions) {
+        for (ProjectMigrationWithOptions.Option o : CollectionSequence.fromCollection(((ProjectMigrationWithOptions) pm).getOptions())) {
+          res.addOption(o);
+        }
+      }
+    }
+    return res;
   }
   @Nullable
   public MigrationErrorDescriptor getErrorDescriptor() {
     // todo remove odd MigrationErrorDescriptor 
-    return MyMigrationSession.this.myD;
+    return TestMigrationSession.this.myD;
   }
   public void setErrorDescriptor(MigrationErrorDescriptor errors) {
-    MyMigrationSession.this.myD = errors;
+    TestMigrationSession.this.myD = errors;
   }
 
   private class MyMigrationManager implements MigrationManager {
@@ -151,7 +160,7 @@ import java.util.Collection;
         public boolean accept(final ScriptApplied sa) {
           return ListSequence.fromList(passedM).all(new IWhereFilter<ScriptApplied>() {
             public boolean accept(ScriptApplied it) {
-              return neq_dynh4a_a0a0a0a0a0a0a0a0a0a0a0b0t11(it.getScriptReference(), sa.getScriptReference()) || it.getModule() != sa.getModule();
+              return neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0t11(it.getScriptReference(), sa.getScriptReference()) || it.getModule() != sa.getModule();
             }
           });
         }
@@ -203,9 +212,9 @@ import java.util.Collection;
     return ListSequence.fromList(mySettings.pMigrations).select(new ISelector<MigrationTestConfigDialog.Result.PMigration, ProjectMigration>() {
       public ProjectMigration select(MigrationTestConfigDialog.Result.PMigration pmig) {
         if (pmig.isCleanup) {
-          return (ProjectMigration) new MyMigrationSession.MyCleanupProjectMigration("cleanup: " + pmig.id, pmig.hasOptions, pmig.error);
+          return (ProjectMigration) new TestMigrationSession.MyCleanupProjectMigration("cleanup: " + pmig.id, pmig.hasOptions, pmig.error);
         } else {
-          return (ProjectMigration) new MyMigrationSession.MyProjectMigration("project: " + pmig.id, pmig.hasOptions, pmig.error);
+          return (ProjectMigration) new TestMigrationSession.MyProjectMigration("project: " + pmig.id, pmig.hasOptions, pmig.error);
         }
       }
     }).toListSequence();
@@ -213,7 +222,7 @@ import java.util.Collection;
   private List<MigrationScript> createLanguageMigs() {
     return ListSequence.fromList(mySettings.lMigrations).select(new ISelector<MigrationTestConfigDialog.Result.LMigration, MigrationScript>() {
       public MigrationScript select(MigrationTestConfigDialog.Result.LMigration lmig) {
-        return (MigrationScript) new MyMigrationSession.MyModuleMigration(lmig.language, lmig.version, lmig.error);
+        return (MigrationScript) new TestMigrationSession.MyModuleMigration(lmig.language, lmig.version, lmig.error);
       }
     }).toListSequence();
   }
@@ -235,7 +244,7 @@ import java.util.Collection;
     public MigrationScriptReference getReference() {
       // todo this is suspicious 
       // todo name is used as id here 
-      final MyMigrationSession.MyModuleMigration _this = this;
+      final TestMigrationSession.MyModuleMigration _this = this;
       return new MigrationScriptReference(myLang, 0) {
         @Override
         public MigrationScript resolve(boolean silent) {
@@ -297,7 +306,7 @@ import java.util.Collection;
     }
   }
 
-  private class MyCleanupProjectMigration extends MyMigrationSession.MyProjectMigration implements CleanupProjectMigration, ProjectMigrationWithOptions {
+  private class MyCleanupProjectMigration extends TestMigrationSession.MyProjectMigration implements CleanupProjectMigration, ProjectMigrationWithOptions {
     public MyCleanupProjectMigration(String id, boolean options, boolean error) {
       super(id, options, error);
     }
@@ -306,7 +315,7 @@ import java.util.Collection;
     public void forceExecutionNextTime(Project project) {
     }
   }
-  private static boolean neq_dynh4a_a0a0a0a0a0a0a0a0a0a0a0b0t11(Object a, Object b) {
+  private static boolean neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0t11(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }
