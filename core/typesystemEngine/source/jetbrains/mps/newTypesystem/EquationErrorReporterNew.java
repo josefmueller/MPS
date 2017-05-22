@@ -53,8 +53,14 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
 
   public EquationErrorReporterNew(SNode node, jetbrains.mps.newTypesystem.state.State state, String before, SNode left, String between, SNode right,
                                   String after, EquationInfo info) {
-    this(node, state, before, left, between, right, after, info != null ? info.getRuleModel() : null,
-      info != null ? info.getRuleId() : null);
+    super(info == null ? null : info.getRuleNode());
+    myState = state;
+    myBefore = before;
+    myAfter = after;
+    myBetween = between;
+    myLeft = left;
+    myRight = right;
+    myNode = node;
   }
 
   @Override

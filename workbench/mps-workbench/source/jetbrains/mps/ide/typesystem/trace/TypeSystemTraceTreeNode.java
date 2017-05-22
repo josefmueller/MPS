@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     if (source != null) {
       nodeId += source.getNodeId().toString();
     } else if (operation.getRule() != null) {
-      nodeId += operation.getRule().o2;
+      nodeId += operation.getRule().getNodeId();
     }
     setNodeIdentifier(nodeId);
     setText(operation.getPresentation());

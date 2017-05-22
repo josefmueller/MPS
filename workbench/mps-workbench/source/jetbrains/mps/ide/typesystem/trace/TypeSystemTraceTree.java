@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,6 +54,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
@@ -331,15 +332,13 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (operation == null) {
       return null;
     }
-    final Pair<String, String> rule = operation.getRule();
+    final SNodeReference rule = operation.getRule();
     final SNode source = operation.getSource();
-    if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
-      return rule;
+    if (MPSDataKeys.RULE_MODEL_AND_ID.is(id) && rule != null) {
+      return new Pair<>(String.valueOf(rule.getModelReference()), String.valueOf(rule.getNodeId()));
     }
-    if (source != null && source.getModel() != null) {
-      if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {
-        return source;
-      }
+    if (MPSDataKeys.SOURCE_NODE.is(id) && source != null && source.getModel() != null) {
+      return source;
     }
     return null;
   }
@@ -560,15 +559,13 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       if (operation == null) {
         return null;
       }
-      final Pair<String, String> rule = operation.getRule();
+      final SNodeReference rule = operation.getRule();
       final SNode source = operation.getSource();
-      if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
-        return rule;
+      if (MPSDataKeys.RULE_MODEL_AND_ID.is(id) && rule != null) {
+        return new Pair<>(String.valueOf(rule.getModelReference()), String.valueOf(rule.getNodeId()));
       }
-      if (source != null && source.getModel() != null) {
-        if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {
-          return source;
-        }
+      if (MPSDataKeys.SOURCE_NODE.is(id) && source != null && source.getModel() != null) {
+        return source;
       }
       return null;
     }

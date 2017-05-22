@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,21 +16,24 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Stack;
 
 public class EquationInfo {
 
   private String myErrorString;
   private SNode myNodeWithError;
 
-  private String myRuleModel;
-  private String myRuleId;
-  private Stack<Pair<String, String>> myOuterRulesIds = null;
+  private SNodeReference myRule;
+  private ArrayDeque<SNodeReference> myOuterRulesIds = null;
 
   private List<QuickFixProvider> myIntentionProviders;
 
@@ -44,10 +47,7 @@ public class EquationInfo {
   }
 
   public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority, QuickFixProvider intentionProvider) {
-    myErrorString = errorString;
-    myNodeWithError = nodeWithError;
-    myRuleModel = ruleModel;
-    myRuleId = ruleId;
+    this(nodeWithError, errorString, ruleModel, ruleId);
     myInequationPriority = inequationPriority;
     addIntentionProvider(intentionProvider);
   }
@@ -60,15 +60,13 @@ public class EquationInfo {
   public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
-    myRuleModel = ruleModel;
-    myRuleId = ruleId;
+    myRule = ruleModel != null && ruleId != null ? new SNodePointer(ruleModel, ruleId) : null;
   }
 
   public EquationInfo(EquationInfo pattern) {
     myErrorString = pattern.myErrorString;
     myNodeWithError = pattern.myNodeWithError;
-    myRuleModel = pattern.myRuleModel;
-    myRuleId = pattern.myRuleId;
+    myRule = pattern.myRule;
     myInequationPriority = pattern.myInequationPriority;
     if (pattern.myIntentionProviders != null) {
       if (myIntentionProviders == null) {
@@ -86,12 +84,27 @@ public class EquationInfo {
     return myNodeWithError;
   }
 
-  public String getRuleModel() {
-    return myRuleModel;
+  @Nullable
+  public SNodeReference getRuleNode() {
+    return myRule;
   }
 
+  /**
+   * @deprecated use {@link #getRuleNode()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
+  public String getRuleModel() {
+    return myRule == null ? null : myRule.getModelReference().toString();
+  }
+
+  /**
+   * @deprecated use {@link #getRuleNode()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public String getRuleId() {
-    return myRuleId;
+    return myRule == null ? null : myRule.getNodeId().toString();
   }
 
   public void setIntentionProvider(QuickFixProvider intentionProvider) {
@@ -99,41 +112,40 @@ public class EquationInfo {
   }
 
   public void addIntentionProvider(QuickFixProvider intentionProvider) {
+    if (intentionProvider == null) {
+      return;
+    }
     if (myIntentionProviders == null) {
-      myIntentionProviders = new ArrayList<QuickFixProvider>(1);
+      myIntentionProviders = new ArrayList<>(1);
     }
     myIntentionProviders.add(intentionProvider);
   }
 
   public List<QuickFixProvider> getIntentionProviders() {
-    ArrayList<QuickFixProvider> result = new ArrayList<QuickFixProvider>(1);
     if (myIntentionProviders != null) {
-      result.addAll(myIntentionProviders);
+      return new ArrayList<>(myIntentionProviders);
+    } else {
+      return Collections.emptyList();
     }
-    return result;
-  }
-
-
-  public void pushOuterRuleId(String modelId, String ruleId) {
-    if (myOuterRulesIds == null) {
-      myOuterRulesIds = new Stack<Pair<String, String>>();
-    }
-    myOuterRulesIds.push(new Pair<String, String>(modelId, ruleId));
   }
 
   public void getOuterRulesIdFromInfo(EquationInfo outerInfo) {
     if (myOuterRulesIds == null) {
-      myOuterRulesIds = new Stack<Pair<String, String>>();
+      myOuterRulesIds = new ArrayDeque<>(4);
     }
-    for (Pair<String, String> id : outerInfo.getAdditionalRulesIds()) {
-      myOuterRulesIds.push(id);
+    if (outerInfo.myOuterRulesIds != null) {
+      for (SNodeReference id : outerInfo.myOuterRulesIds) {
+        myOuterRulesIds.push(id);
+      }
     }
-    myOuterRulesIds.push(new Pair<String, String>(outerInfo.getRuleModel(), outerInfo.getRuleId()));
+    myOuterRulesIds.push(outerInfo.getRuleNode());
   }
 
-  public List<Pair<String, String>> getAdditionalRulesIds() {
-    if (myOuterRulesIds == null) return new ArrayList<Pair<String, String>>();
-    return new ArrayList<Pair<String, String>>(myOuterRulesIds);
+  public List<SNodeReference> getAdditionalRulesIds() {
+    if (myOuterRulesIds == null) {
+      return Collections.emptyList();
+    }
+    return new ArrayList<>(myOuterRulesIds);
   }
 
   boolean isStrong() {

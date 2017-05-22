@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,12 +26,11 @@ import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.validation.IModelValidationSettings;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -200,44 +199,29 @@ public class NodeMaps {
 
   public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
     IErrorReporter errorReporter;
-    SNode nodeWithError = null;
-    List<QuickFixProvider> intentionProviders = new ArrayList<QuickFixProvider>();
-    String errorString = null;
-    String ruleModel = null;
-    String ruleId = null;
     if (info != null) {
-      nodeWithError = info.getNodeWithError();
-      intentionProviders = info.getIntentionProviders();
-      errorString = info.getErrorString();
-      ruleModel = info.getRuleModel();
-      ruleId = info.getRuleId();
-    }
-    if (errorString != null) {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
+      errorReporter = new SimpleErrorReporter(info.getNodeWithError(), info.getErrorString(), info.getRuleNode());
+      for (QuickFixProvider quickFixProvider : info.getIntentionProviders()) {
+        errorReporter.setIntentionProvider(quickFixProvider);
+      }
     } else {
-      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "incompatible types: ",
-        right, " and ", left, "", ruleModel, ruleId);
-    }
-    for (QuickFixProvider quickFixProvider : intentionProviders) {
-      errorReporter.setIntentionProvider(quickFixProvider);
+      errorReporter = new EquationErrorReporterNew(null, myState, "incompatible types: ", right, " and ", left, "", null);
     }
     setAdditionalRulesIds(info, errorReporter);
     // addNodeToError(nodeWithError, errorReporter, info);
-    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+    myState.getTypeCheckingContext().reportMessage(errorReporter.getSNode(), errorReporter);
   }
 
   public void reportSubTypeError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
     IErrorReporter errorReporter;
     String errorString = equationInfo.getErrorString();
-    String ruleModel = equationInfo.getRuleModel();
-    String ruleId = equationInfo.getRuleId();
     SNode nodeWithError = equationInfo.getNodeWithError();
     if (errorString == null) {
       String strongString = isWeak ? "" : " strong";
       errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType,
-        " is not a" + strongString + " subtype of ", superType, "", ruleModel, ruleId);
+        " is not a" + strongString + " subtype of ", superType, "", equationInfo);
     } else {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
+      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, equationInfo.getRuleNode());
     }
     for (QuickFixProvider quickFixProvider : equationInfo.getIntentionProviders()) {
       errorReporter.setIntentionProvider(quickFixProvider);
@@ -249,15 +233,13 @@ public class NodeMaps {
   public void reportComparableError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
     IErrorReporter errorReporter;
     String errorString = equationInfo.getErrorString();
-    String ruleModel = equationInfo.getRuleModel();
-    String ruleId = equationInfo.getRuleId();
     SNode nodeWithError = equationInfo.getNodeWithError();
     if (errorString == null) {
       String strongString = isWeak ? "" : " strongly";
       errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType, " is not" + strongString + " comparable with ",
-        superType, "", ruleModel, ruleId);
+        superType, "", equationInfo);
     } else {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId);
+      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, equationInfo.getRuleNode());
     }
     for (QuickFixProvider provider : equationInfo.getIntentionProviders()) {
       errorReporter.addIntentionProvider(provider);
@@ -278,8 +260,9 @@ public class NodeMaps {
     if (from == null) {
       return;
     }
-    for (Pair<String, String> p : from.getAdditionalRulesIds()) {
-      to.addAdditionalRuleId(p.o1, p.o2);
+    // XXX almost identical with HUtil.addAdditionalRuleIdsFromInfo(IErrorReporter,EquationInfo)
+    for (SNodeReference p : from.getAdditionalRulesIds()) {
+      to.additionalRule(p);
     }
 
   }

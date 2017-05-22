@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +22,9 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.List;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class HUtil {
   //todo: this method can be called from inference rules - by calling behavior methods,
@@ -55,10 +53,9 @@ public class HUtil {
   }
 
   public static void addAdditionalRuleIdsFromInfo(IErrorReporter errorReporter, EquationInfo equationInfo) {
-    List<Pair<String, String>> list = equationInfo.getAdditionalRulesIds();
-    for (Pair<String, String> additionalIds : list) {
-      errorReporter.addAdditionalRuleId(additionalIds.o1, additionalIds.o2);
+    for (SNodeReference additionalId : equationInfo.getAdditionalRulesIds()) {
+      errorReporter.additionalRule(additionalId);
     }
-    errorReporter.addAdditionalRuleId(equationInfo.getRuleModel(), equationInfo.getRuleId());
+    errorReporter.additionalRule(equationInfo.getRuleNode());
   }
 }

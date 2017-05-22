@@ -17,9 +17,13 @@ package jetbrains.mps.errors;
 
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.List;
 
@@ -37,8 +41,22 @@ public interface IErrorReporter {
    * replace with alternative that takes SNodeReference to the rule
    */
   @Deprecated
-  @ToRemove(version = 3.4)
+  @ToRemove(version = 2017.2)
   public void addAdditionalRuleId(String ruleModel, String ruleId);
+
+  /**
+   * @param rulePointer pointer to a rule that adds extra meaning to reported error
+   * @since 2017.2
+   */
+  default void additionalRule(@NotNull SNodeReference rulePointer) {
+    // FIXME drop the body along with addAdditionalRuleId removal, it has been added just in case there's another IErrorReporter implementation
+    SModelReference modelReference = rulePointer.getModelReference();
+    SNodeId nodeId = rulePointer.getNodeId();
+    if (modelReference != null && nodeId != null) {
+      PersistenceFacade pf = PersistenceFacade.getInstance();
+      addAdditionalRuleId(pf.asString(modelReference), nodeId.toString());
+    }
+  }
 
   public List<SNodeReference> getAdditionalRulesIds();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,26 +18,18 @@ package jetbrains.mps.newTypesystem.operation;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class AddErrorOperation extends AbstractOperation {
   private final SNode myNode;
   private final IErrorReporter myError;
 
+  // EquationInfo parameter is not in use since 2011 (cb90832), nobody cares
   public AddErrorOperation(SNode node, IErrorReporter error, EquationInfo info) {
     myNode = node;
     myError = error;
     mySource = myNode;
-    final SNodeReference ruleNode = error.getRuleNode();
-    if (ruleNode == null || ruleNode.getModelReference() == null || ruleNode.getNodeId() == null) {
-      myRule = new Pair<String, String>(null, null);
-    } else {
-      final PersistenceFacade pf = PersistenceFacade.getInstance();
-      myRule = new Pair<String, String>(pf.asString(ruleNode.getModelReference()), ruleNode.getNodeId().toString());
-    }
+    myRule = error.getRuleNode();
   }
 
   @Override
