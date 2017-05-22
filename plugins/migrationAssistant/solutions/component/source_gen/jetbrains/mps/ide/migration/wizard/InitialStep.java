@@ -10,8 +10,9 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.Box;
-import com.intellij.ui.IdeBorderFactory;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.project.Project;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.ide.migration.MigrationManager;
@@ -23,7 +24,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
-import java.util.List;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
@@ -74,11 +74,13 @@ public class InitialStep extends BaseStep {
     infoPanel.add(Box.createRigidArea(new Dimension()));
     mainPanel.add(infoPanel);
 
-    if (!(myComponents.isEmpty())) {
+    List<ProjectMigrationWithOptions.Option> options = mySession.getOptions().optionsList();
+    if (ListSequence.fromList(options).isNotEmpty()) {
       JPanel settingsPanel = new JPanel();
       settingsPanel.setLayout(new BoxLayout(settingsPanel, BoxLayout.Y_AXIS));
       settingsPanel.setBorder(IdeBorderFactory.createTitledBorder("Options", true));
-      for (ProjectMigrationWithOptions.Option option : ListSequence.fromList(mySession.getOptions().optionsList())) {
+
+      for (ProjectMigrationWithOptions.Option option : ListSequence.fromList(options)) {
         JComponent c = option.createComponent();
         myComponents.put(option, c);
         settingsPanel.add(c);

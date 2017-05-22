@@ -1819,8 +1819,31 @@
           </node>
         </node>
         <node concept="3clFbH" id="5vn5x3cU6e0" role="3cqZAp" />
-        <node concept="3clFbJ" id="5vn5x3cU__B" role="3cqZAp">
-          <node concept="3clFbS" id="5vn5x3cU__D" role="3clFbx">
+        <node concept="3cpWs8" id="2jZnSOgroCV" role="3cqZAp">
+          <node concept="3cpWsn" id="2jZnSOgroCW" role="3cpWs9">
+            <property role="TrG5h" value="options" />
+            <node concept="_YKpA" id="2jZnSOgr_B9" role="1tU5fm">
+              <node concept="3uibUv" id="2jZnSOgr_Bb" role="_ZDj9">
+                <ref role="3uigEE" to="bdll:~ProjectMigrationWithOptions$Option" resolve="ProjectMigrationWithOptions.Option" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="2jZnSOgroCX" role="33vP2m">
+              <node concept="2OqwBi" id="2jZnSOgroCY" role="2Oq$k0">
+                <node concept="37vLTw" id="2jZnSOgroCZ" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4hH4xQoL42E" resolve="mySession" />
+                </node>
+                <node concept="liA8E" id="2jZnSOgroD0" role="2OqNvi">
+                  <ref role="37wK5l" node="4hH4xQoKYd8" resolve="getOptions" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2jZnSOgroD1" role="2OqNvi">
+                <ref role="37wK5l" to="bdll:~MigrationOptions.optionsList():java.util.List" resolve="optionsList" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2jZnSOgr$T5" role="3cqZAp">
+          <node concept="3clFbS" id="2jZnSOgr$T7" role="3clFbx">
             <node concept="3cpWs8" id="6PeyMxxb0yW" role="3cqZAp">
               <node concept="3cpWsn" id="6PeyMxxb0yX" role="3cpWs9">
                 <property role="TrG5h" value="settingsPanel" />
@@ -1848,8 +1871,8 @@
                         <ref role="3cqZAo" node="6PeyMxxb0yX" resolve="settingsPanel" />
                       </node>
                       <node concept="10M0yZ" id="6PeyMxxbJmc" role="37wK5m">
-                        <ref role="3cqZAo" to="dxuu:~BoxLayout.Y_AXIS" resolve="Y_AXIS" />
                         <ref role="1PxDUh" to="dxuu:~BoxLayout" resolve="BoxLayout" />
+                        <ref role="3cqZAo" to="dxuu:~BoxLayout.Y_AXIS" resolve="Y_AXIS" />
                       </node>
                     </node>
                   </node>
@@ -1864,8 +1887,8 @@
                 <node concept="liA8E" id="2DL82jGzGL4" role="2OqNvi">
                   <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
                   <node concept="2YIFZM" id="2DL82jGzGL5" role="37wK5m">
-                    <ref role="37wK5l" to="lzb2:~IdeBorderFactory.createTitledBorder(java.lang.String,boolean):com.intellij.ui.border.IdeaTitledBorder" resolve="createTitledBorder" />
                     <ref role="1Pybhc" to="lzb2:~IdeBorderFactory" resolve="IdeBorderFactory" />
+                    <ref role="37wK5l" to="lzb2:~IdeBorderFactory.createTitledBorder(java.lang.String,boolean):com.intellij.ui.border.IdeaTitledBorder" resolve="createTitledBorder" />
                     <node concept="Xl_RD" id="2DL82jGzGL6" role="37wK5m">
                       <property role="Xl_RC" value="Options" />
                     </node>
@@ -1876,22 +1899,13 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbH" id="2jZnSOgrGah" role="3cqZAp" />
             <node concept="2Gpval" id="44NRCusTV9F" role="3cqZAp">
               <node concept="2GrKxI" id="44NRCusTV9H" role="2Gsz3X">
                 <property role="TrG5h" value="option" />
               </node>
-              <node concept="2OqwBi" id="4hH4xQoMevm" role="2GsD0m">
-                <node concept="2OqwBi" id="4hH4xQoMcDC" role="2Oq$k0">
-                  <node concept="37vLTw" id="4hH4xQoMbCo" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4hH4xQoL42E" resolve="mySession" />
-                  </node>
-                  <node concept="liA8E" id="4hH4xQoMdxG" role="2OqNvi">
-                    <ref role="37wK5l" node="4hH4xQoKYd8" resolve="getOptions" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="4hH4xQoMfHO" role="2OqNvi">
-                  <ref role="37wK5l" to="bdll:~MigrationOptions.optionsList():java.util.List" resolve="optionsList" />
-                </node>
+              <node concept="37vLTw" id="2jZnSOgroD2" role="2GsD0m">
+                <ref role="3cqZAo" node="2jZnSOgroCW" resolve="options" />
               </node>
               <node concept="3clFbS" id="44NRCusTV9L" role="2LFqv$">
                 <node concept="3cpWs8" id="1u4Xg2YBWCk" role="3cqZAp">
@@ -1955,15 +1969,11 @@
               </node>
             </node>
           </node>
-          <node concept="3fqX7Q" id="5vn5x3cUAwQ" role="3clFbw">
-            <node concept="2OqwBi" id="5vn5x3cUBRS" role="3fr31v">
-              <node concept="37vLTw" id="5vn5x3cUBpA" role="2Oq$k0">
-                <ref role="3cqZAo" node="1u4Xg2YBHFP" resolve="myComponents" />
-              </node>
-              <node concept="liA8E" id="5vn5x3cUCbM" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Map.isEmpty():boolean" resolve="isEmpty" />
-              </node>
+          <node concept="2OqwBi" id="2jZnSOgrC9U" role="3clFbw">
+            <node concept="37vLTw" id="2jZnSOgrAXh" role="2Oq$k0">
+              <ref role="3cqZAo" node="2jZnSOgroCW" resolve="options" />
             </node>
+            <node concept="3GX2aA" id="2jZnSOgrDAt" role="2OqNvi" />
           </node>
         </node>
       </node>
