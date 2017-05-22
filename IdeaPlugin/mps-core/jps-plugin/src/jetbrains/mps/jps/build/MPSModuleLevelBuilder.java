@@ -234,6 +234,9 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         }
       }
     }
+    for (JpsModuleSourceRoot sourceRoot : jpsModule.getSourceRoots()) {
+      result.add(sourceRoot.getFile());
+    }
     return result;
   }
 
