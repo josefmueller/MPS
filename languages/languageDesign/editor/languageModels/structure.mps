@@ -6480,6 +6480,12 @@
       <property role="20kJfa" value="matchingTextFunction" />
       <ref role="20lvS9" node="3J8eUL7dojS" resolve="ISubstituteMenu_RefPresentation" />
     </node>
+    <node concept="1TJgyj" id="106Slv_GxQS" role="1TKVEi">
+      <property role="IQ2ns" value="1154858122099170744" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="visibleMatchingTextFunction" />
+      <ref role="20lvS9" node="3J8eUL7dojS" resolve="ISubstituteMenu_RefPresentation" />
+    </node>
     <node concept="1TJgyj" id="3J8eUL7d5Zf" role="1TKVEi">
       <property role="IQ2ns" value="4307758654694907855" />
       <property role="20lmBu" value="aggregation" />

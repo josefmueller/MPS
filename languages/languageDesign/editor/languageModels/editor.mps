@@ -25369,6 +25369,55 @@
           <property role="VOm3f" value="false" />
         </node>
       </node>
+      <node concept="3EZMnI" id="106Slv_GxQX" role="3EZMnx">
+        <node concept="3XFhqQ" id="106Slv_GxQY" role="3EZMnx" />
+        <node concept="2iRfu4" id="106Slv_GxQZ" role="2iSdaV" />
+        <node concept="3EZMnI" id="106Slv_GxR0" role="3EZMnx">
+          <node concept="VPM3Z" id="106Slv_GxR1" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="l2Vlx" id="106Slv_GxR2" role="2iSdaV" />
+          <node concept="3F0ifn" id="106Slv_GxR3" role="3EZMnx">
+            <property role="3F0ifm" value="visible matching text" />
+            <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
+          </node>
+          <node concept="3F1sOY" id="106Slv_GxR4" role="3EZMnx">
+            <property role="1$x2rV" value="&lt;default&gt;" />
+            <property role="2ru_X1" value="true" />
+            <ref role="1NtTu8" to="tpc2:106Slv_GxQS" resolve="visibleMatchingTextFunction" />
+            <node concept="1QoScp" id="106Slv_GxRH" role="2ruayu">
+              <property role="1QpmdY" value="true" />
+              <node concept="pkWqt" id="106Slv_GxRI" role="3e4ffs">
+                <node concept="3clFbS" id="106Slv_GxRJ" role="2VODD2">
+                  <node concept="3clFbF" id="106Slv_GF1S" role="3cqZAp">
+                    <node concept="2OqwBi" id="106Slv_GGyX" role="3clFbG">
+                      <node concept="2OqwBi" id="106Slv_GFmU" role="2Oq$k0">
+                        <node concept="pncrf" id="106Slv_GF1R" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="106Slv_GFWA" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpc2:3J8eUL7d57_" resolve="matchingTextFunction" />
+                        </node>
+                      </node>
+                      <node concept="3w_OXm" id="106Slv_GH1P" role="2OqNvi" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3F0ifn" id="106Slv_GxYT" role="1QoS34">
+                <property role="ilYzB" value="&lt;default&gt;" />
+              </node>
+              <node concept="3F0ifn" id="106Slv_GHsk" role="1QoVPY">
+                <property role="ilYzB" value="&lt;same as matching text&gt;" />
+              </node>
+            </node>
+            <node concept="34QqEe" id="106Slv_GxR5" role="3F10Kt">
+              <property role="VOm3f" value="true" />
+            </node>
+          </node>
+        </node>
+        <node concept="VPM3Z" id="106Slv_GxR6" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+      </node>
       <node concept="3EZMnI" id="3J8eUL7hTyh" role="3EZMnx">
         <node concept="3XFhqQ" id="3J8eUL7dEJt" role="3EZMnx" />
         <node concept="2iRfu4" id="3J8eUL7hTyi" role="2iSdaV" />
