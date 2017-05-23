@@ -195,45 +195,50 @@ public class CrossModelEnvironment {
   }
 
   public void publishCheckpoint(@NotNull SModelReference originalModel, @NotNull CheckpointState cpState) {
-    myModule.addModelToKeep(cpState.getCheckpointModel().getReference(), true);
     ModelCheckpoints checkpoints = getTransientCheckpoints(originalModel);
     if (checkpoints == null) {
       // XXX what if there's one in persistent? Shall we copy it into transient and update with the code below?
       myTransientCheckpoints.put(originalModel, new ModelCheckpoints(cpState));
+      // fall-through to register cp model
     } else {
       CheckpointState replaced = checkpoints.updateAndDiscardOutdated(cpState);
-      if (replaced == null) {
-        return;
+      if (replaced != null) {
+        discardExisting(replaced);
       }
-      HashSet<SModelReference> forgottenCheckpoints = new HashSet<>();
-      ArrayDeque<CheckpointState> discarded = new ArrayDeque<>();
-      discarded.add(replaced);
-      do {
-        CheckpointState next = discarded.removeFirst();
-        // XXX once checkpoint model is removed, any other checkpoint model referencing it is broken, i.e.
-        // m1@cp1 and m2@cp1, latter referencing the former, and we rebuild m1. Once we get here, we'd schedule m1@cp1 for removal
-        // and at the end of the day we've got m1'@cp1 and m2@cp1 with references pointing to no-longer-existing m1@cp1.
-        // Then, if there'd m3 to generate with the same plan, which references both m1 and m2, it's not clear how to match the two.
-        // The question is, do we need to update references in other @cp1 models, shall we keep all models to preserve any other
-        // checkpoint models (i.e. no forgetModel), or perhaps a dedicated SModelReference that resolves to whatever checkpoint is there.
-        //
-        // Present approach is to drop any model that depends on the one re-generated (resolve to latest CP model might still leave
-        // broken references if m1 is changed, and it's not easy to match nodes of old m1@cp1 versus new m1@cp1, model reference won't suffice
-        // as node id might be different, and we got no control over nodes as they are outcome of black-box ReferenceResolver code.
-        SModelReference cpReference = next.getCheckpointModel().getReference();
-        forgottenCheckpoints.add(cpReference);
-        myModule.forgetModel(cpReference, true);
-        // drop any other checkpoints that may reference the one removed. We've scheduled for removal their respective
-        // transient models already (above with forgetModel(..., true)), now it's time to forget CheckpointState.
-        // Perhaps, shall forget models here explicitly, rather than do the same in TransientModelsModule.forgetModel(..., true)
-        for (ModelCheckpoints mcp : myTransientCheckpoints.values()) {
-          // intentionally  don't skip mcp == checkpoints - we need to drop any further checkpoint models not only for
-          // external dependencies, but for subsequent cp models of the same original one, provided they reference the one we've dropped.
-          // Note that the cycle above drops only relevant cp model (compares checkpoint name).
-          mcp.discardOutdated(forgottenCheckpoints, discarded);
-        }
-      } while (!discarded.isEmpty());
+      // fall-through to register cp model
     }
+    myModule.addModelToKeep(cpState.getCheckpointModel().getReference(), true);
+  }
+
+  private void discardExisting(CheckpointState replaced) {
+    HashSet<SModelReference> forgottenCheckpoints = new HashSet<>();
+    ArrayDeque<CheckpointState> discarded = new ArrayDeque<>();
+    discarded.add(replaced);
+    do {
+      CheckpointState next = discarded.removeFirst();
+      // XXX once checkpoint model is removed, any other checkpoint model referencing it is broken, i.e.
+      // m1@cp1 and m2@cp1, latter referencing the former, and we rebuild m1. Once we get here, we'd schedule m1@cp1 for removal
+      // and at the end of the day we've got m1'@cp1 and m2@cp1 with references pointing to no-longer-existing m1@cp1.
+      // Then, if there'd m3 to generate with the same plan, which references both m1 and m2, it's not clear how to match the two.
+      // The question is, do we need to update references in other @cp1 models, shall we keep all models to preserve any other
+      // checkpoint models (i.e. no forgetModel), or perhaps a dedicated SModelReference that resolves to whatever checkpoint is there.
+      //
+      // Present approach is to drop any model that depends on the one re-generated (resolve to latest CP model might still leave
+      // broken references if m1 is changed, and it's not easy to match nodes of old m1@cp1 versus new m1@cp1, model reference won't suffice
+      // as node id might be different, and we got no control over nodes as they are outcome of black-box ReferenceResolver code.
+      SModelReference cpReference = next.getCheckpointModel().getReference();
+      forgottenCheckpoints.add(cpReference);
+      myModule.forgetModel(next.getCheckpointModel(), true);
+      // drop any other checkpoints that may reference the one removed. We've scheduled for removal their respective
+      // transient models already (above with forgetModel(..., true)), now it's time to forget CheckpointState.
+      // Perhaps, shall forget models here explicitly, rather than do the same in TransientModelsModule.forgetModel(..., true)
+      for (ModelCheckpoints mcp : myTransientCheckpoints.values()) {
+        // intentionally  don't skip mcp == checkpoints - we need to drop any further checkpoint models not only for
+        // external dependencies, but for subsequent cp models of the same original one, provided they reference the one we've dropped.
+        // Note that the cycle above drops only relevant cp model (compares checkpoint name).
+        mcp.discardOutdated(forgottenCheckpoints, discarded);
+      }
+    } while (!discarded.isEmpty());
   }
 
   public static class CacheGen implements CacheGenerator {

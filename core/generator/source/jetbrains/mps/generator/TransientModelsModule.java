@@ -125,14 +125,15 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   // to remove published model, one needs write access to a repository,
   // which is not always possible e.g. when a new checkpoint model replaces existing
-  public void forgetModel(SModelReference modelReference, boolean forgetDependants) {
+  public void forgetModel(SModel model, boolean forgetDependants) {
+    SModelReference modelReference = model.getReference();
     assert isMyTransientModel(modelReference);
-    myModelVault.forget(modelReference);
+    myModelVault.forget(model);
     if (forgetDependants) {
       for (TransientSModelDescriptor tm : myModelVault.allModels()) {
         for (SModelReference importElement : tm.getModelImports()) {
           if (modelReference.equals(importElement)) {
-            myModelVault.forget(tm.getReference());
+            myModelVault.forget(tm);
             break;
           }
         }
