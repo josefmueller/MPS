@@ -81,25 +81,25 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
 
       // consume elements matching by prefix case-sensitively
       Integer elementsConsumed = consumeElements(base, everywhere, indicator, consumer, namePattern, qualifierPattern, names,
-          NameUtil.MatchingCaseSensitivity.ALL, false);
+          NameUtil.MatchingCaseSensitivity.ALL);
       if (elementsConsumed == null) return false;
 
       if (elementsConsumed == 0) {
         // search with original pattern without case sensitivity, don't add separator before found items
         // result: items matched by prefix will always be above middle-matched items
         elementsConsumed = consumeElements(base, everywhere, indicator, consumer, namePattern,
-            qualifierPattern, names, NameUtil.MatchingCaseSensitivity.NONE, false);
+            qualifierPattern, names, NameUtil.MatchingCaseSensitivity.NONE);
         if (elementsConsumed == null) return false;
       }
 
       // search with broadest criteria - middle match pattern, without case sensitivity
       elementsConsumed = consumeElements(base, everywhere, indicator, consumer, middleMatchPattern,
-          qualifierPattern, names, NameUtil.MatchingCaseSensitivity.NONE, elementsConsumed > 0);
+          qualifierPattern, names, NameUtil.MatchingCaseSensitivity.NONE);
       return elementsConsumed != null;
     }
     else {
       Integer elementsConsumed = consumeElements(base, everywhere, indicator, consumer, namePattern, qualifierPattern, names,
-          NameUtil.MatchingCaseSensitivity.NONE, false);
+          NameUtil.MatchingCaseSensitivity.NONE);
       return elementsConsumed != null;
     }
   }
@@ -114,8 +114,7 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
       String namePattern,
       String qualifierPattern,
       Set<String> allNames,
-      NameUtil.MatchingCaseSensitivity sensitivity,
-      boolean needSeparator) {
+      NameUtil.MatchingCaseSensitivity sensitivity) {
     ChooseByNameModel model = base.getModel();
     List<String> namesList = new ArrayList<String>();
     getNamesByPattern(base, new ArrayList<String>(allNames), indicator, namesList, namePattern, sensitivity);
@@ -148,16 +147,12 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
         }
         sortByProximity(base, sameNameElements);
         for (Object element : sameNameElements) {
-          if (needSeparator && !consumer.process(ChooseByNameBase.NON_PREFIX_SEPARATOR)) return null;
           if (!consumer.process(element)) return null;
-          needSeparator = false;
           elementsConsumed++;
         }
       }
       else if (elements.length == 1 && matchesQualifier(elements[0], base, patternsAndMatchers)) {
-        if (needSeparator && !consumer.process(ChooseByNameBase.NON_PREFIX_SEPARATOR)) return null;
         if (!consumer.process(elements[0])) return null;
-        needSeparator = false;
         elementsConsumed++;
       }
     }
