@@ -94,7 +94,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public String getVisibleMatchingText(String pattern) {
-    final String visibleMatchingText = CompletionActionItemUtil.getVisibleMatchingText(myActionItem);
+    final String visibleMatchingText = CompletionActionItemUtil.getVisibleMatchingText(myActionItem, pattern);
     return visibleMatchingText != null ? visibleMatchingText : getMatchingText(pattern);
   }
 

@@ -52,6 +52,11 @@ public class ReferenceScopeSubstituteMenuItem extends DefaultSubstituteMenuItem 
   }
 
   @Nullable
+  public String getVisibleMatchingText(@NotNull String pattern) {
+    return NodePresentationUtil.visibleMatchingText(myReferent, getParentNode());
+  }
+
+  @Nullable
   @Override
   public String getDescriptionText(@NotNull String pattern) {
     return "^" + NodePresentationUtil.descriptionText(myReferent, getParentNode());

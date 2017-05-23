@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -29,19 +30,33 @@ public class SubstituteMenuItemUtil {
   }
 
   public static SNode getReferentNode(SubstituteMenuItem item) {
-    final SmartReferenceSubstituteMenuItem smartItem = getSmartItem(item);
-    return smartItem == null ? null : smartItem.getReferentNode();
-  }
-
-  public static String getVisibleMatchingText(SubstituteMenuItem item) {
-    final SmartReferenceSubstituteMenuItem smartItem = getSmartItem(item);
-    return smartItem == null ? null : smartItem.getVisibleMatchingText();
-  }
-
-  private static SmartReferenceSubstituteMenuItem getSmartItem(SubstituteMenuItem item) {
     final SubstituteMenuItem wrappedItem = getWrappedItem(item);
+    if (wrappedItem instanceof ReferenceScopeSubstituteMenuItem) {
+      return ((ReferenceScopeSubstituteMenuItem) wrappedItem).getReferent();
+    }
     if (wrappedItem instanceof SmartReferenceSubstituteMenuItem) {
-      return ((SmartReferenceSubstituteMenuItem) wrappedItem);
+      return ((SmartReferenceSubstituteMenuItem) wrappedItem).getReferentNode();
+    }
+    return null;
+  }
+
+  /**
+   *
+   * @deprecated Use {@link #getVisibleMatchingText(SubstituteMenuItem, String)} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
+  public static String getVisibleMatchingText(SubstituteMenuItem item) {
+    return getVisibleMatchingText(item, "");
+  }
+
+  public static String getVisibleMatchingText(SubstituteMenuItem item, String pattern) {
+    final SubstituteMenuItem wrappedItem = getWrappedItem(item);
+    if (wrappedItem instanceof ReferenceScopeSubstituteMenuItem) {
+      return ((ReferenceScopeSubstituteMenuItem) wrappedItem).getVisibleMatchingText(pattern);
+    }
+    if (wrappedItem instanceof SmartReferenceSubstituteMenuItem) {
+      return ((SmartReferenceSubstituteMenuItem) wrappedItem).getVisibleMatchingText();
     }
     return null;
   }

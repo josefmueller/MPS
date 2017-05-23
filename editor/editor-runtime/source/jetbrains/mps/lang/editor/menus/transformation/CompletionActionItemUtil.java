@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemUtil;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -44,10 +45,20 @@ public class CompletionActionItemUtil {
     return null;
   }
 
+  /**
+   *
+   * @deprecated Use {@link #getVisibleMatchingText(CompletionActionItem, String)} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public static String getVisibleMatchingText(CompletionActionItem item) {
+    return getVisibleMatchingText(item, "");
+  }
+
+  public static String getVisibleMatchingText(CompletionActionItem item, String pattern) {
     if (item instanceof SubstituteMenuItemAsActionItem) {
       final SubstituteMenuItem substituteItem = ((SubstituteMenuItemAsActionItem) item).getSubstituteItem();
-      return SubstituteMenuItemUtil.getVisibleMatchingText(substituteItem);
+      return SubstituteMenuItemUtil.getVisibleMatchingText(substituteItem, pattern);
     }
     return null;
   }
