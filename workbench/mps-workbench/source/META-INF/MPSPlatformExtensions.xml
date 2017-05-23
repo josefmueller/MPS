@@ -5,6 +5,7 @@
   <appStarter implementation="com.intellij.diff.applications.MergeApplication"/>
   <appStarter implementation="com.intellij.ui.win.RecentProjectApplication"/>
   -->
+  <appStarter implementation="com.intellij.openapi.command.impl.UpdatePluginsApp"/>
   <appStarter implementation="com.intellij.help.impl.KeymapGenerator"/>
   <appStarter implementation="com.intellij.help.impl.IntentionDump"/>
   <appStarter implementation="com.intellij.help.impl.InspectionDump"/>
@@ -230,6 +231,7 @@
                       serviceImplementation="com.intellij.openapi.roots.ui.FileAppearanceServiceImpl"/>
 
   <applicationService serviceImplementation="com.intellij.internal.statistic.UsageTrigger"/>
+  <applicationService serviceImplementation="com.intellij.internal.statistic.ToolbarClicksCollector"/>
 
   <applicationService serviceInterface="com.intellij.openapi.application.PathMacros"
                       serviceImplementation="com.intellij.application.options.PathMacrosImpl"/>
@@ -383,8 +385,11 @@
   <scopeParserExtension implementation="com.intellij.psi.search.scope.packageSet.FilePackageSetParserExtension"/>
     <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher" serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>
 
-    <applicationService serviceInterface="com.intellij.ide.RemoteDesktopService"
-                        serviceImplementation="com.intellij.ide.RemoteDesktopDetector"/>
+  <applicationService serviceInterface="com.intellij.ide.RemoteDesktopService"
+                      serviceImplementation="com.intellij.ide.RemoteDesktopDetector"/>
+
+  <projectService serviceInterface="com.intellij.execution.RunManager" serviceImplementation="com.intellij.execution.impl.RunManagerImpl"/>
+  <projectService serviceImplementation="com.intellij.execution.impl.ProjectRunConfigurationManager"/>
 
   <fileEditorProvider implementation="com.intellij.openapi.fileEditor.impl.http.HttpFileEditorProvider"/>
   <editorActionHandler action="EditorEscape" implementationClass="com.intellij.codeInsight.hint.EscapeHandler" id="hide-hints"/>
@@ -418,6 +423,7 @@
   <statistics.usagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsOptionsUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.UsageTrigger$MyCollector"/>
+  <statistics.usagesCollector implementation="com.intellij.internal.statistic.ToolbarClicksCollector$ToolbarClicksUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ideSettings.LaFUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.OsNameUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.OsVersionUsageCollector"/>
@@ -453,8 +459,6 @@
 
   <applicationService serviceInterface="com.intellij.ide.TypePresentationService"
                       serviceImplementation="com.intellij.ide.TypePresentationServiceImpl"/>
-
-    <postStartupActivity implementation="com.intellij.execution.impl.ProjectRunConfigurationStartupActivity"/>
 
   <postStartupActivity implementation="com.intellij.ide.TipOfTheDayManager"/>
   <postStartupActivity implementation="com.intellij.ide.actions.PowerSaveModeNotifier"/>
@@ -510,7 +514,7 @@
 
   <intentionAction>
     <className>com.intellij.openapi.editor.actions.FlipCommaIntention</className>
-      <category>Other</category>
+    <category>Other</category>
   </intentionAction>
 
   <!--
