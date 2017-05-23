@@ -22,7 +22,9 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.IdentityHashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -32,8 +34,9 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public class ModelVault<T extends SModel> {
-  private Set<SModelReference> myModelsToPublish = new ConcurrentHashSet<SModelReference>();
-  private Set<T> myModels = new ConcurrentHashSet<T>();
+  private Set<SModelReference> myModelsToPublish = new ConcurrentHashSet<>();
+  private Set<T> myModels = new ConcurrentHashSet<>();
+  private Map<SModel,Boolean> myExactModelsToDrop = new IdentityHashMap<>();
 
   public void add(@NotNull T model) {
     myModels.add(model);
@@ -50,8 +53,9 @@ public class ModelVault<T extends SModel> {
     myModelsToPublish.add(modelReference);
   }
 
-  public void forget(SModelReference modelReference) {
-    myModelsToPublish.remove(modelReference);
+  public void forget(SModel model) {
+    myModelsToPublish.remove(model.getReference());
+    myExactModelsToDrop.put(model, Boolean.TRUE);
   }
 
   public boolean isPublished(SModelReference modelReference) {
@@ -59,25 +63,28 @@ public class ModelVault<T extends SModel> {
   }
 
   public Iterable<T> modelsToPublish() {
-    HashSet<T> rv = new HashSet<T>(myModels);
-    HashSet<SModelReference> collected = new HashSet<SModelReference>();
+    HashSet<T> rv = new HashSet<>(myModels);
+    HashSet<SModelReference> collected = new HashSet<>();
     for (Iterator<T> it = rv.iterator(); it.hasNext();) {
-      final SModelReference next = it.next().getReference();
-      if (collected.contains(next)) {
-        throw new IllegalStateException(String.format("There's more than one instance of model identified with reference %s, can't decide which one to publish", next));
-      }
-      collected.add(next);
-      if (!isPublished(next)) {
+      T next = it.next();
+      final SModelReference nextRef = next.getReference();
+      if (!isPublished(nextRef) || myExactModelsToDrop.containsKey(next)) {
         it.remove();
+        continue;
       }
+      if (collected.contains(nextRef)) {
+        throw new IllegalStateException(String.format("There's more than one instance of model identified with reference %s, can't decide which one to publish", nextRef));
+      }
+      collected.add(nextRef);
     }
     return rv;
   }
 
   public Iterable<T> modelsNotToPublish() {
-    HashSet<T> rv = new HashSet<T>(myModels);
+    HashSet<T> rv = new HashSet<>(myModels);
     for (Iterator<T> it = rv.iterator(); it.hasNext();) {
-      if (isPublished(it.next().getReference())) {
+      T next = it.next();
+      if (isPublished(next.getReference()) && !myExactModelsToDrop.containsKey(next)) {
         it.remove();
       }
     }
@@ -85,7 +92,7 @@ public class ModelVault<T extends SModel> {
   }
 
   public Iterable<T> allModels() {
-    return new ArrayList<T>(myModels);
+    return new ArrayList<>(myModels);
   }
 
   public boolean known(@NotNull SModelReference mr) {
