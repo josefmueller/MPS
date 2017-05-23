@@ -36,6 +36,7 @@
       <root url="jar://$PROJECT_DIR$/lib/xercesImpl.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.10.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/proxy-vole-1.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ini4j-0.5.2-patched.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
