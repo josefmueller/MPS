@@ -50,7 +50,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   @NotNull
   @Override
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
-    List<SubstituteMenuItem> smartItems = createSmartItemsItems(context);
+    List<SubstituteMenuItem> smartItems = createSmartItemsItems(context); // legacy items. This code should be dropped after 2017.2
     if (smartItems != null) {
       return smartItems;
     }
@@ -60,6 +60,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   }
 
   @Nullable
+  @Deprecated
   private List<SubstituteMenuItem> createSmartItemsItems(SubstituteMenuContext context) {
     SReferenceLink smartReference = getCharacteristicReference(context);
     if (smartReference != null) {
@@ -69,6 +70,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   }
 
   @Nullable
+  @Deprecated
   private SReferenceLink getCharacteristicReference(SubstituteMenuContext context) {
     SReferenceLink smartReference = ReferenceConceptUtil.getCharacteristicReference(myConcept);
     if (smartReference == null) {
@@ -81,6 +83,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
     return smartReference;
   }
 
+  @Deprecated
   private SNode getSmartReferenceNode(SubstituteMenuContext context) {
     final SNode conceptSourceNode = getMyConceptSourceNode(context);
     if (conceptSourceNode == null) {
@@ -91,6 +94,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   }
 
   @Nullable
+  @Deprecated
   private SNode getMyConceptSourceNode(SubstituteMenuContext context) {
     final SNodeReference conceptSourceNodeRef = myConcept.getSourceNode();
     if (conceptSourceNodeRef == null) {
@@ -104,7 +108,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
     return conceptSourceNode;
   }
 
-  //todo remove this method when we will get rid of specialized concepts
+  @Deprecated
   private SReferenceLink getReferenceLink(SNode referenceNode) {
     final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(referenceNode);
     if (genuineLinkDeclaration == null) {
@@ -114,6 +118,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
   }
 
   @NotNull
+  @Deprecated
   private List<SubstituteMenuItem> createSmartSubstituteMenuItems(SubstituteMenuContext context, SReferenceLink smartReference) {
     SNode currentChild = context.getCurrentTargetNode();
     SNode parentNode = context.getParentNode();
@@ -129,6 +134,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
     return result;
   }
 
+  @Deprecated
   private int getIndex(@Nullable SNode currentChild, @NotNull SNode parentNode) {
     int index = 0;
     if (currentChild != null) {

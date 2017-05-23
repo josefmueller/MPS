@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -31,7 +32,11 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * @author simon
+ *
+ * @deprecated Smart-concept heuristics at runtime will be dropped in next release
  */
+@Deprecated
+@ToRemove(version = 2017.2)
 public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem {
   private String myMatchingText;
   private final SNode myReferentNode;
