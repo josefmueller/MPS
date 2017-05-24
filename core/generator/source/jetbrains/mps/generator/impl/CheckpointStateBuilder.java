@@ -42,18 +42,16 @@ class CheckpointStateBuilder {
    * FIXME myMemento is of no use unless we uncomment stepLabels.export(this) call in addMappings() below.
    */
   private final MappingsMemento myMemento;
-  private final SModelReference myOutputModel;
-  private final TransitionTrace myTransitionTrace;
+  private final ModelTransitions myTransitionTrace;
   private final SModel myTransientModel;
   private final SModel myCheckpointModel;
   private boolean myCloneDone = false;
 
-  public CheckpointStateBuilder(@NotNull SModel transientModel, @NotNull SModel blankCheckpointModel, @NotNull TransitionTrace transitionTrace) {
+  public CheckpointStateBuilder(@NotNull SModel transientModel, @NotNull SModel blankCheckpointModel, @NotNull ModelTransitions transitionTrace) {
     myTransientModel = transientModel;
     myCheckpointModel = blankCheckpointModel;
     myTransitionTrace = transitionTrace;
     myMemento = new MappingsMemento();
-    myOutputModel = transientModel.getReference();
   }
 
   public void record(SNode inputNode, String mappingLabel, SNode outputNode) {
@@ -99,7 +97,7 @@ class CheckpointStateBuilder {
     // (i.e. either as regular model or another checkpoint model). E.g. pair (previous cp model + node id).
     // For the time being, however, consider regular model as possible input (last cp) only,
     // do not track 'previous' checkpoint and therefore can reuse MappingsMemento.
-    return myTransitionTrace.getOrigin(inputNode);
+    return myTransitionTrace.getActiveTransition().getOrigin(inputNode);
   }
 
   /**
@@ -121,20 +119,24 @@ class CheckpointStateBuilder {
     // reference targets from transient model to that in CP model (see DMB.substitute)
     cloneTransientToCheckpoint();
     new ModelImports(myCheckpointModel).addModelImport(originalInputModel.getReference());
-    DebugMappingsBuilder dmb = new DebugMappingsBuilder(originalInputModel.getRepository(), Collections.singletonMap(myTransientModel, myCheckpointModel));
+    DebugMappingsBuilder dmb = new DebugMappingsBuilder(originalInputModel.getRepository(), myTransitionTrace.getActiveTransition(), Collections.singletonMap(myTransientModel, myCheckpointModel));
     SNode debugMappings = dmb.build(myCheckpointModel, stepLabels);
     myCheckpointModel.addRootNode(debugMappings);
   }
 
   /*package*/ CheckpointState create(CheckpointIdentity step) {
     cloneTransientToCheckpoint();
-    new ConsistentNodeIdentityHelper(new SNodePresentationComparator()).apply(myCheckpointModel);
+    ConsistentNodeIdentityHelper consistentNodeIdentity = new ConsistentNodeIdentityHelper(new SNodePresentationComparator());
+    consistentNodeIdentity.apply(myCheckpointModel);
+    myTransitionTrace.newTransition(step, myCheckpointModel.getReference(), myTransientModel, consistentNodeIdentity.getChangedNodes());
     MappingsMemento mm = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(myCheckpointModel));
     return new CheckpointState(mm, myCheckpointModel, step);
   }
 
   private void cloneTransientToCheckpoint() {
     if (!myCloneDone) {
+      // XXX here, we clone user objects, including TransitionTrace.ORIGIN_TRACE value. If the node from CP model serves as a key
+      //     to some ML for subsequent CP, DebugMappingsBuilder may extract wrong origin for the ML's input node! Shall I clear all/certain user objects here?
       new CloneUtil(myTransientModel, myCheckpointModel).cloneModel();
       // ReferenceResolvers could have added references to nodes in other checkpoint models, we need to propagate these
       // dependencies into imports to ensure subsequent module.forget() could find and clear all dependant models as well

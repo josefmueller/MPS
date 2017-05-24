@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,14 +15,17 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 /**
  * Trace transformation of active model as it transitions from one CP to another.
@@ -47,10 +50,13 @@ public class ModelTransitions {
    * @param checkpoint last recorded checkpoint, or null if it's transformation of initial (i.e. not necessarily the @0 one, just no CP yet) model
    * @param checkpointModel reference to checkpoint model, structurally (and node ids) identical to {@code transformationModel}
    * @param transformationModel transient model with nodes deemed 'origin' of the checkpoint (we record their node identities as 'origins')
+   * @param changedNodes map to translate identities of nodes in transient model to that of checkpoint model (nodes in CP models are 're-numbered'
+   *                     to keep CP models stable between regenerations.
    */
-  public void newTransition(@Nullable Checkpoint checkpoint, @NotNull SModelReference checkpointModel, @NotNull SModel transformationModel) {
+  public void newTransition(@Nullable CheckpointIdentity checkpoint, @NotNull SModelReference checkpointModel, @NotNull SModel transformationModel,
+                            @Nullable Map<SNodeId, SNodeId> changedNodes) {
     myActiveTransition = checkpoint == null ? new TransitionTrace(this) : new TransitionTrace(checkpoint, this);
-    myActiveTransition.reset(transformationModel);
+    myActiveTransition.reset(transformationModel, changedNodes == null ? Function.identity() : nid -> changedNodes.getOrDefault(nid, nid));
     myCheckpointModels.add(checkpointModel);
   }
 

@@ -14,8 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BHReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.extapi.model.TransientSModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -27,10 +27,12 @@ import java.util.Comparator;
 public class DebugMappingsBuilder {
   private final SRepository myRepo;
   private final Map<SModel, SModel> mySubstModels;
+  private final TransitionTrace myOriginTrace;
 
-  public DebugMappingsBuilder(SRepository repo, Map<SModel, SModel> substituteModels) {
+  public DebugMappingsBuilder(SRepository repo, TransitionTrace originTrace, Map<SModel, SModel> substituteModels) {
     myRepo = repo;
     mySubstModels = substituteModels;
+    myOriginTrace = originTrace;
   }
 
   public SNode build(@NotNull SModel nodeFactory, GeneratorMappings mappings) {
@@ -49,7 +51,19 @@ public class DebugMappingsBuilder {
           // FIXME map of input+ML->output shall no longer list null keys (once I've added dedicated handling for conditional roots) 
           //       however, just don't want to break anything right now, shall assert key!= null later 
           SLinkOperations.setNewChild(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode"), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_InputNode"));
-          SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f0aeL, "node"), ((SNode) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity")), SMethodTrimmedId.create("create", MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b5e358L, "jetbrains.mps.lang.generator.structure.NodeIdentity"), "7PoJpZpIp9n"), nodeFactory, keyInputNode)));
+          SNode inputNodeIdentity = SModelOperations.createNewNode(nodeFactory, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, "jetbrains.mps.lang.generator.structure.TrivialNodeId"));
+          SNode inputNodeConceptIdentity = SModelOperations.createNewNode(nodeFactory, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"));
+          BHReflection.invoke(inputNodeConceptIdentity, SMethodTrimmedId.create("setConcept", MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"), "5ZE7FBYYR6j"), keyInputNode.getConcept());
+          SLinkOperations.setTarget(inputNodeIdentity, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x76c27c67a4605f07L, "cncpt"), inputNodeConceptIdentity);
+          // keyInputNode comes from one of transient models, and we need to replace it with a 'stable' version, exposed in a CP (or initial) model 
+          // XXX what if keyInputNode IS from CP model, wouldn't that give us wrong origin (the one from previous trace)? 
+          //     Indeed, this makes sense only as long as we use user objects to pass origin value (TT object is essentially stateless), and copy these 
+          //     when creating a CP model. If TT keeps map for the given transition only (bounded to previous CP), then the issue is likely less important 
+          //     (though still valid - in case node id of a CP node matches nodeid of some irrelevant transient one). Would be great if we can tell if keyInputNode 
+          //     comes from a transient, external or CP model. FIXME I still need to deal with 'foreign' nodes as ML keys, and then I could decide better what to do here. 
+          SNodeId inputNodeId = (myOriginTrace.hasOrigin(keyInputNode) ? myOriginTrace.getOrigin(keyInputNode) : keyInputNode.getNodeId());
+          SPropertyOperations.set(inputNodeIdentity, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, 0x7d58bd9fd9b64468L, "nodeId"), inputNodeId.toString());
+          SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f0aeL, "node"), inputNodeIdentity);
           SPropertyOperations.set(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f702L, "presentation"), keyInputNode.getPresentation());
           SModel inputNodeModel = keyInputNode.getModel();
           if (inputNodeModel != null) {

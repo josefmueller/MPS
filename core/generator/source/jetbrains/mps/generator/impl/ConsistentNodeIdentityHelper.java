@@ -15,19 +15,20 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Spliterators;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -42,6 +43,7 @@ import java.util.stream.StreamSupport;
 /*package*/ class ConsistentNodeIdentityHelper {
   private final Comparator<SNode> mySortComparator;
   private long myValue = 0;
+  private final Map<SNodeId, SNodeId> myChangedNodes = new HashMap<>();
 
   /*package*/ ConsistentNodeIdentityHelper(@Nullable Comparator<SNode> sorter) {
     mySortComparator = sorter;
@@ -62,6 +64,10 @@ import java.util.stream.StreamSupport;
     ///
     /// inject nodes back
     nodes.forEach(model::addRootNode);
+  }
+
+  public Map<SNodeId,SNodeId> getChangedNodes() {
+    return myChangedNodes;
   }
 
   private void processTree(SNode n) {
@@ -88,7 +94,9 @@ import java.util.stream.StreamSupport;
 
   private void processRow(SNode n) {
     do {
-      ((jetbrains.mps.smodel.SNode) n).setId(new SNodeId.Regular(myValue++));
+      jetbrains.mps.smodel.SNodeId.Regular newId = new jetbrains.mps.smodel.SNodeId.Regular(myValue++);
+      myChangedNodes.put(n.getNodeId(), newId);
+      ((jetbrains.mps.smodel.SNode) n).setId(newId);
       n = n.getNextSibling();
     } while (n != null);
   }

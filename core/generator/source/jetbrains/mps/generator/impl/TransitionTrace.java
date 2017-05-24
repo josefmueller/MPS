@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.util.TreeIterator;
+
+import java.util.function.Function;
 
 /**
  * Ensures we trace origin of node in a transient model, whether it's original input model or one of previous checkpoint steps.
@@ -33,6 +35,9 @@ import org.jetbrains.mps.openapi.util.TreeIterator;
  * active transformation).
  * {@code TransitionTrace} knows last checkpoint (if any), and doesn't know next one. Now it's {@link GenPlanActiveStep} that keeps track of the plan and actual
  * position in there. Perhaps, that's not the most elegant approach.
+ *
+ * If a model M passes through a sequence of M1 -> CP1 -> M2 -> M3 -> CP2 -> M4,
+ * {@linkplain TransitionTrace transition traces} for the model are: TT(null), TT(CP1), TT(CP2).
  *
  * FIXME inputNode may not necessarily come from the input model, it might be arbitrary non-transient (or even perhaps checkpoint?!) model,
  *       thus saving nodeId is not sufficient. OTOH, don't want to save SNodeReference as it's superficial in most regular cases
@@ -47,7 +52,8 @@ class TransitionTrace {
    */
   private static final String ORIGIN_TRACE = "originTrace";
 
-  private final Checkpoint myCheckpoint;
+  // represents a checkpoint which is treated as origin for nodes of a transformation step.
+  private final CheckpointIdentity myCheckpoint;
   private final ModelTransitions myModelTrace;
 
   TransitionTrace(@NotNull ModelTransitions modelTrace) {
@@ -56,7 +62,7 @@ class TransitionTrace {
     myModelTrace = modelTrace;
   }
 
-  TransitionTrace(@NotNull Checkpoint checkpoint, @NotNull ModelTransitions modelTrace) {
+  TransitionTrace(@NotNull CheckpointIdentity checkpoint, @NotNull ModelTransitions modelTrace) {
     myCheckpoint = checkpoint;
     myModelTrace = modelTrace;
   }
@@ -67,9 +73,9 @@ class TransitionTrace {
    * FIXME perhaps, shall take originModel as well, and a function that maps nodes of transientModel to nodes of originalModel
    * (with getNodeId() as default). Otherwise connection to originalModel is not apparent here.
    */
-  void reset(@NotNull SModel transientModel) {
+  void reset(@NotNull SModel transientModel, Function<SNodeId,SNodeId> nodeTranslate) {
     for (SNode n : SNodeUtil.getDescendants(transientModel)) {
-      n.putUserObject(ORIGIN_TRACE, n.getNodeId());
+      n.putUserObject(ORIGIN_TRACE, nodeTranslate.apply(n.getNodeId()));
     }
   }
 
