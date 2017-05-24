@@ -2,8 +2,7 @@
 <model ref="r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)">
   <persistence version="9" />
   <languages>
-    <use id="baa9238b-36da-4ccb-a76b-8ad70e222183" name="jetbrains.mps.samples.highlevel.simpleStructure" version="0" />
-    <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
+    <devkit ref="d772797b-a94f-47ab-a15c-365485022ccb(jetbrains.mps.samples.highlevel.devkit.structure)" />
   </languages>
   <imports />
   <registry>

@@ -3,5 +3,8 @@
   <plan id="AspectCPS">
     <checkpoint id="DescriptorClasses" file="aspectcps-descriptorclasses.mps" />
   </plan>
+  <plan id="HighlevelCPS">
+    <checkpoint id="DescriptorsReady" file="highlevelcps-descriptorsready.mps" />
+  </plan>
 </checkpoints>
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dev-kit name="jetbrains.mps.samples.highlevel.devkit.structure" uuid="d772797b-a94f-47ab-a15c-365485022ccb">
+  <exported-language name="baa9238b-36da-4ccb-a76b-8ad70e222183(jetbrains.mps.samples.highlevel.simpleStructure)" />
+  <generation-plan model="r:f1c325a7-63fd-4eab-bdf1-05d40abdcb16(gpstruct)" />
+</dev-kit>
+
