@@ -6961,82 +6961,80 @@
                   </node>
                 </node>
                 <node concept="3clFbJ" id="2V3ml1v6o1w" role="3cqZAp">
-                  <node concept="3y3z36" id="2V3ml1v6o1x" role="3clFbw">
-                    <node concept="37vLTw" id="2V3ml1v6o1y" role="3uHU7B">
-                      <ref role="3cqZAo" node="2V3ml1v6o1r" resolve="modelVer" />
+                  <node concept="1Wc70l" id="5yRJc8nRTBC" role="3clFbw">
+                    <node concept="3y3z36" id="2V3ml1v6o1x" role="3uHU7B">
+                      <node concept="37vLTw" id="2V3ml1v6o1y" role="3uHU7B">
+                        <ref role="3cqZAo" node="2V3ml1v6o1r" resolve="modelVer" />
+                      </node>
+                      <node concept="1ZRNhn" id="2V3ml1v6o1z" role="3uHU7w">
+                        <node concept="3cmrfG" id="2V3ml1v6o1$" role="2$L3a6">
+                          <property role="3cmrfH" value="1" />
+                        </node>
+                      </node>
                     </node>
-                    <node concept="1ZRNhn" id="2V3ml1v6o1z" role="3uHU7w">
-                      <node concept="3cmrfG" id="2V3ml1v6o1$" role="2$L3a6">
-                        <property role="3cmrfH" value="1" />
+                    <node concept="3y3z36" id="2V3ml1v6o1C" role="3uHU7w">
+                      <node concept="37vLTw" id="2V3ml1v6o1D" role="3uHU7B">
+                        <ref role="3cqZAo" node="2V3ml1v6o1r" resolve="modelVer" />
+                      </node>
+                      <node concept="37vLTw" id="2V3ml1v6o1E" role="3uHU7w">
+                        <ref role="3cqZAo" node="2V3ml1v9KQw" resolve="currentVersion" />
                       </node>
                     </node>
                   </node>
                   <node concept="3clFbS" id="2V3ml1v6o1A" role="3clFbx">
-                    <node concept="3clFbJ" id="2V3ml1v6o1B" role="3cqZAp">
-                      <node concept="3y3z36" id="2V3ml1v6o1C" role="3clFbw">
-                        <node concept="37vLTw" id="2V3ml1v6o1D" role="3uHU7B">
-                          <ref role="3cqZAo" node="2V3ml1v6o1r" resolve="modelVer" />
-                        </node>
-                        <node concept="37vLTw" id="2V3ml1v6o1E" role="3uHU7w">
-                          <ref role="3cqZAo" node="2V3ml1v9KQw" resolve="currentVersion" />
-                        </node>
-                      </node>
-                      <node concept="3clFbS" id="2V3ml1v6o1G" role="3clFbx">
-                        <node concept="RRSsy" id="3jYQuSB37dT" role="3cqZAp">
-                          <property role="RRSoG" value="error" />
-                          <node concept="3cpWs3" id="2V3ml1v6o1J" role="RRSoy">
-                            <node concept="3cpWs3" id="2V3ml1v6o1K" role="3uHU7B">
-                              <node concept="3cpWs3" id="2V3ml1v6o1L" role="3uHU7B">
-                                <node concept="3cpWs3" id="2V3ml1v6o1M" role="3uHU7B">
-                                  <node concept="3cpWs3" id="2V3ml1v6o1N" role="3uHU7B">
-                                    <node concept="3cpWs3" id="2V3ml1va2hH" role="3uHU7B">
-                                      <node concept="Xl_RD" id="2V3ml1va1Xo" role="3uHU7w">
-                                        <property role="Xl_RC" value=" with version " />
-                                      </node>
-                                      <node concept="3cpWs3" id="2V3ml1va1r1" role="3uHU7B">
-                                        <node concept="3cpWs3" id="2V3ml1v6o1O" role="3uHU7B">
-                                          <node concept="3cpWs3" id="2V3ml1v6o1P" role="3uHU7B">
-                                            <node concept="Xl_RD" id="2V3ml1v6o1Q" role="3uHU7B">
-                                              <property role="Xl_RC" value="Migration assistant detected inconsistecy in language versions. Module " />
-                                            </node>
-                                            <node concept="37vLTw" id="2V3ml1v9Ywi" role="3uHU7w">
-                                              <ref role="3cqZAo" node="2V3ml1v6wfA" resolve="module" />
-                                            </node>
-                                          </node>
-                                          <node concept="Xl_RD" id="2V3ml1v6o1S" role="3uHU7w">
-                                            <property role="Xl_RC" value=" uses language " />
-                                          </node>
-                                        </node>
-                                        <node concept="2GrUjf" id="2V3ml1va3mS" role="3uHU7w">
-                                          <ref role="2Gs0qQ" node="2V3ml1v9AmE" resolve="lang" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node concept="37vLTw" id="2V3ml1v6o1T" role="3uHU7w">
-                                      <ref role="3cqZAo" node="2V3ml1v9KQw" resolve="currentVersion" />
-                                    </node>
+                    <node concept="RRSsy" id="3jYQuSB37dT" role="3cqZAp">
+                      <property role="RRSoG" value="error" />
+                      <node concept="3cpWs3" id="2V3ml1v6o1J" role="RRSoy">
+                        <node concept="3cpWs3" id="2V3ml1v6o1K" role="3uHU7B">
+                          <node concept="3cpWs3" id="2V3ml1v6o1L" role="3uHU7B">
+                            <node concept="3cpWs3" id="2V3ml1v6o1M" role="3uHU7B">
+                              <node concept="3cpWs3" id="2V3ml1v6o1N" role="3uHU7B">
+                                <node concept="3cpWs3" id="2V3ml1va2hH" role="3uHU7B">
+                                  <node concept="Xl_RD" id="2V3ml1va1Xo" role="3uHU7w">
+                                    <property role="Xl_RC" value=" with version " />
                                   </node>
-                                  <node concept="Xl_RD" id="2V3ml1v6o1U" role="3uHU7w">
-                                    <property role="Xl_RC" value=" while its model " />
+                                  <node concept="3cpWs3" id="2V3ml1va1r1" role="3uHU7B">
+                                    <node concept="3cpWs3" id="2V3ml1v6o1O" role="3uHU7B">
+                                      <node concept="3cpWs3" id="2V3ml1v6o1P" role="3uHU7B">
+                                        <node concept="Xl_RD" id="2V3ml1v6o1Q" role="3uHU7B">
+                                          <property role="Xl_RC" value="Migration assistant detected inconsistency in language versions. Module " />
+                                        </node>
+                                        <node concept="37vLTw" id="2V3ml1v9Ywi" role="3uHU7w">
+                                          <ref role="3cqZAo" node="2V3ml1v6wfA" resolve="module" />
+                                        </node>
+                                      </node>
+                                      <node concept="Xl_RD" id="2V3ml1v6o1S" role="3uHU7w">
+                                        <property role="Xl_RC" value=" uses language " />
+                                      </node>
+                                    </node>
+                                    <node concept="2GrUjf" id="2V3ml1va3mS" role="3uHU7w">
+                                      <ref role="2Gs0qQ" node="2V3ml1v9AmE" resolve="lang" />
+                                    </node>
                                   </node>
                                 </node>
-                                <node concept="2OqwBi" id="2V3ml1v6o4b" role="3uHU7w">
-                                  <node concept="37vLTw" id="2V3ml1v6o4a" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="2V3ml1v6o1Y" resolve="m" />
-                                  </node>
-                                  <node concept="liA8E" id="2V3ml1v6o4c" role="2OqNvi">
-                                    <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
-                                  </node>
+                                <node concept="37vLTw" id="2V3ml1v6o1T" role="3uHU7w">
+                                  <ref role="3cqZAo" node="2V3ml1v9KQw" resolve="currentVersion" />
                                 </node>
                               </node>
-                              <node concept="Xl_RD" id="2V3ml1v6o1W" role="3uHU7w">
-                                <property role="Xl_RC" value=" uses this language with version " />
+                              <node concept="Xl_RD" id="2V3ml1v6o1U" role="3uHU7w">
+                                <property role="Xl_RC" value=" while its model " />
                               </node>
                             </node>
-                            <node concept="37vLTw" id="2V3ml1v6o1X" role="3uHU7w">
-                              <ref role="3cqZAo" node="2V3ml1v6o1r" resolve="modelVer" />
+                            <node concept="2OqwBi" id="2V3ml1v6o4b" role="3uHU7w">
+                              <node concept="37vLTw" id="2V3ml1v6o4a" role="2Oq$k0">
+                                <ref role="3cqZAo" node="2V3ml1v6o1Y" resolve="m" />
+                              </node>
+                              <node concept="liA8E" id="2V3ml1v6o4c" role="2OqNvi">
+                                <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                              </node>
                             </node>
                           </node>
+                          <node concept="Xl_RD" id="2V3ml1v6o1W" role="3uHU7w">
+                            <property role="Xl_RC" value=" uses this language with version " />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="2V3ml1v6o1X" role="3uHU7w">
+                          <ref role="3cqZAo" node="2V3ml1v6o1r" resolve="modelVer" />
                         </node>
                       </node>
                     </node>

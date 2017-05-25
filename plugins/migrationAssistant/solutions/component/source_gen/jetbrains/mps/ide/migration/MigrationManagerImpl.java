@@ -227,11 +227,9 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
       for (SLanguage lang : CollectionSequence.fromCollection(modelInternal.importedLanguageIds())) {
         int currentVersion = langVersions.get(lang);
         int modelVer = modelInternal.getLanguageImportVersion(lang);
-        if (modelVer != -1) {
-          if (modelVer != currentVersion) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error("Migration assistant detected inconsistecy in language versions. Module " + module + " uses language " + lang + " with version " + currentVersion + " while its model " + m.getName() + " uses this language with version " + modelVer);
-            }
+        if (modelVer != -1 && modelVer != currentVersion) {
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("Migration assistant detected inconsistency in language versions. Module " + module + " uses language " + lang + " with version " + currentVersion + " while its model " + m.getName() + " uses this language with version " + modelVer);
           }
         }
       }
