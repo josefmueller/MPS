@@ -17,9 +17,9 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -45,7 +45,11 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
     return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
   }
   /*package*/ static SAbstractConcept getOperationSConcept_id6ALWH9g2jU8(@NotNull SNode __thisNode__) {
-    return null;
+    SAbstractConcept memberOperationConcept = (SAbstractConcept) ListSequence.fromList(IMember__BehaviorDescriptor.getOperationSConcept_id6ALWH9g2mqE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))).first();
+    if (memberOperationConcept == null) {
+      throw new RuntimeException("Please set operationSConcept in " + SNodeOperations.getConcept(__thisNode__) + " concept");
+    }
+    return memberOperationConcept;
   }
   /*package*/ static SNode createOperation_idhEwIBCC(@NotNull SNode __thisNode__) {
     SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(IMember__BehaviorDescriptor.getOperationSConcept_id6ALWH9g2jU8.invoke(__thisNode__)));
