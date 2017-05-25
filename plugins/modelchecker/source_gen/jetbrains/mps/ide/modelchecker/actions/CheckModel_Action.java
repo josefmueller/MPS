@@ -10,14 +10,17 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 
 public class CheckModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
@@ -34,13 +37,7 @@ public class CheckModel_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    List<SModel> modelsToCheck = new ArrayList<SModel>();
-    if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
-      modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
-    }
-    if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
-      modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
-    }
+    List<SModel> modelsToCheck = CheckModel_Action.this.selectedModels(_params);
 
     String whatToCheck = "Model";
     if (modelsToCheck.size() > 1) {
@@ -70,11 +67,32 @@ public class CheckModel_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     // check all models in model 
+    List<SModel> modelsToCheck = new ModelAccessHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess()).runReadAction(new Computable<List<SModel>>() {
+      public List<SModel> compute() {
+        List<SModel> rv = CheckModel_Action.this.selectedModels(_params);
+        CheckModel_Action.this.completeWithNested(rv, _params);
+        return rv;
+      }
+    });
+    if (modelsToCheck.isEmpty()) {
+      return;
+    }
+
+    ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModelsAndShowResult(modelsToCheck);
+  }
+  /*package*/ List<SModel> selectedModels(final Map<String, Object> _params) {
     List<SModel> modelsToCheck = new ArrayList<SModel>();
     if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null) {
       modelsToCheck.addAll(((List<SModel>) MapSequence.fromMap(_params).get("models")));
@@ -82,21 +100,19 @@ public class CheckModel_Action extends BaseAction {
     if (((SModel) MapSequence.fromMap(_params).get("model")) != null && !(modelsToCheck.contains(((SModel) MapSequence.fromMap(_params).get("model"))))) {
       modelsToCheck.add(((SModel) MapSequence.fromMap(_params).get("model")));
     }
-    if (modelsToCheck.isEmpty()) {
-      return;
-    }
-
-    for (SModel model : modelsToCheck.toArray(new SModel[modelsToCheck.size()])) {
+    return modelsToCheck;
+  }
+  /*package*/ void completeWithNested(List<SModel> models, final Map<String, Object> _params) {
+    for (SModel model : models.toArray(new SModel[models.size()])) {
       String name = model.getName().getLongName();
       boolean isStub = SModelStereotype.isStubModel(model);
       for (SModel innerModel : Sequence.fromIterable(model.getModule().getModels())) {
         if (innerModel.getName().getLongName().startsWith(name + ".")) {
           if (isStub == SModelStereotype.isStubModel(innerModel)) {
-            modelsToCheck.add(innerModel);
+            models.add(innerModel);
           }
         }
       }
     }
-    ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkModelsAndShowResult(modelsToCheck);
   }
 }
