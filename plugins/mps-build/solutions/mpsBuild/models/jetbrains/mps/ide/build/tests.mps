@@ -2429,6 +2429,9 @@
       <node concept="22LTRM" id="3uCFJsbkQba" role="22LTRK">
         <ref role="22LTRN" node="5qjB6M$jGbk" resolve="jetbrains.mps.testActions" />
       </node>
+      <node concept="22LTRM" id="2qIbb0IugIC" role="22LTRK">
+        <ref role="22LTRN" node="2qIbb0Iudvu" resolve="jetbrains.mps.lang.plugin.tests" />
+      </node>
     </node>
     <node concept="2_Ic$z" id="5qjB6M$jFFW" role="3989C9">
       <property role="2_Ic$$" value="true" />
@@ -2479,6 +2482,33 @@
         </node>
       </node>
     </node>
+    <node concept="1E1JtA" id="2qIbb0Iudvu" role="3989C9">
+      <property role="BnDLt" value="true" />
+      <property role="TrG5h" value="jetbrains.mps.lang.plugin.tests" />
+      <property role="3LESm3" value="8dc46c52-5402-4971-bfcd-5a34efb20528" />
+      <property role="2GAjPV" value="false" />
+      <property role="aoJFB" value="sources and tests" />
+      <node concept="55IIr" id="2qIbb0Iudvw" role="3LF7KH">
+        <node concept="2Ry0Ak" id="2qIbb0IudvY" role="iGT6I">
+          <property role="2Ry0Am" value="testbench" />
+          <node concept="2Ry0Ak" id="2qIbb0IudwU" role="2Ry0An">
+            <property role="2Ry0Am" value="testsolutions" />
+            <node concept="2Ry0Ak" id="2qIbb0Iudx9" role="2Ry0An">
+              <property role="2Ry0Am" value="plugin.tests" />
+              <node concept="2Ry0Ak" id="2qIbb0Iudxy" role="2Ry0An">
+                <property role="2Ry0Am" value="jetbrains.mps.lang.plugin.tests.msd" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1SiIV0" id="2qIbb0IudxD" role="3bR37C">
+        <node concept="3bR9La" id="2qIbb0IudxE" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" to="ffeo:1TaHNgiIbJb" resolve="MPS.Platform" />
+        </node>
+      </node>
+    </node>
     <node concept="398rNT" id="5qjB6M$jFFY" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
     </node>
@@ -2511,6 +2541,9 @@
     <node concept="1l3spV" id="5qjB6M$jFGH" role="1l3spN">
       <node concept="L2wRC" id="5qjB6M$jGc8" role="39821P">
         <ref role="L2wRA" node="5qjB6M$jGbk" resolve="jetbrains.mps.testActions" />
+      </node>
+      <node concept="L2wRC" id="2qIbb0IudxW" role="39821P">
+        <ref role="L2wRA" node="2qIbb0Iudvu" resolve="jetbrains.mps.lang.plugin.tests" />
       </node>
     </node>
     <node concept="10PD9b" id="5qjB6M$jFGK" role="10PD9s" />

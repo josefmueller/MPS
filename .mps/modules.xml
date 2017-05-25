@@ -488,6 +488,7 @@
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/kernel.test/jetbrains.mps.kernel.tests.msd" folder="core.kernel" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/make.test/jetbrains.mps.make.tests.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/pattern.test/jetbrains.mps.lang.pattern.test.msd" folder="core.languages.pattern" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/plugin.tests/jetbrains.mps.lang.plugin.tests.msd" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/regexp.unittest/jetbrains.mps.baseLanguage.regexp.unittest.msd" folder="core.baseLanguage.regexp" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/smodelLanguage_typeTest/smodelLanguage_typetest.msd" folder="core.languages.smodel" />
