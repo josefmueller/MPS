@@ -57,7 +57,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.KajaAndOr", "LogicalOperator", 0x44306fd2ef944b56L, 0x9806d9ab509536dbL, 0x1a6f404e630a46d9L);
     b.class_(false, true, false);
     b.super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)/1904811872814253785");
     b.aggregate("left", 0x1a6f404e630a460cL).target(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L).optional(false).ordered(true).multiple(false).origin("1904811872814253580").done();
     b.aggregate("right", 0x1a6f404e630a460dL).target(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ec9fc1L).optional(false).ordered(true).multiple(false).origin("1904811872814253581").done();

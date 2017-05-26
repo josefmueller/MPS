@@ -133,7 +133,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.Kaja", "CommandList", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785f06a3fL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/3308300503039896127");
     b.aggregate("commands", 0x2de971c785f06a40L).target(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL).optional(true).ordered(true).multiple(true).origin("3308300503039896128").done();
     return b.create();
@@ -173,7 +172,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.Kaja", "EmptyLine", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L);
     b.class_(true, false, false);
     b.super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand", 0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/3308300503039740438");
     b.alias("<empty>");
     return b.create();
