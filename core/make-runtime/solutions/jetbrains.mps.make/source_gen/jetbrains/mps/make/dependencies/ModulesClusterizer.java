@@ -47,9 +47,9 @@ public class ModulesClusterizer {
       }
     });
     Iterable<IResource> rest = Sequence.fromIterable(((Iterable<IResource>) res)).subtract(ListSequence.fromList(mres));
-    ModulesCluster clst = new ModulesCluster(mods, myLanguageRegistry);
-    clst.collectRequired(mods);
-    Iterable<? extends Iterable<SModule>> moduleBuildOrder = clst.buildOrder();
+    ModulesCluster clst = new ModulesCluster(myLanguageRegistry);
+    // FIXME use ProgressMonitor as graph ordering may take some time 
+    Iterable<? extends Iterable<SModule>> moduleBuildOrder = clst.buildOrder(mods);
     Iterable<? extends Iterable<MResource>> mresBuildOrder = Sequence.fromIterable(moduleBuildOrder).select(new ISelector<Iterable<SModule>, ISequence<MResource>>() {
       public ISequence<MResource> select(final Iterable<SModule> cl) {
         return ListSequence.fromList(mres).where(new IWhereFilter<MResource>() {
