@@ -6,7 +6,6 @@ build.properties
 mps-core/lib
 mps-core/resources/messages
 mps-core/languages
-mps-testing
 mps-java/lib
 mps-java/META-INF/platform
 mps-java/META-INF/JavaPlatform.xml
@@ -17,3 +16,8 @@ sandbox
 tests/blProject/.idea/workspace.xml
 tests/psiProject/.idea/workspace.xml
 tests/multiModulesProject/.idea/workspace.xml
+mps-testing/META-INF
+mps-testing/lib
+mps-testing/languages
+mps.editor.tests/languages
+mps.editor.tests/META-INF

@@ -190,10 +190,24 @@
   </target>
 
   <target name="buildTests" depends="loadIdeaPathVar, buildCore">
-    <ant antfile="mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" target="layout.tests">
+    <!--
+          manually building dependencies instead of calling buildDependents because it's impossible
+          to specify custom location of pre-build (mpsCore/mpsBootstrapCore)
+
+          Alternative solution would be: remove default locations for these artifacts from mpsEditorTestsPlugin.xml
+          script & specify it to be $mps_home while running mpsEditorTestsPlugin on the build server
+      -->
+    <ant antfile="${base_dir}/build/tests/mpsEditor.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
-      <property name="build.layout.tests" location="${build.home}/artifacts/mpsPlugin.tests"/>
+      <property name="artifacts.mpsCore" value="${build.home}/artifacts/mpsCore"/>
+      <property name="artifacts.mpsBootstrapCore" value="${build.home}/artifacts/mpsBootstrapCore"/>
+      <property name="artifacts.mpsTesting" value="${build.home}/artifacts/mpsTesting"/>
+    </ant>
+
+    <ant antfile="mpsEditorTestsPlugin.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
     </ant>
   </target>
 
@@ -236,6 +250,7 @@
     <copy todir="${test.platform.sandbox.dir}/plugins">
       <fileset dir="${build.home}/artifacts/mpsPlugin"/>
       <fileset dir="${build.home}/artifacts/mpsPlugin.tests"/>
+      <fileset dir="${build.home}/artifacts/mpsEditorTestsPlugin"/>
     </copy>
     <copy todir="${test.platform.sandbox.dir}/plugins/tests/projectView">
       <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>

@@ -665,9 +665,6 @@
     <node concept="2sgV4H" id="611WBGkd$99" role="1l3spa">
       <ref role="1l3spb" node="611WBGkdzQQ" resolve="mpsPluginCore" />
     </node>
-    <node concept="2sgV4H" id="2w_crIpQQZW" role="1l3spa">
-      <ref role="1l3spb" node="6NEiZqQxZ11" resolve="mpsEditorTestsPlugin" />
-    </node>
     <node concept="2sgV4H" id="3N3tml3tBJE" role="1l3spa">
       <ref role="1l3spb" node="63lu3g6BW1M" resolve="mpsPluginTests" />
     </node>
@@ -722,9 +719,6 @@
       <property role="TrG5h" value="tests" />
       <node concept="3_I8Xc" id="3N3tml3tBMB" role="39821P">
         <ref role="3_I8Xa" node="63lu3g6BW2T" resolve="mps-core" />
-      </node>
-      <node concept="3_I8Xc" id="2w_crIpQQYQ" role="39821P">
-        <ref role="3_I8Xa" node="6NEiZqQxZ5D" resolve="mps.editor.tests" />
       </node>
     </node>
   </node>
@@ -1917,6 +1911,9 @@
     <property role="3GE5qa" value="plugin" />
     <property role="TrG5h" value="mpsEditorTestsPlugin" />
     <property role="turDy" value="mpsEditorTestsPlugin.xml" />
+    <node concept="2sgV4H" id="Wd$cIjaGoG" role="1l3spa">
+      <ref role="1l3spb" to="mo18:53PdBITeUc0" resolve="mpsEditor" />
+    </node>
     <node concept="398rNT" id="6NEiZqQUBhK" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
       <node concept="55IIr" id="6NEiZqQUBhN" role="398pKh" />
@@ -1927,8 +1924,18 @@
     <node concept="1l3spV" id="6NEiZqQxZ13" role="1l3spN">
       <node concept="m$_wl" id="6NEiZqQxZ5D" role="39821P">
         <ref role="m_rDy" node="6NEiZqQxZ2K" resolve="jetbrains.mps.lang.editor.tests" />
-        <node concept="3_I8Xc" id="6NEiZqQxZde" role="39821P">
-          <ref role="3_I8Xa" to="mo18:6NEiZqQOfZu" resolve="languages" />
+        <node concept="398223" id="Wd$cIjebAT" role="39821P">
+          <node concept="3_J27D" id="Wd$cIjebAV" role="Nbhlr">
+            <node concept="3Mxwew" id="Wd$cIjebB0" role="3MwsjC">
+              <property role="3MwjfP" value="languages" />
+            </node>
+          </node>
+          <node concept="3ygNvl" id="Wd$cIjebB4" role="39821P">
+            <ref role="3ygNvj" to="mo18:53PdBITf0cn" resolve="languages" />
+          </node>
+          <node concept="3ygNvl" id="Wd$cIjebBb" role="39821P">
+            <ref role="3ygNvj" to="mo18:53PdBITf0gq" resolve="tests" />
+          </node>
         </node>
       </node>
     </node>
@@ -1952,9 +1959,6 @@
     </node>
     <node concept="10PD9b" id="6NEiZqQxZaQ" role="10PD9s" />
     <node concept="3b7kt6" id="6NEiZqQxZaV" role="10PD9s" />
-    <node concept="2sgV4H" id="6NEiZqQSHrx" role="1l3spa">
-      <ref role="1l3spb" to="mo18:6NEiZqQOfig" resolve="mpsEditorCommon" />
-    </node>
     <node concept="55IIr" id="6NEiZqQI48t" role="auvoZ">
       <node concept="2Ry0Ak" id="6NEiZqQI48u" role="iGT6I">
         <property role="2Ry0Am" value="IdeaPlugin" />
