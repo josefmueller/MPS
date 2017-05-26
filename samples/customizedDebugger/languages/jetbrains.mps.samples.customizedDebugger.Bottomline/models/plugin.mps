@@ -878,14 +878,14 @@
                 <node concept="3uibUv" id="5L5h3brvDTh" role="1tU5fm">
                   <ref role="3uigEE" to="iqmz:2_5NjuZKW3j" resolve="IdeaJavaCompiler" />
                 </node>
-                <node concept="2OqwBi" id="5L5h3brvDTi" role="33vP2m">
-                  <node concept="1aIXbY" id="2zR2ackd3Uo" role="2Oq$k0">
-                    <node concept="1aIXbZ" id="2zR2ackd3Un" role="2Oq$k0" />
-                    <node concept="2sxana" id="2zR2ackd3Ur" role="2OqNvi">
-                      <ref role="2sxfKC" node="5L5h3brvz7R" resolve="project" />
+                <node concept="2OqwBi" id="15CsYCmVqew" role="33vP2m">
+                  <node concept="2OqwBi" id="15CsYCmVpoY" role="2Oq$k0">
+                    <node concept="2_BwXt" id="15CsYCmVpoZ" role="2Oq$k0" />
+                    <node concept="liA8E" id="15CsYCmVpp0" role="2OqNvi">
+                      <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="5L5h3brvDTm" role="2OqNvi">
+                  <node concept="liA8E" id="15CsYCmVqSk" role="2OqNvi">
                     <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                     <node concept="3VsKOn" id="5L5h3brvDTn" role="37wK5m">
                       <ref role="3VsUkX" to="iqmz:2_5NjuZKW3j" resolve="IdeaJavaCompiler" />

@@ -254,7 +254,7 @@ public class CompileGeneratedJava_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_widgfz_a0b);
               }
 
-              final IdeaJavaCompiler compiler = vars(pa.global()).project().getComponent(IdeaJavaCompiler.class);
+              final IdeaJavaCompiler compiler = monitor.getSession().getProject().getComponent(IdeaJavaCompiler.class);
               if (compiler == null || !(compiler.isValid())) {
                 monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("IntelliJ IDEA is required for compilation")));
                 return new IResult.FAILURE(_output_widgfz_a0b);
