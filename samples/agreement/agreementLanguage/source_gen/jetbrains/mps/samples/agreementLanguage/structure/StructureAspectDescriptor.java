@@ -189,7 +189,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.agreementLanguage", "Quantity", 0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.formulaLanguage.structure.Constant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)/1111792102248");
     b.prop("unit", 0x102dc0c5503L, "1111793358083");
     b.aggregate("amount", 0x102dc0c6b1dL).target(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL).optional(false).ordered(true).multiple(false).origin("1111793363741").done();
