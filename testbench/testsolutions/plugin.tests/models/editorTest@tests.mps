@@ -27,6 +27,9 @@
       <concept id="1227182079811" name="jetbrains.mps.lang.test.structure.TypeKeyStatement" flags="nn" index="2TK7Tu">
         <property id="1227184461946" name="keys" index="2TTd_B" />
       </concept>
+      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
+        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
+      </concept>
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
@@ -265,6 +268,9 @@
         <property role="2TTd_B" value="myModule" />
       </node>
     </node>
+  </node>
+  <node concept="2XOHcx" id="6wjYfOxMqpJ">
+    <property role="2XOHcw" value="${mps_home}" />
   </node>
 </model>
 

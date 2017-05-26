@@ -11,7 +11,7 @@ import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 public class Test_CompleteActionParameterDeclaration_Test extends BaseTransformationTest {
   @Test
   public void test_Test_CompleteActionParameterDeclaration() throws Throwable {
-    initTest("", "r:a5382851-1d9f-41aa-80d5-23778a1655eb(jetbrains.mps.lang.plugin.tests.editorTest@tests)");
+    initTest("${mps_home}", "r:a5382851-1d9f-41aa-80d5-23778a1655eb(jetbrains.mps.lang.plugin.tests.editorTest@tests)");
     runTest("jetbrains.mps.lang.plugin.tests.editorTest.Test_CompleteActionParameterDeclaration_Test$TestBody", "testMethod", false);
   }
 
