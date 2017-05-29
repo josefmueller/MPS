@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public abstract class LanguageErrorsCollector {
@@ -38,7 +38,7 @@ public abstract class LanguageErrorsCollector {
     addError(reporter);
   }
 
-  protected abstract void addError(IErrorReporter errorReporter);
+  protected abstract void addError(NodeReportItem errorReporter);
 
   public void addDependency(SNode dependency) {
   }

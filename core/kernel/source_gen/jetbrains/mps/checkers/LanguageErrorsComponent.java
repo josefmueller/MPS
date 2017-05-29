@@ -5,7 +5,7 @@ package jetbrains.mps.checkers;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import java.util.Set;
@@ -47,7 +47,7 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
    */
   private DescendantsTreeIterator myFullCheckIterator;
 
-  private MultiMap<SNode, IErrorReporter> myNodesToErrors = new SetBasedMultiMap<SNode, IErrorReporter>();
+  private MultiMap<SNode, NodeReportItem> myNodesToErrors = new SetBasedMultiMap<SNode, NodeReportItem>();
   private ManyToManyMap<SNode, SNode> myDependenciesToNodesAndViceVersa = new ManyToManyMap<SNode, SNode>();
   private Set<SNode> myInvalidNodes = new HashSet<SNode>();
   private Set<SNode> myDependenciesToInvalidate = new HashSet<SNode>();
@@ -75,13 +75,13 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
   }
 
   @Override
-  protected void addError(IErrorReporter errorReporter) {
-    myNodesToErrors.putValue(errorReporter.getSNode(), errorReporter);
+  protected void addError(NodeReportItem errorReporter) {
+    myNodesToErrors.putValue(errorReporter.getNode(), errorReporter);
   }
 
-  public Set<IErrorReporter> getErrors() {
-    Iterable<? extends IErrorReporter> values = myNodesToErrors.values();
-    return SetSequence.fromSetWithValues(new HashSet<IErrorReporter>(), values);
+  public Set<NodeReportItem> getErrors() {
+    Iterable<? extends NodeReportItem> values = myNodesToErrors.values();
+    return SetSequence.fromSetWithValues(new HashSet<NodeReportItem>(), values);
   }
 
   @Override

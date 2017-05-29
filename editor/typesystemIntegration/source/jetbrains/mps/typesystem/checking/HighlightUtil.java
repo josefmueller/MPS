@@ -15,34 +15,46 @@
  */
 package jetbrains.mps.typesystem.checking;
 
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.SimpleErrorReporter;
+import jetbrains.mps.errors.item.NodeFeatureReportItem;
+import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.openapi.editor.ColorConstants;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 
 public class HighlightUtil {
-  public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, EditorMessageOwner checker) {
-    return createHighlighterMessage(node, message, errorReporter != null ? errorReporter.getMessageStatus() : MessageStatus.ERROR, errorReporter, checker);
+  public static HighlighterMessage createHighlighterMessage(SNode node, String message, NodeReportItem errorReporter, EditorMessageOwner checker) {
+    return createHighlighterMessage(node, message, errorReporter != null ? errorReporter.getSeverity() : MessageStatus.ERROR, errorReporter, checker);
   }
 
-  private static HighlighterMessage createHighlighterMessage(SNode node, String message, MessageStatus status, IErrorReporter errorReporter,
+  private static HighlighterMessage createHighlighterMessage(SNode node, String message, MessageStatus status, NodeReportItem errorReporter,
       EditorMessageOwner owner) {
     if (errorReporter == null) {
-      errorReporter = new SimpleErrorReporter(node, message, null, status, new NodeMessageTarget());
+      errorReporter = new NodeReportItem(status, node) {
+        @Override
+        public String getMessage() {
+          return message;
+        }
+      };
     }
+
     HighlighterMessage error = new HighlighterMessage(
         node,
         status,
-        errorReporter.getErrorTarget(),
+        sConceptFeatureToMessageTarget(errorReporter),
         getMessageColor(status),
         message,
         owner);
@@ -52,6 +64,25 @@ public class HighlightUtil {
       error.addIntentionProvider(quickFixProvider);
     }
     return error;
+  }
+
+  private static MessageTarget sConceptFeatureToMessageTarget(NodeReportItem errorReporter) {
+    SConceptFeature nodeFeature = NodeFeatureReportItem.FLAVOUR_NODE_FEATURE.tryToGet(errorReporter);
+    MessageTarget messageTarget = null;
+    if (nodeFeature != null && nodeFeature instanceof SContainmentLink) {
+      //todo: we use ReferenceMessageTarget for containment links as well as for references
+      messageTarget = new ReferenceMessageTarget(((SContainmentLink) nodeFeature).getRoleName());
+    }
+    if (nodeFeature != null && nodeFeature instanceof SReferenceLink) {
+      messageTarget = new ReferenceMessageTarget(((SReferenceLink) nodeFeature).getRoleName());
+    }
+    if (nodeFeature != null && nodeFeature instanceof SProperty) {
+      messageTarget = new PropertyMessageTarget(nodeFeature.getName());
+    }
+    if (messageTarget == null) {
+      messageTarget = new NodeMessageTarget();
+    }
+    return messageTarget;
   }
 
   public static HighlighterMessage createHighlighterMessage(SNode node, String message, EditorMessageOwner owner) {

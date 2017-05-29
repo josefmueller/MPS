@@ -39,6 +39,7 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -1369,8 +1370,8 @@
         <node concept="1DcWWT" id="2v0ve8x$php" role="3cqZAp">
           <node concept="3cpWsn" id="2v0ve8x$phq" role="1Duv9x">
             <property role="TrG5h" value="errorReporter" />
-            <node concept="3uibUv" id="2v0ve8x$phr" role="1tU5fm">
-              <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+            <node concept="3uibUv" id="TwHClCAMlh" role="1tU5fm">
+              <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
             </node>
           </node>
           <node concept="3clFbS" id="2v0ve8x$phs" role="2LFqv$">
@@ -1389,7 +1390,7 @@
                       <ref role="3cqZAo" node="2v0ve8x$phq" resolve="errorReporter" />
                     </node>
                     <node concept="liA8E" id="2v0ve8x$ph$" role="2OqNvi">
-                      <ref role="37wK5l" to="2gg1:~IErrorReporter.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
+                      <ref role="37wK5l" to="d6hs:~NodeReportItem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                     </node>
                   </node>
                 </node>
@@ -1408,7 +1409,7 @@
                     <ref role="3cqZAo" node="2v0ve8x$phq" resolve="errorReporter" />
                   </node>
                   <node concept="liA8E" id="2v0ve8x$phH" role="2OqNvi">
-                    <ref role="37wK5l" to="2gg1:~IErrorReporter.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
+                    <ref role="37wK5l" to="d6hs:~NodeReportItem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
                   </node>
                 </node>
               </node>
@@ -1451,7 +1452,7 @@
                     <ref role="3cqZAo" node="2v0ve8x$phq" resolve="errorReporter" />
                   </node>
                   <node concept="liA8E" id="2v0ve8x$pi0" role="2OqNvi">
-                    <ref role="37wK5l" to="2gg1:~IErrorReporter.getMessageStatus():jetbrains.mps.errors.MessageStatus" resolve="getMessageStatus" />
+                    <ref role="37wK5l" to="d6hs:~ReportItem.getSeverity():jetbrains.mps.errors.MessageStatus" resolve="getSeverity" />
                   </node>
                 </node>
               </node>
@@ -1465,7 +1466,7 @@
                     <ref role="3cqZAo" node="2v0ve8x$phq" resolve="errorReporter" />
                   </node>
                   <node concept="liA8E" id="2v0ve8x$pi6" role="2OqNvi">
-                    <ref role="37wK5l" to="2gg1:~IErrorReporter.reportError():java.lang.String" resolve="reportError" />
+                    <ref role="37wK5l" to="d6hs:~ReportItem.getMessage():java.lang.String" resolve="getMessage" />
                   </node>
                 </node>
               </node>
@@ -1478,7 +1479,7 @@
                 </node>
                 <node concept="2YIFZM" id="2v0ve8x$pia" role="33vP2m">
                   <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
-                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.errors.IErrorReporter,jetbrains.mps.openapi.editor.message.EditorMessageOwner):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
+                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(org.jetbrains.mps.openapi.model.SNode,java.lang.String,jetbrains.mps.errors.item.NodeReportItem,jetbrains.mps.openapi.editor.message.EditorMessageOwner):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
                   <node concept="37vLTw" id="2v0ve8x$pib" role="37wK5m">
                     <ref role="3cqZAo" node="2v0ve8x$phD" resolve="nodeWithError" />
                   </node>

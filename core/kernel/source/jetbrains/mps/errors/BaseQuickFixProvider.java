@@ -50,7 +50,6 @@ public class BaseQuickFixProvider implements QuickFixProvider {
     myExecuteImmediately = executeImmediately;
   }
 
-  @Override
   public void setIsError(boolean isError) {
     myIsError = isError;
   }

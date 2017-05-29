@@ -38,7 +38,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
@@ -164,19 +164,19 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     boolean runQuickFixes = shouldRunQuickFixs(editorContext.getModel(), inspector);
     final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
-    for (IErrorReporter errorReporter : errorsComponent.getErrors()) {
+    for (NodeReportItem errorReporter : errorsComponent.getErrors()) {
       // todo here should be processor-based architecture, like in other checkers 
-      if (!(ErrorReportUtil.shouldReportError(errorReporter.getSNode()))) {
+      if (!(ErrorReportUtil.shouldReportError(errorReporter.getNode()))) {
         continue;
       }
 
-      SNode nodeWithError = errorReporter.getSNode();
+      SNode nodeWithError = errorReporter.getNode();
       if (!(ListSequence.fromList(SNodeOperations.getNodeAncestors(nodeWithError, null, true)).contains(editedNode))) {
         // in inspector skipping all messages for invisible nodes 
         continue;
       }
-      MessageStatus status = errorReporter.getMessageStatus();
-      String errorString = errorReporter.reportError();
+      MessageStatus status = errorReporter.getSeverity();
+      String errorString = errorReporter.getMessage();
       HighlighterMessage message = HighlightUtil.createHighlighterMessage(nodeWithError, NameUtil.capitalize(status.getPresentation()) + ": " + errorString, errorReporter, LanguageEditorChecker.this);
       List<QuickFixProvider> intentionProviders = message.getIntentionProviders();
       if (runQuickFixes && intentionProviders.size() == 1 && intentionProviders.get(0).isExecutedImmediately()) {
