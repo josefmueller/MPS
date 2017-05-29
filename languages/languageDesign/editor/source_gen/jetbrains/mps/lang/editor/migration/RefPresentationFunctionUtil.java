@@ -13,11 +13,13 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 
 public final class RefPresentationFunctionUtil {
   private RefPresentationFunctionUtil() {
@@ -538,29 +540,37 @@ public final class RefPresentationFunctionUtil {
   }
 
 
-  public static SNode getPresentationFromConstraints(final SNode conceptNode, final SNode referenceNode) {
-    // TODO handle case that ref. presentation function can be inherited from super-concepts 
-    if ((conceptNode == null)) {
-      return null;
-    }
-    SModel constraintsAspect = SModuleOperations.getAspect(SNodeOperations.getModel(conceptNode).getModule(), "constraints");
-    SNode constraintsNode = ListSequence.fromList(SModelOperations.roots(constraintsAspect, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return eq_5b8pgj_a0a0a0a0a0a3a41(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept")), conceptNode);
-      }
-    });
-    SNode refConstraintNode = ListSequence.fromList(SLinkOperations.getChildren(constraintsNode, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a726c901bL, "referent"))).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return eq_5b8pgj_a0a0a0a0a0a4a41(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7317b98aL, "applicableLink")), referenceNode);
-      }
-    });
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(refConstraintNode, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x36367902116a44c4L, "presentation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
-  }
+  public static SNode getPresentationFromConstraints(SNode conceptNode, final SNode referenceNode) {
+    final Wrappers._T<SNode> _conceptNode = new Wrappers._T<SNode>(conceptNode);
+    while (_conceptNode.value != null) {
+      SModel constraintsAspect = SModuleOperations.getAspect(SNodeOperations.getModel(_conceptNode.value).getModule(), "constraints");
+      SNode constraintsNode = ListSequence.fromList(SModelOperations.roots(constraintsAspect, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"))).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_5b8pgj_a0a0a0a0a0a1a1a41(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept")), _conceptNode.value);
+        }
+      });
+      SNode refConstraintNode = ListSequence.fromList(SLinkOperations.getChildren(constraintsNode, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a726c901bL, "referent"))).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_5b8pgj_a0a0a0a0a0a2a1a41(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7317b98aL, "applicableLink")), referenceNode);
+        }
+      });
 
-  private static boolean eq_5b8pgj_a0a0a0a0a0a3a41(Object a, Object b) {
+      if (refConstraintNode != null) {
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(refConstraintNode, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x36367902116a44c4L, "presentation")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
+      }
+
+      _conceptNode.value = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getImmediateSuperconcepts_idhMuxyK2.invoke(_conceptNode.value)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getReferenceLinkDeclarations_idhEwILL0.invoke(it)).contains(referenceNode);
+        }
+      }).first();
+    }
+    return null;
+  }
+  private static boolean eq_5b8pgj_a0a0a0a0a0a1a1a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_5b8pgj_a0a0a0a0a0a4a41(Object a, Object b) {
+  private static boolean eq_5b8pgj_a0a0a0a0a0a2a1a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
