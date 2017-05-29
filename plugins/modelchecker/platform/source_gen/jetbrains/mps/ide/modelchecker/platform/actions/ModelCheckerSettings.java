@@ -15,7 +15,7 @@ import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.checkers.TypesystemChecker;
+import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;

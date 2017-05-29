@@ -653,7 +653,7 @@
                         <ref role="37wK5l" node="6Pn_CK31O4t" resolve="RootCheckerSpecificCheckerAdapter" />
                         <node concept="2ShNRf" id="63oasX2feiZ" role="37wK5m">
                           <node concept="1pGfFk" id="1VtEqfXIyLU" role="2ShVmc">
-                            <ref role="37wK5l" to="wsw7:4yqv8vrxVuu" resolve="TypesystemChecker" />
+                            <ref role="37wK5l" to="k8ev:4yqv8vrxVuu" resolve="TypesystemChecker" />
                           </node>
                         </node>
                         <node concept="Xl_RD" id="6zkSwmUKc4h" role="37wK5m">

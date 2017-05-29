@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.checkers.TypesystemChecker;
+import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;

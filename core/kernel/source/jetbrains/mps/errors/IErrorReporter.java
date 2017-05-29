@@ -31,6 +31,7 @@ import java.util.List;
  * This interface is poorly designed and its use is discouraged.
  */
 // FIXME Bloody mess this interface is. Documented nicely for others to waste their time not. List<Pair<String,String>>, ORLY?!
+// todo: move this interface into typesystem and remove other usages
 public interface IErrorReporter {
   public String reportError();
 
