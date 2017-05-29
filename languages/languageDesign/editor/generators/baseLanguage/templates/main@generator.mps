@@ -108,7 +108,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" flags="ng" index="OXEIz" />
+      <concept id="1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" flags="ng" index="OXEIz">
+        <child id="1164824815888" name="cellMenuPart" index="OY2wv" />
+      </concept>
       <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW" />
       <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2">
         <property id="1186403771423" name="style" index="Vbekb" />
@@ -118,6 +120,7 @@
       </concept>
       <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="1164996492011" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary" flags="ng" index="ZcVJ$" />
       <concept id="1240253180846" name="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" flags="ln" index="34QqEe" />
       <concept id="8313721352726366579" name="jetbrains.mps.lang.editor.structure.CellModel_Empty" flags="ng" index="35HoNQ" />
       <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
@@ -6572,6 +6575,9 @@
   <node concept="bUwia" id="gBrHES4">
     <property role="TrG5h" value="MAPPING_CellMenu" />
     <property role="3GE5qa" value="cellMenu" />
+    <node concept="1puMqW" id="4y7B6YchJ3x" role="1puA0r">
+      <ref role="1puQsG" node="4y7B6Ych9wQ" resolve="ExplicitDefaultInlineMenu" />
+    </node>
     <node concept="3aamgX" id="6lizslHiVI5" role="3acgRq">
       <ref role="30HIoZ" to="tpc2:gXou4cn" resolve="CellMenuPart_Generic_Group" />
       <node concept="j$656" id="6lizslHj94C" role="1lVwrX">
@@ -42827,6 +42833,126 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1pmfR0" id="4y7B6Ych9wQ">
+    <property role="3GE5qa" value="cellMenu" />
+    <property role="1v3f2W" value="pre_processing" />
+    <property role="1v3jST" value="true" />
+    <property role="TrG5h" value="ExplicitDefaultInlineMenu" />
+    <node concept="1pplIY" id="4y7B6Ych9wR" role="1pqMTA">
+      <node concept="3clFbS" id="4y7B6Ych9wS" role="2VODD2">
+        <node concept="2Gpval" id="4y7B6Ych9Zh" role="3cqZAp">
+          <node concept="2GrKxI" id="4y7B6Ych9Zi" role="2Gsz3X">
+            <property role="TrG5h" value="refCell" />
+          </node>
+          <node concept="3clFbS" id="4y7B6Ych9Zk" role="2LFqv$">
+            <node concept="3clFbJ" id="4y7B6Ycha2e" role="3cqZAp">
+              <node concept="1Wc70l" id="4y7B6Ychcrl" role="3clFbw">
+                <node concept="2OqwBi" id="4y7B6YcheEa" role="3uHU7w">
+                  <node concept="2OqwBi" id="4y7B6YchdNV" role="2Oq$k0">
+                    <node concept="2OqwBi" id="4y7B6YchcNh" role="2Oq$k0">
+                      <node concept="2GrUjf" id="4y7B6Ychcxy" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="4y7B6Ych9Zi" resolve="refCell" />
+                      </node>
+                      <node concept="3TrEf2" id="4y7B6YchddS" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpc2:fPsWHWE" resolve="editorComponent" />
+                      </node>
+                    </node>
+                    <node concept="3TrEf2" id="4y7B6Yche91" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpc2:fIwV5gl" resolve="cellModel" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="4y7B6YchfaG" role="2OqNvi">
+                    <node concept="chp4Y" id="4y7B6YchfkO" role="cj9EA">
+                      <ref role="cht4Q" to="tpc2:yGThnK6hTI" resolve="CellModel_ReferencePresentation" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="4y7B6Ychb9x" role="3uHU7B">
+                  <node concept="2OqwBi" id="4y7B6Ychajx" role="2Oq$k0">
+                    <node concept="2GrUjf" id="4y7B6Ycha3I" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="4y7B6Ych9Zi" resolve="refCell" />
+                    </node>
+                    <node concept="3TrEf2" id="4y7B6YchaD3" role="2OqNvi">
+                      <ref role="3Tt5mk" to="tpc2:gWP5bHW" resolve="menuDescriptor" />
+                    </node>
+                  </node>
+                  <node concept="3w_OXm" id="4y7B6Ychbsi" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="4y7B6Ycha2g" role="3clFbx">
+                <node concept="3cpWs8" id="4y7B6Ychfy4" role="3cqZAp">
+                  <node concept="3cpWsn" id="4y7B6Ychfy7" role="3cpWs9">
+                    <property role="TrG5h" value="refPresentationCell" />
+                    <node concept="3Tqbb2" id="4y7B6Ychfy3" role="1tU5fm">
+                      <ref role="ehGHo" to="tpc2:yGThnK6hTI" resolve="CellModel_ReferencePresentation" />
+                    </node>
+                    <node concept="1PxgMI" id="4y7B6YchjEy" role="33vP2m">
+                      <node concept="2OqwBi" id="4y7B6Ychfz$" role="1m5AlR">
+                        <node concept="2OqwBi" id="4y7B6Ychfz_" role="2Oq$k0">
+                          <node concept="2GrUjf" id="4y7B6YchfzA" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="4y7B6Ych9Zi" resolve="refCell" />
+                          </node>
+                          <node concept="3TrEf2" id="4y7B6YchfzB" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tpc2:fPsWHWE" resolve="editorComponent" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="4y7B6YchfzC" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpc2:fIwV5gl" resolve="cellModel" />
+                        </node>
+                      </node>
+                      <node concept="chp4Y" id="4y7B6YchjSI" role="3oSUPX">
+                        <ref role="cht4Q" to="tpc2:yGThnK6hTI" resolve="CellModel_ReferencePresentation" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="4y7B6YchjXf" role="3cqZAp">
+                  <node concept="3clFbS" id="4y7B6YchjXh" role="3clFbx">
+                    <node concept="3clFbF" id="4y7B6YchlQi" role="3cqZAp">
+                      <node concept="37vLTI" id="4y7B6YchpeD" role="3clFbG">
+                        <node concept="2c44tf" id="4y7B6Ychpyc" role="37vLTx">
+                          <node concept="OXEIz" id="4y7B6YchpBf" role="2c44tc">
+                            <node concept="ZcVJ$" id="4y7B6YchHGU" role="OY2wv" />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="4y7B6Ychmgb" role="37vLTJ">
+                          <node concept="2GrUjf" id="4y7B6YchlQg" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="4y7B6Ych9Zi" resolve="refCell" />
+                          </node>
+                          <node concept="3TrEf2" id="4y7B6YchmRR" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tpc2:gWP5bHW" resolve="menuDescriptor" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="4y7B6Ychl8E" role="3clFbw">
+                    <node concept="2OqwBi" id="4y7B6Ychkbp" role="2Oq$k0">
+                      <node concept="37vLTw" id="4y7B6YchjXW" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4y7B6Ychfy7" resolve="refPresentationCell" />
+                      </node>
+                      <node concept="3TrEf2" id="4y7B6Ychks8" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpc2:6K3nYZv1g25" resolve="referentPresentation" />
+                      </node>
+                    </node>
+                    <node concept="3x8VRR" id="4y7B6YchlMY" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4y7B6Ych9Eo" role="2GsD0m">
+            <node concept="1Q6Npb" id="4y7B6Ych9yf" role="2Oq$k0" />
+            <node concept="2SmgA7" id="4y7B6Ych9JY" role="2OqNvi">
+              <node concept="chp4Y" id="4y7B6Ych9Qc" role="1dBWTz">
+                <ref role="cht4Q" to="tpc2:fPiCG$y" resolve="CellModel_RefCell" />
               </node>
             </node>
           </node>
