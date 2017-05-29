@@ -54,18 +54,18 @@ public class ImplicitNodeRenamer_extension extends Extension.Default<_FunctionTy
               }
             };
 
-            final List<SNode> initialStates = ListSequence.fromListAndArray(new ArrayList<SNode>(), node);
-            final SearchScope scope = new ModulesScope(SNodeOperations.getModel(node).getModule());
-
-            final RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
-            final _FunctionTypes._return_P1_E0<? extends Map<SNode, String>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>>> doRefactor = new _FunctionTypes._return_P1_E0<Map<SNode, String>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>>>() {
-              public Map<SNode, String> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>> participantStates) {
-                Map<SNode, String> m = MapSequence.<SNode, String>fromMapAndKeysArray(new HashMap<SNode, String>(), node).withValues(newName);
-                return m;
-              }
-            };
             repository.getModelAccess().executeCommand(new Runnable() {
               public void run() {
+                List<SNode> initialStates = ListSequence.fromListAndArray(new ArrayList<SNode>(), node);
+                SearchScope scope = new ModulesScope(SNodeOperations.getModel(node).getModule());
+
+                final RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
+                _FunctionTypes._return_P1_E0<? extends Map<SNode, String>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>>> doRefactor = new _FunctionTypes._return_P1_E0<Map<SNode, String>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>>>() {
+                  public Map<SNode, String> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, String, SNode, String>> participantStates) {
+                    Map<SNode, String> m = MapSequence.<SNode, String>fromMapAndKeysArray(new HashMap<SNode, String>(), node).withValues(newName);
+                    return m;
+                  }
+                };
                 RefactoringProcessor.performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<SNode, String>(), refactoringUI, refactoringSession, repository, scope, "Rename node", participants, initialStates, doRefactor, new _FunctionTypes._void_P0_E0() {
                   public void invoke() {
                     refactoringSession.performAllRegistered();

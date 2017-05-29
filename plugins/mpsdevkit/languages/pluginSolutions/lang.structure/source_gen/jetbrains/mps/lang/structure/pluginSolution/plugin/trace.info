@@ -2818,12 +2818,12 @@
       <node id="4646050413529321063" at="49,122,50,31" concept="10" />
       <node id="4646050413529327792" at="52,172,53,27" concept="4" />
       <node id="4646050413529095904" at="55,14,56,0" concept="12" />
-      <node id="4646050413528849520" at="56,0,57,106" concept="9" />
-      <node id="4646050413529334015" at="57,106,58,99" concept="9" />
-      <node id="4646050413531847943" at="58,99,59,0" concept="12" />
-      <node id="4646050413528970816" at="59,0,60,91" concept="9" />
-      <node id="4646050413530600508" at="62,155,63,142" concept="9" />
-      <node id="4646050413529998752" at="63,142,64,25" concept="10" />
+      <node id="4646050413528849520" at="58,33,59,104" concept="9" />
+      <node id="4646050413529334015" at="59,104,60,97" concept="9" />
+      <node id="4646050413531847943" at="60,97,61,0" concept="12" />
+      <node id="4646050413528970816" at="61,0,62,95" concept="9" />
+      <node id="4646050413530600508" at="64,159,65,146" concept="9" />
+      <node id="4646050413529998752" at="65,146,66,29" concept="10" />
       <node id="4646050413528970857" at="70,40,71,62" concept="4" />
       <node id="2546796854246625342" at="77,11,78,21" concept="10" />
       <node id="7972144475523791621" at="32,0,35,0" concept="3" trace="ImplicitNodeRenamer_extension#()V" />
@@ -2832,12 +2832,12 @@
       <node id="4646050413529244464" at="49,0,52,0" concept="8" trace="selectParticipants#(Ljava/util/List;)Ljava/util/List;" />
       <node id="4646050413529244474" at="52,0,55,0" concept="8" trace="showRefactoringView#(Ljava/lang/Runnable;Ljava/lang/String;Ljetbrains/mps/ide/findusages/model/SearchResults;Ljetbrains/mps/ide/findusages/model/SearchTask;Ljetbrains/mps/refactoring/participant/RefactoringSession;)V" />
       <node id="4646050413528970855" at="70,0,73,0" concept="8" trace="invoke#()V" />
-      <node id="4646050413529998741" at="62,0,66,0" concept="8" trace="invoke#(Ljava/lang/Iterable;)Ljava/util/Map;" />
-      <node id="4646050413528970821" at="68,33,73,19" concept="4" />
-      <node id="4646050413529998739" at="60,91,66,14" concept="9" />
-      <node id="4646050413531194852" at="68,0,75,0" concept="8" trace="run#()V" />
-      <node id="4646050413531194850" at="66,14,75,15" concept="4" />
+      <node id="4646050413529998741" at="64,0,68,0" concept="8" trace="invoke#(Ljava/lang/Iterable;)Ljava/util/Map;" />
+      <node id="4646050413528970821" at="68,18,73,19" concept="4" />
+      <node id="4646050413529998739" at="62,95,68,18" concept="9" />
       <node id="4646050413528970875" at="41,220,55,14" concept="9" />
+      <node id="4646050413531194852" at="58,0,75,0" concept="8" trace="run#()V" />
+      <node id="4646050413531194850" at="56,0,75,15" concept="4" />
       <node id="2546796854249370897" at="39,0,77,0" concept="8" trace="run#()V" />
       <node id="2546796854249363496" at="37,114,77,11" concept="4" />
       <node id="7972144475523791625" at="37,0,80,0" concept="8" trace="invoke#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Boolean;" />
@@ -2849,7 +2849,7 @@
       <scope id="4646050413529244472" at="49,122,50,31" />
       <scope id="4646050413529244488" at="52,172,53,27" />
       <scope id="4646050413528970856" at="70,40,71,62" />
-      <scope id="4646050413529998751" at="62,155,64,25">
+      <scope id="4646050413529998751" at="64,159,66,29">
         <var name="m" id="4646050413530600509" />
       </scope>
       <scope id="7972144475523791621" at="32,0,35,0" />
@@ -2870,19 +2870,20 @@
         <var name="task" id="4646050413529244478" />
       </scope>
       <scope id="4646050413528970855" at="70,0,73,0" />
-      <scope id="4646050413529998741" at="62,0,66,0">
+      <scope id="4646050413529998741" at="64,0,68,0">
         <var name="participantStates" id="4646050413529998741" />
       </scope>
-      <scope id="4646050413531194854" at="68,33,73,19" />
-      <scope id="4646050413531194852" at="68,0,75,0" />
-      <scope id="2546796854249370898" at="39,29,75,15">
+      <scope id="4646050413531194854" at="58,33,73,19">
         <var name="doRefactor" id="4646050413529998740" />
         <var name="initialStates" id="4646050413528849515" />
-        <var name="participants" id="8193174057328033518" />
         <var name="refactoringSession" id="4646050413528970817" />
+        <var name="scope" id="4646050413529334016" />
+      </scope>
+      <scope id="4646050413531194852" at="58,0,75,0" />
+      <scope id="2546796854249370898" at="39,29,75,15">
+        <var name="participants" id="8193174057328033518" />
         <var name="refactoringUI" id="4646050413528970871" />
         <var name="repository" id="5503407155929628980" />
-        <var name="scope" id="4646050413529334016" />
       </scope>
       <scope id="2546796854249370897" at="39,0,77,0" />
       <scope id="7972144475523791626" at="37,114,78,21" />
@@ -2894,10 +2895,10 @@
       </scope>
       <scope id="4296411869844556262" at="35,134,80,6" />
       <scope id="4296411869844556260" at="35,0,82,0" />
-      <unit id="4646050413528970855" at="69,249,73,17" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension$1$1$3$1" />
-      <unit id="4646050413529998741" at="61,191,66,13" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension$1$1$2" />
-      <unit id="4646050413531194852" at="67,59,75,13" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension$1$1$3" />
+      <unit id="4646050413528970855" at="69,249,73,17" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension$1$1$2$2" />
+      <unit id="4646050413529998741" at="63,189,68,17" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension$1$1$2$1" />
       <unit id="4646050413529244444" at="42,52,55,13" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension$1$1$1" />
+      <unit id="4646050413531194852" at="57,59,75,13" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension$1$1$2" />
       <unit id="2546796854249370897" at="38,60,77,9" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension$1$1" />
       <unit id="7972144475523791625" at="36,15,80,5" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension$1" />
       <unit id="7972144475523791621" at="31,0,83,0" name="jetbrains.mps.lang.structure.pluginSolution.plugin.ImplicitNodeRenamer_extension" />
