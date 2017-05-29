@@ -56,9 +56,11 @@ public abstract class ReferenceInfo_MacroBase extends ReferenceInfo {
       }
       return null; // why not always invalid reference? Is there a convention that RM with null value means "forget it"?
     } catch (GenerationFailureException ex) {
+      // It's not nice to handle exception here (it could be exception fro user code and from generator's code, and we have no idea what's the proper way to
+      // handle them), but I feel it's worth trying to go on with invalid reference, and handling exception here is much better than silently ignoring it.
+      ref.getGenerator().getLogger().handleException(ex);
+      ref.getGenerator().getLogger().error(getMacroNodeRef(), ex.getMessage(), GeneratorUtil.describe(ref.getSourceNode(), "source node"));
       // when there's an error, it's better to see broken reference than no reference at all.
-      // XXX shall I log the error? It's likely already logged in the query.evaluate(). Perhaps, shall not log it there but rather propagate
-      // up and log it here?
       return createInvalidReference(ref, getInvalidReferenceResolveInfo()); // perhaps, "failure" to indicate there's an error?
     }
   }

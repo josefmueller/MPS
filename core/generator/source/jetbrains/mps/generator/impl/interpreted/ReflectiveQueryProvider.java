@@ -613,7 +613,6 @@ public class ReflectiveQueryProvider extends QueryProviderBase {
             ctx.showWarningMessage(null, msg);
             return contextObject -> myMissingMethodValue;
           } else {
-            ctx.showErrorMessage(null, msg);
             throw new GenerationFailureException(msg);
           }
         }
