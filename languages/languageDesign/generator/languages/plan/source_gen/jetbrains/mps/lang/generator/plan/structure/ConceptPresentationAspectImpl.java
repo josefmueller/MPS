@@ -17,6 +17,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_DeclaredCheckpointSpec;
   private ConceptPresentation props_InPlaceCheckpointRefSpec;
   private ConceptPresentation props_InPlaceCheckpointSpec;
+  private ConceptPresentation props_IncludePlan;
   private ConceptPresentation props_Plan;
   private ConceptPresentation props_Step;
   private ConceptPresentation props_Transform;
@@ -81,6 +82,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_InPlaceCheckpointSpec = cpb.create();
         }
         return props_InPlaceCheckpointSpec;
+      case LanguageConceptSwitch.IncludePlan:
+        if (props_IncludePlan == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("aggregate existing plan");
+          props_IncludePlan = cpb.create();
+        }
+        return props_IncludePlan;
       case LanguageConceptSwitch.Plan:
         if (props_Plan == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

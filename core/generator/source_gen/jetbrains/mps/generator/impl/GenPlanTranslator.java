@@ -24,7 +24,7 @@ import jetbrains.mps.generator.plan.CheckpointIdentity;
  * I use {@link jetbrains.mps.generator.GenerationPlanBuilder } although it seems like an excessive mediator to hide implementation details and to facilitate
  * plan creation not from a model-backed description.
  */
-public class GenPlanTranslator {
+public final class GenPlanTranslator {
   private final SNode myPlanDeclaration;
   private final PlanIdentity myPlanIdentity;
 
@@ -77,6 +77,9 @@ public class GenPlanTranslator {
       } else if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x56d679ca1f4b53ceL, "jetbrains.mps.lang.generator.plan.structure.CheckpointDeclaration"))) {
         SNode cpDecl = SNodeOperations.as(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x56d679ca1f4b53ceL, "jetbrains.mps.lang.generator.plan.structure.CheckpointDeclaration"));
         planBuilder.declareCheckpoint(new CheckpointIdentity(myPlanIdentity, SPropertyOperations.getString(cpDecl, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
+      } else if (SNodeOperations.isInstanceOf(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x336c2500000e1b2fL, "jetbrains.mps.lang.generator.plan.structure.IncludePlan"))) {
+        SNode includedPlan = SLinkOperations.getTarget(SNodeOperations.as(stepNode, MetaAdapterFactory.getConcept(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x336c2500000e1b2fL, "jetbrains.mps.lang.generator.plan.structure.IncludePlan")), MetaAdapterFactory.getReferenceLink(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x336c2500000e1b2fL, 0x336c2500000e1b32L, "plan"));
+        new GenPlanTranslator(includedPlan).feed(planBuilder);
       }
     }
     return this;
