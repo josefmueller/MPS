@@ -247,6 +247,8 @@ public interface SNode {
    * the target node even when working with invalid code.
    */
   void setReference(@NotNull SReferenceLink role, @Nullable SReference reference);
+  // FIXME replace with setReference(SReference) or setReference(SReferenceLink link, SNode source, SNode target).
+  // It's stupid to have explicit role along with SReference.getLink() (which not necessarily match)
 
   /**
    * Retrieves all SReferences from the node.

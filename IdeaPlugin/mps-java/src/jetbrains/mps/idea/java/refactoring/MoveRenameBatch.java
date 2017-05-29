@@ -32,7 +32,8 @@ import java.util.Map;
  */
 public class MoveRenameBatch implements ProjectComponent {
 
-  private Project myProject;
+  private final Project myProject;
+  private final ReloadManager myReloadManager;
   private Object myCommand;
   private boolean isUndoRedoCommand;
   private CommandListener myCommandListener;
@@ -43,7 +44,8 @@ public class MoveRenameBatch implements ProjectComponent {
   private Map<SReferencePtr, Runnable> sreferenceUpdaters = new HashMap<SReferencePtr, Runnable>();
   private Map<SReferencePtr, Runnable> prefixReferenceUpdaters = new HashMap<SReferencePtr, Runnable>();
 
-  public MoveRenameBatch(Project project) {
+  public MoveRenameBatch(ReloadManager reloadManager, Project project) {
+    myReloadManager = reloadManager;
     myProject = project;
   }
 
@@ -70,7 +72,7 @@ public class MoveRenameBatch implements ProjectComponent {
             // refactoring undo or redo command is over
             // the effect of undo/redo of commit() is already done automatically
             // we just want our psi stub models to be in sync with psi
-            ReloadManager.getInstance().flush();
+            myReloadManager.flush();
           }
         }
 
@@ -142,7 +144,7 @@ public class MoveRenameBatch implements ProjectComponent {
     // TODO !!! a better way to synchronize idea and mps is needed
     // when refactoring starts we have to stop reloads
     // and here resume and flush
-    ReloadManager.getInstance().flush();
+    myReloadManager.flush();
     UndoManager.getInstance(myProject).undoableActionPerformed(myUndoRedoSupport);
 
     ProjectHelper.getModelAccess(myProject).executeUndoTransparentCommand(new Runnable() {

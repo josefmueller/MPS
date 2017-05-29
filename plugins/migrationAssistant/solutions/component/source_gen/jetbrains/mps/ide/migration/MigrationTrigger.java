@@ -370,10 +370,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
               VirtualFileManager.getInstance().asyncRefresh(new Runnable() {
                 public void run() {
-                  final Application application = ApplicationManager.getApplication();
+                  Application application = ApplicationManager.getApplication();
                   application.invokeLater(new Runnable() {
                     public void run() {
-                      application.getComponent(ReloadManager.class).flush();
+                      myReloadManager.flush();
                       // reload project and start migration assist 
                       ProjectManagerEx.getInstance().reloadProject(ideaProject);
                     }
@@ -400,7 +400,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir(), progressMonitor.subTask(1));
     WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
       public void run() {
-        application.getComponent(ReloadManager.class).flush();
+        myReloadManager.flush();
       }
     });
   }

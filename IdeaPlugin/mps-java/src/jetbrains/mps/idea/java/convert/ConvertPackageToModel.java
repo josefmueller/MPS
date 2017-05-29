@@ -57,7 +57,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -181,7 +180,6 @@ public class ConvertPackageToModel extends AnAction {
           }
 
           SNode source = ref.getSourceNode();
-          String role = ref.getRole();
           SModelReference targetModelRef = ref.getTargetSModelReference();
           SNode targetNode = ref.getTargetNode();
 
@@ -202,9 +200,9 @@ public class ConvertPackageToModel extends AnAction {
           }
 
           String resolveInfo = SNodeOperations.getResolveInfo(targetNode);
-          SReference tempDynamicRef = new DynamicReference(role, source, newModelRef, resolveInfo);
+          SReference tempDynamicRef = new DynamicReference(ref.getLink(), source, newModelRef, resolveInfo);
           referencesToFix.add(tempDynamicRef);
-          source.setReference(role, tempDynamicRef);
+          source.setReference(tempDynamicRef.getLink(), tempDynamicRef);
 
           SModel sourceModel = source.getModel();
           ((SModelBase) sourceModel).deleteModelImport(targetModelRef);
@@ -227,8 +225,9 @@ public class ConvertPackageToModel extends AnAction {
           SNode source = ref.getSourceNode();
           String role = ref.getRole();
 
-          SReference finalStaticRef = StaticReference.create(role, source, target, ((DynamicReference) ref).getResolveInfo());
-          source.setReference(role, finalStaticRef);
+          jetbrains.mps.smodel.SReference finalStaticRef = StaticReference.create(ref.getLink(), source, target);
+          finalStaticRef.setResolveInfo(((DynamicReference) ref).getResolveInfo());
+          source.setReference(finalStaticRef.getLink(), finalStaticRef);
         }
 
         // here more complicated logic can be written
@@ -243,7 +242,7 @@ public class ConvertPackageToModel extends AnAction {
         }
 
         // we want psi stub models to be up-to-date with regard to those deletions
-        ReloadManager.getInstance().flush();
+        ApplicationManager.getApplication().getComponent(ReloadManager.class).flush();
       }
     });
 

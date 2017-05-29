@@ -2525,16 +2525,8 @@
                                                   <node concept="3clFbS" id="5qfN6LqEsQI" role="1bW5cS">
                                                     <node concept="3clFbF" id="2RCunBMshV_" role="3cqZAp">
                                                       <node concept="2OqwBi" id="2RCunBMshVA" role="3clFbG">
-                                                        <node concept="2OqwBi" id="2RCunBMshVB" role="2Oq$k0">
-                                                          <node concept="37vLTw" id="2RCunBMshVC" role="2Oq$k0">
-                                                            <ref role="3cqZAo" node="2RCunBMsiK_" resolve="application" />
-                                                          </node>
-                                                          <node concept="liA8E" id="2RCunBMshVD" role="2OqNvi">
-                                                            <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                                                            <node concept="3VsKOn" id="2RCunBMshVE" role="37wK5m">
-                                                              <ref role="3VsUkX" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
-                                                            </node>
-                                                          </node>
+                                                        <node concept="37vLTw" id="7d58UA14L8R" role="2Oq$k0">
+                                                          <ref role="3cqZAo" node="3ksDZ_I0fFv" resolve="myReloadManager" />
                                                         </node>
                                                         <node concept="liA8E" id="2RCunBMshVF" role="2OqNvi">
                                                           <ref role="37wK5l" to="2eq1:4SUKy4FU8kE" resolve="flush" />
@@ -2679,16 +2671,8 @@
               <node concept="3clFbS" id="oCeXOwMByi" role="1bW5cS">
                 <node concept="3clFbF" id="4tP09YuEkC_" role="3cqZAp">
                   <node concept="2OqwBi" id="4tP09YuElC7" role="3clFbG">
-                    <node concept="2OqwBi" id="2RCunBMs9yF" role="2Oq$k0">
-                      <node concept="37vLTw" id="2RCunBMs8YO" role="2Oq$k0">
-                        <ref role="3cqZAo" node="2RCunBMs86D" resolve="application" />
-                      </node>
-                      <node concept="liA8E" id="2RCunBMsa3d" role="2OqNvi">
-                        <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                        <node concept="3VsKOn" id="2RCunBMsavd" role="37wK5m">
-                          <ref role="3VsUkX" to="2eq1:491od_XJZeq" resolve="ReloadManager" />
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="7d58UA14JyC" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3ksDZ_I0fFv" resolve="myReloadManager" />
                     </node>
                     <node concept="liA8E" id="4tP09YuElXu" role="2OqNvi">
                       <ref role="37wK5l" to="2eq1:4SUKy4FU8kE" resolve="flush" />
