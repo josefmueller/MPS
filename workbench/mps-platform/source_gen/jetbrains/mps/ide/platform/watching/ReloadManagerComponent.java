@@ -17,14 +17,13 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import com.intellij.util.ui.update.Update;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
+import com.intellij.util.ui.update.Update;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -125,18 +124,22 @@ public class ReloadManagerComponent extends ReloadManager implements Application
       return;
     }
 
-    // see MPS-18743, 21760 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        assert ApplicationManager.getApplication().isWriteAccessAllowed() : "Platform write access not allowed: execute from EDT or under progress";
-        MPSModuleRepository.getInstance().saveAll();
-      }
-    });
+    saveAllOpenProjects();
 
     // Q: also do normal progressMonitor, as in real reload on timeout ? 
     session.doReload(new EmptyProgressMonitor());
   }
 
+  /*package*/ void saveAllOpenProjects() {
+    // see MPS-18743, 21760 
+    // FIXME instead of this workardound, fix the defect in module reload (if there are changed models in it, reload leads to model changes being discarded) 
+    for (Project project : myProjectManager.getOpenProjects()) {
+      SRepository projectRepo = ProjectHelper.getProjectRepository(project);
+      if (projectRepo != null) {
+        new SaveRepositoryCommand(projectRepo).execute();
+      }
+    }
+  }
 
   private void queueReloadSession() {
     if (!(myReloadSessionBroker.hasUnemployed())) {
@@ -162,17 +165,7 @@ public class ReloadManagerComponent extends ReloadManager implements Application
           return;
         }
 
-        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-          public void run() {
-            // see MPS-18743, 21760 
-            // fixme the problem itself must be fixed (reloading module while there are changed models in it 
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                MPSModuleRepository.getInstance().saveAll();
-              }
-            });
-          }
-        }, ModalityState.NON_MODAL);
+        saveAllOpenProjects();
 
         ProgressManager.getInstance().run(new Task.Backgroundable(null, "Reloading Files", false) {
           @Override
