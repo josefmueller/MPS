@@ -16,8 +16,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.item.NodeReportItemBase;
-import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -56,12 +55,7 @@ public class AutoResolver extends BaseEventProcessingEditorChecker {
     // TODO: use same settings as in LanguageEditorChecker 
     Set<SReference> badReferences = collectBadReferences(rootNode);
     for (SReference ref : SetSequence.fromSet(badReferences)) {
-      NodeReportItem reportItem = new NodeReportItemBase(MessageStatus.ERROR, ref.getSourceNode()) {
-        @Override
-        public String getMessage() {
-          return "Unresolved reference";
-        }
-      };
+      NodeReportItem reportItem = new UnresolvedReferenceReportItem(ref);
       EditorMessage message = HighlightUtil.createHighlighterMessage(reportItem, this);
       SetSequence.fromSet(messages).addElement(message);
     }

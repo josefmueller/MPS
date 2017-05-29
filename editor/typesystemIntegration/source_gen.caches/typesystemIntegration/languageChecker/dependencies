@@ -7,9 +7,8 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
-    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItemBase" />
+    <classNode dependClassName="jetbrains.mps.errors.item.UnresolvedReferenceReportItem" />
     <classNode dependClassName="jetbrains.mps.extapi.model.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

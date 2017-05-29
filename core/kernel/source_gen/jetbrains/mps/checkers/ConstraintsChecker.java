@@ -50,7 +50,7 @@ public class ConstraintsChecker extends AbstractNodeChecker {
       if (SNodeOperations.getConcept(parent).isValid()) {
         SContainmentLink link = node.getContainmentLink();
         if (link == null) {
-          errorsCollector.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLink(node).getName() + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getName(), null);
+          errorsCollector.addErrorAndAddDependenciesOnParents(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLink(node).getName() + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getName(), null);
           return;
         }
         boolean canBeChild = errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
@@ -60,7 +60,7 @@ public class ConstraintsChecker extends AbstractNodeChecker {
         });
         if (!(canBeChild)) {
           SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-          errorsCollector.addError(node, "Node " + node + " cannot be child of node " + parent, rule);
+          errorsCollector.addErrorAndAddDependenciesOnParents(node, "Node " + node + " cannot be child of node " + parent, rule);
         }
       }
     }
@@ -74,11 +74,11 @@ public class ConstraintsChecker extends AbstractNodeChecker {
       });
       if (!(canBeRoot)) {
         SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        errorsCollector.addError(node, "Not rootable concept added as root", rule);
+        errorsCollector.addErrorAndAddDependenciesOnParents(node, "Not rootable concept added as root", rule);
       }
     }
     if (!(SNodeOperations.getConcept(node).isValid())) {
-      errorsCollector.addError(node, "Concept of a node was not found", null);
+      errorsCollector.addErrorAndAddDependenciesOnParents(node, "Concept of a node was not found", null);
     }
 
     for (final SNode child : SNodeOperations.getChildren(node)) {
@@ -89,7 +89,7 @@ public class ConstraintsChecker extends AbstractNodeChecker {
       });
       if (!(canBeParent)) {
         SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        errorsCollector.addError(node, "Node " + node + " cannot be parent of node " + child, rule);
+        errorsCollector.addErrorAndAddDependenciesOnParents(node, "Node " + node + " cannot be parent of node " + child, rule);
       }
     }
 
@@ -101,7 +101,7 @@ public class ConstraintsChecker extends AbstractNodeChecker {
       });
       if (!(canBeAncestor)) {
         SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        errorsCollector.addError(node, "Invalid ancestor: " + ancestor.value, rule);
+        errorsCollector.addErrorAndAddDependenciesOnParents(node, "Invalid ancestor: " + ancestor.value, rule);
       }
     }
 
@@ -122,7 +122,7 @@ public class ConstraintsChecker extends AbstractNodeChecker {
           continue;
         }
         // todo find a rule 
-        errorsCollector.addError(node, "Property constraint violation for property \"" + property.getName() + "\"", null, new PropertyMessageTarget(property.getName()));
+        errorsCollector.addErrorWithoutDependencies(node, "Property constraint violation for property \"" + property.getName() + "\"", null, new PropertyMessageTarget(property.getName()));
       }
     }
   }

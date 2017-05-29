@@ -48,7 +48,7 @@ public class RefScopeChecker extends AbstractNodeChecker {
       ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(ref);
       Scope refScope = refDescriptor.getScope();
       if (refScope instanceof ErrorScope) {
-        errorsCollector.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()));
+        errorsCollector.addErrorWithoutDependencies(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()));
       } else if (!(refScope.contains(target))) {
         String name = target.getName();
         ReferenceScopeProvider scopeProvider = refDescriptor.getScopeProvider();
@@ -56,7 +56,7 @@ public class RefScopeChecker extends AbstractNodeChecker {
         if (scopeProvider != null) {
           ruleNode = scopeProvider.getSearchScopeValidatorNode();
         }
-        errorsCollector.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRefLink(ref).getName() + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()), createResolveReferenceQuickfix(ref, repository, executeImmediately));
+        errorsCollector.addErrorWithoutDependencies(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRefLink(ref).getName() + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()), createResolveReferenceQuickfix(ref, repository, executeImmediately));
       }
     }
   }

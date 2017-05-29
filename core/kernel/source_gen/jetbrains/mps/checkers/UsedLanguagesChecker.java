@@ -54,7 +54,7 @@ public class UsedLanguagesChecker extends AbstractNodeChecker {
       boolean notYetReported = reported.add(language);
       parentReportedSetChanged |= notYetReported;
       if (!(imported.contains(language)) && notYetReported) {
-        component.addError(node, language.getQualifiedName() + " is not imported", null, new NodeMessageTarget(), new UsedLanguagesChecker.LangImportQFixProvider());
+        component.addErrorWithoutDependencies(node, language.getQualifiedName() + " is not imported", null, new NodeMessageTarget(), new UsedLanguagesChecker.LangImportQFixProvider());
       }
       findMissing(component, node.getChildren(), (parentReportedSetChanged ? reported : parentReported), imported);
     }

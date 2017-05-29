@@ -84,7 +84,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
     final Reference<Boolean> cancelled = new Reference<Boolean>(false);
 
     LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector() {
-      public void addError(NodeReportItem reportItem) {
+      public void addErrorInternal(NodeReportItem reportItem) {
         if (mySkipCondition.skipSingleNode(reportItem.getNode())) {
           return;
         }

@@ -26,7 +26,7 @@ public class TargetConceptChecker extends AbstractNodeChecker {
     })) {
       SContainmentLink link = SNodeOperations.getContainingLink(child);
       if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(link.getTargetConcept()), SNodeOperations.asSConcept(SNodeOperations.getConcept(child))))) {
-        errorsCollector.addError(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + link.getTargetConcept().getQualifiedName() + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
+        errorsCollector.addErrorAndAddDependenciesOnParents(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + link.getTargetConcept().getQualifiedName() + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
       }
     }
 
@@ -37,7 +37,7 @@ public class TargetConceptChecker extends AbstractNodeChecker {
         continue;
       }
       if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(link.getTargetConcept()), SNodeOperations.asSConcept(SNodeOperations.getConcept(target))))) {
-        errorsCollector.addError(node, "incompatible target concept in role \"" + ((SReference) reference).getLink().getName() + "\": subconcept of \"" + link.getTargetConcept().getQualifiedName() + "\" expected, \"" + SNodeOperations.getConcept(target) + "\" found", null, new ReferenceMessageTarget(link.getName()));
+        errorsCollector.addErrorWithoutDependencies(node, "incompatible target concept in role \"" + ((SReference) reference).getLink().getName() + "\": subconcept of \"" + link.getTargetConcept().getQualifiedName() + "\" expected, \"" + SNodeOperations.getConcept(target) + "\" found", null, new ReferenceMessageTarget(link.getName()));
       }
     }
   }

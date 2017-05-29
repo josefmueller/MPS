@@ -90,10 +90,6 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
-        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
-        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
-      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -2036,45 +2032,11 @@
                 <node concept="3uibUv" id="kgRRK9gqEO" role="1tU5fm">
                   <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
                 </node>
-                <node concept="2ShNRf" id="kgRRK9gqXD" role="33vP2m">
-                  <node concept="YeOm9" id="kgRRK9gDmD" role="2ShVmc">
-                    <node concept="1Y3b0j" id="kgRRK9gDmG" role="YeSDq">
-                      <property role="2bfB8j" value="true" />
-                      <ref role="1Y3XeK" to="d6hs:~NodeReportItemBase" resolve="NodeReportItemBase" />
-                      <ref role="37wK5l" to="d6hs:~NodeReportItemBase.&lt;init&gt;(jetbrains.mps.errors.MessageStatus,org.jetbrains.mps.openapi.model.SNode)" resolve="NodeReportItemBase" />
-                      <node concept="3Tm1VV" id="kgRRK9gDmH" role="1B3o_S" />
-                      <node concept="3clFb_" id="kgRRK9gDmK" role="jymVt">
-                        <property role="1EzhhJ" value="false" />
-                        <property role="TrG5h" value="getMessage" />
-                        <property role="DiZV1" value="false" />
-                        <property role="od$2w" value="false" />
-                        <node concept="3Tm1VV" id="kgRRK9gDmL" role="1B3o_S" />
-                        <node concept="3uibUv" id="kgRRK9gDmN" role="3clF45">
-                          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                        </node>
-                        <node concept="3clFbS" id="kgRRK9gDmO" role="3clF47">
-                          <node concept="3clFbF" id="kgRRK9gDWU" role="3cqZAp">
-                            <node concept="Xl_RD" id="36YhQHI6GIP" role="3clFbG">
-                              <property role="Xl_RC" value="Unresolved reference" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="2AHcQZ" id="kgRRK9hKdN" role="2AJF6D">
-                          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                        </node>
-                      </node>
-                      <node concept="Rm8GO" id="kgRRK9gGdm" role="37wK5m">
-                        <ref role="Rm8GQ" to="2gg1:~MessageStatus.ERROR" resolve="ERROR" />
-                        <ref role="1Px2BO" to="2gg1:~MessageStatus" resolve="MessageStatus" />
-                      </node>
-                      <node concept="2OqwBi" id="kgRRK9gGFE" role="37wK5m">
-                        <node concept="2GrUjf" id="kgRRK9gGuT" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="36YhQHI6GIH" resolve="ref" />
-                        </node>
-                        <node concept="liA8E" id="kgRRK9gHh6" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SReference.getSourceNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSourceNode" />
-                        </node>
-                      </node>
+                <node concept="2ShNRf" id="5S0STpDMiuJ" role="33vP2m">
+                  <node concept="1pGfFk" id="5S0STpDM_1l" role="2ShVmc">
+                    <ref role="37wK5l" to="d6hs:~UnresolvedReferenceReportItem.&lt;init&gt;(org.jetbrains.mps.openapi.model.SReference)" resolve="UnresolvedReferenceReportItem" />
+                    <node concept="2GrUjf" id="5S0STpDM_5q" role="37wK5m">
+                      <ref role="2Gs0qQ" node="36YhQHI6GIH" resolve="ref" />
                     </node>
                   </node>
                 </node>
