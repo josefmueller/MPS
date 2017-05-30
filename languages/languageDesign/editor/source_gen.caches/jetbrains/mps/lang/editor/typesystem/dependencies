@@ -941,6 +941,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

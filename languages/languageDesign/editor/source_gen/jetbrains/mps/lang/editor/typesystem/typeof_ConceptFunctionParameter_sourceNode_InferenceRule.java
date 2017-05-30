@@ -8,9 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor;
-import jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -23,11 +24,19 @@ public class typeof_ConceptFunctionParameter_sourceNode_InferenceRule extends Ab
   }
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode function = ConceptFunctionParameter__BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(parameter);
-    SNode link = CellMenuPart_Abstract__BehaviorDescriptor.getEditedLink_idhJEvotS.invoke(SNodeOperations.getNodeAncestor(function, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"), false, false));
+    SNode functionParent = SNodeOperations.getParent(function);
+    SNode link;
+    if (SNodeOperations.isInstanceOf(functionParent, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"))) {
+      // we are in inline cell menu 
+      link = CellMenuPart_Abstract__BehaviorDescriptor.getEditedLink_idhJEvotS.invoke((SNodeOperations.as(functionParent, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"))));
+    } else {
+      // we are in 'ref. presentation' cell 
+      link = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(functionParent, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), false, false), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration"));
+    }
     {
       SNode _nodeToCheck_1029348928467 = parameter;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6918029743850839892", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6918029743850840451", true), (SNode) _quotation_createNode_muejbh_a0c0b(LinkDeclaration__BehaviorDescriptor.getConceptDeclaration_id7jb4LXpbWaP.invoke(link)), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6918029743850840451", true), (SNode) _quotation_createNode_muejbh_a0e0b(LinkDeclaration__BehaviorDescriptor.getConceptDeclaration_id7jb4LXpbWaP.invoke(link)), false, true, _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {
@@ -39,7 +48,7 @@ public class typeof_ConceptFunctionParameter_sourceNode_InferenceRule extends Ab
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_muejbh_a0c0b(Object parameter_1) {
+  private static SNode _quotation_createNode_muejbh_a0e0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"), 0x108f968b3caL, "SNodeType"), null, null, false);
