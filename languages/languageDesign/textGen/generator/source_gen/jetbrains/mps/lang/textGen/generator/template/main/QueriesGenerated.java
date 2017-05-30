@@ -196,7 +196,11 @@ public class QueriesGenerated extends QueryProviderBase {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "GetTextUnit");
   }
   public static Object referenceMacro_GetReferent_4147950839246952264(final ReferenceMacroContext _context) {
-    // TODO genContext.get output TextGenAspectDescriptorCons for model model; 
+    SNode descriptorCons = _context.getOutputNodeByMappingLabel("TextGenAspectDescriptorCons", ((SModel) _context.getVariable("model")));
+    if (descriptorCons != null) {
+      return descriptorCons;
+    }
+    // fallback, for textgen aspect models that do not use devkit with GP 
     return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".TextGenAspectDescriptor";
   }
   public static Object referenceMacro_GetReferent_2170558324036126545(final ReferenceMacroContext _context) {

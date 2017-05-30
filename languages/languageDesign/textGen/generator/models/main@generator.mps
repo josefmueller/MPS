@@ -269,6 +269,7 @@
         <child id="1167087469900" name="conditionFunction" index="2VPoh3" />
       </concept>
       <concept id="1167087518662" name="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" flags="in" index="2VP$b9" />
+      <concept id="5133195082121471908" name="jetbrains.mps.lang.generator.structure.LabelMacro" flags="ln" index="2ZBi8u" />
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
@@ -353,6 +354,10 @@
       <concept id="1216860049627" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" flags="nn" index="1iwH70">
         <reference id="1216860049628" name="label" index="1iwH77" />
         <child id="1216860049632" name="inputNode" index="1iwH7V" />
+      </concept>
+      <concept id="1216860049622" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel" flags="nn" index="1iwH7d">
+        <reference id="1216860049623" name="label" index="1iwH7c" />
+        <child id="6851978633175404162" name="forModel" index="DUT31" />
       </concept>
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
       <concept id="7430509679014182526" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef" flags="ng" index="1qCSth">
@@ -530,6 +535,10 @@
       <property role="TrG5h" value="GetTextUnit" />
       <ref role="2rTdP9" to="2omo:hWWtQdD" resolve="ConceptTextGenDeclaration" />
       <ref role="2rZz_L" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
+    </node>
+    <node concept="2rT7sh" id="5$sPwIF2PCW" role="2rTMjI">
+      <property role="TrG5h" value="TextGenAspectDescriptorCons" />
+      <ref role="2rZz_L" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
     </node>
     <node concept="2VPoh5" id="7ZU0Lz4Jymy" role="2VS0gm">
       <ref role="2VPoh2" node="7ZU0Lz4JC2c" resolve="TextGenAspectDescriptor" />
@@ -3386,9 +3395,41 @@
                             <property role="2qtEX8" value="baseMethodDeclaration" />
                             <node concept="3$xsQk" id="3AguOYZ6ht8" role="3$ytzL">
                               <node concept="3clFbS" id="3AguOYZ6ht9" role="2VODD2">
+                                <node concept="3cpWs8" id="5$sPwIF2X45" role="3cqZAp">
+                                  <node concept="3cpWsn" id="5$sPwIF2X46" role="3cpWs9">
+                                    <property role="TrG5h" value="descriptorCons" />
+                                    <node concept="3Tqbb2" id="5$sPwIF2X43" role="1tU5fm">
+                                      <ref role="ehGHo" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
+                                    </node>
+                                    <node concept="2OqwBi" id="5$sPwIF2X47" role="33vP2m">
+                                      <node concept="1iwH7S" id="5$sPwIF2X48" role="2Oq$k0" />
+                                      <node concept="1iwH7d" id="5$sPwIF2X49" role="2OqNvi">
+                                        <ref role="1iwH7c" node="5$sPwIF2PCW" resolve="TextGenAspectDescriptorCons" />
+                                        <node concept="v3LJS" id="5$sPwIF2X4a" role="DUT31">
+                                          <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3clFbJ" id="5$sPwIF2Y9k" role="3cqZAp">
+                                  <node concept="3clFbS" id="5$sPwIF2Y9m" role="3clFbx">
+                                    <node concept="3cpWs6" id="5$sPwIF2YQZ" role="3cqZAp">
+                                      <node concept="37vLTw" id="5$sPwIF2YR1" role="3cqZAk">
+                                        <ref role="3cqZAo" node="5$sPwIF2X46" resolve="descriptorCons" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="3y3z36" id="5$sPwIF2YFm" role="3clFbw">
+                                    <node concept="10Nm6u" id="5$sPwIF2YLb" role="3uHU7w" />
+                                    <node concept="37vLTw" id="5$sPwIF2Yfm" role="3uHU7B">
+                                      <ref role="3cqZAo" node="5$sPwIF2X46" resolve="descriptorCons" />
+                                    </node>
+                                  </node>
+                                </node>
                                 <node concept="3SKdUt" id="71FvR51fVek" role="3cqZAp">
                                   <node concept="3SKdUq" id="71FvR51fVem" role="3SKWNk">
-                                    <property role="3SKdUp" value="TODO genContext.get output TextGenAspectDescriptorCons for model model;" />
+                                    <property role="3SKdUp" value="fallback, for textgen aspect models that do not use devkit with GP" />
                                   </node>
                                 </node>
                                 <node concept="3cpWs6" id="71FvR51faQV" role="3cqZAp">
@@ -3919,6 +3960,9 @@
       <node concept="3cqZAl" id="7ZU0Lz4JDNM" role="3clF45" />
       <node concept="3clFbS" id="7ZU0Lz4JDNO" role="3clF47" />
       <node concept="3Tm1VV" id="7ZU0Lz4JDKD" role="1B3o_S" />
+      <node concept="2ZBi8u" id="5$sPwIF2V4x" role="lGtFl">
+        <ref role="2rW$FS" node="5$sPwIF2PCW" resolve="TextGenAspectDescriptorCons" />
+      </node>
     </node>
     <node concept="2tJIrI" id="7_Q0YoZ2103" role="jymVt" />
     <node concept="3Tm1VV" id="7ZU0Lz4JC2d" role="1B3o_S" />
