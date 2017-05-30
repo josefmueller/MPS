@@ -70,7 +70,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TransformationLocation_WithoutFeatures;
       case LanguageConceptSwitch.TransformationMenu_Test:
         if (props_TransformationMenu_Test == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x259f3121f598017fL);
           cpb.presentationByName();
           props_TransformationMenu_Test = cpb.create();
         }

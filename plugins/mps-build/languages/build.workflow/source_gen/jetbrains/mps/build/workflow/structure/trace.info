@@ -8,7 +8,7 @@
       <unit at="10,0,82,0" name="jetbrains.mps.build.workflow.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,395,0" name="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
+      <unit at="14,0,394,0" name="jetbrains.mps.build.workflow.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

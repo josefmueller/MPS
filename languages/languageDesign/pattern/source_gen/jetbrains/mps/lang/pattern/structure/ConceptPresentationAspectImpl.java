@@ -128,8 +128,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_OrPatternClause;
       case LanguageConceptSwitch.OrPatternVariableReference:
         if (props_OrPatternVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("OrPatternVariableReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL);
+          cpb.presentationByReference(0x3b2f5e7b070d317dL, "declaration", "", "");
           props_OrPatternVariableReference = cpb.create();
         }
         return props_OrPatternVariableReference;
@@ -156,9 +156,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PatternVariableDeclaration;
       case LanguageConceptSwitch.PatternVariableReference:
         if (props_PatternVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x2b7df577ffbb6a85L);
           cpb.shortDesc("pattern variable reference");
-          cpb.rawPresentation("PatternVariableReference");
+          cpb.presentationByReference(0x2b7df577ffbb6a86L, "variable", "", "");
           props_PatternVariableReference = cpb.create();
         }
         return props_PatternVariableReference;

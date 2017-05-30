@@ -11,7 +11,7 @@
       <unit at="10,0,44,0" name="jetbrains.mps.baseLanguage.tuples.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,166,0" name="jetbrains.mps.baseLanguage.tuples.structure.StructureAspectDescriptor" />
+      <unit at="16,0,164,0" name="jetbrains.mps.baseLanguage.tuples.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

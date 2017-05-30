@@ -27,6 +27,7 @@ import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -112,7 +113,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildLayout_ImportContent_EditorBuilder_a.BuildLayout_ImportContent_target_cellMenu_roxgcf_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
@@ -142,9 +143,23 @@ import jetbrains.mps.nodeEditor.MPSColors;
     }
 
     private EditorCell createReferencePresentation_roxgcf_a0b0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")));
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, PresentationProviders.PRESENTATION_roxgcf_a0a1a);
       editorCell.setCellId("ReferencePresentation_roxgcf_a0b0");
       return editorCell;
+    }
+  }
+  public static class BuildLayout_ImportContent_target_cellMenu_roxgcf_a0b0 extends PrimaryReferentMenuCellMenuPart {
+    public BuildLayout_ImportContent_target_cellMenu_roxgcf_a0b0() {
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_roxgcf_a0a1a;
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getVisibleMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_roxgcf_a0a1a;
     }
   }
   private EditorCell createRefNodeList_roxgcf_c0() {

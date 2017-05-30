@@ -13,6 +13,9 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -28,6 +31,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.typesystem.editor.TypesystemStyles_StyleSheet.InequationLabelStyleClass;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 
 /*package*/ class InequationReference_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -80,7 +85,7 @@ import jetbrains.mps.lang.typesystem.editor.TypesystemStyles_StyleSheet.Inequati
       editorCell.setReferenceCell(true);
       editorCell.setRole("inequation");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new InequationReference_EditorBuilder_a.InequationReference_inequation_cellMenu_boi5ax_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
@@ -156,6 +161,20 @@ import jetbrains.mps.lang.typesystem.editor.TypesystemStyles_StyleSheet.Inequati
         return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
       } else
       return editorCell;
+    }
+  }
+  public static class InequationReference_inequation_cellMenu_boi5ax_a0a0 extends PrimaryReferentMenuCellMenuPart {
+    public InequationReference_inequation_cellMenu_boi5ax_a0a0() {
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_boi5ax_a0a0a;
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getVisibleMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_boi5ax_a0a0a;
     }
   }
 }

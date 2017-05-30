@@ -21,8 +21,13 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.BaseAngleBracketStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -101,7 +106,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
       editorCell.setRole("classifier");
     }
     editorCell.setTransformationMenuLookup(new NamedTransformationMenuLookup(LanguageRegistry.getInstance(getEditorContext().getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"), "jetbrains.mps.baseLanguage.editor.newExpression_DefaultClassCreator_ext_2"));
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new DefaultClassCreator_EditorBuilder_a.DefaultClassCreator_classifier_cellMenu_27y5p7_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
@@ -145,6 +150,20 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
         return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
       } else
       return editorCell;
+    }
+  }
+  public static class DefaultClassCreator_classifier_cellMenu_27y5p7_a0a0 extends PrimaryReferentMenuCellMenuPart {
+    public DefaultClassCreator_classifier_cellMenu_27y5p7_a0a0() {
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_27y5p7_a0a0a;
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getVisibleMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_27y5p7_a0a0a;
     }
   }
   private EditorCell createCollection_27y5p7_b0() {

@@ -94,6 +94,16 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     SAbstractConcept cncpt_a0e = concept;
     switch (index_xbvbvu_a0e.index(cncpt_a0e)) {
       case 0:
+        return Collections.<SubstituteMenu>singletonList(new EditorOperationCall_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new EditorPropertyReference_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new PersistentConfigurationTemplateInitializer_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new PersistentPropertyReferenceOperation_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new TemplateParameterReference_SubstituteMenu());
+      case 5:
         return Collections.<SubstituteMenu>singletonList(new PersistentConfigurationType_Contribution());
       default:
     }
@@ -102,6 +112,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011fL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011cL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910132L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910133L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x4a75ebd58602caa5L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x25c8b83a7e4bb488L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910103L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013dL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91013aL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011aL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910101L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910133L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL), MetaIdFactory.conceptId(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910101L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a2 = new String[]{"jetbrains.mps.execution.settings.editor.EditorComponent", "jetbrains.mps.execution.settings.editor.PersistentMethodsComponent", "jetbrains.mps.execution.settings.editor.PersistentPropertiesComponent"};
 }

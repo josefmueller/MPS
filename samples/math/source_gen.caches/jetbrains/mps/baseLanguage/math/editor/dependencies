@@ -184,6 +184,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathFuncExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbolFromToIndex_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndex_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbol_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathTypeCast_Editor" />
@@ -193,6 +194,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixElementAccessExpression_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixIndexWildcard_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndex_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializer_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInverseOperation_Editor" />
@@ -784,6 +786,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndexReference_SubstituteMenu" file="MathSymbolIndexReference_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndex_Editor" file="MathSymbolIndex_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MathSymbolIndex_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -1074,6 +1089,19 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndexReference_SubstituteMenu" file="MatrixInitializerIndexReference_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndex_Editor" file="MatrixInitializerIndex_Editor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.editor.MatrixInitializerIndex_EditorBuilder_a" />

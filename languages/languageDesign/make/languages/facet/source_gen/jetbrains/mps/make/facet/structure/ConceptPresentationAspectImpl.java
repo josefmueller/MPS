@@ -37,8 +37,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ExtendsFacetReference:
         if (props_ExtendsFacetReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ExtendsFacetReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b23b819L);
+          cpb.presentationByReference(0x5979ed6d2b21b2f3L, "facet", "", "");
           props_ExtendsFacetReference = cpb.create();
         }
         return props_ExtendsFacetReference;
@@ -79,8 +79,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ForeignParametersComponentExpression;
       case LanguageConceptSwitch.ForeignParametersExpression:
         if (props_ForeignParametersExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ForeignParametersExpression");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x2e69d2eba535f3b0L);
+          cpb.presentationByReference(0x2e69d2eba535f3beL, "target", "", "");
           props_ForeignParametersExpression = cpb.create();
         }
         return props_ForeignParametersExpression;
@@ -112,8 +112,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LocalParametersExpression;
       case LanguageConceptSwitch.NamedFacetReference:
         if (props_NamedFacetReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("NamedFacetReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1aa1f6c694329f95L);
+          cpb.presentationByReference(0x5979ed6d2b21b2f3L, "facet", "", "");
           props_NamedFacetReference = cpb.create();
         }
         return props_NamedFacetReference;
@@ -126,15 +126,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ParametersDeclaration;
       case LanguageConceptSwitch.RelatedFacetReference:
         if (props_RelatedFacetReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("RelatedFacetReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x73e720709e312229L);
+          cpb.presentationByReference(0x5979ed6d2b21b2f3L, "facet", "", "");
           props_RelatedFacetReference = cpb.create();
         }
         return props_RelatedFacetReference;
       case LanguageConceptSwitch.ResourceClassifierType:
         if (props_ResourceClassifierType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ResourceClassifierType");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aea0b4L);
+          cpb.presentationByReference(0x101de490babL, "classifier", "", "");
           props_ResourceClassifierType = cpb.create();
         }
         return props_ResourceClassifierType;
@@ -161,15 +161,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TargetDeclaration;
       case LanguageConceptSwitch.TargetDependency:
         if (props_TargetDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TargetDependency");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L);
+          cpb.presentationByReference(0x5912a2ab1cd24c63L, "dependsOn", "", "");
           props_TargetDependency = cpb.create();
         }
         return props_TargetDependency;
       case LanguageConceptSwitch.TargetReferenceExpression:
         if (props_TargetReferenceExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TargetReferenceExpression");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L);
+          cpb.presentationByReference(0x78c916bd7aecc3bcL, "target", "", "");
           props_TargetReferenceExpression = cpb.create();
         }
         return props_TargetReferenceExpression;

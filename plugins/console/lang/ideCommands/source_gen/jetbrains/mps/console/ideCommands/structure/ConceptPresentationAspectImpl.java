@@ -51,15 +51,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AbsractMake;
       case LanguageConceptSwitch.ActionCallDeclaredParameter:
         if (props_ActionCallDeclaredParameter == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ActionCallDeclaredParameter");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a7L);
+          cpb.presentationByReference(0x4d7759afce9587a8L, "declaration", "", "");
           props_ActionCallDeclaredParameter = cpb.create();
         }
         return props_ActionCallDeclaredParameter;
       case LanguageConceptSwitch.ActionCallGlobalParameter:
         if (props_ActionCallGlobalParameter == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ActionCallGlobalParameter");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x4d7759afce9587a9L);
+          cpb.presentationByReference(0x4d7759afce9587aaL, "declaration", "", "");
           props_ActionCallGlobalParameter = cpb.create();
         }
         return props_ActionCallGlobalParameter;

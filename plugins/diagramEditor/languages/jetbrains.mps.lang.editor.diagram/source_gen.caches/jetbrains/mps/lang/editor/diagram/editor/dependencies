@@ -133,6 +133,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu" file="AttributedFigureReference_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.editor.BLQueryArgumentSharpActions" file="BLQueryArgumentSharpActions.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -630,6 +643,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.AbstractDiagramCreation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ActionGroup_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.AttributedFigureReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.BLQueryArgument_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramConnector_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.CellModel_DiagramNode_Editor" />
@@ -643,13 +657,16 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.DiagramElementCreationHandlers_EditoComponent" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.DiagramspecificEditorCells_Contribution" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMapping_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMapping_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.HandlersComponent" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.Palette_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.Separator_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.ThisEditorNodeExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -687,6 +704,19 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.ExternalFigureReference_SubstituteMenu" file="ExternalFigureReference_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.editor.FigureParameterMappingName_Actions" file="FigureParameterMappingName_Actions.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
@@ -850,6 +880,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.LinkArgument_SubstituteMenu" file="LinkArgument_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.editor.Palette_Editor" file="Palette_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.Palette_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -912,6 +955,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.diagram.editor.PropertyArgument_SubstituteMenu" file="PropertyArgument_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.editor.Separator_Editor" file="Separator_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.editor.Separator_EditorBuilder_a" />

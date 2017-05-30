@@ -30,15 +30,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildModuleTestsPlugin;
       case LanguageConceptSwitch.BuildMpsLayout_TestModule:
         if (props_BuildMpsLayout_TestModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMpsLayout_TestModule");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef372L);
+          cpb.presentationByReference(0x3f496e80bd8ef373L, "module", "", "");
           props_BuildMpsLayout_TestModule = cpb.create();
         }
         return props_BuildMpsLayout_TestModule;
       case LanguageConceptSwitch.BuildMpsLayout_TestModuleGroup:
         if (props_BuildMpsLayout_TestModuleGroup == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMpsLayout_TestModuleGroup");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3600cb0a44dd4a5bL, 0x996822924406419eL, 0x3f496e80bd8ef36bL);
+          cpb.presentationByReference(0x3f496e80bd8ef36cL, "group", "", "");
           props_BuildMpsLayout_TestModuleGroup = cpb.create();
         }
         return props_BuildMpsLayout_TestModuleGroup;

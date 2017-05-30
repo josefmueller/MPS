@@ -44,8 +44,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Color;
       case LanguageConceptSwitch.ColorReference:
         if (props_ColorReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ColorReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x3a2b0182df2201afL);
+          cpb.presentationByReference(0x3a2b0182df22029aL, "target", "", "");
           props_ColorReference = cpb.create();
         }
         return props_ColorReference;

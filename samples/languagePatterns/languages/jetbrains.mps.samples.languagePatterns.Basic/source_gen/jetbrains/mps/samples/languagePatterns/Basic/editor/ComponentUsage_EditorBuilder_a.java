@@ -16,6 +16,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.samples.languagePatterns.Basic.behavior.Component__BehaviorDescriptor;
@@ -25,6 +28,8 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 
 /*package*/ class ComponentUsage_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -100,7 +105,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       editorCell.setReferenceCell(true);
       editorCell.setRole("usedComponent");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new ComponentUsage_EditorBuilder_a.ComponentUsage_usedComponent_cellMenu_iuxdpw_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
@@ -147,6 +152,20 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       style.set(StyleAttributes.EDITABLE, true);
       editorCell.getStyle().putAll(style);
       return editorCell;
+    }
+  }
+  public static class ComponentUsage_usedComponent_cellMenu_iuxdpw_a0c0 extends PrimaryReferentMenuCellMenuPart {
+    public ComponentUsage_usedComponent_cellMenu_iuxdpw_a0c0() {
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_iuxdpw_a0a2a;
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getVisibleMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_iuxdpw_a0a2a;
     }
   }
 }

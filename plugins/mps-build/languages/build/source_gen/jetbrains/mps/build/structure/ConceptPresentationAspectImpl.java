@@ -191,8 +191,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildExternalLayout;
       case LanguageConceptSwitch.BuildExternalLayoutDependency:
         if (props_BuildExternalLayoutDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildExternalLayoutDependency");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L);
+          cpb.presentationByReference(0x63a87b9320d3d0a7L, "layout", "", "");
           cpb.icon(IconContainer.RESOURCE_a0a2a0a6b0ff);
           props_BuildExternalLayoutDependency = cpb.create();
         }
@@ -648,8 +648,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildProject;
       case LanguageConceptSwitch.BuildProjectDependency:
         if (props_BuildProjectDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildProjectDependency");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L);
+          cpb.presentationByReference(0x4df58c6f18f84a24L, "script", "", "");
           cpb.icon(IconContainer.RESOURCE_a0a2a0a27b0ff);
           props_BuildProjectDependency = cpb.create();
         }
@@ -675,8 +675,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildSourceArchiveRelativePath;
       case LanguageConceptSwitch.BuildSourceMacroRelativePath:
         if (props_BuildSourceMacroRelativePath == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildSourceMacroRelativePath");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL);
+          cpb.presentationByReference(0x668c6cfbafae122aL, "macro", "$", "");
           cpb.icon(IconContainer.RESOURCE_a0a2a0a67b0ff);
           props_BuildSourceMacroRelativePath = cpb.create();
         }
@@ -790,15 +790,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildSource_JavaDependencyModule;
       case LanguageConceptSwitch.BuildSource_JavaExternalJarFolderRef:
         if (props_BuildSource_JavaExternalJarFolderRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildSource_JavaExternalJarFolderRef");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL);
+          cpb.presentationByReference(0x4ddcec86afb65a40L, "folder", "", "");
           props_BuildSource_JavaExternalJarFolderRef = cpb.create();
         }
         return props_BuildSource_JavaExternalJarFolderRef;
       case LanguageConceptSwitch.BuildSource_JavaExternalJarRef:
         if (props_BuildSource_JavaExternalJarRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildSource_JavaExternalJarRef");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL);
+          cpb.presentationByReference(0x4ddcec86afb2f64dL, "jar", "", "");
           props_BuildSource_JavaExternalJarRef = cpb.create();
         }
         return props_BuildSource_JavaExternalJarRef;
@@ -942,7 +942,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildTextStringPart;
       case LanguageConceptSwitch.BuildVarRefStringPart:
         if (props_BuildVarRefStringPart == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L);
           cpb.presentationByName();
           props_BuildVarRefStringPart = cpb.create();
         }
@@ -999,50 +999,50 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_GeneratorInternal_BuildSource_Folder;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_JarFolder:
         if (props_GeneratorInternal_BuildSource_JarFolder == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_BuildSource_JarFolder");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892402f6L);
+          cpb.presentationByReference(0x508044c9892402f7L, "targetFolder", "", "");
           props_GeneratorInternal_BuildSource_JarFolder = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_JarFolder;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaJar:
         if (props_GeneratorInternal_BuildSource_JavaJar == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_BuildSource_JavaJar");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0de4L);
+          cpb.presentationByReference(0x44e5dd192e7c0de5L, "targetJar", "", "");
           props_GeneratorInternal_BuildSource_JavaJar = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_JavaJar;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaLibrary:
         if (props_GeneratorInternal_BuildSource_JavaLibrary == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_BuildSource_JavaLibrary");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0e6fL);
+          cpb.presentationByReference(0x44e5dd192e7c0e70L, "targetLibrary", "", "");
           props_GeneratorInternal_BuildSource_JavaLibrary = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_JavaLibrary;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_JavaModule:
         if (props_GeneratorInternal_BuildSource_JavaModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_BuildSource_JavaModule");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0c18L);
+          cpb.presentationByReference(0x44e5dd192e7c0c19L, "targetModule", "", "");
           props_GeneratorInternal_BuildSource_JavaModule = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_JavaModule;
       case LanguageConceptSwitch.GeneratorInternal_BuildSource_SingleFile:
         if (props_GeneratorInternal_BuildSource_SingleFile == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_BuildSource_SingleFile");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0d4aL);
+          cpb.presentationByReference(0x44e5dd192e7c0d4bL, "targetFile", "", "");
           props_GeneratorInternal_BuildSource_SingleFile = cpb.create();
         }
         return props_GeneratorInternal_BuildSource_SingleFile;
       case LanguageConceptSwitch.GeneratorInternal_IWorkflowParticipantReference:
         if (props_GeneratorInternal_IWorkflowParticipantReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_IWorkflowParticipantReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c860be1bc5cc1c8L);
+          cpb.presentationByReference(0x5c860be1bc5cc1c9L, "participant", "", "");
           props_GeneratorInternal_IWorkflowParticipantReference = cpb.create();
         }
         return props_GeneratorInternal_IWorkflowParticipantReference;
       case LanguageConceptSwitch.GeneratorInternal_IWorkfowParticipants:
         if (props_GeneratorInternal_IWorkfowParticipants == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_IWorkfowParticipants");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f1f0652f6049405L);
+          cpb.presentationByReference(0x5f1f0652f6049406L, "for", "", "");
           props_GeneratorInternal_IWorkfowParticipants = cpb.create();
         }
         return props_GeneratorInternal_IWorkfowParticipants;
@@ -1062,8 +1062,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_GeneratorInternal_Mapping;
       case LanguageConceptSwitch.GeneratorInternal_ProjectDependency:
         if (props_GeneratorInternal_ProjectDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_ProjectDependency");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL);
+          cpb.presentationByReference(0x5830b38e16d823d3L, "project", "", "");
           props_GeneratorInternal_ProjectDependency = cpb.create();
         }
         return props_GeneratorInternal_ProjectDependency;

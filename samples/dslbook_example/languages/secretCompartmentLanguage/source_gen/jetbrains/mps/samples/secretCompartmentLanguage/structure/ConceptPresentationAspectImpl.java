@@ -31,8 +31,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Event;
       case LanguageConceptSwitch.HandleEvent:
         if (props_HandleEvent == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("HandleEvent");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c2015933L);
+          cpb.presentationByReference(0x116c2017288L, "event", "", "");
           props_HandleEvent = cpb.create();
         }
         return props_HandleEvent;
@@ -45,22 +45,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_State;
       case LanguageConceptSwitch.StateMachine:
         if (props_StateMachine == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116bbacae3cL);
           cpb.presentationByName();
           props_StateMachine = cpb.create();
         }
         return props_StateMachine;
       case LanguageConceptSwitch.StateMachineTest:
         if (props_StateMachineTest == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c17a1865L);
           cpb.presentationByName();
           props_StateMachineTest = cpb.create();
         }
         return props_StateMachineTest;
       case LanguageConceptSwitch.StateMachineTestMethod:
         if (props_StateMachineTestMethod == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("StateMachineTestMethod");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x6986543d82184ebfL, 0xa2e9565e5049c1ceL, 0x116c1d2af8aL);
+          cpb.presentationByReference(0x116c1f8ec2bL, "finalState", "", "");
           props_StateMachineTestMethod = cpb.create();
         }
         return props_StateMachineTestMethod;

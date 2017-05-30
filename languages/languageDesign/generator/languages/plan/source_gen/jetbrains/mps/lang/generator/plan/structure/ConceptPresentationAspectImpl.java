@@ -67,17 +67,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CheckpointSynchronization;
       case LanguageConceptSwitch.DeclaredCheckpointSpec:
         if (props_DeclaredCheckpointSpec == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb2fdL);
           cpb.shortDesc("use a pure checkpoint declared elsewhere");
-          cpb.rawPresentation("DeclaredCheckpointSpec");
+          cpb.presentationByReference(0x340cd07aed7cb300L, "cpDecl", "", "");
           props_DeclaredCheckpointSpec = cpb.create();
         }
         return props_DeclaredCheckpointSpec;
       case LanguageConceptSwitch.InPlaceCheckpointRefSpec:
         if (props_InPlaceCheckpointRefSpec == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb32cL);
           cpb.shortDesc("reference another checkpoint step with in-place declaration");
-          cpb.rawPresentation("InPlaceCheckpointRefSpec");
+          cpb.presentationByReference(0x340cd07aed7cb32fL, "checkpoint", "", "");
           props_InPlaceCheckpointRefSpec = cpb.create();
         }
         return props_InPlaceCheckpointRefSpec;

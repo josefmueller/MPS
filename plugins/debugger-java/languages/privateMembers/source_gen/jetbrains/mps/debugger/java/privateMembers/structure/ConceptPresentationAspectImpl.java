@@ -21,15 +21,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.PrivateFieldReferenceOperation:
         if (props_PrivateFieldReferenceOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PrivateFieldReferenceOperation");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb5379L);
+          cpb.presentationByReference(0x116b484a653L, "fieldDeclaration", "", "");
           props_PrivateFieldReferenceOperation = cpb.create();
         }
         return props_PrivateFieldReferenceOperation;
       case LanguageConceptSwitch.PrivateInstanceMethodCallOperation:
         if (props_PrivateInstanceMethodCallOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PrivateInstanceMethodCallOperation");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb7006L);
+          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_PrivateInstanceMethodCallOperation = cpb.create();
         }
         return props_PrivateInstanceMethodCallOperation;

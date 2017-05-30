@@ -37,7 +37,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.BaseIntentionDeclaration:
         if (props_BaseIntentionDeclaration == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x2303633a9c3cc675L);
           cpb.presentationByName();
           props_BaseIntentionDeclaration = cpb.create();
         }

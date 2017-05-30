@@ -285,7 +285,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.core.xml.structure.XmlBaseElement", 0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486dL);
     b.origin("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)/6647099934207069215");
     b.associate("target", 0x5c3f3e2c1cef4c20L).target(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c10L).optional(false).origin("6647099934207069216").done();
-    b.alias("<pathref <{target}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForBwfProject() {

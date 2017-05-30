@@ -75,8 +75,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AnalyzerConstructorParameter;
       case LanguageConceptSwitch.AnalyzerConstructorParameterReference:
         if (props_AnalyzerConstructorParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("AnalyzerConstructorParameterReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L);
+          cpb.presentationByReference(0x4c4b92003e49a705L, "baseVariableDeclaration", "", "");
           props_AnalyzerConstructorParameterReference = cpb.create();
         }
         return props_AnalyzerConstructorParameterReference;
@@ -179,8 +179,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ApplicableCondition;
       case LanguageConceptSwitch.ApplicableNodeReference:
         if (props_ApplicableNodeReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ApplicableNodeReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L);
+          cpb.presentationByReference(0x449938e788f30111L, "applicableNode", "", "");
           props_ApplicableNodeReference = cpb.create();
         }
         return props_ApplicableNodeReference;
@@ -207,8 +207,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CustomInstructionsContainer;
       case LanguageConceptSwitch.CustomInstructionsContainerReference:
         if (props_CustomInstructionsContainerReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CustomInstructionsContainerReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L);
+          cpb.presentationByReference(0x73e1fea9c1738799L, "containter", "", "");
           props_CustomInstructionsContainerReference = cpb.create();
         }
         return props_CustomInstructionsContainerReference;
@@ -270,8 +270,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_InstructionParameter;
       case LanguageConceptSwitch.InstructionReference:
         if (props_InstructionReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("InstructionReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b4cedcL);
+          cpb.presentationByReference(0x3a887e9da0b4cee5L, "instruction", "", "");
           props_InstructionReference = cpb.create();
         }
         return props_InstructionReference;
@@ -298,7 +298,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ProgramParameter;
       case LanguageConceptSwitch.Rule:
         if (props_Rule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L);
           cpb.presentationByName();
           cpb.icon(IconContainer.RESOURCE_a0a2a0a53b0mb);
           props_Rule = cpb.create();
@@ -306,8 +306,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Rule;
       case LanguageConceptSwitch.RuleReference:
         if (props_RuleReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("RuleReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0xa72ff3b2ca7c5b0L);
+          cpb.presentationByReference(0xa72ff3b2ca7c5b1L, "rule", "", "");
           props_RuleReference = cpb.create();
         }
         return props_RuleReference;

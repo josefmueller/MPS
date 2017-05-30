@@ -13,8 +13,12 @@ import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
-import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
-import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
+import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 
 public class ResourceClassifierType_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
@@ -32,7 +36,16 @@ public class ResourceClassifierType_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aea0b4L, "jetbrains.mps.make.facet.structure.ResourceClassifierType")), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aea0b4L, "jetbrains.mps.make.facet.structure.ResourceClassifierType")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ResourceClassifierType_SubstituteMenu.SMP_Group_k868c7_a.SMP_Include_k868c7_a0());
+    }
+    public class SMP_Include_k868c7_a0 extends IncludeSubstituteMenuSubstituteMenuPart {
+
+      @Nullable
+      @Override
+      protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
+        final EditorContext editorContext = _context.getEditorContext();
+        return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aea0b4L, "jetbrains.mps.make.facet.structure.ResourceClassifierType"), "jetbrains.mps.make.facet.editor.ResourceClassifierType_SmartReference");
+      }
     }
   }
 }

@@ -128,6 +128,7 @@
     <classNode extendsClassName="jetbrains.mps.editor.runtime.style.ParametersInformation" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -143,7 +144,9 @@
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.MoveNodeToNodeExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.MoveNodesToNodeExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.NodeTarget_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringFieldReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.Refactoring_Editor" />
@@ -152,6 +155,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -444,6 +448,19 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringFieldReference_SubstituteMenu" file="RefactoringFieldReference_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_Editor" file="RefactoringParameterReference_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -469,6 +486,19 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameterReference_SubstituteMenu" file="RefactoringParameterReference_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.editor.RefactoringParameter_Editor" file="RefactoringParameter_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.refactoring.editor.RefactoringParameter_EditorBuilder_a" />

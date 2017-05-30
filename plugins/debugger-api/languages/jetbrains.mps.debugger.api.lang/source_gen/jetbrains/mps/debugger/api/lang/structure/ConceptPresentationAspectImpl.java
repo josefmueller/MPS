@@ -44,8 +44,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BreakpointableNodeItem;
       case LanguageConceptSwitch.ConceptDeclarationReference:
         if (props_ConceptDeclarationReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ConceptDeclarationReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x5058b4b262ffd5deL);
+          cpb.presentationByReference(0x5058b4b262ffd5dfL, "conceptDeclaration", "", "");
           props_ConceptDeclarationReference = cpb.create();
         }
         return props_ConceptDeclarationReference;

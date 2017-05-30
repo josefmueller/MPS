@@ -13,11 +13,9 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -46,16 +44,8 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
-          public boolean hasPresentation() {
-            return true;
-          }
-          @Override
-          public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return (_context.getSmartReference() ? "\\" + SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-          }
-          @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_15u81x_a0a2a0a0a1a0b0a1a2;
+            return breakingNode_15u81x_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -77,5 +67,5 @@ public class MatchVariableReferenceRegexp_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-  private static SNodePointer breakingNode_15u81x_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "6836281137582820376");
+  private static SNodePointer breakingNode_15u81x_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "6836281137582820376");
 }

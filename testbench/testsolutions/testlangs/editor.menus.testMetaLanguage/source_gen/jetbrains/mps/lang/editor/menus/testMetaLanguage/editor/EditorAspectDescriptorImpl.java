@@ -8,6 +8,7 @@ import java.util.Collection;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -31,6 +32,18 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
 
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
+    SAbstractConcept cncpt_a0d = concept;
+    switch (index_xbvbvu_a0d.index(cncpt_a0d)) {
+      case 0:
+        return Collections.<SubstituteMenu>singletonList(new TransformationMenu_Test_SubstituteMenu());
+      default:
+    }
+    return Collections.<SubstituteMenu>emptyList();
+  }
 
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3dfc1dL), MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x41c8eff4cc3e09d8L), MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x33f30f661f866f15L), MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x259f3121f598017fL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x69068b7cba1f47fbL, 0xa4864981f42606e9L, 0x259f3121f598017fL)).seal();
 }

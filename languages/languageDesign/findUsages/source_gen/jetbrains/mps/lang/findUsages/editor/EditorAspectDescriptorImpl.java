@@ -49,11 +49,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (index_xbvbvu_a0d.index(cncpt_a0d)) {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new FinderDeclaration_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new FinderReference_SubstituteMenu());
       default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
 
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1190f427b83L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x118d6fce801L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e1959L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x5e9f5a0f21d59aacL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x585a05e7f40a28d1L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177408145aL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1177404a3f4L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116c9c51f82L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116c9c51f82L), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL), MetaIdFactory.conceptId(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL)).seal();
 }

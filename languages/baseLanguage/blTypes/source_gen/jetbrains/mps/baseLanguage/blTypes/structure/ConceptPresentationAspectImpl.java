@@ -27,8 +27,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PrimitiveTypeDescriptor;
       case LanguageConceptSwitch.PrimitiveTypeRef:
         if (props_PrimitiveTypeRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PrimitiveTypeRef");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cbf8e8L);
+          cpb.presentationByReference(0x10de9cbf8e7L, "descriptor", "", "");
           props_PrimitiveTypeRef = cpb.create();
         }
         return props_PrimitiveTypeRef;

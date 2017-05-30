@@ -254,39 +254,88 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     SAbstractConcept cncpt_a0g = concept;
     switch (index_xbvbvu_a0g.index(cncpt_a0g)) {
       case 0:
-        return Collections.<SubstituteMenu>singletonList(new AttributedNodeExpression_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new ApplicableNodeReference_SubstituteMenu());
       case 1:
-        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_ContextNode_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new AttributedNodeExpression_SubstituteMenu());
       case 2:
-        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Role_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new ConceptClauseLinkInfo_SubstituteMenu());
       case 3:
-        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_isAggregation_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_ContextNode_SubstituteMenu());
       case 4:
-        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_Role_SubstituteMenu());
       case 5:
-        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_var_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_isAggregation_SubstituteMenu());
       case 6:
-        return Collections.<SubstituteMenu>singletonList(new subs_AttributedNodeExpression_Contribution());
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_node_SubstituteMenu());
       case 7:
-        return Collections.<SubstituteMenu>singletonList(new JoinContainer_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new ConceptFunctionParameter_var_SubstituteMenu());
       case 8:
-        return Collections.<SubstituteMenu>singletonList(new LeftOperandType_parameter_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new subs_AttributedNodeExpression_Contribution());
       case 9:
-        return Collections.<SubstituteMenu>singletonList(new MeetContainer_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new InequationReference_SubstituteMenu());
       case 10:
-        return Collections.<SubstituteMenu>singletonList(new Node_InferTypeOperation_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new JoinContainer_SubstituteMenu());
       case 11:
-        return Collections.<SubstituteMenu>singletonList(new Node_TypeOperation_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new LeftOperandType_parameter_SubstituteMenu());
       case 12:
-        return Collections.<SubstituteMenu>singletonList(new Operation_parameter_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new LinkPatternVariableReference_SubstituteMenu());
       case 13:
-        return Collections.<SubstituteMenu>singletonList(new RightOperandType_parameter_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new MeetContainer_SubstituteMenu());
       case 14:
-        return Collections.<SubstituteMenu>singletonList(new EasyInferAndCheckingEntry_Contribution());
+        return Collections.<SubstituteMenu>singletonList(new Node_InferTypeOperation_SubstituteMenu());
       case 15:
+        return Collections.<SubstituteMenu>singletonList(new Node_TypeOperation_SubstituteMenu());
+      case 16:
+        return Collections.<SubstituteMenu>singletonList(new Operation_parameter_SubstituteMenu());
+      case 17:
+        return Collections.<SubstituteMenu>singletonList(new PatternVariableReference_SubstituteMenu());
+      case 18:
+        return Collections.<SubstituteMenu>singletonList(new PropertyMessageTarget_SubstituteMenu());
+      case 19:
+        return Collections.<SubstituteMenu>singletonList(new PropertyPatternVariableReference_SubstituteMenu());
+      case 20:
+        return Collections.<SubstituteMenu>singletonList(new QuickFixArgumentReference_SubstituteMenu());
+      case 21:
+        return Collections.<SubstituteMenu>singletonList(new QuickFixFieldReference_SubstituteMenu());
+      case 22:
+        return Collections.<SubstituteMenu>singletonList(new ReferenceMessageTarget_SubstituteMenu());
+      case 23:
+        return Collections.<SubstituteMenu>singletonList(new ReplacementRuleReference_SubstituteMenu());
+      case 24:
+        return Collections.<SubstituteMenu>singletonList(new RightOperandType_parameter_SubstituteMenu());
+      case 25:
+        return Collections.<SubstituteMenu>singletonList(new EasyInferAndCheckingEntry_Contribution());
+      case 26:
         return Collections.<SubstituteMenu>singletonList(new TypeClause_SubstituteMenu());
+      case 27:
+        return Collections.<SubstituteMenu>singletonList(new TypeVarReference_SubstituteMenu());
+      case 28:
+        return Collections.<SubstituteMenu>singletonList(new TypesystemIntention_SubstituteMenu());
+      case 29:
+        return Collections.<SubstituteMenu>singletonList(new TypesystemIntentionArgument_SubstituteMenu());
+      case 30:
+        return Collections.<SubstituteMenu>singletonList(new WhenConcreteVariableReference_SubstituteMenu());
       default:
     }
+    return Collections.<SubstituteMenu>emptyList();
+  }
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
+    SAbstractConcept cncpt_a0h = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0h.index(cncpt_a0h)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a7, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new InequationReference_SmartReference()});
+            default:
+          }
+        }
+        break;
+      default:
+    }
+
     return Collections.<SubstituteMenu>emptyList();
   }
 
@@ -294,6 +343,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL), MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2152354b0d500086L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078ffb82L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078e410eL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078ecdbdL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3618c300L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e07431ba7L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1206cda22fcL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4cf5b0L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1206cd802f8L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x584039bf75272c67L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7d5e03L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4d8298L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4d8edaL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114168188c7L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e9ef5dcL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x2152354b0d500086L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x120c8f8641eL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078ffb82L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078e410eL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e078ecdbdL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3618c300L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11e07431ba7L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1206cda22fcL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4cf5b0L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1206cd802f8L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x584039bf75272c67L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111ef7d5e03L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4d8298L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d10036L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a6a000L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d97ff9L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3683c009L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70489eee8479b55dL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a87c94L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x4cffb708491a734cL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11fcc4d8edaL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114168188c7L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f90b04cL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85f8628L), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.lang.typesystem.editor.InferenceRule_ApplySideTransforms", "jetbrains.mps.lang.typesystem.editor.InferenceRule_add_OverridesConceptFunction"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a7 = new String[]{"jetbrains.mps.lang.typesystem.editor.InequationReference_SmartReference"};
 }

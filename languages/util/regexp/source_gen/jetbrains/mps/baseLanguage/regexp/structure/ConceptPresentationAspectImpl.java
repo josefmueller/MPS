@@ -243,22 +243,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_MatchRegexpStatement;
       case LanguageConceptSwitch.MatchVariableReference:
         if (props_MatchVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MatchVariableReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117987ff5eL);
+          cpb.presentationByReference(0x11179881f99L, "match", "", "");
           props_MatchVariableReference = cpb.create();
         }
         return props_MatchVariableReference;
       case LanguageConceptSwitch.MatchVariableReferenceRegexp:
         if (props_MatchVariableReferenceRegexp == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MatchVariableReferenceRegexp");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L);
+          cpb.presentationByReference(0x1118e0a5335L, "match", "\\", "");
           props_MatchVariableReferenceRegexp = cpb.create();
         }
         return props_MatchVariableReferenceRegexp;
       case LanguageConceptSwitch.MatchVariableReferenceReplacement:
         if (props_MatchVariableReferenceReplacement == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MatchVariableReferenceReplacement");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x34ae970c192ab94eL);
+          cpb.presentationByReference(0x34ae970c192abbc5L, "match", "\\", "");
           props_MatchVariableReferenceReplacement = cpb.create();
         }
         return props_MatchVariableReferenceReplacement;
@@ -349,15 +349,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PredefinedSymbolClassDeclaration;
       case LanguageConceptSwitch.PredefinedSymbolClassRegexp:
         if (props_PredefinedSymbolClassRegexp == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PredefinedSymbolClassRegexp");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L);
+          cpb.presentationByReference(0x11178fbdc7dL, "symbolClass", "", "");
           props_PredefinedSymbolClassRegexp = cpb.create();
         }
         return props_PredefinedSymbolClassRegexp;
       case LanguageConceptSwitch.PredefinedSymbolClassSymbolClassPart:
         if (props_PredefinedSymbolClassSymbolClassPart == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PredefinedSymbolClassSymbolClassPart");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117928d9f2L);
+          cpb.presentationByReference(0x111792942ceL, "declaration", "", "");
           props_PredefinedSymbolClassSymbolClassPart = cpb.create();
         }
         return props_PredefinedSymbolClassSymbolClassPart;
@@ -391,8 +391,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RegexpDeclaration;
       case LanguageConceptSwitch.RegexpDeclarationReferenceRegexp:
         if (props_RegexpDeclarationReferenceRegexp == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("RegexpDeclarationReferenceRegexp");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL);
+          cpb.presentationByReference(0x1117f594636L, "regexp", "", "");
           props_RegexpDeclarationReferenceRegexp = cpb.create();
         }
         return props_RegexpDeclarationReferenceRegexp;

@@ -10,10 +10,14 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
-import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
+import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -28,12 +32,21 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector")));
+    result.add(new AbstractCellSelector_SubstituteMenu.SMP_Include_1rdeze_a());
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_b(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1e02662c4b880750L, "jetbrains.mps.lang.editor.structure.IdSelector")));
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Param_1rdeze_c(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector")));
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_d(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector")));
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_e(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc30443a0aL, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector")));
     return result;
+  }
+  public class SMP_Include_1rdeze_a extends IncludeSubstituteMenuSubstituteMenuPart {
+
+    @Nullable
+    @Override
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
+      final EditorContext editorContext = _context.getEditorContext();
+      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector"), "jetbrains.mps.lang.editor.editor.CellIdReferenceSelector_SmartReference");
+    }
   }
   private class SMP_Action_1rdeze_b extends SingleItemSubstituteMenuPart {
 

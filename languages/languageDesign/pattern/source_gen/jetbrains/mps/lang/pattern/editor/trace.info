@@ -15,7 +15,15 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="16,0,78,0" name="jetbrains.mps.lang.pattern.editor.EditorAspectDescriptorImpl" />
+      <unit at="17,0,93,0" name="jetbrains.mps.lang.pattern.editor.EditorAspectDescriptorImpl" />
+    </file>
+    <file name="OrPatternVariableReference_SubstituteMenu.java">
+      <unit at="24,0,30,0" name="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_SubstituteMenu$SMP_ReferenceScope_tmop8b_a" />
+      <unit at="16,0,31,0" name="jetbrains.mps.lang.pattern.editor.OrPatternVariableReference_SubstituteMenu" />
+    </file>
+    <file name="PatternVariableReference_SubstituteMenu.java">
+      <unit at="24,0,30,0" name="jetbrains.mps.lang.pattern.editor.PatternVariableReference_SubstituteMenu$SMP_ReferenceScope_mv5tgs_a" />
+      <unit at="16,0,31,0" name="jetbrains.mps.lang.pattern.editor.PatternVariableReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590342(jetbrains.mps.lang.pattern.editor)/1136720096744">

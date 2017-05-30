@@ -75,6 +75,12 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     SAbstractConcept cncpt_a0f = concept;
     switch (index_xbvbvu_a0f.index(cncpt_a0f)) {
       case 0:
+        return Collections.<SubstituteMenu>singletonList(new DefaultClassifierFieldAccessOperation_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new DefaultClassifierMethodCallOperation_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new DefaultClassifierType_SubstituteMenu());
+      case 3:
         return Collections.<SubstituteMenu>singletonList(new SubstituteMembersInsideOfClassifier_Contribution());
       default:
     }
@@ -84,6 +90,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc7570L), MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd711e29L), MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd6ee3c3L), MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL), MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11b74b0357cL), MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd6ee3c3L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc7570L), MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd711e29L), MetaIdFactory.conceptId(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.baseLanguage.classifiers.editor.DefaultClassifierMethodDeclaration_ApplySideTransforms"};
 }

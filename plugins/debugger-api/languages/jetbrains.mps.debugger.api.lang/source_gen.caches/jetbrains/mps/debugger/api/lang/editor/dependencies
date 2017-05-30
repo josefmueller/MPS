@@ -125,6 +125,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_SubstituteMenu" file="ConceptDeclarationReference_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.api.lang.editor.CreateBreakpointOperation_Editor" file="CreateBreakpointOperation_Editor.java">
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.CreateBreakpointOperation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -303,6 +316,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.BreakpointableNodeItem_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.ChooseBreakpoint_Contribution" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.ConceptDeclarationReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.CreateBreakpointOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.DebuggerConfiguration_Editor" />
     <classNode dependClassName="jetbrains.mps.debugger.api.lang.editor.DebuggerReference_Editor" />

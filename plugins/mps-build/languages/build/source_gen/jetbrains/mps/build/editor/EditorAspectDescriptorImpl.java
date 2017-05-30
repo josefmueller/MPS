@@ -324,35 +324,89 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new BuildCompositePath_SubstituteMenu());
       case 1:
-        return Collections.<SubstituteMenu>singletonList(new BuildLayout_Copy_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildExternalLayoutDependency_SubstituteMenu());
       case 2:
-        return Collections.<SubstituteMenu>singletonList(new BuildLayout_CustomCopy_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildLayout_Copy_SubstituteMenu());
       case 3:
-        return Collections.<SubstituteMenu>singletonList(new BuildLayout_JarManifest_Part_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildLayout_CustomCopy_SubstituteMenu());
       case 4:
-        return Collections.<SubstituteMenu>singletonList(new BuildSourceArchiveRelativePath_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildLayout_JarManifest_Part_SubstituteMenu());
       case 5:
-        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaContentFolder_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildProjectDependency_SubstituteMenu());
       case 6:
-        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaDependencyJar_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildSourceArchiveRelativePath_SubstituteMenu());
       case 7:
-        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaFiles_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildSourceMacroRelativePath_SubstituteMenu());
       case 8:
-        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaLibraryCP_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaContentFolder_SubstituteMenu());
       case 9:
-        return Collections.<SubstituteMenu>singletonList(new BuildString_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaDependencyJar_SubstituteMenu());
       case 10:
-        return Collections.<SubstituteMenu>singletonList(new BuildStringPart_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaExternalJarFolderRef_SubstituteMenu());
       case 11:
-        return Collections.<SubstituteMenu>singletonList(new BuildTextStringPart_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaExternalJarRef_SubstituteMenu());
       case 12:
-        return Collections.<SubstituteMenu>singletonList(new BuildVarRefStringPart_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaFiles_SubstituteMenu());
       case 13:
-        return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitValue_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildSource_JavaLibraryCP_SubstituteMenu());
       case 14:
+        return Collections.<SubstituteMenu>singletonList(new BuildString_SubstituteMenu());
+      case 15:
+        return Collections.<SubstituteMenu>singletonList(new BuildStringPart_SubstituteMenu());
+      case 16:
+        return Collections.<SubstituteMenu>singletonList(new BuildTextStringPart_SubstituteMenu());
+      case 17:
+        return Collections.<SubstituteMenu>singletonList(new BuildVarRefStringPart_SubstituteMenu());
+      case 18:
+        return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitValue_SubstituteMenu());
+      case 19:
         return Collections.<SubstituteMenu>singletonList(new BuildVariableMacroInitWithString_SubstituteMenu());
+      case 20:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_BuildSource_JarFolder_SubstituteMenu());
+      case 21:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_BuildSource_JavaJar_SubstituteMenu());
+      case 22:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_BuildSource_JavaLibrary_SubstituteMenu());
+      case 23:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_BuildSource_JavaModule_SubstituteMenu());
+      case 24:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_BuildSource_SingleFile_SubstituteMenu());
+      case 25:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_IWorkflowParticipantReference_SubstituteMenu());
+      case 26:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_IWorkfowParticipants_SubstituteMenu());
+      case 27:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_ProjectDependency_SubstituteMenu());
       default:
     }
+    return Collections.<SubstituteMenu>emptyList();
+  }
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
+    SAbstractConcept cncpt_a0h = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0h.index(cncpt_a0h)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a7, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new BuildSource_JavaExternalJarFolderRef_SmartReference()});
+            default:
+          }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a7, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new BuildSource_JavaExternalJarRef_SmartReference()});
+            default:
+          }
+        }
+        break;
+      default:
+    }
+
     return Collections.<SubstituteMenu>emptyList();
   }
 
@@ -360,7 +414,10 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92245a4L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f32ae3ef3770dd4L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92339b9L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9ab2L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x76d807f8dd95718eL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd26287L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92339b9L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9ab2L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x76d807f8dd95718eL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafae121dL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319546c6L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x14d3fb6fb8480882L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd1e1aaL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263c91972cd26287L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x508044c9892402f6L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0de4L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0e6fL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0c18L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0d4aL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5c860be1bc5cc1c8L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f1f0652f6049405L), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL), MetaIdFactory.conceptId(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.build.editor.add_DependencyLocation"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a5 = new String[]{"jetbrains.mps.build.editor.add_reexport_BuildSourcePath", "jetbrains.mps.build.editor.transform_CompositePath_BuildSourcePath"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a7 = new String[]{"jetbrains.mps.build.editor.BuildSource_JavaExternalJarFolderRef_SmartReference"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a7 = new String[]{"jetbrains.mps.build.editor.BuildSource_JavaExternalJarRef_SmartReference"};
 }

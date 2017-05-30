@@ -87,8 +87,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CommandMethod;
       case LanguageConceptSwitch.CommandParameterAssignment:
         if (props_CommandParameterAssignment == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CommandParameterAssignment");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be4L);
+          cpb.presentationByReference(0xbe3a0d5ba1a2be5L, "parameterDeclaration", "", "");
           props_CommandParameterAssignment = cpb.create();
         }
         return props_CommandParameterAssignment;
@@ -100,8 +100,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CommandParameterDeclaration;
       case LanguageConceptSwitch.CommandParameterReference:
         if (props_CommandParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CommandParameterReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bdcL);
+          cpb.presentationByReference(0xbe3a0d5ba1a2bdeL, "parameter", "", "");
           props_CommandParameterReference = cpb.create();
         }
         return props_CommandParameterReference;

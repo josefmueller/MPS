@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
+import jetbrains.mps.openapi.editor.descriptor.NamedMenuId;
+import java.util.Arrays;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
@@ -80,12 +82,45 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 2:
         return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_ContextVarRef_SubstituteMenu());
       case 3:
+        return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_GenParameterRef_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_LinkPatternRef_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_NodePatternRef_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_ParameterRef_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_PropertyPatternRef_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new GenerationContextOp_VarRef_SubstituteMenu());
+      case 9:
         return Collections.<SubstituteMenu>singletonList(new TemplateFunctionParameter_generationContext_SubstituteMenu());
       default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
+    SAbstractConcept cncpt_a0e = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0e.index(cncpt_a0e)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a4, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new GenerationContextOp_VarRef_SmartReference()});
+            default:
+          }
+        }
+        break;
+      default:
+    }
+
+    return Collections.<SubstituteMenu>emptyList();
+  }
 
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d3L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x23358d5095e2d082L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b994bfa0fL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4afdb473461e8c79L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8f9620cdL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x6db65d569fb2527L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11e42912257L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d6L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0dbL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11c5652e4d5L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11c529a6c83L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8f6c38c2L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c757L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4806ea5d84d8a2caL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c758L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4def01254aef34cdL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b9417864bL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b8fe60348L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x25c655ce6e80fdd8L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d3L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0e3L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d3L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x671e792f3dbdfe7eL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c757L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4806ea5d84d8a2caL), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c758L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x25c655ce6e80fdd8L), MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0e3L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x25c655ce6e80fdd8L)).seal();
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.lang.generator.generationContext.editor.GenerationContextOp_VarRef_SmartReference"};
 }

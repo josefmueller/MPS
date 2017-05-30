@@ -89,8 +89,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ActionReference;
       case LanguageConceptSwitch.AttributedFigureReference:
         if (props_AttributedFigureReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("AttributedFigureReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x4b412569a095b4ceL);
+          cpb.presentationByReference(0x4b412569a0e43041L, "figureAttribute", "", "");
           props_AttributedFigureReference = cpb.create();
         }
         return props_AttributedFigureReference;
@@ -206,8 +206,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DiagramElementsCreation;
       case LanguageConceptSwitch.ExternalFigureReference:
         if (props_ExternalFigureReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ExternalFigureReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a655cbL);
+          cpb.presentationByReference(0xf301bf106a65713L, "figure", "", "");
           props_ExternalFigureReference = cpb.create();
         }
         return props_ExternalFigureReference;
@@ -234,8 +234,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_FromNodeFunctionParameter;
       case LanguageConceptSwitch.LinkArgument:
         if (props_LinkArgument == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("LinkArgument");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L);
+          cpb.presentationByReference(0x3f6e840fdc4a7a7L, "link", "", "");
           props_LinkArgument = cpb.create();
         }
         return props_LinkArgument;
@@ -261,8 +261,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PaletteElement;
       case LanguageConceptSwitch.PropertyArgument:
         if (props_PropertyArgument == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PropertyArgument");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L);
+          cpb.presentationByReference(0x3f6e840fdc4ce94L, "property", "", "");
           props_PropertyArgument = cpb.create();
         }
         return props_PropertyArgument;

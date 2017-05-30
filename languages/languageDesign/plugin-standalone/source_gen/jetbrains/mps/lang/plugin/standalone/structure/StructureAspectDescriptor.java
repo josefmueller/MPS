@@ -117,7 +117,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)/681855071694758168");
     b.associate("componentDeclaration", 0x9766f9338aa2119L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c44c226fL).optional(false).origin("681855071694758169").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("preferenceComponent<<{componentDeclaration}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGetToolInProjectOperation() {
@@ -127,7 +126,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)/681855071694758165");
     b.associate("tool", 0x9766f9338aa2116L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL).optional(false).origin("681855071694758166").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("tool<<{tool}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProjectPluginDeclaration() {

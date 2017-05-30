@@ -142,16 +142,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ParameterConverterDeclaration;
       case LanguageConceptSwitch.ParameterConverterReference:
         if (props_ParameterConverterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x46f064803fbdb465L);
           cpb.shortDesc("Parameter Converter");
-          cpb.rawPresentation("ParameterConverterReference");
+          cpb.presentationByReference(0x46f064803fbdb466L, "declaration", "", "");
           props_ParameterConverterReference = cpb.create();
         }
         return props_ParameterConverterReference;
       case LanguageConceptSwitch.ParameterInitializer:
         if (props_ParameterInitializer == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ParameterInitializer");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L);
+          cpb.presentationByReference(0x4027f9073ff5cf18L, "parameter", "", "");
           props_ParameterInitializer = cpb.create();
         }
         return props_ParameterInitializer;
@@ -179,9 +179,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_QueryParameter;
       case LanguageConceptSwitch.QueryParameterReference:
         if (props_QueryParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L);
           cpb.shortDesc("reference to query parameter");
-          cpb.rawPresentation("QueryParameterReference");
+          cpb.presentationByReference(0x205f4376c5884e96L, "queryParameter", "", "");
           props_QueryParameterReference = cpb.create();
         }
         return props_QueryParameterReference;

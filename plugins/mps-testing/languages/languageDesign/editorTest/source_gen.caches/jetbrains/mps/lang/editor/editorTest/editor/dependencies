@@ -544,6 +544,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.TestBlockList_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationBlock_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationReference_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VerticalLayoutBlockList_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -1709,6 +1710,19 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.editor.VariableDeclarationReference_SubstituteMenu" file="VariableDeclarationReference_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.VerticalLayoutBlockList_Editor" file="VerticalLayoutBlockList_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.VerticalLayoutBlockList_EditorBuilder_a" />

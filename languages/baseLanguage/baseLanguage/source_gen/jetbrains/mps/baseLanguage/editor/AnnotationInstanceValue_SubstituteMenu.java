@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart;
 import jetbrains.mps.editor.runtime.menus.SubstituteItemFacade;
 import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
@@ -31,6 +30,8 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
+import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
+import jetbrains.mps.lang.editor.menus.substitute.NamedSubstituteMenuLookup;
 
 public class AnnotationInstanceValue_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
@@ -39,7 +40,7 @@ public class AnnotationInstanceValue_SubstituteMenu extends SubstituteMenuBase {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AnnotationInstanceValue_SubstituteMenu.SMP_Wrap_a80bjp_a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x23cf7b405b3b9761L, "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue")));
     result.add(new AnnotationInstanceValue_SubstituteMenu.SMP_Subconcepts_a80bjp_b());
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue")));
+    result.add(new AnnotationInstanceValue_SubstituteMenu.SMP_Include_a80bjp_c());
     return result;
   }
   private class SMP_Wrap_a80bjp_a extends WrapperSubstituteMenuPart {
@@ -90,6 +91,15 @@ public class AnnotationInstanceValue_SubstituteMenu extends SubstituteMenuBase {
     @Override
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
+    }
+  }
+  public class SMP_Include_a80bjp_c extends IncludeSubstituteMenuSubstituteMenuPart {
+
+    @Nullable
+    @Override
+    protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
+      final EditorContext editorContext = _context.getEditorContext();
+      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), "jetbrains.mps.baseLanguage.editor.AnnotationInstanceValue_SmartReference");
     }
   }
 }

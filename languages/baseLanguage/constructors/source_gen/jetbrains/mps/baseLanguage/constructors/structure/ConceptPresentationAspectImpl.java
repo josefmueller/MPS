@@ -61,15 +61,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CustomConstructorParameter;
       case LanguageConceptSwitch.CustomConstructorParameterReference:
         if (props_CustomConstructorParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CustomConstructorParameterReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x4aa85872b745ce64L);
+          cpb.presentationByReference(0x4aa85872b745ce65L, "parameter", "", "");
           props_CustomConstructorParameterReference = cpb.create();
         }
         return props_CustomConstructorParameterReference;
       case LanguageConceptSwitch.CustomConstructorUsage:
         if (props_CustomConstructorUsage == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CustomConstructorUsage");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x5ea800dcf8ca1ca6L);
+          cpb.presentationByReference(0x5ea800dcf8cc71b3L, "customConstructor", "", "");
           props_CustomConstructorUsage = cpb.create();
         }
         return props_CustomConstructorUsage;
@@ -89,8 +89,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ListCustomParameter;
       case LanguageConceptSwitch.ListParameterReference:
         if (props_ListParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ListParameterReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xae47ad35abd486cL, 0xac0f298884f39393L, 0x41c47a50737ea2a7L);
+          cpb.presentationByReference(0x4aa85872b745ce65L, "parameter", "", "");
           props_ListParameterReference = cpb.create();
         }
         return props_ListParameterReference;

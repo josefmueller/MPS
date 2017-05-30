@@ -195,8 +195,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ApplicableNodeCondition;
       case LanguageConceptSwitch.ApplicableNodeReference:
         if (props_ApplicableNodeReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ApplicableNodeReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e9ef5dcL);
+          cpb.presentationByReference(0x1117e9f2a5aL, "applicableNode", "", "");
           props_ApplicableNodeReference = cpb.create();
         }
         return props_ApplicableNodeReference;
@@ -254,9 +254,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ComparisonRule;
       case LanguageConceptSwitch.ConceptClauseLinkInfo:
         if (props_ConceptClauseLinkInfo == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x120c8f8641eL);
           cpb.deprecated(true);
-          cpb.rawPresentation("ConceptClauseLinkInfo");
+          cpb.presentationByReference(0x120c8fde35cL, "linkDeclaration", "", "");
           props_ConceptClauseLinkInfo = cpb.create();
         }
         return props_ConceptClauseLinkInfo;
@@ -415,8 +415,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ImmediateSupertypesExpression;
       case LanguageConceptSwitch.InequationReference:
         if (props_InequationReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("InequationReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x42501924d0bd1913L);
+          cpb.presentationByReference(0x42501924d0bd1914L, "inequation", "", "");
           props_InequationReference = cpb.create();
         }
         return props_InequationReference;
@@ -502,8 +502,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LeftOperandType_parameter;
       case LanguageConceptSwitch.LinkPatternVariableReference:
         if (props_LinkPatternVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("LinkPatternVariableReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L);
+          cpb.presentationByReference(0x11192da25efL, "patternVarDecl", "", "");
           props_LinkPatternVariableReference = cpb.create();
         }
         return props_LinkPatternVariableReference;
@@ -680,8 +680,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PatternCondition;
       case LanguageConceptSwitch.PatternVariableReference:
         if (props_PatternVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PatternVariableReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d10036L);
+          cpb.presentationByReference(0x11192d17e60L, "patternVarDecl", "", "");
           props_PatternVariableReference = cpb.create();
         }
         return props_PatternVariableReference;
@@ -701,8 +701,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Processed;
       case LanguageConceptSwitch.PropertyMessageTarget:
         if (props_PropertyMessageTarget == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PropertyMessageTarget");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a6a000L);
+          cpb.presentationByReference(0x11db4a6fbeeL, "propertyDeclaration", "", "");
           props_PropertyMessageTarget = cpb.create();
         }
         return props_PropertyMessageTarget;
@@ -715,8 +715,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PropertyNameTarget;
       case LanguageConceptSwitch.PropertyPatternVariableReference:
         if (props_PropertyPatternVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("PropertyPatternVariableReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d97ff9L);
+          cpb.presentationByReference(0x11192d9d83cL, "patternVarDecl", "", "");
           props_PropertyPatternVariableReference = cpb.create();
         }
         return props_PropertyPatternVariableReference;
@@ -729,8 +729,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_QuickFixArgument;
       case LanguageConceptSwitch.QuickFixArgumentReference:
         if (props_QuickFixArgumentReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("QuickFixArgumentReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11b3683c009L);
+          cpb.presentationByReference(0x11b3683c00aL, "quickFixArgument", "", "");
           props_QuickFixArgumentReference = cpb.create();
         }
         return props_QuickFixArgumentReference;
@@ -757,8 +757,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_QuickFixField;
       case LanguageConceptSwitch.QuickFixFieldReference:
         if (props_QuickFixFieldReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("QuickFixFieldReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x70489eee8479b55dL);
+          cpb.presentationByReference(0x70489eee8479b55eL, "quickFixField", "", "");
           props_QuickFixFieldReference = cpb.create();
         }
         return props_QuickFixFieldReference;
@@ -771,8 +771,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_QuickFixSetSelectionBlock;
       case LanguageConceptSwitch.ReferenceMessageTarget:
         if (props_ReferenceMessageTarget == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ReferenceMessageTarget");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4a87c94L);
+          cpb.presentationByReference(0x11db4a8e070L, "linkDeclaration", "", "");
           props_ReferenceMessageTarget = cpb.create();
         }
         return props_ReferenceMessageTarget;
@@ -785,8 +785,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ReferenceRoleTarget;
       case LanguageConceptSwitch.ReplacementRuleReference:
         if (props_ReplacementRuleReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ReplacementRuleReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x4cffb708491a734cL);
+          cpb.presentationByReference(0x4cffb708491a734dL, "replacementRule", "", "");
           props_ReplacementRuleReference = cpb.create();
         }
         return props_ReplacementRuleReference;
@@ -899,22 +899,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TypeVarDeclaration;
       case LanguageConceptSwitch.TypeVarReference:
         if (props_TypeVarReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TypeVarReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f90b04cL);
+          cpb.presentationByReference(0x1117f90eda3L, "typeVarDeclaration", "", "");
           props_TypeVarReference = cpb.create();
         }
         return props_TypeVarReference;
       case LanguageConceptSwitch.TypesystemIntention:
         if (props_TypesystemIntention == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TypesystemIntention");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85e030eL);
+          cpb.presentationByReference(0x11b3667ec7bL, "quickFix", "", "");
           props_TypesystemIntention = cpb.create();
         }
         return props_TypesystemIntention;
       case LanguageConceptSwitch.TypesystemIntentionArgument:
         if (props_TypesystemIntentionArgument == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TypesystemIntentionArgument");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x119e85f8628L);
+          cpb.presentationByReference(0x11b3650a4b4L, "quickFixArgument", "", "");
           props_TypesystemIntentionArgument = cpb.create();
         }
         return props_TypesystemIntentionArgument;
@@ -992,8 +992,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_WhenConcreteVariableDeclaration;
       case LanguageConceptSwitch.WhenConcreteVariableReference:
         if (props_WhenConcreteVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("WhenConcreteVariableReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L);
+          cpb.presentationByReference(0x118bd0e7418L, "whenConcreteVar", "", "");
           props_WhenConcreteVariableReference = cpb.create();
         }
         return props_WhenConcreteVariableReference;

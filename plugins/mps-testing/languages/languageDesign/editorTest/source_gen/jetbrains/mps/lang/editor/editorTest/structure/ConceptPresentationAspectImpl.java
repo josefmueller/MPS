@@ -565,8 +565,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_VariableDeclarationBlock;
       case LanguageConceptSwitch.VariableDeclarationReference:
         if (props_VariableDeclarationReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("VariableDeclarationReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL);
+          cpb.presentationByReference(0x2444dad137fa9b5dL, "var", "", "");
           props_VariableDeclarationReference = cpb.create();
         }
         return props_VariableDeclarationReference;

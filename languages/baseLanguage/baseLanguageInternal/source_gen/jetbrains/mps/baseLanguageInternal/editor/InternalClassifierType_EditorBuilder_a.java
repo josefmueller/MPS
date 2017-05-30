@@ -24,6 +24,11 @@ import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet.InternalK
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.BaseAngleBracketStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -144,7 +149,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       editorCell.setReferenceCell(true);
       editorCell.setRole("classifier");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new InternalClassifierType_EditorBuilder_a.InternalClassifierType_classifier_cellMenu_7zoim2_a0d0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
@@ -188,6 +193,20 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
         return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
       } else
       return editorCell;
+    }
+  }
+  public static class InternalClassifierType_classifier_cellMenu_7zoim2_a0d0a extends PrimaryReferentMenuCellMenuPart {
+    public InternalClassifierType_classifier_cellMenu_7zoim2_a0d0a() {
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_7zoim2_a0a3a0_0;
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getVisibleMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_7zoim2_a0a3a0_0;
     }
   }
   private EditorCell createConstant_7zoim2_e0a() {
@@ -353,7 +372,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       editorCell.setReferenceCell(true);
       editorCell.setRole("classifier");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new InternalClassifierType_EditorBuilder_a.InternalClassifierType_classifier_cellMenu_7zoim2_a0d0a_0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
@@ -397,6 +416,20 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
         return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
       } else
       return editorCell;
+    }
+  }
+  public static class InternalClassifierType_classifier_cellMenu_7zoim2_a0d0a_0 extends PrimaryReferentMenuCellMenuPart {
+    public InternalClassifierType_classifier_cellMenu_7zoim2_a0d0a_0() {
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_7zoim2_a0a3a0;
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getVisibleMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_7zoim2_a0a3a0;
     }
   }
   private EditorCell createConstant_7zoim2_e0a_0() {

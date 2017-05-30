@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
@@ -47,15 +46,7 @@ public class LinkAttributeQualifier_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            try {
-              String role = AttributeDesignTimeOperations.getAttributeRole(_context.getParameterNode());
-              if (role != null) {
-                return role;
-              }
-            } catch (Exception ex) {
-              // ignore 
-            }
-            return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+            return AttributeDesignTimeOperations.getAttributeRoleSafe(_context.getParameterNode());
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

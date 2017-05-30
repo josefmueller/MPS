@@ -37,8 +37,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Event;
       case LanguageConceptSwitch.EventReference:
         if (props_EventReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("EventReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457446L);
+          cpb.presentationByReference(0xa99ffe1c8457447L, "event", "", "");
           props_EventReference = cpb.create();
         }
         return props_EventReference;
@@ -58,8 +58,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_StateMachine;
       case LanguageConceptSwitch.StateReference:
         if (props_StateReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("StateReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x530533eef7894c1eL, 0xba56de1bbf3afda7L, 0xa99ffe1c8457444L);
+          cpb.presentationByReference(0xa99ffe1c8457445L, "state", "", "");
           props_StateReference = cpb.create();
         }
         return props_StateReference;

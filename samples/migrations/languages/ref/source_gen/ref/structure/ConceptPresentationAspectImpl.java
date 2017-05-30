@@ -19,16 +19,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.NewComponentRef:
         if (props_NewComponentRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("NewComponentRef");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104932a6c9L);
+          cpb.presentationByReference(0x6aff2c104932a6caL, "target", "", "");
           props_NewComponentRef = cpb.create();
         }
         return props_NewComponentRef;
       case LanguageConceptSwitch.OldComponentRef:
         if (props_OldComponentRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd3d2b6e3a4b343d5L, 0xbb29420d39fa86abL, 0x6aff2c104931574dL);
           cpb.deprecated(true);
-          cpb.rawPresentation("OldComponentRef");
+          cpb.presentationByReference(0x6aff2c104932a69aL, "target", "", "");
           props_OldComponentRef = cpb.create();
         }
         return props_OldComponentRef;

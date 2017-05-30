@@ -34,8 +34,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Category;
       case LanguageConceptSwitch.CategoryReference:
         if (props_CategoryReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CategoryReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df334L);
+          cpb.presentationByReference(0x7ba12f0b163df335L, "target", "", "");
           props_CategoryReference = cpb.create();
         }
         return props_CategoryReference;

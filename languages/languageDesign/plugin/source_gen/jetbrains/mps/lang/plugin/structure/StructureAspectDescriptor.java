@@ -426,7 +426,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/3205675194086589964");
     b.associate("action", 0x2c7cd89ac8d14570L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L).optional(false).origin("3205675194086671728").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("action<<{action}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForActionConstructionParameterDeclaration() {
@@ -595,7 +594,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1205852320419");
     b.associate("action", 0x118c266a4d7L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L).optional(false).origin("1205852349655").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
-    b.alias("action<<{action}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForAddElementStatement() {
@@ -970,7 +968,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1209911036758");
     b.associate("group", 0x119b4518939L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L).optional(false).origin("1209911052601").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("actionGroup<<{group}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGetNodeBlock() {
@@ -1009,7 +1006,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/3205675194086686068");
     b.associate("group", 0x2c7cd89ac8d17d76L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L).optional(false).origin("3205675194086686070").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("group<<{group}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGroupAnchor() {
@@ -1034,7 +1030,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1207490810216");
     b.associate("actionGroup", 0x119240f916aL).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da058d2L).optional(false).origin("1207490810218").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
-    b.alias("actiongroup<<{actionGroup}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIdeaActionsDescriptor() {
@@ -1384,7 +1379,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1210184105060");
     b.associate("componentDeclaration", 0x119c4987dc8L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c44c226fL).optional(false).origin("1210184138184").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
-    b.alias("preferenceComponent<<{componentDeclaration}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRequiredCondition() {
@@ -1528,7 +1522,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1208528650020");
     b.associate("tool", 0x11961f94babL).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL).optional(false).origin("1208529537963").done();
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
-    b.alias("tool<<{tool}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForToolbarCreator() {

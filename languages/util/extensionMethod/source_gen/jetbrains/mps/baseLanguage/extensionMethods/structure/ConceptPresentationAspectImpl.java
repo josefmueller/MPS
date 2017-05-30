@@ -32,8 +32,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BaseExtensionMethodContainer;
       case LanguageConceptSwitch.ExtensionMethodCall:
         if (props_ExtensionMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ExtensionMethodCall");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63359483bL);
+          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_ExtensionMethodCall = cpb.create();
         }
         return props_ExtensionMethodCall;
@@ -53,16 +53,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ExtensionStaticFieldDeclaration;
       case LanguageConceptSwitch.ExtensionStaticFieldReference:
         if (props_ExtensionStaticFieldReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ExtensionStaticFieldReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bbdfbc7L);
+          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
           props_ExtensionStaticFieldReference = cpb.create();
         }
         return props_ExtensionStaticFieldReference;
       case LanguageConceptSwitch.LocalExtendedMethodCall:
         if (props_LocalExtendedMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6aa7ca55518b9170L);
           cpb.shortDesc("local extended method call");
-          cpb.rawPresentation("LocalExtendedMethodCall");
+          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_LocalExtendedMethodCall = cpb.create();
         }
         return props_LocalExtendedMethodCall;

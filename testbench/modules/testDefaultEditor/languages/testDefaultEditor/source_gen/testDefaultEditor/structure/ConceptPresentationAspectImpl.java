@@ -118,8 +118,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DummyMethod;
       case LanguageConceptSwitch.Friend:
         if (props_Friend == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Friend");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf13be7aL);
+          cpb.presentationByReference(0xd0768d7cf13be7bL, "friend", "", "");
           props_Friend = cpb.create();
         }
         return props_Friend;

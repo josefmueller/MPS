@@ -126,11 +126,38 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return Collections.<SubstituteMenu>singletonList(new Command_SubstituteMenu());
       case 1:
-        return Collections.<SubstituteMenu>singletonList(new PastedNodeReference_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new CommandHolderRef_SubstituteMenu());
       case 2:
+        return Collections.<SubstituteMenu>singletonList(new HelpConceptReference_SubstituteMenu());
+      case 3:
+        return Collections.<SubstituteMenu>singletonList(new NodeReferencePresentation_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new NodeReferenceString_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new PastedNodeReference_SubstituteMenu());
+      case 6:
         return Collections.<SubstituteMenu>singletonList(new Response_SubstituteMenu());
       default:
     }
+    return Collections.<SubstituteMenu>emptyList();
+  }
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
+    SAbstractConcept cncpt_a0h = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0h.index(cncpt_a0h)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a7, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new HelpConceptReference_SmartReference()});
+            default:
+          }
+        }
+        break;
+      default:
+    }
+
     return Collections.<SubstituteMenu>emptyList();
   }
 
@@ -138,6 +165,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4bd43869e610f3e9L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bbb600cL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53ba81265L), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x51132a123c89fa7eL), MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.console.base.editor.CommandHolder_EmptyCell_TransformationMenu"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a7 = new String[]{"jetbrains.mps.console.base.editor.HelpConceptReference_SmartReference"};
 }

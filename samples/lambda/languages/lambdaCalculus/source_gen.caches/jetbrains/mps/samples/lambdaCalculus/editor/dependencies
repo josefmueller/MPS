@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.editor.AbstractionVarRef_SubstituteMenu" file="AbstractionVarRef_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.editor.Abstraction_Variable_actions" file="Abstraction_Variable_actions.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -101,6 +114,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.NamedMenuId" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.TransformationMenu" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.AbstractionVarRef_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.BinaryOperations" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.FunctionType_Editor" />
@@ -110,6 +124,7 @@
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.LambdaExpression_TransformationMenu" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.Lambda_Substitute" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.LetExpression_Editor" />
+    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.LetRef_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.Let_Substitute" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.MultipleExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.editor.NumberType_Editor" />
@@ -319,6 +334,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.samples.lambdaCalculus.editor.LetRef_SubstituteMenu" file="LetRef_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.editor.Let_Substitute" file="Let_Substitute.java">
     <classNode dependClassName="java.lang.Override" />

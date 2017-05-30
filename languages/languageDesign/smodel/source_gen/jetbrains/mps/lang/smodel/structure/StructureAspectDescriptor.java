@@ -865,7 +865,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/1138676077309");
     b.associate("enumMember", 0x1091e625b13L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L).optional(false).origin("1138676095763").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("<<{enumMember}>>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForEnumMemberValueRefExpression() {
@@ -2005,7 +2004,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37273dL);
     b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/1240930444945");
     b.associate("member", 0x120ed37e692L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L).optional(false).origin("1240930444946").done();
-    b.alias("<{member}>");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSEnum_MembersOperation() {

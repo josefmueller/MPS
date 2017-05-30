@@ -17,11 +17,14 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 import jetbrains.mps.smodel.action.IReferentPresentationProvider;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class BuildSource_JavaModuleOptions_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -84,7 +87,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       editorCell.setReferenceCell(true);
       editorCell.setRole("compileOptions");
     }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildSource_JavaModuleOptions_EditorBuilder_a.BuildSource_JavaModuleOptions_compileOptions_cellMenu_bvukwp_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
@@ -114,9 +117,23 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     }
 
     private EditorCell createReferencePresentation_bvukwp_a0b0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L, 0x1708d207f214252bL, "compileOptions")));
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, PresentationProviders.PRESENTATION_bvukwp_a0a1a);
       editorCell.setCellId("ReferencePresentation_bvukwp_a0b0");
       return editorCell;
+    }
+  }
+  public static class BuildSource_JavaModuleOptions_compileOptions_cellMenu_bvukwp_a0b0 extends PrimaryReferentMenuCellMenuPart {
+    public BuildSource_JavaModuleOptions_compileOptions_cellMenu_bvukwp_a0b0() {
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_bvukwp_a0a1a;
+    }
+    @NotNull
+    @Override
+    protected IReferentPresentationProvider getVisibleMatchingTextProvider() {
+      return PresentationProviders.PRESENTATION_bvukwp_a0a1a;
     }
   }
 }

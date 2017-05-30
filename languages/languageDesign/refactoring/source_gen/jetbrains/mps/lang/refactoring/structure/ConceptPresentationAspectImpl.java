@@ -360,8 +360,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RefactoringField;
       case LanguageConceptSwitch.RefactoringFieldReference:
         if (props_RefactoringFieldReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("RefactoringFieldReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x4c4b92003e483aaaL);
+          cpb.presentationByReference(0x4c4b92003e49a705L, "baseVariableDeclaration", "", "");
           props_RefactoringFieldReference = cpb.create();
         }
         return props_RefactoringFieldReference;
@@ -374,8 +374,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RefactoringParameter;
       case LanguageConceptSwitch.RefactoringParameterReference:
         if (props_RefactoringParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("RefactoringParameterReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77cda06L);
+          cpb.presentationByReference(0x5fb04b74a77cda07L, "refactoringParameter", "", "");
           props_RefactoringParameterReference = cpb.create();
         }
         return props_RefactoringParameterReference;

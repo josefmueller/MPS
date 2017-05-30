@@ -213,22 +213,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_DevKitExport;
       case LanguageConceptSwitch.BuildMps_DevKitExportLanguage:
         if (props_BuildMps_DevKitExportLanguage == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("language <{language}>");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d29d6aL);
+          cpb.presentationByReference(0x4780308f5d29d73L, "language", "language <", ">");
           props_BuildMps_DevKitExportLanguage = cpb.create();
         }
         return props_BuildMps_DevKitExportLanguage;
       case LanguageConceptSwitch.BuildMps_DevKitExportSolution:
         if (props_BuildMps_DevKitExportSolution == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMps_DevKitExportSolution");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d29d7aL);
+          cpb.presentationByReference(0x4780308f5d29d7bL, "solution", "", "");
           props_BuildMps_DevKitExportSolution = cpb.create();
         }
         return props_BuildMps_DevKitExportSolution;
       case LanguageConceptSwitch.BuildMps_DevKitRef:
         if (props_BuildMps_DevKitRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMps_DevKitRef");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2313aL);
+          cpb.presentationByReference(0x4780308f5d2313bL, "devkit", "", "");
           props_BuildMps_DevKitRef = cpb.create();
         }
         return props_BuildMps_DevKitRef;
@@ -255,9 +255,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_GeneratorOptions;
       case LanguageConceptSwitch.BuildMps_GeneratorRef:
         if (props_BuildMps_GeneratorRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6d1df6c2700aeb81L);
           cpb.shortDesc("'smart' reference to a generator module");
-          cpb.rawPresentation("BuildMps_GeneratorRef");
+          cpb.presentationByReference(0x6d1df6c2700aeb82L, "generator", "", "");
           props_BuildMps_GeneratorRef = cpb.create();
         }
         return props_BuildMps_GeneratorRef;
@@ -284,29 +284,29 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_IdeaPluginContent;
       case LanguageConceptSwitch.BuildMps_IdeaPluginDependency:
         if (props_BuildMps_IdeaPluginDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMps_IdeaPluginDependency");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbd3L);
+          cpb.presentationByReference(0x5b7be37b4de9bbfaL, "target", "", "");
           props_BuildMps_IdeaPluginDependency = cpb.create();
         }
         return props_BuildMps_IdeaPluginDependency;
       case LanguageConceptSwitch.BuildMps_IdeaPluginGroup:
         if (props_BuildMps_IdeaPluginGroup == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMps_IdeaPluginGroup");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L);
+          cpb.presentationByReference(0x5b7be37b4deb1202L, "group", "", "");
           props_BuildMps_IdeaPluginGroup = cpb.create();
         }
         return props_BuildMps_IdeaPluginGroup;
       case LanguageConceptSwitch.BuildMps_IdeaPluginGroupCustomModule:
         if (props_BuildMps_IdeaPluginGroupCustomModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMps_IdeaPluginGroupCustomModule");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x37fdb3de482e2b27L);
+          cpb.presentationByReference(0x37fdb3de482e2b28L, "target", "", "");
           props_BuildMps_IdeaPluginGroupCustomModule = cpb.create();
         }
         return props_BuildMps_IdeaPluginGroupCustomModule;
       case LanguageConceptSwitch.BuildMps_IdeaPluginModule:
         if (props_BuildMps_IdeaPluginModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMps_IdeaPluginModule");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL);
+          cpb.presentationByReference(0x5b7be37b4de9bbddL, "target", "", "");
           props_BuildMps_IdeaPluginModule = cpb.create();
         }
         return props_BuildMps_IdeaPluginModule;
@@ -338,8 +338,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_ModuleDependency;
       case LanguageConceptSwitch.BuildMps_ModuleDependencyExtendLanguage:
         if (props_BuildMps_ModuleDependencyExtendLanguage == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("extends <{language}>");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c19032eL);
+          cpb.presentationByReference(0x3b60c4a45c190330L, "language", "extends <", ">");
           props_BuildMps_ModuleDependencyExtendLanguage = cpb.create();
         }
         return props_BuildMps_ModuleDependencyExtendLanguage;
@@ -352,29 +352,29 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_ModuleDependencyJar;
       case LanguageConceptSwitch.BuildMps_ModuleDependencyOnDevKit:
         if (props_BuildMps_ModuleDependencyOnDevKit == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMps_ModuleDependencyOnDevKit");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d5bc49L);
+          cpb.presentationByReference(0x4780308f5d5bc4aL, "devkit", "", "");
           props_BuildMps_ModuleDependencyOnDevKit = cpb.create();
         }
         return props_BuildMps_ModuleDependencyOnDevKit;
       case LanguageConceptSwitch.BuildMps_ModuleDependencyOnJavaModule:
         if (props_BuildMps_ModuleDependencyOnJavaModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<{module}>");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL);
+          cpb.presentationByReference(0x2c4467914643e8fdL, "module", "<", ">");
           props_BuildMps_ModuleDependencyOnJavaModule = cpb.create();
         }
         return props_BuildMps_ModuleDependencyOnJavaModule;
       case LanguageConceptSwitch.BuildMps_ModuleDependencyOnModule:
         if (props_BuildMps_ModuleDependencyOnModule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BuildMps_ModuleDependencyOnModule");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL);
+          cpb.presentationByReference(0x48e82d5083341cb9L, "module", "", "");
           props_BuildMps_ModuleDependencyOnModule = cpb.create();
         }
         return props_BuildMps_ModuleDependencyOnModule;
       case LanguageConceptSwitch.BuildMps_ModuleDependencyUseLanguage:
         if (props_BuildMps_ModuleDependencyUseLanguage == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("use <{language}>");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L);
+          cpb.presentationByReference(0x2c4467914643d2d3L, "language", "use <", ">");
           props_BuildMps_ModuleDependencyUseLanguage = cpb.create();
         }
         return props_BuildMps_ModuleDependencyUseLanguage;
@@ -400,8 +400,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_ModuleRuntime;
       case LanguageConceptSwitch.BuildMps_ModuleSolutionRuntime:
         if (props_BuildMps_ModuleSolutionRuntime == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("solution <{solution}>");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L);
+          cpb.presentationByReference(0x2c4467914644b6e4L, "solution", "solution <", ">");
           props_BuildMps_ModuleSolutionRuntime = cpb.create();
         }
         return props_BuildMps_ModuleSolutionRuntime;
@@ -427,15 +427,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_Solution;
       case LanguageConceptSwitch.GeneratorInternal_BuildMps_Module:
         if (props_GeneratorInternal_BuildMps_Module == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_BuildMps_Module");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e7771cfL);
+          cpb.presentationByReference(0x44e5dd192e7771d0L, "targetModule", "", "");
           props_GeneratorInternal_BuildMps_Module = cpb.create();
         }
         return props_GeneratorInternal_BuildMps_Module;
       case LanguageConceptSwitch.GeneratorInternal_BuildSourcePath:
         if (props_GeneratorInternal_BuildSourcePath == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("GeneratorInternal_BuildSourcePath");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL);
+          cpb.presentationByReference(0x44e5dd192e77725fL, "targetPath", "", "");
           props_GeneratorInternal_BuildSourcePath = cpb.create();
         }
         return props_GeneratorInternal_BuildSourcePath;

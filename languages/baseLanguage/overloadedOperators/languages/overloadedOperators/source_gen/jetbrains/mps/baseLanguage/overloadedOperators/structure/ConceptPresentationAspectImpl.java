@@ -27,22 +27,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.BinaryOperationReference:
         if (props_BinaryOperationReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("BinaryOperationReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d23eb4L);
+          cpb.presentationByReference(0x2764eda929d23eb5L, "binaryOperation", "", "");
           props_BinaryOperationReference = cpb.create();
         }
         return props_BinaryOperationReference;
       case LanguageConceptSwitch.ContainerImport:
         if (props_ContainerImport == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ContainerImport");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x66302c3c8df72c49L);
+          cpb.presentationByReference(0x66302c3c8df72d45L, "container", "", "");
           props_ContainerImport = cpb.create();
         }
         return props_ContainerImport;
       case LanguageConceptSwitch.CustomOperator:
         if (props_CustomOperator == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CustomOperator");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x2764eda929d60237L);
+          cpb.presentationByReference(0x2764eda929d60239L, "declaration", "", "");
           props_CustomOperator = cpb.create();
         }
         return props_CustomOperator;
@@ -55,8 +55,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CustomOperatorDeclaration;
       case LanguageConceptSwitch.CustomOperatorUsage:
         if (props_CustomOperatorUsage == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CustomOperatorUsage");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL);
+          cpb.presentationByReference(0x15c86fdc60847670L, "operator", "", "");
           props_CustomOperatorUsage = cpb.create();
         }
         return props_CustomOperatorUsage;

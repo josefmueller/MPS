@@ -45,22 +45,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PropertyValue;
       case LanguageConceptSwitch.TestListReference:
         if (props_TestListReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestListReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8d0614bL);
+          cpb.presentationByReference(0x15b423b3f8d06220L, "listPattern", "", "");
           props_TestListReference = cpb.create();
         }
         return props_TestListReference;
       case LanguageConceptSwitch.TestPropertyVariableReference:
         if (props_TestPropertyVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestPropertyVariableReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x15b423b3f8cfebb8L);
+          cpb.presentationByReference(0x15b423b3f8cfebbeL, "declaration", "", "");
           props_TestPropertyVariableReference = cpb.create();
         }
         return props_TestPropertyVariableReference;
       case LanguageConceptSwitch.TestVariableReference:
         if (props_TestVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestVariableReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x5206c8887c5d4275L, 0xbc0a7c4da12f46e8L, 0x78d6da5e3799eb11L);
+          cpb.presentationByReference(0x78d6da5e3799eb12L, "declaration", "", "");
           props_TestVariableReference = cpb.create();
         }
         return props_TestVariableReference;

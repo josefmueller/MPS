@@ -96,16 +96,18 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 4:
         return Collections.<SubstituteMenu>singletonList(new InputResourcesParameter_SubstituteMenu());
       case 5:
-        return Collections.<SubstituteMenu>singletonList(new OutputResources_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new OptionExpression_SubstituteMenu());
       case 6:
-        return Collections.<SubstituteMenu>singletonList(new PropertiesAccessorParameter_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new OutputResources_SubstituteMenu());
       case 7:
-        return Collections.<SubstituteMenu>singletonList(new RelayQueryExpression_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new PropertiesAccessorParameter_SubstituteMenu());
       case 8:
-        return Collections.<SubstituteMenu>singletonList(new ReportFeedbackStatement_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new RelayQueryExpression_SubstituteMenu());
       case 9:
-        return Collections.<SubstituteMenu>singletonList(new ResultStatement_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new ReportFeedbackStatement_SubstituteMenu());
       case 10:
+        return Collections.<SubstituteMenu>singletonList(new ResultStatement_SubstituteMenu());
+      case 11:
         return Collections.<SubstituteMenu>singletonList(new Statement_Contribution());
       default:
     }
@@ -148,7 +150,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6984L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x2dc2243445538ecaL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7bbL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6987L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x61c1a3d1c45fac8cL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7edL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ec9L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b2L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b5L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972068L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49b2bL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dbc59fL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a947282L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ecaL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc49ec9L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6984L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x2dc2243445538ecaL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6987L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dacL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972068L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x716499a9068b35e9L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dbc59fL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6984L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x2dc2243445538ecaL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6987L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dacL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x70276038dc4d7b2L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972068L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x716499a9068b35e9L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x1b731b4510dbc59fL), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L), MetaIdFactory.conceptId(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x6237d5bb8b2a942dL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a3 = new String[]{"jetbrains.mps.make.script.editor.Option_makeDefault"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.make.script.editor.AllWorkLeftExpression_subs", "jetbrains.mps.make.script.editor.RelayQueryExpression_subs"};

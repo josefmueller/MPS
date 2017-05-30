@@ -352,8 +352,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_MathSymbolIndex;
       case LanguageConceptSwitch.MathSymbolIndexReference:
         if (props_MathSymbolIndexReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MathSymbolIndexReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x11fe0d91491L);
+          cpb.presentationByReference(0x11fe0d95bdfL, "indexRef", "", "");
           props_MathSymbolIndexReference = cpb.create();
         }
         return props_MathSymbolIndexReference;
@@ -410,8 +410,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_MatrixInitializerIndex;
       case LanguageConceptSwitch.MatrixInitializerIndexReference:
         if (props_MatrixInitializerIndexReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("MatrixInitializerIndexReference");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L);
+          cpb.presentationByReference(0x5650ac0d4240f275L, "index", "", "");
           props_MatrixInitializerIndexReference = cpb.create();
         }
         return props_MatrixInitializerIndexReference;

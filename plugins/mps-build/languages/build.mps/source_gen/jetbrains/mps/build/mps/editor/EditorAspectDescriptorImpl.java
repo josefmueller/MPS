@@ -232,15 +232,75 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     SAbstractConcept cncpt_a0g = concept;
     switch (index_xbvbvu_a0g.index(cncpt_a0g)) {
       case 0:
-        return Collections.<SubstituteMenu>singletonList(new BuildMps_Generator_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_DevKitExportLanguage_SubstituteMenu());
       case 1:
-        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleJavaSource_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_DevKitExportSolution_SubstituteMenu());
       case 2:
-        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleSource_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_DevKitRef_SubstituteMenu());
       case 3:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_Generator_SubstituteMenu());
+      case 4:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_GeneratorRef_SubstituteMenu());
+      case 5:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_IdeaPluginDependency_SubstituteMenu());
+      case 6:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_IdeaPluginGroup_SubstituteMenu());
+      case 7:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_IdeaPluginGroupCustomModule_SubstituteMenu());
+      case 8:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_IdeaPluginModule_SubstituteMenu());
+      case 9:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu());
+      case 10:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleDependencyOnDevKit_SubstituteMenu());
+      case 11:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu());
+      case 12:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleDependencyOnModule_SubstituteMenu());
+      case 13:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleDependencyUseLanguage_SubstituteMenu());
+      case 14:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleJavaSource_SubstituteMenu());
+      case 15:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleSolutionRuntime_SubstituteMenu());
+      case 16:
+        return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleSource_SubstituteMenu());
+      case 17:
         return Collections.<SubstituteMenu>singletonList(new BuildMps_ModuleTestSource_SubstituteMenu());
+      case 18:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_BuildMps_Module_SubstituteMenu());
+      case 19:
+        return Collections.<SubstituteMenu>singletonList(new GeneratorInternal_BuildSourcePath_SubstituteMenu());
       default:
     }
+    return Collections.<SubstituteMenu>emptyList();
+  }
+  @NotNull
+  @Override
+  public Collection<SubstituteMenu> getDeclaredNamedSubstituteMenus(NamedMenuId menuId) {
+    SAbstractConcept cncpt_a0h = (SAbstractConcept) menuId.getConcept();
+    switch (index_xbvbvu_a0h.index(cncpt_a0h)) {
+      case 0:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a1a7, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new BuildMps_IdeaPluginGroup_SmartReference()});
+            default:
+          }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a7, menuId.getFqName())) {
+            case 0:
+              return Arrays.asList(new SubstituteMenu[]{new BuildMps_IdeaPluginModule_SmartReference()});
+            default:
+          }
+        }
+        break;
+      default:
+    }
+
     return Collections.<SubstituteMenu>emptyList();
   }
 
@@ -248,11 +308,14 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334bdeaL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x21286cd3b0f27758L)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0g = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d29d6aL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d29d7aL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2313aL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6d1df6c2700aeb81L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbd3L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x37fdb3de482e2b27L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c19032eL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d5bc49L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334bdeaL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x21286cd3b0f27758L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e7771cfL), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x44e5dd192e77725eL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4deb1201L), MetaIdFactory.conceptId(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbdcL)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_moduleLocationAndFlags_BuildMps_AbstractModule_ext_3"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_fromPluginXml"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_moduleLocationAndFlags_BuildMps_Module_ext_4"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_reexport_BuildMps_ModuleDependencyOnJavaModule"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a5 = new String[]{"jetbrains.mps.build.mps.editor.add_reexport"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0f1a5 = new String[]{"jetbrains.mps.build.mps.editor.BuildMps_Solution_ApplySideTransforms", "jetbrains.mps.build.mps.editor.add_moduleLocationAndFlags"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a7 = new String[]{"jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginGroup_SmartReference"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a7 = new String[]{"jetbrains.mps.build.mps.editor.BuildMps_IdeaPluginModule_SmartReference"};
 }

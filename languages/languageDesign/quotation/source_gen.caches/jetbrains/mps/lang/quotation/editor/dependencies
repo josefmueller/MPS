@@ -89,11 +89,15 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.ListAntiquotation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderInitPart_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderList_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilder_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.PropertyAntiquotation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.Quotation_Editor" />
@@ -265,6 +269,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu" file="NodeBuilderInitLink_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitPart_Editor" file="NodeBuilderInitPart_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderInitPart_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -318,6 +335,25 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu" file="NodeBuilderInitProperty_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.presentation.NodePresentationUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderList_Editor" file="NodeBuilderList_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderList_EditorBuilder_a" />
@@ -425,6 +461,19 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu" file="NodeBuilderNode_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_Editor" file="NodeBuilderRef_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_InspectorBuilder_a" />
@@ -475,6 +524,19 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu" file="NodeBuilderRef_SubstituteMenu.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.editor.NodeBuilder_Editor" file="NodeBuilder_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.quotation.editor.NodeBuilder_EditorBuilder_a" />
