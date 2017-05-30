@@ -32,7 +32,7 @@ public abstract class LanguageErrorsCollector {
     addErrorWithoutDependencies(errorNode, errorString, ruleNode, messageTarget, null);
   }
 
-  public void addErrorWithoutDependencies(@NotNull SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget, QuickFixProvider intentionProvider) {
+  private void addErrorWithoutDependencies(@NotNull SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget, QuickFixProvider intentionProvider) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, ruleNode, MessageStatus.ERROR, messageTarget);
     if (intentionProvider != null) {
       reporter.setIntentionProvider(intentionProvider);

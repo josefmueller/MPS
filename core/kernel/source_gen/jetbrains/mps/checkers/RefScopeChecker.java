@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.scope.ErrorScope;
-import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
+import jetbrains.mps.errors.item.LanguageErrorItem;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.OutOfScopeReferenceReportItem;
@@ -49,7 +49,7 @@ public class RefScopeChecker extends AbstractNodeChecker {
       ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(ref);
       Scope refScope = refDescriptor.getScope();
       if (refScope instanceof ErrorScope) {
-        errorsCollector.addErrorWithoutDependencies(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()));
+        errorsCollector.addError(new LanguageErrorItem.ReferenceItem((ErrorScope) refScope, ref));
       } else if (!(refScope.contains(target))) {
         ReferenceScopeProvider scopeProvider = refDescriptor.getScopeProvider();
         SNodeReference ruleNode = null;
