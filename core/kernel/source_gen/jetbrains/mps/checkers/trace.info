@@ -510,25 +510,24 @@
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086718297">
     <file name="RefScopeChecker.java">
-      <node id="7390982340086718316" at="28,65,29,13" concept="11" />
-      <node id="4052289613717548297" at="30,5,31,64" concept="10" />
-      <node id="4052289613717548446" at="32,25,33,13" concept="11" />
-      <node id="6576736982480148710" at="34,5,35,122" concept="10" />
-      <node id="7390982340086718339" at="36,64,37,56" concept="10" />
-      <node id="5063246286659856232" at="38,27,39,17" concept="3" />
-      <node id="7390982340086718351" at="40,7,41,97" concept="12" />
-      <node id="4827984995156525653" at="41,97,42,108" concept="12" />
-      <node id="7390982340086718363" at="42,108,43,44" concept="4" />
-      <node id="5141531433272380988" at="43,44,44,69" concept="4" />
-      <node id="5141531433272380361" at="45,57,46,41" concept="4" />
-      <node id="2872552391710590949" at="47,7,48,87" concept="10" />
-      <node id="2872552391710597907" at="48,87,49,48" concept="10" />
-      <node id="7390982340086718412" at="50,43,51,173" concept="4" />
-      <node id="7390982340086718444" at="52,48,53,39" concept="10" />
-      <node id="5452980714151365158" at="53,39,54,80" concept="10" />
+      <node id="7390982340086718316" at="29,65,30,13" concept="11" />
+      <node id="4052289613717548297" at="31,5,32,64" concept="10" />
+      <node id="4052289613717548446" at="33,25,34,13" concept="11" />
+      <node id="6576736982480148710" at="35,5,36,122" concept="10" />
+      <node id="7390982340086718339" at="37,64,38,56" concept="10" />
+      <node id="5063246286659856232" at="39,27,40,17" concept="3" />
+      <node id="7390982340086718351" at="41,7,42,97" concept="12" />
+      <node id="4827984995156525653" at="42,97,43,108" concept="12" />
+      <node id="7390982340086718363" at="43,108,44,44" concept="4" />
+      <node id="5141531433272380988" at="44,44,45,69" concept="4" />
+      <node id="5141531433272380361" at="46,57,47,41" concept="4" />
+      <node id="2872552391710590949" at="48,7,49,87" concept="10" />
+      <node id="2872552391710597907" at="49,87,50,48" concept="10" />
+      <node id="7390982340086718412" at="51,43,52,173" concept="4" />
+      <node id="5452980714151365158" at="53,48,54,80" concept="10" />
       <node id="1945570412226687458" at="54,80,55,39" concept="10" />
       <node id="1945570412226687475" at="56,36,57,65" concept="4" />
-      <node id="7390982340086718451" at="58,9,59,338" concept="4" />
+      <node id="2296547707283145184" at="58,9,59,152" concept="4" />
       <node id="2855655749838462795" at="63,135,64,99" concept="11" />
       <node id="1802459475176587808" at="67,0,68,0" concept="5" trace="myReference" />
       <node id="1802459475176587839" at="68,0,69,0" concept="5" trace="myRepository" />
@@ -539,35 +538,35 @@
       <node id="1802459475176587772" at="79,41,80,77" concept="4" />
       <node id="6949254790490523240" at="83,50,84,81" concept="11" />
       <node id="1802459475176587755" at="89,44,90,34" concept="11" />
-      <node id="7390982340086718299" at="24,0,26,0" concept="2" trace="RefScopeChecker#()V" />
-      <node id="7390982340086718314" at="27,102,30,5" concept="8" />
-      <node id="4052289613717548417" at="31,64,34,5" concept="8" />
-      <node id="5063246286659854164" at="37,56,40,7" concept="8" />
-      <node id="5141531433272380356" at="44,69,47,7" concept="7" />
+      <node id="7390982340086718299" at="25,0,27,0" concept="2" trace="RefScopeChecker#()V" />
+      <node id="7390982340086718314" at="28,102,31,5" concept="8" />
+      <node id="4052289613717548417" at="32,64,35,5" concept="8" />
+      <node id="5063246286659854164" at="38,56,41,7" concept="8" />
+      <node id="5141531433272380356" at="45,69,48,7" concept="7" />
       <node id="1945570412226687446" at="55,39,58,9" concept="8" />
       <node id="2855655749838441367" at="63,0,66,0" concept="9" trace="createResolveReferenceQuickfix#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/module/SRepository;Z)Ljetbrains/mps/errors/QuickFixProvider;" />
       <node id="1802459475176587766" at="78,0,82,0" concept="9" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6949254790490523232" at="82,0,86,0" concept="9" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1802459475176587702" at="88,0,92,0" concept="9" trace="isExecutedImmediately#()Z" />
       <node id="1802459475176587691" at="70,0,75,0" concept="2" trace="ResolveReferenceQuickFix#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/module/SRepository;Z)V" />
+      <node id="7390982340086718410" at="50,48,60,7" concept="8" />
       <node id="1802459475176587759" at="76,43,86,8" concept="11" />
-      <node id="7390982340086718410" at="49,48,60,7" concept="8" />
       <node id="1802459475176587696" at="75,0,88,0" concept="9" trace="getQuickFix#()Ljetbrains/mps/errors/QuickFix_Runtime;" />
-      <node id="7390982340086718335" at="35,122,61,5" concept="7" />
-      <node id="7390982340086718304" at="26,0,63,0" concept="9" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsCollector;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
-      <scope id="7390982340086718302" at="24,28,24,28" />
-      <scope id="7390982340086718315" at="28,65,29,13" />
-      <scope id="4052289613717548418" at="32,25,33,13" />
-      <scope id="5063246286659854166" at="38,27,39,17" />
-      <scope id="5141531433272380357" at="45,57,46,41" />
-      <scope id="7390982340086718411" at="50,43,51,173" />
+      <node id="7390982340086718335" at="36,122,61,5" concept="7" />
+      <node id="7390982340086718304" at="27,0,63,0" concept="9" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsCollector;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
+      <scope id="7390982340086718302" at="25,28,25,28" />
+      <scope id="7390982340086718315" at="29,65,30,13" />
+      <scope id="4052289613717548418" at="33,25,34,13" />
+      <scope id="5063246286659854166" at="39,27,40,17" />
+      <scope id="5141531433272380357" at="46,57,47,41" />
+      <scope id="7390982340086718411" at="51,43,52,173" />
       <scope id="1945570412226687447" at="56,36,57,65" />
       <scope id="2855655749838441370" at="63,135,64,99" />
       <scope id="1802459475176587771" at="79,41,80,77" />
       <scope id="6949254790490523235" at="83,50,84,81" />
       <scope id="1802459475176587705" at="89,44,90,34" />
-      <scope id="7390982340086718299" at="24,0,26,0" />
-      <scope id="5141531433272380356" at="44,69,47,7">
+      <scope id="7390982340086718299" at="25,0,27,0" />
+      <scope id="5141531433272380356" at="45,69,48,7">
         <var name="c" id="5141531433272380359" />
       </scope>
       <scope id="2855655749838441367" at="63,0,66,0">
@@ -588,33 +587,32 @@
         <var name="reference" id="1802459475176587803" />
         <var name="repository" id="1802459475176587805" />
       </scope>
-      <scope id="7390982340086718443" at="52,48,59,338">
-        <var name="name" id="7390982340086718445" />
+      <scope id="7390982340086718443" at="53,48,59,152">
         <var name="ruleNode" id="1945570412226687459" />
         <var name="scopeProvider" id="5452980714151365159" />
       </scope>
       <scope id="1802459475176587699" at="76,43,86,8" />
       <scope id="1802459475176587696" at="75,0,88,0" />
-      <scope id="7390982340086718338" at="36,64,60,7">
+      <scope id="7390982340086718338" at="37,64,60,7">
         <var name="refDescriptor" id="2872552391710590950" />
         <var name="refScope" id="2872552391710597908" />
         <var name="target" id="7390982340086718340" />
       </scope>
-      <scope id="7390982340086718335" at="35,122,61,5">
+      <scope id="7390982340086718335" at="36,122,61,5">
         <var name="ref" id="7390982340086718336" />
       </scope>
-      <scope id="7390982340086718313" at="27,102,61,5">
+      <scope id="7390982340086718313" at="28,102,61,5">
         <var name="executeImmediately" id="6576736982480148713" />
         <var name="module" id="4052289613717548298" />
       </scope>
-      <scope id="7390982340086718304" at="26,0,63,0">
+      <scope id="7390982340086718304" at="27,0,63,0">
         <var name="errorsCollector" id="7390982340086718309" />
         <var name="node" id="7390982340086718307" />
         <var name="repository" id="3678491607201772361" />
       </scope>
       <unit id="1802459475176587764" at="77,17,86,7" name="jetbrains.mps.checkers.RefScopeChecker$ResolveReferenceQuickFix$1" />
       <unit id="1802459475176587689" at="66,0,93,0" name="jetbrains.mps.checkers.RefScopeChecker$ResolveReferenceQuickFix" />
-      <unit id="7390982340086718297" at="23,0,94,0" name="jetbrains.mps.checkers.RefScopeChecker" />
+      <unit id="7390982340086718297" at="24,0,94,0" name="jetbrains.mps.checkers.RefScopeChecker" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086718486">

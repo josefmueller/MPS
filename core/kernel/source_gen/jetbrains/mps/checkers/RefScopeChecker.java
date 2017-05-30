@@ -16,6 +16,7 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.errors.item.OutOfScopeReferenceReportItem;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -50,13 +51,12 @@ public class RefScopeChecker extends AbstractNodeChecker {
       if (refScope instanceof ErrorScope) {
         errorsCollector.addErrorWithoutDependencies(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()));
       } else if (!(refScope.contains(target))) {
-        String name = target.getName();
         ReferenceScopeProvider scopeProvider = refDescriptor.getScopeProvider();
         SNodeReference ruleNode = null;
         if (scopeProvider != null) {
           ruleNode = scopeProvider.getSearchScopeValidatorNode();
         }
-        errorsCollector.addErrorWithoutDependencies(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRefLink(ref).getName() + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()), createResolveReferenceQuickfix(ref, repository, executeImmediately));
+        errorsCollector.addError(new OutOfScopeReferenceReportItem(ref, ruleNode, createResolveReferenceQuickfix(ref, repository, executeImmediately)));
       }
     }
   }

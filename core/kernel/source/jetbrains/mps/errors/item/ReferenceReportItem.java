@@ -16,6 +16,7 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -24,13 +25,20 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class UnresolvedReferenceReportItem extends ReferenceReportItem implements NodeFeatureReportItem {
-  public UnresolvedReferenceReportItem(SReference ref) {
-    super(MessageStatus.ERROR, ref);
+public abstract class ReferenceReportItem extends NodeReportItemBase implements NodeFeatureReportItem {
+  private final SReferenceLink myLink;
+  public ReferenceReportItem(@NotNull MessageStatus severity, @NotNull SReference ref) {
+    super(severity, ref.getSourceNode());
+    myLink = ref.getLink();
   }
 
   @Override
-  public String getMessage() {
-    return "Unresolved reference";
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
+    return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE));
+  }
+
+  @Override
+  public SReferenceLink getConceptFeature() {
+    return myLink;
   }
 }
