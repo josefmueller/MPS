@@ -347,7 +347,7 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -6414,48 +6414,29 @@
                           </node>
                         </node>
                         <node concept="3clFbH" id="6_MfFmBevt9" role="3cqZAp" />
-                        <node concept="3clFbF" id="6_MfFmBevX_" role="3cqZAp">
-                          <node concept="2OqwBi" id="6_MfFmBewjh" role="3clFbG">
-                            <node concept="2YIFZM" id="6_MfFmBew9q" role="2Oq$k0">
-                              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-                              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-                            </node>
-                            <node concept="liA8E" id="6_MfFmBewv1" role="2OqNvi">
-                              <ref role="37wK5l" to="bd8o:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
-                              <node concept="1bVj0M" id="6_MfFmBewzo" role="37wK5m">
-                                <node concept="3clFbS" id="6_MfFmBewzp" role="1bW5cS">
-                                  <node concept="3SKdUt" id="5RaJzAYGr7k" role="3cqZAp">
-                                    <node concept="3SKdUq" id="5RaJzAYGr7j" role="3SKWNk">
-                                      <property role="3SKdUp" value="see MPS-18743, 21760" />
-                                    </node>
+                        <node concept="3SKdUt" id="5RaJzAYGr7k" role="3cqZAp">
+                          <node concept="3SKdUq" id="5RaJzAYGr7j" role="3SKWNk">
+                            <property role="3SKdUp" value="see MPS-18743, 21760" />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="6_MfFmBeuTS" role="3cqZAp">
+                          <node concept="3SKdUq" id="6_MfFmBeuTU" role="3SKWNk">
+                            <property role="3SKdUp" value="fixme the problem itself must be fixed (reloading module while there are changed models in it" />
+                          </node>
+                        </node>
+                        <node concept="1QHqEM" id="5RaJzAYGw_D" role="3cqZAp">
+                          <node concept="1QHqEC" id="5RaJzAYGw_F" role="1QHqEI">
+                            <node concept="3clFbS" id="5RaJzAYGw_H" role="1bW5cS">
+                              <node concept="3clFbF" id="5RaJzAYGr7d" role="3cqZAp">
+                                <node concept="2OqwBi" id="5RaJzAYGr7e" role="3clFbG">
+                                  <node concept="2YIFZM" id="5RaJzAYGr7Z" role="2Oq$k0">
+                                    <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                                    <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
                                   </node>
-                                  <node concept="3SKdUt" id="6_MfFmBeuTS" role="3cqZAp">
-                                    <node concept="3SKdUq" id="6_MfFmBeuTU" role="3SKWNk">
-                                      <property role="3SKdUp" value="fixme the problem itself must be fixed (reloading module while there are changed models in it" />
-                                    </node>
-                                  </node>
-                                  <node concept="1QHqEM" id="5RaJzAYGw_D" role="3cqZAp">
-                                    <node concept="1QHqEC" id="5RaJzAYGw_F" role="1QHqEI">
-                                      <node concept="3clFbS" id="5RaJzAYGw_H" role="1bW5cS">
-                                        <node concept="3clFbF" id="5RaJzAYGr7d" role="3cqZAp">
-                                          <node concept="2OqwBi" id="5RaJzAYGr7e" role="3clFbG">
-                                            <node concept="2YIFZM" id="5RaJzAYGr7Z" role="2Oq$k0">
-                                              <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                                              <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                                            </node>
-                                            <node concept="liA8E" id="5RaJzAYGr7g" role="2OqNvi">
-                                              <ref role="37wK5l" to="w1kc:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
+                                  <node concept="liA8E" id="5RaJzAYGr7g" role="2OqNvi">
+                                    <ref role="37wK5l" to="w1kc:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
                                   </node>
                                 </node>
-                              </node>
-                              <node concept="10M0yZ" id="6_MfFmBeH4m" role="37wK5m">
-                                <ref role="1PxDUh" to="bd8o:~ModalityState" resolve="ModalityState" />
-                                <ref role="3cqZAo" to="bd8o:~ModalityState.NON_MODAL" resolve="NON_MODAL" />
                               </node>
                             </node>
                           </node>

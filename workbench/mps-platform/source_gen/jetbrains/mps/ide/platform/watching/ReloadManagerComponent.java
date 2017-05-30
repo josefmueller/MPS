@@ -25,7 +25,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.util.ui.update.Update;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -181,17 +180,13 @@ public class ReloadManagerComponent extends ReloadManager implements Application
           return;
         }
 
-        ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        // see MPS-18743, 21760 
+        // fixme the problem itself must be fixed (reloading module while there are changed models in it 
+        ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            // see MPS-18743, 21760 
-            // fixme the problem itself must be fixed (reloading module while there are changed models in it 
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                MPSModuleRepository.getInstance().saveAll();
-              }
-            });
+            MPSModuleRepository.getInstance().saveAll();
           }
-        }, ModalityState.NON_MODAL);
+        });
 
         ProgressManager.getInstance().run(new Task.Backgroundable(null, "Reloading Files", false) {
           @Override
