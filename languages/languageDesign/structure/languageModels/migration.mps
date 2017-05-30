@@ -155,6 +155,7 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
         <property id="6329021646629104958" name="text" index="3SKdUp" />
       </concept>
@@ -1549,6 +1550,20 @@
               </node>
               <node concept="3clFbS" id="2JrNx06eiTp" role="2LFqv$">
                 <node concept="3clFbH" id="4tR6wmc5G3M" role="3cqZAp" />
+                <node concept="3clFbJ" id="6nammw76BdR" role="3cqZAp">
+                  <node concept="3clFbS" id="6nammw76BdT" role="3clFbx">
+                    <node concept="3N13vt" id="6nammw76Dmz" role="3cqZAp" />
+                  </node>
+                  <node concept="2OqwBi" id="6nammw76Cbi" role="3clFbw">
+                    <node concept="2GrUjf" id="6nammw76BWc" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="2JrNx06eiTl" resolve="conceptNode" />
+                    </node>
+                    <node concept="3TrcHB" id="6nammw76DdZ" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="6nammw76At9" role="3cqZAp" />
                 <node concept="3cpWs8" id="2Bx95kmtTOH" role="3cqZAp">
                   <node concept="3cpWsn" id="2Bx95kmtTOI" role="3cpWs9">
                     <property role="TrG5h" value="referenceLinks" />
