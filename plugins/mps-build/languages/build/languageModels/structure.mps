@@ -44,6 +44,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -66,6 +69,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -368,6 +372,9 @@
     <node concept="1QGGSu" id="4Q8sAA5iJQQ" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/path.png" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLkX" role="lGtFl">
+      <ref role="RPilL" node="6qcrfIJFx8E" resolve="macro" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2oUTXgL_kr6">
     <property role="TrG5h" value="BuildSource_JavaContentFolder" />
@@ -487,6 +494,9 @@
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJQK" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/dependency.png" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLkP" role="lGtFl">
+      <ref role="RPilL" node="4RPz6WoY4C$" resolve="script" />
     </node>
   </node>
   <node concept="1TIwiD" id="34DbxDwQvcK">
@@ -653,6 +663,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4903714810883702018" />
       <ref role="20lvS9" node="3h9a8EwPm3y" resolve="BuildVariableMacro" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLl0" role="lGtFl">
+      <ref role="RPilL" node="4gdvEeQyRO2" resolve="macro" />
     </node>
   </node>
   <node concept="1TIwiD" id="4gdvEeQyRO3">
@@ -1167,6 +1180,9 @@
     <node concept="1QGGSu" id="4Q8sAA5iJQU" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/dependency.png" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLkS" role="lGtFl">
+      <ref role="RPilL" node="6eCuTcwOX2B" resolve="layout" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4RsV8qJBXHj">
     <property role="TrG5h" value="BuildLayout_ImportContent" />
@@ -1212,6 +1228,9 @@
       <property role="IQ2ns" value="5610619299014309453" />
       <ref role="20lvS9" node="4RsV8qJDnFi" resolve="BuildSource_SingleFile" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLkV" role="lGtFl">
+      <ref role="RPilL" node="4RsV8qJGJpd" resolve="jar" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4RsV8qJHgQB">
     <property role="TrG5h" value="BuildSource_JavaLibraryExternalJar" />
@@ -1246,6 +1265,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5610619299014531648" />
       <ref role="20lvS9" node="4RsV8qJH_Bn" resolve="BuildSource_SingleFolder" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLkZ" role="lGtFl">
+      <ref role="RPilL" node="4RsV8qJH_D0" resolve="folder" />
     </node>
   </node>
   <node concept="1TIwiD" id="4RsV8qJH_FS">
@@ -2008,6 +2030,9 @@
       <property role="IQ2ns" value="6854204111265764359" />
       <ref role="20lvS9" node="5M62Y6Wnc78" resolve="GeneratorInternal_IWorkflowParticipantReference" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLkQ" role="lGtFl">
+      <ref role="RPilL" node="5Wv1_bQ19g6" resolve="for" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5M62Y6Wnc78">
     <property role="TrG5h" value="GeneratorInternal_IWorkflowParticipantReference" />
@@ -2020,6 +2045,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="6667029362524340681" />
       <ref role="20lvS9" node="5hFYqIiZwGZ" resolve="IWorkflowParticipant" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLkY" role="lGtFl">
+      <ref role="RPilL" node="5M62Y6Wnc79" resolve="participant" />
     </node>
   </node>
   <node concept="1TIwiD" id="4j_Rh$Iv0Ko">
@@ -2039,6 +2067,9 @@
       <property role="IQ2nx" value="4964617264469642266" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLl1" role="lGtFl">
+      <ref role="RPilL" node="4j_Rh$Iv0Kp" resolve="targetModule" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4j_Rh$Iv0Pa">
     <property role="TrG5h" value="GeneratorInternal_BuildSource_SingleFile" />
@@ -2051,6 +2082,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4964617264469642571" />
       <ref role="20lvS9" node="4RsV8qJDnFi" resolve="BuildSource_SingleFile" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLkW" role="lGtFl">
+      <ref role="RPilL" node="4j_Rh$Iv0Pb" resolve="targetFile" />
     </node>
   </node>
   <node concept="1TIwiD" id="4j_Rh$Iv0TJ">
@@ -2065,6 +2099,9 @@
       <property role="IQ2ns" value="4964617264469642864" />
       <ref role="20lvS9" node="5gfUUDxhbxN" resolve="BuildSource_JavaLibrary" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLkU" role="lGtFl">
+      <ref role="RPilL" node="4j_Rh$Iv0TK" resolve="targetLibrary" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4j_Rh$Iv0R$">
     <property role="TrG5h" value="GeneratorInternal_BuildSource_JavaJar" />
@@ -2077,6 +2114,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4964617264469642725" />
       <ref role="20lvS9" node="15RAxQWZPkq" resolve="BuildSource_JavaJar" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLkT" role="lGtFl">
+      <ref role="RPilL" node="4j_Rh$Iv0R_" resolve="targetJar" />
     </node>
   </node>
   <node concept="PlHQZ" id="5bqm540K$G7">
@@ -2108,6 +2148,9 @@
       <property role="IQ2ns" value="6354776497069761491" />
       <ref role="20lvS9" node="4RPz6WoY4Cj" resolve="BuildProject" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLkO" role="lGtFl">
+      <ref role="RPilL" node="5wKGSSmQ2fj" resolve="project" />
+    </node>
   </node>
   <node concept="1TIwiD" id="520hcA990bQ">
     <property role="TrG5h" value="GeneratorInternal_BuildSource_JarFolder" />
@@ -2125,6 +2168,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5800711952433152759" />
       <ref role="20lvS9" node="4RsV8qJH_Bn" resolve="BuildSource_SingleFolder" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLkR" role="lGtFl">
+      <ref role="RPilL" node="520hcA990bR" resolve="targetFolder" />
     </node>
   </node>
   <node concept="1TIwiD" id="520hcA9a7n0">

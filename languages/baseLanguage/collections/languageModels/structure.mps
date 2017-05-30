@@ -41,6 +41,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -176,6 +179,9 @@
     </node>
     <node concept="PrWs8" id="SORzhOp6jP" role="PzmwI">
       <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLb_" role="lGtFl">
+      <ref role="RPilL" node="gMGs0uU" resolve="variable" />
     </node>
   </node>
   <node concept="1TIwiD" id="gSTc6KI">
@@ -2569,6 +2575,9 @@
       <property role="IQ2ns" value="1331913329176106420" />
       <ref role="20lvS9" node="5i_Pov1WWvw" resolve="CustomContainerDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLbB" role="lGtFl">
+      <ref role="RPilL" node="19VU1QT9_mO" resolve="containerDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1ny5gPbZSDB">
     <property role="TrG5h" value="CustomMapCreator" />
@@ -2582,6 +2591,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1576845966386891370" />
       <ref role="20lvS9" node="5i_Pov1WWvw" resolve="CustomContainerDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLbC" role="lGtFl">
+      <ref role="RPilL" node="1ny5gPbZSDE" resolve="containerDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="gMGrK_y">
@@ -2780,6 +2792,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8293956702609966325" />
       <ref role="20lvS9" node="7PXIfgo7YCo" resolve="MultiForEachVariable" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLbA" role="lGtFl">
+      <ref role="RPilL" node="7cq3qQ1yojP" resolve="variable" />
     </node>
   </node>
   <node concept="1TIwiD" id="6bxRKqX8naM">

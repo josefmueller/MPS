@@ -35,6 +35,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -56,6 +59,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -750,6 +754,9 @@
       <property role="IQ2ns" value="1236427955167" />
       <ref role="20lvS9" node="hZEtGvw" resolve="AbstractIndex" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLmz" role="lGtFl">
+      <ref role="RPilL" node="hZwQlJv" resolve="indexRef" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1eJUWaJf3Jv">
     <property role="R5$K7" value="false" />
@@ -1153,6 +1160,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="6219660258344759925" />
       <ref role="20lvS9" node="5pgF0P2gf9l" resolve="MatrixInitializerIndex" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLmy" role="lGtFl">
+      <ref role="RPilL" node="5pgF0P2gf9P" resolve="index" />
     </node>
   </node>
   <node concept="1TIwiD" id="i0fWh8k">

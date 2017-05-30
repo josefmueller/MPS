@@ -59,6 +59,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -396,6 +399,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1112911598335" />
       <ref role="20lvS9" node="gcjVnq8" resolve="TemplateSwitch" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLen" role="lGtFl">
+      <ref role="RPilL" node="gcuGPbZ" resolve="templateSwitch" />
     </node>
   </node>
   <node concept="1TIwiD" id="ge9HgZJ">
@@ -847,6 +853,9 @@
     <node concept="PrWs8" id="1vDgt48Nz4$" role="PzmwI">
       <ref role="PrY4T" node="1vDgt48Nz4w" resolve="ITemplateCall" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLem" role="lGtFl">
+      <ref role="RPilL" node="1vDgt48Nz5N" resolve="template" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h0j$LEX">
     <property role="R5$K7" value="false" />
@@ -1153,6 +1162,9 @@
     <node concept="PrWs8" id="1R2wmhl9EZq" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLex" role="lGtFl">
+      <ref role="RPilL" node="hppuQoU" resolve="mappingScript" />
+    </node>
   </node>
   <node concept="AxPO7" id="hpv1Zf1">
     <property role="TrG5h" value="MappingScriptKind" />
@@ -1233,6 +1245,9 @@
     </node>
     <node concept="PrWs8" id="W$jG3B0NgR" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLeu" role="lGtFl">
+      <ref role="RPilL" node="hKaOQmo" resolve="applicableConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="hKaO8OE">
@@ -1387,6 +1402,9 @@
       <property role="IQ2ns" value="4665309944889425604" />
       <ref role="20lvS9" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLeo" role="lGtFl">
+      <ref role="RPilL" node="42YwEPgeNV4" resolve="patternVarDecl" />
+    </node>
   </node>
   <node concept="PlHQZ" id="3misQRF01NX">
     <property role="TrG5h" value="ReductionRule" />
@@ -1418,6 +1436,9 @@
       <property role="IQ2ns" value="4816349095291149801" />
       <ref role="20lvS9" to="tp3t:gyDMOul" resolve="PropertyPatternVariableDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLet" role="lGtFl">
+      <ref role="RPilL" node="4bn6ZJF6_RD" resolve="propertyPattern" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4bn6ZJF6_RC">
     <property role="TrG5h" value="TemplateArgumentLinkPatternRefExpression" />
@@ -1431,6 +1452,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4816349095291149802" />
       <ref role="20lvS9" to="tp3t:gzjrplq" resolve="LinkPatternVariableDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLer" role="lGtFl">
+      <ref role="RPilL" node="4bn6ZJF6_RE" resolve="patternVar" />
     </node>
   </node>
   <node concept="1TIwiD" id="1jRYachIf5f">
@@ -1505,6 +1529,9 @@
       <property role="IQ2nx" value="5540778578667478296" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLel" role="lGtFl">
+      <ref role="RPilL" node="$79JWCfbYc" resolve="declaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4lQlo5qukTT">
     <property role="TrG5h" value="TemplateArgumentParameterExpression" />
@@ -1518,6 +1545,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5005282049925926522" />
       <ref role="20lvS9" node="1$dcvTE2mbA" resolve="TemplateParameterDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLew" role="lGtFl">
+      <ref role="RPilL" node="4lQlo5qukTU" resolve="parameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="6MF_9TAPqU1">
@@ -1716,6 +1746,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2721957369897614810" />
       <ref role="20lvS9" node="4mp7qFmCXde" resolve="VarMacro" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLeq" role="lGtFl">
+      <ref role="RPilL" node="2n6lsTIwfRq" resolve="varmacro" />
     </node>
   </node>
   <node concept="1TIwiD" id="7ITVRipDRN2">
@@ -1987,6 +2020,9 @@
       <property role="IQ2ns" value="9032177546941575212" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLes" role="lGtFl">
+      <ref role="RPilL" node="7PoJpZpHLs3" resolve="label" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6mBZfICX1Ju">
     <property role="TrG5h" value="ExportLabelParameter_inputNode" />
@@ -2105,6 +2141,9 @@
       <property role="IQ2ns" value="3864140621129713363" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLev" role="lGtFl">
+      <ref role="RPilL" node="3mwbQJWA0rj" resolve="node" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6uPxrhfjph6">
     <property role="3GE5qa" value="rule" />
@@ -2136,6 +2175,9 @@
     </node>
     <node concept="PrWs8" id="6uPxrhfjpgW" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLep" role="lGtFl">
+      <ref role="RPilL" node="6uPxrhfjpgY" resolve="applicableConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="52s0aAoynkO">

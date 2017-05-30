@@ -30,6 +30,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -52,6 +55,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -114,6 +118,9 @@
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRj" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/textGen.png" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLhH" role="lGtFl">
+      <ref role="RPilL" node="hWWuzPd" resolve="conceptDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="hX17ltF">
@@ -247,6 +254,9 @@
       <property role="IQ2ns" value="1234190664409" />
       <ref role="20lvS9" node="hXbweBj" resolve="OperationDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLhJ" role="lGtFl">
+      <ref role="RPilL" node="hXrvKbp" resolve="function" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hXwW6D9">
     <property role="R5$K7" value="true" />
@@ -288,6 +298,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1234529174917" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLhF" role="lGtFl">
+      <ref role="RPilL" node="hXJF1vG" resolve="function" />
     </node>
   </node>
   <node concept="1TIwiD" id="hXZvZ6X">
@@ -601,6 +614,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3tQ$H_xEITT" resolve="UnitContextDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLhI" role="lGtFl">
+      <ref role="RPilL" node="3tQ$H_xEPE2" resolve="context" />
+    </node>
   </node>
   <node concept="PlHQZ" id="3tQ$H_xF91M">
     <property role="EcuMT" value="3996543181682151538" />
@@ -623,6 +639,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLhK" role="lGtFl">
+      <ref role="RPilL" node="3tQ$H_xF91Q" resolve="classifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1RWKWpMUBoF">
     <property role="EcuMT" value="2160817178329904683" />
@@ -630,6 +649,9 @@
     <property role="TrG5h" value="InstancePerUnitContextObject" />
     <property role="R4oN_" value="Associate new instance of a context object with a text unit (one context object for each text unit)" />
     <ref role="1TJDcQ" node="1RWKWpMUBoG" resolve="UnitContextObject" />
+    <node concept="RPilO" id="47y0FrqaLhG" role="lGtFl">
+      <ref role="RPilL" node="1RWKWpMUBoH" resolve="context" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1RWKWpMUBoG">
     <property role="EcuMT" value="2160817178329904684" />

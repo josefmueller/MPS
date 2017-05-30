@@ -38,6 +38,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -160,6 +163,9 @@
       <ref role="20lvS9" node="O$iR4J$g4q" resolve="TemplateParameter" />
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLjq" role="lGtFl">
+      <ref role="RPilL" node="O$iR4J$g42" resolve="constructorParameterDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g43">
     <property role="R5$K7" value="false" />
@@ -214,6 +220,9 @@
     <node concept="PrWs8" id="O$iR4J$g4g" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLjr" role="lGtFl">
+      <ref role="RPilL" node="O$iR4J$g4f" resolve="variableDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4j">
     <property role="R5$K7" value="false" />
@@ -251,6 +260,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="946964771156066584" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLjs" role="lGtFl">
+      <ref role="RPilL" node="O$iR4J$g4n" resolve="template" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4p">
@@ -363,6 +375,9 @@
       <property role="IQ2ns" value="946964771156066609" />
       <ref role="20lvS9" node="O$iR4J$g4H" resolve="EditorOperationDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLjp" role="lGtFl">
+      <ref role="RPilL" node="O$iR4J$g4L" resolve="editorOperationDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4M">
     <property role="TrG5h" value="EditorPropertyDeclaration" />
@@ -383,6 +398,9 @@
       <property role="IQ2ns" value="946964771156066612" />
       <ref role="20lvS9" node="O$iR4J$g4M" resolve="EditorPropertyDeclaration" />
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLjo" role="lGtFl">
+      <ref role="RPilL" node="O$iR4J$g4O" resolve="editorPropertyDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4Q">

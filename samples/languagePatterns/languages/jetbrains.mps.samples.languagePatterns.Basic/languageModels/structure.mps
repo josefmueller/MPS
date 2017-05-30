@@ -29,6 +29,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -49,6 +52,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -179,6 +183,9 @@
     <node concept="PrWs8" id="3j8xjFBzrce" role="PzmwI">
       <ref role="PrY4T" node="3j8xjFBzrcb" resolve="AgendaItem" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLmr" role="lGtFl">
+      <ref role="RPilL" node="3j8xjFBylNy" resolve="singer" />
+    </node>
   </node>
   <node concept="PlHQZ" id="3j8xjFBzrcb">
     <property role="3GE5qa" value="declaration-references" />
@@ -218,6 +225,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3803436373353847292" />
       <ref role="20lvS9" node="3j8xjFBylMd" resolve="Singer" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLmq" role="lGtFl">
+      <ref role="RPilL" node="3j8xjFBz_BW" resolve="singer" />
     </node>
   </node>
   <node concept="1TIwiD" id="3j8xjFB_mib">
@@ -618,6 +628,9 @@
       <property role="IQ2ns" value="5235060235297961270" />
       <ref role="20lvS9" node="4yAESKAGZgb" resolve="Address" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLmp" role="lGtFl">
+      <ref role="RPilL" node="4yAESKAHjkQ" resolve="target" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4yAESKAIbwt">
     <property role="3GE5qa" value="dotexpression" />
@@ -665,6 +678,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="9119725621034344532" />
       <ref role="20lvS9" node="7UfLy9aLY0x" resolve="Item" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLmo" role="lGtFl">
+      <ref role="RPilL" node="7UfLy9aLY1k" resolve="item" />
     </node>
   </node>
   <node concept="1TIwiD" id="6wil$qXCXqO">

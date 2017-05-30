@@ -46,6 +46,14 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
+        <property id="4307758654697524060" name="suffix" index="1W_73K" />
+        <property id="4307758654697524057" name="prefix" index="1W_73P" />
+      </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+        <child id="8842732777748474935" name="refPresentationTemplate" index="ROhUF" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -138,6 +146,9 @@
       <property role="IQ2ns" value="5253498789149547705" />
       <ref role="20lvS9" node="4zCbl23cpcc" resolve="BuildMps_Module" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLk6" role="lGtFl">
+      <ref role="RPilL" node="4zCbl23d1MT" resolve="module" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4zCbl23dbRE">
     <property role="TrG5h" value="BuildMps_ModuleJavaSource" />
@@ -216,7 +227,6 @@
   <node concept="1TIwiD" id="2L4pT56gXbi">
     <property role="TrG5h" value="BuildMps_ModuleDependencyUseLanguage" />
     <property role="3GE5qa" value="Project.Deps" />
-    <property role="34LRSv" value="use &lt;{language}&gt;" />
     <property role="EcuMT" value="3189788309731922642" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyj" id="2L4pT56gXbj" role="1TKVEi">
@@ -226,11 +236,17 @@
       <property role="IQ2ns" value="3189788309731922643" />
       <ref role="20lvS9" node="2L4pT56gD3S" resolve="BuildMps_Language" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLk8" role="lGtFl">
+      <ref role="RPilL" node="2L4pT56gXbj" resolve="language" />
+      <node concept="ROjv2" id="47y0FrqaLk9" role="ROhUF">
+        <property role="1W_73P" value="use &lt;" />
+        <property role="1W_73K" value="&gt;" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="2L4pT56gYzV">
     <property role="TrG5h" value="BuildMps_ModuleDependencyOnJavaModule" />
     <property role="3GE5qa" value="Project.Deps" />
-    <property role="34LRSv" value="&lt;{module}&gt;" />
     <property role="EcuMT" value="3189788309731928315" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyi" id="2L4pT56gYzW" role="1TKVEl">
@@ -245,11 +261,17 @@
       <property role="IQ2ns" value="3189788309731928317" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLka" role="lGtFl">
+      <ref role="RPilL" node="2L4pT56gYzX" resolve="module" />
+      <node concept="ROjv2" id="47y0FrqaLkb" role="ROhUF">
+        <property role="1W_73P" value="&lt;" />
+        <property role="1W_73K" value="&gt;" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="2L4pT56hbrz">
     <property role="TrG5h" value="BuildMps_ModuleSolutionRuntime" />
     <property role="3GE5qa" value="Project.Runtime" />
-    <property role="34LRSv" value="solution &lt;{solution}&gt;" />
     <property role="EcuMT" value="3189788309731981027" />
     <ref role="1TJDcQ" node="2L4pT56gSBR" resolve="BuildMps_ModuleRuntime" />
     <node concept="1TJgyj" id="2L4pT56hbr$" role="1TKVEi">
@@ -259,11 +281,17 @@
       <property role="IQ2ns" value="3189788309731981028" />
       <ref role="20lvS9" node="2L4pT56gD3R" resolve="BuildMps_Solution" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLjX" role="lGtFl">
+      <ref role="RPilL" node="2L4pT56hbr$" resolve="solution" />
+      <node concept="ROjv2" id="47y0FrqaLjY" role="ROhUF">
+        <property role="1W_73P" value="solution &lt;" />
+        <property role="1W_73K" value="&gt;" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="3HwLahs6gcI">
     <property role="TrG5h" value="BuildMps_ModuleDependencyExtendLanguage" />
     <property role="3GE5qa" value="Project.Deps" />
-    <property role="34LRSv" value="extends &lt;{language}&gt;" />
     <property role="EcuMT" value="4278635856200794926" />
     <ref role="1TJDcQ" node="4zCbl23d1MR" resolve="BuildMps_ModuleDependency" />
     <node concept="1TJgyj" id="3HwLahs6gcK" role="1TKVEi">
@@ -272,6 +300,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4278635856200794928" />
       <ref role="20lvS9" node="2L4pT56gD3S" resolve="BuildMps_Language" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLjZ" role="lGtFl">
+      <ref role="RPilL" node="3HwLahs6gcK" resolve="language" />
+      <node concept="ROjv2" id="47y0FrqaLk0" role="ROhUF">
+        <property role="1W_73P" value="extends &lt;" />
+        <property role="1W_73K" value="&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="3HwLahs6lLg">
@@ -341,6 +376,9 @@
       <property role="IQ2ns" value="322010710375805243" />
       <ref role="20lvS9" node="hS0KzPOwoe" resolve="BuildMps_DevKit" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLjW" role="lGtFl">
+      <ref role="RPilL" node="hS0KzPOz4V" resolve="devkit" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hS0KzPOz53">
     <property role="R5$K7" value="true" />
@@ -352,7 +390,6 @@
   <node concept="1TIwiD" id="hS0KzPODPE">
     <property role="TrG5h" value="BuildMps_DevKitExportLanguage" />
     <property role="3GE5qa" value="Project.DevKit" />
-    <property role="34LRSv" value="language &lt;{language}&gt;" />
     <property role="EcuMT" value="322010710375832938" />
     <ref role="1TJDcQ" node="hS0KzPOz53" resolve="BuildMps_DevKitExport" />
     <node concept="1TJgyj" id="hS0KzPODPN" role="1TKVEi">
@@ -361,6 +398,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="322010710375832947" />
       <ref role="20lvS9" node="2L4pT56gD3S" resolve="BuildMps_Language" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLk2" role="lGtFl">
+      <ref role="RPilL" node="hS0KzPODPN" resolve="language" />
+      <node concept="ROjv2" id="47y0FrqaLk3" role="ROhUF">
+        <property role="1W_73P" value="language &lt;" />
+        <property role="1W_73K" value="&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="hS0KzPODPU">
@@ -374,6 +418,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="322010710375832955" />
       <ref role="20lvS9" node="2L4pT56gD3R" resolve="BuildMps_Solution" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLjT" role="lGtFl">
+      <ref role="RPilL" node="hS0KzPODPV" resolve="solution" />
     </node>
   </node>
   <node concept="1TIwiD" id="hS0KzPONfF">
@@ -414,6 +461,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="322010710376037450" />
       <ref role="20lvS9" node="hS0KzPOwoe" resolve="BuildMps_DevKit" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLjU" role="lGtFl">
+      <ref role="RPilL" node="hS0KzPPrLa" resolve="devkit" />
     </node>
   </node>
   <node concept="1TIwiD" id="1jjYQYSgYJt">
@@ -1017,6 +1067,9 @@
       <property role="IQ2ns" value="6592112598314499066" />
       <ref role="20lvS9" node="5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLk1" role="lGtFl">
+      <ref role="RPilL" node="5HVSRHdUrJU" resolve="target" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5HVSRHdUrJs">
     <property role="TrG5h" value="BuildMps_IdeaPluginModule" />
@@ -1034,6 +1087,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="6592112598314499037" />
       <ref role="20lvS9" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLjS" role="lGtFl">
+      <ref role="RPilL" node="5HVSRHdUrJt" resolve="target" />
     </node>
   </node>
   <node concept="1TIwiD" id="5HVSRHdUrJF">
@@ -1067,6 +1123,9 @@
       <property role="IQ2ns" value="6592112598314586626" />
       <ref role="20lvS9" node="1jjYQYSgYJt" resolve="BuildMps_Group" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLk5" role="lGtFl">
+      <ref role="RPilL" node="5HVSRHdUL82" resolve="group" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5HVSRHdV$dW">
     <property role="TrG5h" value="BuildMpsLayout_PluginDescriptor" />
@@ -1093,6 +1152,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4034578608468929320" />
       <ref role="20lvS9" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLk7" role="lGtFl">
+      <ref role="RPilL" node="3vXGXT8byGC" resolve="target" />
     </node>
   </node>
   <node concept="1TIwiD" id="6MNA4JYmRbj">
@@ -1162,6 +1224,9 @@
       <property role="IQ2ns" value="4964617264469340767" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLjV" role="lGtFl">
+      <ref role="RPilL" node="4j_Rh$ItR9v" resolve="targetPath" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4j_Rh$ItR7f">
     <property role="TrG5h" value="GeneratorInternal_BuildMps_Module" />
@@ -1174,6 +1239,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4964617264469340624" />
       <ref role="20lvS9" node="4zCbl23cpcc" resolve="BuildMps_Module" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLk4" role="lGtFl">
+      <ref role="RPilL" node="4j_Rh$ItR7g" resolve="targetModule" />
     </node>
   </node>
   <node concept="1TIwiD" id="QkG2t1bKw$">
@@ -1378,6 +1446,9 @@
       <property role="20kJfa" value="generator" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="4LHG7OIlEyO" resolve="BuildMps_Generator" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLkc" role="lGtFl">
+      <ref role="RPilL" node="6OtXG9K2II2" resolve="generator" />
     </node>
   </node>
 </model>

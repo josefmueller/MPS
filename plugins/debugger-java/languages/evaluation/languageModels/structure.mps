@@ -29,6 +29,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -179,6 +182,9 @@
       <property role="IQ2ns" value="9050639307831393059" />
       <ref role="20ksaX" to="tpee:4Lb$w0Yiqs5" resolve="baseVariableDeclaration" />
       <ref role="20lvS9" node="5f51wLF6d$A" resolve="LowLevelVariable" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLj2" role="lGtFl">
+      <ref role="RPilL" node="7Qql7Y5uzGz" resolve="variableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="52S4dPsxLUy">

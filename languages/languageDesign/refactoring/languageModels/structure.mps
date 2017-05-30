@@ -42,6 +42,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -433,6 +436,9 @@
     <node concept="PrWs8" id="q$PMBgcCep" role="PzmwI">
       <ref role="PrY4T" node="q$PMBgcBR4" resolve="RefactoringArgumentReference" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLgL" role="lGtFl">
+      <ref role="RPilL" node="5YKiRiBvdC7" resolve="refactoringParameter" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4Lb$w0Yi3EE">
     <property role="TrG5h" value="RefactoringFieldReference" />
@@ -450,6 +456,9 @@
     </node>
     <node concept="PrWs8" id="q$PMBgcCet" role="PzmwI">
       <ref role="PrY4T" node="q$PMBgcBR4" resolve="RefactoringArgumentReference" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLgM" role="lGtFl">
+      <ref role="RPilL" node="4Lb$w0Yi3EF" resolve="refactoringField" />
     </node>
   </node>
   <node concept="1TIwiD" id="4Lb$w0Yjnvi">

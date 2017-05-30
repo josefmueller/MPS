@@ -19,6 +19,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
@@ -55,6 +58,9 @@
       <ref role="PrY4T" to="3whe:6FZb119crGA" resolve="OldComponentMember" />
     </node>
     <node concept="asaX9" id="6FZb119cEqo" role="lGtFl" />
+    <node concept="RPilO" id="47y0FrqaLmB" role="lGtFl">
+      <ref role="RPilL" node="6FZb119cEqq" resolve="target" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6FZb119cEr9">
     <property role="TrG5h" value="NewComponentRef" />
@@ -69,6 +75,9 @@
     </node>
     <node concept="PrWs8" id="6FZb119cErd" role="PzmwI">
       <ref role="PrY4T" to="3whe:6FZb119cEo2" resolve="NewComponentMember" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLmA" role="lGtFl">
+      <ref role="RPilL" node="6FZb119cEra" resolve="target" />
     </node>
   </node>
 </model>

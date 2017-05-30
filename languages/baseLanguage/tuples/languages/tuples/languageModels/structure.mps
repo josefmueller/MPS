@@ -27,6 +27,14 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
+        <property id="4307758654697524060" name="suffix" index="1W_73K" />
+        <property id="4307758654697524057" name="prefix" index="1W_73P" />
+      </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+        <child id="8842732777748474935" name="refPresentationTemplate" index="ROhUF" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -48,6 +56,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -199,7 +210,6 @@
     <property role="R4oN_" value="reference to named tuple declaration" />
     <property role="TrG5h" value="NamedTupleType" />
     <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="&lt;{tupleDeclaration}&gt; type" />
     <property role="EcuMT" value="1239531918181" />
     <ref role="1TJDcQ" to="tpee:g7uibYu" resolve="ClassifierType" />
     <node concept="1TJgyj" id="i2qQwSF" role="1TKVEi">
@@ -224,6 +234,13 @@
     <node concept="PrWs8" id="1653mnvB2yL" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLcp" role="lGtFl">
+      <ref role="RPilL" node="i2pR8DE" resolve="tupleDeclaration" />
+      <node concept="ROjv2" id="47y0FrqaLcq" role="ROhUF">
+        <property role="1W_73P" value="&lt;" />
+        <property role="1W_73K" value="&gt; type" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="i2ry7cs">
     <property role="R5$K7" value="false" />
@@ -231,7 +248,6 @@
     <property role="R4oN_" value="tuple literal" />
     <property role="TrG5h" value="NamedTupleLiteral" />
     <property role="2_RsDV" value="none" />
-    <property role="34LRSv" value="&lt;{tupleDeclaration}&gt; literal" />
     <property role="EcuMT" value="1239559992092" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="i2r_BrL" role="1TKVEi">
@@ -247,6 +263,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1239560008022" />
       <ref role="20lvS9" node="i2fD8E_" resolve="NamedTupleDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLcs" role="lGtFl">
+      <ref role="RPilL" node="i2ryb5m" resolve="tupleDeclaration" />
+      <node concept="ROjv2" id="47y0FrqaLct" role="ROhUF">
+        <property role="1W_73P" value="&lt;" />
+        <property role="1W_73K" value="&gt; literal" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="i2r$n51">
@@ -267,6 +290,9 @@
       <property role="IQ2ns" value="1239560595302" />
       <ref role="20lvS9" node="i2lGYlf" resolve="NamedTupleComponentDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLcr" role="lGtFl">
+      <ref role="RPilL" node="i2r$qtA" resolve="componentDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="i2sxajE">
     <property role="TrG5h" value="NamedTupleComponentAccessOperation" />
@@ -282,6 +308,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1239576542472" />
       <ref role="20lvS9" node="i2lGYlf" resolve="NamedTupleComponentDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLco" role="lGtFl">
+      <ref role="RPilL" node="i2sxfO8" resolve="component" />
     </node>
   </node>
 </model>

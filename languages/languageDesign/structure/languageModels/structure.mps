@@ -58,6 +58,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -232,6 +235,9 @@
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRJ" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/property.png" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLhA" role="lGtFl">
+      <ref role="RPilL" node="fKAX2Z_" resolve="dataType" />
     </node>
   </node>
   <node concept="1TIwiD" id="fKAxPRU">
@@ -439,6 +445,9 @@
     <node concept="PrWs8" id="50$LP2ztBnv" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLh$" role="lGtFl">
+      <ref role="RPilL" node="h0PrY0D" resolve="intfc" />
+    </node>
   </node>
   <node concept="AxPO7" id="hrlYF45">
     <property role="3lZH7k" value="derive_from_internal_value" />
@@ -615,6 +624,9 @@
       <property role="IQ2ns" value="6054523464627965081" />
       <ref role="20lvS9" node="h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLhz" role="lGtFl">
+      <ref role="RPilL" node="5g5Zgd9qGMp" resolve="concept" />
+    </node>
   </node>
   <node concept="PlHQZ" id="4Xny4S7K8wS">
     <property role="TrG5h" value="ReferenceLinkDeclartionScopeKind" />
@@ -642,6 +654,9 @@
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="6OtXG9K2KUI" resolve="DocumentationObjective" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLh_" role="lGtFl">
+      <ref role="RPilL" node="6OtXG9K2KUQ" resolve="target" />
     </node>
   </node>
   <node concept="PlHQZ" id="6OtXG9K2KUI">

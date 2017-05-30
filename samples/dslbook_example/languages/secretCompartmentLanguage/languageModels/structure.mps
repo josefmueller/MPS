@@ -17,6 +17,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -35,6 +38,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -72,6 +78,9 @@
       <property role="TrG5h" value="stateMachineName" />
       <property role="IQ2nx" value="1197166557152" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLm6" role="lGtFl">
+      <ref role="RPilL" node="hr11S1x" resolve="startState" />
     </node>
   </node>
   <node concept="1TIwiD" id="hqWQG$u">
@@ -150,6 +159,9 @@
     <node concept="PrWs8" id="hr1yWP_" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLm7" role="lGtFl">
+      <ref role="RPilL" node="hr1xS$3" resolve="stateMachine" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hr1OEYa">
     <property role="TrG5h" value="StateMachineTestMethod" />
@@ -173,6 +185,9 @@
       <property role="IQ2nx" value="1197252760325" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLm4" role="lGtFl">
+      <ref role="RPilL" node="hr1YeKF" resolve="finalState" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hr20l$N">
     <property role="TrG5h" value="HandleEvent" />
@@ -183,6 +198,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1197255783048" />
       <ref role="20lvS9" node="hqWQG$u" resolve="Event" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLm5" role="lGtFl">
+      <ref role="RPilL" node="hr20na8" resolve="event" />
     </node>
   </node>
 </model>

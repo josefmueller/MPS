@@ -39,6 +39,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -269,6 +272,9 @@
     </node>
     <node concept="PrWs8" id="6sm8I7pqTHw" role="PzmwI">
       <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLlq" role="lGtFl">
+      <ref role="RPilL" node="2h4QH4RYDHt" resolve="var" />
     </node>
   </node>
   <node concept="1TIwiD" id="4SHGGBQPQ0A">

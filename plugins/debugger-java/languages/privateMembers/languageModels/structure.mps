@@ -12,12 +12,18 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -28,12 +34,18 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="6825241477451043705" />
     <ref role="1TJDcQ" to="tpee:hqOwXtU" resolve="FieldReferenceOperation" />
+    <node concept="RPilO" id="47y0FrqaLj5" role="lGtFl">
+      <ref role="RPilL" to="tpee:hqOxapj" resolve="fieldDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5US8fp9IR06">
     <property role="TrG5h" value="PrivateInstanceMethodCallOperation" />
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="6825241477451051014" />
     <ref role="1TJDcQ" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
+    <node concept="RPilO" id="47y0FrqaLj4" role="lGtFl">
+      <ref role="RPilL" to="tpee:hwllgre" resolve="instanceMethodDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3$0WX3VmNr9">
     <property role="TrG5h" value="PrivateStaticFieldReference" />

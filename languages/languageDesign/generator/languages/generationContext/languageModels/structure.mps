@@ -28,6 +28,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -432,6 +435,9 @@
       <property role="IQ2ns" value="4589968773278063829" />
       <ref role="20lvS9" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLe7" role="lGtFl">
+      <ref role="RPilL" node="3YMQ4vlnXNl" resolve="patternVarDecl" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4w6U_Q4Qaba">
     <property role="TrG5h" value="GenerationContextOp_ParameterRef" />
@@ -450,6 +456,9 @@
       <property role="IQ2ns" value="5190093307972736266" />
       <ref role="20lvS9" to="tpf8:1$dcvTE2mbA" resolve="TemplateParameterDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLe9" role="lGtFl">
+      <ref role="RPilL" node="4w6U_Q4Qdka" resolve="parameter" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1xCtdgeQstn">
     <property role="TrG5h" value="GenerationContextOp_LinkPatternRef" />
@@ -463,6 +472,9 @@
       <property role="IQ2ns" value="1758784108619220827" />
       <ref role="20lvS9" to="tp3t:gzjrplq" resolve="LinkPatternVariableDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLe5" role="lGtFl">
+      <ref role="RPilL" node="1xCtdgeQstr" resolve="linkPatternVar" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1xCtdgeQsto">
     <property role="TrG5h" value="GenerationContextOp_PropertyPatternRef" />
@@ -475,6 +487,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1758784108619220828" />
       <ref role="20lvS9" to="tp3t:gyDMOul" resolve="PropertyPatternVariableDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLe6" role="lGtFl">
+      <ref role="RPilL" node="1xCtdgeQsts" resolve="propertyPatternVar" />
     </node>
   </node>
   <node concept="1TIwiD" id="1xCtdgeQQCm">
@@ -524,6 +539,9 @@
       <property role="IQ2ns" value="2507865635201615236" />
       <ref role="20lvS9" to="tpf8:$79JWCfbYa" resolve="GeneratorParameterReference" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLea" role="lGtFl">
+      <ref role="RPilL" node="2bdIC8aAwm4" resolve="importClause" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2n6lsTIwfRo">
     <property role="TrG5h" value="GenerationContextOp_VarRef" />
@@ -541,6 +559,9 @@
       <property role="TrG5h" value="name_intern" />
       <property role="IQ2nx" value="2721957369897614809" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLe8" role="lGtFl">
+      <ref role="RPilL" node="2n6lsTIwfRq" resolve="varmacro" />
     </node>
   </node>
   <node concept="1TIwiD" id="rrptlDYMkB">

@@ -51,6 +51,14 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
+        <property id="4307758654697524060" name="suffix" index="1W_73K" />
+        <property id="4307758654697524057" name="prefix" index="1W_73P" />
+      </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+        <child id="8842732777748474935" name="refPresentationTemplate" index="ROhUF" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -223,6 +231,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1203088061055" />
       <ref role="20lvS9" node="hwsE7KS" resolve="ActionDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLg1" role="lGtFl">
+      <ref role="RPilL" node="hwtCJ9Z" resolve="action" />
     </node>
   </node>
   <node concept="1TIwiD" id="hwtT98d">
@@ -465,7 +476,6 @@
     <property role="TrG5h" value="ActionType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Actions.Action" />
-    <property role="34LRSv" value="action&lt;&lt;{action}&gt;&gt;" />
     <property role="EcuMT" value="1205852320419" />
     <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
     <node concept="1TJgyj" id="hz2pEjn" role="1TKVEi">
@@ -473,6 +483,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1205852349655" />
       <ref role="20lvS9" node="hwsE7KS" resolve="ActionDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfG" role="lGtFl">
+      <ref role="RPilL" node="hz2pEjn" resolve="action" />
+      <node concept="ROjv2" id="47y0FrqaLfH" role="ROhUF">
+        <property role="1W_73P" value="action&lt;&lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="hzgHZEN">
@@ -490,6 +507,9 @@
       <property role="IQ2ns" value="1206092795071" />
       <ref role="20lvS9" node="hyS4$9Z" resolve="ActionParameterDeclaration" />
       <ref role="20ksaX" to="tp4f:hyWH_vG" resolve="member" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfW" role="lGtFl">
+      <ref role="RPilL" node="hzgISMZ" resolve="parameterDeclaration" />
     </node>
   </node>
   <node concept="PlHQZ" id="h$ft7GX">
@@ -556,7 +576,6 @@
     <property role="TrG5h" value="GroupType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Actions.Groups" />
-    <property role="34LRSv" value="actiongroup&lt;&lt;{actionGroup}&gt;&gt;" />
     <property role="EcuMT" value="1207490810216" />
     <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
     <node concept="1TJgyj" id="h$$3T5E" role="1TKVEi">
@@ -565,6 +584,13 @@
       <property role="IQ2ns" value="1207490810218" />
       <ref role="20lvS9" node="hwtC5zi" resolve="ActionGroupDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLfS" role="lGtFl">
+      <ref role="RPilL" node="h$$3T5E" resolve="actionGroup" />
+      <node concept="ROjv2" id="47y0FrqaLfT" role="ROhUF">
+        <property role="1W_73P" value="actiongroup&lt;&lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="h_xUVW$">
     <property role="R5$K7" value="false" />
@@ -572,7 +598,6 @@
     <property role="TrG5h" value="ToolType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Tool" />
-    <property role="34LRSv" value="tool&lt;&lt;{tool}&gt;&gt;" />
     <property role="EcuMT" value="1208528650020" />
     <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
     <node concept="1TJgyj" id="h_xYkIF" role="1TKVEi">
@@ -581,6 +606,13 @@
       <property role="IQ2ns" value="1208529537963" />
       <ref role="20lvS9" node="5FstybB4bRs" resolve="BaseToolDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLfE" role="lGtFl">
+      <ref role="RPilL" node="h_xYkIF" resolve="tool" />
+      <node concept="ROjv2" id="47y0FrqaLfF" role="ROhUF">
+        <property role="1W_73P" value="tool&lt;&lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="hAOkkHm">
     <property role="R5$K7" value="false" />
@@ -588,7 +620,6 @@
     <property role="TrG5h" value="GetGroupOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Actions.Groups" />
-    <property role="34LRSv" value="actionGroup&lt;&lt;{group}&gt;&gt;" />
     <property role="EcuMT" value="1209911036758" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="hAOko$T" role="1TKVEi">
@@ -596,6 +627,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1209911052601" />
       <ref role="20lvS9" node="hwtC5zi" resolve="ActionGroupDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfU" role="lGtFl">
+      <ref role="RPilL" node="hAOko$T" resolve="group" />
+      <node concept="ROjv2" id="47y0FrqaLfV" role="ROhUF">
+        <property role="1W_73P" value="actionGroup&lt;&lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="hB4j29J">
@@ -669,6 +707,9 @@
     <node concept="PrWs8" id="hB4HXeh" role="PzmwI">
       <ref role="PrY4T" to="tp4f:hyWEnem" resolve="IMemberOperation" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLfN" role="lGtFl">
+      <ref role="RPilL" node="hB4pZzc" resolve="propertyDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hB4_ZL$">
     <property role="R5$K7" value="false" />
@@ -676,7 +717,6 @@
     <property role="TrG5h" value="PreferencesComponentType" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Preference" />
-    <property role="34LRSv" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
     <property role="EcuMT" value="1210184105060" />
     <ref role="1TJDcQ" to="tp4f:hyWtXx5" resolve="BaseClassifierType" />
     <node concept="1TJgyj" id="hB4A7R8" role="1TKVEi">
@@ -684,6 +724,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1210184138184" />
       <ref role="20lvS9" node="hB4j29J" resolve="PreferencesComponentDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfX" role="lGtFl">
+      <ref role="RPilL" node="hB4A7R8" resolve="componentDeclaration" />
+      <node concept="ROjv2" id="47y0FrqaLfY" role="ROhUF">
+        <property role="1W_73P" value="preferenceComponent&lt;&lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="hBxWZwF">
@@ -894,6 +941,9 @@
       <ref role="20ksaX" to="tp4f:hyWH_vG" resolve="member" />
       <ref role="20lvS9" node="hHDS2nw" resolve="ActionDataParameterDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLg0" role="lGtFl">
+      <ref role="RPilL" node="hHDTwJz" resolve="parameterDeclaration" />
+    </node>
   </node>
   <node concept="PlHQZ" id="hHNuAHW">
     <property role="TrG5h" value="ActionParameter" />
@@ -946,6 +996,9 @@
     </node>
     <node concept="PrWs8" id="hQJtaXG" role="PzmwI">
       <ref role="PrY4T" to="tp4f:hyWEnem" resolve="IMemberOperation" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfL" role="lGtFl">
+      <ref role="RPilL" node="hQJrQ9I" resolve="declaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="hQJFkGB">
@@ -1420,7 +1473,6 @@
     <property role="TrG5h" value="ActionAccessOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Actions.Action" />
-    <property role="34LRSv" value="action&lt;&lt;{action}&gt;&gt;" />
     <property role="EcuMT" value="3205675194086589964" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="2LWQ9F8OklK" role="1TKVEi">
@@ -1430,6 +1482,13 @@
       <property role="IQ2ns" value="3205675194086671728" />
       <ref role="20lvS9" node="hwsE7KS" resolve="ActionDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLfI" role="lGtFl">
+      <ref role="RPilL" node="2LWQ9F8OklK" resolve="action" />
+      <node concept="ROjv2" id="47y0FrqaLfJ" role="ROhUF">
+        <property role="1W_73P" value="action&lt;&lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="2LWQ9F8OnPO">
     <property role="R5$K7" value="false" />
@@ -1437,7 +1496,6 @@
     <property role="TrG5h" value="GroupAccessOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Actions.Groups" />
-    <property role="34LRSv" value="group&lt;&lt;{group}&gt;&gt;" />
     <property role="EcuMT" value="3205675194086686068" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="2LWQ9F8OnPQ" role="1TKVEi">
@@ -1446,6 +1504,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3205675194086686070" />
       <ref role="20lvS9" node="hwtC5zi" resolve="ActionGroupDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfQ" role="lGtFl">
+      <ref role="RPilL" node="2LWQ9F8OnPQ" resolve="group" />
+      <node concept="ROjv2" id="47y0FrqaLfR" role="ROhUF">
+        <property role="1W_73P" value="group&lt;&lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="4mQiM_caNkk">
@@ -1542,6 +1607,9 @@
       <property role="IQ2ns" value="1821622352985038320" />
       <ref role="20lvS9" node="hQJriJs" resolve="ActionConstructionParameterDeclaration" />
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfB" role="lGtFl">
+      <ref role="RPilL" node="1_7GY3K_pRK" resolve="parameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="73o9OgiE96s">
@@ -1649,6 +1717,9 @@
     <node concept="1QGGSu" id="4Q8sAA5iJPL" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/tabbedEditor.png" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLfZ" role="lGtFl">
+      <ref role="RPilL" node="3fOKOapZKOK" resolve="baseNodeConcept" />
+    </node>
   </node>
   <node concept="PlHQZ" id="3fOKOapZL7y">
     <property role="TrG5h" value="NodesBlock" />
@@ -1723,6 +1794,9 @@
       <property role="IQ2ns" value="2450897840534683980" />
       <ref role="20lvS9" node="3fOKOapZKOJ" resolve="EditorTab" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLfP" role="lGtFl">
+      <ref role="RPilL" node="283lDAXPS5c" resolve="editorTab" />
+    </node>
   </node>
   <node concept="1TIwiD" id="283lDAXPT8h">
     <property role="TrG5h" value="OrderReference" />
@@ -1738,6 +1812,9 @@
     </node>
     <node concept="PrWs8" id="283lDAXPT8n" role="PzmwI">
       <ref role="PrY4T" node="283lDAXPS55" resolve="OrderConstraints" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfC" role="lGtFl">
+      <ref role="RPilL" node="283lDAXPT8i" resolve="order" />
     </node>
   </node>
   <node concept="1TIwiD" id="hwsE7KS">
@@ -2034,6 +2111,9 @@
       <property role="IQ2ns" value="203415309825565489" />
       <ref role="20lvS9" node="4mQiM_caNkk" resolve="IdeaInitializerDescriptor" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLfO" role="lGtFl">
+      <ref role="RPilL" node="biFim41QcL" resolve="plugin" />
+    </node>
   </node>
   <node concept="1TIwiD" id="ioJBUBfUsu">
     <property role="R5$K7" value="false" />
@@ -2073,6 +2153,9 @@
       <property role="IQ2ns" value="331224023792854816" />
       <ref role="20lvS9" node="hwtC5zi" resolve="ActionGroupDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLfM" role="lGtFl">
+      <ref role="RPilL" node="ioJBUBfUsw" resolve="group" />
+    </node>
   </node>
   <node concept="1TIwiD" id="ioJBUBfUxY">
     <property role="TrG5h" value="KeymapRef" />
@@ -2085,6 +2168,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="331224023792855167" />
       <ref role="20lvS9" node="1mJS7WEAV1P" resolve="KeymapChangesDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfK" role="lGtFl">
+      <ref role="RPilL" node="ioJBUBfUxZ" resolve="keymap" />
     </node>
   </node>
   <node concept="1TIwiD" id="2LXdEGeeK_q">
@@ -2183,6 +2269,9 @@
     </node>
     <node concept="PrWs8" id="5R8arOPPpEk" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEv0ln" resolve="ImplementationPart" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfD" role="lGtFl">
+      <ref role="RPilL" node="1jWAYEV8xjw" resolve="actionDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="3ItNAtJe66x">

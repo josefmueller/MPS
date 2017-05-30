@@ -22,6 +22,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -43,6 +46,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -413,6 +417,9 @@
       <ref role="20ksaX" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLbl" role="lGtFl">
+      <ref role="RPilL" node="7H3c2f3q6_O" resolve="staticMethodDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6HzP3h78XF8">
     <property role="R5$K7" value="false" />
@@ -452,6 +459,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="5822086619725599105" />
     <ref role="1TJDcQ" to="tpee:hDpGfJe" resolve="ClassCreator" />
+    <node concept="RPilO" id="47y0FrqaLbn" role="lGtFl">
+      <ref role="RPilL" to="tpee:hDpISCB" resolve="constructorDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="O1IQUb7d_U">
     <property role="TrG5h" value="ExtractStaticInnerClassConcept" />
@@ -469,6 +479,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="99767819676010098" />
       <ref role="20lvS9" node="i1dyn0M" resolve="ExtractToConstantExpression" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLbm" role="lGtFl">
+      <ref role="RPilL" node="5ys$QFNspM" resolve="original" />
     </node>
   </node>
   <node concept="1TIwiD" id="7C0CEuCG83q">

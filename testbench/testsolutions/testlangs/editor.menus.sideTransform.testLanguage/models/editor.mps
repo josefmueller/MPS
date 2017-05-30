@@ -2,7 +2,7 @@
 <model ref="r:73252a8a-5dfe-41ab-9452-7c5453e47c1f(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="8" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -167,7 +167,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="3z8xuiBZfIJ" role="3EZMnx">
-          <ref role="1NtTu8" to="do6y:5o7iAW5ntGC" resolve="nodes" />
+          <ref role="1NtTu8" to="do6y:5o7iAW5ntGC" resolve="simpleNode" />
           <node concept="lj46D" id="3z8xuiBZfIQ" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -238,7 +238,7 @@
   </node>
   <node concept="24kQdi" id="5o7iAW5ntIk">
     <property role="3GE5qa" value="editor" />
-    <ref role="1XX52x" to="do6y:5o7iAW5ntGB" resolve="TestSideTransform_Node" />
+    <ref role="1XX52x" to="do6y:5o7iAW5ntGB" resolve="TestSideTransform_SimpleNode" />
     <node concept="3EZMnI" id="5o7iAW5ntIp" role="2wV5jI">
       <node concept="l2Vlx" id="5o7iAW5ntIq" role="2iSdaV" />
       <node concept="3F0ifn" id="1Ll9NxXidrF" role="3EZMnx">
@@ -263,7 +263,7 @@
   </node>
   <node concept="IW6AY" id="5o7iAW5nxgp">
     <property role="3GE5qa" value="transformation" />
-    <ref role="aqKnT" to="do6y:5o7iAW5ntGB" resolve="TestSideTransform_Node" />
+    <ref role="aqKnT" to="do6y:5o7iAW5ntGB" resolve="TestSideTransform_SimpleNode" />
     <node concept="1Qtc8_" id="5o7iAW5nxgq" role="IW6Ez">
       <node concept="IWgqT" id="5o7iAW5nxgA" role="1Qtc8A">
         <node concept="1hCUdq" id="5o7iAW5nxgC" role="1hCUd6">
@@ -370,7 +370,7 @@
   <node concept="3ICXOK" id="fujF8uLPF_">
     <property role="TrG5h" value="TestSideTransform_SimpleNode_CustomActions" />
     <property role="3GE5qa" value="transformation" />
-    <ref role="aqKnT" to="do6y:5o7iAW5ntGB" resolve="TestSideTransform_Node" />
+    <ref role="aqKnT" to="do6y:5o7iAW5ntGB" resolve="TestSideTransform_SimpleNode" />
     <node concept="1Qtc8_" id="fujF8uLPvW" role="IW6Ez">
       <node concept="IWgqT" id="fujF8uLPvX" role="1Qtc8A">
         <node concept="1hCUdq" id="fujF8uLPvY" role="1hCUd6">

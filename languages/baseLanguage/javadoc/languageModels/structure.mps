@@ -30,6 +30,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -303,6 +306,9 @@
       <ref role="20ksaX" node="5VgPTPXJCrs" resolve="param" />
       <ref role="20lvS9" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLbN" role="lGtFl">
+      <ref role="RPilL" node="5VgPTPXJCrt" resolve="parameterDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5VgPTPXJCrr">
     <property role="TrG5h" value="DocTypeParameterReference" />
@@ -315,6 +321,9 @@
       <property role="IQ2ns" value="6832197706140518110" />
       <ref role="20ksaX" node="5VgPTPXJCrs" resolve="param" />
       <ref role="20lvS9" to="tpee:g96euPO" resolve="TypeVariableDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLbR" role="lGtFl">
+      <ref role="RPilL" node="5VgPTPXJCru" resolve="typeVariableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="5VgPTPXL4JM">
@@ -441,6 +450,9 @@
       <ref role="20lvS9" to="tpee:fz12cDC" resolve="FieldDeclaration" />
       <ref role="20ksaX" node="4OLqP_NP$j4" resolve="declaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLbO" role="lGtFl">
+      <ref role="RPilL" node="1V5cIK_b9CD" resolve="fieldDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1V5cIK_baeF">
     <property role="TrG5h" value="SeeBlockDocTag" />
@@ -473,6 +485,9 @@
       <property role="IQ2ns" value="2217234381367530196" />
       <ref role="20lvS9" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLbP" role="lGtFl">
+      <ref role="RPilL" node="1V5cIK_ctbk" resolve="methodDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1V5cIK_ctb$">
     <property role="TrG5h" value="ClassifierDocReference" />
@@ -485,6 +500,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2217234381367530213" />
       <ref role="20lvS9" to="tpee:g7pOWCK" resolve="Classifier" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLbS" role="lGtFl">
+      <ref role="RPilL" node="1V5cIK_ctb_" resolve="classifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="2dnyg8EnjCJ">
@@ -560,6 +578,9 @@
       <property role="IQ2ns" value="6501140109493894278" />
       <ref role="20ksaX" node="4OLqP_NP$j4" resolve="declaration" />
       <ref role="20lvS9" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLbQ" role="lGtFl">
+      <ref role="RPilL" node="5CSG7KHrnM6" resolve="staticFieldDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="5J4Ewzxlbep">

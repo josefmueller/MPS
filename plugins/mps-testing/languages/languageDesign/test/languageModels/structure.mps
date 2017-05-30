@@ -55,6 +55,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -106,6 +109,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1210674534086" />
       <ref role="20lvS9" node="hBxLA2s" resolve="TestNodeAnnotation" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLlA" role="lGtFl">
+      <ref role="RPilL" node="hBxOPr6" resolve="declaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="hCJA54K">
@@ -879,6 +885,9 @@
       <property role="IQ2ns" value="4052780437578824735" />
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLlC" role="lGtFl">
+      <ref role="RPilL" node="3wYn_nuyrKv" resolve="ref" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3J6bWQr0BO4">
     <property role="3GE5qa" value="nodeOperation" />
@@ -905,6 +914,9 @@
     <node concept="PrWs8" id="6EW1JnOGf1U" role="PzmwI">
       <ref role="PrY4T" node="6EW1JnOFUIt" resolve="IRuleReference" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLly" role="lGtFl">
+      <ref role="RPilL" node="3VyMYUb6r1I" resolve="declaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3VyMYUbe6PQ">
     <property role="TrG5h" value="WarningStatementReference" />
@@ -919,6 +931,9 @@
     </node>
     <node concept="PrWs8" id="6EW1JnOGkmU" role="PzmwI">
       <ref role="PrY4T" node="6EW1JnOFUIt" resolve="IRuleReference" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLl_" role="lGtFl">
+      <ref role="RPilL" node="3VyMYUbe6PR" resolve="declaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="nMEi6GLtoU">
@@ -970,6 +985,9 @@
     </node>
     <node concept="PrWs8" id="6EW1JnOFUJ3" role="PzmwI">
       <ref role="PrY4T" node="6EW1JnOFUIt" resolve="IRuleReference" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLlz" role="lGtFl">
+      <ref role="RPilL" node="6EW1JnOFOwa" resolve="declaration" />
     </node>
   </node>
   <node concept="PlHQZ" id="6EW1JnOFUIt">
@@ -1208,6 +1226,9 @@
     <node concept="PrWs8" id="1RxYXnVZDNV" role="PzmwI">
       <ref role="PrY4T" node="6EW1JnOFUIt" resolve="IRuleReference" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLlB" role="lGtFl">
+      <ref role="RPilL" node="1RxYXnVZDNU" resolve="declaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1RxYXnVXz$p">
     <property role="EcuMT" value="2153278993333631257" />
@@ -1252,6 +1273,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLlD" role="lGtFl">
+      <ref role="RPilL" node="1RxYXnVYpq4" resolve="kind" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1RxYXnVYs8h">
     <property role="EcuMT" value="2153278993333862929" />
@@ -1264,6 +1288,9 @@
       <property role="20kJfa" value="node" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLl$" role="lGtFl">
+      <ref role="RPilL" node="1RxYXnVYs8i" resolve="node" />
     </node>
   </node>
   <node concept="PlHQZ" id="1kgh5Yab2sH">
@@ -1327,6 +1354,9 @@
     </node>
     <node concept="1QGGSu" id="4K12N3pJ$JJ" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/nodesTest.png" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLlE" role="lGtFl">
+      <ref role="RPilL" node="4K12N3pJ_iz" resolve="migration" />
     </node>
   </node>
   <node concept="1TIwiD" id="2154_0wV2x7">

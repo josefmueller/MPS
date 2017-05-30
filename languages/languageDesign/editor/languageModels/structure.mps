@@ -64,6 +64,14 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
+        <property id="4307758654697524060" name="suffix" index="1W_73K" />
+        <property id="4307758654697524057" name="prefix" index="1W_73P" />
+      </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+        <child id="8842732777748474935" name="refPresentationTemplate" index="ROhUF" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -336,7 +344,6 @@
     <property role="R4oN_" value="single aggregation" />
     <property role="TrG5h" value="CellModel_RefNode" />
     <property role="3GE5qa" value="CellModel" />
-    <property role="34LRSv" value="%&lt;{linkDeclaration}&gt;%" />
     <property role="EcuMT" value="1073389882823" />
     <ref role="1TJDcQ" node="g_$h64z" resolve="CellModel_WithRole" />
     <node concept="1TJgyj" id="55my_QKP5Sf" role="1TKVEi">
@@ -374,6 +381,13 @@
       <property role="IQ2nx" value="16410578721444372" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLdf" role="lGtFl">
+      <ref role="RPilL" node="fBF1sR8" resolve="linkDeclaration" />
+      <node concept="ROjv2" id="47y0FrqaLdg" role="ROhUF">
+        <property role="1W_73P" value="%&lt;" />
+        <property role="1W_73K" value="&gt;%" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="fBF2Hee">
     <property role="R5$K7" value="false" />
@@ -381,7 +395,6 @@
     <property role="R4oN_" value="multiple aggregation" />
     <property role="TrG5h" value="CellModel_RefNodeList" />
     <property role="3GE5qa" value="CellModel" />
-    <property role="34LRSv" value="%&lt;{linkDeclaration}&gt;%" />
     <property role="EcuMT" value="1073390211982" />
     <ref role="1TJDcQ" node="gAczfia" resolve="CellModel_ListWithRole" />
     <node concept="1TJgyi" id="gEGOrZx" role="1TKVEl">
@@ -428,6 +441,13 @@
     </node>
     <node concept="PrWs8" id="4SdtvCaA7Qx" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLdk" role="lGtFl">
+      <ref role="RPilL" node="fBF2Hej" resolve="linkDeclaration" />
+      <node concept="ROjv2" id="47y0FrqaLdl" role="ROhUF">
+        <property role="1W_73P" value="%&lt;" />
+        <property role="1W_73K" value="&gt;%" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="fCXafTX">
@@ -719,7 +739,6 @@
     <property role="R4oN_" value="reference" />
     <property role="TrG5h" value="CellModel_RefCell" />
     <property role="3GE5qa" value="CellModel" />
-    <property role="34LRSv" value="%&lt;{linkDeclaration}&gt;%-&gt;" />
     <property role="EcuMT" value="1088013125922" />
     <ref role="1TJDcQ" node="g_$h64z" resolve="CellModel_WithRole" />
     <node concept="1TJgyj" id="fPiD8ey" role="1TKVEi">
@@ -738,6 +757,13 @@
     </node>
     <node concept="PrWs8" id="4SdtvCaA7QL" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLd8" role="lGtFl">
+      <ref role="RPilL" node="fPiD8ey" resolve="linkDeclaration" />
+      <node concept="ROjv2" id="47y0FrqaLd9" role="ROhUF">
+        <property role="1W_73P" value="%&lt;" />
+        <property role="1W_73K" value="&gt;%-&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="fPsVBsF">
@@ -2082,6 +2108,9 @@
       <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
       <ref role="20ksaX" node="gXYg8S8" resolve="relationDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLdo" role="lGtFl">
+      <ref role="RPilL" node="gXXwMpJ" resolve="propertyDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gXXxIQr">
     <property role="TrG5h" value="CellMenuComponentFeature_Link" />
@@ -2094,6 +2123,9 @@
       <property role="IQ2ns" value="1166042131869" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
       <ref role="20ksaX" node="gXYg8S8" resolve="relationDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLdj" role="lGtFl">
+      <ref role="RPilL" node="gXXxIQt" resolve="linkDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="gXXWOiD">
@@ -3926,6 +3958,9 @@
     <node concept="PrWs8" id="50$LP2zubU_" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLda" role="lGtFl">
+      <ref role="RPilL" node="59ZEGVQrrtd" resolve="hint" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3Fwx_Uqsisi">
     <property role="3GE5qa" value="EditorContextHints" />
@@ -4030,6 +4065,9 @@
       <property role="20kJfa" value="editorComponent" />
       <property role="IQ2ns" value="7033942394256351817" />
       <ref role="20lvS9" node="fGPKFH7" resolve="EditorComponentDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLdb" role="lGtFl">
+      <ref role="RPilL" node="66t_lskdu99" resolve="editorComponent" />
     </node>
   </node>
   <node concept="1TIwiD" id="3ath0p6n6ew">
@@ -4150,6 +4188,9 @@
       <property role="IQ2ns" value="4510086454740628767" />
       <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLdm" role="lGtFl">
+      <ref role="RPilL" node="3Un2VKL7rkv" resolve="propertyDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3Un2VKKh3Ca">
     <property role="3GE5qa" value="SNode.select" />
@@ -4187,6 +4228,9 @@
       <property role="20kJfa" value="id" />
       <property role="IQ2ns" value="4323500428136742952" />
       <ref role="20lvS9" node="3K0abI4q_wn" resolve="EditorCellId" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLd7" role="lGtFl">
+      <ref role="RPilL" node="3K0abI5lK0C" resolve="id" />
     </node>
   </node>
   <node concept="1TIwiD" id="2VNGR_E4AW$">
@@ -4246,6 +4290,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3383245079137422350" />
       <ref role="20lvS9" node="2VNGR_E4AW$" resolve="StyleClass" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLd5" role="lGtFl">
+      <ref role="RPilL" node="2VNGR_E4KKe" resolve="styleClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="1GhovrAibiM">
@@ -4344,6 +4391,9 @@
       <property role="IQ2ns" value="9122903797312247166" />
       <ref role="20lvS9" node="7Ur4aGvm4uS" resolve="IStyle" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLdn" role="lGtFl">
+      <ref role="RPilL" node="7Ur4aGuQXlY" resolve="style" />
+    </node>
   </node>
   <node concept="PlHQZ" id="7zL4upEo6oo">
     <property role="3GE5qa" value="Stylesheet" />
@@ -4430,6 +4480,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3982520150122346707" />
       <ref role="20lvS9" node="3t4KfBEkQvF" resolve="StyleAttributeDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLde" role="lGtFl">
+      <ref role="RPilL" node="3t4KfBESbzj" resolve="attribute" />
     </node>
   </node>
   <node concept="1TIwiD" id="3t4KfBF2waz">
@@ -4812,7 +4865,6 @@
   <node concept="1TIwiD" id="5OVd5tVffW9">
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuReference_Named" />
-    <property role="34LRSv" value="named menu &lt;{menu}&gt;" />
     <property role="EcuMT" value="6718020819487620873" />
     <node concept="PrWs8" id="1quYWAD4TCS" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD2$6Q" resolve="IMenuReference_Named" />
@@ -4827,17 +4879,30 @@
       <property role="IQ2ns" value="6718020819487620874" />
       <ref role="20lvS9" node="4Sf$XywF4VC" resolve="TransformationMenu_Named" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLdc" role="lGtFl">
+      <ref role="RPilL" node="5OVd5tVffWa" resolve="menu" />
+      <node concept="ROjv2" id="47y0FrqaLdd" role="ROhUF">
+        <property role="1W_73P" value="named menu &lt;" />
+        <property role="1W_73K" value="&gt;" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="5OVd5tVffWc">
     <property role="3GE5qa" value="Menu.Transformation" />
     <property role="TrG5h" value="TransformationMenuReference_Default" />
-    <property role="34LRSv" value="default menu for &lt;{concept}&gt;" />
     <property role="EcuMT" value="6718020819487620876" />
     <node concept="PrWs8" id="1quYWAD52bF" role="PzmwI">
       <ref role="PrY4T" node="1quYWAD2$71" resolve="IMenuReference_Default" />
     </node>
     <node concept="PrWs8" id="3rSzFHWJPqy" role="PzmwI">
       <ref role="PrY4T" node="3rSzFHWJPbd" resolve="ITransformationMenuReference" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLdh" role="lGtFl">
+      <ref role="RPilL" node="1quYWAD543u" resolve="concept" />
+      <node concept="ROjv2" id="47y0FrqaLdi" role="ROhUF">
+        <property role="1W_73P" value="default menu for &lt;" />
+        <property role="1W_73K" value="&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="FyOJSsBmJy">
@@ -6029,6 +6094,9 @@
       <ref role="20lvS9" node="h9At2QK" resolve="TransformationMenuVariableDeclaration" />
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLd6" role="lGtFl">
+      <ref role="RPilL" node="20vEJZ2AULg" resolve="transformationMenuVariableDeclaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h9At2QK">
     <property role="TrG5h" value="TransformationMenuVariableDeclaration" />
@@ -6080,6 +6148,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="u0TBa40TxV" resolve="SubstituteMenuVariableDeclaration" />
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLdp" role="lGtFl">
+      <ref role="RPilL" node="u0TBa40TxZ" resolve="substituteMenuVariableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="u0TBa40XW5">

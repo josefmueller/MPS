@@ -19,6 +19,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -38,6 +41,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -89,6 +95,9 @@
       <property role="IQ2ns" value="3990190717072393830" />
       <ref role="20lvS9" node="1iYrdV1xxgp" resolve="Constant" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLmT" role="lGtFl">
+      <ref role="RPilL" node="3tw0l3PakpA" resolve="original" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2lb0lXX1H4v">
     <property role="TrG5h" value="DistantConstantReference" />
@@ -128,6 +137,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2687243112288738882" />
       <ref role="20lvS9" to="tpee:fz12cDA" resolve="ClassConcept" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLmS" role="lGtFl">
+      <ref role="RPilL" node="2lb0lXX5tT2" resolve="clazz" />
     </node>
   </node>
 </model>

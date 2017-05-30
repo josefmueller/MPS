@@ -19,6 +19,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
@@ -36,6 +39,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -132,6 +138,9 @@
       <property role="IQ2ns" value="763922957008729157" />
       <ref role="20lvS9" node="EpZY78hnh2" resolve="State" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLmL" role="lGtFl">
+      <ref role="RPilL" node="EpZY78hnh5" resolve="state" />
+    </node>
   </node>
   <node concept="1TIwiD" id="EpZY78hnh6">
     <property role="TrG5h" value="EventReference" />
@@ -143,6 +152,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="763922957008729159" />
       <ref role="20lvS9" node="EpZY78hngV" resolve="Event" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLmK" role="lGtFl">
+      <ref role="RPilL" node="EpZY78hnh7" resolve="event" />
     </node>
   </node>
 </model>

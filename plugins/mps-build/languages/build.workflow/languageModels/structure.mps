@@ -21,6 +21,14 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
+        <property id="4307758654697524060" name="suffix" index="1W_73K" />
+        <property id="4307758654697524057" name="prefix" index="1W_73P" />
+      </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+        <child id="8842732777748474935" name="refPresentationTemplate" index="ROhUF" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -41,6 +49,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -167,6 +176,9 @@
       <property role="IQ2ns" value="2769948622284574295" />
       <ref role="20lvS9" node="2pKPpytmA9N" resolve="BwfTask" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLkE" role="lGtFl">
+      <ref role="RPilL" node="2pKPpytmGTn" resolve="target" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2pKPpytmOAS">
     <property role="TrG5h" value="BwfSubTaskDependency" />
@@ -179,6 +191,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2769948622284605881" />
       <ref role="20lvS9" node="2pKPpytmA9P" resolve="BwfSubTask" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLkG" role="lGtFl">
+      <ref role="RPilL" node="2pKPpytmOAT" resolve="target" />
     </node>
   </node>
   <node concept="1TIwiD" id="2pKPpytmOCr">
@@ -304,6 +319,9 @@
       <property role="IQ2ns" value="4755209551904389317" />
       <ref role="20lvS9" node="47XTuiHNzyV" resolve="BwfJavaModule" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLkB" role="lGtFl">
+      <ref role="RPilL" node="47XTuiHNzz5" resolve="target" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3rV3sBXcG6S">
     <property role="TrG5h" value="BwfTaskPart" />
@@ -410,6 +428,9 @@
       <property role="IQ2ns" value="7306485738221471032" />
       <ref role="20lvS9" node="6l_Qx579cUi" resolve="BwfTaskLibrary" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLkF" role="lGtFl">
+      <ref role="RPilL" node="6l_Qx579wkS" resolve="target" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5KZfyKsVu1I">
     <property role="R5$K7" value="true" />
@@ -453,7 +474,6 @@
   <node concept="1TIwiD" id="5KZfyKsVOKv">
     <property role="TrG5h" value="BwfPathReference" />
     <property role="3GE5qa" value="Types" />
-    <property role="34LRSv" value="&lt;pathref &lt;{target}&gt;&gt;" />
     <property role="EcuMT" value="6647099934207069215" />
     <ref role="1TJDcQ" to="iuxj:5M4a$b5ikxH" resolve="XmlBaseElement" />
     <node concept="1TJgyj" id="5KZfyKsVOKw" role="1TKVEi">
@@ -462,6 +482,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="6647099934207069216" />
       <ref role="20lvS9" node="5KZfyKsVOKg" resolve="BwfPathDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLkC" role="lGtFl">
+      <ref role="RPilL" node="5KZfyKsVOKw" resolve="target" />
+      <node concept="ROjv2" id="47y0FrqaLkD" role="ROhUF">
+        <property role="1W_73P" value="&lt;pathref &lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="6S1jmf0vFOr">

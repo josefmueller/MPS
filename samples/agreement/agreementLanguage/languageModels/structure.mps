@@ -33,6 +33,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -52,6 +55,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -120,6 +126,9 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1111794644919" />
       <ref role="20lvS9" node="gbs8ljn" resolve="PostingRuleTemporalProperty" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLlR" role="lGtFl">
+      <ref role="RPilL" node="gbs4h0$" resolve="type" />
     </node>
   </node>
   <node concept="1TIwiD" id="gbrYiHC">
@@ -278,6 +287,9 @@
       <property role="IQ2ns" value="1111795211704" />
       <ref role="20lvS9" node="gbsarEy" resolve="AccountType" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLlP" role="lGtFl">
+      <ref role="RPilL" node="gbsa9QS" resolve="account" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gbsarEy">
     <property role="TrG5h" value="AccountType" />
@@ -297,6 +309,9 @@
       <property role="IQ2ns" value="1112036516483" />
       <ref role="20lvS9" node="gbs4AgY" resolve="EventVariable" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLlO" role="lGtFl">
+      <ref role="RPilL" node="gbEyEa3" resolve="eventVariable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gbEE10G">
     <property role="TrG5h" value="ValueReference" />
@@ -307,6 +322,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1112038462507" />
       <ref role="20lvS9" node="gbrUaGe" resolve="Value" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLlQ" role="lGtFl">
+      <ref role="RPilL" node="gbEE5gF" resolve="value" />
     </node>
   </node>
   <node concept="1TIwiD" id="gbUTxgb">

@@ -26,6 +26,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -193,6 +196,9 @@
     <node concept="PrWs8" id="3gcO7FHvbbY" role="PzmwI">
       <ref role="PrY4T" node="3gcO7FHva5$" resolve="CheckpointSpecification" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLei" role="lGtFl">
+      <ref role="RPilL" node="3gcO7FHvbc0" resolve="cpDecl" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3gcO7FHvbcG">
     <property role="EcuMT" value="3750601816081740588" />
@@ -208,6 +214,9 @@
       <property role="20kJfa" value="checkpoint" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="1_4co2y1Lw1" resolve="Checkpoint" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLeh" role="lGtFl">
+      <ref role="RPilL" node="3gcO7FHvbcJ" resolve="checkpoint" />
     </node>
   </node>
   <node concept="1TIwiD" id="3dG9g003xGJ">

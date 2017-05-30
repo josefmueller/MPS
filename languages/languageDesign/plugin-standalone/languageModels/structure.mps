@@ -28,6 +28,14 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
+        <property id="4307758654697524060" name="suffix" index="1W_73K" />
+        <property id="4307758654697524057" name="prefix" index="1W_73P" />
+      </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+        <child id="8842732777748474935" name="refPresentationTemplate" index="ROhUF" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -50,6 +58,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -204,7 +213,6 @@
     <property role="TrG5h" value="GetToolInProjectOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Tool" />
-    <property role="34LRSv" value="tool&lt;&lt;{tool}&gt;&gt;" />
     <property role="EcuMT" value="681855071694758165" />
     <ref role="1TJDcQ" to="tp4k:2TmYHHddPWB" resolve="BaseProjectOperation" />
     <node concept="1TJgyj" id="_QrTcSEy4m" role="1TKVEi">
@@ -213,6 +221,13 @@
       <property role="IQ2ns" value="681855071694758166" />
       <ref role="20lvS9" to="tp4k:5FstybB4bRs" resolve="BaseToolDeclaration" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLft" role="lGtFl">
+      <ref role="RPilL" node="_QrTcSEy4m" resolve="tool" />
+      <node concept="ROjv2" id="47y0FrqaLfu" role="ROhUF">
+        <property role="1W_73P" value="tool&lt;&lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
+    </node>
   </node>
   <node concept="1TIwiD" id="_QrTcSEy4o">
     <property role="R5$K7" value="false" />
@@ -220,7 +235,6 @@
     <property role="TrG5h" value="GetPreferencesComponentInProjectOperation" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Preference" />
-    <property role="34LRSv" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />
     <property role="EcuMT" value="681855071694758168" />
     <ref role="1TJDcQ" to="tp4k:2TmYHHddPWB" resolve="BaseProjectOperation" />
     <node concept="1TJgyj" id="_QrTcSEy4p" role="1TKVEi">
@@ -228,6 +242,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="681855071694758169" />
       <ref role="20lvS9" to="tp4k:hB4j29J" resolve="PreferencesComponentDeclaration" />
+    </node>
+    <node concept="RPilO" id="47y0FrqaLfv" role="lGtFl">
+      <ref role="RPilL" node="_QrTcSEy4p" resolve="componentDeclaration" />
+      <node concept="ROjv2" id="47y0FrqaLfw" role="ROhUF">
+        <property role="1W_73P" value="preferenceComponent&lt;&lt;" />
+        <property role="1W_73K" value="&gt;&gt;" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="6xuWmJ1tgUs">
