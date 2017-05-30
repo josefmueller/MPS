@@ -195,7 +195,7 @@
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFix_Runtime" />
-    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.item.LanguageNotImportedReportItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SLanguageHierarchy" />

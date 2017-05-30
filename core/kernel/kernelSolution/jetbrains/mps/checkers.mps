@@ -5443,38 +5443,24 @@
             </node>
             <node concept="3clFbJ" id="3TJpIwQlqH_" role="3cqZAp">
               <node concept="3clFbS" id="3TJpIwQlqHA" role="3clFbx">
-                <node concept="3clFbF" id="3TJpIwQlqHB" role="3cqZAp">
-                  <node concept="2OqwBi" id="3TJpIwQlqHC" role="3clFbG">
-                    <node concept="37vLTw" id="3TJpIwQlqHD" role="2Oq$k0">
+                <node concept="3clFbF" id="1ZuYvzun1lx" role="3cqZAp">
+                  <node concept="2OqwBi" id="1ZuYvzun1Ru" role="3clFbG">
+                    <node concept="37vLTw" id="1ZuYvzun1lv" role="2Oq$k0">
                       <ref role="3cqZAo" node="3TJpIwQlqI9" resolve="component" />
                     </node>
-                    <node concept="liA8E" id="3TJpIwQlqHE" role="2OqNvi">
-                      <ref role="37wK5l" node="5SHhrNLGPuZ" resolve="addErrorWithoutDependencies" />
-                      <node concept="2GrUjf" id="3TJpIwQlqHF" role="37wK5m">
-                        <ref role="2Gs0qQ" node="3TJpIwQlqGN" resolve="node" />
-                      </node>
-                      <node concept="3cpWs3" id="3TJpIwQlqHG" role="37wK5m">
-                        <node concept="Xl_RD" id="3TJpIwQlqHH" role="3uHU7w">
-                          <property role="Xl_RC" value=" is not imported" />
-                        </node>
-                        <node concept="2OqwBi" id="3TJpIwQlqHI" role="3uHU7B">
-                          <node concept="37vLTw" id="3TJpIwQlqHJ" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3TJpIwQlqHl" resolve="language" />
+                    <node concept="liA8E" id="1ZuYvzun25T" role="2OqNvi">
+                      <ref role="37wK5l" node="5S0STpDMb1Q" resolve="addError" />
+                      <node concept="2ShNRf" id="1ZuYvzun5Pb" role="37wK5m">
+                        <node concept="1pGfFk" id="1ZuYvzun70y" role="2ShVmc">
+                          <ref role="37wK5l" to="d6hs:~LanguageNotImportedReportItem.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.errors.QuickFixProvider)" resolve="LanguageNotImportedReportItem" />
+                          <node concept="2GrUjf" id="1ZuYvzun7$3" role="37wK5m">
+                            <ref role="2Gs0qQ" node="3TJpIwQlqGN" resolve="node" />
                           </node>
-                          <node concept="liA8E" id="3TJpIwQlqHK" role="2OqNvi">
-                            <ref role="37wK5l" to="c17a:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                          <node concept="2ShNRf" id="3TJpIwQlqHO" role="37wK5m">
+                            <node concept="HV5vD" id="kgRRK9g5HF" role="2ShVmc">
+                              <ref role="HV5vE" node="3TJpIwQlqIn" resolve="UsedLanguagesChecker.LangImportQFixProvider" />
+                            </node>
                           </node>
-                        </node>
-                      </node>
-                      <node concept="10Nm6u" id="3TJpIwQlqHL" role="37wK5m" />
-                      <node concept="2ShNRf" id="3TJpIwQlqHM" role="37wK5m">
-                        <node concept="1pGfFk" id="3TJpIwQlqHN" role="2ShVmc">
-                          <ref role="37wK5l" to="zavc:~NodeMessageTarget.&lt;init&gt;()" resolve="NodeMessageTarget" />
-                        </node>
-                      </node>
-                      <node concept="2ShNRf" id="3TJpIwQlqHO" role="37wK5m">
-                        <node concept="HV5vD" id="kgRRK9g5HF" role="2ShVmc">
-                          <ref role="HV5vE" node="3TJpIwQlqIn" resolve="UsedLanguagesChecker.LangImportQFixProvider" />
                         </node>
                       </node>
                     </node>

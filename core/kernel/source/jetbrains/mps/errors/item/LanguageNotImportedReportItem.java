@@ -16,34 +16,27 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.errors.QuickFixProvider;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.function.Function;
+import java.util.Collection;
+import java.util.Collections;
 
-public abstract class NodeReportItemBase extends ReportItemBase implements NodeReportItem {
-
-  private final SNode myNode;
-
-  public NodeReportItemBase(@NotNull MessageStatus severity, @NotNull SNode node) {
-    super(severity);
-    myNode = node;
+public class LanguageNotImportedReportItem extends NodeReportItemBase implements QuickFixReportItem {
+  private final QuickFixProvider myQuickFix;
+  public LanguageNotImportedReportItem(@NotNull SNode node, @NotNull QuickFixProvider quickFix) {
+    super(MessageStatus.ERROR, node);
+    myQuickFix = quickFix;
   }
 
   @Override
-  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
-    return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_NODE));
+  public String getMessage() {
+    return getNode().getConcept().getLanguage().getQualifiedName() + " is not imported";
   }
 
   @Override
-  public SNode getNode() {
-    return myNode;
+  public Collection<QuickFixProvider> getQuickFixProviders() {
+    return Collections.singleton(myQuickFix);
   }
 }
-

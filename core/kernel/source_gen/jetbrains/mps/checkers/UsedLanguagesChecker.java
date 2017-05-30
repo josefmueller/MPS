@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.item.LanguageNotImportedReportItem;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SModelInternal;
@@ -54,7 +54,7 @@ public class UsedLanguagesChecker extends AbstractNodeChecker {
       boolean notYetReported = reported.add(language);
       parentReportedSetChanged |= notYetReported;
       if (!(imported.contains(language)) && notYetReported) {
-        component.addErrorWithoutDependencies(node, language.getQualifiedName() + " is not imported", null, new NodeMessageTarget(), new UsedLanguagesChecker.LangImportQFixProvider());
+        component.addError(new LanguageNotImportedReportItem(node, new UsedLanguagesChecker.LangImportQFixProvider()));
       }
       findMissing(component, node.getChildren(), (parentReportedSetChanged ? reported : parentReported), imported);
     }
