@@ -150,8 +150,8 @@
       <node id="6743291967958276055" at="238,69,239,81" concept="4" />
       <node id="7204211436280011471" at="241,9,242,70" concept="11" />
       <node id="7204211436279971790" at="244,12,245,93" concept="10" />
-      <node id="7204211436279973940" at="246,31,247,315" concept="4" />
-      <node id="7204211436279973946" at="247,315,248,20" concept="11" />
+      <node id="7204211436279973940" at="246,31,247,318" concept="4" />
+      <node id="7204211436279973946" at="247,318,248,20" concept="11" />
       <node id="7204211436280011454" at="249,7,250,687" concept="11" />
       <node id="1234796104060" at="253,79,254,55" concept="10" />
       <node id="1234796545766" at="254,55,255,72" concept="11" />
@@ -184,7 +184,7 @@
       <node id="3818729150937313423" at="228,63,231,11" concept="8" />
       <node id="8419587467111854914" at="237,16,240,11" concept="1" />
       <node id="1234796104060" at="279,0,282,0" concept="15" trace="contextObjectInstance_ctx#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/textGen/ClassifierUnitContext;" />
-      <node id="5539328256338503185" at="282,87,285,5" concept="8" />
+      <node id="5539328256338503185" at="282,90,285,5" concept="8" />
       <node id="4026438661936176750" at="79,206,83,9" concept="8" />
       <node id="1234796104060" at="114,0,118,0" concept="15" trace="internalClassName#(Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <node id="1237559180671" at="125,166,129,5" concept="8" />
@@ -208,7 +208,7 @@
       <node id="4026438661936158529" at="78,41,84,7" concept="7" />
       <node id="1234796104060" at="149,0,155,0" concept="15" trace="methodCall#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <node id="163269897332208692" at="161,72,167,9" concept="7" />
-      <node id="5539328256338503185" at="282,0,288,0" concept="15" trace="check_v9xqql_a0a0a0a0b0a4a0#(Lorg/jetbrains/mps/openapi/language/SReferenceLink;)Ljava/lang/String;" />
+      <node id="5539328256338503185" at="282,0,288,0" concept="15" trace="check_v9xqql_a0a0a0a0a0b0a5a41#(Lorg/jetbrains/mps/openapi/language/SReferenceLink;)Ljava/lang/String;" />
       <node id="7204211436279971847" at="233,51,240,11" concept="8" />
       <node id="7204211436279971788" at="244,10,251,5" concept="1" />
       <node id="1234796104060" at="92,0,100,0" concept="15" trace="visibility#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/text/rt/TextGenContext;)V" />
@@ -313,7 +313,7 @@
         <var name="fqName" id="3971771588400019682" />
         <var name="packageName" id="3971771588400019680" />
       </scope>
-      <scope id="5539328256338503185" at="282,87,286,16" />
+      <scope id="5539328256338503185" at="282,90,286,16" />
       <scope id="1234796104060" at="100,0,105,0">
         <var name="ctx" id="1234796104060" />
         <var name="v" id="1234800272413" />
