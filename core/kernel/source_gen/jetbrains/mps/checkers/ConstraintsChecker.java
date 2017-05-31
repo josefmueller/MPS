@@ -117,10 +117,6 @@ public class ConstraintsChecker extends AbstractNodeChecker {
         }
       }));
       if (!(canSetValue)) {
-        // TODO this is a hack for anonymous classes 
-        if ("name".equals(property.getName()) && ("AnonymousClass".equals(nodeConcept.getName()) || "InternalAnonymousClass".equals(nodeConcept.getName()))) {
-          continue;
-        }
         // todo find a rule 
         errorsCollector.addErrorWithoutDependencies(node, "Property constraint violation for property \"" + property.getName() + "\"", null, new PropertyMessageTarget(property.getName()));
       }

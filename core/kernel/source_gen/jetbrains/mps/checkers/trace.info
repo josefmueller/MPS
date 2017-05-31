@@ -1060,10 +1060,8 @@
       <node id="7390982340086720481" at="111,78,112,93" concept="10" />
       <node id="3303031365445380069" at="112,93,113,107" concept="10" />
       <node id="7390982340086720508" at="115,33,116,75" concept="11" />
-      <node id="7390982340086720521" at="119,27,120,53" concept="12" />
-      <node id="7390982340086720525" at="121,158,122,19" concept="3" />
-      <node id="7390982340086720539" at="123,9,124,28" concept="12" />
-      <node id="7390982340086720541" at="124,28,125,188" concept="4" />
+      <node id="7390982340086720539" at="119,27,120,28" concept="12" />
+      <node id="7390982340086720541" at="120,28,121,188" concept="4" />
       <node id="7390982340086720568" at="26,0,28,0" concept="2" trace="ConstraintsChecker#()V" />
       <node id="7518892411906731884" at="57,0,60,0" concept="9" trace="invoke#()Ljava/lang/Boolean;" />
       <node id="7390982340086720251" at="71,0,74,0" concept="9" trace="invoke#()Ljava/lang/Boolean;" />
@@ -1071,26 +1069,25 @@
       <node id="7390982340086720318" at="86,0,89,0" concept="9" trace="invoke#()Ljava/lang/Boolean;" />
       <node id="739403953008742145" at="98,0,101,0" concept="9" trace="invoke#()Ljava/lang/Boolean;" />
       <node id="7390982340086720506" at="115,0,118,0" concept="9" trace="invoke#()Ljava/lang/Boolean;" />
-      <node id="7390982340086720523" at="120,53,123,9" concept="8" />
       <node id="7518892411906731855" at="51,58,55,9" concept="8" />
       <node id="7518892411906731892" at="60,11,64,9" concept="8" />
       <node id="7390982340086720265" at="74,9,78,7" concept="8" />
       <node id="7390982340086720328" at="89,9,93,7" concept="8" />
       <node id="739403953008742153" at="101,9,105,7" concept="8" />
+      <node id="7390982340086720519" at="118,10,122,7" concept="8" />
       <node id="7518892411906731878" at="55,9,60,11" concept="10" />
       <node id="7390982340086720245" at="69,58,74,9" concept="10" />
       <node id="7390982340086720312" at="84,65,89,9" concept="10" />
       <node id="739403953008742139" at="96,162,101,9" concept="10" />
       <node id="7390982340086720500" at="113,107,118,10" concept="10" />
       <node id="8887378328853481940" at="34,0,40,0" concept="9" trace="getBreakingNodeAndClearContext#(Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="7390982340086720519" at="118,10,126,7" concept="8" />
       <node id="7390982340086720287" at="83,0,94,5" concept="7" />
       <node id="739403953008730486" at="95,0,106,5" concept="6" />
       <node id="7390982340086720243" at="67,0,79,5" concept="8" />
+      <node id="7390982340086720444" at="109,60,123,5" concept="7" />
       <node id="7518892411906731851" at="49,44,65,7" concept="8" />
-      <node id="7390982340086720444" at="109,60,127,5" concept="7" />
       <node id="7518892411906731845" at="47,0,66,5" concept="8" />
-      <node id="7390982340086720128" at="40,0,129,0" concept="9" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsCollector;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
+      <node id="7390982340086720128" at="40,0,125,0" concept="9" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsCollector;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <scope id="7390982340086720571" at="26,31,26,31" />
       <scope id="7518892411906731885" at="57,35,58,74" />
       <scope id="7390982340086720252" at="71,33,72,64" />
@@ -1098,7 +1095,6 @@
       <scope id="7390982340086720319" at="86,33,87,74" />
       <scope id="739403953008742146" at="98,33,99,97" />
       <scope id="7390982340086720507" at="115,33,116,75" />
-      <scope id="7390982340086720524" at="121,158,122,19" />
       <scope id="7390982340086720568" at="26,0,28,0" />
       <scope id="7518892411906731856" at="52,27,54,17" />
       <scope id="7518892411906731893" at="61,28,63,129">
@@ -1113,6 +1109,7 @@
       <scope id="739403953008742154" at="102,29,104,111">
         <var name="rule" id="739403953008742156" />
       </scope>
+      <scope id="7390982340086720520" at="119,27,121,188" />
       <scope id="7518892411906731884" at="57,0,60,0" />
       <scope id="7390982340086720251" at="71,0,74,0" />
       <scope id="7390982340086720318" at="86,0,89,0" />
@@ -1124,7 +1121,6 @@
       <scope id="8887378328853481940" at="34,0,40,0">
         <var name="checkingNodeContext" id="8887378328853538111" />
       </scope>
-      <scope id="7390982340086720520" at="119,27,125,188" />
       <scope id="7390982340086720288" at="84,65,93,7">
         <var name="canBeParent" id="7390982340086720313" />
       </scope>
@@ -1141,28 +1137,28 @@
       <scope id="739403953008730486" at="95,0,106,5">
         <var name="ancestor" id="739403953008730489" />
       </scope>
-      <scope id="7518892411906731852" at="50,57,64,9">
-        <var name="canBeChild" id="7518892411906731879" />
-        <var name="link" id="7518892411906731854" />
-      </scope>
-      <scope id="7390982340086720447" at="110,67,126,7">
+      <scope id="7390982340086720447" at="110,67,122,7">
         <var name="canSetValue" id="7390982340086720501" />
         <var name="propertyDescriptor" id="3303031365445380070" />
         <var name="ps" id="7390982340086720449" />
         <var name="value" id="7390982340086720482" />
       </scope>
-      <scope id="7518892411906731846" at="48,25,65,7" />
-      <scope id="7390982340086720444" at="109,60,127,5">
+      <scope id="7518892411906731852" at="50,57,64,9">
+        <var name="canBeChild" id="7518892411906731879" />
+        <var name="link" id="7518892411906731854" />
+      </scope>
+      <scope id="7390982340086720444" at="109,60,123,5">
         <var name="property" id="7390982340086720445" />
       </scope>
-      <scope id="7390982340086720131" at="41,108,127,5">
+      <scope id="7518892411906731846" at="48,25,65,7" />
+      <scope id="7390982340086720131" at="41,108,123,5">
         <var name="checkingNodeContext" id="8887378328853569077" />
         <var name="constraintsDescriptor" id="3303031365445380047" />
         <var name="nodeConcept" id="739403953008745903" />
         <var name="parent" id="5855421304788388210" />
         <var name="props" id="7390982340086720425" />
       </scope>
-      <scope id="7390982340086720128" at="40,0,129,0">
+      <scope id="7390982340086720128" at="40,0,125,0">
         <var name="errorsCollector" id="7390982340086720563" />
         <var name="node" id="7390982340086720561" />
         <var name="repository" id="4525171225383442279" />
@@ -1172,7 +1168,7 @@
       <unit id="7390982340086720318" at="85,66,89,7" name="jetbrains.mps.checkers.ConstraintsChecker$3" />
       <unit id="739403953008742145" at="97,68,101,7" name="jetbrains.mps.checkers.ConstraintsChecker$4" />
       <unit id="7390982340086720506" at="114,104,118,7" name="jetbrains.mps.checkers.ConstraintsChecker$5" />
-      <unit id="7390982340086720127" at="25,0,130,0" name="jetbrains.mps.checkers.ConstraintsChecker" />
+      <unit id="7390982340086720127" at="25,0,126,0" name="jetbrains.mps.checkers.ConstraintsChecker" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086720780">
