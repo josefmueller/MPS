@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.PropertySupport;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
+import jetbrains.mps.errors.item.ConstraintsReportItem;
 
 public class ConstraintsChecker extends AbstractNodeChecker {
   public ConstraintsChecker() {
@@ -118,7 +118,7 @@ public class ConstraintsChecker extends AbstractNodeChecker {
       }));
       if (!(canSetValue)) {
         // todo find a rule 
-        errorsCollector.addErrorWithoutDependencies(node, "Property constraint violation for property \"" + property.getName() + "\"", null, new PropertyMessageTarget(property.getName()));
+        errorsCollector.addError(new ConstraintsReportItem.PropertyConstraintReportItem(node, property));
       }
     }
   }

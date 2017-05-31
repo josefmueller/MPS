@@ -1322,45 +1322,21 @@
                     <property role="3SKdUp" value="todo find a rule" />
                   </node>
                 </node>
-                <node concept="3clFbF" id="6qi2OtU3uwt" role="3cqZAp">
-                  <node concept="2OqwBi" id="6qi2OtU3uwu" role="3clFbG">
-                    <node concept="37vLTw" id="2BHiRxglJVT" role="2Oq$k0">
+                <node concept="3clFbF" id="1ZuYvzuovoF" role="3cqZAp">
+                  <node concept="2OqwBi" id="1ZuYvzuovAo" role="3clFbG">
+                    <node concept="37vLTw" id="1ZuYvzuovoD" role="2Oq$k0">
                       <ref role="3cqZAo" node="6qi2OtU3uwN" resolve="errorsCollector" />
                     </node>
-                    <node concept="liA8E" id="6qi2OtU3uww" role="2OqNvi">
-                      <ref role="37wK5l" node="6qi2OtU3u3Y" resolve="addErrorWithoutDependencies" />
-                      <node concept="37vLTw" id="2BHiRxglnm0" role="37wK5m">
-                        <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-                      </node>
-                      <node concept="3cpWs3" id="6qi2OtU3uwy" role="37wK5m">
-                        <node concept="Xl_RD" id="6qi2OtU3uwz" role="3uHU7w">
-                          <property role="Xl_RC" value="\&quot;" />
-                        </node>
-                        <node concept="3cpWs3" id="6qi2OtU3uw$" role="3uHU7B">
-                          <node concept="Xl_RD" id="6qi2OtU3uw_" role="3uHU7B">
-                            <property role="Xl_RC" value="Property constraint violation for property \&quot;" />
+                    <node concept="liA8E" id="1ZuYvzuovHY" role="2OqNvi">
+                      <ref role="37wK5l" node="5S0STpDMb1Q" resolve="addError" />
+                      <node concept="2ShNRf" id="1ZuYvzuovJy" role="37wK5m">
+                        <node concept="1pGfFk" id="1ZuYvzuovYB" role="2ShVmc">
+                          <ref role="37wK5l" to="d6hs:~ConstraintsReportItem$PropertyConstraintReportItem.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty)" resolve="ConstraintsReportItem.PropertyConstraintReportItem" />
+                          <node concept="37vLTw" id="1ZuYvzuow2W" role="37wK5m">
+                            <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
                           </node>
-                          <node concept="2OqwBi" id="6qi2OtU3uwA" role="3uHU7w">
-                            <node concept="liA8E" id="3SMLHJkaCqm" role="2OqNvi">
-                              <ref role="37wK5l" to="c17a:~SProperty.getName():java.lang.String" resolve="getName" />
-                            </node>
-                            <node concept="2GrUjf" id="6qi2OtU3uwB" role="2Oq$k0">
-                              <ref role="2Gs0qQ" node="6qi2OtU3uuX" resolve="property" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="10Nm6u" id="6qi2OtU3uwD" role="37wK5m" />
-                      <node concept="2ShNRf" id="6qi2OtU3uwE" role="37wK5m">
-                        <node concept="1pGfFk" id="6qi2OtU3uwF" role="2ShVmc">
-                          <ref role="37wK5l" to="zavc:~PropertyMessageTarget.&lt;init&gt;(java.lang.String)" resolve="PropertyMessageTarget" />
-                          <node concept="2OqwBi" id="6qi2OtU3uwG" role="37wK5m">
-                            <node concept="liA8E" id="3SMLHJkaDmJ" role="2OqNvi">
-                              <ref role="37wK5l" to="c17a:~SProperty.getName():java.lang.String" resolve="getName" />
-                            </node>
-                            <node concept="2GrUjf" id="6qi2OtU3uwH" role="2Oq$k0">
-                              <ref role="2Gs0qQ" node="6qi2OtU3uuX" resolve="property" />
-                            </node>
+                          <node concept="2GrUjf" id="1ZuYvzuowqA" role="37wK5m">
+                            <ref role="2Gs0qQ" node="6qi2OtU3uuX" resolve="property" />
                           </node>
                         </node>
                       </node>
