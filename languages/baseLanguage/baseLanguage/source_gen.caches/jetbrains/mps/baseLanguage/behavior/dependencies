@@ -1192,7 +1192,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodCall__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.DefaultConstructorUtils" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.DefaultConstructorUtils" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
@@ -1773,7 +1773,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.DefaultConstructorUtils" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.DefaultConstructorUtils" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />

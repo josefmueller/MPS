@@ -17,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
-import jetbrains.mps.baseLanguage.util.DefaultConstructorUtils;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import java.util.HashSet;

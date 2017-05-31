@@ -2232,7 +2232,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_ClassShouldHaveConstructor_NonTypesystemRule" file="check_ClassShouldHaveConstructor_NonTypesystemRule.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.util.DefaultConstructorUtils" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.DefaultConstructorUtils" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
