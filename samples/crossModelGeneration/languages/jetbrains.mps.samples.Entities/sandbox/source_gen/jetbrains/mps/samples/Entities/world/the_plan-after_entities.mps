@@ -5,8 +5,8 @@
   <attribute name="generation-plan" value="the plan" />
   <languages />
   <imports>
-    <import index="azh3" ref="00000000-0000-4000-5f02-5beb5f025beb/i:f590b17(checkpoints/jetbrains.mps.samples.Entities.sandbox@after_entities)" />
     <import index="wp8d" ref="r:50ff6b7f-83ef-42ff-924a-dd008ef8173d(jetbrains.mps.samples.Entities.world)" />
+    <import index="azh3" ref="00000000-0000-4000-5f02-5beb5f025beb/i:f590b17(checkpoints/jetbrains.mps.samples.Entities.sandbox@after_entities)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">

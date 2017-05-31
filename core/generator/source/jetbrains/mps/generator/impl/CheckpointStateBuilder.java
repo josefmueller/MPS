@@ -128,6 +128,17 @@ class CheckpointStateBuilder {
     cloneTransientToCheckpoint();
     ConsistentNodeIdentityHelper consistentNodeIdentity = new ConsistentNodeIdentityHelper(new SNodePresentationComparator());
     consistentNodeIdentity.apply(myCheckpointModel);
+    //
+    // Update model imports. The reason we didn't do it on model clone is that we need imports in a predictable order for different
+    // generation modes. In-place, parallel options affect order of roots and order of imports (ModelDependencyScanner from
+    // ModelDependencyUpdate collects imports in the order roots are iterated.
+    //
+    // ReferenceResolvers could have added references to nodes in other checkpoint models, we need to propagate these
+    // dependencies into imports to ensure subsequent module.forget() could find and clear all dependant models as well
+    // RR would not change list of languages, hence no updateUsedLanguages() call. And we don't care about explicit
+    // imports of language's accessory models either.
+    new ModelDependencyUpdate(myCheckpointModel).updateImportedModels(null);
+
     myTransitionTrace.newTransition(step, myCheckpointModel.getReference(), myTransientModel, consistentNodeIdentity.getChangedNodes());
     MappingsMemento mm = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(myCheckpointModel));
     return new CheckpointState(mm, myCheckpointModel, step);
@@ -138,11 +149,8 @@ class CheckpointStateBuilder {
       // XXX here, we clone user objects, including TransitionTrace.ORIGIN_TRACE value. If the node from CP model serves as a key
       //     to some ML for subsequent CP, DebugMappingsBuilder may extract wrong origin for the ML's input node! Shall I clear all/certain user objects here?
       new CloneUtil(myTransientModel, myCheckpointModel).cloneModel();
-      // ReferenceResolvers could have added references to nodes in other checkpoint models, we need to propagate these
-      // dependencies into imports to ensure subsequent module.forget() could find and clear all dependant models as well
-      // RR would not change list of languages, hence no updateUsedLanguages() call. And we don't care about explicit
-      // imports of language's accessory models either.
-      new ModelDependencyUpdate(myCheckpointModel).updateImportedModels(null);
+      // Here, CP model has no model imports, we gonna update them later, once we have our roots in predefined order so that
+      // imports are in predefined order, too.
       myCloneDone = true;
     }
   }
