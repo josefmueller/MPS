@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
+import jetbrains.mps.baseLanguage.behavior.ClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.util.DefaultConstructorUtils;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
@@ -79,9 +81,22 @@ public class ClassifierScopes {
         if (SPropertyOperations.getBoolean(clazz, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xfa5cee6dfaL, "abstractClass"))) {
           return true;
         }
+        SNode noArgCons = Sequence.fromIterable(ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(clazz)).findFirst(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isEmpty();
+          }
+        });
+        if (noArgCons != null) {
+          // Treat no-arg cons the same way as implicit default cons. 
+          // First of all, it's the way JLS tells us 'new' expression should look like (see 15.9 Class Instance Creation Expressions) 
+          // Second, it's much more handy to have single ML in templates for a class with no-arg cons, and use it to restore references in a declaration like: 
+          //         ->[MyClass] x = new ->[MyClass](); 
+          //         Use of ClassCreator there instead of DefaultClassCreator requires extra ML for the cons. 
+          return !((boolean) ClassifierMember__BehaviorDescriptor.isVisible_id70J2WaK_oVl.invoke(noArgCons, clazz, contextNode));
+        }
         // note: http://docs.oracle.com/javase/specs/jls/se5.0/html/classes.html#8.8.9 
         // visibility of default constructor not implies by visibility of class 
-        return !(DefaultConstructorUtils.containsDefaultConstructor(clazz));
+        return !(DefaultConstructorUtils.hasDefaultConstructor(clazz));
       }
     };
   }

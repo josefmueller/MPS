@@ -12,10 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
-public class DefaultConstructorUtils {
-  public DefaultConstructorUtils() {
+public final class DefaultConstructorUtils {
+  private DefaultConstructorUtils() {
   }
-  public static boolean containsDefaultConstructor(SNode clazz) {
+  public static boolean hasDefaultConstructor(SNode clazz) {
+    // tell if there's implicit constructor for clazz. Explicit no-argument cons is not deemed as default cons 
     if (!(((boolean) (Boolean) BHReflection.invoke(clazz, SMethodTrimmedId.create("checkLoops", null, "3sXyOQUqKq0"))))) {
       return false;
     }

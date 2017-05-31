@@ -6090,6 +6090,16 @@
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="70J2WaK_oVm" role="1B3o_S" />
       <node concept="3clFbS" id="70J2WaK_oVo" role="3clF47">
+        <node concept="3SKdUt" id="vFNcbkMZgg" role="3cqZAp">
+          <node concept="3SKdUq" id="vFNcbkMZgi" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME this code duplicates VisibilityUtil.isVisible(contextNode, this), isn't it?" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="vFNcbkN1xy" role="3cqZAp">
+          <node concept="3SKdUq" id="vFNcbkN1x$" role="3SKWNk">
+            <property role="3SKdUp" value="      E.g. check_ClassCreatorConstructorVisibility uses VisibilityUtil, while DefaultConstructorUtils resorts to this method." />
+          </node>
+        </node>
         <node concept="3clFbJ" id="49WhPGXqRUQ" role="3cqZAp">
           <node concept="3clFbS" id="49WhPGXqRUR" role="3clFbx">
             <node concept="3SKdUt" id="49WhPGXqRVE" role="3cqZAp">
@@ -6160,37 +6170,19 @@
           <node concept="3clFbS" id="5ziv_WIU8bz" role="3clFbx">
             <node concept="3cpWs6" id="5ziv_WIU8bU" role="3cqZAp">
               <node concept="3clFbC" id="5ziv_WIU8bW" role="3cqZAk">
-                <node concept="2OqwBi" id="5ziv_WIU8bX" role="3uHU7B">
-                  <node concept="2OqwBi" id="5ziv_WIU8bY" role="2Oq$k0">
-                    <node concept="37vLTw" id="2BHiRxgmOes" role="2Oq$k0">
-                      <ref role="3cqZAo" node="70J2WaK_oVq" resolve="contextNode" />
-                    </node>
-                    <node concept="z$bX8" id="5ziv_WIU8c0" role="2OqNvi">
-                      <node concept="1xMEDy" id="5ziv_WIU8c1" role="1xVPHs">
-                        <node concept="chp4Y" id="5ziv_WIU8c2" role="ri$Ld">
-                          <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
-                        </node>
-                      </node>
-                      <node concept="1xIGOp" id="5ziv_WIU8c3" role="1xVPHs" />
-                    </node>
+                <node concept="2YIFZM" id="vFNcbkN4VK" role="3uHU7B">
+                  <ref role="37wK5l" to="fnmy:2LflJcA4jWM" resolve="topClassifier" />
+                  <ref role="1Pybhc" to="fnmy:2Jvt1sWfuv6" resolve="VisibilityUtil" />
+                  <node concept="37vLTw" id="vFNcbkNfhD" role="37wK5m">
+                    <ref role="3cqZAo" node="70J2WaK_oVq" resolve="contextNode" />
                   </node>
-                  <node concept="1yVyf7" id="5ziv_WIU8c4" role="2OqNvi" />
                 </node>
-                <node concept="2OqwBi" id="5ziv_WIU8c5" role="3uHU7w">
-                  <node concept="2OqwBi" id="5ziv_WIU8c6" role="2Oq$k0">
-                    <node concept="37vLTw" id="2BHiRxgm7Mh" role="2Oq$k0">
-                      <ref role="3cqZAo" node="16lZq9cSB7A" resolve="contextClassifier" />
-                    </node>
-                    <node concept="z$bX8" id="5ziv_WIU8c8" role="2OqNvi">
-                      <node concept="1xMEDy" id="5ziv_WIU8c9" role="1xVPHs">
-                        <node concept="chp4Y" id="5ziv_WIU8ca" role="ri$Ld">
-                          <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
-                        </node>
-                      </node>
-                      <node concept="1xIGOp" id="5ziv_WIU8cb" role="1xVPHs" />
-                    </node>
+                <node concept="2YIFZM" id="vFNcbkNipX" role="3uHU7w">
+                  <ref role="37wK5l" to="fnmy:2LflJcA4jWM" resolve="topClassifier" />
+                  <ref role="1Pybhc" to="fnmy:2Jvt1sWfuv6" resolve="VisibilityUtil" />
+                  <node concept="37vLTw" id="vFNcbkNjs3" role="37wK5m">
+                    <ref role="3cqZAo" node="16lZq9cSB7A" resolve="contextClassifier" />
                   </node>
-                  <node concept="1yVyf7" id="5ziv_WIU8cc" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -31961,7 +31953,7 @@
                         </node>
                         <node concept="3fqX7Q" id="1GgL26RRuzt" role="3uHU7w">
                           <node concept="2YIFZM" id="1GgL26RRuzv" role="3fr31v">
-                            <ref role="37wK5l" to="pz2c:2Ja1M$RkGdY" resolve="containsDefaultConstructor" />
+                            <ref role="37wK5l" to="pz2c:2Ja1M$RkGdY" resolve="hasDefaultConstructor" />
                             <ref role="1Pybhc" to="pz2c:2Ja1M$RkGdS" resolve="DefaultConstructorUtils" />
                             <node concept="37vLTw" id="1GgL26RRuzw" role="37wK5m">
                               <ref role="3cqZAo" node="3fQ6dJ03ZE" resolve="it" />
@@ -67419,7 +67411,7 @@
                         </node>
                       </node>
                       <node concept="2YIFZM" id="2Ja1M$RkHtK" role="3uHU7w">
-                        <ref role="37wK5l" to="pz2c:2Ja1M$RkGdY" resolve="containsDefaultConstructor" />
+                        <ref role="37wK5l" to="pz2c:2Ja1M$RkGdY" resolve="hasDefaultConstructor" />
                         <ref role="1Pybhc" to="pz2c:2Ja1M$RkGdS" resolve="DefaultConstructorUtils" />
                         <node concept="37vLTw" id="1GgL26RRpff" role="37wK5m">
                           <ref role="3cqZAo" node="3fQ6dIZzmN" resolve="it" />

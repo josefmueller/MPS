@@ -3823,6 +3823,100 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3cpWs8" id="vFNcbkMkKA" role="3cqZAp">
+                      <node concept="3cpWsn" id="vFNcbkMkKB" role="3cpWs9">
+                        <property role="TrG5h" value="noArgCons" />
+                        <node concept="2OqwBi" id="vFNcbkO0DR" role="33vP2m">
+                          <node concept="2OqwBi" id="vFNcbkMkKC" role="2Oq$k0">
+                            <node concept="37vLTw" id="vFNcbkMkKD" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2Ja1M$RkHpc" resolve="clazz" />
+                            </node>
+                            <node concept="2qgKlT" id="vFNcbkMkKE" role="2OqNvi">
+                              <ref role="37wK5l" to="tpek:4_LVZ3pCvsd" resolve="constructors" />
+                            </node>
+                          </node>
+                          <node concept="1z4cxt" id="vFNcbkO1Ao" role="2OqNvi">
+                            <node concept="1bVj0M" id="vFNcbkO1Aq" role="23t8la">
+                              <node concept="3clFbS" id="vFNcbkO1Ar" role="1bW5cS">
+                                <node concept="3clFbF" id="vFNcbkO2Et" role="3cqZAp">
+                                  <node concept="2OqwBi" id="vFNcbkOaZV" role="3clFbG">
+                                    <node concept="2OqwBi" id="vFNcbkO3iw" role="2Oq$k0">
+                                      <node concept="37vLTw" id="vFNcbkO2Es" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="vFNcbkO1As" resolve="it" />
+                                      </node>
+                                      <node concept="3Tsc0h" id="vFNcbkO5ks" role="2OqNvi">
+                                        <ref role="3TtcxE" to="tpee:fzclF7Y" resolve="parameter" />
+                                      </node>
+                                    </node>
+                                    <node concept="1v1jN8" id="vFNcbkOi2O" role="2OqNvi" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="Rh6nW" id="vFNcbkO1As" role="1bW2Oz">
+                                <property role="TrG5h" value="it" />
+                                <node concept="2jxLKc" id="vFNcbkO1At" role="1tU5fm" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3Tqbb2" id="vFNcbkMkKr" role="1tU5fm">
+                          <ref role="ehGHo" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbJ" id="vFNcbkLFKR" role="3cqZAp">
+                      <node concept="3clFbS" id="vFNcbkLFKT" role="3clFbx">
+                        <node concept="3SKdUt" id="vFNcbkOu85" role="3cqZAp">
+                          <node concept="3SKdUq" id="vFNcbkOu87" role="3SKWNk">
+                            <property role="3SKdUp" value="Treat no-arg cons the same way as implicit default cons." />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="vFNcbkOxDJ" role="3cqZAp">
+                          <node concept="3SKdUq" id="vFNcbkOxDL" role="3SKWNk">
+                            <property role="3SKdUp" value="First of all, it's the way JLS tells us 'new' expression should look like (see 15.9 Class Instance Creation Expressions)" />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="vFNcbkOyAg" role="3cqZAp">
+                          <node concept="3SKdUq" id="vFNcbkOyAi" role="3SKWNk">
+                            <property role="3SKdUp" value="Second, it's much more handy to have single ML in templates for a class with no-arg cons, and use it to restore references in a declaration like:" />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="vFNcbkOzyP" role="3cqZAp">
+                          <node concept="3SKdUq" id="vFNcbkOzyR" role="3SKWNk">
+                            <property role="3SKdUp" value="        -&gt;[MyClass] x = new -&gt;[MyClass]();" />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="vFNcbkO$vu" role="3cqZAp">
+                          <node concept="3SKdUq" id="vFNcbkO$WU" role="3SKWNk">
+                            <property role="3SKdUp" value="        Use of ClassCreator there instead of DefaultClassCreator requires extra ML for the cons." />
+                          </node>
+                        </node>
+                        <node concept="3cpWs6" id="vFNcbkNrNp" role="3cqZAp">
+                          <node concept="3fqX7Q" id="vFNcbkNs9v" role="3cqZAk">
+                            <node concept="2OqwBi" id="vFNcbkNs9x" role="3fr31v">
+                              <node concept="37vLTw" id="vFNcbkNs9z" role="2Oq$k0">
+                                <ref role="3cqZAo" node="vFNcbkMkKB" resolve="noArgCons" />
+                              </node>
+                              <node concept="2qgKlT" id="vFNcbkNs9_" role="2OqNvi">
+                                <ref role="37wK5l" to="tpek:70J2WaK_oVl" resolve="isVisible" />
+                                <node concept="37vLTw" id="vFNcbkNs9A" role="37wK5m">
+                                  <ref role="3cqZAo" node="2Ja1M$RkHpc" resolve="clazz" />
+                                </node>
+                                <node concept="37vLTw" id="vFNcbkNs9B" role="37wK5m">
+                                  <ref role="3cqZAo" node="7HZRMj75ikM" resolve="contextNode" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3y3z36" id="vFNcbkOt_F" role="3clFbw">
+                        <node concept="10Nm6u" id="vFNcbkOu4R" role="3uHU7w" />
+                        <node concept="37vLTw" id="vFNcbkOpk$" role="3uHU7B">
+                          <ref role="3cqZAo" node="vFNcbkMkKB" resolve="noArgCons" />
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3SKdUt" id="2Ja1M$RkHtN" role="3cqZAp">
                       <node concept="3SKdUq" id="2Ja1M$RkHtO" role="3SKWNk">
                         <property role="3SKdUp" value="note: http://docs.oracle.com/javase/specs/jls/se5.0/html/classes.html#8.8.9" />
@@ -3836,7 +3930,7 @@
                     <node concept="3cpWs6" id="2Ja1M$RkHtE" role="3cqZAp">
                       <node concept="3fqX7Q" id="2Ja1M$RkHtG" role="3cqZAk">
                         <node concept="2YIFZM" id="2Ja1M$RkHtK" role="3fr31v">
-                          <ref role="37wK5l" to="pz2c:2Ja1M$RkGdY" resolve="containsDefaultConstructor" />
+                          <ref role="37wK5l" to="pz2c:2Ja1M$RkGdY" resolve="hasDefaultConstructor" />
                           <ref role="1Pybhc" to="pz2c:2Ja1M$RkGdS" resolve="DefaultConstructorUtils" />
                           <node concept="37vLTw" id="3GM_nagTACE" role="37wK5m">
                             <ref role="3cqZAo" node="2Ja1M$RkHpc" resolve="clazz" />

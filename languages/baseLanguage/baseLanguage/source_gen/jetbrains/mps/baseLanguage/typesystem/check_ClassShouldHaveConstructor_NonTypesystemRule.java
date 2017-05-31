@@ -23,7 +23,7 @@ public class check_ClassShouldHaveConstructor_NonTypesystemRule extends Abstract
   }
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!((SNodeOperations.isInstanceOf(classConcept, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2f89e470eed6258eL, "jetbrains.mps.baseLanguage.structure.IAnonymousClass")) || SNodeOperations.isInstanceOf(classConcept, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))))) {
-      if (!(Sequence.fromIterable(ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept)).isNotEmpty() || DefaultConstructorUtils.containsDefaultConstructor(classConcept))) {
+      if (!(Sequence.fromIterable(ClassConcept__BehaviorDescriptor.constructors_id4_LVZ3pCvsd.invoke(classConcept)).isNotEmpty() || DefaultConstructorUtils.hasDefaultConstructor(classConcept))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("name");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classConcept, "There is no default constructor available in super class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8974945326827961340", null, errorTarget);

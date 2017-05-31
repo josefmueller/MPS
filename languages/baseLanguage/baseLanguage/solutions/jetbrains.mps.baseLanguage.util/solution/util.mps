@@ -81,7 +81,9 @@
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
-      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
+      <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
+        <property id="1221565133444" name="isFinal" index="1EXbeo" />
+      </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -177,6 +179,12 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
@@ -2137,17 +2145,23 @@
   </node>
   <node concept="312cEu" id="2Ja1M$RkGdS">
     <property role="TrG5h" value="DefaultConstructorUtils" />
+    <property role="1EXbeo" value="true" />
     <node concept="3Tm1VV" id="2Ja1M$RkGdT" role="1B3o_S" />
     <node concept="3clFbW" id="2Ja1M$RkGdU" role="jymVt">
       <node concept="3cqZAl" id="2Ja1M$RkGdV" role="3clF45" />
-      <node concept="3Tm1VV" id="2Ja1M$RkGdW" role="1B3o_S" />
+      <node concept="3Tm6S6" id="vFNcbkL_HW" role="1B3o_S" />
       <node concept="3clFbS" id="2Ja1M$RkGdX" role="3clF47" />
     </node>
     <node concept="2YIFZL" id="2Ja1M$RkGdY" role="jymVt">
-      <property role="TrG5h" value="containsDefaultConstructor" />
+      <property role="TrG5h" value="hasDefaultConstructor" />
       <node concept="10P_77" id="2Ja1M$RkGe4" role="3clF45" />
       <node concept="3Tm1VV" id="2Ja1M$RkGe0" role="1B3o_S" />
       <node concept="3clFbS" id="2Ja1M$RkGe1" role="3clF47">
+        <node concept="3SKdUt" id="vFNcbkLBac" role="3cqZAp">
+          <node concept="3SKdUq" id="vFNcbkLBae" role="3SKWNk">
+            <property role="3SKdUp" value="tell if there's implicit constructor for clazz. Explicit no-argument cons is not deemed as default cons" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="2Ja1M$Rl2jA" role="3cqZAp">
           <node concept="3clFbS" id="2Ja1M$Rl2jB" role="3clFbx">
             <node concept="3cpWs6" id="2Ja1M$Rl2s2" role="3cqZAp">
