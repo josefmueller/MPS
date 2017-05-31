@@ -395,9 +395,6 @@
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
-      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
-        <reference id="1138056395725" name="property" index="3TsBF5" />
-      </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -1614,37 +1611,6 @@
       </node>
     </node>
     <node concept="382kZG" id="47y0FrqhJwP" role="lGtFl" />
-  </node>
-  <node concept="3p36aQ" id="47y0FrqhJx5">
-    <property role="3GE5qa" value="response.interactive" />
-    <ref role="aqKnT" to="eynw:22lVekVE19_" resolve="NodeReferenceString" />
-    <node concept="1s_PAr" id="47y0FrqhJx6" role="3ft7WO">
-      <node concept="2kknPI" id="47y0FrqhJx7" role="1s_PAo">
-        <ref role="2kkw0f" node="47y0FrqhJx3" resolve="NodeReferenceString_SmartReference" />
-      </node>
-    </node>
-    <node concept="2VfDsV" id="47y0FrqhJx8" role="3ft7WO" />
-  </node>
-  <node concept="Q6S24" id="47y0FrqhJx3">
-    <property role="TrG5h" value="NodeReferenceString_SmartReference" />
-    <property role="3GE5qa" value="response.interactive" />
-    <ref role="aqKnT" to="eynw:22lVekVE19_" resolve="NodeReferenceString" />
-    <node concept="3XHNnq" id="47y0FrqhJx1" role="3ft7WO">
-      <ref role="3XGfJA" to="eynw:igjXyutfLJ" resolve="target" />
-      <node concept="1WAQ3h" id="47y0FrqhJx2" role="1WZ6D9">
-        <node concept="3clFbS" id="47y0FrqhJwV" role="2VODD2">
-          <node concept="3clFbF" id="47y0FrqhJwW" role="3cqZAp">
-            <node concept="2OqwBi" id="47y0FrqhJwX" role="3clFbG">
-              <node concept="10Nm6u" id="47y0FrqhJx0" role="2Oq$k0" />
-              <node concept="3TrcHB" id="47y0FrqhJwZ" role="2OqNvi">
-                <ref role="3TsBF5" to="eynw:igjXyutu74" resolve="referencePresentation" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="382kZG" id="47y0FrqhJx4" role="lGtFl" />
   </node>
 </model>
 

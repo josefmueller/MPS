@@ -26,8 +26,12 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
+        <property id="4307758654697524057" name="prefix" index="1W_73P" />
+      </concept>
       <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
         <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+        <child id="8842732777748474935" name="refPresentationTemplate" index="ROhUF" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
@@ -681,6 +685,9 @@
     </node>
     <node concept="RPilO" id="47y0FrqaLiG" role="lGtFl">
       <ref role="RPilL" node="h6e2_cP" resolve="match" />
+      <node concept="ROjv2" id="6nammw77tya" role="ROhUF">
+        <property role="1W_73P" value="\" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="h6eCR45">
@@ -1017,6 +1024,9 @@
     </node>
     <node concept="RPilO" id="47y0FrqaLiD" role="lGtFl">
       <ref role="RPilL" node="3iI_KKpaFJ5" resolve="match" />
+      <node concept="ROjv2" id="6nammw77u2n" role="ROhUF">
+        <property role="1W_73P" value="\" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="3iI_KKpaF_i">
