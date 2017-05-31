@@ -17,8 +17,15 @@ import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUiComponent;
-import jetbrains.mps.cleanup.CleanupListener;
-import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.make.IMakeNotificationListener;
+import jetbrains.mps.make.MakeNotification;
+import jetbrains.mps.classloading.DeployListener;
+import java.util.Set;
+import jetbrains.mps.module.ReloadableModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.debugger.api.ui.icons.Icons;
@@ -76,30 +83,48 @@ public class BreakpointsIconCache implements ProjectComponent {
   };
   private final DebugSessionManagerComponent myDebugSessionManager;
   private final BreakpointsUiComponent myBreakpointsUiComponent;
-  private final CleanupListener myCleanupListener = new CleanupListener() {
+  private final IMakeService myMakeService;
+  private ClassLoaderManager myClassloaderManager;
+  private final IMakeNotificationListener myMakeListener = new IMakeNotificationListener.Stub() {
     @Override
-    public void performCleanup() {
+    public void scriptFinished(MakeNotification notification) {
+      myUpdateFromCurrent.invoke();
+    }
+  };
+  private DeployListener myDeployListener = new DeployListener() {
+    @Override
+    public void onUnloaded(Set<ReloadableModule> set, @NotNull ProgressMonitor monitor) {
+      // FIXME not sure it's proper moment to invalidate BP icons here (modules are still loaded, would any BP report it's no longer valid?) 
+      // nor do I think it's a nice idea to handle icons the way they are handled now. Just don't want to get too deep into all this crap. 
+      myUpdateFromCurrent.invoke();
+    }
+    @Override
+    public void onLoaded(Set<ReloadableModule> set, @NotNull ProgressMonitor monitor) {
       myUpdateFromCurrent.invoke();
     }
   };
 
-  public BreakpointsIconCache(Project project, BreakpointManagerComponent breakpointManager, DebugSessionManagerComponent debugSessionManager, BreakpointsUiComponent breakpointsUiComponent) {
+  public BreakpointsIconCache(Project project, BreakpointManagerComponent breakpointManager, DebugSessionManagerComponent debugSessionManager, BreakpointsUiComponent breakpointsUiComponent, MPSCoreComponents mpsCore, IMakeService makeService) {
     myProject = project;
     myBreakpointManager = breakpointManager;
     myDebugSessionManager = debugSessionManager;
     myBreakpointsUiComponent = breakpointsUiComponent;
+    myClassloaderManager = mpsCore.getClassLoaderManager();
+    myMakeService = makeService;
   }
 
   @Override
   public void projectOpened() {
     myBreakpointManager.addChangeListener(myBreakpointsManagerListener);
     myDebugSessionManager.addDebugSessionListener(myDebugSessionAdapter);
-    CleanupManager.getInstance().addCleanupListener(myCleanupListener);
+    myClassloaderManager.addListener(myDeployListener);
+    myMakeService.addListener(myMakeListener);
   }
 
   @Override
   public void projectClosed() {
-    CleanupManager.getInstance().removeCleanupListener(myCleanupListener);
+    myMakeService.removeListener(myMakeListener);
+    myClassloaderManager.removeListener(myDeployListener);
     myDebugSessionManager.removeDebugSessionListener(myDebugSessionAdapter);
     myBreakpointManager.removeChangeListener(myBreakpointsManagerListener);
   }
