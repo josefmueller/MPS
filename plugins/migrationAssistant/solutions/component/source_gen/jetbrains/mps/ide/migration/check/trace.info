@@ -151,10 +151,10 @@
       <node id="3305737716456468280" at="158,15,159,71" concept="2" />
       <node id="3305737716456468285" at="159,71,160,106" concept="2" />
       <node id="1287322040320019735" at="161,66,162,79" concept="7" />
-      <node id="1287322040320077655" at="162,79,163,69" concept="7" />
-      <node id="1287322040320138679" at="164,211,165,28" concept="8" />
-      <node id="1287322040320154954" at="166,15,167,80" concept="2" />
-      <node id="1287322040320190955" at="167,80,168,140" concept="2" />
+      <node id="1287322040320077655" at="162,79,163,76" concept="7" />
+      <node id="1287322040320138679" at="164,218,165,28" concept="8" />
+      <node id="1287322040320154954" at="166,15,167,87" concept="2" />
+      <node id="1287322040320190955" at="167,87,168,147" concept="2" />
       <node id="4698343510313226628" at="169,60,170,67" concept="7" />
       <node id="4698343510313226671" at="170,67,171,121" concept="2" />
       <node id="1287322040320364258" at="172,20,173,37" concept="9" />
@@ -187,7 +187,7 @@
       <node id="1315974995649578686" at="124,0,127,5" concept="5" />
       <node id="1287322040319724755" at="143,67,146,15" concept="5" />
       <node id="3305737716456468266" at="155,50,158,15" concept="5" />
-      <node id="1287322040320098441" at="163,69,166,15" concept="5" />
+      <node id="1287322040320098441" at="163,76,166,15" concept="5" />
       <node id="1287322040320333343" at="172,18,175,13" concept="0" />
       <node id="6179322598892735627" at="195,0,198,0" concept="6" trace="accept#(Ljetbrains/mps/module/ReloadableModule;)Z" />
       <node id="3203719742591130511" at="202,0,205,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/module/SDependency;)Z" />
@@ -205,8 +205,8 @@
       <node id="1315974995649684531" at="193,97,211,7" concept="2" />
       <node id="2482611074347892710" at="73,61,94,5" concept="0" />
       <node id="1315974995649658431" at="192,0,214,0" concept="12" trace="findBadModules#(Ljava/lang/Iterable;I)Ljava/util/Collection;" />
-      <node id="1287322040319379693" at="141,56,175,13" concept="5" />
-      <node id="3305737716456468247" at="141,0,179,0" concept="6" trace="process#(Ljetbrains/mps/project/validation/ValidationProblem;)Z" />
+      <node id="1287322040319379693" at="141,60,175,13" concept="5" />
+      <node id="3305737716456468247" at="141,0,179,0" concept="6" trace="process#(Ljetbrains/mps/project/validation/NodeValidationProblem;)Z" />
       <node id="3305737716456104613" at="139,128,179,11" concept="2" />
       <node id="6413859341758302428" at="68,0,113,0" concept="12" trace="getNotMigrated#(Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;I)Ljava/util/Collection;" />
       <node id="847913592342650696" at="138,66,185,7" concept="4" />
@@ -227,7 +227,7 @@
       <scope id="3875289449859978065" at="148,45,149,124" />
       <scope id="3875289449860232820" at="150,22,151,121" />
       <scope id="3305737716456468267" at="156,144,157,28" />
-      <scope id="1287322040320098443" at="164,211,165,28" />
+      <scope id="1287322040320098443" at="164,218,165,28" />
       <scope id="6179322598892735628" at="195,50,196,54" />
       <scope id="3203719742591130512" at="202,49,203,42" />
       <scope id="1315974995649713008" at="206,46,207,231" />
@@ -275,7 +275,7 @@
         <var name="concept" id="3305737716456468261" />
         <var name="err" id="3305737716456468255" />
       </scope>
-      <scope id="1287322040319993214" at="161,66,168,140">
+      <scope id="1287322040319993214" at="161,66,168,147">
         <var name="concept" id="1287322040320077656" />
         <var name="err" id="1287322040320019736" />
       </scope>
@@ -307,7 +307,7 @@
         <var name="maxErrors" id="1315974995649658435" />
         <var name="modules" id="1315974995649658432" />
       </scope>
-      <scope id="3305737716456468248" at="141,56,177,69" />
+      <scope id="3305737716456468248" at="141,60,177,69" />
       <scope id="3305737716456468247" at="141,0,179,0">
         <var name="vp" id="3305737716456468247" />
       </scope>

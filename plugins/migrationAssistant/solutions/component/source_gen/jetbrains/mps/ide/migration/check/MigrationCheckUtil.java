@@ -39,7 +39,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.NodeValidationProblem;
 import jetbrains.mps.project.validation.LanguageMissingError;
 import jetbrains.mps.project.validation.ConceptMissingError;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -137,8 +137,8 @@ public class MigrationCheckUtil {
       // find missing concepts, when language's not missing 
       // find missing concept features when concept's not missing 
       for (EditableSModel model : Sequence.fromIterable(((Iterable<SModel>) module.getModels())).ofType(EditableSModel.class)) {
-        ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<ValidationProblem>() {
-          public boolean process(ValidationProblem vp) {
+        ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<NodeValidationProblem>() {
+          public boolean process(NodeValidationProblem vp) {
             if (vp instanceof LanguageMissingError) {
               LanguageMissingError err = (LanguageMissingError) vp;
               if (SetSequence.fromSet(missingLangs).contains(err.getLanguage())) {
@@ -160,12 +160,12 @@ public class MigrationCheckUtil {
               ListSequence.fromList(result).addElement(new ConceptMissingProblem(concept, err.getNode()));
             } else if (vp instanceof ConceptFeatureMissingError) {
               ConceptFeatureMissingError err = (ConceptFeatureMissingError) vp;
-              SAbstractConcept concept = err.getFeature().getOwner();
-              if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept) || SetSequence.fromSet(missingFeatures).contains(err.getFeature())) {
+              SAbstractConcept concept = err.getConceptFeature().getOwner();
+              if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept) || SetSequence.fromSet(missingFeatures).contains(err.getConceptFeature())) {
                 return true;
               }
-              SetSequence.fromSet(missingFeatures).addElement(err.getFeature());
-              ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getFeature(), err.getNode(), err.getMessage()));
+              SetSequence.fromSet(missingFeatures).addElement(err.getConceptFeature());
+              ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getConceptFeature(), err.getNode(), err.getMessage()));
             } else if (vp instanceof BrokenReferenceError) {
               BrokenReferenceError err = (BrokenReferenceError) vp;
               ListSequence.fromList(result).addElement(new BrokenReferenceProblem(err.getReference(), err.getMessage()));

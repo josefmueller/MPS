@@ -1394,7 +1394,7 @@
                                         <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
                                       </node>
                                       <node concept="liA8E" id="17tv9cWNMXs" role="2OqNvi">
-                                        <ref role="37wK5l" to="6if8:~ConceptFeatureError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
+                                        <ref role="37wK5l" to="6if8:~ConceptFeatureError.getConceptFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getConceptFeature" />
                                       </node>
                                     </node>
                                     <node concept="liA8E" id="17tv9cWNMXt" role="2OqNvi">
@@ -1422,7 +1422,7 @@
                                           <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
                                         </node>
                                         <node concept="liA8E" id="17tv9cWO0Tu" role="2OqNvi">
-                                          <ref role="37wK5l" to="6if8:~ConceptFeatureError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
+                                          <ref role="37wK5l" to="6if8:~ConceptFeatureError.getConceptFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getConceptFeature" />
                                         </node>
                                       </node>
                                     </node>
@@ -1467,7 +1467,7 @@
                                         <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
                                       </node>
                                       <node concept="liA8E" id="17tv9cWOcko" role="2OqNvi">
-                                        <ref role="37wK5l" to="6if8:~ConceptFeatureError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
+                                        <ref role="37wK5l" to="6if8:~ConceptFeatureError.getConceptFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getConceptFeature" />
                                       </node>
                                     </node>
                                   </node>
@@ -1487,7 +1487,7 @@
                                             <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
                                           </node>
                                           <node concept="liA8E" id="17tv9cWOERz" role="2OqNvi">
-                                            <ref role="37wK5l" to="6if8:~ConceptFeatureError.getFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getFeature" />
+                                            <ref role="37wK5l" to="6if8:~ConceptFeatureError.getConceptFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getConceptFeature" />
                                           </node>
                                         </node>
                                         <node concept="2OqwBi" id="17tv9cWOIdv" role="37wK5m">
@@ -1611,8 +1611,8 @@
                       </node>
                       <node concept="37vLTG" id="2RwlJ15ZUXp" role="1bW2Oz">
                         <property role="TrG5h" value="vp" />
-                        <node concept="3uibUv" id="2RwlJ15ZUXq" role="1tU5fm">
-                          <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+                        <node concept="3uibUv" id="2Ii8KnfGdgp" role="1tU5fm">
+                          <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
                         </node>
                       </node>
                     </node>

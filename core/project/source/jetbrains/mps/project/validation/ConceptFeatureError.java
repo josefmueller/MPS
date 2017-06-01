@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.item.NodeFeatureReportItem;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * An error associated with a concept feature
  */
-public class ConceptFeatureError extends NodeValidationProblem {
+public class ConceptFeatureError extends NodeValidationProblem implements NodeFeatureReportItem {
   private final SConceptFeature myFeature;
 
   public ConceptFeatureError(SNode node, SConceptFeature feature, String message) {
@@ -29,7 +30,7 @@ public class ConceptFeatureError extends NodeValidationProblem {
     myFeature = feature;
   }
 
-  public SConceptFeature getFeature() {
+  public SConceptFeature getConceptFeature() {
     return myFeature;
   }
 }

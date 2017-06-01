@@ -15,14 +15,21 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.item.NodeFeatureReportItem;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.model.SReference;
 
-public class BrokenReferenceError extends NodeValidationProblem {
+public class BrokenReferenceError extends NodeValidationProblem implements NodeFeatureReportItem {
   private final SReference myReference;
 
   public BrokenReferenceError(SReference reference) {
     super(reference.getSourceNode(), "Broken reference: " + ((jetbrains.mps.smodel.SReference) reference).getResolveInfo());
     myReference = reference;
+  }
+
+  @Override
+  public SConceptFeature getConceptFeature() {
+    return getReference().getLink();
   }
 
   public SReference getReference() {
