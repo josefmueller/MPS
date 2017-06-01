@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
-import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +28,6 @@ public class ModelCacheReloader implements ApplicationComponent {
     // TODO rewrite using FileSystem.getInstance().addListener(..) 
     myVirtualFileManager = virtualFileManager;
     ListSequence.fromList(myCaches).addElement(TraceInfoCache.getInstance());
-    ListSequence.fromList(myCaches).addElement(BLDependenciesCache.getInstance());
     ListSequence.fromList(myCaches).addElement(GenerationDependenciesCache.getInstance());
   }
   @Override

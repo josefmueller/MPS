@@ -582,19 +582,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7mrRUyVUv32" role="3cqZAp">
-          <node concept="2OqwBi" id="7mrRUyVUv33" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuTvu" role="2Oq$k0">
-              <ref role="3cqZAo" node="7mrRUyVUv2H" resolve="myCaches" />
-            </node>
-            <node concept="TSZUe" id="7mrRUyVUv35" role="2OqNvi">
-              <node concept="2YIFZM" id="7mrRUyVUv36" role="25WWJ7">
-                <ref role="37wK5l" to="9fyk:~BLDependenciesCache.getInstance():jetbrains.mps.make.java.BLDependenciesCache" resolve="getInstance" />
-                <ref role="1Pybhc" to="9fyk:~BLDependenciesCache" resolve="BLDependenciesCache" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="7mrRUyVUv37" role="3cqZAp">
           <node concept="2OqwBi" id="7mrRUyVUv38" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeumur" role="2Oq$k0">

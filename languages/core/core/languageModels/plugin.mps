@@ -1127,6 +1127,35 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3SKdUt" id="URDuznnUfY" role="3cqZAp">
+                  <node concept="3SKdUq" id="URDuznnUg0" role="3SKWNk">
+                    <property role="3SKdUp" value="there's no really any use of the cached bl dependencies, provided each model from the set of resources is generated once and the cache is only populated, not read." />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="URDuznnXlm" role="3cqZAp">
+                  <node concept="3SKdUq" id="URDuznnXlo" role="3SKWNk">
+                    <property role="3SKdUp" value="however, it's better than global singleton, and, perhaps, some day we could pass it further to make to use readily available bl dependencies in ModuleMaker, so that it" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="URDuzno0lj" role="3cqZAp">
+                  <node concept="3SKdUq" id="URDuzno0ll" role="3SKWNk">
+                    <property role="3SKdUp" value="doesn't need to read these 'dependencies' files again with its Dependencies class." />
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="URDuznnrXD" role="3cqZAp">
+                  <node concept="3cpWsn" id="URDuznnrXE" role="3cpWs9">
+                    <property role="TrG5h" value="blDepsCache" />
+                    <property role="3TUv4t" value="true" />
+                    <node concept="3uibUv" id="URDuznnrXB" role="1tU5fm">
+                      <ref role="3uigEE" to="9fyk:~BLDependenciesCache" resolve="BLDependenciesCache" />
+                    </node>
+                    <node concept="2ShNRf" id="URDuznnrXF" role="33vP2m">
+                      <node concept="1pGfFk" id="URDuznnrXG" role="2ShVmc">
+                        <ref role="37wK5l" to="9fyk:~BLDependenciesCache.&lt;init&gt;()" resolve="BLDependenciesCache" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="2$JKZl" id="7A08csWcFQr" role="3cqZAp">
                   <node concept="3clFbS" id="7A08csWcFQt" role="2LFqv$">
                     <node concept="3cpWs8" id="7A08csWcILG" role="3cqZAp">
@@ -1916,9 +1945,8 @@
                                             <ref role="3cqZAo" node="3QuLV9OzOaK" resolve="cachesLocation" />
                                           </node>
                                           <node concept="2OqwBi" id="3QuLV9OzOb6" role="37wK5m">
-                                            <node concept="2YIFZM" id="3QuLV9OzOb7" role="2Oq$k0">
-                                              <ref role="1Pybhc" to="9fyk:~BLDependenciesCache" resolve="BLDependenciesCache" />
-                                              <ref role="37wK5l" to="9fyk:~BLDependenciesCache.getInstance():jetbrains.mps.make.java.BLDependenciesCache" resolve="getInstance" />
+                                            <node concept="37vLTw" id="URDuznnrXH" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="URDuznnrXE" resolve="blDepsCache" />
                                             </node>
                                             <node concept="liA8E" id="3QuLV9OzOb8" role="2OqNvi">
                                               <ref role="37wK5l" to="9fyk:~BLDependenciesCache.newCacheGenerator(jetbrains.mps.make.java.ModelDependencies):jetbrains.mps.generator.cache.CacheGenerator" resolve="newCacheGenerator" />

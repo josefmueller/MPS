@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.make.java;
 
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
@@ -28,7 +27,6 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
@@ -40,30 +38,8 @@ import java.io.InputStreamReader;
 
 public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
 
-  private static BLDependenciesCache INSTANCE;
-
-  public static BLDependenciesCache getInstance() {
-    return INSTANCE;
-  }
-
-  public BLDependenciesCache(SRepository repository, CleanupManager manager) {
-    super(repository, manager);
-  }
-
-  @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-
-    INSTANCE = this;
-    super.init();
-  }
-
-  @Override
-  public void dispose() {
-    super.dispose();
-    INSTANCE = null;
+  public BLDependenciesCache() {
+    super();
   }
 
   @Override
@@ -79,7 +55,7 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
   @Nullable
   @Override
   protected ModelDependencies readCache(SModel sm) {
-    return new ParseFacility<ModelDependencies>(getClass(), new CacheParser()).input(getCacheFile(sm)).parseSilently();
+    return new ParseFacility<>(getClass(), new CacheParser()).input(getCacheFile(sm)).parseSilently();
   }
 
   private class CacheGen implements CacheGenerator {
@@ -113,7 +89,7 @@ public class BLDependenciesCache extends BaseModelCache<ModelDependencies> {
         for (String filename : rdep.getFiles()) {
           // re-register baseLanguage dependencies
           if (modelDep == null) {
-            modelDep = BLDependenciesCache.getInstance().get(originalInputModel);
+            modelDep = BLDependenciesCache.this.get(originalInputModel);
           }
           if (modelDep != null) {
             RootDependencies root = modelDep.getDependency(filename);

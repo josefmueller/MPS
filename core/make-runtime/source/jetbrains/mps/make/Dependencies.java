@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ class Dependencies {
   private final Map<String, Set<String>> myExtendsDependencies = new HashMap<String, Set<String>>();
   private final Map<String, SModule> myFqName2Modules = new HashMap<String, SModule>();
   private final TObjectLongHashMap<String> myLastModified = new TObjectLongHashMap<String>();
+  private final BLDependenciesCache myBLDependenciesCache = new BLDependenciesCache();
 
   public Dependencies(Collection<? extends SModule> ms) {
     for (SModule m : ms) {
@@ -95,11 +96,14 @@ class Dependencies {
     }
 
     for (SModel md : m.getModels()) {
-      if (!SModelStereotype.isUserModel(md)) continue;
+      if (!SModelStereotype.isUserModel(md)) {
+        continue;
+      }
 
-      ModelDependencies dependRoot = BLDependenciesCache.getInstance().get(md);
-      if (dependRoot == null) continue;
-      add(m, dependRoot);
+      ModelDependencies dependRoot = myBLDependenciesCache.get(md);
+      if (dependRoot != null) {
+        add(m, dependRoot);
+      }
     }
   }
 

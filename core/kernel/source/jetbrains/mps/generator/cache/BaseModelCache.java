@@ -67,16 +67,29 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
     myCleanupManager = cleanupManager;
   }
 
+  protected BaseModelCache() {
+    myRepository = null;
+    myCleanupManager = null;
+  }
+
   @Override
   public void init() {
-    new RepoListenerRegistrar(myRepository, myRepoListener).attach();
-    myCleanupManager.addCleanupListener(this);
+    if (myRepository != null) {
+      new RepoListenerRegistrar(myRepository, myRepoListener).attach();
+    }
+    if (myCleanupManager != null) {
+      myCleanupManager.addCleanupListener(this);
+    }
   }
 
   @Override
   public void dispose() {
-    myCleanupManager.removeCleanupListener(this);
-    new RepoListenerRegistrar(myRepository, myRepoListener).detach();
+    if (myCleanupManager != null) {
+      myCleanupManager.removeCleanupListener(this);
+    }
+    if (myRepository != null) {
+      new RepoListenerRegistrar(myRepository, myRepoListener).detach();
+    }
   }
 
   @Nullable
