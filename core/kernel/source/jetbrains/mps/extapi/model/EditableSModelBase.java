@@ -152,17 +152,18 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     fireConflictDetected();
   }
 
-  private boolean checkAndResolveConflictOnSave() {
+  /**
+   * @return true iff there are no conflicts
+   */
+  private boolean areThereAnyConflictsOnSave() {
     if (needsReloading()) {
       LOG.warning("Model file " + getReference().getModelName() + " was modified externally! " +
                   "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       resolveDiskConflict();
-      return false;
+      return true;
     }
 
-    // FIXME!!!!!!!!!!!!!
-    // Paranoid check to avoid saving model during update (hack for MPS-6772)
-    return !needsReloading();
+    return false;
   }
 
   private void changeModelFile(IFile newModelFile) {
@@ -197,7 +198,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
     LOG.debug("Saving model " + getName().getLongName());
 
-    if (!checkAndResolveConflictOnSave()) {
+    if (areThereAnyConflictsOnSave()) {
       return;
     }
 
