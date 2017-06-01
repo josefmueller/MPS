@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
@@ -26,7 +27,7 @@ public final class MissingImportedLanguageError extends ValidationProblem {
   private final SLanguage myLang;
 
   public MissingImportedLanguageError(@NotNull SModel model, @NotNull SLanguage lang) {
-    super(Severity.ERROR, String.format("Can't find language: %s", lang.getQualifiedName()));
+    super(MessageStatus.ERROR, String.format("Can't find language: %s", lang.getQualifiedName()));
     myModel = model;
     myLang = lang;
   }

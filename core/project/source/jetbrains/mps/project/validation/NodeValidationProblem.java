@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -23,7 +24,7 @@ public class NodeValidationProblem extends ValidationProblem implements NodeRepo
   private final SNode myNode;
 
   public NodeValidationProblem(@NotNull SNode node, @NotNull String message) {
-    super(Severity.ERROR, message);
+    super(MessageStatus.ERROR, message);
     myNode = node;
   }
 

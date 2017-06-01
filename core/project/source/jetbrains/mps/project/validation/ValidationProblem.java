@@ -17,13 +17,12 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.ReportItem;
-import org.jetbrains.annotations.NotNull;
 
 public class ValidationProblem implements ReportItem {
   private String myMessage;
-  private Severity mySeverity;
+  private MessageStatus mySeverity;
 
-  public ValidationProblem(Severity severity, String message) {
+  public ValidationProblem(MessageStatus severity, String message) {
     mySeverity = severity;
     myMessage = message;
   }
@@ -39,24 +38,9 @@ public class ValidationProblem implements ReportItem {
     return myMessage;
   }
 
-  @NotNull
-  public Severity getSeverity_() {
-    return mySeverity;
-  }
-
-  public enum Severity{
-    ERROR, WARNING
-  }
-
   @Override
   public MessageStatus getSeverity() {
-    if (getSeverity_() == Severity.ERROR) {
-      return MessageStatus.ERROR;
-    }
-    if (getSeverity_() == Severity.WARNING) {
-      return MessageStatus.WARNING;
-    }
-    throw new IllegalStateException();
+    return mySeverity;
   }
 
 }

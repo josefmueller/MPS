@@ -16,7 +16,6 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.project.validation.ValidationProblem.Severity;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.util.ArrayList;

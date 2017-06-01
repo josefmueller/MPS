@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.ModelImports;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -33,7 +34,7 @@ public class MissingModelImport extends ValidationProblem {
   private final SModelReference myMissingImport;
 
   public MissingModelImport(@NotNull SModel model, @NotNull String msg, @NotNull SModelReference reference) {
-    super(Severity.WARNING, msg);
+    super(MessageStatus.WARNING, msg);
     myModel = model;
     myMessage = msg;
     myMissingImport = reference;

@@ -26,7 +26,6 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
 import jetbrains.mps.project.validation.ValidationUtil;
 import jetbrains.mps.project.validation.ValidationProblem;
-import jetbrains.mps.project.validation.ValidationProblem.Severity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;

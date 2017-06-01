@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -29,7 +30,7 @@ public class MissingModelError extends ValidationProblem {
   private final SModelReference myReference;
 
   public MissingModelError(SModel model, String msg, SModelReference reference) {
-    super(Severity.ERROR, msg);
+    super(MessageStatus.ERROR, msg);
     myModel = model;
     myReference = reference;
   }
