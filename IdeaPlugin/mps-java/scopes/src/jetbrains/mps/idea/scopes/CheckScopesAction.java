@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.textgen.trace.DebugInfo;
-import jetbrains.mps.textgen.trace.TraceInfoCache;
+import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.vfs.IFile;
@@ -129,7 +129,10 @@ public class CheckScopesAction extends AnAction {
   @Nullable
   private static PsiFile getFileForNode(Project project, SNode node) {
     SModel model = node.getModel();
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
+    if (model == null || model.getRepository() == null) {
+      return null;
+    }
+    DebugInfo debugInfo = new DefaultTraceInfoProvider(model.getRepository()).debugInfo(model);
     if (debugInfo == null) {
       return null;
     }

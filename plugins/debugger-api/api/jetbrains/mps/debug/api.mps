@@ -380,17 +380,8 @@
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
-      <concept id="1240216724530" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator" flags="nn" index="32Fmki" />
       <concept id="1240217271293" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" flags="nn" index="32HrFt" />
       <concept id="1167380149909" name="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" flags="nn" index="3dhRuq" />
-      <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
-        <child id="1197683466920" name="keyType" index="3rvQeY" />
-        <child id="1197683475734" name="valueType" index="3rvSg0" />
-      </concept>
-      <concept id="1197686869805" name="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" flags="nn" index="3rGOSV">
-        <child id="1197687026896" name="keyType" index="3rHrn6" />
-        <child id="1197687035757" name="valueType" index="3rHtpV" />
-      </concept>
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
     </language>
   </registry>
@@ -4094,27 +4085,6 @@
     <node concept="3Tm1VV" id="3SnNvqCaJDy" role="1B3o_S" />
     <node concept="3uibUv" id="3oTAX9lRJHY" role="EKbjA">
       <ref role="3uigEE" to="1m72:~ApplicationComponent" resolve="ApplicationComponent" />
-    </node>
-    <node concept="312cEg" id="74nKSDp1YGS" role="jymVt">
-      <property role="TrG5h" value="myCreatorsByConcept" />
-      <node concept="3Tm6S6" id="74nKSDp1YGT" role="1B3o_S" />
-      <node concept="3rvAFt" id="74nKSDp1YGX" role="1tU5fm">
-        <node concept="2pR195" id="2wPTxHz4tln" role="3rvSg0">
-          <ref role="3uigEE" node="5XBRz5LTEuC" resolve="BreakpointCreator" />
-        </node>
-        <node concept="17QB3L" id="2wPTxHz4vJR" role="3rvQeY" />
-      </node>
-      <node concept="2ShNRf" id="74nKSDp1YHa" role="33vP2m">
-        <node concept="32Fmki" id="74nKSDp1YHb" role="2ShVmc">
-          <node concept="17QB3L" id="2wPTxHz4x9P" role="3rHrn6" />
-          <node concept="2pR195" id="2wPTxHz4$k3" role="3rHtpV">
-            <ref role="3uigEE" node="5XBRz5LTEuC" resolve="BreakpointCreator" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2wPTxHz4BwW" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
     </node>
     <node concept="312cEg" id="74nKSDp1YGc" role="jymVt">
       <property role="TrG5h" value="myCreators" />

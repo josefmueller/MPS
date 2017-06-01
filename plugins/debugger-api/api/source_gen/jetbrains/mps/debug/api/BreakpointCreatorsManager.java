@@ -5,9 +5,6 @@ package jetbrains.mps.debug.api;
 import com.intellij.openapi.components.ApplicationComponent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.LinkedHashMap;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
@@ -27,8 +24,6 @@ import com.intellij.openapi.application.ApplicationManager;
 
 public class BreakpointCreatorsManager implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(BreakpointCreatorsManager.class);
-  @Deprecated
-  private Map<String, BreakpointCreator> myCreatorsByConcept = MapSequence.fromMap(new LinkedHashMap<String, BreakpointCreator>(16, (float) 0.75, false));
   private Set<BreakpointCreator> myCreators = SetSequence.fromSet(new LinkedHashSet<BreakpointCreator>());
 
   public BreakpointCreatorsManager() {

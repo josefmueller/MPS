@@ -26,11 +26,22 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * FIXME statics are not very smart way to deal with trace.info, provided we no longer cache these files, unless TraceInfoCache instance is shared between the
+ * calls (e.g. see {@link DefaultTraceInfoProvider})
  * @author Artem Tikhomirov
  */
 public class TraceInfo {
+
+  @Nullable
+  private static DebugInfo debugInfo(SModel model) {
+    if (model.getRepository() == null) {
+      return null;
+    }
+    return new DefaultTraceInfoProvider(model.getRepository()).debugInfo(model);
+  }
+
   public static boolean hasTrace(@Nullable SModel model) {
-    return model != null && null != TraceInfoCache.getInstance().get(model);
+    return model != null && null != debugInfo(model);
   }
 
   public static boolean hasTrace(@Nullable SNode node) {
@@ -45,7 +56,7 @@ public class TraceInfo {
     if (node == null || node.getModel() == null) {
       return null;
     }
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(node.getModel());
+    DebugInfo debugInfo = debugInfo(node.getModel());
     if (debugInfo != null) {
       return debugInfo.getPositionForNode(node);
     }
@@ -54,7 +65,7 @@ public class TraceInfo {
 
   @NotNull
   public static List<String> unitNames(@NotNull SNode node) {
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(node.getModel());
+    DebugInfo debugInfo = debugInfo(node.getModel());
     if (debugInfo == null) {
       return Collections.emptyList();
     }
@@ -68,7 +79,7 @@ public class TraceInfo {
   @Nullable
   public static String unitNameWithPosition(@NotNull SNode node, @NotNull Condition<TraceablePositionInfo> positionMatcher) {
     SModel model = node.getModel();
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
+    DebugInfo debugInfo = debugInfo(model);
     if (debugInfo == null) {
       return null;
     }

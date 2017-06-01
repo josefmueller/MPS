@@ -40,5 +40,6 @@
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="mps-ui" />
     <orderEntry type="module" module-name="mps-java-platform-base" />
+    <orderEntry type="module" module-name="debuginfo-api" />
   </component>
 </module>

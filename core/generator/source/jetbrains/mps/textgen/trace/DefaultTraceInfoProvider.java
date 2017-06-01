@@ -18,6 +18,7 @@ package jetbrains.mps.textgen.trace;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -36,9 +37,11 @@ import java.util.stream.StreamSupport;
  */
 public class DefaultTraceInfoProvider implements TraceInfoProvider {
   private final SRepository myRepository;
+  private final TraceInfoCache myTraceInfoCache;
 
   public DefaultTraceInfoProvider(@NotNull SRepository repository) {
     myRepository = repository;
+    myTraceInfoCache = TraceInfoCache.getInstance();
   }
 
   @Override
@@ -49,13 +52,25 @@ public class DefaultTraceInfoProvider implements TraceInfoProvider {
     // If cache, shall specify whether this provider listens to changes in TraceInfoCache or not. generally, shall not as caller has a chance to control
     // lifecycle of the provider and I expect uses of this class to be either short-lived or bound to another object (e.g. debug session) where it's
     // reasonable to expect no changes like removal of TraceInfoCache.
-    Predicate<SModel> notStubModelWithTrace = m -> !SModelStereotype.isStubModel(m) && TraceInfo.hasTrace(m);
+    Predicate<SModel> notStubModelWithTrace = m -> !SModelStereotype.isStubModel(m) && myTraceInfoCache.get(m) != null;
+    final Predicate<SModel> condition = nameCheck.and(notStubModelWithTrace).and(modelFilter);
     // XXX need a fast way to iterate over names of models accessible in a repository
     final DebugInfo[] debugInfos = new ModelAccessHelper(myRepository).runReadAction(() ->
             StreamSupport.stream(myRepository.getModules().spliterator(), false).flatMap(
-                module -> StreamSupport.stream(module.getModels().spliterator(), false)).filter(
-                nameCheck.and(notStubModelWithTrace).and(modelFilter)).map(m -> TraceInfoCache.getInstance().get(m)).toArray(DebugInfo[]::new)
+                module -> StreamSupport.stream(module.getModels().spliterator(), false)).filter(condition)
+                .map(myTraceInfoCache::get).toArray(DebugInfo[]::new)
     );
     return Arrays.stream(debugInfos);
+  }
+
+
+  /**
+   * XXX 1. j.u.Optional would make it much more fun
+   * XXX 2. Perhaps, should move it to TraceInfoProvider interface. OTOH, if I don't need SRepository cons argument, may have it separated
+   *        (to avoid useless model.getRepository() calls).
+   */
+  @Nullable
+  public DebugInfo debugInfo(@NotNull SModel model) {
+    return myTraceInfoCache.get(model);
   }
 }

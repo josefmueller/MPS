@@ -29,11 +29,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Level;
-import jetbrains.mps.textgen.trace.TraceInfo;
-import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
+import jetbrains.mps.textgen.trace.UnitPositionInfo;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.AbstractModule;
@@ -197,26 +199,35 @@ public class Java_Command {
         LOG.error("The hosting module's " + module + " classes are not managed by MPS");
       }
     }
-    if (!(TraceInfo.hasTrace(model))) {
+    DebugInfo debugInfo = new DefaultTraceInfoProvider(model.getRepository()).debugInfo(model);
+    if (debugInfo == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
       }
       return null;
     } else {
-      Iterable<String> unitNames = TraceInfo.unitNames(node);
-      if (Sequence.fromIterable(unitNames).isEmpty()) {
+      List<UnitPositionInfo> unitsForNode = debugInfo.getUnitsForNode(node);
+      if (unitsForNode.isEmpty()) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
         }
         return null;
-      } else if (Sequence.fromIterable(unitNames).count() == 1) {
-        return Sequence.fromIterable(unitNames).first();
+      } else if (unitsForNode.size() == 1) {
+        return unitsForNode.get(0).getUnitName();
       } else {
-        return TraceInfo.unitNameWithPosition(node, new Condition<TraceablePositionInfo>() {
-          public boolean met(TraceablePositionInfo position) {
-            return (eq_kk96hj_a0a0a0a0a1a0a0b0a4a62(position.getConcept(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) && (eq_kk96hj_a0a0a0a0a1a0a0b0a4a62_0(position.getPropertyString(), ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0e0b(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")))));
+        // if there's more than 1 unit, find one holding position that matches main method 
+        final SConcept staticMethodConcept = MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+        final String mainMethodTraceableProperty = ((String) BHReflection.invoke(_quotation_createNode_yvpt_a0a2a0b0a5a1(), SMethodTrimmedId.create("getTraceableProperty", null, "4pl5GY7LKmH")));
+        for (TraceablePositionInfo position : debugInfo.getRootInfo(SNodeOperations.getContainingRoot(node)).getPositions()) {
+          if (eq_kk96hj_a0a0a3a0b0a5a62(position.getConcept(), staticMethodConcept) && (eq_kk96hj_a0a0a0d0a1a0f0ab(position.getPropertyString(), mainMethodTraceableProperty))) {
+            for (UnitPositionInfo upi : unitsForNode) {
+              if (upi.contains(position.getFileName(), position.getStartLine())) {
+                return upi.getUnitName();
+              }
+            }
           }
-        });
+        }
+        return null;
       }
     }
   }
@@ -371,7 +382,7 @@ public class Java_Command {
     }
     return null;
   }
-  private static SNode _quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0e0b() {
+  private static SNode _quotation_createNode_yvpt_a0a2a0b0a5a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -404,10 +415,10 @@ public class Java_Command {
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a4a62(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a3a0b0a5a62(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a4a62_0(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0d0a1a0f0ab(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

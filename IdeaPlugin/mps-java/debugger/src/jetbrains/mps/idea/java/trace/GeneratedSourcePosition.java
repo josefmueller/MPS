@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,6 @@ import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
 import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
 import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.textgen.trace.NodeTraceInfo;
-import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -86,7 +85,12 @@ public class GeneratedSourcePosition {
 
   @Nullable
   public static GeneratedSourcePosition fromNode(final SNode node) {
-    NodeTraceInfo nti = new NodeTraceInfo(node, TraceInfoCache.getInstance().get(node.getModel()));
+    SModel model = node.getModel();
+    if (model == null || model.getRepository() == null) {
+      return null;
+    }
+
+    NodeTraceInfo nti = new NodeTraceInfo(node, new DefaultTraceInfoProvider(model.getRepository()).debugInfo(model));
     TraceablePositionInfo position = nti.getPosition();
     if (position == null) {
       return null;
