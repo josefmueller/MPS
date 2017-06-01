@@ -17,7 +17,9 @@ import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.project.validation.NodeValidationProblem;
-import jetbrains.mps.project.validation.SuppressingAwareProcessorDecorator;
+import jetbrains.mps.util.FilteringProcessor;
+import java.util.function.Predicate;
+import jetbrains.mps.checkers.ErrorReportUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -95,14 +97,21 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
-          MessageCollectProcessor<NodeValidationProblem> collector = new MessageCollectProcessor<NodeValidationProblem>(false) {
+          MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<ValidationProblem>(false) {
             @Override
-            protected String formatMessage(NodeValidationProblem problem) {
+            protected String formatMessage(ValidationProblem problem) {
               String err = super.formatMessage(problem);
-              return err + " in node " + problem.getNode().getNodeId();
+              if (problem instanceof NodeValidationProblem) {
+                err += err + " in node " + ((NodeValidationProblem) problem).getNode().getNodeId();
+              }
+              return err;
             }
           };
-          ValidationUtil.validateModelContent(sm.getRootNodes(), new SuppressingAwareProcessorDecorator(collector));
+          ValidationUtil.validateModelContent(sm.getRootNodes(), new FilteringProcessor<ValidationProblem>(collector, new Predicate<ValidationProblem>() {
+            public boolean test(ValidationProblem problem) {
+              return !((problem instanceof NodeValidationProblem)) || ErrorReportUtil.shouldReportError(((NodeValidationProblem) problem).getNode());
+            }
+          }));
           if (collector.getErrors().isEmpty()) {
             continue;
           }

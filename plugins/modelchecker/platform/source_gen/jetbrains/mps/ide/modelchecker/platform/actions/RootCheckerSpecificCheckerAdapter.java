@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.QuickFix_Runtime;
-import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
+import jetbrains.mps.errors.item.QuickFixReportItem;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -32,7 +32,7 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
 
   public IModelCheckerFix getFix(NodeReportItem nodeReportItem) {
     final SNode reporterNode = nodeReportItem.getNode();
-    final QuickFix_Runtime quickfix = TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getAutoApplicable(nodeReportItem);
+    final QuickFix_Runtime quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(nodeReportItem);
     if (reporterNode != null && quickfix != null) {
       final SNodeReference reporterNodeRef = reporterNode.getReference();
       return new IModelCheckerFix() {

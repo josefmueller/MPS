@@ -62,7 +62,6 @@
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
     <import index="k8ev" ref="r:f39afe13-666a-48f2-9d7c-2f9366f78fe5(jetbrains.mps.typesystemEngine.checker)" />
-    <import index="h9bu" ref="r:7e7e32d8-af70-42df-8993-b4832d5a25fe(jetbrains.mps.project.validation)" />
     <import index="gsia" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.event(JDK/)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
@@ -10374,12 +10373,12 @@
               <ref role="3uigEE" to="2gg1:~QuickFix_Runtime" resolve="QuickFix_Runtime" />
             </node>
             <node concept="2OqwBi" id="2PIlT5TAVN_" role="33vP2m">
-              <node concept="10M0yZ" id="2PIlT5TAVxu" role="2Oq$k0">
-                <ref role="3cqZAo" to="d6hs:~TypesystemReportItemAdapter.FLAVOUR_QUICKFIX" resolve="FLAVOUR_QUICKFIX" />
-                <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
+              <node concept="10M0yZ" id="2Ii8KnfEx3J" role="2Oq$k0">
+                <ref role="3cqZAo" to="d6hs:~QuickFixReportItem.FLAVOUR_QUICKFIX" resolve="FLAVOUR_QUICKFIX" />
+                <ref role="1PxDUh" to="d6hs:~QuickFixReportItem" resolve="QuickFixReportItem" />
               </node>
               <node concept="liA8E" id="2PIlT5TAWek" role="2OqNvi">
-                <ref role="37wK5l" to="d6hs:~TypesystemReportItemAdapter$QuickFixFlavour.getAutoApplicable(jetbrains.mps.errors.item.ReportItem):jetbrains.mps.errors.QuickFix_Runtime" resolve="getAutoApplicable" />
+                <ref role="37wK5l" to="d6hs:~QuickFixReportItem$QuickFixFlavour.getAutoApplicable(jetbrains.mps.errors.item.ReportItem):jetbrains.mps.errors.QuickFix_Runtime" resolve="getAutoApplicable" />
                 <node concept="37vLTw" id="2PIlT5TAWlF" role="37wK5m">
                   <ref role="3cqZAo" node="4Yjkqq9KZq0" resolve="nodeReportItem" />
                 </node>

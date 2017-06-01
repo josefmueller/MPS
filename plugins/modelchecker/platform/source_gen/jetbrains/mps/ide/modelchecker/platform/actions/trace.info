@@ -1641,7 +1641,7 @@
       <node id="7878931601198367013" at="28,24,29,26" concept="5" />
       <node id="7878931601198369019" at="29,26,30,30" concept="5" />
       <node id="5734016526290515513" at="33,65,34,56" concept="11" />
-      <node id="5734016526290515521" at="34,56,35,117" concept="11" />
+      <node id="5734016526290515521" at="34,56,35,108" concept="11" />
       <node id="5734016526290515537" at="36,51,37,73" concept="11" />
       <node id="5734016526290515546" at="39,32,40,65" concept="11" />
       <node id="5734016526290515555" at="41,33,42,43" concept="5" />
@@ -1663,7 +1663,7 @@
       <node id="5734016526289821206" at="56,33,64,5" concept="8" />
       <node id="5734016526290515544" at="39,0,48,0" concept="10" trace="doFix#()Z" />
       <node id="5734016526290515543" at="37,73,48,8" concept="12" />
-      <node id="5734016526290515535" at="35,117,49,5" concept="9" />
+      <node id="5734016526290515535" at="35,108,49,5" concept="9" />
       <node id="5734016526289821180" at="53,0,68,0" concept="10" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
       <node id="5734016526290515510" at="33,0,52,0" concept="10" trace="getFix#(Ljetbrains/mps/errors/item/NodeReportItem;)Ljetbrains/mps/ide/modelchecker/platform/actions/IModelCheckerFix;" />
       <scope id="5734016526290515566" at="44,18,45,25" />
