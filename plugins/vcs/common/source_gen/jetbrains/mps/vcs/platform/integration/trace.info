@@ -1348,7 +1348,7 @@
       <node id="7788464498752623212" at="197,11,222,9" concept="8" />
       <node id="7788464498752623400" at="258,0,284,0" concept="15" trace="doBackup#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/io/File;" />
       <node id="7788464498752623167" at="180,0,224,0" concept="9" trace="run#()V" />
-      <node id="7788464498752623163" at="178,50,224,32" concept="5" />
+      <node id="7788464498752623163" at="178,50,224,45" concept="5" />
       <node id="3408442363875236522" at="106,0,155,5" concept="8" />
       <node id="3408442363875165177" at="101,0,157,0" concept="9" trace="problemsDetected#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/Iterable;)V" />
       <node id="7788464498752623153" at="170,0,226,0" concept="9" trace="resolveDiskMemoryConflict#(Lorg/jetbrains/mps/openapi/model/EditableSModel;)V" />
@@ -1522,7 +1522,7 @@
         <var name="project" id="6444884150137918297" />
         <var name="repository" id="6444884150137876003" />
       </scope>
-      <scope id="7788464498752623162" at="170,70,224,32">
+      <scope id="7788464498752623162" at="170,70,224,45">
         <var name="backupFile" id="7788464498752623191" />
         <var name="file" id="758819840111701915" />
       </scope>
@@ -1545,7 +1545,7 @@
       <unit id="6444884150137186281" at="140,152,150,11" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$5$1" />
       <unit id="7788464498752623240" at="294,0,307,0" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$DiskMemoryConflictVersion" />
       <unit id="899038469128756686" at="135,37,154,7" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$5" />
-      <unit id="7788464498752623167" at="179,58,224,5" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7" />
+      <unit id="7788464498752623167" at="179,56,224,5" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener$7" />
       <unit id="7788464498752623152" at="62,0,325,0" name="jetbrains.mps.vcs.platform.integration.ModelStorageProblemsListener" />
     </file>
   </root>

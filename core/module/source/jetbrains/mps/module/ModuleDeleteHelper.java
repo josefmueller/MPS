@@ -71,15 +71,29 @@ public final class ModuleDeleteHelper {
     // fixme: MPS-18743
     modules.stream().filter(module -> module instanceof AbstractModule).forEach(module -> ((AbstractModule) module).save());
 
-    if (deleteFiles) {
-      modules.forEach(this::deleteModuleFiles);
-    }
-
     modules.forEach(this::removeFromProject);
 
-    if (deleteFiles) {
-      ModuleRepositoryFacade facade = new ModuleRepositoryFacade(myProject.getRepository());
-      modules.forEach(facade::unregisterModule);
+    ModuleRepositoryFacade facade = new ModuleRepositoryFacade(myProject.getRepository());
+    modules.forEach((module) -> {
+      if (deleteFiles) {
+        deleteModuleFiles(module);
+      }
+      unregisterGeneratorFromLanguage(module);
+      facade.unregisterModule(module);
+    });
+  }
+
+  private void unregisterGeneratorFromLanguage(@NotNull SModule module) {
+    // TODO: remove after Generator will be moved it's own descriptor file
+    // Second parameter prevent exceptions after Generator extraction from Language
+    if (module instanceof Generator && ((Generator) module).getDescriptorFile() == null) {
+      // This logic was taken from DeleteGeneratorHelper#delete() method
+      final Language sourceLanguage = ((Generator) module).getSourceLanguage();
+      LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
+      languageDescriptor.getGenerators().remove(((Generator) module).getModuleDescriptor());
+      sourceLanguage.setModuleDescriptor(languageDescriptor);
+      sourceLanguage.reload();
+      sourceLanguage.save();
     }
   }
 
@@ -128,24 +142,8 @@ public final class ModuleDeleteHelper {
   private void removeFromProject(SModule module) {
     //remove from project
     if (myProject.isProjectModule(module)) {
-      final SRepository repository = myProject.getRepository();
-      if (repository instanceof SRepositoryExt) {
-        ((SRepositoryExt) repository).unregisterModule(module, myProject);
-      }
       myProject.removeModule(module);
       ((ProjectBase) myProject).save();
-    }
-
-    // TODO: remove after Generator will be moved it's own descriptor file
-    // Second parameter prevent exceptions after Generator extraction from Language
-    if (module instanceof Generator && ((Generator) module).getDescriptorFile() == null) {
-      // This logic was taken from DeleteGeneratorHelper#delete() method
-      final Language sourceLanguage = ((Generator) module).getSourceLanguage();
-      LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
-      languageDescriptor.getGenerators().remove(((Generator) module).getModuleDescriptor());
-      sourceLanguage.setModuleDescriptor(languageDescriptor);
-      sourceLanguage.reload();
-      sourceLanguage.save();
     }
   }
 

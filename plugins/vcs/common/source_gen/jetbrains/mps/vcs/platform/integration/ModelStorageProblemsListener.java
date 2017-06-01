@@ -176,7 +176,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
     }
     final IFile file = ((FileDataSource) model.getSource()).getFile();
     final File backupFile = doBackup(file, model);
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
         // do nothing if conflict was already resolved and model was saved or reloaded or unregistered 
         if (!(model.isChanged()) || model.getRepository() == null) {
@@ -221,7 +221,7 @@ public class ModelStorageProblemsListener extends SRepositoryContentAdapter {
           });
         }
       }
-    }, ModalityState.NON_MODAL);
+    }, ModalityState.defaultModalityState());
   }
 
   private static boolean showDeletedFromDiskQuestion(SModel inMemory, File backupFile) {
