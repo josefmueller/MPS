@@ -16,11 +16,18 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.errors.item.QuickFixReportItem;
 import jetbrains.mps.errors.item.ReportItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-public class ValidationProblem implements ReportItem {
+import java.util.Collection;
+import java.util.Collections;
+
+public class ValidationProblem implements ReportItem, QuickFixReportItem {
   private @Nullable String myMessage;
   private MessageStatus mySeverity;
 
@@ -41,6 +48,29 @@ public class ValidationProblem implements ReportItem {
   }
 
   public void fix(){
+  }
+
+  // this quickfix is intended to be used only in Model Checker, not in editor
+  private final QuickFixProvider myQuickFixProvider = new QuickFixProvider() {
+    @Override
+    public QuickFix_Runtime getQuickFix() {
+      return new QuickFix_Runtime() {
+        @Override
+        public void execute(SNode node) {
+          fix();
+        }
+      };
+    }
+    @Override
+    public boolean isExecutedImmediately() {
+      // model Checker ignores quickfixes that cannot be applied immediately
+      return true;
+    }
+  };
+
+  @Override
+  public Collection<QuickFixProvider> getQuickFixProviders() {
+    return canFix() ? Collections.singleton(myQuickFixProvider) : Collections.emptyList();
   }
 
   @SuppressWarnings({"ConstantConditions", "NullableProblems"})

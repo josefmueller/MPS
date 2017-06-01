@@ -36,13 +36,4 @@ public class LanguageMissingError extends NodeValidationProblem {
     return myCompletelyAbsent;
   }
 
-  @Override
-  public boolean canFix() {
-    return false;
-  }
-
-  @Override
-  public void fix() {
-
-  }
 }

@@ -31,4 +31,10 @@ public class NodeValidationProblem extends ValidationProblem implements NodeRepo
   public SNode getNode() {
     return myNode;
   }
+
+  @Override
+  public final boolean canFix() {
+    return false;
+  }
+
 }

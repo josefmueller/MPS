@@ -36,13 +36,4 @@ public class BrokenReferenceError extends NodeValidationProblem implements NodeF
     return myReference;
   }
 
-  @Override
-  public boolean canFix() {
-    return false;
-  }
-
-  @Override
-  public void fix() {
-
-  }
 }

@@ -30,13 +30,4 @@ public class ConceptMissingError extends NodeValidationProblem {
     return myConcept;
   }
 
-  @Override
-  public boolean canFix() {
-    return false;
-  }
-
-  @Override
-  public void fix() {
-
-  }
 }
