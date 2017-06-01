@@ -25,8 +25,13 @@ public abstract class LanguageErrorsCollector {
     for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, false))) {
       addDependency(anc);
     }
+    addErrorWithoutDependencies(node, errorString, ruleNode);
+  }
+
+  public void addErrorWithoutDependencies(@NotNull SNode node, String errorString, @Nullable SNodeReference ruleNode) {
     addErrorWithoutDependencies(node, errorString, ruleNode, new NodeMessageTarget());
   }
+
 
   public void addErrorWithoutDependencies(@NotNull SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget) {
     addErrorWithoutDependencies(errorNode, errorString, ruleNode, messageTarget, null);

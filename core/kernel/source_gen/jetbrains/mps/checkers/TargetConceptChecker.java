@@ -26,7 +26,7 @@ public class TargetConceptChecker extends AbstractNodeChecker {
     })) {
       SContainmentLink link = SNodeOperations.getContainingLink(child);
       if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(link.getTargetConcept()), SNodeOperations.asSConcept(SNodeOperations.getConcept(child))))) {
-        errorsCollector.addErrorAndAddDependenciesOnParents(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + link.getTargetConcept().getQualifiedName() + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
+        errorsCollector.addErrorWithoutDependencies(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + link.getTargetConcept().getQualifiedName() + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
       }
     }
 

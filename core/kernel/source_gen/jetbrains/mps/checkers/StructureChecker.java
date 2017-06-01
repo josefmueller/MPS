@@ -15,7 +15,7 @@ public class StructureChecker extends AbstractNodeChecker {
         if (vp.getSeverity() != ValidationProblem.Severity.ERROR) {
           return true;
         }
-        errorsCollector.addErrorAndAddDependenciesOnParents(node, vp.getMessage(), null);
+        errorsCollector.addErrorWithoutDependencies(node, vp.getMessage(), null);
         return true;
       }
     });
