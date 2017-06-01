@@ -10,14 +10,17 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Set;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CheckingTestsUtil {
   private final CheckingTestStatistic myStats;
@@ -36,26 +39,32 @@ public class CheckingTestsUtil {
         continue;
       }
       for (SNode root : SModelOperations.roots(((SModel) sm), null)) {
-        Set<IErrorReporter> errorReporters = null;
+        final Set<NodeReportItem> reportItems = SetSequence.fromSet(new HashSet<NodeReportItem>());
         try {
-          errorReporters = checker.getErrors(root, sm.getRepository());
+          checker.processErrors(root, sm.getRepository(), new Processor<NodeReportItem>() {
+            public boolean process(NodeReportItem reportItem) {
+              SetSequence.fromSet(reportItems).addElement(reportItem);
+              return true;
+            }
+          });
         } catch (IllegalStateException e) {
           errors.add(e.getMessage());
+          return errors;
         }
-        for (IErrorReporter reporter : errorReporters) {
-          if (!(ErrorReportUtil.shouldReportError(reporter.getSNode()))) {
+        for (NodeReportItem reportItem : reportItems) {
+          if (!(ErrorReportUtil.shouldReportError(reportItem.getNode()))) {
             continue;
           }
 
-          if (reporter.getMessageStatus().equals(MessageStatus.ERROR)) {
-            SNode node = reporter.getSNode();
+          if (reportItem.getSeverity().equals(MessageStatus.ERROR)) {
+            SNode node = reportItem.getNode();
             if (!(CheckingTestsUtil.filterIssue(node))) {
               continue;
             }
             myStats.reportError();
-            errors.add("Error message: " + reporter.reportError() + "   model: " + SNodeOperations.getModelLongName(node.getModel()) + " root: " + node.getContainingRoot() + " node: " + node);
+            errors.add("Error message: " + reportItem.getMessage() + "   model: " + node.getModel().getName().getValue() + " root: " + node.getContainingRoot() + " node: " + node);
           }
-          if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
+          if (reportItem.getSeverity().equals(MessageStatus.WARNING)) {
             myStats.reportWarning();
           }
         }
@@ -69,7 +78,7 @@ public class CheckingTestsUtil {
       return true;
     }
     for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, 0x11b07abae7cL, "nodeOperations"))) {
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
+      if (SNodeOperations.isInstanceOf(property, MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation"))) {
         return false;
       }
     }
