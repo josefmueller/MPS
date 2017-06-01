@@ -1469,12 +1469,12 @@
                   <node concept="3cpWsn" id="2v0ve8x$piw" role="3cpWs9">
                     <property role="TrG5h" value="quickFix" />
                     <node concept="2OqwBi" id="2PIlT5TBqxN" role="33vP2m">
-                      <node concept="10M0yZ" id="2PIlT5TBqxM" role="2Oq$k0">
-                        <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
-                        <ref role="3cqZAo" to="d6hs:~TypesystemReportItemAdapter.FLAVOUR_QUICKFIX" resolve="FLAVOUR_QUICKFIX" />
+                      <node concept="10M0yZ" id="iyHbAb4BF0" role="2Oq$k0">
+                        <ref role="3cqZAo" to="d6hs:~QuickFixReportItem.FLAVOUR_QUICKFIX" resolve="FLAVOUR_QUICKFIX" />
+                        <ref role="1PxDUh" to="d6hs:~QuickFixReportItem" resolve="QuickFixReportItem" />
                       </node>
                       <node concept="liA8E" id="2PIlT5TBqxO" role="2OqNvi">
-                        <ref role="37wK5l" to="d6hs:~TypesystemReportItemAdapter$QuickFixFlavour.getAutoApplicable(jetbrains.mps.errors.item.ReportItem):jetbrains.mps.errors.QuickFix_Runtime" resolve="getAutoApplicable" />
+                        <ref role="37wK5l" to="d6hs:~QuickFixReportItem$QuickFixFlavour.getAutoApplicable(jetbrains.mps.errors.item.ReportItem):jetbrains.mps.errors.QuickFix_Runtime" resolve="getAutoApplicable" />
                         <node concept="2OqwBi" id="2PIlT5TBqBW" role="37wK5m">
                           <node concept="37vLTw" id="2PIlT5TBqBV" role="2Oq$k0">
                             <ref role="3cqZAo" node="2v0ve8x$pi8" resolve="message" />
