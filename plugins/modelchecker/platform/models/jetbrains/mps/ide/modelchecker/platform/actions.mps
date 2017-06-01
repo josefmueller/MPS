@@ -5112,29 +5112,17 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="3GPUCPFioPL" role="3clF47">
-        <node concept="3cpWs6" id="3GPUCPFipHI" role="3cqZAp">
-          <node concept="3K4zz7" id="3GPUCPFipHU" role="3cqZAk">
-            <node concept="3clFbC" id="3GPUCPFipHV" role="3K4Cdx">
-              <node concept="Rm8GO" id="3GPUCPFipHW" role="3uHU7w">
-                <ref role="1Px2BO" to="6if8:~ValidationProblem$Severity" resolve="ValidationProblem.Severity" />
-                <ref role="Rm8GQ" to="6if8:~ValidationProblem$Severity.ERROR" resolve="ERROR" />
+        <node concept="3clFbF" id="2Ii8KnfFF2o" role="3cqZAp">
+          <node concept="2YIFZM" id="2Ii8KnfFG1G" role="3clFbG">
+            <ref role="37wK5l" node="3etVqSRRx8e" resolve="getResultCategory" />
+            <ref role="1Pybhc" node="3etVqSRRx7i" resolve="SpecificChecker" />
+            <node concept="2OqwBi" id="2Ii8KnfFGIC" role="37wK5m">
+              <node concept="37vLTw" id="2Ii8KnfFGz8" role="2Oq$k0">
+                <ref role="3cqZAo" node="3GPUCPFipkD" resolve="vp" />
               </node>
-              <node concept="2OqwBi" id="3GPUCPFipHX" role="3uHU7B">
-                <node concept="37vLTw" id="3GPUCPFipHY" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3GPUCPFipkD" resolve="vp" />
-                </node>
-                <node concept="liA8E" id="3GPUCPFipHZ" role="2OqNvi">
-                  <ref role="37wK5l" to="6if8:~ValidationProblem.getSeverity():jetbrains.mps.project.validation.ValidationProblem$Severity" resolve="getSeverity" />
-                </node>
+              <node concept="liA8E" id="2Ii8KnfFHlk" role="2OqNvi">
+                <ref role="37wK5l" to="6if8:~ValidationProblem.getSeverity():jetbrains.mps.errors.MessageStatus" resolve="getSeverity" />
               </node>
-            </node>
-            <node concept="10M0yZ" id="3GPUCPFipI0" role="3K4E3e">
-              <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
-              <ref role="3cqZAo" node="3etVqSRKzLr" resolve="SEVERITY_ERROR" />
-            </node>
-            <node concept="10M0yZ" id="3GPUCPFipI1" role="3K4GZi">
-              <ref role="1PxDUh" node="3etVqSRKzLq" resolve="ModelChecker" />
-              <ref role="3cqZAo" node="3etVqSRKzLv" resolve="SEVERITY_WARNING" />
             </node>
           </node>
         </node>

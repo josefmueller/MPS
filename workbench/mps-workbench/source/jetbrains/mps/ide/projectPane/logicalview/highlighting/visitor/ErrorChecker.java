@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.ErrorStateNodeUpdate;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
@@ -58,7 +59,7 @@ public class ErrorChecker extends TreeUpdateVisitor {
         ValidationUtil.validateModel(modelDescriptor, new Processor<ValidationProblem>() {
           @Override
           public boolean process(ValidationProblem problem) {
-            if (problem.getSeverity() == Severity.ERROR) {
+            if (problem.getSeverity() == MessageStatus.ERROR) {
               errors.add(problem.getMessage());
             } else {
               warnings.add(problem.getMessage());
@@ -103,7 +104,7 @@ public class ErrorChecker extends TreeUpdateVisitor {
     public ErrorReport(MPSTreeNode node, List<String> errors, List<String> warns) {
       myNode = node;
       this.errors = errors;
-      this.warns = warns == null ? Collections.<String>emptyList() : warns;
+      this.warns = warns == null ? Collections.emptyList() : warns;
     }
 
 

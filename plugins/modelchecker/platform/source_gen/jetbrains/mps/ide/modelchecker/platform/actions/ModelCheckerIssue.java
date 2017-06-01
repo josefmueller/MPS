@@ -50,7 +50,7 @@ public abstract class ModelCheckerIssue {
   }
 
   private static String toCheckerSeverity(ValidationProblem vp) {
-    return (vp.getSeverity() == ValidationProblem.Severity.ERROR ? ModelChecker.SEVERITY_ERROR : ModelChecker.SEVERITY_WARNING);
+    return SpecificChecker.getResultCategory(vp.getSeverity());
   }
 
   public static class NodeIssue extends ModelCheckerIssue {

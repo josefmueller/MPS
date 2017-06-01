@@ -81,7 +81,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.ide.messages.Icons" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.IModelCheckerFix" />
-    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker" />
+    <classNode dependClassName="jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationProblem" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

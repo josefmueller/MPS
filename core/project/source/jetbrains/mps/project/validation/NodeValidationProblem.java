@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.item.NodeReportItem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class NodeValidationProblem extends ValidationProblem {
+public class NodeValidationProblem extends ValidationProblem implements NodeReportItem {
   private final SNode myNode;
 
-  public NodeValidationProblem(Severity severity, SNode node, String message) {
-    super(severity, message);
+  public NodeValidationProblem(@NotNull SNode node, @NotNull String message) {
+    super(Severity.ERROR, message);
     myNode = node;
   }
 

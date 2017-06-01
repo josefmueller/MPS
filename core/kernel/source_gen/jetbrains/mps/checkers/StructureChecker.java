@@ -5,22 +5,16 @@ package jetbrains.mps.checkers;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.validation.ValidationUtil;
-import jetbrains.mps.util.FilteringProcessor;
-import jetbrains.mps.project.validation.ValidationProblem;
 import org.jetbrains.mps.openapi.util.Processor;
-import java.util.function.Predicate;
+import jetbrains.mps.project.validation.NodeValidationProblem;
 
 public class StructureChecker extends AbstractNodeChecker {
-  public void checkNode(final SNode node, final LanguageErrorsCollector errorsCollector, SRepository repository) {
-    ValidationUtil.validateSingleNode(node, new FilteringProcessor<ValidationProblem>(new Processor<ValidationProblem>() {
-      public boolean process(ValidationProblem vp) {
-        errorsCollector.addErrorWithoutDependencies(node, vp.getMessage(), null);
+  public void checkNode(SNode node, final LanguageErrorsCollector errorsCollector, SRepository repository) {
+    ValidationUtil.validateSingleNode(node, new Processor<NodeValidationProblem>() {
+      public boolean process(NodeValidationProblem vp) {
+        errorsCollector.addError(vp);
         return true;
       }
-    }, new Predicate<ValidationProblem>() {
-      public boolean test(ValidationProblem vp) {
-        return vp.getSeverity() == ValidationProblem.Severity.ERROR;
-      }
-    }));
+    });
   }
 }

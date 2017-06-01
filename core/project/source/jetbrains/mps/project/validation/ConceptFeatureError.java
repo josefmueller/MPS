@@ -25,7 +25,7 @@ public class ConceptFeatureError extends NodeValidationProblem {
   private final SConceptFeature myFeature;
 
   public ConceptFeatureError(SNode node, SConceptFeature feature, String message) {
-    super(Severity.ERROR, node, message);
+    super(node, message);
     myFeature = feature;
   }
 
