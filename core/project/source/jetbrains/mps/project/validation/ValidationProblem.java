@@ -17,12 +17,21 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.ReportItem;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class ValidationProblem implements ReportItem {
-  private String myMessage;
+  private @Nullable String myMessage;
   private MessageStatus mySeverity;
 
-  public ValidationProblem(MessageStatus severity, String message) {
+  // calling this constructor be sure to override getMessage()
+  public ValidationProblem(MessageStatus severity) {
+    mySeverity = severity;
+    myMessage = null;
+  }
+
+  // this constructor is called in classes that do not override getMessage()
+  public ValidationProblem(MessageStatus severity, @NotNull String message) {
     mySeverity = severity;
     myMessage = message;
   }
@@ -34,6 +43,8 @@ public class ValidationProblem implements ReportItem {
   public void fix(){
   }
 
+  @SuppressWarnings({"ConstantConditions", "NullableProblems"})
+  @NotNull
   public String getMessage() {
     return myMessage;
   }

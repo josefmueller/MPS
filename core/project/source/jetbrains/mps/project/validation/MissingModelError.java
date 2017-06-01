@@ -18,8 +18,11 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Tells there's an import for a model but target model could get resolved and likely is missing.
@@ -28,11 +31,24 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 public class MissingModelError extends ValidationProblem {
   private final SModel myModel;
   private final SModelReference myReference;
+  private final boolean missingModule;
 
-  public MissingModelError(SModel model, String msg, SModelReference reference) {
-    super(MessageStatus.ERROR, msg);
+  public MissingModelError(SModel model, SModelReference reference, SRepository repository) {
+    super(MessageStatus.ERROR);
     myModel = model;
     myReference = reference;
+    SModuleReference depModule = reference.getModuleReference();
+    missingModule = depModule != null && depModule.resolve(repository) == null;
+  }
+
+  @NotNull
+  @Override
+  public String getMessage() {
+    if (missingModule) {
+      return String.format("Can't find imported model %s due to missing module %s", myReference.getName(), myReference.getModuleReference().getModuleName());
+    } else {
+      return String.format("Can't find imported model: %s", myReference.getName());
+    }
   }
 
   public SModel getModel() {

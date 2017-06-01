@@ -256,14 +256,7 @@ public class ValidationUtil {
     final SModelReference modelToValidateRef = model.getReference();
     for (final SModelReference reference : SModelOperations.getImportedModelUIDs(model)) {
       if (reference.resolve(repository) == null) {
-        final SModuleReference depModule = reference.getModuleReference();
-        final String msg;
-        if (depModule != null && depModule.resolve(repository) == null) {
-          msg = String.format("Can't find imported model %s due to missing module %s", reference.getName(), depModule.getModuleName());
-        } else {
-          msg = String.format("Can't find imported model: %s", reference.getName());
-        }
-        if (!processor.process(new MissingModelError(model, msg, reference))) {
+        if (!processor.process(new MissingModelError(model, reference, repository))) {
           return;
         }
       } else {

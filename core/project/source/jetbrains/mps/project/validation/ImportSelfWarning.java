@@ -17,6 +17,7 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -25,9 +26,15 @@ public class ImportSelfWarning extends ValidationProblem {
   private final SModelReference myReference;
 
   public ImportSelfWarning(SModel model, SModelReference reference) {
-    super(MessageStatus.WARNING, "Model should not import itself: " + model.getModelName());
+    super(MessageStatus.WARNING);
     myModel = model;
     myReference = reference;
+  }
+
+  @NotNull
+  @Override
+  public String getMessage() {
+    return "Model should not import itself: " + myModel.getName().getValue();
   }
 
   public SModel getModel() {
