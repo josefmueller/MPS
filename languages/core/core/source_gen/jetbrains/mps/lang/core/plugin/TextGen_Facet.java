@@ -39,6 +39,7 @@ import java.util.HashMap;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import java.util.concurrent.TimeUnit;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.generator.GenerationFacade;
@@ -55,7 +56,6 @@ import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.text.impl.BLDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.text.impl.DebugInfoBuilder;
 import jetbrains.mps.generator.ModelExports;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
@@ -243,6 +243,8 @@ public class TextGen_Facet extends IFacet.Stub {
                 // however, it's better than global singleton, and, perhaps, some day we could pass it further to make to use readily available bl dependencies in ModuleMaker, so that it 
                 // doesn't need to read these 'dependencies' files again with its Dependencies class. 
                 final BLDependenciesCache blDepsCache = new BLDependenciesCache();
+                // same as above applies to cache of trace.info 
+                final TraceInfoCache traceInfoCache = new TraceInfoCache();
                 while (modelsCount-- > 0) {
                   final TextGenResult tgr = resultQueue.poll(3, TimeUnit.MINUTES);
 
@@ -312,7 +314,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       cgl.register(cachesLocation, blDepsCache.newCacheGenerator(new BLDependenciesBuilder().build(tgr)));
                       cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
                       if (_generateDebugInfo) {
-                        cgl.register(javaSourcesLoc, TraceInfoCache.getInstance().newCacheGenerator(new DebugInfoBuilder(mpsProject.getRepository()).build(tgr)));
+                        cgl.register(javaSourcesLoc, traceInfoCache.newCacheGenerator(new DebugInfoBuilder(mpsProject.getRepository()).build(tgr)));
                       }
                       cgl.register(javaSourcesLoc, new ModelExports.CacheGen());
                       cgl.register(javaSourcesLoc, new CrossModelEnvironment.CacheGen());

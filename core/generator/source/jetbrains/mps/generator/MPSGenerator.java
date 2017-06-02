@@ -20,7 +20,6 @@ import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.textgen.trace.TraceInfoCache;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -43,7 +42,6 @@ public final class MPSGenerator extends ComponentPlugin {
     // XXX revisit once we got honest per-project repositories. It's not clear which project to take here
     SRepository repository = MPSModuleRepository.getInstance();
     CleanupManager clManager = CleanupManager.getInstance();
-    init(new TraceInfoCache(repository, clManager));
     final ModelGenerationStatusManager mgsm = init(new ModelGenerationStatusManager());
     final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(repository, clManager, mgsm));
     mgsm.setModelHashSource(depsCache);

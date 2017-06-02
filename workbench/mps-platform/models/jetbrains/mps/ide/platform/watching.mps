@@ -569,19 +569,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7mrRUyVUv2X" role="3cqZAp">
-          <node concept="2OqwBi" id="7mrRUyVUv2Y" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuROx" role="2Oq$k0">
-              <ref role="3cqZAo" node="7mrRUyVUv2H" resolve="myCaches" />
-            </node>
-            <node concept="TSZUe" id="7mrRUyVUv30" role="2OqNvi">
-              <node concept="2YIFZM" id="3ljsM0_SssN" role="25WWJ7">
-                <ref role="37wK5l" to="fwk:~TraceInfoCache.getInstance():jetbrains.mps.textgen.trace.TraceInfoCache" resolve="getInstance" />
-                <ref role="1Pybhc" to="fwk:~TraceInfoCache" resolve="TraceInfoCache" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="7mrRUyVUv37" role="3cqZAp">
           <node concept="2OqwBi" id="7mrRUyVUv38" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxeumur" role="2Oq$k0">

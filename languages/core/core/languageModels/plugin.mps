@@ -1156,6 +1156,25 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3SKdUt" id="7udac0TnbSh" role="3cqZAp">
+                  <node concept="3SKdUq" id="7udac0TnbSj" role="3SKWNk">
+                    <property role="3SKdUp" value="same as above applies to cache of trace.info" />
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="7udac0Tmrl5" role="3cqZAp">
+                  <node concept="3cpWsn" id="7udac0Tmrl6" role="3cpWs9">
+                    <property role="TrG5h" value="traceInfoCache" />
+                    <property role="3TUv4t" value="true" />
+                    <node concept="3uibUv" id="7udac0Tmrl4" role="1tU5fm">
+                      <ref role="3uigEE" to="fwk:~TraceInfoCache" resolve="TraceInfoCache" />
+                    </node>
+                    <node concept="2ShNRf" id="7udac0Tmsxw" role="33vP2m">
+                      <node concept="1pGfFk" id="7udac0TmthP" role="2ShVmc">
+                        <ref role="37wK5l" to="fwk:~TraceInfoCache.&lt;init&gt;()" resolve="TraceInfoCache" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="2$JKZl" id="7A08csWcFQr" role="3cqZAp">
                   <node concept="3clFbS" id="7A08csWcFQt" role="2LFqv$">
                     <node concept="3cpWs8" id="7A08csWcILG" role="3cqZAp">
@@ -2003,9 +2022,8 @@
                                                 <ref role="3cqZAo" node="3QuLV9OzOaD" resolve="javaSourcesLoc" />
                                               </node>
                                               <node concept="2OqwBi" id="3QuLV9OzObo" role="37wK5m">
-                                                <node concept="2YIFZM" id="3QuLV9OzObp" role="2Oq$k0">
-                                                  <ref role="1Pybhc" to="fwk:~TraceInfoCache" resolve="TraceInfoCache" />
-                                                  <ref role="37wK5l" to="fwk:~TraceInfoCache.getInstance():jetbrains.mps.textgen.trace.TraceInfoCache" resolve="getInstance" />
+                                                <node concept="37vLTw" id="7udac0Tmrl8" role="2Oq$k0">
+                                                  <ref role="3cqZAo" node="7udac0Tmrl6" resolve="traceInfoCache" />
                                                 </node>
                                                 <node concept="liA8E" id="3QuLV9OzObq" role="2OqNvi">
                                                   <ref role="37wK5l" to="fwk:~TraceInfoCache.newCacheGenerator(jetbrains.mps.textgen.trace.DebugInfo):jetbrains.mps.generator.cache.CacheGenerator" resolve="newCacheGenerator" />

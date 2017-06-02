@@ -32,6 +32,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
@@ -72,6 +73,9 @@ public class MPSCompilerComponent implements ProjectComponent {
         String negatedPattern = "!*." + ext;
         compilerConfiguration.addResourceFilePattern(negatedPattern);
       }
+    }
+    if (!compilerConfiguration.isResourceFile(TraceInfoCache.TRACE_FILE_NAME)) {
+      compilerConfiguration.addResourceFilePattern(TraceInfoCache.TRACE_FILE_NAME);
     }
 
     compilerManager.addBeforeTask(context -> {

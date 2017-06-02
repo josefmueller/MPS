@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.ParseFacility;
 import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -33,143 +32,127 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * The reason [generator] needs [debuginfo-api], which is otherwise textgen-specific (moreover, BL-textgen)
  */
-public class TraceInfoCache extends BaseModelCache<DebugInfo> {
+public class TraceInfoCache {
   public static final String TRACE_FILE_NAME = "trace.info";
-  private static TraceInfoCache INSTANCE;
-  private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
-  private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
+  private final ConcurrentMap<SModelReference, DebugInfo> myCache = new ConcurrentHashMap<>();
 
-  public TraceInfoCache(SRepository repository, CleanupManager manager) {
-    super(repository, manager);
-  }
-
-  @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-    INSTANCE = this;
-    super.init();
-    // todo: move (but remember that java provider is used in idea plugin as well) 
-    myProviders.add(myJavaTraceInfoProvider);
-  }
-
-  @Override
-  public void dispose() {
-    myProviders.remove(myJavaTraceInfoProvider);
-    super.dispose();
-    INSTANCE = null;
-  }
-
-  @NotNull
-  @Override
-  public String getCacheFileName() {
-    return TRACE_FILE_NAME;
-  }
-
-  @Override
-  protected DebugInfo readCache(final SModel sm) {
-    return loadCacheFromUrl(getCacheUrl(sm));
-  }
-
-  private DebugInfo loadCacheFromUrl(URL url) {
-    return new ParseFacility<DebugInfo>(getClass(), new CacheParser()).input(url).parseSilently();
+  public TraceInfoCache() {
+    super();
   }
 
   @Nullable
-  private URL getCacheUrl(@NotNull SModel sm) {
-    final SModule module = sm.getModule();
-    String resourceName = traceInfoResourceName(sm);
-    for (TraceInfoCache.TraceInfoResourceProvider provider : myProviders) {
-      URL url = provider.getResource(module, resourceName);
-      if (url != null) {
-        return url;
-      }
+  public DebugInfo get(@NotNull SModel model) {
+    final SModelReference mr = model.getReference();
+    DebugInfo rv = myCache.get(mr);
+    if (rv != null) {
+      return rv;
     }
+    DebugInfo cache = readCache(model);
+    if (cache == null) {
+      return null;
+    }
+    DebugInfo existing = myCache.putIfAbsent(mr, cache);
+    return  existing != null ? existing : cache;
+  }
+
+  /**
+   * Invoke to set new cached value
+   */
+  /*package*/ final void update(SModel model, DebugInfo cache) {
+    final SModelReference mr = model.getReference();
+    myCache.put(mr, cache);
+  }
+
+
+  private DebugInfo readCache(final SModel sm) {
+    // First, try to find deployed trace, as it's the one to match deployed classes best.
+    URL url = getDeployedLocation(sm);
+    if (url != null) {
+      return new ParseFacility<>(getClass(), new CacheParser()).input(url).parseSilently();
+    }
+    // XXX Could have resorted to workspace location here, if failed. However, not quite sure it's the right approach,
+    //     JavaTraceInfoResourceProvider didn't look elsewhere but module classpath.
     return null;
   }
 
-  @Override
+  /*
+   * There used to be 2 resource providers, one that looked into classpath of JavaModule (built it from JMF's strings), and another
+   * that looked into IDEA plugin classloaders (for MPS pieces deployed as plugins, and in internal development mode only). With the
+   * rise of ReloadableModule and proper classloading, I don't see a reason to distinguish regular module from a one deployed through plugin,
+   * and moreover, don't understand why can't I use trace.info of plugins in a regular installation (not MPS sources development).
+   *
+   * Note, cl.getResource() looks not into module only, but in dependent modules too. Though it's not intended and indeed poor, it's not
+   * that different from the old approach (classpath in JavaModuleFacet lists all dependencies as well, and classloader for IDEA plugin would
+   * search plugin CP completely, too). FIXME however, I'd like to have this fixed with ReloadeableModule.getOwnResource()
+   */
   @Nullable
-  public IFile getCacheFile(@NotNull SModel modelDescriptor) {
-    URL cacheUrl = getCacheUrl(modelDescriptor);
-    return cacheUrl == null ? null : TraceInfoCache.getFileByURL(cacheUrl);
+  private URL getDeployedLocation(@NotNull SModel sm) {
+    final SModule module = sm.getModule();
+    String resourceName = traceInfoResourceName(sm);
+    URL url = null;
+    if (module instanceof ReloadableModule) {
+      // FIXME would be handy to have getOwnResource() right in the ReloadableModule
+      ClassLoader moduleClassLoader = ((ReloadableModule) module).getClassLoader();
+      url = moduleClassLoader == null ? null : moduleClassLoader.getResource(resourceName);
+    }
+    return url;
   }
 
   private String traceInfoResourceName(SModel sm) {
-    String longName = sm.getModelName();
-    int atIndex = longName.indexOf('@');
-    if (atIndex > 0) {
-      longName = longName.substring(0, atIndex);
-    }
-    return longName.replace(".", "/") + "/" + TRACE_FILE_NAME;
+    String longName = sm.getName().getLongName();
+    return longName.replace('.', '/') + '/' + TRACE_FILE_NAME;
   }
 
-  // XXX revisit. IFAIU, this method to get locally-generated trace.info, not the one bundled. Although the approach is questionable
   @Nullable
-  public DebugInfo getLastGeneratedDebugInfo(@NotNull SModel model) {
-    String generatorOutputPath = SModuleOperations.getOutputPathFor(model);
-    if ((generatorOutputPath == null || generatorOutputPath.length() == 0)) {
+  private IFile getWorkspaceLocation(@NotNull SModel model) {
+    IFile outputLocation = SModelOperations.getOutputLocation(model);
+    if (outputLocation == null) {
       return null;
     }
-    IFile traceInfoFile = FileSystem.getInstance().getFileByPath(generatorOutputPath).getDescendant(traceInfoResourceName(model));
-    if (!(traceInfoFile.exists())) {
-      return null;
+    IFile traceInfoFile = outputLocation.getDescendant(TRACE_FILE_NAME);
+    return traceInfoFile.exists() ? traceInfoFile : null;
+  }
+
+  // XXX revisit. AFAIU, this method to get locally-generated trace.info, not the one bundled. Although the approach is questionable
+  @Nullable
+  /**/ DebugInfo getLastGeneratedDebugInfo(@NotNull SModel model) {
+    IFile traceInfoFile = getWorkspaceLocation(model);
+    if (traceInfoFile != null && traceInfoFile.exists()) {
+      return new ParseFacility<>(getClass(), new CacheParser()).input(traceInfoFile).parseSilently();
     }
-    try {
-      URL url = new File(traceInfoFile.getPath().replace("/", File.separator)).toURI().toURL();
-      return loadCacheFromUrl(url);
-    } catch (MalformedURLException e) {
-      return null;
-    }
+    return null;
   }
 
   public CacheGenerator newCacheGenerator(@Nullable DebugInfo newInfo) {
     return new CacheGen(newInfo);
   }
 
-  public void addResourceProvider(TraceInfoCache.TraceInfoResourceProvider provider) {
-    myProviders.add(provider);
-  }
-
-  public void removeResourceProvider(TraceInfoCache.TraceInfoResourceProvider provider) {
-    myProviders.remove(provider);
-  }
-
+  /**
+   * @deprecated instead, create a new instance for a series of trace.info access. We don't track these files any more, it's up to caller to decide
+   *             lifespan of the cache.
+   * @return new instance for each call
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public static TraceInfoCache getInstance() {
-    return INSTANCE;
-  }
-
-  @Nullable
-  private static IFile getFileByURL(@NotNull URL url) {
-    String file = url.getFile();
-    if (file.isEmpty()) {
-      return null;
-    }
-    //  if this is a jar, it starts with file:, so we remove the prefix 
-    String prefix = "file:";
-    if (file.startsWith(prefix)) {
-      file = file.substring(prefix.length());
-    }
-    return FileSystem.getInstance().getFileByPath(file);
+    return new TraceInfoCache();
   }
 
   public interface TraceInfoResourceProvider {
@@ -197,7 +180,7 @@ public class TraceInfoCache extends BaseModelCache<DebugInfo> {
         return;
       }
       update(status.getOriginalInputModel(), cache);
-      handler.saveStream(getCacheFileName(), SerializeSupport.serialize(cache));
+      handler.saveStream(TRACE_FILE_NAME, SerializeSupport.serialize(cache));
     }
 
     private DebugInfo updateUnchanged(GenerationStatus genStatus) {

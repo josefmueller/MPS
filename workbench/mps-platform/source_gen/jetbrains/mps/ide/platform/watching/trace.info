@@ -1123,86 +1123,85 @@
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/8474613039627890805">
     <file name="ModelCacheReloader.java">
-      <node id="8474613039627890853" at="24,0,25,0" concept="6" trace="myVirtualFileManager" />
-      <node id="8474613039627890856" at="25,0,26,0" concept="6" trace="myFileListener" />
-      <node id="8474613039627890861" at="26,0,27,0" concept="6" trace="myCaches" />
-      <node id="2905729205316338733" at="27,102,28,67" concept="12" />
-      <node id="8474613039627890873" at="28,67,29,46" concept="5" />
-      <node id="8474613039627890877" at="29,46,30,77" concept="5" />
-      <node id="8474613039627890887" at="30,77,31,90" concept="5" />
-      <node id="8474613039627890901" at="34,31,35,64" concept="5" />
-      <node id="8474613039627890910" at="38,34,39,67" concept="5" />
-      <node id="8474613039627890921" at="44,36,45,32" concept="11" />
-      <node id="8474613039627890929" at="47,58,48,65" concept="10" />
-      <node id="8474613039627890943" at="50,47,51,69" concept="11" />
-      <node id="8474613039627890819" at="59,64,60,31" concept="5" />
-      <node id="8474613039627890829" at="63,60,64,31" concept="5" />
-      <node id="8474613039627890839" at="67,53,68,31" concept="5" />
-      <node id="8474613039627890849" at="71,57,72,31" concept="5" />
-      <node id="8474613039627890937" at="76,36,77,53" concept="5" />
-      <node id="8474613039627890937" at="78,5,79,0" concept="13" />
-      <node id="8474613039627890808" at="56,0,58,0" concept="3" trace="CacheFileListener#()V" />
-      <node id="8474613039627890941" at="50,0,53,0" concept="9" trace="accept#(Ljetbrains/mps/generator/cache/BaseModelCache;)Z" />
-      <node id="8474613039627890937" at="75,87,78,5" concept="8" />
-      <node id="8474613039627890897" at="33,0,37,0" concept="9" trace="initComponent#()V" />
-      <node id="8474613039627890906" at="37,0,41,0" concept="9" trace="disposeComponent#()V" />
-      <node id="8474613039627890813" at="58,0,62,0" concept="9" trace="beforeFileMovement#(Lcom/intellij/openapi/vfs/VirtualFileMoveEvent;)V" />
-      <node id="8474613039627890823" at="62,0,66,0" concept="9" trace="beforeFileDeletion#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
-      <node id="8474613039627890833" at="66,0,70,0" concept="9" trace="fileCreated#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
-      <node id="8474613039627890843" at="70,0,74,0" concept="9" trace="contentsChanged#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
-      <node id="8474613039627890936" at="48,65,53,14" concept="5" />
-      <node id="8474613039627890869" at="27,0,33,0" concept="3" trace="ModelCacheReloader#(Lcom/intellij/openapi/vfs/VirtualFileManager;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-      <node id="8474613039627890915" at="41,0,47,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="8474613039627890937" at="75,0,81,0" concept="15" trace="check_hmm83z_a1a7#(Ljetbrains/mps/generator/cache/BaseModelCache;Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="8474613039627890925" at="47,0,55,0" concept="9" trace="invalidateForFile#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
-      <scope id="8474613039627890811" at="56,33,56,33" />
-      <scope id="8474613039627890900" at="34,31,35,64" />
-      <scope id="8474613039627890909" at="38,34,39,67" />
-      <scope id="8474613039627890920" at="44,36,45,32" />
-      <scope id="8474613039627890942" at="50,47,51,69" />
-      <scope id="8474613039627890818" at="59,64,60,31" />
-      <scope id="8474613039627890828" at="63,60,64,31" />
-      <scope id="8474613039627890838" at="67,53,68,31" />
-      <scope id="8474613039627890848" at="71,57,72,31" />
-      <scope id="8474613039627890937" at="76,36,77,53" />
-      <scope id="8474613039627890808" at="56,0,58,0" />
-      <scope id="8474613039627890941" at="50,0,53,0">
+      <node id="8474613039627890853" at="23,0,24,0" concept="6" trace="myVirtualFileManager" />
+      <node id="8474613039627890856" at="24,0,25,0" concept="6" trace="myFileListener" />
+      <node id="8474613039627890861" at="25,0,26,0" concept="6" trace="myCaches" />
+      <node id="2905729205316338733" at="26,102,27,67" concept="12" />
+      <node id="8474613039627890873" at="27,67,28,46" concept="5" />
+      <node id="8474613039627890887" at="28,46,29,90" concept="5" />
+      <node id="8474613039627890901" at="32,31,33,64" concept="5" />
+      <node id="8474613039627890910" at="36,34,37,67" concept="5" />
+      <node id="8474613039627890921" at="42,36,43,32" concept="11" />
+      <node id="8474613039627890929" at="45,58,46,65" concept="10" />
+      <node id="8474613039627890943" at="48,47,49,69" concept="11" />
+      <node id="8474613039627890819" at="57,64,58,31" concept="5" />
+      <node id="8474613039627890829" at="61,60,62,31" concept="5" />
+      <node id="8474613039627890839" at="65,53,66,31" concept="5" />
+      <node id="8474613039627890849" at="69,57,70,31" concept="5" />
+      <node id="8474613039627890937" at="74,36,75,53" concept="5" />
+      <node id="8474613039627890937" at="76,5,77,0" concept="13" />
+      <node id="8474613039627890808" at="54,0,56,0" concept="3" trace="CacheFileListener#()V" />
+      <node id="8474613039627890941" at="48,0,51,0" concept="9" trace="accept#(Ljetbrains/mps/generator/cache/BaseModelCache;)Z" />
+      <node id="8474613039627890937" at="73,87,76,5" concept="8" />
+      <node id="8474613039627890897" at="31,0,35,0" concept="9" trace="initComponent#()V" />
+      <node id="8474613039627890906" at="35,0,39,0" concept="9" trace="disposeComponent#()V" />
+      <node id="8474613039627890813" at="56,0,60,0" concept="9" trace="beforeFileMovement#(Lcom/intellij/openapi/vfs/VirtualFileMoveEvent;)V" />
+      <node id="8474613039627890823" at="60,0,64,0" concept="9" trace="beforeFileDeletion#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
+      <node id="8474613039627890833" at="64,0,68,0" concept="9" trace="fileCreated#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
+      <node id="8474613039627890843" at="68,0,72,0" concept="9" trace="contentsChanged#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
+      <node id="8474613039627890869" at="26,0,31,0" concept="3" trace="ModelCacheReloader#(Lcom/intellij/openapi/vfs/VirtualFileManager;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+      <node id="8474613039627890936" at="46,65,51,14" concept="5" />
+      <node id="8474613039627890915" at="39,0,45,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="8474613039627890937" at="73,0,79,0" concept="15" trace="check_hmm83z_a1a7#(Ljetbrains/mps/generator/cache/BaseModelCache;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="8474613039627890925" at="45,0,53,0" concept="9" trace="invalidateForFile#(Lcom/intellij/openapi/vfs/VirtualFileEvent;)V" />
+      <scope id="8474613039627890811" at="54,33,54,33" />
+      <scope id="8474613039627890900" at="32,31,33,64" />
+      <scope id="8474613039627890909" at="36,34,37,67" />
+      <scope id="8474613039627890920" at="42,36,43,32" />
+      <scope id="8474613039627890942" at="48,47,49,69" />
+      <scope id="8474613039627890818" at="57,64,58,31" />
+      <scope id="8474613039627890828" at="61,60,62,31" />
+      <scope id="8474613039627890838" at="65,53,66,31" />
+      <scope id="8474613039627890848" at="69,57,70,31" />
+      <scope id="8474613039627890937" at="74,36,75,53" />
+      <scope id="8474613039627890808" at="54,0,56,0" />
+      <scope id="8474613039627890872" at="26,102,29,90" />
+      <scope id="8474613039627890941" at="48,0,51,0">
         <var name="c" id="8474613039627890941" />
       </scope>
-      <scope id="8474613039627890872" at="27,102,31,90" />
-      <scope id="8474613039627890897" at="33,0,37,0" />
-      <scope id="8474613039627890906" at="37,0,41,0" />
-      <scope id="8474613039627890813" at="58,0,62,0">
+      <scope id="8474613039627890897" at="31,0,35,0" />
+      <scope id="8474613039627890906" at="35,0,39,0" />
+      <scope id="8474613039627890813" at="56,0,60,0">
         <var name="event" id="8474613039627890816" />
       </scope>
-      <scope id="8474613039627890823" at="62,0,66,0">
+      <scope id="8474613039627890823" at="60,0,64,0">
         <var name="event" id="8474613039627890826" />
       </scope>
-      <scope id="8474613039627890833" at="66,0,70,0">
+      <scope id="8474613039627890833" at="64,0,68,0">
         <var name="event" id="8474613039627890836" />
       </scope>
-      <scope id="8474613039627890843" at="70,0,74,0">
+      <scope id="8474613039627890843" at="68,0,72,0">
         <var name="event" id="8474613039627890846" />
       </scope>
-      <scope id="8474613039627890937" at="75,87,79,0" />
-      <scope id="8474613039627890869" at="27,0,33,0">
+      <scope id="8474613039627890937" at="73,87,77,0" />
+      <scope id="8474613039627890869" at="26,0,31,0">
         <var name="coreComponents" id="8474613039627890894" />
         <var name="virtualFileManager" id="8474613039627890892" />
       </scope>
-      <scope id="8474613039627890915" at="41,0,47,0" />
-      <scope id="8474613039627890928" at="47,58,53,14">
+      <scope id="8474613039627890915" at="39,0,45,0" />
+      <scope id="8474613039627890928" at="45,58,51,14">
         <var name="file" id="8474613039627890930" />
       </scope>
-      <scope id="8474613039627890937" at="75,0,81,0">
+      <scope id="8474613039627890937" at="73,0,79,0">
         <var name="checkedDotOperand" id="8474613039627890937" />
         <var name="file" id="8474613039627890937" />
       </scope>
-      <scope id="8474613039627890925" at="47,0,55,0">
+      <scope id="8474613039627890925" at="45,0,53,0">
         <var name="event" id="8474613039627890956" />
       </scope>
-      <unit id="8474613039627890941" at="49,68,53,5" name="jetbrains.mps.ide.platform.watching.ModelCacheReloader$1" />
-      <unit id="8474613039627890806" at="55,0,75,0" name="jetbrains.mps.ide.platform.watching.ModelCacheReloader$CacheFileListener" />
-      <unit id="8474613039627890805" at="23,0,82,0" name="jetbrains.mps.ide.platform.watching.ModelCacheReloader" />
+      <unit id="8474613039627890941" at="47,68,51,5" name="jetbrains.mps.ide.platform.watching.ModelCacheReloader$1" />
+      <unit id="8474613039627890806" at="53,0,73,0" name="jetbrains.mps.ide.platform.watching.ModelCacheReloader$CacheFileListener" />
+      <unit id="8474613039627890805" at="22,0,80,0" name="jetbrains.mps.ide.platform.watching.ModelCacheReloader" />
     </file>
   </root>
   <root nodeRef="r:383be79d-d39d-4dc4-9df3-57e57bcac2b5(jetbrains.mps.ide.platform.watching)/8474613039627890958">

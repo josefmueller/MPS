@@ -43,9 +43,6 @@
       <implementation-class>jetbrains.mps.idea.java.debugger.breakpoints.IdeaBreakpointsUiComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.java.trace.TraceFilesManager</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.idea.java.refactoring.MoveRenameBatch</implementation-class>
     </component>
     <component>
