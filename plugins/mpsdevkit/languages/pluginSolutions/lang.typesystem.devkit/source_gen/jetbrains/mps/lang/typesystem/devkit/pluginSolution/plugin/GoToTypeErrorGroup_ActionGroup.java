@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.errors.item.ReportItem;
 import java.util.List;
-import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
+import jetbrains.mps.errors.item.RuleIdFlavouredItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.extensions.PluginId;
@@ -49,12 +49,12 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
       GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
       return;
     }
-    List<TypesystemReportItemAdapter.TypesystemRuleId> navigationData = ListSequence.fromListWithValues(new ArrayList<TypesystemReportItemAdapter.TypesystemRuleId>(), TypesystemReportItemAdapter.FLAVOUR_RULE_ID.getCollection(mostRelevantReportItem));
+    List<RuleIdFlavouredItem.TypesystemRuleId> navigationData = ListSequence.fromListWithValues(new ArrayList<RuleIdFlavouredItem.TypesystemRuleId>(), RuleIdFlavouredItem.FLAVOUR_RULE_ID.getCollection(mostRelevantReportItem));
     if (ListSequence.fromList(navigationData).count() <= 1) {
       GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
       return;
     }
-    for (TypesystemReportItemAdapter.TypesystemRuleId id : ListSequence.fromList(navigationData).take(ListSequence.fromList(navigationData).count() - 1)) {
+    for (RuleIdFlavouredItem.TypesystemRuleId id : ListSequence.fromList(navigationData).take(ListSequence.fromList(navigationData).count() - 1)) {
       if (id.getSourceNode() != null) {
         GoToTypeErrorGroup_ActionGroup.this.addParameterizedAction(new GoToTypeErrorRule_InGroup_Action(id.getSourceNode(), false), PluginId.getId("jetbrains.mps.lang.typesystem.devkit.pluginSolution"), id.getSourceNode(), false);
       }

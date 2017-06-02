@@ -10,13 +10,14 @@ import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.List;
-import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
+import jetbrains.mps.errors.item.RuleIdFlavouredItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 
 public class GoToTypeErrorRule_Action extends BaseAction {
@@ -37,7 +38,7 @@ public class GoToTypeErrorRule_Action extends BaseAction {
     if (mostRelevantReportItem == null) {
       return false;
     }
-    List<TypesystemReportItemAdapter.TypesystemRuleId> navigationData = ListSequence.fromListWithValues(new ArrayList<TypesystemReportItemAdapter.TypesystemRuleId>(), TypesystemReportItemAdapter.FLAVOUR_RULE_ID.getCollection(mostRelevantReportItem));
+    List<RuleIdFlavouredItem.TypesystemRuleId> navigationData = ListSequence.fromListWithValues(new ArrayList<RuleIdFlavouredItem.TypesystemRuleId>(), RuleIdFlavouredItem.FLAVOUR_RULE_ID.getCollection(mostRelevantReportItem));
     return ListSequence.fromList(navigationData).count() == 1;
   }
   @Override
@@ -71,7 +72,7 @@ public class GoToTypeErrorRule_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     ReportItem mostRelevantReportItem = new GoToTypeErrorHelper(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))).getMostRelevantReportItem();
-    List<TypesystemReportItemAdapter.TypesystemRuleId> navigationData = ListSequence.fromListWithValues(new ArrayList<TypesystemReportItemAdapter.TypesystemRuleId>(), TypesystemReportItemAdapter.FLAVOUR_RULE_ID.getCollection(mostRelevantReportItem));
+    List<RuleIdFlavouredItem.TypesystemRuleId> navigationData = ListSequence.fromListWithValues(new ArrayList<RuleIdFlavouredItem.TypesystemRuleId>(), TypesystemReportItemAdapter.FLAVOUR_RULE_ID.getCollection(mostRelevantReportItem));
     new EditorNavigator(((MPSProject) MapSequence.fromMap(_params).get("project"))).shallSelect(true).open(ListSequence.fromList(navigationData).first().getSourceNode());
   }
 }

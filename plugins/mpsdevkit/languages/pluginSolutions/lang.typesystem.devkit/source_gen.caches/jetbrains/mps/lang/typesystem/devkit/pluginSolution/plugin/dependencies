@@ -18,7 +18,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.errors.item.ReportItem" />
-    <classNode dependClassName="jetbrains.mps.errors.item.TypesystemReportItemAdapter" />
+    <classNode dependClassName="jetbrains.mps.errors.item.RuleIdFlavouredItem" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -51,6 +51,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.errors.item.ReportItem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.RuleIdFlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.TypesystemReportItemAdapter" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />

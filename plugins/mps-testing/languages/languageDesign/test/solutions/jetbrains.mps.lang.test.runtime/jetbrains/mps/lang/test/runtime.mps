@@ -9156,32 +9156,11 @@
             </node>
             <node concept="1bVj0M" id="4FNJx8tsE_T" role="37wK5m">
               <node concept="3clFbS" id="4FNJx8tsE_V" role="1bW5cS">
-                <node concept="3clFbJ" id="4FNJx8tsER9" role="3cqZAp">
-                  <node concept="3clFbS" id="4FNJx8tsERb" role="3clFbx">
-                    <node concept="3cpWs6" id="4FNJx8tsHz$" role="3cqZAp">
-                      <node concept="3clFbT" id="4FNJx8tsHBL" role="3cqZAk">
-                        <property role="3clFbU" value="true" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3fqX7Q" id="4FNJx8tsEVz" role="3clFbw">
-                    <node concept="1eOMI4" id="4FNJx8tsF35" role="3fr31v">
-                      <node concept="2ZW3vV" id="4FNJx8tsF7c" role="1eOMHV">
-                        <node concept="3uibUv" id="4FNJx8tsHv0" role="2ZW6by">
-                          <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
-                        </node>
-                        <node concept="37vLTw" id="4FNJx8tsF36" role="2ZW6bz">
-                          <ref role="3cqZAo" node="4FNJx8tsED4" resolve="vp" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node concept="3cpWs8" id="4FNJx8tsIne" role="3cqZAp">
                   <node concept="3cpWsn" id="4FNJx8tsInf" role="3cpWs9">
                     <property role="TrG5h" value="node" />
-                    <node concept="3uibUv" id="4FNJx8tsInb" role="1tU5fm">
-                      <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+                    <node concept="3uibUv" id="ygzS0$xTP9" role="1tU5fm">
+                      <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
                     </node>
                     <node concept="2OqwBi" id="4FNJx8tsIng" role="33vP2m">
                       <node concept="1eOMI4" id="4FNJx8tsInh" role="2Oq$k0">
@@ -9195,7 +9174,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="4FNJx8tsInl" role="2OqNvi">
-                        <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
+                        <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
                       </node>
                     </node>
                   </node>
@@ -9209,8 +9188,28 @@
                       <node concept="2ShNRf" id="4FNJx8tsMfh" role="25WWJ7">
                         <node concept="1pGfFk" id="4FNJx8tsNDX" role="2ShVmc">
                           <ref role="37wK5l" to="2gg1:~SimpleErrorReporter.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String)" resolve="SimpleErrorReporter" />
-                          <node concept="37vLTw" id="4FNJx8tsO8j" role="37wK5m">
-                            <ref role="3cqZAo" node="4FNJx8tsInf" resolve="node" />
+                          <node concept="2OqwBi" id="ygzS0$xUaP" role="37wK5m">
+                            <node concept="37vLTw" id="4FNJx8tsO8j" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4FNJx8tsInf" resolve="node" />
+                            </node>
+                            <node concept="liA8E" id="ygzS0$xU$Y" role="2OqNvi">
+                              <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                              <node concept="2OqwBi" id="ygzS0$xZ3P" role="37wK5m">
+                                <node concept="2OqwBi" id="ygzS0$xXp4" role="2Oq$k0">
+                                  <node concept="2JrnkZ" id="ygzS0$xWSE" role="2Oq$k0">
+                                    <node concept="37vLTw" id="ygzS0$xVqs" role="2JrQYb">
+                                      <ref role="3cqZAo" node="3fCX6WCBvHQ" resolve="myRoot" />
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="ygzS0$xY4S" role="2OqNvi">
+                                    <ref role="37wK5l" to="mhbf:~SNode.getModel():org.jetbrains.mps.openapi.model.SModel" resolve="getModel" />
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="ygzS0$xZCK" role="2OqNvi">
+                                  <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                </node>
+                              </node>
+                            </node>
                           </node>
                           <node concept="2OqwBi" id="4FNJx8tsOz3" role="37wK5m">
                             <node concept="37vLTw" id="4FNJx8tsOkn" role="2Oq$k0">
@@ -9235,8 +9234,8 @@
               </node>
               <node concept="37vLTG" id="4FNJx8tsED4" role="1bW2Oz">
                 <property role="TrG5h" value="vp" />
-                <node concept="3uibUv" id="4FNJx8tsED3" role="1tU5fm">
-                  <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+                <node concept="3uibUv" id="ygzS0$xLYv" role="1tU5fm">
+                  <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
                 </node>
               </node>
             </node>

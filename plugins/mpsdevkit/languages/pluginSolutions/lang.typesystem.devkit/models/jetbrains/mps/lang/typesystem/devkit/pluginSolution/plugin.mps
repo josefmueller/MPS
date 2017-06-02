@@ -1034,19 +1034,19 @@
           <node concept="3cpWsn" id="2PIlT5T$_P_" role="3cpWs9">
             <property role="TrG5h" value="navigationData" />
             <node concept="_YKpA" id="2PIlT5T$_PA" role="1tU5fm">
-              <node concept="3uibUv" id="2PIlT5T$RZV" role="_ZDj9">
-                <ref role="3uigEE" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId" resolve="TypesystemReportItemAdapter.TypesystemRuleId" />
+              <node concept="3uibUv" id="ygzS0$x7cA" role="_ZDj9">
+                <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
               </node>
             </node>
             <node concept="2ShNRf" id="2PIlT5T$_PC" role="33vP2m">
               <node concept="Tc6Ow" id="2PIlT5T$_PD" role="2ShVmc">
-                <node concept="3uibUv" id="2PIlT5T$Sux" role="HW$YZ">
-                  <ref role="3uigEE" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId" resolve="TypesystemReportItemAdapter.TypesystemRuleId" />
+                <node concept="3uibUv" id="ygzS0$x7AG" role="HW$YZ">
+                  <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
                 </node>
                 <node concept="2OqwBi" id="2PIlT5T$_PF" role="I$8f6">
                   <node concept="10M0yZ" id="2PIlT5T$TzK" role="2Oq$k0">
-                    <ref role="3cqZAo" to="d6hs:~TypesystemReportItemAdapter.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
                     <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
+                    <ref role="3cqZAo" to="d6hs:~RuleIdFlavouredItem.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
                   </node>
                   <node concept="liA8E" id="2PIlT5T$_PH" role="2OqNvi">
                     <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.ReportItem):java.util.Collection" resolve="getCollection" />
@@ -1090,7 +1090,7 @@
                   <node concept="1uHKPH" id="2PIlT5T$FKa" role="2OqNvi" />
                 </node>
                 <node concept="liA8E" id="2PIlT5T_BY3" role="2OqNvi">
-                  <ref role="37wK5l" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
+                  <ref role="37wK5l" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
                 </node>
               </node>
             </node>
@@ -1143,19 +1143,19 @@
           <node concept="3cpWsn" id="2PIlT5T$fjr" role="3cpWs9">
             <property role="TrG5h" value="navigationData" />
             <node concept="_YKpA" id="2PIlT5T$fjs" role="1tU5fm">
-              <node concept="3uibUv" id="2PIlT5T$Q82" role="_ZDj9">
-                <ref role="3uigEE" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId" resolve="TypesystemReportItemAdapter.TypesystemRuleId" />
+              <node concept="3uibUv" id="ygzS0$x14S" role="_ZDj9">
+                <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
               </node>
             </node>
             <node concept="2ShNRf" id="2PIlT5T$fju" role="33vP2m">
               <node concept="Tc6Ow" id="2PIlT5T$fjv" role="2ShVmc">
-                <node concept="3uibUv" id="2PIlT5T$R7R" role="HW$YZ">
-                  <ref role="3uigEE" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId" resolve="TypesystemReportItemAdapter.TypesystemRuleId" />
+                <node concept="3uibUv" id="ygzS0$x24H" role="HW$YZ">
+                  <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
                 </node>
                 <node concept="2OqwBi" id="2PIlT5T$fjx" role="I$8f6">
-                  <node concept="10M0yZ" id="2PIlT5T$SPA" role="2Oq$k0">
-                    <ref role="3cqZAo" to="d6hs:~TypesystemReportItemAdapter.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
-                    <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
+                  <node concept="10M0yZ" id="ygzS0$x2TI" role="2Oq$k0">
+                    <ref role="3cqZAo" to="d6hs:~RuleIdFlavouredItem.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
+                    <ref role="1PxDUh" to="d6hs:~RuleIdFlavouredItem" resolve="RuleIdFlavouredItem" />
                   </node>
                   <node concept="liA8E" id="2PIlT5T$fjz" role="2OqNvi">
                     <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.ReportItem):java.util.Collection" resolve="getCollection" />
@@ -1342,19 +1342,19 @@
             <node concept="3cpWsn" id="2PIlT5Tye4F" role="3cpWs9">
               <property role="TrG5h" value="navigationData" />
               <node concept="_YKpA" id="2PIlT5Tye3m" role="1tU5fm">
-                <node concept="3uibUv" id="2PIlT5T$NVO" role="_ZDj9">
-                  <ref role="3uigEE" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId" resolve="TypesystemReportItemAdapter.TypesystemRuleId" />
+                <node concept="3uibUv" id="ygzS0$wRNg" role="_ZDj9">
+                  <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
                 </node>
               </node>
               <node concept="2ShNRf" id="2PIlT5TyVew" role="33vP2m">
                 <node concept="Tc6Ow" id="2PIlT5TyUIE" role="2ShVmc">
-                  <node concept="3uibUv" id="2PIlT5T$Oz6" role="HW$YZ">
-                    <ref role="3uigEE" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId" resolve="TypesystemReportItemAdapter.TypesystemRuleId" />
+                  <node concept="3uibUv" id="ygzS0$wSxd" role="HW$YZ">
+                    <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
                   </node>
                   <node concept="2OqwBi" id="2PIlT5Tye4N" role="I$8f6">
-                    <node concept="10M0yZ" id="2PIlT5T$Njo" role="2Oq$k0">
-                      <ref role="3cqZAo" to="d6hs:~TypesystemReportItemAdapter.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
-                      <ref role="1PxDUh" to="d6hs:~TypesystemReportItemAdapter" resolve="TypesystemReportItemAdapter" />
+                    <node concept="10M0yZ" id="ygzS0$wTYd" role="2Oq$k0">
+                      <ref role="3cqZAo" to="d6hs:~RuleIdFlavouredItem.FLAVOUR_RULE_ID" resolve="FLAVOUR_RULE_ID" />
+                      <ref role="1PxDUh" to="d6hs:~RuleIdFlavouredItem" resolve="RuleIdFlavouredItem" />
                     </node>
                     <node concept="liA8E" id="2PIlT5Tye4P" role="2OqNvi">
                       <ref role="37wK5l" to="d6hs:~ReportItemBase$MultipleReportItemFlavour.getCollection(jetbrains.mps.errors.item.ReportItem):java.util.Collection" resolve="getCollection" />
@@ -1409,7 +1409,7 @@
                           <ref role="3cqZAo" node="4vCqlNf_C$Y" resolve="id" />
                         </node>
                         <node concept="liA8E" id="2PIlT5T_fej" role="2OqNvi">
-                          <ref role="37wK5l" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
+                          <ref role="37wK5l" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
                         </node>
                       </node>
                       <node concept="3clFbT" id="4vCqlNf_C$U" role="2J__8u">
@@ -1425,7 +1425,7 @@
                       <ref role="3cqZAo" node="4vCqlNf_C$Y" resolve="id" />
                     </node>
                     <node concept="liA8E" id="2PIlT5T_f2K" role="2OqNvi">
-                      <ref role="37wK5l" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
+                      <ref role="37wK5l" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
                     </node>
                   </node>
                 </node>
@@ -1451,8 +1451,8 @@
             </node>
             <node concept="3cpWsn" id="4vCqlNf_C$Y" role="1Duv9x">
               <property role="TrG5h" value="id" />
-              <node concept="3uibUv" id="2PIlT5T$P08" role="1tU5fm">
-                <ref role="3uigEE" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId" resolve="TypesystemReportItemAdapter.TypesystemRuleId" />
+              <node concept="3uibUv" id="ygzS0$wV2C" role="1tU5fm">
+                <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
               </node>
             </node>
           </node>
@@ -1469,7 +1469,7 @@
                       <node concept="1yVyf7" id="2PIlT5TzePh" role="2OqNvi" />
                     </node>
                     <node concept="liA8E" id="2PIlT5T_n5V" role="2OqNvi">
-                      <ref role="37wK5l" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
+                      <ref role="37wK5l" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
                     </node>
                   </node>
                   <node concept="3clFbT" id="4vCqlNf_C_5" role="2J__8u">
@@ -1488,7 +1488,7 @@
                   <node concept="1yVyf7" id="2PIlT5T_hva" role="2OqNvi" />
                 </node>
                 <node concept="liA8E" id="2PIlT5T_iTQ" role="2OqNvi">
-                  <ref role="37wK5l" to="d6hs:~TypesystemReportItemAdapter$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
+                  <ref role="37wK5l" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId.getSourceNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getSourceNode" />
                 </node>
               </node>
             </node>

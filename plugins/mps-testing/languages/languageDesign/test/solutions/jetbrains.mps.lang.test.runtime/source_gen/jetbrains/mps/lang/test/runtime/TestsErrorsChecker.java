@@ -25,8 +25,8 @@ import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import org.jetbrains.annotations.Nullable;
@@ -114,13 +114,10 @@ public class TestsErrorsChecker {
     SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new TypesystemChecker().getErrors(myRoot, null)));
     // todo: add UsedLanguageChecker 
     SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).getErrors(myRoot, null)));
-    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<ValidationProblem>() {
-      public boolean process(ValidationProblem vp) {
-        if (!((vp instanceof NodeValidationProblem))) {
-          return true;
-        }
-        SNode node = ((NodeValidationProblem) vp).getNode();
-        SetSequence.fromSet(result).addElement(new SimpleErrorReporter(node, vp.getMessage(), null, null));
+    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<NodeValidationProblem>() {
+      public boolean process(NodeValidationProblem vp) {
+        SNodeReference node = ((NodeValidationProblem) vp).getNode();
+        SetSequence.fromSet(result).addElement(new SimpleErrorReporter(node.resolve(myRoot.getModel().getRepository()), vp.getMessage(), null, null));
         return true;
       }
     });
