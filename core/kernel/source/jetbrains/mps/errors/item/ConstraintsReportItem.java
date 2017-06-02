@@ -28,11 +28,11 @@ import java.util.Collections;
 
 public abstract class ConstraintsReportItem extends NodeReportItemBase implements RuleIdReportItem {
   private final TypesystemRuleId myRuleNode;
-  public ConstraintsReportItem(@NotNull SNode node) {
-    this(node, null);
+  public ConstraintsReportItem(@NotNull SNode node, String message) {
+    this(node, message, null);
   }
-  public ConstraintsReportItem(@NotNull SNode node, @Nullable TypesystemRuleId ruleNode) {
-    super(MessageStatus.ERROR, node);
+  public ConstraintsReportItem(@NotNull SNode node, String message, @Nullable TypesystemRuleId ruleNode) {
+    super(MessageStatus.ERROR, node.getReference(), message);
     myRuleNode = ruleNode;
   }
   @Override
@@ -47,12 +47,11 @@ public abstract class ConstraintsReportItem extends NodeReportItemBase implement
   public static class PropertyConstraintReportItem extends ConstraintsReportItem implements NodeFeatureReportItem {
     private SProperty myProperty;
     public PropertyConstraintReportItem(@NotNull SNode node, SProperty property) {
-      super(node);
+      super(node, getMessage(property));
       myProperty = property;
     }
-    @Override
-    public String getMessage() {
-      return "Property constraint violation for property \"" + myProperty.getName() + "\"";
+    public static String getMessage(SProperty property) {
+      return "Property constraint violation for property \"" + property.getName() + "\"";
     }
     @Override
     public SProperty getConceptFeature() {

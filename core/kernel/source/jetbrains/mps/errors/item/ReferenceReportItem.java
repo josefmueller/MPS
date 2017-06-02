@@ -27,8 +27,8 @@ import java.util.Set;
 
 public abstract class ReferenceReportItem extends NodeReportItemBase implements NodeFeatureReportItem {
   private final SReferenceLink myLink;
-  public ReferenceReportItem(@NotNull MessageStatus severity, @NotNull SReference ref) {
-    super(severity, ref.getSourceNode());
+  public ReferenceReportItem(@NotNull MessageStatus severity, @NotNull SReference ref, String message) {
+    super(severity, ref.getSourceNode().getReference(), message);
     myLink = ref.getLink();
   }
 

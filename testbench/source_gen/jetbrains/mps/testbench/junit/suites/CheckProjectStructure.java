@@ -109,7 +109,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
           };
           ValidationUtil.validateModelContent(sm.getRootNodes(), new FilteringProcessor<ValidationProblem>(collector, new Predicate<ValidationProblem>() {
             public boolean test(ValidationProblem problem) {
-              return !((problem instanceof NodeValidationProblem)) || ErrorReportUtil.shouldReportError(((NodeValidationProblem) problem).getNode());
+              return !((problem instanceof NodeValidationProblem)) || ErrorReportUtil.shouldReportError(((NodeValidationProblem) problem).getNode().resolve(BaseCheckModulesTest.getContextProject().getRepository()));
             }
           }));
           if (collector.getErrors().isEmpty()) {

@@ -52,12 +52,12 @@ public class CheckingTestsUtil {
           return errors;
         }
         for (NodeReportItem reportItem : reportItems) {
-          if (!(ErrorReportUtil.shouldReportError(reportItem.getNode()))) {
+          SNode node = reportItem.getNode().resolve(sm.getRepository());
+          if (!(ErrorReportUtil.shouldReportError(node))) {
             continue;
           }
 
           if (reportItem.getSeverity().equals(MessageStatus.ERROR)) {
-            SNode node = reportItem.getNode();
             if (!(CheckingTestsUtil.filterIssue(node))) {
               continue;
             }

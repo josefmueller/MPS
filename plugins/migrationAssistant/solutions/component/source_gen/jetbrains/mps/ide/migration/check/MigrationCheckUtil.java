@@ -136,9 +136,10 @@ public class MigrationCheckUtil {
       pm.step(NameUtil.compactNamespace(module.getModuleName()));
       // find missing concepts, when language's not missing 
       // find missing concept features when concept's not missing 
-      for (EditableSModel model : Sequence.fromIterable(((Iterable<SModel>) module.getModels())).ofType(EditableSModel.class)) {
+      for (final EditableSModel model : Sequence.fromIterable(((Iterable<SModel>) module.getModels())).ofType(EditableSModel.class)) {
         ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<NodeValidationProblem>() {
           public boolean process(NodeValidationProblem vp) {
+            SNode node = vp.getNode().resolve(model.getRepository());
             if (vp instanceof LanguageMissingError) {
               LanguageMissingError err = (LanguageMissingError) vp;
               if (SetSequence.fromSet(missingLangs).contains(err.getLanguage())) {
@@ -146,9 +147,9 @@ public class MigrationCheckUtil {
               }
               SetSequence.fromSet(missingLangs).addElement(err.getLanguage());
               if (err.isCompletelyAbsent()) {
-                ListSequence.fromList(result).addElement(new LanguageAbsentInRepoProblem(err.getLanguage(), err.getNode()));
+                ListSequence.fromList(result).addElement(new LanguageAbsentInRepoProblem(err.getLanguage(), node));
               } else {
-                ListSequence.fromList(result).addElement(new LanguageNotLoadedProblem(err.getLanguage(), err.getNode()));
+                ListSequence.fromList(result).addElement(new LanguageNotLoadedProblem(err.getLanguage(), node));
               }
             } else if (vp instanceof ConceptMissingError) {
               ConceptMissingError err = (ConceptMissingError) vp;
@@ -157,7 +158,7 @@ public class MigrationCheckUtil {
                 return true;
               }
               SetSequence.fromSet(missingConcepts).addElement(concept);
-              ListSequence.fromList(result).addElement(new ConceptMissingProblem(concept, err.getNode()));
+              ListSequence.fromList(result).addElement(new ConceptMissingProblem(concept, node));
             } else if (vp instanceof ConceptFeatureMissingError) {
               ConceptFeatureMissingError err = (ConceptFeatureMissingError) vp;
               SAbstractConcept concept = err.getConceptFeature().getOwner();
@@ -165,7 +166,7 @@ public class MigrationCheckUtil {
                 return true;
               }
               SetSequence.fromSet(missingFeatures).addElement(err.getConceptFeature());
-              ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getConceptFeature(), err.getNode(), err.getMessage()));
+              ListSequence.fromList(result).addElement(new ConceptFeatureMissingProblem(err.getConceptFeature(), node, err.getMessage()));
             } else if (vp instanceof BrokenReferenceError) {
               BrokenReferenceError err = (BrokenReferenceError) vp;
               ListSequence.fromList(result).addElement(new BrokenReferenceProblem(err.getReference(), err.getMessage()));

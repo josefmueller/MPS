@@ -30,15 +30,22 @@ import java.util.function.Function;
 
 public abstract class ReportItemBase implements ReportItem {
 
-  public ReportItemBase(MessageStatus severity) {
+  public ReportItemBase(@NotNull MessageStatus severity, @NotNull String message) {
     mySeverity = severity;
+    myMessage = message;
   }
 
-  private MessageStatus mySeverity;
+  private final MessageStatus mySeverity;
+  private final String myMessage;
 
   @Override
-  public MessageStatus getSeverity() {
+  public final MessageStatus getSeverity() {
     return mySeverity;
+  }
+
+  @Override
+  public final String getMessage() {
+    return myMessage;
   }
 
   public Set<ReportItemFlavour<?, ?>> getIdFlavours() {

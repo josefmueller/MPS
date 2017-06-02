@@ -26,13 +26,12 @@ import java.util.Collections;
 public class LanguageNotImportedReportItem extends NodeReportItemBase implements QuickFixReportItem {
   private final QuickFixProvider myQuickFix;
   public LanguageNotImportedReportItem(@NotNull SNode node, @NotNull QuickFixProvider quickFix) {
-    super(MessageStatus.ERROR, node);
+    super(MessageStatus.ERROR, node.getReference(), getMessage(node));
     myQuickFix = quickFix;
   }
 
-  @Override
-  public String getMessage() {
-    return getNode().getConcept().getLanguage().getQualifiedName() + " is not imported";
+  public static String getMessage(SNode node) {
+    return node.getConcept().getLanguage().getQualifiedName() + " is not imported";
   }
 
   @Override

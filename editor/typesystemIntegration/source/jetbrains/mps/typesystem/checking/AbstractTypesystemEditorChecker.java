@@ -112,8 +112,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
       boolean instantIntentionApplied = false;
       for (IErrorReporter errorReporter : errors) {
         TypesystemReportItemAdapter reportItem = new TypesystemReportItemAdapter(errorReporter);
-        HighlighterMessage message = HighlightUtil.createHighlighterMessage(reportItem, AbstractTypesystemEditorChecker.this
-        );
+        HighlighterMessage message = HighlightUtil.createHighlighterMessage(reportItem, AbstractTypesystemEditorChecker.this, editorContext.getRepository());
 
         QuickFix_Runtime quickfix = TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getAutoApplicable(message.getReportItem());
         final SNode quickFixNode = errorNode.o1;

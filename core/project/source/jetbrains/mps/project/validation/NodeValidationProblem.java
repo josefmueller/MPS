@@ -19,16 +19,17 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class NodeValidationProblem extends ValidationProblem implements NodeReportItem {
-  private final SNode myNode;
+  private final SNodeReference myNode;
 
   public NodeValidationProblem(@NotNull SNode node, @NotNull String message) {
     super(MessageStatus.ERROR, message);
-    myNode = node;
+    myNode = node.getReference();
   }
 
-  public SNode getNode() {
+  public SNodeReference getNode() {
     return myNode;
   }
 

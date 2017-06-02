@@ -31,7 +31,7 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
   }
 
   public IModelCheckerFix getFix(NodeReportItem nodeReportItem) {
-    final SNode reporterNode = nodeReportItem.getNode();
+    final SNode reporterNode = nodeReportItem.getNode().resolve(myRepository);
     final QuickFix_Runtime quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(nodeReportItem);
     if (reporterNode != null && quickfix != null) {
       final SNodeReference reporterNodeRef = reporterNode.getReference();
@@ -57,7 +57,7 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
       myChecker.processErrors(rootNode, myRepository, new Processor<NodeReportItem>() {
         public boolean process(NodeReportItem reportItem) {
-          SpecificChecker.addIssue(results, reportItem.getNode(), reportItem.getMessage(), SpecificChecker.getResultCategory(reportItem.getSeverity()), myCategory, getFix(reportItem));
+          SpecificChecker.addIssue(results, reportItem.getNode().resolve(myRepository), reportItem.getMessage(), SpecificChecker.getResultCategory(reportItem.getSeverity()), myCategory, getFix(reportItem));
           return !(monitor.isCanceled());
         }
       });

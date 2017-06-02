@@ -1381,18 +1381,40 @@
                 <property role="3SKdUp" value="todo here should be processor-based architecture, like in other checkers" />
               </node>
             </node>
+            <node concept="3cpWs8" id="u6B29mCFah" role="3cqZAp">
+              <node concept="3cpWsn" id="u6B29mCFai" role="3cpWs9">
+                <property role="TrG5h" value="nodeWithError" />
+                <node concept="3Tqbb2" id="u6B29mCFFw" role="1tU5fm" />
+                <node concept="2OqwBi" id="u6B29mCFaj" role="33vP2m">
+                  <node concept="2OqwBi" id="u6B29mCFak" role="2Oq$k0">
+                    <node concept="37vLTw" id="u6B29mCFal" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2v0ve8x$phq" resolve="errorReporter" />
+                    </node>
+                    <node concept="liA8E" id="u6B29mCFam" role="2OqNvi">
+                      <ref role="37wK5l" to="d6hs:~NodeReportItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="u6B29mCFan" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                    <node concept="2OqwBi" id="u6B29mCFao" role="37wK5m">
+                      <node concept="37vLTw" id="u6B29mCFap" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
+                      </node>
+                      <node concept="liA8E" id="u6B29mCFaq" role="2OqNvi">
+                        <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbJ" id="2v0ve8x$phv" role="3cqZAp">
               <node concept="3fqX7Q" id="2v0ve8x$phw" role="3clFbw">
                 <node concept="2YIFZM" id="2v0ve8x$phx" role="3fr31v">
                   <ref role="37wK5l" to="wsw7:5TGjZPCODy5" resolve="shouldReportError" />
                   <ref role="1Pybhc" to="wsw7:5TGjZPCODxZ" resolve="ErrorReportUtil" />
-                  <node concept="2OqwBi" id="2v0ve8x$phy" role="37wK5m">
-                    <node concept="37vLTw" id="2v0ve8x$phz" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2v0ve8x$phq" resolve="errorReporter" />
-                    </node>
-                    <node concept="liA8E" id="2v0ve8x$ph$" role="2OqNvi">
-                      <ref role="37wK5l" to="d6hs:~NodeReportItem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                    </node>
+                  <node concept="37vLTw" id="u6B29mCFas" role="37wK5m">
+                    <ref role="3cqZAo" node="u6B29mCFai" resolve="nodeWithError" />
                   </node>
                 </node>
               </node>
@@ -1401,20 +1423,6 @@
               </node>
             </node>
             <node concept="3clFbH" id="2v0ve8x$phB" role="3cqZAp" />
-            <node concept="3cpWs8" id="2v0ve8x$phC" role="3cqZAp">
-              <node concept="3cpWsn" id="2v0ve8x$phD" role="3cpWs9">
-                <property role="TrG5h" value="nodeWithError" />
-                <node concept="3Tqbb2" id="2v0ve8x$phE" role="1tU5fm" />
-                <node concept="2OqwBi" id="2v0ve8x$phF" role="33vP2m">
-                  <node concept="37vLTw" id="2v0ve8x$phG" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2v0ve8x$phq" resolve="errorReporter" />
-                  </node>
-                  <node concept="liA8E" id="2v0ve8x$phH" role="2OqNvi">
-                    <ref role="37wK5l" to="d6hs:~NodeReportItem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3clFbJ" id="2v0ve8x$phI" role="3cqZAp">
               <node concept="3clFbS" id="2v0ve8x$phJ" role="3clFbx">
                 <node concept="3SKdUt" id="2v0ve8x$phK" role="3cqZAp">
@@ -1427,8 +1435,8 @@
               <node concept="3fqX7Q" id="2v0ve8x$phN" role="3clFbw">
                 <node concept="2OqwBi" id="2v0ve8x$phO" role="3fr31v">
                   <node concept="2OqwBi" id="2v0ve8x$phP" role="2Oq$k0">
-                    <node concept="37vLTw" id="2v0ve8x$phQ" role="2Oq$k0">
-                      <ref role="3cqZAo" node="2v0ve8x$phD" resolve="nodeWithError" />
+                    <node concept="37vLTw" id="u6B29mCQes" role="2Oq$k0">
+                      <ref role="3cqZAo" node="u6B29mCFai" resolve="nodeWithError" />
                     </node>
                     <node concept="z$bX8" id="2v0ve8x$phR" role="2OqNvi">
                       <node concept="1xIGOp" id="2v0ve8x$phS" role="1xVPHs" />
@@ -1450,12 +1458,20 @@
                 </node>
                 <node concept="2YIFZM" id="2v0ve8x$pia" role="33vP2m">
                   <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
-                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(jetbrains.mps.errors.item.NodeReportItem,jetbrains.mps.openapi.editor.message.EditorMessageOwner):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
+                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(jetbrains.mps.errors.item.NodeReportItem,jetbrains.mps.openapi.editor.message.EditorMessageOwner,org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
                   <node concept="37vLTw" id="2v0ve8x$pik" role="37wK5m">
                     <ref role="3cqZAo" node="2v0ve8x$phq" resolve="errorReporter" />
                   </node>
                   <node concept="Xjq3P" id="2v0ve8x$pil" role="37wK5m">
                     <ref role="1HBi2w" node="6qi2OtU3ufq" resolve="LanguageEditorChecker" />
+                  </node>
+                  <node concept="2OqwBi" id="u6B29mCUa_" role="37wK5m">
+                    <node concept="37vLTw" id="u6B29mCTQN" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2v0ve8x$pgQ" resolve="editorContext" />
+                    </node>
+                    <node concept="liA8E" id="u6B29mCU_G" role="2OqNvi">
+                      <ref role="37wK5l" to="cj4x:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1502,8 +1518,8 @@
                             <node concept="37vLTw" id="2v0ve8x$piJ" role="1Lso8e">
                               <ref role="3cqZAo" node="2v0ve8x$piw" resolve="quickFix" />
                             </node>
-                            <node concept="37vLTw" id="2v0ve8x$piK" role="1Lso8e">
-                              <ref role="3cqZAo" node="2v0ve8x$phD" resolve="nodeWithError" />
+                            <node concept="37vLTw" id="u6B29mCTm8" role="1Lso8e">
+                              <ref role="3cqZAo" node="u6B29mCFai" resolve="nodeWithError" />
                             </node>
                           </node>
                         </node>
@@ -2047,11 +2063,24 @@
                 <property role="TrG5h" value="message" />
                 <node concept="2YIFZM" id="36YhQHI6GIL" role="33vP2m">
                   <ref role="1Pybhc" to="strd:~HighlightUtil" resolve="HighlightUtil" />
-                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(jetbrains.mps.errors.item.NodeReportItem,jetbrains.mps.openapi.editor.message.EditorMessageOwner):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
+                  <ref role="37wK5l" to="strd:~HighlightUtil.createHighlighterMessage(jetbrains.mps.errors.item.NodeReportItem,jetbrains.mps.openapi.editor.message.EditorMessageOwner,org.jetbrains.mps.openapi.module.SRepository):jetbrains.mps.nodeEditor.HighlighterMessage" resolve="createHighlighterMessage" />
                   <node concept="37vLTw" id="kgRRK9gIoS" role="37wK5m">
                     <ref role="3cqZAo" node="kgRRK9gqEN" resolve="reportItem" />
                   </node>
                   <node concept="Xjq3P" id="36YhQHI6GIQ" role="37wK5m" />
+                  <node concept="2OqwBi" id="u6B29mC$f_" role="37wK5m">
+                    <node concept="2OqwBi" id="u6B29mCxs3" role="2Oq$k0">
+                      <node concept="37vLTw" id="u6B29mCvPT" role="2Oq$k0">
+                        <ref role="3cqZAo" node="36YhQHI6FUH" resolve="editorComponent" />
+                      </node>
+                      <node concept="liA8E" id="u6B29mCzV2" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="u6B29mC$Gs" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="3uibUv" id="36YhQHI6GIR" role="1tU5fm">
                   <ref role="3uigEE" to="exr9:~EditorMessage" resolve="EditorMessage" />

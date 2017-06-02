@@ -19,10 +19,14 @@ import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class HighlightUtil {
-  public static HighlighterMessage createHighlighterMessage(@NotNull NodeReportItem reportItem, EditorMessageOwner checker) {
-    return new HighlighterMessage(checker, reportItem);
+  /**
+   * @param repository repository we have read lock in (we assume read lock to be the save when reportItem was created)
+   */
+  public static HighlighterMessage createHighlighterMessage(@NotNull NodeReportItem reportItem, EditorMessageOwner checker, SRepository repository) {
+    return new HighlighterMessage(checker, reportItem, reportItem.getNode().resolve(repository));
   }
 
 }

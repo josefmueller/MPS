@@ -26,11 +26,6 @@ import java.util.Set;
 
 public class UnresolvedReferenceReportItem extends ReferenceReportItem implements NodeFeatureReportItem {
   public UnresolvedReferenceReportItem(SReference ref) {
-    super(MessageStatus.ERROR, ref);
-  }
-
-  @Override
-  public String getMessage() {
-    return "Unresolved reference";
+    super(MessageStatus.ERROR, ref, "Unresolved reference");
   }
 }

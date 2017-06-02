@@ -76,7 +76,7 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
 
   @Override
   protected void addErrorInternal(NodeReportItem errorReporter) {
-    myNodesToErrors.putValue(errorReporter.getNode(), errorReporter);
+    myNodesToErrors.putValue(errorReporter.getNode().resolve(myModel.getRepository()), errorReporter);
   }
 
   public Set<NodeReportItem> getErrors() {

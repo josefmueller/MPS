@@ -164,16 +164,16 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
     final List<Tuples._2<QuickFix_Runtime, SNode>> quickFixesToExecute = ListSequence.fromList(new ArrayList<Tuples._2<QuickFix_Runtime, SNode>>());
     for (NodeReportItem errorReporter : errorsComponent.getErrors()) {
       // todo here should be processor-based architecture, like in other checkers 
-      if (!(ErrorReportUtil.shouldReportError(errorReporter.getNode()))) {
+      SNode nodeWithError = errorReporter.getNode().resolve(editorContext.getRepository());
+      if (!(ErrorReportUtil.shouldReportError(nodeWithError))) {
         continue;
       }
 
-      SNode nodeWithError = errorReporter.getNode();
       if (!(ListSequence.fromList(SNodeOperations.getNodeAncestors(nodeWithError, null, true)).contains(editedNode))) {
         // in inspector skipping all messages for invisible nodes 
         continue;
       }
-      HighlighterMessage message = HighlightUtil.createHighlighterMessage(errorReporter, LanguageEditorChecker.this);
+      HighlighterMessage message = HighlightUtil.createHighlighterMessage(errorReporter, LanguageEditorChecker.this, editorContext.getRepository());
       if (runQuickFixes) {
         QuickFix_Runtime quickFix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(message.getReportItem());
         if (quickFix != null) {

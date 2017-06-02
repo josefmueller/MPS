@@ -29,12 +29,12 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class TypesystemReportItemAdapter extends ReportItemBase implements NodeReportItem, RuleIdReportItem, QuickFixReportItem {
+public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdReportItem, QuickFixReportItem {
 
   private final IErrorReporter myErrorReporter;
 
   public TypesystemReportItemAdapter(@NotNull IErrorReporter errorReporter) {
-    super(errorReporter.getMessageStatus());
+    super(errorReporter.getMessageStatus(), errorReporter.getSNode() == null ? null : errorReporter.getSNode().getReference(), getMessage(errorReporter));
     myErrorReporter = errorReporter;
   }
 
@@ -43,9 +43,8 @@ public class TypesystemReportItemAdapter extends ReportItemBase implements NodeR
     return new HashSet<>(Arrays.asList(ReportItemBase.FLAVOUR_CLASS, NodeReportItem.FLAVOUR_NODE, FLAVOUR_RULE_ID));
   }
 
-  @Override
-  public String getMessage() {
-    return NameUtil.capitalize(getSeverity().getPresentation()) + ": " + myErrorReporter.reportError();
+  public static String getMessage(IErrorReporter errorReporter) {
+    return NameUtil.capitalize(errorReporter.getMessageStatus().getPresentation()) + ": " + errorReporter.reportError();
   }
 
   @NotNull
@@ -55,11 +54,6 @@ public class TypesystemReportItemAdapter extends ReportItemBase implements NodeR
 
   public static final ReportItemFlavour<TypesystemReportItemAdapter, IErrorReporter> FLAVOUR_ERROR_REPORTER =
       new SimpleReportItemFlavour<>(TypesystemReportItemAdapter.class, TypesystemReportItemAdapter::getErrorReporter);
-
-  @Override
-  public SNode getNode() {
-    return getErrorReporter().getSNode();
-  }
 
   @Override
   public Collection<TypesystemRuleId> getRuleId() {

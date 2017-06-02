@@ -20,6 +20,7 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.item.RuleIdReportItem.TypesystemRuleId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -32,12 +33,10 @@ import java.util.Set;
 import static jetbrains.mps.errors.item.TypesystemReportItemAdapter.FLAVOUR_RULE_ID;
 
 public class OutOfScopeReferenceReportItem extends ReferenceReportItem implements NodeFeatureReportItem, RuleIdReportItem, QuickFixReportItem {
-  private final String targetName;
   private final TypesystemRuleId myRuleNode;
   private final QuickFixProvider myQuickfix;
   public OutOfScopeReferenceReportItem(@NotNull SReference ref, @Nullable SNodeReference ruleNode, @NotNull QuickFixProvider quickfix) {
-    super(MessageStatus.ERROR, ref);
-    targetName = ref.getTargetNode().getName();
+    super(MessageStatus.ERROR, ref, getMessage(ref.getTargetNode().getName(), ref.getLink()));
     myRuleNode = new TypesystemRuleId(ruleNode);
     myQuickfix = quickfix;
   }
@@ -47,9 +46,8 @@ public class OutOfScopeReferenceReportItem extends ReferenceReportItem implement
     return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE, FLAVOUR_RULE_ID));
   }
 
-  @Override
-  public String getMessage() {
-    return "reference" + (targetName == null ? "" : " " + targetName) + " (" + getConceptFeature().getName() + ") is out of search scope";
+  public static String getMessage(String targetName, SReferenceLink referenceLink) {
+    return "reference" + (targetName == null ? "" : " " + targetName) + " (" + referenceLink.getName() + ") is out of search scope";
   }
 
   @Override

@@ -6,8 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.QuickFixProvider;
@@ -15,23 +13,13 @@ import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.item.NodeFeatureReportItem;
-import jetbrains.mps.errors.messageTargets.MessageTargetEnum;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public abstract class LanguageErrorsCollector {
 
-  public void addErrorAndAddDependenciesOnParents(@NotNull SNode node, String errorString, @Nullable SNodeReference ruleNode) {
-    for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, false))) {
-      addDependency(anc);
-    }
-    addErrorWithoutDependencies(node, errorString, ruleNode);
-  }
-
   public void addErrorWithoutDependencies(@NotNull SNode node, String errorString, @Nullable SNodeReference ruleNode) {
     addErrorWithoutDependencies(node, errorString, ruleNode, new NodeMessageTarget());
   }
-
 
   public void addErrorWithoutDependencies(@NotNull SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget) {
     addErrorWithoutDependencies(errorNode, errorString, ruleNode, messageTarget, null);
@@ -46,43 +34,7 @@ public abstract class LanguageErrorsCollector {
     addErrorInternal(new TypesystemReportItemAdapter(reporter));
   }
 
-  public enum AddDependenciesPolicy {
-    ANCESTORS() {
-      @Override
-      public void addDependency(LanguageErrorsCollector errorsCollector, NodeReportItem reportItem) {
-        SNode node = reportItem.getNode();
-        for (SNode anc : ListSequence.fromList(SNodeOperations.getNodeAncestors(node, null, false))) {
-          errorsCollector.addDependency(anc);
-        }
-      }
-
-    },
-    NOTHING() {
-      @Override
-      public void addDependency(LanguageErrorsCollector errorsCollector, NodeReportItem reportItem) {
-        // do nothing 
-      }
-
-    };
-
-
-    public abstract void addDependency(LanguageErrorsCollector errorsCollector, NodeReportItem reportItem);
-  }
-
-  public static LanguageErrorsCollector.AddDependenciesPolicy shouldAddDependencies(NodeReportItem reportItem) {
-    if (NodeFeatureReportItem.MESSAGE_TARGET_FEATURE.get(reportItem).getTarget() == MessageTargetEnum.NODE) {
-      return LanguageErrorsCollector.AddDependenciesPolicy.ANCESTORS;
-    } else {
-      return LanguageErrorsCollector.AddDependenciesPolicy.NOTHING;
-    }
-  }
-
   public void addError(NodeReportItem reportItem) {
-    addError(reportItem, shouldAddDependencies(reportItem));
-  }
-
-  public void addError(NodeReportItem reportItem, LanguageErrorsCollector.AddDependenciesPolicy dependenciesPolicy) {
-    dependenciesPolicy.addDependency(this, reportItem);
     addErrorInternal(reportItem);
   }
 

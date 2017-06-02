@@ -18,12 +18,13 @@ package jetbrains.mps.errors.item;
 import jetbrains.mps.errors.item.ReportItemBase.ReportItemFlavour;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public interface NodeReportItem extends ReportItem {
 
   // currently we cannot make this method NotNull because we are not sure when IErrorReporter can return null
-  SNode getNode();
+  SNodeReference getNode();
 
-  ReportItemFlavour<NodeReportItem, SNode> FLAVOUR_NODE = new SimpleReportItemFlavour<>(NodeReportItem.class, NodeReportItem::getNode);
+  ReportItemFlavour<NodeReportItem, SNodeReference> FLAVOUR_NODE = new SimpleReportItemFlavour<>(NodeReportItem.class, NodeReportItem::getNode);
 
 }

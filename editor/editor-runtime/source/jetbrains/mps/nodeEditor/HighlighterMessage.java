@@ -69,8 +69,11 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     return new ArrayList<>(TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getCollection(myReportItem));
   }
 
-  public HighlighterMessage(EditorMessageOwner owner, NodeReportItem reportItem) {
-    super(reportItem.getNode(), reportItem.getSeverity(), NodeFeatureReportItem.MESSAGE_TARGET_FEATURE.get(reportItem), getMessageColor(reportItem.getSeverity()), reportItem.getMessage(), owner);
+  public HighlighterMessage(EditorMessageOwner owner, NodeReportItem reportItem, SNode node) {
+    super(node, reportItem.getSeverity(), NodeFeatureReportItem.MESSAGE_TARGET_FEATURE.get(reportItem), getMessageColor(reportItem.getSeverity()), reportItem.getMessage(), owner);
+    if (!node.getReference().equals(reportItem.getNode())) {
+      throw new IllegalStateException();
+    }
     myReportItem = reportItem;
   }
 

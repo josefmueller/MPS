@@ -1103,6 +1103,33 @@
                     </node>
                     <node concept="1bVj0M" id="2RwlJ15ZUWn" role="37wK5m">
                       <node concept="3clFbS" id="2RwlJ15ZUWo" role="1bW5cS">
+                        <node concept="3cpWs8" id="u6B29mDik8" role="3cqZAp">
+                          <node concept="3cpWsn" id="u6B29mDik9" role="3cpWs9">
+                            <property role="TrG5h" value="node" />
+                            <node concept="3Tqbb2" id="u6B29mDooz" role="1tU5fm" />
+                            <node concept="2OqwBi" id="u6B29mDpyb" role="33vP2m">
+                              <node concept="2OqwBi" id="u6B29mDika" role="2Oq$k0">
+                                <node concept="37vLTw" id="u6B29mD$ll" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="2RwlJ15ZUXp" resolve="vp" />
+                                </node>
+                                <node concept="liA8E" id="u6B29mDikc" role="2OqNvi">
+                                  <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="u6B29mDqFk" role="2OqNvi">
+                                <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                                <node concept="2OqwBi" id="u6B29mDtel" role="37wK5m">
+                                  <node concept="2GrUjf" id="u6B29mDrO2" role="2Oq$k0">
+                                    <ref role="2Gs0qQ" node="J4peHRNLXa" resolve="model" />
+                                  </node>
+                                  <node concept="liA8E" id="u6B29mDvDn" role="2OqNvi">
+                                    <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                         <node concept="3clFbJ" id="17tv9cWL8zH" role="3cqZAp">
                           <node concept="3clFbS" id="17tv9cWL8zJ" role="3clFbx">
                             <node concept="3cpWs8" id="17tv9cWLegj" role="3cqZAp">
@@ -1181,13 +1208,8 @@
                                               <ref role="37wK5l" to="6if8:~LanguageMissingError.getLanguage():org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
                                             </node>
                                           </node>
-                                          <node concept="2OqwBi" id="17tv9cWM7G3" role="37wK5m">
-                                            <node concept="37vLTw" id="17tv9cWM5$A" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="17tv9cWLegk" resolve="err" />
-                                            </node>
-                                            <node concept="liA8E" id="17tv9cWM9On" role="2OqNvi">
-                                              <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                                            </node>
+                                          <node concept="37vLTw" id="u6B29mDikd" role="37wK5m">
+                                            <ref role="3cqZAo" node="u6B29mDik9" resolve="node" />
                                           </node>
                                         </node>
                                       </node>
@@ -1222,13 +1244,8 @@
                                                 <ref role="37wK5l" to="6if8:~LanguageMissingError.getLanguage():org.jetbrains.mps.openapi.language.SLanguage" resolve="getLanguage" />
                                               </node>
                                             </node>
-                                            <node concept="2OqwBi" id="17tv9cWModi" role="37wK5m">
-                                              <node concept="37vLTw" id="17tv9cWModj" role="2Oq$k0">
-                                                <ref role="3cqZAo" node="17tv9cWLegk" resolve="err" />
-                                              </node>
-                                              <node concept="liA8E" id="17tv9cWModk" role="2OqNvi">
-                                                <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                                              </node>
+                                            <node concept="37vLTw" id="u6B29mDike" role="37wK5m">
+                                              <ref role="3cqZAo" node="u6B29mDik9" resolve="node" />
                                             </node>
                                           </node>
                                         </node>
@@ -1341,13 +1358,8 @@
                                         <node concept="37vLTw" id="2RwlJ15ZUX3" role="37wK5m">
                                           <ref role="3cqZAo" node="2RwlJ15ZUW_" resolve="concept" />
                                         </node>
-                                        <node concept="2OqwBi" id="2RwlJ15ZUX4" role="37wK5m">
-                                          <node concept="37vLTw" id="2RwlJ15ZUX5" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="2RwlJ15ZUWv" resolve="err" />
-                                          </node>
-                                          <node concept="liA8E" id="2RwlJ15ZUX6" role="2OqNvi">
-                                            <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                                          </node>
+                                        <node concept="37vLTw" id="u6B29mDDKj" role="37wK5m">
+                                          <ref role="3cqZAo" node="u6B29mDik9" resolve="node" />
                                         </node>
                                       </node>
                                     </node>
@@ -1490,13 +1502,8 @@
                                             <ref role="37wK5l" to="6if8:~ConceptFeatureError.getConceptFeature():org.jetbrains.mps.openapi.language.SConceptFeature" resolve="getConceptFeature" />
                                           </node>
                                         </node>
-                                        <node concept="2OqwBi" id="17tv9cWOIdv" role="37wK5m">
-                                          <node concept="37vLTw" id="17tv9cWOGRQ" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="17tv9cWN$Oo" resolve="err" />
-                                          </node>
-                                          <node concept="liA8E" id="17tv9cWOJvm" role="2OqNvi">
-                                            <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNode" resolve="getNode" />
-                                          </node>
+                                        <node concept="37vLTw" id="u6B29mDCor" role="37wK5m">
+                                          <ref role="3cqZAo" node="u6B29mDik9" resolve="node" />
                                         </node>
                                         <node concept="2OqwBi" id="1JLWpRAA_QS" role="37wK5m">
                                           <node concept="37vLTw" id="1JLWpRAA_2H" role="2Oq$k0">

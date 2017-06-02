@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.Arrays;
@@ -34,16 +35,14 @@ import java.util.Set;
 public class LanguageErrorItem extends ReportItemBase {
 
   private final Throwable myException;
-  private final String myMessage;
 
   public LanguageErrorItem(@NotNull String message) {
     this(message, null);
   }
 
   public LanguageErrorItem(@NotNull String message, @Nullable Throwable exception) {
-    super(MessageStatus.ERROR);
+    super(MessageStatus.ERROR, message);
     myException = exception;
-    myMessage = message;
   }
 
   @Override
@@ -55,21 +54,16 @@ public class LanguageErrorItem extends ReportItemBase {
     return myException;
   }
 
-  @Override
-  public String getMessage() {
-    return myMessage;
-  }
-
   public static class ReferenceItem extends LanguageErrorItem implements NodeReportItem, NodeFeatureReportItem {
-    private final SNode myNode;
+    private final SNodeReference myNode;
     private final SReferenceLink myReferenceLink;
     public ReferenceItem(@NotNull ErrorScope errorScope, SReference reference) {
       super(errorScope.getMessage());
-      myNode = reference.getSourceNode();
+      myNode = reference.getSourceNode().getReference();
       myReferenceLink = reference.getLink();
     }
     @Override
-    public SNode getNode() {
+    public SNodeReference getNode() {
       return myNode;
     }
     @Override

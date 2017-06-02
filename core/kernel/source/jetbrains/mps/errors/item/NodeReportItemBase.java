@@ -21,6 +21,7 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -29,10 +30,10 @@ import java.util.function.Function;
 
 public abstract class NodeReportItemBase extends ReportItemBase implements NodeReportItem {
 
-  private final SNode myNode;
+  private final SNodeReference myNode;
 
-  public NodeReportItemBase(@NotNull MessageStatus severity, @NotNull SNode node) {
-    super(severity);
+  public NodeReportItemBase(@NotNull MessageStatus severity, SNodeReference node, String message) {
+    super(severity, message);
     myNode = node;
   }
 
@@ -42,7 +43,7 @@ public abstract class NodeReportItemBase extends ReportItemBase implements NodeR
   }
 
   @Override
-  public SNode getNode() {
+  public SNodeReference getNode() {
     return myNode;
   }
 }

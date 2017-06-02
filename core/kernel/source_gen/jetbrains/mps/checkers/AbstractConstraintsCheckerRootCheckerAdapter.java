@@ -75,7 +75,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
     return result;
   }
   @Override
-  public void processErrors(SNode rootNode, SRepository repository, final Processor<NodeReportItem> processor) {
+  public void processErrors(SNode rootNode, final SRepository repository, final Processor<NodeReportItem> processor) {
     SModel model = SNodeOperations.getModel(rootNode);
     assert model != null;
 
@@ -85,7 +85,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
 
     LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector() {
       public void addErrorInternal(NodeReportItem reportItem) {
-        if (mySkipCondition.skipSingleNode(reportItem.getNode())) {
+        if (mySkipCondition.skipSingleNode(reportItem.getNode().resolve(repository))) {
           return;
         }
         cancelled.set(cancelled.get() || !(processor.process(reportItem)));
