@@ -28,7 +28,7 @@ import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.textgen.trace.DebugInfo;
-import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.vfs.IFile;
@@ -129,10 +129,7 @@ public class CheckScopesAction extends AnAction {
   @Nullable
   private static PsiFile getFileForNode(Project project, SNode node) {
     SModel model = node.getModel();
-    if (model == null || model.getRepository() == null) {
-      return null;
-    }
-    DebugInfo debugInfo = new DefaultTraceInfoProvider(model.getRepository()).debugInfo(model);
+    DebugInfo debugInfo = new TraceInfo().getDebugInfo(model);
     if (debugInfo == null) {
       return null;
     }

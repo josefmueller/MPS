@@ -1251,6 +1251,19 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="1MGOcNZKWH_" role="3cqZAp">
+          <node concept="3cpWsn" id="1MGOcNZKWHA" role="3cpWs9">
+            <property role="TrG5h" value="ti" />
+            <node concept="3uibUv" id="1MGOcNZKWHB" role="1tU5fm">
+              <ref role="3uigEE" to="fwk:~TraceInfo" resolve="TraceInfo" />
+            </node>
+            <node concept="2ShNRf" id="1MGOcNZKZkg" role="33vP2m">
+              <node concept="1pGfFk" id="1MGOcNZLdeW" role="2ShVmc">
+                <ref role="37wK5l" to="fwk:~TraceInfo.&lt;init&gt;()" resolve="TraceInfo" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="2$JKZl" id="3SnNvqCbyN$" role="3cqZAp">
           <node concept="3y3z36" id="3SnNvqCbyN_" role="2$JKZa">
             <node concept="37vLTw" id="3GM_nagTs8W" role="3uHU7B">
@@ -1277,11 +1290,15 @@
               </node>
             </node>
             <node concept="3clFbJ" id="3SnNvqCbyNZ" role="3cqZAp">
-              <node concept="2YIFZM" id="6BpUUXXqJNu" role="3clFbw">
-                <ref role="37wK5l" to="fwk:~TraceInfo.hasTrace(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="hasTrace" />
-                <ref role="1Pybhc" to="fwk:~TraceInfo" resolve="TraceInfo" />
-                <node concept="37vLTw" id="6BpUUXXqJNv" role="37wK5m">
-                  <ref role="3cqZAo" node="3SnNvqCbyNE" resolve="node" />
+              <node concept="2OqwBi" id="1MGOcNZLdD8" role="3clFbw">
+                <node concept="37vLTw" id="1MGOcNZLdug" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1MGOcNZKWHA" resolve="ti" />
+                </node>
+                <node concept="liA8E" id="1MGOcNZLdLK" role="2OqNvi">
+                  <ref role="37wK5l" to="fwk:~TraceInfo.hasDebugInfo(org.jetbrains.mps.openapi.model.SNode):boolean" resolve="hasDebugInfo" />
+                  <node concept="37vLTw" id="1MGOcNZLdSp" role="37wK5m">
+                    <ref role="3cqZAo" node="3SnNvqCbyNE" resolve="node" />
+                  </node>
                 </node>
               </node>
               <node concept="3clFbS" id="3SnNvqCbyOc" role="3clFbx">

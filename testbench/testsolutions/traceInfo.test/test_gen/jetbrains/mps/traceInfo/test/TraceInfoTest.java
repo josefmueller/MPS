@@ -58,7 +58,7 @@ public class TraceInfoTest extends PlatformMpsTest {
     invokeTestWithModelRead(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         Assert.assertNotNull(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").resolve(myProject.getRepository()));
-        Assert.assertTrue(TraceInfo.hasTrace(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").getModelReference().resolve(myProject.getRepository())));
+        Assert.assertTrue(new TraceInfo().hasDebugInfo(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").getModelReference().resolve(myProject.getRepository())));
         Assert.assertTrue("Trace provider by model long name (no stereotype)", myTraceProvider.debugInfo(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").getModelReference().getName().getLongName()).findAny().isPresent());
         Assert.assertTrue("Trace provider by exact model name", myTraceProvider.debugInfo(new SNodePointer("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650").getModelReference().getName(), new Predicate<SModel>() {
           public boolean test(SModel m) {

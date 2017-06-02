@@ -7,8 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.textgen.trace.DebugInfo;
-import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -32,13 +31,7 @@ public class BreakpointLocation {
   public BreakpointLocation(@NotNull SNode node) {
     SModel model = node.getModel();
     assert model != null : "Tracing doesn't make sense for free-floating nodes";
-    final DebugInfo di;
-    if (model.getRepository() != null) {
-      di = new DefaultTraceInfoProvider(model.getRepository()).debugInfo(model);
-    } else {
-      di = null;
-    }
-    myTargetCodeLocation = new NodeTraceInfo(node, di);
+    myTargetCodeLocation = new NodeTraceInfo(node, new TraceInfo().getDebugInfo(model));
   }
 
   @NotNull

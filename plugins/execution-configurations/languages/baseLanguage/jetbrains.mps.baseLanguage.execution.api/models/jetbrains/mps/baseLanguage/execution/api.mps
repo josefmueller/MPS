@@ -1645,20 +1645,12 @@
             </node>
             <node concept="2OqwBi" id="7udac0TjB$t" role="33vP2m">
               <node concept="2ShNRf" id="7udac0TjB$u" role="2Oq$k0">
-                <node concept="1pGfFk" id="7udac0TjB$v" role="2ShVmc">
-                  <ref role="37wK5l" to="fwk:~DefaultTraceInfoProvider.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="DefaultTraceInfoProvider" />
-                  <node concept="2OqwBi" id="7udac0TjB$w" role="37wK5m">
-                    <node concept="37vLTw" id="7udac0TjB$x" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7mvYbwTB6gd" resolve="model" />
-                    </node>
-                    <node concept="liA8E" id="7udac0TjB$y" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                    </node>
-                  </node>
+                <node concept="1pGfFk" id="7udac0TnLMO" role="2ShVmc">
+                  <ref role="37wK5l" to="fwk:~TraceInfo.&lt;init&gt;()" resolve="TraceInfo" />
                 </node>
               </node>
               <node concept="liA8E" id="7udac0TjB$z" role="2OqNvi">
-                <ref role="37wK5l" to="fwk:~DefaultTraceInfoProvider.debugInfo(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.textgen.trace.DebugInfo" resolve="debugInfo" />
+                <ref role="37wK5l" to="fwk:~TraceInfo.getDebugInfo(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.textgen.trace.DebugInfo" resolve="getDebugInfo" />
                 <node concept="37vLTw" id="7udac0TjB$$" role="37wK5m">
                   <ref role="3cqZAo" node="7mvYbwTB6gd" resolve="model" />
                 </node>

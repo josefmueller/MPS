@@ -4450,11 +4450,17 @@
             <node concept="3uibUv" id="4nhXowZdk4R" role="1tU5fm">
               <ref role="3uigEE" to="fwk:~TraceablePositionInfo" resolve="TraceablePositionInfo" />
             </node>
-            <node concept="2YIFZM" id="7U8zC0SKpO1" role="33vP2m">
-              <ref role="1Pybhc" to="fwk:~TraceInfo" resolve="TraceInfo" />
-              <ref role="37wK5l" to="fwk:~TraceInfo.getPositionForNode(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.textgen.trace.TraceablePositionInfo" resolve="getPositionForNode" />
-              <node concept="37vLTw" id="7U8zC0SK$mV" role="37wK5m">
-                <ref role="3cqZAo" node="3SnNvqCaJFL" resolve="node" />
+            <node concept="2OqwBi" id="1MGOcNZLtQ3" role="33vP2m">
+              <node concept="2ShNRf" id="1MGOcNZLrfT" role="2Oq$k0">
+                <node concept="1pGfFk" id="1MGOcNZLth$" role="2ShVmc">
+                  <ref role="37wK5l" to="fwk:~TraceInfo.&lt;init&gt;()" resolve="TraceInfo" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1MGOcNZLvly" role="2OqNvi">
+                <ref role="37wK5l" to="fwk:~TraceInfo.getPosition(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.textgen.trace.TraceablePositionInfo" resolve="getPosition" />
+                <node concept="37vLTw" id="1MGOcNZLwUL" role="37wK5m">
+                  <ref role="3cqZAo" node="3SnNvqCaJFL" resolve="node" />
+                </node>
               </node>
             </node>
           </node>

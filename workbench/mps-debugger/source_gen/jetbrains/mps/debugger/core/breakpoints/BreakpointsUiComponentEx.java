@@ -85,9 +85,10 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
 
   protected EditorCell findTraceableCell(EditorCell foundCell) {
     EditorCell cell = foundCell;
+    TraceInfo ti = new TraceInfo();
     while (cell != null) {
       SNode node = cell.getSNode();
-      if (TraceInfo.hasTrace(node)) {
+      if (ti.hasDebugInfo(node)) {
         break;
       }
       cell = cell.getParent();

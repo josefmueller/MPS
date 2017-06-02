@@ -30,7 +30,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Level;
 import jetbrains.mps.textgen.trace.DebugInfo;
-import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.behaviour.BHReflection;
@@ -199,7 +199,7 @@ public class Java_Command {
         LOG.error("The hosting module's " + module + " classes are not managed by MPS");
       }
     }
-    DebugInfo debugInfo = new DefaultTraceInfoProvider(model.getRepository()).debugInfo(model);
+    DebugInfo debugInfo = new TraceInfo().getDebugInfo(model);
     if (debugInfo == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("No trace.info found for model " + model + ". Check that model is generated.");

@@ -47,14 +47,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
+ * It's unlikely you need to instantiate this class directly, instead, {@link TraceInfo} might serve better starting point.
+ *
  * The reason [generator] needs [debuginfo-api], which is otherwise textgen-specific (moreover, BL-textgen)
  */
-public class TraceInfoCache {
+public final class TraceInfoCache {
   public static final String TRACE_FILE_NAME = "trace.info";
   private final ConcurrentMap<SModelReference, DebugInfo> myCache = new ConcurrentHashMap<>();
 
   public TraceInfoCache() {
-    super();
   }
 
   @Nullable

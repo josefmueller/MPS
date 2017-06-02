@@ -824,26 +824,32 @@
                   </node>
                 </node>
                 <node concept="3vwNmj" id="6k4GBOyllfI" role="3cqZAp">
-                  <node concept="2YIFZM" id="6k4GBOylj$b" role="3vwVQn">
-                    <ref role="1Pybhc" to="fwk:~TraceInfo" resolve="TraceInfo" />
-                    <ref role="37wK5l" to="fwk:~TraceInfo.hasTrace(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="hasTrace" />
-                    <node concept="2OqwBi" id="6k4GBOylk5g" role="37wK5m">
-                      <node concept="2OqwBi" id="6k4GBOyljJo" role="2Oq$k0">
-                        <node concept="1N_AGu" id="6k4GBOyljAt" role="2Oq$k0">
-                          <ref role="1N_AGt" node="7ptIPrQgQIU" resolve="TestClass" />
-                        </node>
-                        <node concept="liA8E" id="6k4GBOylk0E" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SNodeReference.getModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getModelReference" />
-                        </node>
+                  <node concept="2OqwBi" id="1MGOcNZKySs" role="3vwVQn">
+                    <node concept="2ShNRf" id="1MGOcNZKxIn" role="2Oq$k0">
+                      <node concept="1pGfFk" id="1MGOcNZKyEw" role="2ShVmc">
+                        <ref role="37wK5l" to="fwk:~TraceInfo.&lt;init&gt;()" resolve="TraceInfo" />
                       </node>
-                      <node concept="liA8E" id="6k4GBOylkn8" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
-                        <node concept="2OqwBi" id="6k4GBOylk$_" role="37wK5m">
-                          <node concept="37vLTw" id="6k4GBOylkpT" role="2Oq$k0">
-                            <ref role="3cqZAo" node="3Gc6Q_RXVAc" resolve="myProject" />
+                    </node>
+                    <node concept="liA8E" id="1MGOcNZKzcB" role="2OqNvi">
+                      <ref role="37wK5l" to="fwk:~TraceInfo.hasDebugInfo(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="hasDebugInfo" />
+                      <node concept="2OqwBi" id="6k4GBOylk5g" role="37wK5m">
+                        <node concept="2OqwBi" id="6k4GBOyljJo" role="2Oq$k0">
+                          <node concept="1N_AGu" id="6k4GBOyljAt" role="2Oq$k0">
+                            <ref role="1N_AGt" node="7ptIPrQgQIU" resolve="TestClass" />
                           </node>
-                          <node concept="liA8E" id="6k4GBOyll6d" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                          <node concept="liA8E" id="6k4GBOylk0E" role="2OqNvi">
+                            <ref role="37wK5l" to="mhbf:~SNodeReference.getModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getModelReference" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="6k4GBOylkn8" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SModelReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SModel" resolve="resolve" />
+                          <node concept="2OqwBi" id="6k4GBOylk$_" role="37wK5m">
+                            <node concept="37vLTw" id="6k4GBOylkpT" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3Gc6Q_RXVAc" resolve="myProject" />
+                            </node>
+                            <node concept="liA8E" id="6k4GBOyll6d" role="2OqNvi">
+                              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                            </node>
                           </node>
                         </node>
                       </node>

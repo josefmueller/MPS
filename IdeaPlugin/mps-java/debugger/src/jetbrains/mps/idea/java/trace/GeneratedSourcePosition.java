@@ -26,9 +26,10 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
-import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
 import jetbrains.mps.textgen.trace.DebugInfo;
+import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
 import jetbrains.mps.textgen.trace.NodeTraceInfo;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -42,7 +43,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Optional;
-import java.util.stream.Stream;
 
 /**
  * Use this class for mapping debugger position (type, file, line number) to
@@ -86,11 +86,7 @@ public class GeneratedSourcePosition {
   @Nullable
   public static GeneratedSourcePosition fromNode(final SNode node) {
     SModel model = node.getModel();
-    if (model == null || model.getRepository() == null) {
-      return null;
-    }
-
-    NodeTraceInfo nti = new NodeTraceInfo(node, new DefaultTraceInfoProvider(model.getRepository()).debugInfo(model));
+    NodeTraceInfo nti = new NodeTraceInfo(node, new TraceInfo().getDebugInfo(model));
     TraceablePositionInfo position = nti.getPosition();
     if (position == null) {
       return null;

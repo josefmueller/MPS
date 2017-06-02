@@ -35,7 +35,7 @@ public final class IMainClass__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getUnitName_id431DWIovi3n(@NotNull SNode __thisNode__) {
-    return Sequence.fromIterable(((Iterable<String>) TraceInfo.unitNames(__thisNode__))).first();
+    return Sequence.fromIterable(((Iterable<String>) new TraceInfo().getUnitNames(__thisNode__))).first();
   }
   /*package*/ static boolean isNodeRunnable_id431DWIovi3C(@NotNull SNode __thisNode__) {
     return isNotEmptyString(IMainClass__BehaviorDescriptor.getUnitName_id431DWIovi3n.invoke(__thisNode__));

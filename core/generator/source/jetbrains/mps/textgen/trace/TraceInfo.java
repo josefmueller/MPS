@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,48 +15,88 @@
  */
 package jetbrains.mps.textgen.trace;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 /**
+ * Auxiliary methods to extract information from {@link DebugInfo} easily.
  * FIXME statics are not very smart way to deal with trace.info, provided we no longer cache these files, unless TraceInfoCache instance is shared between the
  * calls (e.g. see {@link DefaultTraceInfoProvider})
  * @author Artem Tikhomirov
  */
-public class TraceInfo {
+public final class TraceInfo {
+  private final TraceInfoCache myTraceInfoCache = new TraceInfoCache();
+
+  public TraceInfo() {
+  }
 
   @Nullable
-  private static DebugInfo debugInfo(SModel model) {
-    if (model.getRepository() == null) {
-      return null;
-    }
-    return new DefaultTraceInfoProvider(model.getRepository()).debugInfo(model);
+  public DebugInfo getDebugInfo(@Nullable SModel model) {
+    return model == null ? null : myTraceInfoCache.get(model);
   }
 
+  public boolean hasDebugInfo(@Nullable SModel model) {
+    return model != null && null != myTraceInfoCache.get(model);
+  }
+
+  /**
+   * @deprecated use instance method {@link #hasDebugInfo(SModel)} instead
+   *             When removing, consider instance method with same name.
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public static boolean hasTrace(@Nullable SModel model) {
-    return model != null && null != debugInfo(model);
+    return model != null && new TraceInfo().hasDebugInfo(model);
   }
 
+
+  public boolean hasDebugInfo(@Nullable SNode node) {
+    if (node == null) {
+      return false;
+    }
+    return getPosition(node) != null;
+  }
+
+  /**
+   * @deprecated use instance {@link #hasDebugInfo(SNode)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public static boolean hasTrace(@Nullable SNode node) {
     if (node == null) {
       return false;
     }
-    return getPositionForNode(node) != null;
+    return new TraceInfo().getPosition(node) != null;
   }
 
+
+  /**
+   * @deprecated use {@link #getPosition(SNode)} instead
+   */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public static TraceablePositionInfo getPositionForNode(@Nullable SNode node) {
     if (node == null || node.getModel() == null) {
       return null;
     }
-    DebugInfo debugInfo = debugInfo(node.getModel());
+    return new TraceInfo().getPosition(node);
+  }
+
+  @Nullable
+  public TraceablePositionInfo getPosition(@Nullable SNode node) {
+    if (node == null || node.getModel() == null) {
+      return null;
+    }
+    DebugInfo debugInfo = myTraceInfoCache.get(node.getModel());
     if (debugInfo != null) {
       return debugInfo.getPositionForNode(node);
     }
@@ -64,38 +104,28 @@ public class TraceInfo {
   }
 
   @NotNull
-  public static List<String> unitNames(@NotNull SNode node) {
-    DebugInfo debugInfo = debugInfo(node.getModel());
+  public Collection<String> getUnitNames(@Nullable SNode node) {
+    if (node == null || node.getModel() == null) {
+      return Collections.emptyList();
+    }
+    DebugInfo debugInfo = myTraceInfoCache.get(node.getModel());
     if (debugInfo == null) {
       return Collections.emptyList();
     }
-    ArrayList<String> rv = new ArrayList<String>();
+    ArrayList<String> rv = new ArrayList<>();
     for (UnitPositionInfo pi : debugInfo.getUnitsForNode(node)) {
       rv.add(pi.getUnitName());
     }
     return rv;
   }
 
-  @Nullable
-  public static String unitNameWithPosition(@NotNull SNode node, @NotNull Condition<TraceablePositionInfo> positionMatcher) {
-    SModel model = node.getModel();
-    DebugInfo debugInfo = debugInfo(model);
-    if (debugInfo == null) {
-      return null;
-    }
-
-    List<UnitPositionInfo> unitsForNode = debugInfo.getUnitsForNode(node);
-    DebugInfoRoot infoRoot = debugInfo.getRootInfo(node.getContainingRoot());
-    for (final TraceablePositionInfo position : infoRoot.getPositions()) {
-      if (!positionMatcher.met(position)) {
-        continue;
-      }
-      for (UnitPositionInfo unit : unitsForNode) {
-        if (unit.contains(position.getFileName(), position.getStartLine())) {
-          return unit.getUnitName();
-        }
-      }
-    }
-    return null;
+  /**
+   * @deprecated use {@link #getUnitNames(SNode)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
+  @NotNull
+  public static List<String> unitNames(@NotNull SNode node) {
+    return new ArrayList<>(new TraceInfo().getUnitNames(node));
   }
 }

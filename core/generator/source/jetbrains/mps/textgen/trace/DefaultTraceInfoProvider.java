@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ package jetbrains.mps.textgen.trace;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -41,7 +40,7 @@ public class DefaultTraceInfoProvider implements TraceInfoProvider {
 
   public DefaultTraceInfoProvider(@NotNull SRepository repository) {
     myRepository = repository;
-    myTraceInfoCache = TraceInfoCache.getInstance();
+    myTraceInfoCache = new TraceInfoCache();
   }
 
   @Override
@@ -61,16 +60,5 @@ public class DefaultTraceInfoProvider implements TraceInfoProvider {
                 .map(myTraceInfoCache::get).toArray(DebugInfo[]::new)
     );
     return Arrays.stream(debugInfos);
-  }
-
-
-  /**
-   * XXX 1. j.u.Optional would make it much more fun
-   * XXX 2. Perhaps, should move it to TraceInfoProvider interface. OTOH, if I don't need SRepository cons argument, may have it separated
-   *        (to avoid useless model.getRepository() calls).
-   */
-  @Nullable
-  public DebugInfo debugInfo(@NotNull SModel model) {
-    return myTraceInfoCache.get(model);
   }
 }

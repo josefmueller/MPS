@@ -982,7 +982,7 @@
       <node id="8149197049716796741" at="73,29,74,24" concept="11" />
       <node id="9117694126971187074" at="75,5,76,0" concept="13" />
       <node id="6407279111253690023" at="76,0,77,55" concept="12" />
-      <node id="8149197049716796509" at="77,55,78,72" concept="10" />
+      <node id="8149197049716796509" at="77,55,78,71" concept="10" />
       <node id="8149197049716796524" at="79,27,80,55" concept="10" />
       <node id="8149197049716796535" at="81,28,82,20" concept="11" />
       <node id="9131147740779418559" at="83,7,84,54" concept="11" />
@@ -1002,7 +1002,7 @@
       <node id="4474271214082914949" at="31,0,36,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
       <node id="8149197049716796755" at="48,5,53,15" concept="11" />
       <node id="8149197049716796626" at="58,124,64,9" concept="8" />
-      <node id="8149197049716796519" at="78,72,85,5" concept="8" />
+      <node id="8149197049716796519" at="78,71,85,5" concept="8" />
       <node id="4474271214082914984" at="45,0,55,0" concept="9" trace="isDebuggableNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="8149197049716796252" at="56,71,66,7" concept="8" />
       <node id="8149197049716796247" at="55,103,67,5" concept="7" />

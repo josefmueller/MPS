@@ -24619,40 +24619,63 @@
     <property role="TrG5h" value="PrintNodePosition" />
     <property role="2uzpH1" value="Print Node Line" />
     <property role="3GE5qa" value="analyzeTrace" />
-    <property role="1teQrl" value="true" />
+    <property role="72QZ$" value="true" />
     <node concept="2S4$dB" id="D0bc7NfeJE" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="3Tm6S6" id="D0bc7NfeJF" role="1B3o_S" />
       <node concept="3Tqbb2" id="D0bc7NfeJG" role="1tU5fm" />
       <node concept="1oajcY" id="D0bc7NfeJH" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="D0bc7NfeJI" role="1NuT2Z">
-      <property role="TrG5h" value="model" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
-      <node concept="1oajcY" id="D0bc7NfeJJ" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="D0bc7NfeJK" role="1NuT2Z">
-      <property role="TrG5h" value="module" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODULE" resolve="CONTEXT_MODULE" />
-      <node concept="1oajcY" id="D0bc7NfeJL" role="1oa70y" />
+    <node concept="1DS2jV" id="1MGOcNZMzvr" role="1NuT2Z">
+      <property role="TrG5h" value="mpsProject" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
+      <node concept="1oajcY" id="1MGOcNZMzvs" role="1oa70y" />
     </node>
     <node concept="tnohg" id="D0bc7NfeJM" role="tncku">
       <node concept="3clFbS" id="D0bc7NfeJN" role="2VODD2">
-        <node concept="3clFbF" id="D0bc7NfeKd" role="3cqZAp">
-          <node concept="2OqwBi" id="D0bc7NfeKe" role="3clFbG">
-            <node concept="10M0yZ" id="D0bc7NfeKf" role="2Oq$k0">
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+        <node concept="3clFbF" id="1MGOcNZMzIv" role="3cqZAp">
+          <node concept="2OqwBi" id="1MGOcNZM_c2" role="3clFbG">
+            <node concept="2OqwBi" id="1MGOcNZM$po" role="2Oq$k0">
+              <node concept="2OqwBi" id="1MGOcNZMzIp" role="2Oq$k0">
+                <node concept="2WthIp" id="1MGOcNZMzIs" role="2Oq$k0" />
+                <node concept="1DTwFV" id="1MGOcNZMzIu" role="2OqNvi">
+                  <ref role="2WH_rO" node="1MGOcNZMzvr" resolve="mpsProject" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1MGOcNZM_6H" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
             </node>
-            <node concept="liA8E" id="D0bc7NfeKg" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.Object):void" resolve="println" />
-              <node concept="2YIFZM" id="7IAaM8au5wH" role="37wK5m">
-                <ref role="1Pybhc" to="fwk:~TraceInfo" resolve="TraceInfo" />
-                <ref role="37wK5l" to="fwk:~TraceInfo.getPositionForNode(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.textgen.trace.TraceablePositionInfo" resolve="getPositionForNode" />
-                <node concept="2OqwBi" id="7IAaM8au5wI" role="37wK5m">
-                  <node concept="2WthIp" id="7IAaM8au5wJ" role="2Oq$k0" />
-                  <node concept="3gHZIF" id="7IAaM8au5wK" role="2OqNvi">
-                    <ref role="2WH_rO" node="D0bc7NfeJE" resolve="node" />
+            <node concept="liA8E" id="1MGOcNZM_vV" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <node concept="1bVj0M" id="1MGOcNZM_yu" role="37wK5m">
+                <node concept="3clFbS" id="1MGOcNZM_yv" role="1bW5cS">
+                  <node concept="3clFbF" id="D0bc7NfeKd" role="3cqZAp">
+                    <node concept="2OqwBi" id="D0bc7NfeKe" role="3clFbG">
+                      <node concept="10M0yZ" id="D0bc7NfeKf" role="2Oq$k0">
+                        <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                        <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                      </node>
+                      <node concept="liA8E" id="D0bc7NfeKg" role="2OqNvi">
+                        <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.Object):void" resolve="println" />
+                        <node concept="2OqwBi" id="1MGOcNZMk7T" role="37wK5m">
+                          <node concept="2ShNRf" id="1MGOcNZM6rP" role="2Oq$k0">
+                            <node concept="1pGfFk" id="1MGOcNZMk2o" role="2ShVmc">
+                              <ref role="37wK5l" to="fwk:~TraceInfo.&lt;init&gt;()" resolve="TraceInfo" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="1MGOcNZMkhL" role="2OqNvi">
+                            <ref role="37wK5l" to="fwk:~TraceInfo.getPosition(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.textgen.trace.TraceablePositionInfo" resolve="getPosition" />
+                            <node concept="2OqwBi" id="1MGOcNZMkkC" role="37wK5m">
+                              <node concept="2WthIp" id="1MGOcNZMkkF" role="2Oq$k0" />
+                              <node concept="3gHZIF" id="1MGOcNZMkkH" role="2OqNvi">
+                                <ref role="2WH_rO" node="D0bc7NfeJE" resolve="node" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

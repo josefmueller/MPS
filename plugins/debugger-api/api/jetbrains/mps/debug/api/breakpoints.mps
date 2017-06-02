@@ -698,70 +698,6 @@
             <property role="Xl_RC" value="Tracing doesn't make sense for free-floating nodes" />
           </node>
         </node>
-        <node concept="3cpWs8" id="URDuznpgip" role="3cqZAp">
-          <node concept="3cpWsn" id="URDuznpgiq" role="3cpWs9">
-            <property role="TrG5h" value="di" />
-            <property role="3TUv4t" value="true" />
-            <node concept="3uibUv" id="URDuznpgir" role="1tU5fm">
-              <ref role="3uigEE" to="fwk:~DebugInfo" resolve="DebugInfo" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="URDuznpfrj" role="3cqZAp">
-          <node concept="3clFbS" id="URDuznpfrl" role="3clFbx">
-            <node concept="3clFbF" id="URDuznpgtS" role="3cqZAp">
-              <node concept="37vLTI" id="URDuznpgy4" role="3clFbG">
-                <node concept="2OqwBi" id="URDuznpo93" role="37vLTx">
-                  <node concept="2ShNRf" id="URDuznpg$X" role="2Oq$k0">
-                    <node concept="1pGfFk" id="URDuznpo4_" role="2ShVmc">
-                      <ref role="37wK5l" to="fwk:~DefaultTraceInfoProvider.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="DefaultTraceInfoProvider" />
-                      <node concept="2OqwBi" id="URDuznpo4Z" role="37wK5m">
-                        <node concept="37vLTw" id="URDuznpoCh" role="2Oq$k0">
-                          <ref role="3cqZAo" node="URDuznpoCc" resolve="model" />
-                        </node>
-                        <node concept="liA8E" id="URDuznpo53" role="2OqNvi">
-                          <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="URDuznpofU" role="2OqNvi">
-                    <ref role="37wK5l" to="fwk:~DefaultTraceInfoProvider.debugInfo(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.textgen.trace.DebugInfo" resolve="debugInfo" />
-                    <node concept="37vLTw" id="URDuznpoQl" role="37wK5m">
-                      <ref role="3cqZAo" node="URDuznpoCc" resolve="model" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="URDuznpgtQ" role="37vLTJ">
-                  <ref role="3cqZAo" node="URDuznpgiq" resolve="di" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3y3z36" id="URDuznpfVs" role="3clFbw">
-            <node concept="10Nm6u" id="URDuznpg3N" role="3uHU7w" />
-            <node concept="2OqwBi" id="URDuznpfKh" role="3uHU7B">
-              <node concept="37vLTw" id="URDuznpoCi" role="2Oq$k0">
-                <ref role="3cqZAo" node="URDuznpoCc" resolve="model" />
-              </node>
-              <node concept="liA8E" id="URDuznpfRv" role="2OqNvi">
-                <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-              </node>
-            </node>
-          </node>
-          <node concept="9aQIb" id="URDuznpom9" role="9aQIa">
-            <node concept="3clFbS" id="URDuznpoma" role="9aQI4">
-              <node concept="3clFbF" id="URDuznpotS" role="3cqZAp">
-                <node concept="37vLTI" id="URDuznpoy4" role="3clFbG">
-                  <node concept="10Nm6u" id="URDuznpo$X" role="37vLTx" />
-                  <node concept="37vLTw" id="URDuznpotR" role="37vLTJ">
-                    <ref role="3cqZAo" node="URDuznpgiq" resolve="di" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3Gc6Q_RZzDC" role="3cqZAp">
           <node concept="37vLTI" id="3Gc6Q_RZzHm" role="3clFbG">
             <node concept="2ShNRf" id="3Gc6Q_RZzKT" role="37vLTx">
@@ -770,8 +706,18 @@
                 <node concept="37vLTw" id="3Gc6Q_RZ$or" role="37wK5m">
                   <ref role="3cqZAo" node="3SnNvqCaJW8" resolve="node" />
                 </node>
-                <node concept="37vLTw" id="2hR4$Tu0ar4" role="37wK5m">
-                  <ref role="3cqZAo" node="URDuznpgiq" resolve="di" />
+                <node concept="2OqwBi" id="URDuznpo93" role="37wK5m">
+                  <node concept="2ShNRf" id="URDuznpg$X" role="2Oq$k0">
+                    <node concept="1pGfFk" id="1MGOcNZKth0" role="2ShVmc">
+                      <ref role="37wK5l" to="fwk:~TraceInfo.&lt;init&gt;()" resolve="TraceInfo" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="URDuznpofU" role="2OqNvi">
+                    <ref role="37wK5l" to="fwk:~TraceInfo.getDebugInfo(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.textgen.trace.DebugInfo" resolve="getDebugInfo" />
+                    <node concept="37vLTw" id="URDuznpoQl" role="37wK5m">
+                      <ref role="3cqZAo" node="URDuznpoCc" resolve="model" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
