@@ -5,6 +5,7 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.messages.Icons;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
@@ -13,7 +14,6 @@ import jetbrains.mps.project.validation.ValidationProblem;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.errors.item.QuickFix;
 import jetbrains.mps.errors.item.QuickFixReportItem;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 public abstract class ModelCheckerIssue {
   public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
@@ -27,9 +27,9 @@ public abstract class ModelCheckerIssue {
   public String getMessage() {
     return myMessage;
   }
-  public boolean fix() {
+  public boolean fix(SRepository repository) {
     if (myFix != null) {
-      return myFix.doFix();
+      return myFix.doFix(repository);
     } else {
       return false;
     }
@@ -63,11 +63,11 @@ public abstract class ModelCheckerIssue {
       myNode = node;
     }
     @Override
-    public boolean fix() {
+    public boolean fix(SRepository repository) {
       if (myNode.getModel() == null) {
         return false;
       } else {
-        return super.fix();
+        return super.fix(repository);
       }
     }
     public SNode getNode() {
@@ -90,19 +90,19 @@ public abstract class ModelCheckerIssue {
     }
   }
 
-  /*package*/ static class ValidationFixAdapter implements IModelCheckerFix {
+  /*package*/ static class ValidationFixAdapter extends IModelCheckerFix {
     private final ValidationProblem myIssue;
     public ValidationFixAdapter(ValidationProblem validationIssue) {
       myIssue = validationIssue;
     }
 
-    public boolean doFix() {
+    @Override
+    public boolean doFix(SRepository repository) {
       QuickFix quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(myIssue);
       if (quickfix == null) {
         return false;
       }
-      // todo: pass repository 
-      quickfix.execute(MPSModuleRepository.getInstance());
+      quickfix.execute(repository);
       return true;
     }
   }

@@ -130,7 +130,7 @@ public class ModelCheckerViewer extends JPanel {
         while (true) {
           int fixedBefore = fixedTotal.value;
           for (ModelCheckerIssue issue : ListSequence.fromListWithValues(new ArrayList<ModelCheckerIssue>(), issuesToFix)) {
-            if (issue.fix()) {
+            if (issue.fix(myProject.getRepository())) {
               fixedTotal.value++;
               ListSequence.fromList(issuesToFix).removeElement(issue);
             }
