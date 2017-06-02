@@ -91,7 +91,7 @@ class ImportsHelper {
   private void register(String index, SModelReference modelReference) {
     if (myModelRef.equals(modelReference)) {
 //      assert !myModelRef.equals(modelReference) : String.format("Model %s: no reason to keep imports to self", myModelRef);
-      Logger.getLogger(ImportsHelper.class).error(String.format("Model %s: no reason to keep imports to self", myModelRef));
+      Logger.getLogger(ImportsHelper.class).warn(String.format("Model %s: no reason to keep imports to self", myModelRef));
     }
     myIndex2Model.put(index, modelReference);
     myModel2Index.put(modelReference, index);
