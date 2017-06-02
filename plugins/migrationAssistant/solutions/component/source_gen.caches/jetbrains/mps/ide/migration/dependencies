@@ -31,11 +31,9 @@
   <dependency className="jetbrains.mps.ide.migration.MigrationDialogUtil" file="MigrationDialogUtil.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationMakeBlocker" file="MigrationMakeBlocker.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

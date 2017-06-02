@@ -296,7 +296,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     }
 
     final Project ideaProject = myProject;
-    final Iterable<SModule> allModules = MigrationsUtil.getMigrateableModulesFromProject(myMpsProject);
     saveAndSetTipsState();
     myMigrationQueued = true;
 
@@ -314,7 +313,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
             myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
               public void run() {
-                importVersionsUpdateRequired.value = myMigrationManager.importVersionsUpdateRequired(allModules);
+                importVersionsUpdateRequired.value = myMigrationManager.importVersionsUpdateRequired(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
                 migrationRequired.value = myMigrationManager.isMigrationRequired();
               }
             });
@@ -322,7 +321,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             boolean resave;
             boolean migrate;
             if (migrationRequired.value) {
-              migrate = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, allModules, myMigrationManager);
+              migrate = MigrationDialogUtil.showMigrationConfirmation(myMpsProject, myMigrationManager);
               resave = importVersionsUpdateRequired.value && migrate;
             } else {
               migrate = false;
@@ -336,9 +335,15 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
                   progressMonitor.start("Resaving module descriptors", 10);
                   ProgressMonitor refreshing = progressMonitor.subTask(9);
                   syncRefresh(refreshing);
+                  final Wrappers._T<List<SModule>> allModules = new Wrappers._T<List<SModule>>();
+                  myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+                    public void run() {
+                      allModules.value = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).toListSequence();
+                    }
+                  });
                   ProgressMonitor saving = progressMonitor.subTask(1);
-                  saving.start("Saving...", Sequence.fromIterable(allModules).count());
-                  for (final SModule module : Sequence.fromIterable(allModules)) {
+                  saving.start("Saving...", ListSequence.fromList(allModules.value).count());
+                  for (final SModule module : ListSequence.fromList(allModules.value)) {
                     saving.advance(1);
                     WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
                       public void run() {
@@ -454,11 +459,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     private void triggerOnModuleChanged(SModule module) {
       if (myTask == null) {
         myTask = new MigrationTrigger.MyRepoListener.ModuleBatchUpdater();
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            myMpsProject.getModelAccess().executeCommand(myTask);
-          }
-        });
+        myMpsProject.getModelAccess().executeCommandInEDT(myTask);
       }
       SetSequence.fromSet(myTask.modulesTouched).addElement(module);
       if (myReloadListener.isIsUnderReload()) {
