@@ -15,6 +15,14 @@
  */
 package jetbrains.mps.errors.item;
 
-public interface NodeReportItem extends NodeFlavouredItem, ReportItem {
+import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+
+public interface NodeFeatureFlavouredItem extends NodeFlavouredItem {
+
+  SConceptFeature getConceptFeature();
+
+  ReportItemFlavour<NodeFeatureFlavouredItem, SConceptFeature>
+      FLAVOUR_NODE_FEATURE = new SimpleReportItemFlavour<>(NodeFeatureFlavouredItem.class, NodeFeatureFlavouredItem::getConceptFeature);
 
 }

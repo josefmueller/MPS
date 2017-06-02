@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.errors.item.QuickFix;
 import jetbrains.mps.errors.item.QuickFixReportItem;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
@@ -31,15 +31,15 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
   }
 
   public IModelCheckerFix getFix(NodeReportItem nodeReportItem) {
-    final SNode reporterNode = nodeReportItem.getNode().resolve(myRepository);
-    final QuickFix_Runtime quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(nodeReportItem);
+    SNode reporterNode = nodeReportItem.getNode().resolve(myRepository);
+    final QuickFix quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(nodeReportItem);
     if (reporterNode != null && quickfix != null) {
       final SNodeReference reporterNodeRef = reporterNode.getReference();
       return new IModelCheckerFix() {
         public boolean doFix() {
           SNode resolved = reporterNodeRef.resolve(myRepository);
           if (resolved != null) {
-            quickfix.execute(reporterNode);
+            quickfix.execute(myRepository);
             return true;
           } else {
             return false;

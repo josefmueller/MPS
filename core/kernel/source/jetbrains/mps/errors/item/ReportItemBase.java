@@ -16,6 +16,7 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.FlavouredItem.ReportItemFlavour;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
@@ -61,7 +62,7 @@ public abstract class ReportItemBase implements ReportItem {
       return false;
     }
     for (ReportItemFlavour<?, ?> flavour: this.getIdFlavours()) {
-      if (EqualUtil.equals(flavour.tryToGet(this), flavour.tryToGet((ReportItem) that))) {
+      if (EqualUtil.equals(flavour.tryToGet(this), flavour.tryToGet((ReportItemBase) that))) {
         return false;
       }
     }
@@ -73,24 +74,7 @@ public abstract class ReportItemBase implements ReportItem {
     return IterableUtil.asList(getIdFlavours()).hashCode();
   }
 
-  public static abstract class ReportItemFlavour<I extends ReportItem, T> {
-    public abstract T get(I reportItem);
-    @NotNull
-    public abstract Class<I> getApplicableClass();
-    @Nullable
-    public T tryToGet(ReportItem reportItem) {
-      if (canGet(reportItem)) {
-        return get((I) reportItem);
-      } else {
-        return null;
-      }
-    }
-    public boolean canGet(ReportItem reportItem) {
-      return getApplicableClass().isAssignableFrom(reportItem.getClass());
-    }
-  }
-
-  static class SimpleReportItemFlavour<C extends ReportItem, T> extends ReportItemFlavour<C, T> {
+  static class SimpleReportItemFlavour<C extends FlavouredItem, T> extends ReportItemFlavour<C, T> {
     private Class<C> myApplicableClass;
     private Function<C, T> myGetter;
     public SimpleReportItemFlavour(Class<C> applicableClass, Function<C, T> getter) {
@@ -110,7 +94,7 @@ public abstract class ReportItemBase implements ReportItem {
     }
   }
 
-  public static class MultipleReportItemFlavour<I extends ReportItem, T> extends SimpleReportItemFlavour<I, Collection<T>> {
+  public static class MultipleReportItemFlavour<I extends FlavouredItem, T> extends SimpleReportItemFlavour<I, Collection<T>> {
     public MultipleReportItemFlavour(Class<I> applicableClass, Function<I, Collection<T>> getter) {
       super(applicableClass, getter);
     }

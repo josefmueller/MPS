@@ -4,12 +4,11 @@ package typesystemIntegration.languageChecker;
 
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.item.QuickFix;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.errors.QuickFix_Runtime;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.resolve.ResolverComponent;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -21,7 +20,7 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
     myEditorComponent = editorContext;
   }
   @Override
-  protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
+  protected QuickFix createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
     return new RefScopeCheckerInEditor.ResolveReferenceEditorBasedQuickFix(reference, repository, executeImmediately, myEditorComponent);
   }
 
@@ -29,32 +28,23 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
     private EditorComponent myEditorComponent;
 
     public ResolveReferenceEditorBasedQuickFix(SReference reference, SRepository repository, boolean executeImmediately, EditorComponent editorComponent) {
-      super(reference, repository, executeImmediately);
+      super(reference, executeImmediately);
       myEditorComponent = editorComponent;
     }
     @Override
-    public QuickFix_Runtime getQuickFix() {
-      return new QuickFix_Runtime() {
-        @Override
-        public void execute(SNode node) {
-          if (ResolverComponent.getInstance().resolveScopesOnly(myReference, myRepository)) {
-            return;
-          }
-          SNode sourceNode = myReference.getSourceNode();
-          if (sourceNode == null) {
-            return;
-          }
-          final String resolveInfo = ReferenceResolverUtils.getResolveInfo(myReference, sourceNode);
-          if (resolveInfo == null) {
-            return;
-          }
-          EditorBasedReferenceResolverUtils.resolveInEditor(myEditorComponent, sourceNode, resolveInfo, myReference.getRole());
-        }
-        @Override
-        public String getDescription(SNode node) {
-          return "Resolve \"" + myReference.getRole() + "\" reference";
-        }
-      };
+    public void execute(SRepository repository) {
+      if (ResolverComponent.getInstance().resolveScopesOnly(myReference, repository)) {
+        return;
+      }
+      SNode sourceNode = myReference.getSourceNode();
+      if (sourceNode == null) {
+        return;
+      }
+      final String resolveInfo = ReferenceResolverUtils.getResolveInfo(myReference, sourceNode);
+      if (resolveInfo == null) {
+        return;
+      }
+      EditorBasedReferenceResolverUtils.resolveInEditor(myEditorComponent, sourceNode, resolveInfo, myReference.getLink().getName());
     }
     private SubstituteAction getApplicableSubstituteAction(SubstituteInfo substituteInfo, String resolveInfo) {
       SubstituteAction result = null;

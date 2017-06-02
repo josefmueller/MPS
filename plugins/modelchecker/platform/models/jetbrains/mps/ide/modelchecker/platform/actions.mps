@@ -5388,8 +5388,8 @@
           <node concept="3cpWs8" id="2Ii8KnfGG9Y" role="3cqZAp">
             <node concept="3cpWsn" id="2Ii8KnfGG9Z" role="3cpWs9">
               <property role="TrG5h" value="quickfix" />
-              <node concept="3uibUv" id="2Ii8KnfGG9U" role="1tU5fm">
-                <ref role="3uigEE" to="2gg1:~QuickFix_Runtime" resolve="QuickFix_Runtime" />
+              <node concept="3uibUv" id="u6B29mIEUs" role="1tU5fm">
+                <ref role="3uigEE" to="d6hs:~QuickFix" resolve="QuickFix" />
               </node>
               <node concept="2OqwBi" id="2Ii8KnfGGa0" role="33vP2m">
                 <node concept="10M0yZ" id="2Ii8KnfGGa1" role="2Oq$k0">
@@ -5397,7 +5397,7 @@
                   <ref role="1PxDUh" to="d6hs:~QuickFixReportItem" resolve="QuickFixReportItem" />
                 </node>
                 <node concept="liA8E" id="2Ii8KnfGGa2" role="2OqNvi">
-                  <ref role="37wK5l" to="d6hs:~QuickFixReportItem$QuickFixFlavour.getAutoApplicable(jetbrains.mps.errors.item.ReportItem):jetbrains.mps.errors.QuickFix_Runtime" resolve="getAutoApplicable" />
+                  <ref role="37wK5l" to="d6hs:~QuickFixReportItem$QuickFixFlavour.getAutoApplicable(jetbrains.mps.errors.item.ReportItem):jetbrains.mps.errors.item.QuickFix" resolve="getAutoApplicable" />
                   <node concept="37vLTw" id="2Ii8KnfGGa3" role="37wK5m">
                     <ref role="3cqZAo" node="3GPUCPFi7iW" resolve="myIssue" />
                   </node>
@@ -5422,17 +5422,7 @@
           </node>
           <node concept="3SKdUt" id="2Ii8KnfGPTf" role="3cqZAp">
             <node concept="3SKdUq" id="2Ii8KnfGPTh" role="3SKWNk">
-              <property role="3SKdUp" value="todo: remove node parameter" />
-            </node>
-          </node>
-          <node concept="3SKdUt" id="2Ii8KnfGT1q" role="3cqZAp">
-            <node concept="3SKdUq" id="2Ii8KnfGT1s" role="3SKWNk">
-              <property role="3SKdUp" value="here we can be confident that ValidationProblem quickfix accepts null node because there can be no node" />
-            </node>
-          </node>
-          <node concept="3SKdUt" id="2Ii8KnfGQlK" role="3cqZAp">
-            <node concept="3SKdUq" id="2Ii8KnfGQlL" role="3SKWNk">
-              <property role="3SKdUp" value="is it unused?" />
+              <property role="3SKdUp" value="todo: pass repository" />
             </node>
           </node>
           <node concept="3clFbF" id="2Ii8KnfGM4L" role="3cqZAp">
@@ -5441,8 +5431,11 @@
                 <ref role="3cqZAo" node="2Ii8KnfGG9Z" resolve="quickfix" />
               </node>
               <node concept="liA8E" id="2Ii8KnfGMQD" role="2OqNvi">
-                <ref role="37wK5l" to="2gg1:~QuickFix_Runtime.execute(org.jetbrains.mps.openapi.model.SNode):void" resolve="execute" />
-                <node concept="10Nm6u" id="2Ii8KnfGP7I" role="37wK5m" />
+                <ref role="37wK5l" to="d6hs:~QuickFix.execute(org.jetbrains.mps.openapi.module.SRepository):void" resolve="execute" />
+                <node concept="2YIFZM" id="u6B29mIFEU" role="37wK5m">
+                  <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
+                  <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                </node>
               </node>
             </node>
           </node>
@@ -10379,7 +10372,7 @@
             <node concept="2OqwBi" id="u6B29mDGEJ" role="33vP2m">
               <node concept="2OqwBi" id="4Yjkqq9KZoW" role="2Oq$k0">
                 <node concept="liA8E" id="4Yjkqq9KZoX" role="2OqNvi">
-                  <ref role="37wK5l" to="d6hs:~NodeReportItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
+                  <ref role="37wK5l" to="d6hs:~NodeFlavouredItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
                 </node>
                 <node concept="37vLTw" id="4Yjkqq9KZoY" role="2Oq$k0">
                   <ref role="3cqZAo" node="4Yjkqq9KZq0" resolve="nodeReportItem" />
@@ -10397,8 +10390,8 @@
         <node concept="3cpWs8" id="4Yjkqq9KZp1" role="3cqZAp">
           <node concept="3cpWsn" id="4Yjkqq9KZp2" role="3cpWs9">
             <property role="TrG5h" value="quickfix" />
-            <node concept="3uibUv" id="2PIlT5TBbyz" role="1tU5fm">
-              <ref role="3uigEE" to="2gg1:~QuickFix_Runtime" resolve="QuickFix_Runtime" />
+            <node concept="3uibUv" id="u6B29mIYfC" role="1tU5fm">
+              <ref role="3uigEE" to="d6hs:~QuickFix" resolve="QuickFix" />
             </node>
             <node concept="2OqwBi" id="2PIlT5TAVN_" role="33vP2m">
               <node concept="10M0yZ" id="2Ii8KnfEx3J" role="2Oq$k0">
@@ -10406,7 +10399,7 @@
                 <ref role="1PxDUh" to="d6hs:~QuickFixReportItem" resolve="QuickFixReportItem" />
               </node>
               <node concept="liA8E" id="2PIlT5TAWek" role="2OqNvi">
-                <ref role="37wK5l" to="d6hs:~QuickFixReportItem$QuickFixFlavour.getAutoApplicable(jetbrains.mps.errors.item.ReportItem):jetbrains.mps.errors.QuickFix_Runtime" resolve="getAutoApplicable" />
+                <ref role="37wK5l" to="d6hs:~QuickFixReportItem$QuickFixFlavour.getAutoApplicable(jetbrains.mps.errors.item.ReportItem):jetbrains.mps.errors.item.QuickFix" resolve="getAutoApplicable" />
                 <node concept="37vLTw" id="2PIlT5TAWlF" role="37wK5m">
                   <ref role="3cqZAo" node="4Yjkqq9KZq0" resolve="nodeReportItem" />
                 </node>
@@ -10463,9 +10456,9 @@
                             <ref role="3cqZAo" node="4Yjkqq9KZp2" resolve="quickfix" />
                           </node>
                           <node concept="liA8E" id="4Yjkqq9KZpA" role="2OqNvi">
-                            <ref role="37wK5l" to="2gg1:~QuickFix_Runtime.execute(org.jetbrains.mps.openapi.model.SNode):void" resolve="execute" />
-                            <node concept="37vLTw" id="4Yjkqq9KZpB" role="37wK5m">
-                              <ref role="3cqZAo" node="4Yjkqq9KZoU" resolve="reporterNode" />
+                            <ref role="37wK5l" to="d6hs:~QuickFix.execute(org.jetbrains.mps.openapi.module.SRepository):void" resolve="execute" />
+                            <node concept="37vLTw" id="u6B29mIYIv" role="37wK5m">
+                              <ref role="3cqZAo" node="6Pn_CK31OzO" resolve="myRepository" />
                             </node>
                           </node>
                         </node>
@@ -10641,7 +10634,7 @@
                                       <ref role="3cqZAo" node="45Q6RD6r40n" resolve="reportItem" />
                                     </node>
                                     <node concept="liA8E" id="4Yjkqq9Ixfs" role="2OqNvi">
-                                      <ref role="37wK5l" to="d6hs:~NodeReportItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
+                                      <ref role="37wK5l" to="d6hs:~NodeFlavouredItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="u6B29mDStu" role="2OqNvi">

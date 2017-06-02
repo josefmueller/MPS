@@ -25,28 +25,28 @@ import java.util.function.Function;
 
 public interface QuickFixReportItem extends ReportItem {
 
-  class QuickFixFlavour extends MultipleReportItemFlavour<QuickFixReportItem, QuickFixProvider> {
-    public QuickFixFlavour(Class<QuickFixReportItem> applicableClass, Function<QuickFixReportItem, Collection<QuickFixProvider>> getter) {
+  class QuickFixFlavour extends MultipleReportItemFlavour<QuickFixReportItem, QuickFix> {
+    public QuickFixFlavour(Class<QuickFixReportItem> applicableClass, Function<QuickFixReportItem, Collection<QuickFix>> getter) {
       super(applicableClass, getter);
     }
     @Nullable
-    public QuickFix_Runtime getAutoApplicable(ReportItem reportItem) {
-      Collection<QuickFixProvider> allQuickfixes = this.getCollection(reportItem);
+    public QuickFix getAutoApplicable(ReportItem reportItem) {
+      Collection<QuickFix> allQuickfixes = this.getCollection(reportItem);
       if (allQuickfixes.size() != 1) {
         return null;
       }
-      QuickFixProvider singleQuickFix = allQuickfixes.iterator().next();
+      QuickFix singleQuickFix = allQuickfixes.iterator().next();
       if (singleQuickFix.isExecutedImmediately()) {
-        return singleQuickFix.getQuickFix();
+        return singleQuickFix;
       } else {
         return null;
       }
     }
   }
 
-  Collection<QuickFixProvider> getQuickFixProviders();
+  Collection<QuickFix> getQuickFix();
 
   QuickFixFlavour FLAVOUR_QUICKFIX =
-      new QuickFixFlavour(QuickFixReportItem.class, QuickFixReportItem::getQuickFixProviders);
+      new QuickFixFlavour(QuickFixReportItem.class, QuickFixReportItem::getQuickFix);
 
 }

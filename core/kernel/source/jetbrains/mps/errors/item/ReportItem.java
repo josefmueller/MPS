@@ -17,7 +17,7 @@ package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
 
-public interface ReportItem {
+public interface ReportItem extends FlavouredItem {
   String getMessage();
 
   MessageStatus getSeverity();

@@ -134,11 +134,16 @@
   <dependency className="jetbrains.mps.checkers.RefScopeChecker" file="RefScopeChecker.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
-    <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
-    <classNode dependClassName="jetbrains.mps.errors.QuickFix_Runtime" />
+    <classNode dependClassName="jetbrains.mps.errors.item.FlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.LanguageErrorItem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeFeatureFlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.OutOfScopeReferenceReportItem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.QuickFix" />
+    <classNode dependClassName="jetbrains.mps.errors.item.ReportItemBase" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.resolve.ReferenceResolverUtils" />
@@ -148,6 +153,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraints" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ReferenceDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptFeature" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
@@ -188,10 +194,13 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
-    <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
-    <classNode dependClassName="jetbrains.mps.errors.QuickFix_Runtime" />
+    <classNode dependClassName="jetbrains.mps.errors.item.FlavouredItem" />
     <classNode dependClassName="jetbrains.mps.errors.item.LanguageNotImportedReportItem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeFlavouredItem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.QuickFix" />
+    <classNode dependClassName="jetbrains.mps.errors.item.ReportItemBase" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SLanguageHierarchy" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
@@ -201,6 +210,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.checkers.AbstractNodeChecker" />
   </dependency>

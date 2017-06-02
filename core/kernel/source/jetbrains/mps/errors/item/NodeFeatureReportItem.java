@@ -16,7 +16,6 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.item.ReportItemBase.ReportItemFlavour;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -29,12 +28,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
-public interface NodeFeatureReportItem extends NodeReportItem {
-
-  SConceptFeature getConceptFeature();
-
-  ReportItemFlavour<NodeFeatureReportItem, SConceptFeature>
-      FLAVOUR_NODE_FEATURE = new SimpleReportItemFlavour<>(NodeFeatureReportItem.class, NodeFeatureReportItem::getConceptFeature);
+public interface NodeFeatureReportItem extends NodeReportItem, NodeFeatureFlavouredItem {
 
   ReportItemFlavour<NodeReportItem, MessageTarget> MESSAGE_TARGET_FEATURE = new MessageTargetSimpleReportItemFlavour();
 

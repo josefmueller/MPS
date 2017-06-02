@@ -15,6 +15,15 @@
  */
 package jetbrains.mps.errors.item;
 
-public interface NodeReportItem extends NodeFlavouredItem, ReportItem {
+import org.jetbrains.mps.openapi.module.SRepository;
 
+public interface QuickFix extends FlavouredItem {
+  boolean isExecutedImmediately();
+
+  /**
+   * @param repository repository we have read lock on
+   */
+  void execute(SRepository repository);
+  boolean isAlive(SRepository repository);
+  String getDescription(SRepository repository);
 }

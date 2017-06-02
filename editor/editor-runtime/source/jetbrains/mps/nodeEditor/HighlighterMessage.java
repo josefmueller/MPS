@@ -20,9 +20,10 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.item.NodeFeatureReportItem;
 import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.QuickFixRuntimeAdapter;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -66,7 +67,14 @@ public class HighlighterMessage extends EditorMessageWithTarget {
 
   @Override
   public List<QuickFixProvider> getIntentionProviders() {
-    return new ArrayList<>(TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getCollection(myReportItem));
+    List<QuickFixProvider> list = new ArrayList<>();
+    for (QuickFix quickFix : TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getCollection(myReportItem)) {
+      if (quickFix instanceof QuickFixRuntimeAdapter) {
+        QuickFixProvider quickFixProvider = ((QuickFixRuntimeAdapter) quickFix).getQuickFixProvider();
+        list.add(quickFixProvider);
+      }
+    }
+    return list;
   }
 
   public HighlighterMessage(EditorMessageOwner owner, NodeReportItem reportItem, SNode node) {

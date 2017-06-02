@@ -24,8 +24,8 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class LanguageNotImportedReportItem extends NodeReportItemBase implements QuickFixReportItem {
-  private final QuickFixProvider myQuickFix;
-  public LanguageNotImportedReportItem(@NotNull SNode node, @NotNull QuickFixProvider quickFix) {
+  private final QuickFix myQuickFix;
+  public LanguageNotImportedReportItem(@NotNull SNode node, @NotNull QuickFix quickFix) {
     super(MessageStatus.ERROR, node.getReference(), getMessage(node));
     myQuickFix = quickFix;
   }
@@ -35,7 +35,7 @@ public class LanguageNotImportedReportItem extends NodeReportItemBase implements
   }
 
   @Override
-  public Collection<QuickFixProvider> getQuickFixProviders() {
+  public Collection<QuickFix> getQuickFix() {
     return Collections.singleton(myQuickFix);
   }
 }

@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
 
-public interface RuleIdReportItem extends ReportItem {
+public interface RuleIdFlavouredItem extends FlavouredItem {
 
   class TypesystemRuleId {
     public TypesystemRuleId(SNodeReference nodeReference) {
@@ -34,7 +34,7 @@ public interface RuleIdReportItem extends ReportItem {
 
   Collection<TypesystemRuleId> getRuleId();
 
-  MultipleReportItemFlavour<RuleIdReportItem, TypesystemRuleId> FLAVOUR_RULE_ID =
-      new MultipleReportItemFlavour<>(RuleIdReportItem.class, RuleIdReportItem::getRuleId);
+  MultipleReportItemFlavour<RuleIdFlavouredItem, TypesystemRuleId> FLAVOUR_RULE_ID =
+      new MultipleReportItemFlavour<>(RuleIdFlavouredItem.class, RuleIdFlavouredItem::getRuleId);
 
 }

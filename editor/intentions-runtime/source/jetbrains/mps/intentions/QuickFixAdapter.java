@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.RuleIdFlavouredItem.TypesystemRuleId;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
@@ -28,11 +29,13 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Collection;
 import java.util.Collections;
 
+import static jetbrains.mps.errors.item.RuleIdFlavouredItem.FLAVOUR_RULE_ID;
+
 public class QuickFixAdapter extends OldBaseIntentionFactory {
-  private QuickFix_Runtime myQuickFix;
+  private QuickFix myQuickFix;
   private boolean myIsError;
 
-  public QuickFixAdapter(@NotNull QuickFix_Runtime quickFix, boolean isError) {
+  public QuickFixAdapter(@NotNull QuickFix quickFix, boolean isError) {
     myQuickFix = quickFix;
     myIsError = isError;
   }
@@ -62,7 +65,11 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
 
   @Override
   public SNodeReference getIntentionNodeReference() {
-    return myQuickFix.getDeclarationNode();
+    Collection<TypesystemRuleId> typesystemRuleIds = FLAVOUR_RULE_ID.tryToGet(myQuickFix);
+    if (typesystemRuleIds.size() == 1) {
+      return typesystemRuleIds.iterator().next().getSourceNode();
+    }
+    return null;
   }
 
   @Override
@@ -83,7 +90,7 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
   private class Executable implements IntentionExecutable {
     @Override
     public String getDescription(SNode node, EditorContext editorContext) {
-      return myQuickFix.getDescription(node);
+      return myQuickFix.getDescription(editorContext.getRepository());
     }
 
     @Override
@@ -97,7 +104,7 @@ public class QuickFixAdapter extends OldBaseIntentionFactory {
         caretY = selectedCell.getBaseline();
         restoreCaretPosition = true;
       }
-      myQuickFix.execute(node);
+      myQuickFix.execute(editorContext.getRepository());
       if (restoreCaretPosition) {
         editorContext.flushEvents();
         EditorCell rootCell = editorContext.getEditorComponent().getRootCell();

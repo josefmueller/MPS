@@ -20,9 +20,9 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.IndexNotReadyException;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.errors.item.FlavouredItem.ReportItemFlavour;
+import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.QuickFix;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Cancellable;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
@@ -56,7 +55,7 @@ import java.util.Set;
  */
 public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker implements EditorMessageOwner {
   public static boolean IMMEDIATE_QFIX_DISABLED = false;
-  private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
+  private WeakSet<Set<ReportItemFlavour<?, ?>>> myOnceExecutedQuickFixes = new WeakSet<Set<ReportItemFlavour<?,?>>>();
   private boolean myHasEvents = false;
 
   @NotNull
@@ -114,7 +113,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
         TypesystemReportItemAdapter reportItem = new TypesystemReportItemAdapter(errorReporter);
         HighlighterMessage message = HighlightUtil.createHighlighterMessage(reportItem, AbstractTypesystemEditorChecker.this, editorContext.getRepository());
 
-        QuickFix_Runtime quickfix = TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getAutoApplicable(message.getReportItem());
+        QuickFix quickfix = TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getAutoApplicable(message.getReportItem());
         final SNode quickFixNode = errorNode.o1;
         if (quickfix != null && applyQuickFixes && !instantIntentionApplied && !AbstractTypesystemEditorChecker.IMMEDIATE_QFIX_DISABLED) {
           instantIntentionApplied = applyInstantIntention(editorContext, quickFixNode, quickfix);
@@ -131,9 +130,11 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
   }
 
   private boolean applyInstantIntention(final EditorContext editorContext, final SNode quickFixNode,
-      @NotNull final QuickFix_Runtime intention) {
-    if (!myOnceExecutedQuickFixes.contains(intention)) {
-      myOnceExecutedQuickFixes.add(intention);
+      @NotNull final QuickFix intention) {
+    Set<ReportItemFlavour<?, ?>> flavourSet = new HashSet<>(intention.getIdFlavours());
+    flavourSet.remove(NodeReportItem.FLAVOUR_NODE);
+    if (!myOnceExecutedQuickFixes.contains(flavourSet)) {
+      myOnceExecutedQuickFixes.add(flavourSet);
       // XXX why Application.invokeLater, not ThreadUtils or ModelAccess (likely, shall use SNodeReference for quickFixNode, not SNode, and resolve inside)
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
@@ -148,7 +149,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
           editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
             @Override
             public void run() {
-              intention.execute(quickFixNode);
+              intention.execute(editorContext.getRepository());
             }
           });
 

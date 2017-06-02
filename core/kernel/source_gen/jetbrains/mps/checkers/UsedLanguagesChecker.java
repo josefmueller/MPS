@@ -16,9 +16,13 @@ import jetbrains.mps.smodel.SModelOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.item.LanguageNotImportedReportItem;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.NodeFlavouredItem;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.errors.item.FlavouredItem;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.errors.item.ReportItemBase;
 
 public class UsedLanguagesChecker extends AbstractNodeChecker {
   private final SConcept C = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0xad0053c7ae9194dL, "jetbrains.mps.lang.core.structure.SideTransformInfo");
@@ -54,27 +58,41 @@ public class UsedLanguagesChecker extends AbstractNodeChecker {
       boolean notYetReported = reported.add(language);
       parentReportedSetChanged |= notYetReported;
       if (!(imported.contains(language)) && notYetReported) {
-        component.addError(new LanguageNotImportedReportItem(node, new UsedLanguagesChecker.LangImportQFixProvider()));
+        component.addError(new LanguageNotImportedReportItem(node, new UsedLanguagesChecker.LangImportQFixProvider(node.getReference())));
       }
       findMissing(component, node.getChildren(), (parentReportedSetChanged ? reported : parentReported), imported);
     }
   }
 
-  private static class LangImportQFixProvider implements QuickFixProvider {
-    public QuickFix_Runtime getQuickFix() {
-      return new QuickFix_Runtime() {
-        @Override
-        public String getDescription(SNode node) {
-          return "Import " + node.getConcept().getLanguage().getQualifiedName() + " language";
-        }
-        public void execute(SNode node) {
-          SLanguage language = node.getConcept().getLanguage();
-          ((SModelInternal) node.getModel()).addLanguage(language);
-        }
-      };
+  private static class LangImportQFixProvider implements QuickFix, NodeFlavouredItem {
+    private SNodeReference myNode;
+    public LangImportQFixProvider(SNodeReference node) {
+      myNode = node;
     }
+    @Override
+    public String getDescription(SRepository repository) {
+      return "Import " + myNode.resolve(repository).getConcept().getLanguage().getQualifiedName() + " language";
+    }
+    @Override
+    public void execute(SRepository repository) {
+      SLanguage language = myNode.resolve(repository).getConcept().getLanguage();
+      ((SModelInternal) myNode.resolve(repository).getModel()).addLanguage(language);
+    }
+    @Override
     public boolean isExecutedImmediately() {
       return false;
+    }
+    @Override
+    public SNodeReference getNode() {
+      return myNode;
+    }
+    @Override
+    public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
+      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), ReportItemBase.FLAVOUR_CLASS, FLAVOUR_NODE);
+    }
+    @Override
+    public boolean isAlive(SRepository repository) {
+      return myNode.resolve(repository) != null;
     }
   }
 }

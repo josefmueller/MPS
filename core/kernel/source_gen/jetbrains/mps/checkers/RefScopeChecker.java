@@ -17,9 +17,15 @@ import jetbrains.mps.errors.item.LanguageErrorItem;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.OutOfScopeReferenceReportItem;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.NodeFeatureFlavouredItem;
 import jetbrains.mps.resolve.ResolverComponent;
+import java.util.Set;
+import jetbrains.mps.errors.item.FlavouredItem;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.errors.item.ReportItemBase;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
 
 public class RefScopeChecker extends AbstractNodeChecker {
   public RefScopeChecker() {
@@ -60,34 +66,43 @@ public class RefScopeChecker extends AbstractNodeChecker {
       }
     }
   }
-  protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
-    return new RefScopeChecker.ResolveReferenceQuickFix(reference, repository, executeImmediately);
+  protected QuickFix createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
+    return new RefScopeChecker.ResolveReferenceQuickFix(reference, executeImmediately);
   }
-  protected static class ResolveReferenceQuickFix implements QuickFixProvider {
+  protected static class ResolveReferenceQuickFix implements QuickFix, NodeFeatureFlavouredItem {
     protected SReference myReference;
-    protected SRepository myRepository;
     private boolean myExecuteImmediately;
-    public ResolveReferenceQuickFix(SReference reference, SRepository repository, boolean executeImmediately) {
+    public ResolveReferenceQuickFix(SReference reference, boolean executeImmediately) {
       myReference = reference;
-      myRepository = repository;
       myExecuteImmediately = executeImmediately;
     }
     @Override
-    public QuickFix_Runtime getQuickFix() {
-      return new QuickFix_Runtime() {
-        @Override
-        public void execute(SNode node) {
-          ResolverComponent.getInstance().resolve(myReference, myRepository);
-        }
-        @Override
-        public String getDescription(SNode node) {
-          return "Resolve \"" + myReference.getLink().getName() + "\" reference";
-        }
-      };
+    public void execute(SRepository repository) {
+      ResolverComponent.getInstance().resolve(myReference, repository);
+    }
+    @Override
+    public String getDescription(SRepository repository) {
+      return "Resolve \"" + myReference.getLink().getName() + "\" reference";
     }
     @Override
     public boolean isExecutedImmediately() {
       return myExecuteImmediately;
+    }
+    @Override
+    public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
+      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), ReportItemBase.FLAVOUR_CLASS, FLAVOUR_NODE, FLAVOUR_NODE_FEATURE);
+    }
+    @Override
+    public SConceptFeature getConceptFeature() {
+      return myReference.getLink();
+    }
+    @Override
+    public SNodeReference getNode() {
+      return myReference.getSourceNode().getReference();
+    }
+    @Override
+    public boolean isAlive(SRepository repository) {
+      return myReference.getSourceNode().getModel() != null;
     }
   }
 }

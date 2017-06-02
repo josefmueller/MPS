@@ -19,7 +19,6 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -27,9 +26,10 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdReportItem, QuickFixReportItem {
+public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdFlavouredItem, QuickFixReportItem {
 
   private final IErrorReporter myErrorReporter;
 
@@ -70,7 +70,12 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   }
 
   @Override
-  public Collection<QuickFixProvider> getQuickFixProviders() {
-    return getErrorReporter().getIntentionProviders();
+  public Collection<QuickFix> getQuickFix() {
+    List<QuickFix> list = new ArrayList<>();
+    for (QuickFixProvider quickFixProvider : getErrorReporter().getIntentionProviders()) {
+      QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(getErrorReporter().getSNode(), quickFixProvider);
+      list.add(quickFixAdapter);
+    }
+    return list;
   }
 }

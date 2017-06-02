@@ -11,8 +11,9 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.validation.ValidationProblem;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.errors.item.QuickFix;
 import jetbrains.mps.errors.item.QuickFixReportItem;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public abstract class ModelCheckerIssue {
   public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
@@ -96,14 +97,12 @@ public abstract class ModelCheckerIssue {
     }
 
     public boolean doFix() {
-      QuickFix_Runtime quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(myIssue);
+      QuickFix quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(myIssue);
       if (quickfix == null) {
         return false;
       }
-      // todo: remove node parameter 
-      // here we can be confident that ValidationProblem quickfix accepts null node because there can be no node 
-      // is it unused? 
-      quickfix.execute(null);
+      // todo: pass repository 
+      quickfix.execute(MPSModuleRepository.getInstance());
       return true;
     }
   }

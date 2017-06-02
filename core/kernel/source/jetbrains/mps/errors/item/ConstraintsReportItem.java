@@ -16,17 +16,15 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.QuickFixProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
 import java.util.Collections;
 
-public abstract class ConstraintsReportItem extends NodeReportItemBase implements RuleIdReportItem {
+public abstract class ConstraintsReportItem extends NodeReportItemBase implements RuleIdFlavouredItem {
   private final TypesystemRuleId myRuleNode;
   public ConstraintsReportItem(@NotNull SNode node, String message) {
     this(node, message, null);

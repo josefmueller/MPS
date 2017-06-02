@@ -16,8 +16,6 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.item.RuleIdReportItem.TypesystemRuleId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -30,12 +28,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import static jetbrains.mps.errors.item.TypesystemReportItemAdapter.FLAVOUR_RULE_ID;
-
-public class OutOfScopeReferenceReportItem extends ReferenceReportItem implements NodeFeatureReportItem, RuleIdReportItem, QuickFixReportItem {
+public class OutOfScopeReferenceReportItem extends ReferenceReportItem implements NodeFeatureReportItem, RuleIdFlavouredItem, QuickFixReportItem {
   private final TypesystemRuleId myRuleNode;
-  private final QuickFixProvider myQuickfix;
-  public OutOfScopeReferenceReportItem(@NotNull SReference ref, @Nullable SNodeReference ruleNode, @NotNull QuickFixProvider quickfix) {
+  private final QuickFix myQuickfix;
+  public OutOfScopeReferenceReportItem(@NotNull SReference ref, @Nullable SNodeReference ruleNode, @NotNull QuickFix quickfix) {
     super(MessageStatus.ERROR, ref, getMessage(ref.getTargetNode().getName(), ref.getLink()));
     myRuleNode = new TypesystemRuleId(ruleNode);
     myQuickfix = quickfix;
@@ -60,7 +56,7 @@ public class OutOfScopeReferenceReportItem extends ReferenceReportItem implement
   }
 
   @Override
-  public Collection<QuickFixProvider> getQuickFixProviders() {
+  public Collection<QuickFix> getQuickFix() {
     return Collections.singleton(myQuickfix);
   }
 }
