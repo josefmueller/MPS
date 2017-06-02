@@ -63,7 +63,6 @@ import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.ModelsEventsCollector;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.extapi.module.TransientSModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
@@ -486,18 +485,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         });
       }
     };
-
-
-    @Override
-    protected boolean isIncluded(SModule module) {
-      // we don't care about changes in transient modules 
-      return !(module instanceof TransientSModule);
-    }
-
     @Override
     public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
-      if (isIncluded(module)) {
+      if (isProjectMigrateableModule(module)) {
         triggerOnModuleChanged(module);
       }
     }
@@ -505,7 +496,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     @Override
     public void moduleChanged(@NotNull SModule module) {
       super.moduleChanged(module);
-      if (isIncluded(module)) {
+      if (isProjectMigrateableModule(module)) {
         triggerOnModuleChanged(module);
       }
     }
@@ -534,14 +525,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       if (ListSequence.fromList(list).isEmpty()) {
         return;
       }
-      // XXX does invokeLater here means 'later' or 'in EDT'? If latter, why not runWriteInEDT then? 
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
+      myMpsProject.getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
-          myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
-            public void run() {
-              postponeMigrationIfNeededOnLanguageReload(list);
-            }
-          });
+          postponeMigrationIfNeededOnLanguageReload(list);
         }
       });
     }
