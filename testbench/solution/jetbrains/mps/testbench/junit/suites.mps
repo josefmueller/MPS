@@ -1326,7 +1326,7 @@
                               <ref role="3cqZAo" node="2$EeqAz24$1" resolve="reportItem" />
                             </node>
                             <node concept="liA8E" id="u6B29mDYyd" role="2OqNvi">
-                              <ref role="37wK5l" to="d6hs:~NodeReportItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
+                              <ref role="37wK5l" to="d6hs:~NodeFlavouredItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
                             </node>
                           </node>
                           <node concept="liA8E" id="u6B29mDYye" role="2OqNvi">
