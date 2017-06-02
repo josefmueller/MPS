@@ -42,6 +42,7 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="ykok" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.constraints(MPS.Core/)" />
     <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -2772,8 +2773,8 @@
       </node>
       <node concept="37vLTG" id="nMEi6H9pzg" role="3clF46">
         <property role="TrG5h" value="reporter" />
-        <node concept="3uibUv" id="nMEi6H9pU2" role="1tU5fm">
-          <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+        <node concept="3uibUv" id="ygzS0$Glyj" role="1tU5fm">
+          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
         </node>
       </node>
     </node>
@@ -3900,8 +3901,8 @@
       <node concept="37vLTG" id="525bmK9ufU0" role="3clF46">
         <property role="TrG5h" value="errorReporters" />
         <node concept="A3Dl8" id="525bmK9ufU1" role="1tU5fm">
-          <node concept="3uibUv" id="525bmK9ufU2" role="A3Ik2">
-            <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+          <node concept="3uibUv" id="ygzS0$EqHF" role="A3Ik2">
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
         </node>
       </node>
@@ -3993,8 +3994,8 @@
           </node>
           <node concept="3cpWsn" id="4CT6QR8TgNH" role="1Duv9x">
             <property role="TrG5h" value="errorReport" />
-            <node concept="3uibUv" id="4CT6QR8Thvq" role="1tU5fm">
-              <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+            <node concept="3uibUv" id="ygzS0$EqS8" role="1tU5fm">
+              <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
             </node>
           </node>
           <node concept="37vLTw" id="4CT6QR8ThO$" role="1DdaDG">
@@ -4298,8 +4299,8 @@
       <node concept="37vLTG" id="4CT6QR8Te6I" role="3clF46">
         <property role="TrG5h" value="errorReporters" />
         <node concept="A3Dl8" id="16WnrUww31_" role="1tU5fm">
-          <node concept="3uibUv" id="16WnrUww31B" role="A3Ik2">
-            <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+          <node concept="3uibUv" id="ygzS0$Eq_h" role="A3Ik2">
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
         </node>
       </node>
@@ -4330,8 +4331,8 @@
       <node concept="37vLTG" id="525bmK9ufIz" role="3clF46">
         <property role="TrG5h" value="errorReporters" />
         <node concept="A3Dl8" id="525bmK9ufI$" role="1tU5fm">
-          <node concept="3uibUv" id="525bmK9ufI_" role="A3Ik2">
-            <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+          <node concept="3uibUv" id="ygzS0$EJx1" role="A3Ik2">
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
         </node>
       </node>
@@ -4394,8 +4395,8 @@
           </node>
           <node concept="3cpWsn" id="18jf_F1WDuF" role="1Duv9x">
             <property role="TrG5h" value="errorReport" />
-            <node concept="3uibUv" id="18jf_F1WDuG" role="1tU5fm">
-              <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+            <node concept="3uibUv" id="ygzS0$EJAJ" role="1tU5fm">
+              <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
             </node>
           </node>
           <node concept="37vLTw" id="4CT6QR8TzUx" role="1DdaDG">
@@ -4417,8 +4418,8 @@
       <property role="TrG5h" value="reporter" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="2wBFdLy6ARx" role="1B3o_S" />
-      <node concept="3uibUv" id="2wBFdLy6ASV" role="1tU5fm">
-        <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+      <node concept="3uibUv" id="ygzS0$Gmpl" role="1tU5fm">
+        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
       </node>
     </node>
     <node concept="2tJIrI" id="2wBFdLy6CfZ" role="jymVt" />
@@ -4442,8 +4443,8 @@
       <node concept="3Tm1VV" id="2wBFdLy6AKl" role="1B3o_S" />
       <node concept="37vLTG" id="2wBFdLy6AN1" role="3clF46">
         <property role="TrG5h" value="reporter" />
-        <node concept="3uibUv" id="2wBFdLy6AN0" role="1tU5fm">
-          <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+        <node concept="3uibUv" id="ygzS0$Gmo3" role="1tU5fm">
+          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
         </node>
       </node>
     </node>
@@ -4610,7 +4611,7 @@
                 <ref role="3cqZAo" node="2wBFdLy6AT5" resolve="reporter" />
               </node>
               <node concept="liA8E" id="7scb9XJ8cHT" role="2OqNvi">
-                <ref role="37wK5l" to="2gg1:~IErrorReporter.getMessageStatus():jetbrains.mps.errors.MessageStatus" resolve="getMessageStatus" />
+                <ref role="37wK5l" to="d6hs:~ReportItem.getSeverity():jetbrains.mps.errors.MessageStatus" resolve="getSeverity" />
               </node>
             </node>
           </node>
@@ -4676,7 +4677,7 @@
                 <ref role="3cqZAo" node="2wBFdLy6AT5" resolve="reporter" />
               </node>
               <node concept="liA8E" id="nMEi6Ha5fL" role="2OqNvi">
-                <ref role="37wK5l" to="2gg1:~IErrorReporter.getMessageStatus():jetbrains.mps.errors.MessageStatus" resolve="getMessageStatus" />
+                <ref role="37wK5l" to="d6hs:~ReportItem.getSeverity():jetbrains.mps.errors.MessageStatus" resolve="getSeverity" />
               </node>
             </node>
           </node>
@@ -4758,7 +4759,7 @@
                 <ref role="3cqZAo" node="2wBFdLy6AT5" resolve="reporter" />
               </node>
               <node concept="liA8E" id="7eBNsYUNiev" role="2OqNvi">
-                <ref role="37wK5l" to="2gg1:~IErrorReporter.getMessageStatus():jetbrains.mps.errors.MessageStatus" resolve="getMessageStatus" />
+                <ref role="37wK5l" to="d6hs:~ReportItem.getSeverity():jetbrains.mps.errors.MessageStatus" resolve="getSeverity" />
               </node>
             </node>
           </node>
@@ -4840,7 +4841,7 @@
                 <ref role="3cqZAo" node="2wBFdLy6AT5" resolve="reporter" />
               </node>
               <node concept="liA8E" id="7eBNsYUNiRw" role="2OqNvi">
-                <ref role="37wK5l" to="2gg1:~IErrorReporter.getMessageStatus():jetbrains.mps.errors.MessageStatus" resolve="getMessageStatus" />
+                <ref role="37wK5l" to="d6hs:~ReportItem.getSeverity():jetbrains.mps.errors.MessageStatus" resolve="getSeverity" />
               </node>
             </node>
           </node>
@@ -6070,8 +6071,8 @@
             <property role="3TUv4t" value="true" />
             <property role="TrG5h" value="errorReporters" />
             <node concept="A3Dl8" id="1RxYXnVZpAE" role="1tU5fm">
-              <node concept="3uibUv" id="1RxYXnVZpAF" role="A3Ik2">
-                <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+              <node concept="3uibUv" id="ygzS0$Eq9v" role="A3Ik2">
+                <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
               </node>
             </node>
             <node concept="2OqwBi" id="1RxYXnVZpAG" role="33vP2m">

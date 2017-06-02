@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.test.runtime.TestsErrorsChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import junit.framework.Assert;
 import jetbrains.mps.typesystem.inference.ITypechecking;
@@ -27,7 +27,7 @@ public class PerformUtil {
   public static void checkNodeHasMessageWithStatus(SNode operation, MessageStatus messageStatus) {
     final SNode nodeToCheck = INodesTestMethod__BehaviorDescriptor.getAnnotatedNode_id38gbJV0XvZR.invoke(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(nodeToCheck));
-    final Iterable<IErrorReporter> errorReporters = checker.getErrorsSpecificType(nodeToCheck, messageStatus);
+    final Iterable<NodeReportItem> errorReporters = checker.getErrorsSpecificType(nodeToCheck, messageStatus);
 
     final String errorString = "node <" + NodeCheckerUtil.nodeWithIdToString(nodeToCheck) + "> does not have expected " + messageStatus.getPresentation() + " message";
 

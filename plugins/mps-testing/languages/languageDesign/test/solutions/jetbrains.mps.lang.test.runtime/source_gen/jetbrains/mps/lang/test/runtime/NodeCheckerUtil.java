@@ -5,8 +5,9 @@ package jetbrains.mps.lang.test.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.errors.item.RuleIdFlavouredItem;
 
 public class NodeCheckerUtil {
 
@@ -19,11 +20,11 @@ public class NodeCheckerUtil {
     Assert.assertNull(errorString, NodesMatcher.matchNodes(type1, type2));
   }
 
-  public static SNode getRuleNodeFromReporter(IErrorReporter reporter, SRepository contextRepository) {
-    if (reporter.getRuleNode() == null || contextRepository == null) {
+  public static SNode getRuleNodeFromReporter(NodeReportItem reporter, SRepository contextRepository) {
+    if (RuleIdFlavouredItem.FLAVOUR_RULE_ID.getCollection(reporter).isEmpty() || contextRepository == null) {
       return null;
     }
-    return reporter.getRuleNode().resolve(contextRepository);
+    return RuleIdFlavouredItem.FLAVOUR_RULE_ID.getCollection(reporter).iterator().next().getSourceNode().resolve(contextRepository);
   }
 
   public static void checkNodeForErrorMessages(final SNode node, final boolean allowErrors, final boolean allowWarnings, boolean includeSelf) {

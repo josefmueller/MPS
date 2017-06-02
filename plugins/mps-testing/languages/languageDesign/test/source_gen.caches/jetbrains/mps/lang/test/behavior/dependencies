@@ -324,7 +324,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -736,7 +736,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -812,7 +812,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.IReferenceAttachable__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" />
@@ -826,8 +826,8 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.NodeRuleFactory" file="NodeRuleFactory.java">
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeRuleReference" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.RuleType" />
@@ -950,7 +950,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeRuleReference" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.RuleType" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" />
@@ -1161,8 +1161,8 @@
   <dependency className="jetbrains.mps.lang.test.behavior.PerformUtil" file="PerformUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.MessageStatus" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.IChecksRules__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor" />

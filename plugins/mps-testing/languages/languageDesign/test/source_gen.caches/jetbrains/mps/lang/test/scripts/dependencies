@@ -24,7 +24,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.test.scripts.SpecifyUtil" file="SpecifyUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />

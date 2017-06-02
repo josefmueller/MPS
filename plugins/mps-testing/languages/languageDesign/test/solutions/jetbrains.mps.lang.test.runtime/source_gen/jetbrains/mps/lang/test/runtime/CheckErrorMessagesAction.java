@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -37,9 +37,9 @@ public class CheckErrorMessagesAction implements Runnable {
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(myNode));
     List<SNode> descendants;
     descendants = (myIncludeSelf ? SNodeOperations.getNodeDescendants(myNode, null, true, new SAbstractConcept[]{}) : SNodeOperations.getNodeDescendants(myNode, null, false, new SAbstractConcept[]{}));
-    final Iterable<IErrorReporter> reporters = checker.getAllErrors();
-    for (IErrorReporter reporter : reporters) {
-      SNode child = reporter.getSNode();
+    final Iterable<NodeReportItem> reporters = checker.getAllErrors();
+    for (NodeReportItem reporter : reporters) {
+      SNode child = reporter.getNode().resolve(myNode.getModel().getRepository());
       assert child != null;
       if (!(ListSequence.fromList(descendants).contains(child))) {
         continue;
@@ -66,19 +66,19 @@ public class CheckErrorMessagesAction implements Runnable {
     return false;
   }
 
-  private void checkWarnings(IErrorReporter reporter, String warningMsg) {
+  private void checkWarnings(NodeReportItem reporter, String warningMsg) {
     if (!(myAllowsWarnings)) {
-      Assert.assertTrue(warningMsg, reporter.getMessageStatus() != MessageStatus.WARNING);
+      Assert.assertTrue(warningMsg, reporter.getSeverity() != MessageStatus.WARNING);
     }
   }
 
-  private void checkErrors(IErrorReporter reporter, String errorMsg) {
+  private void checkErrors(NodeReportItem reporter, String errorMsg) {
     if (!(myAllowsErrors)) {
-      Assert.assertTrue(errorMsg, reporter.getMessageStatus() != MessageStatus.ERROR);
+      Assert.assertTrue(errorMsg, reporter.getSeverity() != MessageStatus.ERROR);
     }
   }
 
-  private String getErrorString(IErrorReporter reporter, SNode node) {
-    return reporter.reportError() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(node) + "'";
+  private String getErrorString(NodeReportItem reporter, SNode node) {
+    return reporter.getMessage() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(node) + "'";
   }
 }

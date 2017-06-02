@@ -15,6 +15,7 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tp6m" ref="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -221,8 +222,8 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="A3Dl8" id="16WnrUwwBLf" role="3clF45">
-        <node concept="3uibUv" id="16WnrUwwBLh" role="A3Ik2">
-          <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+        <node concept="3uibUv" id="ygzS0$GgIO" role="A3Ik2">
+          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
         </node>
       </node>
       <node concept="3clFbS" id="6KNTF2XLrC1" role="3clF47">
@@ -309,8 +310,8 @@
           <node concept="3cpWsn" id="6KNTF2XLsEN" role="3cpWs9">
             <property role="TrG5h" value="reporters" />
             <node concept="A3Dl8" id="16WnrUwwCcq" role="1tU5fm">
-              <node concept="3uibUv" id="16WnrUwwCcs" role="A3Ik2">
-                <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+              <node concept="3uibUv" id="ygzS0$Gh9S" role="A3Ik2">
+                <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
               </node>
             </node>
             <node concept="2YIFZM" id="6KNTF2XLtoR" role="33vP2m">
@@ -383,8 +384,8 @@
           </node>
           <node concept="3cpWsn" id="4QaU5oI2MOX" role="1Duv9x">
             <property role="TrG5h" value="reporter" />
-            <node concept="3uibUv" id="4QaU5oI2NAD" role="1tU5fm">
-              <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+            <node concept="3uibUv" id="ygzS0$Ghgg" role="1tU5fm">
+              <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
             </node>
           </node>
           <node concept="37vLTw" id="WvgGJd4fBh" role="1DdaDG">

@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.lang.test.runtime.TestsErrorsChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.test.behavior.NodeOperationsContainer__BehaviorDescriptor;
@@ -21,7 +21,7 @@ public class SpecifyUtil {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b07a3d4b5L, "jetbrains.mps.lang.test.structure.NodeOperationsContainer")));
   }
 
-  public static Iterable<IErrorReporter> getErrorReporters(SNode node) {
+  public static Iterable<NodeReportItem> getErrorReporters(SNode node) {
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(node));
     return checker.getErrors(node);
   }
@@ -30,8 +30,8 @@ public class SpecifyUtil {
     SNode operationsContainer = SpecifyUtil.getOperationsContainer(node);
     assert (operationsContainer != null);
     NodeOperationsContainer__BehaviorDescriptor.detachAllErrorOperations_id4QaU5oI0Q4j.invoke(operationsContainer);
-    Iterable<IErrorReporter> reporters = SpecifyUtil.getErrorReporters(node);
-    for (IErrorReporter reporter : reporters) {
+    Iterable<NodeReportItem> reporters = SpecifyUtil.getErrorReporters(node);
+    for (NodeReportItem reporter : reporters) {
       SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter, SNodeOperations.getModel(node).getRepository());
       NodeOperationsContainer__BehaviorDescriptor.createNodeAndAttachReference_idnMEi6H8iBO.invoke(operationsContainer, ruleNode, reporter);
       SpecifyUtil.addModelImports(operationsContainer, ruleNode);

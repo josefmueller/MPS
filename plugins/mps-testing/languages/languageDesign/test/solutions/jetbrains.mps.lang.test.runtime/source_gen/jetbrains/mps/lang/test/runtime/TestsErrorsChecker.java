@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.runtime;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -19,15 +19,14 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
+import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.project.validation.ValidationUtil;
-import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.NodeValidationProblem;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,7 +42,7 @@ public class TestsErrorsChecker {
   /**
    * contains cached warnings and errors for the current root
    */
-  private static TestsErrorsChecker.ModelErrorsHolder<IErrorReporter> ourModelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder<IErrorReporter>();
+  private static TestsErrorsChecker.ModelErrorsHolder<NodeReportItem> ourModelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder<NodeReportItem>();
 
   /**
    * clears our cache on any model change
@@ -73,36 +72,36 @@ public class TestsErrorsChecker {
     myRoot = root;
   }
 
-  public Iterable<IErrorReporter> getAllErrors() {
+  public Iterable<NodeReportItem> getAllErrors() {
     return getRootErrors();
   }
 
-  public Iterable<IErrorReporter> getErrors(@NotNull SNode node) {
-    Iterable<IErrorReporter> result = getRootErrors();
+  public Iterable<NodeReportItem> getErrors(@NotNull SNode node) {
+    Iterable<NodeReportItem> result = getRootErrors();
     return filterReportersByNode(result, node);
   }
 
-  public Iterable<IErrorReporter> getErrorsSpecificType(SNode node, final MessageStatus errorType) {
-    Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
-    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getErrors(node)).where(new IWhereFilter<IErrorReporter>() {
-      public boolean accept(IErrorReporter it) {
-        return it.getMessageStatus() == errorType;
+  public Iterable<NodeReportItem> getErrorsSpecificType(SNode node, final MessageStatus errorType) {
+    Set<NodeReportItem> result = SetSequence.fromSet(new HashSet<NodeReportItem>());
+    SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getErrors(node)).where(new IWhereFilter<NodeReportItem>() {
+      public boolean accept(NodeReportItem it) {
+        return it.getSeverity() == errorType;
       }
     }));
     return result;
   }
 
-  private Iterable<IErrorReporter> filterReportersByNode(final Iterable<IErrorReporter> errors, @NotNull final SNode aNode) {
-    return Sequence.fromIterable(errors).where(new IWhereFilter<IErrorReporter>() {
-      public boolean accept(IErrorReporter it) {
-        assert it.getSNode() != null;
-        return it.getSNode().getNodeId().equals(aNode.getNodeId());
+  private Iterable<NodeReportItem> filterReportersByNode(final Iterable<NodeReportItem> errors, @NotNull final SNode aNode) {
+    return Sequence.fromIterable(errors).where(new IWhereFilter<NodeReportItem>() {
+      public boolean accept(NodeReportItem it) {
+        assert it.getNode() != null;
+        return it.getNode().getNodeId().equals(aNode.getNodeId());
       }
     });
   }
 
-  private Iterable<IErrorReporter> getRootErrors() {
-    Set<IErrorReporter> cachedErrors = TestsErrorsChecker.ourModelErrorsHolder.get(myRoot);
+  private Iterable<NodeReportItem> getRootErrors() {
+    Set<NodeReportItem> cachedErrors = TestsErrorsChecker.ourModelErrorsHolder.get(myRoot);
     if (cachedErrors != null) {
       return SetSequence.fromSet(cachedErrors).toListSequence();
     }
@@ -110,21 +109,31 @@ public class TestsErrorsChecker {
     if (LOG.isDebugEnabled()) {
       LOG.debug("Collecting errors in the root " + myRoot);
     }
-    final Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
-    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new TypesystemChecker().getErrors(myRoot, null)));
+    final Set<NodeReportItem> result = SetSequence.fromSet(new HashSet<NodeReportItem>());
+    new TypesystemChecker().processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeReportItem>() {
+      public boolean process(NodeReportItem reportItem) {
+        SetSequence.fromSet(result).addElement(reportItem);
+        return true;
+      }
+    });
     // todo: add UsedLanguageChecker 
-    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).getErrors(myRoot, null)));
+    new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeReportItem>() {
+      public boolean process(NodeReportItem reportItem) {
+        SetSequence.fromSet(result).addElement(reportItem);
+        return true;
+      }
+    });
     ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<NodeValidationProblem>() {
       public boolean process(NodeValidationProblem vp) {
-        SNodeReference node = ((NodeValidationProblem) vp).getNode();
-        SetSequence.fromSet(result).addElement(new SimpleErrorReporter(node.resolve(myRoot.getModel().getRepository()), vp.getMessage(), null, null));
+        SetSequence.fromSet(result).addElement(vp);
         return true;
       }
     });
 
-    Set<IErrorReporter> res = SetSequence.fromSetWithValues(new HashSet<IErrorReporter>(), SetSequence.fromSet(result).where(new IWhereFilter<IErrorReporter>() {
-      public boolean accept(IErrorReporter it) {
-        return !(ErrorReportUtil.manuallySuppressed(it.getSNode()));
+    Set<NodeReportItem> res = SetSequence.fromSetWithValues(new HashSet<NodeReportItem>(), SetSequence.fromSet(result).where(new IWhereFilter<NodeReportItem>() {
+      public boolean accept(NodeReportItem it) {
+        SNodeReference node = NodeReportItem.FLAVOUR_NODE.tryToGet(it);
+        return node == null || !(ErrorReportUtil.manuallySuppressed(node.resolve(myRoot.getModel().getRepository())));
       }
     }));
     TestsErrorsChecker.ourModelErrorsHolder.set(myRoot, res);

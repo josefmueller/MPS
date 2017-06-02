@@ -13,7 +13,7 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +30,7 @@ public final class NodeOperationsContainer__BehaviorDescriptor extends BaseBHDes
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Void> detachAllErrorOperations_id4QaU5oI0Q4j = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("detachAllErrorOperations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4QaU5oI0Q4j").registry(REGISTRY).build();
-  public static final SMethod<Void> createNodeAndAttachReference_idnMEi6H8iBO = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("createNodeAndAttachReference").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("nMEi6H8iBO").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(IErrorReporter.class, ""));
+  public static final SMethod<Void> createNodeAndAttachReference_idnMEi6H8iBO = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("createNodeAndAttachReference").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("nMEi6H8iBO").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(NodeReportItem.class, ""));
   public static final SMethod<Boolean> suppress_id2WmWrdnSpX7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("suppress").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2WmWrdnSpX7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(detachAllErrorOperations_id4QaU5oI0Q4j, createNodeAndAttachReference_idnMEi6H8iBO, suppress_id2WmWrdnSpX7);
@@ -45,7 +45,7 @@ public final class NodeOperationsContainer__BehaviorDescriptor extends BaseBHDes
       }
     });
   }
-  /*package*/ static void createNodeAndAttachReference_idnMEi6H8iBO(@NotNull SNode __thisNode__, SNode reference, IErrorReporter reporter) {
+  /*package*/ static void createNodeAndAttachReference_idnMEi6H8iBO(@NotNull SNode __thisNode__, SNode reference, NodeReportItem reporter) {
     NodeRuleFactory factory = new NodeRuleFactory(reporter);
     SNode newNode = factory.createNodeFromRuleMsg(reference);
     if (SNodeOperations.isInstanceOf(newNode, MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x2827acdc621ed3acL, "jetbrains.mps.lang.test.structure.IReferenceAttachable"))) {
@@ -84,7 +84,7 @@ public final class NodeOperationsContainer__BehaviorDescriptor extends BaseBHDes
         detachAllErrorOperations_id4QaU5oI0Q4j(node);
         return null;
       case 1:
-        createNodeAndAttachReference_idnMEi6H8iBO(node, (SNode) parameters[0], (IErrorReporter) parameters[1]);
+        createNodeAndAttachReference_idnMEi6H8iBO(node, (SNode) parameters[0], (NodeReportItem) parameters[1]);
         return null;
       case 2:
         return (T) ((Boolean) suppress_id2WmWrdnSpX7(node, (SNode) parameters[0]));

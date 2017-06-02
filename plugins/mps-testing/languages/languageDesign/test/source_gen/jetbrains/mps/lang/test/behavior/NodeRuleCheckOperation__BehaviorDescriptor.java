@@ -12,7 +12,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import java.util.Arrays;
@@ -28,14 +28,14 @@ public final class NodeRuleCheckOperation__BehaviorDescriptor extends BaseBHDesc
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3bc62fcd9b027d04L, "jetbrains.mps.lang.test.structure.NodeRuleCheckOperation");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> hasExpectedRuleMessage_id4CT6QR8SJl8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasExpectedRuleMessage").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4CT6QR8SJl8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Iterable<IErrorReporter>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SRepository.class, ""));
+  public static final SMethod<Boolean> hasExpectedRuleMessage_id4CT6QR8SJl8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasExpectedRuleMessage").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4CT6QR8SJl8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Iterable<NodeReportItem>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SRepository.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(hasExpectedRuleMessage_id4CT6QR8SJl8);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static boolean hasExpectedRuleMessage_id4CT6QR8SJl8(@NotNull SNode __thisNode__, Iterable<IErrorReporter> errorReporters, SRepository contextRepo) {
+  /*package*/ static boolean hasExpectedRuleMessage_id4CT6QR8SJl8(@NotNull SNode __thisNode__, Iterable<NodeReportItem> errorReporters, SRepository contextRepo) {
     if (Sequence.fromIterable(errorReporters).isEmpty()) {
       return false;
     }
@@ -43,7 +43,7 @@ public final class NodeRuleCheckOperation__BehaviorDescriptor extends BaseBHDesc
     if ((referencedRuleNode == null)) {
       return true;
     }
-    for (IErrorReporter errorReport : errorReporters) {
+    for (NodeReportItem errorReport : errorReporters) {
       SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(errorReport, contextRepo);
       if (ruleNode == referencedRuleNode) {
         return true;
@@ -69,7 +69,7 @@ public final class NodeRuleCheckOperation__BehaviorDescriptor extends BaseBHDesc
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Boolean) hasExpectedRuleMessage_id4CT6QR8SJl8(node, (Iterable<IErrorReporter>) parameters[0], (SRepository) parameters[1]));
+        return (T) ((Boolean) hasExpectedRuleMessage_id4CT6QR8SJl8(node, (Iterable<NodeReportItem>) parameters[0], (SRepository) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
