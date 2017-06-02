@@ -303,7 +303,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.languagePatterns.Basic", "EmptyLine", 0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1a2bL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.languagePatterns.Basic.structure.DrawCommand", 0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1022L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)/3548406301612382763");
     b.alias("<empty line>");
     return b.create();
@@ -342,7 +341,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.languagePatterns.Basic", "IncompleteCommand", 0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x7d09f66a13005410L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.languagePatterns.Basic.structure.DrawCommand", 0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1022L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)/9010003464977142800");
     return b.create();
   }

@@ -44,7 +44,7 @@ public final class DeleteMathContext_Intention extends AbstractIntentionDescript
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Use default math context";
+      return "Use Default Math Context";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

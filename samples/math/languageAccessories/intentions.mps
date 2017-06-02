@@ -108,7 +108,7 @@
       <node concept="3clFbS" id="i09b8Wm" role="2VODD2">
         <node concept="3clFbF" id="i09biQ1" role="3cqZAp">
           <node concept="Xl_RD" id="i09biQ2" role="3clFbG">
-            <property role="Xl_RC" value="Use java notation for division operation" />
+            <property role="Xl_RC" value="Use Java Notation for Division Operation" />
           </node>
         </node>
       </node>
@@ -157,7 +157,7 @@
       <node concept="3clFbS" id="i09ba11" role="2VODD2">
         <node concept="3clFbF" id="i09blAN" role="3cqZAp">
           <node concept="Xl_RD" id="i09blAO" role="3clFbG">
-            <property role="Xl_RC" value="Use fraction notation for division operation" />
+            <property role="Xl_RC" value="Use Fraction Notation for Division Operation" />
           </node>
         </node>
       </node>
@@ -205,7 +205,7 @@
       <node concept="3clFbS" id="i1m$gSL" role="2VODD2">
         <node concept="3clFbF" id="i1m$iLJ" role="3cqZAp">
           <node concept="Xl_RD" id="i1m$nBl" role="3clFbG">
-            <property role="Xl_RC" value="Explicitly specify math context for operation with big decimals" />
+            <property role="Xl_RC" value="Explicitly Specify Math Context for Operation with Big Decimals" />
           </node>
         </node>
       </node>
@@ -250,7 +250,7 @@
       <node concept="3clFbS" id="i1QK1bm" role="2VODD2">
         <node concept="3clFbF" id="i1QKdkd" role="3cqZAp">
           <node concept="Xl_RD" id="i1QKdke" role="3clFbG">
-            <property role="Xl_RC" value="Use default math context" />
+            <property role="Xl_RC" value="Use Default Math Context" />
           </node>
         </node>
       </node>

@@ -681,6 +681,20 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="7LGEsuhf7QM" role="3cqZAp">
+          <node concept="2OqwBi" id="7LGEsuhf7QJ" role="3clFbG">
+            <node concept="10M0yZ" id="7LGEsuhf7QK" role="2Oq$k0">
+              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+            </node>
+            <node concept="liA8E" id="7LGEsuhf7QL" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.Object):void" resolve="println" />
+              <node concept="37vLTw" id="7LGEsuhf9fz" role="37wK5m">
+                <ref role="3cqZAo" node="4sp4$062u5H" resolve="r" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="SfApY" id="7Y9o9wCHFxr" role="3cqZAp">
           <node concept="3clFbS" id="7Y9o9wCHFxs" role="SfCbr">
             <node concept="3cpWs8" id="7Y9o9wCHGcW" role="3cqZAp">

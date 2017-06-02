@@ -16,11 +16,11 @@
   <dependency className="mf.BitemporalCollectionTester" file="BitemporalCollectionTester.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestSuite" />
     <classNode dependClassName="junit.textui.TestRunner" />
     <classNode dependClassName="mf.BitemporalCollection" />
     <classNode dependClassName="mf.MfDate" />
+    <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="mf.Currency" file="Currency.java">
@@ -41,11 +41,11 @@
   </dependency>
   <dependency className="mf.DateRangeTester" file="DateRangeTester.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestSuite" />
     <classNode dependClassName="junit.textui.TestRunner" />
     <classNode dependClassName="mf.DateRange" />
     <classNode dependClassName="mf.MfDate" />
+    <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="mf.DoubleRange" file="DoubleRange.java">
@@ -54,8 +54,8 @@
   <dependency className="mf.DoubleRangeTester" file="DoubleRangeTester.java">
     <classNode dependClassName="java.lang.Double" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="mf.DoubleRange" />
+    <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="mf.MfDate" file="MfDate.java">
@@ -74,11 +74,11 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Calendar" />
     <classNode dependClassName="java.util.GregorianCalendar" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestSuite" />
     <classNode dependClassName="junit.textui.TestRunner" />
     <classNode dependClassName="mf.DateRange" />
     <classNode dependClassName="mf.MfDate" />
+    <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="mf.MfTester" file="MfTester.java">
@@ -108,10 +108,10 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.textui.TestRunner" />
     <classNode dependClassName="mf.Currency" />
     <classNode dependClassName="mf.Money" />
+    <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="mf.NamedObject" file="NamedObject.java">
@@ -132,11 +132,11 @@
   </dependency>
   <dependency className="mf.QuantityTester" file="QuantityTester.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestSuite" />
     <classNode dependClassName="junit.textui.TestRunner" />
     <classNode dependClassName="mf.Quantity" />
     <classNode dependClassName="mf.Unit" />
+    <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="mf.Registry" file="Registry.java">
@@ -162,10 +162,10 @@
   <dependency className="mf.SingleTemporalCollectionTester" file="SingleTemporalCollectionTester.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="mf.MfDate" />
     <classNode dependClassName="mf.SingleTemporalCollection" />
     <classNode dependClassName="mf.TemporalCollection" />
+    <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="mf.TemporalCollectionTester" />
   </dependency>
   <dependency className="mf.TemporalCollection" file="TemporalCollection.java">
@@ -182,6 +182,7 @@
     <classNode dependClassName="mf.MfDate" />
     <classNode dependClassName="mf.SingleTemporalCollection" />
     <classNode dependClassName="mf.TemporalCollection" />
+    <classNode dependClassName="org.junit.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="mf.Unit" file="Unit.java">

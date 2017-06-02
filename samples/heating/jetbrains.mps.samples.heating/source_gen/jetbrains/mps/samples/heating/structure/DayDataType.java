@@ -7,13 +7,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 
 public enum DayDataType {
-  Monday("Monday", "monday"),
-  Tuesday("Tuesday", "tuesday"),
-  Wednesday("Wednesday", "wednesday"),
-  Thursday("Thursday", "thursday"),
-  Friday("Friday", "friday"),
-  Saturday("Saturday", "saturday"),
-  Sunday("Sunday", "sunday");
+  monday("Monday", "monday"),
+  tuesday("Tuesday", "tuesday"),
+  wednesday("Wednesday", "wednesday"),
+  thursday("Thursday", "thursday"),
+  friday("Friday", "friday"),
+  saturday("Saturday", "saturday"),
+  sunday("Sunday", "sunday");
 
   private final String myName;
   public String getName() {
@@ -32,42 +32,42 @@ public enum DayDataType {
   }
   public static List<DayDataType> getConstants() {
     List<DayDataType> list = ListSequence.fromList(new LinkedList<DayDataType>());
-    ListSequence.fromList(list).addElement(DayDataType.Monday);
-    ListSequence.fromList(list).addElement(DayDataType.Tuesday);
-    ListSequence.fromList(list).addElement(DayDataType.Wednesday);
-    ListSequence.fromList(list).addElement(DayDataType.Thursday);
-    ListSequence.fromList(list).addElement(DayDataType.Friday);
-    ListSequence.fromList(list).addElement(DayDataType.Saturday);
-    ListSequence.fromList(list).addElement(DayDataType.Sunday);
+    ListSequence.fromList(list).addElement(DayDataType.monday);
+    ListSequence.fromList(list).addElement(DayDataType.tuesday);
+    ListSequence.fromList(list).addElement(DayDataType.wednesday);
+    ListSequence.fromList(list).addElement(DayDataType.thursday);
+    ListSequence.fromList(list).addElement(DayDataType.friday);
+    ListSequence.fromList(list).addElement(DayDataType.saturday);
+    ListSequence.fromList(list).addElement(DayDataType.sunday);
     return list;
   }
   public static DayDataType getDefault() {
-    return DayDataType.Monday;
+    return DayDataType.monday;
   }
   public static DayDataType parseValue(String value) {
     if (value == null) {
       return DayDataType.getDefault();
     }
-    if (value.equals(DayDataType.Monday.getValueAsString())) {
-      return DayDataType.Monday;
+    if (value.equals(DayDataType.monday.getValueAsString())) {
+      return DayDataType.monday;
     }
-    if (value.equals(DayDataType.Tuesday.getValueAsString())) {
-      return DayDataType.Tuesday;
+    if (value.equals(DayDataType.tuesday.getValueAsString())) {
+      return DayDataType.tuesday;
     }
-    if (value.equals(DayDataType.Wednesday.getValueAsString())) {
-      return DayDataType.Wednesday;
+    if (value.equals(DayDataType.wednesday.getValueAsString())) {
+      return DayDataType.wednesday;
     }
-    if (value.equals(DayDataType.Thursday.getValueAsString())) {
-      return DayDataType.Thursday;
+    if (value.equals(DayDataType.thursday.getValueAsString())) {
+      return DayDataType.thursday;
     }
-    if (value.equals(DayDataType.Friday.getValueAsString())) {
-      return DayDataType.Friday;
+    if (value.equals(DayDataType.friday.getValueAsString())) {
+      return DayDataType.friday;
     }
-    if (value.equals(DayDataType.Saturday.getValueAsString())) {
-      return DayDataType.Saturday;
+    if (value.equals(DayDataType.saturday.getValueAsString())) {
+      return DayDataType.saturday;
     }
-    if (value.equals(DayDataType.Sunday.getValueAsString())) {
-      return DayDataType.Sunday;
+    if (value.equals(DayDataType.sunday.getValueAsString())) {
+      return DayDataType.sunday;
     }
     return DayDataType.getDefault();
   }

@@ -158,9 +158,6 @@
     <property role="3GE5qa" value="swing.component" />
     <property role="EcuMT" value="5340361359451510305" />
     <ref role="1TJDcQ" node="4CsL_MEl30m" resolve="Component" />
-    <node concept="PrWs8" id="4CsL_MEl5oI" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="4CsL_MEl9cr">
     <property role="TrG5h" value="TextField" />

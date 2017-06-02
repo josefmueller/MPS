@@ -51,7 +51,7 @@ public final class SpecifyMathContext_Intention extends AbstractIntentionDescrip
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Explicitly specify math context for operation with big decimals";
+      return "Explicitly Specify Math Context for Operation with Big Decimals";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

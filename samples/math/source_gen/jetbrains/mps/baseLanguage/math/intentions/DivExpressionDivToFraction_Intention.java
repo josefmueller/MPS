@@ -48,7 +48,7 @@ public final class DivExpressionDivToFraction_Intention extends AbstractIntentio
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Use fraction notation for division operation";
+      return "Use Fraction Notation for Division Operation";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

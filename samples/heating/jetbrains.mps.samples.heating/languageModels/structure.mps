@@ -121,7 +121,7 @@
   <node concept="AxPO7" id="4p4E$Nw_8p$">
     <property role="TrG5h" value="DayDataType" />
     <property role="PDuV0" value="false" />
-    <property role="3lZH7k" value="derive_from_presentation" />
+    <property role="3lZH7k" value="derive_from_internal_value" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="4p4E$Nw_8p_" role="M5hS2">
       <property role="1uS6qo" value="Monday" />

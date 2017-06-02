@@ -45,7 +45,7 @@ public final class AttachComment2_Intention extends AbstractIntentionDescriptor 
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Attach comment attribute 2";
+      return "Attach Comment Attribute 2";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

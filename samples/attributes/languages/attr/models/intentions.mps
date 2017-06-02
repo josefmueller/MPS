@@ -78,7 +78,7 @@
       <node concept="3clFbS" id="6fYGsMY8g2$" role="2VODD2">
         <node concept="3clFbF" id="6fYGsMY8g7Y" role="3cqZAp">
           <node concept="Xl_RD" id="6fYGsMY8g7X" role="3clFbG">
-            <property role="Xl_RC" value="Attach comment attribute 1" />
+            <property role="Xl_RC" value="Attach Comment Attribute 1" />
           </node>
         </node>
       </node>
@@ -108,7 +108,7 @@
       <node concept="3clFbS" id="70B0YGk0hXT" role="2VODD2">
         <node concept="3clFbF" id="70B0YGk0hXU" role="3cqZAp">
           <node concept="Xl_RD" id="70B0YGk0hXV" role="3clFbG">
-            <property role="Xl_RC" value="Attach comment attribute 2" />
+            <property role="Xl_RC" value="Attach Comment Attribute 2" />
           </node>
         </node>
       </node>

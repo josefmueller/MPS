@@ -1126,7 +1126,7 @@
   <node concept="Qs71p" id="5q">
     <property role="TrG5h" value="DayDataType" />
     <node concept="QsSxf" id="5r" role="Qtgdg">
-      <property role="TrG5h" value="Monday" />
+      <property role="TrG5h" value="monday" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="Xl_RD" id="5G" role="37wK5m">
         <property role="Xl_RC" value="Monday" />
@@ -1136,7 +1136,7 @@
       </node>
     </node>
     <node concept="QsSxf" id="5s" role="Qtgdg">
-      <property role="TrG5h" value="Tuesday" />
+      <property role="TrG5h" value="tuesday" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="Xl_RD" id="5I" role="37wK5m">
         <property role="Xl_RC" value="Tuesday" />
@@ -1146,7 +1146,7 @@
       </node>
     </node>
     <node concept="QsSxf" id="5t" role="Qtgdg">
-      <property role="TrG5h" value="Wednesday" />
+      <property role="TrG5h" value="wednesday" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="Xl_RD" id="5K" role="37wK5m">
         <property role="Xl_RC" value="Wednesday" />
@@ -1156,7 +1156,7 @@
       </node>
     </node>
     <node concept="QsSxf" id="5u" role="Qtgdg">
-      <property role="TrG5h" value="Thursday" />
+      <property role="TrG5h" value="thursday" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="Xl_RD" id="5M" role="37wK5m">
         <property role="Xl_RC" value="Thursday" />
@@ -1166,7 +1166,7 @@
       </node>
     </node>
     <node concept="QsSxf" id="5v" role="Qtgdg">
-      <property role="TrG5h" value="Friday" />
+      <property role="TrG5h" value="friday" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="Xl_RD" id="5O" role="37wK5m">
         <property role="Xl_RC" value="Friday" />
@@ -1176,7 +1176,7 @@
       </node>
     </node>
     <node concept="QsSxf" id="5w" role="Qtgdg">
-      <property role="TrG5h" value="Saturday" />
+      <property role="TrG5h" value="saturday" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="Xl_RD" id="5Q" role="37wK5m">
         <property role="Xl_RC" value="Saturday" />
@@ -1186,7 +1186,7 @@
       </node>
     </node>
     <node concept="QsSxf" id="5x" role="Qtgdg">
-      <property role="TrG5h" value="Sunday" />
+      <property role="TrG5h" value="sunday" />
       <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
       <node concept="Xl_RD" id="5S" role="37wK5m">
         <property role="Xl_RC" value="Sunday" />
@@ -1304,7 +1304,7 @@
             </node>
             <node concept="TSZUe" id="6J" role="2OqNvi">
               <node concept="Rm8GO" id="6K" role="25WWJ7">
-                <ref role="Rm8GQ" node="5r" resolve="Monday" />
+                <ref role="Rm8GQ" node="5r" resolve="monday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1317,7 +1317,7 @@
             </node>
             <node concept="TSZUe" id="6N" role="2OqNvi">
               <node concept="Rm8GO" id="6O" role="25WWJ7">
-                <ref role="Rm8GQ" node="5s" resolve="Tuesday" />
+                <ref role="Rm8GQ" node="5s" resolve="tuesday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1330,7 +1330,7 @@
             </node>
             <node concept="TSZUe" id="6R" role="2OqNvi">
               <node concept="Rm8GO" id="6S" role="25WWJ7">
-                <ref role="Rm8GQ" node="5t" resolve="Wednesday" />
+                <ref role="Rm8GQ" node="5t" resolve="wednesday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1343,7 +1343,7 @@
             </node>
             <node concept="TSZUe" id="6V" role="2OqNvi">
               <node concept="Rm8GO" id="6W" role="25WWJ7">
-                <ref role="Rm8GQ" node="5u" resolve="Thursday" />
+                <ref role="Rm8GQ" node="5u" resolve="thursday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1356,7 +1356,7 @@
             </node>
             <node concept="TSZUe" id="6Z" role="2OqNvi">
               <node concept="Rm8GO" id="70" role="25WWJ7">
-                <ref role="Rm8GQ" node="5v" resolve="Friday" />
+                <ref role="Rm8GQ" node="5v" resolve="friday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1369,7 +1369,7 @@
             </node>
             <node concept="TSZUe" id="73" role="2OqNvi">
               <node concept="Rm8GO" id="74" role="25WWJ7">
-                <ref role="Rm8GQ" node="5w" resolve="Saturday" />
+                <ref role="Rm8GQ" node="5w" resolve="saturday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1382,7 +1382,7 @@
             </node>
             <node concept="TSZUe" id="77" role="2OqNvi">
               <node concept="Rm8GO" id="78" role="25WWJ7">
-                <ref role="Rm8GQ" node="5x" resolve="Sunday" />
+                <ref role="Rm8GQ" node="5x" resolve="sunday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1406,7 +1406,7 @@
       <node concept="3clFbS" id="7b" role="3clF47">
         <node concept="3cpWs6" id="7e" role="3cqZAp">
           <node concept="Rm8GO" id="7f" role="3cqZAk">
-            <ref role="Rm8GQ" node="5r" resolve="Monday" />
+            <ref role="Rm8GQ" node="5r" resolve="monday" />
             <ref role="1Px2BO" node="5q" resolve="DayDataType" />
           </node>
         </node>
@@ -1439,7 +1439,7 @@
           <node concept="3clFbS" id="7z" role="3clFbx">
             <node concept="3cpWs6" id="7_" role="3cqZAp">
               <node concept="Rm8GO" id="7A" role="3cqZAk">
-                <ref role="Rm8GQ" node="5r" resolve="Monday" />
+                <ref role="Rm8GQ" node="5r" resolve="monday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1452,7 +1452,7 @@
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2OqwBi" id="7D" role="37wK5m">
                 <node concept="Rm8GO" id="7E" role="2Oq$k0">
-                  <ref role="Rm8GQ" node="5r" resolve="Monday" />
+                  <ref role="Rm8GQ" node="5r" resolve="monday" />
                   <ref role="1Px2BO" node="5q" resolve="DayDataType" />
                 </node>
                 <node concept="liA8E" id="7F" role="2OqNvi">
@@ -1466,7 +1466,7 @@
           <node concept="3clFbS" id="7G" role="3clFbx">
             <node concept="3cpWs6" id="7I" role="3cqZAp">
               <node concept="Rm8GO" id="7J" role="3cqZAk">
-                <ref role="Rm8GQ" node="5s" resolve="Tuesday" />
+                <ref role="Rm8GQ" node="5s" resolve="tuesday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1479,7 +1479,7 @@
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2OqwBi" id="7M" role="37wK5m">
                 <node concept="Rm8GO" id="7N" role="2Oq$k0">
-                  <ref role="Rm8GQ" node="5s" resolve="Tuesday" />
+                  <ref role="Rm8GQ" node="5s" resolve="tuesday" />
                   <ref role="1Px2BO" node="5q" resolve="DayDataType" />
                 </node>
                 <node concept="liA8E" id="7O" role="2OqNvi">
@@ -1493,7 +1493,7 @@
           <node concept="3clFbS" id="7P" role="3clFbx">
             <node concept="3cpWs6" id="7R" role="3cqZAp">
               <node concept="Rm8GO" id="7S" role="3cqZAk">
-                <ref role="Rm8GQ" node="5t" resolve="Wednesday" />
+                <ref role="Rm8GQ" node="5t" resolve="wednesday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1506,7 +1506,7 @@
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2OqwBi" id="7V" role="37wK5m">
                 <node concept="Rm8GO" id="7W" role="2Oq$k0">
-                  <ref role="Rm8GQ" node="5t" resolve="Wednesday" />
+                  <ref role="Rm8GQ" node="5t" resolve="wednesday" />
                   <ref role="1Px2BO" node="5q" resolve="DayDataType" />
                 </node>
                 <node concept="liA8E" id="7X" role="2OqNvi">
@@ -1520,7 +1520,7 @@
           <node concept="3clFbS" id="7Y" role="3clFbx">
             <node concept="3cpWs6" id="80" role="3cqZAp">
               <node concept="Rm8GO" id="81" role="3cqZAk">
-                <ref role="Rm8GQ" node="5u" resolve="Thursday" />
+                <ref role="Rm8GQ" node="5u" resolve="thursday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1533,7 +1533,7 @@
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2OqwBi" id="84" role="37wK5m">
                 <node concept="Rm8GO" id="85" role="2Oq$k0">
-                  <ref role="Rm8GQ" node="5u" resolve="Thursday" />
+                  <ref role="Rm8GQ" node="5u" resolve="thursday" />
                   <ref role="1Px2BO" node="5q" resolve="DayDataType" />
                 </node>
                 <node concept="liA8E" id="86" role="2OqNvi">
@@ -1547,7 +1547,7 @@
           <node concept="3clFbS" id="87" role="3clFbx">
             <node concept="3cpWs6" id="89" role="3cqZAp">
               <node concept="Rm8GO" id="8a" role="3cqZAk">
-                <ref role="Rm8GQ" node="5v" resolve="Friday" />
+                <ref role="Rm8GQ" node="5v" resolve="friday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1560,7 +1560,7 @@
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2OqwBi" id="8d" role="37wK5m">
                 <node concept="Rm8GO" id="8e" role="2Oq$k0">
-                  <ref role="Rm8GQ" node="5v" resolve="Friday" />
+                  <ref role="Rm8GQ" node="5v" resolve="friday" />
                   <ref role="1Px2BO" node="5q" resolve="DayDataType" />
                 </node>
                 <node concept="liA8E" id="8f" role="2OqNvi">
@@ -1574,7 +1574,7 @@
           <node concept="3clFbS" id="8g" role="3clFbx">
             <node concept="3cpWs6" id="8i" role="3cqZAp">
               <node concept="Rm8GO" id="8j" role="3cqZAk">
-                <ref role="Rm8GQ" node="5w" resolve="Saturday" />
+                <ref role="Rm8GQ" node="5w" resolve="saturday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1587,7 +1587,7 @@
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2OqwBi" id="8m" role="37wK5m">
                 <node concept="Rm8GO" id="8n" role="2Oq$k0">
-                  <ref role="Rm8GQ" node="5w" resolve="Saturday" />
+                  <ref role="Rm8GQ" node="5w" resolve="saturday" />
                   <ref role="1Px2BO" node="5q" resolve="DayDataType" />
                 </node>
                 <node concept="liA8E" id="8o" role="2OqNvi">
@@ -1601,7 +1601,7 @@
           <node concept="3clFbS" id="8p" role="3clFbx">
             <node concept="3cpWs6" id="8r" role="3cqZAp">
               <node concept="Rm8GO" id="8s" role="3cqZAk">
-                <ref role="Rm8GQ" node="5x" resolve="Sunday" />
+                <ref role="Rm8GQ" node="5x" resolve="sunday" />
                 <ref role="1Px2BO" node="5q" resolve="DayDataType" />
               </node>
             </node>
@@ -1614,7 +1614,7 @@
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="2OqwBi" id="8v" role="37wK5m">
                 <node concept="Rm8GO" id="8w" role="2Oq$k0">
-                  <ref role="Rm8GQ" node="5x" resolve="Sunday" />
+                  <ref role="Rm8GQ" node="5x" resolve="sunday" />
                   <ref role="1Px2BO" node="5q" resolve="DayDataType" />
                 </node>
                 <node concept="liA8E" id="8x" role="2OqNvi">
@@ -1939,7 +1939,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="aD" role="39e2AY">
-          <ref role="39e2AS" node="5v" resolve="Friday" />
+          <ref role="39e2AS" node="5v" resolve="friday" />
         </node>
       </node>
       <node concept="39e2AG" id="ay" role="39e3Y0">
@@ -1960,7 +1960,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="aI" role="39e2AY">
-          <ref role="39e2AS" node="5r" resolve="Monday" />
+          <ref role="39e2AS" node="5r" resolve="monday" />
         </node>
       </node>
       <node concept="39e2AG" id="az" role="39e3Y0">
@@ -1981,7 +1981,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="aN" role="39e2AY">
-          <ref role="39e2AS" node="5w" resolve="Saturday" />
+          <ref role="39e2AS" node="5w" resolve="saturday" />
         </node>
       </node>
       <node concept="39e2AG" id="a$" role="39e3Y0">
@@ -2002,7 +2002,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="aS" role="39e2AY">
-          <ref role="39e2AS" node="5x" resolve="Sunday" />
+          <ref role="39e2AS" node="5x" resolve="sunday" />
         </node>
       </node>
       <node concept="39e2AG" id="a_" role="39e3Y0">
@@ -2023,7 +2023,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="aX" role="39e2AY">
-          <ref role="39e2AS" node="5u" resolve="Thursday" />
+          <ref role="39e2AS" node="5u" resolve="thursday" />
         </node>
       </node>
       <node concept="39e2AG" id="aA" role="39e3Y0">
@@ -2044,7 +2044,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="b2" role="39e2AY">
-          <ref role="39e2AS" node="5s" resolve="Tuesday" />
+          <ref role="39e2AS" node="5s" resolve="tuesday" />
         </node>
       </node>
       <node concept="39e2AG" id="aB" role="39e3Y0">
@@ -2065,7 +2065,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="b7" role="39e2AY">
-          <ref role="39e2AS" node="5t" resolve="Wednesday" />
+          <ref role="39e2AS" node="5t" resolve="wednesday" />
         </node>
       </node>
     </node>

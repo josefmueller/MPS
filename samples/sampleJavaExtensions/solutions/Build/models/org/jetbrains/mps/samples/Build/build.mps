@@ -363,12 +363,6 @@
             <ref role="3bR37D" to="ffeo:1d41uYMTRXo" resolve="jetbrains.mps.baseLanguage.scopes" />
           </node>
         </node>
-        <node concept="1SiIV0" id="7DzZcEj6Xbx" role="3bR37C">
-          <node concept="3bR9La" id="7DzZcEj6Xbw" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:7Kfy9QB6KYw" resolve="jetbrains.mps.baseLanguage.search" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="7DzZcEj6Xbz" role="3bR37C">
           <node concept="3bR9La" id="7DzZcEj6Xby" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -383,15 +377,16 @@
             <ref role="1Busuk" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
-        <node concept="1SiIV0" id="7DzZcEj6XbU" role="3bR37C">
-          <node concept="1Busua" id="7DzZcEj6XbT" role="1SiIV1">
-            <ref role="1Busuk" to="ffeo:7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
-          </node>
-        </node>
         <node concept="1yeLz9" id="4s6wavm_YRn" role="1TViLv">
           <property role="TrG5h" value="org.jetbrains.mps.samples.ParallelFor#8923957828369584137" />
           <property role="3LESm3" value="dbbf0a76-172f-4191-a1bd-9b6beb1d70ea" />
           <property role="2GAjPV" value="false" />
+        </node>
+        <node concept="1SiIV0" id="7LGEsuhmhf5" role="3bR37C">
+          <node concept="3bR9La" id="7LGEsuhmhf6" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
         </node>
       </node>
     </node>

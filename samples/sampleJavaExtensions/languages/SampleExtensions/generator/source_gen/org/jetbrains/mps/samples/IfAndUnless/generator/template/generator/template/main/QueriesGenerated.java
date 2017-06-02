@@ -22,7 +22,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
   }
-  public static SNode sourceNodeQuery_6143206611772089845(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_8965727632786101402(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x67b828fd8fbc4496L, 0xb7f78b64ac097c62L, 0x57547b70f36dc0dL, 0x57547b70f36dc0eL, "condition"));
   }
   public static SNode sourceNodeQuery_393299394024635960(final SourceSubstituteMacroNodeContext _context) {
@@ -40,7 +40,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, SourceNodeQuery> snqMethods = new HashMap<String, SourceNodeQuery>();
   {
     int i = 0;
-    snqMethods.put("6143206611772089845", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("8965727632786101402", new QueriesGenerated.SNQ(i++));
     snqMethods.put("393299394024635960", new QueriesGenerated.SNQ(i++));
     snqMethods.put("954830572076057051", new QueriesGenerated.SNQ(i++));
     snqMethods.put("954830572076057040", new QueriesGenerated.SNQ(i++));
@@ -64,7 +64,7 @@ public class QueriesGenerated extends QueryProviderBase {
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.sourceNodeQuery_6143206611772089845(ctx);
+          return QueriesGenerated.sourceNodeQuery_8965727632786101402(ctx);
         case 1:
           return QueriesGenerated.sourceNodeQuery_393299394024635960(ctx);
         case 2:

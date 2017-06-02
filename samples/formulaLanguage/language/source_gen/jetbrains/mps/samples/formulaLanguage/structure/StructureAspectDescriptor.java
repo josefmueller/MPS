@@ -135,7 +135,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.formulaLanguage", "FloatingPointConstant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.formulaLanguage.structure.Constant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)/1111784926012");
     b.prop("value", 0x1033349beb2L, "1113257000626");
     return b.create();
@@ -177,7 +176,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.formulaLanguage", "IntegerConstant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.samples.formulaLanguage.structure.Constant", 0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db857767L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)/1111784858617");
     b.prop("value", 0x102db8ae25bL, "1111784874587");
     return b.create();

@@ -13,11 +13,9 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
@@ -46,26 +44,18 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
-          public boolean hasPresentation() {
-            return true;
-          }
-          @Override
-          public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x1dfff86fbfd92c74L, "displayName"));
-          }
-          @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_y2k5og_a0a2a0a0a1a0b0a1a2;
+            return breakingNode_y2k5og_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ListScope(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aa3f2L, "jetbrains.mps.samples.heating.structure.HeatingPlan"), false, false), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aa3f2L, 0x4644aa4ce08aec4dL, "dailyPlans"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a2(it, _context.getContextNode());
+                return neq_y2k5og_a0a0a0a0a0a0a0a0a1a0a0a1a0b0a1a2(it, _context.getContextNode());
               }
             })) {
               public String getName(SNode child) {
-                return (String) BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan")), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x40bcae6c0e686ffeL, "applicability")));
+                return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan")), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x1dfff86fbfd92c74L, "displayName"));
               }
             };
           }
@@ -74,8 +64,8 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static boolean neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a2(Object a, Object b) {
+  private static boolean neq_y2k5og_a0a0a0a0a0a0a0a0a1a0a0a1a0b0a1a2(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNodePointer breakingNode_y2k5og_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)", "6836281137582847279");
+  private static SNodePointer breakingNode_y2k5og_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)", "6836281137582847279");
 }
