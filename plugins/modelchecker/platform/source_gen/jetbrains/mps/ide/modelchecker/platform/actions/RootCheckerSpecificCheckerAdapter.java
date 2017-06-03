@@ -36,6 +36,7 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
     if (reporterNode != null && quickfix != null) {
       final SNodeReference reporterNodeRef = reporterNode.getReference();
       return new IModelCheckerFix() {
+        @Override
         public boolean doFix() {
           SNode resolved = reporterNodeRef.resolve(myRepository);
           if (resolved != null) {

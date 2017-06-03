@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.dependency.VisibilityUtil;
@@ -47,8 +48,8 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
           continue;
         }
         if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
-          SpecificChecker.addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
-            public boolean doFix() {
+          SpecificChecker.addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new _FunctionTypes._return_P0_E0<Boolean>() {
+            public Boolean invoke() {
               return ResolverComponent.getInstance().resolve(ref, myProject.getRepository());
             }
           });
@@ -65,8 +66,8 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
           continue;
         }
 
-        SpecificChecker.addIssue(results, node, "Target module " + m.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
-          public boolean doFix() {
+        SpecificChecker.addIssue(results, node, "Target module " + m.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new _FunctionTypes._return_P0_E0<Boolean>() {
+          public Boolean invoke() {
             // check once again as this is executed somewhen in future 
             SModel m2 = mref.resolve(myProject.getRepository());
             if (m2 == null) {

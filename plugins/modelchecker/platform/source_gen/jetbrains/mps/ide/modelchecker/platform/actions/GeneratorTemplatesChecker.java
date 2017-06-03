@@ -99,7 +99,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
         continue;
       }
 
-      SpecificChecker.addIssue(myResults, node, String.format("Reference across root templates in role '%s', use mapping label or reference macro", ref.getLink().getName()), ModelChecker.SEVERITY_WARNING, "Cross-template reference", null);
+      SpecificChecker.addIssue(myResults, node, String.format("Reference across root templates in role '%s', use mapping label or reference macro", ref.getLink().getName()), ModelChecker.SEVERITY_WARNING, "Cross-template reference");
     }
   }
 }

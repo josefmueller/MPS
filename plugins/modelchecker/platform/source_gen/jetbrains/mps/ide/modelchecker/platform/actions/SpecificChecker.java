@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -24,6 +25,19 @@ public abstract class SpecificChecker {
     if (filterIssue(node)) {
       ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForNode(node, message, fix, severity, issueType));
     }
+  }
+  protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, @NotNull SNode node, String message, String severity, String issueType) {
+    if (filterIssue(node)) {
+      ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForNode(node, message, null, severity, issueType));
+    }
+  }
+  protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, @NotNull SNode node, String message, String severity, String issueType, final _FunctionTypes._return_P0_E0<? extends Boolean> fix) {
+    addIssue(results, node, message, severity, issueType, new IModelCheckerFix() {
+      @Override
+      public boolean doFix() {
+        return fix.invoke();
+      }
+    });
   }
   public static String getResultCategory(MessageStatus messageStatus) {
     switch (messageStatus) {
