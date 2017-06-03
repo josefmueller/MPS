@@ -25,7 +25,6 @@ public class TypesystemChecker implements IRootChecker {
   private DefaultTypecheckingContextOwner myContextOwner = new DefaultTypecheckingContextOwner();
   public TypesystemChecker() {
   }
-  @Override
   public Set<IErrorReporter> getErrors(SNode root, SRepository repository) {
     final Set<IErrorReporter> errors = SetSequence.fromSet(new HashSet<IErrorReporter>());
     TypeContextManager.getInstance().runTypeCheckingAction(myContextOwner, root, new ITypechecking.Action() {

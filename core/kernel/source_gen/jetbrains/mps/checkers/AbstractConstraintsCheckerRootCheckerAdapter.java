@@ -10,11 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import jetbrains.mps.util.Reference;
@@ -62,17 +60,6 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
   }
   public AbstractConstraintsCheckerRootCheckerAdapter(AbstractNodeChecker... rules) {
     this(SKIP_NOTHING_CONDITION, rules);
-  }
-  @Override
-  public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repository) {
-    final Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
-    processErrors(rootNode, repository, new Processor<NodeReportItem>() {
-      public boolean process(NodeReportItem reportItem) {
-        SetSequence.fromSet(result).addElement(TypesystemReportItemAdapter.FLAVOUR_ERROR_REPORTER.tryToGet(reportItem));
-        return true;
-      }
-    });
-    return result;
   }
   @Override
   public void processErrors(SNode rootNode, final SRepository repository, final Processor<NodeReportItem> processor) {

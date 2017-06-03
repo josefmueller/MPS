@@ -28,7 +28,7 @@ public class AuditTypeSystem extends BaseCheckModulesTest {
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
         Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
-        return new CheckingTestsUtil(statistic).applyChecker(new TypesystemChecker(), models);
+        return new CheckingTestsUtil(statistic).applyChecker(models, new TypesystemChecker());
       }
     });
     ourStats.report("Errors", statistic.getNumErrors());

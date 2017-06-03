@@ -15,6 +15,7 @@ import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
+import jetbrains.mps.checkers.UsedLanguagesChecker;
 import org.junit.Assert;
 
 public class AuditConstraints extends BaseCheckModulesTest {
@@ -31,8 +32,7 @@ public class AuditConstraints extends BaseCheckModulesTest {
     List<String> errors = new ModelAccessHelper(BaseCheckModulesTest.getContextProject().getModelAccess()).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
         Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();
-        // todo: add UsedLanguageChecker 
-        return new CheckingTestsUtil(statistic).applyChecker(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), models);
+        return new CheckingTestsUtil(statistic).applyChecker(models, new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_NOTHING_CONDITION, new UsedLanguagesChecker()));
       }
     });
     ourStats.report("Errors", statistic.getNumErrors());
