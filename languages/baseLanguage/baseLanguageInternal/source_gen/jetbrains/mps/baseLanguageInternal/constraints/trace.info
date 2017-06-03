@@ -88,11 +88,47 @@
   </root>
   <root nodeRef="r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)/3421461530438560155">
     <file name="InternalAnonymousClass_Constraints.java">
-      <node id="3421461530438560155" at="9,47,10,175" concept="12" />
-      <node id="3421461530438560155" at="9,0,12,0" concept="1" trace="InternalAnonymousClass_Constraints#()V" />
-      <scope id="3421461530438560155" at="9,47,10,175" />
-      <scope id="3421461530438560155" at="9,0,12,0" />
-      <unit id="3421461530438560155" at="8,0,14,0" name="jetbrains.mps.baseLanguageInternal.constraints.InternalAnonymousClass_Constraints" />
+      <node id="3421461530438560155" at="17,47,18,175" concept="12" />
+      <node id="3421461530438560155" at="22,84,23,119" concept="6" />
+      <node id="3421461530438560155" at="26,37,27,20" concept="7" />
+      <node id="3421461530438560155" at="30,42,31,37" concept="6" />
+      <node id="1213104840457" at="31,37,32,197" concept="7" />
+      <node id="3421461530438560155" at="35,40,36,20" concept="7" />
+      <node id="3421461530438560155" at="39,70,40,37" concept="6" />
+      <node id="6998584464754772862" at="40,37,41,102" concept="7" />
+      <node id="3421461530438560155" at="43,7,44,22" concept="7" />
+      <node id="3421461530438560155" at="17,0,20,0" concept="1" trace="InternalAnonymousClass_Constraints#()V" />
+      <node id="3421461530438560155" at="25,0,29,0" concept="5" trace="hasOwnGetter#()Z" />
+      <node id="3421461530438560155" at="34,0,38,0" concept="5" trace="hasOwnValidator#()Z" />
+      <node id="3421461530438560155" at="29,0,34,0" concept="5" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="3421461530438560155" at="38,0,43,0" concept="5" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="3421461530438560155" at="23,119,43,7" concept="2" />
+      <node id="3421461530438560155" at="21,0,46,0" concept="5" trace="getSpecifiedProperties#()Ljava/util/Map;" />
+      <scope id="3421461530438560155" at="17,47,18,175" />
+      <scope id="3421461530438560155" at="26,37,27,20" />
+      <scope id="3421461530438560155" at="35,40,36,20" />
+      <scope id="3421461530438560155" at="30,42,32,197">
+        <var name="propertyName" id="3421461530438560155" />
+      </scope>
+      <scope id="3421461530438560155" at="39,70,41,102">
+        <var name="propertyName" id="3421461530438560155" />
+      </scope>
+      <scope id="3421461530438560155" at="17,0,20,0" />
+      <scope id="3421461530438560155" at="25,0,29,0" />
+      <scope id="3421461530438560155" at="34,0,38,0" />
+      <scope id="3421461530438560155" at="29,0,34,0">
+        <var name="node" id="3421461530438560155" />
+      </scope>
+      <scope id="3421461530438560155" at="38,0,43,0">
+        <var name="node" id="3421461530438560155" />
+        <var name="propertyValue" id="3421461530438560155" />
+      </scope>
+      <scope id="3421461530438560155" at="22,84,44,22">
+        <var name="properties" id="3421461530438560155" />
+      </scope>
+      <scope id="3421461530438560155" at="21,0,46,0" />
+      <unit id="3421461530438560155" at="24,137,43,5" name="jetbrains.mps.baseLanguageInternal.constraints.InternalAnonymousClass_Constraints$1" />
+      <unit id="3421461530438560155" at="16,0,47,0" name="jetbrains.mps.baseLanguageInternal.constraints.InternalAnonymousClass_Constraints" />
     </file>
   </root>
   <root nodeRef="r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)/3731567766880819183">
