@@ -23,7 +23,6 @@ import java.util.Comparator;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   private JCheckBox myRemoveAttributes;
@@ -89,14 +88,14 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
         SNode parentA = SNodeOperations.getParent(a);
         SNode parentB = SNodeOperations.getParent(b);
         if (parentA == parentB) {
-          String aRole = check_6zqknj_a0a0c0a0a3a11(SNodeOperations.getContainingLink(a));
-          String bRole = check_6zqknj_a0b0c0a0a3a11(SNodeOperations.getContainingLink(b));
+          String aRole = SNodeOperations.getContainingLink(a).getName();
+          String bRole = SNodeOperations.getContainingLink(b).getName();
 
           if (neq_6zqknj_a0d0c0a0a0a0d0l(aRole, bRole)) {
             return aRole.compareTo(bRole);
           }
 
-          return new Integer(IterableUtil.asList(parentA.getChildren(aRole)).indexOf(a)).compareTo(IterableUtil.asList(parentB.getChildren(bRole)).indexOf(b));
+          return new Integer(IterableUtil.asList(parentA.getChildren(SNodeOperations.getContainingLink(a))).indexOf(a)).compareTo(IterableUtil.asList(parentB.getChildren(SNodeOperations.getContainingLink(b))).indexOf(b));
         }
         int iA = (parentA != null && MapSequence.fromMap(containerIndex).containsKey(parentA) ? MapSequence.fromMap(containerIndex).get(parentA) : 0);
         int iB = (parentB != null && MapSequence.fromMap(containerIndex).containsKey(parentB) ? MapSequence.fromMap(containerIndex).get(parentB) : 0);
@@ -110,18 +109,6 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
         return new SNodePointer(it);
       }
     }).toGenericArray(SNodePointer.class);
-  }
-  private static String check_6zqknj_a0a0c0a0a3a11(SContainmentLink checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getName();
-    }
-    return null;
-  }
-  private static String check_6zqknj_a0b0c0a0a3a11(SContainmentLink checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getName();
-    }
-    return null;
   }
   private static boolean neq_6zqknj_a0d0c0a0a0a0d0l(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

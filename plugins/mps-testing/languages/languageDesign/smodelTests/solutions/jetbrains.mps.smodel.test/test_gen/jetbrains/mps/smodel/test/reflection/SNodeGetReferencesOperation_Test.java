@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @MPSLaunch
@@ -185,7 +184,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       });
       Assert.assertEquals(1, Sequence.fromIterable(brokenReferences).count());
       SReference theReference = Sequence.fromIterable(brokenReferences).first();
-      Assert.assertEquals(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac7L, "root")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), check_s3ecl5_a12a6j(SLinkOperations.getRefLink(theReference)));
+      Assert.assertEquals(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac7L, "root"), SLinkOperations.getRefLink(theReference));
       Assert.assertEquals(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac7L, "root")), SLinkOperations.findLinkDeclaration(theReference));
       Assert.assertNotNull(SLinkOperations.getResolveInfo(theReference));
     }
@@ -199,7 +198,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       Assert.assertTrue(ListSequence.fromList(SNodeOperations.getReferences(nullNode)).isEmpty());
       SReference nullReference = null;
       Assert.assertNull(SLinkOperations.findLinkDeclaration(nullReference));
-      Assert.assertNull(check_s3ecl5_a9a7j(SLinkOperations.getRefLink(nullReference)));
+      Assert.assertNull(SLinkOperations.getRefLink(nullReference));
       Assert.assertNull(SLinkOperations.getTargetNode(nullReference));
       Assert.assertNull(SLinkOperations.getResolveInfo(nullReference));
     }
@@ -211,18 +210,6 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       return referenceName;
     }
     private static String check_s3ecl5_a31a5j(SReferenceLink checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return checkedDotOperand.getName();
-      }
-      return null;
-    }
-    private static String check_s3ecl5_a12a6j(SReferenceLink checkedDotOperand) {
-      if (null != checkedDotOperand) {
-        return checkedDotOperand.getName();
-      }
-      return null;
-    }
-    private static String check_s3ecl5_a9a7j(SReferenceLink checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getName();
       }

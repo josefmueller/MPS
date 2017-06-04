@@ -253,9 +253,6 @@
         <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
       </concept>
     </language>
-    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
-      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
-    </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
       <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
@@ -592,7 +589,7 @@
                               <node concept="Xl_RD" id="4NvDrdllMn$" role="3uHU7B">
                                 <property role="Xl_RC" value="Target node is null for reference to classifier with role " />
                               </node>
-                              <node concept="2EnYce" id="4NvDrdllMoh" role="3uHU7w">
+                              <node concept="2OqwBi" id="6FkefidQk7f" role="3uHU7w">
                                 <node concept="2OqwBi" id="2ytHpS1e0qT" role="2Oq$k0">
                                   <node concept="CsP83" id="2ytHpS1e0qU" role="2OqNvi" />
                                   <node concept="37vLTw" id="2ytHpS1e0qV" role="2Oq$k0">

@@ -270,9 +270,6 @@
         <child id="1201186121363" name="typeParameter" index="2Ghqu4" />
       </concept>
     </language>
-    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
-      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
-    </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
       <concept id="9032177546941580387" name="jetbrains.mps.lang.generator.structure.TrivialNodeId" flags="nn" index="2$VJBW">
         <property id="9032177546941580392" name="nodeId" index="2$VJBR" />
@@ -6124,7 +6121,7 @@
                                   <node concept="Xl_RD" id="z$" role="3uHU7B">
                                     <property role="Xl_RC" value="Target node is null for reference to classifier with role " />
                                   </node>
-                                  <node concept="2EnYce" id="z_" role="3uHU7w">
+                                  <node concept="2OqwBi" id="z_" role="3uHU7w">
                                     <node concept="2OqwBi" id="zA" role="2Oq$k0">
                                       <node concept="CsP83" id="zC" role="2OqNvi" />
                                       <node concept="37vLTw" id="zD" role="2Oq$k0">
