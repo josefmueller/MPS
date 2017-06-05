@@ -56,6 +56,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="mf.DoubleRange" />
     <classNode dependClassName="org.junit.Assert" />
+    <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="mf.MfDate" file="MfDate.java">

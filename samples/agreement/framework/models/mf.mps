@@ -11,7 +11,7 @@
     <import index="25x5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.text(JDK/)" />
     <import index="7fk1" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:junit.textui(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="rjhg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit(jetbrains.mps.baseLanguage.unitTest.libs/)" />
-    <import index="u132" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/)" implicit="true" />
+    <import index="u132" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1781,9 +1781,6 @@
   <node concept="312cEu" id="5E$kzZSw88s">
     <property role="TrG5h" value="DoubleRangeTester" />
     <node concept="3Tm1VV" id="5E$kzZSw88t" role="1B3o_S" />
-    <node concept="3uibUv" id="5E$kzZSw88u" role="1zkMxy">
-      <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
-    </node>
     <node concept="3clFbW" id="5E$kzZSw88v" role="jymVt">
       <node concept="3Tm1VV" id="5E$kzZSw88w" role="1B3o_S" />
       <node concept="3cqZAl" id="5E$kzZSw88x" role="3clF45" />
@@ -1921,6 +1918,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="7FAB1lorf2s" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
       </node>
     </node>
     <node concept="3clFb_" id="5E$kzZSw89l" role="jymVt">
@@ -2068,6 +2068,9 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="7FAB1lorfsz" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
+      </node>
     </node>
     <node concept="3clFb_" id="5E$kzZSw8ad" role="jymVt">
       <property role="TrG5h" value="testEmpty" />
@@ -2144,6 +2147,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="7FAB1lorfRY" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
       </node>
     </node>
     <node concept="3clFb_" id="5E$kzZSw8aF" role="jymVt">
@@ -2239,6 +2245,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="7FAB1lorga9" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
       </node>
     </node>
     <node concept="3clFb_" id="5E$kzZSw8be" role="jymVt">
@@ -2353,6 +2362,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="7FAB1lorgnC" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
       </node>
     </node>
     <node concept="3clFb_" id="5E$kzZSw8bS" role="jymVt">
@@ -2691,6 +2703,9 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="7FAB1lorg_G" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
+      </node>
     </node>
     <node concept="3clFb_" id="5E$kzZSw8dO" role="jymVt">
       <property role="TrG5h" value="testIncludesRange" />
@@ -2844,6 +2859,12 @@
           </node>
         </node>
       </node>
+      <node concept="2AHcQZ" id="7FAB1lorgLV" role="2AJF6D">
+        <ref role="2AI5Lk" to="rjhg:~Test" resolve="Test" />
+      </node>
+    </node>
+    <node concept="3uibUv" id="7FAB1loroGl" role="1zkMxy">
+      <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
     </node>
   </node>
   <node concept="312cEu" id="5E$kzZSw8fR">
@@ -8674,9 +8695,6 @@
   <node concept="312cEu" id="5E$kzZSw934">
     <property role="TrG5h" value="DateRangeTester" />
     <node concept="3Tm1VV" id="5E$kzZSw935" role="1B3o_S" />
-    <node concept="3uibUv" id="5E$kzZSw936" role="1zkMxy">
-      <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
-    </node>
     <node concept="312cEg" id="5E$kzZSw937" role="jymVt">
       <property role="TrG5h" value="myDec15" />
       <node concept="3uibUv" id="5E$kzZSw938" role="1tU5fm">
@@ -9172,7 +9190,7 @@
       </node>
       <node concept="3clFbS" id="5E$kzZSw95R" role="3clF47">
         <node concept="XkiVB" id="5E$kzZSw95S" role="3cqZAp">
-          <ref role="37wK5l" to="u132:~TestCase.&lt;init&gt;(java.lang.String)" resolve="TestCase" />
+          <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
           <node concept="37vLTw" id="2BHiRxgleds" role="37wK5m">
             <ref role="3cqZAo" node="5E$kzZSw95P" resolve="arg" />
           </node>
@@ -10380,6 +10398,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3uibUv" id="7FAB1lornbq" role="1zkMxy">
+      <ref role="3uigEE" to="u132:~TestCase" resolve="TestCase" />
     </node>
   </node>
   <node concept="312cEu" id="5E$kzZSw9jW">
