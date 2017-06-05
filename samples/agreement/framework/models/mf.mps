@@ -9190,7 +9190,7 @@
       </node>
       <node concept="3clFbS" id="5E$kzZSw95R" role="3clF47">
         <node concept="XkiVB" id="5E$kzZSw95S" role="3cqZAp">
-          <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+          <ref role="37wK5l" to="u132:~TestCase.&lt;init&gt;(java.lang.String)" resolve="TestCase" />
           <node concept="37vLTw" id="2BHiRxgleds" role="37wK5m">
             <ref role="3cqZAo" node="5E$kzZSw95P" resolve="arg" />
           </node>
