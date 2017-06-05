@@ -29,7 +29,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   protected void setUp() throws Exception {
     super.setUp();
 
-    myMpsFixture = createMPSFixture();
+    myMpsFixture = MPSTestFixtureFactory.getFixtureFactory().createMPSFixture(getName());
     myMpsFixture.setUp();
   }
 
@@ -39,10 +39,6 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     myMpsFixture = null;
 
     super.tearDown();
-  }
-
-  protected MPSTestFixture createMPSFixture() {
-    return MPSTestFixtureFactory.getFixtureFactory().createMPSFixture(getName());
   }
 
   protected MPSTestFixture getMpsFixture() {

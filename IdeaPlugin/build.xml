@@ -30,8 +30,9 @@
 
   <property name="base_dir" value="${basedir}/.."/>
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
-  <property name="test.platform.sandbox.dir" value="${base_dir}/IdeaPlugin/sandbox/tests.ant"/>
-  <property name="test.platform.sandbox.jps" value="${base_dir}/IdeaPlugin/sandbox/jps"/>
+  <property name="sandbox.dir" value="${base_dir}/IdeaPlugin/sandbox"/>
+  <property name="test.platform.sandbox.dir" value="${sandbox.dir}/tests.ant"/>
+  <property name="test.platform.sandbox.jps" value="${sandbox.dir}/jps"/>
   <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5051"/>-->
   <property name="junit.debug.arg"
             value="-D"/> <!--Value for JUnit test JVM launcher. Use -D as empty jvmarg value is treated as classname to run-->
@@ -96,26 +97,6 @@
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/languages"/>
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsCore/mps-core/languages"/>
     </copy>
-    <mkdir dir="${base_dir}/IdeaPlugin/mps-testing/lib"/>
-    <copy todir="${base_dir}/IdeaPlugin/mps-testing/lib">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/lib"/>
-    </copy>
-    <mkdir dir="${base_dir}/IdeaPlugin/mps-testing/languages"/>
-    <copy todir="${base_dir}/IdeaPlugin/mps-testing/languages">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages"/>
-    </copy>
-    <mkdir dir="${base_dir}/IdeaPlugin/mps-testing/META-INF"/>
-    <copy todir="${base_dir}/IdeaPlugin/mps-testing/META-INF">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/META-INF"/>
-    </copy>
-    <mkdir dir="${base_dir}/IdeaPlugin/mps.editor.tests/languages"/>
-    <copy todir="${base_dir}/IdeaPlugin/mps.editor.tests/languages">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsEditorTestsPlugin/mps.editor.tests/languages"/>
-    </copy>
-    <mkdir dir="${base_dir}/IdeaPlugin/mps.editor.tests/META-INF"/>
-    <copy todir="${base_dir}/IdeaPlugin/mps.editor.tests/META-INF">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsEditorTestsPlugin/mps.editor.tests/META-INF"/>
-    </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-java/META-INF">
       <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsJavaPlatform/META-INF/JavaPlatform.xml"/>
     </copy>
@@ -138,6 +119,12 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/lib"/>
     </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-testing">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps.editor.tests">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsEditorTestsPlugin/mps.editor.tests"/>
+    </copy>
   </target>
 
   <target name="copyLibsFromDist" depends="loadIdeaPluginsPathVar">
@@ -159,8 +146,12 @@
     </copy>
   </target>
 
-  <target name="clean" depends="cleanLibs">
+  <target name="clean" depends="cleanLibs, cleanSendbox">
     <delete dir="${build.home}"/>
+  </target>
+
+  <target name="cleanSendbox">
+    <delete dir="${sandbox.dir}"/>
   </target>
 
   <target name="cleanLibs">
@@ -173,17 +164,25 @@
     <!-- TODO: create separate root for resources copied from the 'main' MPS -->
     <delete dir="${base_dir}/IdeaPlugin/mps-core/resources/messages"/>
     <delete dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
-    <delete dir="${base_dir}/IdeaPlugin/mps-testing/META-INF"/>
-    <delete dir="${base_dir}/IdeaPlugin/mps-testing/lib"/>
-    <delete dir="${base_dir}/IdeaPlugin/mps-testing/languages"/>
-    <delete dir="${base_dir}/IdeaPlugin/mps.editor.tests/languages"/>
-    <delete dir="${base_dir}/IdeaPlugin/mps.editor.tests/META-INF"/>
     <delete file="${base_dir}/IdeaPlugin/mps-java/META-INF/JavaPlatform.xml"/>
     <delete dir="${base_dir}/IdeaPlugin/mps-java/META-INF/platform"/>
     <delete dir="${base_dir}/IdeaPlugin/mps-java/lib"/>
     <delete file="${base_dir}/IdeaPlugin/mps-vcs/META-INF/MPSVcs.xml"/>
     <delete dir="${base_dir}/IdeaPlugin/mps-vcs/languages"/>
     <delete dir="${base_dir}/IdeaPlugin/mps-vcs/lib"/>
+    <delete includeemptydirs="true">
+      <fileset dir="${base_dir}/IdeaPlugin/mps-testing">
+        <include name="**/*"/>
+        <exclude name="**/*.iml"/>
+        <exclude name="src/**/*"/>
+      </fileset>
+    </delete>
+    <delete includeemptydirs="true">
+      <fileset dir="${base_dir}/IdeaPlugin/mps.editor.tests">
+        <include name="**/*"/>
+        <exclude name="**/*.iml"/>
+      </fileset>
+    </delete>
   </target>
 
   <target name="buildCore" depends="loadIdeaPathVar" unless="buildCoreProcessed">
@@ -384,6 +383,44 @@
       <test name="jetbrains.mps.jps.make.tests.JpsMakeTestSuite"/>
     </junit>
 
+    <junit fork="true"
+           dir="."
+           haltonfailure="false"
+           showoutput="true"
+           enableTestListenerEvents="false">
+      <jvmarg value="-ea"/>
+      <jvmarg value="-Xss1024k"/>
+      <jvmarg value="-Xmx1024m"/>
+      <jvmarg value="-XX:MaxPermSize=128m"/>
+      <jvmarg value="${junit.debug.arg}"/>
+      <formatter type="xml"/>
+      <sysproperty key="log4j.configuration" value="file:///${ideaPath}/bin/log.xml"/>
+      <sysproperty key="idea.platform.prefix" value="Idea"/>
+      <sysproperty key="idea.config.path" value="${test.platform.sandbox.dir}/config"/>
+      <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
+      <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
+      <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
+      <sysproperty key="idea.load.plugins.id"
+                   value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.lang.editor.tests"/>
+      <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
+      <sysproperty key="file.encoding" value="UTF-8"/>
+      <!-- TODO: remove property after investigation and fix MPS-25217 -->
+      <!-- See com.intellij.openapi.project.impl.ProjectManagerImpl#newProject and ProjectManagerImpl#LOG_PROJECT_LEAKAGE_IN_TESTS-->
+      <sysproperty key="idea.log.leaked.projects.in.tests" value="false"/>
+      <classpath>
+        <fileset dir="${ideaPath}/lib">
+          <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-core/lib">
+          <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-testing/lib">
+          <include name="*.jar"/>
+        </fileset>
+        <pathelement path="${java.class.path}"/>
+      </classpath>
+      <test name="jetbrains.mps.idea.core.tests.PluginsTestSuite"/>
+    </junit>
   </target>
 
   <target name="zip" depends="loadIdeaPathVar, build">
