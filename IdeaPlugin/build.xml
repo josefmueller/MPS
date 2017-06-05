@@ -78,7 +78,7 @@
     <antcall target="copyLibsFromLocalBuild"/>
   </target>
 
-  <target name="copyLibsFromLocalBuild" depends="buildCore">
+  <target name="copyLibsFromLocalBuild" depends="buildCore, buildTests">
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
@@ -96,9 +96,25 @@
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/languages"/>
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsCore/mps-core/languages"/>
     </copy>
-    <mkdir dir="${base_dir}/IdeaPlugin/mps-testing"/>
-    <copy todir="${base_dir}/IdeaPlugin/mps-testing">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing"/>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps-testing/lib"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps-testing/lib">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/lib"/>
+    </copy>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps-testing/languages"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps-testing/languages">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages"/>
+    </copy>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps-testing/META-INF"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps-testing/META-INF">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/META-INF"/>
+    </copy>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps.editor.tests/languages"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps.editor.tests/languages">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsEditorTestsPlugin/mps.editor.tests/languages"/>
+    </copy>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps.editor.tests/META-INF"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps.editor.tests/META-INF">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsEditorTestsPlugin/mps.editor.tests/META-INF"/>
     </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-java/META-INF">
       <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsJavaPlatform/META-INF/JavaPlatform.xml"/>
@@ -121,12 +137,6 @@
     <mkdir dir="${base_dir}/IdeaPlugin/mps-vcs/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/lib"/>
-    </copy>
-    <!-- only for running tests in mps-core -->
-    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
-      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/lib/jetbrains.mps.lang.test.util.jar"/>
-      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar"/>
-      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar"/>
     </copy>
   </target>
 
@@ -163,7 +173,11 @@
     <!-- TODO: create separate root for resources copied from the 'main' MPS -->
     <delete dir="${base_dir}/IdeaPlugin/mps-core/resources/messages"/>
     <delete dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
-    <delete dir="${base_dir}/IdeaPlugin/mps-testing"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps-testing/META-INF"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps-testing/lib"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps-testing/languages"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps.editor.tests/languages"/>
+    <delete dir="${base_dir}/IdeaPlugin/mps.editor.tests/META-INF"/>
     <delete file="${base_dir}/IdeaPlugin/mps-java/META-INF/JavaPlatform.xml"/>
     <delete dir="${base_dir}/IdeaPlugin/mps-java/META-INF/platform"/>
     <delete dir="${base_dir}/IdeaPlugin/mps-java/lib"/>
@@ -208,6 +222,12 @@
     <ant antfile="mpsEditorTestsPlugin.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
+    </ant>
+
+    <ant antfile="mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" target="layout.tests">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
+      <property name="build.layout.tests" location="${build.home}/artifacts/mpsPlugin.tests"/>
     </ant>
   </target>
 
@@ -313,8 +333,7 @@
       <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
       <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
-      <sysproperty key="idea.load.plugins.id"
-                   value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.lang.editor.tests"/>
+      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
       <!-- TODO: remove property after investigation and fix MPS-25217 -->
@@ -326,9 +345,6 @@
         </fileset>
         <fileset dir="${test.platform.sandbox.dir}/plugins/mps-core/lib">
           <include name="*.jar"/>
-        </fileset>
-        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-testing">
-          <include name="**/*.jar"/>
         </fileset>
         <pathelement path="${java.class.path}"/>
       </classpath>

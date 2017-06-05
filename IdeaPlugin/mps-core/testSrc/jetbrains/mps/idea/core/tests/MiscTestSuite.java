@@ -26,7 +26,6 @@ import org.junit.runners.Suite;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ProjectViewTests.class,
                      FacetTests.class,
-                     EditorTests.class,
                      UseLanguageInPackageTest.class,
                      ProjectStructureTest.class})
 public class MiscTestSuite {
