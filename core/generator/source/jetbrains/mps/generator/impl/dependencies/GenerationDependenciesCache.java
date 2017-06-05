@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,7 +38,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 /**
  * Evgeny Gryaznov, May 14, 2010
@@ -56,8 +54,8 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
 
   private List<CachePathRedirect> myCachePathRedirects = Collections.synchronizedList(new ArrayList<CachePathRedirect>());
 
-  public GenerationDependenciesCache(SRepository repository, CleanupManager manager) {
-    super(repository, manager);
+  public GenerationDependenciesCache(CleanupManager manager) {
+    super(manager);
   }
 
   /*

@@ -18,7 +18,6 @@ package jetbrains.mps.generator.cache;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
@@ -26,9 +25,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
@@ -40,10 +36,8 @@ import java.util.concurrent.ConcurrentMap;
 public abstract class BaseModelCache<T> implements CoreComponent, CleanupListener {
   // absence of model in the cache means we have no idea about present cache state.
   // if model is in the cache, we do know both IFile and cached object
-  private final ConcurrentMap<SModelReference, Pair<IFile, T>> myCache = new ConcurrentHashMap<SModelReference, Pair<IFile, T>>();
-  protected final SRepository myRepository;
+  private final ConcurrentMap<SModelReference, Pair<IFile, T>> myCache = new ConcurrentHashMap<>();
   private final CleanupManager myCleanupManager;
-  private final SRepositoryContentAdapter myRepoListener = new MyRepositoryListener();
 
   @Nullable
   protected abstract T readCache(SModel model);
@@ -62,21 +56,16 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   }
 
   // In fact, can be application-wide if we use compound key (repo+modelref)
-  protected BaseModelCache(SRepository repository, CleanupManager cleanupManager) {
-    myRepository = repository;
+  protected BaseModelCache(CleanupManager cleanupManager) {
     myCleanupManager = cleanupManager;
   }
 
   protected BaseModelCache() {
-    myRepository = null;
     myCleanupManager = null;
   }
 
   @Override
   public void init() {
-    if (myRepository != null) {
-      new RepoListenerRegistrar(myRepository, myRepoListener).attach();
-    }
     if (myCleanupManager != null) {
       myCleanupManager.addCleanupListener(this);
     }
@@ -86,9 +75,6 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   public void dispose() {
     if (myCleanupManager != null) {
       myCleanupManager.removeCleanupListener(this);
-    }
-    if (myRepository != null) {
-      new RepoListenerRegistrar(myRepository, myRepoListener).detach();
     }
   }
 
@@ -112,7 +98,7 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
     if (cache == null) {
       return null;
     }
-    final Pair<IFile, T> entry = new Pair<IFile, T>(cacheFile, cache);
+    final Pair<IFile, T> entry = new Pair<>(cacheFile, cache);
     Pair<IFile, T> existing = myCache.putIfAbsent(mr, entry);
     if (existing != null) {
       return existing.o2;
@@ -152,7 +138,7 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
     Pair<IFile, T> entry = myCache.remove(mr);
     if (entry != null) {
       // decided not to update with incomplete entry, although perhaps it won't hurt (file == null))
-      myCache.put(mr, new Pair<IFile, T>(entry.o1, cache));
+      myCache.put(mr, new Pair<>(entry.o1, cache));
     }
   }
 
@@ -185,27 +171,5 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   @Override
   public void performCleanup() {
     myCache.clear();
-  }
-
-  private class MyRepositoryListener extends SRepositoryContentAdapter {
-    @Override
-    public void beforeModelRemoved(SModule module, SModel model) {
-      clean(model);
-    }
-
-    @Override
-    public void modelAdded(SModule module, SModel model) {
-      clean(model);
-    }
-
-    @Override
-    public void modelRenamed(SModule module, SModel model, SModelReference oldRef) {
-      clean(model);
-    }
-
-    @Override
-    public void modelReplaced(SModel model) {
-      clean(model);
-    }
   }
 }

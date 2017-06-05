@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
@@ -60,10 +61,32 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
 
     @Override
+    public void beforeModelRemoved(SModule module, SModel model) {
+      // FIXME invalidateData makes sense only if dispated once model is already gone
+      //       but at least we clean the cache
+      ModelGenerationStatusManager.this.invalidateData(Collections.singleton(model));
+    }
+
+    @Override
+    public void modelAdded(SModule module, SModel model) {
+      ModelGenerationStatusManager.this.invalidateData(Collections.singleton(model));
+    }
+
+    @Override
+    public void modelRenamed(SModule module, SModel model, SModelReference oldRef) {
+      ModelGenerationStatusManager.this.invalidateData(Collections.singleton(model));
+    }
+
+    @Override
     protected void startListening(SModel model) {
       if (GenerationFacade.canGenerate(model)) {
         model.addModelListener(this);
       }
+    }
+
+    @Override
+    public void modelDetached(SModel model, SRepository repository) {
+      model.removeModelListener(this);
     }
 
     @Override
