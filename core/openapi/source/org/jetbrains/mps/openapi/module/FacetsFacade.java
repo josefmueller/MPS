@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,10 @@ public abstract class FacetsFacade {
 
   protected static FacetsFacade INSTANCE;
 
+  /**
+   * @deprecated Use respective {@code ComponentPlugin} (i.e. {@code MPSCore}) to obtain instance of the registry.
+   */
+  @Deprecated
   public static FacetsFacade getInstance() {
     return INSTANCE;
   }

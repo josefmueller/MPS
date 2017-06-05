@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import java.util.List;
 
 public class ModelGenerationStatusManager implements CoreComponent {
   private static ModelGenerationStatusManager INSTANCE;
+  private final SRepositoryRegistry myRepositoryRegistry;
 
   public static ModelGenerationStatusManager getInstance() {
     return INSTANCE;
@@ -64,8 +65,8 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
   };
 
-  public ModelGenerationStatusManager() {
-
+  public ModelGenerationStatusManager(SRepositoryRegistry repositoryRegistry) {
+    myRepositoryRegistry = repositoryRegistry;
   }
 
   /*
@@ -82,12 +83,12 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
 
     INSTANCE = this;
-    SRepositoryRegistry.getInstance().addGlobalListener(myModelReloadListener);
+    myRepositoryRegistry.addGlobalListener(myModelReloadListener);
   }
 
   @Override
   public void dispose() {
-    SRepositoryRegistry.getInstance().removeGlobalListener(myModelReloadListener);
+    myRepositoryRegistry.removeGlobalListener(myModelReloadListener);
     INSTANCE = null;
   }
 

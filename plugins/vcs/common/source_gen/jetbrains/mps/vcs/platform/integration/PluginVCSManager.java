@@ -10,19 +10,23 @@ import org.jetbrains.annotations.NotNull;
 
 public class PluginVCSManager implements ApplicationComponent {
   private final ModelStorageProblemsListener myResolver;
+  private final MPSCoreComponents myMPSComponents;
 
   public PluginVCSManager(MPSCoreComponents coreComponents) {
     myResolver = new ModelStorageProblemsListener();
+    myMPSComponents = coreComponents;
   }
 
   @Override
   public void initComponent() {
-    SRepositoryRegistry.getInstance().addGlobalListener(myResolver);
+    SRepositoryRegistry repoRegistry = myMPSComponents.getPlatform().findComponent(SRepositoryRegistry.class);
+    repoRegistry.addGlobalListener(myResolver);
   }
 
   @Override
   public void disposeComponent() {
-    SRepositoryRegistry.getInstance().removeGlobalListener(myResolver);
+    SRepositoryRegistry repoRegistry = myMPSComponents.getPlatform().findComponent(SRepositoryRegistry.class);
+    repoRegistry.removeGlobalListener(myResolver);
   }
 
   @NonNls

@@ -35,8 +35,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
-// FIXME How come non-public class is loaded
+// XXX This non-public class is loaded due to ComponentConfigComponentAdapter (instantiated by ComponentManagerImpl, both from
+//     from com.intellij.openapi.components.impl) that defaults to allowNonPublicClasses == true.
 class OnReloadingUndoCleaner implements ApplicationComponent {
+  private final MPSCoreComponents myMPSComponents;
   private final ProjectManager myProjectManager;
 
   private final SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
@@ -81,6 +83,7 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
   };
 
   OnReloadingUndoCleaner(MPSCoreComponents coreComponents, ProjectManager projectManager) {
+    myMPSComponents = coreComponents;
     myProjectManager = projectManager;
   }
 
@@ -92,12 +95,14 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    SRepositoryRegistry.getInstance().addGlobalListener(myListener);
+    SRepositoryRegistry repoRegistry = myMPSComponents.getPlatform().findComponent(SRepositoryRegistry.class);
+    repoRegistry.addGlobalListener(myListener);
 
   }
 
   @Override
   public void disposeComponent() {
-    SRepositoryRegistry.getInstance().removeGlobalListener(myListener);
+    SRepositoryRegistry repoRegistry = myMPSComponents.getPlatform().findComponent(SRepositoryRegistry.class);
+    repoRegistry.removeGlobalListener(myListener);
   }
 }

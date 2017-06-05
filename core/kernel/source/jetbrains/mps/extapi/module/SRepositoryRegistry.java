@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,10 @@ public class SRepositoryRegistry implements CoreComponent {
   private Set<SRepository> myRepositories = new LinkedHashSet<SRepository>();
   private Set<SRepositoryListener> myGlobalListeners = new LinkedHashSet<SRepositoryListener>();
 
+  /**
+   * @deprecated Instead, access instance through respective kernel {@link jetbrains.mps.components.ComponentPlugin} (i.e. {@code MPSCore}).
+   */
+  @Deprecated
   public static SRepositoryRegistry getInstance() {
     return INSTANCE;
   }

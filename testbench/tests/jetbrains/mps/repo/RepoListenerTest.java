@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.TrivialModelDescriptor;
@@ -122,7 +121,9 @@ public class RepoListenerTest extends CoreMpsTest {
   @Test
   public void testGlobalAttach() {
     final AttachRepoListener l1 = new AttachRepoListener();
-    SRepositoryRegistry.getInstance().addGlobalListener(l1);
+    final SRepositoryRegistry repoRegistry = getEnvironment().getPlatform().findComponent(SRepositoryRegistry.class);
+    assert repoRegistry != null;
+    repoRegistry.addGlobalListener(l1);
     l1.checkStarted(1); // MPSModuleRepository.INSTANCE
     l1.checkStopped(0);
     createProject();
@@ -133,12 +134,12 @@ public class RepoListenerTest extends CoreMpsTest {
     l1.checkStopped(0);
     //
     final AttachRepoListener l2 = new AttachRepoListener();
-    SRepositoryRegistry.getInstance().addGlobalListener(l2);
+    repoRegistry.addGlobalListener(l2);
     l1.checkStarted(distinctRepositories);
     l1.checkStopped(0);
     l2.checkStarted(distinctRepositories); // == that of l1 starts to the date, == amount of our available repositories
     l2.checkStopped(0);
-    SRepositoryRegistry.getInstance().removeGlobalListener(l2);
+    repoRegistry.removeGlobalListener(l2);
     l1.checkStarted(distinctRepositories);
     l1.checkStopped(0); // l1 is not notified on l2 removal
     l2.checkStarted(distinctRepositories);
@@ -149,7 +150,7 @@ public class RepoListenerTest extends CoreMpsTest {
     l1.checkStopped(distinctRepositories-1); // project repo is gone, 1 notification
     l2.checkStarted(distinctRepositories); // l2 is detached, shall not get any further notifications
     l2.checkStopped(distinctRepositories); // --"--
-    SRepositoryRegistry.getInstance().removeGlobalListener(l1);
+    repoRegistry.removeGlobalListener(l1);
     l1.checkStarted(distinctRepositories);
     l1.checkStopped(distinctRepositories); // notified for global repo
     l2.checkStarted(distinctRepositories); // l2 is detached, shall not get any further notifications

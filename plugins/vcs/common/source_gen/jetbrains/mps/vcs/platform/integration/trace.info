@@ -802,25 +802,33 @@
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6477249786997134461">
     <file name="PluginVCSManager.java">
       <node id="7770198149431677188" at="12,0,13,0" concept="6" trace="myResolver" />
-      <node id="219318228847907497" at="14,61,15,52" concept="5" />
-      <node id="7770198149431668959" at="19,31,20,68" concept="5" />
-      <node id="7770198149431810382" at="24,34,25,71" concept="5" />
-      <node id="6477249786997137827" at="31,36,32,25" concept="11" />
-      <node id="6477249786997134463" at="14,0,17,0" concept="3" trace="PluginVCSManager#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-      <node id="6477249786997137813" at="18,0,22,0" concept="9" trace="initComponent#()V" />
-      <node id="6477249786997137817" at="23,0,27,0" concept="9" trace="disposeComponent#()V" />
-      <node id="6477249786997137821" at="28,0,34,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
-      <scope id="6477249786997134466" at="14,61,15,52" />
-      <scope id="6477249786997137816" at="19,31,20,68" />
-      <scope id="6477249786997137820" at="24,34,25,71" />
-      <scope id="6477249786997137826" at="31,36,32,25" />
-      <scope id="6477249786997134463" at="14,0,17,0">
+      <node id="6068367622361961308" at="13,0,14,0" concept="6" trace="myMPSComponents" />
+      <node id="219318228847907497" at="15,61,16,52" concept="5" />
+      <node id="6068367622361961312" at="16,52,17,37" concept="5" />
+      <node id="6068367622362174778" at="21,31,22,110" concept="10" />
+      <node id="7770198149431668959" at="22,110,23,47" concept="5" />
+      <node id="6068367622362181755" at="27,34,28,110" concept="10" />
+      <node id="7770198149431810382" at="28,110,29,50" concept="5" />
+      <node id="6477249786997137827" at="35,36,36,25" concept="11" />
+      <node id="6477249786997134463" at="15,0,19,0" concept="3" trace="PluginVCSManager#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+      <node id="6477249786997137813" at="20,0,25,0" concept="9" trace="initComponent#()V" />
+      <node id="6477249786997137817" at="26,0,31,0" concept="9" trace="disposeComponent#()V" />
+      <node id="6477249786997137821" at="32,0,38,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
+      <scope id="6477249786997137826" at="35,36,36,25" />
+      <scope id="6477249786997134466" at="15,61,17,37" />
+      <scope id="6477249786997137816" at="21,31,23,47">
+        <var name="repoRegistry" id="6068367622362174779" />
+      </scope>
+      <scope id="6477249786997137820" at="27,34,29,50">
+        <var name="repoRegistry" id="6068367622362181756" />
+      </scope>
+      <scope id="6477249786997134463" at="15,0,19,0">
         <var name="coreComponents" id="219318228847869447" />
       </scope>
-      <scope id="6477249786997137813" at="18,0,22,0" />
-      <scope id="6477249786997137817" at="23,0,27,0" />
-      <scope id="6477249786997137821" at="28,0,34,0" />
-      <unit id="6477249786997134461" at="11,0,35,0" name="jetbrains.mps.vcs.platform.integration.PluginVCSManager" />
+      <scope id="6477249786997137813" at="20,0,25,0" />
+      <scope id="6477249786997137817" at="26,0,31,0" />
+      <scope id="6477249786997137821" at="32,0,38,0" />
+      <unit id="6477249786997134461" at="11,0,39,0" name="jetbrains.mps.vcs.platform.integration.PluginVCSManager" />
     </file>
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/7075964554776710007">

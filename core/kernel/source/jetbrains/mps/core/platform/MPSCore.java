@@ -18,7 +18,9 @@ package jetbrains.mps.core.platform;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
@@ -50,19 +52,25 @@ import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * Core MPS functionality layer. Non-instantiable now, the only way to create MPS is via {@code jetbrains.mps.core.platform.PlatformFactory}.
+ * XXX Now is the only reasonable {@link ComponentHost} implementation, although any ComponentPlugin could be CH (and do this in a generic way, just need
+ *     to record initialized instances and look them up in {@link ComponentHost#findComponent(Class)} implementation.
  */
-public final class MPSCore extends ComponentPlugin {
+public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private volatile boolean myInitialized = false;
   private ClassLoaderManager myClassLoaderManager;
   private LibraryInitializer myLibraryInitializer;
   private PersistenceRegistry myPersistenceFacade;
   private MPSModuleRepository myModuleRepository;
   private LanguageRegistry myLanguageRegistry;
+  private SRepositoryRegistry myRepositoryRegistry;
+  private FacetsRegistry myModuleFacetsRegistry;
 
   /**
    * made package-private
@@ -78,19 +86,31 @@ public final class MPSCore extends ComponentPlugin {
     myInitialized = true;
   }
 
+  @Override
+  public void dispose() {
+    super.dispose();
+    myClassLoaderManager = null;
+    myLibraryInitializer = null;
+    myPersistenceFacade = null;
+    myModuleRepository = null;
+    myLanguageRegistry = null;
+    myRepositoryRegistry = null;
+    myInitialized = false;
+  }
+
   private void doInit() {
     SNodeAccessUtil.setInstance(new SNodeAccessUtilImpl());
     myPersistenceFacade = init(new PersistenceRegistry());
-    init(new FacetsRegistry());
+    myModuleFacetsRegistry = init(new FacetsRegistry());
 
-    SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
+    myRepositoryRegistry = init(new SRepositoryRegistry());
     myModuleRepository = init(new MPSModuleRepository());
     init(new SModelRepository(myModuleRepository));
     init(new GlobalSModelEventsManager(myModuleRepository));
     myClassLoaderManager = init(new ClassLoaderManager(myModuleRepository));
     init(new DebugRegistry());
 
-    init(new SModelFileTracker.Plug(repositoryRegistry));
+    init(new SModelFileTracker.Plug(myRepositoryRegistry));
     init(new ModuleRepositoryFacade(myModuleRepository));
     init(new ModuleFileTracker(myModuleRepository));
     init(new CleanupManager(myClassLoaderManager));
@@ -153,9 +173,52 @@ public final class MPSCore extends ComponentPlugin {
     return myModuleRepository;
   }
 
+  public SRepositoryRegistry getRepositoryRegistry() {
+    checkInitialized();
+    return myRepositoryRegistry;
+  }
+
+  public FacetsFacade getModuleFacetRegistry() {
+    checkInitialized();
+    return myModuleFacetsRegistry;
+  }
+
   @NotNull
   public ModelFactoryRegistry getModelFactoryRegistry() {
     return ModelFactoryService.getInstance();
+  }
+
+  @Nullable
+  @Override
+  public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
+    checkInitialized();
+    // A.isAssignable(B) not necessarily means C (instanceof A) could be safely cast to B, nevertheless, do not want to deal with it here and now,
+    // it's usually findComponent(A) anyway.
+    if (LibraryInitializer.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myLibraryInitializer);
+    }
+    if (PersistenceFacade.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myPersistenceFacade);
+    }
+    if (ClassLoaderManager.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myClassLoaderManager);
+    }
+    if (MPSModuleRepository.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myModuleRepository);
+    }
+    if (LanguageRegistry.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myLanguageRegistry);
+    }
+    if (ModelFactoryRegistry.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(getModelFactoryRegistry());
+    }
+    if (SRepositoryRegistry.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myRepositoryRegistry);
+    }
+    if (FacetsFacade.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myModuleFacetsRegistry);
+    }
+    return null;
   }
 
   private static class ComponentNotInitializedException extends IllegalStateException {
