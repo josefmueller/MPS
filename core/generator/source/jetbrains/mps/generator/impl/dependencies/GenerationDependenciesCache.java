@@ -18,9 +18,6 @@ package jetbrains.mps.generator.impl.dependencies;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.ModelGenerationStatusListener;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.ModelGenerationStatusManager.ModelHashSource;
 import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.cache.ParseFacility;
@@ -41,15 +38,17 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 /**
  * Evgeny Gryaznov, May 14, 2010
  */
-public class GenerationDependenciesCache extends BaseModelCache<GenerationDependencies>
-    implements ModelGenerationStatusListener, ModelHashSource {
+public class GenerationDependenciesCache extends BaseModelCache<GenerationDependencies> {
 
   private static GenerationDependenciesCache INSTANCE;
-  private final ModelGenerationStatusManager myGenStatusManager;
+  @Nullable
+  private Consumer<SModelReference> myCacheInvalidationCallback;
 
   public static GenerationDependenciesCache getInstance() {
     return INSTANCE;
@@ -57,9 +56,16 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
 
   private List<CachePathRedirect> myCachePathRedirects = Collections.synchronizedList(new ArrayList<CachePathRedirect>());
 
-  public GenerationDependenciesCache(SRepository repository, CleanupManager manager, ModelGenerationStatusManager genStatusManager) {
+  public GenerationDependenciesCache(SRepository repository, CleanupManager manager) {
     super(repository, manager);
-    myGenStatusManager = genStatusManager;
+  }
+
+  /*
+   * INTERNAL API, DO NOT USE
+   * FIXME this is a refactoring artifact, once GenerationDependenciesCache is no longer singleton, we would need to change mechanism that reacts to file changes
+   */
+  public void setCacheInvalidationCallback(@Nullable Consumer<SModelReference> callback) {
+    myCacheInvalidationCallback = callback;
   }
 
   @Override
@@ -70,12 +76,10 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
 
     INSTANCE = this;
     super.init();
-    myGenStatusManager.addGenerationStatusListener(this);
   }
 
   @Override
   public void dispose() {
-    myGenStatusManager.removeGenerationStatusListener(this);
     super.dispose();
     INSTANCE = null;
   }
@@ -102,18 +106,14 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
 
   @Override
   public void invalidateCacheForFile(IFile file) {
+    if (myCacheInvalidationCallback == null) {
+      super.invalidateCacheForFile(file);
+      return;
+    }
     SModelReference mr = findCachedModelForFile(file);
     super.invalidateCacheForFile(file);
-    if (mr != null) {
-      // XXX Likely, shall not notify immediately - not sure if it's appropriate to grab model read now.
-      // It won't hurt if notification comes later from e.g. pooled thread.
-      myRepository.getModelAccess().runReadAction(() -> {
-        SModel model = mr.resolve(myRepository);
-        if (model != null) {
-          myGenStatusManager.invalidateData(Collections.singleton(model));
-        }
-        clean(mr);
-      });
+    if (mr != null ) {
+      myCacheInvalidationCallback.accept(mr);
     }
   }
 
@@ -141,18 +141,7 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
     return redir != null ? redir : defaultCachesDir;
   }
 
-  @Override
-  public void generatedFilesChanged(SModel sm) {
-    clean(sm);
-  }
-
-  @Override
-  public Object getModelHash(SModel model) {
-    final GenerationDependencies dependencies = get(model);
-    return dependencies == null ? null : dependencies.getModelHash();
-  }
-
-  public static interface CachePathRedirect {
+  public interface CachePathRedirect {
     IFile redirectTo(IFile outputPath);
   }
 

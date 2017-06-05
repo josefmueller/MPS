@@ -44,9 +44,8 @@ public final class MPSGenerator extends ComponentPlugin {
     // XXX revisit once we got honest per-project repositories. It's not clear which project to take here
     SRepository repository = MPSModuleRepository.getInstance();
     CleanupManager clManager = CleanupManager.getInstance();
-    final ModelGenerationStatusManager mgsm = init(new ModelGenerationStatusManager(myKernelComponents.getRepositoryRegistry()));
-    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(repository, clManager, mgsm));
-    mgsm.setModelHashSource(depsCache);
+    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(repository, clManager));
+    final ModelGenerationStatusManager mgsm = init(new ModelGenerationStatusManager(myKernelComponents.getRepositoryRegistry(), depsCache));
     init(new GeneratorPathsComponent());
     init(new GenerationSettingsProvider());
     // FIXME odd registration/un-registration mechanism. Factory shall know its facet type

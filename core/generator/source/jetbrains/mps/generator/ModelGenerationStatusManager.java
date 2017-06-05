@@ -18,16 +18,28 @@ package jetbrains.mps.generator;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class ModelGenerationStatusManager implements CoreComponent {
   private static ModelGenerationStatusManager INSTANCE;
@@ -37,9 +49,9 @@ public class ModelGenerationStatusManager implements CoreComponent {
     return INSTANCE;
   }
 
-  private final List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
+  private final List<ModelGenerationStatusListener> myListeners = new ArrayList<>();
 
-  private ModelHashSource myModelHashSource;
+  private final GenerationDependenciesCache myModelHashCache;
 
   private final SRepositoryContentAdapter myModelReloadListener = new SRepositoryContentAdapter() {
     @Override
@@ -49,7 +61,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
     @Override
     protected void startListening(SModel model) {
-      if (SNodeOperations.isGeneratable(model)) {
+      if (GenerationFacade.canGenerate(model)) {
         model.addModelListener(this);
       }
     }
@@ -65,15 +77,10 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
   };
 
-  public ModelGenerationStatusManager(SRepositoryRegistry repositoryRegistry) {
+  // neither arg is null
+  public ModelGenerationStatusManager(SRepositoryRegistry repositoryRegistry, GenerationDependenciesCache depsCache) {
     myRepositoryRegistry = repositoryRegistry;
-  }
-
-  /*
-   * Now there could be only one source of model hashes at a time.
-   */
-  public void setModelHashSource(@NotNull ModelHashSource source) {
-    myModelHashSource = source;
+    myModelHashCache = depsCache;
   }
 
   @Override
@@ -84,37 +91,65 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
     INSTANCE = this;
     myRepositoryRegistry.addGlobalListener(myModelReloadListener);
+    myModelHashCache.setCacheInvalidationCallback(mr -> {
+      // XXX Likely, shall not notify immediately - not sure if it's appropriate to grab model read now.
+      // It won't hurt if notification comes later from e.g. pooled thread.
+      final SRepository repository = MPSModuleRepository.getInstance(); // FIXME
+      // XXX if SRepositoryRegistry would allow us iterate over all known repositories, we could try to resolve reference in each
+      repository.getModelAccess().runReadAction(() -> {
+        SModel model = mr.resolve(repository);
+        if (model != null) {
+          ModelGenerationStatusManager.this.invalidateData(Collections.singleton(model));
+        }
+      });
+
+    });
   }
 
   @Override
   public void dispose() {
+    myModelHashCache.setCacheInvalidationCallback(null);
     myRepositoryRegistry.removeGlobalListener(myModelReloadListener);
     INSTANCE = null;
   }
 
-  public String currentHash(SModel md) {
-    if (md instanceof EditableSModel && ((EditableSModel)md).isChanged()) return null;
-    if (!(md instanceof GeneratableSModel)) return null;
-    return ((GeneratableSModel) md).getModelHash();
+  /*package*/ String currentHash(SModel md) {
+    if (md instanceof EditableSModel && ((EditableSModel)md).isChanged()) {
+      return null;
+    }
+    if (md instanceof GeneratableSModel) {
+      return ((GeneratableSModel) md).getModelHash();
+    }
+    return null;
   }
 
   public boolean generationRequired(SModel md) {
-    if (!(md instanceof GeneratableSModel)) return false;
+    if (!(md instanceof GeneratableSModel)) {
+      return false;
+    }
     GeneratableSModel sm = (GeneratableSModel) md;
-    if (!sm.isGeneratable()) return false;
-    if (sm instanceof EditableSModel && ((EditableSModel) sm).isChanged()) return true;
+    if (!sm.isGeneratable()) {
+      return false;
+    }
+    if (sm instanceof EditableSModel && ((EditableSModel) sm).isChanged()) {
+      return true;
+    }
 
     String currentHash = sm.getModelHash();
-    if (currentHash == null) return true;
+    if (currentHash == null) {
+      return true;
+    }
 
-    String generatedHash = getGenerationHash(sm);
-    if (generatedHash == null) return true;
+    String generatedHash = getLastKnownHash(sm);
+    return generatedHash == null || !generatedHash.equals(currentHash);
 
-    return !generatedHash.equals(currentHash);
   }
 
-  private String getGenerationHash(@NotNull GeneratableSModel sm) {
-    return getLastGenerationHash(sm);
+  // @param sm != null
+  @Nullable
+  private String getLastKnownHash(GeneratableSModel sm) {
+    GenerationDependencies gd = myModelHashCache.get(sm);
+    return gd == null ? null : gd.getModelHash();
   }
 
   /*
@@ -122,6 +157,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
    * and we have to update all model instances in all repositories (i.e. if the same model is loaded into few).
    */
   public void invalidateData(Iterable<? extends SModel> models) {
+    models.forEach(myModelHashCache::clean);
     ModelGenerationStatusListener[] copy;
     synchronized (myListeners) {
       copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
@@ -145,14 +181,65 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
   }
 
-  public static String getLastGenerationHash(GeneratableSModel sm) {
-    return String.valueOf(getInstance().myModelHashSource.getModelHash(sm));
+  @NotNull
+  public Collection<SModel> getModifiedModels(@NotNull Collection<? extends SModel> models) {
+    Set<SModel> result = new LinkedHashSet<>();
+    for (SModel sm : models) {
+      if (generationRequired(sm)) {
+        result.add(sm);
+        continue;
+      }
+
+      // TODO regenerating all dependant models can be slow, option?
+      if (!(SModelStereotype.DESCRIPTOR.equals(SModelStereotype.getStereotype(sm)) || LanguageAspect.BEHAVIOR.is(sm) || LanguageAspect.CONSTRAINTS.is(sm))) {
+        // temporary solution: only descriptor/behavior/constraints models
+        continue;
+      }
+
+      final SRepository repository = sm.getRepository();
+      if (repository == null) {
+        // no idea how to treat a model which hands in the air; expect it to be editable and tell isChanged if desires re-generation
+        continue;
+      }
+      GenerationDependencies oldDependencies = myModelHashCache.get(sm);
+      // FIXME use SRepository to pick proper GenerationDependenciesCache instance
+      if (oldDependencies == null) {
+        // TODO turn on when generated file will be mandatory
+        //result.add(sm);
+        continue;
+      }
+
+
+
+      Map<String, String> externalHashes = oldDependencies.getExternalHashes();
+      for (Entry<String, String> entry : externalHashes.entrySet()) {
+        String modelReference = entry.getKey();
+        SModel rmd = PersistenceFacade.getInstance().createModelReference(modelReference).resolve(repository);
+        if (rmd == null) {
+          result.add(sm);
+          break;
+        }
+        String oldHash = entry.getValue();
+        if (oldHash == null) {
+          continue;
+        }
+        String newHash = currentHash(rmd);
+        if (newHash == null || !oldHash.equals(newHash)) {
+          result.add(sm);
+          break;
+        }
+      }
+    }
+
+    return result;
+
   }
 
   /**
-   * PROVISIONAL, don't want a String as model hash, rather need a class.
+   * @deprecated refactor single use and drop
    */
-  public interface ModelHashSource {
-    Object getModelHash(SModel model);
+  @Deprecated
+  public static String getLastGenerationHash(GeneratableSModel sm) {
+    return getInstance().getLastKnownHash(sm);
   }
 }

@@ -20,7 +20,6 @@
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
-    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
@@ -59,6 +58,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
         <child id="1188214630783" name="value" index="2B76xF" />
@@ -216,15 +216,26 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -296,6 +307,58 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="6H4v4bGSFvo" role="jymVt">
+      <property role="TrG5h" value="myGenStatusManager" />
+      <node concept="3Tm6S6" id="6H4v4bGSFvp" role="1B3o_S" />
+      <node concept="3uibUv" id="6H4v4bGSFvr" role="1tU5fm">
+        <ref role="3uigEE" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6H4v4bGSBF7" role="jymVt" />
+    <node concept="3clFbW" id="6H4v4bGSENa" role="jymVt">
+      <node concept="3cqZAl" id="6H4v4bGSENb" role="3clF45" />
+      <node concept="3clFbS" id="6H4v4bGSENd" role="3clF47">
+        <node concept="3clFbF" id="6H4v4bGSFvs" role="3cqZAp">
+          <node concept="37vLTI" id="6H4v4bGSFvu" role="3clFbG">
+            <node concept="37vLTw" id="6H4v4bGSFvx" role="37vLTJ">
+              <ref role="3cqZAo" node="6H4v4bGSFvo" resolve="myGenStatusManager" />
+            </node>
+            <node concept="37vLTw" id="6H4v4bGSFvy" role="37vLTx">
+              <ref role="3cqZAo" node="6H4v4bGSFe5" resolve="genStatusManager" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6H4v4bGSFgH" role="3cqZAp">
+          <node concept="37vLTI" id="6H4v4bGSFgI" role="3clFbG">
+            <node concept="2OqwBi" id="6H4v4bGSFgJ" role="37vLTJ">
+              <node concept="Xjq3P" id="6H4v4bGSFgK" role="2Oq$k0" />
+              <node concept="2OwXpG" id="6H4v4bGSFgL" role="2OqNvi">
+                <ref role="2Oxat5" node="38la9jYO00F" resolve="models" />
+              </node>
+            </node>
+            <node concept="37vLTw" id="6H4v4bGSFgM" role="37vLTx">
+              <ref role="3cqZAo" node="6H4v4bGSFf7" resolve="models" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="6H4v4bGSEmL" role="1B3o_S" />
+      <node concept="37vLTG" id="6H4v4bGSFe5" role="3clF46">
+        <property role="TrG5h" value="genStatusManager" />
+        <node concept="3uibUv" id="6H4v4bGSFe4" role="1tU5fm">
+          <ref role="3uigEE" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6H4v4bGSFf7" role="3clF46">
+        <property role="TrG5h" value="models" />
+        <node concept="A3Dl8" id="6H4v4bGSFfy" role="1tU5fm">
+          <node concept="3uibUv" id="6H4v4bGSFfS" role="A3Ik2">
+            <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6H4v4bGSBgx" role="jymVt" />
     <node concept="3clFbW" id="6zsZmIC0WqK" role="jymVt">
       <node concept="37vLTG" id="6zsZmIC0WqN" role="3clF46">
         <property role="TrG5h" value="models" />
@@ -308,6 +371,17 @@
       <node concept="3cqZAl" id="6zsZmIC0WqQ" role="3clF45" />
       <node concept="3Tm1VV" id="6zsZmIC0WqR" role="1B3o_S" />
       <node concept="3clFbS" id="6zsZmIC0WqS" role="3clF47">
+        <node concept="3clFbF" id="6H4v4bGSG33" role="3cqZAp">
+          <node concept="37vLTI" id="6H4v4bGSG34" role="3clFbG">
+            <node concept="37vLTw" id="6H4v4bGSG35" role="37vLTJ">
+              <ref role="3cqZAo" node="6H4v4bGSFvo" resolve="myGenStatusManager" />
+            </node>
+            <node concept="2YIFZM" id="6H4v4bGSGdw" role="37vLTx">
+              <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="6zsZmIC0WqT" role="3cqZAp">
           <node concept="37vLTI" id="6zsZmIC0WqU" role="3clFbG">
             <node concept="2OqwBi" id="6zsZmIC0WqV" role="37vLTJ">
@@ -322,7 +396,31 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="6H4v4bGSIaz" role="lGtFl">
+        <node concept="TZ5HI" id="6H4v4bGSIa$" role="3nqlJM">
+          <node concept="TZ5HA" id="6H4v4bGSIa_" role="3HnX3l">
+            <node concept="1dT_AC" id="6H4v4bGSId_" role="1dT_Ay">
+              <property role="1dT_AB" value="use " />
+            </node>
+            <node concept="1dT_AA" id="6H4v4bGSIdC" role="1dT_Ay">
+              <node concept="92FcH" id="6H4v4bGSIdI" role="qph3F">
+                <node concept="TZ5HA" id="6H4v4bGSIdK" role="2XjZqd" />
+                <node concept="VXe0Z" id="6H4v4bGSORo" role="92FcQ">
+                  <ref role="VXe0S" node="6H4v4bGSENa" resolve="ModelsToResources" />
+                </node>
+              </node>
+            </node>
+            <node concept="1dT_AC" id="6H4v4bGSIdB" role="1dT_Ay">
+              <property role="1dT_AB" value=" instead" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6H4v4bGSIaA" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
+    <node concept="2tJIrI" id="6H4v4bGSHHe" role="jymVt" />
     <node concept="3clFb_" id="6gLh390ElAV" role="jymVt">
       <property role="TrG5h" value="resources" />
       <node concept="3Tm1VV" id="6gLh390ElAX" role="1B3o_S" />
@@ -398,14 +496,18 @@
                           <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
                         </node>
                       </node>
-                      <node concept="2YIFZM" id="1Ove7BferWM" role="10QFUP">
-                        <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
-                        <ref role="37wK5l" to="ap4t:~GenerationFacade.getModifiedModels(java.util.Collection):java.util.Collection" resolve="getModifiedModels" />
-                        <node concept="2OqwBi" id="1Ove7BferWN" role="37wK5m">
-                          <node concept="37vLTw" id="3GM_nagTtms" role="2Oq$k0">
-                            <ref role="3cqZAo" node="38la9jYO00T" resolve="smds" />
+                      <node concept="2OqwBi" id="6H4v4bGSGzb" role="10QFUP">
+                        <node concept="37vLTw" id="6H4v4bGSGk_" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6H4v4bGSFvo" resolve="myGenStatusManager" />
+                        </node>
+                        <node concept="liA8E" id="6H4v4bGSGGf" role="2OqNvi">
+                          <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.getModifiedModels(java.util.Collection):java.util.Collection" resolve="getModifiedModels" />
+                          <node concept="2OqwBi" id="6H4v4bGSHcA" role="37wK5m">
+                            <node concept="37vLTw" id="6H4v4bGSGS8" role="2Oq$k0">
+                              <ref role="3cqZAo" node="38la9jYO00T" resolve="smds" />
+                            </node>
+                            <node concept="ANE8D" id="6H4v4bGSHtY" role="2OqNvi" />
                           </node>
-                          <node concept="ANE8D" id="1Ove7BferWP" role="2OqNvi" />
                         </node>
                       </node>
                     </node>

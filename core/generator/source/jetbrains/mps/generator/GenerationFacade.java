@@ -21,25 +21,16 @@ import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.generator.impl.ModelStreamProviderImpl;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  * Entry point to model transformation (aka generation) process. Populate with relevant context information:
@@ -60,57 +51,13 @@ import java.util.Set;
  */
 public final class GenerationFacade {
 
+  /**
+   *
+   * @deprecated use {@link ModelGenerationStatusManager#getModifiedModels(Collection)} instead
+   */
+  @Deprecated
   public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models) {
-    Set<SModel> result = new LinkedHashSet<>();
-    ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
-    for (SModel sm : models) {
-      if (statusManager.generationRequired(sm)) {
-        result.add(sm);
-        continue;
-      }
-
-      // TODO regenerating all dependant models can be slow, option?
-      if (!(SModelStereotype.DESCRIPTOR.equals(SModelStereotype.getStereotype(sm)) || LanguageAspect.BEHAVIOR.is(sm) || LanguageAspect.CONSTRAINTS.is(sm))) {
-        // temporary solution: only descriptor/behavior/constraints models
-        continue;
-      }
-
-      final SRepository repository = sm.getRepository();
-      if (repository == null) {
-        // no idea how to treat a model which hands in the air; expect it to be editable and tell isChanged if desires re-generation
-        continue;
-      }
-      GenerationDependencies oldDependencies = GenerationDependenciesCache.getInstance().get(sm);
-      // FIXME use SRepository to pick proper GenerationDependenciesCache instance
-      if (oldDependencies == null) {
-        // TODO turn on when generated file will be mandatory
-        //result.add(sm);
-        continue;
-      }
-
-
-
-      Map<String, String> externalHashes = oldDependencies.getExternalHashes();
-      for (Entry<String, String> entry : externalHashes.entrySet()) {
-        String modelReference = entry.getKey();
-        SModel rmd = PersistenceFacade.getInstance().createModelReference(modelReference).resolve(repository);
-        if (rmd == null) {
-          result.add(sm);
-          break;
-        }
-        String oldHash = entry.getValue();
-        if (oldHash == null) {
-          continue;
-        }
-        String newHash = statusManager.currentHash(rmd);
-        if (newHash == null || !oldHash.equals(newHash)) {
-          result.add(sm);
-          break;
-        }
-      }
-    }
-
-    return result;
+    return ModelGenerationStatusManager.getInstance().getModifiedModels(models);
   }
 
   public static boolean canGenerate(SModel sm) {
