@@ -199,13 +199,14 @@ public class NodeMaps {
 
   public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
     IErrorReporter errorReporter;
-    if (info != null) {
+    if (info != null && info.getErrorString() != null) {
       errorReporter = new SimpleErrorReporter(info.getNodeWithError(), info.getErrorString(), info.getRuleNode());
       for (QuickFixProvider quickFixProvider : info.getIntentionProviders()) {
         errorReporter.setIntentionProvider(quickFixProvider);
       }
     } else {
-      errorReporter = new EquationErrorReporterNew(null, myState, "incompatible types: ", right, " and ", left, "", null);
+      errorReporter = new EquationErrorReporterNew(info == null ? null : info.getNodeWithError(),
+                                                   myState, "incompatible types: ", right, " and ", left, "", info);
     }
     setAdditionalRulesIds(info, errorReporter);
     // addNodeToError(nodeWithError, errorReporter, info);
