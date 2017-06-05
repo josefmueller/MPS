@@ -126,6 +126,7 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1235746970280" name="jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression" flags="nn" index="2Sg_IR">
         <child id="1235746996653" name="function" index="2SgG2M" />
       </concept>
@@ -540,13 +541,13 @@
             <node concept="3cpWs8" id="jZLrEqVNAe" role="3cqZAp">
               <node concept="3cpWsn" id="jZLrEqVNAf" role="3cpWs9">
                 <property role="TrG5h" value="traintint" />
-                <node concept="1ajhzC" id="jZLrEqVNAg" role="1tU5fm">
-                  <node concept="3uibUv" id="jZLrEqVNAh" role="1ajw0F">
+                <node concept="9cv3F" id="3rLls20jsvB" role="1tU5fm">
+                  <node concept="3uibUv" id="3rLls20jsvC" role="1ajw0F">
                     <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                   </node>
-                  <node concept="3uibUv" id="jZLrEqVNAi" role="1ajl9A">
+                  <node concept="3uibUv" id="3rLls20jsvD" role="1ajl9A">
                     <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                    <node concept="3uibUv" id="jZLrEqVNAj" role="11_B2D">
+                    <node concept="3uibUv" id="3rLls20jsvE" role="11_B2D">
                       <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                     </node>
                   </node>

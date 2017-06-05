@@ -231,6 +231,7 @@
       </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1200830824066" name="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" flags="nn" index="2n63Yl">
         <child id="1200830928149" name="expression" index="2n6tg2" />
       </concept>
@@ -1250,13 +1251,13 @@
           <node concept="3cpWs8" id="hx1sAK$" role="3cqZAp">
             <node concept="3cpWsn" id="hx1sAK_" role="3cpWs9">
               <property role="TrG5h" value="trans" />
-              <node concept="1ajhzC" id="jZLrEqTesr" role="1tU5fm">
-                <node concept="3uibUv" id="jZLrEqTg3p" role="1ajw0F">
+              <node concept="9cv3F" id="3rLls20jozQ" role="1tU5fm">
+                <node concept="3uibUv" id="3rLls20jozR" role="1ajw0F">
                   <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                 </node>
-                <node concept="3uibUv" id="jZLrEqTgZI" role="1ajl9A">
+                <node concept="3uibUv" id="3rLls20jozS" role="1ajl9A">
                   <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                  <node concept="3uibUv" id="jZLrEqTjoE" role="11_B2D">
+                  <node concept="3uibUv" id="3rLls20jozT" role="11_B2D">
                     <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
                   </node>
                 </node>
