@@ -20853,10 +20853,10 @@
         <ref role="m$_y1" node="4k71ibbLe59" resolve="com.intellij.modules.mps" />
       </node>
       <node concept="m$_yC" id="iTJcDIxtWI" role="m$_yJ">
-        <ref role="m$_y1" node="I6XuqGYf8K" resolve="git4idea" />
+        <ref role="m$_y1" node="I6XuqGYf8K" resolve="Git4Idea" />
       </node>
       <node concept="m$_yC" id="iTJcDIxtWQ" role="m$_yJ">
-        <ref role="m$_y1" node="3nGzrDDNo$o" resolve="svn4idea" />
+        <ref role="m$_y1" node="3nGzrDDNo$o" resolve="Subversion" />
       </node>
       <node concept="m$_yC" id="6woObKLuPAM" role="m$_yJ">
         <ref role="m$_y1" node="6ifcnI8BosJ" resolve="jetbrains.mps.vcs.core" />
@@ -30435,7 +30435,7 @@
       </node>
     </node>
     <node concept="m$_wf" id="I6XuqGYf8K" role="3989C9">
-      <property role="m$_wk" value="git4idea" />
+      <property role="m$_wk" value="Git4Idea" />
       <node concept="3_J27D" id="I6XuqGYf8M" role="m$_yQ">
         <node concept="3Mxwew" id="I6XuqGYfbF" role="3MwsjC">
           <property role="3MwjfP" value="Git4Idea" />
@@ -30476,7 +30476,7 @@
       </node>
     </node>
     <node concept="m$_wf" id="3nGzrDDNo$o" role="3989C9">
-      <property role="m$_wk" value="svn4idea" />
+      <property role="m$_wk" value="Subversion" />
       <node concept="3_J27D" id="3nGzrDDNo$p" role="m$_yQ">
         <node concept="3Mxwew" id="3nGzrDDNo$q" role="3MwsjC">
           <property role="3MwjfP" value="Subversion" />
@@ -30549,10 +30549,10 @@
         <ref role="m$_y1" node="4k71ibbKLe8" resolve="jetbrains.mps.core" />
       </node>
       <node concept="m$_yC" id="I6XuqGYj8B" role="m$_yJ">
-        <ref role="m$_y1" node="I6XuqGYf8K" resolve="git4idea" />
+        <ref role="m$_y1" node="I6XuqGYf8K" resolve="Git4Idea" />
       </node>
       <node concept="m$_yC" id="3nGzrDDNoCX" role="m$_yJ">
-        <ref role="m$_y1" node="3nGzrDDNo$o" resolve="svn4idea" />
+        <ref role="m$_y1" node="3nGzrDDNo$o" resolve="Subversion" />
       </node>
       <node concept="3_J27D" id="6ifcnI8CFMq" role="3s6cr7">
         <node concept="3Mxwew" id="6ifcnI8CFMs" role="3MwsjC">
@@ -30567,7 +30567,7 @@
     </node>
     <node concept="1l3spV" id="6ifcnI8$2iT" role="1l3spN">
       <node concept="m$_wl" id="3nGzrDEfcNJ" role="39821P">
-        <ref role="m_rDy" node="3nGzrDDNo$o" resolve="svn4idea" />
+        <ref role="m_rDy" node="3nGzrDDNo$o" resolve="Subversion" />
         <node concept="2HvfSZ" id="3nGzrDDNoFk" role="39821P">
           <node concept="55IIr" id="3nGzrDDNoFl" role="2HvfZ0">
             <node concept="2Ry0Ak" id="3nGzrDDNoFm" role="iGT6I">
@@ -30583,7 +30583,7 @@
         </node>
       </node>
       <node concept="m$_wl" id="I6XuqH2zYV" role="39821P">
-        <ref role="m_rDy" node="I6XuqGYf8K" resolve="git4idea" />
+        <ref role="m_rDy" node="I6XuqGYf8K" resolve="Git4Idea" />
         <node concept="2HvfSZ" id="35zoHQHRCKa" role="39821P">
           <node concept="55IIr" id="1diLdO26H8g" role="2HvfZ0">
             <node concept="2Ry0Ak" id="1diLdO26H8h" role="iGT6I">

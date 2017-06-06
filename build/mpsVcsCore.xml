@@ -75,8 +75,8 @@
         <description>Plugin is only needed to be a dependency of jetbrains.mps.vcs plugin</description>
         <version>1.0</version>
         <depends>jetbrains.mps.core</depends>
-        <depends>git4idea</depends>
-        <depends>svn4idea</depends>
+        <depends>Git4Idea</depends>
+        <depends>Subversion</depends>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
