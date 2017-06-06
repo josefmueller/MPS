@@ -38,9 +38,9 @@ import java.util.Map;
 
 /**
  * Control listeners that track changes to a model node.
- * Invoke {@link #startListening(SRepository)}/{@link #stopListening(SRepository)} to enable/disable listening,
- * and {@link #attach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)}/{@link #detach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)} to \
- * include/exclude selected model tree node from update.
+ * Invoke {@link #startListening(SRepository,ModelGenerationStatusManager)}/{@link #stopListening(SRepository, ModelGenerationStatusManager )} to
+ * enable/disable listening, and {@link #attach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)}/{@link #detach(jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode)}
+ * to include/exclude selected model tree node from update.
  */
 public class SModelNodeListeners {
   private final ModelChangeListener myModelChangeListener;
@@ -81,13 +81,13 @@ public class SModelNodeListeners {
     myGenStatusListener = new GenStatusTracker(genStatusUpdate);
   }
 
-  public void startListening(SRepository projectRepository) {
+  public void startListening(SRepository projectRepository, ModelGenerationStatusManager generationStatusManager) {
     new RepoListenerRegistrar(projectRepository, myRepositoryListener).attach();
-    ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myGenStatusListener);
+    generationStatusManager.addGenerationStatusListener(myGenStatusListener);
   }
 
-  public void stopListening(SRepository projectRepository) {
-    ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myGenStatusListener);
+  public void stopListening(SRepository projectRepository, ModelGenerationStatusManager generationStatusManager) {
+    generationStatusManager.removeGenerationStatusListener(myGenStatusListener);
     new RepoListenerRegistrar(projectRepository, myRepositoryListener).detach();
   }
 

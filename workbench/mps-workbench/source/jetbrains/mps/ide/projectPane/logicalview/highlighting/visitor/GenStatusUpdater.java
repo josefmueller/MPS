@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,9 +38,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.tree.TreeNode;
 
 public class GenStatusUpdater extends TreeUpdateVisitor {
+  private final ModelGenerationStatusManager myGenerationStatusManager;
 
   public GenStatusUpdater(Project mpsProject) {
     super(mpsProject);
+    // FIXME access proper instance using mpsProject
+    myGenerationStatusManager = ModelGenerationStatusManager.getInstance();
   }
 
   private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {
@@ -157,6 +160,10 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     }
   }
 
+  public ModelGenerationStatusManager getStatusManager() {
+    return myGenerationStatusManager;
+  }
+
   private class StatusUpdate {
     private final SModelTreeNode myModelNode;
     private final ProjectModuleTreeNode myModuleNode;
@@ -202,35 +209,39 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     }
   }
 
-  private static boolean generationRequired(SModule module) {
+  private boolean generationRequired(SModule module) {
     for (SModel md : module.getModels()) {
-      if (ModelGenerationStatusManager.getInstance().generationRequired(md)) {
+      if (myGenerationStatusManager.generationRequired(md)) {
         return true;
       }
     }
     return false;
   }
 
-  static GenerationStatus getGenerationStatus(ProjectModuleTreeNode node) {
+  /*package*/ GenerationStatus getGenerationStatus(ProjectModuleTreeNode node) {
     SModule module = node.getModule();
     if (module.isReadOnly()) {
       return GenerationStatus.READONLY;
     }
-    if (generationRequired(module)) return GenerationStatus.REQUIRED;
+    if (generationRequired(module)) {
+      return GenerationStatus.REQUIRED;
+    }
     if (module instanceof Language) {
       for (Generator generator : ((Language) module).getGenerators()) {
-        if (generationRequired(generator)) return GenerationStatus.REQUIRED;
+        if (generationRequired(generator)) {
+          return GenerationStatus.REQUIRED;
+        }
       }
     }
     return GenerationStatus.NOT_REQUIRED;
   }
 
-  private static GenerationStatus getGenerationStatus(SModelTreeNode node) {
+  private GenerationStatus getGenerationStatus(SModelTreeNode node) {
     if (node.getModel() == null) return GenerationStatus.NOT_REQUIRED;
     if (isPackaged(node)) return GenerationStatus.READONLY;
     if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
 
-    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(node.getModel());
+    boolean required = myGenerationStatusManager.generationRequired(node.getModel());
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
   }
 

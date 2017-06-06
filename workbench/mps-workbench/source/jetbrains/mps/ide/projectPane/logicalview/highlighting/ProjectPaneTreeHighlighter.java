@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public class ProjectPaneTreeHighlighter {
   private final ErrorChecker myErrorVisitor;
   private final ModifiedMarker myModifiedMarker;
   private final TreeNodeUpdater myUpdater;
-  private final ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 3, 5, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(100), new RescheduleExecutionHandler());
+  private final ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 3, 5, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100), new RescheduleExecutionHandler());
 
   private final MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
   private final ProjectPaneTree myTree;
@@ -77,7 +77,7 @@ public class ProjectPaneTreeHighlighter {
       myModuleListeners = null;
     }
     if (myModelListeners != null) {
-      myModelListeners.stopListening(myProjectRepository);
+      myModelListeners.stopListening(myProjectRepository, myGenStatusVisitor.getStatusManager());
       myModelListeners = null;
     }
     myExecutor.shutdownNow();
@@ -89,7 +89,7 @@ public class ProjectPaneTreeHighlighter {
   private SModelNodeListeners getModelListeners() {
     if (myModelListeners == null) {
       myModelListeners = new SModelNodeListeners(myGenStatusVisitor, myErrorVisitor, myModifiedMarker);
-      myModelListeners.startListening(myProjectRepository);
+      myModelListeners.startListening(myProjectRepository, myGenStatusVisitor.getStatusManager());
     }
     return myModelListeners;
   }
@@ -101,19 +101,24 @@ public class ProjectPaneTreeHighlighter {
     }
     return myModuleListeners;
   }
+  @SuppressWarnings("WeakerAccess")
   /*package*/ void moduleNodeAdded(@NotNull ProjectModuleTreeNode node) {
     getModuleListeners().attach(node);
   }
+  @SuppressWarnings("WeakerAccess")
   /*package*/ void moduleNodeRemoved(@NotNull ProjectModuleTreeNode node) {
     assert myModuleListeners != null;
     getModuleListeners().detach(node);
   }
 
+
+  @SuppressWarnings("WeakerAccess")
   /*package*/ void modelNodeAdded(SModelTreeNode modelNode) {
     getModelListeners().attach(modelNode);
 
   }
 
+  @SuppressWarnings("WeakerAccess")
   /*package*/ void modelNodeRemoved(SModelTreeNode modelNode) {
     assert myModelListeners != null;
     getModelListeners().detach(modelNode);
@@ -176,7 +181,7 @@ public class ProjectPaneTreeHighlighter {
    * task being executed. Rescheduling thread dies after certain amount of inactivity not to consume resources.
    */
   private static class RescheduleExecutionHandler implements RejectedExecutionHandler, Runnable {
-    private final LinkedBlockingQueue<Runnable> myQueue = new LinkedBlockingQueue<Runnable>();
+    private final LinkedBlockingQueue<Runnable> myQueue = new LinkedBlockingQueue<>();
     private volatile Thread myRescheduleThread;
     private ThreadPoolExecutor myExecutor;
 
