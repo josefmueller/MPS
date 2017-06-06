@@ -16,18 +16,23 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.core.platform.MPSCore;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
 /**
  * evgeny, 10/14/11
  */
-public final class MPSGenerator extends ComponentPlugin {
+public final class MPSGenerator extends ComponentPlugin implements ComponentHost {
   private final MPSCore myKernelComponents;
   private FacetFactory myGeneratorFacetFactory = CustomGenerationModuleFacet::new;
+  private ModelGenerationStatusManager myGenerationStatusManager;
 
   public MPSGenerator(MPSCore mpsCore) {
     // it's ok for MPSGenerator ComponentPlugin to depend from another CP, MPSCore (provided the one lives in [kernel] and doesn't drag
@@ -41,7 +46,7 @@ public final class MPSGenerator extends ComponentPlugin {
     super.init();
     CleanupManager clManager = CleanupManager.getInstance();
     final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(clManager));
-    final ModelGenerationStatusManager mgsm = init(new ModelGenerationStatusManager(myKernelComponents.getRepositoryRegistry(), depsCache));
+    myGenerationStatusManager = init(new ModelGenerationStatusManager(myKernelComponents.getRepositoryRegistry(), depsCache));
     init(new GeneratorPathsComponent());
     init(new GenerationSettingsProvider());
     // FIXME odd registration/un-registration mechanism. Factory shall know its facet type
@@ -53,5 +58,14 @@ public final class MPSGenerator extends ComponentPlugin {
   public void dispose() {
     myKernelComponents.getModuleFacetRegistry().removeFactory(myGeneratorFacetFactory);
     super.dispose();
+  }
+
+  @Nullable
+  @Override
+  public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
+    if (ModelGenerationStatusManager.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myGenerationStatusManager);
+    }
+    return null;
   }
 }

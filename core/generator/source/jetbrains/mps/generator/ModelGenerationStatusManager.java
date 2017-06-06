@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -114,24 +115,10 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
     INSTANCE = this;
     myRepositoryRegistry.addGlobalListener(myModelReloadListener);
-    myModelHashCache.setCacheInvalidationCallback(mr -> {
-      // XXX Likely, shall not notify immediately - not sure if it's appropriate to grab model read now.
-      // It won't hurt if notification comes later from e.g. pooled thread.
-      final SRepository repository = MPSModuleRepository.getInstance(); // FIXME
-      // XXX if SRepositoryRegistry would allow us iterate over all known repositories, we could try to resolve reference in each
-      repository.getModelAccess().runReadAction(() -> {
-        SModel model = mr.resolve(repository);
-        if (model != null) {
-          ModelGenerationStatusManager.this.invalidateData(Collections.singleton(model));
-        }
-      });
-
-    });
   }
 
   @Override
   public void dispose() {
-    myModelHashCache.setCacheInvalidationCallback(null);
     myRepositoryRegistry.removeGlobalListener(myModelReloadListener);
     INSTANCE = null;
   }
@@ -189,6 +176,30 @@ public class ModelGenerationStatusManager implements CoreComponent {
       for (ModelGenerationStatusListener l : copy) {
         l.generatedFilesChanged(model);
       }
+    }
+  }
+
+  /**
+   * PROVISIONAL, IMPLEMENTATION API, FOR USE SOLELY FROM FS NOTIFICATION CODE
+   * At the moment, there's no effective way to listen to file changes through MPS VFS API other than attaching a listener to specific file
+   * To listen to changes (as well as additions and removals) of a fixed file, we rely on IDEA's (platform's) mechanism now.
+   * This method is an entry point for external (effective) file change notification.
+   */
+  public void invalidateData(IFile cacheFile) {
+    SModelReference mr = myModelHashCache.invalidateCacheForFile(cacheFile);
+    if (mr != null) {
+      // XXX Likely, shall not notify immediately - not sure if it's appropriate to grab model read now.
+      // It won't hurt if notification comes later from e.g. pooled thread. Unfortunately, there's no any thread available for reuse
+      // (other than swing's) to use at this level of dependencies, and there's no runReadLater in MA.
+      final SRepository repository = MPSModuleRepository.getInstance(); // FIXME
+      // XXX if SRepositoryRegistry would allow us iterate over all known repositories, we could try to resolve reference in each
+      repository.getModelAccess().runReadAction(() -> {
+        SModel model = mr.resolve(repository);
+        if (model != null) {
+          invalidateData(Collections.singleton(model));
+        }
+      });
+
     }
   }
 

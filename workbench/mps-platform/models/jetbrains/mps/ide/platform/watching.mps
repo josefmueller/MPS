@@ -47,6 +47,8 @@
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="hlw7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.save(MPS.Platform/)" />
+    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -319,9 +321,6 @@
       </concept>
       <concept id="8974276187400348183" name="jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement" flags="nn" index="1QHqEM" />
     </language>
-    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
-      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
-    </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
@@ -415,7 +414,6 @@
       </concept>
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1208542034276" name="jetbrains.mps.baseLanguage.collections.structure.MapClearOperation" flags="nn" index="1yHZxX" />
-      <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" flags="nn" index="3EllGN">
@@ -534,22 +532,23 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="7mrRUyVUv2H" role="jymVt">
-      <property role="TrG5h" value="myCaches" />
-      <node concept="3Tm6S6" id="7mrRUyVUv2I" role="1B3o_S" />
-      <node concept="_YKpA" id="7mrRUyVUv2J" role="1tU5fm">
-        <node concept="3uibUv" id="7mrRUyVUv2K" role="_ZDj9">
-          <ref role="3uigEE" to="lvdd:~BaseModelCache" resolve="BaseModelCache" />
-        </node>
-      </node>
-      <node concept="2ShNRf" id="7mrRUyVUv2L" role="33vP2m">
-        <node concept="Tc6Ow" id="7mrRUyVUv2M" role="2ShVmc">
-          <node concept="3uibUv" id="7mrRUyVUv2N" role="HW$YZ">
-            <ref role="3uigEE" to="lvdd:~BaseModelCache" resolve="BaseModelCache" />
-          </node>
-        </node>
+    <node concept="312cEg" id="1PDum5qUjQq" role="jymVt">
+      <property role="TrG5h" value="myMPS" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="1PDum5qUjQr" role="1B3o_S" />
+      <node concept="3uibUv" id="1PDum5qUjQt" role="1tU5fm">
+        <ref role="3uigEE" to="3a50:~MPSCoreComponents" resolve="MPSCoreComponents" />
       </node>
     </node>
+    <node concept="312cEg" id="1PDum5qUBgR" role="jymVt">
+      <property role="TrG5h" value="myGenStatusManager" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="1PDum5qUBgS" role="1B3o_S" />
+      <node concept="3uibUv" id="1PDum5qUAxr" role="1tU5fm">
+        <ref role="3uigEE" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1PDum5qUBew" role="jymVt" />
     <node concept="3clFbW" id="7mrRUyVUv2P" role="jymVt">
       <node concept="3cqZAl" id="7mrRUyVUv2Q" role="3clF45" />
       <node concept="3Tm1VV" id="7mrRUyVUv2R" role="1B3o_S" />
@@ -557,6 +556,11 @@
         <node concept="3SKdUt" id="2xjel4CmWgH" role="3cqZAp">
           <node concept="3SKdUq" id="2xjel4CmWwu" role="3SKWNk">
             <property role="3SKdUp" value="TODO rewrite using FileSystem.getInstance().addListener(..)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2jpiTL3nFG5" role="3cqZAp">
+          <node concept="3SKdUq" id="2jpiTL3nFG7" role="3SKWNk">
+            <property role="3SKdUp" value="     once there's a mechanism to attach a listener to any fs event (now it's specific file only)" />
           </node>
         </node>
         <node concept="3clFbF" id="7mrRUyVUv2T" role="3cqZAp">
@@ -569,16 +573,13 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="7mrRUyVUv37" role="3cqZAp">
-          <node concept="2OqwBi" id="7mrRUyVUv38" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeumur" role="2Oq$k0">
-              <ref role="3cqZAo" node="7mrRUyVUv2H" resolve="myCaches" />
+        <node concept="3clFbF" id="1PDum5qUjQu" role="3cqZAp">
+          <node concept="37vLTI" id="1PDum5qUjQw" role="3clFbG">
+            <node concept="37vLTw" id="1PDum5qUjQz" role="37vLTJ">
+              <ref role="3cqZAo" node="1PDum5qUjQq" resolve="myMPS" />
             </node>
-            <node concept="TSZUe" id="7mrRUyVUv3a" role="2OqNvi">
-              <node concept="2YIFZM" id="7mrRUyVUv3b" role="25WWJ7">
-                <ref role="37wK5l" to="w8cm:~GenerationDependenciesCache.getInstance():jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" resolve="getInstance" />
-                <ref role="1Pybhc" to="w8cm:~GenerationDependenciesCache" resolve="GenerationDependenciesCache" />
-              </node>
+            <node concept="37vLTw" id="1PDum5qUjQ$" role="37vLTx">
+              <ref role="3cqZAo" node="7mrRUyVUv3e" resolve="coreComponents" />
             </node>
           </node>
         </node>
@@ -604,15 +605,58 @@
       <node concept="3Tm1VV" id="7mrRUyVUv3i" role="1B3o_S" />
       <node concept="3cqZAl" id="7mrRUyVUv3j" role="3clF45" />
       <node concept="3clFbS" id="7mrRUyVUv3k" role="3clF47">
-        <node concept="3clFbF" id="7mrRUyVUv3l" role="3cqZAp">
-          <node concept="2OqwBi" id="7mrRUyVUv3m" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeufUh" role="2Oq$k0">
-              <ref role="3cqZAo" node="7mrRUyVUv2_" resolve="myVirtualFileManager" />
+        <node concept="3clFbF" id="1PDum5qUALp" role="3cqZAp">
+          <node concept="37vLTI" id="1PDum5qUALr" role="3clFbG">
+            <node concept="2OqwBi" id="1PDum5qUAxz" role="37vLTx">
+              <node concept="2OqwBi" id="1PDum5qUAx$" role="2Oq$k0">
+                <node concept="37vLTw" id="1PDum5qUAx_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1PDum5qUjQq" resolve="myMPS" />
+                </node>
+                <node concept="liA8E" id="1PDum5qUAxA" role="2OqNvi">
+                  <ref role="37wK5l" to="3a50:~MPSCoreComponents.getPlatform():jetbrains.mps.core.platform.Platform" resolve="getPlatform" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1PDum5qUAxB" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="1PDum5qUAxC" role="37wK5m">
+                  <ref role="3VsUkX" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+                </node>
+              </node>
             </node>
-            <node concept="liA8E" id="7mrRUyVUv3o" role="2OqNvi">
-              <ref role="37wK5l" to="jlff:~VirtualFileManager.addVirtualFileListener(com.intellij.openapi.vfs.VirtualFileListener):void" resolve="addVirtualFileListener" />
-              <node concept="37vLTw" id="2BHiRxeuq65" role="37wK5m">
-                <ref role="3cqZAo" node="7mrRUyVUv2C" resolve="myFileListener" />
+            <node concept="37vLTw" id="1PDum5qUD7x" role="37vLTJ">
+              <ref role="3cqZAo" node="1PDum5qUBgR" resolve="myGenStatusManager" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4EKMRIeGcac" role="3cqZAp">
+          <node concept="3clFbS" id="4EKMRIeGcae" role="3clFbx">
+            <node concept="3clFbF" id="7mrRUyVUv3l" role="3cqZAp">
+              <node concept="2OqwBi" id="7mrRUyVUv3m" role="3clFbG">
+                <node concept="37vLTw" id="2BHiRxeufUh" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7mrRUyVUv2_" resolve="myVirtualFileManager" />
+                </node>
+                <node concept="liA8E" id="7mrRUyVUv3o" role="2OqNvi">
+                  <ref role="37wK5l" to="jlff:~VirtualFileManager.addVirtualFileListener(com.intellij.openapi.vfs.VirtualFileListener):void" resolve="addVirtualFileListener" />
+                  <node concept="37vLTw" id="2BHiRxeuq65" role="37wK5m">
+                    <ref role="3cqZAo" node="7mrRUyVUv2C" resolve="myFileListener" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="4EKMRIeGc$3" role="3clFbw">
+            <node concept="10Nm6u" id="4EKMRIeGcLn" role="3uHU7w" />
+            <node concept="37vLTw" id="4EKMRIeGciD" role="3uHU7B">
+              <ref role="3cqZAo" node="1PDum5qUBgR" resolve="myGenStatusManager" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="4EKMRIeGd7S" role="9aQIa">
+            <node concept="3clFbS" id="4EKMRIeGd7T" role="9aQI4">
+              <node concept="RRSsy" id="4EKMRIeGdt_" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="Xl_RD" id="4EKMRIeGdtB" role="RRSoy">
+                  <property role="Xl_RC" value="Could not find ModelGenerationStatusManager component; no refresh for model hash files" />
+                </node>
               </node>
             </node>
           </node>
@@ -682,70 +726,56 @@
       <node concept="3cqZAl" id="7mrRUyVUv3I" role="3clF45" />
       <node concept="3Tm6S6" id="7mrRUyVUv3J" role="1B3o_S" />
       <node concept="3clFbS" id="7mrRUyVUv3K" role="3clF47">
-        <node concept="3cpWs8" id="7mrRUyVUv3L" role="3cqZAp">
-          <node concept="3cpWsn" id="7mrRUyVUv3M" role="3cpWs9">
-            <property role="TrG5h" value="file" />
-            <node concept="3uibUv" id="7mrRUyVUv3N" role="1tU5fm">
-              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-            </node>
-            <node concept="2YIFZM" id="7mrRUyVUv3O" role="33vP2m">
-              <ref role="37wK5l" to="4hrd:~VirtualFileUtils.toIFile(com.intellij.openapi.vfs.VirtualFile):jetbrains.mps.vfs.IFile" resolve="toIFile" />
-              <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-              <node concept="2OqwBi" id="7mrRUyVUv3P" role="37wK5m">
-                <node concept="37vLTw" id="2BHiRxgm8fH" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7mrRUyVUv4c" resolve="event" />
+        <node concept="3clFbJ" id="1PDum5qUDoT" role="3cqZAp">
+          <node concept="3clFbS" id="1PDum5qUDoV" role="3clFbx">
+            <node concept="3cpWs8" id="7mrRUyVUv3L" role="3cqZAp">
+              <node concept="3cpWsn" id="7mrRUyVUv3M" role="3cpWs9">
+                <property role="TrG5h" value="file" />
+                <node concept="3uibUv" id="7mrRUyVUv3N" role="1tU5fm">
+                  <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
                 </node>
-                <node concept="liA8E" id="7mrRUyVUv3R" role="2OqNvi">
-                  <ref role="37wK5l" to="jlff:~VirtualFileEvent.getFile():com.intellij.openapi.vfs.VirtualFile" resolve="getFile" />
+                <node concept="2YIFZM" id="7mrRUyVUv3O" role="33vP2m">
+                  <ref role="37wK5l" to="4hrd:~VirtualFileUtils.toIFile(com.intellij.openapi.vfs.VirtualFile):jetbrains.mps.vfs.IFile" resolve="toIFile" />
+                  <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
+                  <node concept="2OqwBi" id="7mrRUyVUv3P" role="37wK5m">
+                    <node concept="37vLTw" id="2BHiRxgm8fH" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7mrRUyVUv4c" resolve="event" />
+                    </node>
+                    <node concept="liA8E" id="7mrRUyVUv3R" role="2OqNvi">
+                      <ref role="37wK5l" to="jlff:~VirtualFileEvent.getFile():com.intellij.openapi.vfs.VirtualFile" resolve="getFile" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1PDum5qUHbc" role="3cqZAp">
+              <node concept="2OqwBi" id="1PDum5qUHkH" role="3clFbG">
+                <node concept="37vLTw" id="1PDum5qUHba" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1PDum5qUBgR" resolve="myGenStatusManager" />
+                </node>
+                <node concept="liA8E" id="1PDum5qUHuA" role="2OqNvi">
+                  <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.invalidateData(jetbrains.mps.vfs.IFile):void" resolve="invalidateData" />
+                  <node concept="37vLTw" id="1PDum5qUHCO" role="37wK5m">
+                    <ref role="3cqZAo" node="7mrRUyVUv3M" resolve="file" />
+                  </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node concept="3clFbF" id="7mrRUyVUv3S" role="3cqZAp">
-          <node concept="2EnYce" id="7mrRUyVUv3T" role="3clFbG">
-            <node concept="2OqwBi" id="7mrRUyVUv3U" role="2Oq$k0">
-              <node concept="37vLTw" id="2BHiRxeufO$" role="2Oq$k0">
-                <ref role="3cqZAo" node="7mrRUyVUv2H" resolve="myCaches" />
-              </node>
-              <node concept="1z4cxt" id="7mrRUyVUv3W" role="2OqNvi">
-                <node concept="1bVj0M" id="7mrRUyVUv3X" role="23t8la">
-                  <node concept="3clFbS" id="7mrRUyVUv3Y" role="1bW5cS">
-                    <node concept="3clFbF" id="7mrRUyVUv3Z" role="3cqZAp">
-                      <node concept="2OqwBi" id="7mrRUyVUv40" role="3clFbG">
-                        <node concept="2OqwBi" id="7mrRUyVUv41" role="2Oq$k0">
-                          <node concept="37vLTw" id="2BHiRxgkWA6" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7mrRUyVUv48" resolve="c" />
-                          </node>
-                          <node concept="liA8E" id="7mrRUyVUv43" role="2OqNvi">
-                            <ref role="37wK5l" to="lvdd:~BaseModelCache.getCacheFileName():java.lang.String" resolve="getCacheFileName" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="7mrRUyVUv44" role="2OqNvi">
-                          <ref role="37wK5l" to="wyt6:~String.equalsIgnoreCase(java.lang.String):boolean" resolve="equalsIgnoreCase" />
-                          <node concept="2OqwBi" id="7mrRUyVUv45" role="37wK5m">
-                            <node concept="37vLTw" id="3GM_nagTvsu" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7mrRUyVUv3M" resolve="file" />
-                            </node>
-                            <node concept="liA8E" id="7mrRUyVUv47" role="2OqNvi">
-                              <ref role="37wK5l" to="3ju5:~IFile.getName():java.lang.String" resolve="getName" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="Rh6nW" id="7mrRUyVUv48" role="1bW2Oz">
-                    <property role="TrG5h" value="c" />
-                    <node concept="2jxLKc" id="7mrRUyVUv49" role="1tU5fm" />
-                  </node>
-                </node>
-              </node>
+          <node concept="2OqwBi" id="1PDum5qUGCe" role="3clFbw">
+            <node concept="10M0yZ" id="1PDum5qUGr$" role="2Oq$k0">
+              <ref role="3cqZAo" to="w8cm:~GenerationDependenciesCache.CACHE_FILE_NAME" resolve="CACHE_FILE_NAME" />
+              <ref role="1PxDUh" to="w8cm:~GenerationDependenciesCache" resolve="GenerationDependenciesCache" />
             </node>
-            <node concept="liA8E" id="7mrRUyVUv4a" role="2OqNvi">
-              <ref role="37wK5l" to="lvdd:~BaseModelCache.invalidateCacheForFile(jetbrains.mps.vfs.IFile):void" resolve="invalidateCacheForFile" />
-              <node concept="37vLTw" id="3GM_nagTu2T" role="37wK5m">
-                <ref role="3cqZAo" node="7mrRUyVUv3M" resolve="file" />
+            <node concept="liA8E" id="1PDum5qUGQp" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="2OqwBi" id="1PDum5qUGXl" role="37wK5m">
+                <node concept="37vLTw" id="1PDum5qUGS0" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7mrRUyVUv4c" resolve="event" />
+                </node>
+                <node concept="liA8E" id="1PDum5qUH7w" role="2OqNvi">
+                  <ref role="37wK5l" to="jlff:~VirtualFileEvent.getFileName():java.lang.String" resolve="getFileName" />
+                </node>
               </node>
             </node>
           </node>

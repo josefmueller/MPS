@@ -30,23 +30,20 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
  * Evgeny Gryaznov, May 14, 2010
  */
 public class GenerationDependenciesCache extends BaseModelCache<GenerationDependencies> {
+  public static final String CACHE_FILE_NAME = "generated";
 
   private static GenerationDependenciesCache INSTANCE;
-  @Nullable
-  private Consumer<SModelReference> myCacheInvalidationCallback;
 
   public static GenerationDependenciesCache getInstance() {
     return INSTANCE;
@@ -56,14 +53,6 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
 
   public GenerationDependenciesCache(CleanupManager manager) {
     super(manager);
-  }
-
-  /*
-   * INTERNAL API, DO NOT USE
-   * FIXME this is a refactoring artifact, once GenerationDependenciesCache is no longer singleton, we would need to change mechanism that reacts to file changes
-   */
-  public void setCacheInvalidationCallback(@Nullable Consumer<SModelReference> callback) {
-    myCacheInvalidationCallback = callback;
   }
 
   @Override
@@ -85,7 +74,7 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
   @Override
   @NotNull
   public String getCacheFileName() {
-    return "generated";
+    return CACHE_FILE_NAME;
   }
 
   public void registerCachePathRedirect(CachePathRedirect cdl) {
@@ -99,20 +88,7 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
   @Nullable
   @Override
   protected GenerationDependencies readCache(SModel sm) {
-    return new ParseFacility<GenerationDependencies>(getClass(), new CacheParser()).input(getCacheFile(sm)).parseSilently();
-  }
-
-  @Override
-  public void invalidateCacheForFile(IFile file) {
-    if (myCacheInvalidationCallback == null) {
-      super.invalidateCacheForFile(file);
-      return;
-    }
-    SModelReference mr = findCachedModelForFile(file);
-    super.invalidateCacheForFile(file);
-    if (mr != null ) {
-      myCacheInvalidationCallback.accept(mr);
-    }
+    return new ParseFacility<>(getClass(), new CacheParser()).input(getCacheFile(sm)).parseSilently();
   }
 
   public CacheGenerator getGenerator() {

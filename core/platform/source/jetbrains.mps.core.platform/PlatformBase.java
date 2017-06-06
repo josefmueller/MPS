@@ -69,6 +69,9 @@ class PlatformBase implements Platform {
     if (myCore != null) {
       rv = myCore.findComponent(componentClass);
     }
+    if (rv == null && myGenerator != null) {
+      rv = myGenerator.findComponent(componentClass);
+    }
     return rv;
   }
 
