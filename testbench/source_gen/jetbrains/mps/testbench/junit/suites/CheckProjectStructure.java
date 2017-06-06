@@ -25,7 +25,8 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.SNodeOperations;
 import org.junit.Assume;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import java.util.Collection;
 
@@ -171,13 +172,15 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
+        GenerationDependenciesCache genDeps = new GenerationDependenciesCache(null);
         for (SModel sm : extractModels(false)) {
           SModule module = sm.getModule();
           if (module == null) {
             errors.add("Model without a module: " + sm.getReference().toString());
             continue;
           }
-          String genHash = ModelGenerationStatusManager.getLastGenerationHash(((GeneratableSModel) sm));
+          GenerationDependencies gd = genDeps.get(sm);
+          String genHash = (gd == null ? null : gd.getModelHash());
           if (genHash == null) {
             errors.add("No generated hash for " + sm.getReference().toString());
             continue;

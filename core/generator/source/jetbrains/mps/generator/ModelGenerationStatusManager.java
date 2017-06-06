@@ -63,7 +63,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
     @Override
     public void beforeModelRemoved(SModule module, SModel model) {
-      // FIXME invalidateData makes sense only if dispated once model is already gone
+      // FIXME invalidateData makes sense only if dispatched once model is already gone
       //       but at least we clean the cache
       ModelGenerationStatusManager.this.invalidateData(Collections.singleton(model));
     }
@@ -267,13 +267,5 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
     return result;
 
-  }
-
-  /**
-   * @deprecated refactor single use and drop
-   */
-  @Deprecated
-  public static String getLastGenerationHash(GeneratableSModel sm) {
-    return getInstance().getLastKnownHash(sm);
   }
 }
