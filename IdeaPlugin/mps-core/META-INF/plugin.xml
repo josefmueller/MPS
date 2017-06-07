@@ -110,6 +110,9 @@
   <project-components>
     <xi:include href="../../../workbench/mps-ui/source/META-INF/MPSUI.xml" xpointer="xpointer(/components/project-components/*)"/>
     <component>
+      <implementation-class>jetbrains.mps.idea.core.config.ConfigurationChecker</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
     <component>
