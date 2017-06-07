@@ -104,7 +104,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     myModuleFacetsRegistry = init(new FacetsRegistry());
 
     myRepositoryRegistry = init(new SRepositoryRegistry());
-    myModuleRepository = init(new MPSModuleRepository());
+    myModuleRepository = init(new MPSModuleRepository(myRepositoryRegistry));
     init(new SModelRepository(myModuleRepository));
     init(new GlobalSModelEventsManager(myModuleRepository));
     myClassLoaderManager = init(new ClassLoaderManager(myModuleRepository));

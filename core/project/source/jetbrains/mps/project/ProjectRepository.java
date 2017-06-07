@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,11 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -44,14 +46,10 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   private final Project myProject;
   private final ProjectModelAccess myProjectModelAccess;
 
-  public ProjectRepository(@NotNull Project project) {
+  public ProjectRepository(@NotNull Project project, @Nullable SRepositoryRegistry repositoryRegistry) {
+    super(repositoryRegistry);
     myProject = project;
     myProjectModelAccess = new ProjectModelAccess(project);
-  }
-
-  @Override
-  public void dispose() {
-    super.dispose();
   }
 
   @NotNull

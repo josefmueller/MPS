@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
@@ -79,7 +80,8 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     return ourInstance;
   }
 
-  public MPSModuleRepository() {
+  public MPSModuleRepository(SRepositoryRegistry repositoryRegistry) {
+    super(repositoryRegistry);
     myGlobalModelAccess = new GlobalModelAccess();
     myCommandListener = new CommandListener() {
       @Override

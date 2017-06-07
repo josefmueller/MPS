@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.extapi.module;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -26,9 +27,15 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
  */
 public abstract class SRepositoryBase implements SRepository {
 
+  private final SRepositoryRegistry myRepositoryRegistry;
   private SRepositoryEventsDispatcher myEventsDispatcher;
 
   protected SRepositoryBase() {
+    myRepositoryRegistry = null;
+  }
+
+  protected SRepositoryBase(@Nullable SRepositoryRegistry repositoryRegistry) {
+    myRepositoryRegistry = repositoryRegistry;
   }
 
   @Override
@@ -37,12 +44,17 @@ public abstract class SRepositoryBase implements SRepository {
   }
 
   public void init() {
+    // XXX why myEventsDispatcher is not mandatory? Do we like to get NPE in e.g. TestRepository?
     myEventsDispatcher = new SRepositoryEventsDispatcher(this);
-    SRepositoryRegistry.getInstance().addRepository(this);
+    if (myRepositoryRegistry != null) {
+      myRepositoryRegistry.addRepository(this);
+    }
   }
 
   public void dispose() {
-    SRepositoryRegistry.getInstance().removeRepository(this);
+    if (myRepositoryRegistry != null){
+      myRepositoryRegistry.removeRepository(this);
+    }
   }
 
   @Override

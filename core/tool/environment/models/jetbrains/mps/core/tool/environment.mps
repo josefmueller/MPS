@@ -286,7 +286,7 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -1917,6 +1917,9 @@
                 <ref role="37wK5l" to="v9gs:2doG_VG59Hq" resolve="FileMPSProject" />
                 <node concept="37vLTw" id="2BHiRxghfvG" role="37wK5m">
                   <ref role="3cqZAo" node="6rx4kZDk6_X" resolve="projectFile" />
+                </node>
+                <node concept="37vLTw" id="76OnFPC95a6" role="37wK5m">
+                  <ref role="3cqZAo" node="11RXB4md7v2" resolve="myPlatform" />
                 </node>
               </node>
             </node>

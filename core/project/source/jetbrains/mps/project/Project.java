@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -38,17 +39,17 @@ import java.util.Set;
  * It has a scope and a corresponding project repository to store modules in it.
  */
 public abstract class Project implements MPSModuleOwner, IProject {
-  private static final Logger LOG = LogManager.getLogger(Project.class);
-
   private final String myName;
+  private final SRepositoryRegistry myRepositoryRegistry;
   private final ProjectScope myScope = new ProjectScope();
   private final ProjectRepository myRepository;
 
   private boolean myDisposed;
 
-  protected Project(String name) {
+  protected Project(String name, SRepositoryRegistry repositoryRegistry) {
     myName = name;
-    myRepository = new ProjectRepository(this);
+    myRepositoryRegistry = repositoryRegistry;
+    myRepository = new ProjectRepository(this, repositoryRegistry);
     myRepository.init();
   }
 

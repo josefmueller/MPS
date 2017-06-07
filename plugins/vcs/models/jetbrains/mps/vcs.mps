@@ -66,6 +66,7 @@
     <import index="yt4f" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.diff(MPS.IDEA/)" />
     <import index="tcg7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.fileTypes(MPS.Platform/)" />
     <import index="iwsx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileEditor(MPS.IDEA/)" />
+    <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -133,6 +134,10 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
+        <child id="1081256993305" name="classType" index="2ZW6by" />
+        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -158,15 +163,6 @@
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
-      </concept>
-      <concept id="1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" flags="ng" index="16euLQ">
-        <property id="1214996933829" name="extends" index="3ztuRv" />
-      </concept>
-      <concept id="1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" flags="ng" index="16eOlS">
-        <child id="1109279881614" name="typeVariableDeclaration" index="16eVyc" />
-      </concept>
-      <concept id="1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" flags="in" index="16syzq">
-        <reference id="1109283546497" name="typeVariableDeclaration" index="16sUi3" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
@@ -218,12 +214,18 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
       <concept id="1154542696413" name="jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer" flags="nn" index="3g6Rrh">
         <child id="1154542793668" name="componentType" index="3g7fb8" />
         <child id="1154542803372" name="initValue" index="3g7hyw" />
+      </concept>
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -278,6 +280,7 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="6832197706140896242" name="jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment" flags="ng" index="z59LJ" />
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
       </concept>
@@ -290,7 +293,7 @@
       <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -302,6 +305,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -3041,186 +3051,71 @@
     <property role="TrG5h" value="TestMergeDialog" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
-    <node concept="Wx3nA" id="2ysqId120Ld" role="jymVt">
-      <property role="TrG5h" value="ENV" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3Tm6S6" id="2ysqId120Cs" role="1B3o_S" />
-      <node concept="3uibUv" id="4P_zM4FAvAG" role="1tU5fm">
-        <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
-      </node>
-    </node>
     <node concept="3Tm1VV" id="6m1MVDkVd2a" role="1B3o_S" />
-    <node concept="Wx3nA" id="6m1MVDkVd2g" role="jymVt">
-      <property role="TrG5h" value="myParentDisposable" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="6m1MVDkVd2h" role="1tU5fm">
-        <ref role="3uigEE" to="v23q:~Disposable" resolve="Disposable" />
-      </node>
-      <node concept="3Tm6S6" id="6m1MVDkVd2i" role="1B3o_S" />
-      <node concept="2YIFZM" id="6m1MVDkVdHh" role="33vP2m">
-        <ref role="37wK5l" to="zn9m:~Disposer.newDisposable():com.intellij.openapi.Disposable" resolve="newDisposable" />
-        <ref role="1Pybhc" to="zn9m:~Disposer" resolve="Disposer" />
-      </node>
-    </node>
     <node concept="2tJIrI" id="15VbAzMGyv7" role="jymVt" />
-    <node concept="Wx3nA" id="OGpfRfwdMo" role="jymVt">
-      <property role="TrG5h" value="___init" />
-      <node concept="3Tm6S6" id="OGpfRfwdMp" role="1B3o_S" />
-      <node concept="3uibUv" id="OGpfRfwdMr" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-      </node>
-      <node concept="2ShNRf" id="OGpfRfwdM$" role="33vP2m">
-        <node concept="YeOm9" id="OGpfRfwdMD" role="2ShVmc">
-          <node concept="1Y3b0j" id="OGpfRfwdME" role="YeSDq">
-            <property role="2bfB8j" value="true" />
-            <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-            <ref role="1Y3XeK" to="wyt6:~Object" resolve="Object" />
-            <node concept="3Tm1VV" id="OGpfRfwdMF" role="1B3o_S" />
-            <node concept="3KIgzJ" id="OGpfRfwdMP" role="jymVt">
-              <node concept="3clFbS" id="OGpfRfwdMQ" role="3KIlGz">
-                <node concept="3clFbF" id="OGpfRfwe4$" role="3cqZAp">
-                  <node concept="2YIFZM" id="OGpfRfwe5e" role="3clFbG">
-                    <ref role="1Pybhc" to="9ti4:~Extensions" resolve="Extensions" />
-                    <ref role="37wK5l" to="9ti4:~Extensions.registerAreaClass(java.lang.String,java.lang.String):void" resolve="registerAreaClass" />
-                    <node concept="Xl_RD" id="OGpfRfwe5f" role="37wK5m">
-                      <property role="Xl_RC" value="IDEA_PROJECT" />
+    <node concept="1X3_iC" id="76OnFPC8xE1" role="lGtFl">
+      <property role="3V$3am" value="member" />
+      <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" />
+      <node concept="Wx3nA" id="OGpfRfwdMo" role="8Wnug">
+        <property role="TrG5h" value="___init" />
+        <node concept="3Tm6S6" id="OGpfRfwdMp" role="1B3o_S" />
+        <node concept="3uibUv" id="OGpfRfwdMr" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+        <node concept="2ShNRf" id="OGpfRfwdM$" role="33vP2m">
+          <node concept="YeOm9" id="OGpfRfwdMD" role="2ShVmc">
+            <node concept="1Y3b0j" id="OGpfRfwdME" role="YeSDq">
+              <property role="2bfB8j" value="true" />
+              <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+              <ref role="1Y3XeK" to="wyt6:~Object" resolve="Object" />
+              <node concept="3Tm1VV" id="OGpfRfwdMF" role="1B3o_S" />
+              <node concept="3KIgzJ" id="OGpfRfwdMP" role="jymVt">
+                <node concept="3clFbS" id="OGpfRfwdMQ" role="3KIlGz">
+                  <node concept="3clFbF" id="OGpfRfwe4$" role="3cqZAp">
+                    <node concept="2YIFZM" id="OGpfRfwe5e" role="3clFbG">
+                      <ref role="1Pybhc" to="9ti4:~Extensions" resolve="Extensions" />
+                      <ref role="37wK5l" to="9ti4:~Extensions.registerAreaClass(java.lang.String,java.lang.String):void" resolve="registerAreaClass" />
+                      <node concept="Xl_RD" id="OGpfRfwe5f" role="37wK5m">
+                        <property role="Xl_RC" value="IDEA_PROJECT" />
+                      </node>
+                      <node concept="10Nm6u" id="OGpfRfwe5h" role="37wK5m" />
                     </node>
-                    <node concept="10Nm6u" id="OGpfRfwe5h" role="37wK5m" />
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="z59LJ" id="76OnFPC8vRM" role="lGtFl">
+          <node concept="TZ5HA" id="76OnFPC8vRN" role="TZ5H$">
+            <node concept="1dT_AC" id="76OnFPC8vRO" role="1dT_Ay">
+              <property role="1dT_AB" value="FIXME I have no idea what was intention behind this code, and previous developers didn't" />
+            </node>
+          </node>
+          <node concept="TZ5HA" id="76OnFPC8ynC" role="TZ5H$">
+            <node concept="1dT_AC" id="76OnFPC8ynD" role="1dT_Ay">
+              <property role="1dT_AB" value="care to manage my anger regarding this fact (see excessively descriptive comment for " />
+            </node>
+          </node>
+          <node concept="TZ5HA" id="76OnFPC8ypk" role="TZ5H$">
+            <node concept="1dT_AC" id="76OnFPC8ypl" role="1dT_Ay">
+              <property role="1dT_AB" value="94df01069186c669870e433cbaeaf9c1942aff2a, &quot;Fixed TestMergeDialog&quot;)" />
+            </node>
+          </node>
+          <node concept="TZ5HA" id="76OnFPC8yot" role="TZ5H$">
+            <node concept="1dT_AC" id="76OnFPC8you" role="1dT_Ay">
+              <property role="1dT_AB" value="If TestMergeDialog works, remove this commented out piece of junk. If it doesn't work, try to uncomment to see if it helps and tell me the outcome of your findings." />
+            </node>
+          </node>
+          <node concept="TZ5HA" id="76OnFPC8yqd" role="TZ5H$">
+            <node concept="1dT_AC" id="76OnFPC8yqe" role="1dT_Ay">
+              <property role="1dT_AB" value="Likely, with use of IdeaEnvironment, it's of no use." />
             </node>
           </node>
         </node>
       </node>
     </node>
     <node concept="2tJIrI" id="15VbAzMGyea" role="jymVt" />
-    <node concept="Wx3nA" id="6m1MVDkVd2k" role="jymVt">
-      <property role="TrG5h" value="ourProject" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="6m1MVDkVdHr" role="1tU5fm">
-        <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
-      </node>
-      <node concept="3Tm6S6" id="6m1MVDkVd2m" role="1B3o_S" />
-      <node concept="2ShNRf" id="6m1MVDkVd2n" role="33vP2m">
-        <node concept="YeOm9" id="6m1MVDkVd2o" role="2ShVmc">
-          <node concept="1Y3b0j" id="6m1MVDkVd2p" role="YeSDq">
-            <property role="TrG5h" value="" />
-            <property role="2bfB8j" value="true" />
-            <ref role="1Y3XeK" to="4odw:~MockProjectEx" resolve="MockProjectEx" />
-            <ref role="37wK5l" to="4odw:~MockProjectEx.&lt;init&gt;(com.intellij.openapi.Disposable)" resolve="MockProjectEx" />
-            <node concept="10M0yZ" id="7Psq8BycfpJ" role="37wK5m">
-              <ref role="3cqZAo" node="6m1MVDkVd2g" resolve="myParentDisposable" />
-              <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
-            </node>
-            <node concept="3clFb_" id="6m1MVDkVd2q" role="jymVt">
-              <property role="1EzhhJ" value="false" />
-              <property role="TrG5h" value="getComponent" />
-              <property role="DiZV1" value="false" />
-              <node concept="3Tm1VV" id="6m1MVDkVd2r" role="1B3o_S" />
-              <node concept="16euLQ" id="6m1MVDkVd2s" role="16eVyc">
-                <property role="3ztuRv" value="false" />
-                <property role="TrG5h" value="T" />
-              </node>
-              <node concept="16syzq" id="6m1MVDkVd2t" role="3clF45">
-                <ref role="16sUi3" node="6m1MVDkVd2s" resolve="T" />
-              </node>
-              <node concept="37vLTG" id="6m1MVDkVd2u" role="3clF46">
-                <property role="TrG5h" value="interfaceClass" />
-                <property role="3TUv4t" value="false" />
-                <node concept="3uibUv" id="6m1MVDkVd2v" role="1tU5fm">
-                  <ref role="3uigEE" to="wyt6:~Class" resolve="Class" />
-                  <node concept="16syzq" id="6m1MVDkVd2w" role="11_B2D">
-                    <ref role="16sUi3" node="6m1MVDkVd2s" resolve="T" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="6m1MVDkVd2x" role="3clF47">
-                <node concept="3clFbJ" id="6m1MVDkVd2F" role="3cqZAp">
-                  <node concept="3clFbC" id="6m1MVDkVd2G" role="3clFbw">
-                    <node concept="37vLTw" id="2BHiRxglVvg" role="3uHU7B">
-                      <ref role="3cqZAo" node="6m1MVDkVd2u" resolve="interfaceClass" />
-                    </node>
-                    <node concept="3VsKOn" id="6m1MVDkVdHM" role="3uHU7w">
-                      <ref role="3VsUkX" to="z1c3:~MPSProject" resolve="MPSProject" />
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="6m1MVDkVd2J" role="3clFbx">
-                    <node concept="3cpWs6" id="6m1MVDkVd2K" role="3cqZAp">
-                      <node concept="10QFUN" id="6m1MVDkVd2L" role="3cqZAk">
-                        <node concept="10M0yZ" id="6m1MVDkVd2M" role="10QFUP">
-                          <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
-                          <ref role="3cqZAo" node="6m1MVDkVd34" resolve="ourMPSProject" />
-                        </node>
-                        <node concept="16syzq" id="6m1MVDkVd2N" role="10QFUM">
-                          <ref role="16sUi3" node="6m1MVDkVd2s" resolve="T" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="6m1MVDkVd2O" role="3cqZAp">
-                  <node concept="3clFbC" id="6m1MVDkVd2P" role="3clFbw">
-                    <node concept="37vLTw" id="2BHiRxgmyrJ" role="3uHU7B">
-                      <ref role="3cqZAo" node="6m1MVDkVd2u" resolve="interfaceClass" />
-                    </node>
-                    <node concept="3VsKOn" id="6m1MVDkVd2R" role="3uHU7w">
-                      <ref role="3VsUkX" to="3nps:~BookmarkManager" resolve="BookmarkManager" />
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="6m1MVDkVd2S" role="3clFbx">
-                    <node concept="3cpWs6" id="6m1MVDkVd2T" role="3cqZAp">
-                      <node concept="10QFUN" id="6m1MVDkVd2U" role="3cqZAk">
-                        <node concept="2ShNRf" id="6m1MVDkVd2V" role="10QFUP">
-                          <node concept="1pGfFk" id="6m1MVDkVd2W" role="2ShVmc">
-                            <ref role="37wK5l" to="3nps:~BookmarkManager.&lt;init&gt;(jetbrains.mps.project.MPSProject,jetbrains.mps.nodeEditor.Highlighter)" resolve="BookmarkManager" />
-                            <node concept="10M0yZ" id="6m1MVDkVd2X" role="37wK5m">
-                              <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
-                              <ref role="3cqZAo" node="6m1MVDkVd34" resolve="ourMPSProject" />
-                            </node>
-                            <node concept="10Nm6u" id="6m1MVDkVd2Y" role="37wK5m" />
-                          </node>
-                        </node>
-                        <node concept="16syzq" id="6m1MVDkVd2Z" role="10QFUM">
-                          <ref role="16sUi3" node="6m1MVDkVd2s" resolve="T" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWs6" id="6m1MVDkVd30" role="3cqZAp">
-                  <node concept="10Nm6u" id="6m1MVDkVd31" role="3cqZAk" />
-                </node>
-              </node>
-              <node concept="2AHcQZ" id="6m1MVDkVd32" role="2AJF6D">
-                <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="15VbAzMGxXe" role="jymVt" />
-    <node concept="Wx3nA" id="6m1MVDkVd34" role="jymVt">
-      <property role="TrG5h" value="ourMPSProject" />
-      <property role="3TUv4t" value="false" />
-      <node concept="3uibUv" id="6m1MVDkVd35" role="1tU5fm">
-        <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
-      </node>
-      <node concept="3Tm6S6" id="6m1MVDkVd36" role="1B3o_S" />
-      <node concept="2ShNRf" id="6m1MVDkVd37" role="33vP2m">
-        <node concept="1pGfFk" id="6m1MVDkVd38" role="2ShVmc">
-          <ref role="37wK5l" to="z1c4:~StandaloneMPSProject.&lt;init&gt;(com.intellij.openapi.project.Project,jetbrains.mps.project.ProjectLibraryManager,jetbrains.mps.ide.vfs.ProjectRootListenerComponent)" resolve="StandaloneMPSProject" />
-          <node concept="10M0yZ" id="7Psq8BycfpK" role="37wK5m">
-            <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
-            <ref role="3cqZAo" node="6m1MVDkVd2k" resolve="ourProject" />
-          </node>
-          <node concept="10Nm6u" id="XZsBAoNACb" role="37wK5m" />
-          <node concept="10Nm6u" id="1vlERrpaDgc" role="37wK5m" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="15VbAzMGxGj" role="jymVt" />
     <node concept="3clFbW" id="6m1MVDkVd3a" role="jymVt">
       <node concept="3Tm1VV" id="6m1MVDkVd3b" role="1B3o_S" />
       <node concept="3cqZAl" id="6m1MVDkVd3c" role="3clF45" />
@@ -3307,19 +3202,20 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2ysqId125ai" role="3cqZAp">
-          <node concept="37vLTI" id="2ysqId125iC" role="3clFbG">
-            <node concept="2YIFZM" id="6LlhC3WKXaV" role="37vLTx">
+        <node concept="3cpWs8" id="76OnFPC8zq6" role="3cqZAp">
+          <node concept="3cpWsn" id="76OnFPC8zq9" role="3cpWs9">
+            <property role="TrG5h" value="ENV" />
+            <property role="3TUv4t" value="false" />
+            <node concept="3uibUv" id="76OnFPC8zqb" role="1tU5fm">
+              <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
+            </node>
+            <node concept="2YIFZM" id="6LlhC3WKXaV" role="33vP2m">
               <ref role="37wK5l" to="cky9:6LlhC3WJZzD" resolve="getOrCreate" />
               <ref role="1Pybhc" to="cky9:6rx4kZDk5Br" resolve="IdeaEnvironment" />
               <node concept="2YIFZM" id="6LlhC3WKXaX" role="37wK5m">
-                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
                 <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
               </node>
-            </node>
-            <node concept="10M0yZ" id="7Psq8BycfpL" role="37vLTJ">
-              <ref role="3cqZAo" node="2ysqId120Ld" resolve="ENV" />
-              <ref role="1PxDUh" node="6m1MVDkVd29" resolve="TestMergeDialog" />
             </node>
           </node>
         </node>
@@ -3327,6 +3223,55 @@
           <node concept="2YIFZM" id="6m1MVDkVd3r" role="3clFbG">
             <ref role="1Pybhc" to="zn9m:~IconLoader" resolve="IconLoader" />
             <ref role="37wK5l" to="zn9m:~IconLoader.activate():void" resolve="activate" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="76OnFPC8Bta" role="3cqZAp">
+          <node concept="3cpWsn" id="76OnFPC8Btb" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <node concept="3uibUv" id="76OnFPC8Bt4" role="1tU5fm">
+              <ref role="3uigEE" to="z1c5:~Project" resolve="Project" />
+            </node>
+            <node concept="2OqwBi" id="76OnFPC8Btc" role="33vP2m">
+              <node concept="37vLTw" id="76OnFPC8Btd" role="2Oq$k0">
+                <ref role="3cqZAo" node="76OnFPC8zq9" resolve="ENV" />
+              </node>
+              <node concept="liA8E" id="76OnFPC8Bte" role="2OqNvi">
+                <ref role="37wK5l" to="79ha:2BGPXkEw$sz" resolve="createEmptyProject" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1gVbGN" id="76OnFPC8MEQ" role="3cqZAp">
+          <node concept="2ZW3vV" id="76OnFPC8OnJ" role="1gVkn0">
+            <node concept="3uibUv" id="76OnFPC8OMh" role="2ZW6by">
+              <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+            </node>
+            <node concept="37vLTw" id="76OnFPC8NeG" role="2ZW6bz">
+              <ref role="3cqZAo" node="76OnFPC8Btb" resolve="mpsProject" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="76OnFPC8Fyb" role="3cqZAp">
+          <node concept="3cpWsn" id="76OnFPC8Fyc" role="3cpWs9">
+            <property role="TrG5h" value="ideaProject" />
+            <node concept="3uibUv" id="76OnFPC8Fyd" role="1tU5fm">
+              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+            </node>
+            <node concept="2OqwBi" id="76OnFPC8PnI" role="33vP2m">
+              <node concept="1eOMI4" id="76OnFPC8PUY" role="2Oq$k0">
+                <node concept="10QFUN" id="76OnFPC8PUV" role="1eOMHV">
+                  <node concept="3uibUv" id="76OnFPC8Q7Y" role="10QFUM">
+                    <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+                  </node>
+                  <node concept="37vLTw" id="76OnFPC8P5l" role="10QFUP">
+                    <ref role="3cqZAo" node="76OnFPC8Btb" resolve="mpsProject" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="76OnFPC8QDI" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+              </node>
+            </node>
           </node>
         </node>
         <node concept="3cpWs8" id="6m1MVDkVd3s" role="3cqZAp">
@@ -3806,8 +3751,8 @@
                   </node>
                   <node concept="liA8E" id="4gQ5MKiEXXs" role="2OqNvi">
                     <ref role="37wK5l" to="yt4f:~DiffRequestFactory.createMergeRequest(com.intellij.openapi.project.Project,com.intellij.openapi.fileTypes.FileType,com.intellij.openapi.editor.Document,java.util.List,java.lang.String,java.util.List,com.intellij.util.Consumer):com.intellij.diff.merge.MergeRequest" resolve="createMergeRequest" />
-                    <node concept="37vLTw" id="3SHxTHDhkhP" role="37wK5m">
-                      <ref role="3cqZAo" node="6m1MVDkVd2k" resolve="ourProject" />
+                    <node concept="37vLTw" id="76OnFPC8QTr" role="37wK5m">
+                      <ref role="3cqZAo" node="76OnFPC8Fyc" resolve="ideaProject" />
                     </node>
                     <node concept="10M0yZ" id="4gQ5MKiF1uL" role="37wK5m">
                       <ref role="1PxDUh" to="tcg7:~MPSFileTypeFactory" resolve="MPSFileTypeFactory" />
@@ -3852,8 +3797,8 @@
                 </node>
                 <node concept="liA8E" id="4gQ5MKiF6V$" role="2OqNvi">
                   <ref role="37wK5l" to="yt4f:~DiffManager.showMerge(com.intellij.openapi.project.Project,com.intellij.diff.merge.MergeRequest):void" resolve="showMerge" />
-                  <node concept="37vLTw" id="3SHxTHDhpyK" role="37wK5m">
-                    <ref role="3cqZAo" node="6m1MVDkVd2k" resolve="ourProject" />
+                  <node concept="37vLTw" id="76OnFPC8RfX" role="37wK5m">
+                    <ref role="3cqZAo" node="76OnFPC8Fyc" resolve="ideaProject" />
                   </node>
                   <node concept="37vLTw" id="4gQ5MKiF6VC" role="37wK5m">
                     <ref role="3cqZAo" node="4gQ5MKiEXXo" resolve="request" />

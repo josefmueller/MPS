@@ -22,6 +22,8 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import org.jdom.JDOMException;
@@ -41,8 +43,8 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
   private com.intellij.openapi.project.Project myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<>();
 
-  public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused) {
-    super(new ProjectDescriptor(project.getName()));
+  public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused, MPSCoreComponents mpsCore) {
+    super(new ProjectDescriptor(project.getName()), mpsCore.getPlatform().findComponent(SRepositoryRegistry.class));
     myProject = project;
   }
 

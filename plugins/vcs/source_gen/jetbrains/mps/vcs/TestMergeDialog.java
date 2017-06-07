@@ -4,22 +4,16 @@ package jetbrains.mps.vcs;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.tool.environment.Environment;
-import com.intellij.openapi.Disposable;
-import com.intellij.openapi.util.Disposer;
-import com.intellij.openapi.extensions.Extensions;
-import com.intellij.openapi.project.Project;
-import com.intellij.mock.MockProjectEx;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.bookmark.BookmarkManager;
-import jetbrains.mps.project.StandaloneMPSProject;
 import org.jdom.JDOMException;
 import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import java.util.Scanner;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import com.intellij.openapi.util.IconLoader;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
@@ -43,29 +37,7 @@ import org.apache.log4j.Level;
  */
 public class TestMergeDialog {
   private static final Logger LOG = LogManager.getLogger(TestMergeDialog.class);
-  private static Environment ENV;
-  private static Disposable myParentDisposable = Disposer.newDisposable();
 
-  private static Object ___init = new Object() {
-    {
-      Extensions.registerAreaClass("IDEA_PROJECT", null);
-    }
-  };
-
-  private static Project ourProject = new MockProjectEx(TestMergeDialog.myParentDisposable) {
-    @Override
-    public <T> T getComponent(Class<T> interfaceClass) {
-      if (interfaceClass == MPSProject.class) {
-        return (T) TestMergeDialog.ourMPSProject;
-      }
-      if (interfaceClass == BookmarkManager.class) {
-        return (T) new BookmarkManager(TestMergeDialog.ourMPSProject, null);
-      }
-      return null;
-    }
-  };
-
-  private static MPSProject ourMPSProject = new StandaloneMPSProject(TestMergeDialog.ourProject, null, null);
 
   public TestMergeDialog() {
   }
@@ -76,8 +48,11 @@ public class TestMergeDialog {
       String line = new Scanner(System.in).nextLine();
       args = new String[]{((line == null ? null : line.trim()))};
     }
-    TestMergeDialog.ENV = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
+    Environment ENV = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
     IconLoader.activate();
+    Project mpsProject = ENV.createEmptyProject();
+    assert mpsProject instanceof MPSProject;
+    com.intellij.openapi.project.Project ideaProject = ((MPSProject) mpsProject).getProject();
     final String[] models = new String[3];
     String resultFile;
     if (args.length == 2 || args.length == 1) {
@@ -109,8 +84,8 @@ public class TestMergeDialog {
     List<String> contents = ListSequence.fromListAndArray(new ArrayList<String>(), models);
     List<String> titles = ListSequence.fromListAndArray(new ArrayList<String>(), "Local Version", "Merge Result", "Remote Version");
     try {
-      MergeRequest request = DiffRequestFactory.getInstance().createMergeRequest(ourProject, MPSFileTypeFactory.MPS_FILE_TYPE, FileDocumentManager.getInstance().getDocument(resFile), contents, "Merge files and save result to " + resultFile, titles, null);
-      DiffManager.getInstance().showMerge(ourProject, request);
+      MergeRequest request = DiffRequestFactory.getInstance().createMergeRequest(ideaProject, MPSFileTypeFactory.MPS_FILE_TYPE, FileDocumentManager.getInstance().getDocument(resFile), contents, "Merge files and save result to " + resultFile, titles, null);
+      DiffManager.getInstance().showMerge(ideaProject, request);
     } catch (InvalidDiffRequestException e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("", e);

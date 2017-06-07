@@ -22,6 +22,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.project.ModulePath;
@@ -61,8 +62,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   private static final Logger LOG = LogManager.getLogger(StandaloneMPSProject.class);
 
   @SuppressWarnings("UnusedParameters")
-  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager, ProjectRootListenerComponent unused) {
-    super(project, unused);
+  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager, ProjectRootListenerComponent unused, MPSCoreComponents mpsCore) {
+    super(project, unused, mpsCore);
   }
 
   @Override

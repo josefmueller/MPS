@@ -8,7 +8,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.impl.IoFile;
@@ -23,13 +25,11 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 
 public class FileMPSProject extends ProjectBase implements FileBasedProject {
-  private static final Logger LOG_1170860263 = LogManager.getLogger(FileMPSProject.class);
-  private static Logger LOG = LogManager.getLogger(FileMPSProject.class);
-
+  private static final Logger LOG = LogManager.getLogger(FileMPSProject.class);
   private final File myProjectFile;
 
-  public FileMPSProject(@NotNull File file) {
-    super(new ProjectDescriptor(file.getName()));
+  public FileMPSProject(@NotNull File file, @NotNull Platform mpsPlatform) {
+    super(new ProjectDescriptor(file.getName()), mpsPlatform.findComponent(SRepositoryRegistry.class));
     myProjectFile = file;
     init();
   }
@@ -45,8 +45,8 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
     try {
       return myProjectFile.getCanonicalFile().getName();
     } catch (IOException e) {
-      if (LOG_1170860263.isEnabledFor(Level.ERROR)) {
-        LOG_1170860263.error("Got while accessing the project file", e);
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Got while accessing the project file", e);
       }
       return myProjectFile.getName();
     }
@@ -85,11 +85,6 @@ public class FileMPSProject extends ProjectBase implements FileBasedProject {
 
   private void loadProjectDescriptorWithMacros() {
     loadDescriptor(new ElementProjectDataSource(getElement(), getProjectFile(), createMacroHelper()));
-  }
-
-  @NotNull
-  public static FileMPSProject open(@NotNull String projectPath) {
-    return new FileMPSProject(new File(projectPath));
   }
 
   private boolean close() {

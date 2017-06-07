@@ -16,6 +16,7 @@
 package jetbrains.mps.extapi.module;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
@@ -34,8 +35,10 @@ public class SRepositoryRegistry implements CoreComponent {
 
   /**
    * @deprecated Instead, access instance through respective kernel {@link jetbrains.mps.components.ComponentPlugin} (i.e. {@code MPSCore}).
+   *             There are no uses in MPS, although there are still few in mbeddr
    */
   @Deprecated
+  @ToRemove(version = 2017.2)
   public static SRepositoryRegistry getInstance() {
     return INSTANCE;
   }

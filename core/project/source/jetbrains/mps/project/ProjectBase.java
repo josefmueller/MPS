@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -56,8 +57,8 @@ public abstract class ProjectBase extends Project {
   private final Map<SModule, ModulePath> myModuleToPathMap = new LinkedHashMap<>();
   private final ModuleLoader myModuleLoader;
 
-  protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor) {
-    super(projectDescriptor.getName());
+  protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull SRepositoryRegistry repositoryRegistry) {
+    super(projectDescriptor.getName(), repositoryRegistry);
     myProjectDescriptor = projectDescriptor;
     myModuleLoader = new ModuleLoader(this); // fixme: avoid
   }

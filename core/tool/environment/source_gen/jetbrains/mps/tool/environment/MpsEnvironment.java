@@ -82,7 +82,7 @@ public class MpsEnvironment extends EnvironmentBase {
   @Override
   @NotNull
   public Project doOpenProject(@NotNull File projectFile) {
-    FileMPSProject project = new FileMPSProject(projectFile);
+    FileMPSProject project = new FileMPSProject(projectFile, myPlatform);
     return project;
   }
 
