@@ -12,13 +12,13 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.resources.ModelsToResources;
@@ -54,6 +54,7 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
       final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
       List<IResource> resources = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<List<IResource>>() {
         public List<IResource> compute() {
+          final ModelGenerationStatusManager statusManager = mpsProject.getComponent(ModelGenerationStatusManager.class);
           Iterable<SModel> models = ListSequence.fromList(myNodePointers).where(new NotNullWhereFilter<SNodeReference>()).select(new ISelector<SNodeReference, SModel>() {
             public SModel select(SNodeReference it) {
               SNode n = it.resolve(mpsProject.getRepository());
@@ -61,7 +62,7 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
             }
           }).distinct().where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
-              return ModelGenerationStatusManager.getInstance().generationRequired(it);
+              return statusManager.generationRequired(it);
             }
           });
           if (Sequence.fromIterable(models).isEmpty()) {

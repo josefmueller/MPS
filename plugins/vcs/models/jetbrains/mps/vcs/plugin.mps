@@ -2648,6 +2648,28 @@
                         <node concept="3clFbH" id="713BH0SEdcd" role="3cqZAp" />
                         <node concept="3clFbJ" id="713BH0SE72N" role="3cqZAp">
                           <node concept="3clFbS" id="713BH0SE72P" role="3clFbx">
+                            <node concept="3cpWs8" id="3lEpTK7I2U1" role="3cqZAp">
+                              <node concept="3cpWsn" id="3lEpTK7I2U2" role="3cpWs9">
+                                <property role="TrG5h" value="statusManager" />
+                                <node concept="3uibUv" id="3lEpTK7I2U0" role="1tU5fm">
+                                  <ref role="3uigEE" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+                                </node>
+                                <node concept="2OqwBi" id="3lEpTK7Igj9" role="33vP2m">
+                                  <node concept="2OqwBi" id="3lEpTK7IfpO" role="2Oq$k0">
+                                    <node concept="2WthIp" id="3lEpTK7IfpR" role="2Oq$k0" />
+                                    <node concept="1DTwFV" id="3lEpTK7IfpT" role="2OqNvi">
+                                      <ref role="2WH_rO" node="7iCFfvQyOHZ" resolve="mpsProject" />
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="3lEpTK7IiGT" role="2OqNvi">
+                                    <ref role="37wK5l" to="z1c4:~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                                    <node concept="3VsKOn" id="3lEpTK7Ijpc" role="37wK5m">
+                                      <ref role="3VsUkX" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                             <node concept="3clFbF" id="713BH0SEgyq" role="3cqZAp">
                               <node concept="37vLTI" id="713BH0SEgY1" role="3clFbG">
                                 <node concept="37vLTw" id="713BH0SEgyo" role="37vLTJ">
@@ -2657,9 +2679,8 @@
                                   <node concept="1pGfFk" id="713BH0SEhmQ" role="2ShVmc">
                                     <ref role="37wK5l" to="fn29:6zsZmIC0WqK" resolve="ModelsToResources" />
                                     <node concept="2OqwBi" id="713BH0SE5At" role="37wK5m">
-                                      <node concept="2YIFZM" id="713BH0SE5jW" role="2Oq$k0">
-                                        <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolve="getInstance" />
-                                        <ref role="1Pybhc" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+                                      <node concept="37vLTw" id="3lEpTK7I2U4" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="3lEpTK7I2U2" resolve="statusManager" />
                                       </node>
                                       <node concept="liA8E" id="713BH0SE5UK" role="2OqNvi">
                                         <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.getModifiedModels(java.util.Collection):java.util.Collection" resolve="getModifiedModels" />

@@ -967,39 +967,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="LPJlEpsJtb" role="3cqZAp">
-          <node concept="3SKdUq" id="LPJlEpsJTu" role="3SKWNk">
-            <property role="3SKdUp" value="change of model properties might affect generation status. This explicit call is needed " />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="LPJlEpsKCi" role="3cqZAp">
-          <node concept="3SKdUq" id="LPJlEpsL1Z" role="3SKWNk">
-            <property role="3SKdUp" value="unless model dispatch proper change events (which it does not at the moment), and project pane " />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="LPJlEpsLJs" role="3cqZAp">
-          <node concept="3SKdUq" id="LPJlEpsM9b" role="3SKWNk">
-            <property role="3SKdUp" value="got no other means to find out it needs to update generation status" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="LPJlEpsGeJ" role="3cqZAp">
-          <node concept="2OqwBi" id="LPJlEpsGWX" role="3clFbG">
-            <node concept="2YIFZM" id="LPJlEpsGLc" role="2Oq$k0">
-              <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolve="getInstance" />
-              <ref role="1Pybhc" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
-            </node>
-            <node concept="liA8E" id="LPJlEpsHWD" role="2OqNvi">
-              <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.invalidateData(java.lang.Iterable):void" resolve="invalidateData" />
-              <node concept="2YIFZM" id="LPJlEpsIUI" role="37wK5m">
-                <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
-                <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-                <node concept="37vLTw" id="LPJlEpsIWQ" role="37wK5m">
-                  <ref role="3cqZAo" node="3tOCygy4Rou" resolve="myModelDescriptor" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="3clFb_" id="3tOCygy4RrF" role="jymVt">

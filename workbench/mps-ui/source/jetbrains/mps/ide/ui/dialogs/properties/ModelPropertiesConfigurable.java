@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.findUsages.CompositeFinder;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -130,6 +131,10 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   @Override
   protected void save() {
     myModelProperties.saveChanges();
+    // change of model properties might affect generation status. This explicit call is needed
+    // unless model dispatch proper change events (which it does not at the moment), and project pane
+    // got no other means to find out it needs to update generation status
+    myProject.getComponent(ModelGenerationStatusManager.class).invalidateData(Collections.singleton(myModelDescriptor));
   }
 
   public class ModelCommonTab extends CommonTab {

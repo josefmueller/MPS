@@ -80,7 +80,6 @@ public abstract class Project implements MPSModuleOwner, IProject {
   @ToRemove(version = 3.4)
   public abstract String getName();
 
-  @ToRemove(version = 3.3)
   public abstract <T> T getComponent(Class<T> t);
 
   /**

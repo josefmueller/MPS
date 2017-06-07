@@ -50,11 +50,11 @@ public class RebuildRequiredModels_Action extends BaseAction {
     final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<? extends SModule> projectModules = event.getData(MPSCommonDataKeys.MPS_PROJECT).getModulesWithGenerators();
-        final ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
+        Iterable<? extends SModule> projectModules = event.getData(MPSCommonDataKeys.MPS_PROJECT).getProjectModulesWithGenerators();
+        final ModelGenerationStatusManager mgsm = event.getData(MPSCommonDataKeys.MPS_PROJECT).getComponent(ModelGenerationStatusManager.class);
         models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SModel>() {
           public Iterable<SModel> translate(SModule it) {
-            return (Iterable<SModel>) it.getModels();
+            return it.getModels();
           }
         }).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {

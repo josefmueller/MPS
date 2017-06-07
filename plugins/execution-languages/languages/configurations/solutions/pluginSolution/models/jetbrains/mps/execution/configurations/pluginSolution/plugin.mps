@@ -194,6 +194,9 @@
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -552,6 +555,25 @@
                 <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
                 <node concept="1bVj0M" id="3G6GPGXx79I" role="37wK5m">
                   <node concept="3clFbS" id="3G6GPGXx79J" role="1bW5cS">
+                    <node concept="3cpWs8" id="3lEpTK7GsTK" role="3cqZAp">
+                      <node concept="3cpWsn" id="3lEpTK7GsTL" role="3cpWs9">
+                        <property role="TrG5h" value="statusManager" />
+                        <node concept="3uibUv" id="3lEpTK7GsTB" role="1tU5fm">
+                          <ref role="3uigEE" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+                        </node>
+                        <node concept="2OqwBi" id="3lEpTK7GsTM" role="33vP2m">
+                          <node concept="37vLTw" id="3lEpTK7GsTN" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7JDtVAB8xQS" resolve="mpsProject" />
+                          </node>
+                          <node concept="liA8E" id="3lEpTK7GsTO" role="2OqNvi">
+                            <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                            <node concept="3VsKOn" id="3lEpTK7GsTP" role="37wK5m">
+                              <ref role="3VsUkX" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3cpWs8" id="4Cg9K368D39" role="3cqZAp">
                       <node concept="3cpWsn" id="4Cg9K368D3a" role="3cpWs9">
                         <property role="TrG5h" value="models" />
@@ -630,9 +652,8 @@
                               <node concept="3clFbS" id="4Cg9K368D3N" role="1bW5cS">
                                 <node concept="3clFbF" id="4Cg9K368D3O" role="3cqZAp">
                                   <node concept="2OqwBi" id="4Cg9K368D3P" role="3clFbG">
-                                    <node concept="2YIFZM" id="4Cg9K368D3Q" role="2Oq$k0">
-                                      <ref role="1Pybhc" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
-                                      <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolve="getInstance" />
+                                    <node concept="37vLTw" id="3lEpTK7G_e6" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="3lEpTK7GsTL" resolve="statusManager" />
                                     </node>
                                     <node concept="liA8E" id="4Cg9K368D3R" role="2OqNvi">
                                       <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.generationRequired(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="generationRequired" />

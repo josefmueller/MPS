@@ -5,12 +5,10 @@ package jetbrains.mps.internal.make.runtime.java;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Element;
 import java.util.Collection;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import java.io.OutputStreamWriter;
 import java.io.BufferedOutputStream;
 import jetbrains.mps.util.FileUtil;
@@ -25,16 +23,11 @@ import jetbrains.mps.util.JDOMUtil;
 
 public class FileProcessor {
   private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
-  private final List<SModel> myModels = new ArrayList<SModel>();
   private final List<FileProcessor.FileAndContent> myFilesAndContents = new ArrayList<FileProcessor.FileAndContent>();
   private final List<IFile> myFilesToDelete = new ArrayList<IFile>();
-  private final Object LOCK = new Object();
+
   public FileProcessor() {
-  }
-  public void invalidateModel(SModel modelDescriptor) {
-    synchronized (LOCK) {
-      myModels.add(modelDescriptor);
-    }
+    // XXX perhaps, could make use of IMessageHandler supplied by facet to replace LOG handling IO errors? 
   }
   public boolean saveContent(IFile file, String content) {
     return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.StringFileContent(content)));
@@ -59,7 +52,6 @@ public class FileProcessor {
     for (IFile file : myFilesToDelete) {
       file.delete();
     }
-    ModelGenerationStatusManager.getInstance().invalidateData(myModels);
   }
   /*package*/ int calcApproximateSize() {
     int size = 0;

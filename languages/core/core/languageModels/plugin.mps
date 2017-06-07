@@ -2226,24 +2226,6 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="3clFbF" id="3QuLV9OzOch" role="3cqZAp">
-                                      <node concept="2OqwBi" id="3QuLV9OzOci" role="3clFbG">
-                                        <node concept="37vLTw" id="3QuLV9OzOcj" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="3QuLV9OzOav" resolve="fp" />
-                                        </node>
-                                        <node concept="liA8E" id="3QuLV9OzOck" role="2OqNvi">
-                                          <ref role="37wK5l" to="iqmz:3KiLc2_D16Y" resolve="invalidateModel" />
-                                          <node concept="2OqwBi" id="3QuLV9OzOcl" role="37wK5m">
-                                            <node concept="37vLTw" id="3QuLV9O$4lR" role="2Oq$k0">
-                                              <ref role="3cqZAo" node="3QuLV9OzV7z" resolve="inputResource" />
-                                            </node>
-                                            <node concept="2sxana" id="3QuLV9OzOcn" role="2OqNvi">
-                                              <ref role="2sxfKC" to="fn29:1Xl3kQ1uadB" resolve="model" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
                                   </node>
                                 </node>
                               </node>
@@ -2317,7 +2299,67 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbH" id="3xnl$BhG1Dp" role="3cqZAp" />
+                <node concept="3SKdUt" id="3lEpTK7JPLc" role="3cqZAp">
+                  <node concept="3SKdUq" id="3lEpTK7JPLe" role="3SKWNk">
+                    <property role="3SKdUp" value="notify that status for models we've been generating could have changed" />
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="3lEpTK7JA0l" role="3cqZAp">
+                  <node concept="3cpWsn" id="3lEpTK7JA0m" role="3cpWs9">
+                    <property role="TrG5h" value="genStatusManager" />
+                    <node concept="3uibUv" id="3lEpTK7JA0e" role="1tU5fm">
+                      <ref role="3uigEE" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+                    </node>
+                    <node concept="2OqwBi" id="3lEpTK7JA0n" role="33vP2m">
+                      <node concept="2OqwBi" id="3lEpTK7JA0o" role="2Oq$k0">
+                        <node concept="2_BwXt" id="3lEpTK7JA0p" role="2Oq$k0" />
+                        <node concept="liA8E" id="3lEpTK7JA0q" role="2OqNvi">
+                          <ref role="37wK5l" to="hfuk:2BjwmTxTf34" resolve="getProject" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="3lEpTK7JA0r" role="2OqNvi">
+                        <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                        <node concept="3VsKOn" id="3lEpTK7JA0s" role="37wK5m">
+                          <ref role="3VsUkX" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="3lEpTK7Jx6F" role="3cqZAp">
+                  <node concept="2OqwBi" id="3lEpTK7JG3U" role="3clFbG">
+                    <node concept="37vLTw" id="3lEpTK7JA0t" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3lEpTK7JA0m" resolve="genStatusManager" />
+                    </node>
+                    <node concept="liA8E" id="3lEpTK7JJmc" role="2OqNvi">
+                      <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.invalidateData(java.lang.Iterable):void" resolve="invalidateData" />
+                      <node concept="2OqwBi" id="3lEpTK7JqRO" role="37wK5m">
+                        <node concept="ElOhk" id="3lEpTK7JoG6" role="2Oq$k0" />
+                        <node concept="3$u5V9" id="3lEpTK7JrfP" role="2OqNvi">
+                          <node concept="1bVj0M" id="3lEpTK7JrfR" role="23t8la">
+                            <node concept="3clFbS" id="3lEpTK7JrfS" role="1bW5cS">
+                              <node concept="3clFbF" id="3lEpTK7JruS" role="3cqZAp">
+                                <node concept="2OqwBi" id="3lEpTK7Jsrh" role="3clFbG">
+                                  <node concept="37vLTw" id="3lEpTK7JruR" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="3lEpTK7JrfT" resolve="it" />
+                                  </node>
+                                  <node concept="2sxana" id="3lEpTK7Ju3a" role="2OqNvi">
+                                    <ref role="2sxfKC" to="fn29:1Xl3kQ1uadB" resolve="model" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="Rh6nW" id="3lEpTK7JrfT" role="1bW2Oz">
+                              <property role="TrG5h" value="it" />
+                              <node concept="2jxLKc" id="3lEpTK7JrfU" role="1tU5fm" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbH" id="3lEpTK7JMXq" role="3cqZAp" />
                 <node concept="3SKdUt" id="3xnl$BhG42J" role="3cqZAp">
                   <node concept="3SKdUq" id="3xnl$BhG42K" role="3SKWNk">
                     <property role="3SKdUp" value="output result" />

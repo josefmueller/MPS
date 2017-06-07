@@ -13,9 +13,7 @@
     <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="3uhc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.generationTypes(MPS.Core/)" />
-    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="vqh0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.make(MPS.Core/)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
   </imports>
@@ -198,10 +196,6 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615" />
-      <concept id="1170075670744" name="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" flags="nn" index="1HWtB8">
-        <child id="1170075728144" name="expression" index="1HWFw0" />
-        <child id="1170075736412" name="block" index="1HWHxc" />
-      </concept>
       <concept id="1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" flags="nn" index="3K4zz7">
         <child id="1163668914799" name="condition" index="3K4Cdx" />
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
@@ -246,25 +240,6 @@
         <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
       </node>
     </node>
-    <node concept="312cEg" id="3KiLc2_D16x" role="jymVt">
-      <property role="TrG5h" value="myModels" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3uibUv" id="3KiLc2_D16y" role="1tU5fm">
-        <ref role="3uigEE" to="33ny:~List" resolve="List" />
-        <node concept="3uibUv" id="78ZRVduKy6v" role="11_B2D">
-          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="3KiLc2_D16$" role="1B3o_S" />
-      <node concept="2ShNRf" id="3KiLc2_D16_" role="33vP2m">
-        <node concept="1pGfFk" id="3KiLc2_D16A" role="2ShVmc">
-          <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
-          <node concept="3uibUv" id="78ZRVduKzlH" role="1pMfVU">
-            <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="312cEg" id="3KiLc2_D16C" role="jymVt">
       <property role="TrG5h" value="myFilesAndContents" />
       <property role="3TUv4t" value="true" />
@@ -303,56 +278,17 @@
         </node>
       </node>
     </node>
-    <node concept="312cEg" id="3KiLc2_D16Q" role="jymVt">
-      <property role="TrG5h" value="LOCK" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3uibUv" id="3KiLc2_D16R" role="1tU5fm">
-        <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-      </node>
-      <node concept="3Tm6S6" id="3KiLc2_D16S" role="1B3o_S" />
-      <node concept="2ShNRf" id="3KiLc2_D16T" role="33vP2m">
-        <node concept="1pGfFk" id="3KiLc2_D16U" role="2ShVmc">
-          <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-        </node>
-      </node>
-    </node>
+    <node concept="2tJIrI" id="3lEpTK7Kwou" role="jymVt" />
     <node concept="3clFbW" id="3KiLc2_D16V" role="jymVt">
       <node concept="3cqZAl" id="3KiLc2_D16W" role="3clF45" />
-      <node concept="3clFbS" id="3KiLc2_D16X" role="3clF47" />
+      <node concept="3clFbS" id="3KiLc2_D16X" role="3clF47">
+        <node concept="3SKdUt" id="3lEpTK7KAjX" role="3cqZAp">
+          <node concept="3SKdUq" id="3lEpTK7KAjY" role="3SKWNk">
+            <property role="3SKdUp" value="XXX perhaps, could make use of IMessageHandler supplied by facet to replace LOG handling IO errors?" />
+          </node>
+        </node>
+      </node>
       <node concept="3Tm1VV" id="3KiLc2_Dsps" role="1B3o_S" />
-    </node>
-    <node concept="3clFb_" id="3KiLc2_D16Y" role="jymVt">
-      <property role="TrG5h" value="invalidateModel" />
-      <node concept="3Tm1VV" id="3KiLc2_D16Z" role="1B3o_S" />
-      <node concept="3cqZAl" id="3KiLc2_D170" role="3clF45" />
-      <node concept="37vLTG" id="3KiLc2_D171" role="3clF46">
-        <property role="TrG5h" value="modelDescriptor" />
-        <node concept="3uibUv" id="78ZRVduKwSu" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="3KiLc2_D173" role="3clF47">
-        <node concept="1HWtB8" id="3KiLc2_D174" role="3cqZAp">
-          <node concept="37vLTw" id="2BHiRxeujSb" role="1HWFw0">
-            <ref role="3cqZAo" node="3KiLc2_D16Q" resolve="LOCK" />
-          </node>
-          <node concept="3clFbS" id="3KiLc2_D176" role="1HWHxc">
-            <node concept="3clFbF" id="3KiLc2_D177" role="3cqZAp">
-              <node concept="2OqwBi" id="3KiLc2_D178" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeu_BC" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3KiLc2_D16x" resolve="myModels" />
-                </node>
-                <node concept="liA8E" id="3KiLc2_D17a" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="37vLTw" id="2BHiRxgm7nd" role="37wK5m">
-                    <ref role="3cqZAo" node="3KiLc2_D171" resolve="modelDescriptor" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
     </node>
     <node concept="3clFb_" id="3KiLc2_D17c" role="jymVt">
       <property role="TrG5h" value="saveContent" />
@@ -601,20 +537,6 @@
                 <node concept="liA8E" id="3KiLc2_D18o" role="2OqNvi">
                   <ref role="37wK5l" to="3ju5:~IFile.delete():boolean" resolve="delete" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="3KiLc2_D18p" role="3cqZAp">
-          <node concept="2OqwBi" id="3KiLc2_D18q" role="3clFbG">
-            <node concept="2YIFZM" id="3KiLc2_D18r" role="2Oq$k0">
-              <ref role="1Pybhc" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
-              <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolve="getInstance" />
-            </node>
-            <node concept="liA8E" id="3KiLc2_D18s" role="2OqNvi">
-              <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.invalidateData(java.lang.Iterable):void" resolve="invalidateData" />
-              <node concept="37vLTw" id="2BHiRxeusaz" role="37wK5m">
-                <ref role="3cqZAo" node="3KiLc2_D16x" resolve="myModels" />
               </node>
             </node>
           </node>

@@ -91,7 +91,8 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
           ModelsToResources m2r;
 
           if (!(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)) {
-            m2r = new ModelsToResources(ModelGenerationStatusManager.getInstance().getModifiedModels(models));
+            ModelGenerationStatusManager statusManager = event.getData(MPSCommonDataKeys.MPS_PROJECT).getComponent(ModelGenerationStatusManager.class);
+            m2r = new ModelsToResources(statusManager.getModifiedModels(models));
           } else {
             m2r = new ModelsToResources(models);
           }

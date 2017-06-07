@@ -14,8 +14,6 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
-import java.util.Collections;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
@@ -94,10 +92,6 @@ public class ModelProperties {
     }
 
     new MissingDependenciesFixer(myModelDescriptor).fixModuleDependencies();
-    // change of model properties might affect generation status. This explicit call is needed  
-    // unless model dispatch proper change events (which it does not at the moment), and project pane  
-    // got no other means to find out it needs to update generation status 
-    ModelGenerationStatusManager.getInstance().invalidateData(Collections.singleton(myModelDescriptor));
   }
   private void addNewDevKits() {
     Set<SModuleReference> devKitsInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).importedDevkits());

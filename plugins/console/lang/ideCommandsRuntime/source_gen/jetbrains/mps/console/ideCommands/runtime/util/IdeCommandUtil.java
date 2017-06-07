@@ -79,18 +79,14 @@ public class IdeCommandUtil {
           } while (ListSequence.fromList(modelsToGenerate.value).count() > oldSize);
         }
         if (dirtyOnly) {
-          final ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
+          final ModelGenerationStatusManager mgsm = project.getComponent(ModelGenerationStatusManager.class);
           modelsToGenerate.value = ListSequence.fromList(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
               return mgsm.generationRequired(it);
             }
           }).toListSequence();
         } else {
-          modelsToGenerate.value = ListSequence.fromList(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
-            public boolean accept(SModel it) {
-              return GenerationFacade.canGenerate(it);
-            }
-          }).toListSequence();
+          modelsToGenerate.value = ListSequence.fromList(modelsToGenerate.value).toListSequence();
         }
       }
     });

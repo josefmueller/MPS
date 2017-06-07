@@ -23,6 +23,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -47,6 +48,17 @@ public class ModelGenerationStatusManager implements CoreComponent {
   private static ModelGenerationStatusManager INSTANCE;
   private final SRepositoryRegistry myRepositoryRegistry;
 
+  /**
+   * @return Use {@link CoreComponent} instance available through respective {@link jetbrains.mps.components.ComponentHost}.
+   *         It's {@link MPSGenerator generator component plugin} that supplies instance, and one can use {@code MPSCoreComponents}
+   *         from IDEA project/application components, or {@code MPSProject#getComponent(Class)} to access it.
+   *         XXX there's single use in MPS left, MPSMakeMediator in idea plugin, which needs to be refactored with respect to
+   *             GenerationPathsController (which changes location of 'generated' files, and the question is what location we shall use
+   *             in MPSMakeMediator.collectResources() then).
+   *         There are uses in mbeddr.
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public static ModelGenerationStatusManager getInstance() {
     return INSTANCE;
   }

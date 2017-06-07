@@ -42,8 +42,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
 
   public GenStatusUpdater(Project mpsProject) {
     super(mpsProject);
-    // FIXME access proper instance using mpsProject
-    myGenerationStatusManager = ModelGenerationStatusManager.getInstance();
+    myGenerationStatusManager = mpsProject.getComponent(ModelGenerationStatusManager.class);
   }
 
   private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {

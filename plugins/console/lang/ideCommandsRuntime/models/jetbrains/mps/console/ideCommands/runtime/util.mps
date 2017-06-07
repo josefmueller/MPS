@@ -564,9 +564,16 @@
                       <node concept="3uibUv" id="2uclMud93z$" role="1tU5fm">
                         <ref role="3uigEE" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
                       </node>
-                      <node concept="2YIFZM" id="2uclMud93z_" role="33vP2m">
-                        <ref role="1Pybhc" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
-                        <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.getInstance():jetbrains.mps.generator.ModelGenerationStatusManager" resolve="getInstance" />
+                      <node concept="2OqwBi" id="3lEpTK7FH6o" role="33vP2m">
+                        <node concept="37vLTw" id="3lEpTK7FGDh" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2uclMud6HEh" resolve="project" />
+                        </node>
+                        <node concept="liA8E" id="3lEpTK7FHEK" role="2OqNvi">
+                          <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                          <node concept="3VsKOn" id="3lEpTK7FImE" role="37wK5m">
+                            <ref role="3VsUkX" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -620,29 +627,8 @@
                           <ref role="3cqZAo" node="2uclMud8PMn" resolve="modelsToGenerate" />
                         </node>
                         <node concept="2OqwBi" id="5Z01_qXsfWX" role="37vLTx">
-                          <node concept="2OqwBi" id="5Z01_qXeVeq" role="2Oq$k0">
-                            <node concept="37vLTw" id="5Z01_qXeVer" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2uclMud8PMn" resolve="modelsToGenerate" />
-                            </node>
-                            <node concept="3zZkjj" id="5Z01_qXfiJM" role="2OqNvi">
-                              <node concept="1bVj0M" id="5Z01_qXfiJN" role="23t8la">
-                                <node concept="3clFbS" id="5Z01_qXfiJO" role="1bW5cS">
-                                  <node concept="3clFbF" id="5Z01_qXfjq8" role="3cqZAp">
-                                    <node concept="2YIFZM" id="22JnV7js0ZQ" role="3clFbG">
-                                      <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
-                                      <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
-                                      <node concept="37vLTw" id="22JnV7js0ZR" role="37wK5m">
-                                        <ref role="3cqZAo" node="5Z01_qXfiJP" resolve="it" />
-                                      </node>
-                                    </node>
-                                  </node>
-                                </node>
-                                <node concept="Rh6nW" id="5Z01_qXfiJP" role="1bW2Oz">
-                                  <property role="TrG5h" value="it" />
-                                  <node concept="2jxLKc" id="5Z01_qXfiJQ" role="1tU5fm" />
-                                </node>
-                              </node>
-                            </node>
+                          <node concept="37vLTw" id="5Z01_qXeVer" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2uclMud8PMn" resolve="modelsToGenerate" />
                           </node>
                           <node concept="ANE8D" id="5Z01_qXsib0" role="2OqNvi" />
                         </node>

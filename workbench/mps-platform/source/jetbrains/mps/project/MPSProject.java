@@ -22,6 +22,8 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.core.platform.Platform;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
@@ -42,10 +44,12 @@ import java.util.List;
 public class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
   private com.intellij.openapi.project.Project myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<>();
+  private final Platform myPlatform;
 
   public MPSProject(@NotNull com.intellij.openapi.project.Project project, ProjectRootListenerComponent unused, MPSCoreComponents mpsCore) {
     super(new ProjectDescriptor(project.getName()), mpsCore.getPlatform().findComponent(SRepositoryRegistry.class));
     myProject = project;
+    myPlatform = mpsCore.getPlatform();
   }
 
   @Override
@@ -124,6 +128,10 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
 
   @Override
   public <T> T getComponent(Class<T> clazz) {
-    return getProject().getComponent(clazz);
+    T rv = getProject().getComponent(clazz);
+    if (rv == null && CoreComponent.class.isAssignableFrom(clazz)) {
+      rv = clazz.cast(myPlatform.findComponent(clazz.asSubclass(CoreComponent.class)));
+    }
+    return rv;
   }
 }

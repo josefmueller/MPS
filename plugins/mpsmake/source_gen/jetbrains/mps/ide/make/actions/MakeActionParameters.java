@@ -108,7 +108,8 @@ public class MakeActionParameters {
       smds = Sequence.fromIterable(Collections.<SModel>emptyList());
     }
     if (!(myCleanBuild)) {
-      smds = ModelGenerationStatusManager.getInstance().getModifiedModels(Sequence.fromIterable(smds).toListSequence());
+      ModelGenerationStatusManager statusManager = myProject.getComponent(ModelGenerationStatusManager.class);
+      smds = statusManager.getModifiedModels(Sequence.fromIterable(smds).toListSequence());
     }
     return new ModelsToResources(smds).resources();
   }

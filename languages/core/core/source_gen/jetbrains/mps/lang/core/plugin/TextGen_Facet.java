@@ -61,6 +61,8 @@ import jetbrains.mps.generator.ModelExports;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.util.IStatus;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.resources.TResource;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -326,7 +328,6 @@ public class TextGen_Facet extends IFacet.Stub {
                       new StaleFilesCollector(cacheOutputDir).updateDelta(cachesLocation.getDelta());
                       ListSequence.fromList(MapSequence.fromMap(deltas2).get(inputResource)).addElement(javaSourcesLoc.getDelta());
                       ListSequence.fromList(MapSequence.fromMap(deltas2).get(inputResource)).addElement(cachesLocation.getDelta());
-                      fp.invalidateModel(inputResource.model());
                     }
                   });
                 }
@@ -341,6 +342,13 @@ public class TextGen_Facet extends IFacet.Stub {
                   monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to save files")));
                   return new IResult.FAILURE(_output_21gswx_a0b);
                 }
+                // notify that status for models we've been generating could have changed 
+                ModelGenerationStatusManager genStatusManager = monitor.getSession().getProject().getComponent(ModelGenerationStatusManager.class);
+                genStatusManager.invalidateData(Sequence.fromIterable(input).select(new ISelector<GResource, SModel>() {
+                  public SModel select(GResource it) {
+                    return it.model();
+                  }
+                }));
 
                 // output result 
                 for (GResource resource : SetSequence.fromSet(MapSequence.fromMap(deltas2).keySet())) {

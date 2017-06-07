@@ -22,6 +22,7 @@ import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
 import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.generator.impl.ModelStreamProviderImpl;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -56,6 +57,7 @@ public final class GenerationFacade {
    * @deprecated use {@link ModelGenerationStatusManager#getModifiedModels(Collection)} instead
    */
   @Deprecated
+  @ToRemove(version = 2017.2)
   public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models) {
     return ModelGenerationStatusManager.getInstance().getModifiedModels(models);
   }
