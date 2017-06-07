@@ -390,7 +390,7 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
@@ -2287,10 +2287,7 @@
                               </node>
                             </node>
                             <node concept="liA8E" id="6zsZmIC1FU_" role="2OqNvi">
-                              <ref role="37wK5l" to="fn29:6gLh390ElAV" resolve="resources" />
-                              <node concept="3clFbT" id="6zsZmIC1FUA" role="37wK5m">
-                                <property role="3clFbU" value="false" />
-                              </node>
+                              <ref role="37wK5l" to="fn29:713BH0S$TAn" resolve="resources" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="6zsZmIC1FUB" role="37wK5m">

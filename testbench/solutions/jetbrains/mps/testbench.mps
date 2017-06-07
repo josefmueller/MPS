@@ -2679,55 +2679,34 @@
                           <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
                         </node>
                       </node>
-                      <node concept="2OqwBi" id="4Vmgh2bGfsm" role="33vP2m">
-                        <node concept="2OqwBi" id="4Vmgh2bGfsn" role="2Oq$k0">
-                          <node concept="1rXfSq" id="4Vmgh2bGfso" role="2Oq$k0">
-                            <ref role="37wK5l" node="4J9cha2iQwF" resolve="withGenerators" />
-                            <node concept="2YIFZM" id="4Vmgh2bGfsp" role="37wK5m">
-                              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-                              <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
-                              <node concept="37vLTw" id="4Vmgh2bGfsq" role="37wK5m">
-                                <ref role="3cqZAo" node="4J9cha2jfz9" resolve="module" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3goQfb" id="4Vmgh2bGfsr" role="2OqNvi">
-                            <node concept="1bVj0M" id="4Vmgh2bGfss" role="23t8la">
-                              <node concept="3clFbS" id="4Vmgh2bGfst" role="1bW5cS">
-                                <node concept="3clFbF" id="4Vmgh2bGfsu" role="3cqZAp">
-                                  <node concept="2OqwBi" id="4Vmgh2bGfsv" role="3clFbG">
-                                    <node concept="37vLTw" id="4Vmgh2bGfsw" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="4Vmgh2bGfsy" resolve="mod" />
-                                    </node>
-                                    <node concept="liA8E" id="4Vmgh2bGfsx" role="2OqNvi">
-                                      <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="Rh6nW" id="4Vmgh2bGfsy" role="1bW2Oz">
-                                <property role="TrG5h" value="mod" />
-                                <node concept="2jxLKc" id="4Vmgh2bGfsz" role="1tU5fm" />
-                              </node>
+                      <node concept="2OqwBi" id="4Vmgh2bGfsn" role="33vP2m">
+                        <node concept="1rXfSq" id="4Vmgh2bGfso" role="2Oq$k0">
+                          <ref role="37wK5l" node="4J9cha2iQwF" resolve="withGenerators" />
+                          <node concept="2YIFZM" id="4Vmgh2bGfsp" role="37wK5m">
+                            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+                            <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
+                            <node concept="37vLTw" id="4Vmgh2bGfsq" role="37wK5m">
+                              <ref role="3cqZAo" node="4J9cha2jfz9" resolve="module" />
                             </node>
                           </node>
                         </node>
-                        <node concept="3zZkjj" id="4Vmgh2bGfs$" role="2OqNvi">
-                          <node concept="1bVj0M" id="4Vmgh2bGfs_" role="23t8la">
-                            <node concept="3clFbS" id="4Vmgh2bGfsA" role="1bW5cS">
-                              <node concept="3clFbF" id="4Vmgh2bGfsB" role="3cqZAp">
-                                <node concept="2YIFZM" id="4Vmgh2bGfsC" role="3clFbG">
-                                  <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
-                                  <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
-                                  <node concept="37vLTw" id="4Vmgh2bGfsD" role="37wK5m">
-                                    <ref role="3cqZAo" node="4Vmgh2bGfsE" resolve="it" />
+                        <node concept="3goQfb" id="4Vmgh2bGfsr" role="2OqNvi">
+                          <node concept="1bVj0M" id="4Vmgh2bGfss" role="23t8la">
+                            <node concept="3clFbS" id="4Vmgh2bGfst" role="1bW5cS">
+                              <node concept="3clFbF" id="4Vmgh2bGfsu" role="3cqZAp">
+                                <node concept="2OqwBi" id="4Vmgh2bGfsv" role="3clFbG">
+                                  <node concept="37vLTw" id="4Vmgh2bGfsw" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4Vmgh2bGfsy" resolve="mod" />
+                                  </node>
+                                  <node concept="liA8E" id="4Vmgh2bGfsx" role="2OqNvi">
+                                    <ref role="37wK5l" to="lui2:~SModule.getModels():java.lang.Iterable" resolve="getModels" />
                                   </node>
                                 </node>
                               </node>
                             </node>
-                            <node concept="Rh6nW" id="4Vmgh2bGfsE" role="1bW2Oz">
-                              <property role="TrG5h" value="it" />
-                              <node concept="2jxLKc" id="4Vmgh2bGfsF" role="1tU5fm" />
+                            <node concept="Rh6nW" id="4Vmgh2bGfsy" role="1bW2Oz">
+                              <property role="TrG5h" value="mod" />
+                              <node concept="2jxLKc" id="4Vmgh2bGfsz" role="1tU5fm" />
                             </node>
                           </node>
                         </node>
@@ -2745,10 +2724,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="4Vmgh2bGh1A" role="2OqNvi">
-                        <ref role="37wK5l" to="fn29:6gLh390ElAV" resolve="resources" />
-                        <node concept="3clFbT" id="4Vmgh2bGh1B" role="37wK5m">
-                          <property role="3clFbU" value="false" />
-                        </node>
+                        <ref role="37wK5l" to="fn29:713BH0S$TAn" resolve="resources" />
                       </node>
                     </node>
                   </node>

@@ -112,7 +112,7 @@ public class TextPreviewModel_Action extends BaseAction {
       IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
       SModel model = TextPreviewModel_Action.this.modelToGenerate(event);
       final SModelReference model2generateRef = model.getReference();
-      final Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(false), scr);
+      final Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(), scr);
       ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
         public void run() {
           try {

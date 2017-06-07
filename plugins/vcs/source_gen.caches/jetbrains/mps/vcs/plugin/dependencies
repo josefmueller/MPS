@@ -87,6 +87,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
+    <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationCheckHelper" />
     <classNode dependClassName="jetbrains.mps.ide.make.DefaultMakeMessageHandler" />

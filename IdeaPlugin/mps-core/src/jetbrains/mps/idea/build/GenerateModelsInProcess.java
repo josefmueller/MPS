@@ -49,7 +49,7 @@ public class GenerateModelsInProcess {
 
   public void generate(@Nullable final MPSMakeConfigurator makeConfigurator) {
     GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
-    Iterable<IResource> resources = new ModelsToResources(myModels).resources(false);
+    Iterable<IResource> resources = new ModelsToResources(myModels).resources();
     MessagesViewTool messagesView = myProject.getComponent(MessagesViewTool.class);
     IMessageHandler msgHandler = messagesView.newHandler("MPS generator");
 

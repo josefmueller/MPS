@@ -42,7 +42,7 @@ public class ConsoleUtil {
     mvt.getAvailableList(messagesListName, true).setInfoEnabled(false);
     MakeSession session = new MakeSession(project, mvt.newHandler(messagesListName), true);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(false), scr);
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(), scr);
       try {
         return future.get().isSucessful();
       } catch (InterruptedException e) {

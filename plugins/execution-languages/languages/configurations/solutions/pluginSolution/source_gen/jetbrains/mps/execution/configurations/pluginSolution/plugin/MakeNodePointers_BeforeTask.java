@@ -14,9 +14,10 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
@@ -53,11 +54,7 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
       final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
       List<IResource> resources = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<List<IResource>>() {
         public List<IResource> compute() {
-          Iterable<SModel> models = ListSequence.fromList(myNodePointers).where(new IWhereFilter<SNodeReference>() {
-            public boolean accept(SNodeReference it) {
-              return it != null;
-            }
-          }).select(new ISelector<SNodeReference, SModel>() {
+          Iterable<SModel> models = ListSequence.fromList(myNodePointers).where(new NotNullWhereFilter<SNodeReference>()).select(new ISelector<SNodeReference, SModel>() {
             public SModel select(SNodeReference it) {
               SNode n = it.resolve(mpsProject.getRepository());
               return (n == null ? null : n.getModel());
@@ -70,7 +67,7 @@ public class MakeNodePointers_BeforeTask extends BaseMpsBeforeTaskProvider<MakeN
           if (Sequence.fromIterable(models).isEmpty()) {
             return null;
           }
-          List<IResource> list = ListSequence.fromListWithValues(new ArrayList<IResource>(), new ModelsToResources(models).resources(false));
+          List<IResource> list = ListSequence.fromListWithValues(new ArrayList<IResource>(), new ModelsToResources(models).resources());
           return list;
         }
       });

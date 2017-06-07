@@ -21,8 +21,9 @@ import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.ide.generator.GenerationCheckHelper;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.ide.make.DefaultMakeMessageHandler;
@@ -87,7 +88,14 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
       public IListSequence<IResource> compute() {
         List<SModel> models = MakeOrRebuildModelsFromChangeList_Action.this.getModels2Build(event.getData(CommonDataKeys.VIRTUAL_FILE_ARRAY), event);
         if (new GenerationCheckHelper().checkModelsBeforeGenerationIfNeeded(project, models)) {
-          return Sequence.fromIterable(new ModelsToResources(models).resources(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)).toListSequence();
+          ModelsToResources m2r;
+
+          if (!(MakeOrRebuildModelsFromChangeList_Action.this.rebuild)) {
+            m2r = new ModelsToResources(ModelGenerationStatusManager.getInstance().getModifiedModels(models));
+          } else {
+            m2r = new ModelsToResources(models);
+          }
+          return Sequence.fromIterable(m2r.resources()).toListSequence();
         }
         return ListSequence.fromList(new ArrayList<IResource>());
       }

@@ -52,7 +52,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import java.util.Collections;
-import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
@@ -281,12 +280,8 @@ public class ModuleGenerationHolder {
           public Iterable<SModel> translate(SModule mod) {
             return mod.getModels();
           }
-        }).where(new IWhereFilter<SModel>() {
-          public boolean accept(SModel it) {
-            return GenerationFacade.canGenerate(it);
-          }
         });
-        return new ModelsToResources(models).resources(false);
+        return new ModelsToResources(models).resources();
       }
     });
   }

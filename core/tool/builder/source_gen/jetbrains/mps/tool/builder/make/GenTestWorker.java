@@ -50,11 +50,9 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.tool.common.TeamCityMessageFormat;
 import jetbrains.mps.tool.common.ScriptProperties;
@@ -287,13 +285,9 @@ public class GenTestWorker extends GeneratorWorker {
             return m.getModels();
           }
         }));
-        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
-          public boolean accept(SModule it) {
-            return it instanceof Language;
-          }
-        }).translate(new ITranslator2<SModule, Generator>() {
-          public Iterable<Generator> translate(SModule it) {
-            return ((Language) it).getGenerators();
+        result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(modules).ofType(Language.class).translate(new ITranslator2<Language, Generator>() {
+          public Iterable<Generator> translate(Language it) {
+            return it.getGenerators();
           }
         }).translate(new ITranslator2<Generator, SModel>() {
           public Iterable<SModel> translate(Generator gen) {
@@ -303,11 +297,7 @@ public class GenTestWorker extends GeneratorWorker {
         result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable(models));
       }
     });
-    return new ModelsToResources(Sequence.fromIterable(result.value).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel smd) {
-        return GenerationFacade.canGenerate(smd);
-      }
-    })).resources(false);
+    return new ModelsToResources(result.value).resources();
   }
 
   private IFile tmpFile(String path) {

@@ -10,12 +10,13 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
@@ -59,7 +60,7 @@ public class MakeActionParameters {
     if (myModels != null && ListSequence.fromList(myModels).isNotEmpty()) {
       if (!(ListSequence.fromList(myModels).any(new IWhereFilter<SModel>() {
         public boolean accept(SModel md) {
-          return SNodeOperations.isGeneratable(md);
+          return GenerationFacade.canGenerate(md);
         }
       }))) {
         return null;
@@ -106,11 +107,10 @@ public class MakeActionParameters {
     } else {
       smds = Sequence.fromIterable(Collections.<SModel>emptyList());
     }
-    return new ModelsToResources(Sequence.fromIterable(smds).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return SNodeOperations.isGeneratable(it);
-      }
-    })).resources(!(myCleanBuild));
+    if (!(myCleanBuild)) {
+      smds = ModelGenerationStatusManager.getInstance().getModifiedModels(Sequence.fromIterable(smds).toListSequence());
+    }
+    return new ModelsToResources(smds).resources();
   }
   private Iterable<SModel> allModelsOf(SModule module) {
     Iterable<SModel> models = ((Iterable<SModel>) module.getModels());

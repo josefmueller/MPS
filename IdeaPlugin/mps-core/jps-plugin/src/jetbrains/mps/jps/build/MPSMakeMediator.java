@@ -17,20 +17,14 @@
 package jetbrains.mps.jps.build;
 
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
-import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationSettingsProvider;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.make.script.IConfigMonitor.Stub;
-import jetbrains.mps.make.script.IFeedback;
-import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
@@ -51,7 +45,6 @@ import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.mps.openapi.model.SModel;
 
-import java.lang.Iterable;
 import java.util.Collection;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -130,20 +123,10 @@ public class MPSMakeMediator {
   }
 
   private Iterable<MResource> collectResources(final Collection<SModel> models) {
-    final ISequence<SModel> generatableModels = Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
-      @Override
-      public boolean accept(SModel smd) {
-        return GenerationFacade.canGenerate(smd);
-      }
-    });
     boolean dirtyOnly = JavaBuilderUtil.isCompileJavaIncrementally(myContext);
-    final Iterable<IResource> modelsResources = new ModelsToResources(generatableModels).resources(dirtyOnly);
-    return Sequence.fromIterable(modelsResources).select(new ISelector<IResource, MResource>() {
-      @Override
-      public MResource select(IResource r) {
-        return (MResource) r;
-      }
-    });
+    Collection<SModel> modifiedModels = dirtyOnly ? ModelGenerationStatusManager.getInstance().getModifiedModels(models) : models;
+    final Iterable<IResource> modelsResources = new ModelsToResources(modifiedModels).resources();
+    return Sequence.fromIterable(modelsResources).ofType(MResource.class);
   }
 
   private class JpsMpsMessageHandler implements IMessageHandler {

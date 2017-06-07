@@ -70,7 +70,7 @@ public class DeployScript {
   public String make() {
     MakeSession session = new MakeSession(myProject, new DefaultMakeMessageHandler(myProject), false);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myModelsToMake).resources(false));
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myModelsToMake).resources());
       IResult result = null;
       try {
         result = future.get();
