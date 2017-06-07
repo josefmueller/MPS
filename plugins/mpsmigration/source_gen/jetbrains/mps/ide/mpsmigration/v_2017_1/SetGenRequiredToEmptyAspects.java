@@ -13,9 +13,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 
 public class SetGenRequiredToEmptyAspects extends BaseProjectMigration {
   public SetGenRequiredToEmptyAspects() {
@@ -45,15 +44,11 @@ public class SetGenRequiredToEmptyAspects extends BaseProjectMigration {
         }
       });
 
-      Sequence.fromIterable(modelsToClean.value).where(new IWhereFilter<SModel>() {
+      project.getComponent(ModelGenerationStatusManager.class).discard(Sequence.fromIterable(modelsToClean.value).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it) {
           return GenerationFacade.canGenerate(it);
         }
-      }).visitAll(new IVisitor<SModel>() {
-        public void visit(SModel it) {
-          GenerationDependenciesCache.getInstance().discard(it);
-        }
-      });
+      }));
     }
     return true;
   }

@@ -21,10 +21,9 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.function.Consumer;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import jetbrains.mps.project.facets.GenerationTargetFacet;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -112,15 +111,11 @@ public class IdeCommandUtil {
         }
       }
     });
-    ListSequence.fromList(modelsToClean.value).where(new IWhereFilter<SModel>() {
+    project.getComponent(ModelGenerationStatusManager.class).discard(ListSequence.fromList(modelsToClean.value).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return GenerationFacade.canGenerate(it);
       }
-    }).visitAll(new IVisitor<SModel>() {
-      public void visit(SModel it) {
-        GenerationDependenciesCache.getInstance().discard(it);
-      }
-    });
+    }));
   }
 
   public static void removeGenSources(final Project project, final Iterable<? extends SModel> models, Iterable<? extends SModule> modules, final boolean wholeProject) {

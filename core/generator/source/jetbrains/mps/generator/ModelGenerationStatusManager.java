@@ -211,8 +211,16 @@ public class ModelGenerationStatusManager implements CoreComponent {
           invalidateData(Collections.singleton(model));
         }
       });
-
     }
+  }
+
+  /**
+   * {@link #invalidateData(Iterable) invalidates generation status} and discards its persisted cached value, if any (deletes 'generated' file)
+   * @param models
+   */
+  public void discard(Iterable<? extends SModel> models) {
+    models.forEach(myModelHashCache::discard);
+    invalidateData(models);
   }
 
   public void addGenerationStatusListener(ModelGenerationStatusListener l) {

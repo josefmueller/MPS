@@ -18,20 +18,15 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
-    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tpc3" ref="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
-    <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
     <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
-    <import index="w8cm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.dependencies(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
-    <import index="lvdd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.cache(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1521,53 +1516,43 @@
               </node>
             </node>
             <node concept="3clFbH" id="3dvEHZamkqI" role="3cqZAp" />
-            <node concept="3clFbF" id="2tFdLTOV5Bz" role="3cqZAp">
-              <node concept="2OqwBi" id="2tFdLTOV7ck" role="3clFbG">
-                <node concept="2OqwBi" id="2tFdLTP0xF2" role="2Oq$k0">
-                  <node concept="37vLTw" id="2tFdLTOV5By" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2tFdLTOUZEF" resolve="modelsToClean" />
+            <node concept="3clFbF" id="7DXmUoHtM_p" role="3cqZAp">
+              <node concept="2OqwBi" id="7DXmUoHtNjn" role="3clFbG">
+                <node concept="2OqwBi" id="7DXmUoHtMRS" role="2Oq$k0">
+                  <node concept="37vLTw" id="7DXmUoHtM_n" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3dvEHZam2Vd" resolve="project" />
                   </node>
-                  <node concept="3zZkjj" id="2tFdLTP0xOU" role="2OqNvi">
-                    <node concept="1bVj0M" id="2tFdLTP0xOV" role="23t8la">
-                      <node concept="3clFbS" id="2tFdLTP0xOW" role="1bW5cS">
-                        <node concept="3clFbF" id="2tFdLTP0xOX" role="3cqZAp">
-                          <node concept="2YIFZM" id="22JnV7jq6uy" role="3clFbG">
-                            <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
-                            <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
-                            <node concept="37vLTw" id="22JnV7jq6uz" role="37wK5m">
-                              <ref role="3cqZAo" node="2tFdLTP0xP0" resolve="it" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Rh6nW" id="2tFdLTP0xP0" role="1bW2Oz">
-                        <property role="TrG5h" value="it" />
-                        <node concept="2jxLKc" id="2tFdLTP0xP1" role="1tU5fm" />
-                      </node>
+                  <node concept="liA8E" id="7DXmUoHtN7X" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <node concept="3VsKOn" id="7DXmUoHtNa7" role="37wK5m">
+                      <ref role="3VsUkX" to="ap4t:~ModelGenerationStatusManager" resolve="ModelGenerationStatusManager" />
                     </node>
                   </node>
                 </node>
-                <node concept="2es0OD" id="2tFdLTOVaWK" role="2OqNvi">
-                  <node concept="1bVj0M" id="2tFdLTOVaWM" role="23t8la">
-                    <node concept="3clFbS" id="2tFdLTOVaWN" role="1bW5cS">
-                      <node concept="3clFbF" id="4j8HkbSO4Q0" role="3cqZAp">
-                        <node concept="2OqwBi" id="2tFdLTOUUyF" role="3clFbG">
-                          <node concept="2YIFZM" id="2tFdLTOUMCv" role="2Oq$k0">
-                            <ref role="1Pybhc" to="w8cm:~GenerationDependenciesCache" resolve="GenerationDependenciesCache" />
-                            <ref role="37wK5l" to="w8cm:~GenerationDependenciesCache.getInstance():jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" resolve="getInstance" />
-                          </node>
-                          <node concept="liA8E" id="2tFdLTOUX3S" role="2OqNvi">
-                            <ref role="37wK5l" to="lvdd:~BaseModelCache.discard(org.jetbrains.mps.openapi.model.SModel):void" resolve="discard" />
-                            <node concept="37vLTw" id="2tFdLTOVglH" role="37wK5m">
-                              <ref role="3cqZAo" node="2tFdLTOVaWO" resolve="it" />
+                <node concept="liA8E" id="7DXmUoHtNCi" role="2OqNvi">
+                  <ref role="37wK5l" to="ap4t:~ModelGenerationStatusManager.discard(java.lang.Iterable):void" resolve="discard" />
+                  <node concept="2OqwBi" id="2tFdLTP0xF2" role="37wK5m">
+                    <node concept="37vLTw" id="2tFdLTOV5By" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2tFdLTOUZEF" resolve="modelsToClean" />
+                    </node>
+                    <node concept="3zZkjj" id="2tFdLTP0xOU" role="2OqNvi">
+                      <node concept="1bVj0M" id="2tFdLTP0xOV" role="23t8la">
+                        <node concept="3clFbS" id="2tFdLTP0xOW" role="1bW5cS">
+                          <node concept="3clFbF" id="2tFdLTP0xOX" role="3cqZAp">
+                            <node concept="2YIFZM" id="22JnV7jq6uy" role="3clFbG">
+                              <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
+                              <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
+                              <node concept="37vLTw" id="22JnV7jq6uz" role="37wK5m">
+                                <ref role="3cqZAo" node="2tFdLTP0xP0" resolve="it" />
+                              </node>
                             </node>
                           </node>
                         </node>
+                        <node concept="Rh6nW" id="2tFdLTP0xP0" role="1bW2Oz">
+                          <property role="TrG5h" value="it" />
+                          <node concept="2jxLKc" id="2tFdLTP0xP1" role="1tU5fm" />
+                        </node>
                       </node>
-                    </node>
-                    <node concept="Rh6nW" id="2tFdLTOVaWO" role="1bW2Oz">
-                      <property role="TrG5h" value="it" />
-                      <node concept="2jxLKc" id="2tFdLTOVaWP" role="1tU5fm" />
                     </node>
                   </node>
                 </node>
