@@ -15,7 +15,7 @@
     <file name="ProjectCheckoutListener.java">
       <node id="3521790172251160936" at="21,52,22,60" concept="7" />
       <node id="3521790172251160952" at="25,44,26,219" concept="6" />
-      <node id="7171758144016813665" at="27,20,28,100" concept="6" />
+      <node id="7171758144016813665" at="27,31,28,100" concept="6" />
       <node id="7171758144016903359" at="29,36,30,97" concept="1" />
       <node id="3521790172251160982" at="32,7,33,18" concept="7" />
       <node id="3521790172251160984" at="34,5,35,17" concept="7" />
@@ -39,7 +39,7 @@
         <var name="dir" id="3521790172251160931" />
         <var name="name" id="3521790172251160933" />
       </scope>
-      <scope id="3521790172251160972" at="27,20,31,9">
+      <scope id="3521790172251160972" at="27,31,31,9">
         <var name="openedProject" id="7171758144016813666" />
       </scope>
       <scope id="3521790172251160951" at="25,44,33,18">
@@ -231,6 +231,38 @@
       </scope>
       <unit id="6203974263416588879" at="61,0,73,0" name="jetbrains.mps.vcs.integration.GeneratedFileConflictResolving$MyFileListener" />
       <unit id="6203974263416579308" at="22,0,80,0" name="jetbrains.mps.vcs.integration.GeneratedFileConflictResolving" />
+    </file>
+  </root>
+  <root nodeRef="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)/7250946472729958306">
+    <file name="ProjectDirCheckoutListener.java">
+      <node id="7250946472729958325" at="15,74,16,19" concept="7" />
+      <node id="7250946472729974326" at="17,5,18,215" concept="6" />
+      <node id="7250946472729973902" at="18,215,19,0" concept="8" />
+      <node id="7250946472730009584" at="20,29,21,91" concept="6" />
+      <node id="7250946472730010834" at="22,34,23,95" concept="1" />
+      <node id="7250946472729958350" at="25,5,26,16" concept="7" />
+      <node id="7250946472729958316" at="14,78,17,5" concept="4" />
+      <node id="7250946472730010832" at="21,91,24,7" concept="4" />
+      <node id="7250946472729958354" at="28,0,31,0" concept="5" trace="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="7250946472729958334" at="19,0,25,5" concept="4" />
+      <node id="7250946472729958309" at="13,0,28,0" concept="5" trace="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
+      <scope id="7250946472729958358" at="29,63,29,63" />
+      <scope id="7250946472729958324" at="15,74,16,19" />
+      <scope id="7250946472730010833" at="22,34,23,95" />
+      <scope id="7250946472729958354" at="28,0,31,0">
+        <var name="lastOpenedProject" id="7250946472729958356" />
+      </scope>
+      <scope id="7250946472729958344" at="20,29,24,7">
+        <var name="openedProject" id="7250946472730009585" />
+      </scope>
+      <scope id="7250946472729958315" at="14,78,26,16">
+        <var name="rc" id="7250946472729974329" />
+      </scope>
+      <scope id="7250946472729958309" at="13,0,28,0">
+        <var name="directory" id="7250946472729958313" />
+        <var name="project" id="7250946472729958311" />
+      </scope>
+      <unit id="7250946472729958306" at="12,0,32,0" name="jetbrains.mps.vcs.integration.ProjectDirCheckoutListener" />
     </file>
   </root>
 </debug-info>
