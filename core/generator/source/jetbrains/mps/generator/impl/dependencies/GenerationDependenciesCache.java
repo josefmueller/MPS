@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.generator.cache.CacheGenerator;
@@ -24,6 +23,7 @@ import jetbrains.mps.generator.cache.ParseFacility;
 import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -41,16 +41,16 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
 
   private static GenerationDependenciesCache INSTANCE;
 
+  /**
+   * @deprecated To find out generation status of model, use {@link jetbrains.mps.generator.ModelGenerationStatusManager} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public static GenerationDependenciesCache getInstance() {
     return INSTANCE;
   }
 
   public GenerationDependenciesCache() {
-    super(null);
-  }
-
-  public GenerationDependenciesCache(CleanupManager manager) {
-    super(manager);
   }
 
   @Override

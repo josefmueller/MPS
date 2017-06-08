@@ -124,7 +124,7 @@ public class MPSMakeMediator {
 
   private Iterable<MResource> collectResources(final Collection<SModel> models) {
     boolean dirtyOnly = JavaBuilderUtil.isCompileJavaIncrementally(myContext);
-    Collection<SModel> modifiedModels = dirtyOnly ? ModelGenerationStatusManager.getInstance().getModifiedModels(models) : models;
+    Collection<SModel> modifiedModels = dirtyOnly ? myProject.getComponent(ModelGenerationStatusManager.class).getModifiedModels(models) : models;
     final Iterable<IResource> modelsResources = new ModelsToResources(modifiedModels).resources();
     return Sequence.fromIterable(modelsResources).ofType(MResource.class);
   }

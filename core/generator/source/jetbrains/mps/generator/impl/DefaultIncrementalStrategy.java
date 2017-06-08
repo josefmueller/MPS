@@ -33,6 +33,7 @@ public class DefaultIncrementalStrategy extends DefaultNonIncrementalStrategy {
 
   @Override
   public GenerationDependencies getDependencies(SModel descriptor) {
+    // incremental generation the way it was has to become history anyway
     return GenerationDependenciesCache.getInstance().get(descriptor);
   }
 

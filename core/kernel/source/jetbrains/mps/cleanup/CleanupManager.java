@@ -15,75 +15,33 @@
  */
 package jetbrains.mps.cleanup;
 
-import jetbrains.mps.classloading.MPSClassesListener;
-import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.module.ReloadableModuleBase;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
 
 /**
  * FIXME what the hell is that? Any contract? Project/global? read/write access to model? What to clear?
  */
 @Deprecated
-public class CleanupManager implements CoreComponent {
-  private static CleanupManager INSTANCE;
-  private ClassLoaderManager myManager;
-  private MPSClassesListener myClassesListener;
-  private final Object myLock = new Object();
-  private List<CleanupListener> myCleanupListeners = new ArrayList<CleanupListener>();
+@ToRemove(version = 2017.2)
+public class CleanupManager {
 
   public static CleanupManager getInstance() {
-    return INSTANCE;
+    Logger.getLogger(CleanupManager.class).error("CleanupManager is no-op, do not use");
+    return new CleanupManager();
   }
 
-  @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("CleanupManager is already initialized");
-    }
-    myClassesListener = new MPSClassesListenerAdapter() {
-      @Override
-      public void beforeClassesUnloaded(Set<? extends ReloadableModuleBase> modules) {
-        cleanup();
-      }
-    };
-    INSTANCE = this;
-    myManager.addClassesHandler(myClassesListener);
-  }
-
-  @Override
-  public void dispose() {
-    myManager.removeClassesHandler(myClassesListener);
-    INSTANCE = null;
-  }
-
-  public CleanupManager(ClassLoaderManager manager) {
-    myManager = manager;
+  public CleanupManager() {
   }
 
   public void addCleanupListener(CleanupListener l) {
-    synchronized (myLock) {
-      myCleanupListeners.add(l);
-    }
+    Logger.getLogger(getClass()).error("CleanupManager is no-op, do not use");
   }
 
   public void removeCleanupListener(CleanupListener l) {
-    synchronized (myLock) {
-      myCleanupListeners.remove(l);
-    }
+    Logger.getLogger(getClass()).error("CleanupManager is no-op, do not use");
   }
 
   public void cleanup() {
-    List<CleanupListener> listenersToInvoke = new ArrayList<CleanupListener>();
-    synchronized (myLock) {
-      listenersToInvoke.addAll(myCleanupListeners);
-    }
-    for (CleanupListener l : listenersToInvoke) {
-      l.performCleanup();
-    }
+    Logger.getLogger(getClass()).error("CleanupManager is no-op, do not use");
   }
 }

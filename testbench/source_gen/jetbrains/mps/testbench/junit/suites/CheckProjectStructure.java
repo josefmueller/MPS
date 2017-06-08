@@ -172,7 +172,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     final List<String> errors = new ArrayList<String>();
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        GenerationDependenciesCache genDeps = new GenerationDependenciesCache(null);
+        GenerationDependenciesCache genDeps = new GenerationDependenciesCache();
         for (SModel sm : extractModels(false)) {
           SModule module = sm.getModule();
           if (module == null) {

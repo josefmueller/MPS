@@ -17,7 +17,6 @@ package jetbrains.mps.core.platform;
 
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentHost;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.components.CoreComponent;
@@ -113,7 +112,6 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     init(new SModelFileTracker.Plug(myRepositoryRegistry));
     init(new ModuleRepositoryFacade(myModuleRepository));
     init(new ModuleFileTracker(myModuleRepository));
-    init(new CleanupManager(myClassLoaderManager));
     init(new PathMacros());
     myLibraryInitializer = init(new LibraryInitializer(myModuleRepository));
     init(new GlobalScope(myModuleRepository));

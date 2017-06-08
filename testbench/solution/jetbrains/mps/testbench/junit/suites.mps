@@ -4069,10 +4069,9 @@
                       <node concept="3uibUv" id="2jpiTL3ooNa" role="1tU5fm">
                         <ref role="3uigEE" to="w8cm:~GenerationDependenciesCache" resolve="GenerationDependenciesCache" />
                       </node>
-                      <node concept="2ShNRf" id="2jpiTL3oruE" role="33vP2m">
-                        <node concept="1pGfFk" id="2jpiTL3oDow" role="2ShVmc">
-                          <ref role="37wK5l" to="w8cm:~GenerationDependenciesCache.&lt;init&gt;(jetbrains.mps.cleanup.CleanupManager)" resolve="GenerationDependenciesCache" />
-                          <node concept="10Nm6u" id="2jpiTL3oDLj" role="37wK5m" />
+                      <node concept="2ShNRf" id="5gA9sJWQjeR" role="33vP2m">
+                        <node concept="1pGfFk" id="5gA9sJWQkBp" role="2ShVmc">
+                          <ref role="37wK5l" to="w8cm:~GenerationDependenciesCache.&lt;init&gt;()" resolve="GenerationDependenciesCache" />
                         </node>
                       </node>
                     </node>

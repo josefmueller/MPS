@@ -201,6 +201,8 @@ public class ModelGenerationStatusManager implements CoreComponent {
    * At the moment, there's no effective way to listen to file changes through MPS VFS API other than attaching a listener to specific file
    * To listen to changes (as well as additions and removals) of a fixed file, we rely on IDEA's (platform's) mechanism now.
    * This method is an entry point for external (effective) file change notification.
+   *
+   * NOTE, if nobody have asked for a status of a model with the given cacheFile, no notifications would get dispatched.
    */
   public void invalidateData(IFile cacheFile) {
     SModelReference mr = myModelHashCache.invalidateCacheForFile(cacheFile);

@@ -54,7 +54,6 @@ import jetbrains.mps.generator.GeneratorTaskBase;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.DefaultTaskBuilder;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -508,10 +507,6 @@ public class Generate_Facet extends IFacet.Stub {
                     Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider().publishAll();
                   }
                 });
-                // XXX I have no idea if there's a reason to invoke cleanup right after transformation, just copied this code here from GenerationFacade 
-                //     I'd remove listeners first, and then drop CM altogether 
-                CleanupManager.getInstance().cleanup();
-
 
                 for (GenerationStatus genStatus : taskHandler.getAllRecorded()) {
                   if (!(genStatus.isOk())) {
@@ -532,10 +527,6 @@ public class Generate_Facet extends IFacet.Stub {
                   }
                   public void run() {
                     Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider().removeAllTransient();
-                    // XXX CleanupManager was there in TextGen's part of transient model removal 
-                    // Since this is the only place to care about transient models now, moved cleanup() 
-                    // here, despite being unsure whether it's needed at all or not. 
-                    CleanupManager.getInstance().cleanup();
                   }
                 })));
               }

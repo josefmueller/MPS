@@ -44,8 +44,7 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
   @Override
   public void init() {
     super.init();
-    CleanupManager clManager = CleanupManager.getInstance();
-    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache(clManager));
+    final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache());
     myGenerationStatusManager = init(new ModelGenerationStatusManager(myKernelComponents.getRepositoryRegistry(), depsCache));
     init(new GeneratorPathsComponent());
     init(new GenerationSettingsProvider());

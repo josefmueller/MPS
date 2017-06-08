@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.generator.cache;
 
-import jetbrains.mps.cleanup.CleanupListener;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.Pair;
@@ -34,11 +32,10 @@ import java.util.concurrent.ConcurrentMap;
  * Per-repository, model-associated caches.
  * FIXME shall use {@code ModelStreamManager} instead of a file to access associated cached data of a model.
  */
-public abstract class BaseModelCache<T> implements CoreComponent, CleanupListener {
+public abstract class BaseModelCache<T> implements CoreComponent {
   // absence of model in the cache means we have no idea about present cache state.
   // if model is in the cache, we do know both IFile and cached object
   private final ConcurrentMap<SModelReference, Pair<IFile, T>> myCache = new ConcurrentHashMap<>();
-  private final CleanupManager myCleanupManager;
 
   @Nullable
   protected abstract T readCache(SModel model);
@@ -57,26 +54,16 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   }
 
   // In fact, can be application-wide if we use compound key (repo+modelref)
-  protected BaseModelCache(CleanupManager cleanupManager) {
-    myCleanupManager = cleanupManager;
-  }
-
   protected BaseModelCache() {
-    myCleanupManager = null;
   }
 
   @Override
   public void init() {
-    if (myCleanupManager != null) {
-      myCleanupManager.addCleanupListener(this);
-    }
+    // FIXME once MGSM keeps own GenerationDependenciesCache instances (and there's no GDC.getInstance() singleton), cease being CoreComponent
   }
 
   @Override
   public void dispose() {
-    if (myCleanupManager != null) {
-      myCleanupManager.removeCleanupListener(this);
-    }
   }
 
   @Nullable
@@ -162,10 +149,5 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
     if (cachedFile != null && cachedFile != actualCacheFile) {
       cachedFile.delete();
     }
-  }
-
-  @Override
-  public void performCleanup() {
-    myCache.clear();
   }
 }

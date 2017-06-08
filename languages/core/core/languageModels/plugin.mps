@@ -4571,28 +4571,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3SKdUt" id="5eVVCq1bJc_" role="3cqZAp">
-                  <node concept="3SKdUq" id="5eVVCq1bJcB" role="3SKWNk">
-                    <property role="3SKdUp" value="XXX I have no idea if there's a reason to invoke cleanup right after transformation, just copied this code here from GenerationFacade" />
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="5eVVCq1bMB3" role="3cqZAp">
-                  <node concept="3SKdUq" id="5eVVCq1bMB5" role="3SKWNk">
-                    <property role="3SKdUp" value="    I'd remove listeners first, and then drop CM altogether" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="5eVVCq1bFN8" role="3cqZAp">
-                  <node concept="2OqwBi" id="5eVVCq1bFN9" role="3clFbG">
-                    <node concept="2YIFZM" id="5eVVCq1bFNa" role="2Oq$k0">
-                      <ref role="37wK5l" to="48b2:~CleanupManager.getInstance():jetbrains.mps.cleanup.CleanupManager" resolve="getInstance" />
-                      <ref role="1Pybhc" to="48b2:~CleanupManager" resolve="CleanupManager" />
-                    </node>
-                    <node concept="liA8E" id="5eVVCq1bFNb" role="2OqNvi">
-                      <ref role="37wK5l" to="48b2:~CleanupManager.cleanup():void" resolve="cleanup" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbH" id="5eVVCq1bE6V" role="3cqZAp" />
                 <node concept="3clFbH" id="5eVVCq1boig" role="3cqZAp" />
                 <node concept="1DcWWT" id="6Ui2JNSUtbm" role="3cqZAp">
                   <node concept="3clFbS" id="6Ui2JNSUtbo" role="2LFqv$">
@@ -4763,32 +4741,6 @@
                                   <node concept="2sxana" id="1sTai73x1yr" role="2OqNvi">
                                     <ref role="2sxfKC" node="1sTai73x1y1" resolve="transientModelsProvider" />
                                   </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="3SKdUt" id="2Op6w9TyU4E" role="3cqZAp">
-                              <node concept="3SKdUq" id="2Op6w9TyU5y" role="3SKWNk">
-                                <property role="3SKdUp" value="XXX CleanupManager was there in TextGen's part of transient model removal" />
-                              </node>
-                            </node>
-                            <node concept="3SKdUt" id="2Op6w9TyU6J" role="3cqZAp">
-                              <node concept="3SKdUq" id="2Op6w9TyU7D" role="3SKWNk">
-                                <property role="3SKdUp" value="Since this is the only place to care about transient models now, moved cleanup()" />
-                              </node>
-                            </node>
-                            <node concept="3SKdUt" id="2Op6w9TyU8S" role="3cqZAp">
-                              <node concept="3SKdUq" id="2Op6w9TyU9N" role="3SKWNk">
-                                <property role="3SKdUp" value="here, despite being unsure whether it's needed at all or not." />
-                              </node>
-                            </node>
-                            <node concept="3clFbF" id="2Op6w9TyU1K" role="3cqZAp">
-                              <node concept="2OqwBi" id="2Op6w9TyU1L" role="3clFbG">
-                                <node concept="2YIFZM" id="2Op6w9TyU1M" role="2Oq$k0">
-                                  <ref role="37wK5l" to="48b2:~CleanupManager.getInstance():jetbrains.mps.cleanup.CleanupManager" resolve="getInstance" />
-                                  <ref role="1Pybhc" to="48b2:~CleanupManager" resolve="CleanupManager" />
-                                </node>
-                                <node concept="liA8E" id="2Op6w9TyU1N" role="2OqNvi">
-                                  <ref role="37wK5l" to="48b2:~CleanupManager.cleanup():void" resolve="cleanup" />
                                 </node>
                               </node>
                             </node>
