@@ -7,7 +7,6 @@ import com.intellij.openapi.project.Project;
 import java.io.File;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ide.impl.ProjectUtil;
-import com.intellij.platform.ProjectBaseDirectory;
 
 public class ProjectDirCheckoutListener implements CheckoutListener {
   @Override
@@ -18,10 +17,7 @@ public class ProjectDirCheckoutListener implements CheckoutListener {
     int rc = Messages.showYesNoDialog(project, "You have checked out an MPS project directory:\n" + directory.getPath() + "\nWould you like to open it?", "Checkout from Version Control", Messages.getQuestionIcon());
 
     if (rc == Messages.YES) {
-      Project openedProject = ProjectUtil.openProject(directory.getPath(), project, false);
-      if (openedProject != null) {
-        ProjectBaseDirectory.getInstance(openedProject).setBaseDir(openedProject.getBaseDir());
-      }
+      ProjectUtil.openProject(directory.getPath(), project, false);
     }
     return true;
   }

@@ -26,7 +26,6 @@ import com.intellij.openapi.fileChooser.ex.FileChooserDialogImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.build.SamplesExtractor;
 import jetbrains.mps.workbench.actions.OpenMPSProjectFileChooserDescriptor;
 
@@ -62,9 +61,6 @@ public class OpenSampleProjectAction extends AnAction {
     }
 
     String filePath = result.getPath();
-    Project project = ProjectUtil.openProject(filePath, currentProject, false);
-    if (project != null) {
-      ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
-    }
+    ProjectUtil.openProject(filePath, currentProject, false);
   }
 }

@@ -23,7 +23,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.platform.ProjectBaseDirectory;
 import com.intellij.util.messages.MessageBus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -51,10 +50,7 @@ public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
   protected void doOpenProject(@NotNull String projectPath, Project projectToClose, boolean forceNewFrame) {
     final VirtualFile projectFile = LocalFileSystem.getInstance().findFileByPath(FileUtil.toSystemIndependentName(projectPath));
     if (projectFile != null) {
-      Project project = ProjectUtil.openProject(projectPath, projectToClose, forceNewFrame);
-      if (project != null && !project.isDisposed()) {
-        ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
-      }
+      ProjectUtil.openProject(projectPath, projectToClose, forceNewFrame);
     }
   }
 }

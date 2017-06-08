@@ -29,7 +29,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.Icon;
@@ -82,9 +81,6 @@ public class OpenMPSProjectAction extends BaseAction {
     }
 
     String filePath = virtualFile.getPath();
-    Project project = ProjectUtil.openProject(filePath, currentProject, false);
-    if (project != null) {
-      ProjectBaseDirectory.getInstance(project).setBaseDir(project.getBaseDir());
-    }
+    ProjectUtil.openProject(filePath, currentProject, false);
   }
 }
