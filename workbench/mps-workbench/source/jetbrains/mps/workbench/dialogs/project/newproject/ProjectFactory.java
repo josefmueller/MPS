@@ -26,7 +26,6 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
-import com.intellij.platform.ProjectBaseDirectory;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.migration.global.ProjectMigrationUtil;
@@ -147,8 +146,6 @@ public class ProjectFactory {
     }
     myCreatedProject.getComponent(MPSProjectVersion.class).setVersion(MPSProjectVersion.CURRENT);
     ProjectMigrationUtil.skipMigrationsOnProjectCreation(myCreatedProject);
-
-    ProjectBaseDirectory.getInstance(myCreatedProject).setBaseDir(myCreatedProject.getBaseDir());
 
     ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
     boolean opened = projectManager.openProject(myCreatedProject);

@@ -2,8 +2,8 @@
 <model ref="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -16,7 +16,6 @@
     <import index="jlcu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs(MPS.IDEA/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="j86o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs.impl(MPS.IDEA/)" />
-    <import index="ofh9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.platform(MPS.IDEA/)" />
     <import index="hlwo" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs.merge(MPS.IDEA/)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
@@ -366,65 +365,27 @@
                 </node>
               </node>
               <node concept="3clFbS" id="33vUo2uvw6c" role="3clFbx">
-                <node concept="3cpWs8" id="6e7d0zd8KTx" role="3cqZAp">
-                  <node concept="3cpWsn" id="6e7d0zd8KTy" role="3cpWs9">
-                    <property role="TrG5h" value="openedProject" />
-                    <node concept="3uibUv" id="6e7d0zd8KTz" role="1tU5fm">
-                      <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
-                    </node>
-                    <node concept="2YIFZM" id="6e7d0zd8KT$" role="33vP2m">
-                      <ref role="37wK5l" to="btn2:~ProjectUtil.openProject(java.lang.String,com.intellij.openapi.project.Project,boolean):com.intellij.openapi.project.Project" resolve="openProject" />
-                      <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
-                      <node concept="2OqwBi" id="6e7d0zd8KT_" role="37wK5m">
-                        <node concept="AH0OO" id="6e7d0zd8KTA" role="2Oq$k0">
-                          <node concept="37vLTw" id="3GM_nagTz1z" role="AHHXb">
-                            <ref role="3cqZAo" node="33vUo2uvw5n" resolve="files" />
-                          </node>
-                          <node concept="3cmrfG" id="6e7d0zd8KTC" role="AHEQo">
-                            <property role="3cmrfH" value="0" />
-                          </node>
+                <node concept="3clFbF" id="1H4V7QnzGF9" role="3cqZAp">
+                  <node concept="2YIFZM" id="1H4V7QnzGFb" role="3clFbG">
+                    <ref role="37wK5l" to="btn2:~ProjectUtil.openProject(java.lang.String,com.intellij.openapi.project.Project,boolean):com.intellij.openapi.project.Project" resolve="openProject" />
+                    <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                    <node concept="2OqwBi" id="1H4V7QnzGFc" role="37wK5m">
+                      <node concept="AH0OO" id="1H4V7QnzGFd" role="2Oq$k0">
+                        <node concept="37vLTw" id="1H4V7QnzGFe" role="AHHXb">
+                          <ref role="3cqZAo" node="33vUo2uvw5n" resolve="files" />
                         </node>
-                        <node concept="liA8E" id="6e7d0zd8KTD" role="2OqNvi">
-                          <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                        <node concept="3cmrfG" id="1H4V7QnzGFf" role="AHEQo">
+                          <property role="3cmrfH" value="0" />
                         </node>
                       </node>
-                      <node concept="37vLTw" id="2BHiRxglRM5" role="37wK5m">
-                        <ref role="3cqZAo" node="33vUo2uvw5h" resolve="project" />
-                      </node>
-                      <node concept="3clFbT" id="6e7d0zd8KTF" role="37wK5m" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3clFbJ" id="6e7d0zd8KTH" role="3cqZAp">
-                  <node concept="3clFbS" id="6e7d0zd8KTI" role="3clFbx">
-                    <node concept="3clFbF" id="6e7d0zd96MZ" role="3cqZAp">
-                      <node concept="2OqwBi" id="6e7d0zd96N3" role="3clFbG">
-                        <node concept="2YIFZM" id="6e7d0zd96N1" role="2Oq$k0">
-                          <ref role="37wK5l" to="ofh9:~ProjectBaseDirectory.getInstance(com.intellij.openapi.project.Project):com.intellij.platform.ProjectBaseDirectory" resolve="getInstance" />
-                          <ref role="1Pybhc" to="ofh9:~ProjectBaseDirectory" resolve="ProjectBaseDirectory" />
-                          <node concept="37vLTw" id="3GM_nagTsED" role="37wK5m">
-                            <ref role="3cqZAo" node="6e7d0zd8KTy" resolve="openedProject" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="6e7d0zd96N7" role="2OqNvi">
-                          <ref role="37wK5l" to="ofh9:~ProjectBaseDirectory.setBaseDir(com.intellij.openapi.vfs.VirtualFile):void" resolve="setBaseDir" />
-                          <node concept="2OqwBi" id="6e7d0zd96N9" role="37wK5m">
-                            <node concept="37vLTw" id="3GM_nagT_Mm" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6e7d0zd8KTy" resolve="openedProject" />
-                            </node>
-                            <node concept="liA8E" id="6e7d0zd96Xw" role="2OqNvi">
-                              <ref role="37wK5l" to="4nm9:~Project.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
-                            </node>
-                          </node>
-                        </node>
+                      <node concept="liA8E" id="1H4V7QnzGFg" role="2OqNvi">
+                        <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
                       </node>
                     </node>
-                  </node>
-                  <node concept="3y3z36" id="6e7d0zd8KTM" role="3clFbw">
-                    <node concept="10Nm6u" id="6e7d0zd8KTP" role="3uHU7w" />
-                    <node concept="37vLTw" id="3GM_nagTBXW" role="3uHU7B">
-                      <ref role="3cqZAo" node="6e7d0zd8KTy" resolve="openedProject" />
+                    <node concept="37vLTw" id="1H4V7QnzGFh" role="37wK5m">
+                      <ref role="3cqZAo" node="33vUo2uvw5h" resolve="project" />
                     </node>
+                    <node concept="3clFbT" id="1H4V7QnzGFi" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -1598,61 +1559,23 @@
             </node>
           </node>
           <node concept="3clFbS" id="6iwymposdv8" role="3clFbx">
-            <node concept="3cpWs8" id="6iwympospZK" role="3cqZAp">
-              <node concept="3cpWsn" id="6iwympospZL" role="3cpWs9">
-                <property role="TrG5h" value="openedProject" />
-                <node concept="3uibUv" id="6iwympospZH" role="1tU5fm">
-                  <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
-                </node>
-                <node concept="2YIFZM" id="6iwympospZM" role="33vP2m">
-                  <ref role="37wK5l" to="btn2:~ProjectUtil.openProject(java.lang.String,com.intellij.openapi.project.Project,boolean):com.intellij.openapi.project.Project" resolve="openProject" />
-                  <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
-                  <node concept="2OqwBi" id="6iwympospZN" role="37wK5m">
-                    <node concept="37vLTw" id="6iwympospZO" role="2Oq$k0">
-                      <ref role="3cqZAo" node="6iwymposduD" resolve="directory" />
-                    </node>
-                    <node concept="liA8E" id="6iwympospZP" role="2OqNvi">
-                      <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
-                    </node>
+            <node concept="3clFbF" id="1H4V7Qnz_Yn" role="3cqZAp">
+              <node concept="2YIFZM" id="1H4V7Qnz_Yp" role="3clFbG">
+                <ref role="1Pybhc" to="btn2:~ProjectUtil" resolve="ProjectUtil" />
+                <ref role="37wK5l" to="btn2:~ProjectUtil.openProject(java.lang.String,com.intellij.openapi.project.Project,boolean):com.intellij.openapi.project.Project" resolve="openProject" />
+                <node concept="2OqwBi" id="1H4V7Qnz_Yq" role="37wK5m">
+                  <node concept="37vLTw" id="1H4V7Qnz_Yr" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6iwymposduD" resolve="directory" />
                   </node>
-                  <node concept="37vLTw" id="6iwympospZQ" role="37wK5m">
-                    <ref role="3cqZAo" node="6iwymposduB" resolve="project" />
-                  </node>
-                  <node concept="3clFbT" id="6iwympospZR" role="37wK5m">
-                    <property role="3clFbU" value="false" />
+                  <node concept="liA8E" id="1H4V7Qnz_Ys" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="6iwymposqjg" role="3cqZAp">
-              <node concept="3clFbS" id="6iwymposqjh" role="3clFbx">
-                <node concept="3clFbF" id="6iwymposqji" role="3cqZAp">
-                  <node concept="2OqwBi" id="6iwymposqjj" role="3clFbG">
-                    <node concept="2YIFZM" id="6iwymposqjk" role="2Oq$k0">
-                      <ref role="1Pybhc" to="ofh9:~ProjectBaseDirectory" resolve="ProjectBaseDirectory" />
-                      <ref role="37wK5l" to="ofh9:~ProjectBaseDirectory.getInstance(com.intellij.openapi.project.Project):com.intellij.platform.ProjectBaseDirectory" resolve="getInstance" />
-                      <node concept="37vLTw" id="6iwymposqjl" role="37wK5m">
-                        <ref role="3cqZAo" node="6iwympospZL" resolve="openedProject" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="6iwymposqjm" role="2OqNvi">
-                      <ref role="37wK5l" to="ofh9:~ProjectBaseDirectory.setBaseDir(com.intellij.openapi.vfs.VirtualFile):void" resolve="setBaseDir" />
-                      <node concept="2OqwBi" id="6iwymposqjn" role="37wK5m">
-                        <node concept="37vLTw" id="6iwymposqjo" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6iwympospZL" resolve="openedProject" />
-                        </node>
-                        <node concept="liA8E" id="6iwymposqjp" role="2OqNvi">
-                          <ref role="37wK5l" to="4nm9:~Project.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
+                <node concept="37vLTw" id="1H4V7Qnz_Yt" role="37wK5m">
+                  <ref role="3cqZAo" node="6iwymposduB" resolve="project" />
                 </node>
-              </node>
-              <node concept="3y3z36" id="6iwymposqjq" role="3clFbw">
-                <node concept="10Nm6u" id="6iwymposqjr" role="3uHU7w" />
-                <node concept="37vLTw" id="6iwymposqjs" role="3uHU7B">
-                  <ref role="3cqZAo" node="6iwympospZL" resolve="openedProject" />
+                <node concept="3clFbT" id="1H4V7Qnz_Yu" role="37wK5m">
+                  <property role="3clFbU" value="false" />
                 </node>
               </node>
             </node>

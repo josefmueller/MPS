@@ -51,7 +51,6 @@
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
       </concept>
@@ -83,19 +82,11 @@
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
         <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
       </concept>
-      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
-        <child id="1068580123160" name="condition" index="3clFbw" />
-        <child id="1068580123161" name="ifTrue" index="3clFbx" />
-      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
-      </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
-        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
@@ -110,7 +101,6 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -118,10 +108,6 @@
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
         <child id="1109201940907" name="parameter" index="11_B2D" />
-      </concept>
-      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
-        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
-        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
@@ -421,72 +407,6 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="6vSrlVUNPIg" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="4mqZImXXUYg" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="matchesDefaultMapping" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tm1VV" id="4mqZImXXUYh" role="1B3o_S" />
-      <node concept="10P_77" id="4mqZImXXUYi" role="3clF45" />
-      <node concept="37vLTG" id="4mqZImXXUYj" role="3clF46">
-        <property role="TrG5h" value="file" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="4mqZImXXUYk" role="1tU5fm">
-          <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="4mqZImXXUYl" role="3clF46">
-        <property role="TrG5h" value="matchContext" />
-        <property role="3TUv4t" value="false" />
-        <node concept="3uibUv" id="4mqZImXXUYm" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="4mqZImXXUYn" role="3clF47">
-        <node concept="3clFbJ" id="4mqZImXXUYo" role="3cqZAp">
-          <node concept="3clFbC" id="4mqZImXXUYp" role="3clFbw">
-            <node concept="2OqwBi" id="4mqZImXXUYq" role="3uHU7B">
-              <node concept="2YIFZM" id="4mqZImXXUYr" role="2Oq$k0">
-                <ref role="37wK5l" to="ofh9:~ProjectBaseDirectory.getInstance(com.intellij.openapi.project.Project):com.intellij.platform.ProjectBaseDirectory" resolve="getInstance" />
-                <ref role="1Pybhc" to="ofh9:~ProjectBaseDirectory" resolve="ProjectBaseDirectory" />
-                <node concept="37vLTw" id="2BHiRxeuoVj" role="37wK5m">
-                  <ref role="3cqZAo" node="4mqZImXXUXu" resolve="myProject" />
-                </node>
-              </node>
-              <node concept="liA8E" id="4mqZImXXUYt" role="2OqNvi">
-                <ref role="37wK5l" to="ofh9:~ProjectBaseDirectory.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
-              </node>
-            </node>
-            <node concept="10Nm6u" id="4mqZImXXUYu" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="4mqZImXXUYv" role="3clFbx">
-            <node concept="3SKdUt" id="6eOYjWvCjtv" role="3cqZAp">
-              <node concept="3SKdUq" id="6eOYjWvCjtw" role="3SKWNk">
-                <property role="3SKdUp" value="TODO is it needed?" />
-              </node>
-            </node>
-            <node concept="3cpWs6" id="4mqZImXXUYw" role="3cqZAp">
-              <node concept="3clFbT" id="4mqZImXXUYx" role="3cqZAk">
-                <property role="3clFbU" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="4mqZImXXUYy" role="3cqZAp">
-          <node concept="3nyPlj" id="4mqZImXXUYz" role="3cqZAk">
-            <ref role="37wK5l" to="j86o:~BasicDefaultVcsRootPolicy.matchesDefaultMapping(com.intellij.openapi.vfs.VirtualFile,java.lang.Object):boolean" resolve="matchesDefaultMapping" />
-            <node concept="37vLTw" id="2BHiRxgmhCI" role="37wK5m">
-              <ref role="3cqZAo" node="4mqZImXXUYj" resolve="file" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxgmLqO" role="37wK5m">
-              <ref role="3cqZAo" node="4mqZImXXUYl" resolve="matchContext" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="4mqZImXXUYA" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>

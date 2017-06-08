@@ -13,47 +13,42 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)/3521790172251160903">
     <file name="ProjectCheckoutListener.java">
-      <node id="3521790172251160936" at="21,52,22,60" concept="7" />
-      <node id="3521790172251160952" at="25,44,26,219" concept="6" />
-      <node id="7171758144016813665" at="27,31,28,100" concept="6" />
-      <node id="7171758144016903359" at="29,36,30,97" concept="1" />
-      <node id="3521790172251160982" at="32,7,33,18" concept="7" />
-      <node id="3521790172251160984" at="34,5,35,17" concept="7" />
-      <node id="3521790172251160906" at="15,0,17,0" concept="0" trace="ProjectCheckoutListener#()V" />
-      <node id="7171758144016813677" at="28,100,31,9" concept="4" />
-      <node id="3521790172251160986" at="37,0,40,0" concept="5" trace="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="3521790172251160928" at="20,0,24,0" concept="5" trace="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
-      <node id="3521790172251160918" at="18,78,24,7" concept="6" />
-      <node id="3521790172251160968" at="26,219,32,7" concept="4" />
-      <node id="3521790172251160941" at="24,7,34,5" concept="4" />
-      <node id="3521790172251160910" at="17,0,37,0" concept="5" trace="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
-      <scope id="3521790172251160909" at="15,36,15,36" />
-      <scope id="3521790172251160991" at="38,63,38,63" />
-      <scope id="3521790172251160935" at="21,52,22,60" />
-      <scope id="7171758144016813678" at="29,36,30,97" />
-      <scope id="3521790172251160906" at="15,0,17,0" />
-      <scope id="3521790172251160986" at="37,0,40,0">
+      <node id="3521790172251160936" at="20,52,21,60" concept="7" />
+      <node id="3521790172251160952" at="24,44,25,219" concept="6" />
+      <node id="1964955361598163657" at="26,31,27,76" concept="1" />
+      <node id="3521790172251160982" at="28,7,29,18" concept="7" />
+      <node id="3521790172251160984" at="30,5,31,17" concept="7" />
+      <node id="3521790172251160906" at="14,0,16,0" concept="0" trace="ProjectCheckoutListener#()V" />
+      <node id="3521790172251160968" at="25,219,28,7" concept="4" />
+      <node id="3521790172251160986" at="33,0,36,0" concept="5" trace="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="3521790172251160928" at="19,0,23,0" concept="5" trace="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
+      <node id="3521790172251160918" at="17,78,23,7" concept="6" />
+      <node id="3521790172251160941" at="23,7,30,5" concept="4" />
+      <node id="3521790172251160910" at="16,0,33,0" concept="5" trace="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
+      <scope id="3521790172251160909" at="14,36,14,36" />
+      <scope id="3521790172251160991" at="34,63,34,63" />
+      <scope id="3521790172251160935" at="20,52,21,60" />
+      <scope id="3521790172251160972" at="26,31,27,76" />
+      <scope id="3521790172251160906" at="14,0,16,0" />
+      <scope id="3521790172251160986" at="33,0,36,0">
         <var name="lastOpenedProject" id="3521790172251160989" />
       </scope>
-      <scope id="3521790172251160928" at="20,0,24,0">
+      <scope id="3521790172251160928" at="19,0,23,0">
         <var name="dir" id="3521790172251160931" />
         <var name="name" id="3521790172251160933" />
       </scope>
-      <scope id="3521790172251160972" at="27,31,31,9">
-        <var name="openedProject" id="7171758144016813666" />
-      </scope>
-      <scope id="3521790172251160951" at="25,44,33,18">
+      <scope id="3521790172251160951" at="24,44,29,18">
         <var name="rc" id="3521790172251160953" />
       </scope>
-      <scope id="3521790172251160917" at="18,78,35,17">
+      <scope id="3521790172251160917" at="17,78,31,17">
         <var name="files" id="3521790172251160919" />
       </scope>
-      <scope id="3521790172251160910" at="17,0,37,0">
+      <scope id="3521790172251160910" at="16,0,33,0">
         <var name="directory" id="3521790172251160915" />
         <var name="project" id="3521790172251160913" />
       </scope>
-      <unit id="3521790172251160927" at="19,43,24,5" name="jetbrains.mps.vcs.integration.ProjectCheckoutListener$1" />
-      <unit id="3521790172251160903" at="14,0,41,0" name="jetbrains.mps.vcs.integration.ProjectCheckoutListener" />
+      <unit id="3521790172251160927" at="18,43,23,5" name="jetbrains.mps.vcs.integration.ProjectCheckoutListener$1" />
+      <unit id="3521790172251160903" at="13,0,37,0" name="jetbrains.mps.vcs.integration.ProjectCheckoutListener" />
     </file>
   </root>
   <root nodeRef="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)/3521790172251226878">
@@ -235,34 +230,29 @@
   </root>
   <root nodeRef="r:eec25685-8f1e-47c9-a9de-4a7ef6b504ec(jetbrains.mps.vcs.integration)/7250946472729958306">
     <file name="ProjectDirCheckoutListener.java">
-      <node id="7250946472729958325" at="15,74,16,19" concept="7" />
-      <node id="7250946472729974326" at="17,5,18,215" concept="6" />
-      <node id="7250946472729973902" at="18,215,19,0" concept="8" />
-      <node id="7250946472730009584" at="20,29,21,91" concept="6" />
-      <node id="7250946472730010834" at="22,34,23,95" concept="1" />
-      <node id="7250946472729958350" at="25,5,26,16" concept="7" />
-      <node id="7250946472729958316" at="14,78,17,5" concept="4" />
-      <node id="7250946472730010832" at="21,91,24,7" concept="4" />
-      <node id="7250946472729958354" at="28,0,31,0" concept="5" trace="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="7250946472729958334" at="19,0,25,5" concept="4" />
-      <node id="7250946472729958309" at="13,0,28,0" concept="5" trace="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
-      <scope id="7250946472729958358" at="29,63,29,63" />
-      <scope id="7250946472729958324" at="15,74,16,19" />
-      <scope id="7250946472730010833" at="22,34,23,95" />
-      <scope id="7250946472729958354" at="28,0,31,0">
+      <node id="7250946472729958325" at="14,74,15,19" concept="7" />
+      <node id="7250946472729974326" at="16,5,17,215" concept="6" />
+      <node id="7250946472729973902" at="17,215,18,0" concept="8" />
+      <node id="1964955361598136215" at="19,29,20,67" concept="1" />
+      <node id="7250946472729958350" at="21,5,22,16" concept="7" />
+      <node id="7250946472729958316" at="13,78,16,5" concept="4" />
+      <node id="7250946472729958334" at="18,0,21,5" concept="4" />
+      <node id="7250946472729958354" at="24,0,27,0" concept="5" trace="processOpenedProject#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="7250946472729958309" at="12,0,24,0" concept="5" trace="processCheckedOutDirectory#(Lcom/intellij/openapi/project/Project;Ljava/io/File;)Z" />
+      <scope id="7250946472729958358" at="25,63,25,63" />
+      <scope id="7250946472729958324" at="14,74,15,19" />
+      <scope id="7250946472729958344" at="19,29,20,67" />
+      <scope id="7250946472729958354" at="24,0,27,0">
         <var name="lastOpenedProject" id="7250946472729958356" />
       </scope>
-      <scope id="7250946472729958344" at="20,29,24,7">
-        <var name="openedProject" id="7250946472730009585" />
-      </scope>
-      <scope id="7250946472729958315" at="14,78,26,16">
+      <scope id="7250946472729958315" at="13,78,22,16">
         <var name="rc" id="7250946472729974329" />
       </scope>
-      <scope id="7250946472729958309" at="13,0,28,0">
+      <scope id="7250946472729958309" at="12,0,24,0">
         <var name="directory" id="7250946472729958313" />
         <var name="project" id="7250946472729958311" />
       </scope>
-      <unit id="7250946472729958306" at="12,0,32,0" name="jetbrains.mps.vcs.integration.ProjectDirCheckoutListener" />
+      <unit id="7250946472729958306" at="11,0,28,0" name="jetbrains.mps.vcs.integration.ProjectDirCheckoutListener" />
     </file>
   </root>
 </debug-info>

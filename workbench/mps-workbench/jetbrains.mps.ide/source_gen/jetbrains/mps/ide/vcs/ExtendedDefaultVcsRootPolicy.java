@@ -11,7 +11,6 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.vcs.VcsRoot;
-import com.intellij.platform.ProjectBaseDirectory;
 
 public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
   private Project myProject;
@@ -29,13 +28,5 @@ public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
         return it.getPath();
       }
     }).toListSequence();
-  }
-  @Override
-  public boolean matchesDefaultMapping(VirtualFile file, Object matchContext) {
-    if (ProjectBaseDirectory.getInstance(myProject).getBaseDir() == null) {
-      // TODO is it needed? 
-      return false;
-    }
-    return super.matchesDefaultMapping(file, matchContext);
   }
 }
