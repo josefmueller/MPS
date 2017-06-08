@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,7 @@
 package jetbrains.mps.generator.info;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,20 +49,6 @@ public class GeneratorPathsComponent implements CoreComponent {
       }
     }
     return false;
-  }
-
-  public List<IFile> getGeneratedChildren(final IFile root, SModel model) {
-    GenerationDependencies gd = GenerationDependenciesCache.getInstance().get(model);
-    if (gd == null) {
-      return Collections.emptyList();
-    }
-    ArrayList<IFile> rv = new ArrayList<IFile>();
-    for (GenerationRootDependencies grd : gd.getRootDependencies()) {
-      for (String file : grd.getFiles()) {
-        rv.add(root.getDescendant(file));
-      }
-    }
-    return rv;
   }
 
   public void registerForeignPathsProvider(ForeignPathsProvider provider) {

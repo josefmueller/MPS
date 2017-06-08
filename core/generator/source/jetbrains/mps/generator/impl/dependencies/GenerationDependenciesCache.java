@@ -45,6 +45,10 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
     return INSTANCE;
   }
 
+  public GenerationDependenciesCache() {
+    super(null);
+  }
+
   public GenerationDependenciesCache(CleanupManager manager) {
     super(manager);
   }

@@ -40,6 +40,7 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.concurrent.TimeUnit;
 import jetbrains.mps.text.TextUnit;
 import jetbrains.mps.generator.GenerationFacade;
@@ -55,7 +56,6 @@ import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.text.impl.BLDependenciesBuilder;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.text.impl.DebugInfoBuilder;
 import jetbrains.mps.generator.ModelExports;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
@@ -247,6 +247,9 @@ public class TextGen_Facet extends IFacet.Stub {
                 final BLDependenciesCache blDepsCache = new BLDependenciesCache();
                 // same as above applies to cache of trace.info 
                 final TraceInfoCache traceInfoCache = new TraceInfoCache();
+                // we don't care about cached values of 'generated', but we need a way to read values, if any (e.g. StaleFilesCollector),  
+                // and the cache instance doesn't hurt 
+                final GenerationDependenciesCache genDepsCache = new GenerationDependenciesCache();
                 while (modelsCount-- > 0) {
                   final TextGenResult tgr = resultQueue.poll(3, TimeUnit.MINUTES);
 
@@ -279,7 +282,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       final IFile javaOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(DefaultStreamManager.Provider.getOutputDir(inputResource.model()).getPath());
                       final IFile cacheOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(DefaultStreamManager.Provider.getCachesDir(inputResource.model()).getPath());
                       StaleFilesCollector staleFileCollector = new StaleFilesCollector(javaOutputDir);
-                      staleFileCollector.recordGeneratedChildren(inputResource.model());
+                      staleFileCollector.recordGeneratedChildren(genDepsCache, inputResource.model());
                       FileProcessor fp = new FileProcessor();
                       ListSequence.fromList(fileProcessors2).addElement(fp);
                       FileDeltaCollector javaSourcesLoc = new FileDeltaCollector(javaOutputDir, fp);
@@ -314,7 +317,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       // Update caches and auxiliary artifacts 
                       CacheGenLayout cgl = new CacheGenLayout(messageHandler);
                       cgl.register(cachesLocation, blDepsCache.newCacheGenerator(new BLDependenciesBuilder().build(tgr)));
-                      cgl.register(cachesLocation, GenerationDependenciesCache.getInstance().getGenerator());
+                      cgl.register(cachesLocation, genDepsCache.getGenerator());
                       if (_generateDebugInfo) {
                         cgl.register(javaSourcesLoc, traceInfoCache.newCacheGenerator(new DebugInfoBuilder(mpsProject.getRepository()).build(tgr)));
                       }

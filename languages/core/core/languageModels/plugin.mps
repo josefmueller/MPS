@@ -1175,6 +1175,30 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3SKdUt" id="3Z7JN3st5$E" role="3cqZAp">
+                  <node concept="3SKdUq" id="3Z7JN3st5$G" role="3SKWNk">
+                    <property role="3SKdUp" value="we don't care about cached values of 'generated', but we need a way to read values, if any (e.g. StaleFilesCollector), " />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="3Z7JN3st86l" role="3cqZAp">
+                  <node concept="3SKdUq" id="3Z7JN3st86m" role="3SKWNk">
+                    <property role="3SKdUp" value="and the cache instance doesn't hurt" />
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="3Z7JN3srAAn" role="3cqZAp">
+                  <node concept="3cpWsn" id="3Z7JN3srAAl" role="3cpWs9">
+                    <property role="3TUv4t" value="true" />
+                    <property role="TrG5h" value="genDepsCache" />
+                    <node concept="3uibUv" id="3Z7JN3srDmw" role="1tU5fm">
+                      <ref role="3uigEE" to="w8cm:~GenerationDependenciesCache" resolve="GenerationDependenciesCache" />
+                    </node>
+                    <node concept="2ShNRf" id="3Z7JN3srEqm" role="33vP2m">
+                      <node concept="1pGfFk" id="3Z7JN3srF8T" role="2ShVmc">
+                        <ref role="37wK5l" to="w8cm:~GenerationDependenciesCache.&lt;init&gt;()" resolve="GenerationDependenciesCache" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="2$JKZl" id="7A08csWcFQr" role="3cqZAp">
                   <node concept="3clFbS" id="7A08csWcFQt" role="2LFqv$">
                     <node concept="3cpWs8" id="7A08csWcILG" role="3cqZAp">
@@ -1554,6 +1578,9 @@
                                         </node>
                                         <node concept="liA8E" id="3QuLV9OzOaq" role="2OqNvi">
                                           <ref role="37wK5l" to="rk9m:2OwcOGauXhP" resolve="recordGeneratedChildren" />
+                                          <node concept="37vLTw" id="3Z7JN3srGdl" role="37wK5m">
+                                            <ref role="3cqZAo" node="3Z7JN3srAAl" resolve="genDepsCache" />
+                                          </node>
                                           <node concept="2OqwBi" id="3QuLV9OzOar" role="37wK5m">
                                             <node concept="37vLTw" id="3QuLV9OzYi8" role="2Oq$k0">
                                               <ref role="3cqZAo" node="3QuLV9OzV7z" resolve="inputResource" />
@@ -1998,9 +2025,8 @@
                                             <ref role="3cqZAo" node="3QuLV9OzOaK" resolve="cachesLocation" />
                                           </node>
                                           <node concept="2OqwBi" id="3QuLV9OzObe" role="37wK5m">
-                                            <node concept="2YIFZM" id="3QuLV9OzObf" role="2Oq$k0">
-                                              <ref role="37wK5l" to="w8cm:~GenerationDependenciesCache.getInstance():jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache" resolve="getInstance" />
-                                              <ref role="1Pybhc" to="w8cm:~GenerationDependenciesCache" resolve="GenerationDependenciesCache" />
+                                            <node concept="37vLTw" id="3Z7JN3srHT5" role="2Oq$k0">
+                                              <ref role="3cqZAo" node="3Z7JN3srAAl" resolve="genDepsCache" />
                                             </node>
                                             <node concept="liA8E" id="3QuLV9OzObg" role="2OqNvi">
                                               <ref role="37wK5l" to="w8cm:~GenerationDependenciesCache.getGenerator():jetbrains.mps.generator.cache.CacheGenerator" resolve="getGenerator" />

@@ -17,11 +17,15 @@ import java.util.LinkedList;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.generator.info.GeneratorPathsComponent;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import java.util.Collections;
+import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.generator.info.GeneratorPathsComponent;
 
 public class StaleFilesCollector {
   private IFile rootDir;
@@ -89,12 +93,26 @@ public class StaleFilesCollector {
    * Files left after excluding those touched are additionally filtered through 'foreign' roots in a way
    * that we consider only generated files under output root (intersect in getChildren).
    */
-  public void recordGeneratedChildren(SModel model) {
-    List<IFile> genChildren = GeneratorPathsComponent.getInstance().getGeneratedChildren(rootDir, model);
+  public void recordGeneratedChildren(GenerationDependenciesCache genDeps, SModel model) {
+    List<IFile> genChildren = knownGeneratedChildren(genDeps.get(model));
     if (ListSequence.fromList(genChildren).isNotEmpty()) {
       MapSequence.fromMap(generatedChildren).put(rootDir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
     }
   }
+
+  private List<IFile> knownGeneratedChildren(GenerationDependencies gd) {
+    if (gd == null) {
+      return Collections.emptyList();
+    }
+    List<IFile> rv = ListSequence.fromList(new ArrayList<IFile>());
+    for (GenerationRootDependencies grd : gd.getRootDependencies()) {
+      for (String file : grd.getFiles()) {
+        ListSequence.fromList(rv).addElement(rootDir.getDescendant(file));
+      }
+    }
+    return rv;
+  }
+
   public void updateDelta(FilesDelta delta) {
     final Set<IFile> filesToKeep = SetSequence.fromSet(new HashSet<IFile>());
     delta.acceptVisitor(new FilesDelta.Visitor() {
