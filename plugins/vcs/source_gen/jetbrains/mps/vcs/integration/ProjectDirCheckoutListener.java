@@ -12,7 +12,6 @@ import com.intellij.platform.ProjectBaseDirectory;
 public class ProjectDirCheckoutListener implements CheckoutListener {
   @Override
   public boolean processCheckedOutDirectory(Project project, File directory) {
-    // todo Rider project layout - several.idea.solution-name names 
     if (!(new File(directory, Project.DIRECTORY_STORE_FOLDER).exists())) {
       return false;
     }

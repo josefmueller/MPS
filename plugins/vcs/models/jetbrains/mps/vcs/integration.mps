@@ -184,12 +184,6 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" flags="nn" index="1Rwk04" />
-      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
-        <property id="6329021646629104958" name="text" index="3SKdUp" />
-      </concept>
-      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
-        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
-      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
@@ -1526,11 +1520,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="6iwymposduF" role="3clF47">
-        <node concept="3SKdUt" id="6iwymposdvr" role="3cqZAp">
-          <node concept="3SKdUq" id="6iwymposdvq" role="3SKWNk">
-            <property role="3SKdUp" value="todo Rider project layout - several.idea.solution-name names" />
-          </node>
-        </node>
         <node concept="3clFbJ" id="6iwymposduG" role="3cqZAp">
           <node concept="3fqX7Q" id="6iwymposduH" role="3clFbw">
             <node concept="2OqwBi" id="6iwymposduI" role="3fr31v">
