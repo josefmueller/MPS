@@ -32,6 +32,7 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  * Per-repository, model-associated caches.
+ * FIXME shall use {@code ModelStreamManager} instead of a file to access associated cached data of a model.
  */
 public abstract class BaseModelCache<T> implements CoreComponent, CleanupListener {
   // absence of model in the cache means we have no idea about present cache state.
@@ -47,7 +48,7 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
 
   @Nullable
   protected IFile getCacheFile(SModel modelDescriptor) {
-    IFile cachesDir = getCachesDirInternal(SModelOperations.getOutputCacheLocation(modelDescriptor));
+    IFile cachesDir = SModelOperations.getOutputCacheLocation(modelDescriptor);
     if (cachesDir == null) {
       return null;
     }
@@ -123,12 +124,6 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
       }
     }
     return null;
-  }
-
-  @Nullable
-  protected IFile getCachesDirInternal(@Nullable IFile defaultCachesDir) {
-    // XXX there's little reason to keep this method, GenerationDependenciesCache shall override getCacheFile() directly.
-    return defaultCachesDir;
   }
 
   /**

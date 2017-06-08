@@ -24,7 +24,6 @@ import jetbrains.mps.generator.cache.ParseFacility;
 import jetbrains.mps.generator.cache.ParseFacility.Parser;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -33,9 +32,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, May 14, 2010
@@ -48,8 +44,6 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
   public static GenerationDependenciesCache getInstance() {
     return INSTANCE;
   }
-
-  private List<CachePathRedirect> myCachePathRedirects = Collections.synchronizedList(new ArrayList<CachePathRedirect>());
 
   public GenerationDependenciesCache(CleanupManager manager) {
     super(manager);
@@ -77,14 +71,6 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
     return CACHE_FILE_NAME;
   }
 
-  public void registerCachePathRedirect(CachePathRedirect cdl) {
-    myCachePathRedirects.add(cdl);
-  }
-
-  public void unregisterCachePathRedirect(CachePathRedirect cdl) {
-    myCachePathRedirects.remove(cdl);
-  }
-
   @Nullable
   @Override
   protected GenerationDependencies readCache(SModel sm) {
@@ -93,30 +79,6 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
 
   public CacheGenerator getGenerator() {
     return new CacheGen();
-  }
-
-  public IFile findCachesPathRedirect(IFile cachesPath) {
-    IFile redir;
-    for (CachePathRedirect cdl : myCachePathRedirects) {
-      if ((redir = cdl.redirectTo(cachesPath)) != null) {
-        return redir;
-      }
-    }
-    return null;
-  }
-
-  @Nullable
-  @Override
-  protected IFile getCachesDirInternal(@Nullable IFile defaultCachesDir) {
-    if (defaultCachesDir == null) {
-      return null;
-    }
-    IFile redir = findCachesPathRedirect(defaultCachesDir);
-    return redir != null ? redir : defaultCachesDir;
-  }
-
-  public interface CachePathRedirect {
-    IFile redirectTo(IFile outputPath);
   }
 
   private class CacheGen implements CacheGenerator {

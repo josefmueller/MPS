@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,8 @@
 
 package jetbrains.mps.jps.build;
 
-import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.ForeignPathsProvider;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
-// hm... using collections runtime in a non-mps-generated, hand-written java file...?
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.ISequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
@@ -36,11 +31,14 @@ import org.jetbrains.jps.incremental.storage.BuildDataManager;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 public class GenerationPathsController {
   private final JpsMPSProject myProject;
@@ -66,22 +64,8 @@ public class GenerationPathsController {
     return myOutputRootsPerTarget.get(target);
   }
 
-  private ISequence<SModule> getModulesInvolved(Iterable<MResource> resources) {
-    return Sequence.fromIterable(resources).select(new ISelector<MResource, SModule>() {
-      @Override
-      public SModule select(MResource r) {
-        return r.module();
-      }
-    });
-  }
-
-  public void registerRedirects() {
-    GenerationDependenciesCache.getInstance().registerCachePathRedirect(new GenerationDependenciesCache.CachePathRedirect() {
-      @Override
-      public IFile redirectTo(IFile outputFile) {
-        return myRedirects.getRedirect(outputFile.getPath());
-      }
-    });
+  private Collection<SModule> getModulesInvolved(Iterable<MResource> resources) {
+    return StreamSupport.stream(resources.spliterator(), false).map(MResource::module).collect(Collectors.toList());
   }
 
   public void registerForeignPathsProvider() {
@@ -113,34 +97,23 @@ public class GenerationPathsController {
   }
 
   public void init(Collection<ModuleBuildTarget> targets) {
-    final ISequence<SModule> modulesInvolvedInMake = getModulesInvolved(myModelResources);
     myProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        myOutputPaths = new ModuleOutputPaths(modulesInvolvedInMake);
+        myOutputPaths = new ModuleOutputPaths(getModulesInvolved(myModelResources));
       }
     });
     myForeignRootPaths = new MyForeignRootPaths(myOutputPaths.getOutputPaths());
     initWithTargets(targets);
     registerForeignPathsProvider();
-    registerRedirects();
   }
 
   private static class MyForeignRootPaths {
     private final String[] myRootPaths;
 
     public MyForeignRootPaths(Iterable<String> foreignRoots) {
-      myRootPaths = Sequence.fromIterable(foreignRoots).select(new ISelector<String, String>() {
-        @Override
-        public String select(String dir) {
-          return DirUtil.normalizeAsDir(dir);
-        }
-      }).sort(new ISelector<String, String>() {
-        @Override
-        public String select(String dir) {
-          return dir;
-        }
-      }, true).toGenericArray(String.class);
+      myRootPaths = StreamSupport.stream(foreignRoots.spliterator(), false).map(DirUtil::normalizeAsDir).toArray(String[]::new);
+      Arrays.sort(myRootPaths);
     }
 
     public String findForeignPrefix(String path) {

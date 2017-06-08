@@ -115,6 +115,11 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   // neither arg is null
   public ModelGenerationStatusManager(SRepositoryRegistry repositoryRegistry, GenerationDependenciesCache depsCache) {
+    // FIXME MGSM could take ModelStreamManager.Provider so that (a) we don't need to cache IFile (b) clients like JPS build in IDEA plugin could
+    // FIXME   control where cache files are read from (at least, the use of GenerationDependenciesCache.CachePathRedirect recently removed from MPSMakeMediator
+    // FIXME   suggests there are/were scenarios when it's needed.
+    //         Note, if we get rid of IFile, we need a mechanism to tell gen status change when 'generated' file is modified. Whether it's DataSourceListener
+    //         or a workspace-wide mechanism that dispatches smth like SModelListener#modelStreamsChanged() event, I have no idea yet.
     myRepositoryRegistry = repositoryRegistry;
     myModelHashCache = depsCache;
   }
