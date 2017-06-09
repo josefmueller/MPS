@@ -8,6 +8,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -938,6 +939,38 @@
       <node concept="trNpa" id="1GENxguIitJ" role="EQaZv">
         <ref role="trN6q" to="tpee:fz3vP1J" resolve="Expression" />
       </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5wWOi7l4UEY">
+    <property role="EcuMT" value="6358186717179259582" />
+    <property role="3GE5qa" value="Migrations" />
+    <property role="TrG5h" value="RefPresentationMigrated" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="5wWOi7l4UEZ" role="lGtFl">
+      <property role="Hh88m" value="migration" />
+      <node concept="trNpa" id="5wWOi7l4UF1" role="EQaZv">
+        <ref role="trN6q" node="3oQug8hq$j1" resolve="ConstraintFunction_ReferentSearchScope_Presentation" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="4ZpP10$LHhO" role="1TKVEi">
+      <property role="IQ2ns" value="5753863164744094836" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="problems" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5wWOi7l4UF3" resolve="RefPresentationMigratedProblem" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5wWOi7l4UF3">
+    <property role="EcuMT" value="6358186717179259587" />
+    <property role="3GE5qa" value="Migrations" />
+    <property role="TrG5h" value="RefPresentationMigratedProblem" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5wWOi7l4UF4" role="1TKVEi">
+      <property role="IQ2ns" value="6358186717179259588" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="editor" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
     </node>
   </node>
 </model>
