@@ -480,9 +480,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     }
   }
 
-  private class MyMigrationSession implements MigrationSession {
-    private MigrationError myErrors = null;
-
+  private class MyMigrationSession extends MigrationSession.MigrationSessionBase {
     public MyMigrationSession() {
     }
     @Override
@@ -496,12 +494,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     @Override
     public MigrationOptions getOptions() {
       return myOptions;
-    }
-    public MigrationError getError() {
-      return myErrors;
-    }
-    public void setError(MigrationError errors) {
-      myErrors = errors;
     }
   }
 }

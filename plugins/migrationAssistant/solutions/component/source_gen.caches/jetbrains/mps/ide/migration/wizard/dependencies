@@ -87,6 +87,8 @@
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationError" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationSession" file="MigrationSession.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationError" />
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationOptions" />

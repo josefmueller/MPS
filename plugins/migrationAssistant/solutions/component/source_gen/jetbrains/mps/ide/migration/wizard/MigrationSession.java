@@ -14,8 +14,35 @@ public interface MigrationSession {
 
   MigrationOptions getOptions();
 
+  Object getCurrentStage();
+
+  void setCurrentStage(Object stage);
+
   @Nullable
   MigrationError getError();
 
   void setError(MigrationError errors);
+
+  abstract class MigrationSessionBase implements MigrationSession {
+    private Object myStage = null;
+    private MigrationError myErrors = null;
+
+    public MigrationSessionBase() {
+    }
+    public MigrationError getError() {
+      return myErrors;
+    }
+    public void setError(MigrationError errors) {
+      myErrors = errors;
+    }
+    @Override
+    public Object getCurrentStage() {
+      return myStage;
+    }
+    @Override
+    public void setCurrentStage(Object stage) {
+      myStage = stage;
+    }
+
+  }
 }

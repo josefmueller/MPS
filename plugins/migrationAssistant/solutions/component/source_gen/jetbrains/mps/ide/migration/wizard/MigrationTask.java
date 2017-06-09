@@ -54,12 +54,11 @@ public class MigrationTask {
   private List<ScriptApplied> myWereRun = ListSequence.fromList(new ArrayList<ScriptApplied>());
 
   private ProgressMonitorAdapter myMonitor;
-  private int myLastStep = 0;
 
   public MigrationTask(MigrationSession session, ProgressMonitorAdapter monitor) {
     mySession = session;
     myMonitor = monitor;
-    myLastStep = 0;
+    mySession.setCurrentStage(0);
     myMonitor.start("Migrating...", 100);
   }
 
@@ -73,8 +72,8 @@ public class MigrationTask {
   }
 
   protected boolean doRun() {
-    if (myLastStep == 0) {
-      myLastStep++;
+    if (mySession.getCurrentStage().equals(0)) {
+      mySession.setCurrentStage(1);
       List<ScriptApplied> missingMigrations = findMissingMigrations(myMonitor.subTask(5));
       if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
         result(myMonitor, new MigrationsMissingError(missingMigrations), "Some migrations are missing.");
@@ -82,16 +81,16 @@ public class MigrationTask {
       }
     }
 
-    if (myLastStep == 1) {
-      myLastStep++;
+    if (mySession.getCurrentStage().equals(1)) {
+      mySession.setCurrentStage(2);
       if (!((runCleanupMigrations(myMonitor.subTask(10))))) {
         result(myMonitor, new MigrationExceptionError(), "Error while running cleanup migration.");
         return false;
       }
     }
 
-    if (myLastStep == 2) {
-      myLastStep++;
+    if (mySession.getCurrentStage().equals(2)) {
+      mySession.setCurrentStage(3);
       Map<SModule, SModule> errsToShow = checkMigratedLibs(myMonitor.subTask(5));
       if (MapSequence.fromMap(errsToShow).isNotEmpty()) {
         result(myMonitor, new NotMigratedLibsError(errsToShow), "Some dependent modules are not migrated.");
@@ -99,8 +98,8 @@ public class MigrationTask {
       }
     }
 
-    if (myLastStep == 3) {
-      myLastStep++;
+    if (mySession.getCurrentStage().equals(3)) {
+      mySession.setCurrentStage(4);
       // null - no error, true - must stop, false - can ignore 
       boolean errors = checkModels(myMonitor.subTask(20));
       if (errors) {
@@ -169,7 +168,7 @@ public class MigrationTask {
 
     // todo pass ModalityState to constructor/via session? 
     // in tests, we have EmptyProgressIndicator and use NON_MODAL 
-    JComponent modalityComponent = check_ajmasp_a0e0cb(as_ajmasp_a0a0e0db(myMonitor.getIndicator(), InlineProgressIndicator.class));
+    JComponent modalityComponent = check_ajmasp_a0e0bb(as_ajmasp_a0a0e0cb(myMonitor.getIndicator(), InlineProgressIndicator.class));
     ModalityState modalityState = (modalityComponent == null ? ModalityState.NON_MODAL : ModalityState.stateForComponent(modalityComponent));
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
@@ -337,7 +336,7 @@ public class MigrationTask {
           if (next == null) {
             return false;
           }
-          return eq_ajmasp_a0c0a0a3a0h0f0pb(sa.getScriptReference(), next.getScriptReference());
+          return eq_ajmasp_a0c0a0a3a0h0f0ob(sa.getScriptReference(), next.getScriptReference());
         }
       }))) {
         success = false;
@@ -367,16 +366,16 @@ public class MigrationTask {
     });
     return haveNotMigrated.value;
   }
-  private static JComponent check_ajmasp_a0e0cb(InlineProgressIndicator checkedDotOperand) {
+  private static JComponent check_ajmasp_a0e0bb(InlineProgressIndicator checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }
     return null;
   }
-  private static <T> T as_ajmasp_a0a0e0db(Object o, Class<T> type) {
+  private static <T> T as_ajmasp_a0a0e0cb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static boolean eq_ajmasp_a0c0a0a3a0h0f0pb(Object a, Object b) {
+  private static boolean eq_ajmasp_a0c0a0a3a0h0f0ob(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

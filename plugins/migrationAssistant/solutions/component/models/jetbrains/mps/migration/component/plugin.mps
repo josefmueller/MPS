@@ -3864,14 +3864,6 @@
     <property role="TrG5h" value="TestMigrationSession" />
     <property role="2bfB8j" value="true" />
     <property role="3GE5qa" value="internal" />
-    <node concept="312cEg" id="65hwFmZizYO" role="jymVt">
-      <property role="3TUv4t" value="false" />
-      <property role="TrG5h" value="myD" />
-      <node concept="3Tm6S6" id="65hwFmZizYP" role="1B3o_S" />
-      <node concept="3uibUv" id="65hwFmZizYN" role="1tU5fm">
-        <ref role="3uigEE" to="o8ag:2htE_P_MmBs" resolve="MigrationError" />
-      </node>
-    </node>
     <node concept="312cEg" id="5ec8feoiMQN" role="jymVt">
       <property role="TrG5h" value="myManager" />
       <node concept="3Tm6S6" id="5ec8feoiMQJ" role="1B3o_S" />
@@ -4061,64 +4053,6 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="65hwFmZi2T9" role="jymVt">
-      <property role="TrG5h" value="getError" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="3uibUv" id="65hwFmZi2Ta" role="3clF45">
-        <ref role="3uigEE" to="o8ag:2htE_P_MmBs" resolve="MigrationError" />
-      </node>
-      <node concept="3Tm1VV" id="65hwFmZi2Tb" role="1B3o_S" />
-      <node concept="2AHcQZ" id="65hwFmZi2Tf" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-      </node>
-      <node concept="3clFbS" id="65hwFmZi2Tg" role="3clF47">
-        <node concept="3SKdUt" id="1aQVcc3UJE1" role="3cqZAp">
-          <node concept="3SKdUq" id="1aQVcc3UJE3" role="3SKWNk">
-            <property role="3SKdUp" value="todo remove odd MigrationErrorDescriptor" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="65hwFmZi62Y" role="3cqZAp">
-          <node concept="2OqwBi" id="65hwFmZizZ7" role="3clFbG">
-            <node concept="Xjq3P" id="65hwFmZizZ8" role="2Oq$k0">
-              <ref role="1HBi2w" node="65hwFmZizYT" resolve="TestMigrationSession" />
-            </node>
-            <node concept="2OwXpG" id="65hwFmZizZ9" role="2OqNvi">
-              <ref role="2Oxat5" node="65hwFmZizYO" resolve="myD" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="65hwFmZi2Ti" role="jymVt">
-      <property role="TrG5h" value="setError" />
-      <property role="1EzhhJ" value="false" />
-      <node concept="3cqZAl" id="65hwFmZi2Tj" role="3clF45" />
-      <node concept="3Tm1VV" id="65hwFmZi2Tk" role="1B3o_S" />
-      <node concept="37vLTG" id="65hwFmZi2Tm" role="3clF46">
-        <property role="TrG5h" value="errors" />
-        <node concept="3uibUv" id="65hwFmZi2Tn" role="1tU5fm">
-          <ref role="3uigEE" to="o8ag:2htE_P_MmBs" resolve="MigrationError" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="65hwFmZi2To" role="3clF47">
-        <node concept="3clFbF" id="65hwFmZi6fD" role="3cqZAp">
-          <node concept="37vLTI" id="65hwFmZi6nh" role="3clFbG">
-            <node concept="37vLTw" id="65hwFmZi6tH" role="37vLTx">
-              <ref role="3cqZAo" node="65hwFmZi2Tm" resolve="errors" />
-            </node>
-            <node concept="2OqwBi" id="65hwFmZizZa" role="37vLTJ">
-              <node concept="Xjq3P" id="65hwFmZizZb" role="2Oq$k0">
-                <ref role="1HBi2w" node="65hwFmZizYT" resolve="TestMigrationSession" />
-              </node>
-              <node concept="2OwXpG" id="65hwFmZizZc" role="2OqNvi">
-                <ref role="2Oxat5" node="65hwFmZizYO" resolve="myD" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="65hwFmZiclR" role="jymVt" />
     <node concept="312cEu" id="65hwFmZi8BK" role="jymVt">
       <property role="TrG5h" value="MyMigrationManager" />
       <property role="2bfB8j" value="true" />
@@ -6016,8 +5950,8 @@
         <ref role="3uigEE" node="65hwFmZiSK1" resolve="TestMigrationSession.MyProjectMigration" />
       </node>
     </node>
-    <node concept="3uibUv" id="65hwFmZizYW" role="EKbjA">
-      <ref role="3uigEE" to="o8ag:2htE_P_Pzio" resolve="MigrationSession" />
+    <node concept="3uibUv" id="1548xledCuc" role="1zkMxy">
+      <ref role="3uigEE" to="o8ag:1548xleaCvu" resolve="MigrationSession.MigrationSessionBase" />
     </node>
   </node>
   <node concept="312cEu" id="3EnpNH2zGjG">

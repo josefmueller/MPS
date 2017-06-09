@@ -19,8 +19,8 @@ import com.intellij.history.core.changes.ChangeSet;
 import com.intellij.history.integration.LocalHistoryImpl;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.migration.MigrationManager;
-import jetbrains.mps.ide.migration.wizard.MigrationError;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
+import jetbrains.mps.ide.migration.wizard.MigrationSession.MigrationSessionBase;
 import jetbrains.mps.ide.migration.wizard.MigrationTask;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -30,7 +30,6 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import junit.framework.Assert;
-import org.jetbrains.annotations.Nullable;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -62,9 +61,7 @@ public class MigrationsTest {
     TestMakeUtil.make(project);
     LocalHistoryImpl.getInstanceImpl().cleanupForNextTest();
 
-    MigrationSession session = new MigrationSession() {
-      private MigrationError myD;
-
+    MigrationSession session = new MigrationSessionBase() {
       @Override
       public Project getProject() {
         return project;
@@ -78,17 +75,6 @@ public class MigrationsTest {
       @Override
       public MigrationOptions getOptions() {
         return new MigrationOptions();
-      }
-
-      @Nullable
-      @Override
-      public MigrationError getError() {
-        return myD;
-      }
-
-      @Override
-      public void setError(MigrationError errors) {
-        myD = errors;
       }
     };
 
