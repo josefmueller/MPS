@@ -19,8 +19,8 @@ import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.concurrent.ExecutionException;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.concurrent.ExecutionException;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -42,7 +42,11 @@ public class ConsoleUtil {
     mvt.getAvailableList(messagesListName, true).setInfoEnabled(false);
     MakeSession session = new MakeSession(project, mvt.newHandler(messagesListName), true);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(), scr);
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(Sequence.<SModel>singleton(model)).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
+        public Boolean invoke(SModel m) {
+          return true;
+        }
+      }).resources(), scr);
       try {
         return future.get().isSucessful();
       } catch (InterruptedException e) {

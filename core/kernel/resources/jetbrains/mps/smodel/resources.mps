@@ -212,8 +212,13 @@
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
       <concept id="1200830824066" name="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" flags="nn" index="2n63Yl">
         <child id="1200830928149" name="expression" index="2n6tg2" />
+      </concept>
+      <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
+        <child id="1199542457201" name="resultType" index="1ajl9A" />
+        <child id="1199542501692" name="parameterType" index="1ajw0F" />
       </concept>
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
@@ -243,6 +248,9 @@
       </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
+        <child id="3106559687488741665" name="line" index="2Xj1qM" />
       </concept>
       <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
         <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
@@ -320,6 +328,17 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="35A2TU_A1_m" role="jymVt">
+      <property role="TrG5h" value="myCanGenerateCondition" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="35A2TU_A1_n" role="1B3o_S" />
+      <node concept="9cv3F" id="35A2TU_A645" role="1tU5fm">
+        <node concept="3uibUv" id="35A2TU_A646" role="1ajw0F">
+          <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+        </node>
+        <node concept="10P_77" id="35A2TU_A647" role="1ajl9A" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="6H4v4bGSBF7" role="jymVt" />
     <node concept="3clFbW" id="6zsZmIC0WqK" role="jymVt">
       <node concept="37vLTG" id="6zsZmIC0WqN" role="3clF46">
@@ -346,12 +365,93 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="35A2TU_A0Uf" role="3cqZAp">
+          <node concept="37vLTI" id="35A2TU_A0Uh" role="3clFbG">
+            <node concept="37vLTw" id="35A2TU_A0Ul" role="37vLTJ">
+              <ref role="3cqZAo" node="35A2TU_A1_m" resolve="myCanGenerateCondition" />
+            </node>
+            <node concept="1bVj0M" id="35A2TU_B5Tz" role="37vLTx">
+              <node concept="37vLTG" id="35A2TU_B5V0" role="1bW2Oz">
+                <property role="TrG5h" value="it" />
+                <node concept="3uibUv" id="35A2TU_B5Zr" role="1tU5fm">
+                  <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="35A2TU_B5T_" role="1bW5cS">
+                <node concept="3clFbF" id="35A2TU_B6bi" role="3cqZAp">
+                  <node concept="2YIFZM" id="35A2TU_B6cW" role="3clFbG">
+                    <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
+                    <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
+                    <node concept="37vLTw" id="35A2TU_B6g9" role="37wK5m">
+                      <ref role="3cqZAo" node="35A2TU_B5V0" resolve="it" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="P$JXv" id="713BH0SCemV" role="lGtFl">
         <node concept="TUZQ0" id="713BH0SCemY" role="3nqlJM">
           <property role="TUZQ4" value="models to break down by module to constitute a MResource. Only models that satisfy 'are subject to generation' criteria (see {@link GenerationFacade} are taken into account." />
           <node concept="zr_55" id="713BH0SCen0" role="zr_5Q">
             <ref role="zr_51" node="6zsZmIC0WqN" resolve="models" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="35A2TU__YXJ" role="jymVt" />
+    <node concept="3clFb_" id="35A2TU_A5Nk" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="canGenerateCondition" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="37vLTG" id="35A2TU_A6fR" role="3clF46">
+        <property role="TrG5h" value="condition" />
+        <node concept="9cv3F" id="35A2TU_A6tb" role="1tU5fm">
+          <node concept="3uibUv" id="35A2TU_A6tc" role="1ajw0F">
+            <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+          </node>
+          <node concept="10P_77" id="35A2TU_A6td" role="1ajl9A" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="35A2TU_A5Nn" role="3clF47">
+        <node concept="3clFbF" id="35A2TU_AoiD" role="3cqZAp">
+          <node concept="37vLTI" id="35A2TU_AovC" role="3clFbG">
+            <node concept="37vLTw" id="35A2TU_AoDi" role="37vLTx">
+              <ref role="3cqZAo" node="35A2TU_A6fR" resolve="condition" />
+            </node>
+            <node concept="37vLTw" id="35A2TU_AoiC" role="37vLTJ">
+              <ref role="3cqZAo" node="35A2TU_A1_m" resolve="myCanGenerateCondition" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="35A2TU_AoOJ" role="3cqZAp">
+          <node concept="Xjq3P" id="35A2TU_Ap6e" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="35A2TU_A5xy" role="1B3o_S" />
+      <node concept="3uibUv" id="35A2TU_A5Md" role="3clF45">
+        <ref role="3uigEE" node="6gLh390EkrJ" resolve="ModelsToResources" />
+      </node>
+      <node concept="P$JXv" id="35A2TU_Apl1" role="lGtFl">
+        <node concept="TZ5HA" id="35A2TU_Apl2" role="TZ5H$">
+          <node concept="1dT_AC" id="35A2TU_Apl3" role="1dT_Ay">
+            <property role="1dT_AB" value="Occasionally, we need to override default 'can generate a model' criteria, e.g. when one needs to transform a model that is not " />
+          </node>
+          <node concept="1dT_AA" id="35A2TU_Ap$f" role="1dT_Ay">
+            <node concept="VVOAv" id="35A2TU_Axh4" role="qph3F">
+              <node concept="TZ5HA" id="35A2TU_Axh8" role="2Xj1qM">
+                <node concept="1dT_AC" id="35A2TU_Axhm" role="1dT_Ay">
+                  <property role="1dT_AB" value="GeneratableSModel" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="35A2TU_Ap$e" role="1dT_Ay">
+            <property role="1dT_AB" value=", like temporary or transient" />
           </node>
         </node>
       </node>
@@ -399,22 +499,8 @@
                   <ref role="3cqZAo" node="38la9jYO00F" resolve="models" />
                 </node>
                 <node concept="3zZkjj" id="713BH0SBiZy" role="2OqNvi">
-                  <node concept="1bVj0M" id="713BH0SBiZ$" role="23t8la">
-                    <node concept="3clFbS" id="713BH0SBiZ_" role="1bW5cS">
-                      <node concept="3clFbF" id="713BH0SBjre" role="3cqZAp">
-                        <node concept="2YIFZM" id="713BH0SBjOo" role="3clFbG">
-                          <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
-                          <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
-                          <node concept="37vLTw" id="713BH0SBkem" role="37wK5m">
-                            <ref role="3cqZAo" node="713BH0SBiZA" resolve="it" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rh6nW" id="713BH0SBiZA" role="1bW2Oz">
-                      <property role="TrG5h" value="it" />
-                      <node concept="2jxLKc" id="713BH0SBiZB" role="1tU5fm" />
-                    </node>
+                  <node concept="37vLTw" id="35A2TU_A5nK" role="23t8la">
+                    <ref role="3cqZAo" node="35A2TU_A1_m" resolve="myCanGenerateCondition" />
                   </node>
                 </node>
               </node>

@@ -111,6 +111,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.resources.IMResource" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.resources.ModelsToResources" file="ModelsToResources.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -119,10 +120,10 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
