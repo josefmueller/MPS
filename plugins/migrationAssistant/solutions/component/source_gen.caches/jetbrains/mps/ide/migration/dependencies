@@ -132,7 +132,6 @@
     <classNode extendsClassName="jetbrains.mps.ide.migration.MigrationManager" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationTrigger" file="MigrationTrigger.java">
-    <classNode dependClassName="com.intellij.ide.GeneralSettings" />
     <classNode dependClassName="com.intellij.openapi.application.Application" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
@@ -145,9 +144,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.project.ex.ProjectManagerEx" />
     <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
     <classNode dependClassName="com.intellij.util.WaitForProgressToShow" />
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -196,14 +193,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelLanguageEvent" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
-    <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationSession" />
   </dependency>
