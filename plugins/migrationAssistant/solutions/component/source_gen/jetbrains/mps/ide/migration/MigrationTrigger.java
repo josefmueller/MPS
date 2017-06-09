@@ -296,7 +296,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     final MigrationWizard wizard = new MigrationWizard(myProject, session);
     // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
     boolean finished = wizard.showAndGet();
-    final MigrationError errors = session.getErrorDescriptor();
+    final MigrationError errors = session.getError();
     if (!(finished) && errors == null) {
       return true;
     }
@@ -497,10 +497,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     public MigrationOptions getOptions() {
       return myOptions;
     }
-    public MigrationError getErrorDescriptor() {
+    public MigrationError getError() {
       return myErrors;
     }
-    public void setErrorDescriptor(MigrationError errors) {
+    public void setError(MigrationError errors) {
       myErrors = errors;
     }
   }

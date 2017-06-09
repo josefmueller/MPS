@@ -62,11 +62,11 @@ import java.util.Collection;
     return res;
   }
   @Nullable
-  public MigrationError getErrorDescriptor() {
+  public MigrationError getError() {
     // todo remove odd MigrationErrorDescriptor 
     return TestMigrationSession.this.myD;
   }
-  public void setErrorDescriptor(MigrationError errors) {
+  public void setError(MigrationError errors) {
     TestMigrationSession.this.myD = errors;
   }
 

@@ -751,6 +751,17 @@
                               <node concept="3clFbS" id="6dkZ8D0LIwh" role="2LFqv$">
                                 <node concept="SfApY" id="2hEy8HRq2LW" role="3cqZAp">
                                   <node concept="3clFbS" id="2hEy8HRq2LY" role="SfCbr">
+                                    <node concept="3clFbF" id="5LU_ADCcPJB" role="3cqZAp">
+                                      <node concept="2OqwBi" id="5LU_ADCcQ4_" role="3clFbG">
+                                        <node concept="37vLTw" id="5LU_ADCcPJ_" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
+                                        </node>
+                                        <node concept="liA8E" id="5LU_ADCcQj_" role="2OqNvi">
+                                          <ref role="37wK5l" node="2htE_P_Mtok" resolve="setError" />
+                                          <node concept="10Nm6u" id="5LU_ADCcQvv" role="37wK5m" />
+                                        </node>
+                                      </node>
+                                    </node>
                                     <node concept="3clFbF" id="6dkZ8D0J9KZ" role="3cqZAp">
                                       <node concept="2OqwBi" id="6dkZ8D0Jak3" role="3clFbG">
                                         <node concept="37vLTw" id="6dkZ8D0J9KX" role="2Oq$k0">
@@ -886,7 +897,7 @@
                                                                   <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
                                                                 </node>
                                                                 <node concept="liA8E" id="3nmMoI1XLyW" role="2OqNvi">
-                                                                  <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getErrorDescriptor" />
+                                                                  <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getError" />
                                                                 </node>
                                                               </node>
                                                               <node concept="liA8E" id="3nmMoI1XMJo" role="2OqNvi">
@@ -967,7 +978,7 @@
                                               <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
                                             </node>
                                             <node concept="liA8E" id="kFlbeYOb0q" role="2OqNvi">
-                                              <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getErrorDescriptor" />
+                                              <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getError" />
                                             </node>
                                           </node>
                                           <node concept="liA8E" id="kFlbeYOb0r" role="2OqNvi">
@@ -1022,7 +1033,7 @@
                                         <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
                                       </node>
                                       <node concept="liA8E" id="kFlbeYO4Ks" role="2OqNvi">
-                                        <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getErrorDescriptor" />
+                                        <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getError" />
                                       </node>
                                     </node>
                                   </node>
@@ -1123,7 +1134,7 @@
                               <ref role="3cqZAo" node="2htE_P_MyAB" resolve="mySession" />
                             </node>
                             <node concept="liA8E" id="1zaRC58wg2C" role="2OqNvi">
-                              <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getErrorDescriptor" />
+                              <ref role="37wK5l" node="2htE_P_Mtoe" resolve="getError" />
                             </node>
                           </node>
                           <node concept="liA8E" id="1zaRC58wg2D" role="2OqNvi">
@@ -4088,27 +4099,21 @@
       <node concept="3clFbS" id="4hH4xQoKYdc" role="3clF47" />
     </node>
     <node concept="2tJIrI" id="4hH4xQoKUX2" role="jymVt" />
-    <node concept="2tJIrI" id="78xBDbKdgAd" role="jymVt" />
     <node concept="3clFb_" id="2htE_P_Mtoe" role="jymVt">
-      <property role="TrG5h" value="getErrorDescriptor" />
+      <property role="TrG5h" value="getError" />
       <property role="1EzhhJ" value="true" />
       <node concept="3uibUv" id="2htE_P_Mtof" role="3clF45">
         <ref role="3uigEE" node="2htE_P_MmBs" resolve="MigrationError" />
       </node>
       <node concept="3Tm1VV" id="2htE_P_Mtog" role="1B3o_S" />
       <node concept="3clFbS" id="2htE_P_Mtoh" role="3clF47" />
-      <node concept="P$JXv" id="2htE_P_PM28" role="lGtFl">
-        <node concept="x79VA" id="2htE_P_PM2b" role="3nqlJM">
-          <property role="x79VB" value="null means success" />
-        </node>
-      </node>
       <node concept="2AHcQZ" id="2htE_P_PQO8" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
     <node concept="2tJIrI" id="2htE_P_MusO" role="jymVt" />
     <node concept="3clFb_" id="2htE_P_Mtok" role="jymVt">
-      <property role="TrG5h" value="setErrorDescriptor" />
+      <property role="TrG5h" value="setError" />
       <property role="1EzhhJ" value="true" />
       <node concept="3cqZAl" id="2htE_P_Mtol" role="3clF45" />
       <node concept="3Tm1VV" id="2htE_P_Mtom" role="1B3o_S" />
@@ -4121,13 +4126,6 @@
       </node>
     </node>
     <node concept="3Tm1VV" id="2htE_P_Pzip" role="1B3o_S" />
-  </node>
-  <node concept="312cEu" id="4hH4xQoIp53">
-    <property role="TrG5h" value="MigrationException" />
-    <node concept="3Tm1VV" id="4hH4xQoIp54" role="1B3o_S" />
-    <node concept="3uibUv" id="4hH4xQoIpzx" role="1zkMxy">
-      <ref role="3uigEE" to="wyt6:~RuntimeException" resolve="RuntimeException" />
-    </node>
   </node>
   <node concept="312cEu" id="ANqTy7mxf1">
     <property role="TrG5h" value="NotMigratedLibsError" />
@@ -5299,6 +5297,7 @@
   <node concept="312cEu" id="2htE_P_OBzA">
     <property role="TrG5h" value="MigrationExceptionError" />
     <property role="2bfB8j" value="true" />
+    <property role="3GE5qa" value="2_migrate.errors" />
     <node concept="3clFbW" id="2htE_P_OBzE" role="jymVt">
       <node concept="3clFbS" id="2htE_P_OBzF" role="3clF47" />
       <node concept="3Tm1VV" id="2htE_P_OBzG" role="1B3o_S" />
@@ -5796,17 +5795,6 @@
         </node>
         <node concept="2GUZhq" id="2hEy8HRq13j" role="3cqZAp">
           <node concept="3clFbS" id="78xBDbK6Q3v" role="2GV8ay">
-            <node concept="3clFbF" id="5LU_ADCcPJB" role="3cqZAp">
-              <node concept="2OqwBi" id="5LU_ADCcQ4_" role="3clFbG">
-                <node concept="37vLTw" id="5LU_ADCcPJ_" role="2Oq$k0">
-                  <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
-                </node>
-                <node concept="liA8E" id="5LU_ADCcQj_" role="2OqNvi">
-                  <ref role="37wK5l" node="2htE_P_Mtok" resolve="setErrorDescriptor" />
-                  <node concept="10Nm6u" id="5LU_ADCcQvv" role="37wK5m" />
-                </node>
-              </node>
-            </node>
             <node concept="3clFbF" id="6dkZ8D0HuXH" role="3cqZAp">
               <node concept="37vLTI" id="6dkZ8D0Hvup" role="3clFbG">
                 <node concept="1rXfSq" id="6dkZ8D0Hwdo" role="37vLTx">
@@ -6466,7 +6454,7 @@
               <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
             </node>
             <node concept="liA8E" id="3c6oXHAqX2l" role="2OqNvi">
-              <ref role="37wK5l" node="2htE_P_Mtok" resolve="setErrorDescriptor" />
+              <ref role="37wK5l" node="2htE_P_Mtok" resolve="setError" />
               <node concept="37vLTw" id="3c6oXHAqX2r" role="37wK5m">
                 <ref role="3cqZAo" node="3c6oXHAqX2p" resolve="error" />
               </node>

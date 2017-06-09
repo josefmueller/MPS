@@ -76,9 +76,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.wizard.MigrationException" file="MigrationException.java">
-    <classNode extendsClassName="java.lang.RuntimeException" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationExceptionError" file="MigrationExceptionError.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="java.lang.Iterable" />

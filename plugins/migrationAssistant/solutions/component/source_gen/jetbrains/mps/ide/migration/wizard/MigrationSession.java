@@ -14,13 +14,8 @@ public interface MigrationSession {
 
   MigrationOptions getOptions();
 
-
-  /**
-   * 
-   * @return null means success
-   */
   @Nullable
-  MigrationError getErrorDescriptor();
+  MigrationError getError();
 
-  void setErrorDescriptor(MigrationError errors);
+  void setError(MigrationError errors);
 }

@@ -981,7 +981,7 @@
       <node id="1244156871959409415" at="295,92,296,75" concept="10" />
       <node id="1244156871959409422" at="296,75,297,117" concept="12" />
       <node id="1244156871959409424" at="297,117,298,43" concept="10" />
-      <node id="1244156871960346413" at="298,43,299,63" concept="10" />
+      <node id="1244156871960346413" at="298,43,299,53" concept="10" />
       <node id="1244156871959409440" at="300,40,301,18" concept="11" />
       <node id="1244156871959409442" at="302,5,303,0" concept="13" />
       <node id="1244156871959409454" at="306,27,307,66" concept="5" />
@@ -1031,8 +1031,8 @@
       <node id="4930617085367837000" at="489,55,490,26" concept="11" />
       <node id="4930617085367841607" at="493,51,494,32" concept="11" />
       <node id="4930617085367850066" at="497,42,498,23" concept="11" />
-      <node id="2620437876315903506" at="500,48,501,22" concept="11" />
-      <node id="2620437876315903512" at="503,59,504,24" concept="5" />
+      <node id="2620437876315903506" at="500,38,501,22" concept="11" />
+      <node id="2620437876315903512" at="503,49,504,24" concept="5" />
       <node id="1244156871960204839" at="486,0,488,0" concept="3" trace="MyMigrationSession#()V" />
       <node id="9067123504052898869" at="110,0,113,0" concept="9" trace="blockMigrationsCheck#()V" />
       <node id="9067123504052951651" at="116,64,119,5" concept="8" />
@@ -1051,7 +1051,7 @@
       <node id="3021070216606458229" at="241,18,244,13" concept="1" />
       <node id="617150929480654353" at="262,0,265,0" concept="9" trace="run#()V" />
       <node id="86837677856955001" at="272,0,275,0" concept="9" trace="run#()V" />
-      <node id="1244156871959409432" at="299,63,302,5" concept="8" />
+      <node id="1244156871959409432" at="299,53,302,5" concept="8" />
       <node id="1244156871959409452" at="306,0,309,0" concept="9" trace="run#()V" />
       <node id="1244156871959409499" at="317,0,320,0" concept="9" trace="run#()V" />
       <node id="1244156871959409523" at="326,0,329,0" concept="9" trace="run#()V" />
@@ -1070,8 +1070,8 @@
       <node id="8181373110754719292" at="453,33,456,7" concept="8" />
       <node id="3827118473092390712" at="464,103,467,7" concept="8" />
       <node id="617150929480447698" at="469,0,472,0" concept="9" trace="run#()V" />
-      <node id="2620437876315903502" at="500,0,503,0" concept="9" trace="getErrorDescriptor#()Ljetbrains/mps/ide/migration/wizard/MigrationError;" />
-      <node id="2620437876315903508" at="503,0,506,0" concept="9" trace="setErrorDescriptor#(Ljetbrains/mps/ide/migration/wizard/MigrationError;)V" />
+      <node id="2620437876315903502" at="500,0,503,0" concept="9" trace="getError#()Ljetbrains/mps/ide/migration/wizard/MigrationError;" />
+      <node id="2620437876315903508" at="503,0,506,0" concept="9" trace="setError#(Ljetbrains/mps/ide/migration/wizard/MigrationError;)V" />
       <node id="7331580080053730548" at="230,0,234,0" concept="9" trace="run#()V" />
       <node id="5755153299693643155" at="355,0,359,0" concept="9" trace="reloadStarted#()V" />
       <node id="5755153299693643161" at="359,0,363,0" concept="9" trace="reloadFinished#()V" />
@@ -1191,8 +1191,8 @@
       <scope id="4930617085367814498" at="489,55,490,26" />
       <scope id="4930617085367814508" at="493,51,494,32" />
       <scope id="4930617085367814518" at="497,42,498,23" />
-      <scope id="2620437876315903505" at="500,48,501,22" />
-      <scope id="2620437876315903511" at="503,59,504,24" />
+      <scope id="2620437876315903505" at="500,38,501,22" />
+      <scope id="2620437876315903511" at="503,49,504,24" />
       <scope id="7331580080053730550" at="230,33,232,83" />
       <scope id="3021070216605830697" at="238,42,240,69" />
       <scope id="3021070216606458230" at="241,20,243,80" />

@@ -66,7 +66,6 @@ public class MigrationTask {
   public void run() {
     PersistenceRegistry.getInstance().disableFastFindUsages();
     try {
-      mySession.setErrorDescriptor(null);
       myIsComplete = doRun();
     } finally {
       PersistenceRegistry.getInstance().enableFastFindUsages();
@@ -142,7 +141,7 @@ public class MigrationTask {
   protected void result(ProgressMonitorAdapter m, MigrationError error, String msg) {
     m.step(msg);
     m.advance(0);
-    mySession.setErrorDescriptor(error);
+    mySession.setError(error);
   }
 
   public boolean forceComplete() {

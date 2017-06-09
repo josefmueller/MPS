@@ -71,6 +71,7 @@ public class MigrationStep extends BaseStep {
           public void run() {
             while (!(myTask.isComplete())) {
               try {
+                mySession.setError(null);
                 myTask.run();
               } catch (Throwable t) {
                 if (LOG.isEnabledFor(Level.ERROR)) {
@@ -81,12 +82,12 @@ public class MigrationStep extends BaseStep {
                 fireStateChanged();
                 break;
               }
-              if (mySession.getErrorDescriptor() != null) {
-                if (!(mySession.getErrorDescriptor().canIgnore())) {
+              if (mySession.getError() != null) {
+                if (!(mySession.getError().canIgnore())) {
                   ApplicationManager.getApplication().invokeLater(new Runnable() {
                     public void run() {
                       myErrorPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0), IdeBorderFactory.createTitledBorder("Error", true)));
-                      myErrorLabel.setText("<html>" + mySession.getErrorDescriptor().getMessage() + "</html>");
+                      myErrorLabel.setText("<html>" + mySession.getError().getMessage() + "</html>");
                       myErrorPanel.add(MigrationStep.this.myErrorLabel, BorderLayout.NORTH);
                       myTask.forceComplete();
                       myProgress.setFraction(1.0);
@@ -116,7 +117,7 @@ public class MigrationStep extends BaseStep {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           Project project = ProjectHelper.toIdeaProject(mySession.getProject());
-          String msg = mySession.getErrorDescriptor().getMessage();
+          String msg = mySession.getError().getMessage();
           msg = msg.replaceAll("<br>", "\n");
           res.value = Messages.showYesNoDialog(project, msg + "Continue migration?", "Errors detected", "Ignore and Continue", "Stop Migration", null) == Messages.YES;
         }

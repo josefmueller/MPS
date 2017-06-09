@@ -82,12 +82,12 @@ public class MigrationsTest {
 
       @Nullable
       @Override
-      public MigrationError getErrorDescriptor() {
+      public MigrationError getError() {
         return myD;
       }
 
       @Override
-      public void setErrorDescriptor(MigrationError errors) {
+      public void setError(MigrationError errors) {
         myD = errors;
       }
     };

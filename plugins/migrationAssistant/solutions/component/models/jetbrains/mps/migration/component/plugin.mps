@@ -3869,7 +3869,7 @@
       <property role="TrG5h" value="myD" />
       <node concept="3Tm6S6" id="65hwFmZizYP" role="1B3o_S" />
       <node concept="3uibUv" id="65hwFmZizYN" role="1tU5fm">
-        <ref role="3uigEE" to="o8ag:2htE_P_MmBs" resolve="MigrationErrorDescriptor" />
+        <ref role="3uigEE" to="o8ag:2htE_P_MmBs" resolve="MigrationError" />
       </node>
     </node>
     <node concept="312cEg" id="5ec8feoiMQN" role="jymVt">
@@ -4062,10 +4062,10 @@
       </node>
     </node>
     <node concept="3clFb_" id="65hwFmZi2T9" role="jymVt">
-      <property role="TrG5h" value="getErrorDescriptor" />
+      <property role="TrG5h" value="getError" />
       <property role="1EzhhJ" value="false" />
       <node concept="3uibUv" id="65hwFmZi2Ta" role="3clF45">
-        <ref role="3uigEE" to="o8ag:2htE_P_MmBs" resolve="MigrationErrorDescriptor" />
+        <ref role="3uigEE" to="o8ag:2htE_P_MmBs" resolve="MigrationError" />
       </node>
       <node concept="3Tm1VV" id="65hwFmZi2Tb" role="1B3o_S" />
       <node concept="2AHcQZ" id="65hwFmZi2Tf" role="2AJF6D">
@@ -4090,14 +4090,14 @@
       </node>
     </node>
     <node concept="3clFb_" id="65hwFmZi2Ti" role="jymVt">
-      <property role="TrG5h" value="setErrorDescriptor" />
+      <property role="TrG5h" value="setError" />
       <property role="1EzhhJ" value="false" />
       <node concept="3cqZAl" id="65hwFmZi2Tj" role="3clF45" />
       <node concept="3Tm1VV" id="65hwFmZi2Tk" role="1B3o_S" />
       <node concept="37vLTG" id="65hwFmZi2Tm" role="3clF46">
         <property role="TrG5h" value="errors" />
         <node concept="3uibUv" id="65hwFmZi2Tn" role="1tU5fm">
-          <ref role="3uigEE" to="o8ag:2htE_P_MmBs" resolve="MigrationErrorDescriptor" />
+          <ref role="3uigEE" to="o8ag:2htE_P_MmBs" resolve="MigrationError" />
         </node>
       </node>
       <node concept="3clFbS" id="65hwFmZi2To" role="3clF47">
