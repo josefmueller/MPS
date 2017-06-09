@@ -42,7 +42,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.util.WaitForProgressToShow;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
+import jetbrains.mps.ide.migration.wizard.MigrationError;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
@@ -296,7 +296,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     final MigrationWizard wizard = new MigrationWizard(myProject, session);
     // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
     boolean finished = wizard.showAndGet();
-    final MigrationErrorDescriptor errors = session.getErrorDescriptor();
+    final MigrationError errors = session.getErrorDescriptor();
     if (!(finished) && errors == null) {
       return true;
     }
@@ -457,7 +457,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     }
   }
 
-
   private class MyClassesListener extends MPSClassesListenerAdapter {
     @Override
     public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
@@ -482,7 +481,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private class MyMigrationSession implements MigrationSession {
-    private MigrationErrorDescriptor myErrors = null;
+    private MigrationError myErrors = null;
 
     public MyMigrationSession() {
     }
@@ -498,10 +497,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     public MigrationOptions getOptions() {
       return myOptions;
     }
-    public MigrationErrorDescriptor getErrorDescriptor() {
+    public MigrationError getErrorDescriptor() {
       return myErrors;
     }
-    public void setErrorDescriptor(MigrationErrorDescriptor errors) {
+    public void setErrorDescriptor(MigrationError errors) {
       myErrors = errors;
     }
   }

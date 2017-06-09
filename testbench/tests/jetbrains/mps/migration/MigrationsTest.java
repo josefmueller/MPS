@@ -19,7 +19,7 @@ import com.intellij.history.core.changes.ChangeSet;
 import com.intellij.history.integration.LocalHistoryImpl;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.migration.MigrationManager;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
+import jetbrains.mps.ide.migration.wizard.MigrationError;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.ide.migration.wizard.MigrationTask;
 import jetbrains.mps.migration.global.MigrationOptions;
@@ -63,7 +63,7 @@ public class MigrationsTest {
     LocalHistoryImpl.getInstanceImpl().cleanupForNextTest();
 
     MigrationSession session = new MigrationSession() {
-      private MigrationErrorDescriptor myD;
+      private MigrationError myD;
 
       @Override
       public Project getProject() {
@@ -82,12 +82,12 @@ public class MigrationsTest {
 
       @Nullable
       @Override
-      public MigrationErrorDescriptor getErrorDescriptor() {
+      public MigrationError getErrorDescriptor() {
         return myD;
       }
 
       @Override
-      public void setErrorDescriptor(MigrationErrorDescriptor errors) {
+      public void setErrorDescriptor(MigrationError errors) {
         myD = errors;
       }
     };

@@ -1509,9 +1509,9 @@
       <node id="7641221613047050365" at="53,40,54,50" concept="12" />
       <node id="7641221613047089567" at="57,137,58,27" concept="6" />
       <node id="7012529811902451718" at="61,5,62,15" concept="13" />
-      <node id="1348525460772551297" at="65,56,66,48" concept="14" />
+      <node id="1348525460772551297" at="65,46,66,48" concept="14" />
       <node id="7012529811902455998" at="66,48,67,41" concept="13" />
-      <node id="7012529811902456809" at="69,67,70,43" concept="6" />
+      <node id="7012529811902456809" at="69,57,70,43" concept="6" />
       <node id="2950003852470373074" at="74,0,75,0" concept="7" trace="myProjectMig" />
       <node id="2950003852470426540" at="75,0,76,0" concept="7" trace="myModuleMig" />
       <node id="7012529811902526422" at="79,42,80,33" concept="13" />
@@ -1593,7 +1593,7 @@
       <node id="7012529811902443063" at="47,0,50,0" concept="11" trace="getProject#()Ljetbrains/mps/project/Project;" />
       <node id="7012529811902443069" at="50,0,53,0" concept="11" trace="getMigrationManager#()Ljetbrains/mps/ide/migration/MigrationManager;" />
       <node id="7641221613047094074" at="56,54,59,9" concept="9" />
-      <node id="7012529811902443090" at="69,0,72,0" concept="11" trace="setErrorDescriptor#(Ljetbrains/mps/ide/migration/wizard/MigrationErrorDescriptor;)V" />
+      <node id="7012529811902443090" at="69,0,72,0" concept="11" trace="setErrorDescriptor#(Ljetbrains/mps/ide/migration/wizard/MigrationError;)V" />
       <node id="7012529811902464495" at="79,0,82,0" concept="11" trace="isMigrationRequired#()Z" />
       <node id="7012529811902464499" at="82,0,85,0" concept="11" trace="isMigrationRequired#(Ljava/lang/Iterable;)Z" />
       <node id="7012529811902464506" at="85,0,88,0" concept="11" trace="importVersionsUpdateRequired#(Ljava/lang/Iterable;)Z" />
@@ -1630,7 +1630,7 @@
       <node id="1348525460771846872" at="259,7,263,7" concept="21" />
       <node id="1348525460771361070" at="291,7,295,7" concept="21" />
       <node id="7641221613047065605" at="55,108,60,7" concept="10" />
-      <node id="7012529811902443081" at="64,0,69,0" concept="11" trace="getErrorDescriptor#()Ljetbrains/mps/ide/migration/wizard/MigrationErrorDescriptor;" />
+      <node id="7012529811902443081" at="64,0,69,0" concept="11" trace="getErrorDescriptor#()Ljetbrains/mps/ide/migration/wizard/MigrationError;" />
       <node id="7201972523308070764" at="90,0,95,0" concept="11" trace="executeScript#(Ljetbrains/mps/ide/migration/ScriptApplied;)V" />
       <node id="1837214909504776809" at="116,69,121,9" concept="6" />
       <node id="7012529811902706903" at="124,59,129,17" concept="13" />
@@ -1684,7 +1684,7 @@
       <scope id="7012529811902443067" at="47,31,48,21" />
       <scope id="7012529811902443073" at="50,49,51,26" />
       <scope id="7641221613047094080" at="57,137,58,27" />
-      <scope id="7012529811902443096" at="69,67,70,43" />
+      <scope id="7012529811902443096" at="69,57,70,43" />
       <scope id="7012529811902464498" at="79,42,80,33" />
       <scope id="7012529811902464505" at="82,67,83,18" />
       <scope id="7012529811902464512" at="85,76,86,19" />
@@ -1721,7 +1721,7 @@
       <scope id="7012529811902763286" at="310,81,311,32" />
       <scope id="7300402066448981500" at="318,85,319,51" />
       <scope id="7012529811902578622" at="43,88,45,18" />
-      <scope id="7012529811902443088" at="65,56,67,41" />
+      <scope id="7012529811902443088" at="65,46,67,41" />
       <scope id="7012529811902466548" at="77,0,79,0" />
       <scope id="7012529811902464513" at="88,0,90,0">
         <var name="module" id="7012529811902464514" />

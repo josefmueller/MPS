@@ -6,7 +6,7 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.Collections;
 
-public class MigrationExceptionError extends MigrationErrorDescriptor {
+public class MigrationExceptionError extends MigrationError {
   public MigrationExceptionError() {
   }
   public MigrationExceptionError(Throwable t) {

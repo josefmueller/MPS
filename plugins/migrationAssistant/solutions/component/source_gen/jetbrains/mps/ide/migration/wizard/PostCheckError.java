@@ -8,7 +8,7 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 
-public class PostCheckError extends MigrationErrorDescriptor {
+public class PostCheckError extends MigrationError {
   private Project myProject;
   private boolean myHaveBadCode;
   private Iterable<ScriptApplied> myMigrationsToCheck;

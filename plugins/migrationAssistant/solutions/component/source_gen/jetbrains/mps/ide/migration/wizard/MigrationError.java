@@ -5,8 +5,8 @@ package jetbrains.mps.ide.migration.wizard;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.progress.ProgressIndicator;
 
-public abstract class MigrationErrorDescriptor {
-  public MigrationErrorDescriptor() {
+public abstract class MigrationError {
+  public MigrationError() {
   }
 
   /**

@@ -19,7 +19,7 @@ import java.util.Collections;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import jetbrains.mps.project.AbstractModule;
 
-public class MigrationsMissingError extends MigrationErrorDescriptor {
+public class MigrationsMissingError extends MigrationError {
   private List<ScriptApplied> errors;
   public MigrationsMissingError(List<ScriptApplied> errors) {
     this.errors = errors;

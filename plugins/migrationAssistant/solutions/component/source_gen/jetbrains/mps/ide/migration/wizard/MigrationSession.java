@@ -20,7 +20,7 @@ public interface MigrationSession {
    * @return null means success
    */
   @Nullable
-  MigrationErrorDescriptor getErrorDescriptor();
+  MigrationError getErrorDescriptor();
 
-  void setErrorDescriptor(MigrationErrorDescriptor errors);
+  void setErrorDescriptor(MigrationError errors);
 }

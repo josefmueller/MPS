@@ -10,7 +10,7 @@ import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 
-public class PreCheckError extends MigrationErrorDescriptor {
+public class PreCheckError extends MigrationError {
   private boolean myCanIgnore;
   private Project myProject;
   public PreCheckError(Project p, boolean canIgnore) {

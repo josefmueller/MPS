@@ -139,7 +139,7 @@ public class MigrationTask {
     LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(p), label, Color.ORANGE.getRGB());
   }
 
-  protected void result(ProgressMonitorAdapter m, MigrationErrorDescriptor error, String msg) {
+  protected void result(ProgressMonitorAdapter m, MigrationError error, String msg) {
     m.step(msg);
     m.advance(0);
     mySession.setErrorDescriptor(error);

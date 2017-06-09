@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.ide.migration.check.DependencyOnNotMigratedLibProblem;
 
-public class NotMigratedLibsError extends MigrationErrorDescriptor {
+public class NotMigratedLibsError extends MigrationError {
   private Map<SModule, SModule> errors;
   public NotMigratedLibsError(Map<SModule, SModule> errors) {
     this.errors = errors;
