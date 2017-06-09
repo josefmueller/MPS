@@ -25,7 +25,7 @@ public class ChangeGroupMessages {
     myLayout = layout;
     myLeft = left;
     EditorComponent editorComponent = (left ? myLayout.getLeftComponent() : myLayout.getRightComponent());
-    myGutter = (editorComponent).getMessagesGutter();
+    myGutter = editorComponent.getMessagesGutter();
     myUpdateQueue = new MergingUpdateQueue("ChangeGroupMessages", 500, true, editorComponent, null, null, true);
     myUpdateQueue.setRestartTimerOnAdd(true);
   }
@@ -73,7 +73,7 @@ public class ChangeGroupMessages {
     }
     @Override
     public String getMessage() {
-      return null;
+      return "";
     }
     @Override
     public int getStart(jetbrains.mps.openapi.editor.EditorComponent component) {

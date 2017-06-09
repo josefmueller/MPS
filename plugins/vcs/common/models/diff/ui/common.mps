@@ -7,8 +7,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="btf5" ref="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" />
@@ -16155,10 +16155,8 @@
               <ref role="3cqZAo" node="D356mG1n6f" resolve="myGutter" />
             </node>
             <node concept="2OqwBi" id="D356mG1n6n" role="37vLTx">
-              <node concept="1eOMI4" id="D356mG1n6$" role="2Oq$k0">
-                <node concept="37vLTw" id="26fDspGSWjD" role="1eOMHV">
-                  <ref role="3cqZAo" node="26fDspGSWjw" resolve="editorComponent" />
-                </node>
+              <node concept="37vLTw" id="26fDspGSWjD" role="2Oq$k0">
+                <ref role="3cqZAo" node="26fDspGSWjw" resolve="editorComponent" />
               </node>
               <node concept="liA8E" id="D356mG1n6p" role="2OqNvi">
                 <ref role="37wK5l" to="exr9:~EditorComponent.getMessagesGutter():jetbrains.mps.nodeEditor.MessagesGutter" resolve="getMessagesGutter" />
@@ -16514,8 +16512,10 @@
         <property role="TrG5h" value="getMessage" />
         <property role="DiZV1" value="false" />
         <node concept="3clFbS" id="D356mG1n4F" role="3clF47">
-          <node concept="3clFbF" id="D356mG1n4W" role="3cqZAp">
-            <node concept="10Nm6u" id="D356mG1n4X" role="3clFbG" />
+          <node concept="3clFbF" id="7$$pcamHA$n" role="3cqZAp">
+            <node concept="Xl_RD" id="7$$pcamHA$m" role="3clFbG">
+              <property role="Xl_RC" value="" />
+            </node>
           </node>
         </node>
         <node concept="3Tm1VV" id="D356mG1n4D" role="1B3o_S" />
