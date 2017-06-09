@@ -74,6 +74,9 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
+      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
+        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
+      </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
       </concept>
@@ -409,6 +412,10 @@
       <concept id="1216860049627" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput" flags="nn" index="1iwH70">
         <reference id="1216860049628" name="label" index="1iwH77" />
         <child id="1216860049632" name="inputNode" index="1iwH7V" />
+      </concept>
+      <concept id="1216860049622" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel" flags="nn" index="1iwH7d">
+        <reference id="1216860049623" name="label" index="1iwH7c" />
+        <child id="6851978633175404162" name="forModel" index="DUT31" />
       </concept>
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
       <concept id="1217004708011" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel" flags="nn" index="1r8y6K" />
@@ -2383,6 +2390,7 @@
     </node>
     <node concept="2rT7sh" id="hFZIfuo" role="2rTMjI">
       <property role="TrG5h" value="descriptorClass" />
+      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
     </node>
     <node concept="2rT7sh" id="hG00JLH" role="2rTMjI">
       <property role="TrG5h" value="classForRule" />
@@ -23203,16 +23211,53 @@
                     <node concept="liA8E" id="3AguOYZ6aql" role="2OqNvi">
                       <ref role="37wK5l" to="wyt6:~Class.cast(java.lang.Object):java.lang.Object" resolve="cast" />
                       <node concept="2ShNRf" id="3AguOYZ6a_d" role="37wK5m">
-                        <node concept="1pGfFk" id="3AguOYZ6gTd" role="2ShVmc">
-                          <ref role="37wK5l" node="h6ydU9V" resolve="TypesystemDescriptor" />
-                          <node concept="1ZhdrF" id="3AguOYZ6ht7" role="lGtFl">
-                            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
-                            <property role="2qtEX8" value="baseMethodDeclaration" />
+                        <node concept="HV5vD" id="p4S6WR71Ga" role="2ShVmc">
+                          <ref role="HV5vE" node="h6xXiRP" resolve="TypesystemDescriptor" />
+                          <node concept="1ZhdrF" id="p4S6WR71OU" role="lGtFl">
+                            <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797/2820489544401957798" />
+                            <property role="2qtEX8" value="classifier" />
                             <node concept="3$xsQk" id="3AguOYZ6ht8" role="3$ytzL">
                               <node concept="3clFbS" id="3AguOYZ6ht9" role="2VODD2">
                                 <node concept="3SKdUt" id="71FvR51fVek" role="3cqZAp">
                                   <node concept="3SKdUq" id="71FvR51fVem" role="3SKWNk">
                                     <property role="3SKdUp" value="TODO genContext.get output TypesystemDescriptorCons for model model;" />
+                                  </node>
+                                </node>
+                                <node concept="3cpWs8" id="p4S6WR73Z7" role="3cqZAp">
+                                  <node concept="3cpWsn" id="p4S6WR73Z8" role="3cpWs9">
+                                    <property role="TrG5h" value="descriptorClass" />
+                                    <node concept="3Tqbb2" id="p4S6WR73Z6" role="1tU5fm">
+                                      <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
+                                    </node>
+                                    <node concept="2OqwBi" id="p4S6WR73Z9" role="33vP2m">
+                                      <node concept="1iwH7S" id="p4S6WR73Za" role="2Oq$k0" />
+                                      <node concept="1iwH7d" id="p4S6WR73Zb" role="2OqNvi">
+                                        <ref role="1iwH7c" node="hFZIfuo" resolve="descriptorClass" />
+                                        <node concept="v3LJS" id="p4S6WR73Zc" role="DUT31">
+                                          <ref role="v3LJV" node="1KHvivZKB2j" resolve="model" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3clFbJ" id="p4S6WR7aam" role="3cqZAp">
+                                  <node concept="3clFbS" id="p4S6WR7aao" role="3clFbx">
+                                    <node concept="3cpWs6" id="p4S6WR7aSP" role="3cqZAp">
+                                      <node concept="37vLTw" id="p4S6WR7aSR" role="3cqZAk">
+                                        <ref role="3cqZAo" node="p4S6WR73Z8" resolve="descriptorClass" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="3y3z36" id="p4S6WR7aHc" role="3clFbw">
+                                    <node concept="10Nm6u" id="p4S6WR7aN1" role="3uHU7w" />
+                                    <node concept="37vLTw" id="p4S6WR7ago" role="3uHU7B">
+                                      <ref role="3cqZAo" node="p4S6WR73Z8" resolve="descriptorClass" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3SKdUt" id="p4S6WR7eTr" role="3cqZAp">
+                                  <node concept="3SKdUq" id="p4S6WR7eTt" role="3SKWNk">
+                                    <property role="3SKdUp" value="fallback for legacy code" />
                                   </node>
                                 </node>
                                 <node concept="3cpWs6" id="71FvR51faQV" role="3cqZAp">

@@ -985,6 +985,11 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object referenceMacro_GetReferent_4147950839246952264(final ReferenceMacroContext _context) {
     // TODO genContext.get output TypesystemDescriptorCons for model model; 
+    SNode descriptorClass = _context.getOutputNodeByMappingLabel("descriptorClass", ((SModel) _context.getVariable("model")));
+    if (descriptorClass != null) {
+      return descriptorClass;
+    }
+    // fallback for legacy code 
     return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".TypesystemDescriptor";
   }
   public static boolean ifMacro_Condition_1174998351525(final IfMacroContext _context) {
@@ -3537,7 +3542,7 @@ parametersLoop:
     rtqMethods.put("1207964005026509451", new QueriesGenerated.RTQ(44, "param"));
     rtqMethods.put("1207964005026713952", new QueriesGenerated.RTQ(45, "param"));
     rtqMethods.put("7784090835020721696", new QueriesGenerated.RTQ(46, "getMatchedNode"));
-    rtqMethods.put("4147950839246952263", new QueriesGenerated.RTQ(47, "TypesystemDescriptor"));
+    rtqMethods.put("451732630914473274", new QueriesGenerated.RTQ(47, "TypesystemDescriptor"));
   }
   @NotNull
   @Override
