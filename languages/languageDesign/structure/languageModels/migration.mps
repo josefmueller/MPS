@@ -1510,9 +1510,12 @@
       <ref role="3tTeZr" to="slm6:536fTXa4WHO" resolve="produces data" />
     </node>
     <node concept="2tJIrI" id="2JrNx06efSY" role="jymVt" />
-    <node concept="3tTeZs" id="2JrNx06efSZ" role="jymVt">
-      <property role="3tTeZt" value="&lt;migration is not rerunnable&gt;" />
-      <ref role="3tTeZr" to="slm6:1JWcQ2VeWIs" resolve="isRerunnable" />
+    <node concept="3tYpMH" id="7F6fz3H$iVa" role="jymVt">
+      <property role="TrG5h" value="isRerunnable" />
+      <property role="3tYpME" value="true" />
+      <ref role="25KYV2" to="slm6:1JWcQ2VeWIs" resolve="isRerunnable" />
+      <node concept="3Tm1VV" id="7F6fz3H$iVc" role="1B3o_S" />
+      <node concept="10P_77" id="7F6fz3H$iVd" role="1tU5fm" />
     </node>
     <node concept="3tTeZs" id="2JrNx06efT0" role="jymVt">
       <property role="3tTeZt" value="&lt;description&gt;" />
@@ -1561,6 +1564,24 @@
                     <node concept="3TrcHB" id="6nammw76DdZ" role="2OqNvi">
                       <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
                     </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="69B1p0lhA6e" role="3cqZAp">
+                  <node concept="3clFbS" id="69B1p0lhA6g" role="3clFbx">
+                    <node concept="3N13vt" id="69B1p0lhDLo" role="3cqZAp" />
+                  </node>
+                  <node concept="2OqwBi" id="69B1p0lhCsD" role="3clFbw">
+                    <node concept="2OqwBi" id="69B1p0lhB4m" role="2Oq$k0">
+                      <node concept="2GrUjf" id="69B1p0lhAPg" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="2JrNx06eiTl" resolve="conceptNode" />
+                      </node>
+                      <node concept="3CFZ6_" id="69B1p0lhC9U" role="2OqNvi">
+                        <node concept="3CFYIy" id="69B1p0lhCe7" role="3CFYIz">
+                          <ref role="3CFYIx" to="tpce:7ERGDLdoDvC" resolve="SmartReferenceAttribute" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3x8VRR" id="69B1p0lhDCt" role="2OqNvi" />
                   </node>
                 </node>
                 <node concept="3clFbH" id="6nammw76At9" role="3cqZAp" />
@@ -1951,7 +1972,7 @@
         <ref role="37wK5l" to="ni5j:~Pattern.compile(java.lang.String):java.util.regex.Pattern" resolve="compile" />
         <ref role="1Pybhc" to="ni5j:~Pattern" resolve="Pattern" />
         <node concept="Xl_RD" id="1Pr44JllPR7" role="37wK5m">
-          <property role="Xl_RC" value="(.*)\\{(.+)\\}(.*)" />
+          <property role="Xl_RC" value="(.*)&lt;\\{(.+)\\}&gt;(.*)" />
         </node>
       </node>
     </node>
