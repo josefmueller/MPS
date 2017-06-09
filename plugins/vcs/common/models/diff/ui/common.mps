@@ -408,7 +408,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -16155,10 +16155,8 @@
               <ref role="3cqZAo" node="D356mG1n6f" resolve="myGutter" />
             </node>
             <node concept="2OqwBi" id="D356mG1n6n" role="37vLTx">
-              <node concept="1eOMI4" id="D356mG1n6$" role="2Oq$k0">
-                <node concept="37vLTw" id="26fDspGSWjD" role="1eOMHV">
-                  <ref role="3cqZAo" node="26fDspGSWjw" resolve="editorComponent" />
-                </node>
+              <node concept="37vLTw" id="26fDspGSWjD" role="2Oq$k0">
+                <ref role="3cqZAo" node="26fDspGSWjw" resolve="editorComponent" />
               </node>
               <node concept="liA8E" id="D356mG1n6p" role="2OqNvi">
                 <ref role="37wK5l" to="exr9:~EditorComponent.getMessagesGutter():jetbrains.mps.nodeEditor.MessagesGutter" resolve="getMessagesGutter" />
@@ -16514,8 +16512,10 @@
         <property role="TrG5h" value="getMessage" />
         <property role="DiZV1" value="false" />
         <node concept="3clFbS" id="D356mG1n4F" role="3clF47">
-          <node concept="3clFbF" id="D356mG1n4W" role="3cqZAp">
-            <node concept="10Nm6u" id="D356mG1n4X" role="3clFbG" />
+          <node concept="3clFbF" id="7$$pcamHA$n" role="3cqZAp">
+            <node concept="Xl_RD" id="7$$pcamHA$m" role="3clFbG">
+              <property role="Xl_RC" value="" />
+            </node>
           </node>
         </node>
         <node concept="3Tm1VV" id="D356mG1n4D" role="1B3o_S" />
