@@ -6,13 +6,11 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
-import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.migration.global.ProjectMigrationProperties;
-import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
@@ -44,6 +42,7 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.util.WaitForProgressToShow;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
+import jetbrains.mps.ide.migration.wizard.MigrationErrorDescriptor;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
@@ -63,6 +62,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.ide.migration.wizard.MigrationSession;
 
 /**
  * At the first startup, migration is not required
@@ -78,7 +78,7 @@ import jetbrains.mps.module.ReloadableModuleBase;
  */
 @State(name = "MigrationTrigger", storages = @Storage(value = StoragePathMacros.WORKSPACE_FILE)
 )
-public class MigrationTrigger extends AbstractProjectComponent implements IStartupMigrationExecutor, MigrationSession {
+public class MigrationTrigger extends AbstractProjectComponent implements IStartupMigrationExecutor {
   private final ClassLoaderManager myClassLoaderManager;
   private MigrationOptions myOptions = new MigrationOptions();
 
@@ -95,8 +95,6 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private MigrationTrigger.MyClassesListener myClassesListener = new MigrationTrigger.MyClassesListener();
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
   private boolean myListenersAdded = false;
-
-  private MigrationErrorDescriptor myErrors = null;
 
   public MigrationTrigger(Project ideaProject, MPSProject p, MigrationManager migrationManager, ProjectMigrationProperties props, MPSCoreComponents mpsCore, ReloadManagerComponent reloadManager) {
     super(ideaProject);
@@ -294,24 +292,22 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private boolean startMigration() {
-    final MigrationWizard wizard = new MigrationWizard(myProject, this);
+    MigrationTrigger.MyMigrationSession session = new MigrationTrigger.MyMigrationSession();
+    final MigrationWizard wizard = new MigrationWizard(myProject, session);
     // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
     boolean finished = wizard.showAndGet();
-    if (!(finished) && myErrors == null) {
+    final MigrationErrorDescriptor errors = session.getErrorDescriptor();
+    if (!(finished) && errors == null) {
       return true;
     }
 
-    if (myErrors == null) {
+    if (errors == null) {
       ApplicationManager.getApplication().runWriteAction(new Runnable() {
         public void run() {
           ProjectManagerEx.getInstance().reloadProject(myProject);
         }
       });
     } else {
-      if (myErrors == null) {
-        return true;
-      }
-
       StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
         public void run() {
           final Wrappers._T<List<Problem>> problems = new Wrappers._T<List<Problem>>();
@@ -319,7 +315,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
             public void run(@NotNull final ProgressIndicator progressIndicator) {
               myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
                 public void run() {
-                  problems.value = Sequence.fromIterable(myErrors.getProblems(progressIndicator)).toListSequence();
+                  problems.value = Sequence.fromIterable(errors.getProblems(progressIndicator)).toListSequence();
                 }
               });
             }
@@ -485,24 +481,28 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     }
   }
 
-  public MigrationErrorDescriptor getErrorDescriptor() {
-    return myErrors;
-  }
+  private class MyMigrationSession implements MigrationSession {
+    private MigrationErrorDescriptor myErrors = null;
 
-  public void setErrorDescriptor(MigrationErrorDescriptor errors) {
-    myErrors = errors;
-  }
-
-  @Override
-  public jetbrains.mps.project.Project getProject() {
-    return myMpsProject;
-  }
-  @Override
-  public MigrationManager getMigrationManager() {
-    return myMigrationManager;
-  }
-  @Override
-  public MigrationOptions getOptions() {
-    return myOptions;
+    public MyMigrationSession() {
+    }
+    @Override
+    public jetbrains.mps.project.Project getProject() {
+      return myMpsProject;
+    }
+    @Override
+    public MigrationManager getMigrationManager() {
+      return myMigrationManager;
+    }
+    @Override
+    public MigrationOptions getOptions() {
+      return myOptions;
+    }
+    public MigrationErrorDescriptor getErrorDescriptor() {
+      return myErrors;
+    }
+    public void setErrorDescriptor(MigrationErrorDescriptor errors) {
+      myErrors = errors;
+    }
   }
 }
