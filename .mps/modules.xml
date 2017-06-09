@@ -6,6 +6,8 @@
       <modulePath path="$PROJECT_DIR$/core/analyzers/solutions/sandbox/jetbrains.mps.lang.dataFlow.analyzers.sandbox.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/core/aspects/behavior/behavior-api/jetbrains.mps.lang.behavior.api.msd" folder="core.aspects.behavior" />
       <modulePath path="$PROJECT_DIR$/core/aspects/behavior/behavior-runtime/jetbrains.mps.lang.behavior.runtime.msd" folder="core.aspects.behavior" />
+      <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.aspect.constraints.devkit" folder="core.aspects.descriptor" />
+      <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.aspect.dataflow.devkit" folder="core.aspects.descriptor" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.aspect.structure.devkit" folder="core.aspects.descriptor" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.aspect.textgen.devkit" folder="core.aspects.descriptor" />
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.aspect.typesystem.devkit" folder="core.aspects.descriptor" />
