@@ -82,7 +82,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NamedTupleLiteral == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL);
           cpb.shortDesc("tuple literal");
-          cpb.presentationByReference(0x1209b88b156L, "tupleDeclaration", "<", "> literal");
+          cpb.presentationByReference(0x1209b88b156L, "tupleDeclaration", "", " literal");
           props_NamedTupleLiteral = cpb.create();
         }
         return props_NamedTupleLiteral;
@@ -90,7 +90,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_NamedTupleType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L);
           cpb.shortDesc("reference to named tuple declaration");
-          cpb.presentationByReference(0x101de490babL, "classifier", "<", "> type");
+          cpb.presentationByReference(0x101de490babL, "classifier", "", " type");
           props_NamedTupleType = cpb.create();
         }
         return props_NamedTupleType;

@@ -224,8 +224,8 @@
     <node concept="RPilO" id="47y0FrqaLft" role="lGtFl">
       <ref role="RPilL" node="_QrTcSEy4m" resolve="tool" />
       <node concept="ROjv2" id="47y0FrqaLfu" role="ROhUF">
-        <property role="1W_73P" value="tool&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="tool&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>
@@ -246,8 +246,8 @@
     <node concept="RPilO" id="47y0FrqaLfv" role="lGtFl">
       <ref role="RPilL" node="_QrTcSEy4p" resolve="componentDeclaration" />
       <node concept="ROjv2" id="47y0FrqaLfw" role="ROhUF">
-        <property role="1W_73P" value="preferenceComponent&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="preferenceComponent&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>

@@ -384,8 +384,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NonEmptyProperty;
       case LanguageConceptSwitch.NotEditableVaraileReference:
         if (props_NotEditableVaraileReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("{<{variableDeclaration}>} not editable");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x44e7cb3605ec4004L);
+          cpb.presentationByReference(0x44e7cb3605ec4005L, "variableDeclaration", "{", "} not editable");
           props_NotEditableVaraileReference = cpb.create();
         }
         return props_NotEditableVaraileReference;

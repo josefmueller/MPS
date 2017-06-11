@@ -29,7 +29,6 @@
       </concept>
       <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
         <property id="4307758654697524060" name="suffix" index="1W_73K" />
-        <property id="4307758654697524057" name="prefix" index="1W_73P" />
       </concept>
       <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
         <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
@@ -237,8 +236,7 @@
     <node concept="RPilO" id="47y0FrqaLcp" role="lGtFl">
       <ref role="RPilL" node="i2pR8DE" resolve="tupleDeclaration" />
       <node concept="ROjv2" id="47y0FrqaLcq" role="ROhUF">
-        <property role="1W_73P" value="&lt;" />
-        <property role="1W_73K" value="&gt; type" />
+        <property role="1W_73K" value=" type" />
       </node>
     </node>
   </node>
@@ -267,8 +265,7 @@
     <node concept="RPilO" id="47y0FrqaLcs" role="lGtFl">
       <ref role="RPilL" node="i2ryb5m" resolve="tupleDeclaration" />
       <node concept="ROjv2" id="47y0FrqaLct" role="ROhUF">
-        <property role="1W_73P" value="&lt;" />
-        <property role="1W_73K" value="&gt; literal" />
+        <property role="1W_73K" value=" literal" />
       </node>
     </node>
   </node>

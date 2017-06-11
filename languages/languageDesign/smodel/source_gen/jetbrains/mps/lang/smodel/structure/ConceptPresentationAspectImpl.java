@@ -428,7 +428,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.EnumMemberReference:
         if (props_EnumMemberReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091e6212fdL);
-          cpb.presentationByReference(0x1091e625b13L, "enumMember", "<<", ">>");
+          cpb.presentationByReference(0x1091e625b13L, "enumMember", "<", ">");
           props_EnumMemberReference = cpb.create();
         }
         return props_EnumMemberReference;
@@ -1344,7 +1344,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SEnum_MemberOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37e691L);
           cpb.shortDesc("enum member access");
-          cpb.presentationByReference(0x120ed37e692L, "member", "<", ">");
+          cpb.presentationByReference(0x120ed37e692L, "member", "", "");
           props_SEnum_MemberOperation = cpb.create();
         }
         return props_SEnum_MemberOperation;

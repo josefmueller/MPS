@@ -1124,10 +1124,10 @@
                           <property role="Xl_RC" value="property" />
                         </node>
                         <node concept="Xl_RD" id="5O" role="37wK5m">
-                          <property role="Xl_RC" value="&lt;" />
+                          <property role="Xl_RC" value="" />
                         </node>
                         <node concept="Xl_RD" id="5P" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;" />
+                          <property role="Xl_RC" value="" />
                         </node>
                       </node>
                     </node>

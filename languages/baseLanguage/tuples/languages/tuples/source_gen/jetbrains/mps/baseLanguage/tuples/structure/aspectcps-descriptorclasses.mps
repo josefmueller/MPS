@@ -934,11 +934,9 @@
                         <node concept="Xl_RD" id="4F" role="37wK5m">
                           <property role="Xl_RC" value="tupleDeclaration" />
                         </node>
-                        <node concept="Xl_RD" id="4G" role="37wK5m">
-                          <property role="Xl_RC" value="&lt;" />
-                        </node>
+                        <node concept="Xl_RD" id="4G" role="37wK5m" />
                         <node concept="Xl_RD" id="4H" role="37wK5m">
-                          <property role="Xl_RC" value="&gt; literal" />
+                          <property role="Xl_RC" value=" literal" />
                         </node>
                       </node>
                     </node>
@@ -1029,11 +1027,9 @@
                         <node concept="Xl_RD" id="5f" role="37wK5m">
                           <property role="Xl_RC" value="classifier" />
                         </node>
-                        <node concept="Xl_RD" id="5g" role="37wK5m">
-                          <property role="Xl_RC" value="&lt;" />
-                        </node>
+                        <node concept="Xl_RD" id="5g" role="37wK5m" />
                         <node concept="Xl_RD" id="5h" role="37wK5m">
-                          <property role="Xl_RC" value="&gt; type" />
+                          <property role="Xl_RC" value=" type" />
                         </node>
                       </node>
                     </node>

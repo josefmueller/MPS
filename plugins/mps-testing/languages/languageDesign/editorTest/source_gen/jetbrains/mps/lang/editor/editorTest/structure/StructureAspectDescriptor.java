@@ -577,7 +577,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L);
     b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/4965160547087302660");
     b.associate("variableDeclaration", 0x44e7cb3605ec4005L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f90ed1L).optional(false).origin("4965160547087302661").done();
-    b.alias("{<{variableDeclaration}>} not editable");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPlusExpression() {

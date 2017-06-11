@@ -12,11 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
-import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 public class BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
@@ -30,29 +25,6 @@ public class BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu extends Substi
 
     public SMP_ReferenceScope_3t8pl7_a() {
       super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule"), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL, 0x2c4467914643e8fdL, "module"));
-    }
-    @Override
-    @NotNull
-    protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
-      return new BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu.SMP_ReferenceScope_3t8pl7_a.Item(context, referencedNode, getConcept(), getReferenceLink());
-    }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
-      private final SubstituteMenuContext _context;
-      private final SNode referencedNode;
-
-      private Item(SubstituteMenuContext context, SNode refNode, SConcept concept, SReferenceLink referenceLink) {
-        super(concept, context.getParentNode(), context.getCurrentTargetNode(), refNode, referenceLink, context.getEditorContext());
-        _context = context;
-        referencedNode = refNode;
-      }
-      @Override
-      public String getMatchingText(String pattern) {
-        return "<" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
-      }
-      @Override
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
     }
   }
 }

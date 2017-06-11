@@ -158,7 +158,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BwfPathReference:
         if (props_BwfPathReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c1fL);
-          cpb.presentationByReference(0x5c3f3e2c1cef4c20L, "target", "<pathref <", ">>");
+          cpb.presentationByReference(0x5c3f3e2c1cef4c20L, "target", "<pathref ", ">");
           props_BwfPathReference = cpb.create();
         }
         return props_BwfPathReference;

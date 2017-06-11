@@ -58,14 +58,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GetPreferencesComponentInProjectOperation:
         if (props_GetPreferencesComponentInProjectOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x9766f9338aa2118L);
-          cpb.presentationByReference(0x9766f9338aa2119L, "componentDeclaration", "preferenceComponent<<", ">>");
+          cpb.presentationByReference(0x9766f9338aa2119L, "componentDeclaration", "preferenceComponent<", ">");
           props_GetPreferencesComponentInProjectOperation = cpb.create();
         }
         return props_GetPreferencesComponentInProjectOperation;
       case LanguageConceptSwitch.GetToolInProjectOperation:
         if (props_GetToolInProjectOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xef7bf5acd06c4342L, 0xb11de42104eb9343L, 0x9766f9338aa2115L);
-          cpb.presentationByReference(0x9766f9338aa2116L, "tool", "tool<<", ">>");
+          cpb.presentationByReference(0x9766f9338aa2116L, "tool", "tool<", ">");
           props_GetToolInProjectOperation = cpb.create();
         }
         return props_GetToolInProjectOperation;

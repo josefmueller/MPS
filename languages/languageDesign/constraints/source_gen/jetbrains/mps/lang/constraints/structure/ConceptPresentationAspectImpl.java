@@ -472,15 +472,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NodeDefaultSearchScope;
       case LanguageConceptSwitch.NodePropertyConstraint:
         if (props_NodePropertyConstraint == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("property {<{applicableProperty}>}");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L);
+          cpb.presentationByReference(0x10b2a61697bL, "applicableProperty", "property {", "}");
           props_NodePropertyConstraint = cpb.create();
         }
         return props_NodePropertyConstraint;
       case LanguageConceptSwitch.NodeReferentConstraint:
         if (props_NodeReferentConstraint == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("link {<{applicableLink}>}");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL);
+          cpb.presentationByReference(0x10b7317b98aL, "applicableLink", "link {", "}");
           props_NodeReferentConstraint = cpb.create();
         }
         return props_NodeReferentConstraint;

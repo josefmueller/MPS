@@ -194,8 +194,8 @@
     <node concept="RPilO" id="47y0FrqaLh4" role="lGtFl">
       <ref role="RPilL" node="g$uo_Gj" resolve="enumMember" />
       <node concept="ROjv2" id="47y0FrqaLh5" role="ROhUF">
-        <property role="1W_73P" value="&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>
@@ -1531,10 +1531,6 @@
     </node>
     <node concept="RPilO" id="47y0FrqaLgZ" role="lGtFl">
       <ref role="RPilL" node="i3HdYqi" resolve="member" />
-      <node concept="ROjv2" id="47y0FrqaLh0" role="ROhUF">
-        <property role="1W_73P" value="&lt;" />
-        <property role="1W_73K" value="&gt;" />
-      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="i3HdYqO">

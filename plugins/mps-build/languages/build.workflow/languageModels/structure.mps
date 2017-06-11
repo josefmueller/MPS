@@ -486,8 +486,8 @@
     <node concept="RPilO" id="47y0FrqaLkC" role="lGtFl">
       <ref role="RPilL" node="5KZfyKsVOKw" resolve="target" />
       <node concept="ROjv2" id="47y0FrqaLkD" role="ROhUF">
-        <property role="1W_73P" value="&lt;pathref &lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="&lt;pathref " />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>

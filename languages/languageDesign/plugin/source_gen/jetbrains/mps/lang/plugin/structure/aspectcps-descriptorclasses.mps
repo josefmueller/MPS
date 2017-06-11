@@ -1684,10 +1684,10 @@
                           <property role="Xl_RC" value="action" />
                         </node>
                         <node concept="Xl_RD" id="94" role="37wK5m">
-                          <property role="Xl_RC" value="action&lt;&lt;" />
+                          <property role="Xl_RC" value="action&lt;" />
                         </node>
                         <node concept="Xl_RD" id="95" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>
@@ -2917,10 +2917,10 @@
                           <property role="Xl_RC" value="action" />
                         </node>
                         <node concept="Xl_RD" id="gu" role="37wK5m">
-                          <property role="Xl_RC" value="action&lt;&lt;" />
+                          <property role="Xl_RC" value="action&lt;" />
                         </node>
                         <node concept="Xl_RD" id="gv" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>
@@ -5515,10 +5515,10 @@
                           <property role="Xl_RC" value="group" />
                         </node>
                         <node concept="Xl_RD" id="wi" role="37wK5m">
-                          <property role="Xl_RC" value="actionGroup&lt;&lt;" />
+                          <property role="Xl_RC" value="actionGroup&lt;" />
                         </node>
                         <node concept="Xl_RD" id="wj" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>
@@ -5789,10 +5789,10 @@
                           <property role="Xl_RC" value="group" />
                         </node>
                         <node concept="Xl_RD" id="xW" role="37wK5m">
-                          <property role="Xl_RC" value="group&lt;&lt;" />
+                          <property role="Xl_RC" value="group&lt;" />
                         </node>
                         <node concept="Xl_RD" id="xX" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>
@@ -5996,10 +5996,10 @@
                           <property role="Xl_RC" value="actionGroup" />
                         </node>
                         <node concept="Xl_RD" id="zc" role="37wK5m">
-                          <property role="Xl_RC" value="actiongroup&lt;&lt;" />
+                          <property role="Xl_RC" value="actiongroup&lt;" />
                         </node>
                         <node concept="Xl_RD" id="zd" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>
@@ -8468,10 +8468,10 @@
                           <property role="Xl_RC" value="componentDeclaration" />
                         </node>
                         <node concept="Xl_RD" id="Me" role="37wK5m">
-                          <property role="Xl_RC" value="preferenceComponent&lt;&lt;" />
+                          <property role="Xl_RC" value="preferenceComponent&lt;" />
                         </node>
                         <node concept="Xl_RD" id="Mf" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>
@@ -9501,10 +9501,10 @@
                           <property role="Xl_RC" value="tool" />
                         </node>
                         <node concept="Xl_RD" id="Sx" role="37wK5m">
-                          <property role="Xl_RC" value="tool&lt;&lt;" />
+                          <property role="Xl_RC" value="tool&lt;" />
                         </node>
                         <node concept="Xl_RD" id="Sy" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>

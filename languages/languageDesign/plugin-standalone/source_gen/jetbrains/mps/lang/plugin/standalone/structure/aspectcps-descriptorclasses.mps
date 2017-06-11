@@ -665,10 +665,10 @@
                           <property role="Xl_RC" value="componentDeclaration" />
                         </node>
                         <node concept="Xl_RD" id="35" role="37wK5m">
-                          <property role="Xl_RC" value="preferenceComponent&lt;&lt;" />
+                          <property role="Xl_RC" value="preferenceComponent&lt;" />
                         </node>
                         <node concept="Xl_RD" id="36" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>
@@ -747,10 +747,10 @@
                           <property role="Xl_RC" value="tool" />
                         </node>
                         <node concept="Xl_RD" id="3$" role="37wK5m">
-                          <property role="Xl_RC" value="tool&lt;&lt;" />
+                          <property role="Xl_RC" value="tool&lt;" />
                         </node>
                         <node concept="Xl_RD" id="3_" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>

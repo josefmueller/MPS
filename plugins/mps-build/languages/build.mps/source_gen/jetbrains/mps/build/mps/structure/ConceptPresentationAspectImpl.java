@@ -214,7 +214,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_DevKitExportLanguage:
         if (props_BuildMps_DevKitExportLanguage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d29d6aL);
-          cpb.presentationByReference(0x4780308f5d29d73L, "language", "language <", ">");
+          cpb.presentationByReference(0x4780308f5d29d73L, "language", "language ", "");
           props_BuildMps_DevKitExportLanguage = cpb.create();
         }
         return props_BuildMps_DevKitExportLanguage;
@@ -339,7 +339,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_ModuleDependencyExtendLanguage:
         if (props_BuildMps_ModuleDependencyExtendLanguage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c19032eL);
-          cpb.presentationByReference(0x3b60c4a45c190330L, "language", "extends <", ">");
+          cpb.presentationByReference(0x3b60c4a45c190330L, "language", "extends ", "");
           props_BuildMps_ModuleDependencyExtendLanguage = cpb.create();
         }
         return props_BuildMps_ModuleDependencyExtendLanguage;
@@ -360,7 +360,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_ModuleDependencyOnJavaModule:
         if (props_BuildMps_ModuleDependencyOnJavaModule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643e8fbL);
-          cpb.presentationByReference(0x2c4467914643e8fdL, "module", "<", ">");
+          cpb.presentationByReference(0x2c4467914643e8fdL, "module", "", "");
           props_BuildMps_ModuleDependencyOnJavaModule = cpb.create();
         }
         return props_BuildMps_ModuleDependencyOnJavaModule;
@@ -374,7 +374,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_ModuleDependencyUseLanguage:
         if (props_BuildMps_ModuleDependencyUseLanguage == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L);
-          cpb.presentationByReference(0x2c4467914643d2d3L, "language", "use <", ">");
+          cpb.presentationByReference(0x2c4467914643d2d3L, "language", "use ", "");
           props_BuildMps_ModuleDependencyUseLanguage = cpb.create();
         }
         return props_BuildMps_ModuleDependencyUseLanguage;
@@ -401,7 +401,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildMps_ModuleSolutionRuntime:
         if (props_BuildMps_ModuleSolutionRuntime == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914644b6e3L);
-          cpb.presentationByReference(0x2c4467914644b6e4L, "solution", "solution <", ">");
+          cpb.presentationByReference(0x2c4467914644b6e4L, "solution", "solution ", "");
           props_BuildMps_ModuleSolutionRuntime = cpb.create();
         }
         return props_BuildMps_ModuleSolutionRuntime;

@@ -1582,10 +1582,10 @@
                           <property role="Xl_RC" value="target" />
                         </node>
                         <node concept="Xl_RD" id="8L" role="37wK5m">
-                          <property role="Xl_RC" value="&lt;pathref &lt;" />
+                          <property role="Xl_RC" value="&lt;pathref " />
                         </node>
                         <node concept="Xl_RD" id="8M" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>

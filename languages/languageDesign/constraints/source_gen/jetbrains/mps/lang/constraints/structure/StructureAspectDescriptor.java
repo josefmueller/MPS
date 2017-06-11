@@ -667,7 +667,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("propertyGetter", 0x10b2a75c8ccL).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a68f861L).optional(true).ordered(true).multiple(false).origin("1147468630220").done();
     b.aggregate("propertySetter", 0x10c71f4acb5L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10c71c4f329L).optional(true).ordered(true).multiple(false).origin("1152963095733").done();
     b.aggregate("propertyValidator", 0x11a36a3ca53L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a369c051fL).optional(true).ordered(true).multiple(false).origin("1212097481299").done();
-    b.alias("property {<{applicableProperty}>}");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNodeReferentConstraint() {
@@ -680,7 +679,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("presentation", 0x36367902116a44c4L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L).optional(true).ordered(true).multiple(false).origin("3906442776579556548").done();
     b.aggregate("referentSetHandler", 0x10ed4593a89L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4250f82L).optional(true).ordered(true).multiple(false).origin("1163203787401").done();
     b.aggregate("keepsReference", 0x7a8b97cf0435231fL).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x44df12c18fcb2300L).optional(true).ordered(true).multiple(false).origin("8830318409774605087").done();
-    b.alias("link {<{applicableLink}>}");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNodeScopeFactory() {

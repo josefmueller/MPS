@@ -103,7 +103,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.NodeBuilderInitProperty:
         if (props_NodeBuilderInitProperty == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20b0325L);
-          cpb.presentationByReference(0x4bb51009d20b0326L, "property", "<", ">");
+          cpb.presentationByReference(0x4bb51009d20b0326L, "property", "", "");
           props_NodeBuilderInitProperty = cpb.create();
         }
         return props_NodeBuilderInitProperty;

@@ -47,7 +47,7 @@ public class BwfPathReference_SubstituteMenu extends SubstituteMenuBase {
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "<pathref <" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">>";
+        return "<pathref " + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {

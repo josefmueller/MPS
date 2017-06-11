@@ -47,7 +47,7 @@ public class BuildMps_DevKitExportLanguage_SubstituteMenu extends SubstituteMenu
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "language <" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
+        return "language " + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + "";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {

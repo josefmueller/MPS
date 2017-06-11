@@ -4275,10 +4275,10 @@
                           <property role="Xl_RC" value="enumMember" />
                         </node>
                         <node concept="Xl_RD" id="pg" role="37wK5m">
-                          <property role="Xl_RC" value="&lt;&lt;" />
+                          <property role="Xl_RC" value="&lt;" />
                         </node>
                         <node concept="Xl_RD" id="ph" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;&gt;" />
+                          <property role="Xl_RC" value="&gt;" />
                         </node>
                       </node>
                     </node>
@@ -13154,10 +13154,10 @@
                           <property role="Xl_RC" value="member" />
                         </node>
                         <node concept="Xl_RD" id="1f3" role="37wK5m">
-                          <property role="Xl_RC" value="&lt;" />
+                          <property role="Xl_RC" value="" />
                         </node>
                         <node concept="Xl_RD" id="1f4" role="37wK5m">
-                          <property role="Xl_RC" value="&gt;" />
+                          <property role="Xl_RC" value="" />
                         </node>
                       </node>
                     </node>

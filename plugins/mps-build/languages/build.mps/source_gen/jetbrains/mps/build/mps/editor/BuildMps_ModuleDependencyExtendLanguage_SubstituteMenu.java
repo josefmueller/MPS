@@ -47,7 +47,7 @@ public class BuildMps_ModuleDependencyExtendLanguage_SubstituteMenu extends Subs
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "extends <" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
+        return "extends " + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + "";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {
