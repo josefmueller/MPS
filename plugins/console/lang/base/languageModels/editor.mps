@@ -217,6 +217,7 @@
         <child id="6089045305655104958" name="reference" index="2klrvf" />
         <child id="6684862045053873740" name="handler" index="3Na0zg" />
       </concept>
+      <concept id="6918029743850363446" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_sourceNode" flags="ng" index="1NM5Pg" />
       <concept id="6918029743850363447" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_targetNode" flags="ng" index="1NM5Ph" />
       <concept id="6918029743850308467" name="jetbrains.mps.lang.editor.structure.QueryFunction_RefPresentation" flags="ig" index="1NMggl" />
       <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
@@ -523,8 +524,8 @@
               <node concept="3clFbF" id="7m$hACyVUF8" role="3cqZAp">
                 <node concept="2OqwBi" id="7m$hACyVUR_" role="3clFbG">
                   <node concept="pncrf" id="7m$hACyVUF6" role="2Oq$k0" />
-                  <node concept="2qgKlT" id="7m$hACyVVwe" role="2OqNvi">
-                    <ref role="37wK5l" to="zyb2:5Yox2dUTCkJ" resolve="getText" />
+                  <node concept="2qgKlT" id="5E451Quvmpy" role="2OqNvi">
+                    <ref role="37wK5l" to="zyb2:5E451QuvdoB" resolve="getText" />
                   </node>
                 </node>
               </node>
@@ -670,6 +671,18 @@
             </node>
             <node concept="VPxyj" id="4oTxo1IXCT_" role="3F10Kt">
               <property role="VOm3f" value="false" />
+            </node>
+            <node concept="1NMggl" id="5E451QuvpOZ" role="2N1_XE">
+              <node concept="3clFbS" id="5E451QuvpP0" role="2VODD2">
+                <node concept="3clFbF" id="5E451QuvgpA" role="3cqZAp">
+                  <node concept="2OqwBi" id="5E451QuvgFo" role="3clFbG">
+                    <node concept="1NM5Pg" id="5E451Quvgp_" role="2Oq$k0" />
+                    <node concept="2qgKlT" id="5E451Quvha2" role="2OqNvi">
+                      <ref role="37wK5l" to="zyb2:5E451QuvdoB" resolve="getText" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
