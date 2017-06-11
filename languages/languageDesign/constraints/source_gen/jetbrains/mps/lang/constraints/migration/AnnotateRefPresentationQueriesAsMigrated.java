@@ -20,10 +20,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -84,11 +84,11 @@ public class AnnotateRefPresentationQueriesAsMigrated extends MigrationScriptBas
   }
 
 
-  public Iterable<SNode> editorComponents = CollectionSequence.fromCollection(((Collection<SNode>) CommandUtil.instances(GlobalScope.getInstance(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), false))).where(new IWhereFilter<SNode>() {
+  public Iterable<SNode> editorComponents = SNodeOperations.ofConcept(CollectionSequence.fromCollection(CommandUtil.instances(GlobalScope.getInstance(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), false)).where(new IWhereFilter<SNode>() {
     public boolean accept(SNode it) {
       return SModuleOperations.isAspect(SNodeOperations.getModel(it), "editor");
     }
-  });
+  }), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"));
 
   /*package*/ Iterable<SNode> findSuperEditorComponentsUsingReference(final SNode concept, final SNode reference) {
     final Iterable<SNode> supers = Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(concept, ((boolean) true))).where(new IWhereFilter<SNode>() {
