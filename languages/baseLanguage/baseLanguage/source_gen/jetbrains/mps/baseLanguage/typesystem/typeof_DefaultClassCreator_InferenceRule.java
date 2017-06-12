@@ -34,7 +34,7 @@ public class typeof_DefaultClassCreator_InferenceRule extends AbstractInferenceR
       }
     }
     for (SNode parameter : SLinkOperations.getChildren(defaultClassCreator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0accfdb3L, "typeParameter"))) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_9il0ce_a1a0a0a1a1(), MetaAdapterFactory.getReferenceLink(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cbf8e8L, 0x10de9cbf8e7L, "descriptor")), false)))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_9il0ce_a1a0a0a0b0b(), MetaAdapterFactory.getReferenceLink(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cbf8e8L, 0x10de9cbf8e7L, "descriptor")), false)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7179268497749415918", null, errorTarget);
       }
@@ -56,7 +56,7 @@ public class typeof_DefaultClassCreator_InferenceRule extends AbstractInferenceR
   public boolean overrides() {
     return true;
   }
-  private static SNode _quotation_createNode_9il0ce_a1a0a0a1a1() {
+  private static SNode _quotation_createNode_9il0ce_a1a0a0a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, "jetbrains.mps.baseLanguage.blTypes"), 0x10de9cbf8e8L, "PrimitiveTypeRef"), null, null, false);

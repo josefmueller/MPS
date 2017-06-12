@@ -22,11 +22,11 @@ public class ConvertConceptEqualityToNPEEqualsExpression_QuickFix extends QuickF
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"))) {
       SNode equalityNode = SNodeOperations.as(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b210L, "jetbrains.mps.baseLanguage.structure.EqualsExpression"));
-      SNode npeEqualsNode = _quotation_createNode_raqvig_a0b0a0a(SLinkOperations.getTarget(equalityNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")), SLinkOperations.getTarget(equalityNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
+      SNode npeEqualsNode = _quotation_createNode_yhp5ij_a0b0a0c(SLinkOperations.getTarget(equalityNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")), SLinkOperations.getTarget(equalityNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
       SNodeOperations.replaceWithAnother(node, npeEqualsNode);
     }
   }
-  private static SNode _quotation_createNode_raqvig_a0b0a0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_yhp5ij_a0b0a0c(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

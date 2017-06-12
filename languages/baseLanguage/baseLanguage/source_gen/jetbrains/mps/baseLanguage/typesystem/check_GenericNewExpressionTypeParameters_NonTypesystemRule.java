@@ -69,7 +69,7 @@ public class check_GenericNewExpressionTypeParameters_NonTypesystemRule extends 
       }
     }
     for (SNode typeParameter : parameters) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(_quotation_createNode_nhxavr_a1a0a0a8a1(), MetaAdapterFactory.getReferenceLink(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cbf8e8L, 0x10de9cbf8e7L, "descriptor")), false)))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(_quotation_createNode_nhxavr_a1a0a0a0i0b(), MetaAdapterFactory.getReferenceLink(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cbf8e8L, 0x10de9cbf8e7L, "descriptor")), false)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4853049144089199522", null, errorTarget);
       }
@@ -112,7 +112,7 @@ public class check_GenericNewExpressionTypeParameters_NonTypesystemRule extends 
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_nhxavr_a1a0a0a8a1() {
+  private static SNode _quotation_createNode_nhxavr_a1a0a0a0i0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, "jetbrains.mps.baseLanguage.blTypes"), 0x10de9cbf8e8L, "PrimitiveTypeRef"), null, null, false);

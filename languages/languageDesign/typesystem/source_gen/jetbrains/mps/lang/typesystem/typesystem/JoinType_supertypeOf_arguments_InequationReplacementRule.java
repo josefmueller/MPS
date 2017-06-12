@@ -103,7 +103,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
       }
     }
     for (SNode arg : SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"))) {
-      if (eq_6boqzn_a0a0c0b0d(SNodeOperations.getConcept(arg), SNodeOperations.getConcept(subtype))) {
+      if (eq_6boqzn_a0a0d0d(SNodeOperations.getConcept(arg), SNodeOperations.getConcept(subtype))) {
         result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) subtype, (SNode) arg, true);
         return result_14532009;
       }
@@ -138,7 +138,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
   private static boolean eq_6boqzn_a0a0c0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_6boqzn_a0a0c0b0d(Object a, Object b) {
+  private static boolean eq_6boqzn_a0a0d0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

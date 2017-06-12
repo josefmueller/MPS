@@ -42,12 +42,12 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
             if (TypeChecker.getInstance().getSubtypingManager().isSubtype(t, MathTypeUtil.qBigInteger)) {
               SNode f = null;
               SNode i = null;
-              if (MatchingUtil.matchNodes(t, _quotation_createNode_8pyikg_a0a0c0c0a0a0a1_0()) || MatchingUtil.matchNodes(t, _quotation_createNode_8pyikg_a0a0c0c0a0a0a1_1()) || MatchingUtil.matchNodes(t, _quotation_createNode_8pyikg_a0a2a2a0a0a0b())) {
-                i = _quotation_createNode_8pyikg_a0a0c0c0a0a0a1();
-                f = _quotation_createNode_8pyikg_a0b0c0c0a0a0a1();
-              } else if (MatchingUtil.matchNodes(t, _quotation_createNode_8pyikg_a0a2a2a0a0a0b_0())) {
-                i = _quotation_createNode_8pyikg_a0a0a2a2a0a0a0b();
-                f = _quotation_createNode_8pyikg_a0b0a2a2a0a0a0b();
+              if (MatchingUtil.matchNodes(t, _quotation_createNode_8pyikg_a0a0c0c0a0a0a0b0a1a0a1_0()) || MatchingUtil.matchNodes(t, _quotation_createNode_8pyikg_a0a0c0c0a0a0a0b0a1a0a1_1()) || MatchingUtil.matchNodes(t, _quotation_createNode_8pyikg_a0a2a2a0a0a0a1a0b0a0b())) {
+                i = _quotation_createNode_8pyikg_a0a0c0c0a0a0a0b0a1a0a1();
+                f = _quotation_createNode_8pyikg_a0b0c0c0a0a0a0b0a1a0a1();
+              } else if (MatchingUtil.matchNodes(t, _quotation_createNode_8pyikg_a0a2a2a0a0a0a1a0b0a0b_0())) {
+                i = _quotation_createNode_8pyikg_a0a0a2a2a0a0a0a1a0b0a0b();
+                f = _quotation_createNode_8pyikg_a0b0a2a2a0a0a0a1a0b0a0b();
               } else if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1200944b8b7L, "jetbrains.mps.baseLanguage.math.structure.BigIntegerType"))) {
                 i = SNodeOperations.copyNode(MathTypeUtil.qBigInteger);
                 f = SNodeOperations.copyNode(MathTypeUtil.qBigDecimal);
@@ -61,7 +61,7 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
               {
                 SNode _nodeToCheck_1029348928467 = norm;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033410", 0, null);
-                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033415", true), (SNode) _quotation_createNode_8pyikg_a0a0a2a0a0a0b(), _info_12389875345);
+                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "3361677252835033415", true), (SNode) _quotation_createNode_8pyikg_a1a2a0a0c0a0a0a0b0a1a0a1(), _info_12389875345);
               }
             } else if (SNodeOperations.isInstanceOf(t, MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x120096f8e4cL, "jetbrains.mps.baseLanguage.math.structure.BigComplexType"))) {
               {
@@ -90,63 +90,63 @@ public class typeof_MatrixNorm_InferenceRule extends AbstractInferenceRule_Runti
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_8pyikg_a0a0c0c0a0a0a1() {
+  private static SNode _quotation_createNode_8pyikg_a0a0c0c0a0a0a0b0a1a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Integer")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_8pyikg_a0b0c0c0a0a0a1() {
+  private static SNode _quotation_createNode_8pyikg_a0b0c0c0a0a0a0b0a1a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Double")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_8pyikg_a0a0c0c0a0a0a1_0() {
+  private static SNode _quotation_createNode_8pyikg_a0a0c0c0a0a0a0b0a1a0a1_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Short")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_8pyikg_a0a0c0c0a0a0a1_1() {
+  private static SNode _quotation_createNode_8pyikg_a0a0c0c0a0a0a0b0a1a0a1_1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Byte")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_8pyikg_a0a2a2a0a0a0b() {
+  private static SNode _quotation_createNode_8pyikg_a0a2a2a0a0a0a1a0b0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Integer")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_8pyikg_a0a0a2a2a0a0a0b() {
+  private static SNode _quotation_createNode_8pyikg_a0a0a2a2a0a0a0a1a0b0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Long")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_8pyikg_a0b0a2a2a0a0a0b() {
+  private static SNode _quotation_createNode_8pyikg_a0b0a2a2a0a0a0a1a0b0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Double")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_8pyikg_a0a2a2a0a0a0b_0() {
+  private static SNode _quotation_createNode_8pyikg_a0a2a2a0a0a0a1a0b0a0b_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)"), facade.createNodeId("~Long")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_8pyikg_a0a0a2a0a0a0b() {
+  private static SNode _quotation_createNode_8pyikg_a1a2a0a0c0a0a0a0b0a1a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);

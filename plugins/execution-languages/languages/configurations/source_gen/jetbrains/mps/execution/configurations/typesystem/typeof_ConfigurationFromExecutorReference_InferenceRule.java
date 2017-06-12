@@ -23,7 +23,7 @@ public class typeof_ConfigurationFromExecutorReference_InferenceRule extends Abs
     {
       SNode _nodeToCheck_1029348928467 = configurationReference;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "7806358006983757925", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "7806358006983757922", true), (SNode) _quotation_createNode_7gce2m_a0a0b(SLinkOperations.getTarget(ConfigurationFromExecutorReference__BehaviorDescriptor.getExecutor_id6LlKjXrML19.invoke(configurationReference), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, 0xd244b712f9dce92L, "configuration"))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "7806358006983757922", true), (SNode) _quotation_createNode_7gce2m_a1a2a0a1(SLinkOperations.getTarget(ConfigurationFromExecutorReference__BehaviorDescriptor.getExecutor_id6LlKjXrML19.invoke(configurationReference), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9dce91L, 0xd244b712f9dce92L, "configuration"))), _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {
@@ -35,7 +35,7 @@ public class typeof_ConfigurationFromExecutorReference_InferenceRule extends Abs
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_7gce2m_a0a0b(Object parameter_1) {
+  private static SNode _quotation_createNode_7gce2m_a1a2a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, "jetbrains.mps.execution.settings"), 0xd244b712f91001cL, "PersistentConfigurationType"), null, null, false);

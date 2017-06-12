@@ -32,11 +32,11 @@ public class QuickFixForDefaultClassCreator_QuickFix extends QuickFix_Runtime {
       }
     });
     if ((constructor != null)) {
-      SNode newCreator = _quotation_createNode_za6z2i_a0a0b0a(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0accfdb3L, "typeParameter")), constructor);
+      SNode newCreator = _quotation_createNode_4h0y95_a0a0b0c(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0accfdb3L, "typeParameter")), constructor);
       SNodeOperations.replaceWithAnother(node, newCreator);
     }
   }
-  private static SNode _quotation_createNode_za6z2i_a0a0b0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_4h0y95_a0a0b0c(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

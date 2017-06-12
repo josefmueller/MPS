@@ -33,7 +33,7 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
       final SNode exType = typeCheckingContext.getRepresentative(expressionType_typevar_7602524515424797598);
       typeCheckingContext.whenConcrete(exType, new Runnable() {
         public void run() {
-          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getExpandedNode(exType), _quotation_createNode_2vfzm_c0a0a0c0b(), new IRuleConflictWarningProducer() {
+          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getExpandedNode(exType), _quotation_createNode_2vfzm_c0a0a0a0a1a0b0c0b(), new IRuleConflictWarningProducer() {
             public void produceWarning(String modelId, String ruleId) {
               typeCheckingContext.reportWarning(minus, "coflicting rules for overloaded operation type", modelId, ruleId, null, new NodeMessageTarget());
 
@@ -64,7 +64,7 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
   public boolean overrides() {
     return true;
   }
-  private static SNode _quotation_createNode_2vfzm_c0a0a0c0b() {
+  private static SNode _quotation_createNode_2vfzm_c0a0a0a0a1a0b0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
