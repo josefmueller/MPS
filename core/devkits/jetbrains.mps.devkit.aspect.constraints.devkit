@@ -7,5 +7,6 @@
   <exported-solutions>
     <exported-solution>a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)</exported-solution>
   </exported-solutions>
+  <generation-plan model="r:56b79522-04a6-42fd-9e1c-336da21ec8e3(jetbrains.mps.lang.descriptor.constraints@genplan)" />
 </dev-kit>
 

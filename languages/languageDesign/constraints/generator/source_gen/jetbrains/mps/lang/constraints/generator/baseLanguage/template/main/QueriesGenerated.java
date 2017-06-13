@@ -163,8 +163,12 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_7183563401563840593(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getVariable("factory")), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73b2L, "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory")), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73b2L, 0x74999a95393c73b3L, "kind"));
   }
-  public static Object referenceMacro_GetReferent_4147950839246952264(final ReferenceMacroContext _context) {
-    // TODO genContext.get output ConstraintsAspectDescriptorCons for model model; 
+  public static Object referenceMacro_GetReferent_6479337755439617191(final ReferenceMacroContext _context) {
+    SNode descriptorClass = _context.getOutputNodeByMappingLabel("aspectDescriptorClass", ((SModel) _context.getVariable("model")));
+    if (descriptorClass != null) {
+      return descriptorClass;
+    }
+    // fallback, for backward compatibility 
     return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".ConstraintsAspectDescriptor";
   }
   public static boolean ifMacro_Condition_7294282772021338867(final IfMacroContext _context) {
@@ -885,7 +889,7 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("1198586190308", new QueriesGenerated.RTQ(2, "getString"));
     rtqMethods.put("6551427688186219814", new QueriesGenerated.RTQ(3, "BaseConcept"));
     rtqMethods.put("7183563401563840592", new QueriesGenerated.RTQ(4, "BaseConcept"));
-    rtqMethods.put("4147950839246952263", new QueriesGenerated.RTQ(5, "ConstraintsAspectDescriptor"));
+    rtqMethods.put("6479337755439617190", new QueriesGenerated.RTQ(5, "ConstraintsAspectDescriptor"));
   }
   @NotNull
   @Override
@@ -916,7 +920,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 4:
           return QueriesGenerated.referenceMacro_GetReferent_7183563401563840593(ctx);
         case 5:
-          return QueriesGenerated.referenceMacro_GetReferent_4147950839246952264(ctx);
+          return QueriesGenerated.referenceMacro_GetReferent_6479337755439617191(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
