@@ -25,6 +25,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentEvent.EventType;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -56,8 +57,10 @@ public class PathField extends JPanel {
     component.getDocument().addDocumentListener(new DocumentAdapter() {
       @Override
       protected void textChanged(DocumentEvent e) {
-        myIsPathChangedByUser = true;
-        pathFromField();
+        if (EventType.CHANGE.equals(e.getType())) {
+          myIsPathChangedByUser = true;
+          pathFromField();
+        }
       }
     });
     return component;
