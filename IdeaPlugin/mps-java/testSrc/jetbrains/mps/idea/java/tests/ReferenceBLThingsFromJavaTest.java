@@ -19,8 +19,10 @@ package jetbrains.mps.idea.java.tests;
 import com.intellij.codeInsight.daemon.impl.quickfix.ImportClassFix;
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInsight.intention.IntentionActionDelegate;
+import com.intellij.openapi.module.Module;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.testFramework.fixtures.JavaCodeInsightTestFixture;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.tests.DataMPSFixtureTestCase;
@@ -36,10 +38,8 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
   private IFile javafile;
 
   @Override
-  protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
-    myModule = configuration.getFacet().getModule();
-
-    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(myModule).getSourceRoots();
+  protected void prepareTestData(MPSFacetConfiguration configuration, Module module) throws Exception {
+    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(module).getSourceRoots();
     assertEquals(sourceRoots.length, 1);
 
     VirtualFile sourceRoot = sourceRoots[0];
@@ -50,11 +50,11 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
     DefaultModelRoot root = new DefaultModelRoot();
     root.setContentRoot(modelFile.getParent().getPath());
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, modelFile.getParent().getPath());
-    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
+    configuration.getBean().setModelRoots(Arrays.asList(root));
 
     javafile = copyResource(sourceRoot.getPath() + "/bl/test/Claz.java", "Claz.java", "/tests/blProject/src/bl/test/Claz.java");
-    copyResource(getTestDataPath() + "/Claz.after.java", "Claz.after.java", "/tests/blProject/src/bl/test/Claz.after.java");
-    copyResource(getTestDataPath() + "/ClazWithPerRootImport.after.java", "ClazWithPerRootImport.after.java", "/tests/blProject/src/bl/test/ClazWithPerRootImport.after.java");
+    copyResource(getMpsFixture().getTestDataPath() + "/Claz.after.java", "Claz.after.java", "/tests/blProject/src/bl/test/Claz.after.java");
+    copyResource(getMpsFixture().getTestDataPath() + "/ClazWithPerRootImport.after.java", "ClazWithPerRootImport.after.java", "/tests/blProject/src/bl/test/ClazWithPerRootImport.after.java");
   }
 
   @Override
@@ -63,14 +63,15 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
   }
 
   private void addBLClassImport(String expectedJavaFile, String classNameToType) {
-    myFixture.openFileInEditor(VirtualFileUtils.getVirtualFile(javafile));
-    int index = new StringBuilder(myFixture.getEditor().getDocument().getCharsSequence()).indexOf("// here");
+    JavaCodeInsightTestFixture javaFixture = getMpsFixture().getCodeInsightTestFixture();
+    javaFixture.openFileInEditor(VirtualFileUtils.getVirtualFile(javafile));
+    int index = new StringBuilder(javaFixture.getEditor().getDocument().getCharsSequence()).indexOf("// here");
 
-    myFixture.getEditor().getCaretModel().moveToOffset(index + "// here".length());
-    myFixture.type("\n" + classNameToType);
+    javaFixture.getEditor().getCaretModel().moveToOffset(index + "// here".length());
+    javaFixture.type("\n" + classNameToType);
 
     ImportClassFix fix = null;
-    for (IntentionAction intent : myFixture.getAvailableIntentions()) {
+    for (IntentionAction intent : javaFixture.getAvailableIntentions()) {
       while (intent instanceof IntentionActionDelegate) {
         intent = ((IntentionActionDelegate) intent).getDelegate();
       }
@@ -80,8 +81,8 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
       }
     }
     assertTrue(fix != null);
-    fix.invoke(myFixture.getProject(), myFixture.getEditor(), myFixture.getFile());
-    myFixture.checkResultByFile(expectedJavaFile);
+    fix.invoke(getMpsFixture().getProject(), javaFixture.getEditor(), javaFixture.getFile());
+    javaFixture.checkResultByFile(expectedJavaFile);
   }
 
   public void testAddBLClassImportFromDefaultModel() {

@@ -18,9 +18,12 @@ package jetbrains.mps.idea.core.tests;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.PathManager;
+import com.intellij.openapi.module.Module;
 import com.intellij.testFramework.PlatformTestUtil;
-import jetbrains.mps.ide.vfs.IdeaFile;
+import com.intellij.testFramework.fixtures.IdeaProjectTestFixture;
+import com.intellij.testFramework.fixtures.TestFixtureBuilder;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
+import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -33,26 +36,29 @@ import java.io.OutputStream;
 
 public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase {
   @Override
-  protected void preConfigureFacet(final MPSFacetConfiguration configuration) {
-    super.preConfigureFacet(configuration);
-    try {
-      PlatformTestUtil.dispatchAllInvocationEventsInIdeEventQueue();
-    } catch (InterruptedException e) {
-    }
-
-    final Exception[] thrown = new Exception[1];
-
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+  protected MPSTestFixture createMPSFixture() {
+    TestFixtureBuilder<IdeaProjectTestFixture> projectFixtureBuilder = MPSTestFixtureFactory.createProjectFixtureBuilder(getName());
+    return new MPSTestFixture(projectFixtureBuilder, MPSTestFixtureFactory.createCodeInsightTestFixture(projectFixtureBuilder)) {
       @Override
-      public void run() {
+      protected void preConfigureFacet(MPSFacetConfiguration configuration, Module module) {
+        super.preConfigureFacet(configuration, module);
         try {
-          prepareTestData(configuration);
-        } catch (Exception e) {
-          thrown[0] = e;
+          PlatformTestUtil.dispatchAllInvocationEventsInIdeEventQueue();
+        } catch (InterruptedException e) {
+          throw new AssertionError("Redispatching event process was interrupted", e);
         }
+
+        Reference<Exception> exception = new Reference<>();
+        ApplicationManager.getApplication().runWriteAction(() -> {
+          try {
+            prepareTestData(configuration, module);
+          } catch (Exception e) {
+            exception.set(e);
+          }
+        });
+        if (exception.get() != null) throw new RuntimeException(exception.get());
       }
-    });
-    if (thrown[0] != null) throw new RuntimeException(thrown[0]);
+    };
   }
 
   @Override
@@ -66,7 +72,7 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
     runnable.run();
   }
 
-  protected abstract void prepareTestData(MPSFacetConfiguration configuration) throws Exception;
+  protected abstract void prepareTestData(MPSFacetConfiguration configuration, Module module) throws Exception;
 
   protected IFile copyResource(String toPath, String resName, String fromPath) throws IOException {
     IFile targetFile = FileSystem.getInstance().getFile(toPath);
@@ -75,7 +81,7 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
   }
 
   protected IFile copyResource(String toDir, String toName, String resName, String fromPath) throws IOException {
-    IFile targetDir = FileSystem.getInstance().getFileByPath(myModule.getModuleFilePath()).getParent();
+    IFile targetDir = FileSystem.getInstance().getFileByPath(getMpsFixture().getModule().getModuleFilePath()).getParent();
     if (toDir != null) {
       targetDir = targetDir.getDescendant(toDir);
       if (!targetDir.exists()) {
