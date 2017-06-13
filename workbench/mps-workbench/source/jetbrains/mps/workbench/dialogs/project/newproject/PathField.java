@@ -27,8 +27,6 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentEvent.EventType;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,12 +35,12 @@ public class PathField extends JPanel {
   private final JButton myButton;
   private String myPath;
   private int myMode;
-  private final List<PathChangedListner> myListners = new ArrayList<PathChangedListner>();
+  private final List<PathChangedListener> myListeners = new ArrayList<>();
 
   /**
    * flag if path was changed by user
    * if changed by user need to be careful with auto update path
-   * */
+   */
   private boolean myIsPathChangedByUser = false;
 
   public PathField() {
@@ -68,8 +66,9 @@ public class PathField extends JPanel {
 
   /**
    * getter
+   *
    * @return flag that path was changed by user
-   * */
+   */
   public boolean isPathChangedByUser() {
     return myIsPathChangedByUser;
   }
@@ -77,11 +76,7 @@ public class PathField extends JPanel {
   private JButton createButton() {
     JButton component = new JButton();
     component.setText("...");
-    component.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        choosePathClicked();
-      }
-    });
+    component.addActionListener(event -> choosePathClicked());
     return component;
   }
 
@@ -98,15 +93,15 @@ public class PathField extends JPanel {
     final boolean isPathChangedByUser = myIsPathChangedByUser; //Save current flag state.
     myPathField.setText(newValue);
     myIsPathChangedByUser = isPathChangedByUser; //Reset state. It was not user action.
-    for (PathChangedListner listner : myListners) {
-      listner.firePathChanged(myPath);
+    for (PathChangedListener listener : myListeners) {
+      listener.firePathChanged(myPath);
     }
   }
 
   private void pathFromField() {
     myPath = myPathField.getText();
-    for (PathChangedListner listner : myListners) {
-      listner.firePathChanged(myPath);
+    for (PathChangedListener listener : myListeners) {
+      listener.firePathChanged(myPath);
     }
   }
 
@@ -119,7 +114,7 @@ public class PathField extends JPanel {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(getMode());
     if (oldPath != null) {
-      chooser.setInitialFile(FileSystem.getInstance().getFileByPath(oldPath));
+      chooser.setInitialFile(FileSystem.getInstance().getFile(oldPath));
     }
     IFile result = chooser.showDialog(this);
     if (result != null) {
@@ -133,16 +128,16 @@ public class PathField extends JPanel {
     myButton.setEnabled(enabled);
   }
 
-  public void addPathChangedListner(final PathChangedListner listner) {
-    myListners.add(listner);
+  public void addPathChangedListener(final PathChangedListener listener) {
+    myListeners.add(listener);
   }
 
-  public void removePathChangedListner(final PathChangedListner listner) {
-    myListners.remove(listner);
+  public void removePathChangedListener(final PathChangedListener listener) {
+    myListeners.remove(listener);
   }
 
   //Notify when path field updated
-  public interface PathChangedListner {
+  public interface PathChangedListener {
     void firePathChanged(final String newValue);
   }
 }
