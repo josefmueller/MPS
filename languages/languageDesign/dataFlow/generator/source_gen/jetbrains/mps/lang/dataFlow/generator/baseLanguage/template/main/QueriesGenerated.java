@@ -120,7 +120,11 @@ public class QueriesGenerated extends QueryProviderBase {
     return _context.getNode();
   }
   public static Object referenceMacro_GetReferent_8100708479158807976(final ReferenceMacroContext _context) {
-    // TODO genContext.get output .DataFlowAspectDescriptorClass for model model; 
+    SNode descriptorClass = _context.getOutputNodeByMappingLabel("aspectDescriptorClass", ((SModel) _context.getVariable("model")));
+    if (descriptorClass != null) {
+      return descriptorClass;
+    }
+    // fallback, backward compatibility. 
     return SModelOperations.getModelName(((SModel) _context.getVariable("model"))) + ".DataFlowAspectDescriptorImpl";
   }
   public static boolean ifMacro_Condition_735072980478764555(final IfMacroContext _context) {

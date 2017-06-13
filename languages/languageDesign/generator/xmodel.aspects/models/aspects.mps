@@ -54,6 +54,12 @@
         <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.closures" />
       </node>
     </node>
+    <node concept="2VgMA2" id="703txLtKDB5" role="2VgMA7">
+      <node concept="2V$Bhx" id="703txLtKDBk" role="1t_9vn">
+        <property role="2V$B1T" value="96ee7a94-411d-4cf8-9b94-96cad7e52411" />
+        <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.jdk7" />
+      </node>
+    </node>
     <node concept="2VgMA2" id="52lx2FqHOn1" role="2VgMA7">
       <node concept="2V$Bhx" id="52lx2FqHOnb" role="1t_9vn">
         <property role="2V$B1T" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
