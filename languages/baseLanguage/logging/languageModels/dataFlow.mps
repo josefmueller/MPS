@@ -2,11 +2,7 @@
 <model ref="r:fb7c79f5-02eb-4c97-b60a-34f78483b2cb(jetbrains.mps.baseLanguage.logging.dataFlow)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7fa12e9c-b949-4976-b4fa-19accbc320b4" name="jetbrains.mps.lang.dataFlow" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="00000000-0000-4000-0000-443879f56b80(jetbrains.mps.devkit.aspect.dataflow)" />
   </languages>
   <imports>
     <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" />
@@ -134,7 +130,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="1KXtTGFSL86">
-    <ref role="3_znuS" to="tpib:1KXtTGFSJ2T" resolve="ApacheLogStatement" />
+    <ref role="3_znuS" to="tpib:1KXtTGFSJ2T" resolve="LogLowLevelStatement" />
     <node concept="3__wT9" id="1KXtTGFSL87" role="3_A6iZ">
       <node concept="3clFbS" id="1KXtTGFSL88" role="2VODD2">
         <node concept="3AgYrR" id="1KXtTGFSL89" role="3cqZAp">
@@ -170,7 +166,7 @@
     </node>
   </node>
   <node concept="3_zdsH" id="4XBaoL6co9r">
-    <ref role="3_znuS" to="tpib:5vyNLjQPqst" resolve="LogToMessageViewStatement" />
+    <ref role="3_znuS" to="tpib:5vyNLjQPqst" resolve="MsgStatement" />
     <node concept="3__wT9" id="4XBaoL6co9s" role="3_A6iZ">
       <node concept="3clFbS" id="4XBaoL6co9t" role="2VODD2">
         <node concept="3AgYrR" id="4XBaoL6co9u" role="3cqZAp">
