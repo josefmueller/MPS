@@ -175,30 +175,27 @@ public class CreateProjectWizard extends DialogWrapper {
 
     myList = new JBList();
 
-    List<ProjectTemplatesGroup> templatesGroups = new SortedList<>(new Comparator<ProjectTemplatesGroup>() {
-      @Override
-      public int compare(ProjectTemplatesGroup o1, ProjectTemplatesGroup o2) {
-        //Put DSL/Development groups on top & Other group to the last place
-        if (o1.getName().equals("DSL")) {
-          return -1;
-        }
-        if (o2.getName().equals("DSL")) {
-          return 1;
-        }
-        if (o1.getName().equals("Development")) {
-          return -1;
-        }
-        if (o2.getName().equals("Development")) {
-          return 1;
-        }
-        if (o1.getName().equals("Other")) {
-          return 1;
-        }
-        if (o2.getName().equals("Other")) {
-          return -1;
-        }
-        return o1.getName().compareToIgnoreCase(o2.getName());
+    List<ProjectTemplatesGroup> templatesGroups = new SortedList<>((o1, o2) -> {
+      //Put DSL/Development groups on top & Other group to the last place
+      if (o1.getName().equals("DSL")) {
+        return -1;
       }
+      if (o2.getName().equals("DSL")) {
+        return 1;
+      }
+      if (o1.getName().equals("Development")) {
+        return -1;
+      }
+      if (o2.getName().equals("Development")) {
+        return 1;
+      }
+      if (o1.getName().equals("Other")) {
+        return 1;
+      }
+      if (o2.getName().equals("Other")) {
+        return -1;
+      }
+      return o1.getName().compareToIgnoreCase(o2.getName());
     });
     List<TemplateItem> templateItems = new LinkedList<>();
 
@@ -281,7 +278,7 @@ public class CreateProjectWizard extends DialogWrapper {
                                            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     myProjectPath = new PathField();
-    myProjectPath.addPathChangedListner(newPathValue -> {
+    myProjectPath.addPathChangedListener(newPathValue -> {
       //If path changed need to update specific module settings
       fireProjectPathChanged(newPathValue);
       checkProjectPath(newPathValue);
@@ -457,17 +454,14 @@ public class CreateProjectWizard extends DialogWrapper {
     myOptions.setStorageScheme(myProjectFormatPanel.isDefault());
 
     //invoke later is for plugins to be ready
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          ProjectFactory factory = new ProjectFactory(myOptions);
-          Project project = factory.createProject();
-          myCurrentTemplateItem.getTemplateFiller().fillProjectWithModules(project.getComponent(MPSProject.class));
-          factory.activate();
-        } catch (ProjectNotCreatedException e) {
-          Messages.showErrorDialog(getContentPane(), e.getMessage());
-        }
+    ApplicationManager.getApplication().invokeLater(() -> {
+      try {
+        ProjectFactory factory = new ProjectFactory(myOptions);
+        Project project = factory.createProject();
+        myCurrentTemplateItem.getTemplateFiller().fillProjectWithModules(project.getComponent(MPSProject.class));
+        factory.activate();
+      } catch (ProjectNotCreatedException e) {
+        Messages.showErrorDialog(getContentPane(), e.getMessage());
       }
     });
   }
