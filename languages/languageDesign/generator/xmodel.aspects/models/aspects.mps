@@ -60,6 +60,12 @@
         <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.jdk7" />
       </node>
     </node>
+    <node concept="2VgMA2" id="5WXXkAcdspe" role="2VgMA7">
+      <node concept="2V$Bhx" id="5WXXkAcdspw" role="1t_9vn">
+        <property role="2V$B1T" value="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" />
+        <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.classifiers" />
+      </node>
+    </node>
     <node concept="2VgMA2" id="52lx2FqHOn1" role="2VgMA7">
       <node concept="2V$Bhx" id="52lx2FqHOnb" role="1t_9vn">
         <property role="2V$B1T" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />

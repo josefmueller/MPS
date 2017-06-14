@@ -68,11 +68,6 @@
         </node>
       </node>
     </node>
-    <node concept="2VgMA1" id="p4S6WR3TZu" role="2VgMA7">
-      <node concept="3ps6a7" id="p4S6WR3TZB" role="3ps6aC">
-        <ref role="3ps6dU" to="7j7i:52lx2FqH$9v" resolve="DescriptorClasses" />
-      </node>
-    </node>
     <node concept="2VgMA2" id="p4S6WRbOUx" role="2VgMA7">
       <node concept="2V$Bhx" id="p4S6WR8VTH" role="1t_9vn">
         <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -85,6 +80,11 @@
       <node concept="2V$Bhx" id="p4S6WR9xjr" role="1t_9vn">
         <property role="2V$B1T" value="d4615e3b-d671-4ba9-af01-2b78369b0ba7" />
         <property role="2V$B1Q" value="jetbrains.mps.lang.pattern" />
+      </node>
+    </node>
+    <node concept="2VgMA1" id="p4S6WR3TZu" role="2VgMA7">
+      <node concept="3ps6a7" id="p4S6WR3TZB" role="3ps6aC">
+        <ref role="3ps6dU" to="7j7i:52lx2FqH$9v" resolve="DescriptorClasses" />
       </node>
     </node>
     <node concept="2VgMA2" id="p4S6WR6s9J" role="2VgMA7">
