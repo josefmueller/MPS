@@ -1583,10 +1583,10 @@
       <node id="1837214909504782610" at="305,29,306,92" concept="6" />
       <node id="2885477569136951898" at="308,11,309,131" concept="6" />
       <node id="2885477569137123075" at="311,93,312,16" concept="14" />
-      <node id="2885477569137116766" at="315,39,316,17" concept="13" />
-      <node id="2885477569136989351" at="317,9,318,74" concept="6" />
-      <node id="2885477569137120592" at="320,84,321,17" concept="14" />
-      <node id="7300402066448981500" at="325,84,326,51" concept="13" />
+      <node id="2885477569137116766" at="316,39,317,17" concept="13" />
+      <node id="2885477569136989351" at="318,9,319,74" concept="6" />
+      <node id="2885477569137120592" at="322,117,323,17" concept="14" />
+      <node id="7300402066448981500" at="327,84,328,51" concept="13" />
       <node id="7012529811902466548" at="71,0,73,0" concept="3" trace="MyMigrationManager#()V" />
       <node id="7012529811902464513" at="82,0,84,0" concept="11" trace="doUpdateImportVersions#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <node id="7300402066449833051" at="194,14,196,9" concept="1" />
@@ -1623,14 +1623,14 @@
       <node id="7300402066451072177" at="299,90,302,9" concept="10" />
       <node id="1837214909504776811" at="305,0,308,0" concept="11" trace="run#()V" />
       <node id="2885477569136893984" at="311,0,314,0" concept="11" trace="checkLibs#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/util/Processor;)V" />
-      <node id="2885477569137004424" at="314,114,317,9" concept="10" />
-      <node id="2885477569136894008" at="320,0,323,0" concept="11" trace="findNotMigrated#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/util/Processor;)V" />
-      <node id="7300402066448981500" at="325,0,328,0" concept="17" trace="neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0r7#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="2885477569137004424" at="315,81,318,9" concept="10" />
+      <node id="7300402066448981500" at="327,0,330,0" concept="17" trace="neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0r7#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="7012529811902578621" at="46,0,50,0" concept="3" trace="TestMigrationSession#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/migration/component/plugin/MigrationTestConfigDialog/Result;)V" />
       <node id="1348525460771847975" at="218,0,222,0" concept="11" trace="getCaption#()Ljava/lang/String;" />
       <node id="5515912766246897608" at="227,0,231,0" concept="11" trace="resolve#(Z)Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />
       <node id="1348525460771846872" at="237,7,241,7" concept="21" />
       <node id="1348525460771361070" at="269,7,273,7" concept="21" />
+      <node id="2885477569139569432" at="321,0,325,0" concept="11" trace="findNotMigrated#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/util/Processor;)V" />
       <node id="7641221613047065605" at="58,108,63,7" concept="10" />
       <node id="7201972523308070764" at="84,0,89,0" concept="11" trace="executeScript#(Ljetbrains/mps/ide/migration/ScriptApplied;)V" />
       <node id="7012529811902706903" at="106,59,111,17" concept="13" />
@@ -1644,7 +1644,6 @@
       <node id="6344052339644189998" at="176,0,182,0" concept="11" trace="getProjectMig#()Ljava/util/List;" />
       <node id="6344052339644190005" at="182,0,188,0" concept="11" trace="getModuleMig#()Ljava/util/List;" />
       <node id="1348525460771844582" at="225,64,231,8" concept="13" />
-      <node id="2885477569136893997" at="314,0,320,0" concept="11" trace="checkProject#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/util/Processor;)V" />
       <node id="7641221613047054983" at="57,50,64,5" concept="9" />
       <node id="3182084118592558088" at="96,101,103,7" concept="10" />
       <node id="7012529811902464541" at="106,0,113,0" concept="11" trace="projectStepsCount#(Z)I" />
@@ -1652,6 +1651,7 @@
       <node id="7300402066449831382" at="191,0,198,0" concept="11" trace="select#(Ljetbrains/mps/migration/component/plugin/MigrationTestConfigDialog/Result/PMigration;)Ljetbrains/mps/migration/global/ProjectMigration;" />
       <node id="7300402066448417391" at="200,0,207,0" concept="11" trace="createLanguageMigs#()Ljava/util/List;" />
       <node id="7300402066449644249" at="275,0,282,0" concept="11" trace="getOptions#()Ljava/util/Collection;" />
+      <node id="2885477569139569420" at="314,0,321,0" concept="11" trace="checkProject#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Lorg/jetbrains/mps/openapi/util/Processor;)V" />
       <node id="7012529811902892071" at="115,94,124,9" concept="12" />
       <node id="7300402066449926904" at="189,54,198,24" concept="13" />
       <node id="7012529811902565373" at="266,0,275,0" concept="11" trace="execute#(Ljetbrains/mps/project/Project;)V" />
@@ -1670,8 +1670,8 @@
       <node id="7152697638605227606" at="155,0,173,0" concept="11" trace="run#()V" />
       <node id="7152697638605227604" at="153,98,173,9" concept="6" />
       <node id="1348525460772403751" at="152,0,176,0" concept="11" trace="getModuleMigrationsApplied#()Ljava/lang/Iterable;" />
-      <node id="2885477569136885915" at="297,40,323,6" concept="13" />
-      <node id="2885477569136868728" at="296,0,325,0" concept="11" trace="getChecker#()Ljetbrains/mps/ide/migration/MigrationChecker;" />
+      <node id="2885477569136885915" at="297,40,325,6" concept="13" />
+      <node id="2885477569136868728" at="296,0,327,0" concept="11" trace="getChecker#()Ljetbrains/mps/ide/migration/MigrationChecker;" />
       <scope id="7012529811902466549" at="71,33,71,33" />
       <scope id="7012529811902464518" at="82,56,82,56" />
       <scope id="1348525460771846877" at="240,0,240,40">
@@ -1722,9 +1722,9 @@
       <scope id="7300402066451072179" at="300,39,301,17" />
       <scope id="1837214909504776813" at="305,29,306,92" />
       <scope id="2885477569136893995" at="311,93,312,16" />
-      <scope id="2885477569137004426" at="315,39,316,17" />
-      <scope id="2885477569136894017" at="320,84,321,17" />
-      <scope id="7300402066448981500" at="325,84,326,51" />
+      <scope id="2885477569137004426" at="316,39,317,17" />
+      <scope id="2885477569139569445" at="322,117,323,17" />
+      <scope id="7300402066448981500" at="327,84,328,51" />
       <scope id="7012529811902578622" at="46,88,48,18" />
       <scope id="7012529811902466548" at="71,0,73,0" />
       <scope id="7012529811902464513" at="82,0,84,0">
@@ -1800,11 +1800,7 @@
         <var name="m" id="2885477569136893985" />
         <var name="processor" id="2885477569136893987" />
       </scope>
-      <scope id="2885477569136894008" at="320,0,323,0">
-        <var name="m" id="2885477569136894009" />
-        <var name="processor" id="2885477569136894011" />
-      </scope>
-      <scope id="7300402066448981500" at="325,0,328,0">
+      <scope id="7300402066448981500" at="327,0,330,0">
         <var name="a" id="7300402066448981500" />
         <var name="b" id="7300402066448981500" />
       </scope>
@@ -1819,7 +1815,12 @@
         <var name="silent" id="5515912766246897609" />
       </scope>
       <scope id="7300402066449644253" at="276,72,280,37" />
-      <scope id="2885477569136894006" at="314,114,318,74" />
+      <scope id="2885477569139569430" at="315,81,319,74" />
+      <scope id="2885477569139569432" at="321,0,325,0">
+        <var name="m" id="2885477569139569433" />
+        <var name="processor" id="2885477569139569438" />
+        <var name="toCheck" id="2885477569139569435" />
+      </scope>
       <scope id="7641221613047054989" at="58,108,63,7" />
       <scope id="7201972523308070764" at="84,0,89,0">
         <var name="s" id="7201972523308070765" />
@@ -1843,11 +1844,6 @@
       </scope>
       <scope id="6344052339644189998" at="176,0,182,0" />
       <scope id="6344052339644190005" at="182,0,188,0" />
-      <scope id="2885477569136893997" at="314,0,320,0">
-        <var name="m" id="2885477569136893998" />
-        <var name="processor" id="2885477569136894000" />
-        <var name="toCheck" id="2885477569137207238" />
-      </scope>
       <scope id="7641221613047054983" at="57,50,64,5">
         <var name="pm" id="7641221613047054985" />
       </scope>
@@ -1863,6 +1859,10 @@
       <scope id="7300402066448417391" at="200,0,207,0" />
       <scope id="7012529811902565379" at="266,37,273,7" />
       <scope id="7300402066449644249" at="275,0,282,0" />
+      <scope id="2885477569139569420" at="314,0,321,0">
+        <var name="m" id="2885477569139569421" />
+        <var name="processor" id="2885477569139569423" />
+      </scope>
       <scope id="1348525460771829104" at="234,42,242,18" />
       <scope id="7012529811902443079" at="56,40,65,15">
         <var name="res" id="7641221613047050366" />
@@ -1919,8 +1919,8 @@
         <var name="res" id="7152697638605237893" />
       </scope>
       <scope id="1348525460772403751" at="152,0,176,0" />
-      <scope id="2885477569136868733" at="297,40,323,6" />
-      <scope id="2885477569136868728" at="296,0,325,0" />
+      <scope id="2885477569136868733" at="297,40,325,6" />
+      <scope id="2885477569136868728" at="296,0,327,0" />
       <unit id="3182084118592608017" at="97,49,101,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$1" />
       <unit id="7012529811902800903" at="107,76,111,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$2" />
       <unit id="7012529811902892077" at="116,99,120,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$3" />
@@ -1937,11 +1937,11 @@
       <unit id="7012529811902763284" at="287,0,296,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyCleanupProjectMigration" />
       <unit id="7152697638605237899" at="157,98,171,11" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$7$1" />
       <unit id="7152697638605227606" at="154,47,173,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$7" />
-      <unit id="2885477569136893971" at="298,15,323,5" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$3" />
+      <unit id="2885477569136893971" at="298,15,325,5" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$3" />
       <unit id="1348525460771864098" at="208,0,245,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyModuleMigration" />
       <unit id="7012529811902663681" at="246,0,286,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyProjectMigration" />
       <unit id="7012529811902466544" at="67,0,189,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager" />
-      <unit id="7012529811902578617" at="42,0,329,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession" />
+      <unit id="7012529811902578617" at="42,0,331,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession" />
     </file>
   </root>
   <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/7834630562321988558">

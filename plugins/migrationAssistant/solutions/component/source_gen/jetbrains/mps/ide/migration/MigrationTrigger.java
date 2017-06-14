@@ -96,16 +96,18 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
   private boolean myListenersAdded = false;
 
-  public MigrationTrigger(Project ideaProject, MPSProject p, MigrationManager migrationManager, ProjectMigrationProperties props, MPSCoreComponents mpsCore, ReloadManagerComponent reloadManager) {
+  public MigrationTrigger(Project ideaProject, MPSProject p, MigrationManager migrationManager, MigrationChecker checker, ProjectMigrationProperties props, MPSCoreComponents mpsCore, ReloadManagerComponent reloadManager) {
     super(ideaProject);
     myMpsProject = p;
     myMigrationManager = migrationManager;
     myProperties = props;
     myClassLoaderManager = mpsCore.getClassLoaderManager();
     myReloadManager = reloadManager;
+    myChecker = checker;
   }
 
   private final AtomicInteger myBlocked = new AtomicInteger(0);
+  private MigrationChecker myChecker;
 
   public void blockMigrationsCheck() {
     myBlocked.incrementAndGet();
@@ -494,6 +496,10 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     @Override
     public MigrationOptions getOptions() {
       return myOptions;
+    }
+    @Override
+    public MigrationChecker getChecker() {
+      return myChecker;
     }
   }
 }

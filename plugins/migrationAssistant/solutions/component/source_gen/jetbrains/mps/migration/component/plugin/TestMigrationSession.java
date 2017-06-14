@@ -311,13 +311,15 @@ import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
       public void checkLibs(ProgressMonitor m, Processor<Pair<SModule, SModule>> processor) {
         // todo 
       }
-      public void checkProject(ProgressMonitor m, Iterable<ScriptApplied> toCheck, Processor<Problem> processor) {
+      @Override
+      public void checkProject(ProgressMonitor m, Processor<Problem> processor) {
         if (mySettings.preError != 1) {
           return;
         }
         processor.process(new BrokenReferenceProblem(null, "test error"));
       }
-      public void findNotMigrated(ProgressMonitor m, Processor<Problem> processor) {
+      @Override
+      public void findNotMigrated(ProgressMonitor m, Iterable<ScriptApplied> toCheck, Processor<Problem> processor) {
         // todo  
       }
     };
