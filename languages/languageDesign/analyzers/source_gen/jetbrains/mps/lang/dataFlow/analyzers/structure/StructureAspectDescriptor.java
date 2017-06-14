@@ -43,7 +43,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptInsertBeforePosition = createDescriptorForInsertBeforePosition();
   /*package*/ final ConceptDescriptor myConceptInsertPosition = createDescriptorForInsertPosition();
   /*package*/ final ConceptDescriptor myConceptInstruction = createDescriptorForInstruction();
-  /*package*/ final ConceptDescriptor myConceptInstructionClassKeeper = createDescriptorForInstructionClassKeeper();
   /*package*/ final ConceptDescriptor myConceptInstructionParameter = createDescriptorForInstructionParameter();
   /*package*/ final ConceptDescriptor myConceptInstructionReference = createDescriptorForInstructionReference();
   /*package*/ final ConceptDescriptor myConceptIsOperation = createDescriptorForIsOperation();
@@ -59,7 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAnalysisDirection, myConceptAnalyzer, myConceptAnalyzerConstructorParameter, myConceptAnalyzerConstructorParameterReference, myConceptAnalyzerFunFunction, myConceptAnalyzerFunParameterInput, myConceptAnalyzerFunParameterProgramState, myConceptAnalyzerFunParameterStateValues, myConceptAnalyzerFunctionResultType, myConceptAnalyzerInitialFunction, myConceptAnalyzerMergeFunction, myConceptAnalyzerMergeParameterInput, myConceptAnalyzerParameterProgram, myConceptAnalyzerRunnerAnalyzeOperation, myConceptAnalyzerRunnerClassKeeper, myConceptAnalyzerRunnerCreator, myConceptAnalyzerRunnerType, myConceptApplicableCondition, myConceptApplicableNodeReference, myConceptBackwardDirection, myConceptConceptCondition, myConceptCustomInstructionsContainer, myConceptCustomInstructionsContainerReference, myConceptEmitInstruction, myConceptForwardDirection, myConceptInsertAfterPosition, myConceptInsertBeforePosition, myConceptInsertPosition, myConceptInstruction, myConceptInstructionClassKeeper, myConceptInstructionParameter, myConceptInstructionReference, myConceptIsOperation, myConceptPatternCondition, myConceptProgramParameter, myConceptRule, myConceptRuleReference);
+    return Arrays.asList(myConceptAnalysisDirection, myConceptAnalyzer, myConceptAnalyzerConstructorParameter, myConceptAnalyzerConstructorParameterReference, myConceptAnalyzerFunFunction, myConceptAnalyzerFunParameterInput, myConceptAnalyzerFunParameterProgramState, myConceptAnalyzerFunParameterStateValues, myConceptAnalyzerFunctionResultType, myConceptAnalyzerInitialFunction, myConceptAnalyzerMergeFunction, myConceptAnalyzerMergeParameterInput, myConceptAnalyzerParameterProgram, myConceptAnalyzerRunnerAnalyzeOperation, myConceptAnalyzerRunnerClassKeeper, myConceptAnalyzerRunnerCreator, myConceptAnalyzerRunnerType, myConceptApplicableCondition, myConceptApplicableNodeReference, myConceptBackwardDirection, myConceptConceptCondition, myConceptCustomInstructionsContainer, myConceptCustomInstructionsContainerReference, myConceptEmitInstruction, myConceptForwardDirection, myConceptInsertAfterPosition, myConceptInsertBeforePosition, myConceptInsertPosition, myConceptInstruction, myConceptInstructionParameter, myConceptInstructionReference, myConceptIsOperation, myConceptPatternCondition, myConceptProgramParameter, myConceptRule, myConceptRuleReference);
   }
 
   @Override
@@ -124,8 +123,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptInsertPosition;
       case LanguageConceptSwitch.Instruction:
         return myConceptInstruction;
-      case LanguageConceptSwitch.InstructionClassKeeper:
-        return myConceptInstructionClassKeeper;
       case LanguageConceptSwitch.InstructionParameter:
         return myConceptInstructionParameter;
       case LanguageConceptSwitch.InstructionReference:
@@ -397,14 +394,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)/6618572076229093258");
     b.aggregate("parameter", 0x2e25b6b7919ac144L).target(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd583aa0L).optional(true).ordered(true).multiple(true).origin("3325264799421088068").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForInstructionClassKeeper() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.dataFlow.analyzers", "InstructionClassKeeper", 0x97a52717898f4598L, 0x8150573d9fd03868L, 0x57e18a43f31d0ef6L);
-    b.class_(false, false, false);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)/6332494575505837814");
-    b.aggregate("member", 0x3dafeb069349ceeaL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL).optional(true).ordered(true).multiple(true).origin("4445029770711387882").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForInstructionParameter() {

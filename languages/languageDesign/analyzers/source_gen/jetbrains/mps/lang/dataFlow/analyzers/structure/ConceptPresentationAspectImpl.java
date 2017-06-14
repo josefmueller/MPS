@@ -38,7 +38,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_InsertBeforePosition;
   private ConceptPresentation props_InsertPosition;
   private ConceptPresentation props_Instruction;
-  private ConceptPresentation props_InstructionClassKeeper;
   private ConceptPresentation props_InstructionParameter;
   private ConceptPresentation props_InstructionReference;
   private ConceptPresentation props_IsOperation;
@@ -62,7 +61,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Analyzer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a1b0mb);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a1b0lb);
           props_Analyzer = cpb.create();
         }
         return props_Analyzer;
@@ -254,13 +253,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Instruction = cpb.create();
         }
         return props_Instruction;
-      case LanguageConceptSwitch.InstructionClassKeeper:
-        if (props_InstructionClassKeeper == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_InstructionClassKeeper = cpb.create();
-        }
-        return props_InstructionClassKeeper;
       case LanguageConceptSwitch.InstructionParameter:
         if (props_InstructionParameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -300,7 +292,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Rule == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L);
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a53b0mb);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a43b0lb);
           props_Rule = cpb.create();
         }
         return props_Rule;

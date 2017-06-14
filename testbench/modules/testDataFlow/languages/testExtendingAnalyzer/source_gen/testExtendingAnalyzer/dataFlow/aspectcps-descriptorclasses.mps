@@ -6,8 +6,8 @@
   <languages />
   <imports>
     <import index="hkmt" ref="r:b7d9737f-8e9b-4112-92de-8cd1bf30ae09(testExtendingAnalyzer.dataFlow)" />
-    <import index="p1li" ref="r:4f05dbcb-0131-4c11-930d-d98771ffda0b(jetbrains.mps.baseLanguage.dataFlow@proxy)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="d3yh" ref="00000000-0000-4000-5f02-5beb5f025beb/i:fc11249(checkpoints/jetbrains.mps.baseLanguage.dataFlow@descriptorclasses)" />
     <import index="1fjm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.lang.dataFlow.framework(MPS.Core/)" />
     <import index="nhi0" ref="r:ceb05fbc-f573-4746-aba6-e6f7676be055(testExtendingAnalyzer.structure)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
@@ -448,7 +448,7 @@
                     </node>
                     <node concept="2ShNRf" id="1J" role="33vP2m">
                       <node concept="1pGfFk" id="1K" role="2ShVmc">
-                        <ref role="37wK5l" to="p1li:703txLtL_zT" resolve="notNullInstruction" />
+                        <ref role="37wK5l" to="d3yh:22C" resolve="notNullInstruction" />
                         <node concept="2OqwBi" id="1L" role="37wK5m">
                           <node concept="37vLTw" id="1M" role="2Oq$k0">
                             <ref role="3cqZAo" node="1d" resolve="node" />
