@@ -1522,7 +1522,7 @@
               <node concept="3cpWs3" id="6iwymposhoX" role="37wK5m">
                 <node concept="3cpWs3" id="6iwymposhoY" role="3uHU7B">
                   <node concept="Xl_RD" id="6iwymposhoZ" role="3uHU7B">
-                    <property role="Xl_RC" value="You have checked out an MPS project directory:\n" />
+                    <property role="Xl_RC" value="You have checked out an MPS project:\n" />
                   </node>
                   <node concept="2OqwBi" id="6iwymposhp0" role="3uHU7w">
                     <node concept="37vLTw" id="6iwymposhLe" role="2Oq$k0">
