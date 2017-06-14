@@ -7,8 +7,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.MigrationOptions;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
@@ -37,10 +35,6 @@ public class AntTaskExecutionUtil {
           }
         }
 
-        List<ScriptApplied> missingMigrations = m.getMissingMigrations();
-        if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
-          throw new RuntimeException("Some migrations are missing");
-        }
 
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
         ok.value = !(MigrationCheckUtil.haveProblems(modules, new EmptyProgressMonitor()));

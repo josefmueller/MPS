@@ -41,7 +41,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.ArrayList;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
@@ -49,6 +48,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
+import java.util.ArrayList;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
@@ -59,8 +59,6 @@ import jetbrains.mps.refactoring.participant.RefactoringUI;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 
 public class MigrationManagerImpl extends AbstractProjectComponent implements MigrationManager {
   private static final Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
@@ -244,20 +242,6 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     }).toListSequence();
   }
 
-  public List<ScriptApplied> getMissingMigrations() {
-    final Wrappers._T<List<ScriptApplied>> result = new Wrappers._T<List<ScriptApplied>>(ListSequence.fromList(new ArrayList<ScriptApplied>()));
-    myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        result.value = ListSequence.fromList(getModuleMigrationsToApply(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject))).where(new IWhereFilter<ScriptApplied>() {
-          public boolean accept(ScriptApplied it) {
-            return it.getScriptReference().resolve(false) == null;
-          }
-        }).toListSequence();
-      }
-    });
-    return result.value;
-  }
-
   public int projectStepsCount(boolean isCleanup) {
     List<ProjectMigration> migrations = ProjectMigrationsRegistry.getInstance().getMigrations();
     int cleanupSize = ListSequence.fromList(migrations).ofType(CleanupProjectMigration.class).count();
@@ -343,7 +327,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
         }
 
         if (preferredId instanceof MigrationScriptReference) {
-          final MigrationScriptReference mid = as_yvrsrz_a0a0a4a0a0a0a1a34(preferredId, MigrationScriptReference.class);
+          final MigrationScriptReference mid = as_yvrsrz_a0a0a4a0a0a0a1a14(preferredId, MigrationScriptReference.class);
           SModule byId = Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
             public boolean accept(SModule it) {
               return SetSequence.fromSet(MigrationsUtil.getUsedLanguages(it)).contains(mid.getLanguage());
@@ -363,7 +347,7 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
             return;
           }
         } else if (preferredId instanceof RefactoringScriptReference) {
-          final RefactoringScriptReference rid = as_yvrsrz_a0a0a0e0a0a0a0b0rb(preferredId, RefactoringScriptReference.class);
+          final RefactoringScriptReference rid = as_yvrsrz_a0a0a0e0a0a0a0b0pb(preferredId, RefactoringScriptReference.class);
           SModule byId = Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
             public boolean accept(SModule it) {
               return SetSequence.fromSet(MigrationsUtil.getModuleDependencies(it)).contains(rid.getModule());
@@ -564,22 +548,10 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     int dv = Math.max(0, ((AbstractModule) m).getDependencyVersion(ref.getModule(), false));
     return dv <= ref.getFromVersion();
   }
-
-  @Override
-  public boolean checkProject(final Project p, final ProgressMonitor m) {
-    final Wrappers._boolean hasErrors = new Wrappers._boolean();
-    p.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        List<SModule> modules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(p)).toListSequence();
-        hasErrors.value = MigrationCheckUtil.haveProblems(modules, m);
-      }
-    });
-    return hasErrors.value;
-  }
-  private static <T> T as_yvrsrz_a0a0a4a0a0a0a1a34(Object o, Class<T> type) {
+  private static <T> T as_yvrsrz_a0a0a4a0a0a0a1a14(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_yvrsrz_a0a0a0e0a0a0a0b0rb(Object o, Class<T> type) {
+  private static <T> T as_yvrsrz_a0a0a0e0a0a0a0b0pb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -6,7 +6,12 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.ide.migration.MigrationChecker;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.jetbrains.mps.openapi.util.Processor;
 
 public class PostCheckError extends MigrationError {
   private Project myProject;
@@ -29,7 +34,14 @@ public class PostCheckError extends MigrationError {
     return res;
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
-    return MigrationCheckUtil.getNotMigrated(myMigrationsToCheck, MigrationCheckUtil.progressIndicatorToCallback(progressIndicator, 0, 1.0), 100);
+    final List<Problem> res = ListSequence.fromList(new ArrayList<Problem>());
+    myProject.getComponent(MigrationChecker.class).findNotMigrated(new ProgressMonitorAdapter(progressIndicator), myMigrationsToCheck, new Processor<Problem>() {
+      public boolean process(Problem p) {
+        ListSequence.fromList(res).addElement(p);
+        return ListSequence.fromList(res).count() < 100;
+      }
+    });
+    return res;
   }
   @Override
   public boolean canIgnore() {

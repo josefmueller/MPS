@@ -34,9 +34,9 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.migration.MigrationChecker;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.jetbrains.mps.openapi.util.Processor;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 
@@ -158,11 +158,13 @@ __switch__:
                 });
               }
             });
-            ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(MigrationCheckUtil.getNotMigrated(checks, new _FunctionTypes._void_P1_E0<Double>() {
-              public void invoke(Double d) {
-                progressIndicator.setFraction(d);
+
+            myProject.getComponent(MigrationChecker.class).findNotMigrated(new ProgressMonitorAdapter(progressIndicator), checks, new Processor<Problem>() {
+              public boolean process(Problem p) {
+                ListSequence.fromList(problems).addElement(p);
+                return ListSequence.fromList(problems).count() < 1000;
               }
-            }, 1000)));
+            });
           }
         });
       }

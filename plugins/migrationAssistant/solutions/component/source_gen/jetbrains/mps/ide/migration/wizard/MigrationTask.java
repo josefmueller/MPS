@@ -18,9 +18,9 @@ import jetbrains.mps.project.Project;
 import com.intellij.history.LocalHistory;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Color;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import javax.swing.JComponent;
 import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.openapi.application.ModalityState;
@@ -28,19 +28,12 @@ import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Level;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
+import org.jetbrains.mps.openapi.util.Processor;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
 
 public class MigrationTask {
   private static final Logger LOG = LogManager.getLogger(MigrationTask.class);
@@ -109,7 +102,6 @@ public class MigrationTask {
     }
 
     // from here, we don't ignore errors 
-
     addGlobalLabel(mySession.getProject(), STARTED);
     if (!((runProjectMigrations(myMonitor.subTask(5))))) {
       result(myMonitor, new MigrationExceptionError(), "Exception while running migration");
@@ -152,23 +144,12 @@ public class MigrationTask {
     return myIsComplete;
   }
 
-  private static _FunctionTypes._void_P1_E0<? super Double> frac2inc(final int amount, final _FunctionTypes._void_P1_E0<? super Integer> progress) {
-    final Wrappers._int done = new Wrappers._int(0);
-    return new _FunctionTypes._void_P1_E0<Double>() {
-      public void invoke(Double fraction) {
-        int newDone = (int) Math.round(fraction * amount);
-        progress.invoke(newDone - done.value);
-        done.value = newDone;
-      }
-    };
-  }
-
   private boolean executeSingleStep(final ProgressMonitor m, final String localHistCaption, final _FunctionTypes._void_P0_E0 execute, final _FunctionTypes._return_P0_E0<? extends Boolean> merge) {
     final Wrappers._boolean noException = new Wrappers._boolean(true);
 
     // todo pass ModalityState to constructor/via session? 
     // in tests, we have EmptyProgressIndicator and use NON_MODAL 
-    JComponent modalityComponent = check_ajmasp_a0e0bb(as_ajmasp_a0a0e0cb(myMonitor.getIndicator(), InlineProgressIndicator.class));
+    JComponent modalityComponent = check_ajmasp_a0e0z(as_ajmasp_a0a0e0ab(myMonitor.getIndicator(), InlineProgressIndicator.class));
     ModalityState modalityState = (modalityComponent == null ? ModalityState.NON_MODAL : ModalityState.stateForComponent(modalityComponent));
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
@@ -242,46 +223,36 @@ public class MigrationTask {
   }
 
   private List<ScriptApplied> findMissingMigrations(ProgressMonitor m) {
-    m.start("Checking migrations consistency...", 1);
-    try {
-      return mySession.getMigrationManager().getMissingMigrations();
-    } finally {
-      m.done();
-    }
+    final List<ScriptApplied> res = ListSequence.fromList(new ArrayList<ScriptApplied>());
+    mySession.getChecker().checkMigrations(m, new Processor<ScriptApplied>() {
+      public boolean process(ScriptApplied sa) {
+        ListSequence.fromList(res).addElement(sa);
+        return true;
+      }
+    });
+    return res;
   }
 
   private Map<SModule, SModule> checkMigratedLibs(ProgressMonitor m) {
-    m.start("Checking dependencies...", 1);
-    final Map<SModule, SModule> errsToShow = MapSequence.fromMap(new HashMap<SModule, SModule>());
-    final Project mpsProject = mySession.getProject();
-    mpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        final List<SModule> projectModules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).toListSequence();
-        Set<SModule> depModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(projectModules).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
-        SetSequence.fromSet(depModules).removeSequence(Sequence.fromIterable(((Iterable<SModule>) mpsProject.getModulesWithGenerators())));
-        List<ScriptApplied> depMigrationsToRun = mySession.getMigrationManager().getModuleMigrationsToApply(depModules);
-        Iterable<SModule> notMigratedModules = ListSequence.fromList(depMigrationsToRun).select(new ISelector<ScriptApplied, SModule>() {
-          public SModule select(ScriptApplied it) {
-            return it.getModule();
-          }
-        }).distinct();
-        Sequence.fromIterable(notMigratedModules).visitAll(new IVisitor<SModule>() {
-          public void visit(final SModule notMigrated) {
-            MapSequence.fromMap(errsToShow).put(notMigrated, ListSequence.fromList(projectModules).findFirst(new IWhereFilter<SModule>() {
-              public boolean accept(SModule depCandidate) {
-                return new GlobalModuleDependenciesManager(depCandidate).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE).contains(notMigrated);
-              }
-            }));
-          }
-        });
+    final Map<SModule, SModule> res = MapSequence.fromMap(new HashMap<SModule, SModule>());
+    mySession.getChecker().checkLibs(m, new Processor<Pair<SModule, SModule>>() {
+      public boolean process(Pair<SModule, SModule> p) {
+        MapSequence.fromMap(res).put(p.o1, p.o2);
+        return true;
       }
     });
-    m.done();
-    return errsToShow;
+    return res;
   }
 
   private boolean checkModels(ProgressMonitor m) {
-    return mySession.getMigrationManager().checkProject(mySession.getProject(), m);
+    final Wrappers._boolean hasErrors = new Wrappers._boolean(false);
+    mySession.getChecker().checkProject(m, new Processor<Problem>() {
+      public boolean process(Problem p) {
+        hasErrors.value = true;
+        return false;
+      }
+    });
+    return hasErrors.value;
   }
 
   private boolean runProjectMigrations(ProgressMonitor m) {
@@ -336,7 +307,7 @@ public class MigrationTask {
           if (next == null) {
             return false;
           }
-          return eq_ajmasp_a0c0a0a3a0h0f0ob(sa.getScriptReference(), next.getScriptReference());
+          return eq_ajmasp_a0c0a0a3a0h0f0mb(sa.getScriptReference(), next.getScriptReference());
         }
       }))) {
         success = false;
@@ -350,32 +321,26 @@ public class MigrationTask {
     return success;
   }
 
-  private boolean findNotMigrated(final ProgressMonitor m) {
-    final Project project = mySession.getProject();
-    final Wrappers._boolean haveNotMigrated = new Wrappers._boolean();
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
-        m.start("Finding not migrated code...", Sequence.fromIterable(modules).count());
-        haveNotMigrated.value = MigrationCheckUtil.haveNotMigrated(myWereRun, frac2inc(Sequence.fromIterable(modules).count(), new _FunctionTypes._void_P1_E0<Integer>() {
-          public void invoke(Integer processed) {
-            m.advance(processed);
-          }
-        }));
+  private boolean findNotMigrated(ProgressMonitor m) {
+    final Wrappers._boolean haveNotMigrated = new Wrappers._boolean(false);
+    mySession.getChecker().findNotMigrated(m, new _FunctionTypes._return_P1_E0<Boolean, Problem>() {
+      public Boolean invoke(Problem p) {
+        haveNotMigrated.value = true;
+        return false;
       }
     });
     return haveNotMigrated.value;
   }
-  private static JComponent check_ajmasp_a0e0bb(InlineProgressIndicator checkedDotOperand) {
+  private static JComponent check_ajmasp_a0e0z(InlineProgressIndicator checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }
     return null;
   }
-  private static <T> T as_ajmasp_a0a0e0cb(Object o, Class<T> type) {
+  private static <T> T as_ajmasp_a0a0e0ab(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static boolean eq_ajmasp_a0c0a0a3a0h0f0ob(Object a, Object b) {
+  private static boolean eq_ajmasp_a0c0a0a3a0h0f0mb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

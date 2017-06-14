@@ -5,10 +5,12 @@ package jetbrains.mps.ide.migration.wizard;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.progress.ProgressIndicator;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
-import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.ide.migration.MigrationChecker;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.jetbrains.mps.openapi.util.Processor;
 
 public class PreCheckError extends MigrationError {
   private boolean myCanIgnore;
@@ -21,10 +23,15 @@ public class PreCheckError extends MigrationError {
     return "Migration Assistant found some problems in the project.<br><br>" + "It is recommended to fix problems before starting the migration.<br>";
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
-    Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myProject);
-    return MigrationCheckUtil.getProblems(modules, new ProgressMonitorAdapter(progressIndicator), 100);
+    final List<Problem> res = ListSequence.fromList(new ArrayList<Problem>());
+    myProject.getComponent(MigrationChecker.class).checkProject(new ProgressMonitorAdapter(progressIndicator), new Processor<Problem>() {
+      public boolean process(Problem p) {
+        ListSequence.fromList(res).addElement(p);
+        return ListSequence.fromList(res).count() < 100;
+      }
+    });
+    return res;
   }
-
   @Override
   public boolean canIgnore() {
     return myCanIgnore;

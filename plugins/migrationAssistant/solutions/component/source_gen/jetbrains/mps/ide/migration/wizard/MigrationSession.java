@@ -4,6 +4,7 @@ package jetbrains.mps.ide.migration.wizard;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.ide.migration.MigrationChecker;
 import jetbrains.mps.migration.global.MigrationOptions;
 import org.jetbrains.annotations.Nullable;
 
@@ -11,6 +12,8 @@ public interface MigrationSession {
   Project getProject();
 
   MigrationManager getMigrationManager();
+
+  MigrationChecker getChecker();
 
   MigrationOptions getOptions();
 
@@ -43,6 +46,5 @@ public interface MigrationSession {
     public void setCurrentStage(Object stage) {
       myStage = stage;
     }
-
   }
 }
