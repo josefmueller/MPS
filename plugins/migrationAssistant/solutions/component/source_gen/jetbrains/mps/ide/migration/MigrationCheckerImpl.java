@@ -19,7 +19,40 @@ import java.util.HashSet;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
-import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
+import jetbrains.mps.ide.migration.check.DependencyProblem;
+import java.util.ArrayList;
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.classloading.ModuleClassLoaderSupport;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptFeature;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.validation.ValidationUtil;
+import jetbrains.mps.project.validation.NodeValidationProblem;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.validation.LanguageMissingError;
+import jetbrains.mps.ide.migration.check.LanguageAbsentInRepoProblem;
+import jetbrains.mps.ide.migration.check.LanguageNotLoadedProblem;
+import jetbrains.mps.project.validation.ConceptMissingError;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.ide.migration.check.ConceptMissingProblem;
+import jetbrains.mps.project.validation.ConceptFeatureMissingError;
+import jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem;
+import jetbrains.mps.project.validation.BrokenReferenceError;
+import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.behaviour.BHReflection;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.lang.migration.runtime.base.MigrateManually;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -82,20 +115,161 @@ public class MigrationCheckerImpl extends AbstractProjectComponent implements Mi
     m.done();
   }
   @Override
-  public void checkProject(final ProgressMonitor m, final Processor<Problem> consumer) {
+  public void checkProject(final ProgressMonitor pm, final Processor<Problem> processor) {
     myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         // todo inline 
-        MigrationCheckUtil.getProblems(Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myProject)).toListSequence(), m, consumer);
+        List<SModule> modules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myProject)).toListSequence();
+        pm.start("Checking...", 10 + ListSequence.fromList(modules).count());
+
+        List<DependencyProblem> rv = ListSequence.fromList(new ArrayList<DependencyProblem>());
+        Iterable<ReloadableModule> allModules = ListSequence.fromList(modules).ofType(ReloadableModule.class).where(new IWhereFilter<ReloadableModule>() {
+          public boolean accept(ReloadableModule it) {
+            return ModuleClassLoaderSupport.canCreate(it);
+          }
+        });
+        for (ReloadableModule module : Sequence.fromIterable(allModules)) {
+          Iterable<SDependency> deps = Sequence.fromIterable(((Iterable<SDependency>) module.getDeclaredDependencies())).where(new IWhereFilter<SDependency>() {
+            public boolean accept(SDependency it) {
+              return it.getTarget() == null;
+            }
+          });
+          for (SDependency dep : Sequence.fromIterable(deps)) {
+            if (!(processor.process(new DependencyProblem(module, String.format("Unresolved dependency in module %s: Module %s not found in repository", module.getModuleName(), dep.getTargetModule().getModuleName()))))) {
+              pm.done();
+              return;
+            }
+          }
+        }
+
+        pm.advance(10);
+
+        final Set<SLanguage> missingLangs = SetSequence.fromSet(new HashSet<SLanguage>());
+        final Set<SAbstractConcept> missingConcepts = SetSequence.fromSet(new HashSet<SAbstractConcept>());
+        final Set<SConceptFeature> missingFeatures = SetSequence.fromSet(new HashSet<SConceptFeature>());
+
+outer:
+        for (SModule module : ListSequence.fromList(modules)) {
+          pm.step(NameUtil.compactNamespace(module.getModuleName()));
+          // find missing concepts, when language's not missing 
+          // find missing concept features when concept's not missing 
+          for (final EditableSModel model : Sequence.fromIterable(((Iterable<SModel>) module.getModels())).ofType(EditableSModel.class)) {
+            final Wrappers._boolean stop = new Wrappers._boolean(false);
+            ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<NodeValidationProblem>() {
+              public boolean process(NodeValidationProblem vp) {
+                SNode node = vp.getNode().resolve(model.getRepository());
+                if (vp instanceof LanguageMissingError) {
+                  LanguageMissingError err = (LanguageMissingError) vp;
+                  if (SetSequence.fromSet(missingLangs).contains(err.getLanguage())) {
+                    return true;
+                  }
+                  SetSequence.fromSet(missingLangs).addElement(err.getLanguage());
+                  if (err.isCompletelyAbsent()) {
+                    if (!(processor.process(new LanguageAbsentInRepoProblem(err.getLanguage(), node)))) {
+                      stop.value = true;
+                      return false;
+                    }
+                  } else {
+                    if (!(processor.process(new LanguageNotLoadedProblem(err.getLanguage(), node)))) {
+                      stop.value = true;
+                      return false;
+                    }
+                  }
+                } else if (vp instanceof ConceptMissingError) {
+                  ConceptMissingError err = (ConceptMissingError) vp;
+                  SConcept concept = err.getConcept();
+                  if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept)) {
+                    return true;
+                  }
+                  SetSequence.fromSet(missingConcepts).addElement(concept);
+                  if (!(processor.process(new ConceptMissingProblem(concept, node)))) {
+                    stop.value = true;
+                    return false;
+                  }
+                } else if (vp instanceof ConceptFeatureMissingError) {
+                  ConceptFeatureMissingError err = (ConceptFeatureMissingError) vp;
+                  SAbstractConcept concept = err.getConceptFeature().getOwner();
+                  if (SetSequence.fromSet(missingLangs).contains(concept.getLanguage()) || SetSequence.fromSet(missingConcepts).contains(concept) || SetSequence.fromSet(missingFeatures).contains(err.getConceptFeature())) {
+                    return true;
+                  }
+                  SetSequence.fromSet(missingFeatures).addElement(err.getConceptFeature());
+                  if (!(processor.process(new ConceptFeatureMissingProblem(err.getConceptFeature(), node, err.getMessage())))) {
+                    stop.value = true;
+                    return false;
+                  }
+                } else if (vp instanceof BrokenReferenceError) {
+                  BrokenReferenceError err = (BrokenReferenceError) vp;
+                  if (!(processor.process(new BrokenReferenceProblem(err.getReference(), err.getMessage())))) {
+                    stop.value = true;
+                    return false;
+                  }
+                }
+
+                // ignore other errors 
+                return true;
+              }
+            });
+            pm.advance(1);
+
+            if (stop.value) {
+              break outer;
+            }
+          }
+        }
       }
     });
   }
   @Override
-  public void findNotMigrated(final ProgressMonitor m, final Iterable<ScriptApplied> toCheck, final Processor<Problem> processor) {
+  public void findNotMigrated(final ProgressMonitor m, final Iterable<ScriptApplied> migrationsToCheck, final Processor<Problem> processor) {
     myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        // todo inline 
-        MigrationCheckUtil.getNotMigrated(toCheck, m, processor);
+        Iterable<SModule> modules = Sequence.fromIterable(migrationsToCheck).select(new ISelector<ScriptApplied, SModule>() {
+          public SModule select(ScriptApplied it) {
+            return it.getModule();
+          }
+        }).distinct();
+        Iterable<ScriptApplied> migrations = Sequence.fromIterable(migrationsToCheck).where(new IWhereFilter<ScriptApplied>() {
+          public boolean accept(ScriptApplied it) {
+            return it.getScriptReference() instanceof MigrationScriptReference;
+          }
+        });
+
+        m.start("Finding not migrated code...", Sequence.fromIterable(modules).count() + Sequence.fromIterable(migrations).count() * 10);
+
+        final int allSteps = Sequence.fromIterable(migrationsToCheck).count();
+        int stepsPassed = 0;
+
+        List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
+        {
+          final SearchScope scope = CommandUtil.createScope(modules);
+          QueryExecutionContext context = new QueryExecutionContext() {
+            public SearchScope getDefaultSearchScope() {
+              return scope;
+            }
+          };
+          for (SNode ann : CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2274019e61f0c2c8L, "jetbrains.mps.lang.core.structure.MigrationAnnotation"), false)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return ((boolean) (Boolean) BHReflection.invoke(it, SMethodTrimmedId.create("showInResults", null, "29O0pTxWdmG")));
+            }
+          })) {
+            if (!(processor.process(new MigrateManually(ann)))) {
+              m.done();
+              return;
+            }
+            m.advance(1);
+          }
+        }
+
+        // todo show only annotations left by our run migrations 
+        for (ScriptApplied sa : Sequence.fromIterable(migrations)) {
+          for (Problem p : Sequence.fromIterable(((MigrationScriptReference) sa.getScriptReference()).resolve(false).check(sa.getModule()))) {
+            if (!(processor.process(p))) {
+              m.done();
+              return;
+            }
+          }
+          m.advance(10);
+        }
       }
     });
   }
