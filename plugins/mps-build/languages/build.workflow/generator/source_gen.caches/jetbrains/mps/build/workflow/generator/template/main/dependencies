@@ -37,13 +37,13 @@
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfJavaModule__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.workflow.behavior.BwfProjectPart__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.template.main.Pattern_1ei209tuoku46" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.template.main.Pattern_1o81hbea58wr5" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.template.main.Pattern_1o81hbea5adj1" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.template.main.Pattern_1tr0xntv2qalo" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.CycleHelper" />
     <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" />
+    <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.TaskLibrariesHelper" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.IfMacroCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />

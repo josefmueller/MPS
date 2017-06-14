@@ -9,7 +9,6 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -17,7 +16,6 @@
     <import index="nggh" ref="r:2b3dd9e8-e205-47a3-b3cc-ff31af700b6b(jetbrains.mps.build.workflow.generator.util)" />
     <import index="nq57" ref="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="fu7b" ref="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="iuxj" ref="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
@@ -4023,7 +4021,7 @@
               <node concept="2OqwBi" id="Y2EImGHAid" role="3clFbG">
                 <node concept="2ShNRf" id="Y2EImGHAi7" role="2Oq$k0">
                   <node concept="1pGfFk" id="Y2EImGHAi9" role="2ShVmc">
-                    <ref role="37wK5l" to="fu7b:Y2EImGHLUO" resolve="TaskLibrariesHelper" />
+                    <ref role="37wK5l" to="nggh:Y2EImGHLUO" resolve="TaskLibrariesHelper" />
                     <node concept="37vLTw" id="3GM_nagTzh6" role="37wK5m">
                       <ref role="3cqZAo" node="Y2EImGHwwn" resolve="n" />
                     </node>
@@ -4031,7 +4029,7 @@
                   </node>
                 </node>
                 <node concept="liA8E" id="Y2EImGHAij" role="2OqNvi">
-                  <ref role="37wK5l" to="fu7b:Y2EImGHLRR" resolve="importLibs" />
+                  <ref role="37wK5l" to="nggh:Y2EImGHLRR" resolve="importLibs" />
                 </node>
               </node>
             </node>
