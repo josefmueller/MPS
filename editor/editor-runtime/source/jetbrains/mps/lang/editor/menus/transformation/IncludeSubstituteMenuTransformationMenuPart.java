@@ -37,9 +37,10 @@ public class IncludeSubstituteMenuTransformationMenuPart implements Transformati
     SNode currentChild = getCurrentChild(context);
     SNode parent = getParentNode(context);
     SContainmentLink containmentLink = getContainmentLink(context);
+    SAbstractConcept targetConcept = getTargetConcept(context);
     if (parent != null && containmentLink != null) {
       SubstituteMenuLookup substituteMenuLookup = getSubstituteMenuLookup(context);
-      return new SubstituteItemsCollector(parent, currentChild, containmentLink, getTargetConcept(context), context.getEditorContext(), substituteMenuLookup).collect();
+      return new SubstituteItemsCollector(parent, currentChild, containmentLink, targetConcept, context.getEditorContext(), substituteMenuLookup, context.getEditorMenuTrace()).collect();
     }
     return Collections.emptyList();
   }

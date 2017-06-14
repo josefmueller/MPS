@@ -67,7 +67,7 @@ abstract class EditorMenuTraceNodeInitializer {
     public void init(EditorMenuTraceNode node) {
       EditorMenuTraceInfo userObject = ((EditorMenuTraceInfo) node.getUserObject());
       for (EditorMenuTraceInfo editorMenuTraceInfo : userObject.getChildren()) {
-        node.add(new EditorMenuTraceNode(editorMenuTraceInfo, new AllChildrenMenuTraceNodeInitializer(myProject), myProject));
+        node.add(new EditorMenuTraceNode(editorMenuTraceInfo, this, myProject));
       }
     }
   }
