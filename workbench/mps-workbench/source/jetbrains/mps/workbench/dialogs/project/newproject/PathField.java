@@ -35,7 +35,7 @@ public class PathField extends JPanel {
   private final JButton myButton;
   private String myPath;
   private int myMode;
-  private final List<PathChangedListener> myListeners = new ArrayList<>();
+  private final List<PathChangedListner> myListners = new ArrayList<>();
 
   /**
    * flag if path was changed by user
@@ -93,15 +93,15 @@ public class PathField extends JPanel {
     final boolean isPathChangedByUser = myIsPathChangedByUser; //Save current flag state.
     myPathField.setText(newValue);
     myIsPathChangedByUser = isPathChangedByUser; //Reset state. It was not user action.
-    for (PathChangedListener listener : myListeners) {
-      listener.firePathChanged(myPath);
+    for (PathChangedListner listner : myListners) {
+      listner.firePathChanged(myPath);
     }
   }
 
   private void pathFromField() {
     myPath = myPathField.getText();
-    for (PathChangedListener listener : myListeners) {
-      listener.firePathChanged(myPath);
+    for (PathChangedListner listner : myListners) {
+      listner.firePathChanged(myPath);
     }
   }
 
@@ -128,16 +128,16 @@ public class PathField extends JPanel {
     myButton.setEnabled(enabled);
   }
 
-  public void addPathChangedListener(final PathChangedListener listener) {
-    myListeners.add(listener);
+  public void addPathChangedListner(final PathChangedListner listner) {
+    myListners.add(listner);
   }
 
-  public void removePathChangedListener(final PathChangedListener listener) {
-    myListeners.remove(listener);
+  public void removePathChangedListner(final PathChangedListner listner) {
+    myListners.remove(listner);
   }
 
   //Notify when path field updated
-  public interface PathChangedListener {
+  public interface PathChangedListner {
     void firePathChanged(final String newValue);
   }
 }

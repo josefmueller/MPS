@@ -63,7 +63,6 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -278,7 +277,7 @@ public class CreateProjectWizard extends DialogWrapper {
                                            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     myProjectPath = new PathField();
-    myProjectPath.addPathChangedListener(newPathValue -> {
+    myProjectPath.addPathChangedListner(newPathValue -> {
       //If path changed need to update specific module settings
       fireProjectPathChanged(newPathValue);
       checkProjectPath(newPathValue);
