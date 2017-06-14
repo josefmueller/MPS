@@ -114,12 +114,12 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
     }
     return true;
   }
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558315");
+  private static SNodePointer breakingNode_57atcm_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643512");
   private static boolean neq_57atcm_a0a0a0a0a0a0a6a0a1a0a0a1a0b0a1a3(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_57atcm_a0a0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558315");
-  private static SNodePointer breakingNode_57atcm_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643512");
 }

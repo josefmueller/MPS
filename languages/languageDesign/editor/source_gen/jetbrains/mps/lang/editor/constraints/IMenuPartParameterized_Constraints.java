@@ -46,8 +46,8 @@ public class IMenuPartParameterized_Constraints extends BaseConstraintsDescripto
     }
     return true;
   }
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227128029536561162");
   private static boolean eq_j0wf96_a0a0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227128029536561162");
 }

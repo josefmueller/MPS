@@ -58,10 +58,10 @@ public class IMemberOperation_Constraints extends BaseConstraintsDescriptor {
               SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(enclosingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
               List<SNode> applicableMembers = new ArrayList<SNode>();
               {
-                IMatchingPattern pattern_dyvyal_d0a0 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc77d845L, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"));
-                SNode coercedNode_dyvyal_d0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_dyvyal_d0a0);
-                if (coercedNode_dyvyal_d0a0 != null) {
-                  for (SNode member : ListSequence.fromList(BaseClassifierType__BehaviorDescriptor.getMembers_idhEwINC$.invoke(coercedNode_dyvyal_d0a0, enclosingNode))) {
+                IMatchingPattern pattern_dyvyal_d0a0b0a0a0b0a1a0b0c = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc77d845L, "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType"));
+                SNode coercedNode_dyvyal_d0a0b0a0a0b0a1a0b0c = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_dyvyal_d0a0b0a0a0b0a1a0b0c);
+                if (coercedNode_dyvyal_d0a0b0a0a0b0a1a0b0c != null) {
+                  for (SNode member : ListSequence.fromList(BaseClassifierType__BehaviorDescriptor.getMembers_idhEwINC$.invoke(coercedNode_dyvyal_d0a0b0a0a0b0a1a0b0c, enclosingNode))) {
                     if (SNodeOperations.isInstanceOf(member, SNodeOperations.asSConcept(_context.getLinkTargetConcept()))) {
                       ListSequence.fromList(applicableMembers).addElement(member);
                     }

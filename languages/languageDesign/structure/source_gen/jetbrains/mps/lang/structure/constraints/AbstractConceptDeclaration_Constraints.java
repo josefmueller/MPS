@@ -97,8 +97,8 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
     });
     return properties;
   }
+  private static SNodePointer breakingNode_c1kwet_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "6836281137582805233");
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static SNodePointer breakingNode_c1kwet_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "6836281137582805233");
 }

@@ -85,11 +85,11 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
+  private static SNodePointer breakingNode_wflc39_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "6836281137582847570");
   private static boolean neq_wflc39_a0a0a0a0a0a0f0a0b0a0a0b0a1a0b0c(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_wflc39_a0a0a0a0a0a0a0a0a0a7a0a1a0a0a1a0b0a1a2(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNodePointer breakingNode_wflc39_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "6836281137582847570");
 }

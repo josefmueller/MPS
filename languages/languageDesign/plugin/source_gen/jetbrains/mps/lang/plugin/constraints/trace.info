@@ -35,7 +35,7 @@
       <node id="1050311802978903957" at="23,0,26,0" concept="1" trace="ConceptCondition_Constraints#()V" />
       <node id="1050311802978903957" at="33,0,36,9" concept="4" />
       <node id="1050311802978903957" at="42,0,45,0" concept="10" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
-      <node id="1227128029536562332" at="45,0,52,0" concept="10" trace="_quotation_createNode_y4qgg5_b0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1227128029536562332" at="45,0,52,0" concept="10" trace="_quotation_createNode_y4qgg5_b0a0a3#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1050311802978903957" at="30,0,40,0" concept="5" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
       <node id="1050311802978903957" at="28,103,40,6" concept="7" />
       <node id="1050311802978903957" at="27,0,42,0" concept="5" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
@@ -707,7 +707,7 @@
       <node id="3339131993542058155" at="34,0,37,9" concept="4" />
       <node id="1227128029536562220" at="44,24,47,5" concept="4" />
       <node id="3339131993542058155" at="43,0,50,0" concept="10" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
-      <node id="1227128029536562236" at="50,0,57,0" concept="10" trace="_quotation_createNode_u117dn_b0a0a0b0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1227128029536562236" at="50,0,57,0" concept="10" trace="_quotation_createNode_u117dn_b0a0a0b0d#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3339131993542058155" at="31,0,41,0" concept="5" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
       <node id="3339131993542058155" at="29,103,41,6" concept="7" />
       <node id="3339131993542058155" at="28,0,43,0" concept="5" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
@@ -1000,7 +1000,7 @@
       <node id="8713489730824201065" at="23,0,26,0" concept="1" trace="EditableModel_Constraints#()V" />
       <node id="8713489730824201065" at="33,0,36,9" concept="4" />
       <node id="8713489730824201065" at="42,0,45,0" concept="10" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
-      <node id="1227128029536562284" at="45,0,52,0" concept="10" trace="_quotation_createNode_z543ji_b0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1227128029536562284" at="45,0,52,0" concept="10" trace="_quotation_createNode_z543ji_b0a0a3#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8713489730824201065" at="30,0,40,0" concept="5" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
       <node id="8713489730824201065" at="28,103,40,6" concept="7" />
       <node id="8713489730824201065" at="27,0,42,0" concept="5" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />

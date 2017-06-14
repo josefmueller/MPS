@@ -26,19 +26,19 @@
       <node id="6836281137582646532" at="56,13,57,169" concept="6" />
       <node id="6836281137582646444" at="57,169,58,360" concept="6" />
       <node id="6836281137582646452" at="58,360,59,69" concept="6" />
-      <node id="6836281137582646458" at="60,15,61,252" concept="6" />
-      <node id="6836281137582646458" at="61,252,62,169" concept="6" />
+      <node id="6836281137582646458" at="60,15,61,267" concept="6" />
+      <node id="6836281137582646458" at="61,267,62,199" concept="6" />
       <node id="6836281137582646469" at="65,124,66,82" concept="2" />
       <node id="6836281137582646458" at="69,22,70,17" concept="0" />
       <node id="6836281137582646488" at="71,15,72,72" concept="7" />
       <node id="1213104844334" at="77,7,78,22" concept="7" />
       <node id="1213104844334" at="80,0,81,0" concept="9" trace="breakingNode_dyvyal_a0a0a0a0a1a0b0a1a2" />
       <node id="1213104844334" at="34,0,37,0" concept="1" trace="IMemberOperation_Constraints#()V" />
-      <node id="6836281137582646467" at="64,170,67,21" concept="4" />
+      <node id="6836281137582646467" at="64,185,67,21" concept="4" />
       <node id="1213104844334" at="42,0,46,0" concept="5" trace="hasOwnScopeProvider#()Z" />
       <node id="1213104844334" at="50,0,54,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="6836281137582646464" at="63,54,68,19" concept="3" />
-      <node id="6836281137582646458" at="62,169,70,17" concept="4" />
+      <node id="6836281137582646464" at="63,69,68,19" concept="3" />
+      <node id="6836281137582646458" at="62,199,70,17" concept="4" />
       <node id="6836281137582646458" at="59,69,71,15" concept="0" />
       <node id="1213104844334" at="55,122,73,13" concept="0" />
       <node id="1213104844334" at="54,0,75,0" concept="5" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
@@ -51,16 +51,16 @@
       <scope id="1213104844334" at="51,63,52,58" />
       <scope id="6836281137582646468" at="65,124,66,82" />
       <scope id="1213104844334" at="34,0,37,0" />
-      <scope id="6836281137582646466" at="64,170,67,21" />
+      <scope id="6836281137582646466" at="64,185,67,21" />
       <scope id="1213104844334" at="42,0,46,0" />
       <scope id="1213104844334" at="50,0,54,0" />
-      <scope id="6836281137582646463" at="63,54,68,19" />
-      <scope id="6836281137582646464" at="63,54,68,19">
+      <scope id="6836281137582646463" at="63,69,68,19" />
+      <scope id="6836281137582646464" at="63,69,68,19">
         <var name="member" id="6836281137582646465" />
       </scope>
       <scope id="6836281137582646458" at="60,15,70,17">
-        <var name="coercedNode_dyvyal_d0a0" id="6836281137582646458" />
-        <var name="pattern_dyvyal_d0a0" id="6836281137582646458" />
+        <var name="coercedNode_dyvyal_d0a0b0a0a0b0a1a0b0c" id="6836281137582646458" />
+        <var name="pattern_dyvyal_d0a0b0a0a0b0a1a0b0c" id="6836281137582646458" />
       </scope>
       <scope id="6836281137582646443" at="56,13,72,72">
         <var name="applicableMembers" id="6836281137582646453" />

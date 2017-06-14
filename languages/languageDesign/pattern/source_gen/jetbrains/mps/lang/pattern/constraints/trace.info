@@ -268,17 +268,17 @@
       <node id="5642650895629225737" at="37,44,38,20" concept="7" />
       <node id="5642650895629225737" at="45,63,46,58" concept="7" />
       <node id="6836281137582794840" at="50,13,51,249" concept="6" />
-      <node id="6836281137582794848" at="51,249,52,85" concept="7" />
+      <node id="6836281137582794848" at="51,249,52,100" concept="7" />
       <node id="5642650895629225737" at="57,7,58,22" concept="7" />
       <node id="6836281137582794891" at="61,36,62,195" concept="7" />
       <node id="6836281137582794891" at="63,5,64,16" concept="7" />
       <node id="5642650895629225737" at="66,0,67,0" concept="9" trace="breakingNode_8aolto_a0a0a0a0a1a0b0a1a2" />
       <node id="5642650895629225737" at="28,0,31,0" concept="1" trace="OrPatternVariableReference_Constraints#()V" />
-      <node id="6836281137582794891" at="60,75,63,5" concept="4" />
+      <node id="6836281137582794891" at="60,90,63,5" concept="4" />
       <node id="5642650895629225737" at="36,0,40,0" concept="5" trace="hasOwnScopeProvider#()Z" />
       <node id="5642650895629225737" at="44,0,48,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="5642650895629225737" at="49,122,53,13" concept="0" />
-      <node id="6836281137582794891" at="60,0,66,0" concept="10" trace="check_8aolto_a0b0a0#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="6836281137582794891" at="60,0,66,0" concept="10" trace="check_8aolto_a0b0a0b0a0a0b0a1a0b0c#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="5642650895629225737" at="48,0,55,0" concept="5" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="5642650895629225737" at="42,56,55,10" concept="7" />
       <node id="5642650895629225737" at="40,0,57,0" concept="5" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
@@ -288,14 +288,14 @@
       <scope id="5642650895629225737" at="37,44,38,20" />
       <scope id="5642650895629225737" at="45,63,46,58" />
       <scope id="6836281137582794891" at="61,36,62,195" />
-      <scope id="6836281137582794839" at="50,13,52,85">
+      <scope id="6836281137582794839" at="50,13,52,100">
         <var name="orPattern" id="6836281137582794841" />
       </scope>
       <scope id="5642650895629225737" at="28,0,31,0" />
       <scope id="5642650895629225737" at="36,0,40,0" />
       <scope id="5642650895629225737" at="44,0,48,0" />
       <scope id="5642650895629225737" at="49,122,53,13" />
-      <scope id="6836281137582794891" at="60,75,64,16" />
+      <scope id="6836281137582794891" at="60,90,64,16" />
       <scope id="6836281137582794891" at="60,0,66,0">
         <var name="checkedDotOperand" id="6836281137582794891" />
       </scope>

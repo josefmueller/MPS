@@ -163,13 +163,13 @@
       <node id="6836281137582805326" at="139,21,140,203" concept="7" />
       <node id="6836281137582805333" at="143,15,144,61" concept="7" />
       <node id="1213104841300" at="149,7,150,22" concept="7" />
-      <node id="5424895381998078266" at="152,52,153,44" concept="7" />
-      <node id="1213104841300" at="155,0,156,0" concept="10" trace="breakingNode_nfyhm3_a0a0a0a0a1a0b0a1a3" />
+      <node id="1213104841300" at="152,0,153,0" concept="10" trace="breakingNode_nfyhm3_a0a0a0a0a1a0b0a1a3" />
+      <node id="5424895381998078266" at="153,52,154,44" concept="7" />
       <node id="1213104841300" at="36,0,39,0" concept="1" trace="LinkDeclaration_Constraints#()V" />
       <node id="5424895381998078260" at="72,39,75,9" concept="4" />
       <node id="6836281137582805257" at="125,67,128,15" concept="4" />
       <node id="6836281137582805316" at="136,51,139,21" concept="4" />
-      <node id="5424895381998078266" at="152,0,155,0" concept="11" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="5424895381998078266" at="153,0,156,0" concept="11" trace="isEmptyString#(Ljava/lang/String;)Z" />
       <node id="1213104841300" at="44,0,48,0" concept="5" trace="hasOwnValidator#()Z" />
       <node id="1213104841300" at="55,0,59,0" concept="5" trace="hasOwnValidator#()Z" />
       <node id="1213104841300" at="66,0,70,0" concept="5" trace="hasOwnValidator#()Z" />
@@ -212,7 +212,7 @@
       <scope id="1213104841300" at="119,63,120,58" />
       <scope id="6836281137582805258" at="126,56,127,28" />
       <scope id="6836281137582805317" at="137,38,138,207" />
-      <scope id="5424895381998078266" at="152,52,153,44" />
+      <scope id="5424895381998078266" at="153,52,154,44" />
       <scope id="1213104841300" at="49,70,51,678">
         <var name="propertyName" id="1213104841300" />
       </scope>
@@ -227,7 +227,7 @@
         <var name="propertyName" id="1213104841300" />
       </scope>
       <scope id="1213104841300" at="36,0,39,0" />
-      <scope id="5424895381998078266" at="152,0,155,0">
+      <scope id="5424895381998078266" at="153,0,156,0">
         <var name="str" id="5424895381998078266" />
       </scope>
       <scope id="1213104841300" at="44,0,48,0" />
@@ -564,12 +564,12 @@
       <node id="9005308665739310249" at="91,74,92,22" concept="7" />
       <node id="9005308665739310255" at="93,43,94,23" concept="7" />
       <node id="5115399642005556319" at="97,7,98,22" concept="7" />
-      <node id="5424895381997971648" at="100,52,101,44" concept="7" />
-      <node id="5115399642005556319" at="103,0,104,0" concept="10" trace="breakingNode_c1kwet_a0a0a0a0a3" />
+      <node id="5115399642005556319" at="100,0,101,0" concept="10" trace="breakingNode_c1kwet_a0a0a0a0a3" />
+      <node id="5424895381997971648" at="101,52,102,44" concept="7" />
       <node id="5115399642005556319" at="25,0,28,0" concept="1" trace="AbstractConceptDeclaration_Constraints#()V" />
       <node id="5424895381997966631" at="67,42,70,9" concept="4" />
       <node id="9005308665739310237" at="86,43,89,9" concept="4" />
-      <node id="5424895381997971648" at="100,0,103,0" concept="11" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="5424895381997971648" at="101,0,104,0" concept="11" trace="isEmptyString#(Ljava/lang/String;)Z" />
       <node id="5115399642005556319" at="29,0,33,0" concept="5" trace="hasOwnDefaultScopeProvider#()Z" />
       <node id="5115399642005556319" at="36,0,40,0" concept="5" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="5115399642005556319" at="40,0,44,0" concept="5" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
@@ -604,14 +604,14 @@
         <var name="e" id="9005308665739310252" />
       </scope>
       <scope id="9005308665739310254" at="93,43,94,23" />
-      <scope id="5424895381997971648" at="100,52,101,44" />
+      <scope id="5424895381997971648" at="101,52,102,44" />
       <scope id="5115399642005556319" at="55,70,57,101">
         <var name="propertyName" id="5115399642005556319" />
       </scope>
       <scope id="6342519961666443367" at="71,13,73,22" />
       <scope id="9005308665739310245" at="90,13,92,22" />
       <scope id="5115399642005556319" at="25,0,28,0" />
-      <scope id="5424895381997971648" at="100,0,103,0">
+      <scope id="5424895381997971648" at="101,0,104,0">
         <var name="str" id="5424895381997971648" />
       </scope>
       <scope id="5115399642005556319" at="29,0,33,0" />

@@ -65,6 +65,10 @@
         <property role="2V$B1T" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
         <property role="2V$B1Q" value="jetbrains.mps.baseLanguage" />
       </node>
+      <node concept="2V$Bhx" id="2U15YDD0Hj2" role="1t_9vn">
+        <property role="2V$B1T" value="daafa647-f1f7-4b0b-b096-69cd7c8408c0" />
+        <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.regexp" />
+      </node>
       <node concept="2V$Bhx" id="44d2vb6RTl_" role="1t_9vn">
         <property role="2V$B1T" value="760a0a8c-eabb-4521-8bfd-65db761a9ba3" />
         <property role="2V$B1Q" value="jetbrains.mps.baseLanguage.logging" />

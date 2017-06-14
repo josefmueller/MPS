@@ -53,8 +53,8 @@ public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
     }
     return false;
   }
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "1227128029536560279");
   private static boolean eq_ej62q3_a0a0a0a0a0a2a3(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "1227128029536560279");
 }

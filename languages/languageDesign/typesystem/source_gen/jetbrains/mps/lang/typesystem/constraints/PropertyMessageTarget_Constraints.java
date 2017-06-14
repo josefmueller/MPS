@@ -59,10 +59,10 @@ public class PropertyMessageTarget_Constraints extends BaseConstraintsDescriptor
               }
               SNode nodetype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(messageStatement, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, 0x11db4ab45e6L, "nodeToReport")));
               {
-                IMatchingPattern pattern_hhynfx_d0a0 = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"));
-                SNode coercedNode_hhynfx_d0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(nodetype, pattern_hhynfx_d0a0);
-                if (coercedNode_hhynfx_d0a0 != null) {
-                  return ListScope.forResolvableElements(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(SLinkOperations.getTarget(coercedNode_hhynfx_d0a0, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"))));
+                IMatchingPattern pattern_hhynfx_d0a0b0a0a0b0a1a0b0c = HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"));
+                SNode coercedNode_hhynfx_d0a0b0a0a0b0a1a0b0c = TypeChecker.getInstance().getRuntimeSupport().coerce_(nodetype, pattern_hhynfx_d0a0b0a0a0b0a1a0b0c);
+                if (coercedNode_hhynfx_d0a0b0a0a0b0a1a0b0c != null) {
+                  return ListScope.forResolvableElements(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(SLinkOperations.getTarget(coercedNode_hhynfx_d0a0b0a0a0b0a1a0b0c, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"))));
                 } else {
                   return ListScope.forResolvableElements(Sequence.fromIterable(Collections.<SNode>emptyList()));
                 }

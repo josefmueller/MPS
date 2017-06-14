@@ -61,6 +61,8 @@ public class NestedNewExpression_Constraints extends BaseConstraintsDescriptor {
     }
     return true;
   }
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558547");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558509");
   private static boolean eq_6ri94c_a0a0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
@@ -73,6 +75,4 @@ public class NestedNewExpression_Constraints extends BaseConstraintsDescriptor {
   private static boolean eq_6ri94c_a0a0a0a0f_1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558547");
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1227128029536558509");
 }

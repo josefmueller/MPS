@@ -62,6 +62,8 @@ public class TestSubstituteParentWithConstraints_Constraints extends BaseConstra
   private static boolean staticCanBeAnAncestor(SNode node, SNode childNode, SAbstractConcept childConcept, SNode parentNode, SContainmentLink link) {
     return neq_sxfanc_a0a0a0f(childConcept, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ceddc8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints3")) && neq_sxfanc_a0a0a0f_0(childConcept, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d41c8eL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraintsWrapper3")) && neq_sxfanc_a0a0a5(childConcept, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x73096e13d1e2b4e1L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteGrandChildWithConstraintsProhibited"));
   }
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:0cba60fc-aa17-42ba-b3ca-69b0d1a86fe9(jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints)", "1227128029536583138");
+  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:0cba60fc-aa17-42ba-b3ca-69b0d1a86fe9(jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints)", "1227128029536583118");
   private static boolean eq_sxfanc_a0a0a0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
@@ -83,6 +85,4 @@ public class TestSubstituteParentWithConstraints_Constraints extends BaseConstra
   private static boolean neq_sxfanc_a0a0a0f_0(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:0cba60fc-aa17-42ba-b3ca-69b0d1a86fe9(jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints)", "1227128029536583138");
-  private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:0cba60fc-aa17-42ba-b3ca-69b0d1a86fe9(jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints)", "1227128029536583118");
 }

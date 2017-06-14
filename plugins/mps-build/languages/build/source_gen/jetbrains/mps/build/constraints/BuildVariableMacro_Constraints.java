@@ -30,10 +30,10 @@ public class BuildVariableMacro_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
-        return REGEXP_xr7ei4_a0a0a1a1a0b0a1a2.matcher((SPropertyOperations.getString(propertyValue))).matches();
+        return REGEXP_xr7ei4_a0a1a1a0b0a1a2.matcher((SPropertyOperations.getString(propertyValue))).matches();
       }
     });
     return properties;
   }
-  private static Pattern REGEXP_xr7ei4_a0a0a1a1a0b0a1a2 = Pattern.compile("[^=\\$/]*", 0);
+  private static Pattern REGEXP_xr7ei4_a0a1a1a0b0a1a2 = Pattern.compile("[^=\\$/]*", 0);
 }

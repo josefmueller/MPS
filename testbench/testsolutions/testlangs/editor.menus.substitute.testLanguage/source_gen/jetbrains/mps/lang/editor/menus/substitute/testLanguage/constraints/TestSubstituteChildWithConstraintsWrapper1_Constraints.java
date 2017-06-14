@@ -37,8 +37,8 @@ public class TestSubstituteChildWithConstraintsWrapper1_Constraints extends Base
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
     return neq_462g16_a0a0d(link, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL, 0x9c8de75f2d41c87L, "childWrapperCanBeChild"));
   }
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:0cba60fc-aa17-42ba-b3ca-69b0d1a86fe9(jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints)", "1227128029536583183");
   private static boolean neq_462g16_a0a0d(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:0cba60fc-aa17-42ba-b3ca-69b0d1a86fe9(jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints)", "1227128029536583183");
 }
