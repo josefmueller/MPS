@@ -9,6 +9,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
   </imports>
   <registry>
@@ -19,7 +20,10 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
-      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
+        <child id="1081256993305" name="classType" index="2ZW6by" />
+        <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
+      </concept>
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
@@ -50,6 +54,9 @@
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6" />
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
@@ -114,7 +121,6 @@
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
-      <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="2469893808086079682" name="jetbrains.mps.lang.smodel.structure.LanguageIdentityBySourceModule" flags="ng" index="PFCIn">
         <child id="2469893808086079721" name="moduleReference" index="PFCIW" />
       </concept>
@@ -172,7 +178,9 @@
         <node concept="3cpWs8" id="5$sPwIF2$m3" role="3cqZAp">
           <node concept="3cpWsn" id="5$sPwIF2$m6" role="3cpWs9">
             <property role="TrG5h" value="textgenAspectModel" />
-            <node concept="H_c77" id="5$sPwIF2$m2" role="1tU5fm" />
+            <node concept="3uibUv" id="50WrGTQNkL3" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
             <node concept="1qvjxa" id="5$sPwIF2$oV" role="33vP2m">
               <ref role="1quiSB" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
               <node concept="37vLTw" id="5$sPwIF2$qC" role="1qvjxb">
@@ -185,10 +193,17 @@
           <node concept="3clFbS" id="44d2vb6N_5s" role="3clFbx">
             <node concept="3cpWs6" id="44d2vb6N_ma" role="3cqZAp" />
           </node>
-          <node concept="3clFbC" id="44d2vb6N_gQ" role="3clFbw">
-            <node concept="10Nm6u" id="44d2vb6N_lx" role="3uHU7w" />
-            <node concept="37vLTw" id="44d2vb6N_8o" role="3uHU7B">
-              <ref role="3cqZAo" node="5$sPwIF2$m6" resolve="textgenAspectModel" />
+          <node concept="3clFbC" id="50WrGTQNlE0" role="3clFbw">
+            <node concept="3clFbT" id="50WrGTQNlN6" role="3uHU7w">
+              <property role="3clFbU" value="false" />
+            </node>
+            <node concept="2ZW3vV" id="50WrGTQNl9X" role="3uHU7B">
+              <node concept="3uibUv" id="50WrGTQNler" role="2ZW6by">
+                <ref role="3uigEE" to="w1kc:~SModelInternal" resolve="SModelInternal" />
+              </node>
+              <node concept="37vLTw" id="44d2vb6N_8o" role="2ZW6bz">
+                <ref role="3cqZAo" node="5$sPwIF2$m6" resolve="textgenAspectModel" />
+              </node>
             </node>
           </node>
         </node>

@@ -10,6 +10,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="f7uj" ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
@@ -126,7 +127,6 @@
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
-      <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="2469893808086079682" name="jetbrains.mps.lang.smodel.structure.LanguageIdentityBySourceModule" flags="ng" index="PFCIn">
         <child id="2469893808086079721" name="moduleReference" index="PFCIW" />
       </concept>
@@ -184,7 +184,9 @@
         <node concept="3cpWs8" id="7mpi6U7zunB" role="3cqZAp">
           <node concept="3cpWsn" id="7mpi6U7zunC" role="3cpWs9">
             <property role="TrG5h" value="typesystemAspectModel" />
-            <node concept="H_c77" id="7mpi6U7zun$" role="1tU5fm" />
+            <node concept="3uibUv" id="50WrGTQNktV" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
             <node concept="1qvjxa" id="7mpi6U7zunD" role="33vP2m">
               <ref role="1quiSB" to="f7uj:2LiUEk8oQ$g" resolve="typesystem" />
               <node concept="37vLTw" id="7mpi6U7zunE" role="1qvjxb">

@@ -26,7 +26,7 @@ public class UseDevkit extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     SModel textgenAspectModel = SModuleOperations.getAspect(m, "textGen");
-    if (textgenAspectModel == null) {
+    if (textgenAspectModel instanceof SModelInternal == false) {
       return;
     }
     SModelInternal mi = (SModelInternal) textgenAspectModel;

@@ -5,8 +5,6 @@
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
@@ -5266,7 +5264,9 @@
         <node concept="3cpWs8" id="512THP_vm8P" role="3cqZAp">
           <node concept="3cpWsn" id="512THP_vm8Q" role="3cpWs9">
             <property role="TrG5h" value="constraintAspectModel" />
-            <node concept="H_c77" id="512THP_vm8N" role="1tU5fm" />
+            <node concept="3uibUv" id="50WrGTQN7du" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+            </node>
             <node concept="1qvjxa" id="512THP_vm8R" role="33vP2m">
               <ref role="1quiSB" to="beg:2LiUEk8oQ$g" resolve="constraints" />
               <node concept="37vLTw" id="512THP_vm8S" role="1qvjxb">
