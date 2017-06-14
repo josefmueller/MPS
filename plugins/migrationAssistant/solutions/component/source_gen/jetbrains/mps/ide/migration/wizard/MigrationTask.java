@@ -323,8 +323,8 @@ public class MigrationTask {
 
   private boolean findNotMigrated(ProgressMonitor m) {
     final Wrappers._boolean haveNotMigrated = new Wrappers._boolean(false);
-    mySession.getChecker().findNotMigrated(m, new _FunctionTypes._return_P1_E0<Boolean, Problem>() {
-      public Boolean invoke(Problem p) {
+    mySession.getChecker().findNotMigrated(m, myWereRun, new Processor<Problem>() {
+      public boolean process(Problem p) {
         haveNotMigrated.value = true;
         return false;
       }
