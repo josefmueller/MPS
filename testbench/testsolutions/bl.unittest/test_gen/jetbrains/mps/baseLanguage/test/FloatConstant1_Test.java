@@ -21,6 +21,7 @@ public class FloatConstant1_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("5868639094267617185", "5868639094267617192");
       typeString("-1.56754E9f");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }
 }

@@ -56,10 +56,6 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
       public List<SubstituteAction> compute() {
         ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actions.size());
         for (SubstituteAction item : actions) {
-          String matchingText = item.getMatchingText(pattern);
-          if (matchingText == null || matchingText.isEmpty()) {
-            continue;
-          }
           if (shouldAddItem(item, predicate, strict, pattern)) {
             result.add(item);
           }
@@ -114,10 +110,6 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
       public Boolean compute() {
         int count = 0;
         for (SubstituteAction action : getMatchingActions(pattern, strictMatching)) {
-          String matchingText = action.getMatchingText(pattern);
-          if (matchingText == null || matchingText.isEmpty()) {
-            continue;
-          }
           if (shouldAddItem(action, predicate, strictMatching, pattern)) {
             count++;
           }

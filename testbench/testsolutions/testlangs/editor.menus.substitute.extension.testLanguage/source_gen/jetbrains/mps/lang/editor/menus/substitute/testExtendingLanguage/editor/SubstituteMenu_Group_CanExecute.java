@@ -90,7 +90,7 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
         return canExecute_internal(pattern, true);
       }
       public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
-        return eq_ulw6p1_a0a0a0a0j2g(pattern, "canexecute") && _context.getParentNode() != null && _context.getCurrentTargetNode() != null && _context.getLink() != null && _context.getEditorContext() != null;
+        return "canexecute".startsWith(pattern) && _context.getParentNode() != null && _context.getCurrentTargetNode() != null && _context.getLink() != null && _context.getEditorContext() != null;
       }
       @Nullable
       @Override
@@ -159,8 +159,5 @@ public class SubstituteMenu_Group_CanExecute extends SubstituteMenuBase {
         }
       }
     }
-  }
-  private static boolean eq_ulw6p1_a0a0a0a0j2g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

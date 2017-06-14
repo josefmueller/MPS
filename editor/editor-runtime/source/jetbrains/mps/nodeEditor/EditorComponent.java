@@ -2487,7 +2487,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       @Override
       protected Predicate<SubstituteAction> createFilter(String pattern) {
         MinusculeMatcher matcher = NameUtil.buildMatcher("*" + pattern).build();
-        return action -> matcher.matches(action.getMatchingText(pattern));
+        return action -> {
+          if (pattern == null) {
+            return true;
+          }
+         return matcher.matches(action.getMatchingText(pattern));
+        };
       }
     };
     // do substitute...

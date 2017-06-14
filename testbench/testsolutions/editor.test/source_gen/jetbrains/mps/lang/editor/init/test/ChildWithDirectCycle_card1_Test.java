@@ -6,6 +6,8 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.testbench.util.CachingAppender;
 import org.apache.log4j.Priority;
 
@@ -24,6 +26,7 @@ public class ChildWithDirectCycle_card1_Test extends BaseTransformationTest {
       initEditorComponent("1578746599575947129", "1578746599575947297");
       typeString("card1_direct_");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
     @Override
     protected void populateExpectedEvents(CachingAppender appender) {

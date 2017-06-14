@@ -90,13 +90,10 @@ public class IntelligentInputUtil {
       return new NodeSubstituteInfoFilterDecorator(substituteInfo, myEditorContext.getRepository()) {
         @Override
         protected Predicate<SubstituteAction> createFilter(String pattern) {
-          String match = PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString();
           return action -> {
             String matchingText = action.getMatchingText(pattern);
-            if (matchingText == null || matchingText.isEmpty()) {
-              return false;
-            }
-            return matchingText.matches(match + ".*");
+            pattern.equals(matchingText);
+            return PatternUtil.matchesPattern(pattern, matchingText);
           };
         }
       };
@@ -430,7 +427,7 @@ public class IntelligentInputUtil {
       final EditorCell_Label ltCell = prepareSTCell(myEditorContext, newNode, head);
       if (ltCell instanceof EditorCell_STHint) {
         SubstituteInfo substituteInfo = createSubstituteInfo(ltCell.getSubstituteInfo());
-        if (canCompleteSmallPatternImmediately(substituteInfo, head, "")){
+        if (canCompleteSmallPatternImmediately(substituteInfo, head, "")) {
           substituteInfo.getMatchingActions(head, true).get(0).substitute(myEditorContext, head);
         }
       }
@@ -452,7 +449,7 @@ public class IntelligentInputUtil {
     }
 
     private boolean canCompleteTheWholeStringImmediately(SubstituteInfo info, String pattern) {
-      return info.hasExactlyNActions(pattern, true, 1) && (info.hasExactlyNActions(pattern, false, 1) || info.hasExactlyNActions(pattern, false,0));
+      return info.hasExactlyNActions(pattern, true, 1) && (info.hasExactlyNActions(pattern, false, 1) || info.hasExactlyNActions(pattern, false, 0));
     }
 
     private boolean isInAmbigousPosition(SubstituteInfo info, String smallPattern, String tail) {
