@@ -18,6 +18,7 @@ package jetbrains.mps.migration;
 import com.intellij.history.core.changes.ChangeSet;
 import com.intellij.history.integration.LocalHistoryImpl;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.ide.migration.MigrationChecker;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.ide.migration.wizard.MigrationSession.MigrationSessionBase;
@@ -70,6 +71,11 @@ public class MigrationsTest {
       @Override
       public MigrationManager getMigrationManager() {
         return project.getComponent(MigrationManager.class);
+      }
+
+      @Override
+      public MigrationChecker getChecker() {
+        return project.getComponent(MigrationChecker.class);
       }
 
       @Override
