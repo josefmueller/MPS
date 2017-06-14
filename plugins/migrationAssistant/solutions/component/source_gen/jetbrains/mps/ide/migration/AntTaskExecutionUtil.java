@@ -4,70 +4,33 @@ package jetbrains.mps.ide.migration;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.migration.global.ProjectMigration;
+import jetbrains.mps.ide.migration.wizard.MigrationSession;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
+import jetbrains.mps.ide.migration.wizard.MigrationTask;
+import jetbrains.mps.ide.migration.wizard.MigrationError;
 import jetbrains.mps.migration.global.MigrationOptions;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
-import jetbrains.mps.ide.migration.check.MigrationCheckUtil;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class AntTaskExecutionUtil {
   public static boolean migrate(final Project project) throws Exception {
-    final MigrationManager m = ProjectHelper.toIdeaProject(project).getComponent(MigrationManager.class);
+    MigrationManager m = ProjectHelper.toIdeaProject(project).getComponent(MigrationManager.class);
     if (!(m.isMigrationRequired())) {
       return false;
     }
 
-    final Wrappers._boolean ok = new Wrappers._boolean(true);
-    project.getRepository().getModelAccess().executeCommand(new Runnable() {
-      public void run() {
-        while (true) {
-          // we don't know which options are "better" so we "select" no one 
-          ProjectMigration step = m.nextProjectStep(new MigrationOptions(), true);
-          if (step == null) {
-            break;
-          }
-          try {
-            step.execute(project);
-          } catch (Throwable t) {
-            throw new RuntimeException("Problem on executing language migrations");
-          }
+    MigrationSession session = new AntTaskExecutionUtil.MyMigrationSession(project);
+    ProgressMonitorAdapter progress = new ProgressMonitorAdapter(new EmptyProgressIndicator());
+    MigrationTask task = new MigrationTask(session, progress) {
+      @Override
+      protected void result(ProgressMonitorAdapter m, MigrationError error, String msg) {
+        if (error == null) {
+          return;
         }
-
-
-        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
-        ok.value = !(MigrationCheckUtil.haveProblems(modules, new EmptyProgressMonitor()));
-
-        if (!(ok.value)) {
-          throw new RuntimeException("Pre-check failed");
-        }
-
-        while (true) {
-          ProjectMigration pm = m.nextProjectStep(new MigrationOptions(), false);
-          if (pm == null) {
-            break;
-          }
-          try {
-            pm.execute(project);
-          } catch (Throwable t) {
-            throw new RuntimeException("Problem on executing language migrations");
-          }
-        }
-
-        while (true) {
-          ScriptApplied mig = m.nextModuleStep(null);
-          if (mig == null) {
-            break;
-          }
-          try {
-            m.executeScript(mig);
-          } catch (Throwable t) {
-            throw new RuntimeException("Problem on executing language migrations");
-          }
-        }
+        throw new RuntimeException(msg);
       }
-    });
+    };
+
+    task.run();
 
     project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
       public void run() {
@@ -75,16 +38,27 @@ public class AntTaskExecutionUtil {
       }
     });
 
-    project.getRepository().getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(project);
-        ok.value = MigrationCheckUtil.haveProblems(modules, new EmptyProgressMonitor());
-      }
-    });
-    if (!(ok.value)) {
-      throw new RuntimeException("Post-check failed");
-    }
-
     return true;
+  }
+
+  private static class MyMigrationSession extends MigrationSession.MigrationSessionBase {
+    private Project myProject;
+    private MigrationOptions myOptions = new MigrationOptions();
+
+    public MyMigrationSession(Project project) {
+      myProject = project;
+    }
+    public Project getProject() {
+      return myProject;
+    }
+    public MigrationManager getMigrationManager() {
+      return myProject.getComponent(MigrationManager.class);
+    }
+    public MigrationChecker getChecker() {
+      return myProject.getComponent(MigrationChecker.class);
+    }
+    public MigrationOptions getOptions() {
+      return this.myOptions;
+    }
   }
 }
