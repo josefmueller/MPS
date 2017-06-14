@@ -14,7 +14,7 @@ public class ProjectDirCheckoutListener implements CheckoutListener {
     if (!(new File(directory, Project.DIRECTORY_STORE_FOLDER).exists())) {
       return false;
     }
-    int rc = Messages.showYesNoDialog(project, "You have checked out an MPS project directory:\n" + directory.getPath() + "\nWould you like to open it?", "Checkout from Version Control", Messages.getQuestionIcon());
+    int rc = Messages.showYesNoDialog(project, "You have checked out an MPS project:\n" + directory.getPath() + "\nWould you like to open it?", "Checkout from Version Control", Messages.getQuestionIcon());
 
     if (rc == Messages.YES) {
       ProjectUtil.openProject(directory.getPath(), project, false);
