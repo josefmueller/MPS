@@ -28711,9 +28711,9 @@
       <node concept="2TK7Tu" id="aW10ghUgN1" role="3cqZAp">
         <property role="2TTd_B" value="public int foo " />
       </node>
-      <node concept="yd1bK" id="aW10ghUh3S" role="3cqZAp">
-        <node concept="pLAjd" id="aW10ghUh3U" role="yd6KS">
-          <property role="pLAjf" value="VK_ENTER" />
+      <node concept="2HxZob" id="1swS4LCWVWc" role="3cqZAp">
+        <node concept="1iFQzN" id="1swS4LCWVWr" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:6KwcZ1G3Pjm" resolve="Insert" />
         </node>
       </node>
     </node>
@@ -43024,13 +43024,13 @@
         <node concept="3cqZAl" id="7JSB7mhI_sv" role="3clF45" />
         <node concept="3Tm1VV" id="7JSB7mhI_sw" role="1B3o_S" />
         <node concept="3clFbS" id="7JSB7mhI_sx" role="3clF47">
-          <node concept="3nxrX5" id="7JSB7mhKbNI" role="3cqZAp">
-            <node concept="LIFWc" id="7JSB7mhKbOe" role="lGtFl">
+          <node concept="3nxrXh" id="4685CPPeRa" role="3cqZAp">
+            <node concept="LIFWc" id="4685CPPeSo" role="lGtFl">
               <property role="ZRATv" value="true" />
               <property role="OXtK3" value="true" />
-              <property role="p6zMq" value="5" />
-              <property role="p6zMs" value="5" />
-              <property role="LIFWd" value="Constant_rc2jd0_a0" />
+              <property role="p6zMq" value="6" />
+              <property role="p6zMs" value="6" />
+              <property role="LIFWd" value="Constant_v9cuwk_a0" />
             </node>
           </node>
         </node>
@@ -43044,7 +43044,7 @@
         </node>
       </node>
       <node concept="2TK7Tu" id="7JSB7mhI_sC" role="3cqZAp">
-        <property role="2TTd_B" value="ab" />
+        <property role="2TTd_B" value="abc" />
       </node>
       <node concept="yd1bK" id="7JSB7mhIDTk" role="3cqZAp">
         <node concept="pLAjd" id="7JSB7mhIDTm" role="yd6KS">
@@ -43056,8 +43056,13 @@
           <property role="pLAjf" value="VK_DOWN" />
         </node>
       </node>
+      <node concept="yd1bK" id="4685CPPeKm" role="3cqZAp">
+        <node concept="pLAjd" id="4685CPPeKn" role="yd6KS">
+          <property role="pLAjf" value="VK_DOWN" />
+        </node>
+      </node>
       <node concept="2TK7Tu" id="7JSB7mhKbZz" role="3cqZAp">
-        <property role="2TTd_B" value="c" />
+        <property role="2TTd_B" value="d" />
       </node>
       <node concept="yd1bK" id="7JSB7mhI_sD" role="3cqZAp">
         <node concept="pLAjd" id="7JSB7mhI_sE" role="yd6KS">

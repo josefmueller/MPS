@@ -992,5 +992,26 @@
     <property role="R5$K7" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="5tii5yjw2eG">
+    <property role="EcuMT" value="6292171174658974636" />
+    <property role="TrG5h" value="CompletionParent" />
+    <property role="3GE5qa" value="completion" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5tii5yjw9Ke" role="1TKVEi">
+      <property role="IQ2ns" value="6292171174659005454" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="5tii5yjw2eH" resolve="CompletionChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5tii5yjw2eH">
+    <property role="EcuMT" value="6292171174658974637" />
+    <property role="3GE5qa" value="completion" />
+    <property role="TrG5h" value="CompletionChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5tii5yjw2eI" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
 </model>
 
