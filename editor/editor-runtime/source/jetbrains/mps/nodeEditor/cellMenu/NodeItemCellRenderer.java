@@ -15,14 +15,18 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import com.intellij.openapi.util.TextRange;
+import com.intellij.psi.codeStyle.MinusculeMatcher;
+import com.intellij.psi.codeStyle.NameUtil;
+import com.intellij.ui.SimpleColoredComponent;
+import com.intellij.ui.SimpleTextAttributes;
+import com.intellij.ui.speedSearch.SpeedSearchUtil;
+import com.intellij.util.containers.FList;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.SubstituteActionUtil;
-import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -32,7 +36,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
-import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.ListCellRenderer;
@@ -41,28 +44,21 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.FontMetrics;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
-  private static final int MY_MIN_CELL_WIDTH = 300;
+class NodeItemCellRenderer extends JPanel implements ListCellRenderer<SubstituteAction> {
   private static final Logger LOG = LogManager.getLogger(NodeItemCellRenderer.class);
-  public static final String EXCEPTION_WAS_THROWN_TEXT = "!Exception was thrown!";
+  private static final String EXCEPTION_WAS_THROWN_TEXT = "!Exception was thrown!";
 
-  private JLabel myLeft = new JLabel("", JLabel.LEFT);
-  private JLabel myRight = new JLabel("", JLabel.RIGHT);
+  private SimpleColoredComponent myLeft = new SimpleColoredComponent();
+  private SimpleColoredComponent myRight = new SimpleColoredComponent();
   private static final int HORIZONTAL_GAP = 10;
-  private boolean myLightweightMode = false;
   private final Color HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? new Color(217, 149, 219) : new Color(189, 55, 186);
   private final Color SELECTION_HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? HIGHLIGHT_COLOR : new Color(250, 239, 215);
-  private final String STRING_HIGHLIGHT_COLOR = colorToHtml(HIGHLIGHT_COLOR);
-  private final String STRING_SELECTION_HIGHLIGHT_COLOR = colorToHtml(SELECTION_HIGHLIGHT_COLOR);
-  private int myOldStyle = Font.PLAIN;
+  private int myStyle = Font.PLAIN;
   private Map<SNode, Icon> myNodeIconMap = new HashMap<SNode, Icon>();
   private Map<SNode, Icon> myConceptIconMap = new HashMap<SNode, Icon>();
-  private static final int MY_MIN_CELL_HEIGHT_TO_ADD = 2;
   private final NodeSubstituteChooser mySubstituteChooser;
 
   private int myMaxWidth = 0;
@@ -78,94 +74,39 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   }
 
   @Override
-  public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        setupThis(list, value, isSelected);
-      }
-    });
+  public Component getListCellRendererComponent(final JList list, final SubstituteAction action, int index, final boolean isSelected, boolean cellHasFocus) {
+    mySubstituteChooser.getEditorComponent()
+                       .getEditorContext()
+                       .getRepository()
+                       .getModelAccess()
+                       .runReadAction(() -> setupThis(list, action, isSelected, false));
     return this;
   }
 
-  @NotNull
-  Dimension getMaxDimension(List<SubstituteAction> actions) {
-    int counter = 0;
-    myMaxHeight = 0;
-    myMaxWidth = 0;
-    for (SubstituteAction action : actions) {
-      counter++;
-      Dimension dimension = getDimension(action);
-      myMaxWidth = Math.max(myMaxWidth, dimension.width);
-      myMaxHeight = Math.max(myMaxHeight, dimension.height);
-      if (counter == NodeSubstituteChooser.MAX_LOOKUP_LIST_HEIGHT) {
-        break;
-      }
-    }
-    return new Dimension(myMaxWidth, myMaxHeight);
+
+  Dimension getDimension(SubstituteAction action, JList list) {
+    setupThis(list, action, false, true);
+    return getPreferredSize().getSize();
   }
 
-  // TODO: use setupThis() & getPreferredSize() instead?
-  private Dimension getDimension(SubstituteAction action) {
+  private void setupThis(JList list, SubstituteAction action, boolean isSelected, boolean isPrecalculating) {
+    myLeft.clear();
+    myRight.clear();
     String pattern = mySubstituteChooser.getPatternEditor().getPattern();
-    String matchingText;
-    try {
-      matchingText = action.getVisibleMatchingText(pattern);
-    } catch (Throwable t) {
-      matchingText = EXCEPTION_WAS_THROWN_TEXT;
-    }
-    String descriptionText;
-    try {
-      descriptionText = action.getDescriptionText(pattern);
-    } catch (Throwable t) {
-      descriptionText = EXCEPTION_WAS_THROWN_TEXT;
-    }
-    int itemWidth = 0;
-    int itemHeight = 0;
     try {
       Icon icon = getIcon(action, pattern);
-      itemWidth += icon.getIconWidth();
-      itemHeight += icon.getIconHeight();
+      myLeft.setIcon(icon);
     } catch (Throwable t) {
       LOG.error(null, t);
-    }
-    Font font = getFont(action);
-    FontMetrics fontMetrics = FontRegistry.getInstance().getFontMetrics(font);
-    itemWidth += myLeft.getIconTextGap();
-    if (matchingText != null) {
-      itemWidth += fontMetrics.stringWidth(matchingText);
-    }
-    itemWidth += HORIZONTAL_GAP;
-    if (descriptionText != null) {
-      itemWidth += fontMetrics.stringWidth(descriptionText);
-    }
-    itemHeight = Math.max(itemHeight, fontMetrics.getHeight()) + MY_MIN_CELL_HEIGHT_TO_ADD;
-    itemWidth = Math.max(itemWidth, MY_MIN_CELL_WIDTH);
-    return new Dimension(itemWidth, itemHeight);
-  }
-
-
-  private void setupThis(JList list, Object value, boolean isSelected) {
-    SubstituteAction action = (SubstituteAction) value;
-    String pattern = mySubstituteChooser.getPatternEditor().getPattern();
-
-    if (!myLightweightMode) {
-      try {
-        Icon icon = getIcon(action, pattern);
-        myLeft.setIcon(icon);
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
     }
 
     try {
       int style = getStyle(action);
-
-      if (myOldStyle != style) {
-        Font font = EditorSettings.getInstance().getDefaultEditorFont().deriveFont(style);
+      if (myStyle != style) {
+        Font font = getFont(action);
         myLeft.setFont(font);
         myRight.setFont(font);
-        myOldStyle = style;
+        myStyle = style;
       }
 
     } catch (Throwable t) {
@@ -173,20 +114,22 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     }
 
     try {
-      if (!isSelected) {
-        myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_HIGHLIGHT_COLOR));
-      } else {
-        myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_SELECTION_HIGHLIGHT_COLOR));
+      String visibleMatchingText = action.getVisibleMatchingText(pattern);
+      if (visibleMatchingText != null) {
+        appendText(pattern, myLeft, isSelected, visibleMatchingText);
       }
     } catch (Throwable t) {
-      myLeft.setText(EXCEPTION_WAS_THROWN_TEXT);
+      myLeft.append(EXCEPTION_WAS_THROWN_TEXT);
       LOG.error(null, t);
     }
 
     try {
-      myRight.setText(action.getDescriptionText(pattern));
+      String descriptionText = action.getDescriptionText(pattern);
+      if (descriptionText != null) {
+        myRight.append(descriptionText);
+      }
     } catch (Throwable t) {
-      myRight.setText(EXCEPTION_WAS_THROWN_TEXT);
+      myRight.append(EXCEPTION_WAS_THROWN_TEXT);
       LOG.error(null, t);
     }
 
@@ -202,12 +145,37 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
       myRight.setForeground(list.getForeground());
     }
 
-    Dimension preferredSize = getPreferredSize();
-    if (myMaxHeight < preferredSize.height || myMaxWidth < preferredSize.width) {
-      myMaxWidth = Math.max(myMaxWidth, preferredSize.width);
-      myMaxHeight = Math.max(myMaxHeight, preferredSize.height);
-      mySubstituteChooser.getPopupWindow().updateListDimension(new Dimension(myMaxWidth, myMaxHeight));
+    if (!isPrecalculating) {
+      validate();
+      Dimension preferredSize = getPreferredSize();
+      if (myMaxHeight < preferredSize.height || myMaxWidth < preferredSize.width) {
+        myMaxWidth = Math.max(myMaxWidth, preferredSize.width);
+        myMaxHeight = Math.max(myMaxHeight, preferredSize.height);
+        mySubstituteChooser.getUi().updateListSize(myMaxWidth, myMaxHeight);
+      }
     }
+  }
+
+  private void appendText(String pattern, SimpleColoredComponent component, boolean isSelected, String text) {
+    Color foreground = isSelected ? NodeSubstituteChooserUi.SELECTED_FOREGROUND_COLOR : NodeSubstituteChooserUi.FOREGROUND_COLOR;
+    final SimpleTextAttributes base = new SimpleTextAttributes(myStyle, foreground);
+
+    Iterable<TextRange> ranges = getMatchingFragments(pattern, text);
+    if (ranges != null) {
+      SimpleTextAttributes highlighted =
+          new SimpleTextAttributes(myStyle, isSelected ? SELECTION_HIGHLIGHT_COLOR : HIGHLIGHT_COLOR);
+      SpeedSearchUtil.appendColoredFragments(component, text, ranges, base, highlighted);
+    } else {
+      component.append(text, base);
+    }
+  }
+
+  private static FList<TextRange> getMatchingFragments(String pattern, String text) {
+    return getMatcher(pattern).matchingFragments(text);
+  }
+
+  private static MinusculeMatcher getMatcher(String pattern) {
+    return NameUtil.buildMatcher("*" + pattern).build();
   }
 
   private int getStyle(SubstituteAction action) {
@@ -234,7 +202,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
 
   private Icon getIcon(SubstituteAction action, String pattern) {
     Icon icon = null;
-    if (action instanceof CompletionActionItemAsSubstituteAction){
+    if (action instanceof CompletionActionItemAsSubstituteAction) {
       icon = IconManager.getIconForResource(((CompletionActionItemAsSubstituteAction) action).getIcon(pattern));
     }
     if (icon != null) {
@@ -251,7 +219,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
       if (icon == null) {
         if (isConcept) {
           icon = IconManager.getIcon(MetaAdapterByDeclaration.getConcept(iconNode));
-          if (icon==null){
+          if (icon == null) {
             icon = IdeIcons.DEFAULT_NODE_ICON;
           }
           myConceptIconMap.put(iconNode, icon);
@@ -264,16 +232,6 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     if (icon == null) {
       icon = IdeIcons.DEFAULT_ICON;
     }
-
     return icon;
-  }
-
-  private String colorToHtml(Color color) {
-    String rgb = Integer.toHexString(color.getRGB());
-    return rgb.substring(2, rgb.length());
-  }
-
-  void setLightweightMode(boolean isLightweightMode) {
-    myLightweightMode = isLightweightMode;
   }
 }
