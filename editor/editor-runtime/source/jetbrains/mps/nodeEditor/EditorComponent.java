@@ -2723,6 +2723,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(MPSEditorDataKeys.EDITOR_COMPONENT.getName())) {
       return this;
     }
+    if (dataId.equals(MPSEditorDataKeys.SUBSTITUTE_ACTION.getName())) {
+      return myNodeSubstituteChooser.isVisible() ? myNodeSubstituteChooser.getData(dataId) : null;
+    }
     if (dataId.equals(MPSCommonDataKeys.PLACE.getName())) {
       return ActionPlace.EDITOR;
     }

@@ -15,10 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.ui.CollectionListModel;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
+import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
@@ -59,7 +61,7 @@ import java.util.Map;
  * Author: Sergey Dmitriev.
  * Created Sep 16, 2003
  */
-public class NodeSubstituteChooser implements KeyboardHandler {
+public class NodeSubstituteChooser implements KeyboardHandler, DataProvider {
   private static final Logger LOG = LogManager.getLogger(NodeSubstituteChooser.class);
 
   static final int MAX_LOOKUP_LIST_HEIGHT = 11;
@@ -558,6 +560,16 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   @Deprecated
   public Window getWindow() {
+    return null;
+  }
+
+
+  @Nullable
+  @Override
+  public Object getData(String dataId) {
+    if (dataId.equals(MPSEditorDataKeys.SUBSTITUTE_ACTION.getName())) {
+      return getCurrentSelectedSubstituteAction();
+    }
     return null;
   }
 

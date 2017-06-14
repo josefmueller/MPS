@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 
 /**
  * evgeny, 11/18/11
@@ -40,4 +42,10 @@ public class MPSEditorDataKeys extends MPSCommonDataKeys {
 
   @Description(description = "current editor component")
   public static final DataKey<EditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_EditorComponent");
+
+  @Description(description = "current transformation item")
+  public static final DataKey<TransformationMenuItem> TRANSFORMATION_MENU_ITEM = DataKey.create("MPS_TransformationMenuItem");
+
+  @Description(description = "current substitute action")
+  public static final DataKey<SubstituteAction> SUBSTITUTE_ACTION = DataKey.create("MPS_SubstituteAction");
 }
