@@ -43,6 +43,10 @@
       <headless-implementation-class>jetbrains.mps.ide.migration.HeadlessMigrationExecutor</headless-implementation-class>
     </component>
     <component>
+      <interface-class>jetbrains.mps.ide.migration.MigrationChecker</interface-class>
+      <implementation-class>jetbrains.mps.ide.migration.MigrationCheckerImpl</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.migration.MigrationMakeBlocker</implementation-class>
     </component>
     <component>

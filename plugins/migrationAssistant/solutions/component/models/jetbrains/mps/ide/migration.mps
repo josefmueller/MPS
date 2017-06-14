@@ -73,6 +73,7 @@
     <import index="9w4s" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util(MPS.IDEA/)" />
     <import index="mk90" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.progress(MPS.Platform/)" />
     <import index="j9co" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.event(MPS.Core/)" />
+    <import index="mhfn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:org.jetbrains.annotations(MPS.IDEA/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -9665,6 +9666,12 @@
     </node>
     <node concept="2tJIrI" id="2wbhCYFFf1i" role="jymVt" />
     <node concept="3clFbW" id="2wbhCYFF5cu" role="jymVt">
+      <node concept="37vLTG" id="2wbhCYFTEeZ" role="3clF46">
+        <property role="TrG5h" value="ideaProject" />
+        <node concept="3uibUv" id="2wbhCYFTEKg" role="1tU5fm">
+          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        </node>
+      </node>
       <node concept="37vLTG" id="2wbhCYFFcba" role="3clF46">
         <property role="TrG5h" value="p" />
         <node concept="3uibUv" id="2wbhCYFFctp" role="1tU5fm">
@@ -9680,6 +9687,12 @@
       <node concept="3cqZAl" id="2wbhCYFF5cv" role="3clF45" />
       <node concept="3Tm1VV" id="2wbhCYFF5cw" role="1B3o_S" />
       <node concept="3clFbS" id="2wbhCYFF5cy" role="3clF47">
+        <node concept="XkiVB" id="2wbhCYFTDGu" role="3cqZAp">
+          <ref role="37wK5l" to="1m72:~AbstractProjectComponent.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="AbstractProjectComponent" />
+          <node concept="37vLTw" id="2wbhCYFTF3S" role="37wK5m">
+            <ref role="3cqZAo" node="2wbhCYFTEeZ" resolve="ideaProject" />
+          </node>
+        </node>
         <node concept="3clFbF" id="2wbhCYFFcS_" role="3cqZAp">
           <node concept="37vLTI" id="2wbhCYFFcSB" role="3clFbG">
             <node concept="37vLTw" id="2wbhCYFFcSE" role="37vLTJ">
@@ -10298,6 +10311,92 @@
       <node concept="2AHcQZ" id="2wbhCYFDLNu" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
+    </node>
+    <node concept="2tJIrI" id="2wbhCYFTBfz" role="jymVt" />
+    <node concept="3clFb_" id="2wbhCYFTC2q" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="projectOpened" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="2wbhCYFTC2r" role="1B3o_S" />
+      <node concept="3cqZAl" id="2wbhCYFTC2t" role="3clF45" />
+      <node concept="3clFbS" id="2wbhCYFTC2w" role="3clF47" />
+      <node concept="2AHcQZ" id="2wbhCYFTC2x" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="2wbhCYFTC2y" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="projectClosed" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="2wbhCYFTC2z" role="1B3o_S" />
+      <node concept="3cqZAl" id="2wbhCYFTC2_" role="3clF45" />
+      <node concept="3clFbS" id="2wbhCYFTC2C" role="3clF47" />
+      <node concept="2AHcQZ" id="2wbhCYFTC2D" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="2wbhCYFTC2E" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="initComponent" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="2wbhCYFTC2F" role="1B3o_S" />
+      <node concept="3cqZAl" id="2wbhCYFTC2H" role="3clF45" />
+      <node concept="3clFbS" id="2wbhCYFTC2L" role="3clF47" />
+      <node concept="2AHcQZ" id="2wbhCYFTC2M" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="2wbhCYFTC2N" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="disposeComponent" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="2wbhCYFTC2O" role="1B3o_S" />
+      <node concept="3cqZAl" id="2wbhCYFTC2Q" role="3clF45" />
+      <node concept="3clFbS" id="2wbhCYFTC2U" role="3clF47" />
+      <node concept="2AHcQZ" id="2wbhCYFTC2V" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="2wbhCYFTC2W" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getComponentName" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="2wbhCYFTC2X" role="1B3o_S" />
+      <node concept="2AHcQZ" id="2wbhCYFTC2Z" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
+      </node>
+      <node concept="2AHcQZ" id="2wbhCYFTC30" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfn:~NotNull" resolve="NotNull" />
+      </node>
+      <node concept="3uibUv" id="2wbhCYFTC31" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="2wbhCYFTC36" role="3clF47">
+        <node concept="3clFbF" id="2wbhCYFTFgS" role="3cqZAp">
+          <node concept="2OqwBi" id="2wbhCYFTGV7" role="3clFbG">
+            <node concept="2OqwBi" id="2wbhCYFTFBu" role="2Oq$k0">
+              <node concept="Xjq3P" id="2wbhCYFTFgP" role="2Oq$k0" />
+              <node concept="liA8E" id="2wbhCYFTGjt" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+              </node>
+            </node>
+            <node concept="liA8E" id="2wbhCYFTIaI" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~Class.getSimpleName():java.lang.String" resolve="getSimpleName" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="2wbhCYFTC37" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3uibUv" id="2wbhCYFTAw8" role="1zkMxy">
+      <ref role="3uigEE" to="1m72:~AbstractProjectComponent" resolve="AbstractProjectComponent" />
     </node>
   </node>
 </model>
