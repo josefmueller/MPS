@@ -43,6 +43,10 @@
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
       </concept>
+      <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
+        <child id="1153952416686" name="body" index="2GV8ay" />
+        <child id="1153952429843" name="finallyBody" index="2GVbov" />
+      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -370,31 +374,37 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs6" id="6kJcyCQ$JZF" role="3cqZAp">
-              <node concept="2ShNRf" id="6kJcyCQ$JZG" role="3cqZAk">
-                <node concept="1pGfFk" id="6kJcyCQ$JZH" role="2ShVmc">
-                  <ref role="37wK5l" node="6kJcyCQ$JZU" resolve="ContextClass.IntentionMenuPart.Item" />
-                  <node concept="37vLTw" id="6kJcyCQ$JZI" role="37wK5m">
-                    <ref role="3cqZAo" node="6kJcyCQ$JZA" resolve="context" />
-                  </node>
-                  <node concept="37vLTw" id="6kJcyCQ$JZJ" role="37wK5m">
-                    <ref role="3cqZAo" node="6kJcyCQ$JZC" resolve="executable" />
+            <node concept="2GUZhq" id="4PrlSmvPnv5" role="3cqZAp">
+              <node concept="3clFbS" id="4PrlSmvPnv7" role="2GV8ay">
+                <node concept="3cpWs6" id="6kJcyCQ$JZF" role="3cqZAp">
+                  <node concept="2ShNRf" id="6kJcyCQ$JZG" role="3cqZAk">
+                    <node concept="1pGfFk" id="6kJcyCQ$JZH" role="2ShVmc">
+                      <ref role="37wK5l" node="6kJcyCQ$JZU" resolve="ContextClass.IntentionMenuPart.Item" />
+                      <node concept="37vLTw" id="6kJcyCQ$JZI" role="37wK5m">
+                        <ref role="3cqZAo" node="6kJcyCQ$JZA" resolve="context" />
+                      </node>
+                      <node concept="37vLTw" id="6kJcyCQ$JZJ" role="37wK5m">
+                        <ref role="3cqZAo" node="6kJcyCQ$JZC" resolve="executable" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="3clFbF" id="2GsMyueCIV" role="3cqZAp">
-              <node concept="2OqwBi" id="2GsMyueDLL" role="3clFbG">
-                <node concept="2OqwBi" id="2GsMyueDle" role="2Oq$k0">
-                  <node concept="37vLTw" id="2GsMyueCIT" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6kJcyCQ$JZA" resolve="context" />
+              <node concept="3clFbS" id="4PrlSmvPnv8" role="2GVbov">
+                <node concept="3clFbF" id="2GsMyueCIV" role="3cqZAp">
+                  <node concept="2OqwBi" id="2GsMyueDLL" role="3clFbG">
+                    <node concept="2OqwBi" id="2GsMyueDle" role="2Oq$k0">
+                      <node concept="37vLTw" id="2GsMyueCIT" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6kJcyCQ$JZA" resolve="context" />
+                      </node>
+                      <node concept="liA8E" id="2GsMyueDDc" role="2OqNvi">
+                        <ref role="37wK5l" to="uddc:~TransformationMenuContext.getEditorMenuTrace():jetbrains.mps.openapi.editor.menus.EditorMenuTrace" resolve="getEditorMenuTrace" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="2GsMyueE7e" role="2OqNvi">
+                      <ref role="37wK5l" to="x4mf:~EditorMenuTrace.popTraceInfo():void" resolve="popTraceInfo" />
+                    </node>
                   </node>
-                  <node concept="liA8E" id="2GsMyueDDc" role="2OqNvi">
-                    <ref role="37wK5l" to="uddc:~TransformationMenuContext.getEditorMenuTrace():jetbrains.mps.openapi.editor.menus.EditorMenuTrace" resolve="getEditorMenuTrace" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="2GsMyueE7e" role="2OqNvi">
-                  <ref role="37wK5l" to="x4mf:~EditorMenuTrace.popTraceInfo():void" resolve="popTraceInfo" />
                 </node>
               </node>
             </node>
