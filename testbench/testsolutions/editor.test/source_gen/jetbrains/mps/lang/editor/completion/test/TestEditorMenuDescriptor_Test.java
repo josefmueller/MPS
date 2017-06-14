@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class TestEditorMenuDescriptor_Test extends BaseTransformationTest {
   @Test
   public void test_TestEditorMenuDescriptor() throws Throwable {
-    initTest("", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)");
+    initTest("${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)");
     runTest("jetbrains.mps.lang.editor.completion.test.TestEditorMenuDescriptor_Test$TestBody", "testMethod", false);
   }
 

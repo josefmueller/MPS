@@ -8,8 +8,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/2786154196593923925">
     <file name="CompleteFullMatchingText_Test.java">
-      <node id="2786154196593923925" at="16,64,17,102" concept="0" />
-      <node id="2786154196593923925" at="17,102,18,117" concept="0" />
+      <node id="2786154196593923925" at="16,64,17,113" concept="0" />
+      <node id="2786154196593923925" at="17,113,18,117" concept="0" />
       <node id="2786154196593923925" at="24,51,25,72" concept="0" />
       <node id="6292171174659059347" at="25,72,26,71" concept="0" />
       <node id="6292171174659059457" at="26,71,27,25" concept="0" />
@@ -28,8 +28,8 @@
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659059704">
     <file name="CompleteCamelCaseFromStart_Test.java">
-      <node id="6292171174659059704" at="16,66,17,102" concept="0" />
-      <node id="6292171174659059704" at="17,102,18,119" concept="0" />
+      <node id="6292171174659059704" at="16,66,17,113" concept="0" />
+      <node id="6292171174659059704" at="17,113,18,119" concept="0" />
       <node id="6292171174659059704" at="24,51,25,72" concept="0" />
       <node id="6292171174659059706" at="25,72,26,71" concept="0" />
       <node id="6292171174659059708" at="26,71,27,25" concept="0" />
@@ -48,8 +48,8 @@
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659738935">
     <file name="CompleteTextSearch_Test.java">
-      <node id="6292171174659738935" at="16,58,17,102" concept="0" />
-      <node id="6292171174659738935" at="17,102,18,111" concept="0" />
+      <node id="6292171174659738935" at="16,58,17,113" concept="0" />
+      <node id="6292171174659738935" at="17,113,18,111" concept="0" />
       <node id="6292171174659738935" at="24,51,25,72" concept="0" />
       <node id="6292171174659738937" at="25,72,26,71" concept="0" />
       <node id="6292171174659738939" at="26,71,27,26" concept="0" />
@@ -68,8 +68,8 @@
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659784566">
     <file name="CompleteNotCamelCaseFromStart_Test.java">
-      <node id="6292171174659784566" at="16,69,17,102" concept="0" />
-      <node id="6292171174659784566" at="17,102,18,122" concept="0" />
+      <node id="6292171174659784566" at="16,69,17,113" concept="0" />
+      <node id="6292171174659784566" at="17,113,18,122" concept="0" />
       <node id="6292171174659784566" at="24,51,25,72" concept="0" />
       <node id="6292171174659784568" at="25,72,26,71" concept="0" />
       <node id="6292171174659784570" at="26,71,27,25" concept="0" />
@@ -88,8 +88,8 @@
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659801620">
     <file name="CompleteNotCamelCaseFromMiddle_Test.java">
-      <node id="6292171174659801620" at="16,70,17,102" concept="0" />
-      <node id="6292171174659801620" at="17,102,18,123" concept="0" />
+      <node id="6292171174659801620" at="16,70,17,113" concept="0" />
+      <node id="6292171174659801620" at="17,113,18,123" concept="0" />
       <node id="6292171174659801620" at="24,51,25,72" concept="0" />
       <node id="6292171174659801622" at="25,72,26,71" concept="0" />
       <node id="6292171174659801624" at="26,71,27,26" concept="0" />
@@ -108,8 +108,8 @@
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659820444">
     <file name="CompleteCamelCaseFromMiddle_Test.java">
-      <node id="6292171174659820444" at="16,67,17,102" concept="0" />
-      <node id="6292171174659820444" at="17,102,18,120" concept="0" />
+      <node id="6292171174659820444" at="16,67,17,113" concept="0" />
+      <node id="6292171174659820444" at="17,113,18,120" concept="0" />
       <node id="6292171174659820444" at="24,51,25,72" concept="0" />
       <node id="6292171174659820446" at="25,72,26,71" concept="0" />
       <node id="6292171174659820448" at="26,71,27,26" concept="0" />
@@ -127,8 +127,8 @@
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659835810">
     <file name="CompleteCamelCaseWithSpace_Test.java">
-      <node id="6292171174659835810" at="16,66,17,102" concept="0" />
-      <node id="6292171174659835810" at="17,102,18,119" concept="0" />
+      <node id="6292171174659835810" at="16,66,17,113" concept="0" />
+      <node id="6292171174659835810" at="17,113,18,119" concept="0" />
       <node id="6292171174659835810" at="24,51,25,72" concept="0" />
       <node id="6292171174659835812" at="25,72,26,71" concept="0" />
       <node id="6292171174659835814" at="26,71,27,25" concept="0" />
@@ -147,8 +147,8 @@
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659934747">
     <file name="TestEditorMenuDescriptor_Test.java">
-      <node id="6292171174659934747" at="21,64,22,102" concept="0" />
-      <node id="6292171174659934747" at="22,102,23,117" concept="0" />
+      <node id="6292171174659934747" at="21,64,22,113" concept="0" />
+      <node id="6292171174659934747" at="22,113,23,117" concept="0" />
       <node id="6292171174659934747" at="29,51,30,72" concept="0" />
       <node id="6292171174659934749" at="30,72,31,71" concept="0" />
       <node id="6292171174660060491" at="31,71,32,24" concept="0" />

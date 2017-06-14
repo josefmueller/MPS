@@ -47,7 +47,9 @@
       <concept id="1227182079811" name="jetbrains.mps.lang.test.structure.TypeKeyStatement" flags="nn" index="2TK7Tu">
         <property id="1227184461946" name="keys" index="2TTd_B" />
       </concept>
-      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx" />
+      <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
+        <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
+      </concept>
       <concept id="5773579205429866751" name="jetbrains.mps.lang.test.structure.EditorComponentExpression" flags="nn" index="369mXd" />
       <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
         <reference id="4239542196496929559" name="action" index="1iFR8X" />
@@ -141,7 +143,9 @@
       <concept id="6292171174658974637" name="jetbrains.mps.lang.editor.editorTest.structure.CompletionChild" flags="ng" index="34OAJP" />
     </language>
   </registry>
-  <node concept="2XOHcx" id="5tii5yjw9ID" />
+  <node concept="2XOHcx" id="5tii5yjw9ID">
+    <property role="2XOHcw" value="${mps_home}" />
+  </node>
   <node concept="LiM7Y" id="2qEq7FDsttl">
     <property role="TrG5h" value="CompleteFullMatchingText" />
     <node concept="3clFbS" id="2qEq7FDsttq" role="LjaKd">

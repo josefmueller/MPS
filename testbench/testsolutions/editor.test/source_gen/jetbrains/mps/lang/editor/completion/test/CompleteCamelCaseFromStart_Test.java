@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class CompleteCamelCaseFromStart_Test extends BaseTransformationTest {
   @Test
   public void test_CompleteCamelCaseFromStart() throws Throwable {
-    initTest("", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)");
+    initTest("${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)");
     runTest("jetbrains.mps.lang.editor.completion.test.CompleteCamelCaseFromStart_Test$TestBody", "testMethod", false);
   }
 

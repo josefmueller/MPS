@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class CompleteTextSearch_Test extends BaseTransformationTest {
   @Test
   public void test_CompleteTextSearch() throws Throwable {
-    initTest("", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)");
+    initTest("${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)");
     runTest("jetbrains.mps.lang.editor.completion.test.CompleteTextSearch_Test$TestBody", "testMethod", false);
   }
 
