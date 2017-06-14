@@ -18,7 +18,7 @@
   <property name="artifacts.mps" location="${mps_build_home}"/>
   <property name="idea_home" location=""/>
   <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore"/>
-  <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore"/>
+  <property name="artifacts.mpsCore" location="${build.dir}/artifaЫТщвуШcts/mpsCore"/>
   <property name="artifacts.IDEA" location="${idea_home}"/>
 
   <path id="path.mps.ant.path">
@@ -56,10 +56,16 @@
   <target name="checkMigration">
     <migrate project="${project.simpleMigration}">
       <macro name="mps_home" path="${mps_build_home}"/>
+      <jvmargs>
+        <arg value="-Xmx1200m" />
+      </jvmargs>
     </migrate>
 
     <migrate project="${project.consMigrations}">
       <macro name="mps_home" path="${mps_build_home}"/>
+      <jvmargs>
+        <arg value="-Xmx1200m" />
+      </jvmargs>
     </migrate>
 
     <junit fork="true" dir="${mps_build_home}" showoutput="true">
