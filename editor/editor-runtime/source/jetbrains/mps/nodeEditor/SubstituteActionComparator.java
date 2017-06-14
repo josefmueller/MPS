@@ -67,7 +67,13 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     }
     int firstSubstituteRate = getRate(firstAction);
     int secondSubstituteRate = getRate(secondAction);
-    return secondSubstituteRate - firstSubstituteRate;
+    if (firstSubstituteRate > secondSubstituteRate) {
+      return -1;
+    } else if (firstSubstituteRate < secondSubstituteRate){
+      return 1;
+    } else {
+      return 0;
+    }
   }
 
   private int compareByStrictly(SubstituteAction i1, SubstituteAction i2) {
@@ -124,18 +130,19 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     result = compareByStartsWithLowerCase(action1, action2);
     if (result != 0) return result;
 
+    result = compareByRate(action1, action2);
+    if (result != 0) return result;
+
     result = compareByLocalPriority(action1, action2);
     if (result != 0) return result;
 
-    result = compareByRate(action1, action2);
-    if (result != 0) return result;
 
     return s1.compareTo(s2);
   }
 
   private MinusculeMatcher getMatcher() {
     if (myMatcher == null) {
-      myMatcher = NameUtil.buildMatcher("*" + myPattern).build();
+      myMatcher = NameUtil.buildMatcher(myPattern).build();
     }
     return myMatcher;
   }

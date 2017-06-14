@@ -40,10 +40,9 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
   @Override
   public List<SubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
     List<SubstituteAction> actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching);
-    if (actions != null) {
-      return new ArrayList<>(actions);
+    if (actions == null) {
+      actions = mySubstituteInfo.getMatchingActions(pattern, strictMatching);
     }
-    actions = mySubstituteInfo.getMatchingActions(pattern, strictMatching);
     actions = getFilteredActions(pattern, actions, strictMatching);
     mySubstituteInfoCache.putActionsToCache(pattern, strictMatching, actions);
 
@@ -72,9 +71,9 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
 
   private boolean shouldAddItem(SubstituteAction item, Predicate<SubstituteAction> predicate, boolean strict, String pattern) {
     if (strict) {
-      return true;
+      return item.canSubstituteStrictly(pattern);
     }
-    return predicate.test(item);
+    return predicate.test(item) && item.canSubstitute(pattern);
   }
 
   @Override
