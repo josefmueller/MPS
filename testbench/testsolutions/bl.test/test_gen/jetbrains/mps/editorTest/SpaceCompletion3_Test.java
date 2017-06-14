@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class SpaceCompletion3_Test extends BaseTransformationTest {
@@ -23,7 +21,7 @@ public class SpaceCompletion3_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("197036899224325302", "197036899224325306");
       typeString("public int foo ");
-      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
     }
   }
 }

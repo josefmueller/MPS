@@ -16,6 +16,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 /*package*/ class SubstTestChild_WithNextApplicableEditorAndMenu_1_specificHint_EditorBuilder_a extends AbstractEditorBuilder {
@@ -58,6 +62,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x818e8ddb10b1390L, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestChild_WithNextApplicableEditorAndMenu_2");
+    }
+    @Override
+    protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+      return new EditorMenuDescriptorBase("replace node (custom node concept: " + "SubstTestChild_WithNextApplicableEditorAndMenu_2" + ")", new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "583472190600188833"));
     }
   }
   private EditorCell createConstant_eiugxc_b0() {

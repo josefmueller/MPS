@@ -84,7 +84,6 @@ public class ShowCellInExplorer_Action extends BaseAction {
   private Runnable getEditorActivator(final AnActionEvent event) {
     final FileEditor fileEditor = event.getData(PlatformDataKeys.FILE_EDITOR);
     final ToolWindow toolWindow = event.getData(PlatformDataKeys.TOOL_WINDOW);
-
     if (toolWindow != null) {
       return new Runnable() {
         public void run() {

@@ -12,6 +12,7 @@ public class EditorInternalEx_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.CellProperties_Action");
     EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowCellInExplorer_Action");
+    EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowItemTrace_Action");
     EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.PrintNodeID_Action");
     EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.HighlightCellDependencies_Action");
   }

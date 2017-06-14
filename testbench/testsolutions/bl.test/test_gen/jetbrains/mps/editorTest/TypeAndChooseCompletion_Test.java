@@ -23,10 +23,11 @@ public class TypeAndChooseCompletion_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("8933061889659393808", "8933061889659393818");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      typeString("ab");
+      typeString("abc");
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
-      typeString("c");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
+      typeString("d");
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

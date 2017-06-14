@@ -21,6 +21,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_CollapsedByDefault;
   private ConceptPresentation props_CollapsedConditionally;
   private ConceptPresentation props_CollapsibleConcept;
+  private ConceptPresentation props_CompletionChild;
+  private ConceptPresentation props_CompletionParent;
   private ConceptPresentation props_Composition;
   private ConceptPresentation props_DelTestAbstractChild;
   private ConceptPresentation props_DelTestChild1;
@@ -168,6 +170,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_CollapsibleConcept = cpb.create();
         }
         return props_CollapsibleConcept;
+      case LanguageConceptSwitch.CompletionChild:
+        if (props_CompletionChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_CompletionChild = cpb.create();
+        }
+        return props_CompletionChild;
+      case LanguageConceptSwitch.CompletionParent:
+        if (props_CompletionParent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("CompletionParent");
+          props_CompletionParent = cpb.create();
+        }
+        return props_CompletionParent;
       case LanguageConceptSwitch.Composition:
         if (props_Composition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

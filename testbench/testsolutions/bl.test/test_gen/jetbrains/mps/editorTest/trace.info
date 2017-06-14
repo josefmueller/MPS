@@ -1703,19 +1703,19 @@
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/197036899224325301">
     <file name="SpaceCompletion3_Test.java">
-      <node id="197036899224325301" at="15,56,16,102" concept="2" />
-      <node id="197036899224325301" at="16,102,17,92" concept="2" />
-      <node id="197036899224325301" at="23,51,24,70" concept="2" />
-      <node id="197036899224325313" at="24,70,25,36" concept="2" />
-      <node id="197036899224326392" at="25,36,26,82" concept="2" />
-      <node id="197036899224325301" at="14,0,19,0" concept="5" trace="test_SpaceCompletion3#()V" />
-      <node id="197036899224325301" at="22,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="197036899224325301" at="15,56,17,92" />
-      <scope id="197036899224325301" at="23,51,26,82" />
-      <scope id="197036899224325301" at="14,0,19,0" />
-      <scope id="197036899224325301" at="22,0,28,0" />
-      <unit id="197036899224325301" at="20,0,29,0" name="jetbrains.mps.editorTest.SpaceCompletion3_Test$TestBody" />
-      <unit id="197036899224325301" at="12,0,30,0" name="jetbrains.mps.editorTest.SpaceCompletion3_Test" />
+      <node id="197036899224325301" at="13,56,14,102" concept="2" />
+      <node id="197036899224325301" at="14,102,15,92" concept="2" />
+      <node id="197036899224325301" at="21,51,22,70" concept="2" />
+      <node id="197036899224325313" at="22,70,23,36" concept="2" />
+      <node id="1666578480910024460" at="23,36,24,69" concept="2" />
+      <node id="197036899224325301" at="12,0,17,0" concept="5" trace="test_SpaceCompletion3#()V" />
+      <node id="197036899224325301" at="20,0,26,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="197036899224325301" at="13,56,15,92" />
+      <scope id="197036899224325301" at="21,51,24,69" />
+      <scope id="197036899224325301" at="12,0,17,0" />
+      <scope id="197036899224325301" at="20,0,26,0" />
+      <unit id="197036899224325301" at="18,0,27,0" name="jetbrains.mps.editorTest.SpaceCompletion3_Test$TestBody" />
+      <unit id="197036899224325301" at="10,0,28,0" name="jetbrains.mps.editorTest.SpaceCompletion3_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/197036899227101535">
@@ -13760,19 +13760,20 @@
       <node id="8933061889659393807" at="16,102,17,99" concept="2" />
       <node id="8933061889659393807" at="23,51,24,72" concept="2" />
       <node id="3694071247855998035" at="24,72,25,71" concept="2" />
-      <node id="8933061889659393832" at="25,71,26,23" concept="2" />
-      <node id="8933061889659412052" at="26,23,27,81" concept="2" />
+      <node id="8933061889659393832" at="25,71,26,24" concept="2" />
+      <node id="8933061889659412052" at="26,24,27,81" concept="2" />
       <node id="8933061889659412085" at="27,81,28,81" concept="2" />
-      <node id="8933061889659813859" at="28,81,29,22" concept="2" />
-      <node id="8933061889659393833" at="29,22,30,82" concept="2" />
+      <node id="73782015720483862" at="28,81,29,81" concept="2" />
+      <node id="8933061889659813859" at="29,81,30,22" concept="2" />
+      <node id="8933061889659393833" at="30,22,31,82" concept="2" />
       <node id="8933061889659393807" at="14,0,19,0" concept="5" trace="test_TypeAndChooseCompletion#()V" />
-      <node id="8933061889659393807" at="22,0,32,0" concept="5" trace="testMethodImpl#()V" />
+      <node id="8933061889659393807" at="22,0,33,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="8933061889659393807" at="15,63,17,99" />
       <scope id="8933061889659393807" at="14,0,19,0" />
-      <scope id="8933061889659393807" at="23,51,30,82" />
-      <scope id="8933061889659393807" at="22,0,32,0" />
-      <unit id="8933061889659393807" at="20,0,33,0" name="jetbrains.mps.editorTest.TypeAndChooseCompletion_Test$TestBody" />
-      <unit id="8933061889659393807" at="12,0,34,0" name="jetbrains.mps.editorTest.TypeAndChooseCompletion_Test" />
+      <scope id="8933061889659393807" at="23,51,31,82" />
+      <scope id="8933061889659393807" at="22,0,33,0" />
+      <unit id="8933061889659393807" at="20,0,34,0" name="jetbrains.mps.editorTest.TypeAndChooseCompletion_Test$TestBody" />
+      <unit id="8933061889659393807" at="12,0,35,0" name="jetbrains.mps.editorTest.TypeAndChooseCompletion_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8933061889659412223">
