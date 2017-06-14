@@ -18,8 +18,11 @@ package jetbrains.mps.lang.editor.generator.internal;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -70,6 +73,13 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
           handleAction(parameterObject, node, node.getModel(), context, editorContext);
           return null;
         }
+
+        @Override
+        public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+          EditorMenuTraceInfoImpl info = new EditorMenuTraceInfoImpl();
+          info.setDescriptor(AbstractCellMenuPart_Generic_Group.this.getEditorMenuDescriptor(parameterObject));
+          return info;
+        }
       });
     }
 
@@ -100,11 +110,15 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
 
   /**
    * @deprecated This method was used only to distinct concept declaration reference and concept that is given as node.
-   *             Now we should use truly concepts in parameter objects, not concept nodes.
+   * Now we should use truly concepts in parameter objects, not concept nodes.
    */
   @Deprecated
   @ToRemove(version = 3.5)
   protected boolean isReferentPresentation() {
     return true;
+  }
+
+  protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+    return null;
   }
 }

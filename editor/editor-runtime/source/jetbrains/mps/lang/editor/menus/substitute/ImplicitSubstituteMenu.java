@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.util.Collections;
 import java.util.List;
@@ -41,6 +43,28 @@ public class ImplicitSubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(SubstituteMenuContext context) {
     return Collections.singletonList(new DefaultConceptSubstituteMenuPart(myConcept));
+  }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(getPresentableDescription(), myConcept.getSourceNode(), true));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+  @NotNull
+  private String getPresentableDescription() {
+    StringBuilder builder = new StringBuilder("Implicit substitute menu for " + myConcept.getName());
+    builder.append(": include menu for the subconcepts");
+    if (myConcept instanceof SConcept && !myConcept.isAbstract()){
+      builder.append(" and the simple action for the concept");
+    }
+    return builder.toString();
   }
 
   @Override

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
@@ -30,7 +31,7 @@ public abstract class SubMenuMenuTransformationMenuPart extends SingleItemMenuPa
   protected TransformationMenuItem createItem(TransformationMenuContext context) {
     final List<TransformationMenuItem> items = new jetbrains.mps.lang.editor.menus.CompositeMenuPart<>(getParts()).createItems(context);
     String text = getText(context);
-    return new SubMenu(text, items);
+    return new SubMenu(text, items, context.getEditorMenuTrace().getTraceInfo());
   }
 
   protected abstract String getText(TransformationMenuContext context);

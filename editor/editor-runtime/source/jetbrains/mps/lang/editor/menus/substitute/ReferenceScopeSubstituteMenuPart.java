@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
@@ -47,7 +48,7 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
 
   @NotNull
   @Override
-  public final List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+  public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
     SNode parentNode = context.getParentNode();
     SNode currentTarget = context.getCurrentTargetNode();
     SContainmentLink link = null;
@@ -60,7 +61,13 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
     Iterable<SNode> referents = scope.getAvailableElements(null);
     List<SubstituteMenuItem> result = new ArrayList<>();
     for (SNode referent: referents) {
-      result.add(createItem(context, referent));
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("reference scope action with target node: " + referent.getPresentation(), null));
+      try {
+        result.add(createItem(context, referent));
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
     return result;
   }
@@ -77,6 +84,6 @@ public class ReferenceScopeSubstituteMenuPart implements SubstituteMenuPart {
 
   @NotNull
   protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referent) {
-    return new ReferenceScopeSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentTargetNode(), referent, myReferenceLink, context.getEditorContext());
+    return new ReferenceScopeSubstituteMenuItem(myConcept, context, referent, myReferenceLink);
   }
 }

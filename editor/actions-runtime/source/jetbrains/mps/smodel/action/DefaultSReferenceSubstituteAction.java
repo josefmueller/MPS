@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -36,6 +39,7 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
   private final String myMatchingText;
   private final String myVisibleMatchingText;
   private final SNode myTargetNode;
+  private EditorMenuTraceInfoImpl myMenuTraceInfo;
 
   public DefaultSReferenceSubstituteAction(SNode targetNode, SNode sourceNode, SNode currentReferent, SReferenceLink link) {
     this(targetNode,
@@ -56,6 +60,9 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
     myMatchingText = matchingText;
     myVisibleMatchingText = visibleMatchingText;
     assert myTargetNode.getConcept().isSubConceptOf(myLink.getTargetConcept());
+
+    myMenuTraceInfo = new EditorMenuTraceInfoImpl();
+    myMenuTraceInfo.setDescriptor(new EditorMenuDescriptorBase("default reference action with target node: " + myTargetNode.getPresentation(), null));
   }
 
   @Override
@@ -134,5 +141,10 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
     }
     SNodeAccessUtil.setReferenceTarget(sourceNodeCopy, myLink, myTargetNode);
     return TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);
+  }
+
+  @Override
+  public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+    return myMenuTraceInfo;
   }
 }

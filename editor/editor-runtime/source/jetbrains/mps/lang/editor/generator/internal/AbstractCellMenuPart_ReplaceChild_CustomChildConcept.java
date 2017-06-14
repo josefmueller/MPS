@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
-import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
@@ -23,13 +22,14 @@ import jetbrains.mps.lang.editor.menus.transformation.SubstituteItemsCollector;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -64,10 +64,17 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
       return new ArrayList<>();
     }
 
-    SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()),
-                                                                  concept);
-    List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, editorContext, lookup).collect();
-    return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
+    SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), concept);
+    EditorMenuTraceImpl editorMenuTrace = new EditorMenuTraceImpl();
+    editorMenuTrace.pushTraceInfo();
+    editorMenuTrace.setDescriptor(createEditorMenuDescriptor(cellContext, editorContext));
+    try{
+
+      List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, null, editorContext, lookup, editorMenuTrace).collect();
+      return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
+    } finally {
+      editorMenuTrace.popTraceInfo();
+    }
   }
 
   @Deprecated
@@ -80,5 +87,9 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
   protected SNode getConceptOfChild(SNode node, SNode currentChild, SAbstractConcept defaultChildConcept, IOperationContext context,
                                     EditorContext editorContext) {
     return getConceptOfChild(node, currentChild, defaultChildConcept.getDeclarationNode(), context, editorContext);
+  }
+
+  protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+    return null;
   }
 }

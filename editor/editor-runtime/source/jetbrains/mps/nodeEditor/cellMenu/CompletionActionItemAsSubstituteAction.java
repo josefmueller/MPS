@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.menus.transformation.CompletionActionItemUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.CommandPolicy;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -125,5 +126,14 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
     myActionItem.execute(pattern);
     // myActionItem should change selection itself, so return null here
     return null;
+  }
+
+  public CompletionActionItem getItem(){
+    return myActionItem;
+  }
+
+  @Override
+  public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+    return myActionItem.getTraceInfo();
   }
 }

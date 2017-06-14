@@ -21,8 +21,11 @@ import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -82,6 +85,13 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
           }
           return newChild;
         }
+
+        @Override
+        public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+          EditorMenuTraceInfoImpl info = new EditorMenuTraceInfoImpl();
+          info.setDescriptor(AbstractCellMenuPart_ReplaceChild_Group.this.getEditorMenuDescriptor(parameterObject));
+          return info;
+        }
       });
     }
 
@@ -117,6 +127,10 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
       return NodePresentationUtil.descriptionText((SNode) parameterObject);
     }
     return "";
+  }
+
+  protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject){
+    return null;
   }
 
   @Deprecated

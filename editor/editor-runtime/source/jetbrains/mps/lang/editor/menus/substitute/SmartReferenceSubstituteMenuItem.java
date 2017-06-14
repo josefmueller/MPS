@@ -16,6 +16,9 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTrace;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -43,6 +46,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
   private final SConcept mySmartConcept;
   private final SReferenceLink mySmartReference;
   private final ReferenceDescriptor myRefDescriptor;
+  private EditorMenuTraceInfo myTraceInfo;
 
   SmartReferenceSubstituteMenuItem(SNode referentNode, SNode parentNode, SNode currentChild, SConcept smartConcept,
       SReferenceLink smartReference, @NotNull ReferenceDescriptor descriptor, EditorContext editorContext) {
@@ -52,6 +56,17 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
     mySmartReference = smartReference;
     myRefDescriptor = descriptor;
   }
+
+  SmartReferenceSubstituteMenuItem(SNode referentNode, SNode parentNode, SNode currentChild, SConcept smartConcept,
+                                   SReferenceLink smartReference, @NotNull ReferenceDescriptor descriptor, EditorContext editorContext, SubstituteMenuContext substituteMenuContext) {
+    super(smartConcept, parentNode, currentChild, editorContext);
+    myReferentNode = referentNode;
+    mySmartConcept = smartConcept;
+    mySmartReference = smartReference;
+    myRefDescriptor = descriptor;
+    myTraceInfo = substituteMenuContext.getEditorMenuTrace().getTraceInfo();
+  }
+
 
   @Nullable
   @Override
@@ -105,5 +120,10 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
       visibleMatchingText = getSmartMatchingText(true);
     }
     return visibleMatchingText;
+  }
+
+  @Override
+  public EditorMenuTraceInfo getTraceInfo() {
+    return myTraceInfo;
   }
 }

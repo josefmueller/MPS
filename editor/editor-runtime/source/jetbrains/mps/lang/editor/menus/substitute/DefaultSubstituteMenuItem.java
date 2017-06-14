@@ -22,19 +22,19 @@ import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -55,12 +55,21 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
 
   @NotNull
   private EditorContext myEditorContext;
+  private EditorMenuTraceInfo myTraceInfo;
 
   public DefaultSubstituteMenuItem(@NotNull SAbstractConcept concept, @NotNull SNode parentNode, @Nullable SNode currentChild, @NotNull EditorContext editorContext) {
     myConcept = concept;
     myParentNode = parentNode;
     myCurrentChild = currentChild;
     myEditorContext = editorContext;
+  }
+
+  public DefaultSubstituteMenuItem(@NotNull SAbstractConcept concept, @NotNull SubstituteMenuContext context) {
+    myConcept = concept;
+    myParentNode = context.getParentNode();
+    myCurrentChild = context.getCurrentTargetNode();
+    myEditorContext = context.getEditorContext();
+    myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
   }
 
   @Nullable
@@ -104,7 +113,7 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
 
   @Override
   public boolean canExecute(@NotNull String pattern) {
-    return PatternUtil.matchesPattern(pattern, getMatchingText(pattern));
+    return true;
   }
 
   @Override
@@ -153,5 +162,10 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
   @NotNull
   protected SNode getParentNode() {
     return myParentNode;
+  }
+
+  @Override
+  public EditorMenuTraceInfo getTraceInfo() {
+    return myTraceInfo;
   }
 }

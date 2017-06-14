@@ -16,6 +16,8 @@
 package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo.EmptyEditorMenuTraceInfo;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -61,4 +63,8 @@ public interface SubstituteAction {
    * This method should be always executed inside model command.
    */
   SNode substitute(@Nullable EditorContext context, String pattern);
+
+  default EditorMenuTraceInfo getEditorMenuTraceInfo(){
+    return new EmptyEditorMenuTraceInfo();
+  }
 }

@@ -21,12 +21,14 @@ import jetbrains.mps.lang.editor.menus.transformation.InUsedLanguagesPredicate;
 import jetbrains.mps.nodeEditor.menus.CachingPredicate;
 import jetbrains.mps.nodeEditor.menus.CanBeChildPredicate;
 import jetbrains.mps.nodeEditor.menus.CanBeParentPredicate;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceImpl;
 import jetbrains.mps.nodeEditor.menus.MenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.nodeEditor.menus.RecursionSafeMenuItemFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTrace;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
@@ -56,6 +58,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   private final EditorContext myEditorContext;
   @NotNull
   private final SNodeLocation myNodeLocation;
+  private final EditorMenuTrace myEditorMenuTrace;
 
   private Predicate<SAbstractConcept> mySuitableForConstraintsPredicate;
 
@@ -65,7 +68,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     SNodeLocation nodeLocation = nodeLocationFromCell(cell);
     return new DefaultTransformationMenuContext(
         new RecursionSafeMenuItemFactory<>(new DefaultTransformationMenuItemFactory(MenuUtil.getUsedLanguages(nodeLocation.getContextNode()))),
-        menuLocation, editorContext, nodeLocation);
+        menuLocation, editorContext, nodeLocation, new EditorMenuTraceImpl());
   }
 
   @NotNull
@@ -108,12 +111,13 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   }
 
   private DefaultTransformationMenuContext(
-      @NotNull MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenuLookup> menuItemFactory, @NotNull String menuLocation,
-      @NotNull EditorContext editorContext, @NotNull SNodeLocation nodeLocation) {
+                                              @NotNull MenuItemFactory<TransformationMenuItem, TransformationMenuContext, TransformationMenuLookup> menuItemFactory, @NotNull String menuLocation,
+                                              @NotNull EditorContext editorContext, @NotNull SNodeLocation nodeLocation, @NotNull EditorMenuTrace editorMenuTrace) {
     myMenuItemFactory = menuItemFactory;
     myMenuLocation = menuLocation;
     myEditorContext = editorContext;
     myNodeLocation = nodeLocation;
+    myEditorMenuTrace = editorMenuTrace;
   }
 
   @NotNull
@@ -159,7 +163,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
       return this;
     }
 
-    return new DefaultTransformationMenuContext(myMenuItemFactory, menuLocation, myEditorContext, nodeLocation);
+    return new DefaultTransformationMenuContext(myMenuItemFactory, menuLocation, myEditorContext, nodeLocation, myEditorMenuTrace);
   }
 
 
@@ -198,6 +202,12 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     }
 
     return createItems(menuLookup);
+  }
+
+  @NotNull
+  @Override
+  public EditorMenuTrace getEditorMenuTrace() {
+    return myEditorMenuTrace;
   }
 
   @Override

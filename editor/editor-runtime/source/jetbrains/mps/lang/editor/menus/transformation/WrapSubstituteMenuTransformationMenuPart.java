@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
@@ -35,7 +36,8 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
     final SNode targetNode = getTargetNode(context);
-    return new SubstituteItemsCollector(targetNode, null, null, context.getEditorContext(), getSubstituteMenuLookup(context)) {
+    SubstituteMenuLookup substituteMenuLookup = getSubstituteMenuLookup(context);
+    return new SubstituteItemsCollector(targetNode, null, null, null, context.getEditorContext(), substituteMenuLookup, context.getEditorMenuTrace()) {
       @Override
       protected TransformationMenuItem convert(SubstituteMenuItem item, SubstituteMenuContext substituteMenuContext) {
         return createTransformationItem(targetNode, item, context);
@@ -62,7 +64,7 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
 
   @Deprecated
   @ToRemove(version = 2017.2)
-  protected void execute(SNode targetNode, SubstituteMenuItem item,TransformationMenuContext context, String pattern) {
+  protected void execute(SNode targetNode, SubstituteMenuItem item, TransformationMenuContext context, String pattern) {
     // made not abstract for compatibility reasons.
   }
 }

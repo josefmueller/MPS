@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.lang.editor.menus.CompositeMenuPart;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
@@ -45,7 +46,19 @@ class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
     if (myConcept instanceof SConcept && !myConcept.isAbstract()) {
       result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(myConcept), myConcept));
     }
-    result.add(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept)));
+
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(getSubconceptsPartPresentableDescription(), null));
+    try {
+      result.add(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept)));
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
     return new CompositeMenuPart<>(result).createItems(context);
+  }
+
+  @NotNull
+  private String getSubconceptsPartPresentableDescription() {
+    return "menus for all the direct subconcepts of " + myConcept.getName();
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.menus.transformation;
+package jetbrains.mps.openapi.editor.menus;
 
-import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo.EmptyEditorMenuTraceInfo;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public interface TransformationMenuItem {
-  <ResultT> ResultT accept(TransformationMenuItemVisitor<ResultT> visitor);
+public interface EditorMenuDescriptor {
 
-  default EditorMenuTraceInfo getTraceInfo() {
-    return new EmptyEditorMenuTraceInfo();
-  }
+  @Nullable
+  String getDescription();
+
+  @Nullable
+  SNodeReference getSource();
+
+  boolean isImplicit();
+
 }

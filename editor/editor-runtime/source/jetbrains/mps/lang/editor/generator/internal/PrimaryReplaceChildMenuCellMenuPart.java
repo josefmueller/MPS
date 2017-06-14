@@ -15,26 +15,20 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
-import jetbrains.mps.editor.runtime.impl.CellUtil;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteItemsCollector;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.OldNewSubstituteUtil;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
-import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
-import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
 
@@ -49,7 +43,19 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPartEx
     SContainmentLink containmentLink = (SContainmentLink) cellContext.get(AggregationCellContext.LINK);
     SAbstractConcept defaultConceptOfChild = (SAbstractConcept) cellContext.get(AggregationCellContext.CHILD_CONCEPT);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
-    List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, defaultConceptOfChild, editorContext, null).collect();
-    return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
+    EditorMenuTraceImpl editorMenuTrace = new EditorMenuTraceImpl();
+    editorMenuTrace.pushTraceInfo();
+    editorMenuTrace.setDescriptor(createEditorMenuDescriptor(cellContext, editorContext));
+    try {
+      List<TransformationMenuItem> transformationItems =
+          new SubstituteItemsCollector(parentNode, currentChild, containmentLink, defaultConceptOfChild, editorContext, null, editorMenuTrace).collect();
+      return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
+    } finally {
+      editorMenuTrace.popTraceInfo();
+    }
+  }
+
+  protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+    return null;
   }
 }

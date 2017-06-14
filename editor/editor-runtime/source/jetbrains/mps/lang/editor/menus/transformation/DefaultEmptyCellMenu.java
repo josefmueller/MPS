@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -29,7 +30,11 @@ import java.util.List;
 
 /**
  * @author simon
+ *
+ * @deprecated supposed to be generated to empty cells. Replaced with using the default menu
  */
+@ToRemove(version = 2017.2)
+@Deprecated
 public class DefaultEmptyCellMenu extends TransformationMenuBase {
 
   public DefaultEmptyCellMenu() {

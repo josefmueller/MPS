@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
@@ -54,8 +55,14 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
     if (smartItems != null) {
       return smartItems;
     }
-    return Collections.singletonList(
-        new DefaultSubstituteMenuItem(myConcept, context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext()));
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple substitute menu part for concept: " + myConcept.getName(), null));
+    try {
+      return Collections.singletonList(
+          new DefaultSubstituteMenuItem(myConcept, context));
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
 
   }
 
@@ -128,8 +135,14 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
     List<SubstituteMenuItem> result = new ArrayList<>();
     Iterable<SNode> referentNodes = refDescriptor.getScope().getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
-      result.add(new SmartReferenceSubstituteMenuItem(referentNode, parentNode,
-          currentChild, myConcept, smartReference, refDescriptor, context.getEditorContext()));
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("smart item with target node :" + referentNode.getPresentation(), null));
+      try {
+        result.add(new SmartReferenceSubstituteMenuItem(referentNode, parentNode,
+                                                        currentChild, myConcept, smartReference, refDescriptor, context.getEditorContext()));
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
     return result;
   }

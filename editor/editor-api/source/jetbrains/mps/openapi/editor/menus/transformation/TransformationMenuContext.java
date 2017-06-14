@@ -16,6 +16,8 @@
 package jetbrains.mps.openapi.editor.menus.transformation;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTrace;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTrace.EmptyEditorMenuTrace;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -79,4 +81,9 @@ public interface TransformationMenuContext {
    */
   @NotNull
   List<TransformationMenuItem> createItems(@Nullable TransformationMenuLookup menuLookup);
+
+  @NotNull
+  default EditorMenuTrace getEditorMenuTrace(){
+    return new EmptyEditorMenuTrace();
+  }
 }

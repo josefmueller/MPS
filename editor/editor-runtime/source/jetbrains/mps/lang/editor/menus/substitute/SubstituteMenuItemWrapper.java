@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.smodel.runtime.IconResource;
 import org.jetbrains.annotations.NotNull;
@@ -85,5 +86,10 @@ public class SubstituteMenuItemWrapper implements SubstituteMenuItem {
 
   SubstituteMenuItem getWrappedItem() {
     return myItem;
+  }
+
+  @Override
+  public EditorMenuTraceInfo getTraceInfo() {
+    return myItem.getTraceInfo();
   }
 }

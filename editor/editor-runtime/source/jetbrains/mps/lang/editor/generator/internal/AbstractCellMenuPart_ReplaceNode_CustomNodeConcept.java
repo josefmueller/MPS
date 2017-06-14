@@ -22,9 +22,11 @@ import jetbrains.mps.lang.editor.menus.transformation.SubstituteItemsCollector;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -59,21 +61,28 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getReplacementConcept());
     SContainmentLink containmentLink = node.getContainmentLink();
     assert containmentLink != null;
-    List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, editorContext, lookup).collect();
-    result = new SubstituteActionsCollector(parent, transformationItems, editorContext.getRepository()).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
-      @Override
-      public SNode substitute(@Nullable EditorContext context, String pattern) {
-        String selectedCellId = getSelectedCellId(context);
+    EditorMenuTraceImpl editorMenuTrace = new EditorMenuTraceImpl();
+    editorMenuTrace.pushTraceInfo();
+    editorMenuTrace.setDescriptor(createEditorMenuDescriptor(cellContext, editorContext));
+    List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parent, node, containmentLink, null,  editorContext, lookup, editorMenuTrace).collect();
+    try {
+      result = new SubstituteActionsCollector(parent, transformationItems, editorContext.getRepository()).collect().stream().map(action -> new NodeSubstituteActionWrapper(action) {
+        @Override
+        public SNode substitute(@Nullable EditorContext context, String pattern) {
+          String selectedCellId = getSelectedCellId(context);
 
-        super.substitute(context, pattern);
-        if (context != null) {
-          //hack to find substituted node
-          select(editorContext, selectedCellId, getNewNode(parent, editorContext));
+          super.substitute(context, pattern);
+          if (context != null) {
+            //hack to find substituted node
+            select(editorContext, selectedCellId, getNewNode(parent, editorContext));
+          }
+          return null;
         }
-        return null;
-      }
-    }).collect(Collectors.toList());
-    return result;
+      }).collect(Collectors.toList());
+      return result;
+    } finally {
+      editorMenuTrace.popTraceInfo();
+    }
   }
 
   private SNode getNewNode(SNode parentNode, EditorContext editorContext) {
@@ -127,5 +136,9 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
   public SNode doExecute(SNode parentNode, SNode oldNode, SNode newNode, @Nullable EditorContext editorContext) {
     SNodeUtil.replaceWithAnother(oldNode, newNode);
     return newNode;
+  }
+
+  protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+    return null;
   }
 }

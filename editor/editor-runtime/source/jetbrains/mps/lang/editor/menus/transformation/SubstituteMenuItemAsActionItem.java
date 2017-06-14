@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
@@ -69,5 +70,10 @@ public abstract class SubstituteMenuItemAsActionItem extends ActionItemBase impl
 
   protected SubstituteMenuItem getSubstituteItem() {
     return mySubstituteItem;
+  }
+
+  @Override
+  public EditorMenuTraceInfo getTraceInfo() {
+    return mySubstituteItem.getTraceInfo();
   }
 }

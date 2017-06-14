@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
@@ -41,6 +42,13 @@ public class ReferenceScopeSubstituteMenuItem extends DefaultSubstituteMenuItem 
                                           @NotNull SNode referent, @NotNull SReferenceLink referenceLink,
                                           @NotNull EditorContext editorContext) {
     super(concept, parentNode, currentChild, editorContext);
+    myReferent = referent;
+    myReferenceLink = referenceLink;
+  }
+
+  public ReferenceScopeSubstituteMenuItem(@NotNull SAbstractConcept concept, @NotNull SubstituteMenuContext context,
+                                          @NotNull SNode referent, @NotNull SReferenceLink referenceLink) {
+    super(concept, context);
     myReferent = referent;
     myReferenceLink = referenceLink;
   }

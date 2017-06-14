@@ -16,6 +16,8 @@
 package jetbrains.mps.openapi.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTrace;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTrace.EmptyEditorMenuTrace;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -62,5 +64,10 @@ public interface SubstituteMenuContext {
 
   default Predicate<SAbstractConcept> getConstraintsCheckingPredicate() {
     return (concept -> true);
+  }
+
+  @NotNull
+  default EditorMenuTrace getEditorMenuTrace() {
+    return new EmptyEditorMenuTrace();
   }
 }

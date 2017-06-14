@@ -18,8 +18,11 @@ package jetbrains.mps.lang.editor.generator.internal;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -77,6 +80,13 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
 
           return newNode;
         }
+
+        @Override
+        public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+          EditorMenuTraceInfoImpl info = new EditorMenuTraceInfoImpl();
+          info.setDescriptor(AbstractCellMenuPart_ReplaceNode_Group.this.getEditorMenuDescriptor(parameterObject));
+          return info;
+        }
       });
     }
 
@@ -117,5 +127,9 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
   @ToRemove(version = 3.5)
   protected boolean isReferentPresentation() {
     return true;
+  }
+
+  protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+    return null;
   }
 }

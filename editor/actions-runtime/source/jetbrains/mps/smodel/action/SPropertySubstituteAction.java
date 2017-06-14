@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.PropertySupport;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -28,12 +31,15 @@ public class SPropertySubstituteAction extends AbstractSubstituteAction {
   private SProperty myProperty;
   private String myPropertyValue;
   private PropertySupport myPropertySupport;
+  private final EditorMenuTraceInfoImpl myMenuTraceInfo;
 
   public SPropertySubstituteAction(SNode sourceNode, SProperty property, String propertyValue) {
     super(sourceNode);
     myPropertySupport = PropertySupport.getPropertySupport(property);
     myProperty = property;
     myPropertyValue = propertyValue;
+    myMenuTraceInfo = new EditorMenuTraceInfoImpl();
+    myMenuTraceInfo.setDescriptor(new EditorMenuDescriptorBase("default property action", null));
   }
 
   @Override
@@ -65,5 +71,10 @@ public class SPropertySubstituteAction extends AbstractSubstituteAction {
       }
     }
     return null;
+  }
+
+  @Override
+  public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+    return myMenuTraceInfo;
   }
 }
