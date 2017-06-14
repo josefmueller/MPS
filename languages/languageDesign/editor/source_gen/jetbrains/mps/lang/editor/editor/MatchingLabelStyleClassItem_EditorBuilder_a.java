@@ -23,6 +23,16 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import java.util.List;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import java.util.function.Function;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import java.util.stream.Collectors;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass;
@@ -110,6 +120,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
   public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0 extends AbstractCellMenuPart_Generic_Item {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0() {
     }
+    @Override
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+      Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+        public SubstituteAction apply(SubstituteAction action) {
+          return new NodeSubstituteActionWrapper(action) {
+            @Override
+            public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+              EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "5915179142333055762")));
+              return result;
+            }
+          };
+        }
+      };
+      return actions.stream().map(mapper).collect(Collectors.toList());
+    }
+
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, 0x5216f017098e4f44L, "hasNoLabel"), "" + (true));
     }
@@ -130,6 +158,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
   public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0 extends AbstractCellMenuPart_Generic_Item {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0() {
     }
+    @Override
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+      Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+        public SubstituteAction apply(SubstituteAction action) {
+          return new NodeSubstituteActionWrapper(action) {
+            @Override
+            public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+              EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "5915179142333055747")));
+              return result;
+            }
+          };
+        }
+      };
+      return actions.stream().map(mapper).collect(Collectors.toList());
+    }
+
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fd6f8d518L, 0x5216f017098e4f44L, "hasNoLabel"), "" + (false));
     }

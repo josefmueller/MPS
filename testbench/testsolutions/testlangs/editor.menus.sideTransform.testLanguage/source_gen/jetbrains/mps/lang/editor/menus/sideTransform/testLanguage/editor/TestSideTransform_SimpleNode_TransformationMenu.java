@@ -9,15 +9,18 @@ import java.util.HashSet;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.editor.menus.MenuPart;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -28,6 +31,18 @@ public class TestSideTransform_SimpleNode_TransformationMenu extends Transformat
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
     return SetSequence.fromSet(myLocations).contains(location);
+  }
+
+  @NotNull
+  @Override
+  public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "TestSideTransform_SimpleNode", new SNodePointer("r:73252a8a-5dfe-41ab-9452-7c5453e47c1f(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.editor)", "6199005252790653977")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
   }
 
   @Override
@@ -51,9 +66,13 @@ public class TestSideTransform_SimpleNode_TransformationMenu extends Transformat
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
       private final TransformationMenuContext _context;
-
+      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:73252a8a-5dfe-41ab-9452-7c5453e47c1f(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.editor)", "6199005252790653990")));
+        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
+        context.getEditorMenuTrace().popTraceInfo();
       }
 
       @Nullable
@@ -69,7 +88,14 @@ public class TestSideTransform_SimpleNode_TransformationMenu extends Transformat
       }
 
 
+
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myEditorMenuTraceInfo;
+      }
     }
+
   }
   private class TMP_Action_9pizaj_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
@@ -79,9 +105,13 @@ public class TestSideTransform_SimpleNode_TransformationMenu extends Transformat
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
       private final TransformationMenuContext _context;
-
+      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:73252a8a-5dfe-41ab-9452-7c5453e47c1f(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.editor)", "278746753871081175")));
+        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
+        context.getEditorMenuTrace().popTraceInfo();
       }
 
       @Nullable
@@ -97,6 +127,13 @@ public class TestSideTransform_SimpleNode_TransformationMenu extends Transformat
       }
 
 
+
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myEditorMenuTraceInfo;
+      }
     }
+
   }
 }

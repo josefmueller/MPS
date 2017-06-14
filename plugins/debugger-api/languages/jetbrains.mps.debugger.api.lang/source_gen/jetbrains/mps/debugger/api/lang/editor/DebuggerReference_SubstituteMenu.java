@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,6 +21,7 @@ import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -40,11 +43,36 @@ public class DebuggerReference_SubstituteMenu extends SubstituteMenuBase {
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference")), MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "DebuggerReference", new SNodePointer("r:600c053c-afd8-419c-b24b-2550d269af72(jetbrains.mps.debugger.api.lang.editor)", "1741258697587147832")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   private class SMP_Param_kfxouf_a extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
       return new DebuggerReference_SubstituteMenu.SMP_Param_kfxouf_a.SMP_Action_kfxouf_a0(parameter).createItems(context);
+    }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized substitute menu part", new SNodePointer("r:600c053c-afd8-419c-b24b-2550d269af72(jetbrains.mps.debugger.api.lang.editor)", "1741258697587147834")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
     @Nullable
     @Override
@@ -68,9 +96,16 @@ public class DebuggerReference_SubstituteMenu extends SubstituteMenuBase {
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
+        private EditorMenuTraceInfo myTraceInfo;
         public Item(SubstituteMenuContext context) {
           super(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
+          _context.getEditorMenuTrace().pushTraceInfo();
+          String description = "Substitute item: " + getMatchingText("");
+          description += " .Parameter object: " + myParameterObject;
+          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:600c053c-afd8-419c-b24b-2550d269af72(jetbrains.mps.debugger.api.lang.editor)", "1741258697587147886")));
+          this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+          _context.getEditorMenuTrace().popTraceInfo();
         }
 
         @Nullable
@@ -79,6 +114,11 @@ public class DebuggerReference_SubstituteMenu extends SubstituteMenuBase {
           SNode debuggerReference = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference")), null);
           SPropertyOperations.set(debuggerReference, MetaAdapterFactory.getProperty(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, 0xf528808f912d155L, "debuggerName"), myParameterObject);
           return debuggerReference;
+        }
+
+        @Override
+        public EditorMenuTraceInfo getTraceInfo() {
+          return myTraceInfo;
         }
         @Nullable
         @Override
@@ -103,6 +143,18 @@ public class DebuggerReference_SubstituteMenu extends SubstituteMenuBase {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0xf528808f912d151L, "jetbrains.mps.debugger.api.lang.structure.DebuggerReference"));
     }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "DebuggerReference", new SNodePointer("r:600c053c-afd8-419c-b24b-2550d269af72(jetbrains.mps.debugger.api.lang.editor)", "1741258697587148215")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
     @Override
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));

@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
 
 public class LinkPatternVariableReference_SubstituteMenu extends SubstituteMenuBase {
@@ -21,10 +23,36 @@ public class LinkPatternVariableReference_SubstituteMenu extends SubstituteMenuB
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new LinkPatternVariableReference_SubstituteMenu.SMP_ReferenceScope_kemif3_a(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for LinkPatternVariableReference. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)", "4747359941569483896")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public static class SMP_ReferenceScope_kemif3_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_kemif3_a() {
       super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L, "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference"), MetaAdapterFactory.getReferenceLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d92ad3L, 0x11192da25efL, "patternVarDecl"));
     }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("reference scope substitute menu part", null));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
   }
 }

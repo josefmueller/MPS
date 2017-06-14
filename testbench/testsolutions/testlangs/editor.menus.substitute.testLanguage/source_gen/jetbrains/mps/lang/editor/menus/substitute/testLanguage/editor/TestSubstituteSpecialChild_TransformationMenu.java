@@ -9,15 +9,19 @@ import java.util.HashSet;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.editor.menus.MenuPart;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeSubstituteMenuTransformationMenuPart;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -28,6 +32,18 @@ public class TestSubstituteSpecialChild_TransformationMenu extends Transformatio
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
     return SetSequence.fromSet(myLocations).contains(location);
+  }
+
+  @NotNull
+  @Override
+  public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("named transformation menu " + "TestSubstituteSpecialChild_TransformationMenu", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "3765314946602950383")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
   }
 
   @Override
@@ -44,6 +60,20 @@ public class TestSubstituteSpecialChild_TransformationMenu extends Transformatio
   }
 
   public class TMP_IncludeSM_5hy664_a0 extends IncludeSubstituteMenuTransformationMenuPart {
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      SAbstractConcept targetConcept = getTargetConcept(context);
+      String name = (targetConcept == null ? "" : targetConcept.getName());
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include substitute menu for the link target concept: " + name, new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "3765314946602950391")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
   }
   private class TMP_Action_5hy664_a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
@@ -53,9 +83,13 @@ public class TestSubstituteSpecialChild_TransformationMenu extends Transformatio
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-
+      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "368966953912137537")));
+        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
+        context.getEditorMenuTrace().popTraceInfo();
       }
 
       @Nullable
@@ -78,6 +112,13 @@ public class TestSubstituteSpecialChild_TransformationMenu extends Transformatio
       }
 
 
+
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myEditorMenuTraceInfo;
+      }
     }
+
   }
 }

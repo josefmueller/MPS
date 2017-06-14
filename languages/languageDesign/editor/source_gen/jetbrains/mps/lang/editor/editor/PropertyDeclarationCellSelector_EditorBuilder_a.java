@@ -21,6 +21,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.util.Computable;
@@ -84,6 +88,10 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b0a9b8c0eb8e726L, "jetbrains.mps.lang.editor.structure.AbstractCellSelector");
+    }
+    @Override
+    protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+      return new EditorMenuDescriptorBase("replace node (custom node concept: " + "AbstractCellSelector" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "4510086454737614436"));
     }
   }
   private EditorCell createRefCell_c8nh03_b0() {
@@ -165,6 +173,7 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
   public static class PropertyDeclarationCellSelector_generic_cellMenu_c8nh03_b0b0 extends AbstractCellMenuPart_Generic_Group {
     public PropertyDeclarationCellSelector_generic_cellMenu_c8nh03_b0b0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return Collections.singletonList("#");
     }
@@ -189,6 +198,11 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
     }
     public String getDescriptionText_internal(String parameterObject) {
       return "specify property declaration by expression";
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "4510086454770477878"));
     }
   }
   private EditorCell createConstant_c8nh03_c0() {

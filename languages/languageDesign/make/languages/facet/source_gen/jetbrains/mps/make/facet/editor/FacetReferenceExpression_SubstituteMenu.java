@@ -11,12 +11,15 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -32,11 +35,36 @@ public class FacetReferenceExpression_SubstituteMenu extends SubstituteMenuBase 
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new FacetReferenceExpression_SubstituteMenu.SMP_Param_micvva_a(), MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x639ef64ff4850bb0L, "jetbrains.mps.make.facet.structure.FacetReferenceExpression")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "FacetReferenceExpression", new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108493")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   private class SMP_Param_micvva_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
       return new FacetReferenceExpression_SubstituteMenu.SMP_Param_micvva_a.SMP_Action_micvva_a0(parameter).createItems(context);
+    }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized substitute menu part", new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108495")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
     @Nullable
     @Override
@@ -56,15 +84,27 @@ public class FacetReferenceExpression_SubstituteMenu extends SubstituteMenuBase 
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
+        private EditorMenuTraceInfo myTraceInfo;
         public Item(SubstituteMenuContext context) {
           super(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x639ef64ff4850bb0L, "jetbrains.mps.make.facet.structure.FacetReferenceExpression"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
+          _context.getEditorMenuTrace().pushTraceInfo();
+          String description = "Substitute item: " + getMatchingText("");
+          description += " .Parameter object: " + myParameterObject;
+          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108530")));
+          this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+          _context.getEditorMenuTrace().popTraceInfo();
         }
 
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
           return _quotation_createNode_micvva_a0a0a0(myParameterObject);
+        }
+
+        @Override
+        public EditorMenuTraceInfo getTraceInfo() {
+          return myTraceInfo;
         }
         @Nullable
         @Override

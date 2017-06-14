@@ -17,6 +17,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ModelReferenceCompletion extends AbstractCellMenuComponent {
   public ModelReferenceCompletion() {
@@ -25,6 +28,7 @@ public class ModelReferenceCompletion extends AbstractCellMenuComponent {
   public static class ModelReferenceExpression_generic_cellMenu_fkcdzz_a0 extends AbstractCellMenuPart_Generic_Group {
     public ModelReferenceExpression_generic_cellMenu_fkcdzz_a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return IterableUtil.asList(new ModuleRepositoryFacade(editorContext.getRepository()).getAllModels());
     }
@@ -44,6 +48,11 @@ public class ModelReferenceCompletion extends AbstractCellMenuComponent {
     }
     public String getMatchingText_internal(SModel parameterObject) {
       return parameterObject.getModelName();
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)", "559557797393041621"));
     }
   }
 }

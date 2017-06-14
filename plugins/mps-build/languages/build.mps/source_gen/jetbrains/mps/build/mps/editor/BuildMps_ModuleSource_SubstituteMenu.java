@@ -11,8 +11,10 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart;
-import jetbrains.mps.editor.runtime.menus.SubstituteItemFacade;
+import jetbrains.mps.editor.runtime.menus.SubstituteItemProxy;
 import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -38,11 +40,37 @@ public class BuildMps_ModuleSource_SubstituteMenu extends SubstituteMenuBase {
     result.add(new BuildMps_ModuleSource_SubstituteMenu.SMP_Subconcepts_9gk0sa_b());
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "BuildMps_ModuleSource", new SNodePointer("r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)", "1741258697587176020")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   private class SMP_Wrap_9gk0sa_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("wrap " + "default substitute menu for " + "BuildInputSingleFolder", new SNodePointer("r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)", "1741258697587176022")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
+    @NotNull
+    @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
-      final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
+      final SubstituteItemProxy wrappedItem = new SubstituteItemProxy(item);
       return new SubstituteMenuItemWrapper(item) {
         private SNode myCreatedNode;
 
@@ -76,6 +104,18 @@ public class BuildMps_ModuleSource_SubstituteMenu extends SubstituteMenuBase {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource"));
     }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "BuildMps_ModuleSource", new SNodePointer("r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)", "1741258697587176081")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
     @Override
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));

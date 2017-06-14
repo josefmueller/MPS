@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.Nullable;
@@ -23,6 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -40,11 +43,36 @@ public class SubstituteAbstractStyledTextOperation_Contribution extends Substitu
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SubstituteAbstractStyledTextOperation_Contribution.SMP_Param_86ir5e_a(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("contribution to the " + "default substitute menu for " + "IOperation", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587153197")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   private class SMP_Param_86ir5e_a extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
     @NotNull
     @Override
     protected List<SubstituteMenuItem> createItems(SConcept parameter, SubstituteMenuContext context) {
       return new SubstituteAbstractStyledTextOperation_Contribution.SMP_Param_86ir5e_a.SMP_Action_86ir5e_a0(parameter).createItems(context);
+    }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized substitute menu part", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587153200")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
     @Nullable
     @Override
@@ -79,9 +107,16 @@ public class SubstituteAbstractStyledTextOperation_Contribution extends Substitu
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
+        private EditorMenuTraceInfo myTraceInfo;
         public Item(SubstituteMenuContext context) {
           super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
+          _context.getEditorMenuTrace().pushTraceInfo();
+          String description = "Substitute item: " + getMatchingText("");
+          description += " .Parameter object: " + myParameterObject;
+          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587153297")));
+          this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+          _context.getEditorMenuTrace().popTraceInfo();
         }
 
         @Nullable
@@ -89,6 +124,11 @@ public class SubstituteAbstractStyledTextOperation_Contribution extends Substitu
         public SNode createNode(@NotNull String pattern) {
           SNode abstractOperation = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(myParameterObject), null);
           return abstractOperation;
+        }
+
+        @Override
+        public EditorMenuTraceInfo getTraceInfo() {
+          return myTraceInfo;
         }
         @Nullable
         @Override

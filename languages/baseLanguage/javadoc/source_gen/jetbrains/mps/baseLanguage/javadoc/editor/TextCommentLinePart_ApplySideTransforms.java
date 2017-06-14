@@ -9,9 +9,11 @@ import java.util.HashSet;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.editor.menus.MenuPart;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
@@ -30,6 +32,18 @@ public class TextCommentLinePart_ApplySideTransforms extends TransformationMenuB
     return SetSequence.fromSet(myLocations).contains(location);
   }
 
+  @NotNull
+  @Override
+  public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("named transformation menu " + "TextCommentLinePart_ApplySideTransforms", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "1741258697587190277")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
   @Override
   @NotNull
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
@@ -44,9 +58,33 @@ public class TextCommentLinePart_ApplySideTransforms extends TransformationMenuB
   }
 
   public class TMP_Include_v87s8j_a0 extends IncludeTransformationMenuTransformationMenuPart {
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "TextCommentLinePart")), new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "1741258697587190282")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
 
   }
   public class TMP_Include_v87s8j_a1 extends IncludeTransformationMenuTransformationMenuPart {
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "default transformation menu for " + "TextCommentLinePart", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "1741258697587190287")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

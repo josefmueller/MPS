@@ -9,6 +9,8 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
@@ -16,6 +18,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,10 +31,35 @@ public class EditorCellId_SubstituteMenu extends SubstituteMenuBase {
     result.add(new EditorCellId_SubstituteMenu.SMP_Group_3s2nlz_a());
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "EditorCellId", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587150383")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public class SMP_Group_3s2nlz_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return _context.getCurrentTargetNode() == null;
+    }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587150385")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
 
     @Override
@@ -47,9 +75,15 @@ public class EditorCellId_SubstituteMenu extends SubstituteMenuBase {
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
+        private EditorMenuTraceInfo myTraceInfo;
         public Item(SubstituteMenuContext context) {
           super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
+          _context.getEditorMenuTrace().pushTraceInfo();
+          String description = "Substitute item: " + getMatchingText("");
+          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587150419")));
+          this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+          _context.getEditorMenuTrace().popTraceInfo();
         }
 
         @Nullable
@@ -58,6 +92,11 @@ public class EditorCellId_SubstituteMenu extends SubstituteMenuBase {
           SNode cellId = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb846a5817L, "jetbrains.mps.lang.editor.structure.EditorCellId"));
           SPropertyOperations.set(cellId, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), pattern);
           return cellId;
+        }
+
+        @Override
+        public EditorMenuTraceInfo getTraceInfo() {
+          return myTraceInfo;
         }
         @Nullable
         @Override

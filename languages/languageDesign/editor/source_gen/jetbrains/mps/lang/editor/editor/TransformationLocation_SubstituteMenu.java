@@ -9,6 +9,8 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,6 +35,20 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
     result.add(new TransformationLocation_SubstituteMenu.SMP_Group_fvfxl9_a());
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "TransformationLocation", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587150505")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public class SMP_Group_fvfxl9_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private boolean condition;
     @Override
@@ -41,9 +57,20 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
       condition = new Computable<Boolean>() {
         public Boolean compute() {
           SNode linkNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getDeclarationNode()));
-          return eq_fvfxl9_a0b0a0a0a0b0b1(linkNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations").getDeclarationNode());
+          return eq_fvfxl9_a0b0a0a0a0b0b5(linkNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations").getDeclarationNode());
         }
       }.compute();
+    }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587150506")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
 
     @Override
@@ -55,6 +82,17 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return condition;
       }
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587150547")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
@@ -63,6 +101,18 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
       public class SMP_Concepts_fvfxl9_a0a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
         protected Collection getConcepts(SubstituteMenuContext _context) {
           return Sequence.fromIterable(TransformationMenuActionsUtil.getSubconceptsWithCurrentChildConceptsExcluded(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"), _context.getParentNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ec02d9918b4efbcL, 0x6ec02d9918b4efbdL, "locations"), _context.getCurrentTargetNode())).toListSequence();
+        }
+
+        @NotNull
+        @Override
+        public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+          context.getEditorMenuTrace().pushTraceInfo();
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple actions for the list of concepts", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587150552")));
+          try {
+            return super.createItems(context);
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
         }
         @Override
         protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
@@ -75,6 +125,17 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return !((condition));
       }
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587154152")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
@@ -84,6 +145,18 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
         protected Collection getConcepts(final SubstituteMenuContext _context) {
           return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"));
         }
+        @NotNull
+        @Override
+        public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+          context.getEditorMenuTrace().pushTraceInfo();
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "TransformationLocation", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587154156")));
+          try {
+            return super.createItems(context);
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+        }
+
         @Override
         protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
           return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
@@ -91,7 +164,7 @@ public class TransformationLocation_SubstituteMenu extends SubstituteMenuBase {
       }
     }
   }
-  private static boolean eq_fvfxl9_a0b0a0a0a0b0b1(Object a, Object b) {
+  private static boolean eq_fvfxl9_a0b0a0a0a0b0b5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

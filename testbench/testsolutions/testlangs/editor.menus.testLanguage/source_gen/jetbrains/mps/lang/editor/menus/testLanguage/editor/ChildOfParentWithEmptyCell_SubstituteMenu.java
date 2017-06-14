@@ -11,9 +11,12 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -25,6 +28,20 @@ public class ChildOfParentWithEmptyCell_SubstituteMenu extends SubstituteMenuBas
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ChildOfParentWithEmptyCell_SubstituteMenu.SMP_Action_vrdora_a(), MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x7cc9c0c2af1b18deL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ChildOfParentWithEmptyCell")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "ChildOfParentWithEmptyCell", new SNodePointer("r:3b1c2f8c-f04f-4186-97fc-85ed47ba8aeb(jetbrains.mps.lang.editor.menus.testLanguage.editor)", "8991930073415901204")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   private class SMP_Action_vrdora_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
@@ -34,15 +51,26 @@ public class ChildOfParentWithEmptyCell_SubstituteMenu extends SubstituteMenuBas
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
+      private EditorMenuTraceInfo myTraceInfo;
       public Item(SubstituteMenuContext context) {
         super(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x7cc9c0c2af1b18deL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ChildOfParentWithEmptyCell"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        String description = "Substitute item: " + getMatchingText("");
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:3b1c2f8c-f04f-4186-97fc-85ed47ba8aeb(jetbrains.mps.lang.editor.menus.testLanguage.editor)", "8991930073415901205")));
+        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+        _context.getEditorMenuTrace().popTraceInfo();
       }
 
       @Nullable
       @Override
       public SNode createNode(@NotNull String pattern) {
         return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x4eb772b04df3414aL, 0xb89463abeb912f56L, 0x7cc9c0c2af1b18deL, "jetbrains.mps.lang.editor.menus.testLanguage.structure.ChildOfParentWithEmptyCell"));
+      }
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myTraceInfo;
       }
       @Nullable
       @Override

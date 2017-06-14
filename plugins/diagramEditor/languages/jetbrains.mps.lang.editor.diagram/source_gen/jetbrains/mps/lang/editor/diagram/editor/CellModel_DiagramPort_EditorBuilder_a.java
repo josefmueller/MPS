@@ -19,6 +19,16 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import java.util.List;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import java.util.function.Function;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import java.util.stream.Collectors;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -75,6 +85,24 @@ import jetbrains.mps.nodeEditor.MPSColors;
   public static class CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0 extends AbstractCellMenuPart_Generic_Item {
     public CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0() {
     }
+    @Override
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+      Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+        public SubstituteAction apply(SubstituteAction action) {
+          return new NodeSubstituteActionWrapper(action) {
+            @Override
+            public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+              EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)", "675321057241822895")));
+              return result;
+            }
+          };
+        }
+      };
+      return actions.stream().map(mapper).collect(Collectors.toList());
+    }
+
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L, 0x3f6e840fd12753fL, "input"), "" + (true));
     }
@@ -85,6 +113,24 @@ import jetbrains.mps.nodeEditor.MPSColors;
   public static class CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0 extends AbstractCellMenuPart_Generic_Item {
     public CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0() {
     }
+    @Override
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+      Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+        public SubstituteAction apply(SubstituteAction action) {
+          return new NodeSubstituteActionWrapper(action) {
+            @Override
+            public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+              EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)", "675321057241832158")));
+              return result;
+            }
+          };
+        }
+      };
+      return actions.stream().map(mapper).collect(Collectors.toList());
+    }
+
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L, 0x3f6e840fd12753fL, "input"), "" + (false));
     }

@@ -21,6 +21,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -82,6 +86,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de32185L, "jetbrains.mps.baseLanguage.regexp.structure.LookRegexp");
     }
+    @Override
+    protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+      return new EditorMenuDescriptorBase("replace node (custom node concept: " + "LookRegexp" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "2886182022232400400"));
+    }
   }
   public static class LookRegexp_customReplace_cellMenu_vwuy6a_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
     public LookRegexp_customReplace_cellMenu_vwuy6a_b0a0() {
@@ -101,6 +109,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     public boolean isReferentPresentation() {
       return false;
     }
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "2886182022232400401"));
+    }
+
   }
   private EditorCell createRefNode_vwuy6a_b0() {
     SingleRoleCellProvider provider = new LookRegexp_EditorBuilder_a.regexpSingleRoleHandler_vwuy6a_b0(myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de32185L, 0x1118de377b8L, "regexp"), getEditorContext());

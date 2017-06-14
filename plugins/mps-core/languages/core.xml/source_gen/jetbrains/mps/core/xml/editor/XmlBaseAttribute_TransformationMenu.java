@@ -9,9 +9,11 @@ import java.util.HashSet;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.editor.menus.MenuPart;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart;
@@ -28,7 +30,7 @@ import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.editor.runtime.menus.SubstituteItemFacade;
+import jetbrains.mps.editor.runtime.menus.SubstituteItemProxy;
 import jetbrains.mps.lang.editor.menus.transformation.SubstituteMenuItemAsActionItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -39,6 +41,7 @@ import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase {
@@ -48,12 +51,37 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
     return SetSequence.fromSet(myLocations).contains(location);
   }
 
+  @NotNull
+  @Override
+  public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "XmlBaseAttribute", new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587213721")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
   @Override
   @NotNull
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b3L, "jetbrains.mps.core.xml.structure.XmlBaseAttribute"))));
+      result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b3L, "jetbrains.mps.core.xml.structure.XmlBaseAttribute"))) {
+        @NotNull
+        @Override
+        public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+          context.getEditorMenuTrace().pushTraceInfo();
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of ", new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587213726")));
+          try {
+            return super.createItems(context);
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+        }
+
+      });
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_a1());
@@ -68,11 +96,33 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
       return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement"));
     }
 
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("transformation menu group", new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587213731")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
       return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_a1.TMP_WrapSM_xjbv2x_a0b());
     }
     public class TMP_WrapSM_xjbv2x_a0b extends WrapSubstituteMenuTransformationMenuPart {
+      @NotNull
+      @Override
+      public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("wrap substitute menu " + "default substitute menu for " + "XmlBaseAttribute", new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587213742")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
 
       @Nullable
       @Override
@@ -84,7 +134,7 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
 
       @Override
       protected TransformationMenuItem createTransformationItem(final SNode targetNode, final SubstituteMenuItem item, final TransformationMenuContext _context) {
-        final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
+        final SubstituteItemProxy wrappedItem = new SubstituteItemProxy(item);
         return new SubstituteMenuItemAsActionItem(item) {
           @Override
           public void execute(@NotNull String pattern) {
@@ -107,6 +157,17 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
       return !(SPropertyOperations.getBoolean(elem, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation")));
     }
 
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("transformation menu group", new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587213784")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
       return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_b1.TMP_Action_xjbv2x_a1b(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")));
@@ -119,9 +180,13 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
         private final TransformationMenuContext _context;
-
+        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
+          _context.getEditorMenuTrace().pushTraceInfo();
+          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587213819")));
+          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
+          context.getEditorMenuTrace().popTraceInfo();
         }
 
         @Nullable
@@ -148,7 +213,14 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
         public String getShortDescriptionText(@NotNull String pattern) {
           return "short notation for empty element";
         }
+
+
+        @Override
+        public EditorMenuTraceInfo getTraceInfo() {
+          return myEditorMenuTraceInfo;
+        }
       }
+
     }
   }
 }

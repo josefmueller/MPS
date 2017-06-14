@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
@@ -20,6 +22,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -33,10 +36,36 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractRequestDescription_SubstituteMenu.SMP_Action_dcepxw_b(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "AbstractRequestDescription", new SNodePointer("r:22f33598-07c7-4dfb-8f90-72f788e27c1b(jetbrains.mps.samples.languagePatterns.Basic.editor)", "4638275137435787855")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public class SMP_Subconcepts_dcepxw_a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"));
     }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "AbstractRequestDescription", new SNodePointer("r:22f33598-07c7-4dfb-8f90-72f788e27c1b(jetbrains.mps.samples.languagePatterns.Basic.editor)", "4638275137435787856")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
     @Override
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
@@ -51,9 +80,15 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
+      private EditorMenuTraceInfo myTraceInfo;
       public Item(SubstituteMenuContext context) {
         super(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        String description = "Substitute item: " + getMatchingText("");
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:22f33598-07c7-4dfb-8f90-72f788e27c1b(jetbrains.mps.samples.languagePatterns.Basic.editor)", "4638275137435830417")));
+        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+        _context.getEditorMenuTrace().popTraceInfo();
       }
 
       @Nullable
@@ -62,6 +97,11 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
         SNode desc = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L, "jetbrains.mps.samples.languagePatterns.Basic.structure.StringDescription")), null);
         SPropertyOperations.set(desc, MetaAdapterFactory.getProperty(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db223d5L, 0x1a2a793c4db223d6L, "value"), pattern);
         return desc;
+      }
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myTraceInfo;
       }
       @Nullable
       @Override

@@ -29,6 +29,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 /*package*/ class BaseAssignmentExpression_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -135,6 +139,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression");
+    }
+    @Override
+    protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+      return new EditorMenuDescriptorBase("replace node (custom node concept: " + "BaseAssignmentExpression" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "7018939066168444262"));
     }
   }
   private EditorCell createRefNode_89tgy3_c0() {

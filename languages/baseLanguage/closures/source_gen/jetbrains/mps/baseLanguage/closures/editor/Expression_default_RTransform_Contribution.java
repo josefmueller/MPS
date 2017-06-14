@@ -9,9 +9,11 @@ import java.util.HashSet;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.editor.menus.MenuPart;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.IncludeTransformationMenuTransformationMenuPart;
@@ -33,6 +35,18 @@ public class Expression_default_RTransform_Contribution extends TransformationMe
     return SetSequence.fromSet(myLocations).contains(location);
   }
 
+  @NotNull
+  @Override
+  public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("contribution to the " + "default transformation menu for " + "Expression", new SNodePointer("r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)", "1741258697587180504")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
   @Override
   @NotNull
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
@@ -45,6 +59,18 @@ public class Expression_default_RTransform_Contribution extends TransformationMe
   }
 
   public class TMP_Include_r8b07c_a0 extends IncludeTransformationMenuTransformationMenuPart {
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "compact_invoke", new SNodePointer("r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)", "1741258697587180581")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
@@ -56,6 +82,18 @@ public class Expression_default_RTransform_Contribution extends TransformationMe
 
   }
   public class TMP_Include_r8b07c_b0 extends IncludeTransformationMenuTransformationMenuPart {
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named transformation menu " + "add_parameter_to_ControlClosure", new SNodePointer("r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)", "1741258697587180653")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
     @Nullable
     @Override
     protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {

@@ -9,6 +9,8 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
@@ -31,8 +33,33 @@ public class HelpConceptReference_SubstituteMenu extends SubstituteMenuBase {
     result.add(new HelpConceptReference_SubstituteMenu.SMP_Subconcepts_52z2kq_b());
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "HelpConceptReference", new SNodePointer("r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)", "4747359941571311670")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public class SMP_Include_52z2kq_a extends IncludeSubstituteMenuSubstituteMenuPart {
 
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "HelpConceptReference_SmartReference", new SNodePointer("r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)", "4747359941571311671")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
     @Nullable
     @Override
     protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
@@ -44,6 +71,18 @@ public class HelpConceptReference_SubstituteMenu extends SubstituteMenuBase {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x60279080c2f3b209L, "jetbrains.mps.console.base.structure.HelpConceptReference"));
     }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "HelpConceptReference", new SNodePointer("r:f09c85c2-fb88-4283-852e-78d5fc87420e(jetbrains.mps.console.base.editor)", "4747359941571311673")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
     @Override
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));

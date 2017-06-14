@@ -39,6 +39,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -133,6 +136,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
   public static class ContinueStatement_generic_cellMenu_vgxjtu_a0a1a extends AbstractCellMenuPart_Generic_Group {
     public ContinueStatement_generic_cellMenu_vgxjtu_a0a1a() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromList(SNodeOperations.getNodeAncestors(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cb1ac5adeL, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), false)).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {
@@ -185,6 +189,11 @@ __switch__:
     }
     public boolean isReferentPresentation() {
       return false;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1199470083778"));
     }
   }
   private EditorCell createCollection_vgxjtu_c0() {

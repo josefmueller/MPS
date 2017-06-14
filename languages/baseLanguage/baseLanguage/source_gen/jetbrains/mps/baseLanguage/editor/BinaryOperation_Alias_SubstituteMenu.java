@@ -11,8 +11,10 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart;
-import jetbrains.mps.editor.runtime.menus.SubstituteItemFacade;
+import jetbrains.mps.editor.runtime.menus.SubstituteItemProxy;
 import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -33,11 +35,37 @@ public class BinaryOperation_Alias_SubstituteMenu extends SubstituteMenuBase {
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BinaryOperation_Alias_SubstituteMenu.SMP_Wrap_3xwgcg_b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11b0d00332cL, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("named substitute menu " + "BinaryOperation_Alias_SubstituteMenu", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "8577426829558652578")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   private class SMP_Wrap_3xwgcg_a extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("wrap " + "default substitute menu for " + "BinaryOperation", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "8577426829562128341")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
+    @NotNull
+    @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
-      final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
+      final SubstituteItemProxy wrappedItem = new SubstituteItemProxy(item);
       return new SubstituteMenuItemWrapper(item) {
         private SNode myCreatedNode;
 
@@ -70,8 +98,20 @@ public class BinaryOperation_Alias_SubstituteMenu extends SubstituteMenuBase {
   private class SMP_Wrap_3xwgcg_b extends WrapperSubstituteMenuPart {
     @NotNull
     @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("wrap " + "default substitute menu for " + "BaseAssignmentExpression", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "8577426829562148994")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
+    @NotNull
+    @Override
     protected SubstituteMenuItem wrapItem(final SubstituteMenuItem item, final SubstituteMenuContext _context) {
-      final SubstituteItemFacade wrappedItem = new SubstituteItemFacade(item);
+      final SubstituteItemProxy wrappedItem = new SubstituteItemProxy(item);
       return new SubstituteMenuItemWrapper(item) {
         private SNode myCreatedNode;
 

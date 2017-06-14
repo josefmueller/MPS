@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
 
 public class RegexpDeclarationReferenceRegexp_SubstituteMenu extends SubstituteMenuBase {
@@ -21,10 +23,36 @@ public class RegexpDeclarationReferenceRegexp_SubstituteMenu extends SubstituteM
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new RegexpDeclarationReferenceRegexp_SubstituteMenu.SMP_ReferenceScope_xnowcq_a(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RegexpDeclarationReferenceRegexp. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)", "4747359941569483946")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public static class SMP_ReferenceScope_xnowcq_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_xnowcq_a() {
       super(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp"), MetaAdapterFactory.getReferenceLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, 0x1117f594636L, "regexp"));
     }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("reference scope substitute menu part", null));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
   }
 }

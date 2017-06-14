@@ -20,6 +20,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.testbench.suite.behavior.IModuleRef__BehaviorDescriptor;
@@ -71,6 +75,10 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef");
     }
+    @Override
+    protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+      return new EditorMenuDescriptorBase("replace node (custom node concept: " + "SolutionRef" + ")", new SNodePointer("r:aed1d11b-73e5-474f-a263-22833310a33f(jetbrains.mps.testbench.suite.editor)", "1280144168199512054"));
+    }
   }
   private EditorCell createReadOnlyModelAccessor_ns5ajd_b0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
@@ -97,6 +105,10 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x11c3fc56a6d1cbdcL, "jetbrains.mps.testbench.suite.structure.SolutionRef");
+    }
+    @Override
+    protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+      return new EditorMenuDescriptorBase("replace node (custom node concept: " + "SolutionRef" + ")", new SNodePointer("r:aed1d11b-73e5-474f-a263-22833310a33f(jetbrains.mps.testbench.suite.editor)", "1280144168199513244"));
     }
   }
 }

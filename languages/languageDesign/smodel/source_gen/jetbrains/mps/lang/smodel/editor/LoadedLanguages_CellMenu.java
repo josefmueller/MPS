@@ -18,6 +18,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class LoadedLanguages_CellMenu extends AbstractCellMenuComponent {
   public LoadedLanguages_CellMenu() {
@@ -48,6 +51,11 @@ public class LoadedLanguages_CellMenu extends AbstractCellMenuComponent {
     }
     public boolean isReferentPresentation() {
       return false;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("replace child (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)", "6590130501507369933"));
     }
   }
 }

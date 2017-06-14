@@ -42,6 +42,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 
@@ -152,6 +155,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
   public static class ExponentialOperation_generic_cellMenu_spngij_a0b0 extends AbstractCellMenuPart_Generic_Group {
     public ExponentialOperation_generic_cellMenu_spngij_a0b0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SConcept> result = ListSequence.fromList(new ArrayList<SConcept>());
       for (SAbstractConcept a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(SNodeOperations.asSConcept(ListSequence.fromList(ExponentialOperation__BehaviorDescriptor.getAllowedSubstituends_id2D1PBM_bxH0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)))).first()), SNodeOperations.getModel(node)))) {
@@ -181,6 +185,11 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     }
     public String getDescriptionText_internal(SConcept parameterObject) {
       return SConceptOperations.shortDescription(parameterObject);
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1262430001742033319"));
     }
   }
   private EditorCell createEmpty_spngij_c0() {

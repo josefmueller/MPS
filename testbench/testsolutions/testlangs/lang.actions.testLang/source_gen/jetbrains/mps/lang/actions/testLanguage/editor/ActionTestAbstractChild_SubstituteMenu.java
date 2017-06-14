@@ -9,6 +9,8 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
@@ -28,8 +30,33 @@ public class ActionTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
     result.add(new ActionTestAbstractChild_SubstituteMenu.SMP_Include_hawx03_d());
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "ActionTestAbstractChild", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587036912")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public class SMP_Include_hawx03_a extends IncludeSubstituteMenuSubstituteMenuPart {
 
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "AddMenuPart_ParameterizedSubstitute", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587037769")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
     @Nullable
     @Override
     protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
@@ -39,6 +66,17 @@ public class ActionTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
   }
   public class SMP_Include_hawx03_b extends IncludeSubstituteMenuSubstituteMenuPart {
 
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "AddMenuPart_ConceptSubstitute", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587037914")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
     @Nullable
     @Override
     protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
@@ -48,6 +86,17 @@ public class ActionTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
   }
   public class SMP_Include_hawx03_c extends IncludeSubstituteMenuSubstituteMenuPart {
 
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "AddMenuPart_SimpleItemSubstitute", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587038940")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
     @Nullable
     @Override
     protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
@@ -57,6 +106,17 @@ public class ActionTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
   }
   public class SMP_Include_hawx03_d extends IncludeSubstituteMenuSubstituteMenuPart {
 
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "ConceptSubstitutePartTest", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587039092")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
     @Nullable
     @Override
     protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {

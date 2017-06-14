@@ -9,6 +9,8 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -18,6 +20,7 @@ import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPar
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
@@ -39,10 +42,35 @@ public class ProgressStatement_subs extends SubstituteMenuBase {
     result.add(new ProgressStatement_subs.SMP_Group_kz2qu0_a());
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("named substitute menu " + "ProgressStatement_subs", new SNodePointer("r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)", "1741258697587105369")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public class SMP_Group_kz2qu0_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return (SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a972dabL, "jetbrains.mps.make.script.structure.JobDefinition"), false, false) != null);
+    }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)", "1741258697587105371")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
 
     @Override
@@ -58,15 +86,26 @@ public class ProgressStatement_subs extends SubstituteMenuBase {
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
+        private EditorMenuTraceInfo myTraceInfo;
         public Item(SubstituteMenuContext context) {
           super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6982L, "jetbrains.mps.make.script.structure.BeginWorkStatement"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
+          _context.getEditorMenuTrace().pushTraceInfo();
+          String description = "Substitute item: " + getMatchingText("");
+          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)", "1741258697587105409")));
+          this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+          _context.getEditorMenuTrace().popTraceInfo();
         }
 
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
           return _quotation_createNode_kz2qu0_a0a0a0();
+        }
+
+        @Override
+        public EditorMenuTraceInfo getTraceInfo() {
+          return myTraceInfo;
         }
         @Nullable
         @Override
@@ -80,6 +119,17 @@ public class ProgressStatement_subs extends SubstituteMenuBase {
       @Override
       protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
         return new ProgressStatement_subs.SMP_Group_kz2qu0_a.SMP_Param_kz2qu0_d0.SMP_Action_kz2qu0_a3a(parameter).createItems(context);
+      }
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized substitute menu part", new SNodePointer("r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)", "1741258697587105481")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
       }
       @Nullable
       @Override
@@ -99,15 +149,27 @@ public class ProgressStatement_subs extends SubstituteMenuBase {
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
+          private EditorMenuTraceInfo myTraceInfo;
           public Item(SubstituteMenuContext context) {
             super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6984L, "jetbrains.mps.make.script.structure.AdvanceWorkStatement"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
             _context = context;
+            _context.getEditorMenuTrace().pushTraceInfo();
+            String description = "Substitute item: " + getMatchingText("");
+            description += " .Parameter object: " + myParameterObject;
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)", "1741258697587105524")));
+            this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+            _context.getEditorMenuTrace().popTraceInfo();
           }
 
           @Nullable
           @Override
           public SNode createNode(@NotNull String pattern) {
             return _quotation_createNode_kz2qu0_a0a0a3a(myParameterObject);
+          }
+
+          @Override
+          public EditorMenuTraceInfo getTraceInfo() {
+            return myTraceInfo;
           }
           @Nullable
           @Override
@@ -140,6 +202,17 @@ public class ProgressStatement_subs extends SubstituteMenuBase {
       protected List<SubstituteMenuItem> createItems(SNode parameter, SubstituteMenuContext context) {
         return new ProgressStatement_subs.SMP_Group_kz2qu0_a.SMP_Param_kz2qu0_e0.SMP_Action_kz2qu0_a4a(parameter).createItems(context);
       }
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized substitute menu part", new SNodePointer("r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)", "1741258697587105601")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
       @Nullable
       @Override
       protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
@@ -158,15 +231,27 @@ public class ProgressStatement_subs extends SubstituteMenuBase {
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
+          private EditorMenuTraceInfo myTraceInfo;
           public Item(SubstituteMenuContext context) {
             super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6987L, "jetbrains.mps.make.script.structure.FinishWorkStatement"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
             _context = context;
+            _context.getEditorMenuTrace().pushTraceInfo();
+            String description = "Substitute item: " + getMatchingText("");
+            description += " .Parameter object: " + myParameterObject;
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)", "1741258697587105644")));
+            this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+            _context.getEditorMenuTrace().popTraceInfo();
           }
 
           @Nullable
           @Override
           public SNode createNode(@NotNull String pattern) {
             return _quotation_createNode_kz2qu0_a0a0a4a(myParameterObject);
+          }
+
+          @Override
+          public EditorMenuTraceInfo getTraceInfo() {
+            return myTraceInfo;
           }
           @Nullable
           @Override

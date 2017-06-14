@@ -19,6 +19,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class replace_node_macro extends AbstractCellMenuComponent {
   public replace_node_macro() {
@@ -27,6 +30,7 @@ public class replace_node_macro extends AbstractCellMenuComponent {
   public static class NodeMacro_generic_cellMenu_f12orh_a0 extends AbstractCellMenuPart_Generic_Group {
     public NodeMacro_generic_cellMenu_f12orh_a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, "jetbrains.mps.lang.generator.structure.NodeMacro"), SNodeOperations.getModel(node))).where(new IWhereFilter<SConcept>() {
         public boolean accept(SConcept it) {
@@ -61,6 +65,11 @@ public class replace_node_macro extends AbstractCellMenuComponent {
       } else {
         return parameterObject.getConceptAlias();
       }
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)", "2265407187494399848"));
     }
     private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;

@@ -43,6 +43,9 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.editor.runtime.cells.CellIdManager;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 /*package*/ class BuildSourceArchiveRelativePath_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -205,6 +208,7 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
     public static class BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0 extends AbstractCellMenuPart_Generic_Group {
       public BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         IFile file = FileSystem.getInstance().getFileByPath(BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(node, Context.defaultContext()));
         if (!(file.exists())) {
@@ -237,6 +241,11 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
       }
       public boolean isReferentPresentation() {
         return false;
+      }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "2896281290945209188"));
       }
     }
   }

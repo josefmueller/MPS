@@ -9,6 +9,8 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -19,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -35,10 +38,35 @@ public class java_module_content_XmlBaseElement_Contribution extends SubstituteM
     result.add(new java_module_content_XmlBaseElement_Contribution.SMP_Group_fc12n3_a());
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("contribution to the " + "default substitute menu for " + "XmlBaseElement", new SNodePointer("r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)", "1741258697587102676")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public class SMP_Group_fc12n3_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
       return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, "jetbrains.mps.build.workflow.structure.BwfJavaModule")) || SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6e014d63c07ebd1bL, "jetbrains.mps.build.workflow.structure.BwfFileSet")) || SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cede077L, "jetbrains.mps.build.workflow.structure.BwfJavaClassPath"));
+    }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)", "1741258697587102679")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
 
     @Override
@@ -50,6 +78,17 @@ public class java_module_content_XmlBaseElement_Contribution extends SubstituteM
       @Override
       protected List<SubstituteMenuItem> createItems(String parameter, SubstituteMenuContext context) {
         return new java_module_content_XmlBaseElement_Contribution.SMP_Group_fc12n3_a.SMP_Param_fc12n3_a0.SMP_Action_fc12n3_a0a(parameter).createItems(context);
+      }
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized substitute menu part", new SNodePointer("r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)", "1741258697587102726")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
       }
       @Nullable
       @Override
@@ -69,9 +108,16 @@ public class java_module_content_XmlBaseElement_Contribution extends SubstituteM
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
+          private EditorMenuTraceInfo myTraceInfo;
           public Item(SubstituteMenuContext context) {
             super(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
             _context = context;
+            _context.getEditorMenuTrace().pushTraceInfo();
+            String description = "Substitute item: " + getMatchingText("");
+            description += " .Parameter object: " + myParameterObject;
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)", "1741258697587102767")));
+            this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+            _context.getEditorMenuTrace().popTraceInfo();
           }
 
           @Nullable
@@ -81,6 +127,11 @@ public class java_module_content_XmlBaseElement_Contribution extends SubstituteM
             SPropertyOperations.set(res, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), myParameterObject);
             SPropertyOperations.set(res, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x61218fae7b61b5d5L, "shortEmptyNotation"), "" + (true));
             return res;
+          }
+
+          @Override
+          public EditorMenuTraceInfo getTraceInfo() {
+            return myTraceInfo;
           }
           @Nullable
           @Override

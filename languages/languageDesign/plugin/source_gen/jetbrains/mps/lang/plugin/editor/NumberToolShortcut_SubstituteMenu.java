@@ -12,9 +12,12 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -29,6 +32,20 @@ public class NumberToolShortcut_SubstituteMenu extends SubstituteMenuBase {
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new NumberToolShortcut_SubstituteMenu.SMP_Action_33swfs_b(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, "jetbrains.mps.lang.plugin.structure.NumberToolShortcut")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "NumberToolShortcut", new SNodePointer("r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)", "471625927508412675")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   private class SMP_Action_33swfs_b extends SingleItemSubstituteMenuPart {
 
     @Nullable
@@ -38,15 +55,26 @@ public class NumberToolShortcut_SubstituteMenu extends SubstituteMenuBase {
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
+      private EditorMenuTraceInfo myTraceInfo;
       public Item(SubstituteMenuContext context) {
         super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, "jetbrains.mps.lang.plugin.structure.NumberToolShortcut"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        String description = "Substitute item: " + getMatchingText("");
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)", "471625927508555327")));
+        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+        _context.getEditorMenuTrace().popTraceInfo();
       }
 
       @Nullable
       @Override
       public SNode createNode(@NotNull String pattern) {
         return createNumberToolShortcut_33swfs_a0a0b(pattern);
+      }
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myTraceInfo;
       }
       @Override
       public boolean canExecute(@NotNull String pattern) {
@@ -57,7 +85,7 @@ public class NumberToolShortcut_SubstituteMenu extends SubstituteMenuBase {
         return canExecute_internal(pattern, true);
       }
       public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
-        return REGEXP_33swfs_a0a0a6c1.matcher(pattern).matches();
+        return REGEXP_33swfs_a0a0a9c5.matcher(pattern).matches();
       }
       @Nullable
       @Override
@@ -72,5 +100,5 @@ public class NumberToolShortcut_SubstituteMenu extends SubstituteMenuBase {
     n1.setProperty(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, 0x68b8d4843b76123L, "number"), p0 + "");
     return n1;
   }
-  private static Pattern REGEXP_33swfs_a0a0a6c1 = Pattern.compile("\\d", 0);
+  private static Pattern REGEXP_33swfs_a0a0a9c5 = Pattern.compile("\\d", 0);
 }

@@ -9,9 +9,11 @@ import java.util.HashSet;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.MenuLocations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.editor.menus.MenuPart;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.extras.runtime.RefactoringMenuPartBase;
@@ -24,6 +26,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.lang.editor.menus.extras.runtime.PluginActionMenuItemBase;
 import jetbrains.mps.lang.editor.menus.extras.runtime.AbstractIntentionMenuPart;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 
 public class Extras extends TransformationMenuBase {
   public Extras() {
@@ -33,6 +36,18 @@ public class Extras extends TransformationMenuBase {
   @Override
   public boolean isApplicableToLocation(@NotNull String location) {
     return SetSequence.fromSet(myLocations).contains(location);
+  }
+
+  @NotNull
+  @Override
+  public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("contribution to the " + "default transformation menu for " + "Child", new SNodePointer("r:1ed8add9-1a05-4a2d-a8ee-1a24e378c5f6(jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor)", "2468431357009903065")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
   }
 
   @Override
@@ -64,7 +79,7 @@ public class Extras extends TransformationMenuBase {
 
       @Override
       public IconResource getIcon() {
-        return IconContainer.RESOURCE_a0a2e6;
+        return IconContainer.RESOURCE_a0a2e8;
       }
       @Override
       public String getTooltipText() {
@@ -89,7 +104,7 @@ public class Extras extends TransformationMenuBase {
 
       @Override
       public IconResource getIcon() {
-        return IconContainer.RESOURCE_a0a2e7;
+        return IconContainer.RESOURCE_a0a2e9;
       }
       @Override
       public String getTooltipText() {
@@ -104,14 +119,26 @@ public class Extras extends TransformationMenuBase {
 
     @Override
     protected TransformationMenuItem createItem(@NotNull TransformationMenuContext context, @NotNull IntentionExecutable executable) {
-      return new Extras.TMP_Intention_ha3uwx_c0.Item(context, executable);
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("intention transformation menu part: " + "AddLetterToName", new SNodePointer("r:1ed8add9-1a05-4a2d-a8ee-1a24e378c5f6(jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor)", "2468431357009934542")));
+      try {
+        return new Extras.TMP_Intention_ha3uwx_c0.Item(context, executable);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
 
     private class Item extends AbstractIntentionMenuPart.ItemBase implements SidebarActionItem {
+      private EditorMenuTraceInfo myTraceInfo;
       private Item(TransformationMenuContext context, IntentionExecutable executable) {
         super(context, executable);
+        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
       }
 
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myTraceInfo;
+      }
       @Override
       public IconResource getIcon() {
         return null;

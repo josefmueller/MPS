@@ -13,6 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class complete_Path extends AbstractCellMenuComponent {
   public complete_Path() {
@@ -21,6 +24,7 @@ public class complete_Path extends AbstractCellMenuComponent {
   public static class BuildSourcePath_generic_cellMenu_1iqwn9_a0 extends AbstractCellMenuPart_Generic_Group {
     public BuildSourcePath_generic_cellMenu_1iqwn9_a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> allP = ListSequence.fromList(new ArrayList<String>());
       BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(node);
@@ -45,6 +49,11 @@ public class complete_Path extends AbstractCellMenuComponent {
     }
     public String getDescriptionText_internal(String parameterObject) {
       return parameterObject;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "5481553824944683932"));
     }
   }
 }

@@ -32,6 +32,16 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import java.util.List;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import java.util.function.Function;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import java.util.stream.Collectors;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -300,6 +310,24 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     public static class AspectMethodDescriptor_generic_cellMenu_x9dtrm_a0e0a extends AbstractCellMenuPart_Generic_Item {
       public AspectMethodDescriptor_generic_cellMenu_x9dtrm_a0e0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:2b4fd559-cd7b-4f90-8197-013c655f64e4(jetbrains.mps.lang.aspect.editor)", "7905571935048869528")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b4L, "baseConceptFunc"), _quotation_createNode_x9dtrm_a0a0a0a4a0(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, 0x4ac0e6949ea3f2b9L, "cncpt"))));
       }

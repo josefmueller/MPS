@@ -41,6 +41,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.typesystem.behavior.MessageStatement__BehaviorDescriptor;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.test.editor.transformationTest_StyleSheet.TestLabelStyleClass;
@@ -143,6 +146,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     public static class NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0 extends AbstractCellMenuPart_Generic_Group {
       public NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         SAbstractConcept concept = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL, "jetbrains.mps.lang.typesystem.structure.InfoStatement");
         AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
@@ -168,6 +172,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
       }
       public String getMatchingText_internal(SNode parameterObject) {
         return MessageStatement__BehaviorDescriptor.getName_id1oFBbRehoLP.invoke(parameterObject);
+      }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)", "2153278993334184418"));
       }
     }
   }

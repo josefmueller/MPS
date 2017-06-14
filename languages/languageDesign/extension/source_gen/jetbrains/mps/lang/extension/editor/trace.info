@@ -15,12 +15,12 @@
       <unit at="16,0,60,0" name="jetbrains.mps.lang.extension.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="ExtensionDeclaration_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.lang.extension.editor.ExtensionDeclaration_SubstituteMenu$SMP_ReferenceScope_tee9e6_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.extension.editor.ExtensionDeclaration_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.lang.extension.editor.ExtensionDeclaration_SubstituteMenu$SMP_ReferenceScope_tee9e6_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.lang.extension.editor.ExtensionDeclaration_SubstituteMenu" />
     </file>
     <file name="ExtensionFieldReference_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.lang.extension.editor.ExtensionFieldReference_SubstituteMenu$SMP_ReferenceScope_9jmsc4_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.extension.editor.ExtensionFieldReference_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.lang.extension.editor.ExtensionFieldReference_SubstituteMenu$SMP_ReferenceScope_9jmsc4_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.lang.extension.editor.ExtensionFieldReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:322cf3da-5abf-4bd1-9dec-f21af259347a(jetbrains.mps.lang.extension.editor)/126958800891275564">

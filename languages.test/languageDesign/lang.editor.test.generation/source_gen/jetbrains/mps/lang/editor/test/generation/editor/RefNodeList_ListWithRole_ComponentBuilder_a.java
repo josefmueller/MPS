@@ -46,12 +46,20 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import java.util.function.Function;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import java.util.stream.Collectors;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.Pair;
@@ -368,6 +376,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_a0c1a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_a0c1a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = operationContext != null || node != null || editorContext != null;
         return (var ? null : null);
@@ -384,10 +393,16 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604400464"));
+      }
     }
     public static class RefNodeList_generic_cellMenu_i8r80j_b0c1a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_b0c1a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         return null;
       }
@@ -411,6 +426,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604400516"));
+      }
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_c0c1a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_c0c1a0a() {
@@ -429,6 +449,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604400534"));
+      }
+
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_d0c1a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_d0c1a0a() {
@@ -457,6 +482,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604400586"));
+      }
+
     }
     public static class ApplySideTransforms_left_cellMenu_i8r80j_e0c1a0a extends AbstractCellMenuPart_ApplySideTransforms {
       public ApplySideTransforms_left_cellMenu_i8r80j_e0c1a0a() {
@@ -475,6 +505,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_g0c1a0a extends AbstractCellMenuPart_Generic_Item {
       public RefNodeList_generic_cellMenu_i8r80j_g0c1a0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604400608")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = node != null || model != null || editorContext != null || operationContext != null;
         if (var) {
@@ -490,6 +538,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       }
       public SAbstractConcept getReplacementConcept() {
         return MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L, "jetbrains.mps.lang.editor.test.generation.structure.Constant");
+      }
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Constant" + ")", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604400634"));
       }
     }
     private EditorCell createConstant_i8r80j_d1a0a() {
@@ -813,6 +865,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_a0c4a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_a0c4a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = operationContext != null || node != null || editorContext != null;
         return (var ? null : null);
@@ -829,10 +882,16 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604512898"));
+      }
     }
     public static class RefNodeList_generic_cellMenu_i8r80j_b0c4a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_b0c4a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         return null;
       }
@@ -856,6 +915,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604512950"));
+      }
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_c0c4a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_c0c4a0a() {
@@ -874,6 +938,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604512968"));
+      }
+
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_d0c4a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_d0c4a0a() {
@@ -902,6 +971,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604513020"));
+      }
+
     }
     public static class ApplySideTransforms_left_cellMenu_i8r80j_e0c4a0a extends AbstractCellMenuPart_ApplySideTransforms {
       public ApplySideTransforms_left_cellMenu_i8r80j_e0c4a0a() {
@@ -920,6 +994,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_g0c4a0a extends AbstractCellMenuPart_Generic_Item {
       public RefNodeList_generic_cellMenu_i8r80j_g0c4a0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604513042")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = node != null || model != null || editorContext != null || operationContext != null;
         if (var) {
@@ -935,6 +1027,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       }
       public SAbstractConcept getReplacementConcept() {
         return MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L, "jetbrains.mps.lang.editor.test.generation.structure.Error");
+      }
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Error" + ")", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604513068"));
       }
     }
     private EditorCell createError_i8r80j_d4a0a() {
@@ -1307,6 +1403,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_a0c7a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_a0c7a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = operationContext != null || node != null || editorContext != null;
         return (var ? null : null);
@@ -1323,10 +1420,16 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604719210"));
+      }
     }
     public static class RefNodeList_generic_cellMenu_i8r80j_b0c7a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_b0c7a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         return null;
       }
@@ -1350,6 +1453,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604719262"));
+      }
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_c0c7a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_c0c7a0a() {
@@ -1368,6 +1476,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604719280"));
+      }
+
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_d0c7a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_d0c7a0a() {
@@ -1396,6 +1509,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604719332"));
+      }
+
     }
     public static class ApplySideTransforms_left_cellMenu_i8r80j_e0c7a0a extends AbstractCellMenuPart_ApplySideTransforms {
       public ApplySideTransforms_left_cellMenu_i8r80j_e0c7a0a() {
@@ -1414,6 +1532,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_g0c7a0a extends AbstractCellMenuPart_Generic_Item {
       public RefNodeList_generic_cellMenu_i8r80j_g0c7a0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604719354")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = node != null || model != null || editorContext != null || operationContext != null;
         if (var) {
@@ -1429,6 +1565,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       }
       public SAbstractConcept getReplacementConcept() {
         return MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c22L, "jetbrains.mps.lang.editor.test.generation.structure.ModelAccess");
+      }
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("replace node (custom node concept: " + "ModelAccess" + ")", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604719380"));
       }
     }
     private EditorCell createModelAccess_i8r80j_d7a0a() {
@@ -1799,6 +1939,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_a0b01a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_a0b01a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = operationContext != null || node != null || editorContext != null;
         return (var ? null : null);
@@ -1815,10 +1956,16 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604913791"));
+      }
     }
     public static class RefNodeList_generic_cellMenu_i8r80j_b0b01a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_b0b01a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         return null;
       }
@@ -1842,6 +1989,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604913843"));
+      }
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_c0b01a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_c0b01a0a() {
@@ -1860,6 +2012,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604913861"));
+      }
+
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_d0b01a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_d0b01a0a() {
@@ -1888,6 +2045,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604913913"));
+      }
+
     }
     public static class ApplySideTransforms_left_cellMenu_i8r80j_e0b01a0a extends AbstractCellMenuPart_ApplySideTransforms {
       public ApplySideTransforms_left_cellMenu_i8r80j_e0b01a0a() {
@@ -1906,6 +2068,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_g0b01a0a extends AbstractCellMenuPart_Generic_Item {
       public RefNodeList_generic_cellMenu_i8r80j_g0b01a0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604913935")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = node != null || model != null || editorContext != null || operationContext != null;
         if (var) {
@@ -1921,6 +2101,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       }
       public SAbstractConcept getReplacementConcept() {
         return MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L, "jetbrains.mps.lang.editor.test.generation.structure.Error");
+      }
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Error" + ")", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308604913961"));
       }
     }
     private EditorCell createReadOnlyModelAccessor_i8r80j_c01a0a() {
@@ -2318,6 +2502,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_a0c31a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_a0c31a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = operationContext != null || node != null || editorContext != null;
         return (var ? null : null);
@@ -2334,10 +2519,16 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605114050"));
+      }
     }
     public static class RefNodeList_generic_cellMenu_i8r80j_b0c31a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_b0c31a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         return null;
       }
@@ -2361,6 +2552,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605114102"));
+      }
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_c0c31a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_c0c31a0a() {
@@ -2379,6 +2575,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605114120"));
+      }
+
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_d0c31a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_d0c31a0a() {
@@ -2407,6 +2608,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605114172"));
+      }
+
     }
     public static class ApplySideTransforms_left_cellMenu_i8r80j_e0c31a0a extends AbstractCellMenuPart_ApplySideTransforms {
       public ApplySideTransforms_left_cellMenu_i8r80j_e0c31a0a() {
@@ -2425,6 +2631,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_g0c31a0a extends AbstractCellMenuPart_Generic_Item {
       public RefNodeList_generic_cellMenu_i8r80j_g0c31a0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605114194")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = node != null || model != null || editorContext != null || operationContext != null;
         if (var) {
@@ -2438,6 +2662,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_theProperty_postfixCellMenu_i8r80j_h0c31a0a extends AbstractCellMenuPart_PropertyPostfixHints {
       public RefNodeList_theProperty_postfixCellMenu_i8r80j_h0c31a0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Property postfix hints", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605114220")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = node != null || operationContext != null;
         return (var ? null : null);
@@ -2446,6 +2688,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_theProperty_cellMenu_i8r80j_i0c31a0a extends AbstractCellMenuPart_PropertyValues {
       public RefNodeList_theProperty_cellMenu_i8r80j_i0c31a0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Property postfix values", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605114238")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = operationContext != null || node != null;
         return (var ? null : null);
@@ -2456,6 +2716,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       }
       public SAbstractConcept getReplacementConcept() {
         return MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L, "jetbrains.mps.lang.editor.test.generation.structure.Constant");
+      }
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Constant" + ")", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605114256"));
       }
     }
     private EditorCell createTransactionalProperty_i8r80j_d31a0a() {
@@ -2899,6 +3163,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_a0b61a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_a0b61a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = operationContext != null || node != null || editorContext != null;
         return (var ? null : null);
@@ -2915,10 +3180,16 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473705"));
+      }
     }
     public static class RefNodeList_generic_cellMenu_i8r80j_b0b61a0a extends AbstractCellMenuPart_Generic_Group {
       public RefNodeList_generic_cellMenu_i8r80j_b0b61a0a() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         return null;
       }
@@ -2941,6 +3212,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       }
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
+      }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473757"));
       }
     }
     public static class RefNodeList_children_cellMenu_i8r80j_c0b61a0a extends AbstractCellMenuPart_ReplaceChild_Group {
@@ -2967,6 +3243,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       }
       public boolean isReferentPresentation() {
         return false;
+      }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace child (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473775"));
       }
     }
     public static class RefNodeList_children_cellMenu_i8r80j_d0b61a0a extends AbstractCellMenuPart_ReplaceChild_Group {
@@ -2995,6 +3276,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace child (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473835"));
+      }
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_e0b61a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_e0b61a0a() {
@@ -3013,6 +3299,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public boolean isReferentPresentation() {
         return false;
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473851"));
+      }
+
     }
     public static class RefNodeList_customReplace_cellMenu_i8r80j_f0b61a0a extends AbstractCellMenuPart_ReplaceNode_Group {
       public RefNodeList_customReplace_cellMenu_i8r80j_f0b61a0a() {
@@ -3041,6 +3332,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       public String getDescriptionText_internal(String parameterObject) {
         return String.valueOf(parameterObject);
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473903"));
+      }
+
     }
     public static class ApplySideTransforms_left_cellMenu_i8r80j_g0b61a0a extends AbstractCellMenuPart_ApplySideTransforms {
       public ApplySideTransforms_left_cellMenu_i8r80j_g0b61a0a() {
@@ -3059,6 +3355,24 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_generic_cellMenu_i8r80j_i0b61a0a extends AbstractCellMenuPart_Generic_Item {
       public RefNodeList_generic_cellMenu_i8r80j_i0b61a0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473925")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         boolean var = node != null || model != null || editorContext != null || operationContext != null;
         if (var) {
@@ -3072,6 +3386,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     public static class RefNodeList_children_cellMenu_i8r80j_j0b61a0a extends PrimaryReplaceChildMenuCellMenuPart {
       public RefNodeList_children_cellMenu_i8r80j_j0b61a0a() {
       }
+
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("primary replace child menu", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473951"));
+      }
     }
     public static class RefNodeList_children_cellMenu_i8r80j_k0b61a0a extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
       public RefNodeList_children_cellMenu_i8r80j_k0b61a0a() {
@@ -3083,10 +3402,33 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
         boolean var = currentChild != null || defaultChildConcept.getDeclarationNode() != null || node != null || operationContext != null;
         return (var ? null : null);
       }
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("replace child (custom child's concept)", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473952"));
+      }
     }
     public static class RefNodeList_children_cellMenu_i8r80j_l0b61a0a extends AbstractCellMenuPart_ReplaceChild_Item {
       public RefNodeList_children_cellMenu_i8r80j_l0b61a0a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("replace child item: " + RefNodeList_children_cellMenu_i8r80j_l0b61a0a.this.getMatchingText(), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605473978")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
+
       public String getMatchingText() {
         return "text";
       }
@@ -3109,6 +3451,10 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       }
       public SAbstractConcept getReplacementConcept() {
         return MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L, "jetbrains.mps.lang.editor.test.generation.structure.Constant");
+      }
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Constant" + ")", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "8964452308605474008"));
       }
     }
     private EditorCell createRefNodeList_i8r80j_c61a0a() {

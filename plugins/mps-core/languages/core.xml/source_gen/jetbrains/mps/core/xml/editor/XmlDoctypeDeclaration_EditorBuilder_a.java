@@ -32,6 +32,16 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
+import java.util.List;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import java.util.function.Function;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import java.util.stream.Collectors;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
@@ -196,6 +206,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     public static class XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
       public XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("replace child item: " + XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a.this.getMatchingText(), new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "2133624044438063037")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
+
       public String getMatchingText() {
         return "PUBLIC";
       }
@@ -214,6 +243,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     public static class XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
       public XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("replace child item: " + XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a.this.getMatchingText(), new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "2133624044438063167")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
+
       public String getMatchingText() {
         return "SYSTEM";
       }

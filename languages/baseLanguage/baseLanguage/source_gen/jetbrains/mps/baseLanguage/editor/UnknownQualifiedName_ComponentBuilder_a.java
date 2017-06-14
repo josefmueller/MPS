@@ -33,6 +33,9 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 /*package*/ class UnknownQualifiedName_ComponentBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -75,6 +78,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
   public static class UnknownNameRef_generic_cellMenu_rqmr32_a0a extends AbstractCellMenuPart_Generic_Group {
     public UnknownNameRef_generic_cellMenu_rqmr32_a0a() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
 
       Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false);
@@ -125,6 +129,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
     }
     public boolean isReferentPresentation() {
       return false;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1296023605439671783"));
     }
   }
 }

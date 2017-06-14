@@ -9,6 +9,8 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -33,6 +35,20 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
     result.add(new ActionTestDefaultAbstractChild_SubstituteMenu.SMP_Group_c1nwm3_a());
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "ActionTestDefaultAbstractChild", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587038942")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public class SMP_Group_c1nwm3_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     private boolean condition;
     private boolean condition1;
@@ -42,19 +58,30 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
       super.initialize(_context);
       condition = new Computable<Boolean>() {
         public Boolean compute() {
-          return eq_c1nwm3_a0a0a0a0a0b0d1(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc257b7aaaL, "removeDefaultsPart"));
+          return eq_c1nwm3_a0a0a0a0a0b0d5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc257b7aaaL, "removeDefaultsPart"));
         }
       }.compute();
       condition1 = new Computable<Boolean>() {
         public Boolean compute() {
-          return eq_c1nwm3_a0a0a0a0a0c0d1(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc2552e60aL, "removeByConditionPart"));
+          return eq_c1nwm3_a0a0a0a0a0c0d5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc2552e60aL, "removeByConditionPart"));
         }
       }.compute();
       condition2 = new Computable<Boolean>() {
         public Boolean compute() {
-          return eq_c1nwm3_a0a0a0a0a0d0d1(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc25762f5fL, "removePart"));
+          return eq_c1nwm3_a0a0a0a0a0d0d5(_context.getLink(), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671696fL, 0x73dfe0fc25762f5fL, "removePart"));
         }
       }.compute();
+    }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587039095")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
     }
 
     @Override
@@ -63,6 +90,17 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
     }
     public class SMP_Include_c1nwm3_a0 extends IncludeSubstituteMenuSubstituteMenuPart {
 
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "RemoveDefaultsPart", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587039171")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
       @Nullable
       @Override
       protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
@@ -72,6 +110,17 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
     }
     public class SMP_Include_c1nwm3_b0 extends IncludeSubstituteMenuSubstituteMenuPart {
 
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "RemoveByConditionPart", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587038983")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
       @Nullable
       @Override
       protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
@@ -81,6 +130,17 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
     }
     public class SMP_Include_c1nwm3_c0 extends IncludeSubstituteMenuSubstituteMenuPart {
 
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include " + "named substitute menu " + "RemovePart", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587039696")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
       @Nullable
       @Override
       protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
@@ -93,6 +153,17 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
       protected boolean isApplicable(SubstituteMenuContext _context) {
         return !((condition || condition1 || condition2));
       }
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587039703")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
@@ -102,6 +173,18 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
         protected Collection getConcepts(final SubstituteMenuContext _context) {
           return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x73dfe0fc25514b8dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild"));
         }
+        @NotNull
+        @Override
+        public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+          context.getEditorMenuTrace().pushTraceInfo();
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "ActionTestDefaultAbstractChild", new SNodePointer("r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)", "1741258697587039707")));
+          try {
+            return super.createItems(context);
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+        }
+
         @Override
         protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
           return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
@@ -109,13 +192,13 @@ public class ActionTestDefaultAbstractChild_SubstituteMenu extends SubstituteMen
       }
     }
   }
-  private static boolean eq_c1nwm3_a0a0a0a0a0b0d1(Object a, Object b) {
+  private static boolean eq_c1nwm3_a0a0a0a0a0b0d5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_c1nwm3_a0a0a0a0a0c0d1(Object a, Object b) {
+  private static boolean eq_c1nwm3_a0a0a0a0a0c0d5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_c1nwm3_a0a0a0a0a0d0d1(Object a, Object b) {
+  private static boolean eq_c1nwm3_a0a0a0a0a0d0d5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

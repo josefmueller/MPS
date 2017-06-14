@@ -37,6 +37,16 @@ import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import java.util.List;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import java.util.function.Function;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import java.util.stream.Collectors;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -330,6 +340,24 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     public static class DSLDescriptor_generic_cellMenu_jtr19c_a0i0 extends AbstractCellMenuPart_Generic_Item {
       public DSLDescriptor_generic_cellMenu_jtr19c_a0i0() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:60fc5d65-00f5-411a-8513-c8d5fe6ffc51(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.editor)", "6305381134221141612")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
       public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83eb220eL, "initializer"), _quotation_createNode_jtr19c_a0a0a0a8a(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept"))));
       }

@@ -35,6 +35,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 /*package*/ class UnknownNew_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -96,6 +99,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
   public static class UnknownNew_generic_cellMenu_lvgr57_a0b0 extends AbstractCellMenuPart_Generic_Group {
     public UnknownNew_generic_cellMenu_lvgr57_a0b0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false);
       return Sequence.fromIterable(moduleScope.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
@@ -114,6 +118,11 @@ import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
     }
     public boolean isReferentPresentation() {
       return false;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1913201371134929489"));
     }
   }
   private EditorCell createComponent_lvgr57_c0() {

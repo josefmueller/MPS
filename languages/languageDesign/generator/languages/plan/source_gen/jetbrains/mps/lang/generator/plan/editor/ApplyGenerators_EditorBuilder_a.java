@@ -42,6 +42,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.behavior.ModuleIdentity__BehaviorDescriptor;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 /*package*/ class ApplyGenerators_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -206,6 +209,11 @@ import jetbrains.mps.lang.smodel.behavior.ModuleIdentity__BehaviorDescriptor;
     }
     public String getDescriptionText_internal(SModuleReference parameterObject) {
       return parameterObject.getModuleName();
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("replace child (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:f2ba8024-88b1-43d0-afb0-7856ed64ccb1(jetbrains.mps.lang.generator.plan.editor)", "8296877263937148789"));
     }
   }
 }

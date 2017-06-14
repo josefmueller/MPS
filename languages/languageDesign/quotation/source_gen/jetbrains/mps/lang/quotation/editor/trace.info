@@ -18,20 +18,20 @@
       <unit at="16,0,82,0" name="jetbrains.mps.lang.quotation.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="NodeBuilderInitLink_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu$SMP_ReferenceScope_ej8zii_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu$SMP_ReferenceScope_ej8zii_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu" />
     </file>
     <file name="NodeBuilderInitProperty_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu$SMP_ReferenceScope_5m6b1p_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu$SMP_ReferenceScope_5m6b1p_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu" />
     </file>
     <file name="NodeBuilderNode_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu$SMP_ReferenceScope_div3q6_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu$SMP_ReferenceScope_div3q6_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu" />
     </file>
     <file name="NodeBuilderRef_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu$SMP_ReferenceScope_2r55m7_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu$SMP_ReferenceScope_2r55m7_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderRef_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/1196350915486">
@@ -2362,44 +2362,80 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/1741258697587167951">
     <file name="GeneratorInternal_InternalReferenceHolder_SubstituteMenu.java">
-      <node id="1741258697587167951" at="16,118,17,140" concept="8" />
-      <node id="1741258697587167951" at="17,140,18,18" concept="9" />
-      <node id="1741258697587167951" at="14,0,20,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587167951" at="16,118,18,18">
+      <node id="1741258697587167951" at="18,118,19,140" concept="8" />
+      <node id="1741258697587167951" at="19,140,20,18" concept="9" />
+      <node id="1741258697587167951" at="25,91,26,49" concept="3" />
+      <node id="1741258697587167951" at="26,49,27,275" concept="3" />
+      <node id="1741258697587167951" at="28,9,29,44" concept="9" />
+      <node id="1741258697587167951" at="30,15,31,50" concept="3" />
+      <node id="1741258697587167951" at="27,275,32,5" concept="12" />
+      <node id="1741258697587167951" at="16,0,22,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587167951" at="23,0,34,0" concept="7" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587167951" at="28,9,29,44" />
+      <scope id="1741258697587167951" at="30,15,31,50" />
+      <scope id="1741258697587167951" at="18,118,20,18">
         <var name="result" id="1741258697587167951" />
       </scope>
-      <scope id="1741258697587167951" at="14,0,20,0">
+      <scope id="1741258697587167951" at="16,0,22,0">
         <var name="_context" id="1741258697587167951" />
       </scope>
-      <unit id="1741258697587167951" at="13,0,21,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_InternalReferenceHolder_SubstituteMenu" />
+      <scope id="1741258697587167951" at="25,91,32,5" />
+      <scope id="1741258697587167951" at="23,0,34,0">
+        <var name="context" id="1741258697587167951" />
+      </scope>
+      <unit id="1741258697587167951" at="15,0,37,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_InternalReferenceHolder_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/1741258697587167952">
     <file name="GeneratorInternal_PropertyDescriptor_SubstituteMenu.java">
-      <node id="1741258697587167952" at="16,118,17,140" concept="8" />
-      <node id="1741258697587167952" at="17,140,18,18" concept="9" />
-      <node id="1741258697587167952" at="14,0,20,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587167952" at="16,118,18,18">
+      <node id="1741258697587167952" at="18,118,19,140" concept="8" />
+      <node id="1741258697587167952" at="19,140,20,18" concept="9" />
+      <node id="1741258697587167952" at="25,91,26,49" concept="3" />
+      <node id="1741258697587167952" at="26,49,27,270" concept="3" />
+      <node id="1741258697587167952" at="28,9,29,44" concept="9" />
+      <node id="1741258697587167952" at="30,15,31,50" concept="3" />
+      <node id="1741258697587167952" at="27,270,32,5" concept="12" />
+      <node id="1741258697587167952" at="16,0,22,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587167952" at="23,0,34,0" concept="7" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587167952" at="28,9,29,44" />
+      <scope id="1741258697587167952" at="30,15,31,50" />
+      <scope id="1741258697587167952" at="18,118,20,18">
         <var name="result" id="1741258697587167952" />
       </scope>
-      <scope id="1741258697587167952" at="14,0,20,0">
+      <scope id="1741258697587167952" at="16,0,22,0">
         <var name="_context" id="1741258697587167952" />
       </scope>
-      <unit id="1741258697587167952" at="13,0,21,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_PropertyDescriptor_SubstituteMenu" />
+      <scope id="1741258697587167952" at="25,91,32,5" />
+      <scope id="1741258697587167952" at="23,0,34,0">
+        <var name="context" id="1741258697587167952" />
+      </scope>
+      <unit id="1741258697587167952" at="15,0,37,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_PropertyDescriptor_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/1741258697587167953">
     <file name="GeneratorInternal_ReferenceDescriptor_SubstituteMenu.java">
-      <node id="1741258697587167953" at="16,118,17,140" concept="8" />
-      <node id="1741258697587167953" at="17,140,18,18" concept="9" />
-      <node id="1741258697587167953" at="14,0,20,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587167953" at="16,118,18,18">
+      <node id="1741258697587167953" at="18,118,19,140" concept="8" />
+      <node id="1741258697587167953" at="19,140,20,18" concept="9" />
+      <node id="1741258697587167953" at="25,91,26,49" concept="3" />
+      <node id="1741258697587167953" at="26,49,27,271" concept="3" />
+      <node id="1741258697587167953" at="28,9,29,44" concept="9" />
+      <node id="1741258697587167953" at="30,15,31,50" concept="3" />
+      <node id="1741258697587167953" at="27,271,32,5" concept="12" />
+      <node id="1741258697587167953" at="16,0,22,0" concept="7" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587167953" at="23,0,34,0" concept="7" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587167953" at="28,9,29,44" />
+      <scope id="1741258697587167953" at="30,15,31,50" />
+      <scope id="1741258697587167953" at="18,118,20,18">
         <var name="result" id="1741258697587167953" />
       </scope>
-      <scope id="1741258697587167953" at="14,0,20,0">
+      <scope id="1741258697587167953" at="16,0,22,0">
         <var name="_context" id="1741258697587167953" />
       </scope>
-      <unit id="1741258697587167953" at="13,0,21,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_ReferenceDescriptor_SubstituteMenu" />
+      <scope id="1741258697587167953" at="25,91,32,5" />
+      <scope id="1741258697587167953" at="23,0,34,0">
+        <var name="context" id="1741258697587167953" />
+      </scope>
+      <unit id="1741258697587167953" at="15,0,37,0" name="jetbrains.mps.lang.quotation.editor.GeneratorInternal_ReferenceDescriptor_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/5455284157993863842">
@@ -4117,71 +4153,77 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)/8802842484753224561">
     <file name="Quotation_quotedNode.java">
-      <node id="8802842484753224561" at="26,33,27,104" concept="11" />
-      <node id="8802842484753224594" at="32,120,33,95" concept="8" />
-      <node id="8634115665348622951" at="33,95,34,88" concept="8" />
-      <node id="8634115665348699239" at="37,34,38,56" concept="3" />
-      <node id="8634115665348657348" at="41,7,42,20" concept="9" />
-      <node id="8802842484753224591" at="44,148,45,111" concept="3" />
-      <node id="8802842484753224625" at="47,160,48,185" concept="8" />
-      <node id="8802842484753224631" at="48,185,49,268" concept="3" />
-      <node id="8802842484753224641" at="50,32,51,48" concept="3" />
-      <node id="8802842484753224591" at="54,45,55,18" concept="9" />
-      <node id="8802842484753224591" at="30,0,32,0" concept="2" trace="Quotation_generic_cellMenu_61vnku_a0#()V" />
-      <node id="8802842484753224561" at="26,0,29,0" concept="2" trace="Quotation_quotedNode#()V" />
-      <node id="8634115665348711228" at="36,52,39,11" concept="6" />
-      <node id="8802842484753224591" at="44,0,47,0" concept="7" trace="handleAction#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="8802842484753224639" at="49,268,52,7" concept="6" />
-      <node id="8802842484753224591" at="54,0,57,0" concept="7" trace="isReferentPresentation#()Z" />
-      <node id="8634115665348694542" at="35,140,40,9" concept="5" />
-      <node id="8634115665348636251" at="34,88,41,7" concept="5" />
-      <node id="8802842484753224591" at="47,0,54,0" concept="7" trace="handleAction_impl#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="8802842484753224591" at="32,0,44,0" concept="7" trace="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
-      <scope id="8802842484753224591" at="30,51,30,51" />
-      <scope id="8802842484753224561" at="26,33,27,104" />
-      <scope id="8634115665348711230" at="37,34,38,56" />
-      <scope id="8802842484753224591" at="44,148,45,111" />
-      <scope id="8802842484753224640" at="50,32,51,48" />
-      <scope id="8802842484753224591" at="54,45,55,18" />
-      <scope id="8802842484753224591" at="30,0,32,0" />
-      <scope id="8802842484753224561" at="26,0,29,0" />
-      <scope id="8634115665348694544" at="36,52,39,11" />
-      <scope id="8802842484753224591" at="44,0,47,0">
+      <node id="8802842484753224561" at="29,33,30,104" concept="11" />
+      <node id="8802842484753224594" at="36,120,37,95" concept="8" />
+      <node id="8634115665348622951" at="37,95,38,88" concept="8" />
+      <node id="8634115665348699239" at="41,34,42,56" concept="3" />
+      <node id="8634115665348657348" at="45,7,46,20" concept="9" />
+      <node id="8802842484753224591" at="48,148,49,111" concept="3" />
+      <node id="8802842484753224625" at="51,160,52,185" concept="8" />
+      <node id="8802842484753224631" at="52,185,53,268" concept="3" />
+      <node id="8802842484753224641" at="54,32,55,48" concept="3" />
+      <node id="8802842484753224591" at="58,45,59,18" concept="9" />
+      <node id="8802842484753224591" at="63,84,64,264" concept="9" />
+      <node id="8802842484753224591" at="33,0,35,0" concept="2" trace="Quotation_generic_cellMenu_61vnku_a0#()V" />
+      <node id="8802842484753224561" at="29,0,32,0" concept="2" trace="Quotation_quotedNode#()V" />
+      <node id="8634115665348711228" at="40,52,43,11" concept="6" />
+      <node id="8802842484753224591" at="48,0,51,0" concept="7" trace="handleAction#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="8802842484753224639" at="53,268,56,7" concept="6" />
+      <node id="8802842484753224591" at="58,0,61,0" concept="7" trace="isReferentPresentation#()Z" />
+      <node id="8802842484753224591" at="62,0,66,0" concept="7" trace="getEditorMenuDescriptor#(Ljava/lang/Object;)Ljetbrains/mps/openapi/editor/menus/EditorMenuDescriptor;" />
+      <node id="8634115665348694542" at="39,140,44,9" concept="5" />
+      <node id="8634115665348636251" at="38,88,45,7" concept="5" />
+      <node id="8802842484753224591" at="51,0,58,0" concept="7" trace="handleAction_impl#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="8802842484753224591" at="36,0,48,0" concept="7" trace="createParameterObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+      <scope id="8802842484753224591" at="33,51,33,51" />
+      <scope id="8802842484753224561" at="29,33,30,104" />
+      <scope id="8634115665348711230" at="41,34,42,56" />
+      <scope id="8802842484753224591" at="48,148,49,111" />
+      <scope id="8802842484753224640" at="54,32,55,48" />
+      <scope id="8802842484753224591" at="58,45,59,18" />
+      <scope id="8802842484753224591" at="63,84,64,264" />
+      <scope id="8802842484753224591" at="33,0,35,0" />
+      <scope id="8802842484753224561" at="29,0,32,0" />
+      <scope id="8634115665348694544" at="40,52,43,11" />
+      <scope id="8802842484753224591" at="48,0,51,0">
         <var name="editorContext" id="8802842484753224591" />
         <var name="model" id="8802842484753224591" />
         <var name="node" id="8802842484753224591" />
         <var name="operationContext" id="8802842484753224591" />
         <var name="parameterObject" id="8802842484753224591" />
       </scope>
-      <scope id="8802842484753224591" at="54,0,57,0" />
-      <scope id="8634115665348636253" at="35,140,40,9" />
-      <scope id="8634115665348694542" at="35,140,40,9">
+      <scope id="8802842484753224591" at="58,0,61,0" />
+      <scope id="8802842484753224591" at="62,0,66,0">
+        <var name="parameterObject" id="8802842484753224591" />
+      </scope>
+      <scope id="8634115665348636253" at="39,140,44,9" />
+      <scope id="8634115665348694542" at="39,140,44,9">
         <var name="c" id="8634115665348694545" />
       </scope>
-      <scope id="8802842484753224624" at="47,160,52,7">
+      <scope id="8802842484753224624" at="51,160,56,7">
         <var name="oldInstance" id="8802842484753224626" />
       </scope>
-      <scope id="8634115665348636251" at="34,88,41,7">
+      <scope id="8634115665348636251" at="38,88,45,7">
         <var name="l" id="8634115665348636255" />
       </scope>
-      <scope id="8802842484753224591" at="47,0,54,0">
+      <scope id="8802842484753224591" at="51,0,58,0">
         <var name="editorContext" id="8802842484753224591" />
         <var name="model" id="8802842484753224591" />
         <var name="node" id="8802842484753224591" />
         <var name="operationContext" id="8802842484753224591" />
         <var name="parameterObject" id="8802842484753224591" />
       </scope>
-      <scope id="8802842484753224593" at="32,120,42,20">
+      <scope id="8802842484753224593" at="36,120,46,20">
         <var name="lr" id="8634115665348622952" />
         <var name="result" id="8802842484753224595" />
       </scope>
-      <scope id="8802842484753224591" at="32,0,44,0">
+      <scope id="8802842484753224591" at="36,0,48,0">
         <var name="editorContext" id="8802842484753224591" />
         <var name="node" id="8802842484753224591" />
         <var name="operationContext" id="8802842484753224591" />
       </scope>
-      <unit id="8802842484753224591" at="29,0,58,0" name="jetbrains.mps.lang.quotation.editor.Quotation_quotedNode$Quotation_generic_cellMenu_61vnku_a0" />
-      <unit id="8802842484753224561" at="25,0,59,0" name="jetbrains.mps.lang.quotation.editor.Quotation_quotedNode" />
+      <unit id="8802842484753224591" at="32,0,67,0" name="jetbrains.mps.lang.quotation.editor.Quotation_quotedNode$Quotation_generic_cellMenu_61vnku_a0" />
+      <unit id="8802842484753224561" at="28,0,68,0" name="jetbrains.mps.lang.quotation.editor.Quotation_quotedNode" />
     </file>
   </root>
 </debug-info>

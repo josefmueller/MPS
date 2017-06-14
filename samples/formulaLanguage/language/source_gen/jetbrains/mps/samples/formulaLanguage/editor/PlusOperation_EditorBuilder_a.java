@@ -27,6 +27,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 /*package*/ class PlusOperation_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -129,6 +133,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8620dbL, "jetbrains.mps.samples.formulaLanguage.structure.Operation");
+    }
+    @Override
+    protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+      return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Operation" + ")", new SNodePointer("r:00000000-0000-4000-0000-011c8959043b(jetbrains.mps.samples.formulaLanguage.editor)", "1164923126896"));
     }
   }
   private EditorCell createRefNode_306krj_c0() {

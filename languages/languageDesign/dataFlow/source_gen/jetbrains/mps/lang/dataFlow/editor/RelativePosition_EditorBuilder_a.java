@@ -24,6 +24,10 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellMenuPart;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -124,6 +128,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     public static class RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0 extends PrimaryReplaceChildMenuCellMenuPart {
       public RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0() {
       }
+
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("primary replace child menu", new SNodePointer("r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)", "6663379806868618401"));
+      }
     }
     public static class RelativePosition_customReplace_cellMenu_wv5dgr_b0b0 extends AbstractCellMenuPart_ReplaceNode_Group {
       public RelativePosition_customReplace_cellMenu_wv5dgr_b0b0() {
@@ -140,6 +149,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
       public boolean isReferentPresentation() {
         return false;
       }
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)", "6663379806868495725"));
+      }
+
     }
   }
 }

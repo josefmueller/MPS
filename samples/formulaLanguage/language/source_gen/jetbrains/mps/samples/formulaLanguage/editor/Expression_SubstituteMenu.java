@@ -11,9 +11,12 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -36,6 +39,20 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
     result.add(new Expression_SubstituteMenu.SMP_Subconcepts_or55c_c());
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "Expression", new SNodePointer("r:00000000-0000-4000-0000-011c8959043b(jetbrains.mps.samples.formulaLanguage.editor)", "1741258697587035675")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   private class SMP_Action_or55c_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
@@ -45,9 +62,15 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
+      private EditorMenuTraceInfo myTraceInfo;
       public Item(SubstituteMenuContext context) {
         super(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        String description = "Substitute item: " + getMatchingText("");
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c8959043b(jetbrains.mps.samples.formulaLanguage.editor)", "1741258697587035677")));
+        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+        _context.getEditorMenuTrace().popTraceInfo();
       }
 
       @Nullable
@@ -56,6 +79,11 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
         SNode res = SModelOperations.createNewNode(_context.getModel(), null, MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, "jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant"));
         SPropertyOperations.set(res, MetaAdapterFactory.getProperty(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8aa3f9L, 0x102db8ae25bL, "value"), "" + (Integer.parseInt(pattern)));
         return res;
+      }
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myTraceInfo;
       }
       @Nullable
       @Override
@@ -72,7 +100,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
       }
       public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
         {
-          Pattern _pattern_0 = REGEXP_or55c_a0a0a0h2b;
+          Pattern _pattern_0 = REGEXP_or55c_a0a0a0k2f;
           Matcher _matcher_0 = _pattern_0.matcher(pattern);
           if (_matcher_0.matches()) {
             return true;
@@ -91,9 +119,15 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
+      private EditorMenuTraceInfo myTraceInfo;
       public Item(SubstituteMenuContext context) {
         super(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db8bab3cL, "jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        String description = "Substitute item: " + getMatchingText("");
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c8959043b(jetbrains.mps.samples.formulaLanguage.editor)", "1741258697587035800")));
+        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+        _context.getEditorMenuTrace().popTraceInfo();
       }
 
       @Nullable
@@ -107,6 +141,11 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
         }
         return res;
       }
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myTraceInfo;
+      }
       @Override
       public boolean canExecute(@NotNull String pattern) {
         return canExecute_internal(pattern, false);
@@ -117,7 +156,7 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
       }
       public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
         {
-          Pattern _pattern_0 = REGEXP_or55c_a0a0a0g2c;
+          Pattern _pattern_0 = REGEXP_or55c_a0a0a0j2g;
           Matcher _matcher_0 = _pattern_0.matcher(pattern);
           if (_matcher_0.matches()) {
             return true;
@@ -131,11 +170,23 @@ public class Expression_SubstituteMenu extends SubstituteMenuBase {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
       return ConceptDescendantsCache.getInstance().getDirectDescendants(MetaAdapterFactory.getConcept(0xb1a9bc478a264792L, 0x8b684660c531090aL, 0x102db824fa1L, "jetbrains.mps.samples.formulaLanguage.structure.Expression"));
     }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "Expression", new SNodePointer("r:00000000-0000-4000-0000-011c8959043b(jetbrains.mps.samples.formulaLanguage.editor)", "1741258697587035916")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
     @Override
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
       return context.createItems(new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(context.getEditorContext().getRepository()), concept));
     }
   }
-  private static Pattern REGEXP_or55c_a0a0a0h2b = Pattern.compile("(?:-?)\\d+", 0);
-  private static Pattern REGEXP_or55c_a0a0a0g2c = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
+  private static Pattern REGEXP_or55c_a0a0a0k2f = Pattern.compile("(?:-?)\\d+", 0);
+  private static Pattern REGEXP_or55c_a0a0a0j2g = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
 }

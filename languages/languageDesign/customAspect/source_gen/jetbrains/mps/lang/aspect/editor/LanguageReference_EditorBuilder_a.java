@@ -31,6 +31,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 /*package*/ class LanguageReference_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -116,6 +119,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     public static class LanguageReference_generic_cellMenu_uxcxn0_a0a0 extends AbstractCellMenuPart_Generic_Group {
       public LanguageReference_generic_cellMenu_uxcxn0_a0a0() {
       }
+
       public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
         Collection<SLanguage> allLanguages = LanguageRegistry.getInstance().getAllLanguages();
         return new ArrayList<SLanguage>(allLanguages);
@@ -130,6 +134,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
       }
       public boolean isReferentPresentation() {
         return false;
+      }
+
+      @Override
+      protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+        return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:2b4fd559-cd7b-4f90-8197-013c655f64e4(jetbrains.mps.lang.aspect.editor)", "3542851458883492487"));
       }
     }
   }

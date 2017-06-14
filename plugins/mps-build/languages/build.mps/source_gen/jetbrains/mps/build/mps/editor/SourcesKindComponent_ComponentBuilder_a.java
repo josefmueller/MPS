@@ -25,6 +25,9 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -77,6 +80,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
   public static class BuildMps_Solution_generic_cellMenu_qubgco_a0a extends AbstractCellMenuPart_Generic_Group {
     public BuildMps_Solution_generic_cellMenu_qubgco_a0a() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return CollectionSequence.fromCollection(SEnumOperations.getMembers(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, "jetbrains.mps.build", 0x48d5d03db92974f7L, "BuildSource_JavaContentFolderKind")).toListSequence();
     }
@@ -94,6 +98,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
     public String getMatchingText_internal(SEnumerationLiteral parameterObject) {
       return "(with " + SEnumOperations.getMemberName(parameterObject) + ")";
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)", "7354447573576732036"));
     }
   }
   private EditorCell createConstant_qubgco_a0() {
@@ -138,6 +147,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
   public static class BuildMps_Solution_generic_cellMenu_qubgco_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public BuildMps_Solution_generic_cellMenu_qubgco_a0c0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return CollectionSequence.fromCollection(SEnumOperations.getMembers(0xcf935df46994e9cL, 0xa132fa109541cba3L, "jetbrains.mps.build.mps", 0x3be316509db4513L, "BuildMps_ModuleSourcesKind")).toListSequence();
     }
@@ -155,6 +165,11 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
     public String getMatchingText_internal(SEnumerationLiteral parameterObject) {
       return "(with " + SEnumOperations.getMemberName(parameterObject) + ")";
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)", "5328150611114975550"));
     }
   }
   private EditorCell createConstant_qubgco_d0() {

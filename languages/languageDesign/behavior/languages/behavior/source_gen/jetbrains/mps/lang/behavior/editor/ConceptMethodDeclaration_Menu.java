@@ -15,6 +15,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
   public ConceptMethodDeclaration_Menu() {
@@ -23,6 +26,7 @@ public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
   public static class ConceptMethodDeclaration_generic_cellMenu_v7l746_a0 extends AbstractCellMenuPart_Generic_Group {
     public ConceptMethodDeclaration_generic_cellMenu_v7l746_a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return (List<SNode>) AbstractConceptDeclaration__BehaviorDescriptor.getVirtualConceptMethods_idhEwILHM.invoke(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), false, false), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")));
     }
@@ -36,6 +40,11 @@ public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
     }
     public boolean isReferentPresentation() {
       return false;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:dc79d042-ba38-4e91-9392-42f38106ae44(jetbrains.mps.lang.behavior.editor)", "1225202142300"));
     }
   }
 }

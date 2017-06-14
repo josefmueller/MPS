@@ -9,9 +9,11 @@ import java.util.HashSet;
 import jetbrains.mps.lang.editor.menus.transformation.MenuLocations;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.editor.menus.MenuPart;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
@@ -22,6 +24,7 @@ import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.language.ConceptAspectsHelper;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -45,6 +48,18 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
     return SetSequence.fromSet(myLocations).contains(location);
   }
 
+  @NotNull
+  @Override
+  public List<TransformationMenuItem> createMenuItems(@NotNull TransformationMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default transformation menu for " + "ConceptDeclaration", new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "2299504936702472506")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
   @Override
   @NotNull
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
@@ -62,6 +77,17 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
       return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) != null && _context.getNode() != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
     }
 
+    @NotNull
+    @Override
+    public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("transformation menu group", new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "8887077936720600560")));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
       return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConceptDeclaration_TransformationMenu.TMP_Group_dubn3u_a0.TMP_Group_dubn3u_a0a(), new ConceptDeclaration_TransformationMenu.TMP_Group_dubn3u_a0.TMP_Action_dubn3u_b0a(), new ConceptDeclaration_TransformationMenu.TMP_Group_dubn3u_a0.TMP_Group_dubn3u_c0a());
@@ -72,6 +98,17 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
         return _context.getEditorContext().getEditorPanelManager() != null;
       }
 
+      @NotNull
+      @Override
+      public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("transformation menu group", new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "8887077936720622571")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
       @Override
       protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
         return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConceptDeclaration_TransformationMenu.TMP_Group_dubn3u_a0.TMP_Group_dubn3u_a0a.TMP_Action_dubn3u_a0a0(), new ConceptDeclaration_TransformationMenu.TMP_Group_dubn3u_a0.TMP_Group_dubn3u_a0a.TMP_Action_dubn3u_b0a0());
@@ -84,9 +121,13 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
 
         private class Item extends ActionItemBase {
           private final TransformationMenuContext _context;
-
+          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
+            _context.getEditorMenuTrace().pushTraceInfo();
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "2299504936702473081")));
+            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
+            context.getEditorMenuTrace().popTraceInfo();
           }
 
           @Nullable
@@ -149,7 +190,14 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
             return true;
           }
 
+
+
+          @Override
+          public EditorMenuTraceInfo getTraceInfo() {
+            return myEditorMenuTraceInfo;
+          }
         }
+
       }
       private class TMP_Action_dubn3u_b0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
@@ -159,9 +207,13 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
 
         private class Item extends ActionItemBase {
           private final TransformationMenuContext _context;
-
+          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
+            _context.getEditorMenuTrace().pushTraceInfo();
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "8887077936715824733")));
+            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
+            context.getEditorMenuTrace().popTraceInfo();
           }
 
           @Nullable
@@ -204,7 +256,14 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
             });
           }
 
+
+
+          @Override
+          public EditorMenuTraceInfo getTraceInfo() {
+            return myEditorMenuTraceInfo;
+          }
         }
+
       }
     }
     private class TMP_Action_dubn3u_b0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
@@ -215,9 +274,13 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
 
       private class Item extends ActionItemBase {
         private final TransformationMenuContext _context;
-
+        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
+          _context.getEditorMenuTrace().pushTraceInfo();
+          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "616772488613303137")));
+          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
+          context.getEditorMenuTrace().popTraceInfo();
         }
 
         @Nullable
@@ -254,7 +317,14 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
           }).isEmpty();
         }
 
+
+
+        @Override
+        public EditorMenuTraceInfo getTraceInfo() {
+          return myEditorMenuTraceInfo;
+        }
       }
+
     }
     public class TMP_Group_dubn3u_c0a extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Override
@@ -268,6 +338,17 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
         return !(SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) && (Sequence.fromIterable(links).count() != 1 || !(SPropertyOperations.hasValue(Sequence.fromIterable(links).first(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference")));
       }
 
+      @NotNull
+      @Override
+      public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("transformation menu group", new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "8222073419151926197")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
       @Override
       protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
         return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConceptDeclaration_TransformationMenu.TMP_Group_dubn3u_a0.TMP_Group_dubn3u_c0a.TMP_Action_dubn3u_a2a0(), new ConceptDeclaration_TransformationMenu.TMP_Group_dubn3u_a0.TMP_Group_dubn3u_c0a.TMP_Action_dubn3u_b2a0());
@@ -280,9 +361,13 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
 
         private class Item extends ActionItemBase {
           private final TransformationMenuContext _context;
-
+          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
+            _context.getEditorMenuTrace().pushTraceInfo();
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "4808044577948978174")));
+            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
+            context.getEditorMenuTrace().popTraceInfo();
           }
 
           @Nullable
@@ -319,7 +404,14 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
             }).isNotEmpty();
           }
 
+
+
+          @Override
+          public EditorMenuTraceInfo getTraceInfo() {
+            return myEditorMenuTraceInfo;
+          }
         }
+
       }
       private class TMP_Action_dubn3u_b2a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
@@ -329,9 +421,13 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
 
         private class Item extends ActionItemBase {
           private final TransformationMenuContext _context;
-
+          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
+            _context.getEditorMenuTrace().pushTraceInfo();
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "8222073419151851461")));
+            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
+            context.getEditorMenuTrace().popTraceInfo();
           }
 
           @Nullable
@@ -357,7 +453,14 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
             }).isNotEmpty();
           }
 
+
+
+          @Override
+          public EditorMenuTraceInfo getTraceInfo() {
+            return myEditorMenuTraceInfo;
+          }
         }
+
       }
     }
   }

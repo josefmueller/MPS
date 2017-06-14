@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
 
 public class LowLevelVariableReference_SubstituteMenu extends SubstituteMenuBase {
@@ -21,10 +23,36 @@ public class LowLevelVariableReference_SubstituteMenu extends SubstituteMenuBase
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new LowLevelVariableReference_SubstituteMenu.SMP_ReferenceScope_2icqa4_a(), MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7d9a547f857a394bL, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for LowLevelVariableReference. Generated from the smart reference attribute.", new SNodePointer("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)", "4747359941569483970")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public static class SMP_ReferenceScope_2icqa4_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_2icqa4_a() {
       super(MetaAdapterFactory.getConcept(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7d9a547f857a394bL, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference"), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, 0x4c4b92003e49a705L, "baseVariableDeclaration"));
     }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("reference scope substitute menu part", null));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
   }
 }

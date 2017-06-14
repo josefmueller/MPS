@@ -819,30 +819,54 @@
   </root>
   <root nodeRef="r:947a2b3f-3d1a-4e17-8fcb-13d001da9172(jetbrains.mps.sampleXML.editor)/3883222401592211329">
     <file name="Attribute_SubstituteMenu.java">
-      <node id="3883222401592211329" at="16,118,17,140" concept="5" />
-      <node id="3883222401592211329" at="17,140,18,18" concept="6" />
-      <node id="3883222401592211329" at="14,0,20,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="3883222401592211329" at="16,118,18,18">
+      <node id="3883222401592211329" at="18,118,19,140" concept="5" />
+      <node id="3883222401592211329" at="19,140,20,18" concept="6" />
+      <node id="3883222401592211329" at="25,91,26,49" concept="1" />
+      <node id="3883222401592211329" at="26,49,27,238" concept="1" />
+      <node id="3883222401592211329" at="28,9,29,44" concept="6" />
+      <node id="3883222401592211329" at="30,15,31,50" concept="1" />
+      <node id="3883222401592211329" at="27,238,32,5" concept="8" />
+      <node id="3883222401592211329" at="16,0,22,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="3883222401592211329" at="23,0,34,0" concept="4" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="3883222401592211329" at="28,9,29,44" />
+      <scope id="3883222401592211329" at="30,15,31,50" />
+      <scope id="3883222401592211329" at="18,118,20,18">
         <var name="result" id="3883222401592211329" />
       </scope>
-      <scope id="3883222401592211329" at="14,0,20,0">
+      <scope id="3883222401592211329" at="16,0,22,0">
         <var name="_context" id="3883222401592211329" />
       </scope>
-      <unit id="3883222401592211329" at="13,0,21,0" name="jetbrains.mps.sampleXML.editor.Attribute_SubstituteMenu" />
+      <scope id="3883222401592211329" at="25,91,32,5" />
+      <scope id="3883222401592211329" at="23,0,34,0">
+        <var name="context" id="3883222401592211329" />
+      </scope>
+      <unit id="3883222401592211329" at="15,0,37,0" name="jetbrains.mps.sampleXML.editor.Attribute_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:947a2b3f-3d1a-4e17-8fcb-13d001da9172(jetbrains.mps.sampleXML.editor)/8965727632786387588">
     <file name="Text_SubstituteMenu.java">
-      <node id="8965727632786387588" at="16,118,17,140" concept="5" />
-      <node id="8965727632786387588" at="17,140,18,18" concept="6" />
-      <node id="8965727632786387588" at="14,0,20,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="8965727632786387588" at="16,118,18,18">
+      <node id="8965727632786387588" at="18,118,19,140" concept="5" />
+      <node id="8965727632786387588" at="19,140,20,18" concept="6" />
+      <node id="8965727632786387588" at="25,91,26,49" concept="1" />
+      <node id="8965727632786387588" at="26,49,27,233" concept="1" />
+      <node id="8965727632786387588" at="28,9,29,44" concept="6" />
+      <node id="8965727632786387588" at="30,15,31,50" concept="1" />
+      <node id="8965727632786387588" at="27,233,32,5" concept="8" />
+      <node id="8965727632786387588" at="16,0,22,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="8965727632786387588" at="23,0,34,0" concept="4" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="8965727632786387588" at="28,9,29,44" />
+      <scope id="8965727632786387588" at="30,15,31,50" />
+      <scope id="8965727632786387588" at="18,118,20,18">
         <var name="result" id="8965727632786387588" />
       </scope>
-      <scope id="8965727632786387588" at="14,0,20,0">
+      <scope id="8965727632786387588" at="16,0,22,0">
         <var name="_context" id="8965727632786387588" />
       </scope>
-      <unit id="8965727632786387588" at="13,0,21,0" name="jetbrains.mps.sampleXML.editor.Text_SubstituteMenu" />
+      <scope id="8965727632786387588" at="25,91,32,5" />
+      <scope id="8965727632786387588" at="23,0,34,0">
+        <var name="context" id="8965727632786387588" />
+      </scope>
+      <unit id="8965727632786387588" at="15,0,37,0" name="jetbrains.mps.sampleXML.editor.Text_SubstituteMenu" />
     </file>
   </root>
 </debug-info>

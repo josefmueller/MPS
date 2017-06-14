@@ -16,22 +16,34 @@
       <unit at="16,0,70,0" name="jetbrains.mps.samples.SwingBuilder.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="ElementReference_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu$SMP_ReferenceScope_inm3f8_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu$SMP_ReferenceScope_inm3f8_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.samples.SwingBuilder.editor.ElementReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:c606fb3a-353f-490a-814f-40f533d38c2c(jetbrains.mps.samples.SwingBuilder.editor)/1741258697587112639">
     <file name="EmptyComponent_SubstituteMenu.java">
-      <node id="1741258697587112639" at="16,118,17,140" concept="6" />
-      <node id="1741258697587112639" at="17,140,18,18" concept="7" />
-      <node id="1741258697587112639" at="14,0,20,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587112639" at="16,118,18,18">
+      <node id="1741258697587112639" at="18,118,19,140" concept="6" />
+      <node id="1741258697587112639" at="19,140,20,18" concept="7" />
+      <node id="1741258697587112639" at="25,91,26,49" concept="2" />
+      <node id="1741258697587112639" at="26,49,27,254" concept="2" />
+      <node id="1741258697587112639" at="28,9,29,44" concept="7" />
+      <node id="1741258697587112639" at="30,15,31,50" concept="2" />
+      <node id="1741258697587112639" at="27,254,32,5" concept="10" />
+      <node id="1741258697587112639" at="16,0,22,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587112639" at="23,0,34,0" concept="5" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587112639" at="28,9,29,44" />
+      <scope id="1741258697587112639" at="30,15,31,50" />
+      <scope id="1741258697587112639" at="18,118,20,18">
         <var name="result" id="1741258697587112639" />
       </scope>
-      <scope id="1741258697587112639" at="14,0,20,0">
+      <scope id="1741258697587112639" at="16,0,22,0">
         <var name="_context" id="1741258697587112639" />
       </scope>
-      <unit id="1741258697587112639" at="13,0,21,0" name="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_SubstituteMenu" />
+      <scope id="1741258697587112639" at="25,91,32,5" />
+      <scope id="1741258697587112639" at="23,0,34,0">
+        <var name="context" id="1741258697587112639" />
+      </scope>
+      <unit id="1741258697587112639" at="15,0,37,0" name="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:c606fb3a-353f-490a-814f-40f533d38c2c(jetbrains.mps.samples.SwingBuilder.editor)/5340361359451387348">
@@ -896,48 +908,55 @@
       <unit id="5340361359451510345" at="10,0,15,0" name="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_Editor" />
     </file>
     <file name="EmptyComponent_EditorBuilder_a.java">
-      <node id="5340361359451510345" at="26,94,27,19" concept="8" />
-      <node id="5340361359451510345" at="27,19,28,18" concept="2" />
-      <node id="5340361359451510345" at="33,26,34,18" concept="7" />
-      <node id="5340361359451510345" at="37,39,38,37" concept="7" />
-      <node id="5340361359451510345" at="41,48,42,93" concept="6" />
-      <node id="5340361359451510345" at="42,93,43,46" concept="2" />
-      <node id="5340361359451510345" at="43,46,44,28" concept="2" />
-      <node id="5340361359451510345" at="44,28,45,65" concept="2" />
-      <node id="5340361359451510345" at="45,65,46,34" concept="6" />
-      <node id="5340361359451510345" at="46,34,47,46" concept="2" />
-      <node id="5340361359451510345" at="47,46,48,40" concept="2" />
-      <node id="5340361359451510345" at="48,40,49,34" concept="2" />
-      <node id="5340361359451510345" at="49,34,50,265" concept="2" />
-      <node id="5340361359451510345" at="50,265,51,22" concept="7" />
-      <node id="5340361359451530283" at="56,53,57,164" concept="7" />
-      <node id="5340361359451510345" at="23,0,25,0" concept="3" trace="myNode" />
-      <node id="5340361359451530283" at="54,0,56,0" concept="1" trace="ReplaceWith_Component_cellMenu_ai75ta_a0a#()V" />
-      <node id="5340361359451510345" at="37,0,40,0" concept="5" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="5340361359451530283" at="56,0,59,0" concept="5" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="5340361359451510345" at="26,0,30,0" concept="1" trace="EmptyComponent_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5340361359451510345" at="31,0,36,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5340361359451510345" at="41,0,53,0" concept="5" trace="createConstant_ai75ta_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="5340361359451530283" at="54,56,54,56" />
-      <scope id="5340361359451510345" at="33,26,34,18" />
-      <scope id="5340361359451510345" at="37,39,38,37" />
-      <scope id="5340361359451530283" at="56,53,57,164" />
-      <scope id="5340361359451510345" at="26,94,28,18" />
-      <scope id="5340361359451530283" at="54,0,56,0" />
-      <scope id="5340361359451510345" at="37,0,40,0" />
-      <scope id="5340361359451530283" at="56,0,59,0" />
-      <scope id="5340361359451510345" at="26,0,30,0">
+      <node id="5340361359451510345" at="30,94,31,19" concept="8" />
+      <node id="5340361359451510345" at="31,19,32,18" concept="2" />
+      <node id="5340361359451510345" at="37,26,38,18" concept="7" />
+      <node id="5340361359451510345" at="41,39,42,37" concept="7" />
+      <node id="5340361359451510345" at="45,48,46,93" concept="6" />
+      <node id="5340361359451510345" at="46,93,47,46" concept="2" />
+      <node id="5340361359451510345" at="47,46,48,28" concept="2" />
+      <node id="5340361359451510345" at="48,28,49,65" concept="2" />
+      <node id="5340361359451510345" at="49,65,50,34" concept="6" />
+      <node id="5340361359451510345" at="50,34,51,46" concept="2" />
+      <node id="5340361359451510345" at="51,46,52,40" concept="2" />
+      <node id="5340361359451510345" at="52,40,53,34" concept="2" />
+      <node id="5340361359451510345" at="53,34,54,265" concept="2" />
+      <node id="5340361359451510345" at="54,265,55,22" concept="7" />
+      <node id="5340361359451530283" at="60,53,61,164" concept="7" />
+      <node id="5340361359451530283" at="64,117,65,227" concept="7" />
+      <node id="5340361359451510345" at="27,0,29,0" concept="3" trace="myNode" />
+      <node id="5340361359451530283" at="58,0,60,0" concept="1" trace="ReplaceWith_Component_cellMenu_ai75ta_a0a#()V" />
+      <node id="5340361359451510345" at="41,0,44,0" concept="5" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="5340361359451530283" at="60,0,63,0" concept="5" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5340361359451510345" at="30,0,34,0" concept="1" trace="EmptyComponent_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5340361359451530283" at="63,0,67,0" concept="5" trace="createEditorMenuDescriptor#(Ljetbrains/mps/nodeEditor/cellMenu/CellContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/menus/EditorMenuDescriptor;" />
+      <node id="5340361359451510345" at="35,0,40,0" concept="5" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5340361359451510345" at="45,0,57,0" concept="5" trace="createConstant_ai75ta_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="5340361359451530283" at="58,56,58,56" />
+      <scope id="5340361359451510345" at="37,26,38,18" />
+      <scope id="5340361359451510345" at="41,39,42,37" />
+      <scope id="5340361359451530283" at="60,53,61,164" />
+      <scope id="5340361359451530283" at="64,117,65,227" />
+      <scope id="5340361359451510345" at="30,94,32,18" />
+      <scope id="5340361359451530283" at="58,0,60,0" />
+      <scope id="5340361359451510345" at="41,0,44,0" />
+      <scope id="5340361359451530283" at="60,0,63,0" />
+      <scope id="5340361359451510345" at="30,0,34,0">
         <var name="context" id="5340361359451510345" />
         <var name="node" id="5340361359451510345" />
       </scope>
-      <scope id="5340361359451510345" at="31,0,36,0" />
-      <scope id="5340361359451510345" at="41,48,51,22">
+      <scope id="5340361359451530283" at="63,0,67,0">
+        <var name="cellContext" id="5340361359451530283" />
+        <var name="editorContext" id="5340361359451530283" />
+      </scope>
+      <scope id="5340361359451510345" at="35,0,40,0" />
+      <scope id="5340361359451510345" at="45,48,55,22">
         <var name="editorCell" id="5340361359451510345" />
         <var name="style" id="5340361359451510345" />
       </scope>
-      <scope id="5340361359451510345" at="41,0,53,0" />
-      <unit id="5340361359451530283" at="53,0,60,0" name="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_EditorBuilder_a$ReplaceWith_Component_cellMenu_ai75ta_a0a" />
-      <unit id="5340361359451510345" at="22,0,61,0" name="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_EditorBuilder_a" />
+      <scope id="5340361359451510345" at="45,0,57,0" />
+      <unit id="5340361359451530283" at="57,0,68,0" name="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_EditorBuilder_a$ReplaceWith_Component_cellMenu_ai75ta_a0a" />
+      <unit id="5340361359451510345" at="26,0,69,0" name="jetbrains.mps.samples.SwingBuilder.editor.EmptyComponent_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:c606fb3a-353f-490a-814f-40f533d38c2c(jetbrains.mps.samples.SwingBuilder.editor)/5340361359451525960">

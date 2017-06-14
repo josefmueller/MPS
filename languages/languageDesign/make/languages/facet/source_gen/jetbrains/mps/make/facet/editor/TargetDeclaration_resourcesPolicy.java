@@ -15,6 +15,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class TargetDeclaration_resourcesPolicy extends AbstractCellMenuComponent {
   public TargetDeclaration_resourcesPolicy() {
@@ -23,6 +26,7 @@ public class TargetDeclaration_resourcesPolicy extends AbstractCellMenuComponent
   public static class TargetDeclaration_generic_cellMenu_2gyyww_a0 extends AbstractCellMenuPart_Generic_Group {
     public TargetDeclaration_generic_cellMenu_2gyyww_a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return CollectionSequence.fromCollection(SEnumOperations.getMembers(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet", 0x1740bd43b75c4b23L, "ResourcesPolicy")).toListSequence();
     }
@@ -34,6 +38,11 @@ public class TargetDeclaration_resourcesPolicy extends AbstractCellMenuComponent
     }
     public boolean isReferentPresentation() {
       return false;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1675547159918562575"));
     }
   }
 }

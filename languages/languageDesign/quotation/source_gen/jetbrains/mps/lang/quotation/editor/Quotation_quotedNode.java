@@ -21,6 +21,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class Quotation_quotedNode extends AbstractCellMenuComponent {
   public Quotation_quotedNode() {
@@ -29,6 +32,7 @@ public class Quotation_quotedNode extends AbstractCellMenuComponent {
   public static class Quotation_generic_cellMenu_61vnku_a0 extends AbstractCellMenuPart_Generic_Group {
     public Quotation_generic_cellMenu_61vnku_a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SAbstractConcept> result = ListSequence.fromList(new ArrayList<SAbstractConcept>());
       LanguageRegistry lr = LanguageRegistry.getInstance(editorContext.getRepository());
@@ -53,6 +57,11 @@ public class Quotation_quotedNode extends AbstractCellMenuComponent {
     }
     public boolean isReferentPresentation() {
       return true;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c89590349(jetbrains.mps.lang.quotation.editor)", "8802842484753224591"));
     }
   }
 }

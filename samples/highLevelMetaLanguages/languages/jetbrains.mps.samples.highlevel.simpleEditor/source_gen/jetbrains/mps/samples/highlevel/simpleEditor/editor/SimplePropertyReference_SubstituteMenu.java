@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
 
 public class SimplePropertyReference_SubstituteMenu extends SubstituteMenuBase {
@@ -21,10 +23,36 @@ public class SimplePropertyReference_SubstituteMenu extends SubstituteMenuBase {
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimplePropertyReference_SubstituteMenu.SMP_ReferenceScope_3e0a16_a(), MetaAdapterFactory.getConcept(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccfa10L, "jetbrains.mps.samples.highlevel.simpleEditor.structure.SimplePropertyReference")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SimplePropertyReference. Generated from the smart reference attribute.", new SNodePointer("r:64c71df5-2adc-4e3d-8424-aa08c0bc782f(jetbrains.mps.samples.highlevel.simpleEditor.structure)", "4747359941569484176")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   public static class SMP_ReferenceScope_3e0a16_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_3e0a16_a() {
       super(MetaAdapterFactory.getConcept(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccfa10L, "jetbrains.mps.samples.highlevel.simpleEditor.structure.SimplePropertyReference"), MetaAdapterFactory.getReferenceLink(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccfa10L, 0x346ead2c08ccfa1fL, "prop"));
     }
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("reference scope substitute menu part", null));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
+
   }
 }

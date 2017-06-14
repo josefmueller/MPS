@@ -14,12 +14,12 @@
       <unit at="16,0,64,0" name="jetbrains.mps.lang.findUsages.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="FinderDeclaration_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_SubstituteMenu$SMP_ReferenceScope_75v9oi_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_SubstituteMenu$SMP_ReferenceScope_75v9oi_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.lang.findUsages.editor.FinderDeclaration_SubstituteMenu" />
     </file>
     <file name="FinderReference_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.lang.findUsages.editor.FinderReference_SubstituteMenu$SMP_ReferenceScope_1x2yrt_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.lang.findUsages.editor.FinderReference_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.lang.findUsages.editor.FinderReference_SubstituteMenu$SMP_ReferenceScope_1x2yrt_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.lang.findUsages.editor.FinderReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/1197044909166">
@@ -1623,16 +1623,28 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/1741258697587052858">
     <file name="ConceptFunctionParameter_node_SubstituteMenu.java">
-      <node id="1741258697587052858" at="16,118,17,140" concept="5" />
-      <node id="1741258697587052858" at="17,140,18,18" concept="6" />
-      <node id="1741258697587052858" at="14,0,20,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587052858" at="16,118,18,18">
+      <node id="1741258697587052858" at="18,118,19,140" concept="5" />
+      <node id="1741258697587052858" at="19,140,20,18" concept="6" />
+      <node id="1741258697587052858" at="25,91,26,49" concept="1" />
+      <node id="1741258697587052858" at="26,49,27,264" concept="1" />
+      <node id="1741258697587052858" at="28,9,29,44" concept="6" />
+      <node id="1741258697587052858" at="30,15,31,50" concept="1" />
+      <node id="1741258697587052858" at="27,264,32,5" concept="8" />
+      <node id="1741258697587052858" at="16,0,22,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587052858" at="23,0,34,0" concept="4" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587052858" at="28,9,29,44" />
+      <scope id="1741258697587052858" at="30,15,31,50" />
+      <scope id="1741258697587052858" at="18,118,20,18">
         <var name="result" id="1741258697587052858" />
       </scope>
-      <scope id="1741258697587052858" at="14,0,20,0">
+      <scope id="1741258697587052858" at="16,0,22,0">
         <var name="_context" id="1741258697587052858" />
       </scope>
-      <unit id="1741258697587052858" at="13,0,21,0" name="jetbrains.mps.lang.findUsages.editor.ConceptFunctionParameter_node_SubstituteMenu" />
+      <scope id="1741258697587052858" at="25,91,32,5" />
+      <scope id="1741258697587052858" at="23,0,34,0">
+        <var name="context" id="1741258697587052858" />
+      </scope>
+      <unit id="1741258697587052858" at="15,0,37,0" name="jetbrains.mps.lang.findUsages.editor.ConceptFunctionParameter_node_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)/2005690715325995362">

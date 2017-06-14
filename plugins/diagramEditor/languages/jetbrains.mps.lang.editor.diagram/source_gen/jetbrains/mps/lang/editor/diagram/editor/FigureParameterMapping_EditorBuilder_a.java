@@ -27,6 +27,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -91,6 +94,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   public static class FigureParameterMapping_generic_cellMenu_3uf681_a0a0 extends AbstractCellMenuPart_Generic_Group {
     public FigureParameterMapping_generic_cellMenu_3uf681_a0a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return (List<String>) AbstractFigureReference__BehaviorDescriptor.getFigureParameterNames_id1iN4mn3lWCq.invoke(SLinkOperations.getTarget(FigureParameterMapping__BehaviorDescriptor.getDiagramNodeCell_id1iN4mn3k5m3.invoke(node), MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0xf301bf106a326e1L, 0xf301bf106a329d9L, "figure")));
     }
@@ -102,6 +106,11 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     }
     public boolean isReferentPresentation() {
       return false;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:bb92ee7f-8413-44e2-a971-e49f27dd2af5(jetbrains.mps.lang.editor.diagram.editor)", "1491555030356413376"));
     }
   }
   private EditorCell createConstant_3uf681_b0() {

@@ -33,7 +33,18 @@ import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.PrimaryReplaceChildMenuCellMenuPart;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
+import java.util.List;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import java.util.function.Function;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import java.util.stream.Collectors;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
@@ -659,10 +670,34 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     public static class TestSubstituteSpecialParent_singleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_a0r2a extends PrimaryReplaceChildMenuCellMenuPart {
       public TestSubstituteSpecialParent_singleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_a0r2a() {
       }
+
+      @Override
+      protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+        return new EditorMenuDescriptorBase("primary replace child menu", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "7688582785734923412"));
+      }
     }
     public static class TestSubstituteSpecialParent_singleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_b0r2a extends AbstractCellMenuPart_ReplaceChild_Item {
       public TestSubstituteSpecialParent_singleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_b0r2a() {
       }
+      @Override
+      public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+        List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+        Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+          public SubstituteAction apply(SubstituteAction action) {
+            return new NodeSubstituteActionWrapper(action) {
+              @Override
+              public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+                EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+                result.setDescriptor(new EditorMenuDescriptorBase("replace child item: " + TestSubstituteSpecialParent_singleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_b0r2a.this.getMatchingText(), new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "7688582785734923417")));
+                return result;
+              }
+            };
+          }
+        };
+        return actions.stream().map(mapper).collect(Collectors.toList());
+      }
+
+
       public String getMatchingText() {
         return "some action";
       }
@@ -756,10 +791,34 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   public static class TestSubstituteSpecialParent_multipleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_a0u2a extends PrimaryReplaceChildMenuCellMenuPart {
     public TestSubstituteSpecialParent_multipleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_a0u2a() {
     }
+
+    @Override
+    protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+      return new EditorMenuDescriptorBase("primary replace child menu", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "7688582785734929303"));
+    }
   }
   public static class TestSubstituteSpecialParent_multipleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_b0u2a extends AbstractCellMenuPart_ReplaceChild_Item {
     public TestSubstituteSpecialParent_multipleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_b0u2a() {
     }
+    @Override
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+      Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+        public SubstituteAction apply(SubstituteAction action) {
+          return new NodeSubstituteActionWrapper(action) {
+            @Override
+            public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+              EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+              result.setDescriptor(new EditorMenuDescriptorBase("replace child item: " + TestSubstituteSpecialParent_multipleSpecialChildWithPrimaryReplaceGroup_cellMenu_6as8ui_b0u2a.this.getMatchingText(), new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "7688582785734929304")));
+              return result;
+            }
+          };
+        }
+      };
+      return actions.stream().map(mapper).collect(Collectors.toList());
+    }
+
+
     public String getMatchingText() {
       return "some action";
     }

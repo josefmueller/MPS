@@ -14,6 +14,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ExternalIdMenu extends AbstractCellMenuComponent {
   public ExternalIdMenu() {
@@ -22,6 +25,7 @@ public class ExternalIdMenu extends AbstractCellMenuComponent {
   public static class XmlExternalId_generic_cellMenu_kwmulu_a0 extends AbstractCellMenuPart_Generic_Group {
     public XmlExternalId_generic_cellMenu_kwmulu_a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60345L, "isPublic"))) {
         return ListSequence.fromListAndArray(new ArrayList<String>(), "SYSTEM");
@@ -37,6 +41,11 @@ public class ExternalIdMenu extends AbstractCellMenuComponent {
     }
     public boolean isReferentPresentation() {
       return false;
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "2133624044437948981"));
     }
   }
 }

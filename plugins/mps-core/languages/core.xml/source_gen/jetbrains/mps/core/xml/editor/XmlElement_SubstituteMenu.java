@@ -11,9 +11,12 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -28,6 +31,20 @@ public class XmlElement_SubstituteMenu extends SubstituteMenuBase {
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlElement_SubstituteMenu.SMP_Action_xunnx5_a(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")));
     return result;
   }
+
+  @NotNull
+  @Override
+  public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
+    context.getEditorMenuTrace().pushTraceInfo();
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for " + "XmlElement", new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587214903")));
+    try {
+      return super.createMenuItems(context);
+    } finally {
+      context.getEditorMenuTrace().popTraceInfo();
+    }
+  }
+
+
   private class SMP_Action_xunnx5_a extends SingleItemSubstituteMenuPart {
 
     @Nullable
@@ -37,32 +54,43 @@ public class XmlElement_SubstituteMenu extends SubstituteMenuBase {
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
+      private EditorMenuTraceInfo myTraceInfo;
       public Item(SubstituteMenuContext context) {
         super(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        String description = "Substitute item: " + getMatchingText("");
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587213922")));
+        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+        _context.getEditorMenuTrace().popTraceInfo();
       }
 
       @Nullable
       @Override
       public SNode createNode(@NotNull String pattern) {
-        Matcher _matcher_xunnx5_a1a3c1;
+        Matcher _matcher_xunnx5_a1a4c5;
         SNode element = SNodeFactoryOperations.createNewNode(_context.getModel(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, "jetbrains.mps.core.xml.structure.XmlElement")), null);
-        if ((_matcher_xunnx5_a1a3c1 = REGEXP_xunnx5_a0a0a2a3c1.matcher(pattern)).find()) {
-          SPropertyOperations.set(element, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), _matcher_xunnx5_a1a3c1.group(1));
+        if ((_matcher_xunnx5_a1a4c5 = REGEXP_xunnx5_a0a0a2a4c5.matcher(pattern)).find()) {
+          SPropertyOperations.set(element, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), _matcher_xunnx5_a1a4c5.group(1));
         }
         return element;
+      }
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myTraceInfo;
       }
       @Nullable
       @Override
       public String getMatchingText(@NotNull String pattern) {
-        Matcher _matcher_xunnx5_a0a4c1;
-        if ((_matcher_xunnx5_a0a4c1 = REGEXP_xunnx5_a0a0a1a4c1.matcher(pattern)).find()) {
-          return "<" + _matcher_xunnx5_a0a4c1.group(1) + ">";
+        Matcher _matcher_xunnx5_a0a7c5;
+        if ((_matcher_xunnx5_a0a7c5 = REGEXP_xunnx5_a0a0a1a7c5.matcher(pattern)).find()) {
+          return "<" + _matcher_xunnx5_a0a7c5.group(1) + ">";
         }
         return "<element/>";
       }
     }
   }
-  private static Pattern REGEXP_xunnx5_a0a0a2a3c1 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
-  private static Pattern REGEXP_xunnx5_a0a0a1a4c1 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
+  private static Pattern REGEXP_xunnx5_a0a0a2a4c5 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
+  private static Pattern REGEXP_xunnx5_a0a0a1a7c5 = Pattern.compile("^<([\\w0-9]+)>?$", 0);
 }

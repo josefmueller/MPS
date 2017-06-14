@@ -14,12 +14,12 @@
       <unit at="16,0,56,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="EventReference_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.editor.EventReference_SubstituteMenu$SMP_ReferenceScope_w7xorn_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.editor.EventReference_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.editor.EventReference_SubstituteMenu$SMP_ReferenceScope_w7xorn_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.editor.EventReference_SubstituteMenu" />
     </file>
     <file name="StateReference_SubstituteMenu.java">
-      <unit at="24,0,30,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.editor.StateReference_SubstituteMenu$SMP_ReferenceScope_oex0yn_a" />
-      <unit at="16,0,31,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.editor.StateReference_SubstituteMenu" />
+      <unit at="40,0,58,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.editor.StateReference_SubstituteMenu$SMP_ReferenceScope_oex0yn_a" />
+      <unit at="18,0,59,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.editor.StateReference_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:ab3ec9f7-a74b-4f27-b12e-43d436cdab82(jetbrains.mps.samples.multipleProjections.stateMachine.editor)/3675491646420501088">

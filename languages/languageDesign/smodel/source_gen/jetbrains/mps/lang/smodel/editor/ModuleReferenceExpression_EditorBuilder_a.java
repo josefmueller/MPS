@@ -32,6 +32,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParenStyleClass;
 
 /*package*/ class ModuleReferenceExpression_EditorBuilder_a extends AbstractEditorBuilder {
@@ -101,6 +104,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
   public static class ModuleReferenceExpression_generic_cellMenu_c6z1wa_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public ModuleReferenceExpression_generic_cellMenu_c6z1wa_a0c0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return (List<SModule>) ModuleReferenceExpression__BehaviorDescriptor.getVisibleModules_id3wj3sjzSgF$.invoke(node);
     }
@@ -119,6 +123,11 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     }
     public String getMatchingText_internal(SModule parameterObject) {
       return parameterObject.getModuleName();
+    }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)", "4040588429969374489"));
     }
   }
   private EditorCell createConstant_c6z1wa_d0() {

@@ -29,12 +29,20 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySideTransforms;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import java.util.function.Function;
+import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import java.util.stream.Collectors;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -103,6 +111,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
   public static class ReadOnlyModelAccessor_generic_cellMenu_55ttgk_a0a0 extends AbstractCellMenuPart_Generic_Group {
     public ReadOnlyModelAccessor_generic_cellMenu_55ttgk_a0a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       boolean var = operationContext != null || node != null || editorContext != null;
       return (var ? null : null);
@@ -119,10 +128,16 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     public boolean isReferentPresentation() {
       return false;
     }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "53454498079334343"));
+    }
   }
   public static class ReadOnlyModelAccessor_generic_cellMenu_55ttgk_b0a0 extends AbstractCellMenuPart_Generic_Group {
     public ReadOnlyModelAccessor_generic_cellMenu_55ttgk_b0a0() {
     }
+
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return null;
     }
@@ -146,6 +161,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     public String getDescriptionText_internal(String parameterObject) {
       return String.valueOf(parameterObject);
     }
+
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("generic group with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "53454498079334395"));
+    }
   }
   public static class ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_c0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
     public ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_c0a0() {
@@ -164,6 +184,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     public boolean isReferentPresentation() {
       return false;
     }
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "53454498079334413"));
+    }
+
   }
   public static class ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_d0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
     public ReadOnlyModelAccessor_customReplace_cellMenu_55ttgk_d0a0() {
@@ -192,6 +217,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     public String getDescriptionText_internal(String parameterObject) {
       return String.valueOf(parameterObject);
     }
+    @Override
+    protected EditorMenuDescriptor getEditorMenuDescriptor(Object parameterObject) {
+      return new EditorMenuDescriptorBase("replace node (group of custom actions) with parameter: " + ((parameterObject == null ? "null" : parameterObject.toString())), new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "53454498079334465"));
+    }
+
   }
   public static class ApplySideTransforms_left_cellMenu_55ttgk_e0a0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_left_cellMenu_55ttgk_e0a0() {
@@ -210,6 +240,24 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
   public static class ReadOnlyModelAccessor_generic_cellMenu_55ttgk_g0a0 extends AbstractCellMenuPart_Generic_Item {
     public ReadOnlyModelAccessor_generic_cellMenu_55ttgk_g0a0() {
     }
+    @Override
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      List<SubstituteAction> actions = super.createActions(cellContext, editorContext);
+      Function<SubstituteAction, SubstituteAction> mapper = new Function<SubstituteAction, SubstituteAction>() {
+        public SubstituteAction apply(SubstituteAction action) {
+          return new NodeSubstituteActionWrapper(action) {
+            @Override
+            public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+              EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
+              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "53454498079334487")));
+              return result;
+            }
+          };
+        }
+      };
+      return actions.stream().map(mapper).collect(Collectors.toList());
+    }
+
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       boolean var = node != null || model != null || editorContext != null || operationContext != null;
       if (var) {
@@ -225,6 +273,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L, "jetbrains.mps.lang.editor.test.generation.structure.Error");
+    }
+    @Override
+    protected EditorMenuDescriptor createEditorMenuDescriptor(CellContext cellContext, EditorContext editorContext) {
+      return new EditorMenuDescriptorBase("replace node (custom node concept: " + "Error" + ")", new SNodePointer("r:5198f57a-b6fe-4b27-af15-f0dc1a790395(jetbrains.mps.lang.editor.test.generation.editor)", "53454498079334513"));
     }
   }
 }
