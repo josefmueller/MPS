@@ -153,7 +153,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ActionAccessOperation:
         if (props_ActionAccessOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d0060cL);
-          cpb.presentationByReference(0x2c7cd89ac8d14570L, "action", "action<<", ">>");
+          cpb.presentationByReference(0x2c7cd89ac8d14570L, "action", "action<", ">");
           props_ActionAccessOperation = cpb.create();
         }
         return props_ActionAccessOperation;
@@ -272,7 +272,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ActionType:
         if (props_ActionType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118c26632a3L);
-          cpb.presentationByReference(0x118c266a4d7L, "action", "action<<", ">>");
+          cpb.presentationByReference(0x118c266a4d7L, "action", "action<", ">");
           props_ActionType = cpb.create();
         }
         return props_ActionType;
@@ -546,7 +546,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GetGroupOperation:
         if (props_GetGroupOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119b4514b56L);
-          cpb.presentationByReference(0x119b4518939L, "group", "actionGroup<<", ">>");
+          cpb.presentationByReference(0x119b4518939L, "group", "actionGroup<", ">");
           props_GetGroupOperation = cpb.create();
         }
         return props_GetGroupOperation;
@@ -574,7 +574,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GroupAccessOperation:
         if (props_GroupAccessOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d17d74L);
-          cpb.presentationByReference(0x2c7cd89ac8d17d76L, "group", "group<<", ">>");
+          cpb.presentationByReference(0x2c7cd89ac8d17d76L, "group", "group<", ">");
           props_GroupAccessOperation = cpb.create();
         }
         return props_GroupAccessOperation;
@@ -595,7 +595,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.GroupType:
         if (props_GroupType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119240f9168L);
-          cpb.presentationByReference(0x119240f916aL, "actionGroup", "actiongroup<<", ">>");
+          cpb.presentationByReference(0x119240f916aL, "actionGroup", "actiongroup<", ">");
           props_GroupType = cpb.create();
         }
         return props_GroupType;
@@ -856,7 +856,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.PreferencesComponentType:
         if (props_PreferencesComponentType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x119c497fc64L);
-          cpb.presentationByReference(0x119c4987dc8L, "componentDeclaration", "preferenceComponent<<", ">>");
+          cpb.presentationByReference(0x119c4987dc8L, "componentDeclaration", "preferenceComponent<", ">");
           props_PreferencesComponentType = cpb.create();
         }
         return props_PreferencesComponentType;
@@ -968,7 +968,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ToolType:
         if (props_ToolType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11961ebbf24L);
-          cpb.presentationByReference(0x11961f94babL, "tool", "tool<<", ">>");
+          cpb.presentationByReference(0x11961f94babL, "tool", "tool<", ">");
           props_ToolType = cpb.create();
         }
         return props_ToolType;

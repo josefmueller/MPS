@@ -396,6 +396,7 @@
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
@@ -442,7 +443,6 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.script.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.query.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />

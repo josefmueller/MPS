@@ -47,9 +47,8 @@
       <unit at="16,0,31,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnDevKit_SubstituteMenu" />
     </file>
     <file name="BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu.java">
-      <unit at="39,0,57,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu$SMP_ReferenceScope_3t8pl7_a$Item" />
-      <unit at="29,0,58,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu$SMP_ReferenceScope_3t8pl7_a" />
-      <unit at="21,0,59,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu" />
+      <unit at="24,0,30,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu$SMP_ReferenceScope_3t8pl7_a" />
+      <unit at="16,0,31,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnJavaModule_SubstituteMenu" />
     </file>
     <file name="BuildMps_ModuleDependencyOnModule_SubstituteMenu.java">
       <unit at="24,0,30,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleDependencyOnModule_SubstituteMenu$SMP_ReferenceScope_ss9cng_a" />

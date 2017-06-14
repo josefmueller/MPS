@@ -22,9 +22,8 @@
       <unit at="16,0,31,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitLink_SubstituteMenu" />
     </file>
     <file name="NodeBuilderInitProperty_SubstituteMenu.java">
-      <unit at="39,0,57,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu$SMP_ReferenceScope_5m6b1p_a$Item" />
-      <unit at="29,0,58,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu$SMP_ReferenceScope_5m6b1p_a" />
-      <unit at="21,0,59,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu" />
+      <unit at="24,0,30,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu$SMP_ReferenceScope_5m6b1p_a" />
+      <unit at="16,0,31,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderInitProperty_SubstituteMenu" />
     </file>
     <file name="NodeBuilderNode_SubstituteMenu.java">
       <unit at="24,0,30,0" name="jetbrains.mps.lang.quotation.editor.NodeBuilderNode_SubstituteMenu$SMP_ReferenceScope_div3q6_a" />

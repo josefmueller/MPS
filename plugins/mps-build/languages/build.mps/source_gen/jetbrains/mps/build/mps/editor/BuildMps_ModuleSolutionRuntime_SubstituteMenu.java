@@ -47,7 +47,7 @@ public class BuildMps_ModuleSolutionRuntime_SubstituteMenu extends SubstituteMen
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "solution <" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
+        return "solution " + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + "";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {

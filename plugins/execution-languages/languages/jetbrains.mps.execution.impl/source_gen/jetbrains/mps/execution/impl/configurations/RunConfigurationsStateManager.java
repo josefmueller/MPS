@@ -10,6 +10,9 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import java.util.List;
 import jetbrains.mps.plugins.PluginContributor;
+import com.intellij.util.messages.MessageBusConnection;
+import com.intellij.openapi.project.impl.ProjectLifecycleListener;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.Iterator;
@@ -27,9 +30,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.RunManagerEx;
-import com.intellij.execution.impl.ProjectRunConfigurationManager;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.openapi.extensions.Extensions;
 import java.util.Set;
@@ -65,9 +66,16 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
   @Override
   public void initComponent() {
-    myState = new RunConfigurationsStateManager.RunConfigurationsState();
-    myState.saveState();
-    myProjectPluginManager.addReloadingListener(this);
+    final MessageBusConnection connection = myProject.getMessageBus().connect();
+    connection.subscribe(ProjectLifecycleListener.TOPIC, new ProjectLifecycleListener() {
+      public void projectComponentsInitialized(@NotNull Project project) {
+        if (project == myProject) {
+          myState = new RunConfigurationsStateManager.RunConfigurationsState();
+          myState.saveState();
+          myProjectPluginManager.addReloadingListener(RunConfigurationsStateManager.this);
+        }
+      }
+    });
   }
 
   @Override
@@ -163,10 +171,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     return (RunManagerImpl) RunManagerEx.getInstanceEx(myProject);
   }
 
-  private ProjectRunConfigurationManager getSharedConfigurationManager() {
-    return myProject.getComponent(ProjectRunConfigurationManager.class);
-  }
-
   @NonNls
   @NotNull
   @Override
@@ -202,11 +206,8 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     }
 
     public void restoreState() {
-      assert myState != null && mySharedState != null;
       getRunManager().initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
       try {
-        getRunManager().loadState(myState);
-        getSharedConfigurationManager().loadState(mySharedState);
       } catch (Exception e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't read execution configurations state", e);
@@ -216,9 +217,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
     public void saveState() {
       try {
-        myState = getRunManager().getState();
-
-        mySharedState = getSharedConfigurationManager().getState();
       } catch (Exception e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't save run configurations state", e);

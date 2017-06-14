@@ -47,7 +47,7 @@ public class PreferencesComponentType_SubstituteMenu extends SubstituteMenuBase 
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "preferenceComponent<<" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">>";
+        return "preferenceComponent<" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {

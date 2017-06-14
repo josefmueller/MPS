@@ -47,7 +47,7 @@ public class TransformationMenuReference_Default_SubstituteMenu extends Substitu
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "default menu for <" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
+        return "default menu for " + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + "";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {

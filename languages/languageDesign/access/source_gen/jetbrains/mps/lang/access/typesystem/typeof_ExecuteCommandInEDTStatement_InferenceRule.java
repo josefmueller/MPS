@@ -22,7 +22,7 @@ public class typeof_ExecuteCommandInEDTStatement_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(comminEDT, MetaAdapterFactory.getContainmentLink(0x63650c5916c8498aL, 0x99c8005c7ee9515dL, 0x7c8b08a50a3ea20eL, 0x7c8b08a50a3ea20fL, "project"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)", "8974276187400348253", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)", "8974276187400348258", true), (SNode) _quotation_createNode_yby6x8_a0a0b(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:aad06b20-0a6a-42d7-81b8-671529c6126a(jetbrains.mps.lang.access.typesystem)", "8974276187400348258", true), (SNode) _quotation_createNode_yby6x8_a1a2a0a1(), false, true, _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {
@@ -34,7 +34,7 @@ public class typeof_ExecuteCommandInEDTStatement_InferenceRule extends AbstractI
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_yby6x8_a0a0b() {
+  private static SNode _quotation_createNode_yby6x8_a1a2a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);

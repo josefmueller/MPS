@@ -321,7 +321,6 @@
     <property role="R4oN_" value="property" />
     <property role="TrG5h" value="CellModel_Property" />
     <property role="3GE5qa" value="CellModel" />
-    <property role="34LRSv" value="{&lt;{propertyDeclaration}&gt;}" />
     <property role="EcuMT" value="1073389658414" />
     <ref role="1TJDcQ" node="g_$h64z" resolve="CellModel_WithRole" />
     <node concept="PrWs8" id="3vTEHvN5o$C" role="PzmwI">
@@ -336,6 +335,13 @@
       <property role="IQ2ns" value="1073389964684" />
       <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
       <ref role="20ksaX" node="g_NtTq1" resolve="relationDeclaration" />
+    </node>
+    <node concept="RPilO" id="7F6fz3H$PFQ" role="lGtFl">
+      <ref role="RPilL" node="fBF1KQc" resolve="propertyDeclaration" />
+      <node concept="ROjv2" id="7F6fz3H$PFR" role="ROhUF">
+        <property role="1W_73P" value="{" />
+        <property role="1W_73K" value="}" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="fBF1sR7">
@@ -384,8 +390,8 @@
     <node concept="RPilO" id="47y0FrqaLdf" role="lGtFl">
       <ref role="RPilL" node="fBF1sR8" resolve="linkDeclaration" />
       <node concept="ROjv2" id="47y0FrqaLdg" role="ROhUF">
-        <property role="1W_73P" value="%&lt;" />
-        <property role="1W_73K" value="&gt;%" />
+        <property role="1W_73P" value="%" />
+        <property role="1W_73K" value="%" />
       </node>
     </node>
   </node>
@@ -445,8 +451,8 @@
     <node concept="RPilO" id="47y0FrqaLdk" role="lGtFl">
       <ref role="RPilL" node="fBF2Hej" resolve="linkDeclaration" />
       <node concept="ROjv2" id="47y0FrqaLdl" role="ROhUF">
-        <property role="1W_73P" value="%&lt;" />
-        <property role="1W_73K" value="&gt;%" />
+        <property role="1W_73P" value="%" />
+        <property role="1W_73K" value="%" />
       </node>
     </node>
   </node>
@@ -761,8 +767,8 @@
     <node concept="RPilO" id="47y0FrqaLd8" role="lGtFl">
       <ref role="RPilL" node="fPiD8ey" resolve="linkDeclaration" />
       <node concept="ROjv2" id="47y0FrqaLd9" role="ROhUF">
-        <property role="1W_73P" value="%&lt;" />
-        <property role="1W_73K" value="&gt;%-&gt;" />
+        <property role="1W_73P" value="%" />
+        <property role="1W_73K" value="%-&gt;" />
       </node>
     </node>
   </node>
@@ -2371,7 +2377,6 @@
     <property role="R4oN_" value="not empty property" />
     <property role="TrG5h" value="CellModel_NonEmptyProperty" />
     <property role="3GE5qa" value="CellModel" />
-    <property role="34LRSv" value="{+&lt;{propertyDeclaration}&gt;+}" />
     <property role="EcuMT" value="1184319644772" />
     <ref role="1TJDcQ" node="fBF0A4I" resolve="CellModel_Property" />
     <node concept="PrWs8" id="1653mnvB2PY" role="PzmwI">
@@ -2379,6 +2384,13 @@
     </node>
     <node concept="PrWs8" id="4SdtvCaA7QH" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
+    </node>
+    <node concept="RPilO" id="7F6fz3H$PFU" role="lGtFl">
+      <ref role="RPilL" node="fBF1KQc" resolve="propertyDeclaration" />
+      <node concept="ROjv2" id="7F6fz3H$PFV" role="ROhUF">
+        <property role="1W_73P" value="{+" />
+        <property role="1W_73K" value="+}" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="hgV5ht3">
@@ -2907,7 +2919,6 @@
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="CellModel_TransactionalProperty" />
     <property role="3GE5qa" value="CellModel" />
-    <property role="34LRSv" value="{T &lt;{property}&gt; T}" />
     <property role="EcuMT" value="1216380990741" />
     <ref role="1TJDcQ" node="fHev3Dc" resolve="CellModel_AbstractLabel" />
     <node concept="PrWs8" id="1653mnvB6l7" role="PzmwI">
@@ -2939,6 +2950,13 @@
     </node>
     <node concept="PrWs8" id="4SdtvCaA7us" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
+    </node>
+    <node concept="RPilO" id="7F6fz3H$PFS" role="lGtFl">
+      <ref role="RPilL" node="hGPY767" resolve="property" />
+      <node concept="ROjv2" id="7F6fz3H$PFT" role="ROhUF">
+        <property role="1W_73P" value="{T " />
+        <property role="1W_73K" value=" T}" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="hGPXuVX">
@@ -4882,8 +4900,7 @@
     <node concept="RPilO" id="47y0FrqaLdc" role="lGtFl">
       <ref role="RPilL" node="5OVd5tVffWa" resolve="menu" />
       <node concept="ROjv2" id="47y0FrqaLdd" role="ROhUF">
-        <property role="1W_73P" value="named menu &lt;" />
-        <property role="1W_73K" value="&gt;" />
+        <property role="1W_73P" value="named menu " />
       </node>
     </node>
   </node>
@@ -4900,8 +4917,7 @@
     <node concept="RPilO" id="47y0FrqaLdh" role="lGtFl">
       <ref role="RPilL" node="1quYWAD543u" resolve="concept" />
       <node concept="ROjv2" id="47y0FrqaLdi" role="ROhUF">
-        <property role="1W_73P" value="default menu for &lt;" />
-        <property role="1W_73K" value="&gt;" />
+        <property role="1W_73P" value="default menu for " />
       </node>
     </node>
   </node>

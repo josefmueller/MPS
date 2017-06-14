@@ -43,7 +43,7 @@
     <language slang="l:c72da2b9-7cce-4447-8389-f407dc1158b7:jetbrains.mps.lang.structure" version="5" />
     <language slang="l:8585453e-6bfb-4d80-98de-b16074f1d86c:jetbrains.mps.lang.test" version="1" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
-    <language slang="l:7a5dda62-9140-4668-ab76-d5ed1746f2b2:jetbrains.mps.lang.typesystem" version="0" />
+    <language slang="l:7a5dda62-9140-4668-ab76-d5ed1746f2b2:jetbrains.mps.lang.typesystem" version="1" />
     <language slang="l:b5734616-c4b0-4639-9c6a-f3a1cf5dc4db:testDefaultEditor" version="0" />
     <language slang="l:e228eea1-07ef-499c-8826-9c47a7e369db:testMoveElements" version="0" />
     <language slang="l:4dd3c558-f0fc-4807-bade-5d6bcad6b3f1:testSpaceCompletion" version="0" />

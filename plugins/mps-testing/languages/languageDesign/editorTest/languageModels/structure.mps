@@ -39,8 +39,13 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
+        <property id="4307758654697524060" name="suffix" index="1W_73K" />
+        <property id="4307758654697524057" name="prefix" index="1W_73P" />
+      </concept>
       <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
         <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+        <child id="8842732777748474935" name="refPresentationTemplate" index="ROhUF" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -297,9 +302,15 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NotEditableVaraileReference" />
-    <property role="34LRSv" value="{&lt;{variableDeclaration}&gt;} not editable" />
     <property role="EcuMT" value="4965160547087302660" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="RPilO" id="7F6fz3H$PG5" role="lGtFl">
+      <ref role="RPilL" node="4jBMNo5V405" resolve="variableDeclaration" />
+      <node concept="ROjv2" id="7F6fz3H$PG6" role="ROhUF">
+        <property role="1W_73P" value="{" />
+        <property role="1W_73K" value="} not editable" />
+      </node>
+    </node>
     <node concept="1TJgyj" id="4jBMNo5V405" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="variableDeclaration" />

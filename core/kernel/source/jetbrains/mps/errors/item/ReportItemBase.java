@@ -53,27 +53,6 @@ public abstract class ReportItemBase implements ReportItem {
     return new HashSet<>(Arrays.asList(FLAVOUR_CLASS));
   }
 
-  @Override
-  public boolean equals(Object that) {
-    if (!(that instanceof ReportItemBase)) {
-      return false;
-    }
-    if (!EqualUtil.equals(this.getIdFlavours(), ((ReportItemBase) that).getIdFlavours())) {
-      return false;
-    }
-    for (ReportItemFlavour<?, ?> flavour: this.getIdFlavours()) {
-      if (EqualUtil.equals(flavour.tryToGet(this), flavour.tryToGet((ReportItemBase) that))) {
-        return false;
-      }
-    }
-    return true;
-  }
-
-  @Override
-  public int hashCode() {
-    return IterableUtil.asList(getIdFlavours()).hashCode();
-  }
-
   static class SimpleReportItemFlavour<C extends FlavouredItem, T> extends ReportItemFlavour<C, T> {
     private Class<C> myApplicableClass;
     private Function<C, T> myGetter;

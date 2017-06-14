@@ -47,7 +47,7 @@ public class NamedTupleLiteral_SubstituteMenu extends SubstituteMenuBase {
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "<" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + "> literal";
+        return "" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + " literal";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {

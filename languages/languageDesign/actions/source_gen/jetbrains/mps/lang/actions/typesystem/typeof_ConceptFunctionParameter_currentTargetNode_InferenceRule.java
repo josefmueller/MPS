@@ -24,7 +24,7 @@ public class typeof_ConceptFunctionParameter_currentTargetNode_InferenceRule ext
     {
       SNode _nodeToCheck_1029348928467 = node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503146", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503151", true), (SNode) _quotation_createNode_9kq3v1_a0b0b(SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x102ebd3cd08L, "applicableConcept"))), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503151", true), (SNode) _quotation_createNode_9kq3v1_a1a2a1a1(SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x102ebd3cd08L, "applicableConcept"))), _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {
@@ -36,7 +36,7 @@ public class typeof_ConceptFunctionParameter_currentTargetNode_InferenceRule ext
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_9kq3v1_a0b0b(Object parameter_1) {
+  private static SNode _quotation_createNode_9kq3v1_a1a2a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"), 0x108f968b3caL, "SNodeType"), null, null, false);

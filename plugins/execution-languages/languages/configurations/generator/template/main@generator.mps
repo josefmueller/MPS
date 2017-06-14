@@ -10,7 +10,7 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -433,7 +433,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -6336,7 +6336,7 @@
                         </node>
                       </node>
                       <node concept="liA8E" id="5DSVq22y3Ux" role="2OqNvi">
-                        <ref role="37wK5l" to="zjj4:~RunManagerImpl.getConfigurationTemplate(com.intellij.execution.configurations.ConfigurationFactory):com.intellij.execution.RunnerAndConfigurationSettings" resolve="getConfigurationTemplate" />
+                        <ref role="37wK5l" to="zjj4:~RunManagerImpl.getConfigurationTemplate(com.intellij.execution.configurations.ConfigurationFactory):com.intellij.execution.impl.RunnerAndConfigurationSettingsImpl" resolve="getConfigurationTemplate" />
                         <node concept="1DoJHT" id="5DSVq22y3W7" role="37wK5m">
                           <property role="1Dpdpm" value="getConfigurationFactory" />
                           <node concept="3uibUv" id="5DSVq22y3W8" role="1Ez5kq">
@@ -6346,7 +6346,7 @@
                       </node>
                     </node>
                     <node concept="liA8E" id="6zMwJmzE9sH" role="2OqNvi">
-                      <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getConfiguration():com.intellij.execution.configurations.RunConfiguration" resolve="getConfiguration" />
+                      <ref role="37wK5l" to="zjj4:~RunnerAndConfigurationSettingsImpl.getConfiguration():com.intellij.execution.configurations.RunConfiguration" resolve="getConfiguration" />
                     </node>
                   </node>
                 </node>

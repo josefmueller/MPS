@@ -8,6 +8,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -44,6 +45,14 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
+        <property id="4307758654697524060" name="suffix" index="1W_73K" />
+        <property id="4307758654697524057" name="prefix" index="1W_73P" />
+      </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+        <child id="8842732777748474935" name="refPresentationTemplate" index="ROhUF" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -77,9 +86,15 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NodePropertyConstraint" />
-    <property role="34LRSv" value="property {&lt;{applicableProperty}&gt;}" />
     <property role="EcuMT" value="1147467115080" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="RPilO" id="7F6fz3H$PFF" role="lGtFl">
+      <ref role="RPilL" node="gGEom_V" resolve="applicableProperty" />
+      <node concept="ROjv2" id="7F6fz3H$PFG" role="ROhUF">
+        <property role="1W_73P" value="property {" />
+        <property role="1W_73K" value="}" />
+      </node>
+    </node>
     <node concept="1TJgyj" id="gGEom_V" role="1TKVEi">
       <property role="20kJfa" value="applicableProperty" />
       <property role="20lbJX" value="1" />
@@ -152,9 +167,15 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="TrG5h" value="NodeReferentConstraint" />
-    <property role="34LRSv" value="link {&lt;{applicableLink}&gt;}" />
     <property role="EcuMT" value="1148687176410" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="RPilO" id="7F6fz3H$PFH" role="lGtFl">
+      <ref role="RPilL" node="gHN5VAa" resolve="applicableLink" />
+      <node concept="ROjv2" id="7F6fz3H$PFI" role="ROhUF">
+        <property role="1W_73P" value="link {" />
+        <property role="1W_73K" value="}" />
+      </node>
+    </node>
     <node concept="1TJgyj" id="gHN5VAa" role="1TKVEi">
       <property role="20kJfa" value="applicableLink" />
       <property role="20lbJX" value="1" />
@@ -918,6 +939,38 @@
       <node concept="trNpa" id="1GENxguIitJ" role="EQaZv">
         <ref role="trN6q" to="tpee:fz3vP1J" resolve="Expression" />
       </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5wWOi7l4UEY">
+    <property role="EcuMT" value="6358186717179259582" />
+    <property role="3GE5qa" value="Migrations" />
+    <property role="TrG5h" value="RefPresentationMigrated" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="5wWOi7l4UEZ" role="lGtFl">
+      <property role="Hh88m" value="migration" />
+      <node concept="trNpa" id="5wWOi7l4UF1" role="EQaZv">
+        <ref role="trN6q" node="3oQug8hq$j1" resolve="ConstraintFunction_ReferentSearchScope_Presentation" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="4ZpP10$LHhO" role="1TKVEi">
+      <property role="IQ2ns" value="5753863164744094836" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="problems" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="5wWOi7l4UF3" resolve="RefPresentationMigratedProblem" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5wWOi7l4UF3">
+    <property role="EcuMT" value="6358186717179259587" />
+    <property role="3GE5qa" value="Migrations" />
+    <property role="TrG5h" value="RefPresentationMigratedProblem" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5wWOi7l4UF4" role="1TKVEi">
+      <property role="IQ2ns" value="6358186717179259588" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="editor" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
     </node>
   </node>
 </model>

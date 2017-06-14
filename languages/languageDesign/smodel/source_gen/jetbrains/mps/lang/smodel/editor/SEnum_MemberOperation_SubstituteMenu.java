@@ -12,11 +12,6 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuPart;
-import jetbrains.mps.lang.editor.menus.substitute.ReferenceScopeSubstituteMenuItem;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
 public class SEnum_MemberOperation_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
@@ -30,29 +25,6 @@ public class SEnum_MemberOperation_SubstituteMenu extends SubstituteMenuBase {
 
     public SMP_ReferenceScope_umo79n_a() {
       super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37e691L, "jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation"), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x120ed37e691L, 0x120ed37e692L, "member"));
-    }
-    @Override
-    @NotNull
-    protected ReferenceScopeSubstituteMenuItem createItem(SubstituteMenuContext context, SNode referencedNode) {
-      return new SEnum_MemberOperation_SubstituteMenu.SMP_ReferenceScope_umo79n_a.Item(context, referencedNode, getConcept(), getReferenceLink());
-    }
-    private static class Item extends ReferenceScopeSubstituteMenuItem {
-      private final SubstituteMenuContext _context;
-      private final SNode referencedNode;
-
-      private Item(SubstituteMenuContext context, SNode refNode, SConcept concept, SReferenceLink referenceLink) {
-        super(concept, context.getParentNode(), context.getCurrentTargetNode(), refNode, referenceLink, context.getEditorContext());
-        _context = context;
-        referencedNode = refNode;
-      }
-      @Override
-      public String getMatchingText(String pattern) {
-        return "<" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
-      }
-      @Override
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
     }
   }
 }

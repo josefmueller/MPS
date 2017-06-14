@@ -66,6 +66,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNodePropertyConstraint = createDescriptorForNodePropertyConstraint();
   /*package*/ final ConceptDescriptor myConceptNodeReferentConstraint = createDescriptorForNodeReferentConstraint();
   /*package*/ final ConceptDescriptor myConceptNodeScopeFactory = createDescriptorForNodeScopeFactory();
+  /*package*/ final ConceptDescriptor myConceptRefPresentationMigrated = createDescriptorForRefPresentationMigrated();
+  /*package*/ final ConceptDescriptor myConceptRefPresentationMigratedProblem = createDescriptorForRefPresentationMigratedProblem();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -74,7 +76,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptConceptConstraints, myConceptConceptParameter_ReferentSearchScope_enclosingNode, myConceptConstraintFunctionParameter_checkedNode, myConceptConstraintFunctionParameter_childConcept, myConceptConstraintFunctionParameter_childConceptNode, myConceptConstraintFunctionParameter_childNode, myConceptConstraintFunctionParameter_containingLink, myConceptConstraintFunctionParameter_containmentLink, myConceptConstraintFunctionParameter_contextNode, myConceptConstraintFunctionParameter_contextRole, myConceptConstraintFunctionParameter_exists, myConceptConstraintFunctionParameter_inEditor, myConceptConstraintFunctionParameter_link, myConceptConstraintFunctionParameter_linkNode, myConceptConstraintFunctionParameter_linkTarget, myConceptConstraintFunctionParameter_linkTargetNode, myConceptConstraintFunctionParameter_newReferentNode, myConceptConstraintFunctionParameter_oldReferentNode, myConceptConstraintFunctionParameter_parameterNode, myConceptConstraintFunctionParameter_parentNode, myConceptConstraintFunctionParameter_position, myConceptConstraintFunctionParameter_referenceNode, myConceptConstraintFunctionParameter_smartReference, myConceptConstraintFunctionParameter_visible, myConceptConstraintFunction_CanBeAChild, myConceptConstraintFunction_CanBeAChild_Old, myConceptConstraintFunction_CanBeAParent, myConceptConstraintFunction_CanBeAParent_Old, myConceptConstraintFunction_CanBeARoot, myConceptConstraintFunction_CanBeAnAncestor, myConceptConstraintFunction_CanBeAnAncestor_Old, myConceptConstraintFunction_GetAlternativeIcon, myConceptConstraintFunction_GetInstanceIcon, myConceptConstraintFunction_PropertyGetter, myConceptConstraintFunction_PropertySetter, myConceptConstraintFunction_PropertyValidator, myConceptConstraintFunction_RefSetHandlerKeepsReference, myConceptConstraintFunction_ReferentSearchScope_AbstractBase, myConceptConstraintFunction_ReferentSearchScope_Factory, myConceptConstraintFunction_ReferentSearchScope_Presentation, myConceptConstraintFunction_ReferentSearchScope_Scope, myConceptConstraintFunction_ReferentSearchScope_Scope_Old, myConceptConstraintFunction_ReferentSearchScope_Validator, myConceptConstraintFunction_ReferentSetHandler, myConceptConstraintsFunctionParameter_node, myConceptConstraintsFunctionParameter_propertyValue, myConceptConstraintsMigration, myConceptInheritedNodeScopeFactory, myConceptNodeDefaultSearchScope, myConceptNodePropertyConstraint, myConceptNodeReferentConstraint, myConceptNodeScopeFactory);
+    return Arrays.asList(myConceptConceptConstraints, myConceptConceptParameter_ReferentSearchScope_enclosingNode, myConceptConstraintFunctionParameter_checkedNode, myConceptConstraintFunctionParameter_childConcept, myConceptConstraintFunctionParameter_childConceptNode, myConceptConstraintFunctionParameter_childNode, myConceptConstraintFunctionParameter_containingLink, myConceptConstraintFunctionParameter_containmentLink, myConceptConstraintFunctionParameter_contextNode, myConceptConstraintFunctionParameter_contextRole, myConceptConstraintFunctionParameter_exists, myConceptConstraintFunctionParameter_inEditor, myConceptConstraintFunctionParameter_link, myConceptConstraintFunctionParameter_linkNode, myConceptConstraintFunctionParameter_linkTarget, myConceptConstraintFunctionParameter_linkTargetNode, myConceptConstraintFunctionParameter_newReferentNode, myConceptConstraintFunctionParameter_oldReferentNode, myConceptConstraintFunctionParameter_parameterNode, myConceptConstraintFunctionParameter_parentNode, myConceptConstraintFunctionParameter_position, myConceptConstraintFunctionParameter_referenceNode, myConceptConstraintFunctionParameter_smartReference, myConceptConstraintFunctionParameter_visible, myConceptConstraintFunction_CanBeAChild, myConceptConstraintFunction_CanBeAChild_Old, myConceptConstraintFunction_CanBeAParent, myConceptConstraintFunction_CanBeAParent_Old, myConceptConstraintFunction_CanBeARoot, myConceptConstraintFunction_CanBeAnAncestor, myConceptConstraintFunction_CanBeAnAncestor_Old, myConceptConstraintFunction_GetAlternativeIcon, myConceptConstraintFunction_GetInstanceIcon, myConceptConstraintFunction_PropertyGetter, myConceptConstraintFunction_PropertySetter, myConceptConstraintFunction_PropertyValidator, myConceptConstraintFunction_RefSetHandlerKeepsReference, myConceptConstraintFunction_ReferentSearchScope_AbstractBase, myConceptConstraintFunction_ReferentSearchScope_Factory, myConceptConstraintFunction_ReferentSearchScope_Presentation, myConceptConstraintFunction_ReferentSearchScope_Scope, myConceptConstraintFunction_ReferentSearchScope_Scope_Old, myConceptConstraintFunction_ReferentSearchScope_Validator, myConceptConstraintFunction_ReferentSetHandler, myConceptConstraintsFunctionParameter_node, myConceptConstraintsFunctionParameter_propertyValue, myConceptConstraintsMigration, myConceptInheritedNodeScopeFactory, myConceptNodeDefaultSearchScope, myConceptNodePropertyConstraint, myConceptNodeReferentConstraint, myConceptNodeScopeFactory, myConceptRefPresentationMigrated, myConceptRefPresentationMigratedProblem);
   }
 
   @Override
@@ -185,6 +187,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptNodeReferentConstraint;
       case LanguageConceptSwitch.NodeScopeFactory:
         return myConceptNodeScopeFactory;
+      case LanguageConceptSwitch.RefPresentationMigrated:
+        return myConceptRefPresentationMigrated;
+      case LanguageConceptSwitch.RefPresentationMigratedProblem:
+        return myConceptRefPresentationMigratedProblem;
       default:
         return null;
     }
@@ -667,7 +673,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("propertyGetter", 0x10b2a75c8ccL).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a68f861L).optional(true).ordered(true).multiple(false).origin("1147468630220").done();
     b.aggregate("propertySetter", 0x10c71f4acb5L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10c71c4f329L).optional(true).ordered(true).multiple(false).origin("1152963095733").done();
     b.aggregate("propertyValidator", 0x11a36a3ca53L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a369c051fL).optional(true).ordered(true).multiple(false).origin("1212097481299").done();
-    b.alias("property {<{applicableProperty}>}");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNodeReferentConstraint() {
@@ -680,13 +685,27 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("presentation", 0x36367902116a44c4L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L).optional(true).ordered(true).multiple(false).origin("3906442776579556548").done();
     b.aggregate("referentSetHandler", 0x10ed4593a89L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10ed4250f82L).optional(true).ordered(true).multiple(false).origin("1163203787401").done();
     b.aggregate("keepsReference", 0x7a8b97cf0435231fL).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x44df12c18fcb2300L).optional(true).ordered(true).multiple(false).origin("8830318409774605087").done();
-    b.alias("link {<{applicableLink}>}");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNodeScopeFactory() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.constraints", "NodeScopeFactory", 0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x74999a95393c73aaL);
     b.interface_();
     b.origin("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)/8401916545537438634");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForRefPresentationMigrated() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.constraints", "RefPresentationMigrated", 0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x583cd121d513aabeL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
+    b.origin("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)/6358186717179259582");
+    b.aggregate("problems", 0x4fd9d41024c6d474L).target(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x583cd121d513aac3L).optional(true).ordered(true).multiple(true).origin("5753863164744094836").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForRefPresentationMigratedProblem() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.constraints", "RefPresentationMigratedProblem", 0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x583cd121d513aac3L);
+    b.class_(false, false, false);
+    b.origin("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)/6358186717179259587");
+    b.associate("editor", 0x583cd121d513aac4L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L).optional(false).origin("6358186717179259588").done();
     return b.create();
   }
 }

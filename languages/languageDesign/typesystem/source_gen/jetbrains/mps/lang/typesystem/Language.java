@@ -20,6 +20,8 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.typesystem.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.openapi.intentions.IntentionAspectDescriptor;
 import jetbrains.mps.lang.typesystem.intentions.IntentionsDescriptor;
+import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
+import jetbrains.mps.lang.typesystem.migration.MigrationDescriptor;
 import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import jetbrains.mps.lang.typesystem.scripts.ScriptsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
@@ -42,7 +44,7 @@ public class Language extends LanguageRuntime {
 
   @Override
   public int getVersion() {
-    return 0;
+    return 1;
   }
 
   public SLanguageId getId() {
@@ -79,6 +81,9 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == IntentionAspectDescriptor.class) {
       return aspectClass.cast(new IntentionsDescriptor());
+    }
+    if (aspectClass == MigrationAspectDescriptor.class) {
+      return aspectClass.cast(new MigrationDescriptor());
     }
     if (aspectClass == ScriptAspectDescriptor.class) {
       return aspectClass.cast(new ScriptsDescriptor());

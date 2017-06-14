@@ -47,7 +47,7 @@ public class GroupAccessOperation_SubstituteMenu extends SubstituteMenuBase {
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "group<<" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">>";
+        return "group<" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {

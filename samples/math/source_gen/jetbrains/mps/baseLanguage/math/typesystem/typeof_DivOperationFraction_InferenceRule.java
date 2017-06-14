@@ -43,9 +43,9 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
             final SNode rightType = typeCheckingContext.getRepresentative(rightExpressionType_typevar_1418611629041884929);
             typeCheckingContext.whenConcrete(rightType, new Runnable() {
               public void run() {
-                SNode opType = typeCheckingContext.getOverloadedOperationType(_quotation_createNode_ladpqm_a0a0a0a0e0b(), typeCheckingContext.getExpandedNode(leftType), typeCheckingContext.getExpandedNode(rightType), new IRuleConflictWarningProducer() {
+                SNode opType = typeCheckingContext.getOverloadedOperationType(_quotation_createNode_ladpqm_a0a0a0a0a1a0b0a0a0a1a0b0e0b(), typeCheckingContext.getExpandedNode(leftType), typeCheckingContext.getExpandedNode(rightType), new IRuleConflictWarningProducer() {
                   public void produceWarning(String modelId, String ruleId) {
-                    typeCheckingContext.reportWarning(_quotation_createNode_ladpqm_a0a0a0a0d0a0a0a0e0b(), "coflicting rules for overloaded operation type", modelId, ruleId, null, new NodeMessageTarget());
+                    typeCheckingContext.reportWarning(_quotation_createNode_ladpqm_a0a0a0a0d0a0a0a0a1a0b0a0a0a1a0b0e0b(), "coflicting rules for overloaded operation type", modelId, ruleId, null, new NodeMessageTarget());
 
                   }
                 });
@@ -77,7 +77,7 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_ladpqm_a0a0a0a0e0b() {
+  private static SNode _quotation_createNode_ladpqm_a0a0a0a0a1a0b0a0a0a1a0b0e0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -91,7 +91,7 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), quotedNode_3);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_ladpqm_a0a0a0a0d0a0a0a0e0b() {
+  private static SNode _quotation_createNode_ladpqm_a0a0a0a0d0a0a0a0a1a0b0a0a0a1a0b0e0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

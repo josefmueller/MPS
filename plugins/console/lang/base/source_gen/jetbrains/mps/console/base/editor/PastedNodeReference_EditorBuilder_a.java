@@ -16,7 +16,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.console.base.behavior.INodeWithReference__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.console.base.behavior.PastedNodeReference__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -67,7 +66,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   private EditorCell createReadOnlyModelAccessor_7k9x8q_a0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
-        return (String) PastedNodeReference__BehaviorDescriptor.getText_id5Yox2dUTCkJ.invoke(myNode);
+        return (String) INodeWithReference__BehaviorDescriptor.getText_id5E451QuvdoB.invoke(myNode);
       }
       public void setText(String s) {
       }

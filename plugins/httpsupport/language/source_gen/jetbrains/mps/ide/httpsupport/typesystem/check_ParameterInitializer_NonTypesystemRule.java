@@ -23,7 +23,7 @@ public class check_ParameterInitializer_NonTypesystemRule extends AbstractNonTyp
   public void applyRule(final SNode parameterInitializer, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(ListSequence.fromList(SNodeOperations.getAllSiblings(parameterInitializer, false)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(check_5fnl8h_a0a0a0a0a1(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, "jetbrains.mps.ide.httpsupport.structure.ParameterInitializer")), MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, 0x4027f9073ff5cf18L, "parameter")), parameterInitializer));
+        return !(check_5fnl8h_a0a0a0a0a0b(SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, "jetbrains.mps.ide.httpsupport.structure.ParameterInitializer")), MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, 0x4027f9073ff5cf18L, "parameter")), parameterInitializer));
       }
     }))) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -39,7 +39,7 @@ public class check_ParameterInitializer_NonTypesystemRule extends AbstractNonTyp
   public boolean overrides() {
     return false;
   }
-  private static boolean check_5fnl8h_a0a0a0a0a1(SNode checkedDotOperand, SNode parameterInitializer) {
+  private static boolean check_5fnl8h_a0a0a0a0a0b(SNode checkedDotOperand, SNode parameterInitializer) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(SLinkOperations.getTarget(parameterInitializer, MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, 0x4027f9073ff5cf18L, "parameter")));
     }

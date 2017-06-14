@@ -487,8 +487,8 @@
     <node concept="RPilO" id="47y0FrqaLfG" role="lGtFl">
       <ref role="RPilL" node="hz2pEjn" resolve="action" />
       <node concept="ROjv2" id="47y0FrqaLfH" role="ROhUF">
-        <property role="1W_73P" value="action&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="action&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>
@@ -587,8 +587,8 @@
     <node concept="RPilO" id="47y0FrqaLfS" role="lGtFl">
       <ref role="RPilL" node="h$$3T5E" resolve="actionGroup" />
       <node concept="ROjv2" id="47y0FrqaLfT" role="ROhUF">
-        <property role="1W_73P" value="actiongroup&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="actiongroup&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>
@@ -609,8 +609,8 @@
     <node concept="RPilO" id="47y0FrqaLfE" role="lGtFl">
       <ref role="RPilL" node="h_xYkIF" resolve="tool" />
       <node concept="ROjv2" id="47y0FrqaLfF" role="ROhUF">
-        <property role="1W_73P" value="tool&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="tool&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>
@@ -631,8 +631,8 @@
     <node concept="RPilO" id="47y0FrqaLfU" role="lGtFl">
       <ref role="RPilL" node="hAOko$T" resolve="group" />
       <node concept="ROjv2" id="47y0FrqaLfV" role="ROhUF">
-        <property role="1W_73P" value="actionGroup&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="actionGroup&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>
@@ -728,8 +728,8 @@
     <node concept="RPilO" id="47y0FrqaLfX" role="lGtFl">
       <ref role="RPilL" node="hB4A7R8" resolve="componentDeclaration" />
       <node concept="ROjv2" id="47y0FrqaLfY" role="ROhUF">
-        <property role="1W_73P" value="preferenceComponent&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="preferenceComponent&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>
@@ -1485,8 +1485,8 @@
     <node concept="RPilO" id="47y0FrqaLfI" role="lGtFl">
       <ref role="RPilL" node="2LWQ9F8OklK" resolve="action" />
       <node concept="ROjv2" id="47y0FrqaLfJ" role="ROhUF">
-        <property role="1W_73P" value="action&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="action&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>
@@ -1508,8 +1508,8 @@
     <node concept="RPilO" id="47y0FrqaLfQ" role="lGtFl">
       <ref role="RPilL" node="2LWQ9F8OnPQ" resolve="group" />
       <node concept="ROjv2" id="47y0FrqaLfR" role="ROhUF">
-        <property role="1W_73P" value="group&lt;&lt;" />
-        <property role="1W_73K" value="&gt;&gt;" />
+        <property role="1W_73P" value="group&lt;" />
+        <property role="1W_73K" value="&gt;" />
       </node>
     </node>
   </node>

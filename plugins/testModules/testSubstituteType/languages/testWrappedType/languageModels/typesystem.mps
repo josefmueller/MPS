@@ -2,8 +2,7 @@
 <model ref="r:5e8bba55-70f5-4849-b486-7e33cf1b5bd1(testWrappedType.typesystem)">
   <persistence version="9" />
   <languages>
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)" />
   </languages>
   <imports>
     <import index="jwoj" ref="r:58c474dc-af49-44e4-a2d1-3b8edbb18985(testWrappedType.structure)" implicit="true" />

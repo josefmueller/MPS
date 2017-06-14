@@ -29,7 +29,7 @@ public class typeof_TransposeOperation_InferenceRule extends AbstractInferenceRu
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType"))) {
-            SNode result = _quotation_createNode_odw3zd_a0a0a0a0b(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)));
+            SNode result = _quotation_createNode_odw3zd_a0a0a0a0a1a0b0a0b(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)));
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dadL, "columns"), "" + (SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType")), MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dacL, "rows"))));
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dacL, "rows"), "" + (SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, "jetbrains.mps.baseLanguage.math.structure.MatrixType")), MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dadL, "columns"))));
             {
@@ -38,7 +38,7 @@ public class typeof_TransposeOperation_InferenceRule extends AbstractInferenceRu
               typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229137", true), (SNode) result, false, true, _info_12389875345);
             }
           } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, "jetbrains.mps.baseLanguage.math.structure.VectorType"))) {
-            SNode result = _quotation_createNode_odw3zd_a0a0a0a0a1(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)));
+            SNode result = _quotation_createNode_odw3zd_a0a0a0a0a0b0a1a0a1(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)));
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dadL, "columns"), "" + (SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, "jetbrains.mps.baseLanguage.math.structure.VectorType")), MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f775L, 0x42d5783a6268466eL, "height"))));
             SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a6267f776L, 0x42d5783a62683dacL, "rows"), "" + (1));
             {
@@ -65,7 +65,7 @@ public class typeof_TransposeOperation_InferenceRule extends AbstractInferenceRu
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_odw3zd_a0a0a0a0b(Object parameter_1) {
+  private static SNode _quotation_createNode_odw3zd_a0a0a0a0a1a0b0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -76,7 +76,7 @@ public class typeof_TransposeOperation_InferenceRule extends AbstractInferenceRu
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_odw3zd_a0a0a0a0a1(Object parameter_1) {
+  private static SNode _quotation_createNode_odw3zd_a0a0a0a0a0b0a1a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

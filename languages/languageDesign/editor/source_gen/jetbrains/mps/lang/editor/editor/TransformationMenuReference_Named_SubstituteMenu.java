@@ -47,7 +47,7 @@ public class TransformationMenuReference_Named_SubstituteMenu extends Substitute
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "named menu <" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
+        return "named menu " + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + "";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {

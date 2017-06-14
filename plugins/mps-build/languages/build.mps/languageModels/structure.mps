@@ -47,7 +47,6 @@
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
       <concept id="8842732777748464990" name="jetbrains.mps.lang.structure.structure.RefPresentationTemplate" flags="ng" index="ROjv2">
-        <property id="4307758654697524060" name="suffix" index="1W_73K" />
         <property id="4307758654697524057" name="prefix" index="1W_73P" />
       </concept>
       <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
@@ -239,8 +238,7 @@
     <node concept="RPilO" id="47y0FrqaLk8" role="lGtFl">
       <ref role="RPilL" node="2L4pT56gXbj" resolve="language" />
       <node concept="ROjv2" id="47y0FrqaLk9" role="ROhUF">
-        <property role="1W_73P" value="use &lt;" />
-        <property role="1W_73K" value="&gt;" />
+        <property role="1W_73P" value="use " />
       </node>
     </node>
   </node>
@@ -263,10 +261,6 @@
     </node>
     <node concept="RPilO" id="47y0FrqaLka" role="lGtFl">
       <ref role="RPilL" node="2L4pT56gYzX" resolve="module" />
-      <node concept="ROjv2" id="47y0FrqaLkb" role="ROhUF">
-        <property role="1W_73P" value="&lt;" />
-        <property role="1W_73K" value="&gt;" />
-      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="2L4pT56hbrz">
@@ -284,8 +278,7 @@
     <node concept="RPilO" id="47y0FrqaLjX" role="lGtFl">
       <ref role="RPilL" node="2L4pT56hbr$" resolve="solution" />
       <node concept="ROjv2" id="47y0FrqaLjY" role="ROhUF">
-        <property role="1W_73P" value="solution &lt;" />
-        <property role="1W_73K" value="&gt;" />
+        <property role="1W_73P" value="solution " />
       </node>
     </node>
   </node>
@@ -304,8 +297,7 @@
     <node concept="RPilO" id="47y0FrqaLjZ" role="lGtFl">
       <ref role="RPilL" node="3HwLahs6gcK" resolve="language" />
       <node concept="ROjv2" id="47y0FrqaLk0" role="ROhUF">
-        <property role="1W_73P" value="extends &lt;" />
-        <property role="1W_73K" value="&gt;" />
+        <property role="1W_73P" value="extends " />
       </node>
     </node>
   </node>
@@ -402,8 +394,7 @@
     <node concept="RPilO" id="47y0FrqaLk2" role="lGtFl">
       <ref role="RPilL" node="hS0KzPODPN" resolve="language" />
       <node concept="ROjv2" id="47y0FrqaLk3" role="ROhUF">
-        <property role="1W_73P" value="language &lt;" />
-        <property role="1W_73K" value="&gt;" />
+        <property role="1W_73P" value="language " />
       </node>
     </node>
   </node>

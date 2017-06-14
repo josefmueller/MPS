@@ -103,9 +103,6 @@ public class OldCommentMigraionCreator {
 
     migrationModel.addRootNode(_quotation_createNode_l7ib1f_a0a5a41(conceptRef, conceptRef, getMigrationName(SNodeOperations.asSConcept(node)), String.valueOf(oldLanguageVersion)));
   }
-  private static boolean eq_l7ib1f_a0a0a0a0a0a0d0d(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static SModule check_l7ib1f_a0a0f(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
@@ -413,5 +410,8 @@ public class OldCommentMigraionCreator {
     quotedNode_38.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), quotedNode_16);
     quotedNode_40.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), quotedNode_22);
     return quotedNode_5;
+  }
+  private static boolean eq_l7ib1f_a0a0a0a0a0a0d0d(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

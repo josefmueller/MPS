@@ -27,13 +27,13 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
       if ((refText != null && refText.length() > 0)) {
         SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(node).resolve(node, refText), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         if ((clazz != null)) {
-          SNode newCreator = _quotation_createNode_8brg4q_a0a0b0c0a0a(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter")), clazz);
+          SNode newCreator = _quotation_createNode_k3yd95_a0a0b0c0a0b(SLinkOperations.getChildren(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, "jetbrains.mps.baseLanguage.structure.ClassCreator")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter")), clazz);
           SNodeOperations.replaceWithAnother(node, newCreator);
         }
       }
     }
   }
-  private static SNode _quotation_createNode_8brg4q_a0a0b0c0a0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_k3yd95_a0a0b0c0a0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;

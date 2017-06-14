@@ -13,6 +13,7 @@
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="wcxw" ref="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)" />
+    <import index="tpc5" ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -56,6 +57,7 @@
       </concept>
       <concept id="1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" flags="ln" index="VPxyj" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="1186414976055" name="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" flags="ln" index="VPXOz" />
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
         <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
       </concept>
@@ -121,6 +123,8 @@
         <child id="1088612958265" name="ifTrueCellModel" index="1QoS34" />
         <child id="1088612973955" name="ifFalseCellModel" index="1QoVPY" />
       </concept>
+      <concept id="625126330682908270" name="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" flags="sg" stub="730538219795961225" index="3SHvHV" />
+      <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -207,6 +211,9 @@
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
+      </concept>
+      <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
+        <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
       <concept id="709746936026631771" name="jetbrains.mps.lang.smodel.structure.ChildAttributeQualifier" flags="ng" index="3V$S_8">
         <reference id="709746936026631773" name="attributeConcept" index="3V$S_e" />
@@ -1883,6 +1890,154 @@
     </node>
     <node concept="3ft5Ry" id="2FRV9O1X7VZ" role="3ft7WO">
       <ref role="4PJHt" to="tp1t:4OU1gA0uS0v" resolve="ConstraintFunction_ReferentSearchScope_Scope" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4ZpP10$NBgR">
+    <property role="3GE5qa" value="Migrations" />
+    <ref role="1XX52x" to="tp1t:5wWOi7l4UEY" resolve="RefPresentationMigrated" />
+    <node concept="3EZMnI" id="4ZpP10$NBgT" role="2wV5jI">
+      <node concept="3EZMnI" id="1Pr44JlkA16" role="3EZMnx">
+        <node concept="VPM3Z" id="1Pr44JlkA18" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3XFhqQ" id="1Pr44JlkA1t" role="3EZMnx" />
+        <node concept="3F0ifn" id="1Pr44Jlk_ZN" role="3EZMnx">
+          <property role="3F0ifm" value="Migrated to the editor aspect." />
+          <ref role="1k5W1q" to="tpc5:hoxUe05" resolve="item" />
+        </node>
+        <node concept="2iRfu4" id="1Pr44JlkA1b" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="4ZpP10$NBi_" role="3EZMnx">
+        <node concept="VPM3Z" id="4ZpP10$NBiA" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3XFhqQ" id="4ZpP10$NBiB" role="3EZMnx" />
+        <node concept="3EZMnI" id="4ZpP10$NBiC" role="3EZMnx">
+          <node concept="VPM3Z" id="4ZpP10$NBiD" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+          <node concept="VPXOz" id="4ZpP10$NBiE" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="3F0ifn" id="4ZpP10$NBiF" role="3EZMnx">
+            <property role="3F0ifm" value="Some of super-concept editor components no longer support this presentation part after migration." />
+            <node concept="Vb9p2" id="hoxUe06" role="3F10Kt">
+              <property role="Vbekb" value="ITALIC" />
+            </node>
+            <node concept="VechU" id="hoxUe07" role="3F10Kt">
+              <property role="Vb096" value="red" />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="4ZpP10$NIza" role="3EZMnx">
+            <property role="3F0ifm" value="Consider to review editor components listed below and migrate them manually." />
+            <node concept="Vb9p2" id="4ZpP10$NJ9w" role="3F10Kt">
+              <property role="Vbekb" value="ITALIC" />
+            </node>
+            <node concept="VechU" id="4ZpP10$NJ9x" role="3F10Kt">
+              <property role="Vb096" value="red" />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="4ZpP10$NJ8D" role="3EZMnx">
+            <property role="3F0ifm" value="You can choose one of these options:" />
+            <node concept="Vb9p2" id="4ZpP10$NJ9$" role="3F10Kt">
+              <property role="Vbekb" value="ITALIC" />
+            </node>
+            <node concept="VechU" id="4ZpP10$NJ9_" role="3F10Kt">
+              <property role="Vb096" value="red" />
+            </node>
+          </node>
+          <node concept="3EZMnI" id="4ZpP10$NJ8Q" role="3EZMnx">
+            <node concept="VPM3Z" id="4ZpP10$NJ8S" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+            <node concept="3XFhqQ" id="4ZpP10$NJ95" role="3EZMnx" />
+            <node concept="3EZMnI" id="4ZpP10$NJ9b" role="3EZMnx">
+              <node concept="VPM3Z" id="4ZpP10$NJ9d" role="3F10Kt">
+                <property role="VOm3f" value="false" />
+              </node>
+              <node concept="3F0ifn" id="4ZpP10$NJ9m" role="3EZMnx">
+                <property role="3F0ifm" value="1. Simply override super-concept editor" />
+                <node concept="Vb9p2" id="4ZpP10$NJ9N" role="3F10Kt">
+                  <property role="Vbekb" value="ITALIC" />
+                </node>
+                <node concept="VechU" id="4ZpP10$NJ9O" role="3F10Kt">
+                  <property role="Vb096" value="red" />
+                </node>
+              </node>
+              <node concept="3F0ifn" id="4ZpP10$NJ9p" role="3EZMnx">
+                <property role="3F0ifm" value="2. Extract reference cell into separate component and override it" />
+                <node concept="Vb9p2" id="4ZpP10$NJ9R" role="3F10Kt">
+                  <property role="Vbekb" value="ITALIC" />
+                </node>
+                <node concept="VechU" id="4ZpP10$NJ9S" role="3F10Kt">
+                  <property role="Vb096" value="red" />
+                </node>
+              </node>
+              <node concept="3F0ifn" id="4ZpP10$NJ9s" role="3EZMnx">
+                <property role="3F0ifm" value="3. Make reference cell delegates to behavior method and override this method" />
+                <node concept="Vb9p2" id="4ZpP10$NJ9V" role="3F10Kt">
+                  <property role="Vbekb" value="ITALIC" />
+                </node>
+                <node concept="VechU" id="4ZpP10$NJ9W" role="3F10Kt">
+                  <property role="Vb096" value="red" />
+                </node>
+              </node>
+              <node concept="2iRkQZ" id="4ZpP10$NJ9g" role="2iSdaV" />
+            </node>
+            <node concept="2iRfu4" id="4ZpP10$NJ8V" role="2iSdaV" />
+          </node>
+          <node concept="3F0ifn" id="4ZpP10$NJvF" role="3EZMnx">
+            <property role="3F0ifm" value="Editor components:" />
+            <node concept="Vb9p2" id="4ZpP10$NJw6" role="3F10Kt">
+              <property role="Vbekb" value="ITALIC" />
+            </node>
+            <node concept="VechU" id="4ZpP10$NJw7" role="3F10Kt">
+              <property role="Vb096" value="red" />
+            </node>
+          </node>
+          <node concept="3EZMnI" id="4ZpP10$NJwC" role="3EZMnx">
+            <node concept="VPM3Z" id="4ZpP10$NJwD" role="3F10Kt">
+              <property role="VOm3f" value="false" />
+            </node>
+            <node concept="3XFhqQ" id="4ZpP10$NJwE" role="3EZMnx" />
+            <node concept="3F2HdR" id="4ZpP10$NJxD" role="3EZMnx">
+              <ref role="1NtTu8" to="tp1t:4ZpP10$LHhO" resolve="problems" />
+              <node concept="2iRkQZ" id="4ZpP10$NJxJ" role="2czzBx" />
+            </node>
+            <node concept="2iRfu4" id="4ZpP10$NJwR" role="2iSdaV" />
+          </node>
+          <node concept="3F0ifn" id="4ZpP10$NJwa" role="3EZMnx" />
+          <node concept="2iRkQZ" id="4ZpP10$NBiG" role="2iSdaV" />
+        </node>
+        <node concept="2iRfu4" id="4ZpP10$NBiH" role="2iSdaV" />
+        <node concept="pkWqt" id="4ZpP10$NBj1" role="pqm2j">
+          <node concept="3clFbS" id="4ZpP10$NBj2" role="2VODD2">
+            <node concept="3clFbF" id="4ZpP10$NBqf" role="3cqZAp">
+              <node concept="2OqwBi" id="4ZpP10$NFgw" role="3clFbG">
+                <node concept="2OqwBi" id="4ZpP10$NBAa" role="2Oq$k0">
+                  <node concept="pncrf" id="4ZpP10$NBqe" role="2Oq$k0" />
+                  <node concept="3Tsc0h" id="4ZpP10$NBVn" role="2OqNvi">
+                    <ref role="3TtcxE" to="tp1t:4ZpP10$LHhO" resolve="problems" />
+                  </node>
+                </node>
+                <node concept="3GX2aA" id="4ZpP10$NIc1" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2SsqMj" id="1Pr44Jlk_Zt" role="3EZMnx" />
+      <node concept="2iRkQZ" id="4ZpP10$NBgW" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4ZpP10$Olwn">
+    <property role="3GE5qa" value="Migrations" />
+    <ref role="1XX52x" to="tp1t:5wWOi7l4UF3" resolve="RefPresentationMigratedProblem" />
+    <node concept="1iCGBv" id="4ZpP10$Olwp" role="2wV5jI">
+      <ref role="1NtTu8" to="tp1t:5wWOi7l4UF4" resolve="editor" />
+      <node concept="1sVBvm" id="4ZpP10$Olwr" role="1sWHZn">
+        <node concept="3SHvHV" id="4ZpP10$Olwy" role="2wV5jI" />
+      </node>
     </node>
   </node>
 </model>

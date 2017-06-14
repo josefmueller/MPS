@@ -53,7 +53,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       {
         SNode _nodeToCheck_1029348928467 = mcallop;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204065906120", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), (SNode) _quotation_createNode_ecn83h_a0h0b(methodClassifier), true, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), (SNode) _quotation_createNode_ecn83h_a1a2a0a7a1(methodClassifier), true, false, _info_12389875345);
       }
     }
     // --- following piece of cake is identical for any method call --- 
@@ -79,7 +79,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
           if (!((boolean) IMethodCall__BehaviorDescriptor.isInTypeInferenceContext_id4cxv$9$kw67.invoke(mcallop))) {
             for (SNode tvd : ListSequence.fromList(BaseMethodDeclaration__BehaviorDescriptor.getInferrableTypeVars_id5W9RYt5baxk.invoke(mdecl))) {
               // assume all unbound type vars outside an inference context are Object or its bound 
-              MapSequence.fromMap(subs).put(tvd, ((SLinkOperations.getTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound")) == null) ? _quotation_createNode_ecn83h_a0a1a0a7a31a1() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound")))));
+              MapSequence.fromMap(subs).put(tvd, ((SLinkOperations.getTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound")) == null) ? _quotation_createNode_ecn83h_a0a1a0a7a0a0b0a1a31a1() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound")))));
             }
           }
           if (ListSequence.fromList(SLinkOperations.getChildren(mcallop, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(mdecl, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).isNotEmpty()) {
@@ -209,14 +209,14 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
   public boolean overrides() {
     return true;
   }
-  private static SNode _quotation_createNode_ecn83h_a0h0b(Object parameter_1) {
+  private static SNode _quotation_createNode_ecn83h_a1a2a0a7a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_ecn83h_a0a1a0a7a31a1() {
+  private static SNode _quotation_createNode_ecn83h_a0a1a0a7a0a0b0a1a31a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType"), null, null, false);

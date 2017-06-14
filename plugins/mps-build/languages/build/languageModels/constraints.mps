@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="2" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="3" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -153,6 +153,7 @@
       <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
       <concept id="6702802731807420587" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent" flags="ig" index="9SLcT" />
       <concept id="6702802731807424858" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor" flags="in" index="9SQb8" />
+      <concept id="6358186717179259582" name="jetbrains.mps.lang.constraints.structure.RefPresentationMigrated" flags="ng" index="2dbRIv" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="3906442776579556545" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation" flags="in" index="Bn3R3" />
@@ -215,7 +216,7 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1145572800087" name="jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation" flags="nn" index="2Ttrtt" />
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
@@ -257,6 +258,7 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -324,6 +326,7 @@
             </node>
           </node>
         </node>
+        <node concept="2dbRIv" id="5E451QuqBkJ" role="lGtFl" />
       </node>
       <node concept="1dDu$B" id="6qcrfIJFCev" role="1N6uqs">
         <ref role="1dDu$A" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
@@ -908,6 +911,7 @@
             </node>
           </node>
         </node>
+        <node concept="2dbRIv" id="5E451QuqBkI" role="lGtFl" />
       </node>
       <node concept="3dgokm" id="5Vvmn_Ql1Ef" role="1N6uqs">
         <node concept="3clFbS" id="5Vvmn_Ql1Eg" role="2VODD2">
@@ -1224,6 +1228,7 @@
             </node>
           </node>
         </node>
+        <node concept="2dbRIv" id="5E451QuqBkN" role="lGtFl" />
       </node>
       <node concept="3dgokm" id="5Vvmn_Ql1F2" role="1N6uqs">
         <node concept="3clFbS" id="5Vvmn_Ql1F3" role="2VODD2">
@@ -1539,6 +1544,7 @@
             </node>
           </node>
         </node>
+        <node concept="2dbRIv" id="5E451QuqBkM" role="lGtFl" />
       </node>
     </node>
   </node>
@@ -1753,6 +1759,7 @@
             </node>
           </node>
         </node>
+        <node concept="2dbRIv" id="5E451QuqBkO" role="lGtFl" />
       </node>
     </node>
   </node>
@@ -1889,6 +1896,7 @@
             </node>
           </node>
         </node>
+        <node concept="2dbRIv" id="5E451QuqBkK" role="lGtFl" />
       </node>
       <node concept="1dDu$B" id="1s8OwvM5zNn" role="1N6uqs">
         <ref role="1dDu$A" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
@@ -2003,6 +2011,7 @@
             </node>
           </node>
         </node>
+        <node concept="2dbRIv" id="5E451QuqBkL" role="lGtFl" />
       </node>
       <node concept="1dDu$B" id="13YBgBBSLAh" role="1N6uqs">
         <ref role="1dDu$A" to="3ior:6Iq8148fTg2" resolve="BuildSource_FilesetProjectPart" />

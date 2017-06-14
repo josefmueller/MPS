@@ -77,6 +77,10 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     PsiElement psiElement = MPSPsiProvider.getInstance(project).getPsi(node);
     if (psiElement instanceof MPSPsiNodeBase) return false;
 
+    if(psiElement == null) {
+      return false;
+    }
+
     Navigatable navig = PsiNavigationSupport.getInstance().getDescriptor(psiElement);
     if (navig == null) {
       return false;

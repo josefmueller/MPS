@@ -22,7 +22,7 @@ public class check_ExtensionPointDeclaration_NonTypesystemRule extends AbstractN
   public check_ExtensionPointDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode extensionPoint, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(extensionPoint, MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L, 0x6f6f7f3b7a17bd0bL, "objectType")), SLinkOperations.getTarget(_quotation_createNode_k652mq_a1a0a0a1(), MetaAdapterFactory.getReferenceLink(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cbf8e8L, 0x10de9cbf8e7L, "descriptor")), false)))) {
+    if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(extensionPoint, MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L, 0x6f6f7f3b7a17bd0bL, "objectType")), SLinkOperations.getTarget(_quotation_createNode_k652mq_a1a0a0a0b(), MetaAdapterFactory.getReferenceLink(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cbf8e8L, 0x10de9cbf8e7L, "descriptor")), false)))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(extensionPoint, MetaAdapterFactory.getContainmentLink(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d6L, 0x6f6f7f3b7a17bd0bL, "objectType")), "primitive types not allowed", "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "2141245758541445226", null, errorTarget);
     }
@@ -36,7 +36,7 @@ public class check_ExtensionPointDeclaration_NonTypesystemRule extends AbstractN
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_k652mq_a1a0a0a1() {
+  private static SNode _quotation_createNode_k652mq_a1a0a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, "jetbrains.mps.baseLanguage.blTypes"), 0x10de9cbf8e8L, "PrimitiveTypeRef"), null, null, false);

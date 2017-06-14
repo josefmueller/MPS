@@ -47,7 +47,7 @@ public class GetToolInProjectOperation_SubstituteMenu extends SubstituteMenuBase
       }
       @Override
       public String getMatchingText(String pattern) {
-        return "tool<<" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">>";
+        return "tool<" + NodePresentationUtil.matchingText(getReferent(), getParentNode(), false) + ">";
       }
       @Override
       public String getVisibleMatchingText(String pattern) {

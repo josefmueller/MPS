@@ -25,7 +25,7 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
       {
         SNode _nodeToCheck_1029348928467 = node;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1227099240563", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1227099233435", true), (SNode) _quotation_createNode_fai2pj_a0a0b0b(), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1227099233435", true), (SNode) _quotation_createNode_fai2pj_a1a2a0a1a1(), _info_12389875345);
       }
       return;
     }
@@ -47,7 +47,7 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
       {
         SNode _nodeToCheck_1029348928467 = node;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234961708", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234961710", true), (SNode) _quotation_createNode_fai2pj_a0b0a5a1(SNodeOperations.asNode(SNodeOperations.getConcept(SNodeOperations.getParent(parentMacro)))), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1225234961710", true), (SNode) _quotation_createNode_fai2pj_a1a2a1a0f0b(SNodeOperations.asNode(SNodeOperations.getConcept(SNodeOperations.getParent(parentMacro)))), _info_12389875345);
       }
     }
   }
@@ -60,13 +60,13 @@ public class typeof_TemplateFunctionParameter_outputNode_InferenceRule extends A
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_fai2pj_a0a0b0b() {
+  private static SNode _quotation_createNode_fai2pj_a1a2a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"), 0x108f968b3caL, "SNodeType"), null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_fai2pj_a0b0a5a1(Object parameter_1) {
+  private static SNode _quotation_createNode_fai2pj_a1a2a1a0f0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, "jetbrains.mps.lang.smodel"), 0x108f968b3caL, "SNodeType"), null, null, false);

@@ -5,6 +5,7 @@
   <appStarter implementation="com.intellij.diff.applications.MergeApplication"/>
   <appStarter implementation="com.intellij.ui.win.RecentProjectApplication"/>
   -->
+  <appStarter implementation="com.intellij.openapi.command.impl.UpdatePluginsApp"/>
   <appStarter implementation="com.intellij.help.impl.KeymapGenerator"/>
   <appStarter implementation="com.intellij.help.impl.IntentionDump"/>
   <appStarter implementation="com.intellij.help.impl.InspectionDump"/>
@@ -230,6 +231,7 @@
                       serviceImplementation="com.intellij.openapi.roots.ui.FileAppearanceServiceImpl"/>
 
   <applicationService serviceImplementation="com.intellij.internal.statistic.UsageTrigger"/>
+  <applicationService serviceImplementation="com.intellij.internal.statistic.ToolbarClicksCollector"/>
 
   <applicationService serviceInterface="com.intellij.openapi.application.PathMacros"
                       serviceImplementation="com.intellij.application.options.PathMacrosImpl"/>
@@ -263,8 +265,7 @@
   <projectService serviceInterface="com.intellij.openapi.startup.StartupManager"
                   serviceImplementation="com.intellij.ide.startup.impl.StartupManagerImpl"/>
   <projectService serviceImplementation="com.intellij.openapi.project.ProjectTypeService"/>
-  <projectService serviceInterface="com.intellij.openapi.ui.MasterDetailsStateService"
-                  serviceImplementation="com.intellij.openapi.ui.MasterDetailsStateService"/>
+    <projectService serviceInterface="com.intellij.openapi.ui.MasterDetailsStateService" serviceImplementation="com.intellij.openapi.ui.MasterDetailsStateService"/>
   <projectService serviceInterface="com.intellij.ide.SelectInManager" serviceImplementation="com.intellij.ide.SelectInManager"/>
 
   <projectService serviceInterface="com.intellij.ide.errorTreeView.impl.ErrorTreeViewConfiguration"
@@ -322,20 +323,17 @@
                            instance="com.intellij.ide.GeneralSettingsConfigurable"/>
 
   <!-- Appearance -->
-  <applicationConfigurable groupId="appearance" groupWeight="150" instance="com.intellij.ide.ui.AppearanceConfigurable" id="preferences.lookFeel"
-                           key="title.appearance"
+    <applicationConfigurable groupId="appearance" groupWeight="150" instance="com.intellij.ide.ui.AppearanceConfigurable" id="preferences.lookFeel" key="title.appearance"
                            bundle="messages.IdeBundle"/>
 
   <!-- Keymap -->
-  <applicationConfigurable groupId="root" groupWeight="65" instance="com.intellij.openapi.keymap.impl.ui.KeymapPanel" id="preferences.keymap"
-                           key="keymap.display.name"
+    <applicationConfigurable groupId="root" groupWeight="65" instance="com.intellij.openapi.keymap.impl.ui.KeymapPanel" id="preferences.keymap" key="keymap.display.name"
                            bundle="messages.KeyMapBundle"/>
   <applicationConfigurable groupId="appearance" instance="com.intellij.openapi.keymap.impl.ui.QuickListsPanel" id="reference.idesettings.quicklists"
                            displayName="Quick Lists"/>
 
   <!-- Customizations -->
-  <applicationConfigurable groupId="appearance" groupWeight="130" instance="com.intellij.ide.ui.customization.CustomizationConfigurable"
-                           id="preferences.customizations"
+    <applicationConfigurable groupId="appearance" groupWeight="130" instance="com.intellij.ide.ui.customization.CustomizationConfigurable" id="preferences.customizations"
                            key="title.customizations" bundle="messages.IdeBundle"/>
 
   <!-- Notifications -->
@@ -351,8 +349,7 @@
                            displayName="Plugins"/>
   <actionFromOptionDescriptorProvider implementation="com.intellij.ide.plugins.InstalledPluginsManagerMain$PluginsActionFromOptionDescriptorProvider"/>
   <applicationConfigurable parentId="preferences.general" instance="com.intellij.util.net.HttpProxyConfigurable" id="http.proxy" displayName="HTTP Proxy"/>
-  <applicationConfigurable groupId="tools" displayName="Server Certificates" id="http.certificates"
-                           instance="com.intellij.util.net.ssl.CertificateConfigurable"/>
+    <applicationConfigurable groupId="tools" displayName="Server Certificates" id="http.certificates" instance="com.intellij.util.net.ssl.CertificateConfigurable"/>
 
   <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.PlatformFileTypeFactory"/>
   <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.InternalFileTypeFactory"/>
@@ -360,8 +357,7 @@
   <applicationService serviceInterface="com.intellij.openapi.options.colors.ColorSettingsPages"
                       serviceImplementation="com.intellij.openapi.options.colors.pages.ColorSettingsPagesImpl"/>
 
-  <applicationConfigurable parentId="preferences.general" instance="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable"
-                           id="preferences.updates"
+    <applicationConfigurable parentId="preferences.general" instance="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable" id="preferences.updates"
                            key="updates.settings.title" bundle="messages.IdeBundle"/>
 
   <applicationService serviceInterface="com.intellij.psi.search.scope.packageSet.PackageSetFactory"
@@ -374,19 +370,34 @@
                       serviceImplementation="com.intellij.openapi.actionSystem.impl.AbbreviationManagerImpl"/>
 
   <applicationService serviceImplementation="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"/>
+  <applicationService serviceImplementation="com.intellij.openapi.editor.colors.impl.AppEditorFontOptions"/>
+  <applicationConfigurable
+          parentId="preferences.editor"
+          displayName="Default Font"
+          instance="com.intellij.application.options.editor.fonts.AppEditorFontConfigurable"/>
+  <applicationService serviceInterface="com.intellij.openapi.editor.colors.EditorFontCache"
+                      serviceImplementation="com.intellij.openapi.editor.colors.impl.EditorFontCacheImpl"/>
+
   <applicationService serviceImplementation="com.intellij.codeInsight.hints.settings.ParameterNameHintsSettings"/>
   <applicationService serviceImplementation="com.intellij.openapi.keymap.KeyboardSettingsExternalizable"/>
   <applicationService serviceImplementation="com.intellij.openapi.editor.SpellCheckingEditorCustomizationProvider"/>
 
   <scopeParserExtension implementation="com.intellij.psi.search.scope.packageSet.FilePackageSetParserExtension"/>
-  <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher"
-                      serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>
+    <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher" serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>
 
-    <applicationService serviceInterface="com.intellij.ide.RemoteDesktopService"
-                        serviceImplementation="com.intellij.ide.RemoteDesktopDetector"/>
+  <applicationService serviceInterface="com.intellij.ide.RemoteDesktopService"
+                      serviceImplementation="com.intellij.ide.RemoteDesktopDetector"/>
+
+  <projectService serviceInterface="com.intellij.execution.RunManager" serviceImplementation="com.intellij.execution.impl.RunManagerImpl"/>
+  <projectService serviceImplementation="com.intellij.execution.impl.ProjectRunConfigurationManager"/>
 
   <fileEditorProvider implementation="com.intellij.openapi.fileEditor.impl.http.HttpFileEditorProvider"/>
   <editorActionHandler action="EditorEscape" implementationClass="com.intellij.codeInsight.hint.EscapeHandler" id="hide-hints"/>
+
+  <editorActionHandler action="EditorDelete" implementationClass="com.intellij.openapi.editor.actions.DeleteSelectionHandler"
+                       id="delete.for.selection"/>
+  <editorActionHandler action="EditorBackSpace" implementationClass="com.intellij.openapi.editor.actions.DeleteSelectionHandler"
+                       id="backspace.for.selection" order="after backspace.lookup"/>
 
   <!--MPS Patch: we do not need javaee configurable
   <projectConfigurable groupId="language" groupWeight="110" instance="com.intellij.javaee.ExternalResourceConfigurable" key="display.name.edit.external.resource"
@@ -412,11 +423,13 @@
   <statistics.usagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsOptionsUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.UsageTrigger$MyCollector"/>
+  <statistics.usagesCollector implementation="com.intellij.internal.statistic.ToolbarClicksCollector$ToolbarClicksUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ideSettings.LaFUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.OsNameUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.OsVersionUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.UiInfoUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.JdkInfoUsageCollector"/>
+  <statistics.usagesCollector implementation="com.intellij.internal.statistic.JdkSettingsUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.FontSizeInfoUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.BuildNumberUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ScaleInfoUsageCollector"/>
@@ -470,8 +483,6 @@
   <fileDocumentSynchronizationVetoer implementation="com.intellij.openapi.fileEditor.impl.LargeFileSavingVetoer"/>
   <frameEditorComponentProvider implementation="com.intellij.openapi.wm.ex.DefaultFrameEditorComponentProvider"/>
 
-  <lang.lineWrapStrategy language="TEXT" implementationClass="com.intellij.openapi.editor.TextLineWrapPositionStrategy"/>
-
   <editorNotificationProvider implementation="com.intellij.openapi.editor.impl.ForcedSoftWrapsNotificationProvider"/>
   <editorNotificationProvider implementation="com.intellij.ide.FileChangedNotificationProvider"/>
   <editorNotificationProvider implementation="com.intellij.openapi.updateSettings.impl.pluginsAdvertisement.PluginAdvertiserEditorNotificationProvider"/>
@@ -503,7 +514,7 @@
 
   <intentionAction>
     <className>com.intellij.openapi.editor.actions.FlipCommaIntention</className>
-      <category>Other</category>
+    <category>Other</category>
   </intentionAction>
 
   <!--
