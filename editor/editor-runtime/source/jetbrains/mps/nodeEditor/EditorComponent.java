@@ -41,6 +41,8 @@ import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.IdeGlassPane;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.openapi.wm.ex.StatusBarEx;
+import com.intellij.psi.codeStyle.MinusculeMatcher;
+import com.intellij.psi.codeStyle.NameUtil;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBScrollBar;
 import com.intellij.ui.components.JBScrollPane;
@@ -82,6 +84,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_PasteNodeRelative;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_SideTransform;
 import jetbrains.mps.nodeEditor.cellActions.SideTransformSubstituteInfo.Side;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfoFilterDecorator;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
@@ -220,6 +223,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
@@ -2479,6 +2483,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return false;
     }
 
+    substituteInfo = new NodeSubstituteInfoFilterDecorator(substituteInfo, getEditorContext().getRepository()) {
+      @Override
+      protected Predicate<SubstituteAction> createFilter(String pattern) {
+        MinusculeMatcher matcher = NameUtil.buildMatcher("*" + pattern).build();
+        return action -> matcher.matches(action.getMatchingText(pattern));
+      }
+    };
     // do substitute...
     LOG.debug("substitute info : " + substituteInfo);
     NodeSubstitutePatternEditor patternEditor = ((EditorCell) editorCell).createSubstitutePatternEditor();
@@ -2662,6 +2673,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (isDisposed()) {
       return null;
     }
+
     //MPSDK
     if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
       return getSelectedNode();
@@ -2714,6 +2726,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(MPSCommonDataKeys.PLACE.getName())) {
       return ActionPlace.EDITOR;
     }
+
 
     //PDK
     if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {

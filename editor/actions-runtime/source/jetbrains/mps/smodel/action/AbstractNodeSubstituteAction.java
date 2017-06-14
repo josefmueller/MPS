@@ -20,7 +20,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
@@ -138,14 +137,7 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     if (matchingText == null || matchingText.length() == 0) {
       return false;
     }
-    if (matchingText.charAt(0) != pattern.charAt(0)) {
-      return false;
-    }
-    return matches(pattern, matchingText);
-  }
-
-  private boolean matches(String pattern, String matchingText) {
-    return matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString() + ".*");
+    return true;
   }
 
 

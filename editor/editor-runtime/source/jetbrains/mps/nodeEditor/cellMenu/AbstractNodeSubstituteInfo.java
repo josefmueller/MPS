@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.nodeEditor.SubstituteActionUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -36,10 +35,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Author: Sergey Dmitriev.
@@ -49,19 +46,19 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteInfo.class);
 
   private static SModel ourModelForTypechecking = null;
-
   public static SModel getModelForTypechecking() {
     return ourModelForTypechecking;
   }
 
   private List<SubstituteAction> myCachedActionList;
-  private Map<String, List<SubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();
-  private Map<String, List<SubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();
+
   private String myOriginalText;
   private EditorContext myEditorContext;
+  private final SubstituteInfoCache mySubstituteInfoCache;
 
   public AbstractNodeSubstituteInfo(EditorContext editorContext) {
     myEditorContext = editorContext;
+    mySubstituteInfoCache = new SubstituteInfoCache();
   }
 
   public EditorContext getEditorContext() {
@@ -87,8 +84,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   @Override
   public void invalidateActions() {
     myCachedActionList = null;
-    myPatternsToActionListsCache.clear();
-    myStrictPatternsToActionListsCache.clear();
+    mySubstituteInfoCache.clear();
   }
 
   @Override
@@ -98,11 +94,13 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
       public Boolean compute() {
         int count = 0;
         for (SubstituteAction action : getActionsFromCache(pattern, strictMatching)) {
-          if (strictMatching ? action.canSubstituteStrictly(pattern) : action.canSubstitute(pattern)) {
+          if (shouldAddItem(action, pattern, strictMatching)) {
             count++;
           }
 
-          if (count > n) return false;
+          if (count > n) {
+            return false;
+          }
         }
 
         return n == count;
@@ -126,7 +124,9 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
       final InequalitySystem inequalitiesSystem = getInequalitiesSystem(contextCell);
 
       List<SubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
-      if (inequalitiesSystem == null) return substituteActionList;
+      if (inequalitiesSystem == null) {
+        return substituteActionList;
+      }
 
       List<SubstituteAction> result = new ArrayList<SubstituteAction>();
       for (SubstituteAction nodeSubstituteAction : substituteActionList) {
@@ -137,7 +137,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
           }
         } catch (Throwable th) {
           LOG.error("Exception on checking smart matching conditions for action: " + (nodeSubstituteAction == null ? "null" : nodeSubstituteAction.getClass()),
-              th);
+                    th);
         }
       }
       return result;
@@ -159,18 +159,26 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
         ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
         for (SubstituteAction item : actionsFromCache) {
           try {
-            if (strictMatching ? item.canSubstituteStrictly(pattern) : SubstituteActionUtil.canSubstitute(item, pattern)) {
+            if (shouldAddItem(item, pattern, strictMatching)) {
               result.add(item);
             }
           } catch (Throwable th) {
             LOG.error("Exception on calling canSubstitute on a substitute action " + (item == null ? "null" : item.getClass()), th);
           }
         }
-        putActionsToCache(pattern, strictMatching, result);
+        mySubstituteInfoCache.putActionsToCache(pattern, strictMatching, result);
         result.trimToSize();
         return result;
       }
     });
+  }
+
+  private boolean shouldAddItem(SubstituteAction item, String pattern, boolean strictMatching) {
+    if (strictMatching) {
+      return item.canSubstituteStrictly(pattern);
+    } else {
+      return item.canSubstitute(pattern);
+    }
   }
 
   private List<SubstituteAction> getActions() {
@@ -185,38 +193,13 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
     return myCachedActionList;
   }
 
-  private void putActionsToCache(String pattern, boolean strictMatching, List<SubstituteAction> actions) {
-    List<SubstituteAction> actionsCopy = new ArrayList<SubstituteAction>(actions);
-    if (strictMatching) {
-      myStrictPatternsToActionListsCache.put(pattern, actionsCopy);
-    } else {
-      myPatternsToActionListsCache.put(pattern, actionsCopy);
-    }
-  }
-
   private List<SubstituteAction> getActionsFromCache(String pattern, boolean strictMatching) {
-    if (pattern == null) {
+    List<SubstituteAction> actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching);
+    if (actions != null){
+      return actions;
+    } else {
       return Collections.unmodifiableList(getActions());
     }
-    if (!strictMatching) {
-      if (pattern.isEmpty()) {
-        if (myPatternsToActionListsCache.containsKey(pattern)) {
-          return Collections.unmodifiableList(myPatternsToActionListsCache.get(pattern));
-        }
-      } else {
-        for (; pattern.length() > 0; pattern = pattern.substring(0, pattern.length() - 1)) {
-          if (myPatternsToActionListsCache.containsKey(pattern)) {
-            return Collections.unmodifiableList(myPatternsToActionListsCache.get(pattern));
-          }
-        }
-      }
-    } else {
-      if (myStrictPatternsToActionListsCache.containsKey(pattern)) {
-        return Collections.unmodifiableList(myStrictPatternsToActionListsCache.get(pattern));
-      } else if (myPatternsToActionListsCache.containsKey(pattern)) {
-        return Collections.unmodifiableList(myPatternsToActionListsCache.get(pattern));
-      }
-    }
-    return Collections.unmodifiableList(getActions());
+
   }
 }

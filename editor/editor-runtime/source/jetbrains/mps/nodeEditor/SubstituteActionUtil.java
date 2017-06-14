@@ -16,19 +16,18 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.PatternUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
+@ToRemove(version = 2017.2)
+@Deprecated
 public class SubstituteActionUtil {
   static final int CAN_SUBSTITUTE_VIA_PATTERN = 2;
   static final int CAN_SUBSTITUTE_VIA_SEARCH = 1;
@@ -66,6 +65,8 @@ public class SubstituteActionUtil {
     return getSubstituteRate(action, pattern) != CANT_SUBSTITUTE;
   }
 
+
+  @Deprecated
   public static String createText(@NotNull SubstituteAction action, @Nullable String pattern, @NotNull String color) {
     String visibleMatchingText = action.getVisibleMatchingText(pattern);
     if (pattern == null || visibleMatchingText == null) {
@@ -113,6 +114,7 @@ public class SubstituteActionUtil {
   }
 
   @NotNull
+  @Deprecated
   private static List<Integer> getIndexes(SubstituteAction action, String pattern, String visibleMatchingText) {
     List<Integer> indexList = new ArrayList<Integer>();
     int substituteRate = getSubstituteRate(action, pattern);
