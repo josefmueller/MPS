@@ -16,23 +16,16 @@
 package jetbrains.mps.editor.runtime.menus;
 
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-/**
- * This class will be removed and should not be used
- * Same as {@link SubstituteItemProxy} which should be used
- */
-@ToRemove(version = 2017.1)
-@Deprecated
-public class SubstituteItemFacade {
+public class SubstituteItemProxy {
   private final SubstituteMenuItem myItemToWrap;
 
   private String myOriginalMatchingText;
   private String myOriginalDescriptionText;
   private SAbstractConcept myOriginalOutputConcept;
 
-  public SubstituteItemFacade(SubstituteMenuItem itemToWrap) {
+  public SubstituteItemProxy(SubstituteMenuItem itemToWrap) {
     myItemToWrap = itemToWrap;
   }
 
