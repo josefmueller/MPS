@@ -664,12 +664,12 @@
                 <node concept="liA8E" id="74sHQpDcrqn" role="2OqNvi">
                   <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                   <node concept="3VsKOn" id="74sHQpDcrvh" role="37wK5m">
-                    <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
+                    <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationRegistry" />
                   </node>
                 </node>
               </node>
-              <node concept="liA8E" id="74sHQpDcrZj" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:5SsFeroaac6" resolve="isMigrationRequired" />
+              <node concept="liA8E" id="4biA4YBBc2b" role="2OqNvi">
+                <ref role="37wK5l" to="bim2:4biA4YBz_63" resolve="isMigrationRequired" />
               </node>
             </node>
           </node>

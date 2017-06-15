@@ -43,18 +43,14 @@
       <headless-implementation-class>jetbrains.mps.ide.migration.HeadlessMigrationExecutor</headless-implementation-class>
     </component>
     <component>
-      <interface-class>jetbrains.mps.ide.migration.MigrationChecker</interface-class>
-      <implementation-class>jetbrains.mps.ide.migration.MigrationCheckerImpl</implementation-class>
+      <interface-class>jetbrains.mps.ide.migration.MigrationRegistry</interface-class>
+      <implementation-class>jetbrains.mps.ide.migration.MigrationRegistryImpl</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.migration.MigrationMakeBlocker</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.migration.storage.StorageAssistant</implementation-class>
-    </component>
-    <component>
-      <interface-class>jetbrains.mps.ide.migration.MigrationManager</interface-class>
-      <implementation-class>jetbrains.mps.ide.migration.MigrationManagerImpl</implementation-class>
     </component>
   </project-components>
 

@@ -216,6 +216,7 @@
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
+      <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
@@ -393,6 +394,7 @@
         <child id="1197687026896" name="keyType" index="3rHrn6" />
         <child id="1197687035757" name="valueType" index="3rHtpV" />
       </concept>
+      <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1240824834947" name="jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation" flags="nn" index="3AV6Ez" />
@@ -403,6 +405,9 @@
       </concept>
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
+      <concept id="5686963296372573083" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" flags="in" index="3O5elB">
+        <child id="5686963296372573084" name="elementType" index="3O5elw" />
+      </concept>
       <concept id="1180964022718" name="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation" flags="nn" index="3QWeyG" />
       <concept id="1178894719932" name="jetbrains.mps.baseLanguage.collections.structure.DistinctOperation" flags="nn" index="1VAtEI" />
     </language>
@@ -2033,14 +2038,14 @@
                 <node concept="3cpWsn" id="4hH4xQoOegc" role="3cpWs9">
                   <property role="TrG5h" value="manager" />
                   <node concept="3uibUv" id="4hH4xQoOeg8" role="1tU5fm">
-                    <ref role="3uigEE" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
+                    <ref role="3uigEE" to="bim2:5SsFeroaabl" resolve="MigrationRegistry" />
                   </node>
                   <node concept="2OqwBi" id="4hH4xQoOegd" role="33vP2m">
                     <node concept="37vLTw" id="5vn5x3cWIRd" role="2Oq$k0">
                       <ref role="3cqZAo" node="4hH4xQoL42E" resolve="mySession" />
                     </node>
                     <node concept="liA8E" id="4hH4xQoOegf" role="2OqNvi">
-                      <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
+                      <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationRegistry" />
                     </node>
                   </node>
                 </node>
@@ -2118,7 +2123,7 @@
                       <ref role="3cqZAo" node="4hH4xQoOegc" resolve="manager" />
                     </node>
                     <node concept="liA8E" id="5vn5x3cW5vw" role="2OqNvi">
-                      <ref role="37wK5l" to="bim2:6CdT9mpAR4u" resolve="getProjectMigrationsToApply" />
+                      <ref role="37wK5l" to="bim2:4biA4YBnY_p" resolve="getProjectMigrations" />
                     </node>
                   </node>
                   <node concept="2es0OD" id="5vn5x3d18sJ" role="2OqNvi">
@@ -2263,8 +2268,8 @@
               <node concept="3cpWs8" id="7L$Uh3Nfkm6" role="3cqZAp">
                 <node concept="3cpWsn" id="7L$Uh3Nfkm7" role="3cpWs9">
                   <property role="TrG5h" value="migrationsApplied" />
-                  <node concept="_YKpA" id="7L$Uh3NfklL" role="1tU5fm">
-                    <node concept="3uibUv" id="6fMyXCHpWVq" role="_ZDj9">
+                  <node concept="3vKaQO" id="4biA4YByP0b" role="1tU5fm">
+                    <node concept="3uibUv" id="4biA4YBySMm" role="3O5elw">
                       <ref role="3uigEE" to="bim2:6fMyXCHDaRA" resolve="ScriptApplied" />
                     </node>
                   </node>
@@ -2273,7 +2278,7 @@
                       <ref role="3cqZAo" node="4hH4xQoOegc" resolve="manager" />
                     </node>
                     <node concept="liA8E" id="7L$Uh3Nfkma" role="2OqNvi">
-                      <ref role="37wK5l" to="bim2:6CdT9mpCnt5" resolve="getModuleMigrationsToApply" />
+                      <ref role="37wK5l" to="bim2:4biA4YBo0AI" resolve="getModuleMigrations" />
                       <node concept="2YIFZM" id="7L$Uh3Nfkmb" role="37wK5m">
                         <ref role="1Pybhc" to="6f4m:4JlWzK6VGnA" resolve="MigrationModuleUtil" />
                         <ref role="37wK5l" to="6f4m:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
@@ -4064,11 +4069,11 @@
     <node concept="3clFb_" id="4hH4xQoNdET" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="getMigrationManager" />
+      <property role="TrG5h" value="getMigrationRegistry" />
       <node concept="3clFbS" id="4hH4xQoNdEW" role="3clF47" />
       <node concept="3Tm1VV" id="4hH4xQoNdEX" role="1B3o_S" />
       <node concept="3uibUv" id="4hH4xQoNcWd" role="3clF45">
-        <ref role="3uigEE" to="bim2:5SsFeroaabl" resolve="MigrationManager" />
+        <ref role="3uigEE" to="bim2:5SsFeroaabl" resolve="MigrationRegistry" />
       </node>
     </node>
     <node concept="2tJIrI" id="xB9FQhi9d$" role="jymVt" />
@@ -4080,6 +4085,17 @@
       <node concept="3Tm1VV" id="xB9FQhidds" role="1B3o_S" />
       <node concept="3uibUv" id="xB9FQhid5g" role="3clF45">
         <ref role="3uigEE" to="bim2:xB9FQhi9bJ" resolve="MigrationChecker" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4biA4YBo9pv" role="jymVt" />
+    <node concept="3clFb_" id="4biA4YBor0v" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getExecutor" />
+      <node concept="3clFbS" id="4biA4YBor0y" role="3clF47" />
+      <node concept="3Tm1VV" id="4biA4YBor0z" role="1B3o_S" />
+      <node concept="3uibUv" id="4biA4YBoqSe" role="3clF45">
+        <ref role="3uigEE" to="bim2:4biA4YBo9Fb" resolve="MigrationExecutor" />
       </node>
     </node>
     <node concept="2tJIrI" id="4hH4xQoNc0V" role="jymVt" />
@@ -4619,21 +4635,21 @@
                             <node concept="3zZkjj" id="6Z8qT6OVIcd" role="2OqNvi">
                               <node concept="1bVj0M" id="6Z8qT6OVIce" role="23t8la">
                                 <node concept="3clFbS" id="6Z8qT6OVIcf" role="1bW5cS">
-                                  <node concept="3clFbF" id="6Z8qT6OVIcg" role="3cqZAp">
-                                    <node concept="2OqwBi" id="6Z8qT6OVIch" role="3clFbG">
-                                      <node concept="2YIFZM" id="6Z8qT6OVIci" role="2Oq$k0">
-                                        <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
-                                        <ref role="37wK5l" to="auc7:79xDgbhf49e" resolve="getUsedLanguages" />
-                                        <node concept="37vLTw" id="6Z8qT6OVIcj" role="37wK5m">
+                                  <node concept="3clFbF" id="4biA4YBB$Rd" role="3cqZAp">
+                                    <node concept="2OqwBi" id="4biA4YBB$Re" role="3clFbG">
+                                      <node concept="2YIFZM" id="4biA4YBB$Rf" role="2Oq$k0">
+                                        <ref role="37wK5l" to="6f4m:79xDgbhf49e" resolve="getUsedLanguages" />
+                                        <ref role="1Pybhc" to="6f4m:4JlWzK6VGnA" resolve="MigrationModuleUtil" />
+                                        <node concept="37vLTw" id="4biA4YBB$Rg" role="37wK5m">
                                           <ref role="3cqZAo" node="6Z8qT6OVIco" resolve="module" />
                                         </node>
                                       </node>
-                                      <node concept="3JPx81" id="6Z8qT6OVIck" role="2OqNvi">
-                                        <node concept="2OqwBi" id="6Z8qT6OVIcl" role="25WWJ7">
-                                          <node concept="37vLTw" id="6Z8qT6OVIcm" role="2Oq$k0">
+                                      <node concept="3JPx81" id="4biA4YBB$Rh" role="2OqNvi">
+                                        <node concept="2OqwBi" id="4biA4YBB$Ri" role="25WWJ7">
+                                          <node concept="37vLTw" id="4biA4YBB$Rj" role="2Oq$k0">
                                             <ref role="3cqZAo" node="6Z8qT6OVwrX" resolve="it" />
                                           </node>
-                                          <node concept="liA8E" id="6Z8qT6OVIcn" role="2OqNvi">
+                                          <node concept="liA8E" id="4biA4YBB$Rk" role="2OqNvi">
                                             <ref role="37wK5l" to="6f4m:2RG318eWpZ$" resolve="getLanguage" />
                                           </node>
                                         </node>
@@ -4736,21 +4752,21 @@
                               <node concept="3zZkjj" id="6Z8qT6OWEhy" role="2OqNvi">
                                 <node concept="1bVj0M" id="6Z8qT6OWEhz" role="23t8la">
                                   <node concept="3clFbS" id="6Z8qT6OWEh$" role="1bW5cS">
-                                    <node concept="3clFbF" id="6Z8qT6OWEh_" role="3cqZAp">
-                                      <node concept="2OqwBi" id="6Z8qT6OWEhA" role="3clFbG">
-                                        <node concept="2YIFZM" id="6Z8qT6OWLLu" role="2Oq$k0">
-                                          <ref role="37wK5l" to="auc7:3UfGsecu9ay" resolve="getModuleDependencies" />
-                                          <ref role="1Pybhc" to="auc7:3UfGsecu96G" resolve="MigrationsUtil" />
-                                          <node concept="37vLTw" id="6Z8qT6OWLLv" role="37wK5m">
+                                    <node concept="3clFbF" id="4biA4YBBwLB" role="3cqZAp">
+                                      <node concept="2OqwBi" id="4biA4YBBwLC" role="3clFbG">
+                                        <node concept="2YIFZM" id="4biA4YBBwLD" role="2Oq$k0">
+                                          <ref role="37wK5l" to="6f4m:3UfGsecu9ay" resolve="getModuleDependencies" />
+                                          <ref role="1Pybhc" to="6f4m:4JlWzK6VGnA" resolve="MigrationModuleUtil" />
+                                          <node concept="37vLTw" id="4biA4YBBwLE" role="37wK5m">
                                             <ref role="3cqZAo" node="6Z8qT6OWEhH" resolve="module" />
                                           </node>
                                         </node>
-                                        <node concept="3JPx81" id="6Z8qT6OWEhD" role="2OqNvi">
-                                          <node concept="2OqwBi" id="6Z8qT6OWEhE" role="25WWJ7">
-                                            <node concept="37vLTw" id="6Z8qT6OWEhF" role="2Oq$k0">
+                                        <node concept="3JPx81" id="4biA4YBBwLF" role="2OqNvi">
+                                          <node concept="2OqwBi" id="4biA4YBBwLG" role="25WWJ7">
+                                            <node concept="37vLTw" id="4biA4YBBwLH" role="2Oq$k0">
                                               <ref role="3cqZAo" node="6Z8qT6OWEi7" resolve="it" />
                                             </node>
-                                            <node concept="liA8E" id="6Z8qT6OWEhG" role="2OqNvi">
+                                            <node concept="liA8E" id="4biA4YBBwLI" role="2OqNvi">
                                               <ref role="37wK5l" to="6f4m:4uVwhQyPurF" resolve="getModule" />
                                             </node>
                                           </node>
@@ -5155,11 +5171,11 @@
                   <ref role="3cqZAo" node="44NRCusPw5W" resolve="session" />
                 </node>
                 <node concept="liA8E" id="5vn5x3cXvNk" role="2OqNvi">
-                  <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
+                  <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationRegistry" />
                 </node>
               </node>
               <node concept="liA8E" id="5vn5x3cXvNl" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:6CdT9mpAR4u" resolve="getProjectMigrationsToApply" />
+                <ref role="37wK5l" to="bim2:4biA4YBnY_p" resolve="getProjectMigrations" />
               </node>
             </node>
           </node>
@@ -7143,20 +7159,10 @@
           <node concept="3cpWsn" id="4hH4xQoI2Ja" role="3cpWs9">
             <property role="TrG5h" value="cleanupStepsCount" />
             <node concept="10Oyi0" id="4hH4xQoI2Jb" role="1tU5fm" />
-            <node concept="2OqwBi" id="4hH4xQoI2Jc" role="33vP2m">
-              <node concept="2OqwBi" id="PobQbObWsN" role="2Oq$k0">
-                <node concept="37vLTw" id="PobQbObWgx" role="2Oq$k0">
-                  <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
-                </node>
-                <node concept="liA8E" id="PobQbObW_k" role="2OqNvi">
-                  <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
-                </node>
-              </node>
-              <node concept="liA8E" id="4hH4xQoI2Je" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:7rK8qWGGnEQ" resolve="projectStepsCount" />
-                <node concept="3clFbT" id="4hH4xQoI2Jf" role="37wK5m">
-                  <property role="3clFbU" value="true" />
-                </node>
+            <node concept="1rXfSq" id="4biA4YB$$G8" role="33vP2m">
+              <ref role="37wK5l" node="36$CdjYdENa" resolve="projectStepsCount" />
+              <node concept="3clFbT" id="4biA4YB$$Mn" role="37wK5m">
+                <property role="3clFbU" value="true" />
               </node>
             </node>
           </node>
@@ -7219,11 +7225,11 @@
                           <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
                         </node>
                         <node concept="liA8E" id="PobQbOc1Jt" role="2OqNvi">
-                          <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
+                          <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationRegistry" />
                         </node>
                       </node>
                       <node concept="liA8E" id="4hH4xQoI2JE" role="2OqNvi">
-                        <ref role="37wK5l" to="bim2:25gV4LspSM9" resolve="nextProjectStep" />
+                        <ref role="37wK5l" to="bim2:4biA4YBARrw" resolve="nextProjectStep" />
                         <node concept="2OqwBi" id="PobQbOc2eN" role="37wK5m">
                           <node concept="37vLTw" id="PobQbOc21o" role="2Oq$k0">
                             <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
@@ -7705,28 +7711,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="78xBDbK8GJR" role="3clF47">
-        <node concept="3cpWs8" id="78xBDbK8GK0" role="3cqZAp">
-          <node concept="3cpWsn" id="78xBDbK8GK1" role="3cpWs9">
-            <property role="TrG5h" value="projectStepsCount" />
-            <node concept="10Oyi0" id="78xBDbK8GK2" role="1tU5fm" />
-            <node concept="2OqwBi" id="78xBDbK8GK3" role="33vP2m">
-              <node concept="2OqwBi" id="78xBDbK9_5w" role="2Oq$k0">
-                <node concept="37vLTw" id="78xBDbK9_5x" role="2Oq$k0">
-                  <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
-                </node>
-                <node concept="liA8E" id="78xBDbK9_5y" role="2OqNvi">
-                  <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
-                </node>
-              </node>
-              <node concept="liA8E" id="78xBDbK8GK5" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:7rK8qWGGnEQ" resolve="projectStepsCount" />
-                <node concept="3clFbT" id="78xBDbK8GK6" role="37wK5m">
-                  <property role="3clFbU" value="false" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="78xBDbK9Ap4" role="3cqZAp">
           <node concept="2OqwBi" id="78xBDbK9Ap5" role="3clFbG">
             <node concept="37vLTw" id="78xBDbK9Ap6" role="2Oq$k0">
@@ -7737,8 +7721,11 @@
               <node concept="Xl_RD" id="78xBDbK9Ap8" role="37wK5m">
                 <property role="Xl_RC" value="Running project migrations..." />
               </node>
-              <node concept="37vLTw" id="78xBDbK9B6J" role="37wK5m">
-                <ref role="3cqZAo" node="78xBDbK8GK1" resolve="projectStepsCount" />
+              <node concept="1rXfSq" id="4biA4YB$BLU" role="37wK5m">
+                <ref role="37wK5l" node="36$CdjYdENa" resolve="projectStepsCount" />
+                <node concept="3clFbT" id="4biA4YB$BLV" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
               </node>
             </node>
           </node>
@@ -7766,11 +7753,11 @@
                       <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
                     </node>
                     <node concept="liA8E" id="78xBDbK9_5_" role="2OqNvi">
-                      <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
+                      <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationRegistry" />
                     </node>
                   </node>
                   <node concept="liA8E" id="78xBDbK8GKe" role="2OqNvi">
-                    <ref role="37wK5l" to="bim2:25gV4LspSM9" resolve="nextProjectStep" />
+                    <ref role="37wK5l" to="bim2:4biA4YBARrw" resolve="nextProjectStep" />
                     <node concept="2OqwBi" id="78xBDbK8GKf" role="37wK5m">
                       <node concept="37vLTw" id="78xBDbK8GKg" role="2Oq$k0">
                         <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
@@ -7846,20 +7833,20 @@
                   </node>
                   <node concept="1bVj0M" id="3DyGwJ_6fS4" role="37wK5m">
                     <node concept="3clFbS" id="3DyGwJ_6fS5" role="1bW5cS">
-                      <node concept="3clFbF" id="3DyGwJ_6fS6" role="3cqZAp">
-                        <node concept="2OqwBi" id="3DyGwJ_6fS7" role="3clFbG">
-                          <node concept="37vLTw" id="12g5A1PrGFH" role="2Oq$k0">
-                            <ref role="3cqZAo" node="78xBDbK8GKa" resolve="pm" />
+                      <node concept="3clFbF" id="4biA4YBzPCI" role="3cqZAp">
+                        <node concept="2OqwBi" id="4biA4YBzQaI" role="3clFbG">
+                          <node concept="2OqwBi" id="4biA4YBzPR5" role="2Oq$k0">
+                            <node concept="37vLTw" id="4biA4YBzPCG" role="2Oq$k0">
+                              <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
+                            </node>
+                            <node concept="liA8E" id="4biA4YBzQ1S" role="2OqNvi">
+                              <ref role="37wK5l" node="4biA4YBor0v" resolve="getExecutor" />
+                            </node>
                           </node>
-                          <node concept="liA8E" id="3DyGwJ_6fS9" role="2OqNvi">
-                            <ref role="37wK5l" to="bdll:~ProjectMigration.execute(jetbrains.mps.project.Project):void" resolve="execute" />
-                            <node concept="2OqwBi" id="3DyGwJ_6fSa" role="37wK5m">
-                              <node concept="37vLTw" id="3DyGwJ_6fSb" role="2Oq$k0">
-                                <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
-                              </node>
-                              <node concept="liA8E" id="3DyGwJ_6fSc" role="2OqNvi">
-                                <ref role="37wK5l" node="4hH4xQoNqF2" resolve="getProject" />
-                              </node>
+                          <node concept="liA8E" id="4biA4YBzQrO" role="2OqNvi">
+                            <ref role="37wK5l" to="bim2:4biA4YBoZIr" resolve="executeProjectMigration" />
+                            <node concept="37vLTw" id="4biA4YBzQA5" role="37wK5m">
+                              <ref role="3cqZAo" node="78xBDbK8GKa" resolve="pm" />
                             </node>
                           </node>
                         </node>
@@ -7917,25 +7904,6 @@
         </node>
       </node>
       <node concept="3clFbS" id="78xBDbK8QuW" role="3clF47">
-        <node concept="3cpWs8" id="78xBDbK8QuY" role="3cqZAp">
-          <node concept="3cpWsn" id="78xBDbK8QuZ" role="3cpWs9">
-            <property role="TrG5h" value="languageStepsCount" />
-            <node concept="10Oyi0" id="78xBDbK8Qv0" role="1tU5fm" />
-            <node concept="2OqwBi" id="78xBDbK8Qv1" role="33vP2m">
-              <node concept="2OqwBi" id="78xBDbK9FLM" role="2Oq$k0">
-                <node concept="37vLTw" id="78xBDbK8Qv2" role="2Oq$k0">
-                  <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
-                </node>
-                <node concept="liA8E" id="78xBDbK9FZU" role="2OqNvi">
-                  <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
-                </node>
-              </node>
-              <node concept="liA8E" id="78xBDbK8Qv3" role="2OqNvi">
-                <ref role="37wK5l" to="bim2:7rK8qWGGnJl" resolve="moduleStepsCount" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="78xBDbK9Hmc" role="3cqZAp">
           <node concept="2OqwBi" id="78xBDbK9Hmd" role="3clFbG">
             <node concept="37vLTw" id="78xBDbK9Hme" role="2Oq$k0">
@@ -7946,8 +7914,8 @@
               <node concept="Xl_RD" id="78xBDbK9Hmg" role="37wK5m">
                 <property role="Xl_RC" value="Running language migrations..." />
               </node>
-              <node concept="37vLTw" id="78xBDbK9HMe" role="37wK5m">
-                <ref role="3cqZAo" node="78xBDbK8QuZ" resolve="languageStepsCount" />
+              <node concept="1rXfSq" id="4biA4YB$Ail" role="37wK5m">
+                <ref role="37wK5l" node="36$CdjYdEU$" resolve="moduleStepsCount" />
               </node>
             </node>
           </node>
@@ -7985,11 +7953,11 @@
                       <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
                     </node>
                     <node concept="liA8E" id="78xBDbK9Ldh" role="2OqNvi">
-                      <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
+                      <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationRegistry" />
                     </node>
                   </node>
                   <node concept="liA8E" id="78xBDbK8Qvq" role="2OqNvi">
-                    <ref role="37wK5l" to="bim2:5SsFeroaaca" resolve="nextModuleStep" />
+                    <ref role="37wK5l" to="bim2:4biA4YBAIVQ" resolve="nextModuleStep" />
                     <node concept="37vLTw" id="78xBDbKdYg1" role="37wK5m">
                       <ref role="3cqZAo" node="78xBDbK8Qvb" resolve="preferredId" />
                     </node>
@@ -8133,7 +8101,7 @@
                       <node concept="3clFbF" id="3DyGwJ_6ghF" role="3cqZAp">
                         <node concept="2OqwBi" id="6fMyXCHBOr9" role="3clFbG">
                           <node concept="liA8E" id="6fMyXCHBOGX" role="2OqNvi">
-                            <ref role="37wK5l" to="bim2:6Z8qT6OTV9H" resolve="executeScript" />
+                            <ref role="37wK5l" to="bim2:4biA4YBoReJ" resolve="executeModuleMigration" />
                             <node concept="37vLTw" id="6fMyXCHC7dp" role="37wK5m">
                               <ref role="3cqZAo" node="78xBDbK8Qvm" resolve="sa" />
                             </node>
@@ -8143,7 +8111,7 @@
                               <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
                             </node>
                             <node concept="liA8E" id="6fMyXCHBNIe" role="2OqNvi">
-                              <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
+                              <ref role="37wK5l" node="4biA4YBor0v" resolve="getExecutor" />
                             </node>
                           </node>
                         </node>
@@ -8164,11 +8132,11 @@
                                 <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
                               </node>
                               <node concept="liA8E" id="12g5A1PrIem" role="2OqNvi">
-                                <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationManager" />
+                                <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationRegistry" />
                               </node>
                             </node>
                             <node concept="liA8E" id="12g5A1PrIen" role="2OqNvi">
-                              <ref role="37wK5l" to="bim2:5SsFeroaaca" resolve="nextModuleStep" />
+                              <ref role="37wK5l" to="bim2:4biA4YBAIVQ" resolve="nextModuleStep" />
                               <node concept="37vLTw" id="12g5A1PrIeo" role="37wK5m">
                                 <ref role="3cqZAo" node="78xBDbK8Qvb" resolve="preferredId" />
                               </node>
@@ -8326,6 +8294,217 @@
             <ref role="3cqZAo" node="7D61RZ3fnJe" resolve="haveNotMigrated" />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4biA4YBzU2U" role="jymVt" />
+    <node concept="3clFb_" id="36$CdjYdEU$" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="moduleStepsCount" />
+      <node concept="3Tm6S6" id="4biA4YB$lJI" role="1B3o_S" />
+      <node concept="10Oyi0" id="36$CdjYdEUo" role="3clF45" />
+      <node concept="3clFbS" id="36$CdjYdEU8" role="3clF47">
+        <node concept="3cpWs8" id="4biA4YB$P2T" role="3cqZAp">
+          <node concept="3cpWsn" id="4biA4YB$P2U" role="3cpWs9">
+            <property role="TrG5h" value="res" />
+            <node concept="10Oyi0" id="4biA4YB$P2R" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="4biA4YB$V3g" role="3cqZAp">
+          <node concept="1QHqEC" id="4biA4YB$V3i" role="1QHqEI">
+            <node concept="3clFbS" id="4biA4YB$V3k" role="1bW5cS">
+              <node concept="3cpWs8" id="4biA4YBBDvG" role="3cqZAp">
+                <node concept="3cpWsn" id="4biA4YBBDvC" role="3cpWs9">
+                  <property role="TrG5h" value="p" />
+                  <node concept="3uibUv" id="4biA4YBBDvF" role="1tU5fm">
+                    <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+                  </node>
+                  <node concept="2OqwBi" id="4biA4YB$dt5" role="33vP2m">
+                    <node concept="37vLTw" id="4biA4YB$dfj" role="2Oq$k0">
+                      <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
+                    </node>
+                    <node concept="liA8E" id="4biA4YB$dC8" role="2OqNvi">
+                      <ref role="37wK5l" node="4hH4xQoNqF2" resolve="getProject" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="4biA4YBBDvO" role="3cqZAp">
+                <node concept="3cpWsn" id="4biA4YBBDvP" role="3cpWs9">
+                  <property role="TrG5h" value="modules" />
+                  <node concept="A3Dl8" id="4biA4YBBDvQ" role="1tU5fm">
+                    <node concept="3uibUv" id="4biA4YBBDvR" role="A3Ik2">
+                      <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                    </node>
+                  </node>
+                  <node concept="2YIFZM" id="4biA4YBBDvS" role="33vP2m">
+                    <ref role="37wK5l" to="6f4m:3UfGsecu96H" resolve="getMigrateableModulesFromProject" />
+                    <ref role="1Pybhc" to="6f4m:4JlWzK6VGnA" resolve="MigrationModuleUtil" />
+                    <node concept="37vLTw" id="4biA4YBBDvT" role="37wK5m">
+                      <ref role="3cqZAo" node="4biA4YBBDvC" resolve="p" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="4biA4YB$Q$i" role="3cqZAp">
+                <node concept="37vLTI" id="4biA4YB$Q$k" role="3clFbG">
+                  <node concept="2OqwBi" id="4biA4YB$P2V" role="37vLTx">
+                    <node concept="2OqwBi" id="4biA4YB$P2W" role="2Oq$k0">
+                      <node concept="2OqwBi" id="4biA4YB$P2X" role="2Oq$k0">
+                        <node concept="37vLTw" id="4biA4YB$P2Y" role="2Oq$k0">
+                          <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
+                        </node>
+                        <node concept="liA8E" id="4biA4YB$P2Z" role="2OqNvi">
+                          <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationRegistry" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="4biA4YB$P30" role="2OqNvi">
+                        <ref role="37wK5l" to="bim2:4biA4YBo0AI" resolve="getModuleMigrations" />
+                        <node concept="37vLTw" id="4biA4YB$P31" role="37wK5m">
+                          <ref role="3cqZAo" node="4biA4YBBDvP" resolve="modules" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="34oBXx" id="4biA4YB$P33" role="2OqNvi" />
+                  </node>
+                  <node concept="37vLTw" id="4biA4YB$Q$o" role="37vLTJ">
+                    <ref role="3cqZAo" node="4biA4YB$P2U" resolve="res" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4biA4YB_0QY" role="ukAjM">
+            <node concept="2OqwBi" id="4biA4YB$YEM" role="2Oq$k0">
+              <node concept="37vLTw" id="4biA4YB$YEN" role="2Oq$k0">
+                <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
+              </node>
+              <node concept="liA8E" id="4biA4YB$YEO" role="2OqNvi">
+                <ref role="37wK5l" node="4hH4xQoNqF2" resolve="getProject" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4biA4YB_1tw" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4biA4YB$13A" role="3cqZAp">
+          <node concept="37vLTw" id="4biA4YB$P34" role="3clFbG">
+            <ref role="3cqZAo" node="4biA4YB$P2U" resolve="res" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4biA4YBzVDU" role="jymVt" />
+    <node concept="3clFb_" id="36$CdjYdENa" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="projectStepsCount" />
+      <node concept="3Tm6S6" id="4biA4YB$kjp" role="1B3o_S" />
+      <node concept="10Oyi0" id="36$CdjYdENc" role="3clF45" />
+      <node concept="3clFbS" id="36$CdjYdEN8" role="3clF47">
+        <node concept="3cpWs8" id="4biA4YB_dAb" role="3cqZAp">
+          <node concept="3cpWsn" id="4biA4YB_dAc" role="3cpWs9">
+            <property role="TrG5h" value="res" />
+            <node concept="10Oyi0" id="4biA4YB_d_R" role="1tU5fm" />
+          </node>
+        </node>
+        <node concept="1QHqEK" id="4biA4YB_61H" role="3cqZAp">
+          <node concept="1QHqEC" id="4biA4YB_61J" role="1QHqEI">
+            <node concept="3clFbS" id="4biA4YB_61L" role="1bW5cS">
+              <node concept="3cpWs8" id="36$CdjYdENY" role="3cqZAp">
+                <node concept="3cpWsn" id="36$CdjYdEO0" role="3cpWs9">
+                  <property role="TrG5h" value="migrations" />
+                  <node concept="A3Dl8" id="4biA4YB$uEJ" role="1tU5fm">
+                    <node concept="3uibUv" id="4biA4YB$uEL" role="A3Ik2">
+                      <ref role="3uigEE" to="bdll:~ProjectMigration" resolve="ProjectMigration" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="36$CdjYdEKO" role="33vP2m">
+                    <node concept="2OqwBi" id="4biA4YB$q7T" role="2Oq$k0">
+                      <node concept="37vLTw" id="4biA4YB$oyH" role="2Oq$k0">
+                        <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
+                      </node>
+                      <node concept="liA8E" id="4biA4YB$r$K" role="2OqNvi">
+                        <ref role="37wK5l" node="4hH4xQoNdET" resolve="getMigrationRegistry" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="36$CdjYdEKS" role="2OqNvi">
+                      <ref role="37wK5l" to="bim2:4biA4YBnY_p" resolve="getProjectMigrations" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs8" id="4biA4YB_DGM" role="3cqZAp">
+                <node concept="3cpWsn" id="4biA4YB_DGN" role="3cpWs9">
+                  <property role="TrG5h" value="cleanupSize" />
+                  <node concept="10Oyi0" id="4biA4YB_DGt" role="1tU5fm" />
+                  <node concept="2OqwBi" id="4biA4YB_DGO" role="33vP2m">
+                    <node concept="2OqwBi" id="4biA4YB_DGP" role="2Oq$k0">
+                      <node concept="37vLTw" id="4biA4YB_DGQ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="36$CdjYdEO0" resolve="migrations" />
+                      </node>
+                      <node concept="UnYns" id="4biA4YB_DGR" role="2OqNvi">
+                        <node concept="3uibUv" id="4biA4YB_DGS" role="UnYnz">
+                          <ref role="3uigEE" to="bdll:~CleanupProjectMigration" resolve="CleanupProjectMigration" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="34oBXx" id="4biA4YB_DGT" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="4biA4YB_RGf" role="3cqZAp">
+                <node concept="37vLTI" id="4biA4YB_RGh" role="3clFbG">
+                  <node concept="3K4zz7" id="4biA4YB_dAd" role="37vLTx">
+                    <node concept="3cpWsd" id="4biA4YB_dAe" role="3K4GZi">
+                      <node concept="37vLTw" id="4biA4YB_dAf" role="3uHU7w">
+                        <ref role="3cqZAo" node="4biA4YB_DGN" resolve="cleanupSize" />
+                      </node>
+                      <node concept="2OqwBi" id="4biA4YB_dAg" role="3uHU7B">
+                        <node concept="37vLTw" id="4biA4YB_dAh" role="2Oq$k0">
+                          <ref role="3cqZAo" node="36$CdjYdEO0" resolve="migrations" />
+                        </node>
+                        <node concept="34oBXx" id="4biA4YB_dAi" role="2OqNvi" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="4biA4YB_dAj" role="3K4Cdx">
+                      <ref role="3cqZAo" node="36$CdjYdEPM" resolve="isCleanup" />
+                    </node>
+                    <node concept="37vLTw" id="4biA4YB_dAk" role="3K4E3e">
+                      <ref role="3cqZAo" node="4biA4YB_DGN" resolve="cleanupSize" />
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="4biA4YB_RGl" role="37vLTJ">
+                    <ref role="3cqZAo" node="4biA4YB_dAc" resolve="res" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4biA4YB_Yhn" role="ukAjM">
+            <node concept="2OqwBi" id="4biA4YB_Yho" role="2Oq$k0">
+              <node concept="37vLTw" id="4biA4YB_Yhp" role="2Oq$k0">
+                <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
+              </node>
+              <node concept="liA8E" id="4biA4YB_Yhq" role="2OqNvi">
+                <ref role="37wK5l" node="4hH4xQoNqF2" resolve="getProject" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4biA4YB_Yhr" role="2OqNvi">
+              <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="36$CdjYdEKy" role="3cqZAp">
+          <node concept="37vLTw" id="4biA4YB_dAl" role="3cqZAk">
+            <ref role="3cqZAo" node="4biA4YB_dAc" resolve="res" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="36$CdjYdEPM" role="3clF46">
+        <property role="TrG5h" value="isCleanup" />
+        <node concept="10P_77" id="36$CdjYdEPE" role="1tU5fm" />
       </node>
     </node>
   </node>
