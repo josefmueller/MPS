@@ -55,7 +55,7 @@ public class migrateExtension extends MigrationScriptBase {
     final SNode deactivatePlaceholder = _quotation_createNode_2kk9yi_a0b0c();
 
     {
-      final GeneratedMatchingPattern pattern = new Pattern_vpqlu0kqr47y(_quotation_createNode_2kk9yi_a0a3a2());
+      final GeneratedMatchingPattern pattern = new Pattern_2kk9yi_a3a2(_quotation_createNode_2kk9yi_a0a3a2());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -99,7 +99,7 @@ public class migrateExtension extends MigrationScriptBase {
     }
 
     {
-      final GeneratedMatchingPattern pattern = new Pattern_1jxyiazehb9bk(_quotation_createNode_2kk9yi_a0a5a2());
+      final GeneratedMatchingPattern pattern = new Pattern_2kk9yi_a5a2(_quotation_createNode_2kk9yi_a0a5a2());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -151,7 +151,7 @@ public class migrateExtension extends MigrationScriptBase {
     }
 
     {
-      final GeneratedMatchingPattern pattern = new Pattern_vpqlu0kqr5id(_quotation_createNode_2kk9yi_a0a7a2());
+      final GeneratedMatchingPattern pattern = new Pattern_2kk9yi_a7a2(_quotation_createNode_2kk9yi_a0a7a2());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -214,7 +214,7 @@ public class migrateExtension extends MigrationScriptBase {
     }
 
     {
-      final GeneratedMatchingPattern pattern = new Pattern_vpqlu0kqpg2m(_quotation_createNode_2kk9yi_a0a9a2());
+      final GeneratedMatchingPattern pattern = new Pattern_2kk9yi_a9a2(_quotation_createNode_2kk9yi_a0a9a2());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));

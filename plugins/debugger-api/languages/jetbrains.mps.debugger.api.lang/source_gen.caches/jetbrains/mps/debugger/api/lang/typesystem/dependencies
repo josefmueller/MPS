@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debugger.api.lang.typesystem.DebuggerIsDebugger_ComparisonRule" file="DebuggerIsDebugger_ComparisonRule.java">
-    <classNode dependClassName="jetbrains.mps.debugger.api.lang.typesystem.Pattern_1r83rr3atjweh" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.lang.typesystem.Pattern_wcp5kc_a0a0a0f" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -24,7 +24,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.Pattern_1r83rr3atjweh" file="Pattern_1r83rr3atjweh.java">
+  <dependency className="jetbrains.mps.debugger.api.lang.typesystem.Pattern_wcp5kc_a0a0a0f" file="Pattern_wcp5kc_a0a0a0f.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>

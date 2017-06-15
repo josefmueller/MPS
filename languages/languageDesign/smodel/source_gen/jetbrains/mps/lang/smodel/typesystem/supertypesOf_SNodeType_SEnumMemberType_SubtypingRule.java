@@ -26,7 +26,7 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      GeneratedMatchingPattern pattern = new Pattern_16nae4rb5dv4p(_quotation_createNode_2cenap_a0a0a0a0e());
+      GeneratedMatchingPattern pattern = new Pattern_2cenap_a0a0a0e(_quotation_createNode_2cenap_a0a0a0a0e());
       this.myMatchingPattern = pattern;
       boolean b = pattern.match(argument);
       return new IsApplicableStatus(b, pattern);

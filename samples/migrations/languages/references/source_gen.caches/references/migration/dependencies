@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode dependClassName="references.migration.Pattern_9d9f5o1sz0ui" />
+    <classNode dependClassName="references.migration.Pattern_w5820p_a0a5" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
   <dependency className="references.migration.MigrationDescriptor" file="MigrationDescriptor.java">
@@ -40,7 +40,7 @@
     <classNode dependClassName="references.migration.MigrateReferences" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
-  <dependency className="references.migration.Pattern_9d9f5o1sz0ui" file="Pattern_9d9f5o1sz0ui.java">
+  <dependency className="references.migration.Pattern_w5820p_a0a5" file="Pattern_w5820p_a0a5.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />

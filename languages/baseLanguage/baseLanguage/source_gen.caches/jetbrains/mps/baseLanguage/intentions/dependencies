@@ -887,8 +887,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.Pattern_ft2wk9ln" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.Pattern_ft312xl2" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.Pattern_6isygg_a0a0a0a" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.intentions.Pattern_6isygg_b0a0a0a" />
     <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
@@ -1304,12 +1304,12 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.intentions.Pattern_ft2wk9ln" file="Pattern_ft2wk9ln.java">
+  <dependency className="jetbrains.mps.baseLanguage.intentions.Pattern_6isygg_a0a0a0a" file="Pattern_6isygg_a0a0a0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.intentions.Pattern_ft312xl2" file="Pattern_ft312xl2.java">
+  <dependency className="jetbrains.mps.baseLanguage.intentions.Pattern_6isygg_b0a0a0a" file="Pattern_6isygg_b0a0a0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />

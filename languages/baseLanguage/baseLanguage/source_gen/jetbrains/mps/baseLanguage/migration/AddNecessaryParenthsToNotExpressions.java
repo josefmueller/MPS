@@ -46,7 +46,7 @@ public class AddNecessaryParenthsToNotExpressions extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new Pattern_10dat7t2je1ad(_quotation_createNode_fbexqr_a0a0a5());
+      final GeneratedMatchingPattern pattern = new Pattern_fbexqr_a0a5(_quotation_createNode_fbexqr_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));

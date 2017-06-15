@@ -365,23 +365,23 @@
     </file>
   </root>
   <root nodeRef="r:2cad94ae-7a5e-484a-a104-c211cb3b0451(jetbrains.mps.baseLanguage.javadoc.migration)/4787009421625779235">
-    <file name="Pattern_10dat7t2je9d7.java">
-      <node id="4787009421625782763" at="9,51,10,30" concept="9" />
+    <file name="Pattern_fgay1s_a0a5.java">
+      <node id="4787009421625782763" at="9,49,10,30" concept="9" />
       <node id="4787009421625782763" at="10,30,11,0" concept="7" />
       <node id="4787009421625782763" at="11,0,12,0" concept="7" />
-      <node id="4787009421625782763" at="9,0,14,0" concept="1" trace="Pattern_10dat7t2je9d7#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="4787009421625782763" at="9,51,12,0" />
+      <node id="4787009421625782763" at="9,0,14,0" concept="1" trace="Pattern_fgay1s_a0a5#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="4787009421625782763" at="9,49,12,0" />
       <scope id="4787009421625782763" at="9,0,14,0">
         <var name="patternNode" id="4787009421625782763" />
       </scope>
-      <unit id="4787009421625782763" at="8,0,16,0" name="jetbrains.mps.baseLanguage.javadoc.migration.Pattern_10dat7t2je9d7" />
+      <unit id="4787009421625782763" at="8,0,16,0" name="jetbrains.mps.baseLanguage.javadoc.migration.Pattern_fgay1s_a0a5" />
     </file>
     <file name="UpdateDeprecatedBlockDocTags.java">
       <node id="4787009421625779235" at="35,30,36,61" concept="6" />
       <node id="4787009421625779235" at="39,33,40,16" concept="6" />
       <node id="4787009421625779235" at="42,41,43,17" concept="2" />
       <node id="4787009421625779235" at="43,17,44,16" concept="6" />
-      <node id="4787009421625782762" at="47,5,48,112" concept="5" />
+      <node id="4787009421625782762" at="47,5,48,110" concept="5" />
       <node id="4787009421625782762" at="50,53,51,94" concept="6" />
       <node id="4787009421625782762" at="54,41,55,35" concept="6" />
       <node id="4787009421625782762" at="58,41,59,45" concept="6" />
@@ -434,7 +434,7 @@
       <node id="5462094956390132780" at="94,8,111,9" concept="6" />
       <node id="5462094956390110264" at="87,45,112,5" concept="0" />
       <node id="4787009421625779235" at="86,0,114,0" concept="4" trace="check#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
-      <node id="4787009421625782762" at="48,112,83,9" concept="2" />
+      <node id="4787009421625782762" at="48,110,83,9" concept="2" />
       <node id="4787009421625782762" at="46,42,84,5" concept="0" />
       <node id="4787009421625779235" at="46,0,86,0" concept="4" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <scope id="4787009421625779235" at="35,30,36,61" />

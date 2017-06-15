@@ -48,7 +48,7 @@ public class MigrateOperationsAndNodeRefs extends MigrationScriptBase {
     SNode n;
     SReference r;
     {
-      final GeneratedMatchingPattern pattern = new Pattern_m8hesshz2pqs(_quotation_createNode_3qm329_a0a2a6());
+      final GeneratedMatchingPattern pattern = new Pattern_3qm329_a2a6(_quotation_createNode_3qm329_a0a2a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -86,7 +86,7 @@ public class MigrateOperationsAndNodeRefs extends MigrationScriptBase {
       });
     }
     {
-      final GeneratedMatchingPattern pattern = new Pattern_m8hesshz2uc2(_quotation_createNode_3qm329_a0a3a6());
+      final GeneratedMatchingPattern pattern = new Pattern_3qm329_a3a6(_quotation_createNode_3qm329_a0a3a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));

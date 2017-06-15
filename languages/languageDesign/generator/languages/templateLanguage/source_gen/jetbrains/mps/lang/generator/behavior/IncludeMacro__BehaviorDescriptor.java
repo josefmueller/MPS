@@ -38,7 +38,7 @@ public final class IncludeMacro__BehaviorDescriptor extends BaseBHDescriptor {
 
   /*package*/ static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     {
-      GeneratedMatchingPattern pattern_wfrqja_a0a = new Pattern_fhnb8zdj(_quotation_createNode_wfrqja_a0a0a0a0a());
+      GeneratedMatchingPattern pattern_wfrqja_a0a = new Pattern_wfrqja_a0a0a0a(_quotation_createNode_wfrqja_a0a0a0a0a());
       SNode coercedNode_wfrqja_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11621ab7715L, 0x11621abebb5L, "sourceNodeQuery"))), pattern_wfrqja_a0a);
       if (coercedNode_wfrqja_a0a != null) {
         return pattern_wfrqja_a0a.getMatchedNode("concept");

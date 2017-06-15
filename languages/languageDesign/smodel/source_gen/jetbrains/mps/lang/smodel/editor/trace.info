@@ -14825,7 +14825,7 @@
       <node id="1741258697587099578" at="40,9,41,44" concept="8" />
       <node id="1741258697587099578" at="42,15,43,50" concept="2" />
       <node id="1926293835606250097" at="51,210,52,365" concept="7" />
-      <node id="5462094956390267086" at="52,365,53,203" concept="7" />
+      <node id="5462094956390267086" at="52,365,53,207" concept="7" />
       <node id="1926293835606288372" at="54,30,55,22" concept="8" />
       <node id="2660922206083397663" at="57,7,58,19" concept="8" />
       <node id="1741258697587099578" at="62,89,63,51" concept="2" />
@@ -14840,7 +14840,7 @@
       <node id="8519118779653927422" at="81,262,82,246" concept="2" />
       <node id="8519118779653927422" at="82,246,83,168" concept="2" />
       <node id="8519118779653927422" at="83,168,84,24" concept="8" />
-      <node id="1926293835606259868" at="53,203,56,9" concept="5" />
+      <node id="1926293835606259868" at="53,207,56,9" concept="5" />
       <node id="1741258697587099578" at="72,0,76,0" concept="6" trace="getParts#()Ljava/util/List;" />
       <node id="1741258697587099578" at="39,249,44,5" concept="13" />
       <node id="1741258697587099578" at="64,221,69,7" concept="13" />
@@ -14888,17 +14888,17 @@
       <unit id="1741258697587099578" at="48,0,77,0" name="jetbrains.mps.lang.smodel.editor.OfConceptOperation_SubstituteMenu$SMP_Group_eso95d_a" />
       <unit id="1741258697587099578" at="26,0,87,0" name="jetbrains.mps.lang.smodel.editor.OfConceptOperation_SubstituteMenu" />
     </file>
-    <file name="Pattern_15hxz2eci6spe.java">
-      <node id="5462094956390267090" at="10,51,11,30" concept="12" />
+    <file name="Pattern_eso95d_b0a0b0a0a0.java">
+      <node id="5462094956390267090" at="10,55,11,30" concept="12" />
       <node id="5462094956390267090" at="11,30,12,0" concept="10" />
       <node id="5462094956390267090" at="12,0,13,0" concept="10" />
       <node id="5462094956390267090" at="13,0,14,302" concept="2" />
-      <node id="5462094956390267090" at="10,0,16,0" concept="1" trace="Pattern_15hxz2eci6spe#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="5462094956390267090" at="10,51,14,302" />
+      <node id="5462094956390267090" at="10,0,16,0" concept="1" trace="Pattern_eso95d_b0a0b0a0a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="5462094956390267090" at="10,55,14,302" />
       <scope id="5462094956390267090" at="10,0,16,0">
         <var name="patternNode" id="5462094956390267090" />
       </scope>
-      <unit id="5462094956390267090" at="9,0,18,0" name="jetbrains.mps.lang.smodel.editor.Pattern_15hxz2eci6spe" />
+      <unit id="5462094956390267090" at="9,0,18,0" name="jetbrains.mps.lang.smodel.editor.Pattern_eso95d_b0a0b0a0a0" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1741258697587099587">

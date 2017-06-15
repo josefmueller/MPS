@@ -37,7 +37,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest {
     }
     public boolean match() {
       SNode nodeToMatch = _quotation_createNode_qttyfe_a0a0c2();
-      DefaultMatchingPattern pattern = new Pattern_lvoc46fi0b91(_quotation_createNode_qttyfe_a0a0b0c2(), _quotation_createNode_qttyfe_b0a0b0c2(), _quotation_createNode_qttyfe_c0a0b0c2());
+      DefaultMatchingPattern pattern = new Pattern_qttyfe_a0b0c2(_quotation_createNode_qttyfe_a0a0b0c2(), _quotation_createNode_qttyfe_b0a0b0c2(), _quotation_createNode_qttyfe_c0a0b0c2());
       final boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {

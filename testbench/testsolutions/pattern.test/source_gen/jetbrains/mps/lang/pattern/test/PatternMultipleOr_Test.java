@@ -37,7 +37,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest {
     }
     public boolean match() {
       SNode nodeToMatch = _quotation_createNode_ay21uv_a0a0c2();
-      DefaultMatchingPattern pattern = new Pattern_1qs81pneulm2l(_quotation_createNode_ay21uv_a0a0b0c2(), _quotation_createNode_ay21uv_b0a0b0c2(), _quotation_createNode_ay21uv_c0a0b0c2(), _quotation_createNode_ay21uv_d0a0b0c2(), _quotation_createNode_ay21uv_e0a0b0c2());
+      DefaultMatchingPattern pattern = new Pattern_ay21uv_a0b0c2(_quotation_createNode_ay21uv_a0a0b0c2(), _quotation_createNode_ay21uv_b0a0b0c2(), _quotation_createNode_ay21uv_c0a0b0c2(), _quotation_createNode_ay21uv_d0a0b0c2(), _quotation_createNode_ay21uv_e0a0b0c2());
       final boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {

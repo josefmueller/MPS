@@ -57,7 +57,7 @@ public class typeof_OfConceptOperation_InferenceRule extends AbstractInferenceRu
           public void run() {
             SNode resultConcept;
             {
-              GeneratedMatchingPattern pattern_f4q3w2_b0b0d0 = new Pattern_js7wmyu14mtm(_quotation_createNode_nf8bul_a0a0a0b0a0a1a0b0b0d0b());
+              GeneratedMatchingPattern pattern_f4q3w2_b0b0d0 = new Pattern_nf8bul_a0a0b0a0a1a0b0b0d0b(_quotation_createNode_nf8bul_a0a0a0b0a0a1a0b0b0d0b());
               SNode coercedNode_f4q3w2_b0b0d0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(requestedConceptType), pattern_f4q3w2_b0b0d0);
               if (coercedNode_f4q3w2_b0b0d0 != null) {
                 resultConcept = pattern_f4q3w2_b0b0d0.getMatchedNode("concept");

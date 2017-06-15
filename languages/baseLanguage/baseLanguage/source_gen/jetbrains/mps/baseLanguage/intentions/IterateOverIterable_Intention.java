@@ -43,7 +43,7 @@ public final class IterateOverIterable_Intention extends AbstractIntentionDescri
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"))), new Pattern_ft2wk9ln(_quotation_createNode_6isygg_a0b0a0a0a()), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"))), new Pattern_6isygg_b0a0a0a(_quotation_createNode_6isygg_a0b0a0a0a()), true) != null);
   }
   @Override
   public boolean isSurroundWith() {
@@ -65,7 +65,7 @@ public final class IterateOverIterable_Intention extends AbstractIntentionDescri
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
       {
-        GeneratedMatchingPattern pattern_6isygg_a0a = new Pattern_ft312xl2(_quotation_createNode_6isygg_a0a0a0a0a());
+        GeneratedMatchingPattern pattern_6isygg_a0a = new Pattern_6isygg_a0a0a0a(_quotation_createNode_6isygg_a0a0a0a0a());
         SNode coercedNode_6isygg_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"))), pattern_6isygg_a0a);
         if (coercedNode_6isygg_a0a != null) {
           SNode foreachStatement = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a6933ce33L, "jetbrains.mps.baseLanguage.structure.ForeachStatement")), null);

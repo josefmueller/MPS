@@ -44,7 +44,7 @@ public class MigrateDelete2Detach extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new Pattern_1h8jryw5wfbfz(_quotation_createNode_vn1hs7_a0a0a6());
+      final GeneratedMatchingPattern pattern = new Pattern_vn1hs7_a0a6(_quotation_createNode_vn1hs7_a0a0a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));

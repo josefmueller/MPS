@@ -16,23 +16,23 @@
     </file>
   </root>
   <root nodeRef="r:d23dfab6-8d89-4872-a030-483768adf2c0(jetbrains.mps.lang.test.migration)/3022023529957940386">
-    <file name="Pattern_myk1xnzdnq8b.java">
-      <node id="3022023529957961099" at="9,50,10,30" concept="9" />
+    <file name="Pattern_vbjplg_a0a5.java">
+      <node id="3022023529957961099" at="9,49,10,30" concept="9" />
       <node id="3022023529957961099" at="10,30,11,0" concept="7" />
       <node id="3022023529957961099" at="11,0,12,0" concept="7" />
-      <node id="3022023529957961099" at="9,0,14,0" concept="1" trace="Pattern_myk1xnzdnq8b#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3022023529957961099" at="9,50,12,0" />
+      <node id="3022023529957961099" at="9,0,14,0" concept="1" trace="Pattern_vbjplg_a0a5#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3022023529957961099" at="9,49,12,0" />
       <scope id="3022023529957961099" at="9,0,14,0">
         <var name="patternNode" id="3022023529957961099" />
       </scope>
-      <unit id="3022023529957961099" at="8,0,16,0" name="jetbrains.mps.lang.test.migration.Pattern_myk1xnzdnq8b" />
+      <unit id="3022023529957961099" at="8,0,16,0" name="jetbrains.mps.lang.test.migration.Pattern_vbjplg_a0a5" />
     </file>
     <file name="RemoveUITestPropertyFromTestInfo.java">
       <node id="3022023529957940386" at="28,30,29,72" concept="6" />
       <node id="3022023529957940386" at="32,33,33,17" concept="6" />
       <node id="3022023529957940386" at="35,41,36,17" concept="2" />
       <node id="3022023529957940386" at="36,17,37,16" concept="6" />
-      <node id="3022023529957961098" at="40,5,41,111" concept="5" />
+      <node id="3022023529957961098" at="40,5,41,110" concept="5" />
       <node id="3022023529957961098" at="43,53,44,94" concept="6" />
       <node id="3022023529957961098" at="47,41,48,35" concept="6" />
       <node id="3022023529957961098" at="51,41,52,45" concept="6" />
@@ -65,7 +65,7 @@
       <node id="3022023529957961098" at="71,0,79,0" concept="4" trace="compute#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3022023529957961098" at="69,11,79,19" concept="2" />
       <node id="3022023529957961098" at="63,0,81,0" concept="4" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3022023529957961098" at="41,111,81,9" concept="2" />
+      <node id="3022023529957961098" at="41,110,81,9" concept="2" />
       <node id="3022023529957961098" at="39,42,82,5" concept="0" />
       <node id="3022023529957940386" at="39,0,84,0" concept="4" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <scope id="3022023529957940386" at="28,30,29,72" />

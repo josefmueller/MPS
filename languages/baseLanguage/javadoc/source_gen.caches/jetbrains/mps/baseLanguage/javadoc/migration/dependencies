@@ -45,7 +45,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.javadoc.migration.Pattern_10dat7t2je9d7" file="Pattern_10dat7t2je9d7.java">
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.migration.Pattern_fgay1s_a0a5" file="Pattern_fgay1s_a0a5.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
@@ -55,7 +55,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.migration.Pattern_10dat7t2je9d7" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.migration.Pattern_fgay1s_a0a5" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />

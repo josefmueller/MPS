@@ -361,7 +361,7 @@
                 </node>
                 <node concept="2ShNRf" id="Y" role="33vP2m">
                   <node concept="1pGfFk" id="Z" role="2ShVmc">
-                    <ref role="37wK5l" node="2$" resolve="Pattern_1r83rr3atjweh" />
+                    <ref role="37wK5l" node="2$" resolve="Pattern_wcp5kc_a0a0a0f" />
                     <node concept="2c44tf" id="10" role="37wK5m">
                       <node concept="3uibUv" id="11" role="2c44tc">
                         <ref role="3uigEE" to="1l1h:3SnNvqCaJaH" resolve="IDebugger" />
@@ -622,13 +622,13 @@
           </node>
         </node>
         <node concept="39e2AT" id="2v" role="39e2AY">
-          <ref role="39e2AS" node="2z" resolve="Pattern_1r83rr3atjweh" />
+          <ref role="39e2AS" node="2z" resolve="Pattern_wcp5kc_a0a0a0f" />
         </node>
       </node>
     </node>
   </node>
   <node concept="312cEu" id="2z">
-    <property role="TrG5h" value="Pattern_1r83rr3atjweh" />
+    <property role="TrG5h" value="Pattern_wcp5kc_a0a0a0f" />
     <node concept="3clFbW" id="2$" role="jymVt">
       <node concept="3cqZAl" id="2B" role="3clF45" />
       <node concept="3Tm1VV" id="2C" role="1B3o_S" />

@@ -496,7 +496,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.dataFlow.Pattern_i6ycer8nigq6" file="Pattern_i6ycer8nigq6.java">
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.Pattern_7fbm30_a0" file="Pattern_7fbm30_a0.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.notNullInstruction" />
@@ -567,7 +567,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.RuleAssertNotNull" file="RuleAssertNotNull.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.Pattern_i6ycer8nigq6" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.Pattern_7fbm30_a0" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.framework.Program" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

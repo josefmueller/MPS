@@ -38,7 +38,7 @@ public final class CopySrcNodeMacro__BehaviorDescriptor extends BaseBHDescriptor
 
   /*package*/ static SNode getInputNodeTypeInsideOfMacro_idhEwIosJ(@NotNull SNode __thisNode__) {
     {
-      GeneratedMatchingPattern pattern_7c1mz_a0a = new Pattern_fhnba0y3(_quotation_createNode_7c1mz_a0a0a0a0a());
+      GeneratedMatchingPattern pattern_7c1mz_a0a = new Pattern_7c1mz_a0a0a0a(_quotation_createNode_7c1mz_a0a0a0a0a());
       SNode coercedNode_7c1mz_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10389b50fefL, 0x10ff3aea96eL, "sourceNodeQuery"))), pattern_7c1mz_a0a);
       if (coercedNode_7c1mz_a0a != null) {
         return pattern_7c1mz_a0a.getMatchedNode("concept");

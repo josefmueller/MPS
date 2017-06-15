@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SReference;
 
 public class CommandUtilChooserHelper {
   public static SNode chooseGetReferenceMethod(SNode type) {
-    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_4x9t8mhwhydo(_quotation_createNode_hv0mbi_a0b0a0a0a()), true);
+    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_hv0mbi_b0a0a0a(_quotation_createNode_hv0mbi_a0b0a0a0a()), true);
     if (seqType == null) {
       return null;
     }
@@ -33,7 +33,7 @@ public class CommandUtilChooserHelper {
     return null;
   }
   public static SNode chooseToResultMethod(SNode type) {
-    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_ckl0lpll5rb1(_quotation_createNode_hv0mbi_a0b0a0a0b()), true);
+    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_hv0mbi_b0a0a0b(_quotation_createNode_hv0mbi_a0b0a0a0b()), true);
     if (seqType == null) {
       return null;
     }
@@ -53,7 +53,7 @@ public class CommandUtilChooserHelper {
     return null;
   }
   public static boolean isSModelSequence(SNode type) {
-    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_4x9t8mhwsyo3(_quotation_createNode_hv0mbi_a0b0a0a0c()), true);
+    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_hv0mbi_b0a0a0c(_quotation_createNode_hv0mbi_a0b0a0a0c()), true);
     if (seqType == null) {
       return false;
     }
@@ -73,7 +73,7 @@ public class CommandUtilChooserHelper {
     return false;
   }
   public static SNode getReferenceType(SNode type) {
-    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_s4c3qdliozfi(_quotation_createNode_hv0mbi_a0b0a0a0d()), true);
+    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_hv0mbi_b0a0a0d(_quotation_createNode_hv0mbi_a0b0a0a0d()), true);
     if (seqType == null) {
       return null;
     }
@@ -93,7 +93,7 @@ public class CommandUtilChooserHelper {
     return null;
   }
   public static String getKindLabel(SNode type) {
-    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_s4c3qdlisa38(_quotation_createNode_hv0mbi_a0b0a0a0e()), true);
+    SNode seqType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new Pattern_hv0mbi_b0a0a0e(_quotation_createNode_hv0mbi_a0b0a0a0e()), true);
     if (seqType == null) {
       return null;
     }

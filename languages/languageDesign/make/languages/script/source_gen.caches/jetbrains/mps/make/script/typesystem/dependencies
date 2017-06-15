@@ -16,11 +16,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.make.script.typesystem.Pattern_1cyv3e3abxs4h" file="Pattern_1cyv3e3abxs4h.java">
+  <dependency className="jetbrains.mps.make.script.typesystem.Pattern_uqpyyo_a0a0a0e" file="Pattern_uqpyyo_a0a0a0e.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.make.script.typesystem.Pattern_hxhj55vcku8o" file="Pattern_hxhj55vcku8o.java">
+  <dependency className="jetbrains.mps.make.script.typesystem.Pattern_v5k8je_a0a0a0f" file="Pattern_v5k8je_a0a0a0f.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
@@ -28,7 +28,7 @@
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.Pattern_hxhj55vcku8o" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.Pattern_v5k8je_a0a0a0f" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -92,7 +92,7 @@
   <dependency className="jetbrains.mps.make.script.typesystem.supertypesOf_IResource_SubtypingRule" file="supertypesOf_IResource_SubtypingRule.java">
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.make.script.typesystem.Pattern_1cyv3e3abxs4h" />
+    <classNode dependClassName="jetbrains.mps.make.script.typesystem.Pattern_uqpyyo_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

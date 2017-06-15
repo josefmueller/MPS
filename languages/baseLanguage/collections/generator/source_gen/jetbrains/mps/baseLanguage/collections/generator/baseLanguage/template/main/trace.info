@@ -128,16 +128,16 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1203340411125">
-    <file name="Pattern_1cfy6n6308r0f.java">
-      <node id="6376155941834213055" at="9,51,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0a8.java">
+      <node id="6376155941834213055" at="9,53,10,30" concept="12" />
       <node id="6376155941834213055" at="10,30,11,0" concept="10" />
       <node id="6376155941834213055" at="11,0,12,0" concept="10" />
-      <node id="6376155941834213055" at="9,0,14,0" concept="2" trace="Pattern_1cfy6n6308r0f#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="6376155941834213055" at="9,51,12,0" />
+      <node id="6376155941834213055" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0a8#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="6376155941834213055" at="9,53,12,0" />
       <scope id="6376155941834213055" at="9,0,14,0">
         <var name="patternNode" id="6376155941834213055" />
       </scope>
-      <unit id="6376155941834213055" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_1cfy6n6308r0f" />
+      <unit id="6376155941834213055" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0a8" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="1207154374824" at="88,374,89,19" concept="8" />
@@ -145,7 +145,7 @@
       <node id="1207154422439" at="94,370,95,19" concept="8" />
       <node id="1207154443842" at="97,373,98,19" concept="8" />
       <node id="1207154452572" at="99,5,100,16" concept="8" />
-      <node id="1208699550911" at="102,104,103,504" concept="8" />
+      <node id="1208699550911" at="102,104,103,506" concept="8" />
       <node id="399060687648557114" at="781,107,782,183" concept="8" />
       <node id="8519118779653927298" at="3641,66,3642,63" concept="7" />
       <node id="8519118779653927298" at="3642,63,3643,30" concept="7" />
@@ -161,7 +161,7 @@
       <scope id="1207154380690" at="91,371,92,19" />
       <scope id="1207154410639" at="94,370,95,19" />
       <scope id="1207154425115" at="97,373,98,19" />
-      <scope id="1208699492549" at="102,104,103,504" />
+      <scope id="1208699492549" at="102,104,103,506" />
       <scope id="399060687648555286" at="781,107,782,183" />
       <scope id="8519118779653927298" at="3641,66,3646,24">
         <var name="facade" id="8519118779653927298" />
@@ -420,22 +420,22 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1208440989706">
-    <file name="Pattern_ff9oiuqr.java">
-      <node id="1208699582499" at="9,46,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0z.java">
+      <node id="1208699582499" at="9,52,10,30" concept="12" />
       <node id="1208699582499" at="10,30,11,0" concept="10" />
       <node id="1208699582499" at="11,0,12,0" concept="10" />
-      <node id="1208699582499" at="9,0,14,0" concept="2" trace="Pattern_ff9oiuqr#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1208699582499" at="9,46,12,0" />
+      <node id="1208699582499" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0z#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1208699582499" at="9,52,12,0" />
       <scope id="1208699582499" at="9,0,14,0">
         <var name="patternNode" id="1208699582499" />
       </scope>
-      <unit id="1208699582499" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_ff9oiuqr" />
+      <unit id="1208699582499" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0z" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="1208440989728" at="175,385,176,19" concept="8" />
       <node id="1208440989739" at="178,373,179,19" concept="8" />
       <node id="1208520949123" at="180,5,181,326" concept="8" />
-      <node id="1208699582495" at="183,104,184,202" concept="8" />
+      <node id="1208699582495" at="183,104,184,208" concept="8" />
       <node id="1208440989780" at="186,104,187,326" concept="8" />
       <node id="1208440989819" at="189,104,190,330" concept="8" />
       <node id="1208888271220" at="1049,16,1050,127" concept="4" />
@@ -451,7 +451,7 @@
       <node id="8519118779653927295" at="3648,0,3655,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0z#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1208440989727" at="175,385,176,19" />
       <scope id="1208440989738" at="178,373,179,19" />
-      <scope id="1208699581855" at="183,104,184,202" />
+      <scope id="1208699581855" at="183,104,184,208" />
       <scope id="1208440989779" at="186,104,187,326" />
       <scope id="1208440989818" at="189,104,190,330" />
       <scope id="1208888266000" at="1049,16,1050,127" />
@@ -465,19 +465,19 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1208694348757">
-    <file name="Pattern_ff9oj1uy.java">
-      <node id="1208699591722" at="9,46,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0cb.java">
+      <node id="1208699591722" at="9,53,10,30" concept="12" />
       <node id="1208699591722" at="10,30,11,0" concept="10" />
       <node id="1208699591722" at="11,0,12,0" concept="10" />
-      <node id="1208699591722" at="9,0,14,0" concept="2" trace="Pattern_ff9oj1uy#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1208699591722" at="9,46,12,0" />
+      <node id="1208699591722" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0cb#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1208699591722" at="9,53,12,0" />
       <scope id="1208699591722" at="9,0,14,0">
         <var name="patternNode" id="1208699591722" />
       </scope>
-      <unit id="1208699591722" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_ff9oj1uy" />
+      <unit id="1208699591722" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0cb" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1208699591718" at="192,104,193,190" concept="8" />
+      <node id="1208699591718" at="192,104,193,197" concept="8" />
       <node id="1240243069759" at="195,104,196,318" concept="8" />
       <node id="1208694348850" at="198,104,199,312" concept="8" />
       <node id="1240243091490" at="201,104,202,317" concept="8" />
@@ -487,7 +487,7 @@
       <node id="8519118779653927292" at="3658,252,3659,472" concept="4" />
       <node id="8519118779653927292" at="3659,472,3660,24" concept="8" />
       <node id="8519118779653927292" at="3655,0,3662,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0cb#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1208699591176" at="192,104,193,190" />
+      <scope id="1208699591176" at="192,104,193,197" />
       <scope id="1240243069758" at="195,104,196,318" />
       <scope id="1208694348849" at="198,104,199,312" />
       <scope id="1240243091489" at="201,104,202,317" />
@@ -499,21 +499,21 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1226933058942">
-    <file name="Pattern_fnn89j9w.java">
-      <node id="1226933059028" at="9,46,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0hb.java">
+      <node id="1226933059028" at="9,53,10,30" concept="12" />
       <node id="1226933059028" at="10,30,11,0" concept="10" />
       <node id="1226933059028" at="11,0,12,0" concept="10" />
-      <node id="1226933059028" at="9,0,14,0" concept="2" trace="Pattern_fnn89j9w#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1226933059028" at="9,46,12,0" />
+      <node id="1226933059028" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0hb#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1226933059028" at="9,53,12,0" />
       <scope id="1226933059028" at="9,0,14,0">
         <var name="patternNode" id="1226933059028" />
       </scope>
-      <unit id="1226933059028" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_fnn89j9w" />
+      <unit id="1226933059028" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0hb" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="1226933058987" at="205,377,206,19" concept="8" />
       <node id="1226933059006" at="207,5,208,312" concept="8" />
-      <node id="1226933059024" at="210,104,211,190" concept="8" />
+      <node id="1226933059024" at="210,104,211,197" concept="8" />
       <node id="1240256627343" at="213,104,214,318" concept="8" />
       <node id="1226933059045" at="216,104,217,312" concept="8" />
       <node id="1226933059064" at="219,104,220,317" concept="8" />
@@ -525,7 +525,7 @@
       <node id="1226933058985" at="204,104,207,5" concept="6" />
       <node id="8519118779653927293" at="3662,0,3669,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0hb#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1226933058986" at="205,377,206,19" />
-      <scope id="1226933059023" at="210,104,211,190" />
+      <scope id="1226933059023" at="210,104,211,197" />
       <scope id="1240256627342" at="213,104,214,318" />
       <scope id="1226933059044" at="216,104,217,312" />
       <scope id="1226933059063" at="219,104,220,317" />
@@ -598,19 +598,19 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1237491314739">
-    <file name="Pattern_fshueeze.java">
-      <node id="1237491352922" at="9,46,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0tb.java">
+      <node id="1237491352922" at="9,53,10,30" concept="12" />
       <node id="1237491352922" at="10,30,11,0" concept="10" />
       <node id="1237491352922" at="11,0,12,0" concept="10" />
-      <node id="1237491352922" at="9,0,14,0" concept="2" trace="Pattern_fshueeze#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1237491352922" at="9,46,12,0" />
+      <node id="1237491352922" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0tb#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1237491352922" at="9,53,12,0" />
       <scope id="1237491352922" at="9,0,14,0">
         <var name="patternNode" id="1237491352922" />
       </scope>
-      <unit id="1237491352922" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_fshueeze" />
+      <unit id="1237491352922" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0tb" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1237491352918" at="254,104,255,203" concept="8" />
+      <node id="1237491352918" at="254,104,255,210" concept="8" />
       <node id="1237491387621" at="257,104,258,330" concept="8" />
       <node id="8519118779653927299" at="3669,66,3670,63" concept="7" />
       <node id="8519118779653927299" at="3670,63,3671,30" concept="7" />
@@ -618,7 +618,7 @@
       <node id="8519118779653927299" at="3672,252,3673,472" concept="4" />
       <node id="8519118779653927299" at="3673,472,3674,24" concept="8" />
       <node id="8519118779653927299" at="3669,0,3676,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0tb#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1237491339953" at="254,104,255,203" />
+      <scope id="1237491339953" at="254,104,255,210" />
       <scope id="1237491379929" at="257,104,258,330" />
       <scope id="8519118779653927299" at="3669,66,3674,24">
         <var name="facade" id="8519118779653927299" />
@@ -628,19 +628,19 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1240243169539">
-    <file name="Pattern_ftrcreaa.java">
-      <node id="1240243169554" at="9,46,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0vb.java">
+      <node id="1240243169554" at="9,53,10,30" concept="12" />
       <node id="1240243169554" at="10,30,11,0" concept="10" />
       <node id="1240243169554" at="11,0,12,0" concept="10" />
-      <node id="1240243169554" at="9,0,14,0" concept="2" trace="Pattern_ftrcreaa#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1240243169554" at="9,46,12,0" />
+      <node id="1240243169554" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0vb#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1240243169554" at="9,53,12,0" />
       <scope id="1240243169554" at="9,0,14,0">
         <var name="patternNode" id="1240243169554" />
       </scope>
-      <unit id="1240243169554" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_ftrcreaa" />
+      <unit id="1240243169554" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0vb" />
     </file>
     <file name="QueriesGenerated.java">
-      <node id="1240243169550" at="260,104,261,190" concept="8" />
+      <node id="1240243169550" at="260,104,261,197" concept="8" />
       <node id="1240243169571" at="263,104,264,318" concept="8" />
       <node id="1240243169609" at="266,104,267,317" concept="8" />
       <node id="8519118779653927302" at="3676,66,3677,63" concept="7" />
@@ -649,7 +649,7 @@
       <node id="8519118779653927302" at="3679,252,3680,472" concept="4" />
       <node id="8519118779653927302" at="3680,472,3681,24" concept="8" />
       <node id="8519118779653927302" at="3676,0,3683,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0vb#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1240243169549" at="260,104,261,190" />
+      <scope id="1240243169549" at="260,104,261,197" />
       <scope id="1240243169570" at="263,104,264,318" />
       <scope id="1240243169608" at="266,104,267,317" />
       <scope id="8519118779653927302" at="3676,66,3681,24">
@@ -660,21 +660,21 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1240253424845">
-    <file name="Pattern_ftriv7cp.java">
-      <node id="1240253424889" at="9,46,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0zb.java">
+      <node id="1240253424889" at="9,53,10,30" concept="12" />
       <node id="1240253424889" at="10,30,11,0" concept="10" />
       <node id="1240253424889" at="11,0,12,0" concept="10" />
-      <node id="1240253424889" at="9,0,14,0" concept="2" trace="Pattern_ftriv7cp#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1240253424889" at="9,46,12,0" />
+      <node id="1240253424889" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0zb#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1240253424889" at="9,53,12,0" />
       <scope id="1240253424889" at="9,0,14,0">
         <var name="patternNode" id="1240253424889" />
       </scope>
-      <unit id="1240253424889" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_ftriv7cp" />
+      <unit id="1240253424889" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0zb" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="1240253424858" at="270,375,271,19" concept="8" />
       <node id="1240253424867" at="272,5,273,318" concept="8" />
-      <node id="1240253424885" at="275,104,276,190" concept="8" />
+      <node id="1240253424885" at="275,104,276,197" concept="8" />
       <node id="1240253424906" at="278,104,279,318" concept="8" />
       <node id="1240253424925" at="281,104,282,317" concept="8" />
       <node id="8519118779653927300" at="3683,66,3684,63" concept="7" />
@@ -685,7 +685,7 @@
       <node id="1240253424856" at="269,104,272,5" concept="6" />
       <node id="8519118779653927300" at="3683,0,3690,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0zb#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1240253424857" at="270,375,271,19" />
-      <scope id="1240253424884" at="275,104,276,190" />
+      <scope id="1240253424884" at="275,104,276,197" />
       <scope id="1240253424905" at="278,104,279,318" />
       <scope id="1240253424924" at="281,104,282,317" />
       <scope id="1240253424855" at="269,104,273,318" />
@@ -697,22 +697,22 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/169948565229768333">
-    <file name="Pattern_1ahdql1vvr9u.java">
-      <node id="169948565229768402" at="9,50,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0df.java">
+      <node id="169948565229768402" at="9,53,10,30" concept="12" />
       <node id="169948565229768402" at="10,30,11,0" concept="10" />
       <node id="169948565229768402" at="11,0,12,0" concept="10" />
-      <node id="169948565229768402" at="9,0,14,0" concept="2" trace="Pattern_1ahdql1vvr9u#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="169948565229768402" at="9,50,12,0" />
+      <node id="169948565229768402" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0df#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="169948565229768402" at="9,53,12,0" />
       <scope id="169948565229768402" at="9,0,14,0">
         <var name="patternNode" id="169948565229768402" />
       </scope>
-      <unit id="169948565229768402" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_1ahdql1vvr9u" />
+      <unit id="169948565229768402" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0df" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="169948565229768361" at="528,385,529,19" concept="8" />
       <node id="169948565229768372" at="531,373,532,19" concept="8" />
       <node id="169948565229768380" at="533,5,534,324" concept="8" />
-      <node id="169948565229768398" at="536,109,537,194" concept="8" />
+      <node id="169948565229768398" at="536,109,537,197" concept="8" />
       <node id="169948565229768419" at="539,109,540,324" concept="8" />
       <node id="169948565229768438" at="542,109,543,317" concept="8" />
       <node id="8519118779653927296" at="3718,66,3719,63" concept="7" />
@@ -725,7 +725,7 @@
       <node id="8519118779653927296" at="3718,0,3725,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0df#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="169948565229768360" at="528,385,529,19" />
       <scope id="169948565229768371" at="531,373,532,19" />
-      <scope id="169948565229768397" at="536,109,537,194" />
+      <scope id="169948565229768397" at="536,109,537,197" />
       <scope id="169948565229768418" at="539,109,540,324" />
       <scope id="169948565229768437" at="542,109,543,317" />
       <scope id="8519118779653927296" at="3718,66,3723,24">
@@ -737,21 +737,21 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1848858642723003330">
-    <file name="Pattern_e1olov01qebr.java">
-      <node id="1848858642723003399" at="9,50,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0hc.java">
+      <node id="1848858642723003399" at="9,53,10,30" concept="12" />
       <node id="1848858642723003399" at="10,30,11,0" concept="10" />
       <node id="1848858642723003399" at="11,0,12,0" concept="10" />
-      <node id="1848858642723003399" at="9,0,14,0" concept="2" trace="Pattern_e1olov01qebr#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1848858642723003399" at="9,50,12,0" />
+      <node id="1848858642723003399" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0hc#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1848858642723003399" at="9,53,12,0" />
       <scope id="1848858642723003399" at="9,0,14,0">
         <var name="patternNode" id="1848858642723003399" />
       </scope>
-      <unit id="1848858642723003399" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_e1olov01qebr" />
+      <unit id="1848858642723003399" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0hc" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="1848858642723003358" at="300,390,301,19" concept="8" />
       <node id="3444116434174553588" at="302,5,303,1246" concept="8" />
-      <node id="1848858642723003395" at="305,110,306,194" concept="8" />
+      <node id="1848858642723003395" at="305,110,306,197" concept="8" />
       <node id="6034304739317612535" at="308,110,309,317" concept="8" />
       <node id="8519118779653927301" at="3697,66,3698,63" concept="7" />
       <node id="8519118779653927301" at="3698,63,3699,30" concept="7" />
@@ -761,7 +761,7 @@
       <node id="1848858642723003356" at="299,110,302,5" concept="6" />
       <node id="8519118779653927301" at="3697,0,3704,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0hc#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1848858642723003357" at="300,390,301,19" />
-      <scope id="1848858642723003394" at="305,110,306,194" />
+      <scope id="1848858642723003394" at="305,110,306,197" />
       <scope id="6034304739317612534" at="308,110,309,317" />
       <scope id="1848858642723003355" at="299,110,303,1246" />
       <scope id="8519118779653927301" at="3697,66,3702,24">
@@ -879,21 +879,21 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/3358009230509159495">
-    <file name="Pattern_pigaxbzs4jn7.java">
-      <node id="3358009230509159539" at="9,50,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0vc.java">
+      <node id="3358009230509159539" at="9,53,10,30" concept="12" />
       <node id="3358009230509159539" at="10,30,11,0" concept="10" />
       <node id="3358009230509159539" at="11,0,12,0" concept="10" />
-      <node id="3358009230509159539" at="9,0,14,0" concept="2" trace="Pattern_pigaxbzs4jn7#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3358009230509159539" at="9,50,12,0" />
+      <node id="3358009230509159539" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0vc#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3358009230509159539" at="9,53,12,0" />
       <scope id="3358009230509159539" at="9,0,14,0">
         <var name="patternNode" id="3358009230509159539" />
       </scope>
-      <unit id="3358009230509159539" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_pigaxbzs4jn7" />
+      <unit id="3358009230509159539" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0vc" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="3358009230509159508" at="345,764,346,19" concept="8" />
       <node id="3444116434174553629" at="347,5,348,630" concept="8" />
-      <node id="3358009230509159535" at="350,110,351,194" concept="8" />
+      <node id="3358009230509159535" at="350,110,351,197" concept="8" />
       <node id="3444116434174553648" at="353,110,354,630" concept="8" />
       <node id="3358009230509159575" at="356,110,357,317" concept="8" />
       <node id="8519118779653927294" at="3711,66,3712,63" concept="7" />
@@ -904,7 +904,7 @@
       <node id="3358009230509159506" at="344,110,347,5" concept="6" />
       <node id="8519118779653927294" at="3711,0,3718,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0vc#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="3358009230509159507" at="345,764,346,19" />
-      <scope id="3358009230509159534" at="350,110,351,194" />
+      <scope id="3358009230509159534" at="350,110,351,197" />
       <scope id="3358009230509159555" at="353,110,354,630" />
       <scope id="3358009230509159574" at="356,110,357,317" />
       <scope id="3358009230509159505" at="344,110,348,630" />
@@ -1450,21 +1450,21 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/5478544378670483530">
-    <file name="Pattern_15mfxwemcbyq7.java">
-      <node id="5478544378670483599" at="9,51,10,30" concept="12" />
+    <file name="Pattern_x583g4_b0a0a0dc.java">
+      <node id="5478544378670483599" at="9,53,10,30" concept="12" />
       <node id="5478544378670483599" at="10,30,11,0" concept="10" />
       <node id="5478544378670483599" at="11,0,12,0" concept="10" />
-      <node id="5478544378670483599" at="9,0,14,0" concept="2" trace="Pattern_15mfxwemcbyq7#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="5478544378670483599" at="9,51,12,0" />
+      <node id="5478544378670483599" at="9,0,14,0" concept="2" trace="Pattern_x583g4_b0a0a0dc#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="5478544378670483599" at="9,53,12,0" />
       <scope id="5478544378670483599" at="9,0,14,0">
         <var name="patternNode" id="5478544378670483599" />
       </scope>
-      <unit id="5478544378670483599" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_15mfxwemcbyq7" />
+      <unit id="5478544378670483599" at="8,0,16,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.Pattern_x583g4_b0a0a0dc" />
     </file>
     <file name="QueriesGenerated.java">
       <node id="5478544378670483558" at="285,385,286,19" concept="8" />
       <node id="5478544378670483577" at="287,5,288,319" concept="8" />
-      <node id="5478544378670483595" at="290,110,291,195" concept="8" />
+      <node id="5478544378670483595" at="290,110,291,197" concept="8" />
       <node id="5478544378670483616" at="293,110,294,319" concept="8" />
       <node id="5478544378670483635" at="296,110,297,317" concept="8" />
       <node id="8519118779653927297" at="3690,66,3691,63" concept="7" />
@@ -1475,7 +1475,7 @@
       <node id="5478544378670483556" at="284,110,287,5" concept="6" />
       <node id="8519118779653927297" at="3690,0,3697,0" concept="11" trace="_quotation_createNode_x583g4_a0b0a0a0dc#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="5478544378670483557" at="285,385,286,19" />
-      <scope id="5478544378670483594" at="290,110,291,195" />
+      <scope id="5478544378670483594" at="290,110,291,197" />
       <scope id="5478544378670483615" at="293,110,294,319" />
       <scope id="5478544378670483634" at="296,110,297,317" />
       <scope id="5478544378670483555" at="284,110,288,319" />

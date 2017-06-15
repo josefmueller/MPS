@@ -90,7 +90,7 @@
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.Boolean_extends_boolean_2_SubtypingRule" file="Boolean_extends_boolean_2_SubtypingRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_f0298n30" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_9ehkah_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -455,7 +455,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.LowerBoundType_subtypeOf_bound_InequationReplacementRule" file="LowerBoundType_subtypeOf_bound_InequationReplacementRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_2qiwprby58ve" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_ap69b7_a0a0a0g" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
@@ -596,7 +596,7 @@
   <dependency className="jetbrains.mps.baseLanguage.typesystem.ObjectArraySupertypes_SubtypingRule" file="ObjectArraySupertypes_SubtypingRule.java">
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_ff3zxskt" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_gqfgxi_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -609,66 +609,70 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_14nt18qsy45so" file="Pattern_14nt18qsy45so.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_1sray5_a0a0a0e" file="Pattern_1sray5_a0a0a0e.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_2adeqp8g0g1q" file="Pattern_2adeqp8g0g1q.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_34hpo3_a0a0a0e" file="Pattern_34hpo3_a0a0a0e.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_2qiwprby58ve" file="Pattern_2qiwprby58ve.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_4czxhf_a0a0a0e" file="Pattern_4czxhf_a0a0a0e.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_4wj0va_a0a0a0e" file="Pattern_4wj0va_a0a0a0e.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_8bm4vn_a0a0a0e" file="Pattern_8bm4vn_a0a0a0e.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_9ehkah_a0a0a0e" file="Pattern_9ehkah_a0a0a0e.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_aftnu9_a0a0c0b" file="Pattern_aftnu9_a0a0c0b.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_7ub8np9zyvb3" file="Pattern_7ub8np9zyvb3.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_ap69b7_a0a0a0g" file="Pattern_ap69b7_a0a0a0g.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_f0298n30" file="Pattern_f0298n30.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_cxnqcy_a0a0a0e" file="Pattern_cxnqcy_a0a0a0e.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qoypnr" file="Pattern_f0qoypnr.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_gqfgxi_a0a0a0e" file="Pattern_gqfgxi_a0a0a0e.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qp1ojc" file="Pattern_f0qp1ojc.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_jy4zax_a0a0a0e" file="Pattern_jy4zax_a0a0a0e.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qp52pm" file="Pattern_f0qp52pm.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_nhleq2_a0a0a0e" file="Pattern_nhleq2_a0a0a0e.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qp75vy" file="Pattern_f0qp75vy.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_nn7be_a0a0a0b0d" file="Pattern_nn7be_a0a0a0b0d.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qpck64" file="Pattern_f0qpck64.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_nn7be_a0a0a0c" file="Pattern_nn7be_a0a0a0c.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qpeaxy" file="Pattern_f0qpeaxy.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_nn7be_a0a0d0c0c0b" file="Pattern_nn7be_a0a0d0c0c0b.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qpgd64" file="Pattern_f0qpgd64.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_ff3zxskt" file="Pattern_ff3zxskt.java">
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_fka2bv7eua6w" file="Pattern_fka2bv7eua6w.java">
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_w2c88q_a0a0a0h" file="Pattern_w2c88q_a0a0a0h.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.typesystem.Pattern_fmvu6yxl" file="Pattern_fmvu6yxl.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
@@ -1533,7 +1537,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.any_type_subtypeOf_LowerBoundType_InequationReplacementRule" file="any_type_subtypeOf_LowerBoundType_InequationReplacementRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_fka2bv7eua6w" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_w2c88q_a0a0a0h" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.util.MatchingUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
@@ -1625,7 +1629,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.byte_unboxing_SubtypingRule" file="byte_unboxing_SubtypingRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qp52pm" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_1sray5_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -1670,7 +1674,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.char_unboxing_SubtypingRule" file="char_unboxing_SubtypingRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qoypnr" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_4wj0va_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -2925,7 +2929,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.check_ForeachWithErasure_NonTypesystemRule" file="check_ForeachWithErasure_NonTypesystemRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_7ub8np9zyvb3" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_aftnu9_a0a0c0b" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -4464,7 +4468,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.double_unboxing_SubtypingRule" file="double_unboxing_SubtypingRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qp1ojc" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_jy4zax_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -4501,7 +4505,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.float_unboxing_SubtypingRule" file="float_unboxing_SubtypingRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qp75vy" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_4czxhf_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -4561,8 +4565,9 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IGenericType__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_14nt18qsy45so" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_2adeqp8g0g1q" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_nn7be_a0a0a0b0d" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_nn7be_a0a0a0c" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_nn7be_a0a0d0c0c0b" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -4611,7 +4616,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.int_unboxing_SubtypingRule" file="int_unboxing_SubtypingRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qpck64" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_nhleq2_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -4625,7 +4630,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.java_lang_String_extends_string_SubtypingRule" file="java_lang_String_extends_string_SubtypingRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_fmvu6yxl" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_cxnqcy_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -4675,7 +4680,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.long_unboxing_SubtypingRule" file="long_unboxing_SubtypingRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qpeaxy" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_34hpo3_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -4753,7 +4758,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.short_unboxing_SubtypingRule" file="short_unboxing_SubtypingRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_f0qpgd64" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.Pattern_8bm4vn_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

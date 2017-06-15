@@ -9,7 +9,7 @@
     <classNode dependClassName="updatedLanguage.migration.TestMigration" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
-  <dependency className="updatedLanguage.migration.Pattern_29burpp34sfb" file="Pattern_29burpp34sfb.java">
+  <dependency className="updatedLanguage.migration.Pattern_53jq1q_a0a5" file="Pattern_53jq1q_a0a5.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
@@ -39,7 +39,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode dependClassName="updatedLanguage.migration.Pattern_29burpp34sfb" />
+    <classNode dependClassName="updatedLanguage.migration.Pattern_53jq1q_a0a5" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
   </dependency>
 </dependenciesRoot>

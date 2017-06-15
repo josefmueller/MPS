@@ -53,7 +53,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_Object_InequationReplacementRule" file="FunctionType_subtypeOf_Object_InequationReplacementRule.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.Pattern_vpqlu0kqkzzq" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.typesystem.Pattern_40kvf0_a0a0a0g" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
@@ -77,7 +77,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.Pattern_vpqlu0kqkzzq" file="Pattern_vpqlu0kqkzzq.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.typesystem.Pattern_40kvf0_a0a0a0g" file="Pattern_40kvf0_a0a0a0g.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>

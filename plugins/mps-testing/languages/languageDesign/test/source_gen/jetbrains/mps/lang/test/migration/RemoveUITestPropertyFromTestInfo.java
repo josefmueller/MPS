@@ -38,7 +38,7 @@ public class RemoveUITestPropertyFromTestInfo extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new Pattern_myk1xnzdnq8b(_quotation_createNode_vbjplg_a0a0a5());
+      final GeneratedMatchingPattern pattern = new Pattern_vbjplg_a0a5(_quotation_createNode_vbjplg_a0a0a5());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));

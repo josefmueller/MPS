@@ -172,7 +172,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_fhnb5nnz" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_26ny8p_a0a0b0a" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -200,7 +200,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_fhnba0y3" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_7c1mz_a0a0a0a" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -476,7 +476,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.lang.generator.behavior.NodeMacro__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_fhnb8zdj" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_wfrqja_a0a0a0a" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -621,7 +621,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_fhnb8mu8" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_cdqxf8_a0a0a0a" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -654,7 +654,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_fhnb6zbi" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_wn5chh_a0a0a0a" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -734,7 +734,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_1eew8i2wycr7b" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_untfvr_a0a0a0a" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -968,42 +968,42 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_1eew8i2wycr7b" file="Pattern_1eew8i2wycr7b.java">
+  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_26ny8p_a0a0b0a" file="Pattern_26ny8p_a0a0b0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_bh9exa9pg1jc" file="Pattern_bh9exa9pg1jc.java">
+  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_4ckpni_a0a0a0a" file="Pattern_4ckpni_a0a0a0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_fhnb5nnz" file="Pattern_fhnb5nnz.java">
+  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_7c1mz_a0a0a0a" file="Pattern_7c1mz_a0a0a0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_fhnb6zbi" file="Pattern_fhnb6zbi.java">
+  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_bvvctf_a0a0b0a" file="Pattern_bvvctf_a0a0b0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_fhnb8mu8" file="Pattern_fhnb8mu8.java">
+  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_cdqxf8_a0a0a0a" file="Pattern_cdqxf8_a0a0a0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_fhnb8zdj" file="Pattern_fhnb8zdj.java">
+  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_untfvr_a0a0a0a" file="Pattern_untfvr_a0a0a0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_fhnba0y3" file="Pattern_fhnba0y3.java">
+  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_wfrqja_a0a0a0a" file="Pattern_wfrqja_a0a0a0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_t95ks2ugq5gn" file="Pattern_t95ks2ugq5gn.java">
+  <dependency className="jetbrains.mps.lang.generator.behavior.Pattern_wn5chh_a0a0a0a" file="Pattern_wn5chh_a0a0a0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
@@ -1423,7 +1423,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.lang.generator.behavior.NodeMacro__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_bh9exa9pg1jc" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_4ckpni_a0a0a0a" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -1862,7 +1862,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.lang.generator.behavior.NodeMacro__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_t95ks2ugq5gn" />
+    <classNode dependClassName="jetbrains.mps.lang.generator.behavior.Pattern_bvvctf_a0a0b0a" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />

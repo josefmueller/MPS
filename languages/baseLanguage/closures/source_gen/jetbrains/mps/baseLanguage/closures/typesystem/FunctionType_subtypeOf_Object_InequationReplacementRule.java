@@ -33,7 +33,7 @@ public class FunctionType_subtypeOf_Object_InequationReplacementRule extends Abs
   }
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new Pattern_vpqlu0kqkzzq(_quotation_createNode_40kvf0_a0a0a0a0g());
+      GeneratedMatchingPattern pattern = new Pattern_40kvf0_a0a0a0g(_quotation_createNode_40kvf0_a0a0a0a0g());
       this.myMatchingPattern2 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);

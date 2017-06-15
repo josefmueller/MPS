@@ -49,7 +49,7 @@ public class MigrateStaticBehaviorThisAndSuper extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new Pattern_cy0n4twamwvl(_quotation_createNode_bb55mu_a0a0a6());
+      final GeneratedMatchingPattern pattern = new Pattern_bb55mu_a0a6(_quotation_createNode_bb55mu_a0a0a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -87,7 +87,7 @@ public class MigrateStaticBehaviorThisAndSuper extends MigrationScriptBase {
       });
     }
     {
-      final GeneratedMatchingPattern pattern = new Pattern_cy0n4twanjp3(_quotation_createNode_bb55mu_a0a1a6());
+      final GeneratedMatchingPattern pattern = new Pattern_bb55mu_a1a6(_quotation_createNode_bb55mu_a0a1a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -125,7 +125,7 @@ public class MigrateStaticBehaviorThisAndSuper extends MigrationScriptBase {
       });
     }
     {
-      final GeneratedMatchingPattern pattern = new Pattern_cy0n4twannv4(_quotation_createNode_bb55mu_a0a2a6());
+      final GeneratedMatchingPattern pattern = new Pattern_bb55mu_a2a6(_quotation_createNode_bb55mu_a0a2a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));

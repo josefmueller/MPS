@@ -38,7 +38,7 @@ public class ReplaceDeprecatedVarReferencesWithVariableReference extends Migrati
   }
   public void doExecute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new Pattern_162zo6q4u531v(_quotation_createNode_88yha8_a0a0a6());
+      final GeneratedMatchingPattern pattern = new Pattern_88yha8_a0a6(_quotation_createNode_88yha8_a0a0a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -76,7 +76,7 @@ public class ReplaceDeprecatedVarReferencesWithVariableReference extends Migrati
       });
     }
     {
-      final GeneratedMatchingPattern pattern = new Pattern_162zo6q4u55k6(_quotation_createNode_88yha8_a0a1a6());
+      final GeneratedMatchingPattern pattern = new Pattern_88yha8_a1a6(_quotation_createNode_88yha8_a0a1a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -114,7 +114,7 @@ public class ReplaceDeprecatedVarReferencesWithVariableReference extends Migrati
       });
     }
     {
-      final GeneratedMatchingPattern pattern = new Pattern_162zo6q4u55l2(_quotation_createNode_88yha8_a0a2a6());
+      final GeneratedMatchingPattern pattern = new Pattern_88yha8_a2a6(_quotation_createNode_88yha8_a0a2a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -152,7 +152,7 @@ public class ReplaceDeprecatedVarReferencesWithVariableReference extends Migrati
       });
     }
     {
-      final GeneratedMatchingPattern pattern = new Pattern_162zo6q4u55m8(_quotation_createNode_88yha8_a0a3a6());
+      final GeneratedMatchingPattern pattern = new Pattern_88yha8_a3a6(_quotation_createNode_88yha8_a0a3a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));

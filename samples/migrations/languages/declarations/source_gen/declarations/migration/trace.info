@@ -22,7 +22,7 @@
       <node id="1233082194732500533" at="34,33,35,17" concept="7" />
       <node id="1233082194732500533" at="37,41,38,17" concept="2" />
       <node id="1233082194732500533" at="38,17,39,16" concept="7" />
-      <node id="1233082194732490267" at="42,5,43,111" concept="6" />
+      <node id="1233082194732490267" at="42,5,43,110" concept="6" />
       <node id="1233082194732490267" at="45,53,46,94" concept="7" />
       <node id="1233082194732490267" at="49,41,50,35" concept="7" />
       <node id="1233082194732490267" at="53,41,54,45" concept="7" />
@@ -67,7 +67,7 @@
       <node id="8519118779653926813" at="86,0,95,0" concept="9" trace="_quotation_createNode_9wc3oy_a0a0a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1233082194732490267" at="65,0,79,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1233082194732492303" at="95,0,109,0" concept="9" trace="_quotation_createNode_9wc3oy_a0a0f#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1233082194732490267" at="43,111,79,9" concept="2" />
+      <node id="1233082194732490267" at="43,110,79,9" concept="2" />
       <node id="1233082194732490267" at="41,42,80,5" concept="0" />
       <node id="1233082194732500533" at="41,0,82,0" concept="5" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <scope id="1233082194732500533" at="30,30,31,65" />
@@ -147,18 +147,18 @@
       <unit id="1233082194732490267" at="64,29,79,7" name="declarations.migration.MigrateDeclarations$6" />
       <unit id="1233082194732500533" at="29,0,110,0" name="declarations.migration.MigrateDeclarations" />
     </file>
-    <file name="Pattern_9d9f5o1sx6al.java">
-      <node id="1233082194732490269" at="10,50,11,30" concept="10" />
+    <file name="Pattern_9wc3oy_a0a5.java">
+      <node id="1233082194732490269" at="10,49,11,30" concept="10" />
       <node id="1233082194732490269" at="11,30,12,0" concept="8" />
       <node id="1233082194732490269" at="12,0,13,0" concept="8" />
       <node id="1233082194732490269" at="13,0,14,172" concept="2" />
       <node id="1233082194732490269" at="14,172,15,148" concept="2" />
-      <node id="1233082194732490269" at="10,0,17,0" concept="1" trace="Pattern_9d9f5o1sx6al#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1233082194732490269" at="10,50,15,148" />
+      <node id="1233082194732490269" at="10,0,17,0" concept="1" trace="Pattern_9wc3oy_a0a5#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1233082194732490269" at="10,49,15,148" />
       <scope id="1233082194732490269" at="10,0,17,0">
         <var name="patternNode" id="1233082194732490269" />
       </scope>
-      <unit id="1233082194732490269" at="9,0,19,0" name="declarations.migration.Pattern_9d9f5o1sx6al" />
+      <unit id="1233082194732490269" at="9,0,19,0" name="declarations.migration.Pattern_9wc3oy_a0a5" />
     </file>
   </root>
 </debug-info>

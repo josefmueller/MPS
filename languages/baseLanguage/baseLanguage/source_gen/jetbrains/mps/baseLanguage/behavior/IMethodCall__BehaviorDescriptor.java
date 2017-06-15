@@ -75,7 +75,7 @@ public final class IMethodCall__BehaviorDescriptor extends BaseBHDescriptor {
         }
         final SNode methodClassifier = SNodeOperations.getNodeAncestor(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
         {
-          GeneratedMatchingPattern pattern_fq0410_f0c0b0b = new Pattern_1ouf0mjhz0oob(_quotation_createNode_fq0410_a0a0a0f0c0b0b(methodClassifier));
+          GeneratedMatchingPattern pattern_fq0410_f0c0b0b = new Pattern_fq0410_a0a0f0c0b0b(_quotation_createNode_fq0410_a0a0a0f0c0b0b(methodClassifier));
           SNode coercedNode_fq0410_f0c0b0b = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_fq0410_f0c0b0b);
           if (coercedNode_fq0410_f0c0b0b != null) {
             SNode resultType;

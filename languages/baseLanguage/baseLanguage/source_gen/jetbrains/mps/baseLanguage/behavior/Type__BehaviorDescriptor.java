@@ -143,7 +143,7 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static boolean isSupersetOf_idhKBOZqh(@NotNull SNode __thisNode__, SNode t) {
     {
-      GeneratedMatchingPattern pattern_smb55n_a0o = new Pattern_fknugtqb(_quotation_createNode_smb55n_a0a0a0a0o(__thisNode__));
+      GeneratedMatchingPattern pattern_smb55n_a0o = new Pattern_smb55n_a0a0a0o(_quotation_createNode_smb55n_a0a0a0a0o(__thisNode__));
       SNode coercedNode_smb55n_a0o = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_smb55n_a0o);
       if (coercedNode_smb55n_a0o != null) {
         return true;

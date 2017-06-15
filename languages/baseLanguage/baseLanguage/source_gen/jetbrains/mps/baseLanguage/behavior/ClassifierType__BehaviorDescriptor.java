@@ -163,7 +163,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
         SNode matchedNode_hz3823_a0a0j = __thisNode__;
         {
           boolean matches_hz3823_a0a0a9 = false;
-          GeneratedMatchingPattern matchingPattern_hz3823_a0a0a9 = new Pattern_fknunrh1(_quotation_createNode_hz3823_a0a0b0b0a0a0j());
+          GeneratedMatchingPattern matchingPattern_hz3823_a0a0a9 = new Pattern_hz3823_a0b0b0a0a0j(_quotation_createNode_hz3823_a0a0b0b0a0a0j());
           matches_hz3823_a0a0a9 = matchingPattern_hz3823_a0a0a9.match(matchedNode_hz3823_a0a0j);
           if (matches_hz3823_a0a0a9) {
             return true;
@@ -173,7 +173,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
     {
-      GeneratedMatchingPattern pattern_hz3823_b0j = new Pattern_fknuvje8(_quotation_createNode_hz3823_a0a0a0b0j(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))));
+      GeneratedMatchingPattern pattern_hz3823_b0j = new Pattern_hz3823_a0a0b0j(_quotation_createNode_hz3823_a0a0a0b0j(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))));
       SNode coercedNode_hz3823_b0j = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_hz3823_b0j);
       if (coercedNode_hz3823_b0j != null) {
         {
@@ -207,7 +207,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
         SNode matchedNode_hz3823_a0a0k = __thisNode__;
         {
           boolean matches_hz3823_a0a0a01 = false;
-          GeneratedMatchingPattern matchingPattern_hz3823_a0a0a01 = new Pattern_1wlrfpjsh6640(_quotation_createNode_hz3823_a0a0b0b0a0a0k());
+          GeneratedMatchingPattern matchingPattern_hz3823_a0a0a01 = new Pattern_hz3823_a0b0b0a0a0k(_quotation_createNode_hz3823_a0a0b0b0a0a0k());
           matches_hz3823_a0a0a01 = matchingPattern_hz3823_a0a0a01.match(matchedNode_hz3823_a0a0k);
           if (matches_hz3823_a0a0a01) {
             return true;
@@ -217,7 +217,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
     {
-      GeneratedMatchingPattern pattern_hz3823_b0k = new Pattern_1wlrfpjsh6649(_quotation_createNode_hz3823_a0a0a0b0k(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))));
+      GeneratedMatchingPattern pattern_hz3823_b0k = new Pattern_hz3823_a0a0b0k(_quotation_createNode_hz3823_a0a0a0b0k(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"))));
       SNode coercedNode_hz3823_b0k = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_hz3823_b0k);
       if (coercedNode_hz3823_b0k != null) {
         {

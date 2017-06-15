@@ -503,12 +503,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.constraints.Pattern_1fxsreuw8g8zu" file="Pattern_1fxsreuw8g8zu.java">
+  <dependency className="jetbrains.mps.lang.smodel.constraints.Pattern_f4oi2a_a0a0a0a0a0a0b0a0a0b0a1a0b0d" file="Pattern_f4oi2a_a0a0a0a0a0a0b0a0a0b0a1a0b0d.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.constraints.Pattern_9bmskybj989i" file="Pattern_9bmskybj989i.java">
+  <dependency className="jetbrains.mps.lang.smodel.constraints.Pattern_f4oi2a_a0a0a0e" file="Pattern_f4oi2a_a0a0a0e.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
@@ -718,8 +718,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.Pattern_1fxsreuw8g8zu" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.Pattern_9bmskybj989i" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.Pattern_f4oi2a_a0a0a0a0a0a0b0a0a0b0a1a0b0d" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.constraints.Pattern_f4oi2a_a0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />

@@ -56,7 +56,7 @@ public class QueriesGenerated {
       SNode matchedNode_x583g4_a0a = _context.getNode();
       {
         boolean matches_x583g4_a0a0 = false;
-        GeneratedMatchingPattern matchingPattern_x583g4_a0a0 = new Pattern_vdcjmseauwbc(_quotation_createNode_x583g4_a0a0b0b0a0a());
+        GeneratedMatchingPattern matchingPattern_x583g4_a0a0 = new Pattern_x583g4_a0b0b0a0a(_quotation_createNode_x583g4_a0a0b0b0a0a());
         matches_x583g4_a0a0 = matchingPattern_x583g4_a0a0.match(matchedNode_x583g4_a0a);
         if (matches_x583g4_a0a0) {
           return false;

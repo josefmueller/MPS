@@ -2,11 +2,11 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.console.base.generator.util.CommandUtilChooserHelper" file="CommandUtilChooserHelper.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_4x9t8mhwhydo" />
-    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_4x9t8mhwsyo3" />
-    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_ckl0lpll5rb1" />
-    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_s4c3qdliozfi" />
-    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_s4c3qdlisa38" />
+    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0a" />
+    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0b" />
+    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0c" />
+    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0d" />
+    <classNode dependClassName="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0e" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -16,27 +16,27 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_4x9t8mhwhydo" file="Pattern_4x9t8mhwhydo.java">
+  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0a" file="Pattern_hv0mbi_b0a0a0a.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_4x9t8mhwsyo3" file="Pattern_4x9t8mhwsyo3.java">
+  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0b" file="Pattern_hv0mbi_b0a0a0b.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_ckl0lpll5rb1" file="Pattern_ckl0lpll5rb1.java">
+  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0c" file="Pattern_hv0mbi_b0a0a0c.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_s4c3qdliozfi" file="Pattern_s4c3qdliozfi.java">
+  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0d" file="Pattern_hv0mbi_b0a0a0d.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_s4c3qdlisa38" file="Pattern_s4c3qdlisa38.java">
+  <dependency className="jetbrains.mps.console.base.generator.util.Pattern_hv0mbi_b0a0a0e" file="Pattern_hv0mbi_b0a0a0e.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />

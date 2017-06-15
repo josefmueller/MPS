@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class RuleAssertNotNull implements DataFlowConstructor {
-  private GeneratedMatchingPattern myPattern = new Pattern_i6ycer8nigq6(_quotation_createNode_7fbm30_a0a0(), _quotation_createNode_7fbm30_b0a0(), _quotation_createNode_7fbm30_c0a0());
+  private GeneratedMatchingPattern myPattern = new Pattern_7fbm30_a0(_quotation_createNode_7fbm30_a0a0(), _quotation_createNode_7fbm30_b0a0(), _quotation_createNode_7fbm30_c0a0());
   public boolean isApplicable(SNode node) {
     return SNodeOperations.getConcept(node).equals(getApplicableConcept()) && myPattern.match(node);
   }

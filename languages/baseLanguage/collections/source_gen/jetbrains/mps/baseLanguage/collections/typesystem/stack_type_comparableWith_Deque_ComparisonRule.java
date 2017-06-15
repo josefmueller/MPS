@@ -28,7 +28,7 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
   }
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new Pattern_1fobnt8dwyr7n(_quotation_createNode_2rsa22_a0a0a0a0f());
+      GeneratedMatchingPattern pattern = new Pattern_2rsa22_a0a0a0f(_quotation_createNode_2rsa22_a0a0a0a0f());
       this.myMatchingPattern2 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);

@@ -44,7 +44,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
   }
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new Pattern_1nx5uajmygspg(_quotation_createNode_rspi48_a0a0a0a0g());
+      GeneratedMatchingPattern pattern = new Pattern_rspi48_a0a0a0g(_quotation_createNode_rspi48_a0a0a0a0g());
       this.myMatchingPattern1 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);
@@ -52,7 +52,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
   }
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new Pattern_1nx5uajmygspl(_quotation_createNode_rspi48_a0a0a0a0h());
+      GeneratedMatchingPattern pattern = new Pattern_rspi48_a0a0a0h(_quotation_createNode_rspi48_a0a0a0a0h());
       this.myMatchingPattern2 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);

@@ -16,9 +16,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.constraints.ConstraintsUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.behavior.migration.Pattern_cy0n4twamwvl" />
-    <classNode dependClassName="jetbrains.mps.lang.behavior.migration.Pattern_cy0n4twanjp3" />
-    <classNode dependClassName="jetbrains.mps.lang.behavior.migration.Pattern_cy0n4twannv4" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a0a6" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a1a6" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a2a6" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.NotMigratedNode" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
@@ -50,15 +50,15 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_cy0n4twamwvl" file="Pattern_cy0n4twamwvl.java">
+  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a0a6" file="Pattern_bb55mu_a0a6.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_cy0n4twanjp3" file="Pattern_cy0n4twanjp3.java">
+  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a1a6" file="Pattern_bb55mu_a1a6.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_cy0n4twannv4" file="Pattern_cy0n4twannv4.java">
+  <dependency className="jetbrains.mps.lang.behavior.migration.Pattern_bb55mu_a2a6" file="Pattern_bb55mu_a2a6.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
