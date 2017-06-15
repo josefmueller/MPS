@@ -18,8 +18,6 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.textgen.trace.TracingUtil;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -182,12 +180,6 @@ public class QueriesGenerated extends QueryProviderBase {
     return _context.getTemplateValue() + ((Integer) _context.getVariable("cv:x"));
   }
   public static Object propertyMacro_GetPropertyValue_9046399079000821219(final PropertyMacroContext _context) {
-    if (TracingUtil.getInput(_context.getNode()) != null) {
-      SNodeId nodeId = TracingUtil.getInput(_context.getNode()).getNodeId();
-      //  TemplateUtil or similar class deserves dedicated method to give compact node id/node's unique value 
-      String tail = (nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular ? Long.toString(((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId(), Character.MAX_RADIX) : nodeId.toString());
-      return "Pattern_" + tail;
-    }
     return _context.createUniqueName("Pattern_", SNodeOperations.getContainingRoot(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_1949222934982669694(final PropertyMacroContext _context) {
