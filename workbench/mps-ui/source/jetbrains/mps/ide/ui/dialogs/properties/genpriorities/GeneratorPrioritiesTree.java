@@ -69,7 +69,7 @@ public class GeneratorPrioritiesTree {
 
   // FIXME isRight = !isLeft, depGenerators used only when isRight - bloody sh!t. Why not initTree is package local, so that caller could configure this Tree(?!) as needed?
   public GeneratorPrioritiesTree(@NotNull final SRepository repo, @NotNull final Generator generator, @NotNull MappingConfig_AbstractRef mapping, boolean isLeft, final Set<SModuleReference> depGenerators) {
-    myRootNode = new CheckedTreeNodeEx(null, "Generators", createRootIcon());
+    myRootNode = new CheckedTreeNodeEx(null, "Generators", Nodes.Generator);
     final boolean isRight = !isLeft;
 
     repo.getModelAccess().runReadAction(new Runnable() {
@@ -346,14 +346,6 @@ public class GeneratorPrioritiesTree {
         }
       }
     }
-  }
-
-  private static Icon createRootIcon() {
-    LayeredIcon layeredIcon = new LayeredIcon(3);
-    layeredIcon.setIcon(Nodes.Generator, 0, +2, -2);
-    layeredIcon.setIcon(Nodes.Generator, 1, 0, 0);
-    layeredIcon.setIcon(Nodes.Generator, 2, -2, +2);
-    return layeredIcon;
   }
 
   private static class CheckedTreeNodeEx extends CheckedTreeNode {
