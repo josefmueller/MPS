@@ -3,7 +3,8 @@ package jetbrains.mps.migration;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.ide.migration.MigrationRegistry;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.testbench.junit.suites.BaseProjectsTest;
 import jetbrains.mps.util.IterableUtil;
@@ -12,10 +13,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 import org.junit.Test;
-
-import javax.swing.SwingUtilities;
-
-import jetbrains.mps.ide.migration.MigrationManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,16 +40,16 @@ public class NoPendingMigrationsTest extends BaseProjectsTest {
     List<String> projectMigrations = new ArrayList<>();
     List<String> moduleMigrations = new ArrayList<>();
     Exception exception = ThreadUtils.runInUIThreadAndWait(() -> {
-      MigrationManager migrationManager = getContextProject().getComponent(MigrationManager.class);
+      MigrationRegistry migrationManager = getContextProject().getComponent(MigrationRegistry.class);
       migrationRequired[0] = migrationManager.isMigrationRequired();
       if (migrationRequired[0]) {
-        projectMigrations.addAll(IterableUtil.asCollection(migrationManager.getProjectMigrationsToApply())
+        projectMigrations.addAll(IterableUtil.asCollection(migrationManager.getProjectMigrations())
             .stream().map(ProjectMigration::getDescription)
             .collect(Collectors.toList()));
         List<SModule> modules = new ArrayList<>();
         getContextProject().getModelAccess().runReadAction(() -> {
-          modules.addAll(IterableUtil.asCollection(MigrationsUtil.getMigrateableModulesFromProject(getContextProject())));
-          moduleMigrations.addAll(migrationManager.getModuleMigrationsToApply(modules)
+          modules.addAll(IterableUtil.asCollection(MigrationModuleUtil.getMigrateableModulesFromProject(getContextProject())));
+          moduleMigrations.addAll(migrationManager.getModuleMigrations(modules)
               .stream().map(it -> it.getScriptReference().resolve(false).getCaption())
               .collect(Collectors.toList()));
         });

@@ -19,11 +19,14 @@ import com.intellij.history.core.changes.ChangeSet;
 import com.intellij.history.integration.LocalHistoryImpl;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.migration.MigrationChecker;
-import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.ide.migration.MigrationExecutor;
+import jetbrains.mps.ide.migration.MigrationRegistry;
+import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.ide.migration.wizard.MigrationSession.MigrationSessionBase;
 import jetbrains.mps.ide.migration.wizard.MigrationTask;
 import jetbrains.mps.migration.global.MigrationOptions;
+import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.testbench.junit.suites.TestMakeUtil;
@@ -69,13 +72,28 @@ public class MigrationsTest {
       }
 
       @Override
-      public MigrationManager getMigrationManager() {
-        return project.getComponent(MigrationManager.class);
+      public MigrationRegistry getMigrationRegistry() {
+        return project.getComponent(MigrationRegistry.class);
       }
 
       @Override
       public MigrationChecker getChecker() {
         return project.getComponent(MigrationChecker.class);
+      }
+
+      @Override
+      public MigrationExecutor getExecutor() {
+        return new MigrationExecutor() {
+          @Override
+          public void executeModuleMigration(ScriptApplied sa) {
+            throw new UnsupportedOperationException();
+          }
+
+          @Override
+          public void executeProjectMigration(ProjectMigration pm) {
+            throw new UnsupportedOperationException();
+          }
+        };
       }
 
       @Override
