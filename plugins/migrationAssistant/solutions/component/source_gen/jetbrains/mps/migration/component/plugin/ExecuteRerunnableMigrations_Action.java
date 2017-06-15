@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -69,7 +69,8 @@ public class ExecuteRerunnableMigrations_Action extends BaseAction {
     final List<SModule>[] modules = new List[1];
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        modules[0] = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))).toListSequence();
+        jetbrains.mps.project.Project p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+        modules[0] = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(p)).toListSequence();
       }
     });
     ProgressManager.getInstance().run(new Task.Modal(event.getData(CommonDataKeys.PROJECT), "Run Migrations", true) {

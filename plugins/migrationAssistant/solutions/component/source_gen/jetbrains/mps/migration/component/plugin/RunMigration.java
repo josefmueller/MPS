@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -41,7 +41,7 @@ public class RunMigration extends BaseAction {
     final List<SModule>[] modules = new List[1];
     myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        modules[0] = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myProject)).toListSequence();
+        modules[0] = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(myProject)).toListSequence();
       }
     });
     ProgressManager.getInstance().run(new Task.Modal(myProject.getProject(), "Run Migration", true) {

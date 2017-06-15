@@ -4,45 +4,88 @@ package jetbrains.mps.migration.component.plugin;
 
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.migration.MigrationManager;
-import jetbrains.mps.migration.global.MigrationOptions;
-import jetbrains.mps.migration.global.ProjectMigration;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.List;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.migration.ScriptApplied;
+import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.ide.migration.ScriptApplied;
+import jetbrains.mps.ide.migration.MigrationChecker;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
+import jetbrains.mps.ide.migration.MigrationExecutor;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.migration.MigrationRegistry;
+import jetbrains.mps.migration.global.MigrationOptions;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
-import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.util.Collection;
-import jetbrains.mps.ide.migration.MigrationChecker;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
-import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
 
 /*package*/ class TestMigrationSession extends MigrationSession.MigrationSessionBase {
   private TestMigrationSession.MyMigrationManager myManager = new TestMigrationSession.MyMigrationManager();
   private MigrationTestConfigDialog.Result mySettings;
   private MPSProject myProject;
+
+  private List<ProjectMigration> passedP = ListSequence.fromList(new ArrayList<ProjectMigration>());
+  private List<ScriptApplied> passedM = ListSequence.fromList(new ArrayList<ScriptApplied>());
+  private MigrationChecker myChecker = new MigrationChecker() {
+    public void checkMigrations(ProgressMonitor m, Processor<ScriptApplied> processor) {
+      if (mySettings.preError != 2) {
+        return;
+      }
+      final Wrappers._T<SModule> module = new Wrappers._T<SModule>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          module.value = MPSModuleRepository.getInstance().getModules().iterator().next();
+        }
+      });
+      processor.process(new ScriptApplied(module.value, ListSequence.fromList(myManager.getModuleMig()).first().getReference()));
+    }
+    public void checkLibs(ProgressMonitor m, Processor<Pair<SModule, SModule>> processor) {
+      // todo 
+    }
+    @Override
+    public void checkProject(ProgressMonitor m, Processor<Problem> processor) {
+      if (mySettings.preError != 1) {
+        return;
+      }
+      processor.process(new BrokenReferenceProblem(null, "test error"));
+    }
+    @Override
+    public void findNotMigrated(ProgressMonitor m, Iterable<ScriptApplied> toCheck, Processor<Problem> processor) {
+      // todo  
+    }
+  };
+  private MigrationExecutor myExecutor = new MigrationExecutor() {
+    public void executeModuleMigration(ScriptApplied s) {
+      s.getScriptReference().resolve(true).execute(s.getModule());
+      ListSequence.fromList(passedM).addElement(s);
+    }
+    public void executeProjectMigration(ProjectMigration pm) {
+      pm.execute(myProject);
+      ListSequence.fromList(passedP).addElement(pm);
+    }
+  };
+
   public TestMigrationSession(MPSProject p, MigrationTestConfigDialog.Result settings) {
     mySettings = settings;
     myProject = p;
@@ -50,12 +93,12 @@ import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
   public Project getProject() {
     return myProject;
   }
-  public MigrationManager getMigrationManager() {
+  public MigrationRegistry getMigrationRegistry() {
     return this.myManager;
   }
   public MigrationOptions getOptions() {
     MigrationOptions res = new MigrationOptions();
-    for (ProjectMigration pm : Sequence.fromIterable(getMigrationManager().getProjectMigrationsToApply())) {
+    for (ProjectMigration pm : CollectionSequence.fromCollection(getMigrationRegistry().getProjectMigrations())) {
       if (pm instanceof ProjectMigrationWithOptions) {
         for (ProjectMigrationWithOptions.Option o : CollectionSequence.fromCollection(((ProjectMigrationWithOptions) pm).getOptions())) {
           res.addOption(o);
@@ -64,7 +107,7 @@ import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
     }
     return res;
   }
-  private class MyMigrationManager implements MigrationManager {
+  private class MyMigrationManager implements MigrationRegistry {
     private List<ProjectMigration> myProjectMig;
     private List<MigrationScript> myModuleMig;
 
@@ -82,14 +125,11 @@ import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
     public void doUpdateImportVersions(SModule module) {
     }
     @Override
-    public void executeScript(ScriptApplied s) {
-      s.getScriptReference().resolve(true).execute(s.getModule());
-      ListSequence.fromList(passedM).addElement(s);
-    }
-    public Iterable<ProjectMigration> getProjectMigrationsToApply() {
+    public Collection<ProjectMigration> getProjectMigrations() {
       return getProjectMig();
     }
-    public List<ScriptApplied> getModuleMigrationsToApply(Iterable<SModule> modules) {
+    @Override
+    public Collection<ScriptApplied> getModuleMigrations(Iterable<SModule> modules) {
       if (Sequence.fromIterable(modules).isEmpty()) {
         return Collections.emptyList();
       }
@@ -103,17 +143,8 @@ import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
       }
       return (List<ScriptApplied>) ((List) Sequence.fromIterable(getModuleMigrationsApplied()).toListSequence());
     }
-    public int projectStepsCount(final boolean isCleanup) {
-      return Sequence.fromIterable(getProjectMigrationsToApply()).where(new IWhereFilter<ProjectMigration>() {
-        public boolean accept(ProjectMigration it) {
-          return isCleanup == (it instanceof CleanupProjectMigration);
-        }
-      }).count();
-    }
-
-    private List<ProjectMigration> passedP = ListSequence.fromList(new ArrayList<ProjectMigration>());
     public ProjectMigration nextProjectStep(MigrationOptions options, final boolean cleanup) {
-      final ProjectMigration next = Sequence.fromIterable(getProjectMigrationsToApply()).where(new IWhereFilter<ProjectMigration>() {
+      final ProjectMigration next = CollectionSequence.fromCollection(getProjectMigrations()).where(new IWhereFilter<ProjectMigration>() {
         public boolean accept(ProjectMigration it) {
           return cleanup == (it instanceof CleanupProjectMigration);
         }
@@ -128,17 +159,13 @@ import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
       ListSequence.fromList(passedP).addElement(next);
       return next;
     }
-    public int moduleStepsCount() {
-      return Sequence.fromIterable(getModuleMigrationsApplied()).count();
-    }
-    private List<ScriptApplied> passedM = ListSequence.fromList(new ArrayList<ScriptApplied>());
     public ScriptApplied nextModuleStep(@Nullable BaseScriptReference ref) {
       Iterable<ScriptApplied> applied = getModuleMigrationsApplied();
       final ScriptApplied sa = Sequence.fromIterable(applied).where(new IWhereFilter<ScriptApplied>() {
         public boolean accept(final ScriptApplied sa) {
           return ListSequence.fromList(passedM).all(new IWhereFilter<ScriptApplied>() {
             public boolean accept(ScriptApplied it) {
-              return neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0r7(it.getScriptReference(), sa.getScriptReference()) || it.getModule() != sa.getModule();
+              return neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0l31(it.getScriptReference(), sa.getScriptReference()) || it.getModule() != sa.getModule();
             }
           });
         }
@@ -173,19 +200,20 @@ import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
       });
       return res.value;
     }
-    public List<ProjectMigration> getProjectMig() {
+    private List<ProjectMigration> getProjectMig() {
       if (myProjectMig == null) {
         myProjectMig = createProjectMigs();
       }
       return myProjectMig;
     }
-    public List<MigrationScript> getModuleMig() {
+    private List<MigrationScript> getModuleMig() {
       if (myModuleMig == null) {
         myModuleMig = createLanguageMigs();
       }
       return myModuleMig;
     }
   }
+
   private List<ProjectMigration> createProjectMigs() {
     return ListSequence.fromList(mySettings.pMigrations).select(new ISelector<MigrationTestConfigDialog.Result.PMigration, ProjectMigration>() {
       public ProjectMigration select(MigrationTestConfigDialog.Result.PMigration pmig) {
@@ -197,6 +225,7 @@ import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
       }
     }).toListSequence();
   }
+
   private List<MigrationScript> createLanguageMigs() {
     return ListSequence.fromList(mySettings.lMigrations).select(new ISelector<MigrationTestConfigDialog.Result.LMigration, MigrationScript>() {
       public MigrationScript select(MigrationTestConfigDialog.Result.LMigration lmig) {
@@ -293,38 +322,17 @@ import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
     public void forceExecutionNextTime(Project project) {
     }
   }
+
   @Override
   public MigrationChecker getChecker() {
-    return new MigrationChecker() {
-      public void checkMigrations(ProgressMonitor m, Processor<ScriptApplied> processor) {
-        if (mySettings.preError != 2) {
-          return;
-        }
-        final Wrappers._T<SModule> module = new Wrappers._T<SModule>();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            module.value = MPSModuleRepository.getInstance().getModules().iterator().next();
-          }
-        });
-        processor.process(new ScriptApplied(module.value, ListSequence.fromList(myManager.getModuleMig()).first().getReference()));
-      }
-      public void checkLibs(ProgressMonitor m, Processor<Pair<SModule, SModule>> processor) {
-        // todo 
-      }
-      @Override
-      public void checkProject(ProgressMonitor m, Processor<Problem> processor) {
-        if (mySettings.preError != 1) {
-          return;
-        }
-        processor.process(new BrokenReferenceProblem(null, "test error"));
-      }
-      @Override
-      public void findNotMigrated(ProgressMonitor m, Iterable<ScriptApplied> toCheck, Processor<Problem> processor) {
-        // todo  
-      }
-    };
+    return this.myChecker;
   }
-  private static boolean neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0r7(Object a, Object b) {
+
+  @Override
+  public MigrationExecutor getExecutor() {
+    return myExecutor;
+  }
+  private static boolean neq_51bgm5_a0a0a0a0a0a0a0a0a0a0a0b0l31(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

@@ -4,10 +4,11 @@ package jetbrains.mps.ide.migration;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.Pair;
@@ -17,7 +18,9 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.ide.migration.check.DependencyProblem;
 import java.util.ArrayList;
@@ -48,7 +51,6 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -58,10 +60,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class MigrationCheckerImpl extends AbstractProjectComponent implements MigrationChecker {
   private Project myProject;
-  private MigrationManager myManager;
+  private MigrationRegistry myManager;
 
-  public MigrationCheckerImpl(com.intellij.openapi.project.Project ideaProject, Project p, MigrationManager manager) {
-    super(ideaProject);
+  public MigrationCheckerImpl(Project p, MigrationRegistry manager) {
+    super(ProjectHelper.toIdeaProject(p));
     myProject = p;
     myManager = manager;
   }
@@ -71,7 +73,7 @@ public class MigrationCheckerImpl extends AbstractProjectComponent implements Mi
     m.start("Checking migrations consistency...", 1);
     myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        Iterable<ScriptApplied> problems = ListSequence.fromList(myManager.getModuleMigrationsToApply(MigrationsUtil.getMigrateableModulesFromProject(myProject))).where(new IWhereFilter<ScriptApplied>() {
+        Iterable<ScriptApplied> problems = CollectionSequence.fromCollection(myManager.getModuleMigrations(MigrationModuleUtil.getMigrateableModulesFromProject(myProject))).where(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
             return it.getScriptReference().resolve(false) == null;
           }
@@ -90,11 +92,11 @@ public class MigrationCheckerImpl extends AbstractProjectComponent implements Mi
     m.start("Checking dependencies...", 1);
     myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        List<SModule> projectModules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myProject)).toListSequence();
+        List<SModule> projectModules = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(myProject)).toListSequence();
         Set<SModule> depModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(projectModules).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
         SetSequence.fromSet(depModules).removeSequence(Sequence.fromIterable(((Iterable<SModule>) myProject.getModulesWithGenerators())));
-        List<ScriptApplied> depMigrationsToRun = myManager.getModuleMigrationsToApply(depModules);
-        Iterable<SModule> notMigratedModules = ListSequence.fromList(depMigrationsToRun).select(new ISelector<ScriptApplied, SModule>() {
+        Collection<ScriptApplied> depMigrationsToRun = myManager.getModuleMigrations(depModules);
+        Iterable<SModule> notMigratedModules = CollectionSequence.fromCollection(depMigrationsToRun).select(new ISelector<ScriptApplied, SModule>() {
           public SModule select(ScriptApplied it) {
             return it.getModule();
           }
@@ -119,7 +121,7 @@ public class MigrationCheckerImpl extends AbstractProjectComponent implements Mi
     myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         // todo inline 
-        List<SModule> modules = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myProject)).toListSequence();
+        List<SModule> modules = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(myProject)).toListSequence();
         pm.start("Checking...", 10 + ListSequence.fromList(modules).count());
 
         List<DependencyProblem> rv = ListSequence.fromList(new ArrayList<DependencyProblem>());

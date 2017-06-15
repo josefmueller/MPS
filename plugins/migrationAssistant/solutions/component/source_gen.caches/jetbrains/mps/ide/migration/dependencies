@@ -8,7 +8,10 @@
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationChecker" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckerImpl" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationExecutor" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationExecutorImpl" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationError" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationSession" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationTask" />
@@ -20,7 +23,7 @@
   <dependency className="jetbrains.mps.ide.migration.HeadlessMigrationExecutor" file="HeadlessMigrationExecutor.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
   </dependency>
@@ -35,20 +38,20 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationCheckerImpl" file="MigrationCheckerImpl.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.classloading.ModuleClassLoaderSupport" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
     <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.BrokenReferenceProblem" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem" />
@@ -56,6 +59,7 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.check.DependencyProblem" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.LanguageAbsentInRepoProblem" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.LanguageNotLoadedProblem" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -63,11 +67,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrateManually" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModule" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.dependency.GlobalModuleDependenciesManager" />
@@ -102,8 +106,56 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.StringBuilder" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.MigrationExecutor" file="MigrationExecutor.java">
+    <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
+    <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.MigrationExecutorImpl" file="MigrationExecutorImpl.java">
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModulesScope" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.DataCollector" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringScript" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference" />
+    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationDataUtil" />
+    <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSessionImpl" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringUI" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="jetbrains.mps.ide.migration.MigrationExecutor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationMakeBlocker" file="MigrationMakeBlocker.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -115,9 +167,9 @@
     <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.MigrationManager" file="MigrationManager.java">
+  <dependency className="jetbrains.mps.ide.migration.MigrationRegistry" file="MigrationRegistry.java">
     <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.BaseScriptReference" />
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationOptions" />
@@ -125,7 +177,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.MigrationManagerImpl" file="MigrationManagerImpl.java">
+  <dependency className="jetbrains.mps.ide.migration.MigrationRegistryImpl" file="MigrationRegistryImpl.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
@@ -136,7 +188,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
@@ -146,28 +197,18 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModulesScope" />
     <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.BaseScriptReference" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.DataCollector" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringScript" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationDataUtil" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
     <classNode dependClassName="jetbrains.mps.migration.global.CleanupProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationOptions" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
@@ -177,25 +218,19 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.project.dependency.GlobalModuleDependenciesManager" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSessionImpl" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringUI" />
     <classNode dependClassName="jetbrains.mps.smodel.SLanguageHierarchy" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.ide.migration.MigrationManager" />
+    <classNode extendsClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationTrigger" file="MigrationTrigger.java">
     <classNode dependClassName="com.intellij.openapi.application.Application" />
@@ -225,8 +260,11 @@
     <classNode dependClassName="jetbrains.mps.classloading.MPSClassesListenerAdapter" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationChecker" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckerImpl" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationDialogUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationManager" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationExecutor" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationExecutorImpl" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.MigrationOutputUtil" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationError" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationSession" />
@@ -235,14 +273,15 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManager" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationsUtil" />
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationOptions" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationProperties" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModuleBase" />

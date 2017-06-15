@@ -16,7 +16,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.SLanguageHierarchy;
@@ -47,7 +47,7 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
       return;
     }
 
-    List<SLanguage> languages = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(mpsProject)).translate(new ITranslator2<SModule, SLanguage>() {
+    List<SLanguage> languages = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(mpsProject)).translate(new ITranslator2<SModule, SLanguage>() {
       public Iterable<SLanguage> translate(SModule module) {
         return new SLanguageHierarchy(LanguageRegistry.getInstance(mpsProject.getRepository()), module.getUsedLanguages()).getExtended();
       }

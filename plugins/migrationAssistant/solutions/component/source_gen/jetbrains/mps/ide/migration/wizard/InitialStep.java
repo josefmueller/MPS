@@ -15,21 +15,23 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.project.Project;
 import javax.swing.tree.DefaultMutableTreeNode;
-import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.ide.migration.MigrationRegistry;
 import javax.swing.Icon;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
+import java.util.Collection;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.icons.MPSIcons;
@@ -96,13 +98,13 @@ public class InitialStep extends BaseStep {
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        MigrationManager manager = mySession.getMigrationManager();
+        MigrationRegistry manager = mySession.getMigrationRegistry();
         final Icon migrationIcon = ApplicationManager.getApplication().getComponent(GlobalIconManager.class).getIconFor(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
 
         // project migrations 
         final DefaultMutableTreeNode croot = new DefaultMutableTreeNode("Cleanups");
         final DefaultMutableTreeNode proot = new DefaultMutableTreeNode("Project Migrations");
-        Sequence.fromIterable(manager.getProjectMigrationsToApply()).visitAll(new IVisitor<ProjectMigration>() {
+        CollectionSequence.fromCollection(manager.getProjectMigrations()).visitAll(new IVisitor<ProjectMigration>() {
           public void visit(ProjectMigration it) {
             DefaultMutableTreeNode node = new InitialStep.MyTreeNode(it.getDescription(), migrationIcon);
             if (it instanceof CleanupProjectMigration) {
@@ -119,8 +121,8 @@ public class InitialStep extends BaseStep {
           root.add(proot);
         }
 
-        List<ScriptApplied> migrationsApplied = manager.getModuleMigrationsToApply(MigrationModuleUtil.getMigrateableModulesFromProject(project));
-        Iterable<BaseScriptReference> scripts = ListSequence.fromList(migrationsApplied).select(new ISelector<ScriptApplied, BaseScriptReference>() {
+        Collection<ScriptApplied> migrationsApplied = manager.getModuleMigrations(MigrationModuleUtil.getMigrateableModulesFromProject(project));
+        Iterable<BaseScriptReference> scripts = CollectionSequence.fromCollection(migrationsApplied).select(new ISelector<ScriptApplied, BaseScriptReference>() {
           public BaseScriptReference select(ScriptApplied it) {
             return it.getScriptReference();
           }
@@ -143,7 +145,7 @@ public class InitialStep extends BaseStep {
             MapSequence.fromMap(l2n).get(it.getLanguage()).add(new InitialStep.MyTreeNode(caption, migrationIcon));
           }
         });
-        int migratedModulesNum = ListSequence.fromList(migrationsApplied).where(new IWhereFilter<ScriptApplied>() {
+        int migratedModulesNum = CollectionSequence.fromCollection(migrationsApplied).where(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
             return it.getScriptReference() instanceof MigrationScriptReference;
           }
@@ -180,7 +182,7 @@ public class InitialStep extends BaseStep {
             MapSequence.fromMap(m2n).get(it.getModule()).add(node);
           }
         });
-        int migratedModulesNum2 = ListSequence.fromList(migrationsApplied).where(new IWhereFilter<ScriptApplied>() {
+        int migratedModulesNum2 = CollectionSequence.fromCollection(migrationsApplied).where(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
             return it.getScriptReference() instanceof RefactoringScriptReference;
           }

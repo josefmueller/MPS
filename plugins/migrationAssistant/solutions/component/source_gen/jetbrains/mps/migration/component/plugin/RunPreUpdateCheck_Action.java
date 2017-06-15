@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -78,7 +78,8 @@ public class RunPreUpdateCheck_Action extends BaseAction {
     final SRepository repos = event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository();
     repos.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        ListSequence.fromList(modules).addSequence(Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(event.getData(MPSCommonDataKeys.MPS_PROJECT))));
+        jetbrains.mps.project.Project p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+        ListSequence.fromList(modules).addSequence(Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(p)));
       }
     });
 

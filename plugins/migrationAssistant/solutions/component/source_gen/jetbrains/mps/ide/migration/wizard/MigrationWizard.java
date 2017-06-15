@@ -21,7 +21,7 @@ public class MigrationWizard extends AbstractWizardEx {
   }
 
   private static List<BaseStep> createSteps(final MigrationSession session) {
-    Iterable<ProjectMigration> projectMig = session.getMigrationManager().getProjectMigrationsToApply();
+    Iterable<ProjectMigration> projectMig = session.getMigrationRegistry().getProjectMigrations();
     Sequence.fromIterable(projectMig).ofType(ProjectMigrationWithOptions.class).translate(new ITranslator2<ProjectMigrationWithOptions, ProjectMigrationWithOptions.Option>() {
       public Iterable<ProjectMigrationWithOptions.Option> translate(ProjectMigrationWithOptions it) {
         return it.getOptions();

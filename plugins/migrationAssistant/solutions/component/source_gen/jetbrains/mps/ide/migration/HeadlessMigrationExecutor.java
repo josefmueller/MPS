@@ -6,8 +6,8 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 
 public class HeadlessMigrationExecutor extends AbstractProjectComponent implements IStartupMigrationExecutor {
-  private MigrationManager myMigrationManager;
-  public HeadlessMigrationExecutor(Project project, MigrationManager migrationManager) {
+  private MigrationRegistry myMigrationManager;
+  public HeadlessMigrationExecutor(Project project, MigrationRegistry migrationManager) {
     super(project);
     myMigrationManager = migrationManager;
   }

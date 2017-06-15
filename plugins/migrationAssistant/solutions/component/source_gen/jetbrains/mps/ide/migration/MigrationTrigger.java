@@ -19,11 +19,12 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -31,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -40,6 +40,7 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.util.WaitForProgressToShow;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
@@ -83,7 +84,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private MigrationOptions myOptions = new MigrationOptions();
 
   private final MPSProject myMpsProject;
-  private final MigrationManager myMigrationManager;
+  private final MigrationRegistry myMigrationManager;
   private final ReloadManager myReloadManager;
 
   private boolean myMigrationQueued = false;
@@ -96,18 +97,16 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   private MigrationTrigger.MyPropertiesListener myPropertiesListener = new MigrationTrigger.MyPropertiesListener();
   private boolean myListenersAdded = false;
 
-  public MigrationTrigger(Project ideaProject, MPSProject p, MigrationManager migrationManager, MigrationChecker checker, ProjectMigrationProperties props, MPSCoreComponents mpsCore, ReloadManagerComponent reloadManager) {
+  public MigrationTrigger(Project ideaProject, MPSProject p, MigrationRegistry migrationManager, ProjectMigrationProperties props, MPSCoreComponents mpsCore, ReloadManagerComponent reloadManager) {
     super(ideaProject);
     myMpsProject = p;
     myMigrationManager = migrationManager;
     myProperties = props;
     myClassLoaderManager = mpsCore.getClassLoaderManager();
     myReloadManager = reloadManager;
-    myChecker = checker;
   }
 
   private final AtomicInteger myBlocked = new AtomicInteger(0);
-  private MigrationChecker myChecker;
 
   public void blockMigrationsCheck() {
     myBlocked.incrementAndGet();
@@ -167,7 +166,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   /*package*/ void checkMigrationNeeded() {
     myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        checkMigrationNeededOnModuleChange(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
+        checkMigrationNeededOnModuleChange(MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject));
       }
     });
   }
@@ -177,7 +176,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       return;
     }
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-    if (!((myMigrationManager.importVersionsUpdateRequired(modules2Check) || myMigrationManager.isMigrationRequired(modules2Check)))) {
+    if (!((myMigrationManager.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationManager.getModuleMigrations(modules2Check)).isNotEmpty())) || CollectionSequence.fromCollection(myMigrationManager.getProjectMigrations()).isNotEmpty()) {
       return;
     }
 
@@ -197,7 +196,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
         return MetaAdapterFactory.getLanguage(it.getModuleReference());
       }
     }).toListSequence();
-    Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).visitAll(new IVisitor<SModule>() {
+    Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject)).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
         Set<SLanguage> used = new HashSet<SLanguage>(it.getUsedLanguages());
         used.retainAll(addedLanguages);
@@ -206,7 +205,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
         }
       }
     });
-    if (myMigrationManager.importVersionsUpdateRequired(modules2Check) || ListSequence.fromList(myMigrationManager.getModuleMigrationsToApply(modules2Check)).isNotEmpty()) {
+    if (myMigrationManager.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationManager.getModuleMigrations(modules2Check)).isNotEmpty()) {
       postponeMigration();
     }
   }
@@ -230,7 +229,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
 
             myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
               public void run() {
-                importVersionsUpdateRequired.value = myMigrationManager.importVersionsUpdateRequired(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject));
+                importVersionsUpdateRequired.value = myMigrationManager.importVersionsUpdateRequired(MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject));
                 migrationRequired.value = myMigrationManager.isMigrationRequired();
               }
             });
@@ -262,7 +261,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
                   final Wrappers._T<List<SModule>> allModules = new Wrappers._T<List<SModule>>();
                   myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
                     public void run() {
-                      allModules.value = Sequence.fromIterable(MigrationsUtil.getMigrateableModulesFromProject(myMpsProject)).toListSequence();
+                      allModules.value = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(myMpsProject)).toListSequence();
                     }
                   });
                   pm.start("Saving...", ListSequence.fromList(allModules.value).count());
@@ -368,7 +367,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private boolean isProjectMigrateableModule(@NotNull SModule module) {
-    return myMpsProject.getProjectModulesWithGenerators().contains(module) && MigrationsUtil.isModuleMigrateable(module);
+    return myMpsProject.getProjectModulesWithGenerators().contains(module) && MigrationModuleUtil.isModuleMigrateable(module);
   }
 
   private class MyRepoListener extends SRepositoryContentAdapter {
@@ -483,14 +482,18 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
   }
 
   private class MyMigrationSession extends MigrationSession.MigrationSessionBase {
+    private MigrationCheckerImpl myChecker;
+    private MigrationExecutorImpl myExecutor;
     public MyMigrationSession() {
+      this.myChecker = new MigrationCheckerImpl(myMpsProject, getMigrationRegistry());
+      this.myExecutor = new MigrationExecutorImpl(myMpsProject);
     }
     @Override
     public jetbrains.mps.project.Project getProject() {
       return myMpsProject;
     }
     @Override
-    public MigrationManager getMigrationManager() {
+    public MigrationRegistry getMigrationRegistry() {
       return myMigrationManager;
     }
     @Override
@@ -499,7 +502,11 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     }
     @Override
     public MigrationChecker getChecker() {
-      return myChecker;
+      return this.myChecker;
+    }
+    @Override
+    public MigrationExecutor getExecutor() {
+      return this.myExecutor;
     }
   }
 }

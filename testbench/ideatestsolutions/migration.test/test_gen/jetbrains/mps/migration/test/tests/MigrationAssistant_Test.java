@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 import jetbrains.mps.project.Project;
 import junit.framework.Assert;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.ide.migration.MigrationRegistry;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -28,7 +28,7 @@ public class MigrationAssistant_Test extends TestCase {
   private static final String PROJECT_PATH = "testbench/modules/migrationAssistant";
   private Project project;
   public void test_test() throws Exception {
-    Assert.assertFalse(ProjectHelper.toIdeaProject(project).getComponent(MigrationManager.class).isMigrationRequired());
+    Assert.assertFalse(ProjectHelper.toIdeaProject(project).getComponent(MigrationRegistry.class).isMigrationRequired());
 
     final Wrappers._T<List<SProperty>> properties = new Wrappers._T<List<SProperty>>();
     final Wrappers._T<SNode> root = new Wrappers._T<SNode>();

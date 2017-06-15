@@ -13,7 +13,7 @@ import jetbrains.mps.migration.global.MigrationOptions;
 
 public class AntTaskExecutionUtil {
   public static boolean migrate(final Project project) throws Exception {
-    MigrationManager m = ProjectHelper.toIdeaProject(project).getComponent(MigrationManager.class);
+    MigrationRegistry m = ProjectHelper.toIdeaProject(project).getComponent(MigrationRegistry.class);
     if (!(m.isMigrationRequired())) {
       return false;
     }
@@ -44,21 +44,29 @@ public class AntTaskExecutionUtil {
   private static class MyMigrationSession extends MigrationSession.MigrationSessionBase {
     private Project myProject;
     private MigrationOptions myOptions = new MigrationOptions();
+    private MigrationCheckerImpl myChecker;
+    private MigrationExecutorImpl myExecutor;
 
     public MyMigrationSession(Project project) {
       myProject = project;
+      this.myChecker = new MigrationCheckerImpl(myProject, getMigrationRegistry());
+      this.myExecutor = new MigrationExecutorImpl(myProject);
     }
     public Project getProject() {
       return myProject;
     }
-    public MigrationManager getMigrationManager() {
-      return myProject.getComponent(MigrationManager.class);
+    public MigrationRegistry getMigrationRegistry() {
+      return myProject.getComponent(MigrationRegistry.class);
     }
     public MigrationChecker getChecker() {
-      return myProject.getComponent(MigrationChecker.class);
+      return myChecker;
     }
     public MigrationOptions getOptions() {
-      return this.myOptions;
+      return myOptions;
+    }
+    @Override
+    public MigrationExecutor getExecutor() {
+      return myExecutor;
     }
   }
 }

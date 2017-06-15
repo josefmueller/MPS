@@ -34,6 +34,9 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MigrationTask {
   private static final Logger LOG = LogManager.getLogger(MigrationTask.class);
@@ -188,14 +191,14 @@ public class MigrationTask {
   }
 
   private boolean runCleanupMigrations(ProgressMonitor m) {
-    int cleanupStepsCount = mySession.getMigrationManager().projectStepsCount(true);
+    int cleanupStepsCount = projectStepsCount(true);
     m.start("Cleaning...", cleanupStepsCount);
     boolean success = true;
     if (cleanupStepsCount != 0) {
       addGlobalLabel(mySession.getProject(), "Cleanup started");
 
       while (true) {
-        final ProjectMigration pm = mySession.getMigrationManager().nextProjectStep(mySession.getOptions(), true);
+        final ProjectMigration pm = mySession.getMigrationRegistry().nextProjectStep(mySession.getOptions(), true);
         if (pm == null) {
           break;
         }
@@ -256,11 +259,10 @@ public class MigrationTask {
   }
 
   private boolean runProjectMigrations(ProgressMonitor m) {
-    int projectStepsCount = mySession.getMigrationManager().projectStepsCount(false);
-    m.start("Running project migrations...", projectStepsCount);
+    m.start("Running project migrations...", projectStepsCount(false));
     boolean success = true;
     while (true) {
-      final ProjectMigration pm = mySession.getMigrationManager().nextProjectStep(mySession.getOptions(), false);
+      final ProjectMigration pm = mySession.getMigrationRegistry().nextProjectStep(mySession.getOptions(), false);
       if (pm == null) {
         break;
       }
@@ -268,7 +270,7 @@ public class MigrationTask {
       m.step(pm.getDescription());
       if (!(executeSingleStep(m, pm.getDescription(), new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          pm.execute(mySession.getProject());
+          mySession.getExecutor().executeProjectMigration(pm);
         }
       }, null))) {
         success = false;
@@ -282,13 +284,12 @@ public class MigrationTask {
   }
 
   private boolean runLanguageMigrations(ProgressMonitor m) {
-    int languageStepsCount = mySession.getMigrationManager().moduleStepsCount();
-    m.start("Running language migrations...", languageStepsCount);
+    m.start("Running language migrations...", moduleStepsCount());
     boolean success = true;
 
     final Wrappers._T<BaseScriptReference> preferredId = new Wrappers._T<BaseScriptReference>(null);
     while (true) {
-      final ScriptApplied sa = mySession.getMigrationManager().nextModuleStep(preferredId.value);
+      final ScriptApplied sa = mySession.getMigrationRegistry().nextModuleStep(preferredId.value);
       if (sa == null) {
         break;
       }
@@ -299,15 +300,15 @@ public class MigrationTask {
       ListSequence.fromList(myWereRun).addElement(sa);
       if (!(executeSingleStep(m, caption, new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          mySession.getMigrationManager().executeScript(sa);
+          mySession.getExecutor().executeModuleMigration(sa);
         }
       }, new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          ScriptApplied next = mySession.getMigrationManager().nextModuleStep(preferredId.value);
+          ScriptApplied next = mySession.getMigrationRegistry().nextModuleStep(preferredId.value);
           if (next == null) {
             return false;
           }
-          return eq_ajmasp_a0c0a0a3a0h0f0mb(sa.getScriptReference(), next.getScriptReference());
+          return eq_ajmasp_a0c0a0a3a0h0e0mb(sa.getScriptReference(), next.getScriptReference());
         }
       }))) {
         success = false;
@@ -331,6 +332,30 @@ public class MigrationTask {
     });
     return haveNotMigrated.value;
   }
+
+  private int moduleStepsCount() {
+    final Wrappers._int res = new Wrappers._int();
+    mySession.getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Project p = mySession.getProject();
+        Iterable<SModule> modules = MigrationModuleUtil.getMigrateableModulesFromProject(p);
+        res.value = CollectionSequence.fromCollection(mySession.getMigrationRegistry().getModuleMigrations(modules)).count();
+      }
+    });
+    return res.value;
+  }
+
+  private int projectStepsCount(final boolean isCleanup) {
+    final Wrappers._int res = new Wrappers._int();
+    mySession.getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        Iterable<ProjectMigration> migrations = mySession.getMigrationRegistry().getProjectMigrations();
+        int cleanupSize = Sequence.fromIterable(migrations).ofType(CleanupProjectMigration.class).count();
+        res.value = (isCleanup ? cleanupSize : Sequence.fromIterable(migrations).count() - cleanupSize);
+      }
+    });
+    return res.value;
+  }
   private static JComponent check_ajmasp_a0e0z(InlineProgressIndicator checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
@@ -340,7 +365,7 @@ public class MigrationTask {
   private static <T> T as_ajmasp_a0a0e0ab(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static boolean eq_ajmasp_a0c0a0a3a0h0f0mb(Object a, Object b) {
+  private static boolean eq_ajmasp_a0c0a0a3a0h0e0mb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

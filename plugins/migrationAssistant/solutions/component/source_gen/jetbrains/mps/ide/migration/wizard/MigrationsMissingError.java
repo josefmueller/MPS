@@ -13,7 +13,7 @@ import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.ide.migration.check.MissingMigrationProblem;
 import java.util.Collections;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
@@ -42,7 +42,7 @@ public class MigrationsMissingError extends MigrationError {
       public Problem select(final MigrationScriptReference it) {
         List<SModule> languageUsages = ListSequence.fromList(modules).where(new IWhereFilter<SModule>() {
           public boolean accept(SModule module) {
-            return SetSequence.fromSet(MigrationsUtil.getUsedLanguages(module)).contains(it.getLanguage());
+            return SetSequence.fromSet(MigrationModuleUtil.getUsedLanguages(module)).contains(it.getLanguage());
           }
         }).toListSequence();
         return (Problem) new MissingMigrationProblem.MissingMigrationScriptProblem(it, Collections.min(ListSequence.fromList(languageUsages).select(new ISelector<SModule, Integer>() {
@@ -55,7 +55,7 @@ public class MigrationsMissingError extends MigrationError {
       public Problem select(final RefactoringScriptReference it) {
         List<SModule> languageUsages = ListSequence.fromList(modules).where(new IWhereFilter<SModule>() {
           public boolean accept(SModule module) {
-            return SetSequence.fromSet(MigrationsUtil.getModuleDependencies(module)).contains(it.getModule());
+            return SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(module)).contains(it.getModule());
           }
         }).toListSequence();
         return (Problem) new MissingMigrationProblem.MissingRefactoringLogProblem(it, Collections.min(ListSequence.fromList(languageUsages).select(new ISelector<SModule, Integer>() {
