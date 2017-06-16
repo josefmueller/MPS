@@ -268,7 +268,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   /*package*/ void findLanguageUsages(List<SLanguage> languages) {
     ModelsScope scope = new ModelAccessHelper(myModuleRepository).runReadAction(() -> new ModelsScope(myModule.getModels()));
     final SearchQuery query = new SearchQuery(new GenericHolder<Collection<SLanguage>>(languages, "Languages"), scope);
-    final IResultProvider provider = FindUtils.makeProvider(new CompositeFinder(new LanguageModelImportFinder()), new CompositeFinder(new LanguageUsagesFinder()));
+    final IResultProvider provider =
+        FindUtils.makeProvider(new CompositeFinder(new LanguageModelImportFinder()), new CompositeFinder(new LanguageUsagesFinder()));
     showUsageImpl(query, provider);
     forceCancelCloseDialog();
   }
@@ -314,13 +315,17 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     //null=not supported
     @Nullable
     protected Integer getLanguageVersion() {
-      if (!(myModule instanceof Language)) return null;
+      if (!(myModule instanceof Language)) {
+        return null;
+      }
       return ((Language) myModule).getLanguageVersion();
     }
 
     @Nullable
     protected Integer getModuleVersion() {
-      if (myModule instanceof DevKit) return null;
+      if (myModule instanceof DevKit) {
+        return null;
+      }
       return myModule.getModuleVersion();
     }
 
@@ -337,7 +342,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         JBLabel label = new JBLabel(PropertiesBundle.message("module.genoutput.title"));
         panel.add(label, new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-            GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+                                             GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
         myGenOut = new JTextField();
         final FileChooserDescriptor outputPathsChooserDescriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
@@ -349,36 +354,36 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         genOutPath.setText(getGenOutPath());
         panel.add(genOutPath,
-            new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
-                GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+                  new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+                                      GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
         if (hasLanguageVersion) {
           JLabel verLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.language.version"));
           panel.add(verLabel,
-              new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-                  GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+                    new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                                        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
           myLanguageVersion = new JSpinner(new SpinnerNumberModel((int) getLanguageVersion(), 0, getLanguageVersion() + 10000, 1));
           JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor) myLanguageVersion.getEditor();
           DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
           formatter.setAllowsInvalid(false);
           panel.add(myLanguageVersion,
-              new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
-                  GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
+                    new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
+                                        GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
         }
         if (hasModuleVersion) {
           JLabel verLabel = new JBLabel(PropertiesBundle.message("mps.properties.configurable.module.version"));
           panel.add(verLabel,
-              new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-                  GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+                    new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                                        GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
           myModuleVersion = new JSpinner(new SpinnerNumberModel((int) getModuleVersion(), 0, getModuleVersion() + 10000, 1));
           JSpinner.NumberEditor jsEditor = (JSpinner.NumberEditor) myModuleVersion.getEditor();
           DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
           formatter.setAllowsInvalid(false);
           panel.add(myModuleVersion,
-              new GridConstraints(row, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
-                  GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
+                    new GridConstraints(row, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
+                                        GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
         }
 
         return panel;
@@ -432,7 +437,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myLanguageVersion != null) {
         try {
           int newLanguageVersion = ((Integer) myLanguageVersion.getValue());
-          if (!EqualUtil.equals(newLanguageVersion, getLanguageVersion())) return true;
+          if (!EqualUtil.equals(newLanguageVersion, getLanguageVersion())) {
+            return true;
+          }
         } catch (NumberFormatException e) {
           //just continue omitting this field
         }
@@ -440,7 +447,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModuleVersion != null) {
         try {
           int newModuleVersion = ((Integer) myModuleVersion.getValue());
-          if (!EqualUtil.equals(newModuleVersion, getModuleVersion())) return true;
+          if (!EqualUtil.equals(newModuleVersion, getModuleVersion())) {
+            return true;
+          }
         } catch (NumberFormatException e) {
           //just continue omitting this field
         }
@@ -602,7 +611,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           return isExtendsDep && !extendsSet.contains(moduleImport.getModuleReference());
         }, DependencyCellState.SUPERFLUOUS_EXTENDS);
       }
-      mtcr.addCellState(moduleImport -> !generationTargets.contains(moduleImport.getModuleReference()) && !xModuleSet.contains(moduleImport.getModuleReference()), DependencyCellState.UNUSED);
+      mtcr.addCellState(
+          moduleImport -> !generationTargets.contains(moduleImport.getModuleReference()) && !xModuleSet.contains(moduleImport.getModuleReference()),
+          DependencyCellState.UNUSED);
       return mtcr;
     }
 
@@ -643,10 +654,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         // MPS-22987 As we don't know height of editor before creation, we need to update row height and return it back after
         final int tableRowHeight = table.getRowHeight();
-        table.setRowHeight(row, (int)combo.getPreferredSize().getHeight());
+        table.setRowHeight(row, (int) combo.getPreferredSize().getHeight());
         combo.addFocusListener(new FocusListener() {
           @Override
-          public void focusGained(FocusEvent e) {}
+          public void focusGained(FocusEvent e) {
+          }
 
           @Override
           public void focusLost(FocusEvent e) {
@@ -741,8 +753,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
       usedLangsTab.add(table, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+                                                  GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                  GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       new TableColumnSearch(runtimeTable, 0).setComparator(new SpeedSearchComparator(false, true));
 
@@ -782,8 +794,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       table = decoratorForAccessories.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
       usedLangsTab.add(table, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+                                                  GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                  GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       new TableColumnSearch(accessoriesTable, 0).setComparator(new SpeedSearchComparator(false, true));
 
@@ -818,8 +830,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
 
       public void addItem(SModuleReference moduleReference) {
-        if (moduleReference == null || myTableItems.contains(moduleReference))
+        if (moduleReference == null || myTableItems.contains(moduleReference)) {
           return;
+        }
         myTableItems.add(moduleReference);
         fireTableDataChanged();
       }
@@ -886,8 +899,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
 
       public void addItem(SModelReference modelReference) {
-        if (modelReference == null || myTableItems.contains(modelReference))
+        if (modelReference == null || myTableItems.contains(modelReference)) {
           return;
+        }
         myTableItems.add(modelReference);
         fireTableDataChanged();
       }
@@ -925,8 +939,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
       private LinkedList<jetbrains.mps.smodel.SModelReference> getAccessoryModels() {
         LinkedList<jetbrains.mps.smodel.SModelReference> linkedList = new LinkedList<>();
-        for (SModelReference modelReference : myTableItems)
+        for (SModelReference modelReference : myTableItems) {
           linkedList.add((jetbrains.mps.smodel.SModelReference) modelReference);
+        }
 
         return linkedList;
       }
@@ -955,7 +970,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected ToolbarDecorator createToolbar(JBTable usedLangsTable) {
-      ToolbarDecorator decorator =  super.createToolbar(usedLangsTable);
+      ToolbarDecorator decorator = super.createToolbar(usedLangsTable);
       decorator.addExtraAction(new FindActionButton(usedLangsTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
@@ -1210,8 +1225,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       decorator.setPreferredSize(new Dimension(500, 300));
 
       panel.add(decorator.createPanel(), new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
-          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
-          GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+                                                             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0,
+                                                             false));
 
       final GeneratorDescriptor genDescr = myGenerator.getModuleDescriptor();
       JPanel generationOptions = new JPanel();
@@ -1233,8 +1249,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       generationOptions.add(myReflectiveQueries);
       myReflectiveQueries.setSelected(genDescr.isReflectiveQueries());
       panel.add(generationOptions,
-          new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
-              GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+                new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+                                    GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       setTabComponent(panel);
     }
@@ -1245,7 +1261,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final boolean b1 = genDescr.isGenerateTemplates();
       final boolean b2 = genDescr.isReflectiveQueries();
       return myPrioritiesTableModel.isModified()
-          || myGenerateTemplates.isSelected() != b1 || myReflectiveQueries.isSelected() != b2;
+             || myGenerateTemplates.isSelected() != b1 || myReflectiveQueries.isSelected() != b2;
     }
   }
 
@@ -1256,8 +1272,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     public GenPrioritiesTableModel(GeneratorDescriptor moduleDescriptor) {
       super();
       myModuleDescriptor = moduleDescriptor;
-      for (MappingPriorityRule rule : myModuleDescriptor.getPriorityRules())
+      for (MappingPriorityRule rule : myModuleDescriptor.getPriorityRules()) {
         myMappingPriorityRules.add(rule.copy());
+      }
     }
 
     @Override
@@ -1271,31 +1288,38 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     public void addItem(MappingPriorityRule mappingPriorityRule) {
-      if (mappingPriorityRule != null)
+      if (mappingPriorityRule != null) {
         myMappingPriorityRules.add(mappingPriorityRule);
+      }
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
       MappingPriorityRule rule = myMappingPriorityRules.get(rowIndex);
-      if (columnIndex == 0)
+      if (columnIndex == 0) {
         return rule.getLeft();
-      if (columnIndex == 1)
+      }
+      if (columnIndex == 1) {
         return rule.getType();
-      if (columnIndex == 2)
+      }
+      if (columnIndex == 2) {
         return rule.getRight();
+      }
       return null;
     }
 
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
       MappingPriorityRule rule = myMappingPriorityRules.get(rowIndex);
-      if (columnIndex == 0 && aValue instanceof MappingConfig_AbstractRef)
+      if (columnIndex == 0 && aValue instanceof MappingConfig_AbstractRef) {
         rule.setLeft((MappingConfig_AbstractRef) aValue);
-      if (columnIndex == 1 && aValue instanceof RuleType)
+      }
+      if (columnIndex == 1 && aValue instanceof RuleType) {
         rule.setType((RuleType) aValue);
-      if (columnIndex == 2 && aValue instanceof MappingConfig_AbstractRef)
+      }
+      if (columnIndex == 2 && aValue instanceof MappingConfig_AbstractRef) {
         rule.setRight((MappingConfig_AbstractRef) aValue);
+      }
     }
 
     @Override
@@ -1305,10 +1329,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public Class<?> getColumnClass(int columnIndex) {
-      if (columnIndex == 0 || columnIndex == 2)
+      if (columnIndex == 0 || columnIndex == 2) {
         return MappingConfig_AbstractRef.class;
-      if (columnIndex == 1)
+      }
+      if (columnIndex == 1) {
         return RuleType.class;
+      }
       return super.getColumnClass(columnIndex);
     }
 
@@ -1333,7 +1359,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     public boolean isModified() {
       return !(myModuleDescriptor.getPriorityRules().containsAll(myMappingPriorityRules)
-          && myMappingPriorityRules.containsAll(myModuleDescriptor.getPriorityRules())
+               && myMappingPriorityRules.containsAll(myModuleDescriptor.getPriorityRules())
       );
     }
 
@@ -1391,13 +1417,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           // i.e. !existingFacetTypes.contains(facet)
           sModuleFacet = FacetsFacade.getInstance().getFacetFactory(facet).create();
         }
-        String facetPresentation = sModuleFacet instanceof ModuleFacetBase ? ((ModuleFacetBase) sModuleFacet).getFacetPresentation() : sModuleFacet.getFacetType();
+        String facetPresentation =
+            sModuleFacet instanceof ModuleFacetBase ? ((ModuleFacetBase) sModuleFacet).getFacetPresentation() : sModuleFacet.getFacetType();
         String fmt = PropertiesBundle.message("module.facets.checkbox.title");
         facetPresentation = applicableFacetTypes.contains(facet)
-            ? String.format(fmt, facetPresentation) : facetPresentation;
+                            ? String.format(fmt, facetPresentation) : facetPresentation;
         FacetCheckBox checkBox = existingFacetTypes.containsKey(facet)
-            ? new FacetCheckBox(AddFacetsTab.this, sModuleFacet, myFacetTabsPersistence.getFacetTab(sModuleFacet), facetPresentation)
-            : new FacetCheckBox(AddFacetsTab.this, facet, facetPresentation);
+                                 ? new FacetCheckBox(AddFacetsTab.this, sModuleFacet, myFacetTabsPersistence.getFacetTab(sModuleFacet), facetPresentation)
+                                 : new FacetCheckBox(AddFacetsTab.this, facet, facetPresentation);
 
         myCheckBoxes.add(checkBox);
       }
@@ -1489,8 +1516,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         if (myFacet == null) {
           myFacet = FacetsFacade.getInstance().getFacetFactory(myFacetType).create();
           if (myFacet instanceof ModuleFacetBase)
-            // XXX why do we need to set module here, and why do we ignore return value?
+          // XXX why do we need to set module here, and why do we ignore return value?
+          {
             ((ModuleFacetBase) myFacet).setModule(myModule);
+          }
         }
         if (myFacetTab == null) {
           myFacetTab = myFacetTabsPersistence.getFacetTab(myFacet);
