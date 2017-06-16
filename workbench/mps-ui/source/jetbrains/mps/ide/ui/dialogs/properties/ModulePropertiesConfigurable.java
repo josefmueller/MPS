@@ -21,10 +21,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
+import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.EmptyRunnable;
-import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.CheckboxTree;
 import com.intellij.ui.CheckboxTreeBase.CheckPolicy;
@@ -32,6 +32,7 @@ import com.intellij.ui.CheckedTreeNode;
 import com.intellij.ui.FieldPanel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
+import com.intellij.ui.JBColor;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.SpeedSearchComparator;
 import com.intellij.ui.ToolbarDecorator;
@@ -146,7 +147,6 @@ import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.text.DefaultFormatter;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -179,7 +179,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
    * XXX is it possible that module comes here not attached to a repo?
    */
   private final SRepository myModuleRepository;
-  private final List<FacetCheckBox> myCheckBoxes = new ArrayList<FacetCheckBox>();
+  private final List<FacetCheckBox> myCheckBoxes = new ArrayList<>();
   private final FacetTabsPersistence myFacetTabsPersistence;
 
   // We are tightly coupled with IDEA IDE here, no reason to be shy about project kind.
@@ -244,13 +244,10 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   }
 
   private FindUsagesScope getModuleAndOwnedModelsScope() {
-    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<FindUsagesScope>() {
-      @Override
-      public FindUsagesScope compute() {
-        final ModulesScope rv = new ModulesScope(myModule);
-        rv.resolveRespectsAllVisible(true);
-        return rv;
-      }
+    return new ModelAccessHelper(myProject.getModelAccess()).runReadAction((Computable<FindUsagesScope>) () -> {
+      final ModulesScope rv = new ModulesScope(myModule);
+      rv.resolveRespectsAllVisible(true);
+      return rv;
     });
   }
 
@@ -380,7 +377,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
           DefaultFormatter formatter = (DefaultFormatter) jsEditor.getTextField().getFormatter();
           formatter.setAllowsInvalid(false);
           panel.add(myModuleVersion,
-              new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
+              new GridConstraints(row, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_WANT_GROW,
                   GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(30, -1), null, 0, false));
         }
 
@@ -389,7 +386,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         myPlanPickScope = new DefaultScope() {
           @Override
           protected Set<SModule> getInitialModules() {
-            return new HashSet<SModule>(((DevKit) myModule).getExportedSolutions());
+            return new HashSet<>(((DevKit) myModule).getExportedSolutions());
           }
 
           @Override
@@ -491,7 +488,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     /*package*/ List<DependenciesTableItem> getActualDependencies() {
       int x = myDependTableModel.getRowCount();
-      ArrayList<DependenciesTableItem> rv = new ArrayList<DependenciesTableItem>(x);
+      ArrayList<DependenciesTableItem> rv = new ArrayList<>(x);
       for (int i = 0; i < x; i++) {
         rv.add(myDependTableModel.getValueAt(i));
       }
@@ -512,47 +509,41 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected AnActionButtonRunnable getAnActionButtonRunnable() {
-      return new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          final boolean isDevkit = myModule instanceof DevKit;
-          Iterable<SModule> selectionSet = getProjectModules();
-          if (isDevkit) {
-            selectionSet = new ConditionalIterable<SModule>(selectionSet, new VisibleModuleCondition());
-          }
-          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(selectionSet));
-          myProject.getModelAccess().runReadAction(c);
-          final String dialogTitle = isDevkit ? "Choose DevKit contents" : "Choose modules";
-          final List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, dialogTitle, c.getResult());
-          if (list.isEmpty()) {
-            return;
-          }
-          myProject.getModelAccess().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              for (SModuleReference moduleReference : list) {
-                final SModule module = moduleReference.resolve(myProject.getRepository());
-                final Dependency dep;
-                if (isDevkit) {
-                  dep = new Dependency(moduleReference, SDependencyScope.EXTENDS);
-                } else {
-                  dep = new Dependency(moduleReference, SDependencyScope.DEFAULT, false);
-                }
-                if (module instanceof Language) {
-                  myDependTableModel.addLanguageItem(dep);
-                } else if (module instanceof Generator) {
-                  myDependTableModel.addGeneratorItem(dep);
-                } else if (module instanceof Solution) {
-                  myDependTableModel.addSolutionItem(dep);
-                } else if (module instanceof DevKit) {
-                  myDependTableModel.addDevkitItem(dep);
-                } else {
-                  myDependTableModel.addUnspecifiedItem(dep);
-                }
-              } // foreach moduleReference
-            }
-          });
+      return anActionButton -> {
+        final boolean isDevkit = myModule instanceof DevKit;
+        Iterable<SModule> selectionSet = getProjectModules();
+        if (isDevkit) {
+          selectionSet = new ConditionalIterable<>(selectionSet, new VisibleModuleCondition());
         }
+        ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<>(new ModuleCollector(selectionSet));
+        myProject.getModelAccess().runReadAction(c);
+        final String dialogTitle = isDevkit ? "Choose DevKit contents" : "Choose modules";
+        final List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, dialogTitle, c.getResult());
+        if (list.isEmpty()) {
+          return;
+        }
+        myProject.getModelAccess().runReadAction(() -> {
+          for (SModuleReference moduleReference : list) {
+            final SModule module = moduleReference.resolve(myProject.getRepository());
+            final Dependency dep;
+            if (isDevkit) {
+              dep = new Dependency(moduleReference, SDependencyScope.EXTENDS);
+            } else {
+              dep = new Dependency(moduleReference, SDependencyScope.DEFAULT, false);
+            }
+            if (module instanceof Language) {
+              myDependTableModel.addLanguageItem(dep);
+            } else if (module instanceof Generator) {
+              myDependTableModel.addGeneratorItem(dep);
+            } else if (module instanceof Solution) {
+              myDependTableModel.addSolutionItem(dep);
+            } else if (module instanceof DevKit) {
+              myDependTableModel.addDevkitItem(dep);
+            } else {
+              myDependTableModel.addUnspecifiedItem(dep);
+            }
+          } // foreach moduleReference
+        });
       };
     }
 
@@ -562,42 +553,39 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final HashSet<SModuleReference> extendsSet = new HashSet<>();
       final HashSet<SModuleReference> generationTargets = new HashSet<>();
       final HashSet<SModuleReference> xModuleSet = new HashSet<>();
-      myModuleRepository.getModelAccess().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          // XXX perhaps, worth adding ModuleProperties data collection (much like ModelProperties)
-          if (myModule instanceof Language) {
-            SModel structureAspect = ((Language) myModule).getStructureModelDescriptor();
-            if (structureAspect != null) {
-              // we keep lang.core.structure reference, if any, just not to warn about superfluous lang.core import
-              ConceptDeclarationScanner cds = new ConceptDeclarationScanner();
-              cds.scan(structureAspect);
-              cds.getDependencyModules().forEach(m -> extendsSet.add(m.getModuleReference()));
-            }
-            ModelScanner tms = new ModelScanner();
-            for (Generator g : ((Language) myModule).getGenerators()) {
-              g.getOwnTemplateModels().forEach(tms::scan);
-            }
-            tms.getTargetLanguages().forEach(l -> generationTargets.add(l.getSourceModuleReference()));
+      myModuleRepository.getModelAccess().runReadAction(() -> {
+        // XXX perhaps, worth adding ModuleProperties data collection (much like ModelProperties)
+        if (myModule instanceof Language) {
+          SModel structureAspect = ((Language) myModule).getStructureModelDescriptor();
+          if (structureAspect != null) {
+            // we keep lang.core.structure reference, if any, just not to warn about superfluous lang.core import
+            ConceptDeclarationScanner cds = new ConceptDeclarationScanner();
+            cds.scan(structureAspect);
+            cds.getDependencyModules().forEach(m -> extendsSet.add(m.getModuleReference()));
           }
-          // collect target modules of cross-model references
-          ModelDependencyScanner mds = new ModelDependencyScanner().usedLanguages(false).crossModelReferences(true).usedConcepts(false);
-          myModule.getModels().forEach(mds::walk);
-          SearchScope moduleScope = myModule.getScope();
-          for (SModelReference xRef : mds.getCrossModelReferences()) {
-            SModel xModel = moduleScope.resolve(xRef);
-            if (xModel != null) {
-              xModuleSet.add(xModel.getModule().getModuleReference());
-            } else if (xRef.getModuleReference() != null) {
-              xModuleSet.add(xRef.getModuleReference());
-            }
-            // bad luck, reference to a model from unknown module, no idea what to do
+          ModelScanner tms = new ModelScanner();
+          for (Generator g : ((Language) myModule).getGenerators()) {
+            g.getOwnTemplateModels().forEach(tms::scan);
           }
-          if (myModule instanceof Generator) {
-            GeneratorModuleScanner gms = new GeneratorModuleScanner();
-            gms.walkPriorityRules((Generator) myModule);
-            xModuleSet.addAll(gms.getReferencedGenerators());
+          tms.getTargetLanguages().forEach(l -> generationTargets.add(l.getSourceModuleReference()));
+        }
+        // collect target modules of cross-model references
+        ModelDependencyScanner mds = new ModelDependencyScanner().usedLanguages(false).crossModelReferences(true).usedConcepts(false);
+        myModule.getModels().forEach(mds::walk);
+        SearchScope moduleScope = myModule.getScope();
+        for (SModelReference xRef : mds.getCrossModelReferences()) {
+          SModel xModel = moduleScope.resolve(xRef);
+          if (xModel != null) {
+            xModuleSet.add(xModel.getModule().getModuleReference());
+          } else if (xRef.getModuleReference() != null) {
+            xModuleSet.add(xRef.getModuleReference());
           }
+          // bad luck, reference to a model from unknown module, no idea what to do
+        }
+        if (myModule instanceof Generator) {
+          GeneratorModuleScanner gms = new GeneratorModuleScanner();
+          gms.walkPriorityRules((Generator) myModule);
+          xModuleSet.addAll(gms.getReferencedGenerators());
         }
       });
       mtcr.addCellState(Objects::isNull, DependencyCellState.NOT_AVAILABLE);
@@ -624,7 +612,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       return new FindActionButton(table) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          List<SModuleReference> modules = new ArrayList<SModuleReference>();
+          List<SModuleReference> modules = new ArrayList<>();
           for (int i : myTable.getSelectedRows()) {
             final DependenciesTableItem valueAt = myDependTableModel.getValueAt(i);
             modules.add(valueAt.getItem().getModuleRef());
@@ -636,7 +624,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     private class DependenciesTableCellEditor extends DefaultCellEditor {
       public DependenciesTableCellEditor() {
-        super(new JComboBox());
+        super(new ComboBox());
       }
 
       @Override
@@ -671,7 +659,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
 
       private List<SDependencyScope> getItemsForCell(DependenciesTableItem item) {
-        List<SDependencyScope> scopes = new ArrayList<SDependencyScope>(5);
+        List<SDependencyScope> scopes = new ArrayList<>(5);
         scopes.add(SDependencyScope.DEFAULT);
         if (isLangToLang(item)) {
           scopes.add(SDependencyScope.EXTENDS);
@@ -729,22 +717,19 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       runtimeTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender(myModuleRepository));
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(runtimeTable);
-      decorator.setAddAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          Iterable<SModule> modules = new ConditionalIterable<SModule>(getProjectModules(), new ModuleInstanceCondition(Solution.class));
-          modules = new ConditionalIterable<SModule>(modules, new VisibleModuleCondition());
-          ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<List<SModuleReference>>(new ModuleCollector(modules));
-          myProject.getModelAccess().runReadAction(c);
-          List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose solutions", c.getResult());
-          for (SModuleReference reference : list) {
-            myRuntimeTableModel.addItem(reference);
-          }
+      decorator.setAddAction(anActionButton -> {
+        Iterable<SModule> modules = new ConditionalIterable<>(getProjectModules(), new ModuleInstanceCondition(Solution.class));
+        modules = new ConditionalIterable<>(modules, new VisibleModuleCondition());
+        ComputeRunnable<List<SModuleReference>> c = new ComputeRunnable<>(new ModuleCollector(modules));
+        myProject.getModelAccess().runReadAction(c);
+        List<SModuleReference> list = CommonChoosers.showModuleSetChooser(myProject, "Choose solutions", c.getResult());
+        for (SModuleReference reference : list) {
+          myRuntimeTableModel.addItem(reference);
         }
       }).setRemoveAction(new RemoveEntryAction(runtimeTable)).addExtraAction(new FindActionButton(runtimeTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          List<SModuleReference> modules = new ArrayList<SModuleReference>();
+          List<SModuleReference> modules = new ArrayList<>();
           for (int row : runtimeTable.getSelectedRows()) {
             modules.add(myRuntimeTableModel.getValueAt(row));
           }
@@ -777,18 +762,15 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       accessoriesTable.setDefaultRenderer(SModelReference.class, new ModelTableCellRender(myProject.getRepository()));
 
       ToolbarDecorator decoratorForAccessories = ToolbarDecorator.createDecorator(accessoriesTable);
-      decoratorForAccessories.setAddAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          List<SModelReference> list = new ModelChooser(myProject).compute();
-          for (SModelReference reference : list) {
-            myAccessoriesModelsTableModel.addItem(reference);
-          }
+      decoratorForAccessories.setAddAction(anActionButton -> {
+        List<SModelReference> list = new ModelChooser(myProject).compute();
+        for (SModelReference reference : list) {
+          myAccessoriesModelsTableModel.addItem(reference);
         }
       }).setRemoveAction(new RemoveEntryAction(accessoriesTable)).addExtraAction(new FindActionButton(accessoriesTable) {
         @Override
         public void actionPerformed(AnActionEvent e) {
-          List<SModelReference> models = new ArrayList<SModelReference>();
+          List<SModelReference> models = new ArrayList<>();
           for (int row : accessoriesTable.getSelectedRows()) {
             models.add(myAccessoriesModelsTableModel.getValueAt(row));
           }
@@ -815,7 +797,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     private class RuntimeTableModel extends AbstractTableModel implements ItemRemovable, Modifiable {
 
-      private List<SModuleReference> myTableItems = new LinkedList<SModuleReference>();
+      private List<SModuleReference> myTableItems = new LinkedList<>();
 
       public RuntimeTableModel() {
       }
@@ -883,7 +865,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     private class AccessoriesModelsTableModel extends AbstractTableModel implements ItemRemovable, Modifiable {
 
-      private List<SModelReference> myTableItems = new LinkedList<SModelReference>();
+      private List<SModelReference> myTableItems = new LinkedList<>();
 
       public AccessoriesModelsTableModel() {
       }
@@ -942,7 +924,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
 
       private LinkedList<jetbrains.mps.smodel.SModelReference> getAccessoryModels() {
-        LinkedList<jetbrains.mps.smodel.SModelReference> linkedList = new LinkedList<jetbrains.mps.smodel.SModelReference>();
+        LinkedList<jetbrains.mps.smodel.SModelReference> linkedList = new LinkedList<>();
         for (SModelReference modelReference : myTableItems)
           linkedList.add((jetbrains.mps.smodel.SModelReference) modelReference);
 
@@ -963,15 +945,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected UsedLangsTableModel getUsedLangsTableModel() {
-      final List<SLanguage> usedLanguages = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<SLanguage>>() {
-        @Override
-        public List<SLanguage> compute() {
-          return new ArrayList<SLanguage>(myModule.getUsedLanguages());
-        }
-      });
+      final List<SLanguage> usedLanguages = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(
+          (Computable<List<SLanguage>>) () -> new ArrayList<>(myModule.getUsedLanguages()));
       final UsedLangsTableModel rv = new UsedLangsTableModel(myProject.getRepository());
-      Collections.sort(usedLanguages, new ToStringComparator());
-      rv.init(usedLanguages, Collections.<SModuleReference>emptySet());
+      usedLanguages.sort(new ToStringComparator());
+      rv.init(usedLanguages, Collections.emptySet());
       return rv;
     }
 
@@ -1005,7 +983,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     Set<SModuleReference> getGenerators() {
-      final HashSet<SModuleReference> depGenerators = new LinkedHashSet<SModuleReference>();
+      final HashSet<SModuleReference> depGenerators = new LinkedHashSet<>();
       for (DependenciesTableItem dependencyItem : myDependenciesTab.getActualDependencies()) {
         if (dependencyItem.getModuleType() == ModuleType.GENERATOR) {
           depGenerators.add(dependencyItem.getItem().getModuleRef());
@@ -1112,15 +1090,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         private boolean allChildrenChecked(CheckedTreeNode node) {
           List<CheckedTreeNode> children = Collections.list(node.children());
           boolean allChildrenChecked = true;
-          for (int i = 0; i < children.size(); i++) {
-            CheckedTreeNode child = children.get(i);
+          for (CheckedTreeNode child : children) {
             if (!allChildrenChecked(child) || !child.isChecked()) {
               allChildrenChecked = false;
             }
           }
           if (allChildrenChecked && node.isChecked()) {
-            for (int i = 0; i < children.size(); i++) {
-              CheckedTreeNode child = children.get(i);
+            for (CheckedTreeNode child : children) {
               node.remove(child);
               child.removeFromParent();
             }
@@ -1130,8 +1106,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         private boolean noCheckedChildren(CheckedTreeNode node) {
           List<CheckedTreeNode> children = Collections.list(node.children());
-          for (int i = 0; i < children.size(); i++) {
-            CheckedTreeNode child = children.get(i);
+          for (CheckedTreeNode child : children) {
             if (noCheckedChildren(child) && !child.isChecked()) {
               node.remove(child);
               child.removeFromParent();
@@ -1159,10 +1134,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             final DialogWrapper dialogWrapper = new DialogWrapper(ProjectHelper.toIdeaProject(myProject)) {
               {
                 setModal(true);
-                init();
+                super.init();
               }
 
-              @Nullable
               @Override
               protected JComponent createCenterPanel() {
                 final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myCurrentTree.getTreePanel(), true);
@@ -1228,12 +1202,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       column.setResizable(false);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(myTable);
-      decorator.setAddAction(new AnActionButtonRunnable() {
-        @Override
-        public void run(AnActionButton anActionButton) {
-          myPrioritiesTableModel.addItem(new MappingPriorityRule());
-          myPrioritiesTableModel.fireTableDataChanged();
-        }
+      decorator.setAddAction(anActionButton -> {
+        myPrioritiesTableModel.addItem(new MappingPriorityRule());
+        myPrioritiesTableModel.fireTableDataChanged();
       }).setRemoveAction(new RemoveEntryAction(myTable));
       decorator.setToolbarBorder(IdeBorderFactory.createBorder());
       decorator.setPreferredSize(new Dimension(500, 300));
@@ -1253,7 +1224,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         boolean isSelected = e.getStateChange() == ItemEvent.SELECTED;
         if (isSelected && !myGenerateTemplates.isSelected()) {
           myReflectiveQueries.setOpaque(true);
-          myReflectiveQueries.setBackground(Color.yellow);
+          myReflectiveQueries.setBackground(JBColor.yellow);
         } else {
           myReflectiveQueries.setOpaque(false);
         }
@@ -1374,16 +1345,16 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final Set<SModuleReference> accessibleGenerators = generatorDependencies.getGenerators();
       accessibleGenerators.add(myModuleDescriptor.getModuleReference()); // generator module being edited is always accessible
       for (MappingPriorityRule rule : myMappingPriorityRules) {
-        Queue<Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>> queue = new LinkedList<Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>>();
+        Queue<Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>> queue = new LinkedList<>();
         // map entry to set it lives in
-        queue.add(new Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>(rule.getRight(), null));
+        queue.add(new Pair<>(rule.getRight(), null));
         while (!queue.isEmpty()) {
           Pair<MappingConfig_AbstractRef, MappingConfig_RefSet> ref = queue.poll();
           if (ref.o1 instanceof MappingConfig_RefSet) {
             final MappingConfig_RefSet refSet = (MappingConfig_RefSet) ref.o1;
             for (MappingConfig_AbstractRef ref1 : refSet.getMappingConfigs()) {
               // record children of RefSet along with RefSet itself for further processing
-              queue.add(new Pair<MappingConfig_AbstractRef, MappingConfig_RefSet>(ref1, refSet));
+              queue.add(new Pair<>(ref1, refSet));
             }
           } else if (ref.o1 instanceof MappingConfig_ExternalRef) {
             final MappingConfig_ExternalRef extRef = (MappingConfig_ExternalRef) ref.o1;
@@ -1406,17 +1377,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void init() {
-      final HashMap<String, SModuleFacet> existingFacetTypes = new HashMap<String, SModuleFacet>();
+      final HashMap<String, SModuleFacet> existingFacetTypes = new HashMap<>();
       for (final SModuleFacet moduleFacet : myModule.getFacets()) {
         existingFacetTypes.put(moduleFacet.getFacetType(), moduleFacet);
       }
 
-      Set<String> applicableFacetTypes = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Set<String>>() {
-        @Override
-        public Set<String> compute() {
-          return FacetsFacade.getInstance().getApplicableFacetTypes(myModule.getUsedLanguages());
-        }
-      });
+      Set<String> applicableFacetTypes = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(
+          () -> FacetsFacade.getInstance().getApplicableFacetTypes(myModule.getUsedLanguages()));
 
       for (String facet : FacetsFacade.getInstance().getFacetTypes()) {
         SModuleFacet sModuleFacet = existingFacetTypes.get(facet);
@@ -1559,7 +1526,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     @Override
-    public int compareTo(FacetCheckBox o) {
+    public int compareTo(@NotNull FacetCheckBox o) {
       return myCheckBox.getText().toLowerCase().compareTo(o.myCheckBox.getText().toLowerCase());
     }
   }
