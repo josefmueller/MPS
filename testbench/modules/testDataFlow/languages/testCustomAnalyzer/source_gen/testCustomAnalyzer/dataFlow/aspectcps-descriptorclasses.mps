@@ -576,7 +576,7 @@
                     </node>
                     <node concept="2ShNRf" id="21" role="33vP2m">
                       <node concept="1pGfFk" id="22" role="2ShVmc">
-                        <ref role="37wK5l" node="dv" resolve="counterInstructionInstruction" />
+                        <ref role="37wK5l" node="dv" resolve="counterInstructionAInstruction" />
                       </node>
                     </node>
                   </node>
@@ -1774,11 +1774,11 @@
     <node concept="39e2AJ" id="9y" role="39e2AI">
       <property role="39e3Y2" value="Instruction2Class" />
       <node concept="39e2AG" id="9G" role="39e3Y0">
-        <ref role="39e2AK" to="go1:2$3McZ0WBIb" resolve="counterInstruction" />
+        <ref role="39e2AK" to="go1:5JXsuoWG1PJ" resolve="counterInstructionA" />
         <node concept="385nmt" id="9I" role="385vvn">
-          <property role="385vuF" value="counterInstruction" />
+          <property role="385vuF" value="counterInstructionA" />
           <node concept="2$VJBW" id="9K" role="385v07">
-            <property role="2$VJBR" value="2955426575106079627" />
+            <property role="2$VJBR" value="6628579460233829743" />
             <node concept="2x4n5u" id="9L" role="3iCydw">
               <property role="2x4mPI" value="Instruction" />
               <property role="2x4o5l" value="false" />
@@ -1791,15 +1791,15 @@
           </node>
         </node>
         <node concept="39e2AT" id="9J" role="39e2AY">
-          <ref role="39e2AS" node="dW" resolve="counterInstructionInstruction" />
+          <ref role="39e2AS" node="dr" resolve="counterInstructionAInstruction" />
         </node>
       </node>
       <node concept="39e2AG" id="9H" role="39e3Y0">
-        <ref role="39e2AK" to="go1:5JXsuoWG1PJ" resolve="counterInstruction" />
+        <ref role="39e2AK" to="go1:2$3McZ0WBIb" resolve="counterInstructionB" />
         <node concept="385nmt" id="9N" role="385vvn">
-          <property role="385vuF" value="counterInstruction" />
+          <property role="385vuF" value="counterInstructionB" />
           <node concept="2$VJBW" id="9P" role="385v07">
-            <property role="2$VJBR" value="6628579460233829743" />
+            <property role="2$VJBR" value="2955426575106079627" />
             <node concept="2x4n5u" id="9Q" role="3iCydw">
               <property role="2x4mPI" value="Instruction" />
               <property role="2x4o5l" value="false" />
@@ -1812,7 +1812,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="9O" role="39e2AY">
-          <ref role="39e2AS" node="dr" resolve="counterInstructionInstruction" />
+          <ref role="39e2AS" node="dW" resolve="counterInstructionBInstruction" />
         </node>
       </node>
     </node>
@@ -2051,155 +2051,155 @@
       </node>
     </node>
     <node concept="39e2AJ" id="9D" role="39e2AI">
-      <property role="39e3Y2" value="constructorParamField" />
+      <property role="39e3Y2" value="dataFlowBuilderClass" />
       <node concept="39e2AG" id="aQ" role="39e3Y0">
+        <ref role="39e2AK" to="go1:3Nk3eRztp00" resolve="Child_IntraProceduralSpecific_BuilderMode_DataFlow" />
+        <node concept="385nmt" id="aW" role="385vvn">
+          <property role="385vuF" value="Child_IntraProceduralSpecific_BuilderMode_DataFlow" />
+          <node concept="2$VJBW" id="aY" role="385v07">
+            <property role="2$VJBR" value="4383142553201250304" />
+            <node concept="2x4n5u" id="aZ" role="3iCydw">
+              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fe8cg7jp" />
+              <node concept="2V$Bhx" id="b0" role="2x4n5j">
+                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="aX" role="39e2AY">
+          <ref role="39e2AS" node="2s" resolve="Child_IntraProceduralSpecific_BuilderMode_DataFlow" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="aR" role="39e3Y0">
+        <ref role="39e2AK" to="go1:2$3McZ0Uaz2" resolve="Child_IntraProcedural_BuilderMode_DataFlow" />
+        <node concept="385nmt" id="b1" role="385vvn">
+          <property role="385vuF" value="Child_IntraProcedural_BuilderMode_DataFlow" />
+          <node concept="2$VJBW" id="b3" role="385v07">
+            <property role="2$VJBR" value="2955426575105435842" />
+            <node concept="2x4n5u" id="b4" role="3iCydw">
+              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fe8cg7jp" />
+              <node concept="2V$Bhx" id="b5" role="2x4n5j">
+                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="b2" role="39e2AY">
+          <ref role="39e2AS" node="2Z" resolve="Child_IntraProcedural_BuilderMode_DataFlow" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="aS" role="39e3Y0">
+        <ref role="39e2AK" to="go1:68XlVg40gto" resolve="OtherChild_IntraProcedural_BuilderMode_DataFlow" />
+        <node concept="385nmt" id="b6" role="385vvn">
+          <property role="385vuF" value="OtherChild_IntraProcedural_BuilderMode_DataFlow" />
+          <node concept="2$VJBW" id="b8" role="385v07">
+            <property role="2$VJBR" value="7078910619969193816" />
+            <node concept="2x4n5u" id="b9" role="3iCydw">
+              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fe8cg7jp" />
+              <node concept="2V$Bhx" id="ba" role="2x4n5j">
+                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="b7" role="39e2AY">
+          <ref role="39e2AS" node="by" resolve="OtherChild_IntraProcedural_BuilderMode_DataFlow" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="aT" role="39e3Y0">
+        <ref role="39e2AK" to="go1:68XlVg40fVK" resolve="OtherRoot_DataFlow" />
+        <node concept="385nmt" id="bb" role="385vvn">
+          <property role="385vuF" value="OtherRoot_DataFlow" />
+          <node concept="2$VJBW" id="bd" role="385v07">
+            <property role="2$VJBR" value="7078910619969191664" />
+            <node concept="2x4n5u" id="be" role="3iCydw">
+              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fe8cg7jp" />
+              <node concept="2V$Bhx" id="bf" role="2x4n5j">
+                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="bc" role="39e2AY">
+          <ref role="39e2AS" node="cb" resolve="OtherRoot_DataFlow" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="aU" role="39e3Y0">
+        <ref role="39e2AK" to="go1:68XlVg40gXR" resolve="OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow" />
+        <node concept="385nmt" id="bg" role="385vvn">
+          <property role="385vuF" value="OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow" />
+          <node concept="2$VJBW" id="bi" role="385v07">
+            <property role="2$VJBR" value="7078910619969195895" />
+            <node concept="2x4n5u" id="bj" role="3iCydw">
+              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fe8cg7jp" />
+              <node concept="2V$Bhx" id="bk" role="2x4n5j">
+                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="bh" role="39e2AY">
+          <ref role="39e2AS" node="c_" resolve="OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="aV" role="39e3Y0">
+        <ref role="39e2AK" to="go1:7ez5JvPhFDK" resolve="Root_DataFlow" />
+        <node concept="385nmt" id="bl" role="385vvn">
+          <property role="385vuF" value="Root_DataFlow" />
+          <node concept="2$VJBW" id="bn" role="385v07">
+            <property role="2$VJBR" value="8332528989793335920" />
+            <node concept="2x4n5u" id="bo" role="3iCydw">
+              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fe8cg7jp" />
+              <node concept="2V$Bhx" id="bp" role="2x4n5j">
+                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="bm" role="39e2AY">
+          <ref role="39e2AS" node="d1" resolve="Root_DataFlow" />
+        </node>
+      </node>
+    </node>
+    <node concept="39e2AJ" id="9E" role="39e2AI">
+      <property role="39e3Y2" value="constructorParamField" />
+      <node concept="39e2AG" id="bq" role="39e3Y0">
         <ref role="39e2AK" to="go1:5JXsuoWG1DT" resolve="initialCounter" />
-        <node concept="385nmt" id="aR" role="385vvn">
+        <node concept="385nmt" id="br" role="385vvn">
           <property role="385vuF" value="initialCounter" />
-          <node concept="2$VJBW" id="aT" role="385v07">
+          <node concept="2$VJBW" id="bt" role="385v07">
             <property role="2$VJBR" value="6628579460233828985" />
-            <node concept="2x4n5u" id="aU" role="3iCydw">
+            <node concept="2x4n5u" id="bu" role="3iCydw">
               <property role="2x4mPI" value="AnalyzerConstructorParameter" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="uc5jxg1rwo1c" />
-              <node concept="2V$Bhx" id="aV" role="2x4n5j">
+              <node concept="2V$Bhx" id="bv" role="2x4n5j">
                 <property role="2V$B1T" value="97a52717-898f-4598-8150-573d9fd03868" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow.analyzers" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="aS" role="39e2AY">
-          <ref role="39e2AS" node="4r" resolve="initialCounter" />
-        </node>
-      </node>
-    </node>
-    <node concept="39e2AJ" id="9E" role="39e2AI">
-      <property role="39e3Y2" value="dataFlowBuilderClass" />
-      <node concept="39e2AG" id="aW" role="39e3Y0">
-        <ref role="39e2AK" to="go1:3Nk3eRztp00" resolve="Child_IntraProceduralSpecific_BuilderMode_DataFlow" />
-        <node concept="385nmt" id="b2" role="385vvn">
-          <property role="385vuF" value="Child_IntraProceduralSpecific_BuilderMode_DataFlow" />
-          <node concept="2$VJBW" id="b4" role="385v07">
-            <property role="2$VJBR" value="4383142553201250304" />
-            <node concept="2x4n5u" id="b5" role="3iCydw">
-              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fe8cg7jp" />
-              <node concept="2V$Bhx" id="b6" role="2x4n5j">
-                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="b3" role="39e2AY">
-          <ref role="39e2AS" node="2s" resolve="Child_IntraProceduralSpecific_BuilderMode_DataFlow" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="aX" role="39e3Y0">
-        <ref role="39e2AK" to="go1:2$3McZ0Uaz2" resolve="Child_IntraProcedural_BuilderMode_DataFlow" />
-        <node concept="385nmt" id="b7" role="385vvn">
-          <property role="385vuF" value="Child_IntraProcedural_BuilderMode_DataFlow" />
-          <node concept="2$VJBW" id="b9" role="385v07">
-            <property role="2$VJBR" value="2955426575105435842" />
-            <node concept="2x4n5u" id="ba" role="3iCydw">
-              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fe8cg7jp" />
-              <node concept="2V$Bhx" id="bb" role="2x4n5j">
-                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="b8" role="39e2AY">
-          <ref role="39e2AS" node="2Z" resolve="Child_IntraProcedural_BuilderMode_DataFlow" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="aY" role="39e3Y0">
-        <ref role="39e2AK" to="go1:68XlVg40gto" resolve="OtherChild_IntraProcedural_BuilderMode_DataFlow" />
-        <node concept="385nmt" id="bc" role="385vvn">
-          <property role="385vuF" value="OtherChild_IntraProcedural_BuilderMode_DataFlow" />
-          <node concept="2$VJBW" id="be" role="385v07">
-            <property role="2$VJBR" value="7078910619969193816" />
-            <node concept="2x4n5u" id="bf" role="3iCydw">
-              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fe8cg7jp" />
-              <node concept="2V$Bhx" id="bg" role="2x4n5j">
-                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="bd" role="39e2AY">
-          <ref role="39e2AS" node="by" resolve="OtherChild_IntraProcedural_BuilderMode_DataFlow" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="aZ" role="39e3Y0">
-        <ref role="39e2AK" to="go1:68XlVg40fVK" resolve="OtherRoot_DataFlow" />
-        <node concept="385nmt" id="bh" role="385vvn">
-          <property role="385vuF" value="OtherRoot_DataFlow" />
-          <node concept="2$VJBW" id="bj" role="385v07">
-            <property role="2$VJBR" value="7078910619969191664" />
-            <node concept="2x4n5u" id="bk" role="3iCydw">
-              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fe8cg7jp" />
-              <node concept="2V$Bhx" id="bl" role="2x4n5j">
-                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="bi" role="39e2AY">
-          <ref role="39e2AS" node="cb" resolve="OtherRoot_DataFlow" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="b0" role="39e3Y0">
-        <ref role="39e2AK" to="go1:68XlVg40gXR" resolve="OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow" />
-        <node concept="385nmt" id="bm" role="385vvn">
-          <property role="385vuF" value="OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow" />
-          <node concept="2$VJBW" id="bo" role="385v07">
-            <property role="2$VJBR" value="7078910619969195895" />
-            <node concept="2x4n5u" id="bp" role="3iCydw">
-              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fe8cg7jp" />
-              <node concept="2V$Bhx" id="bq" role="2x4n5j">
-                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="bn" role="39e2AY">
-          <ref role="39e2AS" node="c_" resolve="OtherSubChild_IntraProceduralSpecific_BuilderMode_DataFlow" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="b1" role="39e3Y0">
-        <ref role="39e2AK" to="go1:7ez5JvPhFDK" resolve="Root_DataFlow" />
-        <node concept="385nmt" id="br" role="385vvn">
-          <property role="385vuF" value="Root_DataFlow" />
-          <node concept="2$VJBW" id="bt" role="385v07">
-            <property role="2$VJBR" value="8332528989793335920" />
-            <node concept="2x4n5u" id="bu" role="3iCydw">
-              <property role="2x4mPI" value="DataFlowBuilderDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fe8cg7jp" />
-              <node concept="2V$Bhx" id="bv" role="2x4n5j">
-                <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.dataFlow" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="39e2AT" id="bs" role="39e2AY">
-          <ref role="39e2AS" node="d1" resolve="Root_DataFlow" />
+          <ref role="39e2AS" node="4r" resolve="initialCounter" />
         </node>
       </node>
     </node>
@@ -2520,7 +2520,7 @@
     </node>
   </node>
   <node concept="312cEu" id="dr">
-    <property role="TrG5h" value="counterInstructionInstruction" />
+    <property role="TrG5h" value="counterInstructionAInstruction" />
     <node concept="3Tm1VV" id="ds" role="1B3o_S" />
     <node concept="3uibUv" id="dt" role="1zkMxy">
       <ref role="3uigEE" to="mu20:6L60FDzMFhw" resolve="GeneratedInstruction" />
@@ -2555,7 +2555,7 @@
             <node concept="liA8E" id="dJ" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
               <node concept="Xl_RD" id="dK" role="37wK5m">
-                <property role="Xl_RC" value="counterInstruction" />
+                <property role="Xl_RC" value="counterInstructionA" />
               </node>
             </node>
           </node>
@@ -2594,7 +2594,7 @@
     </node>
   </node>
   <node concept="312cEu" id="dW">
-    <property role="TrG5h" value="counterInstructionInstruction" />
+    <property role="TrG5h" value="counterInstructionBInstruction" />
     <node concept="3Tm1VV" id="dX" role="1B3o_S" />
     <node concept="3uibUv" id="dY" role="1zkMxy">
       <ref role="3uigEE" to="mu20:6L60FDzMFhw" resolve="GeneratedInstruction" />
@@ -2629,7 +2629,7 @@
             <node concept="liA8E" id="eg" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
               <node concept="Xl_RD" id="eh" role="37wK5m">
-                <property role="Xl_RC" value="counterInstruction" />
+                <property role="Xl_RC" value="counterInstructionB" />
               </node>
             </node>
           </node>

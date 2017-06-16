@@ -25,7 +25,7 @@ public class ChildRule implements DataFlowConstructor {
       if (((Program) o).contains(object)) {
         boolean before = true;
         int position = ((Program) (o)).getStart(node);
-        Instruction instruction = new counterInstructionInstruction();
+        Instruction instruction = new counterInstructionAInstruction();
         instruction.setRuleReference("r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/8332528989793339882");
         instruction.setSource(node);
         ((Program) (o)).insert(instruction, position, true, before);

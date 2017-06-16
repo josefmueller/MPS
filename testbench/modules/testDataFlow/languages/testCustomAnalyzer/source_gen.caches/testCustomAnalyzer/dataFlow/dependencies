@@ -21,7 +21,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="testCustomAnalyzer.dataFlow.counterInstructionInstruction" />
+    <classNode dependClassName="testCustomAnalyzer.dataFlow.counterInstructionAInstruction" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.framework.DataFlowConstructor" />
   </dependency>
   <dependency className="testCustomAnalyzer.dataFlow.Child_IntraProceduralSpecific_BuilderMode_DataFlow" file="Child_IntraProceduralSpecific_BuilderMode_DataFlow.java">
@@ -140,7 +140,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="testCustomAnalyzer.dataFlow.counterInstructionInstruction" file="counterInstructionInstruction.java">
+  <dependency className="testCustomAnalyzer.dataFlow.counterInstructionAInstruction" file="counterInstructionAInstruction.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode extendsClassName="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" />
+  </dependency>
+  <dependency className="testCustomAnalyzer.dataFlow.counterInstructionBInstruction" file="counterInstructionBInstruction.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />

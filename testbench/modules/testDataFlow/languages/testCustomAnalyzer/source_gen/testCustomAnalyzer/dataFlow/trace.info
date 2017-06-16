@@ -99,21 +99,21 @@
       <unit id="2955426575105630521" at="33,0,64,0" name="testCustomAnalyzer.dataFlow.CustomAnalyzerWithModeAnalyzerRunner$CustomAnalyzerWithModeAnalyzer" />
       <unit id="2955426575105630521" at="20,0,65,0" name="testCustomAnalyzer.dataFlow.CustomAnalyzerWithModeAnalyzerRunner" />
     </file>
-    <file name="counterInstructionInstruction.java">
+    <file name="counterInstructionBInstruction.java">
       <node id="2955426575106079627" at="8,0,9,0" concept="3" trace="myPresentation" />
-      <node id="2955426575106079627" at="9,42,10,43" concept="7" />
-      <node id="2955426575106079627" at="10,43,11,36" concept="2" />
-      <node id="2955426575106079627" at="11,36,12,35" concept="2" />
+      <node id="2955426575106079627" at="9,43,10,43" concept="7" />
+      <node id="2955426575106079627" at="10,43,11,37" concept="2" />
+      <node id="2955426575106079627" at="11,37,12,35" concept="2" />
       <node id="2955426575106079627" at="15,39,16,26" concept="8" />
       <node id="2955426575106079627" at="14,0,18,0" concept="6" trace="commandPresentation#()Ljava/lang/String;" />
-      <node id="2955426575106079627" at="9,0,14,0" concept="1" trace="counterInstructionInstruction#()V" />
+      <node id="2955426575106079627" at="9,0,14,0" concept="1" trace="counterInstructionBInstruction#()V" />
       <scope id="2955426575106079627" at="15,39,16,26" />
-      <scope id="2955426575106079627" at="9,42,12,35">
+      <scope id="2955426575106079627" at="9,43,12,35">
         <var name="sb" id="2955426575106079627" />
       </scope>
       <scope id="2955426575106079627" at="14,0,18,0" />
       <scope id="2955426575106079627" at="9,0,14,0" />
-      <unit id="2955426575106079627" at="7,0,19,0" name="testCustomAnalyzer.dataFlow.counterInstructionInstruction" />
+      <unit id="2955426575106079627" at="7,0,19,0" name="testCustomAnalyzer.dataFlow.counterInstructionBInstruction" />
     </file>
   </root>
   <root nodeRef="r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/2955426575106084979">
@@ -235,21 +235,21 @@
       <unit id="6628579460233828323" at="33,0,66,0" name="testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructorAnalyzerRunner$CounterAnalyzerWithConstructorAnalyzer" />
       <unit id="6628579460233828323" at="20,0,67,0" name="testCustomAnalyzer.dataFlow.CounterAnalyzerWithConstructorAnalyzerRunner" />
     </file>
-    <file name="counterInstructionInstruction.java">
+    <file name="counterInstructionAInstruction.java">
       <node id="6628579460233829743" at="8,0,9,0" concept="3" trace="myPresentation" />
-      <node id="6628579460233829743" at="9,42,10,43" concept="7" />
-      <node id="6628579460233829743" at="10,43,11,36" concept="2" />
-      <node id="6628579460233829743" at="11,36,12,35" concept="2" />
+      <node id="6628579460233829743" at="9,43,10,43" concept="7" />
+      <node id="6628579460233829743" at="10,43,11,37" concept="2" />
+      <node id="6628579460233829743" at="11,37,12,35" concept="2" />
       <node id="6628579460233829743" at="15,39,16,26" concept="8" />
       <node id="6628579460233829743" at="14,0,18,0" concept="6" trace="commandPresentation#()Ljava/lang/String;" />
-      <node id="6628579460233829743" at="9,0,14,0" concept="1" trace="counterInstructionInstruction#()V" />
+      <node id="6628579460233829743" at="9,0,14,0" concept="1" trace="counterInstructionAInstruction#()V" />
       <scope id="6628579460233829743" at="15,39,16,26" />
-      <scope id="6628579460233829743" at="9,42,12,35">
+      <scope id="6628579460233829743" at="9,43,12,35">
         <var name="sb" id="6628579460233829743" />
       </scope>
       <scope id="6628579460233829743" at="14,0,18,0" />
       <scope id="6628579460233829743" at="9,0,14,0" />
-      <unit id="6628579460233829743" at="7,0,19,0" name="testCustomAnalyzer.dataFlow.counterInstructionInstruction" />
+      <unit id="6628579460233829743" at="7,0,19,0" name="testCustomAnalyzer.dataFlow.counterInstructionAInstruction" />
     </file>
   </root>
   <root nodeRef="r:11be8b48-b45e-48e5-98ad-b77dc1b202b1(testCustomAnalyzer.dataFlow)/7078910619969191664">
@@ -324,8 +324,8 @@
       <node id="8332528989793339882" at="23,5,24,27" concept="7" />
       <node id="8332528989793339882" at="25,43,26,30" concept="7" />
       <node id="8332528989793339882" at="26,30,27,54" concept="7" />
-      <node id="8332528989793339882" at="27,54,28,70" concept="7" />
-      <node id="8332528989793339882" at="28,70,29,128" concept="2" />
+      <node id="8332528989793339882" at="27,54,28,71" concept="7" />
+      <node id="8332528989793339882" at="28,71,29,128" concept="2" />
       <node id="8332528989793339882" at="29,128,30,36" concept="2" />
       <node id="8332528989793339882" at="30,36,31,68" concept="2" />
       <node id="8332528989793339868" at="19,0,22,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />

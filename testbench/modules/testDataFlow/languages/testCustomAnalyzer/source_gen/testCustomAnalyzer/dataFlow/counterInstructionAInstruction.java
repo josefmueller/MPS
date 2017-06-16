@@ -4,11 +4,11 @@ package testCustomAnalyzer.dataFlow;
 
 import jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction;
 
-public class counterInstructionInstruction extends GeneratedInstruction {
+public class counterInstructionAInstruction extends GeneratedInstruction {
   private String myPresentation;
-  public counterInstructionInstruction() {
+  public counterInstructionAInstruction() {
     StringBuilder sb = new StringBuilder();
-    sb.append("counterInstruction");
+    sb.append("counterInstructionA");
     myPresentation = sb.toString();
   }
   @Override

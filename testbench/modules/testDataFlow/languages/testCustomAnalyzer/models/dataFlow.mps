@@ -164,7 +164,7 @@
   <node concept="38boeP" id="5JXsuoWG1vz">
     <property role="TrG5h" value="CounterAnalyzerWithConstructor" />
     <node concept="38boeQ" id="5JXsuoWG1PJ" role="2ZJRuf">
-      <property role="TrG5h" value="counterInstruction" />
+      <property role="TrG5h" value="counterInstructionA" />
     </node>
     <node concept="3fFARy" id="5JXsuoWG1DT" role="3fEaTh">
       <property role="TrG5h" value="initialCounter" />
@@ -283,7 +283,7 @@
       <node concept="2qeTo9" id="7ez5JvPhGBE" role="3cqZAp">
         <node concept="3s5BLS" id="7ez5JvPhGDN" role="IgiVj" />
         <node concept="2qfb11" id="7ez5JvPhGBN" role="2qf8f6">
-          <ref role="2qfb1S" node="5JXsuoWG1PJ" resolve="counterInstruction" />
+          <ref role="2qfb1S" node="5JXsuoWG1PJ" resolve="counterInstructionA" />
         </node>
         <node concept="3cqzBR" id="7ez5JvPhGDQ" role="aPEfM">
           <ref role="3cqzBQ" node="7ez5JvPhGBu" resolve="node" />
@@ -377,7 +377,7 @@
     <node concept="1ZAo8i" id="2$3McZ0UUdB" role="1ZAo82" />
     <node concept="10Oyi0" id="2$3McZ0UUes" role="1ZBA8x" />
     <node concept="38boeQ" id="2$3McZ0WBIb" role="2ZJRuf">
-      <property role="TrG5h" value="counterInstruction" />
+      <property role="TrG5h" value="counterInstructionB" />
     </node>
   </node>
   <node concept="2SFhMz" id="2$3McZ0WD1N">
@@ -392,7 +392,7 @@
       <node concept="2qeTo9" id="2$3McZ0WD2g" role="3cqZAp">
         <node concept="3s5BLS" id="2$3McZ0WD2h" role="IgiVj" />
         <node concept="2qfb11" id="2$3McZ0WD2i" role="2qf8f6">
-          <ref role="2qfb1S" node="2$3McZ0WBIb" resolve="counterInstruction" />
+          <ref role="2qfb1S" node="2$3McZ0WBIb" resolve="counterInstructionB" />
         </node>
         <node concept="3cqzBR" id="2$3McZ0WD2j" role="aPEfM">
           <ref role="3cqzBQ" node="2$3McZ0WD1W" resolve="node" />
