@@ -27,8 +27,8 @@
       <node id="178770917832626022" at="36,0,37,0" concept="7" trace="getRules_id3_iNRJnrAhj" />
       <node id="178770917832626022" at="38,0,39,0" concept="7" trace="BH_METHODS" />
       <node id="178770917832626030" at="43,93,44,188" concept="6" />
-      <node id="178770917832652120" at="46,95,47,145" concept="5" />
-      <node id="178770917832652131" at="48,30,49,98" concept="6" />
+      <node id="178770917832652120" at="46,95,47,92" concept="5" />
+      <node id="178770917832652131" at="48,55,49,98" concept="6" />
       <node id="178770917832652139" at="50,5,51,113" concept="6" />
       <node id="178770917832626050" at="53,87,54,182" concept="6" />
       <node id="4130591939054438344" at="56,86,57,48" concept="5" />
@@ -50,9 +50,9 @@
       <node id="178770917832626022" at="115,40,116,19" concept="6" />
       <node id="178770917832626022" at="40,0,42,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="178770917832626022" at="43,0,46,0" concept="8" trace="getAnalyzerRunnerName_id9V7Nft_oXD#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="178770917832652129" at="47,145,50,5" concept="3" />
+      <node id="178770917832652129" at="47,92,50,5" concept="3" />
       <node id="178770917832626022" at="53,0,56,0" concept="8" trace="getAnalyzerName_id9V7Nft_oXY#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="4130591939054438383" at="58,303,61,7" concept="3" />
+      <node id="4130591939054438383" at="58,253,61,7" concept="3" />
       <node id="178770917832626022" at="66,0,69,0" concept="0" trace="Analyzer__BehaviorDescriptor#()V" />
       <node id="178770917832626022" at="77,49,80,5" concept="3" />
       <node id="178770917832626022" at="97,49,100,5" concept="3" />
@@ -68,7 +68,7 @@
       <node id="178770917832626022" at="75,0,94,0" concept="4" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="178770917832626022" at="40,63,40,63" />
       <scope id="178770917832626028" at="43,93,44,188" />
-      <scope id="178770917832652130" at="48,30,49,98" />
+      <scope id="178770917832652130" at="48,55,49,98" />
       <scope id="178770917832626049" at="53,87,54,182" />
       <scope id="4130591939054438384" at="59,192,60,55" />
       <scope id="178770917832626022" at="66,46,67,20" />
@@ -92,7 +92,7 @@
       <scope id="178770917832626022" at="53,0,56,0">
         <var name="__thisNode__" id="178770917832626022" />
       </scope>
-      <scope id="4130591939054438358" at="58,303,61,7" />
+      <scope id="4130591939054438358" at="58,253,61,7" />
       <scope id="178770917832626022" at="66,0,69,0" />
       <scope id="178770917832626022" at="70,0,74,0">
         <var name="constructor" id="178770917832626022" />

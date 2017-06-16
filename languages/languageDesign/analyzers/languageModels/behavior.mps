@@ -65,6 +65,7 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -112,6 +113,9 @@
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -128,6 +132,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
@@ -528,15 +533,12 @@
         <node concept="3cpWs8" id="9V7Nft_vlo" role="3cqZAp">
           <node concept="3cpWsn" id="9V7Nft_vlp" role="3cpWs9">
             <property role="TrG5h" value="longName" />
-            <node concept="2YIFZM" id="2n9zn0CqMN4" role="33vP2m">
-              <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
-              <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-              <node concept="2JrnkZ" id="2n9zn0CqMN5" role="37wK5m">
-                <node concept="2OqwBi" id="2n9zn0CqMN6" role="2JrQYb">
-                  <node concept="13iPFW" id="2n9zn0CqMN7" role="2Oq$k0" />
-                  <node concept="I4A8Y" id="2n9zn0CqMN8" role="2OqNvi" />
-                </node>
+            <node concept="2OqwBi" id="zzYaEuAq4x" role="33vP2m">
+              <node concept="2OqwBi" id="zzYaEuApsd" role="2Oq$k0">
+                <node concept="13iPFW" id="zzYaEuApaJ" role="2Oq$k0" />
+                <node concept="I4A8Y" id="zzYaEuApHb" role="2OqNvi" />
               </node>
+              <node concept="LkI2h" id="zzYaEuAqf3" role="2OqNvi" />
             </node>
             <node concept="17QB3L" id="9V7Nft_vlq" role="1tU5fm" />
           </node>
@@ -556,12 +558,7 @@
             <node concept="37vLTw" id="3GM_nagT_M8" role="2Oq$k0">
               <ref role="3cqZAo" node="9V7Nft_vlp" resolve="longName" />
             </node>
-            <node concept="liA8E" id="9V7Nft_vlD" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-              <node concept="Xl_RD" id="9V7Nft_vlE" role="37wK5m">
-                <property role="Xl_RC" value="" />
-              </node>
-            </node>
+            <node concept="17RlXB" id="zzYaEuArqS" role="2OqNvi" />
           </node>
         </node>
         <node concept="3cpWs6" id="9V7Nft_vlF" role="3cqZAp">
@@ -576,8 +573,8 @@
               <node concept="37vLTw" id="3GM_nagTwoL" role="3uHU7B">
                 <ref role="3cqZAo" node="9V7Nft_vlp" resolve="longName" />
               </node>
-              <node concept="Xl_RD" id="9V7Nft_vlM" role="3uHU7w">
-                <property role="Xl_RC" value="." />
+              <node concept="1Xhbcc" id="zzYaEuAqv0" role="3uHU7w">
+                <property role="1XhdNS" value="." />
               </node>
             </node>
           </node>

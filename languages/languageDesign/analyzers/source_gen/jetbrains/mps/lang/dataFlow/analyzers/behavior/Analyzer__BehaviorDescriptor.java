@@ -17,9 +17,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.SNodeOperations;
-import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -44,18 +44,18 @@ public final class Analyzer__BehaviorDescriptor extends BaseBHDescriptor {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "AnalyzerRunner";
   }
   /*package*/ static String getAnalyzerRunnerFqName_id9V7Nft_vlj(@NotNull SNode __thisNode__) {
-    String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__));
-    if (longName.equals("")) {
+    String longName = SModelOperations.getModelName(SNodeOperations.getModel(__thisNode__));
+    if ((longName == null || longName.length() == 0)) {
       return Analyzer__BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
     }
-    return longName + "." + Analyzer__BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
+    return longName + '.' + Analyzer__BehaviorDescriptor.getAnalyzerRunnerName_id9V7Nft_oXD.invoke(__thisNode__);
   }
   /*package*/ static String getAnalyzerName_id9V7Nft_oXY(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Analyzer";
   }
   /*package*/ static List<SNode> getRules_id3_iNRJnrAhj(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode rule : SModelOperations.rootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))) {
+    for (SNode rule : SModelOperations.rootsIncludingImported(SNodeOperations.getModel(__thisNode__), MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule"))) {
       if (SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L, 0x3952cf7bd76e6440L, "analyzer")) == __thisNode__) {
         ListSequence.fromList(result).addElement(rule);
       }
