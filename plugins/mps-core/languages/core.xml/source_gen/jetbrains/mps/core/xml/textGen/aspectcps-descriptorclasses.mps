@@ -266,460 +266,460 @@
   </registry>
   <node concept="39dXUE" id="0">
     <node concept="39e2AJ" id="1" role="39e2AI">
-      <property role="39e3Y2" value="TextGenClass" />
+      <property role="39e3Y2" value="GetExtension" />
       <node concept="39e2AG" id="5" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0OqZ" resolve="XmlAttribute_TextGen" />
-        <node concept="385nmt" id="p" role="385vvn">
-          <property role="385vuF" value="XmlAttribute_TextGen" />
-          <node concept="2$VJBW" id="r" role="385v07">
-            <property role="2$VJBR" value="3080189811177506495" />
-            <node concept="2x4n5u" id="s" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="t" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="q" role="39e2AY">
-          <ref role="39e2AS" node="5D" resolve="XmlAttribute_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="6" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R7A" resolve="XmlCDATA_TextGen" />
-        <node concept="385nmt" id="u" role="385vvn">
-          <property role="385vuF" value="XmlCDATA_TextGen" />
-          <node concept="2$VJBW" id="w" role="385v07">
-            <property role="2$VJBR" value="3080189811177517542" />
-            <node concept="2x4n5u" id="x" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="y" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="v" role="39e2AY">
-          <ref role="39e2AS" node="6I" resolve="XmlCDATA_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="7" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R6J" resolve="XmlCharRefValue_TextGen" />
-        <node concept="385nmt" id="z" role="385vvn">
-          <property role="385vuF" value="XmlCharRefValue_TextGen" />
-          <node concept="2$VJBW" id="_" role="385v07">
-            <property role="2$VJBR" value="3080189811177517487" />
-            <node concept="2x4n5u" id="A" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="B" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="$" role="39e2AY">
-          <ref role="39e2AS" node="7H" resolve="XmlCharRefValue_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="8" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R81" resolve="XmlCharRef_TextGen" />
-        <node concept="385nmt" id="C" role="385vvn">
-          <property role="385vuF" value="XmlCharRef_TextGen" />
-          <node concept="2$VJBW" id="E" role="385v07">
-            <property role="2$VJBR" value="3080189811177517569" />
-            <node concept="2x4n5u" id="F" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="G" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="D" role="39e2AY">
-          <ref role="39e2AS" node="8g" resolve="XmlCharRef_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="9" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R8B" resolve="XmlCommentLine_TextGen" />
-        <node concept="385nmt" id="H" role="385vvn">
-          <property role="385vuF" value="XmlCommentLine_TextGen" />
-          <node concept="2$VJBW" id="J" role="385v07">
-            <property role="2$VJBR" value="3080189811177517607" />
-            <node concept="2x4n5u" id="K" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="L" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="I" role="39e2AY">
-          <ref role="39e2AS" node="9f" resolve="XmlCommentLine_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="a" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R8e" resolve="XmlComment_TextGen" />
-        <node concept="385nmt" id="M" role="385vvn">
-          <property role="385vuF" value="XmlComment_TextGen" />
-          <node concept="2$VJBW" id="O" role="385v07">
-            <property role="2$VJBR" value="3080189811177517582" />
-            <node concept="2x4n5u" id="P" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="Q" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="N" role="39e2AY">
-          <ref role="39e2AS" node="9C" resolve="XmlComment_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="b" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:1Qs9WekWqag" resolve="XmlDeclaration_TextGen" />
-        <node concept="385nmt" id="R" role="385vvn">
-          <property role="385vuF" value="XmlDeclaration_TextGen" />
-          <node concept="2$VJBW" id="T" role="385v07">
-            <property role="2$VJBR" value="2133624044437742224" />
-            <node concept="2x4n5u" id="U" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="V" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="S" role="39e2AY">
-          <ref role="39e2AS" node="aG" resolve="XmlDeclaration_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="c" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:1Qs9WekXwbI" resolve="XmlDoctypeDeclaration_TextGen" />
-        <node concept="385nmt" id="W" role="385vvn">
-          <property role="385vuF" value="XmlDoctypeDeclaration_TextGen" />
-          <node concept="2$VJBW" id="Y" role="385v07">
-            <property role="2$VJBR" value="2133624044438029038" />
-            <node concept="2x4n5u" id="Z" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="10" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="X" role="39e2AY">
-          <ref role="39e2AS" node="cY" resolve="XmlDoctypeDeclaration_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="d" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R9c" resolve="XmlDocument_TextGen" />
-        <node concept="385nmt" id="11" role="385vvn">
-          <property role="385vuF" value="XmlDocument_TextGen" />
-          <node concept="2$VJBW" id="13" role="385v07">
-            <property role="2$VJBR" value="3080189811177517644" />
-            <node concept="2x4n5u" id="14" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="15" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="12" role="39e2AY">
-          <ref role="39e2AS" node="ep" resolve="XmlDocument_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="e" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0PH1" resolve="XmlElement_TextGen" />
-        <node concept="385nmt" id="16" role="385vvn">
-          <property role="385vuF" value="XmlElement_TextGen" />
-          <node concept="2$VJBW" id="18" role="385v07">
-            <property role="2$VJBR" value="3080189811177511745" />
-            <node concept="2x4n5u" id="19" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1a" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="17" role="39e2AY">
-          <ref role="39e2AS" node="f4" resolve="XmlElement_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="f" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R6m" resolve="XmlEntityRefValue_TextGen" />
-        <node concept="385nmt" id="1b" role="385vvn">
-          <property role="385vuF" value="XmlEntityRefValue_TextGen" />
-          <node concept="2$VJBW" id="1d" role="385v07">
-            <property role="2$VJBR" value="3080189811177517462" />
-            <node concept="2x4n5u" id="1e" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1f" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1c" role="39e2AY">
-          <ref role="39e2AS" node="j8" resolve="XmlEntityRefValue_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="g" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R7O" resolve="XmlEntityRef_TextGen" />
-        <node concept="385nmt" id="1g" role="385vvn">
-          <property role="385vuF" value="XmlEntityRef_TextGen" />
-          <node concept="2$VJBW" id="1i" role="385v07">
-            <property role="2$VJBR" value="3080189811177517556" />
-            <node concept="2x4n5u" id="1j" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1k" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1h" role="39e2AY">
-          <ref role="39e2AS" node="jF" resolve="XmlEntityRef_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="h" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:1Qs9WekXLqJ" resolve="XmlExternalId_TextGen" />
-        <node concept="385nmt" id="1l" role="385vvn">
-          <property role="385vuF" value="XmlExternalId_TextGen" />
-          <node concept="2$VJBW" id="1n" role="385v07">
-            <property role="2$VJBR" value="2133624044438099631" />
-            <node concept="2x4n5u" id="1o" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1p" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1m" role="39e2AY">
-          <ref role="39e2AS" node="kE" resolve="XmlExternalId_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="i" role="39e3Y0">
         <ref role="39e2AK" to="tt0q:2EZ251g0R9t" resolve="XmlFile_TextGen" />
-        <node concept="385nmt" id="1q" role="385vvn">
+        <node concept="385nmt" id="6" role="385vvn">
           <property role="385vuF" value="XmlFile_TextGen" />
-          <node concept="2$VJBW" id="1s" role="385v07">
+          <node concept="2$VJBW" id="8" role="385v07">
             <property role="2$VJBR" value="3080189811177517661" />
-            <node concept="2x4n5u" id="1t" role="3iCydw">
+            <node concept="2x4n5u" id="9" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1u" role="2x4n5j">
+              <node concept="2V$Bhx" id="a" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="1r" role="39e2AY">
-          <ref role="39e2AS" node="nc" resolve="XmlFile_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="j" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0Rbc" resolve="XmlNoSpaceValue_TextGen" />
-        <node concept="385nmt" id="1v" role="385vvn">
-          <property role="385vuF" value="XmlNoSpaceValue_TextGen" />
-          <node concept="2$VJBW" id="1x" role="385v07">
-            <property role="2$VJBR" value="3080189811177517772" />
-            <node concept="2x4n5u" id="1y" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1z" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1w" role="39e2AY">
-          <ref role="39e2AS" node="nT" resolve="XmlNoSpaceValue_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="k" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0RaD" resolve="XmlProcessingInstruction_TextGen" />
-        <node concept="385nmt" id="1$" role="385vvn">
-          <property role="385vuF" value="XmlProcessingInstruction_TextGen" />
-          <node concept="2$VJBW" id="1A" role="385v07">
-            <property role="2$VJBR" value="3080189811177517737" />
-            <node concept="2x4n5u" id="1B" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1C" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1_" role="39e2AY">
-          <ref role="39e2AS" node="ob" resolve="XmlProcessingInstruction_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="l" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:1Qs9WekWoWq" resolve="XmlProlog_TextGen" />
-        <node concept="385nmt" id="1D" role="385vvn">
-          <property role="385vuF" value="XmlProlog_TextGen" />
-          <node concept="2$VJBW" id="1F" role="385v07">
-            <property role="2$VJBR" value="2133624044437737242" />
-            <node concept="2x4n5u" id="1G" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1H" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1E" role="39e2AY">
-          <ref role="39e2AS" node="po" resolve="XmlProlog_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="m" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R5g" resolve="XmlTextValue_TextGen" />
-        <node concept="385nmt" id="1I" role="385vvn">
-          <property role="385vuF" value="XmlTextValue_TextGen" />
-          <node concept="2$VJBW" id="1K" role="385v07">
-            <property role="2$VJBR" value="3080189811177517392" />
-            <node concept="2x4n5u" id="1L" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1M" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1J" role="39e2AY">
-          <ref role="39e2AS" node="pU" resolve="XmlTextValue_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="n" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:2EZ251g0R9Z" resolve="XmlText_TextGen" />
-        <node concept="385nmt" id="1N" role="385vvn">
-          <property role="385vuF" value="XmlText_TextGen" />
-          <node concept="2$VJBW" id="1P" role="385v07">
-            <property role="2$VJBR" value="3080189811177517695" />
-            <node concept="2x4n5u" id="1Q" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1R" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1O" role="39e2AY">
-          <ref role="39e2AS" node="rg" resolve="XmlText_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="o" role="39e3Y0">
-        <ref role="39e2AK" to="tt0q:1Qs9WekWVUc" resolve="XmlWhitespace_TextGen" />
-        <node concept="385nmt" id="1S" role="385vvn">
-          <property role="385vuF" value="XmlWhitespace_TextGen" />
-          <node concept="2$VJBW" id="1U" role="385v07">
-            <property role="2$VJBR" value="2133624044437880460" />
-            <node concept="2x4n5u" id="1V" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1W" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1T" role="39e2AY">
-          <ref role="39e2AS" node="sm" resolve="XmlWhitespace_TextGen" />
+        <node concept="39e2AT" id="7" role="39e2AY">
+          <ref role="39e2AS" node="2m" resolve="getFileExtension_XmlFile" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="2" role="39e2AI">
       <property role="39e3Y2" value="GetFilename" />
-      <node concept="39e2AG" id="1X" role="39e3Y0">
+      <node concept="39e2AG" id="b" role="39e3Y0">
         <ref role="39e2AK" to="tt0q:2EZ251g0R9t" resolve="XmlFile_TextGen" />
-        <node concept="385nmt" id="1Y" role="385vvn">
+        <node concept="385nmt" id="c" role="385vvn">
           <property role="385vuF" value="XmlFile_TextGen" />
-          <node concept="2$VJBW" id="20" role="385v07">
+          <node concept="2$VJBW" id="e" role="385v07">
             <property role="2$VJBR" value="3080189811177517661" />
-            <node concept="2x4n5u" id="21" role="3iCydw">
+            <node concept="2x4n5u" id="f" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="22" role="2x4n5j">
+              <node concept="2V$Bhx" id="g" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="1Z" role="39e2AY">
+        <node concept="39e2AT" id="d" role="39e2AY">
           <ref role="39e2AS" node="2l" resolve="getFileName_XmlFile" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="3" role="39e2AI">
-      <property role="39e3Y2" value="GetExtension" />
-      <node concept="39e2AG" id="23" role="39e3Y0">
+      <property role="39e3Y2" value="TextGenClass" />
+      <node concept="39e2AG" id="h" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0OqZ" resolve="XmlAttribute_TextGen" />
+        <node concept="385nmt" id="_" role="385vvn">
+          <property role="385vuF" value="XmlAttribute_TextGen" />
+          <node concept="2$VJBW" id="B" role="385v07">
+            <property role="2$VJBR" value="3080189811177506495" />
+            <node concept="2x4n5u" id="C" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="D" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="A" role="39e2AY">
+          <ref role="39e2AS" node="5D" resolve="XmlAttribute_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="i" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R7A" resolve="XmlCDATA_TextGen" />
+        <node concept="385nmt" id="E" role="385vvn">
+          <property role="385vuF" value="XmlCDATA_TextGen" />
+          <node concept="2$VJBW" id="G" role="385v07">
+            <property role="2$VJBR" value="3080189811177517542" />
+            <node concept="2x4n5u" id="H" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="I" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="F" role="39e2AY">
+          <ref role="39e2AS" node="6I" resolve="XmlCDATA_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="j" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R6J" resolve="XmlCharRefValue_TextGen" />
+        <node concept="385nmt" id="J" role="385vvn">
+          <property role="385vuF" value="XmlCharRefValue_TextGen" />
+          <node concept="2$VJBW" id="L" role="385v07">
+            <property role="2$VJBR" value="3080189811177517487" />
+            <node concept="2x4n5u" id="M" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="N" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="K" role="39e2AY">
+          <ref role="39e2AS" node="7H" resolve="XmlCharRefValue_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="k" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R81" resolve="XmlCharRef_TextGen" />
+        <node concept="385nmt" id="O" role="385vvn">
+          <property role="385vuF" value="XmlCharRef_TextGen" />
+          <node concept="2$VJBW" id="Q" role="385v07">
+            <property role="2$VJBR" value="3080189811177517569" />
+            <node concept="2x4n5u" id="R" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="S" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="P" role="39e2AY">
+          <ref role="39e2AS" node="8g" resolve="XmlCharRef_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="l" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R8B" resolve="XmlCommentLine_TextGen" />
+        <node concept="385nmt" id="T" role="385vvn">
+          <property role="385vuF" value="XmlCommentLine_TextGen" />
+          <node concept="2$VJBW" id="V" role="385v07">
+            <property role="2$VJBR" value="3080189811177517607" />
+            <node concept="2x4n5u" id="W" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="X" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="U" role="39e2AY">
+          <ref role="39e2AS" node="9f" resolve="XmlCommentLine_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="m" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R8e" resolve="XmlComment_TextGen" />
+        <node concept="385nmt" id="Y" role="385vvn">
+          <property role="385vuF" value="XmlComment_TextGen" />
+          <node concept="2$VJBW" id="10" role="385v07">
+            <property role="2$VJBR" value="3080189811177517582" />
+            <node concept="2x4n5u" id="11" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="12" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="Z" role="39e2AY">
+          <ref role="39e2AS" node="9C" resolve="XmlComment_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="n" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:1Qs9WekWqag" resolve="XmlDeclaration_TextGen" />
+        <node concept="385nmt" id="13" role="385vvn">
+          <property role="385vuF" value="XmlDeclaration_TextGen" />
+          <node concept="2$VJBW" id="15" role="385v07">
+            <property role="2$VJBR" value="2133624044437742224" />
+            <node concept="2x4n5u" id="16" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="17" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="14" role="39e2AY">
+          <ref role="39e2AS" node="aG" resolve="XmlDeclaration_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="o" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:1Qs9WekXwbI" resolve="XmlDoctypeDeclaration_TextGen" />
+        <node concept="385nmt" id="18" role="385vvn">
+          <property role="385vuF" value="XmlDoctypeDeclaration_TextGen" />
+          <node concept="2$VJBW" id="1a" role="385v07">
+            <property role="2$VJBR" value="2133624044438029038" />
+            <node concept="2x4n5u" id="1b" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1c" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="19" role="39e2AY">
+          <ref role="39e2AS" node="cY" resolve="XmlDoctypeDeclaration_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="p" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R9c" resolve="XmlDocument_TextGen" />
+        <node concept="385nmt" id="1d" role="385vvn">
+          <property role="385vuF" value="XmlDocument_TextGen" />
+          <node concept="2$VJBW" id="1f" role="385v07">
+            <property role="2$VJBR" value="3080189811177517644" />
+            <node concept="2x4n5u" id="1g" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1h" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1e" role="39e2AY">
+          <ref role="39e2AS" node="ep" resolve="XmlDocument_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="q" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0PH1" resolve="XmlElement_TextGen" />
+        <node concept="385nmt" id="1i" role="385vvn">
+          <property role="385vuF" value="XmlElement_TextGen" />
+          <node concept="2$VJBW" id="1k" role="385v07">
+            <property role="2$VJBR" value="3080189811177511745" />
+            <node concept="2x4n5u" id="1l" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1m" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1j" role="39e2AY">
+          <ref role="39e2AS" node="f4" resolve="XmlElement_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="r" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R6m" resolve="XmlEntityRefValue_TextGen" />
+        <node concept="385nmt" id="1n" role="385vvn">
+          <property role="385vuF" value="XmlEntityRefValue_TextGen" />
+          <node concept="2$VJBW" id="1p" role="385v07">
+            <property role="2$VJBR" value="3080189811177517462" />
+            <node concept="2x4n5u" id="1q" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1r" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1o" role="39e2AY">
+          <ref role="39e2AS" node="j8" resolve="XmlEntityRefValue_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="s" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R7O" resolve="XmlEntityRef_TextGen" />
+        <node concept="385nmt" id="1s" role="385vvn">
+          <property role="385vuF" value="XmlEntityRef_TextGen" />
+          <node concept="2$VJBW" id="1u" role="385v07">
+            <property role="2$VJBR" value="3080189811177517556" />
+            <node concept="2x4n5u" id="1v" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1w" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1t" role="39e2AY">
+          <ref role="39e2AS" node="jF" resolve="XmlEntityRef_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="t" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:1Qs9WekXLqJ" resolve="XmlExternalId_TextGen" />
+        <node concept="385nmt" id="1x" role="385vvn">
+          <property role="385vuF" value="XmlExternalId_TextGen" />
+          <node concept="2$VJBW" id="1z" role="385v07">
+            <property role="2$VJBR" value="2133624044438099631" />
+            <node concept="2x4n5u" id="1$" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1_" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1y" role="39e2AY">
+          <ref role="39e2AS" node="kE" resolve="XmlExternalId_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="u" role="39e3Y0">
         <ref role="39e2AK" to="tt0q:2EZ251g0R9t" resolve="XmlFile_TextGen" />
-        <node concept="385nmt" id="24" role="385vvn">
+        <node concept="385nmt" id="1A" role="385vvn">
           <property role="385vuF" value="XmlFile_TextGen" />
-          <node concept="2$VJBW" id="26" role="385v07">
+          <node concept="2$VJBW" id="1C" role="385v07">
             <property role="2$VJBR" value="3080189811177517661" />
+            <node concept="2x4n5u" id="1D" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1E" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1B" role="39e2AY">
+          <ref role="39e2AS" node="nc" resolve="XmlFile_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="v" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0Rbc" resolve="XmlNoSpaceValue_TextGen" />
+        <node concept="385nmt" id="1F" role="385vvn">
+          <property role="385vuF" value="XmlNoSpaceValue_TextGen" />
+          <node concept="2$VJBW" id="1H" role="385v07">
+            <property role="2$VJBR" value="3080189811177517772" />
+            <node concept="2x4n5u" id="1I" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1J" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1G" role="39e2AY">
+          <ref role="39e2AS" node="nT" resolve="XmlNoSpaceValue_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="w" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0RaD" resolve="XmlProcessingInstruction_TextGen" />
+        <node concept="385nmt" id="1K" role="385vvn">
+          <property role="385vuF" value="XmlProcessingInstruction_TextGen" />
+          <node concept="2$VJBW" id="1M" role="385v07">
+            <property role="2$VJBR" value="3080189811177517737" />
+            <node concept="2x4n5u" id="1N" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1O" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1L" role="39e2AY">
+          <ref role="39e2AS" node="ob" resolve="XmlProcessingInstruction_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="x" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:1Qs9WekWoWq" resolve="XmlProlog_TextGen" />
+        <node concept="385nmt" id="1P" role="385vvn">
+          <property role="385vuF" value="XmlProlog_TextGen" />
+          <node concept="2$VJBW" id="1R" role="385v07">
+            <property role="2$VJBR" value="2133624044437737242" />
+            <node concept="2x4n5u" id="1S" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1T" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1Q" role="39e2AY">
+          <ref role="39e2AS" node="po" resolve="XmlProlog_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="y" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R5g" resolve="XmlTextValue_TextGen" />
+        <node concept="385nmt" id="1U" role="385vvn">
+          <property role="385vuF" value="XmlTextValue_TextGen" />
+          <node concept="2$VJBW" id="1W" role="385v07">
+            <property role="2$VJBR" value="3080189811177517392" />
+            <node concept="2x4n5u" id="1X" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1Y" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1V" role="39e2AY">
+          <ref role="39e2AS" node="pU" resolve="XmlTextValue_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="z" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:2EZ251g0R9Z" resolve="XmlText_TextGen" />
+        <node concept="385nmt" id="1Z" role="385vvn">
+          <property role="385vuF" value="XmlText_TextGen" />
+          <node concept="2$VJBW" id="21" role="385v07">
+            <property role="2$VJBR" value="3080189811177517695" />
+            <node concept="2x4n5u" id="22" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="23" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="20" role="39e2AY">
+          <ref role="39e2AS" node="rg" resolve="XmlText_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="$" role="39e3Y0">
+        <ref role="39e2AK" to="tt0q:1Qs9WekWVUc" resolve="XmlWhitespace_TextGen" />
+        <node concept="385nmt" id="24" role="385vvn">
+          <property role="385vuF" value="XmlWhitespace_TextGen" />
+          <node concept="2$VJBW" id="26" role="385v07">
+            <property role="2$VJBR" value="2133624044437880460" />
             <node concept="2x4n5u" id="27" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
@@ -732,7 +732,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="25" role="39e2AY">
-          <ref role="39e2AS" node="2m" resolve="getFileExtension_XmlFile" />
+          <ref role="39e2AS" node="sm" resolve="XmlWhitespace_TextGen" />
         </node>
       </node>
     </node>

@@ -411,7 +411,7 @@
   </node>
   <node concept="39dXUE" id="X">
     <node concept="39e2AJ" id="Y" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="13" role="39e3Y0">
         <ref role="39e2AK" to="6p:7n1vgxszwQh" resolve="Strategy" />
         <node concept="385nmt" id="14" role="385vvn">
@@ -430,7 +430,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="15" role="39e2AY">
-          <ref role="39e2AS" node="47" resolve="Strategy_PropertySupport" />
+          <ref role="39e2AS" node="2n" resolve="Strategy" />
         </node>
       </node>
     </node>
@@ -480,7 +480,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="10" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="1l" role="39e3Y0">
         <ref role="39e2AK" to="6p:7n1vgxszwQh" resolve="Strategy" />
         <node concept="385nmt" id="1m" role="385vvn">
@@ -499,7 +499,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="1n" role="39e2AY">
-          <ref role="39e2AS" node="2n" resolve="Strategy" />
+          <ref role="39e2AS" node="47" resolve="Strategy_PropertySupport" />
         </node>
       </node>
     </node>

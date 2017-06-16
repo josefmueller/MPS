@@ -3035,7 +3035,7 @@
   </node>
   <node concept="39dXUE" id="gV">
     <node concept="39e2AJ" id="gW" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="h1" role="39e3Y0">
         <ref role="39e2AK" to="tpck:Fg1jLUVynG" resolve="SideTransformSide" />
         <node concept="385nmt" id="h2" role="385vvn">
@@ -3054,7 +3054,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="h3" role="39e2AY">
-          <ref role="39e2AS" node="pR" resolve="SideTransformSide_PropertySupport" />
+          <ref role="39e2AS" node="o7" resolve="SideTransformSide" />
         </node>
       </node>
     </node>
@@ -3104,7 +3104,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="gY" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="hj" role="39e3Y0">
         <ref role="39e2AK" to="tpck:Fg1jLUVynG" resolve="SideTransformSide" />
         <node concept="385nmt" id="hk" role="385vvn">
@@ -3123,7 +3123,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="hl" role="39e2AY">
-          <ref role="39e2AS" node="o7" resolve="SideTransformSide" />
+          <ref role="39e2AS" node="pR" resolve="SideTransformSide_PropertySupport" />
         </node>
       </node>
     </node>

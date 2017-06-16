@@ -5875,6 +5875,42 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="1AXsv03JPh" role="3cqZAp">
+          <node concept="3cpWsn" id="1AXsv03JPi" role="3cpWs9">
+            <property role="TrG5h" value="availableLabels" />
+            <node concept="3uibUv" id="1AXsv03JPc" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
+              <node concept="3uibUv" id="1AXsv03JPf" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="1AXsv040xd" role="33vP2m">
+              <node concept="1pGfFk" id="1AXsv044AU" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;(java.util.Collection)" resolve="ArrayList" />
+                <node concept="2OqwBi" id="1AXsv03JPj" role="37wK5m">
+                  <node concept="37vLTw" id="1AXsv03JPk" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3mwbQJWBn33" resolve="mappings" />
+                  </node>
+                  <node concept="liA8E" id="1AXsv03JPl" role="2OqNvi">
+                    <ref role="37wK5l" to="80j5:~GeneratorMappings.getAvailableLabels():java.util.Collection" resolve="getAvailableLabels" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="1AXsv04bLB" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1AXsv03PRD" role="3cqZAp">
+          <node concept="2YIFZM" id="1AXsv03SR3" role="3clFbG">
+            <ref role="37wK5l" to="33ny:~Collections.sort(java.util.List):void" resolve="sort" />
+            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+            <node concept="37vLTw" id="1AXsv04jX5" role="37wK5m">
+              <ref role="3cqZAo" node="1AXsv03JPi" resolve="availableLabels" />
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="3mwbQJWBoSK" role="3cqZAp">
           <node concept="3clFbS" id="3mwbQJWBoSM" role="2LFqv$">
             <node concept="3cpWs8" id="3mwbQJWBpRb" role="3cqZAp">
@@ -6621,13 +6657,8 @@
               <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
           </node>
-          <node concept="2OqwBi" id="3mwbQJWBoST" role="1DdaDG">
-            <node concept="37vLTw" id="3mwbQJWBoSU" role="2Oq$k0">
-              <ref role="3cqZAo" node="3mwbQJWBn33" resolve="mappings" />
-            </node>
-            <node concept="liA8E" id="3mwbQJWBoSV" role="2OqNvi">
-              <ref role="37wK5l" to="80j5:~GeneratorMappings.getAvailableLabels():java.util.Collection" resolve="getAvailableLabels" />
-            </node>
+          <node concept="37vLTw" id="1AXsv03JPm" role="1DdaDG">
+            <ref role="3cqZAo" node="1AXsv03JPi" resolve="availableLabels" />
           </node>
         </node>
         <node concept="1DcWWT" id="54q3kj7WXgN" role="3cqZAp">

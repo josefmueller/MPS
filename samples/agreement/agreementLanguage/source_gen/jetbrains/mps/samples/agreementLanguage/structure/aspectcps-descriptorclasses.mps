@@ -1653,7 +1653,7 @@
   </node>
   <node concept="39dXUE" id="8A">
     <node concept="39e2AJ" id="8B" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="8G" role="39e3Y0">
         <ref role="39e2AK" to="tpna:gfGHRIZ" resolve="Taxable" />
         <node concept="385nmt" id="8J" role="385vvn">
@@ -1672,7 +1672,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="8K" role="39e2AY">
-          <ref role="39e2AS" node="xW" resolve="Taxable_PropertySupport" />
+          <ref role="39e2AS" node="wc" resolve="Taxable" />
         </node>
       </node>
       <node concept="39e2AG" id="8H" role="39e3Y0">
@@ -1693,7 +1693,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="8P" role="39e2AY">
-          <ref role="39e2AS" node="_J" resolve="Unit_PropertySupport" />
+          <ref role="39e2AS" node="zH" resolve="Unit" />
         </node>
       </node>
       <node concept="39e2AG" id="8I" role="39e3Y0">
@@ -1714,7 +1714,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="8U" role="39e2AY">
-          <ref role="39e2AS" node="Dg" resolve="ValueType_PropertySupport" />
+          <ref role="39e2AS" node="Bw" resolve="ValueType" />
         </node>
       </node>
     </node>
@@ -1869,7 +1869,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="8D" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="9C" role="39e3Y0">
         <ref role="39e2AK" to="tpna:gfGHRIZ" resolve="Taxable" />
         <node concept="385nmt" id="9F" role="385vvn">
@@ -1888,7 +1888,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="9G" role="39e2AY">
-          <ref role="39e2AS" node="wc" resolve="Taxable" />
+          <ref role="39e2AS" node="xW" resolve="Taxable_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="9D" role="39e3Y0">
@@ -1909,7 +1909,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="9L" role="39e2AY">
-          <ref role="39e2AS" node="zH" resolve="Unit" />
+          <ref role="39e2AS" node="_J" resolve="Unit_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="9E" role="39e3Y0">
@@ -1930,7 +1930,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="9Q" role="39e2AY">
-          <ref role="39e2AS" node="Bw" resolve="ValueType" />
+          <ref role="39e2AS" node="Dg" resolve="ValueType_PropertySupport" />
         </node>
       </node>
     </node>

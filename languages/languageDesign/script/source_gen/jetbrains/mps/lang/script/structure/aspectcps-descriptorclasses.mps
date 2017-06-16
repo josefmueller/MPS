@@ -1628,7 +1628,7 @@
   </node>
   <node concept="39dXUE" id="8q">
     <node concept="39e2AJ" id="8r" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="8w" role="39e3Y0">
         <ref role="39e2AK" to="tp33:4AbjR7I215g" resolve="ScriptType" />
         <node concept="385nmt" id="8x" role="385vvn">
@@ -1647,7 +1647,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="8y" role="39e2AY">
-          <ref role="39e2AS" node="e4" resolve="ScriptType_PropertySupport" />
+          <ref role="39e2AS" node="ck" resolve="ScriptType" />
         </node>
       </node>
     </node>
@@ -1697,7 +1697,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="8t" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="8M" role="39e3Y0">
         <ref role="39e2AK" to="tp33:4AbjR7I215g" resolve="ScriptType" />
         <node concept="385nmt" id="8N" role="385vvn">
@@ -1716,7 +1716,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="8O" role="39e2AY">
-          <ref role="39e2AS" node="ck" resolve="ScriptType" />
+          <ref role="39e2AS" node="e4" resolve="ScriptType_PropertySupport" />
         </node>
       </node>
     </node>

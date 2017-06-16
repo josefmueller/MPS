@@ -1730,7 +1730,7 @@
   </node>
   <node concept="39dXUE" id="97">
     <node concept="39e2AJ" id="98" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="9d" role="39e3Y0">
         <ref role="39e2AK" to="hypd:5xDtKQA7vST" resolve="RuleType" />
         <node concept="385nmt" id="9e" role="385vvn">
@@ -1749,7 +1749,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="9f" role="39e2AY">
-          <ref role="39e2AS" node="gd" resolve="RuleType_PropertySupport" />
+          <ref role="39e2AS" node="dB" resolve="RuleType" />
         </node>
       </node>
     </node>
@@ -1862,7 +1862,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="9a" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="9L" role="39e3Y0">
         <ref role="39e2AK" to="hypd:5xDtKQA7vST" resolve="RuleType" />
         <node concept="385nmt" id="9M" role="385vvn">
@@ -1881,7 +1881,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="9N" role="39e2AY">
-          <ref role="39e2AS" node="dB" resolve="RuleType" />
+          <ref role="39e2AS" node="gd" resolve="RuleType_PropertySupport" />
         </node>
       </node>
     </node>

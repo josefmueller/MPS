@@ -284,7 +284,7 @@
   </node>
   <node concept="39dXUE" id="u">
     <node concept="39e2AJ" id="v" role="39e2AI">
-      <property role="39e3Y2" value="TextGenClass" />
+      <property role="39e3Y2" value="GetExtension" />
       <node concept="39e2AG" id="z" role="39e3Y0">
         <ref role="39e2AK" to="ec6x:6kxQP7CaHqA" resolve="ErrorReportingRoot_TextGen" />
         <node concept="385nmt" id="$" role="385vvn">
@@ -303,7 +303,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="_" role="39e2AY">
-          <ref role="39e2AS" node="0" resolve="ErrorReportingRoot_TextGen" />
+          <ref role="39e2AS" node="12" resolve="getFileExtension_ErrorReportingRoot" />
         </node>
       </node>
     </node>
@@ -332,7 +332,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="x" role="39e2AI">
-      <property role="39e3Y2" value="GetExtension" />
+      <property role="39e3Y2" value="TextGenClass" />
       <node concept="39e2AG" id="J" role="39e3Y0">
         <ref role="39e2AK" to="ec6x:6kxQP7CaHqA" resolve="ErrorReportingRoot_TextGen" />
         <node concept="385nmt" id="K" role="385vvn">
@@ -351,7 +351,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="L" role="39e2AY">
-          <ref role="39e2AS" node="12" resolve="getFileExtension_ErrorReportingRoot" />
+          <ref role="39e2AS" node="0" resolve="ErrorReportingRoot_TextGen" />
         </node>
       </node>
     </node>

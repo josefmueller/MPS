@@ -1867,119 +1867,119 @@
   </node>
   <node concept="39dXUE" id="9W">
     <node concept="39e2AJ" id="9X" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="a2" role="39e3Y0">
-        <ref role="39e2AK" to="1oap:1BguvjG4kKg" resolve="ColorString" />
-        <node concept="385nmt" id="a4" role="385vvn">
-          <property role="385vuF" value="ColorString" />
-          <node concept="2$VJBW" id="a6" role="385v07">
-            <property role="2$VJBR" value="1860120738943552528" />
-            <node concept="2x4n5u" id="a7" role="3iCydw">
-              <property role="2x4mPI" value="ConstrainedDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="dtihfpyv" />
-              <node concept="2V$Bhx" id="a8" role="2x4n5j">
-                <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="a5" role="39e2AY">
-          <ref role="39e2AS" node="0" resolve="ColorString_PropertySupport" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="a3" role="39e3Y0">
         <ref role="39e2AK" to="1oap:1ng4Vf3UMua" resolve="Size" />
-        <node concept="385nmt" id="a9" role="385vvn">
+        <node concept="385nmt" id="a3" role="385vvn">
           <property role="385vuF" value="Size" />
-          <node concept="2$VJBW" id="ab" role="385v07">
+          <node concept="2$VJBW" id="a5" role="385v07">
             <property role="2$VJBR" value="1571777932759345034" />
-            <node concept="2x4n5u" id="ac" role="3iCydw">
+            <node concept="2x4n5u" id="a6" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
-              <node concept="2V$Bhx" id="ad" role="2x4n5j">
+              <node concept="2V$Bhx" id="a7" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="aa" role="39e2AY">
-          <ref role="39e2AS" node="go" resolve="Size_PropertySupport" />
+        <node concept="39e2AT" id="a4" role="39e2AY">
+          <ref role="39e2AS" node="em" resolve="Size" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="9Y" role="39e2AI">
       <property role="39e3Y2" value="outputEnumConstant" />
-      <node concept="39e2AG" id="ae" role="39e3Y0">
+      <node concept="39e2AG" id="a8" role="39e3Y0">
         <ref role="39e2AK" to="1oap:1ng4Vf3UMub" />
-        <node concept="385nmt" id="ah" role="385vvn">
+        <node concept="385nmt" id="ab" role="385vvn">
           <property role="385vuF" value="big" />
-          <node concept="2$VJBW" id="aj" role="385v07">
+          <node concept="2$VJBW" id="ad" role="385v07">
             <property role="2$VJBR" value="1571777932759345035" />
-            <node concept="2x4n5u" id="ak" role="3iCydw">
+            <node concept="2x4n5u" id="ae" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="al" role="2x4n5j">
+              <node concept="2V$Bhx" id="af" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="ai" role="39e2AY">
+        <node concept="39e2AT" id="ac" role="39e2AY">
           <ref role="39e2AS" node="en" resolve="big" />
         </node>
       </node>
-      <node concept="39e2AG" id="af" role="39e3Y0">
+      <node concept="39e2AG" id="a9" role="39e3Y0">
         <ref role="39e2AK" to="1oap:1ng4Vf3UMuc" />
-        <node concept="385nmt" id="am" role="385vvn">
+        <node concept="385nmt" id="ag" role="385vvn">
           <property role="385vuF" value="med" />
-          <node concept="2$VJBW" id="ao" role="385v07">
+          <node concept="2$VJBW" id="ai" role="385v07">
             <property role="2$VJBR" value="1571777932759345036" />
-            <node concept="2x4n5u" id="ap" role="3iCydw">
+            <node concept="2x4n5u" id="aj" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="aq" role="2x4n5j">
+              <node concept="2V$Bhx" id="ak" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="an" role="39e2AY">
+        <node concept="39e2AT" id="ah" role="39e2AY">
           <ref role="39e2AS" node="eo" resolve="med" />
         </node>
       </node>
-      <node concept="39e2AG" id="ag" role="39e3Y0">
+      <node concept="39e2AG" id="aa" role="39e3Y0">
         <ref role="39e2AK" to="1oap:1ng4Vf3UMuf" />
-        <node concept="385nmt" id="ar" role="385vvn">
+        <node concept="385nmt" id="al" role="385vvn">
           <property role="385vuF" value="small" />
-          <node concept="2$VJBW" id="at" role="385v07">
+          <node concept="2$VJBW" id="an" role="385v07">
             <property role="2$VJBR" value="1571777932759345039" />
-            <node concept="2x4n5u" id="au" role="3iCydw">
+            <node concept="2x4n5u" id="ao" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="av" role="2x4n5j">
+              <node concept="2V$Bhx" id="ap" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="as" role="39e2AY">
+        <node concept="39e2AT" id="am" role="39e2AY">
           <ref role="39e2AS" node="ep" resolve="small" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="9Z" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
-      <node concept="39e2AG" id="aw" role="39e3Y0">
+      <property role="39e3Y2" value="propertySupportClass" />
+      <node concept="39e2AG" id="aq" role="39e3Y0">
+        <ref role="39e2AK" to="1oap:1BguvjG4kKg" resolve="ColorString" />
+        <node concept="385nmt" id="as" role="385vvn">
+          <property role="385vuF" value="ColorString" />
+          <node concept="2$VJBW" id="au" role="385v07">
+            <property role="2$VJBR" value="1860120738943552528" />
+            <node concept="2x4n5u" id="av" role="3iCydw">
+              <property role="2x4mPI" value="ConstrainedDataTypeDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="dtihfpyv" />
+              <node concept="2V$Bhx" id="aw" role="2x4n5j">
+                <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="at" role="39e2AY">
+          <ref role="39e2AS" node="0" resolve="ColorString_PropertySupport" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="ar" role="39e3Y0">
         <ref role="39e2AK" to="1oap:1ng4Vf3UMua" resolve="Size" />
         <node concept="385nmt" id="ax" role="385vvn">
           <property role="385vuF" value="Size" />
@@ -1997,7 +1997,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="ay" role="39e2AY">
-          <ref role="39e2AS" node="em" resolve="Size" />
+          <ref role="39e2AS" node="go" resolve="Size_PropertySupport" />
         </node>
       </node>
     </node>

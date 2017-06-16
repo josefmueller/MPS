@@ -361,145 +361,145 @@
   </node>
   <node concept="39dXUE" id="R">
     <node concept="39e2AJ" id="S" role="39e2AI">
-      <property role="39e3Y2" value="TextGenClass" />
+      <property role="39e3Y2" value="GetExtension" />
       <node concept="39e2AG" id="W" role="39e3Y0">
-        <ref role="39e2AK" to="4ilc:7IxbKGmg51_" resolve="CategoryReference_TextGen" />
-        <node concept="385nmt" id="11" role="385vvn">
-          <property role="385vuF" value="CategoryReference_TextGen" />
-          <node concept="2$VJBW" id="13" role="385v07">
-            <property role="2$VJBR" value="8908453262580011109" />
-            <node concept="2x4n5u" id="14" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="15" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="12" role="39e2AY">
-          <ref role="39e2AS" node="0" resolve="CategoryReference_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="X" role="39e3Y0">
-        <ref role="39e2AK" to="4ilc:7IxbKGmg59$" resolve="Category_TextGen" />
-        <node concept="385nmt" id="16" role="385vvn">
-          <property role="385vuF" value="Category_TextGen" />
-          <node concept="2$VJBW" id="18" role="385v07">
-            <property role="2$VJBR" value="8908453262580011620" />
-            <node concept="2x4n5u" id="19" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1a" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="17" role="39e2AY">
-          <ref role="39e2AS" node="u" resolve="Category_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="Y" role="39e3Y0">
-        <ref role="39e2AK" to="4ilc:7IxbKGmg2a2" resolve="Note_TextGen" />
-        <node concept="385nmt" id="1b" role="385vvn">
-          <property role="385vuF" value="Note_TextGen" />
-          <node concept="2$VJBW" id="1d" role="385v07">
-            <property role="2$VJBR" value="8908453262579999362" />
-            <node concept="2x4n5u" id="1e" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1f" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1c" role="39e2AY">
-          <ref role="39e2AS" node="1C" resolve="Note_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="Z" role="39e3Y0">
         <ref role="39e2AK" to="4ilc:7IxbKGmg1hk" resolve="Notes_TextGen" />
-        <node concept="385nmt" id="1g" role="385vvn">
+        <node concept="385nmt" id="X" role="385vvn">
           <property role="385vuF" value="Notes_TextGen" />
-          <node concept="2$VJBW" id="1i" role="385v07">
+          <node concept="2$VJBW" id="Z" role="385v07">
             <property role="2$VJBR" value="8908453262579995732" />
-            <node concept="2x4n5u" id="1j" role="3iCydw">
+            <node concept="2x4n5u" id="10" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1k" role="2x4n5j">
+              <node concept="2V$Bhx" id="11" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="1h" role="39e2AY">
-          <ref role="39e2AS" node="3D" resolve="Notes_TextGen" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="10" role="39e3Y0">
-        <ref role="39e2AK" to="4ilc:7IxbKGmg2ga" resolve="TextNotePart_TextGen" />
-        <node concept="385nmt" id="1l" role="385vvn">
-          <property role="385vuF" value="TextNotePart_TextGen" />
-          <node concept="2$VJBW" id="1n" role="385v07">
-            <property role="2$VJBR" value="8908453262579999754" />
-            <node concept="2x4n5u" id="1o" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1p" role="2x4n5j">
-                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="1m" role="39e2AY">
-          <ref role="39e2AS" node="6x" resolve="TextNotePart_TextGen" />
+        <node concept="39e2AT" id="Y" role="39e2AY">
+          <ref role="39e2AS" node="4C" resolve="getFileExtension_Notes" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="T" role="39e2AI">
       <property role="39e3Y2" value="GetFilename" />
-      <node concept="39e2AG" id="1q" role="39e3Y0">
+      <node concept="39e2AG" id="12" role="39e3Y0">
         <ref role="39e2AK" to="4ilc:7IxbKGmg1hk" resolve="Notes_TextGen" />
-        <node concept="385nmt" id="1r" role="385vvn">
+        <node concept="385nmt" id="13" role="385vvn">
           <property role="385vuF" value="Notes_TextGen" />
-          <node concept="2$VJBW" id="1t" role="385v07">
+          <node concept="2$VJBW" id="15" role="385v07">
             <property role="2$VJBR" value="8908453262579995732" />
-            <node concept="2x4n5u" id="1u" role="3iCydw">
+            <node concept="2x4n5u" id="16" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1v" role="2x4n5j">
+              <node concept="2V$Bhx" id="17" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="1s" role="39e2AY">
+        <node concept="39e2AT" id="14" role="39e2AY">
           <ref role="39e2AS" node="4B" resolve="getFileName_Notes" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="U" role="39e2AI">
-      <property role="39e3Y2" value="GetExtension" />
-      <node concept="39e2AG" id="1w" role="39e3Y0">
+      <property role="39e3Y2" value="TextGenClass" />
+      <node concept="39e2AG" id="18" role="39e3Y0">
+        <ref role="39e2AK" to="4ilc:7IxbKGmg51_" resolve="CategoryReference_TextGen" />
+        <node concept="385nmt" id="1d" role="385vvn">
+          <property role="385vuF" value="CategoryReference_TextGen" />
+          <node concept="2$VJBW" id="1f" role="385v07">
+            <property role="2$VJBR" value="8908453262580011109" />
+            <node concept="2x4n5u" id="1g" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1h" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1e" role="39e2AY">
+          <ref role="39e2AS" node="0" resolve="CategoryReference_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="19" role="39e3Y0">
+        <ref role="39e2AK" to="4ilc:7IxbKGmg59$" resolve="Category_TextGen" />
+        <node concept="385nmt" id="1i" role="385vvn">
+          <property role="385vuF" value="Category_TextGen" />
+          <node concept="2$VJBW" id="1k" role="385v07">
+            <property role="2$VJBR" value="8908453262580011620" />
+            <node concept="2x4n5u" id="1l" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1m" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1j" role="39e2AY">
+          <ref role="39e2AS" node="u" resolve="Category_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="1a" role="39e3Y0">
+        <ref role="39e2AK" to="4ilc:7IxbKGmg2a2" resolve="Note_TextGen" />
+        <node concept="385nmt" id="1n" role="385vvn">
+          <property role="385vuF" value="Note_TextGen" />
+          <node concept="2$VJBW" id="1p" role="385v07">
+            <property role="2$VJBR" value="8908453262579999362" />
+            <node concept="2x4n5u" id="1q" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1r" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1o" role="39e2AY">
+          <ref role="39e2AS" node="1C" resolve="Note_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="1b" role="39e3Y0">
         <ref role="39e2AK" to="4ilc:7IxbKGmg1hk" resolve="Notes_TextGen" />
-        <node concept="385nmt" id="1x" role="385vvn">
+        <node concept="385nmt" id="1s" role="385vvn">
           <property role="385vuF" value="Notes_TextGen" />
-          <node concept="2$VJBW" id="1z" role="385v07">
+          <node concept="2$VJBW" id="1u" role="385v07">
             <property role="2$VJBR" value="8908453262579995732" />
+            <node concept="2x4n5u" id="1v" role="3iCydw">
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="fqqnb33d" />
+              <node concept="2V$Bhx" id="1w" role="2x4n5j">
+                <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="1t" role="39e2AY">
+          <ref role="39e2AS" node="3D" resolve="Notes_TextGen" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="1c" role="39e3Y0">
+        <ref role="39e2AK" to="4ilc:7IxbKGmg2ga" resolve="TextNotePart_TextGen" />
+        <node concept="385nmt" id="1x" role="385vvn">
+          <property role="385vuF" value="TextNotePart_TextGen" />
+          <node concept="2$VJBW" id="1z" role="385v07">
+            <property role="2$VJBR" value="8908453262579999754" />
             <node concept="2x4n5u" id="1$" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
@@ -512,7 +512,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="1y" role="39e2AY">
-          <ref role="39e2AS" node="4C" resolve="getFileExtension_Notes" />
+          <ref role="39e2AS" node="6x" resolve="TextNotePart_TextGen" />
         </node>
       </node>
     </node>

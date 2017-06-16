@@ -9,10 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.ArrayList;
+import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -20,7 +21,6 @@ import jetbrains.mps.extapi.model.TransientSModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import java.util.Collection;
-import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Comparator;
 
@@ -37,7 +37,9 @@ public class DebugMappingsBuilder {
 
   public SNode build(@NotNull SModel nodeFactory, GeneratorMappings mappings) {
     SNode rv = SModelOperations.createNewNode(nodeFactory, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_Mappings"));
-    for (String label : mappings.getAvailableLabels()) {
+    ArrayList<String> availableLabels = new ArrayList<String>(mappings.getAvailableLabels());
+    Collections.sort(availableLabels);
+    for (String label : availableLabels) {
       SNode labelEntry = SModelOperations.createNewNode(nodeFactory, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_LabelEntry"));
       SPropertyOperations.set(labelEntry, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810e9L, "label"), label);
       ListSequence.fromList(SLinkOperations.getChildren(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L, 0x35a02f6bfc9806c5L, "labels"))).addElement(labelEntry);

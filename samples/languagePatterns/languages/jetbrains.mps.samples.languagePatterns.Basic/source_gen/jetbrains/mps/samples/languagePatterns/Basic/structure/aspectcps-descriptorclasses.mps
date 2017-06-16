@@ -3233,7 +3233,7 @@
   </node>
   <node concept="39dXUE" id="ij">
     <node concept="39e2AJ" id="ik" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="ip" role="39e3Y0">
         <ref role="39e2AK" to="vseb:3j8xjFBxFIW" resolve="OrangeTaste" />
         <node concept="385nmt" id="iq" role="385vvn">
@@ -3252,7 +3252,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="ir" role="39e2AY">
-          <ref role="39e2AS" node="rV" resolve="OrangeTaste_PropertySupport" />
+          <ref role="39e2AS" node="pT" resolve="OrangeTaste" />
         </node>
       </node>
     </node>
@@ -3323,7 +3323,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="im" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="iL" role="39e3Y0">
         <ref role="39e2AK" to="vseb:3j8xjFBxFIW" resolve="OrangeTaste" />
         <node concept="385nmt" id="iM" role="385vvn">
@@ -3342,7 +3342,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="iN" role="39e2AY">
-          <ref role="39e2AS" node="pT" resolve="OrangeTaste" />
+          <ref role="39e2AS" node="rV" resolve="OrangeTaste_PropertySupport" />
         </node>
       </node>
     </node>

@@ -6301,7 +6301,7 @@
   </node>
   <node concept="39dXUE" id="$Z">
     <node concept="39e2AJ" id="_0" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="_5" role="39e3Y0">
         <ref role="39e2AK" to="39kg:i0fI_IK" resolve="CastTargetDescriptor" />
         <node concept="385nmt" id="_9" role="385vvn">
@@ -6320,7 +6320,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="_a" role="39e2AY">
-          <ref role="39e2AS" node="5Y" resolve="CastTargetDescriptor_PropertySupport" />
+          <ref role="39e2AS" node="0" resolve="CastTargetDescriptor" />
         </node>
       </node>
       <node concept="39e2AG" id="_6" role="39e3Y0">
@@ -6341,7 +6341,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="_f" role="39e2AY">
-          <ref role="39e2AS" node="Pl" resolve="MatrixNormKind_PropertySupport" />
+          <ref role="39e2AS" node="N1" resolve="MatrixNormKind" />
         </node>
       </node>
       <node concept="39e2AG" id="_7" role="39e3Y0">
@@ -6362,7 +6362,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="_k" role="39e2AY">
-          <ref role="39e2AS" node="TG" resolve="PrecisionSetting_PropertySupport" />
+          <ref role="39e2AS" node="R6" resolve="PrecisionSetting" />
         </node>
       </node>
       <node concept="39e2AG" id="_8" role="39e3Y0">
@@ -6383,7 +6383,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="_p" role="39e2AY">
-          <ref role="39e2AS" node="YT" resolve="RoundingMode_PropertySupport" />
+          <ref role="39e2AS" node="Vt" resolve="RoundingMode" />
         </node>
       </node>
     </node>
@@ -7105,7 +7105,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="_2" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="CD" role="39e3Y0">
         <ref role="39e2AK" to="39kg:i0fI_IK" resolve="CastTargetDescriptor" />
         <node concept="385nmt" id="CH" role="385vvn">
@@ -7124,7 +7124,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="CI" role="39e2AY">
-          <ref role="39e2AS" node="0" resolve="CastTargetDescriptor" />
+          <ref role="39e2AS" node="5Y" resolve="CastTargetDescriptor_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="CE" role="39e3Y0">
@@ -7145,7 +7145,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="CN" role="39e2AY">
-          <ref role="39e2AS" node="N1" resolve="MatrixNormKind" />
+          <ref role="39e2AS" node="Pl" resolve="MatrixNormKind_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="CF" role="39e3Y0">
@@ -7166,7 +7166,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="CS" role="39e2AY">
-          <ref role="39e2AS" node="R6" resolve="PrecisionSetting" />
+          <ref role="39e2AS" node="TG" resolve="PrecisionSetting_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="CG" role="39e3Y0">
@@ -7187,7 +7187,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="CX" role="39e2AY">
-          <ref role="39e2AS" node="Vt" resolve="RoundingMode" />
+          <ref role="39e2AS" node="YT" resolve="RoundingMode_PropertySupport" />
         </node>
       </node>
     </node>

@@ -2507,7 +2507,7 @@
   </node>
   <node concept="39dXUE" id="dJ">
     <node concept="39e2AJ" id="dK" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="dP" role="39e3Y0">
         <ref role="39e2AK" to="c2kz:67X5IgzCOK5" resolve="LookingDirection" />
         <node concept="385nmt" id="dQ" role="385vvn">
@@ -2526,7 +2526,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="dR" role="39e2AY">
-          <ref role="39e2AS" node="m1" resolve="LookingDirection_PropertySupport" />
+          <ref role="39e2AS" node="jH" resolve="LookingDirection" />
         </node>
       </node>
     </node>
@@ -2618,7 +2618,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="dM" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="ej" role="39e3Y0">
         <ref role="39e2AK" to="c2kz:67X5IgzCOK5" resolve="LookingDirection" />
         <node concept="385nmt" id="ek" role="385vvn">
@@ -2637,7 +2637,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="el" role="39e2AY">
-          <ref role="39e2AS" node="jH" resolve="LookingDirection" />
+          <ref role="39e2AS" node="m1" resolve="LookingDirection_PropertySupport" />
         </node>
       </node>
     </node>

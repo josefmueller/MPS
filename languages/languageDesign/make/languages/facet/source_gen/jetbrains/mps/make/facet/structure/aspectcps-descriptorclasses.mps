@@ -1893,7 +1893,7 @@
   </node>
   <node concept="39dXUE" id="9Y">
     <node concept="39e2AJ" id="9Z" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="a4" role="39e3Y0">
         <ref role="39e2AK" to="vvvw:1t0JkeRn4Gz" resolve="ResourcesPolicy" />
         <node concept="385nmt" id="a6" role="385vvn">
@@ -1912,7 +1912,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="a7" role="39e2AY">
-          <ref role="39e2AS" node="hq" resolve="ResourcesPolicy_PropertySupport" />
+          <ref role="39e2AS" node="f6" resolve="ResourcesPolicy" />
         </node>
       </node>
       <node concept="39e2AG" id="a5" role="39e3Y0">
@@ -1933,7 +1933,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="ac" role="39e2AY">
-          <ref role="39e2AS" node="I8" resolve="TargetDependencyQualifier_PropertySupport" />
+          <ref role="39e2AS" node="FO" resolve="TargetDependencyQualifier" />
         </node>
       </node>
     </node>
@@ -2109,7 +2109,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="a1" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="b0" role="39e3Y0">
         <ref role="39e2AK" to="vvvw:1t0JkeRn4Gz" resolve="ResourcesPolicy" />
         <node concept="385nmt" id="b2" role="385vvn">
@@ -2128,7 +2128,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="b3" role="39e2AY">
-          <ref role="39e2AS" node="f6" resolve="ResourcesPolicy" />
+          <ref role="39e2AS" node="hq" resolve="ResourcesPolicy_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="b1" role="39e3Y0">
@@ -2149,7 +2149,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="b8" role="39e2AY">
-          <ref role="39e2AS" node="FO" resolve="TargetDependencyQualifier" />
+          <ref role="39e2AS" node="I8" resolve="TargetDependencyQualifier_PropertySupport" />
         </node>
       </node>
     </node>

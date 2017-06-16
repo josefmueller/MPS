@@ -5700,7 +5700,7 @@
   </node>
   <node concept="39dXUE" id="xk">
     <node concept="39e2AJ" id="xl" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="xq" role="39e3Y0">
         <ref role="39e2AK" to="68nn:P9hc2KfQmc" resolve="SubstTestEnum" />
         <node concept="385nmt" id="xr" role="385vvn">
@@ -5719,7 +5719,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="xs" role="39e2AY">
-          <ref role="39e2AS" node="1Q0" resolve="SubstTestEnum_PropertySupport" />
+          <ref role="39e2AS" node="1NY" resolve="SubstTestEnum" />
         </node>
       </node>
     </node>
@@ -5790,7 +5790,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="xn" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="xM" role="39e3Y0">
         <ref role="39e2AK" to="68nn:P9hc2KfQmc" resolve="SubstTestEnum" />
         <node concept="385nmt" id="xN" role="385vvn">
@@ -5809,7 +5809,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="xO" role="39e2AY">
-          <ref role="39e2AS" node="1NY" resolve="SubstTestEnum" />
+          <ref role="39e2AS" node="1Q0" resolve="SubstTestEnum_PropertySupport" />
         </node>
       </node>
     </node>

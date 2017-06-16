@@ -724,7 +724,7 @@
   </node>
   <node concept="39dXUE" id="2S">
     <node concept="39e2AJ" id="2T" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="2Y" role="39e3Y0">
         <ref role="39e2AK" to="tpib:gZ5eI4j" resolve="Severity" />
         <node concept="385nmt" id="2Z" role="385vvn">
@@ -743,7 +743,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="30" role="39e2AY">
-          <ref role="39e2AS" node="8a" resolve="Severity_PropertySupport" />
+          <ref role="39e2AS" node="5i" resolve="Severity" />
         </node>
       </node>
     </node>
@@ -877,7 +877,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="2V" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="3C" role="39e3Y0">
         <ref role="39e2AK" to="tpib:gZ5eI4j" resolve="Severity" />
         <node concept="385nmt" id="3D" role="385vvn">
@@ -896,7 +896,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="3E" role="39e2AY">
-          <ref role="39e2AS" node="5i" resolve="Severity" />
+          <ref role="39e2AS" node="8a" resolve="Severity_PropertySupport" />
         </node>
       </node>
     </node>

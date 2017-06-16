@@ -966,7 +966,7 @@
   </node>
   <node concept="39dXUE" id="4t">
     <node concept="39e2AJ" id="4u" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="4z" role="39e3Y0">
         <ref role="39e2AK" to="jap4:6EI1ZZqOi34" resolve="ProjectionType" />
         <node concept="385nmt" id="4$" role="385vvn">
@@ -985,7 +985,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="4_" role="39e2AY">
-          <ref role="39e2AS" node="9f" resolve="ProjectionType_PropertySupport" />
+          <ref role="39e2AS" node="7d" resolve="ProjectionType" />
         </node>
       </node>
     </node>
@@ -1056,7 +1056,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="4w" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="4V" role="39e3Y0">
         <ref role="39e2AK" to="jap4:6EI1ZZqOi34" resolve="ProjectionType" />
         <node concept="385nmt" id="4W" role="385vvn">
@@ -1075,7 +1075,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="4X" role="39e2AY">
-          <ref role="39e2AS" node="7d" resolve="ProjectionType" />
+          <ref role="39e2AS" node="9f" resolve="ProjectionType_PropertySupport" />
         </node>
       </node>
     </node>

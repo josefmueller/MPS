@@ -4033,544 +4033,544 @@
   </node>
   <node concept="39dXUE" id="nS">
     <node concept="39e2AJ" id="nT" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="nY" role="39e3Y0">
         <ref role="39e2AK" to="tpce:fLJekj2" resolve="Cardinality" />
-        <node concept="385nmt" id="o5" role="385vvn">
+        <node concept="385nmt" id="o4" role="385vvn">
           <property role="385vuF" value="Cardinality" />
-          <node concept="2$VJBW" id="o7" role="385v07">
+          <node concept="2$VJBW" id="o6" role="385v07">
             <property role="2$VJBR" value="1084197782722" />
-            <node concept="2x4n5u" id="o8" role="3iCydw">
+            <node concept="2x4n5u" id="o7" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
-              <node concept="2V$Bhx" id="o9" role="2x4n5j">
+              <node concept="2V$Bhx" id="o8" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="o6" role="39e2AY">
-          <ref role="39e2AS" node="2k" resolve="Cardinality_PropertySupport" />
+        <node concept="39e2AT" id="o5" role="39e2AY">
+          <ref role="39e2AS" node="0" resolve="Cardinality" />
         </node>
       </node>
       <node concept="39e2AG" id="nZ" role="39e3Y0">
         <ref role="39e2AK" to="tpce:2MLIwFLUK_h" resolve="ChildrenIncomingReferencesPolicy" />
-        <node concept="385nmt" id="oa" role="385vvn">
+        <node concept="385nmt" id="o9" role="385vvn">
           <property role="385vuF" value="ChildrenIncomingReferencesPolicy" />
-          <node concept="2$VJBW" id="oc" role="385v07">
+          <node concept="2$VJBW" id="ob" role="385v07">
             <property role="2$VJBR" value="3220559764717766993" />
-            <node concept="2x4n5u" id="od" role="3iCydw">
+            <node concept="2x4n5u" id="oc" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
-              <node concept="2V$Bhx" id="oe" role="2x4n5j">
+              <node concept="2V$Bhx" id="od" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="ob" role="39e2AY">
-          <ref role="39e2AS" node="67" resolve="ChildrenIncomingReferencesPolicy_PropertySupport" />
+        <node concept="39e2AT" id="oa" role="39e2AY">
+          <ref role="39e2AS" node="45" resolve="ChildrenIncomingReferencesPolicy" />
         </node>
       </node>
       <node concept="39e2AG" id="o0" role="39e3Y0">
         <ref role="39e2AK" to="tpce:hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
-        <node concept="385nmt" id="of" role="385vvn">
+        <node concept="385nmt" id="oe" role="385vvn">
           <property role="385vuF" value="EnumerationMemberIdentifierPolicy" />
-          <node concept="2$VJBW" id="oh" role="385v07">
+          <node concept="2$VJBW" id="og" role="385v07">
             <property role="2$VJBR" value="1197590884613" />
-            <node concept="2x4n5u" id="oi" role="3iCydw">
+            <node concept="2x4n5u" id="oh" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
-              <node concept="2V$Bhx" id="oj" role="2x4n5j">
+              <node concept="2V$Bhx" id="oi" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="og" role="39e2AY">
-          <ref role="39e2AS" node="m7" resolve="EnumerationMemberIdentifierPolicy_PropertySupport" />
+        <node concept="39e2AT" id="of" role="39e2AY">
+          <ref role="39e2AS" node="k5" resolve="EnumerationMemberIdentifierPolicy" />
         </node>
       </node>
       <node concept="39e2AG" id="o1" role="39e3Y0">
-        <ref role="39e2AK" to="tpce:3H1xM9LtLda" resolve="IDNumber" />
-        <node concept="385nmt" id="ok" role="385vvn">
-          <property role="385vuF" value="IDNumber" />
-          <node concept="2$VJBW" id="om" role="385v07">
-            <property role="2$VJBR" value="4269842503726207818" />
-            <node concept="2x4n5u" id="on" role="3iCydw">
-              <property role="2x4mPI" value="ConstrainedDataTypeDeclaration" />
+        <ref role="39e2AK" to="tpce:70UXEPd7E3S" resolve="InstanceIncomingReferencesPolicy" />
+        <node concept="385nmt" id="oj" role="385vvn">
+          <property role="385vuF" value="InstanceIncomingReferencesPolicy" />
+          <node concept="2$VJBW" id="ol" role="385v07">
+            <property role="2$VJBR" value="8087047305080774904" />
+            <node concept="2x4n5u" id="om" role="3iCydw">
+              <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="dtihfpyv" />
-              <node concept="2V$Bhx" id="oo" role="2x4n5j">
+              <property role="2x4n5l" value="dtih8jjv" />
+              <node concept="2V$Bhx" id="on" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="ol" role="39e2AY">
-          <ref role="39e2AS" node="qW" resolve="IDNumber_PropertySupport" />
+        <node concept="39e2AT" id="ok" role="39e2AY">
+          <ref role="39e2AS" node="rt" resolve="InstanceIncomingReferencesPolicy" />
         </node>
       </node>
       <node concept="39e2AG" id="o2" role="39e3Y0">
-        <ref role="39e2AK" to="tpce:70UXEPd7E3S" resolve="InstanceIncomingReferencesPolicy" />
-        <node concept="385nmt" id="op" role="385vvn">
-          <property role="385vuF" value="InstanceIncomingReferencesPolicy" />
-          <node concept="2$VJBW" id="or" role="385v07">
-            <property role="2$VJBR" value="8087047305080774904" />
-            <node concept="2x4n5u" id="os" role="3iCydw">
+        <ref role="39e2AK" to="tpce:fLJjDmR" resolve="LinkMetaclass" />
+        <node concept="385nmt" id="oo" role="385vvn">
+          <property role="385vuF" value="LinkMetaclass" />
+          <node concept="2$VJBW" id="oq" role="385v07">
+            <property role="2$VJBR" value="1084199179703" />
+            <node concept="2x4n5u" id="or" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
-              <node concept="2V$Bhx" id="ot" role="2x4n5j">
+              <node concept="2V$Bhx" id="os" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="oq" role="39e2AY">
-          <ref role="39e2AS" node="tv" resolve="InstanceIncomingReferencesPolicy_PropertySupport" />
+        <node concept="39e2AT" id="op" role="39e2AY">
+          <ref role="39e2AS" node="zI" resolve="LinkMetaclass" />
         </node>
       </node>
       <node concept="39e2AG" id="o3" role="39e3Y0">
-        <ref role="39e2AK" to="tpce:fLJjDmR" resolve="LinkMetaclass" />
-        <node concept="385nmt" id="ou" role="385vvn">
-          <property role="385vuF" value="LinkMetaclass" />
-          <node concept="2$VJBW" id="ow" role="385v07">
-            <property role="2$VJBR" value="1084199179703" />
-            <node concept="2x4n5u" id="ox" role="3iCydw">
-              <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
-              <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="dtih8jjv" />
-              <node concept="2V$Bhx" id="oy" role="2x4n5j">
-                <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
-                <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="39e2AT" id="ov" role="39e2AY">
-          <ref role="39e2AS" node="_u" resolve="LinkMetaclass_PropertySupport" />
-        </node>
-      </node>
-      <node concept="39e2AG" id="o4" role="39e3Y0">
         <ref role="39e2AK" to="tpce:4G1g3fIR8JB" resolve="StaticScope" />
-        <node concept="385nmt" id="oz" role="385vvn">
+        <node concept="385nmt" id="ot" role="385vvn">
           <property role="385vuF" value="StaticScope" />
-          <node concept="2$VJBW" id="o_" role="385v07">
+          <node concept="2$VJBW" id="ov" role="385v07">
             <property role="2$VJBR" value="5404671619616246759" />
-            <node concept="2x4n5u" id="oA" role="3iCydw">
+            <node concept="2x4n5u" id="ow" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtih8jjv" />
-              <node concept="2V$Bhx" id="oB" role="2x4n5j">
+              <node concept="2V$Bhx" id="ox" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="o$" role="39e2AY">
-          <ref role="39e2AS" node="Dh" resolve="StaticScope_PropertySupport" />
+        <node concept="39e2AT" id="ou" role="39e2AY">
+          <ref role="39e2AS" node="Bf" resolve="StaticScope" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="nU" role="39e2AI">
       <property role="39e3Y2" value="outputEnumConstant" />
-      <node concept="39e2AG" id="oC" role="39e3Y0">
+      <node concept="39e2AG" id="oy" role="39e3Y0">
         <ref role="39e2AK" to="tpce:fLJekj3" />
-        <node concept="385nmt" id="oU" role="385vvn">
+        <node concept="385nmt" id="oO" role="385vvn">
           <property role="385vuF" value="0..1" />
-          <node concept="2$VJBW" id="oW" role="385v07">
+          <node concept="2$VJBW" id="oQ" role="385v07">
             <property role="2$VJBR" value="1084197782723" />
-            <node concept="2x4n5u" id="oX" role="3iCydw">
+            <node concept="2x4n5u" id="oR" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="oY" role="2x4n5j">
+              <node concept="2V$Bhx" id="oS" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="oV" role="39e2AY">
+        <node concept="39e2AT" id="oP" role="39e2AY">
           <ref role="39e2AS" node="1" resolve="_0__1" />
         </node>
       </node>
-      <node concept="39e2AG" id="oD" role="39e3Y0">
+      <node concept="39e2AG" id="oz" role="39e3Y0">
         <ref role="39e2AK" to="tpce:fLJekj5" />
-        <node concept="385nmt" id="oZ" role="385vvn">
+        <node concept="385nmt" id="oT" role="385vvn">
           <property role="385vuF" value="0..n" />
-          <node concept="2$VJBW" id="p1" role="385v07">
+          <node concept="2$VJBW" id="oV" role="385v07">
             <property role="2$VJBR" value="1084197782725" />
-            <node concept="2x4n5u" id="p2" role="3iCydw">
+            <node concept="2x4n5u" id="oW" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="p3" role="2x4n5j">
+              <node concept="2V$Bhx" id="oX" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="p0" role="39e2AY">
+        <node concept="39e2AT" id="oU" role="39e2AY">
           <ref role="39e2AS" node="3" resolve="_0__n" />
         </node>
       </node>
-      <node concept="39e2AG" id="oE" role="39e3Y0">
+      <node concept="39e2AG" id="o$" role="39e3Y0">
         <ref role="39e2AK" to="tpce:fLJekj4" />
-        <node concept="385nmt" id="p4" role="385vvn">
+        <node concept="385nmt" id="oY" role="385vvn">
           <property role="385vuF" value="1" />
-          <node concept="2$VJBW" id="p6" role="385v07">
+          <node concept="2$VJBW" id="p0" role="385v07">
             <property role="2$VJBR" value="1084197782724" />
-            <node concept="2x4n5u" id="p7" role="3iCydw">
+            <node concept="2x4n5u" id="p1" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="p8" role="2x4n5j">
+              <node concept="2V$Bhx" id="p2" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="p5" role="39e2AY">
+        <node concept="39e2AT" id="oZ" role="39e2AY">
           <ref role="39e2AS" node="2" resolve="_1" />
         </node>
       </node>
-      <node concept="39e2AG" id="oF" role="39e3Y0">
+      <node concept="39e2AG" id="o_" role="39e3Y0">
         <ref role="39e2AK" to="tpce:fLJekj6" />
-        <node concept="385nmt" id="p9" role="385vvn">
+        <node concept="385nmt" id="p3" role="385vvn">
           <property role="385vuF" value="1..n" />
-          <node concept="2$VJBW" id="pb" role="385v07">
+          <node concept="2$VJBW" id="p5" role="385v07">
             <property role="2$VJBR" value="1084197782726" />
-            <node concept="2x4n5u" id="pc" role="3iCydw">
+            <node concept="2x4n5u" id="p6" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="pd" role="2x4n5j">
+              <node concept="2V$Bhx" id="p7" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pa" role="39e2AY">
+        <node concept="39e2AT" id="p4" role="39e2AY">
           <ref role="39e2AS" node="4" resolve="_1__n" />
         </node>
       </node>
-      <node concept="39e2AG" id="oG" role="39e3Y0">
+      <node concept="39e2AG" id="oA" role="39e3Y0">
         <ref role="39e2AK" to="tpce:fLJjDmT" />
-        <node concept="385nmt" id="pe" role="385vvn">
+        <node concept="385nmt" id="p8" role="385vvn">
           <property role="385vuF" value="aggregation" />
-          <node concept="2$VJBW" id="pg" role="385v07">
+          <node concept="2$VJBW" id="pa" role="385v07">
             <property role="2$VJBR" value="1084199179705" />
-            <node concept="2x4n5u" id="ph" role="3iCydw">
+            <node concept="2x4n5u" id="pb" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="pi" role="2x4n5j">
+              <node concept="2V$Bhx" id="pc" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pf" role="39e2AY">
+        <node concept="39e2AT" id="p9" role="39e2AY">
           <ref role="39e2AS" node="zK" resolve="aggregation" />
         </node>
       </node>
-      <node concept="39e2AG" id="oH" role="39e3Y0">
+      <node concept="39e2AG" id="oB" role="39e3Y0">
         <ref role="39e2AK" to="tpce:2MLIwFLUK_i" />
-        <node concept="385nmt" id="pj" role="385vvn">
+        <node concept="385nmt" id="pd" role="385vvn">
           <property role="385vuF" value="allowed" />
-          <node concept="2$VJBW" id="pl" role="385v07">
+          <node concept="2$VJBW" id="pf" role="385v07">
             <property role="2$VJBR" value="3220559764717766994" />
-            <node concept="2x4n5u" id="pm" role="3iCydw">
+            <node concept="2x4n5u" id="pg" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="pn" role="2x4n5j">
+              <node concept="2V$Bhx" id="ph" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pk" role="39e2AY">
+        <node concept="39e2AT" id="pe" role="39e2AY">
           <ref role="39e2AS" node="46" resolve="allowed" />
         </node>
       </node>
-      <node concept="39e2AG" id="oI" role="39e3Y0">
+      <node concept="39e2AG" id="oC" role="39e3Y0">
         <ref role="39e2AK" to="tpce:70UXEPd7E9M" />
-        <node concept="385nmt" id="po" role="385vvn">
+        <node concept="385nmt" id="pi" role="385vvn">
           <property role="385vuF" value="allowed" />
-          <node concept="2$VJBW" id="pq" role="385v07">
+          <node concept="2$VJBW" id="pk" role="385v07">
             <property role="2$VJBR" value="8087047305080775282" />
-            <node concept="2x4n5u" id="pr" role="3iCydw">
+            <node concept="2x4n5u" id="pl" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="ps" role="2x4n5j">
+              <node concept="2V$Bhx" id="pm" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pp" role="39e2AY">
+        <node concept="39e2AT" id="pj" role="39e2AY">
           <ref role="39e2AS" node="ru" resolve="allowed" />
         </node>
       </node>
-      <node concept="39e2AG" id="oJ" role="39e3Y0">
+      <node concept="39e2AG" id="oD" role="39e3Y0">
         <ref role="39e2AK" to="tpce:4G1g3fIR8JD" />
-        <node concept="385nmt" id="pt" role="385vvn">
+        <node concept="385nmt" id="pn" role="385vvn">
           <property role="385vuF" value="containing root" />
-          <node concept="2$VJBW" id="pv" role="385v07">
+          <node concept="2$VJBW" id="pp" role="385v07">
             <property role="2$VJBR" value="5404671619616246761" />
-            <node concept="2x4n5u" id="pw" role="3iCydw">
+            <node concept="2x4n5u" id="pq" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="px" role="2x4n5j">
+              <node concept="2V$Bhx" id="pr" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pu" role="39e2AY">
+        <node concept="39e2AT" id="po" role="39e2AY">
           <ref role="39e2AS" node="Bh" resolve="root" />
         </node>
       </node>
-      <node concept="39e2AG" id="oK" role="39e3Y0">
+      <node concept="39e2AG" id="oE" role="39e3Y0">
         <ref role="39e2AK" to="tpce:hrlZpEz" />
-        <node concept="385nmt" id="py" role="385vvn">
+        <node concept="385nmt" id="ps" role="385vvn">
           <property role="385vuF" value="custom" />
-          <node concept="2$VJBW" id="p$" role="385v07">
+          <node concept="2$VJBW" id="pu" role="385v07">
             <property role="2$VJBR" value="1197591075491" />
-            <node concept="2x4n5u" id="p_" role="3iCydw">
+            <node concept="2x4n5u" id="pv" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="pA" role="2x4n5j">
+              <node concept="2V$Bhx" id="pw" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pz" role="39e2AY">
+        <node concept="39e2AT" id="pt" role="39e2AY">
           <ref role="39e2AS" node="k8" resolve="custom" />
         </node>
       </node>
-      <node concept="39e2AG" id="oL" role="39e3Y0">
+      <node concept="39e2AG" id="oF" role="39e3Y0">
         <ref role="39e2AK" to="tpce:hrlZj6Q" />
-        <node concept="385nmt" id="pB" role="385vvn">
+        <node concept="385nmt" id="px" role="385vvn">
           <property role="385vuF" value="derive from internal value" />
-          <node concept="2$VJBW" id="pD" role="385v07">
+          <node concept="2$VJBW" id="pz" role="385v07">
             <property role="2$VJBR" value="1197591048630" />
-            <node concept="2x4n5u" id="pE" role="3iCydw">
+            <node concept="2x4n5u" id="p$" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="pF" role="2x4n5j">
+              <node concept="2V$Bhx" id="p_" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pC" role="39e2AY">
+        <node concept="39e2AT" id="py" role="39e2AY">
           <ref role="39e2AS" node="k7" resolve="derive_from_internal_value" />
         </node>
       </node>
-      <node concept="39e2AG" id="oM" role="39e3Y0">
+      <node concept="39e2AG" id="oG" role="39e3Y0">
         <ref role="39e2AK" to="tpce:hrlYF46" />
-        <node concept="385nmt" id="pG" role="385vvn">
+        <node concept="385nmt" id="pA" role="385vvn">
           <property role="385vuF" value="derive from presentation" />
-          <node concept="2$VJBW" id="pI" role="385v07">
+          <node concept="2$VJBW" id="pC" role="385v07">
             <property role="2$VJBR" value="1197590884614" />
-            <node concept="2x4n5u" id="pJ" role="3iCydw">
+            <node concept="2x4n5u" id="pD" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="pK" role="2x4n5j">
+              <node concept="2V$Bhx" id="pE" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pH" role="39e2AY">
+        <node concept="39e2AT" id="pB" role="39e2AY">
           <ref role="39e2AS" node="k6" resolve="derive_from_presentation" />
         </node>
       </node>
-      <node concept="39e2AG" id="oN" role="39e3Y0">
+      <node concept="39e2AG" id="oH" role="39e3Y0">
         <ref role="39e2AK" to="tpce:2MLIwFLUK_m" />
-        <node concept="385nmt" id="pL" role="385vvn">
+        <node concept="385nmt" id="pF" role="385vvn">
           <property role="385vuF" value="enforce `forbidden'" />
-          <node concept="2$VJBW" id="pN" role="385v07">
+          <node concept="2$VJBW" id="pH" role="385v07">
             <property role="2$VJBR" value="3220559764717766998" />
-            <node concept="2x4n5u" id="pO" role="3iCydw">
+            <node concept="2x4n5u" id="pI" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="pP" role="2x4n5j">
+              <node concept="2V$Bhx" id="pJ" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pM" role="39e2AY">
+        <node concept="39e2AT" id="pG" role="39e2AY">
           <ref role="39e2AS" node="48" resolve="forbidden" />
         </node>
       </node>
-      <node concept="39e2AG" id="oO" role="39e3Y0">
+      <node concept="39e2AG" id="oI" role="39e3Y0">
         <ref role="39e2AK" to="tpce:2MLIwFLUK_j" />
-        <node concept="385nmt" id="pQ" role="385vvn">
+        <node concept="385nmt" id="pK" role="385vvn">
           <property role="385vuF" value="enforce `same root only'" />
-          <node concept="2$VJBW" id="pS" role="385v07">
+          <node concept="2$VJBW" id="pM" role="385v07">
             <property role="2$VJBR" value="3220559764717766995" />
-            <node concept="2x4n5u" id="pT" role="3iCydw">
+            <node concept="2x4n5u" id="pN" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="pU" role="2x4n5j">
+              <node concept="2V$Bhx" id="pO" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pR" role="39e2AY">
+        <node concept="39e2AT" id="pL" role="39e2AY">
           <ref role="39e2AS" node="47" resolve="local" />
         </node>
       </node>
-      <node concept="39e2AG" id="oP" role="39e3Y0">
+      <node concept="39e2AG" id="oJ" role="39e3Y0">
         <ref role="39e2AK" to="tpce:70UXEPd7EbS" />
-        <node concept="385nmt" id="pV" role="385vvn">
+        <node concept="385nmt" id="pP" role="385vvn">
           <property role="385vuF" value="forbidden" />
-          <node concept="2$VJBW" id="pX" role="385v07">
+          <node concept="2$VJBW" id="pR" role="385v07">
             <property role="2$VJBR" value="8087047305080775416" />
-            <node concept="2x4n5u" id="pY" role="3iCydw">
+            <node concept="2x4n5u" id="pS" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="pZ" role="2x4n5j">
+              <node concept="2V$Bhx" id="pT" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="pW" role="39e2AY">
+        <node concept="39e2AT" id="pQ" role="39e2AY">
           <ref role="39e2AS" node="rw" resolve="forbidden" />
         </node>
       </node>
-      <node concept="39e2AG" id="oQ" role="39e3Y0">
+      <node concept="39e2AG" id="oK" role="39e3Y0">
         <ref role="39e2AK" to="tpce:4G1g3fIR8JC" />
-        <node concept="385nmt" id="q0" role="385vvn">
+        <node concept="385nmt" id="pU" role="385vvn">
           <property role="385vuF" value="global" />
-          <node concept="2$VJBW" id="q2" role="385v07">
+          <node concept="2$VJBW" id="pW" role="385v07">
             <property role="2$VJBR" value="5404671619616246760" />
-            <node concept="2x4n5u" id="q3" role="3iCydw">
+            <node concept="2x4n5u" id="pX" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="q4" role="2x4n5j">
+              <node concept="2V$Bhx" id="pY" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="q1" role="39e2AY">
+        <node concept="39e2AT" id="pV" role="39e2AY">
           <ref role="39e2AS" node="Bg" resolve="global" />
         </node>
       </node>
-      <node concept="39e2AG" id="oR" role="39e3Y0">
+      <node concept="39e2AG" id="oL" role="39e3Y0">
         <ref role="39e2AK" to="tpce:4G1g3fIR8JG" />
-        <node concept="385nmt" id="q5" role="385vvn">
+        <node concept="385nmt" id="pZ" role="385vvn">
           <property role="385vuF" value="none" />
-          <node concept="2$VJBW" id="q7" role="385v07">
+          <node concept="2$VJBW" id="q1" role="385v07">
             <property role="2$VJBR" value="5404671619616246764" />
-            <node concept="2x4n5u" id="q8" role="3iCydw">
+            <node concept="2x4n5u" id="q2" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="q9" role="2x4n5j">
+              <node concept="2V$Bhx" id="q3" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="q6" role="39e2AY">
+        <node concept="39e2AT" id="q0" role="39e2AY">
           <ref role="39e2AS" node="Bi" resolve="none" />
         </node>
       </node>
-      <node concept="39e2AG" id="oS" role="39e3Y0">
+      <node concept="39e2AG" id="oM" role="39e3Y0">
         <ref role="39e2AK" to="tpce:fLJjDmS" />
-        <node concept="385nmt" id="qa" role="385vvn">
+        <node concept="385nmt" id="q4" role="385vvn">
           <property role="385vuF" value="reference" />
-          <node concept="2$VJBW" id="qc" role="385v07">
+          <node concept="2$VJBW" id="q6" role="385v07">
             <property role="2$VJBR" value="1084199179704" />
-            <node concept="2x4n5u" id="qd" role="3iCydw">
+            <node concept="2x4n5u" id="q7" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="qe" role="2x4n5j">
+              <node concept="2V$Bhx" id="q8" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="qb" role="39e2AY">
+        <node concept="39e2AT" id="q5" role="39e2AY">
           <ref role="39e2AS" node="zJ" resolve="reference" />
         </node>
       </node>
-      <node concept="39e2AG" id="oT" role="39e3Y0">
+      <node concept="39e2AG" id="oN" role="39e3Y0">
         <ref role="39e2AK" to="tpce:70UXEPd7EbO" />
-        <node concept="385nmt" id="qf" role="385vvn">
+        <node concept="385nmt" id="q9" role="385vvn">
           <property role="385vuF" value="same root only" />
-          <node concept="2$VJBW" id="qh" role="385v07">
+          <node concept="2$VJBW" id="qb" role="385v07">
             <property role="2$VJBR" value="8087047305080775412" />
-            <node concept="2x4n5u" id="qi" role="3iCydw">
+            <node concept="2x4n5u" id="qc" role="3iCydw">
               <property role="2x4mPI" value="EnumerationMemberDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="dtlokhiq" />
-              <node concept="2V$Bhx" id="qj" role="2x4n5j">
+              <node concept="2V$Bhx" id="qd" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="qg" role="39e2AY">
+        <node concept="39e2AT" id="qa" role="39e2AY">
           <ref role="39e2AS" node="rv" resolve="local" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="nV" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
-      <node concept="39e2AG" id="qk" role="39e3Y0">
+      <property role="39e3Y2" value="propertySupportClass" />
+      <node concept="39e2AG" id="qe" role="39e3Y0">
         <ref role="39e2AK" to="tpce:fLJekj2" resolve="Cardinality" />
-        <node concept="385nmt" id="qq" role="385vvn">
+        <node concept="385nmt" id="ql" role="385vvn">
           <property role="385vuF" value="Cardinality" />
-          <node concept="2$VJBW" id="qs" role="385v07">
+          <node concept="2$VJBW" id="qn" role="385v07">
             <property role="2$VJBR" value="1084197782722" />
+            <node concept="2x4n5u" id="qo" role="3iCydw">
+              <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="dtih8jjv" />
+              <node concept="2V$Bhx" id="qp" role="2x4n5j">
+                <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="qm" role="39e2AY">
+          <ref role="39e2AS" node="2k" resolve="Cardinality_PropertySupport" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="qf" role="39e3Y0">
+        <ref role="39e2AK" to="tpce:2MLIwFLUK_h" resolve="ChildrenIncomingReferencesPolicy" />
+        <node concept="385nmt" id="qq" role="385vvn">
+          <property role="385vuF" value="ChildrenIncomingReferencesPolicy" />
+          <node concept="2$VJBW" id="qs" role="385v07">
+            <property role="2$VJBR" value="3220559764717766993" />
             <node concept="2x4n5u" id="qt" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
@@ -4583,15 +4583,15 @@
           </node>
         </node>
         <node concept="39e2AT" id="qr" role="39e2AY">
-          <ref role="39e2AS" node="0" resolve="Cardinality" />
+          <ref role="39e2AS" node="67" resolve="ChildrenIncomingReferencesPolicy_PropertySupport" />
         </node>
       </node>
-      <node concept="39e2AG" id="ql" role="39e3Y0">
-        <ref role="39e2AK" to="tpce:2MLIwFLUK_h" resolve="ChildrenIncomingReferencesPolicy" />
+      <node concept="39e2AG" id="qg" role="39e3Y0">
+        <ref role="39e2AK" to="tpce:hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
         <node concept="385nmt" id="qv" role="385vvn">
-          <property role="385vuF" value="ChildrenIncomingReferencesPolicy" />
+          <property role="385vuF" value="EnumerationMemberIdentifierPolicy" />
           <node concept="2$VJBW" id="qx" role="385v07">
-            <property role="2$VJBR" value="3220559764717766993" />
+            <property role="2$VJBR" value="1197590884613" />
             <node concept="2x4n5u" id="qy" role="3iCydw">
               <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
@@ -4604,19 +4604,19 @@
           </node>
         </node>
         <node concept="39e2AT" id="qw" role="39e2AY">
-          <ref role="39e2AS" node="45" resolve="ChildrenIncomingReferencesPolicy" />
+          <ref role="39e2AS" node="m7" resolve="EnumerationMemberIdentifierPolicy_PropertySupport" />
         </node>
       </node>
-      <node concept="39e2AG" id="qm" role="39e3Y0">
-        <ref role="39e2AK" to="tpce:hrlYF45" resolve="EnumerationMemberIdentifierPolicy" />
+      <node concept="39e2AG" id="qh" role="39e3Y0">
+        <ref role="39e2AK" to="tpce:3H1xM9LtLda" resolve="IDNumber" />
         <node concept="385nmt" id="q$" role="385vvn">
-          <property role="385vuF" value="EnumerationMemberIdentifierPolicy" />
+          <property role="385vuF" value="IDNumber" />
           <node concept="2$VJBW" id="qA" role="385v07">
-            <property role="2$VJBR" value="1197590884613" />
+            <property role="2$VJBR" value="4269842503726207818" />
             <node concept="2x4n5u" id="qB" role="3iCydw">
-              <property role="2x4mPI" value="EnumerationDataTypeDeclaration" />
+              <property role="2x4mPI" value="ConstrainedDataTypeDeclaration" />
               <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="dtih8jjv" />
+              <property role="2x4n5l" value="dtihfpyv" />
               <node concept="2V$Bhx" id="qC" role="2x4n5j">
                 <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
@@ -4625,10 +4625,10 @@
           </node>
         </node>
         <node concept="39e2AT" id="q_" role="39e2AY">
-          <ref role="39e2AS" node="k5" resolve="EnumerationMemberIdentifierPolicy" />
+          <ref role="39e2AS" node="qW" resolve="IDNumber_PropertySupport" />
         </node>
       </node>
-      <node concept="39e2AG" id="qn" role="39e3Y0">
+      <node concept="39e2AG" id="qi" role="39e3Y0">
         <ref role="39e2AK" to="tpce:70UXEPd7E3S" resolve="InstanceIncomingReferencesPolicy" />
         <node concept="385nmt" id="qD" role="385vvn">
           <property role="385vuF" value="InstanceIncomingReferencesPolicy" />
@@ -4646,10 +4646,10 @@
           </node>
         </node>
         <node concept="39e2AT" id="qE" role="39e2AY">
-          <ref role="39e2AS" node="rt" resolve="InstanceIncomingReferencesPolicy" />
+          <ref role="39e2AS" node="tv" resolve="InstanceIncomingReferencesPolicy_PropertySupport" />
         </node>
       </node>
-      <node concept="39e2AG" id="qo" role="39e3Y0">
+      <node concept="39e2AG" id="qj" role="39e3Y0">
         <ref role="39e2AK" to="tpce:fLJjDmR" resolve="LinkMetaclass" />
         <node concept="385nmt" id="qI" role="385vvn">
           <property role="385vuF" value="LinkMetaclass" />
@@ -4667,10 +4667,10 @@
           </node>
         </node>
         <node concept="39e2AT" id="qJ" role="39e2AY">
-          <ref role="39e2AS" node="zI" resolve="LinkMetaclass" />
+          <ref role="39e2AS" node="_u" resolve="LinkMetaclass_PropertySupport" />
         </node>
       </node>
-      <node concept="39e2AG" id="qp" role="39e3Y0">
+      <node concept="39e2AG" id="qk" role="39e3Y0">
         <ref role="39e2AK" to="tpce:4G1g3fIR8JB" resolve="StaticScope" />
         <node concept="385nmt" id="qN" role="385vvn">
           <property role="385vuF" value="StaticScope" />
@@ -4688,7 +4688,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="qO" role="39e2AY">
-          <ref role="39e2AS" node="Bf" resolve="StaticScope" />
+          <ref role="39e2AS" node="Dh" resolve="StaticScope_PropertySupport" />
         </node>
       </node>
     </node>

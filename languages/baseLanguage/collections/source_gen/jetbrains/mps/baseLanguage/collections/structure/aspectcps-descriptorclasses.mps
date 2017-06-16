@@ -13862,7 +13862,7 @@
   </node>
   <node concept="39dXUE" id="1je">
     <node concept="39e2AJ" id="1jf" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="1jk" role="39e3Y0">
         <ref role="39e2AK" to="tp2q:i32Rhxy" resolve="LinkedHashMapOrder" />
         <node concept="385nmt" id="1jl" role="385vvn">
@@ -13881,7 +13881,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="1jm" role="39e2AY">
-          <ref role="39e2AS" node="1KW" resolve="LinkedHashMapOrder_PropertySupport" />
+          <ref role="39e2AS" node="1Jc" resolve="LinkedHashMapOrder" />
         </node>
       </node>
     </node>
@@ -13931,7 +13931,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="1jh" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="1jA" role="39e3Y0">
         <ref role="39e2AK" to="tp2q:i32Rhxy" resolve="LinkedHashMapOrder" />
         <node concept="385nmt" id="1jB" role="385vvn">
@@ -13950,7 +13950,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="1jC" role="39e2AY">
-          <ref role="39e2AS" node="1Jc" resolve="LinkedHashMapOrder" />
+          <ref role="39e2AS" node="1KW" resolve="LinkedHashMapOrder_PropertySupport" />
         </node>
       </node>
     </node>

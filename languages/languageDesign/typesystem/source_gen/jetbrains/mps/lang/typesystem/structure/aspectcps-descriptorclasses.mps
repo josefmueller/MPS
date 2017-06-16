@@ -10329,7 +10329,7 @@
   </node>
   <node concept="39dXUE" id="XI">
     <node concept="39e2AJ" id="XJ" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="XO" role="39e3Y0">
         <ref role="39e2AK" to="tpd4:hnFOH2D" resolve="EquationDirection_Enum" />
         <node concept="385nmt" id="XS" role="385vvn">
@@ -10348,7 +10348,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="XT" role="39e2AY">
-          <ref role="39e2AS" node="VX" resolve="EquationDirection_Enum_PropertySupport" />
+          <ref role="39e2AS" node="TV" resolve="EquationDirection_Enum" />
         </node>
       </node>
       <node concept="39e2AG" id="XP" role="39e3Y0">
@@ -10369,7 +10369,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="XY" role="39e2AY">
-          <ref role="39e2AS" node="11S" resolve="InequalityProperty_PropertySupport" />
+          <ref role="39e2AS" node="ZQ" resolve="InequalityProperty" />
         </node>
       </node>
       <node concept="39e2AG" id="XQ" role="39e3Y0">
@@ -10390,7 +10390,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="Y3" role="39e2AY">
-          <ref role="39e2AS" node="16f" resolve="InequationPriority_PropertySupport" />
+          <ref role="39e2AS" node="13D" resolve="InequationPriority" />
         </node>
       </node>
       <node concept="39e2AG" id="XR" role="39e3Y0">
@@ -10411,7 +10411,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="Y8" role="39e2AY">
-          <ref role="39e2AS" node="1to" resolve="RestrictionKind_PropertySupport" />
+          <ref role="39e2AS" node="1rC" resolve="RestrictionKind" />
         </node>
       </node>
     </node>
@@ -10692,7 +10692,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="XL" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="Zq" role="39e3Y0">
         <ref role="39e2AK" to="tpd4:hnFOH2D" resolve="EquationDirection_Enum" />
         <node concept="385nmt" id="Zu" role="385vvn">
@@ -10711,7 +10711,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="Zv" role="39e2AY">
-          <ref role="39e2AS" node="TV" resolve="EquationDirection_Enum" />
+          <ref role="39e2AS" node="VX" resolve="EquationDirection_Enum_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="Zr" role="39e3Y0">
@@ -10732,7 +10732,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="Z$" role="39e2AY">
-          <ref role="39e2AS" node="ZQ" resolve="InequalityProperty" />
+          <ref role="39e2AS" node="11S" resolve="InequalityProperty_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="Zs" role="39e3Y0">
@@ -10753,7 +10753,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="ZD" role="39e2AY">
-          <ref role="39e2AS" node="13D" resolve="InequationPriority" />
+          <ref role="39e2AS" node="16f" resolve="InequationPriority_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="Zt" role="39e3Y0">
@@ -10774,7 +10774,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="ZI" role="39e2AY">
-          <ref role="39e2AS" node="1rC" resolve="RestrictionKind" />
+          <ref role="39e2AS" node="1to" resolve="RestrictionKind_PropertySupport" />
         </node>
       </node>
     </node>

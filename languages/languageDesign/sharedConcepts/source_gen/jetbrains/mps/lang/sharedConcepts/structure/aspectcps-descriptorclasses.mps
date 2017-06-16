@@ -847,7 +847,7 @@
   </node>
   <node concept="39dXUE" id="3D">
     <node concept="39e2AJ" id="3E" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="3J" role="39e3Y0">
         <ref role="39e2AK" to="tpcw:gWZP3tS" resolve="NodePresentationOptions" />
         <node concept="385nmt" id="3M" role="385vvn">
@@ -866,7 +866,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="3N" role="39e2AY">
-          <ref role="39e2AS" node="8H" resolve="NodePresentationOptions_PropertySupport" />
+          <ref role="39e2AS" node="6F" resolve="NodePresentationOptions" />
         </node>
       </node>
       <node concept="39e2AG" id="3K" role="39e3Y0">
@@ -887,7 +887,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="3S" role="39e2AY">
-          <ref role="39e2AS" node="ce" resolve="Options_DefaultCustom_PropertySupport" />
+          <ref role="39e2AS" node="au" resolve="Options_DefaultCustom" />
         </node>
       </node>
       <node concept="39e2AG" id="3L" role="39e3Y0">
@@ -908,7 +908,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="3X" role="39e2AY">
-          <ref role="39e2AS" node="fJ" resolve="Options_DefaultTrue_PropertySupport" />
+          <ref role="39e2AS" node="dZ" resolve="Options_DefaultTrue" />
         </node>
       </node>
     </node>
@@ -1063,7 +1063,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="3G" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="4F" role="39e3Y0">
         <ref role="39e2AK" to="tpcw:gWZP3tS" resolve="NodePresentationOptions" />
         <node concept="385nmt" id="4I" role="385vvn">
@@ -1082,7 +1082,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="4J" role="39e2AY">
-          <ref role="39e2AS" node="6F" resolve="NodePresentationOptions" />
+          <ref role="39e2AS" node="8H" resolve="NodePresentationOptions_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="4G" role="39e3Y0">
@@ -1103,7 +1103,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="4O" role="39e2AY">
-          <ref role="39e2AS" node="au" resolve="Options_DefaultCustom" />
+          <ref role="39e2AS" node="ce" resolve="Options_DefaultCustom_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="4H" role="39e3Y0">
@@ -1124,7 +1124,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="4T" role="39e2AY">
-          <ref role="39e2AS" node="dZ" resolve="Options_DefaultTrue" />
+          <ref role="39e2AS" node="fJ" resolve="Options_DefaultTrue_PropertySupport" />
         </node>
       </node>
     </node>

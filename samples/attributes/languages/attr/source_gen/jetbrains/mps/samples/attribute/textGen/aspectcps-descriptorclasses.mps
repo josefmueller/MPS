@@ -513,17 +513,17 @@
   </node>
   <node concept="39dXUE" id="1F">
     <node concept="39e2AJ" id="1G" role="39e2AI">
-      <property role="39e3Y2" value="LanguageUtilityClass" />
+      <property role="39e3Y2" value="GetExtension" />
       <node concept="39e2AG" id="1M" role="39e3Y0">
-        <ref role="39e2AK" to="rnuf:2$ptf_hB9bh" resolve="Auxiliary" />
+        <ref role="39e2AK" to="rnuf:3fG6dkhfgJf" resolve="HandlerAsRoot_TextGen" />
         <node concept="385nmt" id="1N" role="385vvn">
-          <property role="385vuF" value="Auxiliary" />
+          <property role="385vuF" value="HandlerAsRoot_TextGen" />
           <node concept="2$VJBW" id="1P" role="385v07">
-            <property role="2$VJBR" value="2961526844137706193" />
+            <property role="2$VJBR" value="3741392693834353615" />
             <node concept="2x4n5u" id="1Q" role="3iCydw">
-              <property role="2x4mPI" value="LanguageTextGenDeclaration" />
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqusxd7j" />
+              <property role="2x4n5l" value="fqqnb33d" />
               <node concept="2V$Bhx" id="1R" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
@@ -532,39 +532,42 @@
           </node>
         </node>
         <node concept="39e2AT" id="1O" role="39e2AY">
-          <ref role="39e2AS" node="0" resolve="Auxiliary" />
+          <ref role="39e2AS" node="2z" resolve="getFileExtension_HandlerAsRoot" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="1H" role="39e2AI">
-      <property role="39e3Y2" value="TextGenClass" />
+      <property role="39e3Y2" value="GetFilename" />
       <node concept="39e2AG" id="1S" role="39e3Y0">
-        <ref role="39e2AK" to="rnuf:70B0YGk0iEE" resolve="CommentAttribute2_TextGen" />
-        <node concept="385nmt" id="1U" role="385vvn">
-          <property role="385vuF" value="CommentAttribute2_TextGen" />
-          <node concept="2$VJBW" id="1W" role="385v07">
-            <property role="2$VJBR" value="8081432364527463082" />
-            <node concept="2x4n5u" id="1X" role="3iCydw">
+        <ref role="39e2AK" to="rnuf:3fG6dkhfgJf" resolve="HandlerAsRoot_TextGen" />
+        <node concept="385nmt" id="1T" role="385vvn">
+          <property role="385vuF" value="HandlerAsRoot_TextGen" />
+          <node concept="2$VJBW" id="1V" role="385v07">
+            <property role="2$VJBR" value="3741392693834353615" />
+            <node concept="2x4n5u" id="1W" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="1Y" role="2x4n5j">
+              <node concept="2V$Bhx" id="1X" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="1V" role="39e2AY">
-          <ref role="39e2AS" node="c" resolve="CommentAttribute2_TextGen" />
+        <node concept="39e2AT" id="1U" role="39e2AY">
+          <ref role="39e2AS" node="2y" resolve="getFileName_HandlerAsRoot" />
         </node>
       </node>
-      <node concept="39e2AG" id="1T" role="39e3Y0">
-        <ref role="39e2AK" to="rnuf:6fYGsMY855M" resolve="CommentAttribute_TextGen" />
+    </node>
+    <node concept="39e2AJ" id="1I" role="39e2AI">
+      <property role="39e3Y2" value="GetTextUnit" />
+      <node concept="39e2AG" id="1Y" role="39e3Y0">
+        <ref role="39e2AK" to="rnuf:3fG6dkhfgJf" resolve="HandlerAsRoot_TextGen" />
         <node concept="385nmt" id="1Z" role="385vvn">
-          <property role="385vuF" value="CommentAttribute_TextGen" />
+          <property role="385vuF" value="HandlerAsRoot_TextGen" />
           <node concept="2$VJBW" id="21" role="385v07">
-            <property role="2$VJBR" value="7205391946760606066" />
+            <property role="2$VJBR" value="3741392693834353615" />
             <node concept="2x4n5u" id="22" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
@@ -577,22 +580,22 @@
           </node>
         </node>
         <node concept="39e2AT" id="20" role="39e2AY">
-          <ref role="39e2AS" node="Q" resolve="CommentAttribute_TextGen" />
+          <ref role="39e2AS" node="2$" resolve="createTextUnit0" />
         </node>
       </node>
     </node>
-    <node concept="39e2AJ" id="1I" role="39e2AI">
-      <property role="39e3Y2" value="GetFilename" />
+    <node concept="39e2AJ" id="1J" role="39e2AI">
+      <property role="39e3Y2" value="LanguageUtilityClass" />
       <node concept="39e2AG" id="24" role="39e3Y0">
-        <ref role="39e2AK" to="rnuf:3fG6dkhfgJf" resolve="HandlerAsRoot_TextGen" />
+        <ref role="39e2AK" to="rnuf:2$ptf_hB9bh" resolve="Auxiliary" />
         <node concept="385nmt" id="25" role="385vvn">
-          <property role="385vuF" value="HandlerAsRoot_TextGen" />
+          <property role="385vuF" value="Auxiliary" />
           <node concept="2$VJBW" id="27" role="385v07">
-            <property role="2$VJBR" value="3741392693834353615" />
+            <property role="2$VJBR" value="2961526844137706193" />
             <node concept="2x4n5u" id="28" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4mPI" value="LanguageTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
+              <property role="2x4n5l" value="fqusxd7j" />
               <node concept="2V$Bhx" id="29" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
@@ -601,42 +604,39 @@
           </node>
         </node>
         <node concept="39e2AT" id="26" role="39e2AY">
-          <ref role="39e2AS" node="2y" resolve="getFileName_HandlerAsRoot" />
+          <ref role="39e2AS" node="0" resolve="Auxiliary" />
         </node>
       </node>
     </node>
-    <node concept="39e2AJ" id="1J" role="39e2AI">
-      <property role="39e3Y2" value="GetTextUnit" />
+    <node concept="39e2AJ" id="1K" role="39e2AI">
+      <property role="39e3Y2" value="TextGenClass" />
       <node concept="39e2AG" id="2a" role="39e3Y0">
-        <ref role="39e2AK" to="rnuf:3fG6dkhfgJf" resolve="HandlerAsRoot_TextGen" />
-        <node concept="385nmt" id="2b" role="385vvn">
-          <property role="385vuF" value="HandlerAsRoot_TextGen" />
-          <node concept="2$VJBW" id="2d" role="385v07">
-            <property role="2$VJBR" value="3741392693834353615" />
-            <node concept="2x4n5u" id="2e" role="3iCydw">
+        <ref role="39e2AK" to="rnuf:70B0YGk0iEE" resolve="CommentAttribute2_TextGen" />
+        <node concept="385nmt" id="2c" role="385vvn">
+          <property role="385vuF" value="CommentAttribute2_TextGen" />
+          <node concept="2$VJBW" id="2e" role="385v07">
+            <property role="2$VJBR" value="8081432364527463082" />
+            <node concept="2x4n5u" id="2f" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="2f" role="2x4n5j">
+              <node concept="2V$Bhx" id="2g" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="2c" role="39e2AY">
-          <ref role="39e2AS" node="2$" resolve="createTextUnit0" />
+        <node concept="39e2AT" id="2d" role="39e2AY">
+          <ref role="39e2AS" node="c" resolve="CommentAttribute2_TextGen" />
         </node>
       </node>
-    </node>
-    <node concept="39e2AJ" id="1K" role="39e2AI">
-      <property role="39e3Y2" value="GetExtension" />
-      <node concept="39e2AG" id="2g" role="39e3Y0">
-        <ref role="39e2AK" to="rnuf:3fG6dkhfgJf" resolve="HandlerAsRoot_TextGen" />
+      <node concept="39e2AG" id="2b" role="39e3Y0">
+        <ref role="39e2AK" to="rnuf:6fYGsMY855M" resolve="CommentAttribute_TextGen" />
         <node concept="385nmt" id="2h" role="385vvn">
-          <property role="385vuF" value="HandlerAsRoot_TextGen" />
+          <property role="385vuF" value="CommentAttribute_TextGen" />
           <node concept="2$VJBW" id="2j" role="385v07">
-            <property role="2$VJBR" value="3741392693834353615" />
+            <property role="2$VJBR" value="7205391946760606066" />
             <node concept="2x4n5u" id="2k" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
@@ -649,7 +649,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="2i" role="39e2AY">
-          <ref role="39e2AS" node="2z" resolve="getFileExtension_HandlerAsRoot" />
+          <ref role="39e2AS" node="Q" resolve="CommentAttribute_TextGen" />
         </node>
       </node>
     </node>

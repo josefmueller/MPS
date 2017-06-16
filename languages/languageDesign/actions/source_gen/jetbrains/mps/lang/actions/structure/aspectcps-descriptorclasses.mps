@@ -10980,7 +10980,7 @@
   </node>
   <node concept="39dXUE" id="111">
     <node concept="39e2AJ" id="112" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="117" role="39e3Y0">
         <ref role="39e2AK" to="tpdg:hG7GXih" resolve="Side" />
         <node concept="385nmt" id="119" role="385vvn">
@@ -10999,7 +10999,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="11a" role="39e2AY">
-          <ref role="39e2AS" node="1sf" resolve="Side_PropertySupport" />
+          <ref role="39e2AS" node="1lp" resolve="Side" />
         </node>
       </node>
       <node concept="39e2AG" id="118" role="39e3Y0">
@@ -11020,7 +11020,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="11f" role="39e2AY">
-          <ref role="39e2AS" node="1qt" resolve="SideTransformTag_PropertySupport" />
+          <ref role="39e2AS" node="1nw" resolve="SideTransformTag" />
         </node>
       </node>
     </node>
@@ -11217,7 +11217,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="114" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="129" role="39e3Y0">
         <ref role="39e2AK" to="tpdg:hG7GXih" resolve="Side" />
         <node concept="385nmt" id="12b" role="385vvn">
@@ -11236,7 +11236,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="12c" role="39e2AY">
-          <ref role="39e2AS" node="1lp" resolve="Side" />
+          <ref role="39e2AS" node="1sf" resolve="Side_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="12a" role="39e3Y0">
@@ -11257,7 +11257,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="12h" role="39e2AY">
-          <ref role="39e2AS" node="1nw" resolve="SideTransformTag" />
+          <ref role="39e2AS" node="1qt" resolve="SideTransformTag_PropertySupport" />
         </node>
       </node>
     </node>

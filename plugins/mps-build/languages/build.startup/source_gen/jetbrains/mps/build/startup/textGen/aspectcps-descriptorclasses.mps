@@ -210,34 +210,37 @@
   </registry>
   <node concept="39dXUE" id="0">
     <node concept="39e2AJ" id="1" role="39e2AI">
-      <property role="39e3Y2" value="TextGenClass" />
+      <property role="39e3Y2" value="GetExtension" />
       <node concept="39e2AG" id="5" role="39e3Y0">
         <ref role="39e2AK" to="icio:1w81suLRcFr" resolve="TextFile_TextGen" />
-        <node concept="385nmt" id="7" role="385vvn">
+        <node concept="385nmt" id="6" role="385vvn">
           <property role="385vuF" value="TextFile_TextGen" />
-          <node concept="2$VJBW" id="9" role="385v07">
+          <node concept="2$VJBW" id="8" role="385v07">
             <property role="2$VJBR" value="1731640411964623579" />
-            <node concept="2x4n5u" id="a" role="3iCydw">
+            <node concept="2x4n5u" id="9" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="b" role="2x4n5j">
+              <node concept="2V$Bhx" id="a" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="8" role="39e2AY">
-          <ref role="39e2AS" node="v" resolve="TextFile_TextGen" />
+        <node concept="39e2AT" id="7" role="39e2AY">
+          <ref role="39e2AS" node="18" resolve="getFileExtension_TextFile" />
         </node>
       </node>
-      <node concept="39e2AG" id="6" role="39e3Y0">
-        <ref role="39e2AK" to="icio:1w81suLRo_I" resolve="TextLine_TextGen" />
+    </node>
+    <node concept="39e2AJ" id="2" role="39e2AI">
+      <property role="39e3Y2" value="GetFilename" />
+      <node concept="39e2AG" id="b" role="39e3Y0">
+        <ref role="39e2AK" to="icio:1w81suLRcFr" resolve="TextFile_TextGen" />
         <node concept="385nmt" id="c" role="385vvn">
-          <property role="385vuF" value="TextLine_TextGen" />
+          <property role="385vuF" value="TextFile_TextGen" />
           <node concept="2$VJBW" id="e" role="385v07">
-            <property role="2$VJBR" value="1731640411964672366" />
+            <property role="2$VJBR" value="1731640411964623579" />
             <node concept="2x4n5u" id="f" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
@@ -250,42 +253,39 @@
           </node>
         </node>
         <node concept="39e2AT" id="d" role="39e2AY">
-          <ref role="39e2AS" node="2J" resolve="TextLine_TextGen" />
+          <ref role="39e2AS" node="17" resolve="getFileName_TextFile" />
         </node>
       </node>
     </node>
-    <node concept="39e2AJ" id="2" role="39e2AI">
-      <property role="39e3Y2" value="GetFilename" />
+    <node concept="39e2AJ" id="3" role="39e2AI">
+      <property role="39e3Y2" value="TextGenClass" />
       <node concept="39e2AG" id="h" role="39e3Y0">
         <ref role="39e2AK" to="icio:1w81suLRcFr" resolve="TextFile_TextGen" />
-        <node concept="385nmt" id="i" role="385vvn">
+        <node concept="385nmt" id="j" role="385vvn">
           <property role="385vuF" value="TextFile_TextGen" />
-          <node concept="2$VJBW" id="k" role="385v07">
+          <node concept="2$VJBW" id="l" role="385v07">
             <property role="2$VJBR" value="1731640411964623579" />
-            <node concept="2x4n5u" id="l" role="3iCydw">
+            <node concept="2x4n5u" id="m" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="m" role="2x4n5j">
+              <node concept="2V$Bhx" id="n" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="j" role="39e2AY">
-          <ref role="39e2AS" node="17" resolve="getFileName_TextFile" />
+        <node concept="39e2AT" id="k" role="39e2AY">
+          <ref role="39e2AS" node="v" resolve="TextFile_TextGen" />
         </node>
       </node>
-    </node>
-    <node concept="39e2AJ" id="3" role="39e2AI">
-      <property role="39e3Y2" value="GetExtension" />
-      <node concept="39e2AG" id="n" role="39e3Y0">
-        <ref role="39e2AK" to="icio:1w81suLRcFr" resolve="TextFile_TextGen" />
+      <node concept="39e2AG" id="i" role="39e3Y0">
+        <ref role="39e2AK" to="icio:1w81suLRo_I" resolve="TextLine_TextGen" />
         <node concept="385nmt" id="o" role="385vvn">
-          <property role="385vuF" value="TextFile_TextGen" />
+          <property role="385vuF" value="TextLine_TextGen" />
           <node concept="2$VJBW" id="q" role="385v07">
-            <property role="2$VJBR" value="1731640411964623579" />
+            <property role="2$VJBR" value="1731640411964672366" />
             <node concept="2x4n5u" id="r" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
@@ -298,7 +298,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="p" role="39e2AY">
-          <ref role="39e2AS" node="18" resolve="getFileExtension_TextFile" />
+          <ref role="39e2AS" node="2J" resolve="TextLine_TextGen" />
         </node>
       </node>
     </node>

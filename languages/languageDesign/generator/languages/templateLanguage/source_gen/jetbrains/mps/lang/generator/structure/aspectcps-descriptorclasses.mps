@@ -8782,7 +8782,7 @@
   </node>
   <node concept="39dXUE" id="NT">
     <node concept="39e2AJ" id="NU" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="NZ" role="39e3Y0">
         <ref role="39e2AK" to="tpf8:h1lLLxP" resolve="GeneratorMessageType" />
         <node concept="385nmt" id="O1" role="385vvn">
@@ -8801,7 +8801,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="O2" role="39e2AY">
-          <ref role="39e2AS" node="QV" resolve="GeneratorMessageType_PropertySupport" />
+          <ref role="39e2AS" node="OT" resolve="GeneratorMessageType" />
         </node>
       </node>
       <node concept="39e2AG" id="O0" role="39e3Y0">
@@ -8822,7 +8822,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="O7" role="39e2AY">
-          <ref role="39e2AS" node="1bS" resolve="MappingScriptKind_PropertySupport" />
+          <ref role="39e2AS" node="1a8" resolve="MappingScriptKind" />
         </node>
       </node>
     </node>
@@ -8935,7 +8935,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="NW" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="OD" role="39e3Y0">
         <ref role="39e2AK" to="tpf8:h1lLLxP" resolve="GeneratorMessageType" />
         <node concept="385nmt" id="OF" role="385vvn">
@@ -8954,7 +8954,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="OG" role="39e2AY">
-          <ref role="39e2AS" node="OT" resolve="GeneratorMessageType" />
+          <ref role="39e2AS" node="QV" resolve="GeneratorMessageType_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="OE" role="39e3Y0">
@@ -8975,7 +8975,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="OL" role="39e2AY">
-          <ref role="39e2AS" node="1a8" resolve="MappingScriptKind" />
+          <ref role="39e2AS" node="1bS" resolve="MappingScriptKind_PropertySupport" />
         </node>
       </node>
     </node>

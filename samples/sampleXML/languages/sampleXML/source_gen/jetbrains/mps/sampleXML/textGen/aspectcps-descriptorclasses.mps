@@ -804,17 +804,17 @@
   </node>
   <node concept="39dXUE" id="3d">
     <node concept="39e2AJ" id="3e" role="39e2AI">
-      <property role="39e3Y2" value="LanguageUtilityClass" />
+      <property role="39e3Y2" value="GetExtension" />
       <node concept="39e2AG" id="3j" role="39e3Y0">
-        <ref role="39e2AK" to="l8vb:hZL5W7s" resolve="ElementCreator" />
+        <ref role="39e2AK" to="l8vb:hZL3R92" resolve="Document_TextGen" />
         <node concept="385nmt" id="3k" role="385vvn">
-          <property role="385vuF" value="ElementCreator" />
+          <property role="385vuF" value="Document_TextGen" />
           <node concept="2$VJBW" id="3m" role="385v07">
-            <property role="2$VJBR" value="1236700479964" />
+            <property role="2$VJBR" value="1236699935298" />
             <node concept="2x4n5u" id="3n" role="3iCydw">
-              <property role="2x4mPI" value="LanguageTextGenDeclaration" />
+              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqusxd7j" />
+              <property role="2x4n5l" value="fqqnb33d" />
               <node concept="2V$Bhx" id="3o" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
@@ -823,12 +823,12 @@
           </node>
         </node>
         <node concept="39e2AT" id="3l" role="39e2AY">
-          <ref role="39e2AS" node="n" resolve="ElementCreator" />
+          <ref role="39e2AS" node="3S" resolve="getFileExtension_Document" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="3f" role="39e2AI">
-      <property role="39e3Y2" value="TextGenClass" />
+      <property role="39e3Y2" value="GetFilename" />
       <node concept="39e2AG" id="3p" role="39e3Y0">
         <ref role="39e2AK" to="l8vb:hZL3R92" resolve="Document_TextGen" />
         <node concept="385nmt" id="3q" role="385vvn">
@@ -847,22 +847,22 @@
           </node>
         </node>
         <node concept="39e2AT" id="3r" role="39e2AY">
-          <ref role="39e2AS" node="0" resolve="Document_TextGen" />
+          <ref role="39e2AS" node="3R" resolve="getFileName_Document" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="3g" role="39e2AI">
-      <property role="39e3Y2" value="GetFilename" />
+      <property role="39e3Y2" value="LanguageUtilityClass" />
       <node concept="39e2AG" id="3v" role="39e3Y0">
-        <ref role="39e2AK" to="l8vb:hZL3R92" resolve="Document_TextGen" />
+        <ref role="39e2AK" to="l8vb:hZL5W7s" resolve="ElementCreator" />
         <node concept="385nmt" id="3w" role="385vvn">
-          <property role="385vuF" value="Document_TextGen" />
+          <property role="385vuF" value="ElementCreator" />
           <node concept="2$VJBW" id="3y" role="385v07">
-            <property role="2$VJBR" value="1236699935298" />
+            <property role="2$VJBR" value="1236700479964" />
             <node concept="2x4n5u" id="3z" role="3iCydw">
-              <property role="2x4mPI" value="ConceptTextGenDeclaration" />
+              <property role="2x4mPI" value="LanguageTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
-              <property role="2x4n5l" value="fqqnb33d" />
+              <property role="2x4n5l" value="fqusxd7j" />
               <node concept="2V$Bhx" id="3$" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
@@ -871,12 +871,12 @@
           </node>
         </node>
         <node concept="39e2AT" id="3x" role="39e2AY">
-          <ref role="39e2AS" node="3R" resolve="getFileName_Document" />
+          <ref role="39e2AS" node="n" resolve="ElementCreator" />
         </node>
       </node>
     </node>
     <node concept="39e2AJ" id="3h" role="39e2AI">
-      <property role="39e3Y2" value="GetExtension" />
+      <property role="39e3Y2" value="TextGenClass" />
       <node concept="39e2AG" id="3_" role="39e3Y0">
         <ref role="39e2AK" to="l8vb:hZL3R92" resolve="Document_TextGen" />
         <node concept="385nmt" id="3A" role="385vvn">
@@ -895,7 +895,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="3B" role="39e2AY">
-          <ref role="39e2AS" node="3S" resolve="getFileExtension_Document" />
+          <ref role="39e2AS" node="0" resolve="Document_TextGen" />
         </node>
       </node>
     </node>

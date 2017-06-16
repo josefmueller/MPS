@@ -1273,7 +1273,7 @@
   </node>
   <node concept="39dXUE" id="6k">
     <node concept="39e2AJ" id="6l" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="6q" role="39e3Y0">
         <ref role="39e2AK" to="tpm0:hp5CS2F" resolve="Option" />
         <node concept="385nmt" id="6s" role="385vvn">
@@ -1292,7 +1292,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="6t" role="39e2AY">
-          <ref role="39e2AS" node="cQ" resolve="Option_PropertySupport" />
+          <ref role="39e2AS" node="aO" resolve="Option" />
         </node>
       </node>
       <node concept="39e2AG" id="6r" role="39e3Y0">
@@ -1313,7 +1313,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="6y" role="39e2AY">
-          <ref role="39e2AS" node="wQ" resolve="UseInTest_PropertySupport" />
+          <ref role="39e2AS" node="sQ" resolve="UseInTest" />
         </node>
       </node>
     </node>
@@ -1594,7 +1594,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="6n" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="7O" role="39e3Y0">
         <ref role="39e2AK" to="tpm0:hp5CS2F" resolve="Option" />
         <node concept="385nmt" id="7Q" role="385vvn">
@@ -1613,7 +1613,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="7R" role="39e2AY">
-          <ref role="39e2AS" node="aO" resolve="Option" />
+          <ref role="39e2AS" node="cQ" resolve="Option_PropertySupport" />
         </node>
       </node>
       <node concept="39e2AG" id="7P" role="39e3Y0">
@@ -1634,7 +1634,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="7W" role="39e2AY">
-          <ref role="39e2AS" node="sQ" resolve="UseInTest" />
+          <ref role="39e2AS" node="wQ" resolve="UseInTest_PropertySupport" />
         </node>
       </node>
     </node>

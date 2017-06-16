@@ -6107,7 +6107,7 @@
   </node>
   <node concept="39dXUE" id="zI">
     <node concept="39e2AJ" id="zJ" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="zO" role="39e3Y0">
         <ref role="39e2AK" to="tp5g:4xJw7BvdBf3" resolve="Level" />
         <node concept="385nmt" id="zP" role="385vvn">
@@ -6126,7 +6126,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="zQ" role="39e2AY">
-          <ref role="39e2AS" node="OQ" resolve="Level_PropertySupport" />
+          <ref role="39e2AS" node="Lq" resolve="Level" />
         </node>
       </node>
     </node>
@@ -6302,7 +6302,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="zL" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="$E" role="39e3Y0">
         <ref role="39e2AK" to="tp5g:4xJw7BvdBf3" resolve="Level" />
         <node concept="385nmt" id="$F" role="385vvn">
@@ -6321,7 +6321,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="$G" role="39e2AY">
-          <ref role="39e2AS" node="Lq" resolve="Level" />
+          <ref role="39e2AS" node="OQ" resolve="Level_PropertySupport" />
         </node>
       </node>
     </node>

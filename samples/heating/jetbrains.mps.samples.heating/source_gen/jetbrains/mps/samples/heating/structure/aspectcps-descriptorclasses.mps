@@ -1896,7 +1896,7 @@
   </node>
   <node concept="39dXUE" id="al">
     <node concept="39e2AJ" id="am" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="ar" role="39e3Y0">
         <ref role="39e2AK" to="vw7d:4p4E$Nw_8p$" resolve="DayDataType" />
         <node concept="385nmt" id="as" role="385vvn">
@@ -1915,7 +1915,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="at" role="39e2AY">
-          <ref role="39e2AS" node="8$" resolve="DayDataType_PropertySupport" />
+          <ref role="39e2AS" node="5q" resolve="DayDataType" />
         </node>
       </node>
     </node>
@@ -2070,7 +2070,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="ao" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="bb" role="39e3Y0">
         <ref role="39e2AK" to="vw7d:4p4E$Nw_8p$" resolve="DayDataType" />
         <node concept="385nmt" id="bc" role="385vvn">
@@ -2089,7 +2089,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="bd" role="39e2AY">
-          <ref role="39e2AS" node="5q" resolve="DayDataType" />
+          <ref role="39e2AS" node="8$" resolve="DayDataType_PropertySupport" />
         </node>
       </node>
     </node>

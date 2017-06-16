@@ -229,29 +229,32 @@
   </registry>
   <node concept="39dXUE" id="0">
     <node concept="39e2AJ" id="1" role="39e2AI">
-      <property role="39e3Y2" value="TextGenClass" />
+      <property role="39e3Y2" value="GetExtension" />
       <node concept="39e2AG" id="5" role="39e3Y0">
-        <ref role="39e2AK" to="povf:hZLk3K8" resolve="OutputNode_TextGen" />
-        <node concept="385nmt" id="7" role="385vvn">
-          <property role="385vuF" value="OutputNode_TextGen" />
-          <node concept="2$VJBW" id="9" role="385v07">
-            <property role="2$VJBR" value="1236704181256" />
-            <node concept="2x4n5u" id="a" role="3iCydw">
+        <ref role="39e2AK" to="povf:hZLkxnW" resolve="OutputRoot_TextGen" />
+        <node concept="385nmt" id="6" role="385vvn">
+          <property role="385vuF" value="OutputRoot_TextGen" />
+          <node concept="2$VJBW" id="8" role="385v07">
+            <property role="2$VJBR" value="1236704302588" />
+            <node concept="2x4n5u" id="9" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="b" role="2x4n5j">
+              <node concept="2V$Bhx" id="a" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="8" role="39e2AY">
-          <ref role="39e2AS" node="v" resolve="OutputNode_TextGen" />
+        <node concept="39e2AT" id="7" role="39e2AY">
+          <ref role="39e2AS" node="3H" resolve="getFileExtension_OutputRoot" />
         </node>
       </node>
-      <node concept="39e2AG" id="6" role="39e3Y0">
+    </node>
+    <node concept="39e2AJ" id="2" role="39e2AI">
+      <property role="39e3Y2" value="GetFilename" />
+      <node concept="39e2AG" id="b" role="39e3Y0">
         <ref role="39e2AK" to="povf:hZLkxnW" resolve="OutputRoot_TextGen" />
         <node concept="385nmt" id="c" role="385vvn">
           <property role="385vuF" value="OutputRoot_TextGen" />
@@ -269,37 +272,34 @@
           </node>
         </node>
         <node concept="39e2AT" id="d" role="39e2AY">
-          <ref role="39e2AS" node="1D" resolve="OutputRoot_TextGen" />
+          <ref role="39e2AS" node="3G" resolve="getFileName_OutputRoot" />
         </node>
       </node>
     </node>
-    <node concept="39e2AJ" id="2" role="39e2AI">
-      <property role="39e3Y2" value="GetFilename" />
+    <node concept="39e2AJ" id="3" role="39e2AI">
+      <property role="39e3Y2" value="TextGenClass" />
       <node concept="39e2AG" id="h" role="39e3Y0">
-        <ref role="39e2AK" to="povf:hZLkxnW" resolve="OutputRoot_TextGen" />
-        <node concept="385nmt" id="i" role="385vvn">
-          <property role="385vuF" value="OutputRoot_TextGen" />
-          <node concept="2$VJBW" id="k" role="385v07">
-            <property role="2$VJBR" value="1236704302588" />
-            <node concept="2x4n5u" id="l" role="3iCydw">
+        <ref role="39e2AK" to="povf:hZLk3K8" resolve="OutputNode_TextGen" />
+        <node concept="385nmt" id="j" role="385vvn">
+          <property role="385vuF" value="OutputNode_TextGen" />
+          <node concept="2$VJBW" id="l" role="385v07">
+            <property role="2$VJBR" value="1236704181256" />
+            <node concept="2x4n5u" id="m" role="3iCydw">
               <property role="2x4mPI" value="ConceptTextGenDeclaration" />
               <property role="2x4o5l" value="false" />
               <property role="2x4n5l" value="fqqnb33d" />
-              <node concept="2V$Bhx" id="m" role="2x4n5j">
+              <node concept="2V$Bhx" id="n" role="2x4n5j">
                 <property role="2V$B1T" value="b83431fe-5c8f-40bc-8a36-65e25f4dd253" />
                 <property role="2V$B1Q" value="jetbrains.mps.lang.textGen" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="39e2AT" id="j" role="39e2AY">
-          <ref role="39e2AS" node="3G" resolve="getFileName_OutputRoot" />
+        <node concept="39e2AT" id="k" role="39e2AY">
+          <ref role="39e2AS" node="v" resolve="OutputNode_TextGen" />
         </node>
       </node>
-    </node>
-    <node concept="39e2AJ" id="3" role="39e2AI">
-      <property role="39e3Y2" value="GetExtension" />
-      <node concept="39e2AG" id="n" role="39e3Y0">
+      <node concept="39e2AG" id="i" role="39e3Y0">
         <ref role="39e2AK" to="povf:hZLkxnW" resolve="OutputRoot_TextGen" />
         <node concept="385nmt" id="o" role="385vvn">
           <property role="385vuF" value="OutputRoot_TextGen" />
@@ -317,7 +317,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="p" role="39e2AY">
-          <ref role="39e2AS" node="3H" resolve="getFileExtension_OutputRoot" />
+          <ref role="39e2AS" node="1D" resolve="OutputRoot_TextGen" />
         </node>
       </node>
     </node>

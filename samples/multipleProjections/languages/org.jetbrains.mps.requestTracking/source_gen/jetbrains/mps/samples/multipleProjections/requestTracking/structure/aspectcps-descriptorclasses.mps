@@ -454,7 +454,7 @@
   </node>
   <node concept="39dXUE" id="1k">
     <node concept="39e2AJ" id="1l" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="1q" role="39e3Y0">
         <ref role="39e2AK" to="f4vt:3c1Y2R7PdzP" resolve="WorkflowPresentation" />
         <node concept="385nmt" id="1r" role="385vvn">
@@ -473,7 +473,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="1s" role="39e2AY">
-          <ref role="39e2AS" node="7N" resolve="WorkflowPresentation_PropertySupport" />
+          <ref role="39e2AS" node="63" resolve="WorkflowPresentation" />
         </node>
       </node>
     </node>
@@ -523,7 +523,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="1n" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="1G" role="39e3Y0">
         <ref role="39e2AK" to="f4vt:3c1Y2R7PdzP" resolve="WorkflowPresentation" />
         <node concept="385nmt" id="1H" role="385vvn">
@@ -542,7 +542,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="1I" role="39e2AY">
-          <ref role="39e2AS" node="63" resolve="WorkflowPresentation" />
+          <ref role="39e2AS" node="7N" resolve="WorkflowPresentation_PropertySupport" />
         </node>
       </node>
     </node>

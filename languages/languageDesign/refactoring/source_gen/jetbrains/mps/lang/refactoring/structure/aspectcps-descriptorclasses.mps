@@ -3975,7 +3975,7 @@
   </node>
   <node concept="39dXUE" id="mJ">
     <node concept="39e2AJ" id="mK" role="39e2AI">
-      <property role="39e3Y2" value="propertySupportClass" />
+      <property role="39e3Y2" value="javaClass" />
       <node concept="39e2AG" id="mP" role="39e3Y0">
         <ref role="39e2AK" to="tp1h:hAvmtdQ" resolve="RefactoringTargetKind_Enum" />
         <node concept="385nmt" id="mQ" role="385vvn">
@@ -3994,7 +3994,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="mR" role="39e2AY">
-          <ref role="39e2AS" node="yx" resolve="RefactoringTargetKind_Enum_PropertySupport" />
+          <ref role="39e2AS" node="vV" resolve="RefactoringTargetKind_Enum" />
         </node>
       </node>
     </node>
@@ -4107,7 +4107,7 @@
       </node>
     </node>
     <node concept="39e2AJ" id="mM" role="39e2AI">
-      <property role="39e3Y2" value="javaClass" />
+      <property role="39e3Y2" value="propertySupportClass" />
       <node concept="39e2AG" id="np" role="39e3Y0">
         <ref role="39e2AK" to="tp1h:hAvmtdQ" resolve="RefactoringTargetKind_Enum" />
         <node concept="385nmt" id="nq" role="385vvn">
@@ -4126,7 +4126,7 @@
           </node>
         </node>
         <node concept="39e2AT" id="nr" role="39e2AY">
-          <ref role="39e2AS" node="vV" resolve="RefactoringTargetKind_Enum" />
+          <ref role="39e2AS" node="yx" resolve="RefactoringTargetKind_Enum_PropertySupport" />
         </node>
       </node>
     </node>
