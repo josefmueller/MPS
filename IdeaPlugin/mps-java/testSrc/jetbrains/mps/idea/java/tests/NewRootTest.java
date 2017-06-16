@@ -20,18 +20,14 @@ import com.intellij.ide.projectView.impl.AbstractProjectViewPSIPane;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.Ref;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.projectView.TestProjectTreeStructure;
 import com.intellij.testFramework.PlatformTestUtil;
 import com.intellij.testFramework.TestActionEvent;
 import jetbrains.mps.idea.core.actions.NewRootAction;
 import jetbrains.mps.idea.core.actions.NewRootAction.Interaction;
-import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
@@ -39,7 +35,6 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.tests.DataMPSFixtureTestCase;
 import jetbrains.mps.idea.core.tests.TestDataContext;
 import jetbrains.mps.idea.java.Constants.ConceptNames;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vfs.IFile;
@@ -50,7 +45,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
-import java.util.Arrays;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -66,19 +61,9 @@ public class NewRootTest extends DataMPSFixtureTestCase {
     myStructure.setProviders(new MPSTreeStructureProvider());
   }
 
-
   @Override
-  protected void prepareTestData(MPSFacetConfiguration configuration, Module module) throws Exception {
-    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(module).getSourceRoots();
-    assertEquals(sourceRoots.length, 1);
-
-    VirtualFile sourceRoot = sourceRoots[0];
-    final IFile psiTestModel = copyResource(sourceRoot.getPath() + "/otherPsiTest.mps", "otherPsiTest.mps", "/tests/psiProject/models/jetbrains/mps/otherPsiTest.mps");
-
-    DefaultModelRoot root = new DefaultModelRoot();
-    root.setContentRoot(psiTestModel.getParent().getPath());
-    root.addFile(DefaultModelRoot.SOURCE_ROOTS, psiTestModel.getParent().getPath());
-    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
+  protected void preConfigureSourceRoot(IFile sourceRoot) throws IOException {
+    copyResource(sourceRoot.getDescendant("/otherPsiTest.mps"), "otherPsiTest.mps", "/tests/psiProject/models/jetbrains/mps/otherPsiTest.mps");
   }
 
   public void testCreateBLClass() {

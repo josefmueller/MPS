@@ -2,17 +2,12 @@ package jetbrains.mps.idea.java.tests;
 
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
-import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.tests.DataMPSFixtureTestCase;
 import jetbrains.mps.idea.java.index.ForeignIdReferenceIndex;
 import jetbrains.mps.idea.java.psi.ForeignIdReferenceCache;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
@@ -20,7 +15,7 @@ import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.Arrays;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -31,17 +26,8 @@ import java.util.List;
  */
 public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
   @Override
-  protected void prepareTestData(MPSFacetConfiguration configuration, Module module) throws Exception {
-    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(module).getSourceRoots();
-    assertEquals(sourceRoots.length, 1);
-
-    VirtualFile sourceRoot = sourceRoots[0];
-    final IFile psiTestModel = copyResource(sourceRoot.getPath() + "/psiTest.mps", "psiTest.mps", "/tests/psiProject/models/jetbrains/mps/psiTest.mps");
-
-    DefaultModelRoot root = new DefaultModelRoot();
-    root.setContentRoot(psiTestModel.getParent().getPath());
-    root.addFile(DefaultModelRoot.SOURCE_ROOTS, psiTestModel.getParent().getPath());
-    configuration.getBean().setModelRoots(Arrays.asList(root));
+  protected void preConfigureSourceRoot(IFile sourceRoot) throws IOException {
+    copyResource(sourceRoot.getDescendant("/psiTest.mps"), "psiTest.mps", "/tests/psiProject/models/jetbrains/mps/psiTest.mps");
   }
 
   @Override

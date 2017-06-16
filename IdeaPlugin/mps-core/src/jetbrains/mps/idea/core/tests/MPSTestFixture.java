@@ -22,6 +22,8 @@ import com.intellij.facet.FacetTypeRegistry;
 import com.intellij.facet.ModifiableFacetModel;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.testFramework.EdtTestUtil;
 import com.intellij.testFramework.PlatformTestUtil;
 import com.intellij.testFramework.builders.JavaModuleFixtureBuilder;
@@ -31,19 +33,26 @@ import com.intellij.testFramework.fixtures.TestFixtureBuilder;
 import com.intellij.testFramework.fixtures.impl.BaseFixture;
 import com.intellij.util.ThrowableRunnable;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.Reference;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
 
 import javax.swing.SwingUtilities;
 import java.io.File;
+import java.util.Collections;
 
 /**
  * User: shatalin
@@ -92,7 +101,6 @@ public class MPSTestFixture extends BaseFixture {
     if (myModule == null) {
       JavaModuleFixtureBuilder moduleFixtureBuilder = myProjectFixtureBuilder.addModule(JavaModuleFixtureBuilder.class);
       moduleFixtureBuilder.addSourceContentRoot(myCodeInsightTestFixture.getTempDirPath());
-      tuneModuleFixture(moduleFixtureBuilder);
       try {
         EdtTestUtil.runInEdtAndWait(() -> moduleFixtureBuilder.getFixture().setUp());
       } catch (Exception e) {
@@ -116,6 +124,25 @@ public class MPSTestFixture extends BaseFixture {
     return myMpsFacet;
   }
 
+  public void addDefaultModelRoot(MPSFacet facet) {
+    MPSConfigurationBean configurationBean = facet.getConfiguration().getBean();
+
+    IFile sourceRoot = getTheSourceRoot(facet);
+    DefaultModelRoot modelRoot = new DefaultModelRoot();
+    modelRoot.setContentDirectory(sourceRoot);
+    modelRoot.addSourceRoot(SourceRootKinds.SOURCES, new DefaultSourceRoot(sourceRoot.getPath(), sourceRoot));
+    configurationBean.setModelRoots(Collections.singleton(modelRoot));
+    facet.setConfiguration(configurationBean);
+  }
+
+  public IFile getTheSourceRoot(MPSFacet facet) {
+    VirtualFile[] ideaSourceRoots = ModuleRootManager.getInstance(facet.getModule()).getSourceRoots();
+    Assert.assertEquals(ideaSourceRoots.length, 1);
+    IFile sourceRoot = VirtualFileUtils.toIFile(ideaSourceRoots[0]);
+    Assert.assertNotNull(sourceRoot);
+    return sourceRoot;
+  }
+
   public MPSFacet addMpsFacet(Module module) {
     final FacetManager facetManager = FacetManager.getInstance(module);
     FacetType<MPSFacet, MPSFacetConfiguration> facetType = FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID);
@@ -123,8 +150,6 @@ public class MPSTestFixture extends BaseFixture {
     MPSFacet mpsFacet = facetManager.createFacet(facetType, "MPS", null);
 
     UIUtil.invokeAndWaitIfNeeded((Runnable) () -> {
-      MPSFacetConfiguration configuration = mpsFacet.getConfiguration();
-      preConfigureFacet(configuration, module);
       final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
       facetModel.addFacet(mpsFacet);
       ApplicationManager.getApplication().runWriteAction(facetModel::commit);
@@ -163,12 +188,6 @@ public class MPSTestFixture extends BaseFixture {
     while (!flag.get()) {
       PlatformTestUtil.dispatchAllInvocationEventsInIdeEventQueue();
     }
-  }
-
-  protected void preConfigureFacet(MPSFacetConfiguration configuration, Module module) {
-  }
-
-  protected void tuneModuleFixture(JavaModuleFixtureBuilder moduleFixtureBuilder) {
   }
 
   public String getTestDataPath() {

@@ -24,9 +24,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -39,18 +37,18 @@ import com.intellij.testFramework.MapDataContext;
 import com.intellij.testFramework.TestActionEvent;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.actions.MakeDirAModel;
-import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.LanguageImportHelper.Interaction;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.choose.ChooseByNameData;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -64,18 +62,8 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
   private VirtualFile myPackageDir;
 
   @Override
-  protected void prepareTestData(MPSFacetConfiguration configuration, Module module) throws Exception {
-    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(module).getSourceRoots();
-    assertEquals(sourceRoots.length, 1);
-
-    String sourceRootPath = sourceRoots[0].getPath();
-
-    DefaultModelRoot root = new DefaultModelRoot();
-    root.setContentRoot(sourceRootPath);
-    root.addFile(DefaultModelRoot.SOURCE_ROOTS, sourceRootPath);
-    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
-
-    myPackageDir = VfsUtil.createDirectories(sourceRootPath + "/com/jetbrains/pkg");
+  protected void postConfigureSourceRoot(IFile sourceRoot) throws IOException {
+    myPackageDir = VfsUtil.createDirectories(sourceRoot.getPath() + "/com/jetbrains/pkg");
   }
 
   protected void doTest(Interaction interaction) {
