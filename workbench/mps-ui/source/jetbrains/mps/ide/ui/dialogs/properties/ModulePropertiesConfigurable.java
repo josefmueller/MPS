@@ -1023,7 +1023,6 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     private JBCheckBox myGenerateTemplates;
     @ToRemove(version = 2017.2)
     private JBCheckBox myReflectiveQueries;
-    private final Map<MappingConfig_AbstractRef, GeneratorPrioritiesTree> myMappings = new java.util.HashMap<>();
     private JBTable myTable;
 
     public GeneratorAdvancesTab(Generator generator, GeneratorDependencyProvider depGenerators) {
@@ -1060,37 +1059,54 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myTable.setDefaultEditor(RuleType.class, new RuleTypeEditor());
 
       myTable.setDefaultRenderer(MappingConfig_AbstractRef.class, new TableCellRenderer() {
-        private GeneratorPrioritiesTree myCurrentTree = null;
+        private final Map<MappingConfig_AbstractRef, CheckboxTree> myMappingConf2TreeMap = new HashMap<>();
 
         @Override
         public Component getTableCellRendererComponent(final JTable table, Object value, boolean isSelected, boolean hasFocus, final int row,
-            final int column) {
-          if (value instanceof MappingConfig_AbstractRef) {
-            MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
+                                                       final int column) {
+          if (!(value instanceof MappingConfig_AbstractRef)) {
+            return null;
+          }
 
-            myCurrentTree = new GeneratorPrioritiesTree(myProject.getRepository(), myGenerator, mapping, column == 0, myDepGenerators.getGenerators());
-            myMappings.put(mapping, myCurrentTree);
+          MappingConfig_AbstractRef mapping = (MappingConfig_AbstractRef) value;
 
-            CheckedTreeNode rootNode = (CheckedTreeNode) myCurrentTree.getTree().getModel().getRoot();
+          // Tree to return
+          CheckboxTree checkboxTree;
+
+          // Use cache to avoid creating a lot of components
+          if (myMappingConf2TreeMap.containsKey(mapping)) {
+            checkboxTree = myMappingConf2TreeMap.get(mapping);
+          } else {
+            GeneratorPrioritiesTree generatorPrioritiesTree =
+                new GeneratorPrioritiesTree(myProject.getRepository(), myGenerator, mapping, column == 0, myDepGenerators.getGenerators());
+
+            CheckedTreeNode rootNode = (CheckedTreeNode) generatorPrioritiesTree.getTree().getModel().getRoot();
             rootNode = column == 0 ? (CheckedTreeNode) rootNode.getFirstChild() : rootNode;
             allChildrenChecked(rootNode);
             noCheckedChildren(rootNode);
 
-            CheckboxTree checkboxTree =
-                new CheckboxTree(GeneratorPrioritiesTree.getCheckboxTreeCellRenderer(false), rootNode, new CheckPolicy(true, true, false, true));
+            // Use new CheckboxTree instance instead of generatorPrioritiesTree.getTree(),
+            // because need different render and don't want to handle switching, when editing mapping configuration
+            checkboxTree = new CheckboxTree(GeneratorPrioritiesTree.getCheckboxTreeCellRenderer(false), rootNode, new CheckPolicy(true, true, false, true));
             checkboxTree.setRootVisible(true);
 
             GeneratorPrioritiesTree.expandAllRows(checkboxTree);
 
+            // TODO: find better solution: this introduces bug, when row can't be resized to smaller height
             table.setRowHeight(
                 row, Math.max(checkboxTree.getPreferredSize().height + 10, table.getRowHeight(row))
             );
 
-            checkboxTree.setBackground(isSelected && !hasFocus ? table.getSelectionBackground() : table.getBackground());
+            // Needed to set background color
+            checkboxTree.setOpaque(true);
 
-            return checkboxTree;
+            myMappingConf2TreeMap.put(mapping, checkboxTree);
           }
-          return null;
+
+          // We have to implement changing of background color, because we use custom render
+          checkboxTree.setBackground(isSelected && !hasFocus ? table.getSelectionBackground() : table.getBackground());
+
+          return checkboxTree;
         }
 
         private boolean allChildrenChecked(CheckedTreeNode node) {
