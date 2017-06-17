@@ -19,7 +19,10 @@ package jetbrains.mps.idea.java.tests;
 import com.intellij.codeInsight.daemon.impl.quickfix.ImportClassFix;
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInsight.intention.IntentionActionDelegate;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.testFramework.PlatformTestCase;
 import com.intellij.testFramework.fixtures.JavaCodeInsightTestFixture;
+import com.intellij.testFramework.fixtures.impl.TempDirTestFixtureImpl;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.tests.DataMPSFixtureTestCase;
 import jetbrains.mps.vfs.IFile;
@@ -31,6 +34,23 @@ import java.io.IOException;
  */
 public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
   private IFile javafile;
+  private TempDirTestFixtureImpl myTempDirTestFixture;
+
+  @Override
+  protected void setUp() throws Exception {
+    myTempDirTestFixture = new TempDirTestFixtureImpl();
+    myTempDirTestFixture.setUp();
+    VirtualFile tempDir = myTempDirTestFixture.getFile("");
+    assertNotNull(tempDir);
+    PlatformTestCase.synchronizeTempDirVfs(tempDir);
+    super.setUp();
+  }
+
+  @Override
+  protected void tearDown() throws Exception {
+    super.tearDown();
+    myTempDirTestFixture.tearDown();
+  }
 
   @Override
   protected void preConfigureSourceRoot(IFile sourceRoot) throws IOException {
@@ -43,8 +63,9 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
   @Override
   protected void postConfigureSourceRoot(IFile sourceRoot) throws IOException {
     copyResource(javafile = sourceRoot.getDescendant("/bl/test/Claz.java"), "Claz.java", "/tests/blProject/src/bl/test/Claz.java");
-    copyResource(sourceRoot.getFileSystem().getFile(getMpsFixture().getTestDataPath() + "/Claz.after.java"), "Claz.after.java", "/tests/blProject/src/bl/test/Claz.after.java");
-    copyResource(sourceRoot.getFileSystem().getFile(getMpsFixture().getTestDataPath() + "/ClazWithPerRootImport.after.java"), "ClazWithPerRootImport.after.java", "/tests/blProject/src/bl/test/ClazWithPerRootImport.after.java");
+    copyResource(sourceRoot.getFileSystem().getFile(myTempDirTestFixture.createFile("/Claz.after.java").getPath()), "Claz.after.java", "/tests/blProject/src/bl/test/Claz.after.java");
+    copyResource(sourceRoot.getFileSystem().getFile(myTempDirTestFixture.createFile("/ClazWithPerRootImport.after.java").getPath()), "ClazWithPerRootImport.after.java", "/tests/blProject/src/bl/test/ClazWithPerRootImport.after.java");
+    getMpsFixture().getCodeInsightTestFixture().setTestDataPath(myTempDirTestFixture.getTempDirPath());
   }
 
   @Override

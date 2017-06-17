@@ -43,7 +43,6 @@ import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -51,7 +50,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.junit.Assert;
 
 import javax.swing.SwingUtilities;
-import java.io.File;
 import java.util.Collections;
 
 /**
@@ -73,7 +71,6 @@ public class MPSTestFixture extends BaseFixture {
   public void setUp() throws Exception {
     super.setUp();
     myCodeInsightTestFixture.setUp();
-    myCodeInsightTestFixture.setTestDataPath(getTestDataPath());
     getModule();
     getMpsFacet();
     flushEDT();
@@ -188,14 +185,6 @@ public class MPSTestFixture extends BaseFixture {
     while (!flag.get()) {
       PlatformTestUtil.dispatchAllInvocationEventsInIdeEventQueue();
     }
-  }
-
-  public String getTestDataPath() {
-    return PathManager.getHomePath().replace(File.separatorChar, '/') + getBasePath();
-  }
-
-  protected String getBasePath() {
-    return "";
   }
 
   public JavaCodeInsightTestFixture getCodeInsightTestFixture() {
