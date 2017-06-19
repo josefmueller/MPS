@@ -27,6 +27,7 @@ import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
 import jetbrains.mps.ide.migration.wizard.MigrationSession.MigrationSessionBase;
 import jetbrains.mps.ide.migration.wizard.MigrationTask;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
@@ -35,7 +36,11 @@ import jetbrains.mps.testbench.junit.suites.TestMakeUtil;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
+import jetbrains.mps.util.Pair;
 import junit.framework.Assert;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.Processor;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -80,7 +85,28 @@ public class MigrationsTest {
 
       @Override
       public MigrationChecker getChecker() {
-        return new MigrationCheckerImpl(project, getMigrationRegistry());
+        //todo return a regular checker here
+        return new MigrationChecker() {
+          @Override
+          public void checkMigrations(ProgressMonitor m, Processor<ScriptApplied> processor) {
+
+          }
+
+          @Override
+          public void checkLibs(ProgressMonitor m, Processor<Pair<SModule, SModule>> processor) {
+
+          }
+
+          @Override
+          public void checkProject(ProgressMonitor m, Processor<Problem> processor) {
+
+          }
+
+          @Override
+          public void findNotMigrated(ProgressMonitor m, Iterable<ScriptApplied> toCheck, Processor<Problem> processor) {
+
+          }
+        };
       }
 
       @Override
