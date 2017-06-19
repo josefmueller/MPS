@@ -70,7 +70,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Configuration_Parameter:
         if (props_Configuration_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
           cpb.rawPresentation("configuration");
           props_Configuration_Parameter = cpb.create();
         }
