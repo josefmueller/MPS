@@ -19,6 +19,7 @@ import com.intellij.history.core.changes.ChangeSet;
 import com.intellij.history.integration.LocalHistoryImpl;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.migration.MigrationChecker;
+import jetbrains.mps.ide.migration.MigrationCheckerImpl;
 import jetbrains.mps.ide.migration.MigrationExecutor;
 import jetbrains.mps.ide.migration.MigrationRegistry;
 import jetbrains.mps.ide.migration.ScriptApplied;
@@ -78,7 +79,7 @@ public class MigrationsTest {
 
       @Override
       public MigrationChecker getChecker() {
-        return project.getComponent(MigrationChecker.class);
+        return new MigrationCheckerImpl(project, getMigrationRegistry());
       }
 
       @Override
