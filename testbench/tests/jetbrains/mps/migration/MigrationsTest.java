@@ -21,6 +21,7 @@ import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.migration.MigrationChecker;
 import jetbrains.mps.ide.migration.MigrationCheckerImpl;
 import jetbrains.mps.ide.migration.MigrationExecutor;
+import jetbrains.mps.ide.migration.MigrationExecutorImpl;
 import jetbrains.mps.ide.migration.MigrationRegistry;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.ide.migration.wizard.MigrationSession;
@@ -84,17 +85,7 @@ public class MigrationsTest {
 
       @Override
       public MigrationExecutor getExecutor() {
-        return new MigrationExecutor() {
-          @Override
-          public void executeModuleMigration(ScriptApplied sa) {
-            throw new UnsupportedOperationException();
-          }
-
-          @Override
-          public void executeProjectMigration(ProjectMigration pm) {
-            throw new UnsupportedOperationException();
-          }
-        };
+        return new MigrationExecutorImpl(project);
       }
 
       @Override
