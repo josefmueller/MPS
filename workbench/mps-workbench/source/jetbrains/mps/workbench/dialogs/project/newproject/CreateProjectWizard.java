@@ -63,7 +63,6 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -281,7 +280,7 @@ public class CreateProjectWizard extends DialogWrapper {
     myProjectPath.addPathChangedListener(newPathValue -> {
       //If path changed need to update specific module settings
       fireProjectPathChanged(newPathValue);
-      checkProjectPath(newPathValue);
+      checkSettings();
     });
 
     //Change project path if project name changed
@@ -345,9 +344,24 @@ public class CreateProjectWizard extends DialogWrapper {
                                          null, null));
   }
 
-  private void checkProjectPath(String newProjectPath) {
+  private void checkSettings() {
+    // Check that some Project Template is chosen
+    if (myCurrentTemplateItem == null) {
+      setOKActionEnabled(false);
+      setErrorText("Please, choose project template first");
+      if (myDescriptionPanel != null) {
+        myDescriptionPanel.setVisible(false);
+      }
+      if (myTemplateSettingsHolder != null) {
+        myTemplateSettingsHolder.setVisible(false);
+      }
+
+      return;
+    }
+
+    // Check that there is no other project at this project path
     boolean isProjectPath = false;
-    File file = new File(newProjectPath);
+    File file = new File(myProjectPath.getPath());
     if (file.exists()) {
       if (file.getParent() == null || !file.isDirectory()) {
         isProjectPath = false;
@@ -358,12 +372,15 @@ public class CreateProjectWizard extends DialogWrapper {
     }
     if (isProjectPath) {
       //show error and disable apply
-      setErrorText("Project under this path already exists!");
       getOKAction().setEnabled(false);
-    } else {
-      setErrorText(null);
-      getOKAction().setEnabled(true);
+      setErrorText("Project under this path already exists!");
+
+      return;
     }
+
+    // Reset OK action and error text states
+    getOKAction().setEnabled(true);
+    setErrorText(null);
   }
 
   private String getDefaultProjectName() {
@@ -391,8 +408,7 @@ public class CreateProjectWizard extends DialogWrapper {
   }
 
   private void updateRightPanel() {
-    setOKActionEnabled(myCurrentTemplateItem != null);
-    checkProjectPath(myProjectPath.getPath());
+    checkSettings();
 
     String description = myCurrentTemplateItem != null ? myCurrentTemplateItem.getDescription() : null;
     if (StringUtil.isNotEmpty(description)) {
