@@ -19,6 +19,7 @@ import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
@@ -33,6 +34,10 @@ import java.io.IOException;
 public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
 
   private NewLanguageSettings myLanguageSettings = new NewLanguageSettings();
+
+  public DefaultLanguageProjectTemplate() {
+    myLanguageSettings.setListener(this::fireSettingsChanged);
+  }
 
   @Nullable
   @Override
@@ -99,5 +104,11 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
   @Override
   public void setProjectPath(String projectPath) {
     myLanguageSettings.setProjectPath(projectPath);
+  }
+
+  @Nullable
+  @Override
+  public String checkSettings() {
+    return NewModuleUtil.check(null, MPSExtentions.DOT_LANGUAGE, myLanguageSettings.getModuleName(), myLanguageSettings.getModuleLocation());
   }
 }

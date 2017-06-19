@@ -28,6 +28,7 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SRepository;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
@@ -47,7 +48,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.persistence.MementoImpl;
@@ -135,7 +135,7 @@ public class NewModuleUtil {
     });
   }
 
-  public static String check(final SRepository repo, String extension, final String namespace, String rootPath) {
+  public static String check(@Nullable final SRepository repo, String extension, final String namespace, String rootPath) {
     if (MPSExtentions.DOT_LANGUAGE.equals(extension) && !(SourceVersion.isName(namespace))) {
       return "Language namespace should be valid Java package";
     }
@@ -149,11 +149,12 @@ public class NewModuleUtil {
     if (namespace.length() == 0) {
       return "Namespace should be specified";
     }
-    boolean duplicateName = new ModelAccessHelper(repo).runReadAction(new Computable<Boolean>() {
+    // If don't have repository then there are no duplicated module name 
+    boolean duplicateName = (repo == null ? false : new ModelAccessHelper(repo).runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         return new ModuleRepositoryFacade(repo).getModelByName(namespace) != null;
       }
-    });
+    }));
     if (duplicateName) {
       return "Module namespace already exists";
     }

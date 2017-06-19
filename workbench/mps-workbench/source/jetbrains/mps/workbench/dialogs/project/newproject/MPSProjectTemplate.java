@@ -51,10 +51,10 @@ public interface MPSProjectTemplate {
    * <p>
    * Allow to forbid user to create project will invalid settings.<br>
    * To do this, add validation code to this method and return text with error.<br>
-   * If no errors are found, than return {@code null}
+   * If no errors are found return {@code null}
    * </p>
    * <p>
-   * This method will be called on template choose in project creation wizard.
+   * This method will be called on template choose in project creation wizard and after new project path is transferred via {@link MPSProjectTemplate#setProjectPath(java.lang.String)}.
    * </p>
    * <p>
    * Force project creation wizard to check and update error message state after settings changes,<br>

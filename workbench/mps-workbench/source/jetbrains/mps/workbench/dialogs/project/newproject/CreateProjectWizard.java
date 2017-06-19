@@ -544,6 +544,7 @@ public class CreateProjectWizard extends DialogWrapper {
 
     void setNewProjectPath(String newValue) {
       myTemplate.setProjectPath(newValue);
+      checkSettings();
     }
   }
 }
