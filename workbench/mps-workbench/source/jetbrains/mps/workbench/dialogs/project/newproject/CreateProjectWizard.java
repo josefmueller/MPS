@@ -91,6 +91,7 @@ public class CreateProjectWizard extends DialogWrapper {
   private JPanel myTemplateSettings;
 
   private TemplateItem myCurrentTemplateItem = null;
+  private MPSProjectTemplate.MPSProjectTemplateListener myTemplateListener = () -> checkSettings();
 
   private ProjectFormatPanel myProjectFormatPanel = new ProjectFormatPanel();
 
@@ -245,7 +246,21 @@ public class CreateProjectWizard extends DialogWrapper {
     }));
 
     myList.getSelectionModel().addListSelectionListener(listSelectionEvent -> {
+      // If same element is chosen (after filtration), do nothing.
+      if (Objects.equals(myCurrentTemplateItem, myList.getSelectedValue())) {
+        return;
+      }
+
+      if (myCurrentTemplateItem != null) {
+        myCurrentTemplateItem.myTemplate.removeListener(myTemplateListener);
+      }
+
       myCurrentTemplateItem = (TemplateItem) myList.getSelectedValue();
+
+      if (myCurrentTemplateItem != null) {
+        myCurrentTemplateItem.myTemplate.addListener(myTemplateListener);
+      }
+
       updateRightPanel();
     });
 
@@ -374,6 +389,15 @@ public class CreateProjectWizard extends DialogWrapper {
       //show error and disable apply
       getOKAction().setEnabled(false);
       setErrorText("Project under this path already exists!");
+
+      return;
+    }
+
+    // Extension point for project template to check settings on template choose
+    if(myCurrentTemplateItem != null) {
+      final String errorText = myCurrentTemplateItem.myTemplate.checkSettings();
+      getOKAction().setEnabled(errorText == null);
+      setErrorText(errorText);
 
       return;
     }
