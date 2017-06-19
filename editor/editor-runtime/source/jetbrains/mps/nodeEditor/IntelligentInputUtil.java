@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.util.text.Matcher;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.editor.runtime.SideTransformInfoUtil;
 import jetbrains.mps.editor.runtime.commands.EditorComputable;
@@ -43,7 +42,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -92,7 +90,6 @@ public class IntelligentInputUtil {
         protected Predicate<SubstituteAction> createFilter(String pattern) {
           return action -> {
             String matchingText = action.getMatchingText(pattern);
-            pattern.equals(matchingText);
             return PatternUtil.matchesPattern(pattern, matchingText);
           };
         }
@@ -114,7 +111,6 @@ public class IntelligentInputUtil {
                 @Override
                 public Boolean compute(TypeCheckingContext context) {
                   if (myCell instanceof EditorCell_STHint) {
-                    EditorCell_STHint rtHintCell = (EditorCell_STHint) myCell;
                     return processSTHintCell();
                   }
 
@@ -512,20 +508,5 @@ public class IntelligentInputUtil {
     private EditorCell findNodeCell(EditorContext editorContext, SNode newNode) {
       return editorContext.getEditorComponent().findNodeCell(newNode);
     }
-
-
-    private static class StartsWithMatcher implements Matcher {
-      private String myPattern;
-
-      public StartsWithMatcher(String pattern) {
-        myPattern = pattern;
-      }
-
-      @Override
-      public boolean matches(@NotNull String name) {
-        return name.startsWith(myPattern);
-      }
-    }
-
   }
 }
