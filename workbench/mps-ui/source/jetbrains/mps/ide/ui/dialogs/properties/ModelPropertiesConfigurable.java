@@ -54,6 +54,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleInstanceCondition;
 import jetbrains.mps.project.Project;
@@ -83,6 +84,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
@@ -135,6 +137,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     // unless model dispatch proper change events (which it does not at the moment), and project pane
     // got no other means to find out it needs to update generation status
     myProject.getComponent(ModelGenerationStatusManager.class).invalidateData(Collections.singleton(myModelDescriptor));
+    new MissingDependenciesFixer(myModelDescriptor).fixModuleDependencies();
+
+    if (!(myModelDescriptor.getSource() instanceof NullDataSource)) {
+      ((EditableSModel) myModelDescriptor).save();
+    }
   }
 
   public class ModelCommonTab extends CommonTab {
