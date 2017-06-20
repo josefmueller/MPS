@@ -10,7 +10,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.watching.ReloadManager;
-import jetbrains.mps.migration.global.ProjectMigrationProperties;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;

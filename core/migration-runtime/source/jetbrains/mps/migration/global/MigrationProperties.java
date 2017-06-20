@@ -21,20 +21,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class MigrationProperties {
-  protected Map<String, String> myProperties = new TreeMap<String, String>();
-
-  public void setProperty(@NotNull String key, String value) {
-    if (value == null) {
-      myProperties.remove(key);
-      return;
-    }
-
-    myProperties.put(key, value);
-  }
+public interface MigrationProperties {
+  void setProperty(@NotNull String key, String value);
 
   @Nullable
-  public String getProperty(String key) {
-    return myProperties.get(key);
-  }
+  String getProperty(String key);
 }

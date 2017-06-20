@@ -24,7 +24,6 @@ import jetbrains.mps.core.platform.PlatformFactory;
 import jetbrains.mps.core.platform.PlatformOptionsBuilder;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.migration.MPSMigration;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -48,7 +47,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
  */
 public class MPSCoreComponents implements ApplicationComponent {
   private MPSBaseLanguage myBaseLanguage;
-  private MPSMigration myMigration;
   private Platform myPlatform;
 
   public MPSCoreComponents(IdeaFSComponent fsProvider,
@@ -68,16 +66,10 @@ public class MPSCoreComponents implements ApplicationComponent {
     myPlatform = PlatformFactory.initPlatform(PlatformOptionsBuilder.ALL);
     myBaseLanguage = new MPSBaseLanguage();
     myBaseLanguage.init();
-    // MPSMigration moved here from MPSCore as it is functionality built on top of core, rather than part of it.
-    // It has not been moved to Platform (PlatformBase along with generator and textgen) and lives here as its use from
-    // ant tasks bound to IdeaEnvironment, which has this ApplicationComponent initialized.
-    myMigration = new MPSMigration();
-    myMigration.init();
   }
 
   @Override
   public void disposeComponent() {
-    myMigration.dispose();
     myBaseLanguage.dispose();
     myPlatform.dispose();
   }

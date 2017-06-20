@@ -17,6 +17,7 @@ package jetbrains.mps.migration.global;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.util.annotation.ToRemove;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,40 +26,17 @@ import java.util.Map;
  * A storage for properties, which define the persistent state of project migrations
  * Default value is null. Null value is not distinguishable from not-set
  */
-public class MigrationPropertiesManager implements CoreComponent {
-  private static MigrationPropertiesManager INSTANCE;
+@Deprecated
+@ToRemove(version = 2017.2)
+//use project.getComponent(MigrationProperties.class) instead
+public class MigrationPropertiesManager {
+  private static MigrationPropertiesManager ourInstance = new MigrationPropertiesManager();
 
   public static MigrationPropertiesManager getInstance() {
-    return INSTANCE;
+    return ourInstance;
   }
-
-  @Override
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-
-    INSTANCE = this;
-  }
-
-  @Override
-  public void dispose() {
-    INSTANCE = null;
-  }
-
-  //----------
-
-  private Map<Project, MigrationProperties> contributors = new HashMap<Project, MigrationProperties>();
 
   public MigrationProperties getProperties(Project p) {
-    return contributors.get(p);
-  }
-
-  public void addProperties(Project p, MigrationProperties mp) {
-    contributors.put(p, mp);
-  }
-
-  public void removeProperties(Project p) {
-    contributors.remove(p);
+    return p.getComponent(MigrationProperties.class);
   }
 }
