@@ -177,12 +177,10 @@
     -->
     <applicationService serviceInterface="com.intellij.ide.PowerSaveMode"
                         serviceImplementation="com.intellij.ide.PowerSaveMode"/>
-    <!--
 
     <applicationService serviceInterface="com.intellij.util.download.DownloadableFileService"
                         serviceImplementation="com.intellij.util.download.impl.DownloadableFileServiceImpl"/>
 
-    -->
     <applicationService serviceInterface="com.intellij.psi.impl.DocumentCommitProcessor"
                         serviceImplementation="com.intellij.core.MockDocumentCommitProcessor"/>
     <!--
