@@ -436,7 +436,9 @@
   <!-- Use only one extension from  ImagesPlugin.xml and one appServ from XmlPlugin.xml-->
   <extensions defaultExtensionNs="com.intellij">
     <fileTypeFactory implementation="org.intellij.images.fileTypes.impl.ImageFileTypeManagerImpl" />
+    <!-- Copy paste from XmlPlugin.xml-->
     <applicationService serviceInterface="com.intellij.ide.browsers.BrowserLauncher" serviceImplementation="com.intellij.ide.browsers.BrowserLauncherImpl"/>
+    <applicationService serviceImplementation="com.intellij.ide.browsers.WebBrowserManager"/>
   </extensions>
   <!--
   <xi:include href="/META-INF/SpellCheckerPlugin.xml" xpointer="xpointer(/idea-plugin/*)">
