@@ -27,8 +27,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.migration.global.ProjectMigrationUtil;
+import jetbrains.mps.migration.global.ProjectMigration;
+import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectVersion;
@@ -145,7 +147,10 @@ public class ProjectFactory {
       return;
     }
     myCreatedProject.getComponent(MPSProjectVersion.class).setVersion(MPSProjectVersion.CURRENT);
-    ProjectMigrationUtil.skipMigrationsOnProjectCreation(myCreatedProject);
+
+    for (ProjectMigration m : ProjectMigrationsRegistry.getInstance().getMigrations()) {
+      m.applyToCreatedProject(ProjectHelper.toMPSProject(myCreatedProject));
+    }
 
     ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
     boolean opened = projectManager.openProject(myCreatedProject);
