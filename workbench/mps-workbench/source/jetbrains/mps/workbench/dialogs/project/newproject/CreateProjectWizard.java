@@ -374,6 +374,13 @@ public class CreateProjectWizard extends DialogWrapper {
       return;
     }
 
+    if (myProjectName.getText().isEmpty()) {
+      getOKAction().setEnabled(false);
+      setErrorText("Project name can not be empty");
+
+      return;
+    }
+
     // Check that there is no other project at this project path
     boolean isProjectPath = false;
     File file = new File(myProjectPath.getPath());
