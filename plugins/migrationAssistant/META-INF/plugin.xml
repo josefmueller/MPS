@@ -23,7 +23,6 @@
   <idea-version since-build="171.1" until-build="173.1"/>
 
   <depends>jetbrains.mps.core</depends>
-  <depends>jetbrains.mps.ide.modelchecker</depends>
 
   <actions>
     <group id="Migration" text="Migration" configurable="true" popup="true" compact="true">
