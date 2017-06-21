@@ -363,7 +363,7 @@ public class CreateProjectWizard extends DialogWrapper {
     // Check that some Project Template is chosen
     if (myCurrentTemplateItem == null) {
       setOKActionEnabled(false);
-      setErrorText("Please, choose project template first");
+      setErrorText("Project template need to be chosen");
       if (myDescriptionPanel != null) {
         myDescriptionPanel.setVisible(false);
       }
@@ -395,7 +395,7 @@ public class CreateProjectWizard extends DialogWrapper {
     if (isProjectPath) {
       //show error and disable apply
       getOKAction().setEnabled(false);
-      setErrorText("Project under this path already exists!");
+      setErrorText("Project under this path already exists");
 
       return;
     }
