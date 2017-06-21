@@ -53,29 +53,6 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, IOperationContext operationContext,
-      @Nullable CheckingNodeContext checkingNodeContext) {
-    return false;
-  }
-
-  @Override
-  public boolean canBeRoot(@NotNull SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
-    return false;
-  }
-
-  @Override
-  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
-      @Nullable CheckingNodeContext checkingNodeContext) {
-    return false;
-  }
-
-  @Override
-  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext operationContext,
-      @Nullable CheckingNodeContext checkingNodeContext) {
-    return false;
-  }
-
-  @Override
   public boolean canBeChild(@NotNull ConstraintContext_CanBeChild context, @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }

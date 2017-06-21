@@ -62,21 +62,6 @@ public final class ConstraintContext_CanBeAncestor {
     myLink = link;
   }
 
-  /**
-   * @deprecated Uses only for interoperability with legacy code.
-   *             Use {@link #ConstraintContext_CanBeAncestor(SNode, SNode)}}
-   *             or {@link #ConstraintContext_CanBeAncestor(SNode, SAbstractConcept, SNode, SContainmentLink)} instead.
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public ConstraintContext_CanBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept, @NotNull SNode parentNode, SNode link) {
-    myChildNode = childNode;
-    myParentNode = parentNode;
-    myNode = node;
-    myChildConcept = MetaAdapterByDeclaration.getConcept(childConcept);
-    myLink = link == null ? null : MetaAdapterByDeclaration.getContainmentLink(link);
-  }
-
   @Nullable
   public SNode getChildNode() {
     return myChildNode;
