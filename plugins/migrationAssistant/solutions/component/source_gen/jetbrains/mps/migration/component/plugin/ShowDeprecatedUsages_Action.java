@@ -21,7 +21,6 @@ import jetbrains.mps.migration.component.util.DeprecatedUtil;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.migration.check.MigrationOutputUtil;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import com.intellij.openapi.application.ModalityState;
 
@@ -67,7 +66,6 @@ public class ShowDeprecatedUsages_Action extends BaseAction {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            MigrationOutputUtil.showNodes(event.getData(CommonDataKeys.PROJECT), MultiTuple.<String,Set<SNode>>from("Deprecated library stuff", depLibs), MultiTuple.<String,Set<SNode>>from("Deprecated project stuff", depProj));
           }
         });
       }
