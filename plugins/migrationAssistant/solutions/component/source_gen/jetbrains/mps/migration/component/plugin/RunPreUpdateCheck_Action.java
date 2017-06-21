@@ -38,6 +38,7 @@ import jetbrains.mps.ide.migration.MigrationChecker;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.util.Processor;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.migration.global.MigrationProblemHandler;
 
 public class RunPreUpdateCheck_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -173,6 +174,7 @@ __switch__:
     if (ListSequence.fromList(problems).isEmpty()) {
       Messages.showMessageDialog(event.getData(CommonDataKeys.PROJECT), "No problems found.\nProject can be migrated", "Migration", null);
     } else {
+      event.getData(CommonDataKeys.PROJECT).getComponent(MigrationProblemHandler.class).showProblems(problems);
     }
   }
 }

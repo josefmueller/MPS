@@ -262,7 +262,6 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationExecutorImpl" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
     <classNode dependClassName="jetbrains.mps.ide.migration.ProjectMigrationProperties" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.check.MigrationOutputUtil" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationError" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationSession" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationWizard" />
@@ -280,6 +279,7 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationOptions" />
+    <classNode dependClassName="jetbrains.mps.migration.global.MigrationProblemHandler" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModuleBase" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />

@@ -2177,7 +2177,7 @@
                             <property role="TrG5h" value="problems" />
                             <property role="3TUv4t" value="false" />
                             <node concept="_YKpA" id="1548xle07d6" role="1tU5fm">
-                              <node concept="3uibUv" id="1548xle07d7" role="_ZDj9">
+                              <node concept="3uibUv" id="3_S1WmRLrg_" role="_ZDj9">
                                 <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
                               </node>
                             </node>
@@ -2289,15 +2289,24 @@
                                     </node>
                                     <node concept="1QHqEC" id="1548xle07dN" role="1QHqEI">
                                       <node concept="3clFbS" id="1548xle07dO" role="1bW5cS">
-                                        <node concept="3clFbF" id="1548xle07dP" role="3cqZAp">
-                                          <node concept="2YIFZM" id="1548xle07dQ" role="3clFbG">
-                                            <ref role="1Pybhc" to="t99v:5$zfhXzsScF" resolve="MigrationOutputUtil" />
-                                            <ref role="37wK5l" to="t99v:5$zfhXzsSdf" resolve="showProblems" />
-                                            <node concept="37vLTw" id="1548xle07dR" role="37wK5m">
-                                              <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
+                                        <node concept="3clFbF" id="3_S1WmRLfef" role="3cqZAp">
+                                          <node concept="2OqwBi" id="3_S1WmRLivw" role="3clFbG">
+                                            <node concept="2OqwBi" id="3_S1WmRLfXF" role="2Oq$k0">
+                                              <node concept="37vLTw" id="3_S1WmRLfed" role="2Oq$k0">
+                                                <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
+                                              </node>
+                                              <node concept="liA8E" id="3_S1WmRLgYy" role="2OqNvi">
+                                                <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                                                <node concept="3VsKOn" id="3_S1WmRLhV$" role="37wK5m">
+                                                  <ref role="3VsUkX" to="bdll:~MigrationProblemHandler" resolve="MigrationProblemHandler" />
+                                                </node>
+                                              </node>
                                             </node>
-                                            <node concept="37vLTw" id="1548xle07dS" role="37wK5m">
-                                              <ref role="3cqZAo" node="1548xle07d5" resolve="problems" />
+                                            <node concept="liA8E" id="3_S1WmRLjrv" role="2OqNvi">
+                                              <ref role="37wK5l" to="bdll:~MigrationProblemHandler.showProblems(java.util.Collection):void" resolve="showProblems" />
+                                              <node concept="37vLTw" id="1548xle07dS" role="37wK5m">
+                                                <ref role="3cqZAo" node="1548xle07d5" resolve="problems" />
+                                              </node>
                                             </node>
                                           </node>
                                         </node>

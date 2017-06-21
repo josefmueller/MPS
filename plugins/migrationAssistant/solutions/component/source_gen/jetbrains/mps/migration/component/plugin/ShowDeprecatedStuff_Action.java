@@ -16,7 +16,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.migration.component.util.DeprecatedUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
+import jetbrains.mps.migration.global.MigrationProblemHandler;
 import com.intellij.openapi.application.ModalityState;
 
 public class ShowDeprecatedStuff_Action extends BaseAction {
@@ -57,6 +59,9 @@ public class ShowDeprecatedStuff_Action extends BaseAction {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
+            Map<String, Set<SNode>> result = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
+            MapSequence.fromMap(result).put("Deprecated stuff in project", dep);
+            event.getData(CommonDataKeys.PROJECT).getComponent(MigrationProblemHandler.class).showNodes(result);
           }
         });
       }

@@ -45,6 +45,7 @@ import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.migration.global.MigrationProblemHandler;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.Application;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -323,6 +324,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
             public void run() {
               myMpsProject.getRepository().getModelAccess().runReadAction(new Runnable() {
                 public void run() {
+                  myProject.getComponent(MigrationProblemHandler.class).showProblems(problems.value);
                 }
               });
             }
