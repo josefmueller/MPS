@@ -1182,18 +1182,22 @@
       <ref role="tU$_T" node="3x0JEQldoed" resolve="FlyingActions" />
     </node>
     <node concept="ftmFs" id="h$fDtuE" role="ftER_">
-      <node concept="tCFHf" id="hGATx2l" role="ftvYc">
-        <ref role="tCJdB" node="hGASdEV" resolve="SetVirtualFolder" />
+      <node concept="10WQ6h" id="6nfhHi_rKIZ" role="ftvYc">
+        <property role="TrG5h" value="analyze" />
       </node>
       <node concept="2a7GMi" id="hyeryDK" role="ftvYc" />
       <node concept="tCFHf" id="i3MDVEW" role="ftvYc">
         <ref role="tCJdB" node="i3M_Wbp" resolve="DeleteModules" />
       </node>
-      <node concept="10WQ6h" id="6nfhHi_rKIZ" role="ftvYc">
-        <property role="TrG5h" value="analyze" />
-      </node>
       <node concept="tCFHf" id="hZikZN5" role="ftvYc">
         <ref role="tCJdB" node="hZikFSU" resolve="CopyModuleName" />
+      </node>
+      <node concept="2a7GMi" id="3rwiiuCqRFv" role="ftvYc" />
+      <node concept="tCFHf" id="hGATx2l" role="ftvYc">
+        <ref role="tCJdB" node="hGASdEV" resolve="SetVirtualFolder" />
+      </node>
+      <node concept="tCFHf" id="3rwiiuCqRGR" role="ftvYc">
+        <ref role="tCJdB" node="3fhZBTge84q" resolve="RenameModule" />
       </node>
       <node concept="2a7GMi" id="2atlPoXHHNq" role="ftvYc" />
       <node concept="10WQ6h" id="6gJrPYfWco5" role="ftvYc">
