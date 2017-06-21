@@ -21,10 +21,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
-public class RenameNamespace_Action extends BaseAction {
+public class RenameVirtualFolder_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public RenameNamespace_Action() {
+  public RenameVirtualFolder_Action() {
     super("Rename", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
@@ -35,7 +35,7 @@ public class RenameNamespace_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane(_params) != null && !(((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isFinalName());
+    return ((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof NamespaceTextNode && RenameVirtualFolder_Action.this.getProjectPane(_params) != null && !(((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isFinalName());
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -85,7 +85,7 @@ public class RenameNamespace_Action extends BaseAction {
         for (SModule module : ListSequence.fromList(node.getModulesUnder())) {
           ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(module, newFolder.value);
         }
-        RenameNamespace_Action.this.getProjectPane(_params).rebuild();
+        RenameVirtualFolder_Action.this.getProjectPane(_params).rebuild();
       }
     });
   }

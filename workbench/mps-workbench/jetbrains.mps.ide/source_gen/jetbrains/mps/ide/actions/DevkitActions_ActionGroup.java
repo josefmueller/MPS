@@ -16,7 +16,7 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
     super("DevkitActions", ID);
     this.setIsInternal(false);
     this.setPopup(false);
-    DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action");
+    DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetVirtualFolder_Action");
     DevkitActions_ActionGroup.this.addSeparator();
     DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action");
     {

@@ -17,10 +17,10 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.ui.Messages;
 
-public class SetModuleFolder_Action extends BaseAction {
+public class SetVirtualFolder_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public SetModuleFolder_Action() {
+  public SetVirtualFolder_Action() {
     super("Set Virtual Folder", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);

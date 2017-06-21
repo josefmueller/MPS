@@ -42,8 +42,8 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.RenameFileOrDirectory_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RenameModel_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RenameModule_Action", getShortcut("shift F6"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.RenameNamespace_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RenamePackage_Action", getShortcut("shift F6"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.RenameVirtualFolder_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SafeDelete_Action", getShortcut("alt DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.actions.SetBookmarkNoNumber_Action", getShortcut(" F11"));
     addSimpleShortcut("jetbrains.mps.ide.actions.ShowBookmarksDialog_Action", getShortcut("shift F11"));

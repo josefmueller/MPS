@@ -56,7 +56,7 @@ public class CommonModuleActions_ActionGroup extends GeneratedActionGroup {
     }
     CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
     CommonModuleActions_ActionGroup.this.addSeparator();
-    CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action");
+    CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetVirtualFolder_Action");
     {
       LabelledAnchor action = new LabelledAnchor(CommonModuleActions_ActionGroup.LABEL_ID_refactoring);
       ActionManagerEx manager = ActionManagerEx.getInstanceEx();

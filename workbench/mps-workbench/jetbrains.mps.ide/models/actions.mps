@@ -1183,7 +1183,7 @@
     </node>
     <node concept="ftmFs" id="h$fDtuE" role="ftER_">
       <node concept="tCFHf" id="hGATx2l" role="ftvYc">
-        <ref role="tCJdB" node="hGASdEV" resolve="SetModuleFolder" />
+        <ref role="tCJdB" node="hGASdEV" resolve="SetVirtualFolder" />
       </node>
       <node concept="2a7GMi" id="hyeryDK" role="ftvYc" />
       <node concept="tCFHf" id="i3MDVEW" role="ftvYc">
@@ -4501,7 +4501,7 @@
   </node>
   <node concept="sE7Ow" id="hGASdEV">
     <property role="fJN8o" value="true" />
-    <property role="TrG5h" value="SetModuleFolder" />
+    <property role="TrG5h" value="SetVirtualFolder" />
     <property role="2uzpH1" value="Set Virtual Folder" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
     <property role="1teQrl" value="true" />
@@ -5071,7 +5071,7 @@
               </node>
               <node concept="2JFkCU" id="7TSspuybRl" role="3cqZAp">
                 <node concept="tCFHf" id="7TSspuybRn" role="2JFLmv">
-                  <ref role="tCJdB" node="7TSspuy9Ap" resolve="RenameNamespace" />
+                  <ref role="tCJdB" node="7TSspuy9Ap" resolve="RenameVirtualFolder" />
                 </node>
               </node>
             </node>
@@ -9648,7 +9648,7 @@
     </node>
   </node>
   <node concept="sE7Ow" id="7TSspuy9Ap">
-    <property role="TrG5h" value="RenameNamespace" />
+    <property role="TrG5h" value="RenameVirtualFolder" />
     <property role="2uzpH1" value="Rename" />
     <property role="3GE5qa" value="Menu.ProjectPane.Packages.Actions" />
     <property role="72QZ$" value="true" />
@@ -23014,7 +23014,7 @@
       </node>
     </node>
     <node concept="Zd509" id="5iOAkPG8CVy" role="Zd508">
-      <ref role="1bYAoF" node="7TSspuy9Ap" resolve="RenameNamespace" />
+      <ref role="1bYAoF" node="7TSspuy9Ap" resolve="RenameVirtualFolder" />
       <node concept="pLAjd" id="5iOAkPG8CV$" role="Zd501">
         <property role="pLAjc" value="shift" />
         <property role="pLAjf" value="VK_F6" />
@@ -23827,7 +23827,7 @@
       </node>
       <node concept="2a7GMi" id="miYJQAr2Uz" role="ftvYc" />
       <node concept="tCFHf" id="miYJQAr2U_" role="ftvYc">
-        <ref role="tCJdB" node="hGASdEV" resolve="SetModuleFolder" />
+        <ref role="tCJdB" node="hGASdEV" resolve="SetVirtualFolder" />
       </node>
       <node concept="10WQ6h" id="miYJQAr2UA" role="ftvYc">
         <property role="TrG5h" value="refactoring" />
@@ -32657,7 +32657,7 @@
         <ref role="tCJdB" node="2Fydl1EdN_l" resolve="ShowDependenciesInViewer" />
       </node>
       <node concept="tCFHf" id="4tZNbTvQcLN" role="ftvYc">
-        <ref role="tCJdB" node="7TSspuy9Ap" resolve="RenameNamespace" />
+        <ref role="tCJdB" node="7TSspuy9Ap" resolve="RenameVirtualFolder" />
       </node>
       <node concept="tCFHf" id="4tZNbTvQiDW" role="ftvYc">
         <ref role="tCJdB" node="185rHHJdnAu" resolve="ShowInDependenciesViewer" />
