@@ -10,19 +10,18 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
-import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import javax.swing.JOptionPane;
+import com.intellij.openapi.ui.Messages;
 
 public class SetModuleFolder_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public SetModuleFolder_Action() {
-    super("Set Folder", "", ICON);
+    super("Set Virtual Folder", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
@@ -42,13 +41,6 @@ public class SetModuleFolder_Action extends BaseAction {
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
-    }
-    {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
-      if (p == null) {
-        return false;
-      }
     }
     {
       Project p = event.getData(CommonDataKeys.PROJECT);
@@ -77,7 +69,7 @@ public class SetModuleFolder_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
     String oldFolder = ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).getFolderFor(((SModule) MapSequence.fromMap(_params).get("module")));
-    final Wrappers._T<String> newFolder = new Wrappers._T<String>(JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter new folder", oldFolder));
+    final Wrappers._T<String> newFolder = new Wrappers._T<String>(Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Enter new virtual folder name", "New Vitual folder", Messages.getQuestionIcon(), oldFolder, null));
     ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         if (newFolder.value != null) {

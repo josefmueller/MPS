@@ -4502,7 +4502,7 @@
   <node concept="sE7Ow" id="hGASdEV">
     <property role="fJN8o" value="true" />
     <property role="TrG5h" value="SetModuleFolder" />
-    <property role="2uzpH1" value="Set Folder" />
+    <property role="2uzpH1" value="Set Virtual Folder" />
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
     <property role="1teQrl" value="true" />
     <property role="72QZ$" value="true" />
@@ -4560,21 +4560,29 @@
           <node concept="3cpWsn" id="hGASHw2" role="3cpWs9">
             <property role="TrG5h" value="newFolder" />
             <node concept="17QB3L" id="hP3nDsf" role="1tU5fm" />
-            <node concept="2YIFZM" id="hGASRx5" role="33vP2m">
-              <ref role="37wK5l" to="dxuu:~JOptionPane.showInputDialog(java.awt.Component,java.lang.Object,java.lang.Object):java.lang.String" resolve="showInputDialog" />
-              <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-              <node concept="2OqwBi" id="hGASVLp" role="37wK5m">
-                <node concept="2WthIp" id="hGASVLq" role="2Oq$k0" />
-                <node concept="1DTwFV" id="hHNVdbM" role="2OqNvi">
-                  <ref role="2WH_rO" node="hHNVbEd" resolve="frame" />
+            <node concept="2YIFZM" id="5iOAkPG7zSD" role="33vP2m">
+              <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+              <ref role="37wK5l" to="jkm4:~Messages.showInputDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon,java.lang.String,com.intellij.openapi.ui.InputValidator):java.lang.String" resolve="showInputDialog" />
+              <node concept="2OqwBi" id="5iOAkPG7_rY" role="37wK5m">
+                <node concept="2WthIp" id="5iOAkPG7_s1" role="2Oq$k0" />
+                <node concept="1DTwFV" id="5iOAkPG7_s3" role="2OqNvi">
+                  <ref role="2WH_rO" node="6oBe0ilSkdc" resolve="ideaProject" />
                 </node>
               </node>
-              <node concept="Xl_RD" id="hGASX30" role="37wK5m">
-                <property role="Xl_RC" value="Enter new folder" />
+              <node concept="Xl_RD" id="5iOAkPG7zSH" role="37wK5m">
+                <property role="Xl_RC" value="Enter new virtual folder name" />
               </node>
-              <node concept="37vLTw" id="3GM_nagTrAj" role="37wK5m">
+              <node concept="Xl_RD" id="5iOAkPG7JG9" role="37wK5m">
+                <property role="Xl_RC" value="New Vitual folder" />
+              </node>
+              <node concept="2YIFZM" id="5iOAkPG7TCl" role="37wK5m">
+                <ref role="37wK5l" to="jkm4:~Messages.getQuestionIcon():javax.swing.Icon" resolve="getQuestionIcon" />
+                <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+              </node>
+              <node concept="37vLTw" id="5iOAkPG7zSI" role="37wK5m">
                 <ref role="3cqZAo" node="hGASCgn" resolve="oldFolder" />
               </node>
+              <node concept="10Nm6u" id="5iOAkPG7WDk" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -4716,11 +4724,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="1DS2jV" id="hHNVbEd" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="7HZe2EwZDj3" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="6oBe0ilSkdc" role="1NuT2Z">
       <property role="TrG5h" value="ideaProject" />
@@ -9655,15 +9658,15 @@
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
       <node concept="1oajcY" id="7HZe2EwZDoD" role="1oa70y" />
     </node>
-    <node concept="1DS2jV" id="7TSspuy9At" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="7HZe2EwZDkp" role="1oa70y" />
-    </node>
     <node concept="1DS2jV" id="7TSspuy9Av" role="1NuT2Z">
       <property role="TrG5h" value="treeNode" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.TREE_NODE" resolve="TREE_NODE" />
       <node concept="1oajcY" id="7HZe2EwZDlN" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="5iOAkPG8zMo" role="1NuT2Z">
+      <property role="TrG5h" value="ideaProject" />
+      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+      <node concept="1oajcY" id="5iOAkPG8zMp" role="1oa70y" />
     </node>
     <node concept="tnohg" id="7TSspuy9Aq" role="tncku">
       <node concept="3clFbS" id="7TSspuy9Ar" role="2VODD2">
@@ -9692,26 +9695,31 @@
           <node concept="3cpWsn" id="7TSspuy9AH" role="3cpWs9">
             <property role="TrG5h" value="newFolder" />
             <node concept="17QB3L" id="7TSspuy9AI" role="1tU5fm" />
-            <node concept="2YIFZM" id="7TSspuy9Bv" role="33vP2m">
-              <ref role="37wK5l" to="dxuu:~JOptionPane.showInputDialog(java.awt.Component,java.lang.Object,java.lang.Object):java.lang.String" resolve="showInputDialog" />
-              <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-              <node concept="2OqwBi" id="7TSspuy9Bw" role="37wK5m">
-                <node concept="2WthIp" id="7TSspuy9Bx" role="2Oq$k0" />
-                <node concept="1DTwFV" id="7TSspuy9By" role="2OqNvi">
-                  <ref role="2WH_rO" node="7TSspuy9At" resolve="frame" />
+            <node concept="2YIFZM" id="5iOAkPG8Cfj" role="33vP2m">
+              <ref role="37wK5l" to="jkm4:~Messages.showInputDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon,java.lang.String,com.intellij.openapi.ui.InputValidator):java.lang.String" resolve="showInputDialog" />
+              <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+              <node concept="2OqwBi" id="5iOAkPG8Cfk" role="37wK5m">
+                <node concept="2WthIp" id="5iOAkPG8Cfl" role="2Oq$k0" />
+                <node concept="1DTwFV" id="5iOAkPG8Cfm" role="2OqNvi">
+                  <ref role="2WH_rO" node="5iOAkPG8zMo" resolve="ideaProject" />
                 </node>
               </node>
-              <node concept="Xl_RD" id="7TSspuy9Bz" role="37wK5m">
-                <property role="Xl_RC" value="Enter New Folder" />
+              <node concept="Xl_RD" id="5iOAkPG8Cfn" role="37wK5m">
+                <property role="Xl_RC" value="Rename virtual folder" />
               </node>
-              <node concept="2OqwBi" id="7TSspuy9B$" role="37wK5m">
-                <node concept="37vLTw" id="3GM_nagTyXX" role="2Oq$k0">
+              <node concept="Xl_RD" id="5iOAkPG8Cfo" role="37wK5m">
+                <property role="Xl_RC" value="Rename" />
+              </node>
+              <node concept="10Nm6u" id="5iOAkPG8Cfp" role="37wK5m" />
+              <node concept="2OqwBi" id="5iOAkPG8Cfq" role="37wK5m">
+                <node concept="37vLTw" id="5iOAkPG8Cfr" role="2Oq$k0">
                   <ref role="3cqZAo" node="7TSspuy9B5" resolve="node" />
                 </node>
-                <node concept="liA8E" id="7TSspuy9BA" role="2OqNvi">
+                <node concept="liA8E" id="5iOAkPG8Cfs" role="2OqNvi">
                   <ref role="37wK5l" to="kxvg:~NamespaceTextNode.getName():java.lang.String" resolve="getName" />
                 </node>
               </node>
+              <node concept="10Nm6u" id="5iOAkPG8Cft" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -23003,6 +23011,13 @@
       <node concept="pLAjd" id="64AN2EWtFZw" role="Zd501">
         <property role="pLAjf" value="VK_F6" />
         <property role="pLAjc" value="shift" />
+      </node>
+    </node>
+    <node concept="Zd509" id="5iOAkPG8CVy" role="Zd508">
+      <ref role="1bYAoF" node="7TSspuy9Ap" resolve="RenameNamespace" />
+      <node concept="pLAjd" id="5iOAkPG8CV$" role="Zd501">
+        <property role="pLAjc" value="shift" />
+        <property role="pLAjf" value="VK_F6" />
       </node>
     </node>
     <node concept="Zd509" id="6YK8y67rteX" role="Zd508">
