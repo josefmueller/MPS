@@ -22,7 +22,7 @@
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="171.1" until-build="173.1"/>
 
-  <depends optional="true">jetbrains.mps.core</depends> <!-- this is for publishing to idea-mps as-is -->
+  <depends>jetbrains.mps.core</depends>
   <depends>jetbrains.mps.ide.modelchecker</depends>
 
   <actions>
