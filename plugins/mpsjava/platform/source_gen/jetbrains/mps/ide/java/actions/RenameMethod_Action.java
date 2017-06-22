@@ -84,7 +84,7 @@ public class RenameMethod_Action extends BaseAction {
     final RenameMethodDialog d = new RenameMethodDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), oldName.value);
     d.show();
 
-    final String newName = d.getName();
+    final String newName = d.getResultValue();
     if (newName == null) {
       return;
     }

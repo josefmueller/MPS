@@ -5,15 +5,15 @@ package jetbrains.mps.ide.platform.refactoring;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import com.intellij.ui.components.JBTextField;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import com.intellij.ui.components.JBPanel;
 import java.awt.GridBagLayout;
-import javax.swing.BorderFactory;
-import com.intellij.util.ui.UIUtil;
 import java.awt.GridBagConstraints;
-import java.awt.Insets;
+import com.intellij.util.ui.JBUI;
 import com.intellij.ui.DocumentAdapter;
 import javax.swing.event.DocumentEvent;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -21,7 +21,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 public class StringChooserDialog extends RefactoringDialog {
   protected JPanel myPanel;
   protected JLabel myLabel = new JLabel();
-  protected JTextField myTextField = new JTextField();
+  protected JTextField myTextField = new JBTextField();
   private String myResultString;
   private String myInitValue;
 
@@ -36,7 +36,6 @@ public class StringChooserDialog extends RefactoringDialog {
       myTextField.setSelectionEnd(myInitValue.length());
     }
     myLabel.setText(labelText);
-    setHorizontalStretch(2.0f);
   }
 
   @Nullable
@@ -52,28 +51,26 @@ public class StringChooserDialog extends RefactoringDialog {
 
   @Override
   protected JComponent createNorthPanel() {
-    this.myPanel = new JPanel(new GridBagLayout());
-    myPanel.setBorder(BorderFactory.createLineBorder(UIUtil.getBorderColor()));
+    this.myPanel = new JBPanel(new GridBagLayout());
+    GridBagConstraints gbConstraints = new GridBagConstraints();
 
-    GridBagConstraints c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = 0;
-    c.weightx = 0;
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
-    c.insets = new Insets(4, 8, 8, 8);
-    myPanel.add(myLabel, c);
+    gbConstraints.insets = JBUI.insetsBottom(4);
+    gbConstraints.weighty = 0;
+    gbConstraints.weightx = 1;
+    gbConstraints.gridwidth = GridBagConstraints.REMAINDER;
+    gbConstraints.fill = GridBagConstraints.BOTH;
+    myPanel.add(myLabel, gbConstraints);
 
-    c = new GridBagConstraints();
+    gbConstraints = new GridBagConstraints();
 
-    c.fill = GridBagConstraints.HORIZONTAL;
-    c.gridx = 0;
-    c.gridy = 1;
-    c.weightx = 1;
-    c.weighty = 1;
-    c.insets = new Insets(4, 8, 4, 8);
+    gbConstraints.insets = JBUI.insetsBottom(8);
+    gbConstraints.gridwidth = 2;
+    gbConstraints.fill = GridBagConstraints.BOTH;
+    gbConstraints.weightx = 1;
+    gbConstraints.gridx = 0;
+    gbConstraints.weighty = 1;
+    myPanel.add(myTextField, gbConstraints);
 
-    c.anchor = GridBagConstraints.FIRST_LINE_START;
-    myPanel.add(myTextField, c);
     myTextField.getDocument().addDocumentListener(new DocumentAdapter() {
       protected void textChanged(DocumentEvent e) {
         validateValue();
@@ -81,7 +78,6 @@ public class StringChooserDialog extends RefactoringDialog {
     });
 
     return myPanel;
-
   }
 
   private void validateValue() {

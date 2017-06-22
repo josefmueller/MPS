@@ -11,7 +11,7 @@ public class RenameDialog extends StringChooserDialog {
   private static String REFACTORING_NAME = RefactoringBundle.message("rename.title");
 
   public RenameDialog(@NotNull Project project, String oldName, String nodeType) {
-    super(project, REFACTORING_NAME, "Rename " + nodeType, oldName);
+    super(project, REFACTORING_NAME, RefactoringBundle.message("rename.0.and.its.usages.to", String.format("%s '%s'", nodeType, oldName)), oldName);
   }
 
   /**
