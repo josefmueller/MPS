@@ -1,0 +1,15 @@
+<idea-plugin>
+  <id>jetbrains.mps.ide.migration.idea</id>
+  <name>Migration Support for Idea</name>
+  <description>Migration Support for Idea Plugin</description>
+  <version>2017.2</version>
+  <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
+  <idea-version since-build="171.1" until-build="173.1"/>
+
+  <application-components>
+    <component>
+      <interface-class>jetbrains.mps.migration.global.MigrationProblemHandler</interface-class>
+      <implementation-class>jetbrains.mps.migration.idea.PluginMigrationProblemHandler</implementation-class>
+    </component>
+  </application-components>
+</idea-plugin>
