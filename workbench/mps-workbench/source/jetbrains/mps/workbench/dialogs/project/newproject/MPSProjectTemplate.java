@@ -49,7 +49,7 @@ public interface MPSProjectTemplate {
 
   /**
    * <p>
-   * Allow to forbid user to create project will invalid settings.<br>
+   * Allow to forbid user to create project will invalid settings.
    * To do this, add validation code to this method and return text with error.<br>
    * If no errors are found return {@code null}
    * </p>
