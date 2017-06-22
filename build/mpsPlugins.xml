@@ -584,6 +584,10 @@
       <fileset dir="${build.tmp}/java/out/migrationAssistant" />
       <zipfileset file="${mps_home}/plugins/migrationAssistant/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
+    <jar destfile="${build.layout}/migration-workbench.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/migration-workbench" />
+      <zipfileset file="${mps_home}/plugins/migration-workbench/META-INF/plugin.xml" prefix="META-INF" />
+    </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-modelchecker-platform-models">
       <fileset dir="${mps_home}/plugins/modelchecker/platform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -636,7 +640,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker, java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.base#5336086527852717844, java.compile.jetbrains.mps.console.scripts.runtime, java.compile.jetbrains.mps.console.scripts, java.compile.jetbrains.mps.console.scripts#1734392475490224704, java.compile.jetbrains.mps.console.actions, java.compile.jetbrains.mps.console.ideCommands.runtime, java.compile.jetbrains.mps.console.ideCommands, java.compile.jetbrains.mps.console.ideCommands#7935955022005272663, java.compile.jetbrains.mps.console.internalCommands.runtime, java.compile.jetbrains.mps.console.internalCommands, java.compile.jetbrains.mps.console.internalCommands#8483375838963160298, java.compile.samples, java.compile.mpsmigration" />
+  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.migration-workbench, java.compile.modelchecker, java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.base#5336086527852717844, java.compile.jetbrains.mps.console.scripts.runtime, java.compile.jetbrains.mps.console.scripts, java.compile.jetbrains.mps.console.scripts#1734392475490224704, java.compile.jetbrains.mps.console.actions, java.compile.jetbrains.mps.console.ideCommands.runtime, java.compile.jetbrains.mps.console.ideCommands, java.compile.jetbrains.mps.console.ideCommands#7935955022005272663, java.compile.jetbrains.mps.console.internalCommands.runtime, java.compile.jetbrains.mps.console.internalCommands, java.compile.jetbrains.mps.console.internalCommands#8483375838963160298, java.compile.samples, java.compile.mpsmigration" />
   
   <target name="processResources" />
   
@@ -835,7 +839,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.migrationAssistant" depends="java.compile.modelchecker, fetchDependencies">
+  <target name="java.compile.migrationAssistant" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/migrationAssistant/solutions/component/source_gen" />
     <mkdir dir="${build.tmp}/java/out/migrationAssistant" />
     <javac2 destdir="${build.tmp}/java/out/migrationAssistant" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -862,7 +866,6 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
-        <pathelement path="${build.tmp}/java/out/modelchecker" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -874,6 +877,49 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/migrationAssistant">
       <fileset dir="${mps_home}/plugins/migrationAssistant/solutions/component/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.migration-workbench" depends="java.compile.modelchecker, java.compile.migrationAssistant, fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/migration-workbench/solutions/migration.workbench/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/migration-workbench" />
+    <javac2 destdir="${build.tmp}/java/out/migration-workbench" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/plugins/migration-workbench/solutions/migration.workbench/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
+        <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
+        <pathelement path="${build.tmp}/java/out/modelchecker" />
+        <pathelement path="${build.tmp}/java/out/migrationAssistant" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/migration-workbench">
+      <fileset dir="${mps_home}/plugins/migration-workbench/solutions/migration.workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

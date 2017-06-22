@@ -18270,8 +18270,42 @@
       <node concept="nCB5N" id="42rJ_CGYJaq" role="nCB5Z">
         <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
       </node>
-      <node concept="nCB5N" id="7MqBKG8XGbq" role="nCB5Z">
+    </node>
+    <node concept="398b33" id="3_S1WmROVib" role="3989C9">
+      <property role="TrG5h" value="migration-workbench" />
+      <node concept="2GAZfH" id="3_S1WmROVic" role="398b2p">
+        <node concept="TIC1d" id="3_S1WmROVid" role="2GAZfG">
+          <node concept="398BVA" id="3_S1WmROVie" role="TIC6M">
+            <ref role="398BVh" node="5yMuYWFN8P8" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="3_S1WmROVif" role="iGT6I">
+              <property role="2Ry0Am" value="plugins" />
+              <node concept="2Ry0Ak" id="3_S1WmROVig" role="2Ry0An">
+                <property role="2Ry0Am" value="migration-workbench" />
+                <node concept="2Ry0Ak" id="3_S1WmROVih" role="2Ry0An">
+                  <property role="2Ry0Am" value="solutions" />
+                  <node concept="2Ry0Ak" id="3_S1WmROVii" role="2Ry0An">
+                    <property role="2Ry0Am" value="migration.workbench" />
+                    <node concept="2Ry0Ak" id="3_S1WmROVij" role="2Ry0An">
+                      <property role="2Ry0Am" value="source_gen" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="nCB5N" id="3_S1WmROVik" role="nCB5Z">
+        <ref role="nCB5Y" node="2eDSGe9d1oD" resolve="mps-workbench" />
+      </node>
+      <node concept="nCB5N" id="3_S1WmROVil" role="nCB5Z">
+        <ref role="nCB5Y" node="1FaKCGJSzEy" resolve="mps-kernel" />
+      </node>
+      <node concept="nCB5N" id="73P1SyspSpF" role="nCB5Z">
         <ref role="nCB5Y" node="1nJh0raVm57" resolve="modelchecker" />
+      </node>
+      <node concept="nCB5N" id="3_S1WmROVUd" role="nCB5Z">
+        <ref role="nCB5Y" node="1nJh0raUWjx" resolve="migrationAssistant" />
       </node>
     </node>
     <node concept="398b33" id="1nJh0raVm57" role="3989C9">
@@ -19652,6 +19686,40 @@
           </node>
           <node concept="3_J27D" id="1nJh0raUWjS" role="Nbhlr">
             <node concept="3Mxwew" id="1nJh0raUWjT" role="3MwsjC">
+              <property role="3MwjfP" value="META-INF" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3981dx" id="3_S1WmROW0i" role="39821P">
+        <node concept="3_J27D" id="3_S1WmROW0j" role="Nbhlr">
+          <node concept="3Mxwew" id="3_S1WmROW0k" role="3MwsjC">
+            <property role="3MwjfP" value="migration-workbench.jar" />
+          </node>
+        </node>
+        <node concept="Saw0i" id="3_S1WmROW0l" role="39821P">
+          <ref role="Saw0g" node="3_S1WmROVib" resolve="migration-workbench" />
+        </node>
+        <node concept="398223" id="3_S1WmROW0m" role="39821P">
+          <node concept="28jJK3" id="3_S1WmROW0n" role="39821P">
+            <node concept="398BVA" id="3_S1WmROW0o" role="28jJRO">
+              <ref role="398BVh" node="5yMuYWFN8P8" resolve="mps_home" />
+              <node concept="2Ry0Ak" id="3_S1WmROW0p" role="iGT6I">
+                <property role="2Ry0Am" value="plugins" />
+                <node concept="2Ry0Ak" id="3_S1WmROW0q" role="2Ry0An">
+                  <property role="2Ry0Am" value="migration-workbench" />
+                  <node concept="2Ry0Ak" id="3_S1WmROW0r" role="2Ry0An">
+                    <property role="2Ry0Am" value="META-INF" />
+                    <node concept="2Ry0Ak" id="3_S1WmROW0s" role="2Ry0An">
+                      <property role="2Ry0Am" value="plugin.xml" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3_J27D" id="3_S1WmROW0t" role="Nbhlr">
+            <node concept="3Mxwew" id="3_S1WmROW0u" role="3MwsjC">
               <property role="3MwjfP" value="META-INF" />
             </node>
           </node>
