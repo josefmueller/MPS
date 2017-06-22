@@ -14,33 +14,42 @@ import javax.swing.BorderFactory;
 import com.intellij.util.ui.UIUtil;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import com.intellij.ui.DocumentAdapter;
+import javax.swing.event.DocumentEvent;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class StringChooserDialog extends RefactoringDialog {
   protected JPanel myPanel;
   protected JLabel myLabel = new JLabel();
   protected JTextField myTextField = new JTextField();
-  protected String myResultString;
-  public StringChooserDialog(@NotNull Project project, String title, String labelText, String initialValue) {
+  private String myResultString;
+  private String myInitValue;
+
+  public StringChooserDialog(@NotNull Project project, String title, String labelText, @Nullable String initialValue) {
     super(project, true);
     setTitle(title);
+    myInitValue = initialValue;
     init();
-    if (initialValue != null) {
-      myTextField.setText(initialValue);
+    if (myInitValue != null) {
+      myTextField.setText(myInitValue);
       myTextField.setSelectionStart(0);
-      myTextField.setSelectionEnd(initialValue.length());
+      myTextField.setSelectionEnd(myInitValue.length());
     }
     myLabel.setText(labelText);
     setHorizontalStretch(2.0f);
   }
+
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return null;
   }
+
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myTextField;
   }
+
   @Override
   protected JComponent createNorthPanel() {
     this.myPanel = new JPanel(new GridBagLayout());
@@ -65,25 +74,108 @@ public class StringChooserDialog extends RefactoringDialog {
 
     c.anchor = GridBagConstraints.FIRST_LINE_START;
     myPanel.add(myTextField, c);
+    myTextField.getDocument().addDocumentListener(new DocumentAdapter() {
+      protected void textChanged(DocumentEvent e) {
+        validateValue();
+      }
+    });
 
     return myPanel;
 
   }
+
+  private void validateValue() {
+    if (!(allowUnchangedValue()) && myInitValue != null && myTextField.getText().equals(myInitValue)) {
+      getRefactorAction().setEnabled(false);
+      // This is not error, we just disable refactoring action in that case 
+      setErrorText(null);
+      return;
+    }
+
+    if (!(allowEmptyValue()) && isEmptyString(trim_bn0r89_a0a0c0o(myTextField.getText()))) {
+      setErrorText("Empty input is not allowed");
+      getRefactorAction().setEnabled(false);
+      return;
+    }
+
+    String error = checkValue();
+    if (error != null) {
+      setErrorText(error);
+      getRefactorAction().setEnabled(false);
+      return;
+    }
+
+    getRefactorAction().setEnabled(true);
+    setErrorText(null);
+  }
+
+  /**
+   * Switch On/Off check for unchanged value
+   * By default unchanged value is forbidden.
+   */
+  protected boolean allowUnchangedValue() {
+    return false;
+  }
+
+  /**
+   * Switch On/Off check for empty value
+   * By default empty value is forbidden.
+   */
+  protected boolean allowEmptyValue() {
+    return false;
+  }
+
+  /**
+   * <p>
+   * Allows to check value before refactoring.<br />
+   * To do this, add validation code to this method and return text with error.<br />
+   * If no errors are found return {@code null} 
+   * </p>
+   * <p>
+   * This method will be called on every text change event.
+   * </p>
+   * 
+   * @return Error text to display in refactoring dialog or {@code null} if new value is valid.
+   */
+  @Nullable
+  protected String checkValue() {
+    return null;
+  }
+
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.ide.platform.refactoring.StringChooserDialog#getResultValue() } instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public String getResultString() {
+    return getResultValue();
+  }
+
+  public String getResultValue() {
     return myResultString;
   }
+
   @NotNull
   protected String getCurrentValue() {
     return (this.myTextField.getText() != null ? this.myTextField.getText() : "");
   }
+
   @Override
   protected void doRefactoringAction() {
     myResultString = this.myTextField.getText();
     super.doRefactoringAction();
   }
+
   public static String getString(Project project, String title, String labelText, String initialValue) {
     StringChooserDialog dialog = new StringChooserDialog(project, title, labelText, initialValue);
     dialog.show();
-    return dialog.myResultString;
+    return dialog.getResultValue();
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
+  public static String trim_bn0r89_a0a0c0o(String str) {
+    return (str == null ? null : str.trim());
   }
 }

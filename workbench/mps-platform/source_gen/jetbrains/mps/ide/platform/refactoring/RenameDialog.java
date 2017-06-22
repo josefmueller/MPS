@@ -5,48 +5,29 @@ package jetbrains.mps.ide.platform.refactoring;
 import com.intellij.refactoring.RefactoringBundle;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
-import com.intellij.ui.DocumentAdapter;
-import javax.swing.event.DocumentEvent;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class RenameDialog extends StringChooserDialog {
   private static String REFACTORING_NAME = RefactoringBundle.message("rename.title");
 
   public RenameDialog(@NotNull Project project, String oldName, String nodeType) {
     super(project, REFACTORING_NAME, "Rename " + nodeType, oldName);
-    myTextField.getDocument().addDocumentListener(new DocumentAdapter() {
-      @Override
-      protected void textChanged(DocumentEvent p0) {
-        update();
-      }
-    });
-    update();
   }
 
+  /**
+   * 
+   * @deprecated use {@link jetbrains.mps.ide.platform.refactoring.StringChooserDialog#getResultValue() } instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public String getName() {
-    return myResultString;
+    return getResultValue();
   }
 
-  private void update() {
-    // TODO check for valid name 
-    if (isEmptyString(trim_x29nvn_a0a1a6(myTextField.getText()))) {
-      setErrorText("New name cannot be empty");
-      getRefactorAction().setEnabled(false);
-    } else {
-      getRefactorAction().setEnabled(true);
-      setErrorText(null);
-    }
-    repaint();
-  }
 
   public static String getNewName(Project project, String oldName, String node) {
     RenameDialog dialog = new RenameDialog(project, oldName, node);
     dialog.show();
-    return dialog.myResultString;
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
-  public static String trim_x29nvn_a0a1a6(String str) {
-    return (str == null ? null : str.trim());
+    return dialog.getResultValue();
   }
 }
