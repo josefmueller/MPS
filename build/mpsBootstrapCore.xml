@@ -7019,7 +7019,7 @@
     <mkdir dir="${build.tmp}/java/out/idea-platform" />
   </target>
   
-  <target name="java.compile.mps-platform" depends="java.compile.mps-generator, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.idea-platform, java.compile.mps-editor-api, java.compile.mps-editing, java.compile.mps-icons, java.compile.mps-tool, java.compile.platform, java.compile.mps-environment, java.compile.mps-migration">
+  <target name="java.compile.mps-platform" depends="java.compile.mps-generator, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-project, java.compile.mps-behavior-api, java.compile.mps-behavior-runtime, java.compile.mps-messaging, java.compile.mps-boot-util, java.compile.mps-kernel, java.compile.mps-persistence, java.compile.kernel-resources, java.compile.mps-make-rt, java.compile.idea-platform, java.compile.mps-editor-api, java.compile.mps-editing, java.compile.mps-icons, java.compile.mps-tool, java.compile.platform, java.compile.mps-environment, java.compile.mps-migration, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-platform" />
     <javac2 destdir="${build.tmp}/java/out/mps-platform" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -7058,8 +7058,9 @@
         <pathelement path="${build.tmp}/java/out/platform" />
         <pathelement path="${build.tmp}/java/out/mps-environment" />
         <pathelement path="${build.tmp}/java/out/mps-migration" />
-        <fileset file="${mps_home}/lib/platform.jar" />
-        <fileset file="${mps_home}/lib/openapi.jar" />
+        <fileset file="${artifacts.IDEA}/lib/platform.jar" />
+        <fileset file="${artifacts.IDEA}/lib/idea.jar" />
+        <fileset file="${artifacts.IDEA}/lib/openapi.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.jdom-lib" />
@@ -7141,9 +7142,9 @@
         <path location="${mps_home}/workbench/mps-icons/source" />
       </src>
       <classpath>
-        <fileset file="${mps_home}/lib/openapi.jar" />
         <fileset file="${artifacts.IDEA}/lib/icons.jar" />
         <fileset file="${artifacts.IDEA}/lib/util.jar" />
+        <fileset file="${artifacts.IDEA}/lib/openapi.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>

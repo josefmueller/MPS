@@ -2024,30 +2024,19 @@
       <node concept="nCB5N" id="1BQUFFY6FOb" role="nCB5Z">
         <ref role="nCB5Y" node="1WZWsoqIz7X" resolve="mps-migration" />
       </node>
-      <node concept="25zrj4" id="1ePifXyAvse" role="nCB5Z">
-        <node concept="2HycW7" id="1ePifXyAvsa" role="25zrj5">
-          <node concept="398BVA" id="1ePifXyAvsx" role="25ysHA">
-            <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-            <node concept="2Ry0Ak" id="1ePifXyAvsz" role="iGT6I">
-              <property role="2Ry0Am" value="lib" />
-              <node concept="2Ry0Ak" id="1ePifXyAvs_" role="2Ry0An">
-                <property role="2Ry0Am" value="platform.jar" />
-              </node>
-            </node>
-          </node>
+      <node concept="2GhqfE" id="4LdE6kxkq2N" role="nCB5Z">
+        <node concept="3yrxFa" id="4LdE6kxkqzA" role="3yrxIG">
+          <ref role="3yrxFb" node="4LdE6kxkp0J" />
         </node>
       </node>
-      <node concept="25zrj4" id="1ePifXyyEqT" role="nCB5Z">
-        <node concept="2HycW7" id="1ePifXyyEqP" role="25zrj5">
-          <node concept="398BVA" id="1ePifXyyEr2" role="25ysHA">
-            <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-            <node concept="2Ry0Ak" id="1ePifXyyEr4" role="iGT6I">
-              <property role="2Ry0Am" value="lib" />
-              <node concept="2Ry0Ak" id="5J70wuMRa_H" role="2Ry0An">
-                <property role="2Ry0Am" value="openapi.jar" />
-              </node>
-            </node>
-          </node>
+      <node concept="2GhqfE" id="4LdE6kxkr$O" role="nCB5Z">
+        <node concept="3yrxFa" id="4LdE6kxomSZ" role="3yrxIG">
+          <ref role="3yrxFb" node="4LdE6kxkoZ2" />
+        </node>
+      </node>
+      <node concept="2GhqfE" id="4LdE6kxaA10" role="nCB5Z">
+        <node concept="3yrxFa" id="4LdE6kxaAxQ" role="3yrxIG">
+          <ref role="3yrxFb" node="4LdE6kxazte" />
         </node>
       </node>
       <node concept="3_7P_l" id="WgHS__ALjP" role="3_45bX">
@@ -2140,17 +2129,9 @@
           <ref role="3yrxFb" node="5DAo_J9amU0" />
         </node>
       </node>
-      <node concept="25zrj4" id="2ZTNkpvxXs8" role="nCB5Z">
-        <node concept="2HycW7" id="2ZTNkpvxXs4" role="25zrj5">
-          <node concept="398BVA" id="2ZTNkpvxXsg" role="25ysHA">
-            <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-            <node concept="2Ry0Ak" id="2ZTNkpvxXsi" role="iGT6I">
-              <property role="2Ry0Am" value="lib" />
-              <node concept="2Ry0Ak" id="5J70wuMRb6_" role="2Ry0An">
-                <property role="2Ry0Am" value="openapi.jar" />
-              </node>
-            </node>
-          </node>
+      <node concept="2GhqfE" id="4LdE6kxazYC" role="nCB5Z">
+        <node concept="3yrxFa" id="4LdE6kxa$vh" role="3yrxIG">
+          <ref role="3yrxFb" node="4LdE6kxazte" />
         </node>
       </node>
     </node>
@@ -4035,9 +4016,6 @@
         </node>
         <node concept="1SiIV0" id="5PtweUhiM70" role="3bR37C">
           <node concept="1BurEX" id="5PtweUhiM71" role="1SiIV1">
-            <node concept="3yrxFa" id="1mh_ZUP3nhy" role="2gdwQb">
-              <ref role="3yrxFb" node="6eCuTcwOX2u" />
-            </node>
             <node concept="398BVA" id="5PtweUhiM6U" role="1BurEY">
               <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
               <node concept="2Ry0Ak" id="5PtweUhiM6V" role="iGT6I">
@@ -4046,6 +4024,9 @@
                   <property role="2Ry0Am" value="junit-4.12.jar" />
                 </node>
               </node>
+            </node>
+            <node concept="3yrxFa" id="1mh_ZUP3nhy" role="2gdwQb">
+              <ref role="3yrxFb" node="6eCuTcwOX2u" />
             </node>
           </node>
         </node>
@@ -4066,9 +4047,6 @@
         </node>
         <node concept="1SiIV0" id="3axq3oG0OAa" role="3bR37C">
           <node concept="1BurEX" id="3axq3oG0OAb" role="1SiIV1">
-            <node concept="3yrxFa" id="1mh_ZUP3pNG" role="2gdwQb">
-              <ref role="3yrxFb" node="1mh_ZUOZjJh" />
-            </node>
             <node concept="398BVA" id="3axq3oG0OA4" role="1BurEY">
               <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
               <node concept="2Ry0Ak" id="3axq3oG0OA5" role="iGT6I">
@@ -4077,6 +4055,9 @@
                   <property role="2Ry0Am" value="hamcrest-core-1.3.jar" />
                 </node>
               </node>
+            </node>
+            <node concept="3yrxFa" id="1mh_ZUP3pNG" role="2gdwQb">
+              <ref role="3yrxFb" node="1mh_ZUOZjJh" />
             </node>
           </node>
         </node>
@@ -15597,6 +15578,27 @@
         <node concept="3_J27D" id="5DAo_J9amU2" role="13uQ07">
           <node concept="3Mxwew" id="5DAo_J9amUH" role="3MwsjC">
             <property role="3MwjfP" value="util.jar" />
+          </node>
+        </node>
+      </node>
+      <node concept="13uQ2_" id="4LdE6kxazte" role="39821P">
+        <node concept="3_J27D" id="4LdE6kxaztg" role="13uQ07">
+          <node concept="3Mxwew" id="4LdE6kxazu1" role="3MwsjC">
+            <property role="3MwjfP" value="openapi.jar" />
+          </node>
+        </node>
+      </node>
+      <node concept="13uQ2_" id="4LdE6kxkp0J" role="39821P">
+        <node concept="3_J27D" id="4LdE6kxkp0L" role="13uQ07">
+          <node concept="3Mxwew" id="4LdE6kxkp1C" role="3MwsjC">
+            <property role="3MwjfP" value="platform.jar" />
+          </node>
+        </node>
+      </node>
+      <node concept="13uQ2_" id="4LdE6kxkoZ2" role="39821P">
+        <node concept="3_J27D" id="4LdE6kxkoZ4" role="13uQ07">
+          <node concept="3Mxwew" id="4LdE6kxkoZS" role="3MwsjC">
+            <property role="3MwjfP" value="idea.jar" />
           </node>
         </node>
       </node>
