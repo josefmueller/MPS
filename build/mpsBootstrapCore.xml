@@ -5667,7 +5667,7 @@
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
         <library jar="/lib/junit-4.12.jar" />
-        <library jar="hamcrest-core-1.3.jar" />
+        <library jar="/lib/hamcrest-core-1.3.jar" />
         <library jar="hamcrest-library-1.3.jar" />
         <library jar="hamcrest-library-1.3-sources.jar" />
         <library jar="jmock-2.8.2-sources.jar" />
@@ -5698,12 +5698,6 @@
     </copy>
     <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
       <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-junit4-2.8.2-sources.jar" />
-    </copy>
-    <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
-      <fileset file="${mps_home}/lib/junit-4.12.jar" />
-    </copy>
-    <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
-      <fileset file="${mps_home}/lib/hamcrest-core-1.3.jar" />
     </copy>
     <copy todir="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
       <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/hamcrest-library-1.3.jar" />
@@ -15433,8 +15427,6 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <pathelement path="${build.tmp}/java/out/mps-tool" />
-        <fileset file="${mps_home}/lib/junit-4.12.jar" />
-        <fileset file="${mps_home}/lib/hamcrest-core-1.3.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/hamcrest-library-1.3.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/hamcrest-library-1.3-sources.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.8.2-sources.jar" />
@@ -15443,6 +15435,8 @@
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-junit4-2.8.2.jar" />
         <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
+        <fileset file="${artifacts.IDEA}/lib/junit-4.12.jar" />
+        <fileset file="${artifacts.IDEA}/lib/hamcrest-core-1.3.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.jdom-lib" />

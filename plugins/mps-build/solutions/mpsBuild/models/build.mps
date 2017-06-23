@@ -3308,6 +3308,18 @@
                   </node>
                 </node>
               </node>
+              <node concept="3yLZsm" id="1mh_ZUPgyyT" role="3yL2VB">
+                <property role="3yLZsk" value="/lib/hamcrest-core-1.3.jar" />
+                <node concept="398BVA" id="1mh_ZUPg$4r" role="3yLZsn">
+                  <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+                  <node concept="2Ry0Ak" id="1mh_ZUPg$$T" role="iGT6I">
+                    <property role="2Ry0Am" value="lib" />
+                    <node concept="2Ry0Ak" id="1mh_ZUPg$$Y" role="2Ry0An">
+                      <property role="2Ry0Am" value="hamcrest-core-1.3.jar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="28jJK3" id="3rVxTa_7yJ0" role="39821P">
               <node concept="398BVA" id="3rVxTa_7yJ1" role="28jJRO">
@@ -3385,28 +3397,6 @@
                         </node>
                       </node>
                     </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="28jJK3" id="3D2RlIMuV$_" role="39821P">
-              <node concept="398BVA" id="3D2RlIMuW7q" role="28jJRO">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="3D2RlIMuWDa" role="iGT6I">
-                  <property role="2Ry0Am" value="lib" />
-                  <node concept="2Ry0Ak" id="3D2RlIMuWDf" role="2Ry0An">
-                    <property role="2Ry0Am" value="junit-4.12.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="28jJK3" id="3axq3oG1aSW" role="39821P">
-              <node concept="398BVA" id="3axq3oG1bqN" role="28jJRO">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="3axq3oG1cts" role="iGT6I">
-                  <property role="2Ry0Am" value="lib" />
-                  <node concept="2Ry0Ak" id="3axq3oG1ctx" role="2Ry0An">
-                    <property role="2Ry0Am" value="hamcrest-core-1.3.jar" />
                   </node>
                 </node>
               </node>
@@ -4045,6 +4035,9 @@
         </node>
         <node concept="1SiIV0" id="5PtweUhiM70" role="3bR37C">
           <node concept="1BurEX" id="5PtweUhiM71" role="1SiIV1">
+            <node concept="3yrxFa" id="1mh_ZUP3nhy" role="2gdwQb">
+              <ref role="3yrxFb" node="6eCuTcwOX2u" />
+            </node>
             <node concept="398BVA" id="5PtweUhiM6U" role="1BurEY">
               <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
               <node concept="2Ry0Ak" id="5PtweUhiM6V" role="iGT6I">
@@ -4073,6 +4066,9 @@
         </node>
         <node concept="1SiIV0" id="3axq3oG0OAa" role="3bR37C">
           <node concept="1BurEX" id="3axq3oG0OAb" role="1SiIV1">
+            <node concept="3yrxFa" id="1mh_ZUP3pNG" role="2gdwQb">
+              <ref role="3yrxFb" node="1mh_ZUOZjJh" />
+            </node>
             <node concept="398BVA" id="3axq3oG0OA4" role="1BurEY">
               <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
               <node concept="2Ry0Ak" id="3axq3oG0OA5" role="iGT6I">
@@ -15573,6 +15569,13 @@
         <node concept="3_J27D" id="6eCuTcwOX2v" role="13uQ07">
           <node concept="3Mxwew" id="4UZ30xb7A5c" role="3MwsjC">
             <property role="3MwjfP" value="junit-4.12.jar" />
+          </node>
+        </node>
+      </node>
+      <node concept="13uQ2_" id="1mh_ZUOZjJh" role="39821P">
+        <node concept="3_J27D" id="1mh_ZUOZjJj" role="13uQ07">
+          <node concept="3Mxwew" id="1mh_ZUOZjK1" role="3MwsjC">
+            <property role="3MwjfP" value="hamcrest-core-1.3.jar" />
           </node>
         </node>
       </node>

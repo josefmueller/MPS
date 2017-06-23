@@ -21,6 +21,7 @@
   <property name="artifacts.mpsPluginCommon" location="${build.dir}/artifacts/mpsPluginCommon" />
   <property name="artifacts.mpsPluginCore" location="${build.dir}/artifacts/mpsPluginCore" />
   <property name="artifacts.mpsPluginTests" location="${build.dir}/artifacts/mpsPluginTests" />
+  <property name="artifacts.mpsPluginTesting" location="${build.dir}/artifacts/mpsPluginTesting" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property file="${artifacts.mpsJavaIdeaPlugin}/build.properties" prefix="import.mpsJavaIdeaPlugin" />
@@ -44,7 +45,7 @@
     </copy>
     <mkdir dir="${build.layout}/mps-testing" />
     <copy todir="${build.layout}/mps-testing">
-      <fileset dir="${artifacts.mpsTesting}/mps-testing" />
+      <fileset dir="${artifacts.mpsPluginTesting}/mps-testing" />
     </copy>
     <mkdir dir="${build.layout}/mps-build" />
     <copy todir="${build.layout}/mps-build">
@@ -70,6 +71,7 @@
     <ant antfile="build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsIdeaVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsPluginTests.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/mpsPluginTesting.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
