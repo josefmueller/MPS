@@ -23,6 +23,8 @@
   <property name="artifacts.mpsMakePlugin" location="${build.dir}/artifacts/mpsMakePlugin" />
   <property name="artifacts.mpsBuildUI" location="${build.dir}/artifacts/mpsBuildUI" />
   <property name="artifacts.mpsVcs" location="${build.dir}/artifacts/mpsVcs" />
+  <property name="artifacts.mpsMigrationCore" location="${build.dir}/artifacts/mpsMigrationCore" />
+  <property name="artifacts.mpsMigration" location="${build.dir}/artifacts/mpsMigration" />
   <property name="artifacts.mpsDebuggerPlugin" location="${build.dir}/artifacts/mpsDebuggerPlugin" />
   <property name="artifacts.mpsDiagramEditor" location="${build.dir}/artifacts/mpsDiagramEditor" />
   <property name="artifacts.jetpad" location="${build.dir}/artifacts/jetpad" />
@@ -227,6 +229,8 @@
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsMigration.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsMigration.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/jetpad.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDiagramEditor.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsContextActionsTool.xml" inheritAll="false" useNativeBasedir="true" />
