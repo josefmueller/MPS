@@ -8,10 +8,10 @@
 
   <depends>jetbrains.mps.ide.migration.assistant</depends>
 
-  <application-components>
+  <project-components>
     <component>
       <interface-class>jetbrains.mps.migration.global.MigrationProblemHandler</interface-class>
       <implementation-class>jetbrains.mps.migration.idea.PluginMigrationProblemHandler</implementation-class>
     </component>
-  </application-components>
+  </project-components>
 </idea-plugin>
