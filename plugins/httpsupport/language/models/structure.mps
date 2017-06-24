@@ -28,9 +28,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -51,7 +48,6 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -167,9 +163,6 @@
     </node>
     <node concept="PrWs8" id="xSXmQZxI$2" role="PzmwI">
       <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLjG" role="lGtFl">
-      <ref role="RPilL" node="21vgRr5y4Um" resolve="queryParameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="5YhakczHpni">
@@ -318,9 +311,6 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLjI" role="lGtFl">
-      <ref role="RPilL" node="40BYgsZXsWo" resolve="parameter" />
-    </node>
   </node>
   <node concept="1TIwiD" id="xSXmQZ_cdR">
     <property role="EcuMT" value="610507601223140215" />
@@ -378,9 +368,6 @@
     </node>
     <node concept="PrWs8" id="4rKp80ZJrhF" role="PzmwI">
       <ref role="PrY4T" node="4rKp80ZJrfN" resolve="IParameterConverter" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLjH" role="lGtFl">
-      <ref role="RPilL" node="4rKp80ZJrhA" resolve="declaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="4rKp80ZJsGI">

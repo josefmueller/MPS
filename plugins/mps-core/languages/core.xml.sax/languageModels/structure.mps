@@ -23,9 +23,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -47,7 +44,6 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -76,9 +72,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2264311582634140362" />
       <ref role="20lvS9" node="1XGsQcRHubb" resolve="XMLSAXAttributeRule" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLli" role="lGtFl">
-      <ref role="RPilL" node="1XGsQcRHuba" resolve="attribute" />
     </node>
   </node>
   <node concept="1TIwiD" id="1XGsQcRHubb">
@@ -182,9 +175,6 @@
     <node concept="PrWs8" id="460OzqrikHV" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLlh" role="lGtFl">
-      <ref role="RPilL" node="1XGsQcRHubs" resolve="rule" />
-    </node>
   </node>
   <node concept="1TIwiD" id="1XGsQcRHubt">
     <property role="TrG5h" value="XMLSAXFieldDeclaration" />
@@ -214,9 +204,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2264311582634140385" />
       <ref role="20lvS9" node="1XGsQcRHubt" resolve="XMLSAXFieldDeclaration" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLlg" role="lGtFl">
-      <ref role="RPilL" node="1XGsQcRHubx" resolve="declaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="1XGsQcRHubz">
@@ -389,9 +376,6 @@
     <node concept="PrWs8" id="1XGsQcRHuc7" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLlk" role="lGtFl">
-      <ref role="RPilL" node="1XGsQcRHuc3" resolve="root" />
-    </node>
   </node>
   <node concept="1TIwiD" id="1XGsQcRHuc8">
     <property role="R5$K7" value="false" />
@@ -452,9 +436,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4720003541456852960" />
       <ref role="20lvS9" node="QrUm5N2YfH" resolve="XMLSAXNodeRuleParam" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLlj" role="lGtFl">
-      <ref role="RPilL" node="460Ozqr7Lvw" resolve="param" />
     </node>
   </node>
   <node concept="1TIwiD" id="460OzqrVp9_">

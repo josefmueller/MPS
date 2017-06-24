@@ -278,9 +278,6 @@
     <node concept="PrWs8" id="6sm8I7pqTHw" role="PzmwI">
       <ref role="PrY4T" node="3dxNxGnPYED" resolve="IBaseTestBlock" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLlq" role="lGtFl">
-      <ref role="RPilL" node="2h4QH4RYDHt" resolve="var" />
-    </node>
   </node>
   <node concept="1TIwiD" id="4SHGGBQPQ0A">
     <property role="R5$K7" value="false" />

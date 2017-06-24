@@ -37,9 +37,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -63,7 +60,6 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -204,9 +200,6 @@
       <property role="IQ2ns" value="6418371274763029603" />
       <ref role="20lvS9" node="5$iCEGsO$KX" resolve="TargetDeclaration" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLeT" role="lGtFl">
-      <ref role="RPilL" node="5$iCEGsO$Lz" resolve="dependsOn" />
-    </node>
   </node>
   <node concept="1TIwiD" id="5_TVmOF8rbM">
     <property role="R5$K7" value="true" />
@@ -228,18 +221,12 @@
     <property role="3GE5qa" value="facet" />
     <property role="EcuMT" value="6447445394688555033" />
     <ref role="1TJDcQ" node="5_TVmOF8rbM" resolve="FacetReference" />
-    <node concept="RPilO" id="47y0FrqaLeR" role="lGtFl">
-      <ref role="RPilL" node="5_TVmOF8rbN" resolve="facet" />
-    </node>
   </node>
   <node concept="1TIwiD" id="7fB872uci8D">
     <property role="TrG5h" value="RelatedFacetReference" />
     <property role="3GE5qa" value="facet" />
     <property role="EcuMT" value="8351679702044320297" />
     <ref role="1TJDcQ" node="5_TVmOF8rbM" resolve="FacetReference" />
-    <node concept="RPilO" id="47y0FrqaLeW" role="lGtFl">
-      <ref role="RPilL" node="5_TVmOF8rbN" resolve="facet" />
-    </node>
   </node>
   <node concept="AxPO7" id="7fB872ucjBy">
     <property role="TrG5h" value="TargetDependencyQualifier" />
@@ -311,9 +298,6 @@
     <node concept="PrWs8" id="1653mnvB6fX" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLeX" role="lGtFl">
-      <ref role="RPilL" node="2TDOII_dveY" resolve="target" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2TDOII_dveL">
     <property role="TrG5h" value="ForeignParametersComponentExpression" />
@@ -380,9 +364,6 @@
       <ref role="20ksaX" to="tpee:g7uigIF" resolve="classifier" />
       <ref role="20lvS9" to="tpee:g7pOWCK" resolve="Classifier" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLeU" role="lGtFl">
-      <ref role="RPilL" node="6AQAnCFE2P" resolve="resource" />
-    </node>
   </node>
   <node concept="1TIwiD" id="6euX$ZOxgIK">
     <property role="TrG5h" value="FacetReferenceExpression" />
@@ -405,9 +386,6 @@
     <property role="3GE5qa" value="facet" />
     <property role="EcuMT" value="1919086248986845077" />
     <ref role="1TJDcQ" node="5_TVmOF8rbM" resolve="FacetReference" />
-    <node concept="RPilO" id="47y0FrqaLeV" role="lGtFl">
-      <ref role="RPilL" node="5_TVmOF8rbN" resolve="facet" />
-    </node>
   </node>
   <node concept="1TIwiD" id="1TDZrawdcfQ">
     <property role="TrG5h" value="ResourceSpecificPropertiesExpression" />
@@ -463,9 +441,6 @@
     </node>
     <node concept="PrWs8" id="1653mnvB2RT" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLeS" role="lGtFl">
-      <ref role="RPilL" node="7z95FPUVceW" resolve="target" />
     </node>
   </node>
   <node concept="1TIwiD" id="1Db$gY5r1Mk">

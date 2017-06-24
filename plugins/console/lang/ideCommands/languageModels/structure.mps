@@ -32,9 +32,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
@@ -256,9 +253,6 @@
       <property role="IQ2ns" value="5582028874769074088" />
       <ref role="20lvS9" to="tp4k:hHNuAHW" resolve="ActionParameter" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLiW" role="lGtFl">
-      <ref role="RPilL" node="4PRmqZe_ouC" resolve="declaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="4PRmqZe_ouD">
     <property role="3GE5qa" value="expression.callAction" />
@@ -271,9 +265,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5582028874769074090" />
       <ref role="20lvS9" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLiX" role="lGtFl">
-      <ref role="RPilL" node="4PRmqZe_ouE" resolve="declaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="4PRmqZe_ouF">
