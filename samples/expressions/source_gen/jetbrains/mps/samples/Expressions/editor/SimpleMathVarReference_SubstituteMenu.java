@@ -28,7 +28,7 @@ public class SimpleMathVarReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SimpleMathVarReference. Generated from the smart reference attribute.", new SNodePointer("r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)", "4747359941569484172")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SimpleMathVarReference. Generated from implicit smart reference attribute.", new SNodePointer("r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)", "2073504467209348321")));
     try {
       return super.createMenuItems(context);
     } finally {

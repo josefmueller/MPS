@@ -28,7 +28,7 @@ public class BeforeTaskParameterReference_SubstituteMenu extends SubstituteMenuB
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BeforeTaskParameterReference. Generated from the smart reference attribute.", new SNodePointer("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)", "4747359941569484008")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BeforeTaskParameterReference. Generated from implicit smart reference attribute.", new SNodePointer("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)", "6550182048787583936")));
     try {
       return super.createMenuItems(context);
     } finally {

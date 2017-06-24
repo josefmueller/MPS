@@ -28,7 +28,7 @@ public class VariableDeclarationReference_SubstituteMenu extends SubstituteMenuB
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for VariableDeclarationReference. Generated from the smart reference attribute.", new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "4747359941569484122")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for VariableDeclarationReference. Generated from implicit smart reference attribute.", new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "2613454275903920988")));
     try {
       return super.createMenuItems(context);
     } finally {

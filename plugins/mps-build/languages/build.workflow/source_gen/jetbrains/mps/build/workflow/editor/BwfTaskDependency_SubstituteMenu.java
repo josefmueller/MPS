@@ -28,7 +28,7 @@ public class BwfTaskDependency_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BwfTaskDependency. Generated from the smart reference attribute.", new SNodePointer("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)", "4747359941569484074")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BwfTaskDependency. Generated from implicit smart reference attribute.", new SNodePointer("r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)", "2769948622284574294")));
     try {
       return super.createMenuItems(context);
     } finally {

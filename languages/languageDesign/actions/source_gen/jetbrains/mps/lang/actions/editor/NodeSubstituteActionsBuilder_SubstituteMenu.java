@@ -28,7 +28,7 @@ public class NodeSubstituteActionsBuilder_SubstituteMenu extends SubstituteMenuB
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for NodeSubstituteActionsBuilder. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "4747359941569483562")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for NodeSubstituteActionsBuilder. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1112058030570")));
     try {
       return super.createMenuItems(context);
     } finally {

@@ -964,7 +964,6 @@
     <property role="EcuMT" value="6358186717179259587" />
     <property role="3GE5qa" value="Migrations" />
     <property role="TrG5h" value="RefPresentationMigratedProblem" />
-    <property role="34LRSv" value="ref. presentation migrated - problem" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5wWOi7l4UF4" role="1TKVEi">
       <property role="IQ2ns" value="6358186717179259588" />

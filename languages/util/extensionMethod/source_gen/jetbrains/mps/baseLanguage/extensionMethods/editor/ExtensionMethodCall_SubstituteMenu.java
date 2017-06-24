@@ -28,7 +28,7 @@ public class ExtensionMethodCall_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ExtensionMethodCall. Generated from the smart reference attribute.", new SNodePointer("r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)", "4747359941569483938")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ExtensionMethodCall. Generated from implicit smart reference attribute.", new SNodePointer("r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)", "1550313277221324859")));
     try {
       return super.createMenuItems(context);
     } finally {

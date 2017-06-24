@@ -28,7 +28,7 @@ public class ExtensionFieldReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ExtensionFieldReference. Generated from the smart reference attribute.", new SNodePointer("r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)", "4747359941569483639")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ExtensionFieldReference. Generated from implicit smart reference attribute.", new SNodePointer("r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)", "7036359038356115102")));
     try {
       return super.createMenuItems(context);
     } finally {

@@ -28,7 +28,7 @@ public class SimpleBuilderParameterReference_SubstituteMenu extends SubstituteMe
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SimpleBuilderParameterReference. Generated from the smart reference attribute.", new SNodePointer("r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)", "4747359941569483929")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SimpleBuilderParameterReference. Generated from implicit smart reference attribute.", new SNodePointer("r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)", "5425713840853785828")));
     try {
       return super.createMenuItems(context);
     } finally {

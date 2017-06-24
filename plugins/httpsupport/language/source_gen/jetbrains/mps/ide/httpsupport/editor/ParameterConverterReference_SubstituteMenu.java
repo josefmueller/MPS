@@ -28,7 +28,7 @@ public class ParameterConverterReference_SubstituteMenu extends SubstituteMenuBa
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ParameterConverterReference. Generated from the smart reference attribute.", new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "4747359941569484013")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ParameterConverterReference. Generated from implicit smart reference attribute.", new SNodePointer("r:3c30b5c5-2f86-4daf-bab8-b406cfefcb4f(jetbrains.mps.ide.httpsupport.structure)", "5111696079053501541")));
     try {
       return super.createMenuItems(context);
     } finally {

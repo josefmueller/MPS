@@ -28,7 +28,7 @@ public class Friend_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for Friend. Generated from the smart reference attribute.", new SNodePointer("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)", "4747359941569484228")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for Friend. Generated from implicit smart reference attribute.", new SNodePointer("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)", "938834323431472762")));
     try {
       return super.createMenuItems(context);
     } finally {

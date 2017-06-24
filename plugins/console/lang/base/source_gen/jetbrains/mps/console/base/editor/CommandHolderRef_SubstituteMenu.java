@@ -28,7 +28,7 @@ public class CommandHolderRef_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for CommandHolderRef. Generated from the smart reference attribute.", new SNodePointer("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "4747359941569483959")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for CommandHolderRef. Generated from implicit smart reference attribute.", new SNodePointer("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)", "5758176878586720817")));
     try {
       return super.createMenuItems(context);
     } finally {

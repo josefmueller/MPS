@@ -28,7 +28,7 @@ public class OldComponentRef_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for OldComponentRef. Generated from the smart reference attribute.", new SNodePointer("r:e4cb768c-551e-430a-8374-9cbd0ea2f656(references.structure)", "4747359941569484204")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for OldComponentRef. Generated from implicit smart reference attribute.", new SNodePointer("r:e4cb768c-551e-430a-8374-9cbd0ea2f656(references.structure)", "7709929535540647757")));
     try {
       return super.createMenuItems(context);
     } finally {

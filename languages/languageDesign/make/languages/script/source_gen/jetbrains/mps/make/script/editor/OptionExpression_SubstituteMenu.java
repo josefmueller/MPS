@@ -28,7 +28,7 @@ public class OptionExpression_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for OptionExpression. Generated from the smart reference attribute.", new SNodePointer("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "4747359941569483717")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for OptionExpression. Generated from implicit smart reference attribute.", new SNodePointer("r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)", "505095865854384050")));
     try {
       return super.createMenuItems(context);
     } finally {

@@ -28,7 +28,7 @@ public class PrivateFieldReferenceOperation_SubstituteMenu extends SubstituteMen
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for PrivateFieldReferenceOperation. Generated from the smart reference attribute.", new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "4747359941569483973")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for PrivateFieldReferenceOperation. Generated from implicit smart reference attribute.", new SNodePointer("r:886e64b3-d82c-4444-8cd9-9ede48ec4a0f(jetbrains.mps.debugger.java.privateMembers.structure)", "6825241477451043705")));
     try {
       return super.createMenuItems(context);
     } finally {

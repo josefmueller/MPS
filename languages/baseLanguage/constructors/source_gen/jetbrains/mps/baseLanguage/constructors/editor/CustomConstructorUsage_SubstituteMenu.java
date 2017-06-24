@@ -28,7 +28,7 @@ public class CustomConstructorUsage_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for CustomConstructorUsage. Generated from the smart reference attribute.", new SNodePointer("r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)", "4747359941569483502")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for CustomConstructorUsage. Generated from implicit smart reference attribute.", new SNodePointer("r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)", "6820702584719416486")));
     try {
       return super.createMenuItems(context);
     } finally {

@@ -28,7 +28,7 @@ public class NamedFacetReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for NamedFacetReference. Generated from the smart reference attribute.", new SNodePointer("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "4747359941569483707")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for NamedFacetReference. Generated from implicit smart reference attribute.", new SNodePointer("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "1919086248986845077")));
     try {
       return super.createMenuItems(context);
     } finally {

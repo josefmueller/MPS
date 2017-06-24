@@ -28,7 +28,7 @@ public class RunConfigurationCreator_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RunConfigurationCreator. Generated from the smart reference attribute.", new SNodePointer("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)", "4747359941569484006")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RunConfigurationCreator. Generated from implicit smart reference attribute.", new SNodePointer("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)", "3642991921658122718")));
     try {
       return super.createMenuItems(context);
     } finally {

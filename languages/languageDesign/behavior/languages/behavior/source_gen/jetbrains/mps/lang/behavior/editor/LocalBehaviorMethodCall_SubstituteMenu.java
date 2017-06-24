@@ -28,7 +28,7 @@ public class LocalBehaviorMethodCall_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for LocalBehaviorMethodCall. Generated from the smart reference attribute.", new SNodePointer("r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)", "4747359941569483585")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for LocalBehaviorMethodCall. Generated from implicit smart reference attribute.", new SNodePointer("r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)", "6496299201655527393")));
     try {
       return super.createMenuItems(context);
     } finally {
