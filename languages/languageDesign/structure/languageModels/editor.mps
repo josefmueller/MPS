@@ -8886,8 +8886,12 @@
       <node concept="PMmxH" id="7ERGDLdpELm" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1ERwB7" node="2ZPUO8YhEwF" resolve="RemoveSmartReferenceAttribute_Action" />
         <node concept="ljvvj" id="7ERGDLdpELn" role="3F10Kt">
           <property role="VOm3f" value="true" />
+        </node>
+        <node concept="VPxyj" id="2ZPUO8YiVk8" role="3F10Kt">
+          <property role="VOm3f" value="false" />
         </node>
       </node>
       <node concept="3EZMnI" id="7ERGDLdrEuV" role="3EZMnx">
@@ -8944,6 +8948,24 @@
       <node concept="2iRkQZ" id="7ERGDLdrEj5" role="2iSdaV" />
       <node concept="VPM3Z" id="7ERGDLdrEwp" role="3F10Kt">
         <property role="VOm3f" value="false" />
+      </node>
+    </node>
+  </node>
+  <node concept="1h_SRR" id="2ZPUO8YhEwF">
+    <property role="3GE5qa" value="smartReference" />
+    <property role="TrG5h" value="RemoveSmartReferenceAttribute_Action" />
+    <ref role="1h_SK9" to="tpce:7ERGDLdoDvC" resolve="SmartReferenceAttribute" />
+    <node concept="1hA7zw" id="2ZPUO8YhEwG" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="2ZPUO8YhEwH" role="1hA7z_">
+        <node concept="3clFbS" id="2ZPUO8YhEwI" role="2VODD2">
+          <node concept="3clFbF" id="2ZPUO8YhEwZ" role="3cqZAp">
+            <node concept="2OqwBi" id="2ZPUO8YhEDd" role="3clFbG">
+              <node concept="0IXxy" id="2ZPUO8YhEwY" role="2Oq$k0" />
+              <node concept="3YRAZt" id="2ZPUO8YhF2s" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

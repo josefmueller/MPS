@@ -273,6 +273,7 @@
         <reference id="6973815483243565416" name="member" index="3f7u_j" />
         <reference id="6973815483243564601" name="enum" index="3f7vo2" />
       </concept>
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -314,6 +315,9 @@
       <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -4200,6 +4204,137 @@
     <node concept="1YaCAy" id="WyclBLqIoN" role="1YuTPh">
       <property role="TrG5h" value="c" />
       <ref role="1YaFvo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="2ZPUO8Yg1DV">
+    <property role="TrG5h" value="check_RedundantSmartReferenceAttribute" />
+    <property role="3GE5qa" value="smartReference" />
+    <node concept="3clFbS" id="2ZPUO8Yg1DW" role="18ibNy">
+      <node concept="3cpWs8" id="2ZPUO8Yg8eg" role="3cqZAp">
+        <node concept="3cpWsn" id="2ZPUO8Yg8ej" role="3cpWs9">
+          <property role="TrG5h" value="concept" />
+          <node concept="3Tqbb2" id="2ZPUO8Yg8ee" role="1tU5fm">
+            <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+          </node>
+          <node concept="1PxgMI" id="2ZPUO8Yg8Xo" role="33vP2m">
+            <property role="1BlNFB" value="true" />
+            <node concept="chp4Y" id="2ZPUO8Yg91$" role="3oSUPX">
+              <ref role="cht4Q" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+            </node>
+            <node concept="2OqwBi" id="2ZPUO8Yg8p8" role="1m5AlR">
+              <node concept="1YBJjd" id="2ZPUO8Yg8f1" role="2Oq$k0">
+                <ref role="1YBMHb" node="2ZPUO8Yg1Qo" resolve="attr" />
+              </node>
+              <node concept="1mfA1w" id="2ZPUO8Yg8_r" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="2ZPUO8Yg92O" role="3cqZAp">
+        <node concept="3clFbS" id="2ZPUO8Yg92Q" role="3clFbx">
+          <node concept="3clFbJ" id="2ZPUO8Ygjic" role="3cqZAp">
+            <node concept="3clFbS" id="2ZPUO8Ygjie" role="3clFbx">
+              <node concept="2MkqsV" id="2ZPUO8Ygjx7" role="3cqZAp">
+                <node concept="3Cnw8n" id="2ZPUO8Yh8GJ" role="2OEOjU">
+                  <ref role="QpYPw" node="2ZPUO8Yh88Y" resolve="fix_RedundantSmartReferenceAttribute" />
+                </node>
+                <node concept="1YBJjd" id="2ZPUO8YgjDB" role="2OEOjV">
+                  <ref role="1YBMHb" node="2ZPUO8Yg1Qo" resolve="attr" />
+                </node>
+                <node concept="Xl_RD" id="2ZPUO8Yg489" role="2MkJ7o">
+                  <property role="Xl_RC" value="'smart reference' attribute used for abstract concept" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="2ZPUO8Yg44x" role="3clFbw">
+              <node concept="1PxgMI" id="2ZPUO8Yg44y" role="2Oq$k0">
+                <node concept="chp4Y" id="2ZPUO8Yg44z" role="3oSUPX">
+                  <ref role="cht4Q" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                </node>
+                <node concept="2OqwBi" id="2ZPUO8Yg44$" role="1m5AlR">
+                  <node concept="1YBJjd" id="2ZPUO8Yg44_" role="2Oq$k0">
+                    <ref role="1YBMHb" node="2ZPUO8Yg1Qo" resolve="attr" />
+                  </node>
+                  <node concept="1mfA1w" id="2ZPUO8Yg44A" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="3TrcHB" id="2ZPUO8Yg44B" role="2OqNvi">
+                <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ZPUO8Yg92P" role="3cqZAp" />
+          <node concept="3clFbJ" id="2ZPUO8Yg8de" role="3cqZAp">
+            <node concept="3clFbS" id="2ZPUO8Yg8dg" role="3clFbx">
+              <node concept="a7r0C" id="2ZPUO8Ygj8H" role="3cqZAp">
+                <node concept="Xl_RD" id="2ZPUO8Ygj92" role="a7wSD">
+                  <property role="Xl_RC" value="Trivial 'smart reference' attribute can be dropped" />
+                </node>
+                <node concept="1YBJjd" id="2ZPUO8Ygjfa" role="2OEOjV">
+                  <ref role="1YBMHb" node="2ZPUO8Yg1Qo" resolve="attr" />
+                </node>
+                <node concept="3Cnw8n" id="2ZPUO8Yh891" role="2OEOjU">
+                  <ref role="QpYPw" node="2ZPUO8Yh88Y" resolve="fix_RedundantSmartReferenceAttribute" />
+                </node>
+              </node>
+            </node>
+            <node concept="1Wc70l" id="2ZPUO8YgiTa" role="3clFbw">
+              <node concept="2YIFZM" id="2ZPUO8Ygj3X" role="3uHU7w">
+                <ref role="37wK5l" to="twe9:1yWNr0c2nIW" resolve="canBeAttributedImplicitly" />
+                <ref role="1Pybhc" to="twe9:1yWNr0biLwW" resolve="SmartRefAttributeUtil" />
+                <node concept="37vLTw" id="2ZPUO8Ygj6b" role="37wK5m">
+                  <ref role="3cqZAo" node="2ZPUO8Yg8ej" resolve="concept" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="2ZPUO8YghU_" role="3uHU7B">
+                <node concept="2OqwBi" id="2ZPUO8YghqO" role="2Oq$k0">
+                  <node concept="1YBJjd" id="2ZPUO8YghgH" role="2Oq$k0">
+                    <ref role="1YBMHb" node="2ZPUO8Yg1Qo" resolve="attr" />
+                  </node>
+                  <node concept="3TrEf2" id="2ZPUO8YghBB" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpce:7ERGDLdpEKR" resolve="refPresentationTemplate" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="2ZPUO8Ygify" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="2ZPUO8Yg9tx" role="3clFbw">
+          <node concept="37vLTw" id="2ZPUO8Yg93r" role="2Oq$k0">
+            <ref role="3cqZAo" node="2ZPUO8Yg8ej" resolve="concept" />
+          </node>
+          <node concept="3x8VRR" id="2ZPUO8Ygh4a" role="2OqNvi" />
+        </node>
+      </node>
+      <node concept="3clFbH" id="2ZPUO8Yg8cM" role="3cqZAp" />
+    </node>
+    <node concept="1YaCAy" id="2ZPUO8Yg1Qo" role="1YuTPh">
+      <property role="TrG5h" value="attr" />
+      <ref role="1YaFvo" to="tpce:7ERGDLdoDvC" resolve="SmartReferenceAttribute" />
+    </node>
+  </node>
+  <node concept="Q5z_Y" id="2ZPUO8Yh88Y">
+    <property role="TrG5h" value="fix_RedundantSmartReferenceAttribute" />
+    <property role="3GE5qa" value="smartReference" />
+    <node concept="Q5ZZ6" id="2ZPUO8Yh88Z" role="Q6x$H">
+      <node concept="3clFbS" id="2ZPUO8Yh890" role="2VODD2">
+        <node concept="3clFbF" id="2ZPUO8Yh8hW" role="3cqZAp">
+          <node concept="2OqwBi" id="2ZPUO8Yh8oi" role="3clFbG">
+            <node concept="Q6c8r" id="2ZPUO8Yh8hV" role="2Oq$k0" />
+            <node concept="3YRAZt" id="2ZPUO8Yh8y1" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="QznSV" id="2ZPUO8Yh8Zx" role="QzAvj">
+      <node concept="3clFbS" id="2ZPUO8Yh8Zy" role="2VODD2">
+        <node concept="3clFbF" id="2ZPUO8Yh97V" role="3cqZAp">
+          <node concept="Xl_RD" id="2ZPUO8Yh97U" role="3clFbG">
+            <property role="Xl_RC" value="Remove 'smart reference' Attribute" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

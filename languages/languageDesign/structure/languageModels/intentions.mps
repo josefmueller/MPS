@@ -1246,30 +1246,6 @@
       </node>
     </node>
   </node>
-  <node concept="2S6QgY" id="7ERGDLdvotx">
-    <property role="TrG5h" value="RemoveSmartReferenceAttribute" />
-    <property role="3GE5qa" value="smartReference" />
-    <ref role="2ZfgGC" to="tpce:7ERGDLdoDvC" resolve="SmartReferenceAttribute" />
-    <node concept="2S6ZIM" id="7ERGDLdvoty" role="2ZfVej">
-      <node concept="3clFbS" id="7ERGDLdvotz" role="2VODD2">
-        <node concept="3clFbF" id="7ERGDLdvoAP" role="3cqZAp">
-          <node concept="Xl_RD" id="7ERGDLdvoAO" role="3clFbG">
-            <property role="Xl_RC" value="Remove 'smart reference' Attribute" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="2Sbjvc" id="7ERGDLdvot$" role="2ZfgGD">
-      <node concept="3clFbS" id="7ERGDLdvot_" role="2VODD2">
-        <node concept="3clFbF" id="7ERGDLdvrp8" role="3cqZAp">
-          <node concept="2OqwBi" id="7ERGDLdvr_R" role="3clFbG">
-            <node concept="2Sf5sV" id="7ERGDLdvrrq" role="2Oq$k0" />
-            <node concept="3YRAZt" id="7ERGDLdvrVg" role="2OqNvi" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="2S6QgY" id="7ERGDLdq8WI">
     <property role="TrG5h" value="AttachSmartReferenceAttribute" />
     <property role="3GE5qa" value="smartReference" />
