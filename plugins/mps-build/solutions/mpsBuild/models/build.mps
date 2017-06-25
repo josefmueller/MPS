@@ -31731,7 +31731,7 @@
     <property role="2DA0ip" value="../../../../" />
     <property role="3GE5qa" value="common" />
     <property role="TrG5h" value="mpsMigrationCore" />
-    <property role="turDy" value="mpsMigration.xml" />
+    <property role="turDy" value="mpsMigrationCore.xml" />
     <node concept="2_Ic$z" id="77ZqjhZbLRd" role="3989C9">
       <property role="3fwGa$" value="IntelliJ" />
       <property role="2_Ic$B" value="true" />

@@ -14,13 +14,15 @@
   <property name="mpsPluginCore.date" value="${import.mpsPlugin.mpsPluginCore.date}" />
   <property name="mpsIdeaVcs.plugin.version" value="${import.mpsPlugin.mpsIdeaVcs.plugin.version}" />
   <property name="mpsIdeaVcs.date" value="${import.mpsPlugin.mpsIdeaVcs.date}" />
+  <property name="mpsIdeaMigration.plugin.version" value="${import.mpsPlugin.mpsIdeaMigration.plugin.version}" />
+  <property name="mpsIdeaMigration.date" value="${import.mpsPlugin.mpsIdeaMigration.date}" />
   
   <target name="assemble" depends="fetchDependencies">
     <mkdir dir="${build.layout}" />
     <zip destfile="${build.layout}/${mpsPlugin.plugin.version}-plugin.zip">
       <fileset dir="${artifacts.mpsPlugin}" />
     </zip>
-    <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}mpsPluginCommon.plugin.version=${mpsPluginCommon.plugin.version}${line.separator}mpsPluginCommon.date=${mpsPluginCommon.date}${line.separator}mpsPluginCore.plugin.version=${mpsPluginCore.plugin.version}${line.separator}mpsPluginCore.date=${mpsPluginCore.date}${line.separator}mpsIdeaVcs.plugin.version=${mpsIdeaVcs.plugin.version}${line.separator}mpsIdeaVcs.date=${mpsIdeaVcs.date}</echo>
+    <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}mpsPluginCommon.plugin.version=${mpsPluginCommon.plugin.version}${line.separator}mpsPluginCommon.date=${mpsPluginCommon.date}${line.separator}mpsPluginCore.plugin.version=${mpsPluginCore.plugin.version}${line.separator}mpsPluginCore.date=${mpsPluginCore.date}${line.separator}mpsIdeaVcs.plugin.version=${mpsIdeaVcs.plugin.version}${line.separator}mpsIdeaVcs.date=${mpsIdeaVcs.date}${line.separator}mpsIdeaMigration.plugin.version=${mpsIdeaMigration.plugin.version}${line.separator}mpsIdeaMigration.date=${mpsIdeaMigration.date}</echo>
   </target>
   
   <target name="buildDependents">
@@ -35,6 +37,8 @@
     <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsIdeaVcs.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsMigrationCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/mpsIdeaMigration.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

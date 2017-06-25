@@ -229,7 +229,7 @@
     <ant antfile="build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsMigration.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsMigrationCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsMigration.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/jetpad.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDiagramEditor.xml" inheritAll="false" useNativeBasedir="true" />
