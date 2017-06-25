@@ -123,9 +123,6 @@
 
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.project.MPSProjectVersion</implementation-class>
-    </component>
-    <component>
       <interface-class>jetbrains.mps.project.MPSProject</interface-class>
       <implementation-class>jetbrains.mps.project.StandaloneMPSProject</implementation-class>
     </component>

@@ -38,6 +38,9 @@
 
   <project-components>
     <component>
+      <implementation-class>jetbrains.mps.ide.migration.projectversion.MPSProjectVersion</implementation-class>
+    </component>
+    <component>
       <interface-class>jetbrains.mps.migration.global.MigrationProperties</interface-class>
       <implementation-class>jetbrains.mps.ide.migration.ProjectMigrationProperties</implementation-class>
     </component>

@@ -18,6 +18,8 @@
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="tqbz" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.actions(MPS.IDEA/)" />
     <import index="s1rj" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.project(MPS.IDEA/)" />
+    <import index="l0id" ref="r:226548c3-f05c-4779-b87b-8b65118ecd0a(jetbrains.mps.ide.migration.projectversion)" />
+    <import index="bdll" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.migration.global(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -284,7 +286,7 @@
             <property role="3TUv4t" value="false" />
             <property role="TrG5h" value="version" />
             <node concept="3uibUv" id="22DYt9Q021m" role="1tU5fm">
-              <ref role="3uigEE" to="z1c3:~Version" resolve="Version" />
+              <ref role="3uigEE" to="bdll:~Version" resolve="Version" />
             </node>
             <node concept="2OqwBi" id="5SsFeroaafF" role="33vP2m">
               <node concept="2OqwBi" id="5SsFeroaDTI" role="2Oq$k0">
@@ -294,12 +296,12 @@
                 <node concept="liA8E" id="5SsFeroaDTJ" role="2OqNvi">
                   <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                   <node concept="3VsKOn" id="22DYt9Q01_E" role="37wK5m">
-                    <ref role="3VsUkX" to="z1c3:~MPSProjectVersion" resolve="MPSProjectVersion" />
+                    <ref role="3VsUkX" to="l0id:48p7sjLIev1" resolve="MPSProjectVersion" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="5SsFeroaafJ" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~MPSProjectVersion.getVersion():jetbrains.mps.project.Version" resolve="getVersion" />
+                <ref role="37wK5l" to="l0id:48p7sjLIewf" resolve="getVersion" />
               </node>
             </node>
           </node>
@@ -330,10 +332,10 @@
                         <ref role="3cqZAo" node="5SsFeroaafC" resolve="version" />
                       </node>
                       <node concept="liA8E" id="7C$AW5VBSSk" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~Version.isMajorUpdate(jetbrains.mps.project.Version):boolean" resolve="isMajorUpdate" />
+                        <ref role="37wK5l" to="bdll:~Version.isMajorUpdate(jetbrains.mps.migration.global.Version):boolean" resolve="isMajorUpdate" />
                         <node concept="10M0yZ" id="7C$AW5VBSVN" role="37wK5m">
-                          <ref role="1PxDUh" to="z1c3:~MPSProjectVersion" resolve="MPSProjectVersion" />
-                          <ref role="3cqZAo" to="z1c3:~MPSProjectVersion.CURRENT" resolve="CURRENT" />
+                          <ref role="1PxDUh" to="l0id:48p7sjLIev1" resolve="MPSProjectVersion" />
+                          <ref role="3cqZAo" to="bdll:~ProjectVersion.CURRENT" resolve="CURRENT" />
                         </node>
                       </node>
                     </node>

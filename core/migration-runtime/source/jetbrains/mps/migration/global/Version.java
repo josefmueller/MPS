@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project;
+package jetbrains.mps.migration.global;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -50,37 +50,51 @@ public class Version implements Comparable<Version> {
 
   public boolean isMinorUpdate(Version newVersion) {
     return compareTo(newVersion) < 0 &&
-        compareString(this.myMajor, newVersion.myMajor) == 0 &&
-        compareString(this.myMinor, newVersion.myMinor) < 0;
+           compareString(this.myMajor, newVersion.myMajor) == 0 &&
+           compareString(this.myMinor, newVersion.myMinor) < 0;
   }
 
   public boolean isHotfix(Version newVersion) {
     return compareTo(newVersion) < 0 &&
-        compareString(this.myMajor, newVersion.myMajor) == 0 &&
-        compareString(this.myMinor, newVersion.myMinor) == 0;
+           compareString(this.myMajor, newVersion.myMajor) == 0 &&
+           compareString(this.myMinor, newVersion.myMinor) == 0;
   }
 
   @Override
   public int compareTo(@NotNull Version that) {
     int maj = compareString(this.myMajor, that.myMajor);
-    if (maj != 0) return maj;
+    if (maj != 0) {
+      return maj;
+    }
 
     int min = compareString(this.myMinor, that.myMinor);
-    if (min != 0) return min;
+    if (min != 0) {
+      return min;
+    }
 
     return compareString(this.myHotfix, that.myHotfix);
   }
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
     Version that = (Version) o;
 
-    if (myMajor != null ? !myMajor.equals(that.myMajor) : that.myMajor != null) return false;
-    if (myMinor != null ? !myMinor.equals(that.myMinor) : that.myMinor != null) return false;
-    if (myHotfix != null ? !myHotfix.equals(that.myHotfix) : that.myHotfix != null) return false;
+    if (myMajor != null ? !myMajor.equals(that.myMajor) : that.myMajor != null) {
+      return false;
+    }
+    if (myMinor != null ? !myMinor.equals(that.myMinor) : that.myMinor != null) {
+      return false;
+    }
+    if (myHotfix != null ? !myHotfix.equals(that.myHotfix) : that.myHotfix != null) {
+      return false;
+    }
 
     return true;
   }
@@ -102,3 +116,4 @@ public class Version implements Comparable<Version> {
     return a == b ? 0 : (a != null ? a.compareTo(b) : -b.compareTo(a));
   }
 }
+

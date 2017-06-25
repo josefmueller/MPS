@@ -31,9 +31,9 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
+import jetbrains.mps.migration.global.ProjectVersion;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectVersion;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StandaloneMPSProject;
@@ -146,7 +146,7 @@ public class ProjectFactory {
     if (myCreatedProject == null) {
       return;
     }
-    myCreatedProject.getComponent(MPSProjectVersion.class).setVersion(MPSProjectVersion.CURRENT);
+    myCreatedProject.getComponent(ProjectVersion.class).setVersion(ProjectVersion.CURRENT);
 
     for (ProjectMigration m : ProjectMigrationsRegistry.getInstance().getMigrations()) {
       m.applyToCreatedProject(ProjectHelper.toMPSProject(myCreatedProject));
