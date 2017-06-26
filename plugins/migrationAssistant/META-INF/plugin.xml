@@ -38,6 +38,7 @@
 
   <project-components>
     <component>
+      <interface-class>jetbrains.mps.migration.global.ProjectVersion</interface-class>
       <implementation-class>jetbrains.mps.ide.migration.projectversion.MPSProjectVersion</implementation-class>
     </component>
     <component>
