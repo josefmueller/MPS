@@ -37,12 +37,16 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.tree.TreeNode;
 
+/**
+ * visitXXX methods require model read
+ */
 public class GenStatusUpdater extends TreeUpdateVisitor {
   private final ModelGenerationStatusManager myGenerationStatusManager;
+  private final Project myProject;
 
   public GenStatusUpdater(Project mpsProject) {
-    super(mpsProject);
     myGenerationStatusManager = mpsProject.getComponent(ModelGenerationStatusManager.class);
+    myProject = mpsProject;
   }
 
   private ProjectModuleTreeNode getContainingModuleNode(TreeNode node) {
@@ -69,85 +73,64 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
       // we've got children (SModelTreeNodes) and there's update for them in #visitModelNode(), below
       return;
     }
-    scheduleModelRead(node, new Runnable() {
-      @Override
-      public void run() {
-        if (node.getModule().isReadOnly()) {
-          new StatusUpdate(node).update(GenerationStatus.READONLY);
-          return;
-        }
-        final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
-        if (project != null && DumbService.getInstance(project).isDumb()) {
-          // see visitModelNode for explanation
-          propagateStatusToNamespaceNodes(node, GenerationStatus.UPDATING);
-          return;
-        }
-        GenerationStatus s = new StatusUpdate(node).update();
-        // no need to check for generator and language here as #visitModelNode does, as now
-        // we can face generator module only as sibling to language's models (i.e. SModelTreeNodes)
-        propagateStatusToNamespaceNodes(node, s);
-      }
-    });
+    if (node.getModule().isReadOnly()) {
+      new StatusUpdate(node).update(GenerationStatus.READONLY);
+      return;
+    }
+    final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
+    if (project != null && DumbService.getInstance(project).isDumb()) {
+      // see visitModelNode for explanation
+      propagateStatusToNamespaceNodes(node, GenerationStatus.UPDATING);
+      return;
+    }
+    GenerationStatus s = new StatusUpdate(node).update();
+    // no need to check for generator and language here as #visitModelNode does, as now
+    // we can face generator module only as sibling to language's models (i.e. SModelTreeNodes)
+    propagateStatusToNamespaceNodes(node, s);
   }
 
   @Override
   public void visitModelNode(@NotNull final SModelTreeNode modelNode) {
-    scheduleModelRead(modelNode, new Runnable() {
-      @Override
-      public void run() {
-        if (isTimeToRelax()) {
-          return;
-        }
+    if (isTimeToRelax()) {
+      return;
+    }
 
-        SModel md = modelNode.getModel();
-        if (!(md instanceof EditableSModel)) {
-          return;
-        }
-        if (!(md instanceof GeneratableSModel)) {
-          return;
-        }
-        if (md.getModule() == null) return;
+    SModel md = modelNode.getModel();
+    if (!(md instanceof EditableSModel)) {
+      return;
+    }
+    if (!(md instanceof GeneratableSModel)) {
+      return;
+    }
+    if (md.getModule() == null) {
+      return;
+    }
 
-        boolean wasChanged = ((EditableSModel) md).isChanged();
+    final ProjectModuleTreeNode moduleNode = getContainingModuleNode(modelNode);
+    if (moduleNode == null) {
+      return;
+    }
 
-        if (!wasChanged && !((GeneratableSModel) md).isGeneratable()) {
-          // changing doNotGenerate := true immediately renders the model notGeneratable
-          // while GenStatusUpdater needs to update its status
-          return;
-        }
+    final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
+    if (project != null && DumbService.getInstance(project).isDumb()) {
+      // while idea updates its index, we can't use index to check model hashes.
+      // of course, we can calculate hash again (i.e. if none in index found),
+      // however, as long as we use index for hashes, seems reasonable to wait for end of dumb mode
+      // and to update status again then (PPTH.dumbUpdate does that).
+      // Here, I don't care to set status of individual models and modules - status for a group seems to be enough
+      propagateStatusToNamespaceNodes(moduleNode, GenerationStatus.UPDATING);
+      return;
+    }
 
-        final ProjectModuleTreeNode moduleNode = getContainingModuleNode(modelNode);
-        if (moduleNode == null) {
-          return;
-        }
-        if (moduleNode.getModule().isReadOnly()) {
-          new StatusUpdate(modelNode).update(GenerationStatus.READONLY);
-          new StatusUpdate(moduleNode).update(GenerationStatus.READONLY);
-          return;
-        }
-
-        final com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(myProject);
-        if (project != null && DumbService.getInstance(project).isDumb()) {
-          // while idea updates its index, we can't use index to check model hashes.
-          // of course, we can calculate hash again (i.e. if none in index found),
-          // however, as long as we use index for hashes, seems reasonable to wait for end of dumb mode
-          // and to update status again then (PPTH.dumbUpdate does that).
-          // Here, I don't care to set status of individual models and modules - status for a group seems to be enough
-          propagateStatusToNamespaceNodes(moduleNode, GenerationStatus.UPDATING);
-          return;
-        }
-
-        new StatusUpdate(modelNode).update();
-        GenerationStatus s = new StatusUpdate(moduleNode).update();
-        if (moduleNode.getModule() instanceof Generator) {
-          final ProjectModuleTreeNode languageNode = getContainingModuleNode(moduleNode);
-          if (languageNode != null) {
-            new StatusUpdate(languageNode).update(s);
-          }
-        }
-        propagateStatusToNamespaceNodes(moduleNode, s);
+    new StatusUpdate(modelNode).update();
+    GenerationStatus s = new StatusUpdate(moduleNode).update();
+    if (moduleNode.getModule() instanceof Generator) {
+      final ProjectModuleTreeNode languageNode = getContainingModuleNode(moduleNode);
+      if (languageNode != null) {
+        new StatusUpdate(languageNode).update(s);
       }
-    });
+    }
+    propagateStatusToNamespaceNodes(moduleNode, s);
   }
 
   private void propagateStatusToNamespaceNodes(ProjectModuleTreeNode node, GenerationStatus status) {
@@ -179,7 +162,6 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
       if (myModuleNode == null && myModelNode == null) {
         return null;
       }
-      // FIXME update is inside model read already, no need to wrap once again
       GenerationStatus status = compute();
       update(status);
       return status;
@@ -195,14 +177,10 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
 
     private GenerationStatus compute() {
       if (myModelNode != null) {
-        // extra check before read action
-        if (myModelNode.getModel().getModule() == null) {
-          return GenerationStatus.NOT_REQUIRED;
-        }
-        return getGenerationStatus(myModelNode);
+        return getGenerationStatus(myModelNode.getModel());
       }
       if (myModuleNode != null) {
-        return getGenerationStatus(myModuleNode);
+        return getGenerationStatus(myModuleNode.getModule());
       }
       throw new IllegalStateException();
     }
@@ -217,8 +195,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     return false;
   }
 
-  /*package*/ GenerationStatus getGenerationStatus(ProjectModuleTreeNode node) {
-    SModule module = node.getModule();
+  private GenerationStatus getGenerationStatus(SModule module) {
     if (module.isReadOnly()) {
       return GenerationStatus.READONLY;
     }
@@ -235,28 +212,31 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     return GenerationStatus.NOT_REQUIRED;
   }
 
-  private GenerationStatus getGenerationStatus(SModelTreeNode node) {
-    if (node.getModel() == null) return GenerationStatus.NOT_REQUIRED;
-    if (isPackaged(node)) return GenerationStatus.READONLY;
-    if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
+  private GenerationStatus getGenerationStatus(SModel model) {
+    if (model == null || model.getModule() == null) {
+      return GenerationStatus.NOT_REQUIRED;
+    }
+    if (isPackaged(model)) {
+      return GenerationStatus.READONLY;
+    }
+    if (isDoNotGenerate(model)) {
+      return GenerationStatus.DO_NOT_GENERATE;
+    }
 
-    boolean required = myGenerationStatusManager.generationRequired(node.getModel());
+    boolean required = myGenerationStatusManager.generationRequired(model);
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
   }
 
-  private static boolean isPackaged(SModelTreeNode node) {
-    SModel md = node.getModel();
-    if (!(md instanceof EditableSModel)) return false;
-    return md.isReadOnly();
+  private static boolean isPackaged(SModel md) {
+    // XXX no idea why models other than editable are not deemed packaged, when read-only
+    return md instanceof EditableSModel && md.isReadOnly();
   }
 
-  private static boolean isDoNotGenerate(SModelTreeNode node) {
-    SModel md = node.getModel();
-    if (!(md instanceof GeneratableSModel)) return false;
-    return ((GeneratableSModel) md).isDoNotGenerate();
+  private static boolean isDoNotGenerate(SModel md) {
+    return md instanceof GeneratableSModel && ((GeneratableSModel) md).isDoNotGenerate();
   }
 
-  public static enum GenerationStatus {
+  public enum GenerationStatus {
     READONLY("read only"),
     DO_NOT_GENERATE("do not generate"),
     UPDATING("updating..."),

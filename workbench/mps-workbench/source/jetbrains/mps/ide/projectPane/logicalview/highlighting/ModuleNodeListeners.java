@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
+package jetbrains.mps.ide.projectPane.logicalview.highlighting;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.TreeUpdateVisitor;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.module.ReloadableModuleBase;
 import org.jetbrains.annotations.NotNull;
@@ -37,11 +36,11 @@ import java.util.concurrent.Semaphore;
 public final class ModuleNodeListeners {
   private final List<ProjectModuleTreeNode> myNodes = new ArrayList<ProjectModuleTreeNode>();
   private final Semaphore myListAccess;
-  private final TreeUpdateVisitor myChecker;
   private final MyReloadAdapter myHandler = new MyReloadAdapter();
+  private final ProjectPaneTreeHighlighter myTreeHighlighter;
 
-  public ModuleNodeListeners(@NotNull TreeUpdateVisitor errorChecker) {
-    myChecker = errorChecker;
+  ModuleNodeListeners(@NotNull ProjectPaneTreeHighlighter treeHighlighter) {
+    myTreeHighlighter = treeHighlighter;
     myListAccess = new Semaphore(1);
   }
 
@@ -60,7 +59,7 @@ public final class ModuleNodeListeners {
     } finally {
       myListAccess.release();
     }
-    node.accept(myChecker);
+    myTreeHighlighter.refreshModuleTreeNodes(Collections.singleton(node));
   }
 
   public void detach(@NotNull ProjectModuleTreeNode node) {
@@ -73,16 +72,14 @@ public final class ModuleNodeListeners {
   }
 
   void refreshTreeNodes() {
-    List<ProjectModuleTreeNode> a = Collections.emptyList();
+    List<ProjectModuleTreeNode> a;
     myListAccess.acquireUninterruptibly();
     try {
-      a = new ArrayList<ProjectModuleTreeNode>(myNodes);
+      a = new ArrayList<>(myNodes);
     } finally {
       myListAccess.release();
     }
-    for (ProjectModuleTreeNode n : a) {
-      n.accept(myChecker);
-    }
+    myTreeHighlighter.refreshModuleTreeNodes(a);
   }
 
   private class MyReloadAdapter extends MPSClassesListenerAdapter {
