@@ -356,7 +356,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
@@ -5489,7 +5489,7 @@
                 <property role="TrG5h" value="value" />
                 <node concept="2OqwBi" id="5TwDvfuxwqa" role="33vP2m">
                   <node concept="liA8E" id="5TwDvfuxzuW" role="2OqNvi">
-                    <ref role="37wK5l" to="dj18:~PsiLiteral.getValue():java.lang.Object" resolve="getValue" />
+                    <ref role="37wK5l" to="dj18:~PsiLiteralValue.getValue():java.lang.Object" resolve="getValue" />
                   </node>
                   <node concept="1eOMI4" id="5TwDvfuxu44" role="2Oq$k0">
                     <node concept="10QFUN" id="5TwDvfuxu41" role="1eOMHV">
