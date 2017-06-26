@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,27 +15,20 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
-import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.ErrorStateNodeUpdate;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
-import jetbrains.mps.project.validation.ValidationUtil;
 import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.util.Processor;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 public class ErrorChecker extends TreeUpdateVisitor {
   public ErrorChecker(Project mpsProject) {
@@ -52,21 +45,9 @@ public class ErrorChecker extends TreeUpdateVisitor {
         if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
           return;
         }
-
-        final List<String> errors = new ArrayList<String>();
-        final List<String> warnings = new ArrayList<String>();
-        ValidationUtil.validateModel(modelDescriptor, new Processor<ValidationProblem>() {
-          @Override
-          public boolean process(ValidationProblem problem) {
-            if (problem.getSeverity() == MessageStatus.ERROR) {
-              errors.add(problem.getMessage());
-            } else {
-              warnings.add(problem.getMessage());
-            }
-            return true;
-          }
-        });
-        schedule(node, new ErrorReport(node, errors, warnings));
+        MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<>(true);
+        ValidationUtil.validateModel(modelDescriptor, collector);
+        addUpdate(node, createNodeUpdate(collector));
       }
     });
   }
@@ -78,53 +59,37 @@ public class ErrorChecker extends TreeUpdateVisitor {
       @Override
       public void run() {
         SModule module = mr.resolve(myProject.getRepository());
-
-        MessageCollectProcessor collector = new MessageCollectProcessor(true);
         if (module != null) {
+          MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<>(true);
           ValidationUtil.validateModule(module, collector);
+          addUpdate(node, createNodeUpdate(collector));
         }
-        schedule(node, new ErrorReport(node, collector.getErrors(), collector.getWarnings()));
       }
     });
+  }
 
+  /*package*/ ErrorStateNodeUpdate createNodeUpdate(MessageCollectProcessor<?> messages) {
+    if (messages.getErrors().isEmpty() && messages.getWarnings().isEmpty()) {
+      return new ErrorStateNodeUpdate();
+    } else {
+      StringBuilder result = new StringBuilder();
+      result.append("<html>");
+      for (String error : messages.getErrors()) {
+        result.append(error);
+        result.append("<br>");
+      }
+      for (String warn : messages.getWarnings()) {
+        result.append("warn: ");
+        result.append(warn);
+        result.append("<br>");
+      }
+      return new ErrorStateNodeUpdate(result.toString(), messages.getErrors().isEmpty());
+    }
   }
 
   @Override
   public void visitProjectNode(@NotNull final ProjectTreeNode node) {
     String errors = ((StandaloneMPSProject) node.getProject()).getErrors();
     addUpdate(node, new ErrorStateNodeUpdate(errors, false));
-  }
-
-  private class ErrorReport implements Runnable {
-    private final MPSTreeNode myNode;
-    private final List<String> errors;
-    private final List<String> warns;
-
-    public ErrorReport(MPSTreeNode node, List<String> errors, List<String> warns) {
-      myNode = node;
-      this.errors = errors;
-      this.warns = warns == null ? Collections.emptyList() : warns;
-    }
-
-
-    @Override
-    public void run() {
-      StringBuilder result = new StringBuilder();
-      if (errors.isEmpty() && warns.isEmpty()) {
-        addUpdate(myNode, new ErrorStateNodeUpdate(null, true));
-      } else {
-        result.append("<html>");
-        for (String error : errors) {
-          result.append(error);
-          result.append("<br>");
-        }
-        for (String warn : warns) {
-          result.append("warn: ");
-          result.append(warn);
-          result.append("<br>");
-        }
-        addUpdate(myNode, new ErrorStateNodeUpdate(result.toString(), errors.isEmpty()));
-      }
-    }
   }
 }

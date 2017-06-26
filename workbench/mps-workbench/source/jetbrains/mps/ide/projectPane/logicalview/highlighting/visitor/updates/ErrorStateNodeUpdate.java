@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,17 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.util.EqualUtil;
 
 public class ErrorStateNodeUpdate extends NodeUpdate {
-  private ErrorState myErrorState;
-  private String myTooltipText;
+  private final ErrorState myErrorState;
+  private final String myTooltipText;
+
+
+  /**
+   * Clear any error/warning message for a tree node
+   */
+  public ErrorStateNodeUpdate() {
+    myErrorState = ErrorState.NONE;
+    myTooltipText = null;
+  }
 
   public ErrorStateNodeUpdate(String tooltipText, boolean isWarning) {
     myTooltipText = tooltipText;
