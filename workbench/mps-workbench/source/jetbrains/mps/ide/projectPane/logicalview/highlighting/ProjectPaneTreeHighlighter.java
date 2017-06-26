@@ -24,9 +24,11 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
 import jetbrains.mps.ide.ui.tree.TreeElement;
+import jetbrains.mps.ide.ui.tree.TreeNodeVisitor;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -41,7 +43,9 @@ public class ProjectPaneTreeHighlighter {
   private final GenStatusUpdater myGenStatusVisitor;
   private final ErrorChecker myErrorVisitor;
   private final ModifiedMarker myModifiedMarker;
+  // receives commands from node status analyzers (TreeUpdateVisitor instances, above) and re-dispatch tree update, batched, in EDT+Read
   private final TreeNodeUpdater myUpdater;
+  // threads we'd like to use to analyze status of tree nodes
   private final ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 3, 5, TimeUnit.SECONDS, new ArrayBlockingQueue<>(100), new RescheduleExecutionHandler());
 
   private final MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
@@ -58,13 +62,13 @@ public class ProjectPaneTreeHighlighter {
     myUpdater = new TreeNodeUpdater(mpsProject);
     myGenStatusVisitor = new GenStatusUpdater(mpsProject);
     myErrorVisitor = new ErrorChecker(mpsProject);
-    myModifiedMarker = new ModifiedMarker(mpsProject);
+    myModifiedMarker = new ModifiedMarker();
   }
 
   public void init() {
-    myGenStatusVisitor.setUpdater(myUpdater).setExecutor(myExecutor);
-    myErrorVisitor.setUpdater(myUpdater).setExecutor(myExecutor);
-    myModifiedMarker.setUpdater(myUpdater).setExecutor(myExecutor);
+    myGenStatusVisitor.setUpdater(myUpdater);
+    myErrorVisitor.setUpdater(myUpdater);
+    myModifiedMarker.setUpdater(myUpdater);
 
     myTree.addTreeNodeListener(myNodeListener);
   }
@@ -80,9 +84,9 @@ public class ProjectPaneTreeHighlighter {
       myModelListeners = null;
     }
     myExecutor.shutdownNow();
-    myGenStatusVisitor.setUpdater(null).setExecutor(null);
-    myErrorVisitor.setUpdater(null).setExecutor(null);
-    myModifiedMarker.setUpdater(null).setExecutor(null);
+    myGenStatusVisitor.setUpdater(null);
+    myErrorVisitor.setUpdater(null);
+    myModifiedMarker.setUpdater(null);
   }
 
   private SModelNodeListeners getModelListeners() {
@@ -131,29 +135,42 @@ public class ProjectPaneTreeHighlighter {
   }
 
   /*package*/ void refreshModuleTreeNodes(Collection<ProjectModuleTreeNode> treeNodes) {
-    for (ProjectModuleTreeNode n : treeNodes) {
-      n.accept(myErrorVisitor);
+    for (ProjectModuleTreeNode tn : treeNodes) {
+      schedule(tn, myErrorVisitor);
     }
   }
 
   /*package*/ void refreshModelTreeNodes(Collection<SModelTreeNode> treeNodes) {
+    // XXX don't need to keep instance of a visitor any more. Can instantiate here as needed, and then visitors could utilize their state.
     for (SModelTreeNode tn : treeNodes) {
-      tn.accept(myErrorVisitor);
-      tn.accept(myModifiedMarker);
-      tn.accept(myGenStatusVisitor);
+      schedule(tn, myErrorVisitor);
+      schedule(tn, myModifiedMarker);
+      schedule(tn, myGenStatusVisitor);
     }
   }
 
   /*package*/ void refreshGenerationStatusForTreeNodes(Collection<SModelTreeNode> treeNodes) {
     for (SModelTreeNode tn : treeNodes) {
-      tn.accept(myGenStatusVisitor);
+      schedule(tn, myGenStatusVisitor);
     }
   }
 
+  private <T extends MPSTreeNode & TreeElement> void schedule(final T node, final TreeNodeVisitor visitor) {
+    myExecutor.execute(new ModelReadRunnable(myProjectRepository.getModelAccess(), new Runnable() {
+      @Override
+      public void run() {
+        boolean disposed = node.getTree() == null;
+        if (disposed) {
+          return;
+        }
+        node.accept(visitor);
+      }
+    }));
+  }
 
   private void dispatchForHierarchy(MPSTreeNode treeNode) {
     if (treeNode instanceof TreeElement) {
-      ((TreeElement) treeNode).accept(myGenStatusVisitor);
+      schedule((MPSTreeNode & TreeElement) treeNode, myGenStatusVisitor);
     }
     for (MPSTreeNode node : treeNode) {
       dispatchForHierarchy(node);

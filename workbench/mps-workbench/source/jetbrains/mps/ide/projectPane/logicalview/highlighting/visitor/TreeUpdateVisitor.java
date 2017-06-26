@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,22 +23,16 @@ import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelReadRunnable;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.concurrent.Executor;
 
 /**
  * Visitor that updates tree elements
  */
 public abstract class TreeUpdateVisitor implements TreeNodeVisitor {
-  protected final Project myProject;
   private TreeNodeUpdater myUpdater;
-  private Executor myExecutor;
 
-  protected TreeUpdateVisitor(@NotNull Project mpsProject) {
-    myProject = mpsProject;
+  @SuppressWarnings("WeakerAccess")
+  protected TreeUpdateVisitor() {
   }
 
   @Override
@@ -57,26 +51,7 @@ public abstract class TreeUpdateVisitor implements TreeNodeVisitor {
   public void visitModelNode(@NotNull SModelTreeNode node) {
   }
 
-  protected final void scheduleModelRead(final MPSTreeNode node, final Runnable readAction) {
-    schedule(node, new ModelReadRunnable(myProject.getModelAccess(), readAction));
-  }
-  protected final void schedule(final MPSTreeNode node, final Runnable runnable) {
-    final Executor ex = myExecutor;
-    if (ex == null) {
-      return;
-    }
-    ex.execute(new Runnable() {
-      @Override
-      public void run() {
-        boolean disposed = node.getTree() == null;
-        if (disposed) {
-          return;
-        }
-        runnable.run();
-      }
-    });
-  }
-
+  @SuppressWarnings("WeakerAccess")
   protected void addUpdate(MPSTreeNode node, NodeUpdate r) {
     final TreeNodeUpdater u = myUpdater;
     if (u != null) {
@@ -85,10 +60,6 @@ public abstract class TreeUpdateVisitor implements TreeNodeVisitor {
   }
   public TreeUpdateVisitor setUpdater(TreeNodeUpdater updater) {
     myUpdater = updater;
-    return this;
-  }
-  public TreeUpdateVisitor setExecutor(Executor executor) {
-    myExecutor = executor;
     return this;
   }
 }

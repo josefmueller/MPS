@@ -30,42 +30,39 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+/**
+ * visitXXX methods require model read
+ */
 public class ErrorChecker extends TreeUpdateVisitor {
+  private final Project myProject;
+
   public ErrorChecker(Project mpsProject) {
-    super(mpsProject);
+    myProject = mpsProject;
   }
 
   @Override
   public void visitModelNode(@NotNull final SModelTreeNode node) {
     final SModelReference mr = node.getModel().getReference();
-    scheduleModelRead(node, new Runnable() {
-      @Override
-      public void run() {
-        final SModel modelDescriptor = mr.resolve(myProject.getRepository());
-        if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
-          return;
-        }
-        MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<>(true);
-        ValidationUtil.validateModel(modelDescriptor, collector);
-        addUpdate(node, createNodeUpdate(collector));
-      }
-    });
+    // XXX does it make sense to go back and from from model to reference and back to model?
+    //     sure, it's leftover of older schedule approach, OTOH it doesn't hurt to check the model is still valid
+    final SModel modelDescriptor = mr.resolve(myProject.getRepository());
+    if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
+      return;
+    }
+    MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<>(true);
+    ValidationUtil.validateModel(modelDescriptor, collector);
+    addUpdate(node, createNodeUpdate(collector));
   }
 
   @Override
   public void visitModuleNode(@NotNull final ProjectModuleTreeNode node) {
     final SModuleReference mr = node.getModule().getModuleReference();
-    scheduleModelRead(node, new Runnable() {
-      @Override
-      public void run() {
-        SModule module = mr.resolve(myProject.getRepository());
-        if (module != null) {
-          MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<>(true);
-          ValidationUtil.validateModule(module, collector);
-          addUpdate(node, createNodeUpdate(collector));
-        }
-      }
-    });
+    SModule module = mr.resolve(myProject.getRepository());
+    if (module != null) {
+      MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<>(true);
+      ValidationUtil.validateModule(module, collector);
+      addUpdate(node, createNodeUpdate(collector));
+    }
   }
 
   /*package*/ ErrorStateNodeUpdate createNodeUpdate(MessageCollectProcessor<?> messages) {
