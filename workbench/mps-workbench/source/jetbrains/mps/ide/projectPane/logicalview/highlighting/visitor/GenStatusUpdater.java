@@ -102,23 +102,12 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     if (!(md instanceof GeneratableSModel)) {
       return;
     }
-    if (md.getModule() == null) return;
-
-    boolean wasChanged = ((EditableSModel) md).isChanged();
-
-    if (!wasChanged && !((GeneratableSModel) md).isGeneratable()) {
-      // changing doNotGenerate := true immediately renders the model notGeneratable
-      // while GenStatusUpdater needs to update its status
+    if (md.getModule() == null) {
       return;
     }
 
     final ProjectModuleTreeNode moduleNode = getContainingModuleNode(modelNode);
     if (moduleNode == null) {
-      return;
-    }
-    if (moduleNode.getModule().isReadOnly()) {
-      new StatusUpdate(modelNode).update(GenerationStatus.READONLY);
-      new StatusUpdate(moduleNode).update(GenerationStatus.READONLY);
       return;
     }
 
@@ -173,7 +162,6 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
       if (myModuleNode == null && myModelNode == null) {
         return null;
       }
-      // FIXME update is inside model read already, no need to wrap once again
       GenerationStatus status = compute();
       update(status);
       return status;
@@ -189,14 +177,10 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
 
     private GenerationStatus compute() {
       if (myModelNode != null) {
-        // extra check before read action
-        if (myModelNode.getModel().getModule() == null) {
-          return GenerationStatus.NOT_REQUIRED;
-        }
-        return getGenerationStatus(myModelNode);
+        return getGenerationStatus(myModelNode.getModel());
       }
       if (myModuleNode != null) {
-        return getGenerationStatus(myModuleNode);
+        return getGenerationStatus(myModuleNode.getModule());
       }
       throw new IllegalStateException();
     }
@@ -211,8 +195,7 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     return false;
   }
 
-  /*package*/ GenerationStatus getGenerationStatus(ProjectModuleTreeNode node) {
-    SModule module = node.getModule();
+  private GenerationStatus getGenerationStatus(SModule module) {
     if (module.isReadOnly()) {
       return GenerationStatus.READONLY;
     }
@@ -229,28 +212,31 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
     return GenerationStatus.NOT_REQUIRED;
   }
 
-  private GenerationStatus getGenerationStatus(SModelTreeNode node) {
-    if (node.getModel() == null) return GenerationStatus.NOT_REQUIRED;
-    if (isPackaged(node)) return GenerationStatus.READONLY;
-    if (isDoNotGenerate(node)) return GenerationStatus.DO_NOT_GENERATE;
+  private GenerationStatus getGenerationStatus(SModel model) {
+    if (model == null || model.getModule() == null) {
+      return GenerationStatus.NOT_REQUIRED;
+    }
+    if (isPackaged(model)) {
+      return GenerationStatus.READONLY;
+    }
+    if (isDoNotGenerate(model)) {
+      return GenerationStatus.DO_NOT_GENERATE;
+    }
 
-    boolean required = myGenerationStatusManager.generationRequired(node.getModel());
+    boolean required = myGenerationStatusManager.generationRequired(model);
     return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
   }
 
-  private static boolean isPackaged(SModelTreeNode node) {
-    SModel md = node.getModel();
-    if (!(md instanceof EditableSModel)) return false;
-    return md.isReadOnly();
+  private static boolean isPackaged(SModel md) {
+    // XXX no idea why models other than editable are not deemed packaged, when read-only
+    return md instanceof EditableSModel && md.isReadOnly();
   }
 
-  private static boolean isDoNotGenerate(SModelTreeNode node) {
-    SModel md = node.getModel();
-    if (!(md instanceof GeneratableSModel)) return false;
-    return ((GeneratableSModel) md).isDoNotGenerate();
+  private static boolean isDoNotGenerate(SModel md) {
+    return md instanceof GeneratableSModel && ((GeneratableSModel) md).isDoNotGenerate();
   }
 
-  public static enum GenerationStatus {
+  public enum GenerationStatus {
     READONLY("read only"),
     DO_NOT_GENERATE("do not generate"),
     UPDATING("updating..."),
