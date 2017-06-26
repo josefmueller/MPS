@@ -18,7 +18,6 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.projectPane.logicalview.PresentationUpdater;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.TreeUpdateVisitor;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -45,7 +44,7 @@ import java.util.Map;
 public class SModelNodeListeners {
   private final ModelChangeListener myModelChangeListener;
   private final SRepositoryContentAdapter myRepositoryListener;
-  private final GenStatusTracker myGenStatusListener;
+  private final ModelGenerationStatusListener myGenStatusListener;
 
   /**
    * There might be more than one tree node for the same model (e.g. one under language, another under @descriptor),
@@ -55,7 +54,7 @@ public class SModelNodeListeners {
   private final ProjectPaneTreeHighlighter myTreeHighlighter;
 
 
-  SModelNodeListeners(ProjectPaneTreeHighlighter treeHighlighter, TreeUpdateVisitor genStatusUpdate) {
+  SModelNodeListeners(ProjectPaneTreeHighlighter treeHighlighter) {
     myTreeHighlighter = treeHighlighter;
     myModelChangeListener = new ModelChangeListener();
     myRepositoryListener = new SRepositoryContentAdapter() {
@@ -74,7 +73,7 @@ public class SModelNodeListeners {
         refreshAffectedTreeNodes(model);
       }
     };
-    myGenStatusListener = new GenStatusTracker(genStatusUpdate);
+    myGenStatusListener = sm -> myTreeHighlighter.refreshGenerationStatusForTreeNodes(findTreeNode(sm));
   }
 
   public void startListening(SRepository projectRepository, ModelGenerationStatusManager generationStatusManager) {
@@ -156,22 +155,6 @@ public class SModelNodeListeners {
         return true;
       }
     }.update(reloadSubTree, updateAncestors);
-  }
-
-  private class GenStatusTracker implements ModelGenerationStatusListener {
-    private final TreeUpdateVisitor myGenStatusVisitor;
-
-    /*package*/ GenStatusTracker(TreeUpdateVisitor genStatusUpdate) {
-      myGenStatusVisitor = genStatusUpdate;
-    }
-
-    @Override
-    public void generatedFilesChanged(SModel sm) {
-      // Likely, shall use myTreeHighlighter.dispatchForHierarchy, not to expose myGenStatusVisitor here
-      for (SModelTreeNode treeNode : findTreeNode(sm)) {
-        treeNode.accept(myGenStatusVisitor);
-      }
-    }
   }
 
   private class ModelChangeListener extends SModelAdapter {

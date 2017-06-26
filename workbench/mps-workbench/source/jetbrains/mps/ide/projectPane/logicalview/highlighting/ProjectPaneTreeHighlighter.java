@@ -87,7 +87,7 @@ public class ProjectPaneTreeHighlighter {
 
   private SModelNodeListeners getModelListeners() {
     if (myModelListeners == null) {
-      myModelListeners = new SModelNodeListeners(this, myGenStatusVisitor);
+      myModelListeners = new SModelNodeListeners(this);
       myModelListeners.startListening(myProjectRepository, myGenStatusVisitor.getStatusManager());
     }
     return myModelListeners;
@@ -143,6 +143,13 @@ public class ProjectPaneTreeHighlighter {
       tn.accept(myGenStatusVisitor);
     }
   }
+
+  /*package*/ void refreshGenerationStatusForTreeNodes(Collection<SModelTreeNode> treeNodes) {
+    for (SModelTreeNode tn : treeNodes) {
+      tn.accept(myGenStatusVisitor);
+    }
+  }
+
 
   private void dispatchForHierarchy(MPSTreeNode treeNode) {
     if (treeNode instanceof TreeElement) {
