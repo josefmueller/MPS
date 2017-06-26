@@ -19,4 +19,5 @@ public interface ProjectVersion {
   Version CURRENT = Version.fromString("3.1");
 
   void setVersion(Version current);
+  Version getVersion();
 }

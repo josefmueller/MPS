@@ -296,12 +296,12 @@
                 <node concept="liA8E" id="5SsFeroaDTJ" role="2OqNvi">
                   <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
                   <node concept="3VsKOn" id="22DYt9Q01_E" role="37wK5m">
-                    <ref role="3VsUkX" to="l0id:48p7sjLIev1" resolve="MPSProjectVersion" />
+                    <ref role="3VsUkX" to="bdll:~ProjectVersion" resolve="ProjectVersion" />
                   </node>
                 </node>
               </node>
               <node concept="liA8E" id="5SsFeroaafJ" role="2OqNvi">
-                <ref role="37wK5l" to="l0id:48p7sjLIewf" resolve="getVersion" />
+                <ref role="37wK5l" to="bdll:~ProjectVersion.getVersion():jetbrains.mps.migration.global.Version" resolve="getVersion" />
               </node>
             </node>
           </node>
@@ -334,8 +334,8 @@
                       <node concept="liA8E" id="7C$AW5VBSSk" role="2OqNvi">
                         <ref role="37wK5l" to="bdll:~Version.isMajorUpdate(jetbrains.mps.migration.global.Version):boolean" resolve="isMajorUpdate" />
                         <node concept="10M0yZ" id="7C$AW5VBSVN" role="37wK5m">
-                          <ref role="1PxDUh" to="l0id:48p7sjLIev1" resolve="MPSProjectVersion" />
                           <ref role="3cqZAo" to="bdll:~ProjectVersion.CURRENT" resolve="CURRENT" />
+                          <ref role="1PxDUh" to="bdll:~ProjectVersion" resolve="ProjectVersion" />
                         </node>
                       </node>
                     </node>
