@@ -1954,6 +1954,12 @@
       <node concept="nCB5N" id="48p7sjLAh_R" role="nCB5Z">
         <ref role="nCB5Y" to="ffeo:1nJh0raUWjx" resolve="migrationAssistant" />
       </node>
+      <node concept="nCB5N" id="6ZstPQmZpFx" role="nCB5Z">
+        <ref role="nCB5Y" node="3ZROizBXGcu" resolve="mps-common" />
+      </node>
+      <node concept="nCB5N" id="6ZstPQmZVfF" role="nCB5Z">
+        <ref role="nCB5Y" to="ffeo:1H905DlDRAI" resolve="mps-openapi" />
+      </node>
     </node>
     <node concept="13uUGR" id="48p7sjLwe8y" role="1l3spa">
       <ref role="13uUGO" to="ffeo:6eCuTcwOnJO" resolve="IDEA" />
