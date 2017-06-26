@@ -16,8 +16,6 @@
 package jetbrains.mps.ide.projectPane.logicalview.highlighting;
 
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ModuleNodeListeners;
-import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.SModelNodeListeners;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ErrorChecker;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.GenStatusUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.ModifiedMarker;
@@ -32,6 +30,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Collection;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.RejectedExecutionHandler;
@@ -88,7 +87,7 @@ public class ProjectPaneTreeHighlighter {
 
   private SModelNodeListeners getModelListeners() {
     if (myModelListeners == null) {
-      myModelListeners = new SModelNodeListeners(myGenStatusVisitor, myErrorVisitor, myModifiedMarker);
+      myModelListeners = new SModelNodeListeners(this, myGenStatusVisitor);
       myModelListeners.startListening(myProjectRepository, myGenStatusVisitor.getStatusManager());
     }
     return myModelListeners;
@@ -96,7 +95,7 @@ public class ProjectPaneTreeHighlighter {
 
   private ModuleNodeListeners getModuleListeners() {
     if (myModuleListeners == null) {
-      myModuleListeners = new ModuleNodeListeners(myErrorVisitor);
+      myModuleListeners = new ModuleNodeListeners(this);
       myModuleListeners.startListening();
     }
     return myModuleListeners;
@@ -129,6 +128,20 @@ public class ProjectPaneTreeHighlighter {
    */
   public void dumbUpdate() {
     dispatchForHierarchy(myTree.getRootNode());
+  }
+
+  /*package*/ void refreshModuleTreeNodes(Collection<ProjectModuleTreeNode> treeNodes) {
+    for (ProjectModuleTreeNode n : treeNodes) {
+      n.accept(myErrorVisitor);
+    }
+  }
+
+  /*package*/ void refreshModelTreeNodes(Collection<SModelTreeNode> treeNodes) {
+    for (SModelTreeNode tn : treeNodes) {
+      tn.accept(myErrorVisitor);
+      tn.accept(myModifiedMarker);
+      tn.accept(myGenStatusVisitor);
+    }
   }
 
   private void dispatchForHierarchy(MPSTreeNode treeNode) {

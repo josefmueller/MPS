@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
+package jetbrains.mps.ide.projectPane.logicalview.highlighting;
 
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -51,16 +51,12 @@ public class SModelNodeListeners {
    * There might be more than one tree node for the same model (e.g. one under language, another under @descriptor),
    * we need to track all tree nodes to update them on model change
    */
-  private final Map<SModelReference, Collection<SModelTreeNode>> myTreeNodes = new HashMap<SModelReference, Collection<SModelTreeNode>>();
-  private final TreeUpdateVisitor[] myUpdates; // shall be CompositeVisitor, but I'm lazy for that
+  private final Map<SModelReference, Collection<SModelTreeNode>> myTreeNodes = new HashMap<>();
+  private final ProjectPaneTreeHighlighter myTreeHighlighter;
 
 
-  public SModelNodeListeners(TreeUpdateVisitor genStatusUpdate, TreeUpdateVisitor errorVisitor, TreeUpdateVisitor modifiedMarker) {
-    myUpdates = new TreeUpdateVisitor[3];
-    myUpdates[0] = genStatusUpdate;
-    myUpdates[1] = errorVisitor;
-    myUpdates[2] = modifiedMarker;
-
+  SModelNodeListeners(ProjectPaneTreeHighlighter treeHighlighter, TreeUpdateVisitor genStatusUpdate) {
+    myTreeHighlighter = treeHighlighter;
     myModelChangeListener = new ModelChangeListener();
     myRepositoryListener = new SRepositoryContentAdapter() {
       @Override
@@ -98,7 +94,7 @@ public class SModelNodeListeners {
       synchronized (myTreeNodes) {
         Collection<SModelTreeNode> knownNodes = myTreeNodes.get(model.getReference());
         if (knownNodes == null) {
-          myTreeNodes.put(model.getReference(), knownNodes = new ArrayList<SModelTreeNode>(3));
+          myTreeNodes.put(model.getReference(), knownNodes = new ArrayList<>(3));
         } else {
           modelSeenFirstTime = false;
         }
@@ -108,7 +104,7 @@ public class SModelNodeListeners {
         ((SModelInternal) model).addModelListener(myModelChangeListener);
       }
     }
-    refreshTreeNodes(node);
+    refreshTreeNodes(Collections.singleton(node));
   }
 
   public void detach(@NotNull SModelTreeNode node) {
@@ -131,25 +127,23 @@ public class SModelNodeListeners {
     }
   }
 
-  void refreshAffectedTreeNodes(SModel changed) {
-    for (SModelTreeNode treeNode : findTreeNode(changed)) {
-      refreshTreeNodes(treeNode);
-    }
+  @SuppressWarnings("WeakerAccess")
+  final void refreshAffectedTreeNodes(SModel changed) {
+    refreshTreeNodes(findTreeNode(changed));
+  }
+  @SuppressWarnings("WeakerAccess")
+  final void refreshTreeNodes(Collection<SModelTreeNode> treeNodes) {
+    myTreeHighlighter.refreshModelTreeNodes(treeNodes);
   }
 
-  Iterable<SModelTreeNode> findTreeNode(SModel sm) {
+  Collection<SModelTreeNode> findTreeNode(SModel sm) {
     synchronized (myTreeNodes) {
       final Collection<SModelTreeNode> nodes = myTreeNodes.get(sm.getReference());
-      return nodes == null ? Collections.<SModelTreeNode>emptyList() : new ArrayList<SModelTreeNode>(nodes);
+      return nodes == null ? Collections.emptyList() : new ArrayList<>(nodes);
     }
   }
 
-  void refreshTreeNodes(SModelTreeNode toRefresh) {
-    for (TreeUpdateVisitor v : myUpdates) {
-      toRefresh.accept(v);
-    }
-  }
-
+  @SuppressWarnings("WeakerAccess")
   void updateNodePresentation(SModelTreeNode treeNode, boolean reloadSubTree, boolean updateAncestors) {
     new PresentationUpdater<SModelTreeNode>(treeNode) {
       @Override
@@ -167,12 +161,13 @@ public class SModelNodeListeners {
   private class GenStatusTracker implements ModelGenerationStatusListener {
     private final TreeUpdateVisitor myGenStatusVisitor;
 
-    public GenStatusTracker(TreeUpdateVisitor genStatusUpdate) {
+    /*package*/ GenStatusTracker(TreeUpdateVisitor genStatusUpdate) {
       myGenStatusVisitor = genStatusUpdate;
     }
 
     @Override
     public void generatedFilesChanged(SModel sm) {
+      // Likely, shall use myTreeHighlighter.dispatchForHierarchy, not to expose myGenStatusVisitor here
       for (SModelTreeNode treeNode : findTreeNode(sm)) {
         treeNode.accept(myGenStatusVisitor);
       }
@@ -182,18 +177,25 @@ public class SModelNodeListeners {
   private class ModelChangeListener extends SModelAdapter {
     @Override
     public void modelChangedDramatically(SModel model) {
-      for (SModelTreeNode treeNode : findTreeNode(model)) {
+      Collection<SModelTreeNode> treeNodes = findTreeNode(model);
+      for (SModelTreeNode treeNode : treeNodes) {
+        // XXX it's not too much sense in updating node presentation if there would be another update from refreshTreeNode
+        //     Besides, given number of re-dispatches (PresentationUpdater->MergingUpdateQueue->EDT+Read) for updateNodePresentation
+        //     vs. ThreadPoolExecutor -> TreeNodeUpdater ->EDT+Read for refreshNodeTrees, it's impossible to predict execution order for the
+        //     updates. However, left this code as is for scenarios when no tree update visitor does any change and therefore there'd be no
+        //     update of the tree at all. Would be great to come up with a better mechanism.
         updateNodePresentation(treeNode, false, true);
-        refreshTreeNodes(treeNode);
       }
+      refreshTreeNodes(treeNodes);
     }
 
     @Override
     public void modelChanged(SModel model) {
-      for (SModelTreeNode treeNode : findTreeNode(model)) {
+      Collection<SModelTreeNode> treeNodes = findTreeNode(model);
+      for (SModelTreeNode treeNode : treeNodes) {
         updateNodePresentation(treeNode, false, true);
-        refreshTreeNodes(treeNode);
       }
+      refreshTreeNodes(treeNodes);
     }
 
     @Override
