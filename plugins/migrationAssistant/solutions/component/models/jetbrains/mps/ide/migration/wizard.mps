@@ -10,6 +10,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="uxeh" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.wizard(MPS.IDEA/)" />
@@ -47,9 +48,18 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
     <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
+    <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
   </imports>
   <registry>
+    <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
+        <property id="2756621024541341363" name="file" index="1iqoE4" />
+      </concept>
+      <concept id="8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconExpression" flags="nn" index="1QGGTA">
+        <child id="8974276187400029893" name="icon" index="1QGGTw" />
+      </concept>
+    </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
         <child id="1224071154657" name="classifierType" index="0kSFW" />
@@ -2401,9 +2411,9 @@
                                     </node>
                                   </node>
                                 </node>
-                                <node concept="10M0yZ" id="6t2iki4wmGT" role="37wK5m">
-                                  <ref role="3cqZAo" to="l7us:~MPSIcons$Nodes.Language" resolve="Language" />
-                                  <ref role="1PxDUh" to="l7us:~MPSIcons$Nodes" resolve="MPSIcons.Nodes" />
+                                <node concept="10M0yZ" id="3XH1aBtgV_Q" role="37wK5m">
+                                  <ref role="3cqZAo" node="3XH1aBtfKGs" resolve="Language" />
+                                  <ref role="1PxDUh" node="3XH1aBtfKF2" resolve="Icons" />
                                 </node>
                               </node>
                             </node>
@@ -8494,6 +8504,24 @@
         <node concept="10P_77" id="36$CdjYdEPE" role="1tU5fm" />
       </node>
     </node>
+  </node>
+  <node concept="312cEu" id="3XH1aBtfKF2">
+    <property role="3GE5qa" value="1_initial" />
+    <property role="TrG5h" value="Icons" />
+    <node concept="Wx3nA" id="3XH1aBtfKGs" role="jymVt">
+      <property role="TrG5h" value="Language" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="3XH1aBtfKGt" role="1tU5fm">
+        <ref role="3uigEE" to="dxuu:~Icon" resolve="Icon" />
+      </node>
+      <node concept="1QGGTA" id="3XH1aBtfXXp" role="33vP2m">
+        <node concept="1QGGSu" id="3XH1aBtfXXF" role="1QGGTw">
+          <property role="1iqoE4" value="${mps_home}/plugins/migrationAssistant/icons/language.png" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3XH1aBtfKGw" role="1B3o_S" />
+    </node>
+    <node concept="3Tm1VV" id="3XH1aBtfKF3" role="1B3o_S" />
   </node>
 </model>
 

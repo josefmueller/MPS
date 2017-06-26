@@ -34,7 +34,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
@@ -136,7 +135,7 @@ public class InitialStep extends BaseStep {
           }
         }).distinct().visitAll(new IVisitor<SLanguage>() {
           public void visit(SLanguage it) {
-            MapSequence.fromMap(l2n).put(it, new InitialStep.MyTreeNode(NameUtil.compactNamespace(it.getQualifiedName()), MPSIcons.Nodes.Language));
+            MapSequence.fromMap(l2n).put(it, new InitialStep.MyTreeNode(NameUtil.compactNamespace(it.getQualifiedName()), Icons.Language));
           }
         });
         Sequence.fromIterable(scripts).ofType(MigrationScriptReference.class).visitAll(new IVisitor<MigrationScriptReference>() {
