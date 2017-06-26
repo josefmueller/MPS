@@ -65,7 +65,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
         }, effectiveNode, "modifiedGroup");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

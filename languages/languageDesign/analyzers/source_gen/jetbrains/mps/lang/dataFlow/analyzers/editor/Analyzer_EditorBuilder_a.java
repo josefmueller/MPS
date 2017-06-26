@@ -394,7 +394,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
         EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a11a(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
@@ -514,7 +514,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
         EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a41a(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
@@ -634,7 +634,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
         EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a71a(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

@@ -95,7 +95,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
         }, effectiveNode, "classifier");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull_smartReference(cell);
         return cell;
       }
     };
@@ -165,7 +165,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
         }, effectiveNode, "classifier");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull_smartReference(cell);
         return cell;
       }
     };
@@ -253,7 +253,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
         }, effectiveNode, "classifier");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull_smartReference(cell);
         return cell;
       }
     };

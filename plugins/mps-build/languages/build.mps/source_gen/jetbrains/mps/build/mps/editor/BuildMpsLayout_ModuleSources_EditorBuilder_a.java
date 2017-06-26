@@ -100,7 +100,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
         }, effectiveNode, "module");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

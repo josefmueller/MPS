@@ -46,7 +46,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
         EditorCell cell = new DecimalBinaryOperation_InspectorBuilder_a.Inline_Builder_sl2ryj_a0a(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

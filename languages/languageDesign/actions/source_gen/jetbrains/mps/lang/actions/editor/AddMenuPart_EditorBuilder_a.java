@@ -114,7 +114,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
         }, effectiveNode, "concept");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

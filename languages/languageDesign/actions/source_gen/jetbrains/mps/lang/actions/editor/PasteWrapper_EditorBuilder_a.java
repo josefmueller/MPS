@@ -90,7 +90,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
         }, effectiveNode, "sourceConcept");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
@@ -166,7 +166,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
         }, effectiveNode, "targetConcept");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
