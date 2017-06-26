@@ -83,7 +83,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     return editorCell;
   }
   private EditorCell createConstant_7rg9e4_b1a0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "You can drop/inline the menu or just remove the annotation.");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "You can inline the menu or just remove the annotation.");
     editorCell.setCellId("Constant_7rg9e4_b1a0");
     Style style = new StyleImpl();
     new itemStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
@@ -92,7 +92,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     return editorCell;
   }
   private EditorCell createConstant_7rg9e4_c1a0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Use migration intentions for such proposals.");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Use enhancement script for such purposes.");
     editorCell.setCellId("Constant_7rg9e4_c1a0");
     Style style = new StyleImpl();
     new itemStyleClass(getEditorContext(), getNode()).apply(style, editorCell);

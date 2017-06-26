@@ -25479,11 +25479,11 @@
             <ref role="1k5W1q" node="hoxUe05" resolve="item" />
           </node>
           <node concept="3F0ifn" id="1Pr44JlkA05" role="3EZMnx">
-            <property role="3F0ifm" value="You can drop/inline the menu or just remove the annotation." />
+            <property role="3F0ifm" value="You can inline the menu or just remove the annotation." />
             <ref role="1k5W1q" node="hoxUe05" resolve="item" />
           </node>
           <node concept="3F0ifn" id="1Pr44JlkA1K" role="3EZMnx">
-            <property role="3F0ifm" value="Use migration intentions for such proposals." />
+            <property role="3F0ifm" value="Use enhancement script for such purposes." />
             <ref role="1k5W1q" node="hoxUe05" resolve="item" />
           </node>
           <node concept="2iRkQZ" id="1Pr44JlkA1C" role="2iSdaV" />
