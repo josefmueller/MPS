@@ -30,12 +30,6 @@
     </group>
   </actions>
 
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.migration.component.plugin.Component_PluginInitializer</implementation-class>
-    </component>
-  </application-components>
-
   <project-components>
     <component>
       <interface-class>jetbrains.mps.migration.global.ProjectVersion</interface-class>

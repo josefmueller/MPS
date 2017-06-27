@@ -53,7 +53,7 @@ public class RunMigration extends BaseAction {
           progressMonitor.step(module.getModuleName());
           WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
             public void run() {
-              myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
+              RunMigration.this.myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
                 public void run() {
                   myScript.execute(module);
                 }

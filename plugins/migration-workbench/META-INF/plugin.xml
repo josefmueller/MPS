@@ -10,6 +10,12 @@
   <depends>jetbrains.mps.ide.migration.assistant</depends>
   <depends>jetbrains.mps.ide.modelchecker</depends>
 
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.migration.workbench.plugin.Workbench_PluginInitializer</implementation-class>
+    </component>
+  </application-components>
+
   <project-components>
   <component>
     <interface-class>jetbrains.mps.migration.global.MigrationProblemHandler</interface-class>

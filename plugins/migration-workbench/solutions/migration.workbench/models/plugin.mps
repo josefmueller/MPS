@@ -199,7 +199,9 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
+        <reference id="1182955020723" name="classConcept" index="1HBi2w" />
+      </concept>
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
@@ -4699,9 +4701,11 @@
                                         </node>
                                       </node>
                                       <node concept="2OqwBi" id="7osCUTvjhMT" role="ukAjM">
-                                        <node concept="2OqwBi" id="7osCUTvjgbw" role="2Oq$k0">
-                                          <node concept="Xjq3P" id="7osCUTvjhA9" role="2Oq$k0" />
-                                          <node concept="2OwXpG" id="7osCUTvjhHz" role="2OqNvi">
+                                        <node concept="2OqwBi" id="3UuU2hfAGW2" role="2Oq$k0">
+                                          <node concept="Xjq3P" id="3UuU2hfAK0p" role="2Oq$k0">
+                                            <ref role="1HBi2w" node="oze2ctcP$4" resolve="RunMigration" />
+                                          </node>
+                                          <node concept="2OwXpG" id="3UuU2hfAKxL" role="2OqNvi">
                                             <ref role="2Oxat5" node="oze2ctcZod" resolve="myProject" />
                                           </node>
                                         </node>
