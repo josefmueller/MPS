@@ -5000,16 +5000,29 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="3UuU2hftIfr" role="3cqZAp">
+          <node concept="3SKdUq" id="3UuU2hftIft" role="3SKWNk">
+            <property role="3SKdUp" value="todo remove this hacky code after reload elimination and intoducing migration annotations" />
+          </node>
+        </node>
         <node concept="3clFbF" id="2wbhCYFMbdt" role="3cqZAp">
           <node concept="2OqwBi" id="2wbhCYFMbdu" role="3clFbG">
-            <node concept="2OqwBi" id="2wbhCYFMbdv" role="2Oq$k0">
-              <node concept="37vLTw" id="2wbhCYFMbdw" role="2Oq$k0">
-                <ref role="3cqZAo" node="78xBDbK5gKg" resolve="myProject" />
-              </node>
-              <node concept="liA8E" id="2wbhCYFMbdx" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                <node concept="3VsKOn" id="2wbhCYFMbdy" role="37wK5m">
-                  <ref role="3VsUkX" to="bim2:xB9FQhi9bJ" resolve="MigrationChecker" />
+            <node concept="2ShNRf" id="3UuU2hftIz1" role="2Oq$k0">
+              <node concept="1pGfFk" id="3UuU2hfu35d" role="2ShVmc">
+                <ref role="37wK5l" to="bim2:2wbhCYFF5cu" resolve="MigrationCheckerImpl" />
+                <node concept="37vLTw" id="3UuU2hfu3iB" role="37wK5m">
+                  <ref role="3cqZAo" node="78xBDbK5gKg" resolve="myProject" />
+                </node>
+                <node concept="2OqwBi" id="3UuU2hfu5$X" role="37wK5m">
+                  <node concept="37vLTw" id="3UuU2hfu52U" role="2Oq$k0">
+                    <ref role="3cqZAo" node="78xBDbK5gKg" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="3UuU2hfu67M" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                    <node concept="3VsKOn" id="3UuU2hfu79E" role="37wK5m">
+                      <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationRegistry" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
