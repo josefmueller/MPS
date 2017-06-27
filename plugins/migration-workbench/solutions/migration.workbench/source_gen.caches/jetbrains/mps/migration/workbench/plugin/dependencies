@@ -1,36 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.migration.component.plugin.Component_ApplicationPlugin" file="Component_ApplicationPlugin.java">
-    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.LanguageMigrations_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.MigrationUtils_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.MigrationsMenu_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.Migrations_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.ProjectMigrations_ActionGroup" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.TestMigrationWizard_Action" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.ToolsInternalAddition_ActionGroup" />
-    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-  </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.Component_PluginInitializer" file="Component_PluginInitializer.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.Component_ApplicationPlugin" />
-    <classNode dependClassName="jetbrains.mps.plugins.AbstractPluginFactory" />
-    <classNode dependClassName="jetbrains.mps.plugins.PluginFactoriesRegistry" />
-    <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-  </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" file="ExecuteMigrationAssistant_Action.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.ExecuteMigrationAssistant_Action" file="ExecuteMigrationAssistant_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -53,7 +23,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action" file="ExecuteRerunnableMigrations_Action.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action" file="ExecuteRerunnableMigrations_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -91,7 +61,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action" file="FindMetaCreationCode_Action.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action" file="FindMetaCreationCode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -127,7 +97,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.LanguageMigrations_ActionGroup" file="LanguageMigrations_ActionGroup.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.LanguageMigrations_ActionGroup" file="LanguageMigrations_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -145,7 +115,7 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.RunMigration" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.RunMigration" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SLanguageHierarchy" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRegistry" />
@@ -158,7 +128,7 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog" file="MigrationTestConfigDialog.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog" file="MigrationTestConfigDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.VerticalFlowLayout" />
     <classNode dependClassName="com.intellij.ui.IdeBorderFactory" />
@@ -193,25 +163,25 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.MigrationUtils_ActionGroup" file="MigrationUtils_ActionGroup.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.MigrationUtils_ActionGroup" file="MigrationUtils_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.MigrationsMenu_ActionGroup" file="MigrationsMenu_ActionGroup.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.MigrationsMenu_ActionGroup" file="MigrationsMenu_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.Migrations_ActionGroup" file="Migrations_ActionGroup.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.Migrations_ActionGroup" file="Migrations_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.ProjectMigrations_ActionGroup" file="ProjectMigrations_ActionGroup.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.ProjectMigrations_ActionGroup" file="ProjectMigrations_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="com.intellij.openapi.util.Pair" />
@@ -220,16 +190,16 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationsRegistry" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.RunProjectMigration_Action" />
     <classNode dependClassName="jetbrains.mps.workbench.ActionPlace" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.RunMigration" file="RunMigration.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.RunMigration" file="RunMigration.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
@@ -252,7 +222,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" file="RunPreUpdateCheck_Action.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action" file="RunPreUpdateCheck_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -297,7 +267,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action" file="RunProjectMigration_Action.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.RunProjectMigration_Action" file="RunProjectMigration_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -318,7 +288,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action" file="ShowDeprecatedStuff_Action.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedStuff_Action" file="ShowDeprecatedStuff_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -333,8 +303,8 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.util.DeprecatedUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.DeprecatedUtil" />
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationProblemHandler" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -342,7 +312,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action" file="ShowDeprecatedUsages_Action.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedUsages_Action" file="ShowDeprecatedUsages_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
@@ -359,10 +329,10 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModulesScope" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.util.DeprecatedUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.DeprecatedUtil" />
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationProblemHandler" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -371,7 +341,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.TestMigrationSession" file="TestMigrationSession.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.TestMigrationSession" file="TestMigrationSession.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -402,11 +372,11 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog" />
     <classNode dependClassName="jetbrains.mps.migration.global.CleanupProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationOptions" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationWithOptions" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
@@ -420,7 +390,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.wizard.MigrationSession" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.TestMigrationWizard_Action" file="TestMigrationWizard_Action.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.TestMigrationWizard_Action" file="TestMigrationWizard_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -431,15 +401,45 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationWizard" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog" />
-    <classNode dependClassName="jetbrains.mps.migration.component.plugin.TestMigrationSession" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.TestMigrationSession" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
-  <dependency className="jetbrains.mps.migration.component.plugin.ToolsInternalAddition_ActionGroup" file="ToolsInternalAddition_ActionGroup.java">
+  <dependency className="jetbrains.mps.migration.workbench.plugin.ToolsInternalAddition_ActionGroup" file="ToolsInternalAddition_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
+  </dependency>
+  <dependency className="jetbrains.mps.migration.workbench.plugin.Workbench_ApplicationPlugin" file="Workbench_ApplicationPlugin.java">
+    <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.ToolsInternal_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.ExecuteMigrationAssistant_Action" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.LanguageMigrations_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.MigrationUtils_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.MigrationsMenu_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.Migrations_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.ProjectMigrations_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedStuff_Action" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedUsages_Action" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.TestMigrationWizard_Action" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.ToolsInternalAddition_ActionGroup" />
+    <classNode extendsClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+  </dependency>
+  <dependency className="jetbrains.mps.migration.workbench.plugin.Workbench_PluginInitializer" file="Workbench_PluginInitializer.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="jetbrains.mps.migration.workbench.plugin.Workbench_ApplicationPlugin" />
+    <classNode dependClassName="jetbrains.mps.plugins.AbstractPluginFactory" />
+    <classNode dependClassName="jetbrains.mps.plugins.PluginFactoriesRegistry" />
+    <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
 </dependenciesRoot>
 

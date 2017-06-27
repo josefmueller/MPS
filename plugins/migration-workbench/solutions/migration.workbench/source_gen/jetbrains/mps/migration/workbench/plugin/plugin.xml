@@ -10,7 +10,7 @@
   
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.migration.component.plugin.Component_PluginInitializer</implementation-class>
+      <implementation-class>jetbrains.mps.migration.workbench.plugin.Workbench_PluginInitializer</implementation-class>
     </component>
   </application-components>
   

@@ -124,6 +124,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModulesScope" />
     <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.util.MigrationDataUtil" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -136,7 +137,6 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringScript" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference" />
-    <classNode dependClassName="jetbrains.mps.migration.component.util.MigrationDataUtil" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />

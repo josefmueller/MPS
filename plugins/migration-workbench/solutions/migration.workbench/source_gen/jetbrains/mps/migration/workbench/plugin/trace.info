@@ -22,8 +22,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/195018692992995152">
-    <file name="Component_ApplicationPlugin.java">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/195018692992995152">
+    <file name="Workbench_ApplicationPlugin.java">
       <node id="195018692992995152" at="10,0,11,0" concept="7" trace="myId" />
       <node id="195018692992995152" at="13,27,14,16" concept="13" />
       <node id="195018692992995152" at="16,30,17,30" concept="14" />
@@ -47,7 +47,7 @@
       <node id="195018692992995152" at="38,132,39,77" concept="6" />
       <node id="195018692992995152" at="39,77,40,133" concept="6" />
       <node id="195018692992995152" at="40,133,41,101" concept="6" />
-      <node id="195018692992995152" at="11,0,13,0" concept="3" trace="Component_ApplicationPlugin#()V" />
+      <node id="195018692992995152" at="11,0,13,0" concept="3" trace="Workbench_ApplicationPlugin#()V" />
       <node id="195018692992995152" at="33,0,35,0" concept="11" trace="adjustInterfaceGroups#()V" />
       <node id="195018692992995152" at="13,0,16,0" concept="11" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
       <node id="195018692992995152" at="35,0,43,0" concept="11" trace="adjustRegularGroups#()V" />
@@ -62,10 +62,10 @@
       <scope id="195018692992995152" at="35,0,43,0" />
       <scope id="195018692992995152" at="16,30,31,54" />
       <scope id="195018692992995152" at="16,0,33,0" />
-      <unit id="195018692992995152" at="9,0,44,0" name="jetbrains.mps.migration.component.plugin.Component_ApplicationPlugin" />
+      <unit id="195018692992995152" at="9,0,44,0" name="jetbrains.mps.migration.workbench.plugin.Workbench_ApplicationPlugin" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/4221956679900513516">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/4221956679900513516">
     <file name="MigrationTestConfigDialog.java">
       <node id="4221956679900513524" at="34,0,35,0" concept="7" trace="myProject" />
       <node id="4221956679900513517" at="35,0,36,0" concept="7" trace="myComponent" />
@@ -259,7 +259,7 @@
       <node id="6231371851042849708" at="375,7,376,51" concept="20" />
       <node id="1137191237725232970" at="83,50,86,9" concept="10" />
       <node id="1137191237725238742" at="86,9,89,9" concept="10" />
-      <node id="6231371851040781922" at="187,0,190,0" concept="11" trace="getResult#()Ljetbrains/mps/migration/component/plugin/MigrationTestConfigDialog/Result;" />
+      <node id="6231371851040781922" at="187,0,190,0" concept="11" trace="getResult#()Ljetbrains/mps/migration/workbench/plugin/MigrationTestConfigDialog/Result;" />
       <node id="6231371851041096595" at="234,0,237,0" concept="11" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
       <node id="6231371851041229250" at="245,0,248,0" concept="11" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
       <node id="6231371851041928994" at="253,0,256,0" concept="11" trace="getColumnCount#()I" />
@@ -477,18 +477,18 @@
         <var name="row" id="6231371851042849637" />
         <var name="value" id="6231371851042849635" />
       </scope>
-      <unit id="1137191237725152331" at="82,35,91,5" name="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog$1" />
-      <unit id="6231371851041131633" at="228,0,238,0" name="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog$MyPreErrRadioAction" />
-      <unit id="6231371851041229231" at="239,0,249,0" name="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog$MyPostErrRadioAction" />
-      <unit id="6231371851041297863" at="199,0,212,0" name="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog$Result$PMigration" />
-      <unit id="6231371851042720282" at="213,0,226,0" name="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog$Result$LMigration" />
-      <unit id="6231371851040756365" at="191,0,227,0" name="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog$Result" />
-      <unit id="6231371851041928926" at="250,0,307,0" name="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog$PMigTableModel" />
-      <unit id="6231371851042849517" at="308,0,379,0" name="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog$LMigTableModel" />
-      <unit id="4221956679900513516" at="33,0,380,0" name="jetbrains.mps.migration.component.plugin.MigrationTestConfigDialog" />
+      <unit id="1137191237725152331" at="82,35,91,5" name="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog$1" />
+      <unit id="6231371851041131633" at="228,0,238,0" name="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog$MyPreErrRadioAction" />
+      <unit id="6231371851041229231" at="239,0,249,0" name="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog$MyPostErrRadioAction" />
+      <unit id="6231371851041297863" at="199,0,212,0" name="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog$Result$PMigration" />
+      <unit id="6231371851042720282" at="213,0,226,0" name="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog$Result$LMigration" />
+      <unit id="6231371851040756365" at="191,0,227,0" name="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog$Result" />
+      <unit id="6231371851041928926" at="250,0,307,0" name="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog$PMigTableModel" />
+      <unit id="6231371851042849517" at="308,0,379,0" name="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog$LMigTableModel" />
+      <unit id="4221956679900513516" at="33,0,380,0" name="jetbrains.mps.migration.workbench.plugin.MigrationTestConfigDialog" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/442258911877355780">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/442258911877355780">
     <file name="RunMigration.java">
       <node id="442258911877362697" at="24,0,25,0" concept="7" trace="myScript" />
       <node id="442258911877395981" at="25,0,26,0" concept="7" trace="myProject" />
@@ -556,14 +556,14 @@
         <var name="_params" id="442258911877362799" />
         <var name="event" id="442258911877362796" />
       </scope>
-      <unit id="8510857365141938388" at="42,65,46,5" name="jetbrains.mps.migration.component.plugin.RunMigration$1" />
-      <unit id="8510857365141912505" at="56,94,60,15" name="jetbrains.mps.migration.component.plugin.RunMigration$2$1$1" />
-      <unit id="8510857365141910640" at="54,68,62,11" name="jetbrains.mps.migration.component.plugin.RunMigration$2$1" />
-      <unit id="2106197219109756080" at="47,42,69,5" name="jetbrains.mps.migration.component.plugin.RunMigration$2" />
-      <unit id="442258911877355780" at="23,0,72,0" name="jetbrains.mps.migration.component.plugin.RunMigration" />
+      <unit id="8510857365141938388" at="42,65,46,5" name="jetbrains.mps.migration.workbench.plugin.RunMigration$1" />
+      <unit id="8510857365141912505" at="56,76,60,15" name="jetbrains.mps.migration.workbench.plugin.RunMigration$2$1$1" />
+      <unit id="8510857365141910640" at="54,68,62,11" name="jetbrains.mps.migration.workbench.plugin.RunMigration$2$1" />
+      <unit id="2106197219109756080" at="47,42,69,5" name="jetbrains.mps.migration.workbench.plugin.RunMigration$2" />
+      <unit id="442258911877355780" at="23,0,72,0" name="jetbrains.mps.migration.workbench.plugin.RunMigration" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/5424895382000009558">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/5424895382000009558">
     <file name="MigrationUtils_ActionGroup.java">
       <node id="5424895382000009558" at="8,0,9,0" concept="16" trace="ID" />
       <node id="5424895382000009558" at="9,39,10,23" concept="18" />
@@ -573,10 +573,10 @@
       <node id="5424895382000009558" at="9,0,15,0" concept="3" trace="MigrationUtils_ActionGroup#()V" />
       <scope id="5424895382000009558" at="9,39,13,118" />
       <scope id="5424895382000009558" at="9,0,15,0" />
-      <unit id="5424895382000009558" at="7,0,16,0" name="jetbrains.mps.migration.component.plugin.MigrationUtils_ActionGroup" />
+      <unit id="5424895382000009558" at="7,0,16,0" name="jetbrains.mps.migration.workbench.plugin.MigrationUtils_ActionGroup" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/5424895382000009562">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/5424895382000009562">
     <file name="FindMetaCreationCode_Action.java">
       <node id="5424895382000009562" at="36,0,37,0" concept="16" trace="ICON" />
       <node id="5424895382000009562" at="38,40,39,66" concept="18" />
@@ -740,26 +740,26 @@
         <var name="_params" id="5424895382000009562" />
         <var name="event" id="5424895382000009562" />
       </scope>
-      <unit id="5424895382000053189" at="71,42,75,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$1" />
-      <unit id="5424895382000062215" at="76,372,80,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$2" />
-      <unit id="5424895382000054715" at="80,162,84,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$3" />
-      <unit id="1629739622220678100" at="85,372,89,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$4" />
-      <unit id="1629739622220678111" at="89,162,93,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$5" />
-      <unit id="1629739622220685585" at="94,372,98,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$6" />
-      <unit id="1629739622220685596" at="98,162,102,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$7" />
-      <unit id="5424895382000096364" at="103,331,107,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$8" />
-      <unit id="1629739622220726701" at="108,323,112,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$9" />
-      <unit id="1629739622220726932" at="113,319,117,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$10" />
-      <unit id="5424895382000097318" at="118,325,122,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$11" />
-      <unit id="1629739622220736825" at="123,325,127,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$12" />
-      <unit id="1629739622220742291" at="128,325,132,7" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$13" />
-      <unit id="5785495490417445393" at="138,42,142,5" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$14" />
-      <unit id="1697163102215652460" at="142,20,146,5" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action$15" />
-      <unit id="5424895382000009562" at="35,0,150,0" name="jetbrains.mps.migration.component.plugin.FindMetaCreationCode_Action" />
+      <unit id="5424895382000053189" at="71,42,75,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$1" />
+      <unit id="5424895382000062215" at="76,372,80,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$2" />
+      <unit id="5424895382000054715" at="80,162,84,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$3" />
+      <unit id="1629739622220678100" at="85,372,89,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$4" />
+      <unit id="1629739622220678111" at="89,162,93,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$5" />
+      <unit id="1629739622220685585" at="94,372,98,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$6" />
+      <unit id="1629739622220685596" at="98,162,102,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$7" />
+      <unit id="5424895382000096364" at="103,331,107,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$8" />
+      <unit id="1629739622220726701" at="108,323,112,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$9" />
+      <unit id="1629739622220726932" at="113,319,117,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$10" />
+      <unit id="5424895382000097318" at="118,325,122,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$11" />
+      <unit id="1629739622220736825" at="123,325,127,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$12" />
+      <unit id="1629739622220742291" at="128,325,132,7" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$13" />
+      <unit id="5785495490417445393" at="138,42,142,5" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$14" />
+      <unit id="1697163102215652460" at="142,20,146,5" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action$15" />
+      <unit id="5424895382000009562" at="35,0,150,0" name="jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/568541865470378992">
-    <file name="Component_PluginInitializer.java">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/568541865470378992">
+    <file name="Workbench_PluginInitializer.java">
       <node id="568541865470378992" at="17,51,18,55" concept="13" />
       <node id="568541865470378992" at="19,9,20,20" concept="13" />
       <node id="568541865470378992" at="26,36,27,83" concept="14" />
@@ -770,7 +770,7 @@
       <node id="568541865470378992" at="24,0,30,0" concept="11" trace="getComponentName#()Ljava/lang/String;" />
       <node id="568541865470378992" at="15,0,22,0" concept="11" trace="create#(Ljava/lang/Class;)null" />
       <node id="568541865470378992" at="13,40,22,7" concept="6" />
-      <node id="568541865470378992" at="13,0,24,0" concept="3" trace="Component_PluginInitializer#()V" />
+      <node id="568541865470378992" at="13,0,24,0" concept="3" trace="Workbench_PluginInitializer#()V" />
       <scope id="568541865470378992" at="30,31,30,31" />
       <scope id="568541865470378992" at="32,34,32,34" />
       <scope id="568541865470378992" at="17,51,18,55" />
@@ -784,14 +784,14 @@
       </scope>
       <scope id="568541865470378992" at="13,40,22,7" />
       <scope id="568541865470378992" at="13,0,24,0" />
-      <unit id="568541865470378992" at="14,54,22,5" name="jetbrains.mps.migration.component.plugin.Component_PluginInitializer$1" />
-      <unit id="568541865470378992" at="12,0,35,0" name="jetbrains.mps.migration.component.plugin.Component_PluginInitializer" />
+      <unit id="568541865470378992" at="14,54,22,5" name="jetbrains.mps.migration.workbench.plugin.Workbench_PluginInitializer$1" />
+      <unit id="568541865470378992" at="12,0,35,0" name="jetbrains.mps.migration.workbench.plugin.Workbench_PluginInitializer" />
     </file>
     <file name="plugin.xml">
-      <unit id="568541865470378992" at="1,0,17,14" name="jetbrains.mps.migration.component.plugin.plugin" />
+      <unit id="568541865470378992" at="1,0,17,14" name="jetbrains.mps.migration.workbench.plugin.plugin" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/5785495490416619810">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/5785495490416619810">
     <file name="ShowDeprecatedStuff_Action.java">
       <node id="5785495490416619810" at="25,0,26,0" concept="16" trace="ICON" />
       <node id="5785495490416619810" at="27,39,28,56" concept="18" />
@@ -852,12 +852,12 @@
         <var name="_params" id="5785495490416619810" />
         <var name="event" id="5785495490416619810" />
       </scope>
-      <unit id="5785495490417533523" at="60,49,66,9" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action$1$1" />
-      <unit id="5785495490417533520" at="58,56,68,5" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action$1" />
-      <unit id="5785495490416619810" at="24,0,71,0" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedStuff_Action" />
+      <unit id="5785495490417533523" at="60,49,66,9" name="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedStuff_Action$1$1" />
+      <unit id="5785495490417533520" at="58,56,68,5" name="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedStuff_Action$1" />
+      <unit id="5785495490416619810" at="24,0,71,0" name="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedStuff_Action" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/6423044698579322251">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/6423044698579322251">
     <file name="MigrationsMenu_ActionGroup.java">
       <node id="6423044698579322251" at="11,0,12,0" concept="16" trace="ID" />
       <node id="6423044698579322251" at="12,0,13,0" concept="16" trace="LABEL_ID_migrations" />
@@ -890,10 +890,10 @@
       </scope>
       <scope id="6423044698579322251" at="14,39,33,5" />
       <scope id="6423044698579322251" at="14,0,35,0" />
-      <unit id="6423044698579322251" at="10,0,36,0" name="jetbrains.mps.migration.component.plugin.MigrationsMenu_ActionGroup" />
+      <unit id="6423044698579322251" at="10,0,36,0" name="jetbrains.mps.migration.workbench.plugin.MigrationsMenu_ActionGroup" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/6423044698579322261">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/6423044698579322261">
     <file name="ShowDeprecatedUsages_Action.java">
       <node id="6423044698579322261" at="30,0,31,0" concept="16" trace="ICON" />
       <node id="6423044698579322261" at="32,40,33,49" concept="18" />
@@ -961,12 +961,12 @@
         <var name="_params" id="6423044698579322261" />
         <var name="event" id="6423044698579322261" />
       </scope>
-      <unit id="6423044698582317160" at="69,49,76,9" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action$1$1" />
-      <unit id="6423044698582317157" at="67,56,78,5" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action$1" />
-      <unit id="6423044698579322261" at="29,0,81,0" name="jetbrains.mps.migration.component.plugin.ShowDeprecatedUsages_Action" />
+      <unit id="6423044698582317160" at="69,49,76,9" name="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedUsages_Action$1$1" />
+      <unit id="6423044698582317157" at="67,56,78,5" name="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedUsages_Action$1" />
+      <unit id="6423044698579322261" at="29,0,81,0" name="jetbrains.mps.migration.workbench.plugin.ShowDeprecatedUsages_Action" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/6423044698579330206">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/6423044698579330206">
     <file name="RunPreUpdateCheck_Action.java">
       <node id="6423044698579330206" at="44,0,45,0" concept="16" trace="ICON" />
       <node id="6423044698579330206" at="46,37,47,44" concept="18" />
@@ -1133,19 +1133,19 @@
         <var name="_params" id="6423044698579330206" />
         <var name="event" id="6423044698579330206" />
       </scope>
-      <unit id="6312257126984171354" at="155,65,159,17" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1$2" />
-      <unit id="8331819490991709085" at="79,45,84,5" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$1" />
-      <unit id="2885477569137190327" at="163,134,168,13" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$2" />
-      <unit id="6312257126984171317" at="98,35,150,25" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1$1$1$1" />
-      <unit id="6312257126984171317" at="96,31,152,21" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1$1$1" />
-      <unit id="6312257126984171317" at="94,100,154,17" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1$1" />
-      <unit id="6312257126984171293" at="91,90,161,13" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1$1" />
-      <unit id="2277716516879960492" at="89,49,170,9" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2$1" />
-      <unit id="8331819490991709109" at="86,42,172,5" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action$2" />
-      <unit id="6423044698579330206" at="43,0,181,0" name="jetbrains.mps.migration.component.plugin.RunPreUpdateCheck_Action" />
+      <unit id="6312257126984171354" at="155,65,159,17" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$1$2" />
+      <unit id="8331819490991709085" at="79,45,84,5" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$1" />
+      <unit id="2885477569137190327" at="163,134,168,13" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$2" />
+      <unit id="6312257126984171317" at="98,35,150,25" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$1$1$1$1" />
+      <unit id="6312257126984171317" at="96,31,152,21" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$1$1$1" />
+      <unit id="6312257126984171317" at="94,100,154,17" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$1$1" />
+      <unit id="6312257126984171293" at="91,90,161,13" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1$1" />
+      <unit id="2277716516879960492" at="89,49,170,9" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2$1" />
+      <unit id="8331819490991709109" at="86,42,172,5" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action$2" />
+      <unit id="6423044698579330206" at="43,0,181,0" name="jetbrains.mps.migration.workbench.plugin.RunPreUpdateCheck_Action" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/6423044698579343489">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/6423044698579343489">
     <file name="ExecuteRerunnableMigrations_Action.java">
       <node id="6423044698579343489" at="37,0,38,0" concept="16" trace="ICON" />
       <node id="6423044698579343489" at="39,47,40,54" concept="18" />
@@ -1302,18 +1302,18 @@
         <var name="_params" id="6423044698579343489" />
         <var name="event" id="6423044698579343489" />
       </scope>
-      <unit id="6423044698581740000" at="149,62,153,19" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1$2" />
-      <unit id="27144618445169875" at="70,100,75,5" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$1" />
-      <unit id="6423044698581722597" at="92,37,144,27" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1$1$1$1" />
-      <unit id="6423044698581722597" at="90,33,146,23" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1$1$1" />
-      <unit id="6423044698581722597" at="88,99,148,19" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1$1" />
-      <unit id="27144618445169940" at="85,111,155,15" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1$1" />
-      <unit id="27144618445169937" at="83,68,157,11" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2$1" />
-      <unit id="27144618445169894" at="76,42,164,5" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action$2" />
-      <unit id="6423044698579343489" at="36,0,167,0" name="jetbrains.mps.migration.component.plugin.ExecuteRerunnableMigrations_Action" />
+      <unit id="6423044698581740000" at="149,62,153,19" name="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action$2$1$1$2" />
+      <unit id="27144618445169875" at="70,100,75,5" name="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action$1" />
+      <unit id="6423044698581722597" at="92,37,144,27" name="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action$2$1$1$1$1$1" />
+      <unit id="6423044698581722597" at="90,33,146,23" name="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action$2$1$1$1$1" />
+      <unit id="6423044698581722597" at="88,99,148,19" name="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action$2$1$1$1" />
+      <unit id="27144618445169940" at="85,111,155,15" name="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action$2$1$1" />
+      <unit id="27144618445169937" at="83,68,157,11" name="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action$2$1" />
+      <unit id="27144618445169894" at="76,42,164,5" name="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action$2" />
+      <unit id="6423044698579343489" at="36,0,167,0" name="jetbrains.mps.migration.workbench.plugin.ExecuteRerunnableMigrations_Action" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/6423044698581746948">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/6423044698581746948">
     <file name="Migrations_ActionGroup.java">
       <node id="6423044698581746948" at="11,0,12,0" concept="16" trace="ID" />
       <node id="6423044698581746948" at="12,0,13,0" concept="16" trace="LABEL_ID_projectMigrations" />
@@ -1343,10 +1343,10 @@
       </scope>
       <scope id="6423044698581746948" at="14,35,30,5" />
       <scope id="6423044698581746948" at="14,0,32,0" />
-      <unit id="6423044698581746948" at="10,0,33,0" name="jetbrains.mps.migration.component.plugin.Migrations_ActionGroup" />
+      <unit id="6423044698581746948" at="10,0,33,0" name="jetbrains.mps.migration.workbench.plugin.Migrations_ActionGroup" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/6423044698581900943">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/6423044698581900943">
     <file name="RunProjectMigration_Action.java">
       <node id="6423044698581900943" at="21,0,22,0" concept="16" trace="ICON" />
       <node id="6423044698581900980" at="23,0,24,0" concept="7" trace="script" />
@@ -1437,13 +1437,13 @@
         <var name="_params" id="6423044698581900943" />
         <var name="event" id="6423044698581900943" />
       </scope>
-      <unit id="7073978993253841517" at="65,109,69,13" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action$1$1$1" />
-      <unit id="7073978993253841514" at="63,66,71,9" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action$1$1" />
-      <unit id="7073978993253823618" at="59,42,73,5" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action$1" />
-      <unit id="6423044698581900943" at="20,0,89,0" name="jetbrains.mps.migration.component.plugin.RunProjectMigration_Action" />
+      <unit id="7073978993253841517" at="65,109,69,13" name="jetbrains.mps.migration.workbench.plugin.RunProjectMigration_Action$1$1$1" />
+      <unit id="7073978993253841514" at="63,66,71,9" name="jetbrains.mps.migration.workbench.plugin.RunProjectMigration_Action$1$1" />
+      <unit id="7073978993253823618" at="59,42,73,5" name="jetbrains.mps.migration.workbench.plugin.RunProjectMigration_Action$1" />
+      <unit id="6423044698581900943" at="20,0,89,0" name="jetbrains.mps.migration.workbench.plugin.RunProjectMigration_Action" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/7012529811902416590">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/7012529811902416590">
     <file name="TestMigrationWizard_Action.java">
       <node id="7012529811902416590" at="17,0,18,0" concept="16" trace="ICON" />
       <node id="7012529811902416590" at="19,39,20,45" concept="18" />
@@ -1497,10 +1497,10 @@
         <var name="_params" id="7012529811902416590" />
         <var name="event" id="7012529811902416590" />
       </scope>
-      <unit id="7012529811902416590" at="16,0,57,0" name="jetbrains.mps.migration.component.plugin.TestMigrationWizard_Action" />
+      <unit id="7012529811902416590" at="16,0,57,0" name="jetbrains.mps.migration.workbench.plugin.TestMigrationWizard_Action" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/7012529811902416611">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/7012529811902416611">
     <file name="ToolsInternalAddition_ActionGroup.java">
       <node id="7012529811902416611" at="8,0,9,0" concept="16" trace="ID" />
       <node id="7012529811902416611" at="9,46,10,39" concept="18" />
@@ -1510,10 +1510,10 @@
       <node id="7012529811902416611" at="9,0,15,0" concept="3" trace="ToolsInternalAddition_ActionGroup#()V" />
       <scope id="7012529811902416611" at="9,46,13,124" />
       <scope id="7012529811902416611" at="9,0,15,0" />
-      <unit id="7012529811902416611" at="7,0,16,0" name="jetbrains.mps.migration.component.plugin.ToolsInternalAddition_ActionGroup" />
+      <unit id="7012529811902416611" at="7,0,16,0" name="jetbrains.mps.migration.workbench.plugin.ToolsInternalAddition_ActionGroup" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/7012529811902578617">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/7012529811902578617">
     <file name="TestMigrationSession.java">
       <node id="6020223032491716019" at="44,0,45,0" concept="7" trace="myManager" />
       <node id="6231371851043043619" at="45,0,46,0" concept="7" trace="mySettings" />
@@ -1628,7 +1628,7 @@
       <node id="7152697638605237936" at="193,0,196,0" concept="11" trace="select#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/ide/migration/ScriptApplied;" />
       <node id="6344052339644206722" at="203,52,206,7" concept="10" />
       <node id="6344052339644249628" at="209,50,212,7" concept="10" />
-      <node id="7300402066450209636" at="231,0,234,0" concept="11" trace="select#(Ljetbrains/mps/migration/component/plugin/MigrationTestConfigDialog/Result/LMigration;)Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />
+      <node id="7300402066450209636" at="231,0,234,0" concept="11" trace="select#(Ljetbrains/mps/migration/workbench/plugin/MigrationTestConfigDialog/Result/LMigration;)Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />
       <node id="7300402066450473997" at="263,42,266,7" concept="10" />
       <node id="7012529811902565345" at="284,0,287,0" concept="11" trace="getDescription#()Ljava/lang/String;" />
       <node id="7012529811902565359" at="289,0,292,0" concept="11" trace="shouldBeExecuted#(Ljetbrains/mps/project/Project;)Z" />
@@ -1642,7 +1642,7 @@
       <node id="4815078419492250551" at="73,0,77,0" concept="11" trace="findNotMigrated#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Ljava/lang/Iterable;Lorg/jetbrains/mps/openapi/util/Processor;)V" />
       <node id="4815078419492157945" at="79,0,83,0" concept="11" trace="executeModuleMigration#(Ljetbrains/mps/ide/migration/ScriptApplied;)V" />
       <node id="4815078419492157968" at="83,0,87,0" concept="11" trace="executeProjectMigration#(Ljetbrains/mps/migration/global/ProjectMigration;)V" />
-      <node id="7012529811902578621" at="89,0,93,0" concept="3" trace="TestMigrationSession#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/migration/component/plugin/MigrationTestConfigDialog/Result;)V" />
+      <node id="7012529811902578621" at="89,0,93,0" concept="3" trace="TestMigrationSession#(Ljetbrains/mps/project/MPSProject;Ljetbrains/mps/migration/workbench/plugin/MigrationTestConfigDialog/Result;)V" />
       <node id="1290301916241662367" at="127,0,131,0" concept="11" trace="getProjectMigrations#()Ljava/util/Collection;" />
       <node id="1348525460771847975" at="247,0,251,0" concept="11" trace="getCaption#()Ljava/lang/String;" />
       <node id="5515912766246897608" at="256,0,260,0" concept="11" trace="resolve#(Z)Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />
@@ -1665,7 +1665,7 @@
       <node id="7641221613047054983" at="100,50,107,5" concept="9" />
       <node id="3182084118592558088" at="136,101,143,7" concept="10" />
       <node id="7300402066448981483" at="165,0,172,0" concept="11" trace="accept#(Ljetbrains/mps/ide/migration/ScriptApplied;)Z" />
-      <node id="7300402066449831382" at="219,0,226,0" concept="11" trace="select#(Ljetbrains/mps/migration/component/plugin/MigrationTestConfigDialog/Result/PMigration;)Ljetbrains/mps/migration/global/ProjectMigration;" />
+      <node id="7300402066449831382" at="219,0,226,0" concept="11" trace="select#(Ljetbrains/mps/migration/workbench/plugin/MigrationTestConfigDialog/Result/PMigration;)Ljetbrains/mps/migration/global/ProjectMigration;" />
       <node id="7300402066448417391" at="229,0,236,0" concept="11" trace="createLanguageMigs#()Ljava/util/List;" />
       <node id="7300402066449644249" at="304,0,311,0" concept="11" trace="getOptions#()Ljava/util/Collection;" />
       <node id="7012529811902892071" at="146,94,155,9" concept="12" />
@@ -1933,30 +1933,30 @@
         <var name="res" id="7152697638605237893" />
       </scope>
       <scope id="1348525460772403751" at="179,0,203,0" />
-      <unit id="4815078419492250486" at="56,47,60,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$1$1" />
-      <unit id="3182084118592608017" at="137,49,141,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$1" />
-      <unit id="7012529811902892077" at="147,104,151,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$2" />
-      <unit id="7012529811902892089" at="151,23,155,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$3" />
-      <unit id="7300402066448981489" at="166,56,170,11" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$4$1" />
-      <unit id="7300402066449032065" at="172,18,176,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$5" />
-      <unit id="7152697638605237936" at="192,28,196,15" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$6$1$2" />
-      <unit id="7300402066450209636" at="230,68,234,5" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$4" />
-      <unit id="5515912766246882310" at="255,17,260,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyModuleMigration$1" />
-      <unit id="7152697638605237906" at="186,62,192,15" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$6$1$1" />
-      <unit id="7300402066448981483" at="164,72,172,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$4" />
-      <unit id="7300402066449831382" at="218,68,226,5" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$3" />
-      <unit id="4815078419492157943" at="78,45,87,3" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$2" />
-      <unit id="7012529811902763284" at="316,0,325,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyCleanupProjectMigration" />
-      <unit id="7152697638605237899" at="184,98,198,11" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$6$1" />
-      <unit id="7152697638605227606" at="181,47,200,7" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager$6" />
-      <unit id="4815078419492250463" at="50,43,77,3" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$1" />
-      <unit id="1348525460771864098" at="237,0,274,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyModuleMigration" />
-      <unit id="7012529811902663681" at="275,0,315,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyProjectMigration" />
-      <unit id="7012529811902466544" at="110,0,216,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession$MyMigrationManager" />
-      <unit id="7012529811902578617" at="43,0,339,0" name="jetbrains.mps.migration.component.plugin.TestMigrationSession" />
+      <unit id="4815078419492250486" at="56,47,60,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$1$1" />
+      <unit id="3182084118592608017" at="137,49,141,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$1" />
+      <unit id="7012529811902892077" at="147,104,151,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$2" />
+      <unit id="7012529811902892089" at="151,23,155,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$3" />
+      <unit id="7300402066448981489" at="166,56,170,11" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$4$1" />
+      <unit id="7300402066449032065" at="172,18,176,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$5" />
+      <unit id="7152697638605237936" at="192,28,196,15" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$6$1$2" />
+      <unit id="7300402066450209636" at="230,68,234,5" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$4" />
+      <unit id="5515912766246882310" at="255,17,260,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyModuleMigration$1" />
+      <unit id="7152697638605237906" at="186,62,192,15" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$6$1$1" />
+      <unit id="7300402066448981483" at="164,72,172,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$4" />
+      <unit id="7300402066449831382" at="218,68,226,5" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$3" />
+      <unit id="4815078419492157943" at="78,45,87,3" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$2" />
+      <unit id="7012529811902763284" at="316,0,325,0" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyCleanupProjectMigration" />
+      <unit id="7152697638605237899" at="184,98,198,11" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$6$1" />
+      <unit id="7152697638605227606" at="181,47,200,7" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager$6" />
+      <unit id="4815078419492250463" at="50,43,77,3" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$1" />
+      <unit id="1348525460771864098" at="237,0,274,0" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyModuleMigration" />
+      <unit id="7012529811902663681" at="275,0,315,0" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyProjectMigration" />
+      <unit id="7012529811902466544" at="110,0,216,0" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession$MyMigrationManager" />
+      <unit id="7012529811902578617" at="43,0,339,0" name="jetbrains.mps.migration.workbench.plugin.TestMigrationSession" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/7834630562321988558">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/7834630562321988558">
     <file name="ExecuteMigrationAssistant_Action.java">
       <node id="7834630562321988558" at="23,0,24,0" concept="16" trace="ICON" />
       <node id="7834630562321988558" at="25,45,26,47" concept="18" />
@@ -2026,11 +2026,11 @@
         <var name="_params" id="7834630562321988558" />
         <var name="event" id="7834630562321988558" />
       </scope>
-      <unit id="7331580080054767893" at="61,117,66,5" name="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action$1" />
-      <unit id="7834630562321988558" at="22,0,75,0" name="jetbrains.mps.migration.component.plugin.ExecuteMigrationAssistant_Action" />
+      <unit id="7331580080054767893" at="61,117,66,5" name="jetbrains.mps.migration.workbench.plugin.ExecuteMigrationAssistant_Action$1" />
+      <unit id="7834630562321988558" at="22,0,75,0" name="jetbrains.mps.migration.workbench.plugin.ExecuteMigrationAssistant_Action" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/9063035184844191693">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/9063035184844191693">
     <file name="ProjectMigrations_ActionGroup.java">
       <node id="9063035184844191693" at="21,0,22,0" concept="16" trace="ID" />
       <node id="9063035184844191693" at="22,0,23,0" concept="7" trace="myPlaces" />
@@ -2069,10 +2069,10 @@
       <scope id="9063035184844191693" at="28,0,37,0">
         <var name="event" id="9063035184844191693" />
       </scope>
-      <unit id="9063035184844191693" at="20,0,44,0" name="jetbrains.mps.migration.component.plugin.ProjectMigrations_ActionGroup" />
+      <unit id="9063035184844191693" at="20,0,44,0" name="jetbrains.mps.migration.workbench.plugin.ProjectMigrations_ActionGroup" />
     </file>
   </root>
-  <root nodeRef="r:d09733d9-6079-487b-b676-f99e7604f344(jetbrains.mps.migration.component.plugin)/9063035184844195317">
+  <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/9063035184844195317">
     <file name="LanguageMigrations_ActionGroup.java">
       <node id="9063035184844195317" at="32,0,33,0" concept="16" trace="ID" />
       <node id="9063035184844195317" at="33,0,34,0" concept="7" trace="myPlaces" />
@@ -2159,9 +2159,9 @@
       <scope id="9063035184844195317" at="39,0,80,0">
         <var name="event" id="9063035184844195317" />
       </scope>
-      <unit id="4815078419494508365" at="50,134,54,5" name="jetbrains.mps.migration.component.plugin.LanguageMigrations_ActionGroup$1" />
-      <unit id="4815078419494508383" at="54,27,58,5" name="jetbrains.mps.migration.component.plugin.LanguageMigrations_ActionGroup$2" />
-      <unit id="9063035184844195317" at="31,0,87,0" name="jetbrains.mps.migration.component.plugin.LanguageMigrations_ActionGroup" />
+      <unit id="4815078419494508365" at="50,134,54,5" name="jetbrains.mps.migration.workbench.plugin.LanguageMigrations_ActionGroup$1" />
+      <unit id="4815078419494508383" at="54,27,58,5" name="jetbrains.mps.migration.workbench.plugin.LanguageMigrations_ActionGroup$2" />
+      <unit id="9063035184844195317" at="31,0,87,0" name="jetbrains.mps.migration.workbench.plugin.LanguageMigrations_ActionGroup" />
     </file>
   </root>
 </debug-info>

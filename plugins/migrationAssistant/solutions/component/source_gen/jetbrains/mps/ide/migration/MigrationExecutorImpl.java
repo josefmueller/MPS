@@ -15,7 +15,7 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.migration.component.util.MigrationDataUtil;
+import jetbrains.mps.ide.migration.util.MigrationDataUtil;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
