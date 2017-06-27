@@ -450,6 +450,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   // FIXME perhaps, shall be protected, rebuildAction is sort of implementation detail when there are rebuildNow() and rebuildLater()
+  //
+  // TODO make protected and make those who need model read during rebuild override with {@code super.runRebuildAction(new ModelReadRunnable(properModelAccess, rebildAction), saveExpansion);}
   public void runRebuildAction(final Runnable rebuildAction, final boolean saveExpansion) {
     if (RuntimeFlags.isTestMode()) {
       return;
