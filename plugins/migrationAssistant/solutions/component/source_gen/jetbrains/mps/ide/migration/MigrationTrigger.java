@@ -175,11 +175,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       return;
     }
     Set<SModule> modules2Check = SetSequence.fromSetWithValues(new HashSet<SModule>(), modules);
-    if (!((myMigrationManager.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationManager.getModuleMigrations(modules2Check)).isNotEmpty())) || CollectionSequence.fromCollection(myMigrationManager.getProjectMigrations()).isNotEmpty()) {
-      return;
+    if (myMigrationManager.importVersionsUpdateRequired(modules2Check) || CollectionSequence.fromCollection(myMigrationManager.getModuleMigrations(modules2Check)).isNotEmpty() || CollectionSequence.fromCollection(myMigrationManager.getProjectMigrations()).isNotEmpty()) {
+      postponeMigration();
     }
-
-    postponeMigration();
   }
 
   private synchronized void checkMigrationNeededOnLanguageReload(Iterable<Language> languages) {
