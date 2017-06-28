@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.ide.java.ui;
 
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.ui.ComboBox;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.ColoredTableCellRenderer;
@@ -34,16 +38,14 @@ import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 
@@ -117,7 +119,14 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     decorator.setAddAction(new AnActionButtonRunnable() {
       @Override
       public void run(AnActionButton anActionButton) {
-        myPathsTableModel.add((new PathChooser()).compute());
+        FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createMultipleFoldersDescriptor();
+        descriptor.setTitle("Choose Source Paths");
+        final VirtualFile moduleDir = VirtualFileUtils.getProjectVirtualFile(myJavaModuleFacet.getModule().getModuleSourceDir());
+
+        final VirtualFile[] files = FileChooser.chooseFiles(descriptor, getTabComponent(), null, moduleDir);
+        for (VirtualFile file : files) {
+          myPathsTableModel.add(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(file.getPath()));
+        }
       }
     }).setRemoveAction(new AnActionButtonRunnable() {
       @Override
@@ -149,7 +158,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       @Override
       public void run(AnActionButton anActionButton) {
         List<ModelRootDescriptor> modelRoots = new ArrayList<ModelRootDescriptor>(myJavaModuleFacet.getModule().getModuleDescriptor().getModelRootDescriptors());
-        StubRootChooser stubRootChooser = new StubRootChooser(librariesTable, modelRoots, myJavaModuleFacet.getModule() instanceof Language);
+        StubRootChooser stubRootChooser = new StubRootChooser(getTabComponent(), modelRoots, myJavaModuleFacet.getModule() instanceof Language);
         myLibraryTableModel.addAll(stubRootChooser.compute());
       }
     }).setRemoveAction(new AnActionButtonRunnable() {
@@ -257,19 +266,6 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       if (!myPaths.isEmpty()) {
         myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths().addAll(myPaths);
       }
-    }
-  }
-
-  private class PathChooser implements Computable<String> {
-    @Override
-    public String compute() {
-      TreeFileChooser chooser = new TreeFileChooser();
-      chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-      IFile result = chooser.showDialog();
-      if (result == null) {
-        return null;
-      }
-      return result.getPath();
     }
   }
 

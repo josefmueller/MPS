@@ -6,10 +6,12 @@ import jetbrains.mps.util.Computable;
 import java.util.List;
 import java.awt.Component;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.vfs.IFile;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.fileChooser.FileChooser;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.vfs.FileSystem;
@@ -30,12 +32,12 @@ public class StubRootChooser implements Computable<List<String>> {
   }
   @Override
   public List<String> compute() {
-    TreeFileChooser chooser = new TreeFileChooser();
-    chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
-    List<IFile> files = chooser.showMultiSelectionDialog(null);
+    FileChooserDescriptor descriptor = new FileChooserDescriptor(true, true, true, true, false, true);
+    final VirtualFile[] files = FileChooser.chooseFiles(descriptor, myComponent, null, null);
+
     List<String> result = new ArrayList<String>();
-    for (IFile file : files) {
-      ListSequence.fromList(result).addElement(file.getPath());
+    for (VirtualFile file : files) {
+      ListSequence.fromList(result).addElement(FileUtil.toSystemIndependentName(file.getPath()));
     }
     if (ListSequence.fromList(result).isEmpty()) {
       return result;
