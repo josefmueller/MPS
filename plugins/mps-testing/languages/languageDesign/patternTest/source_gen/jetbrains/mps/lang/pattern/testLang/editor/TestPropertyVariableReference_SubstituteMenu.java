@@ -28,7 +28,7 @@ public class TestPropertyVariableReference_SubstituteMenu extends SubstituteMenu
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for TestPropertyVariableReference. Generated from the smart reference attribute.", new SNodePointer("r:7336929d-3d95-43d0-b2df-fd38af21ae45(jetbrains.mps.lang.pattern.testLang.structure)", "4747359941569484125")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for TestPropertyVariableReference. Generated from implicit smart reference attribute.", new SNodePointer("r:7336929d-3d95-43d0-b2df-fd38af21ae45(jetbrains.mps.lang.pattern.testLang.structure)", "1563914226484898744")));
     try {
       return super.createMenuItems(context);
     } finally {

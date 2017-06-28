@@ -28,7 +28,7 @@ public class StateReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for StateReference. Generated from the smart reference attribute.", new SNodePointer("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)", "4747359941569484209")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for StateReference. Generated from implicit smart reference attribute.", new SNodePointer("r:b986234b-0ae5-423e-aca0-76655e94d151(jetbrains.mps.samples.multipleProjections.stateMachine.structure)", "763922957008729156")));
     try {
       return super.createMenuItems(context);
     } finally {

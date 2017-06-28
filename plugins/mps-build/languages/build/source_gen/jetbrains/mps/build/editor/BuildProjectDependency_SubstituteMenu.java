@@ -28,7 +28,7 @@ public class BuildProjectDependency_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BuildProjectDependency. Generated from the smart reference attribute.", new SNodePointer("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)", "4747359941569484085")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BuildProjectDependency. Generated from implicit smart reference attribute.", new SNodePointer("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)", "4993211115183325728")));
     try {
       return super.createMenuItems(context);
     } finally {

@@ -28,7 +28,7 @@ public class AddressReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for AddressReference. Generated from the smart reference attribute.", new SNodePointer("r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)", "4747359941569484185")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for AddressReference. Generated from implicit smart reference attribute.", new SNodePointer("r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)", "5235060235297961269")));
     try {
       return super.createMenuItems(context);
     } finally {

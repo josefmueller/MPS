@@ -123,7 +123,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
         }, effectiveNode, "configurationKind");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

@@ -91,7 +91,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
         }, effectiveNode, "controlMethod");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull_smartReference(cell);
         return cell;
       }
     };
@@ -184,7 +184,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
         EditorCell cell = new ClosureControlStatement_EditorBuilder_a.Inline_Builder_2saq3j_a1b0(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

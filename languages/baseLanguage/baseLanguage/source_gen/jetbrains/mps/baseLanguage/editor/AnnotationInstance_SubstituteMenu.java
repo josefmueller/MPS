@@ -28,7 +28,7 @@ public class AnnotationInstance_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for AnnotationInstance. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "4747359941569483415")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for AnnotationInstance. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1188207840427")));
     try {
       return super.createMenuItems(context);
     } finally {

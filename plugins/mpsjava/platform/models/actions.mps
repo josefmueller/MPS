@@ -561,7 +561,7 @@
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
@@ -1875,7 +1875,7 @@
                 <ref role="3cqZAo" node="cvGLnZnRmQ" resolve="d" />
               </node>
               <node concept="liA8E" id="cvGLnZnRnd" role="2OqNvi">
-                <ref role="37wK5l" to="u42p:1t_LRy89_0N" resolve="getName" />
+                <ref role="37wK5l" to="u42p:6RbC5nR7fVD" resolve="getResultValue" />
               </node>
             </node>
           </node>

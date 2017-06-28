@@ -28,7 +28,7 @@ public class NodeBuilderInitLink_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for NodeBuilderInitLink. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)", "4747359941569483816")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for NodeBuilderInitLink. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)", "5455284157994012186")));
     try {
       return super.createMenuItems(context);
     } finally {

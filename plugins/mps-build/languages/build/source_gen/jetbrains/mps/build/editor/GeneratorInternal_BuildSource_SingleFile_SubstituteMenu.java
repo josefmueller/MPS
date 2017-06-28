@@ -28,7 +28,7 @@ public class GeneratorInternal_BuildSource_SingleFile_SubstituteMenu extends Sub
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for GeneratorInternal_BuildSource_SingleFile. Generated from the smart reference attribute.", new SNodePointer("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)", "4747359941569484092")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for GeneratorInternal_BuildSource_SingleFile. Generated from implicit smart reference attribute.", new SNodePointer("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)", "4964617264469642570")));
     try {
       return super.createMenuItems(context);
     } finally {

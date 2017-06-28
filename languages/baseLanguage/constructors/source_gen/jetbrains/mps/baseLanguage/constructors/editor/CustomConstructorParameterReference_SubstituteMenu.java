@@ -28,7 +28,7 @@ public class CustomConstructorParameterReference_SubstituteMenu extends Substitu
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for CustomConstructorParameterReference. Generated from the smart reference attribute.", new SNodePointer("r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)", "4747359941569483501")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for CustomConstructorParameterReference. Generated from implicit smart reference attribute.", new SNodePointer("r:bd4b8fd9-079b-4b11-a733-9c0bea3600f2(jetbrains.mps.baseLanguage.constructors.structure)", "5379647004618378852")));
     try {
       return super.createMenuItems(context);
     } finally {

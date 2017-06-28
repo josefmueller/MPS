@@ -11,7 +11,7 @@
       <unit at="10,0,134,0" name="jetbrains.mps.lang.constraints.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,712,0" name="jetbrains.mps.lang.constraints.structure.StructureAspectDescriptor" />
+      <unit at="16,0,713,0" name="jetbrains.mps.lang.constraints.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

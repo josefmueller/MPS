@@ -131,7 +131,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         }, effectiveNode, "solution");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
@@ -207,7 +207,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
         }, effectiveNode, "solution");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

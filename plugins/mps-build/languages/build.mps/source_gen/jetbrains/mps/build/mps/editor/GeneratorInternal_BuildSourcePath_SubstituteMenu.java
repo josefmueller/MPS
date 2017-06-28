@@ -28,7 +28,7 @@ public class GeneratorInternal_BuildSourcePath_SubstituteMenu extends Substitute
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for GeneratorInternal_BuildSourcePath. Generated from the smart reference attribute.", new SNodePointer("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "4747359941569484027")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for GeneratorInternal_BuildSourcePath. Generated from implicit smart reference attribute.", new SNodePointer("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "4964617264469340766")));
     try {
       return super.createMenuItems(context);
     } finally {

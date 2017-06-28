@@ -36,9 +36,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -323,9 +320,6 @@
       <property role="IQ2ns" value="5434557751112207965" />
       <ref role="20lvS9" to="tpee:g7pOWCK" resolve="Classifier" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLgP" role="lGtFl">
-      <ref role="RPilL" node="4HFrnGEoSTt" resolve="classifier" />
-    </node>
   </node>
   <node concept="1TIwiD" id="4HFrnGEoSRr">
     <property role="TrG5h" value="FQNameClassifierSpecification" />
@@ -378,9 +372,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2291767839159499865" />
       <ref role="20lvS9" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLgQ" role="lGtFl">
-      <ref role="RPilL" node="1ZdZFkoL3Lp" resolve="methodDeclaration" />
     </node>
   </node>
 </model>

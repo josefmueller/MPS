@@ -28,7 +28,7 @@ public class ExtractStaticMethod_CallExpression_SubstituteMenu extends Substitut
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ExtractStaticMethod_CallExpression. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)", "4747359941569483477")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ExtractStaticMethod_CallExpression. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)", "3585982959253821850")));
     try {
       return super.createMenuItems(context);
     } finally {

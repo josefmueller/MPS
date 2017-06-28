@@ -28,7 +28,7 @@ public class InputFieldReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for InputFieldReference. Generated from the smart reference attribute.", new SNodePointer("r:87765d2d-a756-4883-9acc-6a42e5bf6c23(jetbrains.mps.calculator.structure)", "4747359941569484156")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for InputFieldReference. Generated from implicit smart reference attribute.", new SNodePointer("r:87765d2d-a756-4883-9acc-6a42e5bf6c23(jetbrains.mps.calculator.structure)", "1241363083334")));
     try {
       return super.createMenuItems(context);
     } finally {

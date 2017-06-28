@@ -1415,6 +1415,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.structure.editor.RemoveSmartReferenceAttribute_Action" file="RemoveSmartReferenceAttribute_Action.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.structure.editor.SmartReferenceAttribute_Editor" file="SmartReferenceAttribute_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.structure.editor.SmartReferenceAttribute_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -1431,6 +1439,7 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.editor.RemoveSmartReferenceAttribute_Action" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />

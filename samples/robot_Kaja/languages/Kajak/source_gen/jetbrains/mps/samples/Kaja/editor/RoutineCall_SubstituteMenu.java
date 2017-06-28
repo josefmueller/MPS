@@ -28,7 +28,7 @@ public class RoutineCall_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RoutineCall. Generated from the smart reference attribute.", new SNodePointer("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)", "4747359941569484214")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RoutineCall. Generated from implicit smart reference attribute.", new SNodePointer("r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)", "3308300503039700882")));
     try {
       return super.createMenuItems(context);
     } finally {

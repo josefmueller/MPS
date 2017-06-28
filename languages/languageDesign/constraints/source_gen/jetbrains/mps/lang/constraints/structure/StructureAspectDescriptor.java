@@ -706,6 +706,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)/6358186717179259587");
     b.associate("editor", 0x583cd121d513aac4L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L).optional(false).origin("6358186717179259588").done();
+    b.alias("ref. presentation migrated - problem");
     return b.create();
   }
 }

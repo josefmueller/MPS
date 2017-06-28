@@ -28,7 +28,7 @@ public class AttributeInfo_AttributedConcept_SubstituteMenu extends SubstituteMe
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for AttributeInfo_AttributedConcept. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "4747359941569483875")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for AttributeInfo_AttributedConcept. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "6054523464627964745")));
     try {
       return super.createMenuItems(context);
     } finally {

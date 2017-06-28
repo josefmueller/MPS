@@ -28,7 +28,7 @@ public class Node_ConceptMethodCall_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for Node_ConceptMethodCall. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "4747359941569483848")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for Node_ConceptMethodCall. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1179409122411")));
     try {
       return super.createMenuItems(context);
     } finally {

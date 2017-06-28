@@ -18,11 +18,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import jetbrains.mps.lang.migration.runtime.base.Problem;
+import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import java.util.Map;
@@ -30,7 +33,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.editor.behavior.AbstractComponent__BehaviorDescriptor;
-import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -41,7 +43,7 @@ public class AnnotateRefPresentationQueriesAsMigrated extends MigrationScriptBas
   }
   @Override
   public boolean isRerunnable() {
-    return false;
+    return true;
   }
   public SNode execute(final SModule m) {
     doExecute(m);
@@ -64,7 +66,7 @@ public class AnnotateRefPresentationQueriesAsMigrated extends MigrationScriptBas
           conceptConstraint_var = conceptConstraint_it.next();
           for (SNode refConstraint : ListSequence.fromList(SLinkOperations.getChildren(conceptConstraint_var, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a726c901bL, "referent")))) {
             SNode presentation = SLinkOperations.getTarget(refConstraint, MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x36367902116a44c4L, "presentation"));
-            if ((presentation != null)) {
+            if ((presentation != null) && (AttributeOperations.getAttribute(presentation, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x583cd121d513aabeL, "jetbrains.mps.lang.constraints.structure.RefPresentationMigrated"))) == null)) {
               AttributeOperations.setAttribute(presentation, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x583cd121d513aabeL, "jetbrains.mps.lang.constraints.structure.RefPresentationMigrated")), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x583cd121d513aabeL, "jetbrains.mps.lang.constraints.structure.RefPresentationMigrated")));
               Iterable<SNode> superEditorComponents = findSuperEditorComponentsUsingReference(SLinkOperations.getTarget(conceptConstraint_var, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept")), SLinkOperations.getTarget(refConstraint, MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7317b98aL, "applicableLink")));
               for (SNode editorComponent : Sequence.fromIterable(superEditorComponents)) {
@@ -74,6 +76,33 @@ public class AnnotateRefPresentationQueriesAsMigrated extends MigrationScriptBas
           }
         }
       }
+    }
+  }
+  @Override
+  public Iterable<Problem> check(SModule m) {
+    List<Problem> problems = ListSequence.fromList(new ArrayList<Problem>());
+    {
+      final SearchScope scope = CommandUtil.createScope(m);
+      QueryExecutionContext context = new QueryExecutionContext() {
+        public SearchScope getDefaultSearchScope() {
+          return scope;
+        }
+      };
+      ListSequence.fromList(problems).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"), false)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x583cd121d513aabeL, "jetbrains.mps.lang.constraints.structure.RefPresentationMigrated"))), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x583cd121d513aabeL, 0x4fd9d41024c6d474L, "problems"))).isNotEmpty();
+        }
+      }).select(new ISelector<SNode, PresentationQueryMigratedWithProblems>() {
+        public PresentationQueryMigratedWithProblems select(SNode it) {
+          return new PresentationQueryMigratedWithProblems(it);
+        }
+      }));
+      ListSequence.fromList(problems).addSequence(Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.collect(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, "jetbrains.mps.lang.constraints.structure.ConceptConstraints"), false), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a727527f6L, "defaultScope")), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10dead47852L, 0x36367902116b5f22L, "presentation"))).select(new ISelector<SNode, DefaultPresentationQueryNotMigrated>() {
+        public DefaultPresentationQueryNotMigrated select(SNode it) {
+          return new DefaultPresentationQueryNotMigrated(it);
+        }
+      }));
+      return problems;
     }
   }
   public Iterable<MigrationScriptReference> executeAfter() {

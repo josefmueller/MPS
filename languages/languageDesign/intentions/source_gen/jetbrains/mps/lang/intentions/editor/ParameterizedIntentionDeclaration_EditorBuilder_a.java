@@ -146,7 +146,7 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
         }, effectiveNode, "forConcept");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

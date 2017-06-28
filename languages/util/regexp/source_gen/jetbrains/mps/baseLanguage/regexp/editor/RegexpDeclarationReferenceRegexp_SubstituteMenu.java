@@ -28,7 +28,7 @@ public class RegexpDeclarationReferenceRegexp_SubstituteMenu extends SubstituteM
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RegexpDeclarationReferenceRegexp. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)", "4747359941569483946")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RegexpDeclarationReferenceRegexp. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)", "1174662605354")));
     try {
       return super.createMenuItems(context);
     } finally {

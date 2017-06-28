@@ -28,7 +28,7 @@ public class ConceptDocumentation_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ConceptDocumentation. Generated from the smart reference attribute.", new SNodePointer("r:554f8053-4df6-4aa3-9ecf-e71658269bf9(jetbrains.mps.samples.customAspect.documentation.structure)", "4747359941569484160")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ConceptDocumentation. Generated from implicit smart reference attribute.", new SNodePointer("r:554f8053-4df6-4aa3-9ecf-e71658269bf9(jetbrains.mps.samples.customAspect.documentation.structure)", "2897519568668510002")));
     try {
       return super.createMenuItems(context);
     } finally {

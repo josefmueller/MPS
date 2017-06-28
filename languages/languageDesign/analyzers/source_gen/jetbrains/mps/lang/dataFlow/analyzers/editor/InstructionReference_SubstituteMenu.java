@@ -28,7 +28,7 @@ public class InstructionReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for InstructionReference. Generated from the smart reference attribute.", new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "4747359941569483576")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for InstructionReference. Generated from implicit smart reference attribute.", new SNodePointer("r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)", "4217760266503638748")));
     try {
       return super.createMenuItems(context);
     } finally {

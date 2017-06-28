@@ -2551,6 +2551,33 @@
               </node>
             </node>
           </node>
+          <node concept="3cpWs8" id="4QTAjAf5A3I" role="3cqZAp">
+            <node concept="3cpWsn" id="4QTAjAf5A3J" role="3cpWs9">
+              <property role="TrG5h" value="instanceType" />
+              <node concept="3Tqbb2" id="4QTAjAf5A3K" role="1tU5fm" />
+              <node concept="2OqwBi" id="4QTAjAf5A3L" role="33vP2m">
+                <node concept="2YIFZM" id="4QTAjAf5A3M" role="2Oq$k0">
+                  <ref role="1Pybhc" to="u78q:~TypeContextManager" resolve="TypeContextManager" />
+                  <ref role="37wK5l" to="u78q:~TypeContextManager.getInstance():jetbrains.mps.typesystem.inference.TypeContextManager" resolve="getInstance" />
+                </node>
+                <node concept="liA8E" id="4QTAjAf5A3N" role="2OqNvi">
+                  <ref role="37wK5l" to="u78q:~TypeContextManager.runResolveAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runResolveAction" />
+                  <node concept="1bVj0M" id="4QTAjAf5A3O" role="37wK5m">
+                    <node concept="3clFbS" id="4QTAjAf5A3P" role="1bW5cS">
+                      <node concept="3clFbF" id="4QTAjAf5A3Q" role="3cqZAp">
+                        <node concept="2OqwBi" id="4QTAjAf5A3R" role="3clFbG">
+                          <node concept="37vLTw" id="4QTAjAf5A3S" role="2Oq$k0">
+                            <ref role="3cqZAo" node="5Vvmn_QkhDU" resolve="instance" />
+                          </node>
+                          <node concept="3JvlWi" id="4QTAjAf5A3T" role="2OqNvi" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3cpWs8" id="5Vvmn_QkhE1" role="3cqZAp">
             <node concept="3cpWsn" id="5Vvmn_QkhE2" role="3cpWs9">
               <property role="TrG5h" value="classifierType" />
@@ -2558,15 +2585,12 @@
                 <ref role="ehGHo" to="tpee:g7uibYu" resolve="ClassifierType" />
               </node>
               <node concept="1UdQGJ" id="5Vvmn_QkhE4" role="33vP2m">
-                <node concept="2OqwBi" id="5Vvmn_QkhE5" role="1Ub_4B">
-                  <node concept="37vLTw" id="5Vvmn_QkhE6" role="2Oq$k0">
-                    <ref role="3cqZAo" node="5Vvmn_QkhDU" resolve="instance" />
-                  </node>
-                  <node concept="3JvlWi" id="5Vvmn_QkhE7" role="2OqNvi" />
-                </node>
                 <node concept="1YaCAy" id="5Vvmn_QkhE8" role="1Ub_4A">
                   <property role="TrG5h" value="classifierType" />
                   <ref role="1YaFvo" to="tpee:g7uibYu" resolve="ClassifierType" />
+                </node>
+                <node concept="37vLTw" id="4QTAjAf5BxE" role="1Ub_4B">
+                  <ref role="3cqZAo" node="4QTAjAf5A3J" resolve="instanceType" />
                 </node>
               </node>
             </node>

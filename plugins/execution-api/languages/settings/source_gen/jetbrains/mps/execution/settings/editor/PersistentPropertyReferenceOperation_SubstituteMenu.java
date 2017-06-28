@@ -28,7 +28,7 @@ public class PersistentPropertyReferenceOperation_SubstituteMenu extends Substit
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for PersistentPropertyReferenceOperation. Generated from the smart reference attribute.", new SNodePointer("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)", "4747359941569483995")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for PersistentPropertyReferenceOperation. Generated from implicit smart reference attribute.", new SNodePointer("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)", "946964771156066574")));
     try {
       return super.createMenuItems(context);
     } finally {

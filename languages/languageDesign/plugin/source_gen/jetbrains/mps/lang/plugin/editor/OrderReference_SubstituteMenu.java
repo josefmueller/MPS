@@ -28,7 +28,7 @@ public class OrderReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for OrderReference. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "4747359941569483752")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for OrderReference. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "2450897840534688273")));
     try {
       return super.createMenuItems(context);
     } finally {

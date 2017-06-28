@@ -28,7 +28,7 @@ public class TestListReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for TestListReference. Generated from the smart reference attribute.", new SNodePointer("r:7336929d-3d95-43d0-b2df-fd38af21ae45(jetbrains.mps.lang.pattern.testLang.structure)", "4747359941569484126")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for TestListReference. Generated from implicit smart reference attribute.", new SNodePointer("r:7336929d-3d95-43d0-b2df-fd38af21ae45(jetbrains.mps.lang.pattern.testLang.structure)", "1563914226484928843")));
     try {
       return super.createMenuItems(context);
     } finally {

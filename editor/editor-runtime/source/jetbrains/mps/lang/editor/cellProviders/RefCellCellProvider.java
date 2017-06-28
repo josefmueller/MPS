@@ -82,12 +82,20 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
 
   protected void installDeleteActions_atLeastOne(EditorCell editorCell) {
     if (ReferenceConceptUtil.getCharacteristicReference(getSNode().getConcept()) != null) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
+      installDeleteActions_notnull_smartReference(editorCell);
     } else {
-      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+      installDeleteActions_notnull(editorCell);
     }
+  }
+
+  protected void installDeleteActions_notnull(EditorCell editorCell) {
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+  }
+
+  protected void installDeleteActions_notnull_smartReference(EditorCell editorCell) {
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
   }
 
   protected void installDeleteActions_nullable_aggregation(EditorCell editorCell) {

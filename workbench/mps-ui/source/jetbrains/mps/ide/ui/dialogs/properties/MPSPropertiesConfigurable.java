@@ -28,7 +28,9 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.BooleanTableCellRenderer;
+import com.intellij.ui.ErrorLabel;
 import com.intellij.ui.IdeBorderFactory;
+import com.intellij.ui.JBColor;
 import com.intellij.ui.SpeedSearchBase;
 import com.intellij.ui.SpeedSearchComparator;
 import com.intellij.ui.TabbedPaneWrapper;
@@ -327,8 +329,8 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       JPanel sourcesTab = new JPanel();
       sourcesTab.setLayout(new GridLayoutManager(topComponent != null ? 4 : 3, 2, INSETS, -1, -1));
 
-      JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.common.namelabel"));
-      sourcesTab.add(label,
+      final ErrorLabel errorLabel = new ErrorLabel(PropertiesBundle.message("mps.properties.common.namelabel"));
+      sourcesTab.add(errorLabel,
           new GridConstraints(rowCount++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
               GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
@@ -337,8 +339,15 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       sourcesTab.add(myTextFieldName,
           new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW,
               GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+      myTextFieldName.addCaretListener(e -> {
+        if(myTextFieldName.getText().isEmpty()) {
+          errorLabel.setErrorText("Name cannot be empty", JBColor.RED);
+        } else {
+          errorLabel.setErrorText(null, null);
+        }
+      });
 
-      label = new JBLabel(PropertiesBundle.message("mps.properties.common.filepathlabel"));
+      JBLabel label = new JBLabel(PropertiesBundle.message("mps.properties.common.filepathlabel"));
       sourcesTab.add(label,
           new GridConstraints(rowCount, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
               GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -364,7 +373,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
     @Override
     public boolean isModified() {
-      return !myTextFieldName.getText().equals(getConfigItemName());
+      return !myTextFieldName.getText().isEmpty() && !myTextFieldName.getText().equals(getConfigItemName());
     }
   }
 

@@ -19,42 +19,53 @@ package jetbrains.mps.idea.java.tests;
 import com.intellij.codeInsight.daemon.impl.quickfix.ImportClassFix;
 import com.intellij.codeInsight.intention.IntentionAction;
 import com.intellij.codeInsight.intention.IntentionActionDelegate;
-import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.testFramework.PlatformTestCase;
+import com.intellij.testFramework.fixtures.JavaCodeInsightTestFixture;
+import com.intellij.testFramework.fixtures.impl.TempDirTestFixtureImpl;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.tests.DataMPSFixtureTestCase;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.vfs.IFile;
 
-import java.util.Arrays;
+import java.io.IOException;
 
 /**
  * Created by danilla on 01/06/16.
  */
 public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
   private IFile javafile;
+  private TempDirTestFixtureImpl myTempDirTestFixture;
 
   @Override
-  protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
-    myModule = configuration.getFacet().getModule();
+  protected void setUp() throws Exception {
+    myTempDirTestFixture = new TempDirTestFixtureImpl();
+    myTempDirTestFixture.setUp();
+    VirtualFile tempDir = myTempDirTestFixture.getFile("");
+    assertNotNull(tempDir);
+    PlatformTestCase.synchronizeTempDirVfs(tempDir);
+    super.setUp();
+  }
 
-    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(myModule).getSourceRoots();
-    assertEquals(sourceRoots.length, 1);
+  @Override
+  protected void tearDown() throws Exception {
+    super.tearDown();
+    myTempDirTestFixture.tearDown();
+  }
 
-    VirtualFile sourceRoot = sourceRoots[0];
-    final IFile modelFile = copyResource(sourceRoot.getPath() + "/blModel.mps", "blModel.mps", "/tests/blProject/models/blModel.mps");
-    copyResource(sourceRoot.getPath() + "/src/bl/perRootModel/.model", "perRootModelHeader", "/tests/blProject/src/bl/perRootModel/.model");
-    copyResource(sourceRoot.getPath() + "/src/bl/perRootModel/BLClassRoot.mpsr", "BLClassRoot.mpsr", "/tests/blProject/src/bl/perRootModel/BLClassRoot.mpsr");
+  @Override
+  protected void preConfigureSourceRoot(IFile sourceRoot) throws IOException {
+    copyResource(sourceRoot.getDescendant("/blModel.mps"), "blModel.mps", "/tests/blProject/models/blModel.mps");
+    copyResource(sourceRoot.getDescendant("/src/bl/perRootModel/.model"), "perRootModelHeader", "/tests/blProject/src/bl/perRootModel/.model");
+    copyResource(sourceRoot.getDescendant("/src/bl/perRootModel/BLClassRoot.mpsr"), "BLClassRoot.mpsr", "/tests/blProject/src/bl/perRootModel/BLClassRoot.mpsr");
 
-    DefaultModelRoot root = new DefaultModelRoot();
-    root.setContentRoot(modelFile.getParent().getPath());
-    root.addFile(DefaultModelRoot.SOURCE_ROOTS, modelFile.getParent().getPath());
-    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
+  }
 
-    javafile = copyResource(sourceRoot.getPath() + "/bl/test/Claz.java", "Claz.java", "/tests/blProject/src/bl/test/Claz.java");
-    copyResource(getTestDataPath() + "/Claz.after.java", "Claz.after.java", "/tests/blProject/src/bl/test/Claz.after.java");
-    copyResource(getTestDataPath() + "/ClazWithPerRootImport.after.java", "ClazWithPerRootImport.after.java", "/tests/blProject/src/bl/test/ClazWithPerRootImport.after.java");
+  @Override
+  protected void postConfigureSourceRoot(IFile sourceRoot) throws IOException {
+    copyResource(javafile = sourceRoot.getDescendant("/bl/test/Claz.java"), "Claz.java", "/tests/blProject/src/bl/test/Claz.java");
+    copyResource(sourceRoot.getFileSystem().getFile(myTempDirTestFixture.createFile("/Claz.after.java").getPath()), "Claz.after.java", "/tests/blProject/src/bl/test/Claz.after.java");
+    copyResource(sourceRoot.getFileSystem().getFile(myTempDirTestFixture.createFile("/ClazWithPerRootImport.after.java").getPath()), "ClazWithPerRootImport.after.java", "/tests/blProject/src/bl/test/ClazWithPerRootImport.after.java");
+    getMpsFixture().getCodeInsightTestFixture().setTestDataPath(myTempDirTestFixture.getTempDirPath());
   }
 
   @Override
@@ -63,14 +74,15 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
   }
 
   private void addBLClassImport(String expectedJavaFile, String classNameToType) {
-    myFixture.openFileInEditor(VirtualFileUtils.getVirtualFile(javafile));
-    int index = new StringBuilder(myFixture.getEditor().getDocument().getCharsSequence()).indexOf("// here");
+    JavaCodeInsightTestFixture javaFixture = getMpsFixture().getCodeInsightTestFixture();
+    javaFixture.openFileInEditor(VirtualFileUtils.getVirtualFile(javafile));
+    int index = new StringBuilder(javaFixture.getEditor().getDocument().getCharsSequence()).indexOf("// here");
 
-    myFixture.getEditor().getCaretModel().moveToOffset(index + "// here".length());
-    myFixture.type("\n" + classNameToType);
+    javaFixture.getEditor().getCaretModel().moveToOffset(index + "// here".length());
+    javaFixture.type("\n" + classNameToType);
 
     ImportClassFix fix = null;
-    for (IntentionAction intent : myFixture.getAvailableIntentions()) {
+    for (IntentionAction intent : javaFixture.getAvailableIntentions()) {
       while (intent instanceof IntentionActionDelegate) {
         intent = ((IntentionActionDelegate) intent).getDelegate();
       }
@@ -80,8 +92,8 @@ public class ReferenceBLThingsFromJavaTest extends DataMPSFixtureTestCase {
       }
     }
     assertTrue(fix != null);
-    fix.invoke(myFixture.getProject(), myFixture.getEditor(), myFixture.getFile());
-    myFixture.checkResultByFile(expectedJavaFile);
+    fix.invoke(getMpsFixture().getProject(), javaFixture.getEditor(), javaFixture.getFile());
+    javaFixture.checkResultByFile(expectedJavaFile);
   }
 
   public void testAddBLClassImportFromDefaultModel() {

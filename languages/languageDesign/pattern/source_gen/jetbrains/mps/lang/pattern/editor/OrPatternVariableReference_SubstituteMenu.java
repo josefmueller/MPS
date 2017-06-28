@@ -28,7 +28,7 @@ public class OrPatternVariableReference_SubstituteMenu extends SubstituteMenuBas
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for OrPatternVariableReference. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)", "4747359941569483738")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for OrPatternVariableReference. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)", "4264731254635442556")));
     try {
       return super.createMenuItems(context);
     } finally {

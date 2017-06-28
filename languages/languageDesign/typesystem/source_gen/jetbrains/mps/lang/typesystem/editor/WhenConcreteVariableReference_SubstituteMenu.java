@@ -28,7 +28,7 @@ public class WhenConcreteVariableReference_SubstituteMenu extends SubstituteMenu
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for WhenConcreteVariableReference. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)", "4747359941569483908")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for WhenConcreteVariableReference. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)", "1205762656241")));
     try {
       return super.createMenuItems(context);
     } finally {

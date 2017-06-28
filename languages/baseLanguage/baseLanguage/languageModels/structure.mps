@@ -56,9 +56,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -581,9 +578,6 @@
     <node concept="asaX9" id="6UEb_pTscCz" role="lGtFl">
       <property role="YLQ7P" value="Use VariableReference instead" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLaG" role="lGtFl">
-      <ref role="RPilL" node="f_2PX25" resolve="localVariableDeclaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="fzcpWvN">
     <property role="TrG5h" value="LongType" />
@@ -620,9 +614,6 @@
     </node>
     <node concept="asaX9" id="6UEb_pTscC_" role="lGtFl">
       <property role="YLQ7P" value="Use VariableReference instead" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLaK" role="lGtFl">
-      <ref role="RPilL" node="f_2OKrz" resolve="parameterDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzcpWvV">
@@ -1187,9 +1178,6 @@
     <node concept="PrWs8" id="5IWtCM70wkN" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLal" role="lGtFl">
-      <ref role="RPilL" node="hZVQs$S" resolve="constructor" />
-    </node>
   </node>
   <node concept="1TIwiD" id="fKRm8J8">
     <property role="R4oN_" value="enumeration constant reference" />
@@ -1360,9 +1348,6 @@
     <node concept="PrWs8" id="3zZky3wG47V" role="PzmwI">
       <ref role="PrY4T" node="3zZky3wF74d" resolve="IGenericType" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLaA" role="lGtFl">
-      <ref role="RPilL" node="g7uigIF" resolve="classifier" />
-    </node>
   </node>
   <node concept="1TIwiD" id="g7HP654">
     <property role="19KtqR" value="true" />
@@ -1458,9 +1443,6 @@
       <property role="IQ2ns" value="1109283546497" />
       <ref role="20lvS9" node="g96euPO" resolve="TypeVariableDeclaration" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLax" role="lGtFl">
-      <ref role="RPilL" node="g96sUm1" resolve="typeVariableDeclaration" />
-    </node>
   </node>
   <node concept="Az7Fb" id="gc$lTUB">
     <property role="TrG5h" value="_FPNumber_String" />
@@ -1481,9 +1463,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1116615189566" />
       <ref role="20lvS9" node="g7pOWCK" resolve="Classifier" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLaB" role="lGtFl">
-      <ref role="RPilL" node="gfVsUgY" resolve="classifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="gyVMwX8">
@@ -1680,9 +1659,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1153179615652" />
       <ref role="20lvS9" node="gLYQMEC" resolve="ClosureParameter" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLaL" role="lGtFl">
-      <ref role="RPilL" node="gLYR86$" resolve="closureParameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="gMGUZlm">
@@ -2165,9 +2141,6 @@
       <property role="YLQ7P" value="use LocalMethodCall" />
       <property role="YLPcu" value="MPS 3.3" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLaw" role="lGtFl">
-      <ref role="RPilL" node="h3$87lt" resolve="staticMethodDeclaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="h4AH0K_">
     <property role="R4oN_" value="array access expression" />
@@ -2392,9 +2365,6 @@
       <property role="IQ2ns" value="1188208074048" />
       <ref role="20lvS9" node="hiABswc" resolve="Annotation" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLan" role="lGtFl">
-      <ref role="RPilL" node="hiAI5P0" resolve="annotation" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hiB6ytK">
     <property role="TrG5h" value="AnnotationInstanceExpression" />
@@ -2432,9 +2402,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1188214555875" />
       <ref role="20lvS9" node="hiACnCB" resolve="AnnotationMethodDeclaration" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLaF" role="lGtFl">
-      <ref role="RPilL" node="hiB6Ojz" resolve="key" />
     </node>
   </node>
   <node concept="1TIwiD" id="hiBsdKd">
@@ -2508,9 +2475,6 @@
     </node>
     <node concept="PrWs8" id="hqOx31g" role="PzmwI">
       <ref role="PrY4T" node="hqOqG0K" resolve="IOperation" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLaI" role="lGtFl">
-      <ref role="RPilL" node="hqOxapj" resolve="fieldDeclaration" />
     </node>
   </node>
   <node concept="PlHQZ" id="htgVS9_">
@@ -2602,9 +2566,6 @@
     </node>
     <node concept="PrWs8" id="huS8xGm" role="PzmwI">
       <ref role="PrY4T" node="hqOqG0K" resolve="IOperation" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLao" role="lGtFl">
-      <ref role="RPilL" node="huS8YPn" resolve="property" />
     </node>
   </node>
   <node concept="1TIwiD" id="huSWr6e">
@@ -2715,9 +2676,6 @@
       <property role="IQ2ns" value="1202948736718" />
       <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" node="fzclF8t" resolve="InstanceMethodDeclaration" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLay" role="lGtFl">
-      <ref role="RPilL" node="hwllgre" resolve="instanceMethodDeclaration" />
     </node>
   </node>
   <node concept="PlHQZ" id="hxndl_i">
@@ -2872,9 +2830,6 @@
     </node>
     <node concept="PrWs8" id="hDpXTsX" role="PzmwI">
       <ref role="PrY4T" node="hxndl_i" resolve="IMethodCall" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLar" role="lGtFl">
-      <ref role="RPilL" node="hDpISCB" resolve="constructorDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="hFuNrjK">
@@ -3454,9 +3409,6 @@
       <property role="IQ2ns" value="363746191845183786" />
       <ref role="20lvS9" node="kcijJTliXE" resolve="LoopLabel" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLa_" role="lGtFl">
-      <ref role="RPilL" node="kcijJTll4E" resolve="loopLabel" />
-    </node>
   </node>
   <node concept="1TIwiD" id="5vlcUuJ5uOV">
     <property role="R5$K7" value="true" />
@@ -3552,9 +3504,6 @@
       <property role="IQ2ns" value="7812779912047934386" />
       <ref role="20lvS9" node="g7pOWCK" resolve="Classifier" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLat" role="lGtFl">
-      <ref role="RPilL" node="6LG$uY_VbIM" resolve="classifier" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2ffuO1reTtx">
     <property role="TrG5h" value="ImplicitAnnotationInstanceValue" />
@@ -3563,9 +3512,6 @@
     <ref role="1TJDcQ" node="hiB6LFO" resolve="AnnotationInstanceValue" />
     <node concept="PrWs8" id="1653mnvAlOM" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLa$" role="lGtFl">
-      <ref role="RPilL" node="hiB6Ojz" resolve="key" />
     </node>
   </node>
   <node concept="1TIwiD" id="3XnUzqXsajx">
@@ -3618,9 +3564,6 @@
     <node concept="asaX9" id="7cdZoO_Memb" role="lGtFl">
       <property role="YLQ7P" value="use LocalMethodCall" />
       <property role="YLPcu" value="MPS 3.3" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLav" role="lGtFl">
-      <ref role="RPilL" node="2EfScFvEDCX" resolve="instanceMethodDeclaration" />
     </node>
   </node>
   <node concept="PlHQZ" id="2P5W1FWMUys">
@@ -3747,9 +3690,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5862977038373003188" />
       <ref role="20lvS9" node="huRhdFY" resolve="Property" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLaq" role="lGtFl">
-      <ref role="RPilL" node="55tuCQivDYO" resolve="property" />
     </node>
   </node>
   <node concept="PlHQZ" id="cIz_w5LgdQ">
@@ -3891,9 +3831,6 @@
     <node concept="asaX9" id="6UEb_pTscCx" role="lGtFl">
       <property role="YLQ7P" value="Use VariableReference instead" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLau" role="lGtFl">
-      <ref role="RPilL" node="h3xboM2" resolve="staticFieldDeclaration" />
-    </node>
   </node>
   <node concept="PlHQZ" id="hiAJDhU">
     <property role="TrG5h" value="HasAnnotation" />
@@ -3994,9 +3931,6 @@
     </node>
     <node concept="asaX9" id="6UEb_pTscCv" role="lGtFl">
       <property role="YLQ7P" value="Use VariableReference instead" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLas" role="lGtFl">
-      <ref role="RPilL" node="6KbE6jv0GuX" resolve="fieldDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="hPGRDYT">
@@ -4231,9 +4165,6 @@
     <node concept="PrWs8" id="1WvmckuwZu4" role="PzmwI">
       <ref role="PrY4T" node="2P5W1FWMUyt" resolve="ILocalReference" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLaH" role="lGtFl">
-      <ref role="RPilL" node="fzcqZ_w" resolve="variableDeclaration" />
-    </node>
   </node>
   <node concept="PlHQZ" id="73E7sj5sxx_">
     <property role="TrG5h" value="IYetUnresolved" />
@@ -4273,9 +4204,6 @@
       <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" node="6LFqxSRBTg8" resolve="MethodDeclaration" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLaC" role="lGtFl">
-      <ref role="RPilL" node="6LFqxSRBTg7" resolve="method" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2RqtK3GeI5k">
     <property role="TrG5h" value="UnknownNew" />
@@ -4296,9 +4224,6 @@
     </node>
     <node concept="PrWs8" id="1653mnvB6gh" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLaJ" role="lGtFl">
-      <ref role="RPilL" node="fz7wK6H" resolve="baseMethodDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="7mpdUmncBAR">
@@ -4358,9 +4283,6 @@
     <node concept="PrWs8" id="1653mnvAlHk" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLam" role="lGtFl">
-      <ref role="RPilL" node="fz7wK6H" resolve="baseMethodDeclaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2hvEw8orWnm">
     <property role="TrG5h" value="UnknownLocalCall" />
@@ -4382,9 +4304,6 @@
     <node concept="PrWs8" id="1653mnvB5Y3" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLaD" role="lGtFl">
-      <ref role="RPilL" node="fz7wK6H" resolve="baseMethodDeclaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2hvEw8orWuP">
     <property role="TrG5h" value="UnknownDotCall" />
@@ -4405,9 +4324,6 @@
     </node>
     <node concept="PrWs8" id="1653mnvAlOo" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLaE" role="lGtFl">
-      <ref role="RPilL" node="fz7wK6H" resolve="baseMethodDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="25pbpTNtsmA">
@@ -4485,9 +4401,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2820489544401957798" />
       <ref role="20lvS9" node="g7pOWCK" resolve="Classifier" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLap" role="lGtFl">
-      <ref role="RPilL" node="2s$p4KaM3eA" resolve="classifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="1$K1wuo3Jf">
@@ -4575,9 +4488,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2622108313342889969" />
       <ref role="20lvS9" node="huRhdFY" resolve="Property" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLaz" role="lGtFl">
-      <ref role="RPilL" node="2hzApTjpGZL" resolve="owningProperty" />
     </node>
   </node>
   <node concept="1TIwiD" id="3HU80mxjfTu">

@@ -28,7 +28,7 @@ public class PatternVariableReference_SubstituteMenu extends SubstituteMenuBase 
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for PatternVariableReference. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)", "4747359941569483737")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for PatternVariableReference. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)", "3133930811460119173")));
     try {
       return super.createMenuItems(context);
     } finally {

@@ -75,7 +75,7 @@ import jetbrains.mps.smodel.SNodePointer;
         }, effectiveNode, "enumClass");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

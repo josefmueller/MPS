@@ -101,7 +101,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
         }, effectiveNode, "analyzer");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

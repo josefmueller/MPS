@@ -287,9 +287,6 @@
       <property role="IQ2ns" value="1239560595302" />
       <ref role="20lvS9" node="i2lGYlf" resolve="NamedTupleComponentDeclaration" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLcr" role="lGtFl">
-      <ref role="RPilL" node="i2r$qtA" resolve="componentDeclaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="i2sxajE">
     <property role="TrG5h" value="NamedTupleComponentAccessOperation" />
@@ -305,9 +302,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1239576542472" />
       <ref role="20lvS9" node="i2lGYlf" resolve="NamedTupleComponentDeclaration" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLco" role="lGtFl">
-      <ref role="RPilL" node="i2sxfO8" resolve="component" />
     </node>
   </node>
 </model>

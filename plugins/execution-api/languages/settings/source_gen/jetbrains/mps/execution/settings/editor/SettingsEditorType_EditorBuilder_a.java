@@ -80,7 +80,7 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.greate
         }, effectiveNode, "configuration");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

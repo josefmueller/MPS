@@ -28,7 +28,7 @@ public class LowLevelVariableReference_SubstituteMenu extends SubstituteMenuBase
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for LowLevelVariableReference. Generated from the smart reference attribute.", new SNodePointer("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)", "4747359941569483970")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for LowLevelVariableReference. Generated from implicit smart reference attribute.", new SNodePointer("r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)", "9050639307831392587")));
     try {
       return super.createMenuItems(context);
     } finally {

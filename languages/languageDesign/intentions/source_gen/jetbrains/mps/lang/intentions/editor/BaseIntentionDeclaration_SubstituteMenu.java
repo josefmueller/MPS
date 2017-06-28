@@ -28,7 +28,7 @@ public class BaseIntentionDeclaration_SubstituteMenu extends SubstituteMenuBase 
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BaseIntentionDeclaration. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)", "4747359941569483701")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BaseIntentionDeclaration. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)", "2522969319638091381")));
     try {
       return super.createMenuItems(context);
     } finally {

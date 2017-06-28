@@ -20,9 +20,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -42,9 +39,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -127,9 +121,6 @@
       <property role="IQ2ns" value="6820702584719569331" />
       <ref role="20lvS9" node="tg3qbf2kf2" resolve="CustomConstructor" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLbI" role="lGtFl">
-      <ref role="RPilL" node="5UC0dNSN76N" resolve="customConstructor" />
-    </node>
   </node>
   <node concept="1TIwiD" id="4ECm7aRgFqR">
     <property role="R5$K7" value="true" />
@@ -189,18 +180,12 @@
       <property role="IQ2ns" value="5379647004618378853" />
       <ref role="20lvS9" node="4ECm7aRgLwp" resolve="CustomConstructorParameter" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLbH" role="lGtFl">
-      <ref role="RPilL" node="4ECm7aRhsT_" resolve="parameter" />
-    </node>
   </node>
   <node concept="1TIwiD" id="474u_1NvEaB">
     <property role="TrG5h" value="ListParameterReference" />
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="4739047193854255783" />
     <ref role="1TJDcQ" node="4ECm7aRhsT$" resolve="CustomConstructorParameterReference" />
-    <node concept="RPilO" id="47y0FrqaLbJ" role="lGtFl">
-      <ref role="RPilL" node="4ECm7aRhsT_" resolve="parameter" />
-    </node>
   </node>
   <node concept="1TIwiD" id="474u_1Nw7FV">
     <property role="TrG5h" value="ListCustomParameter" />

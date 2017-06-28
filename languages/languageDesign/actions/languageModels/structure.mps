@@ -56,9 +56,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -172,9 +169,6 @@
     <node concept="PrWs8" id="7pgPxC8nT$I" role="PzmwI">
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLcE" role="lGtFl">
-      <ref role="RPilL" node="gbFOWO8" resolve="applicableConcept" />
-    </node>
   </node>
   <node concept="1TIwiD" id="gzUNGri">
     <property role="TrG5h" value="SideTransformHintSubstituteActionsBuilder" />
@@ -239,9 +233,6 @@
     </node>
     <node concept="PrWs8" id="7pgPxC8nT$R" role="PzmwI">
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLcC" role="lGtFl">
-      <ref role="RPilL" node="gzUNGrm" resolve="applicableConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="gzUOs4m">
@@ -1169,9 +1160,6 @@
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="h9At2QK" resolve="SubstituteNodeBuilderVariableDeclaration" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLcD" role="lGtFl">
-      <ref role="RPilL" node="h9A$1f_" resolve="nodeBuilderVariableDeclaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="h9OR9UU">
     <property role="TrG5h" value="QueryFunction_Substitute_CommonInitializer" />
@@ -1485,9 +1473,6 @@
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="hwH6Al_" resolve="SideTransformVariableDeclaration" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLcB" role="lGtFl">
-      <ref role="RPilL" node="hwH8uQe" resolve="rightTransformVariableDeclaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="hwHdZwP">
     <property role="TrG5h" value="QueryFunction_ST_CommonInitializer" />
@@ -1784,9 +1769,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1235053754581" />
       <ref role="20lvS9" node="hYeVHMO" resolve="SmartActionParameter" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLcA" role="lGtFl">
-      <ref role="RPilL" node="hYeWbzl" resolve="smartActionParameter" />
     </node>
   </node>
   <node concept="1TIwiD" id="hYeZWPR">

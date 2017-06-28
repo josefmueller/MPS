@@ -28,7 +28,7 @@ public class SideTransformVariableReference_SubstituteMenu extends SubstituteMen
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SideTransformVariableReference. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "4747359941569483559")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SideTransformVariableReference. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1203348041101")));
     try {
       return super.createMenuItems(context);
     } finally {

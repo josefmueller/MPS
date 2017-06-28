@@ -138,7 +138,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
         }, effectiveNode, "relationDeclaration");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull_smartReference(cell);
         return cell;
       }
     };
@@ -231,7 +231,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
         EditorCell cell = new CellModel_RefCell_InspectorBuilder_a.Inline_Builder_lfsepz_a1b3a(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

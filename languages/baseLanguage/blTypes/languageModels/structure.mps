@@ -21,9 +21,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -39,9 +36,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -78,9 +72,6 @@
     </node>
     <node concept="PrWs8" id="1$21UiM4N0a" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLbr" role="lGtFl">
-      <ref role="RPilL" node="gRDMZzB" resolve="descriptor" />
     </node>
   </node>
 </model>

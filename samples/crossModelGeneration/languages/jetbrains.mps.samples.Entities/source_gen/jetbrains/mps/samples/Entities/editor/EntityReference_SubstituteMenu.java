@@ -28,7 +28,7 @@ public class EntityReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for EntityReference. Generated from the smart reference attribute.", new SNodePointer("r:7bf2fd0c-7b27-44eb-aefa-d1c8fd68c431(jetbrains.mps.samples.Entities.structure)", "4747359941569484158")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for EntityReference. Generated from implicit smart reference attribute.", new SNodePointer("r:7bf2fd0c-7b27-44eb-aefa-d1c8fd68c431(jetbrains.mps.samples.Entities.structure)", "4053600266038192411")));
     try {
       return super.createMenuItems(context);
     } finally {

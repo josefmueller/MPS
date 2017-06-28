@@ -28,7 +28,7 @@ public class DirectMethodSpecification_SubstituteMenu extends SubstituteMenuBase
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for DirectMethodSpecification. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)", "4747359941569483830")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for DirectMethodSpecification. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)", "2291767839159498115")));
     try {
       return super.createMenuItems(context);
     } finally {

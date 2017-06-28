@@ -28,7 +28,7 @@ public class DropAttributeRule_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for DropAttributeRule. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "4747359941569483673")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for DropAttributeRule. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "7473026166162297915")));
     try {
       return super.createMenuItems(context);
     } finally {

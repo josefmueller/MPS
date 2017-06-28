@@ -76,7 +76,7 @@ import jetbrains.mps.editor.runtime.EditorCell_Empty;
         }, effectiveNode, "refactoring");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
