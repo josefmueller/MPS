@@ -29,6 +29,7 @@ import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -488,7 +489,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
           }
         };
       }
-      if (rebuildAction instanceof ModelReadAction) {
+      if (rebuildAction instanceof ModelReadRunnable) {
         rebuildAction.run();
       } else {
         LOG.error("MPSTree is generic class and shall not care about model read. Override #runRebuildAction and wrap Runnable with model read, instead", new Throwable());

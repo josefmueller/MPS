@@ -10561,6 +10561,54 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="LEyIDSCeYm" role="jymVt" />
+    <node concept="3clFb_" id="LEyIDSCg_g" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="runRebuildAction" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="LEyIDSCg_h" role="1B3o_S" />
+      <node concept="3cqZAl" id="LEyIDSCg_j" role="3clF45" />
+      <node concept="37vLTG" id="LEyIDSCg_k" role="3clF46">
+        <property role="TrG5h" value="rebuildAction" />
+        <node concept="3uibUv" id="LEyIDSCg_l" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="LEyIDSCg_m" role="3clF46">
+        <property role="TrG5h" value="saveExpansion" />
+        <node concept="10P_77" id="LEyIDSCg_n" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="LEyIDSCg_o" role="3clF47">
+        <node concept="3clFbF" id="LEyIDSCg_t" role="3cqZAp">
+          <node concept="3nyPlj" id="LEyIDSCg_s" role="3clFbG">
+            <ref role="37wK5l" to="7e8u:~MPSTree.runRebuildAction(java.lang.Runnable,boolean):void" resolve="runRebuildAction" />
+            <node concept="2ShNRf" id="LEyIDSCl9W" role="37wK5m">
+              <node concept="1pGfFk" id="LEyIDSCFW0" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelReadRunnable.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess,java.lang.Runnable)" resolve="ModelReadRunnable" />
+                <node concept="2OqwBi" id="LEyIDSCL3L" role="37wK5m">
+                  <node concept="37vLTw" id="LEyIDSCJdt" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1ZFc3Q13IiA" resolve="myRepostitory" />
+                  </node>
+                  <node concept="liA8E" id="LEyIDSCLvz" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="LEyIDSCP10" role="37wK5m">
+                  <ref role="3cqZAo" node="LEyIDSCg_k" resolve="rebuildAction" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="LEyIDSCg_r" role="37wK5m">
+              <ref role="3cqZAo" node="LEyIDSCg_m" resolve="saveExpansion" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="LEyIDSCg_p" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="4rg4d7KXvGZ" role="jymVt" />
     <node concept="3clFb_" id="51NkKCgB4as" role="jymVt">
       <property role="TrG5h" value="rebuild" />

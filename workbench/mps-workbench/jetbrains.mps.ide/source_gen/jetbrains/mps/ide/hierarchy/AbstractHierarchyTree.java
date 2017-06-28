@@ -109,6 +109,11 @@ public abstract class AbstractHierarchyTree extends MPSTree {
   }
 
   @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myRepostitory.getModelAccess(), rebuildAction), saveExpansion);
+  }
+
+  @Override
   protected MPSTreeNode rebuild() {
     if (myHierarchyNode == null) {
       return new TextTreeNode(noNodeString());
