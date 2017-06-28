@@ -20,8 +20,6 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.ui.ComboBox;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.ui.AnActionButton;
-import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.SimpleTextAttributes;
@@ -69,7 +67,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   private JBCheckBox myCheckBox;
   private ComboBox myComboBox;
 
-  private JavaModuleFacetImpl myJavaModuleFacet;
+  private final JavaModuleFacetImpl myJavaModuleFacet;
 
   public JavaModuleFacetTab(JavaModuleFacetImpl javaModuleFacet) {
     super(javaModuleFacet.getFacetPresentation(), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("facet.java.tip"));
@@ -88,18 +86,30 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       assert descriptor != null;
 
       JBLabel solutionKindLabel = new JBLabel(PropertiesBundle.message("facet.java.solutionkind"));
-      myComboBox = new ComboBox(new DefaultComboBoxModel<SolutionKind>(SolutionKind.values()));
+      myComboBox = new ComboBox(new DefaultComboBoxModel<>(SolutionKind.values()));
       myComboBox.setSelectedItem(descriptor.getKind());
 
-      advancedTab.add(solutionKindLabel, new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-      advancedTab.add(myComboBox, new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      advancedTab.add(solutionKindLabel,
+                      new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
+                                          GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      advancedTab.add(myComboBox,
+                      new GridConstraints(row++, 1, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+                                          GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
 
       myCheckBox = new JBCheckBox(PropertiesBundle.message("facet.java.compileinmps"), descriptor.getCompileInMPS());
-      advancedTab.add(myCheckBox, new GridConstraints(row++, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      advancedTab.add(myCheckBox,
+                      new GridConstraints(row++, 0, 1, 2, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+                                          GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
-    advancedTab.add(getSourcePathsTable(), new GridConstraints(row++, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
-    advancedTab.add(getLibrariesTable(), new GridConstraints(row, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+    advancedTab.add(getSourcePathsTable(), new GridConstraints(row++, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
+                                                               GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                               GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0,
+                                                               false));
+    advancedTab.add(getLibrariesTable(), new GridConstraints(row, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH,
+                                                             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW,
+                                                             GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0,
+                                                             false));
 
     setTabComponent(advancedTab);
   }
@@ -116,24 +126,18 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
 
     ToolbarDecorator decorator = ToolbarDecorator.createDecorator(sourcePathTable);
-    decorator.setAddAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton anActionButton) {
-        FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createMultipleFoldersDescriptor();
-        descriptor.setTitle("Choose Source Paths");
-        final VirtualFile moduleDir = VirtualFileUtils.getProjectVirtualFile(myJavaModuleFacet.getModule().getModuleSourceDir());
+    decorator.setAddAction(anActionButton -> {
+      FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createMultipleFoldersDescriptor();
+      descriptor.setTitle("Choose Source Paths");
+      final VirtualFile moduleDir = VirtualFileUtils.getProjectVirtualFile(myJavaModuleFacet.getModule().getModuleSourceDir());
 
-        final VirtualFile[] files = FileChooser.chooseFiles(descriptor, getTabComponent(), null, moduleDir);
-        for (VirtualFile file : files) {
-          myPathsTableModel.add(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(file.getPath()));
-        }
+      final VirtualFile[] files = FileChooser.chooseFiles(descriptor, getTabComponent(), null, moduleDir);
+      for (VirtualFile file : files) {
+        myPathsTableModel.add(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(file.getPath()));
       }
-    }).setRemoveAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton anActionButton) {
-        TableUtil.removeSelectedItems(sourcePathTable);
-        myPathsTableModel.fireTableDataChanged();
-      }
+    }).setRemoveAction(anActionButton -> {
+      TableUtil.removeSelectedItems(sourcePathTable);
+      myPathsTableModel.fireTableDataChanged();
     });
     decorator.setToolbarBorder(IdeBorderFactory.createBorder());
     decorator.setPreferredSize(new Dimension(500, 100));
@@ -154,19 +158,13 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     librariesTable.setAutoscrolls(true);
 
     ToolbarDecorator decorator = ToolbarDecorator.createDecorator(librariesTable);
-    decorator.setAddAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton anActionButton) {
-        List<ModelRootDescriptor> modelRoots = new ArrayList<ModelRootDescriptor>(myJavaModuleFacet.getModule().getModuleDescriptor().getModelRootDescriptors());
-        StubRootChooser stubRootChooser = new StubRootChooser(getTabComponent(), modelRoots, myJavaModuleFacet.getModule() instanceof Language);
-        myLibraryTableModel.addAll(stubRootChooser.compute());
-      }
-    }).setRemoveAction(new AnActionButtonRunnable() {
-      @Override
-      public void run(AnActionButton anActionButton) {
-        TableUtil.removeSelectedItems(librariesTable);
-        myLibraryTableModel.fireTableDataChanged();
-      }
+    decorator.setAddAction(anActionButton -> {
+      List<ModelRootDescriptor> modelRoots = new ArrayList<>(myJavaModuleFacet.getModule().getModuleDescriptor().getModelRootDescriptors());
+      StubRootChooser stubRootChooser = new StubRootChooser(getTabComponent(), modelRoots, myJavaModuleFacet.getModule() instanceof Language);
+      myLibraryTableModel.addAll(stubRootChooser.compute());
+    }).setRemoveAction(anActionButton -> {
+      TableUtil.removeSelectedItems(librariesTable);
+      myLibraryTableModel.fireTableDataChanged();
     });
     decorator.setToolbarBorder(IdeBorderFactory.createBorder());
     decorator.setPreferredSize(new Dimension(500, 100));
@@ -186,8 +184,8 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     }
 
     return myPathsTableModel.isModified()
-        || myLibraryTableModel.isModified()
-        || solutionCheck;
+           || myLibraryTableModel.isModified()
+           || solutionCheck;
   }
 
   @Override
@@ -210,12 +208,10 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
   private class PathsTableModel extends AbstractTableModel implements ItemRemovable {
     public PathsTableModel() {
-      for(String s : myJavaModuleFacet.getAdditionalSourcePaths()) {
-        myPaths.add(s);
-      }
+      myPaths.addAll(myJavaModuleFacet.getAdditionalSourcePaths());
     }
 
-    List<String> myPaths = new ArrayList<String>();
+    final List<String> myPaths = new ArrayList<>();
 
     public void add(String path) {
       if (path != null && !myPaths.contains(path)) {
@@ -270,12 +266,10 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   }
 
   private class LibraryTableModel extends AbstractTableModel implements ItemRemovable {
-    private List<String> myStubModelEntries = new ArrayList<String>();
+    private final List<String> myStubModelEntries = new ArrayList<>();
 
     public LibraryTableModel() {
-      for (String javaStubPath : myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths()) {
-        myStubModelEntries.add(javaStubPath);
-      }
+      myStubModelEntries.addAll(myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths());
     }
 
     public void addAll(Collection<String> javaStubPaths) {
@@ -320,7 +314,7 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
 
     public boolean isModified() {
       return !(myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().containsAll(myStubModelEntries) &&
-          myStubModelEntries.containsAll(myJavaModuleFacet.getLibraryClassPath()));
+               myStubModelEntries.containsAll(myJavaModuleFacet.getLibraryClassPath()));
     }
 
     public void apply() {
