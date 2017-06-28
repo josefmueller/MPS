@@ -178,6 +178,11 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     }, true);
   }
 
+  /**
+   * Unlike {@link #updatePresentation()}, focus on node modifications that involve structure change.
+   * Dispatches a tree model notification to reflect structure change of a subtree rooted at this node.
+   * Override {@link #doUpdate()} to perform actual modification of a subtree
+   */
   public void update() {
     doUpdate();
     ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
@@ -298,8 +303,11 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     updateNodePresentationInTree();
   }
 
-  //todo make final
-  protected void updatePresentation() {
+  /**
+   * Does boilerplate refresh operations, like additional messages handling and notification dispatch.
+   * Override {@link #doUpdatePresentation()} for custom presentation changes
+   */
+  protected final void updatePresentation() {
     doUpdatePresentation();
     if (myTree == null) {
       myTree = getTree();
@@ -329,6 +337,12 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     }
   }
 
+  /**
+   * @deprecated odd and unclear contract (e.g. {@link #update()} and {@link #updateSubTree()} imply structure refresh, while this one does not),
+   *             parameters that merely control invocation of other public methods.
+   *             Use respective methods directly, instead.
+   */
+  @Deprecated
   public void updatePresentation(final boolean reloadSubTree, final boolean updateAncestors) {
     renewPresentation();
     if (reloadSubTree) {
@@ -531,6 +545,9 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     myAutoExpandable = autoExpandable;
   }
 
+  /**
+   * Dispatch a notification that tree model needs to reflect changes in node's presentation
+   */
   public final void updateNodePresentationInTree() {
     if (getTree() == null) return;
     ((DefaultTreeModel) getTree().getModel()).nodeChanged(this);
