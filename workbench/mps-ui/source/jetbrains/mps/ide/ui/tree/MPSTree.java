@@ -83,6 +83,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   private boolean myDisposed = false;
 
+  // provisional flag until I refactor all MPSTree subclasses to be explicit about read actions. Drop once 2017.2 is out
+  protected boolean myWarnModelAccess = true;
+
   protected MPSTree() {
     setRootNode(new TextTreeNode("Empty"));
 
@@ -172,25 +175,25 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void fireBeforeTreeDisposed() {
-    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+    for (MPSTreeNodeListener listener : new HashSet<>(myTreeNodeListeners)) {
       listener.beforeTreeDisposed(this);
     }
   }
 
   void fireTreeNodeUpdated(MPSTreeNode node) {
-    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+    for (MPSTreeNodeListener listener : new HashSet<>(myTreeNodeListeners)) {
       listener.treeNodeUpdated(node, this);
     }
   }
 
   void fireTreeNodeAdded(MPSTreeNode node) {
-    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+    for (MPSTreeNodeListener listener : new HashSet<>(myTreeNodeListeners)) {
       listener.treeNodeAdded(node, this);
     }
   }
 
   void fireTreeNodeRemoved(MPSTreeNode node) {
-    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+    for (MPSTreeNodeListener listener : new HashSet<>(myTreeNodeListeners)) {
       listener.treeNodeRemoved(node, this);
     }
   }
@@ -236,6 +239,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     MPSTreeNode nodeToClick = getOpenableNode(e);
     if (nodeToClick != null && e.getClickCount() == 2) {
+      // shouldn't I use nodeToClick.getToggleClickCount() instead of hardcoded '2' here? Does 'toggle click' mean the same as doubleclick?
       doubleClick(nodeToClick);
     }
   }
@@ -492,8 +496,11 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       if (rebuildAction instanceof ModelReadRunnable) {
         rebuildAction.run();
       } else {
-        LOG.error("MPSTree is generic class and shall not care about model read. Override #runRebuildAction and wrap Runnable with model read, instead", new Throwable());
-        ModelAccess.instance().runReadAction(rebuildAction);
+        if (myWarnModelAccess) {
+          LOG.warn("MPSTree is generic class and shall not care about model read. Override #runRebuildAction and wrap Runnable with model read, instead",
+                    new Throwable());
+          ModelAccess.instance().runReadAction(rebuildAction);
+        }
       }
       if (restoreExpansion != null) {
         runWithoutExpansion(restoreExpansion);
