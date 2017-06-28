@@ -6,9 +6,9 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.icons.IconManager;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.icons.IconManager;
 
 public class HierarchyTreeNode extends MPSTreeNode {
   private SNode myNode;
@@ -22,31 +22,9 @@ public class HierarchyTreeNode extends MPSTreeNode {
     myHierarchyTree = tree;
     setNodeIdentifier(calculateNodeIdentifier());
     setToggleClickCount(-1);
-  }
-  @Override
-  protected void doUpdatePresentation() {
-    SNode node = myNode;
-    if (node == null) {
-      return;
-    }
-    setIcon(IconManager.getIconFor(node));
-    String addText = calculateAdditionalText();
-    if (addText != null) {
-      setAdditionalText(addText);
-    }
     setAutoExpandable(false);
-  }
-  protected String calculateAdditionalText() {
-    if (getNode() == null) {
-      return null;
-    }
-
-    SModel model = SNodeOperations.getModel(getNode());
-    if (model == null) {
-      return null;
-    }
-
-    return model.getReference().getModelName();
+    setAdditionalText(SModelOperations.getModelName(SNodeOperations.getModel(declaration)));
+    setIcon(IconManager.getIconFor(declaration));
   }
   public SNode getNode() {
     return myNode;
@@ -61,6 +39,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
       return "null";
     }
     String name;
+    // FIXME Oh, no. To fix MPS-638, instead of proper use of MPSTreeNode.setText, here comes an odd delegation...God help me! 
     if (myHierarchyTree.overridesNodeIdentifierCalculation()) {
       name = myHierarchyTree.calculateNodeIdentifier(this);
     } else {

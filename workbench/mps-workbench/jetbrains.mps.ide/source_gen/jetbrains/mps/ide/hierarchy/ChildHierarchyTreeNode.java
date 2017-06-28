@@ -46,18 +46,10 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
     } catch (CircularHierarchyException ex) {
       SNode errorNode = (SNode) ex.getRepeatedObject();
       final String message = ex.getMessage();
-      HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode, myHierarchyTree) {
-        @Override
-        protected void doUpdatePresentation() {
-          super.doUpdatePresentation();
-          setIcon(Icons.ERROR_ICON);
-          setColor(Color.RED);
-        }
-        @Override
-        protected String calculateAdditionalText() {
-          return message;
-        }
-      };
+      HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode, myHierarchyTree);
+      errorTreeNode.setIcon(Icons.ERROR_ICON);
+      errorTreeNode.setColor(Color.RED);
+      errorTreeNode.setAdditionalText(message);
       add(errorTreeNode);
     }
     myInitialized = true;

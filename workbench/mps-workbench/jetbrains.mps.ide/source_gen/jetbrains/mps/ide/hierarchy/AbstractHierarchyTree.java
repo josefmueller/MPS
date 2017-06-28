@@ -11,8 +11,6 @@ import javax.swing.tree.DefaultTreeModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import java.util.Set;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.mps.util.Condition;
@@ -118,12 +116,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     if (myHierarchyNode == null) {
       return new TextTreeNode(noNodeString());
     }
-    return new ModelAccessHelper(myRepostitory.getModelAccess()).runReadAction(new Computable<MPSTreeNode>() {
-      @Override
-      public MPSTreeNode compute() {
-        return rebuildParentHierarchy();
-      }
-    });
+    return rebuildParentHierarchy();
   }
   protected abstract String noNodeString();
   protected abstract SNode getParent(SNode node);
