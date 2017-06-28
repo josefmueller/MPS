@@ -15,11 +15,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_CheckpointSpecification;
   private ConceptPresentation props_CheckpointSynchronization;
   private ConceptPresentation props_DeclaredCheckpointSpec;
+  private ConceptPresentation props_DocumentationLine;
+  private ConceptPresentation props_DocumentationStep;
   private ConceptPresentation props_InPlaceCheckpointRefSpec;
   private ConceptPresentation props_InPlaceCheckpointSpec;
   private ConceptPresentation props_IncludePlan;
   private ConceptPresentation props_Plan;
   private ConceptPresentation props_Step;
+  private ConceptPresentation props_TextDocLine;
   private ConceptPresentation props_Transform;
 
   @Override
@@ -73,6 +76,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_DeclaredCheckpointSpec = cpb.create();
         }
         return props_DeclaredCheckpointSpec;
+      case LanguageConceptSwitch.DocumentationLine:
+        if (props_DocumentationLine == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_DocumentationLine = cpb.create();
+        }
+        return props_DocumentationLine;
+      case LanguageConceptSwitch.DocumentationStep:
+        if (props_DocumentationStep == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("document the plan");
+          cpb.rawPresentation("DocumentationStep");
+          props_DocumentationStep = cpb.create();
+        }
+        return props_DocumentationStep;
       case LanguageConceptSwitch.InPlaceCheckpointRefSpec:
         if (props_InPlaceCheckpointRefSpec == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb32cL);
@@ -111,6 +128,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Step = cpb.create();
         }
         return props_Step;
+      case LanguageConceptSwitch.TextDocLine:
+        if (props_TextDocLine == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TextDocLine");
+          props_TextDocLine = cpb.create();
+        }
+        return props_TextDocLine;
       case LanguageConceptSwitch.Transform:
         if (props_Transform == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

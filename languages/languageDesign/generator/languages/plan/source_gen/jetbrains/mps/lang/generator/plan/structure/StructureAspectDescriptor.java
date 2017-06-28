@@ -18,11 +18,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCheckpointSpecification = createDescriptorForCheckpointSpecification();
   /*package*/ final ConceptDescriptor myConceptCheckpointSynchronization = createDescriptorForCheckpointSynchronization();
   /*package*/ final ConceptDescriptor myConceptDeclaredCheckpointSpec = createDescriptorForDeclaredCheckpointSpec();
+  /*package*/ final ConceptDescriptor myConceptDocumentationLine = createDescriptorForDocumentationLine();
+  /*package*/ final ConceptDescriptor myConceptDocumentationStep = createDescriptorForDocumentationStep();
   /*package*/ final ConceptDescriptor myConceptInPlaceCheckpointRefSpec = createDescriptorForInPlaceCheckpointRefSpec();
   /*package*/ final ConceptDescriptor myConceptInPlaceCheckpointSpec = createDescriptorForInPlaceCheckpointSpec();
   /*package*/ final ConceptDescriptor myConceptIncludePlan = createDescriptorForIncludePlan();
   /*package*/ final ConceptDescriptor myConceptPlan = createDescriptorForPlan();
   /*package*/ final ConceptDescriptor myConceptStep = createDescriptorForStep();
+  /*package*/ final ConceptDescriptor myConceptTextDocLine = createDescriptorForTextDocLine();
   /*package*/ final ConceptDescriptor myConceptTransform = createDescriptorForTransform();
   private final LanguageConceptSwitch myConceptIndex;
 
@@ -32,7 +35,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptApplyGenerators, myConceptCheckpoint, myConceptCheckpointDeclaration, myConceptCheckpointSpecification, myConceptCheckpointSynchronization, myConceptDeclaredCheckpointSpec, myConceptInPlaceCheckpointRefSpec, myConceptInPlaceCheckpointSpec, myConceptIncludePlan, myConceptPlan, myConceptStep, myConceptTransform);
+    return Arrays.asList(myConceptApplyGenerators, myConceptCheckpoint, myConceptCheckpointDeclaration, myConceptCheckpointSpecification, myConceptCheckpointSynchronization, myConceptDeclaredCheckpointSpec, myConceptDocumentationLine, myConceptDocumentationStep, myConceptInPlaceCheckpointRefSpec, myConceptInPlaceCheckpointSpec, myConceptIncludePlan, myConceptPlan, myConceptStep, myConceptTextDocLine, myConceptTransform);
   }
 
   @Override
@@ -51,6 +54,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCheckpointSynchronization;
       case LanguageConceptSwitch.DeclaredCheckpointSpec:
         return myConceptDeclaredCheckpointSpec;
+      case LanguageConceptSwitch.DocumentationLine:
+        return myConceptDocumentationLine;
+      case LanguageConceptSwitch.DocumentationStep:
+        return myConceptDocumentationStep;
       case LanguageConceptSwitch.InPlaceCheckpointRefSpec:
         return myConceptInPlaceCheckpointRefSpec;
       case LanguageConceptSwitch.InPlaceCheckpointSpec:
@@ -61,6 +68,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptPlan;
       case LanguageConceptSwitch.Step:
         return myConceptStep;
+      case LanguageConceptSwitch.TextDocLine:
+        return myConceptTextDocLine;
       case LanguageConceptSwitch.Transform:
         return myConceptTransform;
       default:
@@ -124,6 +133,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("cpDecl", 0x340cd07aed7cb300L).target(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x56d679ca1f4b53ceL).optional(false).origin("3750601816081740544").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForDocumentationLine() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "DocumentationLine", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc6a8aea78a50f67L);
+    b.interface_();
+    b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/894680215637528423");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForDocumentationStep() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "DocumentationStep", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc6a8aea78a4805dL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.generator.plan.structure.Step", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL);
+    b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/894680215637491805");
+    b.aggregate("comments", 0xc6a8aea78a50fd4L).target(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc6a8aea78a50f67L).optional(false).ordered(true).multiple(true).origin("894680215637528532").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForInPlaceCheckpointRefSpec() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "InPlaceCheckpointRefSpec", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb32cL);
     b.class_(false, false, false);
@@ -161,6 +184,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "Step", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x19443180a20717fcL);
     b.class_(false, true, false);
     b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/1820634577908471804");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTextDocLine() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.plan", "TextDocLine", 0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x2913ee226f7cdcb5L);
+    b.class_(false, false, false);
+    b.parent(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0xc6a8aea78a50f67L);
+    b.origin("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)/2959971211779300533");
+    b.prop("text", 0x2913ee226f7cdcd3L, "2959971211779300563");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTransform() {
