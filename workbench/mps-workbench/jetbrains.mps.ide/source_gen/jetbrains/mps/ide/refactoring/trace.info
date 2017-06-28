@@ -297,37 +297,46 @@
       <node id="64647105392052880" at="19,69,20,27" concept="3" />
       <node id="2482360940803572024" at="20,27,21,27" concept="3" />
       <node id="2482360940803572032" at="21,27,22,29" concept="3" />
-      <node id="1114145801597399786" at="28,33,29,70" concept="8" />
-      <node id="2325849581576430471" at="30,64,31,55" concept="9" />
-      <node id="1114145801597405375" at="32,5,33,0" concept="11" />
-      <node id="1114145801597408516" at="33,0,34,30" concept="9" />
-      <node id="2325849581576430453" at="38,40,39,70" concept="8" />
-      <node id="8474866949349193645" at="41,25,42,72" concept="3" />
-      <node id="2325849581576430445" at="44,7,45,32" concept="3" />
-      <node id="2325849581576430460" at="29,70,32,5" concept="6" />
-      <node id="8474866949349192963" at="41,0,44,0" concept="7" trace="run#()V" />
-      <node id="8474866949349192961" at="39,70,44,7" concept="3" />
+      <node id="1114145801597399786" at="28,33,29,34" concept="8" />
+      <node id="4368217141688793988" at="30,9,31,55" concept="3" />
+      <node id="4368217141688796506" at="32,50,33,36" concept="9" />
+      <node id="4368217141688809004" at="34,5,35,0" concept="11" />
+      <node id="2325849581576430471" at="36,64,37,55" concept="9" />
+      <node id="1114145801597405375" at="38,5,39,0" concept="11" />
+      <node id="1114145801597408516" at="39,0,40,30" concept="9" />
+      <node id="2325849581576430453" at="44,40,45,70" concept="8" />
+      <node id="8474866949349193645" at="47,25,48,72" concept="3" />
+      <node id="2325849581576430445" at="50,7,51,32" concept="3" />
+      <node id="2325849581576430460" at="35,0,38,5" concept="6" />
+      <node id="8474866949349192963" at="47,0,50,0" concept="7" trace="run#()V" />
+      <node id="4368217141688789037" at="29,34,34,5" concept="16" />
+      <node id="8474866949349192961" at="45,70,50,7" concept="3" />
       <node id="2482360940803572006" at="18,0,24,0" concept="1" trace="RenameModelDialog#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/model/EditableSModel;)V" />
-      <node id="1114145801597395681" at="26,0,36,0" concept="7" trace="checkValue#()Ljava/lang/String;" />
-      <node id="2325849581576430440" at="37,0,47,0" concept="7" trace="doRefactoringAction#()V" />
-      <scope id="2325849581576430467" at="30,64,31,55" />
-      <scope id="8474866949349192965" at="41,25,42,72" />
-      <scope id="8474866949349192963" at="41,0,44,0" />
+      <node id="2325849581576430440" at="43,0,53,0" concept="7" trace="doRefactoringAction#()V" />
+      <node id="1114145801597395681" at="26,0,42,0" concept="7" trace="checkValue#()Ljava/lang/String;" />
+      <scope id="4368217141688789039" at="30,9,31,55" />
+      <scope id="4368217141688789040" at="32,0,33,36">
+        <var name="exception" id="4368217141688789042" />
+      </scope>
+      <scope id="4368217141688789046" at="32,50,33,36" />
+      <scope id="2325849581576430467" at="36,64,37,55" />
+      <scope id="8474866949349192965" at="47,25,48,72" />
+      <scope id="8474866949349192963" at="47,0,50,0" />
       <scope id="2482360940803572017" at="18,95,22,29" />
       <scope id="2482360940803572006" at="18,0,24,0">
         <var name="mpsProject" id="64647105392034155" />
         <var name="sm" id="2482360940803572015" />
       </scope>
-      <scope id="1114145801597395726" at="28,33,34,30">
-        <var name="newModelName" id="1114145801597399789" />
-      </scope>
-      <scope id="2325849581576430443" at="38,40,45,32">
+      <scope id="2325849581576430443" at="44,40,51,32">
         <var name="newModelName" id="2325849581576430454" />
       </scope>
-      <scope id="1114145801597395681" at="26,0,36,0" />
-      <scope id="2325849581576430440" at="37,0,47,0" />
-      <unit id="8474866949349192963" at="40,66,44,5" name="jetbrains.mps.ide.refactoring.RenameModelDialog$1" />
-      <unit id="2482360940803571985" at="14,0,48,0" name="jetbrains.mps.ide.refactoring.RenameModelDialog" />
+      <scope id="2325849581576430440" at="43,0,53,0" />
+      <scope id="1114145801597395726" at="28,33,40,30">
+        <var name="newModelName" id="1114145801597399789" />
+      </scope>
+      <scope id="1114145801597395681" at="26,0,42,0" />
+      <unit id="8474866949349192963" at="46,66,50,5" name="jetbrains.mps.ide.refactoring.RenameModelDialog$1" />
+      <unit id="2482360940803571985" at="14,0,54,0" name="jetbrains.mps.ide.refactoring.RenameModelDialog" />
     </file>
   </root>
   <root nodeRef="r:5a764b6f-e05f-4050-b22c-cbcad1577f1b(jetbrains.mps.ide.refactoring)/2482360940803573298">

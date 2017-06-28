@@ -2269,19 +2269,51 @@
           <node concept="3cpWsn" id="XQfrgsdbbH" role="3cpWs9">
             <property role="TrG5h" value="newModelName" />
             <property role="3TUv4t" value="true" />
-            <node concept="2ShNRf" id="XQfrgsdbbI" role="33vP2m">
-              <node concept="1pGfFk" id="XQfrgsdbbJ" role="2ShVmc">
-                <ref role="37wK5l" to="mhbf:~SModelName.&lt;init&gt;(java.lang.String)" resolve="SModelName" />
-                <node concept="1rXfSq" id="XQfrgsdbbK" role="37wK5m">
-                  <ref role="37wK5l" to="u42p:WWy1UWgXzO" resolve="getCurrentValue" />
-                </node>
-              </node>
-            </node>
             <node concept="3uibUv" id="XQfrgsdbbL" role="1tU5fm">
               <ref role="3uigEE" to="mhbf:~SModelName" resolve="SModelName" />
             </node>
           </node>
         </node>
+        <node concept="SfApY" id="3Mv1_yS8uwH" role="3cqZAp">
+          <node concept="3clFbS" id="3Mv1_yS8uwJ" role="SfCbr">
+            <node concept="3clFbF" id="3Mv1_yS8vI4" role="3cqZAp">
+              <node concept="37vLTI" id="3Mv1_yS8vI6" role="3clFbG">
+                <node concept="2ShNRf" id="XQfrgsdbbI" role="37vLTx">
+                  <node concept="1pGfFk" id="XQfrgsdbbJ" role="2ShVmc">
+                    <ref role="37wK5l" to="mhbf:~SModelName.&lt;init&gt;(java.lang.String)" resolve="SModelName" />
+                    <node concept="1rXfSq" id="XQfrgsdbbK" role="37wK5m">
+                      <ref role="37wK5l" to="u42p:WWy1UWgXzO" resolve="getCurrentValue" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="37vLTw" id="3Mv1_yS8vIa" role="37vLTJ">
+                  <ref role="3cqZAo" node="XQfrgsdbbH" resolve="newModelName" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="3Mv1_yS8uwK" role="TEbGg">
+            <node concept="3cpWsn" id="3Mv1_yS8uwM" role="TDEfY">
+              <property role="TrG5h" value="exception" />
+              <node concept="3uibUv" id="3Mv1_yS8VmY" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~IllegalArgumentException" resolve="IllegalArgumentException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="3Mv1_yS8uwQ" role="TDEfX">
+              <node concept="3cpWs6" id="3Mv1_yS8wlq" role="3cqZAp">
+                <node concept="2OqwBi" id="3Mv1_yS8xmF" role="3cqZAk">
+                  <node concept="37vLTw" id="3Mv1_yS8wOy" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3Mv1_yS8uwM" resolve="exception" />
+                  </node>
+                  <node concept="liA8E" id="3Mv1_yS8y1q" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="3Mv1_yS8zoG" role="3cqZAp" />
         <node concept="3clFbJ" id="2174XWuQEdW" role="3cqZAp">
           <node concept="3fqX7Q" id="2174XWuQEdX" role="3clFbw">
             <node concept="1eOMI4" id="2174XWuQEdY" role="3fr31v">

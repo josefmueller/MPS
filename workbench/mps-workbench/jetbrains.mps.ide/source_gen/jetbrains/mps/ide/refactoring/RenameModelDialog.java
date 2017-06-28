@@ -26,7 +26,13 @@ public class RenameModelDialog extends RenameDialog {
   @Nullable
   @Override
   protected String checkValue() {
-    final SModelName newModelName = new SModelName(getCurrentValue());
+    final SModelName newModelName;
+    try {
+      newModelName = new SModelName(getCurrentValue());
+    } catch (IllegalArgumentException exception) {
+      return exception.getMessage();
+    }
+
     if (!((SourceVersion.isName(newModelName.getLongName())))) {
       return "Model name should be valid Java package";
     }
