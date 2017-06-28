@@ -486,7 +486,7 @@ public class CreateProjectWizard extends DialogWrapper {
 
     if (myCurrentProject != null) {
       int exitCode = Messages.showDialog(IdeBundle.message("prompt.open.project.in.new.frame"), IdeBundle.message("title.open.project"),
-                                         new String[]{IdeBundle.message("button.newframe"), IdeBundle.message("button.existingframe")}, 1,
+                                         new String[]{IdeBundle.message("button.new.frame"), IdeBundle.message("button.existing.frame")}, 1,
                                          Messages.getQuestionIcon());
       if (exitCode == 1) {
         ProjectUtil.closeAndDispose(myCurrentProject);
