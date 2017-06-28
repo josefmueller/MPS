@@ -29,6 +29,7 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   @Override
   protected void doInit() {
     try {
+      //  FIXME we still use cached SNode instance here, as tree node's user object 
       SNode node = (SNode) getUserObject();
       List<SNode> descendants = new ArrayList<SNode>(myHierarchyTree.getAbstractChildren(node, myVisited));
       Collections.sort(descendants, new Comparator<SNode>() {

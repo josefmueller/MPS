@@ -20,6 +20,7 @@ import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -221,6 +222,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       return null;
     }
 
+    final SNodeReference ptr = ((HierarchyTreeNode) treeNode).getNodeReference();
     final AbstractHierarchyView hierarchyView = getHierarchyView();
     if (hierarchyView == null) {
       return null;
@@ -228,8 +230,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     BaseAction hierarchyAction = new BaseAction("Show Hierarchy For This Node") {
       @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        final SNode node = ((HierarchyTreeNode) treeNode).getNode();
-        hierarchyView.showItemInHierarchy(node);
+        hierarchyView.showItemInHierarchy(ptr);
       }
     };
     return ActionUtils.groupFromActions(hierarchyAction);

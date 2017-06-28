@@ -32,6 +32,7 @@ import com.intellij.icons.AllIcons;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.StringUtil;
 import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.ide.OccurenceNavigator;
@@ -86,7 +87,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     this.myComponent = new AbstractHierarchyView.RootPanel();
     myScrollPane = ScrollPaneFactory.createScrollPane(myHierarchyTree, true);
     myComponent.setContent(myScrollPane);
-    showItemInHierarchy(null);
+    showItemInHierarchy((SNodeReference) null);
     createControlPanel();
   }
 
@@ -174,7 +175,10 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   }
   public void showItemInHierarchy(SNode node) {
     // FIXME ShowConceptInHierarchy could use nodePointer, as well as local popup action, only ShowClassInHierarchy needs attention 
-    myHierarchyTree.setHierarchyNode(node);
+    showItemInHierarchy(SNodeOperations.getPointer(node));
+  }
+
+  public void showItemInHierarchy(@Nullable final SNodeReference nodePointer) {
     final jetbrains.mps.project.Project mpsProject = getMPSProject();
     mpsProject.getModelAccess().runReadInEDT(new Runnable() {
       @Override
@@ -182,6 +186,11 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         Project project = getProject();
         if (project == null || project.isDisposed()) {
           return;
+        }
+        if (nodePointer == null) {
+          myHierarchyTree.setHierarchyNode(null);
+        } else {
+          myHierarchyTree.setHierarchyNode(nodePointer.resolve(mpsProject.getRepository()));
         }
         myHierarchyTree.rebuildNow();
         if (myHierarchyTree.getActiveTreeNode() != null) {
@@ -194,6 +203,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       }
     });
   }
+
   protected boolean isTreeInfinite() {
     return false;
   }
