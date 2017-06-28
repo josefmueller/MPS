@@ -258,6 +258,9 @@
       <node id="289384041348328026" at="42,56,43,42" concept="2" />
       <node id="289384041348227761" at="47,43,48,25" concept="7" />
       <node id="289384041348230063" at="52,43,53,42" concept="7" />
+      <node id="4368217141688631295" at="58,23,59,18" concept="2" />
+      <node id="4368217141688655390" at="59,18,60,41" concept="2" />
+      <node id="4368217141688670553" at="60,41,61,41" concept="2" />
       <node id="8412685000764794304" at="13,0,16,0" concept="1" trace="NewLanguageSettings#()V" />
       <node id="289384041348282435" at="30,0,33,0" concept="5" trace="isRuntimeSolutionNeeded#()Z" />
       <node id="289384041348307320" at="34,0,37,0" concept="5" trace="setRuntimeSolutionNeeded#(Z)V" />
@@ -265,6 +268,7 @@
       <node id="289384041348328024" at="42,0,45,0" concept="5" trace="setSandboxSolutionNeeded#(Z)V" />
       <node id="289384041348224060" at="46,0,50,0" concept="5" trace="getDefaultModuleName#()Ljava/lang/String;" />
       <node id="289384041348224066" at="51,0,55,0" concept="5" trace="getDefaultModulePath#()Ljava/lang/String;" />
+      <node id="4368217141688631274" at="57,0,63,0" concept="5" trace="reset#()V" />
       <node id="8412685000764738872" at="17,0,29,0" concept="1" trace="NewLanguageSettings#(Ljava/lang/String;)V" />
       <scope id="8412685000764794308" at="13,32,14,15" />
       <scope id="289384041348282438" at="30,44,31,42" />
@@ -282,13 +286,15 @@
       <scope id="289384041348328024" at="42,0,45,0">
         <var name="needed" id="289384041348328033" />
       </scope>
+      <scope id="4368217141688631292" at="58,23,61,41" />
       <scope id="289384041348224060" at="46,0,50,0" />
       <scope id="289384041348224066" at="51,0,55,0" />
+      <scope id="4368217141688631274" at="57,0,63,0" />
       <scope id="8412685000764738876" at="17,50,27,12" />
       <scope id="8412685000764738872" at="17,0,29,0">
         <var name="projectPath" id="8412685000764795380" />
       </scope>
-      <unit id="8412685000764658714" at="8,0,56,0" name="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings" />
+      <unit id="8412685000764658714" at="8,0,64,0" name="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings" />
     </file>
   </root>
 </debug-info>

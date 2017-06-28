@@ -52,4 +52,12 @@ public class NewLanguageSettings extends AbstractModuleCreationSettings {
   protected String getDefaultModulePath() {
     return getModuleRootPath("languages");
   }
+
+
+  @Override
+  public void reset() {
+    super.reset();
+    mySandboxSolution.setSelected(false);
+    myRuntimeSolution.setSelected(false);
+  }
 }

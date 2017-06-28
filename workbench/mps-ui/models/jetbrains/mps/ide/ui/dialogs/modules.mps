@@ -143,6 +143,7 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1073063089578" name="jetbrains.mps.baseLanguage.structure.SuperMethodCall" flags="nn" index="3nyPlj" />
       <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
@@ -438,7 +439,7 @@
         </node>
         <node concept="3clFbF" id="1CfITPj1Si_" role="3cqZAp">
           <node concept="1rXfSq" id="1CfITPj1Siz" role="3clFbG">
-            <ref role="37wK5l" node="g46k2sd8t3" resolve="reset" />
+            <ref role="37wK5l" node="3Mv1_yS7RZE" resolve="reset" />
           </node>
         </node>
       </node>
@@ -586,6 +587,50 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="g46k2se_hh" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="3Mv1_yS7RDn" role="jymVt" />
+    <node concept="2tJIrI" id="3Mv1_yS7RFk" role="jymVt" />
+    <node concept="3clFb_" id="3Mv1_yS7RZE" role="jymVt">
+      <property role="TrG5h" value="reset" />
+      <property role="1EzhhJ" value="false" />
+      <node concept="3cqZAl" id="3Mv1_yS7RZF" role="3clF45" />
+      <node concept="3Tm1VV" id="3Mv1_yS7RZG" role="1B3o_S" />
+      <node concept="3clFbS" id="3Mv1_yS7RZW" role="3clF47">
+        <node concept="3clFbF" id="3Mv1_yS7RZZ" role="3cqZAp">
+          <node concept="3nyPlj" id="3Mv1_yS7RZY" role="3clFbG">
+            <ref role="37wK5l" node="g46k2sd8t3" resolve="reset" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="3Mv1_yS7XSu" role="3cqZAp">
+          <node concept="2OqwBi" id="3Mv1_yS7Yyc" role="3clFbG">
+            <node concept="37vLTw" id="3Mv1_yS7XSs" role="2Oq$k0">
+              <ref role="3cqZAo" node="g46k2sevLy" resolve="mySandboxSolution" />
+            </node>
+            <node concept="liA8E" id="3Mv1_yS8045" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~AbstractButton.setSelected(boolean):void" resolve="setSelected" />
+              <node concept="3clFbT" id="3Mv1_yS80AG" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3Mv1_yS81_p" role="3cqZAp">
+          <node concept="2OqwBi" id="3Mv1_yS82TZ" role="3clFbG">
+            <node concept="37vLTw" id="3Mv1_yS82fz" role="2Oq$k0">
+              <ref role="3cqZAo" node="g46k2sesbA" resolve="myRuntimeSolution" />
+            </node>
+            <node concept="liA8E" id="3Mv1_yS83Jc" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~AbstractButton.setSelected(boolean):void" resolve="setSelected" />
+              <node concept="3clFbT" id="3Mv1_yS84hN" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3Mv1_yS7RZX" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
