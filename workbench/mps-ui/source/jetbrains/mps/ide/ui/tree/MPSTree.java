@@ -84,6 +84,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private boolean myDisposed = false;
 
   // provisional flag until I refactor all MPSTree subclasses to be explicit about read actions. Drop once 2017.2 is out
+  // true indicates rebuild action needs implicit model access, false indicates it's ok to proceed without model read
   protected boolean myWarnModelAccess = true;
 
   protected MPSTree() {
@@ -500,6 +501,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
           LOG.warn("MPSTree is generic class and shall not care about model read. Override #runRebuildAction and wrap Runnable with model read, instead",
                     new Throwable());
           ModelAccess.instance().runReadAction(rebuildAction);
+        } else {
+          rebuildAction.run();
         }
       }
       if (restoreExpansion != null) {
