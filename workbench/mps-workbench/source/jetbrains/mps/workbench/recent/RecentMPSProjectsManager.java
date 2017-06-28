@@ -48,7 +48,8 @@ public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
 
   @Override
   protected void doOpenProject(@NotNull String projectPath, Project projectToClose, boolean forceNewFrame) {
-    final VirtualFile projectFile = LocalFileSystem.getInstance().findFileByPath(FileUtil.toSystemIndependentName(projectPath));
+    projectPath = FileUtil.toSystemIndependentName(projectPath);
+    final VirtualFile projectFile = LocalFileSystem.getInstance().findFileByPath(projectPath);
     if (projectFile != null) {
       ProjectUtil.openProject(projectPath, projectToClose, forceNewFrame);
     }
