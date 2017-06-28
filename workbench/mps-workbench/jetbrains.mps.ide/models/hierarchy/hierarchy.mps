@@ -1732,6 +1732,11 @@
       <node concept="3cqZAl" id="3U4Yh9n2qok" role="3clF45" />
       <node concept="3Tm1VV" id="3U4Yh9n2qol" role="1B3o_S" />
       <node concept="3clFbS" id="3U4Yh9n2qom" role="3clF47">
+        <node concept="3SKdUt" id="4$kvR95ADXi" role="3cqZAp">
+          <node concept="3SKdUq" id="4$kvR95AEmS" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME ShowConceptInHierarchy could use nodePointer, as well as local popup action, only ShowClassInHierarchy needs attention" />
+          </node>
+        </node>
         <node concept="3clFbF" id="51NkKCgB3id" role="3cqZAp">
           <node concept="2OqwBi" id="51NkKCgB3if" role="3clFbG">
             <node concept="liA8E" id="2z9SX9bu6OP" role="2OqNvi">
@@ -1860,7 +1865,7 @@
                                             </node>
                                           </node>
                                           <node concept="liA8E" id="1ZFc3Q17Lmm" role="2OqNvi">
-                                            <ref role="37wK5l" node="51NkKCgB4rO" resolve="calculateNodeIdentifier" />
+                                            <ref role="37wK5l" to="7e8u:~MPSTreeNode.getText():java.lang.String" resolve="getText" />
                                           </node>
                                         </node>
                                       </node>
@@ -10318,38 +10323,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="2z9SX9btMo9" role="jymVt" />
-    <node concept="3clFb_" id="51NkKCgB48P" role="jymVt">
-      <property role="TrG5h" value="overridesNodeIdentifierCalculation" />
-      <node concept="3Tm1VV" id="51NkKCgB48Q" role="1B3o_S" />
-      <node concept="10P_77" id="51NkKCgB48R" role="3clF45" />
-      <node concept="3clFbS" id="51NkKCgB48S" role="3clF47">
-        <node concept="3cpWs6" id="51NkKCgB48T" role="3cqZAp">
-          <node concept="3clFbT" id="51NkKCgB48U" role="3cqZAk" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="51NkKCgB48V" role="jymVt">
-      <property role="TrG5h" value="calculateNodeIdentifier" />
-      <node concept="3Tm1VV" id="51NkKCgB48W" role="1B3o_S" />
-      <node concept="3uibUv" id="51NkKCgB48X" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
-      <node concept="37vLTG" id="51NkKCgB48Y" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3uibUv" id="51NkKCgB48Z" role="1tU5fm">
-          <ref role="3uigEE" node="51NkKCgB390" resolve="HierarchyTreeNode" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="51NkKCgB491" role="3clF47">
-        <node concept="YS8fn" id="51NkKCgB492" role="3cqZAp">
-          <node concept="2ShNRf" id="51NkKCgB493" role="YScLw">
-            <node concept="1pGfFk" id="51NkKCgB494" role="2ShVmc">
-              <ref role="37wK5l" to="wyt6:~UnsupportedOperationException.&lt;init&gt;()" resolve="UnsupportedOperationException" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3clFb_" id="51NkKCgB495" role="jymVt">
       <property role="TrG5h" value="isParentHierarchy" />
       <node concept="3Tm1VV" id="51NkKCgB496" role="1B3o_S" />
@@ -11859,11 +11832,56 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="4$kvR95AfTx" role="3cqZAp">
+          <node concept="3cpWsn" id="4$kvR95AfT$" role="3cpWs9">
+            <property role="TrG5h" value="name" />
+            <node concept="17QB3L" id="4$kvR95AfTv" role="1tU5fm" />
+            <node concept="2OqwBi" id="4$kvR95Aigu" role="33vP2m">
+              <node concept="2JrnkZ" id="4$kvR95Ai7f" role="2Oq$k0">
+                <node concept="37vLTw" id="4$kvR95AgV5" role="2JrQYb">
+                  <ref role="3cqZAo" node="51NkKCgB4ot" resolve="declaration" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4$kvR95Aiqs" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SNode.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4$kvR95AapV" role="3cqZAp">
+          <node concept="1rXfSq" id="4$kvR95AapT" role="3clFbG">
+            <ref role="37wK5l" to="7e8u:~MPSTreeNode.setText(java.lang.String):void" resolve="setText" />
+            <node concept="3K4zz7" id="4$kvR95AqKP" role="37wK5m">
+              <node concept="Xl_RD" id="4$kvR95ArgX" role="3K4E3e">
+                <property role="Xl_RC" value="no name" />
+              </node>
+              <node concept="37vLTw" id="4$kvR95ArX$" role="3K4GZi">
+                <ref role="3cqZAo" node="4$kvR95AfT$" resolve="name" />
+              </node>
+              <node concept="3clFbC" id="4$kvR95ApNc" role="3K4Cdx">
+                <node concept="10Nm6u" id="4$kvR95AqhY" role="3uHU7w" />
+                <node concept="37vLTw" id="4$kvR95Ap76" role="3uHU7B">
+                  <ref role="3cqZAo" node="4$kvR95AfT$" resolve="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="51NkKCgB4px" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzbZY" role="3clFbG">
             <ref role="37wK5l" to="7e8u:~MPSTreeNode.setNodeIdentifier(java.lang.String):void" resolve="setNodeIdentifier" />
-            <node concept="1rXfSq" id="4hiugqyAR0Z" role="37wK5m">
-              <ref role="37wK5l" node="51NkKCgB4rO" resolve="calculateNodeIdentifier" />
+            <node concept="2OqwBi" id="4$kvR95A8Dn" role="37wK5m">
+              <node concept="2OqwBi" id="4$kvR95A8fo" role="2Oq$k0">
+                <node concept="37vLTw" id="4$kvR95A7Gi" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4YWMHoo0Iq" resolve="myNodeRef" />
+                </node>
+                <node concept="liA8E" id="4$kvR95A8yM" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SNodeReference.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4$kvR95A943" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Object.toString():java.lang.String" resolve="toString" />
+              </node>
             </node>
           </node>
         </node>
@@ -11936,109 +11954,6 @@
       </node>
       <node concept="2AHcQZ" id="7N9Eg8nYDvu" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="51NkKCgB4rO" role="jymVt">
-      <property role="TrG5h" value="calculateNodeIdentifier" />
-      <node concept="2AHcQZ" id="5CwPOjSGb$I" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-      </node>
-      <node concept="3Tm1VV" id="51NkKCgB4rP" role="1B3o_S" />
-      <node concept="3uibUv" id="51NkKCgB4rQ" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
-      <node concept="3clFbS" id="51NkKCgB4rR" role="3clF47">
-        <node concept="3clFbJ" id="51NkKCgB4rS" role="3cqZAp">
-          <node concept="3clFbC" id="51NkKCgB4rT" role="3clFbw">
-            <node concept="1rXfSq" id="4hiugqyz8qz" role="3uHU7B">
-              <ref role="37wK5l" node="51NkKCgB4rb" resolve="getNode" />
-            </node>
-            <node concept="10Nm6u" id="51NkKCgB4rV" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="51NkKCgB4rW" role="3clFbx">
-            <node concept="3cpWs6" id="51NkKCgB4rX" role="3cqZAp">
-              <node concept="Xl_RD" id="51NkKCgB4rY" role="3cqZAk">
-                <property role="Xl_RC" value="null" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="5CwPOjSGejI" role="3cqZAp">
-          <node concept="3cpWsn" id="5CwPOjSGejJ" role="3cpWs9">
-            <property role="TrG5h" value="name" />
-            <node concept="17QB3L" id="5CwPOjSGejK" role="1tU5fm" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="4$kvR95_TPk" role="3cqZAp">
-          <node concept="3SKdUq" id="4$kvR95_TPm" role="3SKWNk">
-            <property role="3SKdUp" value="FIXME Oh, no. To fix MPS-638, instead of proper use of MPSTreeNode.setText, here comes an odd delegation...God help me!" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="51NkKCgB4rZ" role="3cqZAp">
-          <node concept="9aQIb" id="5CwPOjSGekB" role="9aQIa">
-            <node concept="3clFbS" id="5CwPOjSGekC" role="9aQI4">
-              <node concept="3clFbF" id="5CwPOjSGekb" role="3cqZAp">
-                <node concept="37vLTI" id="5CwPOjSGekd" role="3clFbG">
-                  <node concept="37vLTw" id="3GM_nagT_CM" role="37vLTJ">
-                    <ref role="3cqZAo" node="5CwPOjSGejJ" resolve="name" />
-                  </node>
-                  <node concept="2OqwBi" id="5CwPOjSGekg" role="37vLTx">
-                    <node concept="2JrnkZ" id="5CwPOjSGekh" role="2Oq$k0">
-                      <node concept="1rXfSq" id="4hiugqyzhDe" role="2JrQYb">
-                        <ref role="37wK5l" node="51NkKCgB4rb" resolve="getNode" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="5CwPOjSGekj" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SNode.getName():java.lang.String" resolve="getName" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="51NkKCgB4s0" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxeuTq3" role="2Oq$k0">
-              <ref role="3cqZAo" node="51NkKCgB4om" resolve="myHierarchyTree" />
-            </node>
-            <node concept="liA8E" id="51NkKCgB4s2" role="2OqNvi">
-              <ref role="37wK5l" node="51NkKCgB48P" resolve="overridesNodeIdentifierCalculation" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="51NkKCgB4s3" role="3clFbx">
-            <node concept="3clFbF" id="5CwPOjSGejO" role="3cqZAp">
-              <node concept="37vLTI" id="5CwPOjSGejQ" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagT_YB" role="37vLTJ">
-                  <ref role="3cqZAo" node="5CwPOjSGejJ" resolve="name" />
-                </node>
-                <node concept="2OqwBi" id="5CwPOjSGejT" role="37vLTx">
-                  <node concept="37vLTw" id="2BHiRxeuFkl" role="2Oq$k0">
-                    <ref role="3cqZAo" node="51NkKCgB4om" resolve="myHierarchyTree" />
-                  </node>
-                  <node concept="liA8E" id="5CwPOjSGejV" role="2OqNvi">
-                    <ref role="37wK5l" node="51NkKCgB48V" resolve="calculateNodeIdentifier" />
-                    <node concept="Xjq3P" id="5CwPOjSGejW" role="37wK5m" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="5CwPOjSGek_" role="3cqZAp">
-          <node concept="3K4zz7" id="5CwPOjSGekr" role="3cqZAk">
-            <node concept="Xl_RD" id="5CwPOjSGekv" role="3K4E3e">
-              <property role="Xl_RC" value="no name" />
-            </node>
-            <node concept="37vLTw" id="3GM_nagTBWj" role="3K4GZi">
-              <ref role="3cqZAo" node="5CwPOjSGejJ" resolve="name" />
-            </node>
-            <node concept="3clFbC" id="5CwPOjSGekn" role="3K4Cdx">
-              <node concept="10Nm6u" id="5CwPOjSGekq" role="3uHU7w" />
-              <node concept="37vLTw" id="3GM_nagTBeJ" role="3uHU7B">
-                <ref role="3cqZAo" node="5CwPOjSGejJ" resolve="name" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>

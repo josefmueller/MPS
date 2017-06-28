@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import jetbrains.mps.ide.hierarchy.HierarchyTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -50,12 +49,12 @@ public class SupertypesTree extends AbstractHierarchyTree {
   }
 
   protected Set<SNode> getParents(SNode node, Set<SNode> visited) {
-    return new HashSet<SNode>();
+    return new HashSet<>();
   }
 
   protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
     if (node == null) {
-      return new HashSet<SNode>();
+      return new HashSet<>();
     }
     return TypeChecker.getInstance().getSubtypingManager().
         collectImmediateSupertypes(node, !myShowOnlyStrong);
@@ -79,14 +78,6 @@ public class SupertypesTree extends AbstractHierarchyTree {
         new MyBaseNodeDialog(myProject, hierarchyTreeNode.getNodeReference()).show();
       }
     }
-  }
-
-  public boolean overridesNodeIdentifierCalculation() {
-    return true;
-  }
-
-  public String calculateNodeIdentifier(HierarchyTreeNode treeNode) {
-    return PresentationManager.toString(treeNode.getNode());
   }
 
   private static class MyBaseNodeDialog extends BaseNodeDialog {

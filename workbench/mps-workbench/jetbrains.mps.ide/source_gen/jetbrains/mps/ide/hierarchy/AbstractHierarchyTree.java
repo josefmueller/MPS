@@ -68,12 +68,6 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     myHierarchyNode = modelNode;
   }
 
-  public boolean overridesNodeIdentifierCalculation() {
-    return false;
-  }
-  public String calculateNodeIdentifier(HierarchyTreeNode node) {
-    throw new UnsupportedOperationException();
-  }
   public boolean isParentHierarchy() {
     return myIsParentHierarchy;
   }

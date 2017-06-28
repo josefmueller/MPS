@@ -20,7 +20,9 @@ public class HierarchyTreeNode extends MPSTreeNode {
     myNode = declaration;
     myNodeRef = declaration.getReference();
     myHierarchyTree = tree;
-    setNodeIdentifier(calculateNodeIdentifier());
+    String name = declaration.getName();
+    setText((name == null ? "no name" : name));
+    setNodeIdentifier(myNodeRef.getNodeId().toString());
     setToggleClickCount(-1);
     setAutoExpandable(false);
     setAdditionalText(SModelOperations.getModelName(SNodeOperations.getModel(declaration)));
@@ -32,19 +34,5 @@ public class HierarchyTreeNode extends MPSTreeNode {
   @NotNull
   public SNodeReference getNodeReference() {
     return myNodeRef;
-  }
-  @NotNull
-  public String calculateNodeIdentifier() {
-    if (getNode() == null) {
-      return "null";
-    }
-    String name;
-    // FIXME Oh, no. To fix MPS-638, instead of proper use of MPSTreeNode.setText, here comes an odd delegation...God help me! 
-    if (myHierarchyTree.overridesNodeIdentifierCalculation()) {
-      name = myHierarchyTree.calculateNodeIdentifier(this);
-    } else {
-      name = getNode().getName();
-    }
-    return (name == null ? "no name" : name);
   }
 }

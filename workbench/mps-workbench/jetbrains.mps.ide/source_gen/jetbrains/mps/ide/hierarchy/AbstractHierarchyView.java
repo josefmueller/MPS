@@ -173,6 +173,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     return ActionUtils.groupFromActions(childrenAction, parentAction, thisModelAction, generatorModelsAction, expandAllAction, collapseAllAction, refreshAction, createCloseAction());
   }
   public void showItemInHierarchy(SNode node) {
+    // FIXME ShowConceptInHierarchy could use nodePointer, as well as local popup action, only ShowClassInHierarchy needs attention 
     myHierarchyTree.setHierarchyNode(node);
     final jetbrains.mps.project.Project mpsProject = getMPSProject();
     mpsProject.getModelAccess().runReadInEDT(new Runnable() {
@@ -184,7 +185,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         }
         myHierarchyTree.rebuildNow();
         if (myHierarchyTree.getActiveTreeNode() != null) {
-          myHierarchyTree.setRootNodeText("<html>Hierarchy for <font color=\"#400090\"><b>" + StringUtil.escapeXml(myHierarchyTree.getActiveTreeNode().calculateNodeIdentifier()) + "</b></font>", getIcon());
+          myHierarchyTree.setRootNodeText("<html>Hierarchy for <font color=\"#400090\"><b>" + StringUtil.escapeXml(myHierarchyTree.getActiveTreeNode().getText()) + "</b></font>", getIcon());
           myHierarchyTree.selectNode(myHierarchyTree.getActiveTreeNode());
         }
         if (!(isTreeInfinite())) {
