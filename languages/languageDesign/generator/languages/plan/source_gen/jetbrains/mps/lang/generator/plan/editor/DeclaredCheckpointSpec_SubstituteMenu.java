@@ -28,7 +28,7 @@ public class DeclaredCheckpointSpec_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for DeclaredCheckpointSpec. Generated from implicit smart reference attribute.", new SNodePointer("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)", "3750601816081740541")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for DeclaredCheckpointSpec. Generated from the smart reference attribute.", new SNodePointer("r:4a23ef0d-9c2f-48a6-8597-fbdd5b11f792(jetbrains.mps.lang.generator.plan.structure)", "4747359941569483666")));
     try {
       return super.createMenuItems(context);
     } finally {
