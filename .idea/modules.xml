@@ -50,6 +50,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/migration/migration.iml" filepath="$PROJECT_DIR$/core/migration/migration.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/migration/migration-platform/migration-platform.iml" filepath="$PROJECT_DIR$/plugins/migration/migration-platform/migration-platform.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/plugins/migration/migration-workbench/migration-workbench.iml" filepath="$PROJECT_DIR$/plugins/migration/migration-workbench/migration-workbench.iml" group="plugins" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/migrations-mps172/migrations-mps172.iml" filepath="$PROJECT_DIR$/plugins/migrations-mps172/migrations-mps172.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" filepath="$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/testbench/modules/miscTests/misc-tests.iml" filepath="$PROJECT_DIR$/testbench/modules/miscTests/misc-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/model/model.iml" filepath="$PROJECT_DIR$/core/model/model.iml" group="core" />
@@ -69,7 +70,6 @@
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/basePlatform/mps-java-platform-base.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/basePlatform/mps-java-platform-base.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mps-java-workbench/mps-java-workbench.iml" filepath="$PROJECT_DIR$/plugins/mps-java-workbench/mps-java-workbench.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/mps-messaging/mps-messaging.iml" filepath="$PROJECT_DIR$/core/mps-messaging/mps-messaging.iml" group="core" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/mpsmigration/mps-migration.iml" filepath="$PROJECT_DIR$/plugins/mpsmigration/mps-migration.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-platform/mps-platform.iml" filepath="$PROJECT_DIR$/workbench/mps-platform/mps-platform.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/mps-project-excludes.iml" filepath="$PROJECT_DIR$/mps-project-excludes.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mps-testing/mps-testing.iml" filepath="$PROJECT_DIR$/plugins/mps-testing/mps-testing.iml" group="plugins" />
