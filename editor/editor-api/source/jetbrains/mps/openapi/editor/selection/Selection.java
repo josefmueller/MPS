@@ -39,7 +39,9 @@ public interface Selection {
 
   boolean isSame(Selection another);
 
-  public boolean canExecuteAction(CellActionType type);
+  boolean isExactlyCoveringCell(EditorCell cell);
+
+  boolean canExecuteAction(CellActionType type);
 
   void executeAction(CellActionType type);
 

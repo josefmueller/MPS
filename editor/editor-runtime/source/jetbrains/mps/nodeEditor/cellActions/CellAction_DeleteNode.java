@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
+import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.openapi.editor.EditorComponent;
@@ -70,6 +71,11 @@ public class CellAction_DeleteNode extends AbstractCellAction {
       containmentLink = nodeToDelete.getContainmentLink();
     }
     boolean isForward = myDirection == DeleteDirection.FORWARD;
+
+
+    if (DeletionApproverUtil.approve(context, nodeToDelete)) {
+      return;
+    }
 
     boolean selectStart = isForward;
     SNode siblingToSelect = getSiblingToSelect(parent, nodeToDelete, isForward, containmentLink);

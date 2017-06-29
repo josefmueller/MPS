@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.FocusPolicyUtil;
@@ -46,6 +47,7 @@ public class SelectionManagerImpl implements SelectionManager {
   private EditorComponent myEditorComponent;
   private Deque<Selection> mySelectionStack = new LinkedList<Selection>();
   private List<SelectionListener> mySelectionListeners = new LinkedList<SelectionListener>();
+  private List<EditorCell> myCellsToBeDeleted;
 
   public SelectionManagerImpl(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -212,6 +214,7 @@ public class SelectionManagerImpl implements SelectionManager {
     if (newSelection != null && !isSameSelection) {
       newSelection.activate();
     }
+    myCellsToBeDeleted = null;
     for (SelectionListener nextListener : mySelectionListeners) {
       try {
         nextListener.selectionChanged(myEditorComponent, oldSelection, newSelection);
@@ -388,4 +391,6 @@ public class SelectionManagerImpl implements SelectionManager {
     }
     return false;
   }
+
 }
+

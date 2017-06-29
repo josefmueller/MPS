@@ -168,6 +168,10 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
     myState.useAntialiasing = useAntialiasing;
   }
 
+  public boolean isUseTwoStepDeletion() { return myState.useTwoStepDeletion; }
+
+  public void setUseTwoStepDeletion(boolean useTwoStepDeletion) {myState.useTwoStepDeletion = useTwoStepDeletion; }
+
   public boolean isPowerSaveMode() {
     return PowerSaveMode.isEnabled();
   }
@@ -345,6 +349,8 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
 
     public boolean useBraces = true;
 
+    public boolean useTwoStepDeletion = false;
+
     public int indentSize = 2;
     public int verticalBound = 120;
 
@@ -381,6 +387,9 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
         return false;
       }
       if (useBraces != myState.useBraces) {
+        return false;
+      }
+      if (useTwoStepDeletion != myState.useTwoStepDeletion) {
         return false;
       }
       if (indentSize != myState.indentSize) {
@@ -421,6 +430,7 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
       result = 31 * result + textWidth;
       result = 31 * result + (useAntialiasing ? 1 : 0);
       result = 31 * result + (useBraces ? 1 : 0);
+      result = 31 * result + (useTwoStepDeletion ? 1 : 0);
       result = 31 * result + indentSize;
       result = 31 * result + verticalBound;
       result = 31 * result + (autoQuickFix ? 1 : 0);

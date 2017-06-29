@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.openapi.editor;
 
+import jetbrains.mps.openapi.editor.DeletionApprover.DummyDeletionApprover;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -96,4 +97,6 @@ public interface EditorComponent {
    * Update internal timestamp of the editor to indicate that some changes were applied to it.
    */
   void touch();
+
+  default DeletionApprover getDeletionApprover() {return new DummyDeletionApprover();};
 }

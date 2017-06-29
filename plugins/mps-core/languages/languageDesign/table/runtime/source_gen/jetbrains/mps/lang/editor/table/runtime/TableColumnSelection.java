@@ -122,6 +122,10 @@ public class TableColumnSelection extends AbstractMultipleSelection {
       super.executeAction(type);
     }
   }
+  @Override
+  public boolean isExactlyCoveringCell(EditorCell cell) {
+    return false;
+  }
   private void copyNodes() {
     CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(Collections.<SNode>emptyList(), renderText().getText()));
   }
