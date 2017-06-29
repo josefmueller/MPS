@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.ide.messages.Icons;
-import jetbrains.mps.util.StringUtil;
 
 public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   private final AbstractHierarchyTree myHierarchyTree;
@@ -23,7 +22,6 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
     myHierarchyTree = tree;
     myVisited = new HashSet<SNode>(visited);
     setColor(new Color(64, 0, 144));
-    setText(calculateText());
   }
 
   @Override
@@ -72,13 +70,5 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
-  }
-  public String calculateText() {
-    String name = getText();
-    HierarchyTreeNode hierarchyNode = myHierarchyTree.getActiveTreeNode();
-    if (hierarchyNode == this) {
-      name = StringUtil.escapeXml(name);
-    }
-    return name;
   }
 }

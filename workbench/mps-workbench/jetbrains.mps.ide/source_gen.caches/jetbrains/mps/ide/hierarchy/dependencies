@@ -113,7 +113,6 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.CircularHierarchyException" />
     <classNode dependClassName="jetbrains.mps.ide.messages.Icons" />
-    <classNode dependClassName="jetbrains.mps.util.StringUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.HierarchyTreeNode" />
   </dependency>

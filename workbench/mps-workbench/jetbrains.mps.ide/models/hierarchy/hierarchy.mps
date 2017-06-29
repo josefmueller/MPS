@@ -9059,14 +9059,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="51NkKCgB41f" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyyYx2" role="3clFbG">
-            <ref role="37wK5l" to="7e8u:~MPSTreeNode.setText(java.lang.String):void" resolve="setText" />
-            <node concept="1rXfSq" id="4hiugqyyK2S" role="37wK5m">
-              <ref role="37wK5l" node="51NkKCgB421" resolve="calculateText" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="1kSGChKxHpQ" role="jymVt" />
@@ -9505,71 +9497,6 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_S6CT" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="51NkKCgB421" role="jymVt">
-      <property role="TrG5h" value="calculateText" />
-      <node concept="3Tm1VV" id="51NkKCgB422" role="1B3o_S" />
-      <node concept="3uibUv" id="51NkKCgB423" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
-      <node concept="3clFbS" id="51NkKCgB424" role="3clF47">
-        <node concept="3cpWs8" id="51NkKCgB425" role="3cqZAp">
-          <node concept="3cpWsn" id="51NkKCgB426" role="3cpWs9">
-            <property role="TrG5h" value="name" />
-            <node concept="3uibUv" id="51NkKCgB427" role="1tU5fm">
-              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-            </node>
-            <node concept="1rXfSq" id="1kSGChKxNJ9" role="33vP2m">
-              <ref role="37wK5l" to="7e8u:~MPSTreeNode.getText():java.lang.String" resolve="getText" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="51NkKCgB429" role="3cqZAp">
-          <node concept="3cpWsn" id="51NkKCgB42a" role="3cpWs9">
-            <property role="TrG5h" value="hierarchyNode" />
-            <node concept="3uibUv" id="1ZFc3Q18KKN" role="1tU5fm">
-              <ref role="3uigEE" node="51NkKCgB390" resolve="HierarchyTreeNode" />
-            </node>
-            <node concept="2OqwBi" id="51NkKCgB42d" role="33vP2m">
-              <node concept="37vLTw" id="2BHiRxeu_sI" role="2Oq$k0">
-                <ref role="3cqZAo" node="51NkKCgB4om" resolve="myHierarchyTree" />
-              </node>
-              <node concept="liA8E" id="51NkKCgB42f" role="2OqNvi">
-                <ref role="37wK5l" node="1ZFc3Q16WP3" resolve="getActiveTreeNode" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="51NkKCgB42g" role="3cqZAp">
-          <node concept="3clFbC" id="1ZFc3Q18L4h" role="3clFbw">
-            <node concept="37vLTw" id="3GM_nagTA4X" role="3uHU7B">
-              <ref role="3cqZAo" node="51NkKCgB42a" resolve="hierarchyNode" />
-            </node>
-            <node concept="Xjq3P" id="1ZFc3Q18Llx" role="3uHU7w" />
-          </node>
-          <node concept="3clFbS" id="51NkKCgB42k" role="3clFbx">
-            <node concept="3clFbF" id="51NkKCgB42s" role="3cqZAp">
-              <node concept="37vLTI" id="51NkKCgB42t" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagTtXB" role="37vLTJ">
-                  <ref role="3cqZAo" node="51NkKCgB426" resolve="name" />
-                </node>
-                <node concept="2YIFZM" id="15H8LO1KlqX" role="37vLTx">
-                  <ref role="37wK5l" to="18ew:~StringUtil.escapeXml(java.lang.String):java.lang.String" resolve="escapeXml" />
-                  <ref role="1Pybhc" to="18ew:~StringUtil" resolve="StringUtil" />
-                  <node concept="37vLTw" id="15H8LO1KlqY" role="37wK5m">
-                    <ref role="3cqZAo" node="51NkKCgB426" resolve="name" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="51NkKCgB42x" role="3cqZAp">
-          <node concept="37vLTw" id="3GM_nagTycT" role="3cqZAk">
-            <ref role="3cqZAo" node="51NkKCgB426" resolve="name" />
-          </node>
-        </node>
       </node>
     </node>
   </node>
