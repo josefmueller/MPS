@@ -15,13 +15,6 @@
   -->
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-  <id>jetbrains.mps.ide.migration.assistant</id>
-  <name>Migration Assistant</name>
-  <description>Provides assistance migrating projects developed with earlier versions of MPS</description>
-  <version>2017.2</version>
-  <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="171.1" until-build="173.1"/>
-
   <depends>jetbrains.mps.core</depends>
 
   <actions>
