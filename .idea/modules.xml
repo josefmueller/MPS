@@ -49,7 +49,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/make-runtime/make-runtime.iml" filepath="$PROJECT_DIR$/core/make-runtime/make-runtime.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/migration/migration.iml" filepath="$PROJECT_DIR$/core/migration/migration.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/migration-workbench/migration-workbench.iml" filepath="$PROJECT_DIR$/plugins/migration-workbench/migration-workbench.iml" group="plugins" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/migrationAssistant/migrationAssistant.iml" filepath="$PROJECT_DIR$/plugins/migrationAssistant/migrationAssistant.iml" group="workbench" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/migrationAssistant/migrationAssistant.iml" filepath="$PROJECT_DIR$/plugins/migrationAssistant/migrationAssistant.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" filepath="$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/testbench/modules/miscTests/misc-tests.iml" filepath="$PROJECT_DIR$/testbench/modules/miscTests/misc-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/model/model.iml" filepath="$PROJECT_DIR$/core/model/model.iml" group="core" />
@@ -74,7 +74,7 @@
       <module fileurl="file://$PROJECT_DIR$/mps-project-excludes.iml" filepath="$PROJECT_DIR$/mps-project-excludes.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mps-testing/mps-testing.iml" filepath="$PROJECT_DIR$/plugins/mps-testing/mps-testing.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-ui/mps-ui.iml" filepath="$PROJECT_DIR$/workbench/mps-ui/mps-ui.iml" group="workbench" />
-      <module fileurl="file://$PROJECT_DIR$/workbench/mps-workbench/mps-workbench.iml" filepath="$PROJECT_DIR$/workbench/mps-workbench/mps-workbench.iml" group="workbench" />
+      <module fileurl="file://$PROJECT_DIR$/workbench/mps-workbench/mps-workbench.iml" filepath="$PROJECT_DIR$/workbench/mps-workbench/mps-workbench.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/openapi/openapi.iml" filepath="$PROJECT_DIR$/core/openapi/openapi.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/persistence/persistence.iml" filepath="$PROJECT_DIR$/core/persistence/persistence.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/platform/platform.iml" filepath="$PROJECT_DIR$/core/platform/platform.iml" group="core" />
