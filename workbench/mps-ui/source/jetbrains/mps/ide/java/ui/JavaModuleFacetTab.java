@@ -19,6 +19,7 @@ import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.ui.ComboBox;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.IdeBorderFactory;
@@ -43,7 +44,6 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.ui.persistence.FacetTab;
 
@@ -53,17 +53,18 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableCellRenderer;
 import java.awt.Dimension;
-import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
 // FIXME #apply() shall not deal with ModuleDescriptor directly, instead, JavaModuleFacet.save() shall put that there (better yet,
 // to memento, not to be different from other facets, provided we don't use isCompileInMPS and getKind directly from descriptor)
 public class JavaModuleFacetTab extends BaseTab implements FacetTab {
-  private PathsTableModel myPathsTableModel;
-  private LibraryTableModel myLibraryTableModel;
+  private FilesTableModel mySourcePathsTableModel;
+  private FilesTableModel myLibrariesTableModel;
   private JBCheckBox myCheckBox;
   private ComboBox myComboBox;
 
@@ -115,15 +116,16 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   }
 
   private JComponent getSourcePathsTable() {
-    myPathsTableModel = new PathsTableModel();
-    final JBTable sourcePathTable = new JBTable(myPathsTableModel);
+    // Use collection from module descriptor to apply changes directly in table model
+    mySourcePathsTableModel = new FilesTableModel(myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths());
+    final JBTable sourcePathTable = new JBTable(mySourcePathsTableModel);
     sourcePathTable.setTableHeader(null);
-    sourcePathTable.setDefaultRenderer(String.class, new MyPathRenderer());
+    final TableCellRenderer renderer = new VirtualFileRenderer();
+    sourcePathTable.setDefaultRenderer(VirtualFile.class, renderer);
     sourcePathTable.setShowHorizontalLines(false);
     sourcePathTable.setShowVerticalLines(false);
     sourcePathTable.setAutoCreateRowSorter(false);
     sourcePathTable.setAutoscrolls(true);
-
 
     ToolbarDecorator decorator = ToolbarDecorator.createDecorator(sourcePathTable);
     decorator.setAddAction(anActionButton -> {
@@ -132,12 +134,10 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       final VirtualFile moduleDir = VirtualFileUtils.getProjectVirtualFile(myJavaModuleFacet.getModule().getModuleSourceDir());
 
       final VirtualFile[] files = FileChooser.chooseFiles(descriptor, getTabComponent(), null, moduleDir);
-      for (VirtualFile file : files) {
-        myPathsTableModel.add(com.intellij.openapi.util.io.FileUtil.toSystemIndependentName(file.getPath()));
-      }
+      mySourcePathsTableModel.addAll(new ArrayList<>(Arrays.asList(files)));
     }).setRemoveAction(anActionButton -> {
       TableUtil.removeSelectedItems(sourcePathTable);
-      myPathsTableModel.fireTableDataChanged();
+      mySourcePathsTableModel.fireTableDataChanged();
     });
     decorator.setToolbarBorder(IdeBorderFactory.createBorder());
     decorator.setPreferredSize(new Dimension(500, 100));
@@ -148,10 +148,12 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   }
 
   private JComponent getLibrariesTable() {
-    myLibraryTableModel = new LibraryTableModel();
-    final JBTable librariesTable = new JBTable(myLibraryTableModel);
+    // Use collection from module descriptor to apply changes directly in table model
+    myLibrariesTableModel = new FilesTableModel(myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths());
+    final JBTable librariesTable = new JBTable(myLibrariesTableModel);
     librariesTable.setTableHeader(null);
-    librariesTable.setDefaultRenderer(String.class, new MyPathRenderer());
+    final TableCellRenderer renderer = new VirtualFileRenderer();
+    librariesTable.setDefaultRenderer(VirtualFile.class, renderer);
     librariesTable.setShowHorizontalLines(false);
     librariesTable.setShowVerticalLines(false);
     librariesTable.setAutoCreateRowSorter(false);
@@ -161,10 +163,10 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     decorator.setAddAction(anActionButton -> {
       List<ModelRootDescriptor> modelRoots = new ArrayList<>(myJavaModuleFacet.getModule().getModuleDescriptor().getModelRootDescriptors());
       StubRootChooser stubRootChooser = new StubRootChooser(getTabComponent(), modelRoots, myJavaModuleFacet.getModule() instanceof Language);
-      myLibraryTableModel.addAll(stubRootChooser.compute());
+      myLibrariesTableModel.addAll(convertStringPaths2VirtualFile(stubRootChooser.compute()));
     }).setRemoveAction(anActionButton -> {
       TableUtil.removeSelectedItems(librariesTable);
-      myLibraryTableModel.fireTableDataChanged();
+      myLibrariesTableModel.fireTableDataChanged();
     });
     decorator.setToolbarBorder(IdeBorderFactory.createBorder());
     decorator.setPreferredSize(new Dimension(500, 100));
@@ -183,8 +185,8 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       solutionCheck = descriptor.getCompileInMPS() != myCheckBox.isSelected() || descriptor.getKind() != myComboBox.getSelectedItem();
     }
 
-    return myPathsTableModel.isModified()
-           || myLibraryTableModel.isModified()
+    return mySourcePathsTableModel.isModified()
+           || myLibrariesTableModel.isModified()
            || solutionCheck;
   }
 
@@ -197,8 +199,8 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       descriptor.setKind((SolutionKind) myComboBox.getSelectedItem());
     }
 
-    myPathsTableModel.apply();
-    myLibraryTableModel.apply();
+    mySourcePathsTableModel.apply();
+    myLibrariesTableModel.apply();
   }
 
   @Override
@@ -206,28 +208,32 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     return myJavaModuleFacet;
   }
 
-  private class PathsTableModel extends AbstractTableModel implements ItemRemovable {
-    public PathsTableModel() {
-      myPaths.addAll(myJavaModuleFacet.getAdditionalSourcePaths());
+  // TODO: extract as common class to use in other places, like Project Modules list.
+  private static class FilesTableModel extends AbstractTableModel implements ItemRemovable {
+    private final List<VirtualFile> myFiles = new ArrayList<>();
+    private final Collection<String> myPaths;
+
+    FilesTableModel(Collection<String> paths) {
+      myPaths = paths;
+      myFiles.addAll(convertStringPaths2VirtualFile(myPaths));
     }
 
-    final List<String> myPaths = new ArrayList<>();
-
-    public void add(String path) {
-      if (path != null && !myPaths.contains(path)) {
-        myPaths.add(path);
+    public void addAll(Collection<VirtualFile> files) {
+      // Filter already added entries
+      files.removeAll(myFiles);
+      if (myFiles.addAll(files)) {
         fireTableDataChanged();
       }
     }
 
     @Override
     public int getRowCount() {
-      return myPaths.size();
+      return myFiles.size();
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-      return myPaths.get(rowIndex);
+      return myFiles.get(rowIndex);
     }
 
     @Override
@@ -243,102 +249,61 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     @Override
     public Class<?> getColumnClass(int columnIndex) {
       if (columnIndex == 0) {
-        return String.class;
+        return VirtualFile.class;
       }
       return super.getColumnClass(columnIndex);
     }
 
     @Override
     public void removeRow(int idx) {
-      myPaths.remove(idx);
+      myFiles.remove(idx);
     }
 
     public boolean isModified() {
-      return !(myJavaModuleFacet.getAdditionalSourcePaths().containsAll(myPaths) && myPaths.containsAll(myJavaModuleFacet.getAdditionalSourcePaths()));
+      final Collection<String> paths = convertVirtualFile2StringPaths(myFiles);
+      return !(myPaths.containsAll(paths) && paths.containsAll(myPaths));
     }
 
     public void apply() {
-      myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths().clear();
-      if (!myPaths.isEmpty()) {
-        myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths().addAll(myPaths);
+      myPaths.clear();
+      if (!myFiles.isEmpty()) {
+        myPaths.addAll(convertVirtualFile2StringPaths(myFiles));
       }
     }
   }
 
-  private class LibraryTableModel extends AbstractTableModel implements ItemRemovable {
-    private final List<String> myStubModelEntries = new ArrayList<>();
-
-    public LibraryTableModel() {
-      myStubModelEntries.addAll(myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths());
-    }
-
-    public void addAll(Collection<String> javaStubPaths) {
-      if (myStubModelEntries.addAll(javaStubPaths)) {
-        fireTableDataChanged();
-      }
-    }
-
-    @Override
-    public int getRowCount() {
-      return myStubModelEntries.size();
-    }
-
-    @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-      return myStubModelEntries.get(rowIndex);
-    }
-
-    @Override
-    public int getColumnCount() {
-      return 1;
-    }
-
-    @Override
-    public String getColumnName(int columnIndex) {
-      return "";
-    }
-
-    @Override
-    public Class<?> getColumnClass(int columnIndex) {
-      if (columnIndex == 0) {
-        return String.class;
-      }
-      return super.getColumnClass(columnIndex);
-    }
-
-    @Override
-    public void removeRow(int idx) {
-      myStubModelEntries.remove(idx);
-    }
-
-
-    public boolean isModified() {
-      return !(myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().containsAll(myStubModelEntries) &&
-               myStubModelEntries.containsAll(myJavaModuleFacet.getLibraryClassPath()));
-    }
-
-    public void apply() {
-      myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().clear();
-      if (!myStubModelEntries.isEmpty()) {
-        myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths().addAll(myStubModelEntries);
-      }
-    }
-  }
-
-  private class MyPathRenderer extends ColoredTableCellRenderer {
+  // TODO: extract as common class to render VirtualFiles as table items along with FilesTableModel
+  private static class VirtualFileRenderer extends ColoredTableCellRenderer {
     @Override
     protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
       setPaintFocusBorder(false);
       setFocusBorderAroundIcon(true);
       setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
       if (value != null) {
-        String path = FileUtil.getCanonicalPath((String) value);
-        if (!(new File(path)).exists()) {
+        VirtualFile file = (VirtualFile) value;
+        final String path = file.getPath();
+        if (!file.exists()) {
           append(path, SimpleTextAttributes.ERROR_ATTRIBUTES);
         } else {
           append(path);
         }
       }
     }
+  }
+
+  private static Collection<String> convertVirtualFile2StringPaths(Collection<VirtualFile> files) {
+    final Collection<String> result = new ArrayList<>(files.size());
+    for (VirtualFile file : files) {
+      result.add(file.getPath());
+    }
+    return result;
+  }
+
+  private static Collection<VirtualFile> convertStringPaths2VirtualFile(Collection<String> paths) {
+    final Collection<VirtualFile> result = new ArrayList<>(paths.size());
+    for (String path : paths) {
+      result.add(LocalFileSystem.getInstance().findFileByPath(path));
+    }
+    return result;
   }
 }
