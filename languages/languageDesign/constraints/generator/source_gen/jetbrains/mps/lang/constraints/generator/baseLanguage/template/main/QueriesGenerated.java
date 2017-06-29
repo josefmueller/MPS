@@ -155,10 +155,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean ifMacro_Condition_9133562742192082143(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a72ce9037L, "defaultConcreteConcept")) != null);
   }
-  public static boolean ifMacro_Condition_7423954551252433615(final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a727527f6L, "defaultScope")) != null);
-  }
-  public static boolean ifMacro_Condition_7423954551252433663(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_3872881658062267150(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a727527f6L, "defaultScope")) != null);
   }
   public static boolean ifMacro_Condition_3118747687559089835(final IfMacroContext _context) {
@@ -274,7 +271,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SModelUtil.getGenuineLinkDeclaration(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7317b98aL, "applicableLink")));
   }
   public static SNode sourceNodeQuery_3749568622064121436(final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x7a8b97cf0435231fL, "keepsReference")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x7a8b97cf0435231fL, "keepsReference")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")) : _quotation_createNode_x583g4_a0a0oc());
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x7a8b97cf0435231fL, "keepsReference")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x7a8b97cf0435231fL, "keepsReference")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body")) : _quotation_createNode_x583g4_a0a0nc());
   }
   public static SNode sourceNodeQuery_3749568622064121479(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10ed4593a89L, "referentSetHandler")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
@@ -576,8 +573,7 @@ public class QueriesGenerated extends QueryProviderBase {
     imcMethods.put("7294282772021338866", new QueriesGenerated.IfMC(i++));
     imcMethods.put("1426851521646945995", new QueriesGenerated.IfMC(i++));
     imcMethods.put("9133562742192082142", new QueriesGenerated.IfMC(i++));
-    imcMethods.put("7423954551252433614", new QueriesGenerated.IfMC(i++));
-    imcMethods.put("7423954551252433662", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("3872881658062267148", new QueriesGenerated.IfMC(i++));
     imcMethods.put("3118747687559089833", new QueriesGenerated.IfMC(i++));
     imcMethods.put("3118747687559306739", new QueriesGenerated.IfMC(i++));
     imcMethods.put("3118747687559535404", new QueriesGenerated.IfMC(i++));
@@ -629,60 +625,58 @@ public class QueriesGenerated extends QueryProviderBase {
         case 2:
           return QueriesGenerated.ifMacro_Condition_9133562742192082143(ctx);
         case 3:
-          return QueriesGenerated.ifMacro_Condition_7423954551252433615(ctx);
+          return QueriesGenerated.ifMacro_Condition_3872881658062267150(ctx);
         case 4:
-          return QueriesGenerated.ifMacro_Condition_7423954551252433663(ctx);
-        case 5:
           return QueriesGenerated.ifMacro_Condition_3118747687559089835(ctx);
-        case 6:
+        case 5:
           return QueriesGenerated.ifMacro_Condition_3118747687559306741(ctx);
-        case 7:
+        case 6:
           return QueriesGenerated.ifMacro_Condition_3118747687559535406(ctx);
-        case 8:
+        case 7:
           return QueriesGenerated.ifMacro_Condition_3118747687559964098(ctx);
-        case 9:
+        case 8:
           return QueriesGenerated.ifMacro_Condition_3749568622064121054(ctx);
-        case 10:
+        case 9:
           return QueriesGenerated.ifMacro_Condition_3749568622064121098(ctx);
-        case 11:
+        case 10:
           return QueriesGenerated.ifMacro_Condition_3749568622064121114(ctx);
-        case 12:
+        case 11:
           return QueriesGenerated.ifMacro_Condition_3749568622064121158(ctx);
-        case 13:
+        case 12:
           return QueriesGenerated.ifMacro_Condition_3749568622064121174(ctx);
-        case 14:
+        case 13:
           return QueriesGenerated.ifMacro_Condition_3749568622064121220(ctx);
-        case 15:
+        case 14:
           return QueriesGenerated.ifMacro_Condition_3749568622064154251(ctx);
-        case 16:
+        case 15:
           return QueriesGenerated.ifMacro_Condition_3749568622064121413(ctx);
-        case 17:
+        case 16:
           return QueriesGenerated.ifMacro_Condition_3749568622064121458(ctx);
-        case 18:
+        case 17:
           return QueriesGenerated.ifMacro_Condition_3749568622064121489(ctx);
-        case 19:
+        case 18:
           return QueriesGenerated.ifMacro_Condition_3749568622064121505(ctx);
-        case 20:
+        case 19:
           return QueriesGenerated.ifMacro_Condition_3749568622064121608(ctx);
-        case 21:
+        case 20:
           return QueriesGenerated.ifMacro_Condition_6702802731807903826(ctx);
-        case 22:
+        case 21:
           return QueriesGenerated.ifMacro_Condition_1227085790509(ctx);
-        case 23:
+        case 22:
           return QueriesGenerated.ifMacro_Condition_6702802731807903864(ctx);
-        case 24:
+        case 23:
           return QueriesGenerated.ifMacro_Condition_6702802731807903923(ctx);
-        case 25:
+        case 24:
           return QueriesGenerated.ifMacro_Condition_5934496548013422436(ctx);
-        case 26:
+        case 25:
           return QueriesGenerated.ifMacro_Condition_5934496548013422465(ctx);
-        case 27:
+        case 26:
           return QueriesGenerated.ifMacro_Condition_2547162710961896342(ctx);
-        case 28:
+        case 27:
           return QueriesGenerated.ifMacro_Condition_7877785001060492623(ctx);
-        case 29:
+        case 28:
           return QueriesGenerated.ifMacro_Condition_3602553488694021787(ctx);
-        case 30:
+        case 29:
           return QueriesGenerated.ifMacro_Condition_2547162710961862306(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateReference(), methodKey));
@@ -770,7 +764,7 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
   }
-  private static SNode _quotation_createNode_x583g4_a0a0oc() {
+  private static SNode _quotation_createNode_x583g4_a0a0nc() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
