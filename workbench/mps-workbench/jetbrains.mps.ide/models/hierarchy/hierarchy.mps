@@ -11865,6 +11865,11 @@
             <ref role="3cqZAo" node="51NkKCgB4ot" resolve="declaration" />
           </node>
         </node>
+        <node concept="3SKdUt" id="5N0kNHpxB$9" role="3cqZAp">
+          <node concept="3SKdUq" id="5N0kNHpxB$b" role="3SKWNk">
+            <property role="3SKdUp" value=" note, for node&lt;&gt; coming from typesystem (hung in the air), pointer likely to be null/null" />
+          </node>
+        </node>
         <node concept="3clFbF" id="4YWMHoo1OH" role="3cqZAp">
           <node concept="37vLTI" id="4YWMHoo2h5" role="3clFbG">
             <node concept="2OqwBi" id="4YWMHoo2ID" role="37vLTx">
@@ -11932,11 +11937,13 @@
             <ref role="37wK5l" to="7e8u:~MPSTreeNode.setNodeIdentifier(java.lang.String):void" resolve="setNodeIdentifier" />
             <node concept="2OqwBi" id="4$kvR95A8Dn" role="37wK5m">
               <node concept="2OqwBi" id="4$kvR95A8fo" role="2Oq$k0">
-                <node concept="37vLTw" id="4$kvR95A7Gi" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4YWMHoo0Iq" resolve="myNodeRef" />
+                <node concept="2JrnkZ" id="5N0kNHpx_J$" role="2Oq$k0">
+                  <node concept="37vLTw" id="5N0kNHpx_4m" role="2JrQYb">
+                    <ref role="3cqZAo" node="51NkKCgB4ot" resolve="declaration" />
+                  </node>
                 </node>
                 <node concept="liA8E" id="4$kvR95A8yM" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SNodeReference.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
+                  <ref role="37wK5l" to="mhbf:~SNode.getNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getNodeId" />
                 </node>
               </node>
               <node concept="liA8E" id="4$kvR95A943" role="2OqNvi">

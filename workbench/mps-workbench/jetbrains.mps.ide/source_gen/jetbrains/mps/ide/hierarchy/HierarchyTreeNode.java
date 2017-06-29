@@ -16,11 +16,12 @@ public class HierarchyTreeNode extends MPSTreeNode {
 
   public HierarchyTreeNode(@NotNull SNode declaration, AbstractHierarchyTree tree) {
     super(declaration);
+    //  note, for node<> coming from typesystem (hung in the air), pointer likely to be null/null 
     myNodeRef = declaration.getReference();
     myHierarchyTree = tree;
     String name = declaration.getName();
     setText((name == null ? "no name" : name));
-    setNodeIdentifier(myNodeRef.getNodeId().toString());
+    setNodeIdentifier(declaration.getNodeId().toString());
     setToggleClickCount(-1);
     setAutoExpandable(false);
     setAdditionalText(SModelOperations.getModelName(SNodeOperations.getModel(declaration)));

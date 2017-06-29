@@ -584,28 +584,29 @@
       <node id="89776410085821338" at="14,0,15,0" concept="5" trace="myNodeRef" />
       <node id="5797068448049415702" at="15,0,16,0" concept="5" trace="myHierarchyTree" />
       <node id="5797068448049415718" at="17,84,18,23" concept="15" />
-      <node id="89776410085825837" at="18,23,19,43" concept="4" />
-      <node id="5797068448049415770" at="19,43,20,27" concept="4" />
-      <node id="5265973993073606241" at="20,27,21,40" concept="10" />
-      <node id="5265973993073583739" at="21,40,22,47" concept="4" />
-      <node id="5797068448049415777" at="22,47,23,56" concept="4" />
-      <node id="5102596871687873702" at="23,56,24,28" concept="4" />
-      <node id="5797068448049415802" at="24,28,25,29" concept="4" />
-      <node id="5265973993073323916" at="25,29,26,92" concept="4" />
-      <node id="5797068448049415795" at="26,92,27,49" concept="4" />
-      <node id="8991903957479218179" at="31,44,32,21" concept="11" />
-      <node id="8991903957479214225" at="30,0,34,0" concept="9" trace="getNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="5797068448049415706" at="17,0,29,0" concept="2" trace="HierarchyTreeNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/ide/hierarchy/AbstractHierarchyTree;)V" />
-      <scope id="8991903957479214229" at="31,44,32,21" />
-      <scope id="8991903957479214225" at="30,0,34,0" />
-      <scope id="5797068448049415717" at="17,84,27,49">
+      <node id="6683433361387976969" at="18,23,19,98" concept="12" />
+      <node id="89776410085825837" at="19,98,20,43" concept="4" />
+      <node id="5797068448049415770" at="20,43,21,27" concept="4" />
+      <node id="5265973993073606241" at="21,27,22,40" concept="10" />
+      <node id="5265973993073583739" at="22,40,23,47" concept="4" />
+      <node id="5797068448049415777" at="23,47,24,58" concept="4" />
+      <node id="5102596871687873702" at="24,58,25,28" concept="4" />
+      <node id="5797068448049415802" at="25,28,26,29" concept="4" />
+      <node id="5265973993073323916" at="26,29,27,92" concept="4" />
+      <node id="5797068448049415795" at="27,92,28,49" concept="4" />
+      <node id="8991903957479218179" at="32,44,33,21" concept="11" />
+      <node id="8991903957479214225" at="31,0,35,0" concept="9" trace="getNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5797068448049415706" at="17,0,30,0" concept="2" trace="HierarchyTreeNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/ide/hierarchy/AbstractHierarchyTree;)V" />
+      <scope id="8991903957479214229" at="32,44,33,21" />
+      <scope id="8991903957479214225" at="31,0,35,0" />
+      <scope id="5797068448049415717" at="17,84,28,49">
         <var name="name" id="5265973993073606244" />
       </scope>
-      <scope id="5797068448049415706" at="17,0,29,0">
+      <scope id="5797068448049415706" at="17,0,30,0">
         <var name="declaration" id="5797068448049415709" />
         <var name="tree" id="5797068448049415714" />
       </scope>
-      <unit id="5797068448049410624" at="13,0,35,0" name="jetbrains.mps.ide.hierarchy.HierarchyTreeNode" />
+      <unit id="5797068448049410624" at="13,0,36,0" name="jetbrains.mps.ide.hierarchy.HierarchyTreeNode" />
     </file>
   </root>
   <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049410628">
