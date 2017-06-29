@@ -12,13 +12,11 @@ import jetbrains.mps.ide.icons.IconManager;
 
 public class HierarchyTreeNode extends MPSTreeNode {
   private final SNodeReference myNodeRef;
-  protected AbstractHierarchyTree myHierarchyTree;
 
-  public HierarchyTreeNode(@NotNull SNode declaration, AbstractHierarchyTree tree) {
+  public HierarchyTreeNode(@NotNull SNode declaration) {
     super(declaration);
     //  note, for node<> coming from typesystem (hung in the air), pointer likely to be null/null 
     myNodeRef = declaration.getReference();
-    myHierarchyTree = tree;
     String name = declaration.getName();
     setText((name == null ? "no name" : name));
     setNodeIdentifier(declaration.getNodeId().toString());

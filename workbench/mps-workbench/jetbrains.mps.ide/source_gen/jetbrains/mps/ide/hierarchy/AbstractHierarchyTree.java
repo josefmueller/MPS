@@ -113,6 +113,16 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     }
     return rebuildParentHierarchy();
   }
+
+  /**
+   * Override if you need to control text displayed for a node in a hierarchy.
+   * By default, uses node's name, if any. 
+   */
+  protected String nodePresentation(SNode n) {
+    String name = n.getName();
+    return (name == null ? "no name" : name);
+  }
+
   protected abstract String noNodeString();
   protected abstract SNode getParent(SNode node);
   protected abstract Set<SNode> getParents(SNode node, Set<SNode> visited) throws CircularHierarchyException;
@@ -181,11 +191,13 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     HierarchyTreeNode rootNode = null;
     Set<SNode> visited = new HashSet<SNode>();
     for (int i = parentHierarchy.size() - 1; i >= 0; i--) {
-      hierarchyTreeNode = (i > 0 ? (new HierarchyTreeNode(parentHierarchy.get(i), this)) : new ChildHierarchyTreeNode(parentHierarchy.get(i), this, visited));
+      SNode hierarchyNode = parentHierarchy.get(i);
+      hierarchyTreeNode = (i > 0 ? (new HierarchyTreeNode(hierarchyNode)) : new ChildHierarchyTreeNode(hierarchyNode, this, visited));
+      hierarchyTreeNode.setText(nodePresentation(hierarchyNode));
       if (i == parentHierarchy.size() - 1) {
         rootNode = hierarchyTreeNode;
       }
-      visited.add(parentHierarchy.get(i));
+      visited.add(hierarchyNode);
       if (parentTreeNode != null) {
         parentTreeNode.add(hierarchyTreeNode);
       }

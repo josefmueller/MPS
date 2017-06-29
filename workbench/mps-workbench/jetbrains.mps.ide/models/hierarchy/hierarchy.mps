@@ -8964,6 +8964,14 @@
     <node concept="3uibUv" id="51NkKCgB40_" role="1zkMxy">
       <ref role="3uigEE" node="51NkKCgB390" resolve="HierarchyTreeNode" />
     </node>
+    <node concept="312cEg" id="51NkKCgB4om" role="jymVt">
+      <property role="TrG5h" value="myHierarchyTree" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="51NkKCgB4on" role="1tU5fm">
+        <ref role="3uigEE" node="51NkKCgB38Z" resolve="AbstractHierarchyTree" />
+      </node>
+      <node concept="3Tm6S6" id="1kSGChKxzNJ" role="1B3o_S" />
+    </node>
     <node concept="312cEg" id="51NkKCgB40B" role="jymVt">
       <property role="TrG5h" value="myInitialized" />
       <node concept="10P_77" id="51NkKCgB40C" role="1tU5fm" />
@@ -8978,6 +8986,7 @@
       </node>
       <node concept="3Tm6S6" id="51NkKCgB40I" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="1kSGChKxtj1" role="jymVt" />
     <node concept="3clFbW" id="51NkKCgB40J" role="jymVt">
       <node concept="3Tm1VV" id="51NkKCgB40K" role="1B3o_S" />
       <node concept="3cqZAl" id="51NkKCgB40L" role="3clF45" />
@@ -9004,8 +9013,15 @@
           <node concept="37vLTw" id="2BHiRxgmpMB" role="37wK5m">
             <ref role="3cqZAo" node="51NkKCgB40M" resolve="declaration" />
           </node>
-          <node concept="37vLTw" id="2BHiRxglles" role="37wK5m">
-            <ref role="3cqZAo" node="51NkKCgB40Q" resolve="tree" />
+        </node>
+        <node concept="3clFbF" id="51NkKCgB4pq" role="3cqZAp">
+          <node concept="37vLTI" id="51NkKCgB4pr" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeuu24" role="37vLTJ">
+              <ref role="3cqZAo" node="51NkKCgB4om" resolve="myHierarchyTree" />
+            </node>
+            <node concept="37vLTw" id="2BHiRxgmarN" role="37vLTx">
+              <ref role="3cqZAo" node="51NkKCgB40Q" resolve="tree" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="51NkKCgB411" role="3cqZAp">
@@ -9053,6 +9069,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1kSGChKxHpQ" role="jymVt" />
     <node concept="3clFb_" id="51NkKCgB41i" role="jymVt">
       <property role="TrG5h" value="isInitialized" />
       <node concept="3Tm1VV" id="51NkKCgB41j" role="1B3o_S" />
@@ -9122,8 +9139,26 @@
                       <node concept="37vLTw" id="3GM_nagTzQt" role="37wK5m">
                         <ref role="3cqZAo" node="51NkKCgB42C" resolve="errorNode" />
                       </node>
-                      <node concept="37vLTw" id="2BHiRxeurJY" role="37wK5m">
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="1kSGChKyPzV" role="3cqZAp">
+                <node concept="2OqwBi" id="1kSGChKyQ_e" role="3clFbG">
+                  <node concept="37vLTw" id="1kSGChKyPzT" role="2Oq$k0">
+                    <ref role="3cqZAo" node="51NkKCgB42Q" resolve="errorTreeNode" />
+                  </node>
+                  <node concept="liA8E" id="1kSGChKyRlC" role="2OqNvi">
+                    <ref role="37wK5l" to="7e8u:~MPSTreeNode.setText(java.lang.String):void" resolve="setText" />
+                    <node concept="2OqwBi" id="1kSGChKyU6H" role="37wK5m">
+                      <node concept="37vLTw" id="1kSGChKySpZ" role="2Oq$k0">
                         <ref role="3cqZAo" node="51NkKCgB4om" resolve="myHierarchyTree" />
+                      </node>
+                      <node concept="liA8E" id="1kSGChKyX0O" role="2OqNvi">
+                        <ref role="37wK5l" node="1kSGChKxW0J" resolve="nodePresentation" />
+                        <node concept="37vLTw" id="1kSGChKyZ$i" role="37wK5m">
+                          <ref role="3cqZAo" node="51NkKCgB42C" resolve="errorNode" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -9366,6 +9401,27 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3clFbF" id="1kSGChKz18N" role="3cqZAp">
+                  <node concept="2OqwBi" id="1kSGChKz2ek" role="3clFbG">
+                    <node concept="37vLTw" id="1kSGChKz18L" role="2Oq$k0">
+                      <ref role="3cqZAo" node="51NkKCgB43Z" resolve="childHierarchyTreeNode" />
+                    </node>
+                    <node concept="liA8E" id="1kSGChKz31D" role="2OqNvi">
+                      <ref role="37wK5l" to="7e8u:~MPSTreeNode.setText(java.lang.String):void" resolve="setText" />
+                      <node concept="2OqwBi" id="1kSGChKz6Se" role="37wK5m">
+                        <node concept="37vLTw" id="1kSGChKz4Ct" role="2Oq$k0">
+                          <ref role="3cqZAo" node="51NkKCgB4om" resolve="myHierarchyTree" />
+                        </node>
+                        <node concept="liA8E" id="1kSGChKzdp4" role="2OqNvi">
+                          <ref role="37wK5l" node="1kSGChKxW0J" resolve="nodePresentation" />
+                          <node concept="37vLTw" id="1kSGChKzeuR" role="37wK5m">
+                            <ref role="3cqZAo" node="51NkKCgB43V" resolve="descendant" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="51NkKCgB449" role="3cqZAp">
                   <node concept="1rXfSq" id="4hiugqyz9_V" role="3clFbG">
                     <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.add(javax.swing.tree.MutableTreeNode):void" resolve="add" />
@@ -9464,8 +9520,8 @@
             <node concept="3uibUv" id="51NkKCgB427" role="1tU5fm">
               <ref role="3uigEE" to="wyt6:~String" resolve="String" />
             </node>
-            <node concept="3nyPlj" id="51NkKCgB428" role="33vP2m">
-              <ref role="37wK5l" to="7e8u:~MPSTreeNode.toString():java.lang.String" resolve="toString" />
+            <node concept="1rXfSq" id="1kSGChKxNJ9" role="33vP2m">
+              <ref role="37wK5l" to="7e8u:~MPSTreeNode.getText():java.lang.String" resolve="getText" />
             </node>
           </node>
         </node>
@@ -10687,6 +10743,63 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1kSGChKyHk9" role="jymVt" />
+    <node concept="3clFb_" id="1kSGChKxW0J" role="jymVt">
+      <property role="TrG5h" value="nodePresentation" />
+      <node concept="17QB3L" id="1kSGChKxZ4e" role="3clF45" />
+      <node concept="3clFbS" id="1kSGChKxW0N" role="3clF47">
+        <node concept="3cpWs8" id="1kSGChKy$y7" role="3cqZAp">
+          <node concept="3cpWsn" id="1kSGChKy$y8" role="3cpWs9">
+            <property role="TrG5h" value="name" />
+            <node concept="17QB3L" id="77Q20aA682O" role="1tU5fm" />
+            <node concept="2OqwBi" id="1kSGChKy$y9" role="33vP2m">
+              <node concept="2JrnkZ" id="1kSGChKy$ya" role="2Oq$k0">
+                <node concept="37vLTw" id="1kSGChKy$yb" role="2JrQYb">
+                  <ref role="3cqZAo" node="1kSGChKy4ih" resolve="n" />
+                </node>
+              </node>
+              <node concept="liA8E" id="1kSGChKy$yc" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SNode.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1kSGChKyz74" role="3cqZAp">
+          <node concept="3K4zz7" id="1kSGChKyCEY" role="3clFbG">
+            <node concept="Xl_RD" id="1kSGChKyEj$" role="3K4E3e">
+              <property role="Xl_RC" value="no name" />
+            </node>
+            <node concept="37vLTw" id="1kSGChKyFW3" role="3K4GZi">
+              <ref role="3cqZAo" node="1kSGChKy$y8" resolve="name" />
+            </node>
+            <node concept="3clFbC" id="1kSGChKy_ce" role="3K4Cdx">
+              <node concept="10Nm6u" id="1kSGChKyAZq" role="3uHU7w" />
+              <node concept="37vLTw" id="1kSGChKy$yd" role="3uHU7B">
+                <ref role="3cqZAo" node="1kSGChKy$y8" resolve="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1kSGChKy4ih" role="3clF46">
+        <property role="TrG5h" value="n" />
+        <node concept="3Tqbb2" id="1kSGChKy4ig" role="1tU5fm" />
+      </node>
+      <node concept="P$JXv" id="1kSGChKyIHy" role="lGtFl">
+        <node concept="TZ5HA" id="1kSGChKyIHz" role="TZ5H$">
+          <node concept="1dT_AC" id="1kSGChKyIH$" role="1dT_Ay">
+            <property role="1dT_AB" value="Override if you need to control text displayed for a node in a hierarchy." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="1kSGChKyJUI" role="TZ5H$">
+          <node concept="1dT_AC" id="1kSGChKyJUJ" role="1dT_Ay">
+            <property role="1dT_AB" value="By default, uses node's name, if any. " />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="77Q20aA64UQ" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="1kSGChKyFXG" role="jymVt" />
     <node concept="3clFb_" id="51NkKCgB4aO" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="noNodeString" />
@@ -11246,6 +11359,23 @@
             </node>
           </node>
           <node concept="3clFbS" id="51NkKCgB4ek" role="2LFqv$">
+            <node concept="3cpWs8" id="1kSGChKynGK" role="3cqZAp">
+              <node concept="3cpWsn" id="1kSGChKynGL" role="3cpWs9">
+                <property role="TrG5h" value="hierarchyNode" />
+                <node concept="3Tqbb2" id="1kSGChKynGB" role="1tU5fm" />
+                <node concept="2OqwBi" id="1kSGChKynGM" role="33vP2m">
+                  <node concept="37vLTw" id="1kSGChKynGN" role="2Oq$k0">
+                    <ref role="3cqZAo" node="51NkKCgB4dr" resolve="parentHierarchy" />
+                  </node>
+                  <node concept="liA8E" id="1kSGChKynGO" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~ArrayList.get(int):java.lang.Object" resolve="get" />
+                    <node concept="37vLTw" id="1kSGChKynGP" role="37wK5m">
+                      <ref role="3cqZAo" node="51NkKCgB4eb" resolve="i" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="51NkKCgB4el" role="3cqZAp">
               <node concept="37vLTI" id="51NkKCgB4em" role="3clFbG">
                 <node concept="37vLTw" id="3GM_nagTBAE" role="37vLTJ">
@@ -11264,39 +11394,38 @@
                     <node concept="2ShNRf" id="51NkKCgB4et" role="1eOMHV">
                       <node concept="1pGfFk" id="51NkKCgB4eu" role="2ShVmc">
                         <ref role="37wK5l" node="51NkKCgB4oq" resolve="HierarchyTreeNode" />
-                        <node concept="2OqwBi" id="51NkKCgB4ew" role="37wK5m">
-                          <node concept="37vLTw" id="3GM_nagTuH3" role="2Oq$k0">
-                            <ref role="3cqZAo" node="51NkKCgB4dr" resolve="parentHierarchy" />
-                          </node>
-                          <node concept="liA8E" id="51NkKCgB4ey" role="2OqNvi">
-                            <ref role="37wK5l" to="33ny:~ArrayList.get(int):java.lang.Object" resolve="get" />
-                            <node concept="37vLTw" id="3GM_nagTxl$" role="37wK5m">
-                              <ref role="3cqZAo" node="51NkKCgB4eb" resolve="i" />
-                            </node>
-                          </node>
+                        <node concept="37vLTw" id="1kSGChKynGR" role="37wK5m">
+                          <ref role="3cqZAo" node="1kSGChKynGL" resolve="hierarchyNode" />
                         </node>
-                        <node concept="Xjq3P" id="51NkKCgB4e_" role="37wK5m" />
                       </node>
                     </node>
                   </node>
                   <node concept="2ShNRf" id="51NkKCgB4eA" role="3K4GZi">
                     <node concept="1pGfFk" id="51NkKCgB4eB" role="2ShVmc">
                       <ref role="37wK5l" node="51NkKCgB40J" resolve="ChildHierarchyTreeNode" />
-                      <node concept="2OqwBi" id="51NkKCgB4eD" role="37wK5m">
-                        <node concept="37vLTw" id="3GM_nagTva4" role="2Oq$k0">
-                          <ref role="3cqZAo" node="51NkKCgB4dr" resolve="parentHierarchy" />
-                        </node>
-                        <node concept="liA8E" id="51NkKCgB4eF" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~ArrayList.get(int):java.lang.Object" resolve="get" />
-                          <node concept="37vLTw" id="3GM_nagTxUz" role="37wK5m">
-                            <ref role="3cqZAo" node="51NkKCgB4eb" resolve="i" />
-                          </node>
-                        </node>
+                      <node concept="37vLTw" id="1kSGChKynGQ" role="37wK5m">
+                        <ref role="3cqZAo" node="1kSGChKynGL" resolve="hierarchyNode" />
                       </node>
                       <node concept="Xjq3P" id="51NkKCgB4eI" role="37wK5m" />
                       <node concept="37vLTw" id="3GM_nagTy64" role="37wK5m">
                         <ref role="3cqZAo" node="51NkKCgB4e1" resolve="visited" />
                       </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="1kSGChKyhm$" role="3cqZAp">
+              <node concept="2OqwBi" id="1kSGChKyjG5" role="3clFbG">
+                <node concept="37vLTw" id="1kSGChKyhmy" role="2Oq$k0">
+                  <ref role="3cqZAo" node="51NkKCgB4dT" resolve="hierarchyTreeNode" />
+                </node>
+                <node concept="liA8E" id="1kSGChKylIt" role="2OqNvi">
+                  <ref role="37wK5l" to="7e8u:~MPSTreeNode.setText(java.lang.String):void" resolve="setText" />
+                  <node concept="1rXfSq" id="1kSGChKynsK" role="37wK5m">
+                    <ref role="37wK5l" node="1kSGChKxW0J" resolve="nodePresentation" />
+                    <node concept="37vLTw" id="1kSGChKyuR4" role="37wK5m">
+                      <ref role="3cqZAo" node="1kSGChKynGL" resolve="hierarchyNode" />
                     </node>
                   </node>
                 </node>
@@ -11341,16 +11470,8 @@
                 </node>
                 <node concept="liA8E" id="51NkKCgB4f0" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="2OqwBi" id="51NkKCgB4f1" role="37wK5m">
-                    <node concept="37vLTw" id="3GM_nagTuYY" role="2Oq$k0">
-                      <ref role="3cqZAo" node="51NkKCgB4dr" resolve="parentHierarchy" />
-                    </node>
-                    <node concept="liA8E" id="51NkKCgB4f3" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~ArrayList.get(int):java.lang.Object" resolve="get" />
-                      <node concept="37vLTw" id="3GM_nagT$eZ" role="37wK5m">
-                        <ref role="3cqZAo" node="51NkKCgB4eb" resolve="i" />
-                      </node>
-                    </node>
+                  <node concept="37vLTw" id="1kSGChKynGS" role="37wK5m">
+                    <ref role="3cqZAo" node="1kSGChKynGL" resolve="hierarchyNode" />
                   </node>
                 </node>
               </node>
@@ -11834,13 +11955,6 @@
         <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
       </node>
     </node>
-    <node concept="312cEg" id="51NkKCgB4om" role="jymVt">
-      <property role="TrG5h" value="myHierarchyTree" />
-      <node concept="3uibUv" id="51NkKCgB4on" role="1tU5fm">
-        <ref role="3uigEE" node="51NkKCgB38Z" resolve="AbstractHierarchyTree" />
-      </node>
-      <node concept="3Tmbuc" id="51NkKCgB4op" role="1B3o_S" />
-    </node>
     <node concept="2tJIrI" id="4$kvR95BJU7" role="jymVt" />
     <node concept="3clFbW" id="51NkKCgB4oq" role="jymVt">
       <node concept="3Tm1VV" id="51NkKCgB4or" role="1B3o_S" />
@@ -11850,12 +11964,6 @@
         <node concept="3Tqbb2" id="7pTo6H6lQ4A" role="1tU5fm" />
         <node concept="2AHcQZ" id="51NkKCgB4ov" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="51NkKCgB4oy" role="3clF46">
-        <property role="TrG5h" value="tree" />
-        <node concept="3uibUv" id="51NkKCgB4oz" role="1tU5fm">
-          <ref role="3uigEE" node="51NkKCgB38Z" resolve="AbstractHierarchyTree" />
         </node>
       </node>
       <node concept="3clFbS" id="51NkKCgB4o_" role="3clF47">
@@ -11884,16 +11992,6 @@
             </node>
             <node concept="37vLTw" id="4YWMHoo1OF" role="37vLTJ">
               <ref role="3cqZAo" node="4YWMHoo0Iq" resolve="myNodeRef" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="51NkKCgB4pq" role="3cqZAp">
-          <node concept="37vLTI" id="51NkKCgB4pr" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxeuu24" role="37vLTJ">
-              <ref role="3cqZAo" node="51NkKCgB4om" resolve="myHierarchyTree" />
-            </node>
-            <node concept="37vLTw" id="2BHiRxgmarN" role="37vLTx">
-              <ref role="3cqZAo" node="51NkKCgB4oy" resolve="tree" />
             </node>
           </node>
         </node>

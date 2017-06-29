@@ -14,14 +14,18 @@ import jetbrains.mps.ide.messages.Icons;
 import jetbrains.mps.util.StringUtil;
 
 public class ChildHierarchyTreeNode extends HierarchyTreeNode {
+  private final AbstractHierarchyTree myHierarchyTree;
   private boolean myInitialized = false;
   private Set<SNode> myVisited;
+
   public ChildHierarchyTreeNode(SNode declaration, AbstractHierarchyTree tree, Set<SNode> visited) {
-    super(declaration, tree);
+    super(declaration);
+    myHierarchyTree = tree;
     myVisited = new HashSet<SNode>(visited);
     setColor(new Color(64, 0, 144));
     setText(calculateText());
   }
+
   @Override
   public boolean isInitialized() {
     return myInitialized;
@@ -42,12 +46,14 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
       visited.add(node);
       for (SNode descendant : descendants) {
         ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, myHierarchyTree, visited);
+        childHierarchyTreeNode.setText(myHierarchyTree.nodePresentation(descendant));
         add(childHierarchyTreeNode);
       }
     } catch (CircularHierarchyException ex) {
       SNode errorNode = (SNode) ex.getRepeatedObject();
       final String message = ex.getMessage();
-      HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode, myHierarchyTree);
+      HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode);
+      errorTreeNode.setText(myHierarchyTree.nodePresentation(errorNode));
       errorTreeNode.setIcon(Icons.ERROR_ICON);
       errorTreeNode.setColor(Color.RED);
       errorTreeNode.setAdditionalText(message);
@@ -68,7 +74,7 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
     myInitialized = false;
   }
   public String calculateText() {
-    String name = super.toString();
+    String name = getText();
     HierarchyTreeNode hierarchyNode = myHierarchyTree.getActiveTreeNode();
     if (hierarchyNode == this) {
       name = StringUtil.escapeXml(name);
