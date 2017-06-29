@@ -36,9 +36,9 @@
   
   <target name="assemble" depends="declare-mps-tasks, classes">
     <mkdir dir="${build.layout}" />
-    <jar destfile="${build.layout}/migrationAssistant.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/migrationAssistant" />
-      <zipfileset file="${mps_home}/plugins/migrationAssistant/META-INF/plugin.xml" prefix="META-INF" />
+    <jar destfile="${build.layout}/migration-platform.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/migration-platform" />
+      <fileset file="${mps_home}/plugins/migration/migration-platform/pluginBase.xml" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -63,7 +63,7 @@
   
   <target name="makeDependents" />
   
-  <target name="compileJava" depends="java.compile.migrationAssistant" />
+  <target name="compileJava" depends="java.compile.migration-platform" />
   
   <target name="processResources" />
   
@@ -73,13 +73,13 @@
   
   <target name="check" depends="test" />
   
-  <target name="java.compile.migrationAssistant" depends="fetchDependencies">
-    <mkdir dir="${mps_home}/plugins/migrationAssistant/solutions/component/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/migrationAssistant" />
-    <javac2 destdir="${build.tmp}/java/out/migrationAssistant" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+  <target name="java.compile.migration-platform" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/migration/migration-platform/solutions/component/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/migration-platform" />
+    <javac2 destdir="${build.tmp}/java/out/migration-platform" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/migrationAssistant/solutions/component/source_gen" />
+        <path location="${mps_home}/plugins/migration/migration-platform/solutions/component/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
@@ -104,8 +104,8 @@
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
-    <copy todir="${build.tmp}/java/out/migrationAssistant">
-      <fileset dir="${mps_home}/plugins/migrationAssistant/solutions/component/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    <copy todir="${build.tmp}/java/out/migration-platform">
+      <fileset dir="${mps_home}/plugins/migration/migration-platform/solutions/component/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>
