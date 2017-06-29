@@ -226,8 +226,8 @@
       <modulePath path="$PROJECT_DIR$/plugins/httpsupport/solutions/runtime/jetbrains.mps.ide.httpsupport.runtime.msd" folder="platform.httpsupport" />
       <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" folder="core.aspects.editor.diagram" />
-      <modulePath path="$PROJECT_DIR$/plugins/migration-workbench/solutions/migration.workbench/jetbrains.mps.migration.workbench.msd" folder="platform.migration" />
-      <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />
+      <modulePath path="$PROJECT_DIR$/plugins/migration/migration-workbench/solutions/migration.workbench/jetbrains.mps.migration.workbench.msd" folder="platform.migration" />
+      <modulePath path="$PROJECT_DIR$/plugins/migration/migration-platform/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps.runner/jetbrains.mps.build.mps.runner.mpl" folder="platform.build" />
@@ -286,7 +286,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/jetbrains.mps.ide.java.actions/jetbrains.mps.ide.java.platform.actions.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" folder="platform.mpsjava" />
       <modulePath path="$PROJECT_DIR$/plugins/mpsmake/jetbrains.mps.ide.make.msd" folder="platform" />
-      <modulePath path="$PROJECT_DIR$/plugins/mpsmigration/solution/jetbrains.mps.ide.mpsmigration.msd" folder="platform" />
+      <modulePath path="$PROJECT_DIR$/plugins/migrations-mps172/solution/jetbrains.mps.ide.mpsmigration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/jetbrains.mps.baseLanguage.closures.test.msd" folder="core.baseLanguage.closures" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testAnnotatedType/testAnnotatedType.mpl" folder="tests.substituteType" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubstituteType/languages/testOverridingType/testOverridingType.mpl" folder="tests.substituteType" />
