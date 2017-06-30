@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.editorTest.EditorTestUtil;
 
 @MPSLaunch
 public class QueryParameterList_Delete3_Test extends BaseTransformationTest {
@@ -20,10 +21,14 @@ public class QueryParameterList_Delete3_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8654290870483594322", "8654290870483594391");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+        }
+      }, false);
     }
   }
 }

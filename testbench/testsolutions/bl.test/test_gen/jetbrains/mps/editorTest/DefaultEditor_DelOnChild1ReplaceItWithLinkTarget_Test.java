@@ -20,7 +20,11 @@ public class DefaultEditor_DelOnChild1ReplaceItWithLinkTarget_Test extends BaseT
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8629363476785550297", "8629363476785553385");
-      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+        }
+      }, false);
     }
   }
 }

@@ -20,7 +20,12 @@ public class DeleteOpenCurlyBrace_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8547191361978288727", "8547191361978288782");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+        }
+      }, false);
+
     }
   }
 }

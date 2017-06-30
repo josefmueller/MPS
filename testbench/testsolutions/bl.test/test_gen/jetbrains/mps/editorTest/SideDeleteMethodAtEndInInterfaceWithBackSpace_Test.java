@@ -20,7 +20,11 @@ public class SideDeleteMethodAtEndInInterfaceWithBackSpace_Test extends BaseTran
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4338540387697913613", "4338540387697957925");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+        }
+      }, false);
     }
   }
 }

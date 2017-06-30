@@ -20,7 +20,11 @@ public class LocalVariableRemovedFinalCaret_Test extends BaseTransformationTest 
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5264300948588172591", "5264300948588172598");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+        }
+      }, false);
     }
   }
 }

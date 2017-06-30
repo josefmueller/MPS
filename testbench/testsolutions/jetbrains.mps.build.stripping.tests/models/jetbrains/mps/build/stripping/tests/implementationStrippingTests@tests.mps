@@ -2,16 +2,13 @@
 <model ref="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)">
   <persistence version="9" />
   <languages>
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
     <use id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5" name="jetbrains.mps.samples.Kaja" version="0" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
-    <import index="7ht4" ref="r:cb723a04-ead3-4054-b750-edbb165cca03(jetbrains.mps.ide.editor.actions.core)" />
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -53,8 +50,44 @@
       </concept>
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" flags="nn" index="2GUZhq">
+        <child id="1153952416686" name="body" index="2GV8ay" />
+        <child id="1153952429843" name="finallyBody" index="2GVbov" />
+      </concept>
+      <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
+        <child id="1197027771414" name="operand" index="2Oq$k0" />
+        <child id="1197027833540" name="operation" index="2OqNvi" />
+      </concept>
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
+      <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <child id="1068431790190" name="initializer" index="33vP2m" />
+      </concept>
+      <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
+        <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
+      </concept>
+      <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
+        <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
+        <child id="1068580123156" name="expression" index="3clFbG" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
+      <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
+        <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
+      </concept>
+      <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+        <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -181,9 +214,58 @@
       </node>
     </node>
     <node concept="3clFbS" id="4$ezt8YXL7P" role="LjaKd">
-      <node concept="2HxZob" id="4$ezt8YXL7N" role="3cqZAp">
-        <node concept="1iFQzN" id="4$ezt8YXL81" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+      <node concept="3cpWs8" id="14TMHtHs1TP" role="3cqZAp">
+        <node concept="3cpWsn" id="14TMHtHs1TQ" role="3cpWs9">
+          <property role="TrG5h" value="twoStepDeletionSettings" />
+          <node concept="10P_77" id="14TMHtHs1TR" role="1tU5fm" />
+          <node concept="2OqwBi" id="14TMHtHs1TS" role="33vP2m">
+            <node concept="2YIFZM" id="14TMHtHs1TT" role="2Oq$k0">
+              <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
+              <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
+            </node>
+            <node concept="liA8E" id="14TMHtHs1TU" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorSettings.isUseTwoStepDeletion():boolean" resolve="isUseTwoStepDeletion" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbF" id="14TMHtHs1TV" role="3cqZAp">
+        <node concept="2OqwBi" id="14TMHtHs1TW" role="3clFbG">
+          <node concept="2YIFZM" id="14TMHtHs1TX" role="2Oq$k0">
+            <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
+            <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
+          </node>
+          <node concept="liA8E" id="14TMHtHs1TY" role="2OqNvi">
+            <ref role="37wK5l" to="exr9:~EditorSettings.setUseTwoStepDeletion(boolean):void" resolve="setUseTwoStepDeletion" />
+            <node concept="3clFbT" id="14TMHtIgClG" role="37wK5m">
+              <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2GUZhq" id="14TMHtHs1U0" role="3cqZAp">
+        <node concept="3clFbS" id="14TMHtHs1U1" role="2GV8ay">
+          <node concept="2HxZob" id="14TMHtIgCvx" role="3cqZAp">
+            <node concept="1iFQzN" id="14TMHtIgCvH" role="3iKnsn">
+              <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="14TMHtHs1U4" role="2GVbov">
+          <node concept="3clFbF" id="14TMHtHs1U5" role="3cqZAp">
+            <node concept="2OqwBi" id="14TMHtHs1U6" role="3clFbG">
+              <node concept="2YIFZM" id="14TMHtHs1U7" role="2Oq$k0">
+                <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
+                <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
+              </node>
+              <node concept="liA8E" id="14TMHtHs1U8" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorSettings.setUseTwoStepDeletion(boolean):void" resolve="setUseTwoStepDeletion" />
+                <node concept="37vLTw" id="14TMHtHs1U9" role="37wK5m">
+                  <ref role="3cqZAo" node="14TMHtHs1TQ" resolve="twoStepDeletionSettings" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

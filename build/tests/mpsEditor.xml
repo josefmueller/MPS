@@ -748,7 +748,6 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
-        <module file="${basedir}/testbench/testsolutions/console.test/jetbrains.mps.console.test.msd" />
         <module file="${basedir}/testbench/testsolutions/testlangs/lang.actions.testLang/jetbrains.mps.lang.actions.testLanguage.mpl" />
         <module file="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/jetbrains.mps.lang.editor.multiple.extension.testLanguage.mpl" />
         <module file="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/jetbrains.mps.lang.editor.multiple.testLanguage.mpl" />
@@ -761,6 +760,7 @@
       </chunk>
       <chunk>
         <module file="${basedir}/testbench/testsolutions/bl.test/jetbrains.mps.baseLanguage.test.msd" />
+        <module file="${basedir}/testbench/testsolutions/console.test/jetbrains.mps.console.test.msd" />
         <module file="${basedir}/testbench/testsolutions/actions.test/jetbrains.mps.lang.actions.test.msd" />
         <module file="${basedir}/testbench/testsolutions/editor.multiple.test/jetbrains.mps.lang.editor.multiple.tests.msd" />
         <module file="${basedir}/testbench/testsolutions/editor.table.test/jetbrains.mps.lang.editor.table.tests.msd" />
@@ -1394,7 +1394,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.console.test" depends="fetchDependencies">
+  <target name="java.compile.jetbrains.mps.console.test" depends="java.compile.jetbrains.mps.baseLanguage.test, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/console.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.console.test" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.console.test" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -1422,6 +1422,7 @@
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -1526,7 +1527,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.lang.editor.tests" depends="java.compile.jetbrains.mps.lang.editor.styleTests, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.lang.editor.tests" depends="java.compile.jetbrains.mps.baseLanguage.test, java.compile.jetbrains.mps.lang.editor.styleTests, fetchDependencies">
     <mkdir dir="${basedir}/testbench/testsolutions/editor.test/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.editor.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -1549,11 +1550,12 @@
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.styleTests" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.test" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.styleTests" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -1743,7 +1745,6 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/testbench/testsolutions/console.test/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/lang.actions.testLang/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.ext.testLang/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/testlangs/editor.mult.testLang/source_gen" />
@@ -1754,10 +1755,11 @@
     <delete dir="${basedir}/testbench/modules/testMoveElements/languages/testMoveElements/source_gen" />
     <delete dir="${basedir}/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/bl.test/source_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/console.test/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/editor.multiple.test/source_gen" />
     <delete dir="${basedir}/testbench/testsolutions/editor.test/source_gen" />
-    <delete dir="${basedir}/testbench/testsolutions/console.test/test_gen" />
     <delete dir="${basedir}/testbench/testsolutions/bl.test/test_gen" />
+    <delete dir="${basedir}/testbench/testsolutions/console.test/test_gen" />
     <delete dir="${basedir}/testbench/testsolutions/actions.test/test_gen" />
     <delete dir="${basedir}/testbench/testsolutions/editor.table.test/test_gen" />
   </target>

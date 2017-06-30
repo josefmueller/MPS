@@ -20,7 +20,11 @@ public class Del_InNameEndWithInitializer_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3737056097453813651", "3737056097453813658");
-      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+        }
+      }, false);
     }
   }
 }

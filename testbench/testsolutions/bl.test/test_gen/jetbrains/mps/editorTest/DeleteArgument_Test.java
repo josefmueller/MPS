@@ -20,7 +20,11 @@ public class DeleteArgument_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1165710012577088771", "1165710012577088789");
-      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+        }
+      }, false);
     }
   }
 }

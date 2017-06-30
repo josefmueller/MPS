@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.editorTest.EditorTestUtil;
 
 @MPSLaunch
 public class QueryExpression_Delete_Test extends BaseTransformationTest {
@@ -20,12 +21,16 @@ public class QueryExpression_Delete_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4624377012798184968", "4624377012798185067");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+        }
+      }, false);
     }
   }
 }

@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.editorTest.EditorTestUtil;
 
 @MPSLaunch
 public class RemovingLeftTransformForAttributedProperty_Test extends BaseTransformationTest {
@@ -20,8 +21,12 @@ public class RemovingLeftTransformForAttributedProperty_Test extends BaseTransfo
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3447504547919025678", "3447504547919025683");
-      typeString(" ");
-      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          typeString(" ");
+          invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+        }
+      }, false);
     }
   }
 }
