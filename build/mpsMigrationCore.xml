@@ -35,11 +35,15 @@
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="declare-mps-tasks, classes">
-    <mkdir dir="${build.layout}" />
-    <jar destfile="${build.layout}/migration-platform.jar" duplicate="preserve">
+    <mkdir dir="${build.layout}/migration-platform" />
+    <mkdir dir="${build.layout}/migration-platform/lib" />
+    <jar destfile="${build.layout}/migration-platform/lib/migration-platform.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/migration-platform" />
-      <fileset file="${mps_home}/plugins/migration/migration-platform/pluginBase.xml" />
     </jar>
+    <mkdir dir="${build.layout}/migration-platform/META-INF" />
+    <copy todir="${build.layout}/migration-platform/META-INF">
+      <fileset file="${mps_home}/plugins/migration/migration-platform/pluginBase.xml" />
+    </copy>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   

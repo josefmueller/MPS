@@ -57,9 +57,9 @@
     <copy todir="${build.layout}/mps-migration/META-INF">
       <fileset file="${mps_home}/IdeaPlugin/mps-migration/META-INF/plugin.xml" />
     </copy>
-    <copy file="${build.tmp}/deps/mpsMigrationCore/migration-platform.jar/pluginBase.xml" todir="${build.layout}/mps-migration/META-INF" />
+    <copy file="${artifacts.mpsMigrationCore}/migration-platform/META-INF/pluginBase.xml" todir="${build.layout}/mps-migration/META-INF" />
     <mkdir dir="${build.layout}/mps-migration/lib" />
-    <copy file="${artifacts.mpsMigrationCore}/migration-platform.jar" todir="${build.layout}/mps-migration/lib" />
+    <copy file="${artifacts.mpsMigrationCore}/migration-platform/lib/migration-platform.jar" todir="${build.layout}/mps-migration/lib" />
     <jar destfile="${build.layout}/mps-migration/lib/mps-migration.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.idea.migration" />
     </jar>
@@ -79,10 +79,7 @@
     <ant antfile="build/mpsMigrationCore.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
-  <target name="fetchDependencies">
-    <mkdir dir="${build.tmp}/deps/mpsMigrationCore/migration-platform.jar" />
-    <unzip src="${artifacts.mpsMigrationCore}/migration-platform.jar" dest="${build.tmp}/deps/mpsMigrationCore/migration-platform.jar" />
-  </target>
+  <target name="fetchDependencies" />
   
   <target name="build" depends="assemble" />
   
@@ -117,7 +114,7 @@
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.mpsMigrationCore}/migration-platform.jar" />
+        <fileset file="${artifacts.mpsMigrationCore}/migration-platform/lib/migration-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
