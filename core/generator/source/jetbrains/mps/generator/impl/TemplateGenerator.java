@@ -523,6 +523,28 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return super.findOutputNodeById(nodeId);
   }
 
+  @Override
+  public SNode findCopiedOutputNodeForInputNode(SNode inputNode) {
+    SNode existing = super.findCopiedOutputNodeForInputNode(inputNode);
+    if (existing != null) {
+      return existing;
+    }
+    // provisional support for scenarios where reference target has been just copied, not transformed
+    // and we need to update reference in a source model without need for explicit ML on a copy.
+    if (inputNode == null) {
+      return null;
+    }
+    SModel inputNodeModel = inputNode.getModel();
+    if (inputNodeModel == getInputModel() || inputNodeModel == null) {
+      return null;
+    }
+    CheckpointState cp = findMatchingStateFor(inputNodeModel);
+    if (cp == null) {
+      return null;
+    }
+    return cp.getCheckpointModel().getNode(inputNode.getNodeId());
+  }
+
   /**
    * For a cross-mode reference, we expect inputNode to point either at original model (or external non-transient model), or one of checkpoint models.
    * There's no evidence one could get anything but that for a node referenced from another model during generation (i.e. no chances for inputNode to point
