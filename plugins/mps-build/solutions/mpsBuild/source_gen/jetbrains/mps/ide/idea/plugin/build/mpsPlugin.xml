@@ -60,8 +60,10 @@
     <copy todir="${build.layout}/mps-vcs">
       <fileset dir="${artifacts.mpsIdeaVcs}/mps-vcs" />
     </copy>
-    <copy file="${artifacts.mpsIdeaMigration}/mps-migration.jar" todir="${build.layout}" />
-    <copy file="${artifacts.mpsMigrationCore}/migrationAssistant.jar" todir="${build.layout}" />
+    <mkdir dir="${build.layout}/mps-migration" />
+    <copy todir="${build.layout}/mps-migration">
+      <fileset dir="${artifacts.mpsIdeaMigration}/mps-migration" />
+    </copy>
     <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${plugin.version}${line.separator}mpsPlugin.date=${date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}mpsPluginCommon.plugin.version=${mpsPluginCommon.plugin.version}${line.separator}mpsPluginCommon.date=${mpsPluginCommon.date}${line.separator}mpsPluginCore.plugin.version=${mpsPluginCore.plugin.version}${line.separator}mpsPluginCore.date=${mpsPluginCore.date}${line.separator}mpsIdeaVcs.plugin.version=${mpsIdeaVcs.plugin.version}${line.separator}mpsIdeaVcs.date=${mpsIdeaVcs.date}${line.separator}mpsIdeaMigration.plugin.version=${mpsIdeaMigration.plugin.version}${line.separator}mpsIdeaMigration.date=${mpsIdeaMigration.date}</echo>
   </target>
   
