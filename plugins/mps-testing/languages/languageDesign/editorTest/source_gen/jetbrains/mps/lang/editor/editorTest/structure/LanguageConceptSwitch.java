@@ -79,9 +79,17 @@ public final class LanguageConceptSwitch {
   public static final int SwingComponentContainer = 67;
   public static final int SwingComponentinFoldedCell = 68;
   public static final int TestBlockList = 69;
-  public static final int VariableDeclarationBlock = 70;
-  public static final int VariableDeclarationReference = 71;
-  public static final int VerticalLayoutBlockList = 72;
+  public static final int TwoStepDeleteAbstractChildContainer = 70;
+  public static final int TwoStepDeleteCellCollectionChild = 71;
+  public static final int TwoStepDeleteCustomChild = 72;
+  public static final int TwoStepDeleteCustomChildContainer = 73;
+  public static final int TwoStepDeleteDefaultChild = 74;
+  public static final int TwoStepDeleteDefaultChildContainer = 75;
+  public static final int TwoStepDeleteLabelChild = 76;
+  public static final int TwoStepDeleteTestRoot = 77;
+  public static final int VariableDeclarationBlock = 78;
+  public static final int VariableDeclarationReference = 79;
+  public static final int VerticalLayoutBlockList = 80;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L);
@@ -155,6 +163,14 @@ public final class LanguageConceptSwitch {
     builder.put(0x4c2f3af68ccbed52L, SwingComponentContainer);
     builder.put(0x3511b2d0e7e6e5e7L, SwingComponentinFoldedCell);
     builder.put(0x3361ce1b17d62dbbL, TestBlockList);
+    builder.put(0x29e25dc0d0251d65L, TwoStepDeleteAbstractChildContainer);
+    builder.put(0x1139cad76e28ba86L, TwoStepDeleteCellCollectionChild);
+    builder.put(0x1139cad76e33a281L, TwoStepDeleteCustomChild);
+    builder.put(0x29e25dc0d0251d67L, TwoStepDeleteCustomChildContainer);
+    builder.put(0x29e25dc0d0251d5eL, TwoStepDeleteDefaultChild);
+    builder.put(0x29e25dc0d024c706L, TwoStepDeleteDefaultChildContainer);
+    builder.put(0x1139cad76e268c56L, TwoStepDeleteLabelChild);
+    builder.put(0x29e25dc0d024c773L, TwoStepDeleteTestRoot);
     builder.put(0x2444dad137f90ed1L, VariableDeclarationBlock);
     builder.put(0x2444dad137fa9b5cL, VariableDeclarationReference);
     builder.put(0x5f322b2c7f2c2abaL, VerticalLayoutBlockList);

@@ -12,9 +12,13 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="6lvu" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cellMenu(MPS.Editor/)" />
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
+    <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
+    <import index="h38z" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.highlight(MPS.Editor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
+    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
+    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -47,6 +51,10 @@
       <concept id="5773579205429866751" name="jetbrains.mps.lang.test.structure.EditorComponentExpression" flags="nn" index="369mXd" />
       <concept id="4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" flags="ng" index="1iFQzN">
         <reference id="4239542196496929559" name="action" index="1iFR8X" />
+      </concept>
+      <concept id="1210673684636" name="jetbrains.mps.lang.test.structure.TestNodeAnnotation" flags="ng" index="3xLA65" />
+      <concept id="1210674524691" name="jetbrains.mps.lang.test.structure.TestNodeReference" flags="nn" index="3xONca">
+        <reference id="1210674534086" name="declaration" index="3xOPvv" />
       </concept>
     </language>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -185,6 +193,11 @@
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="1171981022339" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue" flags="nn" index="3vwNmj">
         <child id="1171981057159" name="condition" index="3vwVQn" />
@@ -254,6 +267,26 @@
         <child id="2943053183527886793" name="interfaceChild" index="J_cMe" />
         <child id="7803854675610223859" name="child" index="1QM1y8" />
       </concept>
+      <concept id="3018077782998828915" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteTestRoot" flags="ng" index="3TLDEN">
+        <child id="3018077782998828918" name="container" index="3TLDEQ" />
+      </concept>
+      <concept id="3018077782998828806" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteDefaultChildContainer" flags="ng" index="3TLDF6">
+        <child id="1241246198932224640" name="cellCollectionChild" index="1Z4n1n" />
+        <child id="1241246198932081745" name="labelChild" index="1Z7Oq6" />
+        <child id="1241246198931351111" name="multipleChild" index="1Z8EMg" />
+        <child id="1241246198931351108" name="singleRequiredChild" index="1Z8EMj" />
+        <child id="1241246198931351106" name="singleOptionalChild" index="1Z8EMl" />
+      </concept>
+      <concept id="3018077782998850910" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteDefaultChild" flags="ng" index="3TLO2u" />
+      <concept id="3018077782998850919" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteCustomChildContainer" flags="ng" index="3TLO2B">
+        <property id="1241246198932953758" name="showCellWithStringId" index="1Z2x19" />
+        <property id="1241246198932960505" name="stringProperty" index="1Z2zSI" />
+        <property id="1241246198932939391" name="showCellWithCustomId" index="1Z2AyC" />
+        <child id="1241246198932939416" name="child" index="1Z2Axf" />
+      </concept>
+      <concept id="1241246198932939393" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteCustomChild" flags="ng" index="1Z2Axm" />
+      <concept id="1241246198932224646" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteCellCollectionChild" flags="ng" index="1Z4n1h" />
+      <concept id="1241246198932081750" name="jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteLabelChild" flags="ng" index="1Z7Oq1" />
     </language>
   </registry>
   <node concept="LiM7Y" id="6LcR7GqvFCf">
@@ -287,9 +320,20 @@
       </node>
     </node>
     <node concept="3clFbS" id="6LcR7Gqykl6" role="LjaKd">
-      <node concept="2HxZob" id="6LcR7Gqykl4" role="3cqZAp">
-        <node concept="1iFQzN" id="6LcR7Gqykla" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+      <node concept="3clFbF" id="14TMHtIcsVv" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIcsVw" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIcsVx" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIcsVy" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIcsVz" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIcsV$" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIcsV_" role="37wK5m" />
         </node>
       </node>
     </node>
@@ -321,9 +365,20 @@
       </node>
     </node>
     <node concept="3clFbS" id="6LcR7GqykDJ" role="LjaKd">
-      <node concept="2HxZob" id="6LcR7GqykDK" role="3cqZAp">
-        <node concept="1iFQzN" id="6LcR7GqykDL" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+      <node concept="3clFbF" id="14TMHtIcsIM" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIcsIN" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtIcsIO" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIcsIP" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIcsIQ" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIcsIR" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIcsJc" role="37wK5m" />
         </node>
       </node>
     </node>
@@ -5048,262 +5103,6 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="4EQk8IqQDni">
-    <property role="TrG5h" value="DelOnSpecialChild1DeleteParent" />
-    <property role="3GE5qa" value="delete" />
-    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
-    <node concept="1QLem1" id="4EQk8IqQDnj" role="LiRBU">
-      <node concept="3grck5" id="4EQk8IqQF5Y" role="1QLepd">
-        <node concept="3grck6" id="4EQk8IqQNsJ" role="1QM1y8">
-          <node concept="LIFWc" id="7v1E5MvycIP" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="22" />
-            <property role="p6zMs" value="22" />
-            <property role="LIFWd" value="Constant_456nmv_a" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="4EQk8IqQDnp" role="LjaKd">
-      <node concept="2HxZob" id="4EQk8IqQDnq" role="3cqZAp">
-        <node concept="1iFQzN" id="4EQk8IqQDnr" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
-        </node>
-      </node>
-    </node>
-    <node concept="1QLem1" id="4EQk8IqQNtv" role="LiZbd">
-      <node concept="LIFWc" id="4EQk8IqQNu9" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_container" />
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="4EQk8IqQNuj">
-    <property role="TrG5h" value="DelOnSpecialChild1ReplaceItWithLinkTarget" />
-    <property role="3GE5qa" value="delete" />
-    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 then it should be replaced by link target concept in pressing &quot;del&quot; by-default" />
-    <node concept="1QLem1" id="4EQk8IqQNuo" role="LiZbd">
-      <node concept="3grck5" id="4EQk8IqQVMP" role="1QLepd">
-        <node concept="3grck6" id="4EQk8IqQVN5" role="1QM1y8">
-          <node concept="LIFWc" id="4EQk8IqQVNo" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="22" />
-            <property role="p6zMs" value="22" />
-            <property role="LIFWd" value="Constant_456nmv_a" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="4EQk8IqQNus" role="LjaKd">
-      <node concept="2HxZob" id="4EQk8IqQNut" role="3cqZAp">
-        <node concept="1iFQzN" id="4EQk8IqQNuu" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
-        </node>
-      </node>
-    </node>
-    <node concept="1QLem1" id="4EQk8IqQNuR" role="LiRBU">
-      <node concept="3grck5" id="4EQk8IqQNuS" role="1QLepd">
-        <node concept="3grmtc" id="4EQk8IqQVL_" role="1QM1y8">
-          <node concept="LIFWc" id="7v1E5MvycJV" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="23" />
-            <property role="p6zMs" value="23" />
-            <property role="LIFWd" value="Constant_366jy5_a0" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="2znOOs7gM1Z">
-    <property role="TrG5h" value="DelOnInterfaceChild1DeleteParent" />
-    <property role="3GE5qa" value="delete" />
-    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
-    <node concept="1QLem1" id="2znOOs7gM20" role="LiRBU">
-      <node concept="1QM1Tp" id="2znOOs7gM21" role="1QLepd">
-        <node concept="1QM1wW" id="2znOOs7gM22" role="1QM1y8" />
-        <node concept="J_cMa" id="2znOOs7hhEW" role="J_cMe">
-          <node concept="LIFWc" id="2znOOs7hM0r" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="24" />
-            <property role="p6zMs" value="24" />
-            <property role="LIFWd" value="Constant_7e556a_a0" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1QLem1" id="2znOOs7gM24" role="LiZbd">
-      <node concept="LIFWc" id="2znOOs7gM25" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_container" />
-      </node>
-    </node>
-    <node concept="3clFbS" id="2znOOs7gM26" role="LjaKd">
-      <node concept="2HxZob" id="2znOOs7gM27" role="3cqZAp">
-        <node concept="1iFQzN" id="2znOOs7gM28" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="2znOOs7hhAL">
-    <property role="TrG5h" value="DelOnInterfaceChild1ReplaceItWithLinkTarget" />
-    <property role="3GE5qa" value="delete" />
-    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
-    <node concept="1QLem1" id="2znOOs7hhAM" role="LiRBU">
-      <node concept="1QM1Tp" id="2znOOs7hhAN" role="1QLepd">
-        <node concept="1QM1wW" id="2znOOs7hhAO" role="1QM1y8" />
-        <node concept="J_cM9" id="2znOOs7hEG_" role="J_cMe">
-          <node concept="LIFWc" id="2znOOs7hO1z" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="33" />
-            <property role="p6zMs" value="33" />
-            <property role="LIFWd" value="Constant_88198k_a0" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="2znOOs7hhAR" role="LjaKd">
-      <node concept="2HxZob" id="2znOOs7hhAS" role="3cqZAp">
-        <node concept="1iFQzN" id="2znOOs7hhAT" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
-        </node>
-      </node>
-    </node>
-    <node concept="1QLem1" id="2znOOs7hhAU" role="LiZbd">
-      <node concept="1QM1Tp" id="2znOOs7hhAV" role="1QLepd">
-        <node concept="1QM1wW" id="2znOOs7hhAW" role="1QM1y8" />
-        <node concept="J_cMa" id="2znOOs7hEHl" role="J_cMe">
-          <node concept="LIFWc" id="2znOOs7hO1P" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="24" />
-            <property role="p6zMs" value="24" />
-            <property role="LIFWd" value="Constant_7e556a_a0" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="2znOOs7hk9D">
-    <property role="TrG5h" value="DelOnSpecialInterfaceChild1DeleteParent" />
-    <property role="3GE5qa" value="delete" />
-    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
-    <node concept="1QLem1" id="2znOOs7hk9E" role="LiRBU">
-      <node concept="3grck5" id="2znOOs7hk9F" role="1QLepd">
-        <node concept="3grck6" id="2znOOs7hk9G" role="1QM1y8" />
-        <node concept="J$D8w" id="2znOOs7huQF" role="J_cMe">
-          <node concept="LIFWc" id="2znOOs7hO2f" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="32" />
-            <property role="p6zMs" value="32" />
-            <property role="LIFWd" value="Constant_phlcy6_a0" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="2znOOs7hk9I" role="LjaKd">
-      <node concept="2HxZob" id="2znOOs7hk9J" role="3cqZAp">
-        <node concept="1iFQzN" id="2znOOs7hk9K" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
-        </node>
-      </node>
-    </node>
-    <node concept="1QLem1" id="2znOOs7hk9L" role="LiZbd">
-      <node concept="LIFWc" id="2znOOs7huSm" role="lGtFl">
-        <property role="ZRATv" value="true" />
-        <property role="OXtK3" value="true" />
-        <property role="p6zMq" value="0" />
-        <property role="p6zMs" value="0" />
-        <property role="LIFWd" value="empty_container" />
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="2znOOs7hwPx">
-    <property role="TrG5h" value="DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget" />
-    <property role="3GE5qa" value="delete" />
-    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 then it should be replaced by link target concept in pressing &quot;del&quot; by-default" />
-    <node concept="1QLem1" id="2znOOs7hwPy" role="LiZbd">
-      <node concept="3grck5" id="2znOOs7hwPz" role="1QLepd">
-        <node concept="3grck6" id="2znOOs7hwP$" role="1QM1y8" />
-        <node concept="J$D8w" id="2znOOs7hyJK" role="J_cMe">
-          <node concept="LIFWc" id="2znOOs7hO2x" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="32" />
-            <property role="p6zMs" value="32" />
-            <property role="LIFWd" value="Constant_phlcy6_a0" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbS" id="2znOOs7hwPA" role="LjaKd">
-      <node concept="2HxZob" id="2znOOs7hwPB" role="3cqZAp">
-        <node concept="1iFQzN" id="2znOOs7hwPC" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
-        </node>
-      </node>
-    </node>
-    <node concept="1QLem1" id="2znOOs7hwPD" role="LiRBU">
-      <node concept="3grck5" id="2znOOs7hwPE" role="1QLepd">
-        <node concept="J$D8H" id="2znOOs7hyII" role="J_cMe">
-          <node concept="LIFWc" id="2znOOs7hyJ1" role="lGtFl">
-            <property role="ZRATv" value="true" />
-            <property role="OXtK3" value="true" />
-            <property role="p6zMq" value="33" />
-            <property role="p6zMs" value="33" />
-            <property role="LIFWd" value="Constant_3obdup_a0" />
-          </node>
-        </node>
-        <node concept="3grck6" id="2znOOs7hAIv" role="1QM1y8" />
-      </node>
-    </node>
-  </node>
-  <node concept="LiM7Y" id="VO5i9DBkaP">
-    <property role="TrG5h" value="DelWrapperChild" />
-    <property role="3GE5qa" value="delete" />
-    <property role="3YCmrE" value="nothing should happen and no exception should be thrown. Added for MPS-23505" />
-    <node concept="3clFbS" id="VO5i9DBkaW" role="LjaKd">
-      <node concept="2HxZob" id="VO5i9DBkaX" role="3cqZAp">
-        <node concept="1iFQzN" id="VO5i9DBkaY" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
-        </node>
-      </node>
-    </node>
-    <node concept="1Bq5y6" id="VO5i9DBkbT" role="LiRBU">
-      <node concept="1Bq5y5" id="VO5i9DBkc3" role="1Bq5yh">
-        <node concept="LIFWc" id="VO5i9DBkcl" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="20" />
-          <property role="LIFWd" value="constant_0" />
-        </node>
-      </node>
-    </node>
-    <node concept="1Bq5y6" id="VO5i9DBkcv" role="LiZbd">
-      <node concept="1Bq5y5" id="VO5i9DBkcw" role="1Bq5yh">
-        <node concept="LIFWc" id="VO5i9DBkcx" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="20" />
-          <property role="LIFWd" value="constant_0" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="woUdQL2L8h">
     <property role="TrG5h" value="Subst_Child_WithNextEditorAndMenu" />
     <property role="3GE5qa" value="substitute" />
@@ -5374,6 +5173,1679 @@
         </node>
       </node>
       <node concept="3clFbH" id="woUdQL2L8r" role="3cqZAp" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2znOOs7hhAL">
+    <property role="TrG5h" value="DelOnInterfaceChild1ReplaceItWithLinkTarget" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
+    <node concept="1QLem1" id="2znOOs7hhAM" role="LiRBU">
+      <node concept="1QM1Tp" id="2znOOs7hhAN" role="1QLepd">
+        <node concept="1QM1wW" id="2znOOs7hhAO" role="1QM1y8" />
+        <node concept="J_cM9" id="2znOOs7hEG_" role="J_cMe">
+          <node concept="LIFWc" id="2znOOs7hO1z" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="33" />
+            <property role="p6zMs" value="33" />
+            <property role="LIFWd" value="Constant_88198k_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="2znOOs7hhAR" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIct0D" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIct0E" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIct0F" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIct0G" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIct0H" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIct0I" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIct0J" role="37wK5m" />
+        </node>
+      </node>
+    </node>
+    <node concept="1QLem1" id="2znOOs7hhAU" role="LiZbd">
+      <node concept="1QM1Tp" id="2znOOs7hhAV" role="1QLepd">
+        <node concept="1QM1wW" id="2znOOs7hhAW" role="1QM1y8" />
+        <node concept="J_cMa" id="2znOOs7hEHl" role="J_cMe">
+          <node concept="LIFWc" id="2znOOs7hO1P" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="24" />
+            <property role="p6zMs" value="24" />
+            <property role="LIFWd" value="Constant_7e556a_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2znOOs7gM1Z">
+    <property role="TrG5h" value="DelOnInterfaceChild1DeleteParent" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
+    <node concept="1QLem1" id="2znOOs7gM20" role="LiRBU">
+      <node concept="1QM1Tp" id="2znOOs7gM21" role="1QLepd">
+        <node concept="1QM1wW" id="2znOOs7gM22" role="1QM1y8" />
+        <node concept="J_cMa" id="2znOOs7hhEW" role="J_cMe">
+          <node concept="LIFWc" id="2znOOs7hM0r" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="24" />
+            <property role="p6zMs" value="24" />
+            <property role="LIFWd" value="Constant_7e556a_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1QLem1" id="2znOOs7gM24" role="LiZbd">
+      <node concept="LIFWc" id="2znOOs7gM25" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_container" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="2znOOs7gM26" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIcsY4" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIcsY5" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIcsY6" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIcsY7" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIcsY8" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIcsY9" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIcsYa" role="37wK5m" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4EQk8IqQDni">
+    <property role="TrG5h" value="DelOnSpecialChild1DeleteParent" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
+    <node concept="1QLem1" id="4EQk8IqQDnj" role="LiRBU">
+      <node concept="3grck5" id="4EQk8IqQF5Y" role="1QLepd">
+        <node concept="3grck6" id="4EQk8IqQNsJ" role="1QM1y8">
+          <node concept="LIFWc" id="7v1E5MvycIP" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="22" />
+            <property role="p6zMs" value="22" />
+            <property role="LIFWd" value="Constant_456nmv_a" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="4EQk8IqQDnp" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIct3e" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIct3f" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIct3g" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIct3h" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIct3i" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIct3j" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIct3k" role="37wK5m" />
+        </node>
+      </node>
+    </node>
+    <node concept="1QLem1" id="4EQk8IqQNtv" role="LiZbd">
+      <node concept="LIFWc" id="4EQk8IqQNu9" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_container" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="4EQk8IqQNuj">
+    <property role="TrG5h" value="DelOnSpecialChild1ReplaceItWithLinkTarget" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 then it should be replaced by link target concept in pressing &quot;del&quot; by-default" />
+    <node concept="1QLem1" id="4EQk8IqQNuo" role="LiZbd">
+      <node concept="3grck5" id="4EQk8IqQVMP" role="1QLepd">
+        <node concept="3grck6" id="4EQk8IqQVN5" role="1QM1y8">
+          <node concept="LIFWc" id="4EQk8IqQVNo" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="22" />
+            <property role="p6zMs" value="22" />
+            <property role="LIFWd" value="Constant_456nmv_a" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="4EQk8IqQNus" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIct5N" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIct5O" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIct5P" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIct5Q" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIct5R" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIct5S" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIct5T" role="37wK5m" />
+        </node>
+      </node>
+    </node>
+    <node concept="1QLem1" id="4EQk8IqQNuR" role="LiRBU">
+      <node concept="3grck5" id="4EQk8IqQNuS" role="1QLepd">
+        <node concept="3grmtc" id="4EQk8IqQVL_" role="1QM1y8">
+          <node concept="LIFWc" id="7v1E5MvycJV" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="23" />
+            <property role="p6zMs" value="23" />
+            <property role="LIFWd" value="Constant_366jy5_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2znOOs7hwPx">
+    <property role="TrG5h" value="DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 then it should be replaced by link target concept in pressing &quot;del&quot; by-default" />
+    <node concept="1QLem1" id="2znOOs7hwPy" role="LiZbd">
+      <node concept="3grck5" id="2znOOs7hwPz" role="1QLepd">
+        <node concept="3grck6" id="2znOOs7hwP$" role="1QM1y8" />
+        <node concept="J$D8w" id="2znOOs7hyJK" role="J_cMe">
+          <node concept="LIFWc" id="2znOOs7hO2x" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="32" />
+            <property role="p6zMs" value="32" />
+            <property role="LIFWd" value="Constant_phlcy6_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="2znOOs7hwPA" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIctaX" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIctaY" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIctaZ" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIctb0" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIctb1" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIctb2" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIctb3" role="37wK5m" />
+        </node>
+      </node>
+    </node>
+    <node concept="1QLem1" id="2znOOs7hwPD" role="LiRBU">
+      <node concept="3grck5" id="2znOOs7hwPE" role="1QLepd">
+        <node concept="J$D8H" id="2znOOs7hyII" role="J_cMe">
+          <node concept="LIFWc" id="2znOOs7hyJ1" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="33" />
+            <property role="p6zMs" value="33" />
+            <property role="LIFWd" value="Constant_3obdup_a0" />
+          </node>
+        </node>
+        <node concept="3grck6" id="2znOOs7hAIv" role="1QM1y8" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2znOOs7hk9D">
+    <property role="TrG5h" value="DelOnSpecialInterfaceChild1DeleteParent" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
+    <node concept="1QLem1" id="2znOOs7hk9E" role="LiRBU">
+      <node concept="3grck5" id="2znOOs7hk9F" role="1QLepd">
+        <node concept="3grck6" id="2znOOs7hk9G" role="1QM1y8" />
+        <node concept="J$D8w" id="2znOOs7huQF" role="J_cMe">
+          <node concept="LIFWc" id="2znOOs7hO2f" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="32" />
+            <property role="p6zMs" value="32" />
+            <property role="LIFWd" value="Constant_phlcy6_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="2znOOs7hk9I" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIct8o" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIct8p" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIct8q" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIct8r" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIct8s" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIct8t" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIct8u" role="37wK5m" />
+        </node>
+      </node>
+    </node>
+    <node concept="1QLem1" id="2znOOs7hk9L" role="LiZbd">
+      <node concept="LIFWc" id="2znOOs7huSm" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_container" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="VO5i9DBkaP">
+    <property role="TrG5h" value="DelWrapperChild" />
+    <property role="3GE5qa" value="delete" />
+    <property role="3YCmrE" value="nothing should happen and no exception should be thrown. Added for MPS-23505" />
+    <node concept="3clFbS" id="VO5i9DBkaW" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIctdy" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIctdz" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIctd$" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIctd_" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIctdA" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIctdB" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIctdC" role="37wK5m" />
+        </node>
+      </node>
+    </node>
+    <node concept="1Bq5y6" id="VO5i9DBkbT" role="LiRBU">
+      <node concept="1Bq5y5" id="VO5i9DBkc3" role="1Bq5yh">
+        <node concept="LIFWc" id="VO5i9DBkcl" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="20" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+    <node concept="1Bq5y6" id="VO5i9DBkcv" role="LiZbd">
+      <node concept="1Bq5y5" id="VO5i9DBkcw" role="1Bq5yh">
+        <node concept="LIFWc" id="VO5i9DBkcx" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="20" />
+          <property role="LIFWd" value="constant_0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtI7Cjo">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteSingleOptional" />
+    <node concept="3clFbS" id="14TMHtI7Cjp" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtI7Cjq" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtI7Cjr" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtI7Cjs" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtI7Cjt" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtI7Cju" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7Cjv" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3vwNmj" id="14TMHtI7Cjw" role="3cqZAp">
+                <node concept="2YIFZM" id="14TMHtI7Cjx" role="3vwVQn">
+                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <node concept="2OqwBi" id="14TMHtI7Cjy" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtI7Cjz" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtI7Cj$" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="14TMHtI7Cj_" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtI7CjA" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtI7CjB" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSelectedNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtI7CjC" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7CjD" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtI7CjE" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7CjF" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7CjG" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7CjH" role="1Z8EMj" />
+        <node concept="3TLO2u" id="14TMHtI7CjI" role="1Z8EMl">
+          <node concept="LIFWc" id="14TMHtI7CjJ" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="29" />
+            <property role="p6zMs" value="29" />
+            <property role="LIFWd" value="Constant_sgb24n_a0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7CjK" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7CjL" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7CjM" role="1Z8EMj" />
+        <node concept="LIFWc" id="14TMHtI7CjN" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="empty_singleOptionalChild" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtI7CPr">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteSingleRequired" />
+    <node concept="3clFbS" id="14TMHtI7CPs" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtI7CPt" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtI7CPu" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtI7CPv" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtI7CPw" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtI7CPx" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7CPy" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="14TMHtI9mau" role="3cqZAp">
+                <node concept="2OqwBi" id="14TMHtI9mav" role="3clFbG">
+                  <node concept="2OqwBi" id="14TMHtI9maw" role="2Oq$k0">
+                    <node concept="2OqwBi" id="14TMHtI9max" role="2Oq$k0">
+                      <node concept="2OqwBi" id="14TMHtI9may" role="2Oq$k0">
+                        <node concept="369mXd" id="14TMHtI9maz" role="2Oq$k0" />
+                        <node concept="liA8E" id="14TMHtI9ma$" role="2OqNvi">
+                          <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="14TMHtI9ma_" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="14TMHtI9maA" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="14TMHtI9maB" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                    <node concept="1bVj0M" id="14TMHtI9maC" role="37wK5m">
+                      <node concept="3clFbS" id="14TMHtI9maD" role="1bW5cS">
+                        <node concept="3vwNmj" id="14TMHtI9maE" role="3cqZAp">
+                          <node concept="2YIFZM" id="14TMHtI9maF" role="3vwVQn">
+                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <node concept="2OqwBi" id="14TMHtI9maG" role="37wK5m">
+                              <node concept="369mXd" id="14TMHtI9maH" role="2Oq$k0" />
+                              <node concept="liA8E" id="14TMHtI9maI" role="2OqNvi">
+                                <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                              </node>
+                            </node>
+                            <node concept="3xONca" id="14TMHtI9maJ" role="37wK5m">
+                              <ref role="3xOPvv" node="14TMHtI9uOE" resolve="container" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtI7CPF" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7CPG" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtI7CPH" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7CPI" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7CPJ" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7CPK" role="1Z8EMj">
+          <node concept="LIFWc" id="14TMHtI7CPL" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="29" />
+            <property role="p6zMs" value="29" />
+            <property role="LIFWd" value="Constant_sgb24n_a0" />
+          </node>
+        </node>
+        <node concept="3xLA65" id="14TMHtI9uOE" role="lGtFl">
+          <property role="TrG5h" value="container" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7CPM" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="LIFWc" id="14TMHtI7CPN" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_container" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtI7D1k">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteMultiple" />
+    <node concept="3clFbS" id="14TMHtI7D1l" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtI7D1m" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtI7D1n" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtI7D1o" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtI7D1p" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtI7D1q" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7D1r" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3vwNmj" id="14TMHtI7D1s" role="3cqZAp">
+                <node concept="2YIFZM" id="14TMHtI7D1t" role="3vwVQn">
+                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <node concept="2OqwBi" id="14TMHtI7D1u" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtI7D1v" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtI7D1w" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="14TMHtI7D1x" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtI7D1y" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtI7D1z" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSelectedNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtI7D1$" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7D1_" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtI7D1A" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7D1B" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7D1C" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7Ddg" role="1Z8EMg">
+          <property role="TrG5h" value="prev" />
+        </node>
+        <node concept="3TLO2u" id="14TMHtI7Ddq" role="1Z8EMg">
+          <node concept="LIFWc" id="14TMHtI7DgQ" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="29" />
+            <property role="p6zMs" value="29" />
+            <property role="LIFWd" value="Constant_sgb24n_a0" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtI7D1D" role="1Z8EMj" />
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7Dh8" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7Dh9" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7Dha" role="1Z8EMg">
+          <property role="TrG5h" value="prev" />
+          <node concept="LIFWc" id="14TMHtIg9G2" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="1" />
+            <property role="p6zMs" value="1" />
+            <property role="LIFWd" value="Constant_sgb24n_c0" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtI7Dhd" role="1Z8EMj" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtI7Uae">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteMultipleWholeSelected" />
+    <node concept="3clFbS" id="14TMHtI7Uaf" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtI7Uag" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtI7Uah" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtI7Uai" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtI7Uaj" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtI7Uak" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7Ual" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtI7Uam" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7Uan" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7Uao" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7Uap" role="1Z8EMg">
+          <property role="TrG5h" value="prev" />
+        </node>
+        <node concept="3TLO2u" id="14TMHtI7Uaq" role="1Z8EMg">
+          <node concept="LIFWc" id="14TMHtIgikL" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="LIFWd" value="Collection_sgb24n_a" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtI7Uas" role="1Z8EMj" />
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7Uat" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7Uau" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7Uav" role="1Z8EMg">
+          <property role="TrG5h" value="prev" />
+          <node concept="LIFWc" id="14TMHtIgijG" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="1" />
+            <property role="p6zMs" value="1" />
+            <property role="LIFWd" value="Constant_sgb24n_c0" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtI7Uax" role="1Z8EMj" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtI7Ue9">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteSingleOptionalWholeSelected" />
+    <node concept="3clFbS" id="14TMHtI7Uea" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtI7Ueb" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtI7Uec" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtI7Ued" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtI7Uee" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtI7Uef" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7Ueg" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtI7Ueh" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7Uei" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7Uej" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7Uek" role="1Z8EMj" />
+        <node concept="3TLO2u" id="14TMHtI7Uel" role="1Z8EMl">
+          <node concept="LIFWc" id="14TMHtIgilS" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="LIFWd" value="Collection_sgb24n_a" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7Uen" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7Ueo" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7Uep" role="1Z8EMj" />
+        <node concept="LIFWc" id="14TMHtI7Ueq" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="empty_singleOptionalChild" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtI7Uh9">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteSingleRequiredWholeSelected" />
+    <node concept="3clFbS" id="14TMHtI7Uha" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtI7Uhb" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtI7Uhc" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtI7Uhd" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtI7Uhe" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtI7Uhf" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7Uhg" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="14TMHtI9mB7" role="3cqZAp">
+                <node concept="2OqwBi" id="14TMHtI9mB8" role="3clFbG">
+                  <node concept="2OqwBi" id="14TMHtI9mB9" role="2Oq$k0">
+                    <node concept="2OqwBi" id="14TMHtI9mBa" role="2Oq$k0">
+                      <node concept="2OqwBi" id="14TMHtI9mBb" role="2Oq$k0">
+                        <node concept="369mXd" id="14TMHtI9mBc" role="2Oq$k0" />
+                        <node concept="liA8E" id="14TMHtI9mBd" role="2OqNvi">
+                          <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="14TMHtI9mBe" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="14TMHtI9mBf" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="14TMHtI9mBg" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                    <node concept="1bVj0M" id="14TMHtI9mBh" role="37wK5m">
+                      <node concept="3clFbS" id="14TMHtI9mBi" role="1bW5cS">
+                        <node concept="3vwNmj" id="14TMHtI9mBj" role="3cqZAp">
+                          <node concept="2YIFZM" id="14TMHtI9mBk" role="3vwVQn">
+                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <node concept="2OqwBi" id="14TMHtI9mBl" role="37wK5m">
+                              <node concept="369mXd" id="14TMHtI9mBm" role="2Oq$k0" />
+                              <node concept="liA8E" id="14TMHtI9mBn" role="2OqNvi">
+                                <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                              </node>
+                            </node>
+                            <node concept="3xONca" id="14TMHtI9x6t" role="37wK5m">
+                              <ref role="3xOPvv" node="14TMHtI9v6M" resolve="container" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtI7Uhp" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI7Uhq" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtI7Uhr" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7Uhs" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI7Uht" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI7Uhu" role="1Z8EMj">
+          <node concept="LIFWc" id="14TMHtI7Uhv" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="29" />
+            <property role="p6zMs" value="29" />
+            <property role="LIFWd" value="Constant_sgb24n_a0" />
+          </node>
+        </node>
+        <node concept="3xLA65" id="14TMHtI9v6M" role="lGtFl">
+          <property role="TrG5h" value="container" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI7Uhw" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="LIFWc" id="14TMHtI7Uhx" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_container" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtI9VLz">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteLabelPartiallySelected" />
+    <node concept="3clFbS" id="14TMHtI9VL$" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtI9VL_" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtI9VLA" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtI9VLB" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtI9VLC" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtI9VLD" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI9VLE" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3vwNmj" id="14TMHtI9VLF" role="3cqZAp">
+                <node concept="2YIFZM" id="14TMHtI9VLG" role="3vwVQn">
+                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <node concept="2OqwBi" id="14TMHtI9VLH" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtI9VLI" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtI9VLJ" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="14TMHtI9VLK" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtI9VLL" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtI9VLM" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSelectedNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtI9VLN" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtI9VLO" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtI9VLP" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI9VLQ" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI9VLR" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI9VLS" role="1Z8EMj" />
+        <node concept="1Z7Oq1" id="14TMHtIab1H" role="1Z7Oq6">
+          <node concept="LIFWc" id="14TMHtIabiN" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="3" />
+            <property role="LIFWd" value="Constant_djyyps_a" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtI9VLV" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtI9VLW" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtI9VLX" role="1Z8EMj" />
+        <node concept="LIFWc" id="14TMHtIbBKT" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="empty_labelChild" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIabmo">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteLabelWholeSelected" />
+    <node concept="3clFbS" id="14TMHtIabmp" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIabmq" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIabmr" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIabms" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIabmt" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIabmu" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIabmv" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIabmE" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIabmF" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIabmG" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIabmH" role="1Z8EMj" />
+        <node concept="1Z7Oq1" id="14TMHtIabmI" role="1Z7Oq6">
+          <node concept="LIFWc" id="14TMHtIabCk" role="lGtFl">
+            <property role="LIFWa" value="2" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="5" />
+            <property role="LIFWd" value="Constant_djyyps_a" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIabmK" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIabmL" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIabmM" role="1Z8EMj" />
+        <node concept="LIFWc" id="14TMHtIbBOV" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="empty_labelChild" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIaqTA">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteCollectionNotCoveringSelected" />
+    <node concept="3clFbS" id="14TMHtIaqTB" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIaqTC" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIaqTD" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIaqTE" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIaqTF" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIaqTG" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIaqTH" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3vwNmj" id="14TMHtIaqTI" role="3cqZAp">
+                <node concept="2YIFZM" id="14TMHtIaqTJ" role="3vwVQn">
+                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <node concept="2OqwBi" id="14TMHtIaqTK" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtIaqTL" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtIaqTM" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="14TMHtIaqTN" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtIaqTO" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtIaqTP" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSelectedNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtIaqTQ" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIaqTR" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIaqTS" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIaqTT" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIaqTU" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIaqTV" role="1Z8EMj" />
+        <node concept="1Z4n1h" id="14TMHtIaEM9" role="1Z4n1n">
+          <node concept="LIFWc" id="14TMHtIaRLj" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="LIFWd" value="Collection_hqlgg9_a0a" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIaqTY" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIaqTZ" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIaqU0" role="1Z8EMj" />
+        <node concept="LIFWc" id="14TMHtIaROI" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="empty_cellCollectionChild" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIaROS">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteCollectionCoveringSelected" />
+    <property role="3YCmrE" value="the selected collection cell is not big cell, but it covers the whole node, so the node should be deleted immediately" />
+    <node concept="3clFbS" id="14TMHtIaROT" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIaROU" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIaROV" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtIaROW" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIaROX" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIaROY" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIaROZ" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIaRPa" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIaRPb" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIaRPc" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIaRPd" role="1Z8EMj" />
+        <node concept="1Z4n1h" id="14TMHtIaRPe" role="1Z4n1n">
+          <node concept="LIFWc" id="14TMHtIc2A9" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="LIFWd" value="coveringCollection" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIaRPg" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIaRPh" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIaRPi" role="1Z8EMj" />
+        <node concept="LIFWc" id="14TMHtIbkai" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="empty_cellCollectionChild" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIdnr6">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteCustomCellId" />
+    <node concept="3clFbS" id="14TMHtIdnr7" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIdnr8" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIdnr9" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIdnra" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIdnrb" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIdnrc" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIdnrd" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3vwNmj" id="14TMHtIdD3s" role="3cqZAp">
+                <node concept="2OqwBi" id="14TMHtIdFSY" role="3vwVQn">
+                  <node concept="2OqwBi" id="14TMHtIdDy3" role="2Oq$k0">
+                    <node concept="369mXd" id="14TMHtIdD4t" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtIdFNp" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getDeletionApprover():jetbrains.mps.openapi.editor.DeletionApprover" resolve="getDeletionApprover" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="14TMHtIdG1v" role="2OqNvi">
+                    <ref role="37wK5l" to="cj4x:~DeletionApprover.isApprovedForDeletion(jetbrains.mps.openapi.editor.cells.EditorCell):boolean" resolve="isApprovedForDeletion" />
+                    <node concept="2OqwBi" id="14TMHtIdGyJ" role="37wK5m">
+                      <node concept="369mXd" id="14TMHtIdG3A" role="2Oq$k0" />
+                      <node concept="liA8E" id="14TMHtIdIPK" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtIdIRY" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIdIRZ" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIdnre" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdnrf" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIdny9" role="3TLDEQ">
+        <property role="1Z2AyC" value="true" />
+        <property role="1Z2x19" value="true" />
+        <node concept="LIFWc" id="14TMHtIdn$b" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="customId" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdnyj" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIdnyk" role="3TLDEQ">
+        <property role="1Z2AyC" value="false" />
+        <property role="1Z2x19" value="true" />
+        <node concept="LIFWc" id="14TMHtIdCUd" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="stringId" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIdIVu">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteStringCellId" />
+    <node concept="3clFbS" id="14TMHtIdIVv" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIdIVw" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIdIVx" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIdIVy" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIdIVz" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIdIV$" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIdIV_" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3vwNmj" id="14TMHtIdIVA" role="3cqZAp">
+                <node concept="2OqwBi" id="14TMHtIdIVB" role="3vwVQn">
+                  <node concept="2OqwBi" id="14TMHtIdIVC" role="2Oq$k0">
+                    <node concept="369mXd" id="14TMHtIdIVD" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtIdIVE" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getDeletionApprover():jetbrains.mps.openapi.editor.DeletionApprover" resolve="getDeletionApprover" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="14TMHtIdIVF" role="2OqNvi">
+                    <ref role="37wK5l" to="cj4x:~DeletionApprover.isApprovedForDeletion(jetbrains.mps.openapi.editor.cells.EditorCell):boolean" resolve="isApprovedForDeletion" />
+                    <node concept="2OqwBi" id="14TMHtIdIVG" role="37wK5m">
+                      <node concept="369mXd" id="14TMHtIdIVH" role="2Oq$k0" />
+                      <node concept="liA8E" id="14TMHtIdIVI" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtIdIVJ" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIdIVK" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIdIVL" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdIVM" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIdIVN" role="3TLDEQ">
+        <property role="1Z2AyC" value="true" />
+        <property role="1Z2x19" value="true" />
+        <node concept="LIFWc" id="14TMHtIdJ65" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="stringId" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdIVP" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIdIVQ" role="3TLDEQ">
+        <property role="1Z2AyC" value="true" />
+        <property role="1Z2x19" value="false" />
+        <node concept="LIFWc" id="14TMHtIdJ8G" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="customId" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIdJ8Q">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteStringProperty" />
+    <node concept="3clFbS" id="14TMHtIdJ8R" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIdJ8S" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIdJ8T" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIdJ8U" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIdJ8V" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIdJ8W" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIdJ8X" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3vwNmj" id="14TMHtIdJ8Y" role="3cqZAp">
+                <node concept="2OqwBi" id="14TMHtIdJ8Z" role="3vwVQn">
+                  <node concept="2OqwBi" id="14TMHtIdJ90" role="2Oq$k0">
+                    <node concept="369mXd" id="14TMHtIdJ91" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtIdJ92" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getDeletionApprover():jetbrains.mps.openapi.editor.DeletionApprover" resolve="getDeletionApprover" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="14TMHtIdJ93" role="2OqNvi">
+                    <ref role="37wK5l" to="cj4x:~DeletionApprover.isApprovedForDeletion(jetbrains.mps.openapi.editor.cells.EditorCell):boolean" resolve="isApprovedForDeletion" />
+                    <node concept="2OqwBi" id="14TMHtIdJ94" role="37wK5m">
+                      <node concept="369mXd" id="14TMHtIdJ95" role="2Oq$k0" />
+                      <node concept="liA8E" id="14TMHtIdJ96" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedCell():jetbrains.mps.openapi.editor.cells.EditorCell" resolve="getSelectedCell" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtIdJ97" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIdJ98" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIdJ99" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdJ9a" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIdJ9b" role="3TLDEQ">
+        <property role="1Z2AyC" value="true" />
+        <property role="1Z2x19" value="true" />
+        <property role="1Z2zSI" value="stringProperty" />
+        <node concept="LIFWc" id="14TMHtIdJhn" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="14" />
+          <property role="p6zMs" value="14" />
+          <property role="LIFWd" value="property_stringProperty" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdJ9d" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIdJ9e" role="3TLDEQ">
+        <property role="1Z2AyC" value="true" />
+        <property role="1Z2x19" value="true" />
+        <property role="1Z2zSI" value="" />
+        <node concept="LIFWc" id="14TMHtIdJkA" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="property_stringProperty" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIdJkK">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteChildFromParent" />
+    <node concept="3clFbS" id="14TMHtIdJkL" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIdJkM" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIdJkN" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtIdJkO" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIdJkP" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIdJkQ" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIdJkR" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="14TMHtIdXW2" role="3cqZAp">
+                <node concept="2OqwBi" id="14TMHtIdXW3" role="3clFbG">
+                  <node concept="2OqwBi" id="14TMHtIdXW4" role="2Oq$k0">
+                    <node concept="2OqwBi" id="14TMHtIdXW5" role="2Oq$k0">
+                      <node concept="2OqwBi" id="14TMHtIdXW6" role="2Oq$k0">
+                        <node concept="369mXd" id="14TMHtIdXW7" role="2Oq$k0" />
+                        <node concept="liA8E" id="14TMHtIdXW8" role="2OqNvi">
+                          <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="14TMHtIdXW9" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="14TMHtIdXWa" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="14TMHtIdXWb" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                    <node concept="1bVj0M" id="14TMHtIdXWc" role="37wK5m">
+                      <node concept="3clFbS" id="14TMHtIdXWd" role="1bW5cS">
+                        <node concept="3vwNmj" id="14TMHtIdXWe" role="3cqZAp">
+                          <node concept="2YIFZM" id="14TMHtIdXWf" role="3vwVQn">
+                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <node concept="2OqwBi" id="14TMHtIdXWg" role="37wK5m">
+                              <node concept="369mXd" id="14TMHtIdXWh" role="2Oq$k0" />
+                              <node concept="liA8E" id="14TMHtIdXWi" role="2OqNvi">
+                                <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                              </node>
+                            </node>
+                            <node concept="3xONca" id="14TMHtIeS6A" role="37wK5m">
+                              <ref role="3xOPvv" node="14TMHtIeS0N" resolve="child" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtIdJl1" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIdJl2" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIdJl3" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdJl4" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIeRUT" role="3TLDEQ">
+        <property role="1Z2AyC" value="true" />
+        <property role="1Z2x19" value="true" />
+        <property role="1Z2zSI" value="string" />
+        <node concept="1Z2Axm" id="14TMHtIeRV4" role="1Z2Axf">
+          <node concept="3xLA65" id="14TMHtIeS0N" role="lGtFl">
+            <property role="TrG5h" value="child" />
+          </node>
+        </node>
+        <node concept="LIFWc" id="14TMHtIeS6y" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_jshiyh_a5a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdJl7" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIdJl8" role="3TLDEQ">
+        <property role="1Z2AyC" value="true" />
+        <property role="1Z2x19" value="true" />
+        <property role="1Z2zSI" value="string" />
+        <node concept="LIFWc" id="14TMHtIdXHg" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_jshiyh_a5a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIdYaF">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteUnexistingCellId" />
+    <property role="3YCmrE" value="since cell to approve for deletion was not found, delete child immediately" />
+    <node concept="3clFbS" id="14TMHtIdYaG" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIdYaH" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIdYaI" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtIdYaJ" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIdYaK" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIdYb5" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIdYb6" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIdYb7" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdYb8" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIdYb9" role="3TLDEQ">
+        <property role="1Z2AyC" value="true" />
+        <property role="1Z2x19" value="true" />
+        <property role="1Z2zSI" value="" />
+        <node concept="1Z2Axm" id="14TMHtIdYba" role="1Z2Axf">
+          <node concept="3xLA65" id="14TMHtIdYbb" role="lGtFl">
+            <property role="TrG5h" value="child" />
+          </node>
+        </node>
+        <node concept="LIFWc" id="14TMHtIdZ9W" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_jshiyh_b5a" />
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIdYbd" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLO2B" id="14TMHtIdYbe" role="3TLDEQ">
+        <property role="1Z2AyC" value="true" />
+        <property role="1Z2x19" value="true" />
+        <property role="1Z2zSI" value="" />
+        <node concept="LIFWc" id="14TMHtIdZfP" role="lGtFl">
+          <property role="LIFWa" value="0" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="0" />
+          <property role="p6zMs" value="0" />
+          <property role="LIFWd" value="Constant_jshiyh_b5a" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIfgkj">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepBackspacePreviousChild" />
+    <node concept="3clFbS" id="14TMHtIfgkk" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIfgkl" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIfgkm" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="14TMHtIfgkn" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIfgko" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIfgkp" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIfgkq" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="14TMHtIfDio" role="3cqZAp">
+                <node concept="2OqwBi" id="14TMHtIfDip" role="3clFbG">
+                  <node concept="2OqwBi" id="14TMHtIfDiq" role="2Oq$k0">
+                    <node concept="2OqwBi" id="14TMHtIfDir" role="2Oq$k0">
+                      <node concept="2OqwBi" id="14TMHtIfDis" role="2Oq$k0">
+                        <node concept="369mXd" id="14TMHtIfDit" role="2Oq$k0" />
+                        <node concept="liA8E" id="14TMHtIfDiu" role="2OqNvi">
+                          <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="14TMHtIfDiv" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="14TMHtIfDiw" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="14TMHtIfDix" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                    <node concept="1bVj0M" id="14TMHtIfDiy" role="37wK5m">
+                      <node concept="3clFbS" id="14TMHtIfDiz" role="1bW5cS">
+                        <node concept="3vwNmj" id="14TMHtIfDi$" role="3cqZAp">
+                          <node concept="2YIFZM" id="14TMHtIfDi_" role="3vwVQn">
+                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <node concept="2OqwBi" id="14TMHtIfDiA" role="37wK5m">
+                              <node concept="369mXd" id="14TMHtIfDiB" role="2Oq$k0" />
+                              <node concept="liA8E" id="14TMHtIfDiC" role="2OqNvi">
+                                <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                              </node>
+                            </node>
+                            <node concept="3xONca" id="14TMHtIfDrB" role="37wK5m">
+                              <ref role="3xOPvv" node="14TMHtIfgM1" resolve="previous" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtIfDHM" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIfDHN" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIfgk_" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIfgkA" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIfgkB" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIfgkC" role="1Z8EMg">
+          <property role="TrG5h" value="prev" />
+          <node concept="3xLA65" id="14TMHtIfgM1" role="lGtFl">
+            <property role="TrG5h" value="previous" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtIfgkD" role="1Z8EMg">
+          <property role="TrG5h" value="current" />
+          <node concept="LIFWc" id="14TMHtIfgIA" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Constant_sgb24n_a0" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtIfgkF" role="1Z8EMj" />
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIfgkG" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIfgkH" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIfCTr" role="1Z8EMg">
+          <property role="TrG5h" value="current" />
+          <node concept="LIFWc" id="14TMHtIfCXj" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Constant_sgb24n_a0" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtIfgkK" role="1Z8EMj" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="14TMHtIfDxN">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepBackspaceDelete" />
+    <node concept="3clFbS" id="14TMHtIfDxO" role="LjaKd">
+      <node concept="3clFbF" id="14TMHtIfDxP" role="3cqZAp">
+        <node concept="2YIFZM" id="14TMHtIfDxQ" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="14TMHtIfDxR" role="37wK5m">
+            <node concept="3clFbS" id="14TMHtIfDxS" role="1bW5cS">
+              <node concept="2HxZob" id="14TMHtIfDxT" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIfDxU" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg86S0x" resolve="Backspace" />
+                </node>
+              </node>
+              <node concept="3clFbF" id="14TMHtIfDxV" role="3cqZAp">
+                <node concept="2OqwBi" id="14TMHtIfDxW" role="3clFbG">
+                  <node concept="2OqwBi" id="14TMHtIfDxX" role="2Oq$k0">
+                    <node concept="2OqwBi" id="14TMHtIfDxY" role="2Oq$k0">
+                      <node concept="2OqwBi" id="14TMHtIfDxZ" role="2Oq$k0">
+                        <node concept="369mXd" id="14TMHtIfDy0" role="2Oq$k0" />
+                        <node concept="liA8E" id="14TMHtIfDy1" role="2OqNvi">
+                          <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="14TMHtIfDy2" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorContext.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="14TMHtIfDy3" role="2OqNvi">
+                      <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="14TMHtIfDy4" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+                    <node concept="1bVj0M" id="14TMHtIfDy5" role="37wK5m">
+                      <node concept="3clFbS" id="14TMHtIfDy6" role="1bW5cS">
+                        <node concept="3vwNmj" id="14TMHtIfDy7" role="3cqZAp">
+                          <node concept="2YIFZM" id="14TMHtIfDy8" role="3vwVQn">
+                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <node concept="2OqwBi" id="14TMHtIfDy9" role="37wK5m">
+                              <node concept="369mXd" id="14TMHtIfDya" role="2Oq$k0" />
+                              <node concept="liA8E" id="14TMHtIfDyb" role="2OqNvi">
+                                <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                              </node>
+                            </node>
+                            <node concept="3xONca" id="14TMHtIfDyc" role="37wK5m">
+                              <ref role="3xOPvv" node="14TMHtIfDyh" resolve="previous" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2HxZob" id="14TMHtIfDZn" role="3cqZAp">
+                <node concept="1iFQzN" id="14TMHtIfDZo" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+              <node concept="3vwNmj" id="14TMHtIfEjc" role="3cqZAp">
+                <node concept="2YIFZM" id="14TMHtIfEjd" role="3vwVQn">
+                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <node concept="2OqwBi" id="14TMHtIfEje" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtIfEjf" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtIfEjg" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getEditorContext():jetbrains.mps.nodeEditor.EditorContext" resolve="getEditorContext" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="14TMHtIfFfG" role="37wK5m">
+                    <node concept="369mXd" id="14TMHtIfEtz" role="2Oq$k0" />
+                    <node concept="liA8E" id="14TMHtIfJVY" role="2OqNvi">
+                      <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSelectedNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="14TMHtIfDyd" role="37wK5m">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIfDye" role="LiRBU">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIfDyf" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIfDyg" role="1Z8EMg">
+          <property role="TrG5h" value="prev" />
+          <node concept="3xLA65" id="14TMHtIfDyh" role="lGtFl">
+            <property role="TrG5h" value="previous" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtIfDyi" role="1Z8EMg">
+          <property role="TrG5h" value="current" />
+          <node concept="LIFWc" id="14TMHtIfDyj" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Constant_sgb24n_a0" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtIfDyk" role="1Z8EMj" />
+      </node>
+    </node>
+    <node concept="3TLDEN" id="14TMHtIfDyl" role="LiZbd">
+      <property role="TrG5h" value="root" />
+      <node concept="3TLDF6" id="14TMHtIfDym" role="3TLDEQ">
+        <node concept="3TLO2u" id="14TMHtIfSN_" role="1Z8EMg">
+          <property role="TrG5h" value="prev" />
+        </node>
+        <node concept="3TLO2u" id="14TMHtIfDyn" role="1Z8EMg">
+          <property role="TrG5h" value="current" />
+          <node concept="LIFWc" id="14TMHtIfDyo" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Constant_sgb24n_a0" />
+          </node>
+        </node>
+        <node concept="3TLO2u" id="14TMHtIfDyp" role="1Z8EMj" />
+      </node>
     </node>
   </node>
 </model>

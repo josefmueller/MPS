@@ -82,6 +82,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSwingComponentContainer = createDescriptorForSwingComponentContainer();
   /*package*/ final ConceptDescriptor myConceptSwingComponentinFoldedCell = createDescriptorForSwingComponentinFoldedCell();
   /*package*/ final ConceptDescriptor myConceptTestBlockList = createDescriptorForTestBlockList();
+  /*package*/ final ConceptDescriptor myConceptTwoStepDeleteAbstractChildContainer = createDescriptorForTwoStepDeleteAbstractChildContainer();
+  /*package*/ final ConceptDescriptor myConceptTwoStepDeleteCellCollectionChild = createDescriptorForTwoStepDeleteCellCollectionChild();
+  /*package*/ final ConceptDescriptor myConceptTwoStepDeleteCustomChild = createDescriptorForTwoStepDeleteCustomChild();
+  /*package*/ final ConceptDescriptor myConceptTwoStepDeleteCustomChildContainer = createDescriptorForTwoStepDeleteCustomChildContainer();
+  /*package*/ final ConceptDescriptor myConceptTwoStepDeleteDefaultChild = createDescriptorForTwoStepDeleteDefaultChild();
+  /*package*/ final ConceptDescriptor myConceptTwoStepDeleteDefaultChildContainer = createDescriptorForTwoStepDeleteDefaultChildContainer();
+  /*package*/ final ConceptDescriptor myConceptTwoStepDeleteLabelChild = createDescriptorForTwoStepDeleteLabelChild();
+  /*package*/ final ConceptDescriptor myConceptTwoStepDeleteTestRoot = createDescriptorForTwoStepDeleteTestRoot();
   /*package*/ final ConceptDescriptor myConceptVariableDeclarationBlock = createDescriptorForVariableDeclarationBlock();
   /*package*/ final ConceptDescriptor myConceptVariableDeclarationReference = createDescriptorForVariableDeclarationReference();
   /*package*/ final ConceptDescriptor myConceptVerticalLayoutBlockList = createDescriptorForVerticalLayoutBlockList();
@@ -93,7 +101,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstract_SubstTestChild_WithNextApplicableEditorAndMenu, myConceptAttractsFocusBlock, myConceptAttributeChild, myConceptAttributeWithChildren, myConceptAttributedConcept, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptCollapsedByDefault, myConceptCollapsedConditionally, myConceptCollapsibleConcept, myConceptCompletionChild, myConceptCompletionParent, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestChildSpecialContainer, myConceptDelTestRoot, myConceptDelTestSpecialAbstractChild, myConceptDelTestSpecialChild1, myConceptDeleteWrapperChild, myConceptDeleteWrapperRoot, myConceptFoldedCell, myConceptFoldingContainer, myConceptIBaseTestBlock, myConceptIDelTestChild, myConceptIDelTestConcreteChild, myConceptISpecialDelTestChild, myConceptISpecialDelTestConcreteChild, myConceptInitAbstractChild, myConceptInitChildWithDirectCycle_card1, myConceptInitChildWithDirectCycle_card1n, myConceptInitChildWithIndirectCycle_card1, myConceptInitChildWithIndirectCycle_card1n, myConceptInitChildWithTwoSameConceptChildren, myConceptInitContainer, myConceptInitGrandChild, myConceptInitGrandChildWithIndirectCycle_card1, myConceptInitGrandChildWithIndirectCycle_card1n, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptLabelConceptWithProperty, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSelectionChild, myConceptSelectionContainer, myConceptSideTranformWrapper, myConceptSimpleNode, myConceptSimpleNodeHidingAttribute, myConceptSimpleNodesContainer, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptStyleChild, myConceptStyleParent, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_1, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_2, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptSwingComponent, myConceptSwingComponentContainer, myConceptSwingComponentinFoldedCell, myConceptTestBlockList, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
+    return Arrays.asList(myConceptAbstract_SubstTestChild_WithNextApplicableEditorAndMenu, myConceptAttractsFocusBlock, myConceptAttributeChild, myConceptAttributeWithChildren, myConceptAttributedConcept, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptCollapsedByDefault, myConceptCollapsedConditionally, myConceptCollapsibleConcept, myConceptCompletionChild, myConceptCompletionParent, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestChildSpecialContainer, myConceptDelTestRoot, myConceptDelTestSpecialAbstractChild, myConceptDelTestSpecialChild1, myConceptDeleteWrapperChild, myConceptDeleteWrapperRoot, myConceptFoldedCell, myConceptFoldingContainer, myConceptIBaseTestBlock, myConceptIDelTestChild, myConceptIDelTestConcreteChild, myConceptISpecialDelTestChild, myConceptISpecialDelTestConcreteChild, myConceptInitAbstractChild, myConceptInitChildWithDirectCycle_card1, myConceptInitChildWithDirectCycle_card1n, myConceptInitChildWithIndirectCycle_card1, myConceptInitChildWithIndirectCycle_card1n, myConceptInitChildWithTwoSameConceptChildren, myConceptInitContainer, myConceptInitGrandChild, myConceptInitGrandChildWithIndirectCycle_card1, myConceptInitGrandChildWithIndirectCycle_card1n, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptLabelConceptWithProperty, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSelectionChild, myConceptSelectionContainer, myConceptSideTranformWrapper, myConceptSimpleNode, myConceptSimpleNodeHidingAttribute, myConceptSimpleNodesContainer, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptStyleChild, myConceptStyleParent, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_1, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_2, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptSwingComponent, myConceptSwingComponentContainer, myConceptSwingComponentinFoldedCell, myConceptTestBlockList, myConceptTwoStepDeleteAbstractChildContainer, myConceptTwoStepDeleteCellCollectionChild, myConceptTwoStepDeleteCustomChild, myConceptTwoStepDeleteCustomChildContainer, myConceptTwoStepDeleteDefaultChild, myConceptTwoStepDeleteDefaultChildContainer, myConceptTwoStepDeleteLabelChild, myConceptTwoStepDeleteTestRoot, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
   }
 
   @Override
@@ -240,6 +248,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptSwingComponentinFoldedCell;
       case LanguageConceptSwitch.TestBlockList:
         return myConceptTestBlockList;
+      case LanguageConceptSwitch.TwoStepDeleteAbstractChildContainer:
+        return myConceptTwoStepDeleteAbstractChildContainer;
+      case LanguageConceptSwitch.TwoStepDeleteCellCollectionChild:
+        return myConceptTwoStepDeleteCellCollectionChild;
+      case LanguageConceptSwitch.TwoStepDeleteCustomChild:
+        return myConceptTwoStepDeleteCustomChild;
+      case LanguageConceptSwitch.TwoStepDeleteCustomChildContainer:
+        return myConceptTwoStepDeleteCustomChildContainer;
+      case LanguageConceptSwitch.TwoStepDeleteDefaultChild:
+        return myConceptTwoStepDeleteDefaultChild;
+      case LanguageConceptSwitch.TwoStepDeleteDefaultChildContainer:
+        return myConceptTwoStepDeleteDefaultChildContainer;
+      case LanguageConceptSwitch.TwoStepDeleteLabelChild:
+        return myConceptTwoStepDeleteLabelChild;
+      case LanguageConceptSwitch.TwoStepDeleteTestRoot:
+        return myConceptTwoStepDeleteTestRoot;
       case LanguageConceptSwitch.VariableDeclarationBlock:
         return myConceptVariableDeclarationBlock;
       case LanguageConceptSwitch.VariableDeclarationReference:
@@ -783,6 +807,68 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/3702466984434609595");
     b.aggregate("statement", 0x3361ce1b17d62dc2L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L).optional(true).ordered(true).multiple(true).origin("3702466984434609602").done();
     b.alias("{");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTwoStepDeleteAbstractChildContainer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "TwoStepDeleteAbstractChildContainer", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d65L);
+    b.class_(false, true, false);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/3018077782998850917");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTwoStepDeleteCellCollectionChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "TwoStepDeleteCellCollectionChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1139cad76e28ba86L);
+    b.class_(false, false, false);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/1241246198932224646");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTwoStepDeleteCustomChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "TwoStepDeleteCustomChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1139cad76e33a281L);
+    b.class_(false, false, false);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/1241246198932939393");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTwoStepDeleteCustomChildContainer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "TwoStepDeleteCustomChildContainer", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d67L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteAbstractChildContainer", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d65L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/3018077782998850919");
+    b.prop("showCellWithCustomId", 0x1139cad76e33a27fL, "1241246198932939391");
+    b.prop("showCellWithStringId", 0x1139cad76e33da9eL, "1241246198932953758");
+    b.prop("stringProperty", 0x1139cad76e33f4f9L, "1241246198932960505");
+    b.aggregate("child", 0x1139cad76e33a298L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1139cad76e33a281L).optional(true).ordered(true).multiple(false).origin("1241246198932939416").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTwoStepDeleteDefaultChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "TwoStepDeleteDefaultChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d5eL);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/3018077782998850910");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTwoStepDeleteDefaultChildContainer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "TwoStepDeleteDefaultChildContainer", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d024c706L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.editorTest.structure.TwoStepDeleteAbstractChildContainer", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d65L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/3018077782998828806");
+    b.aggregate("singleOptionalChild", 0x1139cad76e1b6642L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d5eL).optional(true).ordered(true).multiple(false).origin("1241246198931351106").done();
+    b.aggregate("singleRequiredChild", 0x1139cad76e1b6644L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d5eL).optional(false).ordered(true).multiple(false).origin("1241246198931351108").done();
+    b.aggregate("multipleChild", 0x1139cad76e1b6647L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d5eL).optional(true).ordered(true).multiple(true).origin("1241246198931351111").done();
+    b.aggregate("labelChild", 0x1139cad76e268c51L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1139cad76e268c56L).optional(true).ordered(true).multiple(false).origin("1241246198932081745").done();
+    b.aggregate("cellCollectionChild", 0x1139cad76e28ba80L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1139cad76e28ba86L).optional(true).ordered(true).multiple(false).origin("1241246198932224640").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTwoStepDeleteLabelChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "TwoStepDeleteLabelChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1139cad76e268c56L);
+    b.class_(false, false, false);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/1241246198932081750");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTwoStepDeleteTestRoot() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "TwoStepDeleteTestRoot", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d024c773L);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/3018077782998828915");
+    b.aggregate("container", 0x29e25dc0d024c776L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x29e25dc0d0251d65L).optional(true).ordered(true).multiple(false).origin("3018077782998828918").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForVariableDeclarationBlock() {
