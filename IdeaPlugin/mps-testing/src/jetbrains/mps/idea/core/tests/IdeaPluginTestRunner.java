@@ -60,7 +60,7 @@ public class IdeaPluginTestRunner extends Suite {
       mpsFixture.addDefaultModelRoot(mpsFixture.getMpsFacet());
 
       Reference<Throwable> error = new Reference<>();
-      mpsFixture.getModelAccess().runWriteInEDT(() -> {
+      mpsFixture.getModelAccess().executeCommandInEDT(() -> {
         Iterator<ModelRoot> modelRootsIterator = mpsFixture.getMpsFacet().getSolution().getModelRoots().iterator();
         DefaultModelRoot modelRoot = (DefaultModelRoot) modelRootsIterator.next();
 

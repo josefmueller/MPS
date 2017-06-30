@@ -8,7 +8,7 @@
     <option name="MAIN_CLASS_NAME" value="jetbrains.mps.jps.make.tests.JpsMakeTestSuite" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
-    <option name="VM_PARAMETERS" value="-ea -Dmps.make.debug=false -Dlog4j.configuration=&quot;$APPLICATION_HOME_DIR$/bin/log.xml&quot; -Djdk.home.path=&quot;$APPLICATION_HOME_DIR$/jdk/Contents/Home/&quot; -Xmx512m -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006" />
+    <option name="VM_PARAMETERS" value="-ea -Dmps.make.debug=false -Didea.log.path=$PROJECT_DIR$/sandbox/tests.jps/log -Dlog4j.configuration=&quot;file://$PROJECT_DIR$/logging/log4j.xml&quot; -Djdk.home.path=&quot;$APPLICATION_HOME_DIR$/jdk/Contents/Home/&quot; -Xmx512m -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006" />
     <option name="PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <option name="ENV_VARIABLES" />

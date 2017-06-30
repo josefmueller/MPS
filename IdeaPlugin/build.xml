@@ -30,6 +30,7 @@
 
   <property name="base_dir" value="${basedir}/.."/>
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
+  <property name="log.config" value="file://${base_dir}/IdeaPlugin/logging/log4j.xml"/>
   <property name="sandbox.dir" value="${base_dir}/IdeaPlugin/sandbox"/>
   <property name="test.platform.sandbox.dir" value="${sandbox.dir}/tests.ant"/>
   <property name="test.platform.sandbox.jps" value="${sandbox.dir}/jps"/>
@@ -297,12 +298,12 @@
       <jvmarg value="-Xmx1024m"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
-      <sysproperty key="log4j.configuration" value="file:///${ideaPath}/bin/log.xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${test.platform.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
       <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
+      <sysproperty key="log4j.configuration" value="${log.config}"/>
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.idea.java"/>
       <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
@@ -339,6 +340,7 @@
       <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
       <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
+      <sysproperty key="log4j.configuration" value="${log.config}"/>
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
@@ -369,6 +371,8 @@
       <formatter type="xml"/>
       <sysproperty key="jdk.home.path" value="${jdkPath}"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
+      <sysproperty key="idea.log.path" value="${test.platform.sandbox.jps}/log"/>
+      <sysproperty key="log4j.configuration" value="${log.config}"/>
 
       <classpath>
         <fileset dir="${ideaPath}/lib">
@@ -407,6 +411,7 @@
       <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
       <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
+      <sysproperty key="log4j.configuration" value="${log.config}"/>
       <sysproperty key="idea.load.plugins.id"
                    value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.lang.editor.tests"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
