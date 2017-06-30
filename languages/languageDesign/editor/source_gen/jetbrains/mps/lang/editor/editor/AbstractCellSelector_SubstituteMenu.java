@@ -24,6 +24,9 @@ import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.editor.menus.GroupMenuPart;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
@@ -37,7 +40,7 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new AbstractCellSelector_SubstituteMenu.SMP_Include_1rdeze_a());
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_b(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1e02662c4b880750L, "jetbrains.mps.lang.editor.structure.IdSelector")));
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Param_1rdeze_c(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector")));
+    result.add(new AbstractCellSelector_SubstituteMenu.SMP_Group_1rdeze_c());
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_d(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector")));
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Action_1rdeze_e(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc30443a0aL, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector")));
     return result;
@@ -125,88 +128,112 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
         return canExecute_internal(pattern, true);
       }
       public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
-        // ignoring "strictly" parameter to be able to immediately substitute any sub-string of specified string 
-        return "\"<cell ID>\"".startsWith(pattern);
+        if (strictly) {
+          return "\"<cell ID>\"".startsWith(pattern);
+        }
+        return true;
       }
     }
   }
-  private class SMP_Param_1rdeze_c extends ParameterizedMenuPart<SEnumerationLiteral, SubstituteMenuItem, SubstituteMenuContext> {
-    @NotNull
+  public class SMP_Group_1rdeze_c extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
-    protected List<SubstituteMenuItem> createItems(SEnumerationLiteral parameter, SubstituteMenuContext context) {
-      return new AbstractCellSelector_SubstituteMenu.SMP_Param_1rdeze_c.SMP_Action_1rdeze_a2(parameter).createItems(context);
+    protected boolean isApplicable(SubstituteMenuContext _context) {
+      return SNodeOperations.isInstanceOf(_context.getParentNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"));
     }
     @NotNull
     @Override
     public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized substitute menu part", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587153708")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("substitute menu group", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "8979250711608554143")));
       try {
         return super.createItems(context);
       } finally {
         context.getEditorMenuTrace().popTraceInfo();
       }
     }
-    @Nullable
-    @Override
-    protected Iterable<? extends SEnumerationLiteral> getParameters(SubstituteMenuContext _context) {
-      return SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1e02662c4b880a97L, "PredefinedCellID");
-    }
-    private class SMP_Action_1rdeze_a2 extends SingleItemSubstituteMenuPart {
-      private final SEnumerationLiteral myParameterObject;
-      public SMP_Action_1rdeze_a2(SEnumerationLiteral parameterObject) {
-        myParameterObject = parameterObject;
-      }
 
+    @Override
+    protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SMP_Group_1rdeze_c.SMP_Param_1rdeze_a2(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector")));
+    }
+    private class SMP_Param_1rdeze_a2 extends ParameterizedMenuPart<SEnumerationLiteral, SubstituteMenuItem, SubstituteMenuContext> {
+      @NotNull
+      @Override
+      protected List<SubstituteMenuItem> createItems(SEnumerationLiteral parameter, SubstituteMenuContext context) {
+        return new AbstractCellSelector_SubstituteMenu.SMP_Group_1rdeze_c.SMP_Param_1rdeze_a2.SMP_Action_1rdeze_a0c(parameter).createItems(context);
+      }
+      @NotNull
+      @Override
+      public List<SubstituteMenuItem> createItems(@NotNull SubstituteMenuContext context) {
+        context.getEditorMenuTrace().pushTraceInfo();
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("parameterized substitute menu part", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587153708")));
+        try {
+          return super.createItems(context);
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+      }
       @Nullable
       @Override
-      protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new AbstractCellSelector_SubstituteMenu.SMP_Param_1rdeze_c.SMP_Action_1rdeze_a2.Item(_context);
+      protected Iterable<? extends SEnumerationLiteral> getParameters(SubstituteMenuContext _context) {
+        return SEnumOperations.getMembers(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor", 0x1e02662c4b880a97L, "PredefinedCellID");
       }
-      private class Item extends DefaultSubstituteMenuItem {
-        private final SubstituteMenuContext _context;
-        private EditorMenuTraceInfo myTraceInfo;
-        public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
-          _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          String description = "Substitute item: " + getMatchingText("");
-          description += " .Parameter object: " + myParameterObject;
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587153741")));
-          this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-          _context.getEditorMenuTrace().popTraceInfo();
+      private class SMP_Action_1rdeze_a0c extends SingleItemSubstituteMenuPart {
+        private final SEnumerationLiteral myParameterObject;
+        public SMP_Action_1rdeze_a0c(SEnumerationLiteral parameterObject) {
+          myParameterObject = parameterObject;
         }
 
         @Nullable
         @Override
-        public SNode createNode(@NotNull String pattern) {
-          SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector"));
-          SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, 0x1e02662c4b881e34L, "cellId"), SEnumOperations.getMemberValue(myParameterObject));
-          return result;
+        protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
+          return new AbstractCellSelector_SubstituteMenu.SMP_Group_1rdeze_c.SMP_Param_1rdeze_a2.SMP_Action_1rdeze_a0c.Item(_context);
         }
+        private class Item extends DefaultSubstituteMenuItem {
+          private final SubstituteMenuContext _context;
+          private EditorMenuTraceInfo myTraceInfo;
+          public Item(SubstituteMenuContext context) {
+            super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
+            _context = context;
+            _context.getEditorMenuTrace().pushTraceInfo();
+            String description = "Substitute item: " + getMatchingText("");
+            description += " .Parameter object: " + myParameterObject;
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1741258697587153741")));
+            this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+            _context.getEditorMenuTrace().popTraceInfo();
+          }
 
-        @Override
-        public EditorMenuTraceInfo getTraceInfo() {
-          return myTraceInfo;
-        }
-        @Nullable
-        @Override
-        public String getMatchingText(@NotNull String pattern) {
-          return "" + myParameterObject;
-        }
-        @Nullable
-        @Override
-        public IconResource getIcon(@NotNull String pattern) {
-          return null;
-        }
-        @Nullable
-        @Override
-        public String getDescriptionText(@NotNull String pattern) {
-          return SEnumOperations.getMemberValue(myParameterObject) + " cell";
+          @Nullable
+          @Override
+          public SNode createNode(@NotNull String pattern) {
+            SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector"));
+            SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, 0x1e02662c4b881e34L, "cellId"), SEnumOperations.getMemberValue(myParameterObject));
+            return result;
+          }
+
+          @Override
+          public EditorMenuTraceInfo getTraceInfo() {
+            return myTraceInfo;
+          }
+          @Nullable
+          @Override
+          public String getMatchingText(@NotNull String pattern) {
+            return "" + myParameterObject;
+          }
+          @Nullable
+          @Override
+          public IconResource getIcon(@NotNull String pattern) {
+            return null;
+          }
+          @Nullable
+          @Override
+          public String getDescriptionText(@NotNull String pattern) {
+            return SEnumOperations.getMemberValue(myParameterObject) + " cell";
+          }
         }
       }
+
     }
-
   }
   private class SMP_Action_1rdeze_d extends SingleItemSubstituteMenuPart {
 
@@ -257,8 +284,10 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
         return canExecute_internal(pattern, true);
       }
       public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
-        // ignoring "strictly" parameter to be able to immediately substitute any sub-string of specified string 
-        return "{<property>}".startsWith(pattern) || "{ ".startsWith(pattern);
+        if (strictly) {
+          return "{<property>}".startsWith(pattern) || "{ ".startsWith(pattern);
+        }
+        return true;
       }
     }
   }
@@ -311,8 +340,10 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
         return canExecute_internal(pattern, true);
       }
       public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
-        // ignoring "strictly" parameter to be able to immediately substitute any sub-string of specified string 
-        return "{#<property>}".startsWith(pattern);
+        if (strictly) {
+          return "{#<property>}".startsWith(pattern);
+        }
+        return true;
       }
     }
   }

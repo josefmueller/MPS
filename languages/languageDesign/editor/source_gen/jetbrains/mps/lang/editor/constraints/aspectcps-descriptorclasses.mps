@@ -7533,7 +7533,7 @@
             <node concept="3clFbS" id="F2" role="1pnPq1">
               <node concept="3cpWs6" id="F4" role="3cqZAp">
                 <node concept="1nCR9W" id="F5" role="3cqZAk">
-                  <property role="1nD$Q0" value="jetbrains.mps.lang.editor.constraints.InlineStyleDeclaration_Constraints" />
+                  <property role="1nD$Q0" value="jetbrains.mps.lang.editor.constraints.SubstituteMenuPart_ReferenceScope_Constraints" />
                   <node concept="3uibUv" id="F6" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
@@ -7541,14 +7541,14 @@
               </node>
             </node>
             <node concept="3gn64h" id="F3" role="1pnPq6">
-              <ref role="3gnhBz" to="tpc2:hWtppjH" resolve="InlineStyleDeclaration" />
+              <ref role="3gnhBz" to="tpc2:7jQE8Y9gpPl" resolve="SubstituteMenuPart_ReferenceScope" />
             </node>
           </node>
           <node concept="1pnPoh" id="Bt" role="1_3QMm">
             <node concept="3clFbS" id="F7" role="1pnPq1">
               <node concept="3cpWs6" id="F9" role="3cqZAp">
                 <node concept="1nCR9W" id="Fa" role="3cqZAk">
-                  <property role="1nD$Q0" value="jetbrains.mps.lang.editor.constraints.EditorCellModel_Constraints" />
+                  <property role="1nD$Q0" value="jetbrains.mps.lang.editor.constraints.SubstituteMenuItem_AbstractOperation_Constraints" />
                   <node concept="3uibUv" id="Fb" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
@@ -7556,14 +7556,14 @@
               </node>
             </node>
             <node concept="3gn64h" id="F8" role="1pnPq6">
-              <ref role="3gnhBz" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
+              <ref role="3gnhBz" to="tpc2:394RuzxkcZO" resolve="SubstituteMenuItem_AbstractOperation" />
             </node>
           </node>
           <node concept="1pnPoh" id="Bu" role="1_3QMm">
             <node concept="3clFbS" id="Fc" role="1pnPq1">
               <node concept="3cpWs6" id="Fe" role="3cqZAp">
                 <node concept="1nCR9W" id="Ff" role="3cqZAk">
-                  <property role="1nD$Q0" value="jetbrains.mps.lang.editor.constraints.SubstituteMenuItem_AbstractOperation_Constraints" />
+                  <property role="1nD$Q0" value="jetbrains.mps.lang.editor.constraints.EditorCellModel_Constraints" />
                   <node concept="3uibUv" id="Fg" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
@@ -7571,14 +7571,14 @@
               </node>
             </node>
             <node concept="3gn64h" id="Fd" role="1pnPq6">
-              <ref role="3gnhBz" to="tpc2:394RuzxkcZO" resolve="SubstituteMenuItem_AbstractOperation" />
+              <ref role="3gnhBz" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
             </node>
           </node>
           <node concept="1pnPoh" id="Bv" role="1_3QMm">
             <node concept="3clFbS" id="Fh" role="1pnPq1">
               <node concept="3cpWs6" id="Fj" role="3cqZAp">
                 <node concept="1nCR9W" id="Fk" role="3cqZAk">
-                  <property role="1nD$Q0" value="jetbrains.mps.lang.editor.constraints.SubstituteMenuPart_ReferenceScope_Constraints" />
+                  <property role="1nD$Q0" value="jetbrains.mps.lang.editor.constraints.InlineStyleDeclaration_Constraints" />
                   <node concept="3uibUv" id="Fl" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
@@ -7586,7 +7586,7 @@
               </node>
             </node>
             <node concept="3gn64h" id="Fi" role="1pnPq6">
-              <ref role="3gnhBz" to="tpc2:7jQE8Y9gpPl" resolve="SubstituteMenuPart_ReferenceScope" />
+              <ref role="3gnhBz" to="tpc2:hWtppjH" resolve="InlineStyleDeclaration" />
             </node>
           </node>
           <node concept="3clFbS" id="Bw" role="1prKM_" />
