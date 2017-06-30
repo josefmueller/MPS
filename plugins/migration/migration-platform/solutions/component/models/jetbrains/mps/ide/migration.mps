@@ -858,9 +858,50 @@
             <ref role="37wK5l" node="7lByCvUySng" resolve="addListeners" />
           </node>
         </node>
-        <node concept="3clFbF" id="45$_j8AUejz" role="3cqZAp">
-          <node concept="1rXfSq" id="45$_j8AUejy" role="3clFbG">
-            <ref role="37wK5l" node="285c2S_WYWH" resolve="checkMigrationNeeded" />
+        <node concept="3clFbH" id="42QwkrkoMOB" role="3cqZAp" />
+        <node concept="3SKdUt" id="42QwkrkoHhE" role="3cqZAp">
+          <node concept="3SKdUq" id="42QwkrkoHhF" role="3SKWNk">
+            <property role="3SKdUp" value="wait until project is fully loaded (if not yet)" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="42QwkrkoHhG" role="3cqZAp">
+          <node concept="2OqwBi" id="42QwkrkoHhH" role="3clFbG">
+            <node concept="2YIFZM" id="42QwkrkoHhI" role="2Oq$k0">
+              <ref role="37wK5l" to="v27p:~StartupManager.getInstance(com.intellij.openapi.project.Project):com.intellij.openapi.startup.StartupManager" resolve="getInstance" />
+              <ref role="1Pybhc" to="v27p:~StartupManager" resolve="StartupManager" />
+              <node concept="37vLTw" id="42QwkrkoNeq" role="37wK5m">
+                <ref role="3cqZAo" to="1m72:~AbstractProjectComponent.myProject" resolve="myProject" />
+              </node>
+            </node>
+            <node concept="liA8E" id="42QwkrkoHhK" role="2OqNvi">
+              <ref role="37wK5l" to="v27p:~StartupManager.runWhenProjectIsInitialized(java.lang.Runnable):void" resolve="runWhenProjectIsInitialized" />
+              <node concept="1bVj0M" id="42QwkrkoHhL" role="37wK5m">
+                <property role="3yWfEV" value="true" />
+                <node concept="3clFbS" id="42QwkrkoHhM" role="1bW5cS">
+                  <node concept="3clFbF" id="42QwkrkoHhP" role="3cqZAp">
+                    <node concept="2OqwBi" id="42QwkrkoHhQ" role="3clFbG">
+                      <node concept="2YIFZM" id="42QwkrkoHhR" role="2Oq$k0">
+                        <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
+                        <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
+                      </node>
+                      <node concept="liA8E" id="42QwkrkoHhS" role="2OqNvi">
+                        <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                        <node concept="1bVj0M" id="42QwkrkoHhT" role="37wK5m">
+                          <property role="3yWfEV" value="true" />
+                          <node concept="3clFbS" id="42QwkrkoHhU" role="1bW5cS">
+                            <node concept="3clFbF" id="45$_j8AUejz" role="3cqZAp">
+                              <node concept="1rXfSq" id="45$_j8AUejy" role="3clFbG">
+                                <ref role="37wK5l" node="285c2S_WYWH" resolve="checkMigrationNeeded" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

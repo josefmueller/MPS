@@ -15,6 +15,8 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -31,8 +33,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -126,7 +126,17 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     }
 
     addListeners();
-    checkMigrationNeeded();
+
+    // wait until project is fully loaded (if not yet) 
+    StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            checkMigrationNeeded();
+          }
+        });
+      }
+    });
   }
 
   public void projectClosed() {
