@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -24,7 +25,11 @@ public class DeleteStaticInIncompleteMember {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node, "staticKeyword")) {
+        return;
+      }
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdaf94L, "static"), "" + (false));
+      editorContext.selectWRTFocusPolicy(node);
     }
   }
   public static class DeleteStaticInIncompleteMember_BACKSPACE extends AbstractCellAction {
@@ -36,7 +41,11 @@ public class DeleteStaticInIncompleteMember {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node, "staticKeyword")) {
+        return;
+      }
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x32175ac2e6fcc181L, 0x32175ac2e6fdaf94L, "static"), "" + (false));
+      editorContext.selectWRTFocusPolicy(node);
     }
   }
 }

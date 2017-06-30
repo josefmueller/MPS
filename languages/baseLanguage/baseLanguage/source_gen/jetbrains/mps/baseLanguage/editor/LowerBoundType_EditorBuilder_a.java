@@ -49,8 +49,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createConstant_d2fqsq_a0());
-    editorCell.addEditorCell(createConstant_d2fqsq_b0());
-    editorCell.addEditorCell(createRefNode_d2fqsq_c0());
+    editorCell.addEditorCell(createCollection_d2fqsq_b0());
     return editorCell;
   }
   private EditorCell createConstant_d2fqsq_a0() {
@@ -62,24 +61,31 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_d2fqsq_b0() {
+  private EditorCell createCollection_d2fqsq_b0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("super");
+    editorCell.addEditorCell(createConstant_d2fqsq_a1a());
+    editorCell.addEditorCell(createRefNode_d2fqsq_b1a());
+    return editorCell;
+  }
+  private EditorCell createConstant_d2fqsq_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "super");
-    editorCell.setCellId("Constant_d2fqsq_b0");
+    editorCell.setCellId("Constant_d2fqsq_a1a");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_d2fqsq_c0() {
-    SingleRoleCellProvider provider = new LowerBoundType_EditorBuilder_a.boundSingleRoleHandler_d2fqsq_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, 0x110dae9f25bL, "bound"), getEditorContext());
+  private EditorCell createRefNode_d2fqsq_b1a() {
+    SingleRoleCellProvider provider = new LowerBoundType_EditorBuilder_a.boundSingleRoleHandler_d2fqsq_b1a(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110dae9d53dL, 0x110dae9f25bL, "bound"), getEditorContext());
     return provider.createCell();
   }
-  private static class boundSingleRoleHandler_d2fqsq_c0 extends SingleRoleCellProvider {
+  private static class boundSingleRoleHandler_d2fqsq_b1a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public boundSingleRoleHandler_d2fqsq_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public boundSingleRoleHandler_d2fqsq_b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }

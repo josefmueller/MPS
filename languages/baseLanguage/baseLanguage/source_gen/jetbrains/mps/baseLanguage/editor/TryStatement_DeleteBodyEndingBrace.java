@@ -10,6 +10,7 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
 
 public class TryStatement_DeleteBodyEndingBrace {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -26,8 +27,14 @@ public class TryStatement_DeleteBodyEndingBrace {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).count() >= 1) {
+        if (DeletionApproverUtil.approve(editorContext, ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).first())) {
+          return;
+        }
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).removeElementAt(0);
       } else {
+        if (DeletionApproverUtil.approve(editorContext, node)) {
+          return;
+        }
         UnwrapStatementsUtil.unwrapIContainsStatementList(node);
       }
     }
@@ -42,8 +49,14 @@ public class TryStatement_DeleteBodyEndingBrace {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).count() >= 1) {
+        if (DeletionApproverUtil.approve(editorContext, ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).first())) {
+          return;
+        }
         ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10f39abd97cL, "catchClause"))).removeElementAt(0);
       } else {
+        if (DeletionApproverUtil.approve(editorContext, node)) {
+          return;
+        }
         UnwrapStatementsUtil.unwrapIContainsStatementList(node);
       }
     }

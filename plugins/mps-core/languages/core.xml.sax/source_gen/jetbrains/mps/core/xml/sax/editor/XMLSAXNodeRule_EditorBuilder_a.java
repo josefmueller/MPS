@@ -144,7 +144,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
   }
   private EditorCell createConstant_b42orx_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "compact");
-    editorCell.setCellId("Constant_b42orx_a0");
+    editorCell.setCellId("compactKeyword");
     delete_CompactKW.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;

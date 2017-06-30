@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -24,6 +25,9 @@ public class _ConceptDeclaration_DeleteFinal_Action {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node, "finalKeyword")) {
+        return;
+      }
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec7L, "final"), "" + (false));
     }
   }
@@ -36,6 +40,9 @@ public class _ConceptDeclaration_DeleteFinal_Action {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node, "finalKeyword")) {
+        return;
+      }
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec7L, "final"), "" + (false));
     }
   }

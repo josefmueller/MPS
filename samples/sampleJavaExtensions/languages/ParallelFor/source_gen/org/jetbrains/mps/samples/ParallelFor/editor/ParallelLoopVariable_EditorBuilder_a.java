@@ -61,7 +61,7 @@ import jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Initializer_Ac
   }
   private EditorCell createConstant_d89sde_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "final");
-    editorCell.setCellId("Constant_d89sde_a0");
+    editorCell.setCellId("finalModifier");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

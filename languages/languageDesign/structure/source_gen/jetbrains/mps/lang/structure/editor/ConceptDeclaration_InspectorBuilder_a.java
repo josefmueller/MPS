@@ -82,7 +82,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
   }
   private EditorCell createConstant_ueqr71_a0a_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "ID: ");
-    editorCell.setCellId("Constant_ueqr71_a0a_0");
+    editorCell.setCellId("Constant_ueqr71_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }

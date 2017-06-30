@@ -65,20 +65,26 @@ import jetbrains.mps.smodel.SNodePointer;
     Style style = new StyleImpl();
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createRefCell_a4wjjz_a0());
+    editorCell.addEditorCell(createCollection_a4wjjz_a0());
     editorCell.addEditorCell(createConstant_a4wjjz_b0());
     editorCell.addEditorCell(createComponent_a4wjjz_c0());
     editorCell.addEditorCell(createCollection_a4wjjz_d0());
     return editorCell;
   }
-  private EditorCell createRefCell_a4wjjz_a0() {
+  private EditorCell createCollection_a4wjjz_a0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("class");
+    editorCell.addEditorCell(createRefCell_a4wjjz_a0a());
+    return editorCell;
+  }
+  private EditorCell createRefCell_a4wjjz_a0a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new StaticMethodCall_EditorBuilder_a.Inline_Builder_a4wjjz_a0a(getEditorContext(), myNode, effectiveNode).createCell();
+            return new StaticMethodCall_EditorBuilder_a.Inline_Builder_a4wjjz_a0a0(getEditorContext(), myNode, effectiveNode).createCell();
           }
         }, effectiveNode, "classConcept");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
@@ -104,19 +110,19 @@ import jetbrains.mps.smodel.SNodePointer;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_a4wjjz_a0a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder_a4wjjz_a0a0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_a4wjjz_a0a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder_a4wjjz_a0a0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_a4wjjz_a0a0();
+      return createProperty_a4wjjz_a0a0a();
     }
 
     @NotNull
@@ -125,7 +131,7 @@ import jetbrains.mps.smodel.SNodePointer;
       return myNode;
     }
 
-    private EditorCell createProperty_a4wjjz_a0a0() {
+    private EditorCell createProperty_a4wjjz_a0a0a() {
       CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

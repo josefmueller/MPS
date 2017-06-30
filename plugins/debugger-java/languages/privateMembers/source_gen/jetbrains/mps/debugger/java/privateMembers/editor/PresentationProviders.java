@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 
 public class PresentationProviders {
-  public static final IReferentPresentationProvider PRESENTATION_62ivzp_a0a0a = new IReferentPresentationProvider() {
+  public static final IReferentPresentationProvider PRESENTATION_62ivzp_a0a0a0 = new IReferentPresentationProvider() {
     @NotNull
     @Override
     public String getPresentation(@NotNull SNode sourceNode, @NotNull SNode targetNode) {

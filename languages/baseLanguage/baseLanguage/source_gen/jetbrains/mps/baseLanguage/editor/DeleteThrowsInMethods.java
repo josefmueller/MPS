@@ -7,9 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class DeleteThrowsInMethods {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -25,7 +27,11 @@ public class DeleteThrowsInMethods {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node, "throwsCollection")) {
+        return;
+      }
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem"))).clear();
+      SelectionUtil.selectCell(editorContext, node, "rightParen");
       editorContext.selectWRTFocusPolicy(node);
     }
   }
@@ -38,7 +44,11 @@ public class DeleteThrowsInMethods {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node, "throwsCollection")) {
+        return;
+      }
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0x10f383d6949L, "throwsItem"))).clear();
+      SelectionUtil.selectCell(editorContext, node, "rightParen");
       editorContext.selectWRTFocusPolicy(node);
     }
   }

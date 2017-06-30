@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodCall__BehaviorDescriptor;
+import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
 
 public class StaticMethodCall_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -24,6 +25,9 @@ public class StaticMethodCall_Actions {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       if ((boolean) StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node)) {
+        if (DeletionApproverUtil.approve(editorContext, node, "class")) {
+          return;
+        }
         StaticMethodCall__BehaviorDescriptor.convertToLocal_id2RbFUmZlhob.invoke(node);
       }
     }
@@ -38,6 +42,9 @@ public class StaticMethodCall_Actions {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       if ((boolean) StaticMethodCall__BehaviorDescriptor.canBeConvertedToLocal_id2RbFUmZleRt.invoke(node)) {
+        if (DeletionApproverUtil.approve(editorContext, node, "class")) {
+          return;
+        }
         StaticMethodCall__BehaviorDescriptor.convertToLocal_id2RbFUmZlhob.invoke(node);
       }
     }
