@@ -74,6 +74,8 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
     setUpParameters();
     setUpEnvironment("test.in");
 
+    // Copying content of the /IdeaPlugin project folder. This test relay on the fact that all external libraries
+    // should be pre-built and copied into the project structure. See build.xml/buildLibs taget
     String projectDir = copyToProject("../IdeaPlugin", "IdeaPlugin");
 
     // The dependency on outer sources (parts of mps project) are back for now
@@ -83,21 +85,8 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
     // 1) pre-compile them into jars in the same way as core
     // 2) make IdeaPlugin and mps one same project, and then don't do pre-building at all
     // (to be precise, pre-built only what's in gensources, but not what's compiled in idea)
-    copyToProject("../plugins/vcs-core/core/source_gen", "plugins/vcs-core/core/source_gen");
     copyToProject("../plugins/vcs/common/source_gen", "plugins/vcs/common/source_gen");
     copyToProject("../plugins/vcs/common/source", "plugins/vcs/common/source");
-    copyToProject("../plugins/mpsjava/basePlatform/source_gen", "plugins/mpsjava/basePlatform/source_gen");
-    copyToProject("../plugins/mpsjava/platform/source_gen", "plugins/mpsjava/platform/source_gen");
-
-    // this is the counter-part of pre-building and copying core jars before compiling IdeaPlugin sources
-    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-core/lib", "IdeaPlugin/mps-core/lib");
-    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-core/languages", "IdeaPlugin/mps-core/languages");
-
-    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-idea-java/lib", "IdeaPlugin/mps-java/lib");
-
-    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-testing/lib/jetbrains.mps.lang.test.util.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.util.jar");
-    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.matcher.jar");
-    copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar", "IdeaPlugin/mps-core/lib/jetbrains.mps.lang.test.runtime.jar");
 
     loadProject(projectDir);
     setUpJdk();

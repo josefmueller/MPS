@@ -32,9 +32,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -89,9 +86,6 @@
     <node concept="PrWs8" id="4H19mAw48tk" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLjh" role="lGtFl">
-      <ref role="RPilL" node="1SVBbIvt9fR" resolve="classifier" />
-    </node>
   </node>
   <node concept="1TIwiD" id="1SVBbIvt9g6">
     <property role="TrG5h" value="ExternalViewFigureParameter" />
@@ -109,9 +103,6 @@
     </node>
     <node concept="PrWs8" id="iZqVFYvB6i" role="PzmwI">
       <ref role="PrY4T" node="iZqVFYvB5l" resolve="FigureParameter" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLjg" role="lGtFl">
-      <ref role="RPilL" node="1SVBbIvt9gL" resolve="fieldDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="4H19mAw_rm$">

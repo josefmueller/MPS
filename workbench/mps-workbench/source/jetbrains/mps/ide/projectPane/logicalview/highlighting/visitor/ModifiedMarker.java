@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,39 +19,35 @@ import com.intellij.icons.AllIcons.General;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.IconNodeUpdate;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
-import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.Icon;
 
+/**
+ * visitXXX methods require model read
+ */
 public class ModifiedMarker extends TreeUpdateVisitor {
-  public ModifiedMarker(Project mpsProject) {
-    super(mpsProject);
+  public ModifiedMarker() {
   }
 
   @Override
   public void visitModelNode(@NotNull final SModelTreeNode node) {
-    scheduleModelRead(node, new Runnable() {
-      @Override
-      public void run() {
-        SModel md = node.getModel();
-        if (!(md.isLoaded())) return;
-        if (!(md instanceof EditableSModel)) return;
+    SModel md = node.getModel();
+    if (!(md.isLoaded())) return;
+    if (!(md instanceof EditableSModel)) return;
 
-        boolean changed = ((EditableSModel) md).isChanged();
+    boolean changed = ((EditableSModel) md).isChanged();
 
-        Icon icon = node.getBaseIcon();
-        if (icon == null) {
-          // XXX perhaps, I shall not update icon if there's no icon for the model?
-          icon = General.IjLogo;
-        }
-        if (changed) {
-          icon = new LayeredIcon(icon, General.Modified);
-        }
-        addUpdate(node, new IconNodeUpdate(icon));
-      }
-    });
+    Icon icon = node.getBaseIcon();
+    if (icon == null) {
+      // XXX perhaps, I shall not update icon if there's no icon for the model?
+      icon = General.IjLogo;
+    }
+    if (changed) {
+      icon = new LayeredIcon(icon, General.Modified);
+    }
+    addUpdate(node, new IconNodeUpdate(icon));
   }
 }

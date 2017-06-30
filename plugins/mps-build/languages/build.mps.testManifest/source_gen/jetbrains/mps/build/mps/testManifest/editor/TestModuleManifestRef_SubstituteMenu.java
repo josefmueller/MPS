@@ -28,7 +28,7 @@ public class TestModuleManifestRef_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for TestModuleManifestRef. Generated from the smart reference attribute.", new SNodePointer("r:d58a0a69-0655-46ea-90b9-604f6da8b24f(jetbrains.mps.build.mps.testManifest.structure)", "4747359941569484018")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for TestModuleManifestRef. Generated from implicit smart reference attribute.", new SNodePointer("r:d58a0a69-0655-46ea-90b9-604f6da8b24f(jetbrains.mps.build.mps.testManifest.structure)", "3298469228705268164")));
     try {
       return super.createMenuItems(context);
     } finally {

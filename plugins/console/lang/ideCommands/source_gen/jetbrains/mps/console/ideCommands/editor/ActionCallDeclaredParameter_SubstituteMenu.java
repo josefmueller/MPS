@@ -28,7 +28,7 @@ public class ActionCallDeclaredParameter_SubstituteMenu extends SubstituteMenuBa
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ActionCallDeclaredParameter. Generated from the smart reference attribute.", new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "4747359941569483964")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ActionCallDeclaredParameter. Generated from implicit smart reference attribute.", new SNodePointer("r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)", "5582028874769074087")));
     try {
       return super.createMenuItems(context);
     } finally {

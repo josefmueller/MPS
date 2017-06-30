@@ -28,7 +28,7 @@ public class RefactoringOrderDependency_SubstituteMenu extends SubstituteMenuBas
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RefactoringOrderDependency. Generated from the smart reference attribute.", new SNodePointer("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)", "4747359941569483723")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for RefactoringOrderDependency. Generated from implicit smart reference attribute.", new SNodePointer("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)", "2015900981881695645")));
     try {
       return super.createMenuItems(context);
     } finally {

@@ -11,17 +11,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.ide.messages.Icons;
-import jetbrains.mps.util.StringUtil;
 
 public class ChildHierarchyTreeNode extends HierarchyTreeNode {
+  private final AbstractHierarchyTree myHierarchyTree;
   private boolean myInitialized = false;
   private Set<SNode> myVisited;
+
   public ChildHierarchyTreeNode(SNode declaration, AbstractHierarchyTree tree, Set<SNode> visited) {
-    super(declaration, tree);
+    super(declaration);
+    myHierarchyTree = tree;
     myVisited = new HashSet<SNode>(visited);
     setColor(new Color(64, 0, 144));
-    setText(calculateText());
   }
+
   @Override
   public boolean isInitialized() {
     return myInitialized;
@@ -29,6 +31,7 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   @Override
   protected void doInit() {
     try {
+      //  FIXME we still use cached SNode instance here, as tree node's user object 
       SNode node = (SNode) getUserObject();
       List<SNode> descendants = new ArrayList<SNode>(myHierarchyTree.getAbstractChildren(node, myVisited));
       Collections.sort(descendants, new Comparator<SNode>() {
@@ -41,23 +44,17 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
       visited.add(node);
       for (SNode descendant : descendants) {
         ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, myHierarchyTree, visited);
+        childHierarchyTreeNode.setText(myHierarchyTree.nodePresentation(descendant));
         add(childHierarchyTreeNode);
       }
     } catch (CircularHierarchyException ex) {
       SNode errorNode = (SNode) ex.getRepeatedObject();
       final String message = ex.getMessage();
-      HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode, myHierarchyTree) {
-        @Override
-        protected void doUpdatePresentation() {
-          super.doUpdatePresentation();
-          setIcon(Icons.ERROR_ICON);
-          setColor(Color.RED);
-        }
-        @Override
-        protected String calculateAdditionalText() {
-          return message;
-        }
-      };
+      HierarchyTreeNode errorTreeNode = new HierarchyTreeNode(errorNode);
+      errorTreeNode.setText(myHierarchyTree.nodePresentation(errorNode));
+      errorTreeNode.setIcon(Icons.ERROR_ICON);
+      errorTreeNode.setColor(Color.RED);
+      errorTreeNode.setAdditionalText(message);
       add(errorTreeNode);
     }
     myInitialized = true;
@@ -73,13 +70,5 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
-  }
-  public String calculateText() {
-    String name = super.toString();
-    HierarchyTreeNode hierarchyNode = myHierarchyTree.getActiveTreeNode();
-    if (hierarchyNode == this) {
-      name = StringUtil.escapeXml(name);
-    }
-    return name;
   }
 }

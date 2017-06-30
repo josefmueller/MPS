@@ -78,7 +78,7 @@ public final class ParseFacility<T> {
     } catch (FileNotFoundException ex) {
       // ok, just ignore
     } catch (IOException ex) {
-      getLog().warn("Ignored parse error in file " + myFile == null ? null : myFile.getPath(), ex);
+      getLog().warn("Ignored parse error in file " + (myFile == null ? null : myFile.getPath()), ex);
     }
     return null;
   }

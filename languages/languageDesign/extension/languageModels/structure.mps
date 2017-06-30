@@ -29,9 +29,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -103,9 +100,6 @@
     <node concept="asaX9" id="70AZf4CVrP_" role="lGtFl">
       <property role="YLPcu" value="MPS 3.3" />
       <property role="YLQ7P" value="use Extension instead" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLdS" role="lGtFl">
-      <ref role="RPilL" node="3f064wGFUBl" resolve="extensionPoint" />
     </node>
   </node>
   <node concept="1TIwiD" id="3f064wGFUBm">
@@ -201,9 +195,6 @@
     </node>
     <node concept="asaX9" id="70AZf4CVrPD" role="lGtFl">
       <property role="YLPcu" value="MPS 3.3" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLdR" role="lGtFl">
-      <ref role="RPilL" node="66AaOfxkOUv" resolve="declaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="2KgYA8kbFkS">

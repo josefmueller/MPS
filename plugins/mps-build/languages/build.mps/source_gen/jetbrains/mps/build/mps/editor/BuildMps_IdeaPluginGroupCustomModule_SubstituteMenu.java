@@ -28,7 +28,7 @@ public class BuildMps_IdeaPluginGroupCustomModule_SubstituteMenu extends Substit
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BuildMps_IdeaPluginGroupCustomModule. Generated from the smart reference attribute.", new SNodePointer("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "4747359941569484039")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for BuildMps_IdeaPluginGroupCustomModule. Generated from implicit smart reference attribute.", new SNodePointer("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "4034578608468929319")));
     try {
       return super.createMenuItems(context);
     } finally {

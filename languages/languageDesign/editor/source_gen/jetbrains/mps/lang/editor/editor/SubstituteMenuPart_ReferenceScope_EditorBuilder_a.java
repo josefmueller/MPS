@@ -90,7 +90,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
         }, effectiveNode, "reference");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

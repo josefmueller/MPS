@@ -86,7 +86,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
         }, effectiveNode, "declaration");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull_smartReference(cell);
         return cell;
       }
     };

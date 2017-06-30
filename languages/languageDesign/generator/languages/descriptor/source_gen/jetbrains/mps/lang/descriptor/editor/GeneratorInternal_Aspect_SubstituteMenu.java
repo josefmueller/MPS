@@ -28,7 +28,7 @@ public class GeneratorInternal_Aspect_SubstituteMenu extends SubstituteMenuBase 
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for GeneratorInternal_Aspect. Generated from the smart reference attribute.", new SNodePointer("r:cdf8afc0-fdc6-47ca-b829-7b2226168efa(jetbrains.mps.lang.descriptor.structure)", "4747359941569483649")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for GeneratorInternal_Aspect. Generated from implicit smart reference attribute.", new SNodePointer("r:cdf8afc0-fdc6-47ca-b829-7b2226168efa(jetbrains.mps.lang.descriptor.structure)", "5100536058472628033")));
     try {
       return super.createMenuItems(context);
     } finally {

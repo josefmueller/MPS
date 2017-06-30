@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
@@ -46,6 +47,16 @@ public class CellsTree extends MPSTreeWithAction {
   protected void doInit(MPSTreeNode node, Runnable nodeInitRunnable) {
     // myCurrentEditor could not be null, otherwise we won't get to CellNode.init()
     super.doInit(node, new ModelReadRunnable(myCurrentEditor.getEditorContext().getRepository().getModelAccess(), nodeInitRunnable));
+  }
+
+  @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    if (myCurrentEditor == null) {
+      super.runRebuildAction(rebuildAction, saveExpansion);
+    } else {
+      ModelAccess modelAccess = myCurrentEditor.getEditorContext().getRepository().getModelAccess();
+      super.runRebuildAction(new ModelReadRunnable(modelAccess, rebuildAction), saveExpansion);
+    }
   }
 
   @Override
@@ -126,7 +137,9 @@ public class CellsTree extends MPSTreeWithAction {
       if (!(node instanceof DefaultMutableTreeNode)) continue;
 
       Object userObject = ((DefaultMutableTreeNode) node).getUserObject();
-      if (userObject instanceof EditorCell) return ((EditorCell) userObject);
+      if (userObject instanceof EditorCell) {
+        return ((EditorCell) userObject);
+      }
     }
 
     return null;
@@ -150,7 +163,10 @@ public class CellsTree extends MPSTreeWithAction {
       if (cellNode == null) {
         return;
       }
-      cellNode.updatePresentation(true, false);
+      cellNode.renewPresentation();
+      // XXX used to be updateSubTree(), but CellNode doesn't override doUpdate, so effectively it's just
+      //    TreeModel.nodeStructureChanged() notification, and update() does exactly that
+      cellNode.update();
       repaint();
     }
 

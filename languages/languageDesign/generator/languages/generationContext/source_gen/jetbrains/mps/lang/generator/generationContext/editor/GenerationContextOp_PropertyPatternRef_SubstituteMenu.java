@@ -28,7 +28,7 @@ public class GenerationContextOp_PropertyPatternRef_SubstituteMenu extends Subst
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for GenerationContextOp_PropertyPatternRef. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)", "4747359941569483654")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for GenerationContextOp_PropertyPatternRef. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)", "1758784108619220824")));
     try {
       return super.createMenuItems(context);
     } finally {

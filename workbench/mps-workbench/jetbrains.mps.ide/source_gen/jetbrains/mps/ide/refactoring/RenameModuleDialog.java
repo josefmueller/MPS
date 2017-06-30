@@ -8,6 +8,8 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import java.awt.HeadlessException;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
@@ -25,20 +27,35 @@ public class RenameModuleDialog extends RenameDialog {
     setTitle("Rename Module");
   }
 
+  @Nullable
+  @Override
+  protected String checkValue() {
+    final Wrappers._T<String> checkResult = new Wrappers._T<String>(null);
+    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        final String fqName = getCurrentValue();
+        for (final SModule module : myProject.getRepository().getModules()) {
+          if (module.equals(myModule)) {
+            continue;
+          }
+
+          // module.getModuleName() can be null 
+          if (fqName.equals(module.getModuleName())) {
+            checkResult.value = "Module with the same name already exists in repository";
+            break;
+          }
+        }
+      }
+    });
+
+    return checkResult.value;
+  }
+
   @Override
   protected void doRefactoringAction() {
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {
         final String fqName = getCurrentValue();
-
-        // FIXME why validation code is part of change command? Shall refactor into distinct read 
-        for (final SModule module : myProject.getRepository().getModules()) {
-          // module.getModuleName() can be null 
-          if (fqName.equals(module.getModuleName())) {
-            setErrorText("Duplicate module name");
-            return;
-          }
-        }
         try {
           Renamer.renameModule(myModule, fqName);
         } catch (DescriptorTargetFileAlreadyExistsException e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,8 +26,10 @@ import com.intellij.util.ui.tree.WideSelectionTreeUI;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -80,6 +82,10 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private final Object myUpdateId = new Object();
 
   private boolean myDisposed = false;
+
+  // provisional flag until I refactor all MPSTree subclasses to be explicit about read actions. Drop once 2017.2 is out
+  // true indicates rebuild action needs implicit model access, false indicates it's ok to proceed without model read
+  protected boolean myWarnModelAccess = true;
 
   protected MPSTree() {
     setRootNode(new TextTreeNode("Empty"));
@@ -170,25 +176,25 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void fireBeforeTreeDisposed() {
-    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+    for (MPSTreeNodeListener listener : new HashSet<>(myTreeNodeListeners)) {
       listener.beforeTreeDisposed(this);
     }
   }
 
   void fireTreeNodeUpdated(MPSTreeNode node) {
-    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+    for (MPSTreeNodeListener listener : new HashSet<>(myTreeNodeListeners)) {
       listener.treeNodeUpdated(node, this);
     }
   }
 
   void fireTreeNodeAdded(MPSTreeNode node) {
-    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+    for (MPSTreeNodeListener listener : new HashSet<>(myTreeNodeListeners)) {
       listener.treeNodeAdded(node, this);
     }
   }
 
   void fireTreeNodeRemoved(MPSTreeNode node) {
-    for (MPSTreeNodeListener listener : new HashSet<MPSTreeNodeListener>(myTreeNodeListeners)) {
+    for (MPSTreeNodeListener listener : new HashSet<>(myTreeNodeListeners)) {
       listener.treeNodeRemoved(node, this);
     }
   }
@@ -234,6 +240,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     MPSTreeNode nodeToClick = getOpenableNode(e);
     if (nodeToClick != null && e.getClickCount() == 2) {
+      // shouldn't I use nodeToClick.getToggleClickCount() instead of hardcoded '2' here? Does 'toggle click' mean the same as doubleclick?
       doubleClick(nodeToClick);
     }
   }
@@ -449,8 +456,22 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     scrollRowToVisible(getRowForPath(path));
   }
 
-  // FIXME perhaps, shall be protected, rebuildAction is sort of implementation detail when there are rebuildNow() and rebuildLater()
-  public void runRebuildAction(final Runnable rebuildAction, final boolean saveExpansion) {
+  /**
+   * An extension mechanism to control data model access (e.g. model read) when creating a tree.
+   * If you need need model read during rebuild, override with {@code super.runRebuildAction(new ModelReadRunnable(properModelAccess, rebildAction), saveExpansion);}
+   * FIXME Besides, controls whether active expansion paths are preserved, although there are only 2 uses of the method, and both specify {@code true}.
+   * <p/>
+   * During rebuild action, nodes are crteated without 'Loading...' placeholder even if they clain they'd like it.
+   * <p/>
+   * {@code rebuildAction()} is sort of implementation detail when there are {@link #rebuildNow()} and {@link #rebuildLater()}, therefore is protected.
+   * There's little value in the method, though, perhaps will get merged into rebuildNow() eventually (with smth like
+   * {@code protected Runnable wrapDataAccess(Runnable)} to facilitate model read wrap.
+   * <p/>
+   * This method expects EDT thread.
+   * @param rebuildAction code that rebuilds a tree (or part thereof)
+   * @param saveExpansion {@code true} to indicate expanded path and selection is preserved
+   */
+  protected void runRebuildAction(final Runnable rebuildAction, final boolean saveExpansion) {
     if (RuntimeFlags.isTestMode()) {
       return;
     }
@@ -473,8 +494,17 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
           }
         };
       }
-      // debugger.GroupedTree assumes read action for rebuild() call
-      ModelAccess.instance().runReadAction(rebuildAction);
+      if (rebuildAction instanceof ModelReadRunnable) {
+        rebuildAction.run();
+      } else {
+        if (myWarnModelAccess) {
+          LOG.warn("MPSTree is generic class and shall not care about model read. Override #runRebuildAction and wrap Runnable with model read, instead",
+                    new Throwable());
+          ModelAccess.instance().runReadAction(rebuildAction);
+        } else {
+          rebuildAction.run();
+        }
+      }
       if (restoreExpansion != null) {
         runWithoutExpansion(restoreExpansion);
       }

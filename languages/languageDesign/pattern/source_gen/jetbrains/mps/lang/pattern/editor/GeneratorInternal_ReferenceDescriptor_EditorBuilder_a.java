@@ -102,7 +102,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
         }, effectiveNode, "mainNode");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
@@ -187,7 +187,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
         }, effectiveNode, "referenceLinkDeclaration");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

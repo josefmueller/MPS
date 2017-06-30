@@ -12,13 +12,13 @@ import java.util.HashMap;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Separator;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -56,48 +56,53 @@ import jetbrains.mps.ide.messages.Icons;
     myThreadReference = threadReference;
   }
   /*package*/ void addModel(IEvaluationContainer model) {
-    ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.fromMap(myStates).put(model, new EvaluationTree.InitializedState());
+    synchronized (myStates) {
+      MapSequence.fromMap(myStates).put(model, new EvaluationTree.InitializedState());
+    }
   }
   /*package*/ void removeModel(IEvaluationContainer model) {
-    ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.fromMap(myStates).removeKey(model);
+    synchronized (myStates) {
+      MapSequence.fromMap(myStates).removeKey(model);
+    }
   }
   /*package*/ void setResultValue(JavaValue value, IEvaluationContainer model) {
-    ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), value, myThreadReference));
+    synchronized (myStates) {
+      MapSequence.fromMap(myStates).put(model, new EvaluationTree.ResultState(model.getPresentation(), value, myThreadReference));
+    }
   }
   /*package*/ void setError(@NotNull String text, IEvaluationContainer model) {
-    ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(text));
+    synchronized (myStates) {
+      MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(text));
+    }
   }
   /*package*/ void setError(@NotNull Throwable error, IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(error));
+    synchronized (myStates) {
+      MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(error));
+    }
   }
   /*package*/ void setEvaluating(IEvaluationContainer model) {
-    ApplicationManager.getApplication().assertIsDispatchThread();
-    MapSequence.fromMap(myStates).put(model, new EvaluationTree.EvaluationInProgressState());
+    synchronized (myStates) {
+      MapSequence.fromMap(myStates).put(model, new EvaluationTree.EvaluationInProgressState());
+    }
   }
   @Override
   protected MPSTreeNode rebuild() {
     MPSTreeNode rootTreeNode = new TextTreeNode("Evaluation Result");
-    for (IEvaluationContainer model : SetSequence.fromSet(MapSequence.fromMap(myStates).keySet())) {
-      MapSequence.fromMap(myStates).get(model).rebuild(rootTreeNode, model);
+    synchronized (myStates) {
+      for (IEvaluationContainer model : SetSequence.fromSet(MapSequence.fromMap(myStates).keySet())) {
+        MapSequence.fromMap(myStates).get(model).rebuild(rootTreeNode, model);
+      }
     }
     return rootTreeNode;
   }
-  /*package*/ void rebuildEvaluationTreeNowIfNotDisposed() {
-    ApplicationManager.getApplication().assertIsDispatchThread();
-    if (!(isDisposed())) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          rebuildNow();
-        }
-      });
-    }
 
+
+  @Override
+  public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myDebugSession.getProject().getModelAccess(), rebuildAction), saveExpansion);
   }
+
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
     DefaultActionGroup group = new DefaultActionGroup();
@@ -110,7 +115,9 @@ import jetbrains.mps.ide.messages.Icons;
   }
   @Override
   public void dispose() {
-    MapSequence.fromMap(myStates).clear();
+    synchronized (myStates) {
+      MapSequence.fromMap(myStates).clear();
+    }
     this.clear();
     super.dispose();
   }
@@ -256,6 +263,8 @@ import jetbrains.mps.ide.messages.Icons;
           ListSequence.fromList(myExtendedMessage).addElement(extendedMessage[i]);
         }
       }
+      setColor(Color.RED);
+      setIcon(Icons.ERROR_ICON);
 
       doInit();
     }
@@ -268,23 +277,11 @@ import jetbrains.mps.ide.messages.Icons;
       return ListSequence.fromList(myExtendedMessage).isEmpty();
     }
     @Override
-    protected void updatePresentation() {
-      super.updatePresentation();
-
-      setColor(Color.RED);
-      setIcon(Icons.ERROR_ICON);
-    }
-    @Override
     protected void doInit() {
       for (String messagePart : myExtendedMessage) {
-        TextTreeNode node = new TextTreeNode(messagePart) {
-          @Override
-          public boolean isLeaf() {
-            return true;
-          }
-        };
-        add(node);
+        TextTreeNode node = new TextTreeNode(messagePart);
         node.setIcon(Icons.ERROR_ICON);
+        add(node);
       }
     }
     @Override
@@ -300,14 +297,6 @@ import jetbrains.mps.ide.messages.Icons;
     public EvaluatingTreeNode(IEvaluationContainer model) {
       super(model.getPresentation() + " = " + "evaluating...");
       myModel = model;
-    }
-    @Override
-    public boolean isLeaf() {
-      return true;
-    }
-    @Override
-    protected void updatePresentation() {
-      super.updatePresentation();
       setColor(Color.GRAY);
       setIcon(Icons.INFORMATION_ICON);
     }
@@ -320,10 +309,6 @@ import jetbrains.mps.ide.messages.Icons;
     public InitialTreeNode(IEvaluationContainer model) {
       super(model.getPresentation() + " = ");
       setIcon(jetbrains.mps.debugger.java.api.ui.Icons.WATCH);
-    }
-    @Override
-    public boolean isLeaf() {
-      return true;
     }
   }
 }

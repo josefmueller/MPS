@@ -28,7 +28,7 @@ public class FinderReference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for FinderReference. Generated from the smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)", "4747359941569483646")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for FinderReference. Generated from implicit smart reference attribute.", new SNodePointer("r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)", "2005690715325995359")));
     try {
       return super.createMenuItems(context);
     } finally {

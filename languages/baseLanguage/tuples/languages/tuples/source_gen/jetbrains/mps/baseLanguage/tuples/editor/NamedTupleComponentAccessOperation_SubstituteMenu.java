@@ -28,7 +28,7 @@ public class NamedTupleComponentAccessOperation_SubstituteMenu extends Substitut
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for NamedTupleComponentAccessOperation. Generated from the smart reference attribute.", new SNodePointer("r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)", "4747359941569483544")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for NamedTupleComponentAccessOperation. Generated from implicit smart reference attribute.", new SNodePointer("r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)", "1239576519914")));
     try {
       return super.createMenuItems(context);
     } finally {

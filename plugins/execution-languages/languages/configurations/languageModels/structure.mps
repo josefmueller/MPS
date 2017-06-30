@@ -33,9 +33,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -372,9 +369,6 @@
       <property role="IQ2ns" value="529406319400385974" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLjA" role="lGtFl">
-      <ref role="RPilL" node="3aewtBM3d7v" resolve="configuration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="6liWaRMAihH">
     <property role="R5$K7" value="false" />
@@ -499,9 +493,6 @@
       <property role="IQ2ns" value="5475888311765521408" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLjB" role="lGtFl">
-      <ref role="RPilL" node="5FAUXTS7LZp" resolve="beforeTask" />
-    </node>
   </node>
   <node concept="1TIwiD" id="5FAUXTS7S0k">
     <property role="TrG5h" value="BeforeTaskParameter" />
@@ -521,9 +512,6 @@
       <property role="IQ2ns" value="6550182048787583937" />
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="5FAUXTS7S0k" resolve="BeforeTaskParameter" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLjC" role="lGtFl">
-      <ref role="RPilL" node="5FAUXTS7Xf1" resolve="parameterDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="1ovLDatOqMj">

@@ -25,7 +25,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -36,22 +35,20 @@ import com.intellij.psi.PsiPackage;
 import com.intellij.refactoring.rename.RenameProcessor;
 import com.intellij.testFramework.MapDataContext;
 import com.intellij.testFramework.TestActionEvent;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.actions.MakeDirAModel;
-import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.LanguageImportHelper.Interaction;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.choose.ChooseByNameData;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -65,32 +62,15 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
   private VirtualFile myPackageDir;
 
   @Override
-  protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
-    myModule = configuration.getFacet().getModule();
-
-    VirtualFile[] sourceRoots = ModuleRootManager.getInstance(myModule).getSourceRoots();
-    assertEquals(sourceRoots.length, 1);
-
-    String sourceRootPath = sourceRoots[0].getPath();
-
-    DefaultModelRoot root = new DefaultModelRoot();
-    root.setContentRoot(sourceRootPath);
-    root.addFile(DefaultModelRoot.SOURCE_ROOTS, sourceRootPath);
-    configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
-
-    myPackageDir = VfsUtil.createDirectories(sourceRootPath + "/com/jetbrains/pkg");
+  protected void postConfigureSourceRoot(IFile sourceRoot) throws IOException {
+    myPackageDir = VfsUtil.createDirectories(sourceRoot.getPath() + "/com/jetbrains/pkg");
   }
 
   protected void doTest(Interaction interaction) {
-    Project project = myProjectBuilder.getFixture().getProject();
+    Project project = getMpsFixture().getProject();
 
     Ref<PsiDirectory> dirElement = new Ref<>();
-    ApplicationManager.getApplication().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        dirElement.set(PsiManager.getInstance(project).findDirectory(myPackageDir));
-      }
-    });
+    ApplicationManager.getApplication().runReadAction(() -> dirElement.set(PsiManager.getInstance(project).findDirectory(myPackageDir)));
 
     MakeDirAModel action = new MakeDirAModel();
 
@@ -105,7 +85,7 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
 
     MapDataContext dataContext = new MapDataContext();
     dataContext.put(PlatformDataKeys.PROJECT, project);
-    dataContext.put(LangDataKeys.MODULE, myModule);
+    dataContext.put(LangDataKeys.MODULE, getMpsFixture().getModule());
     dataContext.put(PlatformDataKeys.PSI_ELEMENT, dirElement.get());
     dataContext.put(PlatformDataKeys.VIRTUAL_FILE_ARRAY, new VirtualFile[]{dirElement.get().getVirtualFile()});
     dataContext.put(MakeDirAModel.LANGUAGE_IMPORT_INTERACTION, interaction);
@@ -115,12 +95,7 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
     assertTrue(e.getPresentation().isEnabled());
     action.beforeActionPerformedUpdate(e);
 
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        action.actionPerformed(e);
-      }
-    }, ModalityState.NON_MODAL);
+    ApplicationManager.getApplication().invokeAndWait(() -> action.actionPerformed(e), ModalityState.NON_MODAL);
   }
 
   protected final Interaction cancelInteraction = new Interaction() {
@@ -160,60 +135,41 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
     doTest(cancelInteraction);
 
     // check no model has been created
-    SRepository repository = ProjectHelper.getProjectRepository(myProjectBuilder.getFixture().getProject());
-    repository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModel smodel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(myPackageDir));
-        assertNull("Model must not have been created under the directory because the action was cancelled", smodel);
-      }
+    getMpsFixture().getModelAccess().runReadAction(() -> {
+      SModel smodel = SModelFileTracker.getInstance(getMpsFixture().getRepository()).findModel(VirtualFileUtils.toIFile(myPackageDir));
+      assertNull("Model must not have been created under the directory because the action was cancelled", smodel);
     });
   }
 
   public void testCreateModelInDir() {
     doTest(chooseOnlyBaseLanguageInteraction);
 
-    SRepository repository = ProjectHelper.getProjectRepository(myProjectBuilder.getFixture().getProject());
-    repository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModel smodel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(myPackageDir));
-        assertNotNull("Model hasn't been created under the directory", smodel);
-        Collection<SLanguage> importedLanguages = ((SModelInternal) smodel).importedLanguageIds();
-        assertTrue("Model is expected to have exactly one used language", importedLanguages.size() == 1);
-        assertEquals("jetbrains.mps.baseLanguage", importedLanguages.iterator().next().getQualifiedName());
-      }
+    getMpsFixture().getModelAccess().runReadAction(() -> {
+      SModel smodel = SModelFileTracker.getInstance(getMpsFixture().getRepository()).findModel(VirtualFileUtils.toIFile(myPackageDir));
+      assertNotNull("Model hasn't been created under the directory", smodel);
+      Collection<SLanguage> importedLanguages = ((SModelInternal) smodel).importedLanguageIds();
+      assertTrue("Model is expected to have exactly one used language", importedLanguages.size() == 1);
+      assertEquals("jetbrains.mps.baseLanguage", importedLanguages.iterator().next().getQualifiedName());
     });
   }
 
   public void testRenamePackage() {
     doTest(chooseOnlyBaseLanguageInteraction);
 
-    Project project = myProjectBuilder.getFixture().getProject();
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        CommandProcessor.getInstance().executeCommand(project, new Runnable() {
-          @Override
-          public void run() {
-            PsiPackage psiPackage = JavaPsiFacade.getInstance(project).findPackage("com.jetbrains.pkg");
-            assertNotNull(psiPackage);
-            new RenameProcessor(project, psiPackage, "com.jetbrains.pkgRenamed", false, false).run();
-          }
-        }, null, null);
-      }
-    }, ModalityState.NON_MODAL);
+    Project project = getMpsFixture().getProject();
+    ApplicationManager.getApplication().invokeAndWait(() -> CommandProcessor.getInstance().executeCommand(project, () -> {
+      PsiPackage psiPackage = JavaPsiFacade.getInstance(project).findPackage("com.jetbrains.pkg");
+      assertNotNull(psiPackage);
+      new RenameProcessor(project, psiPackage, "com.jetbrains.pkgRenamed", false, false).run();
+    }, null, null), ModalityState.NON_MODAL);
 
 
-    ProjectHelper.getModelAccess(project).runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SModule module = FacetManager.getInstance(myModule).getFacetByType(MPSFacetType.ID).getSolution();
-        List<SModel> smodels = IterableUtil.asList(module.getModels());
-        assertEquals("Exactly one model must be in the idea solution after package rename", 1, smodels.size());
-        SModel smodel = smodels.get(0);
-        assertEquals("com.jetbrains.pkgRenamed", smodel.getName().getLongName());
-      }
+    getMpsFixture().getModelAccess().runReadAction(() -> {
+      SModule module = FacetManager.getInstance(getMpsFixture().getModule()).getFacetByType(MPSFacetType.ID).getSolution();
+      List<SModel> smodels = IterableUtil.asList(module.getModels());
+      assertEquals("Exactly one model must be in the idea solution after package rename", 1, smodels.size());
+      SModel smodel = smodels.get(0);
+      assertEquals("com.jetbrains.pkgRenamed", smodel.getName().getLongName());
     });
 
 

@@ -28,7 +28,7 @@ public class XMLSAXChildRule_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for XMLSAXChildRule. Generated from the smart reference attribute.", new SNodePointer("r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)", "4747359941569484113")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for XMLSAXChildRule. Generated from implicit smart reference attribute.", new SNodePointer("r:7fae86c9-9d2f-4341-8a38-92d558a78a9a(jetbrains.mps.core.xml.sax.structure)", "2264311582634140376")));
     try {
       return super.createMenuItems(context);
     } finally {

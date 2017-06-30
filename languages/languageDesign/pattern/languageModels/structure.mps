@@ -35,9 +35,6 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
-      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
-        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
-      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="5404671619616246344" name="staticScope" index="2_RsDV" />
         <property id="1096454100552" name="rootable" index="19KtqR" />
@@ -248,9 +245,6 @@
       <property role="IQ2ns" value="3133930811460119174" />
       <ref role="20lvS9" node="gyDMOuj" resolve="PatternVariableDeclaration" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLfp" role="lGtFl">
-      <ref role="RPilL" node="2HXXnvZIQE6" resolve="variable" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2vRmfyWqEE4">
     <property role="R5$K7" value="false" />
@@ -297,9 +291,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="4264731254635442557" />
       <ref role="20lvS9" node="gyDMOuj" resolve="PatternVariableDeclaration" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLfq" role="lGtFl">
-      <ref role="RPilL" node="3GJnBG73j5X" resolve="declaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="1r$KkbaWFOS">

@@ -69,7 +69,9 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
+    RemoveSmartReferenceAttribute_Action.setCellActions(editorCell, myNode, getEditorContext());
     return editorCell;
   }
   private EditorCell createCollection_nb22i1_b0() {
@@ -127,7 +129,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
         }, effectiveNode, "charactersticReference");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

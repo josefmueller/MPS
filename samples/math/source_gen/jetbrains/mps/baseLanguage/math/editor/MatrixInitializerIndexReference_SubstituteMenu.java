@@ -28,7 +28,7 @@ public class MatrixInitializerIndexReference_SubstituteMenu extends SubstituteMe
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for MatrixInitializerIndexReference. Generated from the smart reference attribute.", new SNodePointer("r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)", "4747359941569484194")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for MatrixInitializerIndexReference. Generated from implicit smart reference attribute.", new SNodePointer("r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)", "6219660258344759890")));
     try {
       return super.createMenuItems(context);
     } finally {

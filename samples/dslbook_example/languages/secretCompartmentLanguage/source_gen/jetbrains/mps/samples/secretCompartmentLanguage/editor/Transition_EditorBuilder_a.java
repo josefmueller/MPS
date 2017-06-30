@@ -58,7 +58,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         }, effectiveNode, "trigger");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
@@ -134,7 +134,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         }, effectiveNode, "target");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
         setSemanticNodeToCells(cell, myNode);
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

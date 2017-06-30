@@ -22,6 +22,9 @@
       <concept id="1820634577908471810" name="jetbrains.mps.lang.generator.plan.structure.Transform" flags="ng" index="2VgMA2">
         <child id="2944629966652439181" name="languages" index="1t_9vn" />
       </concept>
+      <concept id="2959971211779300533" name="jetbrains.mps.lang.generator.plan.structure.TextDocLine" flags="ng" index="16rNan">
+        <property id="2959971211779300563" name="text" index="16rNbL" />
+      </concept>
       <concept id="3750601816081740541" name="jetbrains.mps.lang.generator.plan.structure.DeclaredCheckpointSpec" flags="ng" index="3ps6a7">
         <reference id="3750601816081740544" name="cpDecl" index="3ps6dU" />
       </concept>
@@ -29,6 +32,9 @@
         <property id="869728027904938835" name="withExtended" index="26q7pr" />
         <property id="1113384811373540783" name="withPriorityRules" index="1bjVKT" />
         <child id="8296877263936660572" name="generator" index="3uOsAP" />
+      </concept>
+      <concept id="894680215637491805" name="jetbrains.mps.lang.generator.plan.structure.DocumentationStep" flags="ng" index="1ONwER">
+        <child id="894680215637528532" name="comments" index="1ONSkY" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -66,6 +72,11 @@
           <property role="20Rdg5" value="8fffa437-9500-4c6b-abfc-f4cb2335b059" />
           <property role="20Rdg7" value="jetbrains.mps.lang.typesystem#1174411220599" />
         </node>
+      </node>
+    </node>
+    <node concept="1ONwER" id="2$jVy9JvpY_" role="2VgMA7">
+      <node concept="16rNan" id="2$jVy9JvpYY" role="1ONSkY">
+        <property role="16rNbL" value="we need priorities of lang.typesystem to be active, not the extended generators" />
       </node>
     </node>
     <node concept="2VgMA2" id="p4S6WRbOUx" role="2VgMA7">

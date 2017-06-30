@@ -28,7 +28,7 @@ public class SimpleBuilderPropertyBuilder_SubstituteMenu extends SubstituteMenuB
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SimpleBuilderPropertyBuilder. Generated from the smart reference attribute.", new SNodePointer("r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)", "4747359941569483930")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SimpleBuilderPropertyBuilder. Generated from implicit smart reference attribute.", new SNodePointer("r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)", "5389689214217404511")));
     try {
       return super.createMenuItems(context);
     } finally {

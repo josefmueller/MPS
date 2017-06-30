@@ -343,9 +343,6 @@
       <property role="IQ2ns" value="1174555843709" />
       <ref role="20lvS9" node="h5STpZg" resolve="PredefinedSymbolClassDeclaration" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLiC" role="lGtFl">
-      <ref role="RPilL" node="h5SYXLX" resolve="symbolClass" />
-    </node>
   </node>
   <node concept="1TIwiD" id="h5T2E$A">
     <property role="R5$K7" value="false" />
@@ -414,9 +411,6 @@
       <property role="IQ2ns" value="1174558819022" />
       <ref role="20lvS9" node="h5STpZg" resolve="PredefinedSymbolClassDeclaration" />
     </node>
-    <node concept="RPilO" id="47y0FrqaLiF" role="lGtFl">
-      <ref role="RPilL" node="h5Takbe" resolve="declaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="h5Tukr7">
     <property role="R5$K7" value="false" />
@@ -455,9 +449,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1174565035929" />
       <ref role="20lvS9" node="h5Tukr7" resolve="MatchParensRegexp" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLiH" role="lGtFl">
-      <ref role="RPilL" node="h5Ty1Yp" resolve="match" />
     </node>
   </node>
   <node concept="PlHQZ" id="h5YMW1U">
@@ -563,9 +554,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1174662628918" />
       <ref role="20lvS9" node="h5OD$ld" resolve="RegexpDeclaration" />
-    </node>
-    <node concept="RPilO" id="47y0FrqaLiE" role="lGtFl">
-      <ref role="RPilL" node="h5ZmkoQ" resolve="regexp" />
     </node>
   </node>
   <node concept="1TIwiD" id="h6dJHDn">

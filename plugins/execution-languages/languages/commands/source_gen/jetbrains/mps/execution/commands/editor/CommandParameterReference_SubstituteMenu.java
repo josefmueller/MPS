@@ -28,7 +28,7 @@ public class CommandParameterReference_SubstituteMenu extends SubstituteMenuBase
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for CommandParameterReference. Generated from the smart reference attribute.", new SNodePointer("r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)", "4747359941569484003")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for CommandParameterReference. Generated from implicit smart reference attribute.", new SNodePointer("r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)", "856705193941281756")));
     try {
       return super.createMenuItems(context);
     } finally {

@@ -28,7 +28,7 @@ public class SimpleAspectOrderRef_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SimpleAspectOrderRef. Generated from the smart reference attribute.", new SNodePointer("r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)", "4747359941569483587")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for SimpleAspectOrderRef. Generated from implicit smart reference attribute.", new SNodePointer("r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)", "174635545557784815")));
     try {
       return super.createMenuItems(context);
     } finally {

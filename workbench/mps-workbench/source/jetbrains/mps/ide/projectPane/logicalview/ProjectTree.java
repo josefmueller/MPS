@@ -64,6 +64,11 @@ public class ProjectTree extends MPSTree implements TreeNodeParamProvider {
   }
 
   @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
+  }
+
+  @Override
   protected MPSTreeNode rebuild() {
     if (myProject == null || myProject.isDisposed()) {
       return new TextTreeNode("Empty");

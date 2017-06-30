@@ -34,14 +34,14 @@
     <orderEntry type="library" name="mps-icons" level="project" />
     <orderEntry type="library" exported="" name="mps-behavior-api" level="project" />
     <orderEntry type="library" exported="" name="mps-behavior-runtime" level="project" />
-    <orderEntry type="library" scope="TEST" name="lang.test.util" level="project" />
-    <orderEntry type="library" scope="TEST" name="lang.test.matcher" level="project" />
-    <orderEntry type="library" scope="TEST" name="lang.test.runtime" level="project" />
     <orderEntry type="library" name="mps-tool" level="project" />
     <orderEntry type="library" name="mps-closures" level="project" />
     <orderEntry type="library" name="mps-environment" level="project" />
     <orderEntry type="library" scope="TEST" name="mps-collections" level="project" />
     <orderEntry type="library" scope="TEST" name="mps-tuples" level="project" />
     <orderEntry type="library" name="mps-boot-util" level="project" />
+    <orderEntry type="library" name="mps-annotations" level="project" />
+    <orderEntry type="library" scope="TEST" name="mps-editor-runtime" level="project" />
+    <orderEntry type="library" scope="TEST" name="mps-test" level="project" />
   </component>
 </module>

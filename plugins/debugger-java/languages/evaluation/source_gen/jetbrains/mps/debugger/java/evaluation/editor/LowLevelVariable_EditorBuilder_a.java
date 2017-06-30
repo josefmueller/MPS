@@ -79,7 +79,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
         EditorCell cell = new LowLevelVariable_EditorBuilder_a.Inline_Builder_f5bzsg_a0a(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };
@@ -221,7 +221,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
       @Override
       protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
         EditorCell cell = new LowLevelVariable_EditorBuilder_a.Inline_Builder_f5bzsg_a1c0(getEditorContext(), myNode, effectiveNode).createCell();
-        installDeleteActions_atLeastOne(cell);
+        installDeleteActions_notnull(cell);
         return cell;
       }
     };

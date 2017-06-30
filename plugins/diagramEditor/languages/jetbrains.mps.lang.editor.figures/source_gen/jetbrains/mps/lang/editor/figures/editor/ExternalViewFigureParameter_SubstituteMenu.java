@@ -28,7 +28,7 @@ public class ExternalViewFigureParameter_SubstituteMenu extends SubstituteMenuBa
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ExternalViewFigureParameter. Generated from the smart reference attribute.", new SNodePointer("r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)", "4747359941569483984")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ExternalViewFigureParameter. Generated from implicit smart reference attribute.", new SNodePointer("r:64327a98-9d9a-43f9-aa56-fe3b1ee87c60(jetbrains.mps.lang.editor.figures.structure)", "2178507174411801606")));
     try {
       return super.createMenuItems(context);
     } finally {

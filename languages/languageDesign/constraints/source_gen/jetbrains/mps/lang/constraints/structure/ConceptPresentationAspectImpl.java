@@ -502,7 +502,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.RefPresentationMigratedProblem:
         if (props_RefPresentationMigratedProblem == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("RefPresentationMigratedProblem");
+          cpb.rawPresentation("ref. presentation migrated - problem");
           props_RefPresentationMigratedProblem = cpb.create();
         }
         return props_RefPresentationMigratedProblem;

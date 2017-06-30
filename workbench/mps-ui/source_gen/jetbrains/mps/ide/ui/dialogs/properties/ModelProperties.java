@@ -12,8 +12,6 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.persistence.NullDataSource;
-import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
@@ -86,12 +84,6 @@ public class ModelProperties {
         dmd.setGenerateIntoModelFolder(myGenerateIntoModelFolder);
       }
     }
-
-    if (!(myModelDescriptor.getSource() instanceof NullDataSource)) {
-      ((EditableSModel) myModelDescriptor).save();
-    }
-
-    new MissingDependenciesFixer(myModelDescriptor).fixModuleDependencies();
   }
   private void addNewDevKits() {
     Set<SModuleReference> devKitsInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).importedDevkits());

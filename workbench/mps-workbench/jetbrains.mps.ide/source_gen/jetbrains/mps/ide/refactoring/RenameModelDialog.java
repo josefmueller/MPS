@@ -6,6 +6,7 @@ import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.awt.HeadlessException;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelName;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.refactoring.Renamer;
@@ -21,20 +22,26 @@ public class RenameModelDialog extends RenameDialog {
     setTitle("Rename Model");
   }
 
+
+  @Nullable
+  @Override
+  protected String checkValue() {
+    final SModelName newModelName = new SModelName(getCurrentValue());
+    if (!((SourceVersion.isName(newModelName.getLongName())))) {
+      return "Model name should be valid Java package";
+    }
+
+    return super.checkValue();
+  }
+
   @Override
   protected void doRefactoringAction() {
     final SModelName newModelName = new SModelName(getCurrentValue());
-    if (!((SourceVersion.isName(newModelName.getLongName())))) {
-      setErrorText("Model name should be valid Java package");
-      return;
-    }
-    if (!((newModelName.equals(myModelDescriptor.getName())))) {
-      myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
-        public void run() {
-          Renamer.renameModel(myModelDescriptor, newModelName.getValue());
-        }
-      });
-    }
+    myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        Renamer.renameModel(myModelDescriptor, newModelName.getValue());
+      }
+    });
     super.doRefactoringAction();
   }
 }
