@@ -24,6 +24,10 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.Operation_ApproveDelete" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+        <child id="8979250711607012232" name="cellSelector" index="3a7HXU" />
+      </concept>
       <concept id="3547227755871693971" name="jetbrains.mps.lang.editor.structure.PredefinedSelector" flags="ng" index="2B6iha">
         <property id="2162403111523065396" name="cellId" index="1lyBwo" />
       </concept>
@@ -31,6 +35,9 @@
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
       <concept id="1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" flags="ng" index="2SsqMj" />
+      <concept id="4323500428136740385" name="jetbrains.mps.lang.editor.structure.CellIdReferenceSelector" flags="ng" index="2TlHUq">
+        <reference id="4323500428136742952" name="id" index="2TlMyj" />
+      </concept>
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -99,9 +106,14 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6" />
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -207,6 +219,20 @@
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="4H19mAwGRdh" role="1hA7z_">
         <node concept="3clFbS" id="4H19mAwGRdi" role="2VODD2">
+          <node concept="3clFbJ" id="14TMHtHg1_y" role="3cqZAp">
+            <node concept="3clFbS" id="14TMHtHg1_$" role="3clFbx">
+              <node concept="3cpWs6" id="14TMHtHg1Vi" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="14TMHtHg1K3" role="3clFbw">
+              <node concept="0IXxy" id="14TMHtHg1AI" role="2Oq$k0" />
+              <node concept="2xy62i" id="14TMHtHg1T_" role="2OqNvi">
+                <node concept="1Q80Hx" id="14TMHtHg1Ub" role="2xHN3q" />
+                <node concept="2TlHUq" id="14TMHtHg5Tn" role="3a7HXU">
+                  <ref role="2TlMyj" to="tpco:1USvB3ZvF7B" resolve="ALIAS_EDITOR_COMPONENT" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3cpWs8" id="4H19mAwQskz" role="3cqZAp">
             <node concept="3cpWsn" id="4H19mAwQsk$" role="3cpWs9">
               <property role="TrG5h" value="nodeToSelect" />

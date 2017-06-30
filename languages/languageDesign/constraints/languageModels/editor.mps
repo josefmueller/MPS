@@ -40,6 +40,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.Operation_ApproveDelete" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+      </concept>
       <concept id="1239814640496" name="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" flags="nn" index="2EHx9g" />
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
@@ -117,6 +120,7 @@
         <child id="16410578721629643" name="emptyCellModel" index="2ruayu" />
       </concept>
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="1088612959204" name="jetbrains.mps.lang.editor.structure.CellModel_Alternation" flags="sg" stub="8104358048506729361" index="1QoScp">
         <property id="1088613081987" name="vertical" index="1QpmdY" />
         <child id="1145918517974" name="alternationCondition" index="3e4ffs" />
@@ -1873,6 +1877,17 @@
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="30KOWJO2zai" role="1hA7z_">
         <node concept="3clFbS" id="30KOWJO2zaj" role="2VODD2">
+          <node concept="3clFbJ" id="14TMHtHecmv" role="3cqZAp">
+            <node concept="3clFbS" id="14TMHtHecmx" role="3clFbx">
+              <node concept="3cpWs6" id="14TMHtHecPB" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="14TMHtHecvy" role="3clFbw">
+              <node concept="0IXxy" id="14TMHtHecnh" role="2Oq$k0" />
+              <node concept="2xy62i" id="14TMHtHecOn" role="2OqNvi">
+                <node concept="1Q80Hx" id="14TMHtHecOY" role="2xHN3q" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="30KOWJO2za$" role="3cqZAp">
             <node concept="2OqwBi" id="30KOWJO2zgW" role="3clFbG">
               <node concept="0IXxy" id="30KOWJO2zaz" role="2Oq$k0" />

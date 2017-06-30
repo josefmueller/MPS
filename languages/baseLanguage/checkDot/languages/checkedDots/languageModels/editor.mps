@@ -40,6 +40,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.Operation_ApproveDelete" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+      </concept>
       <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr" />
       <concept id="3547227755871693971" name="jetbrains.mps.lang.editor.structure.PredefinedSelector" flags="ng" index="2B6iha">
         <property id="2162403111523065396" name="cellId" index="1lyBwo" />
@@ -182,6 +185,7 @@
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6" />
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
@@ -716,6 +720,22 @@
             </node>
             <node concept="9aQIb" id="3I_1mW1Tv_Z" role="9aQIa">
               <node concept="3clFbS" id="3I_1mW1TvA0" role="9aQI4">
+                <node concept="3clFbJ" id="4ZFm$8TEA3B" role="3cqZAp">
+                  <node concept="3clFbS" id="4ZFm$8TEA3D" role="3clFbx">
+                    <node concept="3cpWs6" id="4ZFm$8TEBC4" role="3cqZAp" />
+                  </node>
+                  <node concept="2OqwBi" id="4ZFm$8TEBm0" role="3clFbw">
+                    <node concept="2OqwBi" id="4ZFm$8TEAiB" role="2Oq$k0">
+                      <node concept="0IXxy" id="4ZFm$8TEA6W" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="4ZFm$8TEB01" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
+                      </node>
+                    </node>
+                    <node concept="2xy62i" id="4ZFm$8TEBxJ" role="2OqNvi">
+                      <node concept="1Q80Hx" id="4ZFm$8TEB$A" role="2xHN3q" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="3I_1mW1TvG$" role="3cqZAp">
                   <node concept="37vLTI" id="3I_1mW1TyUZ" role="3clFbG">
                     <node concept="2ShNRf" id="3I_1mW1TyYx" role="37vLTx">
