@@ -119,6 +119,13 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-vcs/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsVcsCore/vcs-core/lib"/>
     </copy>
+    <mkdir dir="${base_dir}/IdeaPlugin/mps-migration/lib"/>
+    <copy todir="${base_dir}/IdeaPlugin/mps-migration/lib">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsMigrationCore"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-migration/META-INF">
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsMigrationCore/migration-platform/META-INF"/>
+    </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-testing">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing"/>
     </copy>
