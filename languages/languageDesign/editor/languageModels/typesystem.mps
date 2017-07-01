@@ -6220,7 +6220,7 @@
     </node>
   </node>
   <node concept="1YbPZF" id="iz0IZTzbXg">
-    <property role="TrG5h" value="typeof_Operation_ApproveDelete" />
+    <property role="TrG5h" value="typeof_ApproveDelete_Operation_editorContext" />
     <property role="3GE5qa" value="SNode" />
     <node concept="3clFbS" id="iz0IZTzbXh" role="18ibNy">
       <node concept="1Z5TYs" id="iz0IZTzcPB" role="3cqZAp">

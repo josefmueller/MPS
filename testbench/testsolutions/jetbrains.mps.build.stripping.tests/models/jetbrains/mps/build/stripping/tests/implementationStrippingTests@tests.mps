@@ -190,12 +190,12 @@
             <node concept="2C15Q6" id="4$ezt8YXKSm" role="2C1s_O">
               <node concept="2C17Mc" id="4$ezt8YXKSn" role="2C15Q5" />
             </node>
-            <node concept="LIFWc" id="4$ezt8YXL2I" role="lGtFl">
-              <property role="ZRATv" value="true" />
+            <node concept="LIFWc" id="1uAcxHxleMm" role="lGtFl">
+              <property role="LIFWa" value="0" />
               <property role="OXtK3" value="true" />
-              <property role="p6zMq" value="3" />
-              <property role="p6zMs" value="3" />
-              <property role="LIFWd" value="Constant_w1i24s_a0" />
+              <property role="p6zMq" value="0" />
+              <property role="p6zMs" value="0" />
+              <property role="LIFWd" value="notKeyword" />
             </node>
           </node>
           <node concept="2C6hJS" id="4$ezt8YXKSo" role="2C1pO$" />
@@ -207,7 +207,15 @@
       <node concept="2C6hJS" id="4$ezt8YXL36" role="1x_AGi">
         <node concept="2C1pOB" id="4$ezt8YXL37" role="2C6hI7">
           <node concept="2C15Q6" id="4$ezt8YXL39" role="2C1pO_">
-            <node concept="2C17Mc" id="4$ezt8YXL3a" role="2C15Q5" />
+            <node concept="2C17Mc" id="4$ezt8YXL3a" role="2C15Q5">
+              <node concept="LIFWc" id="1uAcxHxleOH" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="5" />
+                <property role="p6zMs" value="5" />
+                <property role="LIFWd" value="ALIAS_EDITOR_COMPONENT" />
+              </node>
+            </node>
           </node>
           <node concept="2C6hJS" id="4$ezt8YXL3b" role="2C1pO$" />
         </node>

@@ -878,6 +878,30 @@
         <ref role="398BVh" node="53PdBITeUc3" resolve="idea_home" />
       </node>
     </node>
+    <node concept="2sgV4H" id="Wd$cIj7mXw" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:5D1dJ7xWer5" resolve="mpsCore" />
+      <node concept="398BVA" id="6caHyB43O_5" role="2JcizS">
+        <ref role="398BVh" node="53PdBITeUc4" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="4LdE6kxtTYs" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+        </node>
+      </node>
+    </node>
+    <node concept="2sgV4H" id="Wd$cIj91F3" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:6S1jmf0xDFC" resolve="mpsBootstrapCore" />
+      <node concept="398BVA" id="6caHyB43OC8" role="2JcizS">
+        <ref role="398BVh" node="53PdBITeUc4" resolve="mps_home" />
+      </node>
+    </node>
+    <node concept="2sgV4H" id="Wd$cIjcwMq" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:ymnOULAEsd" resolve="mpsTesting" />
+      <node concept="398BVA" id="6caHyB43OF9" role="2JcizS">
+        <ref role="398BVh" node="53PdBITeUc4" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="4oxPaAQvvMJ" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+        </node>
+      </node>
+    </node>
     <node concept="2sgV4H" id="53PdBITeUc8" role="1l3spa">
       <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
       <node concept="398BVA" id="7XvkNSEzhLM" role="2JcizS">
@@ -1204,16 +1228,16 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
           </node>
         </node>
-        <node concept="1SiIV0" id="14TMHtIgABO" role="3bR37C">
-          <node concept="3bR9La" id="14TMHtIgABP" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="53PdBITeVn8" resolve="jetbrains.mps.baseLanguage.test" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="1uAcxHx9_FH" role="3bR37C">
-          <node concept="3bR9La" id="1uAcxHx9_FI" role="1SiIV1">
+        <node concept="1SiIV0" id="6r68uXoBwu8" role="3bR37C">
+          <node concept="3bR9La" id="6r68uXoBwu9" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="6r68uXoBw8t" resolve="jetbrains.mps.lang.editor.editorTest" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="1uAcxHy36R0" role="3bR37C">
+          <node concept="3bR9La" id="1uAcxHy36R1" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="53PdBITeVn8" resolve="jetbrains.mps.baseLanguage.test" />
           </node>
         </node>
       </node>
@@ -2889,8 +2913,8 @@
             <ref role="3bR37D" to="ffeo:1TaHNgiIbJ$" resolve="jetbrains.mps.ide.editor" />
           </node>
         </node>
-        <node concept="1SiIV0" id="14TMHtIgDRP" role="3bR37C">
-          <node concept="3bR9La" id="14TMHtIgDRQ" role="1SiIV1">
+        <node concept="1SiIV0" id="1uAcxHy36Vf" role="3bR37C">
+          <node concept="3bR9La" id="1uAcxHy36Vg" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" to="ffeo:1TaHNgiIbIZ" resolve="MPS.Editor" />
           </node>
@@ -4897,6 +4921,18 @@
         <node concept="1SiIV0" id="4Sf$XywNui_" role="3bR37C">
           <node concept="1Busua" id="4Sf$XywNuiA" role="1SiIV1">
             <ref role="1Busuk" to="ffeo:7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="IBh1_7aLxC" role="3bR37C">
+          <node concept="3bR9La" id="IBh1_7aLxD" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:2eDSGe9d1qi" resolve="jetbrains.mps.ide" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="6r68uXoBwDp" role="3bR37C">
+          <node concept="3bR9La" id="6r68uXoBwDq" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="6r68uXoBw8t" resolve="jetbrains.mps.lang.editor.editorTest" />
           </node>
         </node>
       </node>
