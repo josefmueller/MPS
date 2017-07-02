@@ -184,8 +184,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SimpleMathVarDeclaration;
       case LanguageConceptSwitch.SimpleMathVarReference:
         if (props_SimpleMathVarReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b832e4e1L);
-          cpb.presentationByReference(0x1cc69153b832e4e2L, "declaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x7e282943fc6b4900L, 0xada534c0024cc4f4L, 0x1cc69153b832e4e1L, 0x1cc69153b832e4e2L, "declaration", "", "");
           props_SimpleMathVarReference = cpb.create();
         }
         return props_SimpleMathVarReference;

@@ -27,8 +27,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TestModuleManifest;
       case LanguageConceptSwitch.TestModuleManifestRef:
         if (props_TestModuleManifestRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc684499788c1c4L);
-          cpb.presentationByReference(0x2dc684499788c1c5L, "manifest", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9f846aef4e4a4a84L, 0x828e7e83fe2697f2L, 0x2dc684499788c1c4L, 0x2dc684499788c1c5L, "manifest", "", "");
           props_TestModuleManifestRef = cpb.create();
         }
         return props_TestModuleManifestRef;

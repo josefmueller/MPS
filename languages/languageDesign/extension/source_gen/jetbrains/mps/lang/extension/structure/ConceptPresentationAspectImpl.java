@@ -35,7 +35,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Extension;
       case LanguageConceptSwitch.ExtensionDeclaration:
         if (props_ExtensionDeclaration == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x33c018482cafa9d4L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.presentationByName();
           props_ExtensionDeclaration = cpb.create();
@@ -51,9 +51,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ExtensionFieldDeclaration;
       case LanguageConceptSwitch.ExtensionFieldReference:
         if (props_ExtensionFieldReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
-          cpb.presentationByReference(0x61a62b43e1534e9fL, "declaration", "", "");
+          cpb.presentationByReference(0xc0080a477e374558L, 0xbee99ae18e690549L, 0x61a62b43e1534e9eL, 0x61a62b43e1534e9fL, "declaration", "", "");
           props_ExtensionFieldReference = cpb.create();
         }
         return props_ExtensionFieldReference;

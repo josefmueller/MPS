@@ -47,7 +47,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AutoInitDSLClass;
       case LanguageConceptSwitch.BooleanPropertyInstance:
         if (props_BooleanPropertyInstance == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec3L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_BooleanPropertyInstance = cpb.create();
         }
@@ -61,8 +61,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CustomMemberDescriptor;
       case LanguageConceptSwitch.DSLAnnotation:
         if (props_DSLAnnotation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL);
-          cpb.presentationByReference(0x3190d3f9f1cac277L, "descriptor", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x3190d3f9f1cab0caL, 0x3190d3f9f1cac277L, "descriptor", "", "");
           props_DSLAnnotation = cpb.create();
         }
         return props_DSLAnnotation;
@@ -110,7 +110,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_GenerateModifier;
       case LanguageConceptSwitch.IntegerPropertyInstance:
         if (props_IntegerPropertyInstance == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100ec5L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_IntegerPropertyInstance = cpb.create();
         }
@@ -129,8 +129,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_MemberModifier;
       case LanguageConceptSwitch.MemberPlaceholder:
         if (props_MemberPlaceholder == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L);
-          cpb.presentationByReference(0x59e9926e840d7db5L, "decl", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db5L, "decl", "", "");
           props_MemberPlaceholder = cpb.create();
         }
         return props_MemberPlaceholder;
@@ -143,14 +143,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_MethodDescriptor;
       case LanguageConceptSwitch.MethodInstance:
         if (props_MethodInstance == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_MethodInstance = cpb.create();
         }
         return props_MethodInstance;
       case LanguageConceptSwitch.MethodParameterInstance:
         if (props_MethodParameterInstance == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x7b3d7e6b74000c44L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_MethodParameterInstance = cpb.create();
         }
@@ -198,7 +198,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RequiredModifier;
       case LanguageConceptSwitch.StringPropertyInstance:
         if (props_StringPropertyInstance == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e84100d04L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_StringPropertyInstance = cpb.create();
         }

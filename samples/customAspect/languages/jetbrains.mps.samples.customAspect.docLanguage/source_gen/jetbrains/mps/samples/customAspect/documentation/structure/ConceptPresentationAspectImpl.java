@@ -18,8 +18,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ConceptDocumentation:
         if (props_ConceptDocumentation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x22916f45e98f4433L, 0x9c1b1b382cf5bd8dL, 0x28360eb22c3ac732L);
-          cpb.presentationByReference(0x28360eb22c3ad436L, "cncpt", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x22916f45e98f4433L, 0x9c1b1b382cf5bd8dL, 0x28360eb22c3ac732L, 0x28360eb22c3ad436L, "cncpt", "", "");
           props_ConceptDocumentation = cpb.create();
         }
         return props_ConceptDocumentation;

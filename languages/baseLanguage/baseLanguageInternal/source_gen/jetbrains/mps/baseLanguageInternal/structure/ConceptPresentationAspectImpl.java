@@ -71,8 +71,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ExtractStaticInnerClassConcept;
       case LanguageConceptSwitch.ExtractStaticInnerClassCreator:
         if (props_ExtractStaticInnerClassCreator == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x50cc34ef144c9181L);
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_ExtractStaticInnerClassCreator = cpb.create();
         }
         return props_ExtractStaticInnerClassCreator;
@@ -92,9 +92,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ExtractStaticMethodExpression;
       case LanguageConceptSwitch.ExtractStaticMethod_CallExpression:
         if (props_ExtractStaticMethod_CallExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("extract static method invocation");
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_ExtractStaticMethod_CallExpression = cpb.create();
         }
         return props_ExtractStaticMethod_CallExpression;
@@ -107,8 +107,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ExtractToConstantExpression;
       case LanguageConceptSwitch.ExtractToConstantRefExpression:
         if (props_ExtractToConstantRefExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L);
-          cpb.presentationByReference(0x162724dabcdc672L, "original", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x162724dabcdc671L, 0x162724dabcdc672L, "original", "", "");
           props_ExtractToConstantRefExpression = cpb.create();
         }
         return props_ExtractToConstantRefExpression;

@@ -107,8 +107,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ClassifierDocComment;
       case LanguageConceptSwitch.ClassifierDocReference:
         if (props_ClassifierDocReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2e4L);
-          cpb.presentationByReference(0x1ec532ec2531d2e5L, "classifier", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2e4L, 0x1ec532ec2531d2e5L, "classifier", "", "");
           props_ClassifierDocReference = cpb.create();
         }
         return props_ClassifierDocReference;
@@ -149,15 +149,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DeprecatedBlockDocTag;
       case LanguageConceptSwitch.DocMethodParameterReference:
         if (props_DocMethodParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86d8L);
-          cpb.presentationByReference(0x5ed0d79d7dbe86dcL, "param", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86d7L, 0x5ed0d79d7dbe86dcL, "param", "", "");
           props_DocMethodParameterReference = cpb.create();
         }
         return props_DocMethodParameterReference;
       case LanguageConceptSwitch.DocTypeParameterReference:
         if (props_DocTypeParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86dbL);
-          cpb.presentationByReference(0x5ed0d79d7dbe86dcL, "param", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5ed0d79d7dbe86d7L, 0x5ed0d79d7dbe86dcL, "param", "", "");
           props_DocTypeParameterReference = cpb.create();
         }
         return props_DocTypeParameterReference;
@@ -177,8 +177,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_FieldDocComment;
       case LanguageConceptSwitch.FieldDocReference:
         if (props_FieldDocReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec252c9a28L);
-          cpb.presentationByReference(0x4d316b5973d644c4L, "declaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4d316b5973d644c2L, 0x4d316b5973d644c4L, "declaration", "", "");
           props_FieldDocReference = cpb.create();
         }
         return props_FieldDocReference;
@@ -224,8 +224,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_MethodDocComment;
       case LanguageConceptSwitch.MethodDocReference:
         if (props_MethodDocReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2d3L);
-          cpb.presentationByReference(0x1ec532ec2531d2d4L, "methodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x1ec532ec2531d2d3L, 0x1ec532ec2531d2d4L, "methodDeclaration", "", "");
           props_MethodDocReference = cpb.create();
         }
         return props_MethodDocReference;
@@ -259,8 +259,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SinceBlockDocTag;
       case LanguageConceptSwitch.StaticFieldDocReference:
         if (props_StaticFieldDocReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5a38b07c2d6d7c7bL);
-          cpb.presentationByReference(0x4d316b5973d644c4L, "declaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x4d316b5973d644c2L, 0x4d316b5973d644c4L, "declaration", "", "");
           props_StaticFieldDocReference = cpb.create();
         }
         return props_StaticFieldDocReference;

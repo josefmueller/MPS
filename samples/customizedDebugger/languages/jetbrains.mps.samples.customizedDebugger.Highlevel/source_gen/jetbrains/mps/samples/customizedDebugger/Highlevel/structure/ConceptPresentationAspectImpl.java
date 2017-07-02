@@ -27,8 +27,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Conversation;
       case LanguageConceptSwitch.Message:
         if (props_Message == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f713L);
-          cpb.presentationByReference(0x71d6f475fc93f71fL, "author", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f713L, 0x71d6f475fc93f71fL, "author", "", "");
           props_Message = cpb.create();
         }
         return props_Message;

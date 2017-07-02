@@ -311,7 +311,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TestSubstituteSubChild2;
       case LanguageConceptSwitch.TestSubstituteSubChildSmartReference:
         if (props_TestSubstituteSubChildSmartReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aeL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_TestSubstituteSubChildSmartReference = cpb.create();
         }

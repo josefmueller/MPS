@@ -574,9 +574,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NodeSubstituteActions;
       case LanguageConceptSwitch.NodeSubstituteActionsBuilder:
         if (props_NodeSubstituteActionsBuilder == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
-          cpb.presentationByReference(0x102ebd3cd08L, "applicableConcept", "", "");
+          cpb.presentationByReference(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x102ebd2e9eaL, 0x102ebd3cd08L, "applicableConcept", "", "");
           props_NodeSubstituteActionsBuilder = cpb.create();
         }
         return props_NodeSubstituteActionsBuilder;
@@ -932,9 +932,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SideTransformHintSubstituteActions;
       case LanguageConceptSwitch.SideTransformHintSubstituteActionsBuilder:
         if (props_SideTransformHintSubstituteActionsBuilder == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
-          cpb.presentationByReference(0x108facec6d6L, "applicableConcept", "", "");
+          cpb.presentationByReference(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept", "", "");
           props_SideTransformHintSubstituteActionsBuilder = cpb.create();
         }
         return props_SideTransformHintSubstituteActionsBuilder;
@@ -970,9 +970,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SideTransformVariableDeclaration;
       case LanguageConceptSwitch.SideTransformVariableReference:
         if (props_SideTransformVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d21ed8dL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_SideTransformVariableReference = cpb.create();
         }
         return props_SideTransformVariableReference;
@@ -1012,9 +1012,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SmartActionParameter;
       case LanguageConceptSwitch.SmartActionParameterReference:
         if (props_SmartActionParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ef01705L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
-          cpb.presentationByReference(0x11f8ef0b8d5L, "smartActionParameter", "", "");
+          cpb.presentationByReference(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ef01705L, 0x11f8ef0b8d5L, "smartActionParameter", "", "");
           props_SmartActionParameterReference = cpb.create();
         }
         return props_SmartActionParameterReference;
@@ -1044,9 +1044,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SubstituteNodeBuilderVariableDeclaration;
       case LanguageConceptSwitch.SubstituteNodeBuilderVariableReference:
         if (props_SubstituteNodeBuilderVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x112668f8fe4L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_SubstituteNodeBuilderVariableReference = cpb.create();
         }
         return props_SubstituteNodeBuilderVariableReference;

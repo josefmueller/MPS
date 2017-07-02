@@ -26,14 +26,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ExternalViewFigure:
         if (props_ExternalViewFigure == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f7493c2L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_ExternalViewFigure = cpb.create();
         }
         return props_ExternalViewFigure;
       case LanguageConceptSwitch.ExternalViewFigureParameter:
         if (props_ExternalViewFigureParameter == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd7722d504b934c3aL, 0xae061903d05f95a7L, 0x1e3b9cbb9f749406L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_ExternalViewFigureParameter = cpb.create();
         }

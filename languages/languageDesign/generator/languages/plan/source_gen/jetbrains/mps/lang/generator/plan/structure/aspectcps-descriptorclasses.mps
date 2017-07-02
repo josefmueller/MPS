@@ -762,39 +762,39 @@
                       <node concept="2ShNRf" id="3I" role="33vP2m">
                         <node concept="1pGfFk" id="3J" role="2ShVmc">
                           <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.&lt;init&gt;()" resolve="ConceptPresentationBuilder" />
-                          <node concept="1adDum" id="3K" role="37wK5m">
-                            <property role="1adDun" value="0x7ab1a6fa0a114b95L" />
-                          </node>
-                          <node concept="1adDum" id="3L" role="37wK5m">
-                            <property role="1adDun" value="0x9e4875f363d6cb00L" />
-                          </node>
-                          <node concept="1adDum" id="3M" role="37wK5m">
-                            <property role="1adDun" value="0x340cd07aed7cb2fdL" />
-                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="3clFbF" id="3D" role="3cqZAp">
-                    <node concept="2OqwBi" id="3N" role="3clFbG">
-                      <node concept="37vLTw" id="3O" role="2Oq$k0">
+                    <node concept="2OqwBi" id="3K" role="3clFbG">
+                      <node concept="37vLTw" id="3L" role="2Oq$k0">
                         <ref role="3cqZAo" node="3G" resolve="cpb" />
                       </node>
-                      <node concept="liA8E" id="3P" role="2OqNvi">
+                      <node concept="liA8E" id="3M" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
-                        <node concept="Xl_RD" id="3Q" role="37wK5m">
+                        <node concept="Xl_RD" id="3N" role="37wK5m">
                           <property role="Xl_RC" value="use a pure checkpoint declared elsewhere" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="3clFbF" id="3E" role="3cqZAp">
-                    <node concept="2OqwBi" id="3R" role="3clFbG">
-                      <node concept="37vLTw" id="3S" role="2Oq$k0">
+                    <node concept="2OqwBi" id="3O" role="3clFbG">
+                      <node concept="37vLTw" id="3P" role="2Oq$k0">
                         <ref role="3cqZAo" node="3G" resolve="cpb" />
                       </node>
-                      <node concept="liA8E" id="3T" role="2OqNvi">
-                        <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.presentationByReference(long,java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="presentationByReference" />
+                      <node concept="liA8E" id="3Q" role="2OqNvi">
+                        <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.presentationByReference(long,long,long,long,java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="presentationByReference" />
+                        <node concept="1adDum" id="3R" role="37wK5m">
+                          <property role="1adDun" value="0x7ab1a6fa0a114b95L" />
+                        </node>
+                        <node concept="1adDum" id="3S" role="37wK5m">
+                          <property role="1adDun" value="0x9e4875f363d6cb00L" />
+                        </node>
+                        <node concept="1adDum" id="3T" role="37wK5m">
+                          <property role="1adDun" value="0x340cd07aed7cb2fdL" />
+                        </node>
                         <node concept="1adDum" id="3U" role="37wK5m">
                           <property role="1adDun" value="0x340cd07aed7cb300L" />
                         </node>
@@ -985,39 +985,39 @@
                       <node concept="2ShNRf" id="54" role="33vP2m">
                         <node concept="1pGfFk" id="55" role="2ShVmc">
                           <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.&lt;init&gt;()" resolve="ConceptPresentationBuilder" />
-                          <node concept="1adDum" id="56" role="37wK5m">
-                            <property role="1adDun" value="0x7ab1a6fa0a114b95L" />
-                          </node>
-                          <node concept="1adDum" id="57" role="37wK5m">
-                            <property role="1adDun" value="0x9e4875f363d6cb00L" />
-                          </node>
-                          <node concept="1adDum" id="58" role="37wK5m">
-                            <property role="1adDun" value="0x340cd07aed7cb32cL" />
-                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="3clFbF" id="4Z" role="3cqZAp">
-                    <node concept="2OqwBi" id="59" role="3clFbG">
-                      <node concept="37vLTw" id="5a" role="2Oq$k0">
+                    <node concept="2OqwBi" id="56" role="3clFbG">
+                      <node concept="37vLTw" id="57" role="2Oq$k0">
                         <ref role="3cqZAo" node="52" resolve="cpb" />
                       </node>
-                      <node concept="liA8E" id="5b" role="2OqNvi">
+                      <node concept="liA8E" id="58" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.shortDesc(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="shortDesc" />
-                        <node concept="Xl_RD" id="5c" role="37wK5m">
+                        <node concept="Xl_RD" id="59" role="37wK5m">
                           <property role="Xl_RC" value="reference another checkpoint step with in-place declaration" />
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="3clFbF" id="50" role="3cqZAp">
-                    <node concept="2OqwBi" id="5d" role="3clFbG">
-                      <node concept="37vLTw" id="5e" role="2Oq$k0">
+                    <node concept="2OqwBi" id="5a" role="3clFbG">
+                      <node concept="37vLTw" id="5b" role="2Oq$k0">
                         <ref role="3cqZAo" node="52" resolve="cpb" />
                       </node>
-                      <node concept="liA8E" id="5f" role="2OqNvi">
-                        <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.presentationByReference(long,java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="presentationByReference" />
+                      <node concept="liA8E" id="5c" role="2OqNvi">
+                        <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.presentationByReference(long,long,long,long,java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="presentationByReference" />
+                        <node concept="1adDum" id="5d" role="37wK5m">
+                          <property role="1adDun" value="0x7ab1a6fa0a114b95L" />
+                        </node>
+                        <node concept="1adDum" id="5e" role="37wK5m">
+                          <property role="1adDun" value="0x9e4875f363d6cb00L" />
+                        </node>
+                        <node concept="1adDum" id="5f" role="37wK5m">
+                          <property role="1adDun" value="0x340cd07aed7cb32cL" />
+                        </node>
                         <node concept="1adDum" id="5g" role="37wK5m">
                           <property role="1adDun" value="0x340cd07aed7cb32fL" />
                         </node>

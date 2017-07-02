@@ -39,8 +39,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CustomStatement;
       case LanguageConceptSwitch.CustomStatementRef:
         if (props_CustomStatementRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1e076e8c8ce9211aL);
-          cpb.presentationByReference(0x1e076e8c8ce92801L, "myStatement", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1e076e8c8ce9211aL, 0x1e076e8c8ce92801L, "myStatement", "", "");
           props_CustomStatementRef = cpb.create();
         }
         return props_CustomStatementRef;

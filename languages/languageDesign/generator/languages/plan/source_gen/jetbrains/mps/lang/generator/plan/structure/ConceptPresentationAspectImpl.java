@@ -70,9 +70,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CheckpointSynchronization;
       case LanguageConceptSwitch.DeclaredCheckpointSpec:
         if (props_DeclaredCheckpointSpec == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb2fdL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("use a pure checkpoint declared elsewhere");
-          cpb.presentationByReference(0x340cd07aed7cb300L, "cpDecl", "", "");
+          cpb.presentationByReference(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb2fdL, 0x340cd07aed7cb300L, "cpDecl", "", "");
           props_DeclaredCheckpointSpec = cpb.create();
         }
         return props_DeclaredCheckpointSpec;
@@ -92,9 +92,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DocumentationStep;
       case LanguageConceptSwitch.InPlaceCheckpointRefSpec:
         if (props_InPlaceCheckpointRefSpec == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb32cL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference another checkpoint step with in-place declaration");
-          cpb.presentationByReference(0x340cd07aed7cb32fL, "checkpoint", "", "");
+          cpb.presentationByReference(0x7ab1a6fa0a114b95L, 0x9e4875f363d6cb00L, 0x340cd07aed7cb32cL, 0x340cd07aed7cb32fL, "checkpoint", "", "");
           props_InPlaceCheckpointRefSpec = cpb.create();
         }
         return props_InPlaceCheckpointRefSpec;

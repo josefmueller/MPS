@@ -21,15 +21,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.PrivateFieldReferenceOperation:
         if (props_PrivateFieldReferenceOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb5379L);
-          cpb.presentationByReference(0x116b484a653L, "fieldDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration", "", "");
           props_PrivateFieldReferenceOperation = cpb.create();
         }
         return props_PrivateFieldReferenceOperation;
       case LanguageConceptSwitch.PrivateInstanceMethodCallOperation:
         if (props_PrivateInstanceMethodCallOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb7006L);
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_PrivateInstanceMethodCallOperation = cpb.create();
         }
         return props_PrivateInstanceMethodCallOperation;

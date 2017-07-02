@@ -35,14 +35,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Block;
       case LanguageConceptSwitch.BlockExt:
         if (props_BlockExt == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x471a0145ea2e78cL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_BlockExt = cpb.create();
         }
         return props_BlockExt;
       case LanguageConceptSwitch.BlockInstance:
         if (props_BlockInstance == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_BlockInstance = cpb.create();
         }

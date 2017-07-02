@@ -74,8 +74,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AnalyzerConstructorParameter;
       case LanguageConceptSwitch.AnalyzerConstructorParameterReference:
         if (props_AnalyzerConstructorParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L);
-          cpb.presentationByReference(0x4c4b92003e49a705L, "baseVariableDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, 0x4c4b92003e49a705L, "baseVariableDeclaration", "", "");
           props_AnalyzerConstructorParameterReference = cpb.create();
         }
         return props_AnalyzerConstructorParameterReference;
@@ -178,8 +178,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ApplicableCondition;
       case LanguageConceptSwitch.ApplicableNodeReference:
         if (props_ApplicableNodeReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L);
-          cpb.presentationByReference(0x449938e788f30111L, "applicableNode", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788f30110L, 0x449938e788f30111L, "applicableNode", "", "");
           props_ApplicableNodeReference = cpb.create();
         }
         return props_ApplicableNodeReference;
@@ -206,8 +206,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CustomInstructionsContainer;
       case LanguageConceptSwitch.CustomInstructionsContainerReference:
         if (props_CustomInstructionsContainerReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L);
-          cpb.presentationByReference(0x73e1fea9c1738799L, "containter", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x73e1fea9c1738798L, 0x73e1fea9c1738799L, "containter", "", "");
           props_CustomInstructionsContainerReference = cpb.create();
         }
         return props_CustomInstructionsContainerReference;
@@ -262,8 +262,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_InstructionParameter;
       case LanguageConceptSwitch.InstructionReference:
         if (props_InstructionReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b4cedcL);
-          cpb.presentationByReference(0x3a887e9da0b4cee5L, "instruction", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x3a887e9da0b4cedcL, 0x3a887e9da0b4cee5L, "instruction", "", "");
           props_InstructionReference = cpb.create();
         }
         return props_InstructionReference;
@@ -290,7 +290,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ProgramParameter;
       case LanguageConceptSwitch.Rule:
         if (props_Rule == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x5faaa6bbd57b6c8L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           cpb.icon(IconContainer.RESOURCE_a0a2a0a43b0lb);
           props_Rule = cpb.create();
@@ -298,8 +298,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Rule;
       case LanguageConceptSwitch.RuleReference:
         if (props_RuleReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x97a52717898f4598L, 0x8150573d9fd03868L, 0xa72ff3b2ca7c5b0L);
-          cpb.presentationByReference(0xa72ff3b2ca7c5b1L, "rule", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x97a52717898f4598L, 0x8150573d9fd03868L, 0xa72ff3b2ca7c5b0L, 0xa72ff3b2ca7c5b1L, "rule", "", "");
           props_RuleReference = cpb.create();
         }
         return props_RuleReference;

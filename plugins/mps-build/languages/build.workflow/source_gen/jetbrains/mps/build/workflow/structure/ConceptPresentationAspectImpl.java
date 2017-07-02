@@ -129,8 +129,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BwfJavaModule;
       case LanguageConceptSwitch.BwfJavaModuleReference:
         if (props_BwfJavaModuleReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38c4L);
-          cpb.presentationByReference(0x41fde5e4adce38c5L, "target", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38c4L, 0x41fde5e4adce38c5L, "target", "", "");
           props_BwfJavaModuleReference = cpb.create();
         }
         return props_BwfJavaModuleReference;
@@ -157,8 +157,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BwfPathDeclaration;
       case LanguageConceptSwitch.BwfPathReference:
         if (props_BwfPathReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c1fL);
-          cpb.presentationByReference(0x5c3f3e2c1cef4c20L, "target", "<pathref ", ">");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5c3f3e2c1cef4c1fL, 0x5c3f3e2c1cef4c20L, "target", "<pathref ", ">");
           props_BwfPathReference = cpb.create();
         }
         return props_BwfPathReference;
@@ -198,8 +198,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BwfSubTask;
       case LanguageConceptSwitch.BwfSubTaskDependency:
         if (props_BwfSubTaskDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L);
-          cpb.presentationByReference(0x2670d5989d5b49b9L, "target", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L, 0x2670d5989d5b49b9L, "target", "", "");
           props_BwfSubTaskDependency = cpb.create();
         }
         return props_BwfSubTaskDependency;
@@ -212,8 +212,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BwfTask;
       case LanguageConceptSwitch.BwfTaskDependency:
         if (props_BwfTaskDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L);
-          cpb.presentationByReference(0x2670d5989d5ace57L, "target", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L, 0x2670d5989d5ace57L, "target", "", "");
           props_BwfTaskDependency = cpb.create();
         }
         return props_BwfTaskDependency;
@@ -226,8 +226,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BwfTaskLibrary;
       case LanguageConceptSwitch.BwfTaskLibraryDependency:
         if (props_BwfTaskLibraryDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L);
-          cpb.presentationByReference(0x6565da1147260538L, "target", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target", "", "");
           props_BwfTaskLibraryDependency = cpb.create();
         }
         return props_BwfTaskLibraryDependency;

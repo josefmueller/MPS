@@ -43,8 +43,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DefaultClassifier;
       case LanguageConceptSwitch.DefaultClassifierFieldAccessOperation:
         if (props_DefaultClassifierFieldAccessOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc7570L);
-          cpb.presentationByReference(0x118bcb657ecL, "member", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member", "", "");
           props_DefaultClassifierFieldAccessOperation = cpb.create();
         }
         return props_DefaultClassifierFieldAccessOperation;
@@ -57,8 +57,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DefaultClassifierFieldDeclaration;
       case LanguageConceptSwitch.DefaultClassifierMethodCallOperation:
         if (props_DefaultClassifierMethodCallOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd711e29L);
-          cpb.presentationByReference(0x118bcb657ecL, "member", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member", "", "");
           props_DefaultClassifierMethodCallOperation = cpb.create();
         }
         return props_DefaultClassifierMethodCallOperation;
@@ -71,8 +71,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DefaultClassifierMethodDeclaration;
       case LanguageConceptSwitch.DefaultClassifierType:
         if (props_DefaultClassifierType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL);
-          cpb.presentationByReference(0x118bc796c90L, "classifier", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc7942feL, 0x118bc796c90L, "classifier", "", "");
           props_DefaultClassifierType = cpb.create();
         }
         return props_DefaultClassifierType;

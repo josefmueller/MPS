@@ -50,8 +50,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_IndexedTupleType;
       case LanguageConceptSwitch.NamedTupleComponentAccessOperation:
         if (props_NamedTupleComponentAccessOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209c84a4eaL);
-          cpb.presentationByReference(0x1209c84fd08L, "component", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209c84a4eaL, 0x1209c84fd08L, "component", "", "");
           props_NamedTupleComponentAccessOperation = cpb.create();
         }
         return props_NamedTupleComponentAccessOperation;
@@ -64,8 +64,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NamedTupleComponentDeclaration;
       case LanguageConceptSwitch.NamedTupleComponentReference:
         if (props_NamedTupleComponentReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b917141L);
-          cpb.presentationByReference(0x1209b91a766L, "componentDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b917141L, 0x1209b91a766L, "componentDeclaration", "", "");
           props_NamedTupleComponentReference = cpb.create();
         }
         return props_NamedTupleComponentReference;
@@ -80,17 +80,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NamedTupleDeclaration;
       case LanguageConceptSwitch.NamedTupleLiteral:
         if (props_NamedTupleLiteral == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("tuple literal");
-          cpb.presentationByReference(0x1209b88b156L, "tupleDeclaration", "", " literal");
+          cpb.presentationByReference(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b88731cL, 0x1209b88b156L, "tupleDeclaration", "", " literal");
           props_NamedTupleLiteral = cpb.create();
         }
         return props_NamedTupleLiteral;
       case LanguageConceptSwitch.NamedTupleType:
         if (props_NamedTupleType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference to named tuple declaration");
-          cpb.presentationByReference(0x101de490babL, "classifier", "", " type");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier", "", " type");
           props_NamedTupleType = cpb.create();
         }
         return props_NamedTupleType;

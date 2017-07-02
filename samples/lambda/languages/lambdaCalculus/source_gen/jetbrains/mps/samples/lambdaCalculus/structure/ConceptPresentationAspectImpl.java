@@ -45,8 +45,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbstractionVarRef:
         if (props_AbstractionVarRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7fe548fL);
-          cpb.presentationByReference(0x48db75d5dc497af4L, "variable", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable", "", "");
           props_AbstractionVarRef = cpb.create();
         }
         return props_AbstractionVarRef;
@@ -138,8 +138,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LetExpression;
       case LanguageConceptSwitch.LetRef:
         if (props_LetRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x448ba254edc7216cL);
-          cpb.presentationByReference(0x48db75d5dc497af4L, "variable", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, 0x48db75d5dc497af4L, "variable", "", "");
           props_LetRef = cpb.create();
         }
         return props_LetRef;
