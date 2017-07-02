@@ -2984,6 +2984,16 @@
               </node>
             </node>
           </node>
+          <node concept="3SKdUt" id="6JHuVGF47BO" role="3cqZAp">
+            <node concept="3SKdUq" id="6JHuVGF47BQ" role="3SKWNk">
+              <property role="3SKdUp" value="here we do not filter out non-project modules because this method is called from 'New Language' action" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="6JHuVGF48wE" role="3cqZAp">
+            <node concept="3SKdUq" id="6JHuVGF48wG" role="3SKWNk">
+              <property role="3SKdUp" value="before module is attached to project" />
+            </node>
+          </node>
           <node concept="3clFbJ" id="ygzS0$uD5o" role="3cqZAp">
             <node concept="3clFbS" id="ygzS0$uD5p" role="3clFbx">
               <node concept="3clFbF" id="76a4RXptEqh" role="3cqZAp">
@@ -2995,9 +3005,10 @@
                 </node>
               </node>
             </node>
-            <node concept="1rXfSq" id="ygzS0$uD5v" role="3clFbw">
-              <ref role="37wK5l" node="76a4RXpsqrx" resolve="isProjectMigrateableModule" />
-              <node concept="37vLTw" id="ygzS0$uFSN" role="37wK5m">
+            <node concept="2YIFZM" id="6JHuVGF3PHO" role="3clFbw">
+              <ref role="1Pybhc" to="6f4m:4JlWzK6VGnA" resolve="MigrationModuleUtil" />
+              <ref role="37wK5l" to="6f4m:3UfGsecu97b" resolve="isModuleMigrateable" />
+              <node concept="37vLTw" id="6JHuVGF3PHP" role="37wK5m">
                 <ref role="3cqZAo" node="1AzqgyAfmjC" resolve="module" />
               </node>
             </node>
@@ -3044,9 +3055,10 @@
                 </node>
               </node>
             </node>
-            <node concept="1rXfSq" id="ygzS0$uG0V" role="3clFbw">
-              <ref role="37wK5l" node="76a4RXpsqrx" resolve="isProjectMigrateableModule" />
-              <node concept="37vLTw" id="ygzS0$uG0W" role="37wK5m">
+            <node concept="2YIFZM" id="6JHuVGF3R5K" role="3clFbw">
+              <ref role="1Pybhc" to="6f4m:4JlWzK6VGnA" resolve="MigrationModuleUtil" />
+              <ref role="37wK5l" to="6f4m:3UfGsecu97b" resolve="isModuleMigrateable" />
+              <node concept="37vLTw" id="6JHuVGF3R5L" role="37wK5m">
                 <ref role="3cqZAo" node="76a4RXpsYnk" resolve="module" />
               </node>
             </node>
