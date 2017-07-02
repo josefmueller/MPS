@@ -4,7 +4,12 @@ package jetbrains.mps.make.facet.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.runtime.ConstraintFunction;
+import jetbrains.mps.smodel.runtime.ConstraintContext_DefaultScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
@@ -18,21 +23,22 @@ public class FacetDeclaration_Constraints extends BaseConstraintsDescriptor {
   }
 
   @Override
-  public boolean hasOwnDefaultScopeProvider() {
-    return true;
-  }
-  @Override
-  public ReferenceScopeProvider getDefaultScopeProvider() {
-    return new BaseScopeProvider() {
-      @Override
-      public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_dgpkt9_a0a0a0a0a3;
-      }
-      @Override
-      public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-        return new FacetsScope(_context.getContextNode());
+  public ConstraintFunction<ConstraintContext_DefaultScopeProvider, ReferenceScopeProvider> calculateDefaultScopeConstraint() {
+    return new ConstraintFunction<ConstraintContext_DefaultScopeProvider, ReferenceScopeProvider>() {
+      @Nullable
+      public ReferenceScopeProvider invoke(@NotNull ConstraintContext_DefaultScopeProvider context, @Nullable CheckingNodeContext checkingNodeContext) {
+        return new BaseScopeProvider() {
+          @Override
+          public SNodeReference getSearchScopeValidatorNode() {
+            return breakingNode_dgpkt9_a0a0a0a0a0a0a0a2;
+          }
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            return new FacetsScope(_context.getContextNode());
+          }
+        };
       }
     };
   }
-  private static SNodePointer breakingNode_dgpkt9_a0a0a0a0a3 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "6836281137582791146");
+  private static SNodePointer breakingNode_dgpkt9_a0a0a0a0a0a0a0a2 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "6836281137582791146");
 }
