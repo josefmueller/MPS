@@ -18,8 +18,10 @@ package jetbrains.mps.idea.core.facet;
 
 import com.intellij.util.xmlb.annotations.AbstractCollection;
 import com.intellij.util.xmlb.annotations.Attribute;
+import com.intellij.util.xmlb.annotations.MapAnnotation;
 import com.intellij.util.xmlb.annotations.Tag;
 import com.intellij.util.xmlb.annotations.Transient;
+import gnu.trove.THashMap;
 import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.MementoUtil;
@@ -27,8 +29,11 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -37,7 +42,10 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * evgeny, 10/26/11
@@ -75,10 +83,18 @@ public class MPSConfigurationBean {
       myDescriptor.setOutputPath(myState.generatorOutputPath);
       myDescriptor.setCompileInMPS(false);
       myDescriptor.getModuleFacetDescriptors().add(new ModuleFacetDescriptor(IdeaPluginModuleFacet.FACET_TYPE, new MementoImpl()));
+      Map<SLanguage, Integer> languageVersions = myDescriptor.getLanguageVersions();
       if (myState.usedLanguages != null) {
         Collection<SModuleReference> usedLanguageReferences = myDescriptor.getUsedLanguages();
         for (String usedLanguage : myState.usedLanguages) {
-          usedLanguageReferences.add(PersistenceFacade.getInstance().createModuleReference(usedLanguage));
+          SModuleReference mref = PersistenceFacade.getInstance().createModuleReference(usedLanguage);
+          usedLanguageReferences.add(mref);
+          languageVersions.put(MetaAdapterFactory.getLanguage(mref), 0); //0 is a default
+        }
+      }
+      if (myState.languageVersions != null) {
+        for (Entry<String, Integer> lv : myState.languageVersions.entrySet()) {
+          languageVersions.put(SLanguageAdapter.deserialize(lv.getKey()), lv.getValue());
         }
       }
       List<ModelRootDescriptor> roots = new ArrayList<>();
@@ -186,6 +202,8 @@ public class MPSConfigurationBean {
     setUseTransientOutputFolder(state.useTransientOutputFolder);
     myState.usedLanguages = state.usedLanguages == null ? null : state.usedLanguages.clone();
     myState.rootDescriptors = state.rootDescriptors == null ? null : state.rootDescriptors.clone();
+    Map<String, Integer> lv = state.languageVersions;
+    myState.languageVersions = lv == null ? null : new HashMap<String, Integer>(lv);
     dropDescriptorInstance(); // just in case
   }
 
@@ -204,6 +222,13 @@ public class MPSConfigurationBean {
       for (SModuleReference ref : myDescriptor.getUsedLanguages()) {
         result.usedLanguages[i] = ref.toString();
         i++;
+      }
+    }
+    Map<SLanguage, Integer> lVersions = myDescriptor.getLanguageVersions();
+    if (!lVersions.isEmpty()) {
+      result.languageVersions = new HashMap<String, Integer>(lVersions.size());
+      for (Entry<SLanguage, Integer> lver : lVersions.entrySet()) {
+        result.languageVersions.put(((SLanguageAdapter) lver.getKey()).serialize(), lver.getValue());
       }
     }
     result.rootDescriptors = toPersistableState(myDescriptor.getModelRootDescriptors());
@@ -244,10 +269,13 @@ public class MPSConfigurationBean {
     public String generatorOutputPath;
     public boolean useModuleSourceFolder = false;
     public boolean useTransientOutputFolder = false;
-    public String[] usedLanguages;
+    public String[] usedLanguages; //todo: store SLanaguage, not ModuleRefs
     @Tag("modelRoots")
     @AbstractCollection(surroundWithTag = false)
     public RootDescriptor[] rootDescriptors;
+    @Tag("languageVersions")
+    @MapAnnotation
+    public Map<String, Integer> languageVersions;
 
     @Override
     public State clone() {
