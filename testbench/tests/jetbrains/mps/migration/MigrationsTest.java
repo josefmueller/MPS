@@ -49,7 +49,7 @@ import java.io.File;
 import java.util.List;
 
 public class MigrationsTest {
-  private static final String MIGRATION_ASSISTANT_PLUGIN = "jetbrains.mps.ide.migration.assistant";
+  private static final String MIGRATION_ASSISTANT_PLUGIN = "jetbrains.mps.ide.migration.workbench";
   private static final String PROJECT_PATH = "testbench/modules/migrationLocalHist";
 
   private static Environment ourEnv;
@@ -57,7 +57,7 @@ public class MigrationsTest {
 
   @BeforeClass
   public static void setUp() {
-    ourEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().addPlugin("migrationAssistant", MIGRATION_ASSISTANT_PLUGIN));
+    ourEnv = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig().addPlugin("migration", MIGRATION_ASSISTANT_PLUGIN));
   }
 
   @AfterClass

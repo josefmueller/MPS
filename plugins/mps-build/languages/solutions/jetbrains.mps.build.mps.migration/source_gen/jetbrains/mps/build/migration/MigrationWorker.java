@@ -40,7 +40,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.library.LibraryInitializer;
 
 public class MigrationWorker extends MpsWorker {
-  private static final String MIGRATION_PLUGIN = "jetbrains.mps.ide.migration.assistant";
+  private static final String MIGRATION_PLUGIN = "jetbrains.mps.ide.migration.workbench";
   private static final String TASK_EXEC_CLASS = "jetbrains.mps.ide.migration.AntTaskExecutionUtil";
 
   private final UrlClassLoader myClassLoader;
@@ -53,7 +53,7 @@ public class MigrationWorker extends MpsWorker {
   @Override
   protected Environment createEnvironment() {
     EnvironmentConfig cfg = MpsWorker.createEnvConfig(myWhatToDo);
-    cfg.addPlugin("migrationAssistant", MigrationWorker.MIGRATION_PLUGIN);
+    cfg.addPlugin("migration", MigrationWorker.MIGRATION_PLUGIN);
 
     Environment environment = new MigrationWorker.MyEnvironment(cfg);
     environment.init();

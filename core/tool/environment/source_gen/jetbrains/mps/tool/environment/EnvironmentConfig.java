@@ -101,7 +101,7 @@ public class EnvironmentConfig {
   }
 
   public EnvironmentConfig withMigrationPlugin() {
-    return addPlugin("migrationAssistant", "jetbrains.mps.ide.migration.assistant");
+    return addPlugin("migration", "jetbrains.mps.ide.migration.workbench");
   }
 
   public EnvironmentConfig withDevkitPlugin() {

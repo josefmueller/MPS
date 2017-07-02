@@ -7438,7 +7438,30 @@
                       <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHome" />
                     </node>
                     <node concept="Xl_RD" id="1oo0A63Iro2" role="3uHU7w">
-                      <property role="Xl_RC" value="/plugins/migrationAssistant.jar" />
+                      <property role="Xl_RC" value="/plugins/migration/lib/migration.jar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7a4PwPPTBtl" role="3cqZAp">
+          <node concept="2OqwBi" id="7a4PwPPTBtm" role="3clFbG">
+            <node concept="37vLTw" id="7a4PwPPTBtn" role="2Oq$k0">
+              <ref role="3cqZAo" node="1oo0A63FYVi" resolve="classPath" />
+            </node>
+            <node concept="liA8E" id="7a4PwPPTBto" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="2ShNRf" id="7a4PwPPTBtp" role="37wK5m">
+                <node concept="1pGfFk" id="7a4PwPPTBtq" role="2ShVmc">
+                  <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                  <node concept="3cpWs3" id="7a4PwPPTBtr" role="37wK5m">
+                    <node concept="37vLTw" id="7a4PwPPTBts" role="3uHU7B">
+                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHome" />
+                    </node>
+                    <node concept="Xl_RD" id="7a4PwPPTBtt" role="3uHU7w">
+                      <property role="Xl_RC" value="/plugins/migration/lib/migration-platform.jar" />
                     </node>
                   </node>
                 </node>

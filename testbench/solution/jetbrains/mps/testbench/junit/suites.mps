@@ -6401,7 +6401,7 @@
       <node concept="3Tm1VV" id="4OGppb3ihpi" role="1B3o_S" />
       <node concept="17QB3L" id="4OGppb3igLq" role="1tU5fm" />
       <node concept="Xl_RD" id="4OGppb3igLr" role="33vP2m">
-        <property role="Xl_RC" value="migrationAssistant" />
+        <property role="Xl_RC" value="migration" />
       </node>
     </node>
     <node concept="Wx3nA" id="4OGppb3igSh" role="jymVt">
@@ -6410,7 +6410,7 @@
       <node concept="3Tm1VV" id="4OGppb3ihqi" role="1B3o_S" />
       <node concept="17QB3L" id="4OGppb3igSf" role="1tU5fm" />
       <node concept="Xl_RD" id="4OGppb3igSg" role="33vP2m">
-        <property role="Xl_RC" value="jetbrains.mps.ide.migration.assistant" />
+        <property role="Xl_RC" value="jetbrains.mps.ide.migration.workbench" />
       </node>
     </node>
     <node concept="2tJIrI" id="3WxHuKXmqoV" role="jymVt" />

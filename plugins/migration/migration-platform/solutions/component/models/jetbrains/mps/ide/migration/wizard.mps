@@ -5025,7 +5025,7 @@
               </node>
             </node>
             <node concept="liA8E" id="2wbhCYFMbdz" role="2OqNvi">
-              <ref role="37wK5l" to="bim2:xB9FQhiuXN" resolve="checkProject" />
+              <ref role="37wK5l" to="bim2:2wbhCYFDLNd" resolve="checkProject" />
               <node concept="2ShNRf" id="2wbhCYFMbd$" role="37wK5m">
                 <node concept="1pGfFk" id="2wbhCYFMbd_" role="2ShVmc">
                   <ref role="37wK5l" to="mk8z:~ProgressMonitorAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolve="ProgressMonitorAdapter" />

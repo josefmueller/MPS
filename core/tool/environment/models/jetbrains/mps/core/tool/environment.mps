@@ -1249,10 +1249,10 @@
           <node concept="1rXfSq" id="4asrSzSFl5T" role="3cqZAk">
             <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
             <node concept="Xl_RD" id="4asrSzSFl5U" role="37wK5m">
-              <property role="Xl_RC" value="migrationAssistant" />
+              <property role="Xl_RC" value="migration" />
             </node>
             <node concept="Xl_RD" id="4asrSzSFl5V" role="37wK5m">
-              <property role="Xl_RC" value="jetbrains.mps.ide.migration.assistant" />
+              <property role="Xl_RC" value="jetbrains.mps.ide.migration.workbench" />
             </node>
           </node>
         </node>

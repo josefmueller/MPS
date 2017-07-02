@@ -31,7 +31,8 @@ public class MigrationTask extends MpsLoadTask {
     String mpsHome = getProject().getProperty("mps_home");
     classPath.add(new File(mpsHome + "/plugins/mps-build/languages/build/jetbrains.mps.build.migration.jar"));
     classPath.add(new File(mpsHome + "/plugins/modelchecker.jar"));
-    classPath.add(new File(mpsHome + "/plugins/migrationAssistant.jar"));
+    classPath.add(new File(mpsHome + "/plugins/migration/lib/migration.jar"));
+    classPath.add(new File(mpsHome + "/plugins/migration/lib/migration-platform.jar"));
     for (File file : classPathRoots) {
       MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);
     }

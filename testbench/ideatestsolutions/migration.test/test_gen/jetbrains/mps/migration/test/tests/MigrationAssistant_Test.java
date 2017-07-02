@@ -24,7 +24,7 @@ import java.io.File;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 
 public class MigrationAssistant_Test extends TestCase {
-  private static final String MIGRATION_ASSISTANT_PLUGIN = "jetbrains.mps.ide.migration.assistant";
+  private static final String MIGRATION_ASSISTANT_PLUGIN = "jetbrains.mps.ide.migration.workbench";
   private static final String PROJECT_PATH = "testbench/modules/migrationAssistant";
   private Project project;
   public void test_test() throws Exception {
@@ -66,6 +66,6 @@ public class MigrationAssistant_Test extends TestCase {
   }
 
   private EnvironmentConfig createConfig() {
-    return EnvironmentConfig.defaultConfig().addPlugin("migrationAssistant", MIGRATION_ASSISTANT_PLUGIN);
+    return EnvironmentConfig.defaultConfig().addPlugin("migration", MIGRATION_ASSISTANT_PLUGIN);
   }
 }

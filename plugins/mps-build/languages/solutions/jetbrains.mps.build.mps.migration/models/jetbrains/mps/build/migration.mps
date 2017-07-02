@@ -252,7 +252,7 @@
       <node concept="3Tm6S6" id="75eqTYkqe2G" role="1B3o_S" />
       <node concept="17QB3L" id="75eqTYkqe2H" role="1tU5fm" />
       <node concept="Xl_RD" id="75eqTYkqe2I" role="33vP2m">
-        <property role="Xl_RC" value="jetbrains.mps.ide.migration.assistant" />
+        <property role="Xl_RC" value="jetbrains.mps.ide.migration.workbench" />
       </node>
     </node>
     <node concept="Wx3nA" id="75eqTYkqm2O" role="jymVt">
@@ -351,7 +351,7 @@
             <node concept="liA8E" id="75eqTYkq9C7" role="2OqNvi">
               <ref role="37wK5l" to="79ha:6rx4kZDk6GC" resolve="addPlugin" />
               <node concept="Xl_RD" id="3FVfMMI1T2E" role="37wK5m">
-                <property role="Xl_RC" value="migrationAssistant" />
+                <property role="Xl_RC" value="migration" />
               </node>
               <node concept="10M0yZ" id="75eqTYkrSbz" role="37wK5m">
                 <ref role="3cqZAo" node="75eqTYkqe2J" resolve="MIGRATION_PLUGIN" />
