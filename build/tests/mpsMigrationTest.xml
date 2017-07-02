@@ -1,4 +1,4 @@
-<project name="mpsMigration" default="checkAll" basedir="..">
+<project name="mpsMigration" default="checkAll" basedir="../..">
   <property name="env.JAVA_HOME" value="${java.home}/.."/>
   <property name="jdk.home" value="${env.JAVA_HOME}"/>
 
