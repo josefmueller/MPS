@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.selection;
 
-import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.FocusPolicyUtil;
@@ -45,9 +44,8 @@ public class SelectionManagerImpl implements SelectionManager {
 
   @NotNull
   private EditorComponent myEditorComponent;
-  private Deque<Selection> mySelectionStack = new LinkedList<Selection>();
-  private List<SelectionListener> mySelectionListeners = new LinkedList<SelectionListener>();
-  private List<EditorCell> myCellsToBeDeleted;
+  private Deque<Selection> mySelectionStack = new LinkedList<>();
+  private List<SelectionListener> mySelectionListeners = new LinkedList<>();
 
   public SelectionManagerImpl(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -138,12 +136,12 @@ public class SelectionManagerImpl implements SelectionManager {
 
   @Override
   public Iterable<Selection> getSelectionStackIterable() {
-    return new ArrayList<Selection>(mySelectionStack);
+    return new ArrayList<>(mySelectionStack);
   }
 
   @Override
   public List<SelectionInfo> getSelectionInfoStack() {
-    List<SelectionInfo> result = new ArrayList<SelectionInfo>();
+    List<SelectionInfo> result = new ArrayList<>();
     try {
       for (Selection nextSelection : mySelectionStack) {
         result.add(nextSelection.getSelectionInfo());
@@ -158,7 +156,7 @@ public class SelectionManagerImpl implements SelectionManager {
 
   @Override
   public void setSelectionInfoStack(@NotNull List<SelectionInfo> selectionStack) {
-    List<Selection> newSelectionStack = new ArrayList<Selection>();
+    List<Selection> newSelectionStack = new ArrayList<>();
     for (SelectionInfo nextSelectionInfo : selectionStack) {
       Selection selection = nextSelectionInfo.createSelection(myEditorComponent);
       if (selection != null) {
@@ -214,7 +212,6 @@ public class SelectionManagerImpl implements SelectionManager {
     if (newSelection != null && !isSameSelection) {
       newSelection.activate();
     }
-    myCellsToBeDeleted = null;
     for (SelectionListener nextListener : mySelectionListeners) {
       try {
         nextListener.selectionChanged(myEditorComponent, oldSelection, newSelection);
