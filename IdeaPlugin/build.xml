@@ -121,7 +121,7 @@
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-migration/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-migration/lib">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsMigrationCore"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsMigrationCore/migration-platform/lib"/>
     </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-migration/META-INF">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsMigrationCore/migration-platform/META-INF"/>
