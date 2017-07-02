@@ -2186,13 +2186,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       g.setColor(setting.getCaretRowColor());
       g.fillRect(0, deepestCell.getY(), getWidth(),
-          deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
+                 deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
 
-        g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.IDENTIFIER_UNDER_CARET_ATTRIBUTES).getBackgroundColor());
-        g.fillRect(deepestCell.getX() + label.getLeftInset(),
-            deepestCell.getY(),
-            deepestCell.getWidth() - label.getLeftInset() - label.getRightInset(),
-            deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
+      g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.IDENTIFIER_UNDER_CARET_ATTRIBUTES).getBackgroundColor());
+      g.fillRect(deepestCell.getX() + label.getLeftInset(),
+                 deepestCell.getY(),
+                 deepestCell.getWidth() - label.getLeftInset() - label.getRightInset(),
+                 deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
 
     }
 
@@ -2502,7 +2502,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (pattern == null) {
             return true;
           }
-         return matcher.matches(action.getMatchingText(pattern));
+          String matchingText = action.getMatchingText(pattern);
+          if (matchingText == null) {
+            return false;
+          }
+          return matcher.matches(matchingText);
         };
       }
     };
@@ -3294,6 +3298,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    * Returns deletion approver
    * It first checks if deletion approving should be used and then returns an appropriate
    * instance. If instance doesn't exist, it creates it and initializes it properly
+   *
    * @return deletion approver instance
    */
   public synchronized DeletionApprover getDeletionApprover() {
