@@ -81,6 +81,23 @@ public final class ModelRootDescriptor implements Copyable<ModelRootDescriptor> 
     return new ModelRootDescriptor(myType, myMemento.copy());
   }
 
+  @Override
+  public boolean equals(Object obj) {
+    if(obj == null || !(obj instanceof ModelRootDescriptor))
+      return false;
+
+    ModelRootDescriptor modelRootDescriptor = (ModelRootDescriptor) obj;
+
+    boolean equals = myType == null ? modelRootDescriptor.myType == null : myType.equals(modelRootDescriptor.myType);
+    equals = equals && myMemento.equals(modelRootDescriptor.myMemento);
+    return equals;
+  }
+
+  @Override
+  public int hashCode() {
+    return (myType != null ? myType.hashCode() : 0) + 17 * myMemento.hashCode();
+  }
+
   public static ModelRootDescriptor getJavaStubsModelRoot(IFile file) {
     return getJavaStubsModelRoot(file, Collections.emptyList());
   }

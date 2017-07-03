@@ -17,7 +17,11 @@ package jetbrains.mps.persistence;
 
 import org.jetbrains.mps.openapi.persistence.Memento;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * evgeny, 11/16/12
@@ -154,5 +158,13 @@ public class MementoImpl implements Memento {
     equals = equals && (text == null ? memento.text == null : text.equals(memento.text));
 
     return equals;
+  }
+
+  @Override
+  public int hashCode() {
+    int hash = type != null ? type.hashCode() : 1;
+    hash = hash * 17 + (values != null ? values.hashCode() : 1);
+    hash = hash * 23 + (children != null ? children.hashCode() : 1);
+    return hash * 31 + (text != null ? text.hashCode() : 1);
   }
 }
