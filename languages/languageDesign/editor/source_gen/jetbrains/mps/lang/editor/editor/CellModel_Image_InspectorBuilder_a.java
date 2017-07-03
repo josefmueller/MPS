@@ -28,6 +28,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
+import jetbrains.mps.editor.runtime.EditorUtil;
 
 /*package*/ class CellModel_Image_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -225,7 +226,7 @@ import javax.swing.JComponent;
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_yczb8_a1b1d0() {
-    return new SelectImageFileButton(myNode, getEditorContext());
+    return EditorUtil.createSelectIconButton(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, 0x1095e2f7e63L, "imageFile"), getEditorContext(), false);
   }
   private EditorCell createCollection_yczb8_c3a() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());

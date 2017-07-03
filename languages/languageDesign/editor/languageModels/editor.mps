@@ -7,6 +7,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -45,6 +46,7 @@
     <import index="tpca" ref="r:00000000-0000-4000-0000-011c89590296(jetbrains.mps.lang.editor.actions)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="nlpl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.commands(MPS.Editor/)" />
+    <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" implicit="true" />
   </imports>
@@ -719,16 +721,31 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
+      </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
@@ -850,6 +867,10 @@
         <reference id="1240170836027" name="enum" index="2ZWj4r" />
       </concept>
       <concept id="1240171359678" name="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation" flags="nn" index="2ZYiMu" />
+      <concept id="2644386474302386080" name="jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression" flags="nn" index="355D3s">
+        <reference id="2644386474302386081" name="conceptDeclaration" index="355D3t" />
+        <reference id="2644386474302386082" name="propertyDeclaration" index="355D3u" />
+      </concept>
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
         <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
@@ -4552,12 +4573,18 @@
             <node concept="3gTLQM" id="hF4FgOj" role="3EZMnx">
               <node concept="3Fmcul" id="hF4FgOk" role="3FoqZy">
                 <node concept="3clFbS" id="hF4FgOl" role="2VODD2">
-                  <node concept="3cpWs6" id="hF4FgOm" role="3cqZAp">
-                    <node concept="2ShNRf" id="hF4FgOn" role="3cqZAk">
-                      <node concept="1pGfFk" id="hF4FgOo" role="2ShVmc">
-                        <ref role="37wK5l" node="i2lE2w6" resolve="SelectImageFileButton" />
-                        <node concept="pncrf" id="hF4FgOq" role="37wK5m" />
-                        <node concept="1Q80Hx" id="2iS1Y5ivbr" role="37wK5m" />
+                  <node concept="3clFbF" id="yYW$qsz$G1" role="3cqZAp">
+                    <node concept="2YIFZM" id="yYW$qszE5R" role="3clFbG">
+                      <ref role="37wK5l" to="7a0s:6UDbxo8i0Rf" resolve="createSelectIconButton" />
+                      <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
+                      <node concept="pncrf" id="yYW$qszEjR" role="37wK5m" />
+                      <node concept="355D3s" id="yYW$qszSE_" role="37wK5m">
+                        <ref role="355D3t" to="tpc2:g_u4HTJ" resolve="CellModel_Image" />
+                        <ref role="355D3u" to="tpc2:g_ubRTz" resolve="imageFile" />
+                      </node>
+                      <node concept="1Q80Hx" id="yYW$qszV2R" role="37wK5m" />
+                      <node concept="3clFbT" id="yYW$qszVX$" role="37wK5m">
+                        <property role="3clFbU" value="false" />
                       </node>
                     </node>
                   </node>
@@ -10121,6 +10148,29 @@
     <node concept="3Tm1VV" id="i2lE2w5" role="1B3o_S" />
     <node concept="3uibUv" id="i2lE9k7" role="1zkMxy">
       <ref role="3uigEE" to="dxuu:~JButton" resolve="JButton" />
+    </node>
+    <node concept="2AHcQZ" id="yYW$qs_Ors" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
+    <node concept="3UR2Jj" id="yYW$qs_RnR" role="lGtFl">
+      <node concept="TZ5HI" id="yYW$qsA8ZA" role="3nqlJM">
+        <node concept="TZ5HA" id="yYW$qsA8ZB" role="3HnX3l">
+          <node concept="1dT_AC" id="yYW$qsAbDx" role="1dT_Ay">
+            <property role="1dT_AB" value="use " />
+          </node>
+          <node concept="1dT_AA" id="yYW$qsAbD$" role="1dT_Ay">
+            <node concept="92FcH" id="yYW$qsAbDE" role="qph3F">
+              <node concept="TZ5HA" id="yYW$qsAbDG" role="2XjZqd" />
+              <node concept="VXe08" id="yYW$qsAmVN" role="92FcQ">
+                <ref role="VXe09" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="yYW$qsAbDz" role="1dT_Ay">
+            <property role="1dT_AB" value=" instead, will be removed after 2017.2" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="yGThnK6rob">

@@ -26,10 +26,16 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
 
+/**
+ * 
+ * @deprecated use {@link jetbrains.mps.editor.runtime.EditorUtil } instead, will be removed after 2017.2
+ */
+@Deprecated
 public class SelectImageFileButton extends JButton {
   private final SNode myNode;
   private final EditorContext myEditorContext;
 
+  @Deprecated
   public SelectImageFileButton(SNode node, EditorContext editorContext) {
     this.myNode = node;
     this.myEditorContext = editorContext;
