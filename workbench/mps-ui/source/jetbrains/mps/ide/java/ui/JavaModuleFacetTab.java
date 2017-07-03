@@ -64,7 +64,9 @@ import java.util.List;
 // to memento, not to be different from other facets, provided we don't use isCompileInMPS and getKind directly from descriptor)
 public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   private FilesTableModel mySourcePathsTableModel;
+  private boolean mySourcePathsChanged = false;
   private FilesTableModel myLibrariesTableModel;
+  private boolean myLibrariesChanged = false;
   private JBCheckBox myCheckBox;
   private ComboBox myComboBox;
 
@@ -116,8 +118,8 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   }
 
   private JComponent getSourcePathsTable() {
-    // Use collection from module descriptor to apply changes directly in table model
-    mySourcePathsTableModel = new FilesTableModel(myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths());
+    mySourcePathsTableModel = new FilesTableModel(convertStringPaths2VirtualFile(myJavaModuleFacet.getAdditionalSourcePaths()));
+    mySourcePathsTableModel.addTableModelListener(e -> mySourcePathsChanged = true);
     final JBTable sourcePathTable = new JBTable(mySourcePathsTableModel);
     sourcePathTable.setTableHeader(null);
     final TableCellRenderer renderer = new VirtualFileRenderer();
@@ -148,8 +150,9 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   }
 
   private JComponent getLibrariesTable() {
-    // Use collection from module descriptor to apply changes directly in table model
-    myLibrariesTableModel = new FilesTableModel(myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths());
+    final Collection<String> additionalJavaStubPaths = myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths();
+    myLibrariesTableModel = new FilesTableModel(convertStringPaths2VirtualFile(additionalJavaStubPaths));
+    myLibrariesTableModel.addTableModelListener(e -> myLibrariesChanged = true);
     final JBTable librariesTable = new JBTable(myLibrariesTableModel);
     librariesTable.setTableHeader(null);
     final TableCellRenderer renderer = new VirtualFileRenderer();
@@ -185,9 +188,8 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       solutionCheck = descriptor.getCompileInMPS() != myCheckBox.isSelected() || descriptor.getKind() != myComboBox.getSelectedItem();
     }
 
-    return mySourcePathsTableModel.isModified()
-           || myLibrariesTableModel.isModified()
-           || solutionCheck;
+    // Any change in table model will require re-save, even if state in the end is the same, to simplify this check.
+    return mySourcePathsChanged || myLibrariesChanged || solutionCheck;
   }
 
   @Override
@@ -199,8 +201,23 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       descriptor.setKind((SolutionKind) myComboBox.getSelectedItem());
     }
 
-    mySourcePathsTableModel.apply();
-    myLibrariesTableModel.apply();
+    // TODO: Move save of sources and libraries to JavaModuleFacetImpl#save(), when settings will be moved from ModuleDescriptor to memento
+
+    final Collection<String> sourcePaths = myJavaModuleFacet.getModule().getModuleDescriptor().getSourcePaths();
+    sourcePaths.clear();
+    final Collection<String> sourcePathsTable = convertVirtualFile2StringPaths(mySourcePathsTableModel.getFiles());
+    if (!sourcePathsTable.isEmpty()) {
+      sourcePaths.addAll(sourcePathsTable);
+    }
+    mySourcePathsChanged = false;
+
+    final Collection<String> libraryPaths = myJavaModuleFacet.getModule().getModuleDescriptor().getAdditionalJavaStubPaths();
+    libraryPaths.clear();
+    final Collection<String> libraryPathsTable = convertVirtualFile2StringPaths(myLibrariesTableModel.getFiles());
+    if (!libraryPathsTable.isEmpty()) {
+      libraryPaths.addAll(libraryPathsTable);
+    }
+    myLibrariesChanged = false;
   }
 
   @Override
@@ -211,11 +228,9 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
   // TODO: extract as common class to use in other places, like Project Modules list.
   private static class FilesTableModel extends AbstractTableModel implements ItemRemovable {
     private final List<VirtualFile> myFiles = new ArrayList<>();
-    private final Collection<String> myPaths;
 
-    FilesTableModel(Collection<String> paths) {
-      myPaths = paths;
-      myFiles.addAll(convertStringPaths2VirtualFile(myPaths));
+    FilesTableModel(Collection<VirtualFile> files) {
+      myFiles.addAll(files);
     }
 
     public void addAll(Collection<VirtualFile> files) {
@@ -224,6 +239,11 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
       if (myFiles.addAll(files)) {
         fireTableDataChanged();
       }
+    }
+
+    public Collection<VirtualFile> getFiles() {
+      // Return copy to avoid unexpected external modification
+      return new ArrayList<>(myFiles);
     }
 
     @Override
@@ -257,18 +277,6 @@ public class JavaModuleFacetTab extends BaseTab implements FacetTab {
     @Override
     public void removeRow(int idx) {
       myFiles.remove(idx);
-    }
-
-    public boolean isModified() {
-      final Collection<String> paths = convertVirtualFile2StringPaths(myFiles);
-      return !(myPaths.containsAll(paths) && paths.containsAll(myPaths));
-    }
-
-    public void apply() {
-      myPaths.clear();
-      if (!myFiles.isEmpty()) {
-        myPaths.addAll(convertVirtualFile2StringPaths(myFiles));
-      }
     }
   }
 
