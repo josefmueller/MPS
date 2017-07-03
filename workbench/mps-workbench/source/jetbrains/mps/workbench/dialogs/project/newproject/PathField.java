@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.workbench.dialogs.project.newproject;
 
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.DocumentAdapter;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
+import jetbrains.mps.util.annotation.ToRemove;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -34,7 +36,6 @@ public class PathField extends JPanel {
   private final JTextField myPathField;
   private final JButton myButton;
   private String myPath;
-  private int myMode;
   private final List<PathChangedListener> myListeners = new ArrayList<>();
 
   /**
@@ -47,7 +48,6 @@ public class PathField extends JPanel {
     setLayout(new BorderLayout());
     add(myPathField = createPathField(), BorderLayout.CENTER);
     add(myButton = createButton(), BorderLayout.EAST);
-    setMode(TreeFileChooser.MODE_DIRECTORIES);
   }
 
   private JTextField createPathField() {
@@ -84,8 +84,13 @@ public class PathField extends JPanel {
     return myPath;
   }
 
+  /**
+   * @deprecated  Not used any more
+   * */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public int getMode() {
-    return myMode;
+    return -1;
   }
 
   public void setPath(String newValue) {
@@ -105,20 +110,19 @@ public class PathField extends JPanel {
     }
   }
 
+  /**
+   * @deprecated  Not used any more
+   * */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public void setMode(int newValue) {
-    this.myMode = newValue;
   }
 
   /*package*/ void choosePathClicked() {
-    String oldPath = myPathField.getText();
-    TreeFileChooser chooser = new TreeFileChooser();
-    chooser.setMode(getMode());
-    if (oldPath != null) {
-      chooser.setInitialFile(FileSystem.getInstance().getFile(oldPath));
-    }
-    IFile result = chooser.showDialog(this);
+    final String oldPath = !myPathField.getText().isEmpty() ? myPathField.getText() : "";
+    final VirtualFile result = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), myPathField, null, LocalFileSystem.getInstance().findFileByPath(oldPath));
     if (result != null) {
-      setPath(IFileUtils.getCanonicalPath(result));
+      setPath(result.getCanonicalPath());
       myIsPathChangedByUser = true; //User change path only if dialog has result.
     }
   }

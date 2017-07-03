@@ -15,17 +15,27 @@
  */
 package jetbrains.mps.ide.library;
 
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.library.BaseLibraryManager;
 import jetbrains.mps.library.Library;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.vfs.IFile;
 
-import javax.swing.*;
+import javax.swing.AbstractAction;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.DefaultListModel;
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JComponent;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.BorderLayout;
@@ -148,15 +158,14 @@ public class LibraryManagerPreferences {
 
     Library l = (Library) myListModel.get(index);
 
-    String path;
-    TreeFileChooser chooser = new TreeFileChooser();
-    chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-    IFile result = chooser.showDialog(myMainPanel);
+    FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, true, true, false, false);
+    final VirtualFile result = FileChooser.chooseFile(descriptor, myMainPanel, null, LocalFileSystem.getInstance().findFileByPath(l.getPath()));
 
-    if (result == null) return;
-    path = result.getPath();
+    if (result == null) {
+      return;
+    }
 
-    l.setPath(path);
+    l.setPath(result.getPath());
 
     updateModel(true);
     myChanged = true;
@@ -169,16 +178,14 @@ public class LibraryManagerPreferences {
       return;
     }
 
-    String path;
-    TreeFileChooser chooser = new TreeFileChooser();
-    chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+    FileChooserDescriptor descriptor = new FileChooserDescriptor(false, true, true, true, false, false);
+    final VirtualFile result = FileChooser.chooseFile(descriptor, myMainPanel, null, null);
 
-    IFile result = chooser.showDialog(myMainPanel);
+    if (result == null) {
+      return;
+    }
 
-    if (result == null) return;
-    path = result.getPath();
-
-    myManager.addLibrary(name).setPath(path);
+    myManager.addLibrary(name).setPath(result.getPath());
     updateModel(true);
 
     myChanged = true;
