@@ -80,7 +80,9 @@ public class NewRootTest extends DataMPSFixtureTestCase {
       return psiModel1;
     });
 
-    // assert we have succesfully expanded and selected our model in the project pane
+    getMpsFixture().flushEDT();
+
+    // assert we have successfully expanded and selected our model in the project pane
     PlatformTestUtil.assertTreeEqual(pane.get().getTree(), "-Project\n" +
       " -PsiDirectory: unitTest\n" +
       "  jetbrains.mps.otherPsiTest\n" +

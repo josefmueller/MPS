@@ -17,9 +17,7 @@
 package jetbrains.mps.jps.make.tests;
 
 import com.intellij.openapi.application.PathManager;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.io.FileUtil;
-import jetbrains.mps.idea.logging.DelegatingLoggerFactory;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.make.fileUtil.FileRecursiveTraverser;
 import jetbrains.mps.jps.make.fileUtil.ProjectDirFinder;
@@ -47,7 +45,6 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
   }
 
   private static void initLogging() {
-    Logger.setFactory(DelegatingLoggerFactory.class);
     LogManager.getLogger(MpsJpsBuildTestCase.class).info("The log4 has been initialized successfully");
   }
 
@@ -146,8 +143,7 @@ public abstract class MpsJpsBuildTestCase extends JpsBuildTestCase {
       allPathVariables.put(PathMacroUtil.APPLICATION_HOME_DIR, PathManager.getHomePathFor(PathManager.class));
       allPathVariables.putAll(getAdditionalPathVariables());
       JpsProjectLoader.loadProject(myProject, allPathVariables, fullProjectPath);
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       throw new RuntimeException(e);
     }
   }
