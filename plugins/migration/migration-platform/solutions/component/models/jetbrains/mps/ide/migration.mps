@@ -2,13 +2,13 @@
 <model ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)">
   <persistence version="9" />
   <languages>
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
   </languages>
   <imports>
@@ -3013,7 +3013,24 @@
               </node>
             </node>
           </node>
+          <node concept="3SKdUt" id="6JHuVGF47BO" role="3cqZAp">
+            <node concept="3SKdUq" id="6JHuVGF47BQ" role="3SKWNk">
+              <property role="3SKdUp" value="here we do not filter out non-project modules because this method is called from 'New Language' action" />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="6JHuVGF48wE" role="3cqZAp">
+            <node concept="3SKdUq" id="6JHuVGF48wG" role="3SKWNk">
+              <property role="3SKdUp" value="before module is attached to project" />
+            </node>
+          </node>
           <node concept="3clFbJ" id="ygzS0$uD5o" role="3cqZAp">
+            <node concept="2YIFZM" id="6JHuVGF3PHO" role="3clFbw">
+              <ref role="1Pybhc" to="6f4m:4JlWzK6VGnA" resolve="MigrationModuleUtil" />
+              <ref role="37wK5l" to="6f4m:3UfGsecu97b" resolve="isModuleMigrateable" />
+              <node concept="37vLTw" id="6JHuVGF3PHP" role="37wK5m">
+                <ref role="3cqZAo" node="1AzqgyAfmjC" resolve="module" />
+              </node>
+            </node>
             <node concept="3clFbS" id="ygzS0$uD5p" role="3clFbx">
               <node concept="3clFbF" id="76a4RXptEqh" role="3cqZAp">
                 <node concept="1rXfSq" id="76a4RXptEqf" role="3clFbG">
@@ -3022,12 +3039,6 @@
                     <ref role="3cqZAo" node="1AzqgyAfmjC" resolve="module" />
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="1rXfSq" id="ygzS0$uD5v" role="3clFbw">
-              <ref role="37wK5l" node="76a4RXpsqrx" resolve="isProjectMigrateableModule" />
-              <node concept="37vLTw" id="ygzS0$uFSN" role="37wK5m">
-                <ref role="3cqZAo" node="1AzqgyAfmjC" resolve="module" />
               </node>
             </node>
           </node>
@@ -3063,6 +3074,13 @@
             </node>
           </node>
           <node concept="3clFbJ" id="ygzS0$uG0Q" role="3cqZAp">
+            <node concept="2YIFZM" id="6JHuVGF3R5K" role="3clFbw">
+              <ref role="1Pybhc" to="6f4m:4JlWzK6VGnA" resolve="MigrationModuleUtil" />
+              <ref role="37wK5l" to="6f4m:3UfGsecu97b" resolve="isModuleMigrateable" />
+              <node concept="37vLTw" id="6JHuVGF3R5L" role="37wK5m">
+                <ref role="3cqZAo" node="76a4RXpsYnk" resolve="module" />
+              </node>
+            </node>
             <node concept="3clFbS" id="ygzS0$uG0R" role="3clFbx">
               <node concept="3clFbF" id="76a4RXptFF9" role="3cqZAp">
                 <node concept="1rXfSq" id="76a4RXptFFa" role="3clFbG">
@@ -3071,12 +3089,6 @@
                     <ref role="3cqZAo" node="76a4RXpsYnk" resolve="module" />
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="1rXfSq" id="ygzS0$uG0V" role="3clFbw">
-              <ref role="37wK5l" node="76a4RXpsqrx" resolve="isProjectMigrateableModule" />
-              <node concept="37vLTw" id="ygzS0$uG0W" role="37wK5m">
-                <ref role="3cqZAo" node="76a4RXpsYnk" resolve="module" />
               </node>
             </node>
           </node>

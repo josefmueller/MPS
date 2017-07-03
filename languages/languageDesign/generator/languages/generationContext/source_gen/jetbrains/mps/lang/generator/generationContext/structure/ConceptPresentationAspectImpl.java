@@ -89,8 +89,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_GenerationContextOp_DirtyNode;
       case LanguageConceptSwitch.GenerationContextOp_GenParameterRef:
         if (props_GenerationContextOp_GenParameterRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L);
-          cpb.presentationByReference(0x22cdba820a9a0584L, "importClause", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x22cdba820a9a0583L, 0x22cdba820a9a0584L, "importClause", "", "");
           props_GenerationContextOp_GenParameterRef = cpb.create();
         }
         return props_GenerationContextOp_GenParameterRef;
@@ -193,22 +193,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_GenerationContextOp_GetTemplateNode;
       case LanguageConceptSwitch.GenerationContextOp_LinkPatternRef:
         if (props_GenerationContextOp_LinkPatternRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c757L);
-          cpb.presentationByReference(0x186874d40ed9c75bL, "linkPatternVar", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c757L, 0x186874d40ed9c75bL, "linkPatternVar", "", "");
           props_GenerationContextOp_LinkPatternRef = cpb.create();
         }
         return props_GenerationContextOp_LinkPatternRef;
       case LanguageConceptSwitch.GenerationContextOp_NodePatternRef:
         if (props_GenerationContextOp_NodePatternRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL);
-          cpb.presentationByReference(0x3fb2d847d55fdcd5L, "patternVarDecl", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x3fb2d847d55fc21eL, 0x3fb2d847d55fdcd5L, "patternVarDecl", "", "");
           props_GenerationContextOp_NodePatternRef = cpb.create();
         }
         return props_GenerationContextOp_NodePatternRef;
       case LanguageConceptSwitch.GenerationContextOp_ParameterRef:
         if (props_GenerationContextOp_ParameterRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4806ea5d84d8a2caL);
-          cpb.presentationByReference(0x4806ea5d84d8d50aL, "parameter", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x4806ea5d84d8a2caL, 0x4806ea5d84d8d50aL, "parameter", "", "");
           props_GenerationContextOp_ParameterRef = cpb.create();
         }
         return props_GenerationContextOp_ParameterRef;
@@ -220,8 +220,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_GenerationContextOp_PatternRef;
       case LanguageConceptSwitch.GenerationContextOp_PropertyPatternRef:
         if (props_GenerationContextOp_PropertyPatternRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c758L);
-          cpb.presentationByReference(0x186874d40ed9c75cL, "propertyPatternVar", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c758L, 0x186874d40ed9c75cL, "propertyPatternVar", "", "");
           props_GenerationContextOp_PropertyPatternRef = cpb.create();
         }
         return props_GenerationContextOp_PropertyPatternRef;
@@ -295,8 +295,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_GenerationContextOp_UserObjectAccessBase;
       case LanguageConceptSwitch.GenerationContextOp_VarRef:
         if (props_GenerationContextOp_VarRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x25c655ce6e80fdd8L);
-          cpb.presentationByReference(0x25c655ce6e80fddaL, "varmacro", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x25c655ce6e80fdd8L, 0x25c655ce6e80fddaL, "varmacro", "", "");
           props_GenerationContextOp_VarRef = cpb.create();
         }
         return props_GenerationContextOp_VarRef;

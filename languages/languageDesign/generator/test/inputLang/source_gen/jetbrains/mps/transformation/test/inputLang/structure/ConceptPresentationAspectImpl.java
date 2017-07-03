@@ -99,8 +99,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RefTestMethod;
       case LanguageConceptSwitch.RefTestMethodCall:
         if (props_RefTestMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e09L);
-          cpb.presentationByReference(0x2e0420fbd0995e0aL, "method", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e09L, 0x2e0420fbd0995e0aL, "method", "", "");
           props_RefTestMethodCall = cpb.create();
         }
         return props_RefTestMethodCall;
@@ -113,8 +113,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RefTestParam;
       case LanguageConceptSwitch.RefTestParamRef:
         if (props_RefTestParamRef == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e07L);
-          cpb.presentationByReference(0x2e0420fbd0995e08L, "declaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xab0ae915e3b54f35L, 0xb55ac655d649a03cL, 0x2e0420fbd0995e07L, 0x2e0420fbd0995e08L, "declaration", "", "");
           props_RefTestParamRef = cpb.create();
         }
         return props_RefTestParamRef;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -77,6 +77,12 @@ public class ClassPathViewerTool extends BaseProjectTool {
   }
 
   private class MyClassPathTree extends MPSTree {
+
+    MyClassPathTree() {
+      // it's not a node-backed tree
+      myWarnModelAccess = false;
+    }
+
     @Override
     protected MPSTreeNode rebuild() {
       if (myInspectedModule == null) {

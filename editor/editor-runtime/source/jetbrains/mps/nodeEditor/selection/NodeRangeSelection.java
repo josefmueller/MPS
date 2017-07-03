@@ -198,6 +198,15 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     return myFirstNode.equals(that.myFirstNode) && myLastNode.equals(that.myLastNode) && myParentNode.equals(that.myParentNode) && myRole.equals(that.myRole);
   }
 
+  /**
+   * For node range selection this should be always returning true
+   * @param node node
+   * @return true
+   */
+  @Override
+  public boolean isExactlyCoveringCell(EditorCell cell) {
+    return true;
+  }
 
   @Override
   public boolean canExecuteAction(CellActionType type) {

@@ -26,6 +26,9 @@
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
+      <concept id="8842732777748207592" name="jetbrains.mps.lang.structure.structure.SmartReferenceAttribute" flags="ng" index="RPilO">
+        <reference id="8842732777748207597" name="charactersticReference" index="RPilL" />
+      </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
@@ -193,6 +196,9 @@
     <node concept="PrWs8" id="3gcO7FHvbbY" role="PzmwI">
       <ref role="PrY4T" node="3gcO7FHva5$" resolve="CheckpointSpecification" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLei" role="lGtFl">
+      <ref role="RPilL" node="3gcO7FHvbc0" resolve="cpDecl" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3gcO7FHvbcG">
     <property role="EcuMT" value="3750601816081740588" />
@@ -209,6 +215,9 @@
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="1_4co2y1Lw1" resolve="Checkpoint" />
     </node>
+    <node concept="RPilO" id="47y0FrqaLeh" role="lGtFl">
+      <ref role="RPilL" node="3gcO7FHvbcJ" resolve="checkpoint" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3dG9g003xGJ">
     <property role="EcuMT" value="3705377275350227759" />
@@ -222,6 +231,36 @@
       <property role="20kJfa" value="plan" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="1_4co2y1LvV" resolve="Plan" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="LEyIDSD81t">
+    <property role="EcuMT" value="894680215637491805" />
+    <property role="TrG5h" value="DocumentationStep" />
+    <property role="R4oN_" value="document the plan" />
+    <ref role="1TJDcQ" node="1_4co2y1LvW" resolve="Step" />
+    <node concept="1TJgyj" id="LEyIDSDgZk" role="1TKVEi">
+      <property role="IQ2ns" value="894680215637528532" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1..n" />
+      <property role="20kJfa" value="comments" />
+      <ref role="20lvS9" node="LEyIDSDgXB" resolve="DocumentationLine" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="LEyIDSDgXB">
+    <property role="EcuMT" value="894680215637528423" />
+    <property role="TrG5h" value="DocumentationLine" />
+  </node>
+  <node concept="1TIwiD" id="2$jVy9JvdMP">
+    <property role="EcuMT" value="2959971211779300533" />
+    <property role="TrG5h" value="TextDocLine" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="2$jVy9JvdNj" role="1TKVEl">
+      <property role="IQ2nx" value="2959971211779300563" />
+      <property role="TrG5h" value="text" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="PrWs8" id="2$jVy9JvdNh" role="PzmwI">
+      <ref role="PrY4T" node="LEyIDSDgXB" resolve="DocumentationLine" />
     </node>
   </node>
 </model>

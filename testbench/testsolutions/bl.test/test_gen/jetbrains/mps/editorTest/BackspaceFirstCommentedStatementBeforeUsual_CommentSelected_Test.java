@@ -20,7 +20,11 @@ public class BackspaceFirstCommentedStatementBeforeUsual_CommentSelected_Test ex
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3178160097415624769", "3178160097415624793");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+        }
+      }, false);
     }
   }
 }

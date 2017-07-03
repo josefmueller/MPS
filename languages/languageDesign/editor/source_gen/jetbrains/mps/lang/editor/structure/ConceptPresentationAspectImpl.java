@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_AbstractCellIdScopeProviderNodeOperation;
   private ConceptPresentation props_AbstractCellSelector;
   private ConceptPresentation props_AbstractComponent;
   private ConceptPresentation props_AbstractOutputConceptContainerSubstituteMenuPart;
@@ -18,6 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_AppendTextOperation;
   private ConceptPresentation props_ApplyStyleClass;
   private ConceptPresentation props_ApplyStyleClassCondition;
+  private ConceptPresentation props_ApproveDelete_Operation;
   private ConceptPresentation props_AttributeStyleClassItem;
   private ConceptPresentation props_AutoDeletableStyleClassItem;
   private ConceptPresentation props_BackgroundColorStyleClassItem;
@@ -427,6 +429,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractCellIdScopeProviderNodeOperation:
+        if (props_AbstractCellIdScopeProviderNodeOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_AbstractCellIdScopeProviderNodeOperation = cpb.create();
+        }
+        return props_AbstractCellIdScopeProviderNodeOperation;
       case LanguageConceptSwitch.AbstractCellSelector:
         if (props_AbstractCellSelector == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -484,10 +492,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ApplyStyleClassCondition = cpb.create();
         }
         return props_ApplyStyleClassCondition;
+      case LanguageConceptSwitch.ApproveDelete_Operation:
+        if (props_ApproveDelete_Operation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("approve delete in 2-step delete operation");
+          cpb.rawPresentation("approveDelete");
+          props_ApproveDelete_Operation = cpb.create();
+        }
+        return props_ApproveDelete_Operation;
       case LanguageConceptSwitch.AttributeStyleClassItem:
         if (props_AttributeStyleClassItem == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eae0a402L);
-          cpb.presentationByReference(0x3744c0f9eae0b8d3L, "attribute", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eae0a402L, 0x3744c0f9eae0b8d3L, "attribute", "", "");
           props_AttributeStyleClassItem = cpb.create();
         }
         return props_AttributeStyleClassItem;
@@ -542,7 +558,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CellActionMapDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a71b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a91b0zp);
           props_CellActionMapDeclaration = cpb.create();
         }
         return props_CellActionMapDeclaration;
@@ -577,8 +593,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CellActionMap_FunctionParm_selectedNode;
       case LanguageConceptSwitch.CellIdReferenceSelector:
         if (props_CellIdReferenceSelector == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L);
-          cpb.presentationByReference(0x3c0028bb85570028L, "id", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, 0x3c0028bb85570028L, "id", "", "");
           props_CellIdReferenceSelector = cpb.create();
         }
         return props_CellIdReferenceSelector;
@@ -586,7 +602,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CellKeyMapDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a32b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a52b0zp);
           props_CellKeyMapDeclaration = cpb.create();
         }
         return props_CellKeyMapDeclaration;
@@ -699,7 +715,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_CellMenuComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a93b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a14b0zp);
           props_CellMenuComponent = cpb.create();
         }
         return props_CellMenuComponent;
@@ -711,15 +727,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CellMenuComponentFeature;
       case LanguageConceptSwitch.CellMenuComponentFeature_Link:
         if (props_CellMenuComponentFeature_Link == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL);
-          cpb.presentationByReference(0x10f7e408e08L, "relationDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d762adcL, 0x10f7e408e08L, "relationDeclaration", "", "");
           props_CellMenuComponentFeature_Link = cpb.create();
         }
         return props_CellMenuComponentFeature_Link;
       case LanguageConceptSwitch.CellMenuComponentFeature_Property:
         if (props_CellMenuComponentFeature_Property == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d811428L);
-          cpb.presentationByReference(0x10f7e408e08L, "relationDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d762adcL, 0x10f7e408e08L, "relationDeclaration", "", "");
           props_CellMenuComponentFeature_Property = cpb.create();
         }
         return props_CellMenuComponentFeature_Property;
@@ -1118,17 +1134,17 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CellModel_NextEditor;
       case LanguageConceptSwitch.CellModel_NonEmptyProperty:
         if (props_CellModel_NonEmptyProperty == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("not empty property");
-          cpb.presentationByReference(0x10973779681L, "relationDeclaration", "{+", "+}");
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration", "{+", "+}");
           props_CellModel_NonEmptyProperty = cpb.create();
         }
         return props_CellModel_NonEmptyProperty;
       case LanguageConceptSwitch.CellModel_Property:
         if (props_CellModel_Property == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("property");
-          cpb.presentationByReference(0x10973779681L, "relationDeclaration", "{", "}");
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration", "{", "}");
           props_CellModel_Property = cpb.create();
         }
         return props_CellModel_Property;
@@ -1142,25 +1158,25 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CellModel_ReadOnlyModelAccessor;
       case LanguageConceptSwitch.CellModel_RefCell:
         if (props_CellModel_RefCell == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference");
-          cpb.presentationByReference(0x10973779681L, "relationDeclaration", "%", "%->");
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration", "%", "%->");
           props_CellModel_RefCell = cpb.create();
         }
         return props_CellModel_RefCell;
       case LanguageConceptSwitch.CellModel_RefNode:
         if (props_CellModel_RefNode == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("single aggregation");
-          cpb.presentationByReference(0x10973779681L, "relationDeclaration", "%", "%");
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration", "%", "%");
           props_CellModel_RefNode = cpb.create();
         }
         return props_CellModel_RefNode;
       case LanguageConceptSwitch.CellModel_RefNodeList:
         if (props_CellModel_RefNodeList == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("multiple aggregation");
-          cpb.presentationByReference(0x10973779681L, "relationDeclaration", "%", "%");
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration", "%", "%");
           props_CellModel_RefNodeList = cpb.create();
         }
         return props_CellModel_RefNodeList;
@@ -1173,8 +1189,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CellModel_ReferencePresentation;
       case LanguageConceptSwitch.CellModel_TransactionalProperty:
         if (props_CellModel_TransactionalProperty == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L);
-          cpb.presentationByReference(0x11b35f87187L, "property", "{T ", " T}");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, 0x11b35f87187L, "property", "{T ", " T}");
           props_CellModel_TransactionalProperty = cpb.create();
         }
         return props_CellModel_TransactionalProperty;
@@ -1202,7 +1218,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptEditorContextHints == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a801b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a011b0zp);
           props_ConceptEditorContextHints = cpb.create();
         }
         return props_ConceptEditorContextHints;
@@ -1210,7 +1226,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ConceptEditorDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a901b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a111b0zp);
           props_ConceptEditorDeclaration = cpb.create();
         }
         return props_ConceptEditorDeclaration;
@@ -1223,8 +1239,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConceptEditorHintDeclaration;
       case LanguageConceptSwitch.ConceptEditorHintDeclarationReference:
         if (props_ConceptEditorHintDeclarationReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5eadaecad41188dcL);
-          cpb.presentationByReference(0x527faacef66db74dL, "hint", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5eadaecad41188dcL, 0x527faacef66db74dL, "hint", "", "");
           props_ConceptEditorHintDeclarationReference = cpb.create();
         }
         return props_ConceptEditorHintDeclarationReference;
@@ -1421,14 +1437,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_EditorComponentDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a831b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a041b0zp);
           props_EditorComponentDeclaration = cpb.create();
         }
         return props_EditorComponentDeclaration;
       case LanguageConceptSwitch.EditorComponentDeclarationReference:
         if (props_EditorComponentDeclarationReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L);
-          cpb.presentationByReference(0x619d95571435e249L, "editorComponent", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x619d95571435dfe8L, 0x619d95571435e249L, "editorComponent", "", "");
           props_EditorComponentDeclarationReference = cpb.create();
         }
         return props_EditorComponentDeclarationReference;
@@ -1904,7 +1920,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ParametersInformationQuery == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a212b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a412b0zp);
           props_ParametersInformationQuery = cpb.create();
         }
         return props_ParametersInformationQuery;
@@ -1938,8 +1954,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PredefinedSelector;
       case LanguageConceptSwitch.PropertyDeclarationCellSelector:
         if (props_PropertyDeclarationCellSelector == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L);
-          cpb.presentationByReference(0x3e970bbc311db51fL, "propertyDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, 0x3e970bbc311db51fL, "propertyDeclaration", "", "");
           props_PropertyDeclarationCellSelector = cpb.create();
         }
         return props_PropertyDeclarationCellSelector;
@@ -2789,8 +2805,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_StyleClassItem;
       case LanguageConceptSwitch.StyleClassReference:
         if (props_StyleClassReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL);
-          cpb.presentationByReference(0x2ef3b3796a130c0eL, "styleClass", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, 0x2ef3b3796a130c0eL, "styleClass", "", "");
           props_StyleClassReference = cpb.create();
         }
         return props_StyleClassReference;
@@ -2812,14 +2828,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_StyleKeyPack == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a633b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a833b0zp);
           props_StyleKeyPack = cpb.create();
         }
         return props_StyleKeyPack;
       case LanguageConceptSwitch.StyleReference:
         if (props_StyleReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL);
-          cpb.presentationByReference(0x7e9b10ab1edbd57eL, "style", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, 0x7e9b10ab1edbd57eL, "style", "", "");
           props_StyleReference = cpb.create();
         }
         return props_StyleReference;
@@ -2827,7 +2843,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_StyleSheet == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a833b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a043b0zp);
           props_StyleSheet = cpb.create();
         }
         return props_StyleSheet;
@@ -2889,7 +2905,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SubstituteMenu:
         if (props_SubstituteMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a743b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a943b0zp);
           props_SubstituteMenu = cpb.create();
         }
         return props_SubstituteMenu;
@@ -3051,8 +3067,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_SubstituteMenuVariableDeclaration;
       case LanguageConceptSwitch.SubstituteMenuVariableReference:
         if (props_SubstituteMenuVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987eL);
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_SubstituteMenuVariableReference = cpb.create();
         }
         return props_SubstituteMenuVariableReference;
@@ -3060,7 +3076,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SubstituteMenu_Contribution == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a073b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a273b0zp);
           props_SubstituteMenu_Contribution = cpb.create();
         }
         return props_SubstituteMenu_Contribution;
@@ -3068,7 +3084,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SubstituteMenu_Default == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a173b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a373b0zp);
           props_SubstituteMenu_Default = cpb.create();
         }
         return props_SubstituteMenu_Default;
@@ -3076,7 +3092,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SubstituteMenu_Named == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a273b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a473b0zp);
           props_SubstituteMenu_Named = cpb.create();
         }
         return props_SubstituteMenu_Named;
@@ -3211,7 +3227,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.TransformationMenu:
         if (props_TransformationMenu == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.icon(IconContainer.RESOURCE_a0a1a0a193b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a1a0a393b0zp);
           props_TransformationMenu = cpb.create();
         }
         return props_TransformationMenu;
@@ -3219,7 +3235,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationMenuContribution == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a293b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a493b0zp);
           props_TransformationMenuContribution = cpb.create();
         }
         return props_TransformationMenuContribution;
@@ -3302,15 +3318,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TransformationMenuPart_WrapSubstituteMenu;
       case LanguageConceptSwitch.TransformationMenuReference_Default:
         if (props_TransformationMenuReference_Default == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff0cL);
-          cpb.presentationByReference(0x169efbc9a91440deL, "concept", "default menu for ", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept", "default menu for ", "");
           props_TransformationMenuReference_Default = cpb.create();
         }
         return props_TransformationMenuReference_Default;
       case LanguageConceptSwitch.TransformationMenuReference_Named:
         if (props_TransformationMenuReference_Named == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L);
-          cpb.presentationByReference(0x5d3b34577b3cff0aL, "menu", "named menu ", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, 0x5d3b34577b3cff0aL, "menu", "named menu ", "");
           props_TransformationMenuReference_Named = cpb.create();
         }
         return props_TransformationMenuReference_Named;
@@ -3330,8 +3346,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TransformationMenuVariableDeclaration;
       case LanguageConceptSwitch.TransformationMenuVariableReference:
         if (props_TransformationMenuVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x201faaffc29bac4fL);
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_TransformationMenuVariableReference = cpb.create();
         }
         return props_TransformationMenuVariableReference;
@@ -3339,7 +3355,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationMenu_Default == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a804b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a014b0zp);
           props_TransformationMenu_Default = cpb.create();
         }
         return props_TransformationMenu_Default;
@@ -3347,7 +3363,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TransformationMenu_Named == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a904b0xp);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a114b0zp);
           props_TransformationMenu_Named = cpb.create();
         }
         return props_TransformationMenu_Named;

@@ -20,7 +20,11 @@ public class DeleteCommentedStatementBeforeCommented_StatementSelected_Test exte
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8821749938013418425", "8821749938013418461");
-      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+        }
+      }, false);
     }
   }
 }

@@ -302,8 +302,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.AbstractClassifierReference:
         if (props_AbstractClassifierReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L);
-          cpb.presentationByReference(0x6c6c91efa5ecbbb2L, "classifier", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, 0x6c6c91efa5ecbbb2L, "classifier", "", "");
           props_AbstractClassifierReference = cpb.create();
         }
         return props_AbstractClassifierReference;
@@ -372,8 +372,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Annotation;
       case LanguageConceptSwitch.AnnotationInstance:
         if (props_AnnotationInstance == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL);
-          cpb.presentationByReference(0x114a6b85d40L, "annotation", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6b4ccabL, 0x114a6b85d40L, "annotation", "", "");
           props_AnnotationInstance = cpb.create();
         }
         return props_AnnotationInstance;
@@ -387,8 +387,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AnnotationInstanceExpression;
       case LanguageConceptSwitch.AnnotationInstanceValue:
         if (props_AnnotationInstanceValue == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L);
-          cpb.presentationByReference(0x114a71b44e3L, "key", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, 0x114a71b44e3L, "key", "", "");
           props_AnnotationInstanceValue = cpb.create();
         }
         return props_AnnotationInstanceValue;
@@ -677,8 +677,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ClassConcept;
       case LanguageConceptSwitch.ClassCreator:
         if (props_ClassCreator == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL);
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_ClassCreator = cpb.create();
         }
         return props_ClassCreator;
@@ -693,9 +693,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Classifier;
       case LanguageConceptSwitch.ClassifierClassExpression:
         if (props_ClassifierClassExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("class of node operation");
-          cpb.presentationByReference(0x103fb73a43eL, "classifier", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x103fb730c14L, 0x103fb73a43eL, "classifier", "", "");
           props_ClassifierClassExpression = cpb.create();
         }
         return props_ClassifierClassExpression;
@@ -707,9 +707,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ClassifierMember;
       case LanguageConceptSwitch.ClassifierType:
         if (props_ClassifierType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference to classifier");
-          cpb.presentationByReference(0x101de490babL, "classifier", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier", "", "");
           props_ClassifierType = cpb.create();
         }
         return props_ClassifierType;
@@ -727,8 +727,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ClosureParameter;
       case LanguageConceptSwitch.ClosureParameterReference:
         if (props_ClosureParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c7edba8b3L);
-          cpb.presentationByReference(0x10c7edc81a4L, "closureParameter", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c7edba8b3L, 0x10c7edc81a4L, "closureParameter", "", "");
           props_ClosureParameterReference = cpb.create();
         }
         return props_ClosureParameterReference;
@@ -817,8 +817,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CustomSetterPropertyImplementation;
       case LanguageConceptSwitch.DefaultClassCreator:
         if (props_DefaultClassCreator == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L);
-          cpb.presentationByReference(0x2724644c0ac833a6L, "classifier", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0ac833a6L, "classifier", "", "");
           props_DefaultClassCreator = cpb.create();
         }
         return props_DefaultClassCreator;
@@ -905,7 +905,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_EnumClass;
       case LanguageConceptSwitch.EnumConstantDeclaration:
         if (props_EnumConstantDeclaration == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_EnumConstantDeclaration = cpb.create();
         }
@@ -972,9 +972,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_FieldDeclaration;
       case LanguageConceptSwitch.FieldReferenceOperation:
         if (props_FieldReferenceOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("instance field reference");
-          cpb.presentationByReference(0x116b484a653L, "fieldDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration", "", "");
           props_FieldReferenceOperation = cpb.create();
         }
         return props_FieldReferenceOperation;
@@ -1299,8 +1299,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_IfStatement;
       case LanguageConceptSwitch.ImplicitAnnotationInstanceValue:
         if (props_ImplicitAnnotationInstanceValue == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x23cf7b405b3b9761L);
-          cpb.presentationByReference(0x114a71b44e3L, "key", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a71b1af4L, 0x114a71b44e3L, "key", "", "");
           props_ImplicitAnnotationInstanceValue = cpb.create();
         }
         return props_ImplicitAnnotationInstanceValue;
@@ -1341,9 +1341,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_InstanceInitializer;
       case LanguageConceptSwitch.InstanceMethodCallOperation:
         if (props_InstanceMethodCallOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("instance method call");
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_InstanceMethodCallOperation = cpb.create();
         }
         return props_InstanceMethodCallOperation;
@@ -1447,52 +1447,52 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LessThanOrEqualsExpression;
       case LanguageConceptSwitch.LocalInstanceFieldReference:
         if (props_LocalInstanceFieldReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c0ba864df016178L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("local instance field reference");
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_LocalInstanceFieldReference = cpb.create();
         }
         return props_LocalInstanceFieldReference;
       case LanguageConceptSwitch.LocalInstanceMethodCall:
         if (props_LocalInstanceMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2a8fe0cadfaa8af2L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("local instance method call");
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_LocalInstanceMethodCall = cpb.create();
         }
         return props_LocalInstanceMethodCall;
       case LanguageConceptSwitch.LocalMethodCall:
         if (props_LocalMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("local method invocation");
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_LocalMethodCall = cpb.create();
         }
         return props_LocalMethodCall;
       case LanguageConceptSwitch.LocalPropertyReference:
         if (props_LocalPropertyReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L);
-          cpb.presentationByReference(0x515d7a8d927e9fb4L, "property", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x515d7a8d927e9fb3L, 0x515d7a8d927e9fb4L, "property", "", "");
           props_LocalPropertyReference = cpb.create();
         }
         return props_LocalPropertyReference;
       case LanguageConceptSwitch.LocalStaticFieldReference:
         if (props_LocalStaticFieldReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e12d8c7dL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("reference to local static field declaration");
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_LocalStaticFieldReference = cpb.create();
         }
         return props_LocalStaticFieldReference;
       case LanguageConceptSwitch.LocalStaticMethodCall:
         if (props_LocalStaticMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x110e4207559L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("local static method invocation");
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_LocalStaticMethodCall = cpb.create();
         }
         return props_LocalStaticMethodCall;
@@ -1521,10 +1521,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LocalVariableDeclarationStatement;
       case LanguageConceptSwitch.LocalVariableReference:
         if (props_LocalVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f2L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("reference to local variable declaration");
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_LocalVariableReference = cpb.create();
         }
         return props_LocalVariableReference;
@@ -1551,8 +1551,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LoopLabel;
       case LanguageConceptSwitch.LoopLabelReference:
         if (props_LoopLabelReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9555129L);
-          cpb.presentationByReference(0x50c493bf955512aL, "loopLabel", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x50c493bf9555129L, 0x50c493bf955512aL, "loopLabel", "", "");
           props_LoopLabelReference = cpb.create();
         }
         return props_LoopLabelReference;
@@ -1699,10 +1699,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ParameterDeclaration;
       case LanguageConceptSwitch.ParameterReference:
         if (props_ParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7faL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.shortDesc("reference to method parameter");
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_ParameterReference = cpb.create();
         }
         return props_ParameterReference;
@@ -1799,16 +1799,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PropertyImplementation;
       case LanguageConceptSwitch.PropertyReference:
         if (props_PropertyReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL);
-          cpb.presentationByReference(0x117b823ed57L, "property", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b821eaaeL, 0x117b823ed57L, "property", "", "");
           props_PropertyReference = cpb.create();
         }
         return props_PropertyReference;
       case LanguageConceptSwitch.PropertyValueReference:
         if (props_PropertyValueReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2463999e524f3bf5L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Property value represented in custom getters and setters");
-          cpb.presentationByReference(0x2463999e5366cff1L, "owningProperty", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2463999e524f3bf5L, 0x2463999e5366cff1L, "owningProperty", "", "");
           props_PropertyValueReference = cpb.create();
         }
         return props_PropertyValueReference;
@@ -2180,9 +2180,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TypeVariableDeclaration;
       case LanguageConceptSwitch.TypeVariableReference:
         if (props_TypeVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference to type variable");
-          cpb.presentationByReference(0x1024673a581L, "typeVariableDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration", "", "");
           props_TypeVariableReference = cpb.create();
         }
         return props_TypeVariableReference;
@@ -2204,22 +2204,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_UndefinedType;
       case LanguageConceptSwitch.UnknownConsCall:
         if (props_UnknownConsCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7e4a5cff51167b74L);
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_UnknownConsCall = cpb.create();
         }
         return props_UnknownConsCall;
       case LanguageConceptSwitch.UnknownDotCall:
         if (props_UnknownDotCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L);
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_UnknownDotCall = cpb.create();
         }
         return props_UnknownDotCall;
       case LanguageConceptSwitch.UnknownLocalCall:
         if (props_UnknownLocalCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc5d6L);
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_UnknownLocalCall = cpb.create();
         }
         return props_UnknownLocalCall;
@@ -2231,8 +2231,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_UnknownNameRef;
       case LanguageConceptSwitch.UnknownNew:
         if (props_UnknownNew == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2dda7700ec3ae154L);
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_UnknownNew = cpb.create();
         }
         return props_UnknownNew;
@@ -2294,9 +2294,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_VariableDeclaration;
       case LanguageConceptSwitch.VariableReference:
         if (props_VariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference to variable");
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_VariableReference = cpb.create();
         }
         return props_VariableReference;

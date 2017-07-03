@@ -20,7 +20,11 @@ public class FieldDeletion_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1267114898303352600", "1267114898303352606");
-      invokeAction("jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action");
+        }
+      }, false);
     }
   }
 }

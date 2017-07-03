@@ -52,6 +52,10 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.ApproveDelete_Operation" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+        <child id="8979250711607012232" name="cellSelector" index="3a7HXU" />
+      </concept>
       <concept id="3547227755871693971" name="jetbrains.mps.lang.editor.structure.PredefinedSelector" flags="ng" index="2B6iha">
         <property id="2162403111523065396" name="cellId" index="1lyBwo" />
       </concept>
@@ -69,6 +73,10 @@
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
       <concept id="3738029991950788349" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Named" flags="ng" index="Q6S24" />
+      <concept id="4323500428121233431" name="jetbrains.mps.lang.editor.structure.EditorCellId" flags="ng" index="2SqB2G" />
+      <concept id="4323500428136740385" name="jetbrains.mps.lang.editor.structure.CellIdReferenceSelector" flags="ng" index="2TlHUq">
+        <reference id="4323500428136742952" name="id" index="2TlMyj" />
+      </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
         <property id="1186403713874" name="color" index="Vb096" />
       </concept>
@@ -132,6 +140,7 @@
         <reference id="1081339532145" name="keyMap" index="34QXea" />
         <reference id="1139959269582" name="actionMap" index="1ERwB7" />
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
+        <child id="4323500428121274054" name="id" index="2SqHTX" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
@@ -477,6 +486,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="2SqB2G" id="14TMHtHe7wc" role="2SqHTX">
+          <property role="TrG5h" value="compactKeyword" />
         </node>
       </node>
       <node concept="3F0ifn" id="1XGsQcRHujG" role="3EZMnx">
@@ -1481,6 +1493,20 @@
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="1XGsQcRHuoQ" role="1hA7z_">
         <node concept="3clFbS" id="1XGsQcRHuoR" role="2VODD2">
+          <node concept="3clFbJ" id="14TMHtHe86T" role="3cqZAp">
+            <node concept="3clFbS" id="14TMHtHe86V" role="3clFbx">
+              <node concept="3cpWs6" id="14TMHtHe8xM" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="14TMHtHe8jT" role="3clFbw">
+              <node concept="0IXxy" id="14TMHtHe89M" role="2Oq$k0" />
+              <node concept="2xy62i" id="14TMHtHe8uT" role="2OqNvi">
+                <node concept="1Q80Hx" id="14TMHtHe8vD" role="2xHN3q" />
+                <node concept="2TlHUq" id="14TMHtHe8x4" role="3a7HXU">
+                  <ref role="2TlMyj" node="14TMHtHe7wc" resolve="compactKeyword" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1XGsQcRHuoS" role="3cqZAp">
             <node concept="37vLTI" id="1XGsQcRHuoT" role="3clFbG">
               <node concept="2OqwBi" id="1XGsQcRHuoU" role="37vLTJ">

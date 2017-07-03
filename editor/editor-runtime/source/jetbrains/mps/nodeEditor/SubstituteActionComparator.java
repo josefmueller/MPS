@@ -50,7 +50,11 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
   }
 
   protected int getRate(SubstituteAction action) {
-    return getMatcher().matchingDegree(action.getMatchingText(myPattern));
+    String matchingText = action.getMatchingText(myPattern);
+    if (matchingText == null) {
+      return Integer.MIN_VALUE;
+    }
+    return getMatcher().matchingDegree(matchingText);
   }
 
   protected boolean startsWith(SubstituteAction action) {

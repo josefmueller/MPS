@@ -20,7 +20,11 @@ public class SidedeleteAtEndWithOneStatementVariableDeclaration_Test extends Bas
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7006642384762593243", "7006642384762593252");
-      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+        }
+      }, false);
     }
   }
 }

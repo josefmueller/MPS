@@ -88,9 +88,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AttributedNodePart;
       case LanguageConceptSwitch.ClassConceptUnitContext:
         if (props_ClassConceptUnitContext == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ac9073L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Instantiate a class as unit context object");
-          cpb.presentationByReference(0x377692d961ac9076L, "classifier", "", "");
+          cpb.presentationByReference(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ac9073L, 0x377692d961ac9076L, "classifier", "", "");
           props_ClassConceptUnitContext = cpb.create();
         }
         return props_ClassConceptUnitContext;
@@ -104,7 +104,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CollectionAppendPart;
       case LanguageConceptSwitch.ConceptTextGenDeclaration:
         if (props_ConceptTextGenDeclaration == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           cpb.icon(IconContainer.RESOURCE_a0a2a0a7b0nb);
           props_ConceptTextGenDeclaration = cpb.create();
@@ -204,9 +204,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_IndentPart;
       case LanguageConceptSwitch.InstancePerUnitContextObject:
         if (props_InstancePerUnitContextObject == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1dfcc3c672ea762bL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Associate new instance of a context object with a text unit (one context object for each text unit)");
-          cpb.presentationByReference(0x1dfcc3c672ea762dL, "context", "", "");
+          cpb.presentationByReference(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x1dfcc3c672ea762cL, 0x1dfcc3c672ea762dL, "context", "", "");
           props_InstancePerUnitContextObject = cpb.create();
         }
         return props_InstancePerUnitContextObject;
@@ -251,8 +251,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NodeParameter;
       case LanguageConceptSwitch.OperationCall:
         if (props_OperationCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4ba6faaaL);
-          cpb.presentationByReference(0x11f5b7f02d9L, "function", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4ba6faaaL, 0x11f5b7f02d9L, "function", "", "");
           props_OperationCall = cpb.create();
         }
         return props_OperationCall;
@@ -301,16 +301,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_UnitContextObject;
       case LanguageConceptSwitch.UnitContextReference:
         if (props_UnitContextReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ab5a81L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("reference to unit context object");
-          cpb.presentationByReference(0x377692d961ab5a82L, "context", "", "");
+          cpb.presentationByReference(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x377692d961ab5a81L, 0x377692d961ab5a82L, "context", "", "");
           props_UnitContextReference = cpb.create();
         }
         return props_UnitContextReference;
       case LanguageConceptSwitch.UtilityMethodCall:
         if (props_UtilityMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L);
-          cpb.presentationByReference(0x11f6fac17ecL, "function", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, 0x11f6fac17ecL, "function", "", "");
           props_UtilityMethodCall = cpb.create();
         }
         return props_UtilityMethodCall;

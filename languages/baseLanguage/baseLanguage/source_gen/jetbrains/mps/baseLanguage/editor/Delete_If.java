@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
 
 public class Delete_If {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -22,6 +23,9 @@ public class Delete_If {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node)) {
+        return;
+      }
       UnwrapStatementsUtil.unwrapIf(node);
     }
   }
@@ -34,6 +38,9 @@ public class Delete_If {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node)) {
+        return;
+      }
       UnwrapStatementsUtil.unwrapIf(node);
     }
   }

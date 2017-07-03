@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.menus;
 
 import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -33,16 +34,18 @@ public class CanBeParentPredicate implements Predicate<SAbstractConcept> {
   @Nullable
   private final SNode myParentNode;
 
-  @NotNull
-  private final SRepository myRepository;
-
   @Nullable
-  private final SNode myLinkDeclarationNode;
+  private final SContainmentLink myContainmentLink;
 
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public CanBeParentPredicate(@Nullable SNode parentNode, @Nullable SContainmentLink link, @NotNull SRepository repository) {
+    this(parentNode, link);
+  }
+
+  public CanBeParentPredicate(@Nullable SNode parentNode, @Nullable SContainmentLink containmentLink) {
     myParentNode = parentNode;
-    myRepository = repository;
-    myLinkDeclarationNode = link == null ? null : link.getDeclarationNode();
+    myContainmentLink = containmentLink;
   }
 
   @Override
@@ -53,15 +56,7 @@ public class CanBeParentPredicate implements Predicate<SAbstractConcept> {
     if (concept == null) {
       return true;
     }
-    SNodeReference outputConceptSourceNodeReference = concept.getSourceNode();
-    if (outputConceptSourceNodeReference == null) {
-      return true;
-    }
-    SNode outputConceptSourceNode = outputConceptSourceNodeReference.resolve(myRepository);
-    if (outputConceptSourceNode == null) {
-      return true;
-    }
-    return (myLinkDeclarationNode == null || ModelConstraints.canBeParent(myParentNode, outputConceptSourceNode, myLinkDeclarationNode, null, null)) &&
-        ModelConstraints.canBeAncestor(myParentNode, null, outputConceptSourceNode, myLinkDeclarationNode, null);
+    return (myContainmentLink == null || ModelConstraints.canBeParent(myParentNode, concept, myContainmentLink,  null)) &&
+        ModelConstraints.canBeAncestor(myParentNode, concept, myContainmentLink, null);
   }
 }

@@ -32,15 +32,15 @@ public class CanBeChildPredicate implements Predicate<SAbstractConcept> {
   private final SNode myParentNode;
 
   @Nullable
-  private final SNode myLinkDeclarationNode;
+  private final SContainmentLink myContainmentLink;
 
   public CanBeChildPredicate(@NotNull SNode parentNode, @Nullable SContainmentLink link) {
     myParentNode = parentNode;
-    myLinkDeclarationNode = link == null ? null : link.getDeclarationNode();
+    myContainmentLink = link;
   }
 
   @Override
   public boolean test(@Nullable SAbstractConcept concept) {
-    return concept == null || ModelConstraints.canBeChild(concept, myParentNode, myLinkDeclarationNode, null, null);
+    return concept == null || ModelConstraints.canBeChild(myParentNode, concept, myContainmentLink, null);
   }
 }

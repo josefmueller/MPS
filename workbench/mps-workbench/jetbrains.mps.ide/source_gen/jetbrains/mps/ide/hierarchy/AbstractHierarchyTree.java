@@ -11,8 +11,6 @@ import javax.swing.tree.DefaultTreeModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.smodel.ModelReadRunnable;
-import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import java.util.Set;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.mps.util.Condition;
@@ -22,6 +20,7 @@ import java.util.HashSet;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -70,12 +69,6 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     myHierarchyNode = modelNode;
   }
 
-  public boolean overridesNodeIdentifierCalculation() {
-    return false;
-  }
-  public String calculateNodeIdentifier(HierarchyTreeNode node) {
-    throw new UnsupportedOperationException();
-  }
   public boolean isParentHierarchy() {
     return myIsParentHierarchy;
   }
@@ -109,17 +102,27 @@ public abstract class AbstractHierarchyTree extends MPSTree {
   }
 
   @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myRepostitory.getModelAccess(), rebuildAction), saveExpansion);
+  }
+
+  @Override
   protected MPSTreeNode rebuild() {
     if (myHierarchyNode == null) {
       return new TextTreeNode(noNodeString());
     }
-    return new ModelAccessHelper(myRepostitory.getModelAccess()).runReadAction(new Computable<MPSTreeNode>() {
-      @Override
-      public MPSTreeNode compute() {
-        return rebuildParentHierarchy();
-      }
-    });
+    return rebuildParentHierarchy();
   }
+
+  /**
+   * Override if you need to control text displayed for a node in a hierarchy.
+   * By default, uses node's name, if any. 
+   */
+  protected String nodePresentation(SNode n) {
+    String name = n.getName();
+    return (name == null ? "no name" : name);
+  }
+
   protected abstract String noNodeString();
   protected abstract SNode getParent(SNode node);
   protected abstract Set<SNode> getParents(SNode node, Set<SNode> visited) throws CircularHierarchyException;
@@ -188,11 +191,13 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     HierarchyTreeNode rootNode = null;
     Set<SNode> visited = new HashSet<SNode>();
     for (int i = parentHierarchy.size() - 1; i >= 0; i--) {
-      hierarchyTreeNode = (i > 0 ? (new HierarchyTreeNode(parentHierarchy.get(i), this)) : new ChildHierarchyTreeNode(parentHierarchy.get(i), this, visited));
+      SNode hierarchyNode = parentHierarchy.get(i);
+      hierarchyTreeNode = (i > 0 ? (new HierarchyTreeNode(hierarchyNode)) : new ChildHierarchyTreeNode(hierarchyNode, this, visited));
+      hierarchyTreeNode.setText(nodePresentation(hierarchyNode));
       if (i == parentHierarchy.size() - 1) {
         rootNode = hierarchyTreeNode;
       }
-      visited.add(parentHierarchy.get(i));
+      visited.add(hierarchyNode);
       if (parentTreeNode != null) {
         parentTreeNode.add(hierarchyTreeNode);
       }
@@ -229,6 +234,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       return null;
     }
 
+    final SNodeReference ptr = ((HierarchyTreeNode) treeNode).getNodeReference();
     final AbstractHierarchyView hierarchyView = getHierarchyView();
     if (hierarchyView == null) {
       return null;
@@ -236,8 +242,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     BaseAction hierarchyAction = new BaseAction("Show Hierarchy For This Node") {
       @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        final SNode node = ((HierarchyTreeNode) treeNode).getNode();
-        hierarchyView.showItemInHierarchy(node);
+        hierarchyView.showItemInHierarchy(ptr);
       }
     };
     return ActionUtils.groupFromActions(hierarchyAction);

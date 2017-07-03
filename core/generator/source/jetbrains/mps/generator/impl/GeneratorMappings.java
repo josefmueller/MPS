@@ -22,16 +22,19 @@ import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -241,6 +244,38 @@ public final class GeneratorMappings {
   }
   /*package*/Map<SNode,Object> getMappings(String label) {
     return myMappingNameAndInputNodeToOutputNodeMap.get(label);
+  }
+  /*package*/List<SNode> getSortedMappingKeys(String label) {
+    ArrayList<Map.Entry<SNode, Object>> l = new ArrayList<>(myMappingNameAndInputNodeToOutputNodeMap.get(label).entrySet());
+    Collections.sort(l, new Comparator<Entry<SNode, Object>>() {
+      @Override
+      public int compare(Entry<SNode, Object> o1, Entry<SNode, Object> o2) {
+        int v = compareKeys(o1.getKey(), o2.getKey());
+        if (v == 0) {
+          // input node is the same (or indistinguishable), have to respect values to keep order consistent.
+          // E.g. a pattern in a typesystem rule is copied to to different methods, there are two output classes
+          // Pattern_nn7be_a0a0a0b0d and Pattern_nn7be_a0a0a0c, and label entry order is inconsistent
+          return String.valueOf(o1.getValue()).compareTo(String.valueOf(o2.getValue()));
+        }
+        return v;
+      }
+
+      private int compareKeys(SNode n1, SNode n2) {
+        int v = n1.getPresentation().compareTo(n2.getPresentation());
+        if (v == 0) {
+          // just in case presentation is the same (e.g. enumeration literals with the same name in different enums)
+          // Hope, there could be no two nodes with the same presentation and same node id.
+          SNodeReference o1 = TracingUtil.getInput(n1);
+          SNodeReference o2 = TracingUtil.getInput(n2);
+          if (o1 != null && o2 != null) {
+            // use original input, if possible - actual input is from transient model
+            v = o1.getNodeId().toString().compareTo(o2.getNodeId().toString());
+          }
+        }
+        return v;
+      }
+    });
+    return l.stream().map(Entry::getKey).collect(Collectors.toList());
   }
 
   /*package*/Set<String> getConditionalRootLabels() {

@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration__BehaviorDescriptor;
 
 public class PresentationProviders {
-  public static final IReferentPresentationProvider PRESENTATION_ji2wba_a0a0a = new IReferentPresentationProvider() {
+  public static final IReferentPresentationProvider PRESENTATION_ji2wba_a0a0a0 = new IReferentPresentationProvider() {
     @NotNull
     @Override
     public String getPresentation(@NotNull SNode sourceNode, @NotNull SNode targetNode) {

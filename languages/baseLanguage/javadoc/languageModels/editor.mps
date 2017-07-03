@@ -53,6 +53,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.ApproveDelete_Operation" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+      </concept>
       <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr" />
       <concept id="6718020819487620873" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named" flags="ng" index="A1WHu">
         <reference id="6718020819487620874" name="menu" index="A1WHt" />
@@ -8117,6 +8120,17 @@
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="7gdCoen27mA" role="1hA7z_">
         <node concept="3clFbS" id="7gdCoen27mB" role="2VODD2">
+          <node concept="3clFbJ" id="4B_rn7pLt8R" role="3cqZAp">
+            <node concept="3clFbS" id="4B_rn7pLt8T" role="3clFbx">
+              <node concept="3cpWs6" id="4B_rn7pLtrf" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="4B_rn7pLthN" role="3clFbw">
+              <node concept="0IXxy" id="4B_rn7pLt94" role="2Oq$k0" />
+              <node concept="2xy62i" id="4B_rn7pLtq1" role="2OqNvi">
+                <node concept="1Q80Hx" id="4B_rn7pLtqB" role="2xHN3q" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="4iGwz$GUMqs" role="3cqZAp">
             <node concept="2OqwBi" id="4iGwz$GUMrb" role="3clFbG">
               <node concept="0IXxy" id="4iGwz$GUMqq" role="2Oq$k0" />

@@ -1021,5 +1021,119 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="2Byns3g9cs6">
+    <property role="EcuMT" value="3018077782998828806" />
+    <property role="TrG5h" value="TwoStepDeleteDefaultChildContainer" />
+    <property role="3GE5qa" value="twoStepDelete" />
+    <ref role="1TJDcQ" node="2Byns3g9hP_" resolve="TwoStepDeleteAbstractChildContainer" />
+    <node concept="1TJgyj" id="14TMHtI6Qp2" role="1TKVEi">
+      <property role="IQ2ns" value="1241246198931351106" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleOptionalChild" />
+      <ref role="20lvS9" node="2Byns3g9hPu" resolve="TwoStepDeleteDefaultChild" />
+    </node>
+    <node concept="1TJgyj" id="14TMHtI6Qp4" role="1TKVEi">
+      <property role="IQ2ns" value="1241246198931351108" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleRequiredChild" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2Byns3g9hPu" resolve="TwoStepDeleteDefaultChild" />
+    </node>
+    <node concept="1TJgyj" id="14TMHtI6Qp7" role="1TKVEi">
+      <property role="IQ2ns" value="1241246198931351111" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multipleChild" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="2Byns3g9hPu" resolve="TwoStepDeleteDefaultChild" />
+    </node>
+    <node concept="1TJgyj" id="14TMHtI9CLh" role="1TKVEi">
+      <property role="IQ2ns" value="1241246198932081745" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="labelChild" />
+      <ref role="20lvS9" node="14TMHtI9CLm" resolve="TwoStepDeleteLabelChild" />
+    </node>
+    <node concept="1TJgyj" id="14TMHtIabE0" role="1TKVEi">
+      <property role="IQ2ns" value="1241246198932224640" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="cellCollectionChild" />
+      <ref role="20lvS9" node="14TMHtIabE6" resolve="TwoStepDeleteCellCollectionChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="14TMHtI9CLm">
+    <property role="EcuMT" value="1241246198932081750" />
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteLabelChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="14TMHtIabE6">
+    <property role="EcuMT" value="1241246198932224646" />
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteCellCollectionChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="2Byns3g9hPu">
+    <property role="EcuMT" value="3018077782998850910" />
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteDefaultChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="14TMHtIfgM3" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="14TMHtIcUa1">
+    <property role="EcuMT" value="1241246198932939393" />
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteCustomChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="2Byns3g9hPB">
+    <property role="EcuMT" value="3018077782998850919" />
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteCustomChildContainer" />
+    <ref role="1TJDcQ" node="2Byns3g9hP_" resolve="TwoStepDeleteAbstractChildContainer" />
+    <node concept="1TJgyj" id="14TMHtIcUao" role="1TKVEi">
+      <property role="IQ2ns" value="1241246198932939416" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="14TMHtIcUa1" resolve="TwoStepDeleteCustomChild" />
+    </node>
+    <node concept="1TJgyi" id="14TMHtIcU9Z" role="1TKVEl">
+      <property role="IQ2nx" value="1241246198932939391" />
+      <property role="TrG5h" value="showCellWithCustomId" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="14TMHtIcXEu" role="1TKVEl">
+      <property role="IQ2nx" value="1241246198932953758" />
+      <property role="TrG5h" value="showCellWithStringId" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="14TMHtIcZjT" role="1TKVEl">
+      <property role="IQ2nx" value="1241246198932960505" />
+      <property role="TrG5h" value="stringProperty" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2Byns3g9hP_">
+    <property role="EcuMT" value="3018077782998850917" />
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteAbstractChildContainer" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="2Byns3g9ctN">
+    <property role="EcuMT" value="3018077782998828915" />
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteTestRoot" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="2Byns3g9ctQ" role="1TKVEi">
+      <property role="IQ2ns" value="3018077782998828918" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="container" />
+      <ref role="20lvS9" node="2Byns3g9hP_" resolve="TwoStepDeleteAbstractChildContainer" />
+    </node>
+    <node concept="PrWs8" id="arg0Wy$j64" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
 </model>
 

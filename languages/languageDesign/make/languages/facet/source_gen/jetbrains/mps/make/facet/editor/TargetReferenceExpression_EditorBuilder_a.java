@@ -17,6 +17,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -57,8 +58,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createRefNode_gv9ozx_a0());
-    editorCell.addEditorCell(createConstant_gv9ozx_b0());
-    editorCell.addEditorCell(createRefCell_gv9ozx_c0());
+    editorCell.addEditorCell(createCollection_gv9ozx_b0());
     return editorCell;
   }
   private EditorCell createRefNode_gv9ozx_a0() {
@@ -116,23 +116,30 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
       return "<no facetRef>";
     }
   }
-  private EditorCell createConstant_gv9ozx_b0() {
+  private EditorCell createCollection_gv9ozx_b0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("targetRefCollection");
+    editorCell.addEditorCell(createConstant_gv9ozx_a1a());
+    editorCell.addEditorCell(createRefCell_gv9ozx_b1a());
+    return editorCell;
+  }
+  private EditorCell createConstant_gv9ozx_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
-    editorCell.setCellId("Constant_gv9ozx_b0");
+    editorCell.setCellId("Constant_gv9ozx_a1a");
     Style style = new StyleImpl();
     new DotStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_gv9ozx_c0() {
+  private EditorCell createRefCell_gv9ozx_b1a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new TargetReferenceExpression_EditorBuilder_a.Inline_Builder_gv9ozx_a2a(getEditorContext(), myNode, effectiveNode).createCell();
+            return new TargetReferenceExpression_EditorBuilder_a.Inline_Builder_gv9ozx_a1b0(getEditorContext(), myNode, effectiveNode).createCell();
           }
         }, effectiveNode, "target");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
@@ -162,19 +169,19 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_gv9ozx_a2a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder_gv9ozx_a1b0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_gv9ozx_a2a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder_gv9ozx_a1b0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_gv9ozx_a0c0();
+      return createProperty_gv9ozx_a0b1a();
     }
 
     @NotNull
@@ -183,7 +190,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
       return myNode;
     }
 
-    private EditorCell createProperty_gv9ozx_a0c0() {
+    private EditorCell createProperty_gv9ozx_a0b1a() {
       CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
       provider.setRole("name");
       provider.setNoTargetText("<no name>");

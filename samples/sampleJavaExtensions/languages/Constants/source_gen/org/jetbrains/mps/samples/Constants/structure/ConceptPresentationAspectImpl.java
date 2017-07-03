@@ -30,8 +30,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Constant;
       case LanguageConceptSwitch.ConstantReference:
         if (props_ConstantReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L);
-          cpb.presentationByReference(0x37600150f5294666L, "original", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x37600150f5294665L, 0x37600150f5294666L, "original", "", "");
           props_ConstantReference = cpb.create();
         }
         return props_ConstantReference;
@@ -58,8 +58,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DistantConstantReference;
       case LanguageConceptSwitch.GeneratedClassKeeper:
         if (props_GeneratedClassKeeper == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L);
-          cpb.presentationByReference(0x254b015f7d15de42L, "clazz", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L, 0x254b015f7d15de42L, "clazz", "", "");
           props_GeneratedClassKeeper = cpb.create();
         }
         return props_GeneratedClassKeeper;

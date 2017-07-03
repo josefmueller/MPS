@@ -83,7 +83,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_FindBlock;
       case LanguageConceptSwitch.FinderDeclaration:
         if (props_FinderDeclaration == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x116b5695a8dL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           cpb.icon(IconContainer.RESOURCE_a0a2a0a7b0s);
           props_FinderDeclaration = cpb.create();
@@ -91,8 +91,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_FinderDeclaration;
       case LanguageConceptSwitch.FinderReference:
         if (props_FinderReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL);
-          cpb.presentationByReference(0x643a39f7c0869a50L, "finder", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x64d34fcdad024e73L, 0xaff8a581124c2e30L, 0x1bd5a514384e195fL, 0x643a39f7c0869a50L, "finder", "", "");
           props_FinderReference = cpb.create();
         }
         return props_FinderReference;

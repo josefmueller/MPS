@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.font.TextAttribute;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -39,6 +38,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @author Kostik
@@ -56,13 +56,18 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   private String myAdditionalText = null;
   private String myTooltipText;
   private Color myColor = EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED"));
+  // initialized once with the value of myColor the moment node is created, to facilitate nodes with pre-defined colors (initialized in cons)
+  // which sometimes is overridden with colors coming from extra messages (we need to revert to 'normal' color the moment all messages that have
+  // altered the color are gone).
+  private Color myDefaultColor;
   private int myFontStyle = Font.PLAIN;
   private boolean myAutoExpandable = true;
   private ErrorState myErrorState = ErrorState.NONE;
   private ErrorState myCombinedErrorState = ErrorState.NONE;
-  private final Object myTreeMessagesLock = new Object();
-  private List<TreeMessage> myTreeMessages = null;
-  private Map<TextAttribute, Object> myFontAttributes = new HashMap<TextAttribute, Object>();
+  // it seems cheaper to use copy-on-write list than to keep distinct synchronization object in all nodes (most of which don't use extra messages)
+  // Once initialized, doesn't ever become null
+  private CopyOnWriteArrayList<TreeMessage> myTreeMessages = null;
+  private Map<TextAttribute, Object> myFontAttributes;
   private int myToggleClickCount = 2;
 
   public MPSTreeNode() {
@@ -149,6 +154,11 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     } else {
       doInit();
     }
+    if (myDefaultColor == null) {
+      // in case subclasses have specified color during construction or in their doInit(), record it as default value to reset to at each visual update
+      // see #doUpdatePresentation()
+      myDefaultColor = myColor;
+    }
   }
 
   /**
@@ -168,6 +178,11 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     }, true);
   }
 
+  /**
+   * Unlike {@link #updatePresentation()}, focus on node modifications that involve structure change.
+   * Dispatches a tree model notification to reflect structure change of a subtree rooted at this node.
+   * Override {@link #doUpdate()} to perform actual modification of a subtree
+   */
   public void update() {
     doUpdate();
     ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
@@ -288,9 +303,11 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     updateNodePresentationInTree();
   }
 
-  //todo make final
-  protected void updatePresentation() {
-    setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
+  /**
+   * Does boilerplate refresh operations, like additional messages handling and notification dispatch.
+   * Override {@link #doUpdatePresentation()} for custom presentation changes
+   */
+  protected final void updatePresentation() {
     doUpdatePresentation();
     if (myTree == null) {
       myTree = getTree();
@@ -300,17 +317,15 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     }
     Color c = null;
     String additionalText = null;
-    synchronized (myTreeMessagesLock) {
-      if (myTreeMessages != null) {
-        int maxColorPriority = Integer.MIN_VALUE;
-        int maxAdditionalTextPriority = Integer.MIN_VALUE;
-        for (TreeMessage message : myTreeMessages) {
-          if (maxColorPriority < message.getPriority() && message.alternatesColor()) {
-            c = message.getColor();
-          }
-          if (maxAdditionalTextPriority < message.getPriority() && message.hasAdditionalText()) {
-            additionalText = message.getAdditionalText();
-          }
+    if (myTreeMessages != null) {
+      int maxColorPriority = Integer.MIN_VALUE;
+      int maxAdditionalTextPriority = Integer.MIN_VALUE;
+      for (TreeMessage message : myTreeMessages) {
+        if (maxColorPriority < message.getPriority() && message.alternatesColor()) {
+          c = message.getColor();
+        }
+        if (maxAdditionalTextPriority < message.getPriority() && message.hasAdditionalText()) {
+          additionalText = message.getAdditionalText();
         }
       }
     }
@@ -322,6 +337,12 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     }
   }
 
+  /**
+   * @deprecated odd and unclear contract (e.g. {@link #update()} and {@link #updateSubTree()} imply structure refresh, while this one does not),
+   *             parameters that merely control invocation of other public methods.
+   *             Use respective methods directly, instead.
+   */
+  @Deprecated
   public void updatePresentation(final boolean reloadSubTree, final boolean updateAncestors) {
     renewPresentation();
     if (reloadSubTree) {
@@ -341,12 +362,16 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
    * @param message message to attach
    */
   public void addTreeMessage(@NotNull TreeMessage message) {
-    synchronized (myTreeMessagesLock) {
-      if (myTreeMessages == null) {
-        myTreeMessages = new ArrayList<TreeMessage>(1);
+    List<TreeMessage> treeMessages = myTreeMessages;
+    if (treeMessages == null) {
+      synchronized (this) {
+        if (myTreeMessages == null) {
+          myTreeMessages = new CopyOnWriteArrayList<>();
+        }
+        treeMessages = myTreeMessages;
       }
-      myTreeMessages.add(message);
     }
+    treeMessages.add(message);
   }
 
   /**
@@ -358,30 +383,25 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
    */
   @NotNull
   public Set<TreeMessage> removeTreeMessages(TreeMessageOwner owner) {
-    Set<TreeMessage> result = new HashSet<TreeMessage>(1);
-    if (owner == null) {
-      return result;
+    List<TreeMessage> treeMessages = myTreeMessages;
+    if (owner == null || treeMessages == null) {
+      return Collections.emptySet();
     }
-    final ArrayList<TreeMessage> copy;
-    synchronized (myTreeMessagesLock) {
-      if (myTreeMessages == null) {
-        return result;
-      }
-      copy = new ArrayList<TreeMessage>(myTreeMessages);
-    }
-    for (TreeMessage message : copy) {
+    Set<TreeMessage> result = new HashSet<>(4);
+    for (TreeMessage message : treeMessages) {
       if (owner.equals(message.getOwner())) {
         result.add(message);
       }
     }
-    synchronized (myTreeMessagesLock) {
-      myTreeMessages.removeAll(result);
-    }
+    treeMessages.removeAll(result);
     return result;
   }
 
   protected void doUpdatePresentation() {
-
+    if (myDefaultColor != null) {
+      // reset color to default in case there were messages that affected color of the node
+      setColor(myDefaultColor);
+    }
   }
 
   public final Icon getIcon(boolean expanded) {
@@ -422,11 +442,14 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   }
 
   public final void addFontAttribute(TextAttribute key, Object value) {
+    if (myFontAttributes == null) {
+      myFontAttributes = new HashMap<>(4);
+    }
     myFontAttributes.put(key, value);
   }
 
   public final Map getFontAttributes() {
-    return myFontAttributes;
+    return myFontAttributes == null ? Collections.emptyMap() : myFontAttributes;
   }
 
   @NotNull
@@ -522,6 +545,9 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     myAutoExpandable = autoExpandable;
   }
 
+  /**
+   * Dispatch a notification that tree model needs to reflect changes in node's presentation
+   */
   public final void updateNodePresentationInTree() {
     if (getTree() == null) return;
     ((DefaultTreeModel) getTree().getModel()).nodeChanged(this);

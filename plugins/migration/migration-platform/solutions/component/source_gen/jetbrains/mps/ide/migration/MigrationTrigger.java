@@ -437,7 +437,9 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     @Override
     public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
-      if (isProjectMigrateableModule(module)) {
+      // here we do not filter out non-project modules because this method is called from 'New Language' action 
+      // before module is attached to project 
+      if (MigrationModuleUtil.isModuleMigrateable(module)) {
         triggerOnModuleChanged(module);
       }
     }
@@ -445,7 +447,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
     @Override
     public void moduleChanged(@NotNull SModule module) {
       super.moduleChanged(module);
-      if (isProjectMigrateableModule(module)) {
+      if (MigrationModuleUtil.isModuleMigrateable(module)) {
         triggerOnModuleChanged(module);
       }
     }

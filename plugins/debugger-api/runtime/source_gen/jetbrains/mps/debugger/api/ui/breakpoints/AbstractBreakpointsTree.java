@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 import jetbrains.mps.project.Project;
 import java.util.Collection;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import javax.swing.event.TreeSelectionListener;
@@ -48,6 +49,13 @@ import javax.swing.UIManager;
     myBreakpointsManager.addChangeListener(myListener);
     updateBreakpointsData();
     myTree = new GroupedTree<AbstractBreakpointsTree.BreakpointNodeData>() {
+
+
+      @Override
+      public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+        super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
+      }
+
       @Override
       protected AbstractBreakpointsTree.BreakpointTreeNode createDataNode(AbstractBreakpointsTree.BreakpointNodeData data) {
         return new AbstractBreakpointsTree.BreakpointTreeNode(data);
@@ -278,10 +286,9 @@ import javax.swing.UIManager;
   protected class BreakpointTreeNode extends MPSTreeNode {
     public BreakpointTreeNode(AbstractBreakpointsTree.BreakpointNodeData breakpoint) {
       super(breakpoint);
-      AbstractBreakpointsTree.BreakpointNodeData bp = (AbstractBreakpointsTree.BreakpointNodeData) getUserObject();
-      setNodeIdentifier(bp.getText());
-      setIcon(bp.getIcon(true));
-      setText(bp.getText());
+      setNodeIdentifier(breakpoint.getText());
+      setIcon(breakpoint.getIcon(true));
+      setText(breakpoint.getText());
     }
     @Override
     public boolean isLeaf() {

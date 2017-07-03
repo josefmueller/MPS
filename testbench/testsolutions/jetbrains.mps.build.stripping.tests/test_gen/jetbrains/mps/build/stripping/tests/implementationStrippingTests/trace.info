@@ -3,6 +3,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/2085316548396379691">
     <file name="LeftTransformTest_Test.java">
       <node id="2085316548396379691" at="13,57,14,142" concept="0" />
@@ -21,18 +22,26 @@
   </root>
   <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/5264300948581715473">
     <file name="RemoveNotTest_Test.java">
-      <node id="5264300948581715473" at="13,53,14,142" concept="0" />
-      <node id="5264300948581715473" at="14,142,15,129" concept="0" />
-      <node id="5264300948581715473" at="21,51,22,72" concept="0" />
-      <node id="5264300948581716467" at="22,72,23,72" concept="0" />
-      <node id="5264300948581715473" at="12,0,17,0" concept="1" trace="test_RemoveNotTest#()V" />
-      <node id="5264300948581715473" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="5264300948581715473" at="13,53,15,129" />
-      <scope id="5264300948581715473" at="21,51,23,72" />
-      <scope id="5264300948581715473" at="12,0,17,0" />
-      <scope id="5264300948581715473" at="20,0,25,0" />
-      <unit id="5264300948581715473" at="18,0,26,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test$TestBody" />
-      <unit id="5264300948581715473" at="10,0,27,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test" />
+      <node id="5264300948581715473" at="14,53,15,142" concept="0" />
+      <node id="5264300948581715473" at="15,142,16,129" concept="0" />
+      <node id="5264300948581715473" at="22,51,23,72" concept="0" />
+      <node id="1241246198920126069" at="23,72,24,92" concept="2" />
+      <node id="1241246198920126075" at="24,92,25,64" concept="0" />
+      <node id="1241246198933915617" at="26,11,27,71" concept="0" />
+      <node id="1241246198920126085" at="28,17,29,84" concept="0" />
+      <node id="5264300948581715473" at="13,0,18,0" concept="1" trace="test_RemoveNotTest#()V" />
+      <node id="1241246198920126080" at="25,64,30,7" concept="3" />
+      <node id="5264300948581715473" at="21,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="1241246198920126081" at="26,11,27,71" />
+      <scope id="1241246198920126084" at="28,17,29,84" />
+      <scope id="5264300948581715473" at="14,53,16,129" />
+      <scope id="5264300948581715473" at="13,0,18,0" />
+      <scope id="5264300948581715473" at="22,51,30,7">
+        <var name="twoStepDeletionSettings" id="1241246198920126070" />
+      </scope>
+      <scope id="5264300948581715473" at="21,0,32,0" />
+      <unit id="5264300948581715473" at="19,0,33,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test$TestBody" />
+      <unit id="5264300948581715473" at="11,0,34,0" name="jetbrains.mps.build.stripping.tests.implementationStrippingTests.RemoveNotTest_Test" />
     </file>
   </root>
   <root nodeRef="r:a7360bf3-0305-4b0f-a849-53283ec620bf(jetbrains.mps.build.stripping.tests.implementationStrippingTests@tests)/5264300948581796844">

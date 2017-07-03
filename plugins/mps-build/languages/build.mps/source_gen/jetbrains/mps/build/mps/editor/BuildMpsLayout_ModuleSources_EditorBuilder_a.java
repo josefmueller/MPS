@@ -160,7 +160,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
   }
   private EditorCell createConstant_gp4zyx_c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(models only)");
-    editorCell.setCellId("Constant_gp4zyx_c0");
+    editorCell.setCellId("modelsOnly");
     Style style = new StyleImpl();
     new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

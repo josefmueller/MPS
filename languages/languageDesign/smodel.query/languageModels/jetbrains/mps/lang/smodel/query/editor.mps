@@ -41,6 +41,10 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.ApproveDelete_Operation" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+        <child id="8979250711607012232" name="cellSelector" index="3a7HXU" />
+      </concept>
       <concept id="1638911550608571617" name="jetbrains.mps.lang.editor.structure.TransformationMenu_Default" flags="ng" index="IW6AY" />
       <concept id="1638911550608610798" name="jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute" flags="ig" index="IWg2L" />
       <concept id="1638911550608610278" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action" flags="ng" index="IWgqT">
@@ -448,6 +452,9 @@
             </node>
           </node>
         </node>
+        <node concept="2SqB2G" id="14TMHtHhOFf" role="2SqHTX">
+          <property role="TrG5h" value="parameter" />
+        </node>
       </node>
       <node concept="l2Vlx" id="3J6h25Q6Zve" role="2iSdaV" />
     </node>
@@ -521,6 +528,20 @@
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="3J6h25Q_ELf" role="1hA7z_">
         <node concept="3clFbS" id="3J6h25Q_ELg" role="2VODD2">
+          <node concept="3clFbJ" id="14TMHtHhOU0" role="3cqZAp">
+            <node concept="3clFbS" id="14TMHtHhOU2" role="3clFbx">
+              <node concept="3cpWs6" id="14TMHtHhPl8" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="14TMHtHhP67" role="3clFbw">
+              <node concept="0IXxy" id="14TMHtHhOXc" role="2Oq$k0" />
+              <node concept="2xy62i" id="14TMHtHhPia" role="2OqNvi">
+                <node concept="1Q80Hx" id="14TMHtHhPiL" role="2xHN3q" />
+                <node concept="2TlHUq" id="14TMHtHhPjU" role="3a7HXU">
+                  <ref role="2TlMyj" node="14TMHtHhOFf" resolve="parameter" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="3J6h25Q_ELp" role="3cqZAp">
             <node concept="2OqwBi" id="3J6h25Q_Iqn" role="3clFbG">
               <node concept="2OqwBi" id="3J6h25Q_ERr" role="2Oq$k0">

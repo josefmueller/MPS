@@ -7326,58 +7326,64 @@
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/8362517669643580836">
     <file name="DeleteTagsAndHandleDeprecationOnAttributedNode.java">
-      <node id="8362517669643580836" at="13,95,14,160" concept="2" />
-      <node id="8362517669643580836" at="14,160,15,166" concept="2" />
-      <node id="8362517669643580836" at="18,0,19,0" concept="3" trace="myNode" />
-      <node id="8362517669643580836" at="19,78,20,25" concept="2" />
-      <node id="8362517669643580836" at="22,54,23,56" concept="2" />
-      <node id="4948473272651687580" at="25,75,26,39" concept="2" />
-      <node id="8362517669643580836" at="30,0,31,0" concept="3" trace="myNode" />
-      <node id="8362517669643580836" at="31,81,32,25" concept="2" />
-      <node id="8362517669643580836" at="34,54,35,56" concept="2" />
-      <node id="4948473272651687580" at="37,75,38,39" concept="2" />
-      <node id="8362517669643580836" at="19,0,22,0" concept="1" trace="DeleteTagsAndHandleDeprecationOnAttributedNode_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8362517669643580836" at="22,0,25,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="8362517669643580836" at="25,0,28,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8362517669643580836" at="31,0,34,0" concept="1" trace="DeleteTagsAndHandleDeprecationOnAttributedNode_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8362517669643580836" at="34,0,37,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="8362517669643580836" at="37,0,40,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8362517669643580836" at="13,0,17,0" concept="11" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <scope id="8362517669643580836" at="19,78,20,25" />
-      <scope id="8362517669643580836" at="22,54,23,56" />
-      <scope id="8362517669643580839" at="25,75,26,39" />
-      <scope id="8362517669643580836" at="31,81,32,25" />
-      <scope id="8362517669643580836" at="34,54,35,56" />
-      <scope id="8362517669643580839" at="37,75,38,39" />
-      <scope id="8362517669643580836" at="13,95,15,166" />
-      <scope id="8362517669643580836" at="19,0,22,0">
+      <node id="8362517669643580836" at="14,95,15,160" concept="2" />
+      <node id="8362517669643580836" at="15,160,16,166" concept="2" />
+      <node id="8362517669643580836" at="19,0,20,0" concept="3" trace="myNode" />
+      <node id="8362517669643580836" at="20,78,21,25" concept="2" />
+      <node id="8362517669643580836" at="23,54,24,56" concept="2" />
+      <node id="5324782470187833039" at="27,62,28,15" concept="8" />
+      <node id="4948473272651687580" at="29,7,30,39" concept="2" />
+      <node id="8362517669643580836" at="34,0,35,0" concept="3" trace="myNode" />
+      <node id="8362517669643580836" at="35,81,36,25" concept="2" />
+      <node id="8362517669643580836" at="38,54,39,56" concept="2" />
+      <node id="5324782470187833039" at="42,62,43,15" concept="8" />
+      <node id="4948473272651687580" at="44,7,45,39" concept="2" />
+      <node id="8362517669643580836" at="20,0,23,0" concept="1" trace="DeleteTagsAndHandleDeprecationOnAttributedNode_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8362517669643580836" at="23,0,26,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5324782470187831863" at="26,75,29,7" concept="5" />
+      <node id="8362517669643580836" at="35,0,38,0" concept="1" trace="DeleteTagsAndHandleDeprecationOnAttributedNode_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8362517669643580836" at="38,0,41,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5324782470187831863" at="41,75,44,7" concept="5" />
+      <node id="8362517669643580836" at="14,0,18,0" concept="11" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="8362517669643580836" at="26,0,32,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8362517669643580836" at="41,0,47,0" concept="6" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="8362517669643580836" at="20,78,21,25" />
+      <scope id="8362517669643580836" at="23,54,24,56" />
+      <scope id="5324782470187831865" at="27,62,28,15" />
+      <scope id="8362517669643580836" at="35,81,36,25" />
+      <scope id="8362517669643580836" at="38,54,39,56" />
+      <scope id="5324782470187831865" at="42,62,43,15" />
+      <scope id="8362517669643580836" at="14,95,16,166" />
+      <scope id="8362517669643580836" at="20,0,23,0">
         <var name="node" id="8362517669643580836" />
       </scope>
-      <scope id="8362517669643580836" at="22,0,25,0">
+      <scope id="8362517669643580836" at="23,0,26,0">
         <var name="editorContext" id="8362517669643580836" />
       </scope>
-      <scope id="8362517669643580836" at="25,0,28,0">
-        <var name="editorContext" id="8362517669643580836" />
+      <scope id="8362517669643580836" at="35,0,38,0">
         <var name="node" id="8362517669643580836" />
       </scope>
-      <scope id="8362517669643580836" at="31,0,34,0">
-        <var name="node" id="8362517669643580836" />
-      </scope>
-      <scope id="8362517669643580836" at="34,0,37,0">
+      <scope id="8362517669643580836" at="38,0,41,0">
         <var name="editorContext" id="8362517669643580836" />
       </scope>
-      <scope id="8362517669643580836" at="37,0,40,0">
-        <var name="editorContext" id="8362517669643580836" />
-        <var name="node" id="8362517669643580836" />
-      </scope>
-      <scope id="8362517669643580836" at="13,0,17,0">
+      <scope id="8362517669643580836" at="14,0,18,0">
         <var name="context" id="8362517669643580836" />
         <var name="editorCell" id="8362517669643580836" />
         <var name="node" id="8362517669643580836" />
       </scope>
-      <unit id="8362517669643580836" at="17,0,29,0" name="jetbrains.mps.baseLanguage.javadoc.editor.DeleteTagsAndHandleDeprecationOnAttributedNode$DeleteTagsAndHandleDeprecationOnAttributedNode_DELETE" />
-      <unit id="8362517669643580836" at="29,0,41,0" name="jetbrains.mps.baseLanguage.javadoc.editor.DeleteTagsAndHandleDeprecationOnAttributedNode$DeleteTagsAndHandleDeprecationOnAttributedNode_BACKSPACE" />
-      <unit id="8362517669643580836" at="12,0,42,0" name="jetbrains.mps.baseLanguage.javadoc.editor.DeleteTagsAndHandleDeprecationOnAttributedNode" />
+      <scope id="8362517669643580839" at="26,75,30,39" />
+      <scope id="8362517669643580839" at="41,75,45,39" />
+      <scope id="8362517669643580836" at="26,0,32,0">
+        <var name="editorContext" id="8362517669643580836" />
+        <var name="node" id="8362517669643580836" />
+      </scope>
+      <scope id="8362517669643580836" at="41,0,47,0">
+        <var name="editorContext" id="8362517669643580836" />
+        <var name="node" id="8362517669643580836" />
+      </scope>
+      <unit id="8362517669643580836" at="18,0,33,0" name="jetbrains.mps.baseLanguage.javadoc.editor.DeleteTagsAndHandleDeprecationOnAttributedNode$DeleteTagsAndHandleDeprecationOnAttributedNode_DELETE" />
+      <unit id="8362517669643580836" at="33,0,48,0" name="jetbrains.mps.baseLanguage.javadoc.editor.DeleteTagsAndHandleDeprecationOnAttributedNode$DeleteTagsAndHandleDeprecationOnAttributedNode_BACKSPACE" />
+      <unit id="8362517669643580836" at="13,0,49,0" name="jetbrains.mps.baseLanguage.javadoc.editor.DeleteTagsAndHandleDeprecationOnAttributedNode" />
     </file>
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/8465538089690324386">

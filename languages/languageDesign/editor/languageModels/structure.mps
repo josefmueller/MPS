@@ -1079,6 +1079,7 @@
     <property role="TrG5h" value="CellActionMapDeclaration" />
     <property role="34LRSv" value="Cell Action Map" />
     <property role="EcuMT" value="1139535219966" />
+    <property role="3GE5qa" value="CellActionMap" />
     <node concept="1QGGSu" id="4Q8sAA5iJQs" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/actionMap.png" />
     </node>
@@ -1107,6 +1108,7 @@
   <node concept="1TIwiD" id="g_hA7BD">
     <property role="TrG5h" value="CellActionMapItem" />
     <property role="EcuMT" value="1139535280617" />
+    <property role="3GE5qa" value="CellActionMap" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="1653mnvANBA" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
@@ -1142,6 +1144,7 @@
   <node concept="AxPO7" id="g_hAjpB">
     <property role="TrG5h" value="CellActionId" />
     <property role="PDuV0" value="true" />
+    <property role="3GE5qa" value="CellActionMap" />
     <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
     <node concept="M4N5e" id="g_hAjs4" role="M5hS2">
       <property role="1uS6qv" value="right_transform_action_id" />
@@ -1335,6 +1338,7 @@
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="execute block" />
     <property role="EcuMT" value="1139535439104" />
+    <property role="3GE5qa" value="CellActionMap" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
     <node concept="PrWs8" id="1PvcgmUaLN3" role="PzmwI">
       <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
@@ -4083,7 +4087,7 @@
     <property role="2_RsDV" value="none" />
     <property role="R4oN_" value="select node in the editor" />
     <property role="EcuMT" value="3647146066980922272" />
-    <ref role="1TJDcQ" to="tp25:g$eCIIG" resolve="SNodeOperation" />
+    <ref role="1TJDcQ" node="7MsHfaQE9nT" resolve="AbstractCellIdScopeProviderNodeOperation" />
     <node concept="1TJgyj" id="1GaASKe_7Fu" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="editorContext" />
@@ -4108,9 +4112,6 @@
       <property role="20kJfa" value="selectionEnd" />
       <property role="IQ2ns" value="2701921320705252232" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="PrWs8" id="3Un2VKMIaIU" role="PzmwI">
-      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="1GaASKeIesA">
@@ -4623,6 +4624,7 @@
     <property role="2_RsDV" value="none" />
     <property role="34LRSv" value="can execute block" />
     <property role="EcuMT" value="3459162043708467089" />
+    <property role="3GE5qa" value="CellActionMap" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
     <node concept="PrWs8" id="1PvcgmUaLA_" role="PzmwI">
       <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
@@ -6633,6 +6635,36 @@
       <property role="20kJfa" value="generatedMenu" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3fw9B$5YUrX" resolve="SubstituteMenu_Named" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7envUni7LWR">
+    <property role="EcuMT" value="8329266386016608055" />
+    <property role="3GE5qa" value="SNode" />
+    <property role="TrG5h" value="ApproveDelete_Operation" />
+    <property role="34LRSv" value="approveDelete" />
+    <property role="R4oN_" value="approve delete in 2-step delete operation" />
+    <ref role="1TJDcQ" node="7MsHfaQE9nT" resolve="AbstractCellIdScopeProviderNodeOperation" />
+    <node concept="1TJgyj" id="7MsHfaQwAI8" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="cellSelector" />
+      <property role="IQ2ns" value="8979250711607012232" />
+      <ref role="20lvS9" node="1GaASKeIesA" resolve="AbstractCellSelector" />
+    </node>
+    <node concept="1TJgyj" id="7envUni84XZ" role="1TKVEi">
+      <property role="IQ2ns" value="8329266386016685951" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="editorContext" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7MsHfaQE9nT">
+    <property role="EcuMT" value="8979250711609513465" />
+    <property role="TrG5h" value="AbstractCellIdScopeProviderNodeOperation" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tp25:g$eCIIG" resolve="SNodeOperation" />
+    <node concept="PrWs8" id="7MsHfaQE9nU" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
 </model>

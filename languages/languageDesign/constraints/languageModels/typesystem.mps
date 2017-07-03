@@ -102,9 +102,6 @@
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
-      <concept id="1207055528241" name="jetbrains.mps.lang.typesystem.structure.WarningStatement" flags="nn" index="a7r0C">
-        <child id="1207055552304" name="warningText" index="a7wSD" />
-      </concept>
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
       </concept>
@@ -260,87 +257,36 @@
               <node concept="3x8VRR" id="7tIFb5_O2ef" role="2OqNvi" />
             </node>
             <node concept="22lmx$" id="7tIFb5_NYCR" role="3uHU7B">
-              <node concept="22lmx$" id="6kp4dbAeoLB" role="3uHU7B">
-                <node concept="22lmx$" id="6kp4dbAemvU" role="3uHU7B">
-                  <node concept="22lmx$" id="6kp4dbAdnx1" role="3uHU7B">
-                    <node concept="22lmx$" id="1fdcuoJ028q" role="3uHU7B">
-                      <node concept="2OqwBi" id="1cLdD6E7kPQ" role="3uHU7B">
-                        <node concept="2OqwBi" id="1cLdD6E7kPG" role="2Oq$k0">
-                          <node concept="1YBJjd" id="1cLdD6E7kPF" role="2Oq$k0">
-                            <ref role="1YBMHb" node="h9gNirZ" resolve="node" />
-                          </node>
-                          <node concept="2Xjw5R" id="1cLdD6E7kPL" role="2OqNvi">
-                            <node concept="1xMEDy" id="1cLdD6E7kPM" role="1xVPHs">
-                              <node concept="chp4Y" id="1cLdD6E7kPP" role="ri$Ld">
-                                <ref role="cht4Q" to="tp1t:3gr0SYj1Ynf" resolve="ConstraintFunction_GetAlternativeIcon" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3x8VRR" id="1cLdD6E7kPU" role="2OqNvi" />
-                      </node>
-                      <node concept="2OqwBi" id="1fdcuoJ02rO" role="3uHU7w">
-                        <node concept="2OqwBi" id="1fdcuoJ02rP" role="2Oq$k0">
-                          <node concept="1YBJjd" id="1fdcuoJ02rQ" role="2Oq$k0">
-                            <ref role="1YBMHb" node="h9gNirZ" resolve="node" />
-                          </node>
-                          <node concept="2Xjw5R" id="1fdcuoJ02rR" role="2OqNvi">
-                            <node concept="1xMEDy" id="1fdcuoJ02rS" role="1xVPHs">
-                              <node concept="chp4Y" id="1fdcuoJ02Ck" role="ri$Ld">
-                                <ref role="cht4Q" to="tp1t:1fdcuoIX_DM" resolve="ConstraintFunction_GetInstanceIcon" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3x8VRR" id="1fdcuoJ02rU" role="2OqNvi" />
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="6kp4dbAdrTk" role="3uHU7w">
-                      <node concept="2OqwBi" id="6kp4dbAdoj8" role="2Oq$k0">
-                        <node concept="1YBJjd" id="6kp4dbAdnIi" role="2Oq$k0">
-                          <ref role="1YBMHb" node="h9gNirZ" resolve="node" />
-                        </node>
-                        <node concept="2Xjw5R" id="6kp4dbAdriz" role="2OqNvi">
-                          <node concept="1xMEDy" id="6kp4dbAdri_" role="1xVPHs">
-                            <node concept="chp4Y" id="6kp4dbAephg" role="ri$Ld">
-                              <ref role="cht4Q" to="tp1t:hwnKS6U" resolve="ConstraintFunction_CanBeAChild_Old" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3x8VRR" id="6kp4dbAdvdD" role="2OqNvi" />
-                    </node>
-                  </node>
-                  <node concept="2OqwBi" id="6kp4dbAemMD" role="3uHU7w">
-                    <node concept="2OqwBi" id="6kp4dbAemME" role="2Oq$k0">
-                      <node concept="1YBJjd" id="6kp4dbAemMF" role="2Oq$k0">
-                        <ref role="1YBMHb" node="h9gNirZ" resolve="node" />
-                      </node>
-                      <node concept="2Xjw5R" id="6kp4dbAemMG" role="2OqNvi">
-                        <node concept="1xMEDy" id="6kp4dbAemMH" role="1xVPHs">
-                          <node concept="chp4Y" id="6kp4dbAepqK" role="ri$Ld">
-                            <ref role="cht4Q" to="tp1t:hwosYPg" resolve="ConstraintFunction_CanBeAParent_Old" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3x8VRR" id="6kp4dbAemMJ" role="2OqNvi" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="6kp4dbAep7s" role="3uHU7w">
-                  <node concept="2OqwBi" id="6kp4dbAep7t" role="2Oq$k0">
-                    <node concept="1YBJjd" id="6kp4dbAep7u" role="2Oq$k0">
+              <node concept="22lmx$" id="1fdcuoJ028q" role="3uHU7B">
+                <node concept="2OqwBi" id="1cLdD6E7kPQ" role="3uHU7B">
+                  <node concept="2OqwBi" id="1cLdD6E7kPG" role="2Oq$k0">
+                    <node concept="1YBJjd" id="1cLdD6E7kPF" role="2Oq$k0">
                       <ref role="1YBMHb" node="h9gNirZ" resolve="node" />
                     </node>
-                    <node concept="2Xjw5R" id="6kp4dbAep7v" role="2OqNvi">
-                      <node concept="1xMEDy" id="6kp4dbAep7w" role="1xVPHs">
-                        <node concept="chp4Y" id="6kp4dbAep7x" role="ri$Ld">
-                          <ref role="cht4Q" to="tp1t:6O3HjXnmTq5" resolve="ConstraintFunction_CanBeAnAncestor_Old" />
+                    <node concept="2Xjw5R" id="1cLdD6E7kPL" role="2OqNvi">
+                      <node concept="1xMEDy" id="1cLdD6E7kPM" role="1xVPHs">
+                        <node concept="chp4Y" id="1cLdD6E7kPP" role="ri$Ld">
+                          <ref role="cht4Q" to="tp1t:3gr0SYj1Ynf" resolve="ConstraintFunction_GetAlternativeIcon" />
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3x8VRR" id="6kp4dbAep7y" role="2OqNvi" />
+                  <node concept="3x8VRR" id="1cLdD6E7kPU" role="2OqNvi" />
+                </node>
+                <node concept="2OqwBi" id="1fdcuoJ02rO" role="3uHU7w">
+                  <node concept="2OqwBi" id="1fdcuoJ02rP" role="2Oq$k0">
+                    <node concept="1YBJjd" id="1fdcuoJ02rQ" role="2Oq$k0">
+                      <ref role="1YBMHb" node="h9gNirZ" resolve="node" />
+                    </node>
+                    <node concept="2Xjw5R" id="1fdcuoJ02rR" role="2OqNvi">
+                      <node concept="1xMEDy" id="1fdcuoJ02rS" role="1xVPHs">
+                        <node concept="chp4Y" id="1fdcuoJ02Ck" role="ri$Ld">
+                          <ref role="cht4Q" to="tp1t:1fdcuoIX_DM" resolve="ConstraintFunction_GetInstanceIcon" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3x8VRR" id="1fdcuoJ02rU" role="2OqNvi" />
                 </node>
               </node>
               <node concept="2OqwBi" id="7tIFb5_ObpL" role="3uHU7w">
@@ -1224,72 +1170,6 @@
     <node concept="1YaCAy" id="3oQug8hq$iu" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <ref role="1YaFvo" to="tp1t:3oQug8hqyBc" resolve="ConstraintFunctionParameter_parameterNode" />
-    </node>
-  </node>
-  <node concept="18kY7G" id="2_ZlElkqg8w">
-    <property role="TrG5h" value="check_ConstraintFunction_ReferentSearchScope_Validator" />
-    <property role="3GE5qa" value="Functions" />
-    <node concept="3clFbS" id="2_ZlElkqg8x" role="18ibNy">
-      <node concept="3cpWs8" id="sZm2ZQHs0l" role="3cqZAp">
-        <node concept="3cpWsn" id="sZm2ZQHs0m" role="3cpWs9">
-          <property role="TrG5h" value="factory" />
-          <node concept="3Tqbb2" id="sZm2ZQHs0n" role="1tU5fm">
-            <ref role="ehGHo" to="tp1t:gHMUpHN" resolve="ConstraintFunction_ReferentSearchScope_Factory" />
-          </node>
-          <node concept="2OqwBi" id="sZm2ZQHs0q" role="33vP2m">
-            <node concept="1YBJjd" id="sZm2ZQHs0p" role="2Oq$k0">
-              <ref role="1YBMHb" node="2_ZlElkqg8y" resolve="validator" />
-            </node>
-            <node concept="2qgKlT" id="sZm2ZQHs0u" role="2OqNvi">
-              <ref role="37wK5l" to="tp22:2_ZlElkqg5e" resolve="getSearchScopeFactory" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbJ" id="2_ZlElkqg8z" role="3cqZAp">
-        <node concept="2OqwBi" id="sZm2ZQHs0x" role="3clFbw">
-          <node concept="37vLTw" id="3GM_nagTue1" role="2Oq$k0">
-            <ref role="3cqZAo" node="sZm2ZQHs0m" resolve="factory" />
-          </node>
-          <node concept="3w_OXm" id="sZm2ZQHs0_" role="2OqNvi" />
-        </node>
-        <node concept="3clFbS" id="2_ZlElkqg8_" role="3clFbx">
-          <node concept="a7r0C" id="2_ZlElkqg8I" role="3cqZAp">
-            <node concept="Xl_RD" id="2_ZlElkqg8J" role="a7wSD">
-              <property role="Xl_RC" value="Validator function is not used when no search scope defined" />
-            </node>
-            <node concept="1YBJjd" id="2_ZlElkqg8O" role="2OEOjV">
-              <ref role="1YBMHb" node="2_ZlElkqg8y" resolve="validator" />
-            </node>
-          </node>
-        </node>
-        <node concept="3eNFk2" id="sZm2ZQHs0g" role="3eNLev">
-          <node concept="3fqX7Q" id="VRQOUtq4mB" role="3eO9$A">
-            <node concept="2OqwBi" id="sZm2ZQHs0B" role="3fr31v">
-              <node concept="37vLTw" id="3GM_nagTv6s" role="2Oq$k0">
-                <ref role="3cqZAo" node="sZm2ZQHs0m" resolve="factory" />
-              </node>
-              <node concept="2qgKlT" id="sZm2ZQHs0F" role="2OqNvi">
-                <ref role="37wK5l" to="tp22:2_ZlElkqf_i" resolve="isNodeSequenceReturned" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="sZm2ZQHs0i" role="3eOfB_">
-            <node concept="a7r0C" id="sZm2ZQHs0G" role="3cqZAp">
-              <node concept="Xl_RD" id="sZm2ZQHs0H" role="a7wSD">
-                <property role="Xl_RC" value="Validator function is not used when ISearchScope interface returned as search scope" />
-              </node>
-              <node concept="1YBJjd" id="sZm2ZQHs0I" role="2OEOjV">
-                <ref role="1YBMHb" node="2_ZlElkqg8y" resolve="validator" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="2_ZlElkqg8y" role="1YuTPh">
-      <property role="TrG5h" value="validator" />
-      <ref role="1YaFvo" to="tp1t:31gaXo4G$ca" resolve="ConstraintFunction_ReferentSearchScope_Validator" />
     </node>
   </node>
   <node concept="1YbPZF" id="2_ZlElkqgaK">

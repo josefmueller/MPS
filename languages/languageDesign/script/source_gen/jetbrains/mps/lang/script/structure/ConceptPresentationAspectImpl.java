@@ -53,15 +53,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CommentMigrationScriptPart;
       case LanguageConceptSwitch.DirectClassifierSpecification:
         if (props_DirectClassifierSpecification == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638d23L);
-          cpb.presentationByReference(0x4b6b6d7b2a638e5dL, "classifier", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x4b6b6d7b2a638d23L, 0x4b6b6d7b2a638e5dL, "classifier", "", "");
           props_DirectClassifierSpecification = cpb.create();
         }
         return props_DirectClassifierSpecification;
       case LanguageConceptSwitch.DirectMethodSpecification:
         if (props_DirectMethodSpecification == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L);
-          cpb.presentationByReference(0x1fcdfeb518c43c59L, "methodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x1fcdfeb518c43583L, 0x1fcdfeb518c43c59L, "methodDeclaration", "", "");
           props_DirectMethodSpecification = cpb.create();
         }
         return props_DirectMethodSpecification;

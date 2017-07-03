@@ -27,8 +27,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Entity;
       case LanguageConceptSwitch.EntityReference:
         if (props_EntityReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7917ee54129c42c6L, 0x8b53ba6a5e718e32L, 0x384147f70ea2a91bL);
-          cpb.presentationByReference(0x384147f70ea2a91cL, "target", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x7917ee54129c42c6L, 0x8b53ba6a5e718e32L, 0x384147f70ea2a91bL, 0x384147f70ea2a91cL, "target", "", "");
           props_EntityReference = cpb.create();
         }
         return props_EntityReference;

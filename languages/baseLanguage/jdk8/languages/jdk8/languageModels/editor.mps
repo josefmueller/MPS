@@ -32,6 +32,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.ApproveDelete_Operation" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+      </concept>
       <concept id="8371900013785948369" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter" flags="ig" index="2$S_p_" />
       <concept id="308059530142752797" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Parameterized" flags="ng" index="2F$Pav">
         <child id="8371900013785948359" name="part" index="2$S_pN" />
@@ -101,6 +104,7 @@
       <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
+      <concept id="1161622981231" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext" flags="nn" index="1Q80Hx" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -251,6 +255,17 @@
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="1kuOZsiN1eV" role="1hA7z_">
         <node concept="3clFbS" id="1kuOZsiN1eW" role="2VODD2">
+          <node concept="3clFbJ" id="4B_rn7pJ_Nn" role="3cqZAp">
+            <node concept="3clFbS" id="4B_rn7pJ_Np" role="3clFbx">
+              <node concept="3cpWs6" id="4B_rn7pJAjW" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="4B_rn7pJA1n" role="3clFbw">
+              <node concept="0IXxy" id="4B_rn7pJ_O8" role="2Oq$k0" />
+              <node concept="2xy62i" id="4B_rn7pJAif" role="2OqNvi">
+                <node concept="1Q80Hx" id="4B_rn7pJAiP" role="2xHN3q" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1kuOZsiN1k9" role="3cqZAp">
             <node concept="2OqwBi" id="1kuOZsiN1JN" role="3clFbG">
               <node concept="0IXxy" id="1kuOZsiN1k8" role="2Oq$k0" />

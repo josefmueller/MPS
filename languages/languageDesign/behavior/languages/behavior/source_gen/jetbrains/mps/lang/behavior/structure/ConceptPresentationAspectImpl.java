@@ -49,8 +49,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConceptMethodDeclaration;
       case LanguageConceptSwitch.LocalBehaviorMethodCall:
         if (props_LocalBehaviorMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x5a277db47d54d7e1L);
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_LocalBehaviorMethodCall = cpb.create();
         }
         return props_LocalBehaviorMethodCall;

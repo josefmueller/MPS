@@ -171,7 +171,7 @@ import jetbrains.mps.smodel.SNodePointer;
   }
   private EditorCell createConstant_imlbz9_b0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "static");
-    editorCell.setCellId("Constant_imlbz9_b0");
+    editorCell.setCellId("staticKeyword");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -181,7 +181,7 @@ import jetbrains.mps.smodel.SNodePointer;
   }
   private EditorCell createConstant_imlbz9_c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "final");
-    editorCell.setCellId("Constant_imlbz9_c0");
+    editorCell.setCellId("finalKeyword");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -191,7 +191,7 @@ import jetbrains.mps.smodel.SNodePointer;
   }
   private EditorCell createConstant_imlbz9_d0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "abstract");
-    editorCell.setCellId("Constant_imlbz9_d0");
+    editorCell.setCellId("abstractKeyword");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -201,7 +201,7 @@ import jetbrains.mps.smodel.SNodePointer;
   }
   private EditorCell createConstant_imlbz9_e0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "synchronized");
-    editorCell.setCellId("Constant_imlbz9_e0");
+    editorCell.setCellId("synchronizedKeyword");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -211,14 +211,17 @@ import jetbrains.mps.smodel.SNodePointer;
   }
   private EditorCell createConstant_imlbz9_f0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "transient");
-    editorCell.setCellId("Constant_imlbz9_f0");
+    editorCell.setCellId("transientKeyword");
+    Style style = new StyleImpl();
+    new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    editorCell.getStyle().putAll(style);
     DeleteTransientInIncompleteMember.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_imlbz9_g0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "volatile");
-    editorCell.setCellId("Constant_imlbz9_g0");
+    editorCell.setCellId("volatileKeyword");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -228,10 +231,11 @@ import jetbrains.mps.smodel.SNodePointer;
   }
   private EditorCell createConstant_imlbz9_h0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "native");
-    editorCell.setCellId("Constant_imlbz9_h0");
+    editorCell.setCellId("nativeKeyword");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
+    DeleteNativeInIncompleteMember.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;
   }

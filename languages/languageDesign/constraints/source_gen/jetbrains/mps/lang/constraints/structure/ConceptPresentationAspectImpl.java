@@ -34,12 +34,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ConstraintFunctionParameter_smartReference;
   private ConceptPresentation props_ConstraintFunctionParameter_visible;
   private ConceptPresentation props_ConstraintFunction_CanBeAChild;
-  private ConceptPresentation props_ConstraintFunction_CanBeAChild_Old;
   private ConceptPresentation props_ConstraintFunction_CanBeAParent;
-  private ConceptPresentation props_ConstraintFunction_CanBeAParent_Old;
   private ConceptPresentation props_ConstraintFunction_CanBeARoot;
   private ConceptPresentation props_ConstraintFunction_CanBeAnAncestor;
-  private ConceptPresentation props_ConstraintFunction_CanBeAnAncestor_Old;
   private ConceptPresentation props_ConstraintFunction_GetAlternativeIcon;
   private ConceptPresentation props_ConstraintFunction_GetInstanceIcon;
   private ConceptPresentation props_ConstraintFunction_PropertyGetter;
@@ -47,11 +44,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ConstraintFunction_PropertyValidator;
   private ConceptPresentation props_ConstraintFunction_RefSetHandlerKeepsReference;
   private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_AbstractBase;
-  private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Factory;
   private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Presentation;
   private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Scope;
-  private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Scope_Old;
-  private ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Validator;
   private ConceptPresentation props_ConstraintFunction_ReferentSetHandler;
   private ConceptPresentation props_ConstraintsFunctionParameter_node;
   private ConceptPresentation props_ConstraintsFunctionParameter_propertyValue;
@@ -72,12 +66,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ConceptConstraints:
         if (props_ConceptConstraints == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL);
-          cpb.deprecateAggregation(0x11a72c7a3f1L, "canBeChild_Old");
-          cpb.deprecateAggregation(0x11a72c7dc2aL, "canBeParent_Old");
-          cpb.deprecateAggregation(0x6cfa709738a97560L, "canBeAncestor_Old");
           cpb.deprecateAggregation(0x341b038f9307e5d8L, "alternativeIcon");
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a6a0a0b0dc);
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a0b0xb);
           props_ConceptConstraints = cpb.create();
         }
         return props_ConceptConstraints;
@@ -279,15 +270,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstraintFunction_CanBeAChild = cpb.create();
         }
         return props_ConstraintFunction_CanBeAChild;
-      case LanguageConceptSwitch.ConstraintFunction_CanBeAChild_Old:
-        if (props_ConstraintFunction_CanBeAChild_Old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("return false if node cannot be a child of parentNode");
-          cpb.rawPresentation("ConstraintFunction_CanBeAChild_Old");
-          props_ConstraintFunction_CanBeAChild_Old = cpb.create();
-        }
-        return props_ConstraintFunction_CanBeAChild_Old;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAParent:
         if (props_ConstraintFunction_CanBeAParent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -296,15 +278,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstraintFunction_CanBeAParent = cpb.create();
         }
         return props_ConstraintFunction_CanBeAParent;
-      case LanguageConceptSwitch.ConstraintFunction_CanBeAParent_Old:
-        if (props_ConstraintFunction_CanBeAParent_Old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("return false if node cannot be a parent of given node");
-          cpb.rawPresentation("ConstraintFunction_CanBeAParent_Old");
-          props_ConstraintFunction_CanBeAParent_Old = cpb.create();
-        }
-        return props_ConstraintFunction_CanBeAParent_Old;
       case LanguageConceptSwitch.ConstraintFunction_CanBeARoot:
         if (props_ConstraintFunction_CanBeARoot == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -320,14 +293,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstraintFunction_CanBeAnAncestor = cpb.create();
         }
         return props_ConstraintFunction_CanBeAnAncestor;
-      case LanguageConceptSwitch.ConstraintFunction_CanBeAnAncestor_Old:
-        if (props_ConstraintFunction_CanBeAnAncestor_Old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.rawPresentation("ConstraintFunction_CanBeAnAncestor_Old");
-          props_ConstraintFunction_CanBeAnAncestor_Old = cpb.create();
-        }
-        return props_ConstraintFunction_CanBeAnAncestor_Old;
       case LanguageConceptSwitch.ConstraintFunction_GetAlternativeIcon:
         if (props_ConstraintFunction_GetAlternativeIcon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -381,15 +346,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstraintFunction_ReferentSearchScope_AbstractBase = cpb.create();
         }
         return props_ConstraintFunction_ReferentSearchScope_AbstractBase;
-      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Factory:
-        if (props_ConstraintFunction_ReferentSearchScope_Factory == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("return list of nodes that can be referenced from given node");
-          cpb.rawPresentation("search scope (deprecated)");
-          props_ConstraintFunction_ReferentSearchScope_Factory = cpb.create();
-        }
-        return props_ConstraintFunction_ReferentSearchScope_Factory;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Presentation:
         if (props_ConstraintFunction_ReferentSearchScope_Presentation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -407,24 +363,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstraintFunction_ReferentSearchScope_Scope = cpb.create();
         }
         return props_ConstraintFunction_ReferentSearchScope_Scope;
-      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Scope_Old:
-        if (props_ConstraintFunction_ReferentSearchScope_Scope_Old == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("creates scope for the reference (jetbrains.mps.scope.Scope)");
-          cpb.rawPresentation("reference scope (deprecated)");
-          props_ConstraintFunction_ReferentSearchScope_Scope_Old = cpb.create();
-        }
-        return props_ConstraintFunction_ReferentSearchScope_Scope_Old;
-      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Validator:
-        if (props_ConstraintFunction_ReferentSearchScope_Validator == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.shortDesc("return true if the reference is in scope");
-          cpb.rawPresentation("reference validity");
-          props_ConstraintFunction_ReferentSearchScope_Validator = cpb.create();
-        }
-        return props_ConstraintFunction_ReferentSearchScope_Validator;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSetHandler:
         if (props_ConstraintFunction_ReferentSetHandler == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -474,15 +412,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NodeDefaultSearchScope;
       case LanguageConceptSwitch.NodePropertyConstraint:
         if (props_NodePropertyConstraint == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L);
-          cpb.presentationByReference(0x10b2a61697bL, "applicableProperty", "property {", "}");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b2a5eaa48L, 0x10b2a61697bL, "applicableProperty", "property {", "}");
           props_NodePropertyConstraint = cpb.create();
         }
         return props_NodePropertyConstraint;
       case LanguageConceptSwitch.NodeReferentConstraint:
         if (props_NodeReferentConstraint == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL);
-          cpb.presentationByReference(0x10b7317b98aL, "applicableLink", "link {", "}");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x10b731752daL, 0x10b7317b98aL, "applicableLink", "link {", "}");
           props_NodeReferentConstraint = cpb.create();
         }
         return props_NodeReferentConstraint;

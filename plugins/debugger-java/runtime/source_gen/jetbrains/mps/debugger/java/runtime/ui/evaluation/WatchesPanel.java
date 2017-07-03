@@ -23,33 +23,18 @@ public class WatchesPanel extends EvaluationUi {
     myProvider.addWatchListener(new EvaluationProvider.WatchAdapter() {
       @Override
       public void watchAdded(final IEvaluationContainer model) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            myTree.addModel(model);
-            myTree.rebuildEvaluationTreeNowIfNotDisposed();
-            evaluate(model);
-          }
-        });
+        myTree.addModel(model);
+        myTree.rebuildLater();
+        evaluate(model);
       }
       @Override
       public void watchUpdated(final IEvaluationContainer model) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            evaluate(model);
-          }
-        });
+        evaluate(model);
       }
       @Override
       public void watchRemoved(final IEvaluationContainer model) {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            myTree.removeModel(model);
-            myTree.rebuildEvaluationTreeNowIfNotDisposed();
-          }
-        });
+        myTree.removeModel(model);
+        myTree.rebuildLater();
       }
     });
     mySessionStopDisposer = new SessionStopDisposer(myDebugSession) {

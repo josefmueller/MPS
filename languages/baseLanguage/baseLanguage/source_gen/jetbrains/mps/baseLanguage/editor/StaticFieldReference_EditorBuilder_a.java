@@ -75,19 +75,25 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     editorCell.setCellId("Collection_ji2wba_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createRefCell_ji2wba_a0());
+    editorCell.addEditorCell(createCollection_ji2wba_a0());
     editorCell.addEditorCell(createConstant_ji2wba_b0());
-    editorCell.addEditorCell(createRefCell_ji2wba_c0());
+    editorCell.addEditorCell(createCollection_ji2wba_c0());
     return editorCell;
   }
-  private EditorCell createRefCell_ji2wba_a0() {
+  private EditorCell createCollection_ji2wba_a0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("classifier");
+    editorCell.addEditorCell(createRefCell_ji2wba_a0a());
+    return editorCell;
+  }
+  private EditorCell createRefCell_ji2wba_a0a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new StaticFieldReference_EditorBuilder_a.Inline_Builder_ji2wba_a0a(getEditorContext(), myNode, effectiveNode).createCell();
+            return new StaticFieldReference_EditorBuilder_a.Inline_Builder_ji2wba_a0a0(getEditorContext(), myNode, effectiveNode).createCell();
           }
         }, effectiveNode, "classifier");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
@@ -105,7 +111,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
       editorCell.setRole("classifier");
     }
     StaticFieldReference_Actions.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_EditorBuilder_a.StaticFieldReference_classifier_cellMenu_ji2wba_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_EditorBuilder_a.StaticFieldReference_classifier_cellMenu_ji2wba_a0a0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
@@ -113,19 +119,19 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_ji2wba_a0a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder_ji2wba_a0a0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_ji2wba_a0a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder_ji2wba_a0a0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
     }
 
     /*package*/ EditorCell createCell() {
-      return createReferencePresentation_ji2wba_a0a0();
+      return createReferencePresentation_ji2wba_a0a0a();
     }
 
     @NotNull
@@ -134,24 +140,24 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
       return myNode;
     }
 
-    private EditorCell createReferencePresentation_ji2wba_a0a0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, PresentationProviders.PRESENTATION_ji2wba_a0a0a);
-      editorCell.setCellId("ReferencePresentation_ji2wba_a0a0");
+    private EditorCell createReferencePresentation_ji2wba_a0a0a() {
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, PresentationProviders.PRESENTATION_ji2wba_a0a0a0);
+      editorCell.setCellId("ReferencePresentation_ji2wba_a0a0a");
       return editorCell;
     }
   }
-  public static class StaticFieldReference_classifier_cellMenu_ji2wba_a0a0 extends PrimaryReferentMenuCellMenuPart {
-    public StaticFieldReference_classifier_cellMenu_ji2wba_a0a0() {
+  public static class StaticFieldReference_classifier_cellMenu_ji2wba_a0a0a extends PrimaryReferentMenuCellMenuPart {
+    public StaticFieldReference_classifier_cellMenu_ji2wba_a0a0a() {
     }
     @NotNull
     @Override
     protected IReferentPresentationProvider getMatchingTextProvider() {
-      return PresentationProviders.PRESENTATION_ji2wba_a0a0a;
+      return PresentationProviders.PRESENTATION_ji2wba_a0a0a0;
     }
     @NotNull
     @Override
     protected IReferentPresentationProvider getVisibleMatchingTextProvider() {
-      return PresentationProviders.PRESENTATION_ji2wba_a0a0a;
+      return PresentationProviders.PRESENTATION_ji2wba_a0a0a0;
     }
   }
   private EditorCell createConstant_ji2wba_b0() {
@@ -164,14 +170,20 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefCell_ji2wba_c0() {
+  private EditorCell createCollection_ji2wba_c0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("field");
+    editorCell.addEditorCell(createRefCell_ji2wba_a2a());
+    return editorCell;
+  }
+  private EditorCell createRefCell_ji2wba_a2a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
 
       @Override
       protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
-            return new StaticFieldReference_EditorBuilder_a.Inline_Builder_ji2wba_a2a(getEditorContext(), myNode, effectiveNode).createCell();
+            return new StaticFieldReference_EditorBuilder_a.Inline_Builder_ji2wba_a0c0(getEditorContext(), myNode, effectiveNode).createCell();
           }
         }, effectiveNode, "variableDeclaration");
         CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
@@ -189,7 +201,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
       editorCell.setRole("variableDeclaration");
     }
     StaticFieldReference_DeleteDot.setCellActions(editorCell, myNode, getEditorContext());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_EditorBuilder_a.StaticFieldReference_generic_cellMenu_ji2wba_a0c0(), new StaticFieldReference_EditorBuilder_a.StaticFieldReference_customReplace_cellMenu_ji2wba_b0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_EditorBuilder_a.StaticFieldReference_generic_cellMenu_ji2wba_a0a2a(), new StaticFieldReference_EditorBuilder_a.StaticFieldReference_customReplace_cellMenu_ji2wba_b0a2a(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
@@ -197,19 +209,19 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     } else
     return editorCell;
   }
-  /*package*/ static class Inline_Builder_ji2wba_a2a extends AbstractEditorBuilder {
+  /*package*/ static class Inline_Builder_ji2wba_a0c0 extends AbstractEditorBuilder {
     @NotNull
     private SNode myNode;
     private SNode myReferencingNode;
 
-    /*package*/ Inline_Builder_ji2wba_a2a(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
+    /*package*/ Inline_Builder_ji2wba_a0c0(@NotNull EditorContext context, SNode referencingNode, @NotNull SNode node) {
       super(context);
       myReferencingNode = referencingNode;
       myNode = node;
     }
 
     /*package*/ EditorCell createCell() {
-      return createProperty_ji2wba_a0c0();
+      return createProperty_ji2wba_a0a2a();
     }
 
     @NotNull
@@ -218,7 +230,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
       return myNode;
     }
 
-    private EditorCell createProperty_ji2wba_a0c0() {
+    private EditorCell createProperty_ji2wba_a0a2a() {
       CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
@@ -241,8 +253,8 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
       return editorCell;
     }
   }
-  public static class StaticFieldReference_generic_cellMenu_ji2wba_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public StaticFieldReference_generic_cellMenu_ji2wba_a0c0() {
+  public static class StaticFieldReference_generic_cellMenu_ji2wba_a0a2a extends AbstractCellMenuPart_Generic_Item {
+    public StaticFieldReference_generic_cellMenu_ji2wba_a0a2a() {
     }
     @Override
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
@@ -272,8 +284,8 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
       return "class";
     }
   }
-  public static class StaticFieldReference_customReplace_cellMenu_ji2wba_b0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public StaticFieldReference_customReplace_cellMenu_ji2wba_b0c0() {
+  public static class StaticFieldReference_customReplace_cellMenu_ji2wba_b0a2a extends AbstractCellMenuPart_ReplaceNode_Group {
+    public StaticFieldReference_customReplace_cellMenu_ji2wba_b0a2a() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")), node);

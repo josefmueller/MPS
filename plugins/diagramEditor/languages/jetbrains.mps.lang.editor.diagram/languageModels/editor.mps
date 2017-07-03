@@ -76,6 +76,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.ApproveDelete_Operation" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+      </concept>
       <concept id="7667276221847612943" name="jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList" flags="in" index="2$ogOm" />
       <concept id="7667276221847612622" name="jetbrains.mps.lang.editor.structure.ParametersInformationQuery" flags="ng" index="2$ogZn">
         <reference id="4203201205843994215" name="applicableConcept" index="jxYdt" />
@@ -1293,6 +1296,17 @@
             </node>
             <node concept="9aQIb" id="4Xny4S7rIUX" role="9aQIa">
               <node concept="3clFbS" id="4Xny4S7rIUY" role="9aQI4">
+                <node concept="3clFbJ" id="14TMHtHfUeD" role="3cqZAp">
+                  <node concept="3clFbS" id="14TMHtHfUeF" role="3clFbx">
+                    <node concept="3cpWs6" id="14TMHtHfU_Q" role="3cqZAp" />
+                  </node>
+                  <node concept="2OqwBi" id="14TMHtHfUpz" role="3clFbw">
+                    <node concept="0IXxy" id="14TMHtHfUfs" role="2Oq$k0" />
+                    <node concept="2xy62i" id="14TMHtHfU$z" role="2OqNvi">
+                      <node concept="1Q80Hx" id="14TMHtHfU_b" role="2xHN3q" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3clFbF" id="4Xny4S7rIVJ" role="3cqZAp">
                   <node concept="2OqwBi" id="4Xny4S7rJ0k" role="3clFbG">
                     <node concept="0IXxy" id="4Xny4S7rIVI" role="2Oq$k0" />

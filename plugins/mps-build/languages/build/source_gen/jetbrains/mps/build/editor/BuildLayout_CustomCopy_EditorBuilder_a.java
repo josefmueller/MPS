@@ -127,7 +127,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
   private EditorCell createRefNodeList_6lrdv3_c0() {
     AbstractCellListHandler handler = new BuildLayout_CustomCopy_EditorBuilder_a.handlersListHandler_6lrdv3_c0(myNode, "handlers", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_handlers");
+    editorCell.setCellId("handlers");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);

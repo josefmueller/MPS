@@ -57,20 +57,6 @@ public final class ConstraintContext_CanBeParent {
     myLink = link;
   }
 
-  /**
-   * @deprecated Uses only for interoperability with legacy code.
-   *             Use {@link #ConstraintContext_CanBeParent(SNode)}}
-   *             or {@link #ConstraintContext_CanBeParent(SAbstractConcept, SNode, SContainmentLink)} instead.
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public ConstraintContext_CanBeParent(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept, SNode link) {
-    myChildNode = childNode;
-    myNode = node;
-    myChildConcept = MetaAdapterByDeclaration.getConcept(childConcept);
-    myLink = link == null ? null : MetaAdapterByDeclaration.getContainmentLink(link);
-  }
-
   @Nullable
   public SNode getChildNode() {
     return myChildNode;

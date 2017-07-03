@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.nodeEditor.EditorSettings;
 
 @MPSLaunch
 public class RemoveNotTest_Test extends BaseTransformationTest {
@@ -20,7 +21,13 @@ public class RemoveNotTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("5264300948581715474", "5264300948581716165");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      boolean twoStepDeletionSettings = EditorSettings.getInstance().isUseTwoStepDeletion();
+      EditorSettings.getInstance().setUseTwoStepDeletion(false);
+      try {
+        invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      } finally {
+        EditorSettings.getInstance().setUseTwoStepDeletion(twoStepDeletionSettings);
+      }
     }
   }
 }

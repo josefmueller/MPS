@@ -99,8 +99,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LowLevelVariable;
       case LanguageConceptSwitch.LowLevelVariableReference:
         if (props_LowLevelVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7da4580f9d754603L, 0x816251a896d78375L, 0x7d9a547f857a394bL);
-          cpb.presentationByReference(0x4c4b92003e49a705L, "baseVariableDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4c4b92003e49a704L, 0x4c4b92003e49a705L, "baseVariableDeclaration", "", "");
           props_LowLevelVariableReference = cpb.create();
         }
         return props_LowLevelVariableReference;

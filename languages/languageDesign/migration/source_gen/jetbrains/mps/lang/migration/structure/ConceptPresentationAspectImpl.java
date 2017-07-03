@@ -81,22 +81,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConsequenceFunction;
       case LanguageConceptSwitch.DataDependency:
         if (props_DataDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x44b28148e401c891L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_DataDependency = cpb.create();
         }
         return props_DataDependency;
       case LanguageConceptSwitch.DataDependencyReference:
         if (props_DataDependencyReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L);
-          cpb.presentationByReference(0x63476c2ad9bcd739L, "dataDependency", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x63476c2ad9bcd736L, 0x63476c2ad9bcd739L, "dataDependency", "", "");
           props_DataDependencyReference = cpb.create();
         }
         return props_DataDependencyReference;
       case LanguageConceptSwitch.DirectNodeReference:
         if (props_DirectNodeReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L);
-          cpb.presentationByReference(0x67236d4a58303a10L, "target", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x67236d4a58303771L, 0x67236d4a58303a10L, "target", "", "");
           props_DirectNodeReference = cpb.create();
         }
         return props_DirectNodeReference;
@@ -122,15 +122,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_IncludeMigrationPart;
       case LanguageConceptSwitch.LinkPatternVariableReference:
         if (props_LinkPatternVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730d5c47bL);
-          cpb.presentationByReference(0x2cb3222730d5c47cL, "declaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730d5c47bL, 0x2cb3222730d5c47cL, "declaration", "", "");
           props_LinkPatternVariableReference = cpb.create();
         }
         return props_LinkPatternVariableReference;
       case LanguageConceptSwitch.ListPatternVariableReference:
         if (props_ListPatternVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL);
-          cpb.presentationByReference(0x550f7de0eda8c07bL, "declaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, 0x550f7de0eda8c07bL, "declaration", "", "");
           props_ListPatternVariableReference = cpb.create();
         }
         return props_ListPatternVariableReference;
@@ -198,15 +198,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_MoveReferenceLink;
       case LanguageConceptSwitch.NodePatternVariableReference:
         if (props_NodePatternVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L);
-          cpb.presentationByReference(0x6877ea6323b8f1a4L, "declaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x6877ea6323b8f1a3L, 0x6877ea6323b8f1a4L, "declaration", "", "");
           props_NodePatternVariableReference = cpb.create();
         }
         return props_NodePatternVariableReference;
       case LanguageConceptSwitch.OrderDependency:
         if (props_OrderDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL);
-          cpb.presentationByReference(0x398343344f099b7bL, "script", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x398343344f099b7aL, 0x398343344f099b7bL, "script", "", "");
           props_OrderDependency = cpb.create();
         }
         return props_OrderDependency;
@@ -219,8 +219,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ProducedDataDeclaration;
       case LanguageConceptSwitch.PropertyPatternVariableReference:
         if (props_PropertyPatternVariableReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730cfcbccL);
-          cpb.presentationByReference(0x2cb3222730cfe469L, "declaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x2cb3222730cfcbccL, 0x2cb3222730cfe469L, "declaration", "", "");
           props_PropertyPatternVariableReference = cpb.create();
         }
         return props_PropertyPatternVariableReference;
@@ -267,8 +267,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RefactoringOptions;
       case LanguageConceptSwitch.RefactoringOrderDependency:
         if (props_RefactoringOrderDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d9dL);
-          cpb.presentationByReference(0x1bf9eb43276b6d9eL, "refactoring", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x1bf9eb43276b6d9dL, 0x1bf9eb43276b6d9eL, "refactoring", "", "");
           props_RefactoringOrderDependency = cpb.create();
         }
         return props_RefactoringOrderDependency;

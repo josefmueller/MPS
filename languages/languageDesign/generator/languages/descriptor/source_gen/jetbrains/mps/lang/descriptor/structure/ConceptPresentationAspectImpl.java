@@ -20,15 +20,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.GeneratorDescriptor:
         if (props_GeneratorDescriptor == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x3663ebbd1bf10683L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
           props_GeneratorDescriptor = cpb.create();
         }
         return props_GeneratorDescriptor;
       case LanguageConceptSwitch.GeneratorInternal_Aspect:
         if (props_GeneratorInternal_Aspect == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x46c8be857954ff41L);
-          cpb.presentationByReference(0x46c8be857954ff66L, "interfaceClass", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf4ad079dbc714ffbL, 0x96009328705cf998L, 0x46c8be857954ff41L, 0x46c8be857954ff66L, "interfaceClass", "", "");
           props_GeneratorInternal_Aspect = cpb.create();
         }
         return props_GeneratorInternal_Aspect;

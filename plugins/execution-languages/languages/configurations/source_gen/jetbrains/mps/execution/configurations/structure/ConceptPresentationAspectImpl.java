@@ -66,8 +66,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BeforeTask;
       case LanguageConceptSwitch.BeforeTaskCall:
         if (props_BeforeTaskCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f1fd8L);
-          cpb.presentationByReference(0x5ae6ebde781f1fd9L, "beforeTask", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f1fd8L, 0x5ae6ebde781f1fd9L, "beforeTask", "", "");
           props_BeforeTaskCall = cpb.create();
         }
         return props_BeforeTaskCall;
@@ -80,8 +80,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BeforeTaskParameter;
       case LanguageConceptSwitch.BeforeTaskParameterReference:
         if (props_BeforeTaskParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781fd3c0L);
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_BeforeTaskParameterReference = cpb.create();
         }
         return props_BeforeTaskParameterReference;
@@ -238,8 +238,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RunConfiguration;
       case LanguageConceptSwitch.RunConfigurationCreator:
         if (props_RunConfigurationCreator == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x328e81d9f20cd1deL);
-          cpb.presentationByReference(0x328e81d9f20cd1dfL, "configuration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x328e81d9f20cd1deL, 0x328e81d9f20cd1dfL, "configuration", "", "");
           props_RunConfigurationCreator = cpb.create();
         }
         return props_RunConfigurationCreator;

@@ -137,7 +137,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
   }
   private EditorCell createConstant_qk2lri_c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(reexport)");
-    editorCell.setCellId("Constant_qk2lri_c0");
+    editorCell.setCellId("reexportKeyword");
     Style style = new StyleImpl();
     new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

@@ -113,7 +113,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
   }
   private EditorCell createConstant_tvqbfe_b0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(reexport)");
-    editorCell.setCellId("Constant_tvqbfe_b0");
+    editorCell.setCellId("reexportKeyword");
     Style style = new StyleImpl();
     new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

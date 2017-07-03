@@ -35,7 +35,7 @@ public final class ConceptPresentationBuilder {
   private NodePresentationProvider myPresentationProvider = NodePresentationProviders.LEGACY;
 
   /**
-   * Use this cons when there are neither deprecated features in the concept nor 'by-reference' presentation
+   * Use this cons when there are no deprecated features in the concept
    */
   public ConceptPresentationBuilder() {
     myConcept = null;
@@ -43,7 +43,7 @@ public final class ConceptPresentationBuilder {
 
   /**
    * Use this cons instead of the {@linkplain #ConceptPresentationBuilder() default} one
-   * when there are deprecated features or 'by-reference' presentation to register
+   * when there are deprecated features to register
    * @since 2017.2
    */
   public ConceptPresentationBuilder(long langIdHigh, long langIdLow, long conceptId) {
@@ -125,9 +125,10 @@ public final class ConceptPresentationBuilder {
    return presentation(NodePresentationProviders.BY_NAME);
   }
 
-  public ConceptPresentationBuilder presentationByReference(long rid, String name, String prefix, String suffix) {
-    assert myConcept != null;
-    return presentation(NodePresentationProviders.byReference(MetaAdapterFactory.getReferenceLink(MetaIdFactory.refId(myConcept, rid), name), prefix, suffix));
+  public ConceptPresentationBuilder presentationByReference(long rclIdHigh, long rclIdLow, long rcId, long rId, String name, String prefix, String suffix) {
+    return presentation(
+        NodePresentationProviders.byReference(MetaAdapterFactory.getReferenceLink(MetaIdFactory.refId(rclIdHigh, rclIdLow, rcId, rId), name), prefix, suffix)
+    );
   }
 
   public ConceptPresentationBuilder presentation(NodePresentationProvider provider) {

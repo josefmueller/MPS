@@ -51,9 +51,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createRefNode_ppbi6p_a0());
-    editorCell.addEditorCell(createConstant_ppbi6p_b0());
-    editorCell.addEditorCell(createRefNodeList_ppbi6p_c0());
-    editorCell.addEditorCell(createConstant_ppbi6p_d0());
+    editorCell.addEditorCell(createCollection_ppbi6p_b0());
     return editorCell;
   }
   private EditorCell createRefNode_ppbi6p_a0() {
@@ -114,9 +112,17 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       return "<no function>";
     }
   }
-  private EditorCell createConstant_ppbi6p_b0() {
+  private EditorCell createCollection_ppbi6p_b0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("argumentCollection");
+    editorCell.addEditorCell(createConstant_ppbi6p_a1a());
+    editorCell.addEditorCell(createRefNodeList_ppbi6p_b1a());
+    editorCell.addEditorCell(createConstant_ppbi6p_c1a());
+    return editorCell;
+  }
+  private EditorCell createConstant_ppbi6p_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "[");
-    editorCell.setCellId("Constant_ppbi6p_b0");
+    editorCell.setCellId("Constant_ppbi6p_a1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -124,8 +130,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_ppbi6p_c0() {
-    AbstractCellListHandler handler = new LambdaApplication_EditorBuilder_a.argumentListHandler_ppbi6p_c0(myNode, "argument", getEditorContext());
+  private EditorCell createRefNodeList_ppbi6p_b1a() {
+    AbstractCellListHandler handler = new LambdaApplication_EditorBuilder_a.argumentListHandler_ppbi6p_b1a(myNode, "argument", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_argument");
     Style style = new StyleImpl();
@@ -134,11 +140,11 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class argumentListHandler_ppbi6p_c0 extends RefNodeListHandler {
+  private static class argumentListHandler_ppbi6p_b1a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public argumentListHandler_ppbi6p_c0(SNode ownerNode, String childRole, EditorContext context) {
+    public argumentListHandler_ppbi6p_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
       myNode = ownerNode;
     }
@@ -159,7 +165,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(argumentListHandler_ppbi6p_c0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, 0x37d11ba7d7ee2de1L, "argument")));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(argumentListHandler_ppbi6p_b1a.this.getNode(), MetaAdapterFactory.getContainmentLink(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x37d11ba7d7ee2dddL, 0x37d11ba7d7ee2de1L, "argument")));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -183,9 +189,9 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
       }
     }
   }
-  private EditorCell createConstant_ppbi6p_d0() {
+  private EditorCell createConstant_ppbi6p_c1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "]");
-    editorCell.setCellId("Constant_ppbi6p_d0");
+    editorCell.setCellId("Constant_ppbi6p_c1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);

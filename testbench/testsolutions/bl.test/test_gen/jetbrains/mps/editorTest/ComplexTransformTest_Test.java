@@ -20,29 +20,33 @@ public class ComplexTransformTest_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1236013323503", "1236013384899");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      typeString("(");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      typeString(")");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      typeString("!");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+          typeString("(");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+          typeString(")");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+          typeString("!");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+        }
+      }, false);
     }
   }
 }

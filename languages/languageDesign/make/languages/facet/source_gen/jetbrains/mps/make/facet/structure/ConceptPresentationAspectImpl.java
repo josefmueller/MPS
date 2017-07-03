@@ -37,8 +37,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.ExtendsFacetReference:
         if (props_ExtendsFacetReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b23b819L);
-          cpb.presentationByReference(0x5979ed6d2b21b2f3L, "facet", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L, 0x5979ed6d2b21b2f3L, "facet", "", "");
           props_ExtendsFacetReference = cpb.create();
         }
         return props_ExtendsFacetReference;
@@ -79,8 +79,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ForeignParametersComponentExpression;
       case LanguageConceptSwitch.ForeignParametersExpression:
         if (props_ForeignParametersExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x2e69d2eba535f3b0L);
-          cpb.presentationByReference(0x2e69d2eba535f3beL, "target", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x2e69d2eba535f3b0L, 0x2e69d2eba535f3beL, "target", "", "");
           props_ForeignParametersExpression = cpb.create();
         }
         return props_ForeignParametersExpression;
@@ -112,8 +112,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LocalParametersExpression;
       case LanguageConceptSwitch.NamedFacetReference:
         if (props_NamedFacetReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1aa1f6c694329f95L);
-          cpb.presentationByReference(0x5979ed6d2b21b2f3L, "facet", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L, 0x5979ed6d2b21b2f3L, "facet", "", "");
           props_NamedFacetReference = cpb.create();
         }
         return props_NamedFacetReference;
@@ -126,15 +126,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ParametersDeclaration;
       case LanguageConceptSwitch.RelatedFacetReference:
         if (props_RelatedFacetReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x73e720709e312229L);
-          cpb.presentationByReference(0x5979ed6d2b21b2f3L, "facet", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L, 0x5979ed6d2b21b2f3L, "facet", "", "");
           props_RelatedFacetReference = cpb.create();
         }
         return props_RelatedFacetReference;
       case LanguageConceptSwitch.ResourceClassifierType:
         if (props_ResourceClassifierType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aea0b4L);
-          cpb.presentationByReference(0x101de490babL, "classifier", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier", "", "");
           props_ResourceClassifierType = cpb.create();
         }
         return props_ResourceClassifierType;
@@ -161,15 +161,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TargetDeclaration;
       case LanguageConceptSwitch.TargetDependency:
         if (props_TargetDependency == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L);
-          cpb.presentationByReference(0x5912a2ab1cd24c63L, "dependsOn", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5912a2ab1cd24c60L, 0x5912a2ab1cd24c63L, "dependsOn", "", "");
           props_TargetDependency = cpb.create();
         }
         return props_TargetDependency;
       case LanguageConceptSwitch.TargetReferenceExpression:
         if (props_TargetReferenceExpression == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L);
-          cpb.presentationByReference(0x78c916bd7aecc3bcL, "target", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L, 0x78c916bd7aecc3bcL, "target", "", "");
           props_TargetReferenceExpression = cpb.create();
         }
         return props_TargetReferenceExpression;

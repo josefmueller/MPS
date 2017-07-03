@@ -31,6 +31,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Map;
 
@@ -44,7 +45,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
   private boolean myNonTrivialSelection = false;
 
   public EditorCellLabelSelection(EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException,
-      SelectionRestoreException {
+                                                                                                                             SelectionRestoreException {
     super(editorComponent, properties, cellInfo);
     if (!(getEditorCell() instanceof EditorCell_Label)) {
       throw new SelectionRestoreException();
@@ -266,6 +267,14 @@ public class EditorCellLabelSelection extends EditorCellSelection {
     }
     return false;
   }
+
+  public boolean isExactlyCoveringCell(EditorCell cell) {
+    if (getSelectionStart() != 0 || getSelectionEnd() != getEditorCellLabel().getText().length()) {
+      return false;
+    }
+    return super.isExactlyCoveringCell(cell);
+  }
+
 
   @Override
   public String toString() {

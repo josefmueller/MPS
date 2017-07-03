@@ -297,7 +297,7 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
   }
   private EditorCell createConstant_leuqor_b4a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(do not compile)");
-    editorCell.setCellId("Constant_leuqor_b4a");
+    editorCell.setCellId("doNotCompile");
     Style style = new StyleImpl();
     new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);

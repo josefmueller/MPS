@@ -33,6 +33,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -165,6 +166,16 @@ public class UsagesTree extends MPSTree {
   public void finishAdjusting() {
     myIsAdjusting--;
     rebuildLater();
+  }
+
+  @Override
+  protected void doInit(MPSTreeNode node, Runnable nodeInitRunnable) {
+    super.doInit(node, new ModelReadRunnable(myProject.getModelAccess(), nodeInitRunnable));
+  }
+
+  @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
   }
 
   @Override

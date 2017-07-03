@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeAncestor;
 import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild;
 import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeParent;
+import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeRoot;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -121,7 +122,7 @@ public class ModelConstraints {
     }
 
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(concept);
-    return descriptor.canBeRoot(model, getOperationContext(getModule(model)), null);
+    return descriptor.canBeRoot(new ConstraintContext_CanBeRoot(model), null);
   }
 
   // private canBe* section
@@ -156,52 +157,6 @@ public class ModelConstraints {
   private static boolean canBeChild(@NotNull ConstraintContext_CanBeChild context, @Nullable CheckingNodeContext checkingNodeContext) {
     ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(context.getConcept());
     return descriptor.canBeChild(context, checkingNodeContext);
-  }
-
-  // deprecated canBe* section
-
-  /**
-   * @deprecated use {@link #canBeAncestor(SNode, CheckingNodeContext)}
-   *             or {@link #canBeAncestor(SNode, SAbstractConcept, SContainmentLink, CheckingNodeContext)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept, SNode containmentLink,
-      @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeAncestor(new ConstraintContext_CanBeAncestor(node, childNode, childConcept, node, containmentLink), checkingNodeContext);
-  }
-
-  /**
-   * @deprecated use {@link #canBeAncestorDirect(SNode, SNode, CheckingNodeContext)}
-   *             or {@link #canBeAncestorDirect(SNode, SAbstractConcept, SNode, SContainmentLink, CheckingNodeContext)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SNode childConcept, SNode parent,
-      SNode containmentLink, @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeAncestorDirect(new ConstraintContext_CanBeAncestor(ancestor, descendant, childConcept, parent, containmentLink), checkingNodeContext);
-  }
-
-  /**
-   * @deprecated use {@link #canBeParent(SNode, CheckingNodeContext)}
-   *             or {@link #canBeParent(SNode, SAbstractConcept, SContainmentLink, CheckingNodeContext)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode,
-      @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeParent(new ConstraintContext_CanBeParent(parentNode, childNode, childConcept, link), checkingNodeContext);
-  }
-
-  /**
-   * @deprecated use {@link #canBeChild(SNode, CheckingNodeContext)}
-   *             or {{@link #canBeChild(SNode, SAbstractConcept, SContainmentLink, CheckingNodeContext)}} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static boolean canBeChild(SAbstractConcept childConcept, SNode parentNode, SNode link, @Nullable SNode childNode,
-      @Nullable CheckingNodeContext checkingNodeContext) {
-    return canBeChild(new ConstraintContext_CanBeChild(childNode, childConcept.getDeclarationNode(), parentNode, link), checkingNodeContext);
   }
 
   // scopes part

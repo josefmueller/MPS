@@ -27,15 +27,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_EditorAspectDeclaration;
       case LanguageConceptSwitch.SimpleEditorDeclaration:
         if (props_SimpleEditorDeclaration == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccf6ffL);
-          cpb.presentationByReference(0x346ead2c08ccf9f3L, "cncpt", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccf6ffL, 0x346ead2c08ccf9f3L, "cncpt", "", "");
           props_SimpleEditorDeclaration = cpb.create();
         }
         return props_SimpleEditorDeclaration;
       case LanguageConceptSwitch.SimplePropertyReference:
         if (props_SimplePropertyReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccfa10L);
-          cpb.presentationByReference(0x346ead2c08ccfa1fL, "prop", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xc457c5de60274104L, 0xab9ca31c5404ae8bL, 0x346ead2c08ccfa10L, 0x346ead2c08ccfa1fL, "prop", "", "");
           props_SimplePropertyReference = cpb.create();
         }
         return props_SimplePropertyReference;

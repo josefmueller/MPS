@@ -54,8 +54,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ClosureArgReference;
       case LanguageConceptSwitch.ClosureControlStatement:
         if (props_ClosureControlStatement == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L);
-          cpb.presentationByReference(0x11e4ba658c8L, "controlMethod", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11e4ba658c8L, "controlMethod", "", "");
           props_ClosureControlStatement = cpb.create();
         }
         return props_ClosureControlStatement;

@@ -26,17 +26,17 @@ public class SimpleModelListener extends SModelAdapter {
     myUpdater = updater;
   }
 
-  protected void updateNodePresentation(boolean reloadSubTree, boolean updateAncestors) {
-    myUpdater.update(reloadSubTree, updateAncestors);
+  protected void updateNodePresentation(boolean updateAncestors) {
+    myUpdater.update(false, updateAncestors);
   }
 
   @Override
   public void modelSaved(SModel sm) {
-    updateNodePresentation(false, true);
+    updateNodePresentation(true);
   }
 
   @Override
   public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
-    updateNodePresentation(false, false);
+    updateNodePresentation(false);
   }
 }

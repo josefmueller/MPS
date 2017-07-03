@@ -32,8 +32,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BaseExtensionMethodContainer;
       case LanguageConceptSwitch.ExtensionMethodCall:
         if (props_ExtensionMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1583d1b63359483bL);
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_ExtensionMethodCall = cpb.create();
         }
         return props_ExtensionMethodCall;
@@ -53,16 +53,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ExtensionStaticFieldDeclaration;
       case LanguageConceptSwitch.ExtensionStaticFieldReference:
         if (props_ExtensionStaticFieldReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x1b622d944bbdfbc7L);
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_ExtensionStaticFieldReference = cpb.create();
         }
         return props_ExtensionStaticFieldReference;
       case LanguageConceptSwitch.LocalExtendedMethodCall:
         if (props_LocalExtendedMethodCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x5dc5fc0d37ef4782L, 0x81928b5ce1f69f80L, 0x6aa7ca55518b9170L);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("local extended method call");
-          cpb.presentationByReference(0xf8c78301adL, "baseMethodDeclaration", "", "");
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration", "", "");
           props_LocalExtendedMethodCall = cpb.create();
         }
         return props_LocalExtendedMethodCall;

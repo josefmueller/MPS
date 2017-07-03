@@ -14,6 +14,7 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -22,7 +23,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import java.util.Comparator;
 
 public class DebugMappingsBuilder {
   private final SRepository myRepo;
@@ -43,9 +43,7 @@ public class DebugMappingsBuilder {
       SNode labelEntry = SModelOperations.createNewNode(nodeFactory, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_LabelEntry"));
       SPropertyOperations.set(labelEntry, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810e9L, "label"), label);
       ListSequence.fromList(SLinkOperations.getChildren(rv, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc97f1c1L, 0x35a02f6bfc9806c5L, "labels"))).addElement(labelEntry);
-      ArrayList<SNode> keys = new ArrayList<SNode>(mappings.getMappings(label).keySet());
-      // XXX just need the same order each time, don't care about particular one 
-      keys.sort(new DebugMappingsBuilder.NodeOrder());
+      List<SNode> keys = mappings.getSortedMappingKeys(label);
       for (SNode keyInputNode : keys) {
         SNode entry = SModelOperations.createNewNode(nodeFactory, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, "jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeMapEntry"));
         ListSequence.fromList(SLinkOperations.getChildren(labelEntry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c4L, 0x35a02f6bfc9810ebL, "entries"))).addElement(entry);
@@ -126,24 +124,5 @@ public class DebugMappingsBuilder {
       }
     }
     return n;
-  }
-
-  private static class NodeOrder implements Comparator<SNode> {
-
-    @Override
-    public int compare(SNode n1, SNode n2) {
-      int v = n1.getPresentation().compareTo(n2.getPresentation());
-      if (v == 0) {
-        // just in case presentation is the same (e.g. enumeration literals with the same name in different enums) 
-        // Hope, there could be no two nodes with the same presentation and same node id. 
-        SNodeReference o1 = TracingUtil.getInput(n1);
-        SNodeReference o2 = TracingUtil.getInput(n2);
-        if (o1 != null && o2 != null) {
-          // use original input, if possible - actual input is from transient model 
-          v = o1.getNodeId().toString().compareTo(o2.getNodeId().toString());
-        }
-      }
-      return v;
-    }
   }
 }

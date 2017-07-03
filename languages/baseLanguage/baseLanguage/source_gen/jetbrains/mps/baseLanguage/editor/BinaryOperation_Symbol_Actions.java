@@ -9,34 +9,15 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class BinaryOperation_Symbol_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.setAction(CellActionType.DELETE, new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_BACKSPACE(node));
-  }
-  public static class BinaryOperation_Symbol_Actions_DELETE extends AbstractCellAction {
-    /*package*/ SNode myNode;
-    public BinaryOperation_Symbol_Actions_DELETE(SNode node) {
-      this.myNode = node;
-    }
-    public String getDescriptionText() {
-      return "delete";
-    }
-    public void execute(EditorContext editorContext) {
-      this.execute_internal(editorContext, this.myNode);
-    }
-    public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
-      if (newExpression == null) {
-        newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
-      }
-      SNodeOperations.replaceWithAnother(node, newExpression);
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, newExpression, SelectionManager.FIRST_CELL, 0);
-    }
+    editorCell.setAction(CellActionType.DELETE, new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_DELETE(node));
   }
   public static class BinaryOperation_Symbol_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
@@ -44,18 +25,40 @@ public class BinaryOperation_Symbol_Actions {
       this.myNode = node;
     }
     public String getDescriptionText() {
-      return "delete";
+      return "Backspace";
     }
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
-      if (newExpression == null) {
-        newExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
+      SNode newExpression = (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) != null ? SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) : SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")));
+      SNode toDelete = (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")) != null ? SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")) : SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
+      if (DeletionApproverUtil.approve(editorContext, toDelete)) {
+        return;
       }
       SNodeOperations.replaceWithAnother(node, newExpression);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, newExpression, SelectionManager.FIRST_CELL, 0);
+    }
+  }
+  public static class BinaryOperation_Symbol_Actions_DELETE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public BinaryOperation_Symbol_Actions_DELETE(SNode node) {
+      this.myNode = node;
+    }
+    public String getDescriptionText() {
+      return "Delete";
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode newExpression = (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")) != null ? SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")) : SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
+      SNode toDelete = (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) != null ? SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) : SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")));
+      if (DeletionApproverUtil.approve(editorContext, toDelete)) {
+        return;
+      }
+      SNodeOperations.replaceWithAnother(node, newExpression);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, newExpression, SelectionManager.LAST_CELL, -1);
     }
   }
 }

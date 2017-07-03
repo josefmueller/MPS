@@ -63,10 +63,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.addEditorCell(createRefNode_cmnz0s_c0());
     editorCell.addEditorCell(createConstant_cmnz0s_d0());
     editorCell.addEditorCell(createRefNodeList_cmnz0s_e0());
-    editorCell.addEditorCell(createConstant_cmnz0s_f0());
-    editorCell.addEditorCell(createConstant_cmnz0s_g0());
-    editorCell.addEditorCell(createRefNode_cmnz0s_h0());
-    editorCell.addEditorCell(createConstant_cmnz0s_i0());
+    editorCell.addEditorCell(createCollection_cmnz0s_f0());
     return editorCell;
   }
   private EditorCell createConstant_cmnz0s_a0() {
@@ -229,9 +226,18 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return editorCell;
     }
   }
-  private EditorCell createConstant_cmnz0s_f0() {
+  private EditorCell createCollection_cmnz0s_f0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("finally");
+    editorCell.addEditorCell(createConstant_cmnz0s_a5a());
+    editorCell.addEditorCell(createConstant_cmnz0s_b5a());
+    editorCell.addEditorCell(createRefNode_cmnz0s_c5a());
+    editorCell.addEditorCell(createConstant_cmnz0s_d5a());
+    return editorCell;
+  }
+  private EditorCell createConstant_cmnz0s_a5a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "finally");
-    editorCell.setCellId("Constant_cmnz0s_f0");
+    editorCell.setCellId("Constant_cmnz0s_a5a");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
@@ -240,9 +246,9 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_cmnz0s_g0() {
+  private EditorCell createConstant_cmnz0s_b5a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
-    editorCell.setCellId("Constant_cmnz0s_g0");
+    editorCell.setCellId("Constant_cmnz0s_b5a");
     Style style = new StyleImpl();
     new LeftBraceStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "finally");
@@ -252,15 +258,15 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_cmnz0s_h0() {
-    SingleRoleCellProvider provider = new TryStatement_EditorBuilder_a.finallyBodySingleRoleHandler_cmnz0s_h0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10cacecb713L, "finallyBody"), getEditorContext());
+  private EditorCell createRefNode_cmnz0s_c5a() {
+    SingleRoleCellProvider provider = new TryStatement_EditorBuilder_a.finallyBodySingleRoleHandler_cmnz0s_c5a(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10cacecb713L, "finallyBody"), getEditorContext());
     return provider.createCell();
   }
-  private static class finallyBodySingleRoleHandler_cmnz0s_h0 extends SingleRoleCellProvider {
+  private static class finallyBodySingleRoleHandler_cmnz0s_c5a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public finallyBodySingleRoleHandler_cmnz0s_h0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public finallyBodySingleRoleHandler_cmnz0s_c5a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -311,9 +317,9 @@ import jetbrains.mps.nodeEditor.MPSColors;
       return "<no finallyBody>";
     }
   }
-  private EditorCell createConstant_cmnz0s_i0() {
+  private EditorCell createConstant_cmnz0s_d5a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
-    editorCell.setCellId("Constant_cmnz0s_i0");
+    editorCell.setCellId("Constant_cmnz0s_d5a");
     Style style = new StyleImpl();
     new RightBraceStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "finally");

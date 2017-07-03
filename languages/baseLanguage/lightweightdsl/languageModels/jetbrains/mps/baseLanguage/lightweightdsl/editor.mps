@@ -61,6 +61,9 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
+      <concept id="8329266386016608055" name="jetbrains.mps.lang.editor.structure.ApproveDelete_Operation" flags="ng" index="2xy62i">
+        <child id="8329266386016685951" name="editorContext" index="2xHN3q" />
+      </concept>
       <concept id="795210086017940429" name="jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem" flags="lg" index="xShMh" />
       <concept id="8371900013785948369" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter" flags="ig" index="2$S_p_" />
       <concept id="308059530142752797" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Parameterized" flags="ng" index="2F$Pav">
@@ -1534,25 +1537,22 @@
       <property role="1hAc7j" value="delete_action_id" />
       <node concept="1hAIg9" id="7T23sO8tbsh" role="1hA7z_">
         <node concept="3clFbS" id="7T23sO8tbsi" role="2VODD2">
+          <node concept="3clFbJ" id="4B_rn7pMBIA" role="3cqZAp">
+            <node concept="3clFbS" id="4B_rn7pMBIC" role="3clFbx">
+              <node concept="3cpWs6" id="4B_rn7pMDeG" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="4B_rn7pMCYn" role="3clFbw">
+              <node concept="0IXxy" id="4B_rn7pMBJa" role="2Oq$k0" />
+              <node concept="2xy62i" id="4B_rn7pMDdw" role="2OqNvi">
+                <node concept="1Q80Hx" id="4B_rn7pMDe5" role="2xHN3q" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="7T23sO8wizZ" role="3cqZAp">
             <node concept="2YIFZM" id="7T23sO8wi$e" role="3clFbG">
               <ref role="37wK5l" node="7T23sO8wicl" resolve="restorePlaceholder" />
               <ref role="1Pybhc" node="7ay_HjIOS_a" resolve="EditorUtil" />
               <node concept="0IXxy" id="7T23sO8wi$y" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1hA7zw" id="5xXiDaJZPuh" role="1h_SK8">
-      <property role="1hAc7j" value="backspace_action_id" />
-      <node concept="1hAIg9" id="5xXiDaJZPui" role="1hA7z_">
-        <node concept="3clFbS" id="5xXiDaJZPuj" role="2VODD2">
-          <node concept="3clFbF" id="5xXiDaJZPv0" role="3cqZAp">
-            <node concept="2YIFZM" id="5xXiDaJZPv1" role="3clFbG">
-              <ref role="1Pybhc" node="7ay_HjIOS_a" resolve="EditorUtil" />
-              <ref role="37wK5l" node="7T23sO8wicl" resolve="restorePlaceholder" />
-              <node concept="0IXxy" id="5xXiDaJZPv2" role="37wK5m" />
             </node>
           </node>
         </node>
@@ -1585,6 +1585,17 @@
       <property role="1hAc7j" value="backspace_action_id" />
       <node concept="1hAIg9" id="1Dz4WsDz1Ki" role="1hA7z_">
         <node concept="3clFbS" id="1Dz4WsDz1Kj" role="2VODD2">
+          <node concept="3clFbJ" id="4B_rn7pM$I$" role="3cqZAp">
+            <node concept="3clFbS" id="4B_rn7pM$IA" role="3clFbx">
+              <node concept="3cpWs6" id="4B_rn7pMAet" role="3cqZAp" />
+            </node>
+            <node concept="2OqwBi" id="4B_rn7pM$TA" role="3clFbw">
+              <node concept="0IXxy" id="4B_rn7pM$Jm" role="2Oq$k0" />
+              <node concept="2xy62i" id="4B_rn7pM_V_" role="2OqNvi">
+                <node concept="1Q80Hx" id="4B_rn7pMAdO" role="2xHN3q" />
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="1Dz4WsDz1Oz" role="3cqZAp">
             <node concept="2OqwBi" id="1Dz4WsDz1Q1" role="3clFbG">
               <node concept="0IXxy" id="1Dz4WsDz1Oy" role="2Oq$k0" />

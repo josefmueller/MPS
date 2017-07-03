@@ -576,26 +576,26 @@
                       <node concept="2ShNRf" id="2y" role="33vP2m">
                         <node concept="1pGfFk" id="2z" role="2ShVmc">
                           <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.&lt;init&gt;()" resolve="ConceptPresentationBuilder" />
-                          <node concept="1adDum" id="2$" role="37wK5m">
-                            <property role="1adDun" value="0xaf65afd8f0dd4942L" />
-                          </node>
-                          <node concept="1adDum" id="2_" role="37wK5m">
-                            <property role="1adDun" value="0x87d963a55f2a9db1L" />
-                          </node>
-                          <node concept="1adDum" id="2A" role="37wK5m">
-                            <property role="1adDun" value="0x5a277db47d54d7e1L" />
-                          </node>
                         </node>
                       </node>
                     </node>
                   </node>
                   <node concept="3clFbF" id="2u" role="3cqZAp">
-                    <node concept="2OqwBi" id="2B" role="3clFbG">
-                      <node concept="37vLTw" id="2C" role="2Oq$k0">
+                    <node concept="2OqwBi" id="2$" role="3clFbG">
+                      <node concept="37vLTw" id="2_" role="2Oq$k0">
                         <ref role="3cqZAo" node="2w" resolve="cpb" />
                       </node>
-                      <node concept="liA8E" id="2D" role="2OqNvi">
-                        <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.presentationByReference(long,java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="presentationByReference" />
+                      <node concept="liA8E" id="2A" role="2OqNvi">
+                        <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.presentationByReference(long,long,long,long,java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="presentationByReference" />
+                        <node concept="1adDum" id="2B" role="37wK5m">
+                          <property role="1adDun" value="0xf3061a5392264cc5L" />
+                        </node>
+                        <node concept="1adDum" id="2C" role="37wK5m">
+                          <property role="1adDun" value="0xa443f952ceaf5816L" />
+                        </node>
+                        <node concept="1adDum" id="2D" role="37wK5m">
+                          <property role="1adDun" value="0x11857355952L" />
+                        </node>
                         <node concept="1adDum" id="2E" role="37wK5m">
                           <property role="1adDun" value="0xf8c78301adL" />
                         </node>

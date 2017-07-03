@@ -150,7 +150,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
   private EditorCell createConstant_kydwvz_b0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "final");
-    editorCell.setCellId("Constant_kydwvz_b0");
+    editorCell.setCellId("finalModifier");
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);

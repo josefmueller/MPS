@@ -20,7 +20,11 @@ public class BackspaceFirstCommentedStatementBeforeCommented_SemicolonSelected_T
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("700792012718186930", "700792012718186948");
-      invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+        }
+      }, false);
     }
   }
 }

@@ -64,6 +64,7 @@ class EditorSettingsPreferencesPage implements Disposable {
   private final JCheckBox myPowerSaveModeCheckBox;
   private final JCheckBox myAutoQuickFixCheckBox;
   private final JCheckBox myUseBraces;
+  private final JCheckBox myUseTwoStepDeletion;
   private final JCheckBox myShowContextAssistant;
   private final JSpinner myCaretBlinkPeriod;
   private final JBRadioButton myDontShow;
@@ -155,6 +156,9 @@ class EditorSettingsPreferencesPage implements Disposable {
     myShowContextAssistant = new JCheckBox(EditorSettingsBundle.message("checkbox.context.assistant"));
     checkboxes.add(myShowContextAssistant);
 
+    myUseTwoStepDeletion = new JCheckBox(EditorSettingsBundle.message("use.two.step.backspace"));
+    checkboxes.add(myUseTwoStepDeletion);
+
     panel.add(checkboxes,
         new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
             GridConstraints.SIZEPOLICY_FIXED, null, null, null));
@@ -210,6 +214,7 @@ class EditorSettingsPreferencesPage implements Disposable {
     mySettings.setUseAntialiasing(myAntialiasingCheckBox.isSelected());
     mySettings.setUseBraces(myUseBraces.isSelected());
     mySettings.setShowContextAssistant(myShowContextAssistant.isSelected());
+    mySettings.setUseTwoStepDeletion(myUseTwoStepDeletion.isSelected());
 
     mySettings.setPowerSaveMode(myPowerSaveModeCheckBox.isSelected());
     mySettings.setAutoQuickFix(myAutoQuickFixCheckBox.isSelected());
@@ -243,6 +248,7 @@ class EditorSettingsPreferencesPage implements Disposable {
     boolean sameIndentSize = myIndentSize.getModel().getValue().equals(mySettings.getIndentSize());
     boolean sameAntialiasing = myAntialiasingCheckBox.isSelected() == mySettings.isUseAntialiasing();
     boolean sameUseBraces = myUseBraces.isSelected() == mySettings.useBraces();
+    boolean sameTwoStepBackspace = myUseTwoStepDeletion.isSelected() == mySettings.isUseTwoStepDeletion();
     boolean samePowerSaveMode = myPowerSaveModeCheckBox.isSelected() == mySettings.isPowerSaveMode();
     boolean sameAutoQuickFix = myAutoQuickFixCheckBox.isSelected() == mySettings.isAutoQuickFix();
     boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals(Integer.toString(mySettings.getSpecifiedFontSize()));
@@ -252,7 +258,7 @@ class EditorSettingsPreferencesPage implements Disposable {
     boolean sameTabs = myFirstSelection.isSelected();
     boolean sameUseContextAssistant = myShowContextAssistant.isSelected() == mySettings.isShowContextAssistant();
 
-    return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode
+    return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode && sameTwoStepBackspace
         && sameAutoQuickFix && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs && sameUseContextAssistant);
   }
 
@@ -264,6 +270,8 @@ class EditorSettingsPreferencesPage implements Disposable {
     myAntialiasingCheckBox.setSelected(mySettings.isUseAntialiasing());
 
     myUseBraces.setSelected(mySettings.useBraces());
+
+    myUseTwoStepDeletion.setSelected(mySettings.isUseTwoStepDeletion());
 
     myPowerSaveModeCheckBox.setSelected(mySettings.isPowerSaveMode());
 

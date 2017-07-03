@@ -79,6 +79,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_SwingComponentContainer;
   private ConceptPresentation props_SwingComponentinFoldedCell;
   private ConceptPresentation props_TestBlockList;
+  private ConceptPresentation props_TwoStepDeleteAbstractChildContainer;
+  private ConceptPresentation props_TwoStepDeleteCellCollectionChild;
+  private ConceptPresentation props_TwoStepDeleteCustomChild;
+  private ConceptPresentation props_TwoStepDeleteCustomChildContainer;
+  private ConceptPresentation props_TwoStepDeleteDefaultChild;
+  private ConceptPresentation props_TwoStepDeleteDefaultChildContainer;
+  private ConceptPresentation props_TwoStepDeleteLabelChild;
+  private ConceptPresentation props_TwoStepDeleteTestRoot;
   private ConceptPresentation props_VariableDeclarationBlock;
   private ConceptPresentation props_VariableDeclarationReference;
   private ConceptPresentation props_VerticalLayoutBlockList;
@@ -400,8 +408,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NonEmptyProperty;
       case LanguageConceptSwitch.NotEditableVaraileReference:
         if (props_NotEditableVaraileReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x44e7cb3605ec4004L);
-          cpb.presentationByReference(0x44e7cb3605ec4005L, "variableDeclaration", "{", "} not editable");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x44e7cb3605ec4004L, 0x44e7cb3605ec4005L, "variableDeclaration", "{", "} not editable");
           props_NotEditableVaraileReference = cpb.create();
         }
         return props_NotEditableVaraileReference;
@@ -572,6 +580,61 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestBlockList = cpb.create();
         }
         return props_TestBlockList;
+      case LanguageConceptSwitch.TwoStepDeleteAbstractChildContainer:
+        if (props_TwoStepDeleteAbstractChildContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_TwoStepDeleteAbstractChildContainer = cpb.create();
+        }
+        return props_TwoStepDeleteAbstractChildContainer;
+      case LanguageConceptSwitch.TwoStepDeleteCellCollectionChild:
+        if (props_TwoStepDeleteCellCollectionChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TwoStepDeleteCellCollectionChild");
+          props_TwoStepDeleteCellCollectionChild = cpb.create();
+        }
+        return props_TwoStepDeleteCellCollectionChild;
+      case LanguageConceptSwitch.TwoStepDeleteCustomChild:
+        if (props_TwoStepDeleteCustomChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TwoStepDeleteCustomChild");
+          props_TwoStepDeleteCustomChild = cpb.create();
+        }
+        return props_TwoStepDeleteCustomChild;
+      case LanguageConceptSwitch.TwoStepDeleteCustomChildContainer:
+        if (props_TwoStepDeleteCustomChildContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TwoStepDeleteCustomChildContainer");
+          props_TwoStepDeleteCustomChildContainer = cpb.create();
+        }
+        return props_TwoStepDeleteCustomChildContainer;
+      case LanguageConceptSwitch.TwoStepDeleteDefaultChild:
+        if (props_TwoStepDeleteDefaultChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_TwoStepDeleteDefaultChild = cpb.create();
+        }
+        return props_TwoStepDeleteDefaultChild;
+      case LanguageConceptSwitch.TwoStepDeleteDefaultChildContainer:
+        if (props_TwoStepDeleteDefaultChildContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TwoStepDeleteDefaultChildContainer");
+          props_TwoStepDeleteDefaultChildContainer = cpb.create();
+        }
+        return props_TwoStepDeleteDefaultChildContainer;
+      case LanguageConceptSwitch.TwoStepDeleteLabelChild:
+        if (props_TwoStepDeleteLabelChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TwoStepDeleteLabelChild");
+          props_TwoStepDeleteLabelChild = cpb.create();
+        }
+        return props_TwoStepDeleteLabelChild;
+      case LanguageConceptSwitch.TwoStepDeleteTestRoot:
+        if (props_TwoStepDeleteTestRoot == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_TwoStepDeleteTestRoot = cpb.create();
+        }
+        return props_TwoStepDeleteTestRoot;
       case LanguageConceptSwitch.VariableDeclarationBlock:
         if (props_VariableDeclarationBlock == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -581,8 +644,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_VariableDeclarationBlock;
       case LanguageConceptSwitch.VariableDeclarationReference:
         if (props_VariableDeclarationReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL);
-          cpb.presentationByReference(0x2444dad137fa9b5dL, "var", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL, 0x2444dad137fa9b5dL, "var", "", "");
           props_VariableDeclarationReference = cpb.create();
         }
         return props_VariableDeclarationReference;

@@ -99,6 +99,7 @@ import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
 import jetbrains.mps.nodeEditor.commands.CommandContextWrapper;
 import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
 import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
+import jetbrains.mps.nodeEditor.deletionApprover.DeletionApproverImpl;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
@@ -117,6 +118,7 @@ import jetbrains.mps.nodeEditor.ui.InputMethodRequestsImpl;
 import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.openapi.editor.ActionHandler;
+import jetbrains.mps.openapi.editor.DeletionApprover;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -265,6 +267,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   // additional debugging field
   private StackTraceElement[] myModelDisposedStackTrace = null;
   private Throwable myDisposedTrace = null;
+
+  private DeletionApproverImpl myDeletionApprover;
 
   private Set<AdditionalPainter> myAdditionalPainters = new TreeSet<>((o1, o2) -> {
     if (o1.isAbove(o2, EditorComponent.this)) {
@@ -456,6 +460,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     // --- init action map --
     myActionMap = new HashMap<>();
+
     // -- navigation
     myActionMap.put(CellActionType.LEFT, new NodeEditorActions.MoveLeft());
     myActionMap.put(CellActionType.RIGHT, new NodeEditorActions.MoveRight());
@@ -629,6 +634,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (configuration.withUI) {
       createUI(configuration);
     }
+
   }
 
   // TODO:
@@ -1497,6 +1503,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myLeftMarginPressListeners.clear();
 
     myFocusTracker.dispose();
+
+    if (myDeletionApprover != null) {
+      myDeletionApprover.dispose();
+    }
   }
 
   protected void detachListeners() {
@@ -2183,6 +2193,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                  deepestCell.getY(),
                  deepestCell.getWidth() - label.getLeftInset() - label.getRightInset(),
                  deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
+
     }
 
     List<AdditionalPainter> additionalPainters = getAdditionalPainters();
@@ -2491,7 +2502,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           if (pattern == null) {
             return true;
           }
-         return matcher.matches(action.getMatchingText(pattern));
+          String matchingText = action.getMatchingText(pattern);
+          if (matchingText == null) {
+            return false;
+          }
+          return matcher.matches(matchingText);
         };
       }
     };
@@ -3276,6 +3291,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         return ((TooltipComponent) getUI()).getMPSTooltipText(mouseEvent);
       }
       return null;
+    }
+  }
+
+  /**
+   * Returns deletion approver
+   * It first checks if deletion approving should be used and then returns an appropriate
+   * instance. If instance doesn't exist, it creates it and initializes it properly
+   *
+   * @return deletion approver instance
+   */
+  public synchronized DeletionApprover getDeletionApprover() {
+    if (EditorSettings.getInstance().isUseTwoStepDeletion()) {
+      if (myDeletionApprover == null) {
+        myDeletionApprover = new DeletionApproverImpl(this);
+        myDeletionApprover.initialize();
+      }
+      return myDeletionApprover;
+    } else {
+      return jetbrains.mps.openapi.editor.EditorComponent.super.getDeletionApprover();
     }
   }
 }

@@ -5,7 +5,6 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
@@ -1877,6 +1876,56 @@
                   <property role="2bfB8j" value="true" />
                   <ref role="1Y3XeK" node="3SnNvqCbvIM" resolve="GroupedTree" />
                   <ref role="37wK5l" node="3SnNvqCbz10" resolve="GroupedTree" />
+                  <node concept="2tJIrI" id="6abqMjjOTlL" role="jymVt" />
+                  <node concept="2tJIrI" id="6abqMjjOTxy" role="jymVt" />
+                  <node concept="3clFb_" id="6abqMjjOUov" role="jymVt">
+                    <property role="1EzhhJ" value="false" />
+                    <property role="TrG5h" value="runRebuildAction" />
+                    <property role="DiZV1" value="false" />
+                    <property role="od$2w" value="false" />
+                    <node concept="3Tm1VV" id="6abqMjjOUow" role="1B3o_S" />
+                    <node concept="3cqZAl" id="6abqMjjOUoy" role="3clF45" />
+                    <node concept="37vLTG" id="6abqMjjOUoz" role="3clF46">
+                      <property role="TrG5h" value="rebuildAction" />
+                      <node concept="3uibUv" id="6abqMjjOUo$" role="1tU5fm">
+                        <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+                      </node>
+                    </node>
+                    <node concept="37vLTG" id="6abqMjjOUo_" role="3clF46">
+                      <property role="TrG5h" value="saveExpansion" />
+                      <node concept="10P_77" id="6abqMjjOUoA" role="1tU5fm" />
+                    </node>
+                    <node concept="3clFbS" id="6abqMjjOUoE" role="3clF47">
+                      <node concept="3clFbF" id="6abqMjjOUoJ" role="3cqZAp">
+                        <node concept="3nyPlj" id="6abqMjjOUoI" role="3clFbG">
+                          <ref role="37wK5l" to="7e8u:~MPSTree.runRebuildAction(java.lang.Runnable,boolean):void" resolve="runRebuildAction" />
+                          <node concept="2ShNRf" id="6abqMjjOXr5" role="37wK5m">
+                            <node concept="1pGfFk" id="6abqMjjPjhf" role="2ShVmc">
+                              <ref role="37wK5l" to="w1kc:~ModelReadRunnable.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess,java.lang.Runnable)" resolve="ModelReadRunnable" />
+                              <node concept="2OqwBi" id="6abqMjjPsJ0" role="37wK5m">
+                                <node concept="37vLTw" id="6abqMjjPqAW" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="4_scbGUHAvq" resolve="myProject" />
+                                </node>
+                                <node concept="liA8E" id="6abqMjjPtiA" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="6abqMjjPmPC" role="37wK5m">
+                                <ref role="3cqZAo" node="6abqMjjOUoz" resolve="rebuildAction" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="37vLTw" id="6abqMjjOUoH" role="37wK5m">
+                            <ref role="3cqZAo" node="6abqMjjOUo_" resolve="saveExpansion" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2AHcQZ" id="6abqMjjOUoF" role="2AJF6D">
+                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                    </node>
+                  </node>
+                  <node concept="2tJIrI" id="6abqMjjOV9W" role="jymVt" />
                   <node concept="3uibUv" id="3SnNvqCbxz$" role="2Ghqu4">
                     <ref role="3uigEE" node="3SnNvqCbvIN" resolve="AbstractBreakpointsTree.BreakpointNodeData" />
                   </node>
@@ -3667,29 +3716,12 @@
               <ref role="3cqZAo" node="3SnNvqCbxyx" resolve="breakpoint" />
             </node>
           </node>
-          <node concept="3cpWs8" id="3SnNvqCbxFG" role="3cqZAp">
-            <node concept="3cpWsn" id="3SnNvqCbxFH" role="3cpWs9">
-              <property role="TrG5h" value="bp" />
-              <property role="3TUv4t" value="false" />
-              <node concept="3uibUv" id="3SnNvqCbxFI" role="1tU5fm">
-                <ref role="3uigEE" node="3SnNvqCbvIN" resolve="AbstractBreakpointsTree.BreakpointNodeData" />
-              </node>
-              <node concept="10QFUN" id="3SnNvqCbxFJ" role="33vP2m">
-                <node concept="1rXfSq" id="4hiugqyyZa9" role="10QFUP">
-                  <ref role="37wK5l" to="rgfa:~DefaultMutableTreeNode.getUserObject():java.lang.Object" resolve="getUserObject" />
-                </node>
-                <node concept="3uibUv" id="3SnNvqCbxFL" role="10QFUM">
-                  <ref role="3uigEE" node="3SnNvqCbvIN" resolve="AbstractBreakpointsTree.BreakpointNodeData" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="3SnNvqCbxFM" role="3cqZAp">
             <node concept="1rXfSq" id="4hiugqyyZbx" role="3clFbG">
               <ref role="37wK5l" to="7e8u:~MPSTreeNode.setNodeIdentifier(java.lang.String):void" resolve="setNodeIdentifier" />
               <node concept="2OqwBi" id="3SnNvqCbxFO" role="37wK5m">
-                <node concept="37vLTw" id="3GM_nagTAjG" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3SnNvqCbxFH" resolve="bp" />
+                <node concept="37vLTw" id="6abqMjjOM4o" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3SnNvqCbxyx" resolve="breakpoint" />
                 </node>
                 <node concept="liA8E" id="3SnNvqCbxFQ" role="2OqNvi">
                   <ref role="37wK5l" node="3SnNvqCbxy3" resolve="getText" />
@@ -3701,8 +3733,8 @@
             <node concept="1rXfSq" id="4hiugqyza5n" role="3clFbG">
               <ref role="37wK5l" to="7e8u:~MPSTreeNode.setIcon(javax.swing.Icon):void" resolve="setIcon" />
               <node concept="2OqwBi" id="3SnNvqCbxFT" role="37wK5m">
-                <node concept="37vLTw" id="3GM_nagTsZL" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3SnNvqCbxFH" resolve="bp" />
+                <node concept="37vLTw" id="6abqMjjOM4m" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3SnNvqCbxyx" resolve="breakpoint" />
                 </node>
                 <node concept="liA8E" id="3SnNvqCbxFV" role="2OqNvi">
                   <ref role="37wK5l" node="3SnNvqCbxxV" resolve="getIcon" />
@@ -3717,8 +3749,8 @@
             <node concept="1rXfSq" id="4hiugqyzaKn" role="3clFbG">
               <ref role="37wK5l" to="7e8u:~MPSTreeNode.setText(java.lang.String):void" resolve="setText" />
               <node concept="2OqwBi" id="3SnNvqCbxFZ" role="37wK5m">
-                <node concept="37vLTw" id="3GM_nagT$Vv" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3SnNvqCbxFH" resolve="bp" />
+                <node concept="37vLTw" id="6abqMjjOM4n" role="2Oq$k0">
+                  <ref role="3cqZAo" node="3SnNvqCbxyx" resolve="breakpoint" />
                 </node>
                 <node concept="liA8E" id="3SnNvqCbxG1" role="2OqNvi">
                   <ref role="37wK5l" node="3SnNvqCbxy3" resolve="getText" />

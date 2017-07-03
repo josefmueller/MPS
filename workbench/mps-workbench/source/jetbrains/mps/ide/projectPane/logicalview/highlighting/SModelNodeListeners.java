@@ -143,7 +143,7 @@ public class SModelNodeListeners {
   }
 
   @SuppressWarnings("WeakerAccess")
-  void updateNodePresentation(SModelTreeNode treeNode, boolean reloadSubTree, boolean updateAncestors) {
+  void updateNodePresentation(SModelTreeNode treeNode, boolean updateAncestors) {
     new PresentationUpdater<SModelTreeNode>(treeNode) {
       @Override
       protected boolean isValid(SModelTreeNode treeNode) {
@@ -154,7 +154,7 @@ public class SModelNodeListeners {
         }
         return true;
       }
-    }.update(reloadSubTree, updateAncestors);
+    }.update(false, updateAncestors);
   }
 
   private class ModelChangeListener extends SModelAdapter {
@@ -167,7 +167,7 @@ public class SModelNodeListeners {
         //     vs. ThreadPoolExecutor -> TreeNodeUpdater ->EDT+Read for refreshNodeTrees, it's impossible to predict execution order for the
         //     updates. However, left this code as is for scenarios when no tree update visitor does any change and therefore there'd be no
         //     update of the tree at all. Would be great to come up with a better mechanism.
-        updateNodePresentation(treeNode, false, true);
+        updateNodePresentation(treeNode, true);
       }
       refreshTreeNodes(treeNodes);
     }
@@ -176,7 +176,7 @@ public class SModelNodeListeners {
     public void modelChanged(SModel model) {
       Collection<SModelTreeNode> treeNodes = findTreeNode(model);
       for (SModelTreeNode treeNode : treeNodes) {
-        updateNodePresentation(treeNode, false, true);
+        updateNodePresentation(treeNode, true);
       }
       refreshTreeNodes(treeNodes);
     }
@@ -189,7 +189,7 @@ public class SModelNodeListeners {
     @Override
     public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
       for (SModelTreeNode treeNode : findTreeNode(sm)) {
-        updateNodePresentation(treeNode, false, false);
+        updateNodePresentation(treeNode, false);
       }
     }
   }

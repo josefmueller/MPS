@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -25,6 +26,9 @@ public class AttributeDelete_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node, "ALIAS_EDITOR_COMPONENT")) {
+        return;
+      }
       SNode nodeToSelect = SNodeOperations.getParent(node);
       SNodeOperations.deleteNode(node);
       SelectionUtil.selectCell(editorContext, nodeToSelect, SelectionManager.FIRST_EDITABLE_CELL);
@@ -39,6 +43,9 @@ public class AttributeDelete_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (DeletionApproverUtil.approve(editorContext, node, "ALIAS_EDITOR_COMPONENT")) {
+        return;
+      }
       SNode nodeToSelect = SNodeOperations.getParent(node);
       SNodeOperations.deleteNode(node);
       SelectionUtil.selectCell(editorContext, nodeToSelect, SelectionManager.FIRST_EDITABLE_CELL);

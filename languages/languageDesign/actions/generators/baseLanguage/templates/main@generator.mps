@@ -305,6 +305,7 @@
       <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
+        <property id="7898029224680692134" name="description" index="2n97ot" />
         <property id="1167272244852" name="applyToConceptInheritors" index="36QftV" />
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
@@ -5576,6 +5577,7 @@
   <node concept="bUwia" id="5VEoCtDlcm4">
     <property role="TrG5h" value="node_operations" />
     <node concept="3aamgX" id="5VEoCtDlcn4" role="3acgRq">
+      <property role="2n97ot" value="this reduction rule (unlike other below) has no restriction to run together with lang.smodel" />
       <ref role="30HIoZ" to="tpee:gEShNN5" resolve="GenericNewExpression" />
       <node concept="30G5F_" id="5VEoCtDlcn5" role="30HLyM">
         <node concept="3clFbS" id="5VEoCtDlcn6" role="2VODD2">
@@ -5609,18 +5611,6 @@
         <ref role="v9R2y" node="6JEpOPLvunT" resolve="reduce_NF_Concept_NewInstance" />
       </node>
     </node>
-    <node concept="3aamgX" id="5VEoCtDlcnj" role="3acgRq">
-      <ref role="30HIoZ" to="tpdg:4KfPOs9Uu4C" resolve="NF_Model_CreateNewNodeOperation" />
-      <node concept="j$656" id="5VEoCtDlcnk" role="1lVwrX">
-        <ref role="v9R2y" node="4KfPOs9Uvrr" resolve="reduce_NF_Model_CreateNewNodeOperation" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="5VEoCtDlcnl" role="3acgRq">
-      <ref role="30HIoZ" to="tpdg:4KfPOs9Uvsc" resolve="NF_Model_CreateNewRootNodeOperation" />
-      <node concept="j$656" id="5VEoCtDlcnm" role="1lVwrX">
-        <ref role="v9R2y" node="4KfPOs9Uvse" resolve="reduce_NF_Model_CreateNewRootNodeOperation" />
-      </node>
-    </node>
     <node concept="3aamgX" id="5VEoCtDlcnn" role="3acgRq">
       <ref role="30HIoZ" to="tpdg:E_sK2zBSs1" resolve="NF_LinkList_AddNewChildOperation" />
       <node concept="j$656" id="5VEoCtDlcno" role="1lVwrX">
@@ -5631,24 +5621,6 @@
       <ref role="30HIoZ" to="tpdg:E_sK2zBSrY" resolve="NF_Link_SetNewChildOperation" />
       <node concept="j$656" id="5VEoCtDlcnq" role="1lVwrX">
         <ref role="v9R2y" node="E_sK2zBUyl" resolve="reduce_NF_Link_SetNewChildOperation" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="5VEoCtDlcnr" role="3acgRq">
-      <ref role="30HIoZ" to="tpdg:E_sK2zBSrS" resolve="NF_Node_InsertNewNextSiblingOperation" />
-      <node concept="j$656" id="5VEoCtDlcns" role="1lVwrX">
-        <ref role="v9R2y" node="E_sK2zBUyq" resolve="reduce_NF_Node_InsertNewNextSiblingOperation" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="5VEoCtDlcnt" role="3acgRq">
-      <ref role="30HIoZ" to="tpdg:E_sK2zBSrU" resolve="NF_Node_InsertNewPrevSiblingOperation" />
-      <node concept="j$656" id="5VEoCtDlcnu" role="1lVwrX">
-        <ref role="v9R2y" node="E_sK2zBUyv" resolve="reduce_NF_Node_InsertNewPrevSiblingOperation" />
-      </node>
-    </node>
-    <node concept="3aamgX" id="5VEoCtDlcnv" role="3acgRq">
-      <ref role="30HIoZ" to="tpdg:E_sK2zBSrW" resolve="NF_Node_ReplaceWithNewOperation" />
-      <node concept="j$656" id="5VEoCtDlcnw" role="1lVwrX">
-        <ref role="v9R2y" node="E_sK2zBUy$" resolve="reduce_NF_Node_ReplaceWithNewOperation" />
       </node>
     </node>
   </node>
@@ -7313,6 +7285,56 @@
     </node>
     <node concept="3uibUv" id="5YbnVHl4NC6" role="EKbjA">
       <ref role="3uigEE" to="9eus:~PastePostProcessor" resolve="PastePostProcessor" />
+    </node>
+  </node>
+  <node concept="jVnub" id="77Q20aA6UXN">
+    <property role="TrG5h" value="switch_NF_SNodeOperation_node" />
+    <ref role="phYkn" to="tp27:5N0kNHpsuXn" resolve="switch_SNodeOperation_node" />
+    <node concept="3aamgX" id="5VEoCtDlcnr" role="3aUrZf">
+      <ref role="30HIoZ" to="tpdg:E_sK2zBSrS" resolve="NF_Node_InsertNewNextSiblingOperation" />
+      <node concept="j$656" id="5VEoCtDlcns" role="1lVwrX">
+        <ref role="v9R2y" node="E_sK2zBUyq" resolve="reduce_NF_Node_InsertNewNextSiblingOperation" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="5VEoCtDlcnt" role="3aUrZf">
+      <ref role="30HIoZ" to="tpdg:E_sK2zBSrU" resolve="NF_Node_InsertNewPrevSiblingOperation" />
+      <node concept="j$656" id="5VEoCtDlcnu" role="1lVwrX">
+        <ref role="v9R2y" node="E_sK2zBUyv" resolve="reduce_NF_Node_InsertNewPrevSiblingOperation" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="5VEoCtDlcnv" role="3aUrZf">
+      <ref role="30HIoZ" to="tpdg:E_sK2zBSrW" resolve="NF_Node_ReplaceWithNewOperation" />
+      <node concept="j$656" id="5VEoCtDlcnw" role="1lVwrX">
+        <ref role="v9R2y" node="E_sK2zBUy$" resolve="reduce_NF_Node_ReplaceWithNewOperation" />
+      </node>
+    </node>
+    <node concept="1N15co" id="77Q20aA6UXO" role="1s_3oS">
+      <property role="TrG5h" value="dotExpr" />
+      <node concept="3Tqbb2" id="77Q20aA6WZw" role="1N15GL">
+        <ref role="ehGHo" to="tpee:hqOqwz4" resolve="DotExpression" />
+      </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="77Q20aA6XfT">
+    <property role="TrG5h" value="switch_NF_SNodeOperation_model" />
+    <ref role="phYkn" to="tp27:5N0kNHpsFbD" resolve="switch_SNodeOperation_model" />
+    <node concept="3aamgX" id="5VEoCtDlcnj" role="3aUrZf">
+      <ref role="30HIoZ" to="tpdg:4KfPOs9Uu4C" resolve="NF_Model_CreateNewNodeOperation" />
+      <node concept="j$656" id="5VEoCtDlcnk" role="1lVwrX">
+        <ref role="v9R2y" node="4KfPOs9Uvrr" resolve="reduce_NF_Model_CreateNewNodeOperation" />
+      </node>
+    </node>
+    <node concept="3aamgX" id="5VEoCtDlcnl" role="3aUrZf">
+      <ref role="30HIoZ" to="tpdg:4KfPOs9Uvsc" resolve="NF_Model_CreateNewRootNodeOperation" />
+      <node concept="j$656" id="5VEoCtDlcnm" role="1lVwrX">
+        <ref role="v9R2y" node="4KfPOs9Uvse" resolve="reduce_NF_Model_CreateNewRootNodeOperation" />
+      </node>
+    </node>
+    <node concept="1N15co" id="77Q20aA6XfU" role="1s_3oS">
+      <property role="TrG5h" value="dotExpr" />
+      <node concept="3Tqbb2" id="77Q20aA6Xq0" role="1N15GL">
+        <ref role="ehGHo" to="tpee:hqOqwz4" resolve="DotExpression" />
+      </node>
     </node>
   </node>
 </model>

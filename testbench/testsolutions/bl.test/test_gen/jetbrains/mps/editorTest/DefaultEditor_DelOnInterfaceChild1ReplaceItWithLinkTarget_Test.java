@@ -20,8 +20,12 @@ public class DefaultEditor_DelOnInterfaceChild1ReplaceItWithLinkTarget_Test exte
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2943053183528195670", "2943053183528195677");
-      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
-      invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+          invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+        }
+      }, false);
     }
   }
 }

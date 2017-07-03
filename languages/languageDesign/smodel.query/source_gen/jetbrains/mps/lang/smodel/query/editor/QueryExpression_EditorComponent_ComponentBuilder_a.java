@@ -89,7 +89,7 @@ import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleShee
   }
   private EditorCell createCollection_adikco_b0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_adikco_b0");
+    editorCell.setCellId("parameter");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);

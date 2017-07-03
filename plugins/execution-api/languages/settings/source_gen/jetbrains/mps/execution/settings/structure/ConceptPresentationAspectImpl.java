@@ -104,8 +104,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_EditorExpression;
       case LanguageConceptSwitch.EditorOperationCall:
         if (props_EditorOperationCall == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL);
-          cpb.presentationByReference(0xd244b712f910131L, "editorOperationDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91012eL, 0xd244b712f910131L, "editorOperationDeclaration", "", "");
           props_EditorOperationCall = cpb.create();
         }
         return props_EditorOperationCall;
@@ -124,8 +124,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_EditorPropertyDeclaration;
       case LanguageConceptSwitch.EditorPropertyReference:
         if (props_EditorPropertyReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910133L);
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_EditorPropertyReference = cpb.create();
         }
         return props_EditorPropertyReference;
@@ -178,8 +178,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PersistentConfigurationTemplate;
       case LanguageConceptSwitch.PersistentConfigurationTemplateInitializer:
         if (props_PersistentConfigurationTemplateInitializer == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L);
-          cpb.presentationByReference(0xd244b712f910117L, "template", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template", "", "");
           props_PersistentConfigurationTemplateInitializer = cpb.create();
         }
         return props_PersistentConfigurationTemplateInitializer;
@@ -200,9 +200,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PersistentPropertyDeclaration;
       case LanguageConceptSwitch.PersistentPropertyReferenceOperation:
         if (props_PersistentPropertyReferenceOperation == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL);
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("persistent property reference");
-          cpb.presentationByReference(0xd244b712f91010fL, "variableDeclaration", "", "");
+          cpb.presentationByReference(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91010eL, 0xd244b712f91010fL, "variableDeclaration", "", "");
           props_PersistentPropertyReferenceOperation = cpb.create();
         }
         return props_PersistentPropertyReferenceOperation;
@@ -250,8 +250,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TemplateParameter;
       case LanguageConceptSwitch.TemplateParameterReference:
         if (props_TemplateParameterReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910101L);
-          cpb.presentationByReference(0xf8cc6bf960L, "variableDeclaration", "", "");
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration", "", "");
           props_TemplateParameterReference = cpb.create();
         }
         return props_TemplateParameterReference;
