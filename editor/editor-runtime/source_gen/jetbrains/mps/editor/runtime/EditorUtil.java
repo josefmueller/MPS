@@ -18,14 +18,21 @@ import java.awt.event.ActionEvent;
 import java.awt.Component;
 import javax.swing.SwingUtilities;
 import javax.swing.JFrame;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.vfs.FileSystem;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystems;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFileUtils;
 import java.awt.Dimension;
+import java.beans.PropertyChangeListener;
+import javax.swing.ImageIcon;
+import java.beans.PropertyChangeEvent;
+import java.awt.Image;
+import java.awt.Graphics;
 import jetbrains.mps.util.MacroHelper;
 
 public class EditorUtil {
@@ -59,12 +66,22 @@ public class EditorUtil {
       public void actionPerformed(ActionEvent e) {
         Component root = SwingUtilities.getRoot(button);
         JFrame frame = (root instanceof JFrame ? (JFrame) root : null);
-        TreeFileChooser chooser = new TreeFileChooser();
-        chooser.setMode((files ? TreeFileChooser.MODE_FILES : TreeFileChooser.MODE_DIRECTORIES));
-        if (baseFile != null && baseFile.exists()) {
-          chooser.setInitialFile(FileSystem.getInstance().getFileByPath(baseFile.getAbsolutePath()));
+
+        final JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        fileChooser.setMultiSelectionEnabled(false);
+        fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Image files", "tiff", "tif", "gif", "jpeg", "jpg", "png", "ico"));
+        // Leave all files filter for images with non-standard extensoin 
+        fileChooser.setAcceptAllFileFilterUsed(true);
+        fileChooser.setAccessory(new EditorUtil.ImagePreview(fileChooser));
+        fileChooser.setSelectedFile(baseFile);
+
+        int resultCode = fileChooser.showDialog(frame, "Choose");
+        if (resultCode != JFileChooser.APPROVE_OPTION || fileChooser.getSelectedFile() == null) {
+          return;
         }
-        final Wrappers._T<IFile> result = new Wrappers._T<IFile>(chooser.showDialog(frame));
+
+        final Wrappers._T<IFile> result = new Wrappers._T<IFile>(FileSystems.getDefault().getFile(fileChooser.getSelectedFile().getAbsolutePath()));
         if (result.value == null) {
           return;
         }
@@ -98,6 +115,67 @@ public class EditorUtil {
     });
     button.setPreferredSize(new Dimension(20, 20));
     return button;
+  }
+
+  private static class ImagePreview extends JComponent implements PropertyChangeListener {
+    private File myFile;
+    private ImageIcon myIcon;
+    private static final int MAX_UNSCALED_ICON_SIZE = 128;
+
+    private ImagePreview(JFileChooser fileChooser) {
+      int borders = 4;
+      setPreferredSize(new Dimension(MAX_UNSCALED_ICON_SIZE + borders, MAX_UNSCALED_ICON_SIZE + borders));
+      fileChooser.addPropertyChangeListener(this);
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent event) {
+      String propertyName = event.getPropertyName();
+
+      if (JFileChooser.DIRECTORY_CHANGED_PROPERTY.equals(propertyName)) {
+        myFile = null;
+      } else if (JFileChooser.SELECTED_FILE_CHANGED_PROPERTY.equals(propertyName)) {
+        myFile = (File) event.getNewValue();
+      } else {
+        return;
+      }
+
+      myIcon = getIcon();
+      if (isShowing()) {
+        repaint();
+      }
+    }
+
+    private ImageIcon getIcon() {
+      if (myFile == null) {
+        return null;
+      }
+
+      ImageIcon icon = new ImageIcon(myFile.getPath());
+      if (icon != null) {
+        int iconHeight = icon.getIconHeight();
+        int iconWidth = icon.getIconWidth();
+        if (iconHeight > MAX_UNSCALED_ICON_SIZE || iconWidth > MAX_UNSCALED_ICON_SIZE) {
+          int scaledWidth = (iconHeight > iconWidth ? MAX_UNSCALED_ICON_SIZE * iconWidth / iconHeight : MAX_UNSCALED_ICON_SIZE);
+          int scaledHeight = (iconHeight > iconWidth ? MAX_UNSCALED_ICON_SIZE : MAX_UNSCALED_ICON_SIZE * iconHeight / iconWidth);
+          icon = new ImageIcon(icon.getImage().getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_FAST));
+        }
+      }
+      return icon;
+    }
+
+    @Override
+    protected void paintComponent(Graphics graphics) {
+      if (myIcon == null) {
+        myIcon = getIcon();
+      }
+      if (myIcon != null) {
+        int x = (getWidth() - getIcon().getIconWidth()) / 2;
+        int y = (getHeight() - getIcon().getIconHeight()) / 2;
+
+        myIcon.paintIcon(this, graphics, x, y);
+      }
+    }
   }
   private static String check_3m4h3r_a0a4a2a3(MacroHelper checkedDotOperand, String fullPath) {
     if (null != checkedDotOperand) {
