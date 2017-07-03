@@ -31778,6 +31778,14 @@
         </node>
         <node concept="398223" id="3_S1WmROW0m" role="39821P">
           <node concept="28jJK3" id="3_S1WmROW0n" role="39821P">
+            <node concept="1688n2" id="6Q25M$eKo_K" role="28jJR8">
+              <property role="1688n3" value="../migration-platform/pluginBase.xml" />
+              <node concept="NbPM2" id="6Q25M$eKo_M" role="1688n0">
+                <node concept="3Mxwew" id="6Q25M$eKKff" role="3MwsjC">
+                  <property role="3MwjfP" value="pluginBase.xml" />
+                </node>
+              </node>
+            </node>
             <node concept="398BVA" id="3_S1WmROW0o" role="28jJRO">
               <ref role="398BVh" node="77ZqjhZbMDY" resolve="mps_home" />
               <node concept="2Ry0Ak" id="3_S1WmROW0p" role="iGT6I">

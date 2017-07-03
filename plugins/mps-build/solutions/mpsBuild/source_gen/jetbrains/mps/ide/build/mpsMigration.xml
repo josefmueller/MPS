@@ -45,6 +45,11 @@
     <mkdir dir="${build.layout}/migration/META-INF" />
     <copy todir="${build.layout}/migration/META-INF">
       <fileset file="${mps_home}/plugins/migration/META-INF/plugin.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../migration-platform/pluginBase.xml" replace="pluginBase.xml" flags="" />
+        </tokenfilter>
+      </filterchain>
     </copy>
     <copy file="${artifacts.mpsMigrationCore}/migration-platform/META-INF/pluginBase.xml" todir="${build.layout}/migration/META-INF" />
     <mkdir dir="${build.layout}/migration/lib" />
