@@ -76,6 +76,7 @@
     <import index="hh2c" ref="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)" />
     <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="3fkn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileChooser(MPS.IDEA/)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" implicit="true" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
@@ -568,7 +569,7 @@
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
@@ -751,165 +752,76 @@
     <property role="1teQrl" value="true" />
     <node concept="tnohg" id="6182LeIw9Wa" role="tncku">
       <node concept="3clFbS" id="6182LeIw9Wb" role="2VODD2">
-        <node concept="3cpWs8" id="1nhYb0FOxHE" role="3cqZAp">
-          <node concept="3cpWsn" id="1nhYb0FOxHF" role="3cpWs9">
-            <property role="TrG5h" value="chooser" />
-            <node concept="3uibUv" id="7vhthXFNVIO" role="1tU5fm">
-              <ref role="3uigEE" to="etl3:~TreeFileChooser" resolve="TreeFileChooser" />
-            </node>
-            <node concept="2ShNRf" id="1nhYb0FOxHH" role="33vP2m">
-              <node concept="1pGfFk" id="1nhYb0FOxHI" role="2ShVmc">
-                <ref role="37wK5l" to="etl3:~TreeFileChooser.&lt;init&gt;()" resolve="TreeFileChooser" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="75ESEusIO58" role="3cqZAp">
-          <node concept="2OqwBi" id="75ESEusIO5c" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTvvh" role="2Oq$k0">
-              <ref role="3cqZAo" node="1nhYb0FOxHF" resolve="chooser" />
-            </node>
-            <node concept="liA8E" id="75ESEusIO5i" role="2OqNvi">
-              <ref role="37wK5l" to="etl3:~TreeFileChooser.setMode(int):void" resolve="setMode" />
-              <node concept="10M0yZ" id="75ESEusIO5M" role="37wK5m">
-                <ref role="1PxDUh" to="etl3:~TreeFileChooser" resolve="TreeFileChooser" />
-                <ref role="3cqZAo" to="etl3:~TreeFileChooser.MODE_DIRECTORIES" resolve="MODE_DIRECTORIES" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3SKdUt" id="59lhIkIGv6U" role="3cqZAp">
-          <node concept="3SKdUq" id="59lhIkIGv6W" role="3SKWNk">
-            <property role="3SKdUp" value="Resort to IDEA Project's file due to:" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="59lhIkIGtgk" role="3cqZAp">
-          <node concept="3SKdUq" id="59lhIkIGtgm" role="3SKWNk">
-            <property role="3SKdUp" value="(a) don't want to use deprecated MPSProject.getProjectFile()" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="59lhIkIGu9u" role="3cqZAp">
-          <node concept="3SKdUq" id="59lhIkIGu9w" role="3SKWNk">
-            <property role="3SKdUp" value="(b) don't want to know whether I need to take (grand-)parent of MPSProject's file to access project root" />
-          </node>
-        </node>
-        <node concept="3cpWs8" id="59lhIkIGhr8" role="3cqZAp">
-          <node concept="3cpWsn" id="59lhIkIGhr9" role="3cpWs9">
-            <property role="TrG5h" value="baseDir" />
-            <node concept="3uibUv" id="59lhIkIGhr2" role="1tU5fm">
+        <node concept="3cpWs8" id="4zGYUkQ43xJ" role="3cqZAp">
+          <node concept="3cpWsn" id="4zGYUkQ43xK" role="3cpWs9">
+            <property role="TrG5h" value="chosenDir" />
+            <node concept="3uibUv" id="4zGYUkQ43x$" role="1tU5fm">
               <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
             </node>
-            <node concept="2OqwBi" id="59lhIkIGhra" role="33vP2m">
-              <node concept="2OqwBi" id="59lhIkIGhrb" role="2Oq$k0">
-                <node concept="2OqwBi" id="59lhIkIGhrc" role="2Oq$k0">
-                  <node concept="2WthIp" id="59lhIkIGhrd" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="59lhIkIGhre" role="2OqNvi">
+            <node concept="2YIFZM" id="4zGYUkQ43xL" role="33vP2m">
+              <ref role="1Pybhc" to="3fkn:~FileChooser" resolve="FileChooser" />
+              <ref role="37wK5l" to="3fkn:~FileChooser.chooseFile(com.intellij.openapi.fileChooser.FileChooserDescriptor,com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vfs.VirtualFile" resolve="chooseFile" />
+              <node concept="2YIFZM" id="5jLviTUFvtC" role="37wK5m">
+                <ref role="1Pybhc" to="3fkn:~FileChooserDescriptorFactory" resolve="FileChooserDescriptorFactory" />
+                <ref role="37wK5l" to="3fkn:~FileChooserDescriptorFactory.createSingleFolderDescriptor():com.intellij.openapi.fileChooser.FileChooserDescriptor" resolve="createSingleFolderDescriptor" />
+              </node>
+              <node concept="2OqwBi" id="4zGYUkQ43xN" role="37wK5m">
+                <node concept="2OqwBi" id="4zGYUkQ43xO" role="2Oq$k0">
+                  <node concept="2WthIp" id="4zGYUkQ43xP" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="4zGYUkQ43xQ" role="2OqNvi">
                     <ref role="2WH_rO" node="59D800tX0PI" resolve="project" />
                   </node>
                 </node>
-                <node concept="liA8E" id="59lhIkIGhrf" role="2OqNvi">
+                <node concept="liA8E" id="4zGYUkQ43xR" role="2OqNvi">
                   <ref role="37wK5l" to="z1c5:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                 </node>
               </node>
-              <node concept="liA8E" id="59lhIkIGhrg" role="2OqNvi">
-                <ref role="37wK5l" to="4nm9:~Project.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7o2AF0ojduG" role="3cqZAp">
-          <node concept="3cpWsn" id="7o2AF0ojduH" role="3cpWs9">
-            <property role="TrG5h" value="projectFolder" />
-            <node concept="3uibUv" id="7o2AF0ojduI" role="1tU5fm">
-              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-            </node>
-            <node concept="3K4zz7" id="59lhIkIGnrz" role="33vP2m">
-              <node concept="10Nm6u" id="59lhIkIGnyS" role="3K4E3e" />
-              <node concept="2YIFZM" id="59lhIkIGoRK" role="3K4GZi">
-                <ref role="37wK5l" to="4hrd:~VirtualFileUtils.toIFile(com.intellij.openapi.vfs.VirtualFile):jetbrains.mps.vfs.IFile" resolve="toIFile" />
-                <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
-                <node concept="37vLTw" id="59lhIkIGoZs" role="37wK5m">
-                  <ref role="3cqZAo" node="59lhIkIGhr9" resolve="baseDir" />
-                </node>
-              </node>
-              <node concept="3clFbC" id="59lhIkIGn6$" role="3K4Cdx">
-                <node concept="10Nm6u" id="59lhIkIGnh0" role="3uHU7w" />
-                <node concept="37vLTw" id="59lhIkIGmH1" role="3uHU7B">
-                  <ref role="3cqZAo" node="59lhIkIGhr9" resolve="baseDir" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="7o2AF0ojduX" role="3cqZAp">
-          <node concept="3clFbS" id="7o2AF0ojduY" role="3clFbx">
-            <node concept="3clFbF" id="1nhYb0FOxHZ" role="3cqZAp">
-              <node concept="2OqwBi" id="1nhYb0FOxI0" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagTzyC" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1nhYb0FOxHF" resolve="chooser" />
-                </node>
-                <node concept="liA8E" id="1nhYb0FOxI2" role="2OqNvi">
-                  <ref role="37wK5l" to="etl3:~TreeFileChooser.setInitialFile(jetbrains.mps.vfs.IFile):void" resolve="setInitialFile" />
-                  <node concept="37vLTw" id="3GM_nagTr4i" role="37wK5m">
-                    <ref role="3cqZAo" node="7o2AF0ojduH" resolve="projectFolder" />
+              <node concept="2OqwBi" id="4zGYUkQ43xS" role="37wK5m">
+                <node concept="2OqwBi" id="4zGYUkQ43xT" role="2Oq$k0">
+                  <node concept="2OqwBi" id="4zGYUkQ43xU" role="2Oq$k0">
+                    <node concept="2WthIp" id="4zGYUkQ43xV" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="4zGYUkQ43xW" role="2OqNvi">
+                      <ref role="2WH_rO" node="59D800tX0PI" resolve="project" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="4zGYUkQ43xX" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c5:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                   </node>
                 </node>
+                <node concept="liA8E" id="4zGYUkQ43xY" role="2OqNvi">
+                  <ref role="37wK5l" to="4nm9:~Project.getBaseDir():com.intellij.openapi.vfs.VirtualFile" resolve="getBaseDir" />
+                </node>
               </node>
             </node>
           </node>
-          <node concept="3y3z36" id="7o2AF0ojdvm" role="3clFbw">
-            <node concept="10Nm6u" id="7o2AF0ojdvp" role="3uHU7w" />
-            <node concept="37vLTw" id="3GM_nagTyh5" role="3uHU7B">
-              <ref role="3cqZAo" node="7o2AF0ojduH" resolve="projectFolder" />
+        </node>
+        <node concept="3clFbJ" id="4zGYUkQ4585" role="3cqZAp">
+          <node concept="3clFbS" id="4zGYUkQ4587" role="3clFbx">
+            <node concept="3cpWs6" id="4zGYUkQ46Lx" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="4zGYUkQ46cT" role="3clFbw">
+            <node concept="10Nm6u" id="4zGYUkQ46CC" role="3uHU7w" />
+            <node concept="37vLTw" id="4zGYUkQ45zb" role="3uHU7B">
+              <ref role="3cqZAo" node="4zGYUkQ43xK" resolve="chosenDir" />
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="4zGYUkQ3aQm" role="3cqZAp" />
         <node concept="3cpWs8" id="1nhYb0FOxI9" role="3cqZAp">
           <node concept="3cpWsn" id="1nhYb0FOxIa" role="3cpWs9">
             <property role="TrG5h" value="dir" />
             <node concept="3uibUv" id="1nhYb0FOxIb" role="1tU5fm">
               <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
             </node>
-            <node concept="2OqwBi" id="1nhYb0FOxIc" role="33vP2m">
-              <node concept="37vLTw" id="3GM_nagTxht" role="2Oq$k0">
-                <ref role="3cqZAo" node="1nhYb0FOxHF" resolve="chooser" />
-              </node>
-              <node concept="liA8E" id="1nhYb0FOxIe" role="2OqNvi">
-                <ref role="37wK5l" to="etl3:~TreeFileChooser.showDialog(java.awt.Frame):jetbrains.mps.vfs.IFile" resolve="showDialog" />
-                <node concept="2OqwBi" id="7o2AF0ojdvU" role="37wK5m">
-                  <node concept="2WthIp" id="7o2AF0ojdvV" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="7o2AF0ojdvW" role="2OqNvi">
-                    <ref role="2WH_rO" node="7o2AF0oiZgf" resolve="frame" />
-                  </node>
-                </node>
+            <node concept="2YIFZM" id="4zGYUkQ48MD" role="33vP2m">
+              <ref role="37wK5l" to="4hrd:~VirtualFileUtils.toIFile(com.intellij.openapi.vfs.VirtualFile):jetbrains.mps.vfs.IFile" resolve="toIFile" />
+              <ref role="1Pybhc" to="4hrd:~VirtualFileUtils" resolve="VirtualFileUtils" />
+              <node concept="37vLTw" id="4zGYUkQ495V" role="37wK5m">
+                <ref role="3cqZAo" node="4zGYUkQ43xK" resolve="chosenDir" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3clFbJ" id="1nhYb0FOxIg" role="3cqZAp">
-          <node concept="22lmx$" id="7o2AF0ojf4H" role="3clFbw">
-            <node concept="3fqX7Q" id="7o2AF0ojf4K" role="3uHU7w">
-              <node concept="2OqwBi" id="7o2AF0ojf57" role="3fr31v">
-                <node concept="37vLTw" id="3GM_nagTrrj" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1nhYb0FOxIa" resolve="dir" />
-                </node>
-                <node concept="liA8E" id="7o2AF0ojf5d" role="2OqNvi">
-                  <ref role="37wK5l" to="3ju5:~IFile.isDirectory():boolean" resolve="isDirectory" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbC" id="1nhYb0FOxIh" role="3uHU7B">
-              <node concept="37vLTw" id="3GM_nagTsSv" role="3uHU7B">
-                <ref role="3cqZAo" node="1nhYb0FOxIa" resolve="dir" />
-              </node>
-              <node concept="10Nm6u" id="1nhYb0FOxIj" role="3uHU7w" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="1nhYb0FOxIk" role="3clFbx">
-            <node concept="3cpWs6" id="1nhYb0FOxIl" role="3cqZAp" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="7o2AF0ojf3d" role="3cqZAp" />
         <node concept="3cpWs8" id="59D800tX7K0" role="3cqZAp">
           <node concept="3cpWsn" id="59D800tX7K1" role="3cpWs9">
             <property role="TrG5h" value="modelAccess" />
@@ -1203,11 +1115,6 @@
         <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
       </node>
       <node concept="1oajcY" id="6182LeIwyBN" role="1oa70y" />
-    </node>
-    <node concept="1DS2jV" id="7o2AF0oiZgf" role="1NuT2Z">
-      <property role="TrG5h" value="frame" />
-      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.FRAME" resolve="FRAME" />
-      <node concept="1oajcY" id="4$Favkc8Oou" role="1oa70y" />
     </node>
     <node concept="1DS2jV" id="59D800tX0PI" role="1NuT2Z">
       <property role="TrG5h" value="project" />

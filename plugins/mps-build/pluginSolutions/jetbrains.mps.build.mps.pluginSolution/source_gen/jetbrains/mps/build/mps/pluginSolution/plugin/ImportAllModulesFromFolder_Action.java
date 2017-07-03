@@ -12,11 +12,11 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -55,13 +55,6 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
       }
     }
     {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
       MapSequence.fromMap(_params).put("project", p);
       if (p == null) {
@@ -72,21 +65,12 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    TreeFileChooser chooser = new TreeFileChooser();
-    chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-    // Resort to IDEA Project's file due to: 
-    // (a) don't want to use deprecated MPSProject.getProjectFile() 
-    // (b) don't want to know whether I need to take (grand-)parent of MPSProject's file to access project root 
-    VirtualFile baseDir = ((MPSProject) MapSequence.fromMap(_params).get("project")).getProject().getBaseDir();
-    IFile projectFolder = (baseDir == null ? null : VirtualFileUtils.toIFile(baseDir));
-    if (projectFolder != null) {
-      chooser.setInitialFile(projectFolder);
-    }
-    final IFile dir = chooser.showDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
-    if (dir == null || !(dir.isDirectory())) {
+    VirtualFile chosenDir = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), ((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((MPSProject) MapSequence.fromMap(_params).get("project")).getProject().getBaseDir());
+    if (chosenDir == null) {
       return;
     }
 
+    final IFile dir = VirtualFileUtils.toIFile(chosenDir);
     ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
     modelAccess.executeCommandInEDT(new Runnable() {
       public void run() {
