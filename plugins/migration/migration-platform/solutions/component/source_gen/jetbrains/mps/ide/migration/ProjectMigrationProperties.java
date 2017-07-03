@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.ArrayList;
 
-@State(name = "MigrationProperties", storages = @Storage(value = "migraiton.xml")
+@State(name = "MigrationProperties", storages = @Storage(value = "migration.xml")
 )
 public class ProjectMigrationProperties implements MigrationProperties, ProjectComponent, PersistentStateComponent<Element> {
   private static final String NAME = "key";
