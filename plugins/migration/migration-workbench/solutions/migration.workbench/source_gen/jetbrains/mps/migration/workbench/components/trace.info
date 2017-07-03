@@ -30,9 +30,9 @@
       <node id="4141068403138593808" at="70,61,71,23" concept="1" />
       <node id="4141068403138593815" at="73,7,74,31" concept="1" />
       <node id="4141068403138593820" at="74,31,75,83" concept="1" />
-      <node id="1697163102215625484" at="78,63,79,56" concept="5" />
-      <node id="5785495490417445988" at="83,57,84,58" concept="6" />
-      <node id="1697163102215652846" at="89,49,90,19" concept="1" />
+      <node id="1697163102215625484" at="78,63,79,49" concept="5" />
+      <node id="5785495490417445988" at="83,50,84,38" concept="6" />
+      <node id="1697163102215652846" at="89,42,90,19" concept="1" />
       <node id="1125969196844503718" at="92,7,93,48" concept="1" />
       <node id="4141068403138889147" at="96,55,97,29" concept="5" />
       <node id="4141068403138889155" at="98,29,99,80" concept="6" />
@@ -60,11 +60,11 @@
       <node id="4141068403138989458" at="39,0,44,0" concept="0" trace="WorkbenchMigrationProblemHandler#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/findusages/view/UsagesViewTool;Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerTool;)V" />
       <node id="4141068403138593781" at="61,0,66,0" concept="4" trace="close#()V" />
       <node id="4141068403138593802" at="68,91,73,7" concept="1" />
-      <node id="5785495490417442583" at="81,70,86,11" concept="6" />
+      <node id="5785495490417442583" at="81,57,86,11" concept="6" />
       <node id="4141068403138593772" at="59,0,66,6" concept="5" />
       <node id="5785495490417442007" at="81,0,88,0" concept="4" trace="translate#(Ljava/lang/String;)Ljava/lang/Iterable;" />
       <node id="4141068403138593730" at="45,58,54,7" concept="5" />
-      <node id="1697163102215644550" at="79,56,92,7" concept="1" />
+      <node id="1697163102215644550" at="79,49,92,7" concept="1" />
       <node id="4141068403138850585" at="78,0,95,0" concept="4" trace="showNodes#(Ljava/util/Map;)V" />
       <node id="4141068403138889144" at="96,0,113,0" concept="4" trace="issueByProblem#(Ljetbrains/mps/lang/migration/runtime/base/Problem;)Ljetbrains/mps/ide/modelchecker/platform/actions/ModelCheckerIssue;" />
       <node id="4141068403138593725" at="45,0,77,0" concept="4" trace="showProblems#(Ljava/util/Collection;)V" />
@@ -76,8 +76,8 @@
       <scope id="4141068403138593757" at="51,65,52,26" />
       <scope id="4141068403138593766" at="56,49,57,13" />
       <scope id="4141068403138593807" at="70,61,71,23" />
-      <scope id="5785495490417445394" at="83,57,84,58" />
-      <scope id="1697163102215652461" at="89,49,90,19" />
+      <scope id="5785495490417445394" at="83,50,84,38" />
+      <scope id="1697163102215652461" at="89,42,90,19" />
       <scope id="4141068403138889154" at="98,29,99,80" />
       <scope id="4141068403138889170" at="101,30,102,82" />
       <scope id="4141068403138889186" at="104,31,105,69" />
@@ -111,7 +111,7 @@
         <var name="usagesTool" id="4141068403139012901" />
       </scope>
       <scope id="4141068403138593781" at="61,0,66,0" />
-      <scope id="5785495490417442008" at="81,70,86,11" />
+      <scope id="5785495490417442008" at="81,57,86,11" />
       <scope id="5785495490417442007" at="81,0,88,0">
         <var name="k" id="5785495490417442007" />
       </scope>

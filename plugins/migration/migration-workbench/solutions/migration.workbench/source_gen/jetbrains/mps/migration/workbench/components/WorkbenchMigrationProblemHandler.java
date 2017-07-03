@@ -76,17 +76,17 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
   }
 
   public void showNodes(final Map<String, Set<SNode>> toShow) {
-    final SearchResults sr = new SearchResults<SNode>();
-    SetSequence.fromSet(MapSequence.fromMap(toShow).keySet()).translate(new ITranslator2<String, SearchResult<SNode>>() {
-      public Iterable<SearchResult<SNode>> translate(final String k) {
-        return SetSequence.fromSet(MapSequence.fromMap(toShow).get(k)).select(new ISelector<SNode, SearchResult<SNode>>() {
-          public SearchResult<SNode> select(SNode node) {
-            return new SearchResult<SNode>(node, node, k);
+    final SearchResults sr = new SearchResults();
+    SetSequence.fromSet(MapSequence.fromMap(toShow).keySet()).translate(new ITranslator2<String, SearchResult>() {
+      public Iterable<SearchResult> translate(String k) {
+        return SetSequence.fromSet(MapSequence.fromMap(toShow).get(k)).select(new ISelector<SNode, SearchResult>() {
+          public SearchResult select(SNode node) {
+            return new SearchResult();
           }
         });
       }
-    }).visitAll(new IVisitor<SearchResult<SNode>>() {
-      public void visit(SearchResult<SNode> it) {
+    }).visitAll(new IVisitor<SearchResult>() {
+      public void visit(SearchResult it) {
         sr.add(it);
       }
     });

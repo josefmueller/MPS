@@ -26,6 +26,7 @@
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
+    <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -41,6 +42,9 @@
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="2820489544401957797" name="jetbrains.mps.baseLanguage.structure.DefaultClassCreator" flags="nn" index="HV5vD">
+        <reference id="2820489544401957798" name="classifier" index="HV5vE" />
       </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
@@ -197,11 +201,15 @@
         <child id="1197683475734" name="valueType" index="3rvSg0" />
       </concept>
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
+      <concept id="7125221305512719026" name="jetbrains.mps.baseLanguage.collections.structure.CollectionType" flags="in" index="3vKaQO" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
       <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" flags="nn" index="3EllGN">
         <child id="1197932505799" name="map" index="3ElQJh" />
         <child id="1197932525128" name="key" index="3ElVtu" />
+      </concept>
+      <concept id="5686963296372573083" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" flags="in" index="3O5elB">
+        <child id="5686963296372573084" name="elementType" index="3O5elw" />
       </concept>
     </language>
   </registry>
@@ -510,9 +518,8 @@
       <node concept="3cqZAl" id="3_S1WmRESeZ" role="3clF45" />
       <node concept="37vLTG" id="3_S1WmRESgA" role="3clF46">
         <property role="TrG5h" value="problems" />
-        <node concept="3uibUv" id="3_S1WmRF2oi" role="1tU5fm">
-          <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
-          <node concept="3uibUv" id="3_S1WmRF2oj" role="11_B2D">
+        <node concept="3vKaQO" id="5ZODdE2wUB4" role="1tU5fm">
+          <node concept="3uibUv" id="5ZODdE2wUB6" role="3O5elw">
             <ref role="3uigEE" to="6f4m:3n7MNzO_IjP" resolve="Problem" />
           </node>
         </node>
@@ -528,13 +535,12 @@
         <node concept="3cpWs8" id="1udyd_Tt_Gc" role="3cqZAp">
           <node concept="3cpWsn" id="1udyd_Tt_Gd" role="3cpWs9">
             <property role="TrG5h" value="sr" />
-            <node concept="3uibUv" id="1udyd_Tt_Ge" role="1tU5fm">
-              <ref role="3uigEE" to="g4jo:J2bOg02HbG" resolve="SearchResults" />
+            <node concept="3uibUv" id="5ZODdE2xBnj" role="1tU5fm">
+              <ref role="3uigEE" to="9erk:~SearchResults" resolve="SearchResults" />
             </node>
             <node concept="2ShNRf" id="1udyd_TtAk8" role="33vP2m">
-              <node concept="1pGfFk" id="1udyd_TtAk6" role="2ShVmc">
-                <ref role="37wK5l" to="g4jo:J2bOg02HbW" resolve="SearchResults" />
-                <node concept="3Tqbb2" id="1udyd_TtAk7" role="1pMfVU" />
+              <node concept="HV5vD" id="5ZODdE2xD9h" role="2ShVmc">
+                <ref role="HV5vE" to="9erk:~SearchResults" resolve="SearchResults" />
               </node>
             </node>
           </node>
@@ -566,20 +572,8 @@
                             <node concept="3clFbS" id="51adnVzXcCi" role="1bW5cS">
                               <node concept="3clFbF" id="51adnVzXcL$" role="3cqZAp">
                                 <node concept="2ShNRf" id="5$zfhXztBbU" role="3clFbG">
-                                  <node concept="1pGfFk" id="5$zfhXztBbV" role="2ShVmc">
-                                    <ref role="37wK5l" to="g4jo:J2bOg02GIO" resolve="SearchResult" />
-                                    <node concept="37vLTw" id="1udyd_TtFbl" role="37wK5m">
-                                      <ref role="3cqZAo" node="51adnVzXcCj" resolve="node" />
-                                    </node>
-                                    <node concept="37vLTw" id="51adnVzXdSb" role="37wK5m">
-                                      <ref role="3cqZAo" node="51adnVzXcCj" resolve="node" />
-                                    </node>
-                                    <node concept="37vLTw" id="3_S1WmRFdlP" role="37wK5m">
-                                      <ref role="3cqZAo" node="51adnVzXbNp" resolve="k" />
-                                    </node>
-                                    <node concept="3uibUv" id="1udyd_TtEI0" role="1pMfVU">
-                                      <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
-                                    </node>
+                                  <node concept="HV5vD" id="5ZODdE2xDvU" role="2ShVmc">
+                                    <ref role="HV5vE" to="9erk:~SearchResult" resolve="SearchResult" />
                                   </node>
                                 </node>
                               </node>
@@ -609,7 +603,7 @@
                         <ref role="3cqZAo" node="1udyd_Tt_Gd" resolve="sr" />
                       </node>
                       <node concept="liA8E" id="1udyd_TtGUJ" role="2OqNvi">
-                        <ref role="37wK5l" to="g4jo:73Fgxppsozx" resolve="add" />
+                        <ref role="37wK5l" to="9erk:~SearchResults.add(jetbrains.mps.ide.findusages.model.SearchResult):void" resolve="add" />
                         <node concept="37vLTw" id="1udyd_TtHcS" role="37wK5m">
                           <ref role="3cqZAo" node="1udyd_TtGhI" resolve="it" />
                         </node>
