@@ -16,14 +16,16 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.Reference;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -33,8 +35,8 @@ import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.RunnerBuilder;
 
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -44,15 +46,18 @@ import java.util.List;
  */
 
 public class IdeaPluginTestRunner extends Suite {
+  @NonNls
+  private static final String MODULE_NAMES_PROPERTY = "mps.test.module.names";
+  @NonNls
+  private static final String MODEL_NAMES_PROPERTY = "mps.test.model.references";
+  @NonNls
+  private static final ModuleId LANG_TEST_RUNTIME = ModuleId.fromString("707c4fde-f79a-44b5-b3d7-b5cef8844ccf");
 
   public IdeaPluginTestRunner(Class<?> klass, RunnerBuilder builder) throws InitializationError {
     super(klass, getRunners(klass, builder));
   }
 
   private static List<Runner> getRunners(Class<?> klass, RunnerBuilder builder) throws InitializationError {
-    String moduleID = "7597197a-bad8-4672-9806-215a3efe8740";
-    String modelID = "r:f429894b-858b-4e34-87ae-2cfe2a061928";
-
     List<Runner> result = new ArrayList<>();
     MPSTestFixture mpsFixture = MPSTestFixtureFactory.getFixtureFactory().createMPSFixture(klass.getName());
     try {
@@ -63,23 +68,13 @@ public class IdeaPluginTestRunner extends Suite {
       mpsFixture.getModelAccess().executeCommandInEDT(() -> {
         Iterator<ModelRoot> modelRootsIterator = mpsFixture.getMpsFacet().getSolution().getModelRoots().iterator();
         DefaultModelRoot modelRoot = (DefaultModelRoot) modelRootsIterator.next();
-
-        MPSProject mpsProject = ProjectHelper.fromIdeaProject(mpsFixture.getProject());
-
-        SRepository repository = mpsFixture.getRepository();
-        ReloadableModule moduleWithTests = (ReloadableModule) repository.getModule(ModuleId.fromString(moduleID));
-        SModel modelWithTests = moduleWithTests.getModel(PersistenceFacade.getInstance().createModelId(modelID));
-        for (SNode root : modelWithTests.getRootNodes()) {
-          if ("EditorTestCase".equals(root.getConcept().getName())) {
-            try {
-              Class<?> cls = moduleWithTests.getOwnClass(modelWithTests.getName().getLongName() + "." + root.getName() + "_Test");
-              result.add(createEditorTestRunner(cls, repository, root, modelRoot, mpsProject));
-            } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-              error.set(e);
-            }
-          }
+        try {
+          result.addAll(loadTestRunners(mpsFixture.getRepository(), modelRoot, (MPSProject) mpsFixture.getMPSProject()));
+        } catch (Exception e) {
+          error.set(e);
         }
       });
+      // Flushing EDT here to actually run executeCommandInEDT() from above
       mpsFixture.flushEDT();
       if (!error.isNull()) {
         throw error.get();
@@ -92,10 +87,72 @@ public class IdeaPluginTestRunner extends Suite {
     return result;
   }
 
-  private static Runner createEditorTestRunner(Class<?> cls, SRepository repository, SNode root, DefaultModelRoot modelRoot, MPSProject mpsProject) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-    ReloadableModule runtimeModule = (ReloadableModule) repository.getModule(ModuleId.fromString("707c4fde-f79a-44b5-b3d7-b5cef8844ccf"));
+  private static List<Runner> loadTestRunners(SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject) throws Exception {
+    String modelNames = System.getProperty(MODEL_NAMES_PROPERTY);
+    if (modelNames != null) {
+      return loadTestClassesFromModels(repository, modelRoot, mpsProject, modelNames);
+    }
+    String moduleNames = System.getProperty(MODULE_NAMES_PROPERTY);
+    if (moduleNames != null) {
+      return loadTestClassesFromModules(repository, modelRoot, mpsProject, moduleNames);
+    }
+    return Collections.emptyList();
+  }
+
+  private static List<Runner> loadTestClassesFromModules(SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject, String moduleNames) throws Exception {
+    List<Runner> result = new ArrayList<>();
+    for (String nextModuleName : moduleNames.split(";")) {
+      ReloadableModule module = findModule(repository, nextModuleName);
+      if (module == null) {
+        continue;
+      }
+      for (SModel model : module.getModels()) {
+        for (SNode root : model.getRootNodes()) {
+          if (isEditorTestCase(root)) {
+            result.add(createEditorTestRunner(root, model, module, repository, modelRoot, mpsProject));
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  private static Runner createEditorTestRunner(SNode root, SModel sModel, ReloadableModule module, SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject) throws Exception {
+    Class<?> cls = module.getOwnClass(sModel.getName().getLongName() + "." + root.getName() + "_Test"); //NON-NLS
+    ReloadableModule runtimeModule = (ReloadableModule) repository.getModule(LANG_TEST_RUNTIME);
     Class<?> runnerClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.BaseTransformationTestJUnitRunnerForPlugin");
     Constructor<?> constructor = runnerClass.getConstructor(Class.class, SNode.class, DefaultModelRoot.class, MPSProject.class);
     return (Runner) constructor.newInstance(cls, root, modelRoot, mpsProject);
+  }
+
+  private static List<Runner> loadTestClassesFromModels(SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject, String modelNames) throws Exception {
+    List<Runner> result = new ArrayList<>();
+    String[] modelRefs = modelNames.split(";");
+    for (String modelRef : modelRefs) {
+      SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelRef);
+      SModel model = modelReference.resolve(repository);
+      if (model != null && model.getModule() instanceof ReloadableModule) {
+        ReloadableModule module = (ReloadableModule) model.getModule();
+        for (SNode root : model.getRootNodes()) {
+          if (isEditorTestCase(root)) {
+            result.add(createEditorTestRunner(root, model, module, repository, modelRoot, mpsProject));
+          }
+        }
+      }
+    }
+    return result;
+  }
+
+  private static boolean isEditorTestCase(SNode root) {
+    return "EditorTestCase".equals(root.getConcept().getName()); //NON-NLS
+  }
+
+  private static ReloadableModule findModule(SRepository repository, String moduleName) {
+    for (SModule sModule : repository.getModules()) {
+      if (moduleName.equals(sModule.getModuleName()) && sModule instanceof ReloadableModule) {
+        return (ReloadableModule) sModule;
+      }
+    }
+    return null;
   }
 }
