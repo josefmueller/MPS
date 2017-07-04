@@ -310,10 +310,10 @@
     <projectService serviceInterface="com.intellij.usages.UsageViewManager"
                     serviceImplementation="com.intellij.usages.impl.UsageViewManagerImpl"/>
 
-    <!--
     <projectService serviceInterface="com.intellij.analysis.AnalysisUIOptions"
                     serviceImplementation="com.intellij.analysis.AnalysisUIOptions"/>
 
+    <!--
     <projectService serviceInterface="com.intellij.ide.util.gotoByName.ChooseByNameFactory"
                     serviceImplementation="com.intellij.ide.util.gotoByName.ChooseByNameFactoryImpl"/>
 
