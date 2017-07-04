@@ -16,17 +16,19 @@ import javax.swing.ListSelectionModel;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.AnActionButtonRunnable;
 import com.intellij.ui.AnActionButton;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.util.Condition;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.openapi.fileChooser.FileChooser;
 import jetbrains.mps.project.structure.project.ModulePath;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.uiDesigner.core.GridLayoutManager;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import javax.swing.AbstractListModel;
 import java.util.List;
 
@@ -62,11 +64,19 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     decorator.setAddAction(new AnActionButtonRunnable() {
       @Override
       public void run(AnActionButton button) {
-        final TreeFileChooser chooser = new TreeFileChooser();
-        chooser.setExtensionFileFilter(MPSExtentions.DOT_LANGUAGE, MPSExtentions.DOT_SOLUTION, MPSExtentions.DOT_LIBRARY, MPSExtentions.DOT_DEVKIT);
-        chooser.setInitialFile(VirtualFileUtils.toIFile(myProject.getProject().getBaseDir()));
+        FileChooserDescriptor descriptor = FileChooserDescriptorFactory.createSingleFileNoJarsDescriptor().withFileFilter(new Condition<VirtualFile>() {
+          private String[] EXTENTIONS = new String[]{MPSExtentions.LANGUAGE, MPSExtentions.SOLUTION, MPSExtentions.DEVKIT, "lib"};
+          public boolean value(final VirtualFile file) {
+            // TODO: create some method to get all extetions by object type (project, module, model) 
+            return Sequence.fromIterable(Sequence.fromArray(EXTENTIONS)).any(new IWhereFilter<String>() {
+              public boolean accept(String it) {
+                return it.equalsIgnoreCase(file.getExtension());
+              }
+            });
+          }
+        });
+        VirtualFile file = FileChooser.chooseFile(descriptor, list, myProject.getProject(), myProject.getProject().getBaseDir());
 
-        final IFile file = chooser.showDialog();
         if (file == null) {
           return;
         }
