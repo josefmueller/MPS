@@ -12,6 +12,8 @@ mps-java/META-INF/JavaPlatform.xml
 mps-vcs/lib
 mps-vcs/languages
 mps-vcs/META-INF/MPSVcs.xml
+mps-migration/lib
+mps-migration/META-INF
 sandbox
 tests/blProject/.idea/workspace.xml
 tests/psiProject/.idea/workspace.xml
