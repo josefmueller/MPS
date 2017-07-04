@@ -20,7 +20,10 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import jetbrains.mps.vfs.IFile;
 import java.io.File;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -72,14 +75,11 @@ public class NewGeneratorDialog extends DialogWrapper {
       @Override
       public void actionPerformed(ActionEvent e) {
         String oldPath = myTemplateModelsDir.getText();
-        TreeFileChooser chooser = new TreeFileChooser();
-        chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-        if (oldPath != null && oldPath.length() != 0) {
-          chooser.setInitialFile(myProjectFS.getFile(oldPath));
-        }
-        IFile result = chooser.showDialog();
+
+        VirtualFile result = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFolderDescriptor(), myContenetPane, myProject.getProject(), LocalFileSystem.getInstance().findFileByPath(oldPath));
+
         if (result != null) {
-          myTemplateModelsDir.setText(result.toPath().toString());
+          myTemplateModelsDir.setText(result.getPath());
         }
       }
     });

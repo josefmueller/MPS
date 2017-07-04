@@ -39,6 +39,8 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
+    <import index="3fkn" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.fileChooser(MPS.IDEA/)" />
+    <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" implicit="true" />
     <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" implicit="true" />
   </imports>
@@ -275,7 +277,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -4235,99 +4237,51 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="3cpWs8" id="1pyYjDPRauz" role="3cqZAp">
-                          <node concept="3cpWsn" id="1pyYjDPRau$" role="3cpWs9">
-                            <property role="TrG5h" value="chooser" />
-                            <node concept="3uibUv" id="1pyYjDPRau_" role="1tU5fm">
-                              <ref role="3uigEE" to="etl3:~TreeFileChooser" resolve="TreeFileChooser" />
+                        <node concept="3clFbH" id="5jLviTUEhiX" role="3cqZAp" />
+                        <node concept="3cpWs8" id="5jLviTUEc06" role="3cqZAp">
+                          <node concept="3cpWsn" id="5jLviTUEc07" role="3cpWs9">
+                            <property role="TrG5h" value="result" />
+                            <node concept="3uibUv" id="5jLviTUEbZX" role="1tU5fm">
+                              <ref role="3uigEE" to="jlff:~VirtualFile" resolve="VirtualFile" />
                             </node>
-                            <node concept="2ShNRf" id="1pyYjDPRauA" role="33vP2m">
-                              <node concept="1pGfFk" id="1pyYjDPRauB" role="2ShVmc">
-                                <ref role="37wK5l" to="etl3:~TreeFileChooser.&lt;init&gt;()" resolve="TreeFileChooser" />
+                            <node concept="2YIFZM" id="5jLviTUEc08" role="33vP2m">
+                              <ref role="1Pybhc" to="3fkn:~FileChooser" resolve="FileChooser" />
+                              <ref role="37wK5l" to="3fkn:~FileChooser.chooseFile(com.intellij.openapi.fileChooser.FileChooserDescriptor,java.awt.Component,com.intellij.openapi.project.Project,com.intellij.openapi.vfs.VirtualFile):com.intellij.openapi.vfs.VirtualFile" resolve="chooseFile" />
+                              <node concept="2YIFZM" id="5jLviTUE4an" role="37wK5m">
+                                <ref role="1Pybhc" to="3fkn:~FileChooserDescriptorFactory" resolve="FileChooserDescriptorFactory" />
+                                <ref role="37wK5l" to="3fkn:~FileChooserDescriptorFactory.createSingleFolderDescriptor():com.intellij.openapi.fileChooser.FileChooserDescriptor" resolve="createSingleFolderDescriptor" />
                               </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="1pyYjDPRauC" role="3cqZAp">
-                          <node concept="2OqwBi" id="1pyYjDPRauD" role="3clFbG">
-                            <node concept="37vLTw" id="3GM_nagT$$p" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1pyYjDPRau$" resolve="chooser" />
-                            </node>
-                            <node concept="liA8E" id="1pyYjDPRauF" role="2OqNvi">
-                              <ref role="37wK5l" to="etl3:~TreeFileChooser.setMode(int):void" resolve="setMode" />
-                              <node concept="10M0yZ" id="1pyYjDPRauG" role="37wK5m">
-                                <ref role="1PxDUh" to="etl3:~TreeFileChooser" resolve="TreeFileChooser" />
-                                <ref role="3cqZAo" to="etl3:~TreeFileChooser.MODE_DIRECTORIES" resolve="MODE_DIRECTORIES" />
+                              <node concept="37vLTw" id="5jLviTUEc0a" role="37wK5m">
+                                <ref role="3cqZAo" node="1pyYjDPRajH" resolve="myContenetPane" />
                               </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbJ" id="1pyYjDPRauH" role="3cqZAp">
-                          <node concept="1Wc70l" id="1pyYjDPRauI" role="3clFbw">
-                            <node concept="3y3z36" id="1pyYjDPRauJ" role="3uHU7B">
-                              <node concept="37vLTw" id="3GM_nagTBmF" role="3uHU7B">
-                                <ref role="3cqZAo" node="1pyYjDPRauu" resolve="oldPath" />
-                              </node>
-                              <node concept="10Nm6u" id="1pyYjDPRauL" role="3uHU7w" />
-                            </node>
-                            <node concept="3y3z36" id="1pyYjDPRauM" role="3uHU7w">
-                              <node concept="2OqwBi" id="1pyYjDPRauN" role="3uHU7B">
-                                <node concept="37vLTw" id="3GM_nagT$9q" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="1pyYjDPRauu" resolve="oldPath" />
+                              <node concept="2OqwBi" id="5jLviTUEc0b" role="37wK5m">
+                                <node concept="37vLTw" id="5jLviTUEc0c" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7vEL9RtbpOb" resolve="myProject" />
                                 </node>
-                                <node concept="liA8E" id="1pyYjDPRauP" role="2OqNvi">
-                                  <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
+                                <node concept="liA8E" id="5jLviTUEc0d" role="2OqNvi">
+                                  <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                                 </node>
                               </node>
-                              <node concept="3cmrfG" id="1pyYjDPRauQ" role="3uHU7w">
-                                <property role="3cmrfH" value="0" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbS" id="1pyYjDPRauR" role="3clFbx">
-                            <node concept="3clFbF" id="1pyYjDPRauS" role="3cqZAp">
-                              <node concept="2OqwBi" id="1pyYjDPRauT" role="3clFbG">
-                                <node concept="37vLTw" id="3GM_nagTBaY" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="1pyYjDPRau$" resolve="chooser" />
+                              <node concept="2OqwBi" id="5jLviTUEc0e" role="37wK5m">
+                                <node concept="2YIFZM" id="5jLviTUEc0f" role="2Oq$k0">
+                                  <ref role="37wK5l" to="jlff:~LocalFileSystem.getInstance():com.intellij.openapi.vfs.LocalFileSystem" resolve="getInstance" />
+                                  <ref role="1Pybhc" to="jlff:~LocalFileSystem" resolve="LocalFileSystem" />
                                 </node>
-                                <node concept="liA8E" id="1pyYjDPRauV" role="2OqNvi">
-                                  <ref role="37wK5l" to="etl3:~TreeFileChooser.setInitialFile(jetbrains.mps.vfs.IFile):void" resolve="setInitialFile" />
-                                  <node concept="2OqwBi" id="1pyYjDPRauW" role="37wK5m">
-                                    <node concept="37vLTw" id="eb0uW_jJHe" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="eb0uW_jEZW" resolve="myProjectFS" />
-                                    </node>
-                                    <node concept="liA8E" id="1pyYjDPRauY" role="2OqNvi">
-                                      <ref role="37wK5l" to="3ju5:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
-                                      <node concept="37vLTw" id="3GM_nagTz1t" role="37wK5m">
-                                        <ref role="3cqZAo" node="1pyYjDPRauu" resolve="oldPath" />
-                                      </node>
-                                    </node>
+                                <node concept="liA8E" id="5jLviTUEc0g" role="2OqNvi">
+                                  <ref role="37wK5l" to="jlff:~VirtualFileSystem.findFileByPath(java.lang.String):com.intellij.openapi.vfs.VirtualFile" resolve="findFileByPath" />
+                                  <node concept="37vLTw" id="5jLviTUEc0h" role="37wK5m">
+                                    <ref role="3cqZAo" node="1pyYjDPRauu" resolve="oldPath" />
                                   </node>
                                 </node>
                               </node>
                             </node>
                           </node>
                         </node>
-                        <node concept="3cpWs8" id="1pyYjDPRav0" role="3cqZAp">
-                          <node concept="3cpWsn" id="1pyYjDPRav1" role="3cpWs9">
-                            <property role="TrG5h" value="result" />
-                            <node concept="3uibUv" id="1pyYjDPRav2" role="1tU5fm">
-                              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-                            </node>
-                            <node concept="2OqwBi" id="1pyYjDPRav3" role="33vP2m">
-                              <node concept="37vLTw" id="3GM_nagTAfq" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1pyYjDPRau$" resolve="chooser" />
-                              </node>
-                              <node concept="liA8E" id="1pyYjDPRav5" role="2OqNvi">
-                                <ref role="37wK5l" to="etl3:~TreeFileChooser.showDialog():jetbrains.mps.vfs.IFile" resolve="showDialog" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
+                        <node concept="3clFbH" id="5jLviTUEhEd" role="3cqZAp" />
                         <node concept="3clFbJ" id="1pyYjDPRav6" role="3cqZAp">
                           <node concept="3y3z36" id="1pyYjDPRav7" role="3clFbw">
-                            <node concept="37vLTw" id="3GM_nagTrVC" role="3uHU7B">
-                              <ref role="3cqZAo" node="1pyYjDPRav1" resolve="result" />
+                            <node concept="37vLTw" id="5jLviTUEePI" role="3uHU7B">
+                              <ref role="3cqZAo" node="5jLviTUEc07" resolve="result" />
                             </node>
                             <node concept="10Nm6u" id="1pyYjDPRav9" role="3uHU7w" />
                           </node>
@@ -4339,17 +4293,12 @@
                                 </node>
                                 <node concept="liA8E" id="1pyYjDPRave" role="2OqNvi">
                                   <ref role="37wK5l" to="jkm4:~TextFieldWithBrowseButton.setText(java.lang.String):void" resolve="setText" />
-                                  <node concept="2OqwBi" id="58TyP8j_qew" role="37wK5m">
-                                    <node concept="2OqwBi" id="1pyYjDPRavf" role="2Oq$k0">
-                                      <node concept="37vLTw" id="3GM_nagTw42" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="1pyYjDPRav1" resolve="result" />
-                                      </node>
-                                      <node concept="liA8E" id="1pyYjDPRavh" role="2OqNvi">
-                                        <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.UniPath" resolve="toPath" />
-                                      </node>
+                                  <node concept="2OqwBi" id="1pyYjDPRavf" role="37wK5m">
+                                    <node concept="37vLTw" id="5jLviTUEeZg" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="5jLviTUEc07" resolve="result" />
                                     </node>
-                                    <node concept="liA8E" id="58TyP8j_rAR" role="2OqNvi">
-                                      <ref role="37wK5l" to="eurq:~UniPath.toString():java.lang.String" resolve="toString" />
+                                    <node concept="liA8E" id="1pyYjDPRavh" role="2OqNvi">
+                                      <ref role="37wK5l" to="jlff:~VirtualFile.getPath():java.lang.String" resolve="getPath" />
                                     </node>
                                   </node>
                                 </node>
