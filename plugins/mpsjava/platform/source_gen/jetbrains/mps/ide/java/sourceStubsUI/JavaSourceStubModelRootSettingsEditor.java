@@ -10,9 +10,11 @@ import javax.swing.JComponent;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.vfs.LocalFileSystem;
 
 public class JavaSourceStubModelRootSettingsEditor implements ModelRootSettingsEditor {
   private Project myProject;
@@ -32,18 +34,18 @@ public class JavaSourceStubModelRootSettingsEditor implements ModelRootSettingsE
   }
   @Override
   public JComponent getComponent() {
-    return new JButton(new AbstractAction("path") {
+    final JButton button = new JButton();
+    AbstractAction action = new AbstractAction("path") {
       @Override
       public void actionPerformed(ActionEvent p0) {
-        TreeFileChooser chooser = new TreeFileChooser();
-        chooser.setInitialFile(FileSystem.getInstance().getFileByPath(myPath));
-        chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
-        IFile dir = chooser.showDialog();
+        VirtualFile dir = FileChooser.chooseFile(FileChooserDescriptorFactory.createSingleFileDescriptor(), button, ((MPSProject) myProject).getProject(), LocalFileSystem.getInstance().findFileByPath(myPath));
         if (dir == null) {
           return;
         }
         myPath = dir.getPath();
       }
-    });
+    };
+    button.setAction(action);
+    return button;
   }
 }
