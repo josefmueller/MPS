@@ -15,12 +15,15 @@
  */
 package jetbrains.mps.ide.ui.filechoosers.treefilechooser;
 
+import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -33,6 +36,12 @@ import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * @deprecated use {@link FileChooser}, {@link FileChooserDescriptor} and {@link FileChooserDescriptorFactory} instead
+ */
+@Deprecated
+@ToRemove(version = 2017.2)
 public class TreeFileChooser {
   public static final int MODE_FILES = 1;
   public static final int MODE_DIRECTORIES = 2;
