@@ -18,18 +18,24 @@ package jetbrains.mps.workbench.recent;
 import com.intellij.ide.RecentProjectsManagerBase;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.components.RoamingType;
+import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.vfs.LocalFileSystem;
-import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.PathUtil;
+import com.intellij.util.SystemIndependent;
 import com.intellij.util.messages.MessageBus;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.File;
 
-@com.intellij.openapi.components.State(
-  name = "RecentMPSProjectsManager",
+
+/*
+* TODO: Find way to add to platform com.intellij.ide.RecentProjectsManagerImpl and use it.
+* Currently it is not possible because @State.name cannot be changed and we don't want to loose recent user projects
+*/
+@State(
+    name = "RecentMPSProjectsManager",
     storages = {
         @Storage(value = "recentProjects.xml", roamingType = RoamingType.DISABLED),
         @Storage(value = "other.xml", deprecated = true)
@@ -40,18 +46,18 @@ public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
     super(messageBus);
   }
 
-  @Override
   @Nullable
-  protected String getProjectPath(@NotNull Project project) {
-    return project.getPresentableUrl();
+  @Override
+  @SystemIndependent
+  protected  String getProjectPath(@NotNull Project project) {
+    return PathUtil.toSystemIndependentName(project.getPresentableUrl());
   }
 
   @Override
-  protected void doOpenProject(@NotNull String projectPath, Project projectToClose, boolean forceNewFrame) {
-    projectPath = FileUtil.toSystemIndependentName(projectPath);
-    final VirtualFile projectFile = LocalFileSystem.getInstance().findFileByPath(projectPath);
-    if (projectFile != null) {
-      ProjectUtil.openProject(projectPath, projectToClose, forceNewFrame);
+  protected void doOpenProject(@NotNull String projectPath, @Nullable com.intellij.openapi.project.Project projectToClose, boolean forceOpenInNewFrame) {
+    File projectFile = new File(projectPath); // Use simplest way to check file existence, no need to go with IDEA VFS here.
+    if (projectFile.exists()) {
+      ProjectUtil.openProject(projectPath, projectToClose, forceOpenInNewFrame);
     }
   }
 }

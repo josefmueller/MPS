@@ -24,7 +24,6 @@ import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.ex.FileChooserDialogImpl;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.build.SamplesExtractor;
@@ -60,7 +59,7 @@ public class OpenSampleProjectAction extends AnAction {
     if (result == null) {
       return;
     }
-    String filePath = FileUtil.toSystemIndependentName(result.getPath());
-    ProjectUtil.openProject(filePath, currentProject, false);
+
+    ProjectUtil.openProject(result.getPath(), currentProject, false);
   }
 }

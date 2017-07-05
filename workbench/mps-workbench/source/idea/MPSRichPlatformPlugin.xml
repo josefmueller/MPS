@@ -119,12 +119,13 @@
     <compiler.task execute="BEFORE" implementation="com.intellij.compiler.impl.JavaModuleIndexBuildTask"/>
 
     <gotoRelatedProvider implementation="com.intellij.testIntegration.GotoTestRelatedProvider"/>
-
     -->
+
+    <!--MPS Patch: see comment in jetbrains.mps.workbench.recent.RecentMPSProjectsManager-->
     <applicationService serviceInterface="com.intellij.ide.RecentProjectsManager"
                         serviceImplementation="jetbrains.mps.workbench.recent.RecentMPSProjectsManager"/>
-    <!--
 
+    <!--
     <applicationService serviceInterface="com.intellij.util.descriptors.ConfigFileFactory"
                         serviceImplementation="com.intellij.util.descriptors.impl.ConfigFileFactoryImpl"/>
 
