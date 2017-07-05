@@ -89,13 +89,14 @@ public class MPSConfigurationBean {
         for (String usedLanguage : myState.usedLanguages) {
           SModuleReference mref = PersistenceFacade.getInstance().createModuleReference(usedLanguage);
           usedLanguageReferences.add(mref);
-          languageVersions.put(MetaAdapterFactory.getLanguage(mref), 0); //0 is a default
         }
       }
       if (myState.languageVersions != null) {
         for (Entry<String, Integer> lv : myState.languageVersions.entrySet()) {
           languageVersions.put(SLanguageAdapter.deserialize(lv.getKey()), lv.getValue());
         }
+      }else{
+        myDescriptor.setHasLanguageVersions(false);
       }
       List<ModelRootDescriptor> roots = new ArrayList<>();
       fromPersistableState(roots);

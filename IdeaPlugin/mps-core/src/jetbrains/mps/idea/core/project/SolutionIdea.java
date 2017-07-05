@@ -52,20 +52,25 @@ import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.idea.core.project.stubs.MultipleSdkProblemNotifier;
 import jetbrains.mps.idea.core.psi.impl.PsiModelReloadListener;
 import jetbrains.mps.module.SDependencyImpl;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -79,9 +84,11 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -140,6 +147,30 @@ public class SolutionIdea extends Solution {
       ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).claimSdk(myModule);
     } catch (final DifferentSdkException e) {
       myModule.getProject().getComponent(MultipleSdkProblemNotifier.class).reportSdkProblem(myModule, e);
+    }
+  }
+
+  @Override
+  protected void reloadAfterDescriptorChange() {
+    super.reloadAfterDescriptorChange();
+    //this code should be removed when we are sure there are no modules without language version information persisted
+    //this code should be executed when all models are already there in the module to produce a correct list of used languages
+    if (!getModuleDescriptor().hasLanguageVersions()) {
+      SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(getUsedLanguages());
+      for (SLanguage lang : languageHierarchy.getExtended()) {
+        getModuleDescriptor().getLanguageVersions().put(lang, 0);
+      }
+
+      Set<SModule> visible = new LinkedHashSet<SModule>();
+      visible.add(this);
+      Collection<SModule> dependentModules = new GlobalModuleDependenciesManager(this).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
+      visible.addAll(dependentModules);
+      for (SModule dep : visible) {
+        getModuleDescriptor().getDependencyVersions().put(dep.getModuleReference(), 0);
+      }
+
+      getModuleDescriptor().setHasLanguageVersions(true);
+      setChanged();
     }
   }
 
