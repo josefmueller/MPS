@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.tests;
 
+import com.intellij.testFramework.fixtures.impl.CodeInsightTestFixtureImpl;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.MPSProject;
@@ -101,7 +102,7 @@ public class IdeaPluginTestRunner extends Suite {
 
   private static List<Runner> loadTestClassesFromModules(SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject, String moduleNames) throws Exception {
     List<Runner> result = new ArrayList<>();
-    for (String nextModuleName : moduleNames.split(";")) {
+    for (String nextModuleName : moduleNames.split(",")) {
       ReloadableModule module = findModule(repository, nextModuleName);
       if (module == null) {
         continue;
@@ -122,12 +123,14 @@ public class IdeaPluginTestRunner extends Suite {
     ReloadableModule runtimeModule = (ReloadableModule) repository.getModule(LANG_TEST_RUNTIME);
     Class<?> runnerClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.BaseTransformationTestJUnitRunnerForPlugin");
     Constructor<?> constructor = runnerClass.getConstructor(Class.class, SNode.class, DefaultModelRoot.class, MPSProject.class);
-    return (Runner) constructor.newInstance(cls, root, modelRoot, mpsProject);
+    Runner runner = (Runner) constructor.newInstance(cls, root, modelRoot, mpsProject);
+    CodeInsightTestFixtureImpl.ensureIndexesUpToDate(mpsProject.getProject());
+    return runner;
   }
 
   private static List<Runner> loadTestClassesFromModels(SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject, String modelNames) throws Exception {
     List<Runner> result = new ArrayList<>();
-    String[] modelRefs = modelNames.split(";");
+    String[] modelRefs = modelNames.split(",");
     for (String modelRef : modelRefs) {
       SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelRef);
       SModel model = modelReference.resolve(repository);

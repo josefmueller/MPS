@@ -47,6 +47,10 @@ public class IdeaModuleMPSSupport extends ModuleMPSSupport {
   public void fixImports(Module module, Collection<SModuleReference> addedLanguages) {
     ModifiableRootModel modModel = ModuleRootManager.getInstance(module).getModifiableModel();
     ModuleRuntimeLibrariesImporter.importForUsedLanguages(module, addedLanguages, modModel);
-    modModel.commit();
+    if (modModel.isChanged()) {
+      modModel.commit();
+    } else {
+      modModel.dispose();
+    }
   }
 }

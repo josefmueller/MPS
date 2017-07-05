@@ -285,7 +285,11 @@ public class SolutionIdea extends Solution {
     } else {
       ModuleRuntimeLibrariesImporter.importForUsedModules(myModule, Collections.singleton(moduleRef), modifiableModel);
     }
-    modifiableModel.commit();
+    if (modifiableModel.isChanged()) {
+      modifiableModel.commit();
+    } else {
+      modifiableModel.dispose();
+    }
     return null;
   }
 

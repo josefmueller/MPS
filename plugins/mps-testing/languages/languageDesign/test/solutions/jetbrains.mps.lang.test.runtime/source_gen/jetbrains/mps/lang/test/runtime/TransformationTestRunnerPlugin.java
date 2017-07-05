@@ -32,6 +32,7 @@ public class TransformationTestRunnerPlugin extends TransformationTestRunner {
       SModelName testModelName = new SModelName(originalTestModel.getName().getLongName(), myRoot.getName(), null);
       myModel = (EditableSModel) myModelRoot.createModel(testModelName.getLongName());
       new CloneUtil(originalTestModel, myModel).cloneModelWithAllImports();
+      myModel.save();
     }
     return myModel;
   }

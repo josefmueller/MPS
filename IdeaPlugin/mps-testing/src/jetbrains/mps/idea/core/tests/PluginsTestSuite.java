@@ -16,6 +16,9 @@
 
 package jetbrains.mps.idea.core.tests;
 
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 /**
@@ -24,4 +27,8 @@ import org.junit.runner.RunWith;
  */
 @RunWith(IdeaPluginTestRunner.class)
 public class PluginsTestSuite {
+  @BeforeClass
+  public static void setTestMode() {
+    RuntimeFlags.setTestMode(TestMode.USUAL);
+  }
 }
