@@ -32,7 +32,7 @@ public class Migrate_SCAPartsForSmartReferences extends MigrationScriptBase {
   }
   @Override
   public boolean isRerunnable() {
-    return false;
+    return true;
   }
   public SNode execute(final SModule m) {
     doExecute(m);

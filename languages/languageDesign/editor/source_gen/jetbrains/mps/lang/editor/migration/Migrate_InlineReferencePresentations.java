@@ -23,7 +23,7 @@ public class Migrate_InlineReferencePresentations extends MigrationScriptBase {
   }
   @Override
   public boolean isRerunnable() {
-    return false;
+    return true;
   }
   public SNode execute(final SModule m) {
     doExecute(m);
