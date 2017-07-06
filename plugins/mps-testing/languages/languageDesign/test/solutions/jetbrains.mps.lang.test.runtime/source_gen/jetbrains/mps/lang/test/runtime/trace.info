@@ -936,45 +936,43 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/3114899631597811051">
     <file name="BaseTransformationTestJUnitRunnerForPlugin.java">
-      <node id="1554190466631229308" at="14,0,15,0" concept="7" trace="myTestRunner" />
-      <node id="3114899631597947556" at="16,164,17,21" concept="17" />
-      <node id="1554190466631235282" at="17,21,18,84" concept="6" />
-      <node id="1554190466630841682" at="22,94,23,71" concept="11" />
-      <node id="1554190466630845974" at="23,71,24,180" concept="12" />
-      <node id="1554190466630879468" at="28,0,29,0" concept="7" trace="myTestObject" />
-      <node id="1554190466630899851" at="29,0,30,0" concept="7" trace="myTestStatement" />
-      <node id="1554190466630888220" at="31,92,32,32" concept="6" />
-      <node id="1554190466630904361" at="32,32,33,38" concept="6" />
-      <node id="1554190466631068663" at="37,45,38,47" concept="6" />
-      <node id="1554190466630911689" at="38,47,39,33" concept="6" />
-      <node id="3114899631597943665" at="16,0,20,0" concept="3" trace="BaseTransformationTestJUnitRunnerForPlugin#(Ljava/lang/Class;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/persistence/DefaultModelRoot;Ljetbrains/mps/project/MPSProject;)V" />
-      <node id="3114899631598166042" at="31,0,35,0" concept="3" trace="PatchTestStatement#(Lorg/junit/runners/model/Statement;Ljetbrains/mps/lang/test/runtime/BaseTransformationTest;)V" />
-      <node id="1554190466630454553" at="21,0,26,0" concept="10" trace="withAfters#(Lorg/junit/runners/model/FrameworkMethod;Ljava/lang/Object;Lorg/junit/runners/model/Statement;)Lorg/junit/runners/model/Statement;" />
-      <node id="3114899631597957158" at="36,0,41,0" concept="10" trace="evaluate#()V" />
-      <scope id="3114899631597943669" at="16,164,18,84" />
-      <scope id="1554190466630454563" at="22,94,24,180">
+      <node id="1554190466631229308" at="12,0,13,0" concept="7" trace="myTestRunner" />
+      <node id="3114899631597947556" at="14,120,15,21" concept="17" />
+      <node id="1554190466631235282" at="15,21,16,63" concept="6" />
+      <node id="1554190466630841682" at="20,94,21,71" concept="11" />
+      <node id="1554190466630845974" at="21,71,22,180" concept="12" />
+      <node id="1554190466630879468" at="26,0,27,0" concept="7" trace="myTestObject" />
+      <node id="1554190466630899851" at="27,0,28,0" concept="7" trace="myTestStatement" />
+      <node id="1554190466630888220" at="29,92,30,32" concept="6" />
+      <node id="1554190466630904361" at="30,32,31,38" concept="6" />
+      <node id="1554190466631068663" at="35,45,36,47" concept="6" />
+      <node id="1554190466630911689" at="36,47,37,33" concept="6" />
+      <node id="3114899631597943665" at="14,0,18,0" concept="3" trace="BaseTransformationTestJUnitRunnerForPlugin#(Ljava/lang/Class;Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="3114899631598166042" at="29,0,33,0" concept="3" trace="PatchTestStatement#(Lorg/junit/runners/model/Statement;Ljetbrains/mps/lang/test/runtime/BaseTransformationTest;)V" />
+      <node id="1554190466630454553" at="19,0,24,0" concept="10" trace="withAfters#(Lorg/junit/runners/model/FrameworkMethod;Ljava/lang/Object;Lorg/junit/runners/model/Statement;)Lorg/junit/runners/model/Statement;" />
+      <node id="3114899631597957158" at="34,0,39,0" concept="10" trace="evaluate#()V" />
+      <scope id="3114899631597943669" at="14,120,16,63" />
+      <scope id="1554190466630454563" at="20,94,22,180">
         <var name="withAfters" id="1554190466630841683" />
       </scope>
-      <scope id="3114899631598166046" at="31,92,33,38" />
-      <scope id="3114899631597957163" at="37,45,39,33" />
-      <scope id="3114899631597943665" at="16,0,20,0">
-        <var name="modelRoot" id="1554190466631083203" />
+      <scope id="3114899631598166046" at="29,92,31,38" />
+      <scope id="3114899631597957163" at="35,45,37,33" />
+      <scope id="3114899631597943665" at="14,0,18,0">
         <var name="project" id="1554190466631084163" />
         <var name="testClass" id="3114899631597944401" />
-        <var name="testRoot" id="1554190466631082246" />
       </scope>
-      <scope id="3114899631598166042" at="31,0,35,0">
+      <scope id="3114899631598166042" at="29,0,33,0">
         <var name="testObject" id="1554190466630834725" />
         <var name="testStatement" id="3114899631598166823" />
       </scope>
-      <scope id="1554190466630454553" at="21,0,26,0">
+      <scope id="1554190466630454553" at="19,0,24,0">
         <var name="method" id="1554190466630454557" />
         <var name="statement" id="1554190466630454561" />
         <var name="target" id="1554190466630454559" />
       </scope>
-      <scope id="3114899631597957158" at="36,0,41,0" />
-      <unit id="3114899631597952997" at="27,0,42,0" name="jetbrains.mps.lang.test.runtime.BaseTransformationTestJUnitRunnerForPlugin$PatchTestStatement" />
-      <unit id="3114899631597811051" at="13,0,43,0" name="jetbrains.mps.lang.test.runtime.BaseTransformationTestJUnitRunnerForPlugin" />
+      <scope id="3114899631597957158" at="34,0,39,0" />
+      <unit id="3114899631597952997" at="25,0,40,0" name="jetbrains.mps.lang.test.runtime.BaseTransformationTestJUnitRunnerForPlugin$PatchTestStatement" />
+      <unit id="3114899631597811051" at="11,0,41,0" name="jetbrains.mps.lang.test.runtime.BaseTransformationTestJUnitRunnerForPlugin" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/3740508248791186293">
@@ -1277,62 +1275,22 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/5894537866078577681">
     <file name="TransformationTestRunnerPlugin.java">
-      <node id="5894537866079030892" at="16,0,17,0" concept="7" trace="myRoot" />
-      <node id="5383868610684265002" at="17,0,18,0" concept="7" trace="myModel" />
-      <node id="5894537866079114686" at="18,0,19,0" concept="7" trace="myProject" />
-      <node id="5383868610684651406" at="19,0,20,0" concept="7" trace="myModelRoot" />
-      <node id="5894537866078674178" at="21,101,22,34" concept="17" />
-      <node id="5894537866079034429" at="22,34,23,18" concept="6" />
-      <node id="5383868610684660523" at="23,18,24,28" concept="6" />
-      <node id="5894537866079119446" at="24,28,25,24" concept="6" />
-      <node id="2588324627240679019" at="25,24,26,19" concept="6" />
-      <node id="636216465090104490" at="30,26,31,66" concept="11" />
-      <node id="5383868610684591353" at="31,66,32,115" concept="11" />
-      <node id="636216465089720788" at="32,115,33,86" concept="6" />
-      <node id="636216465089825996" at="33,86,34,75" concept="6" />
-      <node id="6938665049457555294" at="34,75,35,21" concept="6" />
-      <node id="5383868610684308833" at="36,5,37,19" concept="12" />
-      <node id="2588324627241055970" at="41,151,42,72" concept="13" />
-      <node id="5894537866079248524" at="46,152,47,83" concept="11" />
-      <node id="5894537866079272880" at="47,83,48,50" concept="11" />
-      <node id="5894537866079289200" at="48,50,49,68" concept="6" />
-      <node id="5894537866079327264" at="49,68,50,65" concept="6" />
-      <node id="5894537866079352968" at="50,65,51,57" concept="6" />
-      <node id="5894537866079044243" at="40,0,44,0" concept="10" trace="initTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;Ljava/lang/String;Ljava/lang/String;Z)V" />
-      <node id="5894537866078671699" at="21,0,28,0" concept="3" trace="TransformationTestRunnerPlugin#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/persistence/DefaultModelRoot;Ljetbrains/mps/project/MPSProject;)V" />
-      <node id="5383868610684295932" at="29,33,36,5" concept="9" />
-      <node id="5894537866079223131" at="45,0,53,0" concept="10" trace="runTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;Ljava/lang/String;Ljava/lang/String;Z)V" />
-      <node id="5383868610684287670" at="29,0,39,0" concept="10" trace="getTestModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <scope id="5894537866079044277" at="41,151,42,72" />
-      <scope id="5894537866079044243" at="40,0,44,0">
-        <var name="modelName" id="5894537866079044273" />
-        <var name="projectPath" id="5894537866079044270" />
-        <var name="reopenProject" id="5894537866079044275" />
-        <var name="test" id="5894537866079044267" />
-      </scope>
-      <scope id="5894537866078671703" at="21,101,26,19" />
-      <scope id="5383868610684295934" at="30,26,35,21">
-        <var name="originalTestModel" id="636216465090104491" />
-        <var name="testModelName" id="5383868610684591354" />
-      </scope>
-      <scope id="5894537866079223321" at="46,152,51,57">
-        <var name="testClass" id="5894537866079248525" />
-        <var name="testInstance" id="5894537866079272881" />
-      </scope>
-      <scope id="5894537866078671699" at="21,0,28,0">
-        <var name="modelRoot" id="5383868610684599708" />
+      <node id="5894537866079114686" at="9,0,10,0" concept="7" trace="myProject" />
+      <node id="5894537866078674178" at="11,61,12,34" concept="17" />
+      <node id="5894537866079119446" at="12,34,13,24" concept="6" />
+      <node id="8092755462992841271" at="17,84,18,21" concept="12" />
+      <node id="5894537866078671699" at="11,0,15,0" concept="3" trace="TransformationTestRunnerPlugin#(Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="8092755462992827614" at="16,0,20,0" concept="10" trace="openTestProject#(Ljava/lang/String;Z)Ljetbrains/mps/project/Project;" />
+      <scope id="8092755462992827674" at="17,84,18,21" />
+      <scope id="5894537866078671703" at="11,61,13,24" />
+      <scope id="5894537866078671699" at="11,0,15,0">
         <var name="project" id="5894537866079111643" />
-        <var name="root" id="5894537866078672194" />
       </scope>
-      <scope id="5383868610684287673" at="29,33,37,19" />
-      <scope id="5894537866079223131" at="45,0,53,0">
-        <var name="className" id="5894537866079223315" />
-        <var name="methodName" id="5894537866079223317" />
-        <var name="projectTest" id="5894537866079223132" />
-        <var name="runInCommand" id="5894537866079223319" />
+      <scope id="8092755462992827614" at="16,0,20,0">
+        <var name="projectPathName" id="8092755462992827617" />
+        <var name="reopenProject" id="8092755462992827619" />
       </scope>
-      <scope id="5383868610684287670" at="29,0,39,0" />
-      <unit id="5894537866078577681" at="15,0,54,0" name="jetbrains.mps.lang.test.runtime.TransformationTestRunnerPlugin" />
+      <unit id="5894537866078577681" at="8,0,21,0" name="jetbrains.mps.lang.test.runtime.TransformationTestRunnerPlugin" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)/591841948921320201">

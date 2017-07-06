@@ -18,7 +18,6 @@ package jetbrains.mps.idea.core.tests;
 
 import com.intellij.testFramework.fixtures.impl.CodeInsightTestFixtureImpl;
 import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.Reference;
@@ -27,8 +26,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.junit.runner.Runner;
 import org.junit.runners.Suite;
@@ -38,7 +35,6 @@ import org.junit.runners.model.RunnerBuilder;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -67,10 +63,8 @@ public class IdeaPluginTestRunner extends Suite {
 
       Reference<Throwable> error = new Reference<>();
       mpsFixture.getModelAccess().executeCommandInEDT(() -> {
-        Iterator<ModelRoot> modelRootsIterator = mpsFixture.getMpsFacet().getSolution().getModelRoots().iterator();
-        DefaultModelRoot modelRoot = (DefaultModelRoot) modelRootsIterator.next();
         try {
-          result.addAll(loadTestRunners(mpsFixture.getRepository(), modelRoot, (MPSProject) mpsFixture.getMPSProject()));
+          result.addAll(loadTestRunners((MPSProject) mpsFixture.getMPSProject()));
         } catch (Exception e) {
           error.set(e);
         }
@@ -88,29 +82,29 @@ public class IdeaPluginTestRunner extends Suite {
     return result;
   }
 
-  private static List<Runner> loadTestRunners(SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject) throws Exception {
+  private static List<Runner> loadTestRunners(MPSProject mpsProject) throws Exception {
     String modelNames = System.getProperty(MODEL_NAMES_PROPERTY);
     if (modelNames != null) {
-      return loadTestClassesFromModels(repository, modelRoot, mpsProject, modelNames);
+      return loadTestClassesFromModels(mpsProject, modelNames);
     }
     String moduleNames = System.getProperty(MODULE_NAMES_PROPERTY);
     if (moduleNames != null) {
-      return loadTestClassesFromModules(repository, modelRoot, mpsProject, moduleNames);
+      return loadTestClassesFromModules(mpsProject, moduleNames);
     }
     return Collections.emptyList();
   }
 
-  private static List<Runner> loadTestClassesFromModules(SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject, String moduleNames) throws Exception {
+  private static List<Runner> loadTestClassesFromModules(MPSProject mpsProject, String moduleNames) throws Exception {
     List<Runner> result = new ArrayList<>();
     for (String nextModuleName : moduleNames.split(",")) {
-      ReloadableModule module = findModule(repository, nextModuleName);
+      ReloadableModule module = findModule(mpsProject, nextModuleName);
       if (module == null) {
         continue;
       }
       for (SModel model : module.getModels()) {
         for (SNode root : model.getRootNodes()) {
           if (isEditorTestCase(root)) {
-            result.add(createEditorTestRunner(root, model, module, repository, modelRoot, mpsProject));
+            result.add(createEditorTestRunner(root, model, module, mpsProject));
           }
         }
       }
@@ -118,27 +112,27 @@ public class IdeaPluginTestRunner extends Suite {
     return result;
   }
 
-  private static Runner createEditorTestRunner(SNode root, SModel sModel, ReloadableModule module, SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject) throws Exception {
+  private static Runner createEditorTestRunner(SNode root, SModel sModel, ReloadableModule module, MPSProject mpsProject) throws Exception {
     Class<?> cls = module.getOwnClass(sModel.getName().getLongName() + "." + root.getName() + "_Test"); //NON-NLS
-    ReloadableModule runtimeModule = (ReloadableModule) repository.getModule(LANG_TEST_RUNTIME);
+    ReloadableModule runtimeModule = (ReloadableModule) mpsProject.getRepository().getModule(LANG_TEST_RUNTIME);
     Class<?> runnerClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.BaseTransformationTestJUnitRunnerForPlugin");
-    Constructor<?> constructor = runnerClass.getConstructor(Class.class, SNode.class, DefaultModelRoot.class, MPSProject.class);
-    Runner runner = (Runner) constructor.newInstance(cls, root, modelRoot, mpsProject);
+    Constructor<?> constructor = runnerClass.getConstructor(Class.class, MPSProject.class);
+    Runner runner = (Runner) constructor.newInstance(cls, mpsProject);
     CodeInsightTestFixtureImpl.ensureIndexesUpToDate(mpsProject.getProject());
     return runner;
   }
 
-  private static List<Runner> loadTestClassesFromModels(SRepository repository, DefaultModelRoot modelRoot, MPSProject mpsProject, String modelNames) throws Exception {
+  private static List<Runner> loadTestClassesFromModels(MPSProject mpsProject, String modelNames) throws Exception {
     List<Runner> result = new ArrayList<>();
     String[] modelRefs = modelNames.split(",");
     for (String modelRef : modelRefs) {
       SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(modelRef);
-      SModel model = modelReference.resolve(repository);
+      SModel model = modelReference.resolve(mpsProject.getRepository());
       if (model != null && model.getModule() instanceof ReloadableModule) {
         ReloadableModule module = (ReloadableModule) model.getModule();
         for (SNode root : model.getRootNodes()) {
           if (isEditorTestCase(root)) {
-            result.add(createEditorTestRunner(root, model, module, repository, modelRoot, mpsProject));
+            result.add(createEditorTestRunner(root, model, module, mpsProject));
           }
         }
       }
@@ -150,8 +144,8 @@ public class IdeaPluginTestRunner extends Suite {
     return "EditorTestCase".equals(root.getConcept().getName()); //NON-NLS
   }
 
-  private static ReloadableModule findModule(SRepository repository, String moduleName) {
-    for (SModule sModule : repository.getModules()) {
+  private static ReloadableModule findModule(MPSProject mpsProject, String moduleName) {
+    for (SModule sModule : mpsProject.getRepository().getModules()) {
       if (moduleName.equals(sModule.getModuleName()) && sModule instanceof ReloadableModule) {
         return (ReloadableModule) sModule;
       }
