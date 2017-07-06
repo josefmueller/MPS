@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class IntroduceSmartRefAttribute extends MigrationScriptBase {
   public String getCaption() {
-    return "IntroduceSmartRefAttribute";
+    return "Annotate 'smart reference' concepts";
   }
   @Override
   public boolean isRerunnable() {

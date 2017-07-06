@@ -49,7 +49,7 @@
   </root>
   <root nodeRef="r:33eabb60-7192-4d12-ba46-11dacf966b3e(jetbrains.mps.lang.structure.migration)/3160346131749731897">
     <file name="IntroduceSmartRefAttribute.java">
-      <node id="3160346131749731897" at="28,30,29,40" concept="7" />
+      <node id="3160346131749731897" at="28,30,29,49" concept="7" />
       <node id="3160346131749731897" at="32,33,33,16" concept="7" />
       <node id="3160346131749731897" at="35,41,36,17" concept="2" />
       <node id="3160346131749731897" at="36,17,37,16" concept="7" />
@@ -110,7 +110,7 @@
       <node id="3160346131749744211" at="48,0,83,7" concept="3" />
       <node id="3160346131749742365" at="39,42,84,5" concept="0" />
       <node id="3160346131749731897" at="39,0,86,0" concept="5" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <scope id="3160346131749731897" at="28,30,29,40" />
+      <scope id="3160346131749731897" at="28,30,29,49" />
       <scope id="3160346131749731897" at="32,33,33,16" />
       <scope id="3160346131749742365" at="43,52,44,23" />
       <scope id="7090642254708498832" at="51,270,52,19" />

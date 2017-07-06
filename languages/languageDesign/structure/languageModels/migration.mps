@@ -1499,9 +1499,12 @@
       <node concept="3Tm1VV" id="7F6fz3H$iVc" role="1B3o_S" />
       <node concept="10P_77" id="7F6fz3H$iVd" role="1tU5fm" />
     </node>
-    <node concept="3tTeZs" id="2JrNx06efT0" role="jymVt">
-      <property role="3tTeZt" value="&lt;description&gt;" />
-      <ref role="3tTeZr" to="slm6:1_lSsE3RFpE" resolve="description" />
+    <node concept="3tYpXE" id="2MdW64Ir$JJ" role="jymVt">
+      <property role="TrG5h" value="description" />
+      <property role="3tYpXF" value="Annotate 'smart reference' concepts" />
+      <ref role="25KYV2" to="slm6:1_lSsE3RFpE" resolve="description" />
+      <node concept="3Tm1VV" id="2MdW64Ir$JL" role="1B3o_S" />
+      <node concept="17QB3L" id="2MdW64Ir$JM" role="1tU5fm" />
     </node>
     <node concept="q3mfD" id="2JrNx06efT1" role="jymVt">
       <property role="TrG5h" value="execute" />
@@ -1646,11 +1649,11 @@
                                       <ref role="3cqZAo" node="2Bx95kmu8vw" resolve="role" />
                                     </node>
                                     <node concept="2OqwBi" id="2Bx95kmuhg1" role="3uHU7B">
-                                      <node concept="37vLTw" id="2Bx95kmuhg2" role="2Oq$k0">
-                                        <ref role="3cqZAo" node="2Bx95kmuhg4" resolve="it" />
-                                      </node>
                                       <node concept="3TrcHB" id="2Bx95kmuhg3" role="2OqNvi">
                                         <ref role="3TsBF5" to="tpce:fA0kJcN" resolve="role" />
+                                      </node>
+                                      <node concept="37vLTw" id="2Bx95kmuhg2" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="2Bx95kmuhg4" resolve="it" />
                                       </node>
                                     </node>
                                   </node>
