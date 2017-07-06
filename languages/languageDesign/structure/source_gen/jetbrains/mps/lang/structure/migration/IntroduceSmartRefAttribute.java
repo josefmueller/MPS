@@ -64,7 +64,7 @@ public class IntroduceSmartRefAttribute extends MigrationScriptBase {
           final String role = smartAliasMatcher.group(2);
           SNode characteristicLink = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getReferenceLinkDeclarations_idhEwILL0.invoke(conceptNode)).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_nopsft_a0a0a0a0a0a1a7a4a0a3(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), role);
+              return hasRole(it, role);
             }
           });
 
@@ -93,11 +93,18 @@ public class IntroduceSmartRefAttribute extends MigrationScriptBase {
   private Matcher getSmartAliasMatcher(String alias) {
     return SMART_ALIAS_PATTERN.matcher(alias);
   }
+
+  private boolean hasRole(SNode link, String role) {
+    if (eq_nopsft_a0a0l(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), role)) {
+      return true;
+    }
+    if ((SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) != null)) {
+      return hasRole(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")), role);
+    }
+    return false;
+  }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  }
-  private static boolean eq_nopsft_a0a0a0a0a0a1a7a4a0a3(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode createSmartReferenceAttribute_nopsft_a0f0d0h0c0a0g(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -111,5 +118,8 @@ public class IntroduceSmartRefAttribute extends MigrationScriptBase {
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b59L, "prefix"), p0 + "");
     n1.setProperty(MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b5cL, "suffix"), p1 + "");
     return n1;
+  }
+  private static boolean eq_nopsft_a0a0l(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
