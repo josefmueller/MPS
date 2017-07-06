@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import com.intellij.testFramework.fixtures.impl.CodeInsightTestFixtureImpl;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleId;
@@ -117,9 +116,7 @@ public class IdeaPluginTestRunner extends Suite {
     ReloadableModule runtimeModule = (ReloadableModule) mpsProject.getRepository().getModule(LANG_TEST_RUNTIME);
     Class<?> runnerClass = runtimeModule.getOwnClass("jetbrains.mps.lang.test.runtime.BaseTransformationTestJUnitRunnerForPlugin");
     Constructor<?> constructor = runnerClass.getConstructor(Class.class, MPSProject.class);
-    Runner runner = (Runner) constructor.newInstance(cls, mpsProject);
-    CodeInsightTestFixtureImpl.ensureIndexesUpToDate(mpsProject.getProject());
-    return runner;
+    return (Runner) constructor.newInstance(cls, mpsProject);
   }
 
   private static List<Runner> loadTestClassesFromModels(MPSProject mpsProject, String modelNames) throws Exception {
