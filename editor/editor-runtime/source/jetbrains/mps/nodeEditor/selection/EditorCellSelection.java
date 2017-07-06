@@ -235,7 +235,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
       return false;
     }
     EditorCell selectedCell = getEditorCell();
-    if (selectedCell.equals(cell)){
+    if (selectedCell.equals(cell)) {
       return true;
     }
     boolean isParent = CellTraversalUtil.isAncestor(selectedCell, cell);

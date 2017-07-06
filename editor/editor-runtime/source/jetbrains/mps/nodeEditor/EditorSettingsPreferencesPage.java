@@ -106,8 +106,8 @@ class EditorSettingsPreferencesPage implements Disposable {
     myFirstSelection.setSelected(true);
 
     panel.add(editorTabsRB,
-        new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
-            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+              new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+                                  GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel fontPropertiesPanel = new JPanel(new GridLayoutManager(5, 2, insets, gap, gap));
 
@@ -137,8 +137,8 @@ class EditorSettingsPreferencesPage implements Disposable {
     fontPropertiesPanel.add(myIndentSize, getEditorConstraint(4));
 
     panel.add(fontPropertiesPanel,
-        new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
-            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+              new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+                                  GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel checkboxes = new JPanel(new GridLayout(3, 1));
     myUseBraces = new JCheckBox(EditorSettingsBundle.message("checkbox.use.braces"));
@@ -156,23 +156,24 @@ class EditorSettingsPreferencesPage implements Disposable {
     myShowContextAssistant = new JCheckBox(EditorSettingsBundle.message("checkbox.context.assistant"));
     checkboxes.add(myShowContextAssistant);
 
-    myUseTwoStepDeletion = new JCheckBox(EditorSettingsBundle.message("use.two.step.backspace"));
+    myUseTwoStepDeletion = new JCheckBox(EditorSettingsBundle.message("checkbox.use.two.step.deletion"));
     checkboxes.add(myUseTwoStepDeletion);
 
     panel.add(checkboxes,
-        new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
-            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+              new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+                                  GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     JPanel caretBlinkingPanel = new JPanel(new HorizontalLayout(gap));
     caretBlinkingPanel.add(new JLabel(EditorSettingsBundle.message("label.caret.blinking")));
     myCaretBlinkPeriod =
         new JSpinner(
-            new SpinnerNumberModel(mySettings.getCaretBlinkPeriod(), EditorSettings.MIN_CARET_BLINK_PERIOD, EditorSettings.MAX_CARET_BLINK_PERIOD, 100));
+                        new SpinnerNumberModel(mySettings.getCaretBlinkPeriod(), EditorSettings.MIN_CARET_BLINK_PERIOD, EditorSettings.MAX_CARET_BLINK_PERIOD,
+                                               100));
     caretBlinkingPanel.add(myCaretBlinkPeriod);
 
     panel.add(caretBlinkingPanel,
-        new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
-            GridConstraints.SIZEPOLICY_FIXED, null, null, null));
+              new GridConstraints(3, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW,
+                                  GridConstraints.SIZEPOLICY_FIXED, null, null, null));
 
     myEditorSettingsPanel = new JPanel(new BorderLayout());
     myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
@@ -180,12 +181,12 @@ class EditorSettingsPreferencesPage implements Disposable {
 
   private GridConstraints getLabelConstraint(int row) {
     return new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED,
-        GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+                               GridConstraints.SIZEPOLICY_FIXED, null, null, null);
   }
 
   private GridConstraints getEditorConstraint(int row) {
     return new GridConstraints(row, 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL,
-        GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
+                               GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
   }
 
   public JComponent getComponent() {
@@ -259,7 +260,7 @@ class EditorSettingsPreferencesPage implements Disposable {
     boolean sameUseContextAssistant = myShowContextAssistant.isSelected() == mySettings.isShowContextAssistant();
 
     return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode && sameTwoStepBackspace
-        && sameAutoQuickFix && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs && sameUseContextAssistant);
+             && sameAutoQuickFix && sameFontSize && sameFontFamily && sameLineSpacing && sameBlinkingRate && sameTabs && sameUseContextAssistant);
   }
 
   public void reset() {

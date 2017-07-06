@@ -51,6 +51,7 @@ public class DeletionApproverUtil {
   public static boolean isApprovedForDeletion(@Nullable EditorContext context, @Nullable SNode node) {
     return isApprovedForDeletion(context, node, null);
   }
+
   public static boolean isApprovedForDeletion(@Nullable EditorContext context, @Nullable SNode node, @Nullable String cellId) {
     if (context == null || node == null) {
       return false;
@@ -70,7 +71,7 @@ public class DeletionApproverUtil {
   }
 
   private static EditorCell findChildCell(EditorCell nodeCell, String cellId) {
-    if (isSpecifiedById(nodeCell, cellId)){
+    if (isSpecifiedById(nodeCell, cellId)) {
       return nodeCell;
     }
     for (EditorCell cell : CellTraversalUtil.iterateTree(nodeCell, nodeCell, true).skipStart()) {
@@ -86,7 +87,7 @@ public class DeletionApproverUtil {
     // supporting this hidden notation for selecting property cells.
     // Now property cellIDs are prefixed with editor component name.
     if (requestedCellId.startsWith("*") && thisCellId != null && thisCellId.contains(requestedCellId.substring(1))) {
-        return true;
+      return true;
     }
     return thisCellId != null && thisCellId.equals(requestedCellId);
   }

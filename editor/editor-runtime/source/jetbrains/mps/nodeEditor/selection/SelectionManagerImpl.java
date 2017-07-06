@@ -275,7 +275,7 @@ public class SelectionManagerImpl implements SelectionManager {
   }
 
   private EditorCell_Label refineUsingCursorPositioningRules(EditorCell_Label labelCell, String cellId, boolean isFirstPositionRequested,
-      boolean isLastPositionRequested) {
+                                                             boolean isLastPositionRequested) {
     if (isFirstPositionRequested && !StyleAttributesUtil.isFirstPositionAllowed(labelCell.getStyle())) {
       return getNextApplicableCell(labelCell, false, SelectionManager.FIRST_EDITABLE_CELL.equals(cellId));
     }
@@ -348,13 +348,14 @@ public class SelectionManagerImpl implements SelectionManager {
   }
 
   private boolean shouldUseForwardIterator(String cellId) {
-    String[] selectorsShouldUseBackwardIterator = new String[]{LAST_CELL, LAST_EDITABLE_CELL,LAST_ERROR_CELL};
-    return !Arrays.stream(selectorsShouldUseBackwardIterator).anyMatch(s -> s.equals(cellId));
+    String[] selectorsShouldUseBackwardIterator = new String[]{LAST_CELL, LAST_EDITABLE_CELL, LAST_ERROR_CELL};
+    return Arrays.stream(selectorsShouldUseBackwardIterator).noneMatch(s -> s.equals(cellId));
   }
 
   private boolean shouldIgnoreChildNodes(String cellId) {
-    String[] selectorsShouldNotIgnoreChildNodes = new String[]{FIRST_CELL, LAST_CELL, FIRST_EDITABLE_CELL, LAST_EDITABLE_CELL, FIRST_ERROR_CELL, LAST_ERROR_CELL};
-    return !Arrays.stream(selectorsShouldNotIgnoreChildNodes).anyMatch(s -> s.equals(cellId));
+    String[] selectorsShouldNotIgnoreChildNodes =
+        new String[]{FIRST_CELL, LAST_CELL, FIRST_EDITABLE_CELL, LAST_EDITABLE_CELL, FIRST_ERROR_CELL, LAST_ERROR_CELL};
+    return Arrays.stream(selectorsShouldNotIgnoreChildNodes).noneMatch(s -> s.equals(cellId));
   }
 
   private boolean isSpecifiedById(EditorCell cell, String requestedCellId) {

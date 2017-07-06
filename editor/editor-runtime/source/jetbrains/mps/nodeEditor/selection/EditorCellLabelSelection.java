@@ -29,9 +29,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Map;
 
@@ -219,12 +217,8 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         }
       }
 
-      if (target == null || ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          return jetbrains.mps.util.SNodeOperations.isAncestor(target.getSNode(), selectedCell.getSNode());
-        }
-      })) {
+      if (target == null || ModelAccess.instance().runReadAction(
+          () -> jetbrains.mps.util.SNodeOperations.isAncestor(target.getSNode(), selectedCell.getSNode()))) {
         return false;
       }
 

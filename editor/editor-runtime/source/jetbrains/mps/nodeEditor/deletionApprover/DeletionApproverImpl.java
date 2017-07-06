@@ -77,7 +77,7 @@ public class DeletionApproverImpl implements DeletionApprover, EditorMessageOwne
   /**
    * Returns if all cells of a node are approved for deletion
    *
-   * @param cell  EditorCell to test
+   * @param cell EditorCell to test
    * @return true if the cells of a node are all approved for deletion; false otherwise
    */
   public boolean isApprovedForDeletion(@NotNull EditorCell cell) {
@@ -132,7 +132,7 @@ public class DeletionApproverImpl implements DeletionApprover, EditorMessageOwne
 
     @Override
     public boolean sameAs(SimpleEditorMessage message) {
-      if (message == this){
+      if (message == this) {
         return true;
       }
       return message instanceof DeletionApproverMessage && myCell == ((DeletionApproverMessage) message).myCell;

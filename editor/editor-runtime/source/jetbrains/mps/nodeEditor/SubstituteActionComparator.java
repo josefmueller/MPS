@@ -73,7 +73,7 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
     int secondSubstituteRate = getRate(secondAction);
     if (firstSubstituteRate > secondSubstituteRate) {
       return -1;
-    } else if (firstSubstituteRate < secondSubstituteRate){
+    } else if (firstSubstituteRate < secondSubstituteRate) {
       return 1;
     } else {
       return 0;
@@ -117,28 +117,44 @@ public class SubstituteActionComparator implements Comparator<SubstituteAction> 
   @Override
   public int compare(SubstituteAction action1, SubstituteAction action2) {
     int result = compareByStrictly(action1, action2);
-    if (result != 0) return result;
+    if (result != 0) {
+      return result;
+    }
 
     String s1 = getVisibleMatchingText(action1);
     String s2 = getVisibleMatchingText(action2);
 
     boolean null_s1 = (s1 == null || s1.length() == 0);
     boolean null_s2 = (s2 == null || s2.length() == 0);
-    if (null_s1 && null_s2) return compareByLocalPriority(action1, action2);
-    if (null_s1) return 1;
-    if (null_s2) return -1;
+    if (null_s1 && null_s2) {
+      return compareByLocalPriority(action1, action2);
+    }
+    if (null_s1) {
+      return 1;
+    }
+    if (null_s2) {
+      return -1;
+    }
 
     result = compareByStartsWith(action1, action2);
-    if (result != 0) return result;
+    if (result != 0) {
+      return result;
+    }
 
     result = compareByStartsWithLowerCase(action1, action2);
-    if (result != 0) return result;
+    if (result != 0) {
+      return result;
+    }
 
     result = compareByRate(action1, action2);
-    if (result != 0) return result;
+    if (result != 0) {
+      return result;
+    }
 
     result = compareByLocalPriority(action1, action2);
-    if (result != 0) return result;
+    if (result != 0) {
+      return result;
+    }
 
 
     return s1.compareTo(s2);

@@ -200,7 +200,8 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   /**
    * For node range selection this should be always returning true
-   * @param node node
+   *
+   * @param cell cell
    * @return true
    */
   @Override

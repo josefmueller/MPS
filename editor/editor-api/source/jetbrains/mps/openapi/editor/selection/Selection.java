@@ -39,7 +39,7 @@ public interface Selection {
 
   boolean isSame(Selection another);
 
-  default boolean isExactlyCoveringCell(EditorCell cell){
+  default boolean isExactlyCoveringCell(EditorCell cell) {
     return false;
   }
 

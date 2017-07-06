@@ -168,9 +168,13 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
     myState.useAntialiasing = useAntialiasing;
   }
 
-  public boolean isUseTwoStepDeletion() { return myState.useTwoStepDeletion; }
+  public boolean isUseTwoStepDeletion() {
+    return myState.useTwoStepDeletion;
+  }
 
-  public void setUseTwoStepDeletion(boolean useTwoStepDeletion) {myState.useTwoStepDeletion = useTwoStepDeletion; }
+  public void setUseTwoStepDeletion(boolean useTwoStepDeletion) {
+    myState.useTwoStepDeletion = useTwoStepDeletion;
+  }
 
   public boolean isPowerSaveMode() {
     return PowerSaveMode.isEnabled();

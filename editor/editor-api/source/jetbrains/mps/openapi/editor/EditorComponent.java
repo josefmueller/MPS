@@ -98,5 +98,7 @@ public interface EditorComponent {
    */
   void touch();
 
-  default DeletionApprover getDeletionApprover() {return new DummyDeletionApprover();};
+  default DeletionApprover getDeletionApprover() {
+    return new DummyDeletionApprover();
+  }
 }
