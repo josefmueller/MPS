@@ -246,6 +246,11 @@ outer:
   }
 
   private static boolean equalsReference(SReference ref1, SReference ref2, final Map<SNode, SNode> oldToNewMap, boolean easy) {
+    if (ref1 == null || ref2 == null) {
+      return false;
+    }
+
+
     SNode target1 = ref1.getTargetNode();
     SNode target2 = ref2.getTargetNode();
     return target1 == target2 || MapSequence.fromMap(oldToNewMap).get(target1) == target2 || easy && ListSequence.fromList(SNodeOperations.getNodeAncestors(target1, null, true)).select(new ISelector<SNode, SNode>() {
