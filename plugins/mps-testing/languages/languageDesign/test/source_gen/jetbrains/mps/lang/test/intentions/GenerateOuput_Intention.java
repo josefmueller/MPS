@@ -18,11 +18,15 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.lang.test.runtime.BaseMigrationTestBody;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
 import jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor;
@@ -72,12 +76,16 @@ public final class GenerateOuput_Intention extends AbstractIntentionDescriptor i
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      MigrationScript migrationScript = check_kvclcg_a0a0c7(check_kvclcg_a0a0a2h(LanguageRegistry.getInstance().getLanguage(((Language) SNodeOperations.getModel(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be54a3L, "migration"))).getModule()))), node);
-      Collection<SNode> output = BaseMigrationTestBody.runMigration(Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be4be8L, "inputNodes")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck"))).toListSequence(), migrationScript);
+      SModel tempModel = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
+      MigrationScript migrationScript = check_kvclcg_a0b0c7(check_kvclcg_a0a1a2h(LanguageRegistry.getInstance().getLanguage(((Language) SNodeOperations.getModel(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be54a3L, "migration"))).getModule()))), node);
+      Collection<SNode> output = BaseMigrationTestBody.runMigration(Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be4be8L, "inputNodes")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck"))).toListSequence(), migrationScript, tempModel);
       ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be5494L, "outputNodes"))).clear();
       for (SNode n : CollectionSequence.fromCollection(output)) {
-        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be5494L, "outputNodes"))).addElement(createTestNode_kwniwa_a0a0a3a0(SNodeOperations.cast(HUtil.copyIfNecessary(n), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))));
+        ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be5494L, "outputNodes"))).addElement(createTestNode_kwniwa_a0a0a4a0(SNodeOperations.cast(HUtil.copyIfNecessary(n), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"))));
       }
+      // we cannot dispose temporary model in the same command to avoid resolving immature references into detached nodes 
+      UndoHelper.getInstance().flushCommand(editorContext.getOperationContext().getProject());
+      TemporaryModels.getInstance().dispose(tempModel);
     }
     @Override
     public IntentionDescriptor getDescriptor() {
@@ -96,19 +104,19 @@ public final class GenerateOuput_Intention extends AbstractIntentionDescriptor i
     }
     return null;
   }
-  private static MigrationScript check_kvclcg_a0a0c7(MigrationAspectDescriptor checkedDotOperand, SNode node) {
+  private static MigrationScript check_kvclcg_a0b0c7(MigrationAspectDescriptor checkedDotOperand, SNode node) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript((int) IMigrationUnit__BehaviorDescriptor.fromVersion_id4uVwhQyFcnl.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L, 0x4c010b30d9be54a3L, "migration"))));
     }
     return null;
   }
-  private static MigrationAspectDescriptor check_kvclcg_a0a0a2h(LanguageRuntime checkedDotOperand) {
+  private static MigrationAspectDescriptor check_kvclcg_a0a1a2h(LanguageRuntime checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAspect(MigrationAspectDescriptor.class);
     }
     return null;
   }
-  private static SNode createTestNode_kwniwa_a0a0a3a0(Object p0) {
+  private static SNode createTestNode_kwniwa_a0a0a4a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode"), null, null, false);
     if (p0 != null) {

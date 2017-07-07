@@ -8,13 +8,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
-    <use id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" name="jetbrains.mps.lang.checkedName" version="-1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="5" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -41,6 +35,7 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="buve" ref="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
+    <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -159,6 +154,12 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
@@ -213,6 +214,7 @@
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -1636,6 +1638,29 @@
     </node>
     <node concept="2Sbjvc" id="7KUdrkE_$Zq" role="2ZfgGD">
       <node concept="3clFbS" id="7KUdrkE_$Zr" role="2VODD2">
+        <node concept="3cpWs8" id="7KUdrkECSW9" role="3cqZAp">
+          <node concept="3cpWsn" id="7KUdrkECSWa" role="3cpWs9">
+            <property role="TrG5h" value="tempModel" />
+            <node concept="H_c77" id="7KUdrkECSWb" role="1tU5fm" />
+            <node concept="2OqwBi" id="7KUdrkECSWc" role="33vP2m">
+              <node concept="2YIFZM" id="7KUdrkECSWd" role="2Oq$k0">
+                <ref role="37wK5l" to="tqvn:~TemporaryModels.getInstance():jetbrains.mps.smodel.tempmodel.TemporaryModels" resolve="getInstance" />
+                <ref role="1Pybhc" to="tqvn:~TemporaryModels" resolve="TemporaryModels" />
+              </node>
+              <node concept="liA8E" id="7KUdrkECSWe" role="2OqNvi">
+                <ref role="37wK5l" to="tqvn:~TemporaryModels.create(boolean,boolean,jetbrains.mps.smodel.tempmodel.TempModuleOptions):org.jetbrains.mps.openapi.model.SModel" resolve="create" />
+                <node concept="3clFbT" id="7KUdrkECSWf" role="37wK5m" />
+                <node concept="3clFbT" id="7KUdrkEIHbv" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
+                <node concept="2YIFZM" id="7KUdrkECSWh" role="37wK5m">
+                  <ref role="1Pybhc" to="tqvn:~TempModuleOptions" resolve="TempModuleOptions" />
+                  <ref role="37wK5l" to="tqvn:~TempModuleOptions.forDefaultModule():jetbrains.mps.smodel.tempmodel.TempModuleOptions" resolve="forDefaultModule" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="7KUdrkEGkTR" role="3cqZAp">
           <node concept="3cpWsn" id="7KUdrkEGkTS" role="3cpWs9">
             <property role="TrG5h" value="migrationScript" />
@@ -1726,6 +1751,9 @@
               <node concept="37vLTw" id="7KUdrkEG$k9" role="37wK5m">
                 <ref role="3cqZAo" node="7KUdrkEGkTS" resolve="migrationScript" />
               </node>
+              <node concept="37vLTw" id="6dZNzDpLRo2" role="37wK5m">
+                <ref role="3cqZAo" node="7KUdrkECSWa" resolve="tempModel" />
+              </node>
             </node>
           </node>
         </node>
@@ -1741,11 +1769,11 @@
           </node>
         </node>
         <node concept="2Gpval" id="7KUdrkEFA5g" role="3cqZAp">
+          <node concept="37vLTw" id="6dZNzDpLdkF" role="2GsD0m">
+            <ref role="3cqZAo" node="7KUdrkEFcNP" resolve="output" />
+          </node>
           <node concept="2GrKxI" id="7KUdrkEFA5i" role="2Gsz3X">
             <property role="TrG5h" value="n" />
-          </node>
-          <node concept="37vLTw" id="7KUdrkEFClp" role="2GsD0m">
-            <ref role="3cqZAo" node="7KUdrkEFcNP" resolve="output" />
           </node>
           <node concept="3clFbS" id="7KUdrkEFA5m" role="2LFqv$">
             <node concept="3clFbF" id="7KUdrkEFCqu" role="3cqZAp">
@@ -1771,6 +1799,47 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6dZNzDpMQHq" role="3cqZAp">
+          <node concept="3SKdUq" id="6dZNzDpMQHs" role="3SKWNk">
+            <property role="3SKdUp" value="we cannot dispose temporary model in the same command to avoid resolving immature references into detached nodes" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6dZNzDpM$Lk" role="3cqZAp">
+          <node concept="2OqwBi" id="6dZNzDpMBKr" role="3clFbG">
+            <node concept="2YIFZM" id="6dZNzDpMBg6" role="2Oq$k0">
+              <ref role="37wK5l" to="w1kc:~UndoHelper.getInstance():jetbrains.mps.smodel.UndoHelper" resolve="getInstance" />
+              <ref role="1Pybhc" to="w1kc:~UndoHelper" resolve="UndoHelper" />
+            </node>
+            <node concept="liA8E" id="6dZNzDpMChN" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~UndoHelper.flushCommand(jetbrains.mps.project.Project):void" resolve="flushCommand" />
+              <node concept="2OqwBi" id="6dZNzDpMCIb" role="37wK5m">
+                <node concept="2OqwBi" id="6dZNzDpMCoL" role="2Oq$k0">
+                  <node concept="1XNTG" id="6dZNzDpMCiU" role="2Oq$k0" />
+                  <node concept="liA8E" id="6dZNzDpMCCk" role="2OqNvi">
+                    <ref role="37wK5l" to="cj4x:~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolve="getOperationContext" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6dZNzDpMCSl" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~IOperationContext.getProject():jetbrains.mps.project.Project" resolve="getProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7KUdrkEHDAN" role="3cqZAp">
+          <node concept="2OqwBi" id="7KUdrkEHE2n" role="3clFbG">
+            <node concept="2YIFZM" id="7KUdrkEHDN1" role="2Oq$k0">
+              <ref role="37wK5l" to="tqvn:~TemporaryModels.getInstance():jetbrains.mps.smodel.tempmodel.TemporaryModels" resolve="getInstance" />
+              <ref role="1Pybhc" to="tqvn:~TemporaryModels" resolve="TemporaryModels" />
+            </node>
+            <node concept="liA8E" id="7KUdrkEHEFi" role="2OqNvi">
+              <ref role="37wK5l" to="tqvn:~TemporaryModels.dispose(org.jetbrains.mps.openapi.model.SModel):void" resolve="dispose" />
+              <node concept="37vLTw" id="6dZNzDpHOwy" role="37wK5m">
+                <ref role="3cqZAo" node="7KUdrkECSWa" resolve="tempModel" />
               </node>
             </node>
           </node>
@@ -1877,10 +1946,10 @@
         </node>
         <node concept="3cpWs6" id="7KUdrkEGOH4" role="3cqZAp">
           <node concept="3y3z36" id="7KUdrkEGOH5" role="3cqZAk">
-            <node concept="10Nm6u" id="7KUdrkEGOH6" role="3uHU7w" />
-            <node concept="37vLTw" id="7KUdrkEGOH7" role="3uHU7B">
+            <node concept="37vLTw" id="6dZNzDpMg_q" role="3uHU7B">
               <ref role="3cqZAo" node="7KUdrkEGoN4" resolve="migrationScript" />
             </node>
+            <node concept="10Nm6u" id="7KUdrkEGOH6" role="3uHU7w" />
           </node>
         </node>
       </node>

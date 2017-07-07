@@ -6,8 +6,6 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -15,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import junit.framework.Assert;
 import java.util.Iterator;
 import java.util.ArrayList;
@@ -23,35 +23,28 @@ import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class BaseMigrationTestBody extends BaseTestBody {
-  public static Collection<SNode> runMigration(Collection<SNode> inputNodes, MigrationScript migrationScript) {
-    final SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
+  public static Collection<SNode> runMigration(Collection<SNode> inputNodes, MigrationScript migrationScript, final SModel tempModel) {
     CollectionSequence.fromCollection(inputNodes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SModelOperations.addRootNode(model, SNodeOperations.copyNode(it));
+        SModelOperations.addRootNode(tempModel, SNodeOperations.copyNode(it));
       }
     });
-    migrationScript.execute(model.getModule());
-    List<SNode> result = ListSequence.fromList(SModelOperations.roots(model, null)).select(new ISelector<SNode, SNode>() {
+    migrationScript.execute(tempModel.getModule());
+    List<SNode> result = ListSequence.fromList(SModelOperations.roots(tempModel, null)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.copyNode(it);
       }
     }).toListSequence();
-    TemporaryModels.getInstance().dispose(model);
     return result;
   }
   public void testMethod() {
-    final SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
-    CollectionSequence.fromCollection(getInputNodes()).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        SModelOperations.addRootNode(model, it);
-      }
-    });
+    SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
     MigrationScript script = getMigrationScript();
-    script.execute(model.getModule());
+    Collection<SNode> roots = runMigration(getInputNodes(), script, model);
     Collection<SNode> outputNodes = getOutputNodes();
-    Assert.assertEquals(ListSequence.fromList(SModelOperations.roots(model, null)).count(), CollectionSequence.fromCollection(outputNodes).count());
+    Assert.assertEquals(CollectionSequence.fromCollection(roots).count(), CollectionSequence.fromCollection(outputNodes).count());
     {
-      Iterator<SNode> found_it = ListSequence.fromList(SModelOperations.roots(model, null)).iterator();
+      Iterator<SNode> found_it = CollectionSequence.fromCollection(roots).iterator();
       Iterator<SNode> expected_it = CollectionSequence.fromCollection(outputNodes).iterator();
       SNode found_var;
       SNode expected_var;
@@ -68,6 +61,7 @@ public abstract class BaseMigrationTestBody extends BaseTestBody {
     for (Problem problem : Sequence.fromIterable(script.check(model.getModule()))) {
       org.junit.Assert.fail(problem.toString());
     }
+    TemporaryModels.getInstance().dispose(model);
   }
   public abstract Collection<SNode> getInputNodes();
   public abstract Collection<SNode> getOutputNodes();
