@@ -117,8 +117,8 @@ IF NOT "%IDEA_CLASS_PATH%" == "" SET CLASS_PATH=%CLASS_PATH%;%IDEA_CLASS_PATH%
 SET OLD_PATH=%PATH%
 SET PATH=%IDE_BIN_DIR%;%PATH%
 
-set MAIN_CLASS=jetbrains.mps.com.intellij.idea.Main
-start "" "%JAVA_EXE%" %ALL_JVM_ARGS% -cp "%CLASS_PATH%" %MAIN_CLASS% %*
+set MAIN_CLASS=jetbrains.mps.Launcher
+start "" "%JAVA_EXE%" %ALL_JVM_ARGS% -Didea.main.class.name=%MAIN_CLASS% -cp "%CLASS_PATH%" %MAIN_CLASS% %*
 
 SET PATH=%OLD_PATH%
 

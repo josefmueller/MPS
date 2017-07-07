@@ -1812,7 +1812,7 @@
       </node>
     </node>
     <node concept="2DRAP_" id="4eWOtEm2LWg" role="2DRAPQ">
-      <property role="2DPR8u" value="start &quot;&quot; &quot;%JAVA_EXE%&quot; %ALL_JVM_ARGS% -cp &quot;%CLASS_PATH%&quot; %MAIN_CLASS% %*" />
+      <property role="2DPR8u" value="start &quot;&quot; &quot;%JAVA_EXE%&quot; %ALL_JVM_ARGS% -Didea.main.class.name=%MAIN_CLASS% -cp &quot;%CLASS_PATH%&quot; %MAIN_CLASS% %*" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm2KJ4" role="2DRAPQ" />
     <node concept="2DRAP_" id="4eWOtEm2OmL" role="2DRAPQ">
