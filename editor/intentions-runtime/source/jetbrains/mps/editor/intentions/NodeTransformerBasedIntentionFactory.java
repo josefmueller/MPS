@@ -53,27 +53,37 @@ public class NodeTransformerBasedIntentionFactory implements IntentionFactory {
 
   @Override
   public String getPresentation() {
-    return null;
+    return myFactory.getClass().getSimpleName();
   }
 
   @Override
   public String getPersistentStateKey() {
-    return null;
+    return myFactory.getId();
   }
 
   @Override
   public Kind getKind() {
-    return null;
+    switch (myFactory.getKind()) {
+      case ERROR_FIX:
+        return Kind.ERROR;
+      case INTENTION:
+        return Kind.NORMAL;
+      default:
+        throw new IllegalStateException();
+    }
   }
 
   @Override
   public boolean isAvailableInChildNodes() {
-    return false;
+    return myFactory.isAvailableInChildren();
   }
 
   @Override
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    return false;
+    if (isAvailableInChildNodes() && node != editorContext.getSelectedNode()) {
+      return myFactory.isAvailableInChild(node, editorContext.getSelectedNode(), editorContext);
+    }
+    return myFactory.isApplicable(node, editorContext);
   }
 
   @Nullable
