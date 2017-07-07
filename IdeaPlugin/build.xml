@@ -73,18 +73,17 @@
 
 
   <target name="checkLibs">
-    <available file="${base_dir}/IdeaPlugin/mps-core/lib/build.properties" property="core.libs.found"/>
+    <available file="${base_dir}/IdeaPlugin/idea_home/build.txt" property="core.libs.found"/>
   </target>
 
   <target name="buildLibs" depends="checkLibs" unless="core.libs.found">
     <antcall target="copyLibsFromLocalBuild"/>
   </target>
 
-  <target name="copyLibsFromLocalBuild" depends="buildCore, buildTests">
+  <target name="copyLibsFromLocalBuild" depends="buildCore, buildTests, loadIdeaPathVar">
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
-      <fileset file="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/build.properties"/>
     </copy>
     <!-- messages, which are packaged by mpsWorkbench build script, which we don't invoke when building plugin -->
     <!-- it seems, they should end-up in mps-platform.jar, will be no need to copy -->
@@ -133,12 +132,15 @@
     <copy todir="${base_dir}/IdeaPlugin/mps.editor.tests">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsEditorTestsPlugin/mps.editor.tests"/>
     </copy>
+    <copy todir="${base_dir}/IdeaPlugin/idea_home" failonerror="false" overwrite="true">
+      <file file="${ideaPath}/build.txt"/>
+      <file file="${ideaPath}/Resources/build.txt"/>
+    </copy>
   </target>
 
   <target name="copyLibsFromDist" depends="loadIdeaPluginsPathVar">
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${ideaPlugins}/mps-core/lib"/>
-      <fileset file="${ideaPlugins}/mps-core/build.properties"/>
     </copy>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${ideaPlugins}/mps-core/languages"/>
@@ -191,6 +193,7 @@
         <exclude name="**/*.iml"/>
       </fileset>
     </delete>
+    <delete file="${base_dir}/IdeaPlugin/idea_home/build.txt"/>
   </target>
 
   <target name="buildCore" depends="loadIdeaPathVar" unless="buildCoreProcessed">
@@ -303,9 +306,8 @@
       <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
       <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
-      <sysproperty key="log4j.configuration" value="${log.config}"/>
+      <sysproperty key="idea.home.path" value="${base_dir}/IdeaPlugin/idea_home"/>
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.idea.java"/>
-      <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
       <classpath>
@@ -334,13 +336,12 @@
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
-      <sysproperty key="log4j.configuration" value="file:///${ideaPath}/bin/log.xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${test.platform.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
       <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
-      <sysproperty key="log4j.configuration" value="${log.config}"/>
+      <sysproperty key="idea.home.path" value="${base_dir}/IdeaPlugin/idea_home"/>
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
@@ -371,8 +372,9 @@
       <formatter type="xml"/>
       <sysproperty key="jdk.home.path" value="${jdkPath}"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
+      <sysproperty key="idea.system.path" value="${test.platform.sandbox.jps}/system"/>
       <sysproperty key="idea.log.path" value="${test.platform.sandbox.jps}/log"/>
-      <sysproperty key="log4j.configuration" value="${log.config}"/>
+      <sysproperty key="idea.home.path" value="${base_dir}/IdeaPlugin/idea_home"/>
 
       <classpath>
         <fileset dir="${ideaPath}/lib">
@@ -405,13 +407,12 @@
       <jvmarg value="-XX:MaxPermSize=128m"/>
       <jvmarg value="${junit.debug.arg}"/>
       <formatter type="xml"/>
-      <sysproperty key="log4j.configuration" value="file:///${ideaPath}/bin/log.xml"/>
       <sysproperty key="idea.platform.prefix" value="Idea"/>
       <sysproperty key="idea.config.path" value="${test.platform.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${test.platform.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${test.platform.sandbox.dir}/plugins"/>
       <sysproperty key="idea.log.path" value="${test.platform.sandbox.dir}/log"/>
-      <sysproperty key="log4j.configuration" value="${log.config}"/>
+      <sysproperty key="idea.home.path" value="${base_dir}/IdeaPlugin/idea_home"/>
       <sysproperty key="idea.load.plugins.id"
                    value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.lang.editor.tests"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>

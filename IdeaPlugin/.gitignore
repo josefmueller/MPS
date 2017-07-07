@@ -1,8 +1,8 @@
 .idea/shelf
 .idea/workspace.xml
 availables.xml
+/idea_home/build.txt
 /build
-build.properties
 mps-core/lib
 mps-core/resources/messages
 mps-core/languages
