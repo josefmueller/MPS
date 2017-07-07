@@ -41,7 +41,7 @@ public class SmartRefAttrMigration_Test extends TestCase {
   private static final SNodeReference ref_explicitAttr_OneOfTwo_characteristicRef = ref("r:a989c2aa-03d7-4022-aa05-1be538539c8e(test.language.structure)/7273969254452446739");
   private static final SNodeReference ref_explicitAttr_OneNoReq = ref("r:a989c2aa-03d7-4022-aa05-1be538539c8e(test.language.structure)/7273969254452446768");
   private static final SNodeReference ref_explicitAttr_OneNoReq_characteristicRef = ref("r:a989c2aa-03d7-4022-aa05-1be538539c8e(test.language.structure)/7273969254452446769");
-  private static final SNodeReference ref_explicitAttr_Specialized = ref("r:a989c2aa-03d7-4022-aa05-1be538539c8e(test.language.structure)/7273969254452446768");
+  private static final SNodeReference ref_explicitAttr_Specialized = ref("r:a989c2aa-03d7-4022-aa05-1be538539c8e(test.language.structure)/3787933655124578220");
   private static final SNodeReference ref_explicitAttr_Specialized_characteristicRef = ref("r:a989c2aa-03d7-4022-aa05-1be538539c8e(test.language.structure)/3787933655124578224");
   private static final SNodeReference ref_explicitMenu_Direct = ref("r:a989c2aa-03d7-4022-aa05-1be538539c8e(test.language.structure)/7273969254452446772");
   private static final SNodeReference ref_explicitMenu_Super = ref("r:a989c2aa-03d7-4022-aa05-1be538539c8e(test.language.structure)/7273969254452476935");
