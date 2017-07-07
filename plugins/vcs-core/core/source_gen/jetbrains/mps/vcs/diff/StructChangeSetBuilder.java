@@ -192,8 +192,11 @@ outer:
 
   private void removeMatchedRefChanges() {
     for (SetReferenceStructChange ch : ListSequence.fromList(myNewChanges).ofType(SetReferenceStructChange.class).toListSequence()) {
-      SReference ref = myChangeSet.getOldModel().getNode(ch.getAffectedNodeId(false)).getReference(ch.getRoleLink());
-      if (eq_okvhpb_a0a0b0a0q(ref.getTargetSModelReference(), myChangeSet.getOldModel().getReference()) && eq_okvhpb_a0a0b0a0q_0(ch.getTargetModelReference(), myChangeSet.getNewModel().getReference()) && eq_okvhpb_a0a1a0a61(MapSequence.fromMap(myOldToNewMap).get(ref.getTargetNodeId()), ch.getTargetNodeId())) {
+      SReference oldRef = myChangeSet.getOldModel().getNode(ch.getAffectedNodeId(false)).getReference(ch.getRoleLink());
+      if (oldRef == null) {
+        continue;
+      }
+      if (eq_okvhpb_a0a0c0a0q(oldRef.getTargetSModelReference(), myChangeSet.getOldModel().getReference()) && eq_okvhpb_a0a0c0a0q_0(ch.getTargetModelReference(), myChangeSet.getNewModel().getReference()) && eq_okvhpb_a0a2a0a61(MapSequence.fromMap(myOldToNewMap).get(oldRef.getTargetNodeId()), ch.getTargetNodeId())) {
         // ?? should the resolveInfo be the same ?? 
         ListSequence.fromList(myNewChanges).removeElement(ch);
       }
@@ -246,6 +249,11 @@ outer:
   }
 
   private static boolean equalsReference(SReference ref1, SReference ref2, final Map<SNode, SNode> oldToNewMap, boolean easy) {
+    if (ref1 == null || ref2 == null) {
+      return false;
+    }
+
+
     SNode target1 = ref1.getTargetNode();
     SNode target2 = ref2.getTargetNode();
     return target1 == target2 || MapSequence.fromMap(oldToNewMap).get(target1) == target2 || easy && ListSequence.fromList(SNodeOperations.getNodeAncestors(target1, null, true)).select(new ISelector<SNode, SNode>() {
@@ -332,13 +340,13 @@ outer:
   private static boolean neq_okvhpb_a0b0j(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean eq_okvhpb_a0a1a0a61(Object a, Object b) {
+  private static boolean eq_okvhpb_a0a2a0a61(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_okvhpb_a0a0b0a0q(Object a, Object b) {
+  private static boolean eq_okvhpb_a0a0c0a0q(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_okvhpb_a0a0b0a0q_0(Object a, Object b) {
+  private static boolean eq_okvhpb_a0a0c0a0q_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean neq_okvhpb_a0b0bb(Object a, Object b) {
