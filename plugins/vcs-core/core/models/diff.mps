@@ -6024,7 +6024,7 @@
           <node concept="3clFbS" id="6tB8$r2qsJk" role="2LFqv$">
             <node concept="3cpWs8" id="dTwHY48uZO" role="3cqZAp">
               <node concept="3cpWsn" id="dTwHY48uZP" role="3cpWs9">
-                <property role="TrG5h" value="ref" />
+                <property role="TrG5h" value="oldRef" />
                 <node concept="3uibUv" id="dTwHY48uYQ" role="1tU5fm">
                   <ref role="3uigEE" to="mhbf:~SReference" resolve="SReference" />
                 </node>
@@ -6069,6 +6069,17 @@
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="6sDJ0EF7bdm" role="3cqZAp">
+              <node concept="3clFbS" id="6sDJ0EF7bdo" role="3clFbx">
+                <node concept="3N13vt" id="6sDJ0EF7rvP" role="3cqZAp" />
+              </node>
+              <node concept="3clFbC" id="6sDJ0EF7osU" role="3clFbw">
+                <node concept="10Nm6u" id="6sDJ0EF7oBB" role="3uHU7w" />
+                <node concept="37vLTw" id="6sDJ0EF7bTw" role="3uHU7B">
+                  <ref role="3cqZAo" node="dTwHY48uZP" resolve="oldRef" />
+                </node>
+              </node>
+            </node>
             <node concept="3clFbJ" id="6tB8$r2qvhy" role="3cqZAp">
               <node concept="3clFbS" id="6tB8$r2qvhz" role="3clFbx">
                 <node concept="3SKdUt" id="4$lWBA3TOQG" role="3cqZAp">
@@ -6097,7 +6108,7 @@
                     </node>
                     <node concept="2OqwBi" id="dTwHY48wu1" role="3ElVtu">
                       <node concept="37vLTw" id="dTwHY48w5Z" role="2Oq$k0">
-                        <ref role="3cqZAo" node="dTwHY48uZP" resolve="ref" />
+                        <ref role="3cqZAo" node="dTwHY48uZP" resolve="oldRef" />
                       </node>
                       <node concept="liA8E" id="dTwHY48wzF" role="2OqNvi">
                         <ref role="37wK5l" to="mhbf:~SReference.getTargetNodeId():org.jetbrains.mps.openapi.model.SNodeId" resolve="getTargetNodeId" />
@@ -6117,7 +6128,7 @@
                   <node concept="17R0WA" id="4$lWBA3SWz2" role="3uHU7B">
                     <node concept="2OqwBi" id="4$lWBA3SWo4" role="3uHU7B">
                       <node concept="37vLTw" id="4$lWBA3SWdD" role="2Oq$k0">
-                        <ref role="3cqZAo" node="dTwHY48uZP" resolve="ref" />
+                        <ref role="3cqZAo" node="dTwHY48uZP" resolve="oldRef" />
                       </node>
                       <node concept="liA8E" id="4$lWBA3SWvu" role="2OqNvi">
                         <ref role="37wK5l" to="mhbf:~SReference.getTargetSModelReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getTargetSModelReference" />
