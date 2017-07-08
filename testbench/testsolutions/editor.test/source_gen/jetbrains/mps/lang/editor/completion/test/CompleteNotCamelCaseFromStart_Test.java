@@ -25,8 +25,7 @@ public class CompleteNotCamelCaseFromStart_Test extends BaseTransformationTest {
       initEditorComponent("6292171174659784587", "6292171174659784589");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       typeString("sten");
-      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 3);
-
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 2);
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

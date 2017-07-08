@@ -30,6 +30,7 @@ public class CompletionChild_SubstituteMenu extends SubstituteMenuBase {
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new CompletionChild_SubstituteMenu.SMP_Action_vwyoh8_b(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild")));
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new CompletionChild_SubstituteMenu.SMP_Action_vwyoh8_c(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild")));
     result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new CompletionChild_SubstituteMenu.SMP_Action_vwyoh8_d(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new CompletionChild_SubstituteMenu.SMP_Action_vwyoh8_e(), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild")));
     return result;
   }
 
@@ -139,45 +140,6 @@ public class CompletionChild_SubstituteMenu extends SubstituteMenuBase {
         _context = context;
         _context.getEditorMenuTrace().pushTraceInfo();
         String description = "Substitute item: " + getMatchingText("");
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "6292171174658996259")));
-        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-        _context.getEditorMenuTrace().popTraceInfo();
-      }
-
-      @Nullable
-      @Override
-      public SNode createNode(@NotNull String pattern) {
-        SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild"));
-        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "start End");
-        return node;
-      }
-
-      @Override
-      public EditorMenuTraceInfo getTraceInfo() {
-        return myTraceInfo;
-      }
-      @Nullable
-      @Override
-      public String getMatchingText(@NotNull String pattern) {
-        return "start End";
-      }
-    }
-  }
-  private class SMP_Action_vwyoh8_d extends SingleItemSubstituteMenuPart {
-
-    @Nullable
-    @Override
-    protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new CompletionChild_SubstituteMenu.SMP_Action_vwyoh8_d.Item(_context);
-    }
-    private class Item extends DefaultSubstituteMenuItem {
-      private final SubstituteMenuContext _context;
-      private EditorMenuTraceInfo myTraceInfo;
-      public Item(SubstituteMenuContext context) {
-        super(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
-        _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        String description = "Substitute item: " + getMatchingText("");
         _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "6292171174658997196")));
         this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
         _context.getEditorMenuTrace().popTraceInfo();
@@ -199,6 +161,84 @@ public class CompletionChild_SubstituteMenu extends SubstituteMenuBase {
       @Override
       public String getMatchingText(@NotNull String pattern) {
         return "startMiddleEnd";
+      }
+    }
+  }
+  private class SMP_Action_vwyoh8_d extends SingleItemSubstituteMenuPart {
+
+    @Nullable
+    @Override
+    protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
+      return new CompletionChild_SubstituteMenu.SMP_Action_vwyoh8_d.Item(_context);
+    }
+    private class Item extends DefaultSubstituteMenuItem {
+      private final SubstituteMenuContext _context;
+      private EditorMenuTraceInfo myTraceInfo;
+      public Item(SubstituteMenuContext context) {
+        super(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
+        _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        String description = "Substitute item: " + getMatchingText("");
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "6292171174658996259")));
+        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+        _context.getEditorMenuTrace().popTraceInfo();
+      }
+
+      @Nullable
+      @Override
+      public SNode createNode(@NotNull String pattern) {
+        SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild"));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "start Space");
+        return node;
+      }
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myTraceInfo;
+      }
+      @Nullable
+      @Override
+      public String getMatchingText(@NotNull String pattern) {
+        return "start Space";
+      }
+    }
+  }
+  private class SMP_Action_vwyoh8_e extends SingleItemSubstituteMenuPart {
+
+    @Nullable
+    @Override
+    protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
+      return new CompletionChild_SubstituteMenu.SMP_Action_vwyoh8_e.Item(_context);
+    }
+    private class Item extends DefaultSubstituteMenuItem {
+      private final SubstituteMenuContext _context;
+      private EditorMenuTraceInfo myTraceInfo;
+      public Item(SubstituteMenuContext context) {
+        super(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
+        _context = context;
+        _context.getEditorMenuTrace().pushTraceInfo();
+        String description = "Substitute item: " + getMatchingText("");
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "6369611198990483018")));
+        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
+        _context.getEditorMenuTrace().popTraceInfo();
+      }
+
+      @Nullable
+      @Override
+      public SNode createNode(@NotNull String pattern) {
+        SNode node = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x57524858938023adL, "jetbrains.mps.lang.editor.editorTest.structure.CompletionChild"));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "start.dot");
+        return node;
+      }
+
+      @Override
+      public EditorMenuTraceInfo getTraceInfo() {
+        return myTraceInfo;
+      }
+      @Nullable
+      @Override
+      public String getMatchingText(@NotNull String pattern) {
+        return "start.dot";
       }
     }
   }

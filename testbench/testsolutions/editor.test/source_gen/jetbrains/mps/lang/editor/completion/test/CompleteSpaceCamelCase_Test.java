@@ -11,11 +11,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class CompleteCamelCaseWithSpace_Test extends BaseTransformationTest {
+public class CompleteSpaceCamelCase_Test extends BaseTransformationTest {
   @Test
-  public void test_CompleteCamelCaseWithSpace() throws Throwable {
+  public void test_CompleteSpaceCamelCase() throws Throwable {
     initTest("${mps_home}", "r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)");
-    runTest("jetbrains.mps.lang.editor.completion.test.CompleteCamelCaseWithSpace_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.completion.test.CompleteSpaceCamelCase_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -24,9 +24,8 @@ public class CompleteCamelCaseWithSpace_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditorComponent("6292171174659835831", "6292171174659835833");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      typeString("stEn");
-      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 3);
-      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
+      typeString("stSp");
+      Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1);
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

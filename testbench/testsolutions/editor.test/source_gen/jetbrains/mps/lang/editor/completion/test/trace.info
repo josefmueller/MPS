@@ -14,16 +14,34 @@
       <node id="6292171174659059347" at="25,72,26,71" concept="0" />
       <node id="6292171174659059457" at="26,71,27,25" concept="0" />
       <node id="6292171174660002507" at="27,25,28,162" concept="0" />
-      <node id="6292171174660002500" at="28,162,29,0" concept="4" />
-      <node id="6292171174659059649" at="29,0,30,82" concept="0" />
+      <node id="6292171174659059649" at="28,162,29,82" concept="0" />
       <node id="2786154196593923925" at="15,0,20,0" concept="1" trace="test_CompleteFullMatchingText#()V" />
-      <node id="2786154196593923925" at="23,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="2786154196593923925" at="23,0,31,0" concept="1" trace="testMethodImpl#()V" />
       <scope id="2786154196593923925" at="16,64,18,117" />
       <scope id="2786154196593923925" at="15,0,20,0" />
-      <scope id="2786154196593923925" at="24,51,30,82" />
-      <scope id="2786154196593923925" at="23,0,32,0" />
-      <unit id="2786154196593923925" at="21,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteFullMatchingText_Test$TestBody" />
-      <unit id="2786154196593923925" at="13,0,34,0" name="jetbrains.mps.lang.editor.completion.test.CompleteFullMatchingText_Test" />
+      <scope id="2786154196593923925" at="24,51,29,82" />
+      <scope id="2786154196593923925" at="23,0,31,0" />
+      <unit id="2786154196593923925" at="21,0,32,0" name="jetbrains.mps.lang.editor.completion.test.CompleteFullMatchingText_Test$TestBody" />
+      <unit id="2786154196593923925" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteFullMatchingText_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/5317209812044775659">
+    <file name="CompleteSpaceInPattern_Test.java">
+      <node id="5317209812044775659" at="16,62,17,113" concept="0" />
+      <node id="5317209812044775659" at="17,113,18,115" concept="0" />
+      <node id="5317209812044775659" at="24,51,25,72" concept="0" />
+      <node id="5317209812044775661" at="25,72,26,71" concept="0" />
+      <node id="5317209812044775663" at="26,71,27,26" concept="0" />
+      <node id="5317209812044775664" at="27,26,28,162" concept="0" />
+      <node id="5317209812044775678" at="28,162,29,82" concept="0" />
+      <node id="5317209812044775659" at="15,0,20,0" concept="1" trace="test_CompleteSpaceInPattern#()V" />
+      <node id="5317209812044775659" at="23,0,31,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="5317209812044775659" at="16,62,18,115" />
+      <scope id="5317209812044775659" at="15,0,20,0" />
+      <scope id="5317209812044775659" at="24,51,29,82" />
+      <scope id="5317209812044775659" at="23,0,31,0" />
+      <unit id="5317209812044775659" at="21,0,32,0" name="jetbrains.mps.lang.editor.completion.test.CompleteSpaceInPattern_Test$TestBody" />
+      <unit id="5317209812044775659" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteSpaceInPattern_Test" />
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659059704">
@@ -34,16 +52,15 @@
       <node id="6292171174659059706" at="25,72,26,71" concept="0" />
       <node id="6292171174659059708" at="26,71,27,25" concept="0" />
       <node id="6292171174659993689" at="27,25,28,162" concept="0" />
-      <node id="6292171174659993682" at="28,162,29,0" concept="4" />
-      <node id="6292171174659059709" at="29,0,30,82" concept="0" />
+      <node id="6292171174659059709" at="28,162,29,82" concept="0" />
       <node id="6292171174659059704" at="15,0,20,0" concept="1" trace="test_CompleteCamelCaseFromStart#()V" />
-      <node id="6292171174659059704" at="23,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="6292171174659059704" at="23,0,31,0" concept="1" trace="testMethodImpl#()V" />
       <scope id="6292171174659059704" at="16,66,18,119" />
       <scope id="6292171174659059704" at="15,0,20,0" />
-      <scope id="6292171174659059704" at="24,51,30,82" />
-      <scope id="6292171174659059704" at="23,0,32,0" />
-      <unit id="6292171174659059704" at="21,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCaseFromStart_Test$TestBody" />
-      <unit id="6292171174659059704" at="13,0,34,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCaseFromStart_Test" />
+      <scope id="6292171174659059704" at="24,51,29,82" />
+      <scope id="6292171174659059704" at="23,0,31,0" />
+      <unit id="6292171174659059704" at="21,0,32,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCaseFromStart_Test$TestBody" />
+      <unit id="6292171174659059704" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCaseFromStart_Test" />
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659738935">
@@ -54,16 +71,15 @@
       <node id="6292171174659738937" at="25,72,26,71" concept="0" />
       <node id="6292171174659738939" at="26,71,27,26" concept="0" />
       <node id="6292171174660018229" at="27,26,28,162" concept="0" />
-      <node id="6292171174660018222" at="28,162,29,0" concept="4" />
-      <node id="6292171174659738954" at="29,0,30,82" concept="0" />
+      <node id="6292171174659738954" at="28,162,29,82" concept="0" />
       <node id="6292171174659738935" at="15,0,20,0" concept="1" trace="test_CompleteTextSearch#()V" />
-      <node id="6292171174659738935" at="23,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="6292171174659738935" at="23,0,31,0" concept="1" trace="testMethodImpl#()V" />
       <scope id="6292171174659738935" at="16,58,18,111" />
       <scope id="6292171174659738935" at="15,0,20,0" />
-      <scope id="6292171174659738935" at="24,51,30,82" />
-      <scope id="6292171174659738935" at="23,0,32,0" />
-      <unit id="6292171174659738935" at="21,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteTextSearch_Test$TestBody" />
-      <unit id="6292171174659738935" at="13,0,34,0" name="jetbrains.mps.lang.editor.completion.test.CompleteTextSearch_Test" />
+      <scope id="6292171174659738935" at="24,51,29,82" />
+      <scope id="6292171174659738935" at="23,0,31,0" />
+      <unit id="6292171174659738935" at="21,0,32,0" name="jetbrains.mps.lang.editor.completion.test.CompleteTextSearch_Test$TestBody" />
+      <unit id="6292171174659738935" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteTextSearch_Test" />
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659784566">
@@ -74,16 +90,15 @@
       <node id="6292171174659784568" at="25,72,26,71" concept="0" />
       <node id="6292171174659784570" at="26,71,27,25" concept="0" />
       <node id="6292171174660014680" at="27,25,28,162" concept="0" />
-      <node id="6292171174660014665" at="28,162,29,0" concept="4" />
-      <node id="6292171174659784585" at="29,0,30,82" concept="0" />
+      <node id="6292171174659784585" at="28,162,29,82" concept="0" />
       <node id="6292171174659784566" at="15,0,20,0" concept="1" trace="test_CompleteNotCamelCaseFromStart#()V" />
-      <node id="6292171174659784566" at="23,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="6292171174659784566" at="23,0,31,0" concept="1" trace="testMethodImpl#()V" />
       <scope id="6292171174659784566" at="16,69,18,122" />
       <scope id="6292171174659784566" at="15,0,20,0" />
-      <scope id="6292171174659784566" at="24,51,30,82" />
-      <scope id="6292171174659784566" at="23,0,32,0" />
-      <unit id="6292171174659784566" at="21,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteNotCamelCaseFromStart_Test$TestBody" />
-      <unit id="6292171174659784566" at="13,0,34,0" name="jetbrains.mps.lang.editor.completion.test.CompleteNotCamelCaseFromStart_Test" />
+      <scope id="6292171174659784566" at="24,51,29,82" />
+      <scope id="6292171174659784566" at="23,0,31,0" />
+      <unit id="6292171174659784566" at="21,0,32,0" name="jetbrains.mps.lang.editor.completion.test.CompleteNotCamelCaseFromStart_Test$TestBody" />
+      <unit id="6292171174659784566" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteNotCamelCaseFromStart_Test" />
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659801620">
@@ -94,16 +109,15 @@
       <node id="6292171174659801622" at="25,72,26,71" concept="0" />
       <node id="6292171174659801624" at="26,71,27,26" concept="0" />
       <node id="6292171174660009434" at="27,26,28,162" concept="0" />
-      <node id="6292171174660009427" at="28,162,29,0" concept="4" />
-      <node id="6292171174659801639" at="29,0,30,82" concept="0" />
+      <node id="6292171174659801639" at="28,162,29,82" concept="0" />
       <node id="6292171174659801620" at="15,0,20,0" concept="1" trace="test_CompleteNotCamelCaseFromMiddle#()V" />
-      <node id="6292171174659801620" at="23,0,32,0" concept="1" trace="testMethodImpl#()V" />
+      <node id="6292171174659801620" at="23,0,31,0" concept="1" trace="testMethodImpl#()V" />
       <scope id="6292171174659801620" at="16,70,18,123" />
       <scope id="6292171174659801620" at="15,0,20,0" />
-      <scope id="6292171174659801620" at="24,51,30,82" />
-      <scope id="6292171174659801620" at="23,0,32,0" />
-      <unit id="6292171174659801620" at="21,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteNotCamelCaseFromMiddle_Test$TestBody" />
-      <unit id="6292171174659801620" at="13,0,34,0" name="jetbrains.mps.lang.editor.completion.test.CompleteNotCamelCaseFromMiddle_Test" />
+      <scope id="6292171174659801620" at="24,51,29,82" />
+      <scope id="6292171174659801620" at="23,0,31,0" />
+      <unit id="6292171174659801620" at="21,0,32,0" name="jetbrains.mps.lang.editor.completion.test.CompleteNotCamelCaseFromMiddle_Test$TestBody" />
+      <unit id="6292171174659801620" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteNotCamelCaseFromMiddle_Test" />
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659820444">
@@ -126,23 +140,22 @@
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659835810">
-    <file name="CompleteCamelCaseWithSpace_Test.java">
-      <node id="6292171174659835810" at="16,66,17,113" concept="0" />
-      <node id="6292171174659835810" at="17,113,18,119" concept="0" />
+    <file name="CompleteSpaceCamelCase_Test.java">
+      <node id="6292171174659835810" at="16,62,17,113" concept="0" />
+      <node id="6292171174659835810" at="17,113,18,115" concept="0" />
       <node id="6292171174659835810" at="24,51,25,72" concept="0" />
       <node id="6292171174659835812" at="25,72,26,71" concept="0" />
       <node id="6292171174659835814" at="26,71,27,25" concept="0" />
       <node id="6292171174659997250" at="27,25,28,162" concept="0" />
-      <node id="6292171174659852946" at="28,162,29,81" concept="0" />
-      <node id="6292171174659835829" at="29,81,30,82" concept="0" />
-      <node id="6292171174659835810" at="15,0,20,0" concept="1" trace="test_CompleteCamelCaseWithSpace#()V" />
-      <node id="6292171174659835810" at="23,0,32,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="6292171174659835810" at="16,66,18,119" />
+      <node id="6292171174659835829" at="28,162,29,82" concept="0" />
+      <node id="6292171174659835810" at="15,0,20,0" concept="1" trace="test_CompleteSpaceCamelCase#()V" />
+      <node id="6292171174659835810" at="23,0,31,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="6292171174659835810" at="16,62,18,115" />
       <scope id="6292171174659835810" at="15,0,20,0" />
-      <scope id="6292171174659835810" at="24,51,30,82" />
-      <scope id="6292171174659835810" at="23,0,32,0" />
-      <unit id="6292171174659835810" at="21,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCaseWithSpace_Test$TestBody" />
-      <unit id="6292171174659835810" at="13,0,34,0" name="jetbrains.mps.lang.editor.completion.test.CompleteCamelCaseWithSpace_Test" />
+      <scope id="6292171174659835810" at="24,51,29,82" />
+      <scope id="6292171174659835810" at="23,0,31,0" />
+      <unit id="6292171174659835810" at="21,0,32,0" name="jetbrains.mps.lang.editor.completion.test.CompleteSpaceCamelCase_Test$TestBody" />
+      <unit id="6292171174659835810" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteSpaceCamelCase_Test" />
     </file>
   </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/6292171174659934747">
@@ -186,6 +199,44 @@
       <scope id="6292171174659934747" at="28,0,48,0" />
       <unit id="6292171174659934747" at="26,0,52,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuDescriptor_Test$TestBody" />
       <unit id="6292171174659934747" at="18,0,53,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuDescriptor_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/787021975296531738">
+    <file name="CompleteDotInPattern_Test.java">
+      <node id="787021975296531738" at="16,60,17,113" concept="0" />
+      <node id="787021975296531738" at="17,113,18,113" concept="0" />
+      <node id="787021975296531738" at="24,51,25,70" concept="0" />
+      <node id="787021975296531740" at="25,70,26,71" concept="0" />
+      <node id="787021975296531742" at="26,71,27,27" concept="0" />
+      <node id="787021975296531743" at="27,27,28,162" concept="0" />
+      <node id="787021975296531758" at="28,162,29,82" concept="0" />
+      <node id="787021975296531738" at="15,0,20,0" concept="1" trace="test_CompleteDotInPattern#()V" />
+      <node id="787021975296531738" at="23,0,31,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="787021975296531738" at="16,60,18,113" />
+      <scope id="787021975296531738" at="15,0,20,0" />
+      <scope id="787021975296531738" at="24,51,29,82" />
+      <scope id="787021975296531738" at="23,0,31,0" />
+      <unit id="787021975296531738" at="21,0,32,0" name="jetbrains.mps.lang.editor.completion.test.CompleteDotInPattern_Test$TestBody" />
+      <unit id="787021975296531738" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteDotInPattern_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/787021975296625112">
+    <file name="CompleteDotCamelCase_Test.java">
+      <node id="787021975296625112" at="16,60,17,113" concept="0" />
+      <node id="787021975296625112" at="17,113,18,113" concept="0" />
+      <node id="787021975296625112" at="24,51,25,70" concept="0" />
+      <node id="787021975296625114" at="25,70,26,71" concept="0" />
+      <node id="787021975296625116" at="26,71,27,26" concept="0" />
+      <node id="787021975296625117" at="27,26,28,162" concept="0" />
+      <node id="787021975296625132" at="28,162,29,82" concept="0" />
+      <node id="787021975296625112" at="15,0,20,0" concept="1" trace="test_CompleteDotCamelCase#()V" />
+      <node id="787021975296625112" at="23,0,31,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="787021975296625112" at="16,60,18,113" />
+      <scope id="787021975296625112" at="15,0,20,0" />
+      <scope id="787021975296625112" at="24,51,29,82" />
+      <scope id="787021975296625112" at="23,0,31,0" />
+      <unit id="787021975296625112" at="21,0,32,0" name="jetbrains.mps.lang.editor.completion.test.CompleteDotCamelCase_Test$TestBody" />
+      <unit id="787021975296625112" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteDotCamelCase_Test" />
     </file>
   </root>
 </debug-info>

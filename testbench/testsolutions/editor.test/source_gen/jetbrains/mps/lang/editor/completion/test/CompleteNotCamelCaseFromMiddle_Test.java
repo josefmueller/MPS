@@ -26,7 +26,6 @@ public class CompleteNotCamelCaseFromMiddle_Test extends BaseTransformationTest 
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       typeString("miden");
       Assert.assertTrue(getEditorComponent().getNodeSubstituteChooser().isVisible() && getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1);
-
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
