@@ -46,19 +46,7 @@ class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
     if (myConcept instanceof SConcept && !myConcept.isAbstract()) {
       result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(myConcept), myConcept));
     }
-
-    context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(getSubconceptsPartPresentableDescription(), null));
-    try {
-      result.add(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept)));
-    } finally {
-      context.getEditorMenuTrace().popTraceInfo();
-    }
+    result.add(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept)));
     return new CompositeMenuPart<>(result).createItems(context);
-  }
-
-  @NotNull
-  private String getSubconceptsPartPresentableDescription() {
-    return "menus for all the direct subconcepts of " + myConcept.getName();
   }
 }
