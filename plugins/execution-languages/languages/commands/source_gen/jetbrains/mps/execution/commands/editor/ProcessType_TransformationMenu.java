@@ -63,7 +63,7 @@ public class ProcessType_TransformationMenu extends TransformationMenuBase {
         @Override
         public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
           context.getEditorMenuTrace().pushTraceInfo();
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of ", new SNodePointer("r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)", "1741258697587103845")));
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct superconcepts of " + "ProcessType", new SNodePointer("r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)", "1741258697587103845")));
           try {
             return super.createItems(context);
           } finally {

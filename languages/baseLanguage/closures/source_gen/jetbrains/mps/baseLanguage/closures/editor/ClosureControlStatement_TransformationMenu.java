@@ -60,7 +60,7 @@ public class ClosureControlStatement_TransformationMenu extends TransformationMe
         @Override
         public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
           context.getEditorMenuTrace().pushTraceInfo();
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of ", new SNodePointer("r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)", "1741258697587050727")));
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct superconcepts of " + "ClosureControlStatement", new SNodePointer("r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)", "1741258697587050727")));
           try {
             return super.createItems(context);
           } finally {

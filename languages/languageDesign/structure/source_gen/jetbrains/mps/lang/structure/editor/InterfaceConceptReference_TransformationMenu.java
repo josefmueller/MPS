@@ -64,7 +64,7 @@ public class InterfaceConceptReference_TransformationMenu extends Transformation
         @Override
         public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
           context.getEditorMenuTrace().pushTraceInfo();
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of ", new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "1741258697587065075")));
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct superconcepts of " + "InterfaceConceptReference", new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "1741258697587065075")));
           try {
             return super.createItems(context);
           } finally {

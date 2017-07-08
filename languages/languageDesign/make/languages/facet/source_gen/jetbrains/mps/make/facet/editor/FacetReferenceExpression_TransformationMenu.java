@@ -66,7 +66,7 @@ public class FacetReferenceExpression_TransformationMenu extends TransformationM
         @Override
         public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
           context.getEditorMenuTrace().pushTraceInfo();
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of ", new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108324")));
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct superconcepts of " + "FacetReferenceExpression", new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108324")));
           try {
             return super.createItems(context);
           } finally {

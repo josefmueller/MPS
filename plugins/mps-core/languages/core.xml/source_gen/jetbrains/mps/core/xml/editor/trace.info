@@ -496,7 +496,7 @@
       <node id="1741258697587213721" at="61,15,62,50" concept="2" />
       <node id="1741258697587213721" at="68,124,69,156" concept="6" />
       <node id="1741258697587213721" at="74,101,75,55" concept="2" />
-      <node id="1741258697587213721" at="75,55,76,249" concept="2" />
+      <node id="1741258697587213721" at="75,55,76,272" concept="2" />
       <node id="1741258697587213721" at="77,15,78,46" concept="7" />
       <node id="1741258697587213721" at="79,21,80,56" concept="2" />
       <node id="1741258697587213721" at="86,138,87,80" concept="2" />
@@ -553,7 +553,7 @@
       <node id="1741258697587213721" at="212,0,216,0" concept="5" trace="getShortDescriptionText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697587213721" at="218,0,222,0" concept="5" trace="getTraceInfo#()Ljetbrains/mps/openapi/editor/menus/EditorMenuTraceInfo;" />
       <node id="1741258697587213721" at="58,248,63,5" concept="12" />
-      <node id="1741258697587213721" at="76,249,81,11" concept="12" />
+      <node id="1741258697587213721" at="76,272,81,11" concept="12" />
       <node id="1741258697587213721" at="103,222,108,7" concept="12" />
       <node id="1741258697587213721" at="119,274,124,9" concept="12" />
       <node id="1741258697587213721" at="164,222,169,7" concept="12" />
@@ -699,7 +699,7 @@
       <node id="1741258697587213862" at="50,15,51,50" concept="2" />
       <node id="1741258697587213862" at="57,124,58,156" concept="6" />
       <node id="1741258697587213862" at="63,101,64,55" concept="2" />
-      <node id="1741258697587213862" at="64,55,65,249" concept="2" />
+      <node id="1741258697587213862" at="64,55,65,268" concept="2" />
       <node id="1741258697587213862" at="66,15,67,46" concept="7" />
       <node id="1741258697587213862" at="68,21,69,56" concept="2" />
       <node id="1741258697587213862" at="75,138,76,77" concept="2" />
@@ -716,7 +716,7 @@
       <node id="1741258697587213862" at="74,5,77,5" concept="4" />
       <node id="1741258697587213862" at="38,0,42,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
       <node id="1741258697587213862" at="47,244,52,5" concept="12" />
-      <node id="1741258697587213862" at="65,249,70,11" concept="12" />
+      <node id="1741258697587213862" at="65,268,70,11" concept="12" />
       <node id="1741258697587213870" at="86,268,91,7" concept="12" />
       <node id="1741258697587213870" at="106,0,111,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
       <node id="1741258697587213870" at="94,0,100,0" concept="5" trace="getSubstituteMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuLookup;" />
@@ -794,7 +794,7 @@
       <node id="1741258697587213891" at="50,15,51,50" concept="2" />
       <node id="1741258697587213891" at="57,124,58,156" concept="6" />
       <node id="1741258697587213891" at="63,101,64,55" concept="2" />
-      <node id="1741258697587213891" at="64,55,65,249" concept="2" />
+      <node id="1741258697587213891" at="64,55,65,266" concept="2" />
       <node id="1741258697587213891" at="66,15,67,46" concept="7" />
       <node id="1741258697587213891" at="68,21,69,56" concept="2" />
       <node id="1741258697587213891" at="75,138,76,75" concept="2" />
@@ -811,7 +811,7 @@
       <node id="1741258697587213891" at="74,5,77,5" concept="4" />
       <node id="1741258697587213891" at="38,0,42,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
       <node id="1741258697587213891" at="47,242,52,5" concept="12" />
-      <node id="1741258697587213891" at="65,249,70,11" concept="12" />
+      <node id="1741258697587213891" at="65,266,70,11" concept="12" />
       <node id="1741258697587213899" at="86,266,91,7" concept="12" />
       <node id="1741258697587213899" at="106,0,111,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
       <node id="1741258697587213899" at="94,0,100,0" concept="5" trace="getSubstituteMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuLookup;" />

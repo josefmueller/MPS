@@ -60,7 +60,7 @@ public class BaseEmitJumpStatement_TransformationMenu extends TransformationMenu
         @Override
         public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
           context.getEditorMenuTrace().pushTraceInfo();
-          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of ", new SNodePointer("r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)", "1741258697587170610")));
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct superconcepts of " + "BaseEmitJumpStatement", new SNodePointer("r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)", "1741258697587170610")));
           try {
             return super.createItems(context);
           } finally {

@@ -11966,7 +11966,7 @@
       <node id="1741258697586931235" at="48,15,49,50" concept="2" />
       <node id="1741258697586931235" at="55,124,56,156" concept="6" />
       <node id="1741258697586931235" at="61,101,62,55" concept="2" />
-      <node id="1741258697586931235" at="62,55,63,265" concept="2" />
+      <node id="1741258697586931235" at="62,55,63,285" concept="2" />
       <node id="1741258697586931235" at="64,15,65,46" concept="7" />
       <node id="1741258697586931235" at="66,21,67,56" concept="2" />
       <node id="1741258697586931235" at="73,138,74,77" concept="2" />
@@ -11996,7 +11996,7 @@
       <node id="1741258697586931243" at="101,0,105,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuItem;" />
       <node id="1741258697586931243" at="132,0,136,0" concept="5" trace="getTraceInfo#()Ljetbrains/mps/openapi/editor/menus/EditorMenuTraceInfo;" />
       <node id="1741258697586931235" at="45,261,50,5" concept="11" />
-      <node id="1741258697586931235" at="63,265,68,11" concept="11" />
+      <node id="1741258697586931235" at="63,285,68,11" concept="11" />
       <node id="1741258697586931243" at="89,238,94,7" concept="11" />
       <node id="1741258697586931243" at="117,0,122,0" concept="5" trace="getLabelText#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1741258697586931243" at="123,0,128,0" concept="5" trace="execute#(Ljava/lang/String;)V" />
@@ -12438,7 +12438,7 @@
       <node id="1741258697586931458" at="44,15,45,50" concept="2" />
       <node id="1741258697586931458" at="51,124,52,156" concept="6" />
       <node id="1741258697586931458" at="57,101,58,55" concept="2" />
-      <node id="1741258697586931458" at="58,55,59,265" concept="2" />
+      <node id="1741258697586931458" at="58,55,59,286" concept="2" />
       <node id="1741258697586931458" at="60,15,61,46" concept="7" />
       <node id="1741258697586931458" at="62,21,63,56" concept="2" />
       <node id="1741258697586931458" at="67,9,68,80" concept="2" />
@@ -12462,7 +12462,7 @@
       <node id="1741258697586931458" at="115,0,116,341" concept="7" />
       <node id="1741258697586931458" at="32,0,36,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
       <node id="1741258697586931458" at="41,262,46,5" concept="11" />
-      <node id="1741258697586931458" at="59,265,64,11" concept="11" />
+      <node id="1741258697586931458" at="59,286,64,11" concept="11" />
       <node id="1741258697586931458" at="79,288,84,7" concept="11" />
       <node id="1741258697586931458" at="102,284,107,7" concept="11" />
       <node id="1741258697586931458" at="87,0,95,0" concept="5" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
