@@ -52,7 +52,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -304,7 +303,7 @@ public class NodeSubstituteChooser implements KeyboardHandler, DataProvider {
       matchingActions = getMatchingActions(trimPattern);
     }
     try {
-      Collections.sort(matchingActions, new SubstituteActionComparator(needToTrim ? trimPattern : pattern) {
+      matchingActions.sort(new SubstituteActionComparator(needToTrim ? trimPattern : pattern) {
         private Map<SubstituteAction, Integer> myLocalSortPrioritiesMap = new HashMap<>();
         private Map<SubstituteAction, Integer> myRatesMap = new HashMap<>();
         private Map<SubstituteAction, String> myVisibleMatchingTextsMap = new HashMap<>();
@@ -562,7 +561,6 @@ public class NodeSubstituteChooser implements KeyboardHandler, DataProvider {
   public Window getWindow() {
     return null;
   }
-
 
   @Nullable
   @Override

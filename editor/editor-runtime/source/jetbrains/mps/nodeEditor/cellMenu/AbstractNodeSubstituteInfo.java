@@ -46,6 +46,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteInfo.class);
 
   private static SModel ourModelForTypechecking = null;
+
   public static SModel getModelForTypechecking() {
     return ourModelForTypechecking;
   }
@@ -89,22 +90,19 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
 
   @Override
   public boolean hasExactlyNActions(final String pattern, final boolean strictMatching, final int n) {
-    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        int count = 0;
-        for (SubstituteAction action : getActionsFromCache(pattern, strictMatching)) {
-          if (shouldAddItem(action, pattern, strictMatching)) {
-            count++;
-          }
-
-          if (count > n) {
-            return false;
-          }
+    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(() -> {
+      int count = 0;
+      for (SubstituteAction action : getActionsFromCache(pattern, strictMatching)) {
+        if (shouldAddItem(action, pattern, strictMatching)) {
+          count++;
         }
 
-        return n == count;
+        if (count > n) {
+          return false;
+        }
       }
+
+      return n == count;
     });
   }
 
@@ -152,24 +150,21 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
 
   @Override
   public List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
-    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction(new Computable<List<SubstituteAction>>() {
-      @Override
-      public List<SubstituteAction> compute() {
-        List<SubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
-        ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
-        for (SubstituteAction item : actionsFromCache) {
-          try {
-            if (shouldAddItem(item, pattern, strictMatching)) {
-              result.add(item);
-            }
-          } catch (Throwable th) {
-            LOG.error("Exception on calling canSubstitute on a substitute action " + (item == null ? "null" : item.getClass()), th);
+    return new ModelAccessHelper(myEditorContext.getRepository()).runReadAction((Computable<List<SubstituteAction>>) () -> {
+      List<SubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
+      ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
+      for (SubstituteAction item : actionsFromCache) {
+        try {
+          if (shouldAddItem(item, pattern, strictMatching)) {
+            result.add(item);
           }
+        } catch (Throwable th) {
+          LOG.error("Exception on calling canSubstitute on a substitute action " + (item == null ? "null" : item.getClass()), th);
         }
-        mySubstituteInfoCache.putActionsToCache(pattern, strictMatching, result);
-        result.trimToSize();
-        return result;
       }
+      mySubstituteInfoCache.putActionsToCache(pattern, strictMatching, result);
+      result.trimToSize();
+      return result;
     });
   }
 
@@ -194,8 +189,8 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
   }
 
   private List<SubstituteAction> getActionsFromCache(String pattern, boolean strictMatching) {
-    List<SubstituteAction> actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching);
-    if (actions != null){
+    List<SubstituteAction> actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching, false);
+    if (actions != null) {
       return actions;
     } else {
       return Collections.unmodifiableList(getActions());

@@ -31,7 +31,7 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
   private SubstituteInfo mySubstituteInfo;
   private final SubstituteInfoCache mySubstituteInfoCache;
 
-  public NodeSubstituteInfoFilterDecorator(SubstituteInfo substituteInfo, SRepository repository) {
+  protected NodeSubstituteInfoFilterDecorator(SubstituteInfo substituteInfo, SRepository repository) {
     mySubstituteInfo = substituteInfo;
     myRepository = repository;
     mySubstituteInfoCache = new SubstituteInfoCache();
@@ -39,7 +39,12 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
 
   @Override
   public List<SubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
-    List<SubstituteAction> actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching);
+    List<SubstituteAction> actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching, true);
+    if (actions != null) {
+      return actions;
+    }
+
+    actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching, false);
     if (actions == null) {
       actions = mySubstituteInfo.getMatchingActions(pattern, strictMatching);
     }
@@ -51,17 +56,14 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
 
   private List<SubstituteAction> getFilteredActions(String pattern, List<SubstituteAction> actions, boolean strict) {
     final Predicate<SubstituteAction> predicate = createFilter(pattern);
-    return new ModelAccessHelper(myRepository.getModelAccess()).runReadAction(new Computable<List<SubstituteAction>>() {
-      @Override
-      public List<SubstituteAction> compute() {
-        ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actions.size());
-        for (SubstituteAction item : actions) {
-          if (shouldAddItem(item, predicate, strict, pattern)) {
-            result.add(item);
-          }
+    return new ModelAccessHelper(myRepository.getModelAccess()).runReadAction((Computable<List<SubstituteAction>>) () -> {
+      ArrayList<SubstituteAction> result = new ArrayList<>(actions.size());
+      for (SubstituteAction item : actions) {
+        if (shouldAddItem(item, predicate, strict, pattern)) {
+          result.add(item);
         }
-        return result;
       }
+      return result;
     });
   }
 
@@ -74,14 +76,8 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
 
   @Override
   public List<SubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
-    List<SubstituteAction> actions = mySubstituteInfoCache.getActionsFromCache(pattern, strictMatching);
-    if (actions != null) {
-      return new ArrayList<>(actions);
-    }
-    actions = mySubstituteInfo.getSmartMatchingActions(pattern, strictMatching, contextCell);
+    List<SubstituteAction> actions = mySubstituteInfo.getSmartMatchingActions(pattern, strictMatching, contextCell);
     actions = getFilteredActions(pattern, actions, strictMatching);
-    mySubstituteInfoCache.putActionsToCache(pattern, strictMatching, actions);
-
     return actions;
 
   }
@@ -104,24 +100,7 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
 
   @Override
   public boolean hasExactlyNActions(String pattern, boolean strictMatching, int n) {
-    final Predicate<SubstituteAction> predicate = createFilter(pattern);
-    return new ModelAccessHelper(myRepository).runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        int count = 0;
-        for (SubstituteAction action : getMatchingActions(pattern, strictMatching)) {
-          if (shouldAddItem(action, predicate, strictMatching, pattern)) {
-            count++;
-          }
-
-          if (count > n) {
-            return false;
-          }
-        }
-
-        return n == count;
-      }
-    });
+    return getMatchingActions(pattern, strictMatching).size() == n;
   }
 
   protected abstract Predicate<SubstituteAction> createFilter(String pattern);
