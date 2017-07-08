@@ -389,6 +389,8 @@
         <child id="5894421362117677753" name="keymap" index="3$GE96" />
         <child id="5894421362117323157" name="support" index="3$HL_E" />
         <child id="5894421362116952242" name="documentation" index="3$Ir1d" />
+        <child id="1084163669516664629" name="copyrightForeground" index="3KTKoD" />
+        <child id="1084163669516639223" name="foreground" index="3KTYbF" />
       </concept>
       <concept id="7753544965996489991" name="jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite" flags="ng" index="1zDKOm">
         <child id="6108265972537335225" name="updateUrl" index="2EtnoK" />
@@ -17290,7 +17292,7 @@
       </node>
       <node concept="3_J27D" id="6Iq8148f_Zd" role="HFo83">
         <node concept="3Mxwew" id="6Iq8148f_Ze" role="3MwsjC">
-          <property role="3MwjfP" value="000000" />
+          <property role="3MwjfP" value="FFFFFF" />
         </node>
       </node>
       <node concept="IuM$Q" id="57dcfYPs$xS" role="IuKBz">
@@ -17349,7 +17351,7 @@
       </node>
       <node concept="NbPM2" id="5VYK1npNzOD" role="27hGoL">
         <node concept="3Mxwew" id="5VYK1npNzOC" role="3MwsjC">
-          <property role="3MwjfP" value="0E9EF0" />
+          <property role="3MwjfP" value="0383F9" />
         </node>
       </node>
       <node concept="55IIr" id="5VYK1npK8$T" role="27igRh">
@@ -17527,6 +17529,16 @@
       <node concept="NbPM2" id="6U0n_nYVOoE" role="2gqIGF">
         <node concept="3Mxwew" id="6U0n_nYVOoD" role="3MwsjC">
           <property role="3MwjfP" value="3" />
+        </node>
+      </node>
+      <node concept="3_J27D" id="WbIhNZXCF2" role="3KTYbF">
+        <node concept="3Mxwew" id="WbIhNZXCF4" role="3MwsjC">
+          <property role="3MwjfP" value="FFFFFF" />
+        </node>
+      </node>
+      <node concept="3_J27D" id="54PfAP0EqnK" role="3KTKoD">
+        <node concept="3Mxwew" id="54PfAP0EqnM" role="3MwsjC">
+          <property role="3MwjfP" value="858585" />
         </node>
       </node>
     </node>
