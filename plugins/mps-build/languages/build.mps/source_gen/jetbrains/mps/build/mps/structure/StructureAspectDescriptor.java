@@ -348,6 +348,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("progressY", 0x5efec015d9b8abc5L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("6845119683729337285").done();
     b.aggregate("progressHeight", 0x6e805e55feeab57eL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("7962467864633062782").done();
     b.aggregate("aboutScreen", 0x54c4eb89feaf4b15L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(false).origin("6108265972537182997").done();
+    b.aggregate("foreground", 0xf0bb91cffec5bf7L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(true).ordered(true).multiple(false).origin("1084163669516639223").done();
+    b.aggregate("copyrightForeground", 0xf0bb91cffecbf35L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(true).ordered(true).multiple(false).origin("1084163669516664629").done();
+    b.aggregate("linkColor", 0xf0bb91cffecbf58L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee17fe57L).optional(true).ordered(true).multiple(false).origin("1084163669516664664").done();
+    b.aggregate("logoX", 0xf0bb91cffed32b3L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("1084163669516694195").done();
+    b.aggregate("logoY", 0xf0bb91cffed32d8L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("1084163669516694232").done();
+    b.aggregate("logoW", 0xf0bb91cffed334aL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("1084163669516694346").done();
+    b.aggregate("logoH", 0xf0bb91cffed3371L).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3cca41cd0fe51d4fL).optional(true).ordered(true).multiple(false).origin("1084163669516694385").done();
     b.aggregate("icon16", 0x54c4eb89feb0001bL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(false).origin("6108265972537229339").done();
     b.aggregate("icon32", 0x54c4eb89feb0001aL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(false).origin("6108265972537229338").done();
     b.aggregate("icon32opaque", 0x54c4eb89feb0001cL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(true).ordered(true).multiple(false).origin("6108265972537229340").done();

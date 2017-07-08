@@ -712,6 +712,48 @@
       <property role="IQ2ns" value="6108265972537182997" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
     </node>
+    <node concept="1TJgyj" id="WbIhNZV5JR" role="1TKVEi">
+      <property role="IQ2ns" value="1084163669516639223" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="foreground" />
+      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
+    <node concept="1TJgyj" id="WbIhNZVbWP" role="1TKVEi">
+      <property role="IQ2ns" value="1084163669516664629" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="copyrightForeground" />
+      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
+    <node concept="1TJgyj" id="WbIhNZVbXo" role="1TKVEi">
+      <property role="IQ2ns" value="1084163669516664664" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="linkColor" />
+      <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
+    <node concept="1TJgyj" id="WbIhNZVjaN" role="1TKVEi">
+      <property role="IQ2ns" value="1084163669516694195" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="logoX" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="WbIhNZVjbo" role="1TKVEi">
+      <property role="IQ2ns" value="1084163669516694232" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="logoY" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="WbIhNZVjda" role="1TKVEi">
+      <property role="IQ2ns" value="1084163669516694346" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="logoW" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
+    <node concept="1TJgyj" id="WbIhNZVjdL" role="1TKVEi">
+      <property role="IQ2ns" value="1084163669516694385" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="logoH" />
+      <ref role="20lvS9" to="3ior:3NagsOfThPf" resolve="BuildString" />
+    </node>
     <node concept="1TJgyj" id="5j4USBYG00r" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="icon16" />
