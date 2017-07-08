@@ -45124,8 +45124,43 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpc2:7l1m754O$tN" resolve="TransformationMenuPart_Super" />
       <node concept="gft3U" id="1zFTabXlZm5" role="1lVwrX">
-        <node concept="Xl_RD" id="1zFTabXlZm6" role="gfFT$">
-          <property role="Xl_RC" value="include menus for all the direct subconcepts of " />
+        <node concept="3cpWs3" id="3tgOha1t5Q1" role="gfFT$">
+          <node concept="Xl_RD" id="3tgOha1t5Qa" role="3uHU7w">
+            <property role="Xl_RC" value="" />
+            <node concept="17Uvod" id="3tgOha1t5Ut" role="lGtFl">
+              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+              <property role="2qtEX9" value="value" />
+              <node concept="3zFVjK" id="3tgOha1t5Uu" role="3zH0cK">
+                <node concept="3clFbS" id="3tgOha1t5Uv" role="2VODD2">
+                  <node concept="3clFbF" id="3tgOha1t76B" role="3cqZAp">
+                    <node concept="2OqwBi" id="3tgOha1t76C" role="3clFbG">
+                      <node concept="2OqwBi" id="3tgOha1t76D" role="2Oq$k0">
+                        <node concept="2OqwBi" id="3tgOha1t76E" role="2Oq$k0">
+                          <node concept="30H73N" id="3tgOha1t76F" role="2Oq$k0" />
+                          <node concept="2Xjw5R" id="3tgOha1t76G" role="2OqNvi">
+                            <node concept="1xMEDy" id="3tgOha1t76H" role="1xVPHs">
+                              <node concept="chp4Y" id="3tgOha1t76I" role="ri$Ld">
+                                <ref role="cht4Q" to="tpc2:4Sf$XywKhwM" resolve="ITransformationMenu" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2qgKlT" id="3tgOha1t76J" role="2OqNvi">
+                          <ref role="37wK5l" to="tpcb:1quYWAD18xk" resolve="getApplicableConcept" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="3tgOha1t76K" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="Xl_RD" id="1zFTabXlZm6" role="3uHU7B">
+            <property role="Xl_RC" value="include menus for all the direct superconcepts of " />
+          </node>
         </node>
       </node>
     </node>
