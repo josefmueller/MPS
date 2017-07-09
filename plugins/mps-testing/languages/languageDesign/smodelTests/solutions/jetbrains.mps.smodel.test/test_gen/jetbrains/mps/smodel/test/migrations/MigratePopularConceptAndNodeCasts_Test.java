@@ -17,11 +17,11 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.lang.smodel.migration.MigratePopularConceptAndNodeCasts;
 
 @MPSLaunch
-public class MigratePopularConceptAndNodeCasts_Test_Test extends BaseTransformationTest {
+public class MigratePopularConceptAndNodeCasts_Test extends BaseTransformationTest {
   @Test
   public void test_MigratePopularConceptAndNodeCasts_Test() throws Throwable {
     initTest("${mps_home}", "r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)", false);
-    runTest("jetbrains.mps.smodel.test.migrations.MigratePopularConceptAndNodeCasts_Test_Test$TestBody", "testMethod", true);
+    runTest("jetbrains.mps.smodel.test.migrations.MigratePopularConceptAndNodeCasts_Test$TestBody", "testMethod", true);
   }
 
   @MPSLaunch
@@ -35,8 +35,8 @@ public class MigratePopularConceptAndNodeCasts_Test_Test extends BaseTransformat
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(SNodeOperations.cast(getRealNodeById("2357417460944492141"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck")));
     }
     @Override
-    public MigrationScript getMigrationScript() {
-      return new MigratePopularConceptAndNodeCasts();
+    public MigrationScript[] getMigrationScript() {
+      return new MigrationScript[]{new MigratePopularConceptAndNodeCasts()};
     }
   }
 }

@@ -21,12 +21,15 @@
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
       <concept id="5476670926298696679" name="jetbrains.mps.lang.test.structure.MigrationTestCase" flags="lg" index="2lJO3n">
-        <reference id="5476670926298698915" name="migration" index="2lJPYj" />
         <child id="5476670926298696680" name="inputNodes" index="2lJO3o" />
         <child id="5476670926298698900" name="outputNodes" index="2lJPY$" />
+        <child id="6626913010124294914" name="migration" index="3ea0P7" />
       </concept>
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
+      </concept>
+      <concept id="6626913010124185481" name="jetbrains.mps.lang.test.structure.MigrationReference" flags="ng" index="3ea_Bc">
+        <reference id="6626913010124185482" name="migration" index="3ea_Bf" />
       </concept>
       <concept id="1216989428737" name="jetbrains.mps.lang.test.structure.TestNode" flags="ng" index="1qefOq">
         <child id="1216989461394" name="nodeToCheck" index="1qenE9" />
@@ -117,7 +120,7 @@
     </language>
   </registry>
   <node concept="2lJO3n" id="4K12N3pNt7K">
-    <ref role="2lJPYj" to="oie:4YXTt1AHdjK" resolve="MigratePopularConceptAndNodeCasts" />
+    <property role="TrG5h" value="MigratePopularConceptAndNodeCasts_Test" />
     <node concept="1qefOq" id="4K12N3pNtjd" role="2lJO3o">
       <node concept="9aQIb" id="4K12N3pP8BG" role="1qenE9">
         <node concept="3clFbS" id="4K12N3pP8BJ" role="9aQI4">
@@ -344,6 +347,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="3ea_Bc" id="5BeGwkd6K9P" role="3ea0P7">
+      <ref role="3ea_Bf" to="oie:4YXTt1AHdjK" resolve="MigratePopularConceptAndNodeCasts" />
     </node>
   </node>
   <node concept="2XOHcx" id="7Ac3mvq_m$p">

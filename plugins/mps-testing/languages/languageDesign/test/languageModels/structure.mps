@@ -1295,9 +1295,10 @@
     <node concept="1TJgyj" id="4K12N3pJ_iz" role="1TKVEi">
       <property role="IQ2ns" value="5476670926298698915" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="migration" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="migration_old" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="53vh:4uVwhQyFcjm" resolve="IMigrationUnit" />
+      <node concept="asaX9" id="5BeGwkd5D7k" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="4K12N3pJ$JC" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1313,8 +1314,15 @@
       <property role="IQ2ns" value="5476670926298698900" />
       <ref role="20lvS9" node="hHqefK1" resolve="TestNode" />
     </node>
-    <node concept="PrWs8" id="4K12N3pJ_ia" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    <node concept="1TJgyj" id="5JRx$mlRSG2" role="1TKVEi">
+      <property role="IQ2ns" value="6626913010124294914" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="migration" />
+      <property role="20lbJX" value="1..n" />
+      <ref role="20lvS9" node="5JRx$mlRtY9" resolve="MigrationReference" />
+    </node>
+    <node concept="PrWs8" id="5JRx$mlRtY3" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
     </node>
     <node concept="PrWs8" id="4K12N3pJ$JF" role="PzmwI">
       <ref role="PrY4T" to="tpe3:hGB2rPm" resolve="ITestCase" />
@@ -1340,6 +1348,18 @@
     <property role="TrG5h" value="AfterTestsMethod" />
     <property role="34LRSv" value="after tests" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="5JRx$mlRtY9">
+    <property role="EcuMT" value="6626913010124185481" />
+    <property role="TrG5h" value="MigrationReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5JRx$mlRtYa" role="1TKVEi">
+      <property role="IQ2ns" value="6626913010124185482" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="migration" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="53vh:4uVwhQyFcjm" resolve="IMigrationUnit" />
+    </node>
   </node>
 </model>
 

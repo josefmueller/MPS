@@ -226,8 +226,8 @@
       <modulePath path="$PROJECT_DIR$/plugins/httpsupport/solutions/runtime/jetbrains.mps.ide.httpsupport.runtime.msd" folder="platform.httpsupport" />
       <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" folder="core.aspects.editor.diagram" />
-      <modulePath path="$PROJECT_DIR$/plugins/migration/migration-workbench/solutions/migration.workbench/jetbrains.mps.migration.workbench.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/migration/migration-platform/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />
+      <modulePath path="$PROJECT_DIR$/plugins/migration/migration-workbench/solutions/migration.workbench/jetbrains.mps.migration.workbench.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/mps-build/languages/build.mps.runner/jetbrains.mps.build.mps.runner.mpl" folder="platform.build" />
@@ -370,6 +370,7 @@
       <modulePath path="$PROJECT_DIR$/samples/migrations/languages/declarations/declarations.mpl" folder="samples.migrations.example2" />
       <modulePath path="$PROJECT_DIR$/samples/migrations/languages/ref/ref.mpl" folder="samples.migrations.example1" />
       <modulePath path="$PROJECT_DIR$/samples/migrations/languages/references/references.mpl" folder="samples.migrations.example2" />
+      <modulePath path="$PROJECT_DIR$/samples/migrations/solutions/migartions.test/migrations.test.msd" folder="samples.migrations.example2" />
       <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/jetbrains.mps.samples.mindmaps.figures.msd" folder="samples.mindmaps" />
       <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/jetbrains.mps.samples.mindmaps.sandbox.msd" folder="samples.mindmaps" />
       <modulePath path="$PROJECT_DIR$/samples/mindmaps/jetbrains.mps.samples.mindmaps/jetbrains.mps.samples.mindmaps.mpl" folder="samples.mindmaps" />
