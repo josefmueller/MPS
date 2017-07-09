@@ -15,7 +15,7 @@
     <language slang="l:9f846aef-4e4a-4a84-828e-7e83fe2697f2:jetbrains.mps.build.mps.testManifest" version="0" />
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="1" />
     <language slang="l:7866978e-a0f0-4cc7-81bc-4d213d9375e1:jetbrains.mps.lang.smodel" version="8" />
-    <language slang="l:8585453e-6bfb-4d80-98de-b16074f1d86c:jetbrains.mps.lang.test" version="1" />
+    <language slang="l:8585453e-6bfb-4d80-98de-b16074f1d86c:jetbrains.mps.lang.test" version="2" />
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
     <language slang="l:2f74e72e-3e3d-480e-bae1-cc709d588366:testAnnotatedType" version="0" />
     <language slang="l:394e3857-3256-4e8b-9601-5abe7ad354d9:testOverridingType" version="0" />

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="36a4d1c5-6ec1-426f-8192-1875a7cc48de" name="testSubtypingA" version="0" />
     <use id="65611934-24fb-470c-813e-a9df6058b93a" name="testSubtypingB" version="0" />
     <use id="8a53c705-15e4-4f87-8796-457845605512" name="testPrimitiveType" version="0" />

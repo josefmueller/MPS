@@ -2,7 +2,7 @@
 <model ref="r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)">
   <persistence version="9" />
   <languages>
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="2" />
     <use id="2b800570-3758-4c14-86fb-871266fb9d11" name="constraints.test" version="-1" />
   </languages>
   <imports>

@@ -14,6 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
+import declarations.migration.MigrateDeclarations;
+import references.migration.MigrateReferences;
 
 @MPSLaunch
 public class MigrateDeclarationsReferences_Test extends BaseTransformationTest {
@@ -35,7 +37,7 @@ public class MigrateDeclarationsReferences_Test extends BaseTransformationTest {
     }
     @Override
     public MigrationScript[] getMigrationScript() {
-      return new MigrationScript[]{};
+      return new MigrationScript[]{new MigrateDeclarations(), new MigrateReferences()};
     }
   }
 }
