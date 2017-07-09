@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="migrations.test.tests.MigrateDeclarationsReferences_Test" file="MigrateDeclarationsReferences_Test.java">
-    <classNode dependClassName="declarations.migration.MigrateDeclarations" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -15,7 +14,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode dependClassName="references.migration.MigrateReferences" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
 </dependenciesRoot>

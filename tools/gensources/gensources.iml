@@ -753,6 +753,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/declarations/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/ref/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/references/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../samples/migrations/solutions/migartions.test/test_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps/source_gen" isTestSource="false" />
@@ -910,6 +911,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/declarations/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/ref/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/migrations/languages/references/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../samples/migrations/solutions/migartions.test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps.figures/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/mindmaps/jetbrains.mps.samples.mindmaps/classes_gen" />

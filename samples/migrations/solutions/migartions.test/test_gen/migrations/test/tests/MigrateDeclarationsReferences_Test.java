@@ -14,14 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
-import declarations.migration.MigrateDeclarations;
-import references.migration.MigrateReferences;
 
 @MPSLaunch
 public class MigrateDeclarationsReferences_Test extends BaseTransformationTest {
   @Test
   public void test_MigrateDeclarationsReferences_Test() throws Throwable {
-    initTest("", "r:fd0f5486-f8ee-4117-b081-77c304b23496(migrations.test.tests@tests)", false);
+    initTest("${module}/../..", "r:fd0f5486-f8ee-4117-b081-77c304b23496(migrations.test.tests@tests)", false);
     runTest("migrations.test.tests.MigrateDeclarationsReferences_Test$TestBody", "testMethod", true);
   }
 
@@ -37,7 +35,7 @@ public class MigrateDeclarationsReferences_Test extends BaseTransformationTest {
     }
     @Override
     public MigrationScript[] getMigrationScript() {
-      return new MigrationScript[]{new MigrateDeclarations(), new MigrateReferences()};
+      return new MigrationScript[]{};
     }
   }
 }
