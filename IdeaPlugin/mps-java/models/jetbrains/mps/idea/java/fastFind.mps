@@ -2,10 +2,10 @@
 <model ref="r:714e1a8b-f5ef-43ca-864f-d3aa5fa2e53e(jetbrains.mps.idea.java.fastFind)">
   <persistence version="9" />
   <languages>
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
   <imports>
     <import index="wvgn" ref="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)" />
@@ -26,7 +26,7 @@
     <import index="yyf4" ref="~mps-openapi/java:org.jetbrains.mps.openapi.util(mps-openapi/)" />
     <import index="alof" ref="~mps-platform/java:jetbrains.mps.ide.project(mps-platform/)" />
     <import index="lui2" ref="~mps-openapi/java:org.jetbrains.mps.openapi.module(mps-openapi/)" />
-    <import index="pa16" ref="~mps-core/java:jetbrains.mps.persistence(mps-core/)" />
+    <import index="pa15" ref="~mps-core/java:jetbrains.mps.persistence(mps-core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tci" ref="c1969cf6-0de2-4f84-9a6b-4019c52c438c/java:jetbrains.mps.idea.core.refactoring(mps-core/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -202,6 +202,10 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
+      </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
@@ -213,10 +217,7 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept_old" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression_old" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -610,11 +611,11 @@
         <node concept="3clFbF" id="76R7UQw_goz" role="3cqZAp">
           <node concept="2OqwBi" id="76R7UQw_gzQ" role="3clFbG">
             <node concept="2YIFZM" id="43T6ls5vFSZ" role="2Oq$k0">
-              <ref role="37wK5l" to="pa16:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              <ref role="1Pybhc" to="pa16:~PersistenceRegistry" resolve="PersistenceRegistry" />
+              <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
+              <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
             </node>
             <node concept="liA8E" id="76R7UQw_gJ$" role="2OqNvi">
-              <ref role="37wK5l" to="pa16:~PersistenceRegistry.addNavigationParticipant(org.jetbrains.mps.openapi.persistence.NavigationParticipant):void" resolve="addNavigationParticipant" />
+              <ref role="37wK5l" to="pa15:~PersistenceRegistry.addNavigationParticipant(org.jetbrains.mps.openapi.persistence.NavigationParticipant):void" resolve="addNavigationParticipant" />
               <node concept="Xjq3P" id="2Ta70126ykG" role="37wK5m" />
             </node>
           </node>
@@ -632,11 +633,11 @@
         <node concept="3clFbF" id="76R7UQw_h1J" role="3cqZAp">
           <node concept="2OqwBi" id="76R7UQw_hdj" role="3clFbG">
             <node concept="2YIFZM" id="43T6ls5vFVM" role="2Oq$k0">
-              <ref role="37wK5l" to="pa16:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              <ref role="1Pybhc" to="pa16:~PersistenceRegistry" resolve="PersistenceRegistry" />
+              <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
+              <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
             </node>
             <node concept="liA8E" id="76R7UQw_hz2" role="2OqNvi">
-              <ref role="37wK5l" to="pa16:~PersistenceRegistry.removeNavigationParticipant(org.jetbrains.mps.openapi.persistence.NavigationParticipant):void" resolve="removeNavigationParticipant" />
+              <ref role="37wK5l" to="pa15:~PersistenceRegistry.removeNavigationParticipant(org.jetbrains.mps.openapi.persistence.NavigationParticipant):void" resolve="removeNavigationParticipant" />
               <node concept="Xjq3P" id="7QMmk2IQxri" role="37wK5m" />
             </node>
           </node>
@@ -804,9 +805,11 @@
               <node concept="1rXfSq" id="1AYiyvlqehN" role="3cqZAk">
                 <ref role="37wK5l" node="1AYiyvlozrG" resolve="findPsiClass" />
                 <node concept="1PxgMI" id="1AYiyvlqem1" role="37wK5m">
-                  <ref role="1PxNhF" to="tpee:g7pOWCK" resolve="Classifier" />
-                  <node concept="37vLTw" id="1AYiyvlqQ1g" role="1PxMeX">
+                  <node concept="37vLTw" id="1AYiyvlqQ1g" role="1m5AlR">
                     <ref role="3cqZAo" node="1AYiyvlqi6Y" resolve="node" />
+                  </node>
+                  <node concept="chp4Y" id="7gjg2Io9ue" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="1AYiyvlqemg" role="37wK5m">
@@ -842,9 +845,11 @@
                         </node>
                       </node>
                       <node concept="1PxgMI" id="1AYiyvlqeqh" role="2Oq$k0">
-                        <ref role="1PxNhF" to="tpee:fz12cDC" resolve="FieldDeclaration" />
-                        <node concept="37vLTw" id="1AYiyvlqQ1r" role="1PxMeX">
+                        <node concept="37vLTw" id="1AYiyvlqQ1r" role="1m5AlR">
                           <ref role="3cqZAo" node="1AYiyvlqi6Y" resolve="node" />
+                        </node>
+                        <node concept="chp4Y" id="7gjg2Io9u6" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:fz12cDC" resolve="FieldDeclaration" />
                         </node>
                       </node>
                     </node>
@@ -896,9 +901,11 @@
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
                     <node concept="1PxgMI" id="1AYiyvlqwnW" role="2Oq$k0">
-                      <ref role="1PxNhF" to="tpee:fz12cDC" resolve="FieldDeclaration" />
-                      <node concept="37vLTw" id="1AYiyvlqwjP" role="1PxMeX">
+                      <node concept="37vLTw" id="1AYiyvlqwjP" role="1m5AlR">
                         <ref role="3cqZAo" node="1AYiyvlqi6Y" resolve="node" />
+                      </node>
+                      <node concept="chp4Y" id="7gjg2Io9ug" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fz12cDC" resolve="FieldDeclaration" />
                       </node>
                     </node>
                   </node>
@@ -1265,11 +1272,11 @@
         <node concept="3clFbF" id="77V35QMLsxG" role="3cqZAp">
           <node concept="2OqwBi" id="77V35QMLsLc" role="3clFbG">
             <node concept="2YIFZM" id="43T6ls5v$YX" role="2Oq$k0">
-              <ref role="37wK5l" to="pa16:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              <ref role="1Pybhc" to="pa16:~PersistenceRegistry" resolve="PersistenceRegistry" />
+              <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
+              <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
             </node>
             <node concept="liA8E" id="77V35QMLt6S" role="2OqNvi">
-              <ref role="37wK5l" to="pa16:~PersistenceRegistry.addFindUsagesParticipant(org.jetbrains.mps.openapi.persistence.FindUsagesParticipant):void" resolve="addFindUsagesParticipant" />
+              <ref role="37wK5l" to="pa15:~PersistenceRegistry.addFindUsagesParticipant(org.jetbrains.mps.openapi.persistence.FindUsagesParticipant):void" resolve="addFindUsagesParticipant" />
               <node concept="Xjq3P" id="77V35QMLt8k" role="37wK5m" />
             </node>
           </node>
@@ -1287,11 +1294,11 @@
         <node concept="3clFbF" id="77V35QMLte2" role="3cqZAp">
           <node concept="2OqwBi" id="77V35QMLte3" role="3clFbG">
             <node concept="2YIFZM" id="43T6ls5v_20" role="2Oq$k0">
-              <ref role="37wK5l" to="pa16:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              <ref role="1Pybhc" to="pa16:~PersistenceRegistry" resolve="PersistenceRegistry" />
+              <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
+              <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
             </node>
             <node concept="liA8E" id="77V35QMLte5" role="2OqNvi">
-              <ref role="37wK5l" to="pa16:~PersistenceRegistry.removeFindUsagesParticipant(org.jetbrains.mps.openapi.persistence.FindUsagesParticipant):void" resolve="removeFindUsagesParticipant" />
+              <ref role="37wK5l" to="pa15:~PersistenceRegistry.removeFindUsagesParticipant(org.jetbrains.mps.openapi.persistence.FindUsagesParticipant):void" resolve="removeFindUsagesParticipant" />
               <node concept="Xjq3P" id="77V35QMLte6" role="37wK5m" />
             </node>
           </node>
