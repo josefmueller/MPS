@@ -118,7 +118,7 @@ public class MigrationTask {
 
     // todo move from here to migration annotations 
     if (findNotMigrated(myMonitor.subTask(15))) {
-      result(myMonitor, new PostCheckError(mySession.getProject(), myWereRun, false), "Problems are detected after executing migrations.");
+      result(myMonitor, new PostCheckError(mySession.getProject(), myWereRun, false, mySession.getChecker()), "Problems are detected after executing migrations.");
       return true;
     }
 

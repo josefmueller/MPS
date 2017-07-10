@@ -5625,6 +5625,13 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="2gVk20sKHhi" role="jymVt">
+      <property role="TrG5h" value="myChecker" />
+      <node concept="3Tm6S6" id="2gVk20sKHhj" role="1B3o_S" />
+      <node concept="3uibUv" id="2gVk20sKHhl" role="1tU5fm">
+        <ref role="3uigEE" to="bim2:xB9FQhi9bJ" resolve="MigrationChecker" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="5$2ALroRZoQ" role="jymVt" />
     <node concept="3clFbW" id="2htE_P_Nqy3" role="jymVt">
       <node concept="3clFbS" id="2htE_P_Nqy4" role="3clF47">
@@ -5658,6 +5665,16 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="2gVk20sKHhm" role="3cqZAp">
+          <node concept="37vLTI" id="2gVk20sKHho" role="3clFbG">
+            <node concept="37vLTw" id="2gVk20sKHhr" role="37vLTJ">
+              <ref role="3cqZAo" node="2gVk20sKHhi" resolve="myChecker" />
+            </node>
+            <node concept="37vLTw" id="2gVk20sKHhs" role="37vLTx">
+              <ref role="3cqZAo" node="2gVk20sKBwj" resolve="checker" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="2htE_P_Nqy5" role="1B3o_S" />
       <node concept="3cqZAl" id="2htE_P_Nqy6" role="3clF45" />
@@ -5678,6 +5695,12 @@
       <node concept="37vLTG" id="78xBDbKa4xD" role="3clF46">
         <property role="TrG5h" value="haveBadCode" />
         <node concept="10P_77" id="78xBDbKa4MV" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="2gVk20sKBwj" role="3clF46">
+        <property role="TrG5h" value="checker" />
+        <node concept="3uibUv" id="2gVk20sKHgz" role="1tU5fm">
+          <ref role="3uigEE" to="bim2:xB9FQhi9bJ" resolve="MigrationChecker" />
+        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="PobQbOdKWT" role="1B3o_S" />
@@ -5792,16 +5815,8 @@
         </node>
         <node concept="3clFbF" id="2wbhCYFLPvx" role="3cqZAp">
           <node concept="2OqwBi" id="2wbhCYFLQYw" role="3clFbG">
-            <node concept="2OqwBi" id="2wbhCYFLPXz" role="2Oq$k0">
-              <node concept="37vLTw" id="2wbhCYFLPvv" role="2Oq$k0">
-                <ref role="3cqZAo" node="78xBDbK5hR3" resolve="myProject" />
-              </node>
-              <node concept="liA8E" id="2wbhCYFLQpu" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                <node concept="3VsKOn" id="2wbhCYFLQOG" role="37wK5m">
-                  <ref role="3VsUkX" to="bim2:xB9FQhi9bJ" resolve="MigrationChecker" />
-                </node>
-              </node>
+            <node concept="37vLTw" id="2gVk20sKHLB" role="2Oq$k0">
+              <ref role="3cqZAo" node="2gVk20sKHhi" resolve="myChecker" />
             </node>
             <node concept="liA8E" id="2wbhCYFLRps" role="2OqNvi">
               <ref role="37wK5l" to="bim2:xB9FQhiv6a" resolve="findNotMigrated" />
@@ -6605,6 +6620,14 @@
                       <ref role="3cqZAo" node="2LHmEReY9df" resolve="myWereRun" />
                     </node>
                     <node concept="3clFbT" id="78xBDbKa5od" role="37wK5m" />
+                    <node concept="2OqwBi" id="2gVk20sKRp8" role="37wK5m">
+                      <node concept="37vLTw" id="2gVk20sKR2m" role="2Oq$k0">
+                        <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
+                      </node>
+                      <node concept="liA8E" id="2gVk20sKRHU" role="2OqNvi">
+                        <ref role="37wK5l" node="xB9FQhiddo" resolve="getChecker" />
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node concept="Xl_RD" id="78xBDbKa3ym" role="37wK5m">

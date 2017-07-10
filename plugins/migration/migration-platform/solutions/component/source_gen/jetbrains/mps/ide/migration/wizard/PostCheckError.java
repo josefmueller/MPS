@@ -4,12 +4,12 @@ package jetbrains.mps.ide.migration.wizard;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.migration.ScriptApplied;
+import jetbrains.mps.ide.migration.MigrationChecker;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.ide.migration.MigrationChecker;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.util.Processor;
 
@@ -17,11 +17,13 @@ public class PostCheckError extends MigrationError {
   private Project myProject;
   private boolean myHaveBadCode;
   private Iterable<ScriptApplied> myMigrationsToCheck;
+  private MigrationChecker myChecker;
 
-  public PostCheckError(Project p, Iterable<ScriptApplied> migrationsToCheck, boolean haveBadCode) {
+  public PostCheckError(Project p, Iterable<ScriptApplied> migrationsToCheck, boolean haveBadCode, MigrationChecker checker) {
     myProject = p;
     myHaveBadCode = haveBadCode;
     myMigrationsToCheck = migrationsToCheck;
+    myChecker = checker;
   }
   public String getMessage() {
     String res = "Migration Assistant was unable to migrate some nodes in this project.<br><br>";
@@ -35,7 +37,7 @@ public class PostCheckError extends MigrationError {
   }
   public Iterable<Problem> getProblems(ProgressIndicator progressIndicator) {
     final List<Problem> res = ListSequence.fromList(new ArrayList<Problem>());
-    myProject.getComponent(MigrationChecker.class).findNotMigrated(new ProgressMonitorAdapter(progressIndicator), myMigrationsToCheck, new Processor<Problem>() {
+    myChecker.findNotMigrated(new ProgressMonitorAdapter(progressIndicator), myMigrationsToCheck, new Processor<Problem>() {
       public boolean process(Problem p) {
         ListSequence.fromList(res).addElement(p);
         return ListSequence.fromList(res).count() < 100;
