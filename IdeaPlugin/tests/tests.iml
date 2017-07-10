@@ -14,7 +14,6 @@
           <modelRoot type="default">
             <settings contentPath="$MODULE_DIR$" type="default">
               <sourceRoot location="blProject/models" />
-              <sourceRoot location="blScopesTest/models" />
               <sourceRoot location="makeTestBroken/models" />
               <sourceRoot location="makeTests/models" />
               <sourceRoot location="psiProject/models" />
@@ -45,6 +44,10 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/projectView/showRoots/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/blProject/models" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/makeTestBroken/models" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/makeTests/models" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/psiProject/models" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/blProject/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
