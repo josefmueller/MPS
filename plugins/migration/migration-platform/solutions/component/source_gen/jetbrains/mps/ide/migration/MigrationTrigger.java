@@ -125,13 +125,12 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       return;
     }
 
-    addListeners();
-
     // wait until project is fully loaded (if not yet) 
     StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
       public void run() {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
+            addListeners();
             checkMigrationNeeded();
           }
         });

@@ -853,12 +853,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="1oo0A63IApl" role="3cqZAp" />
-        <node concept="3clFbF" id="7lByCvUySnk" role="3cqZAp">
-          <node concept="1rXfSq" id="7lByCvUySnj" role="3clFbG">
-            <ref role="37wK5l" node="7lByCvUySng" resolve="addListeners" />
-          </node>
-        </node>
-        <node concept="3clFbH" id="42QwkrkoMOB" role="3cqZAp" />
         <node concept="3SKdUt" id="42QwkrkoHhE" role="3cqZAp">
           <node concept="3SKdUq" id="42QwkrkoHhF" role="3SKWNk">
             <property role="3SKdUp" value="wait until project is fully loaded (if not yet)" />
@@ -889,6 +883,11 @@
                         <node concept="1bVj0M" id="42QwkrkoHhT" role="37wK5m">
                           <property role="3yWfEV" value="true" />
                           <node concept="3clFbS" id="42QwkrkoHhU" role="1bW5cS">
+                            <node concept="3clFbF" id="7lByCvUySnk" role="3cqZAp">
+                              <node concept="1rXfSq" id="7lByCvUySnj" role="3clFbG">
+                                <ref role="37wK5l" node="7lByCvUySng" resolve="addListeners" />
+                              </node>
+                            </node>
                             <node concept="3clFbF" id="45$_j8AUejz" role="3cqZAp">
                               <node concept="1rXfSq" id="45$_j8AUejy" role="3clFbG">
                                 <ref role="37wK5l" node="285c2S_WYWH" resolve="checkMigrationNeeded" />
