@@ -313,11 +313,9 @@ public class BlameDialog extends DialogWrapper {
     description.append("\n");
 
     if (!myThrowableList.isEmpty()) {
-      description.append("{code}");
       for (Throwable ex : myThrowableList) {
-        description.append(ex2str(ex)).append("\n");
+        description.append(ex2str(ex)).append("\n\n");
       }
-      description.append("{code}");
     }
 
     Poster poster = new Poster(myProject);
