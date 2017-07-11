@@ -13,18 +13,20 @@ import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.structure.util.SmartRefAttributeUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -53,41 +55,52 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
       };
       Collection<SNode> conceptNodes = CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
 
-      for (SNode conceptNode : CollectionSequence.fromCollection(conceptNodes)) {
+      for (final SNode conceptNode : CollectionSequence.fromCollection(conceptNodes)) {
         SNode smartRefAttribute = SmartRefAttributeUtil.extractAttribute(conceptNode);
         if ((smartRefAttribute != null)) {
-          SNode characteristicLink = SLinkOperations.getTarget(smartRefAttribute, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d6297edL, "charactersticReference"));
-          String prefix = SPropertyOperations.getString(SLinkOperations.getTarget(smartRefAttribute, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d66ac37L, "refPresentationTemplate")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b59L, "prefix"));
-          String suffix = SPropertyOperations.getString(SLinkOperations.getTarget(smartRefAttribute, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d66ac37L, "refPresentationTemplate")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b5cL, "suffix"));
-
-          SModel editorModel = SModuleOperations.getAspect(SNodeOperations.getModel(conceptNode).getModule(), "editor");
           SNode menu = null;
-          SNode presentationBody = RefPresentationFunctionUtil.getPresentationFromConstraints(conceptNode, characteristicLink);
-          if (presentationBody != null) {
-            SNode bodyM = SNodeOperations.copyNode(presentationBody);
-            REPLACER.adjustFunctionBody(bodyM);
-            if (ListSequence.fromList(SNodeOperations.getNodeDescendants(presentationBody, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adf4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible"), false, new SAbstractConcept[]{})).isEmpty()) {
-              menu = smartRefMenu(conceptNode, RefScopeFactories.queryM(characteristicLink, bodyM, null));
-            } else {
-              SNode bodyVM = SNodeOperations.copyNode(presentationBody);
-              REPLACER_VISIBLE.adjustFunctionBody(bodyVM);
-              menu = smartRefMenu(conceptNode, RefScopeFactories.queryVM(characteristicLink, bodyM, bodyVM, null));
-            }
+          SModel editorModel = SModuleOperations.getAspect(SNodeOperations.getModel(conceptNode).getModule(), "editor");
 
-            if (!(hasDefaultMenu(editorModel, conceptNode))) {
-              SModelOperations.addRootNode(editorModel, defaultMenu(conceptNode, menu));
+          SNode alreadyGeneratedMenu = ListSequence.fromList(SModelOperations.roots(editorModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x33e0267905fba6fdL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Named"))).findFirst(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1d5b104bd5525fa7L, "jetbrains.mps.lang.editor.structure.GeneratedSubstituteMenuAttribute"))) != null) && SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")) == conceptNode;
             }
-          } else if (hasSCAUsages(conceptNode)) {
-            if ((prefix == null || prefix.length() == 0) && (suffix == null || suffix.length() == 0)) {
-              menu = smartRefMenu(conceptNode, RefScopeFactories.simple(characteristicLink, null));
-            } else {
-              menu = smartRefMenu(conceptNode, RefScopeFactories.template(characteristicLink, prefix, suffix, null));
+          });
+          if ((alreadyGeneratedMenu != null)) {
+            menu = alreadyGeneratedMenu;
+          } else {
+            SNode characteristicLink = SLinkOperations.getTarget(smartRefAttribute, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d6297edL, "charactersticReference"));
+            String prefix = SPropertyOperations.getString(SLinkOperations.getTarget(smartRefAttribute, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d66ac37L, "refPresentationTemplate")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b59L, "prefix"));
+            String suffix = SPropertyOperations.getString(SLinkOperations.getTarget(smartRefAttribute, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d6297e8L, 0x7ab7b29c4d66ac37L, "refPresentationTemplate")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x7ab7b29c4d66855eL, 0x3bc83bac475c4b5cL, "suffix"));
+
+            SNode presentationBody = RefPresentationFunctionUtil.getPresentationFromConstraints(conceptNode, characteristicLink);
+            if (presentationBody != null) {
+              SNode bodyM = SNodeOperations.copyNode(presentationBody);
+              REPLACER.adjustFunctionBody(bodyM);
+              if (ListSequence.fromList(SNodeOperations.getNodeDescendants(presentationBody, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x5df04ce71509adf4L, "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible"), false, new SAbstractConcept[]{})).isEmpty()) {
+                menu = smartRefMenu(conceptNode, RefScopeFactories.queryM(characteristicLink, bodyM, null));
+              } else {
+                SNode bodyVM = SNodeOperations.copyNode(presentationBody);
+                REPLACER_VISIBLE.adjustFunctionBody(bodyVM);
+                menu = smartRefMenu(conceptNode, RefScopeFactories.queryVM(characteristicLink, bodyM, bodyVM, null));
+              }
+
+              if (!(hasDefaultMenu(editorModel, conceptNode))) {
+                SModelOperations.addRootNode(editorModel, defaultMenu(conceptNode, menu));
+              }
+            } else if (hasSCAUsages(conceptNode)) {
+              if ((prefix == null || prefix.length() == 0) && (suffix == null || suffix.length() == 0)) {
+                menu = smartRefMenu(conceptNode, RefScopeFactories.simple(characteristicLink, null));
+              } else {
+                menu = smartRefMenu(conceptNode, RefScopeFactories.template(characteristicLink, prefix, suffix, null));
+              }
             }
           }
+
           if ((menu != null)) {
             SModelOperations.addRootNode(editorModel, menu);
 
-            ListSequence.fromList(SLinkOperations.getChildren(data, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).addElement(createSmartRefMigrationDataEntity_b3phj_a0a2a8a1a2a2a6(conceptNode, menu));
+            ListSequence.fromList(SLinkOperations.getChildren(data, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).addElement(createSmartRefMigrationDataEntity_b3phj_a0a2a6a1a2a2a6(conceptNode, menu));
           }
         }
       }
@@ -134,7 +147,7 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
     return menu;
   }
 
-  private static SNode createSmartRefMigrationDataEntity_b3phj_a0a2a8a1a2a2a6(Object p0, Object p1) {
+  private static SNode createSmartRefMigrationDataEntity_b3phj_a0a2a6a1a2a2a6(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, "jetbrains.mps.lang.editor.structure.SmartRefMigrationDataEntity"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "conceptNode"), (SNode) p0);

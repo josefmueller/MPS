@@ -5,7 +5,7 @@
   <property name="project.simpleMigration" location="${basedir}/testbench/modules/testMigration"/>
   <property name="project.consMigrations" location="${basedir}/testbench/modules/testConsMigrations"/>
 
-  <!--this will be specified by text.xml-->
+  <!--this will be specified by test.xml-->
   <property name="mps_build_home" location="build/artifacts/mps"/>
   <property name="test_classes" location="${basedir}/testbench/testclasses"/>
 

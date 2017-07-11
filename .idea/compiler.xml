@@ -709,6 +709,8 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testPersistence/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRead/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testRead/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testSmartRefAttrMigration/languages/test.language.ext/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testSmartRefAttrMigration/languages/test.language/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testSpaceCompletion/languages/testSpaceCompletion/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/xmodel.build/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/xmodel.build/test_gen" includeSubdirectories="true" />
@@ -772,6 +774,8 @@
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.build.stripping.tests/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.editor.imageGen.tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.editor.imageGen.tests/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.tests.sraMigration/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.tests.sraMigration/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/kernel.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/kernel.test/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/make.test/source_gen" includeSubdirectories="true" />
