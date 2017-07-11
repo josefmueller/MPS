@@ -338,7 +338,8 @@ public class BlameDialog extends DialogWrapper {
           message += ". " + response;
         }
       }
-      Messages.showErrorDialog(BlameDialog.this.getOwner(), message, "Error");
+      final String errorMessage = String.format("<html>Error occurred while sending:<br><br>%s</html>", message);
+      Messages.showErrorDialog(BlameDialog.this.getOwner(), errorMessage, "Issue Submission Failed");
       return;
     }
 
