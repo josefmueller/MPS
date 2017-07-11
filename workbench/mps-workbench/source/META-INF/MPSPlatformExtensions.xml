@@ -232,6 +232,7 @@
 
   <applicationService serviceImplementation="com.intellij.internal.statistic.UsageTrigger"/>
   <applicationService serviceImplementation="com.intellij.internal.statistic.ToolbarClicksCollector"/>
+  <applicationService serviceImplementation="com.intellij.internal.statistic.ShortcutsCollector"/>
 
   <applicationService serviceInterface="com.intellij.openapi.application.PathMacros"
                       serviceImplementation="com.intellij.application.options.PathMacrosImpl"/>
@@ -315,7 +316,6 @@
   <projectService serviceInterface="com.intellij.externalDependencies.ExternalDependenciesManager"
                   serviceImplementation="com.intellij.externalDependencies.impl.ExternalDependenciesManagerImpl"/>
 
-
   <welcomeFrameProvider implementation="com.intellij.openapi.wm.impl.welcomeScreen.FlatWelcomeFrameProvider"/>
 
   <!-- General -->
@@ -372,9 +372,11 @@
   <applicationService serviceImplementation="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"/>
   <applicationService serviceImplementation="com.intellij.openapi.editor.colors.impl.AppEditorFontOptions"/>
   <applicationConfigurable
-          parentId="preferences.editor"
-          displayName="Default Font"
-          instance="com.intellij.application.options.editor.fonts.AppEditorFontConfigurable"/>
+        groupId="editor"
+        groupWeight="189"
+        displayName="Font"
+        instance="com.intellij.application.options.editor.fonts.AppEditorFontConfigurable"
+    />
   <applicationService serviceInterface="com.intellij.openapi.editor.colors.EditorFontCache"
                       serviceImplementation="com.intellij.openapi.editor.colors.impl.EditorFontCacheImpl"/>
 
@@ -424,6 +426,7 @@
   <statistics.usagesCollector implementation="com.intellij.openapi.vcs.statistics.VcsOptionsUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.UsageTrigger$MyCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ToolbarClicksCollector$ToolbarClicksUsagesCollector"/>
+  <statistics.usagesCollector implementation="com.intellij.internal.statistic.ShortcutsCollector$ShortcutUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.ideSettings.LaFUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.OsNameUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.OsVersionUsageCollector"/>
@@ -543,6 +546,17 @@
 
   <credentialStore implementation="com.intellij.credentialStore.MacOsCredentialStoreFactory" os="mac"/>
   <credentialStore implementation="com.intellij.credentialStore.LinuxSecretCredentialStoreFactory" os="linux"/>
+
+  <projectService serviceImplementation="com.intellij.tasks.context.WorkingContextManager"/>
+
+  <!--context providers-->
+  <tasks.contextProvider implementation="com.intellij.tasks.context.OpenEditorsContextProvider"/>
+  <tasks.contextProvider implementation="com.intellij.tasks.context.ProjectViewContextProvider"/>
+  <tasks.contextProvider implementation="com.intellij.tasks.context.RunConfigurationsContextProvider"/>
+  <tasks.contextProvider implementation="com.intellij.tasks.context.XDebuggerBreakpointsContextProvider"/>
+  <tasks.contextProvider implementation="com.intellij.tasks.context.XDebuggerWatchesProvider"/>
+
+  <actionPromoter implementation="com.intellij.execution.testframework.TestTreeViewActionsPromoter"/>
   <!-- TODO: Uncomment in workbench/mps-workbench/source/META-INF/MPSLangExtensions.xml after fix java.lang.RuntimeException: Service: com.intellij.codeInsight.actions.FormatChangedTextUtil doesn't override anything-->
   <applicationService serviceInterface="com.intellij.codeInsight.actions.FormatChangedTextUtil"
                       serviceImplementation="com.intellij.codeInsight.actions.FormatChangedTextUtil"/>
