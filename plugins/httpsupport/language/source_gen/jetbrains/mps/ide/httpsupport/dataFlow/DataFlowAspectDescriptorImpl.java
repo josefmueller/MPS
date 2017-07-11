@@ -20,10 +20,14 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
     SAbstractConcept cncpt_a0b = ((SAbstractConcept) concept);
     switch (index_vhxjlb_a0b.index(cncpt_a0b)) {
       case 0:
+        return Collections.<IDataFlowBuilder>singletonList(new ParameterInitializer_DataFlow());
+      case 1:
+        return Collections.<IDataFlowBuilder>singletonList(new RequestURLBuilderExpression_DataFlow());
+      case 2:
         return Collections.<IDataFlowBuilder>singletonList(new ResponseSendOperation_DataFlow());
       default:
     }
     return Collections.<IDataFlowBuilder>emptyList();
   }
-  private static final ConceptSwitchIndex index_vhxjlb_a0b = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5f91294323b64fc1L)).seal();
+  private static final ConceptSwitchIndex index_vhxjlb_a0b = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L), MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L), MetaIdFactory.conceptId(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x5f91294323b64fc1L)).seal();
 }

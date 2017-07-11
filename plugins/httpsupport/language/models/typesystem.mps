@@ -836,5 +836,28 @@
       <ref role="1YaFvo" to="ndib:4PqLM5kXdu0" resolve="RequestHandler" />
     </node>
   </node>
+  <node concept="1YbPZF" id="3wy6fduD_mI">
+    <property role="TrG5h" value="typeof_Node_getURLOperation" />
+    <node concept="3clFbS" id="3wy6fduD_mJ" role="18ibNy">
+      <node concept="1Z5TYs" id="hx2ONxK" role="3cqZAp">
+        <node concept="mw_s8" id="hx2ONxL" role="1ZfhK$">
+          <node concept="1Z2H0r" id="hx2ONxM" role="mwGJk">
+            <node concept="1YBJjd" id="3wy6fduD_zu" role="1Z2MuG">
+              <ref role="1YBMHb" node="3wy6fduD_mL" resolve="node" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="hx2ONxN" role="1ZfhKB">
+          <node concept="2c44tf" id="hqIMTJQ" role="mwGJk">
+            <node concept="17QB3L" id="3wy6fduD_FH" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3wy6fduD_mL" role="1YuTPh">
+      <property role="TrG5h" value="node" />
+      <ref role="1YaFvo" to="ndib:1_yOWEXej4M" resolve="Node_getURLOperation" />
+    </node>
+  </node>
 </model>
 
