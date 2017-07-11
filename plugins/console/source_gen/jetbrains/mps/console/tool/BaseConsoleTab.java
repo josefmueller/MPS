@@ -88,6 +88,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import java.util.Scanner;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.undo.NodeBasedCommand;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.io.StringWriter;
@@ -514,7 +515,8 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
         }
       }
       private void addResponse(final SNode response) {
-        SwingUtilities.invokeLater(new Runnable() {
+        // here we call invokeLater() to separate changes for undo purposes 
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             // we are not in command here 
             myProject.getModelAccess().executeCommand(new NodeBasedCommand(myRoot) {

@@ -13,6 +13,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -90,12 +91,17 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
   }
 
   private void setSelection() {
-    getProject().getRepository().getModelAccess().runReadInEDT(new Runnable() {
+    // here we call invokeLater() to be sheduled after invokeLater() from ConsoleStream.addResponse() 
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
-        // call editNode here to update undo node 
-        getEditorComponent().editNode(myRoot);
-        SelectionUtil.selectLabelCellAnSetCaret(getEditorComponent().getEditorContext(), SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), SelectionManager.LAST_CELL, -1);
-        getEditorComponent().ensureSelectionVisible();
+        getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
+          public void run() {
+            // call editNode here to update undo node 
+            getEditorComponent().editNode(myRoot);
+            SelectionUtil.selectLabelCellAnSetCaret(getEditorComponent().getEditorContext(), SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), SelectionManager.LAST_CELL, -1);
+            getEditorComponent().ensureSelectionVisible();
+          }
+        });
       }
     });
   }
