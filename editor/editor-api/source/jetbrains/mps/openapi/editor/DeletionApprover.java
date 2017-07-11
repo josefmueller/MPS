@@ -23,18 +23,18 @@ import java.util.Collection;
 import java.util.Collections;
 
 /**
- * Interface for deletion highlighting
+ * Interface for deletion approving
  * <p>
- * Deletion highlighting should occur when more cells than currently selected will
+ * Deletion approving should occur when more cells than currently selected will
  * be deleted by pressing backspace.
- * Whether this functionality is used depends on checkbox in Editor->General->Two phase deletion
+ * Whether this functionality is used depends on checkbox in Editor->General->Two step deletion
  * <p>
- * Two phase deletion means that there is a first phase checking if all the cells that will
+ * Two step deletion means that there is a first step checking if all the cells that will
  * be deleted match currently selected cells. If they do match, deletion proceeds immediately.
- * If they don't match, all cells that would be otherwise deleted are highlighted.
- * The interface method approveForDeletion executes this first phase.
+ * The interface method approveForDeletion executes this first step.
+ * If they don't match, all cells that would be otherwise deleted are approved. The implementation classes may highlight those cells on that step.
  * <p>
- * Second phase is a simple deletion of highlighted cells once they were approved previously.
+ * Second step is a simple deletion of highlighted cells once they were approved previously.
  * This can be checked by isApprovedForDeletion.
  * <p>
  * By default, this is checked by all original deletion actions of MPS.
@@ -53,7 +53,7 @@ public interface DeletionApprover {
   /**
    * Returns if the cell is approved for deletion
    *
-   * @param cell SNode to test
+   * @param cell cell to test
    * @return true if the cell is approved for deletion; false otherwise
    */
   boolean isApprovedForDeletion(@NotNull EditorCell cell);
