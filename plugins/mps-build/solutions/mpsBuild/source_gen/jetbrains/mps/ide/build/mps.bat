@@ -45,12 +45,16 @@ IF NOT "%JDK%" == "" (
   GOTO check
 )
 
+:: Do not use our own 64 bit JDK for 32 bit Windwos
+IF NOT DEFINED PROGRAMFILES(X86) GOTO skip64bitJDK
+
 IF EXIST "%IDE_HOME%\jre64" SET JDK=%IDE_HOME%\jre64
 IF NOT "%JDK%" == "" GOTO check
 
 IF EXIST "%IDE_HOME%\jre" SET JDK=%IDE_HOME%\jre
 IF NOT "%JDK%" == "" GOTO check
 
+:skip64bitJDK
 IF EXIST "%JDK_HOME%" SET JDK=%JDK_HOME%
 IF NOT "%JDK%" == "" GOTO check
 
