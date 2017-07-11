@@ -24,7 +24,7 @@ import java.util.Collection;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import jetbrains.mps.ide.blame.perform.Response;
-import javax.swing.JOptionPane;
+import com.intellij.openapi.ui.Messages;
 import org.apache.log4j.Level;
 
 public class SubmitToTracker_Action extends BaseAction {
@@ -107,12 +107,11 @@ public class SubmitToTracker_Action extends BaseAction {
     if (!(dialog.isCancelled())) {
       Response response = dialog.getResult();
       String message = response.getMessage();
-      if (response.isSuccess()) {
-        JOptionPane.showMessageDialog(null, message, "Submit OK", JOptionPane.INFORMATION_MESSAGE);
-      } else {
-        JOptionPane.showMessageDialog(null, message, "Submit Failed", JOptionPane.ERROR_MESSAGE);
+      if (!(response.isSuccess())) {
+        // It is only make sense to show dialog to user if issue creation failed. 
+        Messages.showErrorDialog(((Project) MapSequence.fromMap(_params).get("project")), message, "Issue Submission Failed");
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Submit failed: " + message, response.getThrowable());
+          LOG.error("Issue submission failed: " + message, response.getThrowable());
         }
       }
     }
