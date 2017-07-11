@@ -4,7 +4,7 @@
 
   <property name="test.project" location="${basedir}/testbench/modules/testSmartRefAttrMigration"/>
 
-  <!--this will be specified by text.xml-->
+  <!--this will be specified by test.xml-->
   <property name="mps_build_home" location="build/artifacts/mps"/>
   <property name="test_classes" location="${basedir}/testbench/testclasses"/>
 
@@ -15,7 +15,7 @@
   <property name="build.dir" location=""/>
   <property name="build.tmp" location="${build.dir}/tmp/mpsPlugins"/>
   <property name="artifacts.mps" location="${mps_build_home}"/>
-  <property name="idea_home" location=""/>
+  <property name="idea_home" location="${mps_home}"/>
   <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore"/>
   <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore"/>
   <property name="artifacts.IDEA" location="${idea_home}"/>
