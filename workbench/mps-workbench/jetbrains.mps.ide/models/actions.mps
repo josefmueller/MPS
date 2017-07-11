@@ -185,6 +185,7 @@
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
+    <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -25044,19 +25045,64 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="4NDCWHeJ$oW" role="3cqZAp">
-              <node concept="2OqwBi" id="4NDCWHeJ$oX" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagT$WW" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4NDCWHeJ$fh" resolve="dialog" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4NDCWHeJ$oW" role="3cqZAp">
+          <node concept="2OqwBi" id="4NDCWHeJ$oX" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagT$WW" role="2Oq$k0">
+              <ref role="3cqZAo" node="4NDCWHeJ$fh" resolve="dialog" />
+            </node>
+            <node concept="liA8E" id="4NDCWHeJ$oZ" role="2OqNvi">
+              <ref role="37wK5l" to="qy69:~BlameDialog.addExceptions(java.util.Collection):void" resolve="addExceptions" />
+              <node concept="10QFUN" id="1pgB67pPc_e" role="37wK5m">
+                <node concept="3uibUv" id="1pgB67pPe_b" role="10QFUM">
+                  <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+                  <node concept="3uibUv" id="1pgB67pPgI8" role="11_B2D">
+                    <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+                  </node>
                 </node>
-                <node concept="liA8E" id="4NDCWHeJ$oZ" role="2OqNvi">
-                  <ref role="37wK5l" to="qy69:~BlameDialog.addEx(java.lang.Throwable):void" resolve="addEx" />
-                  <node concept="2OqwBi" id="4NDCWHeJ$p0" role="37wK5m">
-                    <node concept="37vLTw" id="3GM_nagTswU" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4NDCWHeJ$oh" resolve="msg" />
+                <node concept="2OqwBi" id="1pgB67pOZSu" role="10QFUP">
+                  <node concept="2OqwBi" id="1pgB67pOMvD" role="2Oq$k0">
+                    <node concept="2OqwBi" id="1pgB67pOKfp" role="2Oq$k0">
+                      <node concept="2OqwBi" id="1pgB67pOIO5" role="2Oq$k0">
+                        <node concept="2WthIp" id="1pgB67pOIO8" role="2Oq$k0" />
+                        <node concept="1DTwFV" id="1pgB67pOIOa" role="2OqNvi">
+                          <ref role="2WH_rO" node="4NDCWHeJ$b$" resolve="messages" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="1pgB67pOMb8" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~Collection.stream():java.util.stream.Stream" resolve="stream" />
+                      </node>
                     </node>
-                    <node concept="liA8E" id="4NDCWHeJ$p2" role="2OqNvi">
-                      <ref role="37wK5l" to="et5u:~IMessage.getException():java.lang.Throwable" resolve="getException" />
+                    <node concept="liA8E" id="1pgB67pOOBb" role="2OqNvi">
+                      <ref role="37wK5l" to="1ctc:~Stream.map(java.util.function.Function):java.util.stream.Stream" resolve="map" />
+                      <node concept="1bVj0M" id="1pgB67pOPu8" role="37wK5m">
+                        <node concept="3clFbS" id="1pgB67pOPu9" role="1bW5cS">
+                          <node concept="3clFbF" id="1pgB67pOXnn" role="3cqZAp">
+                            <node concept="2OqwBi" id="1pgB67pOY0A" role="3clFbG">
+                              <node concept="37vLTw" id="1pgB67pOXnm" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1pgB67pORE4" resolve="message" />
+                              </node>
+                              <node concept="liA8E" id="1pgB67pOYSE" role="2OqNvi">
+                                <ref role="37wK5l" to="et5u:~IMessage.getException():java.lang.Throwable" resolve="getException" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTG" id="1pgB67pORE4" role="1bW2Oz">
+                          <property role="TrG5h" value="message" />
+                          <node concept="3uibUv" id="1pgB67pORE3" role="1tU5fm">
+                            <ref role="3uigEE" to="et5u:~IMessage" resolve="IMessage" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1pgB67pP2kE" role="2OqNvi">
+                    <ref role="37wK5l" to="1ctc:~Stream.collect(java.util.stream.Collector):java.lang.Object" resolve="collect" />
+                    <node concept="2YIFZM" id="1pgB67pP5wl" role="37wK5m">
+                      <ref role="1Pybhc" to="1ctc:~Collectors" resolve="Collectors" />
+                      <ref role="37wK5l" to="1ctc:~Collectors.toList():java.util.stream.Collector" resolve="toList" />
                     </node>
                   </node>
                 </node>

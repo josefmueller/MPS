@@ -59,6 +59,8 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class BlameDialog extends DialogWrapper {
@@ -93,8 +95,17 @@ public class BlameDialog extends DialogWrapper {
     myProject = project;
   }
 
+  public void addExceptions(Collection<Throwable> throwables) {
+    myThrowableList.addAll(throwables);
+  }
+
+  /**
+   * @deprecated use {@link BlameDialog#addExceptions(java.util.Collection)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public void addEx(Throwable throwable) {
-    myThrowableList.add(throwable);
+    addExceptions(Collections.singletonList(throwable));
   }
 
   public void setIssueTitle(String message) {
