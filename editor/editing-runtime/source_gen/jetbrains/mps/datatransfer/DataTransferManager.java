@@ -14,8 +14,8 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
@@ -60,6 +60,23 @@ public final class DataTransferManager implements LanguageRegistryListener {
     MapSequence.fromMap(myPasteWrappers).clear();
   }
 
+  public void preProcessNode(SNode copy, Map<SNode, SNode> copyToOriginalMap) {
+    CopyPreProcessor preProcessor = getCopyPreProcessor(SNodeOperations.getConcept(copy));
+    if (preProcessor != null) {
+      preProcessor.preProcessNode(copy, MapSequence.fromMap(copyToOriginalMap).get(copy));
+      return;
+    }
+
+    for (SNode copyChild : ListSequence.fromList(SNodeOperations.getChildren(copy))) {
+      preProcessNode(copyChild, copyToOriginalMap);
+    }
+  }
+
+  /**
+   * 
+   * @deprecated Do not use it if children in {@code copy} and {@code original} may differ (E.g. when not all attributes has been copied). Use {@link jetbrains.mps.datatransfer.DataTransferManager#preProcessNode(SNode, Map<SNode, SNode>) } instead.
+   */
+  @Deprecated
   public void preProcessNode(SNode copy, SNode original) {
     CopyPreProcessor preProcessor = getCopyPreProcessor(SNodeOperations.getConcept(copy));
     if (preProcessor != null) {
@@ -73,6 +90,7 @@ public final class DataTransferManager implements LanguageRegistryListener {
       preProcessNode(copyChildrenIterator.next(), originalChildrenIterator.next());
     }
   }
+
 
   public void postProcessNode(SNode pastedNode) {
     PastePostProcessor postProcessor = getPastePostProcessor(SNodeOperations.getConcept(pastedNode));

@@ -14,20 +14,20 @@ import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.datatransfer.DataTransferManager;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.datatransfer.StringSelection;
@@ -70,25 +70,32 @@ public final class CopyPasteUtil {
     if (ListSequence.fromList(sourceNodes).isEmpty()) {
       return PasteNodeData.emptyPasteNodeData(null);
     }
-    SModel model = ListSequence.fromList(sourceNodes).first().getModel();
-    final Map<SNode, SNode> sourceNodesToNewNodes = MapSequence.fromMap(new HashMap<SNode, SNode>());
+
+    SModel model = SNodeOperations.getModel(ListSequence.fromList(sourceNodes).first());
+    Map<SNode, SNode> sourceNodesToNewNodes = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    List<SNode> targetNodes = ListSequence.fromList(new ArrayList<SNode>());
     Set<SReference> allReferences = SetSequence.fromSet(new HashSet<SReference>());
+
     for (SNode sourceNode : ListSequence.fromList(sourceNodes)) {
-      assert sourceNode.getModel() == model;
-      CopyPasteUtil.copyNode_internal(sourceNode, sourceNodesAndAttributes, sourceNodesToNewNodes, allReferences);
+      assert SNodeOperations.getModel(sourceNode) == model;
+      ListSequence.fromList(targetNodes).addElement(CopyPasteUtil.copyNode_internal(sourceNode, sourceNodesAndAttributes, sourceNodesToNewNodes, allReferences));
     }
+
     Set<SModelReference> necessaryModels = SetSequence.fromSet(new HashSet<SModelReference>());
     Set<SLanguage> necessaryLanguages = SetSequence.fromSet(new HashSet<SLanguage>());
     CopyPasteUtil.processImportsAndLanguages(necessaryModels, necessaryLanguages, sourceNodesToNewNodes, allReferences);
     CopyPasteUtil.processReferencesIn(sourceNodesToNewNodes, allReferences);
-    for (SNode source : ListSequence.fromList(sourceNodes)) {
-      DataTransferManager.getInstance().preProcessNode(MapSequence.fromMap(sourceNodesToNewNodes).get(source), source);
+
+    Map<SNode, SNode> newNodesToSourceNodes = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    for (IMapping<SNode, SNode> mapping : MapSequence.fromMap(sourceNodesToNewNodes)) {
+      MapSequence.fromMap(newNodesToSourceNodes).put(mapping.value(), mapping.key());
     }
-    return new PasteNodeData(ListSequence.fromList(sourceNodes).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return MapSequence.fromMap(sourceNodesToNewNodes).get(it);
-      }
-    }).toListSequence(), null, check_lwiaog_c0a01a2(model), necessaryLanguages, necessaryModels);
+
+    for (SNode target : ListSequence.fromList(targetNodes)) {
+      DataTransferManager.getInstance().preProcessNode(target, newNodesToSourceNodes);
+    }
+
+    return new PasteNodeData(targetNodes, null, check_lwiaog_c0a91a2(model), necessaryLanguages, necessaryModels);
   }
   public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModelReference sourceModel, Set<SLanguage> necessaryLanguages, Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) {
@@ -405,7 +412,7 @@ public final class CopyPasteUtil {
     }
     return false;
   }
-  private static SModelReference check_lwiaog_c0a01a2(SModel checkedDotOperand) {
+  private static SModelReference check_lwiaog_c0a91a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
