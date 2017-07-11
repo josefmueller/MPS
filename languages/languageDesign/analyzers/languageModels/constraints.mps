@@ -79,7 +79,6 @@
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="1227084988347" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" flags="in" index="2NXJUA" />
-      <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope_Old" flags="in" index="13QW63" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
@@ -673,16 +672,19 @@
     <ref role="1M2myG" to="bj1v:7fxZEB1sSuo" resolve="CustomInstructionsContainerReference" />
     <node concept="1N5Pfh" id="7fxZEB1t65E" role="1Mr941">
       <ref role="1N5Vy1" to="bj1v:7fxZEB1sSup" resolve="containter" />
-      <node concept="1X3_iC" id="7fxZEB1tr$N" role="lGtFl">
+      <node concept="1X3_iC" id="66yWAEzqDUu" role="lGtFl">
         <property role="3V$3am" value="searchScopeFactory" />
         <property role="3V$3ak" value="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148687176410/1148687345559" />
-        <node concept="13QW63" id="7fxZEB1tgwP" role="8Wnug">
-          <node concept="3clFbS" id="7fxZEB1tgwQ" role="2VODD2">
+        <node concept="3dgokm" id="66yWAEzqD6Y" role="8Wnug">
+          <node concept="3clFbS" id="66yWAEzqD6Z" role="2VODD2">
             <node concept="3clFbF" id="7fxZEB1thkR" role="3cqZAp">
               <node concept="2ShNRf" id="7fxZEB1thkP" role="3clFbG">
                 <node concept="1pGfFk" id="7fxZEB1tj2r" role="2ShVmc">
                   <ref role="37wK5l" to="tpcg:2iCqkkxEdE4" resolve="LanguageConceptsScope" />
-                  <node concept="1Q6Npb" id="7fxZEB1tlNE" role="37wK5m" />
+                  <node concept="2OqwBi" id="66yWAEzqDyV" role="37wK5m">
+                    <node concept="2rP1CM" id="66yWAEzqDlb" role="2Oq$k0" />
+                    <node concept="I4A8Y" id="66yWAEzqDKm" role="2OqNvi" />
+                  </node>
                   <node concept="35c_gC" id="7fxZEB1tj4E" role="37wK5m">
                     <ref role="35c_gD" to="bj1v:7fxZEB1sFyL" resolve="CustomInstructionsContainer" />
                   </node>
