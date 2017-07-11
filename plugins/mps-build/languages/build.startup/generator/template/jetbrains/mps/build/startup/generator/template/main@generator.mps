@@ -1320,6 +1320,13 @@
       <property role="2DPR8u" value=")" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm0n$t" role="2DRAPQ" />
+    <node concept="2DRAP_" id="6dUp_XEyHdX" role="2DRAPQ">
+      <property role="2DPR8u" value=":: Do not use our own 64 bit JDK for 32 bit Windwos" />
+    </node>
+    <node concept="2DRAP_" id="6dUp_XEyIus" role="2DRAPQ">
+      <property role="2DPR8u" value="IF NOT DEFINED PROGRAMFILES(X86) GOTO skip64bitJDK" />
+    </node>
+    <node concept="2DRAP_" id="6dUp_XECL2K" role="2DRAPQ" />
     <node concept="2DRAP_" id="4eWOtEm0ohb" role="2DRAPQ">
       <property role="2DPR8u" value="IF EXIST &quot;%IDE_HOME%\jre64&quot; SET JDK=%IDE_HOME%\jre64" />
     </node>
@@ -1334,6 +1341,9 @@
       <property role="2DPR8u" value="IF NOT &quot;%JDK%&quot; == &quot;&quot; GOTO check" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm0ulI" role="2DRAPQ" />
+    <node concept="2DRAP_" id="6dUp_XECNyo" role="2DRAPQ">
+      <property role="2DPR8u" value=":skip64bitJDK" />
+    </node>
     <node concept="2DRAP_" id="4eWOtEm0uqx" role="2DRAPQ">
       <property role="2DPR8u" value="IF EXIST &quot;%JDK_HOME%&quot; SET JDK=%JDK_HOME%" />
     </node>
