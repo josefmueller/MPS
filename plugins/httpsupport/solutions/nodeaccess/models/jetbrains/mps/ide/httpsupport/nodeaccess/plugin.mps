@@ -37,6 +37,7 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="vmdq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.awt(MPS.IDEA/)" />
     <import index="tqvn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.tempmodel(MPS.Core/)" />
+    <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -251,6 +252,7 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -2313,26 +2315,49 @@
     </node>
     <node concept="2ScWuX" id="1_yOWEXebar" role="tmbBb">
       <node concept="3clFbS" id="1_yOWEXebas" role="2VODD2">
+        <node concept="3cpWs8" id="3wy6fduFpJR" role="3cqZAp">
+          <node concept="3cpWsn" id="3wy6fduFpJS" role="3cpWs9">
+            <property role="TrG5h" value="model" />
+            <node concept="H_c77" id="3wy6fduFpJP" role="1tU5fm" />
+            <node concept="2OqwBi" id="3wy6fduFpJT" role="33vP2m">
+              <node concept="2OqwBi" id="3wy6fduFpJU" role="2Oq$k0">
+                <node concept="2WthIp" id="3wy6fduFpJV" role="2Oq$k0" />
+                <node concept="3gHZIF" id="3wy6fduFpJW" role="2OqNvi">
+                  <ref role="2WH_rO" node="3Apdfsu3Gq" resolve="node" />
+                </node>
+              </node>
+              <node concept="I4A8Y" id="3wy6fduFpJX" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="1_yOWEXeckz" role="3cqZAp">
-          <node concept="1Wc70l" id="5ueUq77Z7jA" role="3clFbG">
-            <node concept="3fqX7Q" id="5ueUq77ZbaV" role="3uHU7w">
-              <node concept="2YIFZM" id="5ueUq77ZbaX" role="3fr31v">
-                <ref role="37wK5l" to="tqvn:~TemporaryModels.isTemporary(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isTemporary" />
-                <ref role="1Pybhc" to="tqvn:~TemporaryModels" resolve="TemporaryModels" />
-                <node concept="2OqwBi" id="5ueUq77ZbaY" role="37wK5m">
-                  <node concept="2OqwBi" id="5ueUq77ZbaZ" role="2Oq$k0">
-                    <node concept="2WthIp" id="5ueUq77Zbb0" role="2Oq$k0" />
-                    <node concept="3gHZIF" id="5ueUq77Zbb1" role="2OqNvi">
-                      <ref role="2WH_rO" node="3Apdfsu3Gq" resolve="node" />
-                    </node>
+          <node concept="1Wc70l" id="3wy6fduFr3V" role="3clFbG">
+            <node concept="3fqX7Q" id="3wy6fduFtdn" role="3uHU7w">
+              <node concept="1eOMI4" id="3wy6fduFtYI" role="3fr31v">
+                <node concept="2ZW3vV" id="3wy6fduFtdo" role="1eOMHV">
+                  <node concept="3uibUv" id="3wy6fduFtdp" role="2ZW6by">
+                    <ref role="3uigEE" to="g3l6:~TransientSModel" resolve="TransientSModel" />
                   </node>
-                  <node concept="I4A8Y" id="5ueUq77Zbb2" role="2OqNvi" />
+                  <node concept="37vLTw" id="3wy6fduFtdq" role="2ZW6bz">
+                    <ref role="3cqZAo" node="3wy6fduFpJS" resolve="model" />
+                  </node>
                 </node>
               </node>
             </node>
-            <node concept="2YIFZM" id="1_yOWEXecso" role="3uHU7B">
-              <ref role="37wK5l" to="4h87:3PMO5H7Xzu$" resolve="isEnabled" />
-              <ref role="1Pybhc" to="4h87:3PMO5H7WIrG" resolve="MPSInternalPortManager" />
+            <node concept="1Wc70l" id="5ueUq77Z7jA" role="3uHU7B">
+              <node concept="2YIFZM" id="1_yOWEXecso" role="3uHU7B">
+                <ref role="37wK5l" to="4h87:3PMO5H7Xzu$" resolve="isEnabled" />
+                <ref role="1Pybhc" to="4h87:3PMO5H7WIrG" resolve="MPSInternalPortManager" />
+              </node>
+              <node concept="3fqX7Q" id="5ueUq77ZbaV" role="3uHU7w">
+                <node concept="2YIFZM" id="5ueUq77ZbaX" role="3fr31v">
+                  <ref role="37wK5l" to="tqvn:~TemporaryModels.isTemporary(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isTemporary" />
+                  <ref role="1Pybhc" to="tqvn:~TemporaryModels" resolve="TemporaryModels" />
+                  <node concept="37vLTw" id="3wy6fduFpJY" role="37wK5m">
+                    <ref role="3cqZAo" node="3wy6fduFpJS" resolve="model" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
