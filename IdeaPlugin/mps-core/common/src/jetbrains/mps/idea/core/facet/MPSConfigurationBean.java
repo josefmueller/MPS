@@ -109,6 +109,10 @@ public class MPSConfigurationBean {
     return myState.UUID != null;
   }
 
+  public void setDoesNotRequireZeroVersions() {
+    myState.languageVersions = new HashMap<>();
+  }
+
   public String getId() {
     return myState.UUID;
   }

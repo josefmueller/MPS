@@ -98,6 +98,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
   private void setConfigurationDefaults() {
     if (!myConfigurationBean.isModuleIdSet()) {
       myConfigurationBean.setIdByModuleName(myMpsFacet.getModule().getName());
+      myConfigurationBean.setDoesNotRequireZeroVersions();
     }
     if (myConfigurationBean.isUseTransientOutputFolder()) {
       myConfigurationBean.setUseModuleSourceFolder(false);

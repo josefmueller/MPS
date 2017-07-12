@@ -230,6 +230,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         }
       }
     }
+    //todo [MM] remove this line after 17.2. We decided not to remove it to not break stability. However, it seems correct and safe to remove
     usedLanguages.add(BootstrapLanguages.getLangCore());
     return new LangAndDevkits(usedLanguages, devkits);
   }
