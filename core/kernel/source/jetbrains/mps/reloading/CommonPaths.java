@@ -168,7 +168,9 @@ public final class CommonPaths {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
         File file = new File(url.toURI());
-        if (!file.exists()) continue;
+        if (!file.exists()) {
+          continue;
+        }
 
         if (file.getName().equals(name)) {
           String canonicalPath = file.getCanonicalPath();
@@ -217,7 +219,6 @@ public final class CommonPaths {
     addIfExists(result, "lib/ecj-4.6.2.jar");
     addIfExists(result, "lib/guava-21.0.jar");
     addIfExists(result, "lib/xstream-1.4.8.jar");
-    addIfExists(result, "lib/diffutils-1.2.1.jar");
     addIfExists(result, "lib/asm-all.jar");
   }
 

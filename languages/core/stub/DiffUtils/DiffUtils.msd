@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="Ant" uuid="847a3235-09f9-403c-b6a9-1c294a212e92" moduleVersion="0" compileInMPS="false">
+<solution name="DiffUtils" uuid="3669929d-7269-4de9-a160-f80b04ef909d" moduleVersion="0" compileInMPS="false">
   <models>
-    <modelRoot contentPath="${platform_lib}/ant/lib" type="java_classes">
-      <sourceRoot location="ant.jar" />
+    <modelRoot contentPath="${lib_ext}" type="java_classes">
+      <sourceRoot location="diffutils-1.2.1.jar" />
     </modelRoot>
   </models>
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
   <stubModelEntries>
-    <stubModelEntry path="${platform_lib}/ant/lib/ant.jar" />
+    <stubModelEntry path="${lib_ext}/diffutils-1.2.1.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>
@@ -21,7 +21,7 @@
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="847a3235-09f9-403c-b6a9-1c294a212e92(Ant)" version="0" />
+    <module reference="3669929d-7269-4de9-a160-f80b04ef909d(DiffUtils)" version="0" />
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
   </dependencyVersions>
 </solution>

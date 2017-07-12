@@ -41,6 +41,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir=""/>
     <mps.VisibleModuleMask mask="Ant"/>
+    <mps.VisibleModuleMask mask="DiffUtils"/>
     <mps.VisibleModuleMask mask="closures.*"/>
     <mps.VisibleModuleMask mask="collections.*"/>
     <mps.VisibleModuleMask mask="JDK.*"/>

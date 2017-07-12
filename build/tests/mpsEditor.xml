@@ -783,6 +783,7 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/lib/mps-stubs.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
@@ -1769,6 +1770,7 @@
       <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
       <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
       <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+      <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-stubs.jar" />
       <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
       <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <pathelement location="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />

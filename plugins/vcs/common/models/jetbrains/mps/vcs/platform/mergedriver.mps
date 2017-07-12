@@ -317,7 +317,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -7673,8 +7673,19 @@
       <node concept="2YIFZM" id="3PaWMnROBBt" role="33vP2m">
         <ref role="1Pybhc" to="33ny:~Arrays" resolve="Arrays" />
         <ref role="37wK5l" to="33ny:~Arrays.asList(java.lang.Object...):java.util.List" resolve="asList" />
-        <node concept="Xl_RD" id="3PaWMnROBBC" role="37wK5m">
-          <property role="Xl_RC" value="diffutils-1.2.1.jar" />
+        <node concept="3cpWs3" id="10txAzIcfnU" role="37wK5m">
+          <node concept="Xl_RD" id="3PaWMnROBBC" role="3uHU7w">
+            <property role="Xl_RC" value="diffutils-1.2.1.jar" />
+          </node>
+          <node concept="3cpWs3" id="10txAzIcHVa" role="3uHU7B">
+            <node concept="Xl_RD" id="10txAzIcJn1" role="3uHU7B">
+              <property role="Xl_RC" value="ext" />
+            </node>
+            <node concept="10M0yZ" id="19ElvrpZnof" role="3uHU7w">
+              <ref role="1PxDUh" to="guwi:~File" resolve="File" />
+              <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

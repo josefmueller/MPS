@@ -33,7 +33,7 @@
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
-    <import index="2o" ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7/java:difflib(jetbrains.mps.tool.gentest/)" />
+    <import index="2o" ref="3669929d-7269-4de9-a160-f80b04ef909d/java:difflib(DiffUtils/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -2108,16 +2108,16 @@
                         <node concept="3cpWs8" id="1TaHNgiI6l4" role="3cqZAp">
                           <node concept="3cpWsn" id="1TaHNgiI6l5" role="3cpWs9">
                             <property role="TrG5h" value="patch" />
-                            <node concept="3uibUv" id="1TaHNgiI6l6" role="1tU5fm">
+                            <node concept="3uibUv" id="65IE4qV8i$r" role="1tU5fm">
                               <ref role="3uigEE" to="2o:~Patch" resolve="Patch" />
                             </node>
-                            <node concept="2YIFZM" id="1TaHNgiI6l7" role="33vP2m">
-                              <ref role="1Pybhc" to="2o:~DiffUtils" resolve="DiffUtils" />
+                            <node concept="2YIFZM" id="65IE4qV8kn9" role="33vP2m">
                               <ref role="37wK5l" to="2o:~DiffUtils.diff(java.util.List,java.util.List):difflib.Patch" resolve="diff" />
-                              <node concept="37vLTw" id="3GM_nagTyHz" role="37wK5m">
+                              <ref role="1Pybhc" to="2o:~DiffUtils" resolve="DiffUtils" />
+                              <node concept="37vLTw" id="65IE4qV8kna" role="37wK5m">
                                 <ref role="3cqZAo" node="1TaHNgiI6kR" resolve="olines" />
                               </node>
-                              <node concept="37vLTw" id="3GM_nagT$M6" role="37wK5m">
+                              <node concept="37vLTw" id="65IE4qV8knb" role="37wK5m">
                                 <ref role="3cqZAo" node="1TaHNgiI6kX" resolve="rlines" />
                               </node>
                             </node>
@@ -2131,32 +2131,32 @@
                                   <ref role="3cqZAo" node="1TaHNgiI6mg" resolve="diffs" />
                                 </node>
                                 <node concept="X8dFx" id="1TaHNgiI6lf" role="2OqNvi">
-                                  <node concept="2YIFZM" id="1TaHNgiI6lg" role="25WWJ7">
-                                    <ref role="1Pybhc" to="2o:~DiffUtils" resolve="DiffUtils" />
+                                  <node concept="2YIFZM" id="65IE4qV8k_C" role="25WWJ7">
                                     <ref role="37wK5l" to="2o:~DiffUtils.generateUnifiedDiff(java.lang.String,java.lang.String,java.util.List,difflib.Patch,int):java.util.List" resolve="generateUnifiedDiff" />
-                                    <node concept="2OqwBi" id="1TaHNgiI6lh" role="37wK5m">
-                                      <node concept="37vLTw" id="3GM_nagTAUw" role="2Oq$k0">
+                                    <ref role="1Pybhc" to="2o:~DiffUtils" resolve="DiffUtils" />
+                                    <node concept="2OqwBi" id="65IE4qV8k_D" role="37wK5m">
+                                      <node concept="37vLTw" id="65IE4qV8k_E" role="2Oq$k0">
                                         <ref role="3cqZAo" node="1TaHNgiI6kw" resolve="onext" />
                                       </node>
-                                      <node concept="liA8E" id="1TaHNgiI6lj" role="2OqNvi">
+                                      <node concept="liA8E" id="65IE4qV8k_F" role="2OqNvi">
                                         <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
                                       </node>
                                     </node>
-                                    <node concept="2OqwBi" id="1TaHNgiI6lk" role="37wK5m">
-                                      <node concept="37vLTw" id="3GM_nagTBg$" role="2Oq$k0">
+                                    <node concept="2OqwBi" id="65IE4qV8k_G" role="37wK5m">
+                                      <node concept="37vLTw" id="65IE4qV8k_H" role="2Oq$k0">
                                         <ref role="3cqZAo" node="1TaHNgiI6kG" resolve="rnext" />
                                       </node>
-                                      <node concept="liA8E" id="1TaHNgiI6lm" role="2OqNvi">
+                                      <node concept="liA8E" id="65IE4qV8k_I" role="2OqNvi">
                                         <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
                                       </node>
                                     </node>
-                                    <node concept="37vLTw" id="3GM_nagTBOw" role="37wK5m">
+                                    <node concept="37vLTw" id="65IE4qV8k_J" role="37wK5m">
                                       <ref role="3cqZAo" node="1TaHNgiI6kR" resolve="olines" />
                                     </node>
-                                    <node concept="37vLTw" id="3GM_nagT_ym" role="37wK5m">
+                                    <node concept="37vLTw" id="65IE4qV8k_K" role="37wK5m">
                                       <ref role="3cqZAo" node="1TaHNgiI6l5" resolve="patch" />
                                     </node>
-                                    <node concept="3cmrfG" id="1TaHNgiI6lp" role="37wK5m">
+                                    <node concept="3cmrfG" id="65IE4qV8k_L" role="37wK5m">
                                       <property role="3cmrfH" value="5" />
                                     </node>
                                   </node>

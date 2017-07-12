@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.testbench.make" uuid="79f9d103-4ff6-4def-9c1a-27070f9ba255" moduleVersion="0" compileInMPS="false" generatorOutputPath="${mps_home}/testbench/tests_gen">
   <models>
-    <modelRoot contentPath="${mps_home}/lib" type="java_classes">
-      <sourceRoot location="diffutils-1.2.1.jar" />
-    </modelRoot>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
     </modelRoot>
@@ -11,9 +8,6 @@
   <facets>
     <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/lib/diffutils-1.2.1.jar" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
@@ -79,6 +73,7 @@
     <dependency reexport="false">1839bec5-cea6-41df-b9e0-c405ff35c41e(jetbrains.mps.lang.editor.imageGen)</dependency>
     <dependency reexport="false">f9665e4e-baa4-42c6-b97d-c49dfa9f7381(analyzers.test)</dependency>
     <dependency reexport="false">cfb148cb-f798-4362-89a2-56938bf6c92f(jetbrains.mps.lang.editor.forms.tests)</dependency>
+    <dependency reexport="false">3669929d-7269-4de9-a160-f80b04ef909d(DiffUtils)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="5" />
@@ -94,6 +89,7 @@
   <dependencyVersions>
     <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
     <module reference="847a3235-09f9-403c-b6a9-1c294a212e92(Ant)" version="0" />
+    <module reference="3669929d-7269-4de9-a160-f80b04ef909d(DiffUtils)" version="0" />
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
     <module reference="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" version="0" />

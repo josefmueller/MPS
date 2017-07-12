@@ -4326,7 +4326,7 @@
             <property role="Xl_RC" value="asm-all.jar" />
           </node>
           <node concept="Xl_RD" id="6IC6gZqCBz0" role="3g7hyw">
-            <property role="Xl_RC" value="diffutils-1.2.1.jar" />
+            <property role="Xl_RC" value="ext/diffutils-1.2.1.jar" />
           </node>
           <node concept="Xl_RD" id="6IC6gZqDTqM" role="3g7hyw">
             <property role="Xl_RC" value="junit-4.12.jar" />

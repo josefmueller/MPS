@@ -29,6 +29,8 @@ public final class MacrosFactory {
   public static final String MODULE = "${module}";
   public static final String PROJECT_LEGACY = "${project}";
   public static final String MPS_HOME = "${mps_home}";
+  public static final String PLATFORM_LIB = "${platform_lib}";
+  public static final String LIB_EXT = "${lib_ext}";
 
   static final char SEPARATOR_CHAR = Path.UNIX_SEPARATOR_CHAR;
 
@@ -63,6 +65,7 @@ public final class MacrosFactory {
 
   /**
    * Checks whether {@code path} contains a macro.
+   *
    * @param path a non-null string
    * @return {@code true} if {@code path} starts with "${" and contains "}", {@code false} otherwise.
    * FIXME AP contains or equals? Does MacroHelpers and others replace macros in the middle of a path?
@@ -140,17 +143,39 @@ public final class MacrosFactory {
   private static class HomeMacros extends Macros {
     @Override
     protected String expand(String path, @Nullable IFile anchorFile) {
+      if (path.startsWith(LIB_EXT)) {
+        return expand(path, PathManager.getLibExtPath());
+      }
+
+      if (path.startsWith(PLATFORM_LIB)) {
+        return expand(path, PathManager.getPlatformLibPath());
+      }
+
       if (path.startsWith(MPS_HOME)) {
-        String relativePath = removePrefix(path);
-        IFile file = FileSystem.getInstance().getFile(PathManager.getHomePath()).getDescendant(relativePath);
-        return IFileUtils.getCanonicalPath(file);
+        return expand(path, PathManager.getHomePath());
       }
 
       return super.expand(path, anchorFile);
     }
 
+    private String expand(String pathWithMacro, String macroPath) {
+      String relativePath = removePrefix(pathWithMacro);
+      IFile file = FileSystem.getInstance().getFile(macroPath).getDescendant(relativePath);
+      return IFileUtils.getCanonicalPath(file);
+    }
+
     @Override
     protected String shrink(String absolutePath, IFile anchorFile) {
+      if (pathStartsWith(absolutePath, PathManager.getLibExtPath())) {
+        String relationalPath = shrink(absolutePath, PathManager.getLibExtPath());
+        return LIB_EXT + relationalPath;
+      }
+
+      if (pathStartsWith(absolutePath, PathManager.getPlatformLibPath())) {
+        String relationalPath = shrink(absolutePath, PathManager.getPlatformLibPath());
+        return PLATFORM_LIB + relationalPath;
+      }
+
       if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
         String relationalPath = shrink(absolutePath, PathManager.getHomePath());
         return MPS_HOME + relationalPath;

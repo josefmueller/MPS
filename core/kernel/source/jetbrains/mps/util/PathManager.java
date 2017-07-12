@@ -49,6 +49,7 @@ public final class PathManager {
 
   private static String ourHomePath;
   private static String ourIdeaPath;
+  private static String ourPlatformLibPath;
 
   public static final FilenameFilter JAR_FILE_FILTER = (dir, name) -> name.endsWith(DOT_JAR);
 
@@ -102,21 +103,11 @@ public final class PathManager {
       return ourIdeaPath;
     }
 
-    // {idea_home}/lib/jdom.jar
-    String rootPath = getContainingJar(Document.class);
-    if (rootPath == null) {
-      ourIdeaPath = getHomePath();
-      return ourIdeaPath;
-    }
-    File root = new File(rootPath);
-    root = root.getAbsoluteFile();
-
     // {idea_home}/lib
+    File root = new File(getPlatformLibPath());
+    root = root.getAbsoluteFile();
+    // {idea_home}
     root = root.getParentFile();
-    if (root != null) {
-      // {idea_home}
-      root = root.getParentFile();
-    }
 
     if (root == null) {
       ourIdeaPath = getHomePath();
@@ -125,6 +116,30 @@ public final class PathManager {
     }
 
     return ourIdeaPath;
+  }
+
+  public static String getLibExtPath() {
+    return getLibPath() + File.separator + "ext";
+  }
+
+  public static String getPlatformLibPath() {
+    if (ourPlatformLibPath != null) {
+      return ourPlatformLibPath;
+    }
+
+    // {idea_home}/lib/jdom.jar
+    String rootPath = getContainingJar(Document.class);
+    if (rootPath != null) {
+      File root = new File(rootPath);
+      root = root.getAbsoluteFile();
+
+      // {idea_home}/lib
+      root = root.getParentFile();
+      if (root != null) {
+        return ourPlatformLibPath = root.getAbsolutePath();
+      }
+    }
+    return ourPlatformLibPath = getHomePath() + "/lib";
   }
 
   public static String[] getHomePaths() {

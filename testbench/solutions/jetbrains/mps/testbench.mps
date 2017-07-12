@@ -36,7 +36,6 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="rjhg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="2o" ref="79f9d103-4ff6-4def-9c1a-27070f9ba255/java:difflib(jetbrains.mps.testbench.make/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
@@ -47,6 +46,7 @@
     <import index="1gam" ref="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="m52l" ref="r:c3ac4b0a-a487-4481-b87d-bcfbfdd6a85d(jetbrains.mps.lang.editor.imageGen.plugin)" />
+    <import index="2o" ref="3669929d-7269-4de9-a160-f80b04ef909d/java:difflib(DiffUtils/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1817,18 +1817,18 @@
                     <node concept="3cpWs8" id="2XCiAnQPSOW" role="3cqZAp">
                       <node concept="3cpWsn" id="2XCiAnQPSOX" role="3cpWs9">
                         <property role="TrG5h" value="patch" />
-                        <node concept="3uibUv" id="2XCiAnQPSOY" role="1tU5fm">
+                        <node concept="3uibUv" id="65IE4qV7ST$" role="1tU5fm">
                           <ref role="3uigEE" to="2o:~Patch" resolve="Patch" />
                         </node>
-                        <node concept="2YIFZM" id="2XCiAnQPSOZ" role="33vP2m">
+                        <node concept="2YIFZM" id="65IE4qV7SOo" role="33vP2m">
                           <ref role="37wK5l" to="2o:~DiffUtils.diff(java.util.List,java.util.List):difflib.Patch" resolve="diff" />
                           <ref role="1Pybhc" to="2o:~DiffUtils" resolve="DiffUtils" />
-                          <node concept="37vLTw" id="3GM_nagTBEp" role="37wK5m">
+                          <node concept="37vLTw" id="65IE4qV7SOp" role="37wK5m">
                             <ref role="3cqZAo" node="4E$kaclSekD" resolve="olines" />
                           </node>
-                          <node concept="1rXfSq" id="4hiugqyyYrO" role="37wK5m">
+                          <node concept="1rXfSq" id="65IE4qV7SOq" role="37wK5m">
                             <ref role="37wK5l" node="2XCiAnQPDQc" resolve="fileToStrings" />
-                            <node concept="37vLTw" id="3GM_nagT_yX" role="37wK5m">
+                            <node concept="37vLTw" id="65IE4qV7SOr" role="37wK5m">
                               <ref role="3cqZAo" node="2XCiAnQPSOL" resolve="rnext" />
                             </node>
                           </node>
@@ -1843,32 +1843,32 @@
                               <ref role="3cqZAo" node="2XCiAnQPDFX" resolve="diffs" />
                             </node>
                             <node concept="X8dFx" id="4E$kaclSel8" role="2OqNvi">
-                              <node concept="2YIFZM" id="4E$kaclSel9" role="25WWJ7">
+                              <node concept="2YIFZM" id="65IE4qV7T8j" role="25WWJ7">
                                 <ref role="37wK5l" to="2o:~DiffUtils.generateUnifiedDiff(java.lang.String,java.lang.String,java.util.List,difflib.Patch,int):java.util.List" resolve="generateUnifiedDiff" />
                                 <ref role="1Pybhc" to="2o:~DiffUtils" resolve="DiffUtils" />
-                                <node concept="2OqwBi" id="4E$kaclSela" role="37wK5m">
-                                  <node concept="37vLTw" id="3GM_nagTzGG" role="2Oq$k0">
+                                <node concept="2OqwBi" id="65IE4qV7T8k" role="37wK5m">
+                                  <node concept="37vLTw" id="65IE4qV7T8l" role="2Oq$k0">
                                     <ref role="3cqZAo" node="2XCiAnQPSOF" resolve="onext" />
                                   </node>
-                                  <node concept="liA8E" id="4E$kaclSelc" role="2OqNvi">
+                                  <node concept="liA8E" id="65IE4qV7T8m" role="2OqNvi">
                                     <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
                                   </node>
                                 </node>
-                                <node concept="2OqwBi" id="4E$kaclSeld" role="37wK5m">
-                                  <node concept="37vLTw" id="3GM_nagTz1w" role="2Oq$k0">
+                                <node concept="2OqwBi" id="65IE4qV7T8n" role="37wK5m">
+                                  <node concept="37vLTw" id="65IE4qV7T8o" role="2Oq$k0">
                                     <ref role="3cqZAo" node="2XCiAnQPSOL" resolve="rnext" />
                                   </node>
-                                  <node concept="liA8E" id="4E$kaclSelf" role="2OqNvi">
+                                  <node concept="liA8E" id="65IE4qV7T8p" role="2OqNvi">
                                     <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
                                   </node>
                                 </node>
-                                <node concept="37vLTw" id="3GM_nagT_nC" role="37wK5m">
+                                <node concept="37vLTw" id="65IE4qV7T8q" role="37wK5m">
                                   <ref role="3cqZAo" node="4E$kaclSekD" resolve="olines" />
                                 </node>
-                                <node concept="37vLTw" id="3GM_nagTtso" role="37wK5m">
+                                <node concept="37vLTw" id="65IE4qV7T8r" role="37wK5m">
                                   <ref role="3cqZAo" node="2XCiAnQPSOX" resolve="patch" />
                                 </node>
-                                <node concept="3cmrfG" id="4E$kaclSeli" role="37wK5m">
+                                <node concept="3cmrfG" id="65IE4qV7T8s" role="37wK5m">
                                   <property role="3cmrfH" value="5" />
                                 </node>
                               </node>

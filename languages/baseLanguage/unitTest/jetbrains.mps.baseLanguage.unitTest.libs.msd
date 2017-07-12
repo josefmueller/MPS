@@ -4,7 +4,7 @@
     <modelRoot contentPath="${module}/lib" type="java_classes">
       <sourceRoot location="." />
     </modelRoot>
-    <modelRoot contentPath="${mps_home}/lib" type="java_classes">
+    <modelRoot contentPath="${platform_lib}" type="java_classes">
       <sourceRoot location="junit-4.12.jar" />
       <sourceRoot location="hamcrest-core-1.3.jar" />
     </modelRoot>
@@ -13,8 +13,8 @@
     <facet pluginId="com.intellij" type="ideaPlugin" />
   </facets>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/lib/junit-4.12.jar" />
-    <stubModelEntry path="${mps_home}/lib/hamcrest-core-1.3.jar" />
+    <stubModelEntry path="${platform_lib}/junit-4.12.jar" />
+    <stubModelEntry path="${platform_lib}/hamcrest-core-1.3.jar" />
     <stubModelEntry path="${module}/lib/hamcrest-library-1.3-sources.jar" />
     <stubModelEntry path="${module}/lib/hamcrest-library-1.3.jar" />
     <stubModelEntry path="${module}/lib/jmock-2.8.2-sources.jar" />

@@ -74,7 +74,7 @@
             </classpath>
         </javac>
         <unjar dest="build/java/out/guava" src="../../lib/guava-11.0.1.jar"/>
-        <unjar dest="build/java/out/diff" src="../../lib/diffutils-1.2.1.jar"/>
+        <unjar dest="build/java/out/diff" src="../../lib/ext/diffutils-1.2.1.jar"/>
         <jar destfile="build/deepcompare.jar">
             <fileset dir="build/java/out/deepcompare"/>
             <fileset dir="build/java/out/guava"/>
