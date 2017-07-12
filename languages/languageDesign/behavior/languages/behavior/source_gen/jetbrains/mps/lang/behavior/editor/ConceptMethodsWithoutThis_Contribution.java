@@ -118,7 +118,7 @@ public class ConceptMethodsWithoutThis_Contribution extends SubstituteMenuBase {
             _context = context;
             _context.getEditorMenuTrace().pushTraceInfo();
             String description = "Substitute item: " + getMatchingText("");
-            description += " .Parameter object: " + myParameterObject;
+            description += ". Parameter object: " + myParameterObject;
             _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:dc79d042-ba38-4e91-9392-42f38106ae44(jetbrains.mps.lang.behavior.editor)", "1741258697587172347")));
             this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
             _context.getEditorMenuTrace().popTraceInfo();

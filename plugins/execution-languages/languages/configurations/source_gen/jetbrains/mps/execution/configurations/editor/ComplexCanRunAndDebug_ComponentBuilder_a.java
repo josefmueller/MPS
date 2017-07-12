@@ -136,7 +136,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)", "6226796386650282061")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)", "6226796386650282061")));
               return result;
             }
           };
@@ -174,7 +174,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)", "6226796386650282081")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)", "6226796386650282081")));
               return result;
             }
           };
@@ -247,7 +247,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)", "6226796386650282099")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)", "6226796386650282099")));
               return result;
             }
           };
@@ -340,7 +340,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)", "6226796386650282129")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)", "6226796386650282129")));
               return result;
             }
           };

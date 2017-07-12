@@ -110,7 +110,7 @@ public class privateStaticAccess_Contribution extends SubstituteMenuBase {
           _context = context;
           _context.getEditorMenuTrace().pushTraceInfo();
           String description = "Substitute item: " + getMatchingText("");
-          description += " .Parameter object: " + myParameterObject;
+          description += ". Parameter object: " + myParameterObject;
           _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:60ad1897-dab7-4d3f-88a6-223e75141d15(jetbrains.mps.debugger.java.privateMembers.editor)", "1741258697587208547")));
           this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
           _context.getEditorMenuTrace().popTraceInfo();

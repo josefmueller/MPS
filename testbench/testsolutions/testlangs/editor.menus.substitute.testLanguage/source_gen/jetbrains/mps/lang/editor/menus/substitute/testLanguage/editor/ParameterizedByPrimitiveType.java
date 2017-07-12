@@ -85,7 +85,7 @@ public class ParameterizedByPrimitiveType extends SubstituteMenuBase {
           _context = context;
           _context.getEditorMenuTrace().pushTraceInfo();
           String description = "Substitute item: " + getMatchingText("");
-          description += " .Parameter object: " + myParameterObject;
+          description += ". Parameter object: " + myParameterObject;
           _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "8477852555558593538")));
           this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
           _context.getEditorMenuTrace().popTraceInfo();

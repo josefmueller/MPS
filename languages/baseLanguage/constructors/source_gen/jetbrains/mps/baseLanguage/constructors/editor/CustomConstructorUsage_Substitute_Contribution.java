@@ -98,7 +98,7 @@ public class CustomConstructorUsage_Substitute_Contribution extends SubstituteMe
           _context = context;
           _context.getEditorMenuTrace().pushTraceInfo();
           String description = "Substitute item: " + getMatchingText("");
-          description += " .Parameter object: " + myParameterObject;
+          description += ". Parameter object: " + myParameterObject;
           _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:a26c2d31-3099-460a-9c78-2ba0012a8914(jetbrains.mps.baseLanguage.constructors.editor)", "1741258697587217464")));
           this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
           _context.getEditorMenuTrace().popTraceInfo();

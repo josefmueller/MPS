@@ -105,7 +105,7 @@ public class SuperInterfaceMethodCall_Contribution extends SubstituteMenuBase {
           _context = context;
           _context.getEditorMenuTrace().pushTraceInfo();
           String description = "Substitute item: " + getMatchingText("");
-          description += " .Parameter object: " + myParameterObject;
+          description += ". Parameter object: " + myParameterObject;
           _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:e0b66e1e-58f0-4d4c-b699-45df07297948(jetbrains.mps.baseLanguage.jdk8.editor)", "1741258697587052922")));
           this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
           _context.getEditorMenuTrace().popTraceInfo();

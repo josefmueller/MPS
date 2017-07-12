@@ -135,7 +135,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Property postfix values", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "6612597108004967782")));
+              result.setDescriptor(new EditorMenuDescriptorBase("property postfix values", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "6612597108004967782")));
               return result;
             }
           };
@@ -213,7 +213,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Property postfix values", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "6612597108005074118")));
+              result.setDescriptor(new EditorMenuDescriptorBase("property postfix values", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "6612597108005074118")));
               return result;
             }
           };

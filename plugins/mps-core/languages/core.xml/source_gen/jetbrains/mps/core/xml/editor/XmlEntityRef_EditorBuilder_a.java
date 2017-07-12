@@ -109,7 +109,7 @@ import jetbrains.mps.core.xml.constraints.XmlNameUtil;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Property postfix values", new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "3080189811177148122")));
+              result.setDescriptor(new EditorMenuDescriptorBase("property postfix values", new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "3080189811177148122")));
               return result;
             }
           };

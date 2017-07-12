@@ -123,7 +123,7 @@ public class InstanceMethodCallSubstitute extends SubstituteMenuBase {
             _context = context;
             _context.getEditorMenuTrace().pushTraceInfo();
             String description = "Substitute item: " + getMatchingText("");
-            description += " .Parameter object: " + myParameterObject;
+            description += ". Parameter object: " + myParameterObject;
             _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:ba4ce2b4-b708-4183-95e3-2753aef5bf29(jetbrains.mps.baseLanguage.extensionMethods.editor)", "1741258697587119614")));
             this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
             _context.getEditorMenuTrace().popTraceInfo();

@@ -5,7 +5,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.descriptor.ConceptEditorHintImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestChild_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestChild_compact_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorsTestChild_rich_Editor" />

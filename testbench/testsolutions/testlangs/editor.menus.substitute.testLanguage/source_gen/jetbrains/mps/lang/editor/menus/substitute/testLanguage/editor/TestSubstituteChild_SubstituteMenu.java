@@ -288,7 +288,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
             _context = context;
             _context.getEditorMenuTrace().pushTraceInfo();
             String description = "Substitute item: " + getMatchingText("");
-            description += " .Parameter object: " + myParameterObject;
+            description += ". Parameter object: " + myParameterObject;
             _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "8998492695587461765")));
             this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
             _context.getEditorMenuTrace().popTraceInfo();
@@ -502,18 +502,30 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
 
       @NotNull
       @Override
-      public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
-        context.getEditorMenuTrace().pushTraceInfo();
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple actions for the list of concepts", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "8998492695587494968")));
+      public List<SubstituteMenuItem> createItems(SubstituteMenuContext _context) {
+        _context.getEditorMenuTrace().pushTraceInfo();
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple actions for the list of concepts", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "8998492695587494968")));
         try {
-          return super.createItems(context);
+          return super.createItems(_context);
         } finally {
-          context.getEditorMenuTrace().popTraceInfo();
+          _context.getEditorMenuTrace().popTraceInfo();
         }
       }
       @Override
-      protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
-        return new SimpleConceptSubstituteMenuPart(concept).createItems(context);
+      protected Collection<SubstituteMenuItem> createItemsForConcept(final SubstituteMenuContext _context, final SAbstractConcept concept) {
+        return new SimpleConceptSubstituteMenuPart(concept) {
+          @NotNull
+          @Override
+          public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+            context.getEditorMenuTrace().pushTraceInfo();
+            context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple action for concept: " + concept.getName(), null));
+            try {
+              return super.createItems(context);
+            } finally {
+              context.getEditorMenuTrace().popTraceInfo();
+            }
+          }
+        }.createItems(_context);
       }
     }
   }
@@ -536,7 +548,20 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2")), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2")) {
+
+        @NotNull
+        @Override
+        public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+          context.getEditorMenuTrace().pushTraceInfo();
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple substitute menu part for concept: " + "TestSubstituteSubChild2", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "8998492695587512850")));
+          try {
+            return super.createItems(context);
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+        }
+      }, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2a9L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteSubChild2")));
     }
   }
   public class SMP_Group_ddv2zo_f extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
@@ -771,7 +796,20 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992314d41L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteNotSubconceptOfChild")), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992314d41L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteNotSubconceptOfChild")));
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992314d41L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteNotSubconceptOfChild")) {
+
+        @NotNull
+        @Override
+        public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+          context.getEditorMenuTrace().pushTraceInfo();
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple substitute menu part for concept: " + "TestSubstituteNotSubconceptOfChild", new SNodePointer("r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)", "9174907873152552033")));
+          try {
+            return super.createItems(context);
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+        }
+      }, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992314d41L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteNotSubconceptOfChild")));
     }
   }
   private static boolean eq_ddv2zo_a0f0c5(Object a, Object b) {

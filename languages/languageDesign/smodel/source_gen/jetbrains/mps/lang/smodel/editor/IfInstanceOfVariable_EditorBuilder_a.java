@@ -99,7 +99,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Property postfix hints", new SNodePointer("r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)", "1883223317721105900")));
+              result.setDescriptor(new EditorMenuDescriptorBase("property postfix hints", new SNodePointer("r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)", "1883223317721105900")));
               return result;
             }
           };

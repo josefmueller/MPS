@@ -114,7 +114,7 @@ public class java_module_content_XmlBaseElement_Contribution extends SubstituteM
             _context = context;
             _context.getEditorMenuTrace().pushTraceInfo();
             String description = "Substitute item: " + getMatchingText("");
-            description += " .Parameter object: " + myParameterObject;
+            description += ". Parameter object: " + myParameterObject;
             _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)", "1741258697587102767")));
             this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
             _context.getEditorMenuTrace().popTraceInfo();

@@ -512,7 +512,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.descriptor.ConceptEditorHintImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.AttractsFocusBlock_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.AttributeChild_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.AttributeWithChildren_Editor" />

@@ -5572,7 +5572,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.valueParameter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.variableArityType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.variableDeclarationInitializer" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.descriptor.ConceptEditorHintImpl" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditor" />

@@ -2204,40 +2204,53 @@
       <node id="1703835097134778606" at="51,51,52,223" concept="2" />
       <node id="1703835097134778606" at="53,11,54,42" concept="7" />
       <node id="1703835097134778606" at="55,17,56,52" concept="2" />
-      <node id="1703835097134778606" at="61,84,62,468" concept="7" />
+      <node id="1703835097134778606" at="66,84,67,55" concept="2" />
+      <node id="1703835097134778606" at="67,55,68,270" concept="2" />
+      <node id="1703835097134778606" at="69,15,70,46" concept="7" />
+      <node id="1703835097134778606" at="71,21,72,56" concept="2" />
       <node id="1703835097134778606" at="44,0,48,0" concept="5" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Z" />
-      <node id="1703835097134778606" at="60,0,64,0" concept="5" trace="getParts#()Ljava/util/List;" />
       <node id="1703835097134778606" at="34,251,39,5" concept="9" />
       <node id="1703835097134778606" at="52,223,57,7" concept="9" />
+      <node id="1703835097134778606" at="68,270,73,11" concept="9" />
       <node id="1703835097134778606" at="22,0,29,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="1703835097134778606" at="30,0,41,0" concept="5" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="1703835097134778606" at="48,0,59,0" concept="5" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1703835097134778606" at="64,0,75,0" concept="5" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1703835097134778606" at="61,84,75,159" concept="7" />
+      <node id="1703835097134778606" at="60,0,77,0" concept="5" trace="getParts#()Ljava/util/List;" />
       <scope id="1703835097134778606" at="35,9,36,44" />
       <scope id="1703835097134778606" at="37,15,38,50" />
       <scope id="6189745377886678797" at="45,68,46,81" />
       <scope id="1703835097134778606" at="53,11,54,42" />
       <scope id="1703835097134778606" at="55,17,56,52" />
-      <scope id="1703835097134778606" at="61,84,62,468" />
+      <scope id="1703835097134778606" at="69,15,70,46" />
+      <scope id="1703835097134778606" at="71,21,72,56" />
       <scope id="1703835097134778606" at="24,118,27,18">
         <var name="result" id="1703835097134778606" />
       </scope>
       <scope id="1703835097134778606" at="44,0,48,0">
         <var name="_context" id="1703835097134778606" />
       </scope>
-      <scope id="1703835097134778606" at="60,0,64,0" />
       <scope id="1703835097134778606" at="22,0,29,0">
         <var name="_context" id="1703835097134778606" />
       </scope>
       <scope id="1703835097134778606" at="32,91,39,5" />
       <scope id="1703835097134778606" at="50,89,57,7" />
+      <scope id="1703835097134778606" at="66,84,73,11" />
       <scope id="1703835097134778606" at="30,0,41,0">
         <var name="context" id="1703835097134778606" />
       </scope>
       <scope id="1703835097134778606" at="48,0,59,0">
         <var name="context" id="1703835097134778606" />
       </scope>
-      <unit id="1703835097134778606" at="43,0,65,0" name="jetbrains.mps.lang.behavior.editor.ThisNodeExpression_SubstituteMenu$SMP_Group_mpxvc0_a" />
-      <unit id="1703835097134778606" at="21,0,66,0" name="jetbrains.mps.lang.behavior.editor.ThisNodeExpression_SubstituteMenu" />
+      <scope id="1703835097134778606" at="64,0,75,0">
+        <var name="context" id="1703835097134778606" />
+      </scope>
+      <scope id="1703835097134778606" at="61,84,75,159" />
+      <scope id="1703835097134778606" at="60,0,77,0" />
+      <unit id="1703835097134778606" at="62,136,75,7" name="jetbrains.mps.lang.behavior.editor.ThisNodeExpression_SubstituteMenu$SMP_Group_mpxvc0_a$1" />
+      <unit id="1703835097134778606" at="43,0,78,0" name="jetbrains.mps.lang.behavior.editor.ThisNodeExpression_SubstituteMenu$SMP_Group_mpxvc0_a" />
+      <unit id="1703835097134778606" at="21,0,79,0" name="jetbrains.mps.lang.behavior.editor.ThisNodeExpression_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:dc79d042-ba38-4e91-9392-42f38106ae44(jetbrains.mps.lang.behavior.editor)/1741258697587172181">

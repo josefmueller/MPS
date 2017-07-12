@@ -175,7 +175,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.descriptor.ConceptEditorHintImpl" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_DiagramTestTextual_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_DiagramTestTextual_Editor" />

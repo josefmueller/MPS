@@ -172,7 +172,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1225466728384")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1225466728384")));
               return result;
             }
           };
@@ -200,7 +200,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1225472662044")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1225472662044")));
               return result;
             }
           };
@@ -228,7 +228,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "6370563779216442223")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "6370563779216442223")));
               return result;
             }
           };
@@ -336,7 +336,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
               @Override
               public EditorMenuTraceInfo getEditorMenuTraceInfo() {
                 EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1225472714648")));
+                result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1225472714648")));
                 return result;
               }
             };
@@ -364,7 +364,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
               @Override
               public EditorMenuTraceInfo getEditorMenuTraceInfo() {
                 EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1225472714657")));
+                result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1225472714657")));
                 return result;
               }
             };
@@ -392,7 +392,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
               @Override
               public EditorMenuTraceInfo getEditorMenuTraceInfo() {
                 EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "6370563779215077345")));
+                result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "6370563779215077345")));
                 return result;
               }
             };

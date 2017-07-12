@@ -283,7 +283,7 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:60ad1897-dab7-4d3f-88a6-223e75141d15(jetbrains.mps.debugger.java.privateMembers.editor)", "5619723216767159066")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:60ad1897-dab7-4d3f-88a6-223e75141d15(jetbrains.mps.debugger.java.privateMembers.editor)", "5619723216767159066")));
               return result;
             }
           };

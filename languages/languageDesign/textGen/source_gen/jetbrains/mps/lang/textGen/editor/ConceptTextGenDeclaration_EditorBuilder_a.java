@@ -514,7 +514,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
               @Override
               public EditorMenuTraceInfo getEditorMenuTraceInfo() {
                 EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-                result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)", "6606361624650441507")));
+                result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)", "6606361624650441507")));
                 return result;
               }
             };

@@ -94,7 +94,7 @@ import jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Property postfix hints", new SNodePointer("r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)", "9042586985346099747")));
+              result.setDescriptor(new EditorMenuDescriptorBase("property postfix hints", new SNodePointer("r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)", "9042586985346099747")));
               return result;
             }
           };

@@ -171,7 +171,7 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
               _context = context;
               _context.getEditorMenuTrace().pushTraceInfo();
               String description = "Substitute item: " + getMatchingText("");
-              description += " .Parameter object: " + myParameterObject;
+              description += ". Parameter object: " + myParameterObject;
               _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586955064")));
               this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
               _context.getEditorMenuTrace().popTraceInfo();
@@ -277,7 +277,7 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
               _context = context;
               _context.getEditorMenuTrace().pushTraceInfo();
               String description = "Substitute item: " + getMatchingText("");
-              description += " .Parameter object: " + myParameterObject;
+              description += ". Parameter object: " + myParameterObject;
               _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586955194")));
               this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
               _context.getEditorMenuTrace().popTraceInfo();
@@ -383,7 +383,7 @@ public class ClassifierType_SubstituteMenu extends SubstituteMenuBase {
               _context = context;
               _context.getEditorMenuTrace().pushTraceInfo();
               String description = "Substitute item: " + getMatchingText("");
-              description += " .Parameter object: " + myParameterObject;
+              description += ". Parameter object: " + myParameterObject;
               _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586955324")));
               this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
               _context.getEditorMenuTrace().popTraceInfo();

@@ -159,7 +159,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "6978502240660652238")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "6978502240660652238")));
               return result;
             }
           };

@@ -77,18 +77,30 @@ public class AbstractOperationParameter_SubstituteMenu extends SubstituteMenuBas
 
       @NotNull
       @Override
-      public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
-        context.getEditorMenuTrace().pushTraceInfo();
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple actions for the list of concepts", new SNodePointer("r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)", "1741258697587099522")));
+      public List<SubstituteMenuItem> createItems(SubstituteMenuContext _context) {
+        _context.getEditorMenuTrace().pushTraceInfo();
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple actions for the list of concepts", new SNodePointer("r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)", "1741258697587099522")));
         try {
-          return super.createItems(context);
+          return super.createItems(_context);
         } finally {
-          context.getEditorMenuTrace().popTraceInfo();
+          _context.getEditorMenuTrace().popTraceInfo();
         }
       }
       @Override
-      protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
-        return new SimpleConceptSubstituteMenuPart(concept).createItems(context);
+      protected Collection<SubstituteMenuItem> createItemsForConcept(final SubstituteMenuContext _context, final SAbstractConcept concept) {
+        return new SimpleConceptSubstituteMenuPart(concept) {
+          @NotNull
+          @Override
+          public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+            context.getEditorMenuTrace().pushTraceInfo();
+            context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple action for concept: " + concept.getName(), null));
+            try {
+              return super.createItems(context);
+            } finally {
+              context.getEditorMenuTrace().popTraceInfo();
+            }
+          }
+        }.createItems(_context);
       }
     }
   }

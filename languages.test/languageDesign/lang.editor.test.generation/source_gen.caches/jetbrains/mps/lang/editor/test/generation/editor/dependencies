@@ -165,7 +165,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.desctiptor.ConceptEditorHintImpl" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.descriptor.ConceptEditorHintImpl" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.InheritableStyleAttribute" />
     <classNode dependClassName="jetbrains.mps.lang.editor.test.generation.editor.Constant_Default" />
     <classNode dependClassName="jetbrains.mps.lang.editor.test.generation.editor.Constant_Editor" />

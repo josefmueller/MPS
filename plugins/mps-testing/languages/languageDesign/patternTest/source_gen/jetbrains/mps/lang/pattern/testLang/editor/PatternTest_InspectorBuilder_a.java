@@ -112,7 +112,7 @@ import jetbrains.mps.smodel.IOperationContext;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)", "3159291778219979144")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)", "3159291778219979144")));
               return result;
             }
           };
@@ -140,7 +140,7 @@ import jetbrains.mps.smodel.IOperationContext;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)", "3159291778219979167")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:bf45fcee-273c-4767-a2ee-15f910547db0(jetbrains.mps.lang.pattern.testLang.editor)", "3159291778219979167")));
               return result;
             }
           };

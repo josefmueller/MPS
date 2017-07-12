@@ -114,7 +114,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1235747377671")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1235747377671")));
               return result;
             }
           };
@@ -142,7 +142,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1235747377680")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1235747377680")));
               return result;
             }
           };
@@ -320,7 +320,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1235747377713")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1235747377713")));
               return result;
             }
           };
@@ -348,7 +348,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1235747377722")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1235747377722")));
               return result;
             }
           };

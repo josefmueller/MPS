@@ -2819,27 +2819,33 @@
       <node id="2237517187456274443" at="55,51,56,242" concept="1" />
       <node id="2237517187456274443" at="57,11,58,42" concept="6" />
       <node id="2237517187456274443" at="59,17,60,52" concept="1" />
-      <node id="2237517187456274443" at="65,84,66,556" concept="6" />
+      <node id="2237517187456274443" at="70,84,71,55" concept="1" />
+      <node id="2237517187456274443" at="71,55,72,314" concept="1" />
+      <node id="2237517187456274443" at="73,15,74,46" concept="6" />
+      <node id="2237517187456274443" at="75,21,76,56" concept="1" />
       <node id="2237517187456274443" at="22,0,25,0" concept="0" trace="Contribute_genContext_templateCallArguments#()V" />
-      <node id="2237517187456274443" at="64,0,68,0" concept="4" trace="getParts#()Ljava/util/List;" />
       <node id="2237517187456274443" at="37,287,42,5" concept="10" />
       <node id="2237517187456274443" at="47,0,52,0" concept="4" trace="isApplicable#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Z" />
       <node id="2237517187456274443" at="56,242,61,7" concept="10" />
+      <node id="2237517187456274443" at="72,314,77,11" concept="10" />
       <node id="2237517187456274443" at="25,0,32,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="2237517187456274443" at="33,0,44,0" concept="4" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="2237517187456274443" at="52,0,63,0" concept="4" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="2237517187456274443" at="68,0,79,0" concept="4" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="2237517187456274443" at="65,84,79,203" concept="6" />
+      <node id="2237517187456274443" at="64,0,81,0" concept="4" trace="getParts#()Ljava/util/List;" />
       <scope id="2237517187456274443" at="22,56,23,16" />
       <scope id="2237517187456274443" at="38,9,39,44" />
       <scope id="2237517187456274443" at="40,15,41,50" />
       <scope id="2237517187456274443" at="57,11,58,42" />
       <scope id="2237517187456274443" at="59,17,60,52" />
-      <scope id="2237517187456274443" at="65,84,66,556" />
+      <scope id="2237517187456274443" at="73,15,74,46" />
+      <scope id="2237517187456274443" at="75,21,76,56" />
       <scope id="1741258697587212798" at="48,68,50,253" />
       <scope id="2237517187456274443" at="22,0,25,0" />
       <scope id="2237517187456274443" at="27,118,30,18">
         <var name="result" id="2237517187456274443" />
       </scope>
-      <scope id="2237517187456274443" at="64,0,68,0" />
       <scope id="2237517187456274443" at="47,0,52,0">
         <var name="_context" id="2237517187456274443" />
       </scope>
@@ -2848,14 +2854,21 @@
       </scope>
       <scope id="2237517187456274443" at="35,91,42,5" />
       <scope id="2237517187456274443" at="54,89,61,7" />
+      <scope id="2237517187456274443" at="70,84,77,11" />
       <scope id="2237517187456274443" at="33,0,44,0">
         <var name="context" id="2237517187456274443" />
       </scope>
       <scope id="2237517187456274443" at="52,0,63,0">
         <var name="context" id="2237517187456274443" />
       </scope>
-      <unit id="2237517187456274443" at="46,0,69,0" name="jetbrains.mps.lang.generator.generationContext.editor.Contribute_genContext_templateCallArguments$SMP_Group_my4xy0_a" />
-      <unit id="2237517187456274443" at="21,0,70,0" name="jetbrains.mps.lang.generator.generationContext.editor.Contribute_genContext_templateCallArguments" />
+      <scope id="2237517187456274443" at="68,0,79,0">
+        <var name="context" id="2237517187456274443" />
+      </scope>
+      <scope id="2237517187456274443" at="65,84,79,203" />
+      <scope id="2237517187456274443" at="64,0,81,0" />
+      <unit id="2237517187456274443" at="66,136,79,7" name="jetbrains.mps.lang.generator.generationContext.editor.Contribute_genContext_templateCallArguments$SMP_Group_my4xy0_a$1" />
+      <unit id="2237517187456274443" at="46,0,82,0" name="jetbrains.mps.lang.generator.generationContext.editor.Contribute_genContext_templateCallArguments$SMP_Group_my4xy0_a" />
+      <unit id="2237517187456274443" at="21,0,83,0" name="jetbrains.mps.lang.generator.generationContext.editor.Contribute_genContext_templateCallArguments" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)/2507865635201650193">
@@ -3464,6 +3477,7 @@
       <scope id="4747359941571311279" at="58,17,59,52" />
       <scope id="4747359941571311279" at="65,112,66,151" />
       <scope id="4747359941571311271" at="80,53,81,175" />
+      <scope id="4747359941571311279" at="84,60,85,40" />
       <scope id="4747359941571311279" at="89,49,90,27" />
       <scope id="4747359941571311279" at="27,118,30,18">
         <var name="result" id="4747359941571311279" />

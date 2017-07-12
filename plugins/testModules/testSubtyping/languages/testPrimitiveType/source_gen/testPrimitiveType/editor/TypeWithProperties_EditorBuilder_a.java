@@ -134,7 +134,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:2abc4c1d-3154-444a-a3cf-cdb6a262b101(testPrimitiveType.editor)", "706089536801436718")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:2abc4c1d-3154-444a-a3cf-cdb6a262b101(testPrimitiveType.editor)", "706089536801436718")));
               return result;
             }
           };
@@ -210,7 +210,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:2abc4c1d-3154-444a-a3cf-cdb6a262b101(testPrimitiveType.editor)", "706089536801463444")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:2abc4c1d-3154-444a-a3cf-cdb6a262b101(testPrimitiveType.editor)", "706089536801463444")));
               return result;
             }
           };
@@ -286,7 +286,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
             @Override
             public EditorMenuTraceInfo getEditorMenuTraceInfo() {
               EditorMenuTraceInfoImpl result = new EditorMenuTraceInfoImpl();
-              result.setDescriptor(new EditorMenuDescriptorBase("Generic item", new SNodePointer("r:2abc4c1d-3154-444a-a3cf-cdb6a262b101(testPrimitiveType.editor)", "706089536801469045")));
+              result.setDescriptor(new EditorMenuDescriptorBase("generic item", new SNodePointer("r:2abc4c1d-3154-444a-a3cf-cdb6a262b101(testPrimitiveType.editor)", "706089536801469045")));
               return result;
             }
           };

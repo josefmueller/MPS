@@ -18,31 +18,44 @@
     <file name="Create_TextMacro_Contribution.java">
       <node id="1741258697587213621" at="19,42,20,16" concept="7" />
       <node id="1741258697587213621" at="24,118,25,140" concept="5" />
-      <node id="1741258697587213621" at="25,140,26,407" concept="1" />
-      <node id="1741258697587213621" at="26,407,27,18" concept="6" />
-      <node id="1741258697587213621" at="32,91,33,49" concept="1" />
-      <node id="1741258697587213621" at="33,49,34,271" concept="1" />
-      <node id="1741258697587213621" at="35,9,36,44" concept="6" />
-      <node id="1741258697587213621" at="37,15,38,50" concept="1" />
+      <node id="1741258697587213621" at="30,82,31,53" concept="1" />
+      <node id="1741258697587213621" at="31,53,32,265" concept="1" />
+      <node id="1741258697587213621" at="33,13,34,44" concept="6" />
+      <node id="1741258697587213621" at="35,19,36,54" concept="1" />
+      <node id="1741258697587213621" at="39,159,40,18" concept="6" />
+      <node id="1741258697587213621" at="45,91,46,49" concept="1" />
+      <node id="1741258697587213621" at="46,49,47,271" concept="1" />
+      <node id="1741258697587213621" at="48,9,49,44" concept="6" />
+      <node id="1741258697587213621" at="50,15,51,50" concept="1" />
       <node id="1741258697587213621" at="19,0,22,0" concept="0" trace="Create_TextMacro_Contribution#()V" />
-      <node id="1741258697587213621" at="34,271,39,5" concept="8" />
-      <node id="1741258697587213621" at="22,0,29,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <node id="1741258697587213621" at="30,0,41,0" concept="4" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587213621" at="32,265,37,9" concept="8" />
+      <node id="1741258697587213621" at="47,271,52,5" concept="8" />
+      <node id="1741258697587213621" at="28,0,39,0" concept="4" trace="createItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587213621" at="43,0,54,0" concept="4" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="1741258697587213621" at="25,140,39,159" concept="1" />
+      <node id="1741258697587213621" at="22,0,42,0" concept="4" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587213621" at="19,42,20,16" />
-      <scope id="1741258697587213621" at="35,9,36,44" />
-      <scope id="1741258697587213621" at="37,15,38,50" />
+      <scope id="1741258697587213621" at="33,13,34,44" />
+      <scope id="1741258697587213621" at="35,19,36,54" />
+      <scope id="1741258697587213621" at="48,9,49,44" />
+      <scope id="1741258697587213621" at="50,15,51,50" />
       <scope id="1741258697587213621" at="19,0,22,0" />
-      <scope id="1741258697587213621" at="24,118,27,18">
-        <var name="result" id="1741258697587213621" />
-      </scope>
-      <scope id="1741258697587213621" at="22,0,29,0">
-        <var name="_context" id="1741258697587213621" />
-      </scope>
-      <scope id="1741258697587213621" at="32,91,39,5" />
-      <scope id="1741258697587213621" at="30,0,41,0">
+      <scope id="1741258697587213621" at="30,82,37,9" />
+      <scope id="1741258697587213621" at="45,91,52,5" />
+      <scope id="1741258697587213621" at="28,0,39,0">
         <var name="context" id="1741258697587213621" />
       </scope>
-      <unit id="1741258697587213621" at="18,0,44,0" name="jetbrains.mps.samples.xmlLiterals.editor.Create_TextMacro_Contribution" />
+      <scope id="1741258697587213621" at="43,0,54,0">
+        <var name="context" id="1741258697587213621" />
+      </scope>
+      <scope id="1741258697587213621" at="24,118,40,18">
+        <var name="result" id="1741258697587213621" />
+      </scope>
+      <scope id="1741258697587213621" at="22,0,42,0">
+        <var name="_context" id="1741258697587213621" />
+      </scope>
+      <unit id="1741258697587213621" at="26,71,39,5" name="jetbrains.mps.samples.xmlLiterals.editor.Create_TextMacro_Contribution$1" />
+      <unit id="1741258697587213621" at="18,0,57,0" name="jetbrains.mps.samples.xmlLiterals.editor.Create_TextMacro_Contribution" />
     </file>
   </root>
   <root nodeRef="r:f7558de1-c673-4688-b6e9-c5672dde2290(jetbrains.mps.samples.xmlLiterals.editor)/9152904044274328780">
