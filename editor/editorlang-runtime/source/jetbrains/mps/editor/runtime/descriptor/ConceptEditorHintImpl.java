@@ -13,38 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.editor.runtime.desctiptor;
+package jetbrains.mps.editor.runtime.descriptor;
 
 
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
-import jetbrains.mps.util.annotation.ToRemove;
 
 /**
- * @deprecated because of the typo in the package
- * use {@link jetbrains.mps.editor.runtime.descriptor.ConceptEditorHintImpl} instead
+ * Semen Alperovich
+ * 05 15, 2013
  */
-@Deprecated
-@ToRemove(version = 2017.2)
 public class ConceptEditorHintImpl implements ConceptEditorHint {
-  private final jetbrains.mps.editor.runtime.descriptor.ConceptEditorHintImpl myConceptEditorHint;
+  private final String myId;
+  private final String myPresentation;
+  private final boolean myShowInUI;
+  private final String myFQName;
 
   public ConceptEditorHintImpl(String id, String presentation, boolean showInUI, String fqName) {
-    myConceptEditorHint = new jetbrains.mps.editor.runtime.descriptor.ConceptEditorHintImpl(id, presentation, showInUI, fqName);
+    myId = id;
+    myPresentation = presentation;
+    myShowInUI = showInUI;
+    myFQName = fqName;
   }
 
   public String getId() {
-    return myConceptEditorHint.getId();
+    return myId;
   }
-
   public String getPresentation() {
-    return myConceptEditorHint.getPresentation();
+    return myPresentation;
   }
 
   public boolean showInUI() {
-    return myConceptEditorHint.showInUI();
+    return myShowInUI;
   }
 
   public String getFQName() {
-    return myConceptEditorHint.getFQName();
+    return myFQName;
   }
 }

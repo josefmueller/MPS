@@ -89,7 +89,7 @@
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="h38z" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.highlight(MPS.Editor/)" />
     <import index="twe9" ref="r:28e6d713-c3c3-493e-8d97-e9a2c49f28ce(jetbrains.mps.lang.structure.util)" />
-    <import index="nivk" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.descriptor(MPS.Editor/)" implicit="true" />
+    <import index="nivk" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.descriptor(MPS.Editor/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
@@ -22442,7 +22442,7 @@
             </node>
           </node>
           <node concept="1pGfFk" id="3YBXZsEWDgW" role="2ShVmc">
-            <ref role="37wK5l" to="qrny:~ConceptEditorHintImpl.&lt;init&gt;(java.lang.String,java.lang.String,boolean,java.lang.String)" resolve="ConceptEditorHintImpl" />
+            <ref role="37wK5l" to="nivk:~ConceptEditorHintImpl.&lt;init&gt;(java.lang.String,java.lang.String,boolean,java.lang.String)" resolve="ConceptEditorHintImpl" />
             <node concept="Xl_RD" id="3YBXZsEWDgX" role="37wK5m">
               <property role="Xl_RC" value="" />
               <node concept="17Uvod" id="3YBXZsEWDgY" role="lGtFl">
