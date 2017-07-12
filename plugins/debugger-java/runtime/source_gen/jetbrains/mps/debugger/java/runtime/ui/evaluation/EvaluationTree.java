@@ -14,7 +14,6 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -76,7 +75,6 @@ import jetbrains.mps.ide.messages.Icons;
     }
   }
   /*package*/ void setError(@NotNull Throwable error, IEvaluationContainer model) {
-    ApplicationManager.getApplication().assertIsDispatchThread();
     synchronized (myStates) {
       MapSequence.fromMap(myStates).put(model, new EvaluationTree.FailureState(error));
     }
