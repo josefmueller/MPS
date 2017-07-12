@@ -2696,10 +2696,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     //MPSDK
     if (dataId.equals(MPSCommonDataKeys.NODE.getName())) {
-      return getSelectedNode();
+      return myNodeSubstituteChooser.isVisible() ? null : getSelectedNode();
     }
     if (dataId.equals(MPSCommonDataKeys.NODES.getName())) {
-      return getSelectedNodes();
+      return myNodeSubstituteChooser.isVisible() ? null : getSelectedNodes();
     }
     if (dataId.equals(MPSEditorDataKeys.CONTEXT_MODEL.getName())) {
       return runRead(new Computable() {
@@ -2738,13 +2738,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return createEditorContextForActions();
     }
     if (dataId.equals(MPSEditorDataKeys.EDITOR_CELL.getName())) {
-      return getSelectedCell();
+      return myNodeSubstituteChooser.isVisible() ? null : getSelectedCell();
     }
     if (dataId.equals(MPSEditorDataKeys.EDITOR_COMPONENT.getName())) {
       return this;
     }
     if (dataId.equals(MPSEditorDataKeys.SUBSTITUTE_ACTION.getName())) {
-      return myNodeSubstituteChooser.isVisible() ? myNodeSubstituteChooser.getData(dataId) : null;
+      return myNodeSubstituteChooser.isVisible() ? myNodeSubstituteChooser.getCurrentSubstituteAction() : null;
     }
     if (dataId.equals(MPSCommonDataKeys.PLACE.getName())) {
       return ActionPlace.EDITOR;

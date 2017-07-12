@@ -60,7 +60,7 @@ import java.util.Map;
  * Author: Sergey Dmitriev.
  * Created Sep 16, 2003
  */
-public class NodeSubstituteChooser implements KeyboardHandler, DataProvider {
+public class NodeSubstituteChooser implements KeyboardHandler {
   private static final Logger LOG = LogManager.getLogger(NodeSubstituteChooser.class);
 
   static final int MAX_LOOKUP_LIST_HEIGHT = 11;
@@ -383,7 +383,8 @@ public class NodeSubstituteChooser implements KeyboardHandler, DataProvider {
     myUserChoseItem = chose;
   }
 
-  SubstituteAction getCurrentSelectedSubstituteAction() {
+  @Nullable
+  public SubstituteAction getCurrentSubstituteAction() {
     int selectionIndex = getSelectionIndex();
     if (selectionIndex != -1) {
       return myList.getModel().getElementAt(selectionIndex);
@@ -406,7 +407,7 @@ public class NodeSubstituteChooser implements KeyboardHandler, DataProvider {
   }
 
   private void processEventAfterPatternEditor() {
-    SubstituteAction actionToSelect = getCurrentSelectedSubstituteAction();
+    SubstituteAction actionToSelect = getCurrentSubstituteAction();
     rebuildMenuEntries();
     selectPreviouslySelectedAction(actionToSelect);
     myUi.refreshUi(true);
@@ -561,15 +562,5 @@ public class NodeSubstituteChooser implements KeyboardHandler, DataProvider {
   public Window getWindow() {
     return null;
   }
-
-  @Nullable
-  @Override
-  public Object getData(String dataId) {
-    if (dataId.equals(MPSEditorDataKeys.SUBSTITUTE_ACTION.getName())) {
-      return getCurrentSelectedSubstituteAction();
-    }
-    return null;
-  }
-
 
 }
