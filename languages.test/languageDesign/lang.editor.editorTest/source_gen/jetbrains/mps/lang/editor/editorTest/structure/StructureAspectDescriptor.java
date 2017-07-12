@@ -56,6 +56,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptInspectorBlock = createDescriptorForInspectorBlock();
   /*package*/ final ConceptDescriptor myConceptIntegerLiteral = createDescriptorForIntegerLiteral();
   /*package*/ final ConceptDescriptor myConceptLabelConceptWithProperty = createDescriptorForLabelConceptWithProperty();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceChildCellMenu = createDescriptorForMenuTraceChildCellMenu();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceGrandChildCellMenu = createDescriptorForMenuTraceGrandChildCellMenu();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceGrandChildSubChildCellMenu = createDescriptorForMenuTraceGrandChildSubChildCellMenu();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceNodeToReference = createDescriptorForMenuTraceNodeToReference();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceParent = createDescriptorForMenuTraceParent();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceSubstituteChild = createDescriptorForMenuTraceSubstituteChild();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceSubstituteSubChild1 = createDescriptorForMenuTraceSubstituteSubChild1();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceSubstituteSubChild2 = createDescriptorForMenuTraceSubstituteSubChild2();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceTransformationChild = createDescriptorForMenuTraceTransformationChild();
+  /*package*/ final ConceptDescriptor myConceptMenuTraceTransformationChildSuper = createDescriptorForMenuTraceTransformationChildSuper();
   /*package*/ final ConceptDescriptor myConceptNonEmptyProperty = createDescriptorForNonEmptyProperty();
   /*package*/ final ConceptDescriptor myConceptNotEditableVaraileReference = createDescriptorForNotEditableVaraileReference();
   /*package*/ final ConceptDescriptor myConceptPlusExpression = createDescriptorForPlusExpression();
@@ -101,7 +111,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstract_SubstTestChild_WithNextApplicableEditorAndMenu, myConceptAttractsFocusBlock, myConceptAttributeChild, myConceptAttributeWithChildren, myConceptAttributedConcept, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptCollapsedByDefault, myConceptCollapsedConditionally, myConceptCollapsibleConcept, myConceptCompletionChild, myConceptCompletionParent, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestChildSpecialContainer, myConceptDelTestRoot, myConceptDelTestSpecialAbstractChild, myConceptDelTestSpecialChild1, myConceptDeleteWrapperChild, myConceptDeleteWrapperRoot, myConceptFoldedCell, myConceptFoldingContainer, myConceptIBaseTestBlock, myConceptIDelTestChild, myConceptIDelTestConcreteChild, myConceptISpecialDelTestChild, myConceptISpecialDelTestConcreteChild, myConceptInitAbstractChild, myConceptInitChildWithDirectCycle_card1, myConceptInitChildWithDirectCycle_card1n, myConceptInitChildWithIndirectCycle_card1, myConceptInitChildWithIndirectCycle_card1n, myConceptInitChildWithTwoSameConceptChildren, myConceptInitContainer, myConceptInitGrandChild, myConceptInitGrandChildWithIndirectCycle_card1, myConceptInitGrandChildWithIndirectCycle_card1n, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptLabelConceptWithProperty, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSelectionChild, myConceptSelectionContainer, myConceptSideTranformWrapper, myConceptSimpleNode, myConceptSimpleNodeHidingAttribute, myConceptSimpleNodesContainer, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptStyleChild, myConceptStyleParent, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_1, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_2, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptSwingComponent, myConceptSwingComponentContainer, myConceptSwingComponentinFoldedCell, myConceptTestBlockList, myConceptTwoStepDeleteAbstractChildContainer, myConceptTwoStepDeleteCellCollectionChild, myConceptTwoStepDeleteCustomChild, myConceptTwoStepDeleteCustomChildContainer, myConceptTwoStepDeleteDefaultChild, myConceptTwoStepDeleteDefaultChildContainer, myConceptTwoStepDeleteLabelChild, myConceptTwoStepDeleteTestRoot, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
+    return Arrays.asList(myConceptAbstract_SubstTestChild_WithNextApplicableEditorAndMenu, myConceptAttractsFocusBlock, myConceptAttributeChild, myConceptAttributeWithChildren, myConceptAttributedConcept, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptCollapsedByDefault, myConceptCollapsedConditionally, myConceptCollapsibleConcept, myConceptCompletionChild, myConceptCompletionParent, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestChildSpecialContainer, myConceptDelTestRoot, myConceptDelTestSpecialAbstractChild, myConceptDelTestSpecialChild1, myConceptDeleteWrapperChild, myConceptDeleteWrapperRoot, myConceptFoldedCell, myConceptFoldingContainer, myConceptIBaseTestBlock, myConceptIDelTestChild, myConceptIDelTestConcreteChild, myConceptISpecialDelTestChild, myConceptISpecialDelTestConcreteChild, myConceptInitAbstractChild, myConceptInitChildWithDirectCycle_card1, myConceptInitChildWithDirectCycle_card1n, myConceptInitChildWithIndirectCycle_card1, myConceptInitChildWithIndirectCycle_card1n, myConceptInitChildWithTwoSameConceptChildren, myConceptInitContainer, myConceptInitGrandChild, myConceptInitGrandChildWithIndirectCycle_card1, myConceptInitGrandChildWithIndirectCycle_card1n, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptLabelConceptWithProperty, myConceptMenuTraceChildCellMenu, myConceptMenuTraceGrandChildCellMenu, myConceptMenuTraceGrandChildSubChildCellMenu, myConceptMenuTraceNodeToReference, myConceptMenuTraceParent, myConceptMenuTraceSubstituteChild, myConceptMenuTraceSubstituteSubChild1, myConceptMenuTraceSubstituteSubChild2, myConceptMenuTraceTransformationChild, myConceptMenuTraceTransformationChildSuper, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSelectionChild, myConceptSelectionContainer, myConceptSideTranformWrapper, myConceptSimpleNode, myConceptSimpleNodeHidingAttribute, myConceptSimpleNodesContainer, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptStyleChild, myConceptStyleParent, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_1, myConceptSubstTestChild_WithNextApplicableEditorAndMenu_2, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptSwingComponent, myConceptSwingComponentContainer, myConceptSwingComponentinFoldedCell, myConceptTestBlockList, myConceptTwoStepDeleteAbstractChildContainer, myConceptTwoStepDeleteCellCollectionChild, myConceptTwoStepDeleteCustomChild, myConceptTwoStepDeleteCustomChildContainer, myConceptTwoStepDeleteDefaultChild, myConceptTwoStepDeleteDefaultChildContainer, myConceptTwoStepDeleteLabelChild, myConceptTwoStepDeleteTestRoot, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
   }
 
   @Override
@@ -196,6 +206,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptIntegerLiteral;
       case LanguageConceptSwitch.LabelConceptWithProperty:
         return myConceptLabelConceptWithProperty;
+      case LanguageConceptSwitch.MenuTraceChildCellMenu:
+        return myConceptMenuTraceChildCellMenu;
+      case LanguageConceptSwitch.MenuTraceGrandChildCellMenu:
+        return myConceptMenuTraceGrandChildCellMenu;
+      case LanguageConceptSwitch.MenuTraceGrandChildSubChildCellMenu:
+        return myConceptMenuTraceGrandChildSubChildCellMenu;
+      case LanguageConceptSwitch.MenuTraceNodeToReference:
+        return myConceptMenuTraceNodeToReference;
+      case LanguageConceptSwitch.MenuTraceParent:
+        return myConceptMenuTraceParent;
+      case LanguageConceptSwitch.MenuTraceSubstituteChild:
+        return myConceptMenuTraceSubstituteChild;
+      case LanguageConceptSwitch.MenuTraceSubstituteSubChild1:
+        return myConceptMenuTraceSubstituteSubChild1;
+      case LanguageConceptSwitch.MenuTraceSubstituteSubChild2:
+        return myConceptMenuTraceSubstituteSubChild2;
+      case LanguageConceptSwitch.MenuTraceTransformationChild:
+        return myConceptMenuTraceTransformationChild;
+      case LanguageConceptSwitch.MenuTraceTransformationChildSuper:
+        return myConceptMenuTraceTransformationChildSuper;
       case LanguageConceptSwitch.NonEmptyProperty:
         return myConceptNonEmptyProperty;
       case LanguageConceptSwitch.NotEditableVaraileReference:
@@ -604,6 +634,86 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/1848195745380699686");
     b.prop("myProperty", 0x19a61c3cfed036bbL, "1848195745380841147");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceChildCellMenu() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceChildCellMenu", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377600dd75eL);
+    b.class_(false, false, false);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/1384684774803494750");
+    b.prop("name", 0x1337637760212dbeL, "1384684774804762046");
+    b.aggregate("child", 0x133763776010fa10L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x133763776010fa0dL).optional(true).ordered(true).multiple(false).origin("1384684774803700240").done();
+    b.alias("menu trace child cell menu");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceGrandChildCellMenu() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceGrandChildCellMenu", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x133763776010fa0dL);
+    b.class_(false, false, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/1384684774803700237");
+    b.alias("menu trace grand child cell menu");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceGrandChildSubChildCellMenu() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceGrandChildSubChildCellMenu", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x133763776011067dL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.editorTest.structure.MenuTraceGrandChildCellMenu", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x133763776010fa0dL);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/1384684774803703421");
+    b.alias("menu trace grand child sub child cell menu");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceNodeToReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceNodeToReference", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xcac9bf5431fed8dL);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/913276302144826765");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceParent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceParent", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de206L);
+    b.class_(false, false, false);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/775415105914266118");
+    b.aggregate("menuTraceSubstituteChild", 0xac2d3ee357de207L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L).optional(true).ordered(true).multiple(false).origin("775415105914266119").done();
+    b.aggregate("menuTraceCellMenu", 0x13376377600dd75fL).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377600dd75eL).optional(true).ordered(true).multiple(false).origin("1384684774803494751").done();
+    b.aggregate("menuTraceTransformation", 0x13376377603b60adL).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x133763776035327cL).optional(true).ordered(true).multiple(false).origin("1384684774806479021").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceSubstituteChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceSubstituteChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L);
+    b.class_(false, false, false);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/775415105914266121");
+    b.associate("nodeToReference", 0xcac9bf54313b229L).target(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xcac9bf5431fed8dL).optional(true).origin("913276302144025129").done();
+    b.alias("menu trace substitute child");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceSubstituteSubChild1() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceSubstituteSubChild1", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xcac9bf54312e4b4L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.editorTest.structure.MenuTraceSubstituteChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/913276302143972532");
+    b.alias("menu trace substitute subchild1");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceSubstituteSubChild2() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceSubstituteSubChild2", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xcac9bf543140230L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.editorTest.structure.MenuTraceSubstituteChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xac2d3ee357de209L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/913276302144045616");
+    b.alias("menu trace substitute subchild2");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceTransformationChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceTransformationChild", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x133763776035327cL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.editorTest.structure.MenuTraceTransformationChildSuper", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377603d0351L);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/1384684774806073980");
+    b.alias("menu trace transformation child");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForMenuTraceTransformationChildSuper() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.editorTest", "MenuTraceTransformationChildSuper", 0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x13376377603d0351L);
+    b.class_(false, false, false);
+    b.origin("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)/1384684774806586193");
+    b.alias("menu trace transformation child super");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForNonEmptyProperty() {

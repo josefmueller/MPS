@@ -1135,5 +1135,115 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
+  <node concept="1TIwiD" id="F2OYSPvu86">
+    <property role="EcuMT" value="775415105914266118" />
+    <property role="TrG5h" value="MenuTraceParent" />
+    <property role="3GE5qa" value="menuTrace" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="F2OYSPvu87" role="1TKVEi">
+      <property role="IQ2ns" value="775415105914266119" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="menuTraceSubstituteChild" />
+      <ref role="20lvS9" node="F2OYSPvu89" resolve="MenuTraceSubstituteChild" />
+    </node>
+    <node concept="1TJgyj" id="1cRoRtw3ttv" role="1TKVEi">
+      <property role="IQ2ns" value="1384684774803494751" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="menuTraceCellMenu" />
+      <ref role="20lvS9" node="1cRoRtw3ttu" resolve="MenuTraceChildCellMenu" />
+    </node>
+    <node concept="1TJgyj" id="1cRoRtweQ2H" role="1TKVEi">
+      <property role="IQ2ns" value="1384684774806479021" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="menuTraceTransformation" />
+      <ref role="20lvS9" node="1cRoRtwdj9W" resolve="MenuTraceTransformationChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="F2OYSPvu89">
+    <property role="EcuMT" value="775415105914266121" />
+    <property role="TrG5h" value="MenuTraceSubstituteChild" />
+    <property role="3GE5qa" value="menuTrace.substitute" />
+    <property role="34LRSv" value="menu trace substitute child" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="MGAZl34V8D" role="1TKVEi">
+      <property role="IQ2ns" value="913276302144025129" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="nodeToReference" />
+      <ref role="20lvS9" node="MGAZl37YQd" resolve="MenuTraceNodeToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="MGAZl34IiO">
+    <property role="EcuMT" value="913276302143972532" />
+    <property role="3GE5qa" value="menuTrace.substitute" />
+    <property role="TrG5h" value="MenuTraceSubstituteSubChild1" />
+    <property role="34LRSv" value="menu trace substitute subchild1" />
+    <ref role="1TJDcQ" node="F2OYSPvu89" resolve="MenuTraceSubstituteChild" />
+  </node>
+  <node concept="1TIwiD" id="MGAZl3508K">
+    <property role="EcuMT" value="913276302144045616" />
+    <property role="3GE5qa" value="menuTrace.substitute" />
+    <property role="TrG5h" value="MenuTraceSubstituteSubChild2" />
+    <property role="34LRSv" value="menu trace substitute subchild2" />
+    <ref role="1TJDcQ" node="F2OYSPvu89" resolve="MenuTraceSubstituteChild" />
+  </node>
+  <node concept="1TIwiD" id="MGAZl37YQd">
+    <property role="EcuMT" value="913276302144826765" />
+    <property role="3GE5qa" value="menuTrace" />
+    <property role="TrG5h" value="MenuTraceNodeToReference" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="MGAZl37YQe" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1cRoRtw3ttu">
+    <property role="EcuMT" value="1384684774803494750" />
+    <property role="3GE5qa" value="menuTrace.cellMenu" />
+    <property role="TrG5h" value="MenuTraceChildCellMenu" />
+    <property role="34LRSv" value="menu trace child cell menu" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="1cRoRtw8iQY" role="1TKVEl">
+      <property role="IQ2nx" value="1384684774804762046" />
+      <property role="TrG5h" value="name" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyj" id="1cRoRtw4fCg" role="1TKVEi">
+      <property role="IQ2ns" value="1384684774803700240" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="1cRoRtw4fCd" resolve="MenuTraceGrandChildCellMenu" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1cRoRtw4fCd">
+    <property role="EcuMT" value="1384684774803700237" />
+    <property role="3GE5qa" value="menuTrace.cellMenu" />
+    <property role="TrG5h" value="MenuTraceGrandChildCellMenu" />
+    <property role="34LRSv" value="menu trace grand child cell menu" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="1cRoRtw4fCf" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1cRoRtw4gpX">
+    <property role="EcuMT" value="1384684774803703421" />
+    <property role="3GE5qa" value="menuTrace.cellMenu" />
+    <property role="TrG5h" value="MenuTraceGrandChildSubChildCellMenu" />
+    <property role="34LRSv" value="menu trace grand child sub child cell menu" />
+    <ref role="1TJDcQ" node="1cRoRtw4fCd" resolve="MenuTraceGrandChildCellMenu" />
+  </node>
+  <node concept="1TIwiD" id="1cRoRtwdj9W">
+    <property role="EcuMT" value="1384684774806073980" />
+    <property role="TrG5h" value="MenuTraceTransformationChild" />
+    <property role="3GE5qa" value="menuTrace.transformation" />
+    <property role="34LRSv" value="menu trace transformation child" />
+    <ref role="1TJDcQ" node="1cRoRtwfgdh" resolve="MenuTraceTransformationChildSuper" />
+  </node>
+  <node concept="1TIwiD" id="1cRoRtwfgdh">
+    <property role="EcuMT" value="1384684774806586193" />
+    <property role="TrG5h" value="MenuTraceTransformationChildSuper" />
+    <property role="3GE5qa" value="menuTrace.transformation" />
+    <property role="34LRSv" value="menu trace transformation child super" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

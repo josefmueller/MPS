@@ -97,7 +97,7 @@ public class SubstTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
           _context = context;
           _context.getEditorMenuTrace().pushTraceInfo();
           String description = "Substitute item: " + getMatchingText("");
-          description += " .Parameter object: " + myParameterObject;
+          description += ". Parameter object: " + myParameterObject;
           _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1741258697587171357")));
           this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
           _context.getEditorMenuTrace().popTraceInfo();
@@ -175,7 +175,7 @@ public class SubstTestAbstractChild_SubstituteMenu extends SubstituteMenuBase {
           _context = context;
           _context.getEditorMenuTrace().pushTraceInfo();
           String description = "Substitute item: " + getMatchingText("");
-          description += " .Parameter object: " + myParameterObject;
+          description += ". Parameter object: " + myParameterObject;
           _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1741258697587171475")));
           this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
           _context.getEditorMenuTrace().popTraceInfo();

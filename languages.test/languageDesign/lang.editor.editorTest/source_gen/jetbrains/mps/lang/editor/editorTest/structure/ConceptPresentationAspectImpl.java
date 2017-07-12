@@ -53,6 +53,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_InspectorBlock;
   private ConceptPresentation props_IntegerLiteral;
   private ConceptPresentation props_LabelConceptWithProperty;
+  private ConceptPresentation props_MenuTraceChildCellMenu;
+  private ConceptPresentation props_MenuTraceGrandChildCellMenu;
+  private ConceptPresentation props_MenuTraceGrandChildSubChildCellMenu;
+  private ConceptPresentation props_MenuTraceNodeToReference;
+  private ConceptPresentation props_MenuTraceParent;
+  private ConceptPresentation props_MenuTraceSubstituteChild;
+  private ConceptPresentation props_MenuTraceSubstituteSubChild1;
+  private ConceptPresentation props_MenuTraceSubstituteSubChild2;
+  private ConceptPresentation props_MenuTraceTransformationChild;
+  private ConceptPresentation props_MenuTraceTransformationChildSuper;
   private ConceptPresentation props_NonEmptyProperty;
   private ConceptPresentation props_NotEditableVaraileReference;
   private ConceptPresentation props_PlusExpression;
@@ -399,6 +409,76 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_LabelConceptWithProperty = cpb.create();
         }
         return props_LabelConceptWithProperty;
+      case LanguageConceptSwitch.MenuTraceChildCellMenu:
+        if (props_MenuTraceChildCellMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("menu trace child cell menu");
+          props_MenuTraceChildCellMenu = cpb.create();
+        }
+        return props_MenuTraceChildCellMenu;
+      case LanguageConceptSwitch.MenuTraceGrandChildCellMenu:
+        if (props_MenuTraceGrandChildCellMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_MenuTraceGrandChildCellMenu = cpb.create();
+        }
+        return props_MenuTraceGrandChildCellMenu;
+      case LanguageConceptSwitch.MenuTraceGrandChildSubChildCellMenu:
+        if (props_MenuTraceGrandChildSubChildCellMenu == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_MenuTraceGrandChildSubChildCellMenu = cpb.create();
+        }
+        return props_MenuTraceGrandChildSubChildCellMenu;
+      case LanguageConceptSwitch.MenuTraceNodeToReference:
+        if (props_MenuTraceNodeToReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_MenuTraceNodeToReference = cpb.create();
+        }
+        return props_MenuTraceNodeToReference;
+      case LanguageConceptSwitch.MenuTraceParent:
+        if (props_MenuTraceParent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MenuTraceParent");
+          props_MenuTraceParent = cpb.create();
+        }
+        return props_MenuTraceParent;
+      case LanguageConceptSwitch.MenuTraceSubstituteChild:
+        if (props_MenuTraceSubstituteChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("menu trace substitute child");
+          props_MenuTraceSubstituteChild = cpb.create();
+        }
+        return props_MenuTraceSubstituteChild;
+      case LanguageConceptSwitch.MenuTraceSubstituteSubChild1:
+        if (props_MenuTraceSubstituteSubChild1 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("menu trace substitute subchild1");
+          props_MenuTraceSubstituteSubChild1 = cpb.create();
+        }
+        return props_MenuTraceSubstituteSubChild1;
+      case LanguageConceptSwitch.MenuTraceSubstituteSubChild2:
+        if (props_MenuTraceSubstituteSubChild2 == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("menu trace substitute subchild2");
+          props_MenuTraceSubstituteSubChild2 = cpb.create();
+        }
+        return props_MenuTraceSubstituteSubChild2;
+      case LanguageConceptSwitch.MenuTraceTransformationChild:
+        if (props_MenuTraceTransformationChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("menu trace transformation child");
+          props_MenuTraceTransformationChild = cpb.create();
+        }
+        return props_MenuTraceTransformationChild;
+      case LanguageConceptSwitch.MenuTraceTransformationChildSuper:
+        if (props_MenuTraceTransformationChildSuper == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("menu trace transformation child super");
+          props_MenuTraceTransformationChildSuper = cpb.create();
+        }
+        return props_MenuTraceTransformationChildSuper;
       case LanguageConceptSwitch.NonEmptyProperty:
         if (props_NonEmptyProperty == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
