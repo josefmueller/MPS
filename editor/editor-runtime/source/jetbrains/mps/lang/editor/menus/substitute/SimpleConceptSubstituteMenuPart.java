@@ -55,15 +55,7 @@ public class SimpleConceptSubstituteMenuPart implements SubstituteMenuPart {
     if (smartItems != null) {
       return smartItems;
     }
-    context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple substitute menu part for concept: " + myConcept.getName(), null));
-    try {
-      return Collections.singletonList(
-          new DefaultSubstituteMenuItem(myConcept, context));
-    } finally {
-      context.getEditorMenuTrace().popTraceInfo();
-    }
-
+    return Collections.singletonList(new DefaultSubstituteMenuItem(myConcept, context));
   }
 
   @Nullable

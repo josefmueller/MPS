@@ -44,9 +44,28 @@ class DefaultConceptSubstituteMenuPart implements SubstituteMenuPart {
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<>();
     if (myConcept instanceof SConcept && !myConcept.isAbstract()) {
-      result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(myConcept), myConcept));
+      result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new DefaultSimpleConceptSubstituteMenuPart(), myConcept));
     }
     result.add(new DefaultConceptMenusSubstituteMenuPart(ConceptDescendantsCache.getInstance().getDirectDescendants(myConcept)));
     return new CompositeMenuPart<>(result).createItems(context);
+  }
+
+  private class DefaultSimpleConceptSubstituteMenuPart extends SimpleConceptSubstituteMenuPart{
+
+    public DefaultSimpleConceptSubstituteMenuPart() {
+      super(myConcept);
+    }
+
+    @NotNull
+    @Override
+    public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
+      context.getEditorMenuTrace().pushTraceInfo();
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("simple substitute menu part for concept: " + myConcept.getName(), null));
+      try {
+        return super.createItems(context);
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+    }
   }
 }
