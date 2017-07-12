@@ -57,7 +57,7 @@ public class EditorMenuTraceNode extends MPSTreeNode implements NodeTargetProvid
     SNode sourceNode = null;
 
     Icon icon = null;
-    int font = Font.ITALIC;
+    int font;
 
     SNodeReference source = menuDescriptor.getSource();
     if (source != null) {
@@ -65,9 +65,13 @@ public class EditorMenuTraceNode extends MPSTreeNode implements NodeTargetProvid
     }
     if (sourceNode != null) {
       icon = IconManager.getIconFor(sourceNode);
-      if (!menuDescriptor.isImplicit()){
+      if (!menuDescriptor.isImplicit()) {
         font = Font.BOLD;
+      } else {
+        font = Font.BOLD | Font.ITALIC;
       }
+    } else {
+      font = Font.ITALIC;
     }
     if (icon == null) {
       icon = IdeIcons.DEFAULT_NODE_ICON;

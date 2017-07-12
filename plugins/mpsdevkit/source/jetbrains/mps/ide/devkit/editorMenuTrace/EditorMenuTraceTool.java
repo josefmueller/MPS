@@ -17,18 +17,15 @@ package jetbrains.mps.ide.devkit.editorMenuTrace;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
-import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.icons.MPSIcons.ToolWindows;
 import jetbrains.mps.ide.tools.BaseTabbedProjectTool;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.project.MPSProject;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 public class EditorMenuTraceTool extends BaseTabbedProjectTool {
-  public static final Logger LOG = LogManager.getLogger(EditorMenuTraceTool.class);
 
   public EditorMenuTraceTool(Project project) {
-    super(project, "Menu Trace", null, MPSIcons.ToolWindows.CellExplorer, ToolWindowAnchor.BOTTOM, false);
+    super(project, "Menu Trace", null, ToolWindows.Default, ToolWindowAnchor.BOTTOM, false);
   }
 
   @Override
