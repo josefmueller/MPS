@@ -67,10 +67,7 @@ public class DeletionApproverUtil {
   }
 
   private static EditorCell findChildCell(EditorCell nodeCell, String cellId) {
-    if (isSpecifiedById(nodeCell, cellId)) {
-      return nodeCell;
-    }
-    for (EditorCell cell : CellTraversalUtil.iterateTree(nodeCell, nodeCell, true).skipStart()) {
+    for (EditorCell cell : CellTraversalUtil.iterateTree(nodeCell, nodeCell, true)) {
       if (isSpecifiedById(cell, cellId)) {
         return cell;
       }
