@@ -15,12 +15,16 @@
  */
 package jetbrains.mps.editor.runtime.deletionApprover;
 
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class DeletionApproverUtil {
 
@@ -53,17 +57,26 @@ public class DeletionApproverUtil {
       return false;
     }
     EditorCell nodeCell = getNodeCell(context, node, cellId);
-    return context.getEditorComponent().getDeletionApprover().isApprovedForDeletion(nodeCell);
+    return nodeCell != null && context.getEditorComponent().getDeletionApprover().isApprovedForDeletion(nodeCell);
   }
 
   //todo this logic is partially copied from SelectionManagerImpl, find the way to share the code
   private static EditorCell getNodeCell(@NotNull EditorContext context, @NotNull SNode node, @Nullable String cellId) {
     EditorCell nodeCell = context.getEditorComponent().findNodeCell(node);
-    if (cellId == null || nodeCell == null) {
-      return nodeCell;
-    } else {
-      return findChildCell(nodeCell, cellId);
+    if (nodeCell == null) {
+      return null;
     }
+    if (cellId == null) {
+      Set<SNode> attributes = new HashSet<>();
+      AttributeOperations.getNodeAttributes(node).iterator().forEachRemaining(attributes::add);
+      EditorCell parent = nodeCell.getParent();
+      while (parent != null && attributes.contains(parent.getSNode())) {
+        nodeCell = parent;
+        parent = parent.getParent();
+      }
+      return nodeCell;
+    }
+    return findChildCell(nodeCell, cellId);
   }
 
   private static EditorCell findChildCell(EditorCell nodeCell, String cellId) {
