@@ -404,18 +404,6 @@
                               <property role="3SKdUp" value="That's why we make a copy of generator output model here, modify the copy, publish it and expose as a final outcome." />
                             </node>
                           </node>
-                          <node concept="3clFbF" id="3wgj6mgLm3W" role="3cqZAp">
-                            <node concept="2YIFZM" id="3wgj6mgLmrS" role="3clFbG">
-                              <ref role="37wK5l" to="w1kc:~CopyUtil.copyModelContent(org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SModel):void" resolve="copyModelContent" />
-                              <ref role="1Pybhc" to="w1kc:~CopyUtil" resolve="CopyUtil" />
-                              <node concept="37vLTw" id="3wgj6mgLpAD" role="37wK5m">
-                                <ref role="3cqZAo" node="3wgj6mgKGSt" resolve="outcomeModel" />
-                              </node>
-                              <node concept="37vLTw" id="3wgj6mgLpTB" role="37wK5m">
-                                <ref role="3cqZAo" node="3wgj6mgLjol" resolve="newModel" />
-                              </node>
-                            </node>
-                          </node>
                           <node concept="3cpWs8" id="2oydWVqpDCl" role="3cqZAp">
                             <node concept="3cpWsn" id="2oydWVqpDCm" role="3cpWs9">
                               <property role="TrG5h" value="cu" />
