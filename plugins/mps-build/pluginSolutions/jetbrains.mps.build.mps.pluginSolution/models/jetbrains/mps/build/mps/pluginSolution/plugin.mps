@@ -9929,6 +9929,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi198" role="jymVt" />
     <node concept="3clFb_" id="7$e6lgA3Bmx" role="jymVt">
       <property role="TrG5h" value="generate" />
       <node concept="3Tm1VV" id="7$e6lgA3Bmy" role="1B3o_S" />
@@ -10176,6 +10177,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi199" role="jymVt" />
     <node concept="3clFb_" id="1q4WFGK3qG9" role="jymVt">
       <property role="TrG5h" value="copyIcons" />
       <node concept="3Tm6S6" id="1q4WFGK3qGa" role="1B3o_S" />
@@ -10375,6 +10377,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19a" role="jymVt" />
     <node concept="3clFb_" id="1q4WFGK39U1" role="jymVt">
       <property role="TrG5h" value="copyIcon" />
       <node concept="3Tm6S6" id="1q4WFGK39U2" role="1B3o_S" />
@@ -10418,6 +10421,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19b" role="jymVt" />
     <node concept="3clFb_" id="6Ti13it31m4" role="jymVt">
       <property role="TrG5h" value="copyIcon" />
       <node concept="3Tm6S6" id="6Ti13it31m5" role="1B3o_S" />
@@ -10503,6 +10507,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19c" role="jymVt" />
     <node concept="3clFb_" id="6Ti13it31jN" role="jymVt">
       <property role="TrG5h" value="copyIcon" />
       <node concept="3Tm6S6" id="6Ti13it31jO" role="1B3o_S" />
@@ -10693,6 +10698,7 @@
         <node concept="3cpWs6" id="6Ti13it31l3" role="3cqZAp" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19d" role="jymVt" />
     <node concept="3clFb_" id="38bQ8pLeEMQ" role="jymVt">
       <property role="TrG5h" value="addRequiredImports" />
       <node concept="3Tm6S6" id="38bQ8pLeEMR" role="1B3o_S" />
@@ -10849,6 +10855,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19e" role="jymVt" />
     <node concept="3clFb_" id="7$e6lgA3Bpm" role="jymVt">
       <property role="TrG5h" value="getSModelDescriptor" />
       <node concept="37vLTG" id="7$e6lgA3Bpn" role="3clF46">
@@ -11036,6 +11043,7 @@
         <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19f" role="jymVt" />
     <node concept="3clFb_" id="7$e6lgA3Btk" role="jymVt">
       <property role="TrG5h" value="setValidDefaultSolutionName" />
       <node concept="3Tm6S6" id="7$e6lgA3Btl" role="1B3o_S" />
@@ -11198,22 +11206,57 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="7$e6lgA3Bfg" role="3cqZAp">
-          <node concept="3clFbC" id="7$e6lgA3Bfh" role="3cqZAk">
-            <node concept="10Nm6u" id="7$e6lgA3Bfi" role="3uHU7w" />
-            <node concept="2OqwBi" id="6j36NaoClcE" role="3uHU7B">
-              <node concept="2ShNRf" id="6j36NaoClcF" role="2Oq$k0">
-                <node concept="1pGfFk" id="6j36NaoClcG" role="2ShVmc">
-                  <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
-                  <node concept="37vLTw" id="6j36NaoClcH" role="37wK5m">
+        <node concept="3cpWs8" id="1cXeJmoi6Ut" role="3cqZAp">
+          <node concept="3cpWsn" id="1cXeJmoi6Uu" role="3cpWs9">
+            <property role="TrG5h" value="facade" />
+            <node concept="3uibUv" id="1cXeJmoi6Us" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
+            </node>
+            <node concept="2ShNRf" id="1cXeJmoi6Uv" role="33vP2m">
+              <node concept="1pGfFk" id="1cXeJmoi6Uw" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
+                <node concept="37vLTw" id="1cXeJmoi6Ux" role="37wK5m">
+                  <ref role="3cqZAo" node="7$e6lgA3Bmu" resolve="myProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="1cXeJmojwqf" role="3cqZAp">
+          <node concept="2OqwBi" id="1cXeJmojwqg" role="3cqZAk">
+            <node concept="2ShNRf" id="1cXeJmojwqh" role="2Oq$k0">
+              <node concept="1pGfFk" id="1cXeJmojwqi" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess)" resolve="ModelAccessHelper" />
+                <node concept="2OqwBi" id="1cXeJmojwqj" role="37wK5m">
+                  <node concept="37vLTw" id="1cXeJmojwqk" role="2Oq$k0">
                     <ref role="3cqZAo" node="7$e6lgA3Bmu" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="1cXeJmojwql" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                   </node>
                 </node>
               </node>
-              <node concept="liA8E" id="6j36NaoClcI" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModuleByName(java.lang.String):org.jetbrains.mps.openapi.module.SModule" resolve="getModuleByName" />
-                <node concept="37vLTw" id="6j36NaoClcJ" role="37wK5m">
-                  <ref role="3cqZAo" node="Tb4PsnqO$K" resolve="text" />
+            </node>
+            <node concept="liA8E" id="1cXeJmojwqm" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+              <node concept="1bVj0M" id="1cXeJmojwqn" role="37wK5m">
+                <node concept="3clFbS" id="1cXeJmojwqo" role="1bW5cS">
+                  <node concept="3clFbF" id="1cXeJmojwqp" role="3cqZAp">
+                    <node concept="3clFbC" id="1cXeJmojwqq" role="3clFbG">
+                      <node concept="10Nm6u" id="1cXeJmojwqr" role="3uHU7w" />
+                      <node concept="2OqwBi" id="1cXeJmojwqs" role="3uHU7B">
+                        <node concept="37vLTw" id="1cXeJmojwqt" role="2Oq$k0">
+                          <ref role="3cqZAo" node="1cXeJmoi6Uu" resolve="facade" />
+                        </node>
+                        <node concept="liA8E" id="1cXeJmojwqu" role="2OqNvi">
+                          <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModuleByName(java.lang.String):org.jetbrains.mps.openapi.module.SModule" resolve="getModuleByName" />
+                          <node concept="37vLTw" id="1cXeJmojwqv" role="37wK5m">
+                            <ref role="3cqZAo" node="Tb4PsnqO$K" resolve="text" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -12882,6 +12925,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19g" role="jymVt" />
     <node concept="3clFb_" id="3f6C5dcXlaK" role="jymVt">
       <property role="TrG5h" value="addStandaloneBuild" />
       <node concept="37vLTG" id="3f6C5dcXlaP" role="3clF46">
@@ -14619,6 +14663,7 @@
         <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19h" role="jymVt" />
     <node concept="3clFb_" id="3f6C5dcXlgg" role="jymVt">
       <property role="TrG5h" value="convertToMacroRelative" />
       <node concept="3Tqbb2" id="3f6C5dcXlgn" role="3clF45">
@@ -14703,6 +14748,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19i" role="jymVt" />
     <node concept="3clFb_" id="7xbAEiFv$i8" role="jymVt">
       <property role="TrG5h" value="createComponent" />
       <property role="DiZV1" value="false" />
@@ -14858,6 +14904,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19j" role="jymVt" />
     <node concept="3clFb_" id="7vf_vNz43x4" role="jymVt">
       <property role="TrG5h" value="createModuleNode" />
       <node concept="3Tm6S6" id="7vf_vNz43xc" role="1B3o_S" />
@@ -15033,6 +15080,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19k" role="jymVt" />
     <node concept="3clFb_" id="7vf_vNz3Stp" role="jymVt">
       <property role="TrG5h" value="createPathFromFullPath" />
       <node concept="37vLTG" id="7vf_vNz3StG" role="3clF46">
@@ -15070,6 +15118,7 @@
         <ref role="3uigEE" to="o3n2:1AfwOXhIPFt" resolve="RelativePathHelper.PathException" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19l" role="jymVt" />
     <node concept="3clFb_" id="7vf_vNz3RH3" role="jymVt">
       <property role="TrG5h" value="createPath" />
       <node concept="37vLTG" id="7vf_vNz3Ss0" role="3clF46">
@@ -15202,6 +15251,7 @@
         <ref role="ehGHo" to="3ior:4Kip2_918YM" resolve="BuildSourceProjectRelativePath" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19m" role="jymVt" />
     <node concept="3clFb_" id="7vf_vNz43iK" role="jymVt">
       <property role="TrG5h" value="extractModules" />
       <node concept="3Tm6S6" id="7vf_vNz43iS" role="1B3o_S" />
@@ -15303,6 +15353,7 @@
       </node>
       <node concept="3cqZAl" id="7vf_vNz43oc" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="1cXeJmoi19n" role="jymVt" />
     <node concept="3clFb_" id="OqYxEjwwox" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="getBasePath" />
