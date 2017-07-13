@@ -151,30 +151,6 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  protected void reloadAfterDescriptorChange() {
-    super.reloadAfterDescriptorChange();
-    //this code should be removed when we are sure there are no modules without language version information persisted
-    //this code should be executed when all models are already there in the module to produce a correct list of used languages
-    if (!getModuleDescriptor().hasLanguageVersions()) {
-      SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(getUsedLanguages());
-      for (SLanguage lang : languageHierarchy.getExtended()) {
-        getModuleDescriptor().getLanguageVersions().put(lang, 0);
-      }
-
-      Set<SModule> visible = new LinkedHashSet<SModule>();
-      visible.add(this);
-      Collection<SModule> dependentModules = new GlobalModuleDependenciesManager(this).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
-      visible.addAll(dependentModules);
-      for (SModule dep : visible) {
-        getModuleDescriptor().getDependencyVersions().put(dep.getModuleReference(), 0);
-      }
-
-      getModuleDescriptor().setHasLanguageVersions(true);
-      setChanged();
-    }
-  }
-
-  @Override
   public void dispose() {
     final ProjectLibraryTable projectLibraryTable = (ProjectLibraryTable) ProjectLibraryTable.getInstance(myModule.getProject());
     myModelAccess.runReadAction(new Runnable() {

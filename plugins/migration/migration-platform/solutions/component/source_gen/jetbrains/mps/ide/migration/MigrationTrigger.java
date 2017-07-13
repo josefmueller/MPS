@@ -17,19 +17,26 @@ import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import java.util.Set;
+import java.util.LinkedHashSet;
+import java.util.Collection;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
-import org.jetbrains.mps.openapi.module.SModule;
-import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -130,10 +137,45 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
       public void run() {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
+            initModuleVersionsWhereNeeded();
+
             addListeners();
             checkMigrationNeeded();
           }
         });
+      }
+    });
+  }
+
+  private void initModuleVersionsWhereNeeded() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        for (SModule m : Sequence.fromIterable(myMpsProject.getModulesWithGenerators())) {
+          if (!((m instanceof AbstractModule))) {
+            continue;
+          }
+
+          // this code should be removed when we are sure there are no modules without language  
+          // version information persisted 
+          // this code should be executed when all models are already there in the module to  
+          // produce a correct list of used languages 
+          ModuleDescriptor desc = ((AbstractModule) m).getModuleDescriptor();
+          if (!(desc.hasLanguageVersions())) {
+            SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(m.getUsedLanguages());
+            for (SLanguage lang : languageHierarchy.getExtended()) {
+              desc.getLanguageVersions().put(lang, 0);
+            }
+            Set<SModule> visible = new LinkedHashSet<SModule>();
+            visible.add(m);
+            Collection<SModule> dependentModules = new GlobalModuleDependenciesManager(m).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
+            visible.addAll(dependentModules);
+            for (SModule dep : visible) {
+              desc.getDependencyVersions().put(dep.getModuleReference(), 0);
+            }
+            desc.setHasLanguageVersions(true);
+            ((AbstractModule) m).setChanged();
+          }
+        }
       }
     });
   }
