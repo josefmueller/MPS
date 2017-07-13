@@ -16946,48 +16946,14 @@
                   </node>
                 </node>
               </node>
-              <node concept="28jJK3" id="2lgcjg39Yv1" role="39821P">
-                <node concept="3co7Ac" id="2lgcjg39Yv7" role="28jJR8">
-                  <property role="3co7Am" value="lf" />
-                  <property role="3cpA_W" value="true" />
-                </node>
-                <node concept="55IIr" id="5geRsi2IApK" role="28jJRO">
-                  <node concept="2Ry0Ak" id="5geRsi2IApL" role="iGT6I">
-                    <property role="2Ry0Am" value="plugins" />
-                    <node concept="2Ry0Ak" id="5geRsi2IApM" role="2Ry0An">
-                      <property role="2Ry0Am" value="mps-build" />
-                      <node concept="2Ry0Ak" id="5geRsi2IApN" role="2Ry0An">
-                        <property role="2Ry0Am" value="solutions" />
-                        <node concept="2Ry0Ak" id="5geRsi2IApO" role="2Ry0An">
-                          <property role="2Ry0Am" value="mpsBuild" />
-                          <node concept="2Ry0Ak" id="5geRsi2IApP" role="2Ry0An">
-                            <property role="2Ry0Am" value="source_gen" />
-                            <node concept="2Ry0Ak" id="5geRsi2IApQ" role="2Ry0An">
-                              <property role="2Ry0Am" value="jetbrains" />
-                              <node concept="2Ry0Ak" id="5geRsi2IApR" role="2Ry0An">
-                                <property role="2Ry0Am" value="mps" />
-                                <node concept="2Ry0Ak" id="5geRsi2IApS" role="2Ry0An">
-                                  <property role="2Ry0Am" value="ide" />
-                                  <node concept="2Ry0Ak" id="5geRsi2IApT" role="2Ry0An">
-                                    <property role="2Ry0Am" value="build" />
-                                    <node concept="2Ry0Ak" id="5geRsi2IApU" role="2Ry0An">
-                                      <property role="2Ry0Am" value="mps.vmoptions" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="28jJK3" id="2lwFGYPkElG" role="39821P">
                 <node concept="3co7Ac" id="2lwFGYPkElH" role="28jJR8">
                   <property role="3co7Am" value="lf" />
                   <property role="3cpA_W" value="true" />
+                </node>
+                <node concept="2$htT0" id="5GLkm1jkW$V" role="28jJR8">
+                  <property role="2$htTZ" value="mps64.vmoptions" />
+                  <property role="2$htTY" value="mps.vmoptions" />
                 </node>
                 <node concept="55IIr" id="2lwFGYPkElI" role="28jJRO">
                   <node concept="2Ry0Ak" id="2lwFGYPkElJ" role="iGT6I">
