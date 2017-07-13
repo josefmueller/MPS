@@ -4352,9 +4352,22 @@
     <property role="TrG5h" value="Comment_DeleteSingleRoleWholeComment" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="1trYAieiYBq" role="LjaKd">
-      <node concept="2HxZob" id="1trYAieiYBr" role="3cqZAp">
-        <node concept="1iFQzN" id="1trYAieiYBs" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+      <node concept="3clFbF" id="1NNq35AvZdR" role="3cqZAp">
+        <node concept="2YIFZM" id="1NNq35AvZdS" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="1NNq35AvZdT" role="37wK5m">
+            <node concept="3clFbS" id="1NNq35AvZdU" role="1bW5cS">
+              <node concept="2HxZob" id="1NNq35AvZdV" role="3cqZAp">
+                <node concept="1iFQzN" id="1NNq35AvZdW" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="1NNq35AvZdX" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
         </node>
       </node>
     </node>
@@ -4400,9 +4413,22 @@
     <property role="TrG5h" value="Comment_DeleteSingleRoleNodeInsideComment" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="1trYAieiZ0Z" role="LjaKd">
-      <node concept="2HxZob" id="1trYAieiZ10" role="3cqZAp">
-        <node concept="1iFQzN" id="1trYAieiZ11" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+      <node concept="3clFbF" id="1NNq35AvZba" role="3cqZAp">
+        <node concept="2YIFZM" id="1NNq35AvZbb" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="1NNq35AvZbc" role="37wK5m">
+            <node concept="3clFbS" id="1NNq35AvZbd" role="1bW5cS">
+              <node concept="2HxZob" id="1NNq35AvZbe" role="3cqZAp">
+                <node concept="1iFQzN" id="1NNq35AvZbf" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="1NNq35AvZbg" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
         </node>
       </node>
     </node>
@@ -4448,9 +4474,22 @@
     <property role="TrG5h" value="Comment_DeleteMultipleRoleNodeInsideComment" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="1trYAiej1Cg" role="LjaKd">
-      <node concept="2HxZob" id="1trYAiej1Ch" role="3cqZAp">
-        <node concept="1iFQzN" id="1trYAiej1Ci" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+      <node concept="3clFbF" id="1NNq35AvYYF" role="3cqZAp">
+        <node concept="2YIFZM" id="1NNq35AvYZG" role="3clFbG">
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <node concept="1bVj0M" id="1NNq35AvZ0G" role="37wK5m">
+            <node concept="3clFbS" id="1NNq35AvZ0H" role="1bW5cS">
+              <node concept="2HxZob" id="1trYAiej1Ch" role="3cqZAp">
+                <node concept="1iFQzN" id="1trYAiej1Ci" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="1NNq35AvZ4e" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
         </node>
       </node>
     </node>
@@ -4519,9 +4558,22 @@
     <property role="TrG5h" value="Comment_DeleteMultipleRoleWholeComment" />
     <property role="3GE5qa" value="comment" />
     <node concept="3clFbS" id="1trYAiej7PM" role="LjaKd">
-      <node concept="2HxZob" id="1trYAiej7PN" role="3cqZAp">
-        <node concept="1iFQzN" id="1trYAiej7PO" role="3iKnsn">
-          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+      <node concept="3clFbF" id="1NNq35AvZ7N" role="3cqZAp">
+        <node concept="2YIFZM" id="1NNq35AvZ7O" role="3clFbG">
+          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
+          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <node concept="1bVj0M" id="1NNq35AvZ7P" role="37wK5m">
+            <node concept="3clFbS" id="1NNq35AvZ7Q" role="1bW5cS">
+              <node concept="2HxZob" id="1NNq35AvZ7R" role="3cqZAp">
+                <node concept="1iFQzN" id="1NNq35AvZ7S" role="3iKnsn">
+                  <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbT" id="1NNq35AvZ7T" role="37wK5m">
+            <property role="3clFbU" value="false" />
+          </node>
         </node>
       </node>
     </node>

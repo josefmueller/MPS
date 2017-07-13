@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.editorTest.EditorTestUtil;
 
 @MPSLaunch
 public class Comment_DeleteMultipleRoleWholeComment_Test extends BaseTransformationTest {
@@ -20,7 +21,11 @@ public class Comment_DeleteMultipleRoleWholeComment_Test extends BaseTransformat
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("1683214195544063349", "1683214195544063360");
-      invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+        public void run() throws Exception {
+          invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
+        }
+      }, false);
     }
   }
 }
