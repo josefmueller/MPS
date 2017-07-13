@@ -33,7 +33,7 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
 
   public void psiChanged(final JavaPsiListener.PsiEvent event) {
 
-    // this is a guard against the situation when our directory has been removed      
+    // this is a guard against the situation when our directory has been removed 
     // we don't notify our listeners about anything in this case 
     // they should be removed anyways 
     if (!(isValid())) {

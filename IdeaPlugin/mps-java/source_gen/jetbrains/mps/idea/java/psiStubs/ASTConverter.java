@@ -169,7 +169,6 @@ public class ASTConverter {
             ((jetbrains.mps.smodel.SNode) cnst).setId(JavaForeignIdBuilder.computeNodeId(it));
           }
           // TODO maybe we must not touch expressions here (they may be not in the psi index) 
-          // <node> 
           ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(classifier.value, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, 0xfc367503acL, "enumConstant"))).addElement(cnst);
         }
 
@@ -552,7 +551,6 @@ public class ASTConverter {
         // let's see if var has been parsed already 
         if (typeVar != null) {
           // FIXME static reference doesn't work here for some reason 
-          // <node> 
           ref = new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"), typeVarRef, null, name);
         } else {
           ref = new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, 0x1024673a581L, "typeVariableDeclaration"), typeVarRef, null, name);
