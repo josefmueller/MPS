@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.editor.runtime.highlight;
+package jetbrains.mps.editor.runtime.deletionApprover;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-/**
- * @deprecated
- * use {@link jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil}
- */
-
-@Deprecated
-@ToRemove(version = 2017.2)
 public class DeletionApproverUtil {
 
   public static boolean approve(@Nullable EditorContext context, @Nullable SNode node) {

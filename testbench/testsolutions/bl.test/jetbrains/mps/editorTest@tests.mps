@@ -41,15 +41,12 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" />
-    <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="4rc5" ref="r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)" />
-    <import index="pzbl" ref="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)" />
     <import index="tpeh" ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
-    <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
-    <import index="h38z" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.highlight(MPS.Editor/)" />
+    <import index="df4k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.deletionApprover(MPS.Editor/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
@@ -62004,8 +62001,8 @@
                       <node concept="3clFbS" id="7MsHfaPFuBF" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvriAA" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvriAB" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvriAC" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvriAD" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvriAE" role="2OqNvi">
@@ -62126,8 +62123,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvrlWk" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvrlWl" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvrlWm" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvrlWn" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvrlWo" role="2OqNvi">
@@ -62204,8 +62201,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvr9E6" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvr9E7" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvr9E8" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvr9E9" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvr9Ea" role="2OqNvi">
@@ -62331,8 +62328,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvqZuJ" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvqZuK" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvqZuL" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvqZuM" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvqZuN" role="2OqNvi">
@@ -62644,8 +62641,8 @@
               </node>
               <node concept="3vwNmj" id="4ZFm$8Tss2F" role="3cqZAp">
                 <node concept="2YIFZM" id="4ZFm$8Tss2G" role="3vwVQn">
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="4ZFm$8Tss2H" role="37wK5m">
                     <node concept="369mXd" id="4ZFm$8Tss2I" role="2Oq$k0" />
                     <node concept="liA8E" id="4ZFm$8Tss2J" role="2OqNvi">
@@ -63013,8 +63010,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvr9SZ" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvr9T0" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvr9T1" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvr9T2" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvr9T3" role="2OqNvi">
@@ -63183,8 +63180,8 @@
                       <node concept="3clFbS" id="4ZFm$8Ts$eU" role="1bW5cS">
                         <node concept="3vwNmj" id="4ZFm$8Ts$eV" role="3cqZAp">
                           <node concept="2YIFZM" id="4ZFm$8Ts$eW" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,java.lang.String):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,java.lang.String):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="4ZFm$8Ts$eX" role="37wK5m">
                               <node concept="369mXd" id="4ZFm$8Ts$eY" role="2Oq$k0" />
                               <node concept="liA8E" id="4ZFm$8Ts$eZ" role="2OqNvi">
@@ -63292,8 +63289,8 @@
                       <node concept="3clFbS" id="7MsHfaPvzA5" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvr7$2" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvr7$3" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvr7$4" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvr7$5" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvr7$6" role="2OqNvi">
@@ -63459,8 +63456,8 @@
                       <node concept="3clFbS" id="7MsHfaQm7DO" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrk7h" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrk7i" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrk7j" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrk7k" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrk7l" role="2OqNvi">
@@ -63670,8 +63667,8 @@
                       <node concept="3clFbS" id="4ZFm$8TrBjd" role="1bW5cS">
                         <node concept="3vwNmj" id="4ZFm$8TrBje" role="3cqZAp">
                           <node concept="2YIFZM" id="4ZFm$8TrBjf" role="3vwVQn">
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="4ZFm$8TrBjg" role="37wK5m">
                               <node concept="369mXd" id="4ZFm$8TrBjh" role="2Oq$k0" />
                               <node concept="liA8E" id="4ZFm$8TrBji" role="2OqNvi">
@@ -63809,8 +63806,8 @@
                       <node concept="3clFbS" id="7MsHfaQt0UK" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrmgx" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrmgy" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,java.lang.String):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,java.lang.String):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrmgz" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrmg$" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrmg_" role="2OqNvi">
@@ -63957,8 +63954,8 @@
                       <node concept="3clFbS" id="7MsHfaPGatE" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrhzY" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrhzZ" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrh$0" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrh$1" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrh$2" role="2OqNvi">
@@ -64061,8 +64058,8 @@
                       <node concept="3clFbS" id="5NlMiLsjTxW" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvr6pK" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvr6pL" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvr6pM" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvr6pN" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvr6pO" role="2OqNvi">
@@ -64353,8 +64350,8 @@
                       <node concept="3clFbS" id="7MsHfaPEFln" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrdeZ" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrdf0" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrdf1" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrdf2" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrdf3" role="2OqNvi">
@@ -64779,8 +64776,8 @@
                       <node concept="3clFbS" id="7MsHfaPPKu6" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrfHq" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrfHr" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrfHs" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrfHt" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrfHu" role="2OqNvi">
@@ -64909,8 +64906,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvr3bm" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvr3bn" role="3vwVQn">
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvr3bo" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvr3bp" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvr3bq" role="2OqNvi">
@@ -64932,8 +64929,8 @@
               </node>
               <node concept="3vFxKo" id="221HkxJIMWR" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvr3Cm" role="3vFALc">
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvr3Cn" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvr3Co" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvr3Cp" role="2OqNvi">
@@ -65085,8 +65082,8 @@
                       <node concept="3clFbS" id="7MsHfaPPK1t" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrgxe" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrgxf" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrgxg" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrgxh" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrgxi" role="2OqNvi">
@@ -65163,8 +65160,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvrjHZ" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvrjI0" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvrjI1" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvrjI2" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvrjI3" role="2OqNvi">
@@ -65281,8 +65278,8 @@
               </node>
               <node concept="3vwNmj" id="4ZFm$8TrXCI" role="3cqZAp">
                 <node concept="2YIFZM" id="4ZFm$8TrXCJ" role="3vwVQn">
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="4ZFm$8TrXCK" role="37wK5m">
                     <node concept="369mXd" id="4ZFm$8TrXCL" role="2Oq$k0" />
                     <node concept="liA8E" id="4ZFm$8TrXCM" role="2OqNvi">
@@ -65456,8 +65453,8 @@
                       <node concept="3clFbS" id="7MsHfaPiD1m" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvr92S" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvr92T" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvr92U" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvr92V" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvr92W" role="2OqNvi">
@@ -65732,8 +65729,8 @@
                       <node concept="3clFbS" id="7MsHfaQhUNM" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrkNg" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrkNh" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrkNi" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrkNj" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrkNk" role="2OqNvi">
@@ -65861,8 +65858,8 @@
                       <node concept="3clFbS" id="7MsHfaPFxjs" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrdYw" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrdYx" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrdYy" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrdYz" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrdY$" role="2OqNvi">
@@ -65996,8 +65993,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvreDn" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvreDo" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvreDp" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvreDq" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvreDr" role="2OqNvi">
@@ -66065,8 +66062,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvr79E" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvr79F" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvr79G" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvr79H" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvr79I" role="2OqNvi">
@@ -66221,8 +66218,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvr62O" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvr62P" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvr62Q" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvr62R" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvr62S" role="2OqNvi">
@@ -66405,8 +66402,8 @@
                       <node concept="3clFbS" id="7MsHfaPY0rq" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrf0W" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrf0X" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrf0Y" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrf0Z" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrf10" role="2OqNvi">
@@ -66514,8 +66511,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvrjg$" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvrjg_" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvrjgA" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvrjgB" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvrjgC" role="2OqNvi">
@@ -66583,8 +66580,8 @@
                       <node concept="3clFbS" id="7MsHfaPJ4NY" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvr54$" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvr54_" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvr54A" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvr54B" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvr54C" role="2OqNvi">
@@ -66753,8 +66750,8 @@
               </node>
               <node concept="3vwNmj" id="4ZFm$8TrgKm" role="3cqZAp">
                 <node concept="2YIFZM" id="4ZFm$8TrgKn" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="4ZFm$8TrgKo" role="37wK5m">
                     <node concept="369mXd" id="4ZFm$8TrgKp" role="2Oq$k0" />
                     <node concept="liA8E" id="4ZFm$8TrgKq" role="2OqNvi">
@@ -66800,8 +66797,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvrbmj" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvrbmk" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvrbml" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvrbmm" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvrbmn" role="2OqNvi">
@@ -67002,8 +66999,8 @@
                       <node concept="3clFbS" id="6cjbMSDrrZg" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvqZVZ" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvqZW0" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvqZW1" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvqZW2" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvqZW3" role="2OqNvi">
@@ -67109,8 +67106,8 @@
                       <node concept="3clFbS" id="7MsHfaPv$47" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrbIW" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrbIX" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrbIY" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrbIZ" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrbJ0" role="2OqNvi">
@@ -67530,8 +67527,8 @@
                       <node concept="3clFbS" id="7MsHfaPiCJj" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvr8k4" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvr8k5" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvr8k6" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvr8k7" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvr8k8" role="2OqNvi">
@@ -67836,8 +67833,8 @@
                       <node concept="3clFbS" id="7MsHfaPFwzl" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrnAZ" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrnB0" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrnB1" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrnB2" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrnB3" role="2OqNvi">
@@ -67942,8 +67939,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvrnn8" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvrnn9" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvrnna" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvrnnb" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvrnnc" role="2OqNvi">
@@ -68060,8 +68057,8 @@
               </node>
               <node concept="3vwNmj" id="4ZFm$8TrC_I" role="3cqZAp">
                 <node concept="2YIFZM" id="4ZFm$8TrC_J" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="4ZFm$8TrC_K" role="37wK5m">
                     <node concept="369mXd" id="4ZFm$8TrC_L" role="2Oq$k0" />
                     <node concept="liA8E" id="4ZFm$8TrC_M" role="2OqNvi">
@@ -68679,8 +68676,8 @@
                       <node concept="3clFbS" id="4ZFm$8Trgpe" role="1bW5cS">
                         <node concept="3vwNmj" id="4ZFm$8Trb4u" role="3cqZAp">
                           <node concept="2YIFZM" id="4ZFm$8Trb4v" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="4ZFm$8Trb4w" role="37wK5m">
                               <node concept="369mXd" id="4ZFm$8Trb4x" role="2Oq$k0" />
                               <node concept="liA8E" id="4ZFm$8Trb4y" role="2OqNvi">
@@ -68947,8 +68944,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvrcVr" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvrcVs" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvrcVt" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvrcVu" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvrcVv" role="2OqNvi">
@@ -69220,8 +69217,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvrcKZ" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvrcL0" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvrcL1" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvrcL2" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvrcL3" role="2OqNvi">
@@ -69390,8 +69387,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvrjwj" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvrjwk" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvrjwl" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvrjwm" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvrjwn" role="2OqNvi">
@@ -69496,8 +69493,8 @@
                       <node concept="3clFbS" id="7MsHfaPvzbM" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrak4" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrak5" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrak6" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrak7" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrak8" role="2OqNvi">
@@ -69670,8 +69667,8 @@
                       <node concept="3clFbS" id="7MsHfaQm5Zz" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvrlq7" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvrlq8" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvrlq9" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvrlqa" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvrlqb" role="2OqNvi">
@@ -69780,8 +69777,8 @@
                       <node concept="3clFbS" id="5NlMiLsjU5_" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvqQlI" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvqVvV" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvqWFQ" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvqV$p" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvqYov" role="2OqNvi">
@@ -69821,8 +69818,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvqYTm" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvqYTn" role="3vwVQn">
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvqYTo" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvqYTp" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvqYTq" role="2OqNvi">
@@ -69904,8 +69901,8 @@
               </node>
               <node concept="3vwNmj" id="60TqfQvr4_g" role="3cqZAp">
                 <node concept="2YIFZM" id="60TqfQvr4_h" role="3vwVQn">
-                  <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
-                  <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                  <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                   <node concept="2OqwBi" id="60TqfQvr4_i" role="37wK5m">
                     <node concept="369mXd" id="60TqfQvr4_j" role="2Oq$k0" />
                     <node concept="liA8E" id="60TqfQvr4_k" role="2OqNvi">
@@ -70083,8 +70080,8 @@
                       <node concept="3clFbS" id="7MsHfaPvy0S" role="1bW5cS">
                         <node concept="3vwNmj" id="60TqfQvr0TF" role="3cqZAp">
                           <node concept="2YIFZM" id="60TqfQvr0TG" role="3vwVQn">
-                            <ref role="1Pybhc" to="h38z:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
-                            <ref role="37wK5l" to="h38z:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
+                            <ref role="1Pybhc" to="df4k:~DeletionApproverUtil" resolve="DeletionApproverUtil" />
+                            <ref role="37wK5l" to="df4k:~DeletionApproverUtil.isApprovedForDeletion(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isApprovedForDeletion" />
                             <node concept="2OqwBi" id="60TqfQvr0TH" role="37wK5m">
                               <node concept="369mXd" id="60TqfQvr0TI" role="2Oq$k0" />
                               <node concept="liA8E" id="60TqfQvr0TJ" role="2OqNvi">
