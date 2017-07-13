@@ -10,9 +10,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import java.util.List;
 import jetbrains.mps.plugins.PluginContributor;
-import com.intellij.util.messages.MessageBusConnection;
-import com.intellij.openapi.project.impl.ProjectLifecycleListener;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import java.util.Iterator;
@@ -28,9 +25,12 @@ import com.intellij.execution.configurations.RunConfiguration;
 import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
+import com.intellij.execution.impl.ProjectRunConfigurationManager;
+import com.intellij.openapi.components.ServiceManager;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.RunManagerEx;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.openapi.extensions.Extensions;
 import java.util.Set;
@@ -42,6 +42,10 @@ import org.jdom.Element;
  * This component allows to create reloadable (!) run configurations within MPS.
  * It listens to the project plugins manager because we use custom project plugins to register custom 'before' tasks (like 'make' etc.)
  * It saves all run configurations at the plugin unload and then restores them at the plugin load event
+ * Currently before tasks are saved but not loaded (they are loaded from template configurations) due to change in IDEA api
+ * FIX need to ask for a proper ext point in the platform or drop featuring reloadable run configurations
+ * in the current state api does not allow to do it (before tasks are read in a lazy way without possibility for our plugins to be accessed
+ * before their initialization)
  */
 public class RunConfigurationsStateManager implements ProjectComponent, PluginReloadingListener {
   private static final Logger LOG = LogManager.getLogger(RunConfigurationsStateManager.class);
@@ -66,29 +70,22 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
   @Override
   public void initComponent() {
-    final MessageBusConnection connection = myProject.getMessageBus().connect();
-    connection.subscribe(ProjectLifecycleListener.TOPIC, new ProjectLifecycleListener() {
-      public void projectComponentsInitialized(@NotNull Project project) {
-        if (project == myProject) {
-          myState = new RunConfigurationsStateManager.RunConfigurationsState();
-          myState.saveState();
-          myProjectPluginManager.addReloadingListener(RunConfigurationsStateManager.this);
-        }
-      }
-    });
   }
 
   @Override
   public void disposeComponent() {
-    myProjectPluginManager.removeReloadingListener(this);
   }
 
   @Override
   public void projectOpened() {
+    myState = new RunConfigurationsStateManager.RunConfigurationsState();
+    myState.saveState();
+    myProjectPluginManager.addReloadingListener(RunConfigurationsStateManager.this);
   }
 
   @Override
   public void projectClosed() {
+    myProjectPluginManager.removeReloadingListener(this);
   }
 
   public void initRunConfigurations() {
@@ -167,6 +164,10 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     return descriptors;
   }
 
+  private ProjectRunConfigurationManager getSharedConfigurationManager() {
+    return ServiceManager.getService(myProject, ProjectRunConfigurationManager.class);
+  }
+
   private RunManagerImpl getRunManager() {
     return (RunManagerImpl) RunManagerEx.getInstanceEx(myProject);
   }
@@ -206,8 +207,11 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     }
 
     public void restoreState() {
+      assert myState != null && mySharedState != null;
       getRunManager().initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
       try {
+        getRunManager().loadState(myState);
+        getSharedConfigurationManager().loadState(mySharedState);
       } catch (Exception e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't read execution configurations state", e);
@@ -217,6 +221,8 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
     public void saveState() {
       try {
+        myState = getRunManager().getState();
+        mySharedState = getSharedConfigurationManager().getState();
       } catch (Exception e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't save run configurations state", e);
