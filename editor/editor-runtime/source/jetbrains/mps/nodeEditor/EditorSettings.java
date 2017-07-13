@@ -353,7 +353,7 @@ public class EditorSettings implements ApplicationComponent, PersistentStateComp
 
     public boolean useBraces = true;
 
-    public boolean useTwoStepDeletion = false;
+    public boolean useTwoStepDeletion = true;
 
     public int indentSize = 2;
     public int verticalBound = 120;
