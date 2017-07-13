@@ -2,24 +2,24 @@
 <model ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
-    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
-    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
-    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
+    <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -185,6 +185,7 @@
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
+    <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -4563,7 +4564,6 @@
         <node concept="3cpWs8" id="hGASHw1" role="3cqZAp">
           <node concept="3cpWsn" id="hGASHw2" role="3cpWs9">
             <property role="TrG5h" value="newFolder" />
-            <node concept="17QB3L" id="hP3nDsf" role="1tU5fm" />
             <node concept="2YIFZM" id="5iOAkPG7zSD" role="33vP2m">
               <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
               <ref role="37wK5l" to="jkm4:~Messages.showInputDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon,java.lang.String,com.intellij.openapi.ui.InputValidator):java.lang.String" resolve="showInputDialog" />
@@ -4588,6 +4588,7 @@
               </node>
               <node concept="10Nm6u" id="5iOAkPG7WDk" role="37wK5m" />
             </node>
+            <node concept="17QB3L" id="hP3nDsf" role="1tU5fm" />
           </node>
         </node>
         <node concept="1QHqEO" id="2cq3mHBKT2h" role="3cqZAp">
@@ -9698,7 +9699,6 @@
         <node concept="3cpWs8" id="7TSspuy9AG" role="3cqZAp">
           <node concept="3cpWsn" id="7TSspuy9AH" role="3cpWs9">
             <property role="TrG5h" value="newFolder" />
-            <node concept="17QB3L" id="7TSspuy9AI" role="1tU5fm" />
             <node concept="2YIFZM" id="5iOAkPG8Cfj" role="33vP2m">
               <ref role="37wK5l" to="jkm4:~Messages.showInputDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon,java.lang.String,com.intellij.openapi.ui.InputValidator):java.lang.String" resolve="showInputDialog" />
               <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
@@ -9725,6 +9725,7 @@
               </node>
               <node concept="10Nm6u" id="5iOAkPG8Cft" role="37wK5m" />
             </node>
+            <node concept="17QB3L" id="7TSspuy9AI" role="1tU5fm" />
           </node>
         </node>
         <node concept="3clFbJ" id="7TSspuy9Bk" role="3cqZAp">
@@ -25086,19 +25087,64 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="4NDCWHeJ$oW" role="3cqZAp">
-              <node concept="2OqwBi" id="4NDCWHeJ$oX" role="3clFbG">
-                <node concept="37vLTw" id="3GM_nagT$WW" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4NDCWHeJ$fh" resolve="dialog" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4NDCWHeJ$oW" role="3cqZAp">
+          <node concept="2OqwBi" id="4NDCWHeJ$oX" role="3clFbG">
+            <node concept="37vLTw" id="3GM_nagT$WW" role="2Oq$k0">
+              <ref role="3cqZAo" node="4NDCWHeJ$fh" />
+            </node>
+            <node concept="liA8E" id="4NDCWHeJ$oZ" role="2OqNvi">
+              <ref role="37wK5l" to="qy69:~BlameDialog.addExceptions(java.util.Collection):void" resolve="addExceptions" />
+              <node concept="10QFUN" id="1pgB67pPc_e" role="37wK5m">
+                <node concept="3uibUv" id="1pgB67pPe_b" role="10QFUM">
+                  <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+                  <node concept="3uibUv" id="1pgB67pPgI8" role="11_B2D">
+                    <ref role="3uigEE" to="wyt6:~Throwable" resolve="Throwable" />
+                  </node>
                 </node>
-                <node concept="liA8E" id="4NDCWHeJ$oZ" role="2OqNvi">
-                  <ref role="37wK5l" to="qy69:~BlameDialog.addEx(java.lang.Throwable):void" resolve="addEx" />
-                  <node concept="2OqwBi" id="4NDCWHeJ$p0" role="37wK5m">
-                    <node concept="37vLTw" id="3GM_nagTswU" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4NDCWHeJ$oh" resolve="msg" />
+                <node concept="2OqwBi" id="1pgB67pOZSu" role="10QFUP">
+                  <node concept="2OqwBi" id="1pgB67pOMvD" role="2Oq$k0">
+                    <node concept="2OqwBi" id="1pgB67pOKfp" role="2Oq$k0">
+                      <node concept="2OqwBi" id="1pgB67pOIO5" role="2Oq$k0">
+                        <node concept="2WthIp" id="1pgB67pOIO8" role="2Oq$k0" />
+                        <node concept="1DTwFV" id="1pgB67pOIOa" role="2OqNvi">
+                          <ref role="2WH_rO" node="4NDCWHeJ$b$" />
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="1pgB67pOMb8" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~Collection.stream():java.util.stream.Stream" resolve="stream" />
+                      </node>
                     </node>
-                    <node concept="liA8E" id="4NDCWHeJ$p2" role="2OqNvi">
-                      <ref role="37wK5l" to="et5u:~IMessage.getException():java.lang.Throwable" resolve="getException" />
+                    <node concept="liA8E" id="1pgB67pOOBb" role="2OqNvi">
+                      <ref role="37wK5l" to="1ctc:~Stream.map(java.util.function.Function):java.util.stream.Stream" resolve="map" />
+                      <node concept="1bVj0M" id="1pgB67pOPu8" role="37wK5m">
+                        <node concept="3clFbS" id="1pgB67pOPu9" role="1bW5cS">
+                          <node concept="3clFbF" id="1pgB67pOXnn" role="3cqZAp">
+                            <node concept="2OqwBi" id="1pgB67pOY0A" role="3clFbG">
+                              <node concept="37vLTw" id="1pgB67pOXnm" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1pgB67pORE4" />
+                              </node>
+                              <node concept="liA8E" id="1pgB67pOYSE" role="2OqNvi">
+                                <ref role="37wK5l" to="et5u:~IMessage.getException():java.lang.Throwable" resolve="getException" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTG" id="1pgB67pORE4" role="1bW2Oz">
+                          <property role="TrG5h" value="message" />
+                          <node concept="3uibUv" id="1pgB67pORE3" role="1tU5fm">
+                            <ref role="3uigEE" to="et5u:~IMessage" resolve="IMessage" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1pgB67pP2kE" role="2OqNvi">
+                    <ref role="37wK5l" to="1ctc:~Stream.collect(java.util.stream.Collector):java.lang.Object" resolve="collect" />
+                    <node concept="2YIFZM" id="1pgB67pP5wl" role="37wK5m">
+                      <ref role="1Pybhc" to="1ctc:~Collectors" resolve="Collectors" />
+                      <ref role="37wK5l" to="1ctc:~Collectors.toList():java.util.stream.Collector" resolve="toList" />
                     </node>
                   </node>
                 </node>
@@ -25179,9 +25225,7 @@
               <node concept="3cpWsn" id="4NDCWHeJ$rV" role="3cpWs9">
                 <property role="TrG5h" value="message" />
                 <property role="3TUv4t" value="false" />
-                <node concept="3uibUv" id="4NDCWHeJ$rW" role="1tU5fm">
-                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                </node>
+                <node concept="17QB3L" id="4ulJx2qbWu4" role="1tU5fm" />
                 <node concept="2OqwBi" id="4NDCWHeJ$rX" role="33vP2m">
                   <node concept="37vLTw" id="3GM_nagTBXD" role="2Oq$k0">
                     <ref role="3cqZAo" node="4NDCWHeJ$rP" resolve="response" />
@@ -25193,69 +25237,56 @@
               </node>
             </node>
             <node concept="3clFbJ" id="4NDCWHeJ$s0" role="3cqZAp">
-              <node concept="2OqwBi" id="4NDCWHeJ$s1" role="3clFbw">
-                <node concept="37vLTw" id="3GM_nagTAmD" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4NDCWHeJ$rP" resolve="response" />
-                </node>
-                <node concept="liA8E" id="4NDCWHeJ$s3" role="2OqNvi">
-                  <ref role="37wK5l" to="cp54:~Response.isSuccess():boolean" resolve="isSuccess" />
-                </node>
-              </node>
-              <node concept="9aQIb" id="4NDCWHeJ$s4" role="9aQIa">
-                <node concept="3clFbS" id="4NDCWHeJ$s5" role="9aQI4">
-                  <node concept="3clFbF" id="4NDCWHeJ$s6" role="3cqZAp">
-                    <node concept="2YIFZM" id="4NDCWHeJ$s7" role="3clFbG">
-                      <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-                      <ref role="37wK5l" to="dxuu:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" resolve="showMessageDialog" />
-                      <node concept="10Nm6u" id="4NDCWHeJ$s8" role="37wK5m" />
-                      <node concept="37vLTw" id="3GM_nagTBR8" role="37wK5m">
-                        <ref role="3cqZAo" node="4NDCWHeJ$rV" resolve="message" />
-                      </node>
-                      <node concept="Xl_RD" id="4NDCWHeJ$sa" role="37wK5m">
-                        <property role="Xl_RC" value="Submit Failed" />
-                      </node>
-                      <node concept="10M0yZ" id="4NDCWHeJ$sb" role="37wK5m">
-                        <ref role="1PxDUh" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-                        <ref role="3cqZAo" to="dxuu:~JOptionPane.ERROR_MESSAGE" resolve="ERROR_MESSAGE" />
-                      </node>
-                    </node>
+              <node concept="3fqX7Q" id="4ulJx2qc0Y1" role="3clFbw">
+                <node concept="2OqwBi" id="4ulJx2qc0Y3" role="3fr31v">
+                  <node concept="37vLTw" id="4ulJx2qc0Y4" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4NDCWHeJ$rP" resolve="response" />
                   </node>
-                  <node concept="RRSsy" id="3jYQuSB39G5" role="3cqZAp">
-                    <property role="RRSoG" value="error" />
-                    <node concept="3cpWs3" id="4NDCWHeJByW" role="RRSoy">
-                      <node concept="Xl_RD" id="4NDCWHeJByV" role="3uHU7B">
-                        <property role="Xl_RC" value="Submit failed: " />
-                      </node>
-                      <node concept="37vLTw" id="3GM_nagTsUv" role="3uHU7w">
-                        <ref role="3cqZAo" node="4NDCWHeJ$rV" resolve="message" />
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="4NDCWHeJBz1" role="RRSow">
-                      <node concept="37vLTw" id="3GM_nagTs3S" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4NDCWHeJ$rP" resolve="response" />
-                      </node>
-                      <node concept="liA8E" id="4NDCWHeJBz5" role="2OqNvi">
-                        <ref role="37wK5l" to="cp54:~Response.getThrowable():java.lang.Throwable" resolve="getThrowable" />
-                      </node>
-                    </node>
+                  <node concept="liA8E" id="4ulJx2qc0Y5" role="2OqNvi">
+                    <ref role="37wK5l" to="cp54:~Response.isSuccess():boolean" resolve="isSuccess" />
                   </node>
                 </node>
               </node>
               <node concept="3clFbS" id="4NDCWHeJ$so" role="3clFbx">
-                <node concept="3clFbF" id="4NDCWHeJ$sp" role="3cqZAp">
-                  <node concept="2YIFZM" id="4NDCWHeJ$sq" role="3clFbG">
-                    <ref role="1Pybhc" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-                    <ref role="37wK5l" to="dxuu:~JOptionPane.showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" resolve="showMessageDialog" />
-                    <node concept="10Nm6u" id="4NDCWHeJ$sr" role="37wK5m" />
-                    <node concept="37vLTw" id="3GM_nagTzny" role="37wK5m">
+                <node concept="3SKdUt" id="4ulJx2qc1Uq" role="3cqZAp">
+                  <node concept="3SKdUq" id="4ulJx2qc1Us" role="3SKWNk">
+                    <property role="3SKdUp" value="It is only make sense to show dialog to user if issue creation failed." />
+                  </node>
+                </node>
+                <node concept="3clFbF" id="4ulJx2qc1IV" role="3cqZAp">
+                  <node concept="2YIFZM" id="4ulJx2qc1Mj" role="3clFbG">
+                    <ref role="37wK5l" to="jkm4:~Messages.showErrorDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String):void" resolve="showErrorDialog" />
+                    <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                    <node concept="2OqwBi" id="4ulJx2qc24K" role="37wK5m">
+                      <node concept="2WthIp" id="4ulJx2qc24N" role="2Oq$k0" />
+                      <node concept="1DTwFV" id="4ulJx2qc24P" role="2OqNvi">
+                        <ref role="2WH_rO" node="4NDCWHeJ$bA" resolve="project" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="4ulJx2qc28P" role="37wK5m">
                       <ref role="3cqZAo" node="4NDCWHeJ$rV" resolve="message" />
                     </node>
-                    <node concept="Xl_RD" id="4NDCWHeJ$st" role="37wK5m">
-                      <property role="Xl_RC" value="Submit OK" />
+                    <node concept="Xl_RD" id="4ulJx2qc2bT" role="37wK5m">
+                      <property role="Xl_RC" value="Issue Submission Failed" />
                     </node>
-                    <node concept="10M0yZ" id="4NDCWHeJ$su" role="37wK5m">
-                      <ref role="1PxDUh" to="dxuu:~JOptionPane" resolve="JOptionPane" />
-                      <ref role="3cqZAo" to="dxuu:~JOptionPane.INFORMATION_MESSAGE" resolve="INFORMATION_MESSAGE" />
+                  </node>
+                </node>
+                <node concept="RRSsy" id="3jYQuSB39G5" role="3cqZAp">
+                  <property role="RRSoG" value="error" />
+                  <node concept="3cpWs3" id="4NDCWHeJByW" role="RRSoy">
+                    <node concept="Xl_RD" id="4NDCWHeJByV" role="3uHU7B">
+                      <property role="Xl_RC" value="Issue submission failed: " />
+                    </node>
+                    <node concept="37vLTw" id="3GM_nagTsUv" role="3uHU7w">
+                      <ref role="3cqZAo" node="4NDCWHeJ$rV" resolve="message" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="4NDCWHeJBz1" role="RRSow">
+                    <node concept="37vLTw" id="3GM_nagTs3S" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4NDCWHeJ$rP" resolve="response" />
+                    </node>
+                    <node concept="liA8E" id="4NDCWHeJBz5" role="2OqNvi">
+                      <ref role="37wK5l" to="cp54:~Response.getThrowable():java.lang.Throwable" resolve="getThrowable" />
                     </node>
                   </node>
                 </node>

@@ -32,6 +32,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.awt.Component;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class CharismaReporter extends ErrorReportSubmitter {
 
@@ -54,7 +56,8 @@ public class CharismaReporter extends ErrorReportSubmitter {
     final Project project = PlatformDataKeys.PROJECT.getData(dataContext);
 
     BlameDialog blameDialog = BlameDialogComponent.getInstance().createDialog(project, parentComponent);
-    blameDialog.addEx(events[0].getThrowable());
+    blameDialog.addExceptions(Arrays.stream(events).map(IdeaLoggingEvent::getThrowable).collect(Collectors.toList()));
+    // Use only first message. Other messages will be shown in their stack traces.
     blameDialog.setIssueTitle(events[0].getMessage());
     blameDialog.setDescription(additionalInfo);
     blameDialog.setPluginDescriptor(getPluginDescriptor());

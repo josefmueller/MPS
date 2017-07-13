@@ -59,6 +59,8 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class BlameDialog extends DialogWrapper {
@@ -93,8 +95,17 @@ public class BlameDialog extends DialogWrapper {
     myProject = project;
   }
 
+  public void addExceptions(Collection<Throwable> throwables) {
+    myThrowableList.addAll(throwables);
+  }
+
+  /**
+   * @deprecated use {@link BlameDialog#addExceptions(java.util.Collection)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.2)
   public void addEx(Throwable throwable) {
-    myThrowableList.add(throwable);
+    addExceptions(Collections.singletonList(throwable));
   }
 
   public void setIssueTitle(String message) {
@@ -313,11 +324,9 @@ public class BlameDialog extends DialogWrapper {
     description.append("\n");
 
     if (!myThrowableList.isEmpty()) {
-      description.append("{code}");
       for (Throwable ex : myThrowableList) {
-        description.append(ex2str(ex)).append("\n");
+        description.append(ex2str(ex)).append("\n\n");
       }
-      description.append("{code}");
     }
 
     Poster poster = new Poster(myProject);
@@ -340,7 +349,8 @@ public class BlameDialog extends DialogWrapper {
           message += ". " + response;
         }
       }
-      Messages.showErrorDialog(BlameDialog.this.getOwner(), message, "Error");
+      final String errorMessage = String.format("<html>Error occurred while sending:<br><br>%s</html>", message);
+      Messages.showErrorDialog(BlameDialog.this.getOwner(), errorMessage, "Issue Submission Failed");
       return;
     }
 
