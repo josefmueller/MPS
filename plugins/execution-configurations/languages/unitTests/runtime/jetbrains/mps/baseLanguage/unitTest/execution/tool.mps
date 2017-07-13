@@ -226,6 +226,7 @@
         <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -372,7 +373,7 @@
       <concept id="1225797177491" name="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" flags="nn" index="1Bd96e" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -1776,6 +1777,55 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4w8hOcpWcx3" role="jymVt" />
+    <node concept="3clFb_" id="6w7DioKIRKH" role="jymVt">
+      <property role="TrG5h" value="runRebuildAction" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="2AHcQZ" id="6w7DioKIRKI" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="37vLTG" id="6w7DioKIRKJ" role="3clF46">
+        <property role="TrG5h" value="rebuildAction" />
+        <property role="3TUv4t" value="false" />
+        <node concept="3uibUv" id="6w7DioKIRKK" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="6w7DioKIRKL" role="3clF46">
+        <property role="TrG5h" value="saveExpansion" />
+        <property role="3TUv4t" value="false" />
+        <node concept="10P_77" id="6w7DioKIRKM" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="6w7DioKIRKN" role="3clF47">
+        <node concept="3clFbF" id="6w7DioKIRKO" role="3cqZAp">
+          <node concept="3nyPlj" id="6w7DioKIRKP" role="3clFbG">
+            <ref role="37wK5l" to="7e8u:~MPSTree.runRebuildAction(java.lang.Runnable,boolean):void" resolve="runRebuildAction" />
+            <node concept="2ShNRf" id="6w7DioKJiuf" role="37wK5m">
+              <node concept="1pGfFk" id="6w7DioKJiut" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelReadRunnable.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess,java.lang.Runnable)" resolve="ModelReadRunnable" />
+                <node concept="2OqwBi" id="6w7DioKJx2v" role="37wK5m">
+                  <node concept="37vLTw" id="6w7DioKJu$Y" role="2Oq$k0">
+                    <ref role="3cqZAo" node="36vIONTtPmz" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="6w7DioKJxDQ" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="6w7DioKJiuv" role="37wK5m">
+                  <ref role="3cqZAo" node="6w7DioKIRKJ" resolve="rebuildAction" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="6w7DioKIRKT" role="37wK5m">
+              <ref role="3cqZAo" node="6w7DioKIRKL" resolve="saveExpansion" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="6w7DioKIRKU" role="1B3o_S" />
+      <node concept="3cqZAl" id="6w7DioKIRKV" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="6w7DioKJxIX" role="jymVt" />
     <node concept="3clFb_" id="36vIONTtPtE" role="jymVt">
       <property role="TrG5h" value="init" />
       <node concept="3cqZAl" id="36vIONTtPtF" role="3clF45" />

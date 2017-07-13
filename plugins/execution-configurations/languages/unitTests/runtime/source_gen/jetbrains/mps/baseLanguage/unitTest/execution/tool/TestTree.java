@@ -17,6 +17,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -147,6 +148,11 @@ public class TestTree extends MPSTree implements TestView, Disposable {
       super.dispose();
     }
     myAnimator.dispose();
+  }
+
+  @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
   }
 
   @Override
