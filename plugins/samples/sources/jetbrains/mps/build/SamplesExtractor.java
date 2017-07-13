@@ -22,6 +22,9 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.RoamingType;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.BuildNumber;
 import com.intellij.openapi.util.io.FileUtil;
@@ -148,8 +151,19 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
               "Do you want to replace directory\n" + samplesDir + "\n with version " + myApplicationInfo.getBuild().asString() +
                   " (old directory contents will be deleted)?", "Replace MPS Samples?", Messages.getQuestionIcon());
           if (answer == Messages.YES) {
-            FileUtil.delete(samplesDir);
-            actuallyExtractSamples(samplesZipFile);
+            ProgressManager.getInstance().run(new Task.Modal(null, "Installing", false) {
+              public void run(@NotNull ProgressIndicator indicator) {
+                indicator.setIndeterminate(true);
+                indicator.start();
+                indicator.setText("Replacing samples");
+                indicator.setText2("deleting samples directory");
+                FileUtil.delete(samplesDir);
+                indicator.setText2("unzipping ");
+                actuallyExtractSamples(samplesZipFile);
+                indicator.stop();
+              }
+            });
+            Messages.showInfoMessage(String.format("Successfully replaced %s", samplesDir.getAbsolutePath()), "Samples Installed");
           }
         });
       } else {
