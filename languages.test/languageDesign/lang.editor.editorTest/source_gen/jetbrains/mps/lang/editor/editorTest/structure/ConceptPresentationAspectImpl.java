@@ -90,6 +90,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_SwingComponentinFoldedCell;
   private ConceptPresentation props_TestBlockList;
   private ConceptPresentation props_TwoStepDeleteAbstractChildContainer;
+  private ConceptPresentation props_TwoStepDeleteAttribute;
   private ConceptPresentation props_TwoStepDeleteCellCollectionChild;
   private ConceptPresentation props_TwoStepDeleteCustomChild;
   private ConceptPresentation props_TwoStepDeleteCustomChildContainer;
@@ -666,6 +667,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TwoStepDeleteAbstractChildContainer = cpb.create();
         }
         return props_TwoStepDeleteAbstractChildContainer;
+      case LanguageConceptSwitch.TwoStepDeleteAttribute:
+        if (props_TwoStepDeleteAttribute == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TwoStepDeleteAttribute");
+          props_TwoStepDeleteAttribute = cpb.create();
+        }
+        return props_TwoStepDeleteAttribute;
       case LanguageConceptSwitch.TwoStepDeleteCellCollectionChild:
         if (props_TwoStepDeleteCellCollectionChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

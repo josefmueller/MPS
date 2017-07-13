@@ -47,6 +47,7 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
         <child id="1070534934091" name="type" index="10QFUM" />
         <child id="1070534934092" name="expression" index="10QFUP" />
@@ -62,6 +63,7 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -84,6 +86,10 @@
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
     </language>
     <language id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions">
@@ -111,6 +117,7 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
@@ -124,6 +131,9 @@
       <concept id="6407023681583036855" name="jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier" flags="ng" index="3CFYIw">
         <reference id="6407023681583036856" name="attributeConcept" index="3CFYIJ" />
         <child id="6407023681583038098" name="linkQualifier" index="3CFYM5" />
+      </concept>
+      <concept id="6407023681583036853" name="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" flags="ng" index="3CFYIy">
+        <reference id="6407023681583036854" name="attributeConcept" index="3CFYIx" />
       </concept>
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
@@ -301,6 +311,54 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="26oakFZDdUh">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteDefaultChild_AddAttribute" />
+    <ref role="2ZfgGC" to="68nn:2Byns3g9hPu" resolve="TwoStepDeleteDefaultChild" />
+    <node concept="2S6ZIM" id="26oakFZDdUi" role="2ZfVej">
+      <node concept="3clFbS" id="26oakFZDdUj" role="2VODD2">
+        <node concept="3clFbF" id="26oakFZDe3r" role="3cqZAp">
+          <node concept="Xl_RD" id="26oakFZDe3q" role="3clFbG">
+            <property role="Xl_RC" value="Add Attribute" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="26oakFZDdUk" role="2ZfgGD">
+      <node concept="3clFbS" id="26oakFZDdUl" role="2VODD2">
+        <node concept="3clFbF" id="26oakFZDga_" role="3cqZAp">
+          <node concept="2OqwBi" id="26oakFZDgCv" role="3clFbG">
+            <node concept="2OqwBi" id="26oakFZDgif" role="2Oq$k0">
+              <node concept="2Sf5sV" id="26oakFZDga$" role="2Oq$k0" />
+              <node concept="3CFZ6_" id="26oakFZDgq3" role="2OqNvi">
+                <node concept="3CFYIy" id="26oakFZDgu1" role="3CFYIz">
+                  <ref role="3CFYIx" to="68nn:26oakFZDdmj" resolve="TwoStepDeleteAttribute" />
+                </node>
+              </node>
+            </node>
+            <node concept="zfrQC" id="26oakFZDgPc" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2SaL7w" id="26oakFZDeAd" role="2ZfVeh">
+      <node concept="3clFbS" id="26oakFZDeAe" role="2VODD2">
+        <node concept="3clFbF" id="26oakFZDeHw" role="3cqZAp">
+          <node concept="3clFbC" id="26oakFZDg12" role="3clFbG">
+            <node concept="2OqwBi" id="26oakFZDeUt" role="3uHU7B">
+              <node concept="2Sf5sV" id="26oakFZDeHv" role="2Oq$k0" />
+              <node concept="3CFZ6_" id="26oakFZDf97" role="2OqNvi">
+                <node concept="3CFYIy" id="26oakFZDflC" role="3CFYIz">
+                  <ref role="3CFYIx" to="68nn:26oakFZDdmj" resolve="TwoStepDeleteAttribute" />
+                </node>
+              </node>
+            </node>
+            <node concept="10Nm6u" id="26oakFZDfOi" role="3uHU7w" />
           </node>
         </node>
       </node>

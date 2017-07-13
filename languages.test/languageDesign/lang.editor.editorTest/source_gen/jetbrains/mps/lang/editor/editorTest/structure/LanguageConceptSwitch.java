@@ -90,16 +90,17 @@ public final class LanguageConceptSwitch {
   public static final int SwingComponentinFoldedCell = 78;
   public static final int TestBlockList = 79;
   public static final int TwoStepDeleteAbstractChildContainer = 80;
-  public static final int TwoStepDeleteCellCollectionChild = 81;
-  public static final int TwoStepDeleteCustomChild = 82;
-  public static final int TwoStepDeleteCustomChildContainer = 83;
-  public static final int TwoStepDeleteDefaultChild = 84;
-  public static final int TwoStepDeleteDefaultChildContainer = 85;
-  public static final int TwoStepDeleteLabelChild = 86;
-  public static final int TwoStepDeleteTestRoot = 87;
-  public static final int VariableDeclarationBlock = 88;
-  public static final int VariableDeclarationReference = 89;
-  public static final int VerticalLayoutBlockList = 90;
+  public static final int TwoStepDeleteAttribute = 81;
+  public static final int TwoStepDeleteCellCollectionChild = 82;
+  public static final int TwoStepDeleteCustomChild = 83;
+  public static final int TwoStepDeleteCustomChildContainer = 84;
+  public static final int TwoStepDeleteDefaultChild = 85;
+  public static final int TwoStepDeleteDefaultChildContainer = 86;
+  public static final int TwoStepDeleteLabelChild = 87;
+  public static final int TwoStepDeleteTestRoot = 88;
+  public static final int VariableDeclarationBlock = 89;
+  public static final int VariableDeclarationReference = 90;
+  public static final int VerticalLayoutBlockList = 91;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L);
@@ -184,6 +185,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x3511b2d0e7e6e5e7L, SwingComponentinFoldedCell);
     builder.put(0x3361ce1b17d62dbbL, TestBlockList);
     builder.put(0x29e25dc0d0251d65L, TwoStepDeleteAbstractChildContainer);
+    builder.put(0x2198294affa4d593L, TwoStepDeleteAttribute);
     builder.put(0x1139cad76e28ba86L, TwoStepDeleteCellCollectionChild);
     builder.put(0x1139cad76e33a281L, TwoStepDeleteCustomChild);
     builder.put(0x29e25dc0d0251d67L, TwoStepDeleteCustomChildContainer);

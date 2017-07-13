@@ -4228,6 +4228,32 @@
             <property role="VOm3f" value="true" />
           </node>
         </node>
+        <node concept="3F0ifn" id="26oakFZDd7M" role="3EZMnx">
+          <node concept="ljvvj" id="26oakFZDd7N" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="26oakFZDd7L" role="3EZMnx">
+          <property role="3F0ifm" value="childWithAttribute" />
+        </node>
+        <node concept="3F0ifn" id="26oakFZDd7I" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="26oakFZDd7J" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="26oakFZDd7K" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="26oakFZDd7F" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:26oakFZDd7$" resolve="childWithAttribute" />
+          <node concept="lj46D" id="26oakFZDd7G" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="26oakFZDd7H" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
       </node>
       <node concept="3F0ifn" id="14TMHtI6QpZ" role="3EZMnx">
         <property role="3F0ifm" value="}" />
@@ -4783,6 +4809,40 @@
         </node>
         <node concept="IWg2L" id="1cRoRtwfgdC" role="IWgqQ">
           <node concept="3clFbS" id="1cRoRtwfgdD" role="2VODD2" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="26oakFZDdmy">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <ref role="1XX52x" to="68nn:26oakFZDdmj" resolve="TwoStepDeleteAttribute" />
+    <node concept="3EZMnI" id="26oakFZDdm$" role="2wV5jI">
+      <node concept="3F0ifn" id="26oakFZDdmF" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;attribute " />
+        <ref role="1ERwB7" node="26oakFZDdnK" resolve="TwoStepDeleteAttribute_Actions" />
+      </node>
+      <node concept="2SsqMj" id="26oakFZDdmL" role="3EZMnx" />
+      <node concept="3F0ifn" id="26oakFZDdmT" role="3EZMnx">
+        <property role="3F0ifm" value="&gt;" />
+        <ref role="1ERwB7" node="26oakFZDdnK" resolve="TwoStepDeleteAttribute_Actions" />
+      </node>
+      <node concept="l2Vlx" id="26oakFZDdmB" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="1h_SRR" id="26oakFZDdnK">
+    <property role="3GE5qa" value="twoStepDelete" />
+    <property role="TrG5h" value="TwoStepDeleteAttribute_Actions" />
+    <ref role="1h_SK9" to="68nn:26oakFZDdmj" resolve="TwoStepDeleteAttribute" />
+    <node concept="1hA7zw" id="26oakFZDdnL" role="1h_SK8">
+      <property role="1hAc7j" value="delete_action_id" />
+      <node concept="1hAIg9" id="26oakFZDdnM" role="1hA7z_">
+        <node concept="3clFbS" id="26oakFZDdnN" role="2VODD2">
+          <node concept="3clFbF" id="26oakFZDdo0" role="3cqZAp">
+            <node concept="2OqwBi" id="26oakFZDdwe" role="3clFbG">
+              <node concept="0IXxy" id="26oakFZDdnZ" role="2Oq$k0" />
+              <node concept="3YRAZt" id="26oakFZDdQ1" role="2OqNvi" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

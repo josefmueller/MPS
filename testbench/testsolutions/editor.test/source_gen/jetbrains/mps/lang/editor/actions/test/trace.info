@@ -560,6 +560,55 @@
       <unit id="2103596388770305401" at="10,0,28,0" name="jetbrains.mps.lang.editor.actions.test.Comment_CommentUncommentWithSelection_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2420730201805048185">
+    <file name="TwoStepDeleteChildWithAttributeChildSelected_Test.java">
+      <node id="2420730201805048185" at="18,84,19,110" concept="0" />
+      <node id="2420730201805048185" at="19,110,20,134" concept="0" />
+      <node id="2420730201805048185" at="26,51,27,72" concept="0" />
+      <node id="2420730201805048191" at="29,44,30,76" concept="0" />
+      <node id="2420730201805048205" at="32,31,33,395" concept="0" />
+      <node id="2420730201805048211" at="35,13,36,76" concept="0" />
+      <node id="2420730201805048203" at="32,0,35,0" concept="1" trace="run#()V" />
+      <node id="2420730201805048185" at="17,0,22,0" concept="1" trace="test_TwoStepDeleteChildWithAttributeChildSelected#()V" />
+      <node id="2420730201805048193" at="30,76,35,13" concept="0" />
+      <node id="2420730201805048189" at="29,0,38,0" concept="1" trace="run#()V" />
+      <node id="2420730201805048187" at="27,72,38,15" concept="0" />
+      <node id="2420730201805048185" at="25,0,40,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="2420730201805048204" at="32,31,33,395" />
+      <scope id="2420730201805048185" at="18,84,20,134" />
+      <scope id="2420730201805048203" at="32,0,35,0" />
+      <scope id="2420730201805048185" at="17,0,22,0" />
+      <scope id="2420730201805048190" at="29,44,36,76" />
+      <scope id="2420730201805048189" at="29,0,38,0" />
+      <scope id="2420730201805048185" at="26,51,38,15" />
+      <scope id="2420730201805048185" at="25,0,40,0" />
+      <unit id="2420730201805048203" at="31,101,35,11" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeChildSelected_Test$TestBody$1$1" />
+      <unit id="2420730201805048189" at="28,48,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeChildSelected_Test$TestBody$1" />
+      <unit id="2420730201805048185" at="23,0,41,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeChildSelected_Test$TestBody" />
+      <unit id="2420730201805048185" at="15,0,42,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeChildSelected_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2420730201805087069">
+    <file name="TwoStepDeleteChildWithAttributeAttributeSelected_Test.java">
+      <node id="2420730201805087069" at="14,88,15,110" concept="0" />
+      <node id="2420730201805087069" at="15,110,16,138" concept="0" />
+      <node id="2420730201805087069" at="22,51,23,72" concept="0" />
+      <node id="2420730201805087095" at="25,44,26,76" concept="0" />
+      <node id="2420730201805087073" at="25,0,28,0" concept="1" trace="run#()V" />
+      <node id="2420730201805087069" at="13,0,18,0" concept="1" trace="test_TwoStepDeleteChildWithAttributeAttributeSelected#()V" />
+      <node id="2420730201805087071" at="23,72,28,15" concept="0" />
+      <node id="2420730201805087069" at="21,0,30,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="2420730201805087074" at="25,44,26,76" />
+      <scope id="2420730201805087069" at="14,88,16,138" />
+      <scope id="2420730201805087073" at="25,0,28,0" />
+      <scope id="2420730201805087069" at="13,0,18,0" />
+      <scope id="2420730201805087069" at="22,51,28,15" />
+      <scope id="2420730201805087069" at="21,0,30,0" />
+      <unit id="2420730201805087073" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeAttributeSelected_Test$TestBody$1" />
+      <unit id="2420730201805087069" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeAttributeSelected_Test$TestBody" />
+      <unit id="2420730201805087069" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeAttributeSelected_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2890539347285262653">
     <file name="Subst_SingleChild_OnlyBooleanProperty_with_Another_Test.java">
       <node id="2890539347285262653" at="13,90,14,110" concept="0" />

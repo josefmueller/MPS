@@ -585,6 +585,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.SwingComponent_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.SwingComponentinFoldedCell_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.TestBlockList_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteAttribute_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCellCollectionChild_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCustomChildContainer_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCustomChild_Editor" />
@@ -2013,6 +2014,35 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteAttribute_Actions" file="TwoStepDeleteAttribute_Actions.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteAttribute_Editor" file="TwoStepDeleteAttribute_Editor.java">
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteAttribute_EditorBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteAttribute_EditorBuilder_a" file="TwoStepDeleteAttribute_EditorBuilder_a.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteAttribute_Actions" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.update.AttributeKind" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCellCollectionChild_Editor" file="TwoStepDeleteCellCollectionChild_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCellCollectionChild_EditorBuilder_a" />
