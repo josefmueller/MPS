@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
@@ -70,7 +71,8 @@ public class DeletionApproverImpl implements DeletionApprover, EditorMessageOwne
   public void approveForDeletion(@NotNull EditorCell cell) {
     myCellToBeDeleted = cell;
     myEditorComponent.getHighlightManager().clearForOwner(this);
-    myEditorComponent.getHighlightManager().mark(new DeletionApproverMessage(cell, Color.RED, "to be deleted", this));
+    Color color = StyleRegistry.getInstance().isDarkTheme() ? Color.GREEN : Color.RED;
+    myEditorComponent.getHighlightManager().mark(new DeletionApproverMessage(cell, color, "to be deleted", this));
     myEditorComponent.getHighlightManager().repaintAndRebuildEditorMessages();
   }
 
