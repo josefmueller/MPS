@@ -16,6 +16,7 @@ import jetbrains.mps.make.facet.ITarget;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.compiler.EclipseJavaCompiler;
 import jetbrains.mps.smodel.resources.FResource;
 import java.util.Map;
@@ -42,7 +43,11 @@ public class GeneratorUtil {
     if (makeService.openNewSession(makeSession)) {
       try {
         IScript script = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.debugger.java.evaluation.JavaDebugEvaluate"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
-        IResult result = makeService.make(makeSession, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(), script).get();
+        IResult result = makeService.make(makeSession, new ModelsToResources(Sequence.<SModel>singleton(model)).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
+          public Boolean invoke(SModel m) {
+            return true;
+          }
+        }).resources(), script).get();
         boolean successful = result.isSucessful();
         String source = null;
         final String desiredSourceUnitName = className + ".java";

@@ -1460,17 +1460,6 @@
       <property role="TrG5h" value="setError" />
       <node concept="3cqZAl" id="6ra8WUbIgUn" role="3clF45" />
       <node concept="3clFbS" id="6ra8WUbIgUp" role="3clF47">
-        <node concept="3clFbF" id="1iCRamGpeA5" role="3cqZAp">
-          <node concept="2OqwBi" id="1iCRamGpeA6" role="3clFbG">
-            <node concept="2YIFZM" id="1iCRamGpeA7" role="2Oq$k0">
-              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-            </node>
-            <node concept="liA8E" id="1iCRamGpeA8" role="2OqNvi">
-              <ref role="37wK5l" to="bd8o:~Application.assertIsDispatchThread():void" resolve="assertIsDispatchThread" />
-            </node>
-          </node>
-        </node>
         <node concept="1HWtB8" id="6abqMjjN91b" role="3cqZAp">
           <node concept="37vLTw" id="6abqMjjNbqn" role="1HWFw0">
             <ref role="3cqZAo" node="6ra8WUbIgT5" resolve="myStates" />
