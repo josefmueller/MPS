@@ -71,7 +71,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
   }
   private EditorCell createCollection_ls0i5e_a0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_ls0i5e_a0");
+    editorCell.setCellId("commentCollection");
     editorCell.setFoldable(true);
     editorCell.setFoldedCell(createConstant_ls0i5e_a0a_0());
     editorCell.addEditorCell(createConstant_ls0i5e_a0a());
