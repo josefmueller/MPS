@@ -10,7 +10,7 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
+import jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil;
 
 public class TryCatchStatement_DeleteBodyEndingBrace {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {

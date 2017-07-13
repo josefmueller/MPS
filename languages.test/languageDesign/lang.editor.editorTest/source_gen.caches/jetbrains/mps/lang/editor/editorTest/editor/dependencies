@@ -468,7 +468,7 @@
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.DeleteCellCollectionChild" file="DeleteCellCollectionChild.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
@@ -2038,7 +2038,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCustomChildContainer_CellWithCustomId_Delete" file="TwoStepDeleteCustomChildContainer_CellWithCustomId_Delete.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -2049,7 +2049,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCustomChildContainer_CellWithStringId_Delete" file="TwoStepDeleteCustomChildContainer_CellWithStringId_Delete.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -2060,7 +2060,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCustomChildContainer_Child_Delete" file="TwoStepDeleteCustomChildContainer_Child_Delete.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -2111,7 +2111,7 @@
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCustomChildContainer_Property_Delete" file="TwoStepDeleteCustomChildContainer_Property_Delete.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.CellIdManager" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.selection.SelectionUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -2122,7 +2122,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.TwoStepDeleteCustomChildContainer_UnexistingCell_Delete" file="TwoStepDeleteCustomChildContainer_UnexistingCell_Delete.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />

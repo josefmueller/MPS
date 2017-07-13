@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.baseLanguage.behavior.StaticMethodCall__BehaviorDescriptor;
-import jetbrains.mps.editor.runtime.highlight.DeletionApproverUtil;
+import jetbrains.mps.editor.runtime.deletionApprover.DeletionApproverUtil;
 
 public class StaticMethodCall_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
