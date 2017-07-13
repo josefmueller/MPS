@@ -17460,11 +17460,7 @@
             <property role="3MwjfP" value="mps" />
           </node>
         </node>
-        <node concept="3_J27D" id="6Iq8148f_ZJ" role="1xUO3G">
-          <node concept="3Mxwew" id="6Iq8148f_ZK" role="3MwsjC">
-            <property role="3MwjfP" value="mpshelp.jar" />
-          </node>
-        </node>
+        <node concept="NbPM2" id="4oyKb4mw2ku" role="1xUO3G" />
       </node>
       <node concept="55IIr" id="6Iq8148fFpE" role="2EteIj">
         <node concept="2Ry0Ak" id="6Iq8148fFpF" role="iGT6I">
