@@ -111,8 +111,9 @@
         <key>idea.home.path</key>
         <string>$APP_PACKAGE/Contents</string>
       </dict>
+      <!--Use Contents/bin/mps.vmoptions or ~/Library/Preferences/MPS2017.2/mps.vmoptions file to modify VMOptions-->
       <key>VMOptions</key>
-      <string>-XX:MaxJavaStackTraceDepth=-1 -XX:-OmitStackTraceInFastThrow -Djava.net.preferIPv4Stack=true -Dsun.io.useCanonCaches=false -XX:SoftRefLRUPolicyMSPerMB=50 -XX:+UseConcMarkSweepGC -Dintellij.config.imported.in.current.session=true -Dide.mac.message.dialogs.as.sheets=false -Dapple.awt.graphics.UseQuartz=true -Dfile.encoding=UTF-8 -client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -XX:+UseCompressedOops -Xbootclasspath/a:../lib/boot.jar</string>
+      <string>-XX:+UseCompressedOops -Xbootclasspath/a:../lib/boot.jar</string>
       <key>WorkingDirectory</key>
       <string>$APP_PACKAGE/Contents/bin</string>
     </dict>

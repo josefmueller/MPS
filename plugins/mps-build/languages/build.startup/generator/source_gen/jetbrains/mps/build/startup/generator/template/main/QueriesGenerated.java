@@ -51,8 +51,10 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetPropertyValue_710674657030226653(final PropertyMacroContext _context) {
     return (String) MpsStartupScript__BehaviorDescriptor.getIdeaPathSelector_idBsOHnja5fe.invoke(_context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_8979762117546982114(final PropertyMacroContext _context) {
-    return MpsStartupScript__BehaviorDescriptor.getDefaultVmoptions_id54lRqzvuHDj.invoke(_context.getNode(), ((boolean) true)) + " " + _context.getTemplateValue();
+  public static Object propertyMacro_GetPropertyValue_6571122805464523410(final PropertyMacroContext _context) {
+    String vmoptionsFileName = SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "." + MpsStartupScript__BehaviorDescriptor.getVmOptionsExtension_id54lRqzvvwXR.invoke(_context.getNode());
+    String appFolder = BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x30a61e6d55f6abc9L, "branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb230afL, "shortName")), null) + Integer.toString(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x30a61e6d55f6abc9L, "branding")), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e44L, "major"))) + "." + Integer.toString(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x30a61e6d55f6abc9L, "branding")), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e45L, "minor")));
+    return String.format(_context.getTemplateValue(), vmoptionsFileName, appFolder, vmoptionsFileName);
   }
   public static Object propertyMacro_GetPropertyValue_8979762117546982098(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + "/" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b343750bL, "startupFolder"));
@@ -247,7 +249,7 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("8979762117546981952", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "$APP_PACKAGE/Contents/classpathitem:"));
     pvqMethods.put("8979762117546982014", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "class"));
     pvqMethods.put("710674657030226652", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "MPS"));
-    pvqMethods.put("8979762117546982113", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "-XX:+UseCompressedOops -Xbootclasspath/a:../lib/boot.jar"));
+    pvqMethods.put("6571122805464523409", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9bec5eL, 0x16838b3fce9bec5fL, "text"), "Use Contents/bin/%s or ~/Library/Preferences/%s/%s file to modify VMOptions"));
     pvqMethods.put("8979762117546982097", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"), "$APP_PACKAGE/Contents"));
     pvqMethods.put("4881006832912335166", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d668a2L, 0x180805c7b1df77d9L, "text"), ":: JetBrains MPS startup script"));
     pvqMethods.put("4881006832912615439", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x180805c7b1d668a2L, 0x180805c7b1df77d9L, "text"), ":: Try (in order): MPS_JDK, idea%BITS%.exe.jdk, ..\\jre, JDK_HOME, JAVA_HOME."));
@@ -307,7 +309,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 2:
           return QueriesGenerated.propertyMacro_GetPropertyValue_710674657030226653(ctx);
         case 3:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_8979762117546982114(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_6571122805464523410(ctx);
         case 4:
           return QueriesGenerated.propertyMacro_GetPropertyValue_8979762117546982098(ctx);
         case 5:
