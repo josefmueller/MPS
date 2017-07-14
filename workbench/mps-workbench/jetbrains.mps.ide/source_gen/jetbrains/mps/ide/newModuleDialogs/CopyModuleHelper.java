@@ -30,9 +30,6 @@ import java.util.ArrayList;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
@@ -153,10 +150,6 @@ public final class CopyModuleHelper {
       targetModelRoots.add(targetModelRoot);
     }
 
-    // hack to synchronize the module descriptor with the new model roots 
-    for (SModel model : ListSequence.fromList(target.getModels())) {
-      target.unregisterModel((SModelBase) model);
-    }
     ModuleDescriptor targetDescriptor = target.getModuleDescriptor();
     if (targetDescriptor != null) {
       Collection<ModelRootDescriptor> modelRootDescriptors = targetDescriptor.getModelRootDescriptors();

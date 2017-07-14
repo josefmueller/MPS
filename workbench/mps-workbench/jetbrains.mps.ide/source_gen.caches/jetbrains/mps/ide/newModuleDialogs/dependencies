@@ -40,13 +40,11 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.CopyNotSupportedException" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.CopyableModelRoot" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
     <classNode dependClassName="jetbrains.mps.ide.newModuleDialogs.DescriptorCopyOrganizer" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
     <classNode dependClassName="jetbrains.mps.module.ModuleDeleteHelper" />
     <classNode dependClassName="jetbrains.mps.persistence.MementoImpl" />
@@ -64,7 +62,6 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />

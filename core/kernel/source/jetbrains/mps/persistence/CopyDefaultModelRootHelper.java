@@ -127,7 +127,7 @@ final class CopyDefaultModelRootHelper {
                                                                           mySourceModule,
                                                                           myTargetModule));
     ModelCreationOptions options = prmCalculator.calculate(newModelName);
-    SModel targetModel = myTargetModelRoot.createModel0(factory, targetDataSource, options);
+    SModel targetModel = myTargetModelRoot.createModel0(factory, targetDataSource, options, false);
     // TODO Since model factory can provide any model implementation
     // TODO model root doesn't know how to exactly copy the content of given model.
     // TODO So model content copying should be carried by model itself.

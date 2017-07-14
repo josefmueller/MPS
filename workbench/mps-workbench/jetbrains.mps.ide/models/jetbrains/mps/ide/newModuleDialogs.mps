@@ -285,14 +285,6 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
-      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
-        <child id="1153944400369" name="variable" index="2Gsz3X" />
-        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
-      </concept>
-      <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
-      <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
-        <reference id="1153944258490" name="variable" index="2Gs0qQ" />
-      </concept>
       <concept id="9042586985346099698" name="jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement" flags="nn" index="1_o_46">
         <child id="9042586985346099734" name="forEach" index="1_o_by" />
       </concept>
@@ -4079,44 +4071,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="7l6b$KwTEwQ" role="3cqZAp" />
-        <node concept="3SKdUt" id="6CFNGGphPiM" role="3cqZAp">
-          <node concept="3SKdUq" id="6CFNGGphPiL" role="3SKWNk">
-            <property role="3SKdUp" value="hack to synchronize the module descriptor with the new model roots" />
-          </node>
-        </node>
-        <node concept="2Gpval" id="7l6b$KwT$Cm" role="3cqZAp">
-          <node concept="2GrKxI" id="7l6b$KwT$Cs" role="2Gsz3X">
-            <property role="TrG5h" value="model" />
-          </node>
-          <node concept="2OqwBi" id="7l6b$KwT_2W" role="2GsD0m">
-            <node concept="37vLTw" id="7l6b$KwT$EO" role="2Oq$k0">
-              <ref role="3cqZAo" node="6CFNGGphPga" resolve="target" />
-            </node>
-            <node concept="liA8E" id="7l6b$KwT_ol" role="2OqNvi">
-              <ref role="37wK5l" to="31cb:~SModuleBase.getModels():java.util.List" resolve="getModels" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="7l6b$KwT$CC" role="2LFqv$">
-            <node concept="3clFbF" id="7l6b$KwTBe8" role="3cqZAp">
-              <node concept="2OqwBi" id="7l6b$KwTBkH" role="3clFbG">
-                <node concept="37vLTw" id="7l6b$KwTBe7" role="2Oq$k0">
-                  <ref role="3cqZAo" node="6CFNGGphPga" resolve="target" />
-                </node>
-                <node concept="liA8E" id="7l6b$KwTBu_" role="2OqNvi">
-                  <ref role="37wK5l" to="31cb:~SModuleBase.unregisterModel(jetbrains.mps.extapi.model.SModelBase):void" resolve="unregisterModel" />
-                  <node concept="10QFUN" id="7l6b$KwTBAZ" role="37wK5m">
-                    <node concept="3uibUv" id="7l6b$KwTEwN" role="10QFUM">
-                      <ref role="3uigEE" to="g3l6:~SModelBase" resolve="SModelBase" />
-                    </node>
-                    <node concept="2GrUjf" id="7l6b$KwTBwt" role="10QFUP">
-                      <ref role="2Gs0qQ" node="7l6b$KwT$Cs" resolve="model" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="6CFNGGphPhi" role="3cqZAp">
           <node concept="3cpWsn" id="6CFNGGphPhh" role="3cpWs9">
             <property role="3TUv4t" value="false" />

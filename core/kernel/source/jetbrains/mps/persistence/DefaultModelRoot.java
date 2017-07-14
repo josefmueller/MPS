@@ -267,16 +267,19 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     if (!new ModelFactoryFacade(modelFactory).canCreate(dataSource, parameters)) {
       throw new FactoryCannotCreateModelException(modelFactory, dataSource);
     }
-    return createModel0(modelFactory, dataSource, parameters);
+    return createModel0(modelFactory, dataSource, parameters,true);
   }
 
   @NotNull
   /*package*/ SModel createModel0(@NotNull ModelFactory modelFactory,
                                   @NotNull DataSource dataSource,
-                                  @NotNull ModelCreationOptions parameters) throws ModelCannotBeCreatedException {
+                                  @NotNull ModelCreationOptions parameters,
+                                  boolean register) throws ModelCannotBeCreatedException {
     try {
       SModel model = new ModelFactoryFacade(modelFactory).create(dataSource, parameters);
-      registerModel(model);
+      if(register){
+        registerModel(model);
+      }
       return model;
     } catch (IOException e) {
       throw new ModelCannotBeCreatedException(e);
