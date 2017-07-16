@@ -17,11 +17,31 @@ package jetbrains.mps.migration.idea;
 
 import com.intellij.ide.errorTreeView.NewErrorTreeViewPanel;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.MultilineTreeCellRenderer;
 import org.jetbrains.annotations.NotNull;
+
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import java.awt.BorderLayout;
+import java.awt.Container;
+
+import static com.intellij.util.ui.UIUtil.getParentOfType;
 
 public class MigrationErrorView extends NewErrorTreeViewPanel {
   public MigrationErrorView(@NotNull Project project) {
     super(project, null);
-    myTree.setCellRenderer(new MessageTreeRenderer());
+
+    //the code to install cell renderer was copied from platform's GradleBuildTreeViewPanel
+    //the code is quite complex because superclass uses the same MultilineTreeCellRenderer.installRenderer() method
+    JScrollPane scrollPane = getParentOfType(JScrollPane.class, myTree);
+    assert scrollPane != null;
+
+    myTree.getParent().remove(myTree);
+    Container parent = scrollPane.getParent();
+    assert parent instanceof JPanel;
+    parent.remove(scrollPane);
+
+    scrollPane = MultilineTreeCellRenderer.installRenderer(myTree, new MessageTreeRenderer());
+    parent.add(scrollPane, BorderLayout.CENTER);
   }
 }
