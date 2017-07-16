@@ -17,6 +17,15 @@ package jetbrains.mps.migration.idea;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.wm.ToolWindowId;
+import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.pom.Navigatable;
+import com.intellij.ui.content.Content;
+import com.intellij.ui.content.ContentFactory;
+import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.MessageView;
+import com.intellij.util.ui.MessageCategory;
+import jetbrains.mps.idea.core.usages.NodeNavigatable;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
 import org.jetbrains.annotations.NotNull;
@@ -33,7 +42,30 @@ public class PluginMigrationProblemHandler extends AbstractProjectComponent impl
 
   @Override
   public void showProblems(Collection<Problem> problems) {
-    throw new UnsupportedOperationException("Showing errors in plugin not supported yet");
+    MigrationErrorView treeView = new MigrationErrorView(myProject);
+    Content content = ContentFactory.SERVICE.getInstance().createContent(treeView.getComponent(), "Migration Problems", true);
+
+    MessageView messageView = getMessageView();
+    ContentManager contentManager = messageView.getContentManager();
+    contentManager.addContent(content);
+
+    contentManager.setSelectedContent(content);
+
+    for (Problem p : problems) {
+      Navigatable nav = new MyNonNavigatable();
+      if (p.getReason() instanceof SNode) {
+        nav = new NodeNavigatable(((SNode) p.getReason()).getReference(), myProject) {
+          @Override
+          public boolean isValid() {
+            //todo ?
+            return true;
+          }
+        };
+      }
+      treeView.addMessage(MessageCategory.ERROR, new String[]{p.getMessage()}, p.getCategory(), nav, null, null, null);
+    }
+
+    ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW).activate(null);
   }
 
   @Override
@@ -45,5 +77,27 @@ public class PluginMigrationProblemHandler extends AbstractProjectComponent impl
   @Override
   public String getComponentName() {
     return getClass().getSimpleName();
+  }
+
+  @NotNull
+  private MessageView getMessageView() {
+    return MessageView.SERVICE.getInstance(myProject);
+  }
+
+  private static class MyNonNavigatable implements Navigatable {
+    @Override
+    public void navigate(boolean b) {
+
+    }
+
+    @Override
+    public boolean canNavigate() {
+      return false;
+    }
+
+    @Override
+    public boolean canNavigateToSource() {
+      return false;
+    }
   }
 }
