@@ -277,7 +277,7 @@
       </concept>
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
-      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogToFileStatement" flags="ng" index="RRSsy">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
         <property id="2034914114981261751" name="severity" index="RRSoG" />
         <child id="2034914114981261755" name="throwable" index="RRSow" />
         <child id="2034914114981261753" name="message" index="RRSoy" />
@@ -615,6 +615,16 @@
             <ref role="37wK5l" to="dxuu:~JTree.setShowsRootHandles(boolean):void" resolve="setShowsRootHandles" />
             <node concept="3clFbT" id="3SnNvqCbxgB" role="37wK5m">
               <property role="3clFbU" value="true" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="59calaRM9$9" role="3cqZAp">
+          <node concept="37vLTI" id="59calaRMaLq" role="3clFbG">
+            <node concept="3clFbT" id="59calaRMbUL" role="37vLTx">
+              <property role="3clFbU" value="false" />
+            </node>
+            <node concept="37vLTw" id="59calaRM9$7" role="37vLTJ">
+              <ref role="3cqZAo" to="7e8u:~MPSTree.myWarnModelAccess" resolve="myWarnModelAccess" />
             </node>
           </node>
         </node>

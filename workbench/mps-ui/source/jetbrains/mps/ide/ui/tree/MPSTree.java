@@ -26,7 +26,6 @@ import com.intellij.util.ui.tree.WideSelectionTreeUI;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
 import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.ide.ModelReadAction;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelReadRunnable;
@@ -498,8 +497,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         rebuildAction.run();
       } else {
         if (myWarnModelAccess) {
-          LOG.warn("MPSTree is generic class and shall not care about model read. Override #runRebuildAction and wrap Runnable with model read, instead",
-                    new Throwable());
+          String msg = "MPSTree is generic class and shall not care about model read. Override %s#runRebuildAction and wrap Runnable with model read, instead";
+          LOG.warn(String.format(msg, getClass().getName()), new Throwable());
           ModelAccess.instance().runReadAction(rebuildAction);
         } else {
           rebuildAction.run();
