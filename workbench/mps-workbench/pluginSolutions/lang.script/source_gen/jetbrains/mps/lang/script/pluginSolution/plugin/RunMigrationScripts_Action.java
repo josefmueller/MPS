@@ -16,9 +16,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -75,19 +75,18 @@ public class RunMigrationScripts_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<SearchScope> scope = new Wrappers._T<SearchScope>();
-    if (RunMigrationScripts_Action.this.global) {
-      scope.value = AbstractMigrationScriptHelper.createMigrationScope(((List<SModule>) MapSequence.fromMap(_params).get("modules")), ((List<SModel>) MapSequence.fromMap(_params).get("models")));
-    } else {
-      scope.value = AbstractMigrationScriptHelper.createMigrationScope(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-    }
-    if (!(scope.value.getModels().iterator().hasNext())) {
-      return;
-    }
-
-
     final Wrappers._T<List<SNodeReference>> allScripts = new Wrappers._T<List<SNodeReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        if (RunMigrationScripts_Action.this.global) {
+          scope.value = AbstractMigrationScriptHelper.createMigrationScope(((List<SModule>) MapSequence.fromMap(_params).get("modules")), ((List<SModel>) MapSequence.fromMap(_params).get("models")));
+        } else {
+          scope.value = AbstractMigrationScriptHelper.createMigrationScope(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+        }
+        if (!(scope.value.getModels().iterator().hasNext())) {
+          return;
+        }
+
         ScriptsMenuBuilder menuBuilder = new ScriptsMenuBuilder(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), RunMigrationScripts_Action.this.global);
         allScripts.value = ListSequence.fromList(menuBuilder.getAllScripts()).sort(new ISelector<SNode, String>() {
           public String select(SNode it) {
