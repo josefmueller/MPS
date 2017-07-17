@@ -5654,19 +5654,37 @@
                               <node concept="3clFbH" id="2wbhCYFMfUD" role="3cqZAp" />
                               <node concept="3clFbF" id="2wbhCYFLPvx" role="3cqZAp">
                                 <node concept="2OqwBi" id="2wbhCYFLQYw" role="3clFbG">
-                                  <node concept="2OqwBi" id="2wbhCYFLPXz" role="2Oq$k0">
-                                    <node concept="37vLTw" id="2wbhCYFLPvv" role="2Oq$k0">
-                                      <ref role="3cqZAo" to="xygl:~Task.myProject" resolve="myProject" />
-                                    </node>
-                                    <node concept="liA8E" id="2wbhCYFLQpu" role="2OqNvi">
-                                      <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
-                                      <node concept="3VsKOn" id="2wbhCYFLQOG" role="37wK5m">
-                                        <ref role="3VsUkX" to="bim2:xB9FQhi9bJ" resolve="MigrationChecker" />
+                                  <node concept="2ShNRf" id="2AFMQSxzS4M" role="2Oq$k0">
+                                    <node concept="1pGfFk" id="2AFMQSx$6ku" role="2ShVmc">
+                                      <ref role="37wK5l" to="bim2:2wbhCYFF5cu" resolve="MigrationCheckerImpl" />
+                                      <node concept="2OqwBi" id="2AFMQSx$71a" role="37wK5m">
+                                        <node concept="2WthIp" id="2AFMQSx$71d" role="2Oq$k0">
+                                          <ref role="32nkFo" node="5$zfhXzhIiu" resolve="RunPreUpdateCheck" />
+                                        </node>
+                                        <node concept="1DTwFV" id="2AFMQSx$d3H" role="2OqNvi">
+                                          <ref role="2WH_rO" node="5$zfhXzr51q" resolve="mpsProject" />
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="2AFMQSx$902" role="37wK5m">
+                                        <node concept="2OqwBi" id="2AFMQSx$7SL" role="2Oq$k0">
+                                          <node concept="2WthIp" id="2AFMQSx$7SO" role="2Oq$k0">
+                                            <ref role="32nkFo" node="5$zfhXzhIiu" resolve="RunPreUpdateCheck" />
+                                          </node>
+                                          <node concept="1DTwFV" id="2AFMQSx$7SQ" role="2OqNvi">
+                                            <ref role="2WH_rO" node="5$zfhXzr51s" resolve="project" />
+                                          </node>
+                                        </node>
+                                        <node concept="liA8E" id="2AFMQSx$a5v" role="2OqNvi">
+                                          <ref role="37wK5l" to="1m72:~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolve="getComponent" />
+                                          <node concept="3VsKOn" id="2AFMQSx$bLb" role="37wK5m">
+                                            <ref role="3VsUkX" to="bim2:5SsFeroaabl" resolve="MigrationRegistry" />
+                                          </node>
+                                        </node>
                                       </node>
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="2wbhCYFLRps" role="2OqNvi">
-                                    <ref role="37wK5l" to="bim2:xB9FQhiv6a" resolve="findNotMigrated" />
+                                    <ref role="37wK5l" to="bim2:2wbhCYFDLNm" resolve="findNotMigrated" />
                                     <node concept="2ShNRf" id="2wbhCYFLR_T" role="37wK5m">
                                       <node concept="1pGfFk" id="2wbhCYFLT2Z" role="2ShVmc">
                                         <ref role="37wK5l" to="mk8z:~ProgressMonitorAdapter.&lt;init&gt;(com.intellij.openapi.progress.ProgressIndicator)" resolve="ProgressMonitorAdapter" />
