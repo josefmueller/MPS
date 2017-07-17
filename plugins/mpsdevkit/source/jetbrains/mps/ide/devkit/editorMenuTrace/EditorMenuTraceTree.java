@@ -46,6 +46,11 @@ public class EditorMenuTraceTree extends MPSTreeWithAction {
   }
 
   @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
+  }
+
+  @Override
   protected MPSTreeNode rebuild() {
     EditorMenuTraceInfo current = myRoot;
     return new EditorMenuTraceNode(current, new PathChildMenuTraceNodeInitializer(myPathFromRoot, myProject), myProject);
