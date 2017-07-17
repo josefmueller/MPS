@@ -2013,6 +2013,9 @@
       <node concept="nCB5N" id="6ZstPQmZVfF" role="nCB5Z">
         <ref role="nCB5Y" to="ffeo:1H905DlDRAI" resolve="mps-openapi" />
       </node>
+      <node concept="nCB5N" id="48WE3Hcnr7Q" role="nCB5Z">
+        <ref role="nCB5Y" node="16Vg0jOdbWA" resolve="mps-plugin-core" />
+      </node>
     </node>
     <node concept="13uUGR" id="48p7sjLwe8y" role="1l3spa">
       <ref role="13uUGO" to="ffeo:6eCuTcwOnJO" resolve="IDEA" />
