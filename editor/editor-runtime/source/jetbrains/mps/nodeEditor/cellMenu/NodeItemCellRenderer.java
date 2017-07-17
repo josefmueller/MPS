@@ -61,9 +61,6 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer<Substitute
   private Map<SNode, Icon> myConceptIconMap = new HashMap<SNode, Icon>();
   private final NodeSubstituteChooser mySubstituteChooser;
 
-  private int myMaxWidth = 0;
-  private int myMaxHeight = 0;
-
   NodeItemCellRenderer(@NotNull NodeSubstituteChooser substituteChooser) {
     mySubstituteChooser = substituteChooser;
     setLayout(new BorderLayout(HORIZONTAL_GAP / 2, 0));
@@ -145,14 +142,10 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer<Substitute
       myRight.setForeground(list.getForeground());
     }
 
+    validate();
     if (!isPrecalculating) {
-      validate();
       Dimension preferredSize = getPreferredSize();
-      if (myMaxHeight < preferredSize.height || myMaxWidth < preferredSize.width) {
-        myMaxWidth = Math.max(myMaxWidth, preferredSize.width);
-        myMaxHeight = Math.max(myMaxHeight, preferredSize.height);
-        mySubstituteChooser.getUi().updateListSize(myMaxWidth, myMaxHeight);
-      }
+      mySubstituteChooser.getUi().updateListSize(preferredSize.width, preferredSize.height);
     }
   }
 
