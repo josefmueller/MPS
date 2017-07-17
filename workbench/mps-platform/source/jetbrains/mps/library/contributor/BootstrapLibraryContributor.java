@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,9 @@ import java.util.Set;
 
 /**
  * Contributes bootstrap modules -- MPS core
+ * FIXME it's a regular loading of an MPS distribution, has nothing to do with 'bootstrapping' of MPS itself.
+ *       Perhaps, the name is due to PathManager.getBootstrapPaths() which gives access to deployed modules under "lib/".
+ *       These jars are likely (need to check) loaded by IDEA platform and here we just need to expose them as MPS modules.
  */
 public final class BootstrapLibraryContributor implements LibraryContributor {
   private final FileSystem myFileSystem;
