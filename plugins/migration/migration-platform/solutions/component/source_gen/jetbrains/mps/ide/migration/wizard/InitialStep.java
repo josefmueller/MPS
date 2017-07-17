@@ -78,16 +78,23 @@ public class InitialStep extends BaseStep {
     mainPanel.add(infoPanel);
 
     List<ProjectMigrationWithOptions.Option> options = mySession.getOptions().optionsList();
+
     if (ListSequence.fromList(options).isNotEmpty()) {
       JPanel settingsPanel = new JPanel();
-      settingsPanel.setLayout(new BoxLayout(settingsPanel, BoxLayout.Y_AXIS));
+
+      settingsPanel.setLayout(new BoxLayout(settingsPanel, BoxLayout.X_AXIS));
       settingsPanel.setBorder(IdeBorderFactory.createTitledBorder("Options", true));
+
+      JPanel internalPanel = new JPanel();
+      internalPanel.setLayout(new BoxLayout(internalPanel, BoxLayout.Y_AXIS));
 
       for (ProjectMigrationWithOptions.Option option : ListSequence.fromList(options)) {
         JComponent c = option.createComponent();
         myComponents.put(option, c);
-        settingsPanel.add(c);
+        internalPanel.add(c);
       }
+      settingsPanel.add(internalPanel);
+      settingsPanel.add(Box.createHorizontalGlue());
       mainPanel.add(settingsPanel);
     }
   }
