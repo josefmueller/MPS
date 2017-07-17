@@ -17,11 +17,13 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -79,11 +81,33 @@ public class CheckpointState {
     Object outputNodes = values.get(input.getNodeId());
     Collection<SNodeId> rv = null;
     if (outputNodes instanceof Collection) {
-      rv = (Collection<SNodeId>) outputNodes;
+      return resolve((Collection<SNodeId>) outputNodes);
     } else if (outputNodes instanceof SNodeId) {
-      rv = Collections.singleton((SNodeId) outputNodes);
+      return resolve(Collections.singleton((SNodeId) outputNodes));
+    } else {
+      // HACK
+      final SNodeReference inputNodeRef = input.getReference();
+      final ArrayList<SNode> fuzzyOutputNodes = new ArrayList<>(4);
+      for (Object v : values.values()) {
+        // Just in case if there's a node among labeled that says it originates from the node we got as input, treat it as actual output.
+        // With that, we address scenario when a node is copied between checkpoints until the one it's transformed in, and there's external reference
+        // to the node, which needs to restore last CP result using initial target (here, == SNode input). We do not update this reference when its owing
+        // node goes through its own sequence of CPs, the node is copied and the reference points to original input node (not updated to point to respective
+        // CP models as two GPs (for referenced and referencing models) not necessarily match (they can synchronize with certain CPs only).
+        // FIXME To handle case when input comes from some other CP model, not the one recorded as an input it this particular transition
+        // FIXME (i.e. model with target node records CP1->CP2->CP3, while referencing node goes through CP1->CP3, and we synch at CP3 with input from CP1)
+        // FIXME it's not sufficient to look at TracingUtil.getInput (gives @0 identities). I need to use smth like TransitionTrace.getOrigin(), chained,
+        // FIXME to walk CP3->CP2->CP1. However, there's no mechanism to record such chain, and there's SNodeId only now in TransitionTrace, so I gave up.
+        // not enough
+        if (v instanceof SNodeId) {
+          SNode outputNode = myCheckpointModel.getNode(((SNodeId) v));
+          if (outputNode != null && TracingUtil.getInput(outputNode) != null && inputNodeRef.equals(TracingUtil.getInput(outputNode))) {
+            fuzzyOutputNodes.add(outputNode);
+          }
+        }
+      }
+      return fuzzyOutputNodes;
     }
-    return rv == null ? Collections.<SNode>emptyList() : resolve(rv);
   }
 
   @NotNull
