@@ -1698,30 +1698,13 @@
             </node>
             <node concept="liA8E" id="48WE3HczBUF" role="2OqNvi">
               <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
-              <node concept="2YIFZM" id="48WE3HczCsI" role="37wK5m">
-                <ref role="37wK5l" to="dxuu:~BorderFactory.createEmptyBorder():javax.swing.border.Border" resolve="createEmptyBorder" />
-                <ref role="1Pybhc" to="dxuu:~BorderFactory" resolve="BorderFactory" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="5vn5x3cSW1u" role="3cqZAp">
-          <node concept="2OqwBi" id="5vn5x3cSZJ3" role="3clFbG">
-            <node concept="37vLTw" id="5vn5x3cSW1s" role="2Oq$k0">
-              <ref role="3cqZAo" node="59PMlsVO2Zi" resolve="mainPanel" />
-            </node>
-            <node concept="liA8E" id="5vn5x3cT1by" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component):java.awt.Component" resolve="add" />
-              <node concept="1rXfSq" id="6dkZ8D0Fzbe" role="37wK5m">
-                <ref role="37wK5l" node="6dkZ8D0Fuoz" resolve="createInfoPanel" />
-                <node concept="3cpWs3" id="6dkZ8D0FuKa" role="37wK5m">
-                  <node concept="Xl_RD" id="6dkZ8D0FuKb" role="3uHU7B">
-                    <property role="Xl_RC" value="&lt;html&gt;This project should be migrated.&lt;br&gt;&lt;br&gt;" />
-                  </node>
-                  <node concept="Xl_RD" id="6dkZ8D0FuKc" role="3uHU7w">
-                    <property role="Xl_RC" value="Migrations to be applied:&lt;br&gt;&lt;/html&gt;" />
-                  </node>
+              <node concept="2YIFZM" id="2dJ1bDt9ue6" role="37wK5m">
+                <ref role="37wK5l" to="lzb2:~IdeBorderFactory.createTitledBorder(java.lang.String,boolean):com.intellij.ui.border.IdeaTitledBorder" resolve="createTitledBorder" />
+                <ref role="1Pybhc" to="lzb2:~IdeBorderFactory" resolve="IdeBorderFactory" />
+                <node concept="Xl_RD" id="2dJ1bDt9ue7" role="37wK5m">
+                  <property role="Xl_RC" value="Migrations to be applied" />
                 </node>
+                <node concept="3clFbT" id="2dJ1bDt9ue8" role="37wK5m" />
               </node>
             </node>
           </node>
@@ -1903,9 +1886,7 @@
                     <node concept="Xl_RD" id="2DL82jGzGL6" role="37wK5m">
                       <property role="Xl_RC" value="Options" />
                     </node>
-                    <node concept="3clFbT" id="2DL82jGzGL7" role="37wK5m">
-                      <property role="3clFbU" value="true" />
-                    </node>
+                    <node concept="3clFbT" id="2DL82jGzGL7" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -3949,110 +3930,6 @@
         <property role="TrG5h" value="mainPanel" />
         <node concept="3uibUv" id="59PMlsVNV3j" role="1tU5fm">
           <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
-        </node>
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6dkZ8D0Fte_" role="jymVt" />
-    <node concept="3clFb_" id="6dkZ8D0Fuoz" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="createInfoPanel" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="6dkZ8D0FuoA" role="3clF47">
-        <node concept="3cpWs8" id="6dkZ8D0FuJR" role="3cqZAp">
-          <node concept="3cpWsn" id="6dkZ8D0FuJS" role="3cpWs9">
-            <property role="TrG5h" value="labelPanel" />
-            <node concept="3uibUv" id="6dkZ8D0FuJT" role="1tU5fm">
-              <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
-            </node>
-            <node concept="2ShNRf" id="6dkZ8D0FuJU" role="33vP2m">
-              <node concept="1pGfFk" id="6dkZ8D0FuJV" role="2ShVmc">
-                <ref role="37wK5l" to="dxuu:~JPanel.&lt;init&gt;()" resolve="JPanel" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6dkZ8D0FuJW" role="3cqZAp">
-          <node concept="2OqwBi" id="6dkZ8D0FuJX" role="3clFbG">
-            <node concept="37vLTw" id="6dkZ8D0FuJY" role="2Oq$k0">
-              <ref role="3cqZAo" node="6dkZ8D0FuJS" resolve="labelPanel" />
-            </node>
-            <node concept="liA8E" id="6dkZ8D0FuJZ" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.setLayout(java.awt.LayoutManager):void" resolve="setLayout" />
-              <node concept="2ShNRf" id="6dkZ8D0FuK0" role="37wK5m">
-                <node concept="1pGfFk" id="6dkZ8D0FuK1" role="2ShVmc">
-                  <ref role="37wK5l" to="dxuu:~BoxLayout.&lt;init&gt;(java.awt.Container,int)" resolve="BoxLayout" />
-                  <node concept="37vLTw" id="6dkZ8D0FuK2" role="37wK5m">
-                    <ref role="3cqZAo" node="6dkZ8D0FuJS" resolve="labelPanel" />
-                  </node>
-                  <node concept="10M0yZ" id="6dkZ8D0FuK3" role="37wK5m">
-                    <ref role="3cqZAo" to="dxuu:~BoxLayout.X_AXIS" resolve="X_AXIS" />
-                    <ref role="1PxDUh" to="dxuu:~BoxLayout" resolve="BoxLayout" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6dkZ8D0FuK5" role="3cqZAp">
-          <node concept="3cpWsn" id="6dkZ8D0FuK6" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="msg" />
-            <node concept="3uibUv" id="6dkZ8D0FuK7" role="1tU5fm">
-              <ref role="3uigEE" to="qqrq:~JBLabel" resolve="JBLabel" />
-            </node>
-            <node concept="2ShNRf" id="6dkZ8D0FuK8" role="33vP2m">
-              <node concept="1pGfFk" id="6dkZ8D0FuK9" role="2ShVmc">
-                <ref role="37wK5l" to="qqrq:~JBLabel.&lt;init&gt;(java.lang.String)" resolve="JBLabel" />
-                <node concept="37vLTw" id="6dkZ8D0Fw51" role="37wK5m">
-                  <ref role="3cqZAo" node="6dkZ8D0FvvA" resolve="text" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6dkZ8D0FuKd" role="3cqZAp">
-          <node concept="2OqwBi" id="6dkZ8D0FuKe" role="3clFbG">
-            <node concept="37vLTw" id="6dkZ8D0FuKf" role="2Oq$k0">
-              <ref role="3cqZAo" node="6dkZ8D0FuJS" resolve="labelPanel" />
-            </node>
-            <node concept="liA8E" id="6dkZ8D0FuKg" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component):java.awt.Component" resolve="add" />
-              <node concept="37vLTw" id="6dkZ8D0FuKh" role="37wK5m">
-                <ref role="3cqZAo" node="6dkZ8D0FuK6" resolve="msg" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6dkZ8D0FuKi" role="3cqZAp">
-          <node concept="2OqwBi" id="6dkZ8D0FuKj" role="3clFbG">
-            <node concept="37vLTw" id="6dkZ8D0FuKk" role="2Oq$k0">
-              <ref role="3cqZAo" node="6dkZ8D0FuJS" resolve="labelPanel" />
-            </node>
-            <node concept="liA8E" id="6dkZ8D0FuKl" role="2OqNvi">
-              <ref role="37wK5l" to="z60i:~Container.add(java.awt.Component):java.awt.Component" resolve="add" />
-              <node concept="2YIFZM" id="6dkZ8D0FuKm" role="37wK5m">
-                <ref role="37wK5l" to="dxuu:~Box.createHorizontalGlue():java.awt.Component" resolve="createHorizontalGlue" />
-                <ref role="1Pybhc" to="dxuu:~Box" resolve="Box" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="6dkZ8D0FwN4" role="3cqZAp">
-          <node concept="37vLTw" id="6dkZ8D0FxgL" role="3cqZAk">
-            <ref role="3cqZAo" node="6dkZ8D0FuJS" resolve="labelPanel" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tmbuc" id="6dkZ8D0FtCj" role="1B3o_S" />
-      <node concept="3uibUv" id="6dkZ8D0Fuio" role="3clF45">
-        <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
-      </node>
-      <node concept="37vLTG" id="6dkZ8D0FvvA" role="3clF46">
-        <property role="TrG5h" value="text" />
-        <node concept="3uibUv" id="6dkZ8D0Fvv_" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
         </node>
       </node>
     </node>

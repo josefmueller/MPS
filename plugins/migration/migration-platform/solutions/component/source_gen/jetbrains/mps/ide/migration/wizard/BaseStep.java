@@ -8,9 +8,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ide.wizard.CommitStepException;
-import javax.swing.BoxLayout;
-import com.intellij.ui.components.JBLabel;
-import javax.swing.Box;
 
 public abstract class BaseStep extends AbstractWizardStepEx {
   private JComponent myComponent;
@@ -55,13 +52,4 @@ public abstract class BaseStep extends AbstractWizardStepEx {
     return null;
   }
   protected abstract void doCreateComponent(JComponent mainPanel);
-
-  protected JComponent createInfoPanel(String text) {
-    JPanel labelPanel = new JPanel();
-    labelPanel.setLayout(new BoxLayout(labelPanel, BoxLayout.X_AXIS));
-    JBLabel msg = new JBLabel(text);
-    labelPanel.add(msg);
-    labelPanel.add(Box.createHorizontalGlue());
-    return labelPanel;
-  }
 }
