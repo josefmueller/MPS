@@ -975,7 +975,7 @@
                                       </node>
                                     </node>
                                     <node concept="Xl_RD" id="6Z8qT6OVgFu" role="3uHU7w">
-                                      <property role="Xl_RC" value=" does not provide migration for version " />
+                                      <property role="Xl_RC" value=" does not provide migration from version " />
                                     </node>
                                   </node>
                                   <node concept="2OqwBi" id="6Z8qT6OVjQM" role="3uHU7w">

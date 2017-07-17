@@ -27,7 +27,7 @@ public abstract class MissingMigrationProblem extends Problem<SModule> {
       final Wrappers._T<String> msg = new Wrappers._T<String>();
       getReason().getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          msg.value = "The language " + myScriptReference.getLanguage().getQualifiedName() + " does not provide migration for version " + myScriptReference.getFromVersion() + ". " + "Some modules use this language with version " + myUsedVersion + " while current version is " + myScriptReference.getLanguage().getLanguageVersion() + ".";
+          msg.value = "The language " + myScriptReference.getLanguage().getQualifiedName() + " does not provide migration from version " + myScriptReference.getFromVersion() + ". " + "Some modules use this language with version " + myUsedVersion + " while current version is " + myScriptReference.getLanguage().getLanguageVersion() + ".";
         }
       });
       return msg.value;
