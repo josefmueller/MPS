@@ -6,7 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.editorTest.EditorTestUtil;
+import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
 public class QueryParameterList_Delete5_Test extends BaseTransformationTest {
@@ -21,7 +21,7 @@ public class QueryParameterList_Delete5_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("8654290870483597647", "8654290870483597745");
-      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+      EditorUtil.runWithTwoStepDeletion(new EditorUtil.EditorTestRunnable() {
         public void run() throws Exception {
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
         }

@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
 public class ForStatementAdditionalVariableAdditionAndRemoval_Test extends BaseTransformationTest {
@@ -20,7 +21,7 @@ public class ForStatementAdditionalVariableAdditionAndRemoval_Test extends BaseT
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3461663384198595469", "3461663384198595477");
-      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+      EditorUtil.runWithTwoStepDeletion(new EditorUtil.EditorTestRunnable() {
         public void run() throws Exception {
           typeString(",b=2");
           invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");

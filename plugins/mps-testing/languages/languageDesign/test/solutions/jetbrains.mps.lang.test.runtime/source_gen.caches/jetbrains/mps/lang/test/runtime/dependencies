@@ -190,9 +190,11 @@
     <classNode extendsClassName="java.lang.Runnable" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.EditorUtil" file="EditorUtil.java">
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.IntentionTester" file="IntentionTester.java">

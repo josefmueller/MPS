@@ -11030,6 +11030,105 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="14TMHtHs1EN" role="jymVt">
+      <property role="TrG5h" value="runWithTwoStepDeletion" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="14TMHtHs1El" role="3clF47">
+        <node concept="3cpWs8" id="14TMHtHs1TP" role="3cqZAp">
+          <node concept="3cpWsn" id="14TMHtHs1TQ" role="3cpWs9">
+            <property role="TrG5h" value="twoStepDeletionSettings" />
+            <node concept="10P_77" id="14TMHtHs1TR" role="1tU5fm" />
+            <node concept="2OqwBi" id="14TMHtHs1TS" role="33vP2m">
+              <node concept="2YIFZM" id="14TMHtHs1TT" role="2Oq$k0">
+                <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
+                <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
+              </node>
+              <node concept="liA8E" id="14TMHtHs1TU" role="2OqNvi">
+                <ref role="37wK5l" to="exr9:~EditorSettings.isUseTwoStepDeletion():boolean" resolve="isUseTwoStepDeletion" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="14TMHtHs1TV" role="3cqZAp">
+          <node concept="2OqwBi" id="14TMHtHs1TW" role="3clFbG">
+            <node concept="2YIFZM" id="14TMHtHs1TX" role="2Oq$k0">
+              <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
+              <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
+            </node>
+            <node concept="liA8E" id="14TMHtHs1TY" role="2OqNvi">
+              <ref role="37wK5l" to="exr9:~EditorSettings.setUseTwoStepDeletion(boolean):void" resolve="setUseTwoStepDeletion" />
+              <node concept="37vLTw" id="14TMHtHRgmN" role="37wK5m">
+                <ref role="3cqZAo" node="14TMHtHs2Gk" resolve="twoStepDeletion" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2GUZhq" id="14TMHtHs1U0" role="3cqZAp">
+          <node concept="3clFbS" id="14TMHtHs1U1" role="2GV8ay">
+            <node concept="3clFbF" id="14TMHtHs2dl" role="3cqZAp">
+              <node concept="2OqwBi" id="14TMHtHs2iQ" role="3clFbG">
+                <node concept="37vLTw" id="14TMHtHs2di" role="2Oq$k0">
+                  <ref role="3cqZAo" node="14TMHtHs1Om" resolve="runnable" />
+                </node>
+                <node concept="liA8E" id="14TMHtHs2pN" role="2OqNvi">
+                  <ref role="37wK5l" node="14TMHtHucDr" resolve="run" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="14TMHtHs1U4" role="2GVbov">
+            <node concept="3clFbF" id="14TMHtHs1U5" role="3cqZAp">
+              <node concept="2OqwBi" id="14TMHtHs1U6" role="3clFbG">
+                <node concept="2YIFZM" id="14TMHtHs1U7" role="2Oq$k0">
+                  <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
+                  <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
+                </node>
+                <node concept="liA8E" id="14TMHtHs1U8" role="2OqNvi">
+                  <ref role="37wK5l" to="exr9:~EditorSettings.setUseTwoStepDeletion(boolean):void" resolve="setUseTwoStepDeletion" />
+                  <node concept="37vLTw" id="14TMHtHs1U9" role="37wK5m">
+                    <ref role="3cqZAo" node="14TMHtHs1TQ" resolve="twoStepDeletionSettings" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="14TMHtHs1E3" role="3clF45" />
+      <node concept="37vLTG" id="14TMHtHs1Om" role="3clF46">
+        <property role="TrG5h" value="runnable" />
+        <node concept="3uibUv" id="14TMHtHue26" role="1tU5fm">
+          <ref role="3uigEE" node="14TMHtHucvx" resolve="EditorUtil.EditorTestRunnable" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="14TMHtHs2Gk" role="3clF46">
+        <property role="TrG5h" value="twoStepDeletion" />
+        <node concept="10P_77" id="14TMHtHs2MB" role="1tU5fm" />
+      </node>
+      <node concept="3uibUv" id="14TMHtHtiy8" role="Sfmx6">
+        <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+      </node>
+      <node concept="3Tm1VV" id="14TMHtI7vqd" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="14TMHtHubnK" role="jymVt" />
+    <node concept="3HP615" id="14TMHtHucvx" role="jymVt">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="EditorTestRunnable" />
+      <node concept="3clFb_" id="14TMHtHucDr" role="jymVt">
+        <property role="1EzhhJ" value="true" />
+        <property role="2aFKle" value="false" />
+        <property role="TrG5h" value="run" />
+        <node concept="3clFbS" id="14TMHtHucDu" role="3clF47" />
+        <node concept="3Tm1VV" id="14TMHtHucDv" role="1B3o_S" />
+        <node concept="3cqZAl" id="14TMHtHucDd" role="3clF45" />
+        <node concept="3uibUv" id="14TMHtHudRL" role="Sfmx6">
+          <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="14TMHtHucvy" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="1NNq35AwKch" role="jymVt" />
     <node concept="3Tm1VV" id="5s44y2Lh6_6" role="1B3o_S" />
   </node>
   <node concept="312cEu" id="wQDhRCClc9">

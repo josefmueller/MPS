@@ -6,7 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.editorTest.EditorTestUtil;
+import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
 public class DelOnSpecialInterfaceChild1DeleteParent_Test extends BaseTransformationTest {
@@ -21,7 +21,7 @@ public class DelOnSpecialInterfaceChild1DeleteParent_Test extends BaseTransforma
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("2943053183528026730", "2943053183528026737");
-      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+      EditorUtil.runWithTwoStepDeletion(new EditorUtil.EditorTestRunnable() {
         public void run() throws Exception {
           invokeAction("jetbrains.mps.ide.editor.actions.Delete_Action");
         }

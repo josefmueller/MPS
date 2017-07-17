@@ -6,6 +6,7 @@ import javax.swing.JComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
+import jetbrains.mps.nodeEditor.EditorSettings;
 
 public class EditorUtil {
   public static JComponent getEventTargetComponent(EditorCell currentCell, EditorComponent editorComponent) {
@@ -17,4 +18,18 @@ public class EditorUtil {
     }
     return editorComponent;
   }
+  public static void runWithTwoStepDeletion(EditorUtil.EditorTestRunnable runnable, boolean twoStepDeletion) throws Exception {
+    boolean twoStepDeletionSettings = EditorSettings.getInstance().isUseTwoStepDeletion();
+    EditorSettings.getInstance().setUseTwoStepDeletion(twoStepDeletion);
+    try {
+      runnable.run();
+    } finally {
+      EditorSettings.getInstance().setUseTwoStepDeletion(twoStepDeletionSettings);
+    }
+  }
+
+  public interface EditorTestRunnable {
+    void run() throws Exception;
+  }
+
 }
