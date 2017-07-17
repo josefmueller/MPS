@@ -8,6 +8,7 @@ import javax.swing.JComponent;
 import java.util.HashMap;
 import java.awt.Dimension;
 import javax.swing.BoxLayout;
+import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.Box;
 import java.util.List;
@@ -66,6 +67,7 @@ public class InitialStep extends BaseStep {
     mainPanel.setPreferredSize(new Dimension(400, 200));
 
     mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
+    mainPanel.setBorder(BorderFactory.createEmptyBorder());
     mainPanel.add(createInfoPanel("<html>This project should be migrated.<br><br>" + "Migrations to be applied:<br></html>"));
 
     JPanel infoPanel = new JPanel();

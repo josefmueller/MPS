@@ -1690,6 +1690,20 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="48WE3Hcz_bq" role="3cqZAp">
+          <node concept="2OqwBi" id="48WE3HczAl4" role="3clFbG">
+            <node concept="37vLTw" id="48WE3Hcz_bo" role="2Oq$k0">
+              <ref role="3cqZAo" node="59PMlsVO2Zi" resolve="mainPanel" />
+            </node>
+            <node concept="liA8E" id="48WE3HczBUF" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~JComponent.setBorder(javax.swing.border.Border):void" resolve="setBorder" />
+              <node concept="2YIFZM" id="48WE3HczCsI" role="37wK5m">
+                <ref role="37wK5l" to="dxuu:~BorderFactory.createEmptyBorder():javax.swing.border.Border" resolve="createEmptyBorder" />
+                <ref role="1Pybhc" to="dxuu:~BorderFactory" resolve="BorderFactory" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5vn5x3cSW1u" role="3cqZAp">
           <node concept="2OqwBi" id="5vn5x3cSZJ3" role="3clFbG">
             <node concept="37vLTw" id="5vn5x3cSW1s" role="2Oq$k0">
