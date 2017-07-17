@@ -69,7 +69,7 @@ public class SceneBuildingCommands extends TransformationMenuBase {
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:c23c1e07-b721-429a-b911-f2771cc8a585(jetbrains.mps.samples.KajaSceneConstruction.editor)", "542153281320361713")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:c23c1e07-b721-429a-b911-f2771cc8a585(jetbrains.mps.samples.KajaSceneConstruction.editor)", "542153281320361713")));
       try {
         return super.createItem(context);
       } finally {

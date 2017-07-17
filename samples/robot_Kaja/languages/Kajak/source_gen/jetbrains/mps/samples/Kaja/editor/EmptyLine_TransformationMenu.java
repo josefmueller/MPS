@@ -213,7 +213,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319935553")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319935553")));
       try {
         return super.createItem(context);
       } finally {
@@ -355,7 +355,7 @@ public class EmptyLine_TransformationMenu extends TransformationMenuBase {
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319934571")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319934571")));
       try {
         return super.createItem(context);
       } finally {

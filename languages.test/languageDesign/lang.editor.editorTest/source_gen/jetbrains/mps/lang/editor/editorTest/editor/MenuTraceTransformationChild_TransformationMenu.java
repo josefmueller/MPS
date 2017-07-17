@@ -304,7 +304,7 @@ public class MenuTraceTransformationChild_TransformationMenu extends Transformat
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806578771")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806578771")));
       try {
         return super.createItem(context);
       } finally {

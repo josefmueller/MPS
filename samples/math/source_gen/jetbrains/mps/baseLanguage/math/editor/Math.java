@@ -75,7 +75,7 @@ public class Math extends TransformationMenuBase {
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380024275")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380024275")));
       try {
         return super.createItem(context);
       } finally {
@@ -98,7 +98,7 @@ public class Math extends TransformationMenuBase {
       @Override
       public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
         context.getEditorMenuTrace().pushTraceInfo();
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631379980444")));
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631379980444")));
         try {
           return super.createItem(context);
         } finally {
@@ -307,7 +307,7 @@ public class Math extends TransformationMenuBase {
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612147907")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612147907")));
       try {
         return super.createItem(context);
       } finally {
@@ -424,7 +424,7 @@ public class Math extends TransformationMenuBase {
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372137")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372137")));
       try {
         return super.createItem(context);
       } finally {
@@ -632,7 +632,7 @@ public class Math extends TransformationMenuBase {
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612151954")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612151954")));
       try {
         return super.createItem(context);
       } finally {
@@ -840,7 +840,7 @@ public class Math extends TransformationMenuBase {
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu", new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612131436")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612131436")));
       try {
         return super.createItem(context);
       } finally {
