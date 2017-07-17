@@ -1318,6 +1318,10 @@
     <property role="34LRSv" value="contains" />
     <property role="EcuMT" value="1221170373891" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="asaX9" id="5j5ScoAVt7e" role="lGtFl">
+      <property role="YLQ7P" value="use Scope class instead" />
+      <property role="YLPcu" value="2018.1" />
+    </node>
     <node concept="PrWs8" id="hLjrBaj" role="PzmwI">
       <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
@@ -1327,10 +1331,6 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1221170724607" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="asaX9" id="5j5ScoAVt7e" role="lGtFl">
-      <property role="YLQ7P" value="use Scope class instead" />
-      <property role="YLPcu" value="2018.1" />
     </node>
   </node>
   <node concept="1TIwiD" id="hQ8GBOl">
@@ -2075,6 +2075,10 @@
     <property role="34LRSv" value="model" />
     <property role="EcuMT" value="559557797393017698" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="asaX9" id="5C3R$hJlJ8f" role="lGtFl">
+      <property role="YLPcu" value="2018.1" />
+      <property role="YLQ7P" value="This expression references model by name only, which is ambiguous. Use model-reference// instead and resolve with appropriate repository, if needed." />
+    </node>
     <node concept="1TJgyj" id="1eZSuKdQWnS" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="repo" />
@@ -2099,10 +2103,6 @@
         <property role="YLQ7P" value="use getFQName() behavior method" />
         <property role="YLPcu" value="MPS 3.2" />
       </node>
-    </node>
-    <node concept="asaX9" id="5C3R$hJlJ8f" role="lGtFl">
-      <property role="YLPcu" value="2018.1" />
-      <property role="YLQ7P" value="This expression references model by name only, which is ambiguous. Use model-reference// instead and resolve with appropriate repository, if needed." />
     </node>
   </node>
   <node concept="1TIwiD" id="59YAasRsvgM">
@@ -2172,17 +2172,17 @@
     <property role="34LRSv" value="nodePointer/&lt;name&gt;/" />
     <property role="EcuMT" value="1828409047608048457" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyi" id="7Kvxa_nmhU5" role="1TKVEl">
+      <property role="IQ2nx" value="8944013247830892165" />
+      <property role="TrG5h" value="includeNonRoot" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="1_vO5tEMrHa" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="referentNode" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1828409047608048458" />
       <ref role="20lvS9" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="1TJgyi" id="7Kvxa_nmhU5" role="1TKVEl">
-      <property role="IQ2nx" value="8944013247830892165" />
-      <property role="TrG5h" value="includeNonRoot" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="7GdCWpgJClo">
@@ -2833,10 +2833,35 @@
       <ref role="PrY4T" node="50fTm6QQzRL" resolve="AbstractLanguageIdentity" />
     </node>
   </node>
-  <node concept="PlHQZ" id="78qQRpbfOQY">
-    <property role="3GE5qa" value="identity" />
-    <property role="TrG5h" value="DevkitIdentity" />
-    <property role="EcuMT" value="8222125370833325502" />
+  <node concept="1TIwiD" id="6qMaajUPFau">
+    <property role="EcuMT" value="7400021826771268254" />
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="SNodePointerType" />
+    <property role="34LRSv" value="node-ptr&lt;&gt;" />
+    <property role="R4oN_" value="node pointer type" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+    <node concept="1TJgyj" id="6qMaajUPFaH" role="1TKVEi">
+      <property role="20kJfa" value="concept" />
+      <property role="IQ2ns" value="7400021826771268269" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Bs_61$nfRn">
+    <property role="EcuMT" value="1863527487546129879" />
+    <property role="3GE5qa" value="reference.model" />
+    <property role="TrG5h" value="ModelRefExpression" />
+    <property role="34LRSv" value="model-reference" />
+    <property role="R4oN_" value="Expression representing SModelReference of a model" />
+    <property role="R5$K2" value="true" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="1Bs_61$ngwB" role="1TKVEi">
+      <property role="IQ2ns" value="1863527487546132519" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="modelRef" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="dvox:7PoJpZpMbrj" resolve="ModelIdentity" />
+    </node>
   </node>
   <node concept="1TIwiD" id="78qQRpbfVOr">
     <property role="3GE5qa" value="identity" />
@@ -2857,29 +2882,17 @@
       <ref role="PrY4T" node="78qQRpbfOQY" resolve="DevkitIdentity" />
     </node>
   </node>
-  <node concept="1TIwiD" id="1Bs_61$nfRn">
-    <property role="EcuMT" value="1863527487546129879" />
-    <property role="3GE5qa" value="reference.model" />
-    <property role="TrG5h" value="ModelRefExpression" />
-    <property role="34LRSv" value="model-reference" />
-    <property role="R4oN_" value="Expression representing SModelReference of a model" />
-    <property role="R5$K2" value="true" />
-    <property role="R5$K7" value="false" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="1Bs_61$ngwB" role="1TKVEi">
-      <property role="IQ2ns" value="1863527487546132519" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="modelRef" />
-      <property role="20lbJX" value="1" />
-      <ref role="20lvS9" to="dvox:7PoJpZpMbrj" resolve="ModelIdentity" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="1Bs_61$ngyb">
     <property role="EcuMT" value="1863527487546132619" />
     <property role="3GE5qa" value="type" />
     <property role="TrG5h" value="ModelPointerType" />
     <property role="34LRSv" value="model-reference" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
+  </node>
+  <node concept="PlHQZ" id="78qQRpbfOQY">
+    <property role="3GE5qa" value="identity" />
+    <property role="TrG5h" value="DevkitIdentity" />
+    <property role="EcuMT" value="8222125370833325502" />
   </node>
 </model>
 

@@ -180,14 +180,15 @@ public final class LanguageConceptSwitch {
   public static final int SNodeListCreator = 168;
   public static final int SNodeListType = 169;
   public static final int SNodeOperation = 170;
-  public static final int SNodeType = 171;
-  public static final int SNodeTypeCastExpression = 172;
-  public static final int SPropertyAccess = 173;
-  public static final int SReferenceType = 174;
-  public static final int SearchScopeType = 175;
-  public static final int SearchScope_ContainsOperation = 176;
-  public static final int SemanticDowncastExpression = 177;
-  public static final int SubconceptCase = 178;
+  public static final int SNodePointerType = 171;
+  public static final int SNodeType = 172;
+  public static final int SNodeTypeCastExpression = 173;
+  public static final int SPropertyAccess = 174;
+  public static final int SReferenceType = 175;
+  public static final int SearchScopeType = 176;
+  public static final int SearchScope_ContainsOperation = 177;
+  public static final int SemanticDowncastExpression = 178;
+  public static final int SubconceptCase = 179;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L);
@@ -362,6 +363,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x10ab923b94aL, SNodeListCreator);
     builder.put(0x10aae26be32L, SNodeListType);
     builder.put(0x1090ea2ebacL, SNodeOperation);
+    builder.put(0x66b228a4fad6b29eL, SNodePointerType);
     builder.put(0x108f968b3caL, SNodeType);
     builder.put(0x10975850da7L, SNodeTypeCastExpression);
     builder.put(0x108f96cca6fL, SPropertyAccess);

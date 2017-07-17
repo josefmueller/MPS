@@ -446,70 +446,70 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="ng" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="ng" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
-      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
-      <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="ng" index="2qgKlT" />
+      <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="ng" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
-      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
-      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="ng" index="2yIwOk" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="ng" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
-      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
-      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="ng" index="I4A8Y" />
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="ng" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
-      <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
+      <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="ng" index="2SmgA7">
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
-      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
-      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="ng" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="ng" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="nn" index="3fl2lp">
+      <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="ng" index="3fl2lp">
         <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
         <child id="597763930871272014" name="parent" index="3fl3PI" />
       </concept>
-      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
-      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="ng" index="1mfA1w" />
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="ng" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
-      <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
+      <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="ng" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
-      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
-      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="ng" index="3w_OXm" />
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="ng" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="ng" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
+      <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="ng" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="ng" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
-      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="ng" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
-      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
+      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="ng" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
-      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="ng" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
-      <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
+      <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="ng" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
     </language>
@@ -557,6 +557,14 @@
       <node concept="gft3U" id="h8hpeMQ" role="1lVwrX">
         <node concept="3uibUv" id="h8hpeMR" role="gfFT$">
           <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="6qMaajUZb_D" role="3acgRq">
+      <ref role="30HIoZ" to="tp25:6qMaajUPFau" resolve="SNodePointerType" />
+      <node concept="gft3U" id="6qMaajUZb_E" role="1lVwrX">
+        <node concept="3uibUv" id="6qMaajUZhEn" role="gfFT$">
+          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
         </node>
       </node>
     </node>
@@ -20211,6 +20219,9 @@
               </node>
               <node concept="3clFbF" id="2nIYwg$79Sh" role="3cqZAp">
                 <node concept="2OqwBi" id="2nIYwg$7bpU" role="3clFbG">
+                  <node concept="liA8E" id="3612de$WSpR" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
+                  </node>
                   <node concept="2OqwBi" id="3612de$WRv5" role="2Oq$k0">
                     <node concept="2JrnkZ" id="3612de$WRkM" role="2Oq$k0">
                       <node concept="2OqwBi" id="2nIYwg$7a7Q" role="2JrQYb">
@@ -20221,9 +20232,6 @@
                     <node concept="liA8E" id="3612de$WRKa" role="2OqNvi">
                       <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
                     </node>
-                  </node>
-                  <node concept="liA8E" id="3612de$WSpR" role="2OqNvi">
-                    <ref role="37wK5l" to="lui2:~SModule.getModuleName():java.lang.String" resolve="getModuleName" />
                   </node>
                 </node>
               </node>
@@ -20435,6 +20443,12 @@
       </node>
       <node concept="2jeGV$" id="50fTm6QQSZ1" role="lGtFl">
         <property role="TrG5h" value="idValue" />
+        <node concept="1LlUBW" id="3612de$WaR6" role="2jfP_h">
+          <node concept="3uibUv" id="3612de$WbF0" role="1Lm7xW">
+            <ref role="3uigEE" to="e8bb:~SLanguageId" resolve="SLanguageId" />
+          </node>
+          <node concept="17QB3L" id="3612de$WgeA" role="1Lm7xW" />
+        </node>
         <node concept="2jfdEK" id="50fTm6QQSZ2" role="2jfP_Y">
           <node concept="3clFbS" id="50fTm6QQSZ3" role="2VODD2">
             <node concept="3cpWs8" id="3612de$WhM$" role="3cqZAp">
@@ -20492,12 +20506,6 @@
               </node>
             </node>
           </node>
-        </node>
-        <node concept="1LlUBW" id="3612de$WaR6" role="2jfP_h">
-          <node concept="3uibUv" id="3612de$WbF0" role="1Lm7xW">
-            <ref role="3uigEE" to="e8bb:~SLanguageId" resolve="SLanguageId" />
-          </node>
-          <node concept="17QB3L" id="3612de$WgeA" role="1Lm7xW" />
         </node>
       </node>
     </node>
@@ -21548,6 +21556,54 @@
       </node>
     </node>
   </node>
+  <node concept="13MO4I" id="1Bs_61$nmvM">
+    <property role="TrG5h" value="reduce_ModelRefExpression" />
+    <property role="3GE5qa" value="reference.model" />
+    <ref role="3gUMe" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
+    <node concept="2OqwBi" id="1Bs_61$nqPM" role="13RCb5">
+      <node concept="2YIFZM" id="1Bs_61$nqKe" role="2Oq$k0">
+        <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+        <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+      </node>
+      <node concept="liA8E" id="1Bs_61$nqVd" role="2OqNvi">
+        <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
+        <node concept="Xl_RD" id="1Bs_61$nqVQ" role="37wK5m">
+          <property role="Xl_RC" value="" />
+          <node concept="17Uvod" id="1Bs_61$nqWX" role="lGtFl">
+            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+            <property role="2qtEX9" value="value" />
+            <node concept="3zFVjK" id="1Bs_61$nqWY" role="3zH0cK">
+              <node concept="3clFbS" id="1Bs_61$nqWZ" role="2VODD2">
+                <node concept="3clFbF" id="1Bs_61$nsLB" role="3cqZAp">
+                  <node concept="2OqwBi" id="1Bs_61$ntc8" role="3clFbG">
+                    <node concept="2YIFZM" id="1Bs_61$nt0R" role="2Oq$k0">
+                      <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+                      <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                    </node>
+                    <node concept="liA8E" id="1Bs_61$ntw$" role="2OqNvi">
+                      <ref role="37wK5l" to="dush:~PersistenceFacade.asString(org.jetbrains.mps.openapi.model.SModelReference):java.lang.String" resolve="asString" />
+                      <node concept="2OqwBi" id="1Bs_61$nrUp" role="37wK5m">
+                        <node concept="2OqwBi" id="1Bs_61$nriE" role="2Oq$k0">
+                          <node concept="30H73N" id="1Bs_61$nr5O" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="1Bs_61$nrxv" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tp25:1Bs_61$ngwB" resolve="modelRef" />
+                          </node>
+                        </node>
+                        <node concept="2qgKlT" id="1Bs_61$nsck" role="2OqNvi">
+                          <ref role="37wK5l" to="xlb7:1Bs_61$mvvu" resolve="toModelReference" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="raruj" id="1Bs_61$nqW_" role="lGtFl" />
+    </node>
+  </node>
   <node concept="jVnub" id="6IZJ8Q4WR_Q">
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="switch_DevkitIdentity_SModuleReference" />
@@ -21624,54 +21680,6 @@
         <property role="1lMjX7" value="error" />
         <property role="1lLB17" value="&quot;Unsupported DevkitIdentity kind&quot;" />
       </node>
-    </node>
-  </node>
-  <node concept="13MO4I" id="1Bs_61$nmvM">
-    <property role="TrG5h" value="reduce_ModelRefExpression" />
-    <property role="3GE5qa" value="reference.model" />
-    <ref role="3gUMe" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
-    <node concept="2OqwBi" id="1Bs_61$nqPM" role="13RCb5">
-      <node concept="2YIFZM" id="1Bs_61$nqKe" role="2Oq$k0">
-        <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-        <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-      </node>
-      <node concept="liA8E" id="1Bs_61$nqVd" role="2OqNvi">
-        <ref role="37wK5l" to="dush:~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference" resolve="createModelReference" />
-        <node concept="Xl_RD" id="1Bs_61$nqVQ" role="37wK5m">
-          <property role="Xl_RC" value="" />
-          <node concept="17Uvod" id="1Bs_61$nqWX" role="lGtFl">
-            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-            <property role="2qtEX9" value="value" />
-            <node concept="3zFVjK" id="1Bs_61$nqWY" role="3zH0cK">
-              <node concept="3clFbS" id="1Bs_61$nqWZ" role="2VODD2">
-                <node concept="3clFbF" id="1Bs_61$nsLB" role="3cqZAp">
-                  <node concept="2OqwBi" id="1Bs_61$ntc8" role="3clFbG">
-                    <node concept="2YIFZM" id="1Bs_61$nt0R" role="2Oq$k0">
-                      <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-                      <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-                    </node>
-                    <node concept="liA8E" id="1Bs_61$ntw$" role="2OqNvi">
-                      <ref role="37wK5l" to="dush:~PersistenceFacade.asString(org.jetbrains.mps.openapi.model.SModelReference):java.lang.String" resolve="asString" />
-                      <node concept="2OqwBi" id="1Bs_61$nrUp" role="37wK5m">
-                        <node concept="2OqwBi" id="1Bs_61$nriE" role="2Oq$k0">
-                          <node concept="30H73N" id="1Bs_61$nr5O" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="1Bs_61$nrxv" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tp25:1Bs_61$ngwB" resolve="modelRef" />
-                          </node>
-                        </node>
-                        <node concept="2qgKlT" id="1Bs_61$nsck" role="2OqNvi">
-                          <ref role="37wK5l" to="xlb7:1Bs_61$mvvu" resolve="toModelReference" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="raruj" id="1Bs_61$nqW_" role="lGtFl" />
     </node>
   </node>
 </model>

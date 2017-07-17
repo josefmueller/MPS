@@ -180,6 +180,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_SNodeListCreator;
   private ConceptPresentation props_SNodeListType;
   private ConceptPresentation props_SNodeOperation;
+  private ConceptPresentation props_SNodePointerType;
   private ConceptPresentation props_SNodeType;
   private ConceptPresentation props_SNodeTypeCastExpression;
   private ConceptPresentation props_SPropertyAccess;
@@ -1449,6 +1450,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SNodeOperation = cpb.create();
         }
         return props_SNodeOperation;
+      case LanguageConceptSwitch.SNodePointerType:
+        if (props_SNodePointerType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("node pointer type");
+          cpb.rawPresentation("node-ptr<>");
+          props_SNodePointerType = cpb.create();
+        }
+        return props_SNodePointerType;
       case LanguageConceptSwitch.SNodeType:
         if (props_SNodeType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
