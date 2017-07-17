@@ -1328,8 +1328,15 @@
                                     <property role="Xl_RC" value=") is greater than the target version of last migration script (" />
                                   </node>
                                 </node>
-                                <node concept="37vLTw" id="1IkLLL1pjZV" role="3uHU7w">
-                                  <ref role="3cqZAo" node="1IkLLL1ot1W" resolve="maxVersion" />
+                                <node concept="1eOMI4" id="5wom5KubJa0" role="3uHU7w">
+                                  <node concept="3cpWs3" id="5wom5KubL9n" role="1eOMHV">
+                                    <node concept="3cmrfG" id="5wom5KubLbF" role="3uHU7w">
+                                      <property role="3cmrfH" value="1" />
+                                    </node>
+                                    <node concept="37vLTw" id="1IkLLL1pjZV" role="3uHU7B">
+                                      <ref role="3cqZAo" node="1IkLLL1ot1W" resolve="maxVersion" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
