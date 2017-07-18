@@ -38,12 +38,12 @@ import com.intellij.openapi.vcs.VcsException;
 import org.apache.log4j.Level;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.vcs.FileStatus;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import java.util.Collections;
@@ -100,7 +100,7 @@ public class VcsActionsUtil {
       Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");
     }
   }
-  private static Iterable<VirtualFile> collectUnversionedFiles(final VcsFileStatusProvider fileStatusProvider, final VirtualFile dir) {
+  private static Iterable<VirtualFile> collectUnversionedFiles(final VcsFileStatusProvider fileStatusProvider, @NotNull final VirtualFile dir) {
     return new _FunctionTypes._return_P0_E0<Iterable<VirtualFile>>() {
       public Iterable<VirtualFile> invoke() {
         return new Iterable<VirtualFile>() {
@@ -185,7 +185,11 @@ __switch__:
     }
     IFile moduleDir = descriptorFile.getParent();
     VcsFileStatusProvider statusProvider = project.getComponent(VcsFileStatusProvider.class);
-    return collectUnversionedFiles(statusProvider, VirtualFileUtils.getVirtualFile(moduleDir));
+    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(moduleDir);
+    if (virtualFile == null) {
+      return Sequence.fromIterable(Collections.<VirtualFile>emptyList());
+    }
+    return collectUnversionedFiles(statusProvider, virtualFile);
   }
   public static List<VirtualFile> getUnversionedFilesForModules(@NotNull final Project project, List<SModule> module) {
     return ListSequence.fromList(module).translate(new ITranslator2<SModule, VirtualFile>() {
