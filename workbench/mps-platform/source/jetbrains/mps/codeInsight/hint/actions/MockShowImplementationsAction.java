@@ -27,6 +27,12 @@ import com.intellij.openapi.actionSystem.PopupAction;
  */
 public class MockShowImplementationsAction extends AnAction implements PopupAction {
   @Override
+  public void update(AnActionEvent e) {
+    // Always hide this action
+    e.getPresentation().setEnabledAndVisible(false);
+  }
+
+  @Override
   public void actionPerformed(AnActionEvent e) {
     // Do nothing
   }
