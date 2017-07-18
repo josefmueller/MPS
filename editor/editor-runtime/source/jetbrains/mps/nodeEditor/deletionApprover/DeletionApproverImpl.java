@@ -88,7 +88,7 @@ public class DeletionApproverImpl implements DeletionApprover, EditorMessageOwne
 
   @Override
   public Collection<EditorCell> getCellsApprovedForDeletion() {
-    return Collections.singleton(myCellToBeDeleted);
+    return myCellToBeDeleted != null ? Collections.singleton(myCellToBeDeleted) : Collections.emptyList();
   }
 
   /**
