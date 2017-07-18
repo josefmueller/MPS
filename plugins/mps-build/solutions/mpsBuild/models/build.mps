@@ -17450,6 +17450,7 @@
         </node>
       </node>
       <node concept="1zDKOp" id="6Iq8148f_ZG" role="1xUO3H">
+        <node concept="NbPM2" id="4oyKb4mw2ku" role="1xUO3G" />
         <node concept="3_J27D" id="6Iq8148f_ZH" role="1xUO3y">
           <node concept="3Mxwew" id="6Iq8148f_ZN" role="3MwsjC">
             <property role="3MwjfP" value="http://www.jetbrains.com/mps/webhelp/" />
@@ -17458,11 +17459,6 @@
         <node concept="3_J27D" id="6Iq8148f_ZI" role="1xUO3z">
           <node concept="3Mxwew" id="6Iq8148f_ZM" role="3MwsjC">
             <property role="3MwjfP" value="mps" />
-          </node>
-        </node>
-        <node concept="3_J27D" id="6Iq8148f_ZJ" role="1xUO3G">
-          <node concept="3Mxwew" id="6Iq8148f_ZK" role="3MwsjC">
-            <property role="3MwjfP" value="mpshelp.jar" />
           </node>
         </node>
       </node>

@@ -24,7 +24,7 @@
   <update-urls check="http://www.jetbrains.com/mps/update.xml"
                patches="http://www.jetbrains.com/mps/download/"/>
 
-  <help file="mpshelp.jar" root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/"/>
+  <help root="mps" webhelp-url="http://www.jetbrains.com/mps/webhelp/"/>
   <documentation url="https://www.jetbrains.com/mps/documentation"/>
   <support url="https://www.jetbrains.com/support/mps/index.html"/>
   <feedback eap-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps"
