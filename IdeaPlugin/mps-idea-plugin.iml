@@ -20,6 +20,8 @@
       <sourceFolder url="file://$MODULE_DIR$/mps-core/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mps-java/jps-plugin/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/mps-java/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mps-migration/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/mps-testing/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
     <orderEntry type="inheritedJdk" />
