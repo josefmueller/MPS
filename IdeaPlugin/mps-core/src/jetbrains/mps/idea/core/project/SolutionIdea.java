@@ -253,7 +253,7 @@ public class SolutionIdea extends Solution {
             if (m == null) {
               continue;
             }
-            if (modules.containsKey(moduleReference)) {
+            if (modules.keySet().stream().anyMatch(module -> module.getModuleReference().equals(moduleReference))) {
               if (loe.isExported()) {
                 modules.put(m, true);
               }
