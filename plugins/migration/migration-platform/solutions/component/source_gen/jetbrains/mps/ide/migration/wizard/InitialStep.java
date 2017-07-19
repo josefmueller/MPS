@@ -161,7 +161,7 @@ public class InitialStep extends BaseStep {
             return it.getModule();
           }
         }).distinct().count();
-        final DefaultMutableTreeNode lroot = new DefaultMutableTreeNode("Language Migrations (" + migratedModulesNum + " modules affected)");
+        final DefaultMutableTreeNode lroot = new DefaultMutableTreeNode("Language Migrations (" + migratedModulesNum + " modules will be affected)");
         Sequence.fromIterable(MapSequence.fromMap(l2n).values()).visitAll(new IVisitor<DefaultMutableTreeNode>() {
           public void visit(DefaultMutableTreeNode it) {
             lroot.add(it);
@@ -199,7 +199,7 @@ public class InitialStep extends BaseStep {
             return it.getModule();
           }
         }).distinct().count();
-        final DefaultMutableTreeNode mroot = new DefaultMutableTreeNode("Module Migrations (" + migratedModulesNum2 + " modules)");
+        final DefaultMutableTreeNode mroot = new DefaultMutableTreeNode("Module Migrations (" + migratedModulesNum2 + " modules will be affected)");
         Sequence.fromIterable(MapSequence.fromMap(m2n).values()).visitAll(new IVisitor<DefaultMutableTreeNode>() {
           public void visit(DefaultMutableTreeNode it) {
             mroot.add(it);

@@ -2691,7 +2691,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="7L$Uh3NeIt7" role="3uHU7w">
-                          <property role="Xl_RC" value=" modules affected)" />
+                          <property role="Xl_RC" value=" modules will be affected)" />
                         </node>
                       </node>
                     </node>
@@ -3073,7 +3073,7 @@
                           </node>
                         </node>
                         <node concept="Xl_RD" id="6fMyXCHt8xO" role="3uHU7w">
-                          <property role="Xl_RC" value=" modules)" />
+                          <property role="Xl_RC" value=" modules will be affected)" />
                         </node>
                       </node>
                     </node>
