@@ -254,10 +254,13 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FoldedCell
         String text = null;
         if (matchingTextQuery != null) {
           SAbstractConcept cncpt_a0c0a0a1a0a0t = SNodeOperations.getConcept(matchingTextQuery);
-          if (SConceptOperations.isSubConceptOf(cncpt_a0c0a0a1a0a0t, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121eb0d54dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_SubstituteString"))) {
+          boolean noneMatched_a0c0a0a1a0a0t = true;
+          if (noneMatched_a0c0a0a1a0a0t && SConceptOperations.isSubConceptOf(cncpt_a0c0a0a1a0a0t, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121eb0d54dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_SubstituteString"))) {
+            noneMatched_a0c0a0a1a0a0t = false;
             text = ConceptFunctionFoldingUtil.getSimpleString(SNodeOperations.cast(matchingTextQuery, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121eb0d54dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_SubstituteString")));
           }
-          if (SConceptOperations.isSubConceptOf(cncpt_a0c0a0a1a0a0t, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116910ff20bL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_SimpleString"))) {
+          if (noneMatched_a0c0a0a1a0a0t && SConceptOperations.isSubConceptOf(cncpt_a0c0a0a1a0a0t, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116910ff20bL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_SimpleString"))) {
+            noneMatched_a0c0a0a1a0a0t = false;
             text = SPropertyOperations.getString(SNodeOperations.cast(matchingTextQuery, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116910ff20bL, "jetbrains.mps.lang.editor.structure.SubstituteMenu_SimpleString")), MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116910ff20bL, 0x11691130517L, "text"));
           }
         }

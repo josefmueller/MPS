@@ -187,6 +187,18 @@ public class CrossModelEnvironment {
     final SModelReference mr = PersistenceFacade.getInstance()
                                                 .createModelReference(myModule.getModuleReference(), new IntegerSModelId(mid),
                                                                       transientModelName.getValue());
+    SModel existing = myModule.getModel(mr.getModelId());
+    if (existing != null) {
+      // we shall not get here unless a model being generated has been already generated and exposed as checkpoint, and got renamed since.
+      // renamed here means change of model name, e.g. due to rename of a containing language module.
+      // There were few possible ways to address MPS-26174 (rename of a module breaks x-model generation).
+      //  - listen to changes of original model/module and react (e.g. remove related CP models or clear all CPs altogether).
+      //  - drop all transients as part of rename module action (likely, most safe)
+      //  - respect model name when building module id value, above. Leaves duplicated, hard-to-distinguish models among checkpoints.
+      //  - detect there's already model with same id and forget it (least destructive, keeps other CP models in place).
+      assert !existing.getName().equals(mr.getName());
+      myModule.forgetModel(existing, true);
+    }
     SModel checkpointModel = myModule.createTransientModel(mr);
     assert checkpointModel instanceof ModelWithAttributes;
     ((ModelWithAttributes) checkpointModel).setAttribute(GENERATION_PLAN, step.getPlan().getName());
