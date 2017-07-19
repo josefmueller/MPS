@@ -290,8 +290,12 @@
       <fileset dir="${build.tmp}/default/mps-environment.jar" />
     </jar>
     <jar destfile="${build.layout}/lib/mps-stubs.jar" duplicate="preserve">
-      <zipfileset file="${mps_home}/languages/core/stub/DiffUtils/DiffUtils.msd" prefix="modules/DiffUtils" />
-      <zipfileset dir="${mps_home}/languages/core/stub/DiffUtils" includes="icons/**, resources/**" prefix="modules/DiffUtils" />
+      <zipfileset file="${mps_home}/languages/core/stub/diffutils/diffutils.msd" prefix="modules/DiffUtils" />
+      <zipfileset dir="${mps_home}/languages/core/stub/diffutils" includes="icons/**, resources/**" prefix="modules/DiffUtils" />
+      <zipfileset file="${mps_home}/languages/core/stub/hamcrest/hamcrest.msd" prefix="modules/Hamcrest" />
+      <zipfileset dir="${mps_home}/languages/core/stub/hamcrest" includes="icons/**, resources/**" prefix="modules/Hamcrest" />
+      <zipfileset file="${mps_home}/languages/core/stub/junit/junit.msd" prefix="modules/JUnit" />
+      <zipfileset dir="${mps_home}/languages/core/stub/junit" includes="icons/**, resources/**" prefix="modules/JUnit" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-tool-builder-models">
       <fileset dir="${mps_home}/core/tool/builder/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
@@ -5888,7 +5892,9 @@
       </chunk>
       <chunk bootstrap="true">
         <module file="${mps_home}/languages/core/stub/Ant/Ant.msd" />
-        <module file="${mps_home}/languages/core/stub/DiffUtils/DiffUtils.msd" />
+        <module file="${mps_home}/languages/core/stub/diffutils/diffutils.msd" />
+        <module file="${mps_home}/languages/core/stub/hamcrest/hamcrest.msd" />
+        <module file="${mps_home}/languages/core/stub/junit/junit.msd" />
         <module file="${mps_home}/languages/core/stub/Testbench/Testbench.msd" />
         <module file="${mps_home}/languages/baseLanguage/constructors/jetbrains.mps.baseLanguage.constructors.mpl" />
         <module file="${mps_home}/languages/baseLanguage/doubleDispatch/jetbrains.mps.baseLanguage.doubleDispatch.mpl" />
@@ -15438,15 +15444,8 @@
         <pathelement path="${build.tmp}/java/out/mps-test" />
         <pathelement path="${build.tmp}/java/out/mps-tool" />
         <fileset file="${lib_ext}/diffutils-1.2.1.jar" />
-        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/hamcrest-library-1.3.jar" />
-        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/hamcrest-library-1.3-sources.jar" />
-        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.8.2-sources.jar" />
-        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-2.8.2.jar" />
-        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-junit4-2.8.2-sources.jar" />
-        <fileset file="${mps_home}/languages/baseLanguage/unitTest/lib/jmock-junit4-2.8.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.12.jar" />
-        <fileset file="${artifacts.IDEA}/lib/hamcrest-core-1.3.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.jdom-lib" />

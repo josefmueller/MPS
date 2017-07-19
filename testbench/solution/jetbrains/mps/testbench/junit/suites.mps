@@ -38,7 +38,6 @@
     <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
-    <import index="k76n" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runner.notification(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
@@ -56,7 +55,7 @@
     <import index="bbnd" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runners(JUnit/)" />
     <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
     <import index="7cms" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runners.model(JUnit/)" />
-    <import index="k76o" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner.notification(JUnit/)" />
+    <import index="k76n" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner.notification(JUnit/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -6312,7 +6311,7 @@
       <node concept="37vLTG" id="61uE6zXlIqR" role="3clF46">
         <property role="TrG5h" value="notifier" />
         <node concept="3uibUv" id="61uE6zXlIqS" role="1tU5fm">
-          <ref role="3uigEE" to="k76o:~RunNotifier" resolve="RunNotifier" />
+          <ref role="3uigEE" to="k76n:~RunNotifier" resolve="RunNotifier" />
         </node>
       </node>
       <node concept="3clFbS" id="61uE6zXlIqV" role="3clF47">
