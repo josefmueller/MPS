@@ -20,6 +20,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
@@ -55,12 +56,12 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   protected WorkbenchModelAccess() {
     myWriteActionTracker = new WriteActionTracker();
     myTryPlatformWriteHelper = new TryRunPlatformWriteHelper(myWriteActionTracker);
+    Disposer.register(this, myEDTExecutor);
+    Disposer.register(this, myTryPlatformWriteHelper);
   }
 
   @Override
   public void dispose() {
-    myEDTExecutor.dispose();
-    myTryPlatformWriteHelper.dispose();
   }
 
   @Override
@@ -427,7 +428,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
   @Override
   public void disposeComponent() {
     setInstance(new DefaultModelAccess());
-    dispose();
   }
 
   @NotNull

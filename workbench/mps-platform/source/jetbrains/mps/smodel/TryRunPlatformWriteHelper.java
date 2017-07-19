@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.CommandProcessor;
@@ -43,7 +44,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  * TODO request #tryLock method from the IDEA platform
  */
 @Immutable
-final class TryRunPlatformWriteHelper {
+final class TryRunPlatformWriteHelper implements Disposable {
   private static final int WAIT_FOR_WRITE_LOCK_MS = 200;
 
   private final WriteActionTracker myWriteActionTracker;
@@ -68,6 +69,7 @@ final class TryRunPlatformWriteHelper {
     }
   }, "MPS interrupting thread");
 
+  @Override
   public void dispose() {
     for (int attempt = 3; attempt > 0 && myInterruptingThread.isAlive(); --attempt) {
       myInterruptingThread.interrupt();

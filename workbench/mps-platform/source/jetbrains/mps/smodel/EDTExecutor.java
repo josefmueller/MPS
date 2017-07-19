@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -39,6 +40,7 @@ final class EDTExecutor implements Disposable {
   private final TaskScheduler myTaskScheduler = new TaskScheduler(myExecutor);
 
   EDTExecutor() {
+    Disposer.register(this, myExecutor);
   }
 
   void scheduleRead(@NotNull Computable<Boolean> tryRead) {
@@ -62,6 +64,5 @@ final class EDTExecutor implements Disposable {
 
   @Override
   public void dispose() {
-    myExecutor.dispose();
   }
 }
