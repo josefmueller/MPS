@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.module.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.ui.tree.module.ModuleTreeNodeComparator;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -32,22 +32,26 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ProjectTreeNode extends AbstractFileTreeNode {
-  private final Project myProject;
 
-  public ProjectTreeNode(Project project) {
-    super(project, project.getBaseDir());
-    myProject = project;
+  public ProjectTreeNode(MPSProject project) {
+    super(project, project.getProject().getBaseDir());
+    setText(project.getName());
 
     List<ModuleTreeNode> moduleNodes = new LinkedList<ModuleTreeNode>();
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
-    if (mpsProject != null) {
-      for (SModule m : mpsProject.getModules()) {
-        if (!(m instanceof AbstractModule)) {
-          continue;
-        }
-        IFile moduleFile = ((AbstractModule) m).getDescriptorFile();
-        if (moduleFile != null && moduleFile.exists()) {
-          moduleNodes.add(new ModuleTreeNode(project, (AbstractModule) m));
+    for (SModule m : project.getProjectModules()) {
+      if (!(m instanceof AbstractModule)) {
+        continue;
+      }
+      IFile moduleDir = ((AbstractModule) m).getModuleSourceDir();
+      if (moduleDir != null && moduleDir.exists()) {
+        VirtualFile vfInProject = VirtualFileUtils.getProjectVirtualFile(moduleDir);
+        if (vfInProject != null) {
+          moduleNodes.add(new ModuleTreeNode(project, (AbstractModule) m, vfInProject));
+        } else {
+          // this is an attempt to find out true cause for https://youtrack.jetbrains.com/issue/MPS-26261
+          // it looks like project has modules loaded from files that are not IdeaFile instances.
+          String msg = "Project module %s loaded from location %s (%s) without virtual file counterpart";
+          Logger.getLogger(ProjectTreeNode.class).warn(String.format(msg, m.getModuleName(), moduleDir.getPath(), moduleDir.getClass().getName()));
         }
       }
     }
@@ -60,7 +64,7 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
     }
     builder.fillNode(this);
 
-    VirtualFile baseDir = project.getBaseDir();
+    VirtualFile baseDir = getFile();
     if (baseDir != null) {
       VirtualFile[] files = baseDir.getChildren();
       for (VirtualFile f : files) {
@@ -71,24 +75,14 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
     }
   }
 
-  @Override
-  protected void doUpdatePresentation() {
-    super.doUpdatePresentation();
-    setText(myProject.getName());
-  }
-
-  private class MyNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
+  private static class MyNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder<MPSTreeNode> {
     @Override
     protected String getNamespace(@NotNull MPSTreeNode node) {
       String folder = "";
       if (node instanceof ModuleTreeNode) {
-        StandaloneMPSProject mpsProject = (StandaloneMPSProject) ProjectHelper.toMPSProject(myProject);
-        folder = mpsProject.getFolderFor(((ModuleTreeNode) node).getModule());
+        folder = ((ModuleTreeNode) node).getProjectFolder();
       }
-      if (folder == null) {
-        return "";
-      }
-      return folder;
+      return folder == null ? "" : folder;
     }
   }
 
