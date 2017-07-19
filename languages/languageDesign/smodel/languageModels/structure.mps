@@ -2149,6 +2149,9 @@
       <property role="IQ2ns" value="6039268229365417680" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
+    <node concept="t5JxF" id="2SK3zPtoyXP" role="lGtFl">
+      <property role="t5JxN" value="Unlike case clause in Java switch, there's no fall-thrugh mechanism, both exact and subconcept match cases are treated as an either-or alternatives. I.e. if you get two subconcept cases for INamedElement and BaseConcept, only the first one to match would be respected. " />
+    </node>
   </node>
   <node concept="1TIwiD" id="1_vO5tEMrH9">
     <property role="R5$K7" value="false" />

@@ -96,7 +96,7 @@ public class Template_reduce_ConceptSwitch extends TemplateDeclarationBase {
             TemplateContext context2 = context1.subContext();
             {
               Collection<SNode> tlist4 = null;
-              tlist4 = new Template_reduce_ConceptSwitch_SubconceptCases(false).apply(environment, context2);
+              tlist4 = new Template_reduce_ConceptSwitch_SubconceptCases().apply(environment, context2);
               for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
                 tnode3.addChild(myAggregationLinks[3], child5);
               }
@@ -211,7 +211,7 @@ public class Template_reduce_ConceptSwitch extends TemplateDeclarationBase {
       }
       tlist1 = TemplateUtil.singletonList(tnode2);
     } else {
-      Collection<SNode> tlist19 = new Template_reduce_ConceptSwitch_SubconceptCases(true).apply(environment, context);
+      Collection<SNode> tlist19 = new Template_reduce_ConceptSwitch_SubconceptCases().apply(environment, context);
       tlist1 = tlist19;
     }
     return tlist1;
