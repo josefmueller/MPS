@@ -17,25 +17,28 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
+import jetbrains.mps.smodel.tempmodel.TempModule;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public class GlobalScopeMinusTransient extends FilteredScope {
-  public GlobalScopeMinusTransient() {
+public class AllUserModelsScope extends FilteredScope {
+  public AllUserModelsScope() {
     super(GlobalScope.getInstance());
   }
 
-  public static GlobalScopeMinusTransient getInstance() {
-    return new GlobalScopeMinusTransient();
+  public static AllUserModelsScope getInstance() {
+    return new AllUserModelsScope();
   }
 
   @Override
   protected boolean acceptModule(SModule module) {
-    return !(module instanceof TransientSModule);
+    return !(module instanceof TransientSModule) && !(module instanceof TempModule);
   }
 
   @Override
   protected boolean acceptModel(SModel model) {
-    return !(model instanceof TransientSModel) && acceptModule(model.getModule());
+    if (!acceptModule(model.getModule())) return false;
+    return !(model instanceof TransientSModel) && !(TemporaryModels.isTemporary(model));
   }
 }

@@ -45,7 +45,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.scopes.ModelsScope" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScopeMinusTransient" />
+    <classNode dependClassName="jetbrains.mps.project.AllUserModelsScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

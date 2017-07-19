@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.LinkedList;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.project.GlobalScopeMinusTransient;
+import jetbrains.mps.project.AllUserModelsScope;
 import jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -59,7 +59,7 @@ public class LanguageConceptsUsagesFinder extends BaseFinder {
 
     monitor.start("", IterableUtil.asCollection(structureModel.getRootNodes()).size() + 1);
     try {
-      SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(structureModel.getReference(), GlobalScopeMinusTransient.getInstance()), new ModelImportsUsagesFinder());
+      SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(structureModel.getReference(), AllUserModelsScope.getInstance()), new ModelImportsUsagesFinder());
       List<SModel> models = new ArrayList<SModel>();
       for (SearchResult<SModel> sModelSearchResult : modelResults.getSearchResults()) {
         models.add(sModelSearchResult.getObject());
