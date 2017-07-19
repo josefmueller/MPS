@@ -88,7 +88,6 @@
   </languageVersions>
   <dependencyVersions>
     <module reference="3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)" version="0" />
-    <module reference="847a3235-09f9-403c-b6a9-1c294a212e92(Ant)" version="0" />
     <module reference="3669929d-7269-4de9-a160-f80b04ef909d(DiffUtils)" version="0" />
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
@@ -97,7 +96,6 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" version="0" />
-    <module reference="920eaa0e-ecca-46bc-bee7-4e5c59213dd6(Testbench)" version="0" />
     <module reference="f9665e4e-baa4-42c6-b97d-c49dfa9f7381(analyzers.test)" version="0" />
     <module reference="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" version="0" />
     <module reference="7a0c7a21-43a3-4bb4-b898-a819ebed44a5(closures.test)" version="0" />
@@ -105,16 +103,13 @@
     <module reference="39a1a79d-8ae2-4e54-a86a-8f7b9e17e2fe(collections_unittest)" version="0" />
     <module reference="b5660d3a-8a0d-4815-881b-7c884f61c9c7(internalCollections.test)" version="0" />
     <module reference="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" version="0" />
-    <module reference="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" version="0" />
     <module reference="fa54094d-fc7a-4393-885f-13866cecf3f3(jetbrains.mps.baseLanguage.closures.unittest)" version="0" />
-    <module reference="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" version="0" />
     <module reference="0528d773-6535-46f8-89a2-16a3751e6ab5(jetbrains.mps.baseLanguage.doubleDispatch.test)" version="0" />
     <module reference="9cc656d8-ed07-4493-9531-69f1c9c308c5(jetbrains.mps.baseLanguage.math.tests)" version="0" />
     <module reference="19cb79b5-ebc3-43ce-9f4c-d4bdce7013ab(jetbrains.mps.baseLanguage.regexp.unittest)" version="0" />
     <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
     <module reference="9c8b4b95-5d89-4201-ad78-0b2db3a22768(jetbrains.mps.baseLanguage.test)" version="0" />
     <module reference="993e3b08-9f44-43cf-b983-e474ac66855b(jetbrains.mps.baseLanguage.tuples.test)" version="0" />
-    <module reference="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" version="0" />
     <module reference="83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)" version="0" />
     <module reference="444220d9-055e-44dd-a551-ed91c97d5067(jetbrains.mps.baseLanguage.unitTest.sandbox)" version="0" />
     <module reference="e60b351d-8d80-4c13-8ad4-3e4759e2a3ea(jetbrains.mps.baseLanguage.unittest)" version="0" />
@@ -160,7 +155,6 @@
     <module reference="3d09e340-55d4-4ddc-8195-a92c0c5cf603(jetbrains.mps.testRead)" version="0" />
     <module reference="e9000334-f5e2-4a2f-a0fc-9afd1d31e048(jetbrains.mps.testbench)" version="0" />
     <module reference="79f9d103-4ff6-4def-9c1a-27070f9ba255(jetbrains.mps.testbench.make)" version="0" />
-    <module reference="e6368d5c-b931-4d4d-9941-07b7da7d2e2d(jetbrains.mps.tool.builder)" version="0" />
     <module reference="415bc577-86ca-46a6-b873-4670fd19e169(jetbrains.mps.traceInfo.test)" version="0" />
     <module reference="dc080be0-da6e-4885-aed0-7d999c120619(jetbrains.mps.traceInfo.testWeaving)" version="0" />
     <module reference="ab0ae915-e3b5-4f35-b55a-c655d649a03c(jetbrains.mps.transformation.test.inputLang)" version="0" />
