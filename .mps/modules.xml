@@ -85,8 +85,11 @@
       <modulePath path="$PROJECT_DIR$/languages/core/core/jetbrains.mps.lang.core.mpl" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/Annotations/Annotations.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/Ant/Ant.msd" folder="core.stub" />
+      <modulePath path="$PROJECT_DIR$/languages/core/stub/diffutils/diffutils.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/JDK-tools/JDK-tools.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/JDK/JDK.msd" folder="core.stub" />
+      <modulePath path="$PROJECT_DIR$/languages/core/stub/junit/junit.msd" folder="core.stub" />
+      <modulePath path="$PROJECT_DIR$/languages/core/stub/hamcrest/hamcrest.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/MPS.Core/MPS.Core.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/MPS.Editor/MPS.Editor.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/MPS.IDEA/MPS.IDEA.msd" folder="core.stub" />
@@ -420,7 +423,6 @@
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.build/jetbrains.mps.samples.xmlPersistence.build.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.ideaPlugin/jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" folder="samples.persistence" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence/jetbrains.mps.samples.xmlPersistence.msd" folder="samples.persistence" />
-      <modulePath path="$PROJECT_DIR$/languages/core/stub/DiffUtils/DiffUtils.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/testbench/build/jetbrains.mps.build.mps.testModules/jetbrains.mps.build.mps.testModules.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/testbench/ideatestsolutions/ide.vcs.test/jetbrains.mps.ide.vcs.test.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/testbench/ideatestsolutions/migration.test/jetbrains.mps.migration.test.msd" folder="platform.migration" />
