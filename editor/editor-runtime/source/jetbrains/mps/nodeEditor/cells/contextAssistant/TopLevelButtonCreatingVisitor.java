@@ -16,13 +16,13 @@
 package jetbrains.mps.nodeEditor.cells.contextAssistant;
 
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.ui.popup.ListPopupStep;
 import com.intellij.openapi.ui.popup.PopupStep;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItem;
+import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItemVisitor;
-import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractAction;
@@ -84,7 +84,7 @@ class TopLevelButtonCreatingVisitor implements TransformationMenuItemVisitor<JBu
     @Nullable
     @Override
     public Object getData(String dataId) {
-      if (dataId.equals(MPSEditorDataKeys.TRANSFORMATION_MENU_ITEM.getName())) {
+      if (dataId.equals(PlatformDataKeys.SELECTED_ITEM.getName())) {
         return myItem;
       }
       return null;

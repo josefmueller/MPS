@@ -383,8 +383,18 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     myUserChoseItem = chose;
   }
 
+  /**
+   * Returns currently selected substitute action
+   * Check isVisible() before using this method
+   *
+   * @return currently selected substitute action
+   * @throws java.lang.IllegalStateException if the chooser is not visible
+   */
   @Nullable
   public SubstituteAction getCurrentSubstituteAction() {
+    if (!isVisible()) {
+      throw new IllegalStateException("NodeSubstituteChooser is not visible");
+    }
     int selectionIndex = getSelectionIndex();
     if (selectionIndex != -1) {
       return myList.getModel().getElementAt(selectionIndex);
