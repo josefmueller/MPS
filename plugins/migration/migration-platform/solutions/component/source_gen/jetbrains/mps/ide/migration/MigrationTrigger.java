@@ -163,16 +163,26 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
           if (!(desc.hasLanguageVersions())) {
             SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(m.getUsedLanguages());
             for (SLanguage lang : languageHierarchy.getExtended()) {
+              if (desc.getLanguageVersions().containsKey(lang)) {
+                continue;
+              }
               desc.getLanguageVersions().put(lang, 0);
             }
+            desc.setHasLanguageVersions(true);
+            ((AbstractModule) m).setChanged();
+          }
+          if (!(desc.hasDependencyVersions())) {
             Set<SModule> visible = new LinkedHashSet<SModule>();
             visible.add(m);
             Collection<SModule> dependentModules = new GlobalModuleDependenciesManager(m).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
             visible.addAll(dependentModules);
             for (SModule dep : visible) {
+              if (desc.getDependencyVersions().containsKey(dep.getModuleReference())) {
+                continue;
+              }
               desc.getDependencyVersions().put(dep.getModuleReference(), 0);
             }
-            desc.setHasLanguageVersions(true);
+            desc.setHasDependencyVersions(true);
             ((AbstractModule) m).setChanged();
           }
         }

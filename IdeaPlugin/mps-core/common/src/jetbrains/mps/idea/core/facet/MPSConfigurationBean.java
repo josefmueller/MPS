@@ -21,15 +21,14 @@ import com.intellij.util.xmlb.annotations.Attribute;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import com.intellij.util.xmlb.annotations.Tag;
 import com.intellij.util.xmlb.annotations.Transient;
-import gnu.trove.THashMap;
 import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.MementoUtil;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -95,8 +94,17 @@ public class MPSConfigurationBean {
         for (Entry<String, Integer> lv : myState.languageVersions.entrySet()) {
           languageVersions.put(SLanguageAdapter.deserialize(lv.getKey()), lv.getValue());
         }
-      }else{
+      } else {
         myDescriptor.setHasLanguageVersions(false);
+      }
+
+      Map<SModuleReference, Integer> depVersions = myDescriptor.getDependencyVersions();
+      if (myState.dependencyVersions != null) {
+        for (Entry<String, Integer> lv : myState.dependencyVersions.entrySet()) {
+          depVersions.put(ModuleReference.parseReference(lv.getKey()), lv.getValue());
+        }
+      } else {
+        myDescriptor.setHasDependencyVersions(false);
       }
       List<ModelRootDescriptor> roots = new ArrayList<>();
       fromPersistableState(roots);
@@ -111,6 +119,7 @@ public class MPSConfigurationBean {
 
   public void setDoesNotRequireZeroVersions() {
     myState.languageVersions = new HashMap<>();
+    myState.dependencyVersions = new HashMap<>();
   }
 
   public String getId() {
@@ -209,6 +218,8 @@ public class MPSConfigurationBean {
     myState.rootDescriptors = state.rootDescriptors == null ? null : state.rootDescriptors.clone();
     Map<String, Integer> lv = state.languageVersions;
     myState.languageVersions = lv == null ? null : new HashMap<String, Integer>(lv);
+    Map<String, Integer> dv = state.dependencyVersions;
+    myState.dependencyVersions = dv == null ? null : new HashMap<String, Integer>(dv);
     dropDescriptorInstance(); // just in case
   }
 
@@ -236,6 +247,13 @@ public class MPSConfigurationBean {
         result.languageVersions.put(((SLanguageAdapter) lver.getKey()).serialize(), lver.getValue());
       }
     }
+    Map<SModuleReference, Integer> dVersions = myDescriptor.getDependencyVersions();
+    if (!dVersions.isEmpty()) {
+      result.dependencyVersions = new HashMap<String, Integer>(dVersions.size());
+      for (Entry<SModuleReference, Integer> dver : dVersions.entrySet()) {
+        result.dependencyVersions.put(dver.getKey().toString(), dver.getValue());
+      }
+    }
     result.rootDescriptors = toPersistableState(myDescriptor.getModelRootDescriptors());
     return result;
   }
@@ -247,7 +265,6 @@ public class MPSConfigurationBean {
         Memento m = new MementoImpl();
         MementoUtil.readMemento(m, descriptor.settings);
         roots.add(new ModelRootDescriptor(descriptor.type, m));
-
       }
     }
   }
@@ -281,6 +298,8 @@ public class MPSConfigurationBean {
     @Tag("languageVersions")
     @MapAnnotation
     public Map<String, Integer> languageVersions;
+    @MapAnnotation
+    public Map<String, Integer> dependencyVersions;
 
     @Override
     public State clone() {
