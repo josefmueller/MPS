@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,33 +15,34 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem.nodes;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.ui.tree.module.MPSModuleTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSProject;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class ModuleTreeNode extends AbstractFileTreeNode implements MPSModuleTreeNode {
   private final AbstractModule myModule;
 
-  public ModuleTreeNode(Project project, AbstractModule m) {
-    super(project, VirtualFileUtils.getVirtualFile(m.getModuleSourceDir()));
+  ModuleTreeNode(MPSProject project, AbstractModule m, @NotNull VirtualFile moduleDir) {
+    super(project, moduleDir);
     myModule = m;
 
-    setNodeIdentifier(getFile().getPath());
-    add(new FolderTreeNode(project, VirtualFileUtils.getProjectVirtualFile(m.getModuleSourceDir()), true));
+    VirtualFile file = m.getDescriptorFile() == null ? null : VirtualFileUtils.getProjectVirtualFile(m.getDescriptorFile());
+    if (file != null) {
+      setIcon(file.getFileType().getIcon());
+    }
+
+    add(new FolderTreeNode(project, moduleDir, true));
   }
 
   @Override
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
     setText(myModule.getModuleName());
-    VirtualFile file = VirtualFileUtils.getProjectVirtualFile(myModule.getDescriptorFile());
-    if (file != null) {
-      setIcon(file.getFileType().getIcon());
-    }
   }
 
   @NotNull
@@ -53,5 +54,12 @@ public class ModuleTreeNode extends AbstractFileTreeNode implements MPSModuleTre
   @Override
   public String getModuleText() {
     return getText();
+  }
+
+  /*package*/ String getProjectFolder() {
+    if (myProject instanceof StandaloneMPSProject) {
+      return ((StandaloneMPSProject) myProject).getFolderFor(getModule());
+    }
+    return null;
   }
 }

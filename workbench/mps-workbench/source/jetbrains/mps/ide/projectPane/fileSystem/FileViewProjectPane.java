@@ -55,6 +55,7 @@ import com.intellij.util.messages.MessageBus;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.AbstractProjectViewSelectInTarget;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.providers.FilePaneCopyProvider;
@@ -68,30 +69,31 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
+import javax.swing.AbstractAction;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
+import javax.swing.KeyStroke;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.event.KeyAdapter;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -101,7 +103,6 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   public static final String ID = "FileSystem";
   public static final String TITLE = "File System";
 
-  private final Project myProject;
   private final MessageBus myBus;
   private final IdeDocumentHistory myIdeDocumentHistory;
   private final ProjectView myProjectView;
@@ -123,17 +124,10 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       @NotNull FileEditorManager fileEditorManager) {
     super(project);
 
-    myProject = project;
     myProjectView = projectView;
     myBus = bus;
     myIdeDocumentHistory = ideDocumentHistory;
     myEditorManager = fileEditorManager;
-  }
-
-  private MPSTreeNode createRoot(Project project) {
-    VirtualFile folder = project.getBaseDir();
-    assert folder != null;
-    return new ProjectTreeNode(project);
   }
 
   @Override
@@ -172,6 +166,17 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       {
         // it's not apparent whether access to the list of project modules requires model read or not
         myWarnModelAccess = false;
+        AbstractAction openEditorAction = new AbstractAction() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+            Object selectedNode = getLastSelectedPathComponent();
+            if (selectedNode instanceof FileTreeNode) {
+              openEditor(((FileTreeNode) selectedNode));
+            }
+          }
+        };
+        getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), openEditorAction);
+        getActionMap().put(openEditorAction, openEditorAction);
       }
       @Override
       protected ActionGroup createPopupActionGroup(final MPSTreeNode node) {
@@ -186,33 +191,21 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
       @Override
       protected MPSTreeNode rebuild() {
         MPSTreeNode node;
-        if (myProject != null && !myProject.isDisposed() && (myProject.getBaseDir() != null)) {
-          node = createRoot(myProject);
+        if (!myProject.isDisposed() && myProject.getBaseDir() != null && ProjectHelper.fromIdeaProject(myProject) != null) {
+          node = new ProjectTreeNode(ProjectHelper.fromIdeaProject(myProject));
         } else {
           node = new TextTreeNode("No Project");
         }
         return node;
       }
-    };
 
-    myTree.addKeyListener(new KeyAdapter() {
       @Override
-      public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0) {
-          openEditor();
-          e.consume();
+      protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
+        if (nodeToClick instanceof FileTreeNode) {
+          openEditor(((FileTreeNode) nodeToClick));
         }
       }
-    });
-    myTree.addMouseListener(new MouseAdapter() {
-      @Override
-      public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() >= 2) {
-          openEditor();
-          e.consume();
-        }
-      }
-    });
+    };
 
     assert ThreadUtils.isInEDT();
     getTree().rebuildNow();
@@ -336,12 +329,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
     return (T) selectedNode;
   }
 
-  private void openEditor() {
-    TreePath selectionPath = getTree().getSelectionPath();
-    if (selectionPath == null) return;
-    if (!(selectionPath.getLastPathComponent() instanceof FileTreeNode)) return;
-    final FileTreeNode fileTreeNode = (FileTreeNode) selectionPath.getLastPathComponent();
-
+  private void openEditor(FileTreeNode fileTreeNode) {
     // assertion was added for http://youtrack.jetbrains.net/issue/MPS-7762
     assert fileTreeNode.getFile().isValid() : "Underlying file is not valid";
     com.intellij.openapi.command.CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
@@ -427,16 +415,19 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         }
 
         final MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) virtualFile;
-        SModel smodel = ModelAccess.instance().runReadAction(new Computable<SModel>() {
-          @Override
-          public SModel compute() {
-            return nodeVirtualFile.getNode().getModel();
-          }
-        });
-        if (smodel == null) return false;
+        SModelReference modelReference = nodeVirtualFile.getSNodePointer().getModelReference();
 
-        DataSource source = smodel.getSource();
-        if (!(source instanceof FileSystemBasedDataSource)) return false;
+        SRepository projectRepo = ProjectHelper.getProjectRepository(myProject);
+        if (projectRepo == null) {
+          return false;
+        }
+        DataSource source = new ModelAccessHelper(projectRepo).runReadAction(() -> {
+          SModel smodel = modelReference.resolve(projectRepo);
+          return smodel == null ? null : smodel.getSource();
+        });
+        if (!(source instanceof FileSystemBasedDataSource)) {
+          return false;
+        }
 
         IFile modelFile = ((FileSystemBasedDataSource) source).getAffectedFiles().iterator().next();
         VirtualFile realFile = null;
@@ -445,19 +436,16 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
         }
 
         myFile = realFile;
-        if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) return false;
+        if ((realFile == null) || (isInitialized() && getNode(realFile) == null)) {
+          return false;
+        }
 
         return true;
       }
 
       @Override
       protected void doSelectIn(SelectInContext context, boolean requestFocus) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            selectNode(myFile, true);
-          }
-        });
+        selectNode(myFile, true);
       }
     };
   }

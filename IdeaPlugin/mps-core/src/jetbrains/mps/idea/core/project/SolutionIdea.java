@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -360,6 +360,9 @@ public class SolutionIdea extends Solution {
             return super.getClassesGen();
           }
 
+          // FIXME the code here looks like a hack to allow TraceInfoCache to find trace.info files copied after build into classes_gen location.
+          //       I see no other reason to mangle getClassesGen() of a module in IDEA, as there are no classloading for these modules.
+          //       Perhaps, we shall override getOutputLocation() instead, see TraceInfoCache for further information.
           CompilerModuleExtension compilerModuleExtension = ModuleRootManager.getInstance(myModule).getModuleExtension(CompilerModuleExtension.class);
           VirtualFile compilerOutputPath = compilerModuleExtension.getCompilerOutputPath();
           if (compilerOutputPath == null) {
