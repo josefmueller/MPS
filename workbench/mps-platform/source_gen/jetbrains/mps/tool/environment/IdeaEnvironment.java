@@ -22,7 +22,6 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.util.Reference;
-import com.intellij.ide.startup.StartupManagerEx;
 import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.ide.vfs.IdeaFSComponent;
 import jetbrains.mps.vfs.DefaultCachingContext;
@@ -31,7 +30,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.core.platform.Platform;
 import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.Semaphore;
-import com.intellij.openapi.startup.StartupManager;
+import com.intellij.ide.startup.StartupManagerEx;
+import com.intellij.openapi.project.DumbService;
 
 /**
  * Use #getOrCreate method to construct this kind of environment
@@ -177,7 +177,6 @@ public class IdeaEnvironment extends EnvironmentBase {
     final ProjectManagerEx projectManager = ProjectManagerEx.getInstanceEx();
     final String filePath = projectFile.getAbsolutePath();
 
-    final IdeaEnvironment.PostStartupActivitiesWaiter waiter = new IdeaEnvironment.PostStartupActivitiesWaiter();
     final Reference<Project> project = new Reference<Project>();
     final Reference<Exception> exc = new Reference<Exception>();
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
@@ -187,7 +186,6 @@ public class IdeaEnvironment extends EnvironmentBase {
             LOG.info("Load and open the project with path '" + filePath + "'");
           }
           project.set(projectManager.loadAndOpenProject(filePath));
-          waiter.init(project.get());
           refreshProjectDir(project.get());
         } catch (Exception e) {
           exc.set(e);
@@ -196,14 +194,19 @@ public class IdeaEnvironment extends EnvironmentBase {
     }, ModalityState.NON_MODAL);
 
     if (!(exc.isNull())) {
-      throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc.get());
+      throw new IdeaEnvironment.CouldNotLoadProjectException(String.format("ProjectManager could not load project from '%s'", projectFile.getAbsolutePath()), exc.get());
     }
 
-    // On new (171.4249) platform post startup activities frequently do not pass before waiter.wait0() check, so have to add flushAllEvents() here 
-    if (!(StartupManagerEx.getInstanceEx(project.get()).postStartupActivityPassed())) {
-      flushAllEvents();
+    if (project.isNull()) {
+      throw new IdeaEnvironment.ProjectCouldNotBeOpenedException(String.format("Could not open project (null in return) from the '%s'", projectFile.getAbsolutePath()), exc.get());
     }
 
+    final IdeaEnvironment.PostStartupActivitiesWaiter waiter = new IdeaEnvironment.PostStartupActivitiesWaiter(project.get());
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      public void run() {
+        waiter.init();
+      }
+    });
 
     waiter.wait0();
 
@@ -220,6 +223,15 @@ public class IdeaEnvironment extends EnvironmentBase {
     }
   }
 
+  /**
+   * BIG GUN
+   * Only use when absolutely necessary.
+   * Please wrap an invocation of this method into a method which is clear what it waits for
+   * For instance if you wait for the end of poststartup activities -- extract a new method
+   * #waitForPostStartupActivitiesToEnd.
+   * 
+   * Otherwise it will be hard to perceive what exactly your code waits for
+   */
   @Override
   public void flushAllEvents() {
     checkInitialized();
@@ -248,28 +260,65 @@ public class IdeaEnvironment extends EnvironmentBase {
 
   private static final class PostStartupActivitiesWaiter {
     private final Semaphore mySem = new Semaphore(0);
-    private volatile Project myProject;
+    private final Project myProject;
 
-    public void init(Project project) {
-      if (project != null) {
-        myProject = project;
-        StartupManager.getInstance(project).registerPostStartupActivity(new Runnable() {
+    public PostStartupActivitiesWaiter(@NotNull Project project) {
+      myProject = project;
+    }
+
+    public void init() {
+      if (getStartupManager().postStartupActivityPassed()) {
+        return;
+      }
+      getStartupManager().registerPostStartupActivity(new Runnable() {
+        public void run() {
+          mySem.release();
+        }
+      });
+    }
+
+    private StartupManagerEx getStartupManager() {
+      return StartupManagerEx.getInstanceEx(myProject);
+    }
+
+    public void wait0() {
+      StartupManagerEx startupManager = getStartupManager();
+      if (startupManager.postStartupActivityPassed()) {
+        return;
+      }
+      try {
+        mySem.acquire();
+      } catch (InterruptedException e) {
+        throw new RuntimeException("Caught exception while waiting for the post startup activities", e);
+      }
+      waitForDumbModeToFinish();
+      assert startupManager.postStartupActivityPassed();
+    }
+
+    private void waitForDumbModeToFinish() {
+      final StartupManagerEx startupManager = getStartupManager();
+      if (!(startupManager.postStartupActivityPassed())) {
+        DumbService.getInstance(myProject).runWhenSmart(new Runnable() {
           public void run() {
-            mySem.release();
+            if (!(startupManager.postStartupActivityPassed())) {
+              waitForDumbModeToFinish();
+            }
           }
         });
       }
     }
+  }
 
-    public void wait0() {
-      if (myProject != null) {
-        try {
-          mySem.acquire();
-        } catch (InterruptedException e) {
-          throw new RuntimeException("Caught exception while waiting for the post startup activities", e);
-        }
-        assert StartupManagerEx.getInstanceEx(myProject).postStartupActivityPassed();
-      }
+  private static final class CouldNotLoadProjectException extends RuntimeException {
+    public CouldNotLoadProjectException(String message, Exception cause) {
+      super(message, cause);
     }
   }
+
+  private static final class ProjectCouldNotBeOpenedException extends RuntimeException {
+    public ProjectCouldNotBeOpenedException(String message, Exception cause) {
+      super(message, cause);
+    }
+  }
+
 }
