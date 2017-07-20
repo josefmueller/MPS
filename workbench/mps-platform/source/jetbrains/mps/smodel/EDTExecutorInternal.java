@@ -26,6 +26,7 @@ import jetbrains.mps.util.NamedThreadFactory;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -58,6 +59,7 @@ final class EDTExecutorInternal implements Disposable {
   private final Lock myQueueLock = new ReentrantLock();
   private final Condition myQueueIsEmptyCondition = myQueueLock.newCondition();
   private final AtomicInteger myTasksCount = new AtomicInteger();
+  private boolean myDisposed = false; // access only in EDT!
 
   @NotNull
   private static ThreadFactory createDaemonFactory() {
@@ -86,7 +88,7 @@ final class EDTExecutorInternal implements Disposable {
     traceTheCaller();
     try {
       myQueueLock.lock();
-      boolean wakeUp = taskQueueIsEmpty();
+      boolean wakeUp = taskQueueIsEmpty(); // the first task after the queue has been emptied
       boolean success = myTaskQueue.add(task);
       if (!success) {
         LOG.error("Failed to add a task into the queue " + task);
@@ -122,33 +124,37 @@ final class EDTExecutorInternal implements Disposable {
   private void flushTasksQueue() {
     ThreadUtils.assertEDT();
 
-    checkQueueIsNotTooLarge();
-    doFlush();
+    if (!myDisposed) {
+      warnIfQueueIsTooLarge();
+      doFlush();
+    }
   }
 
   private void doFlush() {
-    try {
-      ScheduledFuture<?> timer = createTimeOutFuture();
+    ScheduledFuture<?> timer = createTimeOutFuture();
 
-      int queueSize = myTasksCount.get();
-      while (queueSize > 0) {
-        LOG.trace(String.format("flush %d tasks: %d ms left", queueSize, timer.getDelay(TimeUnit.MILLISECONDS)));
-        flushNTasks(timer, queueSize);
-        if (timer.isDone()) {
-          return;
-        }
-        queueSize = myTasksCount.get();
-      }
-    } finally {
+    if (timer != null) {
       try {
-        myQueueLock.lock();
-        if (taskQueueIsEmpty()) {
-          signalNoTasksInTheQueue();
-        } else {
-          flushQueueLaterInEDT();
+        int queueSize = myTasksCount.get();
+        while (queueSize > 0) {
+          LOG.trace(String.format("flush %d tasks: %d ms left", queueSize, timer.getDelay(TimeUnit.MILLISECONDS)));
+          flushNTasks(timer, queueSize);
+          if (timer.isDone()) {
+            return;
+          }
+          queueSize = myTasksCount.get();
         }
-      } finally {
-        myQueueLock.unlock();
+      } finally{
+        try {
+          myQueueLock.lock();
+          if (taskQueueIsEmpty()) {
+            signalNoTasksInTheQueue();
+          } else {
+            flushQueueLaterInEDT();
+          }
+        } finally {
+          myQueueLock.unlock();
+        }
       }
     }
   }
@@ -162,14 +168,19 @@ final class EDTExecutorInternal implements Disposable {
     }
   }
 
-  @NotNull
+  @Nullable
   private ScheduledFuture<?> createTimeOutFuture() {
-    return EXECUTOR_SERVICE.schedule(() -> {},
-                                     MAX_SINGLE_EXECUTION_TIME_MS,
-                                     TimeUnit.MILLISECONDS);
+    if (!EXECUTOR_SERVICE.isShutdown()) {
+      return EXECUTOR_SERVICE.schedule(() -> {
+                                       },
+                                       MAX_SINGLE_EXECUTION_TIME_MS,
+                                       TimeUnit.MILLISECONDS);
+    } else {
+      return null;
+    }
   }
 
-  private void checkQueueIsNotTooLarge() {
+  private void warnIfQueueIsTooLarge() {
     int queueSize = myTasksCount.get();
     if (queueSize > EDTExecutor.QUEUE_MAX_EXPECTED_VALUE) {
       LOG.warn("Tasks queue size is " + queueSize + " which is above the expected");
@@ -246,6 +257,8 @@ final class EDTExecutorInternal implements Disposable {
 
   @Override
   public void dispose() {
+    assert ThreadUtils.isInEDT();
+    myDisposed = true;
     new ExecutorServiceShutdownHelper(EXECUTOR_SERVICE).shutdownAndAwaitTermination(EDTExecutor.TERMINATION_TIMEOUT_MS);
   }
 }
