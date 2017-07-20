@@ -26,7 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.ArrayList;
-import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -53,6 +53,8 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
           return scope;
         }
       };
+      SCAs = extractSCAs(m);
+
       Collection<SNode> conceptNodes = CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), false);
 
       for (final SNode conceptNode : CollectionSequence.fromCollection(conceptNodes)) {
@@ -100,7 +102,7 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
           if ((menu != null)) {
             SModelOperations.addRootNode(editorModel, menu);
 
-            ListSequence.fromList(SLinkOperations.getChildren(data, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).addElement(createSmartRefMigrationDataEntity_b3phj_a0a2a6a1a2a2a6(conceptNode, menu));
+            ListSequence.fromList(SLinkOperations.getChildren(data, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debaL, 0x29e124551692ded1L, "entities"))).addElement(createSmartRefMigrationDataEntity_b3phj_a0a2a6a1a4a2a6(conceptNode, menu));
           }
         }
       }
@@ -115,19 +117,25 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
   }
 
 
+  private Collection<SNode> SCAs = null;
+
   private boolean hasSCAUsages(final SNode conceptNode) {
-    Collection<SNode> SCAs = CommandUtil.instances(GlobalScope.getInstance(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), true);
     return CollectionSequence.fromCollection(SCAs).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b3phj_a0a0a0a0a0a1a8(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept")), conceptNode);
+        return eq_b3phj_a0a0a0a0a0a0a01(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, 0x9aeec2e0d781773L, "concept")), conceptNode);
       }
     }).isNotEmpty();
+  }
+
+  private static Collection<SNode> extractSCAs(SModule currentModule) {
+    Iterable<SModule> dependentModules = DependentModulesUtil.count(ListSequence.fromListAndArray(new ArrayList<SModule>(), currentModule));
+    return CommandUtil.instances(new ModulesScope(dependentModules), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), true);
   }
 
   private boolean hasDefaultMenu(SModel editorModel, final SNode conceptNode) {
     return ListSequence.fromList(SModelOperations.roots(editorModel, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b3phj_a0a0a0a0a0a0a01(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), conceptNode);
+        return eq_b3phj_a0a0a0a0a0a0a41(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, 0x5b7b4c4d511049b4L, "conceptDeclaration")), conceptNode);
       }
     }).isNotEmpty();
   }
@@ -136,31 +144,31 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
   private static final RefPresentationFunctionUtil.ParameterReplacer_Smart REPLACER_VISIBLE = new RefPresentationFunctionUtil.ParameterReplacer_Smart(true);
 
   public static SNode smartRefMenu(SNode conceptNode, SNode menuPart) {
-    SNode menu = _quotation_createNode_b3phj_a0a0q(menuPart, SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_SmartReference", conceptNode);
+    SNode menu = _quotation_createNode_b3phj_a0a0u(menuPart, SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "_SmartReference", conceptNode);
     SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
     return menu;
   }
 
   private SNode defaultMenu(SNode conceptNode, SNode includedMenu) {
-    SNode menu = _quotation_createNode_b3phj_a0a0s(conceptNode, includedMenu);
+    SNode menu = _quotation_createNode_b3phj_a0a0w(conceptNode, includedMenu);
     SPropertyOperations.set(menu, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), SPropertyOperations.getString(conceptNode, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")));
     return menu;
   }
 
-  private static SNode createSmartRefMigrationDataEntity_b3phj_a0a2a6a1a2a2a6(Object p0, Object p1) {
+  private static SNode createSmartRefMigrationDataEntity_b3phj_a0a2a6a1a4a2a6(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, "jetbrains.mps.lang.editor.structure.SmartRefMigrationDataEntity"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692debeL, "conceptNode"), (SNode) p0);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x29e124551692debbL, 0x29e124551692dec1L, "generatedMenu"), (SNode) p1);
     return n1;
   }
-  private static boolean eq_b3phj_a0a0a0a0a0a1a8(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static boolean eq_b3phj_a0a0a0a0a0a0a01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNode _quotation_createNode_b3phj_a0a0q(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static boolean eq_b3phj_a0a0a0a0a0a0a41(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static SNode _quotation_createNode_b3phj_a0a0u(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -176,7 +184,7 @@ public class Migrate_ExplicitMenuForSmartReferences extends MigrationScriptBase 
     quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), quotedNode_6);
     return quotedNode_4;
   }
-  private static SNode _quotation_createNode_b3phj_a0a0s(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_b3phj_a0a0w(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
