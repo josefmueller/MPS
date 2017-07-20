@@ -14,8 +14,21 @@ import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
     Assert.assertTrue(menuDescriptor != null);
     Assert.assertTrue(eq_agvgja_a0a3a0(menuDescriptor.getSource(), sourceToCheckAgainst));
   }
+  /*package*/ static void checkTraceInfoPath(EditorMenuTraceInfo editorMenuTraceInfo, SNodeReference... sourcesToCheckAgainst) {
+    Assert.assertTrue(editorMenuTraceInfo != null);
+    for (SNodeReference source : sourcesToCheckAgainst) {
+      EditorMenuDescriptor menuDescriptor = editorMenuTraceInfo.getMenuDescriptor();
+      Assert.assertTrue(menuDescriptor != null);
+      Assert.assertTrue(eq_agvgja_a0a2a1a1(menuDescriptor.getSource(), source));
+      editorMenuTraceInfo = editorMenuTraceInfo.getParent();
+    }
+    Assert.assertTrue(editorMenuTraceInfo == null);
+  }
 
   private static boolean eq_agvgja_a0a3a0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_agvgja_a0a2a1a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

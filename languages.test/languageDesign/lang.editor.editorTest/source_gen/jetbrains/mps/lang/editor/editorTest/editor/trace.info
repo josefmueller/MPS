@@ -14,7 +14,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="22,0,264,0" name="jetbrains.mps.lang.editor.editorTest.editor.EditorAspectDescriptorImpl" />
+      <unit at="22,0,266,0" name="jetbrains.mps.lang.editor.editorTest.editor.EditorAspectDescriptorImpl" />
     </file>
     <file name="NotEditableVaraileReference_SubstituteMenu.java">
       <unit at="68,0,93,0" name="jetbrains.mps.lang.editor.editorTest.editor.NotEditableVaraileReference_SubstituteMenu$SMP_ReferenceScope_n4m6b3_a$Item" />
@@ -11795,6 +11795,73 @@
       <unit id="7803854675610223924" at="180,0,234,0" name="jetbrains.mps.lang.editor.editorTest.editor.DelTestChildContainer_EditorBuilder_a$interfaceChildSingleRoleHandler_kin8gl_f2a" />
       <unit id="7803854675610223924" at="105,0,160,0" name="jetbrains.mps.lang.editor.editorTest.editor.DelTestChildContainer_EditorBuilder_a$childSingleRoleHandler_kin8gl_c2a" />
       <unit id="7803854675610223924" at="25,0,245,0" name="jetbrains.mps.lang.editor.editorTest.editor.DelTestChildContainer_EditorBuilder_a" />
+    </file>
+  </root>
+  <root nodeRef="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)/7912617346312151551">
+    <file name="MenuTraceTransformationChild_SubstituteMenu.java">
+      <node id="7912617346312151551" at="26,118,27,140" concept="6" />
+      <node id="7912617346312151551" at="27,140,28,312" concept="2" />
+      <node id="7912617346312151551" at="28,312,29,18" concept="7" />
+      <node id="7912617346312151551" at="34,91,35,49" concept="2" />
+      <node id="7912617346312151551" at="35,49,36,270" concept="2" />
+      <node id="7912617346312151551" at="37,9,38,44" concept="7" />
+      <node id="7912617346312151551" at="39,15,40,50" concept="2" />
+      <node id="7912617346312151551" at="49,77,50,96" concept="7" />
+      <node id="7912617346312151551" at="53,0,54,0" concept="3" trace="_context" />
+      <node id="7912617346312151551" at="54,0,55,0" concept="3" trace="myTraceInfo" />
+      <node id="7912617346312151551" at="55,50,56,272" concept="10" />
+      <node id="7912617346312151551" at="56,272,57,27" concept="2" />
+      <node id="7912617346312151551" at="57,27,58,54" concept="2" />
+      <node id="7912617346312151551" at="58,54,59,71" concept="6" />
+      <node id="7912617346312151551" at="59,71,60,223" concept="2" />
+      <node id="7912617346312151551" at="60,223,61,71" concept="2" />
+      <node id="7912617346312151551" at="61,71,62,53" concept="2" />
+      <node id="7912617346312151806" at="67,56,68,221" concept="7" />
+      <node id="7912617346312151551" at="72,49,73,27" concept="7" />
+      <node id="7912617346312213090" at="77,62,78,67" concept="7" />
+      <node id="7912617346312151551" at="71,0,75,0" concept="5" trace="getTraceInfo#()Ljetbrains/mps/openapi/editor/menus/EditorMenuTraceInfo;" />
+      <node id="7912617346312151551" at="36,270,41,5" concept="11" />
+      <node id="7912617346312151551" at="47,0,52,0" concept="5" trace="createItem#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuItem;" />
+      <node id="7912617346312151551" at="65,0,70,0" concept="5" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7912617346312212684" at="75,0,80,0" concept="5" trace="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7912617346312151551" at="24,0,31,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <node id="7912617346312151551" at="55,0,64,0" concept="1" trace="Item#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)V" />
+      <node id="7912617346312151551" at="32,0,43,0" concept="5" trace="createMenuItems#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="7912617346312151551" at="37,9,38,44" />
+      <scope id="7912617346312151551" at="39,15,40,50" />
+      <scope id="7912617346312151551" at="49,77,50,96" />
+      <scope id="7912617346312151551" at="67,56,68,221" />
+      <scope id="7912617346312151551" at="72,49,73,27" />
+      <scope id="7912617346312212684" at="77,62,78,67" />
+      <scope id="7912617346312151551" at="26,118,29,18">
+        <var name="result" id="7912617346312151551" />
+      </scope>
+      <scope id="7912617346312151551" at="71,0,75,0" />
+      <scope id="7912617346312151551" at="47,0,52,0">
+        <var name="_context" id="7912617346312151551" />
+      </scope>
+      <scope id="7912617346312151551" at="65,0,70,0">
+        <var name="pattern" id="7912617346312151551" />
+      </scope>
+      <scope id="7912617346312212684" at="75,0,80,0">
+        <var name="pattern" id="7912617346312212684" />
+      </scope>
+      <scope id="7912617346312151551" at="24,0,31,0">
+        <var name="_context" id="7912617346312151551" />
+      </scope>
+      <scope id="7912617346312151551" at="34,91,41,5" />
+      <scope id="7912617346312151551" at="55,50,62,53">
+        <var name="description" id="7912617346312151551" />
+      </scope>
+      <scope id="7912617346312151551" at="55,0,64,0">
+        <var name="context" id="7912617346312151551" />
+      </scope>
+      <scope id="7912617346312151551" at="32,0,43,0">
+        <var name="context" id="7912617346312151551" />
+      </scope>
+      <unit id="7912617346312151551" at="52,0,81,0" name="jetbrains.mps.lang.editor.editorTest.editor.MenuTraceTransformationChild_SubstituteMenu$SMP_Action_weg0w5_a$Item" />
+      <unit id="7912617346312151551" at="45,0,82,0" name="jetbrains.mps.lang.editor.editorTest.editor.MenuTraceTransformationChild_SubstituteMenu$SMP_Action_weg0w5_a" />
+      <unit id="7912617346312151551" at="23,0,83,0" name="jetbrains.mps.lang.editor.editorTest.editor.MenuTraceTransformationChild_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)/8497577741385080310">
