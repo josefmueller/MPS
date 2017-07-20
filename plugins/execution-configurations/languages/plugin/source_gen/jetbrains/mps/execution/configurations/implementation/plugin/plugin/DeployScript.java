@@ -30,6 +30,7 @@ import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import org.apache.log4j.Level;
@@ -38,7 +39,7 @@ import jetbrains.mps.smodel.tempmodel.TempModule;
 import java.util.Collections;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.impl.IoFileSystem;
 
 public class DeployScript {
   private static final Logger LOG = LogManager.getLogger(DeployScript.class);
@@ -53,7 +54,7 @@ public class DeployScript {
     myModule = new DeployScript.TemporalModuleWithDescriptorFile();
     SRepository projectRepo = project.getRepository();
     assert projectRepo instanceof SRepositoryExt;
-    (((SRepositoryExt) projectRepo)).registerModule(myModule, myModule);
+    ((SRepositoryExt) projectRepo).registerModule(myModule, myModule);
 
     SModel model = TemporaryModels.getInstance().create(false, TempModuleOptions.forExistingModule(myModule));
     SetSequence.fromSet(myModelsToMake).addElement(model);
@@ -70,7 +71,11 @@ public class DeployScript {
   public String make() {
     MakeSession session = new MakeSession(myProject, new DefaultMakeMessageHandler(myProject), false);
     if (IMakeService.INSTANCE.get().openNewSession(session)) {
-      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myModelsToMake).resources());
+      Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myModelsToMake).canGenerateCondition(new _FunctionTypes._return_P1_E0<Boolean, SModel>() {
+        public Boolean invoke(SModel m) {
+          return true;
+        }
+      }).resources());
       IResult result = null;
       try {
         result = future.get();
@@ -109,20 +114,24 @@ public class DeployScript {
   private static class TemporalModuleWithDescriptorFile extends TempModule {
     private final File myDescriptorFile;
     private final File myBaseDir;
+
     private TemporalModuleWithDescriptorFile() {
-      super(Collections.<ModelRootDescriptor>emptySet(), true, false);
+      super(Collections.<ModelRootDescriptor>emptySet(), true, true);
       myBaseDir = FileUtil.createTmpDir();
       // just anything 
       myDescriptorFile = new File(myBaseDir, "module.msd");
     }
+
     @Override
     public IFile getDescriptorFile() {
       // who cares if this module has descriptor file? Do we need to extend TempModule? 
-      return FileSystem.getInstance().getFileByPath(myDescriptorFile.getAbsolutePath().replace("\\", "/"));
+      return IoFileSystem.INSTANCE.getFile(myDescriptorFile.getAbsolutePath());
     }
+
     public File getBaseDirectory() {
       return myBaseDir;
     }
+
     public boolean isPackaged() {
       // don't ask 
       return false;
