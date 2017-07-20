@@ -64,8 +64,6 @@ public class ShowEditorMenuItemTrace_Action extends BaseAction {
     } else if (event.getData(PlatformDataKeys.SELECTED_ITEM) instanceof TransformationMenuItem) {
       editorMenuTraceInfo = ((TransformationMenuItem) event.getData(PlatformDataKeys.SELECTED_ITEM)).getTraceInfo();
     }
-    if (editorMenuTraceInfo != null) {
-      tool.showEditorMenuTraceInfo(editorMenuTraceInfo);
-    }
+    tool.showEditorMenuTraceInfo(editorMenuTraceInfo);
   }
 }

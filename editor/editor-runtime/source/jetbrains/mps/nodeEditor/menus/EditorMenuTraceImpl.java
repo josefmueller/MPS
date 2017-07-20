@@ -18,15 +18,13 @@ package jetbrains.mps.nodeEditor.menus;
 import jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTrace;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
-import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo.EmptyEditorMenuTraceInfo;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class EditorMenuTraceImpl implements EditorMenuTrace {
   private Deque<EditorMenuTraceInfoImpl> myMenuTraceInfoStack;
-  private static final EditorMenuTraceInfo DEFAULT_TRACE_CONTEXT = new EmptyEditorMenuTraceInfo();
 
   @Override
   public void pushTraceInfo() {
@@ -34,7 +32,7 @@ public class EditorMenuTraceImpl implements EditorMenuTrace {
       myMenuTraceInfoStack = new ArrayDeque<>();
     }
     EditorMenuTraceInfoImpl menuTraceInfo;
-    if (myMenuTraceInfoStack.isEmpty()){
+    if (myMenuTraceInfoStack.isEmpty()) {
       menuTraceInfo = new EditorMenuTraceInfoImpl();
     } else {
       EditorMenuTraceInfoImpl parent = myMenuTraceInfoStack.peek();
@@ -47,22 +45,22 @@ public class EditorMenuTraceImpl implements EditorMenuTrace {
   @Override
   public void popTraceInfo() {
     if (myMenuTraceInfoStack == null || myMenuTraceInfoStack.isEmpty()) {
-      throw new IllegalStateException("There is no MenuTraceContext in the stack");
+      throw new IllegalStateException("There is no EditorMenuTraceInfo in the stack");
     }
     myMenuTraceInfoStack.pop();
   }
 
   @Override
   public void setDescriptor(EditorMenuDescriptor descriptor) {
-    if (myMenuTraceInfoStack == null) {
-      throw new IllegalStateException("There is no MenuTraceContext in the stack");
+    if (myMenuTraceInfoStack == null || myMenuTraceInfoStack.isEmpty()) {
+      throw new IllegalStateException("There is no EditorMenuTraceInfo in the stack");
     }
     myMenuTraceInfoStack.peek().setDescriptor(descriptor);
   }
 
-  @NotNull
+  @Nullable
   @Override
   public EditorMenuTraceInfo getTraceInfo() {
-    return myMenuTraceInfoStack == null ? DEFAULT_TRACE_CONTEXT : myMenuTraceInfoStack.peek();
+    return myMenuTraceInfoStack == null ? null : myMenuTraceInfoStack.peek();
   }
 }

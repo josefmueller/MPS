@@ -16,25 +16,35 @@
 package jetbrains.mps.ide.devkit.editorMenuTrace;
 
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.MessageType;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.icons.MPSIcons.ToolWindows;
 import jetbrains.mps.ide.tools.BaseTabbedProjectTool;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.annotations.Nullable;
 
 public class EditorMenuTraceTool extends BaseTabbedProjectTool {
 
+  public static final String TOOL_ID = "Menu Trace";
+
   public EditorMenuTraceTool(Project project) {
-    super(project, "Menu Trace", null, ToolWindows.Default, ToolWindowAnchor.BOTTOM, false);
+    super(project, TOOL_ID, null, ToolWindows.Default, ToolWindowAnchor.BOTTOM, false);
   }
 
   @Override
   protected void createTool() {
   }
 
-  public void showEditorMenuTraceInfo(EditorMenuTraceInfo info) {
-    EditorMenuTraceTab tab = new EditorMenuTraceTab(this, getProject().getComponent(MPSProject.class));
-    tab.showEditorMenuTraceInfo(info);
-    tab.openTab(true);
+  public void showEditorMenuTraceInfo(@Nullable EditorMenuTraceInfo info) {
+    if (info!= null){
+      EditorMenuTraceTab tab = new EditorMenuTraceTab(this, getProject().getComponent(MPSProject.class));
+      tab.showEditorMenuTraceInfo(info);
+      tab.openTab(true);
+    } else {
+      final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
+      manager.notifyByBalloon(TOOL_ID, MessageType.INFO, "No trace for that item");
+    }
   }
 }

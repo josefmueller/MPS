@@ -58,8 +58,8 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
   }
 
   SmartReferenceSubstituteMenuItem(SNode referentNode, SNode parentNode, SNode currentChild, SConcept smartConcept,
-                                   SReferenceLink smartReference, @NotNull ReferenceDescriptor descriptor, EditorContext editorContext, SubstituteMenuContext substituteMenuContext) {
-    super(smartConcept, parentNode, currentChild, editorContext);
+                                   SReferenceLink smartReference, @NotNull ReferenceDescriptor descriptor, @NotNull SubstituteMenuContext substituteMenuContext) {
+    super(smartConcept, parentNode, currentChild, substituteMenuContext.getEditorContext());
     myReferentNode = referentNode;
     mySmartConcept = smartConcept;
     mySmartReference = smartReference;
