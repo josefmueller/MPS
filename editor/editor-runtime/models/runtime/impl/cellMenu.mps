@@ -25,6 +25,9 @@
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="y4ob" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.menus(MPS.Editor/)" />
+    <import index="v95p" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.lang.editor.menus(MPS.Editor/)" />
+    <import index="x4mf" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.menus(MPS.Editor/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -96,6 +99,7 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
+        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -116,7 +120,11 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -612,6 +620,78 @@
                             </node>
                           </node>
                           <node concept="2AHcQZ" id="28rIX8TWHuf" role="2AJF6D">
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          </node>
+                        </node>
+                        <node concept="3clFb_" id="4EfPrVhgAT8" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="getEditorMenuTraceInfo" />
+                          <property role="DiZV1" value="false" />
+                          <property role="od$2w" value="false" />
+                          <node concept="3Tm1VV" id="4EfPrVhgAT9" role="1B3o_S" />
+                          <node concept="3uibUv" id="4EfPrVhgATb" role="3clF45">
+                            <ref role="3uigEE" to="x4mf:~EditorMenuTraceInfo" resolve="EditorMenuTraceInfo" />
+                          </node>
+                          <node concept="3clFbS" id="4EfPrVhgATf" role="3clF47">
+                            <node concept="3cpWs8" id="4EfPrVhgVDt" role="3cqZAp">
+                              <node concept="3cpWsn" id="4EfPrVhgVDu" role="3cpWs9">
+                                <property role="TrG5h" value="info" />
+                                <node concept="3uibUv" id="4EfPrVhgVDr" role="1tU5fm">
+                                  <ref role="3uigEE" to="y4ob:~EditorMenuTraceInfoImpl" resolve="EditorMenuTraceInfoImpl" />
+                                </node>
+                                <node concept="2ShNRf" id="4EfPrVhgVDv" role="33vP2m">
+                                  <node concept="1pGfFk" id="4EfPrVhgVDw" role="2ShVmc">
+                                    <ref role="37wK5l" to="y4ob:~EditorMenuTraceInfoImpl.&lt;init&gt;()" resolve="EditorMenuTraceInfoImpl" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="4EfPrVhgW5U" role="3cqZAp">
+                              <node concept="2OqwBi" id="4EfPrVhgWnx" role="3clFbG">
+                                <node concept="37vLTw" id="4EfPrVhgW5S" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="4EfPrVhgVDu" resolve="info" />
+                                </node>
+                                <node concept="liA8E" id="4EfPrVhgWAK" role="2OqNvi">
+                                  <ref role="37wK5l" to="y4ob:~EditorMenuTraceInfoImpl.setDescriptor(jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor):void" resolve="setDescriptor" />
+                                  <node concept="2ShNRf" id="4EfPrVhgWD$" role="37wK5m">
+                                    <node concept="1pGfFk" id="4EfPrVhgXPa" role="2ShVmc">
+                                      <ref role="37wK5l" to="v95p:~EditorMenuDescriptorBase.&lt;init&gt;(java.lang.String,org.jetbrains.mps.openapi.model.SNodeReference,boolean)" resolve="EditorMenuDescriptorBase" />
+                                      <node concept="3cpWs3" id="4EfPrVhgZ3s" role="37wK5m">
+                                        <node concept="1rXfSq" id="4EfPrVhgZ9u" role="3uHU7w">
+                                          <ref role="37wK5l" node="3NL5ivGjY7p" resolve="getMatchingText" />
+                                          <node concept="Xl_RD" id="4EfPrVhgZye" role="37wK5m">
+                                            <property role="Xl_RC" value="" />
+                                          </node>
+                                        </node>
+                                        <node concept="Xl_RD" id="4EfPrVhgXSQ" role="3uHU7B">
+                                          <property role="Xl_RC" value="Enum member substitute action: " />
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="4EfPrVhh3rP" role="37wK5m">
+                                        <node concept="2JrnkZ" id="4EfPrVhh3eq" role="2Oq$k0">
+                                          <node concept="37vLTw" id="3Lqkb7sd9Kw" role="2JrQYb">
+                                            <ref role="3cqZAo" node="3NL5ivGjZyk" resolve="enumMemberDeclaration" />
+                                          </node>
+                                        </node>
+                                        <node concept="liA8E" id="4EfPrVhh3Lt" role="2OqNvi">
+                                          <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbT" id="3Lqkb7sdohM" role="37wK5m">
+                                        <property role="3clFbU" value="true" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3cpWs6" id="4EfPrVhgCMw" role="3cqZAp">
+                              <node concept="37vLTw" id="4EfPrVhgVDx" role="3cqZAk">
+                                <ref role="3cqZAo" node="4EfPrVhgVDu" resolve="info" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2AHcQZ" id="4EfPrVhgATg" role="2AJF6D">
                             <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                           </node>
                         </node>
@@ -1366,6 +1446,79 @@
                             <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                           </node>
                         </node>
+                        <node concept="3clFb_" id="4EfPrVhhc54" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="getEditorMenuTraceInfo" />
+                          <property role="DiZV1" value="false" />
+                          <property role="od$2w" value="false" />
+                          <node concept="3Tm1VV" id="4EfPrVhhc55" role="1B3o_S" />
+                          <node concept="3uibUv" id="4EfPrVhhc56" role="3clF45">
+                            <ref role="3uigEE" to="x4mf:~EditorMenuTraceInfo" resolve="EditorMenuTraceInfo" />
+                          </node>
+                          <node concept="3clFbS" id="4EfPrVhhc57" role="3clF47">
+                            <node concept="3cpWs8" id="4EfPrVhhc58" role="3cqZAp">
+                              <node concept="3cpWsn" id="4EfPrVhhc59" role="3cpWs9">
+                                <property role="TrG5h" value="info" />
+                                <node concept="3uibUv" id="4EfPrVhhc5a" role="1tU5fm">
+                                  <ref role="3uigEE" to="y4ob:~EditorMenuTraceInfoImpl" resolve="EditorMenuTraceInfoImpl" />
+                                </node>
+                                <node concept="2ShNRf" id="4EfPrVhhc5b" role="33vP2m">
+                                  <node concept="1pGfFk" id="4EfPrVhhc5c" role="2ShVmc">
+                                    <ref role="37wK5l" to="y4ob:~EditorMenuTraceInfoImpl.&lt;init&gt;()" resolve="EditorMenuTraceInfoImpl" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="4EfPrVhhc5d" role="3cqZAp">
+                              <node concept="2OqwBi" id="4EfPrVhhc5e" role="3clFbG">
+                                <node concept="37vLTw" id="4EfPrVhhc5f" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="4EfPrVhhc59" resolve="info" />
+                                </node>
+                                <node concept="liA8E" id="4EfPrVhhc5g" role="2OqNvi">
+                                  <ref role="37wK5l" to="y4ob:~EditorMenuTraceInfoImpl.setDescriptor(jetbrains.mps.openapi.editor.menus.EditorMenuDescriptor):void" resolve="setDescriptor" />
+                                  <node concept="2ShNRf" id="4EfPrVhhc5h" role="37wK5m">
+                                    <node concept="1pGfFk" id="4EfPrVhhc5i" role="2ShVmc">
+                                      <ref role="37wK5l" to="v95p:~EditorMenuDescriptorBase.&lt;init&gt;(java.lang.String,org.jetbrains.mps.openapi.model.SNodeReference,boolean)" resolve="EditorMenuDescriptorBase" />
+                                      <node concept="3cpWs3" id="4EfPrVhhc5j" role="37wK5m">
+                                        <node concept="1rXfSq" id="4EfPrVhhc5k" role="3uHU7w">
+                                          <ref role="37wK5l" node="4Oq51yysTNw" resolve="getMatchingText" />
+                                          <node concept="Xl_RD" id="4EfPrVhhc5l" role="37wK5m">
+                                            <property role="Xl_RC" value="" />
+                                          </node>
+                                        </node>
+                                        <node concept="Xl_RD" id="4EfPrVhhc5m" role="3uHU7B">
+                                          <property role="Xl_RC" value="Enum member substitute action: " />
+                                        </node>
+                                      </node>
+                                      <node concept="2OqwBi" id="4EfPrVhhc5n" role="37wK5m">
+                                        <node concept="2JrnkZ" id="4EfPrVhhc5o" role="2Oq$k0">
+                                          <node concept="37vLTw" id="3Lqkb7sdc3a" role="2JrQYb">
+                                            <ref role="3cqZAo" node="6k4lHAwHQ50" resolve="enumMemberDeclaration" />
+                                          </node>
+                                        </node>
+                                        <node concept="liA8E" id="4EfPrVhhc5q" role="2OqNvi">
+                                          <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
+                                        </node>
+                                      </node>
+                                      <node concept="3clFbT" id="3Lqkb7sdoLT" role="37wK5m">
+                                        <property role="3clFbU" value="true" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3cpWs6" id="4EfPrVhhc5r" role="3cqZAp">
+                              <node concept="37vLTw" id="4EfPrVhhc5s" role="3cqZAk">
+                                <ref role="3cqZAo" node="4EfPrVhhc59" resolve="info" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="2AHcQZ" id="4EfPrVhhc5t" role="2AJF6D">
+                            <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                          </node>
+                        </node>
+                        <node concept="2tJIrI" id="4EfPrVhhbOV" role="jymVt" />
                       </node>
                     </node>
                   </node>

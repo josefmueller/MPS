@@ -970,6 +970,72 @@
       <unit id="2786154196593923925" at="13,0,33,0" name="jetbrains.mps.lang.editor.completion.test.CompleteFullMatchingText_Test" />
     </file>
   </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/3631615103242228896">
+    <file name="TestEditorMenuTraceEnumPropertyDefaultEditor_Test.java">
+      <node id="3631615103242228896" at="22,84,23,113" concept="0" />
+      <node id="3631615103242228896" at="23,113,24,137" concept="0" />
+      <node id="3631615103242228896" at="30,51,31,72" concept="0" />
+      <node id="3631615103242228902" at="31,72,32,71" concept="0" />
+      <node id="3631615103242228904" at="32,71,33,26" concept="0" />
+      <node id="3631615103242228917" at="35,27,36,89" concept="0" />
+      <node id="3631615103242228923" at="36,89,37,126" concept="3" />
+      <node id="3631615103242228934" at="37,126,38,44" concept="0" />
+      <node id="3631615103242228938" at="38,44,39,0" concept="5" />
+      <node id="3631615103242228939" at="39,0,40,84" concept="3" />
+      <node id="3631615103242228945" at="40,84,41,382" concept="3" />
+      <node id="3631615103242228959" at="41,382,42,97" concept="0" />
+      <node id="3631615103242228896" at="21,0,26,0" concept="2" trace="test_TestEditorMenuTraceEnumPropertyDefaultEditor#()V" />
+      <node id="3631615103242228915" at="35,0,44,0" concept="2" trace="run#()V" />
+      <node id="3631615103242228905" at="33,26,44,9" concept="0" />
+      <node id="3631615103242228896" at="29,0,46,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3631615103242228896" at="22,84,24,137" />
+      <scope id="3631615103242228896" at="21,0,26,0" />
+      <scope id="3631615103242228916" at="35,27,42,97">
+        <var name="action" id="3631615103242228924" />
+        <var name="editorMenuTraceInfo" id="3631615103242228940" />
+        <var name="enumMemberDeclaration" id="3631615103242228946" />
+      </scope>
+      <scope id="3631615103242228915" at="35,0,44,0" />
+      <scope id="3631615103242228896" at="30,51,44,9" />
+      <scope id="3631615103242228896" at="29,0,46,0" />
+      <unit id="3631615103242228915" at="34,97,44,7" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyDefaultEditor_Test$TestBody$1" />
+      <unit id="3631615103242228896" at="27,0,47,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyDefaultEditor_Test$TestBody" />
+      <unit id="3631615103242228896" at="19,0,48,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyDefaultEditor_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/3631615103242345660">
+    <file name="TestEditorMenuTraceEnumPropertyRegularEditor_Test.java">
+      <node id="3631615103242345660" at="22,84,23,113" concept="0" />
+      <node id="3631615103242345660" at="23,113,24,137" concept="0" />
+      <node id="3631615103242345660" at="30,51,31,72" concept="0" />
+      <node id="3631615103242345666" at="31,72,32,71" concept="0" />
+      <node id="3631615103242345668" at="32,71,33,26" concept="0" />
+      <node id="3631615103242345681" at="35,27,36,89" concept="0" />
+      <node id="3631615103242345687" at="36,89,37,126" concept="3" />
+      <node id="3631615103242345698" at="37,126,38,44" concept="0" />
+      <node id="3631615103242345702" at="38,44,39,0" concept="5" />
+      <node id="3631615103242345703" at="39,0,40,84" concept="3" />
+      <node id="3631615103242345709" at="40,84,41,382" concept="3" />
+      <node id="3631615103242345720" at="41,382,42,97" concept="0" />
+      <node id="3631615103242345660" at="21,0,26,0" concept="2" trace="test_TestEditorMenuTraceEnumPropertyRegularEditor#()V" />
+      <node id="3631615103242345679" at="35,0,44,0" concept="2" trace="run#()V" />
+      <node id="3631615103242345669" at="33,26,44,9" concept="0" />
+      <node id="3631615103242345660" at="29,0,46,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3631615103242345660" at="22,84,24,137" />
+      <scope id="3631615103242345660" at="21,0,26,0" />
+      <scope id="3631615103242345680" at="35,27,42,97">
+        <var name="action" id="3631615103242345688" />
+        <var name="editorMenuTraceInfo" id="3631615103242345704" />
+        <var name="enumMemberDeclaration" id="3631615103242345710" />
+      </scope>
+      <scope id="3631615103242345679" at="35,0,44,0" />
+      <scope id="3631615103242345660" at="30,51,44,9" />
+      <scope id="3631615103242345660" at="29,0,46,0" />
+      <unit id="3631615103242345679" at="34,97,44,7" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyRegularEditor_Test$TestBody$1" />
+      <unit id="3631615103242345660" at="27,0,47,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyRegularEditor_Test$TestBody" />
+      <unit id="3631615103242345660" at="19,0,48,0" name="jetbrains.mps.lang.editor.completion.test.TestEditorMenuTraceEnumPropertyRegularEditor_Test" />
+    </file>
+  </root>
   <root nodeRef="r:f27d9626-8ef5-4cba-bce0-6aa6369f05ff(jetbrains.mps.lang.editor.completion.test)/5317209812044775659">
     <file name="CompleteSpaceInPattern_Test.java">
       <node id="5317209812044775659" at="16,62,17,113" concept="0" />

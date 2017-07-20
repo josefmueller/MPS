@@ -4871,5 +4871,48 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="39A5F7XG_hX">
+    <property role="3GE5qa" value="menuTrace.transformation" />
+    <ref role="1XX52x" to="68nn:39A5F7XG$Zj" resolve="MenuTraceTransformationChildWithEnum" />
+    <node concept="3EZMnI" id="39A5F7XG_hZ" role="2wV5jI">
+      <node concept="l2Vlx" id="39A5F7XG_i0" role="2iSdaV" />
+      <node concept="3F0ifn" id="39A5F7XG_i1" role="3EZMnx">
+        <property role="3F0ifm" value="menu trace transformation child with enum" />
+      </node>
+      <node concept="3F0ifn" id="39A5F7XG_i2" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <node concept="11L4FC" id="39A5F7XG_i3" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="39A5F7XG_i4" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+        <node concept="11LMrY" id="39A5F7XG_i5" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="39A5F7XG_i6" role="3EZMnx">
+        <property role="3F0ifm" value="enum" />
+      </node>
+      <node concept="3F0ifn" id="39A5F7XG_i7" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="11L4FC" id="39A5F7XG_i8" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0A7n" id="39A5F7XG_i9" role="3EZMnx">
+        <ref role="1NtTu8" to="68nn:39A5F7XG_hN" resolve="enum" />
+      </node>
+      <node concept="3F0ifn" id="39A5F7XG_ia" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <node concept="11L4FC" id="39A5F7XG_ib" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="39A5F7XG_ic" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
