@@ -3318,154 +3318,6 @@
           <node concept="L2wRC" id="2d0qgmCdfZb" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6KZ0" resolve="jetbrains.mps.baseLanguageInternal" />
           </node>
-          <node concept="398223" id="3PtN$74IfMB" role="39821P">
-            <node concept="L2wRC" id="2r8mubEEfhf" role="39821P">
-              <ref role="L2wRA" node="7Kfy9QB6L3o" resolve="jetbrains.mps.baseLanguage.unitTest.libs" />
-              <node concept="3yLZsm" id="3LQl9buHXGF" role="3yL2VB">
-                <property role="3yLZsk" value="/lib/junit-4.12.jar" />
-                <node concept="398BVA" id="3LQl9buHXGH" role="3yLZsn">
-                  <ref role="398BVh" node="3CewbsuA8IN" resolve="platform_lib" />
-                  <node concept="2Ry0Ak" id="3D2RlIMwk9g" role="iGT6I">
-                    <property role="2Ry0Am" value="junit-4.12.jar" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3yLZsm" id="1mh_ZUPgyyT" role="3yL2VB">
-                <property role="3yLZsk" value="/lib/hamcrest-core-1.3.jar" />
-                <node concept="398BVA" id="1mh_ZUPg$4r" role="3yLZsn">
-                  <ref role="398BVh" node="3CewbsuA8IN" resolve="platform_lib" />
-                  <node concept="2Ry0Ak" id="1mh_ZUPg$$Y" role="iGT6I">
-                    <property role="2Ry0Am" value="hamcrest-core-1.3.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="28jJK3" id="3rVxTa_7yJ0" role="39821P">
-              <node concept="398BVA" id="3rVxTa_7yJ1" role="28jJRO">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="3rVxTa_7yJ2" role="iGT6I">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="3rVxTa_7yJ3" role="2Ry0An">
-                    <property role="2Ry0Am" value="baseLanguage" />
-                    <node concept="2Ry0Ak" id="3rVxTa_7yJ4" role="2Ry0An">
-                      <property role="2Ry0Am" value="unitTest" />
-                      <node concept="2Ry0Ak" id="3rVxTa_7yJ5" role="2Ry0An">
-                        <property role="2Ry0Am" value="lib" />
-                        <node concept="2Ry0Ak" id="3rVxTa_7yJ6" role="2Ry0An">
-                          <property role="2Ry0Am" value="jmock-2.8.2.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="28jJK3" id="3rVxTa_7xdo" role="39821P">
-              <node concept="398BVA" id="3rVxTa_7xdp" role="28jJRO">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="3rVxTa_7xdq" role="iGT6I">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="3rVxTa_7xdr" role="2Ry0An">
-                    <property role="2Ry0Am" value="baseLanguage" />
-                    <node concept="2Ry0Ak" id="3rVxTa_7xds" role="2Ry0An">
-                      <property role="2Ry0Am" value="unitTest" />
-                      <node concept="2Ry0Ak" id="3rVxTa_7xdt" role="2Ry0An">
-                        <property role="2Ry0Am" value="lib" />
-                        <node concept="2Ry0Ak" id="3rVxTa_7xdu" role="2Ry0An">
-                          <property role="2Ry0Am" value="jmock-2.8.2-sources.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="28jJK3" id="3rVxTa_7zgi" role="39821P">
-              <node concept="398BVA" id="3rVxTa_7zgj" role="28jJRO">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="3rVxTa_7zgk" role="iGT6I">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="3rVxTa_7zgl" role="2Ry0An">
-                    <property role="2Ry0Am" value="baseLanguage" />
-                    <node concept="2Ry0Ak" id="3rVxTa_7zgm" role="2Ry0An">
-                      <property role="2Ry0Am" value="unitTest" />
-                      <node concept="2Ry0Ak" id="3rVxTa_7zgn" role="2Ry0An">
-                        <property role="2Ry0Am" value="lib" />
-                        <node concept="2Ry0Ak" id="3rVxTa_7zgo" role="2Ry0An">
-                          <property role="2Ry0Am" value="jmock-junit4-2.8.2.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="28jJK3" id="3rVxTa_7zLG" role="39821P">
-              <node concept="398BVA" id="3rVxTa_7zLH" role="28jJRO">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="3rVxTa_7zLI" role="iGT6I">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="3rVxTa_7zLJ" role="2Ry0An">
-                    <property role="2Ry0Am" value="baseLanguage" />
-                    <node concept="2Ry0Ak" id="3rVxTa_7zLK" role="2Ry0An">
-                      <property role="2Ry0Am" value="unitTest" />
-                      <node concept="2Ry0Ak" id="3rVxTa_7zLL" role="2Ry0An">
-                        <property role="2Ry0Am" value="lib" />
-                        <node concept="2Ry0Ak" id="3rVxTa_7zLM" role="2Ry0An">
-                          <property role="2Ry0Am" value="jmock-junit4-2.8.2-sources.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="28jJK3" id="3axq3oG1cZq" role="39821P">
-              <node concept="398BVA" id="3axq3oG1dxl" role="28jJRO">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="3axq3oG1dxr" role="iGT6I">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="3axq3oG1dxw" role="2Ry0An">
-                    <property role="2Ry0Am" value="baseLanguage" />
-                    <node concept="2Ry0Ak" id="3axq3oG1dx_" role="2Ry0An">
-                      <property role="2Ry0Am" value="unitTest" />
-                      <node concept="2Ry0Ak" id="3axq3oG1dxE" role="2Ry0An">
-                        <property role="2Ry0Am" value="lib" />
-                        <node concept="2Ry0Ak" id="3axq3oG1dxJ" role="2Ry0An">
-                          <property role="2Ry0Am" value="hamcrest-library-1.3.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="28jJK3" id="2KkYYIYlkXg" role="39821P">
-              <node concept="398BVA" id="2KkYYIYlkXh" role="28jJRO">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="2KkYYIYlkXi" role="iGT6I">
-                  <property role="2Ry0Am" value="languages" />
-                  <node concept="2Ry0Ak" id="2KkYYIYlkXj" role="2Ry0An">
-                    <property role="2Ry0Am" value="baseLanguage" />
-                    <node concept="2Ry0Ak" id="2KkYYIYlkXk" role="2Ry0An">
-                      <property role="2Ry0Am" value="unitTest" />
-                      <node concept="2Ry0Ak" id="2KkYYIYlkXl" role="2Ry0An">
-                        <property role="2Ry0Am" value="lib" />
-                        <node concept="2Ry0Ak" id="2KkYYIYlluI" role="2Ry0An">
-                          <property role="2Ry0Am" value="hamcrest-library-1.3-sources.jar" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3_J27D" id="3PtN$74IfMC" role="Nbhlr">
-              <node concept="3Mxwew" id="3PtN$74IfMG" role="3MwsjC">
-                <property role="3MwjfP" value="jetbrains.mps.baseLanguage.unitTest.libs" />
-              </node>
-            </node>
-          </node>
           <node concept="3981dx" id="5UE907RhDfw" role="39821P">
             <node concept="2HvfSZ" id="35zoHQHRZ43" role="39821P">
               <node concept="398BVA" id="5UE907RhDfA" role="2HvfZ0">
@@ -4130,191 +3982,6 @@
           <node concept="3bR9La" id="2a9bszgruPl" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
-          </node>
-        </node>
-      </node>
-      <node concept="1E1JtA" id="7Kfy9QB6L3o" role="2G$12L">
-        <property role="BnDLt" value="true" />
-        <property role="TrG5h" value="jetbrains.mps.baseLanguage.unitTest.libs" />
-        <property role="3LESm3" value="83f155ff-422c-4b5a-a2f2-b459302dd215" />
-        <property role="2GAjPV" value="true" />
-        <node concept="1SiIV0" id="2a9bszgruYc" role="3bR37C">
-          <node concept="3bR9La" id="2a9bszgruYb" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="5PtweUhiM70" role="3bR37C">
-          <node concept="1BurEX" id="5PtweUhiM71" role="1SiIV1">
-            <node concept="3yrxFa" id="1mh_ZUP3nhy" role="2gdwQb">
-              <ref role="3yrxFb" node="6eCuTcwOX2u" />
-            </node>
-            <node concept="398BVA" id="5PtweUhiM6U" role="1BurEY">
-              <ref role="398BVh" node="3CewbsuA8IN" resolve="platform_lib" />
-              <node concept="2Ry0Ak" id="4sxVOp32iXh" role="iGT6I">
-                <property role="2Ry0Am" value="junit-4.12.jar" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="398BVA" id="6wK_PpNA8Ae" role="3LF7KH">
-          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-          <node concept="2Ry0Ak" id="6wK_PpNA8Af" role="iGT6I">
-            <property role="2Ry0Am" value="languages" />
-            <node concept="2Ry0Ak" id="6wK_PpNA8Ag" role="2Ry0An">
-              <property role="2Ry0Am" value="baseLanguage" />
-              <node concept="2Ry0Ak" id="6wK_PpNA8Ah" role="2Ry0An">
-                <property role="2Ry0Am" value="unitTest" />
-                <node concept="2Ry0Ak" id="6wK_PpNA8Ai" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.baseLanguage.unitTest.libs.msd" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="3axq3oG0OAa" role="3bR37C">
-          <node concept="1BurEX" id="3axq3oG0OAb" role="1SiIV1">
-            <node concept="3yrxFa" id="1mh_ZUP3pNG" role="2gdwQb">
-              <ref role="3yrxFb" node="1mh_ZUOZjJh" />
-            </node>
-            <node concept="398BVA" id="3axq3oG0OA4" role="1BurEY">
-              <ref role="398BVh" node="3CewbsuA8IN" resolve="platform_lib" />
-              <node concept="2Ry0Ak" id="3axq3oG0OA6" role="iGT6I">
-                <property role="2Ry0Am" value="hamcrest-core-1.3.jar" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="3axq3oG0OAo" role="3bR37C">
-          <node concept="1BurEX" id="3axq3oG0OAp" role="1SiIV1">
-            <node concept="398BVA" id="3axq3oG0OAc" role="1BurEY">
-              <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-              <node concept="2Ry0Ak" id="3axq3oG0OAd" role="iGT6I">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="3axq3oG0OAe" role="2Ry0An">
-                  <property role="2Ry0Am" value="baseLanguage" />
-                  <node concept="2Ry0Ak" id="3axq3oG0OAf" role="2Ry0An">
-                    <property role="2Ry0Am" value="unitTest" />
-                    <node concept="2Ry0Ak" id="3axq3oG0OAg" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="3axq3oG0OAh" role="2Ry0An">
-                        <property role="2Ry0Am" value="hamcrest-library-1.3.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2KkYYIYleR6" role="3bR37C">
-          <node concept="1BurEX" id="2KkYYIYleR7" role="1SiIV1">
-            <node concept="398BVA" id="2KkYYIYleQU" role="1BurEY">
-              <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-              <node concept="2Ry0Ak" id="2KkYYIYleQV" role="iGT6I">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="2KkYYIYleQW" role="2Ry0An">
-                  <property role="2Ry0Am" value="baseLanguage" />
-                  <node concept="2Ry0Ak" id="2KkYYIYleQX" role="2Ry0An">
-                    <property role="2Ry0Am" value="unitTest" />
-                    <node concept="2Ry0Ak" id="2KkYYIYleQY" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2KkYYIYleQZ" role="2Ry0An">
-                        <property role="2Ry0Am" value="hamcrest-library-1.3-sources.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2KkYYIYleRw" role="3bR37C">
-          <node concept="1BurEX" id="2KkYYIYleRx" role="1SiIV1">
-            <node concept="398BVA" id="2KkYYIYleRk" role="1BurEY">
-              <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-              <node concept="2Ry0Ak" id="2KkYYIYleRl" role="iGT6I">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="2KkYYIYleRm" role="2Ry0An">
-                  <property role="2Ry0Am" value="baseLanguage" />
-                  <node concept="2Ry0Ak" id="2KkYYIYleRn" role="2Ry0An">
-                    <property role="2Ry0Am" value="unitTest" />
-                    <node concept="2Ry0Ak" id="2KkYYIYleRo" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2KkYYIYleRp" role="2Ry0An">
-                        <property role="2Ry0Am" value="jmock-2.8.2-sources.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2KkYYIYleRI" role="3bR37C">
-          <node concept="1BurEX" id="2KkYYIYleRJ" role="1SiIV1">
-            <node concept="398BVA" id="2KkYYIYleRy" role="1BurEY">
-              <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-              <node concept="2Ry0Ak" id="2KkYYIYleRz" role="iGT6I">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="2KkYYIYleR$" role="2Ry0An">
-                  <property role="2Ry0Am" value="baseLanguage" />
-                  <node concept="2Ry0Ak" id="2KkYYIYleR_" role="2Ry0An">
-                    <property role="2Ry0Am" value="unitTest" />
-                    <node concept="2Ry0Ak" id="2KkYYIYleRA" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2KkYYIYleRB" role="2Ry0An">
-                        <property role="2Ry0Am" value="jmock-2.8.2.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2KkYYIYleRW" role="3bR37C">
-          <node concept="1BurEX" id="2KkYYIYleRX" role="1SiIV1">
-            <node concept="398BVA" id="2KkYYIYleRK" role="1BurEY">
-              <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-              <node concept="2Ry0Ak" id="2KkYYIYleRL" role="iGT6I">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="2KkYYIYleRM" role="2Ry0An">
-                  <property role="2Ry0Am" value="baseLanguage" />
-                  <node concept="2Ry0Ak" id="2KkYYIYleRN" role="2Ry0An">
-                    <property role="2Ry0Am" value="unitTest" />
-                    <node concept="2Ry0Ak" id="2KkYYIYleRO" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2KkYYIYleRP" role="2Ry0An">
-                        <property role="2Ry0Am" value="jmock-junit4-2.8.2-sources.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2KkYYIYleSa" role="3bR37C">
-          <node concept="1BurEX" id="2KkYYIYleSb" role="1SiIV1">
-            <node concept="398BVA" id="2KkYYIYleRY" role="1BurEY">
-              <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-              <node concept="2Ry0Ak" id="2KkYYIYleRZ" role="iGT6I">
-                <property role="2Ry0Am" value="languages" />
-                <node concept="2Ry0Ak" id="2KkYYIYleS0" role="2Ry0An">
-                  <property role="2Ry0Am" value="baseLanguage" />
-                  <node concept="2Ry0Ak" id="2KkYYIYleS1" role="2Ry0An">
-                    <property role="2Ry0Am" value="unitTest" />
-                    <node concept="2Ry0Ak" id="2KkYYIYleS2" role="2Ry0An">
-                      <property role="2Ry0Am" value="lib" />
-                      <node concept="2Ry0Ak" id="2KkYYIYleS3" role="2Ry0An">
-                        <property role="2Ry0Am" value="jmock-junit4-2.8.2.jar" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
           </node>
         </node>
       </node>
@@ -28082,6 +27749,9 @@
         <property role="TrG5h" value="jetbrains.mps.baseLanguage.unitTest" />
         <property role="3LESm3" value="f61473f9-130f-42f6-b98d-6c438812c2f6" />
         <property role="2GAjPV" value="false" />
+        <node concept="1E0d5M" id="7vzb0KLE2dX" role="1E1XAP">
+          <ref role="1E0d5P" node="1xb0AuwN7WS" resolve="JUnit" />
+        </node>
         <node concept="1yeLz9" id="7YI57w6KsiT" role="1TViLv">
           <property role="TrG5h" value="jetbrains.mps.baseLanguage.unitTest#1171932017138" />
           <property role="3LESm3" value="8b77dde5-cd2d-4baa-ac86-1576c85b3095" />
@@ -28132,21 +27802,6 @@
             <ref role="3bR37D" node="nbn5Dym2sp" resolve="Testbench" />
           </node>
         </node>
-        <node concept="1SiIV0" id="ymnOULAU0x" role="3bR37C">
-          <node concept="3bR9La" id="ymnOULAU0y" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="1d41uYMTRXo" resolve="jetbrains.mps.baseLanguage.scopes" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="ymnOULAU0z" role="3bR37C">
-          <node concept="3bR9La" id="ymnOULAU0$" role="1SiIV1">
-            <property role="3bR36h" value="true" />
-            <ref role="3bR37D" node="7Kfy9QB6L3o" resolve="jetbrains.mps.baseLanguage.unitTest.libs" />
-          </node>
-        </node>
-        <node concept="1E0d5M" id="ymnOULAU0B" role="1E1XAP">
-          <ref role="1E0d5P" node="7Kfy9QB6L3o" resolve="jetbrains.mps.baseLanguage.unitTest.libs" />
-        </node>
         <node concept="1SiIV0" id="ymnOULAU0C" role="3bR37C">
           <node concept="1Busua" id="ymnOULAU0D" role="1SiIV1">
             <ref role="1Busuk" node="7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
@@ -28157,20 +27812,11 @@
             <ref role="1Busuk" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
-        <node concept="1SiIV0" id="4oBCpaLuezl" role="3bR37C">
-          <node concept="3bR9La" id="4oBCpaLuezm" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="1xb0AuwNncH" role="3bR37C">
           <node concept="3bR9La" id="1xb0AuwNncI" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1xb0AuwN7WS" resolve="JUnit" />
           </node>
-        </node>
-        <node concept="1E0d5M" id="1xb0AuwNncJ" role="1E1XAP">
-          <ref role="1E0d5P" node="1xb0AuwN7WS" resolve="JUnit" />
         </node>
       </node>
     </node>
@@ -28715,28 +28361,10 @@
             <ref role="3bR37D" node="6aIAM_Qd5ki" resolve="jetbrains.mps.lang.test.matcher" />
           </node>
         </node>
-        <node concept="1SiIV0" id="6XR3G6bwLxr" role="3bR37C">
-          <node concept="3bR9La" id="6XR3G6bwLxs" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="6XR3G6bwLxt" role="3bR37C">
-          <node concept="3bR9La" id="6XR3G6bwLxu" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="2acIkHvZnA5" role="3bR37C">
           <node concept="3bR9La" id="2acIkHvZnA6" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="2acIkHvZnA7" role="3bR37C">
-          <node concept="3bR9La" id="2acIkHvZnA8" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6L3o" resolve="jetbrains.mps.baseLanguage.unitTest.libs" />
           </node>
         </node>
         <node concept="398BVA" id="ymnOULAU1v" role="3LF7KH">
