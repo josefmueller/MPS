@@ -20,8 +20,8 @@
     <import index="tpf6" ref="r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)" />
     <import index="ryx4" ref="r:cb40950c-9102-4caf-8d31-b0388f359313(jetbrains.mps.kernel.language)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpfh" ref="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" implicit="true" />
-    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -294,6 +294,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -1202,20 +1203,41 @@
               <property role="3SKdUp" value="Allow use of genContext expression inside template calls without need to wrap them with ConceptFunction instance" />
             </node>
           </node>
+          <node concept="3SKdUt" id="1c6WnGgeMYu" role="3cqZAp">
+            <node concept="3SKdUq" id="1c6WnGgeMYw" role="3SKWNk">
+              <property role="3SKdUp" value="but don't show it twice inside a CF, where CFPs get contributed by dedicated menu contributor" />
+            </node>
+          </node>
           <node concept="3clFbF" id="1wEcoXjJG7Z" role="3cqZAp">
-            <node concept="2OqwBi" id="1wEcoXjJG80" role="3clFbG">
-              <node concept="2OqwBi" id="1wEcoXjJG81" role="2Oq$k0">
-                <node concept="3bvxqY" id="1wEcoXjJG88" role="2Oq$k0" />
-                <node concept="2Xjw5R" id="1wEcoXjJG83" role="2OqNvi">
-                  <node concept="1xMEDy" id="1wEcoXjJG84" role="1xVPHs">
-                    <node concept="chp4Y" id="1wEcoXjJG85" role="ri$Ld">
-                      <ref role="cht4Q" to="tpf8:1vDgt48Nz4w" resolve="ITemplateCall" />
+            <node concept="1Wc70l" id="1c6WnGgeLBu" role="3clFbG">
+              <node concept="2OqwBi" id="1wEcoXjJG80" role="3uHU7B">
+                <node concept="2OqwBi" id="1wEcoXjJG81" role="2Oq$k0">
+                  <node concept="3bvxqY" id="1wEcoXjJG88" role="2Oq$k0" />
+                  <node concept="2Xjw5R" id="1wEcoXjJG83" role="2OqNvi">
+                    <node concept="1xMEDy" id="1wEcoXjJG84" role="1xVPHs">
+                      <node concept="chp4Y" id="1wEcoXjJG85" role="ri$Ld">
+                        <ref role="cht4Q" to="tpf8:1vDgt48Nz4w" resolve="ITemplateCall" />
+                      </node>
                     </node>
+                    <node concept="1xIGOp" id="1wEcoXjJG86" role="1xVPHs" />
                   </node>
-                  <node concept="1xIGOp" id="1wEcoXjJG86" role="1xVPHs" />
                 </node>
+                <node concept="3x8VRR" id="1wEcoXjJG87" role="2OqNvi" />
               </node>
-              <node concept="3x8VRR" id="1wEcoXjJG87" role="2OqNvi" />
+              <node concept="2OqwBi" id="1c6WnGgez$J" role="3uHU7w">
+                <node concept="2OqwBi" id="1c6WnGgepl0" role="2Oq$k0">
+                  <node concept="3bvxqY" id="1c6WnGgep3W" role="2Oq$k0" />
+                  <node concept="2Xjw5R" id="1c6WnGgeJjE" role="2OqNvi">
+                    <node concept="1xMEDy" id="1c6WnGgeJjG" role="1xVPHs">
+                      <node concept="chp4Y" id="1c6WnGgeJjH" role="ri$Ld">
+                        <ref role="cht4Q" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+                      </node>
+                    </node>
+                    <node concept="1xIGOp" id="1c6WnGgeJjI" role="1xVPHs" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="1c6WnGgeJLJ" role="2OqNvi" />
+              </node>
             </node>
           </node>
         </node>
