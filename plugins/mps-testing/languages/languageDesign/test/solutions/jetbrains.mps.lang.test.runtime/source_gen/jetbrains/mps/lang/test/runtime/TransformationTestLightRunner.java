@@ -30,7 +30,7 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
     Project testProject = findProject(projectPath);
     if (testProject == null) {
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn(String.format("Test project %s is not open. Gonna try any project with model %s", projectPath, modelName));
+        LOG.warn(String.format("Test project '%s' is not open.%s Gonna try any project with model %s", projectPath, ((projectPath == null || projectPath.length() == 0) ? "You need to specify project with TestInfo root." : ""), modelName));
       }
       // fallback - take any project with the given model 
       testProject = findAnyProjectWithModel(modelName);

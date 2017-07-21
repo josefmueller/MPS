@@ -9650,10 +9650,24 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="5R7ko6d2$8m" role="37wK5m">
-                  <property role="Xl_RC" value="Test project %s is not open. Gonna try any project with model %s" />
+                  <property role="Xl_RC" value="Test project '%s' is not open.%s Gonna try any project with model %s" />
                 </node>
                 <node concept="37vLTw" id="5R7ko6d2_Vx" role="37wK5m">
                   <ref role="3cqZAo" node="4_ksyPqOXk2" resolve="projectPath" />
+                </node>
+                <node concept="3K4zz7" id="1c6WnGgiwNl" role="37wK5m">
+                  <node concept="Xl_RD" id="1c6WnGgixd2" role="3K4E3e">
+                    <property role="Xl_RC" value="You need to specify project with TestInfo root." />
+                  </node>
+                  <node concept="Xl_RD" id="1c6WnGgixnB" role="3K4GZi">
+                    <property role="Xl_RC" value="" />
+                  </node>
+                  <node concept="2OqwBi" id="1c6WnGgitqg" role="3K4Cdx">
+                    <node concept="37vLTw" id="1c6WnGgisNL" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4_ksyPqOXk2" resolve="projectPath" />
+                    </node>
+                    <node concept="17RlXB" id="1c6WnGgivLQ" role="2OqNvi" />
+                  </node>
                 </node>
                 <node concept="37vLTw" id="5R7ko6d2Fff" role="37wK5m">
                   <ref role="3cqZAo" node="4_ksyPqOXk5" resolve="modelName" />
