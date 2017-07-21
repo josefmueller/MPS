@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.ide.ui.tree.TreeMessage;
 import java.awt.Color;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -26,7 +27,6 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.smodel.ModelReadRunnable;
 
 public class DependencyTree extends MPSTree implements DataProvider {
   private Project myProject;
@@ -67,8 +67,14 @@ public class DependencyTree extends MPSTree implements DataProvider {
     root.setIcon(IconManager.getIconFor(myModule));
     populate(root, deps.allDependencies());
     return root;
-
   }
+
+
+  @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
+  }
+
   private void populate(MPSTreeNode root, Iterable<DepLink> allDependencies) {
     final TreeMessage HAS_CYCLE = new TreeMessage(Color.RED, "module with dependency cycle", null);
     final TreeMessage BOOTSTRAP_DEPENDENCY = new TreeMessage(Color.RED, "language with bootstrap dependency", null);

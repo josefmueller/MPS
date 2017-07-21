@@ -743,12 +743,61 @@
             <ref role="3cqZAo" node="3KdzVirieF4" resolve="root" />
           </node>
         </node>
-        <node concept="3clFbH" id="3KdzVirgX5n" role="3cqZAp" />
       </node>
       <node concept="2AHcQZ" id="3tYsUK_RYbU" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="1c6WnGgjLTN" role="jymVt" />
+    <node concept="2tJIrI" id="1c6WnGgjMSO" role="jymVt" />
+    <node concept="3clFb_" id="1c6WnGgjNO0" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="runRebuildAction" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="1c6WnGgjNO1" role="1B3o_S" />
+      <node concept="3cqZAl" id="1c6WnGgjNO3" role="3clF45" />
+      <node concept="37vLTG" id="1c6WnGgjNO4" role="3clF46">
+        <property role="TrG5h" value="rebuildAction" />
+        <node concept="3uibUv" id="1c6WnGgjNO5" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1c6WnGgjNO6" role="3clF46">
+        <property role="TrG5h" value="saveExpansion" />
+        <node concept="10P_77" id="1c6WnGgjNO7" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="1c6WnGgjNO8" role="3clF47">
+        <node concept="3clFbF" id="1c6WnGgjNOd" role="3cqZAp">
+          <node concept="3nyPlj" id="1c6WnGgjNOc" role="3clFbG">
+            <ref role="37wK5l" to="7e8u:~MPSTree.runRebuildAction(java.lang.Runnable,boolean):void" resolve="runRebuildAction" />
+            <node concept="2ShNRf" id="1c6WnGgjQmT" role="37wK5m">
+              <node concept="1pGfFk" id="1c6WnGgjYQH" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelReadRunnable.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess,java.lang.Runnable)" resolve="ModelReadRunnable" />
+                <node concept="2OqwBi" id="1c6WnGgkhyO" role="37wK5m">
+                  <node concept="37vLTw" id="1c6WnGgkfDA" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2HP68CXWGx$" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="1c6WnGgkhUt" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="1c6WnGgkdHz" role="37wK5m">
+                  <ref role="3cqZAo" node="1c6WnGgjNO4" resolve="rebuildAction" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="1c6WnGgjNOb" role="37wK5m">
+              <ref role="3cqZAo" node="1c6WnGgjNO6" resolve="saveExpansion" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="1c6WnGgjNO9" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="1c6WnGgjM20" role="jymVt" />
     <node concept="3clFb_" id="3KdzVirhV1i" role="jymVt">
       <property role="TrG5h" value="populate" />
       <property role="DiZV1" value="false" />
@@ -2752,6 +2801,16 @@
                 <ref role="1PxDUh" to="rgfa:~TreeSelectionModel" resolve="TreeSelectionModel" />
                 <ref role="3cqZAo" to="rgfa:~TreeSelectionModel.SINGLE_TREE_SELECTION" resolve="SINGLE_TREE_SELECTION" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1c6WnGgjlCx" role="3cqZAp">
+          <node concept="37vLTI" id="1c6WnGgjozY" role="3clFbG">
+            <node concept="3clFbT" id="1c6WnGgjqnx" role="37vLTx">
+              <property role="3clFbU" value="false" />
+            </node>
+            <node concept="37vLTw" id="1c6WnGgjlCv" role="37vLTJ">
+              <ref role="3cqZAo" to="7e8u:~MPSTree.myWarnModelAccess" resolve="myWarnModelAccess" />
             </node>
           </node>
         </node>

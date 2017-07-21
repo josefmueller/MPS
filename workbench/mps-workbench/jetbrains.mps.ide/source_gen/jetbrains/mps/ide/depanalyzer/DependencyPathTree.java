@@ -32,6 +32,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   public DependencyPathTree(Project project) {
     myProject = project;
     getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+    myWarnModelAccess = false;
   }
   public void resetDependencies() {
     ListSequence.fromList(myAllDependencies).clear();
