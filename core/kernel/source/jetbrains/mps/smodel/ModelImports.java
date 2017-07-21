@@ -75,6 +75,10 @@ public final class ModelImports {
     myModel.deleteLanguageId(language);
   }
 
+  public void addUsedDevKit(@NotNull SModuleReference devkit) {
+    myModel.addDevKit(devkit);
+  }
+
   public Collection<SLanguage> getLanguagesEngagedOnGeneration() {
     return myModel.getLanguagesEngagedOnGeneration();
   }

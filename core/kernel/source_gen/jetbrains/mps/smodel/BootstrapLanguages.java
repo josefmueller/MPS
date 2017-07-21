@@ -43,6 +43,21 @@ public class BootstrapLanguages {
     // we identify devkit at RT. 
     return PersistenceFacade.getInstance().createModuleReference("a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)");
   }
+  public static SModuleReference getStructureAspectDevKit() {
+    return PersistenceFacade.getInstance().createModuleReference("78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)");
+  }
+  public static SModuleReference getConstraintAspectDevKit() {
+    return PersistenceFacade.getInstance().createModuleReference("00000000-0000-4000-0000-5604ebd4f22c(jetbrains.mps.devkit.aspect.constraints)");
+  }
+  public static SModuleReference getDataFlowAspectDevKit() {
+    return PersistenceFacade.getInstance().createModuleReference("00000000-0000-4000-0000-443879f56b80(jetbrains.mps.devkit.aspect.dataflow)");
+  }
+  public static SModuleReference getTextGenAspectDevKit() {
+    return PersistenceFacade.getInstance().createModuleReference("fa73d85a-ac7f-447b-846c-fcdc41caa600(jetbrains.mps.devkit.aspect.textgen)");
+  }
+  public static SModuleReference getTypesystemAspectDevKit() {
+    return PersistenceFacade.getInstance().createModuleReference("00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)");
+  }
   public static SModuleReference getLanguageDesignDevKit() {
     return PersistenceFacade.getInstance().createModuleReference("2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)");
   }

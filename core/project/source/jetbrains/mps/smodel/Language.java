@@ -522,6 +522,10 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
     @Override
     public Collection<SModuleReference> getDevKits(Language contextModule, SModel forModel) {
+      Collection<SModuleReference> initialDevKits = LanguageAspectSupport.getInitialDevKits(forModel);
+      if (!initialDevKits.isEmpty()) {
+        return initialDevKits;
+      }
       return Collections.singleton(BootstrapLanguages.getLanguageDesignDevKit());
     }
   }
