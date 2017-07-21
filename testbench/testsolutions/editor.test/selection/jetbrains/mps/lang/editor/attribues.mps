@@ -9,7 +9,7 @@
   <imports>
     <import index="kqxz" ref="r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)" />
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
-    <import index="ryl9" ref="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)" />
+    <import index="tp6m" ref="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
@@ -145,8 +145,8 @@
     <node concept="3clFbS" id="2ZnZLV$gto8" role="LjaKd">
       <node concept="3clFbF" id="14TMHtIcQGI" role="3cqZAp">
         <node concept="2YIFZM" id="14TMHtIcQGJ" role="3clFbG">
-          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
-          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="tp6m:5s44y2Lh6_5" resolve="EditorUtil" />
+          <ref role="37wK5l" to="tp6m:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
           <node concept="1bVj0M" id="14TMHtIcQGK" role="37wK5m">
             <node concept="3clFbS" id="14TMHtIcQGL" role="1bW5cS">
               <node concept="2HxZob" id="14TMHtIcQGM" role="3cqZAp">
@@ -209,8 +209,8 @@
     <node concept="3clFbS" id="2ZnZLV$gtoo" role="LjaKd">
       <node concept="3clFbF" id="14TMHtIcU1b" role="3cqZAp">
         <node concept="2YIFZM" id="14TMHtIcU1c" role="3clFbG">
-          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
-          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="tp6m:5s44y2Lh6_5" resolve="EditorUtil" />
+          <ref role="37wK5l" to="tp6m:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
           <node concept="1bVj0M" id="14TMHtIcU1d" role="37wK5m">
             <node concept="3clFbS" id="14TMHtIcU1e" role="1bW5cS">
               <node concept="2TK7Tu" id="2ZnZLV$gtop" role="3cqZAp">
@@ -318,8 +318,8 @@
       </node>
       <node concept="3clFbF" id="14TMHtIcU5I" role="3cqZAp">
         <node concept="2YIFZM" id="14TMHtIcU5J" role="3clFbG">
-          <ref role="1Pybhc" to="ryl9:14TMHtHs1$2" resolve="EditorTestUtil" />
-          <ref role="37wK5l" to="ryl9:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
+          <ref role="1Pybhc" to="tp6m:5s44y2Lh6_5" resolve="EditorUtil" />
+          <ref role="37wK5l" to="tp6m:14TMHtHs1EN" resolve="runWithTwoStepDeletion" />
           <node concept="1bVj0M" id="14TMHtIcU5K" role="37wK5m">
             <node concept="3clFbS" id="14TMHtIcU5L" role="1bW5cS">
               <node concept="2HxZob" id="14TMHtIcU5M" role="3cqZAp">

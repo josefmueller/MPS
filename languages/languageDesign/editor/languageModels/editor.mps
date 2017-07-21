@@ -20847,6 +20847,7 @@
     <node concept="3EZMnI" id="77L_peGACJd" role="2wV5jI">
       <node concept="3F0ifn" id="77L_peGACJk" role="3EZMnx">
         <property role="3F0ifm" value="default menu for" />
+        <ref role="1k5W1q" node="2NgG6tkHXk9" resolve="EditorKeyWord" />
       </node>
       <node concept="3F1sOY" id="77L_peGACJq" role="3EZMnx">
         <ref role="1NtTu8" to="tpc2:77L_peG_tVE" resolve="query" />

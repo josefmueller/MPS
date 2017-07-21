@@ -4847,5 +4847,72 @@
       </node>
     </node>
   </node>
+  <node concept="3p36aQ" id="6RfgSQUxU7Z">
+    <property role="3GE5qa" value="menuTrace.transformation" />
+    <ref role="aqKnT" to="68nn:1cRoRtwdj9W" resolve="MenuTraceTransformationChild" />
+    <node concept="3eGOop" id="6RfgSQUxU82" role="3ft7WO">
+      <node concept="ucgPf" id="6RfgSQUxU84" role="3aKz83">
+        <node concept="3clFbS" id="6RfgSQUxU86" role="2VODD2">
+          <node concept="3clFbF" id="6RfgSQUxUbY" role="3cqZAp">
+            <node concept="2ShNRf" id="6RfgSQUxUbW" role="3clFbG">
+              <node concept="3zrR0B" id="6RfgSQUy8N5" role="2ShVmc">
+                <node concept="3Tqbb2" id="6RfgSQUy8N7" role="3zrR0E">
+                  <ref role="ehGHo" to="68nn:1cRoRtwdj9W" resolve="MenuTraceTransformationChild" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="16NfWO" id="6RfgSQUy93c" role="upBLP">
+        <node concept="2h3Zct" id="6RfgSQUy99y" role="16NeZM">
+          <property role="2h4Kg1" value="menu trace transformation child substitute action" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="39A5F7XG_hX">
+    <property role="3GE5qa" value="menuTrace.transformation" />
+    <ref role="1XX52x" to="68nn:39A5F7XG$Zj" resolve="MenuTraceTransformationChildWithEnum" />
+    <node concept="3EZMnI" id="39A5F7XG_hZ" role="2wV5jI">
+      <node concept="l2Vlx" id="39A5F7XG_i0" role="2iSdaV" />
+      <node concept="3F0ifn" id="39A5F7XG_i1" role="3EZMnx">
+        <property role="3F0ifm" value="menu trace transformation child with enum" />
+      </node>
+      <node concept="3F0ifn" id="39A5F7XG_i2" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <node concept="11L4FC" id="39A5F7XG_i3" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="39A5F7XG_i4" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+        <node concept="11LMrY" id="39A5F7XG_i5" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="39A5F7XG_i6" role="3EZMnx">
+        <property role="3F0ifm" value="enum" />
+      </node>
+      <node concept="3F0ifn" id="39A5F7XG_i7" role="3EZMnx">
+        <property role="3F0ifm" value=":" />
+        <node concept="11L4FC" id="39A5F7XG_i8" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F0A7n" id="39A5F7XG_i9" role="3EZMnx">
+        <ref role="1NtTu8" to="68nn:39A5F7XG_hN" resolve="enum" />
+      </node>
+      <node concept="3F0ifn" id="39A5F7XG_ia" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <node concept="11L4FC" id="39A5F7XG_ib" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3mYdg7" id="39A5F7XG_ic" role="3F10Kt">
+          <property role="1413C4" value="body-paren" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

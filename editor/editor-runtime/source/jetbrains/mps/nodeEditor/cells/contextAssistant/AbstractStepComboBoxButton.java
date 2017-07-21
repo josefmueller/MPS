@@ -98,11 +98,11 @@ abstract class AbstractStepComboBoxButton extends JButton implements UserActivit
       @Override
       public void mouseDragged(MouseEvent e) {
         mouseMoved(MouseEventAdapter.convert(e, e.getComponent(),
-            MouseEvent.MOUSE_MOVED,
-            e.getWhen(),
-            e.getModifiers() | e.getModifiersEx(),
-            e.getX(),
-            e.getY()));
+                                             MouseEvent.MOUSE_MOVED,
+                                             e.getWhen(),
+                                             e.getModifiers() | e.getModifiersEx(),
+                                             e.getX(),
+                                             e.getY()));
       }
 
       @Override
@@ -125,8 +125,9 @@ abstract class AbstractStepComboBoxButton extends JButton implements UserActivit
       if (rectangle.contains(eventPoint)) {
         MouseEvent event = SwingUtilities.convertMouseEvent(e.getComponent(), e, myPopup.getContent());
         Component component = SwingUtilities.getDeepestComponentAt(content, event.getX(), event.getY());
-        if (component != null)
+        if (component != null) {
           component.dispatchEvent(event);
+        }
       }
     }
   }

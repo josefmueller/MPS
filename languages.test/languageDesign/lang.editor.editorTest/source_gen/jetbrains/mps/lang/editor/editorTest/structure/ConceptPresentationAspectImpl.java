@@ -63,6 +63,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_MenuTraceSubstituteSubChild2;
   private ConceptPresentation props_MenuTraceTransformationChild;
   private ConceptPresentation props_MenuTraceTransformationChildSuper;
+  private ConceptPresentation props_MenuTraceTransformationChildWithEnum;
   private ConceptPresentation props_NonEmptyProperty;
   private ConceptPresentation props_NotEditableVaraileReference;
   private ConceptPresentation props_PlusExpression;
@@ -480,6 +481,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_MenuTraceTransformationChildSuper = cpb.create();
         }
         return props_MenuTraceTransformationChildSuper;
+      case LanguageConceptSwitch.MenuTraceTransformationChildWithEnum:
+        if (props_MenuTraceTransformationChildWithEnum == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("MenuTraceTransformationChildWithEnum");
+          props_MenuTraceTransformationChildWithEnum = cpb.create();
+        }
+        return props_MenuTraceTransformationChildWithEnum;
       case LanguageConceptSwitch.NonEmptyProperty:
         if (props_NonEmptyProperty == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

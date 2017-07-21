@@ -55,9 +55,9 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new PrintNodeID_Action());
     addAction(new ReloadAll_Action());
     addAction(new ShowCellInExplorer_Action());
+    addAction(new ShowEditorMenuItemTrace_Action());
     addAction(new ShowGenerationTrace_Action());
     addAction(new ShowGenerationTraceback_Action());
-    addAction(new ShowItemTrace_Action());
     addAction(new ShowNodeInExplorer_Action());
     addAction(new ShowOriginNode_Action());
     addAction(new ShowStructure_Action());

@@ -17,6 +17,7 @@
         <reference id="6054523464627965081" name="concept" index="trN6q" />
       </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
+        <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
         <child id="1083172003582" name="member" index="M5hS2" />
       </concept>
@@ -1150,6 +1151,11 @@
     <property role="TrG5h" value="MenuTraceParent" />
     <property role="3GE5qa" value="menuTrace" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="39A5F7XGj6m" role="1TKVEl">
+      <property role="IQ2nx" value="3631615103242154390" />
+      <property role="TrG5h" value="enumProperty" />
+      <ref role="AX2Wp" node="39A5F7XGj6M" resolve="MenuTraceEnum" />
+    </node>
     <node concept="1TJgyj" id="F2OYSPvu87" role="1TKVEi">
       <property role="IQ2ns" value="775415105914266119" />
       <property role="20lmBu" value="aggregation" />
@@ -1167,6 +1173,12 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="menuTraceTransformation" />
       <ref role="20lvS9" node="1cRoRtwdj9W" resolve="MenuTraceTransformationChild" />
+    </node>
+    <node concept="1TJgyj" id="39A5F7XG_ir" role="1TKVEi">
+      <property role="IQ2ns" value="3631615103242228891" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="menuTraceChildWithEnum" />
+      <ref role="20lvS9" node="39A5F7XG$Zj" resolve="MenuTraceTransformationChildWithEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="F2OYSPvu89">
@@ -1268,6 +1280,30 @@
       <node concept="trNpa" id="26oakFZDdmo" role="EQaZv">
         <ref role="trN6q" node="2Byns3g9hPu" resolve="TwoStepDeleteDefaultChild" />
       </node>
+    </node>
+  </node>
+  <node concept="AxPO7" id="39A5F7XGj6M">
+    <property role="3GE5qa" value="menuTrace" />
+    <property role="TrG5h" value="MenuTraceEnum" />
+    <property role="PDuV0" value="true" />
+    <ref role="M4eZT" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="M4N5e" id="39A5F7XGj6N" role="M5hS2">
+      <property role="1uS6qo" value="enum1" />
+      <property role="1uS6qv" value="enum1" />
+    </node>
+    <node concept="M4N5e" id="39A5F7XGj6O" role="M5hS2">
+      <property role="1uS6qo" value="enum2" />
+      <property role="1uS6qv" value="enum2" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="39A5F7XG$Zj">
+    <property role="EcuMT" value="3631615103242227667" />
+    <property role="TrG5h" value="MenuTraceTransformationChildWithEnum" />
+    <property role="3GE5qa" value="menuTrace.transformation" />
+    <node concept="1TJgyi" id="39A5F7XG_hN" role="1TKVEl">
+      <property role="IQ2nx" value="3631615103242228851" />
+      <property role="TrG5h" value="enum" />
+      <ref role="AX2Wp" node="39A5F7XGj6M" resolve="MenuTraceEnum" />
     </node>
   </node>
 </model>

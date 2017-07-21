@@ -45334,9 +45334,61 @@
     <node concept="3aamgX" id="1zFTabXlR3H" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tpc2:3xbeilB7DBJ" resolve="TransformationMenuPart_SubMenu" />
-      <node concept="gft3U" id="1zFTabXlTmV" role="1lVwrX">
-        <node concept="Xl_RD" id="1zFTabXlTmX" role="gfFT$">
-          <property role="Xl_RC" value="submenu" />
+      <node concept="1Koe21" id="2G_qvh79bOJ" role="1lVwrX">
+        <node concept="312cEu" id="2G_qvh79bOP" role="1Koe22">
+          <property role="TrG5h" value="SubMenuPart" />
+          <node concept="3clFb_" id="2G_qvh79leT" role="jymVt">
+            <property role="1EzhhJ" value="false" />
+            <property role="TrG5h" value="getDescription" />
+            <property role="od$2w" value="false" />
+            <property role="DiZV1" value="false" />
+            <property role="2aFKle" value="false" />
+            <node concept="3clFbS" id="2G_qvh79leW" role="3clF47">
+              <node concept="3clFbF" id="2G_qvh79lma" role="3cqZAp">
+                <node concept="3cpWs3" id="2G_qvh79ma3" role="3clFbG">
+                  <node concept="1rXfSq" id="2G_qvh79neb" role="3uHU7w">
+                    <ref role="37wK5l" node="2G_qvh79mDB" resolve="getText" />
+                    <node concept="37vLTw" id="2G_qvh79nKp" role="37wK5m">
+                      <ref role="3cqZAo" node="2G_qvh79myb" resolve="context" />
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="1zFTabXlTmX" role="3uHU7B">
+                    <property role="Xl_RC" value="submenu " />
+                  </node>
+                  <node concept="raruj" id="2G_qvh7aX_B" role="lGtFl" />
+                </node>
+              </node>
+            </node>
+            <node concept="17QB3L" id="2G_qvh79leO" role="3clF45" />
+            <node concept="37vLTG" id="2G_qvh79myb" role="3clF46">
+              <property role="TrG5h" value="context" />
+              <node concept="3uibUv" id="2G_qvh79mya" role="1tU5fm">
+                <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFb_" id="2G_qvh79mDB" role="jymVt">
+            <property role="1EzhhJ" value="false" />
+            <property role="TrG5h" value="getText" />
+            <property role="DiZV1" value="false" />
+            <property role="od$2w" value="false" />
+            <node concept="3Tmbuc" id="2G_qvh79mDC" role="1B3o_S" />
+            <node concept="17QB3L" id="2G_qvh79mDD" role="3clF45" />
+            <node concept="37vLTG" id="2G_qvh79mDE" role="3clF46">
+              <property role="TrG5h" value="_context" />
+              <node concept="3uibUv" id="2G_qvh79mDF" role="1tU5fm">
+                <ref role="3uigEE" to="uddc:~TransformationMenuContext" resolve="TransformationMenuContext" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="2G_qvh79mDG" role="3clF47">
+              <node concept="3clFbF" id="2G_qvh79n8l" role="3cqZAp">
+                <node concept="Xl_RD" id="2G_qvh79n8k" role="3clFbG">
+                  <property role="Xl_RC" value="" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3Tm1VV" id="2G_qvh79bOQ" role="1B3o_S" />
         </node>
       </node>
     </node>

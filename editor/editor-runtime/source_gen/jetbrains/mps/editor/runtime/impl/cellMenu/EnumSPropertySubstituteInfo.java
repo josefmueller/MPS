@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.action.SPropertySubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 
 public class EnumSPropertySubstituteInfo extends AbstractNodeSubstituteInfo implements DefaultSubstituteInfo {
   private SNode myNode;
@@ -45,6 +48,13 @@ public class EnumSPropertySubstituteInfo extends AbstractNodeSubstituteInfo impl
         public String getMatchingText(String pattern) {
           return SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
         }
+        @Override
+        public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+          EditorMenuTraceInfoImpl info = new EditorMenuTraceInfoImpl();
+          info.setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + getMatchingText(""), enumMemberDeclaration.getReference(), true));
+          return info;
+        }
+
       });
     }
 

@@ -53,7 +53,7 @@ public class EditorMenuTraceTree extends MPSTreeWithAction {
   @Override
   protected MPSTreeNode rebuild() {
     EditorMenuTraceInfo current = myRoot;
-    return new EditorMenuTraceNode(current, new PathChildMenuTraceNodeInitializer(myPathFromRoot, myProject), myProject);
+    return new EditorMenuTraceNode(current, new PathChildMenuTraceNodeInitializer(myPathFromRoot), myProject);
   }
 
   void showItemInTree(EditorMenuTraceInfo traceInfo) {
@@ -66,11 +66,11 @@ public class EditorMenuTraceTree extends MPSTreeWithAction {
     rebuildNow();
     MPSTreeNode current = null;
 
-    for (int i = 0; i < myPathFromRoot.size(); i++) {
+    for (EditorMenuTraceInfo editorMenuTraceInfo : myPathFromRoot) {
       if (current == null) {
         current = getRootNode();
       } else {
-        current = current.findExactChildWith(myPathFromRoot.get(i));
+        current = current.findExactChildWith(editorMenuTraceInfo);
       }
 
       if (!current.isInitialized()) {

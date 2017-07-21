@@ -25,7 +25,7 @@ public class EditorMenuDescriptorBase implements EditorMenuDescriptor{
   private final boolean myIsImplicit;
 
   public EditorMenuDescriptorBase(String description, SNodeReference source) {
-    this(description, source, false);
+    this(description, source, source == null);
   }
 
   public EditorMenuDescriptorBase(String description, SNodeReference source, boolean isImplicit) {

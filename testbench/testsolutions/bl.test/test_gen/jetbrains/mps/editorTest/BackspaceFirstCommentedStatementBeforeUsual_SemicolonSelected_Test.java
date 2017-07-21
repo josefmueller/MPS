@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.lang.test.runtime.EditorUtil;
 
 @MPSLaunch
 public class BackspaceFirstCommentedStatementBeforeUsual_SemicolonSelected_Test extends BaseTransformationTest {
@@ -20,7 +21,7 @@ public class BackspaceFirstCommentedStatementBeforeUsual_SemicolonSelected_Test 
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("700792012717954409", "700792012717954426");
-      EditorTestUtil.runWithTwoStepDeletion(new EditorTestUtil.EditorTestRunnable() {
+      EditorUtil.runWithTwoStepDeletion(new EditorUtil.EditorTestRunnable() {
         public void run() throws Exception {
           invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
         }

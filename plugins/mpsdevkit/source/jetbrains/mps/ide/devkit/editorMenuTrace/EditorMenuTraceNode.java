@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.Icon;
 import java.awt.Font;
 
-public class EditorMenuTraceNode extends MPSTreeNode implements NodeTargetProvider {
+class EditorMenuTraceNode extends MPSTreeNode implements NodeTargetProvider {
 
   private final EditorMenuTraceInfo myEditorMenuTraceInfo;
   private boolean myInitialized;
@@ -37,7 +37,7 @@ public class EditorMenuTraceNode extends MPSTreeNode implements NodeTargetProvid
   private Project myProject;
 
 
-  public EditorMenuTraceNode(EditorMenuTraceInfo traceInfo, EditorMenuTraceNodeInitializer initializer, Project project) {
+  EditorMenuTraceNode(EditorMenuTraceInfo traceInfo, EditorMenuTraceNodeInitializer initializer, Project project) {
     super(traceInfo);
     myEditorMenuTraceInfo = traceInfo;
     myInitializer = initializer;
@@ -108,5 +108,9 @@ public class EditorMenuTraceNode extends MPSTreeNode implements NodeTargetProvid
   public SNodeReference getNavigationTarget() {
     EditorMenuDescriptor menuDescriptor = myEditorMenuTraceInfo.getMenuDescriptor();
     return menuDescriptor != null ? menuDescriptor.getSource() : null;
+  }
+
+  Project getProject() {
+    return myProject;
   }
 }

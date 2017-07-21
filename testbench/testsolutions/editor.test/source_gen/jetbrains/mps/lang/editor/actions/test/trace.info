@@ -19,7 +19,7 @@
       <scope id="1077509448393376437" at="13,0,18,0" />
       <scope id="1077509448393376437" at="22,51,28,16" />
       <scope id="1077509448393376437" at="21,0,30,0" />
-      <unit id="1241246198932820836" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.DelWrapperChild_Test$TestBody$1" />
+      <unit id="1241246198932820836" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.DelWrapperChild_Test$TestBody$1" />
       <unit id="1077509448393376437" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.DelWrapperChild_Test$TestBody" />
       <unit id="1077509448393376437" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.DelWrapperChild_Test" />
     </file>
@@ -42,7 +42,7 @@
       <scope id="1241246198931555548" at="27,0,32,0" />
       <scope id="1241246198931555544" at="24,51,32,15" />
       <scope id="1241246198931555544" at="23,0,34,0" />
-      <unit id="1241246198931555548" at="26,48,32,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleOptional_Test$TestBody$1" />
+      <unit id="1241246198931555548" at="26,44,32,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleOptional_Test$TestBody$1" />
       <unit id="1241246198931555544" at="21,0,35,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleOptional_Test$TestBody" />
       <unit id="1241246198931555544" at="13,0,36,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleOptional_Test" />
     </file>
@@ -70,7 +70,7 @@
       <scope id="1241246198931557723" at="26,51,38,15" />
       <scope id="1241246198931557723" at="25,0,40,0" />
       <unit id="1241246198932005544" at="31,101,35,11" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequired_Test$TestBody$1$1" />
-      <unit id="1241246198931557727" at="28,48,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequired_Test$TestBody$1" />
+      <unit id="1241246198931557727" at="28,44,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequired_Test$TestBody$1" />
       <unit id="1241246198931557723" at="23,0,41,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequired_Test$TestBody" />
       <unit id="1241246198931557723" at="15,0,42,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequired_Test" />
     </file>
@@ -93,7 +93,7 @@
       <scope id="1241246198931558488" at="27,0,32,0" />
       <scope id="1241246198931558484" at="24,51,32,15" />
       <scope id="1241246198931558484" at="23,0,34,0" />
-      <unit id="1241246198931558488" at="26,48,32,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteMultiple_Test$TestBody$1" />
+      <unit id="1241246198931558488" at="26,44,32,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteMultiple_Test$TestBody$1" />
       <unit id="1241246198931558484" at="21,0,35,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteMultiple_Test$TestBody" />
       <unit id="1241246198931558484" at="13,0,36,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteMultiple_Test" />
     </file>
@@ -114,7 +114,7 @@
       <scope id="1241246198931628686" at="13,0,18,0" />
       <scope id="1241246198931628686" at="22,51,28,15" />
       <scope id="1241246198931628686" at="21,0,30,0" />
-      <unit id="1241246198931628690" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteMultipleWholeSelected_Test$TestBody$1" />
+      <unit id="1241246198931628690" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteMultipleWholeSelected_Test$TestBody$1" />
       <unit id="1241246198931628686" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteMultipleWholeSelected_Test$TestBody" />
       <unit id="1241246198931628686" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteMultipleWholeSelected_Test" />
     </file>
@@ -135,7 +135,7 @@
       <scope id="1241246198931628937" at="13,0,18,0" />
       <scope id="1241246198931628937" at="22,51,28,15" />
       <scope id="1241246198931628937" at="21,0,30,0" />
-      <unit id="1241246198931628941" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleOptionalWholeSelected_Test$TestBody$1" />
+      <unit id="1241246198931628941" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleOptionalWholeSelected_Test$TestBody$1" />
       <unit id="1241246198931628937" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleOptionalWholeSelected_Test$TestBody" />
       <unit id="1241246198931628937" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleOptionalWholeSelected_Test" />
     </file>
@@ -163,7 +163,7 @@
       <scope id="1241246198931629129" at="26,51,38,15" />
       <scope id="1241246198931629129" at="25,0,40,0" />
       <unit id="1241246198932007377" at="31,101,35,11" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequiredWholeSelected_Test$TestBody$1$1" />
-      <unit id="1241246198931629133" at="28,48,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequiredWholeSelected_Test$TestBody$1" />
+      <unit id="1241246198931629133" at="28,44,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequiredWholeSelected_Test$TestBody$1" />
       <unit id="1241246198931629129" at="23,0,41,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequiredWholeSelected_Test$TestBody" />
       <unit id="1241246198931629129" at="15,0,42,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteSingleRequiredWholeSelected_Test" />
     </file>
@@ -186,7 +186,7 @@
       <scope id="1241246198932159591" at="27,0,32,0" />
       <scope id="1241246198932159587" at="24,51,32,15" />
       <scope id="1241246198932159587" at="23,0,34,0" />
-      <unit id="1241246198932159591" at="26,48,32,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteLabelPartiallySelected_Test$TestBody$1" />
+      <unit id="1241246198932159591" at="26,44,32,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteLabelPartiallySelected_Test$TestBody$1" />
       <unit id="1241246198932159587" at="21,0,35,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteLabelPartiallySelected_Test$TestBody" />
       <unit id="1241246198932159587" at="13,0,36,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteLabelPartiallySelected_Test" />
     </file>
@@ -207,7 +207,7 @@
       <scope id="1241246198932223384" at="13,0,18,0" />
       <scope id="1241246198932223384" at="22,51,28,15" />
       <scope id="1241246198932223384" at="21,0,30,0" />
-      <unit id="1241246198932223388" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteLabelWholeSelected_Test$TestBody$1" />
+      <unit id="1241246198932223388" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteLabelWholeSelected_Test$TestBody$1" />
       <unit id="1241246198932223384" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteLabelWholeSelected_Test$TestBody" />
       <unit id="1241246198932223384" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteLabelWholeSelected_Test" />
     </file>
@@ -230,7 +230,7 @@
       <scope id="1241246198932287082" at="27,0,32,0" />
       <scope id="1241246198932287078" at="24,51,32,15" />
       <scope id="1241246198932287078" at="23,0,34,0" />
-      <unit id="1241246198932287082" at="26,48,32,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCollectionNotCoveringSelected_Test$TestBody$1" />
+      <unit id="1241246198932287082" at="26,44,32,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCollectionNotCoveringSelected_Test$TestBody$1" />
       <unit id="1241246198932287078" at="21,0,35,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCollectionNotCoveringSelected_Test$TestBody" />
       <unit id="1241246198932287078" at="13,0,36,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCollectionNotCoveringSelected_Test" />
     </file>
@@ -251,7 +251,7 @@
       <scope id="1241246198932405560" at="13,0,18,0" />
       <scope id="1241246198932405560" at="22,51,28,15" />
       <scope id="1241246198932405560" at="21,0,30,0" />
-      <unit id="1241246198932405564" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCollectionCoveringSelected_Test$TestBody$1" />
+      <unit id="1241246198932405564" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCollectionCoveringSelected_Test$TestBody$1" />
       <unit id="1241246198932405560" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCollectionCoveringSelected_Test$TestBody" />
       <unit id="1241246198932405560" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCollectionCoveringSelected_Test" />
     </file>
@@ -274,7 +274,7 @@
       <scope id="1241246198933059274" at="26,0,31,0" />
       <scope id="1241246198933059270" at="23,51,31,15" />
       <scope id="1241246198933059270" at="22,0,33,0" />
-      <unit id="1241246198933059274" at="25,48,31,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCustomCellId_Test$TestBody$1" />
+      <unit id="1241246198933059274" at="25,44,31,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCustomCellId_Test$TestBody$1" />
       <unit id="1241246198933059270" at="20,0,34,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCustomCellId_Test$TestBody" />
       <unit id="1241246198933059270" at="12,0,35,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteCustomCellId_Test" />
     </file>
@@ -297,7 +297,7 @@
       <scope id="1241246198933155554" at="26,0,31,0" />
       <scope id="1241246198933155550" at="23,51,31,15" />
       <scope id="1241246198933155550" at="22,0,33,0" />
-      <unit id="1241246198933155554" at="25,48,31,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteStringCellId_Test$TestBody$1" />
+      <unit id="1241246198933155554" at="25,44,31,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteStringCellId_Test$TestBody$1" />
       <unit id="1241246198933155550" at="20,0,34,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteStringCellId_Test$TestBody" />
       <unit id="1241246198933155550" at="12,0,35,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteStringCellId_Test" />
     </file>
@@ -320,7 +320,7 @@
       <scope id="1241246198933156410" at="26,0,31,0" />
       <scope id="1241246198933156406" at="23,51,31,15" />
       <scope id="1241246198933156406" at="22,0,33,0" />
-      <unit id="1241246198933156410" at="25,48,31,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteStringProperty_Test$TestBody$1" />
+      <unit id="1241246198933156410" at="25,44,31,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteStringProperty_Test$TestBody$1" />
       <unit id="1241246198933156406" at="20,0,34,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteStringProperty_Test$TestBody" />
       <unit id="1241246198933156406" at="12,0,35,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteStringProperty_Test" />
     </file>
@@ -348,7 +348,7 @@
       <scope id="1241246198933157168" at="26,51,38,15" />
       <scope id="1241246198933157168" at="25,0,40,0" />
       <unit id="1241246198933217036" at="31,101,35,11" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildFromParent_Test$TestBody$1$1" />
-      <unit id="1241246198933157172" at="28,48,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildFromParent_Test$TestBody$1" />
+      <unit id="1241246198933157172" at="28,44,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildFromParent_Test$TestBody$1" />
       <unit id="1241246198933157168" at="23,0,41,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildFromParent_Test$TestBody" />
       <unit id="1241246198933157168" at="15,0,42,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildFromParent_Test" />
     </file>
@@ -369,7 +369,7 @@
       <scope id="1241246198933217963" at="13,0,18,0" />
       <scope id="1241246198933217963" at="22,51,28,15" />
       <scope id="1241246198933217963" at="21,0,30,0" />
-      <unit id="1241246198933217967" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteUnexistingCellId_Test$TestBody$1" />
+      <unit id="1241246198933217967" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteUnexistingCellId_Test$TestBody$1" />
       <unit id="1241246198933217963" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteUnexistingCellId_Test$TestBody" />
       <unit id="1241246198933217963" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteUnexistingCellId_Test" />
     </file>
@@ -397,7 +397,7 @@
       <scope id="1241246198933554451" at="26,51,38,15" />
       <scope id="1241246198933554451" at="25,0,40,0" />
       <unit id="1241246198933656738" at="31,101,35,11" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspacePreviousChild_Test$TestBody$1$1" />
-      <unit id="1241246198933554455" at="28,48,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspacePreviousChild_Test$TestBody$1" />
+      <unit id="1241246198933554455" at="28,44,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspacePreviousChild_Test$TestBody$1" />
       <unit id="1241246198933554451" at="23,0,41,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspacePreviousChild_Test$TestBody" />
       <unit id="1241246198933554451" at="15,0,42,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspacePreviousChild_Test" />
     </file>
@@ -426,7 +426,7 @@
       <scope id="1241246198933657715" at="26,51,39,15" />
       <scope id="1241246198933657715" at="25,0,41,0" />
       <unit id="1241246198933657733" at="31,101,35,11" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspaceDelete_Test$TestBody$1$1" />
-      <unit id="1241246198933657719" at="28,48,39,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspaceDelete_Test$TestBody$1" />
+      <unit id="1241246198933657719" at="28,44,39,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspaceDelete_Test$TestBody$1" />
       <unit id="1241246198933657715" at="23,0,42,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspaceDelete_Test$TestBody" />
       <unit id="1241246198933657715" at="15,0,43,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepBackspaceDelete_Test" />
     </file>
@@ -447,7 +447,7 @@
       <scope id="1683214195544025561" at="13,0,18,0" />
       <scope id="1683214195544025561" at="22,51,28,16" />
       <scope id="1683214195544025561" at="21,0,30,0" />
-      <unit id="2086125613785019257" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteSingleRoleWholeComment_Test$TestBody$1" />
+      <unit id="2086125613785019257" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteSingleRoleWholeComment_Test$TestBody$1" />
       <unit id="1683214195544025561" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteSingleRoleWholeComment_Test$TestBody" />
       <unit id="1683214195544025561" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteSingleRoleWholeComment_Test" />
     </file>
@@ -468,7 +468,7 @@
       <scope id="1683214195544027198" at="13,0,18,0" />
       <scope id="1683214195544027198" at="22,51,28,16" />
       <scope id="1683214195544027198" at="21,0,30,0" />
-      <unit id="2086125613785019084" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteSingleRoleNodeInsideComment_Test$TestBody$1" />
+      <unit id="2086125613785019084" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteSingleRoleNodeInsideComment_Test$TestBody$1" />
       <unit id="1683214195544027198" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteSingleRoleNodeInsideComment_Test$TestBody" />
       <unit id="1683214195544027198" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteSingleRoleNodeInsideComment_Test" />
     </file>
@@ -489,7 +489,7 @@
       <scope id="1683214195544037903" at="13,0,18,0" />
       <scope id="1683214195544037903" at="22,51,28,16" />
       <scope id="1683214195544037903" at="21,0,30,0" />
-      <unit id="2086125613785018412" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteMultipleRoleNodeInsideComment_Test$TestBody$1" />
+      <unit id="2086125613785018412" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteMultipleRoleNodeInsideComment_Test$TestBody$1" />
       <unit id="1683214195544037903" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteMultipleRoleNodeInsideComment_Test$TestBody" />
       <unit id="1683214195544037903" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteMultipleRoleNodeInsideComment_Test" />
     </file>
@@ -510,7 +510,7 @@
       <scope id="1683214195544063345" at="13,0,18,0" />
       <scope id="1683214195544063345" at="22,51,28,16" />
       <scope id="1683214195544063345" at="21,0,30,0" />
-      <unit id="2086125613785018869" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteMultipleRoleWholeComment_Test$TestBody$1" />
+      <unit id="2086125613785018869" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteMultipleRoleWholeComment_Test$TestBody$1" />
       <unit id="1683214195544063345" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteMultipleRoleWholeComment_Test$TestBody" />
       <unit id="1683214195544063345" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.Comment_DeleteMultipleRoleWholeComment_Test" />
     </file>
@@ -603,7 +603,7 @@
       <scope id="2420730201805048185" at="26,51,38,15" />
       <scope id="2420730201805048185" at="25,0,40,0" />
       <unit id="2420730201805048203" at="31,101,35,11" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeChildSelected_Test$TestBody$1$1" />
-      <unit id="2420730201805048189" at="28,48,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeChildSelected_Test$TestBody$1" />
+      <unit id="2420730201805048189" at="28,44,38,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeChildSelected_Test$TestBody$1" />
       <unit id="2420730201805048185" at="23,0,41,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeChildSelected_Test$TestBody" />
       <unit id="2420730201805048185" at="15,0,42,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeChildSelected_Test" />
     </file>
@@ -624,7 +624,7 @@
       <scope id="2420730201805087069" at="13,0,18,0" />
       <scope id="2420730201805087069" at="22,51,28,15" />
       <scope id="2420730201805087069" at="21,0,30,0" />
-      <unit id="2420730201805087073" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeAttributeSelected_Test$TestBody$1" />
+      <unit id="2420730201805087073" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeAttributeSelected_Test$TestBody$1" />
       <unit id="2420730201805087069" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeAttributeSelected_Test$TestBody" />
       <unit id="2420730201805087069" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.TwoStepDeleteChildWithAttributeAttributeSelected_Test" />
     </file>
@@ -742,7 +742,7 @@
       <scope id="2943053183527886975" at="13,0,18,0" />
       <scope id="2943053183527886975" at="22,51,28,16" />
       <scope id="2943053183527886975" at="21,0,30,0" />
-      <unit id="1241246198932819846" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1DeleteParent_Test$TestBody$1" />
+      <unit id="1241246198932819846" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1DeleteParent_Test$TestBody$1" />
       <unit id="2943053183527886975" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1DeleteParent_Test$TestBody" />
       <unit id="2943053183527886975" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1DeleteParent_Test" />
     </file>
@@ -763,7 +763,7 @@
       <scope id="2943053183528016305" at="13,0,18,0" />
       <scope id="2943053183528016305" at="22,51,28,16" />
       <scope id="2943053183528016305" at="21,0,30,0" />
-      <unit id="1241246198932820011" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1ReplaceItWithLinkTarget_Test$TestBody$1" />
+      <unit id="1241246198932820011" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1ReplaceItWithLinkTarget_Test$TestBody$1" />
       <unit id="2943053183528016305" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1ReplaceItWithLinkTarget_Test$TestBody" />
       <unit id="2943053183528016305" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1ReplaceItWithLinkTarget_Test" />
     </file>
@@ -784,7 +784,7 @@
       <scope id="2943053183528026729" at="13,0,18,0" />
       <scope id="2943053183528026729" at="22,51,28,16" />
       <scope id="2943053183528026729" at="21,0,30,0" />
-      <unit id="1241246198932820506" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1DeleteParent_Test$TestBody$1" />
+      <unit id="1241246198932820506" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1DeleteParent_Test$TestBody$1" />
       <unit id="2943053183528026729" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1DeleteParent_Test$TestBody" />
       <unit id="2943053183528026729" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1DeleteParent_Test" />
     </file>
@@ -805,7 +805,7 @@
       <scope id="2943053183528078689" at="13,0,18,0" />
       <scope id="2943053183528078689" at="22,51,28,16" />
       <scope id="2943053183528078689" at="21,0,30,0" />
-      <unit id="1241246198932820671" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget_Test$TestBody$1" />
+      <unit id="1241246198932820671" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget_Test$TestBody$1" />
       <unit id="2943053183528078689" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget_Test$TestBody" />
       <unit id="2943053183528078689" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget_Test" />
     </file>
@@ -1040,7 +1040,7 @@
       <scope id="5383578965096699346" at="13,0,18,0" />
       <scope id="5383578965096699346" at="22,51,28,16" />
       <scope id="5383578965096699346" at="21,0,30,0" />
-      <unit id="1241246198932820176" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1DeleteParent_Test$TestBody$1" />
+      <unit id="1241246198932820176" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1DeleteParent_Test$TestBody$1" />
       <unit id="5383578965096699346" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1DeleteParent_Test$TestBody" />
       <unit id="5383578965096699346" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1DeleteParent_Test" />
     </file>
@@ -1061,7 +1061,7 @@
       <scope id="5383578965096740755" at="13,0,18,0" />
       <scope id="5383578965096740755" at="22,51,28,16" />
       <scope id="5383578965096740755" at="21,0,30,0" />
-      <unit id="1241246198932820341" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1ReplaceItWithLinkTarget_Test$TestBody$1" />
+      <unit id="1241246198932820341" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1ReplaceItWithLinkTarget_Test$TestBody$1" />
       <unit id="5383578965096740755" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1ReplaceItWithLinkTarget_Test$TestBody" />
       <unit id="5383578965096740755" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1ReplaceItWithLinkTarget_Test" />
     </file>
@@ -1534,7 +1534,7 @@
       <scope id="7803854675609827855" at="13,0,18,0" />
       <scope id="7803854675609827855" at="22,51,28,16" />
       <scope id="7803854675609827855" at="21,0,30,0" />
-      <unit id="1241246198932819681" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1ReplaceItWithLinkTarget_Test$TestBody$1" />
+      <unit id="1241246198932819681" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1ReplaceItWithLinkTarget_Test$TestBody$1" />
       <unit id="7803854675609827855" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1ReplaceItWithLinkTarget_Test$TestBody" />
       <unit id="7803854675609827855" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1ReplaceItWithLinkTarget_Test" />
     </file>
@@ -1555,7 +1555,7 @@
       <scope id="7803854675610520166" at="13,0,18,0" />
       <scope id="7803854675610520166" at="22,51,28,16" />
       <scope id="7803854675610520166" at="21,0,30,0" />
-      <unit id="1241246198932818868" at="24,48,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParent_Test$TestBody$1" />
+      <unit id="1241246198932818868" at="24,44,28,7" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParent_Test$TestBody$1" />
       <unit id="7803854675610520166" at="19,0,31,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParent_Test$TestBody" />
       <unit id="7803854675610520166" at="11,0,32,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParent_Test" />
     </file>

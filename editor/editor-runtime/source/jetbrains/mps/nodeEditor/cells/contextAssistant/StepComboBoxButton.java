@@ -16,8 +16,8 @@
 package jetbrains.mps.nodeEditor.cells.contextAssistant;
 
 import com.intellij.openapi.actionSystem.DataProvider;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.ui.popup.ListPopupStep;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,6 +29,7 @@ class StepComboBoxButton extends AbstractStepComboBoxButton implements DataProvi
     super(text);
     myStep = step;
   }
+
   StepComboBoxButton(SubMenu subMenu, ListPopupStep<?> step) {
     this(subMenu.getText(), step);
     mySubMenu = subMenu;
@@ -42,7 +43,7 @@ class StepComboBoxButton extends AbstractStepComboBoxButton implements DataProvi
   @Nullable
   @Override
   public Object getData(String dataId) {
-    if (dataId.equals(MPSEditorDataKeys.TRANSFORMATION_MENU_ITEM.getName())) {
+    if (dataId.equals(PlatformDataKeys.SELECTED_ITEM.getName())) {
       return mySubMenu;
     }
     return null;

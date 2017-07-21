@@ -23,13 +23,11 @@ import java.util.List;
 abstract class EditorMenuTraceNodeInitializer {
   public abstract void init(EditorMenuTraceNode node);
 
-  public static class PathChildMenuTraceNodeInitializer extends EditorMenuTraceNodeInitializer {
-    private final Project myProject;
+  static class PathChildMenuTraceNodeInitializer extends EditorMenuTraceNodeInitializer {
     private List<EditorMenuTraceInfo> myPath;
 
-    public PathChildMenuTraceNodeInitializer(List<EditorMenuTraceInfo> path, Project project) {
+    PathChildMenuTraceNodeInitializer(List<EditorMenuTraceInfo> path) {
       myPath = path;
-      myProject = project;
     }
 
     @Override
@@ -37,11 +35,11 @@ abstract class EditorMenuTraceNodeInitializer {
       int i = getNodeIndex(node);
       if (i >= 0 && i < myPath.size() - 1) {
         EditorMenuTraceInfo child = myPath.get(i + 1);
-        node.add(new EditorMenuTraceNode(child, this, myProject));
+        node.add(new EditorMenuTraceNode(child, this, node.getProject()));
       } else {
         EditorMenuTraceInfo userObject = ((EditorMenuTraceInfo) node.getUserObject());
         for (EditorMenuTraceInfo editorMenuTraceInfo : userObject.getChildren()) {
-          node.add(new EditorMenuTraceNode(editorMenuTraceInfo, new AllChildrenMenuTraceNodeInitializer(myProject), myProject));
+          node.add(new EditorMenuTraceNode(editorMenuTraceInfo, new AllChildrenMenuTraceNodeInitializer(), node.getProject()));
         }
       }
     }
@@ -56,18 +54,13 @@ abstract class EditorMenuTraceNodeInitializer {
     }
   }
 
-  private static class AllChildrenMenuTraceNodeInitializer extends EditorMenuTraceNodeInitializer {
-    private Project myProject;
-
-    public AllChildrenMenuTraceNodeInitializer(Project project) {
-      myProject = project;
-    }
+  static class AllChildrenMenuTraceNodeInitializer extends EditorMenuTraceNodeInitializer {
 
     @Override
     public void init(EditorMenuTraceNode node) {
       EditorMenuTraceInfo userObject = ((EditorMenuTraceInfo) node.getUserObject());
       for (EditorMenuTraceInfo editorMenuTraceInfo : userObject.getChildren()) {
-        node.add(new EditorMenuTraceNode(editorMenuTraceInfo, this, myProject));
+        node.add(new EditorMenuTraceNode(editorMenuTraceInfo, this, node.getProject()));
       }
     }
   }

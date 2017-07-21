@@ -18,6 +18,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
+import jetbrains.mps.nodeEditor.menus.EditorMenuTraceInfoImpl;
+import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 
 /**
  * 
@@ -59,6 +62,12 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo imple
             }
           }
           return null;
+        }
+        @Override
+        public EditorMenuTraceInfo getEditorMenuTraceInfo() {
+          EditorMenuTraceInfoImpl info = new EditorMenuTraceInfoImpl();
+          info.setDescriptor(new EditorMenuDescriptorBase("Enum member substitute action: " + getMatchingText(""), enumMemberDeclaration.getReference(), true));
+          return info;
         }
       });
     }

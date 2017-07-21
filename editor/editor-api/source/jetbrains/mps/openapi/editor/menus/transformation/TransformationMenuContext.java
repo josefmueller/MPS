@@ -83,7 +83,7 @@ public interface TransformationMenuContext {
   List<TransformationMenuItem> createItems(@Nullable TransformationMenuLookup menuLookup);
 
   @NotNull
-  default EditorMenuTrace getEditorMenuTrace(){
+  default EditorMenuTrace getEditorMenuTrace() {
     return new EmptyEditorMenuTrace();
   }
 }

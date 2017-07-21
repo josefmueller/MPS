@@ -42,10 +42,4 @@ public class MPSEditorDataKeys extends MPSCommonDataKeys {
 
   @Description(description = "current editor component")
   public static final DataKey<EditorComponent> EDITOR_COMPONENT = DataKey.create("MPS_EditorComponent");
-
-  @Description(description = "current transformation item")
-  public static final DataKey<TransformationMenuItem> TRANSFORMATION_MENU_ITEM = DataKey.create("MPS_TransformationMenuItem");
-
-  @Description(description = "current substitute action")
-  public static final DataKey<SubstituteAction> SUBSTITUTE_ACTION = DataKey.create("MPS_SubstituteAction");
 }
