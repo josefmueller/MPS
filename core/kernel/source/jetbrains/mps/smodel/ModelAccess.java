@@ -76,7 +76,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
     return ourInstance;
   }
 
-  static void setInstance(@NotNull ModelAccess modelAccess) {
+  /*package*/ static void setInstance(@NotNull ModelAccess modelAccess) {
     ourInstance = modelAccess;
   }
 
