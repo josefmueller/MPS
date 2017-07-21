@@ -654,9 +654,9 @@
                           <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
                         </node>
                       </node>
-                      <node concept="2YIFZM" id="6TUx0SkZO5q" role="37wK5m">
-                        <ref role="1Pybhc" to="z1c3:~GlobalScopeMinusTransient" resolve="GlobalScopeMinusTransient" />
-                        <ref role="37wK5l" to="z1c3:~GlobalScopeMinusTransient.getInstance():jetbrains.mps.project.GlobalScopeMinusTransient" resolve="getInstance" />
+                      <node concept="2YIFZM" id="2qr$ID4VuOx" role="37wK5m">
+                        <ref role="37wK5l" to="z1c3:~AllUserModelsScope.getInstance():jetbrains.mps.project.AllUserModelsScope" resolve="getInstance" />
+                        <ref role="1Pybhc" to="z1c3:~AllUserModelsScope" resolve="AllUserModelsScope" />
                       </node>
                     </node>
                   </node>

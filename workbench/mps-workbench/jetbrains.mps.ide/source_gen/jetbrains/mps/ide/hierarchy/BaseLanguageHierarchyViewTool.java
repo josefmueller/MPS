@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.project.GlobalScopeMinusTransient;
+import jetbrains.mps.project.AllUserModelsScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
@@ -92,7 +92,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
       // FIXME there's ClassifierSuccessor index we can use here, although shall not use them directly 
       // but rather through FindUsagesFacade, with dedicated 'successor' query, so that there'd be single HierarchyViewTool, and finders plug through  
       // FindUsages to get accessed in a generic way. 
-      Set<SReference> usages = fuFacade.findUsages(GlobalScopeMinusTransient.getInstance(), Collections.<SNode>singleton(node), new EmptyProgressMonitor());
+      Set<SReference> usages = fuFacade.findUsages(AllUserModelsScope.getInstance(), Collections.<SNode>singleton(node), new EmptyProgressMonitor());
       Set<SNode> result = new HashSet<SNode>();
       for (SReference usage : usages) {
         SNode sourceNode = usage.getSourceNode();

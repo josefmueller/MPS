@@ -9,7 +9,17 @@ import com.intellij.openapi.project.Project;
 public class MigrationDialogUtil {
   public static boolean showMigrationConfirmation(MPSProject project, MigrationRegistry m) {
     StringBuilder text = new StringBuilder();
-    text.append("The project needs to be migrated.\n\n" + "This project uses older versions of languages and/or outdated project format.\n" + "To work correctly in the current environment, some migrations should be applied to the project.\n" + "If the migration is postponed, it is still possible to work with the project.\n" + "However, not migrated code may work slower or worse in some aspect, and typically will not work in next release.\n" + "It is strongly recommended to run the migrations as soon as possible and only use not-migrated project to fix any problems in it before migrating.\n\n" + "Would you like to reload project and start the migration immediately?");
+    text.append("<html>");
+    text.append("The project needs to be migrated.<br><br>");
+
+    text.append("This project uses older versions of languages and/or outdated project format.<br>");
+    text.append("To work correctly in the current environment, some migrations should be applied to the project.<br>");
+    text.append("If the migration is postponed, it is still possible to work with the project.<br>");
+    text.append("However, not migrated code may work slower or worse in some aspect, and typically will not work in next release.<br>");
+    text.append("It is strongly recommended to run the migrations as soon as possible and only use not-migrated project to fix any problems in it before migrating.<br><br>");
+
+    text.append("Would you like to reload project and start the migration immediately?");
+    text.append("</html>");
 
     int result = Messages.showYesNoDialog(project.getProject(), text.toString(), "Migration Required", "Migrate", "Postpone", null);
     return result == Messages.YES;
@@ -17,10 +27,12 @@ public class MigrationDialogUtil {
 
   public static boolean showResaveConfirmation(MPSProject project) {
     StringBuilder text = new StringBuilder();
-    text.append("Module descriptors need to be updated. The update will change many files.\n");
-    text.append("If the update is postponed, migration status may be calculated with errors in future.\n\n");
+    text.append("<html>");
+    text.append("Module descriptors need to be updated. The update will change many files.<br>");
+    text.append("If the update is postponed, migration status may be calculated with errors in future.<br><br>");
 
     text.append("Would you like to update module descriptors immediately?");
+    text.append("</html>");
 
     int result = Messages.showYesNoDialog(project.getProject(), text.toString(), "Modules Update Required", "Resave", "Postpone", null);
     return result == Messages.YES;

@@ -2954,9 +2954,9 @@
                 </node>
                 <node concept="liA8E" id="L8C0ATacEo" role="2OqNvi">
                   <ref role="37wK5l" to="lui2:~FindUsagesFacade.findUsages(org.jetbrains.mps.openapi.module.SearchScope,java.util.Set,org.jetbrains.mps.openapi.util.ProgressMonitor):java.util.Set" resolve="findUsages" />
-                  <node concept="2YIFZM" id="L8C0ATacEs" role="37wK5m">
-                    <ref role="37wK5l" to="z1c3:~GlobalScopeMinusTransient.getInstance():jetbrains.mps.project.GlobalScopeMinusTransient" resolve="getInstance" />
-                    <ref role="1Pybhc" to="z1c3:~GlobalScopeMinusTransient" resolve="GlobalScopeMinusTransient" />
+                  <node concept="2YIFZM" id="2qr$ID4VqTK" role="37wK5m">
+                    <ref role="37wK5l" to="z1c3:~AllUserModelsScope.getInstance():jetbrains.mps.project.AllUserModelsScope" resolve="getInstance" />
+                    <ref role="1Pybhc" to="z1c3:~AllUserModelsScope" resolve="AllUserModelsScope" />
                   </node>
                   <node concept="2YIFZM" id="L8C0ATacEp" role="37wK5m">
                     <ref role="37wK5l" to="33ny:~Collections.singleton(java.lang.Object):java.util.Set" resolve="singleton" />
