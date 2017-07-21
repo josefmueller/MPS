@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.aspects.InOrderSorter;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
@@ -28,6 +29,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -101,6 +103,31 @@ public class LanguageAspectSupport {
     if (newAspect != null) return newAspect.getAdditionalLanguages();
     LanguageAspect oldAspect = getOldAspect(model);
     if (oldAspect != null) return oldAspect.getMainLanguages();
+    return Collections.emptyList();
+  }
+
+  /**
+   * Provisional mechanism to ensure proper aspect devkit is added when model is created.
+   * Need to come up with a way to specify devkits in an aspect declaration, perhaps like main/additional languages (though not sure I like it)?
+   */
+  @NotNull
+  public static Collection<SModuleReference> getInitialDevKits(SModel model) {
+    LanguageAspectDescriptor newAspect = getNewAspect(model);
+    if (newAspect == null) {
+      return Collections.emptyList();
+    }
+    String presentableAspectName = newAspect.getPresentableAspectName();
+    if ("structure".equals(presentableAspectName)) {
+      return Collections.singleton(BootstrapLanguages.getStructureAspectDevKit());
+    } else if ("constraints".equals(presentableAspectName)) {
+      return Collections.singleton(BootstrapLanguages.getConstraintAspectDevKit());
+    } else if ("dataFlow".equals(presentableAspectName)) {
+      return Collections.singleton(BootstrapLanguages.getDataFlowAspectDevKit());
+    } else if ("typesystem".equals(presentableAspectName)) {
+      return Collections.singleton(BootstrapLanguages.getTypesystemAspectDevKit());
+    } else if ("textGen".equals(presentableAspectName)) {
+      return Collections.singleton(BootstrapLanguages.getTextGenAspectDevKit());
+    }
     return Collections.emptyList();
   }
 

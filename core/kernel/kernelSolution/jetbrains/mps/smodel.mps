@@ -277,7 +277,7 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG" />
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
@@ -529,6 +529,101 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="2YIFZL" id="2kOVOxSx6tS" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getStructureAspectDevKit" />
+      <node concept="3clFbS" id="2kOVOxSx6pn" role="3clF47">
+        <node concept="3clFbF" id="2kOVOxSx6zB" role="3cqZAp">
+          <node concept="37shsh" id="2kOVOxSx6z_" role="3clFbG">
+            <node concept="20RdaH" id="2kOVOxSx73B" role="37shsm">
+              <property role="20Rdg5" value="78434eb8-b0e5-444b-850d-e7c4ad2da9ab" />
+              <property role="20Rdg7" value="jetbrains.mps.devkit.aspect.structure" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="2kOVOxSx6zR" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3Tm1VV" id="2kOVOxSx6pm" role="1B3o_S" />
+    </node>
+    <node concept="2YIFZL" id="2kOVOxSx6$Z" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getConstraintAspectDevKit" />
+      <node concept="3clFbS" id="2kOVOxSx6_0" role="3clF47">
+        <node concept="3clFbF" id="2kOVOxSx6_1" role="3cqZAp">
+          <node concept="37shsh" id="2kOVOxSx6_2" role="3clFbG">
+            <node concept="20RdaH" id="2kOVOxSx726" role="37shsm">
+              <property role="20Rdg5" value="00000000-0000-4000-0000-5604ebd4f22c" />
+              <property role="20Rdg7" value="jetbrains.mps.devkit.aspect.constraints" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="2kOVOxSx6_4" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3Tm1VV" id="2kOVOxSx6_5" role="1B3o_S" />
+    </node>
+    <node concept="2YIFZL" id="2kOVOxSx6D4" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getDataFlowAspectDevKit" />
+      <node concept="3clFbS" id="2kOVOxSx6D5" role="3clF47">
+        <node concept="3clFbF" id="2kOVOxSx6D6" role="3cqZAp">
+          <node concept="37shsh" id="2kOVOxSx6D7" role="3clFbG">
+            <node concept="20RdaH" id="2kOVOxSx70_" role="37shsm">
+              <property role="20Rdg5" value="00000000-0000-4000-0000-443879f56b80" />
+              <property role="20Rdg7" value="jetbrains.mps.devkit.aspect.dataflow" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="2kOVOxSx6D9" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3Tm1VV" id="2kOVOxSx6Da" role="1B3o_S" />
+    </node>
+    <node concept="2YIFZL" id="2kOVOxSx6I6" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getTextGenAspectDevKit" />
+      <node concept="3clFbS" id="2kOVOxSx6I7" role="3clF47">
+        <node concept="3clFbF" id="2kOVOxSx6I8" role="3cqZAp">
+          <node concept="37shsh" id="2kOVOxSx6I9" role="3clFbG">
+            <node concept="20RdaH" id="2kOVOxSx6Z4" role="37shsm">
+              <property role="20Rdg5" value="fa73d85a-ac7f-447b-846c-fcdc41caa600" />
+              <property role="20Rdg7" value="jetbrains.mps.devkit.aspect.textgen" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="2kOVOxSx6Ib" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3Tm1VV" id="2kOVOxSx6Ic" role="1B3o_S" />
+    </node>
+    <node concept="2YIFZL" id="2kOVOxSx6Mp" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getTypesystemAspectDevKit" />
+      <node concept="3clFbS" id="2kOVOxSx6Mq" role="3clF47">
+        <node concept="3clFbF" id="2kOVOxSx6Mr" role="3cqZAp">
+          <node concept="37shsh" id="2kOVOxSx6Ms" role="3clFbG">
+            <node concept="20RdaH" id="2kOVOxSx6Xz" role="37shsm">
+              <property role="20Rdg5" value="00000000-0000-4000-0000-1de82b3a4936" />
+              <property role="20Rdg7" value="jetbrains.mps.devkit.aspect.typesystem" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3uibUv" id="2kOVOxSx6Mu" role="3clF45">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="3Tm1VV" id="2kOVOxSx6Mv" role="1B3o_S" />
     </node>
     <node concept="2YIFZL" id="6kDspgJfJXn" role="jymVt">
       <property role="TrG5h" value="getLanguageDesignDevKit" />
