@@ -67,9 +67,11 @@ public class MPSPackageItemProvider implements ChooseByNameItemProvider {
     Collections.sort(matchingResults);
 
     for (MatchingResult matchingResult : matchingResults) {
-      indicator.checkCanceled();
-      if (!consumer.process(model.getElementsByName(matchingResult.getName(), everywhere, pattern)[0])) {
-        return false;
+      for (Object element : model.getElementsByName(matchingResult.getName(), everywhere, pattern)) {
+        indicator.checkCanceled();
+        if (!consumer.process(element)) {
+          return false;
+        }
       }
     }
 
