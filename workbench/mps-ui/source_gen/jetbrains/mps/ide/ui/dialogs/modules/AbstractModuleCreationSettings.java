@@ -43,17 +43,17 @@ public abstract class AbstractModuleCreationSettings extends JPanel {
     myModuleName.setName("Name");
     myModuleName.getDocument().addDocumentListener(new DocumentAdapter() {
       protected void textChanged(DocumentEvent p0) {
-        if ((myProjectPath == null || myProjectPath.length() == 0)) {
-          return;
+        if (!((myProjectPath == null || myProjectPath.length() == 0))) {
+          String path = getDefaultModulePath();
+          final String solutionName = getModuleName();
+          if (!(solutionName.equals(getModuleLocation()))) {
+            path += solutionName;
+          }
+          if (!(myLocationChangedByUser)) {
+            setModuleLocation(path);
+          }
         }
-        String path = getDefaultModulePath();
-        final String solutionName = getModuleName();
-        if (!(solutionName.equals(getModuleLocation()))) {
-          path += solutionName;
-        }
-        if (!(myLocationChangedByUser)) {
-          setModuleLocation(path);
-        }
+        fireChanged();
       }
     });
     this.add(myModuleName, 1, 0.0, JBUI.insetsBottom(5));
