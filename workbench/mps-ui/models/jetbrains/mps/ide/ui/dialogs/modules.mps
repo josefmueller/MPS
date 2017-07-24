@@ -967,77 +967,83 @@
                       <node concept="3clFbS" id="g46k2sbZ4t" role="3clF47">
                         <node concept="3clFbJ" id="g46k2sbZ4u" role="3cqZAp">
                           <node concept="3clFbS" id="g46k2sbZ4v" role="3clFbx">
-                            <node concept="3cpWs6" id="g46k2sbZ4w" role="3cqZAp" />
-                          </node>
-                          <node concept="2OqwBi" id="g46k2sbZ4x" role="3clFbw">
-                            <node concept="37vLTw" id="g46k2sbZ4y" role="2Oq$k0">
-                              <ref role="3cqZAo" node="g46k2sbNvv" resolve="myProjectPath" />
-                            </node>
-                            <node concept="17RlXB" id="g46k2sbZ4z" role="2OqNvi" />
-                          </node>
-                        </node>
-                        <node concept="3cpWs8" id="g46k2sbZ4$" role="3cqZAp">
-                          <node concept="3cpWsn" id="g46k2sbZ4_" role="3cpWs9">
-                            <property role="3TUv4t" value="false" />
-                            <property role="TrG5h" value="path" />
-                            <node concept="17QB3L" id="g46k2sbZ4A" role="1tU5fm" />
-                            <node concept="1rXfSq" id="g46k2sdSDF" role="33vP2m">
-                              <ref role="37wK5l" node="g46k2sd8ti" resolve="getDefaultModulePath" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3cpWs8" id="g46k2sbZ4I" role="3cqZAp">
-                          <node concept="3cpWsn" id="g46k2sbZ4J" role="3cpWs9">
-                            <property role="3TUv4t" value="true" />
-                            <property role="TrG5h" value="solutionName" />
-                            <node concept="17QB3L" id="g46k2sbZ4K" role="1tU5fm" />
-                            <node concept="1rXfSq" id="g46k2sbZ4L" role="33vP2m">
-                              <ref role="37wK5l" node="g46k2scpfc" resolve="getModuleName" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbJ" id="g46k2sbZ4M" role="3cqZAp">
-                          <node concept="3fqX7Q" id="g46k2sbZ4N" role="3clFbw">
-                            <node concept="2OqwBi" id="g46k2sbZ4O" role="3fr31v">
-                              <node concept="37vLTw" id="g46k2sbZ4P" role="2Oq$k0">
-                                <ref role="3cqZAo" node="g46k2sbZ4J" resolve="solutionName" />
+                            <node concept="3cpWs8" id="g46k2sbZ4$" role="3cqZAp">
+                              <node concept="3cpWsn" id="g46k2sbZ4_" role="3cpWs9">
+                                <property role="3TUv4t" value="false" />
+                                <property role="TrG5h" value="path" />
+                                <node concept="17QB3L" id="g46k2sbZ4A" role="1tU5fm" />
+                                <node concept="1rXfSq" id="g46k2sdSDF" role="33vP2m">
+                                  <ref role="37wK5l" node="g46k2sd8ti" resolve="getDefaultModulePath" />
+                                </node>
                               </node>
-                              <node concept="liA8E" id="g46k2sbZ4Q" role="2OqNvi">
-                                <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                                <node concept="1rXfSq" id="g46k2sbZ4R" role="37wK5m">
-                                  <ref role="37wK5l" node="g46k2scpfz" resolve="getModuleLocation" />
+                            </node>
+                            <node concept="3cpWs8" id="g46k2sbZ4I" role="3cqZAp">
+                              <node concept="3cpWsn" id="g46k2sbZ4J" role="3cpWs9">
+                                <property role="3TUv4t" value="true" />
+                                <property role="TrG5h" value="solutionName" />
+                                <node concept="17QB3L" id="g46k2sbZ4K" role="1tU5fm" />
+                                <node concept="1rXfSq" id="g46k2sbZ4L" role="33vP2m">
+                                  <ref role="37wK5l" node="g46k2scpfc" resolve="getModuleName" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbJ" id="g46k2sbZ4M" role="3cqZAp">
+                              <node concept="3fqX7Q" id="g46k2sbZ4N" role="3clFbw">
+                                <node concept="2OqwBi" id="g46k2sbZ4O" role="3fr31v">
+                                  <node concept="37vLTw" id="g46k2sbZ4P" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="g46k2sbZ4J" resolve="solutionName" />
+                                  </node>
+                                  <node concept="liA8E" id="g46k2sbZ4Q" role="2OqNvi">
+                                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                                    <node concept="1rXfSq" id="g46k2sbZ4R" role="37wK5m">
+                                      <ref role="37wK5l" node="g46k2scpfz" resolve="getModuleLocation" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3clFbS" id="g46k2sbZ4S" role="3clFbx">
+                                <node concept="3clFbF" id="g46k2sbZ4T" role="3cqZAp">
+                                  <node concept="d57v9" id="g46k2sbZ4U" role="3clFbG">
+                                    <node concept="37vLTw" id="g46k2sbZ4V" role="37vLTJ">
+                                      <ref role="3cqZAo" node="g46k2sbZ4_" resolve="path" />
+                                    </node>
+                                    <node concept="37vLTw" id="g46k2sbZ4W" role="37vLTx">
+                                      <ref role="3cqZAo" node="g46k2sbZ4J" resolve="solutionName" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbJ" id="g46k2sbZ4X" role="3cqZAp">
+                              <node concept="3fqX7Q" id="g46k2sbZ4Y" role="3clFbw">
+                                <node concept="37vLTw" id="g46k2scdRs" role="3fr31v">
+                                  <ref role="3cqZAo" node="g46k2sbN4x" resolve="myLocationChangedByUser" />
+                                </node>
+                              </node>
+                              <node concept="3clFbS" id="g46k2sbZ50" role="3clFbx">
+                                <node concept="3clFbF" id="g46k2sbZ51" role="3cqZAp">
+                                  <node concept="1rXfSq" id="g46k2sbZ52" role="3clFbG">
+                                    <ref role="37wK5l" node="g46k2scpfH" resolve="setModuleLocation" />
+                                    <node concept="37vLTw" id="g46k2sbZ53" role="37wK5m">
+                                      <ref role="3cqZAo" node="g46k2sbZ4_" resolve="path" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
                           </node>
-                          <node concept="3clFbS" id="g46k2sbZ4S" role="3clFbx">
-                            <node concept="3clFbF" id="g46k2sbZ4T" role="3cqZAp">
-                              <node concept="d57v9" id="g46k2sbZ4U" role="3clFbG">
-                                <node concept="37vLTw" id="g46k2sbZ4V" role="37vLTJ">
-                                  <ref role="3cqZAo" node="g46k2sbZ4_" resolve="path" />
-                                </node>
-                                <node concept="37vLTw" id="g46k2sbZ4W" role="37vLTx">
-                                  <ref role="3cqZAo" node="g46k2sbZ4J" resolve="solutionName" />
-                                </node>
+                          <node concept="3fqX7Q" id="13ijlE5IxJH" role="3clFbw">
+                            <node concept="2OqwBi" id="13ijlE5IxJJ" role="3fr31v">
+                              <node concept="37vLTw" id="13ijlE5IxJK" role="2Oq$k0">
+                                <ref role="3cqZAo" node="g46k2sbNvv" resolve="myProjectPath" />
                               </node>
+                              <node concept="17RlXB" id="13ijlE5IxJL" role="2OqNvi" />
                             </node>
                           </node>
                         </node>
-                        <node concept="3clFbJ" id="g46k2sbZ4X" role="3cqZAp">
-                          <node concept="3fqX7Q" id="g46k2sbZ4Y" role="3clFbw">
-                            <node concept="37vLTw" id="g46k2scdRs" role="3fr31v">
-                              <ref role="3cqZAo" node="g46k2sbN4x" resolve="myLocationChangedByUser" />
-                            </node>
-                          </node>
-                          <node concept="3clFbS" id="g46k2sbZ50" role="3clFbx">
-                            <node concept="3clFbF" id="g46k2sbZ51" role="3cqZAp">
-                              <node concept="1rXfSq" id="g46k2sbZ52" role="3clFbG">
-                                <ref role="37wK5l" node="g46k2scpfH" resolve="setModuleLocation" />
-                                <node concept="37vLTw" id="g46k2sbZ53" role="37wK5m">
-                                  <ref role="3cqZAo" node="g46k2sbZ4_" resolve="path" />
-                                </node>
-                              </node>
-                            </node>
+                        <node concept="3clFbF" id="13ijlE5Izj8" role="3cqZAp">
+                          <node concept="1rXfSq" id="13ijlE5Izj6" role="3clFbG">
+                            <ref role="37wK5l" node="g46k2sd8sQ" resolve="fireChanged" />
                           </node>
                         </node>
                       </node>

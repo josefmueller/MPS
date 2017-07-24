@@ -26,11 +26,11 @@
       <node id="289384041347543291" at="40,32,41,50" concept="2" />
       <node id="289384041347543300" at="41,50,42,36" concept="2" />
       <node id="289384041347543305" at="42,36,43,33" concept="2" />
-      <node id="289384041347543328" at="46,69,47,17" concept="7" />
-      <node id="289384041347543332" at="48,9,49,45" concept="6" />
-      <node id="289384041347543342" at="49,45,50,52" concept="6" />
-      <node id="289384041347543353" at="51,58,52,31" concept="2" />
-      <node id="289384041347543361" at="54,41,55,34" concept="2" />
+      <node id="289384041347543332" at="46,72,47,47" concept="6" />
+      <node id="289384041347543342" at="47,47,48,54" concept="6" />
+      <node id="289384041347543353" at="49,60,50,33" concept="2" />
+      <node id="289384041347543361" at="52,43,53,36" concept="2" />
+      <node id="1212116300902053064" at="55,9,56,22" concept="2" />
       <node id="289384041347543370" at="58,7,59,57" concept="2" />
       <node id="289384041347543377" at="59,57,60,0" concept="9" />
       <node id="2177383268613073540" at="60,0,61,54" concept="2" />
@@ -73,9 +73,8 @@
       <node id="2093632264608749635" at="150,70,151,55" concept="2" />
       <node id="2093632264608784328" at="154,85,155,142" concept="2" />
       <node id="289384041347843872" at="110,10,112,5" concept="0" />
-      <node id="289384041347543326" at="45,52,48,9" concept="4" />
-      <node id="289384041347543346" at="50,52,53,9" concept="4" />
-      <node id="289384041347543357" at="53,9,56,9" concept="4" />
+      <node id="289384041347543346" at="48,54,51,11" concept="4" />
+      <node id="289384041347543357" at="51,11,54,11" concept="4" />
       <node id="289384041347543404" at="66,52,69,9" concept="4" />
       <node id="289384041347650508" at="80,0,83,0" concept="5" trace="getModuleName#()Ljava/lang/String;" />
       <node id="289384041347650531" at="89,0,92,0" concept="5" trace="getModuleLocation#()Ljava/lang/String;" />
@@ -94,13 +93,13 @@
       <node id="289384041347650541" at="93,0,99,0" concept="5" trace="setModuleLocation#(Ljava/lang/String;)V" />
       <node id="289384041347543388" at="64,37,71,7" concept="2" />
       <node id="289384041347843907" at="126,0,133,0" concept="5" trace="reset#()V" />
+      <node id="289384041347543326" at="45,52,55,9" concept="4" />
       <node id="289384041347543320" at="45,0,58,0" concept="5" trace="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
       <node id="289384041347543310" at="43,33,58,7" concept="2" />
       <node id="289384041347843827" at="100,0,115,0" concept="5" trace="setProjectPath#(Ljava/lang/String;)V" />
       <node id="289384041347500710" at="37,0,79,0" concept="1" trace="AbstractModuleCreationSettings#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
-      <scope id="289384041347543327" at="46,69,47,17" />
-      <scope id="289384041347543352" at="51,58,52,31" />
-      <scope id="289384041347543360" at="54,41,55,34" />
+      <scope id="289384041347543352" at="49,60,50,33" />
+      <scope id="289384041347543360" at="52,43,53,36" />
       <scope id="289384041347543406" at="67,43,68,41" />
       <scope id="289384041347650509" at="80,33,81,41" />
       <scope id="289384041347650532" at="89,37,90,45" />
@@ -153,10 +152,11 @@
         <var name="moduleLocation" id="289384041347650560" />
       </scope>
       <scope id="289384041347843907" at="126,0,133,0" />
-      <scope id="289384041347543325" at="45,52,56,9">
+      <scope id="289384041347543327" at="46,72,54,11">
         <var name="path" id="289384041347543333" />
         <var name="solutionName" id="289384041347543343" />
       </scope>
+      <scope id="289384041347543325" at="45,52,56,22" />
       <scope id="289384041347543320" at="45,0,58,0">
         <var name="p0" id="289384041347543323" />
       </scope>
