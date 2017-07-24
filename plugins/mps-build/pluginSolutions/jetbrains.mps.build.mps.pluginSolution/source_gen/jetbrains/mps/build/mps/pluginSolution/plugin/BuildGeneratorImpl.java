@@ -220,10 +220,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     if (text.equals("")) {
       return false;
     }
-    final ModuleRepositoryFacade facade = new ModuleRepositoryFacade(myProject);
     return new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return facade.getModuleByName(text) == null;
+        return new ModuleRepositoryFacade(myProject).getModulesByName(text).isEmpty();
       }
     });
   }

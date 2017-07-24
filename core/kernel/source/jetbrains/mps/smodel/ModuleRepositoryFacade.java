@@ -194,7 +194,8 @@ public final class ModuleRepositoryFacade implements CoreComponent {
    * @return collection of modules which names are equal to the given module name.
    * A repository is able to have several modules for a given module name.
    * Empty collection is returned iff there are no such modules in the repository.
-   * */
+   * @since 2017.2
+   */
   @NotNull
   public Collection<SModule> getModulesByName(@NotNull String moduleName) {
     return StreamSupport.stream(REPO.getModules().spliterator(), true)

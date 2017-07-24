@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.project;
 
-import com.intellij.notification.Notification;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.SdkModificator;
@@ -86,7 +85,7 @@ public abstract class StubSolutionIdea extends StubSolution {
   @Nullable
   public static Solution newInstance(Library library, MPSModuleOwner moduleOwner, SRepositoryExt repository) throws StubModuleNameTakenException {
     String namespace = library.getName();
-    if (namespace != null && new ModuleRepositoryFacade(repository).getModuleByName(namespace) != null) {
+    if (namespace != null && !new ModuleRepositoryFacade(repository).getModulesByName(namespace).isEmpty()) {
       throw new StubModuleNameTakenException(library.getName(), namespace);
     }
     SolutionDescriptor descriptor = createDescriptor(namespace, library.getFiles(OrderRootType.CLASSES));

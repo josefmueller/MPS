@@ -30,6 +30,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nls;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collection;
 
 public enum JUnitRunTypes {
   PROJECT() {
@@ -235,7 +236,10 @@ public enum JUnitRunTypes {
     if ((moduleName == null || moduleName.length() == 0)) {
       return null;
     }
-    return new ModuleRepositoryFacade(mpsProject).getModuleByName(moduleName);
+    ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(mpsProject);
+    Collection<SModule> modulesByName = mrf.getModulesByName(moduleName);
+    // just take first one. We need to keep module reference instead of module name in configuration settings, though 
+    return (modulesByName.isEmpty() ? null : modulesByName.iterator().next());
   }
 
   protected abstract List<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, @NotNull MPSProject project, ProgressMonitor monitor);

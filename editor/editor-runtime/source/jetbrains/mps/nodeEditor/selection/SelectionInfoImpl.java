@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
@@ -107,8 +106,7 @@ public class SelectionInfoImpl implements SelectionInfo {
             module = mr.resolve(repo);
           } catch (IllegalArgumentException ex) {
             // fallback, perhaps, it's an old selection, where just module name has been stored
-            // TODO remove this fallback once 3.5 is out
-            module = new ModuleRepositoryFacade(repo).getModuleByName(myModuleID);
+            module = null;
           }
           if (module == null) {
             LOG.error("Specified selection class module was not found by ID: " + myModuleID);
