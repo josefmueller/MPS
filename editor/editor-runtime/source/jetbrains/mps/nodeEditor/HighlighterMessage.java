@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
 
   @Override
   public List<QuickFixProvider> getIntentionProviders() {
+    // FIXME This seems to be compatibility code (see deprecated methods in EditorMessage), drop once 2017.2 is out
     List<QuickFixProvider> list = new ArrayList<>();
     for (QuickFix quickFix : TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getCollection(myReportItem)) {
       if (quickFix instanceof QuickFixRuntimeAdapter) {

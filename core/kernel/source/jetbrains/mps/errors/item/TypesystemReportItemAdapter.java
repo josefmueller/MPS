@@ -17,9 +17,11 @@ package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,10 +34,16 @@ import java.util.Set;
 public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdFlavouredItem, QuickFixReportItem {
 
   private final IErrorReporter myErrorReporter;
+  private final LanguageRegistry myLanguageRegistry;
 
   public TypesystemReportItemAdapter(@NotNull IErrorReporter errorReporter) {
     super(errorReporter.getMessageStatus(), errorReporter.getSNode() == null ? null : errorReporter.getSNode().getReference(), getMessage(errorReporter));
     myErrorReporter = errorReporter;
+    // FIXME QuickFixRuntimeAdapter cons (#getQuickFix(), below) doesn't expect errorReporter.getSNode() to return null ever
+    //       however, don't want to enforce this with @NotNull here right now, it's release time (only 1 of 3 uses of this cons
+    //       ensure node != null), therefore fallback to global instance.
+    SRepository errorNodeRepo = errorReporter.getSNode() == null || errorReporter.getSNode().getModel() == null ? null : errorReporter.getSNode().getModel().getRepository();
+    myLanguageRegistry = errorNodeRepo == null ? LanguageRegistry.getInstance() : LanguageRegistry.getInstance(errorNodeRepo);
   }
 
   @Override
@@ -73,7 +81,7 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   public Collection<QuickFix> getQuickFix() {
     List<QuickFix> list = new ArrayList<>();
     for (QuickFixProvider quickFixProvider : getErrorReporter().getIntentionProviders()) {
-      QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(getErrorReporter().getSNode(), quickFixProvider);
+      QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(myLanguageRegistry, getErrorReporter().getSNode(), quickFixProvider);
       list.add(quickFixAdapter);
     }
     return list;

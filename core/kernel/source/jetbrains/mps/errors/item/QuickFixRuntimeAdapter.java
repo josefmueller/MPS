@@ -18,6 +18,8 @@ package jetbrains.mps.errors.item;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -31,14 +33,21 @@ import java.util.Set;
 import static jetbrains.mps.errors.item.ReportItemBase.FLAVOUR_CLASS;
 
 public class QuickFixRuntimeAdapter implements QuickFix, NodeFlavouredItem, RuleIdFlavouredItem {
+  private final LanguageRegistry myLanguageRegistry;
   private final QuickFixProvider myQuickFixProvider;
   private final SNodeReference myNode;
 
-  public QuickFixRuntimeAdapter(SNode node, QuickFixProvider quickFixProvider) {
+  public QuickFixRuntimeAdapter(@NotNull LanguageRegistry languageRegistry, @NotNull SNode node, QuickFixProvider quickFixProvider) {
+    myLanguageRegistry = languageRegistry;
     myQuickFixProvider = quickFixProvider;
     myNode = node.getReference();
   }
 
+  /*package*/ QuickFix_Runtime getFixRuntime() {
+    return myQuickFixProvider.getQuickFix(myLanguageRegistry);
+  }
+
+  // FIXME the only public use seems to be compatibility, review once 2017.2 is out
   public QuickFixProvider getQuickFixProvider() {
     return myQuickFixProvider;
   }
@@ -50,12 +59,12 @@ public class QuickFixRuntimeAdapter implements QuickFix, NodeFlavouredItem, Rule
 
   @Override
   public void execute(SRepository repository) {
-    myQuickFixProvider.getQuickFix().execute(myNode.resolve(repository));
+    getFixRuntime().execute(myNode.resolve(repository));
   }
 
   @Override
   public String getDescription(SRepository repository) {
-    return myQuickFixProvider.getQuickFix().getDescription(myNode.resolve(repository));
+    return getFixRuntime().getDescription(myNode.resolve(repository));
   }
 
   @Override
@@ -64,13 +73,13 @@ public class QuickFixRuntimeAdapter implements QuickFix, NodeFlavouredItem, Rule
   }
 
   public static final SimpleReportItemFlavour<QuickFixRuntimeAdapter, QuickFix_Runtime> FLAVOUR_QUICKFIX_RUNTIME =
-      new SimpleReportItemFlavour<>(QuickFixRuntimeAdapter.class, quickFixRuntimeAdapter -> quickFixRuntimeAdapter.getQuickFixProvider().getQuickFix());
+      new SimpleReportItemFlavour<>(QuickFixRuntimeAdapter.class, QuickFixRuntimeAdapter::getFixRuntime);
 
   @Override
   public Collection<TypesystemRuleId> getRuleId() {
-    SNodeReference declarationNode = myQuickFixProvider.getQuickFix().getDeclarationNode();
+    SNodeReference declarationNode = getFixRuntime().getDeclarationNode();
     if (declarationNode != null) {
-      return new HashSet<>(Arrays.asList(new TypesystemRuleId(declarationNode)));
+      return Collections.singleton(new TypesystemRuleId(declarationNode));
     } else {
       return Collections.emptyList();
     }
