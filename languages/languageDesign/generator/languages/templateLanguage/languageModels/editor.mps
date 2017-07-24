@@ -508,6 +508,7 @@
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -7364,20 +7365,41 @@
     <node concept="3ft6gV" id="1wEcoXjJG7W" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJG7X" role="3ft5RY">
         <node concept="3clFbS" id="1wEcoXjJG7Y" role="2VODD2">
+          <node concept="3SKdUt" id="1c6WnGgeKef" role="3cqZAp">
+            <node concept="3SKdUq" id="1c6WnGgeKeh" role="3SKWNk">
+              <property role="3SKdUp" value="under template call but not under a CF. There's a contribution for CFP that adds all CFP of a CF if there's one, avoid menu item duplication." />
+            </node>
+          </node>
           <node concept="3clFbF" id="1wEcoXjJG7Z" role="3cqZAp">
-            <node concept="2OqwBi" id="1wEcoXjJG80" role="3clFbG">
-              <node concept="2OqwBi" id="1wEcoXjJG81" role="2Oq$k0">
-                <node concept="3bvxqY" id="1wEcoXjJG88" role="2Oq$k0" />
-                <node concept="2Xjw5R" id="1wEcoXjJG83" role="2OqNvi">
-                  <node concept="1xMEDy" id="1wEcoXjJG84" role="1xVPHs">
-                    <node concept="chp4Y" id="1wEcoXjJG85" role="ri$Ld">
-                      <ref role="cht4Q" to="tpf8:1vDgt48Nz4w" resolve="ITemplateCall" />
+            <node concept="1Wc70l" id="1c6WnGgeoTU" role="3clFbG">
+              <node concept="2OqwBi" id="1c6WnGgez$J" role="3uHU7w">
+                <node concept="2OqwBi" id="1c6WnGgepl0" role="2Oq$k0">
+                  <node concept="3bvxqY" id="1c6WnGgep3W" role="2Oq$k0" />
+                  <node concept="2Xjw5R" id="1c6WnGgeJjE" role="2OqNvi">
+                    <node concept="1xMEDy" id="1c6WnGgeJjG" role="1xVPHs">
+                      <node concept="chp4Y" id="1c6WnGgeJjH" role="ri$Ld">
+                        <ref role="cht4Q" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+                      </node>
                     </node>
+                    <node concept="1xIGOp" id="1c6WnGgeJjI" role="1xVPHs" />
                   </node>
-                  <node concept="1xIGOp" id="1wEcoXjJG86" role="1xVPHs" />
                 </node>
+                <node concept="3w_OXm" id="1c6WnGgeJLJ" role="2OqNvi" />
               </node>
-              <node concept="3x8VRR" id="1wEcoXjJG87" role="2OqNvi" />
+              <node concept="2OqwBi" id="1wEcoXjJG80" role="3uHU7B">
+                <node concept="2OqwBi" id="1wEcoXjJG81" role="2Oq$k0">
+                  <node concept="3bvxqY" id="1wEcoXjJG88" role="2Oq$k0" />
+                  <node concept="2Xjw5R" id="1wEcoXjJG83" role="2OqNvi">
+                    <node concept="1xMEDy" id="1wEcoXjJG84" role="1xVPHs">
+                      <node concept="chp4Y" id="1wEcoXjJG85" role="ri$Ld">
+                        <ref role="cht4Q" to="tpf8:1vDgt48Nz4w" resolve="ITemplateCall" />
+                      </node>
+                    </node>
+                    <node concept="1xIGOp" id="1wEcoXjJG86" role="1xVPHs" />
+                  </node>
+                </node>
+                <node concept="3x8VRR" id="1wEcoXjJG87" role="2OqNvi" />
+              </node>
             </node>
           </node>
         </node>

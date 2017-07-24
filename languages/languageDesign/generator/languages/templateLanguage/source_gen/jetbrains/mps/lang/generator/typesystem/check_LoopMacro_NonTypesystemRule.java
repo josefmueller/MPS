@@ -22,12 +22,10 @@ public class check_LoopMacro_NonTypesystemRule extends AbstractNonTypesystemRule
     SNode attributedNode = SNodeOperations.getParent(loopMacro);
     if ((attributedNode != null)) {
       SContainmentLink l = SNodeOperations.getContainingLink(attributedNode);
-      if (l.isValid()) {
-        if (!(l.isMultiple())) {
-          {
-            MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(loopMacro, "Node under $LOOP$ macro should have multiple cardinality (role: " + l.getName() + ")", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1098116234534104047", null, errorTarget);
-          }
+      if (l != null && l.isValid() && !(l.isMultiple())) {
+        {
+          MessageTarget errorTarget = new NodeMessageTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(loopMacro, "Node under $LOOP$ macro should have multiple cardinality (role: " + l.getName() + ")", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1098116234534104047", null, errorTarget);
         }
       }
     }

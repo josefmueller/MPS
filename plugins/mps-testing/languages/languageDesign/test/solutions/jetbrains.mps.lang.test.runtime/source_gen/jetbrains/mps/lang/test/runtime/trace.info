@@ -1164,7 +1164,7 @@
       <node id="5283973801935346081" at="23,0,24,0" concept="15" trace="LOG" />
       <node id="2675718132411622380" at="24,42,25,34" concept="17" />
       <node id="8406928085288743292" at="29,151,30,51" concept="11" />
-      <node id="6757459382751598566" at="32,41,33,124" concept="6" />
+      <node id="6757459382751598566" at="32,41,33,239" concept="6" />
       <node id="6757459382751369665" at="34,7,35,58" concept="13" />
       <node id="6757459382751312161" at="35,58,36,55" concept="6" />
       <node id="6620883186955657391" at="38,30,39,147" concept="19" />
@@ -1205,7 +1205,7 @@
       <node id="5283973801935361251" at="28,0,44,0" concept="10" trace="initTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;Ljava/lang/String;Ljava/lang/String;Z)V" />
       <node id="8406928085288769261" at="50,0,66,0" concept="10" trace="findAnyProjectWithModel#(Ljava/lang/String;)Ljetbrains/mps/project/Project;" />
       <scope id="2675718132411616521" at="24,42,25,34" />
-      <scope id="6757459382751598566" at="32,41,33,124" />
+      <scope id="6757459382751598566" at="32,41,33,239" />
       <scope id="6620883186955654373" at="38,30,39,147" />
       <scope id="7273600282893400451" at="46,152,47,68" />
       <scope id="6757459382751516511" at="56,34,57,48" />

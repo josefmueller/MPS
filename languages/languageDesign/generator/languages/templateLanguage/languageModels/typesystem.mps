@@ -3147,50 +3147,56 @@
           </node>
           <node concept="3clFbJ" id="WXiImLv_xD" role="3cqZAp">
             <node concept="3clFbS" id="WXiImLv_xE" role="3clFbx">
-              <node concept="3clFbJ" id="WXiImLvEJg" role="3cqZAp">
-                <node concept="3clFbS" id="WXiImLvEJi" role="3clFbx">
-                  <node concept="2MkqsV" id="WXiImLvEJJ" role="3cqZAp">
-                    <node concept="3cpWs3" id="WXiImLvEJW" role="2MkJ7o">
-                      <node concept="3cpWs3" id="WXiImLvEJN" role="3uHU7B">
-                        <node concept="Xl_RD" id="WXiImLvEJK" role="3uHU7B">
-                          <property role="Xl_RC" value="Node under $LOOP$ macro should have multiple cardinality (role: " />
-                        </node>
-                        <node concept="2OqwBi" id="WXiImLvEJR" role="3uHU7w">
-                          <node concept="37vLTw" id="3GM_nagTz6l" role="2Oq$k0">
-                            <ref role="3cqZAo" node="WXiImLvzr0" resolve="l" />
-                          </node>
-                          <node concept="liA8E" id="4L5lkpK6cak" role="2OqNvi">
-                            <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
-                          </node>
-                        </node>
+              <node concept="2MkqsV" id="WXiImLvEJJ" role="3cqZAp">
+                <node concept="3cpWs3" id="WXiImLvEJW" role="2MkJ7o">
+                  <node concept="3cpWs3" id="WXiImLvEJN" role="3uHU7B">
+                    <node concept="Xl_RD" id="WXiImLvEJK" role="3uHU7B">
+                      <property role="Xl_RC" value="Node under $LOOP$ macro should have multiple cardinality (role: " />
+                    </node>
+                    <node concept="2OqwBi" id="WXiImLvEJR" role="3uHU7w">
+                      <node concept="37vLTw" id="3GM_nagTz6l" role="2Oq$k0">
+                        <ref role="3cqZAo" node="WXiImLvzr0" resolve="l" />
                       </node>
-                      <node concept="Xl_RD" id="WXiImLvEJZ" role="3uHU7w">
-                        <property role="Xl_RC" value=")" />
+                      <node concept="liA8E" id="4L5lkpK6cak" role="2OqNvi">
+                        <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
                       </node>
                     </node>
-                    <node concept="1YBJjd" id="WXiImLvEJM" role="2OEOjV">
-                      <ref role="1YBMHb" node="6C$BydUUvYw" resolve="loopMacro" />
-                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="WXiImLvEJZ" role="3uHU7w">
+                    <property role="Xl_RC" value=")" />
                   </node>
                 </node>
-                <node concept="3fqX7Q" id="4L5lkpK6ba1" role="3clFbw">
-                  <node concept="2OqwBi" id="4L5lkpK6byI" role="3fr31v">
-                    <node concept="37vLTw" id="4L5lkpK6bie" role="2Oq$k0">
-                      <ref role="3cqZAo" node="WXiImLvzr0" resolve="l" />
-                    </node>
-                    <node concept="liA8E" id="4L5lkpK6bUQ" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SAbstractLink.isMultiple():boolean" resolve="isMultiple" />
-                    </node>
-                  </node>
+                <node concept="1YBJjd" id="WXiImLvEJM" role="2OEOjV">
+                  <ref role="1YBMHb" node="6C$BydUUvYw" resolve="loopMacro" />
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="4L5lkpK6aLv" role="3clFbw">
-              <node concept="37vLTw" id="4L5lkpK6ax5" role="2Oq$k0">
-                <ref role="3cqZAo" node="WXiImLvzr0" resolve="l" />
+            <node concept="1Wc70l" id="1c6WnGgaFUo" role="3clFbw">
+              <node concept="1Wc70l" id="1c6WnGgaEsc" role="3uHU7B">
+                <node concept="3y3z36" id="1c6WnGgaEPf" role="3uHU7B">
+                  <node concept="10Nm6u" id="1c6WnGgaEPT" role="3uHU7w" />
+                  <node concept="37vLTw" id="1c6WnGgaE$p" role="3uHU7B">
+                    <ref role="3cqZAo" node="WXiImLvzr0" resolve="l" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="4L5lkpK6aLv" role="3uHU7w">
+                  <node concept="37vLTw" id="4L5lkpK6ax5" role="2Oq$k0">
+                    <ref role="3cqZAo" node="WXiImLvzr0" resolve="l" />
+                  </node>
+                  <node concept="liA8E" id="4L5lkpK6b9x" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SConceptFeature.isValid():boolean" resolve="isValid" />
+                  </node>
+                </node>
               </node>
-              <node concept="liA8E" id="4L5lkpK6b9x" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SConceptFeature.isValid():boolean" resolve="isValid" />
+              <node concept="3fqX7Q" id="4L5lkpK6ba1" role="3uHU7w">
+                <node concept="2OqwBi" id="4L5lkpK6byI" role="3fr31v">
+                  <node concept="37vLTw" id="4L5lkpK6bie" role="2Oq$k0">
+                    <ref role="3cqZAo" node="WXiImLvzr0" resolve="l" />
+                  </node>
+                  <node concept="liA8E" id="4L5lkpK6bUQ" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SAbstractLink.isMultiple():boolean" resolve="isMultiple" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

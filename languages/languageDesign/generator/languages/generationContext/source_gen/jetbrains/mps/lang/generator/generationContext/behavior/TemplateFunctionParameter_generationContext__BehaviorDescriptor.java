@@ -16,6 +16,7 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -27,14 +28,19 @@ public final class TemplateFunctionParameter_generationContext__BehaviorDescript
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getType_id27DJnJtIQ9C = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("27DJnJtIQ9C").registry(REGISTRY).build();
+  public static final SMethod<Boolean> needConceptFunction_idhZKliUO = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("needConceptFunction").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hZKliUO").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getType_id27DJnJtIQ9C);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getType_id27DJnJtIQ9C, needConceptFunction_idhZKliUO);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static SNode getType_id27DJnJtIQ9C(@NotNull SNode __thisNode__) {
     return _quotation_createNode_fkq6n5_a0a0();
+  }
+  /*package*/ static boolean needConceptFunction_idhZKliUO(@NotNull SNode __thisNode__) {
+    // we could use this cf parameter in ITemplateCall argument expressions without need to wrap with query 
+    return (SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, "jetbrains.mps.lang.generator.structure.ITemplateCall"), false, false) == null);
   }
 
   /*package*/ TemplateFunctionParameter_generationContext__BehaviorDescriptor() {
@@ -55,6 +61,8 @@ public final class TemplateFunctionParameter_generationContext__BehaviorDescript
     switch (methodIndex) {
       case 0:
         return (T) ((SNode) getType_id27DJnJtIQ9C(node));
+      case 1:
+        return (T) ((Boolean) needConceptFunction_idhZKliUO(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
