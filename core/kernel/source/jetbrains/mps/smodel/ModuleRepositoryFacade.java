@@ -48,6 +48,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 /**
  * Mediator between API aspects of an SRepository and out implementation aspects, like SRepositoryExt.
@@ -177,6 +178,28 @@ public final class ModuleRepositoryFacade implements CoreComponent {
    */
   public SModule getModuleByName(@NotNull String fqName) {
     return REPO.getModuleByFqName(fqName);
+  }
+
+  /**
+   * <p>
+   * Use <b>only</b> if there is no way to use {@link ModuleRepositoryFacade#getModule(org.jetbrains.mps.openapi.module.SModuleReference)}
+   * or {@link SRepository#getModule(org.jetbrains.mps.openapi.module.SModuleId)}.<br/>
+   * For example:
+   * <ul>
+   * <li>check for existing modules with the same name on new module creation</li>
+   * <li>search module by name in user search dialog/popup</li>
+   * </ul>
+   * </p>
+   *
+   * @return collection of modules which names are equal to the given module name.
+   * A repository is able to have several modules for a given module name.
+   * Empty collection is returned iff there are no such modules in the repository.
+   * */
+  @NotNull
+  public Collection<SModule> getModulesByName(@NotNull String moduleName) {
+    return StreamSupport.stream(REPO.getModules().spliterator(), true)
+                        .filter(module -> moduleName.equals(module.getModuleName()))
+                        .collect(Collectors.toList());
   }
 
   /**

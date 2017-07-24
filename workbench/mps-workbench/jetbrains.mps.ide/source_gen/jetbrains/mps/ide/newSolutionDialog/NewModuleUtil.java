@@ -152,7 +152,7 @@ public class NewModuleUtil {
     // If don't have repository then there are no duplicated module name 
     boolean duplicateName = (repo == null ? false : new ModelAccessHelper(repo).runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return new ModuleRepositoryFacade(repo).getModelByName(namespace) != null;
+        return !(new ModuleRepositoryFacade(repo).getModulesByName(namespace).isEmpty());
       }
     }));
     if (duplicateName) {
