@@ -8798,8 +8798,11 @@
             <node concept="2ShNRf" id="6qMaajUQq5_" role="33vP2m">
               <node concept="Tc6Ow" id="6qMaajUQq5A" role="2ShVmc">
                 <node concept="17QB3L" id="6qMaajUQq5B" role="HW$YZ" />
+                <node concept="Xl_RD" id="_3Yz8RYpGt" role="HW$Y0">
+                  <property role="Xl_RC" value="node" />
+                </node>
                 <node concept="Xl_RD" id="6qMaajUQq5C" role="HW$Y0">
-                  <property role="Xl_RC" value="node-ptr" />
+                  <property role="Xl_RC" value="nodePtr" />
                 </node>
               </node>
             </node>
@@ -9156,6 +9159,39 @@
         </node>
       </node>
       <node concept="3cqZAl" id="78qQRpbgorn" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="_3Yz8RXK60">
+    <property role="3GE5qa" value="type" />
+    <ref role="13h7C2" to="tp25:1Bs_61$ngyb" resolve="SModelPointerType" />
+    <node concept="13hLZK" id="_3Yz8RXK61" role="13h7CW">
+      <node concept="3clFbS" id="_3Yz8RXK62" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="_3Yz8RXK6b" role="13h7CS">
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getVariableSuffixes" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIzNo" resolve="getVariableSuffixes" />
+      <node concept="3Tm1VV" id="_3Yz8RXK6X" role="1B3o_S" />
+      <node concept="3clFbS" id="_3Yz8RXK6Y" role="3clF47">
+        <node concept="3clFbF" id="_3Yz8RXKcm" role="3cqZAp">
+          <node concept="2ShNRf" id="_3Yz8RXKck" role="3clFbG">
+            <node concept="Tc6Ow" id="_3Yz8RXKyA" role="2ShVmc">
+              <node concept="17QB3L" id="_3Yz8RXKVK" role="HW$YZ" />
+              <node concept="Xl_RD" id="_3Yz8RY4oX" role="HW$Y0">
+                <property role="Xl_RC" value="model" />
+              </node>
+              <node concept="Xl_RD" id="_3Yz8RXL8X" role="HW$Y0">
+                <property role="Xl_RC" value="modelPtr" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="_YKpA" id="_3Yz8RXK6Z" role="3clF45">
+        <node concept="17QB3L" id="_3Yz8RXK70" role="_ZDj9" />
+      </node>
     </node>
   </node>
 </model>

@@ -13217,55 +13217,6 @@
       </node>
     </node>
   </node>
-  <node concept="2sgARr" id="1Bs_61$ngDS">
-    <property role="3GE5qa" value="type" />
-    <property role="TrG5h" value="super_ModelPointerType" />
-    <node concept="3clFbS" id="1Bs_61$ngDT" role="2sgrp5">
-      <node concept="3cpWs6" id="1Bs_61$ngBC" role="3cqZAp">
-        <node concept="2pJPEk" id="1Bs_61$ngC9" role="3cqZAk">
-          <node concept="2pJPED" id="1Bs_61$ngCu" role="2pJPEn">
-            <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
-            <node concept="2pIpSj" id="1Bs_61$ngCK" role="2pJxcM">
-              <ref role="2pIpSl" to="tpee:g7uigIF" resolve="classifier" />
-              <node concept="36bGnv" id="1Bs_61$ngD6" role="2pJxcZ">
-                <ref role="36bGnp" to="mhbf:~SModelReference" resolve="SModelReference" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="1Bs_61$ngDV" role="1YuTPh">
-      <property role="TrG5h" value="modelPointerType" />
-      <ref role="1YaFvo" to="tp25:1Bs_61$ngyb" resolve="ModelPointerType" />
-    </node>
-  </node>
-  <node concept="1YbPZF" id="1Bs_61$ngOS">
-    <property role="TrG5h" value="typeof_ModelRefExpression" />
-    <property role="3GE5qa" value="reference.model" />
-    <node concept="3clFbS" id="1Bs_61$ngOT" role="18ibNy">
-      <node concept="1Z5TYs" id="1Bs_61$nh8H" role="3cqZAp">
-        <node concept="mw_s8" id="1Bs_61$nh91" role="1ZfhKB">
-          <node concept="2pJPEk" id="1Bs_61$nhcn" role="mwGJk">
-            <node concept="2pJPED" id="1Bs_61$nhcz" role="2pJPEn">
-              <ref role="2pJxaS" to="tp25:1Bs_61$ngyb" resolve="ModelPointerType" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="1Bs_61$nh8K" role="1ZfhK$">
-          <node concept="1Z2H0r" id="1Bs_61$ngOZ" role="mwGJk">
-            <node concept="1YBJjd" id="1Bs_61$ngSl" role="1Z2MuG">
-              <ref role="1YBMHb" node="1Bs_61$ngOV" resolve="expr" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="1Bs_61$ngOV" role="1YuTPh">
-      <property role="TrG5h" value="expr" />
-      <ref role="1YaFvo" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
-    </node>
-  </node>
   <node concept="1YbPZF" id="6qMaajV4KsU">
     <property role="TrG5h" value="typeof_NodePointerExpression" />
     <property role="3GE5qa" value="reference" />
@@ -13357,6 +13308,50 @@
     <node concept="1YaCAy" id="6qMaajV4KsX" role="1YuTPh">
       <property role="TrG5h" value="nodePointer" />
       <ref role="1YaFvo" to="tp25:6qMaajV39gP" resolve="NodePointerExpression" />
+    </node>
+  </node>
+  <node concept="2sgARr" id="1Bs_61$ngDS">
+    <property role="3GE5qa" value="type" />
+    <property role="TrG5h" value="supertypesOf_SModelPointerType_ClassifierTypeSModelReference" />
+    <property role="2RFo0w" value="true" />
+    <node concept="3clFbS" id="1Bs_61$ngDT" role="2sgrp5">
+      <node concept="3cpWs6" id="1Bs_61$ngBC" role="3cqZAp">
+        <node concept="2c44tf" id="_3Yz8RSNbF" role="3cqZAk">
+          <node concept="3uibUv" id="_3Yz8RSNcq" role="2c44tc">
+            <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1Bs_61$ngDV" role="1YuTPh">
+      <property role="TrG5h" value="sModelPointerType" />
+      <ref role="1YaFvo" to="tp25:1Bs_61$ngyb" resolve="SModelPointerType" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1Bs_61$ngOS">
+    <property role="TrG5h" value="typeof_ModelRefExpression" />
+    <property role="3GE5qa" value="reference.model" />
+    <node concept="3clFbS" id="1Bs_61$ngOT" role="18ibNy">
+      <node concept="1Z5TYs" id="1Bs_61$nh8H" role="3cqZAp">
+        <node concept="mw_s8" id="1Bs_61$nh91" role="1ZfhKB">
+          <node concept="2pJPEk" id="1Bs_61$nhcn" role="mwGJk">
+            <node concept="2pJPED" id="1Bs_61$nhcz" role="2pJPEn">
+              <ref role="2pJxaS" to="tp25:1Bs_61$ngyb" resolve="SModelPointerType" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1Bs_61$nh8K" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1Bs_61$ngOZ" role="mwGJk">
+            <node concept="1YBJjd" id="1Bs_61$ngSl" role="1Z2MuG">
+              <ref role="1YBMHb" node="1Bs_61$ngOV" resolve="expr" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1Bs_61$ngOV" role="1YuTPh">
+      <property role="TrG5h" value="expr" />
+      <ref role="1YaFvo" to="tp25:1Bs_61$nfRn" resolve="ModelRefExpression" />
     </node>
   </node>
 </model>

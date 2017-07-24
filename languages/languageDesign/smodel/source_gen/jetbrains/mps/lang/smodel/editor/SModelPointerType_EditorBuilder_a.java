@@ -7,16 +7,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
-/*package*/ class ModelPointerType_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class SModelPointerType_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public ModelPointerType_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public SModelPointerType_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -28,18 +29,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
   }
 
   /*package*/ EditorCell createCell() {
-    return createConstant_ecmo27_a();
+    return createComponent_3vkx9x_a();
   }
 
-  private EditorCell createConstant_ecmo27_a() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "model-reference");
-    editorCell.setCellId("Constant_ecmo27_a");
-    editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
+  private EditorCell createComponent_3vkx9x_a() {
+    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
+    EditorCell bigCell = BigCellUtil.findBigCell(editorCell, getNode());
+    if (bigCell != null) {
+      bigCell.setBig(true);
+      bigCell.setCellContext(getCellFactory().getCellContext());
+    }
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 }

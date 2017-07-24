@@ -77,7 +77,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_LinkRefQualifier;
   private ConceptPresentation props_Link_SetNewChildOperation;
   private ConceptPresentation props_Link_SetTargetOperation;
-  private ConceptPresentation props_ModelPointerType;
   private ConceptPresentation props_ModelRefExpression;
   private ConceptPresentation props_ModelReferenceExpression;
   private ConceptPresentation props_Model_AddRootOperation;
@@ -176,6 +175,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_SLinkAccess;
   private ConceptPresentation props_SLinkImplicitSelect;
   private ConceptPresentation props_SLinkListAccess;
+  private ConceptPresentation props_SModelPointerType;
   private ConceptPresentation props_SModelType;
   private ConceptPresentation props_SNodeCreator;
   private ConceptPresentation props_SNodeListCreator;
@@ -683,13 +683,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Link_SetTargetOperation = cpb.create();
         }
         return props_Link_SetTargetOperation;
-      case LanguageConceptSwitch.ModelPointerType:
-        if (props_ModelPointerType == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("model-reference");
-          props_ModelPointerType = cpb.create();
-        }
-        return props_ModelPointerType;
       case LanguageConceptSwitch.ModelRefExpression:
         if (props_ModelRefExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -1421,6 +1414,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SLinkListAccess = cpb.create();
         }
         return props_SLinkListAccess;
+      case LanguageConceptSwitch.SModelPointerType:
+        if (props_SModelPointerType == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("pointer to a model");
+          cpb.rawPresentation("model-ptr");
+          props_SModelPointerType = cpb.create();
+        }
+        return props_SModelPointerType;
       case LanguageConceptSwitch.SModelType:
         if (props_SModelType == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -2142,6 +2142,9 @@
     <property role="3GE5qa" value="conceptSwitch" />
     <property role="EcuMT" value="5944356402132808749" />
     <ref role="1TJDcQ" to="tpee:fzclF8l" resolve="Statement" />
+    <node concept="t5JxF" id="2SK3zPtoyXP" role="lGtFl">
+      <property role="t5JxN" value="Unlike case clause in Java switch, there's no fall-thrugh mechanism, both exact and subconcept match cases are treated as an either-or alternatives. I.e. if you get two subconcept cases for INamedElement and BaseConcept, only the first one to match would be respected. " />
+    </node>
     <node concept="1TJgyj" id="59YAasRsvgK" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
@@ -2162,9 +2165,6 @@
       <property role="IQ2ns" value="6039268229365417680" />
       <ref role="20lvS9" to="tpee:fzclF80" resolve="StatementList" />
     </node>
-    <node concept="t5JxF" id="2SK3zPtoyXP" role="lGtFl">
-      <property role="t5JxN" value="Unlike case clause in Java switch, there's no fall-thrugh mechanism, both exact and subconcept match cases are treated as an either-or alternatives. I.e. if you get two subconcept cases for INamedElement and BaseConcept, only the first one to match would be respected. " />
-    </node>
   </node>
   <node concept="1TIwiD" id="1_vO5tEMrH9">
     <property role="R5$K7" value="false" />
@@ -2176,6 +2176,11 @@
     <property role="34LRSv" value="nodePointer/&lt;name&gt;/" />
     <property role="EcuMT" value="1828409047608048457" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyi" id="7Kvxa_nmhU5" role="1TKVEl">
+      <property role="IQ2nx" value="8944013247830892165" />
+      <property role="TrG5h" value="includeNonRoot" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="asaX9" id="6qMaajV39fW" role="lGtFl">
       <property role="YLPcu" value="2018.1" />
     </node>
@@ -2183,11 +2188,6 @@
       <node concept="t5JxR" id="6qMaajV39ij" role="t5JxU">
         <ref role="t5JxO" node="6qMaajV39gP" resolve="NodePointerExpression" />
       </node>
-    </node>
-    <node concept="1TJgyi" id="7Kvxa_nmhU5" role="1TKVEl">
-      <property role="IQ2nx" value="8944013247830892165" />
-      <property role="TrG5h" value="includeNonRoot" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="1_vO5tEMrHa" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -2858,6 +2858,21 @@
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6qMaajV39gP">
+    <property role="EcuMT" value="7400021826774799413" />
+    <property role="3GE5qa" value="reference" />
+    <property role="TrG5h" value="NodePointerExpression" />
+    <property role="34LRSv" value="node-ptr/.../" />
+    <property role="R4oN_" value="make node pointer" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="6qMaajV39im" role="1TKVEi">
+      <property role="IQ2ns" value="7400021826774799510" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="ref" />
+      <ref role="20lvS9" to="dvox:k2ZBl8CwzR" resolve="NodeIdentity" />
+    </node>
+  </node>
   <node concept="1TIwiD" id="1Bs_61$nfRn">
     <property role="EcuMT" value="1863527487546129879" />
     <property role="3GE5qa" value="reference.model" />
@@ -2897,29 +2912,15 @@
   <node concept="1TIwiD" id="1Bs_61$ngyb">
     <property role="EcuMT" value="1863527487546132619" />
     <property role="3GE5qa" value="type" />
-    <property role="TrG5h" value="ModelPointerType" />
-    <property role="34LRSv" value="model-reference" />
+    <property role="TrG5h" value="SModelPointerType" />
+    <property role="34LRSv" value="model-ptr" />
+    <property role="R4oN_" value="pointer to a model" />
     <ref role="1TJDcQ" to="tpee:fz3vP1H" resolve="Type" />
   </node>
   <node concept="PlHQZ" id="78qQRpbfOQY">
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="DevkitIdentity" />
     <property role="EcuMT" value="8222125370833325502" />
-  </node>
-  <node concept="1TIwiD" id="6qMaajV39gP">
-    <property role="EcuMT" value="7400021826774799413" />
-    <property role="3GE5qa" value="reference" />
-    <property role="TrG5h" value="NodePointerExpression" />
-    <property role="34LRSv" value="node-ptr/.../" />
-    <property role="R4oN_" value="make node pointer" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
-    <node concept="1TJgyj" id="6qMaajV39im" role="1TKVEi">
-      <property role="IQ2ns" value="7400021826774799510" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20lbJX" value="1" />
-      <property role="20kJfa" value="ref" />
-      <ref role="20lvS9" to="dvox:k2ZBl8CwzR" resolve="NodeIdentity" />
-    </node>
   </node>
 </model>
 
