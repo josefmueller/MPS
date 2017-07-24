@@ -31,7 +31,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.security.ProtectionDomain;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.List;
@@ -133,9 +132,14 @@ public final class ModuleClassLoader extends ClassLoader {
     } finally {
       aClass = recordClass(fqName, aClass);
     }
-    if (aClass == null) throw createCLNFException(fqName);
 
-    if (resolve) resolveClass(aClass);
+    if (aClass == null) {
+      throw createCLNFException(fqName);
+    }
+
+    if (resolve) {
+      resolveClass(aClass);
+    }
     return aClass;
   }
 
@@ -146,11 +150,7 @@ public final class ModuleClassLoader extends ClassLoader {
   private Class<?> recordClass(String fqName, Class<?> aClass) {
     Optional<Class<?>> previousValue =  myClasses.putIfAbsent(fqName, Optional.ofNullable(aClass));
     if (previousValue != null) { // class has been already defined in a concurrent thread
-      if (previousValue.isPresent()) {
-        aClass = previousValue.get();
-      } else {
-        aClass = null;
-      }
+      aClass = previousValue.orElse(null);
     }
     return aClass;
   }
@@ -206,7 +206,6 @@ public final class ModuleClassLoader extends ClassLoader {
     // loading from ModuleClassLoaders firstly; it's faster, we can tell right here if we can find class there.
     for (ClassLoader depCL : dependencyClassLoaders) {
       if (depCL instanceof ModuleClassLoader) {
-
         ModuleClassLoader depCL1 = (ModuleClassLoader) depCL;
         if (depCL1.mySupport.canFindClass(name)) {
           // here it will certainly load with class loader depCL
@@ -259,7 +258,7 @@ public final class ModuleClassLoader extends ClassLoader {
   @Override
   protected URL findResource(String name) {
     checkNotDisposed();
-    List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
+    List<ClassLoader> classLoadersToCheck = new ArrayList<>();
     classLoadersToCheck.add(this);
     classLoadersToCheck.addAll(getDependencyClassLoaders());
     for (ClassLoader dep : classLoadersToCheck) {
@@ -280,7 +279,7 @@ public final class ModuleClassLoader extends ClassLoader {
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
     checkNotDisposed();
-    List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
+    List<ClassLoader> classLoadersToCheck = new ArrayList<>();
     classLoadersToCheck.add(this);
     classLoadersToCheck.addAll(getDependencyClassLoaders());
     List<URL> result = new ArrayList<>();

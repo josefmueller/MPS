@@ -26,11 +26,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Deque;
 import java.util.List;
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * @author apyshkin
@@ -40,18 +41,27 @@ final class CrossDependentTaskGenerator2 extends TaskGenerator {
   private static final Logger LOG = LogManager.getLogger(CrossDependentTaskGenerator2.class);
   private final static int nThreads = 2;
   private final CyclicBarrier myBarrier = new CyclicBarrier(2);
-  private final Deque<ModuleClassLoader> myFirst = new LinkedBlockingDeque<>();
-  private final Deque<ModuleClassLoader> mySecond = new LinkedBlockingDeque<>();
+  private final AtomicReference<ModuleClassLoader> myFirst = new AtomicReference<>();
+  private final AtomicReference<ModuleClassLoader> mySecond= new AtomicReference<>();
+  private static final int TIMEOUT = 2000;
 
   @NotNull
   private Callable<Object> firstCLTask(FakeReloadableModule s1) {
     return () -> {
       try {
         LOG.info("Creating first classloader");
-        ModuleClassLoader cl1 = createCL(s1, Arrays.asList(A.class, D.class), myFirst, mySecond);
-        myBarrier.await();
+        ModuleClassLoader cl1 = createCL(s1, Arrays.asList(A.class, D.class), mySecond);
+        myFirst.set(cl1);
+        myBarrier.await(TIMEOUT, TimeUnit.MILLISECONDS);
         LOG.info("First loaded " + cl1.loadClass(A.class.getName()));
-        myBarrier.await();
+        myBarrier.await(TIMEOUT, TimeUnit.MILLISECONDS);
+//      } catch (BrokenBarrierException e) {
+//        LOG.error("Exception during task execution", e);
+//        throw e;
+//      } catch (InterruptedException e) {
+//        LOG.error("Execution was interrupted ", e);
+//        Thread.interrupted();
+//        throw e;
       } catch (VirtualMachineError e) {
         throw e;
       } catch (Throwable e) {
@@ -67,10 +77,18 @@ final class CrossDependentTaskGenerator2 extends TaskGenerator {
     return () -> {
       try {
         LOG.info("Creating second classloader");
-        ModuleClassLoader cl2 = createCL(s2, Arrays.asList(B.class, C.class), mySecond, myFirst);
-        myBarrier.await();
+        ModuleClassLoader cl2 = createCL(s2, Arrays.asList(B.class, C.class), myFirst);
+        mySecond.set(cl2);
+        myBarrier.await(TIMEOUT, TimeUnit.MILLISECONDS);
         LOG.info("Second loaded " + cl2.loadClass(B.class.getName()));
-        myBarrier.await();
+        myBarrier.await(TIMEOUT, TimeUnit.MILLISECONDS);
+//      } catch (BrokenBarrierException e) {
+//        LOG.error("Exception during task execution", e);
+//        throw e;
+//      } catch (InterruptedException e) {
+//        LOG.error("Execution was interrupted ", e);
+//        Thread.interrupted();
+//        throw e;
       } catch (VirtualMachineError e) {
         throw e;
       } catch (Throwable e) {
@@ -81,12 +99,11 @@ final class CrossDependentTaskGenerator2 extends TaskGenerator {
     };
   }
 
-  private ModuleClassLoader createCL(ReloadableModule module, List<Class<?>> classes, Deque<ModuleClassLoader> toAdd, Deque<ModuleClassLoader> toPeek) {
-    ModuleClassLoader cl = new ModuleClassLoader(new ModuleClassLoaderSupport(module,
-                                                                              () -> Collections.singletonList(toPeek.peekLast()),
-                                                                              new FakeClassPathItem(classes)));
-    toAdd.addLast(cl);
-    return cl;
+  private ModuleClassLoader createCL(ReloadableModule module, List<Class<?>> classes, AtomicReference<ModuleClassLoader> dep) {
+    ModuleClassLoaderSupport support = new ModuleClassLoaderSupport(module,
+                                                                    () -> Collections.singletonList(dep.get()),
+                                                                    new FakeClassPathItem(classes));
+    return new ModuleClassLoader(support);
   }
 
   @NotNull

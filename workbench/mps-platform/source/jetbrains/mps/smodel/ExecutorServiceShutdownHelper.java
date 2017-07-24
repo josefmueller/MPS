@@ -36,7 +36,7 @@ public final class ExecutorServiceShutdownHelper {
   /**
    * As javadoc of the {@link ExecutorService} suggests
    */
-  void shutdownAndAwaitTermination(long terminationTimeoutMS) {
+  public void shutdownAndAwaitTermination(long terminationTimeoutMS) {
     myPool.shutdown(); // Disable new tasks from being submitted
     try {
       // Wait a while for existing tasks to terminate
