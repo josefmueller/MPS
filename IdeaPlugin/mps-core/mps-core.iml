@@ -38,6 +38,7 @@
             <entry key="~mps-environment(mps-environment)" value="0" />
             <entry key="~mps-icons(mps-icons)" value="0" />
             <entry key="~mps-platform(mps-platform)" value="0" />
+            <entry key="~mps-stubs(mps-stubs)" value="0" />
             <entry key="~mps-test(mps-test)" value="0" />
             <entry key="~mps-tool(mps-tool)" value="0" />
             <entry key="~mps-tuples(mps-tuples)" value="0" />
