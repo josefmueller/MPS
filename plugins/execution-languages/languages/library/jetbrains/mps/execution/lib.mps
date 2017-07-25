@@ -2,16 +2,18 @@
 <model ref="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
+    <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="0" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="6" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
   </languages>
   <imports>
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
@@ -83,7 +85,6 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -158,6 +159,7 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -274,6 +276,13 @@
       </concept>
       <concept id="946964771156066331" name="jetbrains.mps.execution.settings.structure.PersistentConfigurationMethod" flags="ng" index="yHkHE" />
       <concept id="479872435243123448" name="jetbrains.mps.execution.settings.structure.ProjectAccessExpression" flags="ng" index="3YwXIn" />
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="2034914114981261497" name="jetbrains.mps.baseLanguage.logging.structure.LogLowLevelStatement" flags="ng" index="RRSsy">
+        <property id="2034914114981261751" name="severity" index="RRSoG" />
+        <child id="2034914114981261755" name="throwable" index="RRSow" />
+        <child id="2034914114981261753" name="message" index="RRSoy" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
@@ -1508,16 +1517,6 @@
   <node concept="312cEu" id="4sYvxkKONYQ">
     <property role="TrG5h" value="PointerUtils" />
     <property role="1EXbeo" value="true" />
-    <node concept="Wx3nA" id="4sYvxkKONYR" role="jymVt">
-      <property role="TrG5h" value="POINTER_SEPARATOR" />
-      <property role="3TUv4t" value="true" />
-      <node concept="Xl_RD" id="4sYvxkKONYS" role="33vP2m">
-        <property role="Xl_RC" value="%" />
-      </node>
-      <node concept="17QB3L" id="4sYvxkKONYT" role="1tU5fm" />
-      <node concept="3Tm6S6" id="1_xVpohYqGi" role="1B3o_S" />
-    </node>
-    <node concept="2tJIrI" id="4YEli8eGKBd" role="jymVt" />
     <node concept="3clFbW" id="4YEli8eGKRK" role="jymVt">
       <node concept="3cqZAl" id="4YEli8eGKRL" role="3clF45" />
       <node concept="3clFbS" id="4YEli8eGKRN" role="3clF47" />
@@ -1550,19 +1549,74 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="1_xVpohXN6Y" role="3cqZAp">
-          <node concept="2OqwBi" id="1_xVpohXNTq" role="3cqZAk">
-            <node concept="2YIFZM" id="1_xVpohXNMs" role="2Oq$k0">
-              <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
-              <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
-            </node>
-            <node concept="liA8E" id="1_xVpohXO3V" role="2OqNvi">
-              <ref role="37wK5l" to="dush:~PersistenceFacade.createNodeReference(java.lang.String):org.jetbrains.mps.openapi.model.SNodeReference" resolve="createNodeReference" />
-              <node concept="37vLTw" id="1_xVpohXOgU" role="37wK5m">
-                <ref role="3cqZAo" node="4sYvxkKONYX" resolve="pointerString" />
+        <node concept="SfApY" id="6kCKyyMzL2P" role="3cqZAp">
+          <node concept="3clFbS" id="6kCKyyMzL2R" role="SfCbr">
+            <node concept="3cpWs6" id="1_xVpohXN6Y" role="3cqZAp">
+              <node concept="2OqwBi" id="1_xVpohXNTq" role="3cqZAk">
+                <node concept="2YIFZM" id="1_xVpohXNMs" role="2Oq$k0">
+                  <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+                  <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                </node>
+                <node concept="liA8E" id="1_xVpohXO3V" role="2OqNvi">
+                  <ref role="37wK5l" to="dush:~PersistenceFacade.createNodeReference(java.lang.String):org.jetbrains.mps.openapi.model.SNodeReference" resolve="createNodeReference" />
+                  <node concept="37vLTw" id="1_xVpohXOgU" role="37wK5m">
+                    <ref role="3cqZAo" node="4sYvxkKONYX" resolve="pointerString" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
+          <node concept="TDmWw" id="6kCKyyMzL2S" role="TEbGg">
+            <node concept="3cpWsn" id="6kCKyyMzL2U" role="TDEfY">
+              <property role="TrG5h" value="problem" />
+              <node concept="3uibUv" id="6kCKyyMzRxA" role="1tU5fm">
+                <ref role="3uigEE" to="dush:~PersistenceFacade$IncorrectModelReferenceFormatException" resolve="PersistenceFacade.IncorrectModelReferenceFormatException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6kCKyyMzL2Y" role="TDEfX">
+              <node concept="RRSsy" id="6kCKyyMzRt_" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="3cpWs3" id="6kCKyyMzSo2" role="RRSoy">
+                  <node concept="37vLTw" id="6kCKyyMzSuS" role="3uHU7w">
+                    <ref role="3cqZAo" node="4sYvxkKONYX" resolve="pointerString" />
+                  </node>
+                  <node concept="Xl_RD" id="6kCKyyMzRtB" role="3uHU7B">
+                    <property role="Xl_RC" value="Parsing problem when converting the pointer " />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="6kCKyyMzRtD" role="RRSow">
+                  <ref role="3cqZAo" node="6kCKyyMzL2U" resolve="problem" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="TDmWw" id="6kCKyyMzSR8" role="TEbGg">
+            <node concept="3cpWsn" id="6kCKyyMzSR9" role="TDEfY">
+              <property role="TrG5h" value="problem" />
+              <node concept="3uibUv" id="6kCKyyMzTfE" role="1tU5fm">
+                <ref role="3uigEE" to="dush:~PersistenceFacade$IncorrectNodeIdFormatException" resolve="PersistenceFacade.IncorrectNodeIdFormatException" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6kCKyyMzSRb" role="TDEfX">
+              <node concept="RRSsy" id="6kCKyyMzS_P" role="3cqZAp">
+                <property role="RRSoG" value="warn" />
+                <node concept="3cpWs3" id="6kCKyyMzS_Q" role="RRSoy">
+                  <node concept="37vLTw" id="6kCKyyMzS_R" role="3uHU7w">
+                    <ref role="3cqZAo" node="4sYvxkKONYX" resolve="pointerString" />
+                  </node>
+                  <node concept="Xl_RD" id="6kCKyyMzS_S" role="3uHU7B">
+                    <property role="Xl_RC" value="Parsing problem when converting the pointer " />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="6kCKyyMzS_T" role="RRSow">
+                  <ref role="3cqZAo" node="6kCKyyMzSR9" resolve="problem" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6kCKyyMzUAu" role="3cqZAp">
+          <node concept="10Nm6u" id="6kCKyyMzUWJ" role="3cqZAk" />
         </node>
       </node>
       <node concept="3Tm1VV" id="4sYvxkKONZq" role="1B3o_S" />
