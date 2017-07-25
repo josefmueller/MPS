@@ -88,6 +88,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Model_GetModule;
   private ConceptPresentation props_Model_NodesIncludingImportedOperation;
   private ConceptPresentation props_Model_NodesOperation;
+  private ConceptPresentation props_Model_PointerOperation;
   private ConceptPresentation props_Model_RootsIncludingImportedOperation;
   private ConceptPresentation props_Model_RootsOperation;
   private ConceptPresentation props_ModuleIdentity;
@@ -769,6 +770,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Model_NodesOperation = cpb.create();
         }
         return props_Model_NodesOperation;
+      case LanguageConceptSwitch.Model_PointerOperation:
+        if (props_Model_PointerOperation == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("persistable pointer to a model");
+          cpb.rawPresentation("pointer");
+          props_Model_PointerOperation = cpb.create();
+        }
+        return props_Model_PointerOperation;
       case LanguageConceptSwitch.Model_RootsIncludingImportedOperation:
         if (props_Model_RootsIncludingImportedOperation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x111d5999a91L);

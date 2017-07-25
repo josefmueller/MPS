@@ -9742,6 +9742,30 @@
     <property role="3GE5qa" value="reference" />
     <ref role="aqKnT" to="tp25:1_vO5tEMrH9" resolve="NodePointerExpression_Old" />
   </node>
+  <node concept="24kQdi" id="3xFa6mqMwbl">
+    <property role="3GE5qa" value="operation" />
+    <ref role="1XX52x" to="tp25:3xFa6mqMwat" resolve="AbstractPointerResolveOperation" />
+    <node concept="3EZMnI" id="3ayRDg9aL_A" role="2wV5jI">
+      <node concept="3F0ifn" id="3ayRDg9aL_B" role="3EZMnx">
+        <property role="3F0ifm" value="resolve" />
+        <node concept="3$7jql" id="3ayRDg9aL_C" role="3F10Kt">
+          <property role="3$6WeP" value="0.0" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="3ayRDg9aL_D" role="3EZMnx">
+        <property role="3F0ifm" value="(" />
+        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
+      </node>
+      <node concept="3F1sOY" id="3ayRDg9aL_E" role="3EZMnx">
+        <ref role="1NtTu8" to="tp25:3ayRDg9aL$v" resolve="repositoryArg" />
+      </node>
+      <node concept="3F0ifn" id="3ayRDg9aL_F" role="3EZMnx">
+        <property role="3F0ifm" value=")" />
+        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
+      </node>
+      <node concept="l2Vlx" id="3ayRDg9aL_G" role="2iSdaV" />
+    </node>
+  </node>
   <node concept="Q6S24" id="78qQRpbfTCN">
     <property role="3GE5qa" value="identity" />
     <property role="TrG5h" value="Devkits_Substitute" />
@@ -10137,28 +10161,11 @@
       <ref role="2ZyFGn" to="dvox:7PoJpZpMbrj" resolve="ModelIdentity" />
     </node>
   </node>
-  <node concept="24kQdi" id="3xFa6mqMwbl">
-    <property role="3GE5qa" value="operation" />
-    <ref role="1XX52x" to="tp25:3xFa6mqMwat" resolve="AbstractPointerResolveOperation" />
-    <node concept="3EZMnI" id="3ayRDg9aL_A" role="2wV5jI">
-      <node concept="3F0ifn" id="3ayRDg9aL_B" role="3EZMnx">
-        <property role="3F0ifm" value="resolve" />
-        <node concept="3$7jql" id="3ayRDg9aL_C" role="3F10Kt">
-          <property role="3$6WeP" value="0.0" />
-        </node>
-      </node>
-      <node concept="3F0ifn" id="3ayRDg9aL_D" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-        <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
-      </node>
-      <node concept="3F1sOY" id="3ayRDg9aL_E" role="3EZMnx">
-        <ref role="1NtTu8" to="tp25:3ayRDg9aL$v" resolve="repositoryArg" />
-      </node>
-      <node concept="3F0ifn" id="3ayRDg9aL_F" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
-        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
-      </node>
-      <node concept="l2Vlx" id="3ayRDg9aL_G" role="2iSdaV" />
+  <node concept="24kQdi" id="32EzhoU4lL_">
+    <property role="3GE5qa" value="operation.model" />
+    <ref role="1XX52x" to="tp25:32EzhoU4lKl" resolve="Model_PointerOperation" />
+    <node concept="PMmxH" id="32EzhoU4lLT" role="2wV5jI">
+      <ref role="PMmxG" node="hzBPeWP" resolve="ReplaceableAlias_Comp" />
     </node>
   </node>
 </model>

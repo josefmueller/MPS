@@ -27,7 +27,7 @@ import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase implements TemplateSwitchMapping {
   private final Iterable<TemplateReductionRule> rules;
   public Switch_switch_SNodeOperation_model() {
-    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switch_switch_SNodeOperation_model.ReductionRule0(), new Switch_switch_SNodeOperation_model.ReductionRule1(), new Switch_switch_SNodeOperation_model.ReductionRule2(), new Switch_switch_SNodeOperation_model.ReductionRule3(), new Switch_switch_SNodeOperation_model.ReductionRule4(), new Switch_switch_SNodeOperation_model.ReductionRule5(), new Switch_switch_SNodeOperation_model.ReductionRule6(), new Switch_switch_SNodeOperation_model.ReductionRule7(), new Switch_switch_SNodeOperation_model.ReductionRule8(), new Switch_switch_SNodeOperation_model.ReductionRule9(), new Switch_switch_SNodeOperation_model.ReductionRule10(), new Switch_switch_SNodeOperation_model.ReductionRule11(), new Switch_switch_SNodeOperation_model.ReductionRule12());
+    rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switch_switch_SNodeOperation_model.ReductionRule0(), new Switch_switch_SNodeOperation_model.ReductionRule1(), new Switch_switch_SNodeOperation_model.ReductionRule2(), new Switch_switch_SNodeOperation_model.ReductionRule3(), new Switch_switch_SNodeOperation_model.ReductionRule4(), new Switch_switch_SNodeOperation_model.ReductionRule5(), new Switch_switch_SNodeOperation_model.ReductionRule6(), new Switch_switch_SNodeOperation_model.ReductionRule7(), new Switch_switch_SNodeOperation_model.ReductionRule8(), new Switch_switch_SNodeOperation_model.ReductionRule9(), new Switch_switch_SNodeOperation_model.ReductionRule10(), new Switch_switch_SNodeOperation_model.ReductionRule11(), new Switch_switch_SNodeOperation_model.ReductionRule12(), new Switch_switch_SNodeOperation_model.ReductionRule13());
   }
   public SNodeReference getSwitchNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "6683433361386681065");
@@ -272,6 +272,17 @@ public class Switch_switch_SNodeOperation_model extends TemplateSwitchBase imple
     public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       Collection<SNode> tlist1 = new Template_reduce_Model_NodesOperation_new().apply(environment, context);
+      return tlist1;
+    }
+  }
+  public final class ReductionRule13 extends ReductionRuleBase {
+    public ReductionRule13() {
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)", "3506770386464372132"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x30aa8d163a115c15L, "jetbrains.mps.lang.smodel.structure.Model_PointerOperation"), true);
+    }
+    @Override
+    public Collection<SNode> apply(@NotNull final TemplateContext context) throws GenerationException {
+      final TemplateExecutionEnvironment environment = context.getEnvironment();
+      Collection<SNode> tlist1 = new Template_reduce_Model_PointerOperation().apply(environment, context);
       return tlist1;
     }
   }
