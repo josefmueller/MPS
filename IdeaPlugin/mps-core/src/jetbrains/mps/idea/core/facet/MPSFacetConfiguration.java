@@ -54,6 +54,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
   @NonNls
   private static final String SOURCE_GEN = "src_gen";
   private MPSConfigurationBean myConfigurationBean = new MPSConfigurationBean();
+  private boolean myLoaded = false;
   private MPSFacet myMpsFacet;
 
   @Override
@@ -79,6 +80,11 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
   @Override
   public void loadState(State state) {
     myConfigurationBean.loadFrom(state);
+    myLoaded = true;
+  }
+
+  public boolean isLoaded() {
+    return myLoaded;
   }
 
   @Override

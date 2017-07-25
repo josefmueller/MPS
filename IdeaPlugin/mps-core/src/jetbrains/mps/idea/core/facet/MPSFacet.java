@@ -29,6 +29,7 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
@@ -68,6 +69,13 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
         ((SRepositoryExt) repository).registerModule(mySolution = solution, myMpsProject);
         myMpsProject.addModule(mySolution);
+
+        if (!getConfiguration().isLoaded()) {
+          //this means we have just created this facet, need to set current dep versions
+          new VersionFixer(myMpsProject.getRepository(), mySolution).updateImportVersions();
+          mySolution.save();
+        }
+
         LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleName()));
         IdeaPluginDescriptor descriptor = PluginManager.getPlugin(PluginManager.getPluginByClassName(MPSFacet.class.getName()));
         String version = descriptor == null ? null : descriptor.getVersion();
