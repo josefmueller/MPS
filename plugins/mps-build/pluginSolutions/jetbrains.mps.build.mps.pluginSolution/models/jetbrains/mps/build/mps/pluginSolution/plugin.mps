@@ -11206,22 +11206,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="1cXeJmoi6Ut" role="3cqZAp">
-          <node concept="3cpWsn" id="1cXeJmoi6Uu" role="3cpWs9">
-            <property role="TrG5h" value="facade" />
-            <node concept="3uibUv" id="1cXeJmoi6Us" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
-            </node>
-            <node concept="2ShNRf" id="1cXeJmoi6Uv" role="33vP2m">
-              <node concept="1pGfFk" id="1cXeJmoi6Uw" role="2ShVmc">
-                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
-                <node concept="37vLTw" id="1cXeJmoi6Ux" role="37wK5m">
-                  <ref role="3cqZAo" node="7$e6lgA3Bmu" resolve="myProject" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs6" id="1cXeJmojwqf" role="3cqZAp">
           <node concept="2OqwBi" id="1cXeJmojwqg" role="3cqZAk">
             <node concept="2ShNRf" id="1cXeJmojwqh" role="2Oq$k0">
@@ -11242,18 +11226,25 @@
               <node concept="1bVj0M" id="1cXeJmojwqn" role="37wK5m">
                 <node concept="3clFbS" id="1cXeJmojwqo" role="1bW5cS">
                   <node concept="3clFbF" id="1cXeJmojwqp" role="3cqZAp">
-                    <node concept="3clFbC" id="1cXeJmojwqq" role="3clFbG">
-                      <node concept="10Nm6u" id="1cXeJmojwqr" role="3uHU7w" />
-                      <node concept="2OqwBi" id="1cXeJmojwqs" role="3uHU7B">
-                        <node concept="37vLTw" id="1cXeJmojwqt" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1cXeJmoi6Uu" resolve="facade" />
-                        </node>
+                    <node concept="2OqwBi" id="5s2tPb3pWUz" role="3clFbG">
+                      <node concept="2OqwBi" id="1cXeJmojwqs" role="2Oq$k0">
                         <node concept="liA8E" id="1cXeJmojwqu" role="2OqNvi">
-                          <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModuleByName(java.lang.String):org.jetbrains.mps.openapi.module.SModule" resolve="getModuleByName" />
+                          <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModulesByName(java.lang.String):java.util.Collection" resolve="getModulesByName" />
                           <node concept="37vLTw" id="1cXeJmojwqv" role="37wK5m">
                             <ref role="3cqZAo" node="Tb4PsnqO$K" resolve="text" />
                           </node>
                         </node>
+                        <node concept="2ShNRf" id="1cXeJmoi6Uv" role="2Oq$k0">
+                          <node concept="1pGfFk" id="1cXeJmoi6Uw" role="2ShVmc">
+                            <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
+                            <node concept="37vLTw" id="1cXeJmoi6Ux" role="37wK5m">
+                              <ref role="3cqZAo" node="7$e6lgA3Bmu" resolve="myProject" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="liA8E" id="5s2tPb3q0oM" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~Collection.isEmpty():boolean" resolve="isEmpty" />
                       </node>
                     </node>
                   </node>

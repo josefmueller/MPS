@@ -2662,20 +2662,71 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="5gyVhZ1bmje" role="3cqZAp">
-          <node concept="2OqwBi" id="5gyVhZ1bmjf" role="3cqZAk">
-            <node concept="2ShNRf" id="4d72gVMvWHt" role="2Oq$k0">
-              <node concept="1pGfFk" id="4d72gVMvZ_5" role="2ShVmc">
+        <node concept="3cpWs8" id="28ee5WoawSP" role="3cqZAp">
+          <node concept="3cpWsn" id="28ee5WoawSQ" role="3cpWs9">
+            <property role="TrG5h" value="mrf" />
+            <node concept="3uibUv" id="28ee5WoawSN" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
+            </node>
+            <node concept="2ShNRf" id="28ee5WoawSR" role="33vP2m">
+              <node concept="1pGfFk" id="28ee5WoawSS" role="2ShVmc">
                 <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
-                <node concept="37vLTw" id="4d72gVMvZAf" role="37wK5m">
+                <node concept="37vLTw" id="28ee5WoawST" role="37wK5m">
                   <ref role="3cqZAo" node="4d72gVMvWAv" resolve="mpsProject" />
                 </node>
               </node>
             </node>
-            <node concept="liA8E" id="5gyVhZ1bmjh" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModuleByName(java.lang.String):org.jetbrains.mps.openapi.module.SModule" resolve="getModuleByName" />
-              <node concept="37vLTw" id="2BHiRxgmztM" role="37wK5m">
-                <ref role="3cqZAo" node="5gyVhZ1bmjk" resolve="moduleName" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="28ee5Woa__l" role="3cqZAp">
+          <node concept="3cpWsn" id="28ee5Woa__m" role="3cpWs9">
+            <property role="TrG5h" value="modulesByName" />
+            <node concept="3uibUv" id="28ee5Woa__e" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~Collection" resolve="Collection" />
+              <node concept="3uibUv" id="28ee5Woa__h" role="11_B2D">
+                <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="28ee5Woa__n" role="33vP2m">
+              <node concept="37vLTw" id="28ee5Woa__o" role="2Oq$k0">
+                <ref role="3cqZAo" node="28ee5WoawSQ" resolve="mrf" />
+              </node>
+              <node concept="liA8E" id="28ee5Woa__p" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModulesByName(java.lang.String):java.util.Collection" resolve="getModulesByName" />
+                <node concept="37vLTw" id="28ee5Woa__q" role="37wK5m">
+                  <ref role="3cqZAo" node="5gyVhZ1bmjk" resolve="moduleName" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="28ee5Wob8C2" role="3cqZAp">
+          <node concept="3SKdUq" id="28ee5Wob8C4" role="3SKWNk">
+            <property role="3SKdUp" value="just take first one. We need to keep module reference instead of module name in configuration settings, though" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5gyVhZ1bmje" role="3cqZAp">
+          <node concept="3K4zz7" id="28ee5WoaZxD" role="3cqZAk">
+            <node concept="10Nm6u" id="28ee5Wob0PR" role="3K4E3e" />
+            <node concept="2OqwBi" id="28ee5Wob5FM" role="3K4GZi">
+              <node concept="2OqwBi" id="28ee5Wob3HR" role="2Oq$k0">
+                <node concept="37vLTw" id="28ee5Wob2kF" role="2Oq$k0">
+                  <ref role="3cqZAo" node="28ee5Woa__m" resolve="modulesByName" />
+                </node>
+                <node concept="liA8E" id="28ee5Wob5zK" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~Collection.iterator():java.util.Iterator" resolve="iterator" />
+                </node>
+              </node>
+              <node concept="liA8E" id="28ee5Wob7bW" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="28ee5WoaVx0" role="3K4Cdx">
+              <node concept="37vLTw" id="28ee5Woa__r" role="2Oq$k0">
+                <ref role="3cqZAo" node="28ee5Woa__m" resolve="modulesByName" />
+              </node>
+              <node concept="liA8E" id="28ee5WoaXma" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Collection.isEmpty():boolean" resolve="isEmpty" />
               </node>
             </node>
           </node>
