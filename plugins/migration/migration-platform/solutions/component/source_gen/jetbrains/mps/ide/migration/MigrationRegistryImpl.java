@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.migration.global.MigrationOptions;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
@@ -25,7 +26,6 @@ import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.migration.runtime.base.RefactoringScriptReference;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -93,6 +93,9 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
 
   public void doUpdateImportVersions(SModule module) {
     new VersionFixer(myMpsProject.getRepository(), module).updateImportVersions();
+    if (module instanceof AbstractModule) {
+      (as_ufn3ol_a0a0a0b0n(module, AbstractModule.class)).save();
+    }
   }
 
 
@@ -319,6 +322,9 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
     return result;
   }
 
+  private static <T> T as_ufn3ol_a0a0a0b0n(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
   private static <T> T as_ufn3ol_a0a0a5a0a0a0a1a12(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
