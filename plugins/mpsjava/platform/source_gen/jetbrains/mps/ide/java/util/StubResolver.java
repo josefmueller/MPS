@@ -25,9 +25,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.project.MPSProject;
@@ -75,33 +75,37 @@ public class StubResolver {
           continue;
         }
         // trying to find correspondent nonstub model 
-        SModelReference modelRef = check_ar1im2_a0d0a0d0h(repoFacade.getModelByName(targetModelRef.getName().getLongName()));
-        if (modelRef == null) {
-          continue;
-        }
-        if (myUsedModels == null || SetSequence.fromSet(myUsedModels).contains(modelRef)) {
-          MapSequence.fromMap(models).put(targetModelRef, modelRef);
-          ListSequence.fromList(result).addElement(ref);
+        for (SModel sameNameModel : repoFacade.getModelsByName(targetModelRef.getName().withoutStereotype())) {
+          SModelReference modelRef = sameNameModel.getReference();
+          if (myUsedModels == null || SetSequence.fromSet(myUsedModels).contains(modelRef)) {
+            MapSequence.fromMap(models).put(targetModelRef, modelRef);
+            ListSequence.fromList(result).addElement(ref);
+          }
+          // XXX in fact, would be great to check if sameNameModel suit our needs, i.e. if it's the one with 
+          // corresponding target node. However, not sure I can check it here with simple sameNameModel.getNode(ref.getTargetNodeId()) != null 
+          break;
         }
       }
     }
     return result;
   }
-  public void resolveInModel(final SModel model) {
+  public void resolveInModel(SModel model) {
     Map<SModelReference, SModelReference> models = MapSequence.fromMap(new HashMap<SModelReference, SModelReference>());
     List<SReference> toResolve = getReferencesToResolve(model, models);
     if (ListSequence.fromList(toResolve).isEmpty()) {
       return;
     }
 
+    final ModelImports modelImports = new ModelImports(model);
+
     Iterable<SModelReference> modelsToAdd = Sequence.fromIterable(MapSequence.fromMap(models).values()).where(new IWhereFilter<SModelReference>() {
       public boolean accept(SModelReference it) {
-        return !(jetbrains.mps.smodel.SModelOperations.getImportedModelUIDs(model).contains(it));
+        return !(modelImports.getImportedModels().contains(it));
       }
     });
     Sequence.fromIterable(modelsToAdd).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        ((SModelInternal) model).addModelImport(it, false);
+        modelImports.addModelImport(it);
       }
     });
     if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {
@@ -123,7 +127,7 @@ public class StubResolver {
   }
 
   public void resolveInProject(MPSProject project) {
-    for (SModule module : Sequence.fromIterable(project.getModulesWithGenerators())) {
+    for (SModule module : ListSequence.fromList(project.getProjectModulesWithGenerators())) {
       if (module.isReadOnly()) {
         continue;
       }
@@ -173,11 +177,5 @@ public class StubResolver {
       }
     } while (found);
     return cnt;
-  }
-  private static SModelReference check_ar1im2_a0d0a0d0h(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getReference();
-    }
-    return null;
   }
 }

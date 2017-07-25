@@ -32,10 +32,16 @@ import org.jetbrains.mps.annotations.Immutable;
 public final class SModelName {
   private final String myValue;
 
+  /**
+   * @throws IllegalArgumentException if name contains illegal characters
+   */
   public SModelName(@NotNull String qualifiedCompleteName) {
     myValue = checkIllegalChars(qualifiedCompleteName);
   }
 
+  /**
+   * @throws IllegalArgumentException if any component of a model name contains illegal characters
+   */
   public SModelName(@Nullable CharSequence namespace, @NotNull CharSequence simpleName, @Nullable CharSequence stereotype) {
     StringBuilder sb = new StringBuilder();
     if (namespace != null && namespace.length() > 0) {
@@ -54,6 +60,9 @@ public final class SModelName {
     myValue = checkIllegalChars(sb.toString());
   }
 
+  /**
+   * @throws IllegalArgumentException if any component of a model name contains illegal characters
+   */
   public SModelName(@NotNull CharSequence qualifiedName, @Nullable CharSequence stereotype) {
     if (stereotype != null && stereotype.length() > 0) {
       assert stereotype.toString().indexOf('@') == -1;

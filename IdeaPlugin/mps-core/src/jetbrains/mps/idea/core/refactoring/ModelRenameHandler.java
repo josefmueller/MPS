@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.core.refactoring;
 
 import com.intellij.ide.projectView.ProjectView;
@@ -45,6 +44,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.lang.model.SourceVersion;
@@ -195,10 +195,6 @@ public class ModelRenameHandler implements RenameHandler {
         return false;
       }
 
-      if (new ModuleRepositoryFacade(getRepository()).getModelByName(modelName) != null) {
-        errorText[0] = MPSBundle.message("create.new.model.dialog.error.model.exists", modelName);
-        return false;
-      }
 
       if (modelName.lastIndexOf(".") == modelName.length()) {
         errorText[0] = MPSBundle.message("create.new.model.dialog.error.empty.short.name");
@@ -207,6 +203,16 @@ public class ModelRenameHandler implements RenameHandler {
 
       if (!(SourceVersion.isName(modelName))) {
         errorText[0] = MPSBundle.message("create.new.model.dialog.error.invalid.java", modelName);
+        return false;
+      }
+      try {
+        SModelName mn = new SModelName(modelName);
+        if (!new ModuleRepositoryFacade(getRepository()).getModelsByName(mn).isEmpty()) {
+          errorText[0] = MPSBundle.message("create.new.model.dialog.error.model.exists", modelName);
+          return false;
+        }
+      } catch (IllegalArgumentException ex) {
+        errorText[0] = ex.getMessage();
         return false;
       }
       return true;

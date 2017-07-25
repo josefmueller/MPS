@@ -36,6 +36,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -48,11 +49,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
- * Mediator between API aspects of an SRepository and out implementation aspects, like SRepositoryExt.
+ * Mediator between API aspects of an SRepository and our implementation aspects, like SRepositoryExt.
  * Use this class to avoid casts to SRepositoryExt
+ * IMPORTANT: lifespan of a facade instance shall not last longer than single model read. Implementation
+ * may cache values (e.g. model name to model instance) to answer subsequent queries faster, and may not reflect
+ * changes made to a repository.
  */
 public final class ModuleRepositoryFacade implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(ModuleRepositoryFacade.class);
@@ -160,14 +165,39 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   /**
+   * @deprecated there could be more than 1 model with the same name, use {@link #getModelsByName(SModelName)} and pick the one you need.
    * This is provisional API to keep all uses of SModelRepository.getModelDescriptor(String) in a single, controlled place.
    * I could had had created ModelRepositoryFacade, similar to this class, however, it seems just too much for a single method that we shall drop anyway.
    * @param modelQualifiedName
    * @return named model
    */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2017.3)
   public SModel getModelByName(@Nullable String modelQualifiedName) {
     return SModelRepository.getInstance().getModelDescriptor(modelQualifiedName);
+  }
+
+  /**
+   * Replacement for {@link #getModelByName(String)} that respects the case when models with the same name present (e.g. in different modules).
+   * Generally, accessing models by name is nad idea, you shall prefer {@link org.jetbrains.mps.openapi.model.SModelReference} to access specific model.
+   * There are certain scenarios, though, when we need to access by name, therefore we keep this utility method in a facade class.
+   *
+   * Note, implementation of this method is ineffective now, as it iterates over all modules and models of a repository.
+   *
+   * @param modelName exact name (qualified, with stereotype, if any) of the model to match
+   * @return all models with the same exact name, or empty collection if none found
+   */
+  @NotNull
+  public Collection<SModel> getModelsByName(@Nullable SModelName modelName) {
+    if (modelName == null) {
+      return Collections.emptyList();
+    }
+    // With parallel streams, beware of model read lock necessary to perform most operations over module/model (but not #getName())
+    // module.models needs read lock, hence no parallel streams here
+    Stream<SModule> moduleStream = StreamSupport.stream(REPO.getModules().spliterator(), false);
+    Stream<SModel> modelStream = moduleStream.flatMap(m -> StreamSupport.stream(m.getModels().spliterator(), false));
+    return modelStream.filter(m -> modelName.equals(m.getName())).collect(Collectors.toList());
   }
 
   /**
@@ -198,6 +228,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
    */
   @NotNull
   public Collection<SModule> getModulesByName(@NotNull String moduleName) {
+    // parallel == true as we are going to check module name, which doesn't require model read.
     return StreamSupport.stream(REPO.getModules().spliterator(), true)
                         .filter(module -> moduleName.equals(module.getModuleName()))
                         .collect(Collectors.toList());

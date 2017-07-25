@@ -40,16 +40,16 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.mps.openapi.module.FindUsagesFacade;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
-import java.util.Collections;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModelName;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.java.stub.JavaPackageNameStub;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
+import org.jetbrains.mps.openapi.module.FindUsagesFacade;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import java.util.Collections;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
 import com.intellij.openapi.extensions.PluginId;
@@ -200,33 +200,40 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   public SNode findUnit(final String unitName) {
     // I hate the next piece of code 
     // (and this class in general, since it inherited a lot of the ugly stuff from the old evaluation code) 
-    SModel stub = findStubForFqName(modelFqNameFromUnitName(unitName));
-    if (stub != null) {
-      SModel model = stub;
-      SNode node = ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))).findFirst(new IWhereFilter<SNode>() {
+    ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(myDebuggerRepository);
+    // first, try @java_stub model 
+    final String qualifiedModelName = modelFqNameFromUnitName(unitName);
+    for (SModel stub : repoFacade.getModelsByName(new SModelName(new JavaPackageNameStub(qualifiedModelName).asModelId().getModelName()))) {
+      SNode node = ListSequence.fromList(SModelOperations.nodes(stub, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_v5yv3u_a0a0a0a0a0a0b0d0p(((String) BHReflection.invoke(it, SMethodTrimmedId.create("getUnitName", null, "4pl5GY7LKmR"))), unitName) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+          return eq_v5yv3u_a0a0a0a0a0a0a0f0p(((String) BHReflection.invoke(it, SMethodTrimmedId.create("getUnitName", null, "4pl5GY7LKmR"))), unitName) && SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
         }
       });
       if (node != null) {
         return node;
       }
     }
-
+    // try other (non-stub) models 
+    // XXX for whatever reason, we used to check models with stereotypes matching SModelStereotype.values (i.e. none, tests and generator). 
+    //     as I don't see why a model with another stereotype can't serve as a source one for generated code, now we search all models with  
+    //     incompletely matching name (i.e. match qualified name only). 
+    //     With that, there's little reason to handle @java_stub explicitly, above (other than give them priority), perhaps, shall  
+    //     combine into single piece of code? Need to pay attention, though, if stubs get indexed or not (common code could't use FindUsagesFacade if not, then) 
+    ModelsScope scope = new ModelsScope(Sequence.fromIterable(((Iterable<SModel>) repoFacade.getAllModels())).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return it.getName().getLongName().equals(qualifiedModelName);
+      }
+    }));
     FindUsagesFacade findUsages = FindUsagesFacade.getInstance();
     SAbstractConcept concept = MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept");
-
-    Set<SNode> instances = findUsages.findInstances(new ModelsScope(getCandidateNonStubModels(unitName)), Collections.singleton(concept), false, new EmptyProgressMonitor());
+    Set<SNode> instances = findUsages.findInstances(scope, Collections.singleton(concept), false, new EmptyProgressMonitor());
     return SNodeOperations.cast(SetSequence.fromSet(instances).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(((SNode) it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && ((String) BHReflection.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), SMethodTrimmedId.create("getUnitName", null, "4pl5GY7LKmR"))).equals(unitName);
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && ((String) BHReflection.invoke(SNodeOperations.cast(it, MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept")), SMethodTrimmedId.create("getUnitName", null, "4pl5GY7LKmR"))).equals(unitName);
       }
     }), MetaAdapterFactory.getInterfaceConcept(0x9ded098bad6a4657L, 0xbfd948636cfe8bc3L, 0x465516cf87c705a4L, "jetbrains.mps.lang.traceable.structure.UnitConcept"));
   }
-  @Nullable
-  private SModel findStubForFqName(String fqName) {
-    return new ModuleRepositoryFacade(myDebuggerRepository).getModelByName(new SModelName(fqName, SModelStereotype.JAVA_STUB).getValue());
-  }
+
   private boolean needUpdateVariables() {
     return !(myVariablesInitialized) || !(myIsInWatch);
   }
@@ -256,23 +263,11 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
     }).toListSequence();
   }
-  /*package*/ Iterable<SModel> getCandidateNonStubModels(String unitName) {
-    final String modelFqName = modelFqNameFromUnitName(unitName);
-    final ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(myDebuggerRepository);
-    return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<CharSequence, SModel>() {
-      public SModel select(CharSequence stereotype) {
-        return mrf.getModelByName(new SModelName(modelFqName, stereotype).getValue());
-      }
-    }).where(new IWhereFilter<SModel>() {
-      public boolean accept(SModel it) {
-        return it != null;
-      }
-    });
-  }
-  public static String modelFqNameFromUnitName(String unitName) {
+  private static String modelFqNameFromUnitName(String unitName) {
     int lastDot = unitName.lastIndexOf('.');
     return ((lastDot == -1 ? "" : unitName.substring(0, lastDot)));
   }
+
   private class MyBaseLanguagesImportHelper extends BaseLanguagesImportHelper {
     private final SNode myEvaluatorNode;
     public MyBaseLanguagesImportHelper(SNode evaluatorNode) {
@@ -301,7 +296,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       return newVariableReference;
     }
   }
-  private static boolean eq_v5yv3u_a0a0a0a0a0a0b0d0p(Object a, Object b) {
+  private static boolean eq_v5yv3u_a0a0a0a0a0a0a0f0p(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_v5yv3u_a0a0a0a0a0a0a2w(Object a, Object b) {

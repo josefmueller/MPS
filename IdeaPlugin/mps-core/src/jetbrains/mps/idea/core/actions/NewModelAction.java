@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.core.actions;
 
 import com.intellij.ide.projectView.ProjectView;
@@ -36,7 +35,6 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -140,23 +138,28 @@ public class NewModelAction extends NewModelActionBase {
       }
 
       private boolean isModelNameValid(String modelName) {
-        if (modelName.length() == 0) {
-          showError(MPSBundle.message("create.new.model.dialog.error.empty.name"));
-          return false;
-        }
+        try {
+          if (modelName.length() == 0) {
+            showError(MPSBundle.message("create.new.model.dialog.error.empty.name"));
+            return false;
+          }
 
-        if (new ModuleRepositoryFacade(repository).getModelByName(modelName) != null) {
-          showError(MPSBundle.message("create.new.model.dialog.error.model.exists", modelName));
-          return false;
-        }
+          if (modelName.endsWith(".")) {
+            showError(MPSBundle.message("create.new.model.dialog.error.empty.short.name"));
+            return false;
+          }
 
-        if (modelName.endsWith(".")) {
-          showError(MPSBundle.message("create.new.model.dialog.error.empty.short.name"));
-          return false;
-        }
-
-        if (!(SourceVersion.isName(SModelStereotype.withoutStereotype(modelName)))) {
-          showError(MPSBundle.message("create.new.model.dialog.error.invalid.java", modelName));
+          SModelName mn = new SModelName(modelName);
+          if (!(SourceVersion.isName(mn.getLongName()))) {
+            showError(MPSBundle.message("create.new.model.dialog.error.invalid.java", modelName));
+            return false;
+          }
+          if (!new ModuleRepositoryFacade(repository).getModelsByName(mn).isEmpty()) {
+            showError(MPSBundle.message("create.new.model.dialog.error.model.exists", modelName));
+            return false;
+          }
+        } catch (Exception ex) {
+          showError(ex.getMessage());
           return false;
         }
         return true;
