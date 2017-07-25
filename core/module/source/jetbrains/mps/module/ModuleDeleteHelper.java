@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.module;
 
-import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.model.ModelDeleteHelper;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.Project;
@@ -33,7 +32,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -57,13 +55,13 @@ public final class ModuleDeleteHelper {
     } else {
       modules.stream().filter(m -> m instanceof Language).forEach(m -> {
         List<SModule> generators = new ArrayList<>(((Language) m).getGenerators());
-        delete(generators, deleteFiles);
+        delete(generators, deleteFiles, true);
       });
-      delete(modules, deleteFiles);
+      delete(modules, deleteFiles, false);
     }
   }
 
-  private void delete(@NotNull List<SModule> modules, boolean deleteFiles) {
+  private void delete(@NotNull List<SModule> modules, boolean deleteFiles, boolean innerModule) {
     modules = new ArrayList<>(modules);
 
     checkNonProjectModules(modules, deleteFiles);
@@ -78,7 +76,17 @@ public final class ModuleDeleteHelper {
       if (deleteFiles) {
         deleteModuleFiles(module);
       }
-      unregisterGeneratorFromLanguage(module);
+
+      /*
+      * If we delete Language, then we don't need to unregister Generator from it.
+      * So after this Language is re-added to project, it will still contain Generator.
+      *
+      * But if we delete Generator, than we have to unregister it from Language (delete from Language descriptor).
+      * Otherwise Generator will reappear after Language reload.
+      */
+      if (!innerModule) {
+        unregisterGeneratorFromLanguage(module);
+      }
       facade.unregisterModule(module);
     });
   }
@@ -92,7 +100,6 @@ public final class ModuleDeleteHelper {
       LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
       languageDescriptor.getGenerators().remove(((Generator) module).getModuleDescriptor());
       sourceLanguage.setModuleDescriptor(languageDescriptor);
-      sourceLanguage.reload();
       sourceLanguage.save();
     }
   }
