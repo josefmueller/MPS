@@ -16,7 +16,10 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.InternUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade.IncorrectNodeIdFormatException;
 
 /**
  * Created by: Sergey Dmitriev
@@ -24,7 +27,6 @@ import org.jetbrains.mps.annotations.Immutable;
  */
 @Immutable
 public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.openapi.model.SNodeId {
-
   public static final String TYPE = "default";
 
   /**
@@ -32,7 +34,7 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
    * and replaced with {@link org.jetbrains.mps.openapi.persistence.PersistenceFacade#createNodeId(String)}
    */
   @Deprecated
-  public static SNodeId fromString(String idString) {
+  public static SNodeId fromString(@NotNull String idString) {
     if (idString.startsWith(Foreign.ID_PREFIX)) {
       return new Foreign(idString);
     }
@@ -50,7 +52,7 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
   }
 
   @Override
-  public int compareTo(SNodeId id) {
+  public int compareTo(@NotNull SNodeId id) {
     if (id instanceof Regular && this instanceof Regular) {
       Regular r1 = (Regular) this;
       Regular r2 = (Regular) id;
@@ -92,8 +94,7 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
       Regular otherId = (Regular) o;
-      if (myId != otherId.myId) return false;
-      return true;
+      return myId == otherId.myId;
     }
 
     public int hashCode() {
@@ -115,9 +116,9 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
 
     private final String myId;
 
-    public Foreign(String id) {
+    public Foreign(@NotNull String id) {
       if (!id.startsWith(ID_PREFIX)) {
-        throw new IllegalArgumentException("foreign node id must begin with '" + ID_PREFIX + "'");
+        throw new IncorrectNodeIdFormatException(String.format("A foreign node id must begin with '%s'", ID_PREFIX), null);
       }
       myId = InternUtil.intern(id);
     }
@@ -130,8 +131,7 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
       Foreign otherId = (Foreign) o;
-      if (!myId.equals(otherId.myId)) return false;
-      return true;
+      return myId.equals(otherId.myId);
     }
 
     public int hashCode() {

@@ -150,7 +150,7 @@ public abstract class PersistenceFacade {
    *             The actual type of the model id is followed by implementation-specific text.
    * @throws IllegalArgumentException if the text does not contain a parsable <code>SModelId</code>.
    */
-  public abstract SModelId createModelId(String text);
+  public abstract SModelId createModelId(@NotNull String text);
 
   /**
    * Serialize counterpart for {@link #createModelId(String)}, persistence-ready presentation of a model identifier.
@@ -163,9 +163,13 @@ public abstract class PersistenceFacade {
   /**
    * Creates an SModelReference from a given text identifier.
    *
-   * @throws IllegalArgumentException if the text does not contain a parsable <code>SModelReference</code>.
+   * @throws IllegalArgumentException if the text does not contain a parsable <code>SModelReference</code>
+   * @throws IncorrectModelReferenceFormatException if the text does not contain a parsable <code>SModelReference</code> [since 2017.3]
+   *
+   * [it is a runtime exception in order to preserve compatibility]
    */
-  public abstract SModelReference createModelReference(String text);
+  @NotNull
+  public abstract SModelReference createModelReference(@NotNull String text);
 
   /**
    * Serialize counterpart for {@link #createModelReference(String)}, persistence-ready presentation of a model reference
@@ -195,8 +199,12 @@ public abstract class PersistenceFacade {
    *             The text comes in the following format: "type:restInterpretedByTheConcreteTypeProvider"
    *             The actual type of the node id is followed by implementation-specific text.
    * @throws IllegalArgumentException if the text does not contain a parsable <code>SNodeId</code>.
+   * @throws IncorrectNodeIdFormatException if the text does not contain a parsable SNodeId.
+   *
+   * fixme when it returns null and when throws IAE. Restrict!
    */
-  public abstract SNodeId createNodeId(String text);
+  @Nullable
+  public abstract SNodeId createNodeId(@NotNull String text);
 
   /**
    * Serialize counterpart for {@link #createNodeReference(String)}, persistence-ready presentation of a node reference.
@@ -206,7 +214,12 @@ public abstract class PersistenceFacade {
   @NotNull
   public abstract String asString(@NotNull SNodeReference nodeRef);
 
-  public abstract SNodeReference createNodeReference(String text);
+  /**
+   * @throws IllegalArgumentException if the model reference or node reference could not be parsed
+   * @throws IncorrectModelReferenceFormatException if the model reference could not be parsed [since 2017.3]
+   * @throws IncorrectNodeIdFormatException if the node id could not be parsed [since 2017.3]
+   */
+  public abstract SNodeReference createNodeReference(@NotNull String text);
 
   /**
    * Registers the factory with the node id type, overwriting potential earlier registration.
@@ -252,4 +265,24 @@ public abstract class PersistenceFacade {
    */
   @Deprecated
   public abstract void removeNavigationParticipant(NavigationParticipant participant);
+
+  public static final class IncorrectModelReferenceFormatException extends IllegalArgumentException {
+    public IncorrectModelReferenceFormatException(@Nullable String message, @Nullable Throwable cause) {
+      super(message, cause);
+    }
+
+    public IncorrectModelReferenceFormatException(@Nullable String message) {
+      this(message, null);
+    }
+  }
+
+  public static final class IncorrectNodeIdFormatException extends IllegalArgumentException {
+    public IncorrectNodeIdFormatException(@Nullable String message, @Nullable Throwable cause) {
+      super(message, cause);
+    }
+
+    public IncorrectNodeIdFormatException(@Nullable String message) {
+      this(message, null);
+    }
+  }
 }

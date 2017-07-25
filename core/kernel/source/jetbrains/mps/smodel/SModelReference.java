@@ -26,6 +26,7 @@ import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
@@ -37,6 +38,7 @@ import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade.IncorrectModelReferenceFormatException;
 
 import java.util.Objects;
 
@@ -169,6 +171,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
    *   registered factories. Use {@link PersistenceFacade#createModelReference(String)} instead.
    * Format: <code>[ moduleID / ] modelID [ ([moduleName /] modelName ) ]</code>
    */
+  @NotNull
   @Deprecated
   @ToRemove(version = 3.3)
   public static SModelReference parseReference(String s) {
@@ -182,7 +185,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     return new SModelReference(moduleRef, modelId, modelName);
   }
 
-  public static Pair<Pair<SModuleId, String>, Pair<SModelId, String>> parseReference_internal(String s) {
+  @Contract(value = "null->null")
+  public static Pair<Pair<SModuleId, String>, Pair<SModelId, String>> parseReference_internal(@Nullable String s) {
     if (s == null) return null;
     s = s.trim();
     int lParen = s.indexOf('(');
@@ -195,14 +199,18 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       rParen = s.lastIndexOf(')');
     }
     if (lParen != -1 || rParen != -1) {
-      throw new IllegalArgumentException("parentheses do not match in: `" + s + "'");
+      throw new IncorrectModelReferenceFormatException("parentheses do not match in: `" + s + "'");
     }
 
     SModuleId moduleId = null;
     int slash = s.indexOf('/');
     if (slash >= 0) {
       // FIXME I wonder why there's no SModuleIdFactory and corresponding methods in PersistenceFacade
-      moduleId = ModuleId.fromString(StringUtil.unescapeRefChars(s.substring(0, slash)));
+      try {
+        moduleId = ModuleId.fromString(StringUtil.unescapeRefChars(s.substring(0, slash)));
+      } catch (IllegalArgumentException e) {
+        throw new IncorrectModelReferenceFormatException("Could not parse module id from the string " + s, e);
+      }
       s = s.substring(slash + 1);
     }
 
@@ -240,7 +248,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
     if (modelName == null || modelName.isEmpty()) {
       modelName = modelId.getModelName();
       if (modelName == null) {
-        throw new IllegalArgumentException("incomplete model reference, presentation part is absent");
+        throw new IncorrectModelReferenceFormatException("Incomplete model reference, the presentation part is absent");
       }
     }
 
@@ -252,7 +260,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       modelId = newJavaPackageStubFromLegacy(modelId);
     }
 
-    return new Pair(new Pair(moduleId, moduleName), new Pair(modelId, modelName));
+    return new Pair<>(new Pair<>(moduleId, moduleName), new Pair<>(modelId, modelName));
   }
 
   /**
@@ -342,7 +350,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   public String toString() {
     StringBuilder sb = new StringBuilder();
 
-    if (getModuleReference() != null && getModuleReference().getModuleId() != null) {
+    if (getModuleReference() != null) {
       sb.append(StringUtil.escapeRefChars(getModuleReference().getModuleId().toString()));
       sb.append('/');
     }

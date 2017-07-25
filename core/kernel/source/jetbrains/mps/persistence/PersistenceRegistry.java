@@ -29,6 +29,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -176,7 +177,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   }
 
   @Override
-  public SModelId createModelId(String text) {
+  public SModelId createModelId(@NotNull String text) {
     int colon = text.indexOf(':');
     if (colon == -1) {
       throw new IllegalArgumentException(String.format("No model id factory designator (':') in %s", text));
@@ -196,11 +197,9 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     return modelId.toString();
   }
 
+  @NotNull
   @Override
-  public SModelReference createModelReference(String text) {
-    if (text == null) {
-      throw new IllegalArgumentException();
-    }
+  public SModelReference createModelReference(@NotNull String text) {
     return jetbrains.mps.smodel.SModelReference.parseReference(text);
   }
 
@@ -225,7 +224,8 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   }
 
   @Override
-  public SNodeId createNodeId(String text) {
+  @Nullable
+  public SNodeId createNodeId(@NotNull String text) {
     if (text.length() == 0) return null;
     char c = text.charAt(0);
 
@@ -236,7 +236,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
     int colon = text.indexOf(':');
     if (colon == -1) {
-      throw new IllegalArgumentException();
+      throw new IncorrectNodeIdFormatException(String.format("The node id text '%s' does not contain the colon ':' separator", text), null);
     }
     SNodeIdFactory factory = myNodeIdFactory.get(text.substring(0, colon));
     if (factory == null) {
@@ -252,7 +252,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   }
 
   @Override
-  public SNodeReference createNodeReference(String text) {
+  public SNodeReference createNodeReference(@NotNull String text) {
     return SNodePointer.deserialize(text);
   }
 

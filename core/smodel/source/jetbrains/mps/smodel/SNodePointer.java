@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.StringUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -27,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade.IncorrectNodeIdFormatException;
 
 @Immutable
 public class SNodePointer implements SNodeReference {
@@ -116,8 +118,11 @@ public class SNodePointer implements SNodeReference {
     return ref.toString() + "/" + StringUtil.escapeRefChars(id.toString());
   }
 
-  public static SNodeReference deserialize(String from) {
-    int delimiterIndex = from.lastIndexOf('/');
+  public static SNodeReference deserialize(@NotNull String from) {
+    int delimiterIndex = from.lastIndexOf("/");
+    if (delimiterIndex < 0) {
+      throw new IncorrectNodeIdFormatException("No delimiter discovered in the passed argument " + from);
+    }
     String nodeId = StringUtil.unescapeRefChars(from.substring(delimiterIndex + 1));
     String modelReference = from.substring(0, delimiterIndex);
 
