@@ -18,9 +18,7 @@ package jetbrains.mps.ide.findusages;
 import gnu.trove.TIntArrayList;
 import gnu.trove.TObjectIntHashMap;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -28,14 +26,12 @@ import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.FinderRegistry;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -56,7 +52,6 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     return INSTANCE;
   }
 
-  private final Map<GeneratedFinder, SNodeReference> myNodesByFinder = new HashMap<>();
   // XXX the only place I use SLanguageId map key is compatibility with legacy #addFinder(), to match SModuleReference to LanguageRuntime
   private final Map<SLanguageId, LanguageFinders> myLanguageFindersMap = new HashMap<>();
   private boolean myLoaded = false;
@@ -95,19 +90,6 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
       }
     }
     return Collections.unmodifiableSet(result);
-  }
-
-  /**
-   * Generally, external code shall not care to get reloadable finder directly, it's for specific scenarios like query persistence in Find Usages view.
-   * @deprecated Though we still use finder implementation class fqn as a finder persistable identity, I don't want this exposed in the method name.
-   *             Left for compatibility with external code (just in case there's some). Perhaps, should bear explicit 'Proxy' or 'Reloadable' part.
-   */
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public ReloadableFinder getFinderByClassName(String className) {
-    IInterfacedFinder finder = getFinder(className);
-    return finder == null ? null : new ReloadableFinder(className);
   }
 
   /**
@@ -165,7 +147,6 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
 
   private void clear() {
     myLanguageFindersMap.clear();
-    myNodesByFinder.clear();
     myLoaded = false;
   }
 
@@ -199,13 +180,8 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
   // XXX doesn't care about threading, although likely should
   private static final class LanguageFinders implements FinderRegistry {
     private final LanguageRuntime myLanguageRuntime;
-    // XXX maps that keep actual instances would cease once 3.5 is out.
-    // Although LF would still keep reference to LR effectively holding its classloader, it's still better to
-    // use new finder instance for each run (to avoid concurrency management inside finders).
-    private final Map<SAbstractConcept, Set<GeneratedFinder>> myLegacyFinders = new HashMap<>();
-    private final Map<String, GeneratedFinder> myNameToFinder = new HashMap<>();
     private final Map<SAbstractConcept, TIntArrayList> myFinders = new HashMap<>();
-    private final TObjectIntHashMap<String> myNameToFinder2 = new TObjectIntHashMap<>();
+    private final TObjectIntHashMap<String> myNameToFinder = new TObjectIntHashMap<>();
 
     LanguageFinders(LanguageRuntime lr) {
       myLanguageRuntime = lr;
@@ -220,20 +196,7 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
       if (!finderTokens.contains(identityToken)) {
         finderTokens.add(identityToken);
       }
-      myNameToFinder2.put(mangledName, identityToken);
-    }
-
-    void addLegacy(GeneratedFinder finder) {
-      SAbstractConcept concept = finder.getSConcept();
-      Set<GeneratedFinder> finders;
-      if ((finders = myLegacyFinders.get(concept)) == null) {
-        myLegacyFinders.put(concept, finders = new HashSet<>());
-      }
-      finders.add(finder);
-      String cn = finder.getClass().getSimpleName();
-      assert cn.endsWith("_Finder");
-      GeneratedFinder previous = myNameToFinder.put(cn.substring(0, cn.length() - "_Finder".length()), finder);
-      assert previous == null : "Finders with same mangled name would end up as identical java classes";
+      myNameToFinder.put(mangledName, identityToken);
     }
 
     boolean matchesLanguage(String namespace) {
@@ -241,16 +204,13 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     }
 
     IInterfacedFinder findByMangledName(String finderMangledName) {
-      if (myNameToFinder2.contains(finderMangledName)) {
-        return instantiate(myNameToFinder2.get(finderMangledName));
-      }
-      return myNameToFinder.get(finderMangledName);
+      int token = myNameToFinder.get(finderMangledName);
+      return token >= 0 ? instantiate(token) : null;
     }
 
     // XXX findersForNode(SNode) instead, to perform filtering isVisible+isApplicable here as well?
     Stream<IInterfacedFinder> findersForConcept(SAbstractConcept c) {
-      return Stream.concat(myFinders.keySet().stream().filter(c::isSubConceptOf).flatMap(concept -> instantiate(myFinders.get(concept))),
-          myLegacyFinders.keySet().stream().filter(c::isSubConceptOf).flatMap(concept -> myLegacyFinders.get(concept).stream()));
+      return myFinders.keySet().stream().filter(c::isSubConceptOf).flatMap(concept -> instantiate(myFinders.get(concept)));
     }
 
     private IInterfacedFinder instantiate(int token) {
