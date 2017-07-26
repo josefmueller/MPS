@@ -10,10 +10,13 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.ModuleReloadListener;
+import java.util.Set;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.errors.MessageStatus;
-import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -58,6 +61,11 @@ public class TestsErrorsChecker {
         }
       };
       GlobalSModelEventsManager.getInstance().addGlobalCommandListener(ourModelChangesListener);
+      ClassLoaderManager.getInstance().addReloadListener(new ModuleReloadListener() {
+        public void modulesReloaded(Set<ReloadableModule> p0) {
+          ourModelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder();
+        }
+      });
     }
   }
 
