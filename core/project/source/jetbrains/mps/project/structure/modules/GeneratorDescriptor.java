@@ -17,7 +17,6 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -50,27 +49,6 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     myPriorityRules = new ArrayList<>();
   }
 
-  /**
-   * for whatever reason, getGeneratorUID() is in fact module name, or what {@link #getNamespace()} is for other modules.
-   * In generators, {@link #getNamespace()} is employed for module alias, instead. Shall refactor this, use namespace uniformly among modules
-   * to represent its name, and use dedicated {@code getAlias()} to keep generator short name (if needed).
-   * @deprecated use {@link #getNamespace()}
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public String getGeneratorUID() {
-    return getNamespace();
-  }
-
-  /**
-   * @deprecated identical to {@link #setNamespace(String)}
-   */
-  @Deprecated
-  @ToRemove(version = 2017.1)
-  public void setGeneratorUID(String generatorUID) {
-    setNamespace(generatorUID);
-  }
-
   public void setSourceLanguage(SModuleReference sourceLanguage) {
     mySourceLanguage = sourceLanguage;
   }
@@ -82,7 +60,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   /**
    * While we keep machine-generated module name for Generator modules, alias is a part
    * which Language Designer may pick to his liking. Note, {@link Generator#getAlias()} includes
-   * qualifed name of source language as prefix, and value of this method is only a suffix, likely kept unchanged during module renames.
+   * qualified name of source language as prefix, and value of this method is only a suffix, likely kept unchanged during module renames.
    */
   public String getAlias() {
     return myAlias;

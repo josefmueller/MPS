@@ -382,7 +382,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   @Deprecated
   @ToRemove(version = 3.3)
   //no full equivalent to this method, use appropriate method from LanguageAspectSupport
-  public LanguageAspect getAspectForModel(@NotNull org.jetbrains.mps.openapi.model.SModel sm) {
+  private LanguageAspect getAspectForModel(@NotNull org.jetbrains.mps.openapi.model.SModel sm) {
     for (LanguageAspect la : LanguageAspect.values()) {
       if (la.get(this) == sm) {
         return la;
@@ -398,7 +398,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   @Deprecated
   @ToRemove(version = 3.3)
   //no full equivalent to this method, use appropriate method from LanguageAspectSupport
-  //no usages in MPS
+  //no usages in MPS, 4 uses in mbeddr
   @Nullable
   public static LanguageAspect getModelAspect(org.jetbrains.mps.openapi.model.SModel sm) {
     if (sm == null) return null;
