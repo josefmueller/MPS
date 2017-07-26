@@ -48,12 +48,12 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.util.WaitForProgressToShow;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.migration.wizard.MigrationWizard;
 import jetbrains.mps.ide.migration.wizard.MigrationError;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.migration.global.MigrationProblemHandler;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.Application;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -345,7 +345,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements IStart
               resetMigrationQueuedFlag();
             }
           }
-        });
+        }, ModalityState.NON_MODAL);
       }
     });
   }
