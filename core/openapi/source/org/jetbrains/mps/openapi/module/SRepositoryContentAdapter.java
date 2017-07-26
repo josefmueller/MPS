@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 import org.jetbrains.mps.openapi.event.SReferenceReadEvent;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
-import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -38,7 +37,7 @@ import org.jetbrains.mps.openapi.model.SReference;
  * This class serves as a convenient implementation of all repository listeners at once.
  * In addition it tracks all objects (modules, models and nodes) as they come and leave the repository.
  */
-public class SRepositoryContentAdapter extends SModuleListenerBase implements SModelChangeListener, SModelAccessListener,
+public class SRepositoryContentAdapter extends SModuleListenerBase implements SModelChangeListener,
     SModelListener, SModuleListener, SRepositoryListener, SRepositoryAttachListener, SNodeChangeListener, SNodeAccessListener {
 
   protected SRepositoryContentAdapter() {
@@ -217,19 +216,6 @@ public class SRepositoryContentAdapter extends SModuleListenerBase implements SM
 
   @Override
   public void modelDetached(SModel model, SRepository repository) {
-  }
-
-  // SModelAccessListener methods
-  @Override
-  public void nodeRead(SNode node) {
-  }
-
-  @Override
-  public void propertyRead(SNode node, String name) {
-  }
-
-  @Override
-  public void referenceRead(SNode node, String role) {
   }
 
   /**

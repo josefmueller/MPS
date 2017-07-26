@@ -23,13 +23,17 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.event.SNodeReadEvent;
+import org.jetbrains.mps.openapi.event.SPropertyReadEvent;
+import org.jetbrains.mps.openapi.event.SReferenceReadEvent;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessListener;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -750,7 +754,7 @@ public class ModelListenerTest {
     }
   }
 
-  /*package*/ static class AccessCountListener1 implements SModelAccessListener {
+  /*package*/ static class AccessCountListener1 implements SNodeAccessListener {
     public int myVisitedNodes;
     public int myPropertiesRead;
     public int myReferencesRead;
@@ -760,17 +764,17 @@ public class ModelListenerTest {
     }
 
     @Override
-    public synchronized void nodeRead(SNode node) {
+    public void nodeRead(@NotNull SNodeReadEvent event) {
       myVisitedNodes++;
     }
 
     @Override
-    public void propertyRead(SNode node, String name) {
+    public void propertyRead(@NotNull SPropertyReadEvent event) {
       myPropertiesRead++;
     }
 
     @Override
-    public void referenceRead(SNode node, String role) {
+    public void referenceRead(@NotNull SReferenceReadEvent event) {
       myReferencesRead++;
     }
   }

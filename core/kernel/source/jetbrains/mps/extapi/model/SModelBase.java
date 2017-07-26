@@ -28,7 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelName;
@@ -321,16 +320,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   @Override
   public void removeModelListener(SModelListener l) {
     myModelEventDispatch.removeListener(l);
-  }
-
-  @Override
-  public void addAccessListener(SModelAccessListener l) {
-    myNodeEventDispatch.addAccessListener(l);
-  }
-
-  @Override
-  public void removeAccessListener(SModelAccessListener l) {
-    myNodeEventDispatch.removeAccessListener(l);
   }
 
   @Override

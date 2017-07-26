@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
  * for props/refs.
  * <p/>
  * READ NOTIFICATIONS
- * Accessing node triggers read notifications ({@link org.jetbrains.mps.openapi.model.SModelAccessListener} and legacy 'event casters').
+ * Accessing node triggers read notifications ({@link org.jetbrains.mps.openapi.model.SNodeAccessListener} and legacy 'event casters').
  * Notifications for a node are dispatched the moment node is made available to outer world, not the moment its property or reference is read, i.e.
  * if we read 3 properties and 2 references of a node A, we get single nodeRead(A) followed by 3 propertyRead() and 2 referenceRead() notifications.
  * <p/>
@@ -61,7 +61,7 @@ public interface SNode {
    * Containing model or null if the node is not contained in any model
    * Does not produce node read event as the function depending on model is not a pure node function.
    *
-   * @see SModelAccessListener
+   * @see SNodeAccessListener
    */
   @Nullable
   SModel getModel();

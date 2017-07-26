@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,6 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessListener;
@@ -51,45 +50,14 @@ public final class ModelEventDispatch {
   private final SModel myModel;
   // same as myModel, casted to EditableSModel for convenience, or null if myModel is not editable
   private final EditableSModel myEditableSModel;
-  private final List<SNodeAccessListener> myAccessListeners = new CopyOnWriteArrayList<SNodeAccessListener>();
-  private final List<SNodeChangeListener> myChangeListeners = new CopyOnWriteArrayList<SNodeChangeListener>();
+  private final List<SNodeAccessListener> myAccessListeners = new CopyOnWriteArrayList<>();
+  private final List<SNodeChangeListener> myChangeListeners = new CopyOnWriteArrayList<>();
   @ToRemove(version = 3.3)
-  private final List<LegacyNodeAccessListener> myLegacyReadListeners = new CopyOnWriteArrayList<LegacyNodeAccessListener>();
-  @ToRemove(version = 3.3)
-  private final List<LegacyNodeChangeListener> myLegacyChangeListeners = new CopyOnWriteArrayList<LegacyNodeChangeListener>();
+  private final List<LegacyNodeChangeListener> myLegacyChangeListeners = new CopyOnWriteArrayList<>();
 
   public ModelEventDispatch(@NotNull SModel model) {
     myModel = model;
     myEditableSModel = model instanceof EditableSModel ? (EditableSModel) model : null;
-  }
-
-  @ToRemove(version = 3.3)
-  public void addAccessListener(@Nullable SModelAccessListener l) {
-    if (l == null) {
-      return;
-    }
-    LegacyNodeAccessListener wrap = new LegacyNodeAccessListener(l);
-    addAccessListener(wrap);
-    myLegacyReadListeners.add(wrap);
-  }
-
-  @ToRemove(version = 3.3)
-  public void removeAccessListener(@Nullable SModelAccessListener l) {
-    if (l == null) {
-      return;
-    }
-    LegacyNodeAccessListener wrap = null;
-    for (LegacyNodeAccessListener w : myLegacyReadListeners) {
-      if (w.wraps(l)) {
-        wrap = w;
-        break;
-      }
-    }
-    if (wrap == null) {
-      return;
-    }
-    myLegacyReadListeners.remove(wrap);
-    removeAccessListener(wrap);
   }
 
   public void addAccessListener(@Nullable SNodeAccessListener l) {

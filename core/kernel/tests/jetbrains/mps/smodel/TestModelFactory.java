@@ -33,9 +33,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelAccessListener;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessListener;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -155,14 +155,14 @@ final class TestModelFactory {
     return countTreeNodes(myModel.getRootNodes());
   }
 
-  void attachAccessListeners(SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
+  void attachAccessListeners(SNodeAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
     assert myModel != null : "call createModel() first";
     myModel.addAccessListener(l1);
     NodeReadEventsCaster.setNodesReadListener(l2);
     NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(l3);
   }
 
-  void detachAccessListeners(SModelAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
+  void detachAccessListeners(SNodeAccessListener l1, INodesReadListener l2, NodeReadAccessInEditorListener l3) {
     assert myModel != null : "call createModel() first";
     NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
     NodeReadEventsCaster.removeNodesReadListener();
