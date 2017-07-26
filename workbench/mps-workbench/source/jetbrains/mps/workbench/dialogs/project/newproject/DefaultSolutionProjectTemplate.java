@@ -19,6 +19,7 @@ import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings;
+import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -53,8 +54,8 @@ public class DefaultSolutionProjectTemplate implements SolutionProjectTemplate {
   @Override
   public String getDescription() {
     return "Solutions are used to store code written in MPS languages. " +
-        "Each <a href=\"" + DocumentationHelper.getConfluenceBase() + "MPS+project+structure#MPSprojectstructure-solutions\">MPS solution</a> " +
-        "is a set of models with a name.";
+           "Each <a href=\"" + DocumentationHelper.getConfluenceBase() + "MPS+project+structure#MPSprojectstructure-solutions\">MPS solution</a> " +
+           "is a set of models with a name.";
   }
 
   @Nullable
@@ -73,14 +74,16 @@ public class DefaultSolutionProjectTemplate implements SolutionProjectTemplate {
         StartupManager.getInstance(project.getProject()).registerPostStartupActivity(new Runnable() {
           @Override
           public void run() {
-            project.getModelAccess().executeCommand(new Runnable() {
-                                                             @Override
-                                                             public void run() {
-                                                               Solution
-                                                                   solution = NewModuleUtil.createSolution(myNewSolutionSettings.getModuleName(), myNewSolutionSettings.getModuleLocation(), project);
-                                                               project.addModule(solution);
-                                                             }
-                                                           }
+            project.getModelAccess().executeCommand(
+                new Runnable() {
+                  @Override
+                  public void run() {
+                    Solution solution = NewModuleUtil.createSolution(myNewSolutionSettings.getModuleName(), myNewSolutionSettings.getModuleLocation(), project);
+                    project.addModule(solution);
+                    new VersionFixer(project.getRepository(), solution).updateImportVersions();
+                    solution.save();
+                  }
+                }
             );
           }
         });

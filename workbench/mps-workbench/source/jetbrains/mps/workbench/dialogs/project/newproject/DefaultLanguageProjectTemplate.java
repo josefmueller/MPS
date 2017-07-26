@@ -19,6 +19,7 @@ import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
+import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -66,6 +67,7 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
     return myLanguageSettings;
   }
 
+
   @NotNull
   @Override
   public TemplateFiller getTemplateFiller() {
@@ -86,13 +88,20 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
                   if (myLanguageSettings.isRuntimeSolutionNeeded()) {
                     Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getModuleLocation(), project);
                     language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
+                    new VersionFixer(project.getRepository(), runtimeSolution).updateImportVersions();
+                    runtimeSolution.save();
                   }
                   if (myLanguageSettings.isSandBoxSolutionNeeded()) {
-                    NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getModuleLocation(), project);
+                    Solution sandboxSolution = NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getModuleLocation(), project);
+                    new VersionFixer(project.getRepository(),sandboxSolution).updateImportVersions();
+                    sandboxSolution.save();
                   }
                 } catch (IOException e) {
                   // todo: !
                 }
+                new VersionFixer(project.getRepository(),language).updateImportVersions();
+                new VersionFixer(project.getRepository(),language.getGenerators().iterator().next()).updateImportVersions();
+                language.save();
               }
             });
           }
