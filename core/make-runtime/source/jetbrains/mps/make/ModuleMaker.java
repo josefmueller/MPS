@@ -20,12 +20,10 @@ import jetbrains.mps.compiler.EclipseJavaCompiler;
 import jetbrains.mps.compiler.JavaCompilerOptions;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 import org.apache.log4j.Level;
@@ -100,17 +98,6 @@ public final class ModuleMaker {
     MessageSender sender = new MessageSender(handler, logger, mmName, Level.ALL);
     // PerformanceTracer.printReport sends it with info level, but it doesn't seem reasonable to collect performance data unless we debug MM.
     myTracer = new CompositeTracer(logger.isDebugEnabled() ? new PerformanceTracer(mmName) : new NullPerformanceTracer(), sender);
-  }
-
-    /**
-     * Accepts the logging strategy (via {@link IMessageHandler})
-     * and the logging level {@link MessageKind}.
-     * @deprecated level is ignored, use {@link #ModuleMaker(IMessageHandler)} instead
-     */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public ModuleMaker(@NotNull IMessageHandler handler, @NotNull MessageKind level) {
-    this(handler);
   }
 
   /**
