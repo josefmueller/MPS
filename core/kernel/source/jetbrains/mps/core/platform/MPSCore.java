@@ -70,6 +70,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
   private LanguageRegistry myLanguageRegistry;
   private SRepositoryRegistry myRepositoryRegistry;
   private FacetsRegistry myModuleFacetsRegistry;
+  private PathMacros myPathMacros;
 
   /**
    * made package-private
@@ -94,6 +95,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     myModuleRepository = null;
     myLanguageRegistry = null;
     myRepositoryRegistry = null;
+    myPathMacros = null;
     myInitialized = false;
   }
 
@@ -112,7 +114,7 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     init(new SModelFileTracker.Plug(myRepositoryRegistry));
     init(new ModuleRepositoryFacade(myModuleRepository));
     init(new ModuleFileTracker(myModuleRepository));
-    init(new PathMacros());
+    myPathMacros = init(new PathMacros());
     myLibraryInitializer = init(new LibraryInitializer(myModuleRepository));
     init(new GlobalScope(myModuleRepository));
     init(new ImmatureReferences(myModuleRepository, myPersistenceFacade));
@@ -215,6 +217,9 @@ public final class MPSCore extends ComponentPlugin implements ComponentHost {
     }
     if (FacetsFacade.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myModuleFacetsRegistry);
+    }
+    if (PathMacros.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myPathMacros);
     }
     return null;
   }

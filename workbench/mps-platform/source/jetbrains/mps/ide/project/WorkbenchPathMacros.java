@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import com.intellij.openapi.options.ShowSettingsUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.ui.Messages;
-import com.intellij.openapi.util.AsyncResult.Handler;
+import com.intellij.util.Consumer;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.PathMacrosProvider;
 import jetbrains.mps.util.EqualUtil;
@@ -43,7 +43,12 @@ import java.util.Map;
 import java.util.Set;
 
 public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProvider {
+  private final MPSCoreComponents myCoreComponents;
+  private final PathMacros myPathMacrosIdea;
+
   public WorkbenchPathMacros(MPSCoreComponents coreComponents, PathMacros ideaPathMacros) {
+    myCoreComponents = coreComponents;
+    myPathMacrosIdea = ideaPathMacros;
   }
 
   @NotNull
@@ -52,29 +57,33 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
     return "Workbench path macros provider";
   }
 
+  private jetbrains.mps.project.PathMacros getMPSCounterpart() {
+    return myCoreComponents.getPlatform().findComponent(jetbrains.mps.project.PathMacros.class);
+  }
+
   @Override
   public void initComponent() {
-    jetbrains.mps.project.PathMacros.getInstance().addMacrosProvider(this);
+    getMPSCounterpart().addMacrosProvider(this);
   }
 
   @Override
   public void disposeComponent() {
-    jetbrains.mps.project.PathMacros.getInstance().removeMacrosProvider(this);
+    getMPSCounterpart().removeMacrosProvider(this);
   }
 
   @Override
   public Set<String> getNames() {
-    return PathMacros.getInstance().getAllMacroNames();
+    return myPathMacrosIdea.getAllMacroNames();
   }
 
   @Override
   public Set<String> getUserNames() {
-    return PathMacros.getInstance().getUserMacroNames();
+    return myPathMacrosIdea.getUserMacroNames();
   }
 
   @Override
   public String getValue(String name) {
-    return PathMacros.getInstance().getValue(name);
+    return myPathMacrosIdea.getValue(name);
   }
 
   @Override
@@ -82,10 +91,12 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
     Notifications.Bus.notify(new Notification(Notifications.SYSTEM_MESSAGES_GROUP_ID, "Undefined macro", macro + " <html><a href=''>fix...</a></html>", NotificationType.ERROR, new NotificationListener() {
       @Override
       public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent event) {
-        if (event.getEventType() != EventType.ACTIVATED) return;
-        DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
+        if (event.getEventType() != EventType.ACTIVATED) {
+          return;
+        }
+        DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Consumer<DataContext>() {
           @Override
-          public void run(DataContext dataContext) {
+          public void consume(DataContext dataContext) {
             Project project = PlatformDataKeys.PROJECT.getData(dataContext);
 
             Map<String, String> oldMacroses = collectMacroses();
@@ -120,10 +131,9 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
   }
 
   private Map<String, String> collectMacroses() {
-    HashMap<String, String> res = new HashMap<String, String>();
-    PathMacros pm = PathMacros.getInstance();
-    for (String name : pm.getUserMacroNames()) {
-      res.put(name, pm.getValue(name));
+    HashMap<String, String> res = new HashMap<>();
+    for (String name : myPathMacrosIdea.getUserMacroNames()) {
+      res.put(name, myPathMacrosIdea.getValue(name));
     }
     return res;
   }
