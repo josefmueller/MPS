@@ -41,13 +41,13 @@ public interface SModelListener {
   void devkitRemoved(SModelDevKitEvent event);
 
   /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModelChangeListener#nodeAdded}
+   * @deprecated use {@link org.jetbrains.mps.openapi.model.SNodeChangeListener#nodeAdded}
    */
   @Deprecated
   void rootAdded(SModelRootEvent event);
 
   /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModelChangeListener#nodeRemoved}
+   * @deprecated use {@link org.jetbrains.mps.openapi.model.SNodeChangeListener#nodeRemoved}
    */
   @Deprecated
   void rootRemoved(SModelRootEvent event);

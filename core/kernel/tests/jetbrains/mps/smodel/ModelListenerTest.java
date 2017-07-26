@@ -24,16 +24,20 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.event.SNodeAddEvent;
 import org.jetbrains.mps.openapi.event.SNodeReadEvent;
+import org.jetbrains.mps.openapi.event.SNodeRemoveEvent;
+import org.jetbrains.mps.openapi.event.SPropertyChangeEvent;
 import org.jetbrains.mps.openapi.event.SPropertyReadEvent;
+import org.jetbrains.mps.openapi.event.SReferenceChangeEvent;
 import org.jetbrains.mps.openapi.event.SReferenceReadEvent;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessListener;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -708,7 +712,7 @@ public class ModelListenerTest {
   }
 
   /**
-   * {@link org.jetbrains.mps.openapi.model.SModelChangeListener} shall dispatch events for unregistered models as well.
+   * {@link org.jetbrains.mps.openapi.model.SNodeChangeListener} shall dispatch events for unregistered models as well.
    * {@link jetbrains.mps.smodel.event.SModelListener} DOES NOT dispatch events for unregistered models.
    */
   @Test
@@ -909,7 +913,7 @@ public class ModelListenerTest {
     }
   }
 
-  private static class ChangeListener2 implements SModelChangeListener {
+  private static class ChangeListener2 implements SNodeChangeListener {
     // use list, not set to check for number of events, even if they come for the same object, to notice excessive notifications
     public final List<SNode> myAdded = new ArrayList<SNode>();
     public final List<SNode> myRemoved = new ArrayList<SNode>();
@@ -917,23 +921,23 @@ public class ModelListenerTest {
     public final List<String> myChangedReferences = new ArrayList<String>();
 
     @Override
-    public void nodeAdded(SModel model, SNode parent, String role, SNode child) {
-      myAdded.add(child);
+    public void nodeAdded(@NotNull SNodeAddEvent event) {
+      myAdded.add(event.getChild());
     }
 
     @Override
-    public void nodeRemoved(SModel model, SNode parent, String role, SNode child) {
-      myRemoved.add(child);
+    public void nodeRemoved(@NotNull SNodeRemoveEvent event) {
+      myRemoved.add(event.getChild());
     }
 
     @Override
-    public void propertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
-      myChangedProperties.add(propertyName);
+    public void propertyChanged(@NotNull SPropertyChangeEvent event) {
+      myChangedProperties.add(event.getProperty().getName());
     }
 
     @Override
-    public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
-      myChangedReferences.add(role);
+    public void referenceChanged(@NotNull SReferenceChangeEvent event) {
+      myChangedReferences.add(event.getAssociationLink().getName());
     }
 
     /*package*/ void reset() {

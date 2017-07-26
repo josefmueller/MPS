@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  *
  * Events are dispatched, model access ensured.
  * <p>
- * OpenAPI listeners ({@link org.jetbrains.mps.openapi.model.SNodeAccessListener}, {@link org.jetbrains.mps.openapi.model.SModelChangeListener})
+ * OpenAPI listeners ({@link org.jetbrains.mps.openapi.model.SNodeAccessListener}, {@link org.jetbrains.mps.openapi.model.SNodeChangeListener})
  * are notified through {@link jetbrains.mps.smodel.event.ModelEventDispatch},
  * this class shall not depend on particular openapi.SModel implementation (e.g. SModelBase or EditableSModelBase).
  * <p>

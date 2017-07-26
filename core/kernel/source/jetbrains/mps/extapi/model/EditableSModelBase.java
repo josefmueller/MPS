@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,21 +22,19 @@ import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker.ReloadCallback;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.DataSourceFactoryBridge;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.persistence.DataSourceFactoryNotFoundException;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.DataSourceFactoryBridge;
 import jetbrains.mps.persistence.NoSourceRootsInModelRootException;
 import jetbrains.mps.persistence.SourceRootDoesNotExistException;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
@@ -293,11 +291,6 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     return sourceRoot;
   }
 
-  @NotNull
-  private String getExtension(IFile oldFile) {
-    return StringUtil.emptyIfNull(FileUtil.getExtension(oldFile.getName()));
-  }
-
   @Override
   public void updateTimestamp() {
     myTimestampTracker.updateTimestamp(getSource());
@@ -306,16 +299,6 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
   @Override
   public boolean needsReloading() {
     return myTimestampTracker.needsReloading(getSource());
-  }
-
-  @Override
-  public void addChangeListener(SModelChangeListener l) {
-    getNodeEventDispatch().addChangeListener(l);
-  }
-
-  @Override
-  public void removeChangeListener(SModelChangeListener l) {
-    getNodeEventDispatch().removeChangeListener(l);
   }
 
   @Override

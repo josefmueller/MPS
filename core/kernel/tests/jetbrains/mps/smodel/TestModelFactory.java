@@ -33,9 +33,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessListener;
+import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -181,18 +181,16 @@ final class TestModelFactory {
     return ((EditableSModel) myModel).isChanged();
   }
 
-  void attachChangeListeners(SModelListener l1, SModelChangeListener l2) {
-    assert myNeedEditableModel;
+  void attachChangeListeners(SModelListener l1, SNodeChangeListener l2) {
     assert myModel != null : "call createModel() first";
     ((SModelInternal) myModel).addModelListener(l1);
-    ((EditableSModel) myModel).addChangeListener(l2);
+    myModel.addChangeListener(l2);
   }
 
-  void detachChangeListeners(SModelListener l1, SModelChangeListener l2) {
-    assert myNeedEditableModel;
+  void detachChangeListeners(SModelListener l1, SNodeChangeListener l2) {
     assert myModel != null : "call createModel() first";
     ((SModelInternal) myModel).removeModelListener(l1);
-    ((EditableSModel) myModel).removeChangeListener(l2);
+    myModel.removeChangeListener(l2);
   }
 
   private String nextNodeName(int i) {
@@ -210,8 +208,8 @@ final class TestModelFactory {
   }
 
   // FIXME node add/remove operations don't require EditableSModelBase to dispatch events any more, and we may get back SModelBase as superclass
-  // however, at the moment, ModelListenerTest registers listeners through legacy API (to ensure they work as expected), and unless we drop this
-  // old code after 3.3, this class has to be EditableSModelBase
+  // however, at the moment, ther are still casts in #clearEditableChanged() and #isEditableChanged and unless we drop these,
+  // the class has to be of EditableSModel
   @ToRemove(version = 3.3)
   private static class TestModelBase extends EditableSModelBase {
     private final jetbrains.mps.smodel.SModel myModelData;

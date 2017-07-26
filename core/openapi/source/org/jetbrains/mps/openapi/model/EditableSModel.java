@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,18 +42,4 @@ public interface EditableSModel extends SModel {
   //note this can unregister the model
   // FIXME why load and DataSource are exposed in SModel, but reloadFromSource() is limited to EditableSModel?
   void reloadFromSource();
-
-  /**
-   * This method will be removed after 3.3 release.
-   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModel#addChangeListener(SNodeChangeListener)} instead
-   */
-  @Deprecated
-  void addChangeListener(SModelChangeListener l);
-
-  /**
-   * This method will be removed after 3.3 release.
-   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModel#removeChangeListener(SNodeChangeListener)} instead
-   */
-  @Deprecated
-  void removeChangeListener(SModelChangeListener l);
 }
