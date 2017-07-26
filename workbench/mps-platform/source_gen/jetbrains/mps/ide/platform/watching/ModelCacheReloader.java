@@ -11,19 +11,20 @@ import jetbrains.mps.generator.ModelGenerationStatusManager;
 import org.apache.log4j.Level;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.vfs.VirtualFileAdapter;
+import com.intellij.openapi.vfs.VirtualFileMoveEvent;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileEvent;
+import java.util.ArrayDeque;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import com.intellij.openapi.vfs.VirtualFileAdapter;
-import com.intellij.openapi.vfs.VirtualFileMoveEvent;
 
 public class ModelCacheReloader implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(ModelCacheReloader.class);
   private VirtualFileManager myVirtualFileManager;
-  private ModelCacheReloader.CacheFileListener myFileListener = new ModelCacheReloader.CacheFileListener();
+  private ModelCacheReloader.CacheFileListener myFileListener;
   private final MPSCoreComponents myMPS;
-  private ModelGenerationStatusManager myGenStatusManager;
 
   public ModelCacheReloader(VirtualFileManager virtualFileManager, MPSCoreComponents coreComponents) {
     // TODO rewrite using FileSystem.getInstance().addListener(..) 
@@ -33,8 +34,9 @@ public class ModelCacheReloader implements ApplicationComponent {
   }
   @Override
   public void initComponent() {
-    myGenStatusManager = myMPS.getPlatform().findComponent(ModelGenerationStatusManager.class);
-    if (myGenStatusManager != null) {
+    ModelGenerationStatusManager mgsm = myMPS.getPlatform().findComponent(ModelGenerationStatusManager.class);
+    if (mgsm != null) {
+      myFileListener = new ModelCacheReloader.CacheFileListener(mgsm);
       myVirtualFileManager.addVirtualFileListener(myFileListener);
     } else {
       if (LOG.isEnabledFor(Level.WARN)) {
@@ -44,38 +46,76 @@ public class ModelCacheReloader implements ApplicationComponent {
   }
   @Override
   public void disposeComponent() {
-    myVirtualFileManager.removeVirtualFileListener(myFileListener);
+    if (myFileListener != null) {
+      myVirtualFileManager.removeVirtualFileListener(myFileListener);
+      myFileListener = null;
+    }
   }
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
-    return getClass().getName();
+    return "Update generation status cache";
   }
-  private void invalidateForFile(VirtualFileEvent event) {
-    if (GenerationDependenciesCache.CACHE_FILE_NAME.equals(event.getFileName())) {
-      IFile file = VirtualFileUtils.toIFile(event.getFile());
-      myGenStatusManager.invalidateData(file);
-    }
-  }
-  private class CacheFileListener extends VirtualFileAdapter {
-    private CacheFileListener() {
+
+  private static class CacheFileListener extends VirtualFileAdapter {
+    private final ModelGenerationStatusManager myGenStatusManager;
+
+    /*package*/ CacheFileListener(ModelGenerationStatusManager mgsm) {
+      myGenStatusManager = mgsm;
     }
     @Override
     public void beforeFileMovement(VirtualFileMoveEvent event) {
-      invalidateForFile(event);
+      VirtualFile file = event.getFile();
+      if (file.isDirectory()) {
+        invalidateForDir(file);
+      } else {
+        invalidateForEvent(event);
+      }
     }
     @Override
     public void beforeFileDeletion(VirtualFileEvent event) {
-      invalidateForFile(event);
+      VirtualFile file = event.getFile();
+      if (file.isDirectory()) {
+        invalidateForDir(file);
+      } else {
+        invalidateForEvent(event);
+      }
     }
     @Override
     public void fileCreated(VirtualFileEvent event) {
-      invalidateForFile(event);
+      invalidateForEvent(event);
     }
     @Override
     public void contentsChanged(VirtualFileEvent event) {
-      invalidateForFile(event);
+      invalidateForEvent(event);
     }
+
+    private void invalidateForDir(VirtualFile dir) {
+      ArrayDeque<VirtualFile> dirQueue = new ArrayDeque<VirtualFile>();
+      dirQueue.add(dir);
+      do {
+        VirtualFile nextDir = dirQueue.removeFirst();
+        for (VirtualFile f : nextDir.getChildren()) {
+          if (f.isDirectory()) {
+            dirQueue.add(f);
+          } else if (GenerationDependenciesCache.CACHE_FILE_NAME.equals(f.getName())) {
+            invalidateForFile(f);
+          }
+        }
+      } while (!(dirQueue.isEmpty()));
+    }
+
+    private void invalidateForEvent(VirtualFileEvent event) {
+      if (GenerationDependenciesCache.CACHE_FILE_NAME.equals(event.getFileName())) {
+        invalidateForFile(event.getFile());
+      }
+    }
+
+    private void invalidateForFile(VirtualFile vf) {
+      IFile file = VirtualFileUtils.toIFile(vf);
+      myGenStatusManager.invalidateData(file);
+    }
+
   }
 }
