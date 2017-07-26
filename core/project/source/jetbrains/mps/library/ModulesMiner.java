@@ -30,10 +30,8 @@ import jetbrains.mps.project.structure.modules.LibraryDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import jetbrains.mps.vfs.FileRefresh;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -113,31 +111,6 @@ public final class ModulesMiner {
     // sort values so that languages come in front of generators.
     rv.sort(Comparator.comparingInt(v -> v.getDescriptor() instanceof LanguageDescriptor ? 0 : 1));
     return Collections.unmodifiableList(rv);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public List<ModuleHandle> collectModules(IFile dir, boolean refreshFiles) {
-    return collectModules(dir, null, refreshFiles);
-  }
-
-  /**
-   * @deprecated use {@link #collectModules(IFile)} instead.
-   *             To refresh files, use {@link FileRefresh} directly
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public List<ModuleHandle> collectModules(IFile dir, Set<IFile> excludes, boolean refreshFiles) {
-    if (excludes != null) {
-      myExcludes.addAll(excludes);
-    }
-    if (refreshFiles) {
-      LOG.debug("Refreshing recursively in the " + dir);
-      new FileRefresh(dir).run();
-    }
-    myOutcome.clear();
-    collectModules(dir);
-    return new ArrayList<>(myOutcome);
   }
 
   private boolean needProcess(IFile file) {
