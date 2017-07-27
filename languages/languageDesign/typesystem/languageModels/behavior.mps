@@ -331,14 +331,18 @@
     <property role="3GE5qa" value="definition.expression" />
     <ref role="13h7C2" to="tpd4:h5Yat_Q" resolve="ApplicableNodeCondition" />
     <node concept="13i0hz" id="hEwIszL" role="13h7CS">
-      <property role="13i0iv" value="true" />
+      <property role="13i0iv" value="false" />
       <property role="13i0is" value="false" />
       <property role="TrG5h" value="getApplicableConcept" />
       <property role="13i0it" value="true" />
       <node concept="3Tqbb2" id="hEwIszM" role="3clF45">
         <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
       </node>
-      <node concept="3clFbS" id="hEwIszN" role="3clF47" />
+      <node concept="3clFbS" id="hEwIszN" role="3clF47">
+        <node concept="3clFbF" id="FSZClyrrub" role="3cqZAp">
+          <node concept="10Nm6u" id="FSZClyrrua" role="3clFbG" />
+        </node>
+      </node>
       <node concept="3Tm1VV" id="hJrm0pi" role="1B3o_S" />
     </node>
     <node concept="13hLZK" id="hEwIszO" role="13h7CW">

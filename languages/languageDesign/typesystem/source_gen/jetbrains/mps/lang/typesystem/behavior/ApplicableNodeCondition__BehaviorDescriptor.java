@@ -24,13 +24,16 @@ public final class ApplicableNodeCondition__BehaviorDescriptor extends BaseBHDes
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e29d976L, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getApplicableConcept_idhEwIszL = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getApplicableConcept").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIszL").registry(REGISTRY).build();
+  public static final SMethod<SNode> getApplicableConcept_idhEwIszL = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getApplicableConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIszL").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getApplicableConcept_idhEwIszL);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static SNode getApplicableConcept_idhEwIszL(@NotNull SNode __thisNode__) {
+    return null;
+  }
 
   /*package*/ ApplicableNodeCondition__BehaviorDescriptor() {
     super(REGISTRY);
@@ -48,6 +51,8 @@ public final class ApplicableNodeCondition__BehaviorDescriptor extends BaseBHDes
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((SNode) getApplicableConcept_idhEwIszL(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
