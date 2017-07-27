@@ -768,7 +768,7 @@ public class ModelListenerTest {
     }
 
     @Override
-    public void nodeRead(@NotNull SNodeReadEvent event) {
+    public synchronized void nodeRead(@NotNull SNodeReadEvent event) {
       myVisitedNodes++;
     }
 
