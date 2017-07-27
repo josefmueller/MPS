@@ -34,6 +34,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * Control listeners that track changes to a model node.
@@ -73,7 +75,12 @@ public class SModelNodeListeners {
         refreshAffectedTreeNodes(model);
       }
     };
-    myGenStatusListener = sm -> myTreeHighlighter.refreshGenerationStatusForTreeNodes(findTreeNode(sm));
+    myGenStatusListener = new ModelGenerationStatusListener() {
+      @Override
+      public void generatedFilesChanged(Collection<SModel> models) {
+        myTreeHighlighter.refreshGenerationStatusForTreeNodes(findTreeNodes(models));
+      }
+    };
   }
 
   public void startListening(SRepository projectRepository, ModelGenerationStatusManager generationStatusManager) {
@@ -139,6 +146,12 @@ public class SModelNodeListeners {
     synchronized (myTreeNodes) {
       final Collection<SModelTreeNode> nodes = myTreeNodes.get(sm.getReference());
       return nodes == null ? Collections.emptyList() : new ArrayList<>(nodes);
+    }
+  }
+
+  Collection<SModelTreeNode> findTreeNodes(Collection<SModel> models) {
+    synchronized (myTreeNodes) {
+      return models.stream().map(SModel::getReference).map(myTreeNodes::get).filter(Objects::nonNull).flatMap(Collection::stream).collect(Collectors.toList());
     }
   }
 

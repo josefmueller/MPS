@@ -65,12 +65,20 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   private final List<ModelGenerationStatusListener> myListeners = new ArrayList<>();
 
+  // XXX with multiple projects and independent project repositories, would need distnct GDC per repository
+  //     to avoid stale cache information, like in https://youtrack.jetbrains.com/issue/MPS-26346
   private final GenerationDependenciesCache myModelHashCache;
 
   private final SRepositoryContentAdapter myModelReloadListener = new SRepositoryContentAdapter() {
     @Override
     protected boolean isIncluded(SModule module) {
       return !module.isPackaged() && !module.isReadOnly();
+    }
+
+    @Override
+    public void beforeModuleRemoved(@NotNull SModule module) {
+      ModelGenerationStatusManager.this.invalidateData(module.getModels());
+      super.beforeModuleRemoved(module);
     }
 
     @Override
@@ -184,15 +192,22 @@ public class ModelGenerationStatusManager implements CoreComponent {
    * and we have to update all model instances in all repositories (i.e. if the same model is loaded into few).
    */
   public void invalidateData(Iterable<? extends SModel> models) {
-    models.forEach(myModelHashCache::clean);
+    List<SModel> toNotify = new ArrayList<>();
+    for (SModel m : models) {
+      if (myModelHashCache.clean(m)) {
+        toNotify.add(m);
+      }
+    }
+    if (toNotify.isEmpty()) {
+      return;
+    }
     ModelGenerationStatusListener[] copy;
     synchronized (myListeners) {
       copy = myListeners.toArray(new ModelGenerationStatusListener[myListeners.size()]);
     }
-    for (SModel model : models) {
-      for (ModelGenerationStatusListener l : copy) {
-        l.generatedFilesChanged(model);
-      }
+    toNotify = Collections.unmodifiableList(toNotify);
+    for (ModelGenerationStatusListener l : copy) {
+      l.generatedFilesChanged(toNotify);
     }
   }
 
@@ -219,6 +234,10 @@ public class ModelGenerationStatusManager implements CoreComponent {
         }
       });
     }
+  }
+
+  public void invalidateCache() {
+    myModelHashCache.clean();
   }
 
   /**
