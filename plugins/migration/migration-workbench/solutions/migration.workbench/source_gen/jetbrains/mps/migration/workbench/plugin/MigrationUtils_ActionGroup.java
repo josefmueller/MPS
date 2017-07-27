@@ -9,6 +9,7 @@ public class MigrationUtils_ActionGroup extends GeneratedActionGroup {
   public MigrationUtils_ActionGroup() {
     super("Utils", ID);
     this.setIsInternal(false);
+    this.setMnemonic("t".charAt(0));
     this.setPopup(true);
     MigrationUtils_ActionGroup.this.addAction("jetbrains.mps.migration.workbench.plugin.FindMetaCreationCode_Action");
   }

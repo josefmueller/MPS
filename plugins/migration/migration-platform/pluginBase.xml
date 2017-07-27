@@ -18,7 +18,7 @@
   <depends>jetbrains.mps.core</depends>
 
   <actions>
-    <group id="Migration" text="Migration" configurable="true" popup="true" compact="true">
+    <group id="Migration" text="_Migration" configurable="true" popup="true" compact="true">
       <add-to-group group-id="MainMenu" relative-to-action="ToolsMenu" anchor="after" />
     </group>
   </actions>

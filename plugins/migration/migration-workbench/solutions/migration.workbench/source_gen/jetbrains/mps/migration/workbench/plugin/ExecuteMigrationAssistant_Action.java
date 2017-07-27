@@ -26,6 +26,7 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
     super("Run Migration Assistant", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
+    this.setMnemonic("u".charAt(0));
   }
   @Override
   public boolean isDumbAware() {

@@ -34,6 +34,7 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
   public LanguageMigrations_ActionGroup() {
     super("Language Migrations", ID);
     this.setIsInternal(false);
+    this.setMnemonic("l".charAt(0));
     this.setPopup(true);
   }
   public void doUpdate(AnActionEvent event) {
