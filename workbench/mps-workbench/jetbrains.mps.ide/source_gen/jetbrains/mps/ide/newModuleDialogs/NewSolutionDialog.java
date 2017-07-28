@@ -25,6 +25,7 @@ public class NewSolutionDialog extends AbstractModuleCreationDialog<Solution> {
     String solutionLocation = mySettings.getModuleLocation();
     myResult = NewModuleUtil.createSolution(solutionName, solutionLocation, myProject);
     ((StandaloneMPSProject) myProject).setFolderFor(myResult, myVirtualFolder);
+    myProject.save();
   }
 
   @Override

@@ -48,7 +48,7 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
         LOG.error("Cannot create runtime / sandbox module", e);
       }
     }
-
+    myProject.save();
     myResult = language;
   }
 
