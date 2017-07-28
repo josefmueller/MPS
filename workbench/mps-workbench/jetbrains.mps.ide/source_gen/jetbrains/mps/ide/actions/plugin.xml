@@ -6,7 +6,7 @@
   <description>IDE core plugin</description>
   <version>2017.2</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="171.1" />
+  <idea-version since-build="172.1" />
   
   <application-components>
     <component>

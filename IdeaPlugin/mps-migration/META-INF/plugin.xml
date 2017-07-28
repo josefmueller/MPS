@@ -4,7 +4,7 @@
   <description>Migration Support for Idea Plugin</description>
   <version>2017.2</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
-  <idea-version since-build="171.1" until-build="173.1"/>
+  <idea-version since-build="172.1" until-build="173.1"/>
 
   <xi:include href="pluginBase.xml" xpointer="xpointer(/idea-plugin/*)"/>
 

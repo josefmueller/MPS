@@ -23153,7 +23153,7 @@
     <property role="9BnSM" value="JetBrains" />
     <property role="TrG5h" value="IDE" />
     <property role="1qHB85" value="/MPS_16.png" />
-    <property role="9BnSO" value="171.1" />
+    <property role="9BnSO" value="172.1" />
     <property role="9BnSK" value="2017.2" />
   </node>
   <node concept="sE7Ow" id="1JAxb5h3N20">
@@ -25092,7 +25092,7 @@
         <node concept="3clFbF" id="4NDCWHeJ$oW" role="3cqZAp">
           <node concept="2OqwBi" id="4NDCWHeJ$oX" role="3clFbG">
             <node concept="37vLTw" id="3GM_nagT$WW" role="2Oq$k0">
-              <ref role="3cqZAo" node="4NDCWHeJ$fh" />
+              <ref role="3cqZAo" node="4NDCWHeJ$fh" resolve="dialog" />
             </node>
             <node concept="liA8E" id="4NDCWHeJ$oZ" role="2OqNvi">
               <ref role="37wK5l" to="qy69:~BlameDialog.addExceptions(java.util.Collection):void" resolve="addExceptions" />
@@ -25109,7 +25109,7 @@
                       <node concept="2OqwBi" id="1pgB67pOIO5" role="2Oq$k0">
                         <node concept="2WthIp" id="1pgB67pOIO8" role="2Oq$k0" />
                         <node concept="1DTwFV" id="1pgB67pOIOa" role="2OqNvi">
-                          <ref role="2WH_rO" node="4NDCWHeJ$b$" />
+                          <ref role="2WH_rO" node="4NDCWHeJ$b$" resolve="messages" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1pgB67pOMb8" role="2OqNvi">
@@ -25123,7 +25123,7 @@
                           <node concept="3clFbF" id="1pgB67pOXnn" role="3cqZAp">
                             <node concept="2OqwBi" id="1pgB67pOY0A" role="3clFbG">
                               <node concept="37vLTw" id="1pgB67pOXnm" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1pgB67pORE4" />
+                                <ref role="3cqZAo" node="1pgB67pORE4" resolve="message" />
                               </node>
                               <node concept="liA8E" id="1pgB67pOYSE" role="2OqNvi">
                                 <ref role="37wK5l" to="et5u:~IMessage.getException():java.lang.Throwable" resolve="getException" />
