@@ -49,6 +49,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.presentation.SmartAliasHelper;
 import jetbrains.mps.generator.template.TemplateVarContext;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.Map;
@@ -576,7 +577,23 @@ public class QueriesGenerated extends QueryProviderBase {
     }
   }
   public static Object insertMacro_varValue_4630900134062319164(final TemplateVarContext _context) {
-    return ListSequence.fromList(SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).sort(new ISelector<SNode, String>() {
+    List<SNode> nodes = SModelOperations.nodes(_context.getInputModel(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+    Iterable<String> conceptNames = ListSequence.fromList(nodes).select(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      }
+    });
+    if (Sequence.fromIterable(conceptNames).distinct().count() < Sequence.fromIterable(conceptNames).count()) {
+      final String dupName = Sequence.fromIterable(conceptNames).disjunction(Sequence.fromIterable(conceptNames).distinct()).first();
+      SNode dupConcept = ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).equals(dupName);
+        }
+      }).first();
+      String errMsg = String.format("The structure model contains concepts with the same name '%s', please rename it", dupName);
+      _context.showErrorMessage(dupConcept, errMsg);
+    }
+    return ListSequence.fromList(nodes).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       }
