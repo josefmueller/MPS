@@ -18,10 +18,12 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NamedThreadFactory;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -31,7 +33,6 @@ import java.util.concurrent.atomic.AtomicLong;
  * Evgeny Gryaznov, Feb 23, 2010
  */
 public class GenerationTaskPool implements IGenerationTaskPool {
-
   public GenerationTaskPool(int numberOfThreads) {
     myExecutor = new ThreadPoolExecutor(numberOfThreads, numberOfThreads, 10, TimeUnit.SECONDS, queue, new NamedThreadFactory("generation-thread-")) {
       @Override
@@ -62,7 +63,7 @@ public class GenerationTaskPool implements IGenerationTaskPool {
     }
     tasksInQueue.incrementAndGet();
     GenerationTaskAdapter gta = new GenerationTaskAdapter(r, this::handleException);
-    myExecutor.execute(new ModelReadAdapter(gta));
+    myExecutor.execute(new ModelReadAdapter(new ModelReadFlagLegacyAccess(), gta));
   }
 
   /*package*/ void handleException(Throwable param) {
@@ -112,16 +113,10 @@ public class GenerationTaskPool implements IGenerationTaskPool {
   }
 
 
-  // much like ModelReadRunnable, but we can't use regular MA.runReadAction
-  private static class ModelReadAdapter implements Runnable {
-    private final Runnable myDelegate;
-
-    public ModelReadAdapter(Runnable delegate) {
-      myDelegate = delegate;
-    }
+  private static class ModelReadFlagLegacyAccess implements Executor {
 
     @Override
-    public void run() {
+    public void execute(@NotNull Runnable command) {
     /*
      * readEnabledFlag is a workaround to deal with implementation peculiarities of non-fair ReentrantReadWriteLock.
      * IDEA uses non-fair RRWL for its read/write actions, which we use for our model read-write actions.
@@ -137,10 +132,28 @@ public class GenerationTaskPool implements IGenerationTaskPool {
      */
       final boolean flag = ModelAccess.instance().setReadEnabledFlag(true);
       try {
-        myDelegate.run();
+        command.run();
       } finally {
         ModelAccess.instance().setReadEnabledFlag(flag);
       }
+    }
+  }
+
+  // XXX could be generic WithExecutorRunnable, as it needs only Executor service.
+  //     OTOH, if we add MAT#execute(Runnable, Callback<> onInterrupt), we'd better use MAT here
+  // much like ModelReadRunnable, but we can't use regular MA.runReadAction directly (see ModelReadFlagLegacyAccess above)
+  private static class ModelReadAdapter implements Runnable {
+    private final Executor myAccessExecutor;
+    private final Runnable myDelegate;
+
+    ModelReadAdapter(Executor accessExecutor, Runnable delegate) {
+      myAccessExecutor = accessExecutor;
+      myDelegate = delegate;
+    }
+
+    @Override
+    public void run() {
+      myAccessExecutor.execute(myDelegate);
     }
   }
 }
