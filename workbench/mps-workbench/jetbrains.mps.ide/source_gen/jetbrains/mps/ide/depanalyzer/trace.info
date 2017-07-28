@@ -255,47 +255,56 @@
   </root>
   <root nodeRef="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)/3131436097929923142">
     <file name="DependencyTreeNode.java">
-      <node id="7732415541001061654" at="13,0,14,0" concept="5" trace="myLink" />
-      <node id="6493337905732547652" at="14,0,15,0" concept="5" trace="myProject" />
-      <node id="7732415541001061680" at="15,63,16,16" concept="15" />
-      <node id="7732415541001061683" at="16,16,17,18" concept="4" />
-      <node id="6493337905732547656" at="17,18,18,27" concept="4" />
-      <node id="7732415541001061691" at="18,27,19,49" concept="4" />
-      <node id="6416099634000456811" at="19,49,20,96" concept="9" />
-      <node id="7732415541001061695" at="20,96,21,67" concept="4" />
-      <node id="7732415541001061702" at="21,67,22,75" concept="4" />
-      <node id="7732415541001061664" at="24,28,25,18" concept="10" />
-      <node id="1344598942493268043" at="27,48,28,25" concept="10" />
-      <node id="2620473038276753020" at="35,30,36,60" concept="10" />
-      <node id="7094104350169520707" at="38,28,39,100" concept="9" />
-      <node id="8300867715641541231" at="39,100,40,89" concept="4" />
-      <node id="1344598942492836695" at="43,29,44,62" concept="4" />
-      <node id="7732415541001061659" at="24,0,27,0" concept="8" trace="getLink#()Ljetbrains/mps/ide/depanalyzer/DepLink;" />
-      <node id="1344598942493186761" at="27,0,30,0" concept="8" trace="getModuleReference#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="3131436097929923151" at="34,0,38,0" concept="8" trace="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="8300867715641541170" at="38,0,42,0" concept="8" trace="setDepLeaf#()V" />
-      <node id="6904963720429782656" at="42,0,46,0" concept="8" trace="doubleClick#()V" />
-      <node id="7732415541001061670" at="15,0,24,0" concept="2" trace="DependencyTreeNode#(Ljetbrains/mps/project/Project;Ljetbrains/mps/ide/depanalyzer/DepLink;)V" />
-      <scope id="7732415541001061662" at="24,28,25,18" />
-      <scope id="1344598942493186765" at="27,48,28,25" />
-      <scope id="3131436097929923154" at="35,30,36,60" />
-      <scope id="6904963720429782659" at="43,29,44,62" />
-      <scope id="8300867715641541173" at="38,28,40,89">
+      <node id="7732415541001061654" at="14,0,15,0" concept="5" trace="myLink" />
+      <node id="6493337905732547652" at="15,0,16,0" concept="5" trace="myProject" />
+      <node id="7732415541001061680" at="16,63,17,16" concept="15" />
+      <node id="7732415541001061683" at="17,16,18,18" concept="4" />
+      <node id="6493337905732547656" at="18,18,19,27" concept="4" />
+      <node id="7732415541001061691" at="19,27,20,49" concept="4" />
+      <node id="6416099634000456811" at="20,49,21,96" concept="9" />
+      <node id="7732415541001061695" at="21,96,22,67" concept="4" />
+      <node id="7732415541001061702" at="22,67,23,75" concept="4" />
+      <node id="7732415541001061664" at="25,28,26,18" concept="10" />
+      <node id="1344598942493268043" at="28,48,29,25" concept="10" />
+      <node id="4892929723190587617" at="36,30,37,67" concept="9" />
+      <node id="4892929723190588785" at="39,25,40,72" concept="4" />
+      <node id="2620473038276753020" at="42,7,43,24" concept="10" />
+      <node id="7094104350169520707" at="45,28,46,100" concept="9" />
+      <node id="8300867715641541231" at="46,100,47,89" concept="4" />
+      <node id="1344598942492836695" at="50,29,51,62" concept="4" />
+      <node id="7732415541001061659" at="25,0,28,0" concept="8" trace="getLink#()Ljetbrains/mps/ide/depanalyzer/DepLink;" />
+      <node id="1344598942493186761" at="28,0,31,0" concept="8" trace="getModuleReference#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4892929723190579990" at="39,0,42,0" concept="8" trace="run#()V" />
+      <node id="8300867715641541170" at="45,0,49,0" concept="8" trace="setDepLeaf#()V" />
+      <node id="6904963720429782656" at="49,0,53,0" concept="8" trace="doubleClick#()V" />
+      <node id="4892929723190579988" at="37,67,42,7" concept="4" />
+      <node id="7732415541001061670" at="16,0,25,0" concept="2" trace="DependencyTreeNode#(Ljetbrains/mps/project/Project;Ljetbrains/mps/ide/depanalyzer/DepLink;)V" />
+      <node id="3131436097929923151" at="35,0,45,0" concept="8" trace="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <scope id="7732415541001061662" at="25,28,26,18" />
+      <scope id="1344598942493186765" at="28,48,29,25" />
+      <scope id="4892929723190579992" at="39,25,40,72" />
+      <scope id="6904963720429782659" at="50,29,51,62" />
+      <scope id="8300867715641541173" at="45,28,47,89">
         <var name="linktype" id="7094104350169520708" />
       </scope>
-      <scope id="7732415541001061659" at="24,0,27,0" />
-      <scope id="1344598942493186761" at="27,0,30,0" />
-      <scope id="3131436097929923151" at="34,0,38,0" />
-      <scope id="8300867715641541170" at="38,0,42,0" />
-      <scope id="6904963720429782656" at="42,0,46,0" />
-      <scope id="7732415541001061679" at="15,63,22,75">
+      <scope id="7732415541001061659" at="25,0,28,0" />
+      <scope id="1344598942493186761" at="28,0,31,0" />
+      <scope id="4892929723190579990" at="39,0,42,0" />
+      <scope id="8300867715641541170" at="45,0,49,0" />
+      <scope id="6904963720429782656" at="49,0,53,0" />
+      <scope id="7732415541001061679" at="16,63,23,75">
         <var name="linktype" id="6416099634000456812" />
       </scope>
-      <scope id="7732415541001061670" at="15,0,24,0">
+      <scope id="3131436097929923154" at="36,30,43,24">
+        <var name="result" id="4892929723190587618" />
+      </scope>
+      <scope id="7732415541001061670" at="16,0,25,0">
         <var name="link" id="7732415541001061673" />
         <var name="mpsProject" id="6493337905732522698" />
       </scope>
-      <unit id="3131436097929923142" at="12,0,47,0" name="jetbrains.mps.ide.depanalyzer.DependencyTreeNode" />
+      <scope id="3131436097929923151" at="35,0,45,0" />
+      <unit id="4892929723190579990" at="38,65,42,5" name="jetbrains.mps.ide.depanalyzer.DependencyTreeNode$1" />
+      <unit id="3131436097929923142" at="13,0,54,0" name="jetbrains.mps.ide.depanalyzer.DependencyTreeNode" />
     </file>
   </root>
   <root nodeRef="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)/4327272822834326459">
