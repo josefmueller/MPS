@@ -7,6 +7,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.openapi.navigation.ProjectPaneNavigator;
 
 public class DependencyTreeNode extends MPSTreeNode {
@@ -33,7 +34,13 @@ public class DependencyTreeNode extends MPSTreeNode {
    */
   @Deprecated
   public SModule getModule() {
-    return myLink.module.resolve(myProject.getRepository());
+    final Wrappers._T<SModule> result = new Wrappers._T<SModule>();
+    myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        result.value = myLink.module.resolve(myProject.getRepository());
+      }
+    });
+    return result.value;
   }
   public void setDepLeaf() {
     String linktype = (myLink.linktype == null ? "" : "<i>" + myLink.linktype.toString() + "</i> ");

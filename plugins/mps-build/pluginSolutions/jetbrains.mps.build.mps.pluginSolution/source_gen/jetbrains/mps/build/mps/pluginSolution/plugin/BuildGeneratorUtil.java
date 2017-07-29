@@ -8,7 +8,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -38,7 +38,7 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
     return null;
   }
 
-  public static Solution createSolution(Project mpsProject, String solutionName, IFile solutionBaseDirFile) {
+  public static Solution createSolution(MPSProject mpsProject, String solutionName, IFile solutionBaseDirFile) {
     SModule existingModule = new ModuleRepositoryFacade(mpsProject).getModuleByName(solutionName);
     if (existingModule instanceof Solution) {
       return ((Solution) existingModule);

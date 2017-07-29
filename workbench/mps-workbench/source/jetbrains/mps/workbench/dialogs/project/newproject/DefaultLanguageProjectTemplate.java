@@ -82,26 +82,17 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
               public void run() {
                 Language language = NewModuleUtil.createLanguage(myLanguageSettings.getModuleName(), myLanguageSettings.getModuleLocation(),
                     project);
-                project.addModule(language);
-
                 try {
                   if (myLanguageSettings.isRuntimeSolutionNeeded()) {
                     Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getModuleLocation(), project);
                     language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
-                    new VersionFixer(project.getRepository(), runtimeSolution).updateImportVersions();
-                    runtimeSolution.save();
                   }
                   if (myLanguageSettings.isSandBoxSolutionNeeded()) {
-                    Solution sandboxSolution = NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getModuleLocation(), project);
-                    new VersionFixer(project.getRepository(),sandboxSolution).updateImportVersions();
-                    sandboxSolution.save();
+                    NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getModuleLocation(), project);
                   }
                 } catch (IOException e) {
                   // todo: !
                 }
-                new VersionFixer(project.getRepository(),language).updateImportVersions();
-                new VersionFixer(project.getRepository(),language.getGenerators().iterator().next()).updateImportVersions();
-                language.save();
               }
             });
           }

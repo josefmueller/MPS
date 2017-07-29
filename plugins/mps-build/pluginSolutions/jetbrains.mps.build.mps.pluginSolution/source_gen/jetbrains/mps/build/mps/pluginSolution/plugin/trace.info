@@ -1698,7 +1698,7 @@
       <node id="8722937377469658290" at="73,0,74,0" concept="14" trace="LOG" />
       <node id="1622688651539133305" at="74,0,75,0" concept="14" trace="ICONS" />
       <node id="8722937377469658526" at="75,0,76,0" concept="5" trace="myProject" />
-      <node id="8722937377469658299" at="76,46,77,24" concept="4" />
+      <node id="8722937377469658299" at="76,49,77,24" concept="4" />
       <node id="8722937377469658311" at="77,24,78,50" concept="10" />
       <node id="8722937377469658321" at="79,62,80,108" concept="4" />
       <node id="8722937377469658339" at="81,5,82,32" concept="4" />
@@ -3700,7 +3700,7 @@
       <node id="8668191939847121749" at="237,47,245,5" concept="17" />
       <node id="8633283924066318460" at="400,15,408,5" concept="17" />
       <node id="8633283924066317488" at="437,0,445,0" concept="9" trace="extractModules#(Ljava/util/List;Ljava/util/Set;)V" />
-      <node id="8722937377469658291" at="76,0,85,0" concept="2" trace="BuildGeneratorImpl#(Ljetbrains/mps/project/Project;)V" />
+      <node id="8722937377469658291" at="76,0,85,0" concept="2" trace="BuildGeneratorImpl#(Ljetbrains/mps/project/MPSProject;)V" />
       <node id="7949420916281972100" at="135,0,144,0" concept="9" trace="copyIcon#(Ljava/net/URL;Ljetbrains/mps/vfs/IFile;Ljava/lang/String;)V" />
       <node id="3256085672520562256" at="302,219,311,5" concept="8" />
       <node id="8722937377469659172" at="318,22,327,5" concept="7" />
@@ -4039,7 +4039,7 @@
       <scope id="8633283924066317603" at="437,79,443,5">
         <var name="d" id="8633283924066317604" />
       </scope>
-      <scope id="8722937377469658298" at="76,46,83,45">
+      <scope id="8722937377469658298" at="76,49,83,45">
         <var name="projectName" id="8722937377469658312" />
       </scope>
       <scope id="7949420916281972109" at="135,76,142,5" />
@@ -4995,7 +4995,7 @@
       <node id="2034046503373003160" at="32,72,33,52" concept="4" />
       <node id="490576843398109541" at="34,9,35,21" concept="11" />
       <node id="490576843398111642" at="37,5,38,16" concept="11" />
-      <node id="490576843398313610" at="41,109,42,98" concept="10" />
+      <node id="490576843398313610" at="41,112,42,98" concept="10" />
       <node id="490576843398324135" at="43,45,44,41" concept="11" />
       <node id="490576843398312269" at="45,5,46,0" concept="13" />
       <node id="490576843398122588" at="46,0,47,70" concept="10" />
@@ -5018,7 +5018,7 @@
       <node id="490576843398092171" at="28,51,36,7" concept="8" />
       <node id="490576843398088563" at="27,5,37,5" concept="7" />
       <node id="8722937377469659236" at="22,0,40,0" concept="15" trace="createModel#(Lorg/jetbrains/mps/openapi/model/SModelName;Ljetbrains/mps/project/Solution;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="8722937377469659304" at="41,0,60,0" concept="15" trace="createSolution#(Ljetbrains/mps/project/Project;Ljava/lang/String;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/Solution;" />
+      <node id="8722937377469659304" at="41,0,60,0" concept="15" trace="createSolution#(Ljetbrains/mps/project/MPSProject;Ljava/lang/String;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/Solution;" />
       <scope id="8722937377469659235" at="19,32,19,32" />
       <scope id="8722937377469659264" at="24,51,25,26" />
       <scope id="490576843398319184" at="43,45,44,41" />
@@ -5042,7 +5042,7 @@
         <var name="mr" id="490576843398088566" />
       </scope>
       <scope id="8722937377469659242" at="22,77,38,16" />
-      <scope id="8722937377469659306" at="41,109,58,97">
+      <scope id="8722937377469659306" at="41,112,58,97">
         <var name="existingModule" id="490576843398313611" />
         <var name="fileSystem" id="490576843398122589" />
         <var name="i" id="9080126203643814572" />

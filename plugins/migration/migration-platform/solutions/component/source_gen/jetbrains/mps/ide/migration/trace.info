@@ -1522,7 +1522,7 @@
       <node id="1422399395312394724" at="150,0,192,0" concept="10" trace="initModuleVersionsWhereNeeded#()V" />
       <node id="1244156871959409534" at="353,0,396,0" concept="10" trace="startMigration#()Z" />
       <node id="1847435758022255951" at="284,0,348,0" concept="10" trace="run#()V" />
-      <node id="1847435758022250989" at="282,41,348,11" concept="5" />
+      <node id="1847435758022250989" at="282,41,348,36" concept="5" />
       <node id="1847435758022247803" at="281,0,350,0" concept="10" trace="run#()V" />
       <node id="1847435758022246708" at="279,55,350,7" concept="5" />
       <node id="1847435758022188204" at="271,0,352,0" concept="10" trace="postponeMigration#()V" />
@@ -1784,7 +1784,7 @@
         <var name="resave" id="86837677856744670" />
       </scope>
       <scope id="1847435758022255951" at="284,0,348,0" />
-      <scope id="1847435758022247804" at="281,25,348,11" />
+      <scope id="1847435758022247804" at="281,25,348,36" />
       <scope id="1847435758022247803" at="281,0,350,0" />
       <scope id="1847435758022188207" at="271,48,350,7">
         <var name="ideaProject" id="1847435758022245509" />
