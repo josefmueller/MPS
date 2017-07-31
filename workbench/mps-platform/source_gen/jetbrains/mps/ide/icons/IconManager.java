@@ -281,48 +281,6 @@ public final class IconManager {
   }
 
   @Deprecated
-  @ToRemove(version = 3.4)
-  public static Icon getIconFor(String namespace) {
-    String className = namespace + ".icons.Icons";
-    try {
-      Language language = ModuleRepositoryFacade.getInstance().getModule(namespace, Language.class);
-      if (language == null) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Can't find a language " + namespace);
-        }
-      } else {
-        try {
-          Class<?> iconClass = language.getOwnClass(className);
-          Method method;
-          try {
-            method = iconClass.getMethod("getLanguageIcon");
-          } catch (NoSuchMethodException e) {
-            return EMPTY_ICON;
-          }
-          Icon icon = (Icon) method.invoke(null);
-          if (icon != null) {
-            return icon;
-          }
-        } catch (ModuleClassLoaderIsNullException e) {
-          return EMPTY_ICON;
-        } catch (ClassNotFoundException e) {
-          return EMPTY_ICON;
-        }
-      }
-    } catch (Exception e) {
-      if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("", e);
-      }
-    }
-    return EMPTY_ICON;
-  }
-
-  @Deprecated
-  public static Icon getIconForNamespace(String namespace) {
-    return getIconFor(namespace);
-  }
-
-  @Deprecated
   public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
     return IconLoadHelper.loadIcon(iconPath);
   }

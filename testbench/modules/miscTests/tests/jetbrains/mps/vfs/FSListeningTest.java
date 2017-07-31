@@ -84,7 +84,7 @@ public class FSListeningTest extends PlatformMpsTest {
   public void testModuleUpdate() throws InterruptedException {
     final Ref<Boolean> updated = new Ref<Boolean>(false);
     // take the project solution out of the repo
-    Solution solution1 = getSolution("solution1");
+    Solution solution1 = getSolution(myProject, "solution1");
     solution1.addModuleListener(new SRepositoryContentAdapter() {
       @Override
       public void moduleChanged(SModule module) {

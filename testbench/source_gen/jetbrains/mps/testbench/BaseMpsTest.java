@@ -7,11 +7,9 @@ import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.EnvironmentContainer;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.FileUtil;
@@ -32,25 +30,6 @@ public abstract class BaseMpsTest {
     return getEnvironment().openProject(projectFile);
   }
 
-  /**
-   * IMPORTANT: requires model read access!
-   * 
-   * @deprecated uses global repository, shall cease.
-   */
-  @Deprecated
-  protected static <T extends SModule> T getModule(String moduleFqName, Class<T> cls) {
-    return ModuleRepositoryFacade.getInstance().getModule(moduleFqName, cls);
-  }
-
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.testbench.BaseMpsTest#getSolution(Project, String) } with context (project) instead
-   */
-  @Deprecated
-  protected static Solution getSolution(String moduleFqName) {
-    return getModule(moduleFqName, Solution.class);
-  }
-
   protected static Solution getSolution(Project project, String moduleFqName) {
     for (SModule m : project.getProjectModules()) {
       if (m instanceof Solution && moduleFqName.equals(m.getModuleName())) {
@@ -60,14 +39,6 @@ public abstract class BaseMpsTest {
     return null;
   }
 
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.testbench.BaseMpsTest#getLanguage(Project, String) } with context (project) instead
-   */
-  @Deprecated
-  protected static Language getLanguage(String moduleFqName) {
-    return getModule(moduleFqName, Language.class);
-  }
 
   protected static Language getLanguage(Project project, String moduleFqName) {
     for (SModule m : project.getProjectModules()) {
@@ -76,10 +47,6 @@ public abstract class BaseMpsTest {
       }
     }
     return null;
-  }
-
-  protected static Generator getGenerator(String moduleFqName) {
-    return getModule(moduleFqName, Generator.class);
   }
 
   protected static SModel getModel(Project project, String modelName) {

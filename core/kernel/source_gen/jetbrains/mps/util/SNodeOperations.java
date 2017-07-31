@@ -22,9 +22,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.GeneratableSModel;
@@ -244,18 +241,6 @@ public class SNodeOperations {
     for (SProperty p : Sequence.fromIterable(from.getProperties())) {
       to.setProperty(p, from.getProperty(p));
     }
-  }
-  /**
-   * 
-   * @deprecated use SNode.getConcept.getLanguage (+.getSourceModule?)
-   */
-  @Deprecated
-  public static Language getLanguage(SNode node) {
-    final SLanguage language = node.getConcept().getLanguage();
-    if (language == null) {
-      return null;
-    }
-    return ModuleRepositoryFacade.getInstance().getModule(language.getQualifiedName(), Language.class);
   }
   /**
    * 
