@@ -24,14 +24,18 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import jetbrains.mps.ide.tooltips.ToolTip;
 import javax.swing.border.EmptyBorder;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import javax.swing.JTextPane;
+import java.awt.GridBagConstraints;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
-import javax.swing.JTextPane;
-import jetbrains.mps.nodeEditor.EditorSettings;
 import com.intellij.ui.JBColor;
 import java.awt.Color;
 import com.intellij.ui.Gray;
-import java.awt.GridBagConstraints;
+import jetbrains.mps.nodeEditor.EditorSettings;
 
 public class ShowParameters_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -110,32 +114,54 @@ public class ShowParameters_Action extends BaseAction {
     JPanel panel = new JPanel(new GridBagLayout());
     panel.setBackground(ToolTip.BACKGROUND_COLOR);
     panel.setBorder(new EmptyBorder(0, 4, 0, 4));
-    Iterable<T> methods = parametersInformation.getMethods(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-    int lineNumber = 0;
-    for (T method : Sequence.fromIterable(methods)) {
+
+    if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"))) {
       StyledTextPrinterImpl printer = new StyledTextPrinterImpl();
-      parametersInformation.getStyledMethodPresentation(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), method, (StyledTextPrinter) printer);
-      JTextPane textPane = new JTextPane(printer.getDocument());
-      textPane.setBorder(null);
-      textPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-      textPane.setOpaque(true);
-      if (Sequence.fromIterable(methods).count() > 1 && parametersInformation.isMethodCurrent(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), method)) {
-        textPane.setBackground(new JBColor(new Color(231, 254, 234), Gray._100));
-      } else {
-        textPane.setBackground(ToolTip.BACKGROUND_COLOR);
-      }
-      textPane.setForeground(JBColor.foreground());
-      GridBagConstraints constraints = new GridBagConstraints();
-      constraints.fill = GridBagConstraints.BOTH;
-      constraints.gridy = lineNumber++;
+      printer.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator")), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0ac833a6L, "classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "()");
+      JTextPane textPane = ShowParameters_Action.this.createTextPane(printer, _params);
+      GridBagConstraints constraints = ShowParameters_Action.this.createConstraints(_params);
       panel.add(textPane, constraints);
-      if (Sequence.fromIterable(methods).last() != method) {
-        constraints = new GridBagConstraints();
-        constraints.fill = GridBagConstraints.HORIZONTAL;
+    } else {
+      Iterable<T> methods = parametersInformation.getMethods(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
+      int lineNumber = 0;
+      for (T method : Sequence.fromIterable(methods)) {
+        StyledTextPrinterImpl printer = new StyledTextPrinterImpl();
+        parametersInformation.getStyledMethodPresentation(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), method, (StyledTextPrinter) printer);
+        ShowParameters_Action.this.createTextPane(printer, _params);
+
+        JTextPane textPane = ShowParameters_Action.this.createTextPane(printer, _params);
+        if (Sequence.fromIterable(methods).count() > 1 && parametersInformation.isMethodCurrent(node, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), method)) {
+          textPane.setBackground(new JBColor(new Color(231, 254, 234), Gray._100));
+        } else {
+          textPane.setBackground(ToolTip.BACKGROUND_COLOR);
+        }
+        GridBagConstraints constraints = ShowParameters_Action.this.createConstraints(_params);
         constraints.gridy = lineNumber++;
-        panel.add(new Line(), constraints);
+        panel.add(textPane, constraints);
+        if (Sequence.fromIterable(methods).last() != method) {
+          constraints = new GridBagConstraints();
+          constraints.fill = GridBagConstraints.HORIZONTAL;
+          constraints.gridy = lineNumber++;
+          panel.add(new Line(), constraints);
+        }
       }
     }
     return panel;
+  }
+  private JTextPane createTextPane(StyledTextPrinterImpl printer, final Map<String, Object> _params) {
+    JTextPane textPane = new JTextPane(printer.getDocument());
+    textPane.setBorder(null);
+    textPane.setFont(EditorSettings.getInstance().getDefaultEditorFont());
+    textPane.setOpaque(true);
+    textPane.setBackground(new JBColor(new Color(231, 254, 234), Gray._100));
+    textPane.setBackground(ToolTip.BACKGROUND_COLOR);
+    textPane.setForeground(JBColor.foreground());
+    return textPane;
+  }
+  private GridBagConstraints createConstraints(final Map<String, Object> _params) {
+    GridBagConstraints constraints = new GridBagConstraints();
+    constraints.fill = GridBagConstraints.BOTH;
+    constraints.gridy = 0;
+    return constraints;
   }
 }
