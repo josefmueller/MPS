@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
@@ -39,9 +38,9 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
   }
 
   public static Solution createSolution(MPSProject mpsProject, String solutionName, IFile solutionBaseDirFile) {
-    SModule existingModule = new ModuleRepositoryFacade(mpsProject).getModuleByName(solutionName);
-    if (existingModule instanceof Solution) {
-      return ((Solution) existingModule);
+    boolean exists = !(new ModuleRepositoryFacade(mpsProject).getModulesByName(solutionName).isEmpty());
+    if (exists) {
+      return null;
     }
 
     final FileSystem fileSystem = solutionBaseDirFile.getFileSystem();

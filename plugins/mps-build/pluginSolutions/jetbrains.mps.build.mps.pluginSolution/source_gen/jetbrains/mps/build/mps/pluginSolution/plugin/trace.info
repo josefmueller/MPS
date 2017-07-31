@@ -4989,75 +4989,75 @@
   </root>
   <root nodeRef="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)/8722937377469659230">
     <file name="BuildGeneratorUtil.java">
-      <node id="490576843398025587" at="24,51,25,26" concept="11" />
-      <node id="490576843398102741" at="29,52,30,60" concept="10" />
-      <node id="490576843398107985" at="31,46,32,72" concept="12" />
-      <node id="2034046503373003160" at="32,72,33,52" concept="4" />
-      <node id="490576843398109541" at="34,9,35,21" concept="11" />
-      <node id="490576843398111642" at="37,5,38,16" concept="11" />
-      <node id="490576843398313610" at="41,112,42,98" concept="10" />
-      <node id="490576843398324135" at="43,45,44,41" concept="11" />
-      <node id="490576843398312269" at="45,5,46,0" concept="13" />
-      <node id="490576843398122588" at="46,0,47,70" concept="10" />
-      <node id="9080126203643815444" at="47,70,48,63" concept="10" />
-      <node id="9080126203643814571" at="48,63,49,14" concept="10" />
-      <node id="9080126203643814577" at="50,75,51,72" concept="4" />
-      <node id="9080126203643814733" at="51,72,52,10" concept="4" />
-      <node id="9080126203643814866" at="53,5,54,0" concept="13" />
-      <node id="8722937377469659316" at="55,42,56,35" concept="4" />
-      <node id="490576843398331240" at="57,5,58,97" concept="11" />
-      <node id="9080126203643814552" at="61,64,62,154" concept="11" />
-      <node id="8722937377469659232" at="19,0,21,0" concept="2" trace="BuildGeneratorUtil#()V" />
-      <node id="8722937377469659263" at="23,75,26,7" concept="8" />
-      <node id="490576843398319182" at="42,98,45,5" concept="8" />
-      <node id="8722937377469659314" at="54,0,57,5" concept="8" />
-      <node id="9080126203643814547" at="61,0,64,0" concept="15" trace="isValidSolutionDir#(Ljetbrains/mps/vfs/IFile;)Z" />
-      <node id="490576843398400121" at="30,60,34,9" concept="8" />
-      <node id="490576843398376458" at="49,14,53,5" concept="19" />
-      <node id="8722937377469659259" at="22,77,27,5" concept="7" />
-      <node id="490576843398092171" at="28,51,36,7" concept="8" />
-      <node id="490576843398088563" at="27,5,37,5" concept="7" />
-      <node id="8722937377469659236" at="22,0,40,0" concept="15" trace="createModel#(Lorg/jetbrains/mps/openapi/model/SModelName;Ljetbrains/mps/project/Solution;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="8722937377469659304" at="41,0,60,0" concept="15" trace="createSolution#(Ljetbrains/mps/project/MPSProject;Ljava/lang/String;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/Solution;" />
-      <scope id="8722937377469659235" at="19,32,19,32" />
-      <scope id="8722937377469659264" at="24,51,25,26" />
-      <scope id="490576843398319184" at="43,45,44,41" />
-      <scope id="8722937377469659315" at="55,42,56,35" />
-      <scope id="9080126203643814551" at="61,64,62,154" />
-      <scope id="8722937377469659232" at="19,0,21,0" />
-      <scope id="490576843398400123" at="31,46,33,52" />
-      <scope id="490576843398376459" at="50,75,52,10" />
-      <scope id="8722937377469659262" at="23,75,26,7" />
-      <scope id="9080126203643814547" at="61,0,64,0">
+      <node id="490576843398025587" at="23,51,24,26" concept="11" />
+      <node id="490576843398102741" at="28,52,29,60" concept="10" />
+      <node id="490576843398107985" at="30,46,31,72" concept="12" />
+      <node id="2034046503373003160" at="31,72,32,52" concept="4" />
+      <node id="490576843398109541" at="33,9,34,21" concept="11" />
+      <node id="490576843398111642" at="36,5,37,16" concept="11" />
+      <node id="490576843398313610" at="40,112,41,104" concept="10" />
+      <node id="5751539500970785499" at="42,17,43,18" concept="11" />
+      <node id="490576843398312269" at="44,5,45,0" concept="13" />
+      <node id="490576843398122588" at="45,0,46,70" concept="10" />
+      <node id="9080126203643815444" at="46,70,47,63" concept="10" />
+      <node id="9080126203643814571" at="47,63,48,14" concept="10" />
+      <node id="9080126203643814577" at="49,75,50,72" concept="4" />
+      <node id="9080126203643814733" at="50,72,51,10" concept="4" />
+      <node id="9080126203643814866" at="52,5,53,0" concept="13" />
+      <node id="8722937377469659316" at="54,42,55,35" concept="4" />
+      <node id="490576843398331240" at="56,5,57,97" concept="11" />
+      <node id="9080126203643814552" at="60,64,61,154" concept="11" />
+      <node id="8722937377469659232" at="18,0,20,0" concept="2" trace="BuildGeneratorUtil#()V" />
+      <node id="8722937377469659263" at="22,75,25,7" concept="8" />
+      <node id="5751539500970773462" at="41,104,44,5" concept="8" />
+      <node id="8722937377469659314" at="53,0,56,5" concept="8" />
+      <node id="9080126203643814547" at="60,0,63,0" concept="15" trace="isValidSolutionDir#(Ljetbrains/mps/vfs/IFile;)Z" />
+      <node id="490576843398400121" at="29,60,33,9" concept="8" />
+      <node id="490576843398376458" at="48,14,52,5" concept="19" />
+      <node id="8722937377469659259" at="21,77,26,5" concept="7" />
+      <node id="490576843398092171" at="27,51,35,7" concept="8" />
+      <node id="490576843398088563" at="26,5,36,5" concept="7" />
+      <node id="8722937377469659236" at="21,0,39,0" concept="15" trace="createModel#(Lorg/jetbrains/mps/openapi/model/SModelName;Ljetbrains/mps/project/Solution;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="8722937377469659304" at="40,0,59,0" concept="15" trace="createSolution#(Ljetbrains/mps/project/MPSProject;Ljava/lang/String;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/Solution;" />
+      <scope id="8722937377469659235" at="18,32,18,32" />
+      <scope id="8722937377469659264" at="23,51,24,26" />
+      <scope id="5751539500970773464" at="42,17,43,18" />
+      <scope id="8722937377469659315" at="54,42,55,35" />
+      <scope id="9080126203643814551" at="60,64,61,154" />
+      <scope id="8722937377469659232" at="18,0,20,0" />
+      <scope id="490576843398400123" at="30,46,32,52" />
+      <scope id="490576843398376459" at="49,75,51,10" />
+      <scope id="8722937377469659262" at="22,75,25,7" />
+      <scope id="9080126203643814547" at="60,0,63,0">
         <var name="baseDirFile" id="9080126203643814546" />
       </scope>
-      <scope id="8722937377469659259" at="22,77,27,5">
+      <scope id="8722937377469659259" at="21,77,26,5">
         <var name="descriptor" id="8722937377469659260" />
       </scope>
-      <scope id="490576843398092173" at="29,52,35,21">
+      <scope id="490576843398092173" at="28,52,34,21">
         <var name="model" id="490576843398102742" />
       </scope>
-      <scope id="490576843398088565" at="28,51,36,7" />
-      <scope id="490576843398088563" at="27,5,37,5">
+      <scope id="490576843398088565" at="27,51,35,7" />
+      <scope id="490576843398088563" at="26,5,36,5">
         <var name="mr" id="490576843398088566" />
       </scope>
-      <scope id="8722937377469659242" at="22,77,38,16" />
-      <scope id="8722937377469659306" at="41,112,58,97">
-        <var name="existingModule" id="490576843398313611" />
+      <scope id="8722937377469659242" at="21,77,37,16" />
+      <scope id="8722937377469659306" at="40,112,57,97">
+        <var name="exists" id="490576843398313611" />
         <var name="fileSystem" id="490576843398122589" />
         <var name="i" id="9080126203643814572" />
         <var name="solutionBaseDirPath" id="9080126203643815445" />
       </scope>
-      <scope id="8722937377469659236" at="22,0,40,0">
+      <scope id="8722937377469659236" at="21,0,39,0">
         <var name="modelName" id="8722937377469659237" />
         <var name="solution" id="8722937377469659239" />
       </scope>
-      <scope id="8722937377469659304" at="41,0,60,0">
+      <scope id="8722937377469659304" at="40,0,59,0">
         <var name="mpsProject" id="8722937377469659406" />
         <var name="solutionBaseDirFile" id="8722937377469659410" />
         <var name="solutionName" id="8722937377469659408" />
       </scope>
-      <unit id="8722937377469659230" at="18,0,65,0" name="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil" />
+      <unit id="8722937377469659230" at="17,0,64,0" name="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil" />
     </file>
   </root>
   <root nodeRef="r:f9ed10bf-2cd1-4bab-a5dd-e89f55ef9fd1(jetbrains.mps.build.mps.pluginSolution.plugin)/8722937377469659497">
