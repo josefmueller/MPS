@@ -3820,17 +3820,87 @@
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="5Vvmn_Qkhuf" role="3cqZAp" />
-          <node concept="3cpWs6" id="5Vvmn_Qkhug" role="3cqZAp">
-            <node concept="2YIFZM" id="5Vvmn_Qkhuh" role="3cqZAk">
-              <ref role="1Pybhc" to="fnmy:7mWjQkQg3ix" resolve="ClassifierScopes" />
-              <ref role="37wK5l" to="fnmy:7mWjQkQg3iP" resolve="getVisibleClassifiersScope" />
-              <node concept="2rP1CM" id="5Vvmn_Qkhui" role="37wK5m" />
-              <node concept="3fqX7Q" id="5Vvmn_Qkhuj" role="37wK5m">
-                <node concept="37vLTw" id="5Vvmn_Qkhuk" role="3fr31v">
-                  <ref role="3cqZAo" node="5Vvmn_Qkhu2" resolve="resolvingSuperClass" />
+          <node concept="3cpWs8" id="6ZkNa8kzH0l" role="3cqZAp">
+            <node concept="3cpWsn" id="6ZkNa8kzH0m" role="3cpWs9">
+              <property role="TrG5h" value="scope" />
+              <node concept="3uibUv" id="6ZkNa8kzH0b" role="1tU5fm">
+                <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
+              </node>
+              <node concept="2YIFZM" id="6ZkNa8kzH0n" role="33vP2m">
+                <ref role="1Pybhc" to="fnmy:7mWjQkQg3ix" resolve="ClassifierScopes" />
+                <ref role="37wK5l" to="fnmy:7mWjQkQg3iP" resolve="getVisibleClassifiersScope" />
+                <node concept="2rP1CM" id="6ZkNa8kzH0o" role="37wK5m" />
+                <node concept="3fqX7Q" id="6ZkNa8kzH0p" role="37wK5m">
+                  <node concept="37vLTw" id="6ZkNa8kzH0q" role="3fr31v">
+                    <ref role="3cqZAo" node="5Vvmn_Qkhu2" resolve="resolvingSuperClass" />
+                  </node>
                 </node>
               </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="6ZkNa8kzJOX" role="3cqZAp">
+            <node concept="3clFbS" id="6ZkNa8kzJOZ" role="3clFbx">
+              <node concept="3SKdUt" id="6ZkNa8kzKIu" role="3cqZAp">
+                <node concept="3SKdUq" id="6ZkNa8kzKIw" role="3SKWNk">
+                  <property role="3SKdUp" value="remove this Classifier from the completion menu" />
+                </node>
+              </node>
+              <node concept="3cpWs6" id="6ZkNa8kzKgc" role="3cqZAp">
+                <node concept="2ShNRf" id="6ZkNa8kzKge" role="3cqZAk">
+                  <node concept="YeOm9" id="6ZkNa8kzKgf" role="2ShVmc">
+                    <node concept="1Y3b0j" id="6ZkNa8kzKgg" role="YeSDq">
+                      <property role="2bfB8j" value="true" />
+                      <ref role="1Y3XeK" to="o8zo:3rV3sBXetA0" resolve="FilteringScope" />
+                      <ref role="37wK5l" to="o8zo:3rV3sBXetA2" resolve="FilteringScope" />
+                      <node concept="3Tm1VV" id="6ZkNa8kzKgh" role="1B3o_S" />
+                      <node concept="37vLTw" id="6ZkNa8kzKgi" role="37wK5m">
+                        <ref role="3cqZAo" node="6ZkNa8kzH0m" resolve="scope" />
+                      </node>
+                      <node concept="3clFb_" id="6ZkNa8kzKgj" role="jymVt">
+                        <property role="TrG5h" value="isExcluded" />
+                        <property role="1EzhhJ" value="false" />
+                        <node concept="10P_77" id="6ZkNa8kzKgk" role="3clF45" />
+                        <node concept="3Tm1VV" id="6ZkNa8kzKgl" role="1B3o_S" />
+                        <node concept="37vLTG" id="6ZkNa8kzKgm" role="3clF46">
+                          <property role="TrG5h" value="node" />
+                          <node concept="3Tqbb2" id="6ZkNa8kzKgn" role="1tU5fm" />
+                        </node>
+                        <node concept="3clFbS" id="6ZkNa8kzKgo" role="3clF47">
+                          <node concept="3cpWs6" id="6ZkNa8kzKgp" role="3cqZAp">
+                            <node concept="17R0WA" id="6ZkNa8kzKgq" role="3cqZAk">
+                              <node concept="37vLTw" id="6ZkNa8kzKgs" role="3uHU7B">
+                                <ref role="3cqZAo" node="6ZkNa8kzKgm" resolve="node" />
+                              </node>
+                              <node concept="2OqwBi" id="WpRK8w$HBQ" role="3uHU7w">
+                                <node concept="3kakTB" id="WpRK8w$H4x" role="2Oq$k0" />
+                                <node concept="2Xjw5R" id="WpRK8w$IuG" role="2OqNvi">
+                                  <node concept="1xMEDy" id="WpRK8w$IuI" role="1xVPHs">
+                                    <node concept="chp4Y" id="WpRK8w$IL1" role="ri$Ld">
+                                      <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                                    </node>
+                                  </node>
+                                  <node concept="1xIGOp" id="WpRK8w$Jmb" role="1xVPHs" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2AHcQZ" id="6ZkNa8kzKgt" role="2AJF6D">
+                          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="6ZkNa8kzJX7" role="3clFbw">
+              <ref role="3cqZAo" node="5Vvmn_Qkhu2" resolve="resolvingSuperClass" />
+            </node>
+          </node>
+          <node concept="3cpWs6" id="5Vvmn_Qkhug" role="3cqZAp">
+            <node concept="37vLTw" id="6ZkNa8kzH0r" role="3cqZAk">
+              <ref role="3cqZAo" node="6ZkNa8kzH0m" resolve="scope" />
             </node>
           </node>
         </node>

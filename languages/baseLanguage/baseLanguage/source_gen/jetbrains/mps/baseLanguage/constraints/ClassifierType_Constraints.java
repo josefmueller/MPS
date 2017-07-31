@@ -21,6 +21,8 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.scope.FilteringScope;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ClassifierType_Constraints extends BaseConstraintsDescriptor {
@@ -57,8 +59,17 @@ public class ClassifierType_Constraints extends BaseConstraintsDescriptor {
             {
               // TEMP doing it not through ScopeProvider for now 
               boolean resolvingSuperClass = SNodeOperations.hasRole(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass")) || SNodeOperations.hasRole(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface")) || SNodeOperations.hasRole(_context.getReferenceNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface"));
-
-              return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), !(resolvingSuperClass));
+              Scope scope = ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), !(resolvingSuperClass));
+              if (resolvingSuperClass) {
+                // remove this Classifier from the completion menu 
+                return new FilteringScope(scope) {
+                  @Override
+                  public boolean isExcluded(SNode node) {
+                    return eq_1zr1bt_a0a0a0a0b0d0a0d0a0a0b0a1a0b0c(node, SNodeOperations.getNodeAncestor(_context.getReferenceNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), true, false));
+                  }
+                };
+              }
+              return scope;
             }
           }
         };
@@ -67,4 +78,7 @@ public class ClassifierType_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   private static SNodePointer breakingNode_1zr1bt_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6836281137582643069");
+  private static boolean eq_1zr1bt_a0a0a0a0b0d0a0d0a0a0b0a1a0b0c(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
 }
