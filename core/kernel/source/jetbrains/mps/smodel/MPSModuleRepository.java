@@ -245,19 +245,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     return Collections.unmodifiableSet(myModuleToOwners.getByFirst(module));
   }
 
-  /**
-   * @deprecated the repository must be able to contain two modules with the same name.
-   * Thus one cannot rely on the module - name one-to-one correspondence.
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  /*package*/ SModule getModuleByFqName(@NotNull String fqName) {
-    LOG.error("Use of MPSModuleRepository.getModuleByFqName(String) may yield wrong result due to ambiguity. This method gives first module with matching name");
-
-    getModelAccess().checkReadAccess(); // if getModule(SModuleId) checks, why not byName()?
-    return myModules.stream().filter(m -> fqName.equals(m.getModuleName())).findFirst().orElse(null);
-  }
-
   @Override
   public SModule getModule(@NotNull SModuleId id) {
     getModelAccess().checkReadAccess();
