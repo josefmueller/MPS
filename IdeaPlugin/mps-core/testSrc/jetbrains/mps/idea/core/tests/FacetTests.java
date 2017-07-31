@@ -161,52 +161,6 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     });
   }
 
-  /**
-   * This check does not have any meaning, because adding/removing language to facet itself is not affects anything.
-   * Language imports now moved to models.
-   * <p>
-   * TODO: write test for add/remove used language to model
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void testAddRemoveUsedLanguage() throws InterruptedException {
-    final Language[] usedLanguages = new Language[2];
-    final MPSConfigurationBean configurationBean = runModelRead(() -> {
-      Language baseLanguage = (Language) myModuleRepositoryFacade.getModuleByName("jetbrains.mps.baseLanguage");
-      assertNotNull(baseLanguage);
-      Language editorLanguage = (Language) myModuleRepositoryFacade.getModuleByName("jetbrains.mps.lang.editor");
-      assertNotNull(editorLanguage);
-
-      String[] usedLanguageStrings = new String[]{baseLanguage.getModuleReference().toString(), editorLanguage.getModuleReference().toString()};
-      usedLanguages[0] = baseLanguage;
-      usedLanguages[1] = editorLanguage;
-
-      MPSConfigurationBean cb = getMpsFixture().getMpsFacet().getConfiguration().getBean();
-      cb.setUsedLanguages(usedLanguageStrings);
-      return cb;
-    });
-    getMpsFixture().getMpsFacet().setConfiguration(configurationBean);
-    getMpsFixture().flushEDT();
-
-    runModelRead(() -> {
-      Collection<SModuleReference> solutionUsedLanguageRefs = getMpsFixture().getMpsFacet().getSolution().getUsedLanguagesReferences();
-      Set<Language> solutionUsedLanguages = new HashSet<>();
-      for (SModuleReference solutionUsedLanguageRef : solutionUsedLanguageRefs) {
-        solutionUsedLanguages.add(myModuleRepositoryFacade.getModule(solutionUsedLanguageRef, Language.class));
-      }
-      assertEquals(usedLanguages.length, solutionUsedLanguages.size());
-      for (Language usedLanguage : usedLanguages) {
-        assertTrue(solutionUsedLanguages.contains(usedLanguage));
-      }
-    });
-
-    configurationBean.setUsedLanguages(new String[0]);
-    getMpsFixture().getMpsFacet().setConfiguration(configurationBean);
-    getMpsFixture().flushEDT();
-
-    runModelRead(() -> assertEmpty(getMpsFixture().getMpsFacet().getSolution().getUsedLanguagesReferences()));
-  }
-
   public void testSetGeneratorOutputPath() throws InterruptedException {
     @NonNls String generatorOutputPath = getModuleHome() + "/generatorOut";
     MPSConfigurationBean configurationBean = getMpsFixture().getMpsFacet().getConfiguration().getBean();
