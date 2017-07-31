@@ -23,8 +23,6 @@ import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public final class ModuleChooser extends TextFieldWithBrowseButton.NoPathCompletion {
   private final Project myMpsProject;
@@ -59,14 +57,13 @@ public final class ModuleChooser extends TextFieldWithBrowseButton.NoPathComplet
     return Collections.unmodifiableList(new ArrayList<SModuleReference>(moduleRefs));
   }
 
-  public void setModule(@NotNull final String moduleName) {
+  public void setModule(@NotNull final SModuleReference module) {
     myMpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SModule module = new ModuleRepositoryFacade(myMpsProject.getRepository()).getModuleByName(moduleName);
-        myModuleRef.set(module.getModuleReference());
+        myModuleRef.set(module);
       }
     });
-    setText(moduleName);
+    setText(module.getModuleName());
   }
 
   public SModuleReference getReference() {

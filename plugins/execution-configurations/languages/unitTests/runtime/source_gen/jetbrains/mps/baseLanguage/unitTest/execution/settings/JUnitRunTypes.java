@@ -27,10 +27,8 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
-import org.jetbrains.annotations.Nls;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public enum JUnitRunTypes {
   PROJECT() {
@@ -55,30 +53,30 @@ public enum JUnitRunTypes {
   MODULE() {
     @Override
     protected List<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, MPSProject project, ProgressMonitor monitor) {
-      SModule module = getModule(project, configuration.getModule());
+      SModule module = getModule(project, configuration.getModuleRef());
       if (module == null) {
         return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       }
       return new ModuleTestCollector(module, monitor, false).collect();
     }
     public String check(JUnitSettings_Configuration configuration, MPSProject project) {
-      if (isEmptyString(configuration.getModule())) {
+      if (configuration.getModuleRef() == null) {
         return "Module is not selected.";
       }
-      SModule module = getModule(project, configuration.getModule());
+      SModule module = getModule(project, configuration.getModuleRef());
       if (module == null) {
-        return "The module " + configuration.getModule() + " does not exist in the project " + project;
+        return "The module " + configuration.getModuleRef().getModuleName() + " does not exist in the project " + project;
       }
       if (!(SModuleOperations.isCompileInMps(module))) {
         return "The module's " + module + " compile output is not managed by MPS.";
       }
       if (!(this.hasTests(configuration, project))) {
-        return "No tests found in module " + configuration.getModule() + "";
+        return "No tests found in module " + configuration.getModuleRef().getModuleName() + "";
       }
       return null;
     }
     public boolean hasTests(JUnitSettings_Configuration configuration, MPSProject project) {
-      SModule module = getModule(project, configuration.getModule());
+      SModule module = getModule(project, configuration.getModuleRef());
       if (module == null) {
         return false;
       }
@@ -89,31 +87,31 @@ public enum JUnitRunTypes {
   MODEL() {
     @Override
     protected List<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, MPSProject project, ProgressMonitor monitor) {
-      SModel model = getModel(project, configuration.getModel(), configuration.getModule());
+      SModel model = getModel(project, configuration.getModelRef());
       if (model == null) {
         return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       }
       return new ModelTestCollector(model, monitor, false).collect();
     }
     public String check(JUnitSettings_Configuration configuration, MPSProject project) {
-      if (configuration.getModel() == null) {
+      if (configuration.getModelRef() == null) {
         return "Model is not selected.";
       }
-      SModel model = getModel(project, configuration.getModel(), configuration.getModule());
+      SModel model = getModel(project, configuration.getModelRef());
       if (model == null) {
-        return "Could not find model " + configuration.getModel();
+        return "Could not find model " + configuration.getModelRef().getModelName();
       }
       SModule module = model.getModule();
       if (!(SModuleOperations.isCompileInMps(module))) {
         return "The module's " + module + " (which is hosting the model " + model.getName().getSimpleName() + ") compile output is not managed by MPS.";
       }
       if (!(this.hasTests(configuration, project))) {
-        return "No tests found in model " + configuration.getModel() + ".";
+        return "No tests found in model " + configuration.getModelRef().getName() + ".";
       }
       return null;
     }
     public boolean hasTests(JUnitSettings_Configuration configuration, MPSProject project) {
-      SModel model = getModel(project, configuration.getModel(), configuration.getModule());
+      SModel model = getModel(project, configuration.getModelRef());
       if (model == null) {
         return false;
       }
@@ -212,34 +210,19 @@ public enum JUnitRunTypes {
   }
 
   @Nullable
-  private static SModel getModel(Project mpsProject, @Nls String modelName, String moduleName) {
-    if ((modelName == null || modelName.length() == 0)) {
+  private static SModel getModel(Project mpsProject, SModelReference model) {
+    if (model == null) {
       return null;
     }
-    if ((moduleName == null || moduleName.length() == 0)) {
-      return new ModuleRepositoryFacade(mpsProject).getModelByName(modelName);
-    }
-    SModule module = getModule(mpsProject, moduleName);
-    if (module == null) {
-      return null;
-    }
-    for (SModel model : Sequence.fromIterable(module.getModels())) {
-      if (model.getName().getValue().equals(modelName)) {
-        return model;
-      }
-    }
-    return null;
+    return model.resolve(mpsProject.getRepository());
   }
 
   @Nullable
-  private static SModule getModule(Project mpsProject, @Nls String moduleName) {
-    if ((moduleName == null || moduleName.length() == 0)) {
+  private static SModule getModule(Project mpsProject, SModuleReference module) {
+    if (module == null) {
       return null;
     }
-    ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(mpsProject);
-    Collection<SModule> modulesByName = mrf.getModulesByName(moduleName);
-    // just take first one. We need to keep module reference instead of module name in configuration settings, though 
-    return (modulesByName.isEmpty() ? null : modulesByName.iterator().next());
+    return module.resolve(mpsProject.getRepository());
   }
 
   protected abstract List<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, @NotNull MPSProject project, ProgressMonitor monitor);
@@ -247,7 +230,4 @@ public enum JUnitRunTypes {
   public abstract boolean hasTests(JUnitSettings_Configuration configuration, @NotNull MPSProject project);
 
   public abstract String check(JUnitSettings_Configuration configuration, @NotNull MPSProject project);
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
 }

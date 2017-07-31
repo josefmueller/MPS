@@ -24,7 +24,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class ModelChooser extends TextFieldWithBrowseButton.NoPathCompletion {
   private final Project myMpsProject;
@@ -60,14 +59,13 @@ public class ModelChooser extends TextFieldWithBrowseButton.NoPathCompletion {
     return Collections.unmodifiableList(new ArrayList<SModelReference>(modelRefs));
   }
 
-  public void setModel(@NotNull final String modelName) {
+  public void setModel(@NotNull final SModelReference model) {
     myMpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SModel model = new ModuleRepositoryFacade(myMpsProject.getRepository()).getModelByName(modelName);
-        myModelRef.set(model.getReference());
+        myModelRef.set(model);
       }
     });
-    setText(modelName);
+    setText(model.getModelName());
   }
 
   public SModelReference getReference() {

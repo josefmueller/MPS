@@ -30,6 +30,7 @@ import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.lib.PointerUtils;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class JUnitConfigurationEditorComponent extends JBPanel {
@@ -188,11 +189,11 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
         SModelReference modelRef = myModelChooser.getReference();
         if (modelRef != null) {
-          model.value = modelRef.getName().getValue();
+          model.value = PersistenceRegistry.getInstance().asString(modelRef);
         }
         SModuleReference moduleRef = myModuleChooser.getReference();
         if (moduleRef != null) {
-          module.value = moduleRef.getModuleName();
+          module.value = moduleRef.toString();
         }
       }
     });
@@ -242,13 +243,12 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     });
     myMethodsList.setData(methods);
 
-    if (settings.getModel() != null) {
-      String modelName = settings.getModel();
-      myModelChooser.setModel(modelName);
+    if (settings.getModelRef() != null) {
+      myModelChooser.setModel(settings.getModelRef());
     }
 
-    if (settings.getModule() != null) {
-      myModuleChooser.setModule(settings.getModule());
+    if (settings.getModuleRef() != null) {
+      myModuleChooser.setModule(settings.getModuleRef());
     }
 
     updateCheckBoxes(settings);

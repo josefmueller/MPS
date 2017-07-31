@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -104,7 +105,7 @@ public class JUnitTests_Producer {
       String name = source.getModuleName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + name + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODULE);
-      configuration.getJUnitSettings().setModule(source.getModuleName());
+      configuration.getJUnitSettings().setModule(source.getModuleReference().toString());
       configuration.getJUnitSettings().setInProcess(false);
       return configuration;
     }
@@ -121,7 +122,7 @@ public class JUnitTests_Producer {
         if (mRef == null) {
           return false;
         }
-        return settings.getJUnitRunType() == JUnitRunTypes.MODULE && settings.getModule().equals(mRef.getModuleName());
+        return settings.getJUnitRunType() == JUnitRunTypes.MODULE && settings.getModuleRef().equals(mRef);
       }
       return false;
     }
@@ -147,8 +148,8 @@ public class JUnitTests_Producer {
       SModelName name = source.getName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + name.getValue() + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODEL);
-      configuration.getJUnitSettings().setModel(name.getValue());
-      configuration.getJUnitSettings().setModule(source.getModule().getModuleName());
+      configuration.getJUnitSettings().setModel(PersistenceRegistry.getInstance().asString(source.getReference()));
+      configuration.getJUnitSettings().setModule(source.getModule().getModuleReference().toString());
       configuration.getJUnitSettings().setInProcess(false);
       return configuration;
     }
@@ -176,7 +177,7 @@ public class JUnitTests_Producer {
         if (module == null) {
           return false;
         }
-        return settings.getJUnitRunType() == JUnitRunTypes.MODEL && Objects.equals(settings.getModel(), mRef.getName().getValue()) && Objects.equals(settings.getModule(), module.getModuleName());
+        return settings.getJUnitRunType() == JUnitRunTypes.MODEL && Objects.equals(settings.getModel(), mRef) && Objects.equals(settings.getModule(), module.getModuleReference());
       }
       return false;
     }

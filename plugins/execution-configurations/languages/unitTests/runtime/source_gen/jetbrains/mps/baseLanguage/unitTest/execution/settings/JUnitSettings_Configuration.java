@@ -16,6 +16,10 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.execution.lib.ClonableList;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import java.util.List;
@@ -116,6 +120,18 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   }
   public String getDefaultPath() {
     return new DefaultCachesPathChooser().chooseDir();
+  }
+  public SModuleReference getModuleRef() {
+    if (this.getModule() == null) {
+      return null;
+    }
+    return ModuleReference.parseReference(this.getModule());
+  }
+  public SModelReference getModelRef() {
+    if (this.getModel() == null) {
+      return null;
+    }
+    return PersistenceRegistry.getInstance().createModelReference(this.getModel());
   }
   public JUnitRunTypes getJUnitRunType() {
     return JUnitRunTypes.values()[this.getRunType()];
