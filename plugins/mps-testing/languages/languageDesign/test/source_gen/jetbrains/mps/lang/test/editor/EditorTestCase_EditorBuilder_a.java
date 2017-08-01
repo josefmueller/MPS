@@ -172,7 +172,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       }
     }
     protected String getNoTargetText() {
-      return "<no nodeToEdit>";
+      return "<no before cell>";
     }
   }
   private EditorCell createConstant_6iwt9a_g0() {
@@ -237,7 +237,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       }
     }
     protected String getNoTargetText() {
-      return "<no result>";
+      return "<no result cell>";
     }
   }
   private EditorCell createConstant_6iwt9a_i0() {

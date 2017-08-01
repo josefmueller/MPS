@@ -21,13 +21,13 @@ import jetbrains.mps.lang.test.behavior.TestInfo__BehaviorDescriptor;
 import jetbrains.mps.lang.test.behavior.NodesTestCase__BehaviorDescriptor;
 import jetbrains.mps.lang.test.behavior.INodesTestMethod__BehaviorDescriptor;
 import jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration__BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.migration.behavior.IMigrationUnit__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.test.behavior.DragMouseStatement__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.behavior.ConceptId__BehaviorDescriptor;
@@ -190,7 +190,11 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) NodesTestCase__BehaviorDescriptor.getTestBodyName_idhOw0ICJ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")));
   }
   public static Object propertyMacro_GetPropertyValue_6270156512822429979(final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314b78e4L, "nodeToEdit")).getNodeId().toString();
+    SNode nodeToEdit = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314b78e4L, "nodeToEdit"));
+    if ((nodeToEdit == null)) {
+      _context.showErrorMessage(_context.getNode(), "A node in the 'before' section must be provided");
+    }
+    return nodeToEdit.getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_6270156512822432465(final PropertyMacroContext _context) {
     if (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x11e314bf3d3L, "result")) != null) {
@@ -276,6 +280,9 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static boolean ifMacro_Condition_8933192351751931380(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L, 0x7bf9131d2468ca92L, "parameter")) != null);
+  }
+  public static boolean ifMacro_Condition_4552210825421163960(final IfMacroContext _context) {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x486f8079df2fd868L, "logEvents"))).isNotEmpty();
   }
   public static boolean ifMacro_Condition_5219531754070576527(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x486f8079df2fd868L, "logEvents"))).isNotEmpty();
@@ -788,6 +795,7 @@ public class QueriesGenerated extends QueryProviderBase {
     imcMethods.put("8762304748376777948", new QueriesGenerated.IfMC(i++));
     imcMethods.put("7965618678812561189", new QueriesGenerated.IfMC(i++));
     imcMethods.put("8933192351751931378", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("4552210825421163957", new QueriesGenerated.IfMC(i++));
     imcMethods.put("5219531754070576524", new QueriesGenerated.IfMC(i++));
   }
   @NotNull
@@ -822,6 +830,8 @@ public class QueriesGenerated extends QueryProviderBase {
         case 6:
           return QueriesGenerated.ifMacro_Condition_8933192351751931380(ctx);
         case 7:
+          return QueriesGenerated.ifMacro_Condition_4552210825421163960(ctx);
+        case 8:
           return QueriesGenerated.ifMacro_Condition_5219531754070576527(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateReference(), methodKey));

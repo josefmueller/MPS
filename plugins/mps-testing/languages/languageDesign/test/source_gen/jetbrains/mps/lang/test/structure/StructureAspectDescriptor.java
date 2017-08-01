@@ -448,7 +448,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1208f458d37L);
     b.origin("r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)/1229187653856");
     b.prop("description", 0x1a226282e4830468L, "1883175908513350760");
-    b.aggregate("nodeToEdit", 0x11e314b78e4L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(false).ordered(true).multiple(false).origin("1229187676388").done();
+    b.aggregate("nodeToEdit", 0x11e314b78e4L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(true).ordered(true).multiple(false).origin("1229187676388").done();
     b.aggregate("result", 0x11e314bf3d3L).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL).optional(true).ordered(true).multiple(false).origin("1229187707859").done();
     b.aggregate("code", 0x11e314cad13L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L).optional(true).ordered(true).multiple(false).origin("1229187755283").done();
     b.aggregate("logEvents", 0x486f8079df2fd868L).target(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x486f8079df2fd630L).optional(true).ordered(true).multiple(true).origin("5219531754069547112").done();
