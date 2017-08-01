@@ -111,7 +111,7 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
                           // there would be a lock violation exception 
                           module.addModelToKeep(newModel.getReference(), true);
                           Target_configure.vars(pa.global()).transientModelsProvider().publishAll();
-                          res.status(new GenerationStatus(res.status().getInputModel(), newModel, res.status().getDependencies(), res.status().isError(), res.status().hasWarnings(), res.status().isCanceled()));
+                          res.status(new GenerationStatus(res.status().getInputModel(), newModel, null, res.status().isError()));
                         } catch (Throwable ex) {
                           monitor.reportFeedback(new IFeedback.ERROR(String.valueOf(ex)));
                         }

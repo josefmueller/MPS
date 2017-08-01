@@ -260,14 +260,14 @@ public class CrossModelEnvironment {
       if (cme == null) {
         return;
       }
-      ModelCheckpoints mcp = cme.myTransientCheckpoints.get(status.getOriginalInputModel().getReference());
+      ModelCheckpoints mcp = cme.myTransientCheckpoints.get(status.getInputModel().getReference());
       if (mcp == null) {
         // may happen if the model has been generated without a custom plan
         // FIXME we shall look into generation tasks rather than original input model, and there could be tasks
         //       that do not produce ModelCheckpoints (i.e. are generated without a custom plan)
         return;
       }
-      CheckpointVault cpVault = cme.getPersistedCheckpoints(status.getOriginalInputModel());
+      CheckpointVault cpVault = cme.getPersistedCheckpoints(status.getInputModel());
       assert cpVault != null;
       cpVault.updateCheckpointsOf(mcp);
       cpVault.saveChanged(handler);

@@ -169,8 +169,7 @@ class GenerationSession {
         if (total > 0 && ignored == total && incrementalHandler.canIgnoreConditionals()) {
           myLogger.info("generated files are up-to-date");
           ttrace.pop();
-          return new GenerationStatus(myOriginalInputModel, null,
-              myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), false, false, false);
+          return new GenerationStatus(myOriginalInputModel, null, myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), false);
         }
 
         if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
@@ -285,8 +284,7 @@ class GenerationSession {
         }
 
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
-            myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
-            myLogger.getWarningCount() > 0, false);
+            myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0);
         generationStatus.setModelExports(mySessionContext.getExports().getExports());
         generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
         success = generationStatus.isOk();

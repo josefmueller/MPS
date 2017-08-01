@@ -133,7 +133,6 @@ public class GenerationController implements ITaskPoolProvider {
       myGenerationHandler.start(task);
       GenerationStatus status = generationSession.generateModel(monitor.subTask(9));
       monitor.advance(0);
-      status.setOriginalInputModel(inputModel);
       currentGenerationOK = status.isOk();
 
       checkMonitorCanceled(monitor);

@@ -612,7 +612,7 @@
                         <node concept="3fqX7Q" id="22g6WSZuOu" role="3clFbG">
                           <node concept="2OqwBi" id="22g6WSZA9f" role="3fr31v">
                             <node concept="liA8E" id="22g6WSZBsN" role="2OqNvi">
-                              <ref role="37wK5l" to="ap4t:~GenerationStatus.isOk():boolean" resolve="isOk" />
+                              <ref role="37wK5l" to="18ew:~Status.isOk():boolean" resolve="isOk" />
                             </node>
                             <node concept="2OqwBi" id="22g6WSZyEw" role="2Oq$k0">
                               <node concept="2sxana" id="22g6WSZ$EL" role="2OqNvi">
@@ -4584,7 +4584,7 @@
                             <ref role="3cqZAo" node="6Ui2JNSUtbp" resolve="genStatus" />
                           </node>
                           <node concept="liA8E" id="6Ui2JNSUtTj" role="2OqNvi">
-                            <ref role="37wK5l" to="ap4t:~GenerationStatus.isOk():boolean" resolve="isOk" />
+                            <ref role="37wK5l" to="18ew:~Status.isOk():boolean" resolve="isOk" />
                           </node>
                         </node>
                       </node>
@@ -4600,7 +4600,7 @@
                             <ref role="3cqZAo" node="6Ui2JNSUtbp" resolve="genStatus" />
                           </node>
                           <node concept="liA8E" id="6Ui2JNSUwlB" role="2OqNvi">
-                            <ref role="37wK5l" to="ap4t:~GenerationStatus.getOriginalInputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getOriginalInputModel" />
+                            <ref role="37wK5l" to="ap4t:~GenerationStatus.getInputModel():org.jetbrains.mps.openapi.model.SModel" resolve="getInputModel" />
                           </node>
                         </node>
                       </node>

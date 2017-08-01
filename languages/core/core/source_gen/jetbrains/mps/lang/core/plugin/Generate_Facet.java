@@ -512,7 +512,7 @@ public class Generate_Facet extends IFacet.Stub {
                   if (!(genStatus.isOk())) {
                     return new IResult.FAILURE(_output_fi61u2_a0d);
                   }
-                  SModel inputModel = genStatus.getOriginalInputModel();
+                  SModel inputModel = genStatus.getInputModel();
                   GResource data = new GResource(inputModel.getModule(), inputModel, MapSequence.fromMap(retainedModels.value).get(inputModel.getModule()), genStatus);
                   _output_fi61u2_a0d = Sequence.fromIterable(_output_fi61u2_a0d).concat(Sequence.fromIterable(Sequence.<IResource>singleton(data)));
                 }

@@ -192,7 +192,7 @@ public final class TraceInfoCache {
       if (cache == null) {
         return;
       }
-      update(status.getOriginalInputModel(), cache);
+      update(status.getInputModel(), cache);
       handler.saveStream(TRACE_FILE_NAME, SerializeSupport.serialize(cache));
     }
 
@@ -202,7 +202,7 @@ public final class TraceInfoCache {
       }
       // complete debug info with info for roots that did not changed and therefore were not generated 
       // we get debug info for them from cache 
-      DebugInfo cachedDebugInfo = TraceInfoCache.this.getLastGeneratedDebugInfo(genStatus.getOriginalInputModel());
+      DebugInfo cachedDebugInfo = TraceInfoCache.this.getLastGeneratedDebugInfo(genStatus.getInputModel());
       if (cachedDebugInfo != null) {
         List<String> unchangedFiles = new ArrayList<String>();
         for (GenerationRootDependencies dependency : genStatus.getDependencies().getUnchangedDependencies()) {

@@ -93,7 +93,7 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
       if (cache == null) {
         return;
       }
-      update(status.getOriginalInputModel(), cache);
+      update(status.getInputModel(), cache);
 
       handler.saveStream(getCacheFileName(), cache.toXml());
 

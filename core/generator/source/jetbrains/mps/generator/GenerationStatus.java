@@ -18,6 +18,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.util.Status;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -28,33 +29,20 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class GenerationStatus extends Status {
   private final SModel myOutputModel;
   private final SModel myInputModel;
-  private final boolean myCanceled;
-  private final boolean myWarnings;
   private GenerationDependencies myDependencies;
   private ModelExports myExports;
 
-  private SModel myOriginalInputModel;
+  public GenerationStatus(SModel inputModel) {
+    super(Code.ERROR, null);
+    myInputModel = inputModel;
+    myOutputModel = null;
+  }
 
-  public GenerationStatus(SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors, boolean warnings, boolean canceled) {
+  public GenerationStatus(SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors) {
     super(errors ? Code.ERROR : Code.OK, null);
-    myCanceled = canceled;
     myOutputModel = outputModel;
     myInputModel = inputModel;
-    myWarnings = warnings;
     myDependencies = dependencies;
-  }
-
-  @Override
-  public boolean isOk() {
-    return !myCanceled && super.isOk();
-  }
-
-  public boolean isCanceled() {
-    return myCanceled;
-  }
-
-  public boolean hasWarnings() {
-    return myWarnings;
   }
 
   @Nullable
@@ -70,12 +58,14 @@ public class GenerationStatus extends Status {
     return myDependencies;
   }
 
+  /**
+   * @deprecated use {@link #getInputModel()} instead
+   * @return model that served as input for M2M
+   */
+  @Deprecated
+  @ToRemove(version = 2017.3)
   public SModel getOriginalInputModel() {
-    return myOriginalInputModel;
-  }
-
-  public void setOriginalInputModel(org.jetbrains.mps.openapi.model.SModel originalInputModel) {
-    myOriginalInputModel = originalInputModel;
+    return getInputModel();
   }
 
   /**
@@ -118,7 +108,7 @@ public class GenerationStatus extends Status {
 
   public static class ERROR extends GenerationStatus {
     public ERROR(SModel inputModel) {
-      super(inputModel, null, null, true, false, false);
+      super(inputModel);
     }
   }
 }
