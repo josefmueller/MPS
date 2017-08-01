@@ -164,6 +164,9 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
@@ -175,6 +178,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
@@ -188,6 +192,9 @@
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -438,7 +445,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="hIdQMiN">
-    <property role="TrG5h" value="CheckTestMethodDataflow" />
+    <property role="TrG5h" value="checkTestMethodDataflow" />
     <node concept="3clFbS" id="hIdQMiO" role="18ibNy">
       <node concept="3clFbF" id="hNAO8h1" role="3cqZAp">
         <node concept="2YIFZM" id="79XQS8VgLae" role="3clFbG">
@@ -566,7 +573,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="1mwpTqNMIVZ">
-    <property role="TrG5h" value="check_ITestCase_And_TestInfo" />
+    <property role="TrG5h" value="checkITestCase_And_TestInfo" />
     <node concept="3clFbS" id="1mwpTqNMIW0" role="18ibNy">
       <node concept="3clFbJ" id="1mwpTqNMB5D" role="3cqZAp">
         <node concept="3clFbS" id="1mwpTqNMB5F" role="3clFbx">
@@ -973,6 +980,94 @@
     <node concept="1YaCAy" id="7dAoyMZUdX2" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <ref role="1YaFvo" to="tpee:gTgVbCX" resolve="AssertStatement" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="5aRyplrTxTz">
+    <property role="TrG5h" value="checkBeforePresents_EditorTestCase" />
+    <property role="3GE5qa" value="editor" />
+    <node concept="3clFbS" id="5aRyplrTxT$" role="18ibNy">
+      <node concept="3clFbJ" id="5aRyplrTxTH" role="3cqZAp">
+        <node concept="2OqwBi" id="5aRyplrTS8t" role="3clFbw">
+          <node concept="2OqwBi" id="5aRyplrTya_" role="2Oq$k0">
+            <node concept="1YBJjd" id="5aRyplrTxTT" role="2Oq$k0">
+              <ref role="1YBMHb" node="5aRyplrTxTA" resolve="test" />
+            </node>
+            <node concept="3TrEf2" id="5aRyplrTyui" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp5g:hSLiRz$" resolve="nodeToEdit" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="5aRyplrTSh3" role="2OqNvi" />
+        </node>
+        <node concept="3clFbS" id="5aRyplrTxTJ" role="3clFbx">
+          <node concept="a7r0C" id="5aRyplrTz1m" role="3cqZAp">
+            <node concept="1YBJjd" id="5aRyplrTz1C" role="2OEOjV">
+              <ref role="1YBMHb" node="5aRyplrTxTA" resolve="test" />
+            </node>
+            <node concept="Xl_RD" id="5aRyplrT$4z" role="a7wSD">
+              <property role="Xl_RC" value="A node in the 'before' section must be provided" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5aRyplrTxTA" role="1YuTPh">
+      <property role="TrG5h" value="test" />
+      <ref role="1YaFvo" to="tp5g:hSLiM3w" resolve="EditorTestCase" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="5aRyplrT$il">
+    <property role="TrG5h" value="checkBeforeContainsCellAnnotation_EditorTestCase" />
+    <property role="3GE5qa" value="editor" />
+    <node concept="3clFbS" id="5aRyplrT$im" role="18ibNy">
+      <node concept="3clFbJ" id="5aRyplrT$in" role="3cqZAp">
+        <node concept="1Wc70l" id="5aRyplrTWEA" role="3clFbw">
+          <node concept="2OqwBi" id="5aRyplrTYd8" role="3uHU7B">
+            <node concept="2OqwBi" id="5aRyplrTXhz" role="2Oq$k0">
+              <node concept="1YBJjd" id="5aRyplrTWMr" role="2Oq$k0">
+                <ref role="1YBMHb" node="5aRyplrT$iz" resolve="test" />
+              </node>
+              <node concept="3TrEf2" id="5aRyplrTXFi" role="2OqNvi">
+                <ref role="3Tt5mk" to="tp5g:hSLiRz$" resolve="nodeToEdit" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="5aRyplrTYqq" role="2OqNvi" />
+          </node>
+          <node concept="2OqwBi" id="5aRyplrTEDT" role="3uHU7w">
+            <node concept="2OqwBi" id="5aRyplrT$iq" role="2Oq$k0">
+              <node concept="2OqwBi" id="5aRyplrTQvI" role="2Oq$k0">
+                <node concept="1YBJjd" id="5aRyplrT$ir" role="2Oq$k0">
+                  <ref role="1YBMHb" node="5aRyplrT$iz" resolve="test" />
+                </node>
+                <node concept="3TrEf2" id="5aRyplrTRc1" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tp5g:hSLiRz$" resolve="nodeToEdit" />
+                </node>
+              </node>
+              <node concept="2Rf3mk" id="5aRyplrT$EV" role="2OqNvi">
+                <node concept="1xMEDy" id="5aRyplrT$EX" role="1xVPHs">
+                  <node concept="chp4Y" id="5aRyplrT$Ge" role="ri$Ld">
+                    <ref role="cht4Q" to="tp5g:hSLIFSi" resolve="AnonymousCellAnnotation" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1v1jN8" id="5aRyplrTM4L" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="5aRyplrT$it" role="3clFbx">
+          <node concept="a7r0C" id="5aRyplrT$iu" role="3cqZAp">
+            <node concept="1YBJjd" id="5aRyplrT$iw" role="2OEOjV">
+              <ref role="1YBMHb" node="5aRyplrT$iz" resolve="test" />
+            </node>
+            <node concept="Xl_RD" id="5aRyplrT$iy" role="a7wSD">
+              <property role="Xl_RC" value="The 'before' section must have an AnonymousCellAnnotation attached" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5aRyplrT$iz" role="1YuTPh">
+      <property role="TrG5h" value="test" />
+      <ref role="1YaFvo" to="tp5g:hSLiM3w" resolve="EditorTestCase" />
     </node>
   </node>
 </model>

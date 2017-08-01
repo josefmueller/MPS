@@ -17,8 +17,8 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-public class check_ITestCase_And_TestInfo_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_ITestCase_And_TestInfo_NonTypesystemRule() {
+public class checkITestCase_And_TestInfo_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public checkITestCase_And_TestInfo_NonTypesystemRule() {
   }
   public void applyRule(final SNode iTestCase, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((boolean) ITestable__BehaviorDescriptor.isMpsStartRequired_id2RMg39tmiFh.invoke(iTestCase) && ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(iTestCase), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x46bca02bfb6e730aL, "jetbrains.mps.lang.test.structure.TestInfo"))).isEmpty()) {

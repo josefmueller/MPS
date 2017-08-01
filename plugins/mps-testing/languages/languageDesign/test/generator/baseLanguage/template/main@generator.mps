@@ -3105,6 +3105,36 @@
                           <node concept="3w_OXm" id="5aRyplrRbaZ" role="2OqNvi" />
                         </node>
                       </node>
+                      <node concept="3clFbJ" id="5aRyplrT7qt" role="3cqZAp">
+                        <node concept="3clFbS" id="5aRyplrT7qv" role="3clFbx">
+                          <node concept="3clFbF" id="5aRyplrTgsv" role="3cqZAp">
+                            <node concept="2OqwBi" id="5aRyplrTgNU" role="3clFbG">
+                              <node concept="1iwH7S" id="5aRyplrTgst" role="2Oq$k0" />
+                              <node concept="2k5nB$" id="5aRyplrThdK" role="2OqNvi">
+                                <node concept="Xl_RD" id="5aRyplrThCn" role="2k5Stb">
+                                  <property role="Xl_RC" value="A node in the 'before' section must have at least one AnonymousCellAnnotation attached" />
+                                </node>
+                                <node concept="30H73N" id="5aRyplrTpGX" role="2k6f33" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="5aRyplrTc6f" role="3clFbw">
+                          <node concept="2OqwBi" id="5aRyplrT8m2" role="2Oq$k0">
+                            <node concept="37vLTw" id="5aRyplrT7OD" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5aRyplrR88p" resolve="nodeToEdit" />
+                            </node>
+                            <node concept="2Rf3mk" id="5aRyplrT8Or" role="2OqNvi">
+                              <node concept="1xMEDy" id="5aRyplrT8Ot" role="1xVPHs">
+                                <node concept="chp4Y" id="5aRyplrT99v" role="ri$Ld">
+                                  <ref role="cht4Q" to="tp5g:hSLIFSi" resolve="AnonymousCellAnnotation" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="1v1jN8" id="5aRyplrTg0G" role="2OqNvi" />
+                        </node>
+                      </node>
                       <node concept="3clFbF" id="5s44y2KSw$t" role="3cqZAp">
                         <node concept="2OqwBi" id="5s44y2KSw$u" role="3clFbG">
                           <node concept="2OqwBi" id="5s44y2KSw$v" role="2Oq$k0">
