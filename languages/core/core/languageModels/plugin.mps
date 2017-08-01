@@ -1044,6 +1044,11 @@
                                   </node>
                                 </node>
                               </node>
+                              <node concept="3SKdUt" id="3bu_e5DsOiS" role="3cqZAp">
+                                <node concept="3SKdUq" id="3bu_e5DsOiU" role="3SKWNk">
+                                  <property role="3SKdUp" value="FIXME status.getOutputRepository is the one to lock for breakDownToUnits (down in schedule() call), and, perhaps, for the outer runReadAction, too." />
+                                </node>
+                              </node>
                               <node concept="3clFbF" id="7A08csWcfs9" role="3cqZAp">
                                 <node concept="2OqwBi" id="7A08csWcfC3" role="3clFbG">
                                   <node concept="37vLTw" id="7A08csWcfs7" role="2Oq$k0">
@@ -1371,15 +1376,67 @@
                         </node>
                       </node>
                     </node>
+                    <node concept="3clFbH" id="3bu_e5DrW7F" role="3cqZAp" />
+                    <node concept="3cpWs8" id="3bu_e5Ds6OI" role="3cqZAp">
+                      <node concept="3cpWsn" id="3bu_e5Ds6OJ" role="3cpWs9">
+                        <property role="TrG5h" value="outputModelRepo" />
+                        <node concept="3uibUv" id="3bu_e5Ds6OK" role="1tU5fm">
+                          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+                        </node>
+                        <node concept="2OqwBi" id="3bu_e5Dsdur" role="33vP2m">
+                          <node concept="2OqwBi" id="3bu_e5DsaQw" role="2Oq$k0">
+                            <node concept="37vLTw" id="3bu_e5Dsa7F" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3QuLV9OzV7z" resolve="inputResource" />
+                            </node>
+                            <node concept="2sxana" id="3bu_e5DscpJ" role="2OqNvi">
+                              <ref role="2sxfKC" to="fn29:1Xl3kQ1uadG" resolve="status" />
+                            </node>
+                          </node>
+                          <node concept="liA8E" id="3bu_e5DsdRI" role="2OqNvi">
+                            <ref role="37wK5l" to="ap4t:~GenerationStatus.getOutputRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getOutputRepository" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbJ" id="3bu_e5DshlB" role="3cqZAp">
+                      <node concept="3clFbS" id="3bu_e5DshlD" role="3clFbx">
+                        <node concept="3SKdUt" id="3bu_e5DskYB" role="3cqZAp">
+                          <node concept="3SKdUq" id="3bu_e5DskYD" role="3SKWNk">
+                            <property role="3SKdUp" value="just in case, generally shall never happen, provided we generate models from a repository" />
+                          </node>
+                        </node>
+                        <node concept="3clFbF" id="3bu_e5DslaU" role="3cqZAp">
+                          <node concept="37vLTI" id="3bu_e5Dslzt" role="3clFbG">
+                            <node concept="2OqwBi" id="3bu_e5Dsmfj" role="37vLTx">
+                              <node concept="37vLTw" id="3bu_e5DslLC" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7A08csWclcg" resolve="mpsProject" />
+                              </node>
+                              <node concept="liA8E" id="3bu_e5DsmXr" role="2OqNvi">
+                                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                              </node>
+                            </node>
+                            <node concept="37vLTw" id="3bu_e5DslaS" role="37vLTJ">
+                              <ref role="3cqZAo" node="3bu_e5Ds6OJ" resolve="outputModelRepo" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbC" id="3bu_e5DsknZ" role="3clFbw">
+                        <node concept="10Nm6u" id="3bu_e5Dsk_Y" role="3uHU7w" />
+                        <node concept="37vLTw" id="3bu_e5Dsk4P" role="3uHU7B">
+                          <ref role="3cqZAo" node="3bu_e5Ds6OJ" resolve="outputModelRepo" />
+                        </node>
+                      </node>
+                    </node>
                     <node concept="3clFbH" id="3xnl$BhH2fe" role="3cqZAp" />
                     <node concept="3clFbF" id="3QuLV9OsVQ7" role="3cqZAp">
                       <node concept="2OqwBi" id="3QuLV9OsWxQ" role="3clFbG">
                         <node concept="2OqwBi" id="3QuLV9OsW77" role="2Oq$k0">
-                          <node concept="37vLTw" id="3QuLV9OsVQ5" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7A08csWclcg" resolve="mpsProject" />
+                          <node concept="37vLTw" id="3bu_e5Dsnd9" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3bu_e5Ds6OJ" resolve="outputModelRepo" />
                           </node>
                           <node concept="liA8E" id="3QuLV9OsWxh" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                            <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                           </node>
                         </node>
                         <node concept="liA8E" id="3QuLV9OsWQx" role="2OqNvi">

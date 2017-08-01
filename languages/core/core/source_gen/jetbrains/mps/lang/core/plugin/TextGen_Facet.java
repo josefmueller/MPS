@@ -43,6 +43,7 @@ import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.concurrent.TimeUnit;
 import jetbrains.mps.text.TextUnit;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -232,6 +233,7 @@ public class TextGen_Facet extends IFacet.Stub {
                     for (GResource res : Sequence.fromIterable(resourcesWithOutput)) {
                       SModel model2generate = res.status().getOutputModel();
                       textGenInput2Resource.put(model2generate, res);
+                      // FIXME status.getOutputRepository is the one to lock for breakDownToUnits (down in schedule() call), and, perhaps, for the outer runReadAction, too. 
                       tgEngine.schedule(model2generate, resultQueue);
                     }
                   }
@@ -270,7 +272,13 @@ public class TextGen_Facet extends IFacet.Stub {
 
                   _output_21gswx_a0b = Sequence.fromIterable(_output_21gswx_a0b).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new TextGenOutcomeResource(inputResource.model(), inputResource.module(), tgr))));
 
-                  mpsProject.getModelAccess().runReadAction(new Runnable() {
+                  SRepository outputModelRepo = inputResource.status().getOutputRepository();
+                  if (outputModelRepo == null) {
+                    // just in case, generally shall never happen, provided we generate models from a repository 
+                    outputModelRepo = mpsProject.getRepository();
+                  }
+
+                  outputModelRepo.getModelAccess().runReadAction(new Runnable() {
                     public void run() {
                       Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedDeltas(inputResource.module(), Sequence.fromIterable(inputResource.retainedModels()).where(new IWhereFilter<SModel>() {
                         public boolean accept(SModel smd) {

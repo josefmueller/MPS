@@ -19,8 +19,10 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.util.Status;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Igor Alshannikov
@@ -29,20 +31,24 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class GenerationStatus extends Status {
   private final SModel myOutputModel;
   private final SModel myInputModel;
+  // we initialize it the moment GS is created assuming we can read the input model at this time, so I don't bother with model RA.
+  private final SRepository myInputModelRepo;
   private GenerationDependencies myDependencies;
   private ModelExports myExports;
 
-  public GenerationStatus(SModel inputModel) {
+  public GenerationStatus(@NotNull SModel inputModel) {
     super(Code.ERROR, null);
     myInputModel = inputModel;
     myOutputModel = null;
+    myInputModelRepo = inputModel.getRepository();
   }
 
-  public GenerationStatus(SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors) {
+  public GenerationStatus(@NotNull SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors) {
     super(errors ? Code.ERROR : Code.OK, null);
     myOutputModel = outputModel;
     myInputModel = inputModel;
     myDependencies = dependencies;
+    myInputModelRepo = inputModel.getRepository();
   }
 
   @Nullable
@@ -56,6 +62,27 @@ public class GenerationStatus extends Status {
 
   public GenerationDependencies getDependencies() {
     return myDependencies;
+  }
+
+  /**
+   * Repository one need to guard access to when working with {@linkplain #getOutputModel() output model}.
+   *
+   * FIXME Perhaps, repository should be part of GResource, instead. Design of the whole thing is not clear to me yet.
+   *       With transient models/modules living in a distinct repository, we need to lock proper one when accessing transient models,
+   *       and this method is to give access to the one.
+   *
+   * @return generally, shall not return {@code null}, uses input model's repository as fallback. However, if both input
+   * and output model are not from a repository, you can face null.
+   */
+  public SRepository getOutputRepository() {
+    SRepository rv = null;
+    if (myOutputModel != null) {
+      // XXX here, I rely on the questionable assumption one can get repository of a model without proper read access
+      //     Note, as the same is not true for SModule#getRepository, I expect this assumption to break any time soon.
+      //     Need to settle the contract down, whether #getRepository is allowed w/o proper RA or not.
+      rv = myOutputModel.getRepository();
+    }
+    return rv == null ? myInputModelRepo : rv;
   }
 
   /**
