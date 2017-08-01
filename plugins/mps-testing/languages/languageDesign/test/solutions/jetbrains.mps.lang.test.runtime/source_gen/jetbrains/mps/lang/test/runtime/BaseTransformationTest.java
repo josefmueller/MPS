@@ -50,12 +50,6 @@ public abstract class BaseTransformationTest implements TransformationTest {
     myModel = modelDescriptor;
   }
 
-  public void beforeTests() {
-  }
-
-  public void afterTests() {
-  }
-
   @Override
   public void setTestRunner(TestRunner runner) {
     myRunner = runner;
@@ -87,13 +81,11 @@ public abstract class BaseTransformationTest implements TransformationTest {
       @Override
       public void testRunFinished() {
         CACHE.clean();
-        afterTests();
         RunEventsDispatcher.getInstance().removeListener(this);
       }
 
       @Override
       public void testRunStarted() {
-        beforeTests();
       }
     };
     RunEventsDispatcher.getInstance().addListener(listener);
