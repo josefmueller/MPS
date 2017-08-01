@@ -96,6 +96,7 @@ public interface IFile {
 
   /**
    * @return the comprised path corresponding to this file
+   * the path is system-dependent in that case (sic!)
    */
   @NotNull
   UniPath toPath();
