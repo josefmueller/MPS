@@ -71,6 +71,7 @@ public class NewModelAction extends NewModelActionBase {
   @Override
   public void actionPerformed(final AnActionEvent anActionEvent) {
     SRepository repository = ProjectHelper.getProjectRepository(myProject);
+    final ModuleRepositoryFacade repositoryFacade = new ModuleRepositoryFacade(repository);
     Map<String, ModelTemplate> namesToTemplates = new HashMap<String, ModelTemplate>();
     CreateFromTemplateDialog dialog = new CreateFromTemplateDialog(myProject) {
       @Override
@@ -78,7 +79,7 @@ public class NewModelAction extends NewModelActionBase {
         final ModelTemplate template = namesToTemplates.get(getKindCombo().getSelectedName());
         String shortModelName = getNameField().getText().trim();
         final String modelName = myModelPrefix.isEmpty() ? shortModelName : myModelPrefix + "." + shortModelName;
-        if (!isModelNameValid(modelName)) {
+        if (!isModelNameValid(repositoryFacade, modelName)) {
           return;
         }
 
@@ -137,7 +138,7 @@ public class NewModelAction extends NewModelActionBase {
         });
       }
 
-      private boolean isModelNameValid(String modelName) {
+      private boolean isModelNameValid(final ModuleRepositoryFacade repositoryFacade, final String modelName) {
         try {
           if (modelName.length() == 0) {
             showError(MPSBundle.message("create.new.model.dialog.error.empty.name"));
@@ -149,12 +150,12 @@ public class NewModelAction extends NewModelActionBase {
             return false;
           }
 
-          SModelName mn = new SModelName(modelName);
+          final SModelName mn = new SModelName(modelName);
           if (!(SourceVersion.isName(mn.getLongName()))) {
             showError(MPSBundle.message("create.new.model.dialog.error.invalid.java", modelName));
             return false;
           }
-          if (!new ModuleRepositoryFacade(repository).getModelsByName(mn).isEmpty()) {
+          if (new ModelAccessHelper(repositoryFacade.getRepository()).runReadAction(() -> !repositoryFacade.getModelsByName(mn).isEmpty())) {
             showError(MPSBundle.message("create.new.model.dialog.error.model.exists", modelName));
             return false;
           }

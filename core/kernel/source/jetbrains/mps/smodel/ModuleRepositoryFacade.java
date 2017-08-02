@@ -64,6 +64,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   private static ModuleRepositoryFacade INSTANCE;
 
   private final MPSModuleRepository REPO;
+  private final SRepositoryExt myTrueRepo;
 
   /**
    * @deprecated  This class shall cease to be CoreComponent and singleton. Instead, shall be
@@ -84,6 +85,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   private ModuleRepositoryFacade(SRepositoryExt repo) {
+    myTrueRepo = repo;
     // FIXME REPO shall become SRepositoryExt once we add methods like getByFQN() and getOwners() there
     REPO = MPSModuleRepository.getInstance();
   }
@@ -108,6 +110,14 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   @Deprecated
   public static ModuleRepositoryFacade getInstance() {
     return INSTANCE;
+  }
+
+  /**
+   * @return repository this facade has been initialized with, never {@code null}
+   * @since 2017.2
+   */
+  public SRepository getRepository() {
+    return myTrueRepo;
   }
 
   public SModule getModule(@NotNull final SModuleReference ref) {
