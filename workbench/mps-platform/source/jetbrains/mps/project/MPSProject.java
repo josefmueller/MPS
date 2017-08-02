@@ -54,7 +54,7 @@ public class MPSProject extends ProjectBase implements FileBasedProject, Project
 
   @Override
   public void initComponent() {
-    ModuleFileChangeListener listener = new ModuleFileChangeListener(this);
+    ProjectModuleFileChangeListener listener = new ProjectModuleFileChangeListener(this);
     myListeners.add(listener);
     addListener(listener);
     ClassLoaderManager.getInstance().runNonReloadableTransaction(this::update);

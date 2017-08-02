@@ -60,12 +60,12 @@ public abstract class ProjectBase extends Project {
   protected ProjectDescriptor myProjectDescriptor;
   // contract : each project module must have a corresponding ModulePath in this map
   private final Map<SModule, ModulePath> myModuleToPathMap = new LinkedHashMap<>();
-  private final ModuleLoader myModuleLoader;
+  private final ProjectModuleLoader myModuleLoader;
 
   protected ProjectBase(@NotNull ProjectDescriptor projectDescriptor, @NotNull SRepositoryRegistry repositoryRegistry) {
     super(projectDescriptor.getName(), repositoryRegistry);
     myProjectDescriptor = projectDescriptor;
-    myModuleLoader = new ModuleLoader(this); // fixme: avoid
+    myModuleLoader = new ProjectModuleLoader(this); // fixme: avoid
   }
 
   @NotNull

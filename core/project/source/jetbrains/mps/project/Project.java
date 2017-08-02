@@ -20,8 +20,6 @@ import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
@@ -40,7 +38,6 @@ import java.util.Set;
  */
 public abstract class Project implements MPSModuleOwner, IProject {
   private final String myName;
-  private final SRepositoryRegistry myRepositoryRegistry;
   private final ProjectScope myScope = new ProjectScope();
   private final ProjectRepository myRepository;
 
@@ -48,7 +45,6 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   protected Project(String name, SRepositoryRegistry repositoryRegistry) {
     myName = name;
-    myRepositoryRegistry = repositoryRegistry;
     myRepository = new ProjectRepository(this, repositoryRegistry);
     myRepository.init();
   }

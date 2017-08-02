@@ -64,10 +64,7 @@ public class ModuleFileTracker implements FileListener {
    * @param module module read from the file
    */
   public void track(@NotNull IFile file, @NotNull SModule module) {
-    Set<SModule> modules = myFile2Module.get(file);
-    if (modules == null) {
-      myFile2Module.put(file, modules = new THashSet<>());
-    }
+    Set<SModule> modules = myFile2Module.computeIfAbsent(file, k -> new THashSet<>());
     boolean added = modules.add(module);
     if (added && myListenToTrackedFiles) {
       file.addListener(this);
@@ -82,8 +79,7 @@ public class ModuleFileTracker implements FileListener {
     myFile2Module.remove(file);
     if (myListenToTrackedFiles) {
       file.removeListener(this);
-    }
-  }
+    } }
 
   /**
    * Discard specific association between file and module. Does nothing if there's no such association.
@@ -107,7 +103,7 @@ public class ModuleFileTracker implements FileListener {
     }
   }
 
-    @Override
+  @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     final Set<SModule> modules2remove = new THashSet<>();
     final Set<AbstractModule> modules2reload = new THashSet<>();

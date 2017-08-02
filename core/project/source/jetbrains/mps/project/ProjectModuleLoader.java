@@ -42,14 +42,14 @@ import java.util.concurrent.CopyOnWriteArrayList;
  *
  * Created by apyshkin on 11/5/15.
  */
-final class ModuleLoader {
-  private static final Logger LOG = LogManager.getLogger(ModuleLoader.class);
+/*package*/ final class ProjectModuleLoader {
+  private static final Logger LOG = LogManager.getLogger(ProjectModuleLoader.class);
 
   @NotNull private final ProjectBase myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new CopyOnWriteArrayList<ProjectModuleLoadingListener>();
   private final StringBuilder myErrors = new StringBuilder();
 
-  public ModuleLoader(@NotNull ProjectBase project) {
+  ProjectModuleLoader(@NotNull ProjectBase project) {
     myProject = project;
   }
 
@@ -158,7 +158,6 @@ final class ModuleLoader {
 
   private void removeAbsentModules(final Collection<Pair<ModulePath, SModule>> removedModules) {
     for (Pair<ModulePath, SModule> p : removedModules) {
-      fireModuleRemoved(p.o1, p.o2);
       myProject.removeModule(p.o2);
       new ModuleRepositoryFacade(myProject).unregisterModule(p.o2);
     }

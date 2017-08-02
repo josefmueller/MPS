@@ -37,7 +37,7 @@ import java.util.Set;
  * @author Alexey Pyshkin
  * @author Artem Tikhomirov
  */
-public class ModuleFileChangeListener implements ProjectModuleLoadingListener {
+public final class ProjectModuleFileChangeListener implements ProjectModuleLoadingListener {
   private final MPSProject myMpsProject;
 
   /*
@@ -85,7 +85,7 @@ public class ModuleFileChangeListener implements ProjectModuleLoadingListener {
     }
   };
 
-  ModuleFileChangeListener(MPSProject mpsProject) {
+  ProjectModuleFileChangeListener(MPSProject mpsProject) {
     myMpsProject = mpsProject;
   }
 
