@@ -253,7 +253,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       if (!(treeNode instanceof MPSPsiElementTreeNode)) return null; // only root nodes please
 
       MPSPsiRootNode mpsPsiNode = ((MPSPsiElementTreeNode) treeNode).getValue();
-      if (!mpsPsiNode.isValid()) return null;
+      if (mpsPsiNode == null || !mpsPsiNode.isValid()) return null;
 
       selectedNodePointers.add(mpsPsiNode.getSNodeReference());
 
