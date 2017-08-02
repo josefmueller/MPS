@@ -369,6 +369,7 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -897,28 +898,23 @@
                 <node concept="3cpWs8" id="7gzwGCYe3Y5" role="3cqZAp">
                   <node concept="3cpWsn" id="7gzwGCYe3Y8" role="3cpWs9">
                     <property role="TrG5h" value="javaImports" />
-                    <node concept="1rXfSq" id="7gzwGCYk1vf" role="33vP2m">
-                      <ref role="37wK5l" node="7gzwGCYewE3" resolve="getImports" />
-                      <node concept="2OqwBi" id="7gzwGCYcO4_" role="37wK5m">
-                        <node concept="liA8E" id="7gzwGCYcUCV" role="2OqNvi">
-                          <ref role="37wK5l" to="dj18:~PsiImportList.getAllImportStatements():com.intellij.psi.PsiImportStatementBase[]" resolve="getAllImportStatements" />
-                        </node>
-                        <node concept="2OqwBi" id="7gzwGCYcEwM" role="2Oq$k0">
-                          <node concept="37vLTw" id="7GJnXJjDKf3" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7GJnXJjDKeZ" resolve="jf" />
-                          </node>
-                          <node concept="liA8E" id="7gzwGCYcLGT" role="2OqNvi">
-                            <ref role="37wK5l" to="dj18:~PsiJavaFile.getImportList():com.intellij.psi.PsiImportList" resolve="getImportList" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                     <node concept="3Tqbb2" id="7gzwGCYe3Y3" role="1tU5fm">
                       <ref role="ehGHo" to="tpee:5fRKNW6A6bM" resolve="JavaImports" />
                     </node>
+                    <node concept="1rXfSq" id="31BCW_y0RIZ" role="33vP2m">
+                      <ref role="37wK5l" node="7gzwGCYewE3" resolve="getImports" />
+                      <node concept="2OqwBi" id="3gsbhpNcgoI" role="37wK5m">
+                        <node concept="37vLTw" id="3gsbhpNcgoJ" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7GJnXJjDKeZ" resolve="jf" />
+                        </node>
+                        <node concept="liA8E" id="3gsbhpNcgoK" role="2OqNvi">
+                          <ref role="37wK5l" to="dj18:~PsiJavaFile.getImportList():com.intellij.psi.PsiImportList" resolve="getImportList" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
-                <node concept="3clFbH" id="38onmTfsC11" role="3cqZAp" />
+                <node concept="3clFbH" id="31BCW_y0U49" role="3cqZAp" />
                 <node concept="3cpWs8" id="38onmTfrCZN" role="3cqZAp">
                   <node concept="3cpWsn" id="2H6usAyIt7M" role="3cpWs9">
                     <property role="TrG5h" value="converter" />
@@ -973,14 +969,22 @@
                       </node>
                     </node>
                     <node concept="3clFbJ" id="7gzwGCYkFPO" role="3cqZAp">
-                      <node concept="2OqwBi" id="7gzwGCYkQct" role="3clFbw">
-                        <node concept="1mIQ4w" id="7gzwGCYkSEA" role="2OqNvi">
-                          <node concept="chp4Y" id="4rpfcm4Fiih" role="cj9EA">
-                            <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                      <node concept="1Wc70l" id="3gsbhpNcpZX" role="3clFbw">
+                        <node concept="2OqwBi" id="31BCW_y0X0N" role="3uHU7w">
+                          <node concept="37vLTw" id="3gsbhpNcrHd" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7gzwGCYe3Y8" resolve="javaImports" />
                           </node>
+                          <node concept="3x8VRR" id="31BCW_y0Xm3" role="2OqNvi" />
                         </node>
-                        <node concept="37vLTw" id="7gzwGCYkQ82" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2H6usAyIuvO" resolve="node" />
+                        <node concept="2OqwBi" id="7gzwGCYkQct" role="3uHU7B">
+                          <node concept="1mIQ4w" id="7gzwGCYkSEA" role="2OqNvi">
+                            <node concept="chp4Y" id="4rpfcm4Fiih" role="cj9EA">
+                              <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                            </node>
+                          </node>
+                          <node concept="37vLTw" id="7gzwGCYkQ82" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2H6usAyIuvO" resolve="node" />
+                          </node>
                         </node>
                       </node>
                       <node concept="3clFbS" id="7gzwGCYkFPQ" role="3clFbx">
@@ -1513,17 +1517,12 @@
                 <property role="TrG5h" value="javaImports" />
                 <node concept="1rXfSq" id="7gzwGDj9GWD" role="33vP2m">
                   <ref role="37wK5l" node="7gzwGCYewE3" resolve="getImports" />
-                  <node concept="2OqwBi" id="7gzwGDj9GWE" role="37wK5m">
-                    <node concept="liA8E" id="7gzwGDj9GWF" role="2OqNvi">
-                      <ref role="37wK5l" to="dj18:~PsiImportList.getAllImportStatements():com.intellij.psi.PsiImportStatementBase[]" resolve="getAllImportStatements" />
+                  <node concept="2OqwBi" id="7gzwGDj9GWG" role="37wK5m">
+                    <node concept="37vLTw" id="4LI1zZpLCs_" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7GJnXJjDO9Z" resolve="file" />
                     </node>
-                    <node concept="2OqwBi" id="7gzwGDj9GWG" role="2Oq$k0">
-                      <node concept="37vLTw" id="4LI1zZpLCs_" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7GJnXJjDO9Z" resolve="file" />
-                      </node>
-                      <node concept="liA8E" id="7gzwGDj9GWH" role="2OqNvi">
-                        <ref role="37wK5l" to="dj18:~PsiJavaFile.getImportList():com.intellij.psi.PsiImportList" resolve="getImportList" />
-                      </node>
+                    <node concept="liA8E" id="7gzwGDj9GWH" role="2OqNvi">
+                      <ref role="37wK5l" to="dj18:~PsiJavaFile.getImportList():com.intellij.psi.PsiImportList" resolve="getImportList" />
                     </node>
                   </node>
                 </node>
@@ -1587,14 +1586,22 @@
                   </node>
                 </node>
                 <node concept="3clFbJ" id="7gzwGDja6N8" role="3cqZAp">
-                  <node concept="2OqwBi" id="7gzwGDja6N9" role="3clFbw">
-                    <node concept="1mIQ4w" id="7gzwGDja6Na" role="2OqNvi">
-                      <node concept="chp4Y" id="7gzwGDja6Nb" role="cj9EA">
-                        <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                  <node concept="1Wc70l" id="31BCW_y0VC6" role="3clFbw">
+                    <node concept="2OqwBi" id="31BCW_y0W4I" role="3uHU7w">
+                      <node concept="37vLTw" id="31BCW_y0VN$" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7gzwGDj9GWC" resolve="javaImports" />
                       </node>
+                      <node concept="3x8VRR" id="31BCW_y0WpY" role="2OqNvi" />
                     </node>
-                    <node concept="37vLTw" id="7gzwGDja6Nc" role="2Oq$k0">
-                      <ref role="3cqZAo" node="624K0zKw8qE" resolve="node" />
+                    <node concept="2OqwBi" id="7gzwGDja6N9" role="3uHU7B">
+                      <node concept="1mIQ4w" id="7gzwGDja6Na" role="2OqNvi">
+                        <node concept="chp4Y" id="7gzwGDja6Nb" role="cj9EA">
+                          <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                        </node>
+                      </node>
+                      <node concept="37vLTw" id="7gzwGDja6Nc" role="2Oq$k0">
+                        <ref role="3cqZAo" node="624K0zKw8qE" resolve="node" />
+                      </node>
                     </node>
                   </node>
                   <node concept="3clFbS" id="7gzwGDja6Nd" role="3clFbx">
@@ -1753,6 +1760,37 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="7gzwGCYewE6" role="3clF47">
+        <node concept="3cpWs8" id="31BCW_y0Lf_" role="3cqZAp">
+          <node concept="3cpWsn" id="31BCW_y0LfA" role="3cpWs9">
+            <property role="TrG5h" value="imports" />
+            <node concept="10Q1$e" id="31BCW_y0LfB" role="1tU5fm">
+              <node concept="3uibUv" id="31BCW_y0LfC" role="10Q1$1">
+                <ref role="3uigEE" to="dj18:~PsiImportStatementBase" resolve="PsiImportStatementBase" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="31BCW_y0Ndx" role="33vP2m">
+              <node concept="37vLTw" id="31BCW_y0MXr" role="2Oq$k0">
+                <ref role="3cqZAo" node="7gzwGCYeBdn" resolve="importList" />
+              </node>
+              <node concept="liA8E" id="31BCW_y0NDT" role="2OqNvi">
+                <ref role="37wK5l" to="dj18:~PsiImportList.getAllImportStatements():com.intellij.psi.PsiImportStatementBase[]" resolve="getAllImportStatements" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="31BCW_y0NTS" role="3cqZAp">
+          <node concept="3clFbS" id="31BCW_y0NTU" role="3clFbx">
+            <node concept="3cpWs6" id="31BCW_y0OoD" role="3cqZAp">
+              <node concept="10Nm6u" id="31BCW_y0Orq" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="3clFbC" id="31BCW_y0OiA" role="3clFbw">
+            <node concept="10Nm6u" id="31BCW_y0Ol8" role="3uHU7w" />
+            <node concept="37vLTw" id="31BCW_y0O4K" role="3uHU7B">
+              <ref role="3cqZAo" node="31BCW_y0LfA" resolve="imports" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="7gzwGCYfixF" role="3cqZAp">
           <node concept="3cpWsn" id="7gzwGCYfixI" role="3cpWs9">
             <property role="TrG5h" value="javaImports" />
@@ -1902,8 +1940,8 @@
               </node>
             </node>
           </node>
-          <node concept="37vLTw" id="7gzwGCYeEBp" role="1DdaDG">
-            <ref role="3cqZAo" node="7gzwGCYeBdn" resolve="imports" />
+          <node concept="37vLTw" id="31BCW_y0Rah" role="1DdaDG">
+            <ref role="3cqZAo" node="31BCW_y0LfA" resolve="imports" />
           </node>
           <node concept="3cpWsn" id="7GJnXJjDPZQ" role="1Duv9x">
             <property role="TrG5h" value="imp" />
@@ -1923,11 +1961,9 @@
         <ref role="ehGHo" to="tpee:5fRKNW6A6bM" resolve="JavaImports" />
       </node>
       <node concept="37vLTG" id="7gzwGCYeBdn" role="3clF46">
-        <property role="TrG5h" value="imports" />
-        <node concept="10Q1$e" id="7gzwGCYeD0T" role="1tU5fm">
-          <node concept="3uibUv" id="77JCHDEmxDq" role="10Q1$1">
-            <ref role="3uigEE" to="dj18:~PsiImportStatementBase" resolve="PsiImportStatementBase" />
-          </node>
+        <property role="TrG5h" value="importList" />
+        <node concept="3uibUv" id="31BCW_y0Lvc" role="1tU5fm">
+          <ref role="3uigEE" to="dj18:~PsiImportList" resolve="PsiImportList" />
         </node>
       </node>
     </node>
@@ -7494,21 +7530,47 @@
           </node>
         </node>
         <node concept="3cpWs6" id="2H6usAyIWQa" role="3cqZAp">
-          <node concept="2OqwBi" id="2H6usAyK6FN" role="3cqZAk">
-            <node concept="2OqwBi" id="2H6usAyJToo" role="2Oq$k0">
-              <node concept="39bAoz" id="2H6usAyJXv$" role="2OqNvi" />
-              <node concept="2OqwBi" id="2H6usAyJPRy" role="2Oq$k0">
-                <node concept="liA8E" id="2H6usAyJSc8" role="2OqNvi">
-                  <ref role="37wK5l" to="dj18:~PsiDirectory.getFiles():com.intellij.psi.PsiFile[]" resolve="getFiles" />
+          <node concept="2OqwBi" id="3gsbhpNbrzZ" role="3cqZAk">
+            <node concept="2OqwBi" id="2H6usAyK6FN" role="2Oq$k0">
+              <node concept="2OqwBi" id="2H6usAyJToo" role="2Oq$k0">
+                <node concept="39bAoz" id="2H6usAyJXv$" role="2OqNvi" />
+                <node concept="2OqwBi" id="2H6usAyJPRy" role="2Oq$k0">
+                  <node concept="liA8E" id="2H6usAyJSc8" role="2OqNvi">
+                    <ref role="37wK5l" to="dj18:~PsiDirectory.getFiles():com.intellij.psi.PsiFile[]" resolve="getFiles" />
+                  </node>
+                  <node concept="37vLTw" id="2H6usAyJP5p" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2H6usAyJORl" resolve="myDirectory" />
+                  </node>
                 </node>
-                <node concept="37vLTw" id="2H6usAyJP5p" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2H6usAyJORl" resolve="myDirectory" />
+              </node>
+              <node concept="UnYns" id="2H6usAyK83o" role="2OqNvi">
+                <node concept="3uibUv" id="4rpfcm4t1Fx" role="UnYnz">
+                  <ref role="3uigEE" to="dj18:~PsiJavaFile" resolve="PsiJavaFile" />
                 </node>
               </node>
             </node>
-            <node concept="UnYns" id="2H6usAyK83o" role="2OqNvi">
-              <node concept="3uibUv" id="4rpfcm4t1Fx" role="UnYnz">
-                <ref role="3uigEE" to="dj18:~PsiJavaFile" resolve="PsiJavaFile" />
+            <node concept="3zZkjj" id="3gsbhpNbtz0" role="2OqNvi">
+              <node concept="1bVj0M" id="3gsbhpNbtz2" role="23t8la">
+                <node concept="3clFbS" id="3gsbhpNbtz3" role="1bW5cS">
+                  <node concept="3clFbF" id="3gsbhpNbI1w" role="3cqZAp">
+                    <node concept="3fqX7Q" id="3gsbhpNbI1u" role="3clFbG">
+                      <node concept="1eOMI4" id="3gsbhpNbI28" role="3fr31v">
+                        <node concept="2ZW3vV" id="3gsbhpNbQQL" role="1eOMHV">
+                          <node concept="3uibUv" id="3gsbhpNbT2L" role="2ZW6by">
+                            <ref role="3uigEE" to="dj18:~PsiCompiledFile" resolve="PsiCompiledFile" />
+                          </node>
+                          <node concept="37vLTw" id="3gsbhpNbJWw" role="2ZW6bz">
+                            <ref role="3cqZAo" node="3gsbhpNbtz4" resolve="it" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="3gsbhpNbtz4" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="3gsbhpNbtz5" role="1tU5fm" />
+                </node>
               </node>
             </node>
           </node>
