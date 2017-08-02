@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,16 +37,26 @@ public class BasicPropertiesContributor implements CellTreeContributor {
     TreeBuilder basicProperties = builder.subtree().icon(CellExplorer.CellProperty).text("Basic Properties");
 
     CellLayout cellLayout = getCellLayout(cell);
-    if (cellLayout != null) basicProperties.property(CellExplorer.Cells, "cellLayout", cellLayout);
+    if (cellLayout != null) {
+      basicProperties.property(CellExplorer.Cells, "cellLayout", cellLayout);
+    }
 
     String text = getCellText(cell);
-    if (text != null) basicProperties.property("text", text);
+    if (text != null) {
+      basicProperties.property("text", text);
+    }
 
     Icon icon = getCellIcon(cell);
-    if (icon != null) basicProperties.property(icon, "icon", icon);
+    if (icon != null) {
+      basicProperties.property(icon, "icon", icon);
+    }
 
     SNode node = cell.getSNode();
-    if (node != null) basicProperties.property(IconManager.getIconFor(node), "node", toString(node));
+    if (node != null) {
+      cell.getEditorComponent().getEditorContext().getRepository().getModelAccess().runReadAction(() -> {
+        basicProperties.property(IconManager.getIconFor(node), "node", toString(node));
+      });
+    }
 
     basicProperties
         .property("id", cell.getCellId())
