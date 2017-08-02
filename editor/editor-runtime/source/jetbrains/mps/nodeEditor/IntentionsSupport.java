@@ -54,12 +54,14 @@ import javax.swing.AbstractAction;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -153,10 +155,20 @@ public class IntentionsSupport {
             return;
           }
 
+          final boolean[] forceReturn = {false};
+          try {
+            SwingUtilities.invokeAndWait(() -> {
+              forceReturn[0] = isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor);
+            });
+          } catch (InterruptedException | InvocationTargetException e) {
+            return;
+          }
+
+          if (forceReturn[0]) {
+            return;
+          }
+
           final Kind intentionKind = new ModelAccessHelper(getModelAccess()).runReadAction(() -> {
-            if (isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor)) {
-              return null;
-            }
             // TODO check for ActionsAsIntentions
             return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(),
                                                                                context -> IntentionsManager.getInstance()
