@@ -37,6 +37,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.idea.java.psi.JavaPsiListener;
 import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiImportList;
 import com.intellij.psi.PsiImportStatementBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import com.intellij.psi.PsiJavaCodeReferenceElement;
@@ -101,14 +102,14 @@ public class PsiJavaStubModelDescriptor extends RegularModelDescriptor implement
 
     try {
       for (PsiJavaFile jf : getSource().getJavaFiles()) {
-        SNode javaImports = getImports(jf.getImportList().getAllImportStatements());
+        SNode javaImports = getImports(jf.getImportList());
 
         ASTConverter converter = new ASTConverter(myMps2PsiMapper);
         Set<SNodeId> roots = SetSequence.fromSet(new HashSet<SNodeId>());
 
         for (PsiClass cls : jf.getClasses()) {
           SNode node = converter.convertClass(cls);
-          if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+          if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && (javaImports != null)) {
             AttributeOperations.setAttribute(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
           }
           // TODO check for duplicate ids (in java sources there may be 2 classes with the same name 
@@ -175,14 +176,14 @@ public class PsiJavaStubModelDescriptor extends RegularModelDescriptor implement
 
       myMps2PsiMapper.clearFile(modelCopy, file.getName());
 
-      SNode javaImports = getImports(file.getImportList().getAllImportStatements());
+      SNode javaImports = getImports(file.getImportList());
       ASTConverter converter = new ASTConverter(myMps2PsiMapper);
 
       Set<SNodeId> roots = SetSequence.fromSet(new HashSet<SNodeId>());
 
       for (PsiClass cls : file.getClasses()) {
         SNode node = converter.convertClass(cls);
-        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) && (javaImports != null)) {
           AttributeOperations.setAttribute(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports")), javaImports);
         }
 
@@ -198,7 +199,11 @@ public class PsiJavaStubModelDescriptor extends RegularModelDescriptor implement
   }
 
 
-  private SNode getImports(PsiImportStatementBase[] imports) {
+  private SNode getImports(PsiImportList importList) {
+    PsiImportStatementBase[] imports = importList.getAllImportStatements();
+    if (imports == null) {
+      return null;
+    }
     SNode javaImports = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"));
 
     for (PsiImportStatementBase imp : imports) {

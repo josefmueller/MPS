@@ -36,6 +36,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
@@ -62,9 +63,20 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
         com.intellij.openapi.project.Project project = getModule().getProject();
 
         SRepository repository = myMpsProject.getRepository();
-        if (new ModuleRepositoryFacade(repository).getModule(solutionDescriptor.getModuleReference()) != null) {
-          MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
-          return;
+        ModuleRepositoryFacade facade = new ModuleRepositoryFacade(repository);
+        SModule previousModule = facade.getModule(solutionDescriptor.getModuleReference());
+        if (previousModule != null) {
+          if (previousModule instanceof SolutionIdea && facade.getModuleOwners(previousModule).size() == 1) {
+            // Happens because upon .iml change, idea first initialises new facet and then disposes the old one.
+            // Thus, the solution from the old one under the same module reference is still in the repo.
+            // Deleting it here is dirty but likely safe, since MPSFacet is the only place that handles
+            // creation/deletion of SolutionIdea instances.
+            ((SRepositoryExt) repository).unregisterModule(previousModule, myMpsProject);
+          } else {
+            // fixme this is too silent, we are just left with a broken facet where solution is null
+            MessagesViewTool.log(project, MessageKind.ERROR, MPSBundle.message("facet.cannot.load.second.module", solutionDescriptor.getNamespace()));
+            return;
+          }
         }
 
         ((SRepositoryExt) repository).registerModule(mySolution = solution, myMpsProject);
