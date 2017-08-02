@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import java.util.function.Predicate;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
@@ -33,6 +35,14 @@ public class UseDevkit extends MigrationScriptBase {
     SModelInternal mi = (SModelInternal) constraintAspectModel;
     final SModuleReference constraintsDevkit = PersistenceFacade.getInstance().createModuleReference("00000000-0000-4000-0000-5604ebd4f22c(jetbrains.mps.devkit.aspect.constraints)");
     if (mi.importedDevkits().contains(constraintsDevkit)) {
+      return;
+    }
+    if (mi.importedLanguageIds().stream().anyMatch(new Predicate<SLanguage>() {
+      public boolean test(SLanguage l) {
+        return !(l.getQualifiedName().startsWith("jetbrains.mps."));
+      }
+    })) {
+      // Transition code, in case aspect uses custom extensions, do not turn GP on for it yet. 
       return;
     }
     mi.deleteLanguageId(MetaAdapterFactory.getLanguage(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, "jetbrains.mps.lang.constraints"));
