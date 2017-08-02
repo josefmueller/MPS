@@ -2471,6 +2471,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7BRTBHCfCfK" role="jymVt" />
     <node concept="3clFb_" id="109zu4DcKs8" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="doInit" />
@@ -2501,16 +2502,11 @@
               <node concept="1pGfFk" id="109zu4DcQef" role="2ShVmc">
                 <ref role="37wK5l" to="w1kc:~ModelReadRunnable.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess,java.lang.Runnable)" resolve="ModelReadRunnable" />
                 <node concept="2OqwBi" id="1TDFu3GjyA1" role="37wK5m">
-                  <node concept="2OqwBi" id="1TDFu3GjygP" role="2Oq$k0">
-                    <node concept="37vLTw" id="1TDFu3Gjxyb" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7ctIhG_bUw7" resolve="myProject" />
-                    </node>
-                    <node concept="liA8E" id="1TDFu3GjysG" role="2OqNvi">
-                      <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                    </node>
+                  <node concept="37vLTw" id="1TDFu3Gjxyb" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7ctIhG_bUw7" resolve="myProject" />
                   </node>
                   <node concept="liA8E" id="1TDFu3GjyEW" role="2OqNvi">
-                    <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="109zu4DcW8q" role="37wK5m">
@@ -2526,6 +2522,53 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1TDFu3GjtcG" role="jymVt" />
+    <node concept="3clFb_" id="7BRTBHCffZG" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="runRebuildAction" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="7BRTBHCffZH" role="1B3o_S" />
+      <node concept="3cqZAl" id="7BRTBHCffZJ" role="3clF45" />
+      <node concept="37vLTG" id="7BRTBHCffZK" role="3clF46">
+        <property role="TrG5h" value="rebuildAction" />
+        <node concept="3uibUv" id="7BRTBHCffZL" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7BRTBHCffZM" role="3clF46">
+        <property role="TrG5h" value="saveExpansion" />
+        <node concept="10P_77" id="7BRTBHCffZN" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="7BRTBHCffZO" role="3clF47">
+        <node concept="3clFbF" id="7BRTBHCffZT" role="3cqZAp">
+          <node concept="3nyPlj" id="7BRTBHCffZS" role="3clFbG">
+            <ref role="37wK5l" to="7e8u:~MPSTree.runRebuildAction(java.lang.Runnable,boolean):void" resolve="runRebuildAction" />
+            <node concept="2ShNRf" id="7BRTBHCfpba" role="37wK5m">
+              <node concept="1pGfFk" id="7BRTBHCfweg" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModelReadRunnable.&lt;init&gt;(org.jetbrains.mps.openapi.module.ModelAccess,java.lang.Runnable)" resolve="ModelReadRunnable" />
+                <node concept="2OqwBi" id="7BRTBHCfzS0" role="37wK5m">
+                  <node concept="37vLTw" id="7BRTBHCfytf" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7ctIhG_bUw7" resolve="myProject" />
+                  </node>
+                  <node concept="liA8E" id="7BRTBHCf$im" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="7BRTBHCfC5k" role="37wK5m">
+                  <ref role="3cqZAo" node="7BRTBHCffZK" resolve="rebuildAction" />
+                </node>
+              </node>
+            </node>
+            <node concept="37vLTw" id="7BRTBHCffZR" role="37wK5m">
+              <ref role="3cqZAo" node="7BRTBHCffZM" resolve="saveExpansion" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="7BRTBHCffZP" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="7ctIhG_bUyf">
     <property role="TrG5h" value="ReferencesFinder" />

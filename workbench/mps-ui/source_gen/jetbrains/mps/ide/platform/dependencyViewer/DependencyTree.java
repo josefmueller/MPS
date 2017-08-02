@@ -97,9 +97,14 @@ public class DependencyTree extends MPSTree {
       myParent.updateTargetsView(scope);
     }
   }
+
   @Override
   protected void doInit(MPSTreeNode node, Runnable runnable) {
-    super.doInit(node, new ModelReadRunnable(myProject.getRepository().getModelAccess(), runnable));
+    super.doInit(node, new ModelReadRunnable(myProject.getModelAccess(), runnable));
   }
 
+  @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
+  }
 }

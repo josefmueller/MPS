@@ -262,7 +262,8 @@
       <node id="2034046503361586496" at="89,83,90,37" concept="4" />
       <node id="2034046503361586512" at="92,13,93,0" concept="12" />
       <node id="8294989614925457407" at="96,9,97,40" concept="4" />
-      <node id="1155610777595610901" at="101,62,102,100" concept="4" />
+      <node id="1155610777595610901" at="102,62,103,84" concept="4" />
+      <node id="8788746615541006329" at="107,82,108,108" concept="4" />
       <node id="8294989614925457280" at="58,0,60,0" concept="2" trace="MyTreeSelectionListener#()V" />
       <node id="8294989614925457448" at="33,49,36,5" concept="6" />
       <node id="8294989614925457462" at="37,88,40,5" concept="6" />
@@ -276,7 +277,8 @@
       <node id="2034046503361586494" at="88,46,91,15" concept="6" />
       <node id="8294989614925457422" at="27,0,31,0" concept="2" trace="DependencyTree#(Ljetbrains/mps/ide/platform/dependencyViewer/DependenciesPanel;)V" />
       <node id="8294989614925457524" at="48,0,52,0" concept="8" trace="createPopupActionGroup#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;)Lcom/intellij/openapi/actionSystem/ActionGroup;" />
-      <node id="1155610777595610888" at="100,0,104,0" concept="8" trace="doInit#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;Ljava/lang/Runnable;)V" />
+      <node id="1155610777595610888" at="101,0,105,0" concept="8" trace="doInit#(Ljetbrains/mps/ide/ui/tree/MPSTreeNode;Ljava/lang/Runnable;)V" />
+      <node id="8788746615541006316" at="106,0,110,0" concept="8" trace="runRebuildAction#(Ljava/lang/Runnable;Z)V" />
       <node id="8294989614925457533" at="52,0,57,0" concept="8" trace="setContent#(Ljetbrains/mps/ide/platform/dependencyViewer/DependencyViewerScope;Ljetbrains/mps/project/Project;)V" />
       <node id="2034046503361586492" at="87,13,92,13" concept="7" />
       <node id="2034046503361586457" at="79,13,87,13" concept="7" />
@@ -297,7 +299,8 @@
       <scope id="2034046503361586460" at="81,83,82,34" />
       <scope id="2034046503361586475" at="84,80,85,33" />
       <scope id="2034046503361586495" at="89,83,90,37" />
-      <scope id="1155610777595610896" at="101,62,102,100" />
+      <scope id="1155610777595610896" at="102,62,103,84" />
+      <scope id="8788746615541006324" at="107,82,108,108" />
       <scope id="8294989614925457425" at="27,51,29,75" />
       <scope id="8294989614925457280" at="58,0,60,0" />
       <scope id="8294989614925457448" at="33,49,36,5">
@@ -326,9 +329,13 @@
       <scope id="8294989614925457524" at="48,0,52,0">
         <var name="node" id="8294989614925457527" />
       </scope>
-      <scope id="1155610777595610888" at="100,0,104,0">
+      <scope id="1155610777595610888" at="101,0,105,0">
         <var name="node" id="1155610777595610892" />
         <var name="runnable" id="1155610777595610894" />
+      </scope>
+      <scope id="8788746615541006316" at="106,0,110,0">
+        <var name="rebuildAction" id="8788746615541006320" />
+        <var name="saveExpansion" id="8788746615541006322" />
       </scope>
       <scope id="8294989614925457533" at="52,0,57,0">
         <var name="project" id="8294989614925457536" />
@@ -357,7 +364,7 @@
       </scope>
       <unit id="2034046503361586400" at="67,51,96,7" name="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree$MyTreeSelectionListener$1" />
       <unit id="8294989614925457278" at="57,0,100,0" name="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree$MyTreeSelectionListener" />
-      <unit id="8294989614925457277" at="23,0,106,0" name="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree" />
+      <unit id="8294989614925457277" at="23,0,111,0" name="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree" />
     </file>
   </root>
   <root nodeRef="r:e18f8fe2-558d-4ece-9e92-bbe835646ddc(jetbrains.mps.ide.platform.dependencyViewer)/8294989614925457551">
