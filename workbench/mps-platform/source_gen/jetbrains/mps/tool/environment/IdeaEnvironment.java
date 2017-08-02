@@ -93,7 +93,10 @@ public class IdeaEnvironment extends EnvironmentBase {
       ProjectManager.getInstance().addProjectManagerListener(new ProjectManagerAdapter() {
         @Override
         public void projectClosed(Project project) {
-          VfsRootAccess.disallowRootAccess(project.getBasePath());
+          String basePath = project.getBasePath();
+          if (basePath != null) {
+            VfsRootAccess.disallowRootAccess(basePath);
+          }
         }
       });
     }
@@ -320,5 +323,4 @@ public class IdeaEnvironment extends EnvironmentBase {
       super(message, cause);
     }
   }
-
 }
