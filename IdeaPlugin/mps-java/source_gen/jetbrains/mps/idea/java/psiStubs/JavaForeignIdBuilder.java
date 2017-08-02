@@ -20,7 +20,6 @@ import com.intellij.facet.FacetManager;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import com.intellij.util.xml.ModuleContentRootSearchScope;
 import jetbrains.mps.java.stub.JavaPackageNameStub;
-import jetbrains.mps.smodel.SModelId;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiNamedElement;
@@ -93,18 +92,16 @@ public class JavaForeignIdBuilder {
     if (mpsModule == null) {
       return null;
     }
-    return new JavaPackageNameStub(packageName).asModelReference(mpsModule.getModuleReference());
-  }
-
-  /*package*/ static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName, String mpsModuleId) {
-    String stereotype = "java_stub";
-    if (packageName.length() == 0) {
-      packageName = "<default package>";
+    JavaPackageNameStub pnStub = new JavaPackageNameStub(packageName);
+    if (pnStub.isDefaultPackage()) {
+      // MPS doesn't deal with nodes in default package as it's impossible to create a model 
+      // that corresponds to empty package (model has non-empty name), hence null. 
+      // In an unlikely case we still need to reference Java classes from default package, perhaps we could do it with 
+      // an approach computeModelReference(string,string) used to suggest (but seemed have never used) 
+      // (check initial version of this class). 
+      return null;
     }
-
-    SModelId modelId = SModelId.foreign(stereotype, packageName);
-
-    return new jetbrains.mps.smodel.SModelReference(null, modelId, packageName + "@" + stereotype);
+    return pnStub.asModelReference(mpsModule.getModuleReference());
   }
 
   /*package*/ static SNodeId.Foreign computeNodeId(String prefix, PsiElement element) {

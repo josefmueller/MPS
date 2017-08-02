@@ -9683,7 +9683,7 @@
       </node>
       <node concept="37vLTG" id="4rzMiwAPwPa" role="3clF46">
         <property role="TrG5h" value="element" />
-        <node concept="3uibUv" id="77JCHDEnDBw" role="1tU5fm">
+        <node concept="3uibUv" id="4JJuuh_SerX" role="1tU5fm">
           <ref role="3uigEE" to="dj18:~PsiElement" resolve="PsiElement" />
         </node>
       </node>
@@ -10150,15 +10150,66 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="3OuCGPj1v$o" role="3cqZAp">
-          <node concept="2OqwBi" id="3OuCGPj1x7g" role="3cqZAk">
-            <node concept="2ShNRf" id="3OuCGPj1vOP" role="2Oq$k0">
-              <node concept="1pGfFk" id="3OuCGPj1wRu" role="2ShVmc">
+        <node concept="3cpWs8" id="1Tb_N3W73DR" role="3cqZAp">
+          <node concept="3cpWsn" id="1Tb_N3W73DS" role="3cpWs9">
+            <property role="TrG5h" value="pnStub" />
+            <node concept="3uibUv" id="1Tb_N3W73DF" role="1tU5fm">
+              <ref role="3uigEE" to="i290:~JavaPackageNameStub" resolve="JavaPackageNameStub" />
+            </node>
+            <node concept="2ShNRf" id="1Tb_N3W73DT" role="33vP2m">
+              <node concept="1pGfFk" id="1Tb_N3W73DU" role="2ShVmc">
                 <ref role="37wK5l" to="i290:~JavaPackageNameStub.&lt;init&gt;(java.lang.String)" resolve="JavaPackageNameStub" />
-                <node concept="37vLTw" id="3OuCGPj1wZt" role="37wK5m">
+                <node concept="37vLTw" id="1Tb_N3W73DV" role="37wK5m">
                   <ref role="3cqZAo" node="6Y6y45VgzRT" resolve="packageName" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1Tb_N3W7mgs" role="3cqZAp">
+          <node concept="3clFbS" id="1Tb_N3W7mgu" role="3clFbx">
+            <node concept="3SKdUt" id="1Tb_N3W7nmI" role="3cqZAp">
+              <node concept="3SKdUq" id="1Tb_N3W7nmK" role="3SKWNk">
+                <property role="3SKdUp" value="MPS doesn't deal with nodes in default package as it's impossible to create a model" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1Tb_N3W7nnZ" role="3cqZAp">
+              <node concept="3SKdUq" id="1Tb_N3W7no1" role="3SKWNk">
+                <property role="3SKdUp" value="that corresponds to empty package (model has non-empty name), hence null." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1Tb_N3W7nYQ" role="3cqZAp">
+              <node concept="3SKdUq" id="1Tb_N3W7nYS" role="3SKWNk">
+                <property role="3SKdUp" value="In an unlikely case we still need to reference Java classes from default package, perhaps we could do it with" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1Tb_N3W7oyq" role="3cqZAp">
+              <node concept="3SKdUq" id="1Tb_N3W7oys" role="3SKWNk">
+                <property role="3SKdUp" value="an approach computeModelReference(string,string) used to suggest (but seemed have never used)" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="1Tb_N3W7p79" role="3cqZAp">
+              <node concept="3SKdUq" id="1Tb_N3W7p7b" role="3SKWNk">
+                <property role="3SKdUp" value="(check initial version of this class)." />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="1Tb_N3W7npk" role="3cqZAp">
+              <node concept="10Nm6u" id="1Tb_N3W7nql" role="3cqZAk" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1Tb_N3W7mV8" role="3clFbw">
+            <node concept="37vLTw" id="1Tb_N3W7m$U" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Tb_N3W73DS" resolve="pnStub" />
+            </node>
+            <node concept="liA8E" id="1Tb_N3W7nhY" role="2OqNvi">
+              <ref role="37wK5l" to="i290:~JavaPackageNameStub.isDefaultPackage():boolean" resolve="isDefaultPackage" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="3OuCGPj1v$o" role="3cqZAp">
+          <node concept="2OqwBi" id="3OuCGPj1x7g" role="3cqZAk">
+            <node concept="37vLTw" id="1Tb_N3W73DW" role="2Oq$k0">
+              <ref role="3cqZAo" node="1Tb_N3W73DS" resolve="pnStub" />
             </node>
             <node concept="liA8E" id="3OuCGPj1xln" role="2OqNvi">
               <ref role="37wK5l" to="i290:~JavaPackageNameStub.asModelReference(org.jetbrains.mps.openapi.module.SModuleReference):org.jetbrains.mps.openapi.model.SModelReference" resolve="asModelReference" />
@@ -10180,105 +10231,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="6Y6y45VieBR" role="jymVt" />
-    <node concept="2YIFZL" id="6Y6y45Vifo4" role="jymVt">
-      <property role="od$2w" value="false" />
-      <property role="TrG5h" value="computeModelReference" />
-      <property role="DiZV1" value="false" />
-      <node concept="3uibUv" id="6Y6y45V_ejT" role="3clF45">
-        <ref role="3uigEE" to="w1kc:~SModelReference" resolve="SModelReference" />
-      </node>
-      <node concept="3clFbS" id="6Y6y45Vifo7" role="3clF47">
-        <node concept="3cpWs8" id="6Y6y45VwTyr" role="3cqZAp">
-          <node concept="3cpWsn" id="6Y6y45VwTyu" role="3cpWs9">
-            <property role="TrG5h" value="stereotype" />
-            <node concept="Xl_RD" id="6Y6y45VwU0A" role="33vP2m">
-              <property role="Xl_RC" value="java_stub" />
-            </node>
-            <node concept="17QB3L" id="6Y6y45VwTyp" role="1tU5fm" />
-          </node>
-        </node>
-        <node concept="3clFbJ" id="6Y6y45Vi0XH" role="3cqZAp">
-          <node concept="3clFbC" id="6Y6y45Vi0XI" role="3clFbw">
-            <node concept="3cmrfG" id="6Y6y45Vi0XJ" role="3uHU7w">
-              <property role="3cmrfH" value="0" />
-            </node>
-            <node concept="2OqwBi" id="6Y6y45Vi0XK" role="3uHU7B">
-              <node concept="liA8E" id="6Y6y45Vi0XL" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
-              </node>
-              <node concept="37vLTw" id="6Y6y45Vi0XM" role="2Oq$k0">
-                <ref role="3cqZAo" node="6Y6y45VigA1" resolve="packageName" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="6Y6y45Vi0XN" role="3clFbx">
-            <node concept="3clFbF" id="6Y6y45Vi0XO" role="3cqZAp">
-              <node concept="37vLTI" id="6Y6y45Vi0XP" role="3clFbG">
-                <node concept="37vLTw" id="6Y6y45Vi0XQ" role="37vLTJ">
-                  <ref role="3cqZAo" node="6Y6y45VigA1" resolve="packageName" />
-                </node>
-                <node concept="Xl_RD" id="6Y6y45Vi0XR" role="37vLTx">
-                  <property role="Xl_RC" value="&lt;default package&gt;" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="6Y6y45VESzs" role="3cqZAp" />
-        <node concept="3cpWs8" id="6Y6y45VF1wU" role="3cqZAp">
-          <node concept="3cpWsn" id="6Y6y45VF1wX" role="3cpWs9">
-            <property role="TrG5h" value="modelId" />
-            <node concept="2YIFZM" id="6Y6y45VF1wY" role="33vP2m">
-              <ref role="1Pybhc" to="w1kc:~SModelId" resolve="SModelId" />
-              <ref role="37wK5l" to="w1kc:~SModelId.foreign(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelId" resolve="foreign" />
-              <node concept="37vLTw" id="3ql86tWIVF1" role="37wK5m">
-                <ref role="3cqZAo" node="6Y6y45VwTyu" resolve="stereotype" />
-              </node>
-              <node concept="37vLTw" id="3ql86tWIX2g" role="37wK5m">
-                <ref role="3cqZAo" node="6Y6y45VigA1" resolve="packageName" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="6Y6y45VF1xa" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~SModelId" resolve="SModelId" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="6Y6y45VET7f" role="3cqZAp" />
-        <node concept="3clFbF" id="6Y6y45Vi0Yh" role="3cqZAp">
-          <node concept="2ShNRf" id="6Y6y45Vi0Yi" role="3clFbG">
-            <node concept="1pGfFk" id="6Y6y45Vi0Yj" role="2ShVmc">
-              <ref role="37wK5l" to="w1kc:~SModelReference.&lt;init&gt;(org.jetbrains.mps.openapi.module.SModuleReference,org.jetbrains.mps.openapi.model.SModelId,java.lang.String)" resolve="SModelReference" />
-              <node concept="10Nm6u" id="3ql86tWHr$r" role="37wK5m" />
-              <node concept="37vLTw" id="6Y6y45VF3gO" role="37wK5m">
-                <ref role="3cqZAo" node="6Y6y45VF1wX" resolve="modelId" />
-              </node>
-              <node concept="3cpWs3" id="3ql86tWIXQE" role="37wK5m">
-                <node concept="37vLTw" id="3ql86tWIY1l" role="3uHU7w">
-                  <ref role="3cqZAo" node="6Y6y45VwTyu" resolve="stereotype" />
-                </node>
-                <node concept="3cpWs3" id="3ql86tWIXsV" role="3uHU7B">
-                  <node concept="37vLTw" id="3ql86tWIXik" role="3uHU7B">
-                    <ref role="3cqZAo" node="6Y6y45VigA1" resolve="packageName" />
-                  </node>
-                  <node concept="Xl_RD" id="3ql86tWIXt6" role="3uHU7w">
-                    <property role="Xl_RC" value="@" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="6Y6y45VigA1" role="3clF46">
-        <property role="TrG5h" value="packageName" />
-        <node concept="17QB3L" id="6Y6y45VigA0" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="6rA4xDMglLC" role="3clF46">
-        <property role="TrG5h" value="mpsModuleId" />
-        <node concept="17QB3L" id="6rA4xDMgmhy" role="1tU5fm" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6Y6y45VhMUk" role="jymVt" />
     <node concept="2YIFZL" id="5BN0jTvYjCh" role="jymVt">
       <property role="TrG5h" value="computeNodeId" />
       <property role="DiZV1" value="false" />
