@@ -33,7 +33,6 @@ import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.BasicFactory;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.RecordingFactory;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
-import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
@@ -94,7 +93,6 @@ class GenerationSession {
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
 
-  private IntermediateCacheHelper myIntermediateCache;
   // != null unless session is abandoned/disposed
   private GenerationSessionContext mySessionContext;
   private final IPerformanceTracer ttrace;
@@ -152,13 +150,9 @@ class GenerationSession {
 
     monitor.start("", myGenerationPlan.getSteps().size());
     try {
+      // FIXME myDependenciesBuilder is likely of no true use and shall cease
       myDependenciesBuilder = new IncrementalGenerationHandler(myOriginalInputModel, myGenerationOptions).createDependenciesBuilder();
 
-      boolean success = false;
-
-      // FIXME IntermediateCacheHelper is of no value, drop it
-      myIntermediateCache = new IntermediateCacheHelper(ttrace);
-      myIntermediateCache.createNew(myOriginalInputModel);
       ttrace.pop();
       try {
         // prepare input model: make a clone so that rest of generator always works with transient model.
@@ -247,7 +241,6 @@ class GenerationSession {
             myDependenciesBuilder.getResult(null), myLogger.getErrorCount() > 0);
         generationStatus.setModelExports(mySessionContext.getExports().getExports());
         generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
-        success = generationStatus.isOk();
         return generationStatus;
       } catch (GenerationCanceledException gce) {
         throw gce;
@@ -280,12 +273,6 @@ class GenerationSession {
         myLogger.handleException(e);
         myLogger.error(String.format("Generation failed for model '%s': %s", myOriginalInputModel.getName(), e.toString()));
         return new GenerationStatus.ERROR(myOriginalInputModel);
-      } finally {
-        if (success) {
-          myIntermediateCache.commit();
-        } else {
-          myIntermediateCache.discard();
-        }
       }
     } finally {
       monitor.done();
@@ -482,9 +469,6 @@ class GenerationSession {
     final boolean hasChanges = tg.apply(progress, isPrimary);
     ttrace.pop();
 
-    if (isPrimary || hasChanges) {
-      myIntermediateCache.store(myMajorStep, myMinorStep, tg, myDependenciesBuilder);
-    }
     if (hasChanges) {
       SModel realOutputModel = tg.getOutputModel();
       myDependenciesBuilder.updateModel(realOutputModel);
@@ -548,7 +532,6 @@ class GenerationSession {
       myDependenciesBuilder.scriptApplied(currentInputModel);
     }
     if (needToCloneInputModel) {
-      myIntermediateCache.store(myMajorStep, myMinorStep, templateGenerator, myDependenciesBuilder);
       recycleWasteModel(toRecycle);
     }
     myLogger.info("pre-processing finished");
@@ -593,7 +576,6 @@ class GenerationSession {
     }
     myDependenciesBuilder.scriptApplied(currentModel);
     if (needToCloneModel) {
-      myIntermediateCache.store(myMajorStep, myMinorStep, templateGenerator, myDependenciesBuilder);
       recycleWasteModel(toRecycle);
     }
     myLogger.info("post-processing finished");

@@ -29,8 +29,6 @@ import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
-import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
-import jetbrains.mps.generator.impl.dependencies.RootDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.impl.plan.ModelCheckpoints;
@@ -40,7 +38,6 @@ import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.PostponedReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.DeltaBuilder;
-import jetbrains.mps.generator.impl.template.QueryExecutionContextWithDependencyRecording;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
@@ -459,10 +456,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   @Override
   public boolean isDirty(SNode node) {
-    RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(node);
-    if (builder != null && builder.isUnchanged()) {
-      return false;
-    }
+    // FIXME deprecate and remove
     return true;
   }
 
@@ -479,31 +473,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
      */
   @Nullable
   protected QueryExecutionContext getExecutionContext(SNode inputNode) {
-    RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(inputNode);
-    if (builder != null) {
-      if (builder.isUnchanged()) {
-        if (myDeltaBuilder != null && inputNode != null) {
-          // Unchanged roots shall not participate in further generation steps, hence
-          // we need to tell DeltaBuilder to forget it.
-          SNode inputRoot = inputNode.getContainingRoot();
-          myDeltaBuilder.deleteInputRoot(inputRoot);
-        }
-        return null;
-      }
-
-      QueryExecutionContext value;
-      if (myExecutionContextMap == null) {
-        myExecutionContextMap = new HashMap<DependenciesReadListener, QueryExecutionContext>();
-        value = null;
-      } else {
-        value = myExecutionContextMap.get(builder);
-      }
-      if (value == null) {
-        value = new QueryExecutionContextWithDependencyRecording(myExecutionContext, builder);
-        myExecutionContextMap.put(builder, value);
-      }
-      return value;
-    }
     return getDefaultExecutionContext(inputNode);
   }
 
@@ -890,8 +859,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return node.getContainingRoot();
   }
 
+  // FIXME review uses and drop the method
   public boolean isIncremental() {
-    return myDependenciesBuilder instanceof IncrementalDependenciesBuilder;
+    return false;
   }
 
   private boolean isInplaceChangeEnabled() {
