@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +17,13 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.impl.cache.BrokenCacheException;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
-import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
-import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -287,35 +282,6 @@ public final class GeneratorMappings {
 
   // serialization
 
-  public void export(TransientModelWithMetainfo model, DependenciesBuilder builder) {
-    for (Entry<String, Map<SNode, Object>> o : myMappingNameAndInputNodeToOutputNodeMap.entrySet()) {
-      String label = o.getKey();
-      for (Entry<SNode, Object> i : o.getValue().entrySet()) {
-        SNode inputNode = i.getKey();
-        SNode originalRoot = inputNode == null ? null : builder.getOriginalForInput(inputNode.getContainingRoot());
-        MappingsMemento mappingsMemento = model.getMappingsMemento(originalRoot, true);
-        mappingsMemento.addOutputNodeByInputNodeAndMappingName(inputNode == null ? null : inputNode.getNodeId(), label, i.getValue());
-      }
-    }
-
-    for (Entry<SNode, Object> o : myCopiedOutputNodeForInputNode.entrySet()) {
-      SNode inputNode = o.getKey();
-      Object value = o.getValue();
-      if (value instanceof SNode) {
-        SNodeId targetId = ((SNode) value).getNodeId();
-        if (inputNode.getNodeId().equals(targetId)) {
-          continue; /* trivial */
-        }
-        MappingsMemento mappingsMemento = model.getMappingsMemento(builder.getOriginalForInput(inputNode.getContainingRoot()), true);
-        mappingsMemento.addOutputNodeByInputNode(inputNode.getNodeId(), targetId, true);
-      } else if (value instanceof List) {
-        SNodeId targetId = ((List<SNode>) value).get(0).getNodeId();
-        MappingsMemento mappingsMemento = model.getMappingsMemento(builder.getOriginalForInput(inputNode.getContainingRoot()), true);
-        mappingsMemento.addOutputNodeByInputNode(inputNode.getNodeId(), targetId, false);
-      }
-    }
-  }
-
   /**
    * Record MLs into checkpoint state, assuming output nodes of the mappings are from the model being marked as 'checkpoint',
    * and input nodes being traced with transitionTrace
@@ -344,82 +310,5 @@ public final class GeneratorMappings {
       }
     }
     myConditionalRoots.forEach(p -> cp.record(p.o1, p.o2));
-  }
-
-  public void importPersisted(MappingsMemento val, SModel inputModel, SModel outputModel) throws BrokenCacheException {
-
-    // labels
-    for (Entry<String, Map<SNodeId, Object>> e : val.getMappingNameAndInputNodeToOutputNodeMap().entrySet()) {
-      String mappingName = e.getKey();
-      Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
-      if (currentMapping == null) {
-        myMappingNameAndInputNodeToOutputNodeMap.putIfAbsent(mappingName, new HashMap<SNode, Object>());
-        currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
-      }
-      for (Entry<SNodeId, Object> n : e.getValue().entrySet()) {
-        SNodeId key = n.getKey();
-        SNode inputNode = null;
-        if (key != null) {
-          inputNode = inputModel.getNode(key);
-          if (inputNode == null) {
-            continue;
-          }
-        }
-        Object value = n.getValue();
-        if (value instanceof SNodeId) {
-          SNode outputNode = outputModel.getNode((SNodeId) value);
-          if (outputNode == null) {
-            continue;
-          }
-          addOutputNode(currentMapping, inputNode, outputNode);
-        } else if (value instanceof List) {
-          for (SNodeId id : (List<SNodeId>) value) {
-            SNode outputNode = outputModel.getNode(id);
-            if (outputNode == null) {
-              continue;
-            }
-            addOutputNode(currentMapping, inputNode, outputNode);
-          }
-        }
-      }
-    }
-
-    // output for input
-    for (Entry<SNodeId, Object> e : val.getCopiedOutputNodeForInputNode().entrySet()) {
-      SNode inputNode = inputModel.getNode(e.getKey());
-      if (inputNode == null) {
-        continue;
-      }
-      Object value = e.getValue();
-      if (value instanceof SNodeId) {
-        SNode outputNode = outputModel.getNode((SNodeId) value);
-        if (outputNode == null) {
-          continue;
-        }
-        myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
-      } else if (value instanceof List) {
-        SNode outputNode = outputModel.getNode(((List<SNodeId>) value).get(0));
-        if (outputNode == null) {
-          continue;
-        }
-        myCopiedOutputNodeForInputNode.put(inputNode, Collections.singletonList(outputNode));
-      }
-    }
-  }
-
-  private void addOutputNode(@NotNull Map<SNode, Object> currentMapping, SNode inputNode, @NotNull SNode outputNode) throws BrokenCacheException {
-    Object o = currentMapping.get(inputNode);
-    if (o == null) {
-      currentMapping.put(inputNode, outputNode);
-    } else if (o instanceof List) {
-      ((List<SNode>) o).add(outputNode);
-    } else if (o != outputNode) {
-      List<SNode> list = new ArrayList<SNode>(4);
-      list.add((SNode) o);
-      list.add(outputNode);
-      currentMapping.put(inputNode, list);
-    } else {
-      // TODO ?
-    }
   }
 }

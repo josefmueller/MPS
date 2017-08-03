@@ -71,7 +71,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -91,7 +90,6 @@ class GenerationSession {
   private MPSAppenderBase myLoggingHandler;
   private final RecordingFactory myLogRecorder;
   private final GenerationSessionLogger myLogger;
-  private DependenciesBuilder myDependenciesBuilder;
 
   // != null unless session is abandoned/disposed
   private GenerationSessionContext mySessionContext;
@@ -151,7 +149,7 @@ class GenerationSession {
     monitor.start("", myGenerationPlan.getSteps().size());
     try {
       // FIXME myDependenciesBuilder is likely of no true use and shall cease
-      myDependenciesBuilder = new IncrementalGenerationHandler(myOriginalInputModel, myGenerationOptions).createDependenciesBuilder();
+      DependenciesBuilder myDependenciesBuilder = new IncrementalGenerationHandler(myOriginalInputModel, myGenerationOptions).createDependenciesBuilder();
 
       ttrace.pop();
       try {
@@ -168,11 +166,6 @@ class GenerationSession {
         // and we'll need to switch to 'transient' (generator) model here anyway
         SModel currInputModel = createTransientModel("0");
         new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
-        // inform DependencyBuilder about new input model (now it keeps map based on instances, once it's nodeid (or it's gone), there'd be no need for):
-        for (Iterator<SNode> it1 = myOriginalInputModel.getRootNodes().iterator(), it2 = currInputModel.getRootNodes().iterator(); it1.hasNext() && it2.hasNext();) {
-          myDependenciesBuilder.registerRoot(it2.next(), it1.next());
-        }
-        myDependenciesBuilder.updateModel(currInputModel);
         SModel currOutput = null;
 
         ttrace.push("steps", false);
@@ -298,7 +291,7 @@ class GenerationSession {
     mySessionContext = new GenerationSessionContext(mySessionContext);
 
     // -- filter mapping configurations
-    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, inputModel, null, new StepArguments(myDependenciesBuilder, myQuerySource));
+    TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, inputModel, null, new StepArguments(myQuerySource));
     LinkedList<TemplateMappingConfiguration> drop = new LinkedList<TemplateMappingConfiguration>();
     for (TemplateMappingConfiguration c : mappingConfigurations) {
       if (!c.isApplicable(templateGenerator)) {
@@ -322,7 +315,7 @@ class GenerationSession {
     GenPlanActiveStep activeStep = new GenPlanActiveStep(myGenerationPlan, planStep, mappingConfigurations);
 
     try {
-      myStepArguments = new StepArguments(activeStep, myDependenciesBuilder, myNewTrace, new GeneratorMappings(myLogger), transitionTrace, myQuerySource);
+      myStepArguments = new StepArguments(activeStep, myNewTrace, new GeneratorMappings(myLogger), transitionTrace, myQuerySource);
       SModel outputModel = executeMajorStepInternal(inputModel, progress);
       if (myLogger.getErrorCount() > 0) {
         myLogger.warning(String.format("model '%s' has been generated with errors", inputModel.getName()));
@@ -422,7 +415,6 @@ class GenerationSession {
           FastNodeFinderManager.dispose(currentInputModel); // why?!
         } else {
           assert currentInputModel == realOutputModel;
-          myDependenciesBuilder.dropModel();
           // currentInputModel stays as input.
           // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
           dropTransientModel(currentOutputModel);
@@ -455,7 +447,6 @@ class GenerationSession {
 
   @NotNull
   private TemplateGenerator prepareToApplyRules(SModel currentInputModel, SModel currentOutputModel) {
-    myDependenciesBuilder.setOutputModel(currentOutputModel, myMajorStep, myMinorStep);
     return myGenerationOptions.isGenerateInParallel()
             ? new ParallelTemplateGenerator(myTaskPoolProvider, mySessionContext, currentInputModel, currentOutputModel, myStepArguments)
             : new TemplateGenerator(mySessionContext, currentInputModel, currentOutputModel, myStepArguments);
@@ -469,12 +460,8 @@ class GenerationSession {
     final boolean hasChanges = tg.apply(progress, isPrimary);
     ttrace.pop();
 
-    if (hasChanges) {
-      SModel realOutputModel = tg.getOutputModel();
-      myDependenciesBuilder.updateModel(realOutputModel);
-    } else {
+    if (!hasChanges) {
       // nothing has been generated
-      myDependenciesBuilder.dropModel();
       if (!isPrimary) {
         // we may need myMinorStep in postProcess, when we store TransientModelWithMetainfo
         // applyRules did that for primary step regardless of hasChanges state, hence we decrement minorStep
@@ -516,7 +503,6 @@ class GenerationSession {
       // probably we can forget about former input model here
       toRecycle = currentInputModel;
       currentInputModel = currentInputModel_clone;
-      myDependenciesBuilder.scriptApplied(currentInputModel); // scriptApplied for a blank copy to record old root to new root mapping
     } else {
       myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel.getReference());
     }
@@ -527,9 +513,6 @@ class GenerationSession {
         myLogger.info(preMappingScript.getScriptNode(), "pre-process " + preMappingScript.getLongName());
       }
       templateGenerator.executeScript(preMappingScript);
-    }
-    if (modifiesModel) {
-      myDependenciesBuilder.scriptApplied(currentInputModel);
     }
     if (needToCloneInputModel) {
       recycleWasteModel(toRecycle);
@@ -558,7 +541,6 @@ class GenerationSession {
       myNewTrace.nextStep(currentModel.getReference(), currentOutputModel_clone.getReference());
       toRecycle = currentModel;
       currentModel = currentOutputModel_clone;
-      myDependenciesBuilder.scriptApplied(currentModel);
     } else {
       myNewTrace.nextStep(currentModel.getReference(), currentModel.getReference());
       // just in case post-script modifies model a lot, and we've got FNF there, prevent it being updated - it's cheaper to create new one at the next step
@@ -574,7 +556,6 @@ class GenerationSession {
       }
       templateGenerator.executeScript(postMappingScript);
     }
-    myDependenciesBuilder.scriptApplied(currentModel);
     if (needToCloneModel) {
       recycleWasteModel(toRecycle);
     }

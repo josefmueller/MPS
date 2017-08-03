@@ -27,8 +27,6 @@ import jetbrains.mps.generator.impl.CloneUtil.RegularSModelFactory;
 import jetbrains.mps.generator.impl.FastRuleFinder.BlockedReductionsData;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
-import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
-import jetbrains.mps.generator.impl.dependencies.DependenciesReadListener;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 import jetbrains.mps.generator.impl.plan.ModelCheckpoints;
@@ -108,15 +106,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected final List<SNode> myOutputRoots;
 
   private final QueryExecutionContext myExecutionContext;
-  private Map<DependenciesReadListener, QueryExecutionContext> myExecutionContextMap;
 
   private final boolean myIsStrict;
   private boolean myAreMappingsReady = false;
 
   /* cached session data */
   private BlockedReductionsData myReductionData;
-
-  private final DependenciesBuilder myDependenciesBuilder;
 
   private DeltaBuilder myDeltaBuilder;
   private boolean myInplaceModelChange = false; // indicates transformation was in-place (even after deltaBuilder was disposed). cries for better approach
@@ -128,26 +123,23 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private final TransitionTrace myTransitionTrace;
 
   static final class StepArguments {
-    public final DependenciesBuilder dependenciesBuilder;
     public final GenPlanActiveStep planStep;
     public final GenerationTrace genTrace;
     public final GeneratorMappings mappingLabels;
     public final TransitionTrace transitionTrace;
     public final GeneratorQueryProvider.Source querySource;
 
-    public StepArguments(DependenciesBuilder dependenciesBuilder, GeneratorQueryProvider.Source gqps) {
+    public StepArguments(GeneratorQueryProvider.Source gqps) {
       // FIXME refactor TMC.isApplicable call not to take ITemplateGenerator, or use dedicated ITemplateGenerator implementation
       // that doesn't need anything we could not provide here anyway.
-      // DependenciesBuilder is in use from ITemplateGenerator#isDirty()
       // Alternative is to initialize StepArguments once prior to isApplicable check, which we can't do now as isApplicable gives us GenPlanActiveStep
       // If refactored (e.g. GPAS made TG's argument or use of dedicated fake GPAS for isApplicable), could drop this cons altogether.
       // I.e. if anyone would like to query e.g. mapping label from isApplicable(), it's a chance not to fail with NPE (and to let the error go unnoticed)
-      this(null, dependenciesBuilder, null, null, null, gqps);
+      this(null, null, null, null, gqps);
     }
 
-    public StepArguments(GenPlanActiveStep planStep, DependenciesBuilder dependenciesBuilder, GenerationTrace genTrace, GeneratorMappings mapLabels,
+    public StepArguments(GenPlanActiveStep planStep, GenerationTrace genTrace, GeneratorMappings mapLabels,
         TransitionTrace transitionTrace, GeneratorQueryProvider.Source gqps) {
-      this.dependenciesBuilder = dependenciesBuilder;
       this.planStep = planStep;
       this.genTrace = genTrace;
       this.mappingLabels = mapLabels;
@@ -162,7 +154,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     GenerationOptions options = operationContext.getGenerationOptions();
     myIsStrict = options.isStrictMode();
     myDelayedChanges = new DelayedChanges();
-    myDependenciesBuilder = stepArgs.dependenciesBuilder;
     myOutputRoots = new ArrayList<SNode>();
     DefaultQueryExecutionContext ctx = new DefaultQueryExecutionContext(this);
     myExecutionContext = options.getTracingMode() >= GenerationOptions.TRACE_LANGS
@@ -193,19 +184,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myInplaceModelChange = myDeltaBuilder != null;
 
     myAreMappingsReady = true;
-    myChanged |= myDependenciesBuilder.isStepRequired(); // TODO optimize: if step is required, it should be the last step
 
     if (myDeltaBuilder == null) {
       // publish roots
       for (SNode outputRoot : myOutputRoots) {
         myOutputModel.addRootNode(outputRoot);
       }
-
-      // reload "required" roots from cache
-      ttrace.push("reloading roots from cache", false);
-      myDependenciesBuilder.reloadRequired(getMappings());
-      ttrace.pop();
-    } // XXX if in-place change, every required root has been reloaded on previous step, imo
+    }
 
     if (myWeavingProcessor.hasWeavingRulesToApply()) {
       checkMonitorCanceled();
@@ -739,7 +724,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   protected void registerRoot(GeneratedRootDescriptor rd) {
     myOutputRoots.add(rd.myOutputRoot);
     myNewToOldRoot.put(rd.myOutputRoot, rd.myInputNode);
-    myDependenciesBuilder.registerRoot(rd.myOutputRoot, rd.myInputNode);
     if (rd.myIsCopied) {
       getGeneratorSessionContext().registerCopiedRoot(rd.myOutputRoot);
     }
@@ -776,9 +760,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } else {
       assert placeholder.getModel() != null || parent != null : "Can't replace node that is not part of another structure (hangs in the air)";
       SNodeUtil.replaceWithAnother(placeholder, substitute);
-    }
-    if (parent == null && placeholder.getModel() != null) {
-      myDependenciesBuilder.rootReplaced(placeholder, substitute);
     }
   }
 

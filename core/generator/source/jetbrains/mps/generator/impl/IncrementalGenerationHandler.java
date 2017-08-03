@@ -29,16 +29,12 @@ import java.util.Map;
  * Evgeny Gryaznov, Jun 3, 2010
  */
 public class IncrementalGenerationHandler {
-  private static final String CONDITIONALS_ID = "";
-
   private final SModel myModel;
-  private GenerationOptions myGenerationOptions;
   private final String myParametersHash;
   private final Map<String, String> myGenerationHashes;
 
   public IncrementalGenerationHandler(SModel model, GenerationOptions options) {
     myModel = model;
-    myGenerationOptions = options;
     final GenerationParametersProvider parametersProvider = options.getParametersProvider();
     if (parametersProvider == null) {
       myParametersHash = null;
@@ -75,9 +71,5 @@ public class IncrementalGenerationHandler {
 
   public DependenciesBuilder createDependenciesBuilder() {
     return new NonIncrementalDependenciesBuilder(myGenerationHashes, myParametersHash);
-  }
-
-  public interface IncrementalReporter {
-    void report(String message);
   }
 }
