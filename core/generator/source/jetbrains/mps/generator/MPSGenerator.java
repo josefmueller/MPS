@@ -32,6 +32,7 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
   private final MPSCore myKernelComponents;
   private FacetFactory myGeneratorFacetFactory = CustomGenerationModuleFacet::new;
   private ModelGenerationStatusManager myGenerationStatusManager;
+  private GenerationSettingsProvider mySettingsProvider;
 
   public MPSGenerator(MPSCore mpsCore) {
     // it's ok for MPSGenerator ComponentPlugin to depend from another CP, MPSCore (provided the one lives in [kernel] and doesn't drag
@@ -46,7 +47,7 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
     final GenerationDependenciesCache depsCache = init(new GenerationDependenciesCache());
     myGenerationStatusManager = init(new ModelGenerationStatusManager(myKernelComponents.getRepositoryRegistry(), depsCache));
     init(new GeneratorPathsComponent());
-    init(new GenerationSettingsProvider());
+    mySettingsProvider = init(new GenerationSettingsProvider());
     // FIXME odd registration/un-registration mechanism. Factory shall know its facet type
     // and #create there shall take SModule
     myKernelComponents.getModuleFacetRegistry().addFactory(CustomGenerationModuleFacet.FACET_TYPE, myGeneratorFacetFactory);
@@ -63,6 +64,9 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
   public <T extends CoreComponent> T findComponent(@NotNull Class<T> componentClass) {
     if (ModelGenerationStatusManager.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myGenerationStatusManager);
+    }
+    if (GenerationSettingsProvider.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(mySettingsProvider);
     }
     return null;
   }

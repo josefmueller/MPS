@@ -47,15 +47,26 @@ public interface IModifiableGenerationSettings extends IGenerationSettings {
 
   void setKeepModelsWithWarnings(boolean keepModelsWithWarnings);
 
+  /**
+   * @deprecated no more support for incremental generation
+   */
+  @ToRemove(version = 2017.3)
+  @Deprecated
   void setIncremental(boolean isIncremental);
 
+  /**
+   * @deprecated no more support for incremental generation
+   */
+  @ToRemove(version = 2017.3)
+  @Deprecated
   void setIncrementalUseCache(boolean incrementalUseCache);
 
-  void setDebugIncrementalDependencies(boolean value);
-
+  /**
+   * @deprecated no more support for incremental generation
+   */
+  @ToRemove(version = 2017.3)
   @Deprecated
-  @ToRemove(version = 2017.2)
-  void setFailOnMissingTextGen(boolean fail);
+  void setDebugIncrementalDependencies(boolean value);
 
   void setGenerateDebugInfo(boolean generateDebugInfo);
 

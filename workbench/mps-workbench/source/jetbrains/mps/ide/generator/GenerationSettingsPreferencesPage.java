@@ -19,7 +19,6 @@ import com.intellij.ide.ui.UISettings;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.ui.IdeBorderFactory;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
@@ -57,10 +56,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
   private final JCheckBox myStrictMode = new JCheckBox("Strict mode");
   private final JCheckBox myUseNewGenerator = new JCheckBox("Generate in parallel.");
   private final JFormattedTextField myNumberOfParallelThreads = new JFormattedTextField(new RangeDecimalFormatter(2, 32));
-  private final JCheckBox myIncremental = new JCheckBox("Incremental generation");
-  private final JCheckBox myIncrementalCache = new JCheckBox("Cache intermediate models");
   private final JCheckBox myInplaceTransform = new JCheckBox("Apply transformations in place");
-  private final JCheckBox myDebugIncrementalDependencies = new JCheckBox("Debug generation dependencies");
   private final JCheckBox myAvoidDynamicRefs = new JCheckBox("Resort to static references");
 
   private JRadioButton myTraceNone = new JRadioButton("None");
@@ -147,38 +143,17 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     c.ipady = 0;
     optionsPanel.add(createParallelGenerationGroup(), c);
     c.ipady = 2;
-    optionsPanel.add(myIncremental, c);
-    c.insets.left = 16;
-    optionsPanel.add(myIncrementalCache, c);
-    if (InternalFlag.isInternalMode()) {
-      optionsPanel.add(myDebugIncrementalDependencies, c);
-    }
-    c.insets.left = 0;
     optionsPanel.add(myInplaceTransform, c);
 
     optionsPanel.add(myAvoidDynamicRefs, c);
 
     myButtonState.track(mySaveTransientModelsCheckBox, myCheckModelsBeforeGenerationCheckBox, myStrictMode, myInplaceTransform);
     myButtonState.track(myAvoidDynamicRefs);
-    myButtonState.track(myDebugIncrementalDependencies, myIncremental, myIncrementalCache);
 
-    final ChangeListener listener = new ChangeListener() {
-      @Override
-      public void stateChanged(ChangeEvent e) {
-        myIncremental.setEnabled(myStrictMode.isSelected());
-        myIncrementalCache.setEnabled(myStrictMode.isSelected() && myIncremental.isSelected());
-        if (InternalFlag.isInternalMode()) {
-          myDebugIncrementalDependencies.setEnabled(myStrictMode.isSelected() && myIncremental.isSelected());
-        }
-      }
-    };
-    myStrictMode.addChangeListener(listener);
-    myIncremental.addChangeListener(listener);
     optionsPanel.setBorder(IdeBorderFactory.createTitledBorder("General"));
 
     mySaveTransientModelsCheckBox.addItemListener(myStatusUpdater);
     myInplaceTransform.addItemListener(myStatusUpdater);
-    myIncremental.addItemListener(myStatusUpdater);
     return optionsPanel;
   }
 
@@ -310,11 +285,6 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     myGenerationSettings.setKeepModelsWithWarnings(myKeepModelsWithWarnings.isSelected());
     myGenerationSettings.setShowBadChildWarning(myShowBadChildWarnings.isSelected());
     myGenerationSettings.setNumberOfModelsToKeep(getNumberOfModelsToKeep());
-    myGenerationSettings.setIncremental(myIncremental.isSelected());
-    myGenerationSettings.setIncrementalUseCache(myIncrementalCache.isSelected());
-    if (InternalFlag.isInternalMode()) {
-      myGenerationSettings.setDebugIncrementalDependencies(myDebugIncrementalDependencies.isSelected());
-    }
     myGenerationSettings.enableInplaceTransformations(myInplaceTransform.isSelected());
     myGenerationSettings.setCreateStaticReferences(myAvoidDynamicRefs.isSelected());
     myGenerationSettings.setGenerateDebugInfo(myGenerateDebugInfo.isSelected());
@@ -353,19 +323,11 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
     myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
     myUseNewGenerator.setSelected(myGenerationSettings.isParallelGenerator());
-    myIncremental.setSelected(myGenerationSettings.isIncremental());
-    myIncrementalCache.setSelected(myGenerationSettings.isIncrementalUseCache());
-    if (InternalFlag.isInternalMode()) {
-      myDebugIncrementalDependencies.setSelected(myGenerationSettings.isDebugIncrementalDependencies());
-      myDebugIncrementalDependencies.setEnabled(myGenerationSettings.isStrictMode() && myGenerationSettings.isIncremental());
-    }
     myInplaceTransform.setSelected(myGenerationSettings.useInplaceTransformations());
     myAvoidDynamicRefs.setSelected(myGenerationSettings.createStaticReferences());
 
     myStrictMode.setSelected(myGenerationSettings.isStrictMode());
     myUseNewGenerator.setEnabled(myGenerationSettings.isStrictMode());
-    myIncremental.setEnabled(myGenerationSettings.isStrictMode());
-    myIncrementalCache.setEnabled(myGenerationSettings.isStrictMode() && myGenerationSettings.isIncremental());
     myNumberOfParallelThreads.setEditable(myGenerationSettings.isParallelGenerator() && myGenerationSettings.isStrictMode());
     myNumberOfParallelThreads.setValue(myGenerationSettings.getNumberOfParallelThreads());
 
@@ -392,9 +354,6 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
     ArrayList<String> messages = new ArrayList<>();
     if (myInplaceTransform.isSelected() && mySaveTransientModelsCheckBox.isSelected()) {
       messages.add("Warning: using in-place together with transient models may slow down generation process significantly");
-    }
-    if (myIncremental.isSelected()) {
-      messages.add("Warning: incremental generation is deprecated and hardly useful functionality");
     }
     if (!messages.isEmpty()) {
       myStatusLabel.setText(String.format("<html>%s</html>", String.join("<br/>", messages)));
@@ -461,7 +420,7 @@ class GenerationSettingsPreferencesPage implements SearchableConfigurable {
   }
 
   private static class ButtonSelectStateTracker {
-    private final Map<AbstractButton,Boolean> myButtonStates = new HashMap<AbstractButton, Boolean>();
+    private final Map<AbstractButton,Boolean> myButtonStates = new HashMap<>();
 
     public ButtonSelectStateTracker track(AbstractButton... buttons) {
       for (AbstractButton btn : buttons) {

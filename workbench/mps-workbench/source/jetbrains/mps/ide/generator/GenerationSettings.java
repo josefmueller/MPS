@@ -23,6 +23,7 @@ import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -37,6 +38,11 @@ import javax.swing.Icon;
 public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent {
 
   private final DefaultModifiableGenerationSettings myState = new DefaultModifiableGenerationSettings();
+  private final MPSCoreComponents myCoreComponents;
+
+  public GenerationSettings(MPSCoreComponents mpsCore) {
+    myCoreComponents = mpsCore;
+  }
 
   @Override
   @NotNull
@@ -46,13 +52,18 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
   @Override
   public void initComponent() {
-    GenerationSettingsProvider.getInstance().setGenerationSettings(getModifiableSettings());
+    GenerationSettingsProvider settingsProvider = myCoreComponents.getPlatform().findComponent(GenerationSettingsProvider.class);
+    if (settingsProvider != null) {
+      settingsProvider.setGenerationSettings(getModifiableSettings());
+    }
   }
 
   @Override
   public void disposeComponent() {
-    if (getModifiableSettings() == GenerationSettingsProvider.getInstance().getGenerationSettings()) {
-      GenerationSettingsProvider.getInstance().setGenerationSettings(null);
+    // XXX what's the idea behind setGenerationSettings(null), anyone?
+    GenerationSettingsProvider settingsProvider = myCoreComponents.getPlatform().findComponent(GenerationSettingsProvider.class);
+    if (settingsProvider != null && getModifiableSettings() == settingsProvider.getGenerationSettings()) {
+      settingsProvider.setGenerationSettings(null);
     }
   }
 
@@ -75,11 +86,8 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.setShowInfo(state.myShowInfo);
     myState.setShowWarnings(state.myShowWarnings);
     myState.setKeepModelsWithWarnings(state.myKeepModelsWithWarnings);
-    myState.setIncremental(state.myIncremental);
-    myState.setIncrementalUseCache(state.myIncrementalUseCache);
     myState.setGenerateDebugInfo(state.myGenerateDebugInfo);
     myState.setShowBadChildWarning(state.myShowBadChildWarning);
-    myState.setDebugIncrementalDependencies(state.myDebugIncrementalDependencies);
     myState.enableInplaceTransformations(state.myActiveInplaceTransform);
     myState.setCreateStaticReferences(state.myUseStaticRefs);
     GenTraceSettings gts = new GenTraceSettings();
@@ -110,11 +118,8 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     public boolean myShowInfo;
     public boolean myShowWarnings;
     public boolean myKeepModelsWithWarnings;
-    public boolean myIncremental;
-    public boolean myIncrementalUseCache;
     public boolean myGenerateDebugInfo;
     public boolean myShowBadChildWarning;
-    public boolean myDebugIncrementalDependencies;
     public boolean myActiveInplaceTransform;
     public boolean myUseStaticRefs;
     public boolean myTraceGroupSteps;
@@ -139,11 +144,8 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myShowInfo = s.isShowInfo();
       myShowWarnings = s.isShowWarnings();
       myKeepModelsWithWarnings = s.isKeepModelsWithWarnings();
-      myIncremental = s.isIncremental();
-      myIncrementalUseCache = s.isIncrementalUseCache();
       myGenerateDebugInfo = s.isGenerateDebugInfo();
       myShowBadChildWarning = s.isShowBadChildWarning();
-      myDebugIncrementalDependencies = s.isDebugIncrementalDependencies();
       myActiveInplaceTransform = s.useInplaceTransformations();
       myUseStaticRefs = s.createStaticReferences();
       GenTraceSettings gts = s.getTraceSettings();

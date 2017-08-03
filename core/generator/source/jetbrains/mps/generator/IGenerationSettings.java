@@ -38,20 +38,33 @@ public interface IGenerationSettings {
 
   boolean isKeepModelsWithWarnings();
 
+  /**
+   * @deprecated no more support for incremental generation
+   * @deprecated always {@code false}
+   */
+  @ToRemove(version = 2017.3)
+  @Deprecated
   boolean isIncremental();
 
-  boolean isIncrementalUseCache();
-
-  // FIXME this is TextGen option, has nothing to do with generation
+  /**
+   * @deprecated no more support for incremental generation
+   * @deprecated always {@code false}
+   */
+  @ToRemove(version = 2017.3)
   @Deprecated
-  @ToRemove(version = 2017.2)
-  boolean isFailOnMissingTextGen();
+  boolean isIncrementalUseCache();
 
   // FIXME this is TextGen option, has nothing to do with generation
   boolean isGenerateDebugInfo();
 
   boolean isShowBadChildWarning();
 
+  /**
+   * @deprecated no more support for incremental generation
+   * @deprecated always {@code false}
+   */
+  @ToRemove(version = 2017.3)
+  @Deprecated
   boolean isDebugIncrementalDependencies();
 
   boolean isSaveTransientModels();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,9 +28,6 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
   private boolean myShowInfo = false;
   private boolean myShowWarnings = true;
   private boolean myKeepModelsWithWarnings = true;
-  private boolean myIncremental = false;
-  private boolean myIncrementalUseCache = false;
-  private boolean myDebugIncrementalDependencies = false;
   private boolean myGenerateDebugInfo = true;
   private boolean myShowBadChildWarning = true;
   private boolean myActiveInplaceTransform = true;
@@ -137,43 +134,39 @@ public class DefaultModifiableGenerationSettings implements IModifiableGeneratio
     myKeepModelsWithWarnings = keepModelsWithWarnings;
   }
 
+  @Deprecated
   @Override
   public boolean isIncremental() {
-    return myIncremental;
-  }
-
-  @Override
-  public void setIncremental(boolean isIncremental) {
-    myIncremental = isIncremental;
-  }
-
-  @Override
-  public boolean isIncrementalUseCache() {
-    return myIncrementalUseCache;
-  }
-
-  @Override
-  public void setIncrementalUseCache(boolean incrementalUseCache) {
-    myIncrementalUseCache = incrementalUseCache;
-  }
-
-  @Override
-  public boolean isDebugIncrementalDependencies() {
-    return myDebugIncrementalDependencies;
-  }
-
-  @Override
-  public void setDebugIncrementalDependencies(boolean value) {
-    myDebugIncrementalDependencies = value;
-  }
-
-  @Override
-  public boolean isFailOnMissingTextGen() {
     return false;
   }
 
+  @Deprecated
   @Override
-  public void setFailOnMissingTextGen(boolean fail) {
+  public void setIncremental(boolean isIncremental) {
+    // no-op
+  }
+
+  @Deprecated
+  @Override
+  public boolean isIncrementalUseCache() {
+    return false;
+  }
+
+  @Deprecated
+  @Override
+  public void setIncrementalUseCache(boolean incrementalUseCache) {
+    // no-op
+  }
+
+  @Deprecated
+  @Override
+  public boolean isDebugIncrementalDependencies() {
+    return false;
+  }
+
+  @Deprecated
+  @Override
+  public void setDebugIncrementalDependencies(boolean value) {
     // no-op
   }
 
