@@ -11,6 +11,9 @@ import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.io.IOException;
 import org.apache.log4j.Level;
 import jetbrains.mps.project.MPSExtentions;
@@ -37,6 +40,11 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
         Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, mySettings.getModuleLocation(), (MPSProject) myProject);
         ((StandaloneMPSProject) myProject).setFolderFor(runtimeSolution, myVirtualFolder);
         language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
+        new VersionFixer(myProject.getRepository(), language).updateImportVersions();
+        for (Generator gen : CollectionSequence.fromCollection(language.getGenerators())) {
+          new VersionFixer(myProject.getRepository(), gen).updateImportVersions();
+        }
+        language.save();
       }
       if (as_xpx6i8_a0a1a5a4(mySettings, NewLanguageSettings.class).isSandBoxSolutionNeeded()) {
         Solution sandboxSolution = NewModuleUtil.createSandboxSolution(language, mySettings.getModuleLocation(), (MPSProject) myProject);

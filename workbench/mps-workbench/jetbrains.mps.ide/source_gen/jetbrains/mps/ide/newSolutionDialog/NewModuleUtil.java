@@ -114,7 +114,9 @@ public class NewModuleUtil {
     Language lang = createNewLanguage(namespace, descriptorFile, true, project);
     project.addModule(lang);
     new VersionFixer(project.getRepository(), lang).updateImportVersions();
-    new VersionFixer(project.getRepository(), lang.getGenerators().iterator().next()).updateImportVersions();
+    for (Generator gen: lang.getGenerators()){
+      new VersionFixer(project.getRepository(), gen).updateImportVersions();
+    }
     lang.save();
     project.save();
     return lang;

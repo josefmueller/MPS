@@ -286,6 +286,14 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
+        <child id="1153944400369" name="variable" index="2Gsz3X" />
+        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
+      </concept>
+      <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
+      <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
+        <reference id="1153944258490" name="variable" index="2Gs0qQ" />
+      </concept>
       <concept id="9042586985346099698" name="jetbrains.mps.baseLanguage.collections.structure.MultiForEachStatement" flags="nn" index="1_o_46">
         <child id="9042586985346099734" name="forEach" index="1_o_by" />
       </concept>
@@ -720,6 +728,77 @@
                           <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
                         </node>
                       </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="5pK7k4tcifd" role="3cqZAp">
+                  <node concept="2OqwBi" id="5pK7k4tcife" role="3clFbG">
+                    <node concept="2ShNRf" id="5pK7k4tciff" role="2Oq$k0">
+                      <node concept="1pGfFk" id="5pK7k4tcifg" role="2ShVmc">
+                        <ref role="37wK5l" to="6f4m:5gIiJF05pI8" resolve="VersionFixer" />
+                        <node concept="2OqwBi" id="5pK7k4tcifh" role="37wK5m">
+                          <node concept="37vLTw" id="5GkRjzDMpBZ" role="2Oq$k0">
+                            <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
+                          </node>
+                          <node concept="liA8E" id="5pK7k4tcifj" role="2OqNvi">
+                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="5GkRjzDMsNf" role="37wK5m">
+                          <ref role="3cqZAo" node="7iZR6YlZWj7" resolve="language" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="5pK7k4tcifl" role="2OqNvi">
+                      <ref role="37wK5l" to="6f4m:2V3ml1v0Uym" resolve="updateImportVersions" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2Gpval" id="6N_Zgi1Kbfo" role="3cqZAp">
+                  <node concept="2GrKxI" id="6N_Zgi1Kbfq" role="2Gsz3X">
+                    <property role="TrG5h" value="gen" />
+                  </node>
+                  <node concept="3clFbS" id="6N_Zgi1Kbfu" role="2LFqv$">
+                    <node concept="3clFbF" id="27phTgV1CRS" role="3cqZAp">
+                      <node concept="2OqwBi" id="27phTgV1CRT" role="3clFbG">
+                        <node concept="2ShNRf" id="27phTgV1CRU" role="2Oq$k0">
+                          <node concept="1pGfFk" id="27phTgV1CRV" role="2ShVmc">
+                            <ref role="37wK5l" to="6f4m:5gIiJF05pI8" resolve="VersionFixer" />
+                            <node concept="2OqwBi" id="27phTgV1CRW" role="37wK5m">
+                              <node concept="37vLTw" id="27phTgV1CRX" role="2Oq$k0">
+                                <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
+                              </node>
+                              <node concept="liA8E" id="27phTgV1CRY" role="2OqNvi">
+                                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                              </node>
+                            </node>
+                            <node concept="2GrUjf" id="6N_Zgi1Kk0x" role="37wK5m">
+                              <ref role="2Gs0qQ" node="6N_Zgi1Kbfq" resolve="gen" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="27phTgV1CS0" role="2OqNvi">
+                          <ref role="37wK5l" to="6f4m:2V3ml1v0Uym" resolve="updateImportVersions" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="27phTgV1NVw" role="2GsD0m">
+                    <node concept="37vLTw" id="27phTgV1NVx" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7iZR6YlZWj7" resolve="language" />
+                    </node>
+                    <node concept="liA8E" id="27phTgV1NVy" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~Language.getGenerators():java.util.Collection" resolve="getGenerators" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="3AvdXZVblPU" role="3cqZAp">
+                  <node concept="2OqwBi" id="3AvdXZVblVw" role="3clFbG">
+                    <node concept="liA8E" id="3AvdXZVbmhy" role="2OqNvi">
+                      <ref role="37wK5l" to="w1kc:~Language.save():void" resolve="save" />
+                    </node>
+                    <node concept="37vLTw" id="5GkRjzDMt4x" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7iZR6YlZWj7" resolve="language" />
                     </node>
                   </node>
                 </node>
