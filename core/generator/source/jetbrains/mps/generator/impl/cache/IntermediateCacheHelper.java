@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,38 +15,24 @@
  */
 package jetbrains.mps.generator.impl.cache;
 
-import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.generator.GenerationCacheContainer;
-import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
-import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalReporter;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.generator.impl.plan.PlanSignature;
-import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
-import java.util.Map;
-
 /**
  * Wraps access to optional IncrementalModelCache, facility to store/retrieve cached step models
  * @author Artem Tikhomirov
  */
 public class IntermediateCacheHelper {
-  private final IncrementalGenerationStrategy myIncrementalStrategy;
-  private final PlanSignature myPlanSignature;
   private final IPerformanceTracer myPerfTrace;
   private IntermediateModelsCache myCache;
 
-  public IntermediateCacheHelper(@NotNull IncrementalGenerationStrategy incrementalStrategy, @NotNull PlanSignature genPlanSignature, @NotNull IPerformanceTracer perfTrace) {
-    myIncrementalStrategy = incrementalStrategy;
-    myPlanSignature = genPlanSignature;
+  public IntermediateCacheHelper(@NotNull IPerformanceTracer perfTrace) {
     myPerfTrace = perfTrace;
   }
 
@@ -59,64 +45,6 @@ public class IntermediateCacheHelper {
    */
   public void createNew(@NotNull SModel originalInput) {
     myCache = null;
-
-    GenerationCacheContainer incrementalCacheContainer = myIncrementalStrategy.getContainer();
-    if (incrementalCacheContainer == null) {
-      return;
-    }
-    final Map<String, String> generationHashes = myIncrementalStrategy.getModelHashes(originalInput, null);
-    if (generationHashes == null) {
-      return;
-    }
-
-    String currentHash = generationHashes.get(GeneratableSModel.FILE);
-    ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(originalInput, currentHash, true);
-    if (cacheContainer == null) {
-      return;
-    }
-    myCache = new IntermediateModelsCache(cacheContainer, myPlanSignature.getSignature());
-  }
-
-  /**
-   * Load cache container for the model
-   */
-  public void loadExisting(@NotNull SModel model, @Nullable IncrementalReporter reporter) {
-    myCache = null;
-    GenerationDependencies dependencies = myIncrementalStrategy.getDependencies(model);
-    if (dependencies == null || !dependencies.isContainsIncrementalInfo()) {
-      return;
-    }
-
-    GenerationCacheContainer incrementalCacheContainer = myIncrementalStrategy.getContainer();
-    if (incrementalCacheContainer == null) {
-      if (reporter != null) {
-        reporter.report("No container for incremental caches.");
-      }
-      return;
-    }
-
-    String oldHash = dependencies.getModelHash();
-    ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(model, oldHash, false);
-    if (cacheContainer == null) {
-      if (reporter != null) {
-        reporter.report("No cache for " + model.getReference().toString() + " (" + oldHash + ")");
-      }
-      return;
-    }
-
-    IntermediateModelsCache c = IntermediateModelsCache.load(cacheContainer);
-    if (c != null && myPlanSignature.equals(c.getSignature())) {
-      myCache = c;
-    } else if (reporter != null) {
-      if (c == null) {
-        reporter.report("Caches are corrupted for " + oldHash);
-      } else {
-        reporter.report("Plan differs:");
-        for (String s : DifflibFacade.getSimpleDiff(c.getSignature(), myPlanSignature.getSignature())) {
-          reporter.report(s);
-        }
-      }
-    }
   }
 
   /**

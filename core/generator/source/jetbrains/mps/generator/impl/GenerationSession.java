@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
@@ -37,7 +36,6 @@ import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
-import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
@@ -45,7 +43,6 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.MapCfgComparator;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
-import jetbrains.mps.generator.impl.plan.PlanSignature;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
@@ -153,51 +150,14 @@ class GenerationSession {
     warnIfGenerateSelf(myGenerationPlan);
     myQuerySource = new QueryProviderCache(myGenerationPlan, myLogger);
 
-    monitor.start("", 1 + myGenerationPlan.getSteps().size());
+    monitor.start("", myGenerationPlan.getSteps().size());
     try {
-      // distinct helper instance to hold data from existing cache (myIntermediateCache keeps data of actual generation)
-      IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
-      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, mySessionContext.getRepository(),
-          myGenerationOptions, cacheHelper, null);
-      myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
-
-      if (incrementalHandler.canOptimize()) {
-        int ignored = incrementalHandler.getIgnoredRoots().size();
-        int total = incrementalHandler.getRootsCount();
-        myLogger.info((!incrementalHandler.canIgnoreConditionals() ? "" : "descriptors and ") + ignored + " of " + total + " roots are unchanged");
-
-        if (total > 0 && ignored == total && incrementalHandler.canIgnoreConditionals()) {
-          myLogger.info("generated files are up-to-date");
-          ttrace.pop();
-          return new GenerationStatus(myOriginalInputModel, null, myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), false);
-        }
-
-        if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
-          myLogger.info((!incrementalHandler.requireConditionals() ? "" :
-              "descriptors and ") + incrementalHandler.getRequiredRoots().size() + " roots can be used from cache");
-        }
-
-        if (myGenerationOptions.getTracingMode() != GenerationOptions.TRACE_OFF) {
-          myLogger.info("Processing:");
-          for (SNode node : myOriginalInputModel.getRootNodes()) {
-            if (incrementalHandler.getRequiredRoots().contains(node)) {
-              myLogger.info(String.format("%s (%s) (cache)", node.getName(), node.getConcept().getQualifiedName()));
-            } else if (!incrementalHandler.getIgnoredRoots().contains(node)) {
-              myLogger.info(String.format("%s (%s)", node.getName(), node.getConcept().getQualifiedName()));
-            }
-          }
-        }
-      }
-      monitor.advance(1);
-
-      if (InternalFlag.isInternalMode() && myGenerationOptions.isRebuildAll() && myGenerationOptions.isDebugIncrementalDependencies() && myDependenciesBuilder instanceof IncrementalDependenciesBuilder) {
-        myLogger.info("creating generated.trace");
-        ((IncrementalDependenciesBuilder) myDependenciesBuilder).traceDependencyOrigins();
-      }
+      myDependenciesBuilder = new IncrementalGenerationHandler(myOriginalInputModel, myGenerationOptions).createDependenciesBuilder();
 
       boolean success = false;
 
-      myIntermediateCache = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), new PlanSignature(myOriginalInputModel, myGenerationPlan), ttrace);
+      // FIXME IntermediateCacheHelper is of no value, drop it
+      myIntermediateCache = new IntermediateCacheHelper(ttrace);
       myIntermediateCache.createNew(myOriginalInputModel);
       ttrace.pop();
       try {
@@ -284,7 +244,7 @@ class GenerationSession {
         }
 
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
-            myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0);
+            myDependenciesBuilder.getResult(null), myLogger.getErrorCount() > 0);
         generationStatus.setModelExports(mySessionContext.getExports().getExports());
         generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
         success = generationStatus.isOk();

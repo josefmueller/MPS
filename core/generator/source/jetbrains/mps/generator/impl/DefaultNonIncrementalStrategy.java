@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,17 @@ import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Map;
 
 /**
  * Base/default implementation for non-incremental generation
+ * @deprecated incremental strategy is no longer in use, just drop it
  */
+@Deprecated
+@ToRemove(version = 2017.3)
 public class DefaultNonIncrementalStrategy implements IncrementalGenerationStrategy {
   @Override
   public Map<String, String> getModelHashes(SModel sm, IOperationContext operationContext) {

@@ -24,6 +24,11 @@ import org.jetbrains.annotations.NotNull;
 import java.io.*;
 
 /**
+ * FIXME revisit, perhaps can make use of to keep checkpoint models outside of a workspace (not to bother with identical files)
+ *
+ * FIXME There is extension point, what do I do with it?
+ *       new ExtensionPoint<GenerationCacheContainer>("jetbrains.mps.lang.core.GeneratorCache").getObjects();
+ *       GeneratorCache_extension, GeneratorCacheComponent
  * Evgeny Gryaznov, Sep 21, 2010
  */
 public interface GenerationCacheContainer {

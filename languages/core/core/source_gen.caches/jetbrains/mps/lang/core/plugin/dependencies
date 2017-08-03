@@ -55,12 +55,9 @@
     <classNode dependClassName="jetbrains.mps.generator.GeneratorTask" />
     <classNode dependClassName="jetbrains.mps.generator.GeneratorTaskBase" />
     <classNode dependClassName="jetbrains.mps.generator.IModifiableGenerationSettings" />
-    <classNode dependClassName="jetbrains.mps.generator.IncrementalGenerationStrategy" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationPlan" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsProvider" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.DefaultIncrementalStrategy" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

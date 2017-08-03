@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -39,7 +40,6 @@ public class GenerationOptions {
   private final boolean myRebuildAll;
   private final boolean myUseDynamicRefs;
 
-  private final IncrementalGenerationStrategy myIncrementalStrategy;
   private final GenerationParametersProvider myParametersProvider;
   private final Map<SModel, ModelGenerationPlan> myCustomPlans;
   private boolean myKeepOutputModel;
@@ -54,15 +54,12 @@ public class GenerationOptions {
   private final boolean myShowBadChildWarning;
   private final int myNumberOfModelsToKeep;
 
-  private final boolean myDebugIncrementalDependencies;
-
   private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean useInplaceTransformations,
                             boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
-                            boolean useDynamicRefs, IncrementalGenerationStrategy incrementalStrategy,
+                            boolean useDynamicRefs,
                             GenerationParametersProvider parametersProvider, boolean keepOutputModel, boolean showBadChildWarning,
-                            Map<SModel, ModelGenerationPlan> customPlans,
-                            boolean debugIncrementalDependencies) {
+                            Map<SModel, ModelGenerationPlan> customPlans) {
     mySaveTransientModels = saveTransientModels;
     myActiveInplaceTransform = useInplaceTransformations;
     myGenerateInParallel = generateInParallel;
@@ -74,12 +71,10 @@ public class GenerationOptions {
     myShowInfo = showInfo;
     myShowWarnings = showWarnings;
     myKeepModelsWithWarnings = keepModelsWithWarnings;
-    myIncrementalStrategy = incrementalStrategy;
     myParametersProvider = parametersProvider;
     myKeepOutputModel = keepOutputModel;
     myShowBadChildWarning = showBadChildWarning;
     myCustomPlans = customPlans;
-    myDebugIncrementalDependencies = debugIncrementalDependencies;
     myUseDynamicRefs = useDynamicRefs;
   }
 
@@ -95,13 +90,14 @@ public class GenerationOptions {
     return myStrictMode;
   }
 
+  // FIXME odd as option, dubious use
   public boolean isRebuildAll() {
     return myRebuildAll;
   }
 
   @NotNull
   public IncrementalGenerationStrategy getIncrementalStrategy() {
-    return myIncrementalStrategy;
+    throw new UnsupportedOperationException();
   }
 
   public int getNumberOfThreads() {
@@ -158,17 +154,13 @@ public class GenerationOptions {
       useInplaceTransformations(settings.useInplaceTransformations()).
       generateInParallel(settings.isParallelGenerator(), settings.getNumberOfParallelThreads()).
       reporting(settings.isShowInfo(), settings.isShowWarnings(), settings.isKeepModelsWithWarnings(), settings.getNumberOfModelsToKeep()).
-      showBadChildWarning(settings.isShowBadChildWarning()).debugIncrementalDependencies(settings.isDebugIncrementalDependencies()).
+      showBadChildWarning(settings.isShowBadChildWarning()).
       useDynamicReferences(!settings.createStaticReferences());
   }
 
 
   public boolean isKeepOutputModel() {
     return myKeepOutputModel;
-  }
-
-  public boolean isDebugIncrementalDependencies() {
-    return myDebugIncrementalDependencies;
   }
 
   /**
@@ -187,7 +179,6 @@ public class GenerationOptions {
     private boolean mySaveTransientModels = false;
     private boolean myStrictMode = false;
     private boolean myRebuildAll = true;
-    private IncrementalGenerationStrategy myIncrementalStrategy = new DefaultNonIncrementalStrategy();
 
     private Map<SModel, ModelGenerationPlan> myCustomPlans = new HashMap<SModel, ModelGenerationPlan>();
     private boolean myGenerateInParallel = false;
@@ -203,7 +194,6 @@ public class GenerationOptions {
     private GenerationParametersProvider myParametersProvider = null;
 
     private boolean myKeepOutputModel;
-    private boolean myDebugIncrementalDependencies = false;
     private boolean myUseInplace;
     private boolean myUseDynamicRefs = false;
 
@@ -211,15 +201,11 @@ public class GenerationOptions {
     }
 
     public GenerationOptions create() {
-      if(myIncrementalStrategy == null) {
-        throw new IllegalArgumentException("incremental strategy is not set");
-      }
-
       return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll, myUseInplace,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep, myUseDynamicRefs,
-        myIncrementalStrategy, myParametersProvider, myKeepOutputModel, myShowBadChildWarning,
-        myCustomPlans, myDebugIncrementalDependencies);
+        myParametersProvider, myKeepOutputModel, myShowBadChildWarning,
+        myCustomPlans);
     }
 
     public OptionsBuilder saveTransientModels(boolean saveTransientModels) {
@@ -242,11 +228,6 @@ public class GenerationOptions {
       return this;
     }
 
-    public OptionsBuilder debugIncrementalDependencies(boolean value) {
-      myDebugIncrementalDependencies = value;
-      return this;
-    }
-
     public OptionsBuilder useInplaceTransformations(boolean use) {
       myUseInplace = use;
       return this;
@@ -257,8 +238,12 @@ public class GenerationOptions {
       return this;
     }
 
-    public OptionsBuilder incremental(@NotNull IncrementalGenerationStrategy incrementalStrategy) {
-      myIncrementalStrategy = incrementalStrategy;
+    /**
+     * @deprecated support for legacy incremental generation has been abandoned, the method is no-op
+     */
+    @Deprecated
+    @ToRemove(version = 2017.3)
+    public OptionsBuilder incremental(IncrementalGenerationStrategy incrementalStrategy) {
       return this;
     }
 

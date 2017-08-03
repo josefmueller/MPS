@@ -27,9 +27,6 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.generator.IncrementalGenerationStrategy;
-import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
-import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.DefaultGenerationParametersProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.generator.TransientModelsProvider;
@@ -199,13 +196,6 @@ public class Generate_Facet extends IFacet.Stub {
               }
               Iterable<GenerationCacheContainer> caches = new ExtensionPoint<GenerationCacheContainer>("jetbrains.mps.lang.core.GeneratorCache").getObjects();
               GenerationCacheContainer cacheContainer = (Sequence.fromIterable(caches).isEmpty() ? null : Sequence.fromIterable(caches).first());
-              final IncrementalGenerationStrategy incrementalStrategy;
-              if (settings.isIncremental()) {
-                incrementalStrategy = new DefaultIncrementalStrategy((settings.isIncrementalUseCache() ? cacheContainer : null));
-              } else {
-                incrementalStrategy = new DefaultNonIncrementalStrategy();
-              }
-              vars(pa.global()).generationOptions().incremental(incrementalStrategy);
               vars(pa.global()).generationOptions().tracing(settings.getPerformanceTracingLevel());
               vars(pa.global()).generationOptions().saveTransientModels(vars(pa.global()).saveTransient()).rebuildAll(Generate_Facet.Target_checkParameters.vars(pa.global()).cleanMake()).keepOutputModel(true);
               vars(pa.global()).parametersProvider(new DefaultGenerationParametersProvider());

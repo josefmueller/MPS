@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,17 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Map;
 
 /**
  * Evgeny Gryaznov, Oct 7, 2010
+ * @deprecated incremental strategy is no longer in use, just drop it
  */
+@Deprecated
+@ToRemove(version = 2017.3)
 public interface IncrementalGenerationStrategy {
   /**
    * Actual model digest

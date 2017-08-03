@@ -46,6 +46,7 @@ public interface DependenciesBuilder {
 
   void dropModel();
 
+  // FIXME drop argument or even complete DependenciesBuilder class
   GenerationDependencies getResult(IncrementalGenerationStrategy incrementalStrategy);
 
   void reloadRequired(GeneratorMappings mappings) throws GenerationFailureException;
