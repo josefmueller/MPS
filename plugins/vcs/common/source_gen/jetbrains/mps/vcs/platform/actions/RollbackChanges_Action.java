@@ -7,6 +7,8 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.annotations.NotNull;
@@ -30,6 +32,12 @@ public class RollbackChanges_Action extends BaseAction {
       return false;
     }
     {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
       EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
       if (p == null) {
         return false;
@@ -39,6 +47,6 @@ public class RollbackChanges_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ChangesStripActionsHelper.rollbackChanges(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
+    new ChangesStripActionsHelper(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSEditorDataKeys.EDITOR_CONTEXT)).rollbackChanges();
   }
 }

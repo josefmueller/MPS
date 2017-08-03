@@ -12,10 +12,11 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.application.ApplicationManager;
@@ -52,12 +53,19 @@ public class ShowDiffFromChanges_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      MapSequence.fromMap(_params).put("mpsProject", p);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final Bounds bounds = ChangesStripActionsHelper.getCurrentChangeGroupPositionAndHidePopup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    final Bounds bounds = new ChangesStripActionsHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext"))).getCurrentChangeGroupPositionAndHidePopup();
+    ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadInEDT(new Runnable() {
       public void run() {
         final SNode editedNode = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode();
         final SModel model = editedNode.getModel();

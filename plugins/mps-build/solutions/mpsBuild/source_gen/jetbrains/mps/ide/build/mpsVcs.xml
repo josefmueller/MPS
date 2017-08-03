@@ -193,7 +193,6 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.reduced.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.tool.gentest.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
@@ -206,8 +205,6 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
-      <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.jar" />
-      <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
       <library file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <library file="${artifacts.mpsVcsCore}/vcs-core/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" />
       <library file="${artifacts.mpsVcsCore}/vcs-core/languages/jetbrains.mps.vcs.mergehints.jar" />

@@ -8,8 +8,10 @@ import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CopyOldNodes_Action extends BaseAction {
@@ -26,7 +28,7 @@ public class CopyOldNodes_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ChangesStripActionsHelper.areOldNodesAvailable(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
+    return new ChangesStripActionsHelper(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSEditorDataKeys.EDITOR_CONTEXT)).areOldNodesAvailable();
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -38,6 +40,12 @@ public class CopyOldNodes_Action extends BaseAction {
       return false;
     }
     {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
+    {
       EditorContext p = event.getData(MPSEditorDataKeys.EDITOR_CONTEXT);
       if (p == null) {
         return false;
@@ -47,6 +55,6 @@ public class CopyOldNodes_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ChangesStripActionsHelper.copyOldNodes(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
+    new ChangesStripActionsHelper(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSEditorDataKeys.EDITOR_CONTEXT)).copyOldNodes();
   }
 }

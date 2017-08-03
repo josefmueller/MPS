@@ -9,8 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.project.MPSProject;
 
 public class GoToPreviousChange_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.PreviousOccurence;
@@ -26,7 +28,8 @@ public class GoToPreviousChange_Action extends BaseAction {
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    event.getPresentation().setEnabled(ChangesStripActionsHelper.isNeighbourGroupAvailable(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), false));
+    boolean avail = new ChangesStripActionsHelper(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSEditorDataKeys.EDITOR_CONTEXT)).isNeighbourGroupAvailable(false);
+    event.getPresentation().setEnabled(avail);
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
@@ -39,10 +42,16 @@ public class GoToPreviousChange_Action extends BaseAction {
         return false;
       }
     }
+    {
+      MPSProject p = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+      if (p == null) {
+        return false;
+      }
+    }
     return true;
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ChangesStripActionsHelper.goToNeighbourGroup(event.getData(MPSEditorDataKeys.EDITOR_CONTEXT), false);
+    new ChangesStripActionsHelper(event.getData(MPSCommonDataKeys.MPS_PROJECT), event.getData(MPSEditorDataKeys.EDITOR_CONTEXT)).goToNeighbourGroup(false);
   }
 }

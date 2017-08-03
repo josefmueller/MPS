@@ -23,8 +23,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -32,15 +34,15 @@
   <dependency className="jetbrains.mps.vcs.platform.actions.GoToNextChange_Action" file="GoToNextChange_Action.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.CommonDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -53,8 +55,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -135,8 +139,10 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -153,10 +159,11 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.Bounds" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.actions.VcsActionsUtil" />
