@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -486,7 +486,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   //----select next queries----
 
-  @Override
   public void selectNextModel(SModel modelDescriptor) {
     final MPSTreeNode mpsTreeNode = createFindHelper().findNextTreeNode(modelDescriptor);
     // FIXME selectNextNode does the same, refactor. Check callers if need ThreadUtils at all

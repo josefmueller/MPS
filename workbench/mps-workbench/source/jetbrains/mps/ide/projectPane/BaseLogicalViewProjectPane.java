@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,9 +55,7 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.util.Pair;
@@ -125,43 +123,41 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public abstract void rebuild();
 
-  public abstract void selectNextModel(SModel md);
-
   @Override
   public Object getData(String dataId) {
     //MPSDK
-    if (dataId.equals(MPSDataKeys.NODE.getName())) {
+    if (MPSDataKeys.NODE.is(dataId)) {
       return getSelectedSNode();
     }
-    if (dataId.equals(MPSDataKeys.NODES.getName())) {
+    if (MPSDataKeys.NODES.is(dataId)) {
       return getSelectedSNodes();
     }
 
-    if (dataId.equals(MPSDataKeys.MODEL.getName())) {
+    if (MPSDataKeys.MODEL.is(dataId)) {
       return getSelectedModel();
     }
-    if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) {
+    if (MPSDataKeys.CONTEXT_MODEL.is(dataId)) {
       return getContextModel();
     }
-    if (dataId.equals(MPSDataKeys.MODELS.getName())) {
+    if (MPSDataKeys.MODELS.is(dataId)) {
       return getSelectedModels();
     }
 
-    if (dataId.equals(MPSDataKeys.MODULE.getName())) {
+    if (MPSDataKeys.MODULE.is(dataId)) {
       return getSelectedModule();
     }
-    if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
+    if (MPSDataKeys.CONTEXT_MODULE.is(dataId)) {
       return getContextModule();
     }
-    if (dataId.equals(MPSDataKeys.MODULES.getName())) {
+    if (MPSDataKeys.MODULES.is(dataId)) {
       return getSelectedModules();
     }
 
-    if (dataId.equals(MPSDataKeys.VIRTUAL_PACKAGES.getName())) {
+    if (MPSDataKeys.VIRTUAL_PACKAGES.is(dataId)) {
       return getSelectedPackages();
     }
 
-    if (dataId.equals(MPSDataKeys.NAMESPACE.getName())) {
+    if (MPSDataKeys.NAMESPACE.is(dataId)) {
       NamespaceTextNode selectedNamespaceNode = getSelectedTreeNode(NamespaceTextNode.class);
       if (selectedNamespaceNode != null) {
         return selectedNamespaceNode.getNamespace();
@@ -169,33 +165,30 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       return null;
     }
 
-    if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-      return getContextForSelection();
-    }
-    if (dataId.equals(MPSDataKeys.TREE_NODE.getName())) {
+    if (MPSDataKeys.TREE_NODE.is(dataId)) {
       return getSelectedTreeNode(TreeNode.class);
     }
-    if (dataId.equals(MPSDataKeys.TREE_NODES.getName())) {
+    if (MPSDataKeys.TREE_NODES.is(dataId)) {
       return getSelectedTreeNodes(TreeNode.class);
     }
-    if (dataId.equals(MPSDataKeys.TREE_SELECTION_SIZE.getName())) {
+    if (MPSDataKeys.TREE_SELECTION_SIZE.is(dataId)) {
       return getSelectionSize();
     }
-    if (dataId.equals(MPSDataKeys.PLACE.getName())) {
+    if (MPSDataKeys.PLACE.is(dataId)) {
       return getPlace();
     }
 
     //PDK
-    if (dataId.equals(PlatformDataKeys.COPY_PROVIDER.getName())) {
+    if (PlatformDataKeys.COPY_PROVIDER.is(dataId)) {
       return new MyCopyProvider();
     }
-    if (dataId.equals(PlatformDataKeys.PASTE_PROVIDER.getName())) {
+    if (PlatformDataKeys.PASTE_PROVIDER.is(dataId)) {
       return new MyPasteProvider();
     }
-    if (dataId.equals(PlatformDataKeys.CUT_PROVIDER.getName())) {
+    if (PlatformDataKeys.CUT_PROVIDER.is(dataId)) {
       return new MyCutProvider();
     }
-    if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
+    if (PlatformDataKeys.VIRTUAL_FILE_ARRAY.is(dataId)) {
       return getSelectedFiles();
     }
 
@@ -401,27 +394,13 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return selection == null ? 0 : selection.length;
   }
 
-  private IOperationContext getContextForSelection() {
-    TreePath[] selection = getTree().getSelectionPaths();
-    if (selection == null) {
-      return null;
-    }
-    if (selection.length > 0) {
-      return new ProjectOperationContext(ProjectHelper.fromIdeaProject(myProject));
-    }
-    return null;
-  }
-
   private <T extends TreeNode> T getSelectedTreeNode(Class<T> nodeClass) {
     TreePath selectionPath = getTree().getSelectionPath();
     if (selectionPath == null) {
       return null;
     }
     Object selectedNode = selectionPath.getLastPathComponent();
-    if (!(nodeClass.isInstance(selectedNode))) {
-      return null;
-    }
-    return (T) selectedNode;
+    return nodeClass.isInstance(selectedNode) ? nodeClass.cast(selectedNode) : null;
   }
 
   private ActionPlace getPlace() {
@@ -466,10 +445,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
         continue;
       }
       Object selectedNode = selectionPath.getLastPathComponent();
-      if (!(nodeClass.isInstance(selectedNode))) {
-        continue;
+      if (nodeClass.isInstance(selectedNode)) {
+        selectedTreeNodes.add(nodeClass.cast(selectedNode));
       }
-      selectedTreeNodes.add((T) selectedNode);
     }
     return selectedTreeNodes;
   }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.idea.core.actions;
 
 import com.intellij.codeInsight.daemon.QuickFixBundle;
 import com.intellij.compiler.ModuleCompilerUtil;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
@@ -30,7 +30,6 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.dependency.VisibilityUtil;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -65,13 +64,16 @@ public class AddMissingDependencyAction extends BaseAction {
       if (project == null) {
         return;
       }
-      SNode curNode = e.getData(MPSCommonDataKeys.NODE);
-      if (curNode == null) return;
-      IOperationContext context = e.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-      if (context == null) return;
+      DataContext dataContext = e.getDataContext();
+      SNode curNode = MPSCommonDataKeys.NODE.getData(dataContext);
+      if (curNode == null) {
+        return;
+      }
+      SModule dependentModule = MPSCommonDataKeys.CONTEXT_MODULE.getData(dataContext);
 
-      SModule dependentModule = context.getModule();
-      if (!(dependentModule instanceof SolutionIdea)) return;
+      if (!(dependentModule instanceof SolutionIdea)) {
+        return;
+      }
       final Module ideaDependentModule = ((SolutionIdea) dependentModule).getIdeaModule();
 
       final List<Module> ideaModulesToDependOn = new ArrayList<Module>();
@@ -185,16 +187,16 @@ public class AddMissingDependencyAction extends BaseAction {
     if (project == null) {
       return false;
     }
-    SNode curNode = e.getData(MPSCommonDataKeys.NODE);
+    DataContext dataContext = e.getDataContext();
+    SNode curNode = MPSCommonDataKeys.NODE.getData(dataContext);
     if (curNode == null) {
       return false;
     }
 
-    IOperationContext context = e.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-    if (context == null) return false;
-
-    SModule dependentModule = context.getModule();
-    if (!(dependentModule instanceof SolutionIdea)) return false;
+    SModule dependentModule = MPSCommonDataKeys.CONTEXT_MODULE.getData(dataContext);
+    if (!(dependentModule instanceof SolutionIdea)) {
+      return false;
+    }
 
     SRepository repository = ProjectHelper.getProjectRepository(project);
     for (SReference ref : curNode.getReferences()) {
