@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -29,8 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * FIXME revisit, check if we can use it for checkpoint models
  * Evgeny Gryaznov, Sep 21, 2010
  */
+@ToRemove(version = 0)
 public class IntermediateModelsCache {
 
   private static final String SIGNATURE = "signature";

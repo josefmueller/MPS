@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,9 +16,11 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.generator.GenerationParametersProvider;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -59,6 +61,12 @@ public class GenerationDependencies {
   private /* transient */ final List<GenerationRootDependencies> myUnchanged;
   private /* transient */ final int mySkippedCount;
   private /* transient */ final int myFromCacheCount;
+
+  public GenerationDependencies(@NotNull SModel model, @Nullable GenerationParametersProvider parametersProvider) {
+    this(model instanceof GeneratableSModel ? ((GeneratableSModel) model).getModelHash() : null, parametersProvider == null ? null : parametersProvider.getParametersHash(model));
+    // DefaultNonIncrementalStrategy used to get model hash for isGeneratable()==true models only, but I don't care that much - if we get to generate
+    // a non-generatable model, why can't we use its model hash?
+  }
 
   /*package*/ GenerationDependencies(String modelHash, String parametersHash) {
     this.containsIncrementalInfo = false;

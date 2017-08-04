@@ -34,7 +34,7 @@ import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.RecordingFactory;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
-import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
@@ -148,9 +148,6 @@ class GenerationSession {
 
     monitor.start("", myGenerationPlan.getSteps().size());
     try {
-      // FIXME myDependenciesBuilder is likely of no true use and shall cease
-      DependenciesBuilder myDependenciesBuilder = new IncrementalGenerationHandler(myOriginalInputModel, myGenerationOptions).createDependenciesBuilder();
-
       ttrace.pop();
       try {
         // prepare input model: make a clone so that rest of generator always works with transient model.
@@ -230,8 +227,11 @@ class GenerationSession {
           mySessionContext.getModule().addModelToKeep(currOutput.getReference(), true);
         }
 
-        GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
-            myDependenciesBuilder.getResult(null), myLogger.getErrorCount() > 0);
+        // identifies the model and specific "configuration" it has been generated with.
+        // XXX we could use GenerationDependencies to pass more information about actual generators/languages involved (including their runtimes
+        //     to facilitate proper classpath calculation
+        final GenerationDependencies genDeps = new GenerationDependencies(myOriginalInputModel, myGenerationOptions.getParametersProvider());
+        GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput, genDeps, myLogger.getErrorCount() > 0);
         generationStatus.setModelExports(mySessionContext.getExports().getExports());
         generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
         return generationStatus;
