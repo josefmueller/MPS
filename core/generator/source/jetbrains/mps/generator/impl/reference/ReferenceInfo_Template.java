@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,7 +90,7 @@ public class ReferenceInfo_Template extends ReferenceInfo {
 
   private void checkCrossRootTemplateReference(@NotNull SNode outputTarget, PostponedReference ref) {
     final TemplateGenerator generator = ref.getGenerator();
-    if (!generator.isStrict() || !generator.isIncremental()) {
+    if (!generator.isStrict() /* here used to be !isIncremental() check, see commend below*/) {
       return;
     }
 
@@ -106,7 +106,7 @@ public class ReferenceInfo_Template extends ReferenceInfo {
       SNode inputSourceRoot = generator.getOriginalRootByGenerated(outputSourceRoot);
       SNode inputTargetRoot = generator.getOriginalRootByGenerated(outputTargetRoot);
       if (inputTargetRoot != inputSourceRoot) {
-        generator.getLogger().warning(myTemplateSourceNode, "references across templates for different roots are not allowed: use mapping labels or turn off incremental mode, " +
+        generator.getLogger().warning(myTemplateSourceNode, "references across templates for different roots are not allowed: use mapping labels, " +
             "source root: " + (inputSourceRoot == null ? "<conditional root>" : SNodeOperations.getDebugText(inputSourceRoot)) +
             ", target root: " + (inputTargetRoot == null ? "<conditional root>" : SNodeOperations.getDebugText(inputTargetRoot)),
             GeneratorUtil.describeIfExists(ref.getSourceNode(), "source"),

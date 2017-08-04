@@ -48,7 +48,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.generator.template.WeavingAnchorContext;
-import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
@@ -97,22 +96,11 @@ public final class TemplateProcessor implements ITemplateProcessor {
   @NotNull
   public List<SNode> apply(@NotNull SNode templateNode, @NotNull TemplateContext context) throws DismissTopMappingRuleException, GenerationFailureException,
       GenerationCanceledException {
-    if (myGenerator.isIncremental()) {
-      // turn off tracing
-      NodeReadEventsCaster.setNodesReadListener(null);
-    }
-    try {
-      final TemplateNode rtTemplateNode = getTemplateNodeRuntime(templateNode);
-      if (rtTemplateNode.getFirstMacro() != null) {
-        return applyMacro(rtTemplateNode.getFirstMacro(), context);
-      } else {
-        return applyTemplate(rtTemplateNode, context);
-      }
-    } finally {
-      if (myGenerator.isIncremental()) {
-        // restore tracing
-        NodeReadEventsCaster.removeNodesReadListener();
-      }
+    final TemplateNode rtTemplateNode = getTemplateNodeRuntime(templateNode);
+    if (rtTemplateNode.getFirstMacro() != null) {
+      return applyMacro(rtTemplateNode.getFirstMacro(), context);
+    } else {
+      return applyTemplate(rtTemplateNode, context);
     }
   }
 

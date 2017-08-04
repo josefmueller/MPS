@@ -840,11 +840,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return node.getContainingRoot();
   }
 
-  // FIXME review uses and drop the method
-  public boolean isIncremental() {
-    return false;
-  }
-
   private boolean isInplaceChangeEnabled() {
     return getGeneratorSessionContext().getGenerationOptions().applyTransformationsInplace();
   }
