@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
@@ -51,22 +50,26 @@ public class FileDeleteActionFixed extends DeleteAction {
     @Override
     public void deleteElement(DataContext dataContext) {
       final VirtualFile[] files = PlatformDataKeys.VIRTUAL_FILE_ARRAY.getData(dataContext);
-      if (files == null || files.length == 0) return;
+      if (files == null || files.length == 0) {
+        return;
+      }
 
       String message = createConfirmationMessage(files);
       int returnValue = Messages.showYesNoDialog(message, "Delete", Messages.getQuestionIcon());
-      if (returnValue != 0) return;
+      if (returnValue != 0) {
+        return;
+      }
 
       Arrays.sort(files, FileComparator.getInstance());
 
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      ApplicationManager.getApplication().runWriteAction(new Runnable() {
         @Override
         public void run() {
           for (final VirtualFile file : files) {
             try {
               file.delete(this);
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
+              // XXX WHY invokeLater, if we are in EDT already (showYesNoDialog() call, above)?
               ApplicationManager.getApplication().invokeLater(new Runnable() {
                 @Override
                 public void run() {
