@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,6 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.TabEditorLayout;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.awt.Component;
@@ -88,12 +86,7 @@ class ButtonEditorTab {
   }
 
   /*package*/ boolean isSelected() {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
-        return getTabComponent().isCurrent(ButtonEditorTab.this);
-      }
-    });
+    return getTabComponent().isCurrent(ButtonEditorTab.this);
   }
 
   /*package*/ Component getComponentForPopup() {
