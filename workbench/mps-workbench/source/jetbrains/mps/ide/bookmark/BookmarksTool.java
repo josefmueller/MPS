@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.bookmark;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -23,10 +24,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTree.TreeState;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.tools.BaseProjectTool;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
@@ -51,7 +51,7 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
     myTree = new BookmarksTree(ProjectHelper.toMPSProject(getProject()), myBookmarkManager);
     myComponent = ScrollPaneFactory.createScrollPane(myTree);
     if (myTreeState != null) {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {
           myTree.rebuildNow();

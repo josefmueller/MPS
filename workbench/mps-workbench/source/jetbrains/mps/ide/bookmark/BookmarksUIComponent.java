@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,8 +30,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -207,12 +205,14 @@ public class BookmarksUIComponent implements ProjectComponent {
 
   private static class BookmarkIconRenderer implements EditorMessageIconRenderer {
     private static final IconRendererType TYPE = new IconRendererType(3);
-    private SNode myNode;
-    private int myNumber;
+    private final SNode myNode;
+    private final int myNumber;
+    private final String myTooltip;
 
     private BookmarkIconRenderer(SNode node, int number) {
       myNode = node;
       myNumber = number;
+      myTooltip = String.format("Bookmark %s(%s)", number != -1 ? number : "", node.getPresentation());
     }
 
     @Override
@@ -222,13 +222,7 @@ public class BookmarksUIComponent implements ProjectComponent {
 
     @Override
     public String getTooltipText() {
-      String nodePresentation = ModelAccess.instance().runReadAction(new Computable<String>() {
-        @Override
-        public String compute() {
-          return myNode.getPresentation();
-        }
-      });
-      return (myNumber != -1 ? "Bookmark " + myNumber + " (" : "Bookmark (") + nodePresentation + ")";
+      return myTooltip;
     }
 
     @Override
