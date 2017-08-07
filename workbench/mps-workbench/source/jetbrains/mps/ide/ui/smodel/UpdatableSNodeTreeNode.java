@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,15 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.projectPane.logicalview.PresentationUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
-import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.HashSet;
@@ -39,7 +35,6 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private final Project myProject;
   private SNodeTreeUpdater myTreeUpdater;
   private SModelEventsListener myEventsListener;
-  private SimpleModelListener mySNodeModelListener;
 
   public UpdatableSNodeTreeNode(Project mpsProject, SNode node) {
     super(node);
@@ -49,15 +44,11 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private void addListeners() {
     if (myEventsListener == null) return;
     SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
-    ((SModelInternal) myEventsListener.getModelDescriptor()).addModelListener(mySNodeModelListener);
   }
 
   private void removeListeners() {
     SModel md = getModelDescriptor();
     if (md == null) return;
-    if (mySNodeModelListener != null) {
-      ((SModelInternal) getModelDescriptor()).removeModelListener(mySNodeModelListener);
-    }
     if (myEventsListener == null) return;
     SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
     myEventsListener = null;
@@ -81,13 +72,6 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     super.onAdd();
     if (myEventsListener != null) return;
     myEventsListener = new MyEventsListener(getModelDescriptor());
-    final PresentationUpdater<SNodeTreeNode> updater = new PresentationUpdater<SNodeTreeNode>(this) {
-      @Override
-      protected boolean isValid(SNodeTreeNode treeNode) {
-        return super.isValid(treeNode) && SNodeUtil.isAccessible(treeNode.getSNode(), myProject.getRepository());
-      }
-    };
-    mySNodeModelListener = new SimpleModelListener(updater);
     if (getModelDescriptor() instanceof EditableSModel) {
       myTreeUpdater = new MySNodeTreeUpdater(myProject, this);
     }
