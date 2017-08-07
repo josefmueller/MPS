@@ -105,7 +105,7 @@ public class JUnitTests_Producer {
       String name = source.getModuleName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + name + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODULE);
-      configuration.getJUnitSettings().setModule(source.getModuleReference().toString());
+      configuration.getJUnitSettings().setModuleRef(source.getModuleReference().toString());
       configuration.getJUnitSettings().setInProcess(false);
       return configuration;
     }
@@ -122,7 +122,7 @@ public class JUnitTests_Producer {
         if (mRef == null) {
           return false;
         }
-        return settings.getJUnitRunType() == JUnitRunTypes.MODULE && settings.getModuleRef().equals(mRef);
+        return settings.getJUnitRunType() == JUnitRunTypes.MODULE && settings.getModuleReference().equals(mRef);
       }
       return false;
     }
@@ -148,8 +148,8 @@ public class JUnitTests_Producer {
       SModelName name = source.getName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + name.getValue() + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODEL);
-      configuration.getJUnitSettings().setModel(PersistenceRegistry.getInstance().asString(source.getReference()));
-      configuration.getJUnitSettings().setModule(source.getModule().getModuleReference().toString());
+      configuration.getJUnitSettings().setModelRef(PersistenceRegistry.getInstance().asString(source.getReference()));
+      configuration.getJUnitSettings().setModuleRef(source.getModule().getModuleReference().toString());
       configuration.getJUnitSettings().setInProcess(false);
       return configuration;
     }
@@ -177,7 +177,7 @@ public class JUnitTests_Producer {
         if (module == null) {
           return false;
         }
-        return settings.getJUnitRunType() == JUnitRunTypes.MODEL && Objects.equals(settings.getModel(), mRef) && Objects.equals(settings.getModule(), module.getModuleReference());
+        return settings.getJUnitRunType() == JUnitRunTypes.MODEL && Objects.equals(settings.getModelReference(), mRef) && Objects.equals(settings.getModuleReference(), module.getModuleReference());
       }
       return false;
     }

@@ -202,8 +202,8 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
 
     configuration.setTestMethods(testMethods);
     configuration.setTestCases(testCases);
-    configuration.setModel(model.value);
-    configuration.setModule(module.value);
+    configuration.setModelRef(model.value);
+    configuration.setModuleRef(module.value);
     configuration.setInProcess(myInProcessCheckBox.isSelected());
     configuration.setReuseCaches(myReuseCachesCheckBox.isSelected());
     configuration.setCachesPath(myCachesDir.getText());
@@ -243,12 +243,12 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     });
     myMethodsList.setData(methods);
 
-    if (settings.getModelRef() != null) {
-      myModelChooser.setModel(settings.getModelRef());
+    if (settings.getModelReference() != null) {
+      myModelChooser.setModel(settings.getModelReference());
     }
 
-    if (settings.getModuleRef() != null) {
-      myModuleChooser.setModule(settings.getModuleRef());
+    if (settings.getModuleReference() != null) {
+      myModuleChooser.setModule(settings.getModuleReference());
     }
 
     updateCheckBoxes(settings);

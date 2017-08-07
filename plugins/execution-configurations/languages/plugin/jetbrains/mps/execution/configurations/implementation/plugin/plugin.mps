@@ -3183,7 +3183,7 @@
                   </node>
                 </node>
                 <node concept="yHkDZ" id="5gyVhZ1bqMB" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcj" resolve="myModule" />
+                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcj" resolve="myModuleRef" />
                 </node>
               </node>
             </node>
@@ -3389,8 +3389,8 @@
                       <node concept="37vLTw" id="9iT$9ktm_$" role="2Oq$k0">
                         <ref role="3cqZAo" node="1hFhnCnyDdn" resolve="settings" />
                       </node>
-                      <node concept="yHkDZ" id="9iT$9ktnTw" role="2OqNvi">
-                        <ref role="yHkDY" to="tty3:5gyVhZ1bmcj" resolve="myModule" />
+                      <node concept="2XshWL" id="5coIW7pjCMv" role="2OqNvi">
+                        <ref role="2WH_rO" to="tty3:4Zh$Fg2VsBA" resolve="getModuleRef" />
                       </node>
                     </node>
                     <node concept="2OqwBi" id="9iT$9ktpX1" role="37wK5m">
@@ -3424,8 +3424,8 @@
                         <node concept="37vLTw" id="i96O5YR8zi" role="2Oq$k0">
                           <ref role="3cqZAo" node="1hFhnCnyDdn" resolve="settings" />
                         </node>
-                        <node concept="yHkDZ" id="i96O5YR9FJ" role="2OqNvi">
-                          <ref role="yHkDY" to="tty3:5gyVhZ1bmch" resolve="myModel" />
+                        <node concept="2XshWL" id="5coIW7pj$Lw" role="2OqNvi">
+                          <ref role="2WH_rO" to="tty3:4Zh$Fg2WwTR" resolve="getModelRef" />
                         </node>
                       </node>
                       <node concept="37vLTw" id="1hFhnCnyDdM" role="37wK5m">
@@ -3550,7 +3550,7 @@
                   </node>
                 </node>
                 <node concept="yHkDZ" id="5gyVhZ1bqMw" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmch" resolve="myModel" />
+                  <ref role="yHkDY" to="tty3:5gyVhZ1bmch" resolve="myModelRef" />
                 </node>
               </node>
             </node>
@@ -3583,7 +3583,7 @@
                   </node>
                 </node>
                 <node concept="yHkDZ" id="9iT$9ktjjp" role="2OqNvi">
-                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcj" resolve="myModule" />
+                  <ref role="yHkDY" to="tty3:5gyVhZ1bmcj" resolve="myModuleRef" />
                 </node>
               </node>
             </node>

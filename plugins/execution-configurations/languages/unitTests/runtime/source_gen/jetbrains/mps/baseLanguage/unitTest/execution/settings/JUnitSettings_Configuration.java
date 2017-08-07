@@ -17,8 +17,12 @@ import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.execution.lib.ClonableList;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.ModuleId;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
@@ -35,6 +39,8 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class JUnitSettings_Configuration implements IPersistentConfiguration {
   private static final Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
@@ -70,6 +76,12 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public String getModule() {
     return myState.myModule;
   }
+  public String getModelRef() {
+    return myState.myModelRef;
+  }
+  public String getModuleRef() {
+    return myState.myModuleRef;
+  }
   public boolean getInProcess() {
     return myState.myInProcess;
   }
@@ -97,6 +109,12 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public void setModule(String value) {
     myState.myModule = value;
   }
+  public void setModelRef(String value) {
+    myState.myModelRef = value;
+  }
+  public void setModuleRef(String value) {
+    myState.myModuleRef = value;
+  }
   public void setInProcess(boolean value) {
     myState.myInProcess = value;
   }
@@ -121,17 +139,43 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public String getDefaultPath() {
     return new DefaultCachesPathChooser().chooseDir();
   }
-  public SModuleReference getModuleRef() {
-    if (this.getModule() == null) {
+  public SModuleReference getModuleReference() {
+    if (this.getModuleRef() == null && this.getModule() != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          // todo remove myModule and this code after 2017.3 
+          SModuleReference converted = check_7ateoo_a0b0a0a0a1(JUnitRunTypes.getModule_deprecated(JUnitSettings_Configuration.this.getModule()));
+          if (converted == null) {
+            converted = new ModuleReference(JUnitSettings_Configuration.this.getModule(), ModuleId.regular(new UUID(0, 0)));
+          }
+          JUnitSettings_Configuration.this.setModuleRef(converted.toString());
+          JUnitSettings_Configuration.this.setModule(null);
+        }
+      });
+    }
+    if (this.getModuleRef() == null) {
       return null;
     }
-    return ModuleReference.parseReference(this.getModule());
+    return ModuleReference.parseReference(this.getModuleRef());
   }
-  public SModelReference getModelRef() {
-    if (this.getModel() == null) {
+  public SModelReference getModelReference() {
+    if (this.getModelRef() == null && this.getModel() != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          // todo remove myModel and this code after 2017.3 
+          SModelReference converted = check_7ateoo_a0b0a0a0a2(JUnitRunTypes.getModel_deprecated(JUnitSettings_Configuration.this.getModel(), JUnitSettings_Configuration.this.getModule()));
+          if (converted == null) {
+            converted = new jetbrains.mps.smodel.SModelReference(getModuleReference(), SModelId.regular(new UUID(0, 0)), JUnitSettings_Configuration.this.getModel());
+          }
+          JUnitSettings_Configuration.this.setModelRef(PersistenceRegistry.getInstance().asString(converted));
+          JUnitSettings_Configuration.this.setModel(null);
+        }
+      });
+    }
+    if (this.getModelRef() == null) {
       return null;
     }
-    return PersistenceRegistry.getInstance().createModelReference(this.getModel());
+    return PersistenceRegistry.getInstance().createModelReference(this.getModelRef());
   }
   public JUnitRunTypes getJUnitRunType() {
     return JUnitRunTypes.values()[this.getRunType()];
@@ -206,6 +250,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public class MyState {
     public String myModel;
     public String myModule;
+    public String myModelRef;
+    public String myModuleRef;
     public boolean myInProcess = true;
     public boolean myReuseCaches = true;
     public boolean myDebug = false;
@@ -220,6 +266,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
       JUnitSettings_Configuration.MyState state = new JUnitSettings_Configuration.MyState();
       state.myModel = myModel;
       state.myModule = myModule;
+      state.myModelRef = myModelRef;
+      state.myModuleRef = myModuleRef;
       state.myInProcess = myInProcess;
       state.myReuseCaches = myReuseCaches;
       state.myDebug = myDebug;
@@ -243,6 +291,18 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   }
   public JUnitSettings_Configuration_Editor getEditor() {
     return new JUnitSettings_Configuration_Editor(myProject);
+  }
+  private static SModuleReference check_7ateoo_a0b0a0a0a1(SModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModuleReference();
+    }
+    return null;
+  }
+  private static SModelReference check_7ateoo_a0b0a0a0a2(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getReference();
+    }
+    return null;
   }
   private static boolean eq_jtq3ac_a0a0g0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

@@ -19,13 +19,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.Nls;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collection;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -53,30 +59,30 @@ public enum JUnitRunTypes {
   MODULE() {
     @Override
     protected List<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, MPSProject project, ProgressMonitor monitor) {
-      SModule module = getModule(project, configuration.getModuleRef());
+      SModule module = getModule(project, configuration.getModuleReference());
       if (module == null) {
         return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       }
       return new ModuleTestCollector(module, monitor, false).collect();
     }
     public String check(JUnitSettings_Configuration configuration, MPSProject project) {
-      if (configuration.getModuleRef() == null) {
+      if (configuration.getModuleReference() == null) {
         return "Module is not selected.";
       }
-      SModule module = getModule(project, configuration.getModuleRef());
+      SModule module = getModule(project, configuration.getModuleReference());
       if (module == null) {
-        return "The module " + configuration.getModuleRef().getModuleName() + " does not exist in the project " + project;
+        return "The module " + configuration.getModuleReference().getModuleName() + " does not exist in the project " + project;
       }
       if (!(SModuleOperations.isCompileInMps(module))) {
         return "The module's " + module + " compile output is not managed by MPS.";
       }
       if (!(this.hasTests(configuration, project))) {
-        return "No tests found in module " + configuration.getModuleRef().getModuleName() + "";
+        return "No tests found in module " + configuration.getModuleReference().getModuleName() + "";
       }
       return null;
     }
     public boolean hasTests(JUnitSettings_Configuration configuration, MPSProject project) {
-      SModule module = getModule(project, configuration.getModuleRef());
+      SModule module = getModule(project, configuration.getModuleReference());
       if (module == null) {
         return false;
       }
@@ -87,31 +93,31 @@ public enum JUnitRunTypes {
   MODEL() {
     @Override
     protected List<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, MPSProject project, ProgressMonitor monitor) {
-      SModel model = getModel(project, configuration.getModelRef());
+      SModel model = getModel(project, configuration.getModelReference());
       if (model == null) {
         return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       }
       return new ModelTestCollector(model, monitor, false).collect();
     }
     public String check(JUnitSettings_Configuration configuration, MPSProject project) {
-      if (configuration.getModelRef() == null) {
+      if (configuration.getModelReference() == null) {
         return "Model is not selected.";
       }
-      SModel model = getModel(project, configuration.getModelRef());
+      SModel model = getModel(project, configuration.getModelReference());
       if (model == null) {
-        return "Could not find model " + configuration.getModelRef().getModelName();
+        return "Could not find model " + configuration.getModelReference().getModelName();
       }
       SModule module = model.getModule();
       if (!(SModuleOperations.isCompileInMps(module))) {
         return "The module's " + module + " (which is hosting the model " + model.getName().getSimpleName() + ") compile output is not managed by MPS.";
       }
       if (!(this.hasTests(configuration, project))) {
-        return "No tests found in model " + configuration.getModelRef().getName() + ".";
+        return "No tests found in model " + configuration.getModelReference().getName() + ".";
       }
       return null;
     }
     public boolean hasTests(JUnitSettings_Configuration configuration, MPSProject project) {
-      SModel model = getModel(project, configuration.getModelRef());
+      SModel model = getModel(project, configuration.getModelReference());
       if (model == null) {
         return false;
       }
@@ -191,6 +197,41 @@ public enum JUnitRunTypes {
   };
 
   private JUnitRunTypes() {
+  }
+
+  @Nullable
+  @Deprecated
+  @ToRemove(version = 2017.3)
+  public static SModel getModel_deprecated(@Nls String modelName, String moduleName) {
+    if ((modelName == null || modelName.length() == 0)) {
+      return null;
+    }
+    if ((moduleName == null || moduleName.length() == 0)) {
+      return new ModuleRepositoryFacade(MPSModuleRepository.getInstance()).getModelByName(modelName);
+    }
+    SModule module = getModule_deprecated(moduleName);
+    if (module == null) {
+      return null;
+    }
+    for (SModel model : Sequence.fromIterable(module.getModels())) {
+      if (model.getName().getValue().equals(modelName)) {
+        return model;
+      }
+    }
+    return null;
+  }
+
+  @Nullable
+  @Deprecated
+  @ToRemove(version = 2017.3)
+  public static SModule getModule_deprecated(@Nls String moduleName) {
+    if ((moduleName == null || moduleName.length() == 0)) {
+      return null;
+    }
+    ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(MPSModuleRepository.getInstance());
+    Collection<SModule> modulesByName = mrf.getModulesByName(moduleName);
+    // just take first one. We need to keep module reference instead of module name in configuration settings, though 
+    return (modulesByName.isEmpty() ? null : modulesByName.iterator().next());
   }
 
   public final List<ITestNodeWrapper> collect(final JUnitSettings_Configuration configuration, final MPSProject project) {
