@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -195,7 +195,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
       myRootGroups.add(index, groupTreeNode);
 
       if (myInitialized || myInitializing) {
-        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+        DefaultTreeModel treeModel = getTree().getModel();
         treeModel.insertNodeInto(groupTreeNode, this, index + myChildModelTreeNodes.size());
       }
     } else {
@@ -219,7 +219,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
       }
 
       if (myInitialized || myInitializing) {
-        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+        DefaultTreeModel treeModel = getTree().getModel();
         treeModel.insertNodeInto(groupTreeNode, parent, index);
       } else {
         parent.insert(groupTreeNode, index);
@@ -228,7 +228,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
   }
 
   public void groupBecameEmpty(SNodeGroupTreeNode node) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    DefaultTreeModel treeModel = getTree().getModel();
 
     myRootGroups.remove(node);
 
@@ -355,7 +355,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
       myRootGroups.clear();
 
       for (SModelTreeNode newChildModel : myChildModelTreeNodes) {
-        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+        DefaultTreeModel treeModel = getTree().getModel();
         int index = myChildModelTreeNodes.indexOf(newChildModel);
         treeModel.insertNodeInto(newChildModel, this, index);
       }
@@ -381,7 +381,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
         }
       }
 
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      DefaultTreeModel treeModel = getTree().getModel();
       treeModel.nodeStructureChanged(this);
     } finally {
       myInitialized = true;
@@ -397,7 +397,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
   public void insertRoots(Set<SNode> addedRoots) {
     if (addedRoots.isEmpty()) return;
 
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    DefaultTreeModel treeModel = getTree().getModel();
 
     final ArrayList<SNode> allRoots = new ArrayList<SNode>();
     for (SNode root1 : getModel().getRootNodes()) {
@@ -406,12 +406,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
     Collections.sort(allRoots, new ToStringComparator(true));
 
     List<SNode> added = new ArrayList<SNode>(addedRoots);
-    Collections.sort(added, new Comparator<SNode>() {
-      @Override
-      public int compare(SNode o1, SNode o2) {
-        return new Integer(allRoots.indexOf(o1)).compareTo(allRoots.indexOf(o2));
-      }
-    });
+    Collections.sort(added, Comparator.comparingInt(allRoots::indexOf));
 
     //Assuming that "added" as well as targetNode.children for all targetNodes are sorted already,
     //so we merge the two by always remembering the last insertion point

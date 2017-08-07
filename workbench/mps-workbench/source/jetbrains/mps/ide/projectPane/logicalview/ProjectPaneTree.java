@@ -136,8 +136,10 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
   }
 
   @Override
-  public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
-    super.runRebuildAction(rebuildAction, saveExpansion);
+  public void rebuildNow() {
+    super.rebuildNow();
+    // FIXME do it through PPTH or any other way, but don't add dumbUpdate ro runRebuildAction() which is in use for refresh
+    //       of a single tree node.
     // gen status is tracked on model level. If there are no model nodes shown yet, generation status for module and
     // namespace nodes shall be updated. Other alternative is to do it in ModuleNodeListener#attach() or in
     // ProjectPaneTreeHighlighter#moduleNodeAdded. MNL at the moment doesn't track gen status notifications, so it's odd to put

@@ -71,12 +71,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx implements NodeTargetProvider {
   @Override
   protected final void doUpdatePresentation() {
     if (getSModelModelTreeNode() != null) {
-      getSModelModelTreeNode().getDependencyRecorder().rebuild(this, new Runnable() {
-        @Override
-        public void run() {
-          doUpdatePresentation_internal();
-        }
-      });
+      getSModelModelTreeNode().getDependencyRecorder().rebuild(this, this::doUpdatePresentation_internal);
     } else {
       doUpdatePresentation_internal();
     }

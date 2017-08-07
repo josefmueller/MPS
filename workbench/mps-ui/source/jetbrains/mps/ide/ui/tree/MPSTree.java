@@ -40,6 +40,8 @@ import javax.swing.KeyStroke;
 import javax.swing.ToolTipManager;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
+import javax.swing.event.TreeModelEvent;
+import javax.swing.event.TreeModelListener;
 import javax.swing.event.TreeWillExpandListener;
 import javax.swing.plaf.TreeUI;
 import javax.swing.tree.DefaultTreeModel;
@@ -87,7 +89,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   protected boolean myWarnModelAccess = true;
 
   protected MPSTree() {
-    setRootNode(new TextTreeNode("Empty"));
+    // TreeModel instance shall be the same during lifetime of the MPSTree instance
+    // otherwise TreeModelListener
+    super(new DefaultTreeModel(null));
 
     new MPSTreeSpeedSearch(this);
 
@@ -102,9 +106,49 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     addTreeWillExpandListener(new MyTreeWillExpandListener());
     addTreeExpansionListener(new MyTreeExpansionListener());
     addMouseListener(new MyMouseAdapter());
+    getModel().addTreeModelListener(new TreeModelListener() {
+      @Override
+      public void treeNodesChanged(TreeModelEvent e) {
+        Object[] changedChildren = e.getChildren();
+        if (changedChildren == null) {
+          return;
+        }
+        for (Object c : changedChildren) {
+          if (c instanceof MPSTreeNode) {
+            MPSTreeNode mpsTreeNode = ((MPSTreeNode) c);
+            // 1. we use updatePresentation(), not renewPresentation() here on purpose. Latter is odd as it combines actual
+            //    presentation update with notification dispatch, and I don't see a reason to react to node change with yet another ancestor node change
+            // 2. To my best knowledge, there's no other updates for MPSTreeNode at the moment, however, hope to get structure updates piped through
+            //    the queue some day, and therefore would be nice to distinguish (and even Update.canEat()) structure updates from presentation.
+            // 3. Re-use of runRebuildAction is to get same model read access as during tree build. The name
+            //    of the method is unfortunate, however I don't want to introduce yet another method to wrap Runnable into MA
+            //    Would be great to combine RA of doInit, rebuild and presentation update into single method.
+            // 4. saveExpansion == false as updatePresentation is not supposed to affect tree structure
+            Runnable updateCode = () -> runRebuildAction(mpsTreeNode::updatePresentation, false);
+            myQueue.queue(new SafeUpdate(new Object[] {c, "presentation"}, updateCode, LOG));
+          }
+        }
+      }
+
+      @Override
+      public void treeNodesInserted(TreeModelEvent e) {
+        // no idea yet it shall react here or not
+      }
+
+      @Override
+      public void treeNodesRemoved(TreeModelEvent e) {
+        // no idea yet it shall react here or not
+      }
+
+      @Override
+      public void treeStructureChanged(TreeModelEvent e) {
+        // no idea yet it shall react here or not
+      }
+    });
 
     registerKeyboardAction(new MyOpenNodeAction(), KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(new MyRefreshAction(), KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    clear();
   }
 
   /**
@@ -146,7 +190,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     if (!myLoadingDisabled && node.isLoadingEnabled()) {
       progressNode = new TextTreeNode("loading...");
       node.add(progressNode);
-      ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
+      getModel().nodeStructureChanged(node);
       expandPath(new TreePath(progressNode.getPath()));
 
       Graphics g = getGraphics();
@@ -163,7 +207,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     }
 
     // initialization of a node is supposed to update its children, notify structure had likely changed
-    ((DefaultTreeModel) getModel()).nodeStructureChanged(node);
+    getModel().nodeStructureChanged(node);
   }
 
   public void addTreeNodeListener(MPSTreeNodeListener listener) {
@@ -546,6 +590,15 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     setRootNode(new TextTreeNode("Empty"));
   }
 
+  @Override
+  public DefaultTreeModel getModel() {
+    // we explicitly set DefaultTreeModel during construction of MPSTree,
+    // this method serves the purpose of convenient cast and as a reminder not to change
+    // TreeModel during lifecycle of MPSTree as it used to be. Same TreeModel instance is important
+    // to keep set of listeners attached to the tree model.
+    return (DefaultTreeModel) super.getModel();
+  }
+
   private void setRootNode(@Nullable MPSTreeNode root) {
     final Object oldRoot = getModel().getRoot();
     if (oldRoot instanceof MPSTreeNode) {
@@ -558,8 +611,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       root.addThisAndChildren();
     }
 
-    DefaultTreeModel model = new DefaultTreeModel(root);
-    setModel(model);
+    getModel().setRoot(root);
   }
 
   private String pathToString(TreePath path) {
@@ -676,7 +728,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   protected void selectPaths(List<String> paths) {
-    List<TreePath> treePaths = new ArrayList<TreePath>();
+    List<TreePath> treePaths = new ArrayList<>();
     for (String path : paths) {
       treePaths.add(stringToPath(path));
     }
@@ -693,11 +745,11 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   // TODO: refactor TreeState to include these instead of the old format
   public List<List<String>> getExpandedPathsRaw() {
-    List<List<String>> result = new ArrayList<List<String>>();
+    List<List<String>> result = new ArrayList<>();
     Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[]{getModel().getRoot()}));
     if (expanded == null) return result;
     while (expanded.hasMoreElements()) {
-      List<String> path = new ArrayList<String>();
+      List<String> path = new ArrayList<>();
       TreePath expandedPath = expanded.nextElement();
       if (expandedPath.getLastPathComponent() == getModel().getRoot()) {
         continue;
@@ -712,7 +764,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   private List<String> getExpandedPaths() {
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<>();
     Enumeration<TreePath> expanded = getExpandedDescendants(new TreePath(new Object[]{getModel().getRoot()}));
     if (expanded == null) return result;
     while (expanded.hasMoreElements()) {
@@ -727,7 +779,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   // TODO: refactor TreeState to include these instead of the old format
   public List<List<String>> getSelectedPathsRaw() {
-    List<List<String>> result = new ArrayList<List<String>>();
+    List<List<String>> result = new ArrayList<>();
     if (getSelectionPaths() == null) return result;
     for (TreePath selectedPath: getSelectionPaths()) {
       List<String> path = new ArrayList<String>();
@@ -741,7 +793,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   private List<String> getSelectedPaths() {
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<>();
     if (getSelectionPaths() == null) return result;
     for (TreePath selectionPart : getSelectionPaths()) {
       String pathString = pathToString(selectionPart);

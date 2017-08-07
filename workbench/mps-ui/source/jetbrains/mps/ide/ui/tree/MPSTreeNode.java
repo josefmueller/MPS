@@ -25,7 +25,6 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.MutableTreeNode;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
@@ -170,12 +169,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
   }
 
   public void updateSubTree() {
-    getTree().runRebuildAction(new Runnable() {
-      @Override
-      public void run() {
-        update();
-      }
-    }, true);
+    getTree().runRebuildAction(this::update, true);
   }
 
   /**
@@ -185,7 +179,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
    */
   public void update() {
     doUpdate();
-    ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
+    getTree().getModel().nodeStructureChanged(this);
   }
 
   protected void doUpdate() {
@@ -549,14 +543,16 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
    * Dispatch a notification that tree model needs to reflect changes in node's presentation
    */
   public final void updateNodePresentationInTree() {
-    if (getTree() == null) return;
-    ((DefaultTreeModel) getTree().getModel()).nodeChanged(this);
+    if (getTree() != null) {
+      getTree().getModel().nodeChanged(this);
+    }
   }
 
   public void updateAncestorsPresentationInTree() {
     updateNodePresentationInTree();
-    if (getParent() == null) return;
-    ((MPSTreeNode) getParent()).updateAncestorsPresentationInTree();
+    if (getParent() instanceof MPSTreeNode) {
+      ((MPSTreeNode) getParent()).updateAncestorsPresentationInTree();
+    }
   }
 
   protected boolean canBeOpened() {
