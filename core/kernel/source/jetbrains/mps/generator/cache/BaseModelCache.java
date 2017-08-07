@@ -127,13 +127,18 @@ public abstract class BaseModelCache<T> implements CoreComponent {
 
   /**
    * Forget cached state, if any; unlike {@link #discard(org.jetbrains.mps.openapi.model.SModel)} does not touch persisted/serialized state.
+   * @return {@code true} if there's cached value
    */
-  public final void clean(@NotNull SModel model) {
-    myCache.remove(model.getReference());
+  public final boolean clean(@NotNull SModel model) {
+    return myCache.remove(model.getReference()) != null;
   }
 
   protected final void clean(SModelReference modelRef) {
     myCache.remove(modelRef);
+  }
+
+  public void clean() {
+    myCache.clear();
   }
 
   /**

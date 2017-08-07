@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import java.util.function.Predicate;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 
@@ -33,6 +35,14 @@ public class UseDevkit extends MigrationScriptBase {
     SModelInternal mi = ((SModelInternal) typesystemAspectModel);
     final SModuleReference tsAspectDevkit = PersistenceFacade.getInstance().createModuleReference("00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)");
     if (mi.importedDevkits().contains(tsAspectDevkit)) {
+      return;
+    }
+    if (mi.importedLanguageIds().stream().anyMatch(new Predicate<SLanguage>() {
+      public boolean test(SLanguage l) {
+        return !(l.getQualifiedName().startsWith("jetbrains.mps."));
+      }
+    })) {
+      // Transition code, in case aspect uses custom extensions, do not turn GP on for it yet. 
       return;
     }
     mi.deleteLanguageId(MetaAdapterFactory.getLanguage(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, "jetbrains.mps.lang.typesystem"));

@@ -1971,7 +1971,7 @@
                         <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
                       </node>
                       <node concept="liA8E" id="1AzqgyAhmh6" role="2OqNvi">
-                        <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+                        <ref role="37wK5l" to="bd8o:~Application.invokeLater(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeLater" />
                         <node concept="1bVj0M" id="1AzqgyAhmlf" role="37wK5m">
                           <node concept="3clFbS" id="1AzqgyAhmlg" role="1bW5cS">
                             <node concept="3cpWs8" id="6mZ0jO9VqOb" role="3cqZAp">
@@ -2429,6 +2429,10 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                        <node concept="10M0yZ" id="6zzmSE2rmJ0" role="37wK5m">
+                          <ref role="3cqZAo" to="bd8o:~ModalityState.NON_MODAL" resolve="NON_MODAL" />
+                          <ref role="1PxDUh" to="bd8o:~ModalityState" resolve="ModalityState" />
                         </node>
                       </node>
                     </node>

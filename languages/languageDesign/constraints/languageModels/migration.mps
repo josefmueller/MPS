@@ -3,7 +3,6 @@
   <persistence version="9" />
   <languages>
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
@@ -15,22 +14,16 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
-    <import index="wcxw" ref="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)" />
-    <import index="tpeh" ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
-    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
-    <import index="inbo" ref="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
-    <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <import index="3jc9" ref="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)" />
     <import index="moux" ref="r:53684c5c-ca9d-4308-a9d7-6866aa7b486b(jetbrains.mps.lang.smodel.query.runtime)" />
-    <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="beg" ref="r:09811e4e-aa47-4ea2-ad3d-57b7b9ffc7e3(jetbrains.mps.lang.constraints.plugin)" />
     <import index="mte5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model.scopes(MPS.Core/)" />
+    <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
@@ -140,6 +133,9 @@
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -3117,6 +3113,64 @@
               <ref role="37wK5l" to="33ny:~List.contains(java.lang.Object):boolean" resolve="contains" />
               <node concept="37vLTw" id="512THP_vALc" role="37wK5m">
                 <ref role="3cqZAo" node="512THP_vzd2" resolve="constraintsDevkit" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="25MX$RJHnV4" role="3cqZAp">
+          <node concept="3clFbS" id="25MX$RJHnV6" role="3clFbx">
+            <node concept="3SKdUt" id="25MX$RJHoLm" role="3cqZAp">
+              <node concept="3SKdUq" id="25MX$RJHoLo" role="3SKWNk">
+                <property role="3SKdUp" value="Transition code, in case aspect uses custom extensions, do not turn GP on for it yet." />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="25MX$RJHo6y" role="3cqZAp" />
+          </node>
+          <node concept="2OqwBi" id="25MX$RJHoag" role="3clFbw">
+            <node concept="2OqwBi" id="25MX$RJHoah" role="2Oq$k0">
+              <node concept="2OqwBi" id="25MX$RJHoai" role="2Oq$k0">
+                <node concept="37vLTw" id="25MX$RJHoaj" role="2Oq$k0">
+                  <ref role="3cqZAo" node="512THP_vx_O" resolve="mi" />
+                </node>
+                <node concept="liA8E" id="25MX$RJHoak" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
+                </node>
+              </node>
+              <node concept="liA8E" id="25MX$RJHoal" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Collection.stream():java.util.stream.Stream" resolve="stream" />
+              </node>
+            </node>
+            <node concept="liA8E" id="25MX$RJHoam" role="2OqNvi">
+              <ref role="37wK5l" to="1ctc:~Stream.anyMatch(java.util.function.Predicate):boolean" resolve="anyMatch" />
+              <node concept="1bVj0M" id="25MX$RJHoan" role="37wK5m">
+                <node concept="37vLTG" id="25MX$RJHoao" role="1bW2Oz">
+                  <property role="TrG5h" value="l" />
+                  <node concept="3uibUv" id="25MX$RJHoap" role="1tU5fm">
+                    <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="25MX$RJHoaq" role="1bW5cS">
+                  <node concept="3clFbF" id="25MX$RJHoar" role="3cqZAp">
+                    <node concept="3fqX7Q" id="25MX$RJHoas" role="3clFbG">
+                      <node concept="2OqwBi" id="25MX$RJHoat" role="3fr31v">
+                        <node concept="2OqwBi" id="25MX$RJHoau" role="2Oq$k0">
+                          <node concept="37vLTw" id="25MX$RJHoav" role="2Oq$k0">
+                            <ref role="3cqZAo" node="25MX$RJHoao" resolve="l" />
+                          </node>
+                          <node concept="liA8E" id="25MX$RJHoaw" role="2OqNvi">
+                            <ref role="37wK5l" to="c17a:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="25MX$RJHoax" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
+                          <node concept="Xl_RD" id="25MX$RJHoay" role="37wK5m">
+                            <property role="Xl_RC" value="jetbrains.mps." />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

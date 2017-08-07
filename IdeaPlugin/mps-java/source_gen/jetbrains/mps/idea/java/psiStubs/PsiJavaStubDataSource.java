@@ -15,6 +15,8 @@ import jetbrains.mps.idea.java.psi.PsiChangesWatcher;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.psi.PsiCompiledFile;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -98,7 +100,11 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
     if (!(isValid())) {
       return Sequence.fromIterable(Collections.<PsiJavaFile>emptyList());
     }
-    return Sequence.fromIterable(Sequence.fromArray(myDirectory.getFiles())).ofType(PsiJavaFile.class);
+    return Sequence.fromIterable(Sequence.fromArray(myDirectory.getFiles())).ofType(PsiJavaFile.class).where(new IWhereFilter<PsiJavaFile>() {
+      public boolean accept(PsiJavaFile it) {
+        return !((it instanceof PsiCompiledFile));
+      }
+    });
   }
 
   private boolean isValid() {

@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -72,8 +72,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class BuildGeneratorImpl extends AbstractBuildGenerator {
   private static final Logger LOG = LogManager.getLogger(BuildGeneratorImpl.class);
   private static final String ICONS = "icons";
-  private final Project myProject;
-  public BuildGeneratorImpl(Project project) {
+  private final MPSProject myProject;
+  public BuildGeneratorImpl(MPSProject project) {
     myProject = project;
     String projectName = this.myProject.getName();
     if (projectName.endsWith(MPSExtentions.DOT_MPS_PROJECT)) {

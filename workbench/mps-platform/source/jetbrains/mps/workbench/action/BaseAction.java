@@ -78,6 +78,9 @@ public abstract class BaseAction extends AnAction {
     return false;
   }
 
+  // FIXME There is single use of this method, BaseConsoleTab and ExecuteActionAttachedToCurrentNode_Action,
+  //       Is there any reason to keep it?
+  //       FWIW, isApplicable(event, params) is in use for default duUpdate implementation is subclasses.
   public boolean isApplicable(final AnActionEvent e) {
     Map<String, Object> params = new ModelAccessHelper(getModelAccess(e)).runReadAction(new CollectActionData(e));
     return params != null && isApplicable(e, params);
@@ -109,10 +112,19 @@ public abstract class BaseAction extends AnAction {
       }
     }
 
-    if (myDisableOnNoProject && getEventProject(e) == null) {
+    final Project eventProject = getEventProject(e);
+
+    if (myDisableOnNoProject && eventProject == null) {
       disable(e.getPresentation());
       return;
     }
+    if (eventProject != null && eventProject.isDisposed()) {
+      // I feel it's IDEA's responsibility not to ask actions for update when project is disposed,
+      // nevertheless, https://youtrack.jetbrains.com/issue/MPS-26399 suggests it doesn't care enough.
+      disable(e.getPresentation());
+      return;
+    }
+
     getModelAccess(e).runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -170,7 +182,7 @@ public abstract class BaseAction extends AnAction {
 
   protected final ModelAccess getModelAccess(AnActionEvent event) {
     Project project = getEventProject(event);
-    if (project != null) {
+    if (project != null && !project.isDisposed()) {
       return ProjectHelper.getModelAccess(project);
     } else {
       return MPSModuleRepository.getInstance().getModelAccess();

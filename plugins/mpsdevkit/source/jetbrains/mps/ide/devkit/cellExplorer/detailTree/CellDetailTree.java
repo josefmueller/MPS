@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,12 +25,9 @@ import jetbrains.mps.ide.devkit.cellExplorer.detailTree.contributors.StylesContr
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.ModelReadRunnable;
 
 import javax.swing.tree.TreePath;
-import java.util.Arrays;
 import java.util.Enumeration;
-import java.util.List;
 
 public class CellDetailTree extends MPSTreeWithAction {
   public static final CellTreeContributor[] CONTRIBUTORS = new CellTreeContributor[]{
@@ -40,6 +37,7 @@ public class CellDetailTree extends MPSTreeWithAction {
   private EditorCell myCell;
 
   public CellDetailTree() {
+    myWarnModelAccess = false;
     setRootVisible(true);
   }
 
@@ -85,10 +83,5 @@ public class CellDetailTree extends MPSTreeWithAction {
       }
       return builder.build();
     }
-  }
-
-  @Override
-  protected void doInit(MPSTreeNode node, Runnable nodeInitRunnable) {
-    super.doInit(node, new ModelReadRunnable(myCell.getEditorComponent().getEditorContext().getRepository().getModelAccess(), nodeInitRunnable));
   }
 }

@@ -19,6 +19,9 @@
     <import index="ni5j" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.regex(JDK/)" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
     <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
+    <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="slm6" ref="90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)" implicit="true" />
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" implicit="true" />
   </imports>
@@ -123,6 +126,9 @@
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -2052,6 +2058,101 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="25MX$RJHr9j" role="3cqZAp">
+          <node concept="3cpWsn" id="25MX$RJHr9k" role="3cpWs9">
+            <property role="TrG5h" value="structAspectDevkit" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="25MX$RJHr9i" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+            </node>
+            <node concept="37shsh" id="25MX$RJHr9l" role="33vP2m">
+              <node concept="20RdaH" id="25MX$RJHr9m" role="37shsm">
+                <property role="20Rdg5" value="78434eb8-b0e5-444b-850d-e7c4ad2da9ab" />
+                <property role="20Rdg7" value="jetbrains.mps.devkit.aspect.structure" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="25MX$RJHtEm" role="3cqZAp">
+          <node concept="3clFbS" id="25MX$RJHtEo" role="3clFbx">
+            <node concept="3cpWs6" id="25MX$RJHwjO" role="3cqZAp" />
+          </node>
+          <node concept="2OqwBi" id="25MX$RJHuPp" role="3clFbw">
+            <node concept="2OqwBi" id="25MX$RJHtZW" role="2Oq$k0">
+              <node concept="37vLTw" id="25MX$RJHtL4" role="2Oq$k0">
+                <ref role="3cqZAo" node="5GtzFfayqg0" resolve="mi" />
+              </node>
+              <node concept="liA8E" id="25MX$RJHucG" role="2OqNvi">
+                <ref role="37wK5l" to="w1kc:~SModelInternal.importedDevkits():java.util.List" resolve="importedDevkits" />
+              </node>
+            </node>
+            <node concept="liA8E" id="25MX$RJHw4V" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~List.contains(java.lang.Object):boolean" resolve="contains" />
+              <node concept="37vLTw" id="25MX$RJHwcS" role="37wK5m">
+                <ref role="3cqZAo" node="25MX$RJHr9k" resolve="structAspectDevkit" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="25MX$RJHnV4" role="3cqZAp">
+          <node concept="3clFbS" id="25MX$RJHnV6" role="3clFbx">
+            <node concept="3SKdUt" id="25MX$RJHoLm" role="3cqZAp">
+              <node concept="3SKdUq" id="25MX$RJHoLo" role="3SKWNk">
+                <property role="3SKdUp" value="Transition code, in case aspect uses custom extensions, do not turn GP on for it yet." />
+              </node>
+            </node>
+            <node concept="3cpWs6" id="25MX$RJHo6y" role="3cqZAp" />
+          </node>
+          <node concept="2OqwBi" id="25MX$RJHoag" role="3clFbw">
+            <node concept="2OqwBi" id="25MX$RJHoah" role="2Oq$k0">
+              <node concept="2OqwBi" id="25MX$RJHoai" role="2Oq$k0">
+                <node concept="37vLTw" id="25MX$RJHoaj" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5GtzFfayqg0" resolve="mi" />
+                </node>
+                <node concept="liA8E" id="25MX$RJHoak" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~SModelInternal.importedLanguageIds():java.util.Collection" resolve="importedLanguageIds" />
+                </node>
+              </node>
+              <node concept="liA8E" id="25MX$RJHoal" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Collection.stream():java.util.stream.Stream" resolve="stream" />
+              </node>
+            </node>
+            <node concept="liA8E" id="25MX$RJHoam" role="2OqNvi">
+              <ref role="37wK5l" to="1ctc:~Stream.anyMatch(java.util.function.Predicate):boolean" resolve="anyMatch" />
+              <node concept="1bVj0M" id="25MX$RJHoan" role="37wK5m">
+                <node concept="37vLTG" id="25MX$RJHoao" role="1bW2Oz">
+                  <property role="TrG5h" value="l" />
+                  <node concept="3uibUv" id="25MX$RJHoap" role="1tU5fm">
+                    <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="25MX$RJHoaq" role="1bW5cS">
+                  <node concept="3clFbF" id="25MX$RJHoar" role="3cqZAp">
+                    <node concept="3fqX7Q" id="25MX$RJHoas" role="3clFbG">
+                      <node concept="2OqwBi" id="25MX$RJHoat" role="3fr31v">
+                        <node concept="2OqwBi" id="25MX$RJHoau" role="2Oq$k0">
+                          <node concept="37vLTw" id="25MX$RJHoav" role="2Oq$k0">
+                            <ref role="3cqZAo" node="25MX$RJHoao" resolve="l" />
+                          </node>
+                          <node concept="liA8E" id="25MX$RJHoaw" role="2OqNvi">
+                            <ref role="37wK5l" to="c17a:~SLanguage.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+                          </node>
+                        </node>
+                        <node concept="liA8E" id="25MX$RJHoax" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~String.startsWith(java.lang.String):boolean" resolve="startsWith" />
+                          <node concept="Xl_RD" id="25MX$RJHoay" role="37wK5m">
+                            <property role="Xl_RC" value="jetbrains.mps." />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="25MX$RJHq7M" role="3cqZAp" />
         <node concept="3clFbF" id="5GtzFfayqck" role="3cqZAp">
           <node concept="2OqwBi" id="5GtzFfayqcl" role="3clFbG">
             <node concept="37vLTw" id="5GtzFfayqcm" role="2Oq$k0">
@@ -2132,11 +2233,8 @@
             </node>
             <node concept="liA8E" id="5GtzFfaz38o" role="2OqNvi">
               <ref role="37wK5l" to="w1kc:~SModelInternal.addDevKit(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="addDevKit" />
-              <node concept="37shsh" id="5GtzFfaz8aD" role="37wK5m">
-                <node concept="20RdaH" id="5GtzFfaz8aE" role="37shsm">
-                  <property role="20Rdg5" value="78434eb8-b0e5-444b-850d-e7c4ad2da9ab" />
-                  <property role="20Rdg7" value="jetbrains.mps.devkit.aspect.structure" />
-                </node>
+              <node concept="37vLTw" id="25MX$RJHr9n" role="37wK5m">
+                <ref role="3cqZAo" node="25MX$RJHr9k" resolve="structAspectDevkit" />
               </node>
             </node>
           </node>

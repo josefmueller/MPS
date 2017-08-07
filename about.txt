@@ -150,5 +150,14 @@ Copyright (c) 2003-2005. All rights reserved.
 The W3C consortium
 http://www.w3c.org
 
+Java API for handling Windows ini file format
+http://ini4j.sourceforge.net/index.html
+
+LZ4 Java
+https://github.com/lz4/lz4-java
+
+Trilead SSH
+http://www.trilead.com/SSH_Library/
+
 You can find licenses for these software
 in the %MPS_HOME%/license directory

@@ -9,13 +9,13 @@ import jetbrains.mps.project.MPSProject;
 import java.io.IOException;
 import java.io.File;
 import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collections;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -23,9 +23,12 @@ import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +41,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
@@ -65,8 +67,10 @@ public class NewModuleUtil {
 
     Solution runtime = NewModuleUtil.createSolution(namespace, basePath, project);
     EditableSModel runtimeModel = createModel(runtime, namespace);
-
     runtimeModel.save();
+
+    new VersionFixer(project.getRepository(), runtime).updateImportVersions();
+    runtime.save();
     return runtime;
   }
 
@@ -81,41 +85,48 @@ public class NewModuleUtil {
     for (SLanguage extendedLanguage : new SLanguageHierarchy(LanguageRegistry.getInstance(project.getRepository()), Collections.singleton(l)).getExtended()) {
       sandboxModel.addLanguage(extendedLanguage);
     }
-
-    sandbox.save();
     ((EditableSModel) sandboxModel).save();
+    new VersionFixer(project.getRepository(), sandbox).updateImportVersions();
+    sandbox.save();
     return sandbox;
   }
 
   /**
    * create new solution module and register it with the project
    */
-  public static Solution createSolution(String namespace, String rootPath, Project project) {
+  public static Solution createSolution(String namespace, String rootPath, MPSProject project) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_SOLUTION);
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
     Solution module = (Solution) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
     project.addModule(module);
+    new VersionFixer(project.getRepository(), module).updateImportVersions();
     module.save();
+    project.save();
     return module;
   }
 
   /**
    * create new language module and register it with the project
    */
-  public static Language createLanguage(String namespace, String rootPath, Project project) {
+  public static Language createLanguage(String namespace, String rootPath, MPSProject project) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_LANGUAGE);
-    Language module = createNewLanguage(namespace, descriptorFile, true, project);
-    project.addModule(module);
-    module.save();
-    return module;
+    Language lang = createNewLanguage(namespace, descriptorFile, true, project);
+    project.addModule(lang);
+    new VersionFixer(project.getRepository(), lang).updateImportVersions();
+    for (Generator gen : CollectionSequence.fromCollection(lang.getGenerators())) {
+      new VersionFixer(project.getRepository(), gen).updateImportVersions();
+    }
+    lang.save();
+    project.save();
+    return lang;
   }
 
   /**
    * create new devkit module and register it with the project
    */
-  public static DevKit createDevKit(String namespace, String rootPath, Project project) {
+  public static DevKit createDevKit(String namespace, String rootPath, MPSProject project) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_DEVKIT);
     assert !(descriptorFile.exists());
     DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
@@ -123,6 +134,7 @@ public class NewModuleUtil {
     DevKit module = (DevKit) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
     project.addModule(module);
     module.save();
+    project.save();
     return module;
   }
 

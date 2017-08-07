@@ -197,23 +197,31 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   }
   public class ModelTreeNode extends DiffModelTree.TreeNode {
     public ModelTreeNode() {
-      setText("model");
-      setText(SModelOperations.getModelName(Sequence.fromIterable(getModels()).first()));
+      super("model");
+      String modelName = SModelOperations.getModelName(Sequence.fromIterable(getModels()).findFirst(new IWhereFilter<SModel>() {
+        public boolean accept(SModel it) {
+          return isNotEmptyString(SModelOperations.getModelName(it));
+        }
+      }));
+      if (!((modelName == null || modelName.length() == 0))) {
+        setText(modelName);
+      }
       setIcon(IdeIcons.MODEL_ICON);
     }
   }
   private class PackageTreeNode extends DiffModelTree.TreeNode {
-    private PackageTreeNode(String packageName) {
-      setText(packageName);
+    private PackageTreeNode(@NotNull String packageName) {
+      super(packageName);
     }
   }
   public class RootTreeNode extends DiffModelTree.TreeNode {
     private SNodeId myRootId;
     private String myPresentation = null;
     private String myVirtualPackage = null;
+
     public RootTreeNode(SNodeId rootId) {
+      super("" + rootId);
       myRootId = rootId;
-      setText("" + myRootId);
       doUpdatePresentation();
     }
     @Override
@@ -241,7 +249,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
           }
         }
       }
-      setText(myPresentation);
+      setText("" + myPresentation);
       setIcon(icon);
       updateRootCustomPresentation(this);
     }
@@ -256,12 +264,11 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public class MetadataTreeNode extends DiffModelTree.RootTreeNode {
     public MetadataTreeNode() {
       super(null);
-      setText("metadata");
+      setText("Model Properties");
       doUpdatePresentation();
     }
     @Override
     protected void doUpdatePresentation() {
-      setText("Model Properties");
       setIcon(IdeIcons.PROPERTIES_ICON);
       updateRootCustomPresentation(this);
     }
@@ -270,14 +277,17 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       return "Model Properties";
     }
   }
-  public class TreeNode extends DefaultMutableTreeNode {
+  public abstract class TreeNode extends DefaultMutableTreeNode {
+    @NotNull
     private String myText;
     private int myTextStyle = SimpleTextAttributes.STYLE_PLAIN;
     private String myAdditionalText;
     private String myTooltipText;
     private Icon myIcon;
     private Color myColor;
-    public TreeNode() {
+
+    public TreeNode(@NotNull String text) {
+      myText = text;
     }
     public void renderTreeNode(ColoredTreeCellRenderer coloredRenderer) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -294,10 +304,11 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     }
     protected void doUpdatePresentation() {
     }
+    @NotNull
     public String getText() {
       return myText;
     }
-    public void setText(String text) {
+    public void setText(@NotNull String text) {
       myText = text;
     }
     public String getAdditionalText() {

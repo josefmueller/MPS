@@ -1,10 +1,10 @@
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.ide.migration.idea</id>
-  <name>Migration Support for Idea</name>
-  <description>Migration Support for Idea Plugin</description>
+  <name>MPS Migration Support for Idea</name>
+  <description>MPS Migration Support for Idea Plugin</description>
   <version>2017.2</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
-  <idea-version since-build="171.1" until-build="173.1"/>
+  <idea-version since-build="172.1" until-build="173.1"/>
 
   <xi:include href="pluginBase.xml" xpointer="xpointer(/idea-plugin/*)"/>
 

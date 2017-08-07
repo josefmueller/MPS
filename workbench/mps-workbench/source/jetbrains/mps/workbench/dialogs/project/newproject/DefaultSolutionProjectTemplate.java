@@ -78,10 +78,7 @@ public class DefaultSolutionProjectTemplate implements SolutionProjectTemplate {
                 new Runnable() {
                   @Override
                   public void run() {
-                    Solution solution = NewModuleUtil.createSolution(myNewSolutionSettings.getModuleName(), myNewSolutionSettings.getModuleLocation(), project);
-                    project.addModule(solution);
-                    new VersionFixer(project.getRepository(), solution).updateImportVersions();
-                    solution.save();
+                    NewModuleUtil.createSolution(myNewSolutionSettings.getModuleName(), myNewSolutionSettings.getModuleLocation(), project);
                   }
                 }
             );

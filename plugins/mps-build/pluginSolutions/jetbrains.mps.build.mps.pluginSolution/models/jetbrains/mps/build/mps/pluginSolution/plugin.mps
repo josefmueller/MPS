@@ -9816,16 +9816,16 @@
     <node concept="312cEg" id="7$e6lgA3Bmu" role="jymVt">
       <property role="TrG5h" value="myProject" />
       <property role="3TUv4t" value="true" />
-      <node concept="3uibUv" id="OqYxEju4dl" role="1tU5fm">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="3uibUv" id="7thMrSQpWFO" role="1tU5fm">
+        <ref role="3uigEE" to="z1c5:~MPSProject" resolve="MPSProject" />
       </node>
       <node concept="3Tm6S6" id="7$e6lgA3Bmv" role="1B3o_S" />
     </node>
     <node concept="3clFbW" id="7$e6lgA3BiN" role="jymVt">
       <node concept="37vLTG" id="7$e6lgA3BiO" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="OqYxEju9WB" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <node concept="3uibUv" id="7thMrSQpWvw" role="1tU5fm">
+          <ref role="3uigEE" to="z1c5:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="3cqZAl" id="7$e6lgA3BiS" role="3clF45" />
@@ -9853,7 +9853,7 @@
                 <node concept="Xjq3P" id="7$e6lgA3Bjd" role="2Oq$k0" />
               </node>
               <node concept="liA8E" id="7$e6lgA3Bje" role="2OqNvi">
-                <ref role="37wK5l" to="z1c3:~Project.getName():java.lang.String" resolve="getName" />
+                <ref role="37wK5l" to="z1c5:~MPSProject.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
           </node>
@@ -10135,7 +10135,7 @@
                         <ref role="3cqZAo" node="7$e6lgA3Bmu" resolve="myProject" />
                       </node>
                       <node concept="liA8E" id="7$e6lgA3Boh" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~IProject.addModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="addModule" />
+                        <ref role="37wK5l" to="z1c3:~ProjectBase.addModule(org.jetbrains.mps.openapi.module.SModule):void" resolve="addModule" />
                         <node concept="2OqwBi" id="256tImPkK$P" role="37wK5m">
                           <node concept="liA8E" id="256tImPkK$Q" role="2OqNvi">
                             <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
@@ -15735,8 +15735,8 @@
       </node>
       <node concept="37vLTG" id="7$e6lgA3B$e" role="3clF46">
         <property role="TrG5h" value="mpsProject" />
-        <node concept="3uibUv" id="OqYxEjVWfw" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        <node concept="3uibUv" id="7thMrSQpH6A" role="1tU5fm">
+          <ref role="3uigEE" to="z1c5:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="7$e6lgA3B$g" role="3clF46">
