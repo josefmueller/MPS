@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,10 +71,12 @@ class ModelStructureUpdate extends SNodeTreeUpdater<SModelTreeNode> {
 
   @Override
   public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    DefaultTreeModel treeModel = getTree().getModel();
     for (SNode root : removedRoots) {
       SNodeTreeNode node = findRootSNodeTreeNode(root);
-      if (node == null) continue;
+      if (node == null) {
+        continue;
+      }
 
       MPSTreeNode parent = (MPSTreeNode) node.getParent();
       treeModel.removeNodeFromParent(node);
@@ -88,11 +90,13 @@ class ModelStructureUpdate extends SNodeTreeUpdater<SModelTreeNode> {
 
   @Override
   public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+    DefaultTreeModel treeModel = getTree().getModel();
 
     for (SNode node : nodesWithChangedPackages) {
       SNodeTreeNode treeNode = findRootSNodeTreeNode(node);
-      if (treeNode == null) continue;
+      if (treeNode == null) {
+        continue;
+      }
 
       MPSTreeNode parent = (MPSTreeNode) treeNode.getParent();
 

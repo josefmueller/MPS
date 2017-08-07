@@ -17,12 +17,10 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting;
 
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.ide.projectPane.logicalview.PresentationUpdater;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -155,55 +153,20 @@ public class SModelNodeListeners {
     }
   }
 
-  @SuppressWarnings("WeakerAccess")
-  void updateNodePresentation(SModelTreeNode treeNode, boolean updateAncestors) {
-    new PresentationUpdater<SModelTreeNode>(treeNode) {
-      @Override
-      protected boolean isValid(SModelTreeNode treeNode) {
-        if (!super.isValid(treeNode)) return false;
-        final SModel model = treeNode.getModel();
-        if (model.isLoaded()) {
-          return !jetbrains.mps.util.SNodeOperations.isModelDisposed(model);
-        }
-        return true;
-      }
-    }.update(false, updateAncestors);
-  }
-
   private class ModelChangeListener extends SModelAdapter {
     @Override
     public void modelChangedDramatically(SModel model) {
-      Collection<SModelTreeNode> treeNodes = findTreeNode(model);
-      for (SModelTreeNode treeNode : treeNodes) {
-        // XXX it's not too much sense in updating node presentation if there would be another update from refreshTreeNode
-        //     Besides, given number of re-dispatches (PresentationUpdater->MergingUpdateQueue->EDT+Read) for updateNodePresentation
-        //     vs. ThreadPoolExecutor -> TreeNodeUpdater ->EDT+Read for refreshNodeTrees, it's impossible to predict execution order for the
-        //     updates. However, left this code as is for scenarios when no tree update visitor does any change and therefore there'd be no
-        //     update of the tree at all. Would be great to come up with a better mechanism.
-        updateNodePresentation(treeNode, true);
-      }
-      refreshTreeNodes(treeNodes);
+      refreshAffectedTreeNodes(model);
     }
 
     @Override
     public void modelChanged(SModel model) {
-      Collection<SModelTreeNode> treeNodes = findTreeNode(model);
-      for (SModelTreeNode treeNode : treeNodes) {
-        updateNodePresentation(treeNode, true);
-      }
-      refreshTreeNodes(treeNodes);
+      refreshAffectedTreeNodes(model);
     }
 
     @Override
     public void modelSaved(SModel sm) {
       refreshAffectedTreeNodes(sm);
-    }
-
-    @Override
-    public void modelLoadingStateChanged(SModel sm, ModelLoadingState newState) {
-      for (SModelTreeNode treeNode : findTreeNode(sm)) {
-        updateNodePresentation(treeNode, false);
-      }
     }
   }
 }
