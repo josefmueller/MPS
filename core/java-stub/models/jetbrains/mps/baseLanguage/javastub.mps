@@ -2100,6 +2100,22 @@
   </node>
   <node concept="312cEu" id="3X3rDwN7qLn">
     <property role="TrG5h" value="ClassifierLoader" />
+    <node concept="Wx3nA" id="6A0XC8Gg3ui" role="jymVt">
+      <property role="TrG5h" value="LOG" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3uibUv" id="6A0XC8Gg3uj" role="1tU5fm">
+        <ref role="3uigEE" to="q7tw:~Logger" resolve="Logger" />
+      </node>
+      <node concept="2YIFZM" id="6A0XC8Gg64y" role="33vP2m">
+        <ref role="1Pybhc" to="q7tw:~LogManager" resolve="LogManager" />
+        <ref role="37wK5l" to="q7tw:~LogManager.getLogger(java.lang.Class):org.apache.log4j.Logger" resolve="getLogger" />
+        <node concept="3VsKOn" id="6A0XC8Gg64z" role="37wK5m">
+          <ref role="3VsUkX" node="3X3rDwN7qLn" resolve="ClassifierLoader" />
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="6A0XC8Gg3un" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="6A0XC8Gg0QL" role="jymVt" />
     <node concept="3Tm1VV" id="3X3rDwN7qLo" role="1B3o_S" />
     <node concept="312cEg" id="5iMRiZC02D0" role="jymVt">
       <property role="TrG5h" value="mySkipPrivate" />
@@ -2125,7 +2141,7 @@
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myClassReader" />
-      <property role="3TUv4t" value="true" />
+      <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="3Eq_PkM6X1B" role="1B3o_S" />
       <node concept="3uibUv" id="3Eq_PkM6Zas" role="1tU5fm">
         <ref role="3uigEE" to="k8ye:~ClassReader" resolve="ClassReader" />
@@ -2189,27 +2205,78 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3Eq_PkM7bM4" role="3cqZAp">
-          <node concept="37vLTI" id="3Eq_PkM7bPD" role="3clFbG">
-            <node concept="37vLTw" id="3Eq_PkM7bM2" role="37vLTJ">
+        <node concept="3clFbF" id="6A0XC8Gf3l3" role="3cqZAp">
+          <node concept="37vLTI" id="6A0XC8Gf3Mn" role="3clFbG">
+            <node concept="10Nm6u" id="6A0XC8Gf3Oj" role="37vLTx" />
+            <node concept="37vLTw" id="6A0XC8Gf3l1" role="37vLTJ">
               <ref role="3cqZAo" node="3Eq_PkM71kX" resolve="myClassReader" />
             </node>
-            <node concept="3K4zz7" id="3Eq_PkM7kie" role="37vLTx">
-              <node concept="10Nm6u" id="3Eq_PkM7kjq" role="3K4E3e" />
-              <node concept="3clFbC" id="3Eq_PkM7kc1" role="3K4Cdx">
-                <node concept="10Nm6u" id="3Eq_PkM7kfj" role="3uHU7w" />
-                <node concept="37vLTw" id="3Eq_PkM7kaP" role="3uHU7B">
-                  <ref role="3cqZAo" node="3Eq_PkM7bCJ" resolve="code" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="3Eq_PkM7bQA" role="3K4GZi">
-                <node concept="1pGfFk" id="3Eq_PkM7gt1" role="2ShVmc">
-                  <ref role="37wK5l" to="k8ye:~ClassReader.&lt;init&gt;(byte[])" resolve="ClassReader" />
-                  <node concept="37vLTw" id="3Eq_PkM7gtP" role="37wK5m">
-                    <ref role="3cqZAo" node="3Eq_PkM7bCJ" resolve="code" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="6A0XC8Gf3Vc" role="3cqZAp">
+          <node concept="3clFbS" id="6A0XC8Gf3Ve" role="3clFbx">
+            <node concept="SfApY" id="6A0XC8Gf47q" role="3cqZAp">
+              <node concept="3clFbS" id="6A0XC8Gf47s" role="SfCbr">
+                <node concept="3clFbF" id="3Eq_PkM7bM4" role="3cqZAp">
+                  <node concept="37vLTI" id="3Eq_PkM7bPD" role="3clFbG">
+                    <node concept="37vLTw" id="3Eq_PkM7bM2" role="37vLTJ">
+                      <ref role="3cqZAo" node="3Eq_PkM71kX" resolve="myClassReader" />
+                    </node>
+                    <node concept="2ShNRf" id="3Eq_PkM7bQA" role="37vLTx">
+                      <node concept="1pGfFk" id="3Eq_PkM7gt1" role="2ShVmc">
+                        <ref role="37wK5l" to="k8ye:~ClassReader.&lt;init&gt;(byte[])" resolve="ClassReader" />
+                        <node concept="37vLTw" id="3Eq_PkM7gtP" role="37wK5m">
+                          <ref role="3cqZAo" node="3Eq_PkM7bCJ" resolve="code" />
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
+              <node concept="TDmWw" id="6A0XC8Gf47t" role="TEbGg">
+                <node concept="3cpWsn" id="6A0XC8Gf47v" role="TDEfY">
+                  <property role="TrG5h" value="ex" />
+                  <node concept="3uibUv" id="6A0XC8Gf4r7" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~ArrayIndexOutOfBoundsException" resolve="ArrayIndexOutOfBoundsException" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="6A0XC8Gf47z" role="TDEfX">
+                  <node concept="3clFbF" id="6A0XC8Gg9lV" role="3cqZAp">
+                    <node concept="2OqwBi" id="6A0XC8Gg9_q" role="3clFbG">
+                      <node concept="37vLTw" id="6A0XC8Gg9lT" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6A0XC8Gg3ui" resolve="LOG" />
+                      </node>
+                      <node concept="liA8E" id="6A0XC8Gg9Mq" role="2OqNvi">
+                        <ref role="37wK5l" to="q7tw:~Category.warn(java.lang.Object):void" resolve="warn" />
+                        <node concept="3cpWs3" id="6A0XC8Gg9Xt" role="37wK5m">
+                          <node concept="Xl_RD" id="6A0XC8Gg9Xu" role="3uHU7w">
+                            <property role="Xl_RC" value=" seems to be corrupted. Empty model loaded until file refresh." />
+                          </node>
+                          <node concept="3cpWs3" id="6A0XC8Gg9Xv" role="3uHU7B">
+                            <node concept="Xl_RD" id="6A0XC8Gg9Xw" role="3uHU7B">
+                              <property role="Xl_RC" value="File " />
+                            </node>
+                            <node concept="2OqwBi" id="6A0XC8Gg9Xx" role="3uHU7w">
+                              <node concept="37vLTw" id="6A0XC8Gg9Xy" role="2Oq$k0">
+                                <ref role="3cqZAo" node="3Eq_PkM6lOv" resolve="file" />
+                              </node>
+                              <node concept="liA8E" id="6A0XC8Gg9Xz" role="2OqNvi">
+                                <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="6A0XC8Gf45z" role="3clFbw">
+            <node concept="10Nm6u" id="6A0XC8Gf46k" role="3uHU7w" />
+            <node concept="37vLTw" id="6A0XC8Gf40S" role="3uHU7B">
+              <ref role="3cqZAo" node="3Eq_PkM7bCJ" resolve="code" />
             </node>
           </node>
         </node>
@@ -2829,7 +2896,6 @@
             <ref role="3cqZAo" node="3Eq_PkM82ei" resolve="rv" />
           </node>
         </node>
-        <node concept="3clFbH" id="3Eq_PkM808u" role="3cqZAp" />
       </node>
     </node>
     <node concept="2tJIrI" id="3Eq_PkM6$Cl" role="jymVt" />
