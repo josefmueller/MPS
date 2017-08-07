@@ -23,6 +23,7 @@
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.ide.mpsmigration.v_2017_1.Migrations_2017_1</implementation-class>
+      <implementation-class>jetbrains.mps.ide.mpsmigration.v_2017_2.Migrations_2017_2</implementation-class>
     </component>
   </application-components>
 </idea-plugin>

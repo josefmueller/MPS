@@ -23,6 +23,8 @@ import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
@@ -39,7 +41,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
@@ -114,7 +115,9 @@ public class NewModuleUtil {
     Language lang = createNewLanguage(namespace, descriptorFile, true, project);
     project.addModule(lang);
     new VersionFixer(project.getRepository(), lang).updateImportVersions();
-    new VersionFixer(project.getRepository(), lang.getGenerators().iterator().next()).updateImportVersions();
+    for (Generator gen : CollectionSequence.fromCollection(lang.getGenerators())) {
+      new VersionFixer(project.getRepository(), gen).updateImportVersions();
+    }
     lang.save();
     project.save();
     return lang;

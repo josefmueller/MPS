@@ -30,7 +30,6 @@
     <import index="bfxj" ref="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
-    <import index="rjhg" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit(jetbrains.mps.baseLanguage.unitTest.libs/)" />
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
@@ -52,7 +51,6 @@
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="bmv6" ref="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
-    <import index="yyt9" ref="r:609ff00a-e99e-4fdb-a9f0-2fac708d77c0(jetbrains.mps)" />
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="qyr2" ref="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)" />
@@ -69,9 +67,8 @@
     <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
     <import index="bqeu" ref="r:e71f8bf8-158e-40c6-bd90-ff2f1a21d867(jetbrains.mps.ide.vcs.test.testdiff)" />
     <import index="sxph" ref="r:f9cefa7f-7dcc-422d-acd3-c452503bcca5(jetbrains.mps.ide.vcs.test.testdiff2)" />
-    <import index="rjhh" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:org.junit(Testbench/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
-    <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
+    <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -870,8 +867,8 @@
         </node>
         <node concept="3clFbF" id="6qMd1Cr6yUc" role="3cqZAp">
           <node concept="2YIFZM" id="6qMd1Cr6zdk" role="3clFbG">
-            <ref role="37wK5l" to="rjhh:~Assume.assumeNotNull(java.lang.Object...):void" resolve="assumeNotNull" />
-            <ref role="1Pybhc" to="rjhh:~Assume" resolve="Assume" />
+            <ref role="1Pybhc" to="rjhg:~Assume" resolve="Assume" />
+            <ref role="37wK5l" to="rjhg:~Assume.assumeNotNull(java.lang.Object...):void" resolve="assumeNotNull" />
             <node concept="37vLTw" id="6qMd1Cr6A6p" role="37wK5m">
               <ref role="3cqZAo" node="3oUomEoMJtn" resolve="myGitVcs" />
             </node>
@@ -879,8 +876,8 @@
         </node>
         <node concept="3clFbF" id="6qMd1Cr6$wa" role="3cqZAp">
           <node concept="2YIFZM" id="6qMd1Cr6$wb" role="3clFbG">
-            <ref role="37wK5l" to="rjhh:~Assume.assumeNotNull(java.lang.Object...):void" resolve="assumeNotNull" />
-            <ref role="1Pybhc" to="rjhh:~Assume" resolve="Assume" />
+            <ref role="1Pybhc" to="rjhg:~Assume" resolve="Assume" />
+            <ref role="37wK5l" to="rjhg:~Assume.assumeNotNull(java.lang.Object...):void" resolve="assumeNotNull" />
             <node concept="1rXfSq" id="6qMd1Cr6$wc" role="37wK5m">
               <ref role="37wK5l" node="7HgS$VjLBXO" resolve="getTestModel" />
             </node>
@@ -1093,8 +1090,8 @@
         </node>
         <node concept="3clFbF" id="6hwF4wZObhH" role="3cqZAp">
           <node concept="2YIFZM" id="6hwF4wZObhI" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertFalse(boolean):void" resolve="assertFalse" />
             <node concept="2OqwBi" id="6hwF4wZObhJ" role="37wK5m">
               <node concept="2OqwBi" id="6hwF4wZObhK" role="2Oq$k0">
                 <node concept="2YIFZM" id="56cvcsnFBM5" role="2Oq$k0">
@@ -1143,8 +1140,8 @@
       <node concept="3clFbS" id="3oUomEoMJsL" role="3clF47">
         <node concept="3clFbF" id="3oUomEoMiL2" role="3cqZAp">
           <node concept="2YIFZM" id="3oUomEoMiL3" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertNull(java.lang.Object):void" resolve="assertNull" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertNull(java.lang.Object):void" resolve="assertNull" />
             <node concept="2OqwBi" id="3oUomEoMiL4" role="37wK5m">
               <node concept="37vLTw" id="2BHiRxeukwO" role="2Oq$k0">
                 <ref role="3cqZAo" node="3oUomEoMJrS" resolve="myDiff" />
@@ -1182,8 +1179,8 @@
         <node concept="3clFbH" id="3oUomEoMiLu" role="3cqZAp" />
         <node concept="3clFbF" id="3oUomEoMiLC" role="3cqZAp">
           <node concept="2YIFZM" id="3oUomEoMiLD" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
             <node concept="2OqwBi" id="4CruXksApDU" role="37wK5m">
               <node concept="2OqwBi" id="4CruXksApe9" role="2Oq$k0">
                 <node concept="2OqwBi" id="4CruXksunm_" role="2Oq$k0">
@@ -1600,8 +1597,8 @@
                         </node>
                         <node concept="3clFbF" id="1KUoCipvs5b" role="3cqZAp">
                           <node concept="2YIFZM" id="1KUoCipvs5c" role="3clFbG">
-                            <ref role="37wK5l" to="rjhg:~Assert.assertSame(java.lang.Object,java.lang.Object):void" resolve="assertSame" />
                             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+                            <ref role="37wK5l" to="rjhg:~Assert.assertSame(java.lang.Object,java.lang.Object):void" resolve="assertSame" />
                             <node concept="37vLTw" id="56cvcsnDGca" role="37wK5m">
                               <ref role="3cqZAo" node="56cvcsnDGc3" resolve="expected" />
                             </node>
@@ -1668,8 +1665,8 @@
         </node>
         <node concept="3clFbF" id="7HgS$VjRIYd" role="3cqZAp">
           <node concept="2YIFZM" id="7HgS$VjRIYe" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
             <node concept="2OqwBi" id="7HgS$VjRIYf" role="37wK5m">
               <node concept="2EnYce" id="7HgS$VjRIYg" role="2Oq$k0">
                 <node concept="2OqwBi" id="7HgS$VjRIYh" role="2Oq$k0">
@@ -3005,8 +3002,8 @@
               </node>
               <node concept="3clFbF" id="7HgS$VkdnZr" role="3cqZAp">
                 <node concept="2YIFZM" id="7HgS$Vkdo7q" role="3clFbG">
-                  <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
                   <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+                  <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
                   <node concept="2OqwBi" id="198kuM0wX3M" role="37wK5m">
                     <node concept="2OqwBi" id="198kuM0wX3N" role="2Oq$k0">
                       <node concept="37vLTw" id="198kuM0wX3O" role="2Oq$k0">
@@ -3660,8 +3657,8 @@
         </node>
         <node concept="3clFbF" id="7iTTs2Uy2kf" role="3cqZAp">
           <node concept="2YIFZM" id="7iTTs2Uy2kg" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertNotNull(java.lang.Object):void" resolve="assertNotNull" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertNotNull(java.lang.Object):void" resolve="assertNotNull" />
             <node concept="37vLTw" id="7iTTs2Uy2FQ" role="37wK5m">
               <ref role="3cqZAo" node="7iTTs2UxpKu" resolve="ourRepository" />
             </node>
@@ -4080,8 +4077,8 @@
         <node concept="3clFbH" id="7iTTs2UDGsp" role="3cqZAp" />
         <node concept="3clFbF" id="7iTTs2UDGss" role="3cqZAp">
           <node concept="2YIFZM" id="7iTTs2UDGst" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
             <node concept="2OqwBi" id="7iTTs2UDGsu" role="37wK5m">
               <node concept="37vLTw" id="7iTTs2UDGsv" role="2Oq$k0">
                 <ref role="3cqZAo" node="2n_nRw$JDix" resolve="myMockDialog" />
@@ -4151,8 +4148,8 @@
         <node concept="3clFbH" id="7iTTs2UDJcj" role="3cqZAp" />
         <node concept="3clFbF" id="7iTTs2UDJcm" role="3cqZAp">
           <node concept="2YIFZM" id="7iTTs2UDJcn" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
             <node concept="2OqwBi" id="7iTTs2UDJco" role="37wK5m">
               <node concept="37vLTw" id="7iTTs2UDJcp" role="2Oq$k0">
                 <ref role="3cqZAo" node="2n_nRw$JDix" resolve="myMockDialog" />
@@ -4358,8 +4355,8 @@
                             </node>
                             <node concept="3clFbF" id="6m1MVDkUQ22" role="3cqZAp">
                               <node concept="2YIFZM" id="6m1MVDkUQ23" role="3clFbG">
-                                <ref role="37wK5l" to="rjhg:~Assert.assertNotNull(java.lang.Object):void" resolve="assertNotNull" />
                                 <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+                                <ref role="37wK5l" to="rjhg:~Assert.assertNotNull(java.lang.Object):void" resolve="assertNotNull" />
                                 <node concept="37vLTw" id="7iTTs2UCx9c" role="37wK5m">
                                   <ref role="3cqZAo" node="7iTTs2UCvz4" resolve="theField" />
                                 </node>
@@ -4987,8 +4984,8 @@
             <node concept="3clFbS" id="6m1MVDkUQ34" role="TDEfX">
               <node concept="3clFbF" id="6m1MVDkUQ35" role="3cqZAp">
                 <node concept="2YIFZM" id="6m1MVDkUQ36" role="3clFbG">
-                  <ref role="37wK5l" to="rjhg:~Assert.fail():void" resolve="fail" />
                   <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+                  <ref role="37wK5l" to="rjhg:~Assert.fail():void" resolve="fail" />
                 </node>
               </node>
             </node>
@@ -5226,8 +5223,8 @@
         </node>
         <node concept="3clFbF" id="6m1MVDkUQ64" role="3cqZAp">
           <node concept="2YIFZM" id="6m1MVDkUQ65" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
             <node concept="37vLTw" id="2BHiRxgm$OG" role="37wK5m">
               <ref role="3cqZAo" node="6m1MVDkUQ5W" resolve="fieldName" />
             </node>
@@ -5306,8 +5303,8 @@
                         <node concept="3clFbS" id="6m1MVDkUQ6j" role="3clFbx">
                           <node concept="3clFbF" id="6m1MVDkUQ6k" role="3cqZAp">
                             <node concept="2YIFZM" id="6m1MVDkUQ6l" role="3clFbG">
-                              <ref role="37wK5l" to="rjhg:~Assert.assertNull(java.lang.Object):void" resolve="assertNull" />
                               <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+                              <ref role="37wK5l" to="rjhg:~Assert.assertNull(java.lang.Object):void" resolve="assertNull" />
                               <node concept="37vLTw" id="6N6R05ngQEf" role="37wK5m">
                                 <ref role="3cqZAo" node="6N6R05ngQEd" resolve="model" />
                               </node>
@@ -5809,8 +5806,8 @@
           <node concept="3clFbS" id="6m1MVDkUQbE" role="3clFbx">
             <node concept="3clFbF" id="6m1MVDkUQbN" role="3cqZAp">
               <node concept="2YIFZM" id="6m1MVDkUQbO" role="3clFbG">
-                <ref role="37wK5l" to="rjhg:~Assert.fail():void" resolve="fail" />
                 <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="rjhg:~Assert.fail():void" resolve="fail" />
               </node>
             </node>
           </node>
@@ -6651,8 +6648,8 @@
         </node>
         <node concept="3clFbF" id="7HgS$VkbStK" role="3cqZAp">
           <node concept="2YIFZM" id="7HgS$VkbStL" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertEquals(long,long):void" resolve="assertEquals" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertEquals(long,long):void" resolve="assertEquals" />
             <node concept="2OqwBi" id="7HgS$VkbStM" role="37wK5m">
               <node concept="2OqwBi" id="7HgS$VkbStN" role="2Oq$k0">
                 <node concept="37vLTw" id="7HgS$VkbStO" role="2Oq$k0">
@@ -6715,8 +6712,8 @@
             </node>
             <node concept="3clFbF" id="7HgS$Vkc1_2" role="3cqZAp">
               <node concept="2YIFZM" id="7HgS$Vkc1B5" role="3clFbG">
-                <ref role="37wK5l" to="rjhg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
                 <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+                <ref role="37wK5l" to="rjhg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
                 <node concept="2OqwBi" id="7HgS$Vkc1Dw" role="37wK5m">
                   <node concept="37vLTw" id="7HgS$Vkc1Cb" role="2Oq$k0">
                     <ref role="3cqZAo" node="7HgS$Vkc15y" resolve="real" />
@@ -7903,8 +7900,8 @@
           </node>
           <node concept="3clFbF" id="7HgS$Vk9l3f" role="3cqZAp">
             <node concept="2YIFZM" id="7HgS$Vk9ldc" role="3clFbG">
-              <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
               <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+              <ref role="37wK5l" to="rjhg:~Assert.assertTrue(boolean):void" resolve="assertTrue" />
               <node concept="3y3z36" id="3oUomEoMJvT" role="37wK5m">
                 <node concept="10Nm6u" id="3oUomEoMJvU" role="3uHU7w" />
                 <node concept="37vLTw" id="3GM_nagT_vN" role="3uHU7B">
@@ -12263,8 +12260,8 @@
         </node>
         <node concept="3clFbF" id="3X9CJzpruJ5" role="3cqZAp">
           <node concept="2YIFZM" id="3X9CJzpruVr" role="3clFbG">
-            <ref role="37wK5l" to="rjhg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
             <ref role="1Pybhc" to="rjhg:~Assert" resolve="Assert" />
+            <ref role="37wK5l" to="rjhg:~Assert.assertEquals(java.lang.Object,java.lang.Object):void" resolve="assertEquals" />
             <node concept="1rXfSq" id="3X9CJzprv7a" role="37wK5m">
               <ref role="37wK5l" node="3X9CJzprr8w" resolve="toString" />
               <node concept="2OqwBi" id="3X9CJzprv7b" role="37wK5m">

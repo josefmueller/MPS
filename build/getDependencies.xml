@@ -206,7 +206,7 @@
           description="Download com.googlecode.java-diff-utils-diffutils library">
     <echo message="DiffUtil library is missing. Downloading..."/>
     <ivy:resolve file="ivyDiffUtils.xml" showprogress="true"/>
-    <ivy:retrieve pattern="${basedir}/../lib/([classifier]/)[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
+    <ivy:retrieve pattern="${basedir}/../lib/ext/([classifier]/)[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
 
   <target name="download-testlib" depends="check-testlib,install-ivy" if="${testlib.missing}"

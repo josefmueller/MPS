@@ -460,5 +460,6 @@
     <delete dir="${pluginPath}/mps-idea-java"/>
     <delete dir="${pluginPath}/mps-testing"/>
     <delete dir="${pluginPath}/mps-vcs"/>
+    <delete dir="${pluginPath}/mps-migration"/>
   </target>
 </project>

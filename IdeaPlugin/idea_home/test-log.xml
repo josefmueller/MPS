@@ -25,6 +25,7 @@
     </layout>
     <filter class="org.apache.log4j.varia.LevelRangeFilter">
       <param name="LevelMin" value="TRACE"/>
+      <param name="LevelMax" value="TRACE"/>
     </filter>
   </appender>
 
@@ -35,16 +36,18 @@
     </layout>
     <filter class="org.apache.log4j.varia.LevelRangeFilter">
       <param name="LevelMin" value="DEBUG"/>
+      <param name="LevelMax" value="DEBUG"/>
     </filter>
   </appender>
 
-  <appender name="CONSOLE-INFO" class="org.apache.log4j.ConsoleAppender" >
+  <appender name="CONSOLE-INFO" class="org.apache.log4j.ConsoleAppender">
     <param name="follow" value="true"/>
     <layout class="org.apache.log4j.PatternLayout">
       <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
     </layout>
     <filter class="org.apache.log4j.varia.LevelRangeFilter">
       <param name="LevelMin" value="INFO"/>
+      <param name="LevelMax" value="INFO"/>
     </filter>
   </appender>
 
@@ -59,7 +62,7 @@
     </filter>
   </appender>
 
-  <appender name="CONSOLE-ALL" class="org.apache.log4j.ConsoleAppender" >
+  <appender name="CONSOLE-ALL" class="org.apache.log4j.ConsoleAppender">
     <param name="follow" value="true"/>
     <layout class="org.apache.log4j.PatternLayout">
       <param name="ConversionPattern" value="[%7r] %6p - %30.30c - %m \n"/>
@@ -73,35 +76,40 @@
     <layout class="org.apache.log4j.PatternLayout">
       <param name="ConversionPattern" value="%d [%7r] %6p - %30.60c - %m \n"/>
     </layout>
-    <filter class="org.apache.log4j.varia.LevelRangeFilter">
-      <param name="LevelMin" value="INFO"/>
-    </filter>
   </appender>
 
-  <category name="com.intellij" additivity="false">
+  <!-- Priority for com.intellij is at least WARN (hiding INFO) -->
+  <category name="com.intellij">
     <priority value="WARN"/>
-    <appender-ref ref="CONSOLE-WARN"/>
-    <appender-ref ref="MPS-FILE"/>
   </category>
 
-  <category name="jetbrains.mps" additivity="true">
+  <!-- In addition logging all INFO messages from jetbrains.mps into console -->
+  <category name="jetbrains.mps">
     <priority value="INFO"/>
     <appender-ref ref="CONSOLE-INFO"/>
-    <appender-ref ref="MPS-FILE"/>
   </category>
 
-  <category name="#org.jetbrains.jps" additivity="false">
+  <!-- In addition logging all INFO messages from #org.jetbrains.jps into console -->
+  <category name="#org.jetbrains.jps">
     <priority value="INFO"/>
     <appender-ref ref="CONSOLE-INFO"/>
-    <appender-ref ref="MPS-FILE"/>
   </category>
 
-  <category name="#com.intellij" additivity="false">
+  <!-- In addition logging all INFO messages from #com.intellij into console -->
+  <category name="#com.intellij">
     <priority value="INFO"/>
     <appender-ref ref="CONSOLE-INFO"/>
-    <appender-ref ref="MPS-FILE"/>
   </category>
 
+  <!--
+    Logging all messages:
+      - with the priority at least INFO (or higher) into the file
+      - with the priority at least WARN into console
+
+    if some specific sub-categories requires more detailed logging
+    (either to a separate file or console) please use separate category
+    tag specifying additional settings
+  -->
   <root>
     <priority value="INFO"/>
     <appender-ref ref="CONSOLE-WARN"/>

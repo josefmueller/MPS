@@ -8,12 +8,10 @@
   </languages>
   <imports>
     <import index="pop3" ref="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" />
-    <import index="2t25" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps.testbench.junit.runners(Testbench/)" />
     <import index="5rc7" ref="r:2f48a1e0-29c6-465b-b158-4cba88c0e4a6(jetbrains.mps.testbench.suite.behavior)" />
     <import index="oh7r" ref="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
-    <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
-    <import index="cvlm" ref="83f155ff-422c-4b5a-a2f2-b459302dd215/java:org.junit.runner(jetbrains.mps.baseLanguage.unitTest.libs/)" />
+    <import index="cvlm" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit.runner(JUnit/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -328,9 +326,9 @@
       </node>
     </node>
     <node concept="2AHcQZ" id="3z1mdFUF$hl" role="2AJF6D">
-      <ref role="2AI5Lk" to="2t25:~ModuleSymbolicSuite$ModuleReference" resolve="ModuleSymbolicSuite.ModuleReference" />
+      <ref role="2AI5Lk" to="oh7r:TwRk$DMAdI" resolve="ModuleSymbolicSuite.ModuleReference" />
       <node concept="1SXeKx" id="3z1mdFUF$hn" role="2B76xF">
-        <ref role="2B6OnR" to="2t25:~ModuleSymbolicSuite$ModuleReference.value()" resolve="value" />
+        <ref role="2B6OnR" to="oh7r:TwRk$DMAdL" resolve="value" />
         <node concept="Xl_RD" id="3z1mdFUF$ho" role="2B70Vg">
           <property role="Xl_RC" value="" />
           <node concept="17Uvod" id="3z1mdFUF$hp" role="lGtFl">
@@ -367,7 +365,7 @@
       <node concept="1SXeKx" id="2$98zG5lhcf" role="2B76xF">
         <ref role="2B6OnR" to="cvlm:~RunWith.value()" resolve="value" />
         <node concept="3VsKOn" id="3z1mdFUF$hk" role="2B70Vg">
-          <ref role="3VsUkX" to="2t25:~ModuleSymbolicSuite" resolve="ModuleSymbolicSuite" />
+          <ref role="3VsUkX" to="oh7r:TwRk$DMAa5" resolve="ModuleSymbolicSuite" />
         </node>
       </node>
     </node>

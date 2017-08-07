@@ -85,8 +85,11 @@
       <modulePath path="$PROJECT_DIR$/languages/core/core/jetbrains.mps.lang.core.mpl" folder="core.languages" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/Annotations/Annotations.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/Ant/Ant.msd" folder="core.stub" />
+      <modulePath path="$PROJECT_DIR$/languages/core/stub/diffutils/diffutils.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/JDK-tools/JDK-tools.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/JDK/JDK.msd" folder="core.stub" />
+      <modulePath path="$PROJECT_DIR$/languages/core/stub/junit/junit.msd" folder="core.stub" />
+      <modulePath path="$PROJECT_DIR$/languages/core/stub/hamcrest/hamcrest.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/MPS.Core/MPS.Core.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/MPS.Editor/MPS.Editor.msd" folder="core.stub" />
       <modulePath path="$PROJECT_DIR$/languages/core/stub/MPS.IDEA/MPS.IDEA.msd" folder="core.stub" />
@@ -495,12 +498,12 @@
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/httpsupport.test/jetbrains.mps.ide.httpsupport.tests.msd" folder="tests.testHttpSupport" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.build.stripping.tests/jetbrains.mps.build.stripping.tests.msd" folder="platform.build" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.lang.editor.imageGen.tests/jetbrains.mps.lang.editor.imageGen.tests.msd" folder="core.aspects.editor" />
+      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.tests.sraMigration/jetbrains.mps.tests.sraMigration.msd" folder="tests.testSmartRefAttrMigration" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/kernel.test/jetbrains.mps.kernel.tests.msd" folder="core.kernel" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/make.test/jetbrains.mps.make.tests.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/pattern.test/jetbrains.mps.lang.pattern.test.msd" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/plugin.tests/jetbrains.mps.lang.plugin.tests.msd" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/regexp.unittest/jetbrains.mps.baseLanguage.regexp.unittest.msd" folder="core.baseLanguage.regexp" />
-      <modulePath path="$PROJECT_DIR$/testbench/testsolutions/jetbrains.mps.tests.sraMigration/jetbrains.mps.tests.sraMigration.msd" folder="tests.testSmartRefAttrMigration" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/smodelLanguage_typeTest/smodelLanguage_typetest.msd" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/testbench/testsolutions/testlangs/editor.formsTests.testLang/jetbrains.mps.lang.editor.formsTests.mpl" folder="core.aspects.editor" />

@@ -23,6 +23,7 @@ import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.DocumentationHelper;
 import org.jetbrains.annotations.NotNull;
@@ -31,6 +32,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import java.io.IOException;
+import java.util.Iterator;
 
 public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
 
@@ -56,8 +58,9 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
   @Override
   public String getDescription() {
     return "In MPS, you create new languages and then use them to write code " +
-        "in solutions. An <a href=\""+ DocumentationHelper.getConfluenceBase() +"MPS+project+structure#MPSprojectstructure-languages\">MPS language</a> describes the syntax, editor, generator and other aspects of the " +
-        "new language.";
+           "in solutions. An <a href=\"" + DocumentationHelper.getConfluenceBase() +
+           "MPS+project+structure#MPSprojectstructure-languages\">MPS language</a> describes the syntax, editor, generator and other aspects of the " +
+           "new language.";
   }
 
   @Nullable
@@ -81,11 +84,16 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
               @Override
               public void run() {
                 Language language = NewModuleUtil.createLanguage(myLanguageSettings.getModuleName(), myLanguageSettings.getModuleLocation(),
-                    project);
+                                                                 project);
                 try {
                   if (myLanguageSettings.isRuntimeSolutionNeeded()) {
                     Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getModuleLocation(), project);
                     language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
+                    new VersionFixer(project.getRepository(), language).updateImportVersions();
+                    for (Generator gen : language.getGenerators()) {
+                      new VersionFixer(project.getRepository(), gen).updateImportVersions();
+                    }
+                    language.save();
                   }
                   if (myLanguageSettings.isSandBoxSolutionNeeded()) {
                     NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getModuleLocation(), project);

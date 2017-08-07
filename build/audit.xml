@@ -51,7 +51,7 @@
       <formatter type="brief" usefile="false"/>
       <classpath>
         <fileset dir="${dest}/MPS ${version}/lib">
-          <include name="*.jar"/>
+          <include name="*/*.jar"/>
         </fileset>
         <path path="${dest}/MPS ${version}/lib/mps-backend.jar"/>
       </classpath>
