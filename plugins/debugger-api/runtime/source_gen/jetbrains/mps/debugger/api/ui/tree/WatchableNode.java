@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.debug.api.programState.Watchable2;
 import jetbrains.mps.debug.api.programState.IValue;
-import javax.swing.tree.DefaultTreeModel;
 import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Level;
 
@@ -58,7 +57,7 @@ public class WatchableNode extends AbstractWatchableNode {
     return myWatchable.getValue();
   }
   /*package*/ void nodeChanged() {
-    ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
+    getTree().getModel().nodeStructureChanged(this);
   }
   @Override
   protected void doInit() {
@@ -89,9 +88,9 @@ public class WatchableNode extends AbstractWatchableNode {
                     updatePresentation();
                     myInitialized = true;
                     callback.invoke();
-                    for (_FunctionTypes._void_P0_E0 callback : ListSequence.fromList(myCallbacks)) {
+                    for (_FunctionTypes._void_P0_E0 cb : ListSequence.fromList(myCallbacks)) {
                       try {
-                        callback.invoke();
+                        cb.invoke();
                       } catch (Throwable t) {
                         if (LOG.isEnabledFor(Level.ERROR)) {
                           LOG.error("", t);

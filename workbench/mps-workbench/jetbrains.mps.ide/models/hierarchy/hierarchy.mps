@@ -10275,35 +10275,16 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="2n58Qean4pI" role="3cqZAp">
-              <node concept="3clFbS" id="2n58Qean4pK" role="3clFbx">
-                <node concept="3clFbF" id="2n58Qean9XW" role="3cqZAp">
-                  <node concept="2OqwBi" id="2n58QeancaX" role="3clFbG">
-                    <node concept="1eOMI4" id="2n58Qean9XT" role="2Oq$k0">
-                      <node concept="10QFUN" id="2n58Qean9XQ" role="1eOMHV">
-                        <node concept="3uibUv" id="2n58Qean9XV" role="10QFUM">
-                          <ref role="3uigEE" to="rgfa:~DefaultTreeModel" resolve="DefaultTreeModel" />
-                        </node>
-                        <node concept="1rXfSq" id="2n58Qeanb0s" role="10QFUP">
-                          <ref role="37wK5l" to="dxuu:~JTree.getModel():javax.swing.tree.TreeModel" resolve="getModel" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="2n58QeancpN" role="2OqNvi">
-                      <ref role="37wK5l" to="rgfa:~DefaultTreeModel.nodeChanged(javax.swing.tree.TreeNode):void" resolve="nodeChanged" />
-                      <node concept="37vLTw" id="2n58Qeaneqt" role="37wK5m">
-                        <ref role="3cqZAo" node="1ZFc3Q14gRl" resolve="rv" />
-                      </node>
-                    </node>
+            <node concept="3clFbF" id="2n58Qean9XW" role="3cqZAp">
+              <node concept="2OqwBi" id="2n58QeancaX" role="3clFbG">
+                <node concept="liA8E" id="2n58QeancpN" role="2OqNvi">
+                  <ref role="37wK5l" to="rgfa:~DefaultTreeModel.nodeChanged(javax.swing.tree.TreeNode):void" resolve="nodeChanged" />
+                  <node concept="37vLTw" id="2n58Qeaneqt" role="37wK5m">
+                    <ref role="3cqZAo" node="1ZFc3Q14gRl" resolve="rv" />
                   </node>
                 </node>
-              </node>
-              <node concept="2ZW3vV" id="2n58Qean5xB" role="3clFbw">
-                <node concept="3uibUv" id="2n58Qean6lF" role="2ZW6by">
-                  <ref role="3uigEE" to="rgfa:~DefaultTreeModel" resolve="DefaultTreeModel" />
-                </node>
-                <node concept="1rXfSq" id="2n58Qean5tP" role="2ZW6bz">
-                  <ref role="37wK5l" to="dxuu:~JTree.getModel():javax.swing.tree.TreeModel" resolve="getModel" />
+                <node concept="1rXfSq" id="2n58Qeanb0s" role="2Oq$k0">
+                  <ref role="37wK5l" to="7e8u:~MPSTree.getModel():javax.swing.tree.DefaultTreeModel" resolve="getModel" />
                 </node>
               </node>
             </node>

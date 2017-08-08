@@ -12,7 +12,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.tree.DefaultTreeModel" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.CircularHierarchyException" />
