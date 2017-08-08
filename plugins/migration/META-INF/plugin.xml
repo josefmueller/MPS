@@ -5,7 +5,7 @@
   <description>Provides assistance migrating projects developed with earlier versions of MPS</description>
   <version>2017.2</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="172.1" until-build="173.1"/>
+  <idea-version since-build="172.1" until-build="174.1"/>
 
   <depends>jetbrains.mps.ide.modelchecker</depends>
 
