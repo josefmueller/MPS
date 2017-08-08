@@ -48,7 +48,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_LinkDeclaration_SpecializedLinkMetaclass_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_LinkDeclaration_Specialized_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
