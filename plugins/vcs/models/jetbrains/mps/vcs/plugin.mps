@@ -2335,10 +2335,10 @@
     <property role="9BnSP" value="http://www.jetbrains.com/mps/" />
     <property role="9BnSL" value="VCS features in MPS" />
     <property role="9BnSM" value="JetBrains" />
-    <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="VCS Integration for MPS" />
-    <property role="9BnSO" value="172.1" />
-    <property role="9BnSK" value="2017.2" />
+    <property role="9BnSO" value="173.1" />
+    <property role="1qHB85" value="/MPS_16.png" />
+    <property role="9BnSK" value="2017.3" />
   </node>
   <node concept="1ESbSp" id="10cWl49AXwe">
     <property role="TrG5h" value="IDEAChangesViewPopup" />

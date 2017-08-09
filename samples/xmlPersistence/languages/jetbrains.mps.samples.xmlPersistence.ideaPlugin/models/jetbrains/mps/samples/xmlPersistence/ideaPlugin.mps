@@ -100,12 +100,6 @@
               <property role="2pMdty" value="172.1" />
             </node>
           </node>
-          <node concept="2pNUuL" id="4CpCtD$GUku" role="2pNNFR">
-            <property role="2pNUuO" value="until-build" />
-            <node concept="2pMdtt" id="4CpCtD$GUky" role="2pMdts">
-              <property role="2pMdty" value="174.1" />
-            </node>
-          </node>
         </node>
         <node concept="3o6iSG" id="7ZoWiKcey$2" role="3o6s8t" />
         <node concept="2pNNFK" id="7ZoWiKcey$B" role="3o6s8t">

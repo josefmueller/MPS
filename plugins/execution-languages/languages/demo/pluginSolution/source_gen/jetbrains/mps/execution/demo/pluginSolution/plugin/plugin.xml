@@ -5,8 +5,8 @@
   <name>a</name>
   <description>a</description>
   <version>a</version>
-  <vendor url="a" logo="a">a</vendor>
-  <idea-version since-build="172.1" />
+  <vendor url="a">a</vendor>
+  <idea-version since-build="173.1" />
   
   <application-components>
     <component>
