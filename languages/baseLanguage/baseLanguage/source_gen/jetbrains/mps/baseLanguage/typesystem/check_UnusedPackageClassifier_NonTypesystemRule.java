@@ -9,9 +9,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -25,7 +25,7 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
   public check_UnusedPackageClassifier_NonTypesystemRule() {
   }
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(classifier, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) == null)) {
+    if ((SLinkOperations.getTarget(classifier, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")) == null) && !(SNodeOperations.isInstanceOf(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")))) {
       if (!(ListSequence.fromList(SModelOperations.nodes(SNodeOperations.getModel(classifier), null)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return ListSequence.fromList(SNodeOperations.getNodeAncestors(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x57d533a7af15ed3aL, "jetbrains.mps.baseLanguage.structure.SingleLineComment"), false)).isEmpty();
@@ -35,8 +35,8 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
           return SNodeOperations.getReferences(it);
         }
       }).any(new IWhereFilter<SReference>() {
-        public boolean accept(SReference it) {
-          return eq_oirmva_a0a0a0a0a0a0a0a0b(SLinkOperations.getTargetNode(it), classifier) || ListSequence.fromList(SNodeOperations.getNodeAncestors(SLinkOperations.getTargetNode(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SReference ref) {
+          return eq_oirmva_a0a0a0a0a0a0a0a0b(SLinkOperations.getTargetNode(ref), classifier) || ListSequence.fromList(SNodeOperations.getNodeAncestors(SLinkOperations.getTargetNode(ref), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false)).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return eq_oirmva_a0a0a0a0a0a0a0a0a0a0a0a0b(it, classifier);
             }
