@@ -26,6 +26,7 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="tpfp" ref="r:00000000-0000-4000-0000-011c89590519(jetbrains.mps.baseLanguage.regexp.jetbrains.mps.regexp.accessory)" />
+    <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
@@ -3214,9 +3215,16 @@
         </node>
         <node concept="2iRfu4" id="4mQiM_caQ5v" role="2iSdaV" />
       </node>
+      <node concept="3F0ifn" id="6ARlneQcnjb" role="3EZMnx">
+        <property role="3F0ifm" value="@Deprecated" />
+        <ref role="1k5W1q" to="tpch:hOawUFH" resolve="AnnotationNode" />
+      </node>
       <node concept="3EZMnI" id="3BkmlDzoTeJ" role="3EZMnx">
         <node concept="3F0ifn" id="3BkmlDzoTeK" role="3EZMnx">
           <property role="3F0ifm" value="vendor logo:" />
+          <node concept="3nxI2P" id="6ARlneQdx2l" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
         </node>
         <node concept="3F0A7n" id="3BkmlDzoTeL" role="3EZMnx">
           <ref role="1NtTu8" to="tp4k:3BkmlDzoyHv" resolve="vendorLogo" />

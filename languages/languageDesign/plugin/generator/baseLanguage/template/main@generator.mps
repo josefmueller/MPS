@@ -13254,45 +13254,6 @@
               </node>
             </node>
           </node>
-          <node concept="2pNUuL" id="1XGsQcRF6F$" role="2pNNFR">
-            <property role="2pNUuO" value="logo" />
-            <node concept="2pMdtt" id="1XGsQcRF6F_" role="2pMdts">
-              <property role="2pMdty" value="logo.png" />
-              <node concept="17Uvod" id="1XGsQcRF6FA" role="lGtFl">
-                <property role="2qtEX9" value="text" />
-                <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
-                <node concept="3zFVjK" id="1XGsQcRF6FB" role="3zH0cK">
-                  <node concept="3clFbS" id="1XGsQcRF6FC" role="2VODD2">
-                    <node concept="3clFbF" id="1XGsQcRF6FD" role="3cqZAp">
-                      <node concept="2OqwBi" id="1XGsQcRF6FZ" role="3clFbG">
-                        <node concept="30H73N" id="1XGsQcRF6FE" role="2Oq$k0" />
-                        <node concept="3TrcHB" id="1XGsQcRF6G5" role="2OqNvi">
-                          <ref role="3TsBF5" to="tp4k:3BkmlDzoyHv" resolve="vendorLogo" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="1W57fq" id="1XGsQcRF6G7" role="lGtFl">
-              <node concept="3IZrLx" id="1XGsQcRF6G8" role="3IZSJc">
-                <node concept="3clFbS" id="1XGsQcRF6G9" role="2VODD2">
-                  <node concept="3clFbF" id="1XGsQcRF6Ga" role="3cqZAp">
-                    <node concept="2OqwBi" id="1XGsQcRF6Gb" role="3clFbG">
-                      <node concept="2OqwBi" id="1XGsQcRF6Gc" role="2Oq$k0">
-                        <node concept="30H73N" id="1XGsQcRF6Gd" role="2Oq$k0" />
-                        <node concept="3TrcHB" id="1XGsQcRF6Ge" role="2OqNvi">
-                          <ref role="3TsBF5" to="tp4k:3BkmlDzoyHv" resolve="vendorLogo" />
-                        </node>
-                      </node>
-                      <node concept="17RvpY" id="1XGsQcRF6Gf" role="2OqNvi" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3o6iSG" id="1XGsQcRF6Gh" role="3o6s8t">
             <property role="3o6i5n" value="Vendor" />
             <node concept="17Uvod" id="1XGsQcRF6Gi" role="lGtFl">

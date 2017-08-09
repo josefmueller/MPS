@@ -615,9 +615,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_IdeaConfigurationXml;
       case LanguageConceptSwitch.IdeaInitializerDescriptor:
         if (props_IdeaInitializerDescriptor == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x45b64b294c2b3514L);
+          cpb.deprecateProperty(0x39d4595a63622b5fL, "vendorLogo");
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a76b0ue);
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a76b0ue);
           props_IdeaInitializerDescriptor = cpb.create();
         }
         return props_IdeaInitializerDescriptor;

@@ -20,7 +20,10 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
         <property id="1197591154882" name="memberIdentifierPolicy" index="3lZH7k" />
@@ -1546,6 +1549,10 @@
       <property role="TrG5h" value="vendorLogo" />
       <property role="IQ2nx" value="4167053799973858143" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="6ARlneQ6rDQ" role="lGtFl">
+        <property role="YLPcu" value="2017.3" />
+        <property role="YLQ7P" value="is not used anymore" />
+      </node>
     </node>
     <node concept="1TJgyi" id="4mQiM_caNkt" role="1TKVEl">
       <property role="TrG5h" value="ideaVersion" />
