@@ -100,7 +100,7 @@
     <mkdir dir="${build.layout}/plugins/workflowDefinition" />
     <mkdir dir="${build.layout}/plugins/workflowDefinition/META-INF" />
     <echoxml file="${build.layout}/plugins/workflowDefinition/META-INF/plugin.xml">
-      <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>workflowDefinition</id>
         <name>workflowDefinition</name>
         <version>1.0</version>

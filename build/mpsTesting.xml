@@ -323,10 +323,6 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-smodelTests-languageModels" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/mps-testing/lib" />
-    <jar destfile="${build.layout}/mps-testing/lib/icons.jar" duplicate="preserve">
-      <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
-    </jar>
-    <mkdir dir="${build.layout}/mps-testing/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mps-testing-languages-languageDesign-test-solutions-jetbrains.mps.lang.test.util-models">
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.util/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>

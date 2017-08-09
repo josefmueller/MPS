@@ -47,10 +47,6 @@
     <copy todir="${build.layout}/diagramEditor/META-INF">
       <fileset file="${mps_home}/plugins/diagramEditor/META-INF/plugin.xml" />
     </copy>
-    <mkdir dir="${build.layout}/diagramEditor/lib" />
-    <jar destfile="${build.layout}/diagramEditor/lib/icons.jar" duplicate="preserve">
-      <fileset file="${basedir}/workbench/mps-icons/source/MPS_16.png" />
-    </jar>
     <mkdir dir="${build.layout}/diagramEditor/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.diagram.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.editor.diagram.jar/META-INF" />

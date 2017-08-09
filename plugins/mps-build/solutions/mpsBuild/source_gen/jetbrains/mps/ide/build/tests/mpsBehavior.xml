@@ -50,7 +50,7 @@
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin" />
     <mkdir dir="${build.layout}/behavior-tests/test.behavior.plugin/META-INF" />
     <echoxml file="${build.layout}/behavior-tests/test.behavior.plugin/META-INF/plugin.xml">
-      <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>test.behavior.plugin</id>
         <name>MPS Test Behavior Plugin</name>
         <description>a plugin to test behavior reflective calls</description>

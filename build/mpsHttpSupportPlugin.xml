@@ -55,10 +55,6 @@
     <mkdir dir="${build.layout}/http-support/languages" />
     <mkdir dir="${build.layout}/http-support/languages/mps-http-support" />
     <mkdir dir="${build.layout}/http-support/lib" />
-    <jar destfile="${build.layout}/http-support/lib/icons.jar" duplicate="preserve">
-      <fileset file="${basedir}/workbench/mps-icons/source/MPS_16.png" />
-    </jar>
-    <mkdir dir="${build.layout}/http-support/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/models">
       <fileset dir="${plugin_home}/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>

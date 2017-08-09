@@ -35,7 +35,7 @@
     <mkdir dir="${build.tmp}/default/notesOrganizer.zip/notesOrganizer" />
     <mkdir dir="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/META-INF" />
     <echoxml file="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/META-INF/plugin.xml">
-      <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
+      <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>notesOrganizer</id>
         <name>notesOrganizer</name>
         <version>1.0</version>

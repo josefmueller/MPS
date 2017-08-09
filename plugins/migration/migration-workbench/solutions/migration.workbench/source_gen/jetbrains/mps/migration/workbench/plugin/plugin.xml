@@ -5,7 +5,7 @@
   <name>foo</name>
   <description>foo</description>
   <version>foo</version>
-  <vendor url="foo" logo="foo">foo</vendor>
+  <vendor url="foo">foo</vendor>
   <idea-version since-build="foo" />
   
   <application-components>

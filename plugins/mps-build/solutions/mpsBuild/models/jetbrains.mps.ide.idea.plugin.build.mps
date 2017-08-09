@@ -2183,8 +2183,8 @@
         </node>
       </node>
       <node concept="3_J27D" id="6NEiZqQxZ2N" role="m$_w8">
-        <node concept="3Mxwew" id="6NEiZqQxZ5z" role="3MwsjC">
-          <property role="3MwjfP" value="2017.2" />
+        <node concept="3Mxwey" id="6$NTNKb0Wop" role="3MwsjC">
+          <ref role="3Mxwex" to="ffeo:5HVSRHdVf2d" resolve="version" />
         </node>
       </node>
     </node>

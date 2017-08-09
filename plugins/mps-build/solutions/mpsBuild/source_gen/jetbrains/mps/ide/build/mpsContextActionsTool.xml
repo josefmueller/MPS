@@ -202,10 +202,6 @@
       <zipfileset file="${mps_home}/plugins/editor.contextActionsTool/modules/runtime/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-editor.contextActionsTool-modules-runtime-models" prefix="module/models" />
     </jar>
-    <mkdir dir="${build.layout}/context-tool/lib" />
-    <jar destfile="${build.layout}/context-tool/lib/icons.jar" duplicate="preserve">
-      <fileset file="${basedir}/workbench/mps-icons/source/MPS_16.png" />
-    </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
