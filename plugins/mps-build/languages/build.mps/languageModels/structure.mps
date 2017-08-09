@@ -16,6 +16,10 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
         <property id="7862711839422615217" name="text" index="t5JxN" />
         <child id="7862711839422615224" name="seeAlso" index="t5JxU" />
@@ -1184,6 +1188,10 @@
       <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="7832771629084799700" />
       <ref role="20lvS9" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+      <node concept="asaX9" id="6ARlnePUobq" role="lGtFl">
+        <property role="YLPcu" value="2017.3" />
+        <property role="YLQ7P" value="is not used anymore" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="5D0zVz80y2D">

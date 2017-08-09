@@ -312,7 +312,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BuildMps_IdeaPluginModule;
       case LanguageConceptSwitch.BuildMps_IdeaPluginVendor:
         if (props_BuildMps_IdeaPluginVendor == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6cb3984bfe5b72d3L);
+          cpb.deprecateAggregation(0x6cb3984bfe5b72d4L, "icon16");
           cpb.rawPresentation("BuildMps_IdeaPluginVendor");
           props_BuildMps_IdeaPluginVendor = cpb.create();
         }

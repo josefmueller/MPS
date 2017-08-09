@@ -16,6 +16,7 @@
     <import index="3ior" ref="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="ot6o" ref="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)" />
+    <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -167,6 +168,7 @@
       <concept id="2162403111523059536" name="jetbrains.mps.lang.editor.structure.IdSelector" flags="ng" index="1lyA5W">
         <property id="2162403111529391190" name="cellId" index="1lUG9U" />
       </concept>
+      <concept id="1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" flags="ln" index="3nxI2P" />
       <concept id="1165420413719" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" flags="ng" index="1ou48o">
         <child id="1165420413721" name="handlerFunction" index="1ou48m" />
         <child id="1165420413720" name="parametersFunction" index="1ou48n" />
@@ -391,6 +393,7 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1240930118027" name="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation" flags="nn" index="3HcIyF">
         <reference id="1240930118028" name="enumDeclaration" index="3HcIyG" />
         <child id="1240930317927" name="operation" index="3Hdvt7" />
@@ -3633,15 +3636,46 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F0ifn" id="6MNA4JYmRbB" role="3EZMnx">
-        <property role="3F0ifm" value="icon16" />
-        <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
-        <node concept="lj46D" id="6MNA4JYmYNM" role="3F10Kt">
-          <property role="VOm3f" value="true" />
+      <node concept="3EZMnI" id="6ARlnePUomh" role="3EZMnx">
+        <node concept="l2Vlx" id="6ARlnePUomi" role="2iSdaV" />
+        <node concept="3F0ifn" id="6ARlnePUolx" role="3EZMnx">
+          <property role="3F0ifm" value="@Deprecated" />
+          <ref role="1k5W1q" to="tpch:hOawUFH" resolve="AnnotationNode" />
+          <node concept="lj46D" id="6ARlnePUolK" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="6ARlnePUolM" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
         </node>
-      </node>
-      <node concept="3F1sOY" id="6MNA4JYmRbE" role="3EZMnx">
-        <ref role="1NtTu8" to="kdzh:6MNA4JYmRbk" resolve="icon16" />
+        <node concept="3F0ifn" id="6MNA4JYmRbB" role="3EZMnx">
+          <property role="3F0ifm" value="icon16" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+          <node concept="lj46D" id="6MNA4JYmYNM" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="3nxI2P" id="6ARlneQegJc" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="6MNA4JYmRbE" role="3EZMnx">
+          <ref role="1NtTu8" to="kdzh:6MNA4JYmRbk" resolve="icon16" />
+        </node>
+        <node concept="pkWqt" id="6ARlnePUone" role="pqm2j">
+          <node concept="3clFbS" id="6ARlnePUonf" role="2VODD2">
+            <node concept="3clFbF" id="6ARlnePUrUq" role="3cqZAp">
+              <node concept="2OqwBi" id="6ARlnePUsQM" role="3clFbG">
+                <node concept="2OqwBi" id="6ARlnePUs6_" role="2Oq$k0">
+                  <node concept="pncrf" id="6ARlnePUrUp" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="6ARlnePUstt" role="2OqNvi">
+                    <ref role="3Tt5mk" to="kdzh:6MNA4JYmRbk" resolve="icon16" />
+                  </node>
+                </node>
+                <node concept="3x8VRR" id="6ARlnePUtis" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
