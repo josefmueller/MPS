@@ -51,21 +51,34 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createConstant_s23fc5_a0());
-    editorCell.addEditorCell(createContextAssistant_s23fc5_b0());
+    editorCell.addEditorCell(createConstant_s23fc5_b0());
+    editorCell.addEditorCell(createContextAssistant_s23fc5_c0());
     return editorCell;
   }
   private EditorCell createConstant_s23fc5_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_s23fc5_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new EmptyLine_EditorBuilder_a.ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
-  public static class ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a0() {
+  private EditorCell createConstant_s23fc5_b0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_s23fc5_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.EDITABLE, true);
+    editorCell.getStyle().putAll(style);
+    EmptyLineDelete.setCellActions(editorCell, myNode, getEditorContext());
+    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new EmptyLine_EditorBuilder_a.ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
+    return editorCell;
+  }
+  public static class ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0b0() {
     }
     public SAbstractConcept getReplacementConcept() {
       return MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc4574aL, "jetbrains.mps.samples.Kaja.structure.AbstractCommand");
@@ -75,9 +88,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       return new EditorMenuDescriptorBase("replace node (custom node concept: " + "AbstractCommand" + ")", new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "3308300503039740462"));
     }
   }
-  private EditorCell createContextAssistant_s23fc5_b0() {
+  private EditorCell createContextAssistant_s23fc5_c0() {
     EditorCell editorCell = new EditorCell_ContextAssistantComponent(getEditorContext(), myNode);
-    editorCell.setCellId("ContextAssistant_s23fc5_b0");
+    editorCell.setCellId("ContextAssistant_s23fc5_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
