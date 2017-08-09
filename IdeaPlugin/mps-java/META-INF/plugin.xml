@@ -14,14 +14,14 @@
   ~ limitations under the License.
   -->
 
-<idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
+<idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.idea.java</id>
   <name>MPS BaseLanguage Support</name>
   <description>Support of the MPS BaseLanguage (JAVA)</description>
   <category>Custom Languages</category>
-  <version>2017.2</version>
+  <version>2017.3</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains MPS</vendor>
-  <idea-version since-build="172.1" until-build="174.1"/>
+  <idea-version since-build="173.1" until-build="174.*"/>
   <depends>jetbrains.mps.core</depends>
 
   <xi:include href="JavaPlatform.xml" xpointer="xpointer(/components/*)"/>
