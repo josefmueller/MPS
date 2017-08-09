@@ -3,9 +3,7 @@
   <id>jetbrains.mps.editor.diagram</id>
   <name>MPS Diagram Editor</name>
   <description>Provides diagram editor to MPS</description>
-  <version>2017.2</version>
-  <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="172.1" until-build="174.1"/>
+  <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
 
   <depends>jetbrains.mps.core</depends>
   <depends>jetbrains.jetpad</depends>
