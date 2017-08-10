@@ -604,6 +604,12 @@
       <directory url="file://$PROJECT_DIR$/samples/theSimplestLanguage/languages/theSimplestLanguage/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/workflowDefinition/solutions/jetbrains.mps.samples.workflowDefinition.build/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/workflowDefinition/solutions/jetbrains.mps.samples.workflowDefinition.build/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/xmlLiterals/languages/xmlLiterals/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/xmlLiterals/languages/xmlLiterals/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/source_gen" includeSubdirectories="true" />
