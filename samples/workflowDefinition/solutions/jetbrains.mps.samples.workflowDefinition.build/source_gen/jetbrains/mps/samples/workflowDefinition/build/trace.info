@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <root nodeRef="r:6e8e9687-dcee-4b08-9c94-2f4f15eb859b(jetbrains.mps.samples.workflowDefinition.build)/5475463536142321047">
+    <file name="workflowDefinition.xml">
+      <unit id="5475463536142321047" at="1,0,393,10" name="jetbrains.mps.samples.workflowDefinition.build.workflowDefinition" />
+    </file>
+  </root>
+  <root nodeRef="r:6e8e9687-dcee-4b08-9c94-2f4f15eb859b(jetbrains.mps.samples.workflowDefinition.build)/5475463536142321176">
+    <file name="workflowDefinitionDistribution.xml">
+      <unit id="5475463536142321176" at="1,0,132,10" name="jetbrains.mps.samples.workflowDefinition.build.workflowDefinitionDistribution" />
+    </file>
+  </root>
+</debug-info>
+

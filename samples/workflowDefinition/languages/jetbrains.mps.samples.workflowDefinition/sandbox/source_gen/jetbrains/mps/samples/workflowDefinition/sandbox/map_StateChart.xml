@@ -1,0 +1,31 @@
+<scxml version="1.0" datamodel="javascript" initial="Off">
+  
+  <state id="Off">
+    
+    <transition event="Turn on" target="On"></transition>
+  </state>
+  <state id="On">
+    
+    <transition event="Turn off" target="Off"></transition>
+    <transition event="Error occured" target="Failure"></transition>
+    <transition event="Print job arrived" target="Printing"></transition>
+  </state>
+  <state id="Failure">
+    
+    <transition event="Turn off" target="Off"></transition>
+  </state>
+  <state id="Printing" initial="Functional">
+    
+    <transition event="Print job arrived" target="Printing"></transition>
+    <transition event="Print queue empty" target="On"></transition>
+    <transition event="Error occured" target="Failure"></transition>
+    <state id="Functional">
+      
+      <transition event="No paper" target="Out of paper"></transition>
+    </state>
+    <state id="Out of paper">
+      
+      <transition event="Paper supplied" target="Functional"></transition>
+    </state>
+  </state>
+</scxml>

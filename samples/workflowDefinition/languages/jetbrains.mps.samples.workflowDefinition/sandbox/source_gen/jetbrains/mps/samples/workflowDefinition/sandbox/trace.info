@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <root nodeRef="r:b3762715-7013-4401-b0ce-cbf634eef7d2(jetbrains.mps.samples.workflowDefinition.sandbox)/6216326891663389652">
+    <file name="map_StateChart.xml">
+      <unit id="6216326891663389652" at="1,0,31,8" name="jetbrains.mps.samples.workflowDefinition.sandbox.map_StateChart" />
+    </file>
+  </root>
+</debug-info>
+
