@@ -20,76 +20,62 @@ import java.io.InputStream;
 import java.util.Arrays;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
+import java.io.ByteArrayOutputStream;
 
 public class FileProcessor {
   private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
-  private final List<FileProcessor.FileAndContent> myFilesAndContents = new ArrayList<FileProcessor.FileAndContent>();
+  private final List<FileProcessor.FileContent> myFilesAndContents = new ArrayList<FileProcessor.FileContent>();
   private final List<IFile> myFilesToDelete = new ArrayList<IFile>();
 
   public FileProcessor() {
     // XXX perhaps, could make use of IMessageHandler supplied by facet to replace LOG handling IO errors? 
   }
   public boolean saveContent(IFile file, String content) {
-    return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.StringFileContent(content)));
+    return saveContent(new FileProcessor.StringFileContent(file, content));
   }
   public boolean saveContent(IFile file, Element content) {
-    return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.XMLFileContent(content)));
+    return saveContent(new FileProcessor.XMLFileContent(file, content));
   }
   public boolean saveContent(IFile file, byte[] content) {
-    return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.BinaryFileContent(content)));
+    return saveContent(new FileProcessor.BinaryFileContent(file, content));
   }
-  private boolean saveContent(FileProcessor.FileAndContent fileAndContent) {
-    myFilesAndContents.add(fileAndContent);
-    return !(fileAndContent.myContent.isUnchanged(fileAndContent.myFile));
+  private boolean saveContent(FileProcessor.FileContent fileContent) {
+    if (fileContent.isChanged()) {
+      myFilesAndContents.add(fileContent);
+      return true;
+    }
+    return false;
   }
   public void filesToDelete(Collection<IFile> files) {
     myFilesToDelete.addAll(files);
   }
   public void flushChanges() {
-    for (FileProcessor.FileAndContent fileAndContent : myFilesAndContents) {
-      fileAndContent.save();
+    for (FileProcessor.FileContent fileContent : myFilesAndContents) {
+      fileContent.saveToFile();
     }
     for (IFile file : myFilesToDelete) {
       file.delete();
     }
   }
-  /*package*/ int calcApproximateSize() {
-    int size = 0;
-    for (FileProcessor.FileAndContent fileAndContent : myFilesAndContents) {
-      size += fileAndContent.myContent.calcApproximateSize();
-    }
-    return size;
+
+  private interface FileContent {
+    boolean isChanged();
+    void saveToFile();
   }
-  private static class FileAndContent {
-    private IFile myFile;
-    private FileProcessor.FileContent myContent;
-    private FileAndContent(IFile file, FileProcessor.FileContent content) {
+
+  private static class StringFileContent implements FileProcessor.FileContent {
+    private final IFile myFile;
+    private final String myContent;
+
+    private StringFileContent(IFile file, String content) {
       myFile = file;
       myContent = content;
     }
-    private void save() {
-      myContent.saveToFile(myFile);
-    }
     @Override
-    public String toString() {
-      return myFile.toString();
-    }
-  }
-  private interface FileContent {
-    boolean isUnchanged(IFile file);
-    void saveToFile(IFile file);
-    int calcApproximateSize();
-  }
-  private static class StringFileContent implements FileProcessor.FileContent {
-    private String myContent;
-    private StringFileContent(String content) {
-      myContent = content;
-    }
-    @Override
-    public void saveToFile(IFile file) {
+    public void saveToFile() {
       OutputStreamWriter writer = null;
       try {
-        writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), FileUtil.DEFAULT_CHARSET);
+        writer = new OutputStreamWriter(new BufferedOutputStream(myFile.openOutputStream()), FileUtil.DEFAULT_CHARSET);
         writer.write(myContent);
       } catch (IOException e) {
         FileProcessor.LOG.error((e.getMessage() == null ? e.getClass().getName() : e.getMessage()), e);
@@ -103,46 +89,46 @@ public class FileProcessor {
       }
     }
     @Override
-    public boolean isUnchanged(IFile file) {
-      if (!(file.exists())) {
-        return false;
+    public boolean isChanged() {
+      if (!(myFile.exists())) {
+        return true;
       }
       BufferedReader reader = null;
       StringBuilder res = new StringBuilder();
+      // FIXME doesn't look effective to read whole file, reconstruct strings and newlines, just to do String.equals() 
       try {
-        reader = new BufferedReader(new InputStreamReader(file.openInputStream(), FileUtil.DEFAULT_CHARSET));
+        reader = new BufferedReader(new InputStreamReader(myFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
         String line;
         while ((line = reader.readLine()) != null) {
           res.append(line).append('\n');
         }
-        return res.toString().equals(myContent);
+        return !(res.toString().equals(myContent));
       } catch (IOException ex) {
-        return false;
+        return true;
       } finally {
         try {
           if (reader != null) {
             reader.close();
           }
         } catch (IOException ex) {
-          return false;
+          return true;
         }
       }
     }
-    @Override
-    public int calcApproximateSize() {
-      return myContent.getBytes().length;
-    }
   }
   private static class BinaryFileContent implements FileProcessor.FileContent {
+    private final IFile myFile;
     private byte[] myContent;
-    private BinaryFileContent(byte[] content) {
+
+    private BinaryFileContent(IFile file, byte[] content) {
+      myFile = file;
       myContent = content;
     }
     @Override
-    public void saveToFile(IFile file) {
+    public void saveToFile() {
       OutputStream stream = null;
       try {
-        stream = file.openOutputStream();
+        stream = myFile.openOutputStream();
         stream.write(myContent);
       } catch (IOException e) {
         FileProcessor.LOG.error((e.getMessage() == null ? e.getClass().getName() : e.getMessage()), e);
@@ -155,44 +141,44 @@ public class FileProcessor {
         }
       }
     }
+
     @Override
-    public boolean isUnchanged(IFile file) {
-      if (!(file.exists())) {
-        return false;
+    public boolean isChanged() {
+      if (!(myFile.exists())) {
+        return true;
       }
-      long len = file.length();
+      long len = myFile.length();
       if (len != myContent.length) {
-        return false;
+        return true;
       }
 
       byte[] res = new byte[myContent.length];
       InputStream stream = null;
       try {
-        stream = file.openInputStream();
+        stream = myFile.openInputStream();
         if (stream.read(res) != len) {
-          return false;
+          return true;
         }
-        return Arrays.equals(res, myContent);
+        return !(Arrays.equals(res, myContent));
       } catch (IOException ex) {
-        return false;
+        return true;
       } finally {
         if (stream != null) {
           try {
             stream.close();
           } catch (IOException ex) {
-            return false;
+            return true;
           }
         }
       }
     }
-    @Override
-    public int calcApproximateSize() {
-      return myContent.length;
-    }
   }
   private static class XMLFileContent implements FileProcessor.FileContent {
+    private final IFile myFile;
     private final Document myDocument;
-    private XMLFileContent(Element element) {
+
+    private XMLFileContent(IFile file, Element element) {
+      myFile = file;
       // if element is right under a document, use this document, otherwise create a new one 
       if (element.getDocument() != null) {
         assert element.isRootElement() : "Need a document to serialize an xml element; could not save if element is already inside a document";
@@ -202,25 +188,23 @@ public class FileProcessor {
       }
     }
     @Override
-    public void saveToFile(IFile file) {
+    public void saveToFile() {
       try {
-        JDOMUtil.writeDocument(myDocument, file);
+        JDOMUtil.writeDocument(myDocument, myFile);
       } catch (IOException e) {
         FileProcessor.LOG.error((e.getMessage() == null ? e.getClass().getName() : e.getMessage()), e);
       }
     }
 
     @Override
-    public int calcApproximateSize() {
+    public boolean isChanged() {
       try {
-        return JDOMUtil.printDocument(myDocument).length;
-      } catch (Exception e) {
-        throw new RuntimeException(e);
+        ByteArrayOutputStream bos = new ByteArrayOutputStream(1 << 13);
+        JDOMUtil.writeDocument(myDocument, bos);
+        return new FileProcessor.BinaryFileContent(myFile, bos.toByteArray()).isChanged();
+      } catch (IOException ex) {
+        return true;
       }
-    }
-    @Override
-    public boolean isUnchanged(IFile file) {
-      return false;
     }
   }
 }
