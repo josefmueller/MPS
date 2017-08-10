@@ -158,7 +158,9 @@ public class IntentionsSupport {
           final boolean[] forceReturn = {false};
           try {
             SwingUtilities.invokeAndWait(() -> {
-              forceReturn[0] = isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor);
+              myEditor.getRepository().getModelAccess().runReadAction(()->{
+                forceReturn[0] = isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor);
+              });
             });
           } catch (InterruptedException | InvocationTargetException e) {
             return;
