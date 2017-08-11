@@ -110,11 +110,8 @@
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
         <reference id="1147467295099" name="applicableProperty" index="EomxK" />
-        <child id="1147468630220" name="propertyGetter" index="EtsB7" />
         <child id="1212097481299" name="propertyValidator" index="QCWH9" />
       </concept>
-      <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
-      <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
@@ -164,9 +161,6 @@
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
-      </concept>
-      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
-        <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
@@ -468,26 +462,6 @@
         </node>
       </node>
     </node>
-    <node concept="EnEH3" id="19VU1QTaiHU" role="1MhHOB">
-      <ref role="EomxK" to="tpck:gOOYy9I" resolve="alias" />
-      <node concept="Eqf_E" id="19VU1QTaiHV" role="EtsB7">
-        <node concept="3clFbS" id="19VU1QTaiHW" role="2VODD2">
-          <node concept="3clFbF" id="19VU1QTaiQN" role="3cqZAp">
-            <node concept="2OqwBi" id="19VU1QTaiQU" role="3clFbG">
-              <node concept="2OqwBi" id="19VU1QTaiQP" role="2Oq$k0">
-                <node concept="EsrRn" id="19VU1QTaiQO" role="2Oq$k0" />
-                <node concept="3TrEf2" id="19VU1QTaiQT" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp2q:19VU1QT9_mO" resolve="containerDeclaration" />
-                </node>
-              </node>
-              <node concept="3TrcHB" id="19VU1QTaiQY" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </node>
   <node concept="1M2fIO" id="1ny5gPbZSEW">
     <property role="3GE5qa" value="mapType" />
@@ -571,26 +545,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="EnEH3" id="1ny5gPbZSEX" role="1MhHOB">
-      <ref role="EomxK" to="tpck:gOOYy9I" resolve="alias" />
-      <node concept="Eqf_E" id="1ny5gPbZSEY" role="EtsB7">
-        <node concept="3clFbS" id="1ny5gPbZSEZ" role="2VODD2">
-          <node concept="3clFbF" id="1ny5gPbZSF0" role="3cqZAp">
-            <node concept="2OqwBi" id="1ny5gPbZSF1" role="3clFbG">
-              <node concept="2OqwBi" id="1ny5gPbZSF2" role="2Oq$k0">
-                <node concept="EsrRn" id="1ny5gPbZSF3" role="2Oq$k0" />
-                <node concept="3TrEf2" id="1ny5gPbZSF6" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp2q:1ny5gPbZSDE" resolve="containerDeclaration" />
-                </node>
-              </node>
-              <node concept="3TrcHB" id="1ny5gPbZSF7" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
               </node>
             </node>
           </node>
