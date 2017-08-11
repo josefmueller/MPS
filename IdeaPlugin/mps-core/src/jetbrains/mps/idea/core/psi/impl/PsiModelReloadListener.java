@@ -21,144 +21,74 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelListener;
+import org.jetbrains.mps.openapi.model.SModelListenerBase;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleListener;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SModuleListenerBase;
 
 /**
  * Created by danilla on 12/23/14.
  */
-public class PsiModelReloadListener extends AbstractProjectComponent implements SModelListener, SModuleListener {
-  private MPSPsiProvider myPsiProvider;
+public class PsiModelReloadListener extends AbstractProjectComponent {
+  private final MPSPsiProvider myPsiProvider;
+
+  private final SModuleListener myModuleListener = new SModuleListenerBase() {
+    @Override
+    public void modelAdded(SModule sModule, final SModel sModel) {
+      packRunnable(new Runnable() {
+        @Override
+        public void run() {
+          MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
+          if (psiModel == null) {
+            return;
+          }
+          myPsiProvider.notifyPsiChanged(psiModel, null);
+        }
+      });
+    }
+
+    @Override
+    public void modelRemoved(SModule module, SModelReference modelRef) {
+      packRunnable(() -> myPsiProvider.notifyModelRemoved(modelRef));
+    }
+
+    @Override
+    public void modelRenamed(SModule sModule, final SModel sModel, final SModelReference sModelReference) {
+      packRunnable(() -> myPsiProvider.notifyModelRenamed(sModelReference, sModel));
+    }
+  };
+
+  private final SModelListener myModelListener = new SModelListenerBase() {
+    @Override
+    public void modelReplaced(final SModel sModel) {
+      packRunnable(new Runnable() {
+        @Override
+        public void run() {
+          MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
+          if (psiModel == null) {
+            return;
+          }
+          psiModel.reloadAll();
+          myPsiProvider.notifyPsiChanged(psiModel, null);
+        }
+      });
+    }
+  };
 
   protected PsiModelReloadListener(Project project) {
     super(project);
     myPsiProvider = MPSPsiProvider.getInstance(myProject);
   }
 
-  @Override
-  public void modelLoaded(SModel sModel, boolean b) {
+  public SModelListener getModelListener() {
+    return myModelListener;
   }
 
-  @Override
-  public void modelReplaced(final SModel sModel) {
-    packRunnable(new Runnable() {
-      @Override
-      public void run() {
-        MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
-        if (psiModel == null) {
-          return;
-        }
-        psiModel.reloadAll();
-        myPsiProvider.notifyPsiChanged(psiModel, null);
-      }
-    });
-  }
-
-  @Override
-  public void modelUnloaded(SModel sModel) {
-
-  }
-
-  @Override
-  public void modelSaved(SModel sModel) {
-
-  }
-
-  @Override
-  public void conflictDetected(SModel sModel) {
-
-  }
-
-  @Override
-  public void problemsDetected(SModel sModel, Iterable<Problem> iterable) {
-  }
-
-  @Override
-  public void modelAttached(SModel model, SRepository repository) {
-  }
-
-  public void modelDetached(SModel model, SRepository repository) {
-  }
-
-
-  // module listener
-
-
-  @Override
-  public void modelAdded(SModule sModule, final SModel sModel) {
-    packRunnable(new Runnable() {
-      @Override
-      public void run() {
-        MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
-        if (psiModel == null) {
-          return;
-        }
-        myPsiProvider.notifyPsiChanged(psiModel, null);
-      }
-    });
-  }
-
-  @Override
-  public void beforeModelRemoved(SModule sModule, SModel sModel) {
-
-  }
-
-  @Override
-  public void modelRemoved(SModule sModule, SModelReference sModelReference) {
-
-  }
-
-  @Override
-  public void beforeModelRenamed(SModule sModule, SModel sModel, SModelReference sModelReference) {
-
-  }
-
-  @Override
-  public void modelRenamed(SModule sModule, final SModel sModel, final SModelReference sModelReference) {
-    packRunnable(new Runnable() {
-      @Override
-      public void run() {
-        MPSPsiModel psiModel = myPsiProvider.getPsi(sModel);
-        if (psiModel == null) {
-          return;
-        }
-        String oldName = sModelReference.getModelName();
-        String newName = sModel.getModelName();
-        myPsiProvider.notifyModelRenamed(psiModel, oldName, newName);
-      }
-    });
-  }
-
-  @Override
-  public void dependencyAdded(SModule sModule, SDependency sDependency) {
-
-  }
-
-  @Override
-  public void dependencyRemoved(SModule sModule, SDependency sDependency) {
-
-  }
-
-  @Override
-  public void languageAdded(SModule sModule, SLanguage sLanguage) {
-
-  }
-
-  @Override
-  public void languageRemoved(SModule sModule, SLanguage sLanguage) {
-
-  }
-
-  @Override
-  public void moduleChanged(SModule sModule) {
-
+  public SModuleListener getModuleListener() {
+    return myModuleListener;
   }
 
   private void packRunnable(final Runnable runnable) {
@@ -175,7 +105,10 @@ public class PsiModelReloadListener extends AbstractProjectComponent implements 
         app.runWriteAction(new Runnable() {
           @Override
           public void run() {
-            ProjectHelper.getModelAccess(myProject).runReadAction(runnable);
+            // need to check since we're run asynchronously
+            if (!myProject.isDisposed()) {
+              ProjectHelper.getModelAccess(myProject).runReadAction(runnable);
+            }
           }
         });
       }
