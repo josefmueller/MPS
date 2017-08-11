@@ -150,8 +150,6 @@ public class TreeIteratorTest {
   private static SNode newNode(String name) {
     jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(MetaAdapterFactory.getConcept(0, 0, 0, "Mock"));
     node.setProperty(SNodeUtil.property_INamedConcept_name, name);
-    // SNode.toString doesn't like SNode when there's no complete MPS - can't get node's concept. Alias helps to make it feel better.
-    node.setProperty(SNodeUtil.property_BaseConcept_alias, name);
     return node;
   }
 

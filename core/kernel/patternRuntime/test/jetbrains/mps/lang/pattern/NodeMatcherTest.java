@@ -55,7 +55,7 @@ public class NodeMatcherTest {
     final SNode patternChild = newNode(ourConcept1);
     patternNode.addChild(ourC1Child1, patternChild);
     final SProperty p1 = SNodeUtil.property_INamedConcept_name;
-    final SProperty p2 = SNodeUtil.property_BaseConcept_alias;
+    final SProperty p2 = SNodeUtil.property_BaseConcept_virtualPackage;
 
     final SNode actualNode = newNode(ourConcept1);
     actualNode.addChild(ourC1Child1, newNode(ourConcept1));

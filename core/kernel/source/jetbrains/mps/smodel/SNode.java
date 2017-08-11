@@ -90,7 +90,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public boolean isInstanceOfConcept(@NotNull SAbstractConcept c) {
     return getConcept().isSubConceptOf(c);
   }
-  
+
   @Override
   public void insertChildAfter(@NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
       @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
@@ -220,7 +220,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public String toString() {
     String s = null;
     try {
-      s = findProperty(SNodeUtil.property_BaseConcept_alias);
+      s = findProperty(SNodeUtil.property_INamedConcept_name);
       if (s == null) {
         s = getPresentation();
       }
