@@ -181,7 +181,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   @Override
   public void setState(final @NotNull FileEditorState state) {
-    if (myNodeEditor == null) {
+    if (myNodeEditor == null || !(state instanceof MPSEditorStateWrapper)) {
       return;
     }
     final MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
