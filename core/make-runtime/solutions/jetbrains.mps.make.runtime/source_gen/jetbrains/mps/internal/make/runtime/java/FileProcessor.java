@@ -7,20 +7,15 @@ import org.apache.log4j.LogManager;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.IFile;
-import org.jdom.Element;
-import java.util.Collection;
-import java.io.OutputStreamWriter;
-import java.io.BufferedOutputStream;
 import jetbrains.mps.util.FileUtil;
+import org.jdom.Element;
+import org.jdom.Document;
+import java.io.ByteArrayOutputStream;
+import jetbrains.mps.util.JDOMUtil;
 import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.Collection;
 import java.io.OutputStream;
 import java.io.InputStream;
-import java.util.Arrays;
-import org.jdom.Document;
-import jetbrains.mps.util.JDOMUtil;
-import java.io.ByteArrayOutputStream;
 
 public class FileProcessor {
   private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
@@ -30,16 +25,37 @@ public class FileProcessor {
   public FileProcessor() {
     // XXX perhaps, could make use of IMessageHandler supplied by facet to replace LOG handling IO errors? 
   }
+
   public boolean saveContent(IFile file, String content) {
-    return saveContent(new FileProcessor.StringFileContent(file, content));
+    return saveContent(new FileProcessor.FileContent(file, content.getBytes(FileUtil.DEFAULT_CHARSET)));
   }
+
   public boolean saveContent(IFile file, Element content) {
-    return saveContent(new FileProcessor.XMLFileContent(file, content));
+    Document document;
+    if (content.getDocument() != null) {
+      assert content.isRootElement() : "Need a document to serialize an xml element; could not save if element is already inside a document";
+      document = content.getDocument();
+    } else {
+      document = new Document(content);
+    }
+    ByteArrayOutputStream bos = new ByteArrayOutputStream(1 << 13);
+    try {
+      JDOMUtil.writeDocument(document, bos);
+    } catch (IOException ex) {
+      // FIXME what could we do here? Log into IMessageHandler, once it's here, at least 
+    }
+    return saveContent(new FileProcessor.FileContent(file, bos.toByteArray()));
   }
+
   public boolean saveContent(IFile file, byte[] content) {
-    return saveContent(new FileProcessor.BinaryFileContent(file, content));
+    return saveContent(new FileProcessor.FileContent(file, content));
   }
+
   private boolean saveContent(FileProcessor.FileContent fileContent) {
+    // XXX though it seems more honest to collect all fileContent 
+    //     and make decision whether isChanged right before the write operation 
+    //     I need to tell written/touch at this moment, therefore isChanged is here 
+    //     and no reason to keep the data we aren't going to write anyway 
     if (fileContent.isChanged()) {
       myFilesAndContents.add(fileContent);
       return true;
@@ -58,73 +74,15 @@ public class FileProcessor {
     }
   }
 
-  private interface FileContent {
-    boolean isChanged();
-    void saveToFile();
-  }
-
-  private static class StringFileContent implements FileProcessor.FileContent {
+  private static class FileContent {
     private final IFile myFile;
-    private final String myContent;
+    private final byte[] myContent;
 
-    private StringFileContent(IFile file, String content) {
+    private FileContent(IFile file, byte[] content) {
       myFile = file;
       myContent = content;
     }
-    @Override
-    public void saveToFile() {
-      OutputStreamWriter writer = null;
-      try {
-        writer = new OutputStreamWriter(new BufferedOutputStream(myFile.openOutputStream()), FileUtil.DEFAULT_CHARSET);
-        writer.write(myContent);
-      } catch (IOException e) {
-        FileProcessor.LOG.error((e.getMessage() == null ? e.getClass().getName() : e.getMessage()), e);
-      } finally {
-        if (writer != null) {
-          try {
-            writer.close();
-          } catch (IOException ignored) {
-          }
-        }
-      }
-    }
-    @Override
-    public boolean isChanged() {
-      if (!(myFile.exists())) {
-        return true;
-      }
-      BufferedReader reader = null;
-      StringBuilder res = new StringBuilder();
-      // FIXME doesn't look effective to read whole file, reconstruct strings and newlines, just to do String.equals() 
-      try {
-        reader = new BufferedReader(new InputStreamReader(myFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
-        String line;
-        while ((line = reader.readLine()) != null) {
-          res.append(line).append('\n');
-        }
-        return !(res.toString().equals(myContent));
-      } catch (IOException ex) {
-        return true;
-      } finally {
-        try {
-          if (reader != null) {
-            reader.close();
-          }
-        } catch (IOException ex) {
-          return true;
-        }
-      }
-    }
-  }
-  private static class BinaryFileContent implements FileProcessor.FileContent {
-    private final IFile myFile;
-    private byte[] myContent;
 
-    private BinaryFileContent(IFile file, byte[] content) {
-      myFile = file;
-      myContent = content;
-    }
-    @Override
     public void saveToFile() {
       OutputStream stream = null;
       try {
@@ -142,7 +100,6 @@ public class FileProcessor {
       }
     }
 
-    @Override
     public boolean isChanged() {
       if (!(myFile.exists())) {
         return true;
@@ -152,14 +109,20 @@ public class FileProcessor {
         return true;
       }
 
-      byte[] res = new byte[myContent.length];
+      byte[] res = new byte[Math.min(1 << 13, myContent.length)];
       InputStream stream = null;
       try {
         stream = myFile.openInputStream();
-        if (stream.read(res) != len) {
-          return true;
+        int bytesRead = 0;
+        int index = 0;
+        while ((bytesRead = stream.read(res)) != -1) {
+          for (int i = 0; i < bytesRead; i++) {
+            if (myContent[index++] != res[i]) {
+              return true;
+            }
+          }
         }
-        return !(Arrays.equals(res, myContent));
+        return false;
       } catch (IOException ex) {
         return true;
       } finally {
@@ -170,40 +133,6 @@ public class FileProcessor {
             return true;
           }
         }
-      }
-    }
-  }
-  private static class XMLFileContent implements FileProcessor.FileContent {
-    private final IFile myFile;
-    private final Document myDocument;
-
-    private XMLFileContent(IFile file, Element element) {
-      myFile = file;
-      // if element is right under a document, use this document, otherwise create a new one 
-      if (element.getDocument() != null) {
-        assert element.isRootElement() : "Need a document to serialize an xml element; could not save if element is already inside a document";
-        myDocument = element.getDocument();
-      } else {
-        myDocument = new Document(element);
-      }
-    }
-    @Override
-    public void saveToFile() {
-      try {
-        JDOMUtil.writeDocument(myDocument, myFile);
-      } catch (IOException e) {
-        FileProcessor.LOG.error((e.getMessage() == null ? e.getClass().getName() : e.getMessage()), e);
-      }
-    }
-
-    @Override
-    public boolean isChanged() {
-      try {
-        ByteArrayOutputStream bos = new ByteArrayOutputStream(1 << 13);
-        JDOMUtil.writeDocument(myDocument, bos);
-        return new FileProcessor.BinaryFileContent(myFile, bos.toByteArray()).isChanged();
-      } catch (IOException ex) {
-        return true;
       }
     }
   }
