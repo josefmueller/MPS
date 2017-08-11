@@ -85,23 +85,19 @@ public class DefaultRefactoringUI implements RefactoringUI {
   public void showRefactoringView(final Runnable performRefactoringTask, String refactoringName, SearchResults searchResults, final SearchTask rerunTask, RefactoringSession refactoringSession) {
     final UsagesModelTracker usagesModelTracker = new UsagesModelTracker(myRepository);
     RefactoringAccessEx.getInstance().showRefactoringView(myProject, new RefactoringViewAction() {
-      public void performAction(final RefactoringViewItem refactoringViewItem) {
-        myRepository.getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            if (usagesModelTracker.isChanged()) {
-              Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
-            } else {
-              try {
-                performRefactoringTask.run();
-              } catch (RuntimeException exception) {
-                if (LOG.isEnabledFor(Level.ERROR)) {
-                  LOG.error("Exception during refactoring: ", exception);
-                }
-              }
-              refactoringViewItem.close();
+      public void performAction(RefactoringViewItem refactoringViewItem) {
+        if (usagesModelTracker.isChanged()) {
+          Messages.showMessageDialog(myProject, "Cannot perform refactoring operation.\nThere were changes in code after usages have been found.\nPlease perform usage search again.", "Changes Detected", Messages.getErrorIcon());
+        } else {
+          try {
+            performRefactoringTask.run();
+          } catch (RuntimeException exception) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("Exception during refactoring: ", exception);
             }
           }
-        });
+          refactoringViewItem.close();
+        }
       }
     }, new Runnable() {
       public void run() {
