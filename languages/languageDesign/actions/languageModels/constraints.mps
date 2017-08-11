@@ -31,9 +31,6 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
-        <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
@@ -57,7 +54,6 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -90,12 +86,6 @@
       <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
-      <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
-        <reference id="1147467295099" name="applicableProperty" index="EomxK" />
-        <child id="1147468630220" name="propertyGetter" index="EtsB7" />
-      </concept>
-      <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
-      <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1227084988347" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" flags="in" index="2NXJUA" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
       <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
@@ -105,7 +95,6 @@
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
         <child id="1227085062429" name="canBeRoot" index="2NY200" />
-        <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
       </concept>
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
@@ -137,9 +126,6 @@
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
-      </concept>
-      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
-        <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
@@ -175,89 +161,6 @@
       <ref role="1N5Vy1" to="tpdg:hwH8uQe" resolve="rightTransformVariableDeclaration" />
       <node concept="1dDu$B" id="6T2BklghKjb" role="1N6uqs">
         <ref role="1dDu$A" to="tpdg:hwH6Al_" resolve="SideTransformVariableDeclaration" />
-      </node>
-    </node>
-  </node>
-  <node concept="1M2fIO" id="hDMFMzm">
-    <ref role="1M2myG" to="tpdg:gR7Wvgx" resolve="NodeFactory" />
-    <node concept="EnEH3" id="hDMFMzn" role="1MhHOB">
-      <ref role="EomxK" to="tpck:gOOYy9I" resolve="alias" />
-      <node concept="Eqf_E" id="hDMFMzo" role="EtsB7">
-        <node concept="3clFbS" id="hDMFMzp" role="2VODD2">
-          <node concept="3clFbF" id="hDMFMzq" role="3cqZAp">
-            <node concept="3cpWs3" id="hDMFMzr" role="3clFbG">
-              <node concept="2OqwBi" id="hDMFMzs" role="3uHU7w">
-                <node concept="EsrRn" id="hDMFMzt" role="2Oq$k0" />
-                <node concept="3TrEf2" id="hDMFMzu" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpdg:gR7XksO" resolve="applicableConcept" />
-                </node>
-              </node>
-              <node concept="Xl_RD" id="hDMFMzv" role="3uHU7B">
-                <property role="Xl_RC" value="factory for " />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1N5Pfh" id="hDMFMzw" role="1Mr941">
-      <ref role="1N5Vy1" to="tpdg:gR7XksO" resolve="applicableConcept" />
-      <node concept="3dgokm" id="5Vvmn_QkMEk" role="1N6uqs">
-        <node concept="3clFbS" id="5Vvmn_QkMEl" role="2VODD2">
-          <node concept="3SKdUt" id="5Vvmn_QkMEm" role="3cqZAp">
-            <node concept="3SKdUq" id="5Vvmn_QkMEn" role="3SKWNk">
-              <property role="3SKdUp" value="concepts from this language" />
-            </node>
-          </node>
-          <node concept="3cpWs8" id="5Vvmn_QkMEo" role="3cqZAp">
-            <node concept="3cpWsn" id="5Vvmn_QkMEp" role="3cpWs9">
-              <property role="TrG5h" value="language" />
-              <node concept="3uibUv" id="5Vvmn_QkMEq" role="1tU5fm">
-                <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-              </node>
-              <node concept="2YIFZM" id="5Vvmn_QkMEr" role="33vP2m">
-                <ref role="1Pybhc" to="w1kc:~Language" resolve="Language" />
-                <ref role="37wK5l" to="w1kc:~Language.getLanguageForLanguageAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.Language" resolve="getLanguageForLanguageAspect" />
-                <node concept="2JrnkZ" id="5Vvmn_QkMEs" role="37wK5m">
-                  <node concept="2OqwBi" id="5Vvmn_QkMEC" role="2JrQYb">
-                    <node concept="2rP1CM" id="5Vvmn_QkMED" role="2Oq$k0" />
-                    <node concept="I4A8Y" id="5Vvmn_QkMEE" role="2OqNvi" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3cpWs8" id="5Vvmn_QkMEu" role="3cqZAp">
-            <node concept="3cpWsn" id="5Vvmn_QkMEv" role="3cpWs9">
-              <property role="TrG5h" value="structureModel" />
-              <node concept="2OqwBi" id="5Vvmn_QkMEw" role="33vP2m">
-                <node concept="37vLTw" id="5Vvmn_QkMEx" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5Vvmn_QkMEp" resolve="language" />
-                </node>
-                <node concept="liA8E" id="5Vvmn_QkMEy" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~Language.getStructureModelDescriptor():org.jetbrains.mps.openapi.model.SModel" resolve="getStructureModelDescriptor" />
-                </node>
-              </node>
-              <node concept="H_c77" id="5Vvmn_QkMEz" role="1tU5fm" />
-            </node>
-          </node>
-          <node concept="3cpWs6" id="5Vvmn_QkME$" role="3cqZAp">
-            <node concept="2ShNRf" id="5Vvmn_QkMKz" role="3cqZAk">
-              <node concept="1pGfFk" id="5Vvmn_QkMK$" role="2ShVmc">
-                <ref role="37wK5l" to="inbo:7ipADkTfnIY" resolve="ISearchScope.Adapter" />
-                <node concept="2ShNRf" id="5Vvmn_QkMK_" role="37wK5m">
-                  <node concept="1pGfFk" id="5Vvmn_QkMKA" role="2ShVmc">
-                    <ref role="37wK5l" to="inbo:41J4moeYz_G" resolve="ModelNodesSearchScope" />
-                    <node concept="37vLTw" id="5Vvmn_QkMKB" role="37wK5m">
-                      <ref role="3cqZAo" node="5Vvmn_QkMEv" resolve="structureModel" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="5B0Pf" id="5Vvmn_QkMKC" role="lGtFl" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>
@@ -477,6 +380,69 @@
               <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
               <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
               <node concept="1Q6Npb" id="1KFbmnBQDtW" role="37wK5m" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="hDMFMzm">
+    <ref role="1M2myG" to="tpdg:gR7Wvgx" resolve="NodeFactory" />
+    <node concept="1N5Pfh" id="hDMFMzw" role="1Mr941">
+      <ref role="1N5Vy1" to="tpdg:gR7XksO" resolve="applicableConcept" />
+      <node concept="3dgokm" id="5Vvmn_QkMEk" role="1N6uqs">
+        <node concept="3clFbS" id="5Vvmn_QkMEl" role="2VODD2">
+          <node concept="3SKdUt" id="5Vvmn_QkMEm" role="3cqZAp">
+            <node concept="3SKdUq" id="5Vvmn_QkMEn" role="3SKWNk">
+              <property role="3SKdUp" value="concepts from this language" />
+            </node>
+          </node>
+          <node concept="3cpWs8" id="5Vvmn_QkMEo" role="3cqZAp">
+            <node concept="3cpWsn" id="5Vvmn_QkMEp" role="3cpWs9">
+              <property role="TrG5h" value="language" />
+              <node concept="3uibUv" id="5Vvmn_QkMEq" role="1tU5fm">
+                <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+              </node>
+              <node concept="2YIFZM" id="5Vvmn_QkMEr" role="33vP2m">
+                <ref role="1Pybhc" to="w1kc:~Language" resolve="Language" />
+                <ref role="37wK5l" to="w1kc:~Language.getLanguageForLanguageAspect(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.Language" resolve="getLanguageForLanguageAspect" />
+                <node concept="2JrnkZ" id="5Vvmn_QkMEs" role="37wK5m">
+                  <node concept="2OqwBi" id="5Vvmn_QkMEC" role="2JrQYb">
+                    <node concept="2rP1CM" id="5Vvmn_QkMED" role="2Oq$k0" />
+                    <node concept="I4A8Y" id="5Vvmn_QkMEE" role="2OqNvi" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="5Vvmn_QkMEu" role="3cqZAp">
+            <node concept="3cpWsn" id="5Vvmn_QkMEv" role="3cpWs9">
+              <property role="TrG5h" value="structureModel" />
+              <node concept="2OqwBi" id="5Vvmn_QkMEw" role="33vP2m">
+                <node concept="37vLTw" id="5Vvmn_QkMEx" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5Vvmn_QkMEp" resolve="language" />
+                </node>
+                <node concept="liA8E" id="5Vvmn_QkMEy" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~Language.getStructureModelDescriptor():org.jetbrains.mps.openapi.model.SModel" resolve="getStructureModelDescriptor" />
+                </node>
+              </node>
+              <node concept="H_c77" id="5Vvmn_QkMEz" role="1tU5fm" />
+            </node>
+          </node>
+          <node concept="3cpWs6" id="5Vvmn_QkME$" role="3cqZAp">
+            <node concept="2ShNRf" id="5Vvmn_QkMKz" role="3cqZAk">
+              <node concept="1pGfFk" id="5Vvmn_QkMK$" role="2ShVmc">
+                <ref role="37wK5l" to="inbo:7ipADkTfnIY" resolve="ISearchScope.Adapter" />
+                <node concept="2ShNRf" id="5Vvmn_QkMK_" role="37wK5m">
+                  <node concept="1pGfFk" id="5Vvmn_QkMKA" role="2ShVmc">
+                    <ref role="37wK5l" to="inbo:41J4moeYz_G" resolve="ModelNodesSearchScope" />
+                    <node concept="37vLTw" id="5Vvmn_QkMKB" role="37wK5m">
+                      <ref role="3cqZAo" node="5Vvmn_QkMEv" resolve="structureModel" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="5B0Pf" id="5Vvmn_QkMKC" role="lGtFl" />
             </node>
           </node>
         </node>
