@@ -1419,21 +1419,6 @@
   <node concept="1M2fIO" id="hDMFJEu">
     <property role="3GE5qa" value="ext.property" />
     <ref role="1M2myG" to="tpee:huRhdFY" resolve="Property" />
-    <node concept="EnEH3" id="hDMFJEv" role="1MhHOB">
-      <ref role="EomxK" to="tpck:gOOYy9I" resolve="alias" />
-      <node concept="Eqf_E" id="hDMFJEw" role="EtsB7">
-        <node concept="3clFbS" id="hDMFJEx" role="2VODD2">
-          <node concept="3clFbF" id="hDMFJEy" role="3cqZAp">
-            <node concept="2OqwBi" id="hDMFJEz" role="3clFbG">
-              <node concept="EsrRn" id="hDMFJE$" role="2Oq$k0" />
-              <node concept="3TrcHB" id="hDMFJE_" role="2OqNvi">
-                <ref role="3TsBF5" to="tpee:huRkwj$" resolve="propertyName" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="EnEH3" id="hDMFJEA" role="1MhHOB">
       <ref role="EomxK" to="tpck:h0TrG11" resolve="name" />
       <node concept="Eqf_E" id="hDMFJEB" role="EtsB7">

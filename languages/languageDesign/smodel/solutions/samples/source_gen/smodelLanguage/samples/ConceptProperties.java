@@ -15,8 +15,8 @@ public class ConceptProperties {
     String alias = SConceptOperations.conceptAlias(SNodeOperations.getConcept(node));
     String text = "alias is " + SConceptOperations.conceptAlias(SNodeOperations.getConcept(node));
     int length = SConceptOperations.conceptAlias(SNodeOperations.getConcept(node)).length();
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias"), "foo");
-    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias"), "bar");
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), "foo");
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage"), "bar");
   }
   public void booleanConceptProperty(SNode node) {
     boolean isAbstract2 = SNodeOperations.getConcept(node).isAbstract();

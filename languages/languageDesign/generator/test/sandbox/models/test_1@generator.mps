@@ -621,8 +621,8 @@
                       </node>
                       <node concept="1iwH7S" id="3YMQ4vlp2dB" role="2Oq$k0" />
                     </node>
-                    <node concept="3TrcHB" id="3YMQ4vlppgF" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+                    <node concept="3TrcHB" id="5H_1GsNFLti" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:hnGE5uv" resolve="virtualPackage" />
                     </node>
                   </node>
                 </node>
