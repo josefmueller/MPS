@@ -16,11 +16,20 @@
 
 package jetbrains.mps.idea.core.make;
 
+import com.intellij.openapi.compiler.CompileContext;
+import com.intellij.openapi.compiler.CompilerMessageCategory;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
-import jetbrains.mps.idea.core.module.*;
+import jetbrains.mps.idea.core.module.CachedModelData;
+import jetbrains.mps.idea.core.module.CachedModelData.Kind;
+import jetbrains.mps.idea.core.module.CachedModuleData;
+import jetbrains.mps.idea.core.module.CachedRepositoryData;
+import jetbrains.mps.idea.core.module.CachedRepositoryUtil;
+import jetbrains.mps.idea.core.module.JavaStubModelHeader;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
@@ -32,17 +41,27 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * evgeny, 12/12/12
  */
 public class MPSRepositoryUtil {
+  private final CompileContext myCompileContext;
 
-  public static CachedRepositoryData buildData(Collection<ModuleHandle> handles) {
+  public MPSRepositoryUtil(CompileContext context) {
+    myCompileContext = context;
+  }
+
+  public CachedRepositoryData buildData(Collection<ModuleHandle> handles) {
     List<CachedModuleData> modules = new ArrayList<CachedModuleData>();
     for (ModuleHandle handle : handles) {
       Map<String, List<CachedModelData>> modelsByKindAndPath = new HashMap<String, List<CachedModelData>>();
@@ -53,7 +72,7 @@ public class MPSRepositoryUtil {
     return new CachedRepositoryData(modules);
   }
 
-  private static void buildModule(Map<String, List<CachedModelData>> modelsByKindAndPath, SModuleReference moduleReference) {
+  private void buildModule(Map<String, List<CachedModelData>> modelsByKindAndPath, SModuleReference moduleReference) {
     SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
     if (module != null) {
       for (ModelRoot root : module.getModelRoots()) {
@@ -77,10 +96,26 @@ public class MPSRepositoryUtil {
     }
   }
 
-  private static List<CachedModelData> buildModels(DefaultModelRoot root) {
+  private List<CachedModelData> buildModels(DefaultModelRoot root) {
     List<CachedModelData> result = new ArrayList<CachedModelData>();
     for (SModel model : root.getModels()) {
-      String modelPath = ((FileDataSource) model.getSource()).getFile().getPath();
+      DataSource dataSource = model.getSource();
+
+      String modelPath;
+      if (dataSource instanceof FileDataSource) {
+        modelPath = ((FileDataSource) dataSource).getFile().getPath();
+      } else if (dataSource instanceof FilePerRootDataSource) {
+        modelPath = ((FolderDataSource) dataSource).getFolder().getPath();
+      } else {
+        String message = String.format(
+          "Model %s will not be available during generation due to unsupported persistence '%s'.\n" +
+          "If it's part of a language runtime, generation may fail.",
+          model.getName().getLongName(),
+          dataSource.getType() == null ? dataSource.getClass().getName() : dataSource.getType().getName()
+          );
+        myCompileContext.addMessage(CompilerMessageCategory.WARNING, message,null, -1, -1);
+        continue;
+      }
 
       Object header = null;
       CachedModelData.Kind cacheKind = CachedModelData.Kind.Unknown;
@@ -89,6 +124,8 @@ public class MPSRepositoryUtil {
         String persistenceIdentifier = mf == null ? null : mf.getFileExtension();
         if (MPSExtentions.MODEL.equals(persistenceIdentifier)) {
           cacheKind = CachedModelData.Kind.Regular;
+        } else if (dataSource instanceof FilePerRootDataSource) {
+          cacheKind = Kind.RegularFilePerRoot;
         } else if (MPSExtentions.MODEL_BINARY.equals(persistenceIdentifier)) {
           cacheKind = CachedModelData.Kind.Binary;
         }
@@ -101,7 +138,7 @@ public class MPSRepositoryUtil {
     return result;
   }
 
-  private static List<CachedModelData> buildModels(JavaClassStubsModelRoot root) {
+  private List<CachedModelData> buildModels(JavaClassStubsModelRoot root) {
     List<CachedModelData> result = new ArrayList<CachedModelData>();
     for (SModel model : root.getModels()) {
       if (!(model instanceof JavaClassStubModelDescriptor)) {

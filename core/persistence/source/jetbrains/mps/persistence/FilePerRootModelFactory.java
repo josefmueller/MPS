@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelId;
@@ -99,6 +100,15 @@ public class FilePerRootModelFactory implements ModelFactory, IndexAwareModelFac
     } catch (ModelCreationException e) {
       throw new IOException(e);
     }
+  }
+
+  /**
+   * @see BinaryModelPersistence#createFromHeader() for details, same motivation here
+   */
+  public static SModel createFromHeader(@NotNull SModelHeader header, @NotNull FilePerRootDataSource dataSource) {
+    final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_HEADER);
+    assert modelFactory instanceof FilePerRootModelFactory;
+    return new DefaultSModelDescriptor(new PersistenceFacility((FilePerRootModelFactory) modelFactory, dataSource), header.createCopy());
   }
 
   @Override
