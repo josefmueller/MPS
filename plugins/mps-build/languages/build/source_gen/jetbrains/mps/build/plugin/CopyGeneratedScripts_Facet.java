@@ -71,7 +71,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
           progressMonitor.start("", IntStream.of(1000).sum());
           switch (0) {
             case 0:
-              final FileProcessor fp = new FileProcessor();
+              final FileProcessor fp = new FileProcessor(monitor.getSession().getMessageHandler());
               List<FilesDelta> deltas = ListSequence.fromList(new ArrayList<FilesDelta>());
               final ProgressMonitor subProgress_c0a0a = progressMonitor.subTask(1000);
               subProgress_c0a0a.start("Build language ANT files", Sequence.fromIterable(input).count() + 2);

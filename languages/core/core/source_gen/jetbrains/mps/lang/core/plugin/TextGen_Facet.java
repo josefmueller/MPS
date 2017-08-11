@@ -291,7 +291,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       final IFile cacheOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(DefaultStreamManager.Provider.getCachesDir(inputResource.model()).getPath());
                       StaleFilesCollector staleFileCollector = new StaleFilesCollector(javaOutputDir);
                       staleFileCollector.recordGeneratedChildren(genDepsCache, inputResource.model());
-                      FileProcessor fp = new FileProcessor();
+                      FileProcessor fp = new FileProcessor(messageHandler);
                       ListSequence.fromList(fileProcessors2).addElement(fp);
                       FileDeltaCollector javaSourcesLoc = new FileDeltaCollector(javaOutputDir, fp);
                       FileDeltaCollector cachesLocation = new FileDeltaCollector(cacheOutputDir, fp);

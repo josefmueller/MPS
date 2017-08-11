@@ -1656,6 +1656,9 @@
                                         <node concept="2ShNRf" id="3QuLV9OzOax" role="33vP2m">
                                           <node concept="1pGfFk" id="3QuLV9OzOay" role="2ShVmc">
                                             <ref role="37wK5l" to="iqmz:3KiLc2_D16V" resolve="FileProcessor" />
+                                            <node concept="37vLTw" id="4LvsGEyMeF0" role="37wK5m">
+                                              <ref role="3cqZAo" node="7A08csWbR36" resolve="messageHandler" />
+                                            </node>
                                           </node>
                                         </node>
                                       </node>
