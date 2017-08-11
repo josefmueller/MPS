@@ -452,9 +452,9 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("8215612579904436702", new QueriesGenerated.RTQ(0, null));
     rtqMethods.put("2597883321844201464", new QueriesGenerated.RTQ(1, null));
     rtqMethods.put("2597883321844202345", new QueriesGenerated.RTQ(2, null));
-    rtqMethods.put("4319657350470163593", new QueriesGenerated.RTQ(3, "alias"));
+    rtqMethods.put("4319657350470163593", new QueriesGenerated.RTQ(3, "virtualPackage"));
     rtqMethods.put("8215612579904436042", new QueriesGenerated.RTQ(4, null));
-    rtqMethods.put("7024409093146625666", new QueriesGenerated.RTQ(5, "alias"));
+    rtqMethods.put("7024409093146625666", new QueriesGenerated.RTQ(5, "virtualPackage"));
     rtqMethods.put("7024409093146625685", new QueriesGenerated.RTQ(6, null));
     rtqMethods.put("2597883321844426008", new QueriesGenerated.RTQ(7, "ClassConcept"));
     rtqMethods.put("1801654740563739440", new QueriesGenerated.RTQ(8, "ToggleCheckboxAction"));

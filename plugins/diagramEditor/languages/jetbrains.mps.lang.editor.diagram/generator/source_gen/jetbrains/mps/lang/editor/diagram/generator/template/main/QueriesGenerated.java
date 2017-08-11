@@ -1167,8 +1167,8 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("4958193202996421396", new QueriesGenerated.RTQ(19, "BaseConcept"));
     rtqMethods.put("4958193202996437187", new QueriesGenerated.RTQ(20, "BaseConcept"));
     rtqMethods.put("4958193202996442608", new QueriesGenerated.RTQ(21, "smodelAttribute"));
-    rtqMethods.put("2732397419129685760", new QueriesGenerated.RTQ(22, "alias"));
-    rtqMethods.put("2732397419129685808", new QueriesGenerated.RTQ(23, "alias"));
+    rtqMethods.put("2732397419129685760", new QueriesGenerated.RTQ(22, "virtualPackage"));
+    rtqMethods.put("2732397419129685808", new QueriesGenerated.RTQ(23, "virtualPackage"));
     rtqMethods.put("2732397419129685833", new QueriesGenerated.RTQ(24, "myPropertyCell"));
     rtqMethods.put("2732397419129735978", new QueriesGenerated.RTQ(25, "myPropertyCell"));
     rtqMethods.put("2732397419130622149", new QueriesGenerated.RTQ(26, "myPropertyCell"));

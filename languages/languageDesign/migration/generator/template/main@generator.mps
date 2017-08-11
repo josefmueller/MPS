@@ -4824,7 +4824,7 @@
         <node concept="gft3U" id="YmYinkg3F4" role="UU_$l">
           <node concept="355D3s" id="YmYinkg3F5" role="gfFT$">
             <ref role="355D3t" to="tpck:gw2VY9q" resolve="BaseConcept" />
-            <ref role="355D3u" to="tpck:gOOYy9I" resolve="alias" />
+            <ref role="355D3u" to="tpck:hnGE5uv" resolve="virtualPackage" />
             <node concept="1ZhdrF" id="YmYinkg3F6" role="lGtFl">
               <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/2644386474302386080/2644386474302386081" />
               <property role="2qtEX8" value="conceptDeclaration" />
