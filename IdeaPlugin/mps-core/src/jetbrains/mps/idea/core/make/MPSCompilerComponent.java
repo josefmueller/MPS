@@ -85,7 +85,7 @@ public class MPSCompilerComponent implements ProjectComponent {
       final File repositoryCache = new File(CompilerPaths.getCompilerSystemDirectory(myProject), "mps_repository.dat");
       final long start = System.nanoTime();
       ProjectHelper.fromIdeaProject(myProject).getModelAccess().runReadAction(() -> {
-        CachedRepositoryData cachedRepositoryData = MPSRepositoryUtil.buildData(LibraryInitializer.getInstance().getModuleHandles());
+        CachedRepositoryData cachedRepositoryData = new MPSRepositoryUtil(context).buildData(LibraryInitializer.getInstance().getModuleHandles());
         ModelOutputStream mos = null;
         try {
           mos = new ModelOutputStream(new FileOutputStream(repositoryCache));
