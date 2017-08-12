@@ -154,7 +154,6 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
             ProgressManager.getInstance().run(new Task.Modal(null, "Installing", false) {
               public void run(@NotNull ProgressIndicator indicator) {
                 indicator.setIndeterminate(true);
-                indicator.start();
                 indicator.setText("Replacing samples");
                 indicator.setText2("deleting samples directory");
                 FileUtil.delete(samplesDir);

@@ -362,6 +362,12 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiDirectory {
     final SRepository repository = getProjectRepository();
     return new ModelAccessHelper(repository.getModelAccess()).runReadAction(() -> {
       SModel model = myModelReference.resolve(repository);
+      // Due to either a bug or a feature: in SModuleListener#beforeModelRemoved(SModel) model arg appears to be
+      // not in the repository, despite 'before' in method name. It happens because
+      // GlobalRepositoriesListener#stopListening() in SModelDescriptor deletes the model from its data structure.
+      if (model == null) {
+        return null;
+      }
       if (model.getSource() instanceof FileDataSource) {
         IFile iModelFile = ((FileDataSource) model.getSource()).getFile();
         VirtualFile vModelFile = VirtualFileUtils.getProjectVirtualFile(iModelFile);

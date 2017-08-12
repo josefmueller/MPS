@@ -17,12 +17,16 @@
 package jetbrains.mps.jps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.idea.core.module.CachedModelData;
+import jetbrains.mps.idea.core.module.CachedModelData.Kind;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.persistence.BinaryModelFactory;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.persistence.FilePerRootModelFactory;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.util.FileUtil;
@@ -33,9 +37,14 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * evgeny, 12/11/12
@@ -75,13 +84,16 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
 
     for (CachedModelData mdata : models) {
       IFile file = getFileSystem().getFile(mdata.getFile());
-      FileDataSource source = new FileDataSource(file, this);
+
       Object header = mdata.getHeader();
       if (mdata.getCacheKind() == CachedModelData.Kind.Binary) {
-        result.add(BinaryModelFactory.createFromHeader(((SModelHeader) header), source));
+        result.add(BinaryModelFactory.createFromHeader(((SModelHeader) header), new FileDataSource(file, this)));
       } else if (mdata.getCacheKind() == CachedModelData.Kind.Regular) {
-        result.add(DefaultModelPersistence.createFromHeader((SModelHeader) header, source));
+        result.add(DefaultModelPersistence.createFromHeader((SModelHeader) header, new FileDataSource(file, this)));
+      } else if (mdata.getCacheKind() == Kind.RegularFilePerRoot) {
+        result.add(FilePerRootModelFactory.createFromHeader((SModelHeader) header, new FilePerRootDataSource(file, this)));
       } else {
+        FileDataSource source = new FileDataSource(file, this);
         String fileName = file.getName();
         String extension = FileUtil.getExtension(fileName);
 

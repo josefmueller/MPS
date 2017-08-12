@@ -61,6 +61,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.function.Consumer;
 
 /**
  * evgeny, 1/25/13
@@ -228,19 +229,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
         // I.e. those root nodes cannot be added as children to a model when they are already children of another
         result.reload(model);
         models.put(modelRef, result);
-        model.getModule().addModuleListener(new SModuleListenerBase() {
-          @Override
-          public void beforeModelRenamed(SModule module, SModel model, SModelReference newRef) {
-            models.remove(model.getReference());
-          }
-
-          @Override
-          public void beforeModelRemoved(SModule module, SModel removedModel) {
-            if (removedModel != model) return;
-            models.remove(modelRef);
-          }
-        });
-        model.addModelListener(myProject.getComponent(PsiModelReloadListener.class));
+        model.addModelListener(myProject.getComponent(PsiModelReloadListener.class).getModelListener());
       }
       return result;
     }
@@ -287,25 +276,49 @@ public class MPSPsiProvider extends AbstractProjectComponent {
   }
 
   void notifyPsiChanged(MPSPsiModel model, MPSPsiNodeBase node) {
-
     if (!model.isValid()) return;
 
-    PsiManager manager = model.getManager();
-    if (manager == null || !(manager instanceof PsiManagerImpl)) return;
+    notify(model, manager -> {
+      PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
+      event.setParent(node != null ? node : model);
+      event.setGenericChange(false);
 
-    myModificationTracker.incCounter();
-
-    // TODO: this is a dumb straightforward solution, better use beforeChage*. Or not?
-    manager.dropResolveCaches();
-
-    PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
-    event.setParent(node != null ? node : model);
-    event.setGenericChange(false);
-
-    ((PsiManagerImpl) manager).childrenChanged(event);
+      manager.childrenChanged(event);
+    });
   }
 
-  void notifyModelRenamed(MPSPsiModel model, String oldName, String newName) {
+  void notifyModelRenamed(SModelReference modelRef, SModel model) {
+    if (models.remove(modelRef) == null) {
+      // we didn't handle this model
+      return;
+    }
+    String oldName = modelRef.getModelName();
+    String newName = model.getName().getValue();
+    MPSPsiModel psiModel = getPsi(model);
+
+    notify(psiModel, manager -> {
+      PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
+      event.setElement(psiModel);
+      event.setPropertyName(PsiTreeChangeEvent.PROP_FILE_NAME);
+      event.setOldValue(oldName);
+      event.setNewValue(newName);
+      manager.propertyChanged(event);
+    });
+  }
+
+  void notifyModelRemoved(SModelReference modelRef) {
+    MPSPsiModel psiModel = models.remove(modelRef);
+    if (psiModel != null) {
+      notify(psiModel, manager -> {
+        PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
+        event.setParent(psiModel);
+        event.setChild(psiModel);
+        manager.childRemoved(event);
+      });
+    }
+  }
+
+  private void notify(MPSPsiModel model, Consumer<PsiManagerImpl> func) {
     PsiManager manager = model.getManager();
     if (manager == null || !(manager instanceof PsiManagerImpl)) return;
 
@@ -313,13 +326,7 @@ public class MPSPsiProvider extends AbstractProjectComponent {
 
     // TODO: this is a dumb straightforward solution, better use beforeChage*. Or not?
     manager.dropResolveCaches();
-
-    PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
-    event.setElement(model);
-    event.setPropertyName(PsiTreeChangeEvent.PROP_FILE_NAME);
-    event.setOldValue(oldName);
-    event.setNewValue(newName);
-    ((PsiManagerImpl) manager).propertyChanged(event);
+    func.accept((PsiManagerImpl) manager);
   }
 
   private class PsiFileEditorDataProvider implements FileEditorDataProvider {

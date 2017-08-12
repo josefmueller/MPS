@@ -52,25 +52,20 @@ import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.idea.core.project.stubs.MultipleSdkProblemNotifier;
 import jetbrains.mps.idea.core.psi.impl.PsiModelReloadListener;
 import jetbrains.mps.module.SDependencyImpl;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -84,11 +79,9 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -109,6 +102,12 @@ public class SolutionIdea extends Solution {
     myModule = module;
     myModelAccess = ProjectHelper.getModelAccess(myModule.getProject());
     assert myModelAccess != null;
+
+    // having it before call to setModuleDescriptor() (which should be removed by the way) because it leads to
+    // updateModelSet() which sends modelAdded events
+    addModuleListener(myModule.getProject().getComponent(PsiModelReloadListener.class).getModuleListener());
+    addModuleListener(MODULE_RUNTIME_IMPORTER);
+
     // TODO: simply set solution descriptor local variable?
     setModuleDescriptor(descriptor);
     myConnection = myModule.getProject().getMessageBus().connect();
@@ -129,8 +128,6 @@ public class SolutionIdea extends Solution {
       }
     });
     projectLibraryTable.addListener(myLibrariesListener);
-    addModuleListener(myModule.getProject().getComponent(PsiModelReloadListener.class));
-    addModuleListener(MODULE_RUNTIME_IMPORTER);
   }
 
   @Override
