@@ -4596,13 +4596,13 @@
                       <node concept="liA8E" id="qi" role="2OqNvi">
                         <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2$AggregationLinkBuilder.target(long,long,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="target" />
                         <node concept="1adDum" id="qn" role="37wK5m">
-                          <property role="1adDun" value="0xf3061a5392264cc5L" />
+                          <property role="1adDun" value="0xfd3920347849419dL" />
                         </node>
                         <node concept="1adDum" id="qo" role="37wK5m">
-                          <property role="1adDun" value="0xa443f952ceaf5816L" />
+                          <property role="1adDun" value="0x907112563d152375L" />
                         </node>
                         <node concept="1adDum" id="qp" role="37wK5m">
-                          <property role="1adDun" value="0x10c63f4f3f3L" />
+                          <property role="1adDun" value="0x1174bed3125L" />
                         </node>
                       </node>
                     </node>

@@ -119,7 +119,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, true);
     b.super_("jetbrains.mps.lang.resources.structure.BaseURL", 0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x4197d5560e6a38b7L);
     b.origin("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)/4726480899534317142");
-    b.aggregate("calculator", 0x4197d5560e696657L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L).optional(false).ordered(true).multiple(false).origin("4726480899534317143").done();
+    b.aggregate("calculator", 0x4197d5560e696657L).target(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L).optional(false).ordered(true).multiple(false).origin("4726480899534317143").done();
     b.alias("URL function");
     return b.create();
   }
