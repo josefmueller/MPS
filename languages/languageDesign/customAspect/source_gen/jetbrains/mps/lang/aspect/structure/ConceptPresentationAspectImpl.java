@@ -55,6 +55,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.HelpURL:
         if (props_HelpURL == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           cpb.rawPresentation("HelpURL");
           props_HelpURL = cpb.create();
         }
