@@ -2,7 +2,7 @@
 <model ref="r:01b252f4-57dd-45b0-b193-1c0cf81e6653(jetbrains.mps.lang.dataFlow.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="1" />
+    <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="2" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -11,17 +11,17 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="5177162104569058199" name="jetbrains.mps.lang.resources.structure.HelpURL" flags="ng" index="1sEMCm">
+        <property id="5177162104569058200" name="url" index="1sEMCp" />
+      </concept>
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect">
-      <concept id="5177162104569058199" name="jetbrains.mps.lang.aspect.structure.HelpURL" flags="ng" index="1sEMCm">
-        <property id="5177162104569058200" name="url" index="1sEMCp" />
-      </concept>
       <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
         <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
-        <child id="5177162104569174921" name="httpHelpUrl" index="1sFm88" />
+        <child id="4726480899534753275" name="helpUrl" index="1fTXyH" />
         <child id="3433054418425083029" name="icon" index="3vqPLo" />
         <child id="2343319097654255233" name="order" index="3F_NFc" />
       </concept>
@@ -45,9 +45,6 @@
   </registry>
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="dataFlow" />
-    <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20172/Data+flow" />
-    </node>
     <node concept="1QGGSu" id="P5ZkC6w36T" role="3vqPLo">
       <property role="1iqoE4" value="${module}/icons/dataFlowModel.png" />
     </node>
@@ -57,6 +54,9 @@
     </node>
     <node concept="2vPci8" id="264$spPfZhg" role="3F_NFc">
       <ref role="2vPcib" to="tpcc:264$spPfYX1" resolve="MPSAspects" />
+    </node>
+    <node concept="1sEMCm" id="46nPloex5Bn" role="1fTXyH">
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20172/Data+flow" />
     </node>
   </node>
 </model>
