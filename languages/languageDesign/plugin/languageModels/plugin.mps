@@ -36,6 +36,7 @@
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
       <concept id="5177162104569058199" name="jetbrains.mps.lang.resources.structure.HelpURL" flags="ng" index="1sEMCm">
         <property id="5177162104569058200" name="url" index="1sEMCp" />
+        <reference id="4726480899534317252" name="baseURL" index="1fZFei" />
       </concept>
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
@@ -771,7 +772,8 @@
       <ref role="2vPcib" to="tpcc:264$spPfYX1" resolve="MPSAspects" />
     </node>
     <node concept="1sEMCm" id="46nPloex5Bx" role="1fTXyH">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20172/Plugin" />
+      <property role="1sEMCp" value="/Plugin" />
+      <ref role="1fZFei" to="tpcc:46nPloez0vX" resolve="MPSConfluenceDoc" />
     </node>
   </node>
 </model>

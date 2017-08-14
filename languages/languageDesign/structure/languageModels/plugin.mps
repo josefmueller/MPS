@@ -38,6 +38,7 @@
       </concept>
       <concept id="5177162104569058199" name="jetbrains.mps.lang.resources.structure.HelpURL" flags="ng" index="1sEMCm">
         <property id="5177162104569058200" name="url" index="1sEMCp" />
+        <reference id="4726480899534317252" name="baseURL" index="1fZFei" />
       </concept>
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
@@ -71,8 +72,8 @@
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
-      <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
-        <child id="1137022507850" name="body" index="2VODD2" />
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
@@ -149,7 +150,6 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
-      <concept id="1152728232947" name="jetbrains.mps.baseLanguage.structure.Closure" flags="in" index="1zXfbZ" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -1361,7 +1361,8 @@
       <ref role="2vPcib" node="264$spPfYX1" resolve="MPSAspects" />
     </node>
     <node concept="1sEMCm" id="46nPloex5BB" role="1fTXyH">
-      <property role="1sEMCp" value="Structure" />
+      <property role="1sEMCp" value="/Structure" />
+      <ref role="1fZFei" node="46nPloez0vX" resolve="MPSConfluenceDoc" />
     </node>
   </node>
   <node concept="2vPdvu" id="264$spPfYX1">
@@ -1411,8 +1412,14 @@
   </node>
   <node concept="1fZFc0" id="46nPloez0vX">
     <property role="TrG5h" value="MPSConfluenceDoc" />
-    <node concept="1zXfbZ" id="46nPloez0vY" role="1fZFc1">
-      <node concept="3clFbS" id="46nPloez0vZ" role="2VODD2" />
+    <node concept="1bVj0M" id="46nPloeztvN" role="1fZFc1">
+      <node concept="3clFbS" id="46nPloeztvO" role="1bW5cS">
+        <node concept="3clFbF" id="46nPloeztwg" role="3cqZAp">
+          <node concept="Xl_RD" id="46nPloeztwf" role="3clFbG">
+            <property role="Xl_RC" value="http://confluence.jetbrains.com/display/MPSD20172" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
