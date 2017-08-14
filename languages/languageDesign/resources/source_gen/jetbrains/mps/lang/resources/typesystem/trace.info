@@ -261,7 +261,7 @@
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/5177162104569118321">
-    <file name="check_URL_NonTypesystemRule.java">
+    <file name="check_HelpURL_NonTypesystemRule.java">
       <node id="4726480899534333634" at="19,183,20,13" concept="8" />
       <node id="8903462855151283632" at="22,183,23,13" concept="8" />
       <node id="4726480899534333641" at="24,5,25,0" concept="9" />
@@ -270,7 +270,7 @@
       <node id="5177162104569118321" at="31,68,32,102" concept="8" />
       <node id="5177162104569118321" at="34,30,35,17" concept="8" />
       <node id="8903462855151283614" at="37,52,38,44" concept="8" />
-      <node id="5177162104569118321" at="16,0,18,0" concept="2" trace="check_URL_NonTypesystemRule#()V" />
+      <node id="5177162104569118321" at="16,0,18,0" concept="2" trace="check_HelpURL_NonTypesystemRule#()V" />
       <node id="4726480899534326683" at="18,116,21,5" concept="5" />
       <node id="8903462855151275825" at="21,5,24,5" concept="5" />
       <node id="5177162104569118321" at="28,0,31,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -278,7 +278,7 @@
       <node id="5177162104569118321" at="34,0,37,0" concept="6" trace="overrides#()Z" />
       <node id="8903462855151283614" at="37,0,40,0" concept="10" trace="isEmptyString#(Ljava/lang/String;)Z" />
       <node id="5177162104569118321" at="18,0,28,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="5177162104569118321" at="16,40,16,40" />
+      <scope id="5177162104569118321" at="16,44,16,44" />
       <scope id="4726480899534326685" at="19,183,20,13" />
       <scope id="8903462855151275827" at="22,183,23,13" />
       <scope id="5177162104569118321" at="28,50,29,154" />
@@ -300,7 +300,7 @@
         <var name="typeCheckingContext" id="5177162104569118321" />
         <var name="url" id="5177162104569118321" />
       </scope>
-      <unit id="5177162104569118321" at="15,0,41,0" name="jetbrains.mps.lang.resources.typesystem.check_URL_NonTypesystemRule" />
+      <unit id="5177162104569118321" at="15,0,41,0" name="jetbrains.mps.lang.resources.typesystem.check_HelpURL_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/5979521222239172974">

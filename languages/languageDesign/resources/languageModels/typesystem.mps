@@ -490,7 +490,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="4voYo4rtbTL">
-    <property role="TrG5h" value="check_URL" />
+    <property role="TrG5h" value="check_HelpURL" />
     <property role="3GE5qa" value="url" />
     <node concept="3clFbS" id="4voYo4rtbTM" role="18ibNy">
       <node concept="3clFbJ" id="46nPloeqoIr" role="3cqZAp">
