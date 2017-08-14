@@ -16,12 +16,14 @@
 package jetbrains.mps.ide.devkit.editorMenuTrace;
 
 import com.intellij.ide.actions.CloseTabToolbarAction;
+import com.intellij.ide.actions.ContextHelpAction;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.IdeActions;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.tools.BaseTabbedProjectTool;
@@ -30,13 +32,14 @@ import jetbrains.mps.plugins.tool.IComponentDisposer;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
 
 public class EditorMenuTraceTab implements IComponentDisposer<JComponent> {
   private final BaseTabbedProjectTool myTool;
-  private final SimpleToolWindowPanel myComponent;
+  private final EditorMenuTraceToolWindowPanel myComponent;
   private final EditorMenuTraceTree myEditorMenuTraceTree;
 
 
@@ -46,7 +49,7 @@ public class EditorMenuTraceTab implements IComponentDisposer<JComponent> {
 
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myEditorMenuTraceTree, true);
 
-    myComponent = new SimpleToolWindowPanel(false, true);
+    myComponent = new EditorMenuTraceToolWindowPanel(false, true);
     myComponent.setToolbar(createToolbar(myEditorMenuTraceTree));
     myComponent.setContent(scrollPane);
   }
@@ -71,10 +74,16 @@ public class EditorMenuTraceTab implements IComponentDisposer<JComponent> {
   private JComponent createToolbar(JComponent targetComponent) {
     DefaultActionGroup group = ActionUtils.groupFromActions(
         new CloseAction(),
-        ActionManager.getInstance().getAction(IdeActions.ACTION_PIN_ACTIVE_TAB));
+        ActionManager.getInstance().getAction(IdeActions.ACTION_PIN_ACTIVE_TAB),
+        new ContextHelpAction(getHelpID()));
     ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.TOOLBAR, group, false);
     actionToolbar.setTargetComponent(targetComponent);
     return actionToolbar.getComponent();
+  }
+
+  @NotNull
+  private String getHelpID() {
+    return "Menu_Trace_Tool_Window";
   }
 
   private class CloseAction extends CloseTabToolbarAction {
@@ -84,5 +93,18 @@ public class EditorMenuTraceTab implements IComponentDisposer<JComponent> {
     }
   }
 
+  private class EditorMenuTraceToolWindowPanel extends SimpleToolWindowPanel {
+    private EditorMenuTraceToolWindowPanel(boolean vertical, boolean borderless) {
+      super(vertical, borderless);
+    }
 
+    @Nullable
+    @Override
+    public Object getData(String dataId) {
+      if (PlatformDataKeys.HELP_ID.is(dataId)) {
+        return getHelpID();
+      }
+      return super.getData(dataId);
+    }
+  }
 }
