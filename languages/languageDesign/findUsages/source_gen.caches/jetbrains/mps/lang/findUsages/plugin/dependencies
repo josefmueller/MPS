@@ -27,7 +27,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.findUsages.plugin.IconContainer" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.MPSAspects_Order" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.URLFunction_MPSConfluenceDoc" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.URLFunction_ConfluenceDocUrl" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

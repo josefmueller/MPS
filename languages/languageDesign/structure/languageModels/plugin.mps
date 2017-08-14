@@ -28,6 +28,7 @@
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
     <import index="f7uj" ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
@@ -76,6 +77,9 @@
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
@@ -118,6 +122,7 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -174,6 +179,7 @@
         <child id="1199542501692" name="parameterType" index="1ajw0F" />
       </concept>
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <property id="890797661671409019" name="forceMultiLine" index="3yWfEV" />
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
@@ -1362,7 +1368,7 @@
     </node>
     <node concept="1sEMCm" id="46nPloex5BB" role="1fTXyH">
       <property role="1sEMCp" value="/Structure" />
-      <ref role="1fZFei" node="46nPloez0vX" resolve="MPSConfluenceDoc" />
+      <ref role="1fZFei" node="46nPloez0vX" resolve="ConfluenceDocUrl" />
     </node>
   </node>
   <node concept="2vPdvu" id="264$spPfYX1">
@@ -1411,12 +1417,35 @@
     </node>
   </node>
   <node concept="1fZFc0" id="46nPloez0vX">
-    <property role="TrG5h" value="MPSConfluenceDoc" />
+    <property role="TrG5h" value="ConfluenceDocUrl" />
     <node concept="1bVj0M" id="46nPloeztvN" role="1fZFc1">
+      <property role="3yWfEV" value="true" />
       <node concept="3clFbS" id="46nPloeztvO" role="1bW5cS">
-        <node concept="3clFbF" id="46nPloeztwg" role="3cqZAp">
-          <node concept="Xl_RD" id="46nPloeztwf" role="3clFbG">
-            <property role="Xl_RC" value="http://confluence.jetbrains.com/display/MPSD20172" />
+        <node concept="3cpWs6" id="46nPloe_oUM" role="3cqZAp">
+          <node concept="3cpWs3" id="46nPloe_pQw" role="3cqZAk">
+            <node concept="3cpWs3" id="46nPloe_pfT" role="3uHU7B">
+              <node concept="Xl_RD" id="46nPloeztwf" role="3uHU7B">
+                <property role="Xl_RC" value="http://confluence.jetbrains.com/display/MPSD" />
+              </node>
+              <node concept="2OqwBi" id="46nPloe_ps5" role="3uHU7w">
+                <node concept="2YIFZM" id="46nPloe_n1Y" role="2Oq$k0">
+                  <ref role="1Pybhc" to="bd8o:~ApplicationInfo" resolve="ApplicationInfo" />
+                  <ref role="37wK5l" to="bd8o:~ApplicationInfo.getInstance():com.intellij.openapi.application.ApplicationInfo" resolve="getInstance" />
+                </node>
+                <node concept="liA8E" id="46nPloe_pz7" role="2OqNvi">
+                  <ref role="37wK5l" to="bd8o:~ApplicationInfo.getMajorVersion():java.lang.String" resolve="getMajorVersion" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="46nPloe_q7h" role="3uHU7w">
+              <node concept="2YIFZM" id="46nPloe_pWM" role="2Oq$k0">
+                <ref role="1Pybhc" to="bd8o:~ApplicationInfo" resolve="ApplicationInfo" />
+                <ref role="37wK5l" to="bd8o:~ApplicationInfo.getInstance():com.intellij.openapi.application.ApplicationInfo" resolve="getInstance" />
+              </node>
+              <node concept="liA8E" id="46nPloe_qoT" role="2OqNvi">
+                <ref role="37wK5l" to="bd8o:~ApplicationInfo.getMinorVersion():java.lang.String" resolve="getMinorVersion" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
