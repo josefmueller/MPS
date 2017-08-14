@@ -217,6 +217,10 @@ public class NodeSubstitutePatternEditor {
     }
 
     public boolean processTextChanged(InputMethodEvent inputEvent) {
+      String text = InputMethodListenerImpl.getText(inputEvent);
+      if (text == null) {
+        return false;
+      }
       String oldText = myTextLine.getText();
       int caretPosition = myTextLine.getCaretPosition();
       if (caretPosition > 0) {
@@ -224,7 +228,6 @@ public class NodeSubstitutePatternEditor {
         caretPosition--;
       }
 
-      String text = InputMethodListenerImpl.getText(inputEvent);
       changeText(oldText.substring(0, caretPosition) + text);
       myTextLine.setCaretPosition(caretPosition + text.length());
       relayout();

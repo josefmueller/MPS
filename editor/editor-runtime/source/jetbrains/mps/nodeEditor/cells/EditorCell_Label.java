@@ -490,7 +490,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public boolean processTextChanged(InputMethodEvent e) {
-    if (!isEditable()) {
+    String text = InputMethodListenerImpl.getText(e);
+    if (!isEditable() || text == null) {
       return false;
     }
     ModelAccess modelAccess = getContext().getRepository().getModelAccess();
@@ -502,7 +503,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
         setCaretPosition(caretPosition - 1, true);
       }
     }
-    ModifyTextCommand keyTypedCommand = new ModifyTextCommand(InputMethodListenerImpl.getText(e), true, null, getContext());
+    ModifyTextCommand keyTypedCommand = new ModifyTextCommand(text, true, null, getContext());
     modelAccess.executeCommand(keyTypedCommand);
     if (keyTypedCommand.getResult()) {
       getEditor().relayout();
