@@ -1009,7 +1009,7 @@
                   <ref role="1Pybhc" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
                   <node concept="2OqwBi" id="5Vvmn_QkN2Z" role="37wK5m">
                     <node concept="2qgKlT" id="5Vvmn_QkN30" role="2OqNvi">
-                      <ref role="37wK5l" to="tpcn:hEwILGo" resolve="getAvailableConceptMethods" />
+                      <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
                       <node concept="1eOMI4" id="5Vvmn_QkN31" role="37wK5m">
                         <node concept="3K4zz7" id="5Vvmn_QkN32" role="1eOMHV">
                           <node concept="2rP1CM" id="5Vvmn_QkN33" role="3K4E3e" />

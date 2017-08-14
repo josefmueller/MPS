@@ -1263,7 +1263,7 @@
                   </node>
                 </node>
                 <node concept="2qgKlT" id="1wEcoXjJyft" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcn:hEwILGo" resolve="getAvailableConceptMethods" />
+                  <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
                   <node concept="3bvxqY" id="1wEcoXjJyfw" role="37wK5m" />
                 </node>
               </node>

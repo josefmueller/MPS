@@ -876,7 +876,7 @@
                       <ref role="3cqZAo" node="5tSqQCN6yni" resolve="conceptNode" />
                     </node>
                     <node concept="2qgKlT" id="5tSqQCN6yoV" role="2OqNvi">
-                      <ref role="37wK5l" to="tpcn:hEwILGo" resolve="getAvailableConceptMethods" />
+                      <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
                       <node concept="37vLTw" id="5tSqQCN6yqk" role="37wK5m">
                         <ref role="3cqZAo" node="5tSqQCN6yqh" resolve="enclosingNode" />
                       </node>
@@ -909,8 +909,10 @@
                   </node>
                 </node>
               </node>
-              <node concept="2I9FWS" id="5tSqQCN6yp8" role="1tU5fm">
-                <ref role="2I9WkF" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+              <node concept="A3Dl8" id="3ezfzO1LUNW" role="1tU5fm">
+                <node concept="3Tqbb2" id="3ezfzO1Meeo" role="A3Ik2">
+                  <ref role="ehGHo" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+                </node>
               </node>
             </node>
           </node>
@@ -936,7 +938,7 @@
                               <ref role="3B5MYn" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                             </node>
                             <node concept="2qgKlT" id="5tSqQCN6ypn" role="2OqNvi">
-                              <ref role="37wK5l" to="tpcn:hEwILGo" resolve="getAvailableConceptMethods" />
+                              <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
                               <node concept="37vLTw" id="5tSqQCN6yql" role="37wK5m">
                                 <ref role="3cqZAo" node="5tSqQCN6yqh" resolve="enclosingNode" />
                               </node>
