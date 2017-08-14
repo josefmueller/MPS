@@ -13,9 +13,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -52,9 +49,7 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.addEditorCell(createConstant_o4n89n_a0());
     editorCell.addEditorCell(createProperty_o4n89n_b0());
     editorCell.addEditorCell(createConstant_o4n89n_c0());
-    editorCell.addEditorCell(createConstant_o4n89n_d0());
-    editorCell.addEditorCell(createRefNode_o4n89n_e0());
-    editorCell.addEditorCell(createConstant_o4n89n_f0());
+    editorCell.addEditorCell(createRefNode_o4n89n_d0());
     return editorCell;
   }
   private EditorCell createConstant_o4n89n_a0() {
@@ -84,27 +79,15 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_o4n89n_d0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
-    editorCell.setCellId("Constant_o4n89n_d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "body-paren");
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefNode_o4n89n_e0() {
-    SingleRoleCellProvider provider = new BaseURLFunction_EditorBuilder_a.calculatorSingleRoleHandler_o4n89n_e0(myNode, MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x4197d5560e696656L, 0x4197d5560e696657L, "calculator"), getEditorContext());
+  private EditorCell createRefNode_o4n89n_d0() {
+    SingleRoleCellProvider provider = new BaseURLFunction_EditorBuilder_a.calculatorSingleRoleHandler_o4n89n_d0(myNode, MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x4197d5560e696656L, 0x4197d5560e696657L, "calculator"), getEditorContext());
     return provider.createCell();
   }
-  private static class calculatorSingleRoleHandler_o4n89n_e0 extends SingleRoleCellProvider {
+  private static class calculatorSingleRoleHandler_o4n89n_d0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public calculatorSingleRoleHandler_o4n89n_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public calculatorSingleRoleHandler_o4n89n_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -132,10 +115,6 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
       if (editorCell.getRole() == null) {
         editorCell.setRole("calculator");
       }
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {
@@ -154,15 +133,5 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     protected String getNoTargetText() {
       return "<no calculator>";
     }
-  }
-  private EditorCell createConstant_o4n89n_f0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
-    editorCell.setCellId("Constant_o4n89n_f0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "body-paren");
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 }
