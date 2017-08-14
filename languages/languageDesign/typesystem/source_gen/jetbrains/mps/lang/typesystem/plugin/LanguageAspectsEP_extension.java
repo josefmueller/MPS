@@ -68,10 +68,6 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       public IconResource getIconResource() {
         return IconContainer.RESOURCE_a0a6a0a0a1;
       }
-      @Nullable
-      public String getHelpUrl() {
-        return "http://confluence.jetbrains.com/display/MPSD20172/Typesystem";
-      }
 
 
       private OrderDescriptor myOrderConstraints = new MPSAspects_Order();
