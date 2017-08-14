@@ -22,6 +22,7 @@
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
@@ -237,6 +238,10 @@
       <property role="TrG5h" value="url" />
       <property role="IQ2nx" value="5177162104569058200" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="asaX9" id="46nPloeqmpj" role="lGtFl">
+      <property role="YLQ7P" value="use HelpURL from resources language" />
+      <property role="YLPcu" value="2017.3" />
     </node>
   </node>
   <node concept="1TIwiD" id="9GrxDU8dzJ">
