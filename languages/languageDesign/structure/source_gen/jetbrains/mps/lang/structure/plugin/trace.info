@@ -132,6 +132,20 @@
       <unit id="3193873080290339088" at="28,0,106,0" name="jetbrains.mps.lang.structure.plugin.LanguageAspectsEP_extension" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)/4726480899536586749">
+    <file name="URLFunction_MPSConfluenceDoc.java">
+      <node id="4726480899536705552" at="10,30,11,67" concept="9" />
+      <node id="4726480899536705523" at="10,0,13,0" concept="7" trace="invoke#()Ljava/lang/String;" />
+      <node id="4726480899536586749" at="8,33,13,15" concept="9" />
+      <node id="4726480899536586749" at="8,0,15,0" concept="13" trace="getUrl#()Ljava/lang/String;" />
+      <scope id="4726480899536705524" at="10,30,11,67" />
+      <scope id="4726480899536705523" at="10,0,13,0" />
+      <scope id="4726480899536586749" at="8,33,13,15" />
+      <scope id="4726480899536586749" at="8,0,15,0" />
+      <unit id="4726480899536705523" at="9,15,13,5" name="jetbrains.mps.lang.structure.plugin.URLFunction_MPSConfluenceDoc$1" />
+      <unit id="4726480899536586749" at="7,0,16,0" name="jetbrains.mps.lang.structure.plugin.URLFunction_MPSConfluenceDoc" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)/4853505765036703346">
     <file name="RefactoringRuntime.java">
       <node id="1990992034211370065" at="30,149,31,20" concept="10" />
