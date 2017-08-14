@@ -71,7 +71,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       }
     };
     provider.setRole("baseURL");
-    provider.setNoTargetText("http://");
+    provider.setNoTargetText("<no base URL>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {

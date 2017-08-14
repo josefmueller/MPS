@@ -1163,7 +1163,7 @@
     <ref role="1XX52x" to="1oap:4voYo4rsXen" resolve="HelpURL" />
     <node concept="3EZMnI" id="46nPloeq57h" role="2wV5jI">
       <node concept="1iCGBv" id="46nPloeqmNv" role="3EZMnx">
-        <property role="1$x2rV" value="http://" />
+        <property role="1$x2rV" value="&lt;no base URL&gt;" />
         <ref role="1NtTu8" to="1oap:46nPloeqmr4" resolve="baseURL" />
         <node concept="1sVBvm" id="46nPloeqmNx" role="1sWHZn">
           <node concept="3F0A7n" id="46nPloeqnbv" role="2wV5jI">
