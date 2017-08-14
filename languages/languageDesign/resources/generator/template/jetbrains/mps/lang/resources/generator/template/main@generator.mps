@@ -23,6 +23,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -167,7 +168,6 @@
       </concept>
       <concept id="1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" flags="ng" index="raruj" />
       <concept id="1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" flags="lg" index="2rT7sh">
-        <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
         <reference id="1200913004646" name="targetConcept" index="2rZz_L" />
       </concept>
       <concept id="1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" flags="ng" index="v9R3L">
@@ -179,7 +179,6 @@
         <child id="1167087469900" name="conditionFunction" index="2VPoh3" />
       </concept>
       <concept id="1167087518662" name="jetbrains.mps.lang.generator.structure.CreateRootRule_Condition" flags="in" index="2VP$b9" />
-      <concept id="5133195082121471908" name="jetbrains.mps.lang.generator.structure.LabelMacro" flags="ln" index="2ZBi8u" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
@@ -260,6 +259,9 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
       <concept id="1171323947159" name="jetbrains.mps.lang.smodel.structure.Model_NodesOperation" flags="nn" index="2SmgA7">
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
@@ -1647,16 +1649,6 @@
   <node concept="bUwia" id="46nPloerzID">
     <property role="TrG5h" value="urls" />
     <property role="3GE5qa" value="urls" />
-    <node concept="2rT7sh" id="46nPloerPCi" role="2rTMjI">
-      <property role="TrG5h" value="map_UrlClass" />
-      <ref role="2rTdP9" to="1oap:46nPloeqzyR" resolve="BaseURL" />
-      <ref role="2rZz_L" to="tpee:fz12cDA" resolve="ClassConcept" />
-    </node>
-    <node concept="2rT7sh" id="46nPloerOro" role="2rTMjI">
-      <property role="TrG5h" value="map_UrlMethod" />
-      <ref role="2rTdP9" to="1oap:46nPloeqzyR" resolve="BaseURL" />
-      <ref role="2rZz_L" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
-    </node>
     <node concept="3aamgX" id="46nPloerMYY" role="3acgRq">
       <ref role="30HIoZ" to="1oap:4voYo4rsXen" resolve="HelpURL" />
       <node concept="j$656" id="46nPloerMZ4" role="1lVwrX">
@@ -1713,9 +1705,6 @@
       </node>
       <node concept="17QB3L" id="46nPloerOzN" role="3clF45" />
       <node concept="3Tm1VV" id="46nPloerOzO" role="1B3o_S" />
-      <node concept="2ZBi8u" id="46nPloerOZk" role="lGtFl">
-        <ref role="2rW$FS" node="46nPloerOro" resolve="map_UrlMethod" />
-      </node>
     </node>
     <node concept="3Tm1VV" id="46nPloerzIK" role="1B3o_S" />
     <node concept="n94m4" id="46nPloerzIL" role="lGtFl">
@@ -1727,23 +1716,15 @@
       <node concept="3zFVjK" id="46nPloerAVq" role="3zH0cK">
         <node concept="3clFbS" id="46nPloerAVr" role="2VODD2">
           <node concept="3clFbF" id="46nPloerB6w" role="3cqZAp">
-            <node concept="3cpWs3" id="46nPloerB6x" role="3clFbG">
-              <node concept="Xl_RD" id="46nPloerB6y" role="3uHU7B">
-                <property role="Xl_RC" value="URLFunction_" />
-              </node>
-              <node concept="2OqwBi" id="46nPloerB6z" role="3uHU7w">
-                <node concept="3TrcHB" id="46nPloerB6$" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                </node>
-                <node concept="30H73N" id="46nPloerB6_" role="2Oq$k0" />
+            <node concept="2OqwBi" id="46nPloe$c2m" role="3clFbG">
+              <node concept="30H73N" id="46nPloe$bO0" role="2Oq$k0" />
+              <node concept="2qgKlT" id="46nPloe$cRT" role="2OqNvi">
+                <ref role="37wK5l" to="3767:46nPloe$ck1" resolve="getGeneratedClassName" />
               </node>
             </node>
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2ZBi8u" id="46nPloerQtP" role="lGtFl">
-      <ref role="2rW$FS" node="46nPloerPCi" resolve="map_UrlClass" />
     </node>
   </node>
   <node concept="312cEu" id="46nPloerzIN">
@@ -1793,9 +1774,6 @@
       </node>
       <node concept="17QB3L" id="46nPloerPkj" role="3clF45" />
       <node concept="3Tm1VV" id="46nPloerPkk" role="1B3o_S" />
-      <node concept="2ZBi8u" id="46nPloerPA5" role="lGtFl">
-        <ref role="2rW$FS" node="46nPloerOro" resolve="map_UrlMethod" />
-      </node>
     </node>
     <node concept="3Tm1VV" id="46nPloerzIO" role="1B3o_S" />
     <node concept="n94m4" id="46nPloerzIP" role="lGtFl">
@@ -1807,23 +1785,15 @@
       <node concept="3zFVjK" id="46nPloerzJk" role="3zH0cK">
         <node concept="3clFbS" id="46nPloerzJl" role="2VODD2">
           <node concept="3clFbF" id="46nPloerzJr" role="3cqZAp">
-            <node concept="3cpWs3" id="46nPloer_7z" role="3clFbG">
-              <node concept="Xl_RD" id="46nPloer_lP" role="3uHU7B">
-                <property role="Xl_RC" value="URLLiteral_" />
+            <node concept="2OqwBi" id="46nPloerzJm" role="3clFbG">
+              <node concept="2qgKlT" id="46nPloe$f6S" role="2OqNvi">
+                <ref role="37wK5l" to="3767:46nPloe$e25" resolve="getGeneratedClassName" />
               </node>
-              <node concept="2OqwBi" id="46nPloerzJm" role="3uHU7w">
-                <node concept="3TrcHB" id="46nPloerzJp" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                </node>
-                <node concept="30H73N" id="46nPloerzJq" role="2Oq$k0" />
-              </node>
+              <node concept="30H73N" id="46nPloerzJq" role="2Oq$k0" />
             </node>
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2ZBi8u" id="46nPloerRjq" role="lGtFl">
-      <ref role="2rW$FS" node="46nPloerPCi" resolve="map_UrlClass" />
     </node>
   </node>
   <node concept="13MO4I" id="46nPloerMZ2">
@@ -1848,46 +1818,54 @@
               <property role="1dyqJU" value="HELP_URL" />
               <node concept="raruj" id="46nPloexOGH" role="lGtFl" />
               <node concept="3cpWs3" id="46nPloeyd_$" role="1dyrYi">
-                <node concept="2YIFZM" id="46nPloeyd__" role="3uHU7B">
-                  <ref role="1Pybhc" to="wyt6:~Class" resolve="Class" />
-                  <ref role="37wK5l" to="wyt6:~Class.forName(java.lang.String):java.lang.Class" resolve="forName" />
-                  <node concept="1ZhdrF" id="46nPloeyd_A" role="lGtFl">
-                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" />
-                    <property role="2qtEX8" value="baseMethodDeclaration" />
-                    <node concept="3$xsQk" id="46nPloeyd_B" role="3$ytzL">
-                      <node concept="3clFbS" id="46nPloeyd_C" role="2VODD2">
-                        <node concept="3clFbF" id="46nPloeyd_D" role="3cqZAp">
-                          <node concept="2OqwBi" id="46nPloeyd_E" role="3clFbG">
-                            <node concept="1iwH7S" id="46nPloeyd_F" role="2Oq$k0" />
-                            <node concept="1iwH70" id="46nPloeyd_G" role="2OqNvi">
-                              <ref role="1iwH77" node="46nPloerOro" resolve="map_UrlMethod" />
-                              <node concept="2OqwBi" id="46nPloeyd_H" role="1iwH7V">
-                                <node concept="30H73N" id="46nPloeyd_I" role="2Oq$k0" />
-                                <node concept="3TrEf2" id="46nPloeyd_J" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="1oap:46nPloeqmr4" resolve="baseURL" />
+                <node concept="1niqFM" id="46nPloe$fZn" role="3uHU7B">
+                  <property role="1npUBZ" value="class" />
+                  <property role="1npL6y" value="getUrl" />
+                  <node concept="3uibUv" id="46nPloe$gmB" role="32Mpfj">
+                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                  </node>
+                  <node concept="17Uvod" id="46nPloe$jSF" role="lGtFl">
+                    <property role="P4ACc" value="df345b11-b8c7-4213-ac66-48d2a9b75d88/1173990517731/1173992483054" />
+                    <property role="2qtEX9" value="fqClassName" />
+                    <node concept="3zFVjK" id="46nPloe$jSG" role="3zH0cK">
+                      <node concept="3clFbS" id="46nPloe$jSH" role="2VODD2">
+                        <node concept="3clFbF" id="46nPloe$kJ2" role="3cqZAp">
+                          <node concept="3cpWs3" id="46nPloe$nv6" role="3clFbG">
+                            <node concept="3cpWs3" id="46nPloe$uV6" role="3uHU7B">
+                              <node concept="Xl_RD" id="46nPloe$uYJ" role="3uHU7w">
+                                <property role="Xl_RC" value="." />
+                              </node>
+                              <node concept="2OqwBi" id="46nPloe$t76" role="3uHU7B">
+                                <node concept="2OqwBi" id="46nPloe$r7E" role="2Oq$k0">
+                                  <node concept="2JrnkZ" id="46nPloe$s2Q" role="2Oq$k0">
+                                    <node concept="2OqwBi" id="46nPloe$pF1" role="2JrQYb">
+                                      <node concept="2OqwBi" id="46nPloe$oLy" role="2Oq$k0">
+                                        <node concept="30H73N" id="46nPloe$oyO" role="2Oq$k0" />
+                                        <node concept="3TrEf2" id="46nPloe$pbH" role="2OqNvi">
+                                          <ref role="3Tt5mk" to="1oap:46nPloeqmr4" resolve="baseURL" />
+                                        </node>
+                                      </node>
+                                      <node concept="I4A8Y" id="46nPloe$qBn" role="2OqNvi" />
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="46nPloe$sn4" role="2OqNvi">
+                                    <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="46nPloe$tu1" role="2OqNvi">
+                                  <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
                                 </node>
                               </node>
                             </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="1ZhdrF" id="46nPloeyd_K" role="lGtFl">
-                    <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937/1144433194310" />
-                    <property role="2qtEX8" value="classConcept" />
-                    <node concept="3$xsQk" id="46nPloeyd_L" role="3$ytzL">
-                      <node concept="3clFbS" id="46nPloeyd_M" role="2VODD2">
-                        <node concept="3clFbF" id="46nPloeyd_N" role="3cqZAp">
-                          <node concept="2OqwBi" id="46nPloeyd_O" role="3clFbG">
-                            <node concept="1iwH7S" id="46nPloeyd_P" role="2Oq$k0" />
-                            <node concept="1iwH70" id="46nPloeyd_Q" role="2OqNvi">
-                              <ref role="1iwH77" node="46nPloerPCi" resolve="map_UrlClass" />
-                              <node concept="2OqwBi" id="46nPloeyd_R" role="1iwH7V">
-                                <node concept="30H73N" id="46nPloeyd_S" role="2Oq$k0" />
-                                <node concept="3TrEf2" id="46nPloeyd_T" role="2OqNvi">
+                            <node concept="2OqwBi" id="46nPloe$l$m" role="3uHU7w">
+                              <node concept="2OqwBi" id="46nPloe$kVR" role="2Oq$k0">
+                                <node concept="30H73N" id="46nPloe$kJ1" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="46nPloe$laF" role="2OqNvi">
                                   <ref role="3Tt5mk" to="1oap:46nPloeqmr4" resolve="baseURL" />
                                 </node>
+                              </node>
+                              <node concept="2qgKlT" id="46nPloe$mJW" role="2OqNvi">
+                                <ref role="37wK5l" to="3767:46nPloe$m0J" resolve="getGeneratedClassName" />
                               </node>
                             </node>
                           </node>

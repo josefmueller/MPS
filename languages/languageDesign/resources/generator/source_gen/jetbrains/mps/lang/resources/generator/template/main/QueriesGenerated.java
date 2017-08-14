@@ -18,6 +18,9 @@ import jetbrains.mps.lang.resources.behavior.OldIconBundle__BehaviorDescriptor;
 import jetbrains.mps.lang.resources.behavior.Icon__BehaviorDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.resources.behavior.BaseURLFunction__BehaviorDescriptor;
+import jetbrains.mps.lang.resources.behavior.BaseURLLiteral__BehaviorDescriptor;
+import jetbrains.mps.lang.resources.behavior.BaseURL__BehaviorDescriptor;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -106,13 +109,16 @@ public class QueriesGenerated extends QueryProviderBase {
     return NameUtil.nodeFQName(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4726480899534647002(final PropertyMacroContext _context) {
-    return "URLFunction_" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return (String) BaseURLFunction__BehaviorDescriptor.getGeneratedClassName_id46nPloe$m0J.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4726480899534669736(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x4197d5560e6a38b8L, 0x4197d5560e6a38f3L, "url"));
   }
   public static Object propertyMacro_GetPropertyValue_4726480899534633940(final PropertyMacroContext _context) {
-    return "URLLiteral_" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return (String) BaseURLLiteral__BehaviorDescriptor.getGeneratedClassName_id46nPloe$m0J.invoke(_context.getNode());
+  }
+  public static Object propertyMacro_GetPropertyValue_4726480899536928300(final PropertyMacroContext _context) {
+    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x47d8f9811b73d397L, 0x4197d5560e6966c4L, "baseURL"))).getName().getLongName() + "." + BaseURL__BehaviorDescriptor.getGeneratedClassName_id46nPloe$m0J.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x47d8f9811b73d397L, 0x4197d5560e6966c4L, "baseURL")));
   }
   public static Object propertyMacro_GetPropertyValue_4726480899536378236(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url"));
@@ -140,12 +146,6 @@ public class QueriesGenerated extends QueryProviderBase {
   }
   public static Object referenceMacro_GetReferent_5979521222239280712(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconResourceField");
-  }
-  public static Object referenceMacro_GetReferent_4726480899536378215(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x47d8f9811b73d397L, 0x4197d5560e6966c4L, "baseURL")), "map_UrlMethod");
-  }
-  public static Object referenceMacro_GetReferent_4726480899536378225(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x47d8f9811b73d397L, 0x4197d5560e6966c4L, "baseURL")), "map_UrlClass");
   }
   public static boolean ifMacro_Condition_4965310991037828399(final IfMacroContext _context) {
     return Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon"))) != null;
@@ -326,6 +326,7 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("4726480899534646999", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "URLFunction_name"));
     pvqMethods.put("4726480899534669735", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "url"));
     pvqMethods.put("4726480899534633937", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "URLLiteral_name"));
+    pvqMethods.put("4726480899536928299", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x1115749abe3L, 0x1115767a8eeL, "fqClassName"), "class"));
     pvqMethods.put("4726480899536378235", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "mySuffix"));
     pvqMethods.put("4726480899536397444", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "mySuffix"));
   }
@@ -388,8 +389,10 @@ public class QueriesGenerated extends QueryProviderBase {
         case 19:
           return QueriesGenerated.propertyMacro_GetPropertyValue_4726480899534633940(ctx);
         case 20:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_4726480899536378236(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_4726480899536928300(ctx);
         case 21:
+          return QueriesGenerated.propertyMacro_GetPropertyValue_4726480899536378236(ctx);
+        case 22:
           return QueriesGenerated.propertyMacro_GetPropertyValue_4726480899536397445(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
@@ -446,8 +449,6 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("2990235398086953186", new QueriesGenerated.RTQ(4, "IconResourceBundle"));
     rtqMethods.put("5979521222239280704", new QueriesGenerated.RTQ(5, "TemplateClass"));
     rtqMethods.put("5979521222239280711", new QueriesGenerated.RTQ(6, "FIELD"));
-    rtqMethods.put("4726480899536378214", new QueriesGenerated.RTQ(7, "forName"));
-    rtqMethods.put("4726480899536378224", new QueriesGenerated.RTQ(8, "Class"));
   }
   @NotNull
   @Override
@@ -481,10 +482,6 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.referenceMacro_GetReferent_5979521222239280705(ctx);
         case 6:
           return QueriesGenerated.referenceMacro_GetReferent_5979521222239280712(ctx);
-        case 7:
-          return QueriesGenerated.referenceMacro_GetReferent_4726480899536378215(ctx);
-        case 8:
-          return QueriesGenerated.referenceMacro_GetReferent_4726480899536378225(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

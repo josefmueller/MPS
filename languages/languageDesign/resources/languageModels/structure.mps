@@ -432,6 +432,8 @@
     <property role="EcuMT" value="4726480899534370999" />
     <property role="3GE5qa" value="url" />
     <property role="TrG5h" value="BaseURL" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="46nPloeqzyT" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

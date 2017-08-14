@@ -41,7 +41,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BaseURL:
         if (props_BaseURL == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
           props_BaseURL = cpb.create();
         }
         return props_BaseURL;
