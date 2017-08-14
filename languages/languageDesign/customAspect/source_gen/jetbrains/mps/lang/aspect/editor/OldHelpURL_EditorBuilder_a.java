@@ -22,11 +22,11 @@ import com.intellij.ide.BrowserUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-/*package*/ class HelpURL_EditorBuilder_a extends AbstractEditorBuilder {
+/*package*/ class OldHelpURL_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
   private SNode myNode;
 
-  public HelpURL_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
+  public OldHelpURL_EditorBuilder_a(@NotNull EditorContext context, @NotNull SNode node) {
     super(context);
     myNode = node;
   }
@@ -38,19 +38,19 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_k4pbv3_a();
+    return createCollection_pmt8oi_a();
   }
 
-  private EditorCell createCollection_k4pbv3_a() {
+  private EditorCell createCollection_pmt8oi_a() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_k4pbv3_a");
+    editorCell.setCellId("Collection_pmt8oi_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createProperty_k4pbv3_a0());
-    editorCell.addEditorCell(createJComponent_k4pbv3_b0());
+    editorCell.addEditorCell(createProperty_pmt8oi_a0());
+    editorCell.addEditorCell(createJComponent_pmt8oi_b0());
     return editorCell;
   }
-  private EditorCell createProperty_k4pbv3_a0() {
+  private EditorCell createProperty_pmt8oi_a0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
     provider.setRole("url");
     provider.setNoTargetText("<no URL>");
@@ -65,12 +65,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     } else
     return editorCell;
   }
-  private EditorCell createJComponent_k4pbv3_b0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_k4pbv3_a1a(), "_k4pbv3_b0");
-    editorCell.setCellId("JComponent_k4pbv3_b0");
+  private EditorCell createJComponent_pmt8oi_b0() {
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_pmt8oi_a1a(), "_pmt8oi_b0");
+    editorCell.setCellId("JComponent_pmt8oi_b0");
     return editorCell;
   }
-  private JComponent _QueryFunction_JComponent_k4pbv3_a1a() {
+  private JComponent _QueryFunction_JComponent_pmt8oi_a1a() {
     final JButton button = new JButton();
     button.setAction(new AbstractAction("Test") {
       @Override

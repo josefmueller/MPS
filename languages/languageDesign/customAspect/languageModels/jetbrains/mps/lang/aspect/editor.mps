@@ -73,6 +73,7 @@
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
+      <concept id="1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" flags="ln" index="3nxI2P" />
       <concept id="1165420413719" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group" flags="ng" index="1ou48o">
         <child id="1165420413721" name="handlerFunction" index="1ou48m" />
         <child id="1165420413720" name="parametersFunction" index="1ou48n" />
@@ -88,7 +89,6 @@
         <property id="1214560368769" name="emptyNoTargetText" index="39s7Ar" />
         <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
-        <property id="1140114345053" name="allowEmptyText" index="1O74Pk" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
@@ -115,12 +115,6 @@
       <concept id="1163613035599" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" flags="in" index="3GJtP1" />
       <concept id="1163613549566" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject" flags="nn" index="3GLrbK" />
       <concept id="1163613822479" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" flags="nn" index="3GMtW1" />
-      <concept id="1088612959204" name="jetbrains.mps.lang.editor.structure.CellModel_Alternation" flags="sg" stub="8104358048506729361" index="1QoScp">
-        <property id="1088613081987" name="vertical" index="1QpmdY" />
-        <child id="1145918517974" name="alternationCondition" index="3e4ffs" />
-        <child id="1088612958265" name="ifTrueCellModel" index="1QoS34" />
-        <child id="1088612973955" name="ifFalseCellModel" index="1QoVPY" />
-      </concept>
       <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -169,7 +163,6 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
-      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -256,6 +249,7 @@
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -538,31 +532,29 @@
           <node concept="3F0ifn" id="2Y$EcRKMt7b" role="3EZMnx">
             <property role="3F0ifm" value="help url:" />
           </node>
-          <node concept="1QoScp" id="4voYo4rtpIi" role="3EZMnx">
-            <property role="1QpmdY" value="true" />
-            <node concept="pkWqt" id="4voYo4rtpIl" role="3e4ffs">
-              <node concept="3clFbS" id="4voYo4rtpIn" role="2VODD2">
-                <node concept="3clFbF" id="4voYo4rtpJE" role="3cqZAp">
+          <node concept="3F1sOY" id="46nPloes2FV" role="3EZMnx">
+            <ref role="1NtTu8" to="hfbu:4voYo4rtpI9" resolve="oldHelpUrl" />
+            <node concept="pkWqt" id="46nPloes2Nb" role="pqm2j">
+              <node concept="3clFbS" id="46nPloes2Nc" role="2VODD2">
+                <node concept="3clFbF" id="46nPloes2Uk" role="3cqZAp">
                   <node concept="2OqwBi" id="4voYo4rtq8j" role="3clFbG">
                     <node concept="2OqwBi" id="4voYo4rtpMH" role="2Oq$k0">
                       <node concept="pncrf" id="4voYo4rtpJD" role="2Oq$k0" />
-                      <node concept="3TrcHB" id="4voYo4rtpXB" role="2OqNvi">
-                        <ref role="3TsBF5" to="hfbu:2Y$EcRKMr2p" resolve="helpUrl" />
+                      <node concept="3TrEf2" id="46nPloes18U" role="2OqNvi">
+                        <ref role="3Tt5mk" to="hfbu:4voYo4rtpI9" resolve="oldHelpUrl" />
                       </node>
                     </node>
-                    <node concept="17RvpY" id="4voYo4rtqkm" role="2OqNvi" />
+                    <node concept="3x8VRR" id="46nPloes1CA" role="2OqNvi" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3F1sOY" id="4voYo4rtqoO" role="1QoVPY">
-              <ref role="1NtTu8" to="hfbu:4voYo4rtpI9" resolve="httpHelpUrl" />
+            <node concept="3nxI2P" id="46nPloes3Ph" role="3F10Kt">
+              <property role="VOm3f" value="true" />
             </node>
-            <node concept="3F0A7n" id="2Y$EcRKMt7E" role="1QoS34">
-              <property role="1$x2rV" value="&lt;no help URL&gt;" />
-              <property role="1O74Pk" value="true" />
-              <ref role="1NtTu8" to="hfbu:2Y$EcRKMr2p" resolve="helpUrl" />
-            </node>
+          </node>
+          <node concept="3F1sOY" id="46nPloes3pi" role="3EZMnx">
+            <ref role="1NtTu8" to="hfbu:46nPloes0RV" resolve="helpUrl" />
           </node>
           <node concept="2iRfu4" id="2Y$EcRKMt7d" role="2iSdaV" />
         </node>
@@ -810,7 +802,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7Mb2akaesrc">
-    <ref role="1XX52x" to="hfbu:4voYo4rsXen" resolve="HelpURL" />
+    <ref role="1XX52x" to="hfbu:4voYo4rsXen" resolve="OldHelpURL" />
     <node concept="3EZMnI" id="7Mb2akaesrd" role="2wV5jI">
       <node concept="3F0A7n" id="4voYo4rtbR_" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no URL&gt;" />

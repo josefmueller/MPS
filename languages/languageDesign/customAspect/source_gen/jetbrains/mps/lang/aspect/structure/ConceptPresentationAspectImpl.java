@@ -13,10 +13,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_GenerationDescriptor;
   private ConceptPresentation props_GenerationDescriptor_ByInterface;
   private ConceptPresentation props_GenerationDescriptor_Class;
-  private ConceptPresentation props_HelpURL;
   private ConceptPresentation props_IAspectConcept;
   private ConceptPresentation props_LanguageAspectDescriptor;
   private ConceptPresentation props_LanguageReference;
+  private ConceptPresentation props_OldHelpURL;
   private ConceptPresentation props_SimpleAspectOrderRef;
   private ConceptPresentation props_SimpleLanguageAspectDescriptor;
 
@@ -52,14 +52,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GenerationDescriptor_Class = cpb.create();
         }
         return props_GenerationDescriptor_Class;
-      case LanguageConceptSwitch.HelpURL:
-        if (props_HelpURL == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.deprecated(true);
-          cpb.rawPresentation("HelpURL");
-          props_HelpURL = cpb.create();
-        }
-        return props_HelpURL;
       case LanguageConceptSwitch.IAspectConcept:
         if (props_IAspectConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -81,6 +73,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_LanguageReference = cpb.create();
         }
         return props_LanguageReference;
+      case LanguageConceptSwitch.OldHelpURL:
+        if (props_OldHelpURL == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
+          cpb.rawPresentation("OldHelpURL");
+          props_OldHelpURL = cpb.create();
+        }
+        return props_OldHelpURL;
       case LanguageConceptSwitch.SimpleAspectOrderRef:
         if (props_SimpleAspectOrderRef == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -91,9 +91,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SimpleLanguageAspectDescriptor:
         if (props_SimpleLanguageAspectDescriptor == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L);
-          cpb.deprecateProperty(0x2fa4a8cdf0c9b099L, "helpUrl");
           cpb.deprecateAggregation(0x2fa4a8cdf0c9b094L, "oldMainLanguages");
           cpb.deprecateAggregation(0x2fa4a8cdf0c9b096L, "oldAdditionalLanguages");
+          cpb.deprecateAggregation(0x47d8f9811b759b89L, "oldHelpUrl");
           cpb.presentationByName();
           cpb.icon(IconContainer.RESOURCE_a0a5a0a9b0l);
           props_SimpleLanguageAspectDescriptor = cpb.create();

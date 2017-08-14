@@ -69,9 +69,9 @@
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.AspectMethodDescriptor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_ByInterface_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.GenerationDescriptor_Class_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.aspect.editor.HelpURL_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.LanguageAspectDescriptor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.LanguageReference_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.aspect.editor.OldHelpURL_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.SimpleLanguageAspectDescriptor_Editor" />
@@ -154,36 +154,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.HelpURL_Editor" file="HelpURL_Editor.java">
-    <classNode dependClassName="jetbrains.mps.lang.aspect.editor.HelpURL_EditorBuilder_a" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.aspect.editor.HelpURL_EditorBuilder_a" file="HelpURL_EditorBuilder_a.java">
-    <classNode dependClassName="com.intellij.ide.BrowserUtil" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="javax.swing.AbstractAction" />
-    <classNode dependClassName="javax.swing.JButton" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Component" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.aspect.editor.LanguageAspectDescriptor_Editor" file="LanguageAspectDescriptor_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.LanguageAspectDescriptor_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -252,6 +222,36 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.aspect.editor.OldHelpURL_Editor" file="OldHelpURL_Editor.java">
+    <classNode dependClassName="jetbrains.mps.lang.aspect.editor.OldHelpURL_EditorBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.aspect.editor.OldHelpURL_EditorBuilder_a" file="OldHelpURL_EditorBuilder_a.java">
+    <classNode dependClassName="com.intellij.ide.BrowserUtil" />
+    <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="javax.swing.AbstractAction" />
+    <classNode dependClassName="javax.swing.JButton" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Component" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_Editor" file="SimpleAspectOrderRef_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.aspect.editor.SimpleAspectOrderRef_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -315,7 +315,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.LoadedLanguages_CellMenu" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.BlockCells" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
