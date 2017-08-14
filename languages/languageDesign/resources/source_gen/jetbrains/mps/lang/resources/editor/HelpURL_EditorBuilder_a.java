@@ -15,15 +15,6 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
-import javax.swing.JComponent;
-import javax.swing.JButton;
-import javax.swing.AbstractAction;
-import java.awt.event.ActionEvent;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.ide.BrowserUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class HelpURL_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -51,7 +42,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createRefCell_k4pbv3_a0());
     editorCell.addEditorCell(createProperty_k4pbv3_b0());
-    editorCell.addEditorCell(createJComponent_k4pbv3_c0());
     return editorCell;
   }
   private EditorCell createRefCell_k4pbv3_a0() {
@@ -138,25 +128,5 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  private EditorCell createJComponent_k4pbv3_c0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_k4pbv3_a2a(), "_k4pbv3_c0");
-    editorCell.setCellId("JComponent_k4pbv3_c0");
-    return editorCell;
-  }
-  private JComponent _QueryFunction_JComponent_k4pbv3_a2a() {
-    final JButton button = new JButton();
-    button.setAction(new AbstractAction("Test") {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            BrowserUtil.browse(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")));
-          }
-        });
-      }
-    });
-    button.setOpaque(false);
-    return button;
   }
 }
