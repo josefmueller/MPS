@@ -1,12 +1,12 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="MPS Remote 5051" type="Remote" factoryName="Remote">
+  <configuration default="false" name="MPS Remote 5061" type="Remote" factoryName="Remote">
     <option name="USE_SOCKET_TRANSPORT" value="true" />
     <option name="SERVER_MODE" value="false" />
     <option name="SHMEM_ADDRESS" value="javadebug" />
     <option name="HOST" value="localhost" />
-    <option name="PORT" value="5051" />
+    <option name="PORT" value="5061" />
     <RunnerSettings RunnerId="Debug">
-      <option name="DEBUG_PORT" value="5051" />
+      <option name="DEBUG_PORT" value="5061" />
       <option name="TRANSPORT" value="0" />
       <option name="LOCAL" value="false" />
     </RunnerSettings>

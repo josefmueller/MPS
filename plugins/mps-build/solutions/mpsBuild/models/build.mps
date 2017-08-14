@@ -4967,6 +4967,12 @@
             <ref role="3bR37D" node="7Kfy9QB6KXW" resolve="jetbrains.mps.lang.core" />
           </node>
         </node>
+        <node concept="1SiIV0" id="62fGxV4Zs$k" role="3bR37C">
+          <node concept="3bR9La" id="62fGxV4Zs$l" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6L4X" resolve="jetbrains.mps.lang.editor" />
+          </node>
+        </node>
         <node concept="398BVA" id="6wK_PpNA8AP" role="3LF7KH">
           <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
           <node concept="2Ry0Ak" id="6wK_PpNA8AQ" role="iGT6I">
@@ -4999,12 +5005,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="62fGxV4Zs$k" role="3bR37C">
-          <node concept="3bR9La" id="62fGxV4Zs$l" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6L4X" resolve="jetbrains.mps.lang.editor" />
           </node>
         </node>
       </node>
@@ -13429,6 +13429,11 @@
             <ref role="3bR37D" node="7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
           </node>
         </node>
+        <node concept="1SiIV0" id="62fGxV4ZsUA" role="3bR37C">
+          <node concept="1Busua" id="62fGxV4ZsUB" role="1SiIV1">
+            <ref role="1Busuk" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
+          </node>
+        </node>
         <node concept="3rtmxn" id="EpEP7iihXv" role="3bR31x">
           <node concept="3LXTmp" id="EpEP7iihXw" role="3rtmxm">
             <node concept="3qWCbU" id="EpEP7iihXx" role="3LXTna">
@@ -13446,11 +13451,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="62fGxV4ZsUA" role="3bR37C">
-          <node concept="1Busua" id="62fGxV4ZsUB" role="1SiIV1">
-            <ref role="1Busuk" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
           </node>
         </node>
       </node>
@@ -16796,6 +16796,12 @@
           <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
         </node>
       </node>
+      <node concept="1SiIV0" id="2M9gNvyxCBp" role="3bR37C">
+        <node concept="3bR9La" id="2M9gNvyxCBq" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
+        </node>
+      </node>
       <node concept="3rtmxn" id="EpEP7iihGv" role="3bR31x">
         <node concept="3LXTmp" id="EpEP7iihGw" role="3rtmxm">
           <node concept="3qWCbU" id="EpEP7iihGx" role="3LXTna">
@@ -16813,12 +16819,6 @@
               </node>
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="1SiIV0" id="2M9gNvyxCBp" role="3bR37C">
-        <node concept="3bR9La" id="2M9gNvyxCBq" role="1SiIV1">
-          <property role="3bR36h" value="false" />
-          <ref role="3bR37D" node="7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
         </node>
       </node>
     </node>
@@ -29246,7 +29246,7 @@
     </node>
     <node concept="26Ea6D" id="2lwFGYOW7EZ" role="2hID6k">
       <property role="2eq24a" value="true" />
-      <property role="26Ea6C" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5051" />
+      <property role="26Ea6C" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5061" />
     </node>
     <node concept="26EafG" id="BJYGrH08Xy" role="26Ea7d">
       <property role="26EafJ" value="lib/branding.jar" />
@@ -29317,7 +29317,7 @@
     </node>
     <node concept="26Ea6D" id="BJYGrH08XG" role="26FZ21">
       <property role="2eq24a" value="true" />
-      <property role="26Ea6C" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5051" />
+      <property role="26Ea6C" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5061" />
     </node>
   </node>
   <node concept="1l3spW" id="4O0hKJpjIUQ">

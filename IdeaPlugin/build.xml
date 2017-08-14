@@ -34,7 +34,7 @@
   <property name="sandbox.dir" value="${base_dir}/IdeaPlugin/sandbox"/>
   <property name="test.platform.sandbox.dir" value="${sandbox.dir}/tests.ant"/>
   <property name="test.platform.sandbox.jps" value="${sandbox.dir}/jps"/>
-  <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5051"/>-->
+  <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5061"/>-->
   <property name="junit.debug.arg"
             value="-D"/> <!--Value for JUnit test JVM launcher. Use -D as empty jvmarg value is treated as classname to run-->
   <property name="mps.plugin.dependencies.target" value="install"

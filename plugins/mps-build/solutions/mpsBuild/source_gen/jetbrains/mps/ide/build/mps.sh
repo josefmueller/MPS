@@ -171,10 +171,10 @@ fi
 IDE_JVM_ARGS=""
 # 32 bit
 # ADDITIONAL_JVM_ARGS="-XX:ReservedCodeCacheSize=240m"
-# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5051"
+# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5061"
 # 64 bit
 # ADDITIONAL_JVM_ARGS="-XX:ReservedCodeCacheSize=240m"
-# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5051"
+# ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5061"
 
 CLASSPATH="$IDE_HOME/lib/branding.jar"
 CLASSPATH="$CLASSPATH:$IDE_HOME/lib/mps-boot.jar"
