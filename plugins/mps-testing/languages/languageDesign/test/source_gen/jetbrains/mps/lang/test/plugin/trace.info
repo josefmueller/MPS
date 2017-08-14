@@ -33,7 +33,7 @@
       <node id="3193873080290339088" at="59,55,60,174" concept="8" />
       <node id="3193873080290339088" at="63,53,64,20" concept="8" />
       <node id="3193873080290339088" at="67,45,68,49" concept="8" />
-      <node id="3193873080290339088" at="71,34,72,126" concept="8" />
+      <node id="3193873080290339088" at="71,34,72,24" concept="8" />
       <node id="3193873080290339088" at="76,0,77,0" concept="4" trace="myOrderConstraints" />
       <node id="3193873080290339088" at="82,50,83,86" concept="8" />
       <node id="3193873080290339088" at="86,44,87,43" concept="7" />
@@ -43,6 +43,7 @@
       <node id="3193873080290339088" at="92,16,93,52" concept="3" />
       <node id="3193873080290339088" at="94,9,95,118" concept="3" />
       <node id="3193873080290339088" at="101,78,102,46" concept="8" />
+      <node id="4726480899536083437" at="104,0,105,0" concept="9" trace="HELP_URL" />
       <node id="3193873080290339088" at="92,14,94,9" concept="1" />
       <node id="3193873080290339088" at="29,0,32,0" concept="2" trace="LanguageAspectsEP_extension#()V" />
       <node id="3193873080290339088" at="34,0,37,0" concept="6" trace="getPresentableAspectName#()Ljava/lang/String;" />
@@ -70,7 +71,7 @@
       <scope id="3193873080290339088" at="59,55,60,174" />
       <scope id="3193873080290339088" at="63,53,64,20" />
       <scope id="3193873080290339088" at="67,45,68,49" />
-      <scope id="3193873080290339088" at="71,34,72,126" />
+      <scope id="3193873080290339088" at="71,34,72,24" />
       <scope id="3193873080290339088" at="82,50,83,86" />
       <scope id="3193873080290339088" at="90,37,91,58" />
       <scope id="3193873080290339088" at="92,16,93,52" />
@@ -116,7 +117,7 @@
       <scope id="3193873080290339088" at="32,0,101,0" />
       <unit id="3193873080290339088" at="51,58,56,9" name="jetbrains.mps.lang.test.plugin.LanguageAspectsEP_extension$1$1" />
       <unit id="3193873080290339088" at="33,15,99,5" name="jetbrains.mps.lang.test.plugin.LanguageAspectsEP_extension$1" />
-      <unit id="3193873080290339088" at="28,0,105,0" name="jetbrains.mps.lang.test.plugin.LanguageAspectsEP_extension" />
+      <unit id="3193873080290339088" at="28,0,106,0" name="jetbrains.mps.lang.test.plugin.LanguageAspectsEP_extension" />
     </file>
     <file name="test_Order.java">
       <node id="6314101850316380918" at="8,23,9,194" concept="11" />
