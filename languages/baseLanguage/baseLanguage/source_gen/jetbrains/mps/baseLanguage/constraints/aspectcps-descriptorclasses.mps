@@ -11115,6 +11115,7 @@
   </node>
   <node concept="312cEu" id="10v">
     <property role="TrG5h" value="IconContainer" />
+    <property role="3GE5qa" value="icons" />
     <node concept="3Tm1VV" id="10w" role="1B3o_S" />
     <node concept="Wx3nA" id="10x" role="jymVt">
       <property role="TrG5h" value="RESOURCE_a0a0a0a1" />

@@ -4274,6 +4274,7 @@
   </node>
   <node concept="312cEu" id="n$">
     <property role="TrG5h" value="IconContainer" />
+    <property role="3GE5qa" value="icons" />
     <node concept="3Tm1VV" id="n_" role="1B3o_S" />
     <node concept="Wx3nA" id="nA" role="jymVt">
       <property role="TrG5h" value="RESOURCE_a0a0b" />
