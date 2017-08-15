@@ -19,9 +19,14 @@ import com.intellij.openapi.application.ApplicationInfo;
 
 public final class DocumentationHelper {
   public static String getConfluenceBase() {
+    // TODO: revert to simple major + minor version after MPS-26466 is fixed
+    final int dotIndex = ApplicationInfo.getInstance().getMinorVersion().indexOf('.');
+    final String minorVersion = dotIndex < 0 ?
+                                ApplicationInfo.getInstance().getMinorVersion() :
+                                ApplicationInfo.getInstance().getMinorVersion().substring(0, dotIndex);
     return String.format("http://confluence.jetbrains.com/display/MPSD%s%s/",
-        ApplicationInfo.getInstance().getMajorVersion(),
-        ApplicationInfo.getInstance().getMinorVersion()
+                         ApplicationInfo.getInstance().getMajorVersion(),
+                         minorVersion
     );
   }
 }
