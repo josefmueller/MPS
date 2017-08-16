@@ -117,6 +117,12 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
+    <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
+      <concept id="1046929382682558545" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteralType" flags="ig" index="9cv3F" />
+      <concept id="1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" flags="in" index="1ajhzC">
+        <child id="1199542457201" name="resultType" index="1ajl9A" />
+      </concept>
+    </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
@@ -157,6 +163,7 @@
       <concept id="1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" flags="nn" index="1Z5TYs" />
       <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
         <property id="1206359757216" name="checkOnly" index="3wDh2S" />
+        <child id="1180447237840" name="errorString" index="3o8Qv2" />
         <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
@@ -703,6 +710,43 @@
     <node concept="1YaCAy" id="46nPloeqDVl" role="1YuTPh">
       <property role="TrG5h" value="url" />
       <ref role="1YaFvo" to="1oap:46nPloeqzyS" resolve="BaseURLLiteral" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="36aT086WPIo">
+    <property role="TrG5h" value="typeof_BaseURLFunction" />
+    <property role="3GE5qa" value="url" />
+    <node concept="3clFbS" id="36aT086WPIp" role="18ibNy">
+      <node concept="2NvLDW" id="36aT086WY6z" role="3cqZAp">
+        <property role="3wDh2S" value="true" />
+        <node concept="mw_s8" id="36aT086WY6D" role="1ZfhK$">
+          <node concept="1Z2H0r" id="36aT086WY6E" role="mwGJk">
+            <node concept="2OqwBi" id="36aT086WY6F" role="1Z2MuG">
+              <node concept="1YBJjd" id="36aT086WY6G" role="2Oq$k0">
+                <ref role="1YBMHb" node="36aT086WPIr" resolve="url" />
+              </node>
+              <node concept="3TrEf2" id="36aT086WY6H" role="2OqNvi">
+                <ref role="3Tt5mk" to="1oap:46nPloeqmpn" resolve="calculator" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="36aT086WY6_" role="1ZfhKB">
+          <node concept="2c44tf" id="36aT086WY6A" role="mwGJk">
+            <node concept="9cv3F" id="36aT086WY6B" role="2c44tc">
+              <node concept="3uibUv" id="36aT086X0WC" role="1ajl9A">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="Xl_RD" id="36aT086X0Wh" role="3o8Qv2">
+          <property role="Xl_RC" value="URL function must be of type { =&gt; String}" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="36aT086WPIr" role="1YuTPh">
+      <property role="TrG5h" value="url" />
+      <ref role="1YaFvo" to="1oap:46nPloeqmpm" resolve="BaseURLFunction" />
     </node>
   </node>
 </model>
