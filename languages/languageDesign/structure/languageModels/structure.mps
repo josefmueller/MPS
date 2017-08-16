@@ -343,7 +343,7 @@
       <ref role="20lvS9" to="tpck:gw2VY9q" resolve="BaseConcept" />
     </node>
     <node concept="1TJgyi" id="28RKVM5GRls" role="1TKVEl">
-      <property role="TrG5h" value="helpURL" />
+      <property role="TrG5h" value="oldHelpURL" />
       <property role="IQ2nx" value="2465654535473034588" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
@@ -405,6 +405,13 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1071489727084" />
       <ref role="20lvS9" node="f_TJgxF" resolve="PropertyDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="1yOtqsjM_nV" role="1TKVEi">
+      <property role="IQ2ns" value="1780177113170204155" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="helpURL" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="1oap:4voYo4rsXen" resolve="HelpURL" />
     </node>
   </node>
   <node concept="1TIwiD" id="h0PlHMJ">
