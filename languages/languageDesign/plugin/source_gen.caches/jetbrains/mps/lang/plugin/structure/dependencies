@@ -6,6 +6,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.IconContainer" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.LanguageConceptSwitch" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.structure.StructureAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.plugin.URLFunction_ConfluenceDocUrl" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentation" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />

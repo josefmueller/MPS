@@ -12,11 +12,13 @@
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
+    <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
       <concept id="5177162104569058199" name="jetbrains.mps.lang.resources.structure.HelpURL" flags="ng" index="1sEMCm">
         <property id="5177162104569058200" name="url" index="1sEMCp" />
+        <reference id="4726480899534317252" name="baseURL" index="1fZFei" />
       </concept>
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
@@ -1905,7 +1907,8 @@
       <property role="1iqoE4" value="${module}/icons/actionNew.png" />
     </node>
     <node concept="1sEMCm" id="1yOtqsjRMt1" role="bvy1s">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20171/Plugin#Plugin-actionsandactiongroups" />
+      <property role="1sEMCp" value="/Plugin#Plugin-actionsandactiongroups" />
+      <ref role="1fZFei" to="tpcc:46nPloez0vX" resolve="ConfluenceDocUrl" />
     </node>
   </node>
   <node concept="AxPO7" id="2aGS$UDXOxR">
