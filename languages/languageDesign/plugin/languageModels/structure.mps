@@ -15,6 +15,9 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="5177162104569058199" name="jetbrains.mps.lang.resources.structure.HelpURL" flags="ng" index="1sEMCm">
+        <property id="5177162104569058200" name="url" index="1sEMCp" />
+      </concept>
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
@@ -39,12 +42,12 @@
         <property id="1083923523171" name="internalValue" index="1uS6qv" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
-        <property id="2465654535473034588" name="helpURL" index="2Bxbrw" />
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
+        <child id="1780177113170204155" name="helpURL" index="bvy1s" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -1804,7 +1807,6 @@
     <property role="TrG5h" value="ActionDeclaration" />
     <property role="3GE5qa" value="Actions.Action" />
     <property role="34LRSv" value="Action" />
-    <property role="2Bxbrw" value="http://confluence.jetbrains.com/display/MPSD20171/Plugin#Plugin-actionsandactiongroups" />
     <property role="EcuMT" value="1203071646776" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="hwtmbzj" role="1TKVEi">
@@ -1901,6 +1903,9 @@
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJPQ" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/actionNew.png" />
+    </node>
+    <node concept="1sEMCm" id="1yOtqsjRMt1" role="bvy1s">
+      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20171/Plugin#Plugin-actionsandactiongroups" />
     </node>
   </node>
   <node concept="AxPO7" id="2aGS$UDXOxR">
