@@ -22,6 +22,9 @@
       <concept id="5979521222239143262" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" flags="ng" index="2SwGe0">
         <child id="5979521222239172928" name="icon" index="2SwzYu" />
       </concept>
+      <concept id="5177162104569058199" name="jetbrains.mps.lang.resources.structure.HelpURL" flags="ng" index="1sEMCm">
+        <property id="5177162104569058200" name="url" index="1sEMCp" />
+      </concept>
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
@@ -2046,8 +2049,8 @@
                       </node>
                       <node concept="liA8E" id="bg" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.helpUrl(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="helpUrl" />
-                        <node concept="Xl_RD" id="bh" role="37wK5m">
-                          <property role="Xl_RC" value="http://confluence.jetbrains.com/display/MPSD20171/Plugin#Plugin-actionsandactiongroups" />
+                        <node concept="1sEMCm" id="bh" role="37wK5m">
+                          <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20171/Plugin#Plugin-actionsandactiongroups" />
                         </node>
                       </node>
                     </node>
