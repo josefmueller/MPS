@@ -15,7 +15,7 @@
   </root>
   <root nodeRef="r:eb069144-c376-4eb0-a277-cda9e3262e77(jetbrains.mps.lang.aspect.migration)/4726480899534872883">
     <file name="MigrateHelpURL.java">
-      <node id="4726480899534872883" at="26,30,27,48" concept="5" />
+      <node id="4726480899534872883" at="26,30,27,59" concept="5" />
       <node id="4726480899534872883" at="30,33,31,16" concept="5" />
       <node id="4726480899534872883" at="33,41,34,17" concept="1" />
       <node id="4726480899534872883" at="34,17,35,16" concept="5" />
@@ -50,7 +50,7 @@
       <node id="4726480899534874488" at="37,42,53,5" concept="0" />
       <node id="4726480899534872883" at="55,0,71,0" concept="3" trace="check#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
       <node id="4726480899534872883" at="37,0,55,0" concept="3" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <scope id="4726480899534872883" at="26,30,27,48" />
+      <scope id="4726480899534872883" at="26,30,27,59" />
       <scope id="4726480899534872883" at="30,33,31,16" />
       <scope id="4726480899534874488" at="41,52,42,23" />
       <scope id="5462094956389986746" at="60,52,61,23" />

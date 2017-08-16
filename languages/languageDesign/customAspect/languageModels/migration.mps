@@ -561,7 +561,7 @@
     </node>
     <node concept="3tYpXE" id="46nPloesu6L" role="jymVt">
       <property role="TrG5h" value="description" />
-      <property role="3tYpXF" value="replace old HelpURLs with new ones" />
+      <property role="3tYpXF" value="replace old HelpURLs with new ones in aspects" />
       <ref role="25KYV2" to="slm6:1_lSsE3RFpE" resolve="description" />
       <node concept="3Tm1VV" id="46nPloesu6N" role="1B3o_S" />
       <node concept="17QB3L" id="46nPloesu6O" role="1tU5fm" />
