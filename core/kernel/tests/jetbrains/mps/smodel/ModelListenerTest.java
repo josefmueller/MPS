@@ -99,7 +99,7 @@ public class ModelListenerTest {
     readTreeNodes(m1.getRootNodes());
 
     Assert.assertEquals(actualNodes * 3, cl1.myVisitedNodes);
-    Assert.assertEquals(actualNodes * 2, cl1.myPropertiesRead);
+    Assert.assertEquals(actualNodes, cl1.myPropertiesRead);
     Assert.assertEquals(0, cl1.myReferencesRead);
 
     // NodeReadEventsCaster doesn't send events unless model.canFireEvent is true (which is false
@@ -127,20 +127,20 @@ public class ModelListenerTest {
     //
     // SModelAccessListener
     myErrors.checkThat(cl1.myVisitedNodes, equalTo(expectedNodeReadCount));
-    myErrors.checkThat(cl1.myPropertiesRead, equalTo(actualNodes * 2));
+    myErrors.checkThat(cl1.myPropertiesRead, equalTo(actualNodes));
     myErrors.checkThat(cl1.myReferencesRead, equalTo(0));
     //
     // NodeReadEventsCaster
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(expectedNodeReadCount));
     myErrors.checkThat(cl2.myVisitedNodes, equalTo(cl1.myVisitedNodes));
-    myErrors.checkThat(cl2.myPropertiesRead, equalTo(actualNodes * 2));
+    myErrors.checkThat(cl2.myPropertiesRead, equalTo(actualNodes));
     myErrors.checkThat(cl2.myReferencesRead, equalTo(0));
     myErrors.checkThat("NodeReadEventsCaster.fireNodeChildReadAccess is never used", cl2.myChildrenRead, equalTo(0));
     //
     // NodeReadAccessCasterInEditor
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(expectedNodeReadCount));
     myErrors.checkThat(cl3.myVisitedNodes, equalTo(cl1.myVisitedNodes));
-    myErrors.checkThat(cl3.myPropertiesRead, equalTo(actualNodes * 2));
+    myErrors.checkThat(cl3.myPropertiesRead, equalTo(actualNodes));
     myErrors.checkThat(cl3.myReferencesRead, equalTo(0));
 
     m1f.detachAccessListeners(cl1, cl2, cl3);
