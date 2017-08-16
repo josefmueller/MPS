@@ -29,6 +29,8 @@ public abstract class BasePrefsPage extends ConfigurableEP<Configurable> impleme
   protected BasePrefsPage(Project project, BaseProjectPrefsComponent prefsComponent) {
     myProject = project;
     myPrefsComponent = prefsComponent;
+    this.id = this.getClass().getName();
+    this.instanceClass = this.getClass().getName();
   }
 
   @Override
