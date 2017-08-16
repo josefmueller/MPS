@@ -134,11 +134,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)/4726480899536586749">
     <file name="URLFunction_ConfluenceDocUrl.java">
-      <node id="4726480899537211058" at="11,30,12,162" concept="9" />
+      <node id="3569916352002070174" at="11,30,12,54" concept="9" />
       <node id="4726480899536705523" at="11,0,14,0" concept="7" trace="invoke#()Ljava/lang/String;" />
       <node id="4726480899536586749" at="9,33,14,15" concept="9" />
       <node id="4726480899536586749" at="9,0,16,0" concept="13" trace="getUrl#()Ljava/lang/String;" />
-      <scope id="4726480899536705524" at="11,30,12,162" />
+      <scope id="4726480899536705524" at="11,30,12,54" />
       <scope id="4726480899536705523" at="11,0,14,0" />
       <scope id="4726480899536586749" at="9,33,14,15" />
       <scope id="4726480899536586749" at="9,0,16,0" />

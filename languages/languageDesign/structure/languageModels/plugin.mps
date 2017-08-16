@@ -29,6 +29,7 @@
     <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
     <import index="f7uj" ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="smjb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.help(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
@@ -72,9 +73,6 @@
       </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
-      </concept>
-      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
-        <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
@@ -122,7 +120,6 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -1421,30 +1418,14 @@
     <node concept="1bVj0M" id="46nPloeztvN" role="1fZFc1">
       <property role="3yWfEV" value="true" />
       <node concept="3clFbS" id="46nPloeztvO" role="1bW5cS">
-        <node concept="3cpWs6" id="46nPloe_oUM" role="3cqZAp">
-          <node concept="3cpWs3" id="46nPloe_pQw" role="3cqZAk">
-            <node concept="3cpWs3" id="46nPloe_pfT" role="3uHU7B">
-              <node concept="Xl_RD" id="46nPloeztwf" role="3uHU7B">
-                <property role="Xl_RC" value="http://confluence.jetbrains.com/display/MPSD" />
-              </node>
-              <node concept="2OqwBi" id="46nPloe_ps5" role="3uHU7w">
-                <node concept="2YIFZM" id="46nPloe_n1Y" role="2Oq$k0">
-                  <ref role="1Pybhc" to="bd8o:~ApplicationInfo" resolve="ApplicationInfo" />
-                  <ref role="37wK5l" to="bd8o:~ApplicationInfo.getInstance():com.intellij.openapi.application.ApplicationInfo" resolve="getInstance" />
-                </node>
-                <node concept="liA8E" id="46nPloe_pz7" role="2OqNvi">
-                  <ref role="37wK5l" to="bd8o:~ApplicationInfo.getMajorVersion():java.lang.String" resolve="getMajorVersion" />
-                </node>
-              </node>
+        <node concept="3clFbF" id="36aT086Whqu" role="3cqZAp">
+          <node concept="2OqwBi" id="36aT086Whxs" role="3clFbG">
+            <node concept="2YIFZM" id="36aT086Whro" role="2Oq$k0">
+              <ref role="37wK5l" to="smjb:~HelpURLProvider.getInstance():jetbrains.mps.help.HelpURLProvider" resolve="getInstance" />
+              <ref role="1Pybhc" to="smjb:~HelpURLProvider" resolve="HelpURLProvider" />
             </node>
-            <node concept="2OqwBi" id="46nPloe_q7h" role="3uHU7w">
-              <node concept="2YIFZM" id="46nPloe_pWM" role="2Oq$k0">
-                <ref role="1Pybhc" to="bd8o:~ApplicationInfo" resolve="ApplicationInfo" />
-                <ref role="37wK5l" to="bd8o:~ApplicationInfo.getInstance():com.intellij.openapi.application.ApplicationInfo" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="46nPloe_qoT" role="2OqNvi">
-                <ref role="37wK5l" to="bd8o:~ApplicationInfo.getMinorVersion():java.lang.String" resolve="getMinorVersion" />
-              </node>
+            <node concept="liA8E" id="36aT086WhCA" role="2OqNvi">
+              <ref role="37wK5l" to="smjb:~HelpURLProvider.getURL():java.lang.String" resolve="getURL" />
             </node>
           </node>
         </node>
