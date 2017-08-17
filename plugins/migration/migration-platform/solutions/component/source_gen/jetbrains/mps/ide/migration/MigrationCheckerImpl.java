@@ -12,11 +12,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Collection;
 import java.util.HashSet;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
@@ -25,7 +23,9 @@ import java.util.ArrayList;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import org.jetbrains.mps.openapi.module.SDependency;
+import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import jetbrains.mps.util.NameUtil;
@@ -88,8 +88,13 @@ public class MigrationCheckerImpl implements MigrationChecker {
     myProject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         List<SModule> projectModules = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(myProject)).toListSequence();
-        Set<SModule> depModules = SetSequence.fromSetWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(projectModules).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
-        SetSequence.fromSet(depModules).removeSequence(Sequence.fromIterable(((Iterable<SModule>) myProject.getModulesWithGenerators())));
+        Collection<SModule> depModules = CollectionSequence.fromCollectionWithValues(new HashSet<SModule>(), new GlobalModuleDependenciesManager(projectModules).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE));
+        CollectionSequence.fromCollection(depModules).removeSequence(Sequence.fromIterable((Iterable<SModule>) myProject.getModulesWithGenerators()));
+        depModules = CollectionSequence.fromCollection(depModules).where(new IWhereFilter<SModule>() {
+          public boolean accept(SModule it) {
+            return MigrationModuleUtil.wouldBeMigrateableWhenNotPacked(it);
+          }
+        }).toListSequence();
         Collection<ScriptApplied> depMigrationsToRun = myManager.getModuleMigrations(depModules);
         Iterable<SModule> notMigratedModules = CollectionSequence.fromCollection(depMigrationsToRun).select(new ISelector<ScriptApplied, SModule>() {
           public SModule select(ScriptApplied it) {
