@@ -56,7 +56,7 @@ public class JUnitLibsRepackaging extends BaseProjectMigration {
       MapSequence.fromMap(hamcrestModels).put(nextModel.getName().getLongName(), nextModel);
     }
 
-    for (SModule projectModule : ListSequence.fromList(project.getProjectModules())) {
+    for (SModule projectModule : ListSequence.fromList(project.getProjectModulesWithGenerators())) {
       if (projectModule == junitModule || projectModule == hamcrestModule || projectModule == PersistenceFacade.getInstance().createModuleReference("83f155ff-422c-4b5a-a2f2-b459302dd215(jetbrains.mps.baseLanguage.unitTest.libs)").resolve(project.getRepository())) {
         continue;
       }

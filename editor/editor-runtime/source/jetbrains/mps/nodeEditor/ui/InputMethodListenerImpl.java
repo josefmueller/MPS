@@ -45,8 +45,17 @@ public class InputMethodListenerImpl implements InputMethodListener {
   public void caretPositionChanged(InputMethodEvent event) {
   }
 
+  /**
+   * Can be used to get text, entered by user, from the input event (if applicable).
+   *
+   * @param event {@link InputMethodEvent}
+   * @return text, entered by user, or null if there is no text
+   */
   public static String getText(InputMethodEvent event) {
     AttributedCharacterIterator text = event.getText();
+    if (text == null) {
+      return null;
+    }
     StringBuilder replacement = new StringBuilder();
     for (char c = text.first(); c != CharacterIterator.DONE; c = text.next()) {
       replacement.append(c);
