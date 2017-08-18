@@ -33,6 +33,7 @@ public class ShowDeprecatedUsages_Action extends BaseAction {
     super("Show Usages of Deprecated", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
+    this.setMnemonic("d".charAt(0));
   }
   @Override
   public boolean isDumbAware() {

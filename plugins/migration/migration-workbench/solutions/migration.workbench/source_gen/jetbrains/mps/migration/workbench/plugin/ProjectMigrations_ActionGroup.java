@@ -23,6 +23,7 @@ public class ProjectMigrations_ActionGroup extends GeneratedActionGroup {
   public ProjectMigrations_ActionGroup() {
     super("Project Migrations", ID);
     this.setIsInternal(false);
+    this.setMnemonic("p".charAt(0));
     this.setPopup(true);
   }
   public void doUpdate(AnActionEvent event) {

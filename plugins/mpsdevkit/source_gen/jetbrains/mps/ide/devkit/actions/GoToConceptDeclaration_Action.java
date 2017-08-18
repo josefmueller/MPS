@@ -59,6 +59,14 @@ public class GoToConceptDeclaration_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.concept");
-    NavigationSupport.getInstance().openNode(event.getData(MPSCommonDataKeys.MPS_PROJECT), SNodeOperations.getConcept(event.getData(MPSCommonDataKeys.NODE)).getSourceNode().resolve(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository()), true, true);
+    SNodeReference sourceNode = SNodeOperations.getConcept(event.getData(MPSCommonDataKeys.NODE)).getSourceNode();
+    if (sourceNode == null) {
+      return;
+    }
+    SNode resolve = sourceNode.resolve(event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository());
+    if (resolve == null) {
+      return;
+    }
+    NavigationSupport.getInstance().openNode(event.getData(MPSCommonDataKeys.MPS_PROJECT), resolve, true, false);
   }
 }

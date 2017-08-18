@@ -12,9 +12,6 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import java.awt.Frame;
-import jetbrains.mps.openapi.editor.Editor;
-import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -57,20 +54,6 @@ public class GoToEditorDeclaration_Action extends BaseAction {
       }
     }
     {
-      Frame p = event.getData(MPSCommonDataKeys.FRAME);
-      MapSequence.fromMap(_params).put("frame", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
-      Editor p = event.getData(MPSEditorDataKeys.MPS_EDITOR);
-      MapSequence.fromMap(_params).put("editor", p);
-      if (p == null) {
-        return false;
-      }
-    }
-    {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       MapSequence.fromMap(_params).put("node", node);
       if (node == null) {
@@ -83,7 +66,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.editorDeclaration");
     final SNode editorNode = GoToEditorDeclaration_Action.this.findNodeEditorDeclaration(((SNode) MapSequence.fromMap(_params).get("node")), _params);
-    NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), editorNode, true, true);
+    NavigationSupport.getInstance().openNode(((MPSProject) MapSequence.fromMap(_params).get("project")), editorNode, true, false);
     NavigationSupport.getInstance().selectInTree(((MPSProject) MapSequence.fromMap(_params).get("project")), editorNode, false);
   }
   /*package*/ SNode findNodeEditorDeclaration(SNode forNode, final Map<String, Object> _params) {

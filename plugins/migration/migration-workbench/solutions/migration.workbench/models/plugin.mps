@@ -82,6 +82,7 @@
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
+        <property id="1215865999894" name="mnemonic" index="ngHcd" />
         <property id="1205250923097" name="caption" index="2uzpH1" />
         <property id="997079742910640235" name="fillActionContext" index="1teQrl" />
         <child id="1203083196627" name="updateBlock" index="tmbBb" />
@@ -95,6 +96,7 @@
       <concept id="1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" flags="in" index="tnohg" />
       <concept id="1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" flags="ng" index="tC5Ba">
         <property id="1204991940915" name="caption" index="2f7twF" />
+        <property id="1205160812895" name="mnemonic" index="2pbE17" />
         <property id="1213283637680" name="isPopup" index="1XlLyE" />
         <child id="1204991552650" name="modifier" index="2f5YQi" />
         <child id="1207145245948" name="contents" index="ftER_" />
@@ -3791,6 +3793,7 @@
     <property role="TrG5h" value="Migrations" />
     <property role="3GE5qa" value="migrationList" />
     <property role="1XlLyE" value="true" />
+    <property role="2pbE17" value="m" />
     <node concept="tT9cl" id="5$zfhXzr3Gr" role="2f5YQi">
       <ref role="tU$_T" node="5$zfhXzhGmb" resolve="MigrationsMenu" />
       <ref role="2f8Tey" node="4H96pIbL850" resolve="migrations" />
@@ -3824,6 +3827,7 @@
     <property role="2uzpH1" value="Execute Re-Runnable Migrations" />
     <property role="3GE5qa" value="migrationList" />
     <property role="72QZ$" value="true" />
+    <property role="ngHcd" value="r" />
     <node concept="tnohg" id="5$zfhXzhLy2" role="tncku">
       <node concept="3clFbS" id="5$zfhXzhLy3" role="2VODD2">
         <node concept="3cpWs8" id="1wrYbVZej8" role="3cqZAp">
@@ -4821,6 +4825,7 @@
     <property role="TrG5h" value="ProjectMigrations" />
     <property role="1XlLyE" value="true" />
     <property role="2f7twF" value="Project Migrations" />
+    <property role="2pbE17" value="p" />
     <node concept="tT9cl" id="7R6nBIbwq8V" role="2f5YQi">
       <ref role="2f8Tey" node="7R6nBIbwq8B" resolve="projectMigrations" />
       <ref role="tU$_T" node="5$zfhXzqWk4" resolve="Migrations" />
@@ -4963,6 +4968,7 @@
     <property role="TrG5h" value="LanguageMigrations" />
     <property role="1XlLyE" value="true" />
     <property role="2f7twF" value="Language Migrations" />
+    <property role="2pbE17" value="l" />
     <node concept="tT9cl" id="7R6nBIbwqbg" role="2f5YQi">
       <ref role="2f8Tey" node="7R6nBIbwq8J" resolve="languageMigrations" />
       <ref role="tU$_T" node="5$zfhXzqWk4" resolve="Migrations" />
@@ -5300,6 +5306,7 @@
     <property role="TrG5h" value="RunPreUpdateCheck" />
     <property role="2uzpH1" value="Run Pre-Update Check" />
     <property role="72QZ$" value="true" />
+    <property role="ngHcd" value="c" />
     <node concept="1DS2jV" id="5$zfhXzr51q" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -5854,6 +5861,7 @@
     <property role="2uzpH1" value="Run Migration Assistant" />
     <property role="72QZ$" value="true" />
     <property role="1teQrl" value="true" />
+    <property role="ngHcd" value="u" />
     <node concept="1DS2jV" id="2UTM4$6j1gg" role="1NuT2Z">
       <property role="TrG5h" value="project" />
       <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
@@ -6038,6 +6046,7 @@
   <node concept="sE7Ow" id="51adnVzU34y">
     <property role="TrG5h" value="ShowDeprecatedStuff" />
     <property role="2uzpH1" value="Show Deprecated Stuff in Project" />
+    <property role="ngHcd" value="p" />
     <node concept="1DS2jV" id="51adnVzXyUQ" role="1NuT2Z">
       <property role="TrG5h" value="mpsProject" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
@@ -6376,6 +6385,7 @@
     <property role="TrG5h" value="MigrationUtils" />
     <property role="1XlLyE" value="true" />
     <property role="2f7twF" value="Utils" />
+    <property role="2pbE17" value="t" />
     <node concept="tT9cl" id="4H96pIbL85o" role="2f5YQi">
       <ref role="tU$_T" node="5$zfhXzhGmb" resolve="MigrationsMenu" />
       <ref role="2f8Tey" node="4H96pIbL85e" resolve="utils" />
@@ -8644,6 +8654,7 @@
   <node concept="sE7Ow" id="5$zfhXzhGml">
     <property role="TrG5h" value="ShowDeprecatedUsages" />
     <property role="2uzpH1" value="Show Usages of Deprecated" />
+    <property role="ngHcd" value="d" />
     <node concept="tnohg" id="5$zfhXzhGmm" role="tncku">
       <node concept="3clFbS" id="5$zfhXzhGmn" role="2VODD2">
         <node concept="3cpWs8" id="5$zfhXziDHi" role="3cqZAp">

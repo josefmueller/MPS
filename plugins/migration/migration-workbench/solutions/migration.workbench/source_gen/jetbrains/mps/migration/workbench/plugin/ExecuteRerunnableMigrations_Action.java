@@ -40,6 +40,7 @@ public class ExecuteRerunnableMigrations_Action extends BaseAction {
     super("Execute Re-Runnable Migrations", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
+    this.setMnemonic("r".charAt(0));
   }
   @Override
   public boolean isDumbAware() {

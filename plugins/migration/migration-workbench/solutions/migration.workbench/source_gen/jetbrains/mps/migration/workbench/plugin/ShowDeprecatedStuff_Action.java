@@ -28,6 +28,7 @@ public class ShowDeprecatedStuff_Action extends BaseAction {
     super("Show Deprecated Stuff in Project", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
+    this.setMnemonic("p".charAt(0));
   }
   @Override
   public boolean isDumbAware() {

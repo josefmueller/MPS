@@ -611,7 +611,7 @@
               <ref role="3cqZAo" node="5nAbEdOhnDN" resolve="project" />
             </node>
             <node concept="liA8E" id="3MU8x$ZVq1B" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~IProject.getProjectModules():java.util.List" resolve="getProjectModules" />
+              <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
             </node>
           </node>
           <node concept="3clFbS" id="3MU8x$ZVpHF" role="2LFqv$">

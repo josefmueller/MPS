@@ -14,13 +14,13 @@ import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature;
 import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature;
-import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.PropertiesFeature;
 import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.ReferencesFeature;
+import jetbrains.mps.ide.ui.smodel.ReferenceTreeNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
@@ -39,26 +39,32 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
       node = ((MPSTreeNodeEx) treeNode.getParent()).getSNode();
     }
     SNodeReference nodePointer = (node == null ? null : node.getReference());
-    if (nodePointer == null || nodePointer.getModelReference() == null) {
-      return null;
+    if (nodePointer != null && nodePointer.getModelReference() != null) {
+      if (treeNode instanceof SNodeTreeNode || treeNode instanceof ConceptTreeNode) {
+        return new NodeFeature(nodePointer);
+      } else if (treeNode instanceof PropertyTreeNode && treeNode.getParent() instanceof MPSTreeNodeEx) {
+        return new PropertyFeature(nodePointer, ((PropertyTreeNode) treeNode).getProperty());
+      } else if (treeNode instanceof PropertiesTreeNode) {
+        return new PropertiesFeature(nodePointer);
+      } else if (treeNode instanceof ReferencesTreeNode) {
+        return new ReferencesFeature(nodePointer);
+      }
     }
-    if (treeNode instanceof SNodeTreeNode || treeNode instanceof ConceptTreeNode) {
-      return new NodeFeature(nodePointer);
-    } else if (treeNode instanceof PropertyTreeNode && treeNode.getParent() instanceof MPSTreeNodeEx) {
-      return new PropertyFeature(nodePointer, ((PropertyTreeNode) treeNode).getProperty());
-    } else if (treeNode instanceof ReferenceTreeNode) {
+
+    if (treeNode instanceof ReferenceTreeNode) {
       SReference ref = ((ReferenceTreeNode) treeNode).getRef();
       return new PropertyFeature(new SNodePointer(ref.getSourceNode()), ref.getRole());
-    } else if (treeNode instanceof PropertiesTreeNode) {
-      return new PropertiesFeature(nodePointer);
-    } else if (treeNode instanceof ReferencesTreeNode) {
-      return new ReferencesFeature(nodePointer);
-    } else if (treeNode instanceof PackageNode) {
+    }
+
+    if (treeNode instanceof PackageNode) {
       PackageNode pn = ((PackageNode) treeNode);
       return new VirtualPackageFeature(pn.getModelReference(), pn.getPackage());
-    } else if (treeNode instanceof SModelTreeNode) {
+    }
+
+    if (treeNode instanceof SModelTreeNode) {
       return new ModelFeature(((SModelTreeNode) treeNode).getModel().getReference());
     }
+
     return null;
   }
 }

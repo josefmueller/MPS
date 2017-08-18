@@ -48,6 +48,7 @@ public class RunPreUpdateCheck_Action extends BaseAction {
     super("Run Pre-Update Check", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
+    this.setMnemonic("c".charAt(0));
   }
   @Override
   public boolean isDumbAware() {
