@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cells.contextAssistant.WhatsThisActionItem;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.assist.ContextAssistant;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -38,16 +39,16 @@ public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBa
   private final ContextAssistantController myController;
   private final ContextAssistantPanel myPanel;
   private final TriggerRelayoutComponentListener myComponentListener = new TriggerRelayoutComponentListener();
+  private boolean myIsActive;
 
   public EditorCell_ContextAssistantComponent(EditorContext editorContext, SNode node) {
     super(editorContext, node);
     myPanel = new ContextAssistantPanel();
     myPanel.setBackground(StyleRegistry.getInstance().getEditorBackground());
     myPanel.setEscapeAction(new RequestFocusInEditorAction(editorContext.getEditorComponent()));
-
+    myPanel.getComponent().setVisible(false);
     myController = new ContextAssistantController(editorContext, myPanel);
     myController.setHelpAction(new WhatsThisActionItem(myPanel.getComponent()));
-    myController.hideMenu();
   }
 
   @NotNull
@@ -64,8 +65,10 @@ public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBa
   @Override
   public void onAdd() {
     super.onAdd();
-    getContext().getContextAssistantManager().register(myController);
-
+    if (!CellTraversalUtil.isCellUnderFoldedCollection(this)) {
+      myIsActive = true;
+      getContext().getContextAssistantManager().register(myController);
+    }
     // Relayout the cell when the panel appears/disappears, mainly to ensure that the horizontal scrollbar appears or disappears as necessary.
     myPanel.getComponent().addComponentListener(myComponentListener);
   }
@@ -73,7 +76,10 @@ public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBa
   @Override
   public void onRemove() {
     myPanel.getComponent().removeComponentListener(myComponentListener);
-    getContext().getContextAssistantManager().unregister(myController);
+    if (myIsActive) {
+      getContext().getContextAssistantManager().unregister(myController);
+      myIsActive = false;
+    }
     super.onRemove();
   }
 
@@ -100,6 +106,22 @@ public class EditorCell_ContextAssistantComponent extends EditorCell_ComponentBa
   public void layoutComponent() {
     // Do nothing. Our cell size is updated via the component listener and the superclass behavior would cause endless back-and-forth resizing since
     // the component doesn't have a preferred size.
+  }
+
+  @Override
+  public void onCollapse() {
+    if (myIsActive) {
+      getContext().getContextAssistantManager().unregister(myController);
+      myIsActive = false;
+    }
+  }
+
+  @Override
+  public void onExpand() {
+    if (!myIsActive) {
+      getContext().getContextAssistantManager().register(myController);
+      myIsActive = true;
+    }
   }
 
   public ContextAssistant getContextAssistant() {

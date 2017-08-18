@@ -7,6 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.EditorContext;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,19 +27,23 @@ public class ContextAssistant_HiddenWhenNoMenu_Test extends BaseTransformationTe
     public void testMethodImpl() throws Exception {
       initEditorComponent("6183626235528683202", "");
       final EditorContext editorContext = getEditorComponent().getEditorContext();
-      editorContext.getRepository().getModelAccess().runReadInEDT(new Runnable() {
+      SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          ContextAssistantManager contextAssistantManager = editorContext.getContextAssistantManager();
-          contextAssistantManager.updateImmediately();
-          Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
-          Assert.assertNotNull(contextAssistantManager.getActiveMenuItems());
+          editorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              ContextAssistantManager contextAssistantManager = editorContext.getContextAssistantManager();
+              contextAssistantManager.updateImmediately();
+              Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
+              Assert.assertNotNull(contextAssistantManager.getActiveMenuItems());
 
-          getEditorComponent().getSelectionManager().setSelection(SNodeOperations.cast(getNodeById("6183626235528683202"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage"), 0x4d6a8b533e60aa4dL, "Parent"))));
+              getEditorComponent().getSelectionManager().setSelection(SNodeOperations.cast(getNodeById("6183626235528683202"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage"), 0x4d6a8b533e60aa4dL, "Parent"))));
 
-          contextAssistantManager.updateImmediately();
+              contextAssistantManager.updateImmediately();
 
-          Assert.assertNull(contextAssistantManager.getActiveAssistant());
-          Assert.assertNull(contextAssistantManager.getActiveMenuItems());
+              Assert.assertNull(contextAssistantManager.getActiveAssistant());
+              Assert.assertNull(contextAssistantManager.getActiveMenuItems());
+            }
+          });
         }
       });
     }

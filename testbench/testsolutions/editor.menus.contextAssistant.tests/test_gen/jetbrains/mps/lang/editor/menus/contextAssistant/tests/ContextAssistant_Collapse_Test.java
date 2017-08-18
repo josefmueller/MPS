@@ -6,37 +6,37 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import junit.framework.Assert;
-import java.util.List;
-import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import java.util.Set;
+import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 @MPSLaunch
-public class ContextAssistant_ShownWhenMenu_Test extends BaseTransformationTest {
+public class ContextAssistant_Collapse_Test extends BaseTransformationTest {
   @Test
-  public void test_ContextAssistant_ShownWhenMenu() throws Throwable {
+  public void test_ContextAssistant_Collapse() throws Throwable {
     initTest("${mps_home}", "r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.menus.contextAssistant.tests@tests)");
-    runTest("jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_ShownWhenMenu_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_Collapse_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("8865042036543828398", "");
-      EditorContext editorContext = getEditorComponent().getEditorContext();
+      initEditorComponent("379023083996738158", "379023083996764056");
+      invokeAction("jetbrains.mps.ide.editor.actions.Collapse_Action");
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           ContextAssistantManager contextAssistantManager = getEditorComponent().getEditorContext().getContextAssistantManager();
           contextAssistantManager.updateImmediately();
-
-          Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
-
-          List<TransformationMenuItem> activeItems = contextAssistantManager.getActiveMenuItems();
-          Assert.assertNotNull(activeItems);
-          Assert.assertTrue(activeItems.size() > 0);
+          Assert.assertNull(contextAssistantManager.getActiveAssistant());
+          Set<EditorCell_WithComponent> componentCells = getEditorComponent().getCellTracker().getComponentCells();
+          Assert.assertFalse(componentCells.isEmpty());
+          for (EditorCell_WithComponent cell : SetSequence.fromSet(componentCells)) {
+            Assert.assertFalse(cell.getComponent().isVisible());
+          }
         }
       });
     }

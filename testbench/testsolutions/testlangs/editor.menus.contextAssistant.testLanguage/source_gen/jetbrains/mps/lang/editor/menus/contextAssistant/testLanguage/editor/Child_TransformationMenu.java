@@ -295,7 +295,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
   public class TMP_Group_qk1e79_d1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
-      return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).contains("a");
+      return check_qk1e79_a0a0d1(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     }
 
     @NotNull
@@ -392,7 +392,7 @@ public class Child_TransformationMenu extends TransformationMenuBase {
   public class TMP_Group_qk1e79_e1 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
-      return !(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).endsWith("a"));
+      return !(check_qk1e79_a0a0a4b(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))));
     }
 
     @NotNull
@@ -508,5 +508,17 @@ public class Child_TransformationMenu extends TransformationMenuBase {
       }
     }
 
+  }
+  private static boolean check_qk1e79_a0a0d1(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.contains("a");
+    }
+    return false;
+  }
+  private static boolean check_qk1e79_a0a0a4b(String checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.endsWith("a");
+    }
+    return false;
   }
 }

@@ -27,6 +27,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 2:
         return Collections.<ConceptEditor>singletonList(new Parent_Editor());
       case 3:
+        return Collections.<ConceptEditor>singletonList(new ParentCollapsed_Editor());
+      case 4:
         return Collections.<ConceptEditor>singletonList(new SubconceptOfChild_Editor());
       default:
     }
@@ -42,6 +44,10 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 0:
         return Collections.<TransformationMenu>singletonList(new Child_TransformationMenu());
       case 1:
+        return Collections.<TransformationMenu>singletonList(new Parent_TransformationMenu());
+      case 2:
+        return Collections.<TransformationMenu>singletonList(new ParentCollapsed_TransformationMenu());
+      case 3:
         return Collections.<TransformationMenu>singletonList(new SubconceptOfChild_TransformationMenu());
       default:
     }
@@ -68,6 +74,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a4, menuId.getFqName())) {
             case 0:
               return Arrays.asList(new TransformationMenu[]{new ParentNamedMenu()});
+            case 1:
+              return Arrays.asList(new TransformationMenu[]{new Parent_ContextAssistant_NamedMenu()});
             default:
           }
         }
@@ -78,9 +86,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     return Collections.<TransformationMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x7d40c2eb5957a904L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x7d40c2eb5957a904L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x5428f7c9b49f682L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x5428f7c9b49f682L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x1b49c84ee1cc743bL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L), MetaIdFactory.conceptId(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.NamedMenu", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.Recursive"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.ParentNamedMenu"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a4 = new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.ParentNamedMenu", "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.editor.Parent_ContextAssistant_NamedMenu"};
 }

@@ -80,6 +80,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.diagram.testLanguage", "Diagram2", 0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1dce2L);
     b.class_(false, false, false);
     b.origin("r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)/8794120090374233314");
+    b.prop("initiallyCollapsed", 0x1702f223d36d60c8L, "1658153848510701768");
     b.aggregate("mainNodes", 0x7a0afda102e20209L).target(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L).optional(true).ordered(true).multiple(true).origin("8794120090374242825").done();
     b.aggregate("nodeConnectors", 0x4ce40ecaf414670eL).target(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf4106a9bL).optional(true).ordered(true).multiple(true).origin("5540569706413713166").done();
     return b.create();

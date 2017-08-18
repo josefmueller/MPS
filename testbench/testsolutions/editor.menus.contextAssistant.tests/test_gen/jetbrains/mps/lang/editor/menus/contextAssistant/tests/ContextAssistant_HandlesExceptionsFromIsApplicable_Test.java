@@ -6,6 +6,7 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import junit.framework.Assert;
@@ -23,12 +24,17 @@ public class ContextAssistant_HandlesExceptionsFromIsApplicable_Test extends Bas
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("7140355682307235746", "");
-      EditorContext editorContext = getEditorComponent().getEditorContext();
-      editorContext.getRepository().getModelAccess().runReadInEDT(new Runnable() {
+      SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          ContextAssistantManager contextAssistantManager = getEditorComponent().getEditorContext().getContextAssistantManager();
-          contextAssistantManager.updateImmediately();
-          Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
+          final EditorContext editorContext = getEditorComponent().getEditorContext();
+          editorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              ContextAssistantManager contextAssistantManager = editorContext.getContextAssistantManager();
+              contextAssistantManager.updateImmediately();
+              Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
+              Assert.assertNotNull(contextAssistantManager.getActiveMenuItems());
+            }
+          });
         }
       });
     }

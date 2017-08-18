@@ -1497,6 +1497,23 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="6qesl0F8V6J" role="3cqZAp">
+          <node concept="2OqwBi" id="6qesl0F8Wdl" role="3clFbG">
+            <node concept="1rXfSq" id="6qesl0F8V6H" role="2Oq$k0">
+              <ref role="37wK5l" node="7efWZtHXzWi" resolve="getComponent" />
+            </node>
+            <node concept="liA8E" id="6qesl0F8Yvw" role="2OqNvi">
+              <ref role="37wK5l" to="dxuu:~JComponent.setVisible(boolean):void" resolve="setVisible" />
+              <node concept="3fqX7Q" id="6qesl0F8Gaw" role="37wK5m">
+                <node concept="2YIFZM" id="6qesl0F8MKs" role="3fr31v">
+                  <ref role="1Pybhc" to="f4zo:~CellTraversalUtil" resolve="CellTraversalUtil" />
+                  <ref role="37wK5l" to="f4zo:~CellTraversalUtil.isCellUnderFoldedCollection(jetbrains.mps.openapi.editor.cells.EditorCell):boolean" resolve="isCellUnderFoldedCollection" />
+                  <node concept="Xjq3P" id="6qesl0F8MKt" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3Tm1VV" id="75sA8i0iQBJ" role="1B3o_S" />
       <node concept="3cqZAl" id="75sA8i0iQBK" role="3clF45" />

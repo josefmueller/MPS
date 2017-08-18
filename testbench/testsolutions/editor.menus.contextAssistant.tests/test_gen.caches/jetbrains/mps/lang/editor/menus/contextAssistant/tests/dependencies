@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_CollapseAndShowSecondAssistant_Test" file="ContextAssistant_CollapseAndShowSecondAssistant_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_Collapse_Test" file="ContextAssistant_Collapse_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_EmptySubclassMenuOverridesNonEmptySuperclassMenu_Test" file="ContextAssistant_EmptySubclassMenuOverridesNonEmptySuperclassMenu_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
@@ -16,11 +50,47 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_ExpandAndShowSecondAssistant_Test" file="ContextAssistant_ExpandAndShowSecondAssistant_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinderUtil" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_Expand_Test" file="ContextAssistant_Expand_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test" file="ContextAssistant_HandlesExceptionsFromIsApplicable_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
@@ -34,6 +104,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
@@ -44,11 +115,48 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_InitiallyCollapsedVisibility_Test" file="ContextAssistant_InitiallyCollapsedVisibility_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.assist.ContextAssistantManager" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_InitiallyExpandedVisibility_Test" file="ContextAssistant_InitiallyExpandedVisibility_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_ShowAssistantOnSubconcept_Test" file="ContextAssistant_ShowAssistantOnSubconcept_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
@@ -65,6 +173,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />

@@ -9,13 +9,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.jetpad.mapper.Mapper;
@@ -34,7 +34,11 @@ import java.util.HashSet;
 import java.util.ListIterator;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 /*package*/ class Diagram2_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -61,17 +65,28 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setCellId("Collection_dbn5di_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createDiagram_dbn5di_a0());
-    editorCell.addEditorCell(createConstant_dbn5di_b0());
+    editorCell.addEditorCell(createCollection_dbn5di_a0());
+    editorCell.addEditorCell(createCollection_dbn5di_b0());
     return editorCell;
   }
-  private EditorCell createDiagram_dbn5di_a0() {
-    DiagramCell editorCell = new Diagram2_EditorBuilder_a.DiagramCellImpl_dbn5di_a0(getEditorContext(), myNode);
-    editorCell.setCellId("Diagram_dbn5di_a0");
+  private EditorCell createCollection_dbn5di_a0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
+    editorCell.setCellId("Collection_dbn5di_a0");
+    editorCell.setFoldable(true);
+    editorCell.addEditorCell(createDiagram_dbn5di_a0a());
+    editorCell.setInitiallyCollapsed(nodeCondition_dbn5di_a0a());
     return editorCell;
   }
-  private class DiagramCellImpl_dbn5di_a0 extends DiagramCell {
-    private DiagramCellImpl_dbn5di_a0(EditorContext editorContext, SNode node) {
+  private boolean nodeCondition_dbn5di_a0a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1dce2L, 0x1702f223d36d60c8L, "initiallyCollapsed"));
+  }
+  private EditorCell createDiagram_dbn5di_a0a() {
+    DiagramCell editorCell = new Diagram2_EditorBuilder_a.DiagramCellImpl_dbn5di_a0a(getEditorContext(), myNode);
+    editorCell.setCellId("Diagram_dbn5di_a0a");
+    return editorCell;
+  }
+  private class DiagramCellImpl_dbn5di_a0a extends DiagramCell {
+    private DiagramCellImpl_dbn5di_a0a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1de05L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node"), MetaAdapterFactory.getContainmentLink(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e1dce2L, 0x7a0afda102e20209L, "mainNodes"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
@@ -184,10 +199,32 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return diagramView;
     }
   }
-  private EditorCell createConstant_dbn5di_b0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "text");
-    editorCell.setCellId("Constant_dbn5di_b0");
+  private EditorCell createCollection_dbn5di_b0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
+    editorCell.setCellId("Collection_dbn5di_b0");
+    editorCell.addEditorCell(createConstant_dbn5di_a1a());
+    editorCell.addEditorCell(createProperty_dbn5di_b1a());
+    return editorCell;
+  }
+  private EditorCell createConstant_dbn5di_a1a() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "initially collapsed:");
+    editorCell.setCellId("Constant_dbn5di_a1a");
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createProperty_dbn5di_b1a() {
+    CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
+    provider.setRole("initiallyCollapsed");
+    provider.setNoTargetText("<no initiallyCollapsed>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(getEditorContext());
+    editorCell.setCellId("property_initiallyCollapsed");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    if (attributeConcept != null) {
+      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
+      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
+    } else
     return editorCell;
   }
 }
