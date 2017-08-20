@@ -7,6 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.EditorContext;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import junit.framework.Assert;
 import java.util.List;
@@ -26,7 +27,7 @@ public class ContextAssistant_ShownWhenMenu_Test extends BaseTransformationTest 
     public void testMethodImpl() throws Exception {
       initEditorComponent("8865042036543828398", "");
       EditorContext editorContext = getEditorComponent().getEditorContext();
-      editorContext.getRepository().getModelAccess().runReadInEDT(new Runnable() {
+      SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
           ContextAssistantManager contextAssistantManager = getEditorComponent().getEditorContext().getContextAssistantManager();
           contextAssistantManager.updateImmediately();

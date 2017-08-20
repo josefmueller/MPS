@@ -15,6 +15,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptChild = createDescriptorForChild();
   /*package*/ final ConceptDescriptor myConceptOtherSubconceptOfChild = createDescriptorForOtherSubconceptOfChild();
   /*package*/ final ConceptDescriptor myConceptParent = createDescriptorForParent();
+  /*package*/ final ConceptDescriptor myConceptParentCollapsed = createDescriptorForParentCollapsed();
   /*package*/ final ConceptDescriptor myConceptSubconceptOfChild = createDescriptorForSubconceptOfChild();
   private final LanguageConceptSwitch myConceptIndex;
 
@@ -24,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptChild, myConceptOtherSubconceptOfChild, myConceptParent, myConceptSubconceptOfChild);
+    return Arrays.asList(myConceptChild, myConceptOtherSubconceptOfChild, myConceptParent, myConceptParentCollapsed, myConceptSubconceptOfChild);
   }
 
   @Override
@@ -37,6 +38,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptOtherSubconceptOfChild;
       case LanguageConceptSwitch.Parent:
         return myConceptParent;
+      case LanguageConceptSwitch.ParentCollapsed:
+        return myConceptParentCollapsed;
       case LanguageConceptSwitch.SubconceptOfChild:
         return myConceptSubconceptOfChild;
       default:
@@ -70,6 +73,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:965ddf1f-d8c1-4f52-b6c1-9bbaf0a8af5b(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure)/5578424278096849485");
     b.aggregate("children", 0x4d6a8b533e60aa58L).target(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L).optional(true).ordered(true).multiple(true).origin("5578424278096849496").done();
     b.alias("parent");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForParentCollapsed() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage", "ParentCollapsed", 0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x5428f7c9b49f682L);
+    b.class_(false, false, false);
+    b.origin("r:965ddf1f-d8c1-4f52-b6c1-9bbaf0a8af5b(jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure)/379023083996575362");
+    b.prop("initiallyCollapsed", 0x5428f7c9b49f683L, "379023083996575363");
+    b.prop("secondAssistant", 0x5428f7c9b4b9f22L, "379023083996684066");
+    b.alias("parent collapsed");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSubconceptOfChild() {

@@ -12,6 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Child;
   private ConceptPresentation props_OtherSubconceptOfChild;
   private ConceptPresentation props_Parent;
+  private ConceptPresentation props_ParentCollapsed;
   private ConceptPresentation props_SubconceptOfChild;
 
   @Override
@@ -40,6 +41,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Parent = cpb.create();
         }
         return props_Parent;
+      case LanguageConceptSwitch.ParentCollapsed:
+        if (props_ParentCollapsed == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("parent collapsed");
+          props_ParentCollapsed = cpb.create();
+        }
+        return props_ParentCollapsed;
       case LanguageConceptSwitch.SubconceptOfChild:
         if (props_SubconceptOfChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

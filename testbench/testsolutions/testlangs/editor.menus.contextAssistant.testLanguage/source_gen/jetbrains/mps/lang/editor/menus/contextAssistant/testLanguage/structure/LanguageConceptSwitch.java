@@ -12,13 +12,15 @@ public final class LanguageConceptSwitch {
   public static final int Child = 0;
   public static final int OtherSubconceptOfChild = 1;
   public static final int Parent = 2;
-  public static final int SubconceptOfChild = 3;
+  public static final int ParentCollapsed = 3;
+  public static final int SubconceptOfChild = 4;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL);
     builder.put(0x4d6a8b533e60aa32L, Child);
     builder.put(0x7d40c2eb5957a904L, OtherSubconceptOfChild);
     builder.put(0x4d6a8b533e60aa4dL, Parent);
+    builder.put(0x5428f7c9b49f682L, ParentCollapsed);
     builder.put(0x1b49c84ee1cc743bL, SubconceptOfChild);
     myIndex = builder.seal();
   }

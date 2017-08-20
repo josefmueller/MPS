@@ -939,7 +939,7 @@
       <node id="8206768923889828082" at="57,49,58,70" concept="3" />
       <node id="1752256779113417966" at="60,57,61,42" concept="3" />
       <node id="1752256779113346078" at="65,57,66,34" concept="3" />
-      <node id="1752256779113131598" at="69,16,70,30" concept="3" />
+      <node id="8842762453100046099" at="69,39,70,30" concept="3" />
       <node id="5496206068112920241" at="73,7,74,20" concept="3" />
       <node id="5130572135177608104" at="74,20,75,20" concept="3" />
       <node id="3544826152738993524" at="75,20,76,11" concept="3" />
@@ -959,7 +959,6 @@
       <node id="4282822416100099733" at="128,99,129,32" concept="10" />
       <node id="4282822416100099738" at="132,55,133,19" concept="10" />
       <node id="4282822416100099741" at="136,56,137,19" concept="10" />
-      <node id="8206768923890114576" at="69,14,71,9" concept="0" />
       <node id="2937623487936733228" at="60,0,63,0" concept="8" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
       <node id="1752256779112961947" at="65,0,68,0" concept="8" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
       <node id="1752256779113131588" at="78,0,81,0" concept="8" trace="openNode#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
@@ -985,7 +984,7 @@
       <node id="4282822416100099537" at="34,0,78,0" concept="2" trace="ShowCFGDialog#(Ljetbrains/mps/ide/dataFlow/presentation/ControlFlowGraph;Ljetbrains/mps/project/MPSProject;Ljava/lang/String;)V" />
       <scope id="2937623487936733234" at="60,57,61,42" />
       <scope id="1752256779112961952" at="65,57,66,34" />
-      <scope id="8206768923890114577" at="69,16,70,30" />
+      <scope id="8842762453100046098" at="69,39,70,30" />
       <scope id="1752256779113131563" at="78,55,79,90" />
       <scope id="4282822416100099662" at="82,32,83,28" />
       <scope id="3544826152738994448" at="87,44,88,24" />

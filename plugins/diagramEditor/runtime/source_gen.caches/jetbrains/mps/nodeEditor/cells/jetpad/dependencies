@@ -146,6 +146,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellTraversalUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
     <classNode dependClassName="jetbrains.mps.smodel.action.AbstractNodeSubstituteAction" />

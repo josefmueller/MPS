@@ -51,7 +51,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.dataFlow.IfInstanceOfStatement_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.dataFlow.IfInstanceOfVarReference_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.dataFlow.LinkAttributeQualifier_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.dataFlow.ModelReferenceExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.dataFlow.Node_IsInstanceOfOperation_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.dataFlow.OperationParm_Concept_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.dataFlow.PoundExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.dataFlow.PropertyAttributeQualifier_DataFlow" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.dataFlow.SNodeOperation_DataFlow" />
@@ -89,7 +91,21 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.dataFlow.ModelReferenceExpression_DataFlow" file="ModelReferenceExpression_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.dataFlow.Node_IsInstanceOfOperation_DataFlow" file="Node_IsInstanceOfOperation_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.dataFlow.OperationParm_Concept_DataFlow" file="OperationParm_Concept_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -114,7 +130,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>

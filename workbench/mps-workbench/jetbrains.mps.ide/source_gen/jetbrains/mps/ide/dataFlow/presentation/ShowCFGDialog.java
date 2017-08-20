@@ -66,7 +66,7 @@ public class ShowCFGDialog extends DialogWrapper {
               openNode(sourceRef);
             }
           });
-        } else {
+        } else if (sourceRef != null) {
           openNode(sourceRef);
         }
       }

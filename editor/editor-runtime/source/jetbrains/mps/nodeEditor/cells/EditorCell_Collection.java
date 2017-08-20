@@ -590,8 +590,8 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     } else {
       removeUnfoldingListener();
     }
-    updateSubtreeOnCollapsedStateChange(getEditorCells().iterator(), !collapsed);
-    updateSubtreeOnCollapsedStateChange(getFoldedCellCollection().iterator(), collapsed);
+    updateSubtreeOnCollapsedStateChange(getEditorCells().iterator(), collapsed);
+    updateSubtreeOnCollapsedStateChange(getFoldedCellCollection().iterator(), !collapsed);
   }
 
   private void updateSelectionOnCollapseChange() {
@@ -619,21 +619,25 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return CellTraversalUtil.getFoldedParent(this) != null;
   }
 
-  private void updateSubtreeOnCollapsedStateChange(Iterator<EditorCell> subtreeRootsIterator, boolean visible) {
+  private void updateSubtreeOnCollapsedStateChange(Iterator<EditorCell> subtreeRootsIterator, boolean collapsed) {
     while (subtreeRootsIterator.hasNext()) {
       EditorCell nextSubtreeRootCell = subtreeRootsIterator.next();
       for (TreeIterator<EditorCell> iterator = new CellTreeIterable(nextSubtreeRootCell, nextSubtreeRootCell, true).iterator(); iterator.hasNext(); ) {
         EditorCell child = iterator.next();
         if (child instanceof EditorCell_WithComponent) {
-          ((EditorCell_WithComponent) child).getComponent().setVisible(visible);
+          if (collapsed) {
+            ((EditorCell_WithComponent) child).onCollapse();
+          } else {
+            ((EditorCell_WithComponent) child).onExpand();
+          }
         }
         if (child instanceof EditorCell_Collection) {
           EditorCell_Collection childCollection = (EditorCell_Collection) child;
           if (childCollection.isCollapsed()) {
-            if (visible) {
-              childCollection.addUnfoldingListener();
-            } else {
+            if (collapsed) {
               childCollection.removeUnfoldingListener();
+            } else {
+              childCollection.addUnfoldingListener();
             }
             iterator.skipChildren();
           }

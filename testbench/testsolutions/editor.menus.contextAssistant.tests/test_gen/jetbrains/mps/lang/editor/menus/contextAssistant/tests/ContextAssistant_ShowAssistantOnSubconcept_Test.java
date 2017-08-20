@@ -7,6 +7,7 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.EditorContext;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -26,14 +27,18 @@ public class ContextAssistant_ShowAssistantOnSubconcept_Test extends BaseTransfo
     public void testMethodImpl() throws Exception {
       initEditorComponent("9025427969322513568", "");
       final EditorContext editorContext = getEditorComponent().getEditorContext();
-      editorContext.getRepository().getModelAccess().runReadInEDT(new Runnable() {
+      SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          ContextAssistantManager contextAssistantManager = editorContext.getContextAssistantManager();
+          editorContext.getRepository().getModelAccess().runReadAction(new Runnable() {
+            public void run() {
+              ContextAssistantManager contextAssistantManager = editorContext.getContextAssistantManager();
 
-          getEditorComponent().getSelectionManager().setSelection(SNodeOperations.cast(getNodeById("9025427969322528788"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage"), 0x7d40c2eb5957a904L, "OtherSubconceptOfChild"))));
-          contextAssistantManager.updateImmediately();
-          Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
-          Assert.assertNotNull(contextAssistantManager.getActiveMenuItems());
+              getEditorComponent().getSelectionManager().setSelection(SNodeOperations.cast(getNodeById("9025427969322528788"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage"), 0x7d40c2eb5957a904L, "OtherSubconceptOfChild"))));
+              contextAssistantManager.updateImmediately();
+              Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
+              Assert.assertNotNull(contextAssistantManager.getActiveMenuItems());
+            }
+          });
         }
       });
     }

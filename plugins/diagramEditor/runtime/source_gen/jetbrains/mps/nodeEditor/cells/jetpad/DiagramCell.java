@@ -26,6 +26,7 @@ import javax.swing.JComponent;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.event.FocusEvent;
+import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
@@ -142,6 +143,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     super.onAdd();
     getEditor().getCellTracker().addComponentCell(this);
     getComponent().addFocusListener(mySelectCellOnFocusGained);
+    getComponent().setVisible(!(CellTraversalUtil.isCellUnderFoldedCollection(this)));
   }
   @Override
   public void onRemove() {
