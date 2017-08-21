@@ -11,11 +11,11 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -49,14 +49,14 @@ public class VersionFixer {
       throw new IllegalStateException("Module " + myModule + " has no module descriptor.");
     }
 
-    Map<SModuleReference, Integer> oldDepVersions = filterPresentModuleVersions(md);
-    Map<SModuleReference, Integer> newDepVersions = collectPresentModuleVersions(abstractModule, oldDepVersions);
+    Map<SModuleReference, Integer> oldDepVersions = filterValidDependencyVersions(md);
+    Map<SModuleReference, Integer> newDepVersions = collectActualDependencyVersions(abstractModule, oldDepVersions);
     if (!(oldDepVersions.keySet().equals(newDepVersions.keySet()))) {
       return true;
     }
 
-    Map<SLanguage, Integer> oldLangVersions = filterPresentLanguageVersions(md);
-    Map<SLanguage, Integer> newLangVersions = collectPresentLanguageVersions(abstractModule, oldLangVersions);
+    Map<SLanguage, Integer> oldLangVersions = filterValidLanguageVersions(md);
+    Map<SLanguage, Integer> newLangVersions = collectActualLanguageVersions(abstractModule, oldLangVersions);
     checkModelVersionsAreValid(myModule, newLangVersions);
     if (!(oldLangVersions.equals(newLangVersions))) {
       return true;
@@ -74,15 +74,11 @@ public class VersionFixer {
       throw new IllegalStateException("Module " + myModule + " has not module descriptor.");
     }
 
-    Map<SModuleReference, Integer> oldDepsFiltered = filterPresentModuleVersions(md);
-    Map<SModuleReference, Integer> newDepVersions = collectPresentModuleVersions(abstractModule, oldDepsFiltered);
+    Map<SModuleReference, Integer> oldDepsFiltered = filterValidDependencyVersions(md);
+    Map<SModuleReference, Integer> newDepVersions = collectActualDependencyVersions(abstractModule, oldDepsFiltered);
     if (!(oldDepsFiltered.equals(newDepVersions))) {
       abstractModule.setChanged();
-      Iterable<SModuleReference> keysToRemove = SetSequence.fromSet(((Set<SModuleReference>) oldDepsFiltered.keySet())).where(new IWhereFilter<SModuleReference>() {
-        public boolean accept(SModuleReference it) {
-          return it.resolve(myRepo) != null;
-        }
-      });
+      Iterable<SModuleReference> keysToRemove = oldDepsFiltered.keySet();
       Sequence.fromIterable(keysToRemove).visitAll(new IVisitor<SModuleReference>() {
         public void visit(SModuleReference it) {
           md.getDependencyVersions().remove(it);
@@ -91,8 +87,8 @@ public class VersionFixer {
       md.getDependencyVersions().putAll(newDepVersions);
     }
 
-    Map<SLanguage, Integer> langVersions = filterPresentLanguageVersions(md);
-    Map<SLanguage, Integer> newLangVersions = collectPresentLanguageVersions(abstractModule, langVersions);
+    Map<SLanguage, Integer> langVersions = filterValidLanguageVersions(md);
+    Map<SLanguage, Integer> newLangVersions = collectActualLanguageVersions(abstractModule, langVersions);
     if (!(langVersions.equals(newLangVersions))) {
       abstractModule.setChanged();
       Iterable<SLanguage> keysToRemove = SetSequence.fromSet(((Set<SLanguage>) langVersions.keySet())).where(new IWhereFilter<SLanguage>() {
@@ -109,7 +105,7 @@ public class VersionFixer {
     }
   }
 
-  private Map<SLanguage, Integer> filterPresentLanguageVersions(ModuleDescriptor md) {
+  private Map<SLanguage, Integer> filterValidLanguageVersions(ModuleDescriptor md) {
     final Map<SLanguage, Integer> versions = new HashMap<SLanguage, Integer>(md.getLanguageVersions());
     List<SLanguage> missed = SetSequence.fromSet(MapSequence.fromMap(versions).keySet()).where(new IWhereFilter<SLanguage>() {
       public boolean accept(SLanguage it) {
@@ -124,7 +120,7 @@ public class VersionFixer {
     return versions;
   }
 
-  private Map<SLanguage, Integer> collectPresentLanguageVersions(SModule module, Map<SLanguage, Integer> oldLangVersions) {
+  private Map<SLanguage, Integer> collectActualLanguageVersions(SModule module, Map<SLanguage, Integer> oldLangVersions) {
     module.getRepository().getModelAccess().checkReadAccess();
     Map<SLanguage, Integer> newLangVersions = new HashMap<SLanguage, Integer>();
     Set<SLanguage> usedLanguages = module.getUsedLanguages();
@@ -143,7 +139,7 @@ public class VersionFixer {
     return newLangVersions;
   }
 
-  private Map<SModuleReference, Integer> filterPresentModuleVersions(ModuleDescriptor md) {
+  private Map<SModuleReference, Integer> filterValidDependencyVersions(ModuleDescriptor md) {
     final Map<SModuleReference, Integer> versions = new HashMap<SModuleReference, Integer>(md.getDependencyVersions());
     List<SModuleReference> missed = SetSequence.fromSet(MapSequence.fromMap(versions).keySet()).where(new IWhereFilter<SModuleReference>() {
       public boolean accept(SModuleReference it) {
@@ -158,7 +154,7 @@ public class VersionFixer {
     return versions;
   }
 
-  private Map<SModuleReference, Integer> collectPresentModuleVersions(SModule module, Map<SModuleReference, Integer> oldDepVersions) {
+  private Map<SModuleReference, Integer> collectActualDependencyVersions(SModule module, Map<SModuleReference, Integer> oldDepVersions) {
     module.getRepository().getModelAccess().checkReadAccess();
     Map<SModuleReference, Integer> newDepVersions = new HashMap<SModuleReference, Integer>();
     Set<SModule> visible = new LinkedHashSet<SModule>();

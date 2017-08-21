@@ -2003,7 +2003,7 @@
                                                 <ref role="1Pybhc" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
                                                 <node concept="2OqwBi" id="aT" role="37wK5m">
                                                   <node concept="2qgKlT" id="aU" role="2OqNvi">
-                                                    <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
+                                                    <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getVisibleConceptMethods" />
                                                     <node concept="1eOMI4" id="aW" role="37wK5m">
                                                       <node concept="3K4zz7" id="aX" role="1eOMHV">
                                                         <node concept="1DoJHT" id="aY" role="3K4E3e">
