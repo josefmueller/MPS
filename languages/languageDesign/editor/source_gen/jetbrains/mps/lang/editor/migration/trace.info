@@ -2336,51 +2336,60 @@
       <node id="5181650540338085915" at="42,5,43,0" concept="12" />
       <node id="5181650540338085916" at="43,0,44,93" concept="9" />
       <node id="5181650540338085924" at="44,93,45,90" concept="9" />
-      <node id="5181650540338085932" at="45,90,46,0" concept="12" />
-      <node id="5181650540338085935" at="47,53,48,73" concept="9" />
-      <node id="5181650540338085941" at="48,73,49,0" concept="12" />
-      <node id="5181650540338085950" at="50,151,51,65" concept="4" />
-      <node id="5181650540338085959" at="52,40,53,69" concept="4" />
-      <node id="5181650540338085972" at="56,5,57,19" concept="10" />
+      <node id="6273375048278439643" at="45,90,46,71" concept="9" />
+      <node id="6273375048278437763" at="46,71,47,0" concept="12" />
+      <node id="5181650540338085935" at="48,53,49,73" concept="9" />
+      <node id="6273375048278520227" at="49,73,50,0" concept="12" />
+      <node id="6273375048278539324" at="51,60,52,17" concept="3" />
+      <node id="6273375048278540104" at="53,14,54,58" concept="4" />
+      <node id="5181650540338085941" at="55,7,56,0" concept="12" />
+      <node id="5181650540338085950" at="57,151,58,65" concept="4" />
+      <node id="5181650540338085959" at="59,40,60,69" concept="4" />
+      <node id="5181650540338085972" at="63,5,64,19" concept="10" />
       <node id="5181650540338075246" at="27,0,29,0" concept="2" trace="DependentModulesUtil#()V" />
+      <node id="6273375048278539578" at="53,12,55,7" concept="1" />
       <node id="5181650540338085888" at="36,69,39,9" concept="7" />
-      <node id="5181650540338085957" at="51,65,54,9" concept="7" />
-      <node id="5181650540338085942" at="49,0,55,7" concept="6" />
+      <node id="5181650540338085957" at="58,65,61,9" concept="7" />
+      <node id="6273375048278523861" at="50,0,55,7" concept="7" />
+      <node id="5181650540338085942" at="56,0,62,7" concept="6" />
       <node id="5181650540338085876" at="34,59,41,7" concept="6" />
       <node id="5181650540338085872" at="33,169,42,5" concept="6" />
-      <node id="5181650540338085933" at="46,0,56,5" concept="16" />
-      <node id="5181650540338082511" at="30,0,59,0" concept="14" trace="count#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+      <node id="5181650540338085933" at="47,0,63,5" concept="16" />
+      <node id="5181650540338082511" at="30,0,66,0" concept="14" trace="count#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
       <scope id="5181650540338075250" at="27,34,27,34" />
       <scope id="5181650540338085889" at="37,82,38,136" />
-      <scope id="5181650540338085958" at="52,40,53,69" />
+      <scope id="6273375048278523863" at="51,60,52,17" />
+      <scope id="6273375048278539579" at="53,14,54,58" />
+      <scope id="5181650540338085958" at="59,40,60,69" />
       <scope id="5181650540338075246" at="27,0,29,0" />
-      <scope id="5181650540338085949" at="50,151,54,9" />
+      <scope id="5181650540338085949" at="57,151,61,9" />
       <scope id="5181650540338085881" at="35,94,40,166">
         <var name="targetModule" id="5181650540338085883" />
       </scope>
-      <scope id="5181650540338085942" at="49,0,55,7">
+      <scope id="5181650540338085942" at="56,0,62,7">
         <var name="dependency" id="5181650540338085943" />
       </scope>
       <scope id="5181650540338085875" at="34,59,41,7" />
       <scope id="5181650540338085876" at="34,59,41,7">
         <var name="dependency" id="5181650540338085877" />
       </scope>
-      <scope id="5181650540338085934" at="47,53,55,7">
-        <var name="provider" id="5181650540338085936" />
-      </scope>
       <scope id="5181650540338085872" at="33,169,42,5">
         <var name="module" id="5181650540338085873" />
       </scope>
-      <scope id="5181650540338082514" at="30,68,57,19">
+      <scope id="5181650540338085934" at="48,53,62,7">
+        <var name="provider" id="5181650540338085936" />
+      </scope>
+      <scope id="5181650540338082514" at="30,68,64,19">
+        <var name="checked" id="6273375048278439646" />
         <var name="engaged" id="5181650540338085925" />
         <var name="modules" id="5181650540338085849" />
         <var name="q" id="5181650540338085917" />
         <var name="reverseDependency" id="5181650540338085858" />
       </scope>
-      <scope id="5181650540338082511" at="30,0,59,0">
+      <scope id="5181650540338082511" at="30,0,66,0">
         <var name="initial" id="5181650540338082920" />
       </scope>
-      <unit id="5181650540338073526" at="25,0,60,0" name="jetbrains.mps.lang.editor.migration.DependentModulesUtil" />
+      <unit id="5181650540338073526" at="25,0,67,0" name="jetbrains.mps.lang.editor.migration.DependentModulesUtil" />
     </file>
   </root>
   <root nodeRef="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)/562388756448624010">

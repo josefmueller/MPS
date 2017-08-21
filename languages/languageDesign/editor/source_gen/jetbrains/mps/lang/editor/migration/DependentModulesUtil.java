@@ -43,9 +43,16 @@ public final class DependentModulesUtil {
 
     Queue<SModule> q = QueueSequence.fromQueueWithValues(new LinkedList<SModule>(), initial);
     Set<SModule> engaged = SetSequence.fromSetWithValues(new HashSet<SModule>(), initial);
+    Set<SModule> checked = SetSequence.fromSet(new HashSet<SModule>());
 
     while (QueueSequence.fromQueue(q).isNotEmpty()) {
       SModule provider = QueueSequence.fromQueue(q).removeFirstElement();
+
+      if (SetSequence.fromSet(checked).contains(provider)) {
+        continue;
+      } else {
+        SetSequence.fromSet(checked).addElement(provider);
+      }
 
       for (Tuples._2<Boolean, SModule> dependency : ListSequence.fromList(MapSequence.fromMap(reverseDependency).get(provider.getModuleReference()))) {
         SetSequence.fromSet(engaged).addElement(dependency._1());
