@@ -33,7 +33,7 @@ public class FindInstancesByCondition_Action extends BaseAction {
   }
   @Override
   public boolean isDumbAware() {
-    return false;
+    return true;
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

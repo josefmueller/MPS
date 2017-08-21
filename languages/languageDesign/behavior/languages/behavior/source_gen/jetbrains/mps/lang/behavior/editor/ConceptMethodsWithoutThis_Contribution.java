@@ -97,7 +97,7 @@ public class ConceptMethodsWithoutThis_Contribution extends SubstituteMenuBase {
       @Override
       protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
         SNode behavior = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), true, false);
-        return AbstractConceptDeclaration__BehaviorDescriptor.getAvailableConceptMethods_idhEwILGo.invoke(SLinkOperations.getTarget(behavior, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), _context.getParentNode());
+        return AbstractConceptDeclaration__BehaviorDescriptor.getAllConceptMethods_idwrIPXhfIPX.invoke(SLinkOperations.getTarget(behavior, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")), _context.getParentNode());
       }
       private class SMP_Action_lcxjkp_a0a extends SingleItemSubstituteMenuPart {
         private final SNode myParameterObject;

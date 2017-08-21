@@ -63,12 +63,6 @@
         <reference id="1204992316090" name="point" index="2f8Tey" />
         <reference id="1203092736097" name="modifiedGroup" index="tU$_T" />
       </concept>
-      <concept id="1512255007353869535" name="jetbrains.mps.lang.plugin.structure.ActionReference" flags="ln" index="2JRCWP">
-        <reference id="1512255007353869536" name="actionDeclaration" index="2JRCWa" />
-      </concept>
-      <concept id="1512255007353869532" name="jetbrains.mps.lang.plugin.structure.NonDumbAwareActions" flags="ng" index="2JRCWQ">
-        <child id="1512255007353869533" name="actions" index="2JRCWR" />
-      </concept>
       <concept id="1205679047295" name="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" flags="ig" index="2S4$dB" />
       <concept id="1205681243813" name="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" flags="in" index="2ScWuX" />
       <concept id="1206092561075" name="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" flags="nn" index="3gHZIF" />
@@ -762,15 +756,6 @@
       <node concept="tCFHf" id="2UF8zdtXCMg" role="ftvYc">
         <ref role="tCJdB" node="2UF8zdtXaH8" resolve="ModifyInstancesByCondition" />
       </node>
-    </node>
-  </node>
-  <node concept="2JRCWQ" id="2Ug$oBxqBvA">
-    <property role="TrG5h" value="Default" />
-    <node concept="2JRCWP" id="6NdQLvrxrpv" role="2JRCWR">
-      <ref role="2JRCWa" node="2Ug$oBxpv85" resolve="FindInstancesByCondition" />
-    </node>
-    <node concept="2JRCWP" id="6NdQLvrxrsT" role="2JRCWR">
-      <ref role="2JRCWa" node="2UF8zdtXaH8" resolve="ModifyInstancesByCondition" />
     </node>
   </node>
   <node concept="sE7Ow" id="2UF8zdtXaH8">

@@ -386,9 +386,6 @@
         <child id="1226511765987" name="elementType" index="2hN53Y" />
       </concept>
       <concept id="1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" flags="nn" index="2i4dXS" />
-      <concept id="1226593880804" name="jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation" flags="nn" index="2mGkJT">
-        <child id="1226593903142" name="argument" index="2mGqcV" />
-      </concept>
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
@@ -422,6 +419,7 @@
       <concept id="1162934736510" name="jetbrains.mps.baseLanguage.collections.structure.GetElementOperation" flags="nn" index="34jXtK" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
+      <concept id="1173946412755" name="jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation" flags="nn" index="1kEaZ2" />
       <concept id="1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" flags="in" index="3rvAFt">
         <child id="1197683466920" name="keyType" index="3rvQeY" />
         <child id="1197683475734" name="valueType" index="3rvSg0" />
@@ -8133,8 +8131,8 @@
               <node concept="3cpWs8" id="PobQbO7NNd" role="3cqZAp">
                 <node concept="3cpWsn" id="PobQbO7NNe" role="3cpWs9">
                   <property role="TrG5h" value="depModules" />
-                  <node concept="2hMVRd" id="PobQbO7NNf" role="1tU5fm">
-                    <node concept="3uibUv" id="PobQbO7NNg" role="2hN53Y">
+                  <node concept="3vKaQO" id="5kEGx6Fr6qx" role="1tU5fm">
+                    <node concept="3uibUv" id="5kEGx6Fr8cj" role="3O5elw">
                       <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                     </node>
                   </node>
@@ -8169,25 +8167,57 @@
                   <node concept="37vLTw" id="PobQbO7NNs" role="2Oq$k0">
                     <ref role="3cqZAo" node="PobQbO7NNe" resolve="depModules" />
                   </node>
-                  <node concept="2mGkJT" id="PobQbO7NNt" role="2OqNvi">
-                    <node concept="1eOMI4" id="PobQbO7NNu" role="2mGqcV">
-                      <node concept="10QFUN" id="PobQbO7NNv" role="1eOMHV">
-                        <node concept="2OqwBi" id="PobQbO7NNw" role="10QFUP">
-                          <node concept="37vLTw" id="2wbhCYFHIwI" role="2Oq$k0">
-                            <ref role="3cqZAo" node="2wbhCYFFcSx" resolve="myProject" />
-                          </node>
-                          <node concept="liA8E" id="PobQbO7NNy" role="2OqNvi">
-                            <ref role="37wK5l" to="z1c3:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
-                          </node>
+                  <node concept="1kEaZ2" id="5kEGx6FrdnN" role="2OqNvi">
+                    <node concept="10QFUN" id="PobQbO7NNv" role="25WWJ7">
+                      <node concept="2OqwBi" id="PobQbO7NNw" role="10QFUP">
+                        <node concept="37vLTw" id="2wbhCYFHIwI" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2wbhCYFFcSx" resolve="myProject" />
                         </node>
-                        <node concept="3uibUv" id="PobQbO7NNz" role="10QFUM">
-                          <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-                          <node concept="3uibUv" id="PobQbO7NN$" role="11_B2D">
-                            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                        <node concept="liA8E" id="PobQbO7NNy" role="2OqNvi">
+                          <ref role="37wK5l" to="z1c3:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
+                        </node>
+                      </node>
+                      <node concept="3uibUv" id="PobQbO7NNz" role="10QFUM">
+                        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+                        <node concept="3uibUv" id="PobQbO7NN$" role="11_B2D">
+                          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="5kEGx6FqYtT" role="3cqZAp">
+                <node concept="37vLTI" id="5kEGx6FqZqU" role="3clFbG">
+                  <node concept="2OqwBi" id="5kEGx6FreVW" role="37vLTx">
+                    <node concept="2OqwBi" id="5kEGx6Fr0TR" role="2Oq$k0">
+                      <node concept="37vLTw" id="5kEGx6FqZXX" role="2Oq$k0">
+                        <ref role="3cqZAo" node="PobQbO7NNe" resolve="depModules" />
+                      </node>
+                      <node concept="3zZkjj" id="5kEGx6Fr1PA" role="2OqNvi">
+                        <node concept="1bVj0M" id="5kEGx6Fr1PC" role="23t8la">
+                          <node concept="3clFbS" id="5kEGx6Fr1PD" role="1bW5cS">
+                            <node concept="3clFbF" id="5kEGx6Fr2zD" role="3cqZAp">
+                              <node concept="2YIFZM" id="5eMIkHZGAU6" role="3clFbG">
+                                <ref role="37wK5l" to="6f4m:5eMIkHZGq4Y" resolve="wouldBeMigrateableWhenNotPacked" />
+                                <ref role="1Pybhc" to="6f4m:4JlWzK6VGnA" resolve="MigrationModuleUtil" />
+                                <node concept="37vLTw" id="5eMIkHZGAU7" role="37wK5m">
+                                  <ref role="3cqZAo" node="5kEGx6Fr1PE" resolve="it" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Rh6nW" id="5kEGx6Fr1PE" role="1bW2Oz">
+                            <property role="TrG5h" value="it" />
+                            <node concept="2jxLKc" id="5kEGx6Fr1PF" role="1tU5fm" />
                           </node>
                         </node>
                       </node>
                     </node>
+                    <node concept="ANE8D" id="5kEGx6Frga3" role="2OqNvi" />
+                  </node>
+                  <node concept="37vLTw" id="5kEGx6FqYtR" role="37vLTJ">
+                    <ref role="3cqZAo" node="PobQbO7NNe" resolve="depModules" />
                   </node>
                 </node>
               </node>
