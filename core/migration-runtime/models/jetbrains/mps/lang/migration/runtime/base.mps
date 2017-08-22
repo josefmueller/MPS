@@ -6312,7 +6312,7 @@
             <property role="3TUv4t" value="false" />
             <property role="TrG5h" value="oldDepVersions" />
             <node concept="1rXfSq" id="18VG85aEIcs" role="33vP2m">
-              <ref role="37wK5l" node="18VG85aEIcm" resolve="filterPresentModuleVersions" />
+              <ref role="37wK5l" node="18VG85aEIcm" resolve="filterValidDependencyVersions" />
               <node concept="37vLTw" id="18VG85aEIcr" role="37wK5m">
                 <ref role="3cqZAo" node="2V3ml1v4JZD" resolve="md" />
               </node>
@@ -6341,7 +6341,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="2V3ml1v4K09" role="33vP2m">
-              <ref role="37wK5l" node="2V3ml1v187G" resolve="collectPresentModuleVersions" />
+              <ref role="37wK5l" node="2V3ml1v187G" resolve="collectActualDependencyVersions" />
               <node concept="37vLTw" id="2V3ml1v4K0a" role="37wK5m">
                 <ref role="3cqZAo" node="2V3ml1v4JZz" resolve="abstractModule" />
               </node>
@@ -6389,7 +6389,7 @@
             <property role="3TUv4t" value="false" />
             <property role="TrG5h" value="oldLangVersions" />
             <node concept="1rXfSq" id="18VG85aFfsZ" role="33vP2m">
-              <ref role="37wK5l" node="18VG85aFfsT" resolve="filterPresentLanguageVersions" />
+              <ref role="37wK5l" node="18VG85aFfsT" resolve="filterValidLanguageVersions" />
               <node concept="37vLTw" id="18VG85aFfsY" role="37wK5m">
                 <ref role="3cqZAo" node="2V3ml1v4JZD" resolve="md" />
               </node>
@@ -6409,7 +6409,7 @@
           <node concept="3cpWsn" id="2V3ml1v87Hm" role="3cpWs9">
             <property role="TrG5h" value="newLangVersions" />
             <node concept="1rXfSq" id="2V3ml1v87Hq" role="33vP2m">
-              <ref role="37wK5l" node="2V3ml1v5vGQ" resolve="collectPresentLanguageVersions" />
+              <ref role="37wK5l" node="2V3ml1v5vGQ" resolve="collectActualLanguageVersions" />
               <node concept="37vLTw" id="2V3ml1v87Hr" role="37wK5m">
                 <ref role="3cqZAo" node="2V3ml1v4JZz" resolve="abstractModule" />
               </node>
@@ -6572,7 +6572,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="18VG85aFP15" role="33vP2m">
-              <ref role="37wK5l" node="18VG85aEIcm" resolve="filterPresentModuleVersions" />
+              <ref role="37wK5l" node="18VG85aEIcm" resolve="filterValidDependencyVersions" />
               <node concept="37vLTw" id="18VG85aFP16" role="37wK5m">
                 <ref role="3cqZAo" node="2V3ml1v4qrN" resolve="md" />
               </node>
@@ -6592,7 +6592,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="2V3ml1v1VPw" role="33vP2m">
-              <ref role="37wK5l" node="2V3ml1v187G" resolve="collectPresentModuleVersions" />
+              <ref role="37wK5l" node="2V3ml1v187G" resolve="collectActualDependencyVersions" />
               <node concept="37vLTw" id="2V3ml1v4eAa" role="37wK5m">
                 <ref role="3cqZAo" node="2V3ml1v4eA6" resolve="abstractModule" />
               </node>
@@ -6635,49 +6635,12 @@
                     <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="18VG85aFXe6" role="33vP2m">
-                  <node concept="1eOMI4" id="18VG85aFXe7" role="2Oq$k0">
-                    <node concept="10QFUN" id="18VG85aFXe8" role="1eOMHV">
-                      <node concept="2OqwBi" id="18VG85aFXe9" role="10QFUP">
-                        <node concept="37vLTw" id="18VG85aFXea" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2V3ml1v4qs7" resolve="oldDepsFiltered" />
-                        </node>
-                        <node concept="liA8E" id="18VG85aFXeb" role="2OqNvi">
-                          <ref role="37wK5l" to="33ny:~Map.keySet():java.util.Set" resolve="keySet" />
-                        </node>
-                      </node>
-                      <node concept="2hMVRd" id="18VG85aFXec" role="10QFUM">
-                        <node concept="3uibUv" id="18VG85aFXed" role="2hN53Y">
-                          <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-                        </node>
-                      </node>
-                    </node>
+                <node concept="2OqwBi" id="18VG85aFXe9" role="33vP2m">
+                  <node concept="37vLTw" id="18VG85aFXea" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2V3ml1v4qs7" resolve="oldDepsFiltered" />
                   </node>
-                  <node concept="3zZkjj" id="18VG85aFXee" role="2OqNvi">
-                    <node concept="1bVj0M" id="18VG85aFXef" role="23t8la">
-                      <node concept="3clFbS" id="18VG85aFXeg" role="1bW5cS">
-                        <node concept="3clFbF" id="18VG85aFXeh" role="3cqZAp">
-                          <node concept="3y3z36" id="18VG85aFXei" role="3clFbG">
-                            <node concept="10Nm6u" id="18VG85aFXej" role="3uHU7w" />
-                            <node concept="2OqwBi" id="18VG85aFXek" role="3uHU7B">
-                              <node concept="37vLTw" id="18VG85aFXel" role="2Oq$k0">
-                                <ref role="3cqZAo" node="18VG85aFXeo" resolve="it" />
-                              </node>
-                              <node concept="liA8E" id="18VG85aFXem" role="2OqNvi">
-                                <ref role="37wK5l" to="lui2:~SModuleReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
-                                <node concept="37vLTw" id="18VG85aFXen" role="37wK5m">
-                                  <ref role="3cqZAo" node="5gIiJF05svt" resolve="myRepo" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Rh6nW" id="18VG85aFXeo" role="1bW2Oz">
-                        <property role="TrG5h" value="it" />
-                        <node concept="2jxLKc" id="18VG85aFXep" role="1tU5fm" />
-                      </node>
-                    </node>
+                  <node concept="liA8E" id="18VG85aFXeb" role="2OqNvi">
+                    <ref role="37wK5l" to="33ny:~Map.keySet():java.util.Set" resolve="keySet" />
                   </node>
                 </node>
               </node>
@@ -6752,7 +6715,7 @@
               </node>
             </node>
             <node concept="1rXfSq" id="18VG85aFPeC" role="33vP2m">
-              <ref role="37wK5l" node="18VG85aFfsT" resolve="filterPresentLanguageVersions" />
+              <ref role="37wK5l" node="18VG85aFfsT" resolve="filterValidLanguageVersions" />
               <node concept="37vLTw" id="18VG85aFPeD" role="37wK5m">
                 <ref role="3cqZAo" node="2V3ml1v4qrN" resolve="md" />
               </node>
@@ -6763,7 +6726,7 @@
           <node concept="3cpWsn" id="2V3ml1v7VxM" role="3cpWs9">
             <property role="TrG5h" value="newLangVersions" />
             <node concept="1rXfSq" id="2V3ml1v7VxQ" role="33vP2m">
-              <ref role="37wK5l" node="2V3ml1v5vGQ" resolve="collectPresentLanguageVersions" />
+              <ref role="37wK5l" node="2V3ml1v5vGQ" resolve="collectActualLanguageVersions" />
               <node concept="37vLTw" id="2V3ml1v7VxR" role="37wK5m">
                 <ref role="3cqZAo" node="2V3ml1v4eA6" resolve="abstractModule" />
               </node>
@@ -6915,7 +6878,7 @@
     </node>
     <node concept="2tJIrI" id="18VG85aFkt7" role="jymVt" />
     <node concept="3clFb_" id="18VG85aFfsT" role="jymVt">
-      <property role="TrG5h" value="filterPresentLanguageVersions" />
+      <property role="TrG5h" value="filterValidLanguageVersions" />
       <node concept="3Tm6S6" id="18VG85aFfsU" role="1B3o_S" />
       <node concept="3uibUv" id="18VG85aFfsV" role="3clF45">
         <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
@@ -7047,7 +7010,7 @@
     </node>
     <node concept="2tJIrI" id="2V3ml1v16Cp" role="jymVt" />
     <node concept="3clFb_" id="2V3ml1v5vGQ" role="jymVt">
-      <property role="TrG5h" value="collectPresentLanguageVersions" />
+      <property role="TrG5h" value="collectActualLanguageVersions" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="37vLTG" id="2V3ml1v5ClZ" role="3clF46">
@@ -7291,7 +7254,7 @@
     </node>
     <node concept="2tJIrI" id="2V3ml1v6CY5" role="jymVt" />
     <node concept="3clFb_" id="18VG85aEIcm" role="jymVt">
-      <property role="TrG5h" value="filterPresentModuleVersions" />
+      <property role="TrG5h" value="filterValidDependencyVersions" />
       <node concept="3Tm6S6" id="18VG85aEIcn" role="1B3o_S" />
       <node concept="3rvAFt" id="18VG85aEIco" role="3clF45">
         <node concept="3uibUv" id="18VG85aEIcp" role="3rvQeY">
@@ -7426,7 +7389,7 @@
     </node>
     <node concept="2tJIrI" id="18VG85aETwH" role="jymVt" />
     <node concept="3clFb_" id="2V3ml1v187G" role="jymVt">
-      <property role="TrG5h" value="collectPresentModuleVersions" />
+      <property role="TrG5h" value="collectActualDependencyVersions" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3clFbS" id="2V3ml1v187H" role="3clF47">

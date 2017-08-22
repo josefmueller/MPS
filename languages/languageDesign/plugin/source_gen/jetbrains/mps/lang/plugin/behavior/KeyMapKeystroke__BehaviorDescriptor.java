@@ -40,16 +40,18 @@ public final class KeyMapKeystroke__BehaviorDescriptor extends BaseBHDescriptor 
     if (modifiers == null) {
       modifiers = "";
     }
+    modifiers = modifiers.replaceAll("\\+", " ");
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x11919c665d6L, "keycode")))) {
       return modifiers;
     }
+
     String keyName;
     if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x11919c665d6L, "keycode")).startsWith("VK_")) {
       keyName = SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x11919c665d6L, "keycode")).substring(3);
     } else {
       keyName = SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x11919c665d6L, "keycode"));
     }
-    return modifiers.replaceAll("\\+", " ") + " " + keyName;
+    return modifiers + " " + keyName;
   }
   /*package*/ static boolean hasRemoveOrReplaceAllModifiers_id4qYinf8$bKU(@NotNull SNode __thisNode__) {
     return ((boolean) KeyMapKeystroke__BehaviorDescriptor.hasRemove_id4qYinf8$eal.invoke(__thisNode__)) || ((boolean) KeyMapKeystroke__BehaviorDescriptor.hasReplaceAll_id4qYinf8$enm.invoke(__thisNode__));

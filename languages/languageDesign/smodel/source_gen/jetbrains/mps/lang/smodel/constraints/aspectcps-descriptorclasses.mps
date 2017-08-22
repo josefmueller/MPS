@@ -6664,7 +6664,7 @@
                                                     <ref role="3cqZAo" node="$b" resolve="conceptNode" />
                                                   </node>
                                                   <node concept="2qgKlT" id="_L" role="2OqNvi">
-                                                    <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
+                                                    <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getVisibleConceptMethods" />
                                                     <node concept="37vLTw" id="_M" role="37wK5m">
                                                       <ref role="3cqZAo" node="zj" resolve="enclosingNode" />
                                                     </node>
@@ -6726,7 +6726,7 @@
                                                             <ref role="3B5MYn" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                                                           </node>
                                                           <node concept="2qgKlT" id="Ae" role="2OqNvi">
-                                                            <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
+                                                            <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getVisibleConceptMethods" />
                                                             <node concept="37vLTw" id="Af" role="37wK5m">
                                                               <ref role="3cqZAo" node="zj" resolve="enclosingNode" />
                                                             </node>

@@ -60,7 +60,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   public static final SMethod<List<SNode>> findGeneratorFragments_id5zMz2aJEI4B = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("findGeneratorFragments").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5zMz2aJEI4B").registry(REGISTRY).build();
   public static final SMethod<String> getPresentation_id280s3ZNTXNS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPresentation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("280s3ZNTXNS").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getAvailableConceptMethods_idhEwILGo = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAvailableConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILGo").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Iterable<SNode>> getAllConceptMethods_idwrIPXhfIPX = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getAllConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("wrIPXhfIPX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Iterable<SNode>> getVisibleConceptMethods_idwrIPXhfIPX = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getVisibleConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("wrIPXhfIPX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> getVirtualConceptMethods_idhEwILHM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getVirtualConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILHM").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getNotImplementedConceptMethods_idhEwILIz = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getNotImplementedConceptMethods").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILIz").registry(REGISTRY).build();
   public static final SMethod<SNode> findLinkDeclaration_idhEwILKz = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("findLinkDeclaration").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwILKz").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
@@ -76,7 +76,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   public static final SMethod<SNode> computeInHierarchy_id3CiBrVcn5fe = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("computeInHierarchy").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3CiBrVcn5fe").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<_FunctionTypes._return_P1_E0<? extends SNode, ? super SNode>>) ((Class) Object.class), ""));
   public static final SMethod<Pair<Set<SNode>, Set<SNode>>> getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK = new SMethodBuilder<Pair<Set<SNode>, Set<SNode>>>(new SJavaCompoundTypeImpl(Pair.class)).name("getInLanguageAndNotInLanguageAncestors").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("54xSEBmK0MK").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getAspectModel_id7g4OXB0yli3, findConceptAspectCollection_id1n18fON7w20, findConceptAspect_id7g4OXB0ykew, setLanguageIdFromModule_id7NTi8jM8SJY, findConceptAspect_id7g4OXB0yku$, findConceptAspectCollection_id7g4OXB0yl26, findConceptAspects_id4G9PD8$NvPM, findGeneratorFragments_id5zMz2aJEI4B, getPresentation_id280s3ZNTXNS, getAvailableConceptMethods_idhEwILGo, getAllConceptMethods_idwrIPXhfIPX, getVirtualConceptMethods_idhEwILHM, getNotImplementedConceptMethods_idhEwILIz, findLinkDeclaration_idhEwILKz, getLinkDeclarations_idhEwILKK, getReferenceLinkDeclarations_idhEwILL0, getAggregationLinkDeclarations_idhEwILLp, getPropertyDeclarations_idhEwILLM, findPropertyDeclaration_idhK3S4A1, isSubconceptOf_id73yVtVlWOga, getImmediateSuperconcepts_idhMuxyK2, getAllSuperConcepts_id2A8AB0rAWpG, collectSuperConcepts_id2A8AB0rB3NH, computeInHierarchy_id3CiBrVcn5fe, getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getAspectModel_id7g4OXB0yli3, findConceptAspectCollection_id1n18fON7w20, findConceptAspect_id7g4OXB0ykew, setLanguageIdFromModule_id7NTi8jM8SJY, findConceptAspect_id7g4OXB0yku$, findConceptAspectCollection_id7g4OXB0yl26, findConceptAspects_id4G9PD8$NvPM, findGeneratorFragments_id5zMz2aJEI4B, getPresentation_id280s3ZNTXNS, getAvailableConceptMethods_idhEwILGo, getVisibleConceptMethods_idwrIPXhfIPX, getVirtualConceptMethods_idhEwILHM, getNotImplementedConceptMethods_idhEwILIz, findLinkDeclaration_idhEwILKz, getLinkDeclarations_idhEwILKK, getReferenceLinkDeclarations_idhEwILL0, getAggregationLinkDeclarations_idhEwILLp, getPropertyDeclarations_idhEwILLM, findPropertyDeclaration_idhK3S4A1, isSubconceptOf_id73yVtVlWOga, getImmediateSuperconcepts_idhMuxyK2, getAllSuperConcepts_id2A8AB0rAWpG, collectSuperConcepts_id2A8AB0rB3NH, computeInHierarchy_id3CiBrVcn5fe, getInLanguageAndNotInLanguageAncestors_id54xSEBmK0MK);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -180,9 +180,9 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
   }
   @Deprecated
   /*package*/ static List<SNode> getAvailableConceptMethods_idhEwILGo(@NotNull SNode __thisNode__, SNode context) {
-    return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllConceptMethods_idwrIPXhfIPX.invoke(__thisNode__, context)).toListSequence();
+    return Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getVisibleConceptMethods_idwrIPXhfIPX.invoke(__thisNode__, context)).toListSequence();
   }
-  /*package*/ static Iterable<SNode> getAllConceptMethods_idwrIPXhfIPX(@NotNull SNode __thisNode__, SNode context) {
+  /*package*/ static Iterable<SNode> getVisibleConceptMethods_idwrIPXhfIPX(@NotNull SNode __thisNode__, SNode context) {
     Set<SNode> methods = SetSequence.fromSet(new HashSet<SNode>());
     if (__thisNode__ == null) {
       return methods;
@@ -389,7 +389,7 @@ public final class AbstractConceptDeclaration__BehaviorDescriptor extends BaseBH
       case 9:
         return (T) ((List<SNode>) getAvailableConceptMethods_idhEwILGo(node, (SNode) parameters[0]));
       case 10:
-        return (T) ((Iterable<SNode>) getAllConceptMethods_idwrIPXhfIPX(node, (SNode) parameters[0]));
+        return (T) ((Iterable<SNode>) getVisibleConceptMethods_idwrIPXhfIPX(node, (SNode) parameters[0]));
       case 11:
         return (T) ((List<SNode>) getVirtualConceptMethods_idhEwILHM(node));
       case 12:

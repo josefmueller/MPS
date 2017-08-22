@@ -85,7 +85,7 @@ public class Node_ConceptMethodCall_Constraints extends BaseConstraintsDescripto
                   conceptNode = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
                 }
               }
-              Iterable<SNode> methods = Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllConceptMethods_idwrIPXhfIPX.invoke(conceptNode, enclosingNode)).where(new IWhereFilter<SNode>() {
+              Iterable<SNode> methods = Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getVisibleConceptMethods_idwrIPXhfIPX.invoke(conceptNode, enclosingNode)).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")) == isStatic.value;
                 }
@@ -93,7 +93,7 @@ public class Node_ConceptMethodCall_Constraints extends BaseConstraintsDescripto
 
               if (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L, "jetbrains.mps.lang.smodel.structure.ConceptNodeType"))) {
                 // conceptNode<> is subtype of node<AbstractConceptDeclaration>, why can't I invoke methods of the latter (used to workaround with node.conceptNode.asNode.methodCall, which is stupid) 
-                methods = Sequence.fromIterable(methods).concat(Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllConceptMethods_idwrIPXhfIPX.invoke(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135"), enclosingNode)).where(new IWhereFilter<SNode>() {
+                methods = Sequence.fromIterable(methods).concat(Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getVisibleConceptMethods_idwrIPXhfIPX.invoke(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135"), enclosingNode)).where(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x51613f7fe129b24dL, "isStatic")) == false;
                   }

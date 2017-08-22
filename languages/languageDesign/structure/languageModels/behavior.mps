@@ -2651,7 +2651,7 @@
         <node concept="3cpWs6" id="hEwILHK" role="3cqZAp">
           <node concept="2OqwBi" id="wrIPXhguRI" role="3cqZAk">
             <node concept="BsUDl" id="wrIPXhguq6" role="2Oq$k0">
-              <ref role="37wK5l" node="wrIPXhfIPX" resolve="getAllConceptMethods" />
+              <ref role="37wK5l" node="wrIPXhfIPX" resolve="getVisibleConceptMethods" />
               <node concept="37vLTw" id="wrIPXhguzy" role="37wK5m">
                 <ref role="3cqZAo" node="hEwILGp" resolve="context" />
               </node>
@@ -2676,7 +2676,7 @@
     </node>
     <node concept="13i0hz" id="wrIPXhfIPX" role="13h7CS">
       <property role="13i0is" value="false" />
-      <property role="TrG5h" value="getAllConceptMethods" />
+      <property role="TrG5h" value="getVisibleConceptMethods" />
       <node concept="37vLTG" id="wrIPXhfIPY" role="3clF46">
         <property role="TrG5h" value="context" />
         <node concept="3Tqbb2" id="wrIPXhfIPZ" role="1tU5fm" />
