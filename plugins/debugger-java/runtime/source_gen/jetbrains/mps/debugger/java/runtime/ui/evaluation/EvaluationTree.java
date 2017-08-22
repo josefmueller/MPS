@@ -17,12 +17,15 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.List;
+import javax.swing.tree.TreePath;
+import jetbrains.mps.debugger.api.ui.tree.PlaceholderTreeNode;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Separator;
 import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
-import javax.swing.tree.TreePath;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -31,9 +34,7 @@ import java.io.PrintWriter;
 import jetbrains.mps.debugger.java.api.state.watchables.CalculatedWatchable;
 import jetbrains.mps.debugger.api.ui.tree.WatchableNode;
 import jetbrains.mps.debug.api.programState.IWatchable;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import java.awt.Color;
 import jetbrains.mps.ide.messages.Icons;
 
@@ -95,6 +96,23 @@ import jetbrains.mps.ide.messages.Icons;
     return rootTreeNode;
   }
 
+  @Override
+  protected void expandPaths(List<String> paths) {
+    for (String path : paths) {
+      TreePath treePath = PlaceholderTreeNode.stringToPathWithPlaceholders(getRootNode(), path);
+      expandPath(treePath);
+    }
+  }
+
+  @Override
+  protected void selectPaths(List<String> paths) {
+    List<TreePath> treePaths = new ArrayList<TreePath>();
+    for (String path : paths) {
+      TreePath treePath = PlaceholderTreeNode.stringToPathWithPlaceholders(getRootNode(), path);
+      treePaths.add(treePath);
+    }
+    setSelectionPaths(treePaths.toArray(new TreePath[treePaths.size()]));
+  }
 
   @Override
   public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
