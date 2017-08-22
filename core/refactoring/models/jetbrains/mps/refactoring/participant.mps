@@ -3947,23 +3947,6 @@
         </node>
       </node>
     </node>
-    <node concept="3clFb_" id="7DGCeT2Pzqk" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="runSearch" />
-      <node concept="3cqZAl" id="7DGCeT2Pzql" role="3clF45" />
-      <node concept="3Tm1VV" id="7DGCeT2Pzqm" role="1B3o_S" />
-      <node concept="3clFbS" id="7DGCeT2Pzqn" role="3clF47" />
-      <node concept="37vLTG" id="7DGCeT2Pzqo" role="3clF46">
-        <property role="TrG5h" value="task" />
-        <property role="3TUv4t" value="true" />
-        <node concept="1ajhzC" id="7DGCeT2Pzqp" role="1tU5fm">
-          <node concept="3cqZAl" id="7DGCeT2Pzqq" role="1ajl9A" />
-          <node concept="3uibUv" id="7DGCeT2Pzqr" role="1ajw0F">
-            <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3clFb_" id="7DGCeT2Pzqs" role="jymVt">
       <property role="TrG5h" value="selectParticipants" />
       <property role="DiZV1" value="false" />
@@ -3985,6 +3968,23 @@
       </node>
       <node concept="3Tm1VV" id="7DGCeT2Pzqy" role="1B3o_S" />
       <node concept="3clFbS" id="7DGCeT2Pzqz" role="3clF47" />
+    </node>
+    <node concept="3clFb_" id="7DGCeT2Pzqk" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="TrG5h" value="runSearch" />
+      <node concept="3cqZAl" id="7DGCeT2Pzql" role="3clF45" />
+      <node concept="3Tm1VV" id="7DGCeT2Pzqm" role="1B3o_S" />
+      <node concept="3clFbS" id="7DGCeT2Pzqn" role="3clF47" />
+      <node concept="37vLTG" id="7DGCeT2Pzqo" role="3clF46">
+        <property role="TrG5h" value="task" />
+        <property role="3TUv4t" value="true" />
+        <node concept="1ajhzC" id="7DGCeT2Pzqp" role="1tU5fm">
+          <node concept="3cqZAl" id="7DGCeT2Pzqq" role="1ajl9A" />
+          <node concept="3uibUv" id="7DGCeT2Pzqr" role="1ajw0F">
+            <ref role="3uigEE" to="yyf4:~ProgressMonitor" resolve="ProgressMonitor" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="4N6D1IQ2KrP" role="jymVt">
       <property role="1EzhhJ" value="true" />
