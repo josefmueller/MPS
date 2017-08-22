@@ -675,7 +675,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     for (Iterator<String> it = components.iterator(); it.hasNext(); ) {
       String component = it.next();
-      assert current.isInitialized();
+      assert current.isInitialized() : String.format("For tree path %s at element %s parent node %s(%s) is not initialized", components, component, current, current.getClass());
       if (component == null || component.length() == 0) continue;
       boolean found = false;
       for (int i = 0; i < current.getChildCount(); i++) {
