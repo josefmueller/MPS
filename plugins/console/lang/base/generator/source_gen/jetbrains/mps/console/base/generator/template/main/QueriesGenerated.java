@@ -52,7 +52,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"))), _quotation_createNode_x583g4_b0a0a2());
   }
   public static boolean baseMappingRule_Condition_7600370246421231722(final BaseMappingRuleContext _context) {
-    return CommandUtilChooserHelper.isSModelSequence(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"))));
+    return CommandUtilChooserHelper.isSModelSequence(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object")));
   }
   public static boolean baseMappingRule_Condition_3856122757887589572(final BaseMappingRuleContext _context) {
     SNode functionType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"))), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")), false);
@@ -65,13 +65,13 @@ public class QueriesGenerated extends QueryProviderBase {
     return "closure : " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"))));
   }
   public static Object propertyMacro_GetPropertyValue_9010839353952736697(final PropertyMacroContext _context) {
-    return CommandUtilChooserHelper.getKindLabel(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"))));
+    return CommandUtilChooserHelper.getKindLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object")), _context);
   }
   public static Object referenceMacro_GetReferent_6164634611270886092(final ReferenceMacroContext _context) {
-    return CommandUtilChooserHelper.chooseToResultMethod(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"))));
+    return CommandUtilChooserHelper.chooseToResultMethod(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object")), _context);
   }
   public static Object referenceMacro_GetReferent_6164634611270907798(final ReferenceMacroContext _context) {
-    return CommandUtilChooserHelper.chooseGetReferenceMethod(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"))));
+    return CommandUtilChooserHelper.chooseGetReferenceMethod(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object")), _context);
   }
   public static SNode sourceNodeQuery_1583916890562946186(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"));
@@ -98,7 +98,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"));
   }
   public static SNode sourceNodeQuery_3501374812261883521(final SourceSubstituteMacroNodeContext _context) {
-    return CommandUtilChooserHelper.getReferenceType(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"))));
+    return CommandUtilChooserHelper.getReferenceType(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object")), _context);
   }
   public static SNode sourceNodeQuery_9010839353952788840(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x6c8954f469a7c420L, 0x7417cca3eb1ff761L, "object"));

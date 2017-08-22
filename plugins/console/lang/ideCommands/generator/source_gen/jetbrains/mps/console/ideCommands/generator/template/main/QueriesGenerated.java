@@ -14,7 +14,6 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.console.ideCommands.behavior.ActionCallParameter__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.base.generator.util.CommandUtilChooserHelper;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -64,10 +63,10 @@ public class QueriesGenerated extends QueryProviderBase {
     return (SNode) ActionCallParameter__BehaviorDescriptor.getParameterDeclaration_id4PRmqZe_o$D.invoke(_context.getNode());
   }
   public static Object referenceMacro_GetReferent_6164634611271252527(final ReferenceMacroContext _context) {
-    return CommandUtilChooserHelper.chooseGetReferenceMethod(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, 0x6979f0787b81e875L, "object"))));
+    return CommandUtilChooserHelper.chooseGetReferenceMethod(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, 0x6979f0787b81e875L, "object")), _context);
   }
   public static Object referenceMacro_GetReferent_6164634611271252587(final ReferenceMacroContext _context) {
-    return CommandUtilChooserHelper.chooseToResultMethod(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, 0x6979f0787b81e875L, "object"))));
+    return CommandUtilChooserHelper.chooseToResultMethod(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x75bb0160f191d79fL, 0x6979f0787b81e875L, "object")), _context);
   }
   public static boolean ifMacro_Condition_4615018937607135820(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x276b371e77c0a29aL, 0x276b371e77c0a2f0L, "argument")) != null;
