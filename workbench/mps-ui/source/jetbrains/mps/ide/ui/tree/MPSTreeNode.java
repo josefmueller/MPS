@@ -211,6 +211,11 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     return false;
   }
 
+  /**
+   * This method (along with {@link #addThisAndChildren()} counterpart) is to dispatch {@link #onRemove()} notification for each element
+   * of a subtree removed. As the removed subtree may get later re-attached in a different location, this method shall not clear parent/child
+   * relations.
+   */
   final void removeThisAndChildren() {
     if (!myAdded) {
       throw new IllegalStateException(
@@ -220,7 +225,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     try {
       onRemove();
     } catch (Throwable t) {
-      LOG.error(null, t);
+      LOG.error("removeThisAndChildren", t);
     }
     myAdded = false;
     if (!isInitialized()) {
@@ -229,10 +234,13 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     for (MPSTreeNode node : this) {
       node.removeThisAndChildren();
     }
-    setParent(null);
-    children = null;
   }
 
+  /**
+   * Counterpart for {@link #removeThisAndChildren()} to send out {@link #onAdd()} notification for each element of a subtree being added (provided
+   * subtree elements are already initialized. Otherwise, doesn't force their initialization).
+   * Shall not affect parent/child relationship, merely a notification mechanism
+   */
   final void addThisAndChildren() {
     if (myAdded) {
       throw new IllegalStateException(
@@ -242,7 +250,7 @@ public class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPST
     try {
       onAdd();
     } catch (Throwable t) {
-      LOG.error(null, t);
+      LOG.error("addThisAndChildren", t);
     }
     myAdded = true;
     if (!isInitialized()) {

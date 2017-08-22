@@ -90,7 +90,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   protected MPSTree() {
     // TreeModel instance shall be the same during lifetime of the MPSTree instance
-    // otherwise TreeModelListener
+    // otherwise TreeModelListener instances attached to the model get lost
     super(new DefaultTreeModel(null));
 
     new MPSTreeSpeedSearch(this);
