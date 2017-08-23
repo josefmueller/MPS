@@ -60,6 +60,16 @@ public class ModelTransitions {
     myCheckpointModels.add(checkpointModel);
   }
 
+  /**
+   * as long as TransitionTrace keep its values as user objects, we don't really need checkpointModel as we are not going to read it anyway,
+   * keep it here just to keep API impression (provided we may want to use other mechanism than user objects to keep origin->transformed
+   * mapping, e.g. as a distinct explicit map. Still, we'd likely need smth more than just a model, i.e. smth we can keep this map in)
+   */
+  public TransitionTrace loadTransition(@NotNull CheckpointIdentity checkpoint, @NotNull SModel checkpointModel) {
+    myActiveTransition = new TransitionTrace(checkpoint, this);
+    return myActiveTransition;
+  }
+
   @NotNull
   public TransitionTrace getActiveTransition() {
     assert myActiveTransition != null;

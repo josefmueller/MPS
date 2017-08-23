@@ -15,10 +15,15 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.impl.ModelTransitions;
+import jetbrains.mps.generator.impl.TransitionTrace;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.smodel.BaseFastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -46,7 +51,9 @@ public class CheckpointState {
   private final MappingsMemento myState;
   private final SModel myCheckpointModel;
   private final CheckpointIdentity myCheckpoint;
+  private FastNodeFinder myCheckpointModelLookup;
 
+  // FIXME need info about CheckpointIdentity that served as an origin for the nodes in this CP
   public CheckpointState(@NotNull MappingsMemento memento, @NotNull SModel checkpointModel, @NotNull CheckpointIdentity cp) {
     myState = memento;
     myCheckpointModel = checkpointModel;
@@ -57,8 +64,20 @@ public class CheckpointState {
     return myCheckpointModel;
   }
 
+  /**
+   * @return identity of a checkpoint for the {@linkplain #getCheckpointModel() model} kept in this state.
+   */
   public CheckpointIdentity getCheckpoint() {
     return myCheckpoint;
+  }
+
+  /**
+   * @return identity of a checkpoint model that served as an input to get this state's checkpoint model, or {@code null} if there were
+   *         no checkpoints during transformation prior to {@link #getCheckpoint() state's checkpoint} (i.e. original model served as an input)
+   */
+  @Nullable
+  public CheckpointIdentity getOriginCheckpoint() {
+    return null;
   }
 
   @NotNull
@@ -72,6 +91,32 @@ public class CheckpointState {
     Map<SNodeId, Object> values = myState.getMappingNameAndInputNodeToOutputNodeMap().get(mappingLabel);
     assert values != null; // provided getMappingLabels().contains(mappingLabel)
     return values.keySet();
+  }
+
+  /**
+   * @param input reference target that generally belongs to a preceding checkpoints (not necessarily immediate
+   *              {@linkplain #getOriginCheckpoint() origin CP}, though).
+   *              In case model of input node is separated from CP of this state object by few other CPs, it's caller
+   *              responsibility to walk them backwards.
+   *              IMPORTANT: it's assumed this CP state is of the input node's model, i.e.
+   *              {@code crossModelEnv.getState(input.getModel()).find(==getCheckpoint())}
+   * @return {@code null} if there's no node in this CP that records given node as it's origin.
+   */
+  @Nullable
+  public SNode getCopiedOutput(SNode input) {
+    // first, try if node copied with its id preserved
+    final SNodeId inputNodeId = input.getNodeId();
+    SNode candidate = getCheckpointModel().getNode(inputNodeId);
+    if (candidate != null && candidate.getConcept().equals(input.getConcept())) {
+      return candidate;
+    }
+    if (myCheckpointModelLookup == null) {
+      myCheckpointModelLookup = new BaseFastNodeFinder(getCheckpointModel());
+    }
+    // XXX this is dubious approach, implemented just for investigation purposes
+    //     Likely, we shall keep information about copied nodes inside MM or its replacement, rather than walk nodes and match by id.
+    final TransitionTrace tt = new ModelTransitions().loadTransition(getCheckpoint(), getCheckpointModel());
+    return myCheckpointModelLookup.getNodes(input.getConcept(), false).stream().filter(n -> inputNodeId.equals(tt.getOrigin(n))).findFirst().orElse(null);
   }
 
   @NotNull
