@@ -49,7 +49,6 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -328,7 +327,7 @@ public class ValidationUtil {
     }
 
     if (SModelStereotype.isGeneratorModel(model)) {
-      checkGeneratorModel(model, null, processor);
+      checkGeneratorModelNotEmpty(model, processor);
     }
   }
 
@@ -418,8 +417,9 @@ public class ValidationUtil {
         anyGeneratorModelNotLoaded |= SModelStereotype.isGeneratorModel(model);
         continue;
       }
-      if (SModelStereotype.isGeneratorModel(model) && !checkGeneratorModel(model, usedLanguages, processor)) {
-        return;
+      {
+        ModelScanner ms = new ModelScanner().scan(model);
+        usedLanguages.addAll(ms.getTargetLanguages());
       }
       depScan.walk(model);
     }
@@ -599,13 +599,10 @@ public class ValidationUtil {
     return true;
   }
 
-
   // pre: SModelStereotype.isGeneratorModel(model) == true
-  private static boolean checkGeneratorModel(SModel model, @Nullable Collection<SLanguage> usedLanguages, Processor<ValidationProblem> processor) {
+  @SuppressWarnings("UnusedReturnValue")
+  private static boolean checkGeneratorModelNotEmpty(SModel model, Processor<ValidationProblem> processor) {
     ModelScanner ms = new ModelScanner().scan(model);
-    if (usedLanguages != null) {
-      usedLanguages.addAll(ms.getTargetLanguages());
-    }
     if (ms.getTargetLanguages().isEmpty() && ms.getQueryLanguages().isEmpty()) {
       FastNodeFinder fnf = FastNodeFinderManager.get(model);
       boolean noModifyRules = fnf.getNodes(RuleUtil.concept_AbandonInput_RuleConsequence, false).isEmpty();
@@ -619,4 +616,5 @@ public class ValidationUtil {
     }
     return true;
   }
+
 }
