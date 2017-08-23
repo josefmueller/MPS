@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -43,7 +44,7 @@ import java.util.function.Function;
  *       thus saving nodeId is not sufficient. OTOH, don't want to save SNodeReference as it's superficial in most regular cases
  * @author Artem Tikhomirov
  */
-class TransitionTrace {
+public final class TransitionTrace {
   /**
    * IMPLEMENTATION NOTE:
    * For prototype purposes, follow approach of TracingUtil, with user object pointer to origin, associated with each node.
@@ -90,7 +91,8 @@ class TransitionTrace {
     return doGet(node) instanceof SNodeId;
   }
 
-  /*package*/ SNodeId getOrigin(@NotNull SNode node) {
+  @Nullable
+  public SNodeId getOrigin(@NotNull SNode node) {
     Object rv = doGet(node);
     return rv instanceof SNodeId ? (SNodeId) rv : null;
   }
