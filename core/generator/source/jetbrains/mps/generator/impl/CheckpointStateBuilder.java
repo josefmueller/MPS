@@ -140,8 +140,7 @@ class CheckpointStateBuilder {
     new ModelDependencyUpdate(myCheckpointModel).updateImportedModels(null);
 
     myTransitionTrace.newTransition(step, myCheckpointModel.getReference(), myTransientModel, consistentNodeIdentity.getChangedNodes());
-    MappingsMemento mm = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(myCheckpointModel));
-    return new CheckpointState(mm, myCheckpointModel, step);
+    return new CheckpointState(myCheckpointModel, step);
   }
 
   private void cloneTransientToCheckpoint() {

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.impl.MappingLabelExtractor;
 import jetbrains.mps.generator.impl.ModelTransitions;
 import jetbrains.mps.generator.impl.TransitionTrace;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
@@ -53,14 +54,25 @@ public class CheckpointState {
   private final CheckpointIdentity myCheckpoint;
   private FastNodeFinder myCheckpointModelLookup;
 
-  // FIXME need info about CheckpointIdentity that served as an origin for the nodes in this CP
   public CheckpointState(@NotNull MappingsMemento memento, @NotNull SModel checkpointModel, @NotNull CheckpointIdentity cp) {
     myState = memento;
     myCheckpointModel = checkpointModel;
     myCheckpoint = cp;
   }
 
-  public SModel getCheckpointModel() {
+  // FIXME need info about CheckpointIdentity that served as an origin for the nodes in this CP
+  public CheckpointState(@NotNull SModel checkpointModel, @NotNull CheckpointIdentity cp) {
+    // FIXME read and fill memento with MappingLabels
+    //       now, just restore it from debug root we've got there. Later (once/if true persistence is done), shall consider
+    //       option to keep mappings inside a model (not to bother with persistence) or to follow MappingsMemento approach with
+    //       custom serialization code (and to solve the issue of associated model streams serialized/managed (i.e. deleted) along with a cp model)
+    myState = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(checkpointModel));
+    myCheckpointModel = checkpointModel;
+    myCheckpoint = cp;
+  }
+
+
+    public SModel getCheckpointModel() {
     return myCheckpointModel;
   }
 
