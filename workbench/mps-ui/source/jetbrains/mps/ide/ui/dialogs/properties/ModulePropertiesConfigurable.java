@@ -79,6 +79,7 @@ import jetbrains.mps.ide.ui.finders.LanguageModelImportFinder;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
+import jetbrains.mps.lang.migration.runtime.base.VersionFixer;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
@@ -873,6 +874,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
         languageDescriptor.getRuntimeModules().clear();
         languageDescriptor.getRuntimeModules().addAll(myTableItems);
+        for (Generator generator : ((Language) myModule).getGenerators()) {
+          new VersionFixer(myModuleRepository, generator).updateImportVersions();
+        }
       }
     }
 

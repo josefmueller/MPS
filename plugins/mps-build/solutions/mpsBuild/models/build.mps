@@ -2099,6 +2099,9 @@
       <node concept="nCB5N" id="2BwQuBWyGpr" role="nCB5Z">
         <ref role="nCB5Y" node="75RBgxKmqIL" resolve="mps-debuginfo-api" />
       </node>
+      <node concept="nCB5N" id="5CfKzgSBk1I" role="nCB5Z">
+        <ref role="nCB5Y" node="1WZWsoqIz7X" resolve="mps-migration" />
+      </node>
     </node>
     <node concept="398b33" id="5_uX04TlQXW" role="3989C9">
       <property role="TrG5h" value="mps-icons" />
