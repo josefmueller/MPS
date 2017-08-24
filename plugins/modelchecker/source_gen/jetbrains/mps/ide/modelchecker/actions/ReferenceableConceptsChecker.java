@@ -119,7 +119,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
       ConceptDescriptor cd = ((SAbstractConceptAdapter) cncpt).getConceptDescriptor();
       if (cd.getStaticScope() == StaticScope.NONE) {
         SpecificChecker.addIssue(results, anchor, "Reference to a non-referenceable node found: " + cncpt.getName(), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node");
-      } else if (cd.getStaticScope() == StaticScope.NONE && !((SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(refNode)))) {
+      } else if (cd.getStaticScope() == StaticScope.ROOT && !((SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(refNode)))) {
         SpecificChecker.addIssue(results, anchor, "Cross-root reference to a locally referenceable node found: " + cncpt.getName(), ModelChecker.SEVERITY_ERROR, "reference to a locally referenceable node");
       }
     }
