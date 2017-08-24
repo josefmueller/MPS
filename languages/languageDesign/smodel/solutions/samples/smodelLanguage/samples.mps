@@ -2673,8 +2673,8 @@
               </node>
             </node>
             <node concept="2OqwBi" id="2wdLO7KeQVa" role="2Oq$k0">
-              <node concept="3TrcHB" id="VjAkA2F14" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+              <node concept="3TrcHB" id="5H_1GsNFUQW" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:hnGE5uv" resolve="virtualPackage" />
               </node>
               <node concept="37vLTw" id="2BHiRxgm8RN" role="2Oq$k0">
                 <ref role="3cqZAo" node="gFnjpzW" resolve="node" />
@@ -2685,8 +2685,8 @@
         <node concept="3clFbF" id="46o7ACLGCTs" role="3cqZAp">
           <node concept="37vLTI" id="46o7ACLGCTz" role="3clFbG">
             <node concept="2OqwBi" id="2wdLO7KhQtM" role="37vLTJ">
-              <node concept="3TrcHB" id="VjAkA2Fv$" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+              <node concept="3TrcHB" id="5H_1GsNFV1w" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:hnGE5uv" resolve="virtualPackage" />
               </node>
               <node concept="37vLTw" id="2BHiRxgmNIS" role="2Oq$k0">
                 <ref role="3cqZAo" node="gFnjpzW" resolve="node" />

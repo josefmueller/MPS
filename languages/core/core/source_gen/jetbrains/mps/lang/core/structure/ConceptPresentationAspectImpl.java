@@ -71,7 +71,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BaseConcept == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL);
           cpb.deprecateProperty(0x10d34f97574L, "shortDescription");
-          cpb.deprecateProperty(0x10d34fa226eL, "alias");
           props_BaseConcept = cpb.create();
         }
         return props_BaseConcept;

@@ -22,6 +22,7 @@
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
@@ -117,23 +118,25 @@
     </node>
     <node concept="1TJgyj" id="4voYo4rtpI9" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="httpHelpUrl" />
+      <property role="20kJfa" value="oldHelpUrl" />
       <property role="IQ2ns" value="5177162104569174921" />
-      <ref role="20lvS9" node="4voYo4rsXen" resolve="HelpURL" />
+      <ref role="20lvS9" node="4voYo4rsXen" resolve="OldHelpURL" />
+      <node concept="asaX9" id="46nPloes0RT" role="lGtFl">
+        <property role="YLPcu" value="2017.3" />
+        <property role="YLQ7P" value="use helpUrl" />
+      </node>
+    </node>
+    <node concept="1TJgyj" id="46nPloes0RV" role="1TKVEi">
+      <property role="IQ2ns" value="4726480899534753275" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="helpUrl" />
+      <ref role="20lvS9" to="1oap:4voYo4rsXen" resolve="HelpURL" />
     </node>
     <node concept="1TJgyj" id="22594Rb4xU1" role="1TKVEi">
       <property role="IQ2ns" value="2343319097654255233" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="order" />
       <ref role="20lvS9" to="1po2:283lDAXPS55" resolve="Order" />
-    </node>
-    <node concept="1TJgyi" id="2Y$EcRKMr2p" role="1TKVEl">
-      <property role="TrG5h" value="helpUrl" />
-      <property role="IQ2nx" value="3433054418424672409" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="4voYo4rtzoS" role="lGtFl">
-        <property role="YLQ7P" value="use httpHelp" />
-      </node>
     </node>
     <node concept="PrWs8" id="1LJzqOWhe8r" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
@@ -229,7 +232,7 @@
     <property role="EcuMT" value="8921494878338859209" />
   </node>
   <node concept="1TIwiD" id="4voYo4rsXen">
-    <property role="TrG5h" value="HelpURL" />
+    <property role="TrG5h" value="OldHelpURL" />
     <property role="3GE5qa" value="url" />
     <property role="EcuMT" value="5177162104569058199" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -237,6 +240,10 @@
       <property role="TrG5h" value="url" />
       <property role="IQ2nx" value="5177162104569058200" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="asaX9" id="46nPloeqmpj" role="lGtFl">
+      <property role="YLQ7P" value="use HelpURL from resources language" />
+      <property role="YLPcu" value="2017.3" />
     </node>
   </node>
   <node concept="1TIwiD" id="9GrxDU8dzJ">

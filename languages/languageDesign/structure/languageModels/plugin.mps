@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
-    <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="1" />
+    <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="2" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="c9d137c4-3259-44f8-80ff-33ab2b506ee4" name="jetbrains.mps.lang.util.order" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -28,22 +28,28 @@
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
     <import index="f7uj" ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)" />
+    <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="smjb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.help(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
+      <concept id="4726480899534317142" name="jetbrains.mps.lang.resources.structure.BaseURLFunction" flags="ng" index="1fZFc0">
+        <child id="4726480899534317143" name="calculator" index="1fZFc1" />
+      </concept>
+      <concept id="5177162104569058199" name="jetbrains.mps.lang.resources.structure.HelpURL" flags="ng" index="1sEMCm">
+        <property id="5177162104569058200" name="url" index="1sEMCp" />
+        <reference id="4726480899534317252" name="baseURL" index="1fZFei" />
+      </concept>
       <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect">
-      <concept id="5177162104569058199" name="jetbrains.mps.lang.aspect.structure.HelpURL" flags="ng" index="1sEMCm">
-        <property id="5177162104569058200" name="url" index="1sEMCp" />
-      </concept>
       <concept id="3433054418424672374" name="jetbrains.mps.lang.aspect.structure.SimpleLanguageAspectDescriptor" flags="ng" index="3vrhyV">
         <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
-        <child id="5177162104569174921" name="httpHelpUrl" index="1sFm88" />
+        <child id="4726480899534753275" name="helpUrl" index="1fTXyH" />
         <child id="3433054418425083029" name="icon" index="3vqPLo" />
         <child id="2343319097654255233" name="order" index="3F_NFc" />
       </concept>
@@ -69,6 +75,9 @@
         <child id="1145553007750" name="creator" index="2ShVmc" />
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
+      </concept>
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
@@ -167,6 +176,7 @@
         <child id="1199542501692" name="parameterType" index="1ajw0F" />
       </concept>
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <property id="890797661671409019" name="forceMultiLine" index="3yWfEV" />
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
@@ -1343,9 +1353,6 @@
   </node>
   <node concept="3vrhyV" id="2LiUEk8oQ$g">
     <property role="TrG5h" value="structure" />
-    <node concept="1sEMCm" id="4lJsQ5yF8Ox" role="1sFm88">
-      <property role="1sEMCp" value="http://confluence.jetbrains.com/display/MPSD20172/Structure" />
-    </node>
     <node concept="1QGGSu" id="P5ZkC6wmh7" role="3vqPLo">
       <property role="1iqoE4" value="${module}/icons/structureModel.png" />
     </node>
@@ -1355,6 +1362,10 @@
     </node>
     <node concept="2vPci8" id="264$spPfZhv" role="3F_NFc">
       <ref role="2vPcib" node="264$spPfYX1" resolve="MPSAspects" />
+    </node>
+    <node concept="1sEMCm" id="46nPloex5BB" role="1fTXyH">
+      <property role="1sEMCp" value="/Structure" />
+      <ref role="1fZFei" node="46nPloez0vX" resolve="ConfluenceDocUrl" />
     </node>
   </node>
   <node concept="2vPdvu" id="264$spPfYX1">
@@ -1400,6 +1411,25 @@
     </node>
     <node concept="1SjbrP" id="6S7pXgv_Lh5" role="2vPdvg">
       <ref role="2vPdvl" to="che4:2LiUEk8oQ$g" resolve="migration" />
+    </node>
+  </node>
+  <node concept="1fZFc0" id="46nPloez0vX">
+    <property role="TrG5h" value="ConfluenceDocUrl" />
+    <node concept="1bVj0M" id="46nPloeztvN" role="1fZFc1">
+      <property role="3yWfEV" value="true" />
+      <node concept="3clFbS" id="46nPloeztvO" role="1bW5cS">
+        <node concept="3clFbF" id="36aT086Whqu" role="3cqZAp">
+          <node concept="2OqwBi" id="36aT086Whxs" role="3clFbG">
+            <node concept="2YIFZM" id="36aT086Whro" role="2Oq$k0">
+              <ref role="37wK5l" to="smjb:~HelpURLProvider.getInstance():jetbrains.mps.help.HelpURLProvider" resolve="getInstance" />
+              <ref role="1Pybhc" to="smjb:~HelpURLProvider" resolve="HelpURLProvider" />
+            </node>
+            <node concept="liA8E" id="36aT086WhCA" role="2OqNvi">
+              <ref role="37wK5l" to="smjb:~HelpURLProvider.getURL():java.lang.String" resolve="getURL" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

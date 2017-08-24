@@ -225,7 +225,7 @@
             <property role="3F0ifm" value=":" />
           </node>
           <node concept="3F0A7n" id="3hIFiK8Oo9A" role="3EZMnx">
-            <ref role="1NtTu8" to="tpck:gOOYy9I" resolve="alias" />
+            <ref role="1NtTu8" to="tpck:hnGE5uv" resolve="virtualPackage" />
             <node concept="1ZhdrF" id="3hIFiK8Oo$t" role="lGtFl">
               <property role="P3scX" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" />
               <property role="2qtEX8" value="relationDeclaration" />

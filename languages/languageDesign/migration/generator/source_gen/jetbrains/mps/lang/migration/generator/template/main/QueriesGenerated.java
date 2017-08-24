@@ -1032,7 +1032,7 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("8100708479158807975", new QueriesGenerated.RTQ(1, "MigrationDescriptor"));
     rtqMethods.put("1123359097945169314", new QueriesGenerated.RTQ(2, "BaseConcept"));
     rtqMethods.put("1123359097945602758", new QueriesGenerated.RTQ(3, "BaseConcept"));
-    rtqMethods.put("1123359097945602774", new QueriesGenerated.RTQ(4, "alias"));
+    rtqMethods.put("1123359097945602774", new QueriesGenerated.RTQ(4, "virtualPackage"));
     rtqMethods.put("1123359097945715680", new QueriesGenerated.RTQ(5, "DirectNodeReference"));
     rtqMethods.put("1123359097945715697", new QueriesGenerated.RTQ(6, "target"));
     rtqMethods.put("1123359097945619011", new QueriesGenerated.RTQ(7, "BaseConcept"));

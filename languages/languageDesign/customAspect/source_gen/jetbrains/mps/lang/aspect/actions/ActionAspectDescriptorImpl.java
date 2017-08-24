@@ -29,5 +29,5 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
   public boolean hasBuilders() {
     return false;
   }
-  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"HelpURL"};
+  private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"OldHelpURL"};
 }

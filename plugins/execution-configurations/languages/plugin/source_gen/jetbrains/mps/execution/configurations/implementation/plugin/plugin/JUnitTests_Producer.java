@@ -122,7 +122,7 @@ public class JUnitTests_Producer {
         if (mRef == null) {
           return false;
         }
-        return settings.getJUnitRunType() == JUnitRunTypes.MODULE && settings.getModuleReference().equals(mRef);
+        return settings.getJUnitRunType() == JUnitRunTypes.MODULE && eq_aarvwv_a0a2a3a6h(settings.getModuleReference(), mRef);
       }
       return false;
     }
@@ -130,6 +130,9 @@ public class JUnitTests_Producer {
     @Override
     public JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b clone() {
       return (JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b) super.clone();
+    }
+    private static boolean eq_aarvwv_a0a2a3a6h(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
     }
   }
   public static final class ProducerPart_SModel_f2w1m9_c extends BaseMpsProducer<SModel> {

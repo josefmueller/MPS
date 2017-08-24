@@ -42,6 +42,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AbstractConceptDeclaration:
         if (props_AbstractConceptDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL);
+          cpb.deprecateProperty(0x2237c3bc85b3755cL, "oldHelpURL");
           cpb.deprecateProperty(0x16096a174f259419L, "intConceptId");
           props_AbstractConceptDeclaration = cpb.create();
         }

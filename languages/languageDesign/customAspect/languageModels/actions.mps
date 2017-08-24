@@ -61,7 +61,7 @@
     <property role="3GE5qa" value="url" />
     <property role="TrG5h" value="CreateUrlPrefix" />
     <node concept="37WvkG" id="4voYo4ruPKU" role="37WGs$">
-      <ref role="37XkoT" to="hfbu:4voYo4rsXen" resolve="HelpURL" />
+      <ref role="37XkoT" to="hfbu:4voYo4rsXen" resolve="OldHelpURL" />
       <node concept="37Y9Zx" id="4voYo4ruPKV" role="37ZfLb">
         <node concept="3clFbS" id="4voYo4ruPKW" role="2VODD2">
           <node concept="3clFbF" id="4voYo4ruPL0" role="3cqZAp">

@@ -43,7 +43,6 @@ import jetbrains.mps.lang.smodel.editor.LoadedLanguages_CellMenu;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /*package*/ class SimpleLanguageAspectDescriptor_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -593,8 +592,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createConstant_rpszz1_a6b1a());
-    editorCell.addEditorCell(createAlternation_rpszz1_b6b1a());
+    if (nodeCondition_rpszz1_a1g1b0()) {
+      editorCell.addEditorCell(createRefNode_rpszz1_b6b1a());
+    }
+    editorCell.addEditorCell(createRefNode_rpszz1_c6b1a());
     return editorCell;
+  }
+  private boolean nodeCondition_rpszz1_a1g1b0() {
+    return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "oldHelpUrl")) != null);
   }
   private EditorCell createConstant_rpszz1_a6b1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "help url:");
@@ -602,45 +607,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createAlternation_rpszz1_b6b1a() {
-    boolean alternationCondition = true;
-    alternationCondition = nodeCondition_rpszz1_a1g1b0();
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = createProperty_rpszz1_a1g1b0();
-    } else {
-      editorCell = createRefNode_rpszz1_a1g1b0();
-    }
-    return editorCell;
-  }
-  private boolean nodeCondition_rpszz1_a1g1b0() {
-    return isNotEmptyString(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b099L, "helpUrl")));
-  }
-  private EditorCell createProperty_rpszz1_a1g1b0() {
-    CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
-    provider.setRole("helpUrl");
-    provider.setNoTargetText("<no help URL>");
-    provider.setAllowsEmptyTarget(true);
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(getEditorContext());
-    editorCell.setCellId("property_helpUrl");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-      return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
-    } else
-    return editorCell;
-  }
-  private EditorCell createRefNode_rpszz1_a1g1b0() {
-    SingleRoleCellProvider provider = new SimpleLanguageAspectDescriptor_EditorBuilder_a.httpHelpUrlSingleRoleHandler_rpszz1_a1g1b0(myNode, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "httpHelpUrl"), getEditorContext());
+  private EditorCell createRefNode_rpszz1_b6b1a() {
+    SingleRoleCellProvider provider = new SimpleLanguageAspectDescriptor_EditorBuilder_a.oldHelpUrlSingleRoleHandler_rpszz1_b6b1a(myNode, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "oldHelpUrl"), getEditorContext());
     return provider.createCell();
   }
-  private static class httpHelpUrlSingleRoleHandler_rpszz1_a1g1b0 extends SingleRoleCellProvider {
+  private static class oldHelpUrlSingleRoleHandler_rpszz1_b6b1a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public httpHelpUrlSingleRoleHandler_rpszz1_a1g1b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public oldHelpUrlSingleRoleHandler_rpszz1_b6b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -653,8 +628,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "httpHelpUrl"), child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "httpHelpUrl"), child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "oldHelpUrl"), child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "oldHelpUrl"), child));
       installCellInfo(child, editorCell);
       return editorCell;
     }
@@ -663,19 +638,22 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "httpHelpUrl"), child));
+        editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "oldHelpUrl"), child));
       }
       if (editorCell.getRole() == null) {
-        editorCell.setRole("httpHelpUrl");
+        editorCell.setRole("oldHelpUrl");
       }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.STRIKE_OUT, true);
+      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "httpHelpUrl")));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x47d8f9811b759b89L, "oldHelpUrl")));
       try {
         EditorCell editorCell = super.createEmptyCell();
-        editorCell.setCellId("empty_httpHelpUrl");
+        editorCell.setCellId("empty_oldHelpUrl");
         installCellInfo(null, editorCell);
         setCellContext(editorCell);
         return editorCell;
@@ -684,7 +662,62 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       }
     }
     protected String getNoTargetText() {
-      return "<no httpHelpUrl>";
+      return "<no oldHelpUrl>";
+    }
+  }
+  private EditorCell createRefNode_rpszz1_c6b1a() {
+    SingleRoleCellProvider provider = new SimpleLanguageAspectDescriptor_EditorBuilder_a.helpUrlSingleRoleHandler_rpszz1_c6b1a(myNode, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x4197d5560e700dfbL, "helpUrl"), getEditorContext());
+    return provider.createCell();
+  }
+  private static class helpUrlSingleRoleHandler_rpszz1_c6b1a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
+    public helpUrlSingleRoleHandler_rpszz1_c6b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
+    }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x4197d5560e700dfbL, "helpUrl"), child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x4197d5560e700dfbL, "helpUrl"), child));
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+
+
+
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x4197d5560e700dfbL, "helpUrl"), child));
+      }
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("helpUrl");
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), MetaAdapterFactory.getContainmentLink(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x4197d5560e700dfbL, "helpUrl")));
+      try {
+        EditorCell editorCell = super.createEmptyCell();
+        editorCell.setCellId("empty_helpUrl");
+        installCellInfo(null, editorCell);
+        setCellContext(editorCell);
+        return editorCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    }
+    protected String getNoTargetText() {
+      return "<no helpUrl>";
     }
   }
   private EditorCell createCollection_rpszz1_h1b0() {
@@ -768,8 +801,5 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }

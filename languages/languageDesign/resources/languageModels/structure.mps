@@ -9,6 +9,7 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -392,6 +393,63 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="node" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4voYo4rsXen">
+    <property role="TrG5h" value="HelpURL" />
+    <property role="3GE5qa" value="url" />
+    <property role="EcuMT" value="5177162104569058199" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="46nPloeqmr4" role="1TKVEi">
+      <property role="IQ2ns" value="4726480899534317252" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="baseURL" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="46nPloeqzyR" resolve="BaseURL" />
+    </node>
+    <node concept="1TJgyi" id="4voYo4rsXeo" role="1TKVEl">
+      <property role="TrG5h" value="url" />
+      <property role="IQ2nx" value="5177162104569058200" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="46nPloeqmpm">
+    <property role="EcuMT" value="4726480899534317142" />
+    <property role="3GE5qa" value="url" />
+    <property role="TrG5h" value="BaseURLFunction" />
+    <property role="34LRSv" value="URL function" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="46nPloeqzyR" resolve="BaseURL" />
+    <node concept="1TJgyj" id="46nPloeqmpn" role="1TKVEi">
+      <property role="IQ2ns" value="4726480899534317143" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="calculator" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="46nPloeqzyR">
+    <property role="EcuMT" value="4726480899534370999" />
+    <property role="3GE5qa" value="url" />
+    <property role="TrG5h" value="BaseURL" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="46nPloeqzyT" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="46nPloeqzyS">
+    <property role="EcuMT" value="4726480899534371000" />
+    <property role="3GE5qa" value="url" />
+    <property role="TrG5h" value="BaseURLLiteral" />
+    <property role="34LRSv" value="URL Literal" />
+    <property role="19KtqR" value="true" />
+    <ref role="1TJDcQ" node="46nPloeqzyR" resolve="BaseURL" />
+    <node concept="1TJgyi" id="46nPloeqzzN" role="1TKVEl">
+      <property role="IQ2nx" value="4726480899534371059" />
+      <property role="TrG5h" value="url" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

@@ -4,6 +4,7 @@
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -15,6 +16,9 @@
     <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="ddhc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide(MPS.IDEA/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -66,6 +70,9 @@
         <property id="1186403713874" name="color" index="Vb096" />
         <child id="1186403803051" name="query" index="VblUZ" />
       </concept>
+      <concept id="1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" flags="ln" index="Vb9p2">
+        <property id="1186403771423" name="style" index="Vbekb" />
+      </concept>
       <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
@@ -105,6 +112,7 @@
         <child id="1176899909521" name="imagePathProvider" index="4GRq3" />
       </concept>
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
@@ -1091,6 +1099,68 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="46nPloeq57g">
+    <property role="3GE5qa" value="url" />
+    <ref role="1XX52x" to="1oap:4voYo4rsXen" resolve="HelpURL" />
+    <node concept="3EZMnI" id="46nPloeq57h" role="2wV5jI">
+      <node concept="1iCGBv" id="46nPloeqmNv" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;no base URL&gt;" />
+        <ref role="1NtTu8" to="1oap:46nPloeqmr4" resolve="baseURL" />
+        <node concept="1sVBvm" id="46nPloeqmNx" role="1sWHZn">
+          <node concept="3F0A7n" id="46nPloeqnbv" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+        <node concept="Vb9p2" id="46nPloeAnUF" role="3F10Kt">
+          <property role="Vbekb" value="BOLD_ITALIC" />
+        </node>
+      </node>
+      <node concept="3F0A7n" id="4voYo4rtbR_" role="3EZMnx">
+        <property role="1$x2rV" value="&lt;no URL&gt;" />
+        <ref role="1NtTu8" to="1oap:4voYo4rsXeo" resolve="url" />
+      </node>
+      <node concept="2iRfu4" id="4voYo4ruG$4" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="46nPloeqmpr">
+    <property role="3GE5qa" value="url" />
+    <ref role="1XX52x" to="1oap:46nPloeqmpm" resolve="BaseURLFunction" />
+    <node concept="3EZMnI" id="46nPloeqmpt" role="2wV5jI">
+      <node concept="l2Vlx" id="46nPloeqmpu" role="2iSdaV" />
+      <node concept="3F0ifn" id="46nPloeqmpv" role="3EZMnx">
+        <property role="3F0ifm" value="URL" />
+      </node>
+      <node concept="3F0A7n" id="46nPloeqmqC" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="46nPloeqzza" role="3EZMnx">
+        <property role="3F0ifm" value="=" />
+      </node>
+      <node concept="3F1sOY" id="46nPloeqmpC" role="3EZMnx">
+        <ref role="1NtTu8" to="1oap:46nPloeqmpn" resolve="calculator" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="46nPloeqzZW">
+    <property role="3GE5qa" value="url" />
+    <ref role="1XX52x" to="1oap:46nPloeqzyS" resolve="BaseURLLiteral" />
+    <node concept="3EZMnI" id="46nPloeqzZY" role="2wV5jI">
+      <node concept="l2Vlx" id="46nPloeqzZZ" role="2iSdaV" />
+      <node concept="3F0ifn" id="46nPloeq$00" role="3EZMnx">
+        <property role="3F0ifm" value="URL" />
+      </node>
+      <node concept="3F0A7n" id="46nPloeq$01" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="46nPloeq$0F" role="3EZMnx">
+        <property role="3F0ifm" value="=" />
+      </node>
+      <node concept="3F0A7n" id="46nPloeq$09" role="3EZMnx">
+        <ref role="1NtTu8" to="1oap:46nPloeqzzN" resolve="url" />
       </node>
     </node>
   </node>

@@ -9,11 +9,15 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_BaseURL;
+  private ConceptPresentation props_BaseURLFunction;
+  private ConceptPresentation props_BaseURLLiteral;
   private ConceptPresentation props_Circle;
   private ConceptPresentation props_Color;
   private ConceptPresentation props_ColorLiteral;
   private ConceptPresentation props_ConceptIconResourceExpression;
   private ConceptPresentation props_FileIcon;
+  private ConceptPresentation props_HelpURL;
   private ConceptPresentation props_Icon;
   private ConceptPresentation props_IconExpression;
   private ConceptPresentation props_IconLayerDescription;
@@ -34,6 +38,26 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.BaseURL:
+        if (props_BaseURL == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_BaseURL = cpb.create();
+        }
+        return props_BaseURL;
+      case LanguageConceptSwitch.BaseURLFunction:
+        if (props_BaseURLFunction == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_BaseURLFunction = cpb.create();
+        }
+        return props_BaseURLFunction;
+      case LanguageConceptSwitch.BaseURLLiteral:
+        if (props_BaseURLLiteral == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_BaseURLLiteral = cpb.create();
+        }
+        return props_BaseURLLiteral;
       case LanguageConceptSwitch.Circle:
         if (props_Circle == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -70,6 +94,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_FileIcon = cpb.create();
         }
         return props_FileIcon;
+      case LanguageConceptSwitch.HelpURL:
+        if (props_HelpURL == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("HelpURL");
+          props_HelpURL = cpb.create();
+        }
+        return props_HelpURL;
       case LanguageConceptSwitch.Icon:
         if (props_Icon == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -115,7 +146,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.deprecated(true);
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a3a0a11b0u);
+          cpb.icon(IconContainer.RESOURCE_a0a3a0a51b0y);
           props_OldIconBundle = cpb.create();
         }
         return props_OldIconBundle;

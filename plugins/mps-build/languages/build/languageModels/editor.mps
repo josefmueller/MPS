@@ -7569,9 +7569,23 @@
     <node concept="1iCGBv" id="5M62Y6Wnc7c" role="2wV5jI">
       <ref role="1NtTu8" to="3ior:5M62Y6Wnc79" resolve="participant" />
       <node concept="1sVBvm" id="5M62Y6Wnc7d" role="1sWHZn">
-        <node concept="3F0A7n" id="5M62Y6Wnc7f" role="2wV5jI">
-          <property role="1Intyy" value="true" />
-          <ref role="1NtTu8" to="tpck:gOOYy9I" resolve="alias" />
+        <node concept="1HlG4h" id="5H_1GsNHQii" role="2wV5jI">
+          <node concept="1HfYo3" id="5H_1GsNHQik" role="1HlULh">
+            <node concept="3TQlhw" id="5H_1GsNHQim" role="1Hhtcw">
+              <node concept="3clFbS" id="5H_1GsNHQio" role="2VODD2">
+                <node concept="3clFbF" id="5H_1GsNHTJB" role="3cqZAp">
+                  <node concept="2OqwBi" id="5H_1GsNHTWn" role="3clFbG">
+                    <node concept="2JrnkZ" id="5H_1GsNHUXA" role="2Oq$k0">
+                      <node concept="pncrf" id="5H_1GsNHTJA" role="2JrQYb" />
+                    </node>
+                    <node concept="liA8E" id="5H_1GsNHVhV" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SNode.getName():java.lang.String" resolve="getName" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

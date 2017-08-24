@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
+import jetbrains.mps.lang.structure.plugin.URLFunction_ConfluenceDocUrl;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_AbstractToolKeystroke;
@@ -189,7 +190,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_ActionDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.helpUrl("http://confluence.jetbrains.com/display/MPSD20171/Plugin#Plugin-actionsandactiongroups");
+          cpb.helpUrl(HELP_URL);
           cpb.icon(IconContainer.RESOURCE_a0a3a0a7b0ue);
           props_ActionDeclaration = cpb.create();
         }
@@ -1010,4 +1011,5 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     }
     return null;
   }
+  private static String HELP_URL = URLFunction_ConfluenceDocUrl.getUrl() + "/Plugin#Plugin-actionsandactiongroups";
 }

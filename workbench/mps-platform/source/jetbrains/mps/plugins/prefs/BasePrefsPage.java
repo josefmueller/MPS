@@ -43,6 +43,12 @@ public abstract class BasePrefsPage extends ConfigurableEP<Configurable> impleme
     return this;
   }
 
+  @Nullable
+  @Override
+  public Class<?> getConfigurableType() {
+    return null;
+  }
+
   @Override
   public Project getProject() {
     return myProject;

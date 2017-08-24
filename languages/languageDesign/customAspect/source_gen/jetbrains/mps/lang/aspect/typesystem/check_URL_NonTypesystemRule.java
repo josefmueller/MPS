@@ -9,12 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
-import jetbrains.mps.errors.IErrorReporter;
-import java.net.URL;
-import java.net.MalformedURLException;
+import jetbrains.mps.lang.resources.typesystem.URLCheckUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class check_URL_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -24,26 +19,10 @@ public class check_URL_NonTypesystemRule extends AbstractNonTypesystemRule_Runti
     if (isEmptyString(SPropertyOperations.getString(url, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")))) {
       return;
     }
-    if (!((SPropertyOperations.getString(url, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")).startsWith("http://") || SPropertyOperations.getString(url, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")).startsWith("https://")))) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        errorTarget = new PropertyMessageTarget("url");
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(url, "Help URL should start with http:// or https://", "r:2f45a819-e3a6-4cfa-b807-e9f10176b62b(jetbrains.mps.lang.aspect.typesystem)", "5177162104569565281", null, errorTarget);
-      }
-    } else {
-      try {
-        new URL(SPropertyOperations.getString(url, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")));
-      } catch (MalformedURLException e) {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          errorTarget = new PropertyMessageTarget("url");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(url, "Malformed URL: " + e.getMessage(), "r:2f45a819-e3a6-4cfa-b807-e9f10176b62b(jetbrains.mps.lang.aspect.typesystem)", "5177162104569127649", null, errorTarget);
-        }
-      }
-    }
+    URLCheckUtil.check(typeCheckingContext, url, SPropertyOperations.getString(url, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")));
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, "jetbrains.mps.lang.aspect.structure.HelpURL");
+    return MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, "jetbrains.mps.lang.aspect.structure.OldHelpURL");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);

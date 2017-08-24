@@ -1781,19 +1781,6 @@
         <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
       </node>
     </node>
-    <node concept="Wx3nA" id="2iMJRNxJZV6" role="jymVt">
-      <property role="TrG5h" value="property_BaseConcept_alias" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm1VV" id="2iMJRNxJZV7" role="1B3o_S" />
-      <node concept="355D3s" id="2iMJRNxJZVb" role="33vP2m">
-        <property role="B6XcY" value="true" />
-        <ref role="355D3t" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <ref role="355D3u" to="tpck:gOOYy9I" resolve="alias" />
-      </node>
-      <node concept="3uibUv" id="7BIvS$tMzig" role="1tU5fm">
-        <ref role="3uigEE" to="c17a:~SProperty" resolve="SProperty" />
-      </node>
-    </node>
     <node concept="Wx3nA" id="2iMJRNxJZUy" role="jymVt">
       <property role="TrG5h" value="link_BaseConcept_smodelAttribute" />
       <property role="3TUv4t" value="true" />
@@ -1967,8 +1954,8 @@
             <node concept="37vLTw" id="2BHiRxgkX3V" role="2Oq$k0">
               <ref role="3cqZAo" node="3Nl9F_aSizC" resolve="conceptDeclaration" />
             </node>
-            <node concept="3TrcHB" id="3Nl9F_aSKaK" role="2OqNvi">
-              <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+            <node concept="3TrcHB" id="5H_1GsNGsEV" role="2OqNvi">
+              <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
             </node>
           </node>
         </node>
@@ -1977,6 +1964,18 @@
         <property role="TrG5h" value="conceptDeclaration" />
         <node concept="3Tqbb2" id="3Nl9F_aSizD" role="1tU5fm">
           <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5H_1GsNGrP9" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="5H_1GsNGrRq" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="5H_1GsNGshw" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="5H_1GsNGsr_" role="2B70Vg">
+            <property role="$nhwW" value="2017.3" />
+          </node>
         </node>
       </node>
     </node>

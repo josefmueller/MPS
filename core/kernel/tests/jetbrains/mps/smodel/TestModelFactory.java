@@ -113,7 +113,6 @@ final class TestModelFactory {
           SNode c = new jetbrains.mps.smodel.SNode(ourConcept);
           final String v = nextNodeName(i + 1);
           c.setProperty(SNodeUtil.property_INamedConcept_name, v);
-          c.setProperty(SNodeUtil.property_BaseConcept_alias, v);
           parent.addChild(ourRole, c);
           nextLevel.add(c);
         }

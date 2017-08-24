@@ -109,15 +109,6 @@
         <property role="YLQ7P" value="This property should not be used. Override ISmartReferent#getDescriptionText(context) to customize description text " />
       </node>
     </node>
-    <node concept="1TJgyi" id="gOOYy9I" role="1TKVEl">
-      <property role="TrG5h" value="alias" />
-      <property role="IQ2nx" value="1156235010670" />
-      <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="66vxhH65cCs" role="lGtFl">
-        <property role="YLPcu" value="3.5" />
-        <property role="YLQ7P" value="This property should not be used. Use conceptAlias for concepts or create a custom alias property if alias is needed for a node of some other concept" />
-      </node>
-    </node>
     <node concept="1TJgyi" id="hnGE5uv" role="1TKVEl">
       <property role="TrG5h" value="virtualPackage" />
       <property role="IQ2nx" value="1193676396447" />

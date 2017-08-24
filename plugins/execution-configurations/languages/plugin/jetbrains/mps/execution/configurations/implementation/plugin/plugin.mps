@@ -330,6 +330,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
       <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -3047,19 +3048,16 @@
               </node>
               <node concept="3cpWs6" id="5aSLaYRWINM" role="3cqZAp">
                 <node concept="1Wc70l" id="5aSLaYRWJ$g" role="3cqZAk">
-                  <node concept="2OqwBi" id="5aSLaYRWNfQ" role="3uHU7w">
-                    <node concept="2OqwBi" id="5aSLaYRWK8j" role="2Oq$k0">
+                  <node concept="17R0WA" id="46nPlof2MrT" role="3uHU7w">
+                    <node concept="37vLTw" id="46nPlof2MO_" role="3uHU7w">
+                      <ref role="3cqZAo" node="1hFhnCny$7n" resolve="mRef" />
+                    </node>
+                    <node concept="2OqwBi" id="5aSLaYRWK8j" role="3uHU7B">
                       <node concept="37vLTw" id="6dw4cFkH$qd" role="2Oq$k0">
                         <ref role="3cqZAo" node="5aSLaYRWINH" resolve="settings" />
                       </node>
                       <node concept="2XshWL" id="4Zh$Fg2VSG4" role="2OqNvi">
-                        <ref role="2WH_rO" to="tty3:4Zh$Fg2VsBA" resolve="getModuleRef" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="5aSLaYRWOFm" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
-                      <node concept="37vLTw" id="6dw4cFkHJ5R" role="37wK5m">
-                        <ref role="3cqZAo" node="1hFhnCny$7n" resolve="mRef" />
+                        <ref role="2WH_rO" to="tty3:4Zh$Fg2VsBA" resolve="getModuleReference" />
                       </node>
                     </node>
                   </node>
@@ -3387,7 +3385,7 @@
                     <ref role="1Pybhc" to="33ny:~Objects" resolve="Objects" />
                     <node concept="2OqwBi" id="9iT$9ktneI" role="37wK5m">
                       <node concept="2XshWL" id="5coIW7pjCMv" role="2OqNvi">
-                        <ref role="2WH_rO" to="tty3:4Zh$Fg2VsBA" resolve="getModuleRef" />
+                        <ref role="2WH_rO" to="tty3:4Zh$Fg2VsBA" resolve="getModuleReference" />
                       </node>
                       <node concept="37vLTw" id="9iT$9ktm_$" role="2Oq$k0">
                         <ref role="3cqZAo" node="1hFhnCnyDdn" resolve="settings" />
@@ -3422,7 +3420,7 @@
                       <ref role="1Pybhc" to="33ny:~Objects" resolve="Objects" />
                       <node concept="2OqwBi" id="i96O5YR93M" role="37wK5m">
                         <node concept="2XshWL" id="5coIW7pj$Lw" role="2OqNvi">
-                          <ref role="2WH_rO" to="tty3:4Zh$Fg2WwTR" resolve="getModelRef" />
+                          <ref role="2WH_rO" to="tty3:4Zh$Fg2WwTR" resolve="getModelReference" />
                         </node>
                         <node concept="37vLTw" id="i96O5YR8zi" role="2Oq$k0">
                           <ref role="3cqZAo" node="1hFhnCnyDdn" resolve="settings" />
