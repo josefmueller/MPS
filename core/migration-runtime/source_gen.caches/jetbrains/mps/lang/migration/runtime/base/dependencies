@@ -250,6 +250,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.migration.runtime.base.BaseScriptReference" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.runtime.base.VersionFixer" file="VersionFixer.java">
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
