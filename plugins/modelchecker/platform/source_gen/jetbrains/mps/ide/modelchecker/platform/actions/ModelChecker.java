@@ -5,6 +5,7 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.errors.item.ReportItem;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -14,16 +15,18 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 
 public class ModelChecker {
   private static final Logger LOG = LogManager.getLogger(ModelChecker.class);
   public static final String SEVERITY_ERROR = "Errors";
   public static final String SEVERITY_WARNING = "Warnings";
   public static final String SEVERITY_INFO = "Infos";
-  private final SearchResults<ModelCheckerIssue> myResults;
+  private final SearchResults<ReportItem> myResults;
   private final List<SpecificChecker> mySpecificCheckers;
   public ModelChecker(@NotNull List<SpecificChecker> specificCheckers) {
-    myResults = new SearchResults<ModelCheckerIssue>();
+    myResults = new SearchResults<ReportItem>();
     mySpecificCheckers = specificCheckers;
   }
   public void checkModel(SModel model, ProgressMonitor monitor) {
@@ -40,7 +43,11 @@ public class ModelChecker {
 
       for (SpecificChecker specificChecker : ListSequence.fromList(mySpecificCheckers)) {
         try {
-          List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT));
+          List<SearchResult<ReportItem>> specificCheckerResults = ListSequence.fromList(specificChecker.checkModel_(model, monitor.subTask(1, SubProgressKind.AS_COMMENT))).select(new ISelector<IssueKindReportItem, SearchResult<ReportItem>>() {
+            public SearchResult<ReportItem> select(IssueKindReportItem it) {
+              return ModelCheckerIssue.getSearchResultForReportItem(it);
+            }
+          }).toListSequence();
           myResults.getSearchResults().addAll(specificCheckerResults);
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
@@ -55,7 +62,7 @@ public class ModelChecker {
       monitor.done();
     }
   }
-  public SearchResults<ModelCheckerIssue> getSearchResults() {
+  public SearchResults<ReportItem> getSearchResults() {
     return myResults;
   }
 }

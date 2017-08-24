@@ -189,7 +189,7 @@ public class ValidationUtil {
     return true;
   }
 
-  public static void validateModel(@NotNull final SModel model, @NotNull Processor<ValidationProblem> processor) {
+  public static void validateModel(@NotNull final SModel model, @NotNull Processor<? super ModelValidationProblem> processor) {
     final SRepository repository = model.getRepository();
     if (repository != null) {
       repository.getModelAccess().checkReadAccess();
@@ -203,7 +203,7 @@ public class ValidationUtil {
         if (!m.isError()) {
           continue;
         }
-        if (!processor.process(new ValidationProblem(MessageStatus.ERROR, m.getText()))) {
+        if (!processor.process(new ModelValidationProblem(MessageStatus.ERROR, m.getText()))) {
           return;
         }
       }
@@ -211,11 +211,11 @@ public class ValidationUtil {
     }
 
     if (jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
-      processor.process(new ValidationProblem(MessageStatus.ERROR, "Model is disposed, validation aborted"));
+      processor.process(new ModelValidationProblem(MessageStatus.ERROR, "Model is disposed, validation aborted"));
       return; // force return
     }
     if (model.getModule() == null) {
-      processor.process(new ValidationProblem(MessageStatus.ERROR, "Model is not part of a module, validation aborted"));
+      processor.process(new ModelValidationProblem(MessageStatus.ERROR, "Model is not part of a module, validation aborted"));
       return; // force return
     }
 
@@ -233,7 +233,7 @@ public class ValidationUtil {
           } else {
             msg = String.format("Outdated model persistence is used: %d. Please upgrade model persistence.", persistenceVersion);
           }
-          if (!processor.process(new ValidationProblem(MessageStatus.ERROR, msg))) {
+          if (!processor.process(new ModelValidationProblem(MessageStatus.ERROR, msg))) {
             return;
           }
         }
@@ -241,11 +241,11 @@ public class ValidationUtil {
     }
 
     if (repository == null) {
-      processor.process(new ValidationProblem(MessageStatus.WARNING, "Model is detached from a repository, could not process further"));
+      processor.process(new ModelValidationProblem(MessageStatus.WARNING, "Model is detached from a repository, could not process further"));
       return; // force return
     }
     if (model.getReference().resolve(repository) == null) {
-      processor.process(new ValidationProblem(MessageStatus.ERROR, "Model's repository could not resolve the model by reference"));
+      processor.process(new ModelValidationProblem(MessageStatus.ERROR, "Model's repository could not resolve the model by reference"));
       return; // force return
     }
 
@@ -262,7 +262,7 @@ public class ValidationUtil {
         if (moduleScope != null && moduleScope.resolve(reference) == null) {
           String msg = String.format("Imported model %s is not visible in module's scope", reference.getName());
           // FIXME could have dedicated problem kind with quick fix to add module import
-          if (!processor.process(new ValidationProblem(MessageStatus.ERROR, msg))) {
+          if (!processor.process(new ModelValidationProblem(MessageStatus.ERROR, msg))) {
             return;
           }
         }
@@ -283,7 +283,7 @@ public class ValidationUtil {
         }
       } else if (!lang.getQualifiedName().equals(lr.getNamespace())) {
         final String msg = String.format("Stale language import '%s', actual name is '%s'", lang.getQualifiedName(), lr.getNamespace());
-        if (!processor.process(new ValidationProblem(MessageStatus.WARNING, msg))) {
+        if (!processor.process(new ModelValidationProblem(MessageStatus.WARNING, msg))) {
           return;
         }
       }
@@ -296,7 +296,7 @@ public class ValidationUtil {
         }
       } else if (!lang.getQualifiedName().equals(lr.getNamespace())) {
         final String msg = String.format("Stale language import '%s', actual name is '%s'", lang.getQualifiedName(), lr.getNamespace());
-        if (!processor.process(new ValidationProblem(MessageStatus.WARNING, msg))) {
+        if (!processor.process(new ModelValidationProblem(MessageStatus.WARNING, msg))) {
           return;
         }
       }
@@ -306,7 +306,7 @@ public class ValidationUtil {
     for (SModuleReference devKit : ((SModelInternal) model).importedDevkits()) {
       final SModule devkitModule = devKit.resolve(repository);
       if (devkitModule == null) {
-        if (!processor.process(new ValidationProblem(MessageStatus.ERROR, "Can't find devkit: " + devKit.getModuleName()))) {
+        if (!processor.process(new ModelValidationProblem(MessageStatus.ERROR, "Can't find devkit: " + devKit.getModuleName()))) {
           return;
         }
       } else if (devkitModule instanceof DevKit) {
@@ -316,7 +316,7 @@ public class ValidationUtil {
             devkitAssociatedPlan = new Pair<DevKit, SModelReference>((DevKit) devkitModule, plan);
           } else {
             String m = String.format("Both devkit %s and %s supply generation plan, ", devkitModule.getModuleName(), devkitAssociatedPlan.o1.getModuleName());
-            processor.process(new ValidationProblem(MessageStatus.ERROR, m));
+            processor.process(new ModelValidationProblem(MessageStatus.ERROR, m));
           }
         }
       }
@@ -331,7 +331,7 @@ public class ValidationUtil {
     }
   }
 
-  public static void validateModule(final SModule m, Processor<ValidationProblem> processor) {
+  public static void validateModule(final SModule m, Processor<? super ModuleValidationProblem> processor) {
     if (m instanceof TransientSModule || m instanceof ProjectStructureModule) {
       return;
     }
@@ -349,10 +349,10 @@ public class ValidationUtil {
     }
   }
 
-  private static void validateDevkit(final DevKit dk, Processor<ValidationProblem> processor) {
+  private static void validateDevkit(final DevKit dk, Processor<? super ModuleValidationProblem> processor) {
     Throwable loadException = dk.getModuleDescriptor().getLoadException();
     if (loadException != null) {
-      if (!processor.process(new ValidationProblem(MessageStatus.ERROR, "Couldn't load devkit: " + loadException.getMessage()))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Couldn't load devkit: " + loadException.getMessage()))) {
         return;
       }
       return;
@@ -362,7 +362,7 @@ public class ValidationUtil {
       if (ModuleRepositoryFacade.getInstance().getModule(extDevkit) != null) {
         continue;
       }
-      if (!processor.process(new ValidationProblem(MessageStatus.ERROR, "Can't find extended devkit: " + extDevkit.getModuleName()))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Can't find extended devkit: " + extDevkit.getModuleName()))) {
         return;
       }
     }
@@ -370,7 +370,7 @@ public class ValidationUtil {
       if (ModuleRepositoryFacade.getInstance().getModule(expLang) != null) {
         continue;
       }
-      if (!processor.process(new ValidationProblem(MessageStatus.ERROR, "Can't find exported language: " + expLang.getModuleName()))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Can't find exported language: " + expLang.getModuleName()))) {
         return;
       }
     }
@@ -378,13 +378,13 @@ public class ValidationUtil {
       if (ModuleRepositoryFacade.getInstance().getModule(expSol) != null) {
         continue;
       }
-      if (!processor.process(new ValidationProblem(MessageStatus.ERROR, "Can't find exported language: " + expSol.getModuleName()))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Can't find exported language: " + expSol.getModuleName()))) {
         return;
       }
     }
   }
 
-  private static void validateGenerator(final Generator generator, Processor<ValidationProblem> processor) {
+  private static void validateGenerator(final Generator generator, Processor<? super ModuleValidationProblem> processor) {
     if (!validateAbstractModule(generator, processor)) {
       return;
     }
@@ -393,7 +393,7 @@ public class ValidationUtil {
       if (gen.resolve(repository) != null) {
         continue;
       }
-      if (!processor.process(new ValidationProblem(MessageStatus.ERROR, "Can't find generator dependency: " + gen.getModuleName()))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Can't find generator dependency: " + gen.getModuleName()))) {
         return;
       }
     }
@@ -433,12 +433,12 @@ public class ValidationUtil {
       }
       if (generator.getOwnTemplateModels().isEmpty()) {
         // quickFix possible, remove module
-        processor.process(new ValidationProblem(MessageStatus.WARNING, "No template models in the generator, generator is no-op"));
+        processor.process(new ModuleValidationProblem(MessageStatus.WARNING, "No template models in the generator, generator is no-op"));
       }
     }
   }
 
-  private static boolean checkPriorityRules(Generator generator, Processor<ValidationProblem> processor) {
+  private static boolean checkPriorityRules(Generator generator, Processor<? super ModuleValidationProblem> processor) {
     boolean goOn = true;
     for (MappingPriorityRule mpr : generator.getModuleDescriptor().getPriorityRules()) {
       if (!goOn) {
@@ -448,23 +448,23 @@ public class ValidationUtil {
       MappingConfig_AbstractRef right = mpr.getRight();
       if (left == null || right == null) {
         final String s = mpr.asString(generator.getRepository());
-        goOn = processor.process(new ValidationProblem(MessageStatus.ERROR, String.format("Broken priority rule: %s", s)));
+        goOn = processor.process(new ModuleValidationProblem(MessageStatus.ERROR, String.format("Broken priority rule: %s", s)));
         continue;
       }
       if (left.isIncomplete()) {
         final String s = mpr.asString(generator.getRepository());
-        goOn = processor.process(new ValidationProblem(MessageStatus.ERROR, String.format("Left-hand side of rule %s is incomplete", s)));
+        goOn = processor.process(new ModuleValidationProblem(MessageStatus.ERROR, String.format("Left-hand side of rule %s is incomplete", s)));
       }
       if (right.isIncomplete()) {
         final String s = mpr.asString(generator.getRepository());
-        goOn &= processor.process(new ValidationProblem(MessageStatus.ERROR, String.format("Right-hand side of rule %s is incomplete", s)));
+        goOn &= processor.process(new ModuleValidationProblem(MessageStatus.ERROR, String.format("Right-hand side of rule %s is incomplete", s)));
       }
     }
     return true;
   }
 
   //returns true to continue analysing, false to stop
-  private static boolean warnStrictGeneratorDependencies(Generator generator, ModelDependencyScanner dependencies, Processor<ValidationProblem> processor) {
+  private static boolean warnStrictGeneratorDependencies(Generator generator, ModelDependencyScanner dependencies, Processor<? super ModuleValidationProblem> processor) {
     HashSet<SModule> seen = new HashSet<SModule>();
     for (SDependency dep : generator.getDeclaredDependencies()) {
       SModule depTarget = dep.getTarget();
@@ -493,7 +493,7 @@ public class ValidationUtil {
 
       // models of the dep.target are not referenced, likely superfluous dependency.
       String msg = "Superfluous dependency to generator " + depTarget.getModuleName() + ", no generator template nor its source language's node is in use";
-      if (!processor.process(new ValidationProblem(MessageStatus.WARNING, msg))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.WARNING, msg))) {
         return false;
       }
     }
@@ -501,7 +501,7 @@ public class ValidationUtil {
   }
 
   //returns true to continue analysing, false to stop
-  private static boolean warnMissingTargetLangRuntime(Generator generator, Set<SLanguage> usedLanguages, Processor<ValidationProblem> processor) {
+  private static boolean warnMissingTargetLangRuntime(Generator generator, Set<SLanguage> usedLanguages, Processor<? super ModuleValidationProblem> processor) {
     Language sourceLanguage = generator.getSourceLanguage();
     SLanguage sourceLanguageDeployed = MetaAdapterByDeclaration.getLanguage(sourceLanguage);
     usedLanguages.remove(sourceLanguageDeployed);
@@ -529,7 +529,7 @@ public class ValidationUtil {
       }
 
       String m = String.format("%s shall specify language %s as generation target to include its runtime modules into compilation", sourceLanguage, lang);
-      if (!processor.process(new ValidationProblem(MessageStatus.WARNING, m))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.WARNING, m))) {
         return false;
       }
     }
@@ -539,10 +539,10 @@ public class ValidationUtil {
   //returns true to continue analysing, false to stop
   // package-local until extracted into AbstractModuleValidator superclass to get subclassed by validators of particular module kind
   /*package*/
-  static boolean validateAbstractModule(final AbstractModule module, Processor<ValidationProblem> processor) {
+  static boolean validateAbstractModule(final AbstractModule module, Processor<? super ModuleValidationProblem> processor) {
     Throwable loadException = module.getModuleDescriptor().getLoadException();
     if (loadException != null) {
-      return processor.process(new ValidationProblem(MessageStatus.ERROR, "Couldn't load module: " + loadException.getMessage()));
+      return processor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Couldn't load module: " + loadException.getMessage()));
     }
 
     SRepository repository = module.getRepository();
@@ -551,7 +551,7 @@ public class ValidationUtil {
       if (languageRegistry.getLanguage(lang) != null) {
         continue;
       }
-      if (!processor.process(new ValidationProblem(MessageStatus.ERROR, String.format("Used language %s is not deployed", lang.getQualifiedName())))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, String.format("Used language %s is not deployed", lang.getQualifiedName())))) {
         return false;
       }
     }
@@ -562,7 +562,7 @@ public class ValidationUtil {
       if (moduleRef.resolve(repository) != null) {
         continue;
       }
-      if (!processor.process(new ValidationProblem(MessageStatus.ERROR, "Can't find dependency: " + moduleRef.getModuleName()))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Can't find dependency: " + moduleRef.getModuleName()))) {
         return false;
       }
     }
@@ -570,7 +570,7 @@ public class ValidationUtil {
       if (reference.resolve(repository) != null) {
         continue;
       }
-      if (!processor.process(new ValidationProblem(MessageStatus.ERROR, "Can't find used devkit: " + reference.getModuleName()))) {
+      if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Can't find used devkit: " + reference.getModuleName()))) {
         return false;
       }
     }
@@ -579,7 +579,7 @@ public class ValidationUtil {
       for (String sourcePath : descriptor.getSourcePaths()) {
         IFile file = module.getFileSystem().getFile(sourcePath);
         if (!file.exists()) {
-          if (!processor.process(new ValidationProblem(MessageStatus.ERROR, "Can't find source path: " + sourcePath))) {
+          if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Can't find source path: " + sourcePath))) {
             return false;
           }
         }
@@ -590,7 +590,7 @@ public class ValidationUtil {
         IFile file = module.getFileSystem().getFile(path);
         if (!file.exists()) {
           String msg = (new File(path).exists() ? "Idea VFS is not up-to-date. " : "") + "Can't find library: " + path;
-          if (!processor.process(new ValidationProblem(MessageStatus.ERROR, msg))) {
+          if (!processor.process(new ModuleValidationProblem(MessageStatus.ERROR, msg))) {
             return false;
           }
         }
@@ -601,7 +601,7 @@ public class ValidationUtil {
 
   // pre: SModelStereotype.isGeneratorModel(model) == true
   @SuppressWarnings("UnusedReturnValue")
-  private static boolean checkGeneratorModelNotEmpty(SModel model, Processor<ValidationProblem> processor) {
+  private static boolean checkGeneratorModelNotEmpty(SModel model, Processor<? super ModelValidationProblem> processor) {
     ModelScanner ms = new ModelScanner().scan(model);
     if (ms.getTargetLanguages().isEmpty() && ms.getQueryLanguages().isEmpty()) {
       FastNodeFinder fnf = FastNodeFinderManager.get(model);
@@ -611,7 +611,7 @@ public class ValidationUtil {
       if (noModifyRules) {
         String m = String.format("Generator Model %s got no target nor query language. No rules to modify an input. Is it empty?", model.getModelName());
         // TODO quickFix possible, remove model
-        return processor.process(new ValidationProblem(MessageStatus.WARNING, m));
+        return processor.process(new ModelValidationProblem(MessageStatus.WARNING, m));
       }
     }
     return true;

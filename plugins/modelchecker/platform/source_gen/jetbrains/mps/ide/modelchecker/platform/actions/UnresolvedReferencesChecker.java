@@ -5,7 +5,7 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -17,11 +17,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.project.dependency.VisibilityUtil;
+import jetbrains.mps.errors.item.TargetModuleNotImportedReportItem;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
@@ -32,8 +33,8 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     myProject = mpsProject;
   }
   @Override
-  public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, ProgressMonitor monitor) {
-    List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+  public List<? extends IssueKindReportItem> checkModel_(final SModel model, ProgressMonitor monitor) {
+    List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     if (model == null || model == null || model.getModule() == null) {
       return results;
     }
@@ -48,11 +49,11 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
           continue;
         }
         if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
-          SpecificChecker.addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new _FunctionTypes._return_P0_E0<Boolean>() {
-            public Boolean invoke() {
-              return ResolverComponent.getInstance().resolve(ref, myProject.getRepository());
+          ListSequence.fromList(results).addElement(new UnresolvedReferenceReportItem(ref, new Runnable() {
+            public void run() {
+              ResolverComponent.getInstance().resolve(ref, myProject.getRepository());
             }
-          });
+          }));
         }
         final SModelReference mref = ref.getTargetSModelReference();
         if (mref == null) {
@@ -65,8 +66,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         if (VisibilityUtil.isVisible(model, m)) {
           continue;
         }
-
-        SpecificChecker.addIssue(results, node, "Target module " + m.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new _FunctionTypes._return_P0_E0<Boolean>() {
+        ListSequence.fromList(results).addElement(new TargetModuleNotImportedReportItem(ref, m.getModule().getModuleReference(), new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
           public Boolean invoke() {
             // check once again as this is executed somewhen in future 
             SModel m2 = mref.resolve(myProject.getRepository());
@@ -77,12 +77,12 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
               return false;
             }
 
-            SModuleReference moduleReference = check_xiru3y_a0f0f0i0c0d0c(check_xiru3y_a0a5a5a8a2a3a2(m2));
+            SModuleReference moduleReference = check_xiru3y_a0f0c0a0a7a2a3a2(check_xiru3y_a0a5a2a0a0h0c0d0c(m2));
             if (moduleReference == null) {
               return false;
             }
 
-            SModule module = check_xiru3y_a0i0f0i0c0d0c(model);
+            SModule module = check_xiru3y_a0i0c0a0a7a2a3a2(model);
             if (module == null) {
               return false;
             }
@@ -90,25 +90,25 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
             ((AbstractModule) module).addDependency(moduleReference, false);
             return true;
           }
-        });
+        })));
       }
     }
     monitor.done();
     return results;
   }
-  private static SModuleReference check_xiru3y_a0f0f0i0c0d0c(SModule checkedDotOperand) {
+  private static SModuleReference check_xiru3y_a0f0c0a0a7a2a3a2(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
-  private static SModule check_xiru3y_a0a5a5a8a2a3a2(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0a5a2a0a0h0c0d0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModule check_xiru3y_a0i0f0i0c0d0c(SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0i0c0a0a7a2a3a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

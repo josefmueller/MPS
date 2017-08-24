@@ -5,19 +5,22 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import jetbrains.mps.checkers.IRootChecker;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.errors.item.NodeReportItem;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.errors.item.QuickFix;
-import jetbrains.mps.errors.item.QuickFixReportItem;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.errors.item.QuickFixBase;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.QuickFixReportItem;
 import java.util.List;
-import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.errors.MessageStatus;
+import java.util.Set;
+import jetbrains.mps.errors.item.FlavouredItem;
 
 public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
   private final IRootChecker myChecker;
@@ -30,35 +33,62 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
     myRepository = repository;
   }
 
-  public IModelCheckerFix getFix(NodeReportItem nodeReportItem) {
-    SNode reporterNode = nodeReportItem.getNode().resolve(myRepository);
-    final QuickFix quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(nodeReportItem);
+  public static class IModelCheckerFixAdapter extends IModelCheckerFix {
+    private final SNodeReference reportedNode;
+    private final SRepository repository;
+    private final QuickFixBase quickFix;
+    public IModelCheckerFixAdapter(@NotNull SNodeReference node, SRepository repository, @NotNull QuickFixBase quickFix) {
+      this.reportedNode = node;
+      this.repository = repository;
+      this.quickFix = quickFix;
+    }
+    @Override
+    public boolean doFix() {
+      SNode resolved = reportedNode.resolve(repository);
+      if (resolved != null) {
+        quickFix.execute(repository);
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
+  public static RootCheckerSpecificCheckerAdapter.IModelCheckerFixAdapter getFix(NodeReportItem nodeReportItem, SRepository repository) {
+    SNode reporterNode = nodeReportItem.getNode().resolve(repository);
+    final QuickFixBase quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(nodeReportItem);
     if (reporterNode != null && quickfix != null) {
       final SNodeReference reporterNodeRef = reporterNode.getReference();
-      return new IModelCheckerFix() {
-        @Override
-        public boolean doFix() {
-          SNode resolved = reporterNodeRef.resolve(myRepository);
-          if (resolved != null) {
-            quickfix.execute(myRepository);
-            return true;
-          } else {
-            return false;
-          }
-        }
-      };
+      return new RootCheckerSpecificCheckerAdapter.IModelCheckerFixAdapter(reporterNodeRef, repository, quickfix);
     }
     return null;
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, final ProgressMonitor monitor) {
-    final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+  public List<IssueKindReportItem> checkModel_(SModel model, final ProgressMonitor monitor) {
+    final List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
 
     monitor.start(myCategory, 1);
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
       myChecker.processErrors(rootNode, myRepository, new Processor<NodeReportItem>() {
-        public boolean process(NodeReportItem reportItem) {
-          SpecificChecker.addIssue(results, reportItem.getNode().resolve(myRepository), reportItem.getMessage(), SpecificChecker.getResultCategory(reportItem.getSeverity()), myCategory, getFix(reportItem));
+        public boolean process(final NodeReportItem reportItem) {
+          ListSequence.fromList(results).addElement(new IssueKindReportItem() {
+            public String getIssueKind() {
+              return myCategory;
+            }
+            @Override
+            public String getMessage() {
+              return reportItem.getMessage();
+            }
+            @Override
+            public MessageStatus getSeverity() {
+              return reportItem.getSeverity();
+            }
+            @Override
+            public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
+              // todo: decorator is not acceptable here because it breaks class hierarchy, i.e. FLAVOUR_CLASS 
+              return reportItem.getIdFlavours();
+            }
+          });
           return !(monitor.isCanceled());
         }
       });

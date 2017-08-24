@@ -13,13 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.errors.item;
+package jetbrains.mps.project.validation;
 
-import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import org.jetbrains.annotations.NotNull;
 
-public interface QuickFix extends QuickFixBase, FlavouredItem {
+public class ModuleValidationProblem extends ValidationProblem implements IssueKindReportItem {
+  public ModuleValidationProblem(MessageStatus severity) {
+    super(severity);
+  }
 
+  public ModuleValidationProblem(MessageStatus severity, @NotNull String message) {
+    super(severity, message);
+  }
 
-
-  String getDescription(SRepository repository);
+  @Override
+  public String getIssueKind() {
+    return "module properties";
+  }
 }

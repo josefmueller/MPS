@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
-public class ImportSelfWarning extends ValidationProblem {
+public class ImportSelfWarning extends ModelValidationProblem {
   private final SModel myModel;
   private final SModelReference myReference;
 

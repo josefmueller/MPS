@@ -9,8 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.PathManager;
 import java.util.List;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,10 +21,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import jetbrains.mps.resolve.ResolverComponent;
+import jetbrains.mps.errors.item.ReferenceReportItem;
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
@@ -51,11 +51,11 @@ public class AspectDependenciesChecker extends SpecificChecker {
     this.languagesUtilPath = PathManager.getHomePath() + "/languages/util/";
   }
   @Override
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor) {
-    List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
+  public List<IssueKindReportItem> checkModel_(SModel model, ProgressMonitor monitor) {
+    List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     monitor.start("wrong aspect dependencies", 1);
 
-    int modelKind = getModelKind(model, null);
+    final int modelKind = getModelKind(model, null);
     if (modelKind == OTHER) {
       monitor.done();
       return results;
@@ -72,18 +72,22 @@ public class AspectDependenciesChecker extends SpecificChecker {
         }
         SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref);
         if (targetNode == null) {
-          SpecificChecker.addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new _FunctionTypes._return_P0_E0<Boolean>() {
-            public Boolean invoke() {
-              return ResolverComponent.getInstance().resolve(ref, myProject.getRepository());
+          ListSequence.fromList(results).addElement(new UnresolvedReferenceReportItem(ref, new Runnable() {
+            public void run() {
+              ResolverComponent.getInstance().resolve(ref, myProject.getRepository());
             }
-          });
+          }));
           continue;
         }
 
         SModel targetModel = SNodeOperations.getModel(targetNode);
         int targetKind = getModelKind(targetModel, ref);
         if (targetKind > modelKind) {
-          SpecificChecker.addIssue(results, node, "Wrong reference: " + SLinkOperations.getResolveInfo(ref) + ", reference from " + kindToString(modelKind) + " to " + kindToString(targetKind), ModelChecker.SEVERITY_ERROR, "wrong aspect dependency (" + kindToString(modelKind) + ")");
+          ListSequence.fromList(results).addElement(new ReferenceReportItem(MessageStatus.ERROR, ref, "Wrong reference: " + SLinkOperations.getResolveInfo(ref) + ", reference from " + kindToString(modelKind) + " to " + kindToString(targetKind)) {
+            public String getIssueKind() {
+              return "wrong aspect dependency (" + kindToString(modelKind) + ")";
+            }
+          });
         }
       }
     }

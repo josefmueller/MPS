@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 
-public final class MissingImportedLanguageError extends ValidationProblem {
+public final class MissingImportedLanguageError extends ModelValidationProblem {
   private final SModel myModel;
   private final SLanguage myLang;
 

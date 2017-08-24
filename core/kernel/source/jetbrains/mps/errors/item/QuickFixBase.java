@@ -17,9 +17,12 @@ package jetbrains.mps.errors.item;
 
 import org.jetbrains.mps.openapi.module.SRepository;
 
-public interface QuickFix extends QuickFixBase, FlavouredItem {
+public interface QuickFixBase {
+  boolean isExecutedImmediately();
 
-
-
-  String getDescription(SRepository repository);
+  /**
+   * @param repository repository we have read lock on
+   */
+  void execute(SRepository repository);
+  boolean isAlive(SRepository repository);
 }

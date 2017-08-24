@@ -16,30 +16,32 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
 import java.util.Collections;
 
-public class UnresolvedReferenceReportItem extends ReferenceReportItem implements IssueKindReportItem, QuickFixReportItem {
-  private final Runnable myQuickfix;
-
-  public UnresolvedReferenceReportItem(SReference ref, Runnable quickfix) {
-    super(MessageStatus.ERROR, ref, "Unresolved reference: " + ((jetbrains.mps.smodel.SReference) ref).getResolveInfo());
-    myQuickfix = quickfix;
-  }
-
-  @Override
-  public String getIssueKind() {
-    return "unresolved reference";
+public class TargetModuleNotImportedReportItem extends ReferenceReportItem implements QuickFixReportItem, IssueKindReportItem {
+  private final Runnable myQuickFix;
+  public TargetModuleNotImportedReportItem(@NotNull SReference reference, @NotNull SModuleReference targetModule, @NotNull Runnable quickFix) {
+    super(MessageStatus.ERROR, reference, "Target module " + targetModule.getModuleName() + " should be imported");
+    myQuickFix = quickFix;
   }
 
   @Override
   public Collection<QuickFixBase> getQuickFix() {
-    if (myQuickfix != null) {
-      return Collections.singleton(new RunnableQuickFixAdapter(myQuickfix));
+    if (myQuickFix != null) {
+      return Collections.singleton(new RunnableQuickFixAdapter(myQuickFix));
     } else {
       return Collections.emptyList();
     }
+  }
+
+  @Override
+  public String getIssueKind() {
+    return "target module not imported";
   }
 }

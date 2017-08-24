@@ -55,7 +55,7 @@ public class AutoResolver extends BaseEventProcessingEditorChecker {
     // TODO: use same settings as in LanguageEditorChecker 
     Set<SReference> badReferences = collectBadReferences(rootNode);
     for (SReference ref : SetSequence.fromSet(badReferences)) {
-      NodeReportItem reportItem = new UnresolvedReferenceReportItem(ref);
+      NodeReportItem reportItem = new UnresolvedReferenceReportItem(ref, null);
       EditorMessage message = HighlightUtil.createHighlighterMessage(reportItem, this, editorComponent.getEditorContext().getRepository());
       SetSequence.fromSet(messages).addElement(message);
     }

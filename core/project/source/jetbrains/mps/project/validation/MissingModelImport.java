@@ -28,15 +28,13 @@ import org.jetbrains.mps.openapi.model.SModelReference;
  * @author Artem Tikhomirov
  * @since 3.5
  */
-public class MissingModelImport extends ValidationProblem {
+public class MissingModelImport extends ModelValidationProblem {
   private final SModel myModel;
-  private final String myMessage;
   private final SModelReference myMissingImport;
 
   public MissingModelImport(@NotNull SModel model, @NotNull String msg, @NotNull SModelReference reference) {
     super(MessageStatus.WARNING, msg);
     myModel = model;
-    myMessage = msg;
     myMissingImport = reference;
   }
 

@@ -11,8 +11,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.errors.item.ReportItem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.QuickFixBase;
 import jetbrains.mps.errors.item.QuickFixReportItem;
 
 public abstract class ModelCheckerIssue {
@@ -46,6 +48,12 @@ public abstract class ModelCheckerIssue {
     ModelCheckerIssue issue = new ModelCheckerIssue.ModuleIssue(module.getModuleName() + ": " + vp.getMessage(), (vp.canFix() ? new ModelCheckerIssue.ValidationFixAdapter(vp) : null));
     return new SearchResult<ModelCheckerIssue>(issue, module, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, toCheckerSeverity(vp)), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
+
+  public static SearchResult<ReportItem> getSearchResultForReportItem(IssueKindReportItem item) {
+    String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
+    return new SearchResult<ReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item), new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, SpecificChecker.getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueKind));
+  }
+
 
   public static SearchResult<ModelCheckerIssue> getSearchResultForModel(SModel model, ValidationProblem vp, String issueType) {
     ModelCheckerIssue issue = new ModelCheckerIssue.ModelIssue(model, vp.getMessage(), (vp.canFix() ? new ModelCheckerIssue.ValidationFixAdapter(vp) : null));
@@ -98,7 +106,7 @@ public abstract class ModelCheckerIssue {
 
     @Override
     public boolean doFix(SRepository repository) {
-      QuickFix quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(myIssue);
+      QuickFixBase quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(myIssue);
       if (quickfix == null) {
         return false;
       }

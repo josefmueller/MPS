@@ -53,7 +53,7 @@ public abstract class ReportItemBase implements ReportItem {
     return new HashSet<>(Arrays.asList(FLAVOUR_CLASS));
   }
 
-  static class SimpleReportItemFlavour<C extends FlavouredItem, T> extends ReportItemFlavour<C, T> {
+  public static class SimpleReportItemFlavour<C extends FlavouredItem, T> extends ReportItemFlavour<C, T> {
     private Class<C> myApplicableClass;
     private Function<C, T> myGetter;
     public SimpleReportItemFlavour(Class<C> applicableClass, Function<C, T> getter) {

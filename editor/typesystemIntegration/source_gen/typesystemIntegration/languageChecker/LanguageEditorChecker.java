@@ -34,7 +34,7 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.checkers.LanguageErrorsComponent;
 import java.util.List;
-import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.QuickFixBase;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.errors.item.NodeReportItem;
@@ -159,7 +159,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
   private Set<EditorMessage> createMessages(final EditorContext editorContext, boolean inspector, LanguageErrorsComponent errorsComponent, SNode editedNode) {
     Set<EditorMessage> result = SetSequence.fromSet(new HashSet<EditorMessage>());
     boolean runQuickFixes = shouldRunQuickFixs(editorContext.getModel(), inspector);
-    final List<QuickFix> quickFixesToExecute = ListSequence.fromList(new ArrayList<QuickFix>());
+    final List<QuickFixBase> quickFixesToExecute = ListSequence.fromList(new ArrayList<QuickFixBase>());
     for (NodeReportItem errorReporter : errorsComponent.getErrors()) {
       // todo here should be processor-based architecture, like in other checkers 
       SNode nodeWithError = errorReporter.getNode().resolve(editorContext.getRepository());
@@ -173,7 +173,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
       }
       HighlighterMessage message = HighlightUtil.createHighlighterMessage(errorReporter, LanguageEditorChecker.this, editorContext.getRepository());
       if (runQuickFixes) {
-        QuickFix quickFix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(message.getReportItem());
+        QuickFixBase quickFix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(message.getReportItem());
         if (quickFix != null) {
           ListSequence.fromList(quickFixesToExecute).addElement(quickFix);
         }
@@ -192,7 +192,7 @@ public class LanguageEditorChecker extends BaseEditorChecker implements Disposab
         public void run() {
           editorContext.getRepository().getModelAccess().executeUndoTransparentCommand(new Runnable() {
             public void run() {
-              for (QuickFix fix : quickFixesToExecute) {
+              for (QuickFixBase fix : quickFixesToExecute) {
                 if (fix.isAlive(editorContext.getRepository())) {
                   fix.execute(editorContext.getRepository());
                   if (wasForceRunQuickFixes) {

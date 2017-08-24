@@ -104,8 +104,8 @@
       <node id="3584380880167816075" at="53,0,54,90" concept="9" />
       <node id="3584380880167816100" at="54,90,55,59" concept="11" />
       <node id="3584380880167816102" at="55,59,56,67" concept="9" />
-      <node id="365037293641247410" at="57,63,58,73" concept="9" />
-      <node id="3584380880167816111" at="58,73,59,139" concept="9" />
+      <node id="365037293641247410" at="57,63,58,79" concept="9" />
+      <node id="3584380880167816111" at="58,79,59,139" concept="9" />
       <node id="3584380880167816120" at="59,139,60,56" concept="4" />
       <node id="3584380880167925404" at="61,5,62,0" concept="12" />
       <node id="3584380880167816126" at="62,0,63,88" concept="9" />
@@ -430,7 +430,7 @@
       <node id="2864426673675277357" at="153,40,154,62" concept="4" />
       <node id="2864426673675277375" at="159,158,160,82" concept="9" />
       <node id="2864426673675277382" at="160,82,161,84" concept="9" />
-      <node id="2864426673675277390" at="161,84,162,96" concept="9" />
+      <node id="2864426673675277390" at="161,84,162,104" concept="9" />
       <node id="2864426673675277405" at="163,70,164,82" concept="11" />
       <node id="542292476441047697" at="164,82,165,91" concept="9" />
       <node id="2864426673675277414" at="166,64,167,17" concept="3" />
@@ -438,7 +438,7 @@
       <node id="2864426673675277424" at="170,119,171,66" concept="11" />
       <node id="2864426673675277426" at="171,66,172,17" concept="3" />
       <node id="2864426673675277447" at="173,7,174,148" concept="9" />
-      <node id="2864426673675277471" at="175,26,176,107" concept="9" />
+      <node id="2864426673675277471" at="175,26,176,111" concept="9" />
       <node id="2864426673675277482" at="177,31,178,74" concept="4" />
       <node id="2864426673675277506" at="180,7,181,54" concept="4" />
       <node id="2864426673675277514" at="182,5,183,0" concept="12" />
@@ -463,7 +463,7 @@
       <node id="2864426673675277318" at="146,9,149,7" concept="7" />
       <node id="2864426673675277352" at="152,15,155,7" concept="7" />
       <node id="2864426673675277407" at="165,91,168,7" concept="7" />
-      <node id="2864426673675277480" at="176,107,179,9" concept="7" />
+      <node id="2864426673675277480" at="176,111,179,9" concept="7" />
       <node id="2864426673675277515" at="183,0,186,5" concept="7" />
       <node id="2864426673675277745" at="212,71,215,5" concept="7" />
       <node id="2864426673675277041" at="69,0,73,0" concept="8" trace="dispose#()V" />
@@ -478,7 +478,7 @@
       <node id="2864426673675277214" at="109,0,115,5" concept="7" />
       <node id="2864426673675277469" at="174,148,180,7" concept="7" />
       <node id="2864426673675277743" at="212,0,218,0" concept="8" trace="shouldRunQuickFixs#(Lorg/jetbrains/mps/openapi/model/SModel;Z)Z" />
-      <node id="2864426673675277546" at="195,56,202,17" concept="7" />
+      <node id="2864426673675277546" at="195,60,202,17" concept="7" />
       <node id="2864426673675276990" at="60,0,68,0" concept="2" trace="LanguageEditorChecker#(Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <node id="2864426673675277544" at="194,31,203,15" concept="6" />
       <node id="2864426673675277135" at="74,0,84,0" concept="8" trace="isLaterThan#(Ljetbrains/mps/nodeEditor/checking/EditorChecker;)Z" />
@@ -491,7 +491,7 @@
       <node id="2864426673675277292" at="141,0,158,0" concept="8" trace="runChecks#(ZLjetbrains/mps/checkers/LanguageErrorsComponent;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/util/Cancellable;)Z" />
       <node id="2864426673675277532" at="190,66,207,9" concept="4" />
       <node id="2864426673675277530" at="189,33,208,5" concept="7" />
-      <node id="2864426673675277401" at="162,96,182,5" concept="6" />
+      <node id="2864426673675277401" at="162,104,182,5" concept="6" />
       <node id="2864426673675277172" at="102,0,140,0" concept="8" trace="doCreateMessages#(Lorg/jetbrains/mps/openapi/model/SNode;ZLjetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/util/Cancellable;)Ljava/util/Set;" />
       <node id="2864426673675277362" at="159,0,211,0" concept="8" trace="createMessages#(Ljetbrains/mps/openapi/editor/EditorContext;ZLjetbrains/mps/checkers/LanguageErrorsComponent;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
       <scope id="2864426673675277044" at="70,25,71,32" />
@@ -545,7 +545,7 @@
       <scope id="2864426673675277849" at="88,9,95,69">
         <var name="messages" id="2864426673675277851" />
       </scope>
-      <scope id="2864426673675277545" at="195,56,202,17" />
+      <scope id="2864426673675277545" at="195,60,202,17" />
       <scope id="2864426673675276990" at="60,0,68,0">
         <var name="projectRepo" id="2864426673675277037" />
       </scope>
@@ -582,7 +582,7 @@
         <var name="message" id="2864426673675277448" />
         <var name="nodeWithError" id="542292476441047698" />
       </scope>
-      <scope id="2864426673675277401" at="162,96,182,5">
+      <scope id="2864426673675277401" at="162,104,182,5">
         <var name="errorReporter" id="2864426673675277402" />
       </scope>
       <scope id="2864426673675277186" at="102,178,138,81">

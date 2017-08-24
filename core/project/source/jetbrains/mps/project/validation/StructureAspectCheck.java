@@ -34,9 +34,9 @@ import java.util.stream.Stream;
  */
 public class StructureAspectCheck {
   private final SModel myStructureModel;
-  private final Consumer<ValidationProblem> myReporter;
+  private final Consumer<ModelValidationProblem> myReporter;
 
-  public StructureAspectCheck(@NotNull SModel structureModel, @NotNull Consumer<ValidationProblem> reporter) {
+  public StructureAspectCheck(@NotNull SModel structureModel, @NotNull Consumer<ModelValidationProblem> reporter) {
     assert LanguageAspect.STRUCTURE.is(structureModel);
     myStructureModel = structureModel;
     myReporter = reporter;

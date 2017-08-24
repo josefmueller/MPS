@@ -17,15 +17,16 @@ package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class ReferenceReportItem extends NodeReportItemBase implements NodeFeatureReportItem {
+public abstract class ReferenceReportItem extends NodeReportItemBase implements NodeFeatureReportItem, IssueKindReportItem {
   private final SReferenceLink myLink;
   public ReferenceReportItem(@NotNull MessageStatus severity, @NotNull SReference ref, String message) {
     super(severity, ref.getSourceNode().getReference(), message);
@@ -40,5 +41,25 @@ public abstract class ReferenceReportItem extends NodeReportItemBase implements 
   @Override
   public SReferenceLink getConceptFeature() {
     return myLink;
+  }
+
+  public class RunnableQuickFixAdapter implements QuickFixBase {
+    private Runnable myQuickfix;
+    public RunnableQuickFixAdapter(Runnable quickfix) {
+      myQuickfix = quickfix;
+    }
+    @Override
+    public boolean isExecutedImmediately() {
+      return true;
+    }
+    @Override
+    public void execute(SRepository repository) {
+      myQuickfix.run();
+    }
+    @Override
+    public boolean isAlive(SRepository repository) {
+      SNode node = getNode().resolve(repository);
+      return node != null && node.getReference(getConceptFeature()) != null;
+    }
   }
 }

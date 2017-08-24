@@ -111,6 +111,7 @@ public class ModelCheckerViewer extends JPanel {
     // Perform quick fixes 
     final Wrappers._int fixedTotal = new Wrappers._int(0);
     // Select all fixable issues 
+    // todo: ReportItem instead of ModelCheckerIssue 
     final List<ModelCheckerIssue> issuesToFix = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<ModelCheckerIssue>>() {
       public List<ModelCheckerIssue> compute() {
         return getIssuesToFix();

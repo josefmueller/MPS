@@ -21,6 +21,7 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.item.NodeFeatureReportItem;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.QuickFixBase;
 import jetbrains.mps.errors.item.QuickFixRuntimeAdapter;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
@@ -69,7 +70,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
   public List<QuickFixProvider> getIntentionProviders() {
     // FIXME This seems to be compatibility code (see deprecated methods in EditorMessage), drop once 2017.2 is out
     List<QuickFixProvider> list = new ArrayList<>();
-    for (QuickFix quickFix : TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getCollection(myReportItem)) {
+    for (QuickFixBase quickFix : TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getCollection(myReportItem)) {
       if (quickFix instanceof QuickFixRuntimeAdapter) {
         QuickFixProvider quickFixProvider = ((QuickFixRuntimeAdapter) quickFix).getQuickFixProvider();
         list.add(quickFixProvider);

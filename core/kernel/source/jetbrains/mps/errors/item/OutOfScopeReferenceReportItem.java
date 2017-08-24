@@ -28,7 +28,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class OutOfScopeReferenceReportItem extends ReferenceReportItem implements NodeFeatureReportItem, RuleIdFlavouredItem, QuickFixReportItem {
+public class OutOfScopeReferenceReportItem extends ReferenceReportItem implements RuleIdFlavouredItem, QuickFixReportItem {
   private final TypesystemRuleId myRuleNode;
   private final QuickFix myQuickfix;
   public OutOfScopeReferenceReportItem(@NotNull SReference ref, @Nullable SNodeReference ruleNode, @NotNull QuickFix quickfix) {
@@ -58,5 +58,10 @@ public class OutOfScopeReferenceReportItem extends ReferenceReportItem implement
   @Override
   public Collection<QuickFix> getQuickFix() {
     return Collections.singleton(myQuickfix);
+  }
+
+  @Override
+  public String getIssueKind() {
+    return IssueKindReportItem.CONSTRAINTS;
   }
 }

@@ -101,7 +101,7 @@
     <classNode dependClassName="jetbrains.mps.checkers.TargetConceptChecker" />
     <classNode dependClassName="jetbrains.mps.checkers.UsedLanguagesChecker" />
     <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
-    <classNode dependClassName="jetbrains.mps.errors.item.QuickFix" />
+    <classNode dependClassName="jetbrains.mps.errors.item.QuickFixBase" />
     <classNode dependClassName="jetbrains.mps.errors.item.QuickFixReportItem" />
     <classNode dependClassName="jetbrains.mps.extapi.model.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

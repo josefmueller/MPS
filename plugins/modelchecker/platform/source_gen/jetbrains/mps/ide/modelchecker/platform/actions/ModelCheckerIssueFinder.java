@@ -6,6 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import java.util.List;
 import java.util.Arrays;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,14 +36,14 @@ public class ModelCheckerIssueFinder extends BaseFinder {
     return myExtraCheckers;
   }
   @Override
-  public SearchResults<ModelCheckerIssue> find(SearchQuery searchQuery, ProgressMonitor monitor) {
+  public SearchResults<ReportItem> find(SearchQuery searchQuery, ProgressMonitor monitor) {
     ModelCheckerIssueFinder.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
 
     int work = ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(itemsToCheck.models).count() + 1;
     monitor.start("Checking", work);
 
     try {
-      final SearchResults<ModelCheckerIssue> rv = new SearchResults<ModelCheckerIssue>();
+      final SearchResults<ReportItem> rv = new SearchResults<ReportItem>();
 
       ModuleChecker moduleChecker = new ModuleChecker();
       for (SModule module : ListSequence.fromList(itemsToCheck.modules)) {
@@ -63,8 +64,8 @@ public class ModelCheckerIssueFinder extends BaseFinder {
       rv.addAll(modelChecker.getSearchResults());
 
       // filter out suppressed 
-      List<SearchResult<ModelCheckerIssue>> toRemove = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-      for (SearchResult<ModelCheckerIssue> result : ListSequence.fromList(rv.getSearchResults())) {
+      List<SearchResult<ReportItem>> toRemove = ListSequence.fromList(new ArrayList<SearchResult<ReportItem>>());
+      for (SearchResult<ReportItem> result : ListSequence.fromList(rv.getSearchResults())) {
         if (result.getObject() instanceof ModelCheckerIssue.NodeIssue) {
           ModelCheckerIssue.NodeIssue mci = (ModelCheckerIssue.NodeIssue) result.getObject();
           if (!(ErrorReportUtil.shouldReportError(mci.getNode()))) {
@@ -72,8 +73,8 @@ public class ModelCheckerIssueFinder extends BaseFinder {
           }
         }
       }
-      ListSequence.fromList(toRemove).visitAll(new IVisitor<SearchResult<ModelCheckerIssue>>() {
-        public void visit(SearchResult<ModelCheckerIssue> it) {
+      ListSequence.fromList(toRemove).visitAll(new IVisitor<SearchResult<ReportItem>>() {
+        public void visit(SearchResult<ReportItem> it) {
           rv.remove(it);
         }
       });

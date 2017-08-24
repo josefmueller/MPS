@@ -5,25 +5,26 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.errors.item.ReportItem;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.project.validation.ValidationProblem;
+import jetbrains.mps.project.validation.ModuleValidationProblem;
 import org.apache.log4j.Level;
 
 public class ModuleChecker {
   private static final Logger LOG = LogManager.getLogger(ModuleChecker.class);
-  private final SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
+  private final SearchResults<ReportItem> myResults = new SearchResults<ReportItem>();
   public ModuleChecker() {
   }
-  public void checkModule(final SModule module, ProgressMonitor monitor) {
+  public void checkModule(SModule module, ProgressMonitor monitor) {
     String moduleName = module.getModuleName();
     monitor.start("Checking " + moduleName + " module properties...", 1);
     try {
-      ValidationUtil.validateModule(module, new Processor<ValidationProblem>() {
-        public boolean process(ValidationProblem vp) {
-          myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForModule(module, vp, "module properties"));
+      ValidationUtil.validateModule(module, new Processor<ModuleValidationProblem>() {
+        public boolean process(ModuleValidationProblem vp) {
+          myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForReportItem(vp));
           return true;
         }
       });
@@ -35,7 +36,7 @@ public class ModuleChecker {
       monitor.done();
     }
   }
-  public SearchResults<ModelCheckerIssue> getSearchResults() {
+  public SearchResults<ReportItem> getSearchResults() {
     return myResults;
   }
 }

@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  * Tells there's an import for a model but target model could get resolved and likely is missing.
  * For a model actually used while not imported, see {@link MissingModelImport}
  */
-public class MissingModelError extends ValidationProblem {
+public class MissingModelError extends ModelValidationProblem {
   private final SModel myModel;
   private final SModelReference myReference;
   private final boolean missingModule;

@@ -50,11 +50,11 @@ import java.util.stream.Collectors;
 public class LanguageValidator {
   private final Language myLanguage;
   private final SRepository myRepository;
-  private final Processor<ValidationProblem> myProcessor;
+  private final Processor<? super ModuleValidationProblem> myProcessor;
 
   // XXX Decide whether to have per-language instance of validator or to pass language as validate() argument.
   // Is there anything we can reuse in former case? If we would pass progress monitor, however, there might be too many arguments in the latter.
-  public LanguageValidator(@NotNull Language language, @NotNull SRepository repository, @NotNull Processor<ValidationProblem> processor) {
+  public LanguageValidator(@NotNull Language language, @NotNull SRepository repository, @NotNull Processor<? super ModuleValidationProblem> processor) {
     myLanguage = language;
     myRepository = repository;
     myProcessor = processor;
@@ -74,7 +74,7 @@ public class LanguageValidator {
         // Language.getExtendedLanguageRefs() adds implicitly extended lang.core, we don't need to warn about it.
         // Perhaps, lang.core has not be part of getExtendedLanguageRefs(), but added at RT only? Do we need to manifest it at source level? To reference
         // core stuff without direct import?
-        if (!myProcessor.process(new ValidationProblem(MessageStatus.WARNING, String.format("Superficial extended module %s, not referenced from structure aspect", el.getModuleName())))) {
+        if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.WARNING, String.format("Superficial extended module %s, not referenced from structure aspect", el.getModuleName())))) {
           return;
         }
       }
@@ -83,7 +83,7 @@ public class LanguageValidator {
         extendedLanguages.add((Language) resolved);
         continue;
       }
-      if (!myProcessor.process(new ValidationProblem(MessageStatus.ERROR, String.format(resolved == null ? "Can't find extended language: %s" : "Module %s is not a language, can't extend it", el.getModuleName())))) {
+      if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.ERROR, String.format(resolved == null ? "Can't find extended language: %s" : "Module %s is not a language, can't extend it", el.getModuleName())))) {
         return;
       }
     }
@@ -91,7 +91,7 @@ public class LanguageValidator {
     // XXX why it's essential to have behavior aspects in extended languages?
     HashSet<Language> visited = new HashSet<>();
     if (LanguageAspect.BEHAVIOR.get(myLanguage) == null) {
-      if (!myProcessor.process(new ValidationProblem(MessageStatus.ERROR, "Behavior aspect is absent"))) {
+      if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Behavior aspect is absent"))) {
         return;
       }
     }
@@ -100,7 +100,7 @@ public class LanguageValidator {
     while (!extendedLanguages.isEmpty()) {
       Language l = extendedLanguages.removeFirst();
       if (l == myLanguage) {
-        if (!myProcessor.process(new ValidationProblem(MessageStatus.WARNING, "Cycle in extended language hierarchy"))) {
+        if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.WARNING, "Cycle in extended language hierarchy"))) {
           return;
         }
       }
@@ -117,7 +117,7 @@ public class LanguageValidator {
       if (descriptor != null) {
         continue;
       }
-      if (!myProcessor.process(new ValidationProblem(MessageStatus.ERROR, "Cannot extend language without behavior aspect: " + l.getModuleName()))) {
+      if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.ERROR, "Cannot extend language without behavior aspect: " + l.getModuleName()))) {
         return;
       }
     }
@@ -126,7 +126,7 @@ public class LanguageValidator {
     for (SModuleReference mr : myLanguage.getRuntimeModulesReferences()) {
       SModule runtimeModule = mr.resolve(myRepository);
       if (runtimeModule == null) {
-        if (!myProcessor.process(new ValidationProblem(MessageStatus.WARNING, String.format("Missing runtime module %s", mr.getModuleName())))) {
+        if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.WARNING, String.format("Missing runtime module %s", mr.getModuleName())))) {
           return;
         }
         continue;
@@ -135,7 +135,7 @@ public class LanguageValidator {
         continue;
       }
 
-      if (!myProcessor.process(new ValidationProblem(MessageStatus.ERROR, String.format("Runtime module %s is not a solution", runtimeModule)))) {
+      if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.ERROR, String.format("Runtime module %s is not a solution", runtimeModule)))) {
         return;
       }
     }
@@ -145,13 +145,13 @@ public class LanguageValidator {
       //but I'll not delete it until accessories removal just to have some warning on project consistency
       SModel accModel = accessory.resolve(myRepository);
       if (accModel == null) {
-        if (!myProcessor.process(new ValidationProblem(MessageStatus.WARNING, String.format("Missing accessory model %s", accessory.getModelName())))) {
+        if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.WARNING, String.format("Missing accessory model %s", accessory.getModelName())))) {
           return;
         }
         continue;
       }
       if (!VisibilityUtil.isVisible(myLanguage, accModel)) {
-        if (!myProcessor.process(new ValidationProblem(MessageStatus.ERROR, String.format("Accessory model %s is not visible in the module", accessory.getModelName())))) {
+        if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.ERROR, String.format("Accessory model %s is not visible in the module", accessory.getModelName())))) {
           return;
         }
       }
@@ -164,13 +164,13 @@ public class LanguageValidator {
           SLanguage checkedLanguage = MetaAdapterFactory.getLanguage(myLanguage.getModuleReference());
           if (SModelOperations.getAllLanguageImports(accModel).contains(checkedLanguage)) {
             // accessory model written in a language it's part of. We could not possibly generate this model.
-            if (!myProcessor.process(new ValidationProblem(MessageStatus.ERROR, String.format("Accessory model %s uses language it's part of. Mark the model as 'do not generate' to avoid unnecessary bootstrap dependency", accModel.getName())))) {
+            if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.ERROR, String.format("Accessory model %s uses language it's part of. Mark the model as 'do not generate' to avoid unnecessary bootstrap dependency", accModel.getName())))) {
               return;
             }
             return;
           } else {
             // just a model to generate some code, not the best way to utilize accessory models
-            if (!myProcessor.process(new ValidationProblem(MessageStatus.WARNING, String.format("Accessory models are deemed design-time facility and generally shall be marked as 'do not generate': %s", accModel.getName())))) {
+            if (!myProcessor.process(new ModuleValidationProblem(MessageStatus.WARNING, String.format("Accessory models are deemed design-time facility and generally shall be marked as 'do not generate': %s", accModel.getName())))) {
               return;
             }
           }
