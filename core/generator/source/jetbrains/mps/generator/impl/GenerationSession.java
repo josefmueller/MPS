@@ -208,7 +208,7 @@ class GenerationSession {
               // Shall populate state with last generator's MappingLabels. Note, ML could have been added from post-processing scripts. Generator
               // instance could be different, we keep GeneratorMappings with step arguments, that span all pre/post scripts along with transformations.
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
-              cpBuilder.addMappings(myOriginalInputModel, stepLabels);
+              cpBuilder.addMappings(myOriginalInputModel, stepLabels, myLogger.getImplementation());
             }
             CheckpointState cpState = cpBuilder.create(checkpointIdentity);
             xmodelEnv.publishCheckpoint(myOriginalInputModel.getReference(), cpState);

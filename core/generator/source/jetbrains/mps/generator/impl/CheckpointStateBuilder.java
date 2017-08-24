@@ -18,17 +18,16 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.plan.CheckpointState;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.smodel.ModelDependencyUpdate;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.util.SNodePresentationComparator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.Collection;
-import java.util.Collections;
 
 /**
  * Translate information about mapping labels known at checkpoint step to read-only, persisted (even though memory-only now) {@link CheckpointState state}
@@ -104,11 +103,11 @@ class CheckpointStateBuilder {
    * optional operation, to record generator mappings in the state being built.
    * Invoke prior to {@link #create(CheckpointIdentity)}
    * Optional, for a hypothetical (didn't check/think over too much) scenario when CP comes as the very first step.
-   *
-   * @param originalInputModel non-null
+   *  @param originalInputModel non-null
    * @param stepLabels non-null
+   * @param messageHandler likely shall relocate to cons arguments
    */
-  /*package*/ void addMappings(SModel originalInputModel, GeneratorMappings stepLabels) {
+  /*package*/ void addMappings(SModel originalInputModel, GeneratorMappings stepLabels, IMessageHandler messageHandler) {
     // FIXME likely, GeneratorMappings shall care about MappingMemento only (pass TransitionTrace there as well).
     //
     // FIXME stepLabels.export is commented out as we restore MappingsMemento for the CPState through persisted state and MappingLabelExtractor, to get
@@ -119,7 +118,7 @@ class CheckpointStateBuilder {
     // reference targets from transient model to that in CP model (see DMB.substitute)
     cloneTransientToCheckpoint();
     new ModelImports(myCheckpointModel).addModelImport(originalInputModel.getReference());
-    DebugMappingsBuilder dmb = new DebugMappingsBuilder(originalInputModel.getRepository(), myTransitionTrace.getActiveTransition(), Collections.singletonMap(myTransientModel, myCheckpointModel));
+    DebugMappingsBuilder dmb = new DebugMappingsBuilder(originalInputModel.getRepository(), myTransitionTrace.getActiveTransition(), messageHandler);
     SNode debugMappings = dmb.build(myCheckpointModel, stepLabels);
     myCheckpointModel.addRootNode(debugMappings);
   }
