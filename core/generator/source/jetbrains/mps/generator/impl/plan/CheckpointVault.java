@@ -181,8 +181,7 @@ public class CheckpointVault {
     final ModelFactory modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
     final SingleStreamSource source = new SingleStreamSource(myStreams.getOutputLocation(), entry.getFilename());
     SModel cpModel = modelFactory.load(source, Collections.emptyMap());
-    MappingsMemento memento = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(cpModel));
-    return new CheckpointState(memento, publisher.apply(cpModel, entry.myCheckpoint), entry.myCheckpoint);
+    return new CheckpointState(publisher.apply(cpModel, entry.myCheckpoint), entry.myCheckpoint);
   }
 
   // FIXME use of StreamHandler;

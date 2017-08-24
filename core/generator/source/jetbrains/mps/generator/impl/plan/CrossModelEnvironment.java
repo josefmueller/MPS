@@ -139,12 +139,7 @@ public class CrossModelEnvironment {
         }
         PlanIdentity modelPlan = new PlanIdentity(gpAttrValue);
         CheckpointIdentity modelCheckpoint = new CheckpointIdentity(modelPlan, cpAttrValue /* here, persistent identity*/);
-        // FIXME read and fill memento with MappingLabels
-        //       now, just restore it from debug root we've got there. Later (once true persistence is done), shall consider
-        //       option to keep mappings inside a model (not to bother with persistence) or to follow MappingsMemento approach with
-        //       custom serialization code (and to solve the issue of associated model streams serialized/managed (i.e. deleted) along with a cp model)
-        MappingsMemento memento = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(m));
-        cpModels.add(new CheckpointState(memento, m, modelCheckpoint));
+        cpModels.add(new CheckpointState(m, modelCheckpoint));
       }
       return cpModels.isEmpty() ? null : new ModelCheckpoints(cpModels);
     });
