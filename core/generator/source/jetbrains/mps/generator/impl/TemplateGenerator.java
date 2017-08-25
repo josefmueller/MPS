@@ -73,7 +73,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -506,39 +505,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       // however, without a CP got nothing to synchronize against, as we don't keep final transformation model now (perhaps, we should?)
       return null;
     }
-    // Given M1 and M2, where M1 hosts reference source and M2 is home for reference target, and cp sequence CP1->CP3 for M1, CP1->CP2->CP3 sequence for M2,
-    // we need to synchronize @CP3 provided M1 still points to M2@CP1, while M2@CP3 records nodes M2@CP2 as their inputs which do not match nodes of M2@CP1
-    // Therefore, we need to walk M2 CP sequence backwards up to CP1, match input and then re-construct transitions forward to CP3.
-    // FIXME perhaps, could make use of myPlanStep.getLastCheckpoint() not to get beyond that CP. However, need further investigation
-    //       regarding this, as there's no confidence why would both M1 and M2 share lastCheckpoint (CP3 might be the only one they share and synchronize at)
-    //
-    // XXX Note, almost the same logic is needed for findOutputNodeByInputNodeAndMappingName() below. Need to extract and parameterize with
-    //     Function<SNode,SNode>, CheckpointState::getCopiedOutput(T) and CheckpointState::getOutput(mappingName, T).
     CheckpointIdentity cpId = targetPoint.getIdentity();
-    ArrayDeque<CheckpointState> cpStateStack = new ArrayDeque<>();
-    SNode copiedOutput = null;
-    do {
-      CheckpointState cp = modelCheckpoints.find(cpId);
-      if (cp == null) {
-        // can hardly do anything if we can't trace CPs
-        return null;
-      }
-      cpStateStack.push(cp);
-      copiedOutput = cp.getCopiedOutput(inputNode);
-      cpId = cp.getOriginCheckpoint();
-    } while (copiedOutput == null && cpId != null);
-    if (copiedOutput == null) {
-      // we traced all known CPs of M2 and didn't find any that has a copied output fro inputNode, alas
-      return null;
-    }
-    // at the top of the cpStateStack is CP state with the inputNode->copiedOutput record, discard as we already know copiedOutput node,
-    // i.e. CP1,CP2,CP3, and we discard CP1.
-    cpStateStack.pop();
-    // now, unwind the stack to get to output in 'targetPoint' (aka CP3)
-    while (!cpStateStack.isEmpty() && copiedOutput != null) {
-      CheckpointState cp = cpStateStack.pop();
-      copiedOutput = cp.getCopiedOutput(copiedOutput);
-    }
+    SNode copiedOutput = modelCheckpoints.withProperInput(cpId, inputNode, CheckpointState::getCopiedOutput);
     return copiedOutput;
   }
 
@@ -569,21 +537,21 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (inputNodeModel == null) {
       return null;
     }
-    CheckpointState cp = findMatchingStateFor(inputNodeModel);
-    if (cp == null) {
+//    CheckpointState cp = findMatchingStateFor(inputNodeModel);
+    CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
+    ModelCheckpoints modelCheckpoints = env.getState(inputNodeModel);
+    if (modelCheckpoints == null) {
       return null;
     }
-    // FIXME we might want to ensure inputNode comes from the myPlanStep.getLastCheckpoint() checkpoint.
-    //       However, unless we keep TransitionState along with the
-    //       checkpointState, I see no way to confirm inputNode comes from lastPoint (the moment we've built CheckpointState, we dispose
-    //       TransitionTrace and could not find out what are origins of the node in checkpoint model. Technically, it's not true now,
-    //       as there are user objects in the checkpoint model, however, this might get changed, so I can't rely on that, unless there's
-    //       a conscious decision to keep transition trace and to ensure validity of input nodes and their originating CP).
-    Collection<SNode> output = cp.getOutput(mappingName, inputNode);
-    if (output.size() == 1) {
-      return output.iterator().next();
+    Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
+    if (targetPoint == null) {
+      // this might be perfectly legal scenario - when we try to restore a reference in a model close to GP sequence, with no CP at the end
+      // however, without a CP got nothing to synchronize against, as we don't keep final transformation model now (perhaps, we should?)
+      return null;
     }
-    return null;
+    CheckpointIdentity cpId = targetPoint.getIdentity();
+    SNode output = modelCheckpoints.withProperInput(cpId, inputNode, (cp, node) -> cp.getOutputIfSingle(mappingName, node));
+    return output;
   }
 
   private CheckpointState findMatchingStateFor(/*non-null*/SModel model) {
