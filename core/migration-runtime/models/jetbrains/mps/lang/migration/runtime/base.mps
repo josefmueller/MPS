@@ -6876,6 +6876,176 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="1MbEMJ4dYs2" role="jymVt" />
+    <node concept="3clFb_" id="1MbEMJ4e27i" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="addNewLanguage" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="1MbEMJ4e27j" role="1B3o_S" />
+      <node concept="3cqZAl" id="1MbEMJ4e27k" role="3clF45" />
+      <node concept="3clFbS" id="1MbEMJ4e27l" role="3clF47">
+        <node concept="3clFbF" id="1MbEMJ4e27m" role="3cqZAp">
+          <node concept="2OqwBi" id="1MbEMJ4e27n" role="3clFbG">
+            <node concept="liA8E" id="1MbEMJ4e27o" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.checkWriteAccess():void" resolve="checkWriteAccess" />
+            </node>
+            <node concept="2OqwBi" id="1MbEMJ4e27p" role="2Oq$k0">
+              <node concept="37vLTw" id="1MbEMJ4e27q" role="2Oq$k0">
+                <ref role="3cqZAo" node="5gIiJF05svt" resolve="myRepo" />
+              </node>
+              <node concept="liA8E" id="1MbEMJ4e27r" role="2OqNvi">
+                <ref role="37wK5l" to="lui2:~SRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1MbEMJ4e27s" role="3cqZAp" />
+        <node concept="3cpWs8" id="1MbEMJ4e27t" role="3cqZAp">
+          <node concept="3cpWsn" id="1MbEMJ4e27u" role="3cpWs9">
+            <property role="TrG5h" value="abstractModule" />
+            <node concept="3uibUv" id="1MbEMJ4e27v" role="1tU5fm">
+              <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+            </node>
+            <node concept="10QFUN" id="1MbEMJ4e27w" role="33vP2m">
+              <node concept="37vLTw" id="1MbEMJ4e27x" role="10QFUP">
+                <ref role="3cqZAo" node="5gIiJF05sx6" resolve="myModule" />
+              </node>
+              <node concept="3uibUv" id="1MbEMJ4e27y" role="10QFUM">
+                <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="1MbEMJ4e27z" role="3cqZAp">
+          <node concept="3cpWsn" id="1MbEMJ4e27$" role="3cpWs9">
+            <property role="3TUv4t" value="false" />
+            <property role="TrG5h" value="md" />
+            <node concept="3uibUv" id="1MbEMJ4e27_" role="1tU5fm">
+              <ref role="3uigEE" to="w0gx:~ModuleDescriptor" resolve="ModuleDescriptor" />
+            </node>
+            <node concept="2OqwBi" id="1MbEMJ4e27A" role="33vP2m">
+              <node concept="37vLTw" id="1MbEMJ4e27B" role="2Oq$k0">
+                <ref role="3cqZAo" node="1MbEMJ4e27u" resolve="abstractModule" />
+              </node>
+              <node concept="liA8E" id="1MbEMJ4e27C" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleDescriptor():jetbrains.mps.project.structure.modules.ModuleDescriptor" resolve="getModuleDescriptor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="1MbEMJ4e27D" role="3cqZAp">
+          <node concept="3clFbC" id="1MbEMJ4e27E" role="3clFbw">
+            <node concept="37vLTw" id="1MbEMJ4e27F" role="3uHU7B">
+              <ref role="3cqZAo" node="1MbEMJ4e27$" resolve="md" />
+            </node>
+            <node concept="10Nm6u" id="1MbEMJ4e27G" role="3uHU7w" />
+          </node>
+          <node concept="3clFbS" id="1MbEMJ4e27H" role="3clFbx">
+            <node concept="YS8fn" id="1MbEMJ4e27I" role="3cqZAp">
+              <node concept="2ShNRf" id="1MbEMJ4e27J" role="YScLw">
+                <node concept="1pGfFk" id="1MbEMJ4e27K" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalStateException.&lt;init&gt;(java.lang.String)" resolve="IllegalStateException" />
+                  <node concept="3cpWs3" id="1MbEMJ4e27L" role="37wK5m">
+                    <node concept="Xl_RD" id="1MbEMJ4e27M" role="3uHU7w">
+                      <property role="Xl_RC" value=" has not module descriptor." />
+                    </node>
+                    <node concept="3cpWs3" id="1MbEMJ4e27N" role="3uHU7B">
+                      <node concept="Xl_RD" id="1MbEMJ4e27O" role="3uHU7B">
+                        <property role="Xl_RC" value="Module " />
+                      </node>
+                      <node concept="37vLTw" id="1MbEMJ4e27P" role="3uHU7w">
+                        <ref role="3cqZAo" node="5gIiJF05sx6" resolve="myModule" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1MbEMJ4e27Q" role="3cqZAp" />
+        <node concept="3clFbJ" id="1MbEMJ4evwL" role="3cqZAp">
+          <node concept="3clFbS" id="1MbEMJ4evwN" role="3clFbx">
+            <node concept="YS8fn" id="1MbEMJ4exrf" role="3cqZAp">
+              <node concept="2ShNRf" id="1MbEMJ4exrN" role="YScLw">
+                <node concept="1pGfFk" id="1MbEMJ4eyVu" role="2ShVmc">
+                  <ref role="37wK5l" to="wyt6:~IllegalArgumentException.&lt;init&gt;(java.lang.String)" resolve="IllegalArgumentException" />
+                  <node concept="3cpWs3" id="1MbEMJ4eARW" role="37wK5m">
+                    <node concept="37vLTw" id="1MbEMJ4eBgS" role="3uHU7w">
+                      <ref role="3cqZAo" node="1MbEMJ4elCr" resolve="language" />
+                    </node>
+                    <node concept="3cpWs3" id="1MbEMJ4e$0S" role="3uHU7B">
+                      <node concept="3cpWs3" id="1MbEMJ4ezDT" role="3uHU7B">
+                        <node concept="Xl_RD" id="1MbEMJ4eyYy" role="3uHU7B">
+                          <property role="Xl_RC" value="Module " />
+                        </node>
+                        <node concept="37vLTw" id="1MbEMJ4ezHn" role="3uHU7w">
+                          <ref role="3cqZAo" node="5gIiJF05sx6" resolve="myModule" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="1MbEMJ4e$pe" role="3uHU7w">
+                        <property role="Xl_RC" value=" already contains version for language " />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1MbEMJ4erht" role="3clFbw">
+            <node concept="2OqwBi" id="1MbEMJ4eqAN" role="2Oq$k0">
+              <node concept="37vLTw" id="1MbEMJ4eq7Q" role="2Oq$k0">
+                <ref role="3cqZAo" node="1MbEMJ4e27$" resolve="md" />
+              </node>
+              <node concept="liA8E" id="1MbEMJ4er1C" role="2OqNvi">
+                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getLanguageVersions():java.util.Map" resolve="getLanguageVersions" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1MbEMJ4ex5j" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Map.containsKey(java.lang.Object):boolean" resolve="containsKey" />
+              <node concept="37vLTw" id="1MbEMJ4exhh" role="37wK5m">
+                <ref role="3cqZAo" node="1MbEMJ4elCr" resolve="language" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="1MbEMJ4eBLh" role="3cqZAp" />
+        <node concept="3clFbF" id="1MbEMJ4eCnm" role="3cqZAp">
+          <node concept="2OqwBi" id="1MbEMJ4eDxl" role="3clFbG">
+            <node concept="2OqwBi" id="1MbEMJ4eCNo" role="2Oq$k0">
+              <node concept="37vLTw" id="1MbEMJ4eCnk" role="2Oq$k0">
+                <ref role="3cqZAo" node="1MbEMJ4e27$" resolve="md" />
+              </node>
+              <node concept="liA8E" id="1MbEMJ4eDhw" role="2OqNvi">
+                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getLanguageVersions():java.util.Map" resolve="getLanguageVersions" />
+              </node>
+            </node>
+            <node concept="liA8E" id="1MbEMJ4eEam" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <node concept="37vLTw" id="1MbEMJ4eEmh" role="37wK5m">
+                <ref role="3cqZAo" node="1MbEMJ4elCr" resolve="language" />
+              </node>
+              <node concept="37vLTw" id="1MbEMJ4eEPg" role="37wK5m">
+                <ref role="3cqZAo" node="1MbEMJ4en_R" resolve="version" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1MbEMJ4elCr" role="3clF46">
+        <property role="TrG5h" value="language" />
+        <node concept="3uibUv" id="1MbEMJ4elCq" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SLanguage" resolve="SLanguage" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="1MbEMJ4en_R" role="3clF46">
+        <property role="TrG5h" value="version" />
+        <node concept="3uibUv" id="1MbEMJ4epyl" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
+        </node>
+      </node>
+    </node>
     <node concept="2tJIrI" id="18VG85aFkt7" role="jymVt" />
     <node concept="3clFb_" id="18VG85aFfsT" role="jymVt">
       <property role="TrG5h" value="filterValidLanguageVersions" />

@@ -105,6 +105,22 @@ public class VersionFixer {
     }
   }
 
+  public void addNewLanguage(SLanguage language, Integer version) {
+    myRepo.getModelAccess().checkWriteAccess();
+
+    AbstractModule abstractModule = (AbstractModule) myModule;
+    ModuleDescriptor md = abstractModule.getModuleDescriptor();
+    if (md == null) {
+      throw new IllegalStateException("Module " + myModule + " has not module descriptor.");
+    }
+
+    if (md.getLanguageVersions().containsKey(language)) {
+      throw new IllegalArgumentException("Module " + myModule + " already contains version for language " + language);
+    }
+
+    md.getLanguageVersions().put(language, version);
+  }
+
   private Map<SLanguage, Integer> filterValidLanguageVersions(ModuleDescriptor md) {
     final Map<SLanguage, Integer> versions = new HashMap<SLanguage, Integer>(md.getLanguageVersions());
     List<SLanguage> missed = SetSequence.fromSet(MapSequence.fromMap(versions).keySet()).where(new IWhereFilter<SLanguage>() {
