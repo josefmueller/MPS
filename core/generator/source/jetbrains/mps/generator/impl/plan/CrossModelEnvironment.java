@@ -22,9 +22,7 @@ import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.CloneUtil;
-import jetbrains.mps.generator.impl.MappingLabelExtractor;
 import jetbrains.mps.generator.impl.ModelStreamManager;
-import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -56,6 +54,8 @@ import java.util.HashSet;
 public class CrossModelEnvironment {
   private static final String GENERATION_PLAN = "generation-plan";
   private static final String CHECKPOINT = "checkpoint";
+  private static final String PREV_GENERATION_PLAN = "prev-generation-plan";
+  private static final String PREV_CHECKPOINT = "prev-checkpoint";
 
   // these are checkpoints for actual plan, for different models that are cross-referenced from the one being transformed
   private final HashMap<SModelReference, ModelCheckpoints> myTransientCheckpoints = new HashMap<>();
@@ -92,10 +92,16 @@ public class CrossModelEnvironment {
     return getPersistedCheckpoints(model).getCheckpointsFor((m, cp) -> {
       // XXX for now, expose whole ModelCheckpoints at once, although just specific CheckpointState
       //     (accessed later though MC.find) would suffice
-      SModel exposed = createBlankCheckpointModel(model.getReference(), cp);
+      SModel exposed = createBlankCheckpointModel(model.getReference(), null /*FIXME need distinct method to create CP model from existing*/, cp);
       new CloneUtil(m, exposed).cloneModelWithImports();
+      assert exposed instanceof ModelWithAttributes;
+      assert m instanceof ModelWithAttributes;
+      ((ModelWithAttributes) m).forEach(((ModelWithAttributes) exposed)::setAttribute);
       myModule.addModelToKeep(exposed.getReference(), true);
-      return exposed;
+      CheckpointIdentity persistedCheckpoint = readIdentityAttributes((ModelWithAttributes) m, GENERATION_PLAN, CHECKPOINT);
+      CheckpointIdentity prevCheckpoint = readIdentityAttributes((ModelWithAttributes) m, PREV_GENERATION_PLAN, PREV_CHECKPOINT);
+      assert cp.equals(persistedCheckpoint) : String.format("CP consistency issue: expected to read CP %s, but model comes with CP value %s", cp, persistedCheckpoint);
+      return new CheckpointState(exposed, prevCheckpoint, cp);
     });
   }
 
@@ -132,17 +138,30 @@ public class CrossModelEnvironment {
         if (!nameNoStereotype.equals(m.getName().getLongName()) || false == m instanceof ModelWithAttributes) {
           continue;
         }
-        String gpAttrValue = ((ModelWithAttributes) m).getAttribute(GENERATION_PLAN);
-        String cpAttrValue = ((ModelWithAttributes) m).getAttribute(CHECKPOINT);
-        if (gpAttrValue == null || cpAttrValue == null) {
+        // we keep CP (both origin and actual) as model properties to facilitate scenario when CP models are not persisted.
+        // Otherwise, we could have use values written into CheckpointVault's registry file. As long as there's no registry for workspace models,
+        // we have to use this dubious mechanism (not necessarily bad, just a bit confusing as we duplicate actual CP value as model attribute and
+        // in the CheckpointVault's registry).
+        CheckpointIdentity modelCheckpoint = readIdentityAttributes((ModelWithAttributes) m, GENERATION_PLAN, CHECKPOINT);
+        if (modelCheckpoint == null) {
           continue;
         }
-        PlanIdentity modelPlan = new PlanIdentity(gpAttrValue);
-        CheckpointIdentity modelCheckpoint = new CheckpointIdentity(modelPlan, cpAttrValue /* here, persistent identity*/);
-        cpModels.add(new CheckpointState(m, modelCheckpoint));
+        CheckpointIdentity prevCheckpoint = readIdentityAttributes((ModelWithAttributes) m, PREV_GENERATION_PLAN, PREV_CHECKPOINT);
+        cpModels.add(new CheckpointState(m, prevCheckpoint, modelCheckpoint));
       }
       return cpModels.isEmpty() ? null : new ModelCheckpoints(cpModels);
     });
+  }
+
+  @Nullable
+  private static CheckpointIdentity readIdentityAttributes(ModelWithAttributes m, String planKey, String pointKey) {
+    String gpAttrValue = m.getAttribute(planKey);
+    String cpAttrValue = m.getAttribute(pointKey);
+    if (gpAttrValue == null || cpAttrValue == null) {
+      return null;
+    }
+    PlanIdentity modelPlan = new PlanIdentity(gpAttrValue);
+    return new CheckpointIdentity(modelPlan, cpAttrValue /* here, persistent identity*/);
   }
 
   /**
@@ -172,7 +191,9 @@ public class CrossModelEnvironment {
   }
 
   // originalModel is just to construct name/reference of the checkpoint model
-  public SModel createBlankCheckpointModel(SModelReference originalModel, CheckpointIdentity step) {
+  // FIXME this method is used both to 'expose' existing CP and to create a new. For the former case, don't need checkpoint information as it's already
+  //       persisted inside a model, moreover, I can't get it in #getState() above anyway.
+  public SModel createBlankCheckpointModel(SModelReference originalModel, @Nullable CheckpointIdentity previousCheckpoint, CheckpointIdentity step) {
     final SModelName transientModelName = createCheckpointModelName(originalModel, step);
     // I'd like to have stable model id to minimize number of changes in CP models
     int mid = originalModel.getModelId().hashCode() ^ step.getName().hashCode();
@@ -198,6 +219,10 @@ public class CrossModelEnvironment {
     assert checkpointModel instanceof ModelWithAttributes;
     ((ModelWithAttributes) checkpointModel).setAttribute(GENERATION_PLAN, step.getPlan().getName());
     ((ModelWithAttributes) checkpointModel).setAttribute(CHECKPOINT, step.getName());
+    if (previousCheckpoint != null) {
+      ((ModelWithAttributes) checkpointModel).setAttribute(PREV_GENERATION_PLAN, previousCheckpoint.getPlan().getName());
+      ((ModelWithAttributes) checkpointModel).setAttribute(PREV_CHECKPOINT, previousCheckpoint.getName());
+    }
     return checkpointModel;
   }
 

@@ -17,10 +17,8 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
-import jetbrains.mps.generator.impl.MappingLabelExtractor;
 import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.generator.impl.SingleStreamSource;
-import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.plan.PlanIdentity;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -33,13 +31,13 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.stream.StreamSupport;
@@ -86,14 +84,15 @@ public class CheckpointVault {
   }
 
   @Nullable
-  /*package*/ ModelCheckpoints getCheckpointsFor(@NotNull BiFunction<SModel, CheckpointIdentity, SModel> publisher) {
+  /*package*/ ModelCheckpoints getCheckpointsFor(@NotNull BiFunction<SModel, CheckpointIdentity, CheckpointState> publisher) {
     if (myCheckpoints == null) {
       ArrayList<CheckpointState> states = new ArrayList<>(myKnownCheckpoints.size());
       for (Entry entry : myKnownCheckpoints) {
         try {
-          CheckpointState cpState = loadModel(entry, publisher);
+          // XXX now we don't keep information about origin CP in our registry but inside a model, although perhaps we should
+          CheckpointState cpState = publisher.apply(loadModel(entry), entry.myCheckpoint);
           states.add(cpState);
-        } catch (IOException ex) {
+        } catch (IOException | ModelLoadException ex) {
           // FIXME fail quietly for now, think over better error handling
           //       - fail fast with exception?
           //       - pre-check all required CPs are present at Make
@@ -177,11 +176,10 @@ public class CheckpointVault {
     return root;
   }
 
-  private CheckpointState loadModel(Entry entry, BiFunction<SModel, CheckpointIdentity, SModel> publisher) throws IOException {
+  private SModel loadModel(Entry entry) throws IOException, ModelLoadException {
     final ModelFactory modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
     final SingleStreamSource source = new SingleStreamSource(myStreams.getOutputLocation(), entry.getFilename());
-    SModel cpModel = modelFactory.load(source, Collections.emptyMap());
-    return new CheckpointState(publisher.apply(cpModel, entry.myCheckpoint), entry.myCheckpoint);
+    return modelFactory.load(source);
   }
 
   // FIXME use of StreamHandler;

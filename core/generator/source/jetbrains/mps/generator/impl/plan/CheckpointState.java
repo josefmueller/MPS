@@ -48,31 +48,24 @@ import java.util.Map;
  */
 @Immutable
 public class CheckpointState {
-  @NotNull
   private final MappingsMemento myState;
   private final SModel myCheckpointModel;
+  private final CheckpointIdentity myPrevCheckpoint;
   private final CheckpointIdentity myCheckpoint;
   private FastNodeFinder myCheckpointModelLookup;
 
-  public CheckpointState(@NotNull MappingsMemento memento, @NotNull SModel checkpointModel, @NotNull CheckpointIdentity cp) {
-    myState = memento;
-    myCheckpointModel = checkpointModel;
-    myCheckpoint = cp;
-  }
-
-  // FIXME need info about CheckpointIdentity that served as an origin for the nodes in this CP
-  public CheckpointState(@NotNull SModel checkpointModel, @NotNull CheckpointIdentity cp) {
+  public CheckpointState(@NotNull SModel checkpointModel, @Nullable CheckpointIdentity prevCheckpoint, @NotNull CheckpointIdentity cp) {
     // FIXME read and fill memento with MappingLabels
     //       now, just restore it from debug root we've got there. Later (once/if true persistence is done), shall consider
     //       option to keep mappings inside a model (not to bother with persistence) or to follow MappingsMemento approach with
     //       custom serialization code (and to solve the issue of associated model streams serialized/managed (i.e. deleted) along with a cp model)
     myState = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(checkpointModel));
     myCheckpointModel = checkpointModel;
+    myPrevCheckpoint = prevCheckpoint;
     myCheckpoint = cp;
   }
 
-
-    public SModel getCheckpointModel() {
+  public SModel getCheckpointModel() {
     return myCheckpointModel;
   }
 
@@ -89,7 +82,7 @@ public class CheckpointState {
    */
   @Nullable
   public CheckpointIdentity getOriginCheckpoint() {
-    return null;
+    return myPrevCheckpoint;
   }
 
   @NotNull
