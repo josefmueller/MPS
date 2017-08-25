@@ -138,8 +138,10 @@ class CheckpointStateBuilder {
     // imports of language's accessory models either.
     new ModelDependencyUpdate(myCheckpointModel).updateImportedModels(null);
 
-    myTransitionTrace.newTransition(step, myCheckpointModel.getReference(), myTransientModel, consistentNodeIdentity.getChangedNodes());
-    return new CheckpointState(myCheckpointModel, step);
+    // XXX in fact, both prevCheckpoint and step CPs are already coded inside myCheckpointModel, see CME.createBlankCheckpointModel
+    CheckpointIdentity prevCheckpoint = myTransitionTrace.getMostRecentCheckpoint();
+    myTransitionTrace.newTransition(step, myTransientModel, consistentNodeIdentity.getChangedNodes());
+    return new CheckpointState(myCheckpointModel, prevCheckpoint, step);
   }
 
   private void cloneTransientToCheckpoint() {
