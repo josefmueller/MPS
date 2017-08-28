@@ -111,7 +111,7 @@
     </channel>
 
     <channel id="MPS34EAP" name="MPS 3.4" status="eap"
-             url="http://jetbrains.com/mps/download"
+             url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+3.4+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="4">
       <build number="162.2317" version="3.4.4">
@@ -120,7 +120,7 @@
     </channel>
 
     <channel id="MPS34" name="MPS 3.4" status="release"
-             url="http://jetbrains.com/mps/download"
+             url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+3.4+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="4">
       <build number="162.2317" version="3.4.4">
@@ -129,22 +129,22 @@
     </channel>
 
     <channel id="MPS171EAP" name="MPS 2017.1" status="eap"
-             url="http://jetbrains.com/mps/download"
+             url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.1+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2017" minorVersoin="1">
-      <build number="171.1342" version="2017.1.2">
-        <message>JetBrains MPS 2017.1.2 is available.</message>
-        <button name="Download" url="http://jetbrains.com/mps/download" download="true"/>
+      <build number="171.1448" version="2017.1.3">
+        <message>JetBrains MPS 2017.1.3 is available.</message>
+        <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.1+Download+Page" download="true"/>
       </build>
     </channel>
 
     <channel id="MPS171" name="MPS 2017.1" status="release"
-             url="http://jetbrains.com/mps/download"
+             url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.1+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="2017" minorVersoin="1">
-      <build number="171.1342" version="2017.1.2">
-        <message>JetBrains MPS 2017.1.2 is available.</message>
-        <button name="Download" url="http://jetbrains.com/mps/download" download="true"/>
+      <build number="171.1448" version="2017.1.3">
+        <message>JetBrains MPS 2017.1.3 is available.</message>
+        <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.1+Download+Page" download="true"/>
       </build>
     </channel>
 
