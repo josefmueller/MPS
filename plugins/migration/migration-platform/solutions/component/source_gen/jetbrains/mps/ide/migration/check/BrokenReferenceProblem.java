@@ -4,11 +4,12 @@ package jetbrains.mps.ide.migration.check;
 
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class BrokenReferenceProblem extends Problem<SNode> {
   private final String myMessage;
-  public BrokenReferenceProblem(SReference reference, String message) {
+  public BrokenReferenceProblem(@NotNull SReference reference, String message) {
     super(reference.getSourceNode());
     myMessage = message;
   }

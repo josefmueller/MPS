@@ -225,24 +225,24 @@
   </root>
   <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/4698343510313244766">
     <file name="BrokenReferenceProblem.java">
-      <node id="4698343510313244771" at="10,0,11,0" concept="2" trace="myMessage" />
-      <node id="4698343510313244778" at="11,71,12,37" concept="9" />
-      <node id="4698343510313244784" at="12,37,13,24" concept="1" />
-      <node id="4698343510313244799" at="16,30,17,21" concept="7" />
-      <node id="4698343510313244806" at="20,31,21,30" concept="7" />
-      <node id="4698343510313244795" at="16,0,19,0" concept="5" trace="getMessage#()Ljava/lang/String;" />
-      <node id="4698343510313244802" at="20,0,23,0" concept="5" trace="getCategory#()Ljava/lang/String;" />
-      <node id="4698343510313244774" at="11,0,15,0" concept="0" trace="BrokenReferenceProblem#(Lorg/jetbrains/mps/openapi/model/SReference;Ljava/lang/String;)V" />
-      <scope id="4698343510313244798" at="16,30,17,21" />
-      <scope id="4698343510313244805" at="20,31,21,30" />
-      <scope id="4698343510313244777" at="11,71,13,24" />
-      <scope id="4698343510313244795" at="16,0,19,0" />
-      <scope id="4698343510313244802" at="20,0,23,0" />
-      <scope id="4698343510313244774" at="11,0,15,0">
+      <node id="4698343510313244771" at="11,0,12,0" concept="2" trace="myMessage" />
+      <node id="4698343510313244778" at="12,80,13,37" concept="9" />
+      <node id="4698343510313244784" at="13,37,14,24" concept="1" />
+      <node id="4698343510313244799" at="17,30,18,21" concept="7" />
+      <node id="4698343510313244806" at="21,31,22,30" concept="7" />
+      <node id="4698343510313244795" at="17,0,20,0" concept="5" trace="getMessage#()Ljava/lang/String;" />
+      <node id="4698343510313244802" at="21,0,24,0" concept="5" trace="getCategory#()Ljava/lang/String;" />
+      <node id="4698343510313244774" at="12,0,16,0" concept="0" trace="BrokenReferenceProblem#(Lorg/jetbrains/mps/openapi/model/SReference;Ljava/lang/String;)V" />
+      <scope id="4698343510313244798" at="17,30,18,21" />
+      <scope id="4698343510313244805" at="21,31,22,30" />
+      <scope id="4698343510313244777" at="12,80,14,24" />
+      <scope id="4698343510313244795" at="17,0,20,0" />
+      <scope id="4698343510313244802" at="21,0,24,0" />
+      <scope id="4698343510313244774" at="12,0,16,0">
         <var name="message" id="4698343510313244792" />
         <var name="reference" id="4698343510313244788" />
       </scope>
-      <unit id="4698343510313244766" at="9,0,24,0" name="jetbrains.mps.ide.migration.check.BrokenReferenceProblem" />
+      <unit id="4698343510313244766" at="10,0,25,0" name="jetbrains.mps.ide.migration.check.BrokenReferenceProblem" />
     </file>
   </root>
   <root nodeRef="r:5c426f30-a9c9-463b-90a5-2fae21a10696(jetbrains.mps.ide.migration.check)/699020670023251098">
