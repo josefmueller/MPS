@@ -192,7 +192,10 @@ public class VersionFixer {
     for (SModel m : module.getModels()) {
       SModelInternal modelInternal = (SModelInternal) m;
       for (SLanguage lang : CollectionSequence.fromCollection(modelInternal.importedLanguageIds())) {
-        int currentVersion = langVersions.get(lang);
+        Integer currentVersion = langVersions.get(lang);
+        if (currentVersion == null) {
+          continue;
+        }
         int modelVer = modelInternal.getLanguageImportVersion(lang);
         if (modelVer != -1 && modelVer != currentVersion) {
           if (LOG.isEnabledFor(Level.ERROR)) {

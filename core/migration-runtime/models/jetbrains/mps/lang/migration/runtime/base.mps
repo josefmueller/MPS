@@ -7910,7 +7910,9 @@
                 <node concept="3cpWs8" id="2V3ml1v9KQv" role="3cqZAp">
                   <node concept="3cpWsn" id="2V3ml1v9KQw" role="3cpWs9">
                     <property role="TrG5h" value="currentVersion" />
-                    <node concept="10Oyi0" id="2V3ml1v9KPW" role="1tU5fm" />
+                    <node concept="3uibUv" id="3amAVYV68Tg" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
+                    </node>
                     <node concept="2OqwBi" id="2V3ml1v9TUD" role="33vP2m">
                       <node concept="37vLTw" id="2V3ml1v9Tan" role="2Oq$k0">
                         <ref role="3cqZAo" node="2V3ml1v9vO8" resolve="langVersions" />
@@ -7921,6 +7923,17 @@
                           <ref role="2Gs0qQ" node="2V3ml1v9AmE" resolve="lang" />
                         </node>
                       </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbJ" id="3amAVYV69FS" role="3cqZAp">
+                  <node concept="3clFbS" id="3amAVYV69FU" role="3clFbx">
+                    <node concept="3N13vt" id="3amAVYV6b0W" role="3cqZAp" />
+                  </node>
+                  <node concept="3clFbC" id="3amAVYV6aZG" role="3clFbw">
+                    <node concept="10Nm6u" id="3amAVYV6b01" role="3uHU7w" />
+                    <node concept="37vLTw" id="3amAVYV69Ys" role="3uHU7B">
+                      <ref role="3cqZAo" node="2V3ml1v9KQw" resolve="currentVersion" />
                     </node>
                   </node>
                 </node>
