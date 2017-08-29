@@ -63,44 +63,47 @@ public class MigrationStep extends BaseStep {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
         try {
+          // this is to allow Idea UI to finish the "transition" to a new wizard step before running task 
           Thread.sleep(1000);
         } catch (InterruptedException e) {
           // do nothing 
         }
         ProgressManager.getInstance().runProcess(new Runnable() {
           public void run() {
-            while (!(myTask.isComplete())) {
+            while (true) {
+              mySession.setError(null);
+
               try {
-                mySession.setError(null);
                 myTask.run();
               } catch (Throwable t) {
                 if (LOG.isEnabledFor(Level.ERROR)) {
                   LOG.error("exception occurred in migration wizard", t);
                 }
-                myTask.forceComplete();
-                myProgress.setFraction(1.0);
-                fireStateChanged();
+                forceComplete();
                 break;
               }
-              if (mySession.getError() != null) {
-                if (!(mySession.getError().canIgnore())) {
-                  ApplicationManager.getApplication().invokeLater(new Runnable() {
-                    public void run() {
-                      myErrorPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0), IdeBorderFactory.createTitledBorder("Error", true)));
-                      myErrorLabel.setText("<html>" + mySession.getError().getMessage() + "</html>");
-                      myErrorPanel.add(MigrationStep.this.myErrorLabel, BorderLayout.NORTH);
-                      myTask.forceComplete();
-                      myProgress.setFraction(1.0);
-                      fireStateChanged();
-                    }
-                  }, ModalityState.stateForComponent(myErrorPanel));
-                  break;
-                } else if (!(showError())) {
-                  myTask.forceComplete();
-                  myProgress.setFraction(1.0);
-                  fireStateChanged();
-                  break;
-                }
+
+              // here we either finished or have an error 
+              if (myTask.isComplete()) {
+                break;
+              }
+
+              assert mySession.getError() != null : "not completed migration process with no errors";
+              if (!(mySession.getError().canIgnore())) {
+                ApplicationManager.getApplication().invokeLater(new Runnable() {
+                  public void run() {
+                    myErrorPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0), IdeBorderFactory.createTitledBorder("Error", true)));
+                    myErrorLabel.setText("<html>" + mySession.getError().getMessage() + "</html>");
+                    myErrorPanel.add(MigrationStep.this.myErrorLabel, BorderLayout.NORTH);
+                  }
+                }, ModalityState.stateForComponent(myErrorPanel));
+                forceComplete();
+                break;
+              }
+
+              if (!(showError())) {
+                forceComplete();
+                break;
               }
             }
             fireStateChanged();
@@ -108,6 +111,12 @@ public class MigrationStep extends BaseStep {
         }, myProgress);
       }
     });
+  }
+
+  private void forceComplete() {
+    myTask.forceComplete();
+    myProgress.setFraction(1.0);
+    fireStateChanged();
   }
 
   public boolean showError() {
