@@ -82,6 +82,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
+    <classNode extendsClassName="java.lang.Exception" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationExceptionError" file="MigrationExceptionError.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
@@ -188,6 +189,7 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.Processor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
@@ -237,6 +239,7 @@
   <dependency className="jetbrains.mps.ide.migration.wizard.NotMigratedLibsError" file="NotMigratedLibsError.java">
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.ide.migration.check.DependencyOnNotMigratedLibProblem" />

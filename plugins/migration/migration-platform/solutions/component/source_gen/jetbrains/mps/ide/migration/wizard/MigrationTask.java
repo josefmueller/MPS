@@ -18,6 +18,7 @@ import jetbrains.mps.project.Project;
 import com.intellij.history.LocalHistory;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.Color;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -61,27 +62,31 @@ public class MigrationTask {
   public void run() {
     PersistenceRegistry.getInstance().disableFastFindUsages();
     try {
-      myIsComplete = doRun();
+      doRun();
+      myIsComplete = true;
+      myMonitor.step("Done!");
+      myMonitor.advance(0);
+      myMonitor.done();
+    } catch (MigrationError me) {
+      error(me);
     } finally {
       PersistenceRegistry.getInstance().enableFastFindUsages();
     }
   }
 
-  protected boolean doRun() {
+  protected void doRun() throws MigrationError {
     if (mySession.getCurrentStage().equals(0)) {
       mySession.setCurrentStage(1);
       List<ScriptApplied> missingMigrations = findMissingMigrations(myMonitor.subTask(5));
       if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
-        result(myMonitor, new MigrationsMissingError(missingMigrations), "Some migrations are missing.");
-        return false;
+        throw new MigrationsMissingError(missingMigrations);
       }
     }
 
     if (mySession.getCurrentStage().equals(1)) {
       mySession.setCurrentStage(2);
       if (!((runCleanupMigrations(myMonitor.subTask(10))))) {
-        result(myMonitor, new MigrationExceptionError(), "Error while running cleanup migration.");
-        return false;
+        throw new MigrationExceptionError();
       }
     }
 
@@ -89,8 +94,7 @@ public class MigrationTask {
       mySession.setCurrentStage(3);
       Map<SModule, SModule> errsToShow = checkMigratedLibs(myMonitor.subTask(5));
       if (MapSequence.fromMap(errsToShow).isNotEmpty()) {
-        result(myMonitor, new NotMigratedLibsError(errsToShow), "Some dependent modules are not migrated.");
-        return false;
+        throw new NotMigratedLibsError(errsToShow);
       }
     }
 
@@ -99,42 +103,34 @@ public class MigrationTask {
       // null - no error, true - must stop, false - can ignore 
       boolean errors = checkModels(myMonitor.subTask(20));
       if (errors) {
-        result(myMonitor, new PreCheckError(mySession.getProject(), errors), "Errors were found in models");
-        return false;
+        throw new PreCheckError(mySession.getProject(), errors);
       }
     }
 
     // from here, we don't ignore errors 
     addGlobalLabel(mySession.getProject(), STARTED);
     if (!((runProjectMigrations(myMonitor.subTask(5))))) {
-      result(myMonitor, new MigrationExceptionError(), "Exception while running migration");
-      return true;
+      throw new MigrationExceptionError();
     }
     if (!((runLanguageMigrations(myMonitor.subTask(40))))) {
-      result(myMonitor, new MigrationExceptionError(), "Exception while running migration");
-      return true;
+      throw new MigrationExceptionError();
     }
     addGlobalLabel(mySession.getProject(), FINISHED);
 
     // todo move from here to migration annotations 
     if (findNotMigrated(myMonitor.subTask(15))) {
-      result(myMonitor, new PostCheckError(mySession.getProject(), myWereRun, false, mySession.getChecker()), "Problems are detected after executing migrations.");
-      return true;
+      throw new PostCheckError(mySession.getProject(), myWereRun, false, mySession.getChecker());
     }
-
-    result(myMonitor, null, "Done!");
-    myMonitor.done();
-
-    return true;
   }
 
   protected static void addGlobalLabel(Project p, String label) {
     LocalHistory.getInstance().putSystemLabel(ProjectHelper.toIdeaProject(p), label, Color.ORANGE.getRGB());
   }
 
-  protected void result(ProgressMonitorAdapter m, MigrationError error, String msg) {
-    m.step(msg);
-    m.advance(0);
+  protected void error(@NotNull MigrationError error) {
+    myMonitor.step(error.getShortMessage());
+    myMonitor.advance(0);
+    myIsComplete = !(error.canIgnore());
     mySession.setError(error);
   }
 

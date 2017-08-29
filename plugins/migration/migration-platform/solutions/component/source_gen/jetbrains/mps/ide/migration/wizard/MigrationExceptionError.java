@@ -12,6 +12,10 @@ public class MigrationExceptionError extends MigrationError {
   public MigrationExceptionError(Throwable t) {
     // todo 
   }
+  @Override
+  public String getShortMessage() {
+    return "Exception while running migration";
+  }
   public String getMessage() {
     return "Exception occurred while running migration. See log file for details.";
   }

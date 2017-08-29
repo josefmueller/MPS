@@ -16,6 +16,10 @@ public class NotMigratedLibsError extends MigrationError {
   public NotMigratedLibsError(Map<SModule, SModule> errors) {
     this.errors = errors;
   }
+  @Override
+  public String getShortMessage() {
+    return "Some dependent modules are not migrated.";
+  }
   public String getMessage() {
     return "The project depends on external modules that were not fully migrated.<br><br>" + "If the error is ignored, further migrations may be applied incorrectly.<br>" + "It is recommended to migrate dependent modules first.\n\n";
   }

@@ -5,14 +5,12 @@ package jetbrains.mps.ide.migration.wizard;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import com.intellij.openapi.progress.ProgressIndicator;
 
-public abstract class MigrationError {
+public abstract class MigrationError extends Exception {
   public MigrationError() {
   }
 
-  /**
-   * 
-   * @return text to display on next step
-   */
+  public abstract String getShortMessage();
+
   public abstract String getMessage();
 
   /**

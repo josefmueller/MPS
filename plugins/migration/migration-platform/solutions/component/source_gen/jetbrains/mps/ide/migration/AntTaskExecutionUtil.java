@@ -22,11 +22,8 @@ public class AntTaskExecutionUtil {
     ProgressMonitorAdapter progress = new ProgressMonitorAdapter(new EmptyProgressIndicator());
     MigrationTask task = new MigrationTask(session, progress) {
       @Override
-      protected void result(ProgressMonitorAdapter m, MigrationError error, String msg) {
-        if (error == null) {
-          return;
-        }
-        throw new RuntimeException(msg);
+      protected void error(MigrationError error) {
+        throw new RuntimeException(error.getShortMessage());
       }
     };
 

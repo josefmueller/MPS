@@ -24,6 +24,10 @@ public class MigrationsMissingError extends MigrationError {
   public MigrationsMissingError(List<ScriptApplied> errors) {
     this.errors = errors;
   }
+  @Override
+  public String getShortMessage() {
+    return "Some migrations are missing.";
+  }
   public String getMessage() {
     return "Some migration scripts are missing.<br><br>" + "Missing scripts will be shown in ModelChecker after the migration wizard is closed.<br><br>" + "Migration can't continue.";
   }

@@ -25,6 +25,10 @@ public class PostCheckError extends MigrationError {
     myMigrationsToCheck = migrationsToCheck;
     myChecker = checker;
   }
+  @Override
+  public String getShortMessage() {
+    return "Problems are detected after executing migrations.";
+  }
   public String getMessage() {
     String res = "Migration Assistant was unable to migrate some nodes in this project.<br><br>";
     if (myHaveBadCode) {
