@@ -10,20 +10,20 @@
       <node id="1578746599575947280" at="26,72,27,34" concept="0" />
       <node id="1578746599575947144" at="27,34,28,71" concept="0" />
       <node id="444273530576452608" at="28,71,29,82" concept="0" />
-      <node id="1578746599575947042" at="32,69,33,53" concept="0" />
-      <node id="1578746599575947042" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="1578746599575947042" at="33,69,34,53" concept="0" />
+      <node id="1578746599575947042" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="1578746599575947042" at="16,0,21,0" concept="1" trace="test_ChildWithDirectCycle_card1#()V" />
       <node id="1578746599575947042" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="1578746599575947042" at="32,69,33,53" />
+      <scope id="1578746599575947042" at="33,69,34,53" />
       <scope id="1578746599575947042" at="17,66,19,113" />
       <scope id="1578746599575947042" at="25,51,29,82" />
-      <scope id="1578746599575947042" at="31,0,35,0">
+      <scope id="1578746599575947042" at="32,0,36,0">
         <var name="appender" id="1578746599575947042" />
       </scope>
       <scope id="1578746599575947042" at="16,0,21,0" />
       <scope id="1578746599575947042" at="24,0,31,0" />
-      <unit id="1578746599575947042" at="22,0,36,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1_Test$TestBody" />
-      <unit id="1578746599575947042" at="14,0,37,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1_Test" />
+      <unit id="1578746599575947042" at="22,0,37,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1_Test$TestBody" />
+      <unit id="1578746599575947042" at="14,0,38,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1_Test" />
     </file>
   </root>
   <root nodeRef="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)/7454474523886895226">
@@ -50,20 +50,20 @@
       <node id="8705753908477435260" at="23,51,24,72" concept="0" />
       <node id="8705753908477435264" at="24,72,25,35" concept="0" />
       <node id="8705753908477435265" at="25,35,26,71" concept="0" />
-      <node id="8705753908477435260" at="29,69,30,53" concept="0" />
-      <node id="8705753908477435260" at="28,0,32,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="8705753908477435260" at="30,69,31,53" concept="0" />
+      <node id="8705753908477435260" at="29,0,33,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="8705753908477435260" at="14,0,19,0" concept="1" trace="test_ChildWithDirectCycle_card1n#()V" />
       <node id="8705753908477435260" at="22,0,28,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="8705753908477435260" at="29,69,30,53" />
+      <scope id="8705753908477435260" at="30,69,31,53" />
       <scope id="8705753908477435260" at="15,67,17,114" />
       <scope id="8705753908477435260" at="23,51,26,71" />
-      <scope id="8705753908477435260" at="28,0,32,0">
+      <scope id="8705753908477435260" at="29,0,33,0">
         <var name="appender" id="8705753908477435260" />
       </scope>
       <scope id="8705753908477435260" at="14,0,19,0" />
       <scope id="8705753908477435260" at="22,0,28,0" />
-      <unit id="8705753908477435260" at="20,0,33,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test$TestBody" />
-      <unit id="8705753908477435260" at="12,0,34,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test" />
+      <unit id="8705753908477435260" at="20,0,34,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test$TestBody" />
+      <unit id="8705753908477435260" at="12,0,35,0" name="jetbrains.mps.lang.editor.init.test.ChildWithDirectCycle_card1n_Test" />
     </file>
   </root>
   <root nodeRef="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)/8705753908477461327">
@@ -74,20 +74,20 @@
       <node id="8705753908477461331" at="26,72,27,36" concept="0" />
       <node id="8705753908477461332" at="27,36,28,71" concept="0" />
       <node id="444273530576452780" at="28,71,29,82" concept="0" />
-      <node id="8705753908477461327" at="32,69,33,53" concept="0" />
-      <node id="8705753908477461327" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="8705753908477461327" at="33,69,34,53" concept="0" />
+      <node id="8705753908477461327" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="8705753908477461327" at="16,0,21,0" concept="1" trace="test_ChildWithIndirectCycle_card1#()V" />
       <node id="8705753908477461327" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="8705753908477461327" at="32,69,33,53" />
+      <scope id="8705753908477461327" at="33,69,34,53" />
       <scope id="8705753908477461327" at="17,68,19,115" />
       <scope id="8705753908477461327" at="25,51,29,82" />
-      <scope id="8705753908477461327" at="31,0,35,0">
+      <scope id="8705753908477461327" at="32,0,36,0">
         <var name="appender" id="8705753908477461327" />
       </scope>
       <scope id="8705753908477461327" at="16,0,21,0" />
       <scope id="8705753908477461327" at="24,0,31,0" />
-      <unit id="8705753908477461327" at="22,0,36,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1_Test$TestBody" />
-      <unit id="8705753908477461327" at="14,0,37,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1_Test" />
+      <unit id="8705753908477461327" at="22,0,37,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1_Test$TestBody" />
+      <unit id="8705753908477461327" at="14,0,38,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1_Test" />
     </file>
   </root>
   <root nodeRef="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)/8705753908477487693">
@@ -97,20 +97,20 @@
       <node id="8705753908477487693" at="23,51,24,72" concept="0" />
       <node id="8705753908477487697" at="24,72,25,37" concept="0" />
       <node id="8705753908477487698" at="25,37,26,71" concept="0" />
-      <node id="8705753908477487693" at="29,69,30,53" concept="0" />
-      <node id="8705753908477487693" at="28,0,32,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="8705753908477487693" at="30,69,31,53" concept="0" />
+      <node id="8705753908477487693" at="29,0,33,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="8705753908477487693" at="14,0,19,0" concept="1" trace="test_ChildWithIndirectCycle_card1n#()V" />
       <node id="8705753908477487693" at="22,0,28,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="8705753908477487693" at="29,69,30,53" />
+      <scope id="8705753908477487693" at="30,69,31,53" />
       <scope id="8705753908477487693" at="15,69,17,116" />
       <scope id="8705753908477487693" at="23,51,26,71" />
-      <scope id="8705753908477487693" at="28,0,32,0">
+      <scope id="8705753908477487693" at="29,0,33,0">
         <var name="appender" id="8705753908477487693" />
       </scope>
       <scope id="8705753908477487693" at="14,0,19,0" />
       <scope id="8705753908477487693" at="22,0,28,0" />
-      <unit id="8705753908477487693" at="20,0,33,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1n_Test$TestBody" />
-      <unit id="8705753908477487693" at="12,0,34,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1n_Test" />
+      <unit id="8705753908477487693" at="20,0,34,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1n_Test$TestBody" />
+      <unit id="8705753908477487693" at="12,0,35,0" name="jetbrains.mps.lang.editor.init.test.ChildWithIndirectCycle_card1n_Test" />
     </file>
   </root>
 </debug-info>

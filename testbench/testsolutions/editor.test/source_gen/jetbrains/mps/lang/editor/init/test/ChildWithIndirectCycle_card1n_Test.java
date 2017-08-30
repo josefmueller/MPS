@@ -25,6 +25,7 @@ public class ChildWithIndirectCycle_card1n_Test extends BaseTransformationTest {
       typeString("card1n_indirect_");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
+
     @Override
     protected void populateExpectedEvents(CachingAppender appender) {
       appender.expectEvent(Priority.ERROR_INT, null);

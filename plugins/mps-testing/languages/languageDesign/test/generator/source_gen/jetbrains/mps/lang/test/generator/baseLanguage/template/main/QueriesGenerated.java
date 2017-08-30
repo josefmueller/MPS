@@ -284,7 +284,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean ifMacro_Condition_8933192351751931380(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11d72af5892L, 0x7bf9131d2468ca92L, "parameter")) != null);
   }
-  public static boolean ifMacro_Condition_4552210825421163960(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_4296455270565126154(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e314b20e0L, 0x486f8079df2fd868L, "logEvents"))).isNotEmpty();
   }
   public static boolean ifMacro_Condition_5219531754070576527(final IfMacroContext _context) {
@@ -798,7 +798,7 @@ public class QueriesGenerated extends QueryProviderBase {
     imcMethods.put("8762304748376777948", new QueriesGenerated.IfMC(i++));
     imcMethods.put("7965618678812561189", new QueriesGenerated.IfMC(i++));
     imcMethods.put("8933192351751931378", new QueriesGenerated.IfMC(i++));
-    imcMethods.put("4552210825421163957", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("4296455270565126151", new QueriesGenerated.IfMC(i++));
     imcMethods.put("5219531754070576524", new QueriesGenerated.IfMC(i++));
   }
   @NotNull
@@ -833,7 +833,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 6:
           return QueriesGenerated.ifMacro_Condition_8933192351751931380(ctx);
         case 7:
-          return QueriesGenerated.ifMacro_Condition_4552210825421163960(ctx);
+          return QueriesGenerated.ifMacro_Condition_4296455270565126154(ctx);
         case 8:
           return QueriesGenerated.ifMacro_Condition_5219531754070576527(ctx);
         default:
