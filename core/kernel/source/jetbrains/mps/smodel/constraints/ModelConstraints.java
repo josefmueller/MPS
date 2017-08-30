@@ -40,6 +40,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -112,17 +113,24 @@ public class ModelConstraints {
   }
 
   public static boolean canBeRoot(@NotNull SAbstractConcept concept, @NotNull SModel model) {
+    return canBeRoot(concept, model, null);
+  }
+
+  public static boolean canBeRoot(@NotNull SAbstractConcept concept, @NotNull SModel model, CheckingNodeContext checkingNodeContext) {
     if (concept.isAbstract()) {
       return false;
     }
 
-    assert concept instanceof SConcept : "non-abstract SAbstractConcept should be an instanceof SConcept";
+    assert concept instanceof SConcept : "non-abstract SAbstractConcept should be an instance of SConcept";
     if (!((SConcept) concept).isRootable()) {
+      if (concept.getSourceNode() != null) {
+        checkingNodeContext.setBreakingNode(concept.getSourceNode());
+      }
       return false;
     }
 
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(concept);
-    return descriptor.canBeRoot(new ConstraintContext_CanBeRoot(model), null);
+    return descriptor.canBeRoot(new ConstraintContext_CanBeRoot(model), checkingNodeContext);
   }
 
   // private canBe* section

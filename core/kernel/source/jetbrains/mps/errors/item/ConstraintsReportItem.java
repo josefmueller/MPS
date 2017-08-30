@@ -56,4 +56,28 @@ public abstract class ConstraintsReportItem extends NodeReportItemBase implement
       return myProperty;
     }
   }
+
+  public static class CanBeChildFailedReportItem extends ConstraintsReportItem {
+    public CanBeChildFailedReportItem(@NotNull SNode node, SNode parent, @NotNull TypesystemRuleId ruleNode) {
+      super(node, "Node " + node + " cannot be child of node " + parent, ruleNode);
+    }
+  }
+
+  public static class CanBeRootFailedReportItem extends ConstraintsReportItem {
+    public CanBeRootFailedReportItem(@NotNull SNode node, @NotNull TypesystemRuleId ruleNode) {
+      super(node, "Not rootable concept added as root", ruleNode);
+    }
+  }
+
+  public static class CanBeParentFailedReportItem extends ConstraintsReportItem {
+    public CanBeParentFailedReportItem(@NotNull SNode node, @NotNull SNode child, @NotNull TypesystemRuleId ruleNode) {
+      super(node, "Node " + node + " cannot be parent of node " + child, ruleNode);
+    }
+  }
+
+  public static class CanBeAncestorFailedReportItem extends ConstraintsReportItem {
+    public CanBeAncestorFailedReportItem(@NotNull SNode node, @NotNull SNode ancestor, @NotNull TypesystemRuleId ruleNode) {
+      super(node, "Invalid ancestor: " + ancestor, ruleNode);
+    }
+  }
 }
