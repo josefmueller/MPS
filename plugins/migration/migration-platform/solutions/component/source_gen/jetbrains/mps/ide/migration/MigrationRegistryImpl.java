@@ -241,13 +241,13 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
         return false;
       }
 
-      for (MigrationScriptReference s : Sequence.fromIterable(sr.resolve(true).executeAfter())) {
+      for (MigrationScriptReference s : Sequence.fromIterable(sr.resolve(myMpsProject, true).executeAfter())) {
         if (needsToBeApplied(s, moduleToMigrate)) {
           return false;
         }
       }
 
-      for (MigrationScriptReference s : Sequence.fromIterable(sr.resolve(true).requiresData())) {
+      for (MigrationScriptReference s : Sequence.fromIterable(sr.resolve(myMpsProject, true).requiresData())) {
         for (SModule dep : SetSequence.fromSet(MigrationModuleUtil.getModuleDependencies(moduleToMigrate))) {
           if (needsToBeApplied(s, dep)) {
             return false;
@@ -263,7 +263,7 @@ public class MigrationRegistryImpl extends AbstractProjectComponent implements M
         return false;
       }
 
-      for (RefactoringScriptReference s : Sequence.fromIterable(sr.resolve(true).getExecuteAfter())) {
+      for (RefactoringScriptReference s : Sequence.fromIterable(sr.resolve(myMpsProject, true).getExecuteAfter())) {
         if (needsToBeApplied(s, moduleToMigrate)) {
           return false;
         }

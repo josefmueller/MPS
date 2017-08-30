@@ -93,7 +93,7 @@ public class MigrationExecutorImpl implements MigrationExecutor {
   }
 
   private void executeMigrationScript(ScriptApplied<MigrationScriptReference> sa) {
-    MigrationScript script = sa.getScriptReference().resolve(true);
+    MigrationScript script = sa.getScriptReference().resolve(myMpsProject, true);
     AbstractModule module = ((AbstractModule) sa.getModule());
     SLanguage fromLanguage = script.getReference().getLanguage();
     Integer usedVersion = module.getModuleDescriptor().getLanguageVersions().get(fromLanguage);
@@ -134,7 +134,7 @@ public class MigrationExecutorImpl implements MigrationExecutor {
     assert importedVersion == rLog.getFromVersion();
 
     final RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
-    RefactoringScript ref = rLog.resolve(true);
+    RefactoringScript ref = rLog.resolve(myMpsProject, true);
     ref.setSession(refactoringSession);
     ref.setTaskExecutor(new _FunctionTypes._void_P1_E0<Runnable>() {
       public void invoke(Runnable task) {

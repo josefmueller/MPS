@@ -18,6 +18,15 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
+import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
 import jetbrains.mps.ide.migration.MigrationExecutor;
 import jetbrains.mps.project.Project;
@@ -27,7 +36,6 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import java.util.Collection;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
@@ -35,10 +43,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptBase;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.model.SNode;
 
 /*package*/ class TestMigrationSession extends MigrationSession.MigrationSessionBase {
   private TestMigrationSession.MyMigrationManager myManager = new TestMigrationSession.MyMigrationManager();
@@ -68,7 +74,26 @@ import org.jetbrains.mps.openapi.model.SNode;
       if (mySettings.preError != 1) {
         return;
       }
-      processor.process(new BrokenReferenceProblem(null, "test error"));
+      final Wrappers._T<SReference> ref = new Wrappers._T<SReference>(null);
+      myProject.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SReference>() {
+        public SReference invoke() {
+          {
+            final SearchScope scope = CommandUtil.createScope(myProject);
+            QueryExecutionContext context = new QueryExecutionContext() {
+              public SearchScope getDefaultSearchScope() {
+                return scope;
+              }
+            };
+            return ref.value = Sequence.fromIterable(CommandUtil.nodes(CommandUtil.createConsoleScope(null, false, context))).translate(new ITranslator2<SNode, SReference>() {
+              public Iterable<SReference> translate(SNode it) {
+                return IterableUtil.asCollection(it.getReferences());
+              }
+            }).first();
+          }
+        }
+      }));
+      assert ref.value != null;
+      processor.process(new BrokenReferenceProblem(ref.value, "test error"));
     }
     @Override
     public void findNotMigrated(ProgressMonitor m, Iterable<ScriptApplied> toCheck, Processor<Problem> processor) {
@@ -77,7 +102,7 @@ import org.jetbrains.mps.openapi.model.SNode;
   };
   private MigrationExecutor myExecutor = new MigrationExecutor() {
     public void executeModuleMigration(ScriptApplied s) {
-      s.getScriptReference().resolve(true).execute(s.getModule());
+      s.getScriptReference().resolve(myProject, true).execute(s.getModule());
       ListSequence.fromList(passedM).addElement(s);
     }
     public void executeProjectMigration(ProjectMigration pm) {
@@ -254,7 +279,7 @@ import org.jetbrains.mps.openapi.model.SNode;
       final TestMigrationSession.MyModuleMigration _this = this;
       return new MigrationScriptReference(myLang, 0) {
         @Override
-        public MigrationScript resolve(boolean silent) {
+        public MigrationScript resolve(Project p, boolean silent) {
           return _this;
         }
       };

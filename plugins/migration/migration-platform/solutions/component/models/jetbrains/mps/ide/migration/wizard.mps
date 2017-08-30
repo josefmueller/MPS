@@ -2523,6 +2523,14 @@
                               </node>
                               <node concept="liA8E" id="42BI$$mlOeY" role="2OqNvi">
                                 <ref role="37wK5l" to="6f4m:6fMyXCHzvji" resolve="resolve" />
+                                <node concept="2OqwBi" id="7nggT464VFr" role="37wK5m">
+                                  <node concept="37vLTw" id="7nggT464T6P" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4hH4xQoL42E" resolve="mySession" />
+                                  </node>
+                                  <node concept="liA8E" id="7nggT464Y8b" role="2OqNvi">
+                                    <ref role="37wK5l" node="4hH4xQoNqF2" resolve="getProject" />
+                                  </node>
+                                </node>
                                 <node concept="3clFbT" id="42BI$$mlOeZ" role="37wK5m" />
                               </node>
                             </node>
@@ -2895,6 +2903,14 @@
                               </node>
                               <node concept="liA8E" id="42BI$$mnr05" role="2OqNvi">
                                 <ref role="37wK5l" to="6f4m:6fMyXCH$gdJ" resolve="resolve" />
+                                <node concept="2OqwBi" id="7nggT4654Sc" role="37wK5m">
+                                  <node concept="37vLTw" id="7nggT4652mF" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="4hH4xQoL42E" resolve="mySession" />
+                                  </node>
+                                  <node concept="liA8E" id="7nggT4657j7" role="2OqNvi">
+                                    <ref role="37wK5l" node="4hH4xQoNqF2" resolve="getProject" />
+                                  </node>
+                                </node>
                                 <node concept="3clFbT" id="42BI$$mnr06" role="37wK5m">
                                   <property role="3clFbU" value="false" />
                                 </node>
@@ -8071,6 +8087,14 @@
                     </node>
                     <node concept="liA8E" id="6fMyXCHC85X" role="2OqNvi">
                       <ref role="37wK5l" to="6f4m:6fMyXCHptub" resolve="resolve" />
+                      <node concept="2OqwBi" id="7nggT465aBB" role="37wK5m">
+                        <node concept="37vLTw" id="7nggT465a9U" role="2Oq$k0">
+                          <ref role="3cqZAo" node="78xBDbK6Z6y" resolve="mySession" />
+                        </node>
+                        <node concept="liA8E" id="7nggT465b77" role="2OqNvi">
+                          <ref role="37wK5l" node="4hH4xQoNqF2" resolve="getProject" />
+                        </node>
+                      </node>
                       <node concept="3clFbT" id="6fMyXCHQnZ$" role="37wK5m">
                         <property role="3clFbU" value="false" />
                       </node>

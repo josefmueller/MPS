@@ -50,7 +50,7 @@ public class NoPendingMigrationsTest extends BaseProjectsTest {
         getContextProject().getModelAccess().runReadAction(() -> {
           modules.addAll(IterableUtil.asCollection(MigrationModuleUtil.getMigrateableModulesFromProject(getContextProject())));
           moduleMigrations.addAll(migrationManager.getModuleMigrations(modules)
-              .stream().map(it -> it.getScriptReference().resolve(false).getCaption())
+              .stream().map(it -> it.getScriptReference().resolve(getContextProject(),false).getCaption())
               .collect(Collectors.toList()));
         });
       }

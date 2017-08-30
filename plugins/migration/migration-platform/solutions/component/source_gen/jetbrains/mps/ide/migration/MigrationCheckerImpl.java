@@ -70,7 +70,7 @@ public class MigrationCheckerImpl implements MigrationChecker {
       public void run() {
         Iterable<ScriptApplied> problems = CollectionSequence.fromCollection(myManager.getModuleMigrations(MigrationModuleUtil.getMigrateableModulesFromProject(myProject))).where(new IWhereFilter<ScriptApplied>() {
           public boolean accept(ScriptApplied it) {
-            return it.getScriptReference().resolve(false) == null;
+            return it.getScriptReference().resolve(myProject, false) == null;
           }
         });
         for (ScriptApplied problem : Sequence.fromIterable(problems)) {
@@ -264,7 +264,7 @@ outer:
 
         // todo show only annotations left by our run migrations 
         for (ScriptApplied sa : Sequence.fromIterable(migrations)) {
-          for (Problem p : Sequence.fromIterable(((MigrationScriptReference) sa.getScriptReference()).resolve(false).check(sa.getModule()))) {
+          for (Problem p : Sequence.fromIterable(((MigrationScriptReference) sa.getScriptReference()).resolve(myProject, false).check(sa.getModule()))) {
             if (!(processor.process(p))) {
               m.done();
               return;

@@ -128,7 +128,7 @@ __switch__:
                                     this.__CP__ = 2;
                                     break;
                                   case 4:
-                                    this._7_script = new MigrationScriptReference(it, _2_ver).resolve(true);
+                                    this._7_script = new MigrationScriptReference(it, _2_ver).resolve(event.getData(MPSCommonDataKeys.MPS_PROJECT), true);
                                     this.__CP__ = 8;
                                     break;
                                   case 9:
