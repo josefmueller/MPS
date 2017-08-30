@@ -31,7 +31,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdFlavouredItem, QuickFixReportItem {
+public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdFlavouredItem, QuickFixReportItem, IssueKindReportItem, NodeIssueKindReportItem {
 
   private final IErrorReporter myErrorReporter;
   private final LanguageRegistry myLanguageRegistry;
@@ -85,5 +85,10 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
       list.add(quickFixAdapter);
     }
     return list;
+  }
+
+  @Override
+  public String getIssueKind() {
+    return IssueKindReportItem.TYPESYSTEM;
   }
 }

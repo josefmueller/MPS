@@ -806,8 +806,9 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="Xl_RD" id="15I3XUWcG67" role="37wK5m">
-                          <property role="Xl_RC" value="structure" />
+                        <node concept="10M0yZ" id="1PHXAu1oR5N" role="37wK5m">
+                          <ref role="3cqZAo" to="d6hs:~IssueKindReportItem.STRUCTURE" resolve="STRUCTURE" />
+                          <ref role="1PxDUh" to="d6hs:~IssueKindReportItem" resolve="IssueKindReportItem" />
                         </node>
                         <node concept="2OqwBi" id="15I3XUWcG68" role="37wK5m">
                           <node concept="37vLTw" id="15I3XUWcG69" role="2Oq$k0">

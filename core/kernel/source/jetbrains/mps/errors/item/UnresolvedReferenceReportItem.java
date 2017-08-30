@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Collection;
 import java.util.Collections;
 
-public class UnresolvedReferenceReportItem extends ReferenceReportItem implements IssueKindReportItem, QuickFixReportItem {
+public class UnresolvedReferenceReportItem extends ReferenceReportItem implements IssueKindReportItem, QuickFixReportItem, NodeIssueKindReportItem {
   private final Runnable myQuickfix;
 
   public UnresolvedReferenceReportItem(SReference ref, Runnable quickfix) {

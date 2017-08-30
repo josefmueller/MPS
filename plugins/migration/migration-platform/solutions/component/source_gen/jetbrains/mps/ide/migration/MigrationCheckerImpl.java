@@ -33,7 +33,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.validation.ValidationUtil;
-import jetbrains.mps.project.validation.NodeValidationProblem;
+import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.validation.LanguageMissingError;
 import jetbrains.mps.ide.migration.check.LanguageAbsentInRepoProblem;
@@ -43,7 +43,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.ide.migration.check.ConceptMissingProblem;
 import jetbrains.mps.project.validation.ConceptFeatureMissingError;
 import jetbrains.mps.ide.migration.check.ConceptFeatureMissingProblem;
-import jetbrains.mps.project.validation.BrokenReferenceError;
+import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import jetbrains.mps.ide.migration.check.BrokenReferenceProblem;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -157,8 +157,8 @@ outer:
           // find missing concept features when concept's not missing 
           for (final EditableSModel model : Sequence.fromIterable(((Iterable<SModel>) module.getModels())).ofType(EditableSModel.class)) {
             final Wrappers._boolean stop = new Wrappers._boolean(false);
-            ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<NodeValidationProblem>() {
-              public boolean process(NodeValidationProblem vp) {
+            ValidationUtil.validateModelContent(model.getRootNodes(), new Processor<NodeReportItem>() {
+              public boolean process(NodeReportItem vp) {
                 SNode node = vp.getNode().resolve(model.getRepository());
                 if (vp instanceof LanguageMissingError) {
                   LanguageMissingError err = (LanguageMissingError) vp;
@@ -199,9 +199,9 @@ outer:
                     stop.value = true;
                     return false;
                   }
-                } else if (vp instanceof BrokenReferenceError) {
-                  BrokenReferenceError err = (BrokenReferenceError) vp;
-                  if (!(processor.process(new BrokenReferenceProblem(err.getReference(), err.getMessage())))) {
+                } else if (vp instanceof UnresolvedReferenceReportItem) {
+                  UnresolvedReferenceReportItem err = (UnresolvedReferenceReportItem) vp;
+                  if (!(processor.process(new BrokenReferenceProblem(err.getNode().resolve(myProject.getRepository()).getReference(err.getConceptFeature()), err.getMessage())))) {
                     stop.value = true;
                     return false;
                   }

@@ -16,14 +16,13 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.QuickFixProvider;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
 import java.util.Collections;
 
-public class LanguageNotImportedReportItem extends NodeReportItemBase implements QuickFixReportItem {
+public class LanguageNotImportedReportItem extends NodeReportItemBase implements QuickFixReportItem, IssueKindReportItem {
   private final QuickFix myQuickFix;
   public LanguageNotImportedReportItem(@NotNull SNode node, @NotNull QuickFix quickFix) {
     super(MessageStatus.ERROR, node.getReference(), getMessage(node));
@@ -37,5 +36,10 @@ public class LanguageNotImportedReportItem extends NodeReportItemBase implements
   @Override
   public Collection<QuickFix> getQuickFix() {
     return Collections.singleton(myQuickFix);
+  }
+
+  @Override
+  public String getIssueKind() {
+    return "missing language import";
   }
 }

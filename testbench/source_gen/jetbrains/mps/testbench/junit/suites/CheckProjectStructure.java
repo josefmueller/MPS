@@ -16,6 +16,7 @@ import jetbrains.mps.project.validation.ValidationUtil;
 import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
 import jetbrains.mps.util.FilteringProcessor;
 import java.util.function.Predicate;
@@ -98,9 +99,9 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
-          MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<ValidationProblem>(false) {
+          MessageCollectProcessor<NodeReportItem> collector = new MessageCollectProcessor<NodeReportItem>(false) {
             @Override
-            protected String formatMessage(ValidationProblem problem) {
+            protected String formatMessage(NodeReportItem problem) {
               String err = super.formatMessage(problem);
               if (problem instanceof NodeValidationProblem) {
                 err += err + " in node " + ((NodeValidationProblem) problem).getNode().getNodeId();
@@ -108,9 +109,9 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
               return err;
             }
           };
-          ValidationUtil.validateModelContent(sm.getRootNodes(), new FilteringProcessor<ValidationProblem>(collector, new Predicate<ValidationProblem>() {
-            public boolean test(ValidationProblem problem) {
-              return !((problem instanceof NodeValidationProblem)) || ErrorReportUtil.shouldReportError(((NodeValidationProblem) problem).getNode().resolve(BaseCheckModulesTest.getContextProject().getRepository()));
+          ValidationUtil.validateModelContent(sm.getRootNodes(), new FilteringProcessor<NodeReportItem>(collector, new Predicate<NodeReportItem>() {
+            public boolean test(NodeReportItem problem) {
+              return ErrorReportUtil.shouldReportError(problem.getNode().resolve(BaseCheckModulesTest.getContextProject().getRepository()));
             }
           }));
           if (collector.getErrors().isEmpty()) {

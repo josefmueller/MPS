@@ -6,12 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.project.validation.NodeValidationProblem;
+import jetbrains.mps.errors.item.NodeIssueKindReportItem;
 
 public class StructureChecker extends AbstractNodeChecker {
   public void checkNode(SNode node, final LanguageErrorsCollector errorsCollector, SRepository repository) {
-    ValidationUtil.validateSingleNode(node, new Processor<NodeValidationProblem>() {
-      public boolean process(NodeValidationProblem vp) {
+    ValidationUtil.validateSingleNode(node, new Processor<NodeIssueKindReportItem>() {
+      public boolean process(NodeIssueKindReportItem vp) {
         errorsCollector.addError(vp);
         return true;
       }

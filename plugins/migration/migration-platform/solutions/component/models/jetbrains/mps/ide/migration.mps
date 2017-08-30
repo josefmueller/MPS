@@ -61,6 +61,7 @@
     <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
     <import index="mmaq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.jdom(MPS.Core/)" />
     <import index="bim2" ref="a5b1c28d-abeb-49a6-a58c-559039616d64/r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.migration.component/jetbrains.mps.ide.migration)" />
+    <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -8802,7 +8803,7 @@
                                         <ref role="3cqZAo" node="2RwlJ15ZUXp" resolve="vp" />
                                       </node>
                                       <node concept="liA8E" id="u6B29mDikc" role="2OqNvi">
-                                        <ref role="37wK5l" to="6if8:~NodeValidationProblem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
+                                        <ref role="37wK5l" to="d6hs:~NodeFlavouredItem.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
                                       </node>
                                     </node>
                                     <node concept="liA8E" id="u6B29mDqFk" role="2OqNvi">
@@ -9302,15 +9303,15 @@
                                     <node concept="3cpWs8" id="44NRCusYP64" role="3cqZAp">
                                       <node concept="3cpWsn" id="44NRCusYP65" role="3cpWs9">
                                         <property role="TrG5h" value="err" />
-                                        <node concept="3uibUv" id="44NRCusYQfC" role="1tU5fm">
-                                          <ref role="3uigEE" to="6if8:~BrokenReferenceError" resolve="BrokenReferenceError" />
+                                        <node concept="3uibUv" id="1PHXAu1lOPX" role="1tU5fm">
+                                          <ref role="3uigEE" to="d6hs:~UnresolvedReferenceReportItem" resolve="UnresolvedReferenceReportItem" />
                                         </node>
                                         <node concept="10QFUN" id="44NRCusYP67" role="33vP2m">
+                                          <node concept="3uibUv" id="1PHXAu1lNui" role="10QFUM">
+                                            <ref role="3uigEE" to="d6hs:~UnresolvedReferenceReportItem" resolve="UnresolvedReferenceReportItem" />
+                                          </node>
                                           <node concept="37vLTw" id="44NRCusYP68" role="10QFUP">
                                             <ref role="3cqZAo" node="2RwlJ15ZUXp" resolve="vp" />
-                                          </node>
-                                          <node concept="3uibUv" id="44NRCusYR7i" role="10QFUM">
-                                            <ref role="3uigEE" to="6if8:~BrokenReferenceError" resolve="BrokenReferenceError" />
                                           </node>
                                         </node>
                                       </node>
@@ -9343,12 +9344,38 @@
                                             <node concept="2ShNRf" id="44NRCusYP6N" role="37wK5m">
                                               <node concept="1pGfFk" id="44NRCusYP6O" role="2ShVmc">
                                                 <ref role="37wK5l" to="t99v:44NRCusYTxA" resolve="BrokenReferenceProblem" />
-                                                <node concept="2OqwBi" id="44NRCusZ482" role="37wK5m">
-                                                  <node concept="37vLTw" id="44NRCusZ38S" role="2Oq$k0">
-                                                    <ref role="3cqZAo" node="44NRCusYP65" resolve="err" />
+                                                <node concept="2OqwBi" id="1PHXAu1mcTP" role="37wK5m">
+                                                  <node concept="2OqwBi" id="1PHXAu1m3FJ" role="2Oq$k0">
+                                                    <node concept="2OqwBi" id="1PHXAu1lX7T" role="2Oq$k0">
+                                                      <node concept="37vLTw" id="1PHXAu1lVb2" role="2Oq$k0">
+                                                        <ref role="3cqZAo" node="44NRCusYP65" resolve="err" />
+                                                      </node>
+                                                      <node concept="liA8E" id="1PHXAu1lZ92" role="2OqNvi">
+                                                        <ref role="37wK5l" to="d6hs:~NodeReportItemBase.getNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNode" />
+                                                      </node>
+                                                    </node>
+                                                    <node concept="liA8E" id="1PHXAu1m5nA" role="2OqNvi">
+                                                      <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                                                      <node concept="2OqwBi" id="1PHXAu1m8SL" role="37wK5m">
+                                                        <node concept="37vLTw" id="1PHXAu1m7eO" role="2Oq$k0">
+                                                          <ref role="3cqZAo" node="2wbhCYFFcSx" resolve="myProject" />
+                                                        </node>
+                                                        <node concept="liA8E" id="1PHXAu1mbdA" role="2OqNvi">
+                                                          <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                                                        </node>
+                                                      </node>
+                                                    </node>
                                                   </node>
-                                                  <node concept="liA8E" id="44NRCusZf6M" role="2OqNvi">
-                                                    <ref role="37wK5l" to="6if8:~BrokenReferenceError.getReference():org.jetbrains.mps.openapi.model.SReference" resolve="getReference" />
+                                                  <node concept="liA8E" id="1PHXAu1meGw" role="2OqNvi">
+                                                    <ref role="37wK5l" to="mhbf:~SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLink):org.jetbrains.mps.openapi.model.SReference" resolve="getReference" />
+                                                    <node concept="2OqwBi" id="44NRCusZ482" role="37wK5m">
+                                                      <node concept="37vLTw" id="44NRCusZ38S" role="2Oq$k0">
+                                                        <ref role="3cqZAo" node="44NRCusYP65" resolve="err" />
+                                                      </node>
+                                                      <node concept="liA8E" id="44NRCusZf6M" role="2OqNvi">
+                                                        <ref role="37wK5l" to="d6hs:~ReferenceReportItem.getConceptFeature():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getConceptFeature" />
+                                                      </node>
+                                                    </node>
                                                   </node>
                                                 </node>
                                                 <node concept="2OqwBi" id="44NRCusYP6V" role="37wK5m">
@@ -9356,7 +9383,7 @@
                                                     <ref role="3cqZAo" node="44NRCusYP65" resolve="err" />
                                                   </node>
                                                   <node concept="liA8E" id="44NRCusYP6X" role="2OqNvi">
-                                                    <ref role="37wK5l" to="6if8:~ValidationProblem.getMessage():java.lang.String" resolve="getMessage" />
+                                                    <ref role="37wK5l" to="d6hs:~ReportItemBase.getMessage():java.lang.String" resolve="getMessage" />
                                                   </node>
                                                 </node>
                                               </node>
@@ -9367,8 +9394,8 @@
                                     </node>
                                   </node>
                                   <node concept="2ZW3vV" id="44NRCusYJ$O" role="3eO9$A">
-                                    <node concept="3uibUv" id="44NRCusYMQF" role="2ZW6by">
-                                      <ref role="3uigEE" to="6if8:~BrokenReferenceError" resolve="BrokenReferenceError" />
+                                    <node concept="3uibUv" id="1PHXAu1lLLb" role="2ZW6by">
+                                      <ref role="3uigEE" to="d6hs:~UnresolvedReferenceReportItem" resolve="UnresolvedReferenceReportItem" />
                                     </node>
                                     <node concept="37vLTw" id="44NRCusYJ$Q" role="2ZW6bz">
                                       <ref role="3cqZAo" node="2RwlJ15ZUXp" resolve="vp" />
@@ -9390,8 +9417,8 @@
                             </node>
                             <node concept="37vLTG" id="2RwlJ15ZUXp" role="1bW2Oz">
                               <property role="TrG5h" value="vp" />
-                              <node concept="3uibUv" id="2Ii8KnfGdgp" role="1tU5fm">
-                                <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
+                              <node concept="3uibUv" id="1PHXAu1lICl" role="1tU5fm">
+                                <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
                               </node>
                             </node>
                           </node>

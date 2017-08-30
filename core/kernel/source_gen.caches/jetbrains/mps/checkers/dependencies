@@ -159,7 +159,7 @@
   </dependency>
   <dependency className="jetbrains.mps.checkers.StructureChecker" file="StructureChecker.java">
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsCollector" />
-    <classNode dependClassName="jetbrains.mps.project.validation.NodeValidationProblem" />
+    <classNode dependClassName="jetbrains.mps.errors.item.NodeReportItem" />
     <classNode dependClassName="jetbrains.mps.project.validation.ValidationUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />

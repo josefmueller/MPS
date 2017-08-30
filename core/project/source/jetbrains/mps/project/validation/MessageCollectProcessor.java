@@ -16,12 +16,13 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.ReportItem;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MessageCollectProcessor<T extends ValidationProblem> implements Processor<T> {
+public class MessageCollectProcessor<T extends ReportItem> implements Processor<T> {
   private List<String> myWarnings = new ArrayList<>(1);
   private List<String> myErrors = new ArrayList<>(1);
   private final boolean myCollectWarnings;

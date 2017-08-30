@@ -66,7 +66,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
         ListSequence.fromList(checkers).addElement(new RootCheckerSpecificCheckerAdapter(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()), IssueKindReportItem.CONSTRAINTS, mpsProject.getRepository()));
         ListSequence.fromList(checkers).addElement(new RootCheckerSpecificCheckerAdapter(new AbstractConstraintsCheckerRootCheckerAdapter(new UsedLanguagesChecker()), IssueKindReportItem.CONSTRAINTS, mpsProject.getRepository()));
       case STRUCTURE:
-        ListSequence.fromList(checkers).addElement(new RootCheckerSpecificCheckerAdapter(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SUPRESS_ERRORS_CONDITION, new StructureChecker()), "structure", mpsProject.getRepository()));
+        ListSequence.fromList(checkers).addElement(new RootCheckerSpecificCheckerAdapter(new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SUPRESS_ERRORS_CONDITION, new StructureChecker()), IssueKindReportItem.STRUCTURE, mpsProject.getRepository()));
       default:
         ListSequence.fromList(checkers).addElement(new ModelPropertiesChecker());
         ListSequence.fromList(checkers).addElement(new UnresolvedReferencesChecker(mpsProject));

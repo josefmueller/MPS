@@ -316,12 +316,12 @@
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/4498927700296627571">
     <file name="StructureChecker.java">
-      <node id="3139610398095619819" at="14,56,15,37" concept="4" />
+      <node id="3139610398095619819" at="14,49,15,37" concept="4" />
       <node id="3139610398095624802" at="15,37,16,20" concept="11" />
-      <node id="3139610398095619365" at="14,0,18,0" concept="9" trace="process#(Ljetbrains/mps/project/validation/NodeValidationProblem;)Z" />
+      <node id="3139610398095619365" at="14,0,18,0" concept="9" trace="process#(Ljetbrains/mps/errors/item/NodeReportItem;)Z" />
       <node id="4498927700296627587" at="12,108,18,7" concept="4" />
       <node id="4498927700296627577" at="12,0,20,0" concept="9" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsCollector;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
-      <scope id="3139610398095619366" at="14,56,16,20" />
+      <scope id="3139610398095619366" at="14,49,16,20" />
       <scope id="3139610398095619365" at="14,0,18,0">
         <var name="vp" id="3139610398095619365" />
       </scope>

@@ -16,6 +16,8 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.NodeIssueKindReportItem;
+import jetbrains.mps.errors.item.UnresolvedReferenceReportItem;
 import jetbrains.mps.extapi.model.TransientSModel;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.impl.RuleUtil;
@@ -79,7 +81,7 @@ import java.util.Set;
 public class ValidationUtil {
   //this processes all nodes and shows the most "common" problem for each node. E.g. if the language of the node is missing,
   //this won't show "concept missing" error
-  public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<? super NodeValidationProblem> processor) {
+  public static void validateModelContent(Iterable<SNode> roots, @NotNull Processor<? super NodeIssueKindReportItem> processor) {
     for (SNode root : roots) {
       for (SNode node : SNodeUtil.getDescendants(root)) {
         if (!validateSingleNode(node, processor)) {
@@ -89,7 +91,7 @@ public class ValidationUtil {
     }
   }
 
-  public static boolean validateSingleNode(SNode node, @NotNull Processor<? super NodeValidationProblem> processor) {
+  public static boolean validateSingleNode(SNode node, @NotNull Processor<? super NodeIssueKindReportItem> processor) {
     SLanguage lang = node.getConcept().getLanguage();
     if (!lang.isValid()) {
       LanguageMissingError error = new LanguageMissingError(node, lang, lang.getSourceModule() == null);
@@ -126,7 +128,7 @@ public class ValidationUtil {
     List<SReferenceLink> refs = IterableUtil.asList(concept.getReferenceLinks());
     for (SReference r : node.getReferences()) {
       if (r.getTargetNodeReference().resolve(node.getModel().getRepository()) == null) {
-        if (!processor.process(new BrokenReferenceError(r))) {
+        if (!processor.process(new UnresolvedReferenceReportItem(r, null))) {
           return false;
         }
       }

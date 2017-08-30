@@ -15,12 +15,7 @@
  */
 package jetbrains.mps.errors.item;
 
-import jetbrains.mps.errors.item.ReportItemBase.MultipleReportItemFlavour;
 import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Collection;
-import java.util.function.Function;
 
 public interface IssueKindReportItem extends ReportItem {
 
@@ -29,6 +24,7 @@ public interface IssueKindReportItem extends ReportItem {
   SimpleReportItemFlavour<IssueKindReportItem, String> FLAVOUR_ISSUE_KIND =
       new SimpleReportItemFlavour<>(IssueKindReportItem.class, IssueKindReportItem::getIssueKind);
 
+  String STRUCTURE = "structure";
   String CONSTRAINTS = "constraints";
   String TYPESYSTEM = "typesystem";
 
