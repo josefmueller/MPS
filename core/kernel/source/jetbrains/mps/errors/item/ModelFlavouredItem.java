@@ -15,8 +15,16 @@
  */
 package jetbrains.mps.errors.item;
 
-import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.errors.item.ReportItemBase.SimpleReportItemFlavour;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public interface QuickFix extends QuickFixBase, FlavouredItem {
-  String getDescription(SRepository repository);
+public interface ModelFlavouredItem extends FlavouredItem {
+
+  @NotNull
+  SModelReference getModel();
+
+  ReportItemFlavour<ModelFlavouredItem, SModelReference> FLAVOUR_MODEL = new SimpleReportItemFlavour<>(ModelFlavouredItem.class, ModelFlavouredItem::getModel);
+
 }

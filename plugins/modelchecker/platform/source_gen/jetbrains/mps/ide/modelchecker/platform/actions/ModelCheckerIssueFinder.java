@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import java.util.List;
 import java.util.Arrays;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.errors.item.ReportItem;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,7 +15,9 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import java.util.ArrayList;
+import jetbrains.mps.errors.item.NodeFlavouredItem;
 import jetbrains.mps.checkers.ErrorReportUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -36,14 +38,14 @@ public class ModelCheckerIssueFinder extends BaseFinder {
     return myExtraCheckers;
   }
   @Override
-  public SearchResults<ReportItem> find(SearchQuery searchQuery, ProgressMonitor monitor) {
+  public SearchResults<IssueKindReportItem> find(SearchQuery searchQuery, ProgressMonitor monitor) {
     ModelCheckerIssueFinder.ItemsToCheck itemsToCheck = getItemsToCheck(searchQuery);
 
     int work = ListSequence.fromList(itemsToCheck.modules).count() + ListSequence.fromList(itemsToCheck.models).count() + 1;
     monitor.start("Checking", work);
 
     try {
-      final SearchResults<ReportItem> rv = new SearchResults<ReportItem>();
+      final SearchResults<IssueKindReportItem> rv = new SearchResults<IssueKindReportItem>();
 
       ModuleChecker moduleChecker = new ModuleChecker();
       for (SModule module : ListSequence.fromList(itemsToCheck.modules)) {
@@ -64,17 +66,16 @@ public class ModelCheckerIssueFinder extends BaseFinder {
       rv.addAll(modelChecker.getSearchResults());
 
       // filter out suppressed 
-      List<SearchResult<ReportItem>> toRemove = ListSequence.fromList(new ArrayList<SearchResult<ReportItem>>());
-      for (SearchResult<ReportItem> result : ListSequence.fromList(rv.getSearchResults())) {
-        if (result.getObject() instanceof ModelCheckerIssue.NodeIssue) {
-          ModelCheckerIssue.NodeIssue mci = (ModelCheckerIssue.NodeIssue) result.getObject();
-          if (!(ErrorReportUtil.shouldReportError(mci.getNode()))) {
+      List<SearchResult<IssueKindReportItem>> toRemove = ListSequence.fromList(new ArrayList<SearchResult<IssueKindReportItem>>());
+      for (SearchResult<IssueKindReportItem> result : ListSequence.fromList(rv.getSearchResults())) {
+        if (NodeFlavouredItem.FLAVOUR_NODE.canGet(result.getObject())) {
+          if (!(ErrorReportUtil.shouldReportError(((SNode) result.getPathObject())))) {
             ListSequence.fromList(toRemove).addElement(result);
           }
         }
       }
-      ListSequence.fromList(toRemove).visitAll(new IVisitor<SearchResult<ReportItem>>() {
-        public void visit(SearchResult<ReportItem> it) {
+      ListSequence.fromList(toRemove).visitAll(new IVisitor<SearchResult<IssueKindReportItem>>() {
+        public void visit(SearchResult<IssueKindReportItem> it) {
           rv.remove(it);
         }
       });

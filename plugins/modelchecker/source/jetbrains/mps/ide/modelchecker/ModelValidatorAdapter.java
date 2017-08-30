@@ -16,13 +16,13 @@
 package jetbrains.mps.ide.modelchecker;
 
 import com.intellij.openapi.ui.DialogWrapper;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.generator.ModelValidator;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelChecker;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerTool;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerUtils;
 import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerViewer;
@@ -57,7 +57,7 @@ public class ModelValidatorAdapter implements ModelValidator {
     final IModifiableGenerationSettings generationSettings = GenerationSettingsProvider.getInstance().getGenerationSettings();
 
     ModelCheckerViewer viewer = tool.checkModels(modelDescriptors);
-    SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
+    SearchResults<IssueKindReportItem> issues = viewer.getSearchResults();
     if (issues == null) {
       // Cancelled
       return false;

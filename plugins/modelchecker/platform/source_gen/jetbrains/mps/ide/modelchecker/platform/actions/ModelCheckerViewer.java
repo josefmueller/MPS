@@ -20,19 +20,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
 import java.util.ArrayList;
+import jetbrains.mps.errors.item.QuickFixBase;
+import jetbrains.mps.errors.item.QuickFixReportItem;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.errors.item.NodeFlavouredItem;
+import jetbrains.mps.errors.item.ModelFlavouredItem;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
@@ -111,9 +116,8 @@ public class ModelCheckerViewer extends JPanel {
     // Perform quick fixes 
     final Wrappers._int fixedTotal = new Wrappers._int(0);
     // Select all fixable issues 
-    // todo: ReportItem instead of ModelCheckerIssue 
-    final List<ModelCheckerIssue> issuesToFix = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<ModelCheckerIssue>>() {
-      public List<ModelCheckerIssue> compute() {
+    final List<IssueKindReportItem> issuesToFix = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new Computable<List<IssueKindReportItem>>() {
+      public List<IssueKindReportItem> compute() {
         return getIssuesToFix();
       }
     });
@@ -130,8 +134,11 @@ public class ModelCheckerViewer extends JPanel {
       public void run() {
         while (true) {
           int fixedBefore = fixedTotal.value;
-          for (ModelCheckerIssue issue : ListSequence.fromListWithValues(new ArrayList<ModelCheckerIssue>(), issuesToFix)) {
-            if (issue.fix(myProject.getRepository())) {
+          for (IssueKindReportItem issue : ListSequence.fromListWithValues(new ArrayList<IssueKindReportItem>(), issuesToFix)) {
+            QuickFixBase quickFix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(issue);
+            boolean alive = IssueKindReportItem.PATH_OBJECT.get(issue).resolve(myProject.getRepository()) != null && quickFix.isAlive(myProject.getRepository());
+            if (alive) {
+              quickFix.execute(myProject.getRepository());
               fixedTotal.value++;
               ListSequence.fromList(issuesToFix).removeElement(issue);
             }
@@ -153,18 +160,22 @@ public class ModelCheckerViewer extends JPanel {
       doReCheck();
     }
   }
-  private List<ModelCheckerIssue> getIssuesToFix() {
+  private List<IssueKindReportItem> getIssuesToFix() {
     final Set<SNodeReference> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodeReference>(), myUsagesView.getIncludedResultNodes());
     final Set<SModel> includedResultModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), myUsagesView.getIncludedModels());
-    return ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>) getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
-      public ModelCheckerIssue select(SearchResult<ModelCheckerIssue> sr) {
-        return sr.getObject();
-      }
-    }).where(new IWhereFilter<ModelCheckerIssue>() {
-      public boolean accept(ModelCheckerIssue sr) {
-        boolean isNodeIssueAndFixable = sr instanceof ModelCheckerIssue.NodeIssue && SetSequence.fromSet(includedResultNodes).contains(((ModelCheckerIssue.NodeIssue) sr).getNode().getReference()) && sr.isFixable();
-        boolean isModelIssueAndFixable = sr instanceof ModelCheckerIssue.ModelIssue && SetSequence.fromSet(includedResultModels).contains(((ModelCheckerIssue.ModelIssue) sr).getModel()) && sr.isFixable();
+    List<SearchResult<IssueKindReportItem>> searchResults = getSearchResults().getSearchResults();
+    return ListSequence.fromList(searchResults).where(new IWhereFilter<SearchResult<IssueKindReportItem>>() {
+      public boolean accept(SearchResult<IssueKindReportItem> sr) {
+        IssueKindReportItem reportItem = sr.getObject();
+        QuickFixBase quickFix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(reportItem);
+        boolean fixable = quickFix != null;
+        boolean isNodeIssueAndFixable = NodeFlavouredItem.FLAVOUR_NODE.canGet(reportItem) && SetSequence.fromSet(includedResultNodes).contains(NodeFlavouredItem.FLAVOUR_NODE.tryToGet(reportItem)) && fixable;
+        boolean isModelIssueAndFixable = ModelFlavouredItem.FLAVOUR_MODEL.canGet(reportItem) && SetSequence.fromSet(includedResultModels).contains((SModel) sr.getPathObject()) && fixable;
         return isNodeIssueAndFixable || isModelIssueAndFixable;
+      }
+    }).select(new ISelector<SearchResult<IssueKindReportItem>, IssueKindReportItem>() {
+      public IssueKindReportItem select(SearchResult<IssueKindReportItem> it) {
+        return it.getObject();
       }
     }).toListSequence();
 
@@ -196,16 +207,16 @@ public class ModelCheckerViewer extends JPanel {
     myUsagesView.dispose();
   }
   @Nullable
-  public SearchResults<ModelCheckerIssue> getSearchResults() {
+  public SearchResults<IssueKindReportItem> getSearchResults() {
     return myUsagesView.getSearchResults();
   }
-  public void setSearchResults(SearchResults<ModelCheckerIssue> issues) {
+  public void setSearchResults(SearchResults<IssueKindReportItem> issues) {
     myUsagesView.setContents(issues);
   }
   private ModelCheckerIssueFinder newModelChecker() {
     return new ModelCheckerIssueFinder(ModelCheckerSettings.getInstance().getSpecificCheckers(myProject));
   }
-  public static class MyNodeRepresentator implements INodeRepresentator<ModelCheckerIssue> {
+  public static class MyNodeRepresentator implements INodeRepresentator<IssueKindReportItem> {
     public MyNodeRepresentator() {
     }
     @Override
@@ -240,7 +251,7 @@ public class ModelCheckerViewer extends JPanel {
     }
     @NotNull
     @Override
-    public String getPresentation(ModelCheckerIssue issue) {
+    public String getPresentation(IssueKindReportItem issue) {
       return StringUtil.escapeXml(issue.getMessage());
     }
     @Override

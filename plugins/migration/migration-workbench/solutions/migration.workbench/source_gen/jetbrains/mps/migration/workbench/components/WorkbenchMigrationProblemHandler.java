@@ -12,7 +12,7 @@ import com.intellij.openapi.project.Project;
 import java.util.Collection;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerIssue;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -27,9 +27,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent implements MigrationProblemHandler {
   private static final Logger LOG = LogManager.getLogger(WorkbenchMigrationProblemHandler.class);
@@ -43,12 +42,12 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
   }
 
   public void showProblems(Collection<Problem> problems) {
-    Iterable<SearchResult<ModelCheckerIssue>> items = CollectionSequence.fromCollection(problems).select(new ISelector<Problem, SearchResult<ModelCheckerIssue>>() {
-      public SearchResult<ModelCheckerIssue> select(Problem p) {
-        return new SearchResult<ModelCheckerIssue>(issueByProblem(p), p.getReason(), p.getCategory());
+    Iterable<SearchResult<IssueKindReportItem>> items = CollectionSequence.fromCollection(problems).select(new ISelector<Problem, SearchResult<IssueKindReportItem>>() {
+      public SearchResult<IssueKindReportItem> select(Problem p) {
+        return new SearchResult<IssueKindReportItem>(issueByProblem(p), p.getReason(), p.getCategory());
       }
-    }).where(new IWhereFilter<SearchResult<ModelCheckerIssue>>() {
-      public boolean accept(SearchResult<ModelCheckerIssue> it) {
+    }).where(new IWhereFilter<SearchResult<IssueKindReportItem>>() {
+      public boolean accept(SearchResult<IssueKindReportItem> it) {
         return it != null;
       }
     });
@@ -65,9 +64,9 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
       }
     };
 
-    final SearchResults<ModelCheckerIssue> result = new SearchResults<ModelCheckerIssue>();
-    Sequence.fromIterable(items).visitAll(new IVisitor<SearchResult<ModelCheckerIssue>>() {
-      public void visit(SearchResult<ModelCheckerIssue> it) {
+    final SearchResults<IssueKindReportItem> result = new SearchResults<IssueKindReportItem>();
+    Sequence.fromIterable(items).visitAll(new IVisitor<SearchResult<IssueKindReportItem>>() {
+      public void visit(SearchResult<IssueKindReportItem> it) {
         result.add(it);
       }
     });
@@ -93,18 +92,8 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
     myUsagesTool.show(sr, "No results to show");
   }
 
-  private ModelCheckerIssue issueByProblem(Problem p) {
+  private IssueKindReportItem issueByProblem(Problem p) {
     Object r = p.getReason();
-    if (r instanceof SNode) {
-      return new ModelCheckerIssue.NodeIssue(((SNode) r), p.getMessage(), null);
-    }
-    if (r instanceof SModel) {
-      return new ModelCheckerIssue.ModelIssue(((SModel) r), p.getMessage(), null);
-    }
-    if (r instanceof SModule) {
-      return new ModelCheckerIssue.ModuleIssue(p.getMessage(), null);
-    }
-
     if (LOG.isEnabledFor(Level.ERROR)) {
       LOG.error("Unknown issue type: " + r.getClass().getName());
     }
@@ -124,6 +113,7 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
   public void disposeComponent() {
   }
   @Override
+  @NotNull
   public String getComponentName() {
     return this.getClass().getSimpleName();
   }

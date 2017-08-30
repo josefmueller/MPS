@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.validation.ValidationProblem;
-import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.errors.item.QuickFixBase;
@@ -49,9 +48,9 @@ public abstract class ModelCheckerIssue {
     return new SearchResult<ModelCheckerIssue>(issue, module, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, toCheckerSeverity(vp)), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
 
-  public static SearchResult<ReportItem> getSearchResultForReportItem(IssueKindReportItem item) {
+  public static SearchResult<IssueKindReportItem> getSearchResultForReportItem(IssueKindReportItem item, SRepository repository) {
     String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
-    return new SearchResult<ReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item), new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, SpecificChecker.getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueKind));
+    return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(repository), new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, SpecificChecker.getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueKind));
   }
 
 

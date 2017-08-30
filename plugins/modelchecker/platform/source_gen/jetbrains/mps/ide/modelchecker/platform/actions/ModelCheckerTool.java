@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.icons.IconManager;
 import com.intellij.icons.AllIcons;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
@@ -67,7 +68,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     revealResults(newViewer, title, icon);
   }
   private void revealResults(ModelCheckerViewer newViewer, String title, Icon icon) {
-    SearchResults<ModelCheckerIssue> searchResults = newViewer.getSearchResults();
+    SearchResults<IssueKindReportItem> searchResults = newViewer.getSearchResults();
     if (searchResults == null) {
       // Search was cancelled, do nothing 
       return;
@@ -89,7 +90,7 @@ public class ModelCheckerTool extends BaseTabbedProjectTool {
     ModelCheckerViewer viewer = createViewerForTab();
     viewer.checkModels(models, "models");
 
-    SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
+    SearchResults<IssueKindReportItem> issues = viewer.getSearchResults();
     if (issues == null) {
       return CheckinHandler.ReturnResult.CANCEL;
     }

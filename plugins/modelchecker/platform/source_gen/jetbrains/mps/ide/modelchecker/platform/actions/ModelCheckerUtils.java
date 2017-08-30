@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
@@ -40,12 +41,12 @@ public final class ModelCheckerUtils {
     return modelDescrpitors;
   }
 
-  public static int getIssueCountForSeverity(@NotNull SearchResults<ModelCheckerIssue> issues, @Nullable String severity) {
+  public static int getIssueCountForSeverity(@NotNull SearchResults<IssueKindReportItem> issues, @Nullable String severity) {
     if (severity == null) {
       return 0;
     }
     int issueCount = 0;
-    for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
+    for (SearchResult<IssueKindReportItem> issue : ListSequence.fromList(issues.getSearchResults())) {
       if (severity.equals(issue.getCategories().get(0).o2)) {
         issueCount++;
       }
