@@ -300,7 +300,7 @@
     </language>
     <language id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone">
       <concept id="7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" flags="ng" index="2DaZZR" />
-      <concept id="681855071694758165" name="jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation" flags="ng" index="LR4U6">
+      <concept id="681855071694758165" name="jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation" flags="nn" index="LR4U6">
         <reference id="681855071694758166" name="tool" index="LR4U5" />
       </concept>
     </language>
@@ -882,7 +882,7 @@
     <property role="1qHB85" value="/MPS_16.png" />
     <property role="TrG5h" value="MPS Languages DevKit" />
     <property role="9BnSO" value="172.1" />
-    <property role="9BnSK" value="2017.2.1" />
+    <property role="9BnSK" value="2017.2.2" />
   </node>
   <node concept="tC5Ba" id="56$IWKxe1aW">
     <property role="TrG5h" value="ProjectNewActionsEx" />
