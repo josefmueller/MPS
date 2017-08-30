@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -38,7 +39,7 @@ public class GenerateToString_Action extends BaseAction {
   public GenerateToString_Action() {
     super("toString()", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -90,12 +91,13 @@ public class GenerateToString_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    final SNode classConcept = GenerateToString_Action.this.getClassConcept(_params);
-
+    SRepository repo = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository();
+    final Wrappers._T<SNode> classConcept = new Wrappers._T<SNode>();
     final Wrappers._T<SNodeReference[]> fields = new Wrappers._T<SNodeReference[]>();
-    ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        fields.value = Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(classConcept, SMethodTrimmedId.create("fields", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "4_LVZ3pC27C")))).select(new ISelector<SNode, SNodeReference>() {
+        classConcept.value = GenerateToString_Action.this.getClassConcept(_params);
+        fields.value = Sequence.fromIterable(((Iterable<SNode>) BHReflection.invoke(classConcept.value, SMethodTrimmedId.create("fields", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "4_LVZ3pC27C")))).select(new ISelector<SNode, SNodeReference>() {
           public SNodeReference select(SNode it) {
             return SNodeOperations.getPointer(it);
           }
@@ -111,43 +113,48 @@ public class GenerateToString_Action extends BaseAction {
       return;
     }
 
-    SNodeReference[] selectedFields = Sequence.fromIterable(((Iterable<SNodeReference>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodeReference.class);
-    final SNode rightmostExpression;
-    SNodeReference firstField = (selectedFields != null && selectedFields.length > 0 ? selectedFields[0] : null);
-    SNode currentExpression = null;
-    for (SNodeReference fieldPtr : selectedFields) {
-      SNode field = SNodeOperations.cast(fieldPtr.resolve(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
-      SNode fieldRef = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")), null);
-      SLinkOperations.setTarget(fieldRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), field);
-      SNode item = _quotation_createNode_satqj4_a0d0p0a(((fieldPtr == firstField ? "" : ", ")) + SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "=");
-      if (fieldPtr == firstField) {
-        currentExpression = _quotation_createNode_satqj4_a0a0e0p0a(SPropertyOperations.getString(classConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "{", item);
-        currentExpression = _quotation_createNode_satqj4_a0b0e0p0a(fieldRef, currentExpression);
-      } else {
-        currentExpression = _quotation_createNode_satqj4_a0a0a4a51a0(item, currentExpression);
-        currentExpression = _quotation_createNode_satqj4_a0b0a4a51a0(fieldRef, currentExpression);
+    final SNodeReference[] selectedFields = Sequence.fromIterable(((Iterable<SNodeReference>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodeReference.class);
+    final Wrappers._T<SNode> rightmostExpression = new Wrappers._T<SNode>();
+    final SNodeReference firstField = (selectedFields != null && selectedFields.length > 0 ? selectedFields[0] : null);
+    final Wrappers._T<SNode> currentExpression = new Wrappers._T<SNode>(null);
+
+    repo.getModelAccess().executeCommand(new Runnable() {
+      public void run() {
+        for (SNodeReference fieldPtr : selectedFields) {
+          SNode field = SNodeOperations.cast(fieldPtr.resolve(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca68L, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
+          SNode fieldRef = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference")), null);
+          SLinkOperations.setTarget(fieldRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), field);
+          SNode item = _quotation_createNode_satqj4_a0d0a0a61a0(((fieldPtr == firstField ? "" : ", ")) + SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "=");
+          if (fieldPtr == firstField) {
+            currentExpression.value = _quotation_createNode_satqj4_a0a0e0a0a61a0(SPropertyOperations.getString(classConcept.value, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "{", item);
+            currentExpression.value = _quotation_createNode_satqj4_a0b0e0a0a61a0(fieldRef, currentExpression.value);
+          } else {
+            currentExpression.value = _quotation_createNode_satqj4_a0a0a4a0a0q0a(item, currentExpression.value);
+            currentExpression.value = _quotation_createNode_satqj4_a0b0a4a0a0q0a(fieldRef, currentExpression.value);
+          }
+        }
+        if (selectedFields == null || selectedFields.length == 0) {
+          rightmostExpression.value = _quotation_createNode_satqj4_a0a0b0a61a0(SPropertyOperations.getString(classConcept.value, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "{}");
+        } else {
+          rightmostExpression.value = _quotation_createNode_satqj4_a0a0a1a0q0a(currentExpression.value);
+        }
+        SNode method = ListSequence.fromList(SLinkOperations.getChildren(classConcept.value, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(_quotation_createNode_satqj4_a0a0c0a61a0(rightmostExpression.value));
+        ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(method);
       }
-    }
-    if (selectedFields == null || selectedFields.length == 0) {
-      rightmostExpression = _quotation_createNode_satqj4_a0a0q0a(SPropertyOperations.getString(classConcept, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "{}");
-    } else {
-      rightmostExpression = _quotation_createNode_satqj4_a0a0a61a0(currentExpression);
-    }
-    SNode method = ListSequence.fromList(SLinkOperations.getChildren(classConcept, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(_quotation_createNode_satqj4_a0a0r0a(rightmostExpression));
-    ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(method);
+    });
 
   }
   private SNode getClassConcept(final Map<String, Object> _params) {
     return SNodeOperations.getNodeAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), true, false);
   }
-  private static SNode _quotation_createNode_satqj4_a0d0p0a(Object parameter_1) {
+  private static SNode _quotation_createNode_satqj4_a0d0a0a61a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf93d565d10L, "StringLiteral"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), (String) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_satqj4_a0a0e0p0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_satqj4_a0a0e0a0a61a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -162,7 +169,7 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_satqj4_a0b0e0p0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_satqj4_a0b0e0a0a61a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -178,7 +185,7 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_satqj4_a0a0a4a51a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_satqj4_a0a0a4a0a0q0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -194,7 +201,7 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_satqj4_a0b0a4a51a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_satqj4_a0b0a4a0a0q0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -210,14 +217,14 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_satqj4_a0a0q0a(Object parameter_1) {
+  private static SNode _quotation_createNode_satqj4_a0a0b0a61a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf93d565d10L, "StringLiteral"), null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), (String) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_satqj4_a0a0a61a0(Object parameter_1) {
+  private static SNode _quotation_createNode_satqj4_a0a0a1a0q0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -232,7 +239,7 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_satqj4_a0a0r0a(Object parameter_1) {
+  private static SNode _quotation_createNode_satqj4_a0a0c0a61a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
