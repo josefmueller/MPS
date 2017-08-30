@@ -22,7 +22,7 @@ public class ConceptMissingError extends NodeValidationProblem {
   private SConcept myConcept;
 
   public ConceptMissingError(SNode node, SConcept concept) {
-    // in other place it used to be "No concept found for"
+    // in other place it used to be "No concept found for", "Concept of a node was not found"
     super(node, "Missing concept " + concept.getName());
     myConcept = concept;
   }

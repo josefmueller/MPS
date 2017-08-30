@@ -15,19 +15,22 @@
  */
 package jetbrains.mps.smodel.runtime.impl;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 
-public class CheckingNodeContext implements jetbrains.mps.smodel.runtime.CheckingNodeContext {
-  private SNodeReference node;
+public class CheckingNodeContextImpl implements jetbrains.mps.smodel.runtime.CheckingNodeContext {
+  private SNodeReference myNode;
 
   @Override
-  public void setBreakingNode(@Nullable SNodeReference node) {
-    this.node = node;
+  public void setBreakingNode(@NotNull SNodeReference node) {
+    if (myNode != null) {
+      throw new IllegalStateException("double initialization");
+    }
+    myNode = node;
   }
 
-  @Override
   public SNodeReference getBreakingNode() {
-    return node;
+    return myNode;
   }
 }
