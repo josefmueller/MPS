@@ -18,11 +18,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public abstract class LanguageErrorsCollector {
 
   public void addErrorWithoutDependencies(@NotNull SNode node, String errorString, @Nullable SNodeReference ruleNode) {
-    addErrorWithoutDependencies(node, errorString, ruleNode, new NodeMessageTarget());
-  }
-
-  public void addErrorWithoutDependencies(@NotNull SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget) {
-    addErrorWithoutDependencies(errorNode, errorString, ruleNode, messageTarget, null);
+    addErrorWithoutDependencies(node, errorString, ruleNode, new NodeMessageTarget(), null);
   }
 
   private void addErrorWithoutDependencies(@NotNull SNode errorNode, String errorString, @Nullable SNodeReference ruleNode, MessageTarget messageTarget, QuickFixProvider intentionProvider) {

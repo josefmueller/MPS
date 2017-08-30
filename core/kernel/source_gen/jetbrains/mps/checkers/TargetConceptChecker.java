@@ -9,10 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.errors.item.IncompatibleTargetReportItem;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
 public class TargetConceptChecker extends AbstractNodeChecker {
   public TargetConceptChecker() {
@@ -26,7 +26,7 @@ public class TargetConceptChecker extends AbstractNodeChecker {
     })) {
       SContainmentLink link = SNodeOperations.getContainingLink(child);
       if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(link.getTargetConcept()), SNodeOperations.asSConcept(SNodeOperations.getConcept(child))))) {
-        errorsCollector.addErrorWithoutDependencies(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + link.getTargetConcept().getQualifiedName() + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
+        errorsCollector.addError(new IncompatibleTargetReportItem.IncompatibleContainmentTargetReportItem(child));
       }
     }
 
@@ -37,7 +37,7 @@ public class TargetConceptChecker extends AbstractNodeChecker {
         continue;
       }
       if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(link.getTargetConcept()), SNodeOperations.asSConcept(SNodeOperations.getConcept(target))))) {
-        errorsCollector.addErrorWithoutDependencies(node, "incompatible target concept in role \"" + ((SReference) reference).getLink().getName() + "\": subconcept of \"" + link.getTargetConcept().getQualifiedName() + "\" expected, \"" + SNodeOperations.getConcept(target) + "\" found", null, new ReferenceMessageTarget(link.getName()));
+        errorsCollector.addError(new IncompatibleTargetReportItem.IncompatibleReferenceTargetReportItem(reference, target));
       }
     }
   }
