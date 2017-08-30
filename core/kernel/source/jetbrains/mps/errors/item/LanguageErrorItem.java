@@ -32,7 +32,7 @@ import java.util.Set;
 /*
   indicates that something happens wrong in language or IDE code
  */
-public class LanguageErrorItem extends ReportItemBase {
+public class LanguageErrorItem extends ReportItemBase implements IssueKindReportItem {
 
   private final Throwable myException;
 
@@ -54,7 +54,12 @@ public class LanguageErrorItem extends ReportItemBase {
     return myException;
   }
 
-  public static class ReferenceItem extends LanguageErrorItem implements NodeReportItem, NodeFeatureReportItem {
+  @Override
+  public String getIssueKind() {
+    return "language problem";
+  }
+
+  public static class ReferenceItem extends LanguageErrorItem implements NodeReportItem, NodeFeatureReportItem, NodeIssueKindReportItem {
     private final SNodeReference myNode;
     private final SReferenceLink myReferenceLink;
     public ReferenceItem(@NotNull ErrorScope errorScope, SReference reference) {
