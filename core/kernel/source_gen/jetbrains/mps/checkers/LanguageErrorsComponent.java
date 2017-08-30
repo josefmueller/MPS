@@ -12,6 +12,7 @@ import java.util.Set;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.errors.item.NodeIssueKindReportItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -75,7 +76,7 @@ public class LanguageErrorsComponent extends LanguageErrorsCollector {
   }
 
   @Override
-  protected void addErrorInternal(NodeReportItem errorReporter) {
+  protected void addErrorInternal(NodeIssueKindReportItem errorReporter) {
     myNodesToErrors.putValue(errorReporter.getNode().resolve(myModel.getRepository()), errorReporter);
   }
 

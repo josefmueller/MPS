@@ -5,8 +5,8 @@ package jetbrains.mps.checkers;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.NodeIssueKindReportItem;
 
 public interface IRootChecker {
-  void processErrors(SNode root, SRepository repository, Processor<NodeReportItem> processor);
+  void processErrors(SNode root, SRepository repository, Processor<NodeIssueKindReportItem> processor);
 }

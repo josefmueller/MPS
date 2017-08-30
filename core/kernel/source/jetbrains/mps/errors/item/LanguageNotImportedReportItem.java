@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 import java.util.Collections;
 
-public class LanguageNotImportedReportItem extends NodeReportItemBase implements QuickFixReportItem, IssueKindReportItem {
+public class LanguageNotImportedReportItem extends NodeReportItemBase implements QuickFixReportItem, IssueKindReportItem, NodeIssueKindReportItem {
   private final QuickFix myQuickFix;
   public LanguageNotImportedReportItem(@NotNull SNode node, @NotNull QuickFix quickFix) {
     super(MessageStatus.ERROR, node.getReference(), getMessage(node));

@@ -18,9 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.errors.MessageStatus;
-import java.util.Set;
-import jetbrains.mps.errors.item.FlavouredItem;
+import jetbrains.mps.errors.item.NodeIssueKindReportItem;
 
 public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
   private final IRootChecker myChecker;
@@ -69,26 +67,9 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
 
     monitor.start(myCategory, 1);
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
-      myChecker.processErrors(rootNode, myRepository, new Processor<NodeReportItem>() {
-        public boolean process(final NodeReportItem reportItem) {
-          ListSequence.fromList(results).addElement(new IssueKindReportItem() {
-            public String getIssueKind() {
-              return myCategory;
-            }
-            @Override
-            public String getMessage() {
-              return reportItem.getMessage();
-            }
-            @Override
-            public MessageStatus getSeverity() {
-              return reportItem.getSeverity();
-            }
-            @Override
-            public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
-              // todo: decorator is not acceptable here because it breaks class hierarchy, i.e. FLAVOUR_CLASS 
-              return reportItem.getIdFlavours();
-            }
-          });
+      myChecker.processErrors(rootNode, myRepository, new Processor<NodeIssueKindReportItem>() {
+        public boolean process(final NodeIssueKindReportItem reportItem) {
+          ListSequence.fromList(results).addElement(reportItem);
           return !(monitor.isCanceled());
         }
       });

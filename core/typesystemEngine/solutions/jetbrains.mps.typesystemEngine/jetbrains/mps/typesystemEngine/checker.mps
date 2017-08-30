@@ -321,8 +321,8 @@
         <property role="TrG5h" value="processor" />
         <node concept="3uibUv" id="45Q6RD6qPDl" role="1tU5fm">
           <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
-          <node concept="3uibUv" id="2PIlT5TAF0B" role="11_B2D">
-            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+          <node concept="3uibUv" id="1PHXAu1tJqi" role="11_B2D">
+            <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
           </node>
         </node>
       </node>

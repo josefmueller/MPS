@@ -17,7 +17,7 @@ import jetbrains.mps.util.Pair;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.NodeIssueKindReportItem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 
@@ -37,7 +37,7 @@ public class TypesystemChecker implements IRootChecker {
     return errors;
   }
   @Override
-  public void processErrors(SNode root, SRepository repository, final Processor<NodeReportItem> processor) {
+  public void processErrors(SNode root, SRepository repository, final Processor<NodeIssueKindReportItem> processor) {
     SetSequence.fromSet(getErrors(root, repository)).visitAll(new IVisitor<IErrorReporter>() {
       public void visit(IErrorReporter it) {
         processor.process(new TypesystemReportItemAdapter(it));

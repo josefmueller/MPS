@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 import java.util.Collections;
 
-public abstract class ConstraintsReportItem extends NodeReportItemBase implements RuleIdFlavouredItem {
+public abstract class ConstraintsReportItem extends NodeReportItemBase implements RuleIdFlavouredItem, IssueKindReportItem, NodeIssueKindReportItem {
   private final TypesystemRuleId myRuleNode;
   public ConstraintsReportItem(@NotNull SNode node, String message) {
     this(node, message, null);
@@ -40,6 +40,11 @@ public abstract class ConstraintsReportItem extends NodeReportItemBase implement
     } else {
       return Collections.emptyList();
     }
+  }
+
+  @Override
+  public String getIssueKind() {
+    return IssueKindReportItem.CONSTRAINTS;
   }
 
   public static class PropertyConstraintReportItem extends ConstraintsReportItem implements NodeFeatureReportItem {

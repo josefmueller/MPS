@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
-public class IncompatibleTargetReportItem extends NodeReportItemBase implements IssueKindReportItem {
+public class IncompatibleTargetReportItem extends NodeReportItemBase implements IssueKindReportItem, NodeIssueKindReportItem {
   public IncompatibleTargetReportItem(SNodeReference node, String message) {
     super(MessageStatus.ERROR, node, message);
   }

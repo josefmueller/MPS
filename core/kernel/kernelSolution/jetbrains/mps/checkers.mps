@@ -597,8 +597,8 @@
       <node concept="37vLTG" id="1PHXAu1q5xB" role="3clF46">
         <property role="TrG5h" value="reportItem" />
         <node concept="1ajhzC" id="1PHXAu1q5Mb" role="1tU5fm">
-          <node concept="3uibUv" id="1PHXAu1qaQt" role="1ajl9A">
-            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+          <node concept="3uibUv" id="1PHXAu1voDZ" role="1ajl9A">
+            <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
           </node>
           <node concept="3uibUv" id="1PHXAu1qcvI" role="1ajw0F">
             <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
@@ -1800,8 +1800,8 @@
       </node>
       <node concept="37vLTG" id="45Q6RD6p_10" role="3clF46">
         <property role="TrG5h" value="errorReporter" />
-        <node concept="3uibUv" id="TwHClC_l2j" role="1tU5fm">
-          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+        <node concept="3uibUv" id="1PHXAu1uW_F" role="1tU5fm">
+          <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
         </node>
       </node>
       <node concept="2AHcQZ" id="45Q6RD6qdr6" role="2AJF6D">
@@ -5732,8 +5732,8 @@
       </node>
       <node concept="37vLTG" id="5S0STpDMb23" role="3clF46">
         <property role="TrG5h" value="reportItem" />
-        <node concept="3uibUv" id="5S0STpDMb24" role="1tU5fm">
-          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+        <node concept="3uibUv" id="1PHXAu1tF80" role="1tU5fm">
+          <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
         </node>
       </node>
     </node>
@@ -5746,8 +5746,8 @@
       <node concept="3clFbS" id="45Q6RD6pR2d" role="3clF47" />
       <node concept="37vLTG" id="45Q6RD6pR2m" role="3clF46">
         <property role="TrG5h" value="reportItem" />
-        <node concept="3uibUv" id="TwHClC_5_k" role="1tU5fm">
-          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+        <node concept="3uibUv" id="1PHXAu1tF9$" role="1tU5fm">
+          <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
         </node>
       </node>
     </node>
@@ -5885,8 +5885,8 @@
         <property role="TrG5h" value="processor" />
         <node concept="3uibUv" id="45Q6RD6mTM8" role="1tU5fm">
           <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
-          <node concept="3uibUv" id="2PIlT5TAp8e" role="11_B2D">
-            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+          <node concept="3uibUv" id="1PHXAu1tDPt" role="11_B2D">
+            <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
           </node>
         </node>
       </node>
@@ -6224,8 +6224,8 @@
         <property role="3TUv4t" value="true" />
         <node concept="3uibUv" id="45Q6RD6mVwb" role="1tU5fm">
           <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
-          <node concept="3uibUv" id="2PIlT5TAuMU" role="11_B2D">
-            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+          <node concept="3uibUv" id="1PHXAu1tEXN" role="11_B2D">
+            <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
           </node>
         </node>
       </node>
@@ -6314,8 +6314,8 @@
                     <node concept="3Tm1VV" id="45Q6RD6qnnJ" role="1B3o_S" />
                     <node concept="37vLTG" id="45Q6RD6qnnL" role="3clF46">
                       <property role="TrG5h" value="reportItem" />
-                      <node concept="3uibUv" id="TwHClCCEzA" role="1tU5fm">
-                        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
+                      <node concept="3uibUv" id="1PHXAu1tGnv" role="1tU5fm">
+                        <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="45Q6RD6qnnN" role="3clF47">
