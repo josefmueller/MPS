@@ -20,10 +20,9 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.IndexNotReadyException;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.FlavouredItem.ReportItemFlavour;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.item.QuickFix;
-import jetbrains.mps.errors.item.QuickFixBase;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -114,7 +113,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
         TypesystemReportItemAdapter reportItem = new TypesystemReportItemAdapter(errorReporter);
         HighlighterMessage message = HighlightUtil.createHighlighterMessage(reportItem, AbstractTypesystemEditorChecker.this, editorContext.getRepository());
 
-        QuickFix quickfix = TypesystemReportItemAdapter.FLAVOUR_QUICKFIX_TYPESYSTEM.getAutoApplicable(message.getReportItem());
+        EditorQuickFix quickfix = TypesystemReportItemAdapter.FLAVOUR_EDITOR_QUICKFIX.getAutoApplicable(message.getReportItem());
         final SNode quickFixNode = errorNode.o1;
         if (quickfix != null && applyQuickFixes && !instantIntentionApplied && !AbstractTypesystemEditorChecker.IMMEDIATE_QFIX_DISABLED) {
           instantIntentionApplied = applyInstantIntention(editorContext, quickFixNode, quickfix);
@@ -131,7 +130,7 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
   }
 
   private boolean applyInstantIntention(final EditorContext editorContext, final SNode quickFixNode,
-      @NotNull final QuickFix intention) {
+      @NotNull final EditorQuickFix intention) {
     Set<ReportItemFlavour<?, ?>> flavourSet = new HashSet<>(intention.getIdFlavours());
     flavourSet.remove(NodeReportItem.FLAVOUR_NODE);
     if (!myOnceExecutedQuickFixes.contains(flavourSet)) {

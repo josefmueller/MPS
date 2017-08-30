@@ -4,7 +4,7 @@ package typesystemIntegration.languageChecker;
 
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.EditorQuickFix;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -20,7 +20,7 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
     myEditorComponent = editorContext;
   }
   @Override
-  protected QuickFix createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
+  protected EditorQuickFix createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
     return new RefScopeCheckerInEditor.ResolveReferenceEditorBasedQuickFix(reference, repository, executeImmediately, myEditorComponent);
   }
 

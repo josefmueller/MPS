@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.errors.item.LanguageNotImportedReportItem;
-import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.NodeFlavouredItem;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SModelInternal;
@@ -64,7 +64,7 @@ public class UsedLanguagesChecker extends AbstractNodeChecker {
     }
   }
 
-  private static class LangImportQFixProvider implements QuickFix, NodeFlavouredItem {
+  private static class LangImportQFixProvider implements EditorQuickFix, NodeFlavouredItem {
     private SNodeReference myNode;
     public LangImportQFixProvider(SNodeReference node) {
       myNode = node;

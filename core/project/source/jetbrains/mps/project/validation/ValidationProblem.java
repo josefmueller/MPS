@@ -16,7 +16,7 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.QuickFixReportItem;
 import jetbrains.mps.errors.item.ReportItem;
 import org.jetbrains.annotations.NotNull;
@@ -61,14 +61,14 @@ public class ValidationProblem implements ReportItem, QuickFixReportItem {
   }
 
   // this quickfix is intended to be used only in Model Checker, not in editor
-  private final QuickFix myQuickFixProvider = new QuickFix() {
+  private final EditorQuickFix myQuickFixProvider = new EditorQuickFix() {
     @Override
     public void execute(SRepository repository) {
       fix();
     }
     @Override
     public String getDescription(SRepository repository) {
-      return "QuickFix for '" + getMessage() + "'";
+      return "EditorQuickFix for '" + getMessage() + "'";
     }
     @Override
     public boolean isExecutedImmediately() {
@@ -87,7 +87,7 @@ public class ValidationProblem implements ReportItem, QuickFixReportItem {
   };
 
   @Override
-  public Collection<QuickFix> getQuickFix() {
+  public Collection<EditorQuickFix> getQuickFix() {
     return canFix() ? Collections.singleton(myQuickFixProvider) : Collections.emptyList();
   }
 

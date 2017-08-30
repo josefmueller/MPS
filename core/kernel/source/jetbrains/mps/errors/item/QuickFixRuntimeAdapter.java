@@ -32,7 +32,7 @@ import java.util.Set;
 
 import static jetbrains.mps.errors.item.ReportItemBase.FLAVOUR_CLASS;
 
-public class QuickFixRuntimeAdapter implements QuickFix, NodeFlavouredItem, RuleIdFlavouredItem {
+public class QuickFixRuntimeAdapter implements EditorQuickFix, NodeFlavouredItem, RuleIdFlavouredItem {
   private final LanguageRegistry myLanguageRegistry;
   private final QuickFixProvider myQuickFixProvider;
   private final SNodeReference myNode;

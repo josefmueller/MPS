@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.RuleIdFlavouredItem.TypesystemRuleId;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -32,10 +32,10 @@ import java.util.Collections;
 import static jetbrains.mps.errors.item.RuleIdFlavouredItem.FLAVOUR_RULE_ID;
 
 public class QuickFixAdapter extends OldBaseIntentionFactory {
-  private QuickFix myQuickFix;
+  private EditorQuickFix myQuickFix;
   private boolean myIsError;
 
-  public QuickFixAdapter(@NotNull QuickFix quickFix, boolean isError) {
+  public QuickFixAdapter(@NotNull EditorQuickFix quickFix, boolean isError) {
     myQuickFix = quickFix;
     myIsError = isError;
   }

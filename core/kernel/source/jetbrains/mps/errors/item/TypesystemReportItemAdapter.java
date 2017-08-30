@@ -17,6 +17,7 @@ package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.item.QuickFixReportItem.EditorQuickfixReportItem;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +32,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdFlavouredItem, QuickFixReportItem, IssueKindReportItem, NodeIssueKindReportItem {
+public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdFlavouredItem, EditorQuickfixReportItem, IssueKindReportItem, NodeIssueKindReportItem {
 
   private final IErrorReporter myErrorReporter;
   private final LanguageRegistry myLanguageRegistry;
@@ -78,8 +79,8 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   }
 
   @Override
-  public Collection<QuickFix> getQuickFix() {
-    List<QuickFix> list = new ArrayList<>();
+  public Collection<EditorQuickFix> getQuickFix() {
+    List<EditorQuickFix> list = new ArrayList<>();
     for (QuickFixProvider quickFixProvider : getErrorReporter().getIntentionProviders()) {
       QuickFixRuntimeAdapter quickFixAdapter = new QuickFixRuntimeAdapter(myLanguageRegistry, getErrorReporter().getSNode(), quickFixProvider);
       list.add(quickFixAdapter);

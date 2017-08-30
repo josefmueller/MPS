@@ -20,7 +20,6 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.item.NodeFeatureReportItem;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.item.QuickFix;
 import jetbrains.mps.errors.item.QuickFixBase;
 import jetbrains.mps.errors.item.QuickFixRuntimeAdapter;
 import jetbrains.mps.errors.item.ReportItem;

@@ -3180,8 +3180,8 @@
         <node concept="10P_77" id="2uxkWp9VQCB" role="1tU5fm" />
       </node>
       <node concept="3Tmbuc" id="2uxkWp9VQCJ" role="1B3o_S" />
-      <node concept="3uibUv" id="u6B29mHGj8" role="3clF45">
-        <ref role="3uigEE" to="d6hs:~QuickFix" resolve="QuickFix" />
+      <node concept="3uibUv" id="291qqANeNev" role="3clF45">
+        <ref role="3uigEE" to="d6hs:~EditorQuickFix" resolve="EditorQuickFix" />
       </node>
       <node concept="3clFbS" id="2uxkWp9VQCL" role="3clF47">
         <node concept="3cpWs6" id="2uxkWp9Xu1n" role="3cqZAp">

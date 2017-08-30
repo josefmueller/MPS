@@ -52,12 +52,12 @@ public interface QuickFixReportItem extends ReportItem {
 
   Logger LOG = Logger.getLogger(QuickFixReportItem.class);
 
-  QuickFixFlavour<QuickFix, TypesystemQuickfixReportItem> FLAVOUR_QUICKFIX_TYPESYSTEM =
-      new QuickFixFlavour<QuickFix, TypesystemQuickfixReportItem>(TypesystemQuickfixReportItem.class, quickFixReportItem -> new ArrayList<QuickFix>(quickFixReportItem.getQuickFix())) {
+  QuickFixFlavour<EditorQuickFix, EditorQuickfixReportItem> FLAVOUR_EDITOR_QUICKFIX =
+      new QuickFixFlavour<EditorQuickFix, EditorQuickfixReportItem>(EditorQuickfixReportItem.class, quickFixReportItem -> new ArrayList<EditorQuickFix>(quickFixReportItem.getQuickFix())) {
         @NotNull
         @Override
-        public Collection<QuickFix> getCollection(ReportItem reportItem) {
-          Collection<QuickFix> result = super.getCollection(reportItem);
+        public Collection<EditorQuickFix> getCollection(ReportItem reportItem) {
+          Collection<EditorQuickFix> result = super.getCollection(reportItem);
           Collection<QuickFixBase> baseQuickfixes = FLAVOUR_QUICKFIX.getCollection(reportItem);
           if (!result.containsAll(baseQuickfixes)) {
             LOG.error("skipping base quickfixes, reportItem = " + reportItem);
@@ -66,8 +66,8 @@ public interface QuickFixReportItem extends ReportItem {
         }
       };
 
-  interface TypesystemQuickfixReportItem extends QuickFixReportItem {
-    Collection<QuickFix> getQuickFix();
+  interface EditorQuickfixReportItem extends QuickFixReportItem {
+    Collection<EditorQuickFix> getQuickFix();
   }
 
 }

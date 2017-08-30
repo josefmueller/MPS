@@ -16,15 +16,16 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.QuickFixReportItem.EditorQuickfixReportItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
 import java.util.Collections;
 
-public class LanguageNotImportedReportItem extends NodeReportItemBase implements QuickFixReportItem, IssueKindReportItem, NodeIssueKindReportItem {
-  private final QuickFix myQuickFix;
-  public LanguageNotImportedReportItem(@NotNull SNode node, @NotNull QuickFix quickFix) {
+public class LanguageNotImportedReportItem extends NodeReportItemBase implements EditorQuickfixReportItem, IssueKindReportItem, NodeIssueKindReportItem {
+  private final EditorQuickFix myQuickFix;
+  public LanguageNotImportedReportItem(@NotNull SNode node, @NotNull EditorQuickFix quickFix) {
     super(MessageStatus.ERROR, node.getReference(), getMessage(node));
     myQuickFix = quickFix;
   }
@@ -34,7 +35,7 @@ public class LanguageNotImportedReportItem extends NodeReportItemBase implements
   }
 
   @Override
-  public Collection<QuickFix> getQuickFix() {
+  public Collection<EditorQuickFix> getQuickFix() {
     return Collections.singleton(myQuickFix);
   }
 

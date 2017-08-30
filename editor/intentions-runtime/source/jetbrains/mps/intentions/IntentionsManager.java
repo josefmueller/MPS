@@ -21,9 +21,7 @@ import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.item.QuickFix;
-import jetbrains.mps.errors.item.QuickFixBase;
+import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
@@ -33,8 +31,6 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.RefactoringScript;
 import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -74,7 +70,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 
 @State(
@@ -192,8 +187,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
     }
     for (ReportItem message : messages) {
-      Collection<QuickFix> intentionProviders = TypesystemReportItemAdapter.FLAVOUR_QUICKFIX_TYPESYSTEM.getCollection(message);
-      for (QuickFix intentionProvider : intentionProviders) {
+      Collection<EditorQuickFix> intentionProviders = TypesystemReportItemAdapter.FLAVOUR_EDITOR_QUICKFIX.getCollection(message);
+      for (EditorQuickFix intentionProvider : intentionProviders) {
         QuickFixAdapter intention = new QuickFixAdapter(intentionProvider, message.getSeverity().equals(MessageStatus.ERROR));
         if ((isAncestor && !intention.isAvailableInChildNodes()) || !intention.isApplicable(node, context)) {
           continue;

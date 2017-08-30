@@ -430,7 +430,7 @@
       <node id="1945570412226687458" at="60,80,61,39" concept="10" />
       <node id="1945570412226687475" at="62,36,63,65" concept="4" />
       <node id="2296547707283145184" at="64,9,65,152" concept="4" />
-      <node id="2855655749838462795" at="69,127,70,87" concept="11" />
+      <node id="2855655749838462795" at="69,133,70,87" concept="11" />
       <node id="1802459475176587808" at="73,0,74,0" concept="5" trace="myReference" />
       <node id="6576736982480097023" at="74,0,75,0" concept="5" trace="myExecuteImmediately" />
       <node id="1802459475176587812" at="75,87,76,30" concept="4" />
@@ -448,7 +448,7 @@
       <node id="5063246286659854164" at="44,56,47,7" concept="8" />
       <node id="5141531433272380356" at="51,69,54,7" concept="7" />
       <node id="1945570412226687446" at="61,39,64,9" concept="8" />
-      <node id="2855655749838441367" at="69,0,72,0" concept="9" trace="createResolveReferenceQuickfix#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/module/SRepository;Z)Ljetbrains/mps/errors/item/QuickFix;" />
+      <node id="2855655749838441367" at="69,0,72,0" concept="9" trace="createResolveReferenceQuickfix#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/module/SRepository;Z)Ljetbrains/mps/errors/item/EditorQuickFix;" />
       <node id="1802459475176587691" at="75,0,79,0" concept="2" trace="ResolveReferenceQuickFix#(Lorg/jetbrains/mps/openapi/model/SReference;Z)V" />
       <node id="1802459475176587766" at="79,0,83,0" concept="9" trace="execute#(Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <node id="6949254790490523232" at="83,0,87,0" concept="9" trace="getDescription#(Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/lang/String;" />
@@ -467,7 +467,7 @@
       <scope id="5141531433272380357" at="52,57,53,41" />
       <scope id="7390982340086718411" at="57,43,58,98" />
       <scope id="1945570412226687447" at="62,36,63,65" />
-      <scope id="2855655749838441370" at="69,127,70,87" />
+      <scope id="2855655749838441370" at="69,133,70,87" />
       <scope id="1802459475176587771" at="80,49,81,71" />
       <scope id="6949254790490523235" at="84,58,85,77" />
       <scope id="1802459475176587705" at="88,44,89,34" />

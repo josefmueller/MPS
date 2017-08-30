@@ -17,7 +17,7 @@ import jetbrains.mps.errors.item.LanguageErrorItem;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.item.OutOfScopeReferenceReportItem;
-import jetbrains.mps.errors.item.QuickFix;
+import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.NodeFeatureFlavouredItem;
 import jetbrains.mps.resolve.ResolverComponent;
 import java.util.Set;
@@ -66,10 +66,10 @@ public class RefScopeChecker extends AbstractNodeChecker {
       }
     }
   }
-  protected QuickFix createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
+  protected EditorQuickFix createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {
     return new RefScopeChecker.ResolveReferenceQuickFix(reference, executeImmediately);
   }
-  protected static class ResolveReferenceQuickFix implements QuickFix, NodeFeatureFlavouredItem {
+  protected static class ResolveReferenceQuickFix implements EditorQuickFix, NodeFeatureFlavouredItem {
     protected SReference myReference;
     private boolean myExecuteImmediately;
     public ResolveReferenceQuickFix(SReference reference, boolean executeImmediately) {
