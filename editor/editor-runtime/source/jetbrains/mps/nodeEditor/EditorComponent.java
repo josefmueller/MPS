@@ -1074,17 +1074,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return it.hasPrevious() ? it.previous() : null;
   }
 
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public IErrorReporter getErrorReporterFor(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    HighlighterMessage message = getHighlighterMessageFor(cell);
-    if (message == null) {
-      return null;
-    }
-    return message.getErrorReporter();
-  }
-
   /*
     sorted by severity, from lower to high
    */

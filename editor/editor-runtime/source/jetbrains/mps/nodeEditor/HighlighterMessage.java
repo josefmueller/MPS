@@ -17,11 +17,8 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.item.NodeFeatureReportItem;
 import jetbrains.mps.errors.item.NodeReportItem;
-import jetbrains.mps.errors.item.QuickFixBase;
-import jetbrains.mps.errors.item.QuickFixRuntimeAdapter;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.errors.item.TypesystemReportItemAdapter;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
@@ -65,19 +62,6 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     return Color.BLACK;
   }
 
-  @Override
-  public List<QuickFixProvider> getIntentionProviders() {
-    // FIXME This seems to be compatibility code (see deprecated methods in EditorMessage), drop once 2017.2 is out
-    List<QuickFixProvider> list = new ArrayList<>();
-    for (QuickFixBase quickFix : TypesystemReportItemAdapter.FLAVOUR_QUICKFIX.getCollection(myReportItem)) {
-      if (quickFix instanceof QuickFixRuntimeAdapter) {
-        QuickFixProvider quickFixProvider = ((QuickFixRuntimeAdapter) quickFix).getQuickFixProvider();
-        list.add(quickFixProvider);
-      }
-    }
-    return list;
-  }
-
   public HighlighterMessage(EditorMessageOwner owner, NodeReportItem reportItem, SNode node) {
     super(node, reportItem.getSeverity(), NodeFeatureReportItem.MESSAGE_TARGET_FEATURE.get(reportItem), getMessageColor(reportItem.getSeverity()), reportItem.getMessage(), owner);
     if (!node.getReference().equals(reportItem.getNode())) {
@@ -86,13 +70,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
     myReportItem = reportItem;
   }
 
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public IErrorReporter getErrorReporter() {
-    return TypesystemReportItemAdapter.FLAVOUR_ERROR_REPORTER.tryToGet(getReportItem());
-  }
-
-  public ReportItem getReportItem() {
+  public NodeReportItem getReportItem() {
     return myReportItem;
   }
 

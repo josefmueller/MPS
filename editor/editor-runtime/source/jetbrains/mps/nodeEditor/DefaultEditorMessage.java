@@ -16,22 +16,16 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.item.ReportItemBase;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -207,23 +201,6 @@ public class DefaultEditorMessage implements EditorMessage {
   @Override
   public boolean isBackground() {
     return false;
-  }
-
-  @Override
-  public final QuickFixProvider getIntentionProvider() {
-    List<QuickFixProvider> intentionProviders = getIntentionProviders();
-    if (intentionProviders == null) {
-      return null;
-    }
-    if (intentionProviders.isEmpty()) {
-      return null;
-    }
-    return intentionProviders.get(0);
-  }
-
-  @Override
-  public List<QuickFixProvider> getIntentionProviders() {
-    return Collections.emptyList();
   }
 
   @Override

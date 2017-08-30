@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
-import jetbrains.mps.util.annotation.ToRemove;
 
 import java.awt.Graphics;
-import java.util.List;
 
 public interface EditorMessage extends SimpleEditorMessage {
 
@@ -41,16 +38,8 @@ public interface EditorMessage extends SimpleEditorMessage {
 
   boolean isBackground();
 
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  QuickFixProvider getIntentionProvider();
+  void putUserObject(Object key, Object value);
 
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  List<QuickFixProvider> getIntentionProviders();
-
-  public void putUserObject(Object key, Object value);
-
-  public Object getUserObject(Object key);
+  Object getUserObject(Object key);
 
 }
