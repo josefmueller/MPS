@@ -17,6 +17,7 @@
     <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -148,19 +149,23 @@
       <property role="TrG5h" value="getPatternTestName" />
       <node concept="3Tm1VV" id="lS$o0er$H9" role="1B3o_S" />
       <node concept="3clFbS" id="lS$o0er$Hb" role="3clF47">
-        <node concept="3clFbF" id="lS$o0erHw8" role="3cqZAp">
-          <node concept="3cpWs3" id="lS$o0erHCW" role="3clFbG">
-            <node concept="Xl_RD" id="lS$o0erHCZ" role="3uHU7w">
-              <property role="Xl_RC" value="_Test" />
-            </node>
-            <node concept="3cpWs3" id="lS$o0erHwa" role="3uHU7B">
-              <node concept="Xl_RD" id="lS$o0erHw9" role="3uHU7B">
-                <property role="Xl_RC" value="Pattern" />
+        <node concept="3clFbF" id="4wqDzu9TCMA" role="3cqZAp">
+          <node concept="2YIFZM" id="4wqDzu9TDb1" role="3clFbG">
+            <ref role="37wK5l" to="18ew:~NameUtil.toValidCamelIdentifier(java.lang.String):java.lang.String" resolve="toValidCamelIdentifier" />
+            <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+            <node concept="3cpWs3" id="lS$o0erHCW" role="37wK5m">
+              <node concept="Xl_RD" id="lS$o0erHCZ" role="3uHU7w">
+                <property role="Xl_RC" value="_Test" />
               </node>
-              <node concept="2OqwBi" id="lS$o0erHwe" role="3uHU7w">
-                <node concept="13iPFW" id="lS$o0erHwd" role="2Oq$k0" />
-                <node concept="3TrcHB" id="lS$o0erHCV" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              <node concept="3cpWs3" id="lS$o0erHwa" role="3uHU7B">
+                <node concept="Xl_RD" id="lS$o0erHw9" role="3uHU7B">
+                  <property role="Xl_RC" value="Pattern" />
+                </node>
+                <node concept="2OqwBi" id="lS$o0erHwe" role="3uHU7w">
+                  <node concept="13iPFW" id="lS$o0erHwd" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="lS$o0erHCV" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  </node>
                 </node>
               </node>
             </node>

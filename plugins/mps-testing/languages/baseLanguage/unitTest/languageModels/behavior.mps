@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c895902d1(jetbrains.mps.baseLanguage.unitTest.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -14,6 +14,7 @@
     <import index="fyhk" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:jetbrains.mps(Testbench/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="rjhg" ref="49808fad-9d41-4b96-83fa-9231640f6b2b/java:org.junit(JUnit/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -52,6 +53,9 @@
       </concept>
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
+      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
+        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
@@ -841,11 +845,15 @@
       <ref role="13i0hy" node="hSQIE8p" resolve="getSimpleClassName" />
       <node concept="3Tm1VV" id="3UXMbSKfR29" role="1B3o_S" />
       <node concept="3clFbS" id="3UXMbSKfR2a" role="3clF47">
-        <node concept="3clFbF" id="3UXMbSKfRlQ" role="3cqZAp">
-          <node concept="2OqwBi" id="3UXMbSKfRlS" role="3clFbG">
-            <node concept="13iPFW" id="3UXMbSKfRlR" role="2Oq$k0" />
-            <node concept="3TrcHB" id="3UXMbSKfRlW" role="2OqNvi">
-              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+        <node concept="3clFbF" id="4wqDzu9Tn7U" role="3cqZAp">
+          <node concept="2YIFZM" id="4wqDzu9TnbM" role="3clFbG">
+            <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+            <ref role="37wK5l" to="18ew:~NameUtil.toValidCamelIdentifier(java.lang.String):java.lang.String" resolve="toValidCamelIdentifier" />
+            <node concept="2OqwBi" id="5BeGwkd6Q$i" role="37wK5m">
+              <node concept="13iPFW" id="5BeGwkd6QlR" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5BeGwkd6QNZ" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
             </node>
           </node>
         </node>
@@ -982,16 +990,20 @@
       <property role="13i0it" value="true" />
       <node concept="17QB3L" id="11XOMoMvmkY" role="3clF45" />
       <node concept="3clFbS" id="hSQIE8r" role="3clF47">
-        <node concept="3clFbF" id="hSQJJ0q" role="3cqZAp">
-          <node concept="3cpWs3" id="hSQJJ0r" role="3clFbG">
-            <node concept="2OqwBi" id="hSQJJ0s" role="3uHU7B">
-              <node concept="13iPFW" id="hSQJJ0t" role="2Oq$k0" />
-              <node concept="3TrcHB" id="hSQPI0T" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+        <node concept="3cpWs6" id="4wqDzu9T4Y0" role="3cqZAp">
+          <node concept="2YIFZM" id="4wqDzu9T5Aa" role="3cqZAk">
+            <ref role="37wK5l" to="18ew:~NameUtil.toValidCamelIdentifier(java.lang.String):java.lang.String" resolve="toValidCamelIdentifier" />
+            <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+            <node concept="3cpWs3" id="hSQJJ0r" role="37wK5m">
+              <node concept="2OqwBi" id="hSQJJ0s" role="3uHU7B">
+                <node concept="13iPFW" id="hSQJJ0t" role="2Oq$k0" />
+                <node concept="3TrcHB" id="hSQPI0T" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
               </node>
-            </node>
-            <node concept="Xl_RD" id="hSQJJ0v" role="3uHU7w">
-              <property role="Xl_RC" value="_Test" />
+              <node concept="Xl_RD" id="hSQJJ0v" role="3uHU7w">
+                <property role="Xl_RC" value="_Test" />
+              </node>
             </node>
           </node>
         </node>

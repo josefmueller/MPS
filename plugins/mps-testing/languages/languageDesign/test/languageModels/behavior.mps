@@ -43,6 +43,7 @@
     <import index="ykok" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.constraints(MPS.Core/)" />
     <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
     <import index="d6hs" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.errors.item(MPS.Core/)" />
+    <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -6764,11 +6765,15 @@
       <ref role="13i0hy" to="tpe5:hSQIE8p" resolve="getSimpleClassName" />
       <node concept="3Tm1VV" id="5BeGwkd6OPQ" role="1B3o_S" />
       <node concept="3clFbS" id="5BeGwkd6OPR" role="3clF47">
-        <node concept="3clFbF" id="5BeGwkd6QlW" role="3cqZAp">
-          <node concept="2OqwBi" id="5BeGwkd6Q$i" role="3clFbG">
-            <node concept="13iPFW" id="5BeGwkd6QlR" role="2Oq$k0" />
-            <node concept="3TrcHB" id="5BeGwkd6QNZ" role="2OqNvi">
-              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+        <node concept="3clFbF" id="4wqDzu9Tn7U" role="3cqZAp">
+          <node concept="2YIFZM" id="4wqDzu9TnbM" role="3clFbG">
+            <ref role="37wK5l" to="18ew:~NameUtil.toValidCamelIdentifier(java.lang.String):java.lang.String" resolve="toValidCamelIdentifier" />
+            <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
+            <node concept="2OqwBi" id="5BeGwkd6Q$i" role="37wK5m">
+              <node concept="13iPFW" id="5BeGwkd6QlR" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5BeGwkd6QNZ" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
             </node>
           </node>
         </node>
