@@ -12,15 +12,17 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.project.Project;
-import java.util.List;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
+import java.util.HashSet;
+import java.util.List;
 import java.util.LinkedHashSet;
 import java.util.Collections;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.common.ScriptProperties;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -61,7 +63,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     boolean doneSomething = false;
 
     Project project = createDummyProject();
-
+    final Set<SModule> allModules = new HashSet<SModule>();
     for (IMapping<List<String>, Boolean> chunk : MapSequence.fromMap(myWhatToDo.getChunks())) {
       final List<String> modulePaths = chunk.key();
       final Set<SModule> modules = new LinkedHashSet<SModule>();
@@ -72,6 +74,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
           }
         }
       });
+      allModules.addAll(modules);
       Boolean bootstrap = chunk.value();
       if (bootstrap) {
         warning("Found bootstrap chunk " + chunk.key() + ". Generation may be impossible.");
@@ -86,6 +89,16 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     if (!(doneSomething)) {
       error("Could not find anything to generate.");
     }
+
+    // Disposing "project" modules first 
+    final ModuleRepositoryFacade repositoryFacade = new ModuleRepositoryFacade(project);
+    project.getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        for (SModule nextModule : SetSequence.fromSet(allModules)) {
+          repositoryFacade.unregisterModule(nextModule);
+        }
+      }
+    });
 
     dispose();
     showStatistic();
