@@ -674,7 +674,7 @@
     <node concept="2tJIrI" id="5$zfhXztbZ1" role="jymVt" />
     <node concept="312cEu" id="7dLX2A2OcSw" role="jymVt">
       <property role="2bfB8j" value="false" />
-      <property role="1sVAO0" value="false" />
+      <property role="1sVAO0" value="true" />
       <property role="1EXbeo" value="false" />
       <property role="TrG5h" value="MigrationReportItem" />
       <node concept="312cEg" id="7dLX2A2Om4U" role="jymVt">

@@ -104,7 +104,7 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
     myUsagesTool.show(sr, "No results to show");
   }
 
-  public static class MigrationReportItem<T> implements IssueKindReportItem {
+  public static abstract class MigrationReportItem<T> implements IssueKindReportItem {
     private String myMessage;
     private T myReason;
     public MigrationReportItem(T reason, String message) {
