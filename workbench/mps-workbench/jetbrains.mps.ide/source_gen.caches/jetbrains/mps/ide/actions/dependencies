@@ -1298,16 +1298,13 @@
     <classNode dependClassName="jetbrains.mps.openapi.navigation.ProjectPaneNavigator" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.scope.ConditionalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.ModelScopeIterable" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.ModelsPresentation" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.GoToModule_Action" file="GoToModule_Action.java">
