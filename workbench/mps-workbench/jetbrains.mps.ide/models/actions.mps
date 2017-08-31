@@ -18843,6 +18843,7 @@
     <property role="2uzpH1" value="Directory" />
     <property role="3GE5qa" value="Menu.FileView.Actions" />
     <property role="1teQrl" value="true" />
+    <property role="72QZ$" value="true" />
     <node concept="tnohg" id="3maH0V41RWn" role="tncku">
       <node concept="3clFbS" id="3maH0V41RWo" role="2VODD2">
         <node concept="3cpWs8" id="3maH0V42nVE" role="3cqZAp">

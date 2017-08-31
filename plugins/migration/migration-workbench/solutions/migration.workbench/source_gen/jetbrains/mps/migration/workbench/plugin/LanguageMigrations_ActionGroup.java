@@ -63,7 +63,7 @@ public class LanguageMigrations_ActionGroup extends GeneratedActionGroup {
       DefaultActionGroup langRootsGroup = new DefaultActionGroup(NameUtil.compactNamespace(name), true);
 
       for (int ver = 0; ver < language.getLanguageVersion(); ver++) {
-        MigrationScript script = new MigrationScriptReference(language, ver).resolve(true);
+        MigrationScript script = new MigrationScriptReference(language, ver).resolve(mpsProject, true);
         if (script == null) {
           continue;
         }

@@ -75,7 +75,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
         return;
       }
       final Wrappers._T<SReference> ref = new Wrappers._T<SReference>(null);
-      ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SReference>() {
+      myProject.getRepository().getModelAccess().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SReference>() {
         public SReference invoke() {
           {
             final SearchScope scope = CommandUtil.createScope(myProject);
@@ -102,7 +102,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
   };
   private MigrationExecutor myExecutor = new MigrationExecutor() {
     public void executeModuleMigration(ScriptApplied s) {
-      s.getScriptReference().resolve(true).execute(s.getModule());
+      s.getScriptReference().resolve(myProject, true).execute(s.getModule());
       ListSequence.fromList(passedM).addElement(s);
     }
     public void executeProjectMigration(ProjectMigration pm) {
@@ -279,7 +279,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
       final TestMigrationSession.MyModuleMigration _this = this;
       return new MigrationScriptReference(myLang, 0) {
         @Override
-        public MigrationScript resolve(boolean silent) {
+        public MigrationScript resolve(Project p, boolean silent) {
           return _this;
         }
       };

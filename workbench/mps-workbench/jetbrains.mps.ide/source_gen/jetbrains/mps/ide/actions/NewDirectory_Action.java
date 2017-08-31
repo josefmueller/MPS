@@ -26,7 +26,7 @@ public class NewDirectory_Action extends BaseAction {
   public NewDirectory_Action() {
     super("Directory", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {

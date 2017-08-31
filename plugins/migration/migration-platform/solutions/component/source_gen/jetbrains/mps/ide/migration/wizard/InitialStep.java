@@ -147,7 +147,7 @@ public class InitialStep extends BaseStep {
         });
         Sequence.fromIterable(scripts).ofType(MigrationScriptReference.class).visitAll(new IVisitor<MigrationScriptReference>() {
           public void visit(MigrationScriptReference it) {
-            MigrationScript ms = it.resolve(false);
+            MigrationScript ms = it.resolve(mySession.getProject(), false);
             String caption = (ms != null ? ms.getCaption() : "Missing: <script for version " + it.getFromVersion() + ">");
             MapSequence.fromMap(l2n).get(it.getLanguage()).add(new InitialStep.MyTreeNode(caption, migrationIcon));
           }
@@ -184,7 +184,7 @@ public class InitialStep extends BaseStep {
         });
         Sequence.fromIterable(scripts).ofType(RefactoringScriptReference.class).visitAll(new IVisitor<RefactoringScriptReference>() {
           public void visit(RefactoringScriptReference it) {
-            RefactoringScript rs = it.resolve(false);
+            RefactoringScript rs = it.resolve(mySession.getProject(), false);
             String caption = (rs != null ? rs.getCaption() : "Missing: <script for version " + it.getFromVersion() + ">");
             DefaultMutableTreeNode node = new DefaultMutableTreeNode(caption);
             MapSequence.fromMap(m2n).get(it.getModule()).add(node);

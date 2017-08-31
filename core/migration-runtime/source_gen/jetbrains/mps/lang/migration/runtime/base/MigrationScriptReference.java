@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.Level;
@@ -58,7 +59,7 @@ public class MigrationScriptReference implements BaseScriptReference<MigrationSc
   }
 
   @Override
-  public MigrationScript resolve(boolean silent) {
+  public MigrationScript resolve(Project p, boolean silent) {
     int current = this.getFromVersion();
 
     MigrationAspectDescriptor md = LanguageRegistry.getInstance(MPSModuleRepository.getInstance()).getLanguage(language).getAspect(MigrationAspectDescriptor.class);

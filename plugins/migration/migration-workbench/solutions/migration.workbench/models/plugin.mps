@@ -4120,6 +4120,14 @@
                                                                 </node>
                                                                 <node concept="liA8E" id="6fMyXCHNw0s" role="2OqNvi">
                                                                   <ref role="37wK5l" to="6f4m:6fMyXCHzvji" resolve="resolve" />
+                                                                  <node concept="2OqwBi" id="7nggT465e8a" role="37wK5m">
+                                                                    <node concept="2WthIp" id="7nggT465e8d" role="2Oq$k0">
+                                                                      <ref role="32nkFo" node="5$zfhXzhLy1" resolve="ExecuteRerunnableMigrations" />
+                                                                    </node>
+                                                                    <node concept="1DTwFV" id="2fNWK0IuTDQ" role="2OqNvi">
+                                                                      <ref role="2WH_rO" node="5$zfhXzjQau" resolve="mpsProject" />
+                                                                    </node>
+                                                                  </node>
                                                                   <node concept="3clFbT" id="6fMyXCHN$BX" role="37wK5m">
                                                                     <property role="3clFbU" value="true" />
                                                                   </node>
@@ -5218,6 +5226,9 @@
                         </node>
                         <node concept="liA8E" id="6fMyXCHPdnB" role="2OqNvi">
                           <ref role="37wK5l" to="6f4m:6fMyXCHzvji" resolve="resolve" />
+                          <node concept="37vLTw" id="7nggT465hvg" role="37wK5m">
+                            <ref role="3cqZAo" node="4zPpOEulQHU" resolve="mpsProject" />
+                          </node>
                           <node concept="3clFbT" id="6fMyXCHPdqU" role="37wK5m">
                             <property role="3clFbU" value="true" />
                           </node>
@@ -5568,6 +5579,14 @@
                                                                 </node>
                                                                 <node concept="liA8E" id="5upD6B8OrX4" role="2OqNvi">
                                                                   <ref role="37wK5l" to="6f4m:6fMyXCHzvji" resolve="resolve" />
+                                                                  <node concept="2OqwBi" id="7nggT465k$M" role="37wK5m">
+                                                                    <node concept="2WthIp" id="7nggT465k$P" role="2Oq$k0">
+                                                                      <ref role="32nkFo" node="5$zfhXzhIiu" resolve="RunPreUpdateCheck" />
+                                                                    </node>
+                                                                    <node concept="1DTwFV" id="7nggT465k$R" role="2OqNvi">
+                                                                      <ref role="2WH_rO" node="5$zfhXzr51q" resolve="mpsProject" />
+                                                                    </node>
+                                                                  </node>
                                                                   <node concept="3clFbT" id="5upD6B8OrX5" role="37wK5m">
                                                                     <property role="3clFbU" value="true" />
                                                                   </node>
@@ -6684,6 +6703,14 @@
                   </node>
                 </node>
                 <node concept="1QHqEK" id="8yMGLHL2bR" role="3cqZAp">
+                  <node concept="2OqwBi" id="7nggT466Izr" role="ukAjM">
+                    <node concept="37vLTw" id="7nggT466GXh" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5pUhUVGMybv" resolve="myProject" />
+                    </node>
+                    <node concept="liA8E" id="7nggT466Kqk" role="2OqNvi">
+                      <ref role="37wK5l" to="z1c4:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                    </node>
+                  </node>
                   <node concept="1QHqEC" id="8yMGLHL2bT" role="1QHqEI">
                     <node concept="3clFbS" id="8yMGLHL2bV" role="1bW5cS">
                       <node concept="L3pyB" id="8yMGLHL2Wp" role="3cqZAp">
@@ -6850,6 +6877,9 @@
                       </node>
                       <node concept="liA8E" id="4biA4YBuFC5" role="2OqNvi">
                         <ref role="37wK5l" to="6f4m:6fMyXCHptub" resolve="resolve" />
+                        <node concept="37vLTw" id="7nggT465nSf" role="37wK5m">
+                          <ref role="3cqZAo" node="5pUhUVGMybv" resolve="myProject" />
+                        </node>
                         <node concept="3clFbT" id="4biA4YBuFC6" role="37wK5m">
                           <property role="3clFbU" value="true" />
                         </node>
@@ -8246,6 +8276,12 @@
                     <property role="1EzhhJ" value="false" />
                     <property role="2aFKle" value="false" />
                     <property role="TrG5h" value="resolve" />
+                    <node concept="37vLTG" id="7nggT4643T4" role="3clF46">
+                      <property role="TrG5h" value="p" />
+                      <node concept="3uibUv" id="7nggT464sVV" role="1tU5fm">
+                        <ref role="3uigEE" to="z1c4:~Project" resolve="Project" />
+                      </node>
+                    </node>
                     <node concept="37vLTG" id="4MctmYOc4v9" role="3clF46">
                       <property role="TrG5h" value="silent" />
                       <node concept="10P_77" id="4MctmYOc4va" role="1tU5fm" />
