@@ -46,11 +46,6 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
   }
 
   @Override
-  public void setIntentionProvider(QuickFixProvider intentionProvider) {
-    addIntentionProvider(intentionProvider);
-  }
-
-  @Override
   public void addIntentionProvider(QuickFixProvider intentionProvider) {
     if (intentionProvider == null) return;
     if (myIntentionProviders == null) {

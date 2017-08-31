@@ -52,8 +52,6 @@ public interface IErrorReporter {
 
   public void addIntentionProvider(QuickFixProvider intentionProvider);
 
-  public void setIntentionProvider(QuickFixProvider intentionProvider);
-
   public MessageTarget getErrorTarget();
 
   /**

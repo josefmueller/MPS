@@ -18,7 +18,6 @@ package jetbrains.mps.newTypesystem.operation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;

@@ -65,11 +65,6 @@ public class NullErrorReporter implements IErrorReporter {
   }
 
   @Override
-  public void setIntentionProvider(QuickFixProvider intentionProvider) {
-
-  }
-
-  @Override
   public MessageTarget getErrorTarget() {
     return null;
   }

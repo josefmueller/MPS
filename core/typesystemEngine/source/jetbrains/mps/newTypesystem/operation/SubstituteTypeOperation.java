@@ -17,8 +17,6 @@ package jetbrains.mps.newTypesystem.operation;
 
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.typesystem.inference.TypeSubstitution;
-import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @author fyodor on 15.05.2015.

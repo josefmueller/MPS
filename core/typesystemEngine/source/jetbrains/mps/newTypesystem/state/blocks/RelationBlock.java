@@ -34,7 +34,7 @@ public abstract class RelationBlock extends Block {
 
   public RelationBlock(State state, SNode left, SNode right,
                        RelationKind kind, EquationInfo equationInfo) {
-    super(state, equationInfo.getRuleModel(), equationInfo.getRuleId());
+    super(state, equationInfo.getRuleNode());
     myRelationKind = kind;
     myLeftNode = left;
     myRightNode = right;

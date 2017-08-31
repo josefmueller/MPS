@@ -202,7 +202,7 @@ public class NodeMaps {
     if (info != null && info.getErrorString() != null) {
       errorReporter = new SimpleErrorReporter(info.getNodeWithError(), info.getErrorString(), info.getRuleNode());
       for (QuickFixProvider quickFixProvider : info.getIntentionProviders()) {
-        errorReporter.setIntentionProvider(quickFixProvider);
+        errorReporter.addIntentionProvider(quickFixProvider);
       }
     } else {
       errorReporter = new EquationErrorReporterNew(info == null ? null : info.getNodeWithError(),
@@ -225,7 +225,7 @@ public class NodeMaps {
       errorReporter = new SimpleErrorReporter(nodeWithError, errorString, equationInfo.getRuleNode());
     }
     for (QuickFixProvider quickFixProvider : equationInfo.getIntentionProviders()) {
-      errorReporter.setIntentionProvider(quickFixProvider);
+      errorReporter.addIntentionProvider(quickFixProvider);
     }
     setAdditionalRulesIds(equationInfo, errorReporter);
     myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);

@@ -16,17 +16,11 @@
 package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.QuickFixProvider;
-import jetbrains.mps.errors.SimpleErrorReporter;
-import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.newTypesystem.context.typechecking.TargetTypechecking;
 import jetbrains.mps.newTypesystem.context.typechecking.TracingTypechecking;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.state.TargetState;
-import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * User: fyodor

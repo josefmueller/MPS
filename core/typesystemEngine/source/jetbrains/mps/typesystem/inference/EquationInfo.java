@@ -17,7 +17,6 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -52,11 +51,6 @@ public class EquationInfo {
     addIntentionProvider(intentionProvider);
   }
 
-  @Deprecated
-  public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority) {
-    this(nodeWithError, errorString, ruleModel, ruleId, inequationPriority, null);
-  }
-
   public EquationInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
@@ -87,28 +81,6 @@ public class EquationInfo {
   @Nullable
   public SNodeReference getRuleNode() {
     return myRule;
-  }
-
-  /**
-   * @deprecated use {@link #getRuleNode()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public String getRuleModel() {
-    return myRule == null ? null : myRule.getModelReference().toString();
-  }
-
-  /**
-   * @deprecated use {@link #getRuleNode()} instead
-   */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public String getRuleId() {
-    return myRule == null ? null : myRule.getNodeId().toString();
-  }
-
-  public void setIntentionProvider(QuickFixProvider intentionProvider) {
-    addIntentionProvider(intentionProvider);
   }
 
   public void addIntentionProvider(QuickFixProvider intentionProvider) {

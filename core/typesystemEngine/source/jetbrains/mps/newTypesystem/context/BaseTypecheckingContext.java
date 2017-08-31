@@ -15,20 +15,19 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
-import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.errors.NullErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.operation.TraceMessageOperation;
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.MultipleWhenConcreteBlock;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
@@ -36,7 +35,7 @@ import java.util.List;
  * User: fyodor
  * Date: 11/7/12
  */
-public abstract class BaseTypecheckingContext<STATE extends State> extends TypeCheckingContext {
+public abstract class BaseTypecheckingContext extends TypeCheckingContext {
 
   protected final Object TYPECHECKING_LOCK = new Object();
 

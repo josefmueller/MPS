@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
-import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
-import jetbrains.mps.newTypesystem.context.typechecking.TargetTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Cancellable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 
 /**
  * User: fyodor

@@ -165,7 +165,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   @Override
   public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
-    reporter.setIntentionProvider(intentionProvider);
+    reporter.addIntentionProvider(intentionProvider);
     if (nodeWithError == null) {
       LOG.warn("Node used to report an error is null. Reported from model "+ruleModel+" by rule "+ruleId + ".", new Throwable());
       return reporter;
@@ -181,7 +181,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   @Override
   public IErrorReporter reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, errorTarget);
-    reporter.setIntentionProvider(intentionProvider);
+    reporter.addIntentionProvider(intentionProvider);
     if (nodeWithError.getModel() == null) {
       LOG.error("Node to report error for must be in a model. Node=" + SNodeOperations.getDebugText(nodeWithError), new Throwable());
       return reporter;
@@ -193,7 +193,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   @Override
   public IErrorReporter reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, errorTarget);
-    reporter.setIntentionProvider(intentionProvider);
+    reporter.addIntentionProvider(intentionProvider);
     if (nodeWithInfo.getModel() == null) {
       LOG.error("Node to report error for must be in a model. Node=" + SNodeOperations.getDebugText(nodeWithInfo), new Throwable());
       return reporter;
