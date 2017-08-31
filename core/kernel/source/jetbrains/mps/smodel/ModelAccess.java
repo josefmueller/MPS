@@ -198,18 +198,12 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor, org.je
     myRepositoryStateCaches.clear();
   }
 
-  /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#addWriteActionListener}
-   */
-  @Deprecated
+  @Override
   public void addWriteActionListener(@NotNull WriteActionListener listener) {
     myWriteActionDispatcher.addWriteActionListener(listener);
   }
 
-  /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#removeWriteActionListener}
-   */
-  @Deprecated
+  @Override
   public void removeWriteActionListener(@NotNull WriteActionListener listener) {
     myWriteActionDispatcher.removeWriteActionListener(listener);
   }

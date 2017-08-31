@@ -168,9 +168,12 @@ class DefaultModelAccess extends ModelAccess {
     return canWrite();
   }
 
+  /**
+   * one might not expect that the command is equal to write action here
+   * warning : adding command listener to DefaultModelAccess: a command is the same as a write action
+   */
   @Override
   public void addCommandListener(@NotNull CommandListener listener) {
-    LOG.warn("Adding command listener to DefaultModelAccess: a command is the same as a write action");
     CommandWriteActionAdapter adapter = new CommandWriteActionAdapter(listener);
     myAdaptersMap.put(listener, adapter);
     addWriteActionListener(adapter);
