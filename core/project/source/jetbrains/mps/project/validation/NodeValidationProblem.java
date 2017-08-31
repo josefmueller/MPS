@@ -35,11 +35,6 @@ public class NodeValidationProblem extends ValidationProblem implements NodeRepo
   }
 
   @Override
-  public final boolean canFix() {
-    return false;
-  }
-
-  @Override
   public String getIssueKind() {
     return IssueKindReportItem.STRUCTURE;
   }

@@ -16,44 +16,18 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.item.EditorQuickFix;
 import jetbrains.mps.errors.item.IssueKindReportItem;
-import jetbrains.mps.errors.item.QuickFixReportItem;
-import jetbrains.mps.errors.item.ReportItem;
+import jetbrains.mps.errors.item.ReportItemBase;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import static jetbrains.mps.errors.item.ReportItemBase.FLAVOUR_CLASS;
-import static jetbrains.mps.errors.item.ReportItemBase.FLAVOUR_THIS;
+public abstract class ValidationProblem extends ReportItemBase implements IssueKindReportItem {
 
-public abstract class ValidationProblem implements ReportItem, QuickFixReportItem, IssueKindReportItem {
-  private @Nullable String myMessage;
-  private MessageStatus mySeverity;
-
-  // calling this constructor be sure to override getMessage()
-  public ValidationProblem(MessageStatus severity) {
-    mySeverity = severity;
-    myMessage = null;
-  }
-
-  // this constructor is called in classes that do not override getMessage()
   public ValidationProblem(MessageStatus severity, @NotNull String message) {
-    mySeverity = severity;
-    myMessage = message;
-  }
-
-  public boolean canFix(){
-    return false;
-  }
-
-  public void fix(){
+    super(severity, message);
   }
 
   @Override
@@ -61,46 +35,5 @@ public abstract class ValidationProblem implements ReportItem, QuickFixReportIte
     return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_THIS));
   }
 
-  // this quickfix is intended to be used only in Model Checker, not in editor
-  private final EditorQuickFix myQuickFixProvider = new EditorQuickFix() {
-    @Override
-    public void execute(SRepository repository) {
-      fix();
-    }
-    @Override
-    public String getDescription(SRepository repository) {
-      return "EditorQuickFix for '" + getMessage() + "'";
-    }
-    @Override
-    public boolean isExecutedImmediately() {
-      // model Checker ignores quickfixes that cannot be applied immediately
-      return true;
-    }
-    @Override
-    public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
-      return ValidationProblem.this.getIdFlavours();
-    }
-
-    @Override
-    public boolean isAlive(SRepository repository) {
-      return true;
-    }
-  };
-
-  @Override
-  public Collection<EditorQuickFix> getQuickFix() {
-    return canFix() ? Collections.singleton(myQuickFixProvider) : Collections.emptyList();
-  }
-
-  @SuppressWarnings({"ConstantConditions", "NullableProblems"})
-  @NotNull
-  public String getMessage() {
-    return myMessage;
-  }
-
-  @Override
-  public MessageStatus getSeverity() {
-    return mySeverity;
-  }
 
 }
