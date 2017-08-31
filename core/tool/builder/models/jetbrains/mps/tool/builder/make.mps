@@ -1048,11 +1048,6 @@
   </node>
   <node concept="312cEu" id="10Uj_treOiV">
     <property role="TrG5h" value="ReducedMakeFacetConfiguration" />
-    <node concept="312cEg" id="4P_LPkqMCkd" role="jymVt">
-      <property role="TrG5h" value="rebuild" />
-      <node concept="3Tm6S6" id="4P_LPkqMCke" role="1B3o_S" />
-      <node concept="10P_77" id="4P_LPkqMCkg" role="1tU5fm" />
-    </node>
     <node concept="312cEg" id="10Uj_treWxJ" role="jymVt">
       <property role="TrG5h" value="outputPathRedirects" />
       <node concept="3uibUv" id="10Uj_trkzLO" role="1tU5fm">
@@ -1149,48 +1144,6 @@
             </node>
             <node concept="37vLTw" id="10Uj_treWxX" role="37vLTx">
               <ref role="3cqZAo" node="10Uj_treWi3" resolve="pathRedirects" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3clFbW" id="4P_LPkqKUmW" role="jymVt">
-      <node concept="37vLTG" id="4P_LPkqKUmX" role="3clF46">
-        <property role="TrG5h" value="pathRedirects" />
-        <node concept="3uibUv" id="4P_LPkqKUmY" role="1tU5fm">
-          <ref role="3uigEE" to="o53r:10Uj_trkvQk" resolve="IRedirects" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="4P_LPkqMCfg" role="3clF46">
-        <property role="TrG5h" value="rebuild" />
-        <node concept="10P_77" id="4P_LPkqMCj5" role="1tU5fm" />
-      </node>
-      <node concept="3cqZAl" id="4P_LPkqKUmZ" role="3clF45" />
-      <node concept="3Tm1VV" id="4P_LPkqKUn0" role="1B3o_S" />
-      <node concept="3clFbS" id="4P_LPkqKUn1" role="3clF47">
-        <node concept="3clFbF" id="4P_LPkqKUn2" role="3cqZAp">
-          <node concept="37vLTI" id="4P_LPkqKUn3" role="3clFbG">
-            <node concept="2OqwBi" id="4P_LPkqKUn4" role="37vLTJ">
-              <node concept="Xjq3P" id="4P_LPkqKUn5" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4P_LPkqKUn6" role="2OqNvi">
-                <ref role="2Oxat5" node="10Uj_treWxJ" resolve="outputPathRedirects" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="4P_LPkqKUn7" role="37vLTx">
-              <ref role="3cqZAo" node="4P_LPkqKUmX" resolve="pathRedirects" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4P_LPkqMCkh" role="3cqZAp">
-          <node concept="37vLTI" id="4P_LPkqMCkj" role="3clFbG">
-            <node concept="2OqwBi" id="4P_LPkqMCkn" role="37vLTJ">
-              <node concept="Xjq3P" id="4P_LPkqMCkq" role="2Oq$k0" />
-              <node concept="2OwXpG" id="4P_LPkqMCkm" role="2OqNvi">
-                <ref role="2Oxat5" node="4P_LPkqMCkd" resolve="rebuild" />
-              </node>
-            </node>
-            <node concept="37vLTw" id="4P_LPkqMCkr" role="37vLTx">
-              <ref role="3cqZAo" node="4P_LPkqMCfg" resolve="rebuild" />
             </node>
           </node>
         </node>
@@ -1317,30 +1270,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="71egOude_La" role="3cqZAp">
-          <node concept="2OqwBi" id="71egOude_Lb" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTuRu" role="2Oq$k0">
-              <ref role="3cqZAo" node="71egOude_L5" resolve="settings" />
-            </node>
-            <node concept="liA8E" id="71egOude_Ld" role="2OqNvi">
-              <ref role="37wK5l" to="ap4t:~IModifiableGenerationSettings.setIncremental(boolean):void" resolve="setIncremental" />
-              <node concept="3clFbT" id="71egOude_Le" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="71egOude_Lf" role="3cqZAp">
-          <node concept="2OqwBi" id="71egOude_Lg" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTuwR" role="2Oq$k0">
-              <ref role="3cqZAo" node="71egOude_L5" resolve="settings" />
-            </node>
-            <node concept="liA8E" id="71egOude_Li" role="2OqNvi">
-              <ref role="37wK5l" to="ap4t:~IModifiableGenerationSettings.setIncrementalUseCache(boolean):void" resolve="setIncrementalUseCache" />
-              <node concept="3clFbT" id="71egOude_Lj" role="37wK5m" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="71egOude_Lk" role="3cqZAp">
           <node concept="3cpWsn" id="71egOude_Ll" role="3cpWs9">
             <property role="TrG5h" value="optBuilder" />
@@ -1399,30 +1328,12 @@
                     </node>
                   </node>
                   <node concept="3clFbS" id="71egOude_LK" role="3clF47">
-                    <node concept="3SKdUt" id="5OeL7ncbMLd" role="3cqZAp">
-                      <node concept="3SKdUq" id="5OeL7ncbMOc" role="3SKWNk">
-                        <property role="3SKdUp" value="FIXME rebuild is actually part of MakeSession, not of this RMFC class. For unknown reason, however, idea plugin" />
-                      </node>
-                    </node>
-                    <node concept="3SKdUt" id="5ImDKwiMSJ2" role="3cqZAp">
-                      <node concept="3SKdUq" id="5ImDKwiMTdg" role="3SKWNk">
-                        <property role="3SKdUp" value="uses distinct values for session's and generation's clean flag" />
-                      </node>
-                    </node>
                     <node concept="3clFbF" id="5OeL7ncaXsY" role="3cqZAp">
                       <node concept="2OqwBi" id="5OeL7ncbEDl" role="3clFbG">
                         <node concept="2OqwBi" id="5OeL7ncefw9" role="2Oq$k0">
-                          <node concept="2OqwBi" id="5OeL7ncb$uj" role="2Oq$k0">
-                            <node concept="2ShNRf" id="5OeL7ncekrY" role="2Oq$k0">
-                              <node concept="1pGfFk" id="5OeL7ncekrZ" role="2ShVmc">
-                                <ref role="37wK5l" to="1gam:3D3uKT_NmCA" resolve="GenerateFacetInitializer" />
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="5OeL7ncbAhQ" role="2OqNvi">
-                              <ref role="37wK5l" to="1gam:7UozGIEQwoA" resolve="cleanMake" />
-                              <node concept="37vLTw" id="5OeL7ncbAjA" role="37wK5m">
-                                <ref role="3cqZAo" node="4P_LPkqMCkd" resolve="rebuild" />
-                              </node>
+                          <node concept="2ShNRf" id="5OeL7ncekrY" role="2Oq$k0">
+                            <node concept="1pGfFk" id="5OeL7ncekrZ" role="2ShVmc">
+                              <ref role="37wK5l" to="1gam:3D3uKT_NmCA" resolve="GenerateFacetInitializer" />
                             </node>
                           </node>
                           <node concept="liA8E" id="5OeL7ncefDS" role="2OqNvi">

@@ -125,7 +125,7 @@ public class GenerationController implements ITaskPoolProvider {
       generationSession.getLoggingHandler().register();
       if (myLogger.needsInfo()) {
         myLogger.info("");
-        myLogger.info("[model " + inputModel.getName() + (myOptions.isRebuildAll() ? ", rebuilding" : "") +
+        myLogger.info("[model " + inputModel.getName() +
           (myOptions.isGenerateInParallel() ? ", using " + myOptions.getNumberOfThreads() + " threads]"  : "]"));
       }
 

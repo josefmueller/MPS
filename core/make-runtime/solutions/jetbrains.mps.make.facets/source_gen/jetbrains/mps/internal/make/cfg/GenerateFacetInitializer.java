@@ -4,7 +4,7 @@ package jetbrains.mps.internal.make.cfg;
 
 import jetbrains.mps.make.script.PropertyPoolInitializer;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.make.script.IPropertiesPool;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.facet.ITarget;
@@ -16,30 +16,22 @@ import jetbrains.mps.make.facet.ITarget;
  * Perhaps, this it should be MakeSession's responsibility to set properties.
  */
 public final class GenerateFacetInitializer implements PropertyPoolInitializer {
-  private Boolean myCleanMake;
   private GenerationOptions.OptionsBuilder myGenOptions;
 
   public GenerateFacetInitializer() {
-    myCleanMake = null;
   }
 
-  /**
-   * 
-   * @deprecated Use cons without arguments, make session is available in all targets now
-   */
-  @Deprecated
-  public GenerateFacetInitializer(MakeSession makeSession) {
-    myCleanMake = makeSession.isCleanMake();
-  }
   /**
    * Override clean make argument from MakeSession. 
    * FIXME Theres's only 1 use, in BuildMakeService, likely we can get rid of it, and always use value from MakeSession
    * 
+   * @deprecated no-op, do not use
    * @param cleanMake true to force complete generation
    * @return <code>this</code> for convenience
    */
+  @Deprecated
+  @ToRemove(version = 2017.3)
   public GenerateFacetInitializer cleanMake(boolean cleanMake) {
-    myCleanMake = cleanMake;
     return this;
   }
   public GenerateFacetInitializer setGenerationOptions(GenerationOptions.OptionsBuilder optionsBuilder) {
@@ -49,10 +41,6 @@ public final class GenerateFacetInitializer implements PropertyPoolInitializer {
 
   @Override
   public void populate(IPropertiesPool ppool) {
-    Tuples._2<MakeSession, Boolean> vars = (Tuples._2<MakeSession, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
-    if (vars != null && myCleanMake != null) {
-      vars._1(myCleanMake);
-    }
     if (myGenOptions != null) {
       Tuples._2<Boolean, GenerationOptions.OptionsBuilder> params = (Tuples._2<Boolean, GenerationOptions.OptionsBuilder>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Object.class);
       if (params != null) {

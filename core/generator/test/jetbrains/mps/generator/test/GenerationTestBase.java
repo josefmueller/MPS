@@ -82,7 +82,7 @@ public class GenerationTestBase {
 
     GenerationOptions options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
-        .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).create();
+        .strictMode(true).reporting(false, true, false, 2).create();
     new GenerationFacade(repo, options).transients(new TransientModelsProvider(repo, null)).messages(msg).process(new EmptyProgressMonitor(), descr);
 
 
@@ -90,7 +90,7 @@ public class GenerationTestBase {
 
     options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
-        .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).create();
+        .strictMode(true).reporting(false, true, false, 2).create();
     long start = System.nanoTime();
     new GenerationFacade(repo, options).transients(new TransientModelsProvider(repo, null)).messages(msg).process(new EmptyProgressMonitor(), descr);
     long singleThread = System.nanoTime() - start;
@@ -99,7 +99,7 @@ public class GenerationTestBase {
 
     options = GenerationOptions.getDefaults()
         .generateInParallel(true, threads)
-        .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).create();
+        .strictMode(true).reporting(false, true, false, 2).create();
     start = System.nanoTime();
     new GenerationFacade(repo, options).transients(new TransientModelsProvider(repo, null)).messages(msg).process(new EmptyProgressMonitor(), descr);
     long severalThreads = System.nanoTime() - start;

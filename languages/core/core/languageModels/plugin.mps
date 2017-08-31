@@ -3164,39 +3164,9 @@
                 <property role="3SKdUp" value="FIXME drop unused parameters once MPS 2017.2 is out" />
               </node>
             </node>
-            <node concept="3clFbH" id="3D3uKT_MVWs" role="3cqZAp" />
-            <node concept="3clFbJ" id="5L5h3brvz7G" role="3cqZAp">
-              <node concept="3clFbS" id="5L5h3brvz7H" role="3clFbx">
-                <node concept="3SKdUt" id="3D3uKT_MVVw" role="3cqZAp">
-                  <node concept="3SKdUq" id="3D3uKT_MVVy" role="3SKWNk">
-                    <property role="3SKdUp" value="FIXME is there true need to control clean of a generate task independent from MakeSession?" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="3D3uKT_MUZd" role="3cqZAp">
-                  <node concept="37vLTI" id="3D3uKT_MV_E" role="3clFbG">
-                    <node concept="2OqwBi" id="3D3uKT_MVJ$" role="37vLTx">
-                      <node concept="2_BwXt" id="3D3uKT_MVDI" role="2Oq$k0" />
-                      <node concept="liA8E" id="3D3uKT_MVTM" role="2OqNvi">
-                        <ref role="37wK5l" to="hfuk:7yGn3z4N631" resolve="isCleanMake" />
-                      </node>
-                    </node>
-                    <node concept="1aIXbY" id="3D3uKT_MUZ9" role="37vLTJ">
-                      <node concept="1aIXbZ" id="3D3uKT_MUZ8" role="2Oq$k0" />
-                      <node concept="2sxana" id="3D3uKT_MUZc" role="2OqNvi">
-                        <ref role="2sxfKC" node="5L5h3brvz7V" resolve="cleanMake" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbC" id="5L5h3brvz7L" role="3clFbw">
-                <node concept="10Nm6u" id="5L5h3brvz7M" role="3uHU7w" />
-                <node concept="1aIXbY" id="5L5h3brvz7N" role="3uHU7B">
-                  <node concept="1aIXbZ" id="5L5h3brvz7O" role="2Oq$k0" />
-                  <node concept="2sxana" id="5L5h3brvz7P" role="2OqNvi">
-                    <ref role="2sxfKC" node="5L5h3brvz7V" resolve="cleanMake" />
-                  </node>
-                </node>
+            <node concept="3SKdUt" id="MCybJ58S4B" role="3cqZAp">
+              <node concept="3SKdUq" id="MCybJ58S4D" role="3SKWNk">
+                <property role="3SKdUp" value="      cleanMake was abandoned in 2017.3, but I doubt it has been in use outside of MPS itself" />
               </node>
             </node>
           </node>
@@ -3337,32 +3307,19 @@
             </node>
             <node concept="3clFbF" id="74FiyOsLQlb" role="3cqZAp">
               <node concept="2OqwBi" id="5L5h3brvz9v" role="3clFbG">
-                <node concept="2OqwBi" id="5L5h3brvz9w" role="2Oq$k0">
-                  <node concept="2OqwBi" id="5L5h3brvz9y" role="2Oq$k0">
-                    <node concept="1aIXbY" id="5L5h3brvz9z" role="2Oq$k0">
-                      <node concept="1aIXbZ" id="5L5h3brvz9$" role="2Oq$k0" />
-                      <node concept="2sxana" id="5L5h3brvz9_" role="2OqNvi">
-                        <ref role="2sxfKC" node="5L5h3brvzaY" resolve="generationOptions" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="5L5h3brvz9A" role="2OqNvi">
-                      <ref role="37wK5l" to="ap4t:~GenerationOptions$OptionsBuilder.saveTransientModels(boolean):jetbrains.mps.generator.GenerationOptions$OptionsBuilder" resolve="saveTransientModels" />
-                      <node concept="1aIXbY" id="5L5h3brvz9B" role="37wK5m">
-                        <node concept="1aIXbZ" id="5L5h3brvz9C" role="2Oq$k0" />
-                        <node concept="2sxana" id="5L5h3brvz9D" role="2OqNvi">
-                          <ref role="2sxfKC" node="5L5h3brvzaW" resolve="saveTransient" />
-                        </node>
-                      </node>
+                <node concept="2OqwBi" id="5L5h3brvz9y" role="2Oq$k0">
+                  <node concept="1aIXbY" id="5L5h3brvz9z" role="2Oq$k0">
+                    <node concept="1aIXbZ" id="5L5h3brvz9$" role="2Oq$k0" />
+                    <node concept="2sxana" id="5L5h3brvz9_" role="2OqNvi">
+                      <ref role="2sxfKC" node="5L5h3brvzaY" resolve="generationOptions" />
                     </node>
                   </node>
-                  <node concept="liA8E" id="5L5h3brvz9J" role="2OqNvi">
-                    <ref role="37wK5l" to="ap4t:~GenerationOptions$OptionsBuilder.rebuildAll(boolean):jetbrains.mps.generator.GenerationOptions$OptionsBuilder" resolve="rebuildAll" />
-                    <node concept="2bn25q" id="5L5h3brvz9K" role="37wK5m">
-                      <node concept="2bn25r" id="5L5h3brvz9L" role="2Oq$k0">
-                        <ref role="2bn25l" node="5L5h3brvz7k" resolve="checkParameters" />
-                      </node>
-                      <node concept="2sxana" id="5L5h3brvz9M" role="2OqNvi">
-                        <ref role="2sxfKC" node="5L5h3brvz7V" resolve="cleanMake" />
+                  <node concept="liA8E" id="5L5h3brvz9A" role="2OqNvi">
+                    <ref role="37wK5l" to="ap4t:~GenerationOptions$OptionsBuilder.saveTransientModels(boolean):jetbrains.mps.generator.GenerationOptions$OptionsBuilder" resolve="saveTransientModels" />
+                    <node concept="1aIXbY" id="5L5h3brvz9B" role="37wK5m">
+                      <node concept="1aIXbZ" id="5L5h3brvz9C" role="2Oq$k0" />
+                      <node concept="2sxana" id="5L5h3brvz9D" role="2OqNvi">
+                        <ref role="2sxfKC" node="5L5h3brvzaW" resolve="saveTransient" />
                       </node>
                     </node>
                   </node>

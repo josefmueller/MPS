@@ -7,9 +7,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
-    <classNode dependClassName="jetbrains.mps.make.MakeSession" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.script.IPropertiesPool" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode extendsClassName="jetbrains.mps.make.script.PropertyPoolInitializer" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer" file="JavaCompileFacetInitializer.java">

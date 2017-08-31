@@ -95,11 +95,7 @@ public class Generate_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               // FIXME drop unused parameters once MPS 2017.2 is out 
-
-              if (vars(pa.global()).cleanMake() == null) {
-                // FIXME is there true need to control clean of a generate task independent from MakeSession? 
-                vars(pa.global()).cleanMake(monitor.getSession().isCleanMake());
-              }
+              //       cleanMake was abandoned in 2017.3, but I doubt it has been in use outside of MPS itself 
             default:
               progressMonitor.done();
               return new IResult.SUCCESS(_output_fi61u2_a0a);
@@ -197,7 +193,7 @@ public class Generate_Facet extends IFacet.Stub {
               Iterable<GenerationCacheContainer> caches = new ExtensionPoint<GenerationCacheContainer>("jetbrains.mps.lang.core.GeneratorCache").getObjects();
               GenerationCacheContainer cacheContainer = (Sequence.fromIterable(caches).isEmpty() ? null : Sequence.fromIterable(caches).first());
               vars(pa.global()).generationOptions().tracing(settings.getPerformanceTracingLevel());
-              vars(pa.global()).generationOptions().saveTransientModels(vars(pa.global()).saveTransient()).rebuildAll(Generate_Facet.Target_checkParameters.vars(pa.global()).cleanMake()).keepOutputModel(true);
+              vars(pa.global()).generationOptions().saveTransientModels(vars(pa.global()).saveTransient()).keepOutputModel(true);
               vars(pa.global()).parametersProvider(new DefaultGenerationParametersProvider());
               vars(pa.global()).generationOptions().parameters(vars(pa.global()).parametersProvider());
 

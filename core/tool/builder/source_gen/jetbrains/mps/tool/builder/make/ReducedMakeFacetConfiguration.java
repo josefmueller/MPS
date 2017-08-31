@@ -27,7 +27,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 
 public class ReducedMakeFacetConfiguration {
-  private boolean rebuild;
   private IRedirects outputPathRedirects;
   private Map<String, String> fileHashes = MapSequence.fromMap(new HashMap<String, String>());
   private List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
@@ -36,10 +35,6 @@ public class ReducedMakeFacetConfiguration {
   private Map<String, SModel> sources = MapSequence.fromMap(new HashMap<String, SModel>());
   public ReducedMakeFacetConfiguration(IRedirects pathRedirects) {
     this.outputPathRedirects = pathRedirects;
-  }
-  public ReducedMakeFacetConfiguration(IRedirects pathRedirects, boolean rebuild) {
-    this.outputPathRedirects = pathRedirects;
-    this.rebuild = rebuild;
   }
   public Map<String, String> getFileHashes() {
     return Collections.unmodifiableMap(fileHashes);
@@ -58,16 +53,12 @@ public class ReducedMakeFacetConfiguration {
   }
   public IScriptController configureFacets(final MakeSession makeSession) {
     IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
-    settings.setIncremental(true);
-    settings.setIncrementalUseCache(false);
     final GenerationOptions.OptionsBuilder optBuilder = GenerationOptions.fromSettings(settings);
 
     return new IScriptController.Stub2(makeSession) {
       @Override
       public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
-        // FIXME rebuild is actually part of MakeSession, not of this RMFC class. For unknown reason, however, idea plugin 
-        // uses distinct values for session's and generation's clean flag 
-        new GenerateFacetInitializer().cleanMake(rebuild).setGenerationOptions(optBuilder).populate(pp);
+        new GenerateFacetInitializer().setGenerationOptions(optBuilder).populate(pp);
 
         Tuples._1<Boolean> skipCopyTraceinfo = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.traceable.CopyTraceInfo.copyTraceInfo"), Object.class);
         if (skipCopyTraceinfo != null) {

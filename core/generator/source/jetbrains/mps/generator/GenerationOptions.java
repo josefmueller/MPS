@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -37,7 +38,6 @@ public class GenerationOptions {
   private final boolean mySaveTransientModels;
   private final boolean myActiveInplaceTransform;
   private final boolean myStrictMode;
-  private final boolean myRebuildAll;
   private final boolean myUseDynamicRefs;
 
   private final GenerationParametersProvider myParametersProvider;
@@ -54,7 +54,7 @@ public class GenerationOptions {
   private final boolean myShowBadChildWarning;
   private final int myNumberOfModelsToKeep;
 
-  private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean rebuildAll, boolean useInplaceTransformations,
+  private GenerationOptions(boolean strictMode, boolean saveTransientModels, boolean useInplaceTransformations,
                             boolean generateInParallel, int numberOfThreads, int tracingMode, boolean showInfo,
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
                             boolean useDynamicRefs,
@@ -64,7 +64,6 @@ public class GenerationOptions {
     myActiveInplaceTransform = useInplaceTransformations;
     myGenerateInParallel = generateInParallel;
     myStrictMode = strictMode;
-    myRebuildAll = rebuildAll;
     myNumberOfThreads = numberOfThreads;
     myTracingMode = tracingMode;
     myNumberOfModelsToKeep = numberOfModelsToKeep;
@@ -90,9 +89,13 @@ public class GenerationOptions {
     return myStrictMode;
   }
 
-  // FIXME odd as option, dubious use
+  /**
+   * @deprecated meaningless, do not use
+   */
+  @Deprecated
+  @ToRemove(version = 2017.3)
   public boolean isRebuildAll() {
-    return myRebuildAll;
+    return false;
   }
 
   @NotNull
@@ -178,7 +181,6 @@ public class GenerationOptions {
 
     private boolean mySaveTransientModels = false;
     private boolean myStrictMode = false;
-    private boolean myRebuildAll = true;
 
     private Map<SModel, ModelGenerationPlan> myCustomPlans = new HashMap<SModel, ModelGenerationPlan>();
     private boolean myGenerateInParallel = false;
@@ -201,7 +203,7 @@ public class GenerationOptions {
     }
 
     public GenerationOptions create() {
-      return new GenerationOptions(myStrictMode, mySaveTransientModels, myRebuildAll, myUseInplace,
+      return new GenerationOptions(myStrictMode, mySaveTransientModels, myUseInplace,
         myGenerateInParallel, myNumberOfThreads, myTracingMode, myShowInfo, myShowWarnings,
         myKeepModelsWithWarnings, myNumberOfModelsToKeep, myUseDynamicRefs,
         myParametersProvider, myKeepOutputModel, myShowBadChildWarning,
@@ -234,7 +236,7 @@ public class GenerationOptions {
     }
 
     public OptionsBuilder rebuildAll(boolean rebuildAll) {
-      myRebuildAll = rebuildAll;
+      Logger.getLogger(getClass()).warn(".GenerationOptions.OptionsBuilder.rebuildAll() is no-op and deprecated, stop using it!");
       return this;
     }
 

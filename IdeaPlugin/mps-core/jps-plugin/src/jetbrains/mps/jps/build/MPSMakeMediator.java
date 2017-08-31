@@ -168,8 +168,7 @@ public class MPSMakeMediator {
     }
 
     public ReducedMakeFacetConfiguration constructMakeFacetConfiguration() {
-      final boolean isMake = JavaBuilderUtil.isCompileJavaIncrementally(myContext);
-      myMakeFacetConfiguration = new ReducedMakeFacetConfiguration(myPathsController.getRedirects(), !isMake);
+      myMakeFacetConfiguration = new ReducedMakeFacetConfiguration(myPathsController.getRedirects());
       return myMakeFacetConfiguration;
     }
   }
