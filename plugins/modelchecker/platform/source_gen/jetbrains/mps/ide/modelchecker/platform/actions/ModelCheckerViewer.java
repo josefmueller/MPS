@@ -256,7 +256,7 @@ public class ModelCheckerViewer extends JPanel {
     }
     @Override
     public List<CategoryKind> getCategoryKinds() {
-      return Arrays.asList(ModelCheckerIssue.CATEGORY_KIND_SEVERITY, ModelCheckerIssue.CATEGORY_KIND_ISSUE_TYPE);
+      return Arrays.asList(ModelChecker.CATEGORY_KIND_SEVERITY, ModelChecker.CATEGORY_KIND_ISSUE_TYPE);
     }
     @Override
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {

@@ -31,37 +31,6 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
     myRepository = repository;
   }
 
-  public static class IModelCheckerFixAdapter extends IModelCheckerFix {
-    private final SNodeReference reportedNode;
-    private final SRepository repository;
-    private final QuickFixBase quickFix;
-    public IModelCheckerFixAdapter(@NotNull SNodeReference node, SRepository repository, @NotNull QuickFixBase quickFix) {
-      this.reportedNode = node;
-      this.repository = repository;
-      this.quickFix = quickFix;
-    }
-    @Override
-    public boolean doFix() {
-      SNode resolved = reportedNode.resolve(repository);
-      if (resolved != null) {
-        quickFix.execute(repository);
-        return true;
-      } else {
-        return false;
-      }
-    }
-  }
-
-  public static RootCheckerSpecificCheckerAdapter.IModelCheckerFixAdapter getFix(NodeReportItem nodeReportItem, SRepository repository) {
-    SNode reporterNode = nodeReportItem.getNode().resolve(repository);
-    final QuickFixBase quickfix = QuickFixReportItem.FLAVOUR_QUICKFIX.getAutoApplicable(nodeReportItem);
-    if (reporterNode != null && quickfix != null) {
-      final SNodeReference reporterNodeRef = reporterNode.getReference();
-      return new RootCheckerSpecificCheckerAdapter.IModelCheckerFixAdapter(reporterNodeRef, repository, quickfix);
-    }
-    return null;
-  }
-
   public List<IssueKindReportItem> checkModel_(SModel model, final ProgressMonitor monitor) {
     final List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
 

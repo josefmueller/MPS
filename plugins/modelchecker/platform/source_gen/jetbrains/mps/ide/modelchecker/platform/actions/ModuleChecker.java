@@ -24,7 +24,7 @@ public class ModuleChecker {
     try {
       ValidationUtil.validateModule(module, new Processor<ModuleValidationProblem>() {
         public boolean process(ModuleValidationProblem vp) {
-          myResults.getSearchResults().add(ModelCheckerIssue.getSearchResultForReportItem(vp, module.getRepository()));
+          myResults.getSearchResults().add(ModelChecker.getSearchResultForReportItem(vp, module.getRepository()));
           return true;
         }
       });
