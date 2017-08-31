@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:448b72c0-54ea-4b7b-aca4-6e2dcbb753cc(jetbrains.mps.samples.highlevel.sampleLanguage.structure)">
+<model ref="r:fa64caab-22cb-4861-a701-88757ed93bf2(jetbrains.mps.samples.highlevel.sampleLanguage.structure)">
   <persistence version="9" />
   <languages />
   <imports>
@@ -61,48 +61,48 @@
       </concept>
     </language>
   </registry>
-  <node concept="2$UQVi" id="oMm$twOd$M">
+  <node concept="2$UQVi" id="1Gjsd2P_2wg">
     <ref role="2$VUEs" to="yuy8:3hIFiK8NuIY" resolve="concept" />
-    <node concept="2$$0lk" id="oMm$twOd$N" role="2$$55j">
+    <node concept="2$$0lk" id="1Gjsd2P_2wh" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.samples.highlevel.sampleLanguage.structure" />
     </node>
-    <node concept="2$VJBW" id="oMm$twOd$O" role="2$VCQS">
+    <node concept="2$VJBW" id="1Gjsd2P_2wi" role="2$VCQS">
       <property role="2$VJBR" value="3778147542048941585" />
-      <node concept="2x4n5u" id="oMm$twOd$P" role="3iCydw">
+      <node concept="2x4n5u" id="1Gjsd2P_2wj" role="3iCydw">
         <property role="2x4mPI" value="SimpleConceptDeclaration" />
         <property role="2x4o5l" value="false" />
         <property role="2x4n5l" value="12crsp10i3dq4" />
-        <node concept="2V$Bhx" id="oMm$twOd$Q" role="2x4n5j">
+        <node concept="2V$Bhx" id="1Gjsd2P_2wk" role="2x4n5j">
           <property role="2V$B1T" value="baa9238b-36da-4ccb-a76b-8ad70e222183" />
           <property role="2V$B1Q" value="jetbrains.mps.samples.highlevel.simpleStructure" />
         </node>
       </node>
     </node>
-    <node concept="2$VJBW" id="oMm$twOd$R" role="2$VCQQ">
-      <property role="2$VJBR" value="446518575676578090" />
-      <node concept="2x4n5u" id="oMm$twOd$S" role="3iCydw">
+    <node concept="2$VJBW" id="1Gjsd2P_2wl" role="2$VCQQ">
+      <property role="2$VJBR" value="1951027105283450888" />
+      <node concept="2x4n5u" id="1Gjsd2P_2wm" role="3iCydw">
         <property role="2x4mPI" value="ConceptDeclaration" />
         <property role="2x4o5l" value="false" />
         <property role="2x4n5l" value="do8gxtn4" />
-        <node concept="2V$Bhx" id="oMm$twOd$T" role="2x4n5j">
+        <node concept="2V$Bhx" id="1Gjsd2P_2wn" role="2x4n5j">
           <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
           <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
         </node>
       </node>
     </node>
-    <node concept="WCOrO" id="oMm$twOd$H" role="2$VCQN">
-      <node concept="1TIwiD" id="oMm$twOd$J" role="WCOr9">
+    <node concept="WCOrO" id="1Gjsd2P_2wb" role="2$VCQN">
+      <node concept="1TIwiD" id="1Gjsd2P_2wd" role="WCOr9">
         <property role="19KtqR" value="true" />
         <property role="2eQzMB" value="99aa3e0f-a162-4dc1-bcff-2def4d654205" />
         <property role="TrG5h" value="Person" />
         <property role="EcuMT" value="3778147542048941585" />
         <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <node concept="1TJgyi" id="oMm$twOd$K" role="1TKVEl">
+        <node concept="1TJgyi" id="1Gjsd2P_2we" role="1TKVEl">
           <property role="TrG5h" value="name" />
           <property role="IQ2nx" value="3778147542048941587" />
           <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
         </node>
-        <node concept="1TJgyi" id="oMm$twOd$L" role="1TKVEl">
+        <node concept="1TJgyi" id="1Gjsd2P_2wf" role="1TKVEl">
           <property role="TrG5h" value="age" />
           <property role="IQ2nx" value="3778147542048941589" />
           <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
@@ -110,48 +110,48 @@
       </node>
     </node>
   </node>
-  <node concept="2$UQVi" id="oMm$twOd_2">
+  <node concept="2$UQVi" id="1Gjsd2P_2ww">
     <ref role="2$VUEs" to="yuy8:3hIFiK8NuIY" resolve="concept" />
-    <node concept="2$$0lk" id="oMm$twOd_3" role="2$$55j">
+    <node concept="2$$0lk" id="1Gjsd2P_2wx" role="2$$55j">
       <property role="2$$0lg" value="jetbrains.mps.samples.highlevel.sampleLanguage.structure" />
     </node>
-    <node concept="2$VJBW" id="oMm$twOd_4" role="2$VCQS">
+    <node concept="2$VJBW" id="1Gjsd2P_2wy" role="2$VCQS">
       <property role="2$VJBR" value="3778147542048941592" />
-      <node concept="2x4n5u" id="oMm$twOd_5" role="3iCydw">
+      <node concept="2x4n5u" id="1Gjsd2P_2wz" role="3iCydw">
         <property role="2x4mPI" value="SimpleConceptDeclaration" />
         <property role="2x4o5l" value="false" />
         <property role="2x4n5l" value="12crsp10i3dq4" />
-        <node concept="2V$Bhx" id="oMm$twOd_6" role="2x4n5j">
+        <node concept="2V$Bhx" id="1Gjsd2P_2w$" role="2x4n5j">
           <property role="2V$B1T" value="baa9238b-36da-4ccb-a76b-8ad70e222183" />
           <property role="2V$B1Q" value="jetbrains.mps.samples.highlevel.simpleStructure" />
         </node>
       </node>
     </node>
-    <node concept="2$VJBW" id="oMm$twOd_7" role="2$VCQQ">
-      <property role="2$VJBR" value="446518575676578106" />
-      <node concept="2x4n5u" id="oMm$twOd_8" role="3iCydw">
+    <node concept="2$VJBW" id="1Gjsd2P_2w_" role="2$VCQQ">
+      <property role="2$VJBR" value="1951027105283450904" />
+      <node concept="2x4n5u" id="1Gjsd2P_2wA" role="3iCydw">
         <property role="2x4mPI" value="ConceptDeclaration" />
         <property role="2x4o5l" value="false" />
         <property role="2x4n5l" value="do8gxtn4" />
-        <node concept="2V$Bhx" id="oMm$twOd_9" role="2x4n5j">
+        <node concept="2V$Bhx" id="1Gjsd2P_2wB" role="2x4n5j">
           <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
           <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
         </node>
       </node>
     </node>
-    <node concept="WCOrO" id="oMm$twOd$X" role="2$VCQN">
-      <node concept="1TIwiD" id="oMm$twOd$Z" role="WCOr9">
+    <node concept="WCOrO" id="1Gjsd2P_2wr" role="2$VCQN">
+      <node concept="1TIwiD" id="1Gjsd2P_2wt" role="WCOr9">
         <property role="19KtqR" value="true" />
         <property role="2eQzMB" value="99aa3e0f-a162-4dc1-bcff-2def4d654205" />
         <property role="TrG5h" value="Car" />
         <property role="EcuMT" value="3778147542048941592" />
         <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-        <node concept="1TJgyi" id="oMm$twOd_0" role="1TKVEl">
+        <node concept="1TJgyi" id="1Gjsd2P_2wu" role="1TKVEl">
           <property role="TrG5h" value="model" />
           <property role="IQ2nx" value="3778147542048941597" />
           <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
         </node>
-        <node concept="1TJgyi" id="oMm$twOd_1" role="1TKVEl">
+        <node concept="1TJgyi" id="1Gjsd2P_2wv" role="1TKVEl">
           <property role="TrG5h" value="year" />
           <property role="IQ2nx" value="3778147542048941599" />
           <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
