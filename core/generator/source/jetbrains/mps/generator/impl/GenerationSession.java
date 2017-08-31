@@ -169,7 +169,7 @@ class GenerationSession {
 
 
         ModelTransitions transitionTrace = new ModelTransitions(); // FIXME make it optional, if there are no Checkpoint steps, do not record transitions
-        transitionTrace.newTransition(null, myOriginalInputModel.getReference(), currInputModel, null);
+        transitionTrace.newTransition(null, currInputModel, null);
 
         for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps().size(); myMajorStep++) {
           Step planStep = myGenerationPlan.getSteps().get(myMajorStep);
@@ -201,14 +201,15 @@ class GenerationSession {
             }
             CheckpointIdentity checkpointIdentity = checkpointStep.getIdentity();
             final CrossModelEnvironment xmodelEnv = mySessionContext.getCrossModelEnvironment();
-            SModel checkpointModel = xmodelEnv.createBlankCheckpointModel(myOriginalInputModel.getReference(), checkpointIdentity);
+            CheckpointIdentity lastPersistedCheckpoint = transitionTrace.getMostRecentCheckpoint();
+            SModel checkpointModel = xmodelEnv.createBlankCheckpointModel(myOriginalInputModel.getReference(), lastPersistedCheckpoint, checkpointIdentity);
             CheckpointStateBuilder cpBuilder = new CheckpointStateBuilder(currInputModel, checkpointModel, transitionTrace);
             // myStepArguments may be null if Checkpoint is the very first step. Not quite sure it's legitimate scenario, though, need to think it over.
             if (myStepArguments != null) {
               // Shall populate state with last generator's MappingLabels. Note, ML could have been added from post-processing scripts. Generator
               // instance could be different, we keep GeneratorMappings with step arguments, that span all pre/post scripts along with transformations.
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
-              cpBuilder.addMappings(myOriginalInputModel, stepLabels);
+              cpBuilder.addMappings(myOriginalInputModel, stepLabels, myLogger.getImplementation());
             }
             CheckpointState cpState = cpBuilder.create(checkpointIdentity);
             xmodelEnv.publishCheckpoint(myOriginalInputModel.getReference(), cpState);

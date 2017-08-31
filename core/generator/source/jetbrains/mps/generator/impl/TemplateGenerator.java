@@ -37,6 +37,7 @@ import jetbrains.mps.generator.impl.reference.PostponedReferenceUpdate;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.impl.template.DeltaBuilder;
 import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
+import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -492,11 +493,21 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (inputNodeModel == getInputModel() || inputNodeModel == null) {
       return null;
     }
-    CheckpointState cp = findMatchingStateFor(inputNodeModel);
-    if (cp == null) {
+//    CheckpointState cp = findMatchingStateFor(inputNodeModel);
+    CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
+    ModelCheckpoints modelCheckpoints = env.getState(inputNodeModel);
+    if (modelCheckpoints == null) {
       return null;
     }
-    return cp.getCheckpointModel().getNode(inputNode.getNodeId());
+    Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
+    if (targetPoint == null) {
+      // this might be perfectly legal scenario - when we try to restore a reference in a model close to GP sequence, with no CP at the end
+      // however, without a CP got nothing to synchronize against, as we don't keep final transformation model now (perhaps, we should?)
+      return null;
+    }
+    CheckpointIdentity cpId = targetPoint.getIdentity();
+    SNode copiedOutput = modelCheckpoints.withProperInput(cpId, inputNode, CheckpointState::getCopiedOutput);
+    return copiedOutput;
   }
 
   /**
@@ -526,21 +537,21 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (inputNodeModel == null) {
       return null;
     }
-    CheckpointState cp = findMatchingStateFor(inputNodeModel);
-    if (cp == null) {
+//    CheckpointState cp = findMatchingStateFor(inputNodeModel);
+    CrossModelEnvironment env = getGeneratorSessionContext().getCrossModelEnvironment();
+    ModelCheckpoints modelCheckpoints = env.getState(inputNodeModel);
+    if (modelCheckpoints == null) {
       return null;
     }
-    // FIXME we might want to ensure inputNode comes from the myPlanStep.getLastCheckpoint() checkpoint.
-    //       However, unless we keep TransitionState along with the
-    //       checkpointState, I see no way to confirm inputNode comes from lastPoint (the moment we've built CheckpointState, we dispose
-    //       TransitionTrace and could not find out what are origins of the node in checkpoint model. Technically, it's not true now,
-    //       as there are user objects in the checkpoint model, however, this might get changed, so I can't rely on that, unless there's
-    //       a conscious decision to keep transition trace and to ensure validity of input nodes and their originating CP).
-    Collection<SNode> output = cp.getOutput(mappingName, inputNode);
-    if (output.size() == 1) {
-      return output.iterator().next();
+    Checkpoint targetPoint = myPlanStep.getNextCheckpoint();
+    if (targetPoint == null) {
+      // this might be perfectly legal scenario - when we try to restore a reference in a model close to GP sequence, with no CP at the end
+      // however, without a CP got nothing to synchronize against, as we don't keep final transformation model now (perhaps, we should?)
+      return null;
     }
-    return null;
+    CheckpointIdentity cpId = targetPoint.getIdentity();
+    SNode output = modelCheckpoints.withProperInput(cpId, inputNode, (cp, node) -> cp.getOutputIfSingle(mappingName, node));
+    return output;
   }
 
   private CheckpointState findMatchingStateFor(/*non-null*/SModel model) {

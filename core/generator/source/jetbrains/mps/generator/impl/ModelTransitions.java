@@ -19,7 +19,6 @@ import jetbrains.mps.generator.plan.CheckpointIdentity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.ArrayList;
@@ -40,7 +39,7 @@ import java.util.function.Function;
  */
 public class ModelTransitions {
   private TransitionTrace myActiveTransition;
-  private List<SModelReference> myCheckpointModels = new ArrayList<>(5);
+  private List<CheckpointIdentity> myCheckpoints = new ArrayList<>(5);
 
   public ModelTransitions() {
   }
@@ -48,16 +47,26 @@ public class ModelTransitions {
   /**
    * indicates we start at the given checkpoint, so that any future changes to the model treat this checkpoint as start/origin
    * @param checkpoint last recorded checkpoint, or null if it's transformation of initial (i.e. not necessarily the @0 one, just no CP yet) model
-   * @param checkpointModel reference to checkpoint model, structurally (and node ids) identical to {@code transformationModel}
    * @param transformationModel transient model with nodes deemed 'origin' of the checkpoint (we record their node identities as 'origins')
    * @param changedNodes map to translate identities of nodes in transient model to that of checkpoint model (nodes in CP models are 're-numbered'
    *                     to keep CP models stable between regenerations.
    */
-  public void newTransition(@Nullable CheckpointIdentity checkpoint, @NotNull SModelReference checkpointModel, @NotNull SModel transformationModel,
-                            @Nullable Map<SNodeId, SNodeId> changedNodes) {
+  public void newTransition(@Nullable CheckpointIdentity checkpoint, @NotNull SModel transformationModel, @Nullable Map<SNodeId, SNodeId> changedNodes) {
     myActiveTransition = checkpoint == null ? new TransitionTrace(this) : new TransitionTrace(checkpoint, this);
     myActiveTransition.reset(transformationModel, changedNodes == null ? Function.identity() : nid -> changedNodes.getOrDefault(nid, nid));
-    myCheckpointModels.add(checkpointModel);
+    if (checkpoint != null) {
+      myCheckpoints.add(checkpoint);
+    }
+  }
+
+  /**
+   * as long as TransitionTrace keep its values as user objects, we don't really need checkpointModel as we are not going to read it anyway,
+   * keep it here just to keep API impression (provided we may want to use other mechanism than user objects to keep origin->transformed
+   * mapping, e.g. as a distinct explicit map. Still, we'd likely need smth more than just a model, i.e. smth we can keep this map in)
+   */
+  public TransitionTrace loadTransition(@NotNull CheckpointIdentity checkpoint, @NotNull SModel checkpointModel) {
+    myActiveTransition = new TransitionTrace(checkpoint, this);
+    return myActiveTransition;
   }
 
   @NotNull
@@ -66,8 +75,11 @@ public class ModelTransitions {
     return myActiveTransition;
   }
 
-  @NotNull
-  public SModelReference getMostRecentCheckpointModel() {
-    return myCheckpointModels.get(myCheckpointModels.size()-1);
+  /**
+   * @return identity of a checkpoint active transition had started from, or {@code null} if it is the very first one, started from original model
+   */
+  @Nullable
+  public CheckpointIdentity getMostRecentCheckpoint() {
+    return myCheckpoints.isEmpty() ? null : myCheckpoints.get(myCheckpoints.size() - 1);
   }
 }
