@@ -33,7 +33,7 @@ public class ModuleValidationProblem extends ValidationProblem implements IssueK
 
   @Override
   public String getIssueKind() {
-    return "module properties";
+    return MODULE_PROPERTIES;
   }
 
   @NotNull

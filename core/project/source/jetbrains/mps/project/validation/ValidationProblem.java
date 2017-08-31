@@ -17,6 +17,7 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.EditorQuickFix;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import jetbrains.mps.errors.item.QuickFixReportItem;
 import jetbrains.mps.errors.item.ReportItem;
 import org.jetbrains.annotations.NotNull;
@@ -32,7 +33,7 @@ import java.util.Set;
 import static jetbrains.mps.errors.item.ReportItemBase.FLAVOUR_CLASS;
 import static jetbrains.mps.errors.item.ReportItemBase.FLAVOUR_THIS;
 
-public class ValidationProblem implements ReportItem, QuickFixReportItem {
+public abstract class ValidationProblem implements ReportItem, QuickFixReportItem, IssueKindReportItem {
   private @Nullable String myMessage;
   private MessageStatus mySeverity;
 

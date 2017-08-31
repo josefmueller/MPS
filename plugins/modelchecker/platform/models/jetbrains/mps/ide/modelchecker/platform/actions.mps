@@ -9608,7 +9608,7 @@
                           <node concept="3clFbS" id="a7HeXjWw2l" role="3clF47">
                             <node concept="3clFbF" id="a7HeXjWw2m" role="3cqZAp">
                               <node concept="Xl_RD" id="a7HeXjWw2n" role="3clFbG">
-                                <property role="Xl_RC" value="Cross-template reference" />
+                                <property role="Xl_RC" value="cross-template reference" />
                               </node>
                             </node>
                           </node>

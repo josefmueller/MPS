@@ -31,7 +31,7 @@ public class UnresolvedReferenceReportItem extends ReferenceReportItem implement
 
   @Override
   public String getIssueKind() {
-    return "unresolved reference";
+    return UNRESOLVED_REFERENCE;
   }
 
   @Override

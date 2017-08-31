@@ -102,7 +102,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
 
       ListSequence.fromList(results).addElement(new ReferenceReportItem(MessageStatus.WARNING, ref, String.format("Reference across root templates in role '%s', use mapping label or reference macro", ref.getLink().getName())) {
         public String getIssueKind() {
-          return "Cross-template reference";
+          return "cross-template reference";
         }
       });
     }

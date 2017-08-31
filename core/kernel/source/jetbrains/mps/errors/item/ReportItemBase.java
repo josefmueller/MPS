@@ -29,7 +29,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Function;
 
-public abstract class ReportItemBase implements ReportItem {
+public abstract class ReportItemBase implements ReportItem, IssueKindReportItem {
 
   public ReportItemBase(@NotNull MessageStatus severity, @NotNull String message) {
     mySeverity = severity;

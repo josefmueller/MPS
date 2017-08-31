@@ -37,7 +37,9 @@ public interface IssueKindReportItem extends ReportItem {
   String STRUCTURE = "structure";
   String CONSTRAINTS = "constraints";
   String TYPESYSTEM = "typesystem";
-  String MODEL_PROPERTIES = "Model properties";
+  String MODEL_PROPERTIES = "model properties";
+  String MODULE_PROPERTIES = "module properties";
+  String UNRESOLVED_REFERENCE = "unresolved reference";
 
   abstract class PathObject {
     public abstract Object resolve(SRepository repository);
