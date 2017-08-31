@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
+import jetbrains.mps.errors.item.ModelReportItem;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.ErrorStateNodeUpdate;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
@@ -49,7 +50,7 @@ public class ErrorChecker extends TreeUpdateVisitor {
     if (modelDescriptor == null || !(modelDescriptor.isLoaded())) {
       return;
     }
-    MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<>(true);
+    MessageCollectProcessor<ModelReportItem> collector = new MessageCollectProcessor<>(true);
     ValidationUtil.validateModel(modelDescriptor, collector);
     addUpdate(node, createNodeUpdate(collector));
   }

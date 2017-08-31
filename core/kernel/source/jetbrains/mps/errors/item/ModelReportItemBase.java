@@ -13,32 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.validation;
+package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.errors.item.IssueKindReportItem;
-import jetbrains.mps.errors.item.ModuleFlavouredItem;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class ModuleValidationProblem extends ValidationProblem implements IssueKindReportItem, ModuleFlavouredItem {
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
-  private SModuleReference myModule;
+public abstract class ModelReportItemBase extends ReportItemBase implements ModelReportItem, IssueKindReportItem {
 
-  public ModuleValidationProblem(SModule module, MessageStatus severity, @NotNull String message) {
+  private final SModelReference myModel;
+
+  public ModelReportItemBase(@NotNull MessageStatus severity, SModelReference model, String message) {
     super(severity, message);
-    myModule = module.getModuleReference();
+    myModel = model;
   }
 
   @Override
-  public String getIssueKind() {
-    return "module properties";
+  public Set<ReportItemFlavour<?, ?>> getIdFlavours() {
+    return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_MODEL));
   }
 
   @NotNull
   @Override
-  public SModuleReference getModule() {
-    return myModule;
+  public SModelReference getModel() {
+    return myModel;
   }
+
 }
+

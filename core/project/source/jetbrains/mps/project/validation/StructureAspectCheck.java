@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.errors.item.ModelReportItem;
 import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelImports;
@@ -34,9 +35,9 @@ import java.util.stream.Stream;
  */
 public class StructureAspectCheck {
   private final SModel myStructureModel;
-  private final Consumer<ModelValidationProblem> myReporter;
+  private final Consumer<? super ModelReportItem> myReporter;
 
-  public StructureAspectCheck(@NotNull SModel structureModel, @NotNull Consumer<ModelValidationProblem> reporter) {
+  public StructureAspectCheck(@NotNull SModel structureModel, @NotNull Consumer<? super ModelReportItem> reporter) {
     assert LanguageAspect.STRUCTURE.is(structureModel);
     myStructureModel = structureModel;
     myReporter = reporter;
@@ -54,7 +55,7 @@ public class StructureAspectCheck {
     Collection<SModelReference> actualImports = new ModelImports(myStructureModel).getImportedModels();
     // XXX ww shall do the same (but with ModelDependencyScanner) for any model, and report imports that are missing.
     extendedModels.filter(em -> !actualImports.contains(em)).forEach(mr ->
-        myReporter.accept(new MissingModelImport(myStructureModel, String.format("Concepts from model %s are extended, but the model is not imported", mr.getModelName()), mr)));
+        myReporter.accept(new MissingModelImport(myStructureModel, mr)));
     progress.done();
   }
 }

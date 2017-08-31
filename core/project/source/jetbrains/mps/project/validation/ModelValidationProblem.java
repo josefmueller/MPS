@@ -17,19 +17,32 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.ModelFlavouredItem;
+import jetbrains.mps.errors.item.ModelReportItem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
-public class ModelValidationProblem extends ValidationProblem implements IssueKindReportItem {
-  public ModelValidationProblem(MessageStatus severity) {
+public class ModelValidationProblem extends ValidationProblem implements IssueKindReportItem, ModelReportItem {
+  private SModelReference myModel;
+  public ModelValidationProblem(SModel model, MessageStatus severity) {
     super(severity);
+    myModel = model.getReference();
   }
 
-  public ModelValidationProblem(MessageStatus severity, @NotNull String message) {
+  public ModelValidationProblem(SModel model, MessageStatus severity, @NotNull String message) {
     super(severity, message);
+    myModel = model.getReference();
   }
 
   @Override
   public String getIssueKind() {
-    return "Model properties";
+    return IssueKindReportItem.MODEL_PROPERTIES;
+  }
+
+  @NotNull
+  @Override
+  public SModelReference getModel() {
+    return myModel;
   }
 }

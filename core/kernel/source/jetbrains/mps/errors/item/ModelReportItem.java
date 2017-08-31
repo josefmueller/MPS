@@ -15,21 +15,6 @@
  */
 package jetbrains.mps.errors.item;
 
-import org.jetbrains.mps.openapi.module.SRepository;
+public interface ModelReportItem extends ModelFlavouredItem, ReportItem, IssueKindReportItem {
 
-public interface QuickFixBase {
-  boolean isExecutedImmediately();
-
-  /**
-   * @param repository repository we have read lock on
-   */
-  boolean isAlive(SRepository repository);
-  void execute(SRepository repository);
-
-  abstract class ModelCheckerQuickFix implements QuickFixBase {
-    @Override
-    public boolean isExecutedImmediately() {
-      return true;
-    }
-  }
 }

@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.project.validation.ModelValidationProblem;
+import jetbrains.mps.errors.item.ModelReportItem;
 
 public class ModelPropertiesChecker extends SpecificChecker {
   @Override
@@ -19,8 +19,8 @@ public class ModelPropertiesChecker extends SpecificChecker {
 
     final List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
 
-    ValidationUtil.validateModel(model, new Processor<ModelValidationProblem>() {
-      public boolean process(final ModelValidationProblem problem) {
+    ValidationUtil.validateModel(model, new Processor<ModelReportItem>() {
+      public boolean process(final ModelReportItem problem) {
         ListSequence.fromList(results).addElement(problem);
         return true;
       }

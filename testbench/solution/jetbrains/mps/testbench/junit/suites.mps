@@ -2946,15 +2946,15 @@
                           <property role="TrG5h" value="collector" />
                           <node concept="3uibUv" id="2sSkv2aGmM$" role="1tU5fm">
                             <ref role="3uigEE" to="6if8:~MessageCollectProcessor" resolve="MessageCollectProcessor" />
-                            <node concept="3uibUv" id="RN3DCE3EMi" role="11_B2D">
-                              <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+                            <node concept="3uibUv" id="1A2i_BkIaEZ" role="11_B2D">
+                              <ref role="3uigEE" to="d6hs:~ModelReportItem" resolve="ModelReportItem" />
                             </node>
                           </node>
                           <node concept="2ShNRf" id="2RMHhGkTSMg" role="33vP2m">
                             <node concept="1pGfFk" id="2RMHhGkTSMh" role="2ShVmc">
                               <ref role="37wK5l" to="6if8:~MessageCollectProcessor.&lt;init&gt;(boolean)" resolve="MessageCollectProcessor" />
-                              <node concept="3uibUv" id="RN3DCE3Zhs" role="1pMfVU">
-                                <ref role="3uigEE" to="6if8:~ValidationProblem" resolve="ValidationProblem" />
+                              <node concept="3uibUv" id="1A2i_BkIb8h" role="1pMfVU">
+                                <ref role="3uigEE" to="d6hs:~ModelReportItem" resolve="ModelReportItem" />
                               </node>
                               <node concept="3clFbT" id="w2yda4dHEf" role="37wK5m">
                                 <property role="3clFbU" value="false" />

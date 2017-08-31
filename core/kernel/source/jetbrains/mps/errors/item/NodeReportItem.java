@@ -15,6 +15,6 @@
  */
 package jetbrains.mps.errors.item;
 
-public interface NodeReportItem extends NodeFlavouredItem, ReportItem {
+public interface NodeReportItem extends NodeFlavouredItem, ReportItem, IssueKindReportItem {
 
 }

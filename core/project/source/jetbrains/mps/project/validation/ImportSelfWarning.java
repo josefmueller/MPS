@@ -16,42 +16,40 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.ModelReportItemBase;
+import jetbrains.mps.errors.item.QuickFixBase;
+import jetbrains.mps.errors.item.QuickFixReportItem;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelInternal;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-public class ImportSelfWarning extends ModelValidationProblem {
-  private final SModel myModel;
-  private final SModelReference myReference;
+import java.util.Collection;
+import java.util.Collections;
 
-  public ImportSelfWarning(SModel model, SModelReference reference) {
-    super(MessageStatus.WARNING);
-    myModel = model;
-    myReference = reference;
-  }
+public class ImportSelfWarning extends ModelReportItemBase implements QuickFixReportItem {
 
-  @NotNull
-  @Override
-  public String getMessage() {
-    return "Model should not import itself: " + myModel.getName().getValue();
-  }
-
-  public SModel getModel() {
-    return myModel;
-  }
-
-  public SModelReference getReference() {
-    return myReference;
+  public ImportSelfWarning(SModelReference model) {
+    super(MessageStatus.WARNING, model, "Model should not import itself: " + model.getName().getValue());
   }
 
   @Override
-  public boolean canFix() {
-    return true;
+  public String getIssueKind() {
+    return IssueKindReportItem.MODEL_PROPERTIES;
   }
 
   @Override
-  public void fix() {
-    ((SModelInternal) myModel).deleteModelImport(myReference);
+  public Collection<? extends QuickFixBase> getQuickFix() {
+    return Collections.singleton(new QuickFixBase.ModelCheckerQuickFix() {
+      @Override
+      public boolean isAlive(SRepository repository) {
+        return getModel().resolve(repository) != null;
+      }
+      @Override
+      public void execute(SRepository repository) {
+        new ModelImports(getModel().resolve(repository)).removeModelImport(getModel());
+      }
+    });
   }
 }

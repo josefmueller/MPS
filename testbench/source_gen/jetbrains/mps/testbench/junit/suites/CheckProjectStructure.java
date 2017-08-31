@@ -15,6 +15,7 @@ import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.junit.Assert;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.errors.item.ModelReportItem;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
@@ -72,7 +73,7 @@ public class CheckProjectStructure extends BaseCheckModulesTest {
     BaseCheckModulesTest.getContextProject().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModel sm : extractModels(true)) {
-          MessageCollectProcessor<ValidationProblem> collector = new MessageCollectProcessor<ValidationProblem>(false);
+          MessageCollectProcessor<ModelReportItem> collector = new MessageCollectProcessor<ModelReportItem>(false);
           ValidationUtil.validateModel(sm, collector);
           if (collector.getErrors().isEmpty()) {
             continue;

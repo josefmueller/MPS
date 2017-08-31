@@ -16,39 +16,52 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.IssueKindReportItem;
+import jetbrains.mps.errors.item.ModelReportItemBase;
+import jetbrains.mps.errors.item.QuickFixBase;
+import jetbrains.mps.errors.item.QuickFixReportItem;
 import jetbrains.mps.smodel.ModelDependencyScanner;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-public final class MissingImportedLanguageError extends ModelValidationProblem {
-  private final SModel myModel;
+import java.util.Collection;
+import java.util.Collections;
+
+public final class MissingImportedLanguageError extends ModelReportItemBase implements QuickFixReportItem {
   private final SLanguage myLang;
+  private final boolean canFix;
 
   public MissingImportedLanguageError(@NotNull SModel model, @NotNull SLanguage lang) {
-    super(MessageStatus.ERROR, String.format("Can't find language: %s", lang.getQualifiedName()));
-    myModel = model;
+    super(MessageStatus.ERROR, model.getReference(), String.format("Can't find language: %s", lang.getQualifiedName()));
     myLang = lang;
-  }
-
-  public SModel getModel() {
-    return myModel;
-  }
-
-  public SLanguage getLang() {
-    return myLang;
-  }
-
-  @Override
-  public boolean canFix() {
     ModelDependencyScanner scanner = new ModelDependencyScanner().crossModelReferences(false);
-    boolean langUsed = scanner.walk(myModel).getUsedLanguages().contains(myLang);
-    return !langUsed && ((SModelInternal) myModel).importedLanguageIds().contains(myLang);
+    boolean langUsed = scanner.walk(model).getUsedLanguages().contains(myLang);
+    canFix = !langUsed;
   }
 
   @Override
-  public void fix() {
-    ((SModelInternal) myModel).deleteLanguageId(myLang);
+  public String getIssueKind() {
+    return IssueKindReportItem.MODEL_PROPERTIES;
+  }
+
+  @Override
+  public Collection<? extends QuickFixBase> getQuickFix() {
+    if (!canFix) {
+      return Collections.emptyList();
+    }
+    return Collections.singleton(new QuickFixBase.ModelCheckerQuickFix() {
+      @Override
+      public boolean isAlive(SRepository repository) {
+        return getModel().resolve(repository) != null;
+      }
+      @Override
+      public void execute(SRepository repository) {
+        new ModelImports(getModel().resolve(repository)).removeUsedLanguage(myLang);
+      }
+    });
   }
 }

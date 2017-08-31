@@ -4871,8 +4871,8 @@
                     <node concept="37vLTG" id="2sSkv2aFh0v" role="3clF46">
                       <property role="TrG5h" value="problem" />
                       <property role="3TUv4t" value="true" />
-                      <node concept="3uibUv" id="a7HeXjSEpn" role="1tU5fm">
-                        <ref role="3uigEE" to="6if8:~ModelValidationProblem" resolve="ModelValidationProblem" />
+                      <node concept="3uibUv" id="1A2i_BkI4Bh" role="1tU5fm">
+                        <ref role="3uigEE" to="d6hs:~ModelReportItem" resolve="ModelReportItem" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="2sSkv2aFh0x" role="3clF47">
@@ -4895,8 +4895,8 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3uibUv" id="a7HeXjSEdx" role="2Ghqu4">
-                    <ref role="3uigEE" to="6if8:~ModelValidationProblem" resolve="ModelValidationProblem" />
+                  <node concept="3uibUv" id="1A2i_BkI4rl" role="2Ghqu4">
+                    <ref role="3uigEE" to="d6hs:~ModelReportItem" resolve="ModelReportItem" />
                   </node>
                 </node>
               </node>
