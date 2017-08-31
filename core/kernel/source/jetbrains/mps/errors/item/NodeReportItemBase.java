@@ -28,7 +28,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Function;
 
-public abstract class NodeReportItemBase extends ReportItemBase implements NodeReportItem {
+public abstract class NodeReportItemBase extends ReportItemBase implements NodeReportItem, IssueKindReportItem, NodeIssueKindReportItem {
 
   private final SNodeReference myNode;
 
