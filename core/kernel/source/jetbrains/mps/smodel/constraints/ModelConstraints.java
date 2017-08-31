@@ -123,7 +123,7 @@ public class ModelConstraints {
 
     assert concept instanceof SConcept : "non-abstract SAbstractConcept should be an instance of SConcept";
     if (!((SConcept) concept).isRootable()) {
-      if (concept.getSourceNode() != null) {
+      if (checkingNodeContext != null && concept.getSourceNode() != null) {
         checkingNodeContext.setBreakingNode(concept.getSourceNode());
       }
       return false;
