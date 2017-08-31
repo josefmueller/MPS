@@ -56,6 +56,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.CopyUtil;
+import java.util.HashMap;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
@@ -319,7 +321,11 @@ public class NewModelDialog extends DialogWrapper {
         if (myPreserveIds) {
           CopyUtil.copyModelContentAndPreserveIds(myClone, result);
         } else {
-          CopyUtil.copyModelContent(myClone, result);
+          // copy content and update references for targets in the same model to point to copied counterparts 
+          HashMap<SNode, SNode> nodeMap = new HashMap<SNode, SNode>();
+          for (SNode r : myClone.getRootNodes()) {
+            result.addRootNode(CopyUtil.copy(r, nodeMap, true));
+          }
         }
         result.setChanged(true);
         result.save();
