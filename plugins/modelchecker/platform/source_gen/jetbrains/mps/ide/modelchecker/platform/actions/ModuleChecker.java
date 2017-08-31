@@ -4,10 +4,12 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.ide.findusages.model.SearchResults;
+import java.util.List;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.jetbrains.mps.openapi.util.Processor;
 import jetbrains.mps.project.validation.ModuleValidationProblem;
@@ -15,16 +17,16 @@ import org.apache.log4j.Level;
 
 public class ModuleChecker {
   private static final Logger LOG = LogManager.getLogger(ModuleChecker.class);
-  private final SearchResults<IssueKindReportItem> myResults = new SearchResults<IssueKindReportItem>();
   public ModuleChecker() {
   }
-  public void checkModule(final SModule module, ProgressMonitor monitor) {
+  public List<? extends IssueKindReportItem> checkModule(SModule module, ProgressMonitor monitor) {
     String moduleName = module.getModuleName();
     monitor.start("Checking " + moduleName + " module properties...", 1);
+    final List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     try {
       ValidationUtil.validateModule(module, new Processor<ModuleValidationProblem>() {
         public boolean process(ModuleValidationProblem vp) {
-          myResults.getSearchResults().add(ModelChecker.getSearchResultForReportItem(vp, module.getRepository()));
+          ListSequence.fromList(results).addElement(vp);
           return true;
         }
       });
@@ -35,8 +37,6 @@ public class ModuleChecker {
     } finally {
       monitor.done();
     }
-  }
-  public SearchResults<IssueKindReportItem> getSearchResults() {
-    return myResults;
+    return results;
   }
 }

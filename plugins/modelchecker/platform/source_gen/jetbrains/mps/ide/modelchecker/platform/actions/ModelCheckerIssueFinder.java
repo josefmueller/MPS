@@ -12,8 +12,9 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.errors.item.NodeFlavouredItem;
 import jetbrains.mps.checkers.ErrorReportUtil;
@@ -48,22 +49,30 @@ public class ModelCheckerIssueFinder extends BaseFinder {
       final SearchResults<IssueKindReportItem> rv = new SearchResults<IssueKindReportItem>();
 
       ModuleChecker moduleChecker = new ModuleChecker();
-      for (SModule module : ListSequence.fromList(itemsToCheck.modules)) {
-        moduleChecker.checkModule(module, monitor.subTask(1, SubProgressKind.REPLACING));
+      for (final SModule module : ListSequence.fromList(itemsToCheck.modules)) {
+        List<? extends IssueKindReportItem> results = moduleChecker.checkModule(module, monitor.subTask(1, SubProgressKind.REPLACING));
+        rv.getSearchResults().addAll(ListSequence.fromList(results).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
+          public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
+            return ModelChecker.getSearchResultForReportItem(it, module.getRepository());
+          }
+        }).toListSequence());
         if (monitor.isCanceled()) {
           break;
         }
       }
-      rv.addAll(moduleChecker.getSearchResults());
 
       ModelChecker modelChecker = new ModelChecker(getSpecificCheckers());
-      for (SModel modelDescriptor : ListSequence.fromList(itemsToCheck.models)) {
-        modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
+      for (final SModel modelDescriptor : ListSequence.fromList(itemsToCheck.models)) {
+        List<IssueKindReportItem> results = modelChecker.checkModel(modelDescriptor, monitor.subTask(1, SubProgressKind.REPLACING));
+        rv.getSearchResults().addAll(ListSequence.fromList(results).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
+          public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
+            return ModelChecker.getSearchResultForReportItem(it, modelDescriptor.getRepository());
+          }
+        }).toListSequence());
         if (monitor.isCanceled()) {
           break;
         }
       }
-      rv.addAll(modelChecker.getSearchResults());
 
       // filter out suppressed 
       List<SearchResult<IssueKindReportItem>> toRemove = ListSequence.fromList(new ArrayList<SearchResult<IssueKindReportItem>>());

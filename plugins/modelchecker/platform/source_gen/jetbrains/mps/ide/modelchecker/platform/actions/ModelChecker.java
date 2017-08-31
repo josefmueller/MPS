@@ -6,20 +6,19 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.messages.Icons;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.errors.item.IssueKindReportItem;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.errors.item.IssueKindReportItem;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ModelChecker {
   private static final Logger LOG = LogManager.getLogger(ModelChecker.class);
@@ -28,18 +27,17 @@ public class ModelChecker {
   public static final String SEVERITY_ERROR = "Errors";
   public static final String SEVERITY_WARNING = "Warnings";
   public static final String SEVERITY_INFO = "Infos";
-  private final SearchResults<IssueKindReportItem> myResults;
   private final List<SpecificChecker> mySpecificCheckers;
   public ModelChecker(@NotNull List<SpecificChecker> specificCheckers) {
-    myResults = new SearchResults<IssueKindReportItem>();
     mySpecificCheckers = specificCheckers;
   }
   public static SearchResult<IssueKindReportItem> getSearchResultForReportItem(IssueKindReportItem item, SRepository repository) {
     String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
     return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(repository), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_SEVERITY, SpecificChecker.getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_ISSUE_TYPE, issueKind));
   }
-  public void checkModel(final SModel model, ProgressMonitor monitor) {
+  public List<IssueKindReportItem> checkModel(SModel model, ProgressMonitor monitor) {
     monitor.start("Checking " + model.getName(), ListSequence.fromList(mySpecificCheckers).count());
+    List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     try {
       SModule module = model.getModule();
 
@@ -47,17 +45,13 @@ public class ModelChecker {
         if (LOG.isEnabledFor(Level.WARN)) {
           LOG.warn("Module is null for " + model.getName() + " model");
         }
-        return;
+        return results;
       }
 
       for (SpecificChecker specificChecker : ListSequence.fromList(mySpecificCheckers)) {
         try {
-          List<SearchResult<IssueKindReportItem>> specificCheckerResults = ListSequence.fromList(specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT))).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
-            public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
-              return getSearchResultForReportItem(it, model.getRepository());
-            }
-          }).toListSequence();
-          myResults.getSearchResults().addAll(specificCheckerResults);
+          List<? extends IssueKindReportItem> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT));
+          ListSequence.fromList(results).addSequence(ListSequence.fromList(specificCheckerResults));
         } catch (Throwable t) {
           if (LOG.isEnabledFor(Level.ERROR)) {
             LOG.error("Error while " + model.getName() + " model checking", t);
@@ -67,11 +61,9 @@ public class ModelChecker {
           break;
         }
       }
+      return results;
     } finally {
       monitor.done();
     }
-  }
-  public SearchResults<IssueKindReportItem> getSearchResults() {
-    return myResults;
   }
 }
