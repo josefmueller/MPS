@@ -16,6 +16,7 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.QuickFixBase.ModelCheckerQuickFix;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,14 +44,10 @@ public abstract class ReferenceReportItem extends NodeReportItemBase implements 
     return myLink;
   }
 
-  public class RunnableQuickFixAdapter implements QuickFixBase {
+  public class RunnableQuickFixAdapter extends ModelCheckerQuickFix {
     private Runnable myQuickfix;
     public RunnableQuickFixAdapter(Runnable quickfix) {
       myQuickfix = quickfix;
-    }
-    @Override
-    public boolean isExecutedImmediately() {
-      return true;
     }
     @Override
     public void execute(SRepository repository) {

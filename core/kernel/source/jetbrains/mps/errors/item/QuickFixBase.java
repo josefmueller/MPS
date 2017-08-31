@@ -28,7 +28,7 @@ public interface QuickFixBase {
 
   abstract class ModelCheckerQuickFix implements QuickFixBase {
     @Override
-    public boolean isExecutedImmediately() {
+    public final boolean isExecutedImmediately() {
       return true;
     }
   }
