@@ -59,7 +59,7 @@ public interface QuickFixReportItem extends ReportItem {
         public Collection<EditorQuickFix> getCollection(ReportItem reportItem) {
           Collection<EditorQuickFix> result = super.getCollection(reportItem);
           Collection<QuickFixBase> baseQuickfixes = FLAVOUR_QUICKFIX.getCollection(reportItem);
-          if (!result.containsAll(baseQuickfixes)) {
+          if (result.size() != baseQuickfixes.size()) {
             LOG.error("skipping base quickfixes, reportItem = " + reportItem);
           }
           return result;
