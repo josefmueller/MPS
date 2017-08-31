@@ -51,7 +51,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
     this.languagesUtilPath = PathManager.getHomePath() + "/languages/util/";
   }
   @Override
-  public List<IssueKindReportItem> checkModel_(SModel model, ProgressMonitor monitor) {
+  public List<IssueKindReportItem> checkModel(SModel model, ProgressMonitor monitor) {
     List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     monitor.start("wrong aspect dependencies", 1);
 

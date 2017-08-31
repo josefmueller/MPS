@@ -3461,7 +3461,7 @@
                           <node concept="2OqwBi" id="a7HeXjQ$Qm" role="2Oq$k0">
                             <node concept="2OqwBi" id="3etVqSRKzNY" role="2Oq$k0">
                               <node concept="liA8E" id="3etVqSRKzNZ" role="2OqNvi">
-                                <ref role="37wK5l" node="6JU37GerRJY" resolve="checkModel_" />
+                                <ref role="37wK5l" node="6JU37GerRJY" resolve="checkModel" />
                                 <node concept="37vLTw" id="2BHiRxgmz0w" role="37wK5m">
                                   <ref role="3cqZAo" node="3etVqSRKzMf" resolve="model" />
                                 </node>
@@ -4778,7 +4778,7 @@
     <property role="TrG5h" value="ModelPropertiesChecker" />
     <property role="3GE5qa" value="Model Checker.Specific Checks" />
     <node concept="3clFb_" id="3etVqSRK$2Q" role="jymVt">
-      <property role="TrG5h" value="checkModel_" />
+      <property role="TrG5h" value="checkModel" />
       <node concept="3clFbS" id="3etVqSRK$2R" role="3clF47">
         <node concept="3clFbF" id="3etVqSRK$2S" role="3cqZAp">
           <node concept="2OqwBi" id="3etVqSRK$2T" role="3clFbG">
@@ -4955,7 +4955,7 @@
       </node>
     </node>
     <node concept="3clFb_" id="3etVqSRK$6s" role="jymVt">
-      <property role="TrG5h" value="checkModel_" />
+      <property role="TrG5h" value="checkModel" />
       <node concept="_YKpA" id="3etVqSRK$6t" role="3clF45">
         <node concept="3qUE_q" id="a7HeXk06_J" role="_ZDj9">
           <node concept="3uibUv" id="6iohsvjR6SE" role="3qUE_r">
@@ -6665,7 +6665,7 @@
     </node>
     <node concept="3clFb_" id="6JU37GerRJY" role="jymVt">
       <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="checkModel_" />
+      <property role="TrG5h" value="checkModel" />
       <node concept="3Tm1VV" id="6JU37GerRJZ" role="1B3o_S" />
       <node concept="_YKpA" id="6JU37GerRK0" role="3clF45">
         <node concept="3qUE_q" id="a7HeXk03Ix" role="_ZDj9">
@@ -9005,7 +9005,7 @@
     </node>
     <node concept="2tJIrI" id="R5v_Dt3X58" role="jymVt" />
     <node concept="3clFb_" id="3etVqSRT$IK" role="jymVt">
-      <property role="TrG5h" value="checkModel_" />
+      <property role="TrG5h" value="checkModel" />
       <node concept="3Tm1VV" id="3etVqSRT$IL" role="1B3o_S" />
       <node concept="37vLTG" id="3etVqSRT$IM" role="3clF46">
         <property role="TrG5h" value="model" />
@@ -9762,7 +9762,7 @@
     <node concept="2tJIrI" id="63oasX2f7T7" role="jymVt" />
     <node concept="3clFb_" id="4Yjkqq9IlRW" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="checkModel_" />
+      <property role="TrG5h" value="checkModel" />
       <node concept="3Tm1VV" id="4Yjkqq9IlRX" role="1B3o_S" />
       <node concept="_YKpA" id="4Yjkqq9IlRY" role="3clF45">
         <node concept="3uibUv" id="6iohsvjQCwA" role="_ZDj9">

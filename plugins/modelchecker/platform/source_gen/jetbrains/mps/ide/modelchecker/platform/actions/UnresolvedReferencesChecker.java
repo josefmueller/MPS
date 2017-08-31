@@ -33,7 +33,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     myProject = mpsProject;
   }
   @Override
-  public List<? extends IssueKindReportItem> checkModel_(final SModel model, ProgressMonitor monitor) {
+  public List<? extends IssueKindReportItem> checkModel(final SModel model, ProgressMonitor monitor) {
     List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
     if (model == null || model == null || model.getModule() == null) {
       return results;

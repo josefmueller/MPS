@@ -37,7 +37,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
   public ReferenceableConceptsChecker() {
   }
   @Override
-  public List<NodeIssueKindReportItem> checkModel_(final SModel model, final ProgressMonitor monitor) {
+  public List<NodeIssueKindReportItem> checkModel(final SModel model, final ProgressMonitor monitor) {
     final List<NodeIssueKindReportItem> results = ListSequence.fromList(new ArrayList<NodeIssueKindReportItem>());
     if (model == null || model == null || model.getModule() == null) {
       return results;

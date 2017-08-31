@@ -4,25 +4,27 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
+import jetbrains.mps.ide.messages.Icons;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.errors.item.IssueKindReportItem;
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.apache.log4j.Level;
-import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.ide.findusages.model.CategoryKind;
-import jetbrains.mps.ide.messages.Icons;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.util.Pair;
 
 public class ModelChecker {
   private static final Logger LOG = LogManager.getLogger(ModelChecker.class);
+  public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
+  public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");
   public static final String SEVERITY_ERROR = "Errors";
   public static final String SEVERITY_WARNING = "Warnings";
   public static final String SEVERITY_INFO = "Infos";
@@ -31,6 +33,10 @@ public class ModelChecker {
   public ModelChecker(@NotNull List<SpecificChecker> specificCheckers) {
     myResults = new SearchResults<IssueKindReportItem>();
     mySpecificCheckers = specificCheckers;
+  }
+  public static SearchResult<IssueKindReportItem> getSearchResultForReportItem(IssueKindReportItem item, SRepository repository) {
+    String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
+    return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(repository), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_SEVERITY, SpecificChecker.getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_ISSUE_TYPE, issueKind));
   }
   public void checkModel(final SModel model, ProgressMonitor monitor) {
     monitor.start("Checking " + model.getName(), ListSequence.fromList(mySpecificCheckers).count());
@@ -46,7 +52,7 @@ public class ModelChecker {
 
       for (SpecificChecker specificChecker : ListSequence.fromList(mySpecificCheckers)) {
         try {
-          List<SearchResult<IssueKindReportItem>> specificCheckerResults = ListSequence.fromList(specificChecker.checkModel_(model, monitor.subTask(1, SubProgressKind.AS_COMMENT))).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
+          List<SearchResult<IssueKindReportItem>> specificCheckerResults = ListSequence.fromList(specificChecker.checkModel(model, monitor.subTask(1, SubProgressKind.AS_COMMENT))).select(new ISelector<IssueKindReportItem, SearchResult<IssueKindReportItem>>() {
             public SearchResult<IssueKindReportItem> select(IssueKindReportItem it) {
               return getSearchResultForReportItem(it, model.getRepository());
             }
@@ -67,11 +73,5 @@ public class ModelChecker {
   }
   public SearchResults<IssueKindReportItem> getSearchResults() {
     return myResults;
-  }
-  public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");
-  public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");
-  public static SearchResult<IssueKindReportItem> getSearchResultForReportItem(IssueKindReportItem item, SRepository repository) {
-    String issueKind = IssueKindReportItem.FLAVOUR_ISSUE_KIND.get(item);
-    return new SearchResult<IssueKindReportItem>(item, IssueKindReportItem.PATH_OBJECT.get(item).resolve(repository), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_SEVERITY, SpecificChecker.getResultCategory(item.getSeverity())), new Pair<CategoryKind, String>(ModelChecker.CATEGORY_KIND_ISSUE_TYPE, issueKind));
   }
 }

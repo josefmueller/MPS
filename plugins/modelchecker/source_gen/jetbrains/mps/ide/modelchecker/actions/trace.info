@@ -636,7 +636,7 @@
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1833497744617099302">
     <file name="ReferenceableConceptsChecker.java">
-      <node id="1833497744617160700" at="40,103,41,114" concept="9" />
+      <node id="1833497744617160700" at="40,102,41,114" concept="9" />
       <node id="9116864641331714155" at="42,70,43,21" concept="10" />
       <node id="9116864641331713785" at="44,5,45,0" concept="12" />
       <node id="1833497744617160724" at="46,31,47,21" concept="10" />
@@ -711,7 +711,7 @@
       <node id="1833497744617789128" at="51,57,81,7" concept="6" />
       <node id="2019037713128002486" at="50,0,82,5" concept="7" />
       <node id="8404391560346666023" at="112,0,164,0" concept="8" trace="checkNode#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;ZLorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1833497744617160687" at="39,0,111,0" concept="8" trace="checkModel_#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
+      <node id="1833497744617160687" at="39,0,111,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
       <scope id="1833497744617160073" at="37,41,37,41" />
       <scope id="9116864641331714154" at="42,70,43,21" />
       <scope id="1833497744617160723" at="46,31,47,21" />
@@ -787,7 +787,7 @@
         <var name="refNode" id="3361475375157554855" />
         <var name="results" id="8404391560346667551" />
       </scope>
-      <scope id="1833497744617160691" at="40,103,109,19">
+      <scope id="1833497744617160691" at="40,102,109,19">
         <var name="results" id="1833497744617160701" />
       </scope>
       <scope id="1833497744617160687" at="39,0,111,0">
@@ -901,7 +901,7 @@
       <node id="2065676860593241865" at="48,27,49,162" concept="4" />
       <node id="2065676860593241881" at="49,162,50,166" concept="4" />
       <node id="1956465326954290949" at="50,166,51,76" concept="4" />
-      <node id="2843918448603437729" at="54,87,55,100" concept="9" />
+      <node id="2843918448603437729" at="54,86,55,100" concept="9" />
       <node id="2843918448603437759" at="55,100,56,50" concept="4" />
       <node id="2843918448603455120" at="56,50,57,0" concept="12" />
       <node id="2843918448603455125" at="57,0,58,52" concept="9" />
@@ -1000,7 +1000,7 @@
       <node id="2843918448603437777" at="68,41,92,7" concept="6" />
       <node id="2843918448603437766" at="63,0,93,5" concept="6" />
       <node id="8911797107064428892" at="108,37,141,7" concept="7" />
-      <node id="2843918448603437726" at="53,0,97,0" concept="8" trace="checkModel_#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
+      <node id="2843918448603437726" at="53,0,97,0" concept="8" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
       <node id="2843918448603456321" at="107,39,184,5" concept="7" />
       <node id="2065676860593241899" at="97,0,187,0" concept="8" trace="getModelKind#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SReference;)I" />
       <scope id="2843918448603459214" at="182,16,182,16" />
@@ -1093,7 +1093,7 @@
         <var name="node" id="2843918448603437767" />
       </scope>
       <scope id="2843918448603456322" at="108,37,141,7" />
-      <scope id="2843918448603437728" at="54,87,95,19">
+      <scope id="2843918448603437728" at="54,86,95,19">
         <var name="modelKind" id="2843918448603455126" />
         <var name="results" id="2843918448603437730" />
       </scope>

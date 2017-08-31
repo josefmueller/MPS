@@ -28,7 +28,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
   }
 
   @Override
-  public List<IssueKindReportItem> checkModel_(SModel model, ProgressMonitor progressMonitor) {
+  public List<IssueKindReportItem> checkModel(SModel model, ProgressMonitor progressMonitor) {
     if (!(SModelStereotype.isGeneratorModel(model))) {
       return Collections.emptyList();
     }

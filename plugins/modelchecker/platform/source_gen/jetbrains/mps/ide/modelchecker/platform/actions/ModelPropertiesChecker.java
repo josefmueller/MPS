@@ -14,7 +14,7 @@ import jetbrains.mps.project.validation.ModelValidationProblem;
 
 public class ModelPropertiesChecker extends SpecificChecker {
   @Override
-  public List<? extends IssueKindReportItem> checkModel_(final SModel model, ProgressMonitor monitor) {
+  public List<? extends IssueKindReportItem> checkModel(final SModel model, ProgressMonitor monitor) {
     monitor.start("model properties", 1);
 
     final List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());

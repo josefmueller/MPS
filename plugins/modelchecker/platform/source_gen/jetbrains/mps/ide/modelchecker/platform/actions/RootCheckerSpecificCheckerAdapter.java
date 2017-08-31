@@ -27,7 +27,7 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
     myRepository = repository;
   }
 
-  public List<IssueKindReportItem> checkModel_(SModel model, final ProgressMonitor monitor) {
+  public List<IssueKindReportItem> checkModel(SModel model, final ProgressMonitor monitor) {
     final List<IssueKindReportItem> results = ListSequence.fromList(new ArrayList<IssueKindReportItem>());
 
     monitor.start(myCategory, 1);

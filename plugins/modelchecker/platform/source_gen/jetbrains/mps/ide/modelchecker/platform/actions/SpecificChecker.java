@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public abstract class SpecificChecker {
   public SpecificChecker() {
   }
-  public abstract List<? extends IssueKindReportItem> checkModel_(SModel model, ProgressMonitor progressContext);
+  public abstract List<? extends IssueKindReportItem> checkModel(SModel model, ProgressMonitor progressContext);
   /**
    * such method used to be called for adding error to collection, now it is performed directly: do we really need filtering?
    */
