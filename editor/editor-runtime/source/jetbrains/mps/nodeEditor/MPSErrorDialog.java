@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.item.NodeReportItem;
+import jetbrains.mps.errors.item.RuleIdFlavouredItem;
+import jetbrains.mps.errors.item.RuleIdFlavouredItem.TypesystemRuleId;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -27,7 +28,6 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.Dialog;
@@ -40,6 +40,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MPSErrorDialog extends JDialog {
@@ -75,47 +76,17 @@ public class MPSErrorDialog extends JDialog {
   }
 
   static void showCellErrorDialog(Project project, Window window, HighlighterMessage message) {
-    if (message == null || message.getErrorReporter() == null) {
+    if (message == null || message.getReportItem() == null) {
       return;
     }
-    final IErrorReporter herror = message.getErrorReporter();
+    final NodeReportItem herror = message.getReportItem();
     ThreadUtils.runInUIThreadNoWait(() -> {
       String s = message.getMessage();
       final MPSErrorDialog dialog = new MPSErrorDialog(window, s, message.getStatus().getPresentation(), false);
-      if (herror.getRuleNode() != null) {
-        final boolean hasAdditionalRuleIds = !herror.getAdditionalRulesIds().isEmpty();
+      List<TypesystemRuleId> ruleIds = new ArrayList<>(RuleIdFlavouredItem.FLAVOUR_RULE_ID.getCollection(herror));
+      if (!ruleIds.isEmpty()) {
         final JButton button = new JButton();
-        class ToRuleAction extends AbstractAction {
-          private final SNodeReference myRule;
-          private final JDialog myToDispose;
-
-          ToRuleAction(String title, SNodeReference rule, JDialog toDispose) {
-            super(title);
-            myRule = rule;
-            myToDispose = toDispose;
-          }
-
-          @Override
-          public void actionPerformed(ActionEvent e) {
-            new EditorNavigator(project).shallSelect(true).open(myRule);
-            myToDispose.dispose();
-          }
-        }
-        AbstractAction action = new ToRuleAction("Go To Rule", herror.getRuleNode(), dialog) {
-          @Override
-          public void actionPerformed(ActionEvent e) {
-            if (hasAdditionalRuleIds) {
-              JPopupMenu popupMenu = new JPopupMenu();
-              for (final SNodeReference id : herror.getAdditionalRulesIds()) {
-                popupMenu.add(new ToRuleAction("Go To Rule " + id.getNodeId(), id, dialog));
-              }
-              popupMenu.add(new ToRuleAction("Go To Immediate Rule", herror.getRuleNode(), dialog));
-              popupMenu.show(button, 0, button.getHeight());
-            } else {
-              super.actionPerformed(e);
-            }
-          }
-        };
+        AbstractAction action = new GoToRuleAction("Go To Rule", ruleIds, dialog, button, project);
         button.setAction(action);
         dialog.addButton(button);
       }
@@ -171,5 +142,37 @@ public class MPSErrorDialog extends JDialog {
   public void setVisible(boolean b) {
     assert !b || myIsInitialized;
     super.setVisible(b);
+  }
+
+  private static class GoToRuleAction extends AbstractAction {
+    private final List<TypesystemRuleId> myRuleIds;
+    private final MPSErrorDialog myDialog;
+    private final JButton myButton;
+    private final Project myProject;
+
+    public GoToRuleAction(String message, List<TypesystemRuleId> ruleIds, MPSErrorDialog dialog, JButton button, Project project) {
+      super(message);
+      myRuleIds = ruleIds;
+      myDialog = dialog;
+      myButton = button;
+      myProject = project;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+      if (myRuleIds.size() > 1) {
+        JPopupMenu popupMenu = new JPopupMenu();
+        List<TypesystemRuleId> ruleIds = new ArrayList<>(myRuleIds);
+        while (ruleIds.size() > 1) {
+          TypesystemRuleId ruleId = ruleIds.remove(ruleIds.size() - 1);
+          popupMenu.add(new GoToRuleAction("Go To Rule " + ruleId, Collections.singletonList(ruleId), myDialog, myButton, myProject));
+        }
+        popupMenu.add(new GoToRuleAction("Go To Immediate Rule", Collections.singletonList(ruleIds.remove(0)), myDialog, myButton, myProject));
+        popupMenu.show(myButton, 0, myButton.getHeight());
+      } else {
+        new EditorNavigator(myProject).shallSelect(true).open(myRuleIds.get(0).getSourceNode());
+        myDialog.dispose();
+      }
+    }
   }
 }

@@ -1472,7 +1472,7 @@
                             <ref role="3cqZAo" node="2v0ve8x$pi8" resolve="message" />
                           </node>
                           <node concept="liA8E" id="2PIlT5TBqBX" role="2OqNvi">
-                            <ref role="37wK5l" to="exr9:~HighlighterMessage.getReportItem():jetbrains.mps.errors.item.ReportItem" resolve="getReportItem" />
+                            <ref role="37wK5l" to="exr9:~HighlighterMessage.getReportItem():jetbrains.mps.errors.item.NodeReportItem" resolve="getReportItem" />
                           </node>
                         </node>
                       </node>
