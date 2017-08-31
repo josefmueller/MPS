@@ -18,6 +18,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.ModelImports;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.NotNullWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 
@@ -108,11 +113,37 @@ public class MakeActionParameters {
       smds = Sequence.fromIterable(Collections.<SModel>emptyList());
     }
     if (!(myCleanBuild)) {
+      // assume user specified exact set of models if !isClean 
+      smds = Sequence.fromIterable(smds).translate(new ITranslator2<SModel, SModel>() {
+        public Iterable<SModel> translate(SModel it) {
+          return withImports(it);
+        }
+      }).distinct();
+      // filter dirty only 
       ModelGenerationStatusManager statusManager = myProject.getComponent(ModelGenerationStatusManager.class);
       smds = statusManager.getModifiedModels(Sequence.fromIterable(smds).toListSequence());
     }
     return new ModelsToResources(smds).resources();
   }
+
+  /**
+   * 
+   * @param m model
+   * @return model and its imports, if could be resolved
+   */
+  private static Iterable<SModel> withImports(SModel m) {
+    final SRepository repo = m.getRepository();
+    if (repo == null) {
+      return Sequence.<SModel>singleton(m);
+    }
+    Iterable<SModelReference> importedModels = new ModelImports(m).getImportedModels();
+    return Sequence.fromIterable(importedModels).select(new ISelector<SModelReference, SModel>() {
+      public SModel select(SModelReference it) {
+        return it.resolve(repo);
+      }
+    }).union(Sequence.fromIterable(Sequence.<SModel>singleton(m))).where(new NotNullWhereFilter<SModel>());
+  }
+
   private Iterable<SModel> allModelsOf(SModule module) {
     Iterable<SModel> models = ((Iterable<SModel>) module.getModels());
     if (module instanceof Language) {
