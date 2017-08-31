@@ -21,7 +21,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptFeature;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -59,7 +58,7 @@ public class LanguageErrorItem extends ReportItemBase implements IssueKindReport
     return "language problem";
   }
 
-  public static class ReferenceItem extends LanguageErrorItem implements NodeReportItem, NodeFeatureReportItem, NodeIssueKindReportItem {
+  public static class ReferenceItem extends LanguageErrorItem implements NodeReportItem, NodeFeatureReportItem, IssueKindReportItem {
     private final SNodeReference myNode;
     private final SReferenceLink myReferenceLink;
     public ReferenceItem(@NotNull ErrorScope errorScope, SReference reference) {

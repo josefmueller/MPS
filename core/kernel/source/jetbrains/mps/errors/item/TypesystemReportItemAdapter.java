@@ -32,7 +32,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdFlavouredItem, EditorQuickfixReportItem, IssueKindReportItem, NodeIssueKindReportItem {
+public class TypesystemReportItemAdapter extends NodeReportItemBase implements NodeReportItem, RuleIdFlavouredItem, EditorQuickfixReportItem, IssueKindReportItem {
 
   private final IErrorReporter myErrorReporter;
   private final LanguageRegistry myLanguageRegistry;

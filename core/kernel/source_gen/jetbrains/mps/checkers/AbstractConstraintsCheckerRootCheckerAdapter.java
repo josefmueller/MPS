@@ -12,7 +12,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.errors.item.NodeIssueKindReportItem;
+import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import jetbrains.mps.util.Reference;
@@ -62,7 +62,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
     this(SKIP_NOTHING_CONDITION, rules);
   }
   @Override
-  public void processErrors(SNode rootNode, final SRepository repository, final Processor<NodeIssueKindReportItem> processor) {
+  public void processErrors(SNode rootNode, final SRepository repository, final Processor<NodeReportItem> processor) {
     SModel model = SNodeOperations.getModel(rootNode);
     assert model != null;
 
@@ -71,7 +71,7 @@ public class AbstractConstraintsCheckerRootCheckerAdapter implements IRootChecke
     final Reference<Boolean> cancelled = new Reference<Boolean>(false);
 
     LanguageErrorsCollector errorsCollector = new LanguageErrorsCollector() {
-      public void addErrorInternal(NodeIssueKindReportItem reportItem) {
+      public void addErrorInternal(NodeReportItem reportItem) {
         if (mySkipCondition.skipSingleNode(reportItem.getNode().resolve(repository))) {
           return;
         }

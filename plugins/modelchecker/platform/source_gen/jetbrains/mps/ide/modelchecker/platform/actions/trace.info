@@ -1542,16 +1542,16 @@
       <node id="5734016526289821190" at="30,92,31,106" concept="11" />
       <node id="5734016526289821199" at="31,106,32,0" concept="14" />
       <node id="5734016526289821200" at="32,0,33,33" concept="5" />
-      <node id="182313249930640358" at="36,74,37,64" concept="5" />
+      <node id="182313249930640358" at="36,65,37,64" concept="5" />
       <node id="4716987871698690842" at="37,64,38,41" concept="12" />
       <node id="5734016526289821221" at="41,5,42,19" concept="5" />
       <node id="5734016526289821225" at="42,19,43,19" concept="12" />
-      <node id="4716987871698632723" at="36,0,40,0" concept="10" trace="process#(Ljetbrains/mps/errors/item/NodeIssueKindReportItem;)Z" />
+      <node id="4716987871698632723" at="36,0,40,0" concept="10" trace="process#(Ljetbrains/mps/errors/item/NodeReportItem;)Z" />
       <node id="7878931601198367005" at="24,0,29,0" concept="3" trace="RootCheckerSpecificCheckerAdapter#(Ljetbrains/mps/checkers/IRootChecker;Ljava/lang/String;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <node id="4716987871698625032" at="34,70,40,9" concept="5" />
       <node id="5734016526289821206" at="33,33,41,5" concept="8" />
       <node id="5734016526289821180" at="30,0,45,0" concept="10" trace="checkModel#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
-      <scope id="4716987871698632729" at="36,74,38,41" />
+      <scope id="4716987871698632729" at="36,65,38,41" />
       <scope id="7878931601198367008" at="24,116,27,30" />
       <scope id="4716987871698632723" at="36,0,40,0">
         <var name="reportItem" id="4716987871698632727" />

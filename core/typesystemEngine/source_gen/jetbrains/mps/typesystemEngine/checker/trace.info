@@ -18,7 +18,7 @@
       <node id="6978373592756373231" at="31,56,34,9" concept="3" />
       <node id="4716987871698609299" at="42,0,45,0" concept="4" trace="visit#(Ljetbrains/mps/errors/IErrorReporter;)V" />
       <node id="6978373592756353014" at="31,0,36,0" concept="4" trace="run#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)V" />
-      <node id="4716987871698580695" at="40,117,45,7" concept="1" />
+      <node id="4716987871698580695" at="40,108,45,7" concept="1" />
       <node id="5376460755542186281" at="29,90,36,7" concept="1" />
       <node id="4716987871698573903" at="39,0,47,0" concept="4" trace="processErrors#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;Lorg/jetbrains/mps/openapi/util/Processor;)V" />
       <node id="5231630840089786279" at="28,0,39,0" concept="4" trace="getErrors#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/Set;" />
@@ -36,7 +36,7 @@
       <scope id="6978373592756353014" at="31,0,36,0">
         <var name="typeContext" id="6978373592756353014" />
       </scope>
-      <scope id="4716987871698573914" at="40,117,45,7" />
+      <scope id="4716987871698573914" at="40,108,45,7" />
       <scope id="4716987871698573903" at="39,0,47,0">
         <var name="processor" id="4716987871698573908" />
         <var name="repository" id="4716987871698573906" />

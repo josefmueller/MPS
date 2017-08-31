@@ -14,7 +14,6 @@ import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.errors.item.NodeIssueKindReportItem;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -43,8 +42,8 @@ public class CheckingTestsUtil {
         final Set<NodeReportItem> reportItems = SetSequence.fromSet(new HashSet<NodeReportItem>());
         try {
           for (IRootChecker checker : checkers) {
-            checker.processErrors(root, sm.getRepository(), new Processor<NodeIssueKindReportItem>() {
-              public boolean process(NodeIssueKindReportItem reportItem) {
+            checker.processErrors(root, sm.getRepository(), new Processor<NodeReportItem>() {
+              public boolean process(NodeReportItem reportItem) {
                 SetSequence.fromSet(reportItems).addElement(reportItem);
                 return true;
               }

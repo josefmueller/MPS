@@ -16,19 +16,14 @@
 package jetbrains.mps.errors.item;
 
 import jetbrains.mps.errors.MessageStatus;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.function.Function;
 
-public abstract class NodeReportItemBase extends ReportItemBase implements NodeReportItem, IssueKindReportItem, NodeIssueKindReportItem {
+public abstract class NodeReportItemBase extends ReportItemBase implements NodeReportItem, IssueKindReportItem {
 
   private final SNodeReference myNode;
 

@@ -26,7 +26,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class ReferenceReportItem extends NodeReportItemBase implements NodeFeatureReportItem, IssueKindReportItem, NodeIssueKindReportItem {
+public abstract class ReferenceReportItem extends NodeReportItemBase implements NodeFeatureReportItem, IssueKindReportItem, NodeReportItem {
   private final SReferenceLink myLink;
   public ReferenceReportItem(@NotNull MessageStatus severity, @NotNull SReference ref, String message) {
     super(severity, ref.getSourceNode().getReference(), message);

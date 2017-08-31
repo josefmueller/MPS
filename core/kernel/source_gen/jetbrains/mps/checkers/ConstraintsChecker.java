@@ -4,7 +4,7 @@ package jetbrains.mps.checkers;
 
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.errors.item.NodeIssueKindReportItem;
+import jetbrains.mps.errors.item.NodeReportItem;
 import jetbrains.mps.errors.item.RuleIdFlavouredItem;
 import jetbrains.mps.smodel.runtime.impl.CheckingNodeContextImpl;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,7 +30,7 @@ public class ConstraintsChecker extends AbstractNodeChecker {
   public ConstraintsChecker() {
   }
 
-  private void runCheck(LanguageErrorsCollector errorsCollector, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super CheckingNodeContext> check, _FunctionTypes._return_P1_E0<? extends NodeIssueKindReportItem, ? super RuleIdFlavouredItem.TypesystemRuleId> reportItem) {
+  private void runCheck(LanguageErrorsCollector errorsCollector, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super CheckingNodeContext> check, _FunctionTypes._return_P1_E0<? extends NodeReportItem, ? super RuleIdFlavouredItem.TypesystemRuleId> reportItem) {
     final CheckingNodeContextImpl context = new CheckingNodeContextImpl();
     boolean success = errorsCollector.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
       public Boolean invoke() {

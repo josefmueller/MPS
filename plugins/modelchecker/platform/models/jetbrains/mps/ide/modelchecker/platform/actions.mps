@@ -9854,7 +9854,7 @@
                             <property role="TrG5h" value="reportItem" />
                             <property role="3TUv4t" value="true" />
                             <node concept="3uibUv" id="1PHXAu1vR3d" role="1tU5fm">
-                              <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+                              <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
                             </node>
                           </node>
                           <node concept="3clFbS" id="45Q6RD6r40p" role="3clF47">
@@ -9885,7 +9885,7 @@
                           </node>
                         </node>
                         <node concept="3uibUv" id="1PHXAu1vQD1" role="2Ghqu4">
-                          <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+                          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
                         </node>
                       </node>
                     </node>

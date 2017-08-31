@@ -636,7 +636,7 @@
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1833497744617099302">
     <file name="ReferenceableConceptsChecker.java">
-      <node id="1833497744617160700" at="40,102,41,114" concept="9" />
+      <node id="1833497744617160700" at="40,93,41,96" concept="9" />
       <node id="9116864641331714155" at="42,70,43,21" concept="10" />
       <node id="9116864641331713785" at="44,5,45,0" concept="12" />
       <node id="1833497744617160724" at="46,31,47,21" concept="10" />
@@ -660,7 +660,7 @@
       <node id="3608781789889359497" at="102,29,103,18" concept="1" />
       <node id="8404391560346969648" at="104,11,105,55" concept="4" />
       <node id="1833497744617160876" at="108,5,109,19" concept="10" />
-      <node id="5239564901507262779" at="112,126,113,39" concept="9" />
+      <node id="5239564901507262779" at="112,117,113,39" concept="9" />
       <node id="8318698445855105894" at="114,31,115,86" concept="4" />
       <node id="5239564901507213025" at="115,86,116,13" concept="10" />
       <node id="8318698445855176873" at="121,38,122,38" concept="10" />
@@ -672,7 +672,7 @@
       <node id="8318698445855250894" at="150,40,151,59" concept="10" />
       <node id="8318698445855271710" at="157,40,158,63" concept="10" />
       <node id="1833497744617160069" at="37,0,39,0" concept="2" trace="ReferenceableConceptsChecker#()V" />
-      <node id="9116864641331714153" at="41,114,44,5" concept="7" />
+      <node id="9116864641331714153" at="41,96,44,5" concept="7" />
       <node id="1833497744617160719" at="45,0,48,5" concept="7" />
       <node id="1833497744618166847" at="54,0,57,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="9116864641330940813" at="84,83,87,7" concept="7" />
@@ -777,7 +777,7 @@
         <var name="concept" id="1833497744617789130" />
       </scope>
       <scope id="2019037713128002488" at="51,57,81,7" />
-      <scope id="8404391560346729489" at="112,126,162,5">
+      <scope id="8404391560346729489" at="112,117,162,5">
         <var name="cncpt" id="5239564901507262780" />
       </scope>
       <scope id="8404391560346666023" at="112,0,164,0">
@@ -787,7 +787,7 @@
         <var name="refNode" id="3361475375157554855" />
         <var name="results" id="8404391560346667551" />
       </scope>
-      <scope id="1833497744617160691" at="40,102,109,19">
+      <scope id="1833497744617160691" at="40,93,109,19">
         <var name="results" id="1833497744617160701" />
       </scope>
       <scope id="1833497744617160687" at="39,0,111,0">

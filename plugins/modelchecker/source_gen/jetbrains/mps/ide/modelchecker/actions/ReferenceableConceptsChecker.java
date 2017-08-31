@@ -4,7 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.ide.modelchecker.platform.actions.SpecificChecker;
 import java.util.List;
-import jetbrains.mps.errors.item.NodeIssueKindReportItem;
+import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -37,8 +37,8 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
   public ReferenceableConceptsChecker() {
   }
   @Override
-  public List<NodeIssueKindReportItem> checkModel(final SModel model, final ProgressMonitor monitor) {
-    final List<NodeIssueKindReportItem> results = ListSequence.fromList(new ArrayList<NodeIssueKindReportItem>());
+  public List<NodeReportItem> checkModel(final SModel model, final ProgressMonitor monitor) {
+    final List<NodeReportItem> results = ListSequence.fromList(new ArrayList<NodeReportItem>());
     if (model == null || model == null || model.getModule() == null) {
       return results;
     }
@@ -109,7 +109,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
     return results;
   }
 
-  private void checkNode(List<NodeIssueKindReportItem> results, SNode node, SNode refNode, boolean isAncestor, SNode anchor) {
+  private void checkNode(List<NodeReportItem> results, SNode node, SNode refNode, boolean isAncestor, SNode anchor) {
     SConcept cncpt = node.getConcept();
     if (!((cncpt.isValid()))) {
       ListSequence.fromList(results).addElement(new ConceptMissingError(node, cncpt));

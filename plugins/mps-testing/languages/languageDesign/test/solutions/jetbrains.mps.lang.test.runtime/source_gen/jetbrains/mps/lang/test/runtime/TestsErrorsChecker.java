@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.errors.item.NodeIssueKindReportItem;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
@@ -110,21 +109,21 @@ public class TestsErrorsChecker {
       LOG.debug("Collecting errors in the root " + myRoot);
     }
     final Set<NodeReportItem> result = SetSequence.fromSet(new HashSet<NodeReportItem>());
-    new TypesystemChecker().processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeIssueKindReportItem>() {
-      public boolean process(NodeIssueKindReportItem reportItem) {
+    new TypesystemChecker().processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeReportItem>() {
+      public boolean process(NodeReportItem reportItem) {
         SetSequence.fromSet(result).addElement(reportItem);
         return true;
       }
     });
     // todo: add UsedLanguageChecker 
-    new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeIssueKindReportItem>() {
-      public boolean process(NodeIssueKindReportItem reportItem) {
+    new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeReportItem>() {
+      public boolean process(NodeReportItem reportItem) {
         SetSequence.fromSet(result).addElement(reportItem);
         return true;
       }
     });
-    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<NodeIssueKindReportItem>() {
-      public boolean process(NodeIssueKindReportItem vp) {
+    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<NodeReportItem>() {
+      public boolean process(NodeReportItem vp) {
         SetSequence.fromSet(result).addElement(vp);
         return true;
       }

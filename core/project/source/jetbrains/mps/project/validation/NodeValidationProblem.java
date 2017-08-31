@@ -17,13 +17,12 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.IssueKindReportItem;
-import jetbrains.mps.errors.item.NodeIssueKindReportItem;
 import jetbrains.mps.errors.item.NodeReportItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-public class NodeValidationProblem extends ValidationProblem implements NodeReportItem, IssueKindReportItem, NodeIssueKindReportItem {
+public class NodeValidationProblem extends ValidationProblem implements NodeReportItem, IssueKindReportItem {
   private final SNodeReference myNode;
 
   public NodeValidationProblem(@NotNull SNode node, @NotNull String message) {

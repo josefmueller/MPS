@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.errors.item.NodeIssueKindReportItem;
+import jetbrains.mps.errors.item.NodeReportItem;
 
 public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
   private final IRootChecker myChecker;
@@ -32,8 +32,8 @@ public class RootCheckerSpecificCheckerAdapter extends SpecificChecker {
 
     monitor.start(myCategory, 1);
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
-      myChecker.processErrors(rootNode, myRepository, new Processor<NodeIssueKindReportItem>() {
-        public boolean process(final NodeIssueKindReportItem reportItem) {
+      myChecker.processErrors(rootNode, myRepository, new Processor<NodeReportItem>() {
+        public boolean process(final NodeReportItem reportItem) {
           ListSequence.fromList(results).addElement(reportItem);
           return !(monitor.isCanceled());
         }

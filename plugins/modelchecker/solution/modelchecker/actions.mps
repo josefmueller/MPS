@@ -3833,13 +3833,13 @@
             <node concept="2ShNRf" id="1_LT7K4oFZY" role="33vP2m">
               <node concept="Tc6Ow" id="1_LT7K4oFZZ" role="2ShVmc">
                 <node concept="3uibUv" id="7dLX2A2Nn9I" role="HW$YZ">
-                  <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+                  <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
                 </node>
               </node>
             </node>
             <node concept="_YKpA" id="1_LT7K4oG02" role="1tU5fm">
               <node concept="3uibUv" id="7dLX2A2NjjA" role="_ZDj9">
-                <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+                <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
               </node>
             </node>
           </node>
@@ -4436,7 +4436,7 @@
       </node>
       <node concept="_YKpA" id="1_LT7K4oG2I" role="3clF45">
         <node concept="3uibUv" id="7dLX2A2Nlgn" role="_ZDj9">
-          <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
         </node>
       </node>
       <node concept="37vLTG" id="1_LT7K4oG2L" role="3clF46">
@@ -4460,7 +4460,7 @@
         <property role="TrG5h" value="results" />
         <node concept="_YKpA" id="7iyppy3KgFh" role="1tU5fm">
           <node concept="3uibUv" id="7dLX2A2NhuI" role="_ZDj9">
-            <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
         </node>
       </node>

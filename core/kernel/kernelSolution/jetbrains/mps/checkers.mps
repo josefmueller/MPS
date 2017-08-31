@@ -598,7 +598,7 @@
         <property role="TrG5h" value="reportItem" />
         <node concept="1ajhzC" id="1PHXAu1q5Mb" role="1tU5fm">
           <node concept="3uibUv" id="1PHXAu1voDZ" role="1ajl9A">
-            <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
           <node concept="3uibUv" id="1PHXAu1qcvI" role="1ajw0F">
             <ref role="3uigEE" to="d6hs:~RuleIdFlavouredItem$TypesystemRuleId" resolve="RuleIdFlavouredItem.TypesystemRuleId" />
@@ -1801,7 +1801,7 @@
       <node concept="37vLTG" id="45Q6RD6p_10" role="3clF46">
         <property role="TrG5h" value="errorReporter" />
         <node concept="3uibUv" id="1PHXAu1uW_F" role="1tU5fm">
-          <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
         </node>
       </node>
       <node concept="2AHcQZ" id="45Q6RD6qdr6" role="2AJF6D">
@@ -5733,7 +5733,7 @@
       <node concept="37vLTG" id="5S0STpDMb23" role="3clF46">
         <property role="TrG5h" value="reportItem" />
         <node concept="3uibUv" id="1PHXAu1tF80" role="1tU5fm">
-          <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
         </node>
       </node>
     </node>
@@ -5747,7 +5747,7 @@
       <node concept="37vLTG" id="45Q6RD6pR2m" role="3clF46">
         <property role="TrG5h" value="reportItem" />
         <node concept="3uibUv" id="1PHXAu1tF9$" role="1tU5fm">
-          <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+          <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
         </node>
       </node>
     </node>
@@ -5886,7 +5886,7 @@
         <node concept="3uibUv" id="45Q6RD6mTM8" role="1tU5fm">
           <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
           <node concept="3uibUv" id="1PHXAu1tDPt" role="11_B2D">
-            <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
         </node>
       </node>
@@ -6225,7 +6225,7 @@
         <node concept="3uibUv" id="45Q6RD6mVwb" role="1tU5fm">
           <ref role="3uigEE" to="yyf4:~Processor" resolve="Processor" />
           <node concept="3uibUv" id="1PHXAu1tEXN" role="11_B2D">
-            <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+            <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
           </node>
         </node>
       </node>
@@ -6315,7 +6315,7 @@
                     <node concept="37vLTG" id="45Q6RD6qnnL" role="3clF46">
                       <property role="TrG5h" value="reportItem" />
                       <node concept="3uibUv" id="1PHXAu1tGnv" role="1tU5fm">
-                        <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
+                        <ref role="3uigEE" to="d6hs:~NodeReportItem" resolve="NodeReportItem" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="45Q6RD6qnnN" role="3clF47">

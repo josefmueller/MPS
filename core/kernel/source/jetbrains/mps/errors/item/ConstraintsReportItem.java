@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collection;
 import java.util.Collections;
 
-public abstract class ConstraintsReportItem extends NodeReportItemBase implements RuleIdFlavouredItem, IssueKindReportItem, NodeIssueKindReportItem {
+public abstract class ConstraintsReportItem extends NodeReportItemBase implements RuleIdFlavouredItem, IssueKindReportItem, NodeReportItem {
   private final TypesystemRuleId myRuleNode;
   public ConstraintsReportItem(@NotNull SNode node, String message) {
     this(node, message, null);
