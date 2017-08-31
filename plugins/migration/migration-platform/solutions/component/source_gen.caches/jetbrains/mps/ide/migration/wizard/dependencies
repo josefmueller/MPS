@@ -108,10 +108,9 @@
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationStep" file="MigrationStep.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="com.intellij.openapi.progress.ProcessCanceledException" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.TaskInfo" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.wm.impl.status.InlineProgressIndicator" />
     <classNode dependClassName="com.intellij.ui.IdeBorderFactory" />
     <classNode dependClassName="java.awt.BorderLayout" />
@@ -123,17 +122,13 @@
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
-    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
     <classNode dependClassName="javax.swing.BorderFactory" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="javax.swing.SwingUtilities" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationSession" />
     <classNode dependClassName="jetbrains.mps.ide.migration.wizard.MigrationTask" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -196,6 +191,8 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationWizard" file="MigrationWizard.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

@@ -10,18 +10,13 @@ import javax.swing.JLabel;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
+import javax.swing.BorderFactory;
+import com.intellij.ui.IdeBorderFactory;
+import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.ProgressManager;
 import org.apache.log4j.Level;
-import javax.swing.BorderFactory;
-import com.intellij.ui.IdeBorderFactory;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import javax.swing.SwingUtilities;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.openapi.ui.Messages;
-import java.lang.reflect.InvocationTargetException;
 import com.intellij.openapi.progress.TaskInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
@@ -53,59 +48,66 @@ public class MigrationStep extends BaseStep {
     this.myErrorPanel = new JPanel(new BorderLayout());
     mainPanel.add(myErrorPanel, BorderLayout.CENTER);
 
+    myErrorPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0), IdeBorderFactory.createTitledBorder("Error", true)));
+
     this.myErrorLabel = new JLabel();
     myErrorPanel.add(new JPanel(), BorderLayout.CENTER);
+    myErrorPanel.add(this.myErrorLabel, BorderLayout.NORTH);
+
+    myErrorPanel.setVisible(false);
   }
 
   @Override
   public void _init() {
     super._init();
+
+    try {
+      // this is to allow Idea UI to finish the "transition" to a new wizard step before running task 
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      // do nothing 
+    }
+
+    executeToFirstError();
+  }
+
+  private void executeToFirstError() throws ProcessCanceledException {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
-        try {
-          // this is to allow Idea UI to finish the "transition" to a new wizard step before running task 
-          Thread.sleep(1000);
-        } catch (InterruptedException e) {
-          // do nothing 
-        }
         ProgressManager.getInstance().runProcess(new Runnable() {
           public void run() {
-            while (true) {
-              mySession.setError(null);
+            mySession.setError(null);
 
-              try {
-                myTask.run();
-              } catch (Throwable t) {
-                if (LOG.isEnabledFor(Level.ERROR)) {
-                  LOG.error("exception occurred in migration wizard", t);
-                }
-                forceComplete();
-                break;
+            try {
+              myTask.run();
+            } catch (Throwable t) {
+              String errMsg = "Exception occurred in migration wizard";
+              myProgress.setText(errMsg);
+              if (LOG.isEnabledFor(Level.ERROR)) {
+                LOG.error(errMsg, t);
               }
-
-              // here we either finished or have an error 
-              if (myTask.isComplete()) {
-                break;
-              }
-
-              assert mySession.getError() != null : "not completed migration process with no errors";
-              if (!(mySession.getError().canIgnore())) {
-                ApplicationManager.getApplication().invokeLater(new Runnable() {
-                  public void run() {
-                    myErrorPanel.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(20, 0, 10, 0), IdeBorderFactory.createTitledBorder("Error", true)));
-                    myErrorLabel.setText("<html>" + mySession.getError().getMessage() + "</html>");
-                    myErrorPanel.add(MigrationStep.this.myErrorLabel, BorderLayout.NORTH);
-                  }
-                }, ModalityState.stateForComponent(myErrorPanel));
-                forceComplete();
-                break;
-              }
-
-              if (!(showError())) {
-                forceComplete();
-                break;
-              }
+              forceComplete();
+              return;
             }
+
+            // here we either finished or have an error 
+            if (myTask.isComplete()) {
+              fireStateChanged();
+              return;
+            }
+            assert mySession.getError() != null : "not completed migration process with no errors";
+
+            ApplicationManager.getApplication().invokeLater(new Runnable() {
+              public void run() {
+                myErrorLabel.setText("<html>" + mySession.getError().getMessage() + "<br><br>Continue migration?" + "</html>");
+                myErrorPanel.setVisible(true);
+              }
+            }, ModalityState.stateForComponent(myErrorPanel));
+
+            if (!(mySession.getError().canIgnore())) {
+              forceComplete();
+            }
+
             fireStateChanged();
           }
         }, myProgress);
@@ -119,27 +121,9 @@ public class MigrationStep extends BaseStep {
     fireStateChanged();
   }
 
-  public boolean showError() {
-    // false - stop, true - continue 
-    final Wrappers._boolean res = new Wrappers._boolean(false);
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          Project project = ProjectHelper.toIdeaProject(mySession.getProject());
-          String msg = mySession.getError().getMessage();
-          msg = msg.replaceAll("<br>", "\n");
-          res.value = Messages.showYesNoDialog(project, msg + "Continue migration?", "Errors detected", "Ignore and Continue", "Stop Migration", null) == Messages.YES;
-        }
-      });
-    } catch (InvocationTargetException e) {
-    } catch (InterruptedException e) {
-    }
-    return res.value;
-  }
-
   @Override
   public Object getNextStepId() {
-    return null;
+    return (myTask.isComplete() ? null : ID);
   }
 
   @Override
@@ -149,12 +133,42 @@ public class MigrationStep extends BaseStep {
 
   @Override
   public boolean isComplete() {
-    return myTask.isComplete();
+    // finished or is waiting for user response after error 
+    return myTask.isComplete() || mySession.getError() != null;
   }
 
   @Override
   public boolean canBeCancelled() {
-    return false;
+    return isErrorReplyState();
+  }
+
+  private boolean isErrorReplyState() {
+    return mySession.getError() != null && mySession.getError().canIgnore();
+  }
+
+  @Override
+  public String nextButtonLabel() {
+    return (getNextStepId() == null ? super.nextButtonLabel() : "Ignore and Continue");
+  }
+
+  @Override
+  public String cancelButtonLabel() {
+    return (getNextStepId() == null ? super.cancelButtonLabel() : "Stop Migration");
+  }
+
+  @Override
+  public void nextButtonAction() {
+    if (isErrorReplyState()) {
+      myErrorPanel.setVisible(false);
+      executeToFirstError();
+    }
+  }
+
+  @Override
+  public void cancelButtonAction() {
+    if (isErrorReplyState()) {
+      forceComplete();
+    }
   }
 
   private class MyInlineProgressIndicator extends InlineProgressIndicator {

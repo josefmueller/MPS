@@ -51,5 +51,9 @@ public abstract class BaseStep extends AbstractWizardStepEx {
   public String cancelButtonLabel() {
     return null;
   }
+  public void nextButtonAction() {
+  }
+  public void cancelButtonAction() {
+  }
   protected abstract void doCreateComponent(JComponent mainPanel);
 }
