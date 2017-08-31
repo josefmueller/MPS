@@ -127,7 +127,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   private ActionToolbar myToolbar;
   private final AtomicInteger myMessagesInProgress = new AtomicInteger();
   private MessageToolSearchPanel mySearchPanel = null;
-  private final MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, false, myComponent, null, null, true);
+  private final MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, false, myComponent, this, null, true);
   private final Object myUpdateIdentity = new Object();
   private final ConcurrentLinkedQueue<IMessage> myMessagesQueue = new ConcurrentLinkedQueue<>();
   private volatile boolean myIsDisposed = false;
