@@ -193,6 +193,8 @@ public class CheckpointVault {
     handler.saveStream("checkpoints", cpRegistry);
     for (Entry entry : myKnownCheckpoints) {
       if (entry.myChangedState == null) {
+        // tell Make the file with state should be kept.
+        handler.touch(entry.getFilename());
         continue;
       }
       // buildCheckpointRegistry() above ensures we've got all file names;
