@@ -486,35 +486,6 @@
             </node>
           </node>
         </node>
-        <node concept="3SKdUt" id="5tBfmt26pcD" role="3cqZAp">
-          <node concept="3SKdUq" id="5tBfmt26pml" role="3SKWNk">
-            <property role="3SKdUp" value="Necessary to listen for FS changes notifications &amp; notify MPS FS listeners to update repository/.." />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="5tBfmt26BRK" role="3cqZAp">
-          <node concept="3SKdUq" id="5tBfmt26C1$" role="3SKWNk">
-            <property role="3SKdUp" value="this code will work if on executing tests with &quot;reuse caches&quot; option" />
-          </node>
-        </node>
-        <node concept="3SKdUt" id="5tBfmt26pAU" role="3cqZAp">
-          <node concept="3SKdUq" id="5tBfmt26pKE" role="3SKWNk">
-            <property role="3SKdUp" value="TODO: should we modify FSChangesWatcher to always listen for FS notifications (even in tests)?" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="5tBfmt26nDb" role="3cqZAp">
-          <node concept="2OqwBi" id="5tBfmt26o4Z" role="3clFbG">
-            <node concept="2YIFZM" id="5tBfmt26o1c" role="2Oq$k0">
-              <ref role="37wK5l" to="2eq1:7mrRUyVUvb7" resolve="instance" />
-              <ref role="1Pybhc" to="2eq1:7mrRUyVUv4e" resolve="FSChangesWatcher" />
-            </node>
-            <node concept="liA8E" id="5tBfmt26oj9" role="2OqNvi">
-              <ref role="37wK5l" to="2eq1:7mrRUyVUvcY" resolve="initComponent" />
-              <node concept="3clFbT" id="5tBfmt26ol0" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="Pw_fmFN_qH" role="3cqZAp">
           <node concept="1rXfSq" id="Pw_fmFN_qF" role="3clFbG">
             <ref role="37wK5l" node="Pw_fmFMRo6" resolve="disallowAccessToClosedProjectsDir" />

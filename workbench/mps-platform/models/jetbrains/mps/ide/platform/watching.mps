@@ -1408,99 +1408,54 @@
       <node concept="3Tm1VV" id="7mrRUyVUvco" role="1B3o_S" />
       <node concept="3cqZAl" id="7mrRUyVUvcp" role="3clF45" />
       <node concept="3clFbS" id="7mrRUyVUvcq" role="3clF47">
-        <node concept="3clFbF" id="7mrRUyVUvcr" role="3cqZAp">
-          <node concept="1rXfSq" id="4hiugqyzexv" role="3clFbG">
-            <ref role="37wK5l" node="7mrRUyVUvcY" resolve="initComponent" />
-            <node concept="3clFbT" id="7mrRUyVUvct" role="37wK5m">
-              <property role="3clFbU" value="false" />
+        <node concept="3clFbF" id="7mrRUyVUvd6" role="3cqZAp">
+          <node concept="37vLTI" id="7mrRUyVUvd7" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeuFA3" role="37vLTJ">
+              <ref role="3cqZAo" node="7mrRUyVUva_" resolve="myConnection" />
+            </node>
+            <node concept="2OqwBi" id="7mrRUyVUvd9" role="37vLTx">
+              <node concept="37vLTw" id="2BHiRxeuoLV" role="2Oq$k0">
+                <ref role="3cqZAo" node="7mrRUyVUv9B" resolve="myBus" />
+              </node>
+              <node concept="liA8E" id="7mrRUyVUvdb" role="2OqNvi">
+                <ref role="37wK5l" to="4b2m:~MessageBus.connect():com.intellij.util.messages.MessageBusConnection" resolve="connect" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7mrRUyVUvdc" role="3cqZAp">
+          <node concept="2OqwBi" id="7mrRUyVUvdd" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeufQg" role="2Oq$k0">
+              <ref role="3cqZAo" node="7mrRUyVUva_" resolve="myConnection" />
+            </node>
+            <node concept="liA8E" id="7mrRUyVUvdf" role="2OqNvi">
+              <ref role="37wK5l" to="4b2m:~MessageBusConnection.subscribe(com.intellij.util.messages.Topic,java.lang.Object):void" resolve="subscribe" />
+              <node concept="10M0yZ" id="7mrRUyVUvdg" role="37wK5m">
+                <ref role="1PxDUh" to="jlff:~VirtualFileManager" resolve="VirtualFileManager" />
+                <ref role="3cqZAo" to="jlff:~VirtualFileManager.VFS_CHANGES" resolve="VFS_CHANGES" />
+              </node>
+              <node concept="37vLTw" id="2BHiRxeuq2e" role="37wK5m">
+                <ref role="3cqZAo" node="7mrRUyVUvaC" resolve="myBusListener" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7mrRUyVUvdi" role="3cqZAp">
+          <node concept="2OqwBi" id="7mrRUyVUvdj" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeuE2g" role="2Oq$k0">
+              <ref role="3cqZAo" node="7mrRUyVUv9H" resolve="myVirtualFileManager" />
+            </node>
+            <node concept="liA8E" id="7mrRUyVUvdl" role="2OqNvi">
+              <ref role="37wK5l" to="jlff:~VirtualFileManager.addVirtualFileManagerListener(com.intellij.openapi.vfs.VirtualFileManagerListener):void" resolve="addVirtualFileManagerListener" />
+              <node concept="37vLTw" id="2BHiRxeuXiV" role="37wK5m">
+                <ref role="3cqZAo" node="7mrRUyVUvaf" resolve="myVirtualFileManagerListener" />
+              </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_S7tV" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="7f2aAtsUbM" role="jymVt" />
-    <node concept="3clFb_" id="7mrRUyVUvcY" role="jymVt">
-      <property role="TrG5h" value="initComponent" />
-      <node concept="37vLTG" id="7mrRUyVUvcZ" role="3clF46">
-        <property role="TrG5h" value="force" />
-        <node concept="10P_77" id="7mrRUyVUvd0" role="1tU5fm" />
-      </node>
-      <node concept="3cqZAl" id="7mrRUyVUvd1" role="3clF45" />
-      <node concept="3Tm1VV" id="7mrRUyVUvd2" role="1B3o_S" />
-      <node concept="3clFbS" id="7mrRUyVUvd3" role="3clF47">
-        <node concept="3clFbJ" id="7mrRUyVUvd4" role="3cqZAp">
-          <node concept="3clFbS" id="7mrRUyVUvd5" role="3clFbx">
-            <node concept="3clFbF" id="7mrRUyVUvd6" role="3cqZAp">
-              <node concept="37vLTI" id="7mrRUyVUvd7" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeuFA3" role="37vLTJ">
-                  <ref role="3cqZAo" node="7mrRUyVUva_" resolve="myConnection" />
-                </node>
-                <node concept="2OqwBi" id="7mrRUyVUvd9" role="37vLTx">
-                  <node concept="37vLTw" id="2BHiRxeuoLV" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7mrRUyVUv9B" resolve="myBus" />
-                  </node>
-                  <node concept="liA8E" id="7mrRUyVUvdb" role="2OqNvi">
-                    <ref role="37wK5l" to="4b2m:~MessageBus.connect():com.intellij.util.messages.MessageBusConnection" resolve="connect" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="7mrRUyVUvdc" role="3cqZAp">
-              <node concept="2OqwBi" id="7mrRUyVUvdd" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeufQg" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7mrRUyVUva_" resolve="myConnection" />
-                </node>
-                <node concept="liA8E" id="7mrRUyVUvdf" role="2OqNvi">
-                  <ref role="37wK5l" to="4b2m:~MessageBusConnection.subscribe(com.intellij.util.messages.Topic,java.lang.Object):void" resolve="subscribe" />
-                  <node concept="10M0yZ" id="7mrRUyVUvdg" role="37wK5m">
-                    <ref role="3cqZAo" to="jlff:~VirtualFileManager.VFS_CHANGES" resolve="VFS_CHANGES" />
-                    <ref role="1PxDUh" to="jlff:~VirtualFileManager" resolve="VirtualFileManager" />
-                  </node>
-                  <node concept="37vLTw" id="2BHiRxeuq2e" role="37wK5m">
-                    <ref role="3cqZAo" node="7mrRUyVUvaC" resolve="myBusListener" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="7mrRUyVUvdi" role="3cqZAp">
-              <node concept="2OqwBi" id="7mrRUyVUvdj" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeuE2g" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7mrRUyVUv9H" resolve="myVirtualFileManager" />
-                </node>
-                <node concept="liA8E" id="7mrRUyVUvdl" role="2OqNvi">
-                  <ref role="37wK5l" to="jlff:~VirtualFileManager.addVirtualFileManagerListener(com.intellij.openapi.vfs.VirtualFileManagerListener):void" resolve="addVirtualFileManagerListener" />
-                  <node concept="37vLTw" id="2BHiRxeuXiV" role="37wK5m">
-                    <ref role="3cqZAo" node="7mrRUyVUvaf" resolve="myVirtualFileManagerListener" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="1Wc70l" id="7mrRUyVUvdn" role="3clFbw">
-            <node concept="1eOMI4" id="7mrRUyVUvdo" role="3uHU7w">
-              <node concept="22lmx$" id="7mrRUyVUvdp" role="1eOMHV">
-                <node concept="37vLTw" id="2BHiRxgm74t" role="3uHU7B">
-                  <ref role="3cqZAo" node="7mrRUyVUvcZ" resolve="force" />
-                </node>
-                <node concept="3fqX7Q" id="7mrRUyVUvdr" role="3uHU7w">
-                  <node concept="2YIFZM" id="1jLye1tLjtC" role="3fr31v">
-                    <ref role="37wK5l" to="fyhk:~RuntimeFlags.isTestMode():boolean" resolve="isTestMode" />
-                    <ref role="1Pybhc" to="fyhk:~RuntimeFlags" resolve="RuntimeFlags" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbC" id="7mrRUyVUvdv" role="3uHU7B">
-              <node concept="37vLTw" id="2BHiRxeuq8Q" role="3uHU7B">
-                <ref role="3cqZAo" node="7mrRUyVUva_" resolve="myConnection" />
-              </node>
-              <node concept="10Nm6u" id="7mrRUyVUvdx" role="3uHU7w" />
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="7f2aAtsUbN" role="jymVt" />

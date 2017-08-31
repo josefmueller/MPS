@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.idea.IdeaTestApplication;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.project.ProjectManager;
@@ -78,10 +77,6 @@ public class IdeaEnvironment extends EnvironmentBase {
     EnvironmentBase.setIdeaPluginsToLoad(myConfig);
 
     myIdeaApplication = createIdeaTestApp();
-    // Necessary to listen for FS changes notifications & notify MPS FS listeners to update repository/.. 
-    // this code will work if on executing tests with "reuse caches" option 
-    // TODO: should we modify FSChangesWatcher to always listen for FS notifications (even in tests)? 
-    FSChangesWatcher.instance().initComponent(true);
     disallowAccessToClosedProjectsDir();
 
     MPSCoreComponents coreComponents = getMPSCoreComponents();
