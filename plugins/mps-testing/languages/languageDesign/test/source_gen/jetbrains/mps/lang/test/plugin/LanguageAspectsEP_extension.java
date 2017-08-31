@@ -102,5 +102,5 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
   private static boolean eq_ecu8yf_a0b0a0a0a0a0c0d0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static String HELP_URL = URLFunction_ConfluenceDocUrl.getUrl() + "/Language+tests+language#Languagetestslanguage-introduction";
+  private static String HELP_URL = URLFunction_ConfluenceDocUrl.getUrl() + "/Testing+languages";
 }

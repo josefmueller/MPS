@@ -172,8 +172,8 @@
       </node>
     </node>
     <node concept="1sEMCm" id="46nPloex5BH" role="1fTXyH">
-      <property role="1sEMCp" value="/Language+tests+language#Languagetestslanguage-introduction" />
-      <ref role="1fZFei" to="tpcc:46nPloez0vX" resolve="MPSConfluenceDoc" />
+      <property role="1sEMCp" value="/Testing+languages" />
+      <ref role="1fZFei" to="tpcc:46nPloez0vX" resolve="ConfluenceDocUrl" />
     </node>
   </node>
   <node concept="312cEu" id="3L7HwaT3r1n">

@@ -78,7 +78,7 @@ public enum LanguageAspect {
   DATA_FLOW("dataFlow", BootstrapLanguages.dataFlowLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage"),
 
   //mostly migrated
-  TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction"),
+  TEST("test", BootstrapLanguages.testLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "Testing+languages"),
 
   //mostly migrated
   TEXT_GEN("textGen", BootstrapLanguages.textGenLanguageRef(), LanguageAspect.CONFLUENCE_BASE + "TextGen"),
