@@ -27,6 +27,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class new_ extends SubstituteMenuBase {
   @NotNull
@@ -133,6 +135,10 @@ public class new_ extends SubstituteMenuBase {
         @Override
         public String getMatchingText(@NotNull String pattern) {
           return "new " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(myParameterObject);
+        }
+        @Override
+        public void select(@NotNull SNode createdNode, @NotNull String pattern) {
+          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), createdNode, SelectionManager.LAST_CELL, 0);
         }
         @Nullable
         @Override
