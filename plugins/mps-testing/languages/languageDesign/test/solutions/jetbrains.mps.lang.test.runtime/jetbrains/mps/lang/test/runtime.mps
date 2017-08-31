@@ -9278,8 +9278,8 @@
               </node>
               <node concept="37vLTG" id="4FNJx8tsED4" role="1bW2Oz">
                 <property role="TrG5h" value="vp" />
-                <node concept="3uibUv" id="ygzS0$xLYv" role="1tU5fm">
-                  <ref role="3uigEE" to="6if8:~NodeValidationProblem" resolve="NodeValidationProblem" />
+                <node concept="3uibUv" id="7dLX2A2RtFu" role="1tU5fm">
+                  <ref role="3uigEE" to="d6hs:~NodeIssueKindReportItem" resolve="NodeIssueKindReportItem" />
                 </node>
               </node>
             </node>

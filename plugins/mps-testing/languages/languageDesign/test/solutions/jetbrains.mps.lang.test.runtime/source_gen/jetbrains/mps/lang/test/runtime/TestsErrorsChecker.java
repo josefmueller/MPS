@@ -20,12 +20,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import org.jetbrains.mps.openapi.util.Processor;
+import jetbrains.mps.errors.item.NodeIssueKindReportItem;
 import jetbrains.mps.checkers.AbstractConstraintsCheckerRootCheckerAdapter;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.project.validation.ValidationUtil;
-import jetbrains.mps.project.validation.NodeValidationProblem;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.checkers.ErrorReportUtil;
 import org.jetbrains.annotations.Nullable;
@@ -110,21 +110,21 @@ public class TestsErrorsChecker {
       LOG.debug("Collecting errors in the root " + myRoot);
     }
     final Set<NodeReportItem> result = SetSequence.fromSet(new HashSet<NodeReportItem>());
-    new TypesystemChecker().processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeReportItem>() {
-      public boolean process(NodeReportItem reportItem) {
+    new TypesystemChecker().processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeIssueKindReportItem>() {
+      public boolean process(NodeIssueKindReportItem reportItem) {
         SetSequence.fromSet(result).addElement(reportItem);
         return true;
       }
     });
     // todo: add UsedLanguageChecker 
-    new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeReportItem>() {
-      public boolean process(NodeReportItem reportItem) {
+    new AbstractConstraintsCheckerRootCheckerAdapter(AbstractConstraintsCheckerRootCheckerAdapter.SKIP_CONSTRAINTS_CONDITION, new ConstraintsChecker(), new RefScopeChecker(), new TargetConceptChecker()).processErrors(myRoot, myRoot.getModel().getRepository(), new Processor<NodeIssueKindReportItem>() {
+      public boolean process(NodeIssueKindReportItem reportItem) {
         SetSequence.fromSet(result).addElement(reportItem);
         return true;
       }
     });
-    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<NodeValidationProblem>() {
-      public boolean process(NodeValidationProblem vp) {
+    ValidationUtil.validateModelContent(Sequence.<SNode>singleton(myRoot), new Processor<NodeIssueKindReportItem>() {
+      public boolean process(NodeIssueKindReportItem vp) {
         SetSequence.fromSet(result).addElement(vp);
         return true;
       }
