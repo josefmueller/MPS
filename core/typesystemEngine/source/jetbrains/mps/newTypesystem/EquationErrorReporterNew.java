@@ -22,6 +22,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class EquationErrorReporterNew extends AbstractErrorReporter implements IErrorReporter {
@@ -37,9 +38,9 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
    * SNodeReference could get resolved any time one asks #getSNode(). Besides, usage pattern seems to be to get IErrorReporter instances and process
    * them right away. Hope, with the explicit javadoc for #getSNode() nobody would assume value of this method could be safely used outside of original read.
    */
-  private final SNode myNode;
+  private final @NotNull SNode myNode;
 
-  public EquationErrorReporterNew(SNode node, jetbrains.mps.newTypesystem.state.State state, String before, SNode left, String between, SNode right,
+  public EquationErrorReporterNew(@NotNull SNode node, jetbrains.mps.newTypesystem.state.State state, String before, SNode left, String between, SNode right,
                                   String after, EquationInfo info) {
     super(info == null ? null : info.getRuleNode());
     myState = state;
@@ -75,6 +76,7 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
     return new NodeMessageTarget();
   }
 
+  @NotNull
   @Override
   public SNode getSNode() {
     return myNode;

@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.state;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.NullErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -199,17 +200,18 @@ public class NodeMaps {
 
   public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
     IErrorReporter errorReporter;
-    if (info != null && info.getErrorString() != null) {
+    if (info == null || info.getNodeWithError() == null) {
+      errorReporter = new NullErrorReporter();
+    } else if (info.getErrorString() != null) {
       errorReporter = new SimpleErrorReporter(info.getNodeWithError(), info.getErrorString(), info.getRuleNode());
       for (QuickFixProvider quickFixProvider : info.getIntentionProviders()) {
         errorReporter.addIntentionProvider(quickFixProvider);
       }
     } else {
-      errorReporter = new EquationErrorReporterNew(info == null ? null : info.getNodeWithError(),
+      errorReporter = new EquationErrorReporterNew(info.getNodeWithError(),
                                                    myState, "incompatible types: ", right, " and ", left, "", info);
     }
     setAdditionalRulesIds(info, errorReporter);
-    // addNodeToError(nodeWithError, errorReporter, info);
     myState.getTypeCheckingContext().reportMessage(errorReporter.getSNode(), errorReporter);
   }
 
@@ -217,7 +219,9 @@ public class NodeMaps {
     IErrorReporter errorReporter;
     String errorString = equationInfo.getErrorString();
     SNode nodeWithError = equationInfo.getNodeWithError();
-    if (errorString == null) {
+    if (nodeWithError == null) {
+      errorReporter = new NullErrorReporter();
+    } else if (errorString == null) {
       String strongString = isWeak ? "" : " strong";
       errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType,
         " is not a" + strongString + " subtype of ", superType, "", equationInfo);
@@ -235,7 +239,9 @@ public class NodeMaps {
     IErrorReporter errorReporter;
     String errorString = equationInfo.getErrorString();
     SNode nodeWithError = equationInfo.getNodeWithError();
-    if (errorString == null) {
+    if (nodeWithError == null) {
+      errorReporter = new NullErrorReporter();
+    } else if (errorString == null) {
       String strongString = isWeak ? "" : " strongly";
       errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType, " is not" + strongString + " comparable with ",
         superType, "", equationInfo);

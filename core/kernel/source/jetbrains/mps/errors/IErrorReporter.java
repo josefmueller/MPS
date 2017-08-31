@@ -59,6 +59,6 @@ public interface IErrorReporter {
    * IOW, you are safe to access this node provided you're in the same read. If you need to pass node value to another read, please
    * use {@link SNodeReference} instead.
    */
-  @Nullable
+  @NotNull
   public SNode getSNode();
 }

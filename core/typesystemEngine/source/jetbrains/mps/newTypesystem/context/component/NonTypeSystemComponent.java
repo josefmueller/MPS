@@ -28,6 +28,7 @@ import jetbrains.mps.typesystemEngine.util.TypeSystemUtil;
 import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -318,7 +319,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
     return true;
   }
 
-  private void applyNonTypesystemRulesToNode(final SNode node, final TypeCheckingContext typeCheckingContext) {
+  private void applyNonTypesystemRulesToNode(@NotNull final SNode node, final TypeCheckingContext typeCheckingContext) {
     getTypechecking().runApplyRulesTo(node, new Runnable() {
       @Override
       public void run() {

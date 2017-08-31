@@ -27,6 +27,7 @@ import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.state.State;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.SNodeOperations;
@@ -163,7 +164,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   }
 
   @Override
-  public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
+  public IErrorReporter reportTypeError(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
     reporter.addIntentionProvider(intentionProvider);
     if (nodeWithError == null) {
@@ -179,7 +180,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   }
 
   @Override
-  public IErrorReporter reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
+  public IErrorReporter reportWarning(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, errorTarget);
     reporter.addIntentionProvider(intentionProvider);
     if (nodeWithError.getModel() == null) {
@@ -191,7 +192,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   }
 
   @Override
-  public IErrorReporter reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
+  public IErrorReporter reportInfo(@NotNull SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, errorTarget);
     reporter.addIntentionProvider(intentionProvider);
     if (nodeWithInfo.getModel() == null) {
@@ -203,7 +204,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   }
 
   @Override
-  public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
+  public void reportMessage(@NotNull SNode nodeWithError, IErrorReporter errorReporter) {
     if (nodeWithError == null) {
       getState().executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
       return;//todo

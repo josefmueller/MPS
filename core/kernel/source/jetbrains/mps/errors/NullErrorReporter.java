@@ -31,46 +31,48 @@ import java.util.List;
 public class NullErrorReporter implements IErrorReporter {
   @Override
   public String reportError() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   @Nullable
   @Override
   public SNodeReference getRuleNode() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public void additionalRule(@NotNull SNodeReference rulePointer) {
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public List<SNodeReference> getAdditionalRulesIds() {
-    return Collections.emptyList();
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public MessageStatus getMessageStatus() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public List<QuickFixProvider> getIntentionProviders() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public void addIntentionProvider(QuickFixProvider intentionProvider) {
-
+    throw new UnsupportedOperationException();
   }
 
   @Override
   public MessageTarget getErrorTarget() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 
+  @NotNull
   @Override
   public SNode getSNode() {
-    return null;
+    throw new UnsupportedOperationException();
   }
 }

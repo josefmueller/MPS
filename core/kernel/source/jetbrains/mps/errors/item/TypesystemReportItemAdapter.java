@@ -38,12 +38,12 @@ public class TypesystemReportItemAdapter extends NodeReportItemBase implements N
   private final LanguageRegistry myLanguageRegistry;
 
   public TypesystemReportItemAdapter(@NotNull IErrorReporter errorReporter) {
-    super(errorReporter.getMessageStatus(), errorReporter.getSNode() == null ? null : errorReporter.getSNode().getReference(), getMessage(errorReporter));
+    super(errorReporter.getMessageStatus(), errorReporter.getSNode().getReference(), getMessage(errorReporter));
     myErrorReporter = errorReporter;
     // FIXME QuickFixRuntimeAdapter cons (#getQuickFix(), below) doesn't expect errorReporter.getSNode() to return null ever
     //       however, don't want to enforce this with @NotNull here right now, it's release time (only 1 of 3 uses of this cons
     //       ensure node != null), therefore fallback to global instance.
-    SRepository errorNodeRepo = errorReporter.getSNode() == null || errorReporter.getSNode().getModel() == null ? null : errorReporter.getSNode().getModel().getRepository();
+    SRepository errorNodeRepo = errorReporter.getSNode().getModel() == null ? null : errorReporter.getSNode().getModel().getRepository();
     myLanguageRegistry = errorNodeRepo == null ? LanguageRegistry.getInstance() : LanguageRegistry.getInstance(errorNodeRepo);
   }
 
