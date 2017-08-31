@@ -41,10 +41,6 @@ public class NullErrorReporter implements IErrorReporter {
   }
 
   @Override
-  public void addAdditionalRuleId(String ruleModel, String ruleId) {
-  }
-
-  @Override
   public void additionalRule(@NotNull SNodeReference rulePointer) {
   }
 
@@ -55,11 +51,6 @@ public class NullErrorReporter implements IErrorReporter {
 
   @Override
   public MessageStatus getMessageStatus() {
-    return null;
-  }
-
-  @Override
-  public QuickFixProvider getIntentionProvider() {
     return null;
   }
 

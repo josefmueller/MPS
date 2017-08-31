@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -61,25 +60,12 @@ public abstract class AbstractErrorReporter implements IErrorReporter {
   }
 
   @Override
-  public QuickFixProvider getIntentionProvider() {
-    if (myIntentionProviders == null) return null;
-    if (myIntentionProviders.isEmpty()) return null;
-    return myIntentionProviders.get(0);
-  }
-
-  @Override
   public List<QuickFixProvider> getIntentionProviders() {
     ArrayList<QuickFixProvider> result = new ArrayList<QuickFixProvider>(1);
     if (myIntentionProviders != null) {
       result.addAll(myIntentionProviders);
     }
     return result;
-  }
-
-  @Override
-  public void addAdditionalRuleId(String ruleModel, String ruleId) {
-    final PersistenceFacade pf = PersistenceFacade.getInstance();
-    additionalRule(new SNodePointer(pf.createModelReference(ruleModel), pf.createNodeId(ruleId)));
   }
 
   @Override

@@ -51,11 +51,6 @@ public class BaseQuickFixProvider implements QuickFixProvider {
     return myExecuteImmediately;
   }
 
-  @Override
-  public QuickFix_Runtime getQuickFix() {
-    throw new UnsupportedOperationException();
-  }
-
   // not thread-safe
   public QuickFix_Runtime getQuickFix(@NotNull LanguageRegistry languageRegistry) {
     if (myQuickFix != null) {

@@ -39,31 +39,14 @@ public interface IErrorReporter {
   SNodeReference getRuleNode();
 
   /**
-   * replace with alternative that takes SNodeReference to the rule
-   */
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  public void addAdditionalRuleId(String ruleModel, String ruleId);
-
-  /**
    * @param rulePointer pointer to a rule that adds extra meaning to reported error
    * @since 2017.2
    */
-  default void additionalRule(@NotNull SNodeReference rulePointer) {
-    // FIXME drop the body along with addAdditionalRuleId removal, it has been added just in case there's another IErrorReporter implementation
-    SModelReference modelReference = rulePointer.getModelReference();
-    SNodeId nodeId = rulePointer.getNodeId();
-    if (modelReference != null && nodeId != null) {
-      PersistenceFacade pf = PersistenceFacade.getInstance();
-      addAdditionalRuleId(pf.asString(modelReference), nodeId.toString());
-    }
-  }
+  public void additionalRule(@NotNull SNodeReference rulePointer);
 
   public List<SNodeReference> getAdditionalRulesIds();
 
   public MessageStatus getMessageStatus();
-
-  public QuickFixProvider getIntentionProvider();
 
   public List<QuickFixProvider> getIntentionProviders();
 

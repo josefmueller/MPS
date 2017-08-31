@@ -47,11 +47,6 @@ public class QuickFixRuntimeAdapter implements EditorQuickFix, NodeFlavouredItem
     return myQuickFixProvider.getQuickFix(myLanguageRegistry);
   }
 
-  // FIXME the only public use seems to be compatibility, review once 2017.2 is out
-  public QuickFixProvider getQuickFixProvider() {
-    return myQuickFixProvider;
-  }
-
   @Override
   public boolean isExecutedImmediately() {
     return myQuickFixProvider.isExecutedImmediately();

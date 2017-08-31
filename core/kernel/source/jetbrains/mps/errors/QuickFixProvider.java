@@ -22,18 +22,11 @@ import org.jetbrains.annotations.NotNull;
 // XXX it's a bit odd to have isExecutedImmediately here, but to instantiate QuickFix_Runtime to get declaration node, could we do anything about that?
 public interface QuickFixProvider {
 
-  @Deprecated
-  @ToRemove(version = 2017.2)
-  QuickFix_Runtime getQuickFix();
-
   /**
    * FIXME inconsistent contract. Implementation used to return null, while client didn't account for null value
    *       Now, implementation returns fake instance and ensures != null, although it's not necessarily a bright idea.
    */
-  default QuickFix_Runtime getQuickFix(@NotNull LanguageRegistry languageRegistry) {
-    // compatibility code, remove implementation once 2017.2 is out
-    return getQuickFix();
-  }
+  QuickFix_Runtime getQuickFix(@NotNull LanguageRegistry languageRegistry);
 
   boolean isExecutedImmediately();
 
