@@ -22,6 +22,9 @@ public abstract class SpecificChecker {
   public SpecificChecker() {
   }
   public abstract List<? extends IssueKindReportItem> checkModel_(SModel model, ProgressMonitor progressContext);
+  /**
+   * such method used to be called for adding error to collection, now it is performed directly: do we really need filtering?
+   */
   protected static void addIssue(List<ReportItem> results, NodeReportItem reportItem, SRepository repository) {
     if (filterIssue(reportItem.getNode().resolve(repository))) {
       ListSequence.fromList(results).addElement(reportItem);

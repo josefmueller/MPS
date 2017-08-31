@@ -27,8 +27,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import org.apache.log4j.Level;
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.item.FlavouredItem;
+import java.util.HashSet;
+import jetbrains.mps.errors.item.ReportItemBase;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.errors.item.NodeReportItem;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.errors.item.ModelFlavouredItem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.errors.item.ModuleFlavouredItem;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.apache.log4j.Level;
 
 public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent implements MigrationProblemHandler {
   private static final Logger LOG = LogManager.getLogger(WorkbenchMigrationProblemHandler.class);
@@ -92,8 +104,75 @@ public class WorkbenchMigrationProblemHandler extends AbstractProjectComponent i
     myUsagesTool.show(sr, "No results to show");
   }
 
+  public static class MigrationReportItem<T> implements IssueKindReportItem {
+    private String myMessage;
+    private T myReason;
+    public MigrationReportItem(T reason, String message) {
+      myMessage = message;
+      myReason = reason;
+    }
+    @Override
+    public String getIssueKind() {
+      return "migration problem";
+    }
+    @Override
+    public String getMessage() {
+      return myMessage;
+    }
+    @Override
+    public MessageStatus getSeverity() {
+      return MessageStatus.ERROR;
+    }
+    public T getReason() {
+      return myReason;
+    }
+    @Override
+    public Set<FlavouredItem.ReportItemFlavour<?, ?>> getIdFlavours() {
+      return SetSequence.fromSetAndArray(new HashSet<FlavouredItem.ReportItemFlavour<?, ?>>(), ReportItemBase.FLAVOUR_CLASS, ReportItemBase.FLAVOUR_THIS);
+    }
+  }
+  public static class MigrationReportItemNode extends WorkbenchMigrationProblemHandler.MigrationReportItem<SNodeReference> implements NodeReportItem {
+    public MigrationReportItemNode(SNodeReference reason, String message) {
+      super(reason, message);
+    }
+    @Override
+    public SNodeReference getNode() {
+      return getReason();
+    }
+  }
+  public static class MigrationReportItemModel extends WorkbenchMigrationProblemHandler.MigrationReportItem<SModelReference> implements ModelFlavouredItem {
+    public MigrationReportItemModel(SModelReference reason, String message) {
+      super(reason, message);
+    }
+    @NotNull
+    @Override
+    public SModelReference getModel() {
+      return getReason();
+    }
+  }
+  public static class MigrationReportItemModule extends WorkbenchMigrationProblemHandler.MigrationReportItem<SModuleReference> implements ModuleFlavouredItem {
+    public MigrationReportItemModule(SModuleReference reason, String message) {
+      super(reason, message);
+    }
+    @NotNull
+    @Override
+    public SModuleReference getModule() {
+      return getReason();
+    }
+  }
+
   private IssueKindReportItem issueByProblem(Problem p) {
     Object r = p.getReason();
+    if (r instanceof SNode) {
+      return new WorkbenchMigrationProblemHandler.MigrationReportItemNode(((SNode) r).getReference(), p.getMessage());
+    }
+    if (r instanceof SModel) {
+      return new WorkbenchMigrationProblemHandler.MigrationReportItemModel(((SModel) r).getReference(), p.getMessage());
+    }
+    if (r instanceof SModule) {
+      return new WorkbenchMigrationProblemHandler.MigrationReportItemModule(((SModule) r).getModuleReference(), p.getMessage());
+    }
+
     if (LOG.isEnabledFor(Level.ERROR)) {
       LOG.error("Unknown issue type: " + r.getClass().getName());
     }
