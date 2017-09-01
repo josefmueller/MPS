@@ -30,6 +30,7 @@ public class NodeValidationProblem extends ValidationProblem implements NodeRepo
     myNode = node.getReference();
   }
 
+  @NotNull
   public SNodeReference getNode() {
     return myNode;
   }

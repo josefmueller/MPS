@@ -37,6 +37,7 @@ public abstract class NodeReportItemBase extends ReportItemBase implements NodeR
     return new HashSet<>(Arrays.asList(FLAVOUR_CLASS, FLAVOUR_NODE));
   }
 
+  @NotNull
   @Override
   public SNodeReference getNode() {
     return myNode;

@@ -66,6 +66,7 @@ public class LanguageErrorItem extends ReportItemBase implements IssueKindReport
       myNode = reference.getSourceNode().getReference();
       myReferenceLink = reference.getLink();
     }
+    @NotNull
     @Override
     public SNodeReference getNode() {
       return myNode;

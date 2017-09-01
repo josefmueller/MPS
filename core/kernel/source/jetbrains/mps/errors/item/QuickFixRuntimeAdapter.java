@@ -62,6 +62,7 @@ public class QuickFixRuntimeAdapter implements EditorQuickFix, NodeFlavouredItem
     return getFixRuntime().getDescription(myNode.resolve(repository));
   }
 
+  @NotNull
   @Override
   public SNodeReference getNode() {
     return myNode;
