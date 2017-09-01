@@ -24,6 +24,7 @@ import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent
 import jetbrains.mps.languageScope.LanguageScopeExecutor;
 import jetbrains.mps.newTypesystem.state.State;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -84,7 +85,7 @@ public abstract class SimpleTypecheckingContext<
   }
 
   @Override
-  public void reportMessage(@NotNull SNode nodeWithError, IErrorReporter errorReporter) {
+  public void reportMessage(@Nullable SNode nodeWithError, IErrorReporter errorReporter) {
     // do nothing
   }
 

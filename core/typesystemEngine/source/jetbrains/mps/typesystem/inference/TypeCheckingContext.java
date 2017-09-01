@@ -22,6 +22,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
@@ -49,7 +50,8 @@ public abstract class TypeCheckingContext {
 
   public abstract IErrorReporter reportInfo(@NotNull SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget);
 
-  public abstract void reportMessage(@NotNull SNode nodeWithError, IErrorReporter errorReporter);
+  // nullability of nodeWithError detects validness of errorReporter
+  public abstract void reportMessage(@Nullable SNode nodeWithError, IErrorReporter errorReporter);
 
   public abstract SNode createNewRuntimeTypesVariable();
 

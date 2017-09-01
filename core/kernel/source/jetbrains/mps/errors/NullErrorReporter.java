@@ -42,7 +42,7 @@ public class NullErrorReporter implements IErrorReporter {
 
   @Override
   public void additionalRule(@NotNull SNodeReference rulePointer) {
-    throw new UnsupportedOperationException();
+
   }
 
   @Override
@@ -62,7 +62,7 @@ public class NullErrorReporter implements IErrorReporter {
 
   @Override
   public void addIntentionProvider(QuickFixProvider intentionProvider) {
-    throw new UnsupportedOperationException();
+
   }
 
   @Override

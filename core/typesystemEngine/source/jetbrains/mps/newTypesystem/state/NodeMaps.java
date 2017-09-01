@@ -199,20 +199,24 @@ public class NodeMaps {
   }
 
   public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
-    IErrorReporter errorReporter;
+    final IErrorReporter errorReporter;
+    final SNode nodeWithError;
     if (info == null || info.getNodeWithError() == null) {
+      nodeWithError = null;
       errorReporter = new NullErrorReporter();
     } else if (info.getErrorString() != null) {
-      errorReporter = new SimpleErrorReporter(info.getNodeWithError(), info.getErrorString(), info.getRuleNode());
+      nodeWithError = info.getNodeWithError();
+      errorReporter = new SimpleErrorReporter(nodeWithError, info.getErrorString(), info.getRuleNode());
       for (QuickFixProvider quickFixProvider : info.getIntentionProviders()) {
         errorReporter.addIntentionProvider(quickFixProvider);
       }
     } else {
-      errorReporter = new EquationErrorReporterNew(info.getNodeWithError(),
+      nodeWithError = info.getNodeWithError();
+      errorReporter = new EquationErrorReporterNew(nodeWithError,
                                                    myState, "incompatible types: ", right, " and ", left, "", info);
     }
     setAdditionalRulesIds(info, errorReporter);
-    myState.getTypeCheckingContext().reportMessage(errorReporter.getSNode(), errorReporter);
+    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
   }
 
   public void reportSubTypeError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
