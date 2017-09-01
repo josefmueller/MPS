@@ -207,7 +207,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   @Override
   public void reportMessage(@Nullable SNode nodeWithError, IErrorReporter errorReporter) {
     if (nodeWithError == null) {
-      getState().executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.reportError()));
+      getState().executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.getClass()));
       return;//todo
     }
     getTypechecking().reportTypeError(nodeWithError, errorReporter);
