@@ -17,12 +17,12 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.item.IssueKindReportItem;
-import jetbrains.mps.errors.item.ModuleFlavouredItem;
+import jetbrains.mps.errors.item.ModuleReportItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public class ModuleValidationProblem extends ValidationProblem implements IssueKindReportItem, ModuleFlavouredItem {
+public class ModuleValidationProblem extends ValidationProblem implements IssueKindReportItem, ModuleReportItem {
 
   private SModuleReference myModule;
 
