@@ -268,26 +268,12 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
-      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
-        <child id="2546654756694997556" name="reference" index="92FcQ" />
-        <child id="3106559687488913694" name="line" index="2XjZqd" />
-      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
-        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
-      </concept>
-      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
-        <child id="2667874559098216723" name="text" index="3HnX3l" />
-      </concept>
-      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
-        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
-      </concept>
-      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
-        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -6365,77 +6351,7 @@
       </node>
       <node concept="3Tm1VV" id="6IqTD4bJTX0" role="1B3o_S" />
       <node concept="3cqZAl" id="6IqTD4bJTXC" role="3clF45" />
-      <node concept="3clFbS" id="6IqTD4bJTX2" role="3clF47">
-        <node concept="3SKdUt" id="6IqTD4bKbYT" role="3cqZAp">
-          <node concept="3SKdUq" id="6IqTD4bKbYV" role="3SKWNk">
-            <property role="3SKdUp" value="drop implementation along with the deprecated method" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6IqTD4bKbCg" role="3cqZAp">
-          <node concept="BsUDl" id="6IqTD4bKbCf" role="3clFbG">
-            <ref role="37wK5l" node="6bGbH3Svq6g" resolve="unpack" />
-            <node concept="37vLTw" id="6IqTD4bKbCE" role="37wK5m">
-              <ref role="3cqZAo" node="6IqTD4bJTY3" resolve="helper" />
-            </node>
-            <node concept="2YIFZM" id="6IqTD4bKbHZ" role="37wK5m">
-              <ref role="37wK5l" to="33ny:~Collections.emptyList():java.util.List" resolve="emptyList" />
-              <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="13i0hz" id="6bGbH3Svq6g" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="TrG5h" value="unpack" />
-      <property role="13i0it" value="true" />
-      <node concept="3Tm1VV" id="6bGbH3Svq6h" role="1B3o_S" />
-      <node concept="3cqZAl" id="6bGbH3Svq6o" role="3clF45" />
-      <node concept="3clFbS" id="6bGbH3Svq6j" role="3clF47">
-        <node concept="3SKdUt" id="6IqTD4bKiKO" role="3cqZAp">
-          <node concept="3SKdUq" id="6IqTD4bKiKP" role="3SKWNk">
-            <property role="3SKdUp" value="no-op" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="6bGbH3Svq6m" role="3clF46">
-        <property role="TrG5h" value="helper" />
-        <node concept="3uibUv" id="6bGbH3Svq6n" role="1tU5fm">
-          <ref role="3uigEE" to="o3n2:2fLy7QGT29I" resolve="UnpackHelper" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1GEzjKC9c0H" role="3clF46">
-        <property role="TrG5h" value="artifacts" />
-        <node concept="3uibUv" id="1SFCUA31Xx0" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
-          <node concept="3uibUv" id="1SFCUA31Xx1" role="11_B2D">
-            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-          </node>
-        </node>
-      </node>
-      <node concept="P$JXv" id="6IqTD4bJTYj" role="lGtFl">
-        <node concept="TZ5HI" id="6IqTD4bJTYk" role="3nqlJM">
-          <node concept="TZ5HA" id="6IqTD4bJTYl" role="3HnX3l">
-            <node concept="1dT_AC" id="6IqTD4bJTYC" role="1dT_Ay">
-              <property role="1dT_AB" value="override single-argument " />
-            </node>
-            <node concept="1dT_AA" id="6IqTD4bJTZ2" role="1dT_Ay">
-              <node concept="92FcH" id="6IqTD4bJTZg" role="qph3F">
-                <node concept="TZ5HA" id="6IqTD4bJTZi" role="2XjZqd" />
-                <node concept="VXe0Z" id="6IqTD4bJZWH" role="92FcQ">
-                  <ref role="VXe0S" node="6IqTD4bJTWZ" resolve="unpack" />
-                </node>
-              </node>
-            </node>
-            <node concept="1dT_AC" id="6IqTD4bJTZ1" role="1dT_Ay">
-              <property role="1dT_AB" value=" instead; artifacts collection is always empty. Remove after 3.5 is out" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="6IqTD4bJTYm" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
+      <node concept="3clFbS" id="6IqTD4bJTX2" role="3clF47" />
     </node>
     <node concept="13i0hz" id="1bWeed$ownT" role="13h7CS">
       <property role="13i0iv" value="true" />
