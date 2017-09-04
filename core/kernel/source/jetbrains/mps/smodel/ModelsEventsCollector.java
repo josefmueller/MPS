@@ -48,7 +48,7 @@ public abstract class ModelsEventsCollector {
    * This field may be accessed without a model lock from the flush() method,
    * so we should take care of this synchronization.
    */
-  private Object myEventsLock = new Object();
+  private final Object myEventsLock = new Object();
 
   private List<SModelEvent> myEvents = new ArrayList<>();
   private SModelListener myModelListener = new SModelDelegateListener();
