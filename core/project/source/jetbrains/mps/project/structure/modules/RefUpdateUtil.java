@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Mutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -29,6 +30,8 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+
+import static jetbrains.mps.smodel.SModelReference.differs;
 
 /**
  * Model/module name might get changed, and to reflect actual name in descriptor files, we 'update' references from time to time,
@@ -44,7 +47,7 @@ public final class RefUpdateUtil {
     myRepository = repository;
   }
 
-  public boolean updateModelRefs(Collection<SModelReference> refs) {
+  public boolean updateModelRefs(@Mutable Collection<SModelReference> refs) {
     Set<SModelReference> remove = new HashSet<SModelReference>();
     Set<SModelReference> add = new LinkedHashSet<SModelReference>();
 
@@ -72,7 +75,7 @@ public final class RefUpdateUtil {
       return null;
     }
     final SModelReference actualModelRef = resolved.getReference();
-    return jetbrains.mps.smodel.SModelReference.differs(actualModelRef, modelRef) ? actualModelRef : null;
+    return differs(actualModelRef, modelRef) ? actualModelRef : null;
   }
 
   public boolean updateModuleRefs(Collection<SModuleReference> refs) {
