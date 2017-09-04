@@ -42,15 +42,6 @@ public class DependenciesHelper {
     return myGenContext;
   }
 
-  /**
-   * 
-   * @deprecated use appropriate accessors instead
-   */
-  @Deprecated
-  public Map<SNode, String> locations() {
-    return locationMap;
-  }
-
   public void putLocation(SNode layoutNode, String location) {
     locationMap.put(layoutNode, location);
     if (isFromTransformedModel(layoutNode)) {
