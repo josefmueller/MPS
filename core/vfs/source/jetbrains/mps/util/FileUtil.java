@@ -197,6 +197,9 @@ public class FileUtil {
     return getCanonicalPath(file);
   }
 
+  /**
+   * @return unix-style path without last slashes with some version of normalization
+   */
   @NotNull
   public static String normalize(@NotNull String path) {
     return stripLastSlashes(normalize0(getUnixPath(path), Path.UNIX_SEPARATOR));

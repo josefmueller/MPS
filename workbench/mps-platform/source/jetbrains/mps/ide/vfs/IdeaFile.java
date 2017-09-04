@@ -416,8 +416,8 @@ public class IdeaFile implements IFileEx, CachingFile {
       String jarPath = path.substring(0, index);
       String entryPath = path.substring(index + 1);
 
-      assert entryPath.indexOf('\\') == -1 : "No backslashes are allowed in DOT_JAR entry path: " + path;
-      entryPath = entryPath.replace('\\', '/');
+      // cannot happen since the #myPath field is always normalized and unix-style
+      assert entryPath.indexOf('\\') == -1 : "No backslashes are allowed in the JAR entry path: " + path;
       if (entryPath.startsWith("/")) {
         entryPath = entryPath.substring(1);
       }
