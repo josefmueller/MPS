@@ -501,8 +501,7 @@
                                         </node>
                                       </node>
                                       <node concept="2qgKlT" id="5WtSFRWvglr" role="2OqNvi">
-                                        <ref role="37wK5l" to="vbkb:1bWeed$oUb5" resolve="getLastSegment" />
-                                        <node concept="10Nm6u" id="5WtSFRWvglt" role="37wK5m" />
+                                        <ref role="37wK5l" to="vbkb:5dwDdJ8yckN" resolve="getLastSegment" />
                                       </node>
                                     </node>
                                   </node>

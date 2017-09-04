@@ -2664,8 +2664,7 @@
                                 </node>
                               </node>
                               <node concept="2qgKlT" id="4_YGhOEm7Hb" role="2OqNvi">
-                                <ref role="37wK5l" to="vbkb:1bWeed$oUb5" resolve="getLastSegment" />
-                                <node concept="10Nm6u" id="4_YGhOEm7W8" role="37wK5m" />
+                                <ref role="37wK5l" to="vbkb:5dwDdJ8yckN" resolve="getLastSegment" />
                               </node>
                             </node>
                             <node concept="3cpWs3" id="4_YGhOEm4KS" role="3uHU7B">
@@ -3245,9 +3244,8 @@
                                   <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" resolve="path" />
                                 </node>
                               </node>
-                              <node concept="2qgKlT" id="5Y_X_gZ0l9L" role="2OqNvi">
-                                <ref role="37wK5l" to="vbkb:1bWeed$oUb5" resolve="getLastSegment" />
-                                <node concept="10Nm6u" id="5Y_X_gZ0okc" role="37wK5m" />
+                              <node concept="2qgKlT" id="44AffE4jmmm" role="2OqNvi">
+                                <ref role="37wK5l" to="vbkb:5dwDdJ8yckN" resolve="getLastSegment" />
                               </node>
                             </node>
                             <node concept="37vLTw" id="5Y_X_gYZFgU" role="3uHU7B">

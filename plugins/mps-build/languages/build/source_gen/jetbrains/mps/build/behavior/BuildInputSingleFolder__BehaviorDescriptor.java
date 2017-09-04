@@ -33,7 +33,7 @@ public final class BuildInputSingleFolder__BehaviorDescriptor extends BaseBHDesc
   }
 
   /*package*/ static String getApproximateName_id4RsV8qJH_Br(@NotNull SNode __thisNode__) {
-    return (String) BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")), null);
+    return (String) BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")));
   }
 
   /*package*/ BuildInputSingleFolder__BehaviorDescriptor() {

@@ -75,7 +75,7 @@ public final class BuildLayout_CopyProcessor__BehaviorDescriptor extends BaseBHD
         compositePart = BuildRelativePath__BehaviorDescriptor.next_id7wpYgMyU0gZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath")), compositePart);
       }
     } else {
-      res.append(BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, null));
+      res.append(BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(path));
     }
     if (res.length() == 0) {
       res.append("container");

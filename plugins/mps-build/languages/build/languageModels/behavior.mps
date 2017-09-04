@@ -268,12 +268,26 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -2159,6 +2173,53 @@
       <node concept="3Tm1VV" id="1bWeed$oUb6" role="1B3o_S" />
       <node concept="17QB3L" id="1bWeed$oUb9" role="3clF45" />
       <node concept="3clFbS" id="1bWeed$oUb8" role="3clF47">
+        <node concept="3SKdUt" id="5dwDdJ8yoiV" role="3cqZAp">
+          <node concept="3SKdUq" id="5dwDdJ8yoiX" role="3SKWNk">
+            <property role="3SKdUp" value="There're a lot of uses with null argument, and the only implementation present ignores MacroHelper althogether" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="5dwDdJ8yohq" role="3cqZAp">
+          <node concept="BsUDl" id="5dwDdJ8yohn" role="3clFbG">
+            <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="1bWeed$oUba" role="3clF46">
+        <property role="TrG5h" value="helper" />
+        <node concept="3uibUv" id="1bWeed$oUbb" role="1tU5fm">
+          <ref role="3uigEE" to="o3n2:5FtnUVJR86u" resolve="MacroHelper" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="5dwDdJ8yco9" role="lGtFl">
+        <node concept="TZ5HI" id="5dwDdJ8ycoa" role="3nqlJM">
+          <node concept="TZ5HA" id="5dwDdJ8ycob" role="3HnX3l">
+            <node concept="1dT_AC" id="5dwDdJ8ycoz" role="1dT_Ay">
+              <property role="1dT_AB" value="use " />
+            </node>
+            <node concept="1dT_AA" id="5dwDdJ8ycoA" role="1dT_Ay">
+              <node concept="92FcH" id="5dwDdJ8ycoG" role="qph3F">
+                <node concept="TZ5HA" id="5dwDdJ8ycoI" role="2XjZqd" />
+                <node concept="VXe0Z" id="5dwDdJ8yjyd" role="92FcQ">
+                  <ref role="VXe0S" node="5dwDdJ8yckN" resolve="getLastSegment" />
+                </node>
+              </node>
+            </node>
+            <node concept="1dT_AC" id="5dwDdJ8yco_" role="1dT_Ay">
+              <property role="1dT_AB" value=" instead. Even though last segment of a path could be a macro, it's not apparent if there's any reason to pass MacroHelper in here." />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5dwDdJ8ycoc" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+    </node>
+    <node concept="13i0hz" id="5dwDdJ8yckN" role="13h7CS">
+      <property role="TrG5h" value="getLastSegment" />
+      <property role="13i0it" value="true" />
+      <node concept="3Tm1VV" id="5dwDdJ8yckO" role="1B3o_S" />
+      <node concept="17QB3L" id="5dwDdJ8ycm2" role="3clF45" />
+      <node concept="3clFbS" id="5dwDdJ8yckQ" role="3clF47">
         <node concept="3SKdUt" id="6v5CVv8dg45" role="3cqZAp">
           <node concept="3SKdUq" id="6v5CVv8dg47" role="3SKWNk">
             <property role="3SKdUp" value="FIXME pay attention to uses of the method. Its uses may expect certain layout. E.g. its uses with 'module descriptor of' (BuildMpsLayout_ModuleJars) suggest" />
@@ -2169,19 +2230,8 @@
             <property role="3SKdUp" value="      module descriptors always reside under module root (otherwise, LAST segment makes no sense)" />
           </node>
         </node>
-        <node concept="3SKdUt" id="6v5CVv8dlhL" role="3cqZAp">
-          <node concept="3SKdUq" id="6v5CVv8dlhN" role="3SKWNk">
-            <property role="3SKdUp" value="XXX Besides, it's not apparent if there's any reason to pass MacroHelper in here, if all we care is last segment of a path. Could it be a macro?" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="1bWeed$oUbc" role="3cqZAp">
-          <node concept="10Nm6u" id="1bWeed$oUbd" role="3clFbG" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="1bWeed$oUba" role="3clF46">
-        <property role="TrG5h" value="helper" />
-        <node concept="3uibUv" id="1bWeed$oUbb" role="1tU5fm">
-          <ref role="3uigEE" to="o3n2:5FtnUVJR86u" resolve="MacroHelper" />
+        <node concept="3clFbF" id="5dwDdJ8ycmI" role="3cqZAp">
+          <node concept="10Nm6u" id="5dwDdJ8ycmH" role="3clFbG" />
         </node>
       </node>
     </node>
@@ -2398,12 +2448,6 @@
               <ref role="3TsBF5" to="3ior:7usrAn056vN" resolve="head" />
             </node>
           </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="1bWeed$oUbl" role="3clF46">
-        <property role="TrG5h" value="helper" />
-        <node concept="3uibUv" id="1bWeed$oUbm" role="1tU5fm">
-          <ref role="3uigEE" to="o3n2:5FtnUVJR86u" resolve="MacroHelper" />
         </node>
       </node>
     </node>
@@ -2958,13 +3002,13 @@
         </node>
       </node>
     </node>
-    <node concept="13i0hz" id="1bWeed$oUe4" role="13h7CS">
-      <property role="13i0iv" value="false" />
+    <node concept="13i0hz" id="5dwDdJ8yoQg" role="13h7CS">
       <property role="TrG5h" value="getLastSegment" />
       <property role="13i0it" value="false" />
-      <ref role="13i0hy" node="1bWeed$oUb5" resolve="getLastSegment" />
-      <node concept="3Tm1VV" id="1bWeed$oUe5" role="1B3o_S" />
-      <node concept="3clFbS" id="1bWeed$oUe6" role="3clF47">
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="5dwDdJ8yckN" resolve="getLastSegment" />
+      <node concept="3Tm1VV" id="5dwDdJ8yoQh" role="1B3o_S" />
+      <node concept="3clFbS" id="5dwDdJ8yoQq" role="3clF47">
         <node concept="3clFbF" id="1bWeed$oUeg" role="3cqZAp">
           <node concept="3K4zz7" id="1bWeed$oUfB" role="3clFbG">
             <node concept="2OqwBi" id="1bWeed$oUgk" role="3K4E3e">
@@ -2976,9 +3020,6 @@
               </node>
               <node concept="2qgKlT" id="1bWeed$oUgq" role="2OqNvi">
                 <ref role="37wK5l" node="1bWeed$oUbg" resolve="getLastSegment" />
-                <node concept="37vLTw" id="2BHiRxgmaoO" role="37wK5m">
-                  <ref role="3cqZAo" node="1bWeed$oUe7" resolve="helper" />
-                </node>
               </node>
             </node>
             <node concept="10Nm6u" id="1bWeed$oUgs" role="3K4GZi" />
@@ -2994,13 +3035,7 @@
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="1bWeed$oUe7" role="3clF46">
-        <property role="TrG5h" value="helper" />
-        <node concept="3uibUv" id="1bWeed$oUe8" role="1tU5fm">
-          <ref role="3uigEE" to="o3n2:5FtnUVJR86u" resolve="MacroHelper" />
-        </node>
-      </node>
-      <node concept="17QB3L" id="1bWeed$oUe9" role="3clF45" />
+      <node concept="17QB3L" id="5dwDdJ8yoQr" role="3clF45" />
     </node>
     <node concept="13i0hz" id="7wpYgMyTXsY" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -8744,9 +8779,8 @@
                 <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" resolve="path" />
               </node>
             </node>
-            <node concept="2qgKlT" id="4RsV8qJFtMa" role="2OqNvi">
-              <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-              <node concept="10Nm6u" id="4RsV8qJFtMb" role="37wK5m" />
+            <node concept="2qgKlT" id="44AffE4jWY3" role="2OqNvi">
+              <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
             </node>
           </node>
         </node>
@@ -9104,8 +9138,7 @@
               </node>
             </node>
             <node concept="2qgKlT" id="4RsV8qJH_CR" role="2OqNvi">
-              <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-              <node concept="10Nm6u" id="4RsV8qJH_CS" role="37wK5m" />
+              <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
             </node>
           </node>
         </node>
@@ -9336,16 +9369,8 @@
                       <node concept="37vLTw" id="3GM_nagTvOI" role="2Oq$k0">
                         <ref role="3cqZAo" node="7XQqoCTjpIJ" resolve="path" />
                       </node>
-                      <node concept="2qgKlT" id="7XQqoCTjpIY" role="2OqNvi">
-                        <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-                        <node concept="2OqwBi" id="7UAfeVQUcc$" role="37wK5m">
-                          <node concept="37vLTw" id="2BHiRxgmDzq" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6IqTD4bKVwz" resolve="helper" />
-                          </node>
-                          <node concept="liA8E" id="7UAfeVQUccA" role="2OqNvi">
-                            <ref role="37wK5l" to="o3n2:1bWeed$oUju" resolve="getMacroHelper" />
-                          </node>
-                        </node>
+                      <node concept="2qgKlT" id="44AffE4jZ5w" role="2OqNvi">
+                        <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
                       </node>
                     </node>
                   </node>
@@ -9494,9 +9519,8 @@
                       <node concept="37vLTw" id="3GM_nagT_lz" role="2Oq$k0">
                         <ref role="3cqZAo" node="7XQqoCTjpJM" resolve="path" />
                       </node>
-                      <node concept="2qgKlT" id="7XQqoCTjpK1" role="2OqNvi">
-                        <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-                        <node concept="10Nm6u" id="7XQqoCTjpK2" role="37wK5m" />
+                      <node concept="2qgKlT" id="44AffE4jYvb" role="2OqNvi">
+                        <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
                       </node>
                     </node>
                   </node>
@@ -11366,9 +11390,8 @@
                 <ref role="3Tt5mk" to="3ior:7UAfeVQUc4q" resolve="path" />
               </node>
             </node>
-            <node concept="2qgKlT" id="7UAfeVQUc61" role="2OqNvi">
-              <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-              <node concept="10Nm6u" id="7UAfeVQUc62" role="37wK5m" />
+            <node concept="2qgKlT" id="44AffE4k20a" role="2OqNvi">
+              <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
             </node>
           </node>
         </node>
@@ -11669,16 +11692,8 @@
                   <node concept="37vLTw" id="3GM_nagTxSQ" role="2Oq$k0">
                     <ref role="3cqZAo" node="7UAfeVQUcaM" resolve="path" />
                   </node>
-                  <node concept="2qgKlT" id="7UAfeVQUcb1" role="2OqNvi">
-                    <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-                    <node concept="2OqwBi" id="7UAfeVQUcck" role="37wK5m">
-                      <node concept="37vLTw" id="2BHiRxgma$X" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6IqTD4bKIvP" resolve="helper" />
-                      </node>
-                      <node concept="liA8E" id="7UAfeVQUccr" role="2OqNvi">
-                        <ref role="37wK5l" to="o3n2:1bWeed$oUju" resolve="getMacroHelper" />
-                      </node>
-                    </node>
+                  <node concept="2qgKlT" id="44AffE4k2lX" role="2OqNvi">
+                    <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
                   </node>
                 </node>
               </node>
@@ -11764,8 +11779,7 @@
                     </node>
                   </node>
                   <node concept="2qgKlT" id="7UAfeVQUc8k" role="2OqNvi">
-                    <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-                    <node concept="10Nm6u" id="7UAfeVQUc8l" role="37wK5m" />
+                    <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
                   </node>
                 </node>
               </node>
@@ -12815,9 +12829,8 @@
                         <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
                       </node>
                     </node>
-                    <node concept="2qgKlT" id="2vMyQtSY3G3" role="2OqNvi">
-                      <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-                      <node concept="10Nm6u" id="2vMyQtSY4Kt" role="37wK5m" />
+                    <node concept="2qgKlT" id="44AffE4k4m1" role="2OqNvi">
+                      <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
                     </node>
                   </node>
                   <node concept="liA8E" id="2vMyQtSY3G8" role="2OqNvi">
@@ -13211,9 +13224,8 @@
                     <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
                   </node>
                 </node>
-                <node concept="2qgKlT" id="2vMyQtSV1e8" role="2OqNvi">
-                  <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-                  <node concept="10Nm6u" id="2vMyQtSV1lF" role="37wK5m" />
+                <node concept="2qgKlT" id="44AffE4k4K8" role="2OqNvi">
+                  <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
                 </node>
               </node>
             </node>
@@ -14004,8 +14016,7 @@
                     <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                     <node concept="2OqwBi" id="19QsrPvBv_u" role="37wK5m">
                       <node concept="2qgKlT" id="19QsrPvBwxP" role="2OqNvi">
-                        <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-                        <node concept="10Nm6u" id="19QsrPvBwye" role="37wK5m" />
+                        <ref role="37wK5l" node="5dwDdJ8yckN" resolve="getLastSegment" />
                       </node>
                       <node concept="37vLTw" id="19QsrPvBvvX" role="2Oq$k0">
                         <ref role="3cqZAo" node="19QsrPvAyFb" resolve="path" />

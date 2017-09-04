@@ -38,7 +38,7 @@ public class ArtifactLookup {
     StringBuilder suffix = new StringBuilder();
     SNode current = SNodeOperations.as(path, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
     if (current != null) {
-      suffix.append("/").append(BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, null));
+      suffix.append("/").append(BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(path));
       current = SNodeOperations.as(BuildSourcePath__BehaviorDescriptor.getParent_id7wpYgMyTXsR.invoke(current), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
     }
     SNode containingRoot = SNodeOperations.getContainingRoot(path);
@@ -48,7 +48,7 @@ public class ArtifactLookup {
         return MultiTuple.<SNode,String>from(result, suffix.toString());
       }
 
-      suffix.insert(0, BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(current, null)).insert(0, "/");
+      suffix.insert(0, BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(current)).insert(0, "/");
       current = SNodeOperations.as(BuildSourcePath__BehaviorDescriptor.getParent_id7wpYgMyTXsR.invoke(current), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
     }
 

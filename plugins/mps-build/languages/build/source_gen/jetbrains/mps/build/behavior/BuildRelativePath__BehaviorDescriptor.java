@@ -13,7 +13,6 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.build.util.Context;
-import jetbrains.mps.build.util.MacroHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
@@ -32,12 +31,12 @@ public final class BuildRelativePath__BehaviorDescriptor extends BaseBHDescripto
   public static final SMethod<String> getBasePath_id4jjtc7WZMYz = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBasePath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4jjtc7WZMYz").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
   public static final SMethod<String> getLocalPath_id4Kip2_918Y$ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLocalPath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Kip2_918Y$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
   public static final SMethod<String> getPathTail_id15RAxQX0M4T = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPathTail").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("15RAxQX0M4T").registry(REGISTRY).build();
-  public static final SMethod<String> getLastSegment_id1bWeed$oUb5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLastSegment").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oUb5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MacroHelper.class, ""));
+  public static final SMethod<String> getLastSegment_id5dwDdJ8yckN = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLastSegment").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5dwDdJ8yckN").registry(REGISTRY).build();
   public static final SMethod<SNode> getParent_id7wpYgMyTXsR = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParent").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7wpYgMyTXsR").registry(REGISTRY).build();
   public static final SMethod<Boolean> isEmptyTail_id7wpYgMyU0sQ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isEmptyTail").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7wpYgMyU0sQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<SNode> next_id7wpYgMyU0gZ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("next").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7wpYgMyU0gZ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getBasePath_id4jjtc7WZMYz, getLocalPath_id4Kip2_918Y$, getPathTail_id15RAxQX0M4T, getLastSegment_id1bWeed$oUb5, getParent_id7wpYgMyTXsR, isEmptyTail_id7wpYgMyU0sQ, next_id7wpYgMyU0gZ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getBasePath_id4jjtc7WZMYz, getLocalPath_id4Kip2_918Y$, getPathTail_id15RAxQX0M4T, getLastSegment_id5dwDdJ8yckN, getParent_id7wpYgMyTXsR, isEmptyTail_id7wpYgMyU0sQ, next_id7wpYgMyU0gZ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -62,8 +61,8 @@ public final class BuildRelativePath__BehaviorDescriptor extends BaseBHDescripto
     }
     return (String) BuildCompositePath__BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
   }
-  /*package*/ static String getLastSegment_id1bWeed$oUb5(@NotNull SNode __thisNode__, MacroHelper helper) {
-    return ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")) != null) ? BuildCompositePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUbg.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")), helper) : null);
+  /*package*/ static String getLastSegment_id5dwDdJ8yckN(@NotNull SNode __thisNode__) {
+    return ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")) != null) ? BuildCompositePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUbg.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"))) : null);
   }
   /*package*/ static SNode getParent_id7wpYgMyTXsR(@NotNull SNode __thisNode__) {
     if ((boolean) BuildRelativePath__BehaviorDescriptor.isEmptyTail_id7wpYgMyU0sQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath")), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")))) {
@@ -125,7 +124,7 @@ public final class BuildRelativePath__BehaviorDescriptor extends BaseBHDescripto
       case 2:
         return (T) ((String) getPathTail_id15RAxQX0M4T(node));
       case 3:
-        return (T) ((String) getLastSegment_id1bWeed$oUb5(node, (MacroHelper) parameters[0]));
+        return (T) ((String) getLastSegment_id5dwDdJ8yckN(node));
       case 4:
         return (T) ((SNode) getParent_id7wpYgMyTXsR(node));
       default:

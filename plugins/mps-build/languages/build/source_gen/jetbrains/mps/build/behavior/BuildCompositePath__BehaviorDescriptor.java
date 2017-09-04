@@ -12,7 +12,6 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
-import jetbrains.mps.build.util.MacroHelper;
 import java.util.List;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.build.util.Context;
@@ -36,7 +35,7 @@ public final class BuildCompositePath__BehaviorDescriptor extends BaseBHDescript
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<String> getPath_id7usrAn05okK = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7usrAn05okK").registry(REGISTRY).build();
-  public static final SMethod<String> getLastSegment_id1bWeed$oUbg = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLastSegment").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oUbg").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MacroHelper.class, ""));
+  public static final SMethod<String> getLastSegment_id1bWeed$oUbg = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getLastSegment").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oUbg").registry(REGISTRY).build();
   public static final SMethod<String> getPathToHead_id3skBIrUiCOV = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPathToHead").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3skBIrUiCOV").registry(REGISTRY).build();
   public static final SMethod<List<String>> getHeadSuggestions_id4jjtc7X04td = new SMethodBuilder<List<String>>(new SJavaCompoundTypeImpl((Class<List<String>>) ((Class) Object.class))).name("getHeadSuggestions").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4jjtc7X04td").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
   public static final SMethod<IFile> getFile_idIG8oXsODon = new SMethodBuilder<IFile>(new SJavaCompoundTypeImpl(IFile.class)).name("getFile").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("IG8oXsODon").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
@@ -53,7 +52,7 @@ public final class BuildCompositePath__BehaviorDescriptor extends BaseBHDescript
     }
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"));
   }
-  /*package*/ static String getLastSegment_id1bWeed$oUbg(@NotNull SNode __thisNode__, MacroHelper helper) {
+  /*package*/ static String getLastSegment_id1bWeed$oUbg(@NotNull SNode __thisNode__) {
     SNode last = __thisNode__;
     while ((SLinkOperations.getTarget(last, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail")) != null)) {
       last = SLinkOperations.getTarget(last, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail"));
@@ -124,7 +123,7 @@ public final class BuildCompositePath__BehaviorDescriptor extends BaseBHDescript
       case 0:
         return (T) ((String) getPath_id7usrAn05okK(node));
       case 1:
-        return (T) ((String) getLastSegment_id1bWeed$oUbg(node, (MacroHelper) parameters[0]));
+        return (T) ((String) getLastSegment_id1bWeed$oUbg(node));
       case 2:
         return (T) ((String) getPathToHead_id3skBIrUiCOV(node));
       case 3:
