@@ -6,14 +6,21 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 
 public interface RequiredDependenciesBuilder {
+  /**
+   * Tells that specified layout node is required to build a project. 
+   * All parent layout nodes (as determined by VisibleArtifacts#parent() are marked as required (with content), too.
+   * Not sure whether it has to be _PathElement or _Node, as it's _PathElement that supports subsequent #unpack() call, introduced 
+   * #requiresUnpack() call meanwhile to capture 'unpack only' semantics
+   */
   void add(SNode node);
   /**
-   * 
-   * @deprecated it's identical to add(node)
+   * Tells that specified layout node is composite and is required, along with its nested nodes, to build a project.
    */
-  @Deprecated
-  void add(SNode node, Object artifactId);
   void addWithContent(SNode node);
+  /**
+   * Pretty much the same as #add(), although doesn't look for parent layout elements and merely instructs to invoke pe.unpack() at proper moment of time
+   */
+  void requiresUnpack(SNode pe);
   void needsFetch(SNode node);
   TemplateQueryContext getGenContext();
 }

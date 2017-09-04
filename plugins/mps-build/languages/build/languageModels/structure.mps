@@ -16,6 +16,10 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
         <property id="1212087449254" name="noValueText" index="Q2FuW" />
@@ -1984,11 +1988,8 @@
     <node concept="PrWs8" id="K9IFLIJT6b" role="PzmwI">
       <ref role="PrY4T" node="IFRVVI6zqz" resolve="BuildExternalDependency" />
     </node>
-    <node concept="PrWs8" id="5hFYqIiZAkL" role="PzmwI">
-      <ref role="PrY4T" node="5hFYqIiZwGZ" resolve="IWorkflowParticipant" />
-    </node>
-    <node concept="PrWs8" id="1653mnvAOVE" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    <node concept="PrWs8" id="2vMyQtSUOry" role="PzmwI">
+      <ref role="PrY4T" node="6bGbH3Svq63" resolve="BuildLayout_PathElement" />
     </node>
   </node>
   <node concept="1TIwiD" id="7ro1Zzt_n6e">
@@ -2002,6 +2003,10 @@
     <property role="TrG5h" value="IWorkflowParticipant" />
     <property role="3GE5qa" value="Workflow" />
     <property role="EcuMT" value="6083230236994833215" />
+    <node concept="asaX9" id="5dwDdJ8n96j" role="lGtFl">
+      <property role="YLPcu" value="2017.3" />
+      <property role="YLQ7P" value="Single use of the interface (BSARP) is history now. However, approach is worth attention as it might present proper way to supply build/workflow language extensions" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5Wv1_bQ19g5">
     <property role="TrG5h" value="GeneratorInternal_IWorkfowParticipants" />

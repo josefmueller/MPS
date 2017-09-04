@@ -357,9 +357,6 @@
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
-      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
-        <child id="2667874559098216723" name="text" index="3HnX3l" />
-      </concept>
       <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
         <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
       </concept>
@@ -381,7 +378,6 @@
         <child id="1217960314448" name="messageText" index="2k5Stb" />
         <child id="1217960407512" name="referenceNode" index="2k6f33" />
       </concept>
-      <concept id="1217969995796" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage" flags="nn" index="2kEO4f" />
       <concept id="1229477454423" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput" flags="nn" index="12$id9">
         <child id="1229477520175" name="outputNode" index="12$y8L" />
       </concept>
@@ -13721,36 +13717,27 @@
       </node>
       <node concept="3cqZAl" id="57YmpYyL8Fi" role="3clF45" />
       <node concept="3Tm1VV" id="57YmpYyL8Fj" role="1B3o_S" />
-    </node>
-    <node concept="3clFb_" id="6b4RkXS7ms7" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="add" />
-      <node concept="3Tm1VV" id="6b4RkXS7ms9" role="1B3o_S" />
-      <node concept="3cqZAl" id="6b4RkXS7ms8" role="3clF45" />
-      <node concept="37vLTG" id="6b4RkXS7msb" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="6b4RkXS7msc" role="1tU5fm">
-          <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="6b4RkXS7mse" role="3clF46">
-        <property role="TrG5h" value="artifactId" />
-        <node concept="3uibUv" id="6b4RkXS7msg" role="1tU5fm">
-          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="6b4RkXS7msa" role="3clF47" />
-      <node concept="P$JXv" id="6IqTD4bI$aw" role="lGtFl">
-        <node concept="TZ5HI" id="6IqTD4bI$ax" role="3nqlJM">
-          <node concept="TZ5HA" id="6IqTD4bI$ay" role="3HnX3l">
-            <node concept="1dT_AC" id="6IqTD4bI$ck" role="1dT_Ay">
-              <property role="1dT_AB" value="it's identical to add(node)" />
-            </node>
+      <node concept="P$JXv" id="2vMyQtSYpoF" role="lGtFl">
+        <node concept="TZ5HA" id="2vMyQtSYpoG" role="TZ5H$">
+          <node concept="1dT_AC" id="2vMyQtSYpoH" role="1dT_Ay">
+            <property role="1dT_AB" value="Tells that specified layout node is required to build a project. " />
           </node>
         </node>
-      </node>
-      <node concept="2AHcQZ" id="6IqTD4bI$az" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+        <node concept="TZ5HA" id="2vMyQtSYswa" role="TZ5H$">
+          <node concept="1dT_AC" id="2vMyQtSYswb" role="1dT_Ay">
+            <property role="1dT_AB" value="All parent layout nodes (as determined by VisibleArtifacts#parent() are marked as required (with content), too." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2vMyQtSYslE" role="TZ5H$">
+          <node concept="1dT_AC" id="2vMyQtSYslF" role="1dT_Ay">
+            <property role="1dT_AB" value="Not sure whether it has to be _PathElement or _Node, as it's _PathElement that supports subsequent #unpack() call, introduced " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="2vMyQtSYvCV" role="TZ5H$">
+          <node concept="1dT_AC" id="2vMyQtSYvCW" role="1dT_Ay">
+            <property role="1dT_AB" value="#requiresUnpack() call meanwhile to capture 'unpack only' semantics" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="3clFb_" id="57YmpYyL8Fv" role="jymVt">
@@ -13765,6 +13752,35 @@
       <node concept="3clFbS" id="57YmpYyL8Fy" role="3clF47" />
       <node concept="3Tm1VV" id="57YmpYyL8Fx" role="1B3o_S" />
       <node concept="3cqZAl" id="57YmpYyL8Fw" role="3clF45" />
+      <node concept="P$JXv" id="2vMyQtSYppS" role="lGtFl">
+        <node concept="TZ5HA" id="2vMyQtSYppT" role="TZ5H$">
+          <node concept="1dT_AC" id="2vMyQtSYvI1" role="1dT_Ay">
+            <property role="1dT_AB" value="Tells that specified layout node is composite and is required, along with its nested nodes, to build a project." />
+          </node>
+          <node concept="1dT_AC" id="2vMyQtSYppU" role="1dT_Ay" />
+        </node>
+      </node>
+    </node>
+    <node concept="3clFb_" id="2vMyQtSYpiI" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="requiresUnpack" />
+      <node concept="3clFbS" id="2vMyQtSYpiL" role="3clF47" />
+      <node concept="3Tm1VV" id="2vMyQtSYpiM" role="1B3o_S" />
+      <node concept="3cqZAl" id="2vMyQtSYp09" role="3clF45" />
+      <node concept="37vLTG" id="2vMyQtSYpkt" role="3clF46">
+        <property role="TrG5h" value="pe" />
+        <node concept="3Tqbb2" id="2vMyQtSYpks" role="1tU5fm">
+          <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="2vMyQtSYpnz" role="lGtFl">
+        <node concept="TZ5HA" id="2vMyQtSYpn$" role="TZ5H$">
+          <node concept="1dT_AC" id="2vMyQtSYpn_" role="1dT_Ay">
+            <property role="1dT_AB" value="Pretty much the same as #add(), although doesn't look for parent layout elements and merely instructs to invoke pe.unpack() at proper moment of time" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="3clFb_" id="4WwUR8hO$pV" role="jymVt">
       <property role="1EzhhJ" value="true" />
@@ -14354,52 +14370,6 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
-      <node concept="3clFb_" id="6b4RkXS7msl" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="add" />
-        <node concept="37vLTG" id="6b4RkXS7mso" role="3clF46">
-          <property role="TrG5h" value="node" />
-          <node concept="3Tqbb2" id="6b4RkXS7msp" role="1tU5fm">
-            <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="6b4RkXS7msq" role="3clF47">
-          <node concept="3clFbF" id="6IqTD4bI_n2" role="3cqZAp">
-            <node concept="2OqwBi" id="6IqTD4bIDDS" role="3clFbG">
-              <node concept="37vLTw" id="6IqTD4bPmsj" role="2Oq$k0">
-                <ref role="3cqZAo" node="3u59u8luOxh" resolve="genContext" />
-              </node>
-              <node concept="2kEO4f" id="6IqTD4bIF5V" role="2OqNvi">
-                <node concept="Xl_RD" id="6IqTD4bIE9Q" role="2k5Stb">
-                  <property role="Xl_RC" value="FIXME stop using RequiredDependenciesBuilder.add(node&lt;&gt;,Object)" />
-                </node>
-                <node concept="37vLTw" id="6IqTD4bIFfz" role="2k6f33">
-                  <ref role="3cqZAo" node="3u59u8luOuT" resolve="dep" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbF" id="6IqTD4bI$uD" role="3cqZAp">
-            <node concept="1rXfSq" id="6IqTD4bI$uB" role="3clFbG">
-              <ref role="37wK5l" node="3u59u8luOta" resolve="add" />
-              <node concept="37vLTw" id="6IqTD4bI$FA" role="37wK5m">
-                <ref role="3cqZAo" node="6b4RkXS7mso" resolve="node" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cqZAl" id="6b4RkXS7msm" role="3clF45" />
-        <node concept="3Tm1VV" id="6b4RkXS7msn" role="1B3o_S" />
-        <node concept="2AHcQZ" id="6b4RkXS7msB" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-        <node concept="37vLTG" id="6b4RkXS7msC" role="3clF46">
-          <property role="TrG5h" value="artifactId" />
-          <node concept="3uibUv" id="6b4RkXS7msE" role="1tU5fm">
-            <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-          </node>
-        </node>
-      </node>
       <node concept="3clFb_" id="3u59u8luOud" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="TrG5h" value="addWithContent" />
@@ -14443,6 +14413,51 @@
         <node concept="3Tm1VV" id="3u59u8luOuf" role="1B3o_S" />
         <node concept="3cqZAl" id="3u59u8luOue" role="3clF45" />
         <node concept="2AHcQZ" id="1SFCUA32N97" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+      </node>
+      <node concept="2tJIrI" id="2vMyQtSYw8_" role="jymVt" />
+      <node concept="3clFb_" id="2vMyQtSYw_i" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="2aFKle" value="false" />
+        <property role="TrG5h" value="requiresUnpack" />
+        <node concept="3Tm1VV" id="2vMyQtSYw_k" role="1B3o_S" />
+        <node concept="3cqZAl" id="2vMyQtSYw_l" role="3clF45" />
+        <node concept="37vLTG" id="2vMyQtSYw_m" role="3clF46">
+          <property role="TrG5h" value="pe" />
+          <node concept="3Tqbb2" id="2vMyQtSYw_n" role="1tU5fm">
+            <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="2vMyQtSYw_r" role="3clF47">
+          <node concept="3SKdUt" id="2vMyQtSYzN9" role="3cqZAp">
+            <node concept="3SKdUq" id="2vMyQtSYzNb" role="3SKWNk">
+              <property role="3SKdUp" value="BuildSourceArchiveRelativePath is a _PathElement that comes here. Not sure it makes any sense to do check() as it's not an artifact." />
+            </node>
+          </node>
+          <node concept="3SKdUt" id="2vMyQtSY_ex" role="3cqZAp">
+            <node concept="3SKdUq" id="2vMyQtSY_ez" role="3SKWNk">
+              <property role="3SKdUp" value="artifacts.parent(pe) is unlikely to return anything but null, therefore we just get into helper.required list of elements to #unpack()." />
+            </node>
+          </node>
+          <node concept="3clFbF" id="2vMyQtSYzAc" role="3cqZAp">
+            <node concept="2OqwBi" id="2vMyQtSY$2c" role="3clFbG">
+              <node concept="37vLTw" id="2vMyQtSYzAb" role="2Oq$k0">
+                <ref role="3cqZAo" node="3u59u8luOuW" resolve="helper" />
+              </node>
+              <node concept="liA8E" id="2vMyQtSY$k0" role="2OqNvi">
+                <ref role="37wK5l" node="6bGbH3SvnZO" resolve="add" />
+                <node concept="37vLTw" id="2vMyQtSY$Kx" role="37wK5m">
+                  <ref role="3cqZAo" node="2vMyQtSYw_m" resolve="pe" />
+                </node>
+                <node concept="3clFbT" id="2vMyQtSY_2a" role="37wK5m">
+                  <property role="3clFbU" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="2vMyQtSYw_s" role="2AJF6D">
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>

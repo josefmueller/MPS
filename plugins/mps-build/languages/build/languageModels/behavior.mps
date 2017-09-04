@@ -235,14 +235,14 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+      <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
+        <property id="1200397540847" name="charConstant" index="1XhdNS" />
+      </concept>
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
     </language>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
-      <concept id="2769948622284574294" name="jetbrains.mps.build.workflow.structure.BwfTaskDependency" flags="ng" index="2VaxJe">
-        <reference id="2769948622284574295" name="target" index="2VaxJf" />
-      </concept>
       <concept id="2769948622284768359" name="jetbrains.mps.build.workflow.structure.BwfAntStatement" flags="ng" index="2Vbh7Z">
         <child id="2769948622284768360" name="element" index="2Vbh7K" />
       </concept>
@@ -292,6 +292,7 @@
         <property id="6489343236075007666" name="label" index="3hQQBS" />
         <child id="1196350785111" name="expression" index="2c44t1" />
       </concept>
+      <concept id="1196350785112" name="jetbrains.mps.lang.quotation.structure.Antiquotation" flags="ng" index="2c44te" />
       <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
         <child id="1196350785114" name="quotedNode" index="2c44tc" />
       </concept>
@@ -415,6 +416,13 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="linkRole" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -8138,6 +8146,252 @@
       </node>
       <node concept="17QB3L" id="4RsV8qJDnG$" role="3clF45" />
     </node>
+    <node concept="13i0hz" id="2vMyQtT1A9L" role="13h7CS">
+      <property role="TrG5h" value="exports" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" node="5FtnUVJQES1" resolve="exports" />
+      <node concept="3Tm1VV" id="2vMyQtT1A9M" role="1B3o_S" />
+      <node concept="3clFbS" id="2vMyQtT1A9T" role="3clF47">
+        <node concept="3SKdUt" id="5dwDdJ8odw1" role="3cqZAp">
+          <node concept="3SKdUq" id="5dwDdJ8odw3" role="3SKWNk">
+            <property role="3SKdUp" value=" turn off, see BuildSourceArchiveRelativePath#unpack" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5dwDdJ8oaI5" role="3cqZAp">
+          <node concept="3cpWsn" id="5dwDdJ8oaI3" role="3cpWs9">
+            <property role="3TUv4t" value="true" />
+            <property role="TrG5h" value="BuildSourceArchiveRelativePath_support" />
+            <node concept="10P_77" id="5dwDdJ8ob2u" role="1tU5fm" />
+            <node concept="2OqwBi" id="5dwDdJ8obYH" role="33vP2m">
+              <node concept="10M0yZ" id="5dwDdJ8obGH" role="2Oq$k0">
+                <ref role="3cqZAo" to="wyt6:~Boolean.FALSE" resolve="FALSE" />
+                <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
+              </node>
+              <node concept="liA8E" id="5dwDdJ8ocdz" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Boolean.booleanValue():boolean" resolve="booleanValue" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2vMyQtT1BnR" role="3cqZAp">
+          <node concept="3clFbS" id="2vMyQtT1BnS" role="3clFbx">
+            <node concept="3SKdUt" id="2vMyQtT1Dqd" role="3cqZAp">
+              <node concept="3SKdUq" id="2vMyQtT1Dqf" role="3SKWNk">
+                <property role="3SKdUp" value=" copied from BuildLayout_File, with narrow cast, BuildRelativePath instead of BuildSourcePath as I need to match a tail part only (BRP.getPathTail), without any macro or project" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5dwDdJ8bZPw" role="3cqZAp">
+              <node concept="3SKdUq" id="5dwDdJ8bZPy" role="3SKWNk">
+                <property role="3SKdUp" value=" I would recieve from BuildSourcePath.getRelativePath() otherwise" />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="2vMyQtT1BnT" role="3cqZAp">
+              <node concept="3cpWsn" id="2vMyQtT1BnU" role="3cpWs9">
+                <property role="TrG5h" value="node" />
+                <node concept="3Tqbb2" id="2vMyQtT1BnV" role="1tU5fm" />
+                <node concept="10QFUN" id="2vMyQtT1BnW" role="33vP2m">
+                  <node concept="3Tqbb2" id="2vMyQtT1BnX" role="10QFUM" />
+                  <node concept="37vLTw" id="2vMyQtT1BnY" role="10QFUP">
+                    <ref role="3cqZAo" node="2vMyQtT1A9U" resolve="artifactId" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="2vMyQtT1BnZ" role="3cqZAp">
+              <node concept="3clFbS" id="2vMyQtT1Bo0" role="3clFbx">
+                <node concept="3cpWs8" id="2vMyQtT1MwR" role="3cqZAp">
+                  <node concept="3cpWsn" id="2vMyQtT1MwS" role="3cpWs9">
+                    <property role="TrG5h" value="layoutRelativeName" />
+                    <node concept="3uibUv" id="2vMyQtT1MwT" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
+                    </node>
+                    <node concept="2ShNRf" id="2vMyQtT1MIq" role="33vP2m">
+                      <node concept="1pGfFk" id="2vMyQtT1Xek" role="2ShVmc">
+                        <ref role="37wK5l" to="wyt6:~StringBuilder.&lt;init&gt;(java.lang.String)" resolve="StringBuilder" />
+                        <node concept="2OqwBi" id="2vMyQtT1XeI" role="37wK5m">
+                          <node concept="13iPFW" id="2vMyQtT1XeJ" role="2Oq$k0" />
+                          <node concept="2qgKlT" id="2vMyQtT1XeK" role="2OqNvi">
+                            <ref role="37wK5l" node="4RsV8qJDnFm" resolve="getApproximateName" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="5dwDdJ8aVnq" role="3cqZAp">
+                  <node concept="3SKdUq" id="5dwDdJ8aVns" role="3SKWNk">
+                    <property role="3SKdUp" value="HACK. match against re-constructed layout-relative path, respecting named containers (usually, folders) only." />
+                  </node>
+                </node>
+                <node concept="3cpWs8" id="2vMyQtT1XAq" role="3cqZAp">
+                  <node concept="3cpWsn" id="2vMyQtT1XAt" role="3cpWs9">
+                    <property role="TrG5h" value="namedParent" />
+                    <node concept="3Tqbb2" id="2vMyQtT1XAo" role="1tU5fm">
+                      <ref role="ehGHo" to="3ior:6qcrfIJF7Yc" resolve="BuildLayout_NamedContainer" />
+                    </node>
+                    <node concept="1PxgMI" id="2vMyQtT23qp" role="33vP2m">
+                      <property role="1BlNFB" value="true" />
+                      <node concept="chp4Y" id="2vMyQtT23t5" role="3oSUPX">
+                        <ref role="cht4Q" to="3ior:6qcrfIJF7Yc" resolve="BuildLayout_NamedContainer" />
+                      </node>
+                      <node concept="2OqwBi" id="2vMyQtT22L4" role="1m5AlR">
+                        <node concept="13iPFW" id="2vMyQtT22_g" role="2Oq$k0" />
+                        <node concept="1mfA1w" id="2vMyQtT22WB" role="2OqNvi" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="2vMyQtT25jD" role="3cqZAp">
+                  <node concept="3SKdUq" id="2vMyQtT25jF" role="3SKWNk">
+                    <property role="3SKdUp" value="XXX alternatively, _AbstractContainer + BL_Node.isFolder()? Jars are NamedContainers, too." />
+                  </node>
+                </node>
+                <node concept="2$JKZl" id="2vMyQtT23I0" role="3cqZAp">
+                  <node concept="3clFbS" id="2vMyQtT23I2" role="2LFqv$">
+                    <node concept="3clFbF" id="2vMyQtT25yv" role="3cqZAp">
+                      <node concept="2OqwBi" id="2vMyQtT25Rv" role="3clFbG">
+                        <node concept="37vLTw" id="2vMyQtT25yu" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2vMyQtT1MwS" resolve="layoutRelativeName" />
+                        </node>
+                        <node concept="liA8E" id="2vMyQtT26rY" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~StringBuilder.insert(int,char):java.lang.StringBuilder" resolve="insert" />
+                          <node concept="3cmrfG" id="2vMyQtT26Oa" role="37wK5m">
+                            <property role="3cmrfH" value="0" />
+                          </node>
+                          <node concept="1Xhbcc" id="2vMyQtT26tn" role="37wK5m">
+                            <property role="1XhdNS" value="/" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="2vMyQtT27MF" role="3cqZAp">
+                      <node concept="2OqwBi" id="2vMyQtT27MG" role="3clFbG">
+                        <node concept="37vLTw" id="2vMyQtT27MH" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2vMyQtT1MwS" resolve="layoutRelativeName" />
+                        </node>
+                        <node concept="liA8E" id="2vMyQtT27MI" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~StringBuilder.insert(int,java.lang.Object):java.lang.StringBuilder" resolve="insert" />
+                          <node concept="3cmrfG" id="2vMyQtT27MJ" role="37wK5m">
+                            <property role="3cmrfH" value="0" />
+                          </node>
+                          <node concept="2OqwBi" id="2vMyQtT2bDh" role="37wK5m">
+                            <node concept="2OqwBi" id="2vMyQtT28Lu" role="2Oq$k0">
+                              <node concept="37vLTw" id="2vMyQtT280N" role="2Oq$k0">
+                                <ref role="3cqZAo" node="2vMyQtT1XAt" resolve="namedParent" />
+                              </node>
+                              <node concept="3TrEf2" id="2vMyQtT2aDg" role="2OqNvi">
+                                <ref role="3Tt5mk" to="3ior:3NagsOfTPim" resolve="containerName" />
+                              </node>
+                            </node>
+                            <node concept="2qgKlT" id="2vMyQtT2c78" role="2OqNvi">
+                              <ref role="37wK5l" node="3NagsOfTioI" resolve="getText" />
+                              <node concept="10Nm6u" id="2vMyQtT2cEx" role="37wK5m" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbF" id="5dwDdJ89UTJ" role="3cqZAp">
+                      <node concept="37vLTI" id="5dwDdJ89VSQ" role="3clFbG">
+                        <node concept="1PxgMI" id="5dwDdJ89Xig" role="37vLTx">
+                          <property role="1BlNFB" value="true" />
+                          <node concept="chp4Y" id="5dwDdJ89Xjg" role="3oSUPX">
+                            <ref role="cht4Q" to="3ior:6qcrfIJF7Yc" resolve="BuildLayout_NamedContainer" />
+                          </node>
+                          <node concept="2OqwBi" id="5dwDdJ89W7F" role="1m5AlR">
+                            <node concept="37vLTw" id="5dwDdJ89VVR" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2vMyQtT1XAt" resolve="namedParent" />
+                            </node>
+                            <node concept="1mfA1w" id="5dwDdJ89Wpz" role="2OqNvi" />
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="5dwDdJ89UTH" role="37vLTJ">
+                          <ref role="3cqZAo" node="2vMyQtT1XAt" resolve="namedParent" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3y3z36" id="2vMyQtT253Y" role="2$JKZa">
+                    <node concept="10Nm6u" id="2vMyQtT254r" role="3uHU7w" />
+                    <node concept="37vLTw" id="2vMyQtT23WF" role="3uHU7B">
+                      <ref role="3cqZAo" node="2vMyQtT1XAt" resolve="namedParent" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="2vMyQtT1Bof" role="3cqZAp">
+                  <node concept="17R0WA" id="2vMyQtT1Bog" role="3cqZAk">
+                    <node concept="2OqwBi" id="2vMyQtT1Boh" role="3uHU7B">
+                      <node concept="1PxgMI" id="2vMyQtT1D$G" role="2Oq$k0">
+                        <node concept="chp4Y" id="5dwDdJ8bY_n" role="3oSUPX">
+                          <ref role="cht4Q" to="3ior:6mpuAlRavrV" resolve="BuildRelativePath" />
+                        </node>
+                        <node concept="37vLTw" id="2vMyQtT1D$I" role="1m5AlR">
+                          <ref role="3cqZAo" node="2vMyQtT1BnU" resolve="node" />
+                        </node>
+                      </node>
+                      <node concept="2qgKlT" id="5dwDdJ8bZ7Z" role="2OqNvi">
+                        <ref role="37wK5l" node="15RAxQX0M4T" resolve="getPathTail" />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="2vMyQtT2dYZ" role="3uHU7w">
+                      <node concept="37vLTw" id="2vMyQtT2dgE" role="2Oq$k0">
+                        <ref role="3cqZAo" node="2vMyQtT1MwS" resolve="layoutRelativeName" />
+                      </node>
+                      <node concept="liA8E" id="2vMyQtT2eOS" role="2OqNvi">
+                        <ref role="37wK5l" to="wyt6:~StringBuilder.toString():java.lang.String" resolve="toString" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="2vMyQtT1Bop" role="3clFbw">
+                <node concept="37vLTw" id="2vMyQtT1Boq" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2vMyQtT1BnU" resolve="node" />
+                </node>
+                <node concept="1mIQ4w" id="2vMyQtT1Bor" role="2OqNvi">
+                  <node concept="chp4Y" id="5dwDdJ8bYpR" role="cj9EA">
+                    <ref role="cht4Q" to="3ior:6mpuAlRavrV" resolve="BuildRelativePath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1Wc70l" id="5dwDdJ8ocKg" role="3clFbw">
+            <node concept="37vLTw" id="5dwDdJ8od7d" role="3uHU7w">
+              <ref role="3cqZAo" node="5dwDdJ8oaI3" resolve="BuildSourceArchiveRelativePath_support" />
+            </node>
+            <node concept="2ZW3vV" id="2vMyQtT1Bot" role="3uHU7B">
+              <node concept="3uibUv" id="2vMyQtT1Bou" role="2ZW6by">
+                <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+              </node>
+              <node concept="37vLTw" id="2vMyQtT1Bov" role="2ZW6bz">
+                <ref role="3cqZAo" node="2vMyQtT1A9U" resolve="artifactId" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="2vMyQtT1AEf" role="3cqZAp" />
+        <node concept="3clFbF" id="2vMyQtT1Aa1" role="3cqZAp">
+          <node concept="2OqwBi" id="2vMyQtT1A9Y" role="3clFbG">
+            <node concept="13iAh5" id="2vMyQtT1A9Z" role="2Oq$k0" />
+            <node concept="2qgKlT" id="2vMyQtT1Aa0" role="2OqNvi">
+              <ref role="37wK5l" node="5FtnUVJQES1" resolve="exports" />
+              <node concept="37vLTw" id="2vMyQtT1A9X" role="37wK5m">
+                <ref role="3cqZAo" node="2vMyQtT1A9U" resolve="artifactId" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2vMyQtT1A9U" role="3clF46">
+        <property role="TrG5h" value="artifactId" />
+        <node concept="3uibUv" id="2vMyQtT1A9V" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="10P_77" id="2vMyQtT1A9W" role="3clF45" />
+    </node>
     <node concept="13hLZK" id="6eCuTcwOLH3" role="13h7CW">
       <node concept="3clFbS" id="6eCuTcwOLH4" role="2VODD2" />
     </node>
@@ -11148,7 +11402,51 @@
                 </node>
               </node>
             </node>
+            <node concept="3SKdUt" id="2vMyQtT0UKa" role="3cqZAp">
+              <node concept="3SKdUq" id="2vMyQtT0UKc" role="3SKWNk">
+                <property role="3SKdUp" value="check node.containing root == this.containing root is from initial commit e0a6b1f), but I don't see a reason" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="2vMyQtT0WS6" role="3cqZAp">
+              <node concept="3SKdUq" id="2vMyQtT0WS8" role="3SKWNk">
+                <property role="3SKdUp" value="why a file from an external layout shall not match requested BuildSourcePath. Perhaps, it's due to 'source' part of the name, i.e." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="2vMyQtT0X7G" role="3cqZAp">
+              <node concept="3SKdUq" id="2vMyQtT0X7I" role="3SKWNk">
+                <property role="3SKdUp" value="that the path is supposed to reference smth from project source. However, we've got BuildSourceArchiveRelativePath which may " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="2vMyQtT0XPz" role="3cqZAp">
+              <node concept="3SKdUq" id="2vMyQtT0XP$" role="3SKWNk">
+                <property role="3SKdUp" value="legitimately point to a file from an external layout, and the restriction is not clear here." />
+              </node>
+            </node>
             <node concept="3clFbJ" id="7UAfeVQUc75" role="3cqZAp">
+              <node concept="1Wc70l" id="7UAfeVQUc7A" role="3clFbw">
+                <node concept="3clFbC" id="7UAfeVQUc7B" role="3uHU7w">
+                  <node concept="2OqwBi" id="7UAfeVQUc7C" role="3uHU7w">
+                    <node concept="13iPFW" id="7UAfeVQUc7D" role="2Oq$k0" />
+                    <node concept="2Rxl7S" id="7UAfeVQUc7E" role="2OqNvi" />
+                  </node>
+                  <node concept="2OqwBi" id="7UAfeVQUc7F" role="3uHU7B">
+                    <node concept="37vLTw" id="3GM_nagT_X9" role="2Oq$k0">
+                      <ref role="3cqZAo" node="7UAfeVQUc70" resolve="node" />
+                    </node>
+                    <node concept="2Rxl7S" id="7UAfeVQUc7H" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7UAfeVQUc7I" role="3uHU7B">
+                  <node concept="37vLTw" id="3GM_nagTymF" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7UAfeVQUc70" resolve="node" />
+                  </node>
+                  <node concept="1mIQ4w" id="7UAfeVQUc7K" role="2OqNvi">
+                    <node concept="chp4Y" id="7UAfeVQUc7L" role="cj9EA">
+                      <ref role="cht4Q" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbS" id="7UAfeVQUc76" role="3clFbx">
                 <node concept="3cpWs8" id="7UAfeVQUc77" role="3cqZAp">
                   <node concept="3cpWsn" id="7UAfeVQUc78" role="3cpWs9">
@@ -11186,30 +11484,6 @@
                       <node concept="2qgKlT" id="7UAfeVQUc7v" role="2OqNvi">
                         <ref role="37wK5l" node="4Kip2_918YF" resolve="getRelativePath" />
                       </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="1Wc70l" id="7UAfeVQUc7A" role="3clFbw">
-                <node concept="3clFbC" id="7UAfeVQUc7B" role="3uHU7w">
-                  <node concept="2OqwBi" id="7UAfeVQUc7C" role="3uHU7w">
-                    <node concept="13iPFW" id="7UAfeVQUc7D" role="2Oq$k0" />
-                    <node concept="2Rxl7S" id="7UAfeVQUc7E" role="2OqNvi" />
-                  </node>
-                  <node concept="2OqwBi" id="7UAfeVQUc7F" role="3uHU7B">
-                    <node concept="37vLTw" id="3GM_nagT_X9" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7UAfeVQUc70" resolve="node" />
-                    </node>
-                    <node concept="2Rxl7S" id="7UAfeVQUc7H" role="2OqNvi" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="7UAfeVQUc7I" role="3uHU7B">
-                  <node concept="37vLTw" id="3GM_nagTymF" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7UAfeVQUc70" resolve="node" />
-                  </node>
-                  <node concept="1mIQ4w" id="7UAfeVQUc7K" role="2OqNvi">
-                    <node concept="chp4Y" id="7UAfeVQUc7L" role="cj9EA">
-                      <ref role="cht4Q" to="3ior:6qcrfIJFdKY" resolve="BuildSourcePath" />
                     </node>
                   </node>
                 </node>
@@ -12215,6 +12489,16 @@
       <ref role="13i0hy" node="57YmpYyL8F1" resolve="fetchDependencies" />
       <node concept="3Tm1VV" id="K9IFLIJT6e" role="1B3o_S" />
       <node concept="3clFbS" id="K9IFLIJT6f" role="3clF47">
+        <node concept="3SKdUt" id="2vMyQtSVats" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSVatu" role="3SKWNk">
+            <property role="3SKdUp" value="XXX I'd say, needsFetch is needed when target archive is inside a BuildLayout, not this BSARP instance (which is merely a pointer to external archive)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2vMyQtSW_yx" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSW_yz" role="3SKWNk">
+            <property role="3SKdUp" value="though, need to check uses if DH.requiresFetch() - it's invoked for a context node which is in uncertain relation to this one." />
+          </node>
+        </node>
         <node concept="3clFbF" id="BHdWlMbAoE" role="3cqZAp">
           <node concept="2OqwBi" id="BHdWlMbAp0" role="3clFbG">
             <node concept="37vLTw" id="4WwUR8hP2IX" role="2Oq$k0">
@@ -12240,6 +12524,109 @@
             <property role="3SKdUp" value="and still, ????" />
           </node>
         </node>
+        <node concept="3SKdUt" id="2vMyQtSX2Bp" role="3cqZAp" />
+        <node concept="3SKdUt" id="2vMyQtSX2SG" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSX2SI" role="3SKWNk">
+            <property role="3SKdUp" value="I'm not certain we need to addWithContent() file referenced as archive part. It's not BL_Jar or _Zip, we can't benefit" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2vMyQtSX34E" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSX34G" role="3SKWNk">
+            <property role="3SKdUp" value="from its upack() method. Nevertheless, what if referenced jar is part of something like BuildMpsLayout_Plugin, and we need to make sure" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2vMyQtSX3m3" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSX3m5" role="3SKWNk">
+            <property role="3SKdUp" value="the plugin is extracted/fetched. OTOH, not sure if I can ensure proper order (i.e. plugin.zip to get extracted first)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2vMyQtSYFRS" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSYFRU" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME Perhaps, better implementation is to fix BL_File and _FileStub to extract archive if helper.isContentRequired(file) == true. " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2vMyQtSYQ0G" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSYQ0H" role="3SKWNk">
+            <property role="3SKdUp" value="      OTOH, possible optimization (extract only relevant file from the archive) would not be possible then." />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2vMyQtSWp$I" role="3cqZAp">
+          <node concept="3cpWsn" id="2vMyQtSWp$J" role="3cpWs9">
+            <property role="TrG5h" value="archiveInLayout" />
+            <node concept="3Tqbb2" id="2vMyQtSWp$F" role="1tU5fm">
+              <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+            </node>
+            <node concept="2OqwBi" id="2vMyQtSWp$K" role="33vP2m">
+              <node concept="37vLTw" id="2vMyQtSWp$L" role="2Oq$k0">
+                <ref role="3cqZAo" node="K9IFLIJT6g" resolve="artifacts" />
+              </node>
+              <node concept="liA8E" id="2vMyQtSWp$M" role="2OqNvi">
+                <ref role="37wK5l" to="o3n2:6PrCok1LkPV" resolve="findArtifact" />
+                <node concept="2OqwBi" id="2vMyQtSWp$N" role="37wK5m">
+                  <node concept="13iPFW" id="2vMyQtSWp$O" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="2vMyQtSWp$P" role="2OqNvi">
+                    <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2vMyQtSW_Oy" role="3cqZAp">
+          <node concept="3clFbS" id="2vMyQtSW_O$" role="3clFbx">
+            <node concept="3clFbF" id="2vMyQtSV98Q" role="3cqZAp">
+              <node concept="2OqwBi" id="2vMyQtSV9fK" role="3clFbG">
+                <node concept="37vLTw" id="2vMyQtSV98O" role="2Oq$k0">
+                  <ref role="3cqZAo" node="K9IFLIJT6i" resolve="builder" />
+                </node>
+                <node concept="liA8E" id="2vMyQtSV9sJ" role="2OqNvi">
+                  <ref role="37wK5l" to="o3n2:57YmpYyL8Fv" resolve="addWithContent" />
+                  <node concept="1PxgMI" id="2vMyQtSWByw" role="37wK5m">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="2vMyQtSWBzI" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+                    </node>
+                    <node concept="37vLTw" id="2vMyQtSW_mL" role="1m5AlR">
+                      <ref role="3cqZAo" node="2vMyQtSWp$J" resolve="archiveInLayout" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="2vMyQtSWA90" role="3clFbw">
+            <node concept="37vLTw" id="2vMyQtSW_WK" role="2Oq$k0">
+              <ref role="3cqZAo" node="2vMyQtSWp$J" resolve="archiveInLayout" />
+            </node>
+            <node concept="1mIQ4w" id="2vMyQtSWAoA" role="2OqNvi">
+              <node concept="chp4Y" id="2vMyQtSWAqK" role="cj9EA">
+                <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2vMyQtSWVLy" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSWVL$" role="3SKWNk">
+            <property role="3SKdUp" value="XXX shall I complain that archive is not found here? Now I assume if no artifact found, it's just a path to source file and shall be used as is." />
+          </node>
+        </node>
+        <node concept="3clFbH" id="2vMyQtSXPu1" role="3cqZAp" />
+        <node concept="3SKdUt" id="2vMyQtSXPJu" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSXPJw" role="3SKWNk">
+            <property role="3SKdUp" value="archiveInLayout, if any, is just a _File or _FileStub and unlikely to upack itself, this _PathElement needs to do it, instead." />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2vMyQtSXQ13" role="3cqZAp">
+          <node concept="2OqwBi" id="2vMyQtSXQaV" role="3clFbG">
+            <node concept="37vLTw" id="2vMyQtSXQ11" role="2Oq$k0">
+              <ref role="3cqZAo" node="K9IFLIJT6i" resolve="builder" />
+            </node>
+            <node concept="liA8E" id="2vMyQtSYPXI" role="2OqNvi">
+              <ref role="37wK5l" to="o3n2:2vMyQtSYpiI" resolve="requiresUnpack" />
+              <node concept="13iPFW" id="2vMyQtSYPYD" role="37wK5m" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="37vLTG" id="K9IFLIJT6g" role="3clF46">
         <property role="TrG5h" value="artifacts" />
@@ -12254,6 +12641,658 @@
         </node>
       </node>
       <node concept="3cqZAl" id="K9IFLIJT6k" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="2vMyQtSUU90" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="false" />
+      <property role="TrG5h" value="unpack" />
+      <ref role="13i0hy" node="6IqTD4bJTWZ" resolve="unpack" />
+      <node concept="3Tm1VV" id="2vMyQtSUU93" role="1B3o_S" />
+      <node concept="3clFbS" id="2vMyQtSUU96" role="3clF47">
+        <node concept="3SKdUt" id="5dwDdJ8lwgZ" role="3cqZAp">
+          <node concept="3SKdUq" id="5dwDdJ8lwh1" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME next two lines are to be uncommented once we get clear idea what achive files BuildSourceArchiveRelativePath may reference" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dwDdJ8lyuT" role="3cqZAp">
+          <node concept="3SKdUq" id="5dwDdJ8lyuV" role="3SKWNk">
+            <property role="3SKdUp" value="      Now it looks that referenced files were not expected to be part of external layout, just a direct path specification." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dwDdJ8l_g6" role="3cqZAp">
+          <node concept="3SKdUq" id="5dwDdJ8l_g8" role="3SKWNk">
+            <property role="3SKdUp" value="      However, with the code that finds proper artifact, fetchDependencies() above, we may use lang.build's 'standard' approach to locations" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dwDdJ8l_WR" role="3cqZAp">
+          <node concept="3SKdUq" id="5dwDdJ8l_WT" role="3SKWNk">
+            <property role="3SKdUp" value="      I have it functional, but decided to comment it out until aforementioned question is cleared " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dwDdJ8lAmM" role="3cqZAp">
+          <node concept="3SKdUq" id="5dwDdJ8lAmN" role="3SKWNk">
+            <property role="3SKdUp" value="      There are changes in BL_FileStub#exports() for artifacts.findArtifact(), above, to succeed." />
+          </node>
+        </node>
+        <node concept="1X3_iC" id="5dwDdJ8lvtv" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs8" id="2vMyQtSXIZT" role="8Wnug">
+            <node concept="3cpWsn" id="2vMyQtSXIZU" role="3cpWs9">
+              <property role="TrG5h" value="layoutArtifactForArchive" />
+              <node concept="3Tqbb2" id="2vMyQtSXIZM" role="1tU5fm">
+                <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+              </node>
+              <node concept="2OqwBi" id="2vMyQtSXIZV" role="33vP2m">
+                <node concept="37vLTw" id="2vMyQtSXIZW" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2vMyQtSUU97" resolve="helper" />
+                </node>
+                <node concept="liA8E" id="2vMyQtSXIZX" role="2OqNvi">
+                  <ref role="37wK5l" to="o3n2:3h6igUoZq0X" resolve="getArtifact" />
+                  <node concept="2OqwBi" id="2vMyQtSXIZY" role="37wK5m">
+                    <node concept="13iPFW" id="2vMyQtSXIZZ" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="2vMyQtSXJ00" role="2OqNvi">
+                      <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1X3_iC" id="5dwDdJ8lvtw" role="lGtFl">
+          <property role="3V$3am" value="statement" />
+          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+          <node concept="3cpWs8" id="2vMyQtSXR6d" role="8Wnug">
+            <node concept="3cpWsn" id="2vMyQtSXR6e" role="3cpWs9">
+              <property role="TrG5h" value="archivePath" />
+              <node concept="17QB3L" id="2vMyQtSXR67" role="1tU5fm" />
+              <node concept="3K4zz7" id="5dwDdJ8l8oQ" role="33vP2m">
+                <node concept="2OqwBi" id="5dwDdJ8lboq" role="3K4GZi">
+                  <node concept="2OqwBi" id="5dwDdJ8laE1" role="2Oq$k0">
+                    <node concept="13iPFW" id="5dwDdJ8l9Qj" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="5dwDdJ8lb44" role="2OqNvi">
+                      <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="5dwDdJ8ldhf" role="2OqNvi">
+                    <ref role="37wK5l" node="4Kip2_918YF" resolve="getRelativePath" />
+                  </node>
+                </node>
+                <node concept="3y3z36" id="5dwDdJ8l7wf" role="3K4Cdx">
+                  <node concept="37vLTw" id="5dwDdJ8l66h" role="3uHU7B">
+                    <ref role="3cqZAo" node="2vMyQtSXIZU" resolve="layoutArtifactForArchive" />
+                  </node>
+                  <node concept="10Nm6u" id="5dwDdJ8l7vU" role="3uHU7w" />
+                </node>
+                <node concept="2OqwBi" id="2vMyQtSXR6f" role="3K4E3e">
+                  <node concept="37vLTw" id="2vMyQtSXR6g" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2vMyQtSUU97" resolve="helper" />
+                  </node>
+                  <node concept="liA8E" id="2vMyQtSXR6h" role="2OqNvi">
+                    <ref role="37wK5l" to="o3n2:4g7NqzBtxkQ" resolve="getLocation" />
+                    <node concept="37vLTw" id="2vMyQtSXR6i" role="37wK5m">
+                      <ref role="3cqZAo" node="2vMyQtSXIZU" resolve="layoutArtifactForArchive" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5dwDdJ8luVo" role="3cqZAp">
+          <node concept="3cpWsn" id="5dwDdJ8luVp" role="3cpWs9">
+            <property role="TrG5h" value="archivePath" />
+            <node concept="17QB3L" id="5dwDdJ8luVq" role="1tU5fm" />
+            <node concept="2OqwBi" id="5dwDdJ8luVs" role="33vP2m">
+              <node concept="2OqwBi" id="5dwDdJ8luVt" role="2Oq$k0">
+                <node concept="13iPFW" id="5dwDdJ8luVu" role="2Oq$k0" />
+                <node concept="3TrEf2" id="5dwDdJ8luVv" role="2OqNvi">
+                  <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="5dwDdJ8luVw" role="2OqNvi">
+                <ref role="37wK5l" node="4Kip2_918YF" resolve="getRelativePath" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5dwDdJ8luz5" role="3cqZAp" />
+        <node concept="3SKdUt" id="2vMyQtSY6Hb" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSY6Hd" role="3SKWNk">
+            <property role="3SKdUp" value="copied from #calculateUnpackPath(), although doesn't match e.g. BL_Zip pattern for temp names, perhaps worth a change" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2vMyQtSY65k" role="3cqZAp">
+          <node concept="3cpWsn" id="2vMyQtSY65l" role="3cpWs9">
+            <property role="TrG5h" value="nlayout" />
+            <node concept="3Tqbb2" id="2vMyQtSY65m" role="1tU5fm">
+              <ref role="ehGHo" to="3ior:34DbxDwQvcK" resolve="BuildNamedLayout" />
+            </node>
+            <node concept="2OqwBi" id="2vMyQtSY65n" role="33vP2m">
+              <node concept="13iPFW" id="2vMyQtSY65o" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="2vMyQtSY65p" role="2OqNvi">
+                <node concept="1xMEDy" id="2vMyQtSY65q" role="1xVPHs">
+                  <node concept="chp4Y" id="2vMyQtSY65r" role="ri$Ld">
+                    <ref role="cht4Q" to="3ior:34DbxDwQvcK" resolve="BuildNamedLayout" />
+                  </node>
+                </node>
+                <node concept="1xIGOp" id="2vMyQtSY65s" role="1xVPHs" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2vMyQtSXSWh" role="3cqZAp">
+          <node concept="3cpWsn" id="2vMyQtSXSWi" role="3cpWs9">
+            <property role="TrG5h" value="tempPath" />
+            <node concept="17QB3L" id="2vMyQtSXSWj" role="1tU5fm" />
+            <node concept="2OqwBi" id="2vMyQtSXSWk" role="33vP2m">
+              <node concept="2OqwBi" id="2vMyQtSXSWl" role="2Oq$k0">
+                <node concept="37vLTw" id="2vMyQtSXSWm" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2vMyQtSUU97" resolve="helper" />
+                </node>
+                <node concept="liA8E" id="2vMyQtSXSWn" role="2OqNvi">
+                  <ref role="37wK5l" to="o3n2:41__iZjlKUB" resolve="getPathProvider" />
+                </node>
+              </node>
+              <node concept="liA8E" id="2vMyQtSXSWo" role="2OqNvi">
+                <ref role="37wK5l" to="o3n2:41__iZjlqeg" resolve="createTempPath" />
+                <node concept="2OqwBi" id="2vMyQtSY3FY" role="37wK5m">
+                  <node concept="2OqwBi" id="2vMyQtSY3FZ" role="2Oq$k0">
+                    <node concept="2OqwBi" id="2vMyQtSY3G0" role="2Oq$k0">
+                      <node concept="13iPFW" id="2vMyQtSY3G1" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="2vMyQtSY3G2" role="2OqNvi">
+                        <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
+                      </node>
+                    </node>
+                    <node concept="2qgKlT" id="2vMyQtSY3G3" role="2OqNvi">
+                      <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
+                      <node concept="10Nm6u" id="2vMyQtSY4Kt" role="37wK5m" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="2vMyQtSY3G8" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.replace(char,char):java.lang.String" resolve="replace" />
+                    <node concept="1Xhbcc" id="2vMyQtSY50S" role="37wK5m">
+                      <property role="1XhdNS" value="." />
+                    </node>
+                    <node concept="1Xhbcc" id="2vMyQtSY5zL" role="37wK5m">
+                      <property role="1XhdNS" value="_" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3K4zz7" id="2vMyQtSY6Um" role="37wK5m">
+                  <node concept="Xl_RD" id="2vMyQtSY6Un" role="3K4GZi">
+                    <property role="Xl_RC" value="default" />
+                  </node>
+                  <node concept="2OqwBi" id="2vMyQtSY6Uo" role="3K4Cdx">
+                    <node concept="37vLTw" id="2vMyQtSY6Up" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2vMyQtSY65l" resolve="nlayout" />
+                    </node>
+                    <node concept="3x8VRR" id="2vMyQtSY6Uq" role="2OqNvi" />
+                  </node>
+                  <node concept="2OqwBi" id="2vMyQtSY6Ur" role="3K4E3e">
+                    <node concept="37vLTw" id="2vMyQtSY6Us" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2vMyQtSY65l" resolve="nlayout" />
+                    </node>
+                    <node concept="3TrcHB" id="2vMyQtSY6Ut" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="2vMyQtSXSP8" role="3cqZAp" />
+        <node concept="3SKdUt" id="2vMyQtSYesZ" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSYet1" role="3SKWNk">
+            <property role="3SKdUp" value=" copied from #getUnpackTask" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2vMyQtSYdjB" role="3cqZAp">
+          <node concept="3cpWsn" id="2vMyQtSYdjC" role="3cpWs9">
+            <property role="TrG5h" value="unpackTask" />
+            <node concept="3Tqbb2" id="2vMyQtSYdjD" role="1tU5fm">
+              <ref role="ehGHo" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
+            </node>
+            <node concept="2c44tf" id="2vMyQtSYdjE" role="33vP2m">
+              <node concept="2pNNFK" id="2vMyQtSYdjF" role="2c44tc">
+                <property role="qg3DV" value="true" />
+                <property role="2pNNFO" value="unzip" />
+                <node concept="2pNUuL" id="2vMyQtSYdjG" role="2pNNFR">
+                  <property role="2pNUuO" value="src" />
+                  <node concept="2pMdtt" id="2vMyQtSYdjH" role="2pMdts">
+                    <property role="2pMdty" value="path.to.archive" />
+                    <node concept="2EMmih" id="2vMyQtSYdjI" role="lGtFl">
+                      <property role="2qtEX9" value="text" />
+                      <property role="3hQQBS" value="XmlTextValue" />
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <node concept="37vLTw" id="2vMyQtSYf1b" role="2c44t1">
+                        <ref role="3cqZAo" node="5dwDdJ8luVp" resolve="archivePath" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2pNUuL" id="2vMyQtSYdjP" role="2pNNFR">
+                  <property role="2pNUuO" value="dest" />
+                  <node concept="2pMdtt" id="2vMyQtSYdjQ" role="2pMdts">
+                    <property role="2pMdty" value="tmp.dst" />
+                    <node concept="2EMmih" id="2vMyQtSYdjR" role="lGtFl">
+                      <property role="2qtEX9" value="text" />
+                      <property role="3hQQBS" value="XmlTextValue" />
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <node concept="37vLTw" id="2vMyQtSYfsI" role="2c44t1">
+                        <ref role="3cqZAo" node="2vMyQtSXSWi" resolve="tempPath" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2vMyQtSYdjU" role="3cqZAp">
+          <node concept="2OqwBi" id="2vMyQtSYdjV" role="3clFbw">
+            <node concept="37vLTw" id="2vMyQtSYdjW" role="2Oq$k0">
+              <ref role="3cqZAo" node="5dwDdJ8luVp" resolve="archivePath" />
+            </node>
+            <node concept="liA8E" id="2vMyQtSYdjX" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+              <node concept="Xl_RD" id="2vMyQtSYdjY" role="37wK5m">
+                <property role="Xl_RC" value=".jar" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="2vMyQtSYdjZ" role="3clFbx">
+            <node concept="3clFbF" id="2vMyQtSYdk0" role="3cqZAp">
+              <node concept="2OqwBi" id="2vMyQtSYdk1" role="3clFbG">
+                <node concept="2OqwBi" id="2vMyQtSYdk2" role="2Oq$k0">
+                  <node concept="37vLTw" id="2vMyQtSYdk3" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2vMyQtSYdjC" resolve="unpackTask" />
+                  </node>
+                  <node concept="3TrcHB" id="2vMyQtSYdk4" role="2OqNvi">
+                    <ref role="3TsBF5" to="iuxj:5M4a$b5iL2Q" resolve="tagName" />
+                  </node>
+                </node>
+                <node concept="tyxLq" id="2vMyQtSYdk5" role="2OqNvi">
+                  <node concept="Xl_RD" id="2vMyQtSYdk6" role="tz02z">
+                    <property role="Xl_RC" value="unjar" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3eNFk2" id="2vMyQtSYdk7" role="3eNLev">
+            <node concept="3clFbS" id="2vMyQtSYdk8" role="3eOfB_">
+              <node concept="3clFbF" id="2vMyQtSYdk9" role="3cqZAp">
+                <node concept="2OqwBi" id="2vMyQtSYdka" role="3clFbG">
+                  <node concept="2OqwBi" id="2vMyQtSYdkb" role="2Oq$k0">
+                    <node concept="37vLTw" id="2vMyQtSYdkc" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2vMyQtSYdjC" resolve="unpackTask" />
+                    </node>
+                    <node concept="3TrcHB" id="2vMyQtSYdkd" role="2OqNvi">
+                      <ref role="3TsBF5" to="iuxj:5M4a$b5iL2Q" resolve="tagName" />
+                    </node>
+                  </node>
+                  <node concept="tyxLq" id="2vMyQtSYdke" role="2OqNvi">
+                    <node concept="Xl_RD" id="2vMyQtSYdkf" role="tz02z">
+                      <property role="Xl_RC" value="unwar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="2vMyQtSYdkg" role="3eO9$A">
+              <node concept="37vLTw" id="2vMyQtSYdkh" role="2Oq$k0">
+                <ref role="3cqZAo" node="5dwDdJ8luVp" resolve="archivePath" />
+              </node>
+              <node concept="liA8E" id="2vMyQtSYdki" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                <node concept="Xl_RD" id="2vMyQtSYdkj" role="37wK5m">
+                  <property role="Xl_RC" value=".war" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3eNFk2" id="2vMyQtSYdkk" role="3eNLev">
+            <node concept="3clFbS" id="2vMyQtSYdkl" role="3eOfB_">
+              <node concept="3clFbF" id="2vMyQtSYdkm" role="3cqZAp">
+                <node concept="2OqwBi" id="2vMyQtSYdkn" role="3clFbG">
+                  <node concept="2OqwBi" id="2vMyQtSYdko" role="2Oq$k0">
+                    <node concept="37vLTw" id="2vMyQtSYdkp" role="2Oq$k0">
+                      <ref role="3cqZAo" node="2vMyQtSYdjC" resolve="unpackTask" />
+                    </node>
+                    <node concept="3TrcHB" id="2vMyQtSYdkq" role="2OqNvi">
+                      <ref role="3TsBF5" to="iuxj:5M4a$b5iL2Q" resolve="tagName" />
+                    </node>
+                  </node>
+                  <node concept="tyxLq" id="2vMyQtSYdkr" role="2OqNvi">
+                    <node concept="Xl_RD" id="2vMyQtSYdks" role="tz02z">
+                      <property role="Xl_RC" value="untar" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="2vMyQtSYdkt" role="3cqZAp">
+                <node concept="3clFbS" id="2vMyQtSYdku" role="3clFbx">
+                  <node concept="3clFbF" id="2vMyQtSYdkv" role="3cqZAp">
+                    <node concept="2OqwBi" id="2vMyQtSYdkw" role="3clFbG">
+                      <node concept="2OqwBi" id="2vMyQtSYdkx" role="2Oq$k0">
+                        <node concept="37vLTw" id="2vMyQtSYdky" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2vMyQtSYdjC" resolve="unpackTask" />
+                        </node>
+                        <node concept="3Tsc0h" id="2vMyQtSYdkz" role="2OqNvi">
+                          <ref role="3TtcxE" to="iuxj:5M4a$b5iL2P" resolve="attributes" />
+                        </node>
+                      </node>
+                      <node concept="TSZUe" id="2vMyQtSYdk$" role="2OqNvi">
+                        <node concept="2c44tf" id="2vMyQtSYdk_" role="25WWJ7">
+                          <node concept="2pNUuL" id="2vMyQtSYdkA" role="2c44tc">
+                            <property role="2pNUuO" value="compression" />
+                            <node concept="2pMdtt" id="2vMyQtSYdkB" role="2pMdts">
+                              <property role="2pMdty" value="gzip" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2vMyQtSYdkC" role="3clFbw">
+                  <node concept="37vLTw" id="2vMyQtSYdkD" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5dwDdJ8luVp" resolve="archivePath" />
+                  </node>
+                  <node concept="liA8E" id="2vMyQtSYdkE" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                    <node concept="Xl_RD" id="2vMyQtSYdkF" role="37wK5m">
+                      <property role="Xl_RC" value=".gz" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3eNFk2" id="2vMyQtSYdkG" role="3eNLev">
+                  <node concept="2OqwBi" id="2vMyQtSYdkH" role="3eO9$A">
+                    <node concept="37vLTw" id="2vMyQtSYdkI" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5dwDdJ8luVp" resolve="archivePath" />
+                    </node>
+                    <node concept="liA8E" id="2vMyQtSYdkJ" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                      <node concept="Xl_RD" id="2vMyQtSYdkK" role="37wK5m">
+                        <property role="Xl_RC" value=".bz" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="2vMyQtSYdkL" role="3eOfB_">
+                    <node concept="3clFbF" id="2vMyQtSYdkM" role="3cqZAp">
+                      <node concept="2OqwBi" id="2vMyQtSYdkN" role="3clFbG">
+                        <node concept="2OqwBi" id="2vMyQtSYdkO" role="2Oq$k0">
+                          <node concept="37vLTw" id="2vMyQtSYdkP" role="2Oq$k0">
+                            <ref role="3cqZAo" node="2vMyQtSYdjC" resolve="unpackTask" />
+                          </node>
+                          <node concept="3Tsc0h" id="2vMyQtSYdkQ" role="2OqNvi">
+                            <ref role="3TtcxE" to="iuxj:5M4a$b5iL2P" resolve="attributes" />
+                          </node>
+                        </node>
+                        <node concept="TSZUe" id="2vMyQtSYdkR" role="2OqNvi">
+                          <node concept="2c44tf" id="2vMyQtSYdkS" role="25WWJ7">
+                            <node concept="2pNUuL" id="2vMyQtSYdkT" role="2c44tc">
+                              <property role="2pNUuO" value="compression" />
+                              <node concept="2pMdtt" id="2vMyQtSYdkU" role="2pMdts">
+                                <property role="2pMdty" value="bzip2" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="22lmx$" id="2vMyQtSYdkV" role="3eO9$A">
+              <node concept="2OqwBi" id="2vMyQtSYdkW" role="3uHU7w">
+                <node concept="37vLTw" id="2vMyQtSYdkX" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5dwDdJ8luVp" resolve="archivePath" />
+                </node>
+                <node concept="liA8E" id="2vMyQtSYdkY" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                  <node concept="Xl_RD" id="2vMyQtSYdkZ" role="37wK5m">
+                    <property role="Xl_RC" value=".tar.bz" />
+                  </node>
+                </node>
+              </node>
+              <node concept="22lmx$" id="2vMyQtSYdl0" role="3uHU7B">
+                <node concept="2OqwBi" id="2vMyQtSYdl1" role="3uHU7B">
+                  <node concept="37vLTw" id="2vMyQtSYdl2" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5dwDdJ8luVp" resolve="archivePath" />
+                  </node>
+                  <node concept="liA8E" id="2vMyQtSYdl3" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                    <node concept="Xl_RD" id="2vMyQtSYdl4" role="37wK5m">
+                      <property role="Xl_RC" value=".tar" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="2vMyQtSYdl5" role="3uHU7w">
+                  <node concept="37vLTw" id="2vMyQtSYdl6" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5dwDdJ8luVp" resolve="archivePath" />
+                  </node>
+                  <node concept="liA8E" id="2vMyQtSYdl7" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                    <node concept="Xl_RD" id="2vMyQtSYdl8" role="37wK5m">
+                      <property role="Xl_RC" value=".tar.gz" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2vMyQtSYgAf" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSYgAh" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME why not unzip only required files (add &lt;fileset&gt; here with this.compositePart. " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2vMyQtSYj14" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSYj15" role="3SKWNk">
+            <property role="3SKdUp" value="Otherwise, we may face extraction of huge archives just to get simple MANIFEST.MF" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2vMyQtSX86Q" role="3cqZAp">
+          <node concept="2OqwBi" id="2vMyQtSX8f9" role="3clFbG">
+            <node concept="37vLTw" id="2vMyQtSX86O" role="2Oq$k0">
+              <ref role="3cqZAo" node="2vMyQtSUU97" resolve="helper" />
+            </node>
+            <node concept="liA8E" id="2vMyQtSX8_1" role="2OqNvi">
+              <ref role="37wK5l" to="o3n2:2fLy7QGT4il" resolve="emit" />
+              <node concept="2c44tf" id="2vMyQtSYczS" role="37wK5m">
+                <node concept="2Vbh7Z" id="2vMyQtSYczT" role="2c44tc">
+                  <node concept="2pNNFK" id="2vMyQtSYeTA" role="2Vbh7K">
+                    <property role="2pNNFO" value="a" />
+                    <property role="qg3DV" value="true" />
+                    <node concept="2c44te" id="2vMyQtSYeY$" role="lGtFl">
+                      <node concept="37vLTw" id="2vMyQtSYeYI" role="2c44t1">
+                        <ref role="3cqZAo" node="2vMyQtSYdjC" resolve="unpackTask" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2vMyQtSXS7g" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSXS7i" role="3SKWNk">
+            <property role="3SKdUp" value="putContentLocation for this as _PathElement, as it's not possible to putLocation() for non BL_Node, and this BSARP is not a _Node." />
+          </node>
+        </node>
+        <node concept="3clFbF" id="2vMyQtSXRkv" role="3cqZAp">
+          <node concept="2OqwBi" id="2vMyQtSXRxE" role="3clFbG">
+            <node concept="37vLTw" id="2vMyQtSXRkt" role="2Oq$k0">
+              <ref role="3cqZAo" node="2vMyQtSUU97" resolve="helper" />
+            </node>
+            <node concept="liA8E" id="2vMyQtSXROa" role="2OqNvi">
+              <ref role="37wK5l" to="o3n2:6BqTkGF5CSc" resolve="putContentLocation" />
+              <node concept="13iPFW" id="2vMyQtSXRPs" role="37wK5m" />
+              <node concept="37vLTw" id="2vMyQtSYfv0" role="37wK5m">
+                <ref role="3cqZAo" node="2vMyQtSXSWi" resolve="tempPath" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2vMyQtSUU97" role="3clF46">
+        <property role="TrG5h" value="helper" />
+        <node concept="3uibUv" id="2vMyQtSUU98" role="1tU5fm">
+          <ref role="3uigEE" to="o3n2:2fLy7QGT29I" resolve="UnpackHelper" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="2vMyQtSUU99" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="2vMyQtSURsP" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="appendName" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" node="1bWeed$ownT" resolve="appendName" />
+      <node concept="3Tm1VV" id="2vMyQtSURsQ" role="1B3o_S" />
+      <node concept="3clFbS" id="2vMyQtSURsX" role="3clF47">
+        <node concept="3SKdUt" id="2vMyQtSUZmj" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSUZml" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME odd code copied from BL_File, each append() implementation has to do the same, what for?" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="2vMyQtSUZcY" role="3cqZAp">
+          <node concept="2OqwBi" id="2vMyQtSUZcZ" role="3clFbw">
+            <node concept="37vLTw" id="2vMyQtSUZd0" role="2Oq$k0">
+              <ref role="3cqZAo" node="2vMyQtSURsY" resolve="parent" />
+            </node>
+            <node concept="1mIQ4w" id="2vMyQtSUZd1" role="2OqNvi">
+              <node concept="chp4Y" id="2vMyQtSUZd2" role="cj9EA">
+                <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="2vMyQtSUZd3" role="3clFbx">
+            <node concept="3clFbF" id="2vMyQtSUZd4" role="3cqZAp">
+              <node concept="2OqwBi" id="2vMyQtSUZd5" role="3clFbG">
+                <node concept="37vLTw" id="2vMyQtSUZd6" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2vMyQtSURt0" resolve="sb" />
+                </node>
+                <node concept="liA8E" id="2vMyQtSUZd7" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+                  <node concept="Xl_RD" id="2vMyQtSUZd8" role="37wK5m">
+                    <property role="Xl_RC" value="/" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2vMyQtSUZwC" role="3cqZAp">
+          <node concept="2OqwBi" id="2vMyQtSUZLs" role="3clFbG">
+            <node concept="37vLTw" id="2vMyQtSUZwA" role="2Oq$k0">
+              <ref role="3cqZAo" node="2vMyQtSURt0" resolve="sb" />
+            </node>
+            <node concept="liA8E" id="2vMyQtSV01P" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
+              <node concept="2OqwBi" id="2vMyQtSV0YE" role="37wK5m">
+                <node concept="2OqwBi" id="2vMyQtSV0fm" role="2Oq$k0">
+                  <node concept="13iPFW" id="2vMyQtSV02B" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="2vMyQtSV0xR" role="2OqNvi">
+                    <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
+                  </node>
+                </node>
+                <node concept="2qgKlT" id="2vMyQtSV1e8" role="2OqNvi">
+                  <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
+                  <node concept="10Nm6u" id="2vMyQtSV1lF" role="37wK5m" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2vMyQtSURsY" role="3clF46">
+        <property role="TrG5h" value="parent" />
+        <node concept="3Tqbb2" id="2vMyQtSURsZ" role="1tU5fm">
+          <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="2vMyQtSURt0" role="3clF46">
+        <property role="TrG5h" value="sb" />
+        <node concept="3uibUv" id="2vMyQtSURt1" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~StringBuilder" resolve="StringBuilder" />
+        </node>
+      </node>
+      <node concept="3cqZAl" id="2vMyQtSURt2" role="3clF45" />
+    </node>
+    <node concept="13i0hz" id="2vMyQtSURt3" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="location" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" node="6b4RkXS8sT2" resolve="location" />
+      <node concept="3Tm1VV" id="2vMyQtSURt8" role="1B3o_S" />
+      <node concept="3clFbS" id="2vMyQtSURtb" role="3clF47">
+        <node concept="3SKdUt" id="2vMyQtSYoIp" role="3cqZAp">
+          <node concept="3SKdUq" id="2vMyQtSYoIr" role="3SKWNk">
+            <property role="3SKdUp" value="see putContentLocation(this,string) above to understand why not helper.getLocation(this)" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2vMyQtSYjrb" role="3cqZAp">
+          <node concept="3cpWsn" id="2vMyQtSYjrc" role="3cpWs9">
+            <property role="TrG5h" value="unarchivedLocation" />
+            <node concept="17QB3L" id="2vMyQtSYjr7" role="1tU5fm" />
+            <node concept="2OqwBi" id="2vMyQtSYjrd" role="33vP2m">
+              <node concept="37vLTw" id="2vMyQtSYjre" role="2Oq$k0">
+                <ref role="3cqZAo" node="2vMyQtSURtc" resolve="helper" />
+              </node>
+              <node concept="liA8E" id="2vMyQtSYjrf" role="2OqNvi">
+                <ref role="37wK5l" to="o3n2:6BqTkGF5LdB" resolve="getContentLocation" />
+                <node concept="13iPFW" id="2vMyQtSYjrg" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5dwDdJ8ltoJ" role="3cqZAp">
+          <node concept="3SKdUq" id="5dwDdJ8ltoL" role="3SKWNk">
+            <property role="3SKdUp" value="pretty much the same as getAntPath(), below. In fact, it's getAntPath() that is employed, see reduction for BuildInputSingleFile" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="2vMyQtSV4Bm" role="3cqZAp">
+          <node concept="3cpWs3" id="2vMyQtSYm$c" role="3cqZAk">
+            <node concept="2OqwBi" id="2vMyQtSYnVb" role="3uHU7w">
+              <node concept="2OqwBi" id="2vMyQtSYmVQ" role="2Oq$k0">
+                <node concept="13iPFW" id="2vMyQtSYmED" role="2Oq$k0" />
+                <node concept="3TrEf2" id="2vMyQtSYntq" role="2OqNvi">
+                  <ref role="3Tt5mk" to="3ior:6mpuAlRaIJb" resolve="compositePart" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="2vMyQtSYojy" role="2OqNvi">
+                <ref role="37wK5l" node="7usrAn05okK" resolve="getPath" />
+              </node>
+            </node>
+            <node concept="3cpWs3" id="2vMyQtSYl2C" role="3uHU7B">
+              <node concept="37vLTw" id="2vMyQtSYjrh" role="3uHU7B">
+                <ref role="3cqZAo" node="2vMyQtSYjrc" resolve="unarchivedLocation" />
+              </node>
+              <node concept="1Xhbcc" id="2vMyQtSYlhh" role="3uHU7w">
+                <property role="1XhdNS" value="/" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2vMyQtSURtc" role="3clF46">
+        <property role="TrG5h" value="helper" />
+        <node concept="3uibUv" id="2vMyQtSURtd" role="1tU5fm">
+          <ref role="3uigEE" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="2vMyQtSURte" role="3clF46">
+        <property role="TrG5h" value="artifactId" />
+        <node concept="3uibUv" id="2vMyQtSURtf" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="17QB3L" id="2vMyQtSURtg" role="3clF45" />
     </node>
     <node concept="13i0hz" id="BHdWlMbHhL" role="13h7CS">
       <property role="13i0iv" value="false" />
@@ -12489,412 +13528,6 @@
         <node concept="3uibUv" id="7ro1Zzt$ckf" role="1tU5fm">
           <ref role="3uigEE" to="o3n2:4jjtc7WZOAv" resolve="Context" />
         </node>
-      </node>
-    </node>
-    <node concept="13i0hz" id="BHdWlMbKE2" role="13h7CS">
-      <property role="TrG5h" value="calculateUnpackPath" />
-      <node concept="3Tm1VV" id="BHdWlMbKE3" role="1B3o_S" />
-      <node concept="17QB3L" id="BHdWlMbKS3" role="3clF45" />
-      <node concept="3clFbS" id="BHdWlMbKE5" role="3clF47">
-        <node concept="3cpWs8" id="BHdWlMbKRT" role="3cqZAp">
-          <node concept="3cpWsn" id="BHdWlMbKRU" role="3cpWs9">
-            <property role="TrG5h" value="nlayout" />
-            <node concept="3Tqbb2" id="BHdWlMbKRV" role="1tU5fm">
-              <ref role="ehGHo" to="3ior:34DbxDwQvcK" resolve="BuildNamedLayout" />
-            </node>
-            <node concept="2OqwBi" id="BHdWlMbKRW" role="33vP2m">
-              <node concept="13iPFW" id="BHdWlMbKRX" role="2Oq$k0" />
-              <node concept="2Xjw5R" id="BHdWlMbKRY" role="2OqNvi">
-                <node concept="1xMEDy" id="BHdWlMbKRZ" role="1xVPHs">
-                  <node concept="chp4Y" id="BHdWlMbKS0" role="ri$Ld">
-                    <ref role="cht4Q" to="3ior:34DbxDwQvcK" resolve="BuildNamedLayout" />
-                  </node>
-                </node>
-                <node concept="1xIGOp" id="BHdWlMbKS1" role="1xVPHs" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="BHdWlMbKE8" role="3cqZAp">
-          <node concept="2OqwBi" id="BHdWlMbKEu" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgmhKh" role="2Oq$k0">
-              <ref role="3cqZAo" node="BHdWlMbKE6" resolve="context" />
-            </node>
-            <node concept="liA8E" id="BHdWlMbKE$" role="2OqNvi">
-              <ref role="37wK5l" to="o3n2:3DDoTVA58lH" resolve="getTempPath" />
-              <node concept="13iPFW" id="BHdWlMbKE_" role="37wK5m" />
-              <node concept="2OqwBi" id="6p3gnwdyJEr" role="37wK5m">
-                <node concept="2OqwBi" id="BHdWlMbKFp" role="2Oq$k0">
-                  <node concept="2OqwBi" id="BHdWlMbKEX" role="2Oq$k0">
-                    <node concept="13iPFW" id="BHdWlMbKEC" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="BHdWlMbKF3" role="2OqNvi">
-                      <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
-                    </node>
-                  </node>
-                  <node concept="2qgKlT" id="BHdWlMbKFv" role="2OqNvi">
-                    <ref role="37wK5l" node="1bWeed$oUb5" resolve="getLastSegment" />
-                    <node concept="2OqwBi" id="BHdWlMbKRB" role="37wK5m">
-                      <node concept="37vLTw" id="2BHiRxgmJfm" role="2Oq$k0">
-                        <ref role="3cqZAo" node="BHdWlMbKE6" resolve="context" />
-                      </node>
-                      <node concept="liA8E" id="BHdWlMbKRH" role="2OqNvi">
-                        <ref role="37wK5l" to="o3n2:5DY7s5F3vd2" resolve="getMacros" />
-                        <node concept="13iPFW" id="BHdWlMbKRI" role="37wK5m" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="liA8E" id="6p3gnwdyJP9" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
-                  <node concept="Xl_RD" id="6p3gnwdyJPf" role="37wK5m">
-                    <property role="Xl_RC" value="." />
-                  </node>
-                  <node concept="Xl_RD" id="6p3gnwdyJPa" role="37wK5m">
-                    <property role="Xl_RC" value="_" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3K4zz7" id="BHdWlMbKRK" role="37wK5m">
-                <node concept="Xl_RD" id="BHdWlMbKRL" role="3K4GZi">
-                  <property role="Xl_RC" value="default" />
-                </node>
-                <node concept="2OqwBi" id="BHdWlMbKRM" role="3K4Cdx">
-                  <node concept="37vLTw" id="3GM_nagTA$g" role="2Oq$k0">
-                    <ref role="3cqZAo" node="BHdWlMbKRU" resolve="nlayout" />
-                  </node>
-                  <node concept="3x8VRR" id="BHdWlMbKRO" role="2OqNvi" />
-                </node>
-                <node concept="2OqwBi" id="BHdWlMbKRP" role="3K4E3e">
-                  <node concept="37vLTw" id="3GM_nagTrAO" role="2Oq$k0">
-                    <ref role="3cqZAo" node="BHdWlMbKRU" resolve="nlayout" />
-                  </node>
-                  <node concept="3TrcHB" id="BHdWlMbKRR" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="BHdWlMbKE6" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="BHdWlMbKE7" role="1tU5fm">
-          <ref role="3uigEE" to="o3n2:4jjtc7WZOAv" resolve="Context" />
-        </node>
-      </node>
-    </node>
-    <node concept="13i0hz" id="7N6lJotWaNm" role="13h7CS">
-      <property role="TrG5h" value="getUnpackTask" />
-      <node concept="3Tm1VV" id="7N6lJotWaNn" role="1B3o_S" />
-      <node concept="3Tqbb2" id="7N6lJotWcxX" role="3clF45">
-        <ref role="ehGHo" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
-      </node>
-      <node concept="3clFbS" id="7N6lJotWaNp" role="3clF47">
-        <node concept="3cpWs8" id="7N6lJotWczm" role="3cqZAp">
-          <node concept="3cpWsn" id="7N6lJotWczn" role="3cpWs9">
-            <property role="TrG5h" value="archivePath" />
-            <node concept="17QB3L" id="7N6lJotWczo" role="1tU5fm" />
-            <node concept="2OqwBi" id="7N6lJotWczp" role="33vP2m">
-              <node concept="2OqwBi" id="7N6lJotWczq" role="2Oq$k0">
-                <node concept="13iPFW" id="7N6lJotWczr" role="2Oq$k0" />
-                <node concept="3TrEf2" id="7N6lJotWczs" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
-                </node>
-              </node>
-              <node concept="2qgKlT" id="7N6lJotWczt" role="2OqNvi">
-                <ref role="37wK5l" node="4Kip2_918YF" resolve="getRelativePath" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="7N6lJotWc$9" role="3cqZAp">
-          <node concept="3cpWsn" id="7N6lJotWc$a" role="3cpWs9">
-            <property role="TrG5h" value="unpackTask" />
-            <node concept="3Tqbb2" id="7N6lJotWc$b" role="1tU5fm">
-              <ref role="ehGHo" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
-            </node>
-            <node concept="2c44tf" id="7N6lJotWc$c" role="33vP2m">
-              <node concept="2pNNFK" id="7N6lJotWc$d" role="2c44tc">
-                <property role="qg3DV" value="true" />
-                <property role="2pNNFO" value="unzip" />
-                <node concept="2pNUuL" id="7N6lJotWc$e" role="2pNNFR">
-                  <property role="2pNUuO" value="src" />
-                  <node concept="2pMdtt" id="7N6lJotWc$f" role="2pMdts">
-                    <property role="2pMdty" value="path.to.archive" />
-                    <node concept="2EMmih" id="7N6lJotWc$g" role="lGtFl">
-                      <property role="2qtEX9" value="text" />
-                      <property role="3hQQBS" value="XmlTextValue" />
-                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
-                      <node concept="2OqwBi" id="7N6lJotWc$h" role="2c44t1">
-                        <node concept="2OqwBi" id="7N6lJotWc$i" role="2Oq$k0">
-                          <node concept="13iPFW" id="7N6lJotWc$j" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="7N6lJotWc$k" role="2OqNvi">
-                            <ref role="3Tt5mk" to="3ior:2cX$JBziBxc" resolve="archivePath" />
-                          </node>
-                        </node>
-                        <node concept="2qgKlT" id="7ro1Zzt$mI3" role="2OqNvi">
-                          <ref role="37wK5l" node="7ro1ZztyOh5" resolve="getAntPath" />
-                          <node concept="37vLTw" id="2BHiRxgmyWj" role="37wK5m">
-                            <ref role="3cqZAo" node="7ro1ZztzSZF" resolve="context" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="2pNUuL" id="7N6lJotWc$m" role="2pNNFR">
-                  <property role="2pNUuO" value="dest" />
-                  <node concept="2pMdtt" id="7N6lJotWc$n" role="2pMdts">
-                    <property role="2pMdty" value="tmp.dst" />
-                    <node concept="2EMmih" id="7N6lJotWc$o" role="lGtFl">
-                      <property role="2qtEX9" value="text" />
-                      <property role="3hQQBS" value="XmlTextValue" />
-                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
-                      <node concept="BsUDl" id="7ro1ZztzSZJ" role="2c44t1">
-                        <ref role="37wK5l" node="7ro1Zzt$ck7" resolve="getUnpackPath" />
-                        <node concept="37vLTw" id="2BHiRxghgcE" role="37wK5m">
-                          <ref role="3cqZAo" node="7ro1ZztzSZF" resolve="context" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="7N6lJotWcxY" role="3cqZAp">
-          <node concept="2OqwBi" id="7N6lJotWczN" role="3clFbw">
-            <node concept="37vLTw" id="3GM_nagTBqD" role="2Oq$k0">
-              <ref role="3cqZAo" node="7N6lJotWczn" resolve="archivePath" />
-            </node>
-            <node concept="liA8E" id="7N6lJotWczT" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-              <node concept="Xl_RD" id="7N6lJotWczU" role="37wK5m">
-                <property role="Xl_RC" value=".jar" />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbS" id="7N6lJotWcy0" role="3clFbx">
-            <node concept="3clFbF" id="7N6lJotWc$x" role="3cqZAp">
-              <node concept="2OqwBi" id="7N6lJotWc_j" role="3clFbG">
-                <node concept="2OqwBi" id="7N6lJotWc$R" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagTxKK" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7N6lJotWc$a" resolve="unpackTask" />
-                  </node>
-                  <node concept="3TrcHB" id="7N6lJotWc$X" role="2OqNvi">
-                    <ref role="3TsBF5" to="iuxj:5M4a$b5iL2Q" resolve="tagName" />
-                  </node>
-                </node>
-                <node concept="tyxLq" id="7N6lJotWc_o" role="2OqNvi">
-                  <node concept="Xl_RD" id="7N6lJotWc_q" role="tz02z">
-                    <property role="Xl_RC" value="unjar" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3eNFk2" id="7N6lJotWc_r" role="3eNLev">
-            <node concept="3clFbS" id="7N6lJotWc_t" role="3eOfB_">
-              <node concept="3clFbF" id="7N6lJotWc_y" role="3cqZAp">
-                <node concept="2OqwBi" id="7N6lJotWc_z" role="3clFbG">
-                  <node concept="2OqwBi" id="7N6lJotWc_$" role="2Oq$k0">
-                    <node concept="37vLTw" id="3GM_nagTvJb" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7N6lJotWc$a" resolve="unpackTask" />
-                    </node>
-                    <node concept="3TrcHB" id="7N6lJotWc_A" role="2OqNvi">
-                      <ref role="3TsBF5" to="iuxj:5M4a$b5iL2Q" resolve="tagName" />
-                    </node>
-                  </node>
-                  <node concept="tyxLq" id="7N6lJotWc_B" role="2OqNvi">
-                    <node concept="Xl_RD" id="7N6lJotWc_C" role="tz02z">
-                      <property role="Xl_RC" value="unwar" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="7N6lJotWc_u" role="3eO9$A">
-              <node concept="37vLTw" id="3GM_nagTAcn" role="2Oq$k0">
-                <ref role="3cqZAo" node="7N6lJotWczn" resolve="archivePath" />
-              </node>
-              <node concept="liA8E" id="7N6lJotWc_w" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                <node concept="Xl_RD" id="7N6lJotWc_x" role="37wK5m">
-                  <property role="Xl_RC" value=".war" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3eNFk2" id="7N6lJotWc_F" role="3eNLev">
-            <node concept="3clFbS" id="7N6lJotWc_G" role="3eOfB_">
-              <node concept="3clFbF" id="7N6lJotWcCe" role="3cqZAp">
-                <node concept="2OqwBi" id="7N6lJotWcD1" role="3clFbG">
-                  <node concept="2OqwBi" id="7N6lJotWcC$" role="2Oq$k0">
-                    <node concept="37vLTw" id="3GM_nagTvfq" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7N6lJotWc$a" resolve="unpackTask" />
-                    </node>
-                    <node concept="3TrcHB" id="7N6lJotWcCF" role="2OqNvi">
-                      <ref role="3TsBF5" to="iuxj:5M4a$b5iL2Q" resolve="tagName" />
-                    </node>
-                  </node>
-                  <node concept="tyxLq" id="7N6lJotWcD6" role="2OqNvi">
-                    <node concept="Xl_RD" id="7N6lJotWcD8" role="tz02z">
-                      <property role="Xl_RC" value="untar" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbJ" id="7N6lJotWcDa" role="3cqZAp">
-                <node concept="3clFbS" id="7N6lJotWcDb" role="3clFbx">
-                  <node concept="3clFbF" id="7N6lJotWcDE" role="3cqZAp">
-                    <node concept="2OqwBi" id="7N6lJotWcEu" role="3clFbG">
-                      <node concept="2OqwBi" id="7N6lJotWcE0" role="2Oq$k0">
-                        <node concept="37vLTw" id="3GM_nagT_at" role="2Oq$k0">
-                          <ref role="3cqZAo" node="7N6lJotWc$a" resolve="unpackTask" />
-                        </node>
-                        <node concept="3Tsc0h" id="7N6lJotWcE8" role="2OqNvi">
-                          <ref role="3TtcxE" to="iuxj:5M4a$b5iL2P" resolve="attributes" />
-                        </node>
-                      </node>
-                      <node concept="TSZUe" id="7N6lJotWcE$" role="2OqNvi">
-                        <node concept="2c44tf" id="7N6lJotWcEA" role="25WWJ7">
-                          <node concept="2pNUuL" id="7N6lJotWcEC" role="2c44tc">
-                            <property role="2pNUuO" value="compression" />
-                            <node concept="2pMdtt" id="7N6lJotWcED" role="2pMdts">
-                              <property role="2pMdty" value="gzip" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="7N6lJotWcDz" role="3clFbw">
-                  <node concept="37vLTw" id="3GM_nagTy2s" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7N6lJotWczn" resolve="archivePath" />
-                  </node>
-                  <node concept="liA8E" id="7N6lJotWcDC" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                    <node concept="Xl_RD" id="7N6lJotWcDD" role="37wK5m">
-                      <property role="Xl_RC" value=".gz" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="3eNFk2" id="7N6lJotWcEE" role="3eNLev">
-                  <node concept="2OqwBi" id="7N6lJotWcF2" role="3eO9$A">
-                    <node concept="37vLTw" id="3GM_nagTxN9" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7N6lJotWczn" resolve="archivePath" />
-                    </node>
-                    <node concept="liA8E" id="7N6lJotWcF8" role="2OqNvi">
-                      <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                      <node concept="Xl_RD" id="7N6lJotWcF9" role="37wK5m">
-                        <property role="Xl_RC" value=".bz" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbS" id="7N6lJotWcEG" role="3eOfB_">
-                    <node concept="3clFbF" id="7N6lJotWcFa" role="3cqZAp">
-                      <node concept="2OqwBi" id="7N6lJotWcFb" role="3clFbG">
-                        <node concept="2OqwBi" id="7N6lJotWcFc" role="2Oq$k0">
-                          <node concept="37vLTw" id="3GM_nagTBZn" role="2Oq$k0">
-                            <ref role="3cqZAo" node="7N6lJotWc$a" resolve="unpackTask" />
-                          </node>
-                          <node concept="3Tsc0h" id="7N6lJotWcFe" role="2OqNvi">
-                            <ref role="3TtcxE" to="iuxj:5M4a$b5iL2P" resolve="attributes" />
-                          </node>
-                        </node>
-                        <node concept="TSZUe" id="7N6lJotWcFf" role="2OqNvi">
-                          <node concept="2c44tf" id="7N6lJotWcFg" role="25WWJ7">
-                            <node concept="2pNUuL" id="7N6lJotWcFh" role="2c44tc">
-                              <property role="2pNUuO" value="compression" />
-                              <node concept="2pMdtt" id="7N6lJotWcFi" role="2pMdts">
-                                <property role="2pMdty" value="bzip2" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="22lmx$" id="7N6lJotWcBI" role="3eO9$A">
-              <node concept="2OqwBi" id="7N6lJotWcC6" role="3uHU7w">
-                <node concept="37vLTw" id="3GM_nagTyZl" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7N6lJotWczn" resolve="archivePath" />
-                </node>
-                <node concept="liA8E" id="7N6lJotWcCc" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                  <node concept="Xl_RD" id="7N6lJotWcCd" role="37wK5m">
-                    <property role="Xl_RC" value=".tar.bz" />
-                  </node>
-                </node>
-              </node>
-              <node concept="22lmx$" id="7N6lJotWcBj" role="3uHU7B">
-                <node concept="2OqwBi" id="7N6lJotWcAR" role="3uHU7B">
-                  <node concept="37vLTw" id="3GM_nagTyi2" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7N6lJotWczn" resolve="archivePath" />
-                  </node>
-                  <node concept="liA8E" id="7N6lJotWcAX" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                    <node concept="Xl_RD" id="7N6lJotWcAY" role="37wK5m">
-                      <property role="Xl_RC" value=".tar" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="7N6lJotWcBm" role="3uHU7w">
-                  <node concept="37vLTw" id="3GM_nagT$lH" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7N6lJotWczn" resolve="archivePath" />
-                  </node>
-                  <node concept="liA8E" id="7N6lJotWcBo" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
-                    <node concept="Xl_RD" id="7N6lJotWcBp" role="37wK5m">
-                      <property role="Xl_RC" value=".tar.gz" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="7N6lJotWc$u" role="3cqZAp">
-          <node concept="37vLTw" id="3GM_nagTuOA" role="3cqZAk">
-            <ref role="3cqZAo" node="7N6lJotWc$a" resolve="unpackTask" />
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="7ro1ZztzSZF" role="3clF46">
-        <property role="TrG5h" value="context" />
-        <node concept="3uibUv" id="7ro1ZztzSZG" role="1tU5fm">
-          <ref role="3uigEE" to="o3n2:4jjtc7WZOAv" resolve="Context" />
-        </node>
-      </node>
-    </node>
-    <node concept="13i0hz" id="5Wv1_bQ1rcP" role="13h7CS">
-      <property role="13i0iv" value="false" />
-      <property role="TrG5h" value="getTargetTask" />
-      <property role="13i0it" value="false" />
-      <ref role="13i0hy" node="5Wv1_bQ1rcK" resolve="getTargetTask" />
-      <node concept="3Tm1VV" id="5Wv1_bQ1rcQ" role="1B3o_S" />
-      <node concept="3clFbS" id="5Wv1_bQ1rcR" role="3clF47">
-        <node concept="3clFbF" id="5Wv1_bQ1re2" role="3cqZAp">
-          <node concept="2OqwBi" id="5Wv1_bQ1rer" role="3clFbG">
-            <node concept="2c44tf" id="5Wv1_bQ1re3" role="2Oq$k0">
-              <node concept="2VaxJe" id="5T0Kicg_H94" role="2c44tc">
-                <ref role="2VaxJf" to="arit:6bGbH3SvUOQ" resolve="fetchDependencies" />
-              </node>
-            </node>
-            <node concept="3TrEf2" id="5Wv1_bQ1rez" role="2OqNvi">
-              <ref role="3Tt5mk" to="8xvf:2pKPpytmGTn" resolve="target" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="5Wv1_bQ1rcS" role="3clF45">
-        <ref role="ehGHo" to="8xvf:2pKPpytmA9N" resolve="BwfTask" />
       </node>
     </node>
   </node>

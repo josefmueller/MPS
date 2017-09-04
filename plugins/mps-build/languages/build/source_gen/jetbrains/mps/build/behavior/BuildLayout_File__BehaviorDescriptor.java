@@ -50,9 +50,13 @@ public final class BuildLayout_File__BehaviorDescriptor extends BaseBHDescriptor
   /*package*/ static boolean exports_id5FtnUVJQES1(@NotNull SNode __thisNode__, Object artifactId) {
     if (artifactId instanceof SNode) {
       SNode node = (SNode) artifactId;
+      // check node.containing root == this.containing root is from initial commit e0a6b1f), but I don't see a reason 
+      // why a file from an external layout shall not match requested BuildSourcePath. Perhaps, it's due to 'source' part of the name, i.e. 
+      // that the path is supposed to reference smth from project source. However, we've got BuildSourceArchiveRelativePath which may  
+      // legitimately point to a file from an external layout, and the restriction is not clear here. 
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath")) && SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(__thisNode__)) {
         SNode required = SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath"));
-        return eq_7uaiaq_a0b0b0a0q(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(required), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
+        return eq_7uaiaq_a0b0f0a0q(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(required), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c11aL, "path"))));
       }
     }
     if (artifactId instanceof LocalSourcePathArtifact) {
@@ -149,7 +153,7 @@ public final class BuildLayout_File__BehaviorDescriptor extends BaseBHDescriptor
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean eq_7uaiaq_a0b0b0a0q(Object a, Object b) {
+  private static boolean eq_7uaiaq_a0b0f0a0q(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_7uaiaq_a0a0b0b0q(Object a, Object b) {

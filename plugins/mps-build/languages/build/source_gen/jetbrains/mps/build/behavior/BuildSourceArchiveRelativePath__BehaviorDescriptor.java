@@ -17,24 +17,25 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
+import jetbrains.mps.build.util.UnpackHelper;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.build.util.DependenciesHelper;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.template.TemplateQueryContext;
-import org.apache.log4j.Level;
-import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import org.apache.log4j.Level;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends BaseBHDescriptor {
   private static final Logger LOG = LogManager.getLogger(BuildSourceArchiveRelativePath__BehaviorDescriptor.class);
@@ -43,14 +44,14 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
 
   public static final SMethod<String> getBasePath_id4jjtc7WZMYz = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBasePath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4jjtc7WZMYz").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
   public static final SMethod<Void> fetchDependencies_id57YmpYyL8F1 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("fetchDependencies").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57YmpYyL8F1").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(VisibleArtifacts.class, ""), SMethodBuilder.createJavaParameter(RequiredDependenciesBuilder.class, ""));
+  public static final SMethod<Void> unpack_id6IqTD4bJTWZ = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("unpack").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6IqTD4bJTWZ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(UnpackHelper.class, ""));
+  public static final SMethod<Void> appendName_id1bWeed$ownT = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("appendName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$ownT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(StringBuilder.class, ""));
+  public static final SMethod<String> location_id6b4RkXS8sT2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("location").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6b4RkXS8sT2").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(DependenciesHelper.class, ""), SMethodBuilder.createJavaParameter(Object.class, ""));
   public static final SMethod<String> getRelativePath_id4Kip2_918YF = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getRelativePath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4Kip2_918YF").registry(REGISTRY).build();
   public static final SMethod<String> getAntPath_id7ro1ZztyOh5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getAntPath").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7ro1ZztyOh5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
   /*package*/ static final SMethod<String> getUnpackPath_id7ro1Zzt$ck7 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getUnpackPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("7ro1Zzt$ck7").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
-  public static final SMethod<String> calculateUnpackPath_idBHdWlMbKE2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("calculateUnpackPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("BHdWlMbKE2").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
-  public static final SMethod<SNode> getUnpackTask_id7N6lJotWaNm = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getUnpackTask").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7N6lJotWaNm").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
-  public static final SMethod<SNode> getTargetTask_id5Wv1_bQ1rcK = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTargetTask").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5Wv1_bQ1rcK").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getBasePath_id4jjtc7WZMYz, fetchDependencies_id57YmpYyL8F1, getRelativePath_id4Kip2_918YF, getAntPath_id7ro1ZztyOh5, getUnpackPath_id7ro1Zzt$ck7, calculateUnpackPath_idBHdWlMbKE2, getUnpackTask_id7N6lJotWaNm, getTargetTask_id5Wv1_bQ1rcK);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getBasePath_id4jjtc7WZMYz, fetchDependencies_id57YmpYyL8F1, unpack_id6IqTD4bJTWZ, appendName_id1bWeed$ownT, location_id6b4RkXS8sT2, getRelativePath_id4Kip2_918YF, getAntPath_id7ro1ZztyOh5, getUnpackPath_id7ro1Zzt$ck7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -60,8 +61,69 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
     return BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context) + "!";
   }
   /*package*/ static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    // XXX I'd say, needsFetch is needed when target archive is inside a BuildLayout, not this BSARP instance (which is merely a pointer to external archive) 
+    // though, need to check uses if DH.requiresFetch() - it's invoked for a context node which is in uncertain relation to this one. 
     builder.needsFetch(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"), false, false));
     // and still, ???? 
+    // 
+    // I'm not certain we need to addWithContent() file referenced as archive part. It's not BL_Jar or _Zip, we can't benefit 
+    // from its upack() method. Nevertheless, what if referenced jar is part of something like BuildMpsLayout_Plugin, and we need to make sure 
+    // the plugin is extracted/fetched. OTOH, not sure if I can ensure proper order (i.e. plugin.zip to get extracted first) 
+    // FIXME Perhaps, better implementation is to fix BL_File and _FileStub to extract archive if helper.isContentRequired(file) == true.  
+    //       OTOH, possible optimization (extract only relevant file from the archive) would not be possible then. 
+    SNode archiveInLayout = artifacts.findArtifact(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")));
+    if (SNodeOperations.isInstanceOf(archiveInLayout, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
+      builder.addWithContent(SNodeOperations.as(archiveInLayout, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node")));
+    }
+    // XXX shall I complain that archive is not found here? Now I assume if no artifact found, it's just a path to source file and shall be used as is. 
+
+    // archiveInLayout, if any, is just a _File or _FileStub and unlikely to upack itself, this _PathElement needs to do it, instead. 
+    builder.requiresUnpack(__thisNode__);
+  }
+  /*package*/ static void unpack_id6IqTD4bJTWZ(@NotNull SNode __thisNode__, UnpackHelper helper) {
+    // FIXME next two lines are to be uncommented once we get clear idea what achive files BuildSourceArchiveRelativePath may reference 
+    //       Now it looks that referenced files were not expected to be part of external layout, just a direct path specification. 
+    //       However, with the code that finds proper artifact, fetchDependencies() above, we may use lang.build's 'standard' approach to locations 
+    //       I have it functional, but decided to comment it out until aforementioned question is cleared  
+    //       There are changes in BL_FileStub#exports() for artifacts.findArtifact(), above, to succeed. 
+    String archivePath = BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")));
+
+    // copied from #calculateUnpackPath(), although doesn't match e.g. BL_Zip pattern for temp names, perhaps worth a change 
+    SNode nlayout = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60d9f330L, "jetbrains.mps.build.structure.BuildNamedLayout"), true, false);
+    String tempPath = helper.getPathProvider().createTempPath(BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), null).replace('.', '_'), ((nlayout != null) ? SPropertyOperations.getString(nlayout, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : "default"));
+
+    //  copied from #getUnpackTask 
+    SNode unpackTask = _quotation_createNode_ll2z5f_a0m0c(archivePath, tempPath);
+    if (archivePath.endsWith(".jar")) {
+      SPropertyOperations.set(unpackTask, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), "unjar");
+    } else if (archivePath.endsWith(".war")) {
+      SPropertyOperations.set(unpackTask, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), "unwar");
+    } else if (archivePath.endsWith(".tar") || archivePath.endsWith(".tar.gz") || archivePath.endsWith(".tar.bz")) {
+      SPropertyOperations.set(unpackTask, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), "untar");
+      if (archivePath.endsWith(".gz")) {
+        ListSequence.fromList(SLinkOperations.getChildren(unpackTask, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"))).addElement(_quotation_createNode_ll2z5f_a0a0a1a1n0c());
+      } else if (archivePath.endsWith(".bz")) {
+        ListSequence.fromList(SLinkOperations.getChildren(unpackTask, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"))).addElement(_quotation_createNode_ll2z5f_a0a0a0b0b31a2());
+      }
+    }
+    // FIXME why not unzip only required files (add <fileset> here with this.compositePart.  
+    // Otherwise, we may face extraction of huge archives just to get simple MANIFEST.MF 
+    helper.emit(_quotation_createNode_ll2z5f_a0a61a2(unpackTask));
+    // putContentLocation for this as _PathElement, as it's not possible to putLocation() for non BL_Node, and this BSARP is not a _Node. 
+    helper.putContentLocation(__thisNode__, tempPath);
+  }
+  /*package*/ static void appendName_id1bWeed$ownT(@NotNull SNode __thisNode__, SNode parent, StringBuilder sb) {
+    // FIXME odd code copied from BL_File, each append() implementation has to do the same, what for? 
+    if (SNodeOperations.isInstanceOf(parent, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
+      sb.append("/");
+    }
+    sb.append(BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), null));
+  }
+  /*package*/ static String location_id6b4RkXS8sT2(@NotNull SNode __thisNode__, DependenciesHelper helper, Object artifactId) {
+    // see putContentLocation(this,string) above to understand why not helper.getLocation(this) 
+    String unarchivedLocation = helper.getContentLocation(__thisNode__);
+    // pretty much the same as getAntPath(), below. In fact, it's getAntPath() that is employed, see reduction for BuildInputSingleFile 
+    return unarchivedLocation + '/' + BuildCompositePath__BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
   }
   /*package*/ static String getRelativePath_id4Kip2_918YF(@NotNull SNode __thisNode__) {
     return BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath"))) + "!/" + BuildCompositePath__BehaviorDescriptor.getPath_id7usrAn05okK.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")));
@@ -89,30 +151,6 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
     }
     return unpackPath;
   }
-  /*package*/ static String calculateUnpackPath_idBHdWlMbKE2(@NotNull SNode __thisNode__, Context context) {
-    SNode nlayout = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x31292e1a60d9f330L, "jetbrains.mps.build.structure.BuildNamedLayout"), true, false);
-    return context.getTempPath(__thisNode__, BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context.getMacros(__thisNode__)).replace(".", "_"), ((nlayout != null) ? SPropertyOperations.getString(nlayout, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : "default"));
-  }
-  /*package*/ static SNode getUnpackTask_id7N6lJotWaNm(@NotNull SNode __thisNode__, Context context) {
-    String archivePath = BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")));
-    SNode unpackTask = _quotation_createNode_ll2z5f_a0b0g(BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context), BuildSourceArchiveRelativePath__BehaviorDescriptor.getUnpackPath_id7ro1Zzt$ck7.invoke(__thisNode__, context));
-    if (archivePath.endsWith(".jar")) {
-      SPropertyOperations.set(unpackTask, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), "unjar");
-    } else if (archivePath.endsWith(".war")) {
-      SPropertyOperations.set(unpackTask, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), "unwar");
-    } else if (archivePath.endsWith(".tar") || archivePath.endsWith(".tar.gz") || archivePath.endsWith(".tar.bz")) {
-      SPropertyOperations.set(unpackTask, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b6L, "tagName"), "untar");
-      if (archivePath.endsWith(".gz")) {
-        ListSequence.fromList(SLinkOperations.getChildren(unpackTask, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"))).addElement(_quotation_createNode_ll2z5f_a0a0a1a1c0g());
-      } else if (archivePath.endsWith(".bz")) {
-        ListSequence.fromList(SLinkOperations.getChildren(unpackTask, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"))).addElement(_quotation_createNode_ll2z5f_a0a0a0b0b2a6());
-      }
-    }
-    return unpackTask;
-  }
-  /*package*/ static SNode getTargetTask_id5Wv1_bQ1rcK(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(_quotation_createNode_ll2z5f_a0a0h(), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L, 0x2670d5989d5ace57L, "target"));
-  }
 
   /*package*/ BuildSourceArchiveRelativePath__BehaviorDescriptor() {
     super(REGISTRY);
@@ -136,17 +174,19 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
         fetchDependencies_id57YmpYyL8F1(node, (VisibleArtifacts) parameters[0], (RequiredDependenciesBuilder) parameters[1]);
         return null;
       case 2:
-        return (T) ((String) getRelativePath_id4Kip2_918YF(node));
+        unpack_id6IqTD4bJTWZ(node, (UnpackHelper) parameters[0]);
+        return null;
       case 3:
-        return (T) ((String) getAntPath_id7ro1ZztyOh5(node, (Context) parameters[0]));
+        appendName_id1bWeed$ownT(node, (SNode) parameters[0], (StringBuilder) parameters[1]);
+        return null;
       case 4:
-        return (T) ((String) getUnpackPath_id7ro1Zzt$ck7(node, (Context) parameters[0]));
+        return (T) ((String) location_id6b4RkXS8sT2(node, (DependenciesHelper) parameters[0], (Object) parameters[1]));
       case 5:
-        return (T) ((String) calculateUnpackPath_idBHdWlMbKE2(node, (Context) parameters[0]));
+        return (T) ((String) getRelativePath_id4Kip2_918YF(node));
       case 6:
-        return (T) ((SNode) getUnpackTask_id7N6lJotWaNm(node, (Context) parameters[0]));
+        return (T) ((String) getAntPath_id7ro1ZztyOh5(node, (Context) parameters[0]));
       case 7:
-        return (T) ((SNode) getTargetTask_id5Wv1_bQ1rcK(node));
+        return (T) ((String) getUnpackPath_id7ro1Zzt$ck7(node, (Context) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -175,7 +215,7 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_ll2z5f_a0b0g(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_ll2z5f_a0m0c(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -199,7 +239,7 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
     quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b10b2L, 0x5c842a42c54b10b5L, "attributes"), quotedNode_5);
     return quotedNode_3;
   }
-  private static SNode _quotation_createNode_ll2z5f_a0a0a1a1c0g() {
+  private static SNode _quotation_createNode_ll2z5f_a0a0a1a1n0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -210,7 +250,7 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_ll2z5f_a0a0a0b0b2a6() {
+  private static SNode _quotation_createNode_ll2z5f_a0a0a0b0b31a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -221,11 +261,15 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54b8df3L, 0x5c842a42c54cfd1eL, "value"), quotedNode_2);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_ll2z5f_a0a0h() {
+  private static SNode _quotation_createNode_ll2z5f_a0a61a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, "jetbrains.mps.build.workflow"), 0x2670d5989d5ace56L, "BwfTaskDependency"), null, null, false);
-    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L, 0x2670d5989d5ace57L, "target"), SReference.create(MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5ace56L, 0x2670d5989d5ace57L, "target"), quotedNode_1, facade.createModelReference("r:0d66e868-9778-4307-b6f9-4795c00f662f(jetbrains.mps.build.workflow.preset.general)"), facade.createNodeId("7128123785277844790")));
-    return quotedNode_1;
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, "jetbrains.mps.build.workflow"), 0x2670d5989d5dc467L, "BwfAntStatement"), null, null, false);
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5dc467L, 0x2670d5989d5dc468L, "element"), HUtil.copyIfNecessary(quotedNode_3));
+    }
+    return quotedNode_2;
   }
 }

@@ -1070,6 +1070,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.IWorkflowParticipant:
         if (props_IWorkflowParticipant == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.deprecated(true);
           props_IWorkflowParticipant = cpb.create();
         }
         return props_IWorkflowParticipant;

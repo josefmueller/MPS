@@ -74,16 +74,18 @@ public class FetchDependenciesProcessor {
       helper.add(node, false);
     }
     @Override
-    public void add(SNode node, Object artifactId) {
-      genContext.showWarningMessage(dep, "FIXME stop using RequiredDependenciesBuilder.add(node<>,Object)");
-      add(node);
-    }
-    @Override
     public void addWithContent(SNode node) {
       if (!(check(node))) {
         return;
       }
       helper.add(node, true);
+    }
+
+    @Override
+    public void requiresUnpack(SNode pe) {
+      // BuildSourceArchiveRelativePath is a _PathElement that comes here. Not sure it makes any sense to do check() as it's not an artifact. 
+      // artifacts.parent(pe) is unlikely to return anything but null, therefore we just get into helper.required list of elements to #unpack(). 
+      helper.add(pe, false);
     }
 
     @Override

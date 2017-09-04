@@ -31,8 +31,9 @@ public final class BuildLayout_FileStub__BehaviorDescriptor extends BaseBHDescri
   public static final SMethod<Boolean> isFile_id1bWeed$oPZ2 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFile").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$oPZ2").registry(REGISTRY).build();
   public static final SMethod<Void> appendName_id1bWeed$ownT = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("appendName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1bWeed$ownT").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(StringBuilder.class, ""));
   public static final SMethod<String> getApproximateName_id4RsV8qJDnFm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getApproximateName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4RsV8qJDnFm").registry(REGISTRY).build();
+  public static final SMethod<Boolean> exports_id5FtnUVJQES1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("exports").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5FtnUVJQES1").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Object.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(unpack_id6IqTD4bJTWZ, isFile_id1bWeed$oPZ2, appendName_id1bWeed$ownT, getApproximateName_id4RsV8qJDnFm);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(unpack_id6IqTD4bJTWZ, isFile_id1bWeed$oPZ2, appendName_id1bWeed$ownT, getApproximateName_id4RsV8qJDnFm, exports_id5FtnUVJQES1);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -54,6 +55,29 @@ public final class BuildLayout_FileStub__BehaviorDescriptor extends BaseBHDescri
   }
   /*package*/ static String getApproximateName_id4RsV8qJDnFm(@NotNull SNode __thisNode__) {
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d31b36L, 0x63a87b9320d31b94L, "fileName")), null);
+  }
+  /*package*/ static boolean exports_id5FtnUVJQES1(@NotNull SNode __thisNode__, Object artifactId) {
+    //  turn off, see BuildSourceArchiveRelativePath#unpack 
+    final boolean BuildSourceArchiveRelativePath_support = Boolean.FALSE.booleanValue();
+    if (artifactId instanceof SNode && BuildSourceArchiveRelativePath_support) {
+      //  copied from BuildLayout_File, with narrow cast, BuildRelativePath instead of BuildSourcePath as I need to match a tail part only (BRP.getPathTail), without any macro or project 
+      //  I would recieve from BuildSourcePath.getRelativePath() otherwise 
+      SNode node = (SNode) artifactId;
+      if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"))) {
+        StringBuilder layoutRelativeName = new StringBuilder(BuildSource_SingleFile__BehaviorDescriptor.getApproximateName_id4RsV8qJDnFm.invoke(__thisNode__));
+        // HACK. match against re-constructed layout-relative path, respecting named containers (usually, folders) only. 
+        SNode namedParent = SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, "jetbrains.mps.build.structure.BuildLayout_NamedContainer"));
+        // XXX alternatively, _AbstractContainer + BL_Node.isFolder()? Jars are NamedContainers, too. 
+        while (namedParent != null) {
+          layoutRelativeName.insert(0, '/');
+          layoutRelativeName.insert(0, BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(namedParent, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, 0x3cca41cd0fe75496L, "containerName")), null));
+          namedParent = SNodeOperations.as(SNodeOperations.getParent(namedParent), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac7f8cL, "jetbrains.mps.build.structure.BuildLayout_NamedContainer"));
+        }
+        return eq_lodnpl_a0f0d0c0r(BuildRelativePath__BehaviorDescriptor.getPathTail_id15RAxQX0M4T.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"))), layoutRelativeName.toString());
+      }
+    }
+
+    return ((boolean) BuildLayout_Node__BehaviorDescriptor.exports_id5FtnUVJQES1.invokeSuper(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d31b36L, "jetbrains.mps.build.structure.BuildLayout_FileStub"), artifactId));
   }
 
   /*package*/ BuildLayout_FileStub__BehaviorDescriptor() {
@@ -82,6 +106,8 @@ public final class BuildLayout_FileStub__BehaviorDescriptor extends BaseBHDescri
         return null;
       case 3:
         return (T) ((String) getApproximateName_id4RsV8qJDnFm(node));
+      case 4:
+        return (T) ((Boolean) exports_id5FtnUVJQES1(node, (Object) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -109,5 +135,8 @@ public final class BuildLayout_FileStub__BehaviorDescriptor extends BaseBHDescri
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+  private static boolean eq_lodnpl_a0f0d0c0r(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
