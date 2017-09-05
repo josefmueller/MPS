@@ -122,12 +122,12 @@ public class SModuleOperations {
   }
 
   @NotNull
-  public static JavaModuleFacet getJavaFacet(SModule module) {
+  public static JavaModuleFacet getJavaFacet(@NotNull SModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     if (facet != null) {
       return facet;
     } else {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException(module + " does not have java facet");
     }
   }
 
