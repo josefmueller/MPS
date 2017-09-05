@@ -146,8 +146,6 @@ public class ProjectFactory {
     if (myCreatedProject == null) {
       return;
     }
-    myCreatedProject.getComponent(ProjectVersion.class).setVersion(ProjectVersion.CURRENT);
-
     for (ProjectMigration m : ProjectMigrationsRegistry.getInstance().getMigrations()) {
       m.applyToCreatedProject(ProjectHelper.toMPSProject(myCreatedProject));
     }
