@@ -11002,19 +11002,16 @@
                   <node concept="3NFfHV" id="21T7tZA3Oo7" role="3NFExx">
                     <node concept="3clFbS" id="21T7tZA3Oo8" role="2VODD2">
                       <node concept="3clFbF" id="21T7tZA3Oo9" role="3cqZAp">
-                        <node concept="2OqwBi" id="21T7tZA3Ooa" role="3clFbG">
-                          <node concept="2OqwBi" id="21T7tZA3Oob" role="2Oq$k0">
-                            <node concept="2OqwBi" id="21T7tZA3Ooc" role="2Oq$k0">
-                              <node concept="30H73N" id="21T7tZA3Ood" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="21T7tZA3VnD" role="2OqNvi">
-                                <ref role="3Tt5mk" to="kdzh:5HVSRHdV$dX" resolve="plugin" />
-                              </node>
-                            </node>
-                            <node concept="3TrEf2" id="21T7tZA3Oof" role="2OqNvi">
-                              <ref role="3Tt5mk" to="kdzh:14LJu4ZfrSE" resolve="pluginXml" />
+                        <node concept="2OqwBi" id="21T7tZA3Oob" role="3clFbG">
+                          <node concept="2OqwBi" id="21T7tZA3Ooc" role="2Oq$k0">
+                            <node concept="30H73N" id="21T7tZA3Ood" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="21T7tZA3VnD" role="2OqNvi">
+                              <ref role="3Tt5mk" to="kdzh:5HVSRHdV$dX" resolve="plugin" />
                             </node>
                           </node>
-                          <node concept="1$rogu" id="21T7tZA3Oog" role="2OqNvi" />
+                          <node concept="3TrEf2" id="21T7tZA3Oof" role="2OqNvi">
+                            <ref role="3Tt5mk" to="kdzh:14LJu4ZfrSE" resolve="pluginXml" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -16101,7 +16098,7 @@
                         <node concept="2OqwBi" id="1pY69DfFQqC" role="2Oq$k0">
                           <node concept="1iwH7S" id="1pY69DfFQgc" role="2Oq$k0" />
                           <node concept="1bhEwm" id="1pY69DfFQBo" role="2OqNvi">
-                            <ref role="1bhEwl" node="1pY69DfFfoR" />
+                            <ref role="1bhEwl" node="1pY69DfFfoR" resolve="devkitModules" />
                           </node>
                         </node>
                         <node concept="13MTOL" id="1pY69DfFUbQ" role="2OqNvi">
