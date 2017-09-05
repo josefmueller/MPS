@@ -58,12 +58,7 @@ public class DeploymentDescriptorPersistence {
           }
 
           Element classpath = XmlUtil.first(rootElement, "classpath");
-          if (classpath == null) {
-            // compatibility with DD produced prior to introduction of the element. 
-            // now we use empty tag to indicate no classpath. Once 3.5 is out, remove this code and  
-            // fix build language not to inject empty <classpath/> tag for modules without classes 
-            result_wu2j1h_a0a0d0c0b.getClasspath().add(".");
-          } else {
+          if (classpath != null) {
             for (Element e : Sequence.fromIterable(XmlUtil.children(classpath, "entry"))) {
               result_wu2j1h_a0a0d0c0b.getClasspath().add(e.getAttributeValue("path"));
             }

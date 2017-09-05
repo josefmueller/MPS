@@ -2947,12 +2947,6 @@
                     </node>
                   </node>
                 </node>
-                <node concept="gft3U" id="7ndynavVLWY" role="UU_$l">
-                  <node concept="2pNNFK" id="7ndynavVMny" role="gfFT$">
-                    <property role="2pNNFO" value="classpath" />
-                    <property role="qg3DV" value="true" />
-                  </node>
-                </node>
               </node>
             </node>
             <node concept="2pNNFK" id="47iBkDRSWpV" role="3o6s8t">
