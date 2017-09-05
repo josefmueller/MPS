@@ -15504,6 +15504,13 @@
               </node>
             </node>
           </node>
+          <node concept="13uQ2_" id="7Kvxa_ngN5n" role="39821P">
+            <node concept="3_J27D" id="7Kvxa_ngN5p" role="13uQ07">
+              <node concept="3Mxwew" id="7Kvxa_ngN5A" role="3MwsjC">
+                <property role="3MwjfP" value="svn4idea.jar" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

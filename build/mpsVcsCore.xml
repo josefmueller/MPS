@@ -47,6 +47,11 @@
   
   <target name="assemble" depends="declare-mps-tasks, classes">
     <mkdir dir="${build.layout}/svn4idea" />
+    <unjar src="${mps_home}/plugins/svn4idea/lib/svn4idea.jar" dest="${build.tmp}/default/svn4idea_jar">
+      <patternset>
+        <include name="META-INF/plugin.xml" />
+      </patternset>
+    </unjar>
     <mkdir dir="${build.layout}/svn4idea/META-INF" />
     <copy todir="${build.layout}/svn4idea/META-INF">
       <fileset file="${build.tmp}/default/svn4idea_jar/META-INF/plugin.xml" />
@@ -57,6 +62,11 @@
       </fileset>
     </copy>
     <mkdir dir="${build.layout}/git4idea" />
+    <unjar src="${mps_home}/plugins/git4idea/lib/git4idea.jar" dest="${build.tmp}/default/git4idea_jar">
+      <patternset>
+        <include name="META-INF/plugin.xml" />
+      </patternset>
+    </unjar>
     <mkdir dir="${build.layout}/git4idea/META-INF" />
     <copy todir="${build.layout}/git4idea/META-INF">
       <fileset file="${build.tmp}/default/git4idea_jar/META-INF/plugin.xml" />
@@ -191,10 +201,7 @@
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
-  <target name="fetchDependencies">
-    <unjar src="${mps_home}/plugins/git4idea/lib/git4idea.jar" dest="${build.tmp}/default/git4idea_jar" />
-    <unjar src="${mps_home}/plugins/svn4idea/lib/svn4idea.jar" dest="${build.tmp}/default/svn4idea_jar" />
-  </target>
+  <target name="fetchDependencies" />
   
   <target name="build" depends="assemble" />
   
