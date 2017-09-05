@@ -669,6 +669,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.BuildSourceArchiveRelativePath:
         if (props_BuildSourceArchiveRelativePath == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("file inside an archive (zip, jar, war, tar)");
           cpb.rawPresentation("*.zip!/");
           props_BuildSourceArchiveRelativePath = cpb.create();
         }

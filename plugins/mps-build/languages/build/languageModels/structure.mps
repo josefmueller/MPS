@@ -20,6 +20,9 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
         <property id="1212087449254" name="noValueText" index="Q2FuW" />
@@ -1977,6 +1980,7 @@
     <property role="3GE5qa" value="SourcePath" />
     <property role="34LRSv" value="*.zip!/" />
     <property role="EcuMT" value="2539347366864541544" />
+    <property role="R4oN_" value="file inside an archive (zip, jar, war, tar)" />
     <ref role="1TJDcQ" node="6mpuAlRavrV" resolve="BuildRelativePath" />
     <node concept="1TJgyj" id="2cX$JBziBxc" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -1985,11 +1989,8 @@
       <property role="IQ2ns" value="2539347366864648268" />
       <ref role="20lvS9" node="6qcrfIJFdKY" resolve="BuildSourcePath" />
     </node>
-    <node concept="PrWs8" id="K9IFLIJT6b" role="PzmwI">
-      <ref role="PrY4T" node="IFRVVI6zqz" resolve="BuildExternalDependency" />
-    </node>
-    <node concept="PrWs8" id="2vMyQtSUOry" role="PzmwI">
-      <ref role="PrY4T" node="6bGbH3Svq63" resolve="BuildLayout_PathElement" />
+    <node concept="t5JxF" id="7Kvxa_n4A0g" role="lGtFl">
+      <property role="t5JxN" value="Mechanism to reference single file bundled inside an archive. Note, nested archives (i.e. .zip!/xx/.jar!/yy) are not yet supported." />
     </node>
   </node>
   <node concept="1TIwiD" id="7ro1Zzt_n6e">

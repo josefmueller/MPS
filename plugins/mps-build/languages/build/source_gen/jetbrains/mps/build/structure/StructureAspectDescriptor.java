@@ -1104,8 +1104,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.build", "BuildSourceArchiveRelativePath", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.build.structure.BuildRelativePath", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL);
-    b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1a36a3L);
-    b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x62ec2ed0f87da183L);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/2539347366864541544");
     b.aggregate("archivePath", 0x233d92f9e34a784cL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL).optional(false).ordered(true).multiple(false).origin("2539347366864648268").done();
     b.alias("*.zip!/");
