@@ -618,7 +618,7 @@
       <property role="20kJfa" value="module" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7655580649838764661" />
-      <ref role="20lvS9" node="4zCbl23cpcc" resolve="BuildMps_Module" />
+      <ref role="20lvS9" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
     </node>
   </node>
   <node concept="1TIwiD" id="3LQl9buGqe4">

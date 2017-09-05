@@ -21,8 +21,8 @@ import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper;
-import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.RelativePathHelper;
+import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars__BehaviorDescriptor;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
@@ -164,6 +164,9 @@ public class QueriesGenerated extends QueryProviderBase {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x6a3e160a3efe6275L, "module")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
       return "generator";
     }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x6a3e160a3efe6275L, "module")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"))) {
+      return "devkit";
+    }
     return "undefined";
   }
   public static Object propertyMacro_GetPropertyValue_4643216374596368503(final PropertyMacroContext _context) {
@@ -197,7 +200,7 @@ public class QueriesGenerated extends QueryProviderBase {
     try {
       return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(_context.getNode());
     } catch (ArtifactsRelativePathHelper.RelativePathException ex) {
-      String jarName = BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(_context.getNode(), Context.defaultContext(_context).getMacros(_context.getNode()));
+      String jarName = BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(_context.getNode());
       _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "': " + ex.getMessage());
       return "";
     }
@@ -231,7 +234,7 @@ public class QueriesGenerated extends QueryProviderBase {
       // condition is the one from IF that generates source module, below 
       return null;
     }
-    return (String) BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return (String) BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")));
   }
   public static Object propertyMacro_GetPropertyValue_7477562766051598607(final PropertyMacroContext _context) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")) == null)) {
@@ -255,7 +258,7 @@ public class QueriesGenerated extends QueryProviderBase {
       // condition is the one from IF that generates source module, below 
       return null;
     }
-    return (String) BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, 0xc0f2d501dbb734cL, "sourceLanguage")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return (String) BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, 0xc0f2d501dbb734cL, "sourceLanguage")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")));
   }
   public static Object propertyMacro_GetPropertyValue_9200313594511245388(final PropertyMacroContext _context) {
     StringBuilder sb = new StringBuilder();
@@ -299,7 +302,7 @@ public class QueriesGenerated extends QueryProviderBase {
     // FIXME no reason for MM to assume DD.descriptorFile always goes under module, we shall keep this knowledge here 
     //       right now it's MM that prepends "module/" to the path we construct here, although it's this code that actually knowsn 
     //       about module/ folder in the jar 
-    return (String) BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return (String) BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")));
   }
   public static Object propertyMacro_GetPropertyValue_7753763219109706789(final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x6de50fcfc3523742L, "stripImplementation"));
@@ -339,7 +342,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x144b26ad23d8bd88L, "buildDate")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
   }
   public static Object propertyMacro_GetPropertyValue_1462305029084462106(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feaf4b14L, "splashScreen")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feaf4b14L, "splashScreen")));
   }
   public static Object propertyMacro_GetPropertyValue_1462305029084462141(final PropertyMacroContext _context) {
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x7a0ffb6a57a27969L, "textColor")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
@@ -357,7 +360,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x6e805e55feeab57eL, "progressHeight")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
   }
   public static Object propertyMacro_GetPropertyValue_1462305029084462063(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feaf4b15L, "aboutScreen")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feaf4b15L, "aboutScreen")));
   }
   public static Object propertyMacro_GetPropertyValue_1084163669516703719(final PropertyMacroContext _context) {
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xf0bb91cffec5bf7L, "foreground")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
@@ -381,22 +384,22 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xf0bb91cffed3371L, "logoH")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
   }
   public static Object propertyMacro_GetPropertyValue_1462305029084462314(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001aL, "icon32")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001aL, "icon32")));
   }
   public static Object propertyMacro_GetPropertyValue_1462305029084462338(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001bL, "icon16")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001bL, "icon16")));
   }
   public static Object propertyMacro_GetPropertyValue_1462305029084462361(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001cL, "icon32opaque")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb0001cL, "icon32opaque")));
   }
   public static Object propertyMacro_GetPropertyValue_6845119683730306982(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x5efec015d9c0dee8L, "iconToolWindow")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x5efec015d9c0dee8L, "iconToolWindow")));
   }
   public static Object propertyMacro_GetPropertyValue_781140262677966726(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xad72aee24a9cbfeL, "icon128")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xad72aee24a9cbfeL, "icon128")));
   }
   public static Object propertyMacro_GetPropertyValue_6845119683729395353(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x5efec015d9b7cdc4L, "icon")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x5efec015d9b7cdc4L, "icon")));
   }
   public static Object propertyMacro_GetPropertyValue_1462305029084462431(final PropertyMacroContext _context) {
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb230afL, "shortName")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
@@ -405,10 +408,10 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb230b0L, "fullName")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
   }
   public static Object propertyMacro_GetPropertyValue_772379520212879621(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xab80b14d5f245eeL, "welcomeLogo")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xab80b14d5f245eeL, "welcomeLogo")));
   }
   public static Object propertyMacro_GetPropertyValue_6099622527106030561(final PropertyMacroContext _context) {
-    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54a6365f080e9d69L, "editorBGUrl")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+    return "/" + BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54a6365f080e9d69L, "editorBGUrl")));
   }
   public static Object propertyMacro_GetPropertyValue_781140262678149978(final PropertyMacroContext _context) {
     return (String) BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0xad72aee24a9cf29L, "plugins")), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
@@ -1130,14 +1133,18 @@ public class QueriesGenerated extends QueryProviderBase {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"));
   }
   public static Iterable<SNode> sourceNodesQuery_4643216374596368654(final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(new MPSModulesClosure(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x6a3e160a3efe6275L, "module")), new MPSModulesClosure.ModuleDependenciesOptions()).runtimeDependencies().getModules()).sort(new ISelector<SNode, String>() {
-      public String select(SNode it) {
-        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-      }
-    }, true);
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x6a3e160a3efe6275L, "module")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
+      return Sequence.fromIterable(new MPSModulesClosure(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x6a3e160a3efe6275L, "module")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), new MPSModulesClosure.ModuleDependenciesOptions()).runtimeDependencies().getModules()).sort(new ISelector<SNode, String>() {
+        public String select(SNode it) {
+          return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+        }
+      }, true);
+    } else {
+      return new ArrayList<SNode>();
+    }
   }
   public static Iterable<SNode> sourceNodesQuery_4743026300739026814(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.collect(SNodeOperations.ofConcept(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x6a3e160a3efe6275L, "module")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"))).select(new ISelector<SNode, SNode>() {
+    return SLinkOperations.collect(SNodeOperations.ofConcept(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6a3e160a3efe6274L, 0x6a3e160a3efe6275L, "module")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return (SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency")) ? SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")) : it);
       }
@@ -1428,7 +1435,7 @@ public class QueriesGenerated extends QueryProviderBase {
       StringBuilder suffix = new StringBuilder();
       SNode current = SNodeOperations.as(path, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
       if (current != null) {
-        suffix.append('/').append(BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(path, null));
+        suffix.append('/').append(BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(path));
         current = SNodeOperations.as(BuildSourcePath__BehaviorDescriptor.getParent_id7wpYgMyTXsR.invoke(current), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
       }
       SNode containingRoot = SNodeOperations.getContainingRoot(path);
@@ -1438,7 +1445,7 @@ public class QueriesGenerated extends QueryProviderBase {
           return MultiTuple.<SNode,String>from(res, suffix.substring(1));
         }
 
-        suffix.insert(0, BuildSourcePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUb5.invoke(current, null)).insert(0, '/');
+        suffix.insert(0, BuildSourcePath__BehaviorDescriptor.getLastSegment_id5dwDdJ8yckN.invoke(current)).insert(0, '/');
         current = SNodeOperations.as(BuildSourcePath__BehaviorDescriptor.getParent_id7wpYgMyTXsR.invoke(current), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath"));
       }
     }

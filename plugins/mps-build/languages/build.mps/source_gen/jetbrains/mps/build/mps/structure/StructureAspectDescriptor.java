@@ -279,7 +279,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.build.structure.BuildLayout_Node", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/7655580649838764660");
-    b.associate("module", 0x6a3e160a3efe6275L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL).optional(false).origin("7655580649838764661").done();
+    b.associate("module", 0x6a3e160a3efe6275L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL).optional(false).origin("7655580649838764661").done();
     b.aggregate("jarLocations", 0x3c765492deb1ce79L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L).optional(true).ordered(true).multiple(true).origin("4356762679305686649").done();
     b.aggregate("sourcesJarLocation", 0x707952bffb692f6L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L).optional(true).ordered(true).multiple(false).origin("506537499308757750").done();
     b.aggregate("sourceDescriptorFile", 0x67c5a3b7c82af3d6L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xd94b027412f0824L).optional(true).ordered(true).multiple(false).origin("7477562766051177430").done();
