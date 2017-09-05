@@ -82,13 +82,6 @@ public class FetchDependenciesProcessor {
     }
 
     @Override
-    public void requiresUnpack(SNode pe) {
-      // BuildSourceArchiveRelativePath is a _PathElement that comes here. Not sure it makes any sense to do check() as it's not an artifact. 
-      // artifacts.parent(pe) is unlikely to return anything but null, therefore we just get into helper.required list of elements to #unpack(). 
-      helper.add(pe, false);
-    }
-
-    @Override
     public void needsFetch(SNode node) {
       // copied as is from VisibleArtifacts.needsFetch. VA has to become 'initialize once' container, 
       // while this builder is intended for composing fetch state. 

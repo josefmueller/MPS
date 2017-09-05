@@ -13732,12 +13732,7 @@
         </node>
         <node concept="TZ5HA" id="2vMyQtSYslE" role="TZ5H$">
           <node concept="1dT_AC" id="2vMyQtSYslF" role="1dT_Ay">
-            <property role="1dT_AB" value="Not sure whether it has to be _PathElement or _Node, as it's _PathElement that supports subsequent #unpack() call, introduced " />
-          </node>
-        </node>
-        <node concept="TZ5HA" id="2vMyQtSYvCV" role="TZ5H$">
-          <node concept="1dT_AC" id="2vMyQtSYvCW" role="1dT_Ay">
-            <property role="1dT_AB" value="#requiresUnpack() call meanwhile to capture 'unpack only' semantics" />
+            <property role="1dT_AB" value="Not sure whether it has to be _PathElement or _Node, as it's _PathElement that supports subsequent #unpack() call, though." />
           </node>
         </node>
       </node>
@@ -13760,27 +13755,6 @@
             <property role="1dT_AB" value="Tells that specified layout node is composite and is required, along with its nested nodes, to build a project." />
           </node>
           <node concept="1dT_AC" id="2vMyQtSYppU" role="1dT_Ay" />
-        </node>
-      </node>
-    </node>
-    <node concept="3clFb_" id="2vMyQtSYpiI" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="requiresUnpack" />
-      <node concept="3clFbS" id="2vMyQtSYpiL" role="3clF47" />
-      <node concept="3Tm1VV" id="2vMyQtSYpiM" role="1B3o_S" />
-      <node concept="3cqZAl" id="2vMyQtSYp09" role="3clF45" />
-      <node concept="37vLTG" id="2vMyQtSYpkt" role="3clF46">
-        <property role="TrG5h" value="pe" />
-        <node concept="3Tqbb2" id="2vMyQtSYpks" role="1tU5fm">
-          <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
-        </node>
-      </node>
-      <node concept="P$JXv" id="2vMyQtSYpnz" role="lGtFl">
-        <node concept="TZ5HA" id="2vMyQtSYpn$" role="TZ5H$">
-          <node concept="1dT_AC" id="2vMyQtSYpn_" role="1dT_Ay">
-            <property role="1dT_AB" value="Pretty much the same as #add(), although doesn't look for parent layout elements and merely instructs to invoke pe.unpack() at proper moment of time" />
-          </node>
         </node>
       </node>
     </node>
@@ -14419,51 +14393,6 @@
         </node>
       </node>
       <node concept="2tJIrI" id="2vMyQtSYw8_" role="jymVt" />
-      <node concept="3clFb_" id="2vMyQtSYw_i" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="2aFKle" value="false" />
-        <property role="TrG5h" value="requiresUnpack" />
-        <node concept="3Tm1VV" id="2vMyQtSYw_k" role="1B3o_S" />
-        <node concept="3cqZAl" id="2vMyQtSYw_l" role="3clF45" />
-        <node concept="37vLTG" id="2vMyQtSYw_m" role="3clF46">
-          <property role="TrG5h" value="pe" />
-          <node concept="3Tqbb2" id="2vMyQtSYw_n" role="1tU5fm">
-            <ref role="ehGHo" to="3ior:6bGbH3Svq63" resolve="BuildLayout_PathElement" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="2vMyQtSYw_r" role="3clF47">
-          <node concept="3SKdUt" id="2vMyQtSYzN9" role="3cqZAp">
-            <node concept="3SKdUq" id="2vMyQtSYzNb" role="3SKWNk">
-              <property role="3SKdUp" value="BuildSourceArchiveRelativePath is a _PathElement that comes here. Not sure it makes any sense to do check() as it's not an artifact." />
-            </node>
-          </node>
-          <node concept="3SKdUt" id="2vMyQtSY_ex" role="3cqZAp">
-            <node concept="3SKdUq" id="2vMyQtSY_ez" role="3SKWNk">
-              <property role="3SKdUp" value="artifacts.parent(pe) is unlikely to return anything but null, therefore we just get into helper.required list of elements to #unpack()." />
-            </node>
-          </node>
-          <node concept="3clFbF" id="2vMyQtSYzAc" role="3cqZAp">
-            <node concept="2OqwBi" id="2vMyQtSY$2c" role="3clFbG">
-              <node concept="37vLTw" id="2vMyQtSYzAb" role="2Oq$k0">
-                <ref role="3cqZAo" node="3u59u8luOuW" resolve="helper" />
-              </node>
-              <node concept="liA8E" id="2vMyQtSY$k0" role="2OqNvi">
-                <ref role="37wK5l" node="6bGbH3SvnZO" resolve="add" />
-                <node concept="37vLTw" id="2vMyQtSY$Kx" role="37wK5m">
-                  <ref role="3cqZAo" node="2vMyQtSYw_m" resolve="pe" />
-                </node>
-                <node concept="3clFbT" id="2vMyQtSY_2a" role="37wK5m">
-                  <property role="3clFbU" value="false" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2AHcQZ" id="2vMyQtSYw_s" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-        </node>
-      </node>
-      <node concept="2tJIrI" id="4WwUR8hO_iQ" role="jymVt" />
       <node concept="3clFb_" id="4WwUR8hO_JE" role="jymVt">
         <property role="1EzhhJ" value="false" />
         <property role="2aFKle" value="false" />
