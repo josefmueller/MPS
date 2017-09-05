@@ -4731,6 +4731,35 @@
       </node>
       <node concept="l2Vlx" id="1_vO5tEMrHo" role="2iSdaV" />
     </node>
+    <node concept="3EZMnI" id="7Kvxa_nmrTZ" role="6VMZX">
+      <node concept="3EZMnI" id="7Kvxa_nmsvF" role="3EZMnx">
+        <node concept="VPM3Z" id="7Kvxa_nmsvH" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="7Kvxa_nmsvJ" role="3EZMnx">
+          <property role="3F0ifm" value="Allow any named element" />
+        </node>
+        <node concept="3F0A7n" id="7Kvxa_nmsvY" role="3EZMnx">
+          <ref role="1NtTu8" to="tp25:7Kvxa_nmhU5" resolve="includeNonRoot" />
+        </node>
+        <node concept="2iRfu4" id="7Kvxa_nmsvK" role="2iSdaV" />
+      </node>
+      <node concept="2EHx9g" id="7Kvxa_nmrU6" role="2iSdaV" />
+      <node concept="3EZMnI" id="7Kvxa_nmswl" role="3EZMnx">
+        <node concept="VPM3Z" id="7Kvxa_nmswn" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="7Kvxa_nmswp" role="3EZMnx" />
+        <node concept="3F0ifn" id="7Kvxa_nmswB" role="3EZMnx">
+          <property role="3F0ifm" value="unless enabled, only root named elements are visible" />
+          <ref role="1k5W1q" to="tpen:hshO_Yc" resolve="Comment" />
+          <node concept="VPM3Z" id="7Kvxa_nmswF" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="7Kvxa_nmswq" role="2iSdaV" />
+      </node>
+    </node>
   </node>
   <node concept="24kQdi" id="637Y3IJQsKh">
     <property role="3GE5qa" value="reference" />

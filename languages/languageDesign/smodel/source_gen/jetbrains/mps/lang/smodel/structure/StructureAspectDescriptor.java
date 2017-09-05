@@ -1292,6 +1292,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/1828409047608048457");
+    b.prop("includeNonRoot", 0x7c1f84a957591e85L, "8944013247830892165");
     b.associate("referentNode", 0x195fd0576ac9bb4aL).target(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L).optional(false).origin("1828409047608048458").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("nodePointer/<name>/");

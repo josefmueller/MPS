@@ -876,7 +876,7 @@
                       <ref role="3cqZAo" node="5tSqQCN6yni" resolve="conceptNode" />
                     </node>
                     <node concept="2qgKlT" id="5tSqQCN6yoV" role="2OqNvi">
-                      <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
+                      <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getVisibleConceptMethods" />
                       <node concept="37vLTw" id="5tSqQCN6yqk" role="37wK5m">
                         <ref role="3cqZAo" node="5tSqQCN6yqh" resolve="enclosingNode" />
                       </node>
@@ -938,7 +938,7 @@
                               <ref role="3B5MYn" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                             </node>
                             <node concept="2qgKlT" id="5tSqQCN6ypn" role="2OqNvi">
-                              <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getAllConceptMethods" />
+                              <ref role="37wK5l" to="tpcn:wrIPXhfIPX" resolve="getVisibleConceptMethods" />
                               <node concept="37vLTw" id="5tSqQCN6yql" role="37wK5m">
                                 <ref role="3cqZAo" node="5tSqQCN6yqh" resolve="enclosingNode" />
                               </node>
@@ -2529,11 +2529,6 @@
       <ref role="1N5Vy1" to="tp25:1_vO5tEMrHa" resolve="referentNode" />
       <node concept="3dgokm" id="5Vvmn_QkRU7" role="1N6uqs">
         <node concept="3clFbS" id="5Vvmn_QkRU8" role="2VODD2">
-          <node concept="3SKdUt" id="5Vvmn_QkRU9" role="3cqZAp">
-            <node concept="3SKdUq" id="5Vvmn_QkRUa" role="3SKWNk">
-              <property role="3SKdUp" value="roots only" />
-            </node>
-          </node>
           <node concept="3clFbF" id="7C6N2UpuPzl" role="3cqZAp">
             <node concept="2ShNRf" id="7C6N2UpuPzh" role="3clFbG">
               <node concept="1pGfFk" id="7C6N2UpuQ80" role="2ShVmc">
@@ -2542,11 +2537,16 @@
                   <node concept="2rP1CM" id="7C6N2UpuWrJ" role="2Oq$k0" />
                   <node concept="I4A8Y" id="7C6N2UpuWPg" role="2OqNvi" />
                 </node>
-                <node concept="3clFbT" id="7C6N2UpuX73" role="37wK5m">
-                  <property role="3clFbU" value="true" />
+                <node concept="3fqX7Q" id="7Kvxa_nmjlE" role="37wK5m">
+                  <node concept="2OqwBi" id="7Kvxa_nmjlG" role="3fr31v">
+                    <node concept="3kakTB" id="7Kvxa_nmjlH" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="7Kvxa_nmjlI" role="2OqNvi">
+                      <ref role="3TsBF5" to="tp25:7Kvxa_nmhU5" resolve="includeNonRoot" />
+                    </node>
+                  </node>
                 </node>
                 <node concept="35c_gC" id="7C6N2UpuXhD" role="37wK5m">
-                  <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                  <ref role="35c_gD" to="tpck:h0TrEE$" resolve="INamedConcept" />
                 </node>
               </node>
             </node>

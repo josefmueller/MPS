@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class NodePointerExpression_Constraints extends BaseConstraintsDescriptor {
@@ -44,8 +45,7 @@ public class NodePointerExpression_Constraints extends BaseConstraintsDescriptor
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            // roots only 
-            return new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), true, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
+            return new ModelPlusImportedScope(SNodeOperations.getModel(_context.getContextNode()), !(SPropertyOperations.getBoolean(_context.getReferenceNode(), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x195fd0576ac9bb49L, 0x7c1f84a957591e85L, "includeNonRoot"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept"));
           }
         };
       }
