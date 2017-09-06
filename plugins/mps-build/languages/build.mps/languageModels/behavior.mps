@@ -254,6 +254,9 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
+        <reference id="1138676095763" name="enumMember" index="uo_Cq" />
+      </concept>
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
@@ -274,13 +277,12 @@
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
-      <concept id="6973815483243445083" name="jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression" flags="nn" index="3f7Wdw">
-        <reference id="6973815483243565416" name="member" index="3f7u_j" />
-        <reference id="6973815483243564601" name="enum" index="3f7vo2" />
-      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
+      <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
+        <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
@@ -6442,33 +6444,29 @@
             </node>
             <node concept="1eOMI4" id="6ogfLD6hovn" role="3uHU7w">
               <node concept="22lmx$" id="6ogfLD6hnHb" role="1eOMHV">
-                <node concept="2OqwBi" id="6ogfLD6hk18" role="3uHU7B">
-                  <node concept="liA8E" id="6ogfLD6hni1" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="3f7Wdw" id="6ogfLD6hni3" role="37wK5m">
-                      <ref role="3f7u_j" to="kdzh:eYcmk9QOlj" />
-                      <ref role="3f7vo2" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
-                    </node>
-                  </node>
+                <node concept="2OqwBi" id="EpEP7h8iWd" role="3uHU7B">
                   <node concept="2OqwBi" id="6ogfLD6hc$i" role="2Oq$k0">
                     <node concept="13iPFW" id="6ogfLD6hcpx" role="2Oq$k0" />
                     <node concept="3TrcHB" id="6ogfLD6hhUE" role="2OqNvi">
                       <ref role="3TsBF5" to="kdzh:eYcmk9RcI2" resolve="sourcesKind" />
                     </node>
                   </node>
-                </node>
-                <node concept="2OqwBi" id="6ogfLD6hnKs" role="3uHU7w">
-                  <node concept="liA8E" id="6ogfLD6hnKt" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="3f7Wdw" id="6ogfLD6hnKu" role="37wK5m">
-                      <ref role="3f7u_j" to="kdzh:eYcmk9QOls" />
-                      <ref role="3f7vo2" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
+                  <node concept="3t7uKx" id="EpEP7h8jw2" role="2OqNvi">
+                    <node concept="uoxfO" id="EpEP7h8jw4" role="3t7uKA">
+                      <ref role="uo_Cq" to="kdzh:eYcmk9QOlj" />
                     </node>
                   </node>
+                </node>
+                <node concept="2OqwBi" id="EpEP7h8k$U" role="3uHU7w">
                   <node concept="2OqwBi" id="6ogfLD6hnKv" role="2Oq$k0">
                     <node concept="13iPFW" id="6ogfLD6hnKw" role="2Oq$k0" />
                     <node concept="3TrcHB" id="6ogfLD6hnKx" role="2OqNvi">
                       <ref role="3TsBF5" to="kdzh:eYcmk9RcI2" resolve="sourcesKind" />
+                    </node>
+                  </node>
+                  <node concept="3t7uKx" id="EpEP7h8l7J" role="2OqNvi">
+                    <node concept="uoxfO" id="EpEP7h8l7L" role="3t7uKA">
+                      <ref role="uo_Cq" to="kdzh:eYcmk9QOls" />
                     </node>
                   </node>
                 </node>
@@ -6496,33 +6494,29 @@
             </node>
             <node concept="1eOMI4" id="6ogfLD6hytk" role="3uHU7w">
               <node concept="22lmx$" id="6ogfLD6hytl" role="1eOMHV">
-                <node concept="2OqwBi" id="6ogfLD6hytm" role="3uHU7B">
-                  <node concept="liA8E" id="6ogfLD6hytn" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="3f7Wdw" id="6ogfLD6hyto" role="37wK5m">
-                      <ref role="3f7u_j" to="kdzh:eYcmk9QOlj" />
-                      <ref role="3f7vo2" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
-                    </node>
-                  </node>
+                <node concept="2OqwBi" id="EpEP7h8frv" role="3uHU7B">
                   <node concept="2OqwBi" id="6ogfLD6hytp" role="2Oq$k0">
                     <node concept="13iPFW" id="6ogfLD6hytq" role="2Oq$k0" />
                     <node concept="3TrcHB" id="6ogfLD6hytr" role="2OqNvi">
                       <ref role="3TsBF5" to="kdzh:eYcmk9RcI2" resolve="sourcesKind" />
                     </node>
                   </node>
-                </node>
-                <node concept="2OqwBi" id="6ogfLD6hyts" role="3uHU7w">
-                  <node concept="liA8E" id="6ogfLD6hytt" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="3f7Wdw" id="6ogfLD6hytu" role="37wK5m">
-                      <ref role="3f7vo2" to="kdzh:eYcmk9QOkj" resolve="BuildMps_ModuleSourcesKind" />
-                      <ref role="3f7u_j" to="kdzh:eYcmk9QOli" />
+                  <node concept="3t7uKx" id="EpEP7h8fZi" role="2OqNvi">
+                    <node concept="uoxfO" id="EpEP7h8fZk" role="3t7uKA">
+                      <ref role="uo_Cq" to="kdzh:eYcmk9QOlj" />
                     </node>
                   </node>
+                </node>
+                <node concept="2OqwBi" id="EpEP7h8heA" role="3uHU7w">
                   <node concept="2OqwBi" id="6ogfLD6hytv" role="2Oq$k0">
                     <node concept="13iPFW" id="6ogfLD6hytw" role="2Oq$k0" />
                     <node concept="3TrcHB" id="6ogfLD6hytx" role="2OqNvi">
                       <ref role="3TsBF5" to="kdzh:eYcmk9RcI2" resolve="sourcesKind" />
+                    </node>
+                  </node>
+                  <node concept="3t7uKx" id="EpEP7h8hLp" role="2OqNvi">
+                    <node concept="uoxfO" id="EpEP7h8hLr" role="3t7uKA">
+                      <ref role="uo_Cq" to="kdzh:eYcmk9QOli" />
                     </node>
                   </node>
                 </node>
