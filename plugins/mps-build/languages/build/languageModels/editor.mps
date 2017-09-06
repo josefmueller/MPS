@@ -695,6 +695,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -3468,7 +3469,7 @@
           <node concept="3clFbF" id="4zlO3QT9ez1" role="3cqZAp">
             <node concept="2OqwBi" id="4zlO3QT9ez7" role="3clFbG">
               <node concept="0IXxy" id="4zlO3QT9ez2" role="2Oq$k0" />
-              <node concept="1PgB_6" id="4zlO3QT9ezd" role="2OqNvi" />
+              <node concept="3YRAZt" id="EpEP7hvzCX" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -3568,9 +3569,16 @@
   <node concept="24kQdi" id="4zlO3QT8NAW">
     <property role="3GE5qa" value="Layout.File" />
     <ref role="1XX52x" to="3ior:7XQqoCTjpIh" resolve="BuildLayout_AbstractCopy" />
-    <node concept="3F1sOY" id="4zlO3QT8NAY" role="2wV5jI">
-      <ref role="1NtTu8" to="3ior:4zlO3QT8NAU" resolve="fileset" />
-      <ref role="1ERwB7" node="4zlO3QT9eyX" resolve="delete_Layout_Node" />
+    <node concept="3EZMnI" id="EpEP7hvzFl" role="2wV5jI">
+      <node concept="l2Vlx" id="EpEP7hvzFm" role="2iSdaV" />
+      <node concept="3F0ifn" id="EpEP7hvzFu" role="3EZMnx">
+        <property role="3F0ifm" value="copy" />
+        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
+      </node>
+      <node concept="3F1sOY" id="4zlO3QT8NAY" role="3EZMnx">
+        <ref role="1NtTu8" to="3ior:4zlO3QT8NAU" resolve="fileset" />
+        <ref role="1ERwB7" node="4zlO3QT9eyX" resolve="delete_Layout_Node" />
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="4zlO3QTanjY">
@@ -4196,8 +4204,15 @@
   <node concept="24kQdi" id="1jjYQYSi0y4">
     <property role="3GE5qa" value="Project.Java.Sources" />
     <ref role="1XX52x" to="3ior:1jjYQYSi0y2" resolve="BuildSource_JavaFiles" />
-    <node concept="3F1sOY" id="1jjYQYSi0y6" role="2wV5jI">
-      <ref role="1NtTu8" to="3ior:1jjYQYSi0y3" resolve="resset" />
+    <node concept="3EZMnI" id="EpEP7huY1n" role="2wV5jI">
+      <node concept="l2Vlx" id="EpEP7huY1o" role="2iSdaV" />
+      <node concept="3F0ifn" id="EpEP7huY1w" role="3EZMnx">
+        <property role="3F0ifm" value="java files" />
+        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
+      </node>
+      <node concept="3F1sOY" id="1jjYQYSi0y6" role="3EZMnx">
+        <ref role="1NtTu8" to="3ior:1jjYQYSi0y3" resolve="resset" />
+      </node>
     </node>
   </node>
   <node concept="24kQdi" id="3elU8iQ65L2">

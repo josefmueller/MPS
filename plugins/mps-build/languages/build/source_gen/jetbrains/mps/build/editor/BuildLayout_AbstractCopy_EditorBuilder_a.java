@@ -9,6 +9,10 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -42,18 +46,28 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
     editorCell.setCellId("Collection_vu0yef_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createRefNode_vu0yef_a0());
+    editorCell.addEditorCell(createConstant_vu0yef_a0());
+    editorCell.addEditorCell(createRefNode_vu0yef_b0());
     return editorCell;
   }
-  private EditorCell createRefNode_vu0yef_a0() {
-    SingleRoleCellProvider provider = new BuildLayout_AbstractCopy_EditorBuilder_a.filesetSingleRoleHandler_vu0yef_a0(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, 0x48d5d03db92339baL, "fileset"), getEditorContext());
+  private EditorCell createConstant_vu0yef_a0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "copy");
+    editorCell.setCellId("Constant_vu0yef_a0");
+    Style style = new StyleImpl();
+    new keywordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_vu0yef_b0() {
+    SingleRoleCellProvider provider = new BuildLayout_AbstractCopy_EditorBuilder_a.filesetSingleRoleHandler_vu0yef_b0(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7f76698a394d9b91L, 0x48d5d03db92339baL, "fileset"), getEditorContext());
     return provider.createCell();
   }
-  private static class filesetSingleRoleHandler_vu0yef_a0 extends SingleRoleCellProvider {
+  private static class filesetSingleRoleHandler_vu0yef_b0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public filesetSingleRoleHandler_vu0yef_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public filesetSingleRoleHandler_vu0yef_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
