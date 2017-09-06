@@ -50,17 +50,9 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
   private final static Language LANGUAGE = MPSLanguage.INSTANCE;
 
   private static final String emptyString = "";
-  private final PsiManager myManager;
 
   public MPSNodeFileViewProvider(@NotNull PsiManager manager, @NotNull MPSNodeVirtualFile nodeFile) {
     super(manager, nodeFile, EVENT_SYSTEM_ENABLED, LANGUAGE);
-    myManager = manager;
-  }
-
-  @NotNull
-  @Override
-  public PsiManager getManager() {
-    return myManager;
   }
 
   @Nullable
@@ -101,7 +93,7 @@ public class MPSNodeFileViewProvider extends SingleRootFileViewProvider {
     final Ref<PsiElement> result = new Ref<>(null);
     // todo use MPSNodeVirtualFile.getNode() (rewrite it to project repo)
     repo.getModelAccess().runReadAction(() -> {
-      SNode sNode = ((MPSNodeVirtualFile)getVirtualFile()).getSNodePointer().resolve(repo);
+      SNode sNode = ((MPSNodeVirtualFile) getVirtualFile()).getSNodePointer().resolve(repo);
       if (sNode != null) {
         result.set(MPSPsiProvider.getInstance(getManager().getProject()).getPsi(sNode));
       }
