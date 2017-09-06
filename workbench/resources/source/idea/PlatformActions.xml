@@ -36,6 +36,11 @@
       <add-to-group group-id="Other.KeymapGroup"/>
     </group>
 
+    <action id="CollapseExpandableComponent" text="Collapse Component" icon="AllIcons.General.CollapseComponentHover"
+            class="com.intellij.ui.ExpandableActions$Collapse"/>
+    <action id="ExpandExpandableComponent" text="Expand Component" icon="AllIcons.General.ExpandComponentHover"
+            class="com.intellij.ui.ExpandableActions$Expand"/>
+
     <action id="ContextHelp" class="com.intellij.ide.actions.ContextHelpAction"/>
     <action id="RunGc" class="com.intellij.ide.actions.RunGcAction"/>
     <action id="ShowPopupMenu" class="com.intellij.ide.actions.ShowPopupMenuAction"/>
@@ -55,6 +60,8 @@
     </action>
     <!-- MPS Patch start
     <action id="SearchEverywhere" class="com.intellij.ide.actions.SearchEverywhereAction" />
+    <action id="SmartSelect" class="com.intellij.ide.actions.SmartSelect" use-shortcut-of="EditorSelectWord"/>
+    <action id="SmartUnSelect" class="com.intellij.ide.actions.SmartUnSelect" use-shortcut-of="EditorUnSelectWord"/>
     MPS Patch End -->
 
     <group id="TemplateParametersNavigation">
@@ -817,6 +824,7 @@
         <action id="AnimatorTestAction" class="com.intellij.internal.ui.AnimatorTestAction" text="Test Animator"/>
         <action id="ShowProgressTestDialogAction" internal="true" class="com.intellij.openapi.wm.impl.status.ShowProgressTestDialogAction" text="Test Progress Indicators"/>
         <action id="ShowSouthPanelTestDialogAction" internal="true" class="com.intellij.openapi.wm.impl.status.ShowSouthPanelTestDialogAction" text="Test DialogWrapper South Panel"/>
+        <action id="TestTextFieldAction" internal="true" class="com.intellij.ui.components.TestTextFieldAction" text="Test Text Fields"/>
         <separator/>
         <action id="DebugMigLayoutAction" internal="true" class="com.intellij.ui.layout.DebugMigLayoutAction" text="MigLayout Debug Mode" />
       </group>
@@ -827,7 +835,12 @@
       <separator/>
       <reference ref="MaintenanceGroup"/>
 
-      <action internal="true" id="SendStatistics" class="com.intellij.internal.statistic.tmp.SendStatisticsAction" text="Send Statistics"/>
+      <action internal="true" id="SendStatistics" class="com.intellij.internal.statistic.actions.SendStatisticsAction" text="Collect And Send Statistics"/>
+
+      <group id="Internal.Profile" popup="true" text="Profiler">
+        <action id="DTraceAction" internal="true" class="com.intellij.internal.performance.profiler.dtrace.DTraceAction" text="DTrace lwawt"/>
+      </group>
+
       <add-to-group group-id="ToolsMenu" anchor="last"/>
     </group>
 
@@ -838,6 +851,9 @@
     </group>
 
     <group id="DirDiffMenu">
+      <action id="DirDiffMenu.SynchronizeDiff" class="com.intellij.openapi.actionSystem.EmptyAction" text="Synchronize Selected" icon="AllIcons.Actions.Resume"/>
+      <action id="DirDiffMenu.SynchronizeDiff.All" class="com.intellij.openapi.actionSystem.EmptyAction" text="Synchronize All" icon="AllIcons.Actions.Rerun"/>
+      <separator/>
       <action id="DirDiffMenu.SetCopyToRight" class="com.intellij.openapi.diff.impl.dir.actions.popup.SetCopyToRight" text="Set Copy to Right" icon="AllIcons.Vcs.Arrow_right"/>
       <action id="DirDiffMenu.SetCopyToLeft" class="com.intellij.openapi.diff.impl.dir.actions.popup.SetCopyToLeft" text="Set Copy to Left" icon="AllIcons.Vcs.Arrow_left"/>
       <action id="DirDiffMenu.SetDelete" class="com.intellij.openapi.diff.impl.dir.actions.popup.SetDelete" text="Set Delete" icon="AllIcons.Vcs.Remove"/>
