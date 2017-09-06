@@ -148,14 +148,17 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     if (myInitialized) {
       return;
     }
+
+    List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParents.size());
+    for (SConceptId parent : myParents) {
+      //it's important to keep this code out of myLock since it may acquire a read lock (see MPS-26559)
+      ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
+      parentDescriptors.add(descriptor);
+    }
+
     synchronized (myLock) {
       if (myInitialized) {
         return;
-      }
-      List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParents.size());
-      for (SConceptId parent : myParents) {
-        ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
-        parentDescriptors.add(descriptor);
       }
 
       if (isInterfaceConcept()) {
