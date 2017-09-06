@@ -32,7 +32,7 @@ public final class AbstractNodeRefExpression__BehaviorDescriptor extends BaseBHD
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x319fd776da5d8e3cL, "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getTargetNode_id36vPRrqnscn = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTargetNode").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("36vPRrqnscn").registry(REGISTRY).build();
+  public static final SMethod<SNode> getTargetNode_id36vPRrqnscn = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTargetNode").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("36vPRrqnscn").registry(REGISTRY).build();
   public static final SMethod<Iterable<SNode>> getPossibleTargetNodes_id4x3U0fpSqvX = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getPossibleTargetNodes").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4x3U0fpSqvX").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTargetNode_id36vPRrqnscn, getPossibleTargetNodes_id4x3U0fpSqvX);
@@ -40,6 +40,9 @@ public final class AbstractNodeRefExpression__BehaviorDescriptor extends BaseBHD
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static SNode getTargetNode_id36vPRrqnscn(@NotNull SNode __thisNode__) {
+    return null;
+  }
   /*package*/ static Iterable<SNode> getPossibleTargetNodes_id4x3U0fpSqvX(@NotNull SNode __thisNode__) {
     List<SNode> thisList = new ArrayList<SNode>();
     ListSequence.fromList(thisList).addElement(AbstractNodeRefExpression__BehaviorDescriptor.getTargetNode_id36vPRrqnscn.invoke(__thisNode__));
@@ -85,6 +88,8 @@ public final class AbstractNodeRefExpression__BehaviorDescriptor extends BaseBHD
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((SNode) getTargetNode_id36vPRrqnscn(node));
       case 1:
         return (T) ((Iterable<SNode>) getPossibleTargetNodes_id4x3U0fpSqvX(node));
       default:
