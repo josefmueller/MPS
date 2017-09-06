@@ -5,9 +5,9 @@
         >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.ide.mpsmigration</id>
-  <name>Migration 2017.2</name>
+  <name>Migration 2017.3</name>
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
-  <version>2017.2</version>
+  <version>2017.3</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="172.1" until-build="174.1"/>
 
