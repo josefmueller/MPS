@@ -55,14 +55,15 @@ public final class LanguageConceptSwitch {
   public static final int BuildMps_ModuleDependencyUseLanguage = 43;
   public static final int BuildMps_ModuleJavaSource = 44;
   public static final int BuildMps_ModuleModelRoot = 45;
-  public static final int BuildMps_ModuleRuntime = 46;
-  public static final int BuildMps_ModuleSolutionRuntime = 47;
-  public static final int BuildMps_ModuleSource = 48;
-  public static final int BuildMps_ModuleTestSource = 49;
-  public static final int BuildMps_Solution = 50;
-  public static final int GeneratorInternal_BuildMps_Module = 51;
-  public static final int GeneratorInternal_BuildSourcePath = 52;
-  public static final int GeneratorInternal_String = 53;
+  public static final int BuildMps_ModuleResources = 46;
+  public static final int BuildMps_ModuleRuntime = 47;
+  public static final int BuildMps_ModuleSolutionRuntime = 48;
+  public static final int BuildMps_ModuleSource = 49;
+  public static final int BuildMps_ModuleTestSource = 50;
+  public static final int BuildMps_Solution = 51;
+  public static final int GeneratorInternal_BuildMps_Module = 52;
+  public static final int GeneratorInternal_BuildSourcePath = 53;
+  public static final int GeneratorInternal_String = 54;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xcf935df46994e9cL, 0xa132fa109541cba3L);
@@ -112,6 +113,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x2c4467914643d2d2L, BuildMps_ModuleDependencyUseLanguage);
     builder.put(0x48e82d508334bdeaL, BuildMps_ModuleJavaSource);
     builder.put(0x3b60c4a45c195c50L, BuildMps_ModuleModelRoot);
+    builder.put(0xa99ab51d1ecc306L, BuildMps_ModuleResources);
     builder.put(0x2c446791464389f7L, BuildMps_ModuleRuntime);
     builder.put(0x2c4467914644b6e3L, BuildMps_ModuleSolutionRuntime);
     builder.put(0x48e82d5083341d2fL, BuildMps_ModuleSource);

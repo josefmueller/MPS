@@ -1456,5 +1456,25 @@
       <ref role="20lvS9" node="4LHG7OIlEyO" resolve="BuildMps_Generator" />
     </node>
   </node>
+  <node concept="1TIwiD" id="EpEP7hVcc6">
+    <property role="EcuMT" value="763829979718664966" />
+    <property role="3GE5qa" value="Project.Sources" />
+    <property role="TrG5h" value="BuildMps_ModuleResources" />
+    <property role="R4oN_" value="auxiliary resource files to deploy with a module" />
+    <ref role="1TJDcQ" node="4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
+    <node concept="1TJgyj" id="EpEP7hVcc7" role="1TKVEi">
+      <property role="IQ2ns" value="763829979718664967" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="files" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
+      <node concept="t5JxF" id="EpEP7hVcc9" role="lGtFl">
+        <property role="t5JxN" value="I use file set, not SingleFolder as other _ModuleSource concepts do to get behavior similar to that with template-hardcoded icons/*, resources/* pattern" />
+      </node>
+    </node>
+    <node concept="t5JxF" id="EpEP7hVccb" role="lGtFl">
+      <property role="t5JxN" value="Tells what files to treat as auxiliary module resources (e.g. icons, externalized messages, etc.)" />
+    </node>
+  </node>
 </model>
 

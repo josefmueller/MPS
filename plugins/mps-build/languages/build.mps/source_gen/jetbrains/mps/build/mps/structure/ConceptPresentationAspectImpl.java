@@ -55,6 +55,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_BuildMps_ModuleDependencyUseLanguage;
   private ConceptPresentation props_BuildMps_ModuleJavaSource;
   private ConceptPresentation props_BuildMps_ModuleModelRoot;
+  private ConceptPresentation props_BuildMps_ModuleResources;
   private ConceptPresentation props_BuildMps_ModuleRuntime;
   private ConceptPresentation props_BuildMps_ModuleSolutionRuntime;
   private ConceptPresentation props_BuildMps_ModuleSource;
@@ -272,7 +273,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_BuildMps_IdeaPlugin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0dc);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a82b0ec);
           props_BuildMps_IdeaPlugin = cpb.create();
         }
         return props_BuildMps_IdeaPlugin;
@@ -393,6 +394,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_BuildMps_ModuleModelRoot = cpb.create();
         }
         return props_BuildMps_ModuleModelRoot;
+      case LanguageConceptSwitch.BuildMps_ModuleResources:
+        if (props_BuildMps_ModuleResources == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("auxiliary resource files to deploy with a module");
+          cpb.rawPresentation("BuildMps_ModuleResources");
+          props_BuildMps_ModuleResources = cpb.create();
+        }
+        return props_BuildMps_ModuleResources;
       case LanguageConceptSwitch.BuildMps_ModuleRuntime:
         if (props_BuildMps_ModuleRuntime == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

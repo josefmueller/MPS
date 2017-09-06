@@ -5730,5 +5730,19 @@
     </node>
     <node concept="382kZG" id="47y0FrqhJz6" role="lGtFl" />
   </node>
+  <node concept="24kQdi" id="EpEP7hVccJ">
+    <property role="3GE5qa" value="Project.Sources" />
+    <ref role="1XX52x" to="kdzh:EpEP7hVcc6" resolve="BuildMps_ModuleResources" />
+    <node concept="3EZMnI" id="EpEP7hVccL" role="2wV5jI">
+      <node concept="3F0ifn" id="EpEP7hZ$mp" role="3EZMnx">
+        <property role="3F0ifm" value="resources" />
+        <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+      </node>
+      <node concept="3F1sOY" id="EpEP7hVccV" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:EpEP7hVcc7" resolve="files" />
+      </node>
+      <node concept="l2Vlx" id="EpEP7hVccS" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

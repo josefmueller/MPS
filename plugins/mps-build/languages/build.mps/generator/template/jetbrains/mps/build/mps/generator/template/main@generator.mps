@@ -466,6 +466,9 @@
       <concept id="9126048691955220717" name="jetbrains.mps.build.structure.BuildLayout_File" flags="ng" index="28jJK3">
         <child id="9126048691955220762" name="path" index="28jJRO" />
       </concept>
+      <concept id="7866279537988666687" name="jetbrains.mps.build.structure.BuildInputFolders" flags="ng" index="2g_UqK">
+        <child id="7866279537988666691" name="selectors" index="2g_Urc" />
+      </concept>
       <concept id="7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" flags="ng" index="iG8Mu">
         <child id="7321017245477039051" name="compositePart" index="iGT6I" />
       </concept>
@@ -746,6 +749,9 @@
         <reference id="1265949165890536425" name="module" index="L2wRA" />
       </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
+      <concept id="5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" flags="ng" index="3bQrTs">
+        <child id="5253498789149547825" name="sources" index="3bR31x" />
+      </concept>
       <concept id="978600701690054692" name="jetbrains.mps.build.mps.structure.GeneratorInternal_String" flags="ng" index="1cIVw3">
         <property id="978600701690054695" name="path" index="1cIVw0" />
       </concept>
@@ -756,6 +762,9 @@
         <child id="4356762679305686649" name="jarLocations" index="3yLTFF" />
         <child id="8488591998064324395" name="classpathEntries" index="3E5mpp" />
         <child id="506537499308757750" name="sourcesJarLocation" index="3SGgvt" />
+      </concept>
+      <concept id="763829979718664966" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleResources" flags="ng" index="3rtmxn">
+        <child id="763829979718664967" name="files" index="3rtmxm" />
       </concept>
       <concept id="4356762679305675652" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation" flags="ng" index="3yLZsm">
         <property id="4356762679305675654" name="packagedLocation" index="3yLZsk" />
@@ -3683,42 +3692,29 @@
           </node>
         </node>
       </node>
-      <node concept="3LXIA4" id="7wpYgMyTPBV" role="39821P">
-        <node concept="3LXTmp" id="7wpYgMyTPBW" role="3LXIA7">
-          <node concept="55IIr" id="7wpYgMyTPBX" role="3LXTmr">
-            <node concept="29HgVG" id="7wpYgMyTPC1" role="lGtFl">
-              <node concept="3NFfHV" id="7wpYgMyTPC2" role="3NFExx">
-                <node concept="3clFbS" id="7wpYgMyTPC3" role="2VODD2">
-                  <node concept="3clFbF" id="7wpYgMyUjT7" role="3cqZAp">
-                    <node concept="2OqwBi" id="7wpYgMyUjU9" role="3clFbG">
-                      <node concept="2OqwBi" id="7wpYgMyUjTL" role="2Oq$k0">
-                        <node concept="2OqwBi" id="7wpYgMyUjTp" role="2Oq$k0">
-                          <node concept="30H73N" id="7wpYgMyUjT8" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="7wpYgMyUjTv" role="2OqNvi">
-                            <ref role="3Tt5mk" to="kdzh:1tWbYFNhzsh" resolve="module" />
-                          </node>
-                        </node>
-                        <node concept="3TrEf2" id="7wpYgMyUjTR" role="2OqNvi">
-                          <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" resolve="path" />
-                        </node>
-                      </node>
-                      <node concept="2qgKlT" id="7wpYgMyUjUf" role="2OqNvi">
-                        <ref role="37wK5l" to="vbkb:7wpYgMyTXsR" resolve="getParent" />
-                      </node>
-                    </node>
-                  </node>
+      <node concept="3LXIA4" id="EpEP7ih22B" role="39821P">
+        <node concept="3LXTmF" id="EpEP7ih22C" role="3LXIA7">
+          <node concept="55IIr" id="EpEP7ih22D" role="3LXTmB" />
+        </node>
+        <node concept="raruj" id="EpEP7ih22N" role="lGtFl" />
+        <node concept="1W57fq" id="EpEP7ih22O" role="lGtFl">
+          <node concept="3IZrLx" id="EpEP7ih22P" role="3IZSJc">
+            <node concept="3clFbS" id="EpEP7ih22Q" role="2VODD2">
+              <node concept="3SKdUt" id="EpEP7ih4I0" role="3cqZAp">
+                <node concept="3SKdUq" id="EpEP7ih4I2" role="3SKWNk">
+                  <property role="3SKdUp" value="FIXME this is compatibility code to get identical .xml files when BuildMps_ModuleSource has been introduced" />
                 </node>
               </node>
-            </node>
-          </node>
-          <node concept="3qWCbU" id="7wpYgMyUY$q" role="3LXTna">
-            <property role="3qWCbO" value="icons/**, resources/**" />
-          </node>
-        </node>
-        <node concept="raruj" id="7wpYgMyTPBY" role="lGtFl" />
-        <node concept="1W57fq" id="7wpYgMyUjUh" role="lGtFl">
-          <node concept="3IZrLx" id="7wpYgMyUjUi" role="3IZSJc">
-            <node concept="3clFbS" id="7wpYgMyUjUj" role="2VODD2">
+              <node concept="3SKdUt" id="EpEP7ihhP1" role="3cqZAp">
+                <node concept="3SKdUq" id="EpEP7ihhP3" role="3SKWNk">
+                  <property role="3SKdUp" value="Shall remove this code once got better idea about template structure for layout of a module (model roots shall " />
+                </node>
+              </node>
+              <node concept="3SKdUt" id="EpEP7ihibS" role="3cqZAp">
+                <node concept="3SKdUq" id="EpEP7ihibT" role="3SKWNk">
+                  <property role="3SKdUp" value="be handled the same way as other roots, and this template likely to cease existence)." />
+                </node>
+              </node>
               <node concept="3clFbF" id="7wpYgMyUjUk" role="3cqZAp">
                 <node concept="1Wc70l" id="41K1b4v5Bz0" role="3clFbG">
                   <node concept="3fqX7Q" id="41K1b4v5Bz3" role="3uHU7w">
@@ -3747,6 +3743,35 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="1WS0z7" id="EpEP7ih8di" role="lGtFl">
+          <node concept="3JmXsc" id="EpEP7ih8dk" role="3Jn$fo">
+            <node concept="3clFbS" id="EpEP7ih8dm" role="2VODD2">
+              <node concept="3clFbF" id="EpEP7ih8wY" role="3cqZAp">
+                <node concept="2OqwBi" id="EpEP7ihb_5" role="3clFbG">
+                  <node concept="2OqwBi" id="EpEP7ih9mh" role="2Oq$k0">
+                    <node concept="2OqwBi" id="EpEP7ih8It" role="2Oq$k0">
+                      <node concept="30H73N" id="EpEP7ih8wX" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="EpEP7ih8Xj" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:1tWbYFNhzsh" resolve="module" />
+                      </node>
+                    </node>
+                    <node concept="3Tsc0h" id="EpEP7ih9U6" role="2OqNvi">
+                      <ref role="3TtcxE" to="kdzh:4zCbl23d1OL" resolve="sources" />
+                    </node>
+                  </node>
+                  <node concept="v3k3i" id="EpEP7ihdXM" role="2OqNvi">
+                    <node concept="chp4Y" id="EpEP7ihe8s" role="v3oSu">
+                      <ref role="cht4Q" to="kdzh:EpEP7hVcc6" resolve="BuildMps_ModuleResources" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1sPUBX" id="EpEP7ihgQr" role="lGtFl">
+          <ref role="v9R2y" node="EpEP7hjGk8" resolve="switch_ModuleSourcesToDeployedLocation" />
         </node>
       </node>
       <node concept="398223" id="7wpYgMyUqd6" role="39821P">
@@ -4294,61 +4319,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3LXIA4" id="2d0qgmCd0lu" role="39821P">
-              <node concept="3LXTmp" id="cMBi0kA3y$" role="3LXIA7">
-                <node concept="55IIr" id="cMBi0kA3yA" role="3LXTmr">
-                  <node concept="29HgVG" id="cMBi0kA3yB" role="lGtFl">
-                    <node concept="3NFfHV" id="cMBi0kA3yC" role="3NFExx">
-                      <node concept="3clFbS" id="cMBi0kA3yD" role="2VODD2">
-                        <node concept="3clFbF" id="cMBi0kA3yE" role="3cqZAp">
-                          <node concept="2OqwBi" id="cMBi0kA3yF" role="3clFbG">
-                            <node concept="2OqwBi" id="cMBi0kA3yG" role="2Oq$k0">
-                              <node concept="2OqwBi" id="cMBi0kA3yH" role="2Oq$k0">
-                                <node concept="30H73N" id="cMBi0kA3yI" role="2Oq$k0" />
-                                <node concept="3TrEf2" id="cMBi0kA3yJ" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" resolve="module" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="cMBi0kA3yK" role="2OqNvi">
-                                <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" resolve="path" />
-                              </node>
-                            </node>
-                            <node concept="2qgKlT" id="cMBi0kA3yL" role="2OqNvi">
-                              <ref role="37wK5l" to="vbkb:7wpYgMyTXsR" resolve="getParent" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3qWCbU" id="cMBi0kA3yM" role="3LXTna">
-                  <property role="3qWCbO" value="icons/**, resources/**" />
-                </node>
-              </node>
-              <node concept="1W57fq" id="2d0qgmCd0lI" role="lGtFl">
-                <node concept="3IZrLx" id="2d0qgmCd0lJ" role="3IZSJc">
-                  <node concept="3clFbS" id="2d0qgmCd0lK" role="2VODD2">
-                    <node concept="3clFbF" id="2d0qgmCd0lL" role="3cqZAp">
-                      <node concept="2OqwBi" id="2d0qgmCd0lM" role="3clFbG">
-                        <node concept="2OqwBi" id="2d0qgmCd0lN" role="2Oq$k0">
-                          <node concept="2OqwBi" id="2d0qgmCd0lO" role="2Oq$k0">
-                            <node concept="30H73N" id="2d0qgmCd0lP" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="2d0qgmCd0lW" role="2OqNvi">
-                              <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" resolve="module" />
-                            </node>
-                          </node>
-                          <node concept="3TrEf2" id="2d0qgmCd0lR" role="2OqNvi">
-                            <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" resolve="path" />
-                          </node>
-                        </node>
-                        <node concept="3x8VRR" id="2d0qgmCd0lS" role="2OqNvi" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node concept="3LXIA4" id="cMBi0kB55d" role="39821P">
               <node concept="3LXTmp" id="cMBi0kB55e" role="3LXIA7">
                 <node concept="55IIr" id="cMBi0kB55f" role="3LXTmr" />
@@ -4356,11 +4326,6 @@
               <node concept="1WS0z7" id="cMBi0kB5Yl" role="lGtFl">
                 <node concept="3JmXsc" id="cMBi0kB5Yn" role="3Jn$fo">
                   <node concept="3clFbS" id="cMBi0kB5Yp" role="2VODD2">
-                    <node concept="3SKdUt" id="EpEP7hkc1X" role="3cqZAp">
-                      <node concept="3SKdUq" id="EpEP7hkc1Z" role="3SKWNk">
-                        <property role="3SKdUp" value="FIXME why we don't process any ModuleSource here?" />
-                      </node>
-                    </node>
                     <node concept="3clFbF" id="cMBi0kB7T4" role="3cqZAp">
                       <node concept="2OqwBi" id="cMBi0kB8JK" role="3clFbG">
                         <node concept="2OqwBi" id="cMBi0kB7T6" role="2Oq$k0">
@@ -4375,8 +4340,8 @@
                           </node>
                         </node>
                         <node concept="v3k3i" id="cMBi0kBbbo" role="2OqNvi">
-                          <node concept="chp4Y" id="EpEP7hkbEB" role="v3oSu">
-                            <ref role="cht4Q" to="kdzh:4zCbl23dbRE" resolve="BuildMps_ModuleJavaSource" />
+                          <node concept="chp4Y" id="EpEP7hWLbL" role="v3oSu">
+                            <ref role="cht4Q" to="kdzh:4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
                           </node>
                         </node>
                       </node>
@@ -5107,6 +5072,13 @@
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="aaa" />
         <property role="3LESm3" value="123" />
+        <node concept="3rtmxn" id="EpEP7i0kN1" role="3bR31x">
+          <node concept="2g_UqK" id="EpEP7i0kN2" role="3rtmxm">
+            <node concept="3qWCbU" id="EpEP7i0kN3" role="2g_Urc">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+          </node>
+        </node>
         <node concept="55IIr" id="6CY5wCYZIX7" role="3LF7KH" />
       </node>
       <node concept="m$_wf" id="5HVSRHdWiAO" role="3989C9">
@@ -16086,6 +16058,13 @@
       <node concept="1E1JtA" id="EpEP7haDD7" role="3989C9">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="s" />
+        <node concept="3rtmxn" id="EpEP7i0kMY" role="3bR31x">
+          <node concept="2g_UqK" id="EpEP7i0kMZ" role="3rtmxm">
+            <node concept="3qWCbU" id="EpEP7i0kN0" role="2g_Urc">
+              <property role="3qWCbO" value="icons/**, resources/**" />
+            </node>
+          </node>
+        </node>
         <node concept="55IIr" id="EpEP7haDD8" role="3LF7KH" />
       </node>
       <node concept="1l3spV" id="EpEP7haDDb" role="1l3spN">
@@ -16321,6 +16300,31 @@
             </node>
             <node concept="3qWCbU" id="EpEP7hjPu_" role="3LXTna">
               <property role="3qWCbO" value="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="EpEP7hWLz6" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="kdzh:EpEP7hVcc6" resolve="BuildMps_ModuleResources" />
+      <node concept="gft3U" id="EpEP7hX3SK" role="1lVwrX">
+        <node concept="3LXIA4" id="EpEP7i5kuc" role="gfFT$">
+          <node concept="3LXTmF" id="EpEP7hX3SV" role="3LXIA7">
+            <node concept="55IIr" id="EpEP7hX3SW" role="3LXTmB" />
+            <node concept="29HgVG" id="EpEP7hX3T0" role="lGtFl">
+              <node concept="3NFfHV" id="EpEP7hX3T1" role="3NFExx">
+                <node concept="3clFbS" id="EpEP7hX3T2" role="2VODD2">
+                  <node concept="3clFbF" id="EpEP7hX3T8" role="3cqZAp">
+                    <node concept="2OqwBi" id="EpEP7hX3T3" role="3clFbG">
+                      <node concept="3TrEf2" id="EpEP7hX3T6" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:EpEP7hVcc7" resolve="files" />
+                      </node>
+                      <node concept="30H73N" id="EpEP7hX3T7" role="2Oq$k0" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
