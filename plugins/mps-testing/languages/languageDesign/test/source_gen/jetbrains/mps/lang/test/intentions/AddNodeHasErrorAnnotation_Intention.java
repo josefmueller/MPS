@@ -59,7 +59,7 @@ public final class AddNodeHasErrorAnnotation_Intention extends AbstractIntention
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Node Has Error Annotation";
+      return "Add 'Node Has Error' Test Annotation";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

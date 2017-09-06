@@ -59,7 +59,7 @@ public final class AddNodeHasWarningAnnotation_Intention extends AbstractIntenti
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Node Has Warning Annotation";
+      return "Add 'Node Has Warning' Test Annotation";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

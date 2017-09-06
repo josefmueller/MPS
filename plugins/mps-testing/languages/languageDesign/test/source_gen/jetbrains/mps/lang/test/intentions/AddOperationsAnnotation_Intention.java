@@ -55,7 +55,7 @@ public final class AddOperationsAnnotation_Intention extends AbstractIntentionDe
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Node Operations Test Annotation";
+      return "Add Common Test Annotation";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

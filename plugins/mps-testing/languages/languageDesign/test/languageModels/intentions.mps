@@ -384,7 +384,7 @@
       <node concept="3clFbS" id="hG7DhNu" role="2VODD2">
         <node concept="3clFbF" id="hG7Dnfz" role="3cqZAp">
           <node concept="Xl_RD" id="hG7Dnf$" role="3clFbG">
-            <property role="Xl_RC" value="Add Node Operations Test Annotation" />
+            <property role="Xl_RC" value="Add Common Test Annotation" />
           </node>
         </node>
       </node>
@@ -459,7 +459,7 @@
       <node concept="3clFbS" id="hPL8dqN" role="2VODD2">
         <node concept="3clFbF" id="hPL8dqO" role="3cqZAp">
           <node concept="Xl_RD" id="hPL8dqP" role="3clFbG">
-            <property role="Xl_RC" value="Add Editor Annotation" />
+            <property role="Xl_RC" value="Add Editor Test Annotation (Record Cursor State)" />
           </node>
         </node>
       </node>
@@ -1011,7 +1011,7 @@
       <node concept="3clFbS" id="5e2ZO8A$jJb" role="2VODD2">
         <node concept="3clFbF" id="5e2ZO8A$jJc" role="3cqZAp">
           <node concept="Xl_RD" id="5e2ZO8A$jJd" role="3clFbG">
-            <property role="Xl_RC" value="Add Node Has Error Annotation" />
+            <property role="Xl_RC" value="Add 'Node Has Error' Test Annotation" />
           </node>
         </node>
       </node>
@@ -1435,7 +1435,7 @@
       <node concept="3clFbS" id="55ZGj5Hv8QN" role="2VODD2">
         <node concept="3clFbF" id="55ZGj5Hvguv" role="3cqZAp">
           <node concept="Xl_RD" id="55ZGj5Hvguw" role="3clFbG">
-            <property role="Xl_RC" value="Add Node Has Warning Annotation" />
+            <property role="Xl_RC" value="Add 'Node Has Warning' Test Annotation" />
           </node>
         </node>
       </node>
@@ -1602,7 +1602,7 @@
       <node concept="3clFbS" id="6KNTF2XKThm" role="2VODD2">
         <node concept="3clFbF" id="6KNTF2XL1Ux" role="3cqZAp">
           <node concept="Xl_RD" id="6KNTF2XL1Uw" role="3clFbG">
-            <property role="Xl_RC" value="Specify Rule References" />
+            <property role="Xl_RC" value="Specify Rule References In Test Annotation" />
           </node>
         </node>
       </node>

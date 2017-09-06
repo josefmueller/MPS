@@ -63,7 +63,7 @@ public final class AddCellAnnotation_Intention extends AbstractIntentionDescript
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Editor Annotation";
+      return "Add Editor Test Annotation (Record Cursor State)";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
