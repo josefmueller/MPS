@@ -55,7 +55,6 @@
     <echoxml file="${build.tmp}/default/jetbrains.mps.ide.java.basePlatform.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.ide.java.basePlatform" type="solution" uuid="65557aaa-5381-435d-b705-3f8d546e0f40">
         <dependencies />
-        <classpath />
         <sources jar="." descriptor="jetbrains.mps.ide.java.basePlatform.msd" />
       </module>
     </echoxml>
@@ -70,7 +69,6 @@
     <echoxml file="${build.tmp}/default/jetbrains.mps.ide.java.platform.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.ide.java.platform" type="solution" uuid="f33a6c9c-f660-4bdb-aecd-2d144c61f7d2">
         <dependencies />
-        <classpath />
         <sources jar="." descriptor="jetbrains.mps.ide.java.platform.msd" />
       </module>
     </echoxml>

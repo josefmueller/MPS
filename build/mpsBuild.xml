@@ -661,7 +661,6 @@
     <echoxml file="${build.tmp}/default/jetbrains.mps.ide.build.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.ide.build" type="solution" uuid="422c2909-59d6-41a9-b318-40e6256b250f">
         <dependencies />
-        <classpath />
         <sources jar="." descriptor="jetbrains.mps.ide.build.msd" />
       </module>
     </echoxml>

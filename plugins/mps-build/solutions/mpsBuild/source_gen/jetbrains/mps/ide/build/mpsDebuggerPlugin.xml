@@ -304,7 +304,6 @@
     <echoxml file="${build.tmp}/default/JDK-tools.jar/META-INF/module.xml">
       <module namespace="JDK-tools" type="solution" uuid="b387285c-3448-452c-b3bb-a3f8de8eaf08">
         <dependencies />
-        <classpath />
         <sources jar="." descriptor="JDK-tools.msd" />
       </module>
     </echoxml>
