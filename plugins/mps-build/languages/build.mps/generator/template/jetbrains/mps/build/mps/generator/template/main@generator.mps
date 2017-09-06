@@ -4401,57 +4401,16 @@
             </node>
             <node concept="3LXIA4" id="cMBi0kB55d" role="39821P">
               <node concept="3LXTmp" id="cMBi0kB55e" role="3LXIA7">
-                <node concept="55IIr" id="cMBi0kB55f" role="3LXTmr">
-                  <node concept="29HgVG" id="cMBi0kB55g" role="lGtFl">
-                    <node concept="3NFfHV" id="cMBi0kB55h" role="3NFExx">
-                      <node concept="3clFbS" id="cMBi0kB55i" role="2VODD2">
-                        <node concept="3clFbF" id="cMBi0kB55j" role="3cqZAp">
-                          <node concept="2OqwBi" id="cMBi0kBu_M" role="3clFbG">
-                            <node concept="2OqwBi" id="cMBi0kBsVj" role="2Oq$k0">
-                              <node concept="30H73N" id="cMBi0kBsSf" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="cMBi0kBu0w" role="2OqNvi">
-                                <ref role="3Tt5mk" to="kdzh:4zCbl23dbRG" resolve="folder" />
-                              </node>
-                            </node>
-                            <node concept="3TrEf2" id="cMBi0kBuNh" role="2OqNvi">
-                              <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" resolve="path" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3qWCbU" id="cMBi0kB55r" role="3LXTna">
-                  <property role="3qWCbO" value="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
-                </node>
-              </node>
-              <node concept="1W57fq" id="cMBi0kB55s" role="lGtFl">
-                <property role="34cw8o" value="I've got no idea why we check path != null to decide to copy resources. Likely, it's odd way to decide whether the module has sources?" />
-                <node concept="3IZrLx" id="cMBi0kB55t" role="3IZSJc">
-                  <node concept="3clFbS" id="cMBi0kB55u" role="2VODD2">
-                    <node concept="3clFbF" id="cMBi0kB55v" role="3cqZAp">
-                      <node concept="2OqwBi" id="cMBi0kB55w" role="3clFbG">
-                        <node concept="2OqwBi" id="cMBi0kB55x" role="2Oq$k0">
-                          <node concept="2OqwBi" id="cMBi0kB55y" role="2Oq$k0">
-                            <node concept="30H73N" id="cMBi0kB55z" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="cMBi0kB55$" role="2OqNvi">
-                              <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" resolve="module" />
-                            </node>
-                          </node>
-                          <node concept="3TrEf2" id="cMBi0kB55_" role="2OqNvi">
-                            <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" resolve="path" />
-                          </node>
-                        </node>
-                        <node concept="3x8VRR" id="cMBi0kB55A" role="2OqNvi" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
+                <node concept="55IIr" id="cMBi0kB55f" role="3LXTmr" />
               </node>
               <node concept="1WS0z7" id="cMBi0kB5Yl" role="lGtFl">
                 <node concept="3JmXsc" id="cMBi0kB5Yn" role="3Jn$fo">
                   <node concept="3clFbS" id="cMBi0kB5Yp" role="2VODD2">
+                    <node concept="3SKdUt" id="EpEP7hkc1X" role="3cqZAp">
+                      <node concept="3SKdUq" id="EpEP7hkc1Z" role="3SKWNk">
+                        <property role="3SKdUp" value="FIXME why we don't process any ModuleSource here?" />
+                      </node>
+                    </node>
                     <node concept="3clFbF" id="cMBi0kB7T4" role="3cqZAp">
                       <node concept="2OqwBi" id="cMBi0kB8JK" role="3clFbG">
                         <node concept="2OqwBi" id="cMBi0kB7T6" role="2Oq$k0">
@@ -4466,7 +4425,7 @@
                           </node>
                         </node>
                         <node concept="v3k3i" id="cMBi0kBbbo" role="2OqNvi">
-                          <node concept="chp4Y" id="cMBi0kBbnL" role="v3oSu">
+                          <node concept="chp4Y" id="EpEP7hkbEB" role="v3oSu">
                             <ref role="cht4Q" to="kdzh:4zCbl23dbRE" resolve="BuildMps_ModuleJavaSource" />
                           </node>
                         </node>
@@ -4474,6 +4433,9 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="1sPUBX" id="EpEP7hjRPW" role="lGtFl">
+                <ref role="v9R2y" node="EpEP7hjGk8" resolve="switch_ModuleSourcesToDeployedLocation" />
               </node>
             </node>
             <node concept="28jJK3" id="2T92ovrjsfO" role="39821P">
@@ -4935,39 +4897,7 @@
             </node>
             <node concept="3LXIA4" id="2d0qgmCd0rC" role="39821P">
               <node concept="3LXTmp" id="2d0qgmCd0rD" role="3LXIA7">
-                <node concept="3LWZYq" id="1G0fvspbb$z" role="3LXTna">
-                  <property role="3LWZYl" value="**/trace.info" />
-                </node>
-                <node concept="3LWZYq" id="22qsRO3n9Xb" role="3LXTna">
-                  <property role="3LWZYl" value="**/exports" />
-                </node>
-                <node concept="3LWZYq" id="4HbakZ_OpSK" role="3LXTna">
-                  <property role="3LWZYl" value="**/checkpoints" />
-                </node>
-                <node concept="3LWZYq" id="4HbakZ_Oq9E" role="3LXTna">
-                  <property role="3LWZYl" value="**/*.mps" />
-                </node>
-                <node concept="55IIr" id="2d0qgmCd0rE" role="3LXTmr">
-                  <node concept="29HgVG" id="2d0qgmCd0sh" role="lGtFl">
-                    <node concept="3NFfHV" id="2d0qgmCd0si" role="3NFExx">
-                      <node concept="3clFbS" id="2d0qgmCd0sj" role="2VODD2">
-                        <node concept="3clFbF" id="2d0qgmCd0sk" role="3cqZAp">
-                          <node concept="2OqwBi" id="2d0qgmCd732" role="3clFbG">
-                            <node concept="2OqwBi" id="2d0qgmCd0sN" role="2Oq$k0">
-                              <node concept="30H73N" id="2d0qgmCd0sl" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="2d0qgmCd0sU" role="2OqNvi">
-                                <ref role="3Tt5mk" to="kdzh:4zCbl23dbRG" resolve="folder" />
-                              </node>
-                            </node>
-                            <node concept="3TrEf2" id="2d0qgmCd9MH" role="2OqNvi">
-                              <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" resolve="path" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+                <node concept="55IIr" id="EpEP7hk8Sy" role="3LXTmr" />
               </node>
               <node concept="1WS0z7" id="2d0qgmCd0rL" role="lGtFl">
                 <node concept="3JmXsc" id="2d0qgmCd0rM" role="3Jn$fo">
@@ -5119,6 +5049,9 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="1sPUBX" id="EpEP7hk8JS" role="lGtFl">
+                <ref role="v9R2y" node="EpEP7hjKAR" resolve="switch_ModuleSourcesToSourceLocation" />
               </node>
             </node>
             <node concept="28jJK3" id="2T92ovrjBYV" role="39821P">
@@ -16408,6 +16341,103 @@
           <node concept="raruj" id="EpEP7hc5Ma" role="lGtFl" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="jVnub" id="EpEP7hjGk8">
+    <property role="TrG5h" value="switch_ModuleSourcesToDeployedLocation" />
+    <node concept="3aamgX" id="EpEP7hjKAN" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <property role="2n97ot" value="use of BuildLayout_Copy as a top of TF is intentional. It's my guess BL_Copy indicates need to copy specified files" />
+      <ref role="30HIoZ" to="kdzh:4zCbl23dbRE" resolve="BuildMps_ModuleJavaSource" />
+      <node concept="gft3U" id="EpEP7hjPuj" role="1lVwrX">
+        <node concept="3LXIA4" id="EpEP7hjPup" role="gfFT$">
+          <node concept="3LXTmp" id="EpEP7hjPuq" role="3LXIA7">
+            <node concept="55IIr" id="EpEP7hjPur" role="3LXTmr">
+              <node concept="29HgVG" id="EpEP7hjPus" role="lGtFl">
+                <node concept="3NFfHV" id="EpEP7hjPut" role="3NFExx">
+                  <node concept="3clFbS" id="EpEP7hjPuu" role="2VODD2">
+                    <node concept="3clFbF" id="EpEP7hjPuv" role="3cqZAp">
+                      <node concept="2OqwBi" id="EpEP7hjPuw" role="3clFbG">
+                        <node concept="2OqwBi" id="EpEP7hjPux" role="2Oq$k0">
+                          <node concept="30H73N" id="EpEP7hjPuy" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="EpEP7hjPuz" role="2OqNvi">
+                            <ref role="3Tt5mk" to="kdzh:4zCbl23dbRG" resolve="folder" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="EpEP7hjPu$" role="2OqNvi">
+                          <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" resolve="path" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3qWCbU" id="EpEP7hjPu_" role="3LXTna">
+              <property role="3qWCbO" value="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="EpEP7hkcjS" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <property role="2n97ot" value="just to indicate this switch is for BuildMps_ModuleSource, and we handle single subconcept only" />
+      <ref role="30HIoZ" to="kdzh:4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
+      <node concept="b5Tf3" id="EpEP7hkckb" role="1lVwrX" />
+    </node>
+  </node>
+  <node concept="jVnub" id="EpEP7hjKAR">
+    <property role="TrG5h" value="switch_ModuleSourcesToSourceLocation" />
+    <node concept="3aamgX" id="EpEP7hjKAS" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <property role="2n97ot" value="Use of BL_Copy as top element under TF is intentional, see switch_ModuleSourcesToDeployedLocation" />
+      <ref role="30HIoZ" to="kdzh:4zCbl23dbRE" resolve="BuildMps_ModuleJavaSource" />
+      <node concept="gft3U" id="EpEP7hk2pt" role="1lVwrX">
+        <node concept="3LXIA4" id="EpEP7hk2pz" role="gfFT$">
+          <node concept="3LXTmp" id="EpEP7hk2p$" role="3LXIA7">
+            <node concept="3LWZYq" id="EpEP7hk2p_" role="3LXTna">
+              <property role="3LWZYl" value="**/trace.info" />
+            </node>
+            <node concept="3LWZYq" id="EpEP7hk2pA" role="3LXTna">
+              <property role="3LWZYl" value="**/exports" />
+            </node>
+            <node concept="3LWZYq" id="EpEP7hk2pB" role="3LXTna">
+              <property role="3LWZYl" value="**/checkpoints" />
+            </node>
+            <node concept="3LWZYq" id="EpEP7hk2pC" role="3LXTna">
+              <property role="3LWZYl" value="**/*.mps" />
+            </node>
+            <node concept="55IIr" id="EpEP7hk2pD" role="3LXTmr">
+              <node concept="29HgVG" id="EpEP7hk2pE" role="lGtFl">
+                <node concept="3NFfHV" id="EpEP7hk2pF" role="3NFExx">
+                  <node concept="3clFbS" id="EpEP7hk2pG" role="2VODD2">
+                    <node concept="3clFbF" id="EpEP7hk2pH" role="3cqZAp">
+                      <node concept="2OqwBi" id="EpEP7hk2pI" role="3clFbG">
+                        <node concept="2OqwBi" id="EpEP7hk2pJ" role="2Oq$k0">
+                          <node concept="30H73N" id="EpEP7hk2pK" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="EpEP7hk2pL" role="2OqNvi">
+                            <ref role="3Tt5mk" to="kdzh:4zCbl23dbRG" resolve="folder" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="EpEP7hk2pM" role="2OqNvi">
+                          <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" resolve="path" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="EpEP7hkcqg" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <property role="2n97ot" value="just to indicate this switch is for BuildMps_ModuleSource, and we handle single subconcept only" />
+      <ref role="30HIoZ" to="kdzh:4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
+      <node concept="b5Tf3" id="EpEP7hkcqh" role="1lVwrX" />
     </node>
   </node>
 </model>
