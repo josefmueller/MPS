@@ -5,8 +5,8 @@ package jetbrains.mps.build.mps.util;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import jetbrains.mps.build.util.Context;
+import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -28,14 +28,18 @@ public class PathConverter {
   private final Iterable<SNode> macrosWithoutPath;
 
   public PathConverter(SNode project) {
-    String workingDir = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(project, Context.defaultContext());
+    this(Context.defaultContext(), project);
+  }
+
+  public PathConverter(final Context ctx, SNode project) {
+    String workingDir = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(project, ctx);
     this.workingDirectory = new RelativePathHelper(workingDir);
 
     final List<Tuples._2<String, SNode>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, SNode>>());
     final List<SNode> withoutPath = ListSequence.fromList(new ArrayList<SNode>());
     Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        String path = normalizePath(BuildFolderMacro__BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(it, Context.defaultContext()), true);
+        String path = normalizePath(BuildFolderMacro__BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(it, ctx), true);
         if (path != null && path.length() > 1) {
           ListSequence.fromList(result).addElement(MultiTuple.<String,SNode>from(path, it));
         } else {

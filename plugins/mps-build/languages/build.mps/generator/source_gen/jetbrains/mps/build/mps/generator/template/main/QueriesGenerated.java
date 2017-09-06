@@ -1355,12 +1355,7 @@ public class QueriesGenerated extends QueryProviderBase {
         continue;
       }
 
-      SNode originalProject = SNodeOperations.as(_context.getOriginalCopiedInputNode(project), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-      if ((originalProject == null)) {
-        _context.showErrorMessage(project, "no original project is found for " + SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
-        continue;
-      }
-      PathConverter pathConverter = new PathConverter(originalProject);
+      PathConverter pathConverter = new PathConverter(Context.defaultContext(_context), project);
 
       VisibleModules visibleModules = new VisibleModules(project);
       visibleModules.collect();

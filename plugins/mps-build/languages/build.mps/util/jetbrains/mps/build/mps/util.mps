@@ -2304,6 +2304,29 @@
       <node concept="3cqZAl" id="2hkCNA7Z0MZ" role="3clF45" />
       <node concept="3Tm1VV" id="2hkCNA7Z0N0" role="1B3o_S" />
       <node concept="3clFbS" id="2hkCNA7Z0N1" role="3clF47">
+        <node concept="1VxSAg" id="EpEP7hMghv" role="3cqZAp">
+          <ref role="37wK5l" node="EpEP7hMeg2" resolve="PathConverter" />
+          <node concept="2YIFZM" id="2cypSucdOWC" role="37wK5m">
+            <ref role="37wK5l" to="o3n2:4jjtc7WZTjd" resolve="defaultContext" />
+            <ref role="1Pybhc" to="o3n2:4jjtc7WZOAv" resolve="Context" />
+          </node>
+          <node concept="37vLTw" id="EpEP7hMgxQ" role="37wK5m">
+            <ref role="3cqZAo" node="7AaordoBsOP" resolve="project" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="7AaordoBsOP" role="3clF46">
+        <property role="TrG5h" value="project" />
+        <node concept="3Tqbb2" id="7AaordoBsOR" role="1tU5fm">
+          <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="EpEP7hLX6h" role="jymVt" />
+    <node concept="3clFbW" id="EpEP7hMeg2" role="jymVt">
+      <node concept="3cqZAl" id="EpEP7hMeg4" role="3clF45" />
+      <node concept="3Tm1VV" id="EpEP7hMeg5" role="1B3o_S" />
+      <node concept="3clFbS" id="EpEP7hMeg6" role="3clF47">
         <node concept="3cpWs8" id="2L4pT56hSJz" role="3cqZAp">
           <node concept="3cpWsn" id="2L4pT56hSJ$" role="3cpWs9">
             <property role="TrG5h" value="workingDir" />
@@ -2311,13 +2334,12 @@
             <node concept="2OqwBi" id="2L4pT56hSJQ" role="33vP2m">
               <node concept="2qgKlT" id="2L4pT56hSJW" role="2OqNvi">
                 <ref role="37wK5l" to="vbkb:4jjtc7WZOyG" resolve="getBasePath" />
-                <node concept="2YIFZM" id="2cypSucdOWC" role="37wK5m">
-                  <ref role="37wK5l" to="o3n2:4jjtc7WZTjd" resolve="defaultContext" />
-                  <ref role="1Pybhc" to="o3n2:4jjtc7WZOAv" resolve="Context" />
+                <node concept="37vLTw" id="EpEP7hMgok" role="37wK5m">
+                  <ref role="3cqZAo" node="EpEP7hMfl9" resolve="ctx" />
                 </node>
               </node>
               <node concept="37vLTw" id="2BHiRxgmyQ9" role="2Oq$k0">
-                <ref role="3cqZAo" node="7AaordoBsOP" resolve="project" />
+                <ref role="3cqZAo" node="EpEP7hMflS" resolve="project" />
               </node>
             </node>
           </node>
@@ -2391,7 +2413,7 @@
                   <ref role="3TtcxE" to="3ior:4RPz6WoY4Cy" resolve="macros" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxghiyx" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7AaordoBsOP" resolve="project" />
+                  <ref role="3cqZAo" node="EpEP7hMflS" resolve="project" />
                 </node>
               </node>
               <node concept="v3k3i" id="6mECmDWM27S" role="2OqNvi">
@@ -2411,9 +2433,8 @@
                         <node concept="2OqwBi" id="4ObP80xqNk5" role="37wK5m">
                           <node concept="2qgKlT" id="4ObP80xqNka" role="2OqNvi">
                             <ref role="37wK5l" to="vbkb:4jjtc7WZOzA" resolve="evaluate" />
-                            <node concept="2YIFZM" id="4ObP80xqNkc" role="37wK5m">
-                              <ref role="1Pybhc" to="o3n2:4jjtc7WZOAv" resolve="Context" />
-                              <ref role="37wK5l" to="o3n2:4jjtc7WZTjd" resolve="defaultContext" />
+                            <node concept="37vLTw" id="EpEP7hOSnU" role="37wK5m">
+                              <ref role="3cqZAo" node="EpEP7hMfl9" resolve="ctx" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="2BHiRxgkZ1e" role="2Oq$k0">
@@ -2550,9 +2571,15 @@
           </node>
         </node>
       </node>
-      <node concept="37vLTG" id="7AaordoBsOP" role="3clF46">
+      <node concept="37vLTG" id="EpEP7hMfl9" role="3clF46">
+        <property role="TrG5h" value="ctx" />
+        <node concept="3uibUv" id="EpEP7hMfl8" role="1tU5fm">
+          <ref role="3uigEE" to="o3n2:4jjtc7WZOAv" resolve="Context" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="EpEP7hMflS" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3Tqbb2" id="7AaordoBsOR" role="1tU5fm">
+        <node concept="3Tqbb2" id="EpEP7hMfmd" role="1tU5fm">
           <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
         </node>
       </node>
