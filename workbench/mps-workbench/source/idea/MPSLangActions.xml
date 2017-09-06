@@ -700,8 +700,10 @@
 
       <add-to-group group-id="EditorPopupMenu" relative-to-action="CompareClipboardWithSelection" anchor="before"/>
     </group>
+    -->
 
     <group id="EditorTabPopupMenuEx">
+      <!-- add group for RenameFile action
       <separator/>
       <reference ref="AddToFavorites"/>
       <reference ref="AddAllToFavorites"/>
@@ -711,10 +713,12 @@
       <reference ref="VersionControlsGroup"/>
       <separator/>
       <reference ref="ExternalToolsGroup"/>
+      -->
 
       <add-to-group group-id="EditorTabPopupMenu" anchor="last"/>
     </group>
 
+    <!--
     <group id="TreeNodeExclusion">
       <action id="UsageView.Include" class="com.intellij.ide.actions.exclusion.IncludeTreeNodeAction"/>
       <action id="UsageView.Exclude" class="com.intellij.ide.actions.exclusion.ExcludeTreeNodeAction" use-shortcut-of="$Delete"/>
@@ -979,7 +983,9 @@
         <reference id="Vcs.Checkout"/>
       </group>
       <separator text="Local History"/>
+      <!-- Action is disabled
       <reference id="LocalHistory.ShowHistory"/>
+      -->
       <reference id="LocalHistory.PutLabel"/>
     </group>
 
