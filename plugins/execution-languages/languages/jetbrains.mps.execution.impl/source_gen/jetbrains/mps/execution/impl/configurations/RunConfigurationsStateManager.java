@@ -25,8 +25,6 @@ import com.intellij.execution.configurations.RunConfiguration;
 import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
-import com.intellij.execution.impl.ProjectRunConfigurationManager;
-import com.intellij.openapi.components.ServiceManager;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.RunManagerEx;
 import org.jetbrains.annotations.NonNls;
@@ -164,10 +162,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     return descriptors;
   }
 
-  private ProjectRunConfigurationManager getSharedConfigurationManager() {
-    return ServiceManager.getService(myProject, ProjectRunConfigurationManager.class);
-  }
-
   private RunManagerImpl getRunManager() {
     return (RunManagerImpl) RunManagerEx.getInstanceEx(myProject);
   }
@@ -211,7 +205,7 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
       getRunManager().initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
       try {
         getRunManager().loadState(myState);
-        getSharedConfigurationManager().loadState(mySharedState);
+        getRunManager().loadState(mySharedState);
       } catch (Exception e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't read execution configurations state", e);
@@ -222,7 +216,7 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     public void saveState() {
       try {
         myState = getRunManager().getState();
-        mySharedState = getSharedConfigurationManager().getState();
+        mySharedState = getRunManager().getState();
       } catch (Exception e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
           LOG.error("Can't save run configurations state", e);

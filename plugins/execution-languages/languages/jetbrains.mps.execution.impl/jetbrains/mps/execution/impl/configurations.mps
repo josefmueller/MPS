@@ -117,7 +117,6 @@
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
-        <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
@@ -166,9 +165,6 @@
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
-      </concept>
-      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
-        <property id="8355037393041754995" name="isNative" index="2aFKle" />
       </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
@@ -955,32 +951,6 @@
       </node>
     </node>
     <node concept="2tJIrI" id="1cXeJmohuXl" role="jymVt" />
-    <node concept="3clFb_" id="1cXeJmohxm7" role="jymVt">
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getSharedConfigurationManager" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <property role="2aFKle" value="false" />
-      <node concept="3clFbS" id="1cXeJmohxma" role="3clF47">
-        <node concept="3cpWs6" id="1cXeJmohyqz" role="3cqZAp">
-          <node concept="2YIFZM" id="1cXeJmoh$hF" role="3cqZAk">
-            <ref role="1Pybhc" to="1m72:~ServiceManager" resolve="ServiceManager" />
-            <ref role="37wK5l" to="1m72:~ServiceManager.getService(com.intellij.openapi.project.Project,java.lang.Class):java.lang.Object" resolve="getService" />
-            <node concept="37vLTw" id="1cXeJmoh_9A" role="37wK5m">
-              <ref role="3cqZAo" node="4tDMPuHd$PD" resolve="myProject" />
-            </node>
-            <node concept="3VsKOn" id="1cXeJmohCVD" role="37wK5m">
-              <ref role="3VsUkX" to="zjj4:~ProjectRunConfigurationManager" resolve="ProjectRunConfigurationManager" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="1cXeJmohw6M" role="1B3o_S" />
-      <node concept="3uibUv" id="1cXeJmohx9M" role="3clF45">
-        <ref role="3uigEE" to="zjj4:~ProjectRunConfigurationManager" resolve="ProjectRunConfigurationManager" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="4tfwdmbGmk_" role="jymVt" />
     <node concept="3clFb_" id="4tDMPuHd$TR" role="jymVt">
       <property role="TrG5h" value="getRunManager" />
       <node concept="3uibUv" id="3EiAnuiIIQ6" role="3clF45">
@@ -1276,14 +1246,14 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="1cXeJmohEkx" role="3cqZAp">
-                <node concept="2OqwBi" id="1cXeJmohEBl" role="3clFbG">
-                  <node concept="1rXfSq" id="1cXeJmohEkv" role="2Oq$k0">
-                    <ref role="37wK5l" node="1cXeJmohxm7" resolve="getSharedConfigurationManager" />
+              <node concept="3clFbF" id="2lpjk7j1PoM" role="3cqZAp">
+                <node concept="2OqwBi" id="2lpjk7j1PoN" role="3clFbG">
+                  <node concept="1rXfSq" id="2lpjk7j1PoO" role="2Oq$k0">
+                    <ref role="37wK5l" node="4tDMPuHd$TR" resolve="getRunManager" />
                   </node>
-                  <node concept="liA8E" id="1cXeJmohETE" role="2OqNvi">
-                    <ref role="37wK5l" to="zjj4:~ProjectRunConfigurationManager.loadState(org.jdom.Element):void" resolve="loadState" />
-                    <node concept="37vLTw" id="1cXeJmohEVF" role="37wK5m">
+                  <node concept="liA8E" id="2lpjk7j1PoP" role="2OqNvi">
+                    <ref role="37wK5l" to="zjj4:~RunManagerImpl.loadState(org.jdom.Element):void" resolve="loadState" />
+                    <node concept="37vLTw" id="2lpjk7j1QBf" role="37wK5m">
                       <ref role="3cqZAo" node="4tDMPuHd$PK" resolve="mySharedState" />
                     </node>
                   </node>
@@ -1335,17 +1305,17 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="1cXeJmohGhy" role="3cqZAp">
-                <node concept="37vLTI" id="1cXeJmohGqf" role="3clFbG">
-                  <node concept="37vLTw" id="1cXeJmohGhw" role="37vLTJ">
+              <node concept="3clFbF" id="2lpjk7j1QM1" role="3cqZAp">
+                <node concept="37vLTI" id="2lpjk7j1QM2" role="3clFbG">
+                  <node concept="37vLTw" id="2lpjk7j1RbA" role="37vLTJ">
                     <ref role="3cqZAo" node="4tDMPuHd$PK" resolve="mySharedState" />
                   </node>
-                  <node concept="2OqwBi" id="1cXeJmohFFz" role="37vLTx">
-                    <node concept="1rXfSq" id="1cXeJmohFlD" role="2Oq$k0">
-                      <ref role="37wK5l" node="1cXeJmohxm7" resolve="getSharedConfigurationManager" />
+                  <node concept="2OqwBi" id="2lpjk7j1QM4" role="37vLTx">
+                    <node concept="1rXfSq" id="2lpjk7j1QM5" role="2Oq$k0">
+                      <ref role="37wK5l" node="4tDMPuHd$TR" resolve="getRunManager" />
                     </node>
-                    <node concept="liA8E" id="1cXeJmohFLl" role="2OqNvi">
-                      <ref role="37wK5l" to="zjj4:~ProjectRunConfigurationManager.getState():org.jdom.Element" resolve="getState" />
+                    <node concept="liA8E" id="2lpjk7j1QM6" role="2OqNvi">
+                      <ref role="37wK5l" to="zjj4:~RunManagerImpl.getState():org.jdom.Element" resolve="getState" />
                     </node>
                   </node>
                 </node>
