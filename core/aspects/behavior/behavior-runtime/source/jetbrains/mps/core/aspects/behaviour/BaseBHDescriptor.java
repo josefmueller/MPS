@@ -424,10 +424,8 @@ public abstract class BaseBHDescriptor implements BHDescriptor {
         }
       }
     }
-    for (SMethod<?> virtualMethod : myVTable.getMethods()) {
-      result.add(virtualMethod);
-    }
-    return new ArrayList<SMethod<?>>(result);
+    result.addAll(myVTable.getMethods());
+    return new ArrayList<>(result);
   }
 
   /**

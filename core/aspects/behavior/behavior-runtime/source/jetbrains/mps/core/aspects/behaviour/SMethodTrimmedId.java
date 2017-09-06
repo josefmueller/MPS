@@ -27,6 +27,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.util.Objects;
+
 /**
  * Represents a handle which uniquely identifies {@link SMethod} within the concept (including all the ancestors).
  * This implementation is based on the NodeId of the method node (in the behavior aspect of the concept)
@@ -46,8 +48,7 @@ public final class SMethodTrimmedId implements SMethodId {
 
   @Override
   public int hashCode() {
-    int conceptHash = myConcept != null ? myConcept.hashCode() : 0;
-    return myNodeId.hashCode() + 31 * conceptHash;
+    return Objects.hash(myConcept, myNodeId);
   }
 
   @Override
