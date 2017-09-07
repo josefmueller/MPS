@@ -1732,17 +1732,19 @@
       <node id="2565896126719599887" at="195,25,196,63" concept="10" />
       <node id="8796678305523740649" at="197,245,198,198" concept="5" />
       <node id="2565896126719599906" at="198,198,199,263" concept="5" />
-      <node id="2565896126719599922" at="200,478,201,362" concept="10" />
-      <node id="2565896126719599930" at="201,362,202,187" concept="5" />
-      <node id="2565896126719599937" at="202,187,203,364" concept="5" />
-      <node id="5708190207122525538" at="204,16,205,119" concept="5" />
-      <node id="2565896126719599947" at="205,119,206,283" concept="10" />
-      <node id="2565896126719599953" at="206,283,207,192" concept="5" />
-      <node id="2565896126719599960" at="207,192,208,269" concept="5" />
-      <node id="2565896126719599968" at="208,269,209,484" concept="5" />
-      <node id="2565896126719599978" at="209,484,210,110" concept="5" />
-      <node id="2565896126719599983" at="210,110,211,263" concept="5" />
-      <node id="2565896126719599988" at="214,7,215,24" concept="11" />
+      <node id="924522964703796119" at="200,506,201,115" concept="10" />
+      <node id="2565896126719599922" at="201,115,202,362" concept="10" />
+      <node id="2565896126719599930" at="202,362,203,187" concept="5" />
+      <node id="2565896126719599937" at="203,187,204,185" concept="5" />
+      <node id="924522964703764253" at="204,185,205,28" concept="5" />
+      <node id="5708190207122525538" at="206,16,207,119" concept="5" />
+      <node id="2565896126719599947" at="207,119,208,283" concept="10" />
+      <node id="2565896126719599953" at="208,283,209,192" concept="5" />
+      <node id="2565896126719599960" at="209,192,210,269" concept="5" />
+      <node id="2565896126719599968" at="210,269,211,482" concept="5" />
+      <node id="2565896126719599978" at="211,482,212,110" concept="5" />
+      <node id="2565896126719599983" at="212,110,213,263" concept="5" />
+      <node id="2565896126719599988" at="216,7,217,24" concept="11" />
       <node id="2565896126719599486" at="48,0,50,0" concept="3" trace="Generator_TabDescriptor#()V" />
       <node id="2565896126719599486" at="59,0,61,0" concept="9" trace="startListening#()V" />
       <node id="2565896126719599850" at="190,10,192,5" concept="1" />
@@ -1771,7 +1773,7 @@
       <node id="6352952732713915771" at="118,84,125,7" concept="5" />
       <node id="6352952732714028181" at="155,0,162,0" concept="9" trace="run#()V" />
       <node id="2565896126719599849" at="185,64,192,5" concept="8" />
-      <node id="2565896126719599945" at="204,14,212,9" concept="1" />
+      <node id="2565896126719599945" at="206,14,214,9" concept="1" />
       <node id="6352952732714007410" at="153,56,162,7" concept="5" />
       <node id="2565896126719599633" at="94,103,105,11" concept="7" />
       <node id="2565896126719599604" at="93,31,106,9" concept="7" />
@@ -1780,15 +1782,15 @@
       <node id="6352952732713960997" at="135,12,150,9" concept="5" />
       <node id="6352952732714085367" at="167,0,182,0" concept="9" trace="run#()V" />
       <node id="6362460243896751289" at="135,10,151,5" concept="1" />
-      <node id="2565896126719599893" at="196,63,212,9" concept="8" />
       <node id="6352952732714073850" at="165,85,182,9" concept="5" />
-      <node id="6352952732714157768" at="195,0,214,0" concept="9" trace="run#()V" />
+      <node id="2565896126719599893" at="196,63,214,9" concept="8" />
       <node id="2565896126719599773" at="163,0,183,5" concept="8" />
-      <node id="6352952732714127076" at="193,63,214,7" concept="5" />
+      <node id="6352952732714157768" at="195,0,216,0" concept="9" trace="run#()V" />
+      <node id="6352952732714127076" at="193,63,216,7" concept="5" />
       <node id="2565896126719599576" at="84,220,108,5" concept="8" />
       <node id="2565896126719599710" at="126,0,151,5" concept="8" />
       <node id="2565896126719599486" at="79,0,111,0" concept="9" trace="getAspectConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="2565896126719599486" at="114,0,217,0" concept="9" trace="createAspect#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2565896126719599486" at="114,0,219,0" concept="9" trace="createAspect#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SConcept;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2565896126719599486" at="48,36,48,36" />
       <scope id="2565896126719599500" at="59,32,59,32" />
       <scope id="2565896126719599486" at="50,28,51,23" />
@@ -1835,9 +1837,6 @@
       <scope id="2565896126719599858" at="186,54,189,54">
         <var name="configurationDialog" id="2565896126719599860" />
       </scope>
-      <scope id="2565896126719599921" at="200,478,203,364">
-        <var name="mappingRule" id="2565896126719599923" />
-      </scope>
       <scope id="2565896126719599486" at="67,0,71,0" />
       <scope id="2565896126719599583" at="87,299,91,9" />
       <scope id="2254732680176829835" at="138,53,142,19" />
@@ -1850,6 +1849,10 @@
         <var name="generator" id="2565896126719599756" />
       </scope>
       <scope id="6352952732714028182" at="155,25,160,9" />
+      <scope id="2565896126719599921" at="200,506,205,28">
+        <var name="mappingRule" id="2565896126719599923" />
+        <var name="rc" id="924522964703796120" />
+      </scope>
       <scope id="2565896126719599582" at="86,40,92,7">
         <var name="genFragment" id="2565896126719599597" />
       </scope>
@@ -1864,7 +1867,7 @@
         <var name="dialog" id="2565896126719599713" />
       </scope>
       <scope id="6352952732714028181" at="155,0,162,0" />
-      <scope id="2565896126719599946" at="204,16,211,263">
+      <scope id="2565896126719599946" at="206,16,213,263">
         <var name="rootTemplateNode" id="2565896126719599948" />
       </scope>
       <scope id="2565896126719599634" at="95,71,104,13" />
@@ -1887,11 +1890,11 @@
       </scope>
       <scope id="6362460243896751290" at="135,12,150,9" />
       <scope id="6352952732714085367" at="167,0,182,0" />
-      <scope id="6352952732714157769" at="195,25,212,9">
+      <scope id="2565896126719599774" at="164,52,182,9" />
+      <scope id="6352952732714157769" at="195,25,214,9">
         <var name="model" id="2565896126719599888" />
       </scope>
-      <scope id="2565896126719599774" at="164,52,182,9" />
-      <scope id="6352952732714157768" at="195,0,214,0" />
+      <scope id="6352952732714157768" at="195,0,216,0" />
       <scope id="2565896126719599577" at="85,34,107,7">
         <var name="isNeedRootTemplate" id="2565896126719599579" />
       </scope>
@@ -1903,7 +1906,7 @@
       <scope id="2565896126719599486" at="79,0,111,0">
         <var name="node" id="2565896126719599486" />
       </scope>
-      <scope id="7459370737648527527" at="114,71,215,24">
+      <scope id="7459370737648527527" at="114,71,217,24">
         <var name="genList" id="2565896126719599704" />
         <var name="language" id="2565896126719599685" />
         <var name="mapping" id="2565896126719599847" />
@@ -1911,7 +1914,7 @@
         <var name="mpsProject" id="2565896126719599668" />
         <var name="result" id="2565896126719599882" />
       </scope>
-      <scope id="2565896126719599486" at="114,0,217,0">
+      <scope id="2565896126719599486" at="114,0,219,0">
         <var name="concept" id="2565896126719599486" />
         <var name="node" id="2565896126719599486" />
       </scope>
@@ -1919,8 +1922,8 @@
       <unit id="6352952732714028181" at="154,50,162,5" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$3" />
       <unit id="6352952732713967728" at="136,53,150,7" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$2" />
       <unit id="6352952732714085367" at="166,53,182,7" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$4" />
-      <unit id="6352952732714157768" at="194,51,214,5" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$5" />
-      <unit id="2565896126719599486" at="45,0,218,0" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor" />
+      <unit id="6352952732714157768" at="194,51,216,5" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor$5" />
+      <unit id="2565896126719599486" at="45,0,220,0" name="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor" />
     </file>
   </root>
   <root nodeRef="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)/2565896126719631163">
