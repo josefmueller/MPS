@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.GeneratorTask.Factory;
-import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.util.GraphUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -80,7 +80,9 @@ public class DefaultTaskBuilder<T extends GeneratorTask> {
     for (int i = 0, x = inputModels.size(); i < x; i++) {
       SModel inputModel = inputModels.get(i);
       int j = 0;
-      for (SModelReference ie : SModelOperations.getImportedModelUIDs(inputModel)) {
+      // some aspect models get implicit dependencies (e.g. editor aspects could implicitly see structure one), we have to respect
+      // these implicit dependencies to ensure proper order (otherwise checkpoint models may get disposed unexpectedly, see MPS-26570)
+      for (SModelReference ie : new ModelDependencyScanner().usedLanguages(false).crossModelReferences(true).walk(inputModel).getCrossModelReferences()) {
         if (!vertex2Index.containsKey(ie)) {
           continue;
         }
