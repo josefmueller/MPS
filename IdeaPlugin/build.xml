@@ -320,6 +320,9 @@
         <fileset dir="${test.platform.sandbox.dir}/plugins/mps-idea-java/lib">
           <include name="*.jar"/>
         </fileset>
+        <fileset dir="${test.platform.sandbox.dir}/plugins/mps-migration/lib">
+          <include name="*.jar"/>
+        </fileset>
         <pathelement path="${java.class.path}"/>
       </classpath>
       <test name="jetbrains.mps.idea.java.tests.JavaTestSuite"/>
