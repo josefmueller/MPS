@@ -19,8 +19,8 @@ import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.projectImport.ProjectOpenProcessor;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.workbench.actions.OpenMPSProjectFileChooserDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -38,7 +38,12 @@ public class MpsProjectOpenProcessor extends ProjectOpenProcessor {
 
   @Override
   public boolean canOpenProject(VirtualFile file) {
-    return MPSFileTypeFactory.PROJECT_FILE_TYPE.equals(file.getFileType());
+    return OpenMPSProjectFileChooserDescriptor.isMpsProjectDirectory(file) || OpenMPSProjectFileChooserDescriptor.isMpsProjectFile(file);
+  }
+
+  @Override
+  public boolean isStrongProjectInfoHolder() {
+    return true;
   }
 
   @Override
