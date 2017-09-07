@@ -174,10 +174,12 @@
     <projectService serviceInterface="com.intellij.packaging.impl.artifacts.ArtifactBySourceFileFinder"
                     serviceImplementation="com.intellij.packaging.impl.artifacts.ArtifactBySourceFileFinderImpl"/>
     <applicationService serviceImplementation="com.intellij.packaging.impl.artifacts.InvalidArtifactType"/>
+    -->
 
     <projectService serviceInterface="com.intellij.lang.injection.InjectedLanguageManager"
                     serviceImplementation="com.intellij.psi.impl.source.tree.injected.InjectedLanguageManagerImpl"/>
 
+    <!--
     <projectService serviceInterface="com.intellij.codeInsight.ExternalAnnotationsManager"
                     serviceImplementation="com.intellij.codeInsight.ExternalAnnotationsManagerImpl"/>
 
