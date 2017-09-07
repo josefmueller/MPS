@@ -14,8 +14,8 @@
   <root nodeRef="r:4d68829a-5f0e-4737-9dcf-eed0080fbaa6(jetbrains.mps.baseLanguage.logging.scripts)/1704189004094297789">
     <file name="ConvertLegacyStatementsToLogLowLevel_MigrationScript.java">
       <node id="1704189004094297789" at="18,65,19,69" concept="5" />
-      <node id="1704189004094297789" at="22,31,23,48" concept="4" />
-      <node id="1704189004094297789" at="26,41,27,48" concept="4" />
+      <node id="1704189004094297789" at="22,31,23,53" concept="4" />
+      <node id="1704189004094297789" at="26,41,27,53" concept="4" />
       <node id="1704189004094297789" at="30,54,31,164" concept="4" />
       <node id="1704189004094297789" at="34,59,35,20" concept="4" />
       <node id="108963660037300424" at="38,52,39,278" concept="3" />
@@ -33,8 +33,8 @@
       <node id="1704189004094297789" at="37,0,44,0" concept="2" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1704189004094297789" at="19,69,48,7" concept="1" />
       <node id="1704189004094297789" at="18,0,50,0" concept="0" trace="ConvertLegacyStatementsToLogLowLevel_MigrationScript#()V" />
-      <scope id="1704189004094297789" at="22,31,23,48" />
-      <scope id="1704189004094297789" at="26,41,27,48" />
+      <scope id="1704189004094297789" at="22,31,23,53" />
+      <scope id="1704189004094297789" at="26,41,27,53" />
       <scope id="1704189004094297789" at="30,54,31,164" />
       <scope id="1704189004094297789" at="34,59,35,20" />
       <scope id="1704189004094297789" at="45,42,46,20" />
@@ -62,8 +62,8 @@
   <root nodeRef="r:4d68829a-5f0e-4737-9dcf-eed0080fbaa6(jetbrains.mps.baseLanguage.logging.scripts)/5721587534047299317">
     <file name="ConvertLegacyStatementsToMessageStatements_MigrationScript.java">
       <node id="5721587534047299317" at="18,71,19,70" concept="5" />
-      <node id="5721587534047299317" at="22,31,23,42" concept="4" />
-      <node id="5721587534047299317" at="26,41,27,42" concept="4" />
+      <node id="5721587534047299317" at="22,31,23,47" concept="4" />
+      <node id="5721587534047299317" at="26,41,27,47" concept="4" />
       <node id="5721587534047299317" at="30,54,31,164" concept="4" />
       <node id="5721587534047299317" at="34,59,35,20" concept="4" />
       <node id="5721587534047299321" at="38,52,39,270" concept="3" />
@@ -82,8 +82,8 @@
       <node id="5721587534047299317" at="37,0,45,0" concept="2" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5721587534047299317" at="19,70,49,7" concept="1" />
       <node id="5721587534047299317" at="18,0,51,0" concept="0" trace="ConvertLegacyStatementsToMessageStatements_MigrationScript#()V" />
-      <scope id="5721587534047299317" at="22,31,23,42" />
-      <scope id="5721587534047299317" at="26,41,27,42" />
+      <scope id="5721587534047299317" at="22,31,23,47" />
+      <scope id="5721587534047299317" at="26,41,27,47" />
       <scope id="5721587534047299317" at="30,54,31,164" />
       <scope id="5721587534047299317" at="34,59,35,20" />
       <scope id="5721587534047299317" at="46,42,47,20" />

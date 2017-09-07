@@ -20,11 +20,11 @@ public final class ConvertLegacyStatementsToMessageStatements_MigrationScript ex
     this.addRefactoring(new AbstractMigrationRefactoring() {
       @Override
       public String getName() {
-        return "ConvertToLog4jStatements";
+        return "Convert To Message Statements";
       }
       @Override
       public String getAdditionalInfo() {
-        return "ConvertToLog4jStatements";
+        return "Convert To Message Statements";
       }
       @Override
       public SAbstractConcept getApplicableConcept() {

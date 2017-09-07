@@ -87,7 +87,7 @@
     <property role="3iz5xs" value="6252" />
     <property role="TrG5h" value="ConvertLegacyStatementsToLogLowLevel" />
     <node concept="_XfAh" id="1uAvHUVaHra" role="_YvDr">
-      <property role="_XH9r" value="ConvertToLogLowLevelStatements" />
+      <property role="_XH9r" value="Convert To Low Level Log Statements" />
       <property role="1iWc8x" value="true" />
       <ref role="_XDHR" to="tpib:gZ4ab7v" resolve="LogStatement" />
       <node concept="_ZGcI" id="1uAvHUVaHrb" role="_XPhp">
@@ -170,7 +170,7 @@
     <property role="TrG5h" value="ConvertLegacyStatementsToMessageStatements" />
     <property role="_Wzho" value="Convert Legacy Log Statements to the Messages Statements" />
     <node concept="_XfAh" id="4XBaoL6ckrQ" role="_YvDr">
-      <property role="_XH9r" value="ConvertToLog4jStatements" />
+      <property role="_XH9r" value="Convert To Message Statements" />
       <property role="1iWc8x" value="true" />
       <ref role="_XDHR" to="tpib:gZ4ab7v" resolve="LogStatement" />
       <node concept="_ZGcI" id="4XBaoL6ckrR" role="_XPhp">

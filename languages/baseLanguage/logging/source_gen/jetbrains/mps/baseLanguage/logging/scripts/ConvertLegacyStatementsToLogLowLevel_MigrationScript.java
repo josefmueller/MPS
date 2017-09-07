@@ -20,11 +20,11 @@ public final class ConvertLegacyStatementsToLogLowLevel_MigrationScript extends 
     this.addRefactoring(new AbstractMigrationRefactoring() {
       @Override
       public String getName() {
-        return "ConvertToLogLowLevelStatements";
+        return "Convert To Low Level Log Statements";
       }
       @Override
       public String getAdditionalInfo() {
-        return "ConvertToLogLowLevelStatements";
+        return "Convert To Low Level Log Statements";
       }
       @Override
       public SAbstractConcept getApplicableConcept() {
