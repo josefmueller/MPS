@@ -137,11 +137,17 @@ public class MakeActionParameters {
       return Sequence.<SModel>singleton(m);
     }
     Iterable<SModelReference> importedModels = new ModelImports(m).getImportedModels();
+    // imported models are not necessarily from the project, they may belong to a global repository (and yet be visible through project's), 
+    // don't try to make them (MGSM doesn't track 'generation' status for these and may report them as dirty) 
     return Sequence.fromIterable(importedModels).select(new ISelector<SModelReference, SModel>() {
       public SModel select(SModelReference it) {
         return it.resolve(repo);
       }
-    }).union(Sequence.fromIterable(Sequence.<SModel>singleton(m))).where(new NotNullWhereFilter<SModel>());
+    }).where(new NotNullWhereFilter<SModel>()).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return !(it.isReadOnly());
+      }
+    }).union(Sequence.fromIterable(Sequence.<SModel>singleton(m)));
   }
 
   private Iterable<SModel> allModelsOf(SModule module) {
