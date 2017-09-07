@@ -19,9 +19,9 @@ import org.apache.log4j.Level;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.ui.RunContentManagerImpl;
+import com.intellij.execution.configurations.RunConfiguration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import com.intellij.execution.configurations.RunConfiguration;
 import jetbrains.mps.classloading.ModuleClassLoader;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
@@ -30,26 +30,24 @@ import com.intellij.execution.RunManagerEx;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationType;
-import com.intellij.openapi.extensions.Extensions;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import org.jdom.Element;
+import java.lang.reflect.Field;
+import com.intellij.openapi.options.SchemeManager;
 
 /**
  * This component allows to create reloadable (!) run configurations within MPS.
  * It listens to the project plugins manager because we use custom project plugins to register custom 'before' tasks (like 'make' etc.)
  * It saves all run configurations at the plugin unload and then restores them at the plugin load event
  * Currently before tasks are saved but not loaded (they are loaded from template configurations) due to change in IDEA api
- * FIX need to ask for a proper ext point in the platform or drop featuring reloadable run configurations
- * in the current state api does not allow to do it (before tasks are read in a lazy way without possibility for our plugins to be accessed
- * before their initialization)
+ * FIX need to try creating a special proxy class which wraps the MPS-owned classes and turns them to IDEA while delegating all the method invocations
+ * to the right class.
+ * Another possibility is to create some kind of extension point in IDEA to make the configurations reloadable.
+ * However I see the first scenario as a much better choice (if it works)
  */
 public class RunConfigurationsStateManager implements ProjectComponent, PluginReloadingListener {
   private static final Logger LOG = LogManager.getLogger(RunConfigurationsStateManager.class);
   private final Project myProject;
   private final ProjectPluginManager myProjectPluginManager;
-  private RunConfigurationsStateManager.RunConfigurationsState myState = null;
+  private final RunConfigurationsStateManager.RunConfigurationsState myState = new RunConfigurationsStateManager.RunConfigurationsState();
 
   public RunConfigurationsStateManager(Project project, ProjectPluginManager pluginManager) {
     myProject = project;
@@ -76,8 +74,6 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
   @Override
   public void projectOpened() {
-    myState = new RunConfigurationsStateManager.RunConfigurationsState();
-    myState.saveState();
     myProjectPluginManager.addReloadingListener(RunConfigurationsStateManager.this);
   }
 
@@ -90,15 +86,12 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     if (myProject.isDisposed()) {
       return;
     }
-
     myState.restoreState();
   }
 
   public void disposeRunConfigurations() {
     assert !(myProject.isDisposed());
-    myState.saveState();
     disposeRunContentDescriptors();
-    clearAllRunConfigurations();
   }
 
   private void disposeRunContentDescriptors() {
@@ -139,7 +132,8 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     ExecutionManager executionManager = ExecutionManager.getInstance(myProject);
     final RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
 
-    final List<String> reloadableConfigurationNames = Sequence.fromIterable(Sequence.fromArray(getRunManager().getAllConfigurations())).where(new IWhereFilter<RunConfiguration>() {
+    Iterable<RunConfiguration> allConfigurationsList = getRunManager().getAllConfigurationsList();
+    final List<String> reloadableConfigurationNames = Sequence.fromIterable(allConfigurationsList).where(new IWhereFilter<RunConfiguration>() {
       public boolean accept(RunConfiguration it) {
         return it.getClass().getClassLoader() instanceof ModuleClassLoader;
       }
@@ -173,53 +167,31 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
     return "MPS Run Configs Manager";
   }
 
-  public static ConfigurationType[] getConfigurationTypes() {
-    ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
-    List<ConfigurationType> result = ListSequence.fromList(new ArrayList<ConfigurationType>());
-    Set<String> uniqTypes = SetSequence.fromSet(new HashSet<String>());
-
-    for (ConfigurationType type : configurationTypes) {
-      String typeId = type.getClass().getName();
-      if (!(SetSequence.fromSet(uniqTypes).contains(typeId))) {
-        ListSequence.fromList(result).addElement(type);
-        SetSequence.fromSet(uniqTypes).addElement(typeId);
-      }
-    }
-
-    return ListSequence.fromList(result).toGenericArray(ConfigurationType.class);
-  }
-
   public static RunConfigurationsStateManager getInstance(Project project) {
     return project.getComponent(RunConfigurationsStateManager.class);
   }
 
   private class RunConfigurationsState {
-    private Element myState;
-    private Element mySharedState;
-
     public RunConfigurationsState() {
     }
 
     public void restoreState() {
-      assert myState != null && mySharedState != null;
-      getRunManager().initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
+      clearAllRunConfigurations();
+      getRunManager().initializeConfigurationTypes(ConfigurationType.CONFIGURATION_TYPE_EP.getExtensions());
+      RunManagerImpl runManager = getRunManager();
+      Class<RunManagerImpl> runManagerClass = RunManagerImpl.class;
       try {
-        getRunManager().loadState(myState);
-        getRunManager().loadState(mySharedState);
-      } catch (Exception e) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Can't read execution configurations state", e);
+        for (Field f : runManagerClass.getDeclaredFields()) {
+          if (f.getName().endsWith("SchemeManager")) {
+            f.setAccessible(true);
+            Object schemeManager = f.get(runManager);
+            assert schemeManager instanceof SchemeManager;
+            ((SchemeManager) schemeManager).reload();
+          }
         }
-      }
-    }
-
-    public void saveState() {
-      try {
-        myState = getRunManager().getState();
-        mySharedState = getRunManager().getState();
-      } catch (Exception e) {
+      } catch (IllegalAccessException e) {
         if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error("Can't save run configurations state", e);
+          LOG.error("Unable to access schemeManagers via reflection", e);
         }
       }
     }
