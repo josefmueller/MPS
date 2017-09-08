@@ -7,13 +7,7 @@ import org.jetbrains.annotations.NotNull;
 
 public interface IJobMonitor {
   boolean stopRequested();
-  /**
-   * Progress monitor is passed as a method parameter
-   * 
-   * @return dummy IProgress
-   */
-  @Deprecated
-  IProgress currentProgress();
+
   void reportFeedback(IFeedback fdbk);
 
   /**
@@ -38,10 +32,6 @@ public interface IJobMonitor {
     public Stub(@NotNull MakeSession makeSession) {
       this.pstub = new IProgress.Stub();
       mySession = makeSession;
-    }
-    @Override
-    public IProgress currentProgress() {
-      return pstub;
     }
     @Override
     public void reportFeedback(IFeedback fdbk) {

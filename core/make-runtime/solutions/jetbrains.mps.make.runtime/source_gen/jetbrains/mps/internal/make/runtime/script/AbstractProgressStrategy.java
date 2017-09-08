@@ -8,9 +8,15 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
+/**
+ * 
+ * @deprecated Don't use. Will be removed in the next major update.
+ */
+@Deprecated
 public abstract class AbstractProgressStrategy {
   private AbstractProgressStrategy.Work last;
   private IProgress current;
+  @Deprecated
   public AbstractProgressStrategy(String total) {
     this.last = new AbstractProgressStrategy.Work(null, total, 1000, 1000);
     this.current = new AbstractProgressStrategy.CurrentProgress();

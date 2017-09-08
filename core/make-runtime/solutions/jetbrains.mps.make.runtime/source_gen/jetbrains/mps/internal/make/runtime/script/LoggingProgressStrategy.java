@@ -5,6 +5,11 @@ package jetbrains.mps.internal.make.runtime.script;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
+/**
+ * 
+ * @deprecated Don't use. Will be removed in the next major update.
+ */
+@Deprecated
 public class LoggingProgressStrategy extends AbstractProgressStrategy {
   private static Logger LOG = LogManager.getLogger(LoggingProgressStrategy.class.getPackage().getName());
   private static String TOTAL = "∞";
@@ -23,12 +28,14 @@ public class LoggingProgressStrategy extends AbstractProgressStrategy {
       LoggingProgressStrategy.LOG.info(text);
     }
   };
+  @Deprecated
   public LoggingProgressStrategy() {
     super(TOTAL);
   }
   /**
    * For testing only.
    */
+  @Deprecated
   public LoggingProgressStrategy(LoggingProgressStrategy.Log log) {
     this();
     this.logger = log;

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.internal.make.runtime.script.AbstractProgressStrategy" file="AbstractProgressStrategy.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Object" />
@@ -40,12 +41,12 @@
     <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.LoggingFeedbackStrategy" file="LoggingFeedbackStrategy.java">
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy" />
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy" file="LoggingProgressStrategy.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

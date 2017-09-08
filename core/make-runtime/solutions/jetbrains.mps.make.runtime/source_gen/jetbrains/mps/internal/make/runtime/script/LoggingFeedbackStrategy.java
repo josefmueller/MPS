@@ -7,7 +7,7 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.make.script.IFeedback;
 
 public class LoggingFeedbackStrategy {
-  private static Logger LOG = LogManager.getLogger(LoggingProgressStrategy.class.getPackage().getName());
+  private static Logger LOG = LogManager.getLogger(LoggingFeedbackStrategy.class.getPackage().getName());
   public LoggingFeedbackStrategy() {
   }
   public void reportFeedback(IFeedback fdk) {

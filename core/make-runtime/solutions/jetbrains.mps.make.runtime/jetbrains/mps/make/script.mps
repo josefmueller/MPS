@@ -554,28 +554,7 @@
       <node concept="3clFbS" id="5mqBoD3U3W_" role="3clF47" />
       <node concept="10P_77" id="5mqBoD3U3WA" role="3clF45" />
     </node>
-    <node concept="3clFb_" id="6KRD$9FA$Hd" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="currentProgress" />
-      <node concept="3uibUv" id="6KRD$9FA$Hi" role="3clF45">
-        <ref role="3uigEE" node="6KRD$9FAjI8" resolve="IProgress" />
-      </node>
-      <node concept="3Tm1VV" id="6KRD$9FA$Hf" role="1B3o_S" />
-      <node concept="3clFbS" id="6KRD$9FA$Hg" role="3clF47" />
-      <node concept="2AHcQZ" id="43l$qHE81zX" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="P$JXv" id="43l$qHE81_T" role="lGtFl">
-        <node concept="TZ5HA" id="43l$qHE81_U" role="TZ5H$">
-          <node concept="1dT_AC" id="43l$qHE81_V" role="1dT_Ay">
-            <property role="1dT_AB" value="Progress monitor is passed as a method parameter" />
-          </node>
-        </node>
-        <node concept="x79VA" id="43l$qHE81_W" role="3nqlJM">
-          <property role="x79VB" value="dummy IProgress" />
-        </node>
-      </node>
-    </node>
+    <node concept="2tJIrI" id="3KmtR4eHgRZ" role="jymVt" />
     <node concept="3clFb_" id="3bEKrlZKk50" role="jymVt">
       <property role="1EzhhJ" value="true" />
       <property role="TrG5h" value="reportFeedback" />
@@ -738,23 +717,6 @@
           <node concept="2AHcQZ" id="5Pnc_qQuYW_" role="2AJF6D">
             <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
           </node>
-        </node>
-      </node>
-      <node concept="3clFb_" id="4TqQgK0rdOO" role="jymVt">
-        <property role="TrG5h" value="currentProgress" />
-        <node concept="3uibUv" id="4TqQgK0rdOP" role="3clF45">
-          <ref role="3uigEE" node="6KRD$9FAjI8" resolve="IProgress" />
-        </node>
-        <node concept="3Tm1VV" id="4TqQgK0rdOQ" role="1B3o_S" />
-        <node concept="3clFbS" id="4TqQgK0rdOR" role="3clF47">
-          <node concept="3clFbF" id="7NBK4ktl$$1" role="3cqZAp">
-            <node concept="37vLTw" id="2BHiRxeuVtU" role="3clFbG">
-              <ref role="3cqZAo" node="7NBK4ktl$zS" resolve="pstub" />
-            </node>
-          </node>
-        </node>
-        <node concept="2AHcQZ" id="3tYsUK_sHMR" role="2AJF6D">
-          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
       <node concept="3clFb_" id="3bEKrlZKk5b" role="jymVt">

@@ -18,7 +18,6 @@ import jetbrains.mps.make.facet.ITarget;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.make.script.IProgress;
 
 public class Mockups {
   private static IConfig DefaultConfig = new IConfig() {
@@ -188,8 +187,6 @@ public class Mockups {
   public static void allowing(Mockery context, final IJobMonitor jmon) {
     context.checking(new Expectations() {
       {
-        this.allowing(jmon).currentProgress();
-        this.will(Expectations.returnValue(new IProgress.Stub()));
         this.allowing(jmon).stopRequested();
         this.will(Expectations.returnValue(false));
       }

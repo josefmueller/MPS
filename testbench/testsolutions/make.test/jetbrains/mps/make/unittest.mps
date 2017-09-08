@@ -2356,39 +2356,6 @@
                     <node concept="3Tm1VV" id="4HGj3MeUuPG" role="1B3o_S" />
                     <node concept="3KIgzJ" id="4HGj3MeUuPH" role="jymVt">
                       <node concept="3clFbS" id="4HGj3MeUuPI" role="3KIlGz">
-                        <node concept="3clFbF" id="4HGj3MeUuPJ" role="3cqZAp">
-                          <node concept="2OqwBi" id="4HGj3MeUuPK" role="3clFbG">
-                            <node concept="2OqwBi" id="4HGj3MeUuPL" role="2Oq$k0">
-                              <node concept="Xjq3P" id="4HGj3MeUuPM" role="2Oq$k0" />
-                              <node concept="liA8E" id="4HGj3MeUuPN" role="2OqNvi">
-                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.allowing(java.lang.Object):java.lang.Object" resolve="allowing" />
-                                <node concept="37vLTw" id="2BHiRxgm_sH" role="37wK5m">
-                                  <ref role="3cqZAo" node="4HGj3MeUuQh" resolve="jmon" />
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="liA8E" id="4HGj3MeUuPP" role="2OqNvi">
-                              <ref role="37wK5l" to="i9so:6KRD$9FA$Hd" resolve="currentProgress" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="4HGj3MeUuQm" role="3cqZAp">
-                          <node concept="2OqwBi" id="4HGj3MeUuQo" role="3clFbG">
-                            <node concept="Xjq3P" id="4HGj3MeUuQn" role="2Oq$k0" />
-                            <node concept="liA8E" id="4HGj3MeUuQs" role="2OqNvi">
-                              <ref role="37wK5l" to="mg6i:~AbstractExpectations.will(org.jmock.api.Action):void" resolve="will" />
-                              <node concept="2YIFZM" id="41innpAheUz" role="37wK5m">
-                                <ref role="1Pybhc" to="mg6i:~Expectations" resolve="Expectations" />
-                                <ref role="37wK5l" to="mg6i:~AbstractExpectations.returnValue(java.lang.Object):org.jmock.api.Action" resolve="returnValue" />
-                                <node concept="2ShNRf" id="41innpAheU$" role="37wK5m">
-                                  <node concept="1pGfFk" id="41innpAheU_" role="2ShVmc">
-                                    <ref role="37wK5l" to="i9so:7NBK4ktlwwS" resolve="IProgress.Stub" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
                         <node concept="3clFbF" id="4HGj3MeUuPZ" role="3cqZAp">
                           <node concept="2OqwBi" id="4HGj3MeUuQ0" role="3clFbG">
                             <node concept="2OqwBi" id="4HGj3MeUuQ1" role="2Oq$k0">

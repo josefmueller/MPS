@@ -282,14 +282,19 @@
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -7837,6 +7842,18 @@
         </node>
       </node>
     </node>
+    <node concept="3UR2Jj" id="197H7I2M2R1" role="lGtFl">
+      <node concept="TZ5HI" id="197H7I2M2R2" role="3nqlJM">
+        <node concept="TZ5HA" id="197H7I2M2R3" role="3HnX3l">
+          <node concept="1dT_AC" id="197H7I2M3j0" role="1dT_Ay">
+            <property role="1dT_AB" value="Don't use. Will be removed in the next major update." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="197H7I2M2R4" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+    </node>
   </node>
   <node concept="312cEu" id="6KRD$9FAICw">
     <property role="TrG5h" value="LoggingFeedbackStrategy" />
@@ -7849,7 +7866,7 @@
         <node concept="2OqwBi" id="3AvZeSkP6pd" role="37wK5m">
           <node concept="2OqwBi" id="3AvZeSkP6pe" role="2Oq$k0">
             <node concept="3VsKOn" id="3AvZeSkP6pf" role="2Oq$k0">
-              <ref role="3VsUkX" node="6KRD$9FAdlI" resolve="LoggingProgressStrategy" />
+              <ref role="3VsUkX" node="6KRD$9FAICw" resolve="LoggingFeedbackStrategy" />
             </node>
             <node concept="liA8E" id="3AvZeSkP6pg" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~Class.getPackage():java.lang.Package" resolve="getPackage" />
@@ -9241,6 +9258,18 @@
           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
         </node>
       </node>
+    </node>
+    <node concept="3UR2Jj" id="197H7I2M0pb" role="lGtFl">
+      <node concept="TZ5HI" id="197H7I2M0pc" role="3nqlJM">
+        <node concept="TZ5HA" id="197H7I2M0pd" role="3HnX3l">
+          <node concept="1dT_AC" id="197H7I2M1CX" role="1dT_Ay">
+            <property role="1dT_AB" value="Don't use. Will be removed in the next major update." />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2AHcQZ" id="197H7I2M0pe" role="2AJF6D">
+      <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
     </node>
   </node>
   <node concept="312cEu" id="2WwloHZs6db">

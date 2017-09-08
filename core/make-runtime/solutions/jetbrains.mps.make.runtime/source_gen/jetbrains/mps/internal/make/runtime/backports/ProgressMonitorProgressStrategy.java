@@ -12,6 +12,11 @@ import java.util.LinkedList;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
+/**
+ * 
+ * @deprecated Don't use. Will be removed in the next major update.
+ */
+@Deprecated
 public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
   private static final String TOTAL = "__TOTAL__";
   private static final int MAXWORK = 10000;
@@ -20,6 +25,7 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
   private Deque<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>> monitorWorkStack = DequeSequence.fromDequeNew(new LinkedList<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>>());
   private boolean isInitialized;
   private int done;
+  @Deprecated
   public ProgressMonitorProgressStrategy() {
     super(TOTAL);
     reset(new EmptyProgressMonitor());

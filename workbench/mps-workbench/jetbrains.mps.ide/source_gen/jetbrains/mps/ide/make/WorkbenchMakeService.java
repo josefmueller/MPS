@@ -41,7 +41,6 @@ import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.internal.make.runtime.backports.ProgressMonitorProgressStrategy;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.make.script.IJobMonitor;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -57,7 +56,6 @@ import jetbrains.mps.compiler.JavaCompilerOptionsComponent;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
-import jetbrains.mps.make.script.IProgress;
 
 public class WorkbenchMakeService extends AbstractMakeService implements IMakeService, ApplicationComponent {
   private static Logger LOG = LogManager.getLogger(WorkbenchMakeService.class);
@@ -287,7 +285,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   }
 
   private class Controller extends IScriptController.Stub {
-    private final ProgressMonitorProgressStrategy pmps;
+    private ProgressMonitor progressMonitor;
     private final IScriptController delegateScrCtr;
     private IConfigMonitor delegateConfMon;
     private IConfigMonitor confMon;
@@ -296,7 +294,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     private IPropertiesPool predParamPool;
     public Controller(IScriptController delegate, IMessageHandler mh) {
       this.delegateScrCtr = delegate;
-      this.pmps = new ProgressMonitorProgressStrategy();
       this.mh = mh;
       init();
     }
@@ -349,7 +346,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
     @Override
     public void useMonitor(ProgressMonitor monitor) {
-      pmps.reset(monitor);
+      this.progressMonitor = monitor;
     }
 
     private void init() {
@@ -365,15 +362,11 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         }
         @Override
         public boolean stopRequested() {
-          return pmps.isCanceled();
+          return progressMonitor != null && progressMonitor.isCanceled();
         }
         @Override
         public void reportFeedback(IFeedback fdbk) {
           new MessageFeedbackStrategy(mh).reportFeedback(fdbk);
-        }
-        @Override
-        public IProgress currentProgress() {
-          return pmps.currentProgress();
         }
       };
       this.jobMon = confMon;
