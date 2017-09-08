@@ -92,7 +92,7 @@
       <concept id="8955468859940915190" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestTransformExceptionActionDescriptionTextChild" flags="ng" index="2t$v2c" />
       <concept id="8955468859940915191" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestTransformExceptionActionIconChild" flags="ng" index="2t$v2d" />
       <concept id="8955468859940915153" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestTransformExceptionActionCanExecuteChild" flags="ng" index="2t$v2F" />
-      <concept id="8955468859940959912" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestTransformExceptionWrapSubstituteMenuTargetNodeChild" flags="ng" index="2t$$7i" />
+      <concept id="8955468859940959912" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestTransformExceptionWrapSubstituteMenuChild" flags="ng" index="2t$$7i" />
       <concept id="8955468859940955001" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestTransformExceptionSubmenuChild" flags="ng" index="2t$_g3" />
       <concept id="4091667478583506824" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestSideTransform_NodeToReference" flags="ng" index="2vd79G" />
       <concept id="4091667478583507896" name="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure.TestSideTransform_NodeWithReference" flags="ng" index="2vd7Ts">
@@ -1039,12 +1039,12 @@
     </node>
     <node concept="3mLoSd" id="4TGwyKDygSX" role="LiRBU">
       <node concept="2t$$7i" id="4TGwyKDyjKw" role="3mLUxc">
-        <node concept="LIFWc" id="4TGwyKDykbi" role="lGtFl">
+        <node concept="LIFWc" id="4IXV26e0ptS" role="lGtFl">
           <property role="ZRATv" value="true" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="1" />
           <property role="p6zMs" value="1" />
-          <property role="LIFWd" value="Constant_wt116l_c0" />
+          <property role="LIFWd" value="Constant_hnynkk_c0" />
         </node>
       </node>
     </node>
