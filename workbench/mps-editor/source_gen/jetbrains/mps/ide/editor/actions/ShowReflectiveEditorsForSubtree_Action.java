@@ -6,6 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import java.util.Arrays;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -29,7 +30,7 @@ public class ShowReflectiveEditorsForSubtree_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ReflectiveEditorUtil.requiresShowReflectiveEditor(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
+    return ReflectiveEditorUtil.shouldOfferEditors(true, Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

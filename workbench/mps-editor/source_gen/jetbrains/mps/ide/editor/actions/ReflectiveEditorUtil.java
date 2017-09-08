@@ -5,10 +5,21 @@ package jetbrains.mps.ide.editor.actions;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import java.util.Arrays;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
-public class ReflectiveEditorUtil {
-  public static boolean requiresShowReflectiveEditor(SNode node, EditorComponent editorComponent) {
+/*package*/ class ReflectiveEditorUtil {
+  public static boolean shouldOfferEditor(boolean isReflective, SNode node, EditorComponent editorComponent) {
     String[] hints = editorComponent.getUpdater().getExplicitEditorHintsForNode(node.getReference());
-    return (hints == null ? true : !(Arrays.asList(hints).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor")));
+    return ((hints == null ? false : Arrays.asList(hints).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"))) ^ isReflective;
+  }
+
+  public static boolean shouldOfferEditors(boolean isReflective, List<SNode> nodes, EditorComponent editorComponent) {
+    for (SNode node : SNodeUtil.getDescendants(nodes)) {
+      if (shouldOfferEditor(isReflective, node, editorComponent)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

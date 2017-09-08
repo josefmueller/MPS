@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import java.util.Arrays;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -15,12 +15,14 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.selection.Selection;
 
-public class ShowRegularEditorsForSubtree_Action extends BaseAction {
+public class ShowReflectiveEditorsForSelection_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ShowRegularEditorsForSubtree_Action() {
-    super("Show Regular Editors for Subtree", "", ICON);
+  public ShowReflectiveEditorsForSelection_Action() {
+    super("Show Reflective Editors", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -30,7 +32,7 @@ public class ShowRegularEditorsForSubtree_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ReflectiveEditorUtil.shouldOfferEditors(false, Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
+    return ((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")).size() > 1 && ReflectiveEditorUtil.shouldOfferEditors(true, ((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -42,8 +44,8 @@ public class ShowRegularEditorsForSubtree_Action extends BaseAction {
       return false;
     }
     {
-      SNode p = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", p);
+      List<SNode> p = event.getData(MPSCommonDataKeys.NODES);
+      MapSequence.fromMap(_params).put("selectedNodes", p);
       if (p == null) {
         return false;
       }
@@ -63,11 +65,13 @@ public class ShowRegularEditorsForSubtree_Action extends BaseAction {
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
-    for (SNode descendant : SNodeUtil.getDescendants(((SNode) MapSequence.fromMap(_params).get("node")))) {
-      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().removeExplicitEditorHintsForNode(descendant.getReference(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
+    for (SNode node : SNodeUtil.getDescendants(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")))) {
+      ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getUpdater().addExplicitEditorHintsForNode(node.getReference(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
     }
     ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).rebuildEditorContent();
     editorContext.flushEvents();
-    editorContext.getSelectionManager().setSelection(((SNode) MapSequence.fromMap(_params).get("node")));
+    SelectionManager selectionManager = editorContext.getSelectionManager();
+    Selection selection = selectionManager.createRangeSelection(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")).get(0), ((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")).get(((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")).size() - 1));
+    selectionManager.setSelection(selection);
   }
 }
