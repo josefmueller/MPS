@@ -32,6 +32,10 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
+      <concept id="5219531754069546544" name="jetbrains.mps.lang.test.structure.LogEvent" flags="ng" index="2ng5p9">
+        <property id="5219531754070085220" name="level" index="2nlSSt" />
+        <property id="5219531754070085223" name="message" index="2nlSSu" />
+      </concept>
       <concept id="1228934484974" name="jetbrains.mps.lang.test.structure.PressKeyStatement" flags="nn" index="yd1bK">
         <child id="1228934507814" name="keyStrokes" index="yd6KS" />
       </concept>
@@ -40,6 +44,7 @@
       </concept>
       <concept id="1229187653856" name="jetbrains.mps.lang.test.structure.EditorTestCase" flags="lg" index="LiM7Y">
         <property id="1883175908513350760" name="description" index="3YCmrE" />
+        <child id="5219531754069547112" name="logEvents" index="2ng5wh" />
         <child id="1229187676388" name="nodeToEdit" index="LiRBU" />
         <child id="1229187707859" name="result" index="LiZbd" />
         <child id="1229187755283" name="code" index="LjaKd" />
@@ -347,6 +352,10 @@
   <node concept="LiM7Y" id="6cnCU_HRlYw">
     <property role="TrG5h" value="ContextAssistant_HandlesExceptionsFromIsApplicable" />
     <property role="3YCmrE" value="menu items that throw exception in 'isApplicable' are skipped but the menu is still shown" />
+    <node concept="2ng5p9" id="3qLRTyyslBR" role="2ng5wh">
+      <property role="2nlSSt" value="ERROR" />
+      <property role="2nlSSu" value="Intentional exception - ignore this" />
+    </node>
     <node concept="1N2y4u" id="6cnCU_HRlYy" role="LiRBU">
       <property role="TrG5h" value="sample" />
       <node concept="1N2y5x" id="6cnCU_HRlY_" role="1N2y4b">

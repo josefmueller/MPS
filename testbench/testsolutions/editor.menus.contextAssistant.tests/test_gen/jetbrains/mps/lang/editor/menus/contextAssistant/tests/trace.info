@@ -269,36 +269,42 @@
   </root>
   <root nodeRef="r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.menus.contextAssistant.tests@tests)/7140355682307235744">
     <file name="ContextAssistant_HandlesExceptionsFromIsApplicable_Test.java">
-      <node id="7140355682307235744" at="17,90,18,132" concept="0" />
-      <node id="7140355682307235744" at="18,132,19,156" concept="0" />
-      <node id="7140355682307235744" at="25,51,26,53" concept="0" />
-      <node id="2035798305174378963" at="28,27,29,86" concept="3" />
-      <node id="4212255956136866688" at="31,31,32,107" concept="3" />
-      <node id="4212255956136866696" at="32,107,33,58" concept="0" />
-      <node id="4212255956136866700" at="33,58,34,81" concept="0" />
-      <node id="4212255956136947437" at="34,81,35,81" concept="0" />
-      <node id="7140355682307235744" at="16,0,21,0" concept="2" trace="test_ContextAssistant_HandlesExceptionsFromIsApplicable#()V" />
-      <node id="4212255956136866686" at="31,0,37,0" concept="2" trace="run#()V" />
-      <node id="4212255956136866678" at="29,86,37,13" concept="0" />
-      <node id="4212255956136866676" at="28,0,39,0" concept="2" trace="run#()V" />
-      <node id="1453235961835797982" at="26,53,39,9" concept="0" />
-      <node id="7140355682307235744" at="24,0,41,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="7140355682307235744" at="17,90,19,156" />
-      <scope id="4212255956136866687" at="31,31,35,81">
+      <node id="7140355682307235744" at="19,90,20,132" concept="0" />
+      <node id="7140355682307235744" at="20,132,21,156" concept="0" />
+      <node id="7140355682307235744" at="27,51,28,53" concept="0" />
+      <node id="2035798305174378963" at="30,27,31,86" concept="3" />
+      <node id="4212255956136866688" at="33,31,34,107" concept="3" />
+      <node id="4212255956136866696" at="34,107,35,58" concept="0" />
+      <node id="4212255956136866700" at="35,58,36,81" concept="0" />
+      <node id="4212255956136947437" at="36,81,37,81" concept="0" />
+      <node id="7140355682307235744" at="44,69,45,53" concept="0" />
+      <node id="7140355682307235744" at="43,0,47,0" concept="2" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="7140355682307235744" at="18,0,23,0" concept="2" trace="test_ContextAssistant_HandlesExceptionsFromIsApplicable#()V" />
+      <node id="4212255956136866686" at="33,0,39,0" concept="2" trace="run#()V" />
+      <node id="4212255956136866678" at="31,86,39,13" concept="0" />
+      <node id="4212255956136866676" at="30,0,41,0" concept="2" trace="run#()V" />
+      <node id="1453235961835797982" at="28,53,41,9" concept="0" />
+      <node id="7140355682307235744" at="26,0,43,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7140355682307235744" at="44,69,45,53" />
+      <scope id="7140355682307235744" at="19,90,21,156" />
+      <scope id="4212255956136866687" at="33,31,37,81">
         <var name="contextAssistantManager" id="4212255956136866689" />
       </scope>
-      <scope id="7140355682307235744" at="16,0,21,0" />
-      <scope id="4212255956136866686" at="31,0,37,0" />
-      <scope id="4212255956136866677" at="28,27,37,13">
+      <scope id="7140355682307235744" at="43,0,47,0">
+        <var name="appender" id="7140355682307235744" />
+      </scope>
+      <scope id="7140355682307235744" at="18,0,23,0" />
+      <scope id="4212255956136866686" at="33,0,39,0" />
+      <scope id="4212255956136866677" at="30,27,39,13">
         <var name="editorContext" id="2035798305174378964" />
       </scope>
-      <scope id="4212255956136866676" at="28,0,39,0" />
-      <scope id="7140355682307235744" at="25,51,39,9" />
-      <scope id="7140355682307235744" at="24,0,41,0" />
-      <unit id="4212255956136866686" at="30,75,37,11" name="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test$TestBody$1$1" />
-      <unit id="4212255956136866676" at="27,39,39,7" name="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test$TestBody$1" />
-      <unit id="7140355682307235744" at="22,0,42,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test$TestBody" />
-      <unit id="7140355682307235744" at="14,0,43,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test" />
+      <scope id="4212255956136866676" at="30,0,41,0" />
+      <scope id="7140355682307235744" at="27,51,41,9" />
+      <scope id="7140355682307235744" at="26,0,43,0" />
+      <unit id="4212255956136866686" at="32,75,39,11" name="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test$TestBody$1$1" />
+      <unit id="4212255956136866676" at="29,39,41,7" name="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test$TestBody$1" />
+      <unit id="7140355682307235744" at="24,0,48,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test$TestBody" />
+      <unit id="7140355682307235744" at="16,0,49,0" name="jetbrains.mps.lang.editor.menus.contextAssistant.tests.ContextAssistant_HandlesExceptionsFromIsApplicable_Test" />
     </file>
   </root>
   <root nodeRef="r:5a4d10fc-2567-46c5-982f-547e9102417b(jetbrains.mps.lang.editor.menus.contextAssistant.tests@tests)/8258544429340822272">

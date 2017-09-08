@@ -8,8 +8,6 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser;
 import junit.framework.Assert;
-import jetbrains.mps.testbench.util.CachingAppender;
-import org.apache.log4j.Priority;
 
 @MPSLaunch
 public class TestSubstituteExceptionReferenceVisibleMatchingText_Test extends BaseTransformationTest {
@@ -27,10 +25,6 @@ public class TestSubstituteExceptionReferenceVisibleMatchingText_Test extends Ba
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       NodeSubstituteChooser nodeSubstituteChooser = getEditorComponent().getNodeSubstituteChooser();
       Assert.assertTrue(nodeSubstituteChooser.isVisible() && nodeSubstituteChooser.getNumberOfActions() == 1);
-    }
-    @Override
-    protected void populateExpectedEvents(CachingAppender appender) {
-      appender.expectEvent(Priority.ERROR_INT, null);
     }
   }
 }

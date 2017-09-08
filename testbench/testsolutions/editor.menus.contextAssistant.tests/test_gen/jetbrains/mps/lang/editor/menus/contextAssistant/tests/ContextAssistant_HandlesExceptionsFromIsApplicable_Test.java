@@ -10,6 +10,8 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.openapi.editor.assist.ContextAssistantManager;
 import junit.framework.Assert;
+import jetbrains.mps.testbench.util.CachingAppender;
+import org.apache.log4j.Priority;
 
 @MPSLaunch
 public class ContextAssistant_HandlesExceptionsFromIsApplicable_Test extends BaseTransformationTest {
@@ -37,6 +39,10 @@ public class ContextAssistant_HandlesExceptionsFromIsApplicable_Test extends Bas
           });
         }
       });
+    }
+    @Override
+    protected void populateExpectedEvents(CachingAppender appender) {
+      appender.expectEvent(Priority.ERROR_INT, null);
     }
   }
 }

@@ -3962,10 +3962,6 @@
   <node concept="LiM7Y" id="3c5h9FPxn2l">
     <property role="TrG5h" value="TestSubstituteExceptionReferenceVisibleMatchingText" />
     <property role="3GE5qa" value="exception" />
-    <node concept="2ng5p9" id="3c5h9FPxn2m" role="2ng5wh">
-      <property role="2nlSSt" value="ERROR" />
-      <property role="2nlSSu" value="Intentional Exception - ignore this" />
-    </node>
     <node concept="3mLoSd" id="3c5h9FPxn2n" role="LiRBU">
       <node concept="LIFWc" id="3c5h9FPxAPA" role="lGtFl">
         <property role="ZRATv" value="true" />
