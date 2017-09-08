@@ -7,6 +7,10 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import java.util.Arrays;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.selection.Selection;
 
 /*package*/ class ReflectiveEditorUtil {
   public static boolean shouldOfferEditor(boolean isReflective, SNode node, EditorComponent editorComponent) {
@@ -22,4 +26,55 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
     }
     return false;
   }
+
+  /**
+   * Either code above or code below will be left
+   */
+  public static Iterable<SNode> getExaminedNodes(Iterable<SNode> nodes, boolean isForSubtrees) {
+    if (isForSubtrees) {
+      nodes = SNodeUtil.getDescendants(nodes);
+    }
+    return nodes;
+  }
+
+  public static boolean isApplicable(AnActionEvent event, List<SNode> selectedNodes, EditorComponent editorComponent, boolean isReflective, boolean isForManyNodes, boolean isForSubtrees) {
+
+    if (isForManyNodes != (selectedNodes.size() > 1)) {
+      return false;
+    }
+
+    for (SNode node : ReflectiveEditorUtil.getExaminedNodes(selectedNodes, isForSubtrees)) {
+
+      String[] hints = editorComponent.getUpdater().getExplicitEditorHintsForNode(node.getReference());
+      boolean shouldShow = ((hints == null ? false : Arrays.asList(hints).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"))) ^ isReflective;
+
+      if (shouldShow) {
+        String plurality = (isForManyNodes ? "s" : "");
+        String caption = String.format("Show %s Editor%s%s", (isReflective ? "Reflective" : "Regular"), plurality, (isForSubtrees ? (" for Subtree" + plurality) : ""));
+        event.getPresentation().setText(caption);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public static void execute(AnActionEvent event, List<SNode> selectedNodes, EditorComponent editorComponent, boolean isReflective, boolean isForManyNodes, boolean isForSubtrees) {
+    EditorContext editorContext = editorComponent.getEditorContext();
+
+    for (SNode node : ReflectiveEditorUtil.getExaminedNodes(selectedNodes, isForSubtrees)) {
+      if (isReflective) {
+        editorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
+      } else {
+        editorComponent.getUpdater().removeExplicitEditorHintsForNode(node.getReference(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor");
+      }
+    }
+
+    editorComponent.rebuildEditorContent();
+    editorContext.flushEvents();
+
+    SelectionManager selectionManager = editorContext.getSelectionManager();
+    Selection selection = selectionManager.createRangeSelection(selectedNodes.get(0), selectedNodes.get(selectedNodes.size() - 1));
+    selectionManager.setSelection(selection);
+  }
+
 }

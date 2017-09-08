@@ -6,19 +6,25 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import java.util.Arrays;
+import org.jetbrains.annotations.NotNull;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 
-public class ShowRegularEditorsForSubtree_Action extends BaseAction {
+public class ShowReflectiveRegularEditors_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public ShowRegularEditorsForSubtree_Action() {
-    super("Show Regular Editors for Subtree", "", ICON);
+  private boolean isReflective;
+  private boolean isForManyNodes;
+  private boolean isForSubtrees;
+  public ShowReflectiveRegularEditors_Action(boolean isReflective_par, boolean isForManyNodes_par, boolean isForSubtrees_par) {
+    super("Show %s Editor%s%s", "", ICON);
+    this.isReflective = isReflective_par;
+    this.isForManyNodes = isForManyNodes_par;
+    this.isForSubtrees = isForSubtrees_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -28,7 +34,7 @@ public class ShowRegularEditorsForSubtree_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ReflectiveEditorUtil.isApplicable(event, Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false, false, true);
+    return false;
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -40,8 +46,8 @@ public class ShowRegularEditorsForSubtree_Action extends BaseAction {
       return false;
     }
     {
-      SNode p = event.getData(MPSCommonDataKeys.NODE);
-      MapSequence.fromMap(_params).put("node", p);
+      List<SNode> p = event.getData(MPSCommonDataKeys.NODES);
+      MapSequence.fromMap(_params).put("selectedNodes", p);
       if (p == null) {
         return false;
       }
@@ -60,6 +66,18 @@ public class ShowRegularEditorsForSubtree_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ReflectiveEditorUtil.execute(event, Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false, false, true);
+  }
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
+    res.append("#");
+    res.append(((Object) this.isReflective).toString());
+    res.append("!");
+    res.append(((Object) this.isForManyNodes).toString());
+    res.append("!");
+    res.append(((Object) this.isForSubtrees).toString());
+    res.append("!");
+    return res.toString();
   }
 }
