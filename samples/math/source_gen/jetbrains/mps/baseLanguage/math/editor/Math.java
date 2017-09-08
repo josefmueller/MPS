@@ -20,6 +20,7 @@ import jetbrains.mps.lang.editor.menus.transformation.SubMenuMenuTransformationM
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.SidebarActionItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
@@ -74,8 +75,14 @@ public class Math extends TransformationMenuBase {
     @NotNull
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
+      String description;
+      try {
+        description = "submenu " + getText(context);
+      } catch (Throwable t) {
+        return super.createItem(context);
+      }
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380024275")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380024275")));
       try {
         return super.createItem(context);
       } finally {
@@ -97,8 +104,14 @@ public class Math extends TransformationMenuBase {
       @NotNull
       @Override
       public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
+        String description;
+        try {
+          description = "submenu " + getText(context);
+        } catch (Throwable t) {
+          return super.createItem(context);
+        }
         context.getEditorMenuTrace().pushTraceInfo();
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631379980444")));
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631379980444")));
         try {
           return super.createItem(context);
         } finally {
@@ -114,20 +127,33 @@ public class Math extends TransformationMenuBase {
       private class TMP_Action_pmdw_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_a0a0.Item(context);
+          Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_a0a0.Item item = new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_a0a0.Item(context);
+          String description;
+          try {
+            description = "single item: " + item.getLabelText("");
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+            return null;
+          }
+          context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380020601")));
+            item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+          return item;
         }
 
         private class Item extends ActionItemBase implements SidebarActionItem {
           private final TransformationMenuContext _context;
-          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+          private EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380020601")));
-            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-            context.getEditorMenuTrace().popTraceInfo();
           }
-
+          private void setTraceInfo(EditorMenuTraceInfo info) {
+            myEditorMenuTraceInfo = info;
+          }
           @Nullable
           @Override
           public String getLabelText(String pattern) {
@@ -160,20 +186,33 @@ public class Math extends TransformationMenuBase {
       private class TMP_Action_pmdw_b0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_b0a0.Item(context);
+          Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_b0a0.Item item = new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_b0a0.Item(context);
+          String description;
+          try {
+            description = "single item: " + item.getLabelText("");
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+            return null;
+          }
+          context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380016315")));
+            item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+          return item;
         }
 
         private class Item extends ActionItemBase implements SidebarActionItem {
           private final TransformationMenuContext _context;
-          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+          private EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380016315")));
-            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-            context.getEditorMenuTrace().popTraceInfo();
           }
-
+          private void setTraceInfo(EditorMenuTraceInfo info) {
+            myEditorMenuTraceInfo = info;
+          }
           @Nullable
           @Override
           public String getLabelText(String pattern) {
@@ -206,20 +245,33 @@ public class Math extends TransformationMenuBase {
       private class TMP_Action_pmdw_c0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_c0a0.Item(context);
+          Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_c0a0.Item item = new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_c0a0.Item(context);
+          String description;
+          try {
+            description = "single item: " + item.getLabelText("");
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+            return null;
+          }
+          context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "3425189563111382115")));
+            item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+          return item;
         }
 
         private class Item extends ActionItemBase implements SidebarActionItem {
           private final TransformationMenuContext _context;
-          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+          private EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "3425189563111382115")));
-            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-            context.getEditorMenuTrace().popTraceInfo();
           }
-
+          private void setTraceInfo(EditorMenuTraceInfo info) {
+            myEditorMenuTraceInfo = info;
+          }
           @Nullable
           @Override
           public String getLabelText(String pattern) {
@@ -252,20 +304,33 @@ public class Math extends TransformationMenuBase {
       private class TMP_Action_pmdw_d0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_d0a0.Item(context);
+          Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_d0a0.Item item = new Math.TMP_SubMenu_pmdw_a0.TMP_SubMenu_pmdw_a0a.TMP_Action_pmdw_d0a0.Item(context);
+          String description;
+          try {
+            description = "single item: " + item.getLabelText("");
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+            return null;
+          }
+          context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631379993973")));
+            item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+          return item;
         }
 
         private class Item extends ActionItemBase implements SidebarActionItem {
           private final TransformationMenuContext _context;
-          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+          private EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631379993973")));
-            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-            context.getEditorMenuTrace().popTraceInfo();
           }
-
+          private void setTraceInfo(EditorMenuTraceInfo info) {
+            myEditorMenuTraceInfo = info;
+          }
           @Nullable
           @Override
           public String getLabelText(String pattern) {
@@ -306,8 +371,14 @@ public class Math extends TransformationMenuBase {
     @NotNull
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
+      String description;
+      try {
+        description = "submenu " + getText(context);
+      } catch (Throwable t) {
+        return super.createItem(context);
+      }
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612147907")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612147907")));
       try {
         return super.createItem(context);
       } finally {
@@ -323,20 +394,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_a1a.Item(context);
+        Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_a1a.Item item = new Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_a1a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612430303")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612430303")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -370,20 +454,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_b1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_b1a.Item(context);
+        Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_b1a.Item item = new Math.TMP_SubMenu_pmdw_b0.TMP_Action_pmdw_b1a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380045037")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "1616241631380045037")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -423,8 +520,14 @@ public class Math extends TransformationMenuBase {
     @NotNull
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
+      String description;
+      try {
+        description = "submenu " + getText(context);
+      } catch (Throwable t) {
+        return super.createItem(context);
+      }
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372137")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372137")));
       try {
         return super.createItem(context);
       } finally {
@@ -440,20 +543,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_a2a.Item(context);
+        Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_a2a.Item item = new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_a2a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372182")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372182")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -486,20 +602,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_b2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_b2a.Item(context);
+        Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_b2a.Item item = new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_b2a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372204")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372204")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -532,20 +661,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_c2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_c2a.Item(context);
+        Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_c2a.Item item = new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_c2a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372226")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372226")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -578,20 +720,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_d2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_d2a.Item(context);
+        Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_d2a.Item item = new Math.TMP_SubMenu_pmdw_c0.TMP_Action_pmdw_d2a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372248")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612372248")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -631,8 +786,14 @@ public class Math extends TransformationMenuBase {
     @NotNull
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
+      String description;
+      try {
+        description = "submenu " + getText(context);
+      } catch (Throwable t) {
+        return super.createItem(context);
+      }
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612151954")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612151954")));
       try {
         return super.createItem(context);
       } finally {
@@ -648,20 +809,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_a3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_a3a.Item(context);
+        Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_a3a.Item item = new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_a3a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612157444")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612157444")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -694,20 +868,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_b3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_b3a.Item(context);
+        Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_b3a.Item item = new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_b3a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612160520")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612160520")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -740,20 +927,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_c3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_c3a.Item(context);
+        Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_c3a.Item item = new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_c3a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612167524")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612167524")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -786,20 +986,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_d3a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_d3a.Item(context);
+        Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_d3a.Item item = new Math.TMP_SubMenu_pmdw_d0.TMP_Action_pmdw_d3a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612170682")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612170682")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -839,8 +1052,14 @@ public class Math extends TransformationMenuBase {
     @NotNull
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
+      String description;
+      try {
+        description = "submenu " + getText(context);
+      } catch (Throwable t) {
+        return super.createItem(context);
+      }
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612131436")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612131436")));
       try {
         return super.createItem(context);
       } finally {
@@ -856,20 +1075,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_a4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_a4a.Item(context);
+        Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_a4a.Item item = new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_a4a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612138411")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612138411")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -902,20 +1134,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_b4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_b4a.Item(context);
+        Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_b4a.Item item = new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_b4a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612142131")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612142131")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -948,20 +1193,33 @@ public class Math extends TransformationMenuBase {
     private class TMP_Action_pmdw_c4a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_c4a.Item(context);
+        Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_c4a.Item item = new Math.TMP_SubMenu_pmdw_e0.TMP_Action_pmdw_c4a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612144709")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SidebarActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)", "151184313612144709")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {

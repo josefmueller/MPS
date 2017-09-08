@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.scopes.VisibilityUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
+import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -100,7 +101,25 @@ public class privateStaticAccess_Contribution extends SubstituteMenuBase {
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new privateStaticAccess_Contribution.SMP_Param_53df4d_a.SMP_Action_53df4d_a0.Item(_context);
+        privateStaticAccess_Contribution.SMP_Param_53df4d_a.SMP_Action_53df4d_a0.Item item = new privateStaticAccess_Contribution.SMP_Param_53df4d_a.SMP_Action_53df4d_a0.Item(_context);
+        String description;
+        try {
+          description = "Substitute item: " + item.getMatchingText("");
+          description += ". Parameter object: " + myParameterObject;
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
+          return null;
+        }
+
+        _context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:60ad1897-dab7-4d3f-88a6-223e75141d15(jetbrains.mps.debugger.java.privateMembers.editor)", "1741258697587208547")));
+          item.setTraceInfo(_context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          _context.getEditorMenuTrace().popTraceInfo();
+        }
+
+        return item;
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -108,12 +127,10 @@ public class privateStaticAccess_Contribution extends SubstituteMenuBase {
         public Item(SubstituteMenuContext context) {
           super(MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x3900f3d0fb5b36c9L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          String description = "Substitute item: " + getMatchingText("");
-          description += ". Parameter object: " + myParameterObject;
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:60ad1897-dab7-4d3f-88a6-223e75141d15(jetbrains.mps.debugger.java.privateMembers.editor)", "1741258697587208547")));
-          this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-          _context.getEditorMenuTrace().popTraceInfo();
+        }
+
+        private void setTraceInfo(EditorMenuTraceInfo traceInfo) {
+          myTraceInfo = traceInfo;
         }
 
         @Nullable

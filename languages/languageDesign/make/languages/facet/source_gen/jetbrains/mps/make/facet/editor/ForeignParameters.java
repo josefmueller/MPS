@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
+import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -105,7 +106,25 @@ public class ForeignParameters extends SubstituteMenuBase {
       @Nullable
       @Override
       protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new ForeignParameters.SMP_Param_gb3jz3_a.SMP_Action_gb3jz3_a0.Item(_context);
+        ForeignParameters.SMP_Param_gb3jz3_a.SMP_Action_gb3jz3_a0.Item item = new ForeignParameters.SMP_Param_gb3jz3_a.SMP_Action_gb3jz3_a0.Item(_context);
+        String description;
+        try {
+          description = "Substitute item: " + item.getMatchingText("");
+          description += ". Parameter object: " + myParameterObject;
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
+          return null;
+        }
+
+        _context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108743")));
+          item.setTraceInfo(_context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          _context.getEditorMenuTrace().popTraceInfo();
+        }
+
+        return item;
       }
       private class Item extends DefaultSubstituteMenuItem {
         private final SubstituteMenuContext _context;
@@ -113,12 +132,10 @@ public class ForeignParameters extends SubstituteMenuBase {
         public Item(SubstituteMenuContext context) {
           super(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x2e69d2eba535f3b1L, "jetbrains.mps.make.facet.structure.ForeignParametersComponentExpression"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          String description = "Substitute item: " + getMatchingText("");
-          description += ". Parameter object: " + myParameterObject;
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108743")));
-          this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-          _context.getEditorMenuTrace().popTraceInfo();
+        }
+
+        private void setTraceInfo(EditorMenuTraceInfo traceInfo) {
+          myTraceInfo = traceInfo;
         }
 
         @Nullable

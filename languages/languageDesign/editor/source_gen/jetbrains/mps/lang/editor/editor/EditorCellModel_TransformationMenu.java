@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -83,20 +84,33 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
   private class TMP_Action_puymhi_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_a0.Item(context);
+      EditorCellModel_TransformationMenu.TMP_Action_puymhi_a0.Item item = new EditorCellModel_TransformationMenu.TMP_Action_puymhi_a0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1223622924323726247")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "1223622924323726247")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {
@@ -126,20 +140,33 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
   private class TMP_Action_puymhi_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_b0.Item(context);
+      EditorCellModel_TransformationMenu.TMP_Action_puymhi_b0.Item item = new EditorCellModel_TransformationMenu.TMP_Action_puymhi_b0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "7271390537055717916")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "7271390537055717916")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {
@@ -239,20 +266,33 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new EditorCellModel_TransformationMenu.TMP_Param_puymhi_c0.TMP_Action_puymhi_a2a.Item(context);
+        EditorCellModel_TransformationMenu.TMP_Param_puymhi_c0.TMP_Action_puymhi_a2a.Item item = new EditorCellModel_TransformationMenu.TMP_Param_puymhi_c0.TMP_Action_puymhi_a2a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "8887077936726871218")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "8887077936726871218")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -278,20 +318,33 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
   private class TMP_Action_puymhi_d0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_d0.Item(context);
+      EditorCellModel_TransformationMenu.TMP_Action_puymhi_d0.Item item = new EditorCellModel_TransformationMenu.TMP_Action_puymhi_d0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "381764939115702720")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "381764939115702720")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {
@@ -402,20 +455,33 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new EditorCellModel_TransformationMenu.TMP_Param_puymhi_e0.TMP_Action_puymhi_a4a.Item(context);
+        EditorCellModel_TransformationMenu.TMP_Param_puymhi_e0.TMP_Action_puymhi_a4a.Item item = new EditorCellModel_TransformationMenu.TMP_Param_puymhi_e0.TMP_Action_puymhi_a4a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "381764939119272788")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "381764939119272788")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -457,20 +523,33 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
   private class TMP_Action_puymhi_f0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_f0.Item(context);
+      EditorCellModel_TransformationMenu.TMP_Action_puymhi_f0.Item item = new EditorCellModel_TransformationMenu.TMP_Action_puymhi_f0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "381764939113857521")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "381764939113857521")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {
@@ -552,20 +631,33 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
   private class TMP_Action_puymhi_g0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_g0.Item(context);
+      EditorCellModel_TransformationMenu.TMP_Action_puymhi_g0.Item item = new EditorCellModel_TransformationMenu.TMP_Action_puymhi_g0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "4808044577947948313")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "4808044577947948313")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {
@@ -607,20 +699,33 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
   private class TMP_Action_puymhi_h0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new EditorCellModel_TransformationMenu.TMP_Action_puymhi_h0.Item(context);
+      EditorCellModel_TransformationMenu.TMP_Action_puymhi_h0.Item item = new EditorCellModel_TransformationMenu.TMP_Action_puymhi_h0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "7157083426840567914")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)", "7157083426840567914")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {

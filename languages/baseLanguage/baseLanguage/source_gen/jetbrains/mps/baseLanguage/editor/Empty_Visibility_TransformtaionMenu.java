@@ -97,7 +97,7 @@ public class Empty_Visibility_TransformtaionMenu extends TransformationMenuBase 
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "IVisible")), new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "8093911371405833323")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "8093911371405833323")));
       try {
         return super.createItems(context);
       } finally {

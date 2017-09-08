@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
+import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -106,7 +107,25 @@ public class LocalParameters extends SubstituteMenuBase {
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new LocalParameters.SMP_Group_59frgq_a.SMP_Param_59frgq_a0.SMP_Action_59frgq_a0a.Item(_context);
+          LocalParameters.SMP_Group_59frgq_a.SMP_Param_59frgq_a0.SMP_Action_59frgq_a0a.Item item = new LocalParameters.SMP_Group_59frgq_a.SMP_Param_59frgq_a0.SMP_Action_59frgq_a0a.Item(_context);
+          String description;
+          try {
+            description = "Substitute item: " + item.getMatchingText("");
+            description += ". Parameter object: " + myParameterObject;
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
+            return null;
+          }
+
+          _context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587109120")));
+            item.setTraceInfo(_context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            _context.getEditorMenuTrace().popTraceInfo();
+          }
+
+          return item;
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
@@ -114,12 +133,10 @@ public class LocalParameters extends SubstituteMenuBase {
           public Item(SubstituteMenuContext context) {
             super(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x6598ce4d2f231cb3L, "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            String description = "Substitute item: " + getMatchingText("");
-            description += ". Parameter object: " + myParameterObject;
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587109120")));
-            this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-            _context.getEditorMenuTrace().popTraceInfo();
+          }
+
+          private void setTraceInfo(EditorMenuTraceInfo traceInfo) {
+            myTraceInfo = traceInfo;
           }
 
           @Nullable

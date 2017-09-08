@@ -16,6 +16,7 @@ import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -71,7 +72,24 @@ public class ConstantStringAppendPart_SubstituteMenu extends SubstituteMenuBase 
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new ConstantStringAppendPart_SubstituteMenu.SMP_Action_q0hc0b_a.Item(_context);
+      ConstantStringAppendPart_SubstituteMenu.SMP_Action_q0hc0b_a.Item item = new ConstantStringAppendPart_SubstituteMenu.SMP_Action_q0hc0b_a.Item(_context);
+      String description;
+      try {
+        description = "Substitute item: " + item.getMatchingText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
+        return null;
+      }
+
+      _context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)", "1741258697587170051")));
+        item.setTraceInfo(_context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        _context.getEditorMenuTrace().popTraceInfo();
+      }
+
+      return item;
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -79,11 +97,10 @@ public class ConstantStringAppendPart_SubstituteMenu extends SubstituteMenuBase 
       public Item(SubstituteMenuContext context) {
         super(MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x12015288286L, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        String description = "Substitute item: " + getMatchingText("");
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)", "1741258697587170051")));
-        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-        _context.getEditorMenuTrace().popTraceInfo();
+      }
+
+      private void setTraceInfo(EditorMenuTraceInfo traceInfo) {
+        myTraceInfo = traceInfo;
       }
 
       @Nullable

@@ -21,6 +21,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
@@ -95,20 +96,33 @@ public class MenuTraceTransformationChild_TransformationMenu extends Transformat
   private class TMP_Action_mhpf25_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new MenuTraceTransformationChild_TransformationMenu.TMP_Action_mhpf25_a0.Item(context);
+      MenuTraceTransformationChild_TransformationMenu.TMP_Action_mhpf25_a0.Item item = new MenuTraceTransformationChild_TransformationMenu.TMP_Action_mhpf25_a0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806074065")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806074065")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {
@@ -153,20 +167,33 @@ public class MenuTraceTransformationChild_TransformationMenu extends Transformat
     private class TMP_Action_mhpf25_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new MenuTraceTransformationChild_TransformationMenu.TMP_Group_mhpf25_b0.TMP_Action_mhpf25_a1a.Item(context);
+        MenuTraceTransformationChild_TransformationMenu.TMP_Group_mhpf25_b0.TMP_Action_mhpf25_a1a.Item item = new MenuTraceTransformationChild_TransformationMenu.TMP_Group_mhpf25_b0.TMP_Action_mhpf25_a1a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806548267")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806548267")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -259,20 +286,33 @@ public class MenuTraceTransformationChild_TransformationMenu extends Transformat
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new MenuTraceTransformationChild_TransformationMenu.TMP_Param_mhpf25_e0.TMP_Action_mhpf25_a4a.Item(context);
+        MenuTraceTransformationChild_TransformationMenu.TMP_Param_mhpf25_e0.TMP_Action_mhpf25_a4a.Item item = new MenuTraceTransformationChild_TransformationMenu.TMP_Param_mhpf25_e0.TMP_Action_mhpf25_a4a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806566158")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806566158")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -303,8 +343,14 @@ public class MenuTraceTransformationChild_TransformationMenu extends Transformat
     @NotNull
     @Override
     public TransformationMenuItem createItem(@NotNull TransformationMenuContext context) {
+      String description;
+      try {
+        description = "submenu " + getText(context);
+      } catch (Throwable t) {
+        return super.createItem(context);
+      }
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("submenu " + getText(context), new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806578771")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806578771")));
       try {
         return super.createItem(context);
       } finally {
@@ -320,20 +366,33 @@ public class MenuTraceTransformationChild_TransformationMenu extends Transformat
     private class TMP_Action_mhpf25_a5a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new MenuTraceTransformationChild_TransformationMenu.TMP_SubMenu_mhpf25_f0.TMP_Action_mhpf25_a5a.Item(context);
+        MenuTraceTransformationChild_TransformationMenu.TMP_SubMenu_mhpf25_f0.TMP_Action_mhpf25_a5a.Item item = new MenuTraceTransformationChild_TransformationMenu.TMP_SubMenu_mhpf25_f0.TMP_Action_mhpf25_a5a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806581006")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:12055fd0-2d7f-4ac3-93ec-28bb09579a63(jetbrains.mps.lang.editor.editorTest.editor)", "1384684774806581006")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {

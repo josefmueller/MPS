@@ -25,6 +25,7 @@ import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
+import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -132,7 +133,25 @@ public class SubstituteMembersInsideOfClassifier_Contribution extends Substitute
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new SubstituteMembersInsideOfClassifier_Contribution.SMP_Group_c574em_a.SMP_Param_c574em_a0.SMP_Action_c574em_a0a.Item(_context);
+          SubstituteMembersInsideOfClassifier_Contribution.SMP_Group_c574em_a.SMP_Param_c574em_a0.SMP_Action_c574em_a0a.Item item = new SubstituteMembersInsideOfClassifier_Contribution.SMP_Group_c574em_a.SMP_Param_c574em_a0.SMP_Action_c574em_a0a.Item(_context);
+          String description;
+          try {
+            description = "Substitute item: " + item.getMatchingText("");
+            description += ". Parameter object: " + myParameterObject;
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
+            return null;
+          }
+
+          _context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590370(jetbrains.mps.baseLanguage.classifiers.editor)", "1741258697587053701")));
+            item.setTraceInfo(_context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            _context.getEditorMenuTrace().popTraceInfo();
+          }
+
+          return item;
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
@@ -140,12 +159,10 @@ public class SubstituteMembersInsideOfClassifier_Contribution extends Substitute
           public Item(SubstituteMenuContext context) {
             super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            String description = "Substitute item: " + getMatchingText("");
-            description += ". Parameter object: " + myParameterObject;
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590370(jetbrains.mps.baseLanguage.classifiers.editor)", "1741258697587053701")));
-            this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-            _context.getEditorMenuTrace().popTraceInfo();
+          }
+
+          private void setTraceInfo(EditorMenuTraceInfo traceInfo) {
+            myTraceInfo = traceInfo;
           }
 
           @Nullable

@@ -62,7 +62,7 @@ public class TextCommentLinePart_ApplySideTransforms extends TransformationMenuB
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "TextCommentLinePart")), new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "1741258697587190282")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu", new SNodePointer("r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)", "1741258697587190282")));
       try {
         return super.createItems(context);
       } finally {

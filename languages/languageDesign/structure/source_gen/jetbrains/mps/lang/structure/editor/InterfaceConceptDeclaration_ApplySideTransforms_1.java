@@ -62,7 +62,7 @@ public class InterfaceConceptDeclaration_ApplySideTransforms_1 extends Transform
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "InterfaceConceptDeclaration")), new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "1741258697587240721")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu", new SNodePointer("r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)", "1741258697587240721")));
       try {
         return super.createItems(context);
       } finally {

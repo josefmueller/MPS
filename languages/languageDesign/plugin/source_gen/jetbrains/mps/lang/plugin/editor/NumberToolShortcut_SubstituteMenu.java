@@ -16,6 +16,7 @@ import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -64,7 +65,24 @@ public class NumberToolShortcut_SubstituteMenu extends SubstituteMenuBase {
     @Nullable
     @Override
     protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-      return new NumberToolShortcut_SubstituteMenu.SMP_Action_33swfs_b.Item(_context);
+      NumberToolShortcut_SubstituteMenu.SMP_Action_33swfs_b.Item item = new NumberToolShortcut_SubstituteMenu.SMP_Action_33swfs_b.Item(_context);
+      String description;
+      try {
+        description = "Substitute item: " + item.getMatchingText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
+        return null;
+      }
+
+      _context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)", "471625927508555327")));
+        item.setTraceInfo(_context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        _context.getEditorMenuTrace().popTraceInfo();
+      }
+
+      return item;
     }
     private class Item extends DefaultSubstituteMenuItem {
       private final SubstituteMenuContext _context;
@@ -72,11 +90,10 @@ public class NumberToolShortcut_SubstituteMenu extends SubstituteMenuBase {
       public Item(SubstituteMenuContext context) {
         super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, "jetbrains.mps.lang.plugin.structure.NumberToolShortcut"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        String description = "Substitute item: " + getMatchingText("");
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590363(jetbrains.mps.lang.plugin.editor)", "471625927508555327")));
-        this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-        _context.getEditorMenuTrace().popTraceInfo();
+      }
+
+      private void setTraceInfo(EditorMenuTraceInfo traceInfo) {
+        myTraceInfo = traceInfo;
       }
 
       @Nullable
@@ -98,7 +115,7 @@ public class NumberToolShortcut_SubstituteMenu extends SubstituteMenuBase {
         return canExecute_internal(pattern, true);
       }
       public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
-        return REGEXP_33swfs_a0a0a9c5.matcher(pattern).matches();
+        return REGEXP_33swfs_a0a0a11c5.matcher(pattern).matches();
       }
       @Nullable
       @Override
@@ -113,5 +130,5 @@ public class NumberToolShortcut_SubstituteMenu extends SubstituteMenuBase {
     n1.setProperty(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L, 0x68b8d4843b76123L, "number"), p0 + "");
     return n1;
   }
-  private static Pattern REGEXP_33swfs_a0a0a9c5 = Pattern.compile("\\d", 0);
+  private static Pattern REGEXP_33swfs_a0a0a11c5 = Pattern.compile("\\d", 0);
 }

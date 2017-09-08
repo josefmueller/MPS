@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
+import org.apache.log4j.Logger;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
@@ -135,20 +136,33 @@ public class FacetReferenceExpression_TransformationMenu extends TransformationM
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new FacetReferenceExpression_TransformationMenu.TMP_Group_bw4iz1_a1.TMP_Param_bw4iz1_a0b.TMP_Action_bw4iz1_a0a1.Item(context);
+          FacetReferenceExpression_TransformationMenu.TMP_Group_bw4iz1_a1.TMP_Param_bw4iz1_a0b.TMP_Action_bw4iz1_a0a1.Item item = new FacetReferenceExpression_TransformationMenu.TMP_Group_bw4iz1_a1.TMP_Param_bw4iz1_a0b.TMP_Action_bw4iz1_a0a1.Item(context);
+          String description;
+          try {
+            description = "single item: " + item.getLabelText("");
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+            return null;
+          }
+          context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108354")));
+            item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+          return item;
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
           private final TransformationMenuContext _context;
-          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+          private EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108354")));
-            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-            context.getEditorMenuTrace().popTraceInfo();
           }
-
+          private void setTraceInfo(EditorMenuTraceInfo info) {
+            myEditorMenuTraceInfo = info;
+          }
           @Nullable
           @Override
           public String getLabelText(String pattern) {

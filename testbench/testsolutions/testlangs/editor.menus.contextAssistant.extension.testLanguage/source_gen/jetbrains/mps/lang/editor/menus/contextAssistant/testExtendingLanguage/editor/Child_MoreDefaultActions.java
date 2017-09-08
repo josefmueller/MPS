@@ -59,20 +59,33 @@ public class Child_MoreDefaultActions extends TransformationMenuBase {
   private class TMP_Action_ch35tm_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Child_MoreDefaultActions.TMP_Action_ch35tm_a0.Item(context);
+      Child_MoreDefaultActions.TMP_Action_ch35tm_a0.Item item = new Child_MoreDefaultActions.TMP_Action_ch35tm_a0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:1ed8add9-1a05-4a2d-a8ee-1a24e378c5f6(jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor)", "5624877018229166275")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:1ed8add9-1a05-4a2d-a8ee-1a24e378c5f6(jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.editor)", "5624877018229166275")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {

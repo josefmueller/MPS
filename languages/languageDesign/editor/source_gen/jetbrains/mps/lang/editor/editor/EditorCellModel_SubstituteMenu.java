@@ -92,8 +92,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -152,8 +152,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -215,8 +215,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -275,8 +275,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -338,8 +338,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -398,8 +398,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -461,8 +461,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -521,8 +521,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -581,8 +581,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -641,8 +641,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -704,8 +704,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -764,8 +764,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -827,8 +827,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -885,8 +885,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -943,8 +943,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -1001,8 +1001,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -1060,8 +1060,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -1131,8 +1131,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -1202,8 +1202,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -1312,8 +1312,8 @@ public class EditorCellModel_SubstituteMenu extends SubstituteMenuBase {
         try {
           description = "Substitute item: " + item.getMatchingText("");
           description += ". Parameter object: " + myParameterObject;
-        } catch (Throwable e) {
-          Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
           return null;
         }
 

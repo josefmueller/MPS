@@ -74,7 +74,7 @@ public class Direction_TransformationMenu extends TransformationMenuBase {
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "Direction")), new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "1741258697587173106")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu", new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "1741258697587173106")));
       try {
         return super.createItems(context);
       } finally {

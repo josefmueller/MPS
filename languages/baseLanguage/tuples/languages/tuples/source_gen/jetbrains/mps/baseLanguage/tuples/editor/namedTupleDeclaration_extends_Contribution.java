@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
+import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -115,7 +116,25 @@ public class namedTupleDeclaration_extends_Contribution extends SubstituteMenuBa
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new namedTupleDeclaration_extends_Contribution.SMP_Group_evf1f9_a.SMP_Param_evf1f9_a0.SMP_Action_evf1f9_a0a.Item(_context);
+          namedTupleDeclaration_extends_Contribution.SMP_Group_evf1f9_a.SMP_Param_evf1f9_a0.SMP_Action_evf1f9_a0a.Item item = new namedTupleDeclaration_extends_Contribution.SMP_Group_evf1f9_a.SMP_Param_evf1f9_a0.SMP_Action_evf1f9_a0a.Item(_context);
+          String description;
+          try {
+            description = "Substitute item: " + item.getMatchingText("");
+            description += ". Parameter object: " + myParameterObject;
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
+            return null;
+          }
+
+          _context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:a841fea4-52c0-4064-96f2-7687a509aba5(jetbrains.mps.baseLanguage.tuples.editor)", "1741258697587121023")));
+            item.setTraceInfo(_context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            _context.getEditorMenuTrace().popTraceInfo();
+          }
+
+          return item;
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
@@ -123,12 +142,10 @@ public class namedTupleDeclaration_extends_Contribution extends SubstituteMenuBa
           public Item(SubstituteMenuContext context) {
             super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            String description = "Substitute item: " + getMatchingText("");
-            description += ". Parameter object: " + myParameterObject;
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:a841fea4-52c0-4064-96f2-7687a509aba5(jetbrains.mps.baseLanguage.tuples.editor)", "1741258697587121023")));
-            this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-            _context.getEditorMenuTrace().popTraceInfo();
+          }
+
+          private void setTraceInfo(EditorMenuTraceInfo traceInfo) {
+            myTraceInfo = traceInfo;
           }
 
           @Nullable

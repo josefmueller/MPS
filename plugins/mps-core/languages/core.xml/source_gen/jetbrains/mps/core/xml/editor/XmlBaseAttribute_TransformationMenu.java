@@ -38,6 +38,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
+import org.apache.log4j.Logger;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
@@ -175,20 +176,33 @@ public class XmlBaseAttribute_TransformationMenu extends TransformationMenuBase 
     private class TMP_Action_xjbv2x_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_b1.TMP_Action_xjbv2x_a1b.Item(context);
+        XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_b1.TMP_Action_xjbv2x_a1b.Item item = new XmlBaseAttribute_TransformationMenu.TMP_Group_xjbv2x_b1.TMP_Action_xjbv2x_a1b.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587213819")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:2f32078d-2a84-4fef-b050-97e346d25159(jetbrains.mps.core.xml.editor)", "1741258697587213819")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {

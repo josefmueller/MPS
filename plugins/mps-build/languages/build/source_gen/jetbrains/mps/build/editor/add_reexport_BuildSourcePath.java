@@ -79,7 +79,7 @@ public class add_reexport_BuildSourcePath extends TransformationMenuBase {
       @Override
       public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
         context.getEditorMenuTrace().pushTraceInfo();
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "BuildSourcePath")), new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "1741258697587200891")));
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu", new SNodePointer("r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)", "1741258697587200891")));
         try {
           return super.createItems(context);
         } finally {

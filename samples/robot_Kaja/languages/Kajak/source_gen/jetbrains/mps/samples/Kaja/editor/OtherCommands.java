@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -61,20 +62,33 @@ public class OtherCommands extends TransformationMenuBase {
   private class TMP_Action_uewb7w_a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new OtherCommands.TMP_Action_uewb7w_a0.Item(context);
+      OtherCommands.TMP_Action_uewb7w_a0.Item item = new OtherCommands.TMP_Action_uewb7w_a0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319932727")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319932727")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {
@@ -99,20 +113,33 @@ public class OtherCommands extends TransformationMenuBase {
   private class TMP_Action_uewb7w_b0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new OtherCommands.TMP_Action_uewb7w_b0.Item(context);
+      OtherCommands.TMP_Action_uewb7w_b0.Item item = new OtherCommands.TMP_Action_uewb7w_b0.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319933263")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319933263")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {
@@ -158,20 +185,33 @@ public class OtherCommands extends TransformationMenuBase {
     private class TMP_Action_uewb7w_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new OtherCommands.TMP_Group_uewb7w_c0.TMP_Action_uewb7w_a2a.Item(context);
+        OtherCommands.TMP_Group_uewb7w_c0.TMP_Action_uewb7w_a2a.Item item = new OtherCommands.TMP_Group_uewb7w_c0.TMP_Action_uewb7w_a2a.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319933836")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)", "542153281319933836")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {

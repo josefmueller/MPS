@@ -76,8 +76,8 @@ public class EditorCellId_SubstituteMenu extends SubstituteMenuBase {
         String description;
         try {
           description = "Substitute item: " + item.getMatchingText("");
-        } catch (Throwable e) {
-          Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
           return null;
         }
 

@@ -79,7 +79,7 @@ public class csharp_rTransform extends TransformationMenuBase {
       @Override
       public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
         context.getEditorMenuTrace().pushTraceInfo();
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "ClassifierType")), new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944340")));
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu", new SNodePointer("r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)", "1741258697586944340")));
         try {
           return super.createItems(context);
         } finally {

@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
+import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -136,7 +137,25 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
           @Nullable
           @Override
           protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-            return new BaseConcept_SubstituteMenu.SMP_Group_s3h0kg_a.SMP_Group_s3h0kg_a0.SMP_Param_s3h0kg_a0a.SMP_Action_s3h0kg_a0a0.Item(_context);
+            BaseConcept_SubstituteMenu.SMP_Group_s3h0kg_a.SMP_Group_s3h0kg_a0.SMP_Param_s3h0kg_a0a.SMP_Action_s3h0kg_a0a0.Item item = new BaseConcept_SubstituteMenu.SMP_Group_s3h0kg_a.SMP_Group_s3h0kg_a0.SMP_Param_s3h0kg_a0a.SMP_Action_s3h0kg_a0a0.Item(_context);
+            String description;
+            try {
+              description = "Substitute item: " + item.getMatchingText("");
+              description += ". Parameter object: " + myParameterObject;
+            } catch (Throwable t) {
+              Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
+              return null;
+            }
+
+            _context.getEditorMenuTrace().pushTraceInfo();
+            try {
+              _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "7656359757586274300")));
+              item.setTraceInfo(_context.getEditorMenuTrace().getTraceInfo());
+            } finally {
+              _context.getEditorMenuTrace().popTraceInfo();
+            }
+
+            return item;
           }
           private class Item extends DefaultSubstituteMenuItem {
             private final SubstituteMenuContext _context;
@@ -144,12 +163,10 @@ public class BaseConcept_SubstituteMenu extends SubstituteMenuBase {
             public Item(SubstituteMenuContext context) {
               super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
               _context = context;
-              _context.getEditorMenuTrace().pushTraceInfo();
-              String description = "Substitute item: " + getMatchingText("");
-              description += ". Parameter object: " + myParameterObject;
-              _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "7656359757586274300")));
-              this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-              _context.getEditorMenuTrace().popTraceInfo();
+            }
+
+            private void setTraceInfo(EditorMenuTraceInfo traceInfo) {
+              myTraceInfo = traceInfo;
             }
 
             @Nullable

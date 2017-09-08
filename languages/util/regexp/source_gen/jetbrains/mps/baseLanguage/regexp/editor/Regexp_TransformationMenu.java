@@ -25,6 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
@@ -129,20 +130,33 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
     private class TMP_Action_luzgqn_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Action_luzgqn_a0b.Item(context);
+        Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Action_luzgqn_a0b.Item item = new Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Action_luzgqn_a0b.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056345")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056345")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -189,20 +203,33 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
     private class TMP_Action_luzgqn_b0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Action_luzgqn_b0b.Item(context);
+        Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Action_luzgqn_b0b.Item item = new Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Action_luzgqn_b0b.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056434")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056434")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -249,20 +276,33 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
     private class TMP_Action_luzgqn_c0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Action_luzgqn_c0b.Item(context);
+        Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Action_luzgqn_c0b.Item item = new Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Action_luzgqn_c0b.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056532")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056532")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -357,20 +397,33 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
         }
         @Nullable
         protected TransformationMenuItem createItem(TransformationMenuContext context) {
-          return new Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Param_luzgqn_d0b.TMP_Action_luzgqn_a3a1.Item(context);
+          Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Param_luzgqn_d0b.TMP_Action_luzgqn_a3a1.Item item = new Regexp_TransformationMenu.TMP_Group_luzgqn_a1.TMP_Param_luzgqn_d0b.TMP_Action_luzgqn_a3a1.Item(context);
+          String description;
+          try {
+            description = "single item: " + item.getLabelText("");
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+            return null;
+          }
+          context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056695")));
+            item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            context.getEditorMenuTrace().popTraceInfo();
+          }
+          return item;
         }
 
         private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
           private final TransformationMenuContext _context;
-          private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+          private EditorMenuTraceInfo myEditorMenuTraceInfo;
           private Item(TransformationMenuContext context) {
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056695")));
-            myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-            context.getEditorMenuTrace().popTraceInfo();
           }
-
+          private void setTraceInfo(EditorMenuTraceInfo info) {
+            myEditorMenuTraceInfo = info;
+          }
           @Nullable
           @Override
           public String getLabelText(String pattern) {
@@ -440,20 +493,33 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
   private class TMP_Action_luzgqn_c1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Nullable
     protected TransformationMenuItem createItem(TransformationMenuContext context) {
-      return new Regexp_TransformationMenu.TMP_Action_luzgqn_c1.Item(context);
+      Regexp_TransformationMenu.TMP_Action_luzgqn_c1.Item item = new Regexp_TransformationMenu.TMP_Action_luzgqn_c1.Item(context);
+      String description;
+      try {
+        description = "single item: " + item.getLabelText("");
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+        return null;
+      }
+      context.getEditorMenuTrace().pushTraceInfo();
+      try {
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056768")));
+        item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+      } finally {
+        context.getEditorMenuTrace().popTraceInfo();
+      }
+      return item;
     }
 
     private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
       private final TransformationMenuContext _context;
-      private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+      private EditorMenuTraceInfo myEditorMenuTraceInfo;
       private Item(TransformationMenuContext context) {
         _context = context;
-        _context.getEditorMenuTrace().pushTraceInfo();
-        _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056768")));
-        myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-        context.getEditorMenuTrace().popTraceInfo();
       }
-
+      private void setTraceInfo(EditorMenuTraceInfo info) {
+        myEditorMenuTraceInfo = info;
+      }
       @Nullable
       @Override
       public String getLabelText(String pattern) {
@@ -525,20 +591,33 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Regexp_TransformationMenu.TMP_Param_luzgqn_d1.TMP_Action_luzgqn_a3b.Item(context);
+        Regexp_TransformationMenu.TMP_Param_luzgqn_d1.TMP_Action_luzgqn_a3b.Item item = new Regexp_TransformationMenu.TMP_Param_luzgqn_d1.TMP_Action_luzgqn_a3b.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056851")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056851")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -599,20 +678,33 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Regexp_TransformationMenu.TMP_Param_luzgqn_e1.TMP_Action_luzgqn_a4b.Item(context);
+        Regexp_TransformationMenu.TMP_Param_luzgqn_e1.TMP_Action_luzgqn_a4b.Item item = new Regexp_TransformationMenu.TMP_Param_luzgqn_e1.TMP_Action_luzgqn_a4b.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056937")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587056937")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -682,20 +774,33 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Regexp_TransformationMenu.TMP_Param_luzgqn_f1.TMP_Action_luzgqn_a5b.Item(context);
+        Regexp_TransformationMenu.TMP_Param_luzgqn_f1.TMP_Action_luzgqn_a5b.Item item = new Regexp_TransformationMenu.TMP_Param_luzgqn_f1.TMP_Action_luzgqn_a5b.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587057020")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587057020")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {
@@ -765,20 +870,33 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
       }
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new Regexp_TransformationMenu.TMP_Param_luzgqn_g1.TMP_Action_luzgqn_a6b.Item(context);
+        Regexp_TransformationMenu.TMP_Param_luzgqn_g1.TMP_Action_luzgqn_a6b.Item item = new Regexp_TransformationMenu.TMP_Param_luzgqn_g1.TMP_Action_luzgqn_a6b.Item(context);
+        String description;
+        try {
+          description = "single item: " + item.getLabelText("");
+        } catch (Throwable t) {
+          Logger.getLogger(getClass()).error("Exception while executing getText of the item " + item, t);
+          return null;
+        }
+        context.getEditorMenuTrace().pushTraceInfo();
+        try {
+          context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587057102")));
+          item.setTraceInfo(context.getEditorMenuTrace().getTraceInfo());
+        } finally {
+          context.getEditorMenuTrace().popTraceInfo();
+        }
+        return item;
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
         private final TransformationMenuContext _context;
-        private final EditorMenuTraceInfo myEditorMenuTraceInfo;
+        private EditorMenuTraceInfo myEditorMenuTraceInfo;
         private Item(TransformationMenuContext context) {
           _context = context;
-          _context.getEditorMenuTrace().pushTraceInfo();
-          _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("single item: " + getLabelText(""), new SNodePointer("r:00000000-0000-4000-0000-011c89590516(jetbrains.mps.baseLanguage.regexp.editor)", "1741258697587057102")));
-          myEditorMenuTraceInfo = _context.getEditorMenuTrace().getTraceInfo();
-          context.getEditorMenuTrace().popTraceInfo();
         }
-
+        private void setTraceInfo(EditorMenuTraceInfo info) {
+          myEditorMenuTraceInfo = info;
+        }
         @Nullable
         @Override
         public String getLabelText(String pattern) {

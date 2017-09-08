@@ -97,7 +97,7 @@ public class FacetReference_TransformationMenu extends TransformationMenuBase {
       @Override
       public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
         context.getEditorMenuTrace().pushTraceInfo();
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "FacetReference")), new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108256")));
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu", new SNodePointer("r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)", "1741258697587108256")));
         try {
           return super.createItems(context);
         } finally {

@@ -82,7 +82,7 @@ public class NoWaitTransforms_Contribution extends TransformationMenuBase {
       @Override
       public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
         context.getEditorMenuTrace().pushTraceInfo();
-        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "Expression")), new SNodePointer("r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)", "1741258697587186508")));
+        context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu", new SNodePointer("r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)", "1741258697587186508")));
         try {
           return super.createItems(context);
         } finally {

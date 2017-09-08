@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
+import org.apache.log4j.Logger;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.EditorMenuTraceInfo;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -103,7 +104,25 @@ public class ReportFeedbackStatement_subs extends SubstituteMenuBase {
         @Nullable
         @Override
         protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-          return new ReportFeedbackStatement_subs.SMP_Group_hskkdq_a.SMP_Param_hskkdq_a0.SMP_Action_hskkdq_a0a.Item(_context);
+          ReportFeedbackStatement_subs.SMP_Group_hskkdq_a.SMP_Param_hskkdq_a0.SMP_Action_hskkdq_a0a.Item item = new ReportFeedbackStatement_subs.SMP_Group_hskkdq_a.SMP_Param_hskkdq_a0.SMP_Action_hskkdq_a0a.Item(_context);
+          String description;
+          try {
+            description = "Substitute item: " + item.getMatchingText("");
+            description += ". Parameter object: " + myParameterObject;
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
+            return null;
+          }
+
+          _context.getEditorMenuTrace().pushTraceInfo();
+          try {
+            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)", "1741258697587105293")));
+            item.setTraceInfo(_context.getEditorMenuTrace().getTraceInfo());
+          } finally {
+            _context.getEditorMenuTrace().popTraceInfo();
+          }
+
+          return item;
         }
         private class Item extends DefaultSubstituteMenuItem {
           private final SubstituteMenuContext _context;
@@ -111,12 +130,10 @@ public class ReportFeedbackStatement_subs extends SubstituteMenuBase {
           public Item(SubstituteMenuContext context) {
             super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x32eac1b57fc1b828L, "jetbrains.mps.make.script.structure.ReportFeedbackStatement"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
             _context = context;
-            _context.getEditorMenuTrace().pushTraceInfo();
-            String description = "Substitute item: " + getMatchingText("");
-            description += ". Parameter object: " + myParameterObject;
-            _context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase(description, new SNodePointer("r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)", "1741258697587105293")));
-            this.myTraceInfo = context.getEditorMenuTrace().getTraceInfo();
-            _context.getEditorMenuTrace().popTraceInfo();
+          }
+
+          private void setTraceInfo(EditorMenuTraceInfo traceInfo) {
+            myTraceInfo = traceInfo;
           }
 
           @Nullable

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.IncludeSubstituteMenuSubstituteMenuPart;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -62,6 +61,7 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
 
 
   public class SMP_Include_1rdeze_a extends IncludeSubstituteMenuSubstituteMenuPart {
+
     @NotNull
     @Override
     public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
@@ -73,15 +73,11 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
         context.getEditorMenuTrace().popTraceInfo();
       }
     }
-    private SAbstractConcept getConcept(SubstituteMenuContext _context) {
-      return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector");
-    }
-
     @Nullable
     @Override
     protected SubstituteMenuLookup getMenuLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
-      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getConcept(_context), "jetbrains.mps.lang.editor.editor.CellIdReferenceSelector_SmartReference");
+      return new NamedSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector"), "jetbrains.mps.lang.editor.editor.CellIdReferenceSelector_SmartReference");
     }
   }
   private class SMP_Action_1rdeze_b extends SingleItemSubstituteMenuPart {
@@ -93,8 +89,8 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -213,8 +209,8 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
           try {
             description = "Substitute item: " + item.getMatchingText("");
             description += ". Parameter object: " + myParameterObject;
-          } catch (Throwable e) {
-            Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+          } catch (Throwable t) {
+            Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
             return null;
           }
 
@@ -281,8 +277,8 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 
@@ -353,8 +349,8 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
       String description;
       try {
         description = "Substitute item: " + item.getMatchingText("");
-      } catch (Throwable e) {
-        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, e);
+      } catch (Throwable t) {
+        Logger.getLogger(getClass()).error("Exception while executing getMatchingText() of the item " + item, t);
         return null;
       }
 

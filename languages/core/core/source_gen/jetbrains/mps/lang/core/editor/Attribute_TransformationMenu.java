@@ -55,7 +55,7 @@ public class Attribute_TransformationMenu extends TransformationMenuBase {
     @Override
     public List<TransformationMenuItem> createItems(@NotNull TransformationMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu for " + ((getNode(context) == null ? getNode(context).getConcept().getName() : "Attribute")), new SNodePointer("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "6101231232312592479")));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include default transformation menu", new SNodePointer("r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)", "6101231232312592479")));
       try {
         return super.createItems(context);
       } finally {
