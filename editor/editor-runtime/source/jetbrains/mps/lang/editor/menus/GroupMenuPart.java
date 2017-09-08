@@ -30,11 +30,11 @@ public abstract class GroupMenuPart<ItemT, ContextT> implements MenuPart<ItemT, 
       if (!isApplicable(context)) {
         return Collections.emptyList();
       }
-      return new CompositeMenuPart<>(getParts()).createItems(context);
-    } catch (RuntimeException e) {
-      Logger.getLogger(getClass()).warn("Exception creating items of group " + this, e);
+    } catch (Throwable t) {
+      Logger.getLogger(getClass()).error("Exception while executing code of the group " + this, t);
       return Collections.emptyList();
     }
+    return new CompositeMenuPart<>(getParts()).createItems(context);
   }
 
   protected void initialize(ContextT context) {

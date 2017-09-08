@@ -20,6 +20,8 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
@@ -27,6 +29,9 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInfo {
+  private static final Logger LOG = LogManager.getLogger(NodeSubstituteInfoFilterDecorator.class);
+
+
   private final SRepository myRepository;
   private SubstituteInfo mySubstituteInfo;
   private final SubstituteInfoCache mySubstituteInfoCache;
@@ -59,8 +64,12 @@ public abstract class NodeSubstituteInfoFilterDecorator implements SubstituteInf
     return new ModelAccessHelper(myRepository.getModelAccess()).runReadAction((Computable<List<SubstituteAction>>) () -> {
       ArrayList<SubstituteAction> result = new ArrayList<>(actions.size());
       for (SubstituteAction item : actions) {
-        if (shouldAddItem(item, predicate, strict, pattern)) {
-          result.add(item);
+        try {
+          if (shouldAddItem(item, predicate, strict, pattern)) {
+            result.add(item);
+          }
+        } catch (Throwable th) {
+          LOG.error("Exception on executing code of the action: " + (item == null ? "null" : item.getClass()), th);
         }
       }
       return result;

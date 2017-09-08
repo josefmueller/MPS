@@ -18,6 +18,7 @@ package jetbrains.mps.lang.editor.menus.transformation;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -34,15 +35,28 @@ public class IncludeSubstituteMenuTransformationMenuPart implements Transformati
   @NotNull
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    SNode currentChild = getCurrentChild(context);
-    SNode parent = getParentNode(context);
-    SContainmentLink containmentLink = getContainmentLink(context);
-    SAbstractConcept targetConcept = getTargetConcept(context);
-    if (parent != null && containmentLink != null) {
-      SubstituteMenuLookup substituteMenuLookup = getSubstituteMenuLookup(context);
-      return new SubstituteItemsCollector(parent, currentChild, containmentLink, targetConcept, context.getEditorContext(), substituteMenuLookup, context.getEditorMenuTrace()).collect();
+    SNode currentChild;
+    SNode parent;
+    SContainmentLink containmentLink;
+    SAbstractConcept targetConcept;
+    SubstituteMenuLookup substituteMenuLookup;
+    try {
+      currentChild = getCurrentChild(context);
+      parent = getParentNode(context);
+      containmentLink = getContainmentLink(context);
+      targetConcept = getTargetConcept(context);
+      if (parent != null && containmentLink != null) {
+        substituteMenuLookup = getSubstituteMenuLookup(context);
+      } else {
+        return Collections.emptyList();
+      }
+    } catch (Throwable t) {
+      Logger.getLogger(getClass()).error("Exception while executing code of the include substitute menu part " + this, t);
+      return Collections.emptyList();
     }
-    return Collections.emptyList();
+    return new SubstituteItemsCollector(parent, currentChild, containmentLink, targetConcept, context.getEditorContext(), substituteMenuLookup,
+                                        context.getEditorMenuTrace()).collect();
+
   }
 
   protected SAbstractConcept getTargetConcept(TransformationMenuContext context) {

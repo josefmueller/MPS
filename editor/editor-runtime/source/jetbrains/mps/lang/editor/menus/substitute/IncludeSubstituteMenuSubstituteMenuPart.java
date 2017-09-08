@@ -18,9 +18,11 @@ package jetbrains.mps.lang.editor.menus.substitute;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -31,7 +33,14 @@ public class IncludeSubstituteMenuSubstituteMenuPart implements SubstituteMenuPa
   @NotNull
   @Override
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
-    return context.createItems(getMenuLookup(context));
+    SubstituteMenuLookup menuLookup;
+    try {
+      menuLookup = getMenuLookup(context);
+    } catch (Throwable t) {
+      Logger.getLogger(getClass()).error("Exception while executing code of the include substitute menu part " + this, t);
+      return Collections.emptyList();
+    }
+    return context.createItems(menuLookup);
   }
 
 

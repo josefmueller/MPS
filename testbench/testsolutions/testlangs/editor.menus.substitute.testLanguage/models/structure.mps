@@ -648,5 +648,227 @@
       <ref role="20lvS9" node="40hlyoZWOsc" resolve="TestSubstitituteChildOfWrapper" />
     </node>
   </node>
+  <node concept="1TIwiD" id="6d5vlMPwfdh">
+    <property role="EcuMT" value="7153261420283491153" />
+    <property role="TrG5h" value="TestSubstituteExceptionParent" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6d5vlMPwfdj" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283491155" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="actionCanSubstitute" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwfdi" resolve="TestSubstituteExceptionActionCanSubstituteChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHil" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614357" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="actionDescriptionText" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwplU" resolve="TestSubstituteExceptionActionDescriptionTextChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHio" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614360" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="actionIcon" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwqxy" resolve="TestSubstituteExceptionActionIconChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHis" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614364" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="actionMatchingText" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwnE4" resolve="TestSubstituteExceptionActionMatchingTextChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHiF" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614379" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="actionType" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwsds" resolve="TestSubstituteExceptionActionTypeChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHjz" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614435" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="conceptList" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwy8P" resolve="TestSubstituteExceptionConceptListChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHjE" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614442" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="group" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwv83" resolve="TestSubstituteExceptionGroupChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHjM" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614450" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="includeMenu" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwAvu" resolve="TestSubstituteExceptionIncludeMenuChild" />
+    </node>
+    <node concept="1TJgyj" id="2yVdJHO5WM6" role="1TKVEi">
+      <property role="IQ2ns" value="2935000035774418054" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="wrapMenu" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="2yVdJHM8ypZ" resolve="TestSubstituteExceptionWrapMenuChild" />
+    </node>
+    <node concept="1TJgyj" id="4LXLsLUyktL" role="1TKVEi">
+      <property role="IQ2ns" value="5511779000991172465" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="subconcepts" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="4LXLsLUyjOx" resolve="TestSubstituteExceptionSubconceptsChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHjV" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614459" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterized" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwCeT" resolve="TestSubstituteExceptionParameterizedChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHk5" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614469" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="referenceDescriptionText" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwG3i" resolve="TestSubstituteExceptionReferenceDescriptionTextChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHkg" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614480" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="referenceMatchingText" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwDub" resolve="TestSubstituteExceptionReferenceMatchingTextChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHks" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614492" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="referenceVisibleMatchingText" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="6d5vlMPwFjH" resolve="TestSubstituteExceptionReferenceVisibleMatchingTextChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwfdi">
+    <property role="EcuMT" value="7153261420283491154" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestSubstituteExceptionActionCanSubstituteChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwnE4">
+    <property role="EcuMT" value="7153261420283525764" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestSubstituteExceptionActionMatchingTextChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwplU">
+    <property role="EcuMT" value="7153261420283532666" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestSubstituteExceptionActionDescriptionTextChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwqxy">
+    <property role="EcuMT" value="7153261420283537506" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestSubstituteExceptionActionIconChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwsds">
+    <property role="EcuMT" value="7153261420283544412" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestSubstituteExceptionActionTypeChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwv83">
+    <property role="EcuMT" value="7153261420283556355" />
+    <property role="TrG5h" value="TestSubstituteExceptionGroupChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwy8P">
+    <property role="EcuMT" value="7153261420283568693" />
+    <property role="TrG5h" value="TestSubstituteExceptionConceptListChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwAvu">
+    <property role="EcuMT" value="7153261420283586526" />
+    <property role="TrG5h" value="TestSubstituteExceptionIncludeMenuChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwCeT">
+    <property role="EcuMT" value="7153261420283593657" />
+    <property role="TrG5h" value="TestSubstituteExceptionParameterizedChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwDub">
+    <property role="EcuMT" value="7153261420283598731" />
+    <property role="TrG5h" value="TestSubstituteExceptionReferenceMatchingTextChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6d5vlMPwE$E" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283603242" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="reference" />
+      <ref role="20lvS9" node="7Nx4mSUDWtv" resolve="TestSubstituteParentToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwFjH">
+    <property role="EcuMT" value="7153261420283606253" />
+    <property role="TrG5h" value="TestSubstituteExceptionReferenceVisibleMatchingTextChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6d5vlMPwFjI" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283606254" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="reference" />
+      <ref role="20lvS9" node="7Nx4mSUDWtv" resolve="TestSubstituteParentToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwG3i">
+    <property role="EcuMT" value="7153261420283609298" />
+    <property role="TrG5h" value="TestSubstituteExceptionReferenceDescriptionTextChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6d5vlMPwG3j" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283609299" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="reference" />
+      <ref role="20lvS9" node="7Nx4mSUDWtv" resolve="TestSubstituteParentToReference" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2yVdJHM8ypZ">
+    <property role="EcuMT" value="2935000035741542015" />
+    <property role="TrG5h" value="TestSubstituteExceptionWrapMenuChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="4LXLsLUyjOx">
+    <property role="EcuMT" value="5511779000991169825" />
+    <property role="TrG5h" value="TestSubstituteExceptionSubconceptsChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="4LXLsLUyB4y">
+    <property role="EcuMT" value="5511779000991248674" />
+    <property role="TrG5h" value="TestSubstituteExceptionSubconceptsSubChild" />
+    <property role="R5$K7" value="false" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" node="4LXLsLUyjOx" resolve="TestSubstituteExceptionSubconceptsChild" />
+  </node>
 </model>
 

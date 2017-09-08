@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus;
 
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,7 +27,13 @@ public class ParameterizedMenuPart<ParamT, ItemT, ContextT> implements MenuPart<
   @NotNull
   @Override
   public List<ItemT> createItems(ContextT context) {
-    Iterable<? extends ParamT> parameters = getParameters(context);
+    Iterable<? extends ParamT> parameters;
+    try {
+      parameters = getParameters(context);
+    } catch (Throwable t) {
+      Logger.getLogger(getClass()).error("Exception while executing getParameters() of the parameterized menu part " + this, t);
+      return Collections.emptyList();
+    }
     if (parameters == null) {
       return Collections.emptyList();
     }

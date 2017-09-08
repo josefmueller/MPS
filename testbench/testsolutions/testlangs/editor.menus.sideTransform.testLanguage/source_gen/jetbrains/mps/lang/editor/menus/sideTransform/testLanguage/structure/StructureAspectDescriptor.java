@@ -16,6 +16,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestSideTransform_NodeWithReference = createDescriptorForTestSideTransform_NodeWithReference();
   /*package*/ final ConceptDescriptor myConceptTestSideTransform_Root = createDescriptorForTestSideTransform_Root();
   /*package*/ final ConceptDescriptor myConceptTestSideTransform_SimpleNode = createDescriptorForTestSideTransform_SimpleNode();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionActionCanExecuteChild = createDescriptorForTestTransformExceptionActionCanExecuteChild();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionActionDescriptionTextChild = createDescriptorForTestTransformExceptionActionDescriptionTextChild();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionActionGroupChild = createDescriptorForTestTransformExceptionActionGroupChild();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionActionIconChild = createDescriptorForTestTransformExceptionActionIconChild();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionActionTextChild = createDescriptorForTestTransformExceptionActionTextChild();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionIncludeMenuChild = createDescriptorForTestTransformExceptionIncludeMenuChild();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionParameterizedChild = createDescriptorForTestTransformExceptionParameterizedChild();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionParent = createDescriptorForTestTransformExceptionParent();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionSubmenuChild = createDescriptorForTestTransformExceptionSubmenuChild();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionWrapSubstituteMenuTargetNodeChild = createDescriptorForTestTransformExceptionWrapSubstituteMenuTargetNodeChild();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -24,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptTestSideTransform_NodeToReference, myConceptTestSideTransform_NodeWithReference, myConceptTestSideTransform_Root, myConceptTestSideTransform_SimpleNode);
+    return Arrays.asList(myConceptTestSideTransform_NodeToReference, myConceptTestSideTransform_NodeWithReference, myConceptTestSideTransform_Root, myConceptTestSideTransform_SimpleNode, myConceptTestTransformExceptionActionCanExecuteChild, myConceptTestTransformExceptionActionDescriptionTextChild, myConceptTestTransformExceptionActionGroupChild, myConceptTestTransformExceptionActionIconChild, myConceptTestTransformExceptionActionTextChild, myConceptTestTransformExceptionIncludeMenuChild, myConceptTestTransformExceptionParameterizedChild, myConceptTestTransformExceptionParent, myConceptTestTransformExceptionSubmenuChild, myConceptTestTransformExceptionWrapSubstituteMenuTargetNodeChild);
   }
 
   @Override
@@ -39,6 +49,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTestSideTransform_Root;
       case LanguageConceptSwitch.TestSideTransform_SimpleNode:
         return myConceptTestSideTransform_SimpleNode;
+      case LanguageConceptSwitch.TestTransformExceptionActionCanExecuteChild:
+        return myConceptTestTransformExceptionActionCanExecuteChild;
+      case LanguageConceptSwitch.TestTransformExceptionActionDescriptionTextChild:
+        return myConceptTestTransformExceptionActionDescriptionTextChild;
+      case LanguageConceptSwitch.TestTransformExceptionActionGroupChild:
+        return myConceptTestTransformExceptionActionGroupChild;
+      case LanguageConceptSwitch.TestTransformExceptionActionIconChild:
+        return myConceptTestTransformExceptionActionIconChild;
+      case LanguageConceptSwitch.TestTransformExceptionActionTextChild:
+        return myConceptTestTransformExceptionActionTextChild;
+      case LanguageConceptSwitch.TestTransformExceptionIncludeMenuChild:
+        return myConceptTestTransformExceptionIncludeMenuChild;
+      case LanguageConceptSwitch.TestTransformExceptionParameterizedChild:
+        return myConceptTestTransformExceptionParameterizedChild;
+      case LanguageConceptSwitch.TestTransformExceptionParent:
+        return myConceptTestTransformExceptionParent;
+      case LanguageConceptSwitch.TestTransformExceptionSubmenuChild:
+        return myConceptTestTransformExceptionSubmenuChild;
+      case LanguageConceptSwitch.TestTransformExceptionWrapSubstituteMenuTargetNodeChild:
+        return myConceptTestTransformExceptionWrapSubstituteMenuTargetNodeChild;
       default:
         return null;
     }
@@ -77,6 +107,75 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/6199005252790639399");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionActionCanExecuteChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionActionCanExecuteChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7d1L);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940915153");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionActionDescriptionTextChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionActionDescriptionTextChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7f6L);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940915190");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionActionGroupChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionActionGroupChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7faL);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940915194");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionActionIconChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionActionIconChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7f7L);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940915191");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionActionTextChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionActionTextChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7f8L);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940915192");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionIncludeMenuChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionIncludeMenuChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7fbL);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940915195");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionParameterizedChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionParameterizedChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7fdL);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940915197");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionParent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionParent", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x63457d5cb580f351L);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/7153261420283491153");
+    b.aggregate("actionCanSubstitute", 0x63457d5cb580f353L).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7d1L).optional(true).ordered(true).multiple(false).origin("7153261420283491155").done();
+    b.aggregate("actionDescriptionText", 0x63457d5cb582d495L).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7f6L).optional(true).ordered(true).multiple(false).origin("7153261420283614357").done();
+    b.aggregate("actionIcon", 0x63457d5cb582d498L).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7f7L).optional(true).ordered(true).multiple(false).origin("7153261420283614360").done();
+    b.aggregate("actionText", 0x63457d5cb582d49cL).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7f8L).optional(true).ordered(true).multiple(false).origin("7153261420283614364").done();
+    b.aggregate("group", 0x63457d5cb582d4eaL).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7faL).optional(true).ordered(true).multiple(false).origin("7153261420283614442").done();
+    b.aggregate("includeMenu", 0x63457d5cb582d4f2L).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7fbL).optional(true).ordered(true).multiple(false).origin("7153261420283614450").done();
+    b.aggregate("parameterized", 0x63457d5cb582d4fbL).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1d9c7fdL).optional(true).ordered(true).multiple(false).origin("7153261420283614459").done();
+    b.aggregate("submenu", 0x63457d5cb582d505L).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1da6379L).optional(true).ordered(true).multiple(false).origin("7153261420283614469").done();
+    b.aggregate("wrap", 0x63457d5cb582d510L).target(0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1da76a8L).optional(true).ordered(true).multiple(false).origin("7153261420283614480").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionSubmenuChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionSubmenuChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1da6379L);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940955001");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionWrapSubstituteMenuTargetNodeChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionWrapSubstituteMenuTargetNodeChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1da76a8L);
+    b.class_(false, false, false);
+    b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940959912");
     return b.create();
   }
 }

@@ -13,6 +13,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestSideTransform_NodeWithReference;
   private ConceptPresentation props_TestSideTransform_Root;
   private ConceptPresentation props_TestSideTransform_SimpleNode;
+  private ConceptPresentation props_TestTransformExceptionActionCanExecuteChild;
+  private ConceptPresentation props_TestTransformExceptionActionDescriptionTextChild;
+  private ConceptPresentation props_TestTransformExceptionActionGroupChild;
+  private ConceptPresentation props_TestTransformExceptionActionIconChild;
+  private ConceptPresentation props_TestTransformExceptionActionTextChild;
+  private ConceptPresentation props_TestTransformExceptionIncludeMenuChild;
+  private ConceptPresentation props_TestTransformExceptionParameterizedChild;
+  private ConceptPresentation props_TestTransformExceptionParent;
+  private ConceptPresentation props_TestTransformExceptionSubmenuChild;
+  private ConceptPresentation props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild;
 
   @Override
   @Nullable
@@ -47,6 +57,76 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestSideTransform_SimpleNode = cpb.create();
         }
         return props_TestSideTransform_SimpleNode;
+      case LanguageConceptSwitch.TestTransformExceptionActionCanExecuteChild:
+        if (props_TestTransformExceptionActionCanExecuteChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionActionCanExecuteChild");
+          props_TestTransformExceptionActionCanExecuteChild = cpb.create();
+        }
+        return props_TestTransformExceptionActionCanExecuteChild;
+      case LanguageConceptSwitch.TestTransformExceptionActionDescriptionTextChild:
+        if (props_TestTransformExceptionActionDescriptionTextChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionActionDescriptionTextChild");
+          props_TestTransformExceptionActionDescriptionTextChild = cpb.create();
+        }
+        return props_TestTransformExceptionActionDescriptionTextChild;
+      case LanguageConceptSwitch.TestTransformExceptionActionGroupChild:
+        if (props_TestTransformExceptionActionGroupChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionActionGroupChild");
+          props_TestTransformExceptionActionGroupChild = cpb.create();
+        }
+        return props_TestTransformExceptionActionGroupChild;
+      case LanguageConceptSwitch.TestTransformExceptionActionIconChild:
+        if (props_TestTransformExceptionActionIconChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionActionIconChild");
+          props_TestTransformExceptionActionIconChild = cpb.create();
+        }
+        return props_TestTransformExceptionActionIconChild;
+      case LanguageConceptSwitch.TestTransformExceptionActionTextChild:
+        if (props_TestTransformExceptionActionTextChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionActionTextChild");
+          props_TestTransformExceptionActionTextChild = cpb.create();
+        }
+        return props_TestTransformExceptionActionTextChild;
+      case LanguageConceptSwitch.TestTransformExceptionIncludeMenuChild:
+        if (props_TestTransformExceptionIncludeMenuChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionIncludeMenuChild");
+          props_TestTransformExceptionIncludeMenuChild = cpb.create();
+        }
+        return props_TestTransformExceptionIncludeMenuChild;
+      case LanguageConceptSwitch.TestTransformExceptionParameterizedChild:
+        if (props_TestTransformExceptionParameterizedChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionParameterizedChild");
+          props_TestTransformExceptionParameterizedChild = cpb.create();
+        }
+        return props_TestTransformExceptionParameterizedChild;
+      case LanguageConceptSwitch.TestTransformExceptionParent:
+        if (props_TestTransformExceptionParent == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionParent");
+          props_TestTransformExceptionParent = cpb.create();
+        }
+        return props_TestTransformExceptionParent;
+      case LanguageConceptSwitch.TestTransformExceptionSubmenuChild:
+        if (props_TestTransformExceptionSubmenuChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionSubmenuChild");
+          props_TestTransformExceptionSubmenuChild = cpb.create();
+        }
+        return props_TestTransformExceptionSubmenuChild;
+      case LanguageConceptSwitch.TestTransformExceptionWrapSubstituteMenuTargetNodeChild:
+        if (props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("TestTransformExceptionWrapSubstituteMenuTargetNodeChild");
+          props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild = cpb.create();
+        }
+        return props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild;
     }
     return null;
   }

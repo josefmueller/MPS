@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.menus;
 
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -31,12 +32,20 @@ public abstract class ConceptMenusPart<ItemT, ContextT> implements MenuPart<Item
   @Override
   public List<ItemT> createItems(ContextT context) {
     List<ItemT> result = new ArrayList<>();
-    for (SAbstractConcept concept : getConcepts(context)) {
+    Collection<SAbstractConcept> concepts;
+    try {
+      concepts = getConcepts(context);
+    } catch (Throwable t) {
+      Logger.getLogger(getClass()).error("Exception while executing code of the concepts menu part " + this, t);
+      return result;
+    }
+    for (SAbstractConcept concept : concepts) {
       result.addAll(createItemsForConcept(context, concept));
     }
     return result;
   }
 
   protected abstract Collection<ItemT> createItemsForConcept(ContextT context, SAbstractConcept concept);
+
   protected abstract Collection<SAbstractConcept> getConcepts(ContextT context);
 }

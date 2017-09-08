@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import jetbrains.mps.openapi.editor.menus.transformation.SubMenu;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -30,7 +30,13 @@ public abstract class SubMenuMenuTransformationMenuPart extends SingleItemMenuPa
   @Override
   protected TransformationMenuItem createItem(TransformationMenuContext context) {
     final List<TransformationMenuItem> items = new jetbrains.mps.lang.editor.menus.CompositeMenuPart<>(getParts()).createItems(context);
-    String text = getText(context);
+    String text;
+    try {
+      text = getText(context);
+    } catch (Throwable t){
+      Logger.getLogger(getClass()).error("Exception while executing getText() " + this, t);
+      text = "Exception was thrown";
+    }
     return new SubMenu(text, items, context.getEditorMenuTrace().getTraceInfo());
   }
 

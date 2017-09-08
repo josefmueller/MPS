@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
@@ -23,11 +22,12 @@ import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuLookup;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
 import java.util.List;
 
 public abstract class IncludeTransformationMenuTransformationMenuPart implements TransformationMenuPart {
@@ -35,11 +35,23 @@ public abstract class IncludeTransformationMenuTransformationMenuPart implements
   @NotNull
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    SNodeLocation newNodeLocation = toNodeLocation(getNode(context), context.getEditorContext(), context.getNode(), context.getNodeLocation());
-    String newMenuLocation = getLocation(context);
+    SNode node;
+    String newMenuLocation;
+    TransformationMenuLookup menuLookup;
+
+    try {
+      node = getNode(context);
+      newMenuLocation = getLocation(context);
+      menuLookup = getMenuLookup(context);
+    } catch (Throwable t) {
+      Logger.getLogger(getClass()).error("Exception while executing code of the include transformation menu part " + this, t);
+      return Collections.emptyList();
+    }
+
+    SNodeLocation newNodeLocation = toNodeLocation(node, context.getEditorContext(), context.getNode(), context.getNodeLocation());
     TransformationMenuContext newContext = context.with(newNodeLocation, newMenuLocation);
 
-    return newContext.createItems(getMenuLookup(context));
+    return newContext.createItems(menuLookup);
   }
 
   @NotNull

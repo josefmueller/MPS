@@ -13,6 +13,182 @@
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionCanSubstitute_Test" file="TestSubstituteExceptionActionCanSubstitute_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionDescriptionText_Test" file="TestSubstituteExceptionActionDescriptionText_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionIcon_Test" file="TestSubstituteExceptionActionIcon_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionMatchingText_Test" file="TestSubstituteExceptionActionMatchingText_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionType_Test" file="TestSubstituteExceptionActionType_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionConceptList_Test" file="TestSubstituteExceptionConceptList_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionGroup_Test" file="TestSubstituteExceptionGroup_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionIncludeMenu_Test" file="TestSubstituteExceptionIncludeMenu_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionParameterized_Test" file="TestSubstituteExceptionParameterized_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionReferenceDescriptionText_Test" file="TestSubstituteExceptionReferenceDescriptionText_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionReferenceMatchingText_Test" file="TestSubstituteExceptionReferenceMatchingText_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionReferenceVisibleMatchingText_Test" file="TestSubstituteExceptionReferenceVisibleMatchingText_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionSubconceptsMenu_Test" file="TestSubstituteExceptionSubconceptsMenu_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionWrapMenu_Test" file="TestSubstituteExceptionWrapMenu_Test.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteChooser" />
+    <classNode dependClassName="jetbrains.mps.testbench.util.CachingAppender" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.apache.log4j.Priority" />
+    <classNode dependClassName="org.junit.Test" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_AddConcept_Test" file="TestSubstitute_AddConcept_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />

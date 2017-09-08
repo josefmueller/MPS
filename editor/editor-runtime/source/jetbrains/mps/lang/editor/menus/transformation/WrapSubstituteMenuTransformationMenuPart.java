@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
-import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -35,8 +36,15 @@ public abstract class WrapSubstituteMenuTransformationMenuPart implements Transf
   @NotNull
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    final SNode targetNode = getTargetNode(context);
-    SubstituteMenuLookup substituteMenuLookup = getSubstituteMenuLookup(context);
+    final SNode targetNode;
+    SubstituteMenuLookup substituteMenuLookup;
+    try {
+      targetNode = getTargetNode(context);
+      substituteMenuLookup = getSubstituteMenuLookup(context);
+    } catch (Throwable t) {
+      Logger.getLogger(getClass()).error("Exception while executing code of the wrap substitute menu part " + this, t);
+      return Collections.emptyList();
+    }
     return new SubstituteItemsCollector(targetNode, null, null, null, context.getEditorContext(), substituteMenuLookup, context.getEditorMenuTrace()) {
       @Override
       protected TransformationMenuItem convert(SubstituteMenuItem item, SubstituteMenuContext substituteMenuContext) {

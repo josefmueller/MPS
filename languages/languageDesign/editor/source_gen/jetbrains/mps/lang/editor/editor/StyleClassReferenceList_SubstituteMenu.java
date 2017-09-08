@@ -92,7 +92,10 @@ public class StyleClassReferenceList_SubstituteMenu extends SubstituteMenuBase {
     @Override
     protected SubstituteMenuLookup getLookup(SubstituteMenuContext _context) {
       final EditorContext editorContext = _context.getEditorContext();
-      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, "jetbrains.mps.lang.editor.structure.StyleClassReference"));
+      return new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), getConcept(_context));
+    }
+    private SAbstractConcept getConcept(SubstituteMenuContext _context) {
+      return MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a130c0dL, "jetbrains.mps.lang.editor.structure.StyleClassReference");
     }
   }
   private static SNode createStyleClassReferenceList_cyyevv_a0a0a(Object p0) {

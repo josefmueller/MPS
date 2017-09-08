@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
-import jetbrains.mps.lang.editor.menus.EditorMenuDescriptorBase;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,7 +34,13 @@ public abstract class WrapperSubstituteMenuPart implements SubstituteMenuPart {
   @NotNull
   @Override
   public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
-    SubstituteMenuLookup lookup = getLookup(context);
+    SubstituteMenuLookup lookup;
+    try {
+      lookup = getLookup(context);
+    } catch (Throwable t) {
+      Logger.getLogger(getClass()).error("Exception while executing code of the wrap substitute menu part " + this, t);
+      return Collections.emptyList();
+    }
     List<SubstituteMenuItem> itemsToWrap = context.withLink(null).createItems(lookup);
     return itemsToWrap.stream().map(item -> wrapItem(item, context)).collect(Collectors.toList());
   }

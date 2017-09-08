@@ -30,6 +30,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -91,6 +94,129 @@
       <property role="20kJfa" value="reference" />
       <ref role="20lvS9" node="3z8xuiBZfu8" resolve="TestSideTransform_NodeToReference" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="6d5vlMPwfdh">
+    <property role="EcuMT" value="7153261420283491153" />
+    <property role="TrG5h" value="TestTransformExceptionParent" />
+    <property role="3GE5qa" value="exception" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6d5vlMPwfdj" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283491155" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="actionCanSubstitute" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L8dRFxQsvh" resolve="TestTransformExceptionActionCanExecuteChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHil" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614357" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="actionDescriptionText" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L8dRFxQsvQ" resolve="TestTransformExceptionActionDescriptionTextChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHio" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614360" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="actionIcon" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L8dRFxQsvR" resolve="TestTransformExceptionActionIconChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHis" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614364" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="actionText" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L8dRFxQsvS" resolve="TestTransformExceptionActionTextChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHjE" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614442" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="group" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L8dRFxQsvU" resolve="TestTransformExceptionActionGroupChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHjM" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614450" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="includeMenu" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L8dRFxQsvV" resolve="TestTransformExceptionIncludeMenuChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHjV" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614459" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parameterized" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L8dRFxQsvX" resolve="TestTransformExceptionParameterizedChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHk5" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614469" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="submenu" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L8dRFxQAdT" resolve="TestTransformExceptionSubmenuChild" />
+    </node>
+    <node concept="1TJgyj" id="6d5vlMPwHkg" role="1TKVEi">
+      <property role="IQ2ns" value="7153261420283614480" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="wrap" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="7L8dRFxQBqC" resolve="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7L8dRFxQsvh">
+    <property role="EcuMT" value="8955468859940915153" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestTransformExceptionActionCanExecuteChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L8dRFxQsvQ">
+    <property role="EcuMT" value="8955468859940915190" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestTransformExceptionActionDescriptionTextChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L8dRFxQsvR">
+    <property role="EcuMT" value="8955468859940915191" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestTransformExceptionActionIconChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L8dRFxQsvS">
+    <property role="EcuMT" value="8955468859940915192" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestTransformExceptionActionTextChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L8dRFxQsvU">
+    <property role="EcuMT" value="8955468859940915194" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestTransformExceptionActionGroupChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L8dRFxQsvV">
+    <property role="EcuMT" value="8955468859940915195" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestTransformExceptionIncludeMenuChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L8dRFxQsvX">
+    <property role="EcuMT" value="8955468859940915197" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestTransformExceptionParameterizedChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L8dRFxQAdT">
+    <property role="EcuMT" value="8955468859940955001" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestTransformExceptionSubmenuChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7L8dRFxQBqC">
+    <property role="EcuMT" value="8955468859940959912" />
+    <property role="3GE5qa" value="exception" />
+    <property role="TrG5h" value="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 
