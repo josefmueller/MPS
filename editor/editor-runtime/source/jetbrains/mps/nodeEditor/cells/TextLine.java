@@ -432,7 +432,7 @@ public class TextLine {
       g.setColor(backgroundColor);
       g.fillRect(shiftX + getPaddingLeft(),
           shiftY + getPaddingTop(),
-          myWidth,
+                 getEffectiveWidth(),
           myTextHeight);
     }
 
@@ -440,7 +440,7 @@ public class TextLine {
       g.setColor(textBackgroundColor);
       g.fillRect(shiftX + getPaddingLeft(),
           shiftY + getPaddingTop(),
-          myWidth,
+                 getEffectiveWidth(),
           myTextHeight);
     }
 

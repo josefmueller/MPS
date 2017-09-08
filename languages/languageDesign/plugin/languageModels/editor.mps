@@ -2055,6 +2055,15 @@
   <node concept="24kQdi" id="1mJS7WEAV3a">
     <property role="3GE5qa" value="Actions.Keymaps" />
     <ref role="1XX52x" to="tp4k:1mJS7WEAV1P" resolve="KeymapChangesDeclaration" />
+    <node concept="3EZMnI" id="7vZlS_8XFvn" role="6VMZX">
+      <node concept="3F0ifn" id="7vZlS_8XFvo" role="3EZMnx">
+        <property role="3F0ifm" value="register via plugin.xml:" />
+      </node>
+      <node concept="3F0A7n" id="7vZlS_8XFvp" role="3EZMnx">
+        <ref role="1NtTu8" to="tp4k:7vZlS_8XFtM" resolve="isPluginXmlKeymap" />
+      </node>
+      <node concept="2iRfu4" id="7vZlS_8XFvq" role="2iSdaV" />
+    </node>
     <node concept="3EZMnI" id="1mJS7WEAVXQ" role="2wV5jI">
       <node concept="3EZMnI" id="1mJS7WEAVXT" role="3EZMnx">
         <node concept="3F0ifn" id="7vZlS_8XFvs" role="3EZMnx">
@@ -2090,20 +2099,18 @@
         </node>
       </node>
       <node concept="3F0ifn" id="1mJS7WEAVY2" role="3EZMnx" />
-      <node concept="3F2HdR" id="1mJS7WEAVY4" role="3EZMnx">
-        <ref role="1NtTu8" to="tp4k:1mJS7WEAV1R" resolve="shortcutChange" />
-        <node concept="2EHx9g" id="1mJS7WEAVYh" role="2czzBx" />
+      <node concept="3EZMnI" id="3BM4UwewZVt" role="3EZMnx">
+        <node concept="VPM3Z" id="3BM4UwewZVv" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3XFhqQ" id="3BM4Uwex05f" role="3EZMnx" />
+        <node concept="2iRfu4" id="3BM4UwewZVy" role="2iSdaV" />
+        <node concept="3F2HdR" id="1mJS7WEAVY4" role="3EZMnx">
+          <ref role="1NtTu8" to="tp4k:1mJS7WEAV1R" resolve="shortcutChange" />
+          <node concept="2EHx9g" id="1mJS7WEAVYh" role="2czzBx" />
+        </node>
       </node>
       <node concept="2iRkQZ" id="1mJS7WEAVXS" role="2iSdaV" />
-    </node>
-    <node concept="3EZMnI" id="7vZlS_8XFvn" role="6VMZX">
-      <node concept="3F0ifn" id="7vZlS_8XFvo" role="3EZMnx">
-        <property role="3F0ifm" value="register via plugin.xml:" />
-      </node>
-      <node concept="3F0A7n" id="7vZlS_8XFvp" role="3EZMnx">
-        <ref role="1NtTu8" to="tp4k:7vZlS_8XFtM" resolve="isPluginXmlKeymap" />
-      </node>
-      <node concept="2iRfu4" id="7vZlS_8XFvq" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="1mJS7WEAVY6">
@@ -2117,9 +2124,6 @@
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
-        </node>
-        <node concept="3$7fVu" id="1mJS7WEBAS7" role="3F10Kt">
-          <property role="3$6WeP" value="3" />
         </node>
       </node>
       <node concept="3F2HdR" id="5nN2_Ou2mMa" role="3EZMnx">
@@ -2141,9 +2145,6 @@
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
-        </node>
-        <node concept="3$7fVu" id="6$w_9FKfSLG" role="3F10Kt">
-          <property role="3$6WeP" value="3" />
         </node>
       </node>
       <node concept="b$f91" id="1_7GY3K_r6H" role="3EZMnx">
