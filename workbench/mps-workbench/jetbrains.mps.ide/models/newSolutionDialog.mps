@@ -527,30 +527,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="1MbEMJ4fYTU" role="3cqZAp">
-          <node concept="3cpWsn" id="1MbEMJ4fYTV" role="3cpWs9">
-            <property role="TrG5h" value="fixer" />
-            <node concept="3uibUv" id="1MbEMJ4fYTN" role="1tU5fm">
-              <ref role="3uigEE" to="6f4m:5gIiJF05pHn" resolve="VersionFixer" />
-            </node>
-            <node concept="2ShNRf" id="1MbEMJ4fYTW" role="33vP2m">
-              <node concept="1pGfFk" id="1MbEMJ4fYTX" role="2ShVmc">
-                <ref role="37wK5l" to="6f4m:5gIiJF05pI8" resolve="VersionFixer" />
-                <node concept="2OqwBi" id="1MbEMJ4fYTY" role="37wK5m">
-                  <node concept="37vLTw" id="1MbEMJ4fYTZ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7BBl3KJ$Wk7" resolve="project" />
-                  </node>
-                  <node concept="liA8E" id="1MbEMJ4fYU0" role="2OqNvi">
-                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="1MbEMJ4fYU1" role="37wK5m">
-                  <ref role="3cqZAo" node="56Y$nab_cYc" resolve="sandbox" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="3DVVPRJG52C" role="3cqZAp">
           <node concept="3cpWsn" id="3DVVPRJG52F" role="3cpWs9">
             <property role="TrG5h" value="l" />
@@ -605,27 +581,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="1MbEMJ4g86t" role="3cqZAp">
-          <node concept="2OqwBi" id="1MbEMJ4g8QO" role="3clFbG">
-            <node concept="37vLTw" id="1MbEMJ4g86r" role="2Oq$k0">
-              <ref role="3cqZAo" node="1MbEMJ4fYTV" resolve="fixer" />
-            </node>
-            <node concept="liA8E" id="1MbEMJ4g9_Z" role="2OqNvi">
-              <ref role="37wK5l" to="6f4m:1MbEMJ4e27i" resolve="addNewLanguage" />
-              <node concept="37vLTw" id="1MbEMJ4ga6k" role="37wK5m">
-                <ref role="3cqZAo" node="3DVVPRJG52F" resolve="l" />
-              </node>
-              <node concept="2OqwBi" id="1MbEMJ4gdvR" role="37wK5m">
-                <node concept="37vLTw" id="1MbEMJ4gccr" role="2Oq$k0">
-                  <ref role="3cqZAo" node="7BBl3KJ$WeC" resolve="language" />
-                </node>
-                <node concept="liA8E" id="1MbEMJ4geTW" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="3AvdXZVbnv1" role="3cqZAp">
           <node concept="2OqwBi" id="3AvdXZVbnzr" role="3clFbG">
             <node concept="1eOMI4" id="5VqtxwwE3$9" role="2Oq$k0">
@@ -643,6 +598,31 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="2q4uCZV8Yhk" role="3cqZAp" />
+        <node concept="3cpWs8" id="1MbEMJ4fYTU" role="3cqZAp">
+          <node concept="3cpWsn" id="1MbEMJ4fYTV" role="3cpWs9">
+            <property role="TrG5h" value="fixer" />
+            <node concept="3uibUv" id="1MbEMJ4fYTN" role="1tU5fm">
+              <ref role="3uigEE" to="6f4m:5gIiJF05pHn" resolve="VersionFixer" />
+            </node>
+            <node concept="2ShNRf" id="1MbEMJ4fYTW" role="33vP2m">
+              <node concept="1pGfFk" id="1MbEMJ4fYTX" role="2ShVmc">
+                <ref role="37wK5l" to="6f4m:5gIiJF05pI8" resolve="VersionFixer" />
+                <node concept="2OqwBi" id="1MbEMJ4fYTY" role="37wK5m">
+                  <node concept="37vLTw" id="1MbEMJ4fYTZ" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7BBl3KJ$Wk7" resolve="project" />
+                  </node>
+                  <node concept="liA8E" id="1MbEMJ4fYU0" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="1MbEMJ4fYU1" role="37wK5m">
+                  <ref role="3cqZAo" node="56Y$nab_cYc" resolve="sandbox" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5pK7k4tcifd" role="3cqZAp">
           <node concept="2OqwBi" id="5pK7k4tcife" role="3clFbG">
             <node concept="37vLTw" id="1MbEMJ4fYU2" role="2Oq$k0">
@@ -650,6 +630,27 @@
             </node>
             <node concept="liA8E" id="5pK7k4tcifl" role="2OqNvi">
               <ref role="37wK5l" to="6f4m:2V3ml1v0Uym" resolve="updateImportVersions" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="1MbEMJ4g86t" role="3cqZAp">
+          <node concept="2OqwBi" id="1MbEMJ4g8QO" role="3clFbG">
+            <node concept="37vLTw" id="1MbEMJ4g86r" role="2Oq$k0">
+              <ref role="3cqZAo" node="1MbEMJ4fYTV" resolve="fixer" />
+            </node>
+            <node concept="liA8E" id="1MbEMJ4g9_Z" role="2OqNvi">
+              <ref role="37wK5l" to="6f4m:1MbEMJ4e27i" resolve="addJustCreatedLanguageVersion" />
+              <node concept="37vLTw" id="1MbEMJ4ga6k" role="37wK5m">
+                <ref role="3cqZAo" node="3DVVPRJG52F" resolve="l" />
+              </node>
+              <node concept="2OqwBi" id="1MbEMJ4gdvR" role="37wK5m">
+                <node concept="37vLTw" id="1MbEMJ4gccr" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7BBl3KJ$WeC" resolve="language" />
+                </node>
+                <node concept="liA8E" id="1MbEMJ4geTW" role="2OqNvi">
+                  <ref role="37wK5l" to="w1kc:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
+                </node>
+              </node>
             </node>
           </node>
         </node>

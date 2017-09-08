@@ -77,13 +77,14 @@ public class NewModuleUtil {
 
     Solution sandbox = NewModuleUtil.createSolution(namespace, basePath, project);
     SModelInternal sandboxModel = (SModelInternal) createModel(sandbox, namespace);
-    VersionFixer fixer = new VersionFixer(project.getRepository(), sandbox);
     SLanguage l = MetaAdapterFactory.getLanguage(language.getModuleReference());
     sandboxModel.addLanguage(l);
     sandboxModel.setLanguageImportVersion(l, language.getLanguageVersion());
-    fixer.addNewLanguage(l, language.getLanguageVersion());
     ((EditableSModel) sandboxModel).save();
+
+    VersionFixer fixer = new VersionFixer(project.getRepository(), sandbox);
     fixer.updateImportVersions();
+    fixer.addJustCreatedLanguageVersion(l, language.getLanguageVersion());
     sandbox.save();
     return sandbox;
   }

@@ -105,7 +105,7 @@ public class VersionFixer {
     }
   }
 
-  public void addNewLanguage(SLanguage language, Integer version) {
+  public void addJustCreatedLanguageVersion(SLanguage language, Integer version) {
     myRepo.getModelAccess().checkWriteAccess();
 
     AbstractModule abstractModule = (AbstractModule) myModule;

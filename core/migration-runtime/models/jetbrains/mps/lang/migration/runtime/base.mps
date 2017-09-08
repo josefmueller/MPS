@@ -6931,7 +6931,7 @@
     <node concept="2tJIrI" id="1MbEMJ4dYs2" role="jymVt" />
     <node concept="3clFb_" id="1MbEMJ4e27i" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="addNewLanguage" />
+      <property role="TrG5h" value="addJustCreatedLanguageVersion" />
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
       <node concept="3Tm1VV" id="1MbEMJ4e27j" role="1B3o_S" />
