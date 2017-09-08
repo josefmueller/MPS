@@ -168,5 +168,15 @@
       </build>
     </channel>
 
+    <channel id="MPS173EAP" name="MPS 2017.3" status="eap"
+             url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.3+EAP+Download+Page"
+             feedback="http://youtrack.jetbrains.net"
+             majorVersion="2017" minorVersoin="3">
+      <build number="173.399" version="2017.3">
+        <message>JetBrains MPS 2017.3 EAP1 is available.</message>
+        <button name="Download" url="https://confluence.jetbrains.com/display/MPS/JetBrains+MPS+2017.3+EAP+Download+Page" download="true"/>
+      </build>
+    </channel>
+
   </product>
 </products>
