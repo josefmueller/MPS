@@ -99,6 +99,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.util.PathBuilder" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
+    <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

@@ -23,6 +23,7 @@ import java.util.Set;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.build.mps.behavior.BuildMps_Solution__BehaviorDescriptor;
@@ -433,6 +434,9 @@ public class ModuleChecker {
     Iterable<ModelRootDescriptor> modelRoots = myModuleDescriptor.getModelRootDescriptors();
     boolean hasModels = false;
     final ModuleChecker.BuildModuleFacade buildModuleFacade = new ModuleChecker.BuildModuleFacade(module);
+    // see comment next to makeRelative use, below, regarding hardcoded parent location knowledge 
+    // XXX instead of myModuleDescriptoFile, could use module.path.getLocalPath() 
+    RelativePathHelper moduleRelativePathHelper = new RelativePathHelper(myModuleDescriptorFile.getParent().getPath());
     for (ModelRootDescriptor modelRootDescriptor : modelRoots) {
       if (!(PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(modelRootDescriptor.getType()))) {
         continue;
@@ -444,13 +448,23 @@ public class ModuleChecker {
         if (path == null) {
           continue;
         }
-        SNode p = ListSequence.fromList(convertPath(path)).first();
+        SNode p = convertPath(path);
         if (p == null) {
           continue;
         }
 
         if (type.doFullImport) {
-          buildModuleFacade.addModelSources(p);
+          String deployName;
+          try {
+            // We used to imply model roots reside under a parent folder of a module descriptor file (in contentOf_BuildMpsLayout_ModuleSources). 
+            // Now, we just extracted the logic here and make the name of the deployment folder explicit. 
+            // FIXME in fact, we shall reference these names inside generated/copied module descriptors and stop implying they match names in the original descriptor source 
+            deployName = moduleRelativePathHelper.makeRelative(path);
+          } catch (RelativePathHelper.PathException ex) {
+            report(String.format("Failed to make model root path %s relative to module %s, using default folder name for deployment", path, moduleRelativePathHelper.getBasePath()), ex);
+            deployName = "models";
+          }
+          buildModuleFacade.addModelSources(p, deployName);
         }
         hasModels = true;
       }
@@ -474,7 +488,7 @@ public class ModuleChecker {
 
     if (type.doFullImport) {
       for (String path : myModuleDescriptor.getSourcePaths()) {
-        SNode p = ListSequence.fromList(convertPath(path)).first();
+        SNode p = convertPath(path);
         buildModuleFacade.addJavaSources(p, false);
       }
 
@@ -484,7 +498,7 @@ public class ModuleChecker {
         //       (3) Use of SModule would allow direct use of JavaModuleFacet instead of ModuleFacetDescriptor, keeping all the logic of location handling hidden. 
         String genPath = ProjectPathUtil.getGeneratorOutputPath(myModuleDescriptor);
         if (genPath != null) {
-          buildModuleFacade.addJavaSources(ListSequence.fromList(convertPath(genPath)).first(), true);
+          buildModuleFacade.addJavaSources(convertPath(genPath), true);
         }
       }
 
@@ -493,7 +507,7 @@ public class ModuleChecker {
       boolean hasTests = SNodeOperations.isInstanceOf(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) && (boolean) BuildMps_Solution__BehaviorDescriptor.hasTestsSources_id6ogfLD6evrW.invoke(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution")));
       if (testsPathFile != null && hasTests) {
         String testPath = testsPathFile.getPath();
-        SNode p = ListSequence.fromList(convertPath(testPath)).first();
+        SNode p = convertPath(testPath);
         buildModuleFacade.addTestSources(p, true);
       }
     }
@@ -627,7 +641,7 @@ public class ModuleChecker {
 
     // java stubs: jars 
     for (String path : myModuleDescriptor.getAdditionalJavaStubPaths()) {
-      final SNode p = ListSequence.fromList(convertPath(path)).first();
+      final SNode p = convertPath(path);
       if (p == null) {
         continue;
       }
@@ -818,11 +832,11 @@ public class ModuleChecker {
     }
   }
 
-  private List<SNode> convertPath(String path) {
+  private SNode convertPath(String path) {
     // XXX why on earth do we produce list here and ignore all but first element everywhere? 
     try {
-      // apparently model argument is merely a factory of new path nodes and doesn't need to be 'original' one (despite thefact PathConverter is build from 'origin' project in ModuleLoader) 
-      return myPathConverter.convertPath(path, new PathBuilder(SNodeOperations.getModel(myModule)));
+      // apparently model argument is merely a factory of new path nodes and doesn't need to be 'original' one 
+      return ListSequence.fromList(myPathConverter.convertPath(path, new PathBuilder(SNodeOperations.getModel(myModule)))).first();
     } catch (PathConverter.PathConvertException ex) {
       report("Failed to convert path " + path, ex);
       return null;
@@ -893,9 +907,10 @@ public class ModuleChecker {
       myModule = module;
     }
 
-    private ModuleChecker.BuildModuleFacade addModelSources(SNode p) {
+    private ModuleChecker.BuildModuleFacade addModelSources(SNode p, String deployName) {
       SNode mroot = SModelOperations.createNewNode(SNodeOperations.getModel(myModule), null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c195c50L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot"));
       SLinkOperations.setTarget(mroot, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c195c50L, 0x3b60c4a45c195c52L, "folder"), p);
+      SPropertyOperations.set(mroot, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c195c50L, 0x281831b8d7259819L, "deployFolderName"), deployName);
       ListSequence.fromList(SLinkOperations.getChildren(myModule, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341d31L, "sources"))).addElement(mroot);
       return this;
     }

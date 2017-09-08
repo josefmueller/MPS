@@ -6604,13 +6604,20 @@
   <root nodeRef="r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)/4278635856200817747">
     <file name="BuildMps_ModuleModelRoot_Editor.java">
       <node id="4278635856200817747" at="11,79,12,90" concept="6" />
+      <node id="4278635856200817747" at="14,82,15,93" concept="6" />
       <node id="4278635856200817747" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4278635856200817747" at="14,0,17,0" concept="4" trace="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="4278635856200817747" at="11,79,12,90" />
+      <scope id="4278635856200817747" at="14,82,15,93" />
       <scope id="4278635856200817747" at="11,0,14,0">
         <var name="editorContext" id="4278635856200817747" />
         <var name="node" id="4278635856200817747" />
       </scope>
-      <unit id="4278635856200817747" at="10,0,15,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleModelRoot_Editor" />
+      <scope id="4278635856200817747" at="14,0,17,0">
+        <var name="editorContext" id="4278635856200817747" />
+        <var name="node" id="4278635856200817747" />
+      </scope>
+      <unit id="4278635856200817747" at="10,0,18,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleModelRoot_Editor" />
     </file>
     <file name="BuildMps_ModuleModelRoot_EditorBuilder_a.java">
       <node id="4278635856200817747" at="29,104,30,19" concept="9" />
@@ -6722,6 +6729,73 @@
       <scope id="4278635856200817747" at="99,0,113,0" />
       <unit id="4278635856200817747" at="66,0,117,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleModelRoot_EditorBuilder_a$folderSingleRoleHandler_dd1b11_b0" />
       <unit id="4278635856200817747" at="25,0,118,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleModelRoot_EditorBuilder_a" />
+    </file>
+    <file name="BuildMps_ModuleModelRoot_InspectorBuilder_a.java">
+      <node id="4278635856200817747" at="24,107,25,19" concept="9" />
+      <node id="4278635856200817747" at="25,19,26,18" concept="1" />
+      <node id="4278635856200817747" at="31,26,32,18" concept="6" />
+      <node id="4278635856200817747" at="35,39,36,41" concept="6" />
+      <node id="4278635856200817747" at="39,52,40,122" concept="5" />
+      <node id="4278635856200817747" at="40,122,41,50" concept="1" />
+      <node id="4278635856200817747" at="41,50,42,28" concept="1" />
+      <node id="4278635856200817747" at="42,28,43,65" concept="1" />
+      <node id="4278635856200817747" at="43,65,44,59" concept="1" />
+      <node id="4278635856200817747" at="44,59,45,57" concept="1" />
+      <node id="4278635856200817747" at="45,57,46,22" concept="6" />
+      <node id="2889113830912530828" at="48,51,49,114" concept="5" />
+      <node id="2889113830912530828" at="49,114,50,49" concept="1" />
+      <node id="2889113830912530828" at="50,49,51,34" concept="5" />
+      <node id="2889113830912530828" at="51,34,52,49" concept="1" />
+      <node id="2889113830912530828" at="52,49,53,40" concept="1" />
+      <node id="2889113830912530828" at="53,40,54,34" concept="1" />
+      <node id="2889113830912530828" at="54,34,55,22" concept="6" />
+      <node id="2889113830912530816" at="57,49,58,89" concept="5" />
+      <node id="2889113830912530816" at="58,89,59,41" concept="1" />
+      <node id="2889113830912530816" at="59,41,60,54" concept="1" />
+      <node id="2889113830912530816" at="60,54,61,26" concept="5" />
+      <node id="2889113830912530816" at="61,26,62,63" concept="1" />
+      <node id="2889113830912530816" at="62,63,63,54" concept="1" />
+      <node id="2889113830912530816" at="63,54,64,73" concept="1" />
+      <node id="2889113830912530816" at="64,73,65,57" concept="5" />
+      <node id="2889113830912530816" at="66,35,67,87" concept="5" />
+      <node id="2889113830912530816" at="67,87,68,112" concept="6" />
+      <node id="2889113830912530816" at="69,10,70,22" concept="6" />
+      <node id="4278635856200817747" at="21,0,23,0" concept="2" trace="myNode" />
+      <node id="4278635856200817747" at="35,0,38,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4278635856200817747" at="24,0,28,0" concept="0" trace="BuildMps_ModuleModelRoot_InspectorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4278635856200817747" at="29,0,34,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2889113830912530816" at="65,57,70,22" concept="3" />
+      <node id="4278635856200817747" at="39,0,48,0" concept="4" trace="createCollection_dd1b11_a_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2889113830912530828" at="48,0,57,0" concept="4" trace="createConstant_dd1b11_a0_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2889113830912530816" at="57,0,72,0" concept="4" trace="createProperty_dd1b11_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="4278635856200817747" at="31,26,32,18" />
+      <scope id="4278635856200817747" at="35,39,36,41" />
+      <scope id="4278635856200817747" at="24,107,26,18" />
+      <scope id="2889113830912530816" at="66,35,68,112">
+        <var name="manager" id="2889113830912530816" />
+      </scope>
+      <scope id="4278635856200817747" at="35,0,38,0" />
+      <scope id="4278635856200817747" at="24,0,28,0">
+        <var name="context" id="4278635856200817747" />
+        <var name="node" id="4278635856200817747" />
+      </scope>
+      <scope id="4278635856200817747" at="29,0,34,0" />
+      <scope id="4278635856200817747" at="39,52,46,22">
+        <var name="editorCell" id="4278635856200817747" />
+      </scope>
+      <scope id="2889113830912530828" at="48,51,55,22">
+        <var name="editorCell" id="2889113830912530828" />
+        <var name="style" id="2889113830912530828" />
+      </scope>
+      <scope id="4278635856200817747" at="39,0,48,0" />
+      <scope id="2889113830912530828" at="48,0,57,0" />
+      <scope id="2889113830912530816" at="57,49,70,22">
+        <var name="attributeConcept" id="2889113830912530816" />
+        <var name="editorCell" id="2889113830912530816" />
+        <var name="provider" id="2889113830912530816" />
+      </scope>
+      <scope id="2889113830912530816" at="57,0,72,0" />
+      <unit id="4278635856200817747" at="20,0,73,0" name="jetbrains.mps.build.mps.editor.BuildMps_ModuleModelRoot_InspectorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)/4278635856200826396">

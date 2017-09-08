@@ -38,7 +38,6 @@
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.LocalSourcePathArtifact" />
     <classNode dependClassName="jetbrains.mps.build.util.ProjectDependency" />
-    <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />

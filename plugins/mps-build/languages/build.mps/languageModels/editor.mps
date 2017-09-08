@@ -1442,6 +1442,18 @@
         <ref role="1NtTu8" to="kdzh:3HwLahs6lLi" resolve="folder" />
       </node>
     </node>
+    <node concept="3EZMnI" id="2wocrzndpA3" role="6VMZX">
+      <node concept="2iRfu4" id="2wocrzndpA4" role="2iSdaV" />
+      <node concept="3F0ifn" id="2wocrzndpAc" role="3EZMnx">
+        <property role="3F0ifm" value="deployed into folder:" />
+        <node concept="VPM3Z" id="2wocrzndqqb" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+      </node>
+      <node concept="3F0A7n" id="2wocrzndpA0" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:2wocrzn9pwp" resolve="deployFolderName" />
+      </node>
+    </node>
   </node>
   <node concept="24kQdi" id="3HwLahs6nSs">
     <property role="3GE5qa" value="Project.Deps" />

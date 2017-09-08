@@ -305,6 +305,14 @@
     <property role="34LRSv" value="model root" />
     <property role="EcuMT" value="4278635856200817744" />
     <ref role="1TJDcQ" node="4zCbl23d1OJ" resolve="BuildMps_ModuleSource" />
+    <node concept="1TJgyi" id="2wocrzn9pwp" role="1TKVEl">
+      <property role="IQ2nx" value="2889113830911481881" />
+      <property role="TrG5h" value="deployFolderName" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+      <node concept="t5JxF" id="2wocrzn9pwr" role="lGtFl">
+        <property role="t5JxN" value="name of the folder models get deployed to, usually the same as last segment of original path" />
+      </node>
+    </node>
     <node concept="1TJgyj" id="3HwLahs6lLi" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="folder" />
