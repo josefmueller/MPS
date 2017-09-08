@@ -22,7 +22,7 @@ public final class LanguageConceptSwitch {
   public static final int TestTransformExceptionParameterizedChild = 10;
   public static final int TestTransformExceptionParent = 11;
   public static final int TestTransformExceptionSubmenuChild = 12;
-  public static final int TestTransformExceptionWrapSubstituteMenuTargetNodeChild = 13;
+  public static final int TestTransformExceptionWrapSubstituteMenuChild = 13;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x14a4b50159f64c39L, 0xb5de4a5d59477831L);
@@ -39,7 +39,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x7c48377ae1d9c7fdL, TestTransformExceptionParameterizedChild);
     builder.put(0x63457d5cb580f351L, TestTransformExceptionParent);
     builder.put(0x7c48377ae1da6379L, TestTransformExceptionSubmenuChild);
-    builder.put(0x7c48377ae1da76a8L, TestTransformExceptionWrapSubstituteMenuTargetNodeChild);
+    builder.put(0x7c48377ae1da76a8L, TestTransformExceptionWrapSubstituteMenuChild);
     myIndex = builder.seal();
   }
 

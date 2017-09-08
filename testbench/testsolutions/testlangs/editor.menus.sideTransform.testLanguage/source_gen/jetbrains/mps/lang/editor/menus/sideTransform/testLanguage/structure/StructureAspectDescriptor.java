@@ -25,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestTransformExceptionParameterizedChild = createDescriptorForTestTransformExceptionParameterizedChild();
   /*package*/ final ConceptDescriptor myConceptTestTransformExceptionParent = createDescriptorForTestTransformExceptionParent();
   /*package*/ final ConceptDescriptor myConceptTestTransformExceptionSubmenuChild = createDescriptorForTestTransformExceptionSubmenuChild();
-  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionWrapSubstituteMenuTargetNodeChild = createDescriptorForTestTransformExceptionWrapSubstituteMenuTargetNodeChild();
+  /*package*/ final ConceptDescriptor myConceptTestTransformExceptionWrapSubstituteMenuChild = createDescriptorForTestTransformExceptionWrapSubstituteMenuChild();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -34,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptTestSideTransform_NodeToReference, myConceptTestSideTransform_NodeWithReference, myConceptTestSideTransform_Root, myConceptTestSideTransform_SimpleNode, myConceptTestTransformExceptionActionCanExecuteChild, myConceptTestTransformExceptionActionDescriptionTextChild, myConceptTestTransformExceptionActionGroupChild, myConceptTestTransformExceptionActionIconChild, myConceptTestTransformExceptionActionTextChild, myConceptTestTransformExceptionIncludeMenuChild, myConceptTestTransformExceptionParameterizedChild, myConceptTestTransformExceptionParent, myConceptTestTransformExceptionSubmenuChild, myConceptTestTransformExceptionWrapSubstituteMenuTargetNodeChild);
+    return Arrays.asList(myConceptTestSideTransform_NodeToReference, myConceptTestSideTransform_NodeWithReference, myConceptTestSideTransform_Root, myConceptTestSideTransform_SimpleNode, myConceptTestTransformExceptionActionCanExecuteChild, myConceptTestTransformExceptionActionDescriptionTextChild, myConceptTestTransformExceptionActionGroupChild, myConceptTestTransformExceptionActionIconChild, myConceptTestTransformExceptionActionTextChild, myConceptTestTransformExceptionIncludeMenuChild, myConceptTestTransformExceptionParameterizedChild, myConceptTestTransformExceptionParent, myConceptTestTransformExceptionSubmenuChild, myConceptTestTransformExceptionWrapSubstituteMenuChild);
   }
 
   @Override
@@ -67,8 +67,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTestTransformExceptionParent;
       case LanguageConceptSwitch.TestTransformExceptionSubmenuChild:
         return myConceptTestTransformExceptionSubmenuChild;
-      case LanguageConceptSwitch.TestTransformExceptionWrapSubstituteMenuTargetNodeChild:
-        return myConceptTestTransformExceptionWrapSubstituteMenuTargetNodeChild;
+      case LanguageConceptSwitch.TestTransformExceptionWrapSubstituteMenuChild:
+        return myConceptTestTransformExceptionWrapSubstituteMenuChild;
       default:
         return null;
     }
@@ -172,8 +172,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940955001");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTestTransformExceptionWrapSubstituteMenuTargetNodeChild() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionWrapSubstituteMenuTargetNodeChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1da76a8L);
+  private static ConceptDescriptor createDescriptorForTestTransformExceptionWrapSubstituteMenuChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.sideTransform.testLanguage", "TestTransformExceptionWrapSubstituteMenuChild", 0x14a4b50159f64c39L, 0xb5de4a5d59477831L, 0x7c48377ae1da76a8L);
     b.class_(false, false, false);
     b.origin("r:97ef03aa-f643-4492-93a4-d7def5b7b85c(jetbrains.mps.lang.editor.menus.sideTransform.testLanguage.structure)/8955468859940959912");
     return b.create();

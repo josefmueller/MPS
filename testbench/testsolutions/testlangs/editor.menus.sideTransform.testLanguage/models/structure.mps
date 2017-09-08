@@ -161,7 +161,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="wrap" />
       <property role="20lbJX" value="0..1" />
-      <ref role="20lvS9" node="7L8dRFxQBqC" resolve="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+      <ref role="20lvS9" node="7L8dRFxQBqC" resolve="TestTransformExceptionWrapSubstituteMenuChild" />
     </node>
   </node>
   <node concept="1TIwiD" id="7L8dRFxQsvh">
@@ -215,7 +215,7 @@
   <node concept="1TIwiD" id="7L8dRFxQBqC">
     <property role="EcuMT" value="8955468859940959912" />
     <property role="3GE5qa" value="exception" />
-    <property role="TrG5h" value="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+    <property role="TrG5h" value="TestTransformExceptionWrapSubstituteMenuChild" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>

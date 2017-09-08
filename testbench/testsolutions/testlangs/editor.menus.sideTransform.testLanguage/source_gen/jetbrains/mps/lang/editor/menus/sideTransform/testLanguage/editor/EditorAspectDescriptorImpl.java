@@ -47,7 +47,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 12:
         return Collections.<ConceptEditor>singletonList(new TestTransformExceptionSubmenuChild_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new TestTransformExceptionWrapSubstituteMenuTargetNodeChild_Editor());
+        return Collections.<ConceptEditor>singletonList(new TestTransformExceptionWrapSubstituteMenuChild_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -78,7 +78,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 8:
         return Collections.<TransformationMenu>singletonList(new TestTransformExceptionSubmenuChild_TransformationMenu());
       case 9:
-        return Collections.<TransformationMenu>singletonList(new TestTransformExceptionWrapSubstituteMenuTargetNodeChild_TransformationMenu());
+        return Collections.<TransformationMenu>singletonList(new TestTransformExceptionWrapSubstituteMenuChild_TransformationMenu());
       default:
     }
     return Collections.<TransformationMenu>emptyList();

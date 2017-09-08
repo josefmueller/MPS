@@ -1605,7 +1605,7 @@
   </node>
   <node concept="24kQdi" id="7L8dRFxQBqD">
     <property role="3GE5qa" value="exception.editor" />
-    <ref role="1XX52x" to="do6y:7L8dRFxQBqC" resolve="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+    <ref role="1XX52x" to="do6y:7L8dRFxQBqC" resolve="TestTransformExceptionWrapSubstituteMenuChild" />
     <node concept="3EZMnI" id="7L8dRFxQBqF" role="2wV5jI">
       <node concept="l2Vlx" id="7L8dRFxQBqG" role="2iSdaV" />
       <node concept="3F0ifn" id="7L8dRFxQBqH" role="3EZMnx">
@@ -1636,7 +1636,7 @@
   </node>
   <node concept="IW6AY" id="7L8dRFxQBrL">
     <property role="3GE5qa" value="exception.transformMenu" />
-    <ref role="aqKnT" to="do6y:7L8dRFxQBqC" resolve="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+    <ref role="aqKnT" to="do6y:7L8dRFxQBqC" resolve="TestTransformExceptionWrapSubstituteMenuChild" />
     <node concept="1Qtc8_" id="7L8dRFxQBrM" role="IW6Ez">
       <node concept="3cWJ9i" id="7L8dRFxQBrQ" role="1Qtc8$">
         <node concept="CtIbL" id="7L8dRFxQBrS" role="CtIbM">

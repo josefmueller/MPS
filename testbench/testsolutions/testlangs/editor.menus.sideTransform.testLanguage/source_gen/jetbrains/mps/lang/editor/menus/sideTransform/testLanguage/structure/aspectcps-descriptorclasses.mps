@@ -318,7 +318,7 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="false" />
-      <property role="TrG5h" value="props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+      <property role="TrG5h" value="props_TestTransformExceptionWrapSubstituteMenuChild" />
       <node concept="3uibUv" id="H" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptPresentation" resolve="ConceptPresentation" />
       </node>
@@ -1223,7 +1223,7 @@
                       <node concept="liA8E" id="6$" role="2OqNvi">
                         <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.rawPresentation(java.lang.String):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="rawPresentation" />
                         <node concept="Xl_RD" id="6_" role="37wK5m">
-                          <property role="Xl_RC" value="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+                          <property role="Xl_RC" value="TestTransformExceptionWrapSubstituteMenuChild" />
                         </node>
                       </node>
                     </node>
@@ -1239,7 +1239,7 @@
                         </node>
                       </node>
                       <node concept="37vLTw" id="6C" role="37vLTJ">
-                        <ref role="3cqZAo" node="f" resolve="props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+                        <ref role="3cqZAo" node="f" resolve="props_TestTransformExceptionWrapSubstituteMenuChild" />
                       </node>
                     </node>
                   </node>
@@ -1247,19 +1247,19 @@
                 <node concept="3clFbC" id="6q" role="3clFbw">
                   <node concept="10Nm6u" id="6F" role="3uHU7w" />
                   <node concept="37vLTw" id="6G" role="3uHU7B">
-                    <ref role="3cqZAo" node="f" resolve="props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+                    <ref role="3cqZAo" node="f" resolve="props_TestTransformExceptionWrapSubstituteMenuChild" />
                   </node>
                 </node>
               </node>
               <node concept="3cpWs6" id="6o" role="3cqZAp">
                 <node concept="37vLTw" id="6H" role="3cqZAk">
-                  <ref role="3cqZAo" node="f" resolve="props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+                  <ref role="3cqZAo" node="f" resolve="props_TestTransformExceptionWrapSubstituteMenuChild" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="6m" role="3Kbmr1">
               <ref role="1PxDUh" node="6Q" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="75" resolve="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+              <ref role="3cqZAo" node="75" resolve="TestTransformExceptionWrapSubstituteMenuChild" />
             </node>
           </node>
         </node>
@@ -1458,7 +1458,7 @@
       <property role="2dlcS1" value="false" />
       <property role="2dld4O" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+      <property role="TrG5h" value="TestTransformExceptionWrapSubstituteMenuChild" />
       <node concept="3Tm1VV" id="7Q" role="1B3o_S" />
       <node concept="10Oyi0" id="7R" role="1tU5fm" />
       <node concept="3cmrfG" id="7S" role="33vP2m">
@@ -1708,7 +1708,7 @@
                 <property role="1adDun" value="0x7c48377ae1da76a8L" />
               </node>
               <node concept="37vLTw" id="9n" role="37wK5m">
-                <ref role="3cqZAo" node="75" resolve="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+                <ref role="3cqZAo" node="75" resolve="TestTransformExceptionWrapSubstituteMenuChild" />
               </node>
             </node>
           </node>
@@ -1950,12 +1950,12 @@
       <property role="eg7rD" value="false" />
       <property role="34CwA1" value="false" />
       <property role="3TUv4t" value="true" />
-      <property role="TrG5h" value="myConceptTestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+      <property role="TrG5h" value="myConceptTestTransformExceptionWrapSubstituteMenuChild" />
       <node concept="3uibUv" id="aN" role="1tU5fm">
         <ref role="3uigEE" to="ze1i:~ConceptDescriptor" resolve="ConceptDescriptor" />
       </node>
       <node concept="1rXfSq" id="aO" role="33vP2m">
-        <ref role="37wK5l" node="ao" resolve="createDescriptorForTestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+        <ref role="37wK5l" node="ao" resolve="createDescriptorForTestTransformExceptionWrapSubstituteMenuChild" />
       </node>
     </node>
     <node concept="312cEg" id="a0" role="jymVt">
@@ -2037,7 +2037,7 @@
               <ref role="3cqZAo" node="9Y" resolve="myConceptTestTransformExceptionSubmenuChild" />
             </node>
             <node concept="37vLTw" id="bi" role="37wK5m">
-              <ref role="3cqZAo" node="9Z" resolve="myConceptTestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+              <ref role="3cqZAo" node="9Z" resolve="myConceptTestTransformExceptionWrapSubstituteMenuChild" />
             </node>
           </node>
         </node>
@@ -2241,13 +2241,13 @@
             <node concept="3clFbS" id="cw" role="3Kbo56">
               <node concept="3cpWs6" id="cy" role="3cqZAp">
                 <node concept="37vLTw" id="cz" role="3cqZAk">
-                  <ref role="3cqZAo" node="9Z" resolve="myConceptTestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+                  <ref role="3cqZAo" node="9Z" resolve="myConceptTestTransformExceptionWrapSubstituteMenuChild" />
                 </node>
               </node>
             </node>
             <node concept="10M0yZ" id="cx" role="3Kbmr1">
               <ref role="1PxDUh" node="6Q" resolve="LanguageConceptSwitch" />
-              <ref role="3cqZAo" node="75" resolve="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+              <ref role="3cqZAo" node="75" resolve="TestTransformExceptionWrapSubstituteMenuChild" />
             </node>
           </node>
           <node concept="2OqwBi" id="bE" role="3KbGdf">
@@ -4287,7 +4287,7 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
-      <property role="TrG5h" value="createDescriptorForTestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+      <property role="TrG5h" value="createDescriptorForTestTransformExceptionWrapSubstituteMenuChild" />
       <node concept="3clFbS" id="nZ" role="3clF47">
         <node concept="3cpWs8" id="o2" role="3cqZAp">
           <node concept="3cpWsn" id="o6" role="3cpWs9">
@@ -4302,7 +4302,7 @@
                   <property role="Xl_RC" value="jetbrains.mps.lang.editor.menus.sideTransform.testLanguage" />
                 </node>
                 <node concept="Xl_RD" id="ob" role="37wK5m">
-                  <property role="Xl_RC" value="TestTransformExceptionWrapSubstituteMenuTargetNodeChild" />
+                  <property role="Xl_RC" value="TestTransformExceptionWrapSubstituteMenuChild" />
                 </node>
                 <node concept="1adDum" id="oc" role="37wK5m">
                   <property role="1adDun" value="0x14a4b50159f64c39L" />

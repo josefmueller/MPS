@@ -22,7 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_TestTransformExceptionParameterizedChild;
   private ConceptPresentation props_TestTransformExceptionParent;
   private ConceptPresentation props_TestTransformExceptionSubmenuChild;
-  private ConceptPresentation props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild;
+  private ConceptPresentation props_TestTransformExceptionWrapSubstituteMenuChild;
 
   @Override
   @Nullable
@@ -120,13 +120,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_TestTransformExceptionSubmenuChild = cpb.create();
         }
         return props_TestTransformExceptionSubmenuChild;
-      case LanguageConceptSwitch.TestTransformExceptionWrapSubstituteMenuTargetNodeChild:
-        if (props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild == null) {
+      case LanguageConceptSwitch.TestTransformExceptionWrapSubstituteMenuChild:
+        if (props_TestTransformExceptionWrapSubstituteMenuChild == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TestTransformExceptionWrapSubstituteMenuTargetNodeChild");
-          props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild = cpb.create();
+          cpb.rawPresentation("TestTransformExceptionWrapSubstituteMenuChild");
+          props_TestTransformExceptionWrapSubstituteMenuChild = cpb.create();
         }
-        return props_TestTransformExceptionWrapSubstituteMenuTargetNodeChild;
+        return props_TestTransformExceptionWrapSubstituteMenuChild;
     }
     return null;
   }
