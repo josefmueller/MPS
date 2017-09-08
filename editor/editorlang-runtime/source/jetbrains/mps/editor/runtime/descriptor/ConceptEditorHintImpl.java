@@ -18,10 +18,6 @@ package jetbrains.mps.editor.runtime.descriptor;
 
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 
-/**
- * Semen Alperovich
- * 05 15, 2013
- */
 public class ConceptEditorHintImpl implements ConceptEditorHint {
   private final String myId;
   private final String myPresentation;
