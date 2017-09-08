@@ -191,9 +191,12 @@ public class UpdaterImpl implements Updater {
       Collections.addAll(currentHints, hints);
       myEditorHintsForNodeMap.put(nodeReference, currentHints);
     } else {
-      Collections.addAll(currentHints, hints);
+      for (String hint : hints) {
+        if (!currentHints.contains(hint)) {
+          currentHints.add(hint);
+        }
+      }
     }
-
   }
 
   @Override
