@@ -20155,8 +20155,8 @@
       <node id="6640766779591279032" at="28,345,29,313" concept="6" />
       <node id="6640766779591319222" at="29,313,30,335" concept="6" />
       <node id="6640766779591362306" at="30,335,31,325" concept="6" />
-      <node id="6640766779596327772" at="33,35,34,211" concept="12" />
-      <node id="6640766779591423984" at="34,211,35,176" concept="6" />
+      <node id="6640766779596327772" at="33,35,34,206" concept="12" />
+      <node id="6640766779591423984" at="34,206,35,176" concept="6" />
       <node id="6640766779593924127" at="37,7,38,37" concept="6" />
       <node id="6640766779592686124" at="18,0,21,0" concept="3" trace="ConvertFieldToLocalVariable_QuickFix#()V" />
       <node id="6640766779592686124" at="21,0,24,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />

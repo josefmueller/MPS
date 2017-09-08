@@ -47702,14 +47702,14 @@
                     <node concept="3cpWsn" id="5KCJzeA3sHt" role="3cpWs9">
                       <property role="TrG5h" value="ref" />
                       <node concept="3Tqbb2" id="5KCJzeA3sHg" role="1tU5fm">
-                        <ref role="ehGHo" to="tpee:fzcpWvM" resolve="LocalVariableReference" />
+                        <ref role="ehGHo" to="tpee:fz7vLUo" resolve="VariableReference" />
                       </node>
                       <node concept="2OqwBi" id="5KCJzeA3sHu" role="33vP2m">
                         <node concept="37vLTw" id="5KCJzeA3sHv" role="2Oq$k0">
                           <ref role="3cqZAo" node="5KCJze_KJsN" resolve="it" />
                         </node>
                         <node concept="1_qnLN" id="5KCJzeA3sHw" role="2OqNvi">
-                          <ref role="1_rbq0" to="tpee:fzcpWvM" resolve="LocalVariableReference" />
+                          <ref role="1_rbq0" to="tpee:fz7vLUo" resolve="VariableReference" />
                         </node>
                       </node>
                     </node>
@@ -47720,8 +47720,8 @@
                         <node concept="37vLTw" id="5KCJzeA3sHx" role="2Oq$k0">
                           <ref role="3cqZAo" node="5KCJzeA3sHt" resolve="ref" />
                         </node>
-                        <node concept="3TrEf2" id="5KCJzeA3v85" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:f_2PX25" resolve="localVariableDeclaration" />
+                        <node concept="3TrEf2" id="1ose2DeGOVF" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                         </node>
                       </node>
                       <node concept="2oxUTD" id="5KCJzeA3yjZ" role="2OqNvi">
