@@ -45,7 +45,7 @@ import java.util.Set;
  * @since 3.5
  */
 public class ModuleFileTracker implements FileListener {
-  private final Map<IFile, Set<SModule>> myFile2Module = new THashMap<>();
+  protected final Map<IFile, Set<SModule>> myFile2Module = new THashMap<>();
   private final boolean myListenToTrackedFiles;
 
   /**
