@@ -26,6 +26,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 /**
  * Listens for module descriptor paths in a project descriptor.
  * Files created with a path that did not exist at the moment project was last initialized, trigger project update.
@@ -36,10 +39,36 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
  */
 public class ModuleFileChangeListener implements ProjectModuleLoadingListener {
   private final MPSProject myMpsProject;
+
   /*
    * tracks changes and removals of files with descriptors of project modules
    */
-  private final ModuleFileTracker myDescriptorChangeListener = new ModuleFileTracker(true);
+  private final ModuleFileTracker myDescriptorChangeListener = new ProjectModuleFileTracker();
+
+  private final class ProjectModuleFileTracker extends ModuleFileTracker {
+    public ProjectModuleFileTracker() {
+      super(true);
+    }
+
+    @Override
+    public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
+      Set<SModule> modules2Remove = new LinkedHashSet<>();
+      for (IFile file : event.getRemoved()) {
+        Set<SModule> modules = myFile2Module.get(file);
+        if (modules != null) {
+          modules2Remove.addAll(modules);
+        }
+      }
+      modules2Remove.forEach(module -> {
+        ModulePath path = myMpsProject.getPath(module);
+        if (path != null) {
+          moduleNotFound(path);
+        }
+        myMpsProject.removeModule0(module);
+      });
+      super.update(monitor, event);
+    }
+  }
 
   /*
    * tracks files known to host a project's module but not existent at the moment project is initialized.
