@@ -135,7 +135,7 @@ final class ModuleLoader {
         SModule module = repoFacade.instantiateModule(handle, myProject);
         // it's quite tempting, indeed, to move project update (i.e. addModule) into listener ProjectModuleLoadingListener.moduleLoaded
         // just need to sort out ModuleLoader and Project relationship.
-        myProject.addModule(modulePath, module);
+        myProject.addModule0(modulePath, module);
         ++loadedModules;
         // XXX Here, in ProjectModuleLoadingListener/ModuleFileChangeListener, we track language files only, and rely on regular
         //     Language.reloadAfterDescriptorChange code to reflect changes in Generator modules

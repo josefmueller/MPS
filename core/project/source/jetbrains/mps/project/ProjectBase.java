@@ -25,6 +25,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleListenerBase;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -42,6 +43,10 @@ import java.util.Map;
  * Doesn't manage lifecycle of a module descriptors other than "{@linkplain #update() update} 'em all" on demand.
  * Check {@code ModuleFileChangeListener} of [mps-platform] for change tracking.
  * However, tracks module renames (albeit in a bit weird way) to keep inner structures fit.
+ *
+ * FIXME
+ * poor architecture results in the intertwined control flow between ProjectBase, ModuleLoader and ProjectDescriptor
+ * I guess that removing virtual folders solves all the problem
  *
  * @see ProjectDescriptor
  */
@@ -80,12 +85,14 @@ public abstract class ProjectBase extends Project {
   /**
    * This is auxiliary method to update ProjectBase internal state. When a new module is added to a project,
    * use {@code {@link #addModule(SModule)}}, which records the module into persistent project descriptor as well.
+   * There is no change in the descriptor and interaction with the loading/saving descriptor logic (ModuleLoader)
    *
    * @deprecated there is an intention to deduce virtual folders from the file system directly
    */
   @ToRemove(version = 3.5)
   @Deprecated
-  final void addModule(@NotNull ModulePath path, @NotNull SModule module) {
+  @Internal
+  /*package*/ final void addModule0(@NotNull ModulePath path, @NotNull SModule module) {
     if (myModuleToPathMap.containsKey(module)) {
 //      throw new IllegalArgumentException(module + " is already in the " + this); todo enable after MPS-24400
       LOG.warn(module + " is already in " + this);
@@ -100,7 +107,7 @@ public abstract class ProjectBase extends Project {
     IFile descriptorFile = getDescriptorFileChecked(module);
     if (descriptorFile != null) {
       ModulePath path = new ModulePath(descriptorFile.getPath(), null);
-      addModule(path, module);
+      addModule0(path, module);
       myProjectDescriptor.addModulePath(path);
       myModuleLoader.fireModuleLoaded(path, module);
     }
@@ -121,10 +128,23 @@ public abstract class ProjectBase extends Project {
       LOG.warn("Module has not been registered in the project: " + module);
       return;
     }
-    final ModulePath modulePath = myModuleToPathMap.remove(module);
-    module.removeModuleListener(myModulesListeners.remove(module));
+    final ModulePath modulePath = removeModule0(module);
     myModuleLoader.fireModuleRemoved(modulePath, module);
     myProjectDescriptor.removeModulePath(modulePath);
+  }
+
+  /**
+   * Method which intent is to update only the module <-> virtual path map
+   * not touching the project descriptor
+   *
+   * @see #addModule0(ModulePath, SModule)
+   */
+  @Internal
+  /*package*/ final ModulePath removeModule0(@NotNull SModule module) {
+    final ModulePath modulePath = myModuleToPathMap.remove(module);
+    assert modulePath != null;
+    module.removeModuleListener(myModulesListeners.remove(module));
+    return modulePath;
   }
 
   @Nullable
@@ -239,6 +259,8 @@ public abstract class ProjectBase extends Project {
 
   // XXX use of SModule listener to detect renames smells wrong. I'd say Project shall deal with files, on a lower level than SRepository.
   //     Perhaps, this comes along missing file rename event from FileListener?
+  // AP I think that there must be no rename listening at all. It is a pure UI clients' desire to have the *opened* projects
+  // updated to the renaming of the module
   private class ModuleRenameListener extends SModuleListenerBase {
     @Override
     public void moduleRenamed(@NotNull SModule module, @NotNull SModuleReference oldRef) {
