@@ -145,7 +145,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AbstractComparableStatement:
         if (props_AbstractComparableStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("AbstractComparableStatement");
           props_AbstractComparableStatement = cpb.create();
         }
         return props_AbstractComparableStatement;
@@ -158,7 +157,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.AbstractInequationStatement:
         if (props_AbstractInequationStatement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("AbstractInequationStatement");
           props_AbstractInequationStatement = cpb.create();
         }
         return props_AbstractInequationStatement;

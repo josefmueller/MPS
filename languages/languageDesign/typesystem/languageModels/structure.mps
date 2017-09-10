@@ -1101,6 +1101,7 @@
     <property role="TrG5h" value="AbstractInequationStatement" />
     <property role="3GE5qa" value="definition.statement" />
     <property role="EcuMT" value="1212056081426" />
+    <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" node="h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="1TJgyj" id="49g6ijgJo$d" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -2067,6 +2068,7 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="definition.statement" />
     <property role="EcuMT" value="4315056782306262711" />
+    <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" node="h5Zf1ZU" resolve="AbstractEquationStatement" />
     <node concept="1TJgyi" id="3Jyakw70xWO" role="1TKVEl">
       <property role="TrG5h" value="infer" />

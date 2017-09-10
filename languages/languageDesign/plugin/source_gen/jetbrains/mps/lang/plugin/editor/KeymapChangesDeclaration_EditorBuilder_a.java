@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -54,7 +55,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createCollection_anqw30_a0());
     editorCell.addEditorCell(createConstant_anqw30_b0());
-    editorCell.addEditorCell(createRefNodeList_anqw30_c0());
+    editorCell.addEditorCell(createCollection_anqw30_c0());
     return editorCell;
   }
   private EditorCell createCollection_anqw30_a0() {
@@ -129,19 +130,33 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_anqw30_c0() {
-    AbstractCellListHandler handler = new KeymapChangesDeclaration_EditorBuilder_a.shortcutChangeListHandler_anqw30_c0(myNode, "shortcutChange", getEditorContext());
+  private EditorCell createCollection_anqw30_c0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
+    editorCell.setCellId("Collection_anqw30_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createIndentCell_anqw30_a2a());
+    editorCell.addEditorCell(createRefNodeList_anqw30_b2a());
+    return editorCell;
+  }
+  private EditorCell createIndentCell_anqw30_a2a() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
+  private EditorCell createRefNodeList_anqw30_b2a() {
+    AbstractCellListHandler handler = new KeymapChangesDeclaration_EditorBuilder_a.shortcutChangeListHandler_anqw30_b2a(myNode, "shortcutChange", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_shortcutChange");
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class shortcutChangeListHandler_anqw30_c0 extends RefNodeListHandler {
+  private static class shortcutChangeListHandler_anqw30_b2a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public shortcutChangeListHandler_anqw30_c0(SNode ownerNode, String childRole, EditorContext context) {
+    public shortcutChangeListHandler_anqw30_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
       myNode = ownerNode;
     }
@@ -162,7 +177,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(shortcutChangeListHandler_anqw30_c0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb077L, "shortcutChange")));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(shortcutChangeListHandler_anqw30_b2a.this.getNode(), MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x15afe07f2a9bb075L, 0x15afe07f2a9bb077L, "shortcutChange")));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
