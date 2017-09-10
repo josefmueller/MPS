@@ -415,7 +415,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForAbstractComparableStatement() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "AbstractComparableStatement", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x3be2294807013eb7L);
-    b.class_(false, false, false);
+    b.class_(false, true, false);
     b.super_("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL);
     b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/4315056782306262711");
     b.prop("infer", 0x3be2294807021f34L, "4315056782306320180");
@@ -438,7 +438,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForAbstractInequationStatement() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.typesystem", "AbstractInequationStatement", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L);
-    b.class_(false, false, false);
+    b.class_(false, true, false);
     b.super_("jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", 0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL);
     b.origin("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)/1212056081426");
     b.prop("inequationPriority", 0x11a342c735aL, "1212056105818");
