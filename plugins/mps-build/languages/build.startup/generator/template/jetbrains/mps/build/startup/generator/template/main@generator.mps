@@ -53,10 +53,15 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -155,7 +160,14 @@
         <child id="1167945861827" name="conditionFunction" index="3IZSJc" />
       </concept>
       <concept id="1118786554307" name="jetbrains.mps.lang.generator.structure.LoopMacro" flags="ln" index="1WS0z7">
+        <property id="7430509679011668804" name="counterVarName" index="1qytDF" />
         <child id="1167952069335" name="sourceNodesQuery" index="3Jn$fo" />
+      </concept>
+    </language>
+    <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
+      <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
+      <concept id="7430509679014182526" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef" flags="ng" index="1qCSth">
+        <property id="7430509679014182818" name="contextVarName" index="1qCSqd" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -2212,23 +2224,17 @@
       <property role="2DPR8u" value="fi" />
     </node>
     <node concept="2DRAP_" id="3T7P3nA9$gT" role="2DRAPQ" />
-    <node concept="2DRAP_" id="1SWE651Axri" role="2DRAPQ">
-      <property role="2DPR8u" value="IDE_BIN_HOME=`dirname &quot;$SCRIPT_LOCATION&quot;`" />
+    <node concept="2DRAP_" id="3xQpxE3B7CU" role="2DRAPQ">
+      <property role="2DPR8u" value="cd &quot;`dirname &quot;$SCRIPT_LOCATION&quot;`&quot;" />
     </node>
-    <node concept="2DRAP_" id="BsOHnjlze8" role="2DRAPQ">
-      <property role="2DPR8u" value="if [ &quot;$IDE_BIN_HOME&quot; = &quot;.&quot; ]; then" />
+    <node concept="2DRAP_" id="1SWE651Axri" role="2DRAPQ">
+      <property role="2DPR8u" value="IDE_BIN_HOME=`pwd`" />
     </node>
     <node concept="2DRAP_" id="BsOHnjl$bK" role="2DRAPQ">
-      <property role="2DPR8u" value="  IDE_HOME=&quot;..&quot;" />
+      <property role="2DPR8u" value="IDE_HOME=`dirname &quot;$IDE_BIN_HOME&quot;`" />
     </node>
-    <node concept="2DRAP_" id="BsOHnjl_9p" role="2DRAPQ">
-      <property role="2DPR8u" value="else" />
-    </node>
-    <node concept="2DRAP_" id="7C7qUK4sHkn" role="2DRAPQ">
-      <property role="2DPR8u" value="  IDE_HOME=`dirname &quot;$IDE_BIN_HOME&quot;`" />
-    </node>
-    <node concept="2DRAP_" id="BsOHnjlA73" role="2DRAPQ">
-      <property role="2DPR8u" value="fi" />
+    <node concept="2DRAP_" id="3xQpxE3Bbg0" role="2DRAPQ">
+      <property role="2DPR8u" value="cd &quot;$OLDPWD&quot;" />
     </node>
     <node concept="2DRAP_" id="hoHCGht60J" role="2DRAPQ" />
     <node concept="2DRAP_" id="hoHCGht6jb" role="2DRAPQ">
@@ -2918,12 +2924,10 @@
       </node>
     </node>
     <node concept="2DRAP_" id="3T7P3nAaqsy" role="2DRAPQ" />
-    <node concept="2DRAP_" id="3T7P3nAaqur" role="2DRAPQ">
-      <property role="2DPR8u" value="CLASSPATH=&quot;&quot;" />
-    </node>
     <node concept="2DRAP_" id="3T7P3nAar1X" role="2DRAPQ">
       <property role="2DPR8u" value="CLASSPATH=&quot;$CLASSPATH:$IDE_HOME/" />
       <node concept="1WS0z7" id="3T7P3nAar6W" role="lGtFl">
+        <property role="1qytDF" value="pathIndex" />
         <node concept="3JmXsc" id="3T7P3nAar6Z" role="3Jn$fo">
           <node concept="3clFbS" id="3T7P3nAar70" role="2VODD2">
             <node concept="3clFbF" id="3T7P3nAar76" role="3cqZAp">
@@ -2942,6 +2946,39 @@
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <node concept="3zFVjK" id="3T7P3nAas8T" role="3zH0cK">
           <node concept="3clFbS" id="3T7P3nAas8U" role="2VODD2">
+            <node concept="3clFbJ" id="5mHrw1WUh35" role="3cqZAp">
+              <node concept="3clFbS" id="5mHrw1WUh37" role="3clFbx">
+                <node concept="3cpWs6" id="5mHrw1WUqyx" role="3cqZAp">
+                  <node concept="3cpWs3" id="5mHrw1WU_YY" role="3cqZAk">
+                    <node concept="3cpWs3" id="5mHrw1WUxOj" role="3uHU7B">
+                      <node concept="Xl_RD" id="5mHrw1WUrO9" role="3uHU7B">
+                        <property role="Xl_RC" value="CLASSPATH=\&quot;$IDE_HOME/" />
+                      </node>
+                      <node concept="2OqwBi" id="5mHrw1WUzdO" role="3uHU7w">
+                        <node concept="30H73N" id="5mHrw1WUytk" role="2Oq$k0" />
+                        <node concept="3TrcHB" id="5mHrw1WU$f2" role="2OqNvi">
+                          <ref role="3TsBF5" to="s7om:3nFPImNgRka" resolve="path" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="5mHrw1WUARu" role="3uHU7w">
+                      <property role="Xl_RC" value="\&quot;" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbC" id="5mHrw1WUjEV" role="3clFbw">
+                <node concept="3cmrfG" id="5mHrw1WUkjO" role="3uHU7w">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="2OqwBi" id="5mHrw1WUhDP" role="3uHU7B">
+                  <node concept="1iwH7S" id="5mHrw1WUhiH" role="2Oq$k0" />
+                  <node concept="1qCSth" id="5mHrw1WUhX_" role="2OqNvi">
+                    <property role="1qCSqd" value="pathIndex" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="3T7P3nAas9i" role="3cqZAp">
               <node concept="3cpWs3" id="BsOHnjrbdi" role="3clFbG">
                 <node concept="Xl_RD" id="BsOHnjrbdo" role="3uHU7w">
@@ -2963,7 +3000,7 @@
       </node>
     </node>
     <node concept="2DRAP_" id="hoHCGhtrRd" role="2DRAPQ">
-      <property role="2DPR8u" value="CLASSPATH=${CLASSPATH}:${JDK}/lib/tools.jar" />
+      <property role="2DPR8u" value="CLASSPATH=&quot;$CLASSPATH:$JDK/lib/tools.jar&quot;" />
     </node>
     <node concept="2DRAP_" id="7C7qUK4t86a" role="2DRAPQ">
       <property role="2DPR8u" value="if [ -n &quot;$MPS_CLASSPATH&quot; ]; then" />
@@ -3041,7 +3078,7 @@
       <property role="2DPR8u" value="  &quot;-Xbootclasspath/a:$IDE_HOME/lib/boot.jar&quot; \" />
     </node>
     <node concept="2DRAP_" id="7C7qUK4tclb" role="2DRAPQ">
-      <property role="2DPR8u" value="  -classpath &quot;$CLASSPATH:$MAIN_CLASS&quot; \" />
+      <property role="2DPR8u" value="  -classpath &quot;$CLASSPATH&quot; \" />
     </node>
     <node concept="2DRAP_" id="7C7qUK4tcD6" role="2DRAPQ">
       <property role="2DPR8u" value="  ${VM_OPTIONS} \" />

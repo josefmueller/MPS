@@ -146,6 +146,9 @@ public class QueriesGenerated extends QueryProviderBase {
     return _context.getTemplateValue() + "\"" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x35ebd6e5b343774dL, "options")) + "\"";
   }
   public static Object propertyMacro_GetPropertyValue_4487788881657840185(final PropertyMacroContext _context) {
+    if (((Integer) _context.getVariable("cv:pathIndex")) == 0) {
+      return "CLASSPATH=\"$IDE_HOME/" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437509L, 0x35ebd6e5b343750aL, "path")) + "\"";
+    }
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437509L, 0x35ebd6e5b343750aL, "path")) + "\"";
   }
   public static Object propertyMacro_GetPropertyValue_4487788881657707878(final PropertyMacroContext _context) {
