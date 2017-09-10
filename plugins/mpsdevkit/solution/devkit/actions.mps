@@ -14583,19 +14583,6 @@
       </node>
     </node>
   </node>
-  <node concept="Zd50a" id="1RsxAOl3$Gc">
-    <property role="TrG5h" value="DefaultForKDE" />
-    <property role="Zd52Q" value="Default for KDE" />
-    <property role="Z2u3V" value="false" />
-    <node concept="Zd509" id="1RsxAOl3$Gd" role="Zd508">
-      <ref role="1bYAoF" node="5r64_$Qz1mL" resolve="FindLanguageConceptsUsages" />
-      <node concept="pLAjd" id="1RsxAOl3$Ge" role="Zd501">
-        <property role="pLAjc" value="alt+shift" />
-        <property role="pLAjf" value="VK_8" />
-        <property role="3hacHL" value="replace all" />
-      </node>
-    </node>
-  </node>
   <node concept="Zd50a" id="1RsxAOl3$G9">
     <property role="TrG5h" value="DefaultForGNOME" />
     <property role="Zd52Q" value="Default for GNOME" />
@@ -14605,6 +14592,14 @@
       <node concept="pLAjd" id="1RsxAOl3$Gb" role="Zd501">
         <property role="pLAjc" value="alt+shift" />
         <property role="pLAjf" value="VK_8" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+    <node concept="Zd509" id="4YyvUboEVL1" role="Zd508">
+      <ref role="1bYAoF" node="6gJrPYfVnTW" resolve="FindModuleUsage" />
+      <node concept="pLAjd" id="4YyvUboEVL2" role="Zd501">
+        <property role="pLAjc" value="alt+shift" />
+        <property role="pLAjf" value="VK_7" />
         <property role="3hacHL" value="replace all" />
       </node>
     </node>

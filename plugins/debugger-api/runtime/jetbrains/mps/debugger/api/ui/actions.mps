@@ -68,6 +68,7 @@
       <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
         <property id="1207318242773" name="modifiers" index="pLAjc" />
         <property id="1207318242774" name="keycode" index="pLAjf" />
+        <property id="6785623076777470797" name="change" index="3hacHL" />
       </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
@@ -98,6 +99,8 @@
         <child id="1562714432501166206" name="keystroke" index="Zd501" />
       </concept>
       <concept id="1562714432501166197" name="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" flags="ng" index="Zd50a">
+        <property id="8646726056720906098" name="isPluginXmlKeymap" index="Z2u3V" />
+        <property id="1562714432501166281" name="keymap" index="Zd52Q" />
         <child id="1562714432501166199" name="shortcutChange" index="Zd508" />
       </concept>
       <concept id="1203680534665" name="jetbrains.mps.lang.plugin.structure.GroupAnchor" flags="ng" index="10WQ6h" />
@@ -2867,5 +2870,18 @@
     </node>
   </node>
   <node concept="2DaZZR" id="6dAEaqvbBih" />
+  <node concept="Zd50a" id="4YyvUboEVi4">
+    <property role="TrG5h" value="DefaultForGNOME" />
+    <property role="Zd52Q" value="Default for GNOME" />
+    <property role="Z2u3V" value="false" />
+    <node concept="Zd509" id="4YyvUboEVi5" role="Zd508">
+      <ref role="1bYAoF" node="68aArIS9HCw" resolve="EvaluateExpression" />
+      <node concept="pLAjd" id="4YyvUboEVi6" role="Zd501">
+        <property role="pLAjc" value="alt+shift" />
+        <property role="pLAjf" value="VK_8" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+  </node>
 </model>
 

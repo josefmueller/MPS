@@ -154,6 +154,29 @@
       <unit id="418270182880363898" at="20,0,72,0" name="jetbrains.mps.debugger.api.ui.actions.DeleteBreakpointAction_Action" />
     </file>
   </root>
+  <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/5738289212619994244">
+    <file name="DefaultForGNOME_KeymapChanges.java">
+      <node id="5738289212619994244" at="11,42,12,14" concept="9" />
+      <node id="5738289212619994244" at="12,14,13,34" concept="9" />
+      <node id="5738289212619994244" at="13,34,14,169" concept="2" />
+      <node id="5738289212619994244" at="14,169,15,28" concept="9" />
+      <node id="5738289212619994244" at="15,28,16,15" concept="9" />
+      <node id="5738289212619994244" at="18,29,19,31" concept="8" />
+      <node id="5738289212619994244" at="21,53,22,70" concept="8" />
+      <node id="5738289212619994244" at="18,0,21,0" concept="6" trace="getScheme#()Ljava/lang/String;" />
+      <node id="5738289212619994244" at="21,0,24,0" concept="12" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
+      <node id="5738289212619994244" at="11,0,18,0" concept="1" trace="DefaultForGNOME_KeymapChanges#()V" />
+      <scope id="5738289212619994244" at="18,29,19,31" />
+      <scope id="5738289212619994244" at="21,53,22,70" />
+      <scope id="5738289212619994244" at="18,0,21,0" />
+      <scope id="5738289212619994244" at="21,0,24,0">
+        <var name="stroke" id="5738289212619994244" />
+      </scope>
+      <scope id="5738289212619994244" at="11,42,16,15" />
+      <scope id="5738289212619994244" at="11,0,18,0" />
+      <unit id="5738289212619994244" at="10,0,25,0" name="jetbrains.mps.debugger.api.ui.actions.DefaultForGNOME_KeymapChanges" />
+    </file>
+  </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/6515087165749899624">
     <file name="GoToBreakpointSourceAction_Action.java">
       <node id="6515087165749899624" at="21,0,22,0" concept="11" trace="ICON" />
@@ -922,12 +945,13 @@
       <node id="7162597690968011921" at="45,73,46,128" concept="2" />
       <node id="7162597690968011921" at="48,48,49,92" concept="7" />
       <node id="7162597690968011921" at="49,92,50,72" concept="2" />
-      <node id="7162597690968011921" at="50,72,51,15" concept="8" />
+      <node id="7162597690968011921" at="50,72,51,79" concept="2" />
+      <node id="7162597690968011921" at="51,79,52,15" concept="8" />
       <node id="7162597690968011921" at="14,0,16,0" concept="1" trace="Runtime_ApplicationPlugin#()V" />
       <node id="7162597690968011921" at="16,0,19,0" concept="6" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
       <node id="7162597690968011921" at="40,0,44,0" concept="6" trace="adjustInterfaceGroups#()V" />
       <node id="7162597690968011921" at="44,0,48,0" concept="6" trace="adjustRegularGroups#()V" />
-      <node id="7162597690968011921" at="48,0,53,0" concept="6" trace="initKeymaps#()Ljava/util/List;" />
+      <node id="7162597690968011921" at="48,0,54,0" concept="6" trace="initKeymaps#()Ljava/util/List;" />
       <node id="7162597690968011921" at="19,0,40,0" concept="6" trace="createGroups#()V" />
       <scope id="7162597690968011921" at="14,38,14,38" />
       <scope id="7162597690968011921" at="16,27,17,16" />
@@ -935,15 +959,15 @@
       <scope id="7162597690968011921" at="40,39,42,124" />
       <scope id="7162597690968011921" at="44,37,46,128" />
       <scope id="7162597690968011921" at="16,0,19,0" />
-      <scope id="7162597690968011921" at="48,48,51,15">
-        <var name="res" id="7162597690968011921" />
-      </scope>
       <scope id="7162597690968011921" at="40,0,44,0" />
       <scope id="7162597690968011921" at="44,0,48,0" />
-      <scope id="7162597690968011921" at="48,0,53,0" />
+      <scope id="7162597690968011921" at="48,48,52,15">
+        <var name="res" id="7162597690968011921" />
+      </scope>
+      <scope id="7162597690968011921" at="48,0,54,0" />
       <scope id="7162597690968011921" at="19,30,38,42" />
       <scope id="7162597690968011921" at="19,0,40,0" />
-      <unit id="7162597690968011921" at="12,0,54,0" name="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" />
+      <unit id="7162597690968011921" at="12,0,55,0" name="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" />
     </file>
   </root>
   <root nodeRef="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)/8643693251546855502">
