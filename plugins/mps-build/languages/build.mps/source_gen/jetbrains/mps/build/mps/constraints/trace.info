@@ -23,7 +23,7 @@
       <node id="1224588814561889089" at="31,90,32,131" concept="5" />
       <node id="1224588814561889089" at="35,44,36,20" concept="6" />
       <node id="1224588814561889089" at="43,63,44,58" concept="6" />
-      <node id="6836281137582840098" at="48,13,49,257" concept="5" />
+      <node id="6836281137582840098" at="48,13,49,264" concept="5" />
       <node id="6836281137582840123" at="52,55,53,119" concept="7" />
       <node id="6836281137582840125" at="53,119,54,91" concept="7" />
       <node id="6836281137582840127" at="54,91,55,422" concept="6" />
@@ -33,7 +33,7 @@
       <node id="1224588814561889089" at="34,0,38,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="1224588814561889089" at="42,0,46,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="6836281137582840117" at="51,0,57,0" concept="4" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6836281137582840106" at="49,257,57,17" concept="6" />
+      <node id="6836281137582840106" at="49,264,57,17" concept="6" />
       <node id="1224588814561889089" at="47,122,58,13" concept="0" />
       <node id="1224588814561889089" at="46,0,60,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
       <node id="1224588814561889089" at="40,56,60,10" concept="6" />
@@ -428,8 +428,8 @@
       <node id="1224588814561913819" at="29,90,30,131" concept="5" />
       <node id="1224588814561913819" at="33,44,34,20" concept="6" />
       <node id="1224588814561913819" at="41,63,42,58" concept="6" />
-      <node id="1224588814561913819" at="46,13,47,271" concept="5" />
-      <node id="1224588814561913819" at="47,271,48,64" concept="6" />
+      <node id="1224588814561913819" at="46,13,47,278" concept="5" />
+      <node id="1224588814561913819" at="47,278,48,64" concept="6" />
       <node id="1224588814561913819" at="53,7,54,22" concept="6" />
       <node id="1224588814561913819" at="56,0,57,0" concept="9" trace="breakingNode_qiu8pk_a0a0a0a0a1a0b0a1a2" />
       <node id="1224588814561913819" at="24,0,27,0" concept="1" trace="BuildMpsLayout_ModuleSources_Constraints#()V" />

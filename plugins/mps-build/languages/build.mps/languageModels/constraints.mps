@@ -748,7 +748,7 @@
                 </node>
                 <node concept="2rP1CM" id="5Vvmn_Ql1$C" role="37wK5m" />
                 <node concept="35c_gC" id="5Vvmn_Ql1$D" role="37wK5m">
-                  <ref role="35c_gD" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
+                  <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
                 </node>
               </node>
             </node>
@@ -919,7 +919,7 @@
     <node concept="1N5Pfh" id="13YBgBBSiJs" role="1Mr941">
       <ref role="1N5Vy1" to="kdzh:1tWbYFNhzsh" resolve="module" />
       <node concept="1dDu$B" id="13YBgBBSiJw" role="1N6uqs">
-        <ref role="1dDu$A" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
+        <ref role="1dDu$A" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
       </node>
     </node>
   </node>

@@ -812,7 +812,7 @@
                                                 </node>
                                               </node>
                                               <node concept="35c_gC" id="3q" role="37wK5m">
-                                                <ref role="35c_gD" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
+                                                <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
                                               </node>
                                             </node>
                                           </node>
@@ -1178,7 +1178,7 @@
                                                 </node>
                                               </node>
                                               <node concept="35c_gC" id="5_" role="37wK5m">
-                                                <ref role="35c_gD" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
+                                                <ref role="35c_gD" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
                                               </node>
                                             </node>
                                           </node>
