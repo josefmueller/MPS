@@ -455,36 +455,126 @@
     </jar>
     <mkdir dir="${build.layout}/languages" />
     <mkdir dir="${build.layout}/languages/devkits" />
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
-    </copy>
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
-    </copy>
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-design.devkit" />
-    </copy>
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.templates.devkit" />
-    </copy>
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-descriptor.devkit" />
-    </copy>
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.structure.devkit" />
-    </copy>
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.textgen.devkit" />
-    </copy>
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.typesystem.devkit" />
-    </copy>
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.dataflow.devkit" />
-    </copy>
-    <copy todir="${build.layout}/languages/devkits">
-      <fileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.constraints.devkit" />
-    </copy>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.bootstrap-languages.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.bootstrap-languages.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.bootstrap-languages.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.bootstrap-languages" type="devkit" uuid="e073aac8-8c71-4c23-be71-86bf7a6df0a2">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.bootstrap-languages.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.bootstrap-languages.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.general-purpose.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.general-purpose.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.general-purpose.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.general-purpose" type="devkit" uuid="fbc25dd2-5da4-483a-8b19-70928e1b62d7">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.general-purpose.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.general-purpose.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.general-purpose.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.language-design.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.language-design.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.language-design.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.language-design" type="devkit" uuid="2677cb18-f558-4e33-bc38-a5139cee06dc">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.language-design.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.language-design.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-design.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.language-design.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.templates.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.templates.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.templates.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.templates" type="devkit" uuid="a2eb3a43-fcc2-4200-80dc-c60110c4862d">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.templates.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.templates.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.templates.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.templates.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.language-descriptor.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.language-descriptor.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.language-descriptor.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.language-descriptor" type="devkit" uuid="00000000-0000-4000-0000-3c66972ccb47">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.language-descriptor.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.language-descriptor.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-descriptor.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.language-descriptor.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.structure.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.structure.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.aspect.structure.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.aspect.structure" type="devkit" uuid="78434eb8-b0e5-444b-850d-e7c4ad2da9ab">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.aspect.structure.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.aspect.structure.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.structure.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.structure.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.textgen.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.textgen.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.aspect.textgen.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.aspect.textgen" type="devkit" uuid="fa73d85a-ac7f-447b-846c-fcdc41caa600">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.aspect.textgen.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.aspect.textgen.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.textgen.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.textgen.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.typesystem.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.typesystem.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.aspect.typesystem.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.aspect.typesystem" type="devkit" uuid="00000000-0000-4000-0000-1de82b3a4936">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.aspect.typesystem.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.aspect.typesystem.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.typesystem.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.typesystem.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.dataflow.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.dataflow.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.aspect.dataflow.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.aspect.dataflow" type="devkit" uuid="00000000-0000-4000-0000-443879f56b80">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.aspect.dataflow.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.aspect.dataflow.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.dataflow.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.dataflow.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.constraints.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.constraints.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.devkit.aspect.constraints.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.devkit.aspect.constraints" type="devkit" uuid="00000000-0000-4000-0000-5604ebd4f22c">
+        <dependencies />
+        <sources jar="." descriptor="jetbrains.mps.devkit.aspect.constraints.devkit" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/languages/devkits/jetbrains.mps.devkit.aspect.constraints.jar" duplicate="preserve">
+      <zipfileset file="${mps_home}/core/devkits/jetbrains.mps.devkit.aspect.constraints.devkit" prefix="module" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.devkit.aspect.constraints.jar" />
+    </jar>
     <mkdir dir="${build.layout}/languages/make" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.make.facet.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.make.facet.jar/META-INF" />

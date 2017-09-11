@@ -303,7 +303,7 @@
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
-      <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.devkit" />
+      <library file="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
@@ -605,7 +605,7 @@
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
       <pathelement location="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
-      <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.devkit" />
+      <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-descriptor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
