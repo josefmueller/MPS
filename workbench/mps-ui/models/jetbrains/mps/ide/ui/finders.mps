@@ -2541,20 +2541,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="3_o1C0wGpNf" role="3cqZAp">
-              <node concept="3fqX7Q" id="3_o1C0wGpNg" role="3clFbw">
-                <node concept="2YIFZM" id="3_o1C0wGpNh" role="3fr31v">
-                  <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                  <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-                  <node concept="37vLTw" id="3GM_nagTzmz" role="37wK5m">
-                    <ref role="3cqZAo" node="3_o1C0wGpN5" resolve="modelDescriptor" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="3_o1C0wGpNj" role="3clFbx">
-                <node concept="3N13vt" id="3_o1C0wGpNk" role="3cqZAp" />
-              </node>
-            </node>
             <node concept="1DcWWT" id="3_o1C0wGpNl" role="3cqZAp">
               <node concept="2YIFZM" id="34WRu0wIfdb" role="1DdaDG">
                 <ref role="37wK5l" to="mhbf:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SModel):java.lang.Iterable" resolve="getDescendants" />
@@ -2901,20 +2887,6 @@
                 <node concept="liA8E" id="ZVS8OJnEID" role="2OqNvi">
                   <ref role="37wK5l" to="yyf4:~ProgressMonitor.isCanceled():boolean" resolve="isCanceled" />
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="3_o1C0wGpXE" role="3cqZAp">
-              <node concept="3fqX7Q" id="3_o1C0wGpXF" role="3clFbw">
-                <node concept="2YIFZM" id="3_o1C0wGpXG" role="3fr31v">
-                  <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                  <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-                  <node concept="37vLTw" id="ZVS8OJmZ2w" role="37wK5m">
-                    <ref role="3cqZAo" node="3_o1C0wGpTJ" resolve="model" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="3_o1C0wGpXK" role="3clFbx">
-                <node concept="3N13vt" id="ZVS8OJmZ27" role="3cqZAp" />
               </node>
             </node>
             <node concept="3clFbH" id="ZVS8OJmYHL" role="3cqZAp" />
@@ -3509,20 +3481,6 @@
                     <ref role="3cqZAo" node="5wOcmpULBDy" resolve="searchResults" />
                   </node>
                 </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="5wOcmpULBFL" role="3cqZAp">
-              <node concept="3fqX7Q" id="5wOcmpULBFM" role="3clFbw">
-                <node concept="2YIFZM" id="5wOcmpULBFN" role="3fr31v">
-                  <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                  <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-                  <node concept="37vLTw" id="5wOcmpULBFO" role="37wK5m">
-                    <ref role="3cqZAo" node="5wOcmpULBFB" resolve="modelDescriptor" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="5wOcmpULBFP" role="3clFbx">
-                <node concept="3N13vt" id="5wOcmpULBFQ" role="3cqZAp" />
               </node>
             </node>
             <node concept="3clFbF" id="5wOcmpULBFR" role="3cqZAp">
@@ -4269,20 +4227,6 @@
             </node>
           </node>
           <node concept="3clFbS" id="5m8mBG1jPIa" role="2LFqv$">
-            <node concept="3clFbJ" id="5m8mBG1jPIb" role="3cqZAp">
-              <node concept="3fqX7Q" id="5m8mBG1jPIc" role="3clFbw">
-                <node concept="2YIFZM" id="5m8mBG1jPId" role="3fr31v">
-                  <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                  <ref role="37wK5l" to="w1kc:~SModelStereotype.isUserModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isUserModel" />
-                  <node concept="37vLTw" id="5m8mBG1jPIe" role="37wK5m">
-                    <ref role="3cqZAo" node="5m8mBG1jPI8" resolve="model" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="5m8mBG1jPIf" role="3clFbx">
-                <node concept="3N13vt" id="5m8mBG1jPIg" role="3cqZAp" />
-              </node>
-            </node>
             <node concept="3SKdUt" id="5m8mBG1jPIh" role="3cqZAp">
               <node concept="3SKdUq" id="5m8mBG1jPIi" role="3SKWNk">
                 <property role="3SKdUp" value="FIXME rest of the class relies on plain (no unwraped devkits and extended languages) imports," />

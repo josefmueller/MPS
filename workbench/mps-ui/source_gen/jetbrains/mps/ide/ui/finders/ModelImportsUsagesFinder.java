@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 /**
@@ -39,9 +38,6 @@ public class ModelImportsUsagesFinder extends BaseFinder {
     for (SModel modelDescriptor : usages) {
       if (monitor.isCanceled()) {
         return searchResults;
-      }
-      if (!(SModelStereotype.isUserModel(modelDescriptor))) {
-        continue;
       }
       searchResults.add(new SearchResult<SModel>(modelDescriptor, "usages in imports"));
     }

@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -41,9 +40,6 @@ public class ModelUsagesFinder extends BaseFinder {
     for (SModel modelDescriptor : models) {
       if (monitor.isCanceled()) {
         return searchResults;
-      }
-      if (!(SModelStereotype.isUserModel(modelDescriptor))) {
-        continue;
       }
       for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
         for (SReference reference : node.getReferences()) {

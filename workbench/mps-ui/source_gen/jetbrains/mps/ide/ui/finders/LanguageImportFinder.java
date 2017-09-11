@@ -17,7 +17,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
 
 /**
@@ -106,9 +105,6 @@ public class LanguageImportFinder extends BaseFinder implements IFinder {
 
   /*package*/ void collectUsagesInModels(SLanguage searchedLanguage, SModule owner, SearchResults searchResults) {
     for (SModel model : owner.getModels()) {
-      if (!(SModelStereotype.isUserModel(model))) {
-        continue;
-      }
       // FIXME rest of the class relies on plain (no unwraped devkits and extended languages) imports, 
       // perhaps, shall revert to SModel.getUsedLanguages() here as well? 
       if (SModelOperations.getAllLanguageImports(model).contains(searchedLanguage)) {
