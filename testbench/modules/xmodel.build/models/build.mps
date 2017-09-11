@@ -2,7 +2,7 @@
 <model ref="r:c038eee7-4c1b-499b-b130-c7394a2f3517(jetbrains.mps.generator.xmodel.build.test.build)">
   <persistence version="9" />
   <languages>
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="4" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="5" />
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
   </languages>
   <imports>
@@ -11,9 +11,6 @@
   <registry>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
       <concept id="5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" flags="ng" index="55IIr" />
-      <concept id="9126048691955220717" name="jetbrains.mps.build.structure.BuildLayout_File" flags="ng" index="28jJK3">
-        <child id="9126048691955220762" name="path" index="28jJRO" />
-      </concept>
       <concept id="7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" flags="ng" index="iG8Mu">
         <child id="7321017245477039051" name="compositePart" index="iGT6I" />
       </concept>
@@ -300,27 +297,8 @@
             <property role="3MwjfP" value="devkits" />
           </node>
         </node>
-        <node concept="28jJK3" id="3Af5TgnB$Ea" role="39821P">
-          <node concept="55IIr" id="3Af5TgnB$Eb" role="28jJRO">
-            <node concept="2Ry0Ak" id="3Af5TgnB$Er" role="iGT6I">
-              <property role="2Ry0Am" value="languages" />
-              <node concept="2Ry0Ak" id="7ux1RCzo3ja" role="2Ry0An">
-                <property role="2Ry0Am" value="languageDesign" />
-                <node concept="2Ry0Ak" id="7ux1RCzo3kD" role="2Ry0An">
-                  <property role="2Ry0Am" value="generator" />
-                  <node concept="2Ry0Ak" id="7ux1RCzo3lM" role="2Ry0An">
-                    <property role="2Ry0Am" value="project.xmodel.test1" />
-                    <node concept="2Ry0Ak" id="7ux1RCzo3lK" role="2Ry0An">
-                      <property role="2Ry0Am" value="xmodel.dk" />
-                      <node concept="2Ry0Ak" id="7ux1RCzo3lL" role="2Ry0An">
-                        <property role="2Ry0Am" value="jetbrains.mps.generator.xmodel-sample.devkit" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node concept="L2wRC" id="4qrVxlJ3X8A" role="39821P">
+          <ref role="L2wRA" node="3Af5TgnBvrX" resolve="jetbrains.mps.generator.xmodel-sample" />
         </node>
       </node>
     </node>

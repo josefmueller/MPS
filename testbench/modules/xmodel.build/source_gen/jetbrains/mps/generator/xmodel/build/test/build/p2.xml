@@ -140,7 +140,7 @@
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
-      <library file="${artifacts.p1}/devkits/jetbrains.mps.generator.xmodel-sample.devkit" />
+      <library file="${artifacts.p1}/devkits/jetbrains.mps.generator.xmodel-sample.jar" />
       <library file="${artifacts.p1}/jetbrains.mps.generator.test.xmodel.lang1.jar" />
       <library file="${artifacts.p1}/jetbrains.mps.generator.xmodel.test.jar" />
       <chunk>
