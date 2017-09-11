@@ -258,7 +258,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/1265949165890536423");
     b.prop("stripImplementation", 0x6de50fcfc3523742L, "7918752904810477378");
     b.prop("customContent", 0x2e490987db3dd40dL, "3335207478148060173");
-    b.associate("module", 0x11918e0f209b83e9L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL).optional(false).origin("1265949165890536425").done();
+    b.associate("module", 0x11918e0f209b83e9L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL).optional(false).origin("1265949165890536425").done();
     b.aggregate("jarLocations", 0x3c765492deb27a75L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L).optional(true).ordered(true).multiple(true).origin("4356762679305730677").done();
     b.aggregate("deployedJar", 0x2e490987db3dc749L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2e490987db3dd252L).optional(true).ordered(true).multiple(false).origin("3335207478148056905").done();
     b.aggregate("sourceJar", 0x2e490987db3dd410L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2e490987db3dd252L).optional(true).ordered(true).multiple(false).origin("3335207478148060176").done();
@@ -273,7 +273,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/1692280246134781712");
     b.prop("modelsOnly", 0x407004b11f167886L, "4643216374596270214");
     b.prop("stripImplementation", 0x6de50fcfc334192fL, "7918752904808503599");
-    b.associate("module", 0x177c2feaf3463711L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL).optional(false).origin("1692280246134781713").done();
+    b.associate("module", 0x177c2feaf3463711L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL).optional(false).origin("1692280246134781713").done();
     b.alias("sources of");
     return b.create();
   }

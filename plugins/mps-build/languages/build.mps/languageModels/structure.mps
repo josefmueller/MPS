@@ -492,7 +492,7 @@
       <property role="20kJfa" value="module" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1692280246134781713" />
-      <ref role="20lvS9" node="4zCbl23cpcc" resolve="BuildMps_Module" />
+      <ref role="20lvS9" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
     </node>
     <node concept="PrWs8" id="5bqm540KDkY" role="PzmwI">
       <ref role="PrY4T" to="3ior:5bqm540K$G7" resolve="BuildLayout_InJarNode" />
@@ -567,7 +567,7 @@
       <property role="20kJfa" value="module" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1265949165890536425" />
-      <ref role="20lvS9" node="4zCbl23cpcc" resolve="BuildMps_Module" />
+      <ref role="20lvS9" node="hS0KzPONfF" resolve="BuildMps_AbstractModule" />
     </node>
   </node>
   <node concept="1TIwiD" id="KbRDZ75DBp">
