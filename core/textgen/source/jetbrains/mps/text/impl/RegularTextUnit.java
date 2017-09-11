@@ -171,6 +171,11 @@ public class RegularTextUnit implements TextUnit, CompatibilityTextUnit {
     if (myState == Status.Undefined) {
       throw new IllegalStateException("Shall generate first");
     }
+    if (myState == Status.Empty) {
+      // generally, client are expected to ask #getState() first, and handle Empty case as appropriate.
+      // However, if they do not, there's no reason to fail with NPE.
+      return new byte[0];
+    }
     // FIXME Handling of binary/base64 encoded strings missing?!
 //    if (myEncoding == null && "binary".equals(getLegacyEncoding())) {
 //      return EncodingUtil.decodeBase64(myOutcome);
