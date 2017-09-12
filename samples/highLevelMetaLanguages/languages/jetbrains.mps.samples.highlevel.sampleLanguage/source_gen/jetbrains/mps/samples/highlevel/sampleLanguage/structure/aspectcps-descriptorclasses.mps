@@ -2,6 +2,8 @@
 <model ref="00000000-0000-4000-5f02-5beb5f025beb/i:f8c7e70(checkpoints/jetbrains.mps.samples.highlevel.sampleLanguage.structure@descriptorclasses)">
   <persistence version="9" />
   <attribute name="checkpoint" value="DescriptorClasses" />
+  <attribute name="prev-generation-plan" value="HighlevelCPS" />
+  <attribute name="prev-checkpoint" value="DescriptorsReady" />
   <attribute name="generation-plan" value="AspectCPS" />
   <languages />
   <imports>
