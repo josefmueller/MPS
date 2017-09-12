@@ -2455,15 +2455,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="2on6rvckOnC" role="3cqZAp">
-              <node concept="3cpWsn" id="2on6rvckOnD" role="3cpWs9">
-                <property role="TrG5h" value="groupSuffixDK" />
-                <node concept="17QB3L" id="2on6rvckOnE" role="1tU5fm" />
-                <node concept="Xl_RD" id="2on6rvckOnF" role="33vP2m">
-                  <property role="Xl_RC" value="" />
-                </node>
-              </node>
-            </node>
             <node concept="3clFbJ" id="1pudlo0kTlr" role="3cqZAp">
               <node concept="2OqwBi" id="1pudlo0kTHv" role="3clFbw">
                 <node concept="37vLTw" id="1pudlo0kTlJ" role="2Oq$k0">
@@ -2562,36 +2553,6 @@
                           <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                         </node>
                       </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3SKdUt" id="2on6rvcl2HA" role="3cqZAp">
-                  <node concept="3SKdUq" id="2on6rvcl2HC" role="3SKWNk">
-                    <property role="3SKdUp" value="need to match layout from switch_IdeaPluginContent template" />
-                  </node>
-                </node>
-                <node concept="3clFbF" id="2on6rvckSvA" role="3cqZAp">
-                  <node concept="37vLTI" id="2on6rvckSPl" role="3clFbG">
-                    <node concept="3cpWs3" id="2on6rvckV00" role="37vLTx">
-                      <node concept="Xl_RD" id="2on6rvckV03" role="3uHU7w">
-                        <property role="Xl_RC" value=".dk/" />
-                      </node>
-                      <node concept="2OqwBi" id="2on6rvckTBR" role="3uHU7B">
-                        <node concept="2OqwBi" id="2on6rvckT39" role="2Oq$k0">
-                          <node concept="37vLTw" id="2on6rvckSTK" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1pudlo0lb3f" resolve="group" />
-                          </node>
-                          <node concept="3TrEf2" id="2on6rvckTmg" role="2OqNvi">
-                            <ref role="3Tt5mk" to="kdzh:5HVSRHdUL82" resolve="group" />
-                          </node>
-                        </node>
-                        <node concept="3TrcHB" id="2on6rvckTMr" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="37vLTw" id="2on6rvckSv$" role="37vLTJ">
-                      <ref role="3cqZAo" node="2on6rvckOnD" resolve="groupSuffixDK" />
                     </node>
                   </node>
                 </node>
@@ -2712,8 +2673,8 @@
                               <node concept="37vLTw" id="4_YGhOEm4qB" role="3uHU7B">
                                 <ref role="3cqZAo" node="4_YGhOElV1F" resolve="baseLocation" />
                               </node>
-                              <node concept="37vLTw" id="2on6rvcl3Cv" role="3uHU7w">
-                                <ref role="3cqZAo" node="2on6rvckOnD" resolve="groupSuffixDK" />
+                              <node concept="37vLTw" id="3qKFsNEFV96" role="3uHU7w">
+                                <ref role="3cqZAo" node="3Y1e7rX5EVo" resolve="groupSuffix" />
                               </node>
                             </node>
                           </node>
@@ -3238,15 +3199,6 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3cpWs8" id="2on6rvcle$N" role="3cqZAp">
-                      <node concept="3cpWsn" id="2on6rvcle$Q" role="3cpWs9">
-                        <property role="TrG5h" value="groupNameDK" />
-                        <node concept="17QB3L" id="2on6rvcle$L" role="1tU5fm" />
-                        <node concept="Xl_RD" id="2on6rvclfxc" role="33vP2m">
-                          <property role="Xl_RC" value="" />
-                        </node>
-                      </node>
-                    </node>
                     <node concept="3clFbJ" id="2on6rvcl51U" role="3cqZAp">
                       <node concept="3clFbS" id="2on6rvcl51W" role="3clFbx">
                         <node concept="3clFbF" id="2on6rvclkoK" role="3cqZAp">
@@ -3268,31 +3220,6 @@
                                   </node>
                                 </node>
                                 <node concept="3TrcHB" id="2on6rvcl9ZX" role="2OqNvi">
-                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="2on6rvclmbB" role="3cqZAp">
-                          <node concept="37vLTI" id="2on6rvclmLS" role="3clFbG">
-                            <node concept="37vLTw" id="2on6rvclmb_" role="37vLTJ">
-                              <ref role="3cqZAo" node="2on6rvcle$Q" resolve="groupNameDK" />
-                            </node>
-                            <node concept="3cpWs3" id="2on6rvclnhV" role="37vLTx">
-                              <node concept="Xl_RD" id="2on6rvclnhY" role="3uHU7w">
-                                <property role="Xl_RC" value=".dk/" />
-                              </node>
-                              <node concept="2OqwBi" id="2on6rvclmMw" role="3uHU7B">
-                                <node concept="2OqwBi" id="2on6rvclmMx" role="2Oq$k0">
-                                  <node concept="37vLTw" id="2on6rvclmMy" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="5MsCDTLLUUv" resolve="group" />
-                                  </node>
-                                  <node concept="3TrEf2" id="2on6rvclmMz" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="kdzh:5HVSRHdUL82" resolve="group" />
-                                  </node>
-                                </node>
-                                <node concept="3TrcHB" id="2on6rvclmM$" role="2OqNvi">
                                   <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                                 </node>
                               </node>
@@ -3335,8 +3262,8 @@
                               </node>
                             </node>
                             <node concept="3cpWs3" id="2on6rvclfxK" role="3uHU7B">
-                              <node concept="37vLTw" id="2on6rvclhTP" role="3uHU7w">
-                                <ref role="3cqZAo" node="2on6rvcle$Q" resolve="groupNameDK" />
+                              <node concept="37vLTw" id="3qKFsNEFW_V" role="3uHU7w">
+                                <ref role="3cqZAo" node="2on6rvclcRP" resolve="groupName" />
                               </node>
                               <node concept="37vLTw" id="5Y_X_gYZFgU" role="3uHU7B">
                                 <ref role="3cqZAo" node="5Y_X_gYZnVm" resolve="baseLocation" />
