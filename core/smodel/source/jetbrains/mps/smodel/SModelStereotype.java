@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
 /**
@@ -105,34 +104,4 @@ public class SModelStereotype {
     }
   }
 
-  /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModelName} instead
-   * @param name not null
-   * @return name without stereotype (if any)
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public static String withoutStereotype(String name) {
-    int atIndex = name.lastIndexOf('@');
-    if (atIndex == -1) {
-      return name;
-    } else {
-      return name.substring(0, atIndex);
-    }
-  }
-
-  /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.model.SModelName} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public static String withStereotype(@NotNull String modelName, @Nullable String stereotype) {
-    if (modelName.indexOf('@') != -1) {
-      throw new IllegalArgumentException("Model name already got stereotype");
-    }
-    if (stereotype == null || stereotype.isEmpty()) {
-      return modelName;
-    }
-    return modelName + '@' + stereotype;
-  }
 }

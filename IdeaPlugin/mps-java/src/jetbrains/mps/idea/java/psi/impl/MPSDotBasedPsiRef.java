@@ -19,18 +19,13 @@ package jetbrains.mps.idea.java.psi.impl;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiReference;
-import com.intellij.util.IncorrectOperationException;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
-import jetbrains.mps.idea.java.refactoring.MoveRenameBatch;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.StaticReference;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
@@ -62,7 +57,7 @@ public class MPSDotBasedPsiRef extends MPSPsiJavaRef {
         @Override
         public void run() {
           SReference sref = getSReference();
-          String role = sref.getRole();
+          SReferenceLink role = sref.getLink();
           SNode source = sref.getSourceNode();
 
           if (sref instanceof StaticReference) {

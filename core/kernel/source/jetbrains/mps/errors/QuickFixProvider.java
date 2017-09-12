@@ -16,7 +16,6 @@
 package jetbrains.mps.errors;
 
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 
 // XXX it's a bit odd to have isExecutedImmediately here, but to instantiate QuickFix_Runtime to get declaration node, could we do anything about that?

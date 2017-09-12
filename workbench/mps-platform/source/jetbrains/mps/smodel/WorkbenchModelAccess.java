@@ -155,7 +155,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     myEDTExecutor.scheduleCommand(() -> tryWriteInCommand(r, (MPSProject) project), project);
   }
 
-  @Override
   public boolean isInEDT() {
     return ApplicationManager.getApplication().isDispatchThread();
   }
@@ -312,11 +311,6 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
                                                   new CommandRunnable(r, project), name, groupId,
                                                   requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION
                                                                           : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-  }
-
-  @Override
-  public void runUndoTransparentCommand(Runnable r) {
-    runUndoTransparentCommand(r, CurrentProjectAccessUtil.getMPSProjectFromUI());
   }
 
   @Override

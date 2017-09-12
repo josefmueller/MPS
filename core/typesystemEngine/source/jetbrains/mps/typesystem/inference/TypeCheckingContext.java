@@ -15,18 +15,17 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 import java.util.Set;

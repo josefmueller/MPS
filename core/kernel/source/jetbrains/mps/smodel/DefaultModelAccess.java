@@ -127,11 +127,6 @@ class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public boolean isInEDT() {
-    return canWrite();
-  }
-
-  @Override
   public <T> T tryRead(final Computable<T> c) {
     if (getReadLock().tryLock()) {
       try {
@@ -165,11 +160,6 @@ class DefaultModelAccess extends ModelAccess {
 
   @Override
   public void runUndoTransparentCommand(Runnable r, Project project) {
-    r.run();
-  }
-
-  @Override
-  public void runUndoTransparentCommand(Runnable r) {
     r.run();
   }
 

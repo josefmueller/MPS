@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,10 +31,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
-import java.util.Stack;
 
 public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
@@ -98,26 +94,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @ToRemove(version = 3.2)
   public static SReference create(String role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, null);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static SReference create(String role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId, String resolveInfo) {
-    return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, resolveInfo);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static SReference create(String role, SNode sourceNode, SNodeReference pointer, String resolveInfo) {
-    return create(role, sourceNode, pointer.getModelReference(), pointer.getNodeId(), resolveInfo);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static SReference create(String role, SNode sourceNode, SNode targetNode, String resolveInfo) {
-    SReference ref = create(role, sourceNode, targetNode);
-    ref.setResolveInfo(resolveInfo);
-    return ref;
   }
 
   /**

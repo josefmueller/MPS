@@ -493,7 +493,7 @@
       <concept id="1145567426890" name="jetbrains.mps.lang.smodel.structure.SNodeListCreator" flags="nn" index="2T8Vx0">
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
-      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
         <property id="3542851458883439833" name="version" index="2V$B1S" />
         <property id="3542851458883439832" name="languageId" index="2V$B1T" />
@@ -29609,13 +29609,13 @@
                 <property role="TrG5h" value="staticRef" />
                 <node concept="2YIFZM" id="3$JID3i87yn" role="33vP2m">
                   <ref role="1Pybhc" to="w1kc:~StaticReference" resolve="StaticReference" />
-                  <ref role="37wK5l" to="w1kc:~SReference.create(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.model.SNodeId,java.lang.String):jetbrains.mps.smodel.SReference" resolve="create" />
+                  <ref role="37wK5l" to="w1kc:~SReference.create(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.model.SNodeId,java.lang.String):jetbrains.mps.smodel.SReference" resolve="create" />
                   <node concept="2OqwBi" id="3$JID3i87yo" role="37wK5m">
                     <node concept="37vLTw" id="3$JID3i8wjf" role="2Oq$k0">
                       <ref role="3cqZAo" node="3$JID3i8wj1" resolve="ref" />
                     </node>
                     <node concept="liA8E" id="3$JID3i87yq" role="2OqNvi">
-                      <ref role="37wK5l" to="mhbf:~SReference.getRole():java.lang.String" resolve="getRole" />
+                      <ref role="37wK5l" to="mhbf:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="3$JID3ick2t" role="37wK5m">
