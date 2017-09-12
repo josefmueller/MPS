@@ -4,22 +4,25 @@ package jetbrains.mps.build.mps.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModuleLoader {
   public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, ModuleChecker.Reporter reporter) {
-    String moduleFilePath = BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext()));
+    final Context buildContext = (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext());
+    String moduleFilePath = BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), buildContext);
     if (moduleFilePath == null) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file doesn't exist (" + BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())) + ")", null, null);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": file doesn't exist (" + BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), buildContext) + ")", null, null);
       return new ModuleChecker(module, visible, pathConverter, null, null, reporter);
     }
 
@@ -41,7 +44,10 @@ public class ModuleLoader {
 
     ModuleDescriptor md = null;
     try {
-      md = ModuleLoaderUtils.loadModuleDescriptor(file, genContext, module, reporter);
+      // XXX why do I care to get BuildFolderMacro instances from original project? What's wrong with actual project state? 
+      SNode originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
+      MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(file.getParent(), buildContext, SNodeOperations.getNodeAncestor(originalModule, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false), reporter);
+      md = ModuleLoaderUtils.loadModuleDescriptor(file, helper);
       if (md.getLoadException() != null) {
         reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": exception: " + md.getLoadException().getMessage(), null, null);
       }

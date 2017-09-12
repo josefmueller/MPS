@@ -14,6 +14,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
+import jetbrains.mps.build.util.Context;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFileUtils;
@@ -21,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildFolderMacro__BehaviorDescriptor;
-import jetbrains.mps.build.util.Context;
 import jetbrains.mps.vfs.FileSystem;
 
 public class ModuleLoaderUtils {
@@ -30,8 +30,7 @@ public class ModuleLoaderUtils {
     return (originalModule != null ? originalModule : module);
   }
 
-  public static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, TemplateQueryContext genContext, SNode module, ModuleChecker.Reporter reporter) {
-    MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(moduleDescriptorFile.getParent(), genContext, module, reporter);
+  /*package*/ static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, MacroHelper helper) {
     String path = moduleDescriptorFile.getPath();
     if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
       return LanguageDescriptorPersistence.loadLanguageDescriptor(moduleDescriptorFile, helper);
@@ -43,15 +42,15 @@ public class ModuleLoaderUtils {
     throw new RuntimeException("unknown file type: " + moduleDescriptorFile.getName());
   }
 
-  private static class ModuleMacroHelper implements MacroHelper {
+  /*package*/ static class ModuleMacroHelper implements MacroHelper {
     private final IFile moduleSourceDir;
-    private final TemplateQueryContext genContext;
-    private final SNode originalModule;
+    private final Context myContext;
+    private final SNode myProject;
     private final ModuleChecker.Reporter reporter;
-    public ModuleMacroHelper(IFile moduleSourceDir, TemplateQueryContext genContext, SNode module, ModuleChecker.Reporter reporter) {
+    public ModuleMacroHelper(IFile moduleSourceDir, Context context, SNode buildProject, ModuleChecker.Reporter reporter) {
       this.moduleSourceDir = moduleSourceDir;
-      this.genContext = genContext;
-      this.originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
+      this.myContext = context;
+      this.myProject = buildProject;
       this.reporter = reporter;
     }
     @Override
@@ -73,7 +72,7 @@ public class ModuleLoaderUtils {
 
         String macroName = path.substring(2, index);
         SNode found = null;
-        for (SNode macro : Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(originalModule, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro")))) {
+        for (SNode macro : Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(myProject, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafadd002L, "jetbrains.mps.build.structure.BuildFolderMacro")))) {
           if (eq_krgnbt_a0a0f0d0f4(SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), macroName)) {
             found = macro;
             break;
@@ -84,7 +83,7 @@ public class ModuleLoaderUtils {
           return path;
         }
 
-        String localPath = BuildFolderMacro__BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(found, Context.defaultContext(genContext));
+        String localPath = BuildFolderMacro__BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(found, myContext);
         if (localPath == null) {
           reporter.report("cannot resolve local path: " + path + ", macro has no default value", found, null);
           return path;
