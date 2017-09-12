@@ -979,25 +979,28 @@
         </node>
         <node concept="SfApY" id="3HwLahs69Fd" role="3cqZAp">
           <node concept="3clFbS" id="3HwLahs69Fe" role="SfCbr">
-            <node concept="3SKdUt" id="182IgCCS2pI" role="3cqZAp">
-              <node concept="3SKdUq" id="182IgCCS2pK" role="3SKWNk">
-                <property role="3SKdUp" value="XXX why do I care to get BuildFolderMacro instances from original project? What's wrong with actual project state?" />
+            <node concept="3SKdUt" id="182IgCCXI_F" role="3cqZAp">
+              <node concept="3SKdUq" id="182IgCCXI_H" role="3SKWNk">
+                <property role="3SKdUp" value="buildProject to become cons arg" />
               </node>
             </node>
-            <node concept="3cpWs8" id="182IgCCRHb3" role="3cqZAp">
-              <node concept="3cpWsn" id="182IgCCRHb4" role="3cpWs9">
-                <property role="TrG5h" value="originalModule" />
-                <node concept="3Tqbb2" id="182IgCCRHaZ" role="1tU5fm">
-                  <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+            <node concept="3cpWs8" id="182IgCCXHSF" role="3cqZAp">
+              <node concept="3cpWsn" id="182IgCCXHSG" role="3cpWs9">
+                <property role="TrG5h" value="buildProject" />
+                <property role="3TUv4t" value="true" />
+                <node concept="3Tqbb2" id="182IgCCXHSA" role="1tU5fm">
+                  <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                 </node>
-                <node concept="2YIFZM" id="182IgCCRHb5" role="33vP2m">
-                  <ref role="1Pybhc" node="6tgFcyzLvoC" resolve="ModuleLoaderUtils" />
-                  <ref role="37wK5l" node="6tgFcyzKijK" resolve="getOriginalModule" />
-                  <node concept="37vLTw" id="182IgCCRHb6" role="37wK5m">
+                <node concept="2OqwBi" id="182IgCCXHSH" role="33vP2m">
+                  <node concept="37vLTw" id="182IgCCXHSI" role="2Oq$k0">
                     <ref role="3cqZAo" node="6tgFcy$pJSj" resolve="module" />
                   </node>
-                  <node concept="37vLTw" id="182IgCCRHb7" role="37wK5m">
-                    <ref role="3cqZAo" node="6tgFcy$pJT5" resolve="genContext" />
+                  <node concept="2Xjw5R" id="182IgCCXHSJ" role="2OqNvi">
+                    <node concept="1xMEDy" id="182IgCCXHSK" role="1xVPHs">
+                      <node concept="chp4Y" id="182IgCCXHSL" role="ri$Ld">
+                        <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -1022,17 +1025,8 @@
                     <node concept="37vLTw" id="182IgCCRH1q" role="37wK5m">
                       <ref role="3cqZAo" node="182IgCCRCxu" resolve="buildContext" />
                     </node>
-                    <node concept="2OqwBi" id="182IgCCRMP8" role="37wK5m">
-                      <node concept="37vLTw" id="182IgCCRMAB" role="2Oq$k0">
-                        <ref role="3cqZAo" node="182IgCCRHb4" resolve="originalModule" />
-                      </node>
-                      <node concept="2Xjw5R" id="182IgCCRN1J" role="2OqNvi">
-                        <node concept="1xMEDy" id="182IgCCRN1L" role="1xVPHs">
-                          <node concept="chp4Y" id="182IgCCRN5T" role="ri$Ld">
-                            <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                          </node>
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="182IgCCXHSM" role="37wK5m">
+                      <ref role="3cqZAo" node="182IgCCXHSG" resolve="buildProject" />
                     </node>
                     <node concept="37vLTw" id="6tgFcyzU0Yu" role="37wK5m">
                       <ref role="3cqZAo" node="6tgFcy$qTY6" resolve="reporter" />

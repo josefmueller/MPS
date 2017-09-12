@@ -14,8 +14,8 @@ import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.MacroHelper;
 
 public class ModuleLoader {
   public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, ModuleChecker.Reporter reporter) {
@@ -44,9 +44,9 @@ public class ModuleLoader {
 
     ModuleDescriptor md = null;
     try {
-      // XXX why do I care to get BuildFolderMacro instances from original project? What's wrong with actual project state? 
-      SNode originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
-      MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(file.getParent(), buildContext, SNodeOperations.getNodeAncestor(originalModule, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false), reporter);
+      // buildProject to become cons arg 
+      final SNode buildProject = SNodeOperations.getNodeAncestor(module, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false);
+      MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(file.getParent(), buildContext, buildProject, reporter);
       md = ModuleLoaderUtils.loadModuleDescriptor(file, helper);
       if (md.getLoadException() != null) {
         reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ": exception: " + md.getLoadException().getMessage(), null, null);
