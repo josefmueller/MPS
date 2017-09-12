@@ -45,8 +45,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -55,7 +57,7 @@ import java.util.Set;
  */
 public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker implements EditorMessageOwner {
   public static boolean IMMEDIATE_QFIX_DISABLED = false;
-  private WeakSet<Set<ReportItemFlavour<?, ?>>> myOnceExecutedQuickFixes = new WeakSet<Set<ReportItemFlavour<?,?>>>();
+  private WeakSet<Map<ReportItemFlavour, Object>> myOnceExecutedQuickFixes = new WeakSet<>();
   private boolean myHasEvents = false;
 
   @NotNull
@@ -131,7 +133,10 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
 
   private boolean applyInstantIntention(final EditorContext editorContext, final SNode quickFixNode,
       @NotNull final QuickFix intention) {
-    Set<ReportItemFlavour<?, ?>> flavourSet = new HashSet<>(intention.getIdFlavours());
+    Map<ReportItemFlavour, Object> flavourSet = new HashMap<>();
+    for (ReportItemFlavour<?, ?> flavour : intention.getIdFlavours()) {
+      flavourSet.put(flavour, flavour.tryToGet(intention));
+    }
     flavourSet.remove(NodeReportItem.FLAVOUR_NODE);
     if (!myOnceExecutedQuickFixes.contains(flavourSet)) {
       myOnceExecutedQuickFixes.add(flavourSet);

@@ -87,7 +87,7 @@ public abstract class ReportItemBase implements ReportItem {
     }
   }
 
-  public static final ReportItemFlavour<ReportItem, Class<? extends ReportItem>> FLAVOUR_CLASS = new SimpleReportItemFlavour<>(ReportItem.class, ReportItem::getClass);
+  public static final ReportItemFlavour<FlavouredItem, Class<? extends FlavouredItem>> FLAVOUR_CLASS = new SimpleReportItemFlavour<>(FlavouredItem.class, FlavouredItem::getClass);
   public static final ReportItemFlavour<ReportItem, ReportItem> FLAVOUR_THIS = new SimpleReportItemFlavour<>(ReportItem.class, Function.identity());
 
 }
