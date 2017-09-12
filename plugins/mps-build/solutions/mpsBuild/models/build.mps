@@ -324,7 +324,6 @@
       <concept id="1265949165890536423" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars" flags="ng" index="L2wRC">
         <property id="3335207478148060173" name="customContent" index="3PtdQa" />
         <reference id="1265949165890536425" name="module" index="L2wRA" />
-        <child id="4356762679305730677" name="jarLocations" index="3yL2VB" />
         <child id="3335207478148056905" name="deployedJar" index="3PtcVe" />
         <child id="3335207478148060176" name="sourceJar" index="3PtdQn" />
       </concept>
@@ -355,10 +354,6 @@
         <child id="763829979718664967" name="files" index="3rtmxm" />
       </concept>
       <concept id="5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" flags="ng" index="1yeLz9" />
-      <concept id="4356762679305675652" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation" flags="ng" index="3yLZsm">
-        <property id="4356762679305675654" name="packagedLocation" index="3yLZsk" />
-        <child id="4356762679305675653" name="path" index="3yLZsn" />
-      </concept>
       <concept id="7753544965996377997" name="jetbrains.mps.build.mps.structure.BuildMps_Branding" flags="ng" index="1zClus">
         <property id="3497141547781541445" name="minor" index="2OjLBK" />
         <property id="3497141547781541444" name="major" index="2OjLBL" />
@@ -3126,18 +3121,6 @@
           </node>
           <node concept="L2wRC" id="16hzwWwBak3" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
-            <node concept="3yLZsm" id="3LQl9buHkVC" role="3yL2VB">
-              <property role="3yLZsk" value="/lib/commons-lang-2.4.jar" />
-              <node concept="398BVA" id="3LQl9buHkVD" role="3yLZsn">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="3LQl9buHkVE" role="iGT6I">
-                  <property role="2Ry0Am" value="lib" />
-                  <node concept="2Ry0Ak" id="3LQl9buHkVF" role="2Ry0An">
-                    <property role="2Ry0Am" value="commons-lang-2.4.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
           </node>
           <node concept="L2wRC" id="2d0qgmCdfZ4" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6KZ6" resolve="jetbrains.mps.baseLanguage.blTypes" />
@@ -3177,18 +3160,6 @@
           </node>
           <node concept="L2wRC" id="35abdaXtZWs" role="39821P">
             <ref role="L2wRA" node="35abdaXtLpL" resolve="jetbrains.mps.baseLanguage.logging.runtime" />
-            <node concept="3yLZsm" id="35abdaXtZWt" role="3yL2VB">
-              <property role="3yLZsk" value="/lib/log4j.jar" />
-              <node concept="398BVA" id="35abdaXtZWu" role="3yLZsn">
-                <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
-                <node concept="2Ry0Ak" id="35abdaXtZWv" role="iGT6I">
-                  <property role="2Ry0Am" value="lib" />
-                  <node concept="2Ry0Ak" id="35abdaXtZWw" role="2Ry0An">
-                    <property role="2Ry0Am" value="log4j.jar" />
-                  </node>
-                </node>
-              </node>
-            </node>
           </node>
           <node concept="L2wRC" id="2d0qgmCdfZg" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6L2r" resolve="jetbrains.mps.baseLanguage.overloadedOperators" />

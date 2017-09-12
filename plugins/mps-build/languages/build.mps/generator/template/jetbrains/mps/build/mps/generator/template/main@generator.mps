@@ -746,6 +746,9 @@
         <reference id="1265949165890536425" name="module" index="L2wRA" />
       </concept>
       <concept id="868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" flags="ng" index="3b7kt6" />
+      <concept id="5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" flags="ng" index="3bQrTs">
+        <child id="5253498789149547704" name="dependencies" index="3bR37C" />
+      </concept>
       <concept id="978600701690054692" name="jetbrains.mps.build.mps.structure.GeneratorInternal_String" flags="ng" index="1cIVw3">
         <property id="978600701690054695" name="path" index="1cIVw0" />
       </concept>
@@ -764,6 +767,9 @@
       <concept id="1692280246134781712" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources" flags="ng" index="3$exzU">
         <property id="4643216374596270214" name="modelsOnly" index="1vpBKR" />
         <reference id="1692280246134781713" name="module" index="3$exzV" />
+      </concept>
+      <concept id="4278635856200826393" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar" flags="ng" index="1BurEX">
+        <child id="4278635856200826394" name="path" index="1BurEY" />
       </concept>
       <concept id="3189788309731840247" name="jetbrains.mps.build.mps.structure.BuildMps_Solution" flags="ng" index="1E1JtA" />
       <concept id="322010710375871467" name="jetbrains.mps.build.mps.structure.BuildMps_AbstractModule" flags="ng" index="3LEN3z">
@@ -15895,6 +15901,13 @@
       <node concept="1E1JtA" id="EpEP7haDD7" role="3989C9">
         <property role="BnDLt" value="true" />
         <property role="TrG5h" value="s" />
+        <node concept="1BurEX" id="14TUqeh_Fo6" role="3bR37C">
+          <node concept="55IIr" id="14TUqeh_Fol" role="1BurEY">
+            <node concept="2Ry0Ak" id="14TUqeh_Fop" role="iGT6I">
+              <property role="2Ry0Am" value="dependency.jar" />
+            </node>
+          </node>
+        </node>
         <node concept="55IIr" id="EpEP7haDD8" role="3LF7KH" />
       </node>
       <node concept="1l3spV" id="EpEP7haDDb" role="1l3spN">
