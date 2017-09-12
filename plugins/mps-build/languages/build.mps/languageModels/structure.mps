@@ -1259,6 +1259,9 @@
       <property role="IQ2ns" value="4964617264469340624" />
       <ref role="20lvS9" node="4zCbl23cpcc" resolve="BuildMps_Module" />
     </node>
+    <node concept="t5JxF" id="14TUqehdNcf" role="lGtFl">
+      <property role="t5JxN" value="XXX what's the need to wrap a module with this internal node? Is it of any use?" />
+    </node>
   </node>
   <node concept="1TIwiD" id="QkG2t1bKw$">
     <property role="TrG5h" value="GeneratorInternal_String" />
