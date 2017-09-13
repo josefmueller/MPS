@@ -5,6 +5,7 @@ package jetbrains.mps.build.mps.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -41,7 +42,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -51,9 +53,9 @@ public final class ModuleChecker {
   private final IFile myModuleDescriptorFile;
   private final VisibleModules myVisibleModules;
   private final PathConverter myPathConverter;
-  private final ModuleChecker.Reporter myReporter;
+  private final IMessageHandler myReporter;
 
-  /*package*/ ModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, IFile moduleDescriptorFile, ModuleDescriptor moduleDescriptor, ModuleChecker.Reporter reporter) {
+  /*package*/ ModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, IFile moduleDescriptorFile, ModuleDescriptor moduleDescriptor, IMessageHandler reporter) {
     myModule = module;
     myVisibleModules = visible;
     myPathConverter = pathConverter;
@@ -842,10 +844,13 @@ public final class ModuleChecker {
     }
   }
   private void report(String message) {
-    myReporter.report(message, null, null);
+    myReporter.handle(Message.createMessage(MessageKind.ERROR, getClass().getName(), message, myModule));
   }
   private void report(String message, Exception cause) {
-    myReporter.report(message, null, cause);
+    Message m = new Message(MessageKind.ERROR, getClass(), message);
+    m.setHintObject(myModule);
+    m.setException(cause);
+    myReporter.handle(m);
   }
 
   public enum CheckType {
@@ -862,39 +867,6 @@ public final class ModuleChecker {
       this.doFullImport = doFullImport;
     }
   }
-
-  /**
-   * 
-   * @deprecated shall replace this one with IMessageHandler, why duplicate interfaces. Besides, could report not onlu errors, but debug/info as well then.
-   */
-  @Deprecated
-  public static class Reporter {
-    private final TemplateQueryContext myGenContext;
-    private final SNode myDefaultErrorLocation;
-
-    @Deprecated
-    public Reporter(TemplateQueryContext genContext) {
-      this(genContext, null);
-    }
-
-    @Deprecated
-    public Reporter(TemplateQueryContext genContext, SNode defaultErrorLocation) {
-      myGenContext = genContext;
-      myDefaultErrorLocation = defaultErrorLocation;
-    }
-
-    public void report(String message, SNode node, Exception cause) {
-      if (node == null && myDefaultErrorLocation != null) {
-        node = myDefaultErrorLocation;
-      }
-      if (myGenContext == null) {
-        throw new ModuleLoaderException(message, node, cause);
-      }
-
-      myGenContext.showErrorMessage(node, message);
-    }
-  }
-
 
   /**
    * Some auxiliary methods to augment BuildMps_Module instances (to hide the burden if necesseay structure creation)

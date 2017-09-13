@@ -31,17 +31,16 @@ public final class ModuleLoader {
   private final VisibleModules myVisibleModules;
   private final Context myBuildContext;
   private final IMessageHandler myMsgHandler;
-  private final ModuleChecker.Reporter myReporter;
   private FileSystem myFS;
 
   public ModuleLoader(@NotNull SNode buildProject, @Nullable TemplateQueryContext genContext, IMessageHandler msgHandler) {
     myBuildProject = buildProject;
     myBuildContext = (genContext != null ? Context.defaultContext(genContext) : Context.defaultContext());
-    myReporter = new ModuleChecker.Reporter(genContext, buildProject);
     myPathConverter = new PathConverter(myBuildContext, buildProject);
     myVisibleModules = new VisibleModules(buildProject);
     myVisibleModules.collect();
     myMsgHandler = msgHandler;
+    // TODO enforce outer code to specify FS to avoid singleton access 
     myFS = jetbrains.mps.vfs.FileSystem.getInstance();
   }
 
@@ -52,7 +51,6 @@ public final class ModuleLoader {
 
   private void reportError(String msg, SNode node) {
     myMsgHandler.handle(Message.createMessage(MessageKind.ERROR, getClass().getName(), msg, SNodeOperations.getPointer(node)));
-    myReporter.report(msg, node, null);
   }
 
   public void checkAllModules(final ModuleChecker.CheckType type) {
@@ -74,7 +72,7 @@ public final class ModuleLoader {
     String moduleFilePath = BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), myBuildContext);
     if (moduleFilePath == null) {
       reportError(String.format("cannot import module file for %s: file doesn't exist (%s)", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")), myBuildContext)), module);
-      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myReporter);
+      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myMsgHandler);
     }
 
     try {
@@ -86,11 +84,11 @@ public final class ModuleLoader {
     IFile file = myFS.getFile(moduleFilePath);
     if (!(file.exists())) {
       reportError(String.format("cannot import module file for %s: file doesn't exist (%s)", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), moduleFilePath), module);
-      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myReporter);
+      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myMsgHandler);
     }
     if (file.isDirectory()) {
       reportError(String.format("cannot import module file for %s: file is a directory (%s)", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), moduleFilePath), module);
-      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myReporter);
+      return new ModuleChecker(module, myVisibleModules, myPathConverter, null, null, myMsgHandler);
     }
 
     ModuleDescriptor md = null;
@@ -104,6 +102,6 @@ public final class ModuleLoader {
       reportError(String.format("cannot import module file for %s: exception: %s", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), ex.getMessage()), module);
     }
 
-    return new ModuleChecker(module, myVisibleModules, myPathConverter, file, md, myReporter);
+    return new ModuleChecker(module, myVisibleModules, myPathConverter, file, md, myMsgHandler);
   }
 }
