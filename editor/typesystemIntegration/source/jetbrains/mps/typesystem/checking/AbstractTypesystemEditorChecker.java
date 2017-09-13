@@ -133,13 +133,12 @@ public abstract class AbstractTypesystemEditorChecker extends BaseEditorChecker 
 
   private boolean applyInstantIntention(final EditorContext editorContext, final SNode quickFixNode,
       @NotNull final EditorQuickFix intention) {
-    Map<ReportItemFlavour, Object> flavourSet = new HashMap<>();
+    Map<ReportItemFlavour, Object> flavours = new HashMap<>();
     for (ReportItemFlavour<?, ?> flavour : intention.getIdFlavours()) {
-      flavourSet.put(flavour, flavour.tryToGet(intention));
+      flavours.put(flavour, flavour.tryToGet(intention));
     }
-    flavourSet.remove(NodeReportItem.FLAVOUR_NODE);
-    if (!myOnceExecutedQuickFixes.contains(flavourSet)) {
-      myOnceExecutedQuickFixes.add(flavourSet);
+    if (!myOnceExecutedQuickFixes.contains(flavours)) {
+      myOnceExecutedQuickFixes.add(flavours);
       // XXX why Application.invokeLater, not ThreadUtils or ModelAccess (likely, shall use SNodeReference for quickFixNode, not SNode, and resolve inside)
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
