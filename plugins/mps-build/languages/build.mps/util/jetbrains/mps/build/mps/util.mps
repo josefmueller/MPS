@@ -11001,8 +11001,11 @@
                           <node concept="37vLTw" id="6cqWk79OUw8" role="37wK5m">
                             <ref role="3cqZAo" node="6cqWk79OUw4" resolve="msg" />
                           </node>
-                          <node concept="37vLTw" id="6cqWk79OZ9O" role="37wK5m">
-                            <ref role="3cqZAo" node="7AaordoBmtO" resolve="found" />
+                          <node concept="2OqwBi" id="79xs8RGwylV" role="37wK5m">
+                            <node concept="37vLTw" id="6cqWk79OZ9O" role="2Oq$k0">
+                              <ref role="3cqZAo" node="7AaordoBmtO" resolve="found" />
+                            </node>
+                            <node concept="iZEcu" id="79xs8RGwyOu" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
@@ -19208,8 +19211,11 @@
                 <node concept="37vLTw" id="6cqWk79RrgN" role="37wK5m">
                   <ref role="3cqZAo" node="6m8wrPAU4fd" resolve="message" />
                 </node>
-                <node concept="37vLTw" id="2QHw4vfOO0Q" role="37wK5m">
-                  <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
+                <node concept="2OqwBi" id="79xs8RGyt5D" role="37wK5m">
+                  <node concept="37vLTw" id="2QHw4vfOO0Q" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
+                  </node>
+                  <node concept="iZEcu" id="79xs8RGytu3" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -19254,8 +19260,11 @@
             </node>
             <node concept="liA8E" id="2QHw4vfOXEk" role="2OqNvi">
               <ref role="37wK5l" to="et5u:~Message.setHintObject(java.lang.Object):jetbrains.mps.messages.Message" resolve="setHintObject" />
-              <node concept="37vLTw" id="2QHw4vfOXWA" role="37wK5m">
-                <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
+              <node concept="2OqwBi" id="79xs8RGyvAo" role="37wK5m">
+                <node concept="37vLTw" id="2QHw4vfOXWA" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
+                </node>
+                <node concept="iZEcu" id="79xs8RGyw4L" role="2OqNvi" />
               </node>
             </node>
           </node>

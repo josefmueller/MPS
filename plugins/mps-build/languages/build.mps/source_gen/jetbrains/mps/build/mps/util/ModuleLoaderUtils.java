@@ -84,7 +84,7 @@ public class ModuleLoaderUtils {
         String localPath = BuildFolderMacro__BehaviorDescriptor.evaluate_id4jjtc7WZOzA.invoke(found, myContext);
         if (localPath == null) {
           String msg = String.format("cannot resolve local path: %s, macro has no default value", path);
-          reporter.handle(Message.createMessage(MessageKind.ERROR, getClass().getName(), msg, found));
+          reporter.handle(Message.createMessage(MessageKind.ERROR, getClass().getName(), msg, SNodeOperations.getPointer(found)));
           return path;
         }
 

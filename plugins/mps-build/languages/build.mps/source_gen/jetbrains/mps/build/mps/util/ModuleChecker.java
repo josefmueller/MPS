@@ -844,11 +844,11 @@ public final class ModuleChecker {
     }
   }
   private void report(String message) {
-    myReporter.handle(Message.createMessage(MessageKind.ERROR, getClass().getName(), message, myModule));
+    myReporter.handle(Message.createMessage(MessageKind.ERROR, getClass().getName(), message, SNodeOperations.getPointer(myModule)));
   }
   private void report(String message, Exception cause) {
     Message m = new Message(MessageKind.ERROR, getClass(), message);
-    m.setHintObject(myModule);
+    m.setHintObject(SNodeOperations.getPointer(myModule));
     m.setException(cause);
     myReporter.handle(m);
   }
