@@ -2,16 +2,13 @@
 <model ref="r:dff3a23c-f604-4fe9-945d-1b2fa0e65749(jetbrains.mps.samples.highlevel.simpleEditor.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="c457c5de-6027-4104-ab9c-a31c5404ae8b" name="jetbrains.mps.samples.highlevel.simpleEditor" version="-1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
-    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="yuy8" ref="r:c5fb98f3-de6a-4ae0-bfad-3730305cf813(jetbrains.mps.samples.highlevel.simpleStructure.generator.template.main@generator)" />
     <import index="nvz" ref="r:64c71df5-2adc-4e3d-8424-aa08c0bc782f(jetbrains.mps.samples.highlevel.simpleEditor.structure)" implicit="true" />
