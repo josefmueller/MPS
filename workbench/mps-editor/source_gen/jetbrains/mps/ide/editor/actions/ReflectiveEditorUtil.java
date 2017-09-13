@@ -72,9 +72,13 @@ import jetbrains.mps.openapi.editor.selection.Selection;
     editorComponent.rebuildEditorContent();
     editorContext.flushEvents();
 
-    SelectionManager selectionManager = editorContext.getSelectionManager();
-    Selection selection = selectionManager.createRangeSelection(selectedNodes.get(0), selectedNodes.get(selectedNodes.size() - 1));
-    selectionManager.setSelection(selection);
+    if (isForManyNodes) {
+      SelectionManager selectionManager = editorContext.getSelectionManager();
+      Selection selection = selectionManager.createRangeSelection(selectedNodes.get(0), selectedNodes.get(selectedNodes.size() - 1));
+      selectionManager.setSelection(selection);
+    } else {
+      editorComponent.getSelectionManager().setSelection(selectedNodes.get(0));
+    }
   }
 
 }
