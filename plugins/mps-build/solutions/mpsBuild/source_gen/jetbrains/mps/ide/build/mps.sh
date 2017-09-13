@@ -57,12 +57,12 @@ cd "$OLDPWD"
 
 # ---------------------------------------------------------------------
 # Locate a JDK installation directory which will be used to run the IDE.
-# Try (in order): MPS_JDK, idea.jdk, ../jre, JDK_HOME, JAVA_HOME, "java" in PATH.
+# Try (in order): MPS_JDK, mps.jdk, ../jre, JDK_HOME, JAVA_HOME, "java" in PATH.
 # ---------------------------------------------------------------------
 if [ -n "$MPS_JDK" -a -x "$MPS_JDK/bin/java" ]; then
   JDK="$MPS_JDK"
-elif [ -s "$HOME/.MPS2017.2/config/idea.jdk" ]; then
-  JDK=`"$CAT" $HOME/.MPS2017.2/config/idea.jdk`
+elif [ -s "$HOME/.MPS2017.2/config/mps.jdk" ]; then
+  JDK=`"$CAT" $HOME/.MPS2017.2/config/mps.jdk`
   if [ ! -d "$JDK" ]; then
     JDK="$IDE_HOME/$JDK"
   fi
