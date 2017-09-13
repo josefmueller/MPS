@@ -53,10 +53,15 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
+      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1068580123160" name="condition" index="3clFbw" />
+        <child id="1068580123161" name="ifTrue" index="3clFbx" />
+      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -155,7 +160,14 @@
         <child id="1167945861827" name="conditionFunction" index="3IZSJc" />
       </concept>
       <concept id="1118786554307" name="jetbrains.mps.lang.generator.structure.LoopMacro" flags="ln" index="1WS0z7">
+        <property id="7430509679011668804" name="counterVarName" index="1qytDF" />
         <child id="1167952069335" name="sourceNodesQuery" index="3Jn$fo" />
+      </concept>
+    </language>
+    <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
+      <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
+      <concept id="7430509679014182526" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ContextVarRef" flags="ng" index="1qCSth">
+        <property id="7430509679014182818" name="contextVarName" index="1qCSqd" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1228,7 +1240,7 @@
       <property role="2DPR8u" value=":: Locate a JDK installation directory which will be used to run the IDE." />
     </node>
     <node concept="2DRAP_" id="1w81suLSqpb" role="2DRAPQ">
-      <property role="2DPR8u" value=":: Try (in order): MPS_JDK, idea%BITS%.exe.jdk, ..\jre, JDK_HOME, JAVA_HOME." />
+      <property role="2DPR8u" value=":: Try (in order): MPS_JDK, mps%BITS%.exe.jdk, ..\jre, JDK_HOME, JAVA_HOME." />
       <node concept="17Uvod" id="4eWOtEm0Gwf" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -1239,7 +1251,7 @@
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <node concept="Xl_RD" id="4eWOtEm0HAx" role="37wK5m">
-                  <property role="Xl_RC" value=":: Try (in order): %s_JDK, idea%%BITS%%.exe.jdk, ..\\jre, JDK_HOME, JAVA_HOME." />
+                  <property role="Xl_RC" value=":: Try (in order): %s_JDK, %s%%BITS%%.exe.jdk, ..\\jre, JDK_HOME, JAVA_HOME." />
                 </node>
                 <node concept="2OqwBi" id="4eWOtEm0HAy" role="37wK5m">
                   <node concept="2OqwBi" id="4eWOtEm0HAz" role="2Oq$k0">
@@ -1256,6 +1268,28 @@
                   <node concept="2qgKlT" id="4eWOtEm0HAC" role="2OqNvi">
                     <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
                     <node concept="10Nm6u" id="4eWOtEm0HAD" role="37wK5m" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="RfNsRQ4SEN" role="37wK5m">
+                  <node concept="2OqwBi" id="RfNsRQ4SEO" role="2Oq$k0">
+                    <node concept="2OqwBi" id="RfNsRQ4SEP" role="2Oq$k0">
+                      <node concept="2OqwBi" id="RfNsRQ4SEQ" role="2Oq$k0">
+                        <node concept="30H73N" id="RfNsRQ4SER" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="RfNsRQ4SES" role="2OqNvi">
+                          <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="RfNsRQ4SET" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="shortName" />
+                      </node>
+                    </node>
+                    <node concept="2qgKlT" id="RfNsRQ4SEU" role="2OqNvi">
+                      <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                      <node concept="10Nm6u" id="RfNsRQ4SEV" role="37wK5m" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="RfNsRQ4SEW" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.toLowerCase():java.lang.String" resolve="toLowerCase" />
                   </node>
                 </node>
               </node>
@@ -1328,7 +1362,7 @@
       <property role="2DPR8u" value="SET BITS=64" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm039q" role="2DRAPQ">
-      <property role="2DPR8u" value="SET USER_JDK64_FILE=%USERPROFILE%\.MPS20xx.x\config\idea%BITS%.exe.jdk" />
+      <property role="2DPR8u" value="SET USER_JDK64_FILE=%USERPROFILE%\.MPS20xx.x\config\mps%BITS%.exe.jdk" />
       <node concept="17Uvod" id="4eWOtEm0hdB" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -1339,12 +1373,34 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="4eWOtEm0ihp" role="37wK5m">
-                  <property role="Xl_RC" value="SET USER_JDK64_FILE=%%USERPROFILE%%\\.%s\\config\\idea%%BITS%%.exe.jdk" />
+                  <property role="Xl_RC" value="SET USER_JDK64_FILE=%%USERPROFILE%%\\.%s\\config\\%s%%BITS%%.exe.jdk" />
                 </node>
                 <node concept="2OqwBi" id="4eWOtEm0ihq" role="37wK5m">
                   <node concept="30H73N" id="4eWOtEm0ihr" role="2Oq$k0" />
                   <node concept="2qgKlT" id="4eWOtEm0ihs" role="2OqNvi">
                     <ref role="37wK5l" to="tgdw:BsOHnja5fe" resolve="getIdeaPathSelector" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="RfNsRQ0HAo" role="37wK5m">
+                  <node concept="2OqwBi" id="RfNsRQ0HAp" role="2Oq$k0">
+                    <node concept="2OqwBi" id="RfNsRQ0HAq" role="2Oq$k0">
+                      <node concept="2OqwBi" id="RfNsRQ0HAr" role="2Oq$k0">
+                        <node concept="30H73N" id="RfNsRQ0HAs" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="RfNsRQ0HAt" role="2OqNvi">
+                          <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="RfNsRQ0HAu" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="shortName" />
+                      </node>
+                    </node>
+                    <node concept="2qgKlT" id="RfNsRQ0HAv" role="2OqNvi">
+                      <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                      <node concept="10Nm6u" id="RfNsRQ0HAw" role="37wK5m" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="RfNsRQ0HAx" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.toLowerCase():java.lang.String" resolve="toLowerCase" />
                   </node>
                 </node>
               </node>
@@ -1357,7 +1413,7 @@
       <property role="2DPR8u" value="SET BITS=" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm05nl" role="2DRAPQ">
-      <property role="2DPR8u" value="SET USER_JDK_FILE=%USERPROFILE%\.MPS20xx.x\config\idea%BITS%.exe.jdk" />
+      <property role="2DPR8u" value="SET USER_JDK_FILE=%USERPROFILE%\.MPS20xx.x\config\mps%BITS%.exe.jdk" />
       <node concept="17Uvod" id="4eWOtEm0mAl" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -1368,12 +1424,34 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="4eWOtEm0mIV" role="37wK5m">
-                  <property role="Xl_RC" value="SET USER_JDK_FILE=%%USERPROFILE%%\\.%s\\config\\idea%%BITS%%.exe.jdk" />
+                  <property role="Xl_RC" value="SET USER_JDK_FILE=%%USERPROFILE%%\\.%s\\config\\%s%%BITS%%.exe.jdk" />
                 </node>
                 <node concept="2OqwBi" id="4eWOtEm0mIW" role="37wK5m">
                   <node concept="30H73N" id="4eWOtEm0mIX" role="2Oq$k0" />
                   <node concept="2qgKlT" id="4eWOtEm0mIY" role="2OqNvi">
                     <ref role="37wK5l" to="tgdw:BsOHnja5fe" resolve="getIdeaPathSelector" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="RfNsRQ0KNq" role="37wK5m">
+                  <node concept="2OqwBi" id="RfNsRQ0KNr" role="2Oq$k0">
+                    <node concept="2OqwBi" id="RfNsRQ0KNs" role="2Oq$k0">
+                      <node concept="2OqwBi" id="RfNsRQ0KNt" role="2Oq$k0">
+                        <node concept="30H73N" id="RfNsRQ0KNu" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="RfNsRQ0KNv" role="2OqNvi">
+                          <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="RfNsRQ0KNw" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="shortName" />
+                      </node>
+                    </node>
+                    <node concept="2qgKlT" id="RfNsRQ0KNx" role="2OqNvi">
+                      <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                      <node concept="10Nm6u" id="RfNsRQ0KNy" role="37wK5m" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="RfNsRQ0KNz" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.toLowerCase():java.lang.String" resolve="toLowerCase" />
                   </node>
                 </node>
               </node>
@@ -2212,23 +2290,17 @@
       <property role="2DPR8u" value="fi" />
     </node>
     <node concept="2DRAP_" id="3T7P3nA9$gT" role="2DRAPQ" />
-    <node concept="2DRAP_" id="1SWE651Axri" role="2DRAPQ">
-      <property role="2DPR8u" value="IDE_BIN_HOME=`dirname &quot;$SCRIPT_LOCATION&quot;`" />
+    <node concept="2DRAP_" id="3xQpxE3B7CU" role="2DRAPQ">
+      <property role="2DPR8u" value="cd &quot;`dirname &quot;$SCRIPT_LOCATION&quot;`&quot;" />
     </node>
-    <node concept="2DRAP_" id="BsOHnjlze8" role="2DRAPQ">
-      <property role="2DPR8u" value="if [ &quot;$IDE_BIN_HOME&quot; = &quot;.&quot; ]; then" />
+    <node concept="2DRAP_" id="1SWE651Axri" role="2DRAPQ">
+      <property role="2DPR8u" value="IDE_BIN_HOME=`pwd`" />
     </node>
     <node concept="2DRAP_" id="BsOHnjl$bK" role="2DRAPQ">
-      <property role="2DPR8u" value="  IDE_HOME=&quot;..&quot;" />
+      <property role="2DPR8u" value="IDE_HOME=`dirname &quot;$IDE_BIN_HOME&quot;`" />
     </node>
-    <node concept="2DRAP_" id="BsOHnjl_9p" role="2DRAPQ">
-      <property role="2DPR8u" value="else" />
-    </node>
-    <node concept="2DRAP_" id="7C7qUK4sHkn" role="2DRAPQ">
-      <property role="2DPR8u" value="  IDE_HOME=`dirname &quot;$IDE_BIN_HOME&quot;`" />
-    </node>
-    <node concept="2DRAP_" id="BsOHnjlA73" role="2DRAPQ">
-      <property role="2DPR8u" value="fi" />
+    <node concept="2DRAP_" id="3xQpxE3Bbg0" role="2DRAPQ">
+      <property role="2DPR8u" value="cd &quot;$OLDPWD&quot;" />
     </node>
     <node concept="2DRAP_" id="hoHCGht60J" role="2DRAPQ" />
     <node concept="2DRAP_" id="hoHCGht6jb" role="2DRAPQ">
@@ -2238,7 +2310,7 @@
       <property role="2DPR8u" value="# Locate a JDK installation directory which will be used to run the IDE." />
     </node>
     <node concept="2DRAP_" id="hoHCGht6S6" role="2DRAPQ">
-      <property role="2DPR8u" value="# Try (in order): MPS_JDK, idea.jdk, ../jre, JDK_HOME, JAVA_HOME, &quot;java&quot; in PATH." />
+      <property role="2DPR8u" value="# Try (in order): MPS_JDK, mps.jdk, ../jre, JDK_HOME, JAVA_HOME, &quot;java&quot; in PATH." />
       <node concept="17Uvod" id="BsOHnjlBFg" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -2249,7 +2321,7 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="BsOHnjlC9C" role="37wK5m">
-                  <property role="Xl_RC" value="# Try (in order): %s_JDK, idea.jdk, ../jre, JDK_HOME, JAVA_HOME, \&quot;java\&quot; in PATH." />
+                  <property role="Xl_RC" value="# Try (in order): %s_JDK, %s.jdk, ../jre, JDK_HOME, JAVA_HOME, \&quot;java\&quot; in PATH." />
                 </node>
                 <node concept="2OqwBi" id="BsOHnjlC9D" role="37wK5m">
                   <node concept="2OqwBi" id="BsOHnjlC9E" role="2Oq$k0">
@@ -2266,6 +2338,28 @@
                   <node concept="2qgKlT" id="BsOHnjlC9J" role="2OqNvi">
                     <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
                     <node concept="10Nm6u" id="BsOHnjlC9K" role="37wK5m" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="RfNsRQ0snv" role="37wK5m">
+                  <node concept="2OqwBi" id="RfNsRQ0r$M" role="2Oq$k0">
+                    <node concept="2OqwBi" id="RfNsRQ0r$N" role="2Oq$k0">
+                      <node concept="2OqwBi" id="RfNsRQ0r$O" role="2Oq$k0">
+                        <node concept="30H73N" id="RfNsRQ0r$P" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="RfNsRQ0r$Q" role="2OqNvi">
+                          <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="RfNsRQ0r$R" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="shortName" />
+                      </node>
+                    </node>
+                    <node concept="2qgKlT" id="RfNsRQ0r$S" role="2OqNvi">
+                      <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                      <node concept="10Nm6u" id="RfNsRQ0r$T" role="37wK5m" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="RfNsRQ0tbp" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.toLowerCase():java.lang.String" resolve="toLowerCase" />
                   </node>
                 </node>
               </node>
@@ -2318,7 +2412,7 @@
       <property role="2DPR8u" value="  JDK=&quot;$MPS_JDK&quot;" />
     </node>
     <node concept="2DRAP_" id="BsOHnjlLoq" role="2DRAPQ">
-      <property role="2DPR8u" value="elif [ -s &quot;$HOME/.MPS20xx.x/config/idea.jdk&quot; ]; then" />
+      <property role="2DPR8u" value="elif [ -s &quot;$HOME/.MPS20xx.x/config/mps.jdk&quot; ]; then" />
       <node concept="17Uvod" id="BsOHnjlT4K" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -2329,12 +2423,34 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="BsOHnjlWXZ" role="37wK5m">
-                  <property role="Xl_RC" value="elif [ -s \&quot;$HOME/.%s/config/idea.jdk\&quot; ]; then" />
+                  <property role="Xl_RC" value="elif [ -s \&quot;$HOME/.%s/config/%s.jdk\&quot; ]; then" />
                 </node>
                 <node concept="2OqwBi" id="BsOHnjm0rg" role="37wK5m">
                   <node concept="30H73N" id="BsOHnjm0rh" role="2Oq$k0" />
                   <node concept="2qgKlT" id="BsOHnjm0ri" role="2OqNvi">
                     <ref role="37wK5l" to="tgdw:BsOHnja5fe" resolve="getIdeaPathSelector" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="RfNsRQ0AvK" role="37wK5m">
+                  <node concept="2OqwBi" id="RfNsRQ0AvL" role="2Oq$k0">
+                    <node concept="2OqwBi" id="RfNsRQ0AvM" role="2Oq$k0">
+                      <node concept="2OqwBi" id="RfNsRQ0AvN" role="2Oq$k0">
+                        <node concept="30H73N" id="RfNsRQ0AvO" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="RfNsRQ0AvP" role="2OqNvi">
+                          <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="RfNsRQ0AvQ" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="shortName" />
+                      </node>
+                    </node>
+                    <node concept="2qgKlT" id="RfNsRQ0AvR" role="2OqNvi">
+                      <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                      <node concept="10Nm6u" id="RfNsRQ0AvS" role="37wK5m" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="RfNsRQ0AvT" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.toLowerCase():java.lang.String" resolve="toLowerCase" />
                   </node>
                 </node>
               </node>
@@ -2344,7 +2460,7 @@
       </node>
     </node>
     <node concept="2DRAP_" id="BsOHnjlOrA" role="2DRAPQ">
-      <property role="2DPR8u" value="  JDK=`&quot;$CAT&quot; $HOME/.MPS20xx.x/config/idea.jdk`" />
+      <property role="2DPR8u" value="  JDK=`&quot;$CAT&quot; $HOME/.MPS20xx.x/config/mps.jdk`" />
       <node concept="17Uvod" id="BsOHnjlTzK" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -2355,12 +2471,34 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="BsOHnjlXBS" role="37wK5m">
-                  <property role="Xl_RC" value="  JDK=`\&quot;$CAT\&quot; $HOME/.%s/config/idea.jdk`" />
+                  <property role="Xl_RC" value="  JDK=`\&quot;$CAT\&quot; $HOME/.%s/config/%s.jdk`" />
                 </node>
                 <node concept="2OqwBi" id="BsOHnjlUMR" role="37wK5m">
                   <node concept="30H73N" id="BsOHnjlUMS" role="2Oq$k0" />
                   <node concept="2qgKlT" id="BsOHnjlUMT" role="2OqNvi">
                     <ref role="37wK5l" to="tgdw:BsOHnja5fe" resolve="getIdeaPathSelector" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="RfNsRQ0BZD" role="37wK5m">
+                  <node concept="2OqwBi" id="RfNsRQ0BZE" role="2Oq$k0">
+                    <node concept="2OqwBi" id="RfNsRQ0BZF" role="2Oq$k0">
+                      <node concept="2OqwBi" id="RfNsRQ0BZG" role="2Oq$k0">
+                        <node concept="30H73N" id="RfNsRQ0BZH" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="RfNsRQ0BZI" role="2OqNvi">
+                          <ref role="3Tt5mk" to="s7om:32A7APlXEJ9" resolve="branding" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="RfNsRQ0BZJ" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="shortName" />
+                      </node>
+                    </node>
+                    <node concept="2qgKlT" id="RfNsRQ0BZK" role="2OqNvi">
+                      <ref role="37wK5l" to="vbkb:3NagsOfTioI" resolve="getText" />
+                      <node concept="10Nm6u" id="RfNsRQ0BZL" role="37wK5m" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="RfNsRQ0BZM" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.toLowerCase():java.lang.String" resolve="toLowerCase" />
                   </node>
                 </node>
               </node>
@@ -2918,12 +3056,10 @@
       </node>
     </node>
     <node concept="2DRAP_" id="3T7P3nAaqsy" role="2DRAPQ" />
-    <node concept="2DRAP_" id="3T7P3nAaqur" role="2DRAPQ">
-      <property role="2DPR8u" value="CLASSPATH=&quot;&quot;" />
-    </node>
     <node concept="2DRAP_" id="3T7P3nAar1X" role="2DRAPQ">
       <property role="2DPR8u" value="CLASSPATH=&quot;$CLASSPATH:$IDE_HOME/" />
       <node concept="1WS0z7" id="3T7P3nAar6W" role="lGtFl">
+        <property role="1qytDF" value="pathIndex" />
         <node concept="3JmXsc" id="3T7P3nAar6Z" role="3Jn$fo">
           <node concept="3clFbS" id="3T7P3nAar70" role="2VODD2">
             <node concept="3clFbF" id="3T7P3nAar76" role="3cqZAp">
@@ -2942,6 +3078,39 @@
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <node concept="3zFVjK" id="3T7P3nAas8T" role="3zH0cK">
           <node concept="3clFbS" id="3T7P3nAas8U" role="2VODD2">
+            <node concept="3clFbJ" id="5mHrw1WUh35" role="3cqZAp">
+              <node concept="3clFbS" id="5mHrw1WUh37" role="3clFbx">
+                <node concept="3cpWs6" id="5mHrw1WUqyx" role="3cqZAp">
+                  <node concept="3cpWs3" id="5mHrw1WU_YY" role="3cqZAk">
+                    <node concept="3cpWs3" id="5mHrw1WUxOj" role="3uHU7B">
+                      <node concept="Xl_RD" id="5mHrw1WUrO9" role="3uHU7B">
+                        <property role="Xl_RC" value="CLASSPATH=\&quot;$IDE_HOME/" />
+                      </node>
+                      <node concept="2OqwBi" id="5mHrw1WUzdO" role="3uHU7w">
+                        <node concept="30H73N" id="5mHrw1WUytk" role="2Oq$k0" />
+                        <node concept="3TrcHB" id="5mHrw1WU$f2" role="2OqNvi">
+                          <ref role="3TsBF5" to="s7om:3nFPImNgRka" resolve="path" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="Xl_RD" id="5mHrw1WUARu" role="3uHU7w">
+                      <property role="Xl_RC" value="\&quot;" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbC" id="5mHrw1WUjEV" role="3clFbw">
+                <node concept="3cmrfG" id="5mHrw1WUkjO" role="3uHU7w">
+                  <property role="3cmrfH" value="0" />
+                </node>
+                <node concept="2OqwBi" id="5mHrw1WUhDP" role="3uHU7B">
+                  <node concept="1iwH7S" id="5mHrw1WUhiH" role="2Oq$k0" />
+                  <node concept="1qCSth" id="5mHrw1WUhX_" role="2OqNvi">
+                    <property role="1qCSqd" value="pathIndex" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3clFbF" id="3T7P3nAas9i" role="3cqZAp">
               <node concept="3cpWs3" id="BsOHnjrbdi" role="3clFbG">
                 <node concept="Xl_RD" id="BsOHnjrbdo" role="3uHU7w">
@@ -2963,7 +3132,7 @@
       </node>
     </node>
     <node concept="2DRAP_" id="hoHCGhtrRd" role="2DRAPQ">
-      <property role="2DPR8u" value="CLASSPATH=${CLASSPATH}:${JDK}/lib/tools.jar" />
+      <property role="2DPR8u" value="CLASSPATH=&quot;$CLASSPATH:$JDK/lib/tools.jar&quot;" />
     </node>
     <node concept="2DRAP_" id="7C7qUK4t86a" role="2DRAPQ">
       <property role="2DPR8u" value="if [ -n &quot;$MPS_CLASSPATH&quot; ]; then" />
@@ -3041,7 +3210,7 @@
       <property role="2DPR8u" value="  &quot;-Xbootclasspath/a:$IDE_HOME/lib/boot.jar&quot; \" />
     </node>
     <node concept="2DRAP_" id="7C7qUK4tclb" role="2DRAPQ">
-      <property role="2DPR8u" value="  -classpath &quot;$CLASSPATH:$MAIN_CLASS&quot; \" />
+      <property role="2DPR8u" value="  -classpath &quot;$CLASSPATH&quot; \" />
     </node>
     <node concept="2DRAP_" id="7C7qUK4tcD6" role="2DRAPQ">
       <property role="2DPR8u" value="  ${VM_OPTIONS} \" />

@@ -24,7 +24,7 @@ IF "%IDE_BIN_DIR:~-8%" == "bin\win\" (
 
 :: ---------------------------------------------------------------------
 :: Locate a JDK installation directory which will be used to run the IDE.
-:: Try (in order): MPS_JDK, idea%BITS%.exe.jdk, ..\jre, JDK_HOME, JAVA_HOME.
+:: Try (in order): MPS_JDK, mps%BITS%.exe.jdk, ..\jre, JDK_HOME, JAVA_HOME.
 :: ---------------------------------------------------------------------
 SET JDK=
 
@@ -32,9 +32,9 @@ IF EXIST "%MPS_JDK%" SET JDK=%MPS_JDK%
 IF NOT "%JDK%" == "" GOTO check
 
 SET BITS=64
-SET USER_JDK64_FILE=%USERPROFILE%\.MPS2017.3\config\idea%BITS%.exe.jdk
+SET USER_JDK64_FILE=%USERPROFILE%\.MPS2017.3\config\mps%BITS%.exe.jdk
 SET BITS=
-SET USER_JDK_FILE=%USERPROFILE%\.MPS2017.3\config\idea%BITS%.exe.jdk
+SET USER_JDK_FILE=%USERPROFILE%\.MPS2017.3\config\mps%BITS%.exe.jdk
 IF EXIST "%USER_JDK64_FILE%" (
   SET /P JDK=<%USER_JDK64_FILE%
 ) ELSE (

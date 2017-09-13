@@ -50,21 +50,19 @@ if [ -x "$READLINK" ]; then
   done
 fi
 
-IDE_BIN_HOME=`dirname "$SCRIPT_LOCATION"`
-if [ "$IDE_BIN_HOME" = "." ]; then
-  IDE_HOME=".."
-else
-  IDE_HOME=`dirname "$IDE_BIN_HOME"`
-fi
+cd "`dirname "$SCRIPT_LOCATION"`"
+IDE_BIN_HOME=`pwd`
+IDE_HOME=`dirname "$IDE_BIN_HOME"`
+cd "$OLDPWD"
 
 # ---------------------------------------------------------------------
 # Locate a JDK installation directory which will be used to run the IDE.
-# Try (in order): MPS_JDK, idea.jdk, ../jre, JDK_HOME, JAVA_HOME, "java" in PATH.
+# Try (in order): MPS_JDK, mps.jdk, ../jre, JDK_HOME, JAVA_HOME, "java" in PATH.
 # ---------------------------------------------------------------------
 if [ -n "$MPS_JDK" -a -x "$MPS_JDK/bin/java" ]; then
   JDK="$MPS_JDK"
-elif [ -s "$HOME/.MPS2017.3/config/idea.jdk" ]; then
-  JDK=`"$CAT" $HOME/.MPS2017.3/config/idea.jdk`
+elif [ -s "$HOME/.MPS2017.3/config/mps.jdk" ]; then
+  JDK=`"$CAT" $HOME/.MPS2017.3/config/mps.jdk`
   if [ ! -d "$JDK" ]; then
     JDK="$IDE_HOME/$JDK"
   fi
@@ -178,8 +176,7 @@ IDE_JVM_ARGS=""
 # ADDITIONAL_JVM_ARGS="-XX:ReservedCodeCacheSize=240m"
 # ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5051"
 
-CLASSPATH=""
-CLASSPATH="$CLASSPATH:$IDE_HOME/lib/branding.jar"
+CLASSPATH="$IDE_HOME/lib/branding.jar"
 CLASSPATH="$CLASSPATH:$IDE_HOME/lib/mps-boot.jar"
 CLASSPATH="$CLASSPATH:$IDE_HOME/lib/mps-boot-util.jar"
 CLASSPATH="$CLASSPATH:$IDE_HOME/lib/bootstrap.jar"
@@ -189,7 +186,7 @@ CLASSPATH="$CLASSPATH:$IDE_HOME/lib/jdom.jar"
 CLASSPATH="$CLASSPATH:$IDE_HOME/lib/log4j.jar"
 CLASSPATH="$CLASSPATH:$IDE_HOME/lib/trove4j.jar"
 CLASSPATH="$CLASSPATH:$IDE_HOME/lib/jna.jar"
-CLASSPATH=${CLASSPATH}:${JDK}/lib/tools.jar
+CLASSPATH="$CLASSPATH:$JDK/lib/tools.jar"
 if [ -n "$MPS_CLASSPATH" ]; then
   CLASSPATH="$CLASSPATH:$MPS_CLASSPATH"
 fi
@@ -203,7 +200,7 @@ IDEA_PATHS_SELECTOR=MPS2017.3
 LD_LIBRARY_PATH="$IDE_BIN_HOME:$LD_LIBRARY_PATH" "$JAVA_BIN" \
   ${AGENT} \
   "-Xbootclasspath/a:$IDE_HOME/lib/boot.jar" \
-  -classpath "$CLASSPATH:$MAIN_CLASS" \
+  -classpath "$CLASSPATH" \
   ${VM_OPTIONS} \
   -Dawt.useSystemAAFontSettings=lcd \
   -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine \
