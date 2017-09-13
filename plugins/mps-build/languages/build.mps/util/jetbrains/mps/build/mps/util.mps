@@ -1370,8 +1370,8 @@
                     <node concept="37vLTw" id="6cqWk79_eHy" role="37wK5m">
                       <ref role="3cqZAo" node="6cqWk79zVOP" resolve="myBuildProject" />
                     </node>
-                    <node concept="37vLTw" id="6cqWk79_eP0" role="37wK5m">
-                      <ref role="3cqZAo" node="6cqWk79$_ZH" resolve="myReporter" />
+                    <node concept="37vLTw" id="6cqWk79QjuT" role="37wK5m">
+                      <ref role="3cqZAo" node="6cqWk79$BVZ" resolve="myMsgHandler" />
                     </node>
                   </node>
                 </node>
@@ -10365,67 +10365,6 @@
   </node>
   <node concept="312cEu" id="6tgFcyzLvoC">
     <property role="TrG5h" value="ModuleLoaderUtils" />
-    <node concept="2YIFZL" id="6tgFcyzKijK" role="jymVt">
-      <property role="TrG5h" value="getOriginalModule" />
-      <property role="od$2w" value="false" />
-      <property role="DiZV1" value="false" />
-      <node concept="37vLTG" id="6tgFcyzLtCy" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3Tqbb2" id="6tgFcyzLtCA" role="1tU5fm">
-          <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="6tgFcyzLtCD" role="3clF46">
-        <property role="TrG5h" value="genContext" />
-        <node concept="1iwH7U" id="6tgFcyzLtCJ" role="1tU5fm" />
-      </node>
-      <node concept="3clFbS" id="6tgFcyzKijN" role="3clF47">
-        <node concept="3cpWs8" id="6tgFcyzLtvv" role="3cqZAp">
-          <node concept="3cpWsn" id="6tgFcyzLtvy" role="3cpWs9">
-            <property role="TrG5h" value="originalModule" />
-            <node concept="3Tqbb2" id="6tgFcyzLtvt" role="1tU5fm">
-              <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
-            </node>
-            <node concept="1PxgMI" id="6tgFcyzKl1s" role="33vP2m">
-              <property role="1BlNFB" value="true" />
-              <node concept="2YIFZM" id="6tgFcyzKl1t" role="1m5AlR">
-                <ref role="1Pybhc" to="o3n2:41__iZjkZ0W" resolve="DependenciesHelper" />
-                <ref role="37wK5l" to="o3n2:5FtnUVJQfvo" resolve="getOriginalNode" />
-                <node concept="37vLTw" id="2BHiRxghfM2" role="37wK5m">
-                  <ref role="3cqZAo" node="6tgFcyzLtCy" resolve="module" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxgmP2A" role="37wK5m">
-                  <ref role="3cqZAo" node="6tgFcyzLtCD" resolve="genContext" />
-                </node>
-              </node>
-              <node concept="chp4Y" id="714IaVdGYWG" role="3oSUPX">
-                <ref role="cht4Q" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="6tgFcyzL_VL" role="3cqZAp">
-          <node concept="3K4zz7" id="6tgFcyzLA7k" role="3clFbG">
-            <node concept="37vLTw" id="6tgFcyzLAgi" role="3K4GZi">
-              <ref role="3cqZAo" node="6tgFcyzLtCy" resolve="module" />
-            </node>
-            <node concept="37vLTw" id="6tgFcyzLA7F" role="3K4E3e">
-              <ref role="3cqZAo" node="6tgFcyzLtvy" resolve="originalModule" />
-            </node>
-            <node concept="3y3z36" id="6tgFcyzLA3Q" role="3K4Cdx">
-              <node concept="10Nm6u" id="6tgFcyzLA47" role="3uHU7w" />
-              <node concept="37vLTw" id="6tgFcyzL_VK" role="3uHU7B">
-                <ref role="3cqZAo" node="6tgFcyzLtvy" resolve="originalModule" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tqbb2" id="6tgFcyzKijI" role="3clF45">
-        <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="6tgFcyzRv47" role="jymVt" />
     <node concept="2YIFZL" id="6tgFcyzTMAI" role="jymVt">
       <property role="TrG5h" value="loadModuleDescriptor" />
       <property role="od$2w" value="false" />
@@ -10604,11 +10543,12 @@
         <property role="eg7rD" value="false" />
         <property role="TrG5h" value="reporter" />
         <property role="3TUv4t" value="true" />
-        <node concept="3uibUv" id="6tgFcy$twrJ" role="1tU5fm">
-          <ref role="3uigEE" node="6tgFcy$kZBa" resolve="ModuleChecker.Reporter" />
+        <node concept="3uibUv" id="6cqWk79OK7f" role="1tU5fm">
+          <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
         </node>
         <node concept="3Tm6S6" id="6tgFcyzSX2F" role="1B3o_S" />
       </node>
+      <node concept="2tJIrI" id="6cqWk79OKin" role="jymVt" />
       <node concept="3clFbW" id="7AaordoBkQk" role="jymVt">
         <node concept="3cqZAl" id="7AaordoBkQl" role="3clF45" />
         <node concept="3clFbS" id="7AaordoBkQn" role="3clF47">
@@ -10671,6 +10611,9 @@
           <node concept="3uibUv" id="7AaordoBqql" role="1tU5fm">
             <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
           </node>
+          <node concept="2AHcQZ" id="6cqWk79OK2W" role="2AJF6D">
+            <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+          </node>
         </node>
         <node concept="37vLTG" id="182IgCCRBl7" role="3clF46">
           <property role="TrG5h" value="context" />
@@ -10686,8 +10629,8 @@
         </node>
         <node concept="37vLTG" id="6tgFcyzTt_E" role="3clF46">
           <property role="TrG5h" value="reporter" />
-          <node concept="3uibUv" id="6tgFcy$twrL" role="1tU5fm">
-            <ref role="3uigEE" node="6tgFcy$kZBa" resolve="ModuleChecker.Reporter" />
+          <node concept="3uibUv" id="6cqWk79OK5M" role="1tU5fm">
+            <ref role="3uigEE" to="et5u:~IMessageHandler" resolve="IMessageHandler" />
           </node>
         </node>
       </node>
@@ -10816,28 +10759,48 @@
               </node>
               <node concept="3clFbJ" id="7AaordoBmhQ" role="3cqZAp">
                 <node concept="3clFbS" id="7AaordoBmhR" role="3clFbx">
-                  <node concept="3clFbF" id="6tgFcyzTboJ" role="3cqZAp">
-                    <node concept="2OqwBi" id="6tgFcyzTbu2" role="3clFbG">
-                      <node concept="liA8E" id="6tgFcyzTdoE" role="2OqNvi">
-                        <ref role="37wK5l" node="ermczCV325" resolve="report" />
-                        <node concept="3cpWs3" id="7AaordoBmlR" role="37wK5m">
-                          <node concept="Xl_RD" id="7AaordoBmlU" role="3uHU7w">
-                            <property role="Xl_RC" value="'" />
+                  <node concept="3cpWs8" id="6cqWk79P3h1" role="3cqZAp">
+                    <node concept="3cpWsn" id="6cqWk79P3h4" role="3cpWs9">
+                      <property role="TrG5h" value="msg" />
+                      <node concept="17QB3L" id="6cqWk79P3h5" role="1tU5fm" />
+                      <node concept="2YIFZM" id="6cqWk79P3h6" role="33vP2m">
+                        <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                        <node concept="Xl_RD" id="6cqWk79P3h7" role="37wK5m">
+                          <property role="Xl_RC" value="invalid macro in `%s'" />
+                        </node>
+                        <node concept="37vLTw" id="6cqWk79P3h8" role="37wK5m">
+                          <ref role="3cqZAo" node="7AaordoBkQD" resolve="path" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="6cqWk79P1rI" role="3cqZAp">
+                    <node concept="2OqwBi" id="6cqWk79P1rK" role="3clFbG">
+                      <node concept="37vLTw" id="6cqWk79P1rL" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6tgFcyzSX6A" resolve="reporter" />
+                      </node>
+                      <node concept="liA8E" id="6cqWk79P1rM" role="2OqNvi">
+                        <ref role="37wK5l" to="et5u:~IMessageHandler.handle(jetbrains.mps.messages.IMessage):void" resolve="handle" />
+                        <node concept="2YIFZM" id="6cqWk79P1rN" role="37wK5m">
+                          <ref role="1Pybhc" to="et5u:~Message" resolve="Message" />
+                          <ref role="37wK5l" to="et5u:~Message.createMessage(jetbrains.mps.messages.MessageKind,java.lang.String,java.lang.String):jetbrains.mps.messages.IMessage" resolve="createMessage" />
+                          <node concept="Rm8GO" id="6cqWk79P1rO" role="37wK5m">
+                            <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
+                            <ref role="Rm8GQ" to="et5u:~MessageKind.ERROR" resolve="ERROR" />
                           </node>
-                          <node concept="3cpWs3" id="7AaordoBmlb" role="3uHU7B">
-                            <node concept="Xl_RD" id="7AaordoBmjg" role="3uHU7B">
-                              <property role="Xl_RC" value="invalid macro in `" />
+                          <node concept="2OqwBi" id="6cqWk79P1rP" role="37wK5m">
+                            <node concept="1rXfSq" id="6cqWk79P1rQ" role="2Oq$k0">
+                              <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
                             </node>
-                            <node concept="37vLTw" id="2BHiRxgmau4" role="3uHU7w">
-                              <ref role="3cqZAo" node="7AaordoBkQD" resolve="path" />
+                            <node concept="liA8E" id="6cqWk79P1rR" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
                             </node>
+                          </node>
+                          <node concept="37vLTw" id="6cqWk79P53C" role="37wK5m">
+                            <ref role="3cqZAo" node="6cqWk79P3h4" resolve="msg" />
                           </node>
                         </node>
-                        <node concept="10Nm6u" id="6tgFcyzTeIA" role="37wK5m" />
-                        <node concept="10Nm6u" id="6tgFcy$tNNP" role="37wK5m" />
-                      </node>
-                      <node concept="37vLTw" id="6tgFcyzTboI" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6tgFcyzSX6A" resolve="reporter" />
                       </node>
                     </node>
                   </node>
@@ -10944,23 +10907,37 @@
                   </node>
                 </node>
                 <node concept="3clFbS" id="7AaordoBmuZ" role="3clFbx">
-                  <node concept="3clFbF" id="6tgFcyzThO5" role="3cqZAp">
-                    <node concept="2OqwBi" id="6tgFcyzThTm" role="3clFbG">
-                      <node concept="liA8E" id="6tgFcyzTjVo" role="2OqNvi">
-                        <ref role="37wK5l" node="ermczCV325" resolve="report" />
-                        <node concept="3cpWs3" id="7AaordoBmz3" role="37wK5m">
-                          <node concept="Xl_RD" id="7AaordoBmvt" role="3uHU7B">
-                            <property role="Xl_RC" value="macro is not declared in build script: " />
+                  <node concept="3clFbF" id="6cqWk79ORFo" role="3cqZAp">
+                    <node concept="2OqwBi" id="6cqWk79OSqw" role="3clFbG">
+                      <node concept="37vLTw" id="6cqWk79ORFm" role="2Oq$k0">
+                        <ref role="3cqZAo" node="6tgFcyzSX6A" resolve="reporter" />
+                      </node>
+                      <node concept="liA8E" id="6cqWk79OSzT" role="2OqNvi">
+                        <ref role="37wK5l" to="et5u:~IMessageHandler.handle(jetbrains.mps.messages.IMessage):void" resolve="handle" />
+                        <node concept="2YIFZM" id="6cqWk79OOQK" role="37wK5m">
+                          <ref role="37wK5l" to="et5u:~Message.createMessage(jetbrains.mps.messages.MessageKind,java.lang.String,java.lang.String):jetbrains.mps.messages.IMessage" resolve="createMessage" />
+                          <ref role="1Pybhc" to="et5u:~Message" resolve="Message" />
+                          <node concept="Rm8GO" id="6cqWk79OP1u" role="37wK5m">
+                            <ref role="Rm8GQ" to="et5u:~MessageKind.ERROR" resolve="ERROR" />
+                            <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
                           </node>
-                          <node concept="37vLTw" id="2BHiRxgll4A" role="3uHU7w">
-                            <ref role="3cqZAo" node="7AaordoBkQD" resolve="path" />
+                          <node concept="2OqwBi" id="6cqWk79OPvk" role="37wK5m">
+                            <node concept="1rXfSq" id="6cqWk79OP7_" role="2Oq$k0">
+                              <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
+                            </node>
+                            <node concept="liA8E" id="6cqWk79OPWr" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+                            </node>
+                          </node>
+                          <node concept="3cpWs3" id="7AaordoBmz3" role="37wK5m">
+                            <node concept="Xl_RD" id="7AaordoBmvt" role="3uHU7B">
+                              <property role="Xl_RC" value="macro is not declared in build script: " />
+                            </node>
+                            <node concept="37vLTw" id="2BHiRxgll4A" role="3uHU7w">
+                              <ref role="3cqZAo" node="7AaordoBkQD" resolve="path" />
+                            </node>
                           </node>
                         </node>
-                        <node concept="10Nm6u" id="6tgFcyzTlkW" role="37wK5m" />
-                        <node concept="10Nm6u" id="6tgFcy$tJHj" role="37wK5m" />
-                      </node>
-                      <node concept="37vLTw" id="6tgFcyzThO4" role="2Oq$k0">
-                        <ref role="3cqZAo" node="6tgFcyzSX6A" resolve="reporter" />
                       </node>
                     </node>
                   </node>
@@ -10991,30 +10968,51 @@
               </node>
               <node concept="3clFbJ" id="ermczCV89u" role="3cqZAp">
                 <node concept="3clFbS" id="ermczCV89v" role="3clFbx">
-                  <node concept="3clFbF" id="6mECmDWMoBL" role="3cqZAp">
-                    <node concept="2OqwBi" id="6mECmDWMqQc" role="3clFbG">
-                      <node concept="37vLTw" id="6mECmDWMoBJ" role="2Oq$k0">
+                  <node concept="3cpWs8" id="6cqWk79OUw3" role="3cqZAp">
+                    <node concept="3cpWsn" id="6cqWk79OUw4" role="3cpWs9">
+                      <property role="TrG5h" value="msg" />
+                      <node concept="17QB3L" id="6cqWk79OUw0" role="1tU5fm" />
+                      <node concept="2YIFZM" id="6cqWk79OVW6" role="33vP2m">
+                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                        <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
+                        <node concept="Xl_RD" id="6cqWk79OW58" role="37wK5m">
+                          <property role="Xl_RC" value="cannot resolve local path: %s, macro has no default value" />
+                        </node>
+                        <node concept="37vLTw" id="6cqWk79OXhI" role="37wK5m">
+                          <ref role="3cqZAo" node="7AaordoBkQD" resolve="path" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="6cqWk79OTBE" role="3cqZAp">
+                    <node concept="2OqwBi" id="6cqWk79OTBF" role="3clFbG">
+                      <node concept="37vLTw" id="6cqWk79OTBG" role="2Oq$k0">
                         <ref role="3cqZAo" node="6tgFcyzSX6A" resolve="reporter" />
                       </node>
-                      <node concept="liA8E" id="6mECmDWMr17" role="2OqNvi">
-                        <ref role="37wK5l" node="ermczCV325" resolve="report" />
-                        <node concept="3cpWs3" id="6mECmDWMr4D" role="37wK5m">
-                          <node concept="3cpWs3" id="6mECmDWMr4E" role="3uHU7B">
-                            <node concept="Xl_RD" id="6mECmDWMr4F" role="3uHU7B">
-                              <property role="Xl_RC" value="cannot resolve local path: " />
+                      <node concept="liA8E" id="6cqWk79OTBH" role="2OqNvi">
+                        <ref role="37wK5l" to="et5u:~IMessageHandler.handle(jetbrains.mps.messages.IMessage):void" resolve="handle" />
+                        <node concept="2YIFZM" id="6cqWk79OTBI" role="37wK5m">
+                          <ref role="1Pybhc" to="et5u:~Message" resolve="Message" />
+                          <ref role="37wK5l" to="et5u:~Message.createMessage(jetbrains.mps.messages.MessageKind,java.lang.String,java.lang.String,java.lang.Object):jetbrains.mps.messages.IMessage" resolve="createMessage" />
+                          <node concept="Rm8GO" id="6cqWk79OTBJ" role="37wK5m">
+                            <ref role="Rm8GQ" to="et5u:~MessageKind.ERROR" resolve="ERROR" />
+                            <ref role="1Px2BO" to="et5u:~MessageKind" resolve="MessageKind" />
+                          </node>
+                          <node concept="2OqwBi" id="6cqWk79OTBK" role="37wK5m">
+                            <node concept="1rXfSq" id="6cqWk79OTBL" role="2Oq$k0">
+                              <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
                             </node>
-                            <node concept="37vLTw" id="6mECmDWMr4G" role="3uHU7w">
-                              <ref role="3cqZAo" node="7AaordoBkQD" resolve="path" />
+                            <node concept="liA8E" id="6cqWk79OTBM" role="2OqNvi">
+                              <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
                             </node>
                           </node>
-                          <node concept="Xl_RD" id="6mECmDWMr4H" role="3uHU7w">
-                            <property role="Xl_RC" value=", macro has no default value" />
+                          <node concept="37vLTw" id="6cqWk79OUw8" role="37wK5m">
+                            <ref role="3cqZAo" node="6cqWk79OUw4" resolve="msg" />
+                          </node>
+                          <node concept="37vLTw" id="6cqWk79OZ9O" role="37wK5m">
+                            <ref role="3cqZAo" node="7AaordoBmtO" resolve="found" />
                           </node>
                         </node>
-                        <node concept="37vLTw" id="6mECmDWMrnL" role="37wK5m">
-                          <ref role="3cqZAo" node="7AaordoBmtO" resolve="found" />
-                        </node>
-                        <node concept="10Nm6u" id="6mECmDWMtM4" role="37wK5m" />
                       </node>
                     </node>
                   </node>
@@ -11061,14 +11059,18 @@
                   <node concept="2OqwBi" id="7AaordoBmAP" role="37wK5m">
                     <node concept="2OqwBi" id="7AaordoBnOX" role="2Oq$k0">
                       <node concept="liA8E" id="7AaordoBnP7" role="2OqNvi">
-                        <ref role="37wK5l" to="3ju5:~FileSystem.getFileByPath(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFileByPath" />
+                        <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                         <node concept="37vLTw" id="3GM_nagTupX" role="37wK5m">
                           <ref role="3cqZAo" node="7AaordoBmA8" resolve="localPath" />
                         </node>
                       </node>
-                      <node concept="2YIFZM" id="7AaordoBnO$" role="2Oq$k0">
-                        <ref role="37wK5l" to="3ju5:~FileSystem.getInstance():jetbrains.mps.vfs.FileSystem" resolve="getInstance" />
-                        <ref role="1Pybhc" to="3ju5:~FileSystem" resolve="FileSystem" />
+                      <node concept="2OqwBi" id="6cqWk79OFPI" role="2Oq$k0">
+                        <node concept="37vLTw" id="6cqWk79OF6y" role="2Oq$k0">
+                          <ref role="3cqZAo" node="7AaordoBmal" resolve="moduleSourceDir" />
+                        </node>
+                        <node concept="liA8E" id="6cqWk79OH4e" role="2OqNvi">
+                          <ref role="37wK5l" to="3ju5:~IFile.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
+                        </node>
                       </node>
                     </node>
                     <node concept="liA8E" id="7AaordoBmAT" role="2OqNvi">

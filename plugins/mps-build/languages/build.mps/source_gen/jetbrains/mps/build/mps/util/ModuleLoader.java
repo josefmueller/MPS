@@ -95,7 +95,7 @@ public final class ModuleLoader {
 
     ModuleDescriptor md = null;
     try {
-      MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(file.getParent(), myBuildContext, myBuildProject, myReporter);
+      MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(file.getParent(), myBuildContext, myBuildProject, myMsgHandler);
       md = ModuleLoaderUtils.loadModuleDescriptor(file, helper);
       if (md.getLoadException() != null) {
         reportError(String.format("cannot import module file for %s: exception: %s", SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), md.getLoadException().getMessage()), module);
