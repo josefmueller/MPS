@@ -6,8 +6,6 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 @MPSLaunch
 public class Complete_Statement_CellInDecisionTable_Test extends BaseTransformationTest {
@@ -24,7 +22,7 @@ public class Complete_Statement_CellInDecisionTable_Test extends BaseTransformat
       initEditorComponent("5434709452673208691", "5434709452673208704");
       typeString("if");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
+      // unless there's another language than BL in the import (e.g. lang.smodel with IfInstanceOfStatement), 'if' is completed automatically. 
 
     }
   }
