@@ -25,7 +25,14 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.build.mps.util.PathConverter;
+import jetbrains.mps.build.mps.util.PathBuilder;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.build.mps.util.ModuleLoader;
 
 public class ImportAllModulesFromFolder_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Actions.ImportModulesFromFolder;
@@ -79,23 +86,31 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
         visible.collect();
 
         List<ImportModuleHelper> helpers = new ArrayList<ImportModuleHelper>();
+        final PathConverter pathConverter = new PathConverter(((SNode) MapSequence.fromMap(_params).get("node")));
+        final PathBuilder pathBuilder = new PathBuilder(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))));
+
+        DefaultMessageHandler msgHandler = new DefaultMessageHandler(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
+
         for (ModulesMiner.ModuleHandle handle : modules) {
           SModuleReference modRef = handle.getDescriptor().getModuleReference();
           if (visible.resolve(modRef) != null) {
             continue;
           }
 
-          ImportModuleHelper helper = new ImportModuleHelper(((SNode) MapSequence.fromMap(_params).get("node")), handle.getFile(), handle.getDescriptor());
-          helper.create();
-          helpers.add(helper);
+          try {
+            SNode modulePath = ListSequence.fromList(pathConverter.convertPath(handle.getFile().getPath(), pathBuilder)).first();
+            ImportModuleHelper helper = new ImportModuleHelper(((SNode) MapSequence.fromMap(_params).get("node")), modulePath, handle.getDescriptor());
+            helper.create();
+            helpers.add(helper);
+          } catch (PathConverter.PathConvertException ex) {
+            msgHandler.handle(Message.createMessage(MessageKind.ERROR, ImportModuleHelper.class.getName(), ex.getMessage(), ex));
+          }
         }
-        visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")));
-        visible.collect();
 
+        ModuleLoader ml = new ModuleLoader(((SNode) MapSequence.fromMap(_params).get("node")), null, msgHandler);
         for (ImportModuleHelper helper : helpers) {
-          helper.update(visible);
+          helper.update(ml);
         }
-
       }
     });
   }

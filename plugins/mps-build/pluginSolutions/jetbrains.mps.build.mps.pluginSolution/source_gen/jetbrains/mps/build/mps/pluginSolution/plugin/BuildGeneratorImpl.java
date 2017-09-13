@@ -53,12 +53,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.build.mps.util.PathConverter;
-import jetbrains.mps.build.mps.util.VisibleModules;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.messages.LogHandler;
 import jetbrains.mps.build.mps.util.ModuleChecker;
-import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -313,20 +310,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     // add mps layout to the target model 
     SModelOperations.addRootNode(targetModelDescriptor, buildProject);
 
-    PathConverter pathConverter = new PathConverter(buildProject);
-    VisibleModules visible = new VisibleModules(buildProject);
-    visible.collect();
-    for (SNode module : ListSequence.fromList(SNodeOperations.getNodeDescendants(buildProject, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"), false, new SAbstractConcept[]{}))) {
-      try {
-        ModuleLoader.createModuleChecker(module, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
-      } catch (ModuleLoaderException ex) {
-        if (LOG.isEnabledFor(Level.ERROR)) {
-          LOG.error(ex.getMessage());
-        }
-      }
-    }
+    ModuleLoader ml = new ModuleLoader(buildProject, null, new LogHandler(Logger.getLogger(ModuleLoader.class)));
+    ml.checkAllModules(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
 
-    if (eq_un708i_a0pb0ab(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
+    if (eq_un708i_a0nb0ab(getDependencyKind(), DependencyStep.DependencyKind.STANDALONE)) {
       SNode buildStandalone = addStandaloneBuild(targetModelDescriptor, buildProject);
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), buildProject, buildStandalone);
     }
@@ -2380,7 +2367,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   private static boolean eq_un708i_a0fb0ab(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_un708i_a0pb0ab(Object a, Object b) {
+  private static boolean eq_un708i_a0nb0ab(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_un708i_a0a0a0a0a0a0a11a82(Object a, Object b) {

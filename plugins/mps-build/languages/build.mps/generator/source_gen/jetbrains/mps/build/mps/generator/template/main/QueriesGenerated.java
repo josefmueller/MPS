@@ -49,14 +49,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
-import jetbrains.mps.build.mps.util.PathConverter;
-import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.IMessage;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.build.util.LocalSourcePathArtifact;
 import jetbrains.mps.build.mps.util.RequiredPlugins;
+import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.util.ProjectDependency;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.ReductionRuleCondition;
@@ -1367,29 +1369,35 @@ public class QueriesGenerated extends QueryProviderBase {
     return _context.getCopiedOutputNodeForInputNode(_context.getNode());
   }
   public static void mappingScript_CodeBlock_3189788309732145595(final MappingScriptContext _context) {
-    for (SNode project : SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))) {
+    for (final SNode project : SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"))) {
       if (!(_context.isDirty(project))) {
         continue;
       }
 
-      PathConverter pathConverter = new PathConverter(Context.defaultContext(_context), project);
-
-      VisibleModules visibleModules = new VisibleModules(project);
-      visibleModules.collect();
-
-      Iterable<SNode> parts = SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"));
-      parts = Sequence.fromIterable(SLinkOperations.collectMany(SNodeOperations.ofConcept(parts, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, "jetbrains.mps.build.mps.structure.BuildMps_Group")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x14d3fb6fb843ebddL, 0x14d3fb6fb843ebdeL, "modules"))).union(Sequence.fromIterable(parts)).toListSequence();
-
-      for (SNode module : SNodeOperations.ofConcept(parts, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"))) {
-        if ((SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")) == null)) {
-          continue;
+      ModuleLoader ml = new ModuleLoader(project, _context, new IMessageHandler() {
+        public void handle(IMessage msg) {
+          SNode location = project;
+          if (msg.getHintObject() instanceof SNodeReference) {
+            SNodeReference nodePtr = (SNodeReference) msg.getHintObject();
+            if (_context.getModel().getReference().equals(nodePtr.getModelReference())) {
+              location = _context.getModel().getNode(nodePtr.getNodeId());
+            }
+          }
+          // Reporter used to show errors only, that's why I don't check MessageKind here. 
+          // XXX nevertheless, shall change this and report info/warn as well. 
+          _context.showErrorMessage(location, msg.getText());
         }
+      });
+      ml.checkAllModules(ModuleChecker.CheckType.LOAD_ALL);
 
-        ModuleLoader.createModuleChecker(module, visibleModules, pathConverter, _context).check(ModuleChecker.CheckType.LOAD_ALL);
-      }
+      // move generators outside language, respect languages under Group project parts (hence, descendants), and  
+      // do not touch Generators that are not child of a generator (i.e. standalone generator modules, once we have them) 
 
-      // move generators outside language 
-      for (SNode generator : SLinkOperations.collect(SNodeOperations.ofConcept(parts, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator"))) {
+      for (SNode generator : SLinkOperations.collect(ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).translate(new ITranslator2<SNode, SNode>() {
+        public Iterable<SNode> translate(SNode it) {
+          return SNodeOperations.getNodeDescendants(it, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"), true, new SAbstractConcept[]{});
+        }
+      }), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator"))) {
         SNode lang = SNodeOperations.cast(SNodeOperations.getParent(generator), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
         SLinkOperations.setTarget(generator, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, 0xc0f2d501dbb734cL, "sourceLanguage"), lang);
         SNodeOperations.insertNextSiblingChild(lang, generator);

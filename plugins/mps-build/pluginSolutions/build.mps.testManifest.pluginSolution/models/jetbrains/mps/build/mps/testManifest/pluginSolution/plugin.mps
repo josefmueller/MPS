@@ -40,6 +40,7 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="o3n2" ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
+    <import index="57ty" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.messages(MPS.Platform/)" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
@@ -219,7 +220,6 @@
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
-      <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -441,7 +441,6 @@
       <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
         <child id="1151688676805" name="elementType" index="_ZDj9" />
       </concept>
-      <concept id="1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" flags="nn" index="ANE8D" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
@@ -874,139 +873,51 @@
                         </node>
                       </node>
                       <node concept="3clFbH" id="5DFnJAcAmp9" role="3cqZAp" />
-                      <node concept="3cpWs8" id="2hkCNA7Z2nt" role="3cqZAp">
-                        <node concept="3cpWsn" id="2hkCNA7Z2nu" role="3cpWs9">
-                          <property role="TrG5h" value="pathConverter" />
-                          <node concept="3uibUv" id="2hkCNA7Z2nv" role="1tU5fm">
-                            <ref role="3uigEE" to="tken:2hkCNA7Z0MW" resolve="PathConverter" />
+                      <node concept="3cpWs8" id="6cqWk79BkOp" role="3cqZAp">
+                        <node concept="3cpWsn" id="6cqWk79BkOq" role="3cpWs9">
+                          <property role="TrG5h" value="ml" />
+                          <node concept="3uibUv" id="6cqWk79BkOr" role="1tU5fm">
+                            <ref role="3uigEE" to="tken:3HwLahs69DJ" resolve="ModuleLoader" />
                           </node>
-                          <node concept="2ShNRf" id="2hkCNA7Z2ny" role="33vP2m">
-                            <node concept="1pGfFk" id="2hkCNA7Z2n$" role="2ShVmc">
-                              <ref role="37wK5l" to="tken:2hkCNA7Z0MY" resolve="PathConverter" />
-                              <node concept="37vLTw" id="vgcurbABn0" role="37wK5m">
+                          <node concept="2ShNRf" id="6cqWk79Bqjn" role="33vP2m">
+                            <node concept="1pGfFk" id="6cqWk79BFtc" role="2ShVmc">
+                              <ref role="37wK5l" to="tken:6cqWk79z1ZM" resolve="ModuleLoader" />
+                              <node concept="37vLTw" id="6cqWk79BGzk" role="37wK5m">
                                 <ref role="3cqZAo" node="vgcurbAul$" resolve="bproj" />
                               </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbH" id="vgcurbAA8_" role="3cqZAp" />
-                      <node concept="3cpWs8" id="vgcurbA$BU" role="3cqZAp">
-                        <node concept="3cpWsn" id="vgcurbA$BV" role="3cpWs9">
-                          <property role="TrG5h" value="modules" />
-                          <node concept="_YKpA" id="vgcurbA$BC" role="1tU5fm">
-                            <node concept="3Tqbb2" id="vgcurbA$BF" role="_ZDj9">
-                              <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
-                            </node>
-                          </node>
-                          <node concept="2OqwBi" id="vgcurbA$BW" role="33vP2m">
-                            <node concept="2OqwBi" id="vgcurbA$BX" role="2Oq$k0">
-                              <node concept="37vLTw" id="vgcurbA$BY" role="2Oq$k0">
-                                <ref role="3cqZAo" node="vgcurbAul$" resolve="bproj" />
-                              </node>
-                              <node concept="2Rf3mk" id="vgcurbA$BZ" role="2OqNvi">
-                                <node concept="1xMEDy" id="vgcurbA$C0" role="1xVPHs">
-                                  <node concept="chp4Y" id="vgcurbA$C1" role="ri$Ld">
-                                    <ref role="cht4Q" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                            <node concept="ANE8D" id="vgcurbA$C2" role="2OqNvi" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="1DcWWT" id="vgcurbA$Ty" role="3cqZAp">
-                        <node concept="3clFbS" id="vgcurbA$T$" role="2LFqv$">
-                          <node concept="SfApY" id="50RHf4RGiIR" role="3cqZAp">
-                            <node concept="3clFbS" id="50RHf4RGiIS" role="SfCbr">
-                              <node concept="3cpWs8" id="50RHf4RGXGr" role="3cqZAp">
-                                <node concept="3cpWsn" id="50RHf4RGXGs" role="3cpWs9">
-                                  <property role="TrG5h" value="visible" />
-                                  <node concept="3uibUv" id="50RHf4RGXGt" role="1tU5fm">
-                                    <ref role="3uigEE" to="tken:50RHf4RGVPk" resolve="VisibleModules" />
-                                  </node>
-                                  <node concept="2ShNRf" id="50RHf4RGXGv" role="33vP2m">
-                                    <node concept="1pGfFk" id="50RHf4RGXGx" role="2ShVmc">
-                                      <ref role="37wK5l" to="tken:50RHf4RGVPm" resolve="VisibleModules" />
-                                      <node concept="37vLTw" id="vgcurbACAq" role="37wK5m">
-                                        <ref role="3cqZAo" node="vgcurbAul$" resolve="bproj" />
+                              <node concept="10Nm6u" id="6cqWk79BIK7" role="37wK5m" />
+                              <node concept="2ShNRf" id="6cqWk79BJQC" role="37wK5m">
+                                <node concept="1pGfFk" id="6cqWk79BLU2" role="2ShVmc">
+                                  <ref role="37wK5l" to="57ty:~DefaultMessageHandler.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="DefaultMessageHandler" />
+                                  <node concept="2OqwBi" id="6cqWk79BPc8" role="37wK5m">
+                                    <node concept="2OqwBi" id="6cqWk79BNc$" role="2Oq$k0">
+                                      <node concept="2WthIp" id="6cqWk79BNcB" role="2Oq$k0" />
+                                      <node concept="1DTwFV" id="6cqWk79BNcD" role="2OqNvi">
+                                        <ref role="2WH_rO" node="1ouvi_zvvb" resolve="mpsProject" />
                                       </node>
                                     </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="3clFbF" id="50RHf4RGXGA" role="3cqZAp">
-                                <node concept="2OqwBi" id="50RHf4RGXGQ" role="3clFbG">
-                                  <node concept="37vLTw" id="3GM_nagTu5g" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="50RHf4RGXGs" resolve="visible" />
-                                  </node>
-                                  <node concept="liA8E" id="50RHf4RGXGV" role="2OqNvi">
-                                    <ref role="37wK5l" to="tken:50RHf4RGXFc" resolve="collect" />
-                                  </node>
-                                </node>
-                              </node>
-                              <node concept="3clFbF" id="6tgFcy$Ah9a" role="3cqZAp">
-                                <node concept="2OqwBi" id="6tgFcy$AhmV" role="3clFbG">
-                                  <node concept="liA8E" id="6tgFcy$AhMd" role="2OqNvi">
-                                    <ref role="37wK5l" to="tken:6m8wrPAZvU9" resolve="check" />
-                                    <node concept="Rm8GO" id="6m8wrPD7zrM" role="37wK5m">
-                                      <ref role="1Px2BO" to="tken:6m8wrPAZ5Tf" resolve="ModuleChecker.CheckType" />
-                                      <ref role="Rm8GQ" to="tken:6m8wrPAZbkd" resolve="LOAD_IMPORTANT_PART" />
-                                    </node>
-                                  </node>
-                                  <node concept="2YIFZM" id="6tgFcy$Ahbz" role="2Oq$k0">
-                                    <ref role="37wK5l" to="tken:6tgFcy$_wKX" resolve="createModuleChecker" />
-                                    <ref role="1Pybhc" to="tken:3HwLahs69DJ" resolve="ModuleLoader" />
-                                    <node concept="37vLTw" id="vgcurbADdH" role="37wK5m">
-                                      <ref role="3cqZAo" node="vgcurbA$TA" resolve="mod" />
-                                    </node>
-                                    <node concept="37vLTw" id="6tgFcy$AhbG" role="37wK5m">
-                                      <ref role="3cqZAo" node="50RHf4RGXGs" resolve="visible" />
-                                    </node>
-                                    <node concept="37vLTw" id="6tgFcy$AhbP" role="37wK5m">
-                                      <ref role="3cqZAo" node="2hkCNA7Z2nu" resolve="pathConverter" />
+                                    <node concept="liA8E" id="6cqWk79BR75" role="2OqNvi">
+                                      <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                                     </node>
                                   </node>
                                 </node>
-                              </node>
-                              <node concept="3clFbH" id="vgcurbADOM" role="3cqZAp" />
-                            </node>
-                            <node concept="TDmWw" id="50RHf4RGiIU" role="TEbGg">
-                              <node concept="3cpWsn" id="50RHf4RGiIV" role="TDEfY">
-                                <property role="TrG5h" value="ex" />
-                                <node concept="3uibUv" id="6tgFcy$9fsK" role="1tU5fm">
-                                  <ref role="3uigEE" to="tken:6tgFcyzWR3Q" resolve="ModuleLoaderException" />
-                                </node>
-                              </node>
-                              <node concept="3clFbS" id="50RHf4RGiIX" role="TDEfX">
-                                <node concept="RRSsy" id="3jYQuSB37vL" role="3cqZAp">
-                                  <property role="RRSoG" value="error" />
-                                  <node concept="2OqwBi" id="50RHf4RGvLi" role="RRSoy">
-                                    <node concept="37vLTw" id="3GM_nagTrgK" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="50RHf4RGiIV" resolve="ex" />
-                                    </node>
-                                    <node concept="liA8E" id="50RHf4RGw41" role="2OqNvi">
-                                      <ref role="37wK5l" to="wyt6:~Throwable.getMessage():java.lang.String" resolve="getMessage" />
-                                    </node>
-                                  </node>
-                                  <node concept="37vLTw" id="3GM_nagTu0z" role="RRSow">
-                                    <ref role="3cqZAo" node="50RHf4RGiIV" resolve="ex" />
-                                  </node>
-                                </node>
-                                <node concept="3zACq4" id="6DW_AMAz2l8" role="3cqZAp" />
                               </node>
                             </node>
                           </node>
                         </node>
-                        <node concept="3cpWsn" id="vgcurbA$TA" role="1Duv9x">
-                          <property role="TrG5h" value="mod" />
-                          <node concept="3Tqbb2" id="vgcurbA$TE" role="1tU5fm">
-                            <ref role="ehGHo" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
+                      </node>
+                      <node concept="3clFbF" id="6cqWk79BTsR" role="3cqZAp">
+                        <node concept="2OqwBi" id="6cqWk79BU_4" role="3clFbG">
+                          <node concept="37vLTw" id="6cqWk79BTsP" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6cqWk79BkOq" resolve="ml" />
                           </node>
-                        </node>
-                        <node concept="37vLTw" id="vgcurbA$TF" role="1DdaDG">
-                          <ref role="3cqZAo" node="vgcurbA$BV" resolve="modules" />
+                          <node concept="liA8E" id="6cqWk79BW1F" role="2OqNvi">
+                            <ref role="37wK5l" to="tken:6cqWk79_waj" resolve="checkAllModules" />
+                            <node concept="Rm8GO" id="6cqWk79BXhL" role="37wK5m">
+                              <ref role="1Px2BO" to="tken:6m8wrPAZ5Tf" resolve="ModuleChecker.CheckType" />
+                              <ref role="Rm8GQ" to="tken:6m8wrPAZbkd" resolve="LOAD_IMPORTANT_PART" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -1015,7 +926,6 @@
                     <ref role="3cqZAo" node="6j36NaoD4Cl" resolve="repo" />
                   </node>
                 </node>
-                <node concept="3clFbH" id="vgcurb_jTo" role="3cqZAp" />
               </node>
             </node>
           </node>

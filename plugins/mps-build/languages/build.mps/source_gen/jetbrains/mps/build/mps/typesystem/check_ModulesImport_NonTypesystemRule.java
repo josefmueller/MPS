@@ -10,19 +10,19 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.build.mps.util.VisibleModules;
-import jetbrains.mps.build.mps.util.PathConverter;
+import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
+import jetbrains.mps.build.util.Context;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.mps.util.ModuleChecker;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.build.mps.util.ModuleLoader;
-import jetbrains.mps.errors.BaseQuickFixProvider;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.IMessage;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.build.mps.util.ModuleChecker;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ModulesImport_NonTypesystemRule() {
@@ -32,12 +32,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
       return;
     }
 
-    VisibleModules visible = new VisibleModules(buildProject);
-    visible.collect();
-
-    PathConverter pathConverter = new PathConverter(buildProject);
-
-    String workingDir = pathConverter.getWorkingDir();
+    String workingDir = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(buildProject, Context.defaultContext());
     if ((workingDir == null || workingDir.length() == 0)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -46,35 +41,21 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
       return;
     }
 
+    final SRepository repo = SNodeOperations.getModel(buildProject).getRepository();
 
-    for (final SNode module : ListSequence.fromList(SNodeOperations.getNodeDescendants(buildProject, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path")) != null);
-      }
-    })) {
-      final StringBuilder messages = new StringBuilder();
-      ModuleChecker.Reporter reporter = new ModuleChecker.Reporter(null) {
-        @Override
-        public void report(String message, SNode node, Exception cause) {
-          if (messages.length() > 0) {
-            messages.append("\n");
-          }
-          messages.append(message);
+    ModuleLoader ml = new ModuleLoader(buildProject, null, new IMessageHandler() {
+      public void handle(IMessage msg) {
+        SNode location = buildProject;
+        if (repo != null && msg.getHintObject() instanceof SNodeReference) {
+          location = ((SNodeReference) msg.getHintObject()).resolve(repo);
         }
-      };
-
-      ModuleLoader.createModuleChecker(module, visible, pathConverter, null, reporter).check(ModuleChecker.CheckType.CHECK);
-      if (messages.length() > 0) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(module, messages.toString(), "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "2531699772406302922", null, errorTarget);
-          {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.build.mps.typesystem.ReloadRequired_QuickFix", false);
-            _reporter_2309309498.addIntentionProvider(intentionProvider);
-          }
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(location, msg.getText(), "r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)", "7141285424006551198", null, errorTarget);
         }
       }
-    }
+    });
+    ml.checkAllModules(ModuleChecker.CheckType.CHECK);
   }
   public SAbstractConcept getApplicableConcept() {
     return MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject");

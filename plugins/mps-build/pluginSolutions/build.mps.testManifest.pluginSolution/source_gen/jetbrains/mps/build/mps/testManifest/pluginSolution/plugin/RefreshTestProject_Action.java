@@ -34,12 +34,9 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.build.mps.util.PathConverter;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.build.mps.util.ModuleChecker;
-import jetbrains.mps.build.mps.util.ModuleLoaderException;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
 
@@ -167,25 +164,10 @@ public class RefreshTestProject_Action extends BaseAction {
               SModelOperations.addRootNode(target.value, bproj);
             }
 
-            PathConverter pathConverter = new PathConverter(bproj);
-
-            List<SNode> modules = ListSequence.fromList(SNodeOperations.getNodeDescendants(bproj, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), false, new SAbstractConcept[]{})).toListSequence();
-            for (SNode mod : modules) {
-              try {
-                VisibleModules visible = new VisibleModules(bproj);
-                visible.collect();
-                ModuleLoader.createModuleChecker(mod, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
-
-              } catch (ModuleLoaderException ex) {
-                if (LOG.isEnabledFor(Level.ERROR)) {
-                  LOG.error(ex.getMessage(), ex);
-                }
-                break;
-              }
-            }
+            ModuleLoader ml = new ModuleLoader(bproj, null, new DefaultMessageHandler(event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject()));
+            ml.checkAllModules(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
           }
         });
-
       }
     });
 

@@ -4,8 +4,6 @@ package jetbrains.mps.build.mps.intentions;
 
 import jetbrains.mps.intentions.AbstractIntentionDescriptor;
 import jetbrains.mps.openapi.intentions.IntentionFactory;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import java.util.Collection;
 import jetbrains.mps.openapi.intentions.IntentionExecutable;
 import jetbrains.mps.openapi.intentions.Kind;
@@ -18,17 +16,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.intentions.AbstractIntentionExecutable;
-import jetbrains.mps.build.mps.util.VisibleModules;
-import jetbrains.mps.build.mps.util.PathConverter;
-import java.util.Iterator;
 import jetbrains.mps.build.mps.util.ModuleLoader;
+import jetbrains.mps.messages.LogHandler;
+import org.apache.log4j.Logger;
 import jetbrains.mps.build.mps.util.ModuleChecker;
-import jetbrains.mps.build.mps.util.ModuleLoaderException;
-import org.apache.log4j.Level;
 import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 
 public final class ReloadModulesFromDisk_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
-  private static final Logger LOG = LogManager.getLogger(ReloadModulesFromDisk_Intention.class);
   private Collection<IntentionExecutable> myCachedExecutable;
   public ReloadModulesFromDisk_Intention() {
     super(Kind.NORMAL, true, new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "1753793013241722025"));
@@ -66,32 +60,8 @@ public final class ReloadModulesFromDisk_Intention extends AbstractIntentionDesc
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      VisibleModules visible = new VisibleModules(node);
-      visible.collect();
-
-      PathConverter pathConverter = new PathConverter(node);
-
-      {
-        Iterator<SNode> module_it = ListSequence.fromList(SNodeOperations.getNodeDescendants(node, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), false, new SAbstractConcept[]{})).iterator();
-        SNode module_var;
-        while (module_it.hasNext()) {
-          module_var = module_it.next();
-          if (SNodeOperations.isInstanceOf(module_var, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
-            continue;
-          }
-          try {
-            ModuleLoader.createModuleChecker(module_var, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
-          } catch (ModuleLoaderException ex) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error(ex.getMessage());
-            }
-            if (LOG.isDebugEnabled()) {
-              LOG.debug(ex.getMessage(), ex);
-            }
-            // TODO report? 
-          }
-        }
-      }
+      ModuleLoader ml = new ModuleLoader(node, null, new LogHandler(Logger.getLogger(ModuleLoader.class)));
+      ml.checkAllModules(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
     }
     @Override
     public IntentionDescriptor getDescriptor() {

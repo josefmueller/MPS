@@ -45,7 +45,7 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class ModuleChecker {
+public final class ModuleChecker {
   private final SNode myModule;
   private final ModuleDescriptor myModuleDescriptor;
   private final IFile myModuleDescriptorFile;
@@ -53,7 +53,7 @@ public class ModuleChecker {
   private final PathConverter myPathConverter;
   private final ModuleChecker.Reporter myReporter;
 
-  public ModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, IFile moduleDescriptorFile, ModuleDescriptor moduleDescriptor, ModuleChecker.Reporter reporter) {
+  /*package*/ ModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, IFile moduleDescriptorFile, ModuleDescriptor moduleDescriptor, ModuleChecker.Reporter reporter) {
     myModule = module;
     myVisibleModules = visible;
     myPathConverter = pathConverter;
