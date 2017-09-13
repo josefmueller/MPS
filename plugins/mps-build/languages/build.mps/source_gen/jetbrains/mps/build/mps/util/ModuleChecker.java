@@ -835,8 +835,7 @@ public final class ModuleChecker {
   private SNode convertPath(String path) {
     // XXX why on earth do we produce list here and ignore all but first element everywhere? 
     try {
-      // apparently model argument is merely a factory of new path nodes and doesn't need to be 'original' one 
-      return ListSequence.fromList(myPathConverter.convertPath(path, new PathBuilder(SNodeOperations.getModel(myModule)))).first();
+      return ListSequence.fromList(myPathConverter.convertPath(path)).first();
     } catch (PathConverter.PathConvertException ex) {
       report("Failed to convert path " + path, ex);
       return null;

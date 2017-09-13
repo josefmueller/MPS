@@ -96,7 +96,6 @@
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Generator__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Solution__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoaderException" />
-    <classNode dependClassName="jetbrains.mps.build.mps.util.PathBuilder" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
     <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />

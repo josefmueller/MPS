@@ -2517,6 +2517,14 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="6cqWk79LSv8" role="jymVt">
+      <property role="TrG5h" value="myPathBuilder" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="6cqWk79LSv9" role="1B3o_S" />
+      <node concept="3uibUv" id="6cqWk79LT_O" role="1tU5fm">
+        <ref role="3uigEE" node="16ApZ_p$u3T" resolve="PathBuilder" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="4WwUR8h$vE4" role="jymVt" />
     <node concept="3clFbW" id="2hkCNA7Z0MY" role="jymVt">
       <node concept="3cqZAl" id="2hkCNA7Z0MZ" role="3clF45" />
@@ -2577,6 +2585,29 @@
                 <ref role="2Oxat5" node="2hkCNA7Z0Qe" resolve="workingDirectory" />
               </node>
               <node concept="Xjq3P" id="2hkCNA7Z0Qk" role="2Oq$k0" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6qG_vx$eN9z" role="3cqZAp">
+          <node concept="3SKdUq" id="6qG_vx$eT7B" role="3SKWNk">
+            <property role="3SKdUp" value="model argument is merely a factory of new path nodes and doesn't need to be 'original' one" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="6cqWk79LU2S" role="3cqZAp">
+          <node concept="37vLTI" id="6cqWk79LUzo" role="3clFbG">
+            <node concept="37vLTw" id="6cqWk79LU2Q" role="37vLTJ">
+              <ref role="3cqZAo" node="6cqWk79LSv8" resolve="myPathBuilder" />
+            </node>
+            <node concept="2ShNRf" id="16ApZ_pDcNv" role="37vLTx">
+              <node concept="1pGfFk" id="16ApZ_pDtiy" role="2ShVmc">
+                <ref role="37wK5l" node="16ApZ_p$vlx" resolve="PathBuilder" />
+                <node concept="2OqwBi" id="16ApZ_pDVAt" role="37wK5m">
+                  <node concept="37vLTw" id="6cqWk79LUKI" role="2Oq$k0">
+                    <ref role="3cqZAo" node="EpEP7hMflS" resolve="project" />
+                  </node>
+                  <node concept="I4A8Y" id="16ApZ_pEbPn" role="2OqNvi" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -3018,8 +3049,8 @@
                     </node>
                     <node concept="TSZUe" id="4ObP80xqQqd" role="2OqNvi">
                       <node concept="2OqwBi" id="16ApZ_p_RZi" role="25WWJ7">
-                        <node concept="37vLTw" id="16ApZ_p_R9J" role="2Oq$k0">
-                          <ref role="3cqZAo" node="16ApZ_pC$BI" resolve="pathBuilder" />
+                        <node concept="37vLTw" id="6cqWk79LVUv" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6cqWk79LSv8" resolve="myPathBuilder" />
                         </node>
                         <node concept="liA8E" id="16ApZ_p_SQP" role="2OqNvi">
                           <ref role="37wK5l" node="16ApZ_p_qZ9" resolve="buildRelative" />
@@ -3071,8 +3102,8 @@
                     </node>
                     <node concept="TSZUe" id="6mECmDWOnvc" role="2OqNvi">
                       <node concept="2OqwBi" id="4WwUR8hyFPp" role="25WWJ7">
-                        <node concept="37vLTw" id="4WwUR8hyFs1" role="2Oq$k0">
-                          <ref role="3cqZAo" node="16ApZ_pC$BI" resolve="pathBuilder" />
+                        <node concept="37vLTw" id="6cqWk79LWH8" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6cqWk79LSv8" resolve="myPathBuilder" />
                         </node>
                         <node concept="liA8E" id="4WwUR8hyG6X" role="2OqNvi">
                           <ref role="37wK5l" node="16ApZ_p$KV5" resolve="buildRelative" />
@@ -3238,8 +3269,8 @@
                       <node concept="2OqwBi" id="ermczCVO29" role="3clFbG">
                         <node concept="TSZUe" id="ermczCVO2b" role="2OqNvi">
                           <node concept="2OqwBi" id="16ApZ_pA68n" role="25WWJ7">
-                            <node concept="37vLTw" id="16ApZ_pA5ii" role="2Oq$k0">
-                              <ref role="3cqZAo" node="16ApZ_pC$BI" resolve="pathBuilder" />
+                            <node concept="37vLTw" id="6cqWk79LWSy" role="2Oq$k0">
+                              <ref role="3cqZAo" node="6cqWk79LSv8" resolve="myPathBuilder" />
                             </node>
                             <node concept="liA8E" id="16ApZ_pA75_" role="2OqNvi">
                               <ref role="37wK5l" node="16ApZ_p_qZ9" resolve="buildRelative" />
@@ -3310,12 +3341,6 @@
       <node concept="37vLTG" id="2hkCNA7Z0PU" role="3clF46">
         <property role="TrG5h" value="path" />
         <node concept="17QB3L" id="2hkCNA7Z0PV" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="16ApZ_pC$BI" role="3clF46">
-        <property role="TrG5h" value="pathBuilder" />
-        <node concept="3uibUv" id="16ApZ_pC_Jr" role="1tU5fm">
-          <ref role="3uigEE" node="16ApZ_p$u3T" resolve="PathBuilder" />
-        </node>
       </node>
       <node concept="P$JXv" id="16ApZ_pCB5l" role="lGtFl">
         <node concept="TZ5HA" id="16ApZ_pCD$$" role="TZ5H$">
@@ -19108,11 +19133,6 @@
         </node>
         <node concept="SfApY" id="6m8wrPAU4eM" role="3cqZAp">
           <node concept="3clFbS" id="6m8wrPAU4eN" role="SfCbr">
-            <node concept="3SKdUt" id="6qG_vx$eN9z" role="3cqZAp">
-              <node concept="3SKdUq" id="6qG_vx$eT7B" role="3SKWNk">
-                <property role="3SKdUp" value="apparently model argument is merely a factory of new path nodes and doesn't need to be 'original' one" />
-              </node>
-            </node>
             <node concept="3cpWs6" id="6m8wrPAU4eO" role="3cqZAp">
               <node concept="2OqwBi" id="53Z2AYAa83_" role="3cqZAk">
                 <node concept="2OqwBi" id="6m8wrPAU4eP" role="2Oq$k0">
@@ -19120,17 +19140,6 @@
                     <ref role="37wK5l" node="2hkCNA7Z0O3" resolve="convertPath" />
                     <node concept="37vLTw" id="2BHiRxglMJt" role="37wK5m">
                       <ref role="3cqZAo" node="6m8wrPAU4eH" resolve="path" />
-                    </node>
-                    <node concept="2ShNRf" id="16ApZ_pDcNv" role="37wK5m">
-                      <node concept="1pGfFk" id="16ApZ_pDtiy" role="2ShVmc">
-                        <ref role="37wK5l" node="16ApZ_p$vlx" resolve="PathBuilder" />
-                        <node concept="2OqwBi" id="16ApZ_pDVAt" role="37wK5m">
-                          <node concept="37vLTw" id="16ApZ_pDIU9" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6m8wrPAU3pf" resolve="myModule" />
-                          </node>
-                          <node concept="I4A8Y" id="16ApZ_pEbPn" role="2OqNvi" />
-                        </node>
-                      </node>
                     </node>
                   </node>
                   <node concept="37vLTw" id="2BHiRxeuVYM" role="2Oq$k0">

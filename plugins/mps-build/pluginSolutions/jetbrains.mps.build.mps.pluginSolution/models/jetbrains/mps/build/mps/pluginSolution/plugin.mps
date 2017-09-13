@@ -554,7 +554,6 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
-      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
@@ -945,29 +944,6 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3cpWs8" id="6cqWk79GYAE" role="3cqZAp">
-                    <node concept="3cpWsn" id="6cqWk79GYAF" role="3cpWs9">
-                      <property role="TrG5h" value="pathBuilder" />
-                      <property role="3TUv4t" value="true" />
-                      <node concept="3uibUv" id="6cqWk79GYAC" role="1tU5fm">
-                        <ref role="3uigEE" to="tken:16ApZ_p$u3T" resolve="PathBuilder" />
-                      </node>
-                      <node concept="2ShNRf" id="6cqWk79GYAG" role="33vP2m">
-                        <node concept="1pGfFk" id="6cqWk79GYAH" role="2ShVmc">
-                          <ref role="37wK5l" to="tken:16ApZ_p$vlx" resolve="PathBuilder" />
-                          <node concept="2OqwBi" id="6cqWk79GYAI" role="37wK5m">
-                            <node concept="2OqwBi" id="6cqWk79He9p" role="2Oq$k0">
-                              <node concept="2WthIp" id="6cqWk79He9s" role="2Oq$k0" />
-                              <node concept="3gHZIF" id="6cqWk79He9u" role="2OqNvi">
-                                <ref role="2WH_rO" node="6182LeIwyBK" resolve="node" />
-                              </node>
-                            </node>
-                            <node concept="I4A8Y" id="6cqWk79GYAK" role="2OqNvi" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
                   <node concept="3clFbH" id="6cqWk79GODD" role="3cqZAp" />
                   <node concept="3cpWs8" id="6cqWk79IcKe" role="3cqZAp">
                     <node concept="3cpWsn" id="6cqWk79IcKf" role="3cpWs9">
@@ -1064,9 +1040,6 @@
                                           <ref role="37wK5l" to="32g5:~ModulesMiner$ModuleHandle.getFile():jetbrains.mps.vfs.IFile" resolve="getFile" />
                                         </node>
                                       </node>
-                                    </node>
-                                    <node concept="37vLTw" id="6cqWk79H2tr" role="37wK5m">
-                                      <ref role="3cqZAo" node="6cqWk79GYAF" resolve="pathBuilder" />
                                     </node>
                                   </node>
                                 </node>

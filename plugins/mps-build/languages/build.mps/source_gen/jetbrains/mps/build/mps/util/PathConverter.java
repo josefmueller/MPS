@@ -7,11 +7,11 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -26,6 +26,7 @@ public class PathConverter {
   private final RelativePathHelper workingDirectory;
   private final Iterable<Tuples._2<String, SNode>> macros;
   private final Iterable<SNode> macrosWithoutPath;
+  private final PathBuilder myPathBuilder;
 
   public PathConverter(SNode project) {
     this(Context.defaultContext(), project);
@@ -34,6 +35,8 @@ public class PathConverter {
   public PathConverter(final Context ctx, SNode project) {
     String workingDir = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(project, ctx);
     this.workingDirectory = new RelativePathHelper(workingDir);
+    // model argument is merely a factory of new path nodes and doesn't need to be 'original' one 
+    myPathBuilder = new PathBuilder(SNodeOperations.getModel(project));
 
     final List<Tuples._2<String, SNode>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, SNode>>());
     final List<SNode> withoutPath = ListSequence.fromList(new ArrayList<SNode>());
@@ -64,7 +67,7 @@ public class PathConverter {
    * 
    * @return never null
    */
-  public List<SNode> convertPath(String path, PathBuilder pathBuilder) throws PathConverter.PathConvertException {
+  public List<SNode> convertPath(String path) throws PathConverter.PathConvertException {
     path = normalizePath(path, false);
     String withSlash = normalizePath(path, true);
     List<SNode> result = new ArrayList<SNode>();
@@ -77,12 +80,12 @@ public class PathConverter {
 
       if (currPath.startsWith(mdir)) {
         currPath = currPath.substring(mdir.length());
-        ListSequence.fromList(result).addElement(pathBuilder.buildRelative(m._1(), currPath));
+        ListSequence.fromList(result).addElement(myPathBuilder.buildRelative(m._1(), currPath));
       }
     }
     if (workingDirectory.isRelative(withSlash)) {
       try {
-        ListSequence.fromList(result).addElement(pathBuilder.buildRelative(workingDirectory.makeRelative(withSlash)));
+        ListSequence.fromList(result).addElement(myPathBuilder.buildRelative(workingDirectory.makeRelative(withSlash)));
       } catch (RelativePathHelper.PathException ex) {
         throw new PathConverter.PathConvertException(ex.toString());
       }
@@ -93,7 +96,7 @@ public class PathConverter {
         String currPath = (path.length() < mdir.length() ? withSlash : path);
         if (currPath.startsWith(mdir)) {
           currPath = currPath.substring(mdir.length());
-          ListSequence.fromList(result).addElement(pathBuilder.buildRelative(m, currPath));
+          ListSequence.fromList(result).addElement(myPathBuilder.buildRelative(m, currPath));
         }
       }
     }

@@ -26,7 +26,6 @@ import jetbrains.mps.build.mps.util.VisibleModules;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.build.mps.util.PathConverter;
-import jetbrains.mps.build.mps.util.PathBuilder;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -87,7 +86,6 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
 
         List<ImportModuleHelper> helpers = new ArrayList<ImportModuleHelper>();
         final PathConverter pathConverter = new PathConverter(((SNode) MapSequence.fromMap(_params).get("node")));
-        final PathBuilder pathBuilder = new PathBuilder(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))));
 
         DefaultMessageHandler msgHandler = new DefaultMessageHandler(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
 
@@ -98,7 +96,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
           }
 
           try {
-            SNode modulePath = ListSequence.fromList(pathConverter.convertPath(handle.getFile().getPath(), pathBuilder)).first();
+            SNode modulePath = ListSequence.fromList(pathConverter.convertPath(handle.getFile().getPath())).first();
             ImportModuleHelper helper = new ImportModuleHelper(((SNode) MapSequence.fromMap(_params).get("node")), modulePath, handle.getDescriptor());
             helper.create();
             helpers.add(helper);
