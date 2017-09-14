@@ -28,7 +28,7 @@ public class ShowRegularEditorsForSelection_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ReflectiveEditorUtil.isApplicable(event, ((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false, true, true);
+    return ReflectiveEditorUtil.isApplicable(event, ((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false, true);
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -60,6 +60,6 @@ public class ShowRegularEditorsForSelection_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ReflectiveEditorUtil.execute(event, ((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false, true, true);
+    ReflectiveEditorUtil.execute(event, ((List<SNode>) MapSequence.fromMap(_params).get("selectedNodes")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), false, true);
   }
 }

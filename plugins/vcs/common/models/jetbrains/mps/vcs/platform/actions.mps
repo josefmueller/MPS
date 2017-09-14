@@ -2989,17 +2989,11 @@
       <node concept="tCFHf" id="nEmtK1W19H" role="ftvYc">
         <ref role="tCJdB" to="ekwn:5SnwAr0vAm_" resolve="ShowReflectiveEditor" />
       </node>
-      <node concept="tCFHf" id="6KvCG2PQPz6" role="ftvYc">
-        <ref role="tCJdB" to="ekwn:3lJACHN_WCx" resolve="ShowReflectiveEditorsForSubtree" />
-      </node>
       <node concept="tCFHf" id="eDWthb$w6G" role="ftvYc">
         <ref role="tCJdB" to="ekwn:6KvCG2PRuPP" resolve="ShowReflectiveEditorsForSelection" />
       </node>
       <node concept="tCFHf" id="nEmtK1W19M" role="ftvYc">
         <ref role="tCJdB" to="ekwn:1XfowaweGRd" resolve="ShowRegularEditor" />
-      </node>
-      <node concept="tCFHf" id="6KvCG2PQPzi" role="ftvYc">
-        <ref role="tCJdB" to="ekwn:2gIHMZrBUgC" resolve="ShowRegularEditorsForSubtree" />
       </node>
       <node concept="tCFHf" id="eDWthb$w6W" role="ftvYc">
         <ref role="tCJdB" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />

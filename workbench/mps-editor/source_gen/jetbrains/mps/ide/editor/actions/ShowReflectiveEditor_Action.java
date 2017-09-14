@@ -28,7 +28,7 @@ public class ShowReflectiveEditor_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ReflectiveEditorUtil.isApplicable(event, Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, false, false);
+    return ReflectiveEditorUtil.isApplicable(event, Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, false);
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -60,6 +60,6 @@ public class ShowReflectiveEditor_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    ReflectiveEditorUtil.execute(event, Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, false, false);
+    ReflectiveEditorUtil.execute(event, Arrays.asList(((SNode) MapSequence.fromMap(_params).get("node"))), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true, false);
   }
 }

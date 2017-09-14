@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("comment", "comment", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"), new ConceptEditorHintImpl("reflectiveEditor", "reflectiveEditor", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("comment", "comment", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"), new ConceptEditorHintImpl("reflectiveEditor", "reflectiveEditor", false, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"), new ConceptEditorHintImpl("reflectiveEditorBarrier", "reflectiveEditorBarrier", true, "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorBarrier"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt_a0b = ((SAbstractConcept) concept);
