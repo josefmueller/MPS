@@ -347,6 +347,6 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   }
 
   private <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
-    return REPO.registerModule(module, moduleOwner);
+    return myTrueRepo.registerModule(module, moduleOwner);
   }
 }
