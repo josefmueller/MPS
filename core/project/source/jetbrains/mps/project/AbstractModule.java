@@ -426,19 +426,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       for (ModelRootDescriptor rootDescriptor : descriptor.getModelRootDescriptors()) {
         String rootDescriptorType = rootDescriptor.getType();
         if (rootDescriptorType.equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) {
-          // trying to load old format from deployment descriptor
-          String pathElement = rootDescriptor.getMemento().get("path");
           boolean update = false;
           Memento newMemento = new MementoImpl();
-          if (pathElement != null) {
-            // See JavaSourceStubModelRoot & JavaClassStubsModelRoot load methods need to replace with super
-            String convertedPath = convertPath(pathElement, bundleHomeFile, sourcesDescriptorFile, descriptor);
-
-            if (convertedPath != null) {
-              newMemento.put("path", convertedPath);
-              update = true;
-            }
-          } else {
+          {
             // there are few possible deployment layouts:
             //    1. App/Contents/languages/my.lang.jar + -src.jar
             //    2. App/Contents/plugins/<name>/languages/my.lang.jar + -src.jar + libraries from additional cp
