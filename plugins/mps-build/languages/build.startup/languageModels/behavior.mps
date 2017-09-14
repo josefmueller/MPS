@@ -602,11 +602,8 @@
         <node concept="3clFbJ" id="BsOHnjgRhy" role="3cqZAp">
           <node concept="3clFbS" id="BsOHnjgRh$" role="3clFbx">
             <node concept="3cpWs6" id="BsOHnjgUzW" role="3cqZAp">
-              <node concept="2OqwBi" id="BsOHnjgUXA" role="3cqZAk">
-                <node concept="13iPFW" id="BsOHnjgUXB" role="2Oq$k0" />
-                <node concept="3TrcHB" id="BsOHnjgVw$" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                </node>
+              <node concept="Xl_RD" id="3TEkTgEJLY$" role="3cqZAk">
+                <property role="Xl_RC" value="MPS" />
               </node>
             </node>
           </node>
@@ -640,8 +637,8 @@
                     <node concept="37vLTw" id="BsOHnja81X" role="2Oq$k0">
                       <ref role="3cqZAo" node="BsOHnja7FP" resolve="branding" />
                     </node>
-                    <node concept="3TrEf2" id="7C7qUK4tC2W" role="2OqNvi">
-                      <ref role="3Tt5mk" to="kdzh:328lVm4LQW3" resolve="codename" />
+                    <node concept="3TrEf2" id="3TEkTgEJh6q" role="2OqNvi">
+                      <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="shortName" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="7C7qUK4tICV" role="2OqNvi">
