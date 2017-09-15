@@ -75,6 +75,13 @@ public final class ModelImports {
     myModel.deleteLanguageId(language);
   }
 
+  /**
+   * @return snapshot of devkits listed as used by the model, in no particular order
+   */
+  public Collection<SModuleReference> getUsedDevKits() {
+    return new ArrayList<>(myModel.importedDevkits());
+  }
+
   public void addUsedDevKit(@NotNull SModuleReference devkit) {
     myModel.addDevKit(devkit);
   }

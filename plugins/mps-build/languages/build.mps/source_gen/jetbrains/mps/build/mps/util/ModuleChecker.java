@@ -42,8 +42,22 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.extapi.module.SRepositoryBase;
+import jetbrains.mps.extapi.module.SRepositoryExt;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.AbstractModelAccess;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -806,13 +820,24 @@ public final class ModuleChecker {
   }
   private void collectLocalDependencies() {
     SNode module = SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
-    Set<SLanguage> usedLanguages = myModuleDescriptor.getLanguageVersions().keySet();
-    // FIXME we don't persist used devkits in the module descriptor any longer (as well as used languages, that's why we use technical language version map) 
-    //       but there's no proper replacement for devkits now. We need devkits e.g. to make GP models available, and the only workaround now is to add explicit 
-    //       ModuleDependencyOnDevKit dependency to a module. The code to take devkits from module, although inactive, left as a reminder here. 
-    Iterable<SModuleReference> usedDevkits = myModuleDescriptor.getUsedDevkits();
+    Set<SLanguage> usedLanguage = new HashSet<SLanguage>();
+    Set<SModuleReference> usedDevkits = new HashSet<SModuleReference>();
 
-    for (SLanguage lang : usedLanguages) {
+    ModuleChecker.Repo r = new ModuleChecker.Repo(new ModuleChecker.ModelAccessNoLimit());
+    ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(r);
+    SModule loadedModule = mrf.instantiateModule(new ModulesMiner.ModuleHandle(myModuleDescriptorFile, myModuleDescriptor), new MPSModuleOwner() {
+      public boolean isHidden() {
+        return true;
+      }
+    });
+    for (SModel m : loadedModule.getModels()) {
+      ModelImports imports = new ModelImports(m);
+      usedLanguage.addAll(imports.getUsedLanguages());
+      usedDevkits.addAll(imports.getUsedDevKits());
+    }
+    mrf.unregisterModule(loadedModule);
+
+    for (SLanguage lang : usedLanguage) {
       SNode resolved = SNodeOperations.as(myVisibleModules.resolve(lang), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
       if (resolved == null) {
         report("cannot find used language in dependencies: " + lang.getQualifiedName());
@@ -908,6 +933,88 @@ public final class ModuleChecker {
       SPropertyOperations.set(testSource, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x21286cd3b0f27758L, 0x66103f1a46523841L, "isGenerated"), "" + (isGeneratedSources));
       ListSequence.fromList(SLinkOperations.getChildren(myModule, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341d31L, "sources"))).addElement(testSource);
       return this;
+    }
+  }
+
+  private static class Repo extends SRepositoryBase implements SRepositoryExt {
+    private final ModelAccess myModelAccess;
+    private final Map<SModuleId, SModule> myModules;
+
+    public Repo(ModelAccess ma) {
+      myModelAccess = ma;
+      myModules = new HashMap<SModuleId, SModule>();
+    }
+
+    public <T extends SModule> T registerModule(@NotNull T module, @NotNull MPSModuleOwner owner) {
+      SModule existing = myModules.putIfAbsent(module.getModuleId(), module);
+      if (existing != null) {
+        throw new IllegalStateException();
+      }
+      if (module instanceof AbstractModule) {
+        ((AbstractModule) module).attach(this);
+      }
+      return module;
+    }
+
+    @Override
+    public void unregisterModule(@NotNull SModule module, @NotNull MPSModuleOwner owner) {
+      SModule removed = myModules.remove(module.getModuleId());
+      if (removed != module) {
+        throw new IllegalStateException();
+      }
+      if (module instanceof AbstractModule) {
+        ((AbstractModule) module).dispose();
+      }
+    }
+
+    @Nullable
+    public SModule getModule(@NotNull SModuleId mid) {
+      return myModules.get(mid);
+    }
+    public void saveAll() {
+      throw new UnsupportedOperationException();
+    }
+    @NotNull
+    public Iterable<SModule> getModules() {
+      return new ArrayList<SModule>(myModules.values());
+    }
+
+    @NotNull
+    public ModelAccess getModelAccess() {
+      return myModelAccess;
+    }
+  }
+
+  private static class ModelAccessNoLimit extends AbstractModelAccess {
+    public boolean canRead() {
+      return true;
+    }
+    public boolean canWrite() {
+      return true;
+    }
+    public void runReadAction(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void runReadInEDT(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void runWriteAction(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void runWriteInEDT(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void executeCommand(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void executeCommandInEDT(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public void executeUndoTransparentCommand(Runnable p0) {
+      throw new UnsupportedOperationException();
+    }
+    public boolean isCommandAction() {
+      return false;
     }
   }
   private static SNode createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a31a72(Object p0) {
