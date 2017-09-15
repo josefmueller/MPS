@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.vfs.impl;
 
-import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.io.File;
 import java.io.IOException;
@@ -139,6 +138,13 @@ class JarFileData extends AbstractJarFileData {
             while (name.endsWith("/")) {
               name = name.substring(0, name.length() - 1);
             }
+            if (".".equals(name)) {
+              // yes, I've faced jar files with "./" entry, and yes, it causes no good
+              // jar tvf code/languages/com.mbeddr.mpsutil.inca/code/solutions/com.mbeddr.mpsutil.soot.runtime/lib/soot-trunk.jar | fgrep "./"
+              // 0 Thu Jul 12 11:23:24 CEST 2012 ./
+              // We faced dramatic slowdown in JavaClassStubsModelRoot, which goes ././././... over and over again (multiply number of folders in the jar).
+              continue;
+            }
 
             buildDirectoryCaches(name);
           } else {
@@ -159,7 +165,7 @@ class JarFileData extends AbstractJarFileData {
             getFilesFor(dir).add(fileName);
 
             if (dir.length() > 0) {
-              myEntries.put(dir + "/" + fileName, entry);
+              myEntries.put(dir + '/' + fileName, entry);
             } else {
               myEntries.put(fileName, entry);
             }

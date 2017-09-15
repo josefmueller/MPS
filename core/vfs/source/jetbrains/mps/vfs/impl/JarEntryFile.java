@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +18,10 @@ package jetbrains.mps.vfs.impl;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.path.Path;
-import jetbrains.mps.vfs.path.UniPath;
 import jetbrains.mps.vfs.ex.IFileEx;
 import jetbrains.mps.vfs.openapi.FileSystem;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.vfs.path.Path;
+import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -31,10 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -43,8 +38,6 @@ import java.util.List;
  * Todo rewrite using {@link Path}
  */
 public class JarEntryFile implements IFileEx {
-  private static final Logger LOG = LogManager.getLogger(JarEntryFile.class);
-
   public static final String JAR = "jar";
   private static final String DOT = ".";
   public static final String DOT_JAR = DOT + JAR;
@@ -94,14 +87,17 @@ public class JarEntryFile implements IFileEx {
 
   @Override
   public List<IFile> getChildren() {
-    if (!isDirectory()) return Collections.emptyList();
+    if (!isDirectory()) {
+      return Collections.emptyList();
+    }
 
-    List<IFile> result = new ArrayList<IFile>();
+    List<IFile> result = new ArrayList<>();
     for (String e : myJarFileData.getSubdirectories(myEntryPath)) {
       result.add(new JarEntryFile(myJarFileData, myJarFile, e, myFileSystem));
     }
+    final String prefix = myEntryPath.length() > 0 ? myEntryPath + '/' : null;
     for (String e : myJarFileData.getFiles(myEntryPath)) {
-      result.add(new JarEntryFile(myJarFileData, myJarFile, myEntryPath.length() > 0 ? myEntryPath + "/" + e : e, myFileSystem));
+      result.add(new JarEntryFile(myJarFileData, myJarFile, prefix != null ? prefix + e : e, myFileSystem));
     }
 
     return result;
@@ -120,7 +116,7 @@ public class JarEntryFile implements IFileEx {
   @Override
   @NotNull
   public IFile getDescendant(@NotNull String suffix) {
-    String path = myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix;
+    String path = myEntryPath.length() > 0 ? myEntryPath + '/' + suffix : suffix;
     return new JarEntryFile(myJarFileData, myJarFile, path, myFileSystem);
   }
 
