@@ -17,6 +17,7 @@ package jetbrains.mps.extapi.module;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -55,6 +56,11 @@ public abstract class SRepositoryBase implements SRepository {
     if (myRepositoryRegistry != null){
       myRepositoryRegistry.removeRepository(this);
     }
+  }
+
+  @Override
+  public RepositoryAccess getRepositoryAccess() {
+    throw new UnsupportedOperationException();
   }
 
   @Override

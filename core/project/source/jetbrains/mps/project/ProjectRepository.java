@@ -79,11 +79,6 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   }
 
   @Override
-  public RepositoryAccess getRepositoryAccess() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
   public void saveAll() {
     getRootRepository().saveAll();
   }

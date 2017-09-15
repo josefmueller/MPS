@@ -30,7 +30,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -226,11 +225,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   @Override
   public org.jetbrains.mps.openapi.module.ModelAccess getModelAccess() {
     return myGlobalModelAccess;
-  }
-
-  @Override
-  public RepositoryAccess getRepositoryAccess() {
-    return null;
   }
 
   public Set<SModule> getModules(MPSModuleOwner moduleOwner) {

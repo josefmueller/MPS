@@ -36,7 +36,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessListener;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
-import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -271,17 +270,12 @@ final class TestModelFactory {
     }
 
     @Override
-    public RepositoryAccess getRepositoryAccess() {
-      return null;
-    }
-
-    @Override
     public void saveAll() {
       // no-op
     }
   }
 
-  /*package*/ static class TestModelAccess extends ModelAccessBase {
+  /*package*/ static class TestModelAccess extends AbstractModelAccess {
     private boolean myCanRead;
     private boolean myCanWrite;
     private int myCommandCount = 0;
@@ -317,35 +311,41 @@ final class TestModelFactory {
     }
 
     @Override
-    public void checkReadAccess() {
-      if (!canRead()) {
-        throw new IllegalModelAccessError("READ");
-      }
-    }
-
-    @Override
     public boolean canWrite() {
       return myCanWrite;
     }
 
     @Override
-    public void checkWriteAccess() {
-      if (!canWrite()) {
-        throw new IllegalModelAccessError("WRITE");
-      }
+    public void runReadAction(Runnable r) {
+      r.run();
+    }
+
+    @Override
+    public void runReadInEDT(Runnable r) {
+      r.run();
+    }
+
+    @Override
+    public void runWriteAction(Runnable r) {
+      myWriteActionDispatcher.dispatch(r);
+    }
+
+    @Override
+    public void runWriteInEDT(Runnable r) {
+      myWriteActionDispatcher.dispatch(r);
     }
 
     @Override
     public void executeCommand(Runnable r) {
       myCommandCount++;
-      r.run();
+      myCommandActionDispatcher.dispatch(r);
       myCommandCount--;
     }
 
     @Override
     public void executeCommandInEDT(Runnable r) {
       myCommandCount++;
-      r.run();
+      myCommandActionDispatcher.dispatch(r);
       myCommandCount--;
     }
 
