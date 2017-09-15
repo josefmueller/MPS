@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -42,8 +44,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.behavior.BuildSourcePath__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -68,6 +68,14 @@ public final class ModuleChecker {
   private final VisibleModules myVisibleModules;
   private final PathConverter myPathConverter;
   private final IMessageHandler myReporter;
+  /**
+   * To access certain module properties (like used languages and devkits), we need to load modules temporarily.
+   * As long as generator modules could not be loaded without their source language module already present in the repository, we need to share repository
+   * between language's ModuleChecker and that of its generators.
+   * The field is not initialized unless CheckType.doFullImport == true
+   */
+  private ModuleRepositoryFacade myRepository;
+  private SModule myLoadedModule;
 
   /*package*/ ModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, IFile moduleDescriptorFile, ModuleDescriptor moduleDescriptor, IMessageHandler reporter) {
     myModule = module;
@@ -76,6 +84,16 @@ public final class ModuleChecker {
     myModuleDescriptorFile = moduleDescriptorFile;
     myModuleDescriptor = moduleDescriptor;
     myReporter = reporter;
+  }
+
+  private ModuleChecker(ModuleChecker parent, SNode module, IFile moduleDescriptorFile, ModuleDescriptor moduleDescriptor) {
+    myModule = module;
+    myVisibleModules = parent.myVisibleModules;
+    myPathConverter = parent.myPathConverter;
+    myModuleDescriptorFile = moduleDescriptorFile;
+    myModuleDescriptor = moduleDescriptor;
+    myReporter = parent.myReporter;
+    myRepository = parent.myRepository;
   }
 
   public void check(ModuleChecker.CheckType type) {
@@ -102,6 +120,10 @@ public final class ModuleChecker {
 
     if (SNodeOperations.isInstanceOf(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
       checkModule(type);
+    }
+    if (myRepository != null && myLoadedModule != null) {
+      myRepository.unregisterModule(myLoadedModule);
+      myLoadedModule = null;
     }
   }
 
@@ -155,7 +177,7 @@ public final class ModuleChecker {
 
   public boolean checkModuleReference(ModuleChecker.CheckType type) {
     String expectedModuleName = myModuleDescriptor.getNamespace();
-    if (type.doCheck && (neq_yr5c5g_a0a0b0n(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), expectedModuleName))) {
+    if (type.doCheck && (neq_yr5c5g_a0a0b0r(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), expectedModuleName))) {
       report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ", should be: " + expectedModuleName);
       return false;
     }
@@ -164,7 +186,7 @@ public final class ModuleChecker {
     }
 
     String expectedModuleUUID = myModuleDescriptor.getId().toString();
-    if (type.doCheck && neq_yr5c5g_a0a5a31(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), expectedModuleUUID)) {
+    if (type.doCheck && neq_yr5c5g_a0a5a71(SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), expectedModuleUUID)) {
       String m = "module id in import doesn't match file content %s, should be: %s";
       report(String.format(m, SPropertyOperations.getString(myModule, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), myModuleDescriptor.getId()));
       return false;
@@ -567,7 +589,7 @@ public final class ModuleChecker {
     // todo: hack 
     if (type.doFullImport) {
       if (SNodeOperations.isInstanceOf(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) {
-        ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"))).addElement(createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a31a72(BuildMps_Generator__BehaviorDescriptor.getSourceLanguage_id7YI57w6ZMdZ.invoke(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator")))));
+        ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"))).addElement(createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a31a13(BuildMps_Generator__BehaviorDescriptor.getSourceLanguage_id7YI57w6ZMdZ.invoke(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator")))));
       }
     }
     if (!(SNodeOperations.isInstanceOf(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator")))) {
@@ -668,7 +690,7 @@ public final class ModuleChecker {
           if (!(ListSequence.fromList(SLinkOperations.getChildren(module, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies"))).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               SNode dep = (SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency")) ? SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")) : it);
-              return SNodeOperations.isInstanceOf(dep, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")) && eq_yr5c5g_a0a1a0a0a0a0b0a0d0y0bb(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path"))), relPath);
+              return SNodeOperations.isInstanceOf(dep, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")) && eq_yr5c5g_a0a1a0a0a0a0b0a0d0y0fb(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(dep, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path"))), relPath);
             }
           }))) {
             report("jar stub library should be extracted into build script: " + relPath);
@@ -678,7 +700,7 @@ public final class ModuleChecker {
         if (type.doPartialImport) {
           SNode extr = ListSequence.fromList(previous).findFirst(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")) && eq_yr5c5g_a0a0a0a0a0a0a0c0d0y0bb(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path"))), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(p));
+              return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")) && eq_yr5c5g_a0a0a0a0a0a0a0c0d0y0fb(BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x64bd442e1cf7aaeeL, 0x64bd442e1cf7aaefL, "dependency")), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3b60c4a45c197e19L, 0x3b60c4a45c197e1aL, "path"))), BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(p));
             }
           });
 
@@ -732,7 +754,7 @@ public final class ModuleChecker {
       SLinkOperations.setTarget(language, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator"), SModelOperations.createNewNode(SNodeOperations.getModel(language), null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator")));
     }
 
-    ModuleChecker moduleCheckerForGenerator = new ModuleChecker(SLinkOperations.getTarget(language, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator")), myVisibleModules, myPathConverter, myModuleDescriptorFile, generatorDescriptor, myReporter);
+    ModuleChecker moduleCheckerForGenerator = new ModuleChecker(this, SLinkOperations.getTarget(language, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, 0x7fae147806433827L, "generator")), myModuleDescriptorFile, generatorDescriptor);
     moduleCheckerForGenerator.check(type);
     if (type.doFullImport) {
       // propagate collected generator dependencies up to generator's source language dependencies. 
@@ -823,19 +845,21 @@ public final class ModuleChecker {
     Set<SLanguage> usedLanguage = new HashSet<SLanguage>();
     Set<SModuleReference> usedDevkits = new HashSet<SModuleReference>();
 
-    ModuleChecker.Repo r = new ModuleChecker.Repo(new ModuleChecker.ModelAccessNoLimit());
-    ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(r);
-    SModule loadedModule = mrf.instantiateModule(new ModulesMiner.ModuleHandle(myModuleDescriptorFile, myModuleDescriptor), new MPSModuleOwner() {
+    if (myRepository == null) {
+      ModuleChecker.Repo r = new ModuleChecker.Repo(new ModuleChecker.ModelAccessNoLimit());
+      myRepository = new ModuleRepositoryFacade(r);
+    }
+    myLoadedModule = myRepository.instantiateModule(new ModulesMiner.ModuleHandle(myModuleDescriptorFile, myModuleDescriptor), new MPSModuleOwner() {
       public boolean isHidden() {
         return true;
       }
     });
-    for (SModel m : loadedModule.getModels()) {
+    for (SModel m : myLoadedModule.getModels()) {
       ModelImports imports = new ModelImports(m);
       usedLanguage.addAll(imports.getUsedLanguages());
       usedDevkits.addAll(imports.getUsedDevKits());
     }
-    mrf.unregisterModule(loadedModule);
+    // the module gets unloaded at the end of the check, to facilitate access to loaded instance for any child module (i.e. language's generators) 
 
     for (SLanguage lang : usedLanguage) {
       SNode resolved = SNodeOperations.as(myVisibleModules.resolve(lang), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
@@ -1017,23 +1041,23 @@ public final class ModuleChecker {
       return false;
     }
   }
-  private static SNode createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a31a72(Object p0) {
+  private static SNode createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a31a13(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule"), null, null, false);
     n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, 0x48e82d5083341cb9L, "module"), (SNode) p0);
     n1.setProperty(MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508334b11aL, 0x48e82d5083341cc1L, "reexport"), false + "");
     return n1;
   }
-  private static boolean neq_yr5c5g_a0a0b0n(Object a, Object b) {
+  private static boolean neq_yr5c5g_a0a0b0r(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_yr5c5g_a0a5a31(Object a, Object b) {
+  private static boolean neq_yr5c5g_a0a5a71(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean eq_yr5c5g_a0a1a0a0a0a0b0a0d0y0bb(Object a, Object b) {
+  private static boolean eq_yr5c5g_a0a1a0a0a0a0b0a0d0y0fb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_yr5c5g_a0a0a0a0a0a0a0c0d0y0bb(Object a, Object b) {
+  private static boolean eq_yr5c5g_a0a0a0a0a0a0a0c0d0y0fb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

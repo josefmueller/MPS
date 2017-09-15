@@ -330,7 +330,7 @@ public final class ModuleRepositoryFacade implements CoreComponent {
 
   @NotNull
   private Generator newGeneratorInstance(@NotNull GeneratorDescriptor descriptor) {
-    SModule module = getModule(descriptor.getSourceLanguage());
+    SModule module = myTrueRepo.getModule(descriptor.getSourceLanguage().getModuleId());
     if (module == null) {
       // XXX for the time being, we register generator modules only *after* respective source language module, although
       //     generally we shall not insist on the ordering (generator could obtain source language lazily, not at construction time,
