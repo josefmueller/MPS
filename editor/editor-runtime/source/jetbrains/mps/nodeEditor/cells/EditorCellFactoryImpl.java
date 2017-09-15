@@ -25,9 +25,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.smodel.SNodeId.Regular;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -64,11 +61,10 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
   };
   public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
-  // Only one of the following hints should be present in `explicitEditorHints` for each node.
-  // `reflectiveEditor` is propagated to children by default, unless `reflectiveEditorBarrier` is present.
-  // If it is, then both of them are not propagated.
   public static final String BASE_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
-  public static final String BASE_REFLECTIVE_EDITOR_BARRIER_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorBarrier";
+  public static final String BASE_NO_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditor";
+  public static final String BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode";
+  public static final String BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode";
 
   private final EditorContext myEditorContext;
   private Deque<EditorCellContextImpl> myCellContextStack;
@@ -104,11 +100,10 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends ConceptEditor>> excludedEditors) {
-    if (node != null && node instanceof Regular && (((Regular) node).getId() == 1355807324314700343L)) {
-      System.out.println(1);
-    }
-    boolean isPushReflectiveEditorHintInContext = getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_HINT) &&
-                                                  !getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_BARRIER_HINT);
+    boolean isPushReflectiveEditorHintInContext = getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT) ||
+                                                  (getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_HINT) &&
+                                                   !getCellContext().getHints().contains(BASE_NO_REFLECTIVE_EDITOR_HINT) &&
+                                                   !getCellContext().getHints().contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT));
     SConcept concept = node.getConcept();
     ConceptEditor editor = isPushReflectiveEditorHintInContext ? null : getCachedEditor(concept, excludedEditors);
     EditorCell result = null;

@@ -183,10 +183,11 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
     addLabel("");
     addNewLine();
     getCellFactory().pushCellContext();
-    if (getCellFactory().getCellContext().getHints()
-                        .contains(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_BARRIER_HINT)) {
-      getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
-      getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_BARRIER_HINT);
+    getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
+                                            EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
+    if (getCellFactory().getCellContext().getHints().contains(EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_HINT)) {
+      getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT,
+                                              EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_HINT);
     }
     try {
       addChildren();

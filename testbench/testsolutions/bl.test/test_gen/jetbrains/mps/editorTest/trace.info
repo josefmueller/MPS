@@ -1132,26 +1132,25 @@
       <node id="1283790316087559079" at="27,72,28,96" concept="2" />
       <node id="1283790316087559081" at="28,96,29,270" concept="2" />
       <node id="1283790316087559097" at="29,270,30,93" concept="2" />
-      <node id="1283790316087559101" at="33,95,34,243" concept="2" />
-      <node id="1283790316087559115" at="34,243,35,250" concept="2" />
-      <node id="1283790316087559099" at="32,27,36,11" concept="5" />
+      <node id="6890723800059979377" at="33,95,34,116" concept="2" />
+      <node id="6890723800059979375" at="32,27,35,11" concept="5" />
       <node id="1283790316087559015" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ShowReflectiveThenRegularEditor2#()V" />
-      <node id="8597476019422977874" at="32,0,38,0" concept="6" trace="run#()V" />
-      <node id="8597476019422977872" at="30,93,38,9" concept="2" />
-      <node id="1283790316087559015" at="25,0,40,0" concept="6" trace="testMethodImpl#()V" />
+      <node id="6890723800058791314" at="32,0,37,0" concept="6" trace="run#()V" />
+      <node id="6890723800058791313" at="30,93,37,9" concept="2" />
+      <node id="1283790316087559015" at="25,0,39,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="6890723800059979376" at="33,95,34,116" />
       <scope id="1283790316087559015" at="18,86,20,122" />
-      <scope id="1283790316087559100" at="33,95,35,250" />
-      <scope id="1283790316087559099" at="32,27,36,11">
-        <var name="node" id="1283790316087559129" />
+      <scope id="6890723800058791315" at="32,27,35,11" />
+      <scope id="6890723800059979375" at="32,27,35,11">
+        <var name="node" id="6890723800059979386" />
       </scope>
-      <scope id="8597476019422977876" at="32,27,36,11" />
       <scope id="1283790316087559015" at="17,0,22,0" />
-      <scope id="8597476019422977874" at="32,0,38,0" />
-      <scope id="1283790316087559015" at="26,51,38,9" />
-      <scope id="1283790316087559015" at="25,0,40,0" />
-      <unit id="8597476019422977874" at="31,47,38,7" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor2_Test$TestBody$1" />
-      <unit id="1283790316087559015" at="23,0,41,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor2_Test$TestBody" />
-      <unit id="1283790316087559015" at="15,0,42,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor2_Test" />
+      <scope id="6890723800058791314" at="32,0,37,0" />
+      <scope id="1283790316087559015" at="26,51,37,9" />
+      <scope id="1283790316087559015" at="25,0,39,0" />
+      <unit id="6890723800058791314" at="31,47,37,7" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor2_Test$TestBody$1" />
+      <unit id="1283790316087559015" at="23,0,40,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor2_Test$TestBody" />
+      <unit id="1283790316087559015" at="15,0,41,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor2_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1413941122942910870">
@@ -2681,28 +2680,27 @@
       <node id="2746054822154165513" at="19,102,20,121" concept="2" />
       <node id="2746054822154165513" at="26,51,27,72" concept="2" />
       <node id="2746054822154165539" at="27,72,28,83" concept="2" />
-      <node id="2746054822154422597" at="28,83,29,270" concept="2" />
-      <node id="2746054822154435067" at="29,270,30,80" concept="2" />
-      <node id="1283790316088178336" at="33,95,34,243" concept="2" />
-      <node id="1283790316088178350" at="34,243,35,250" concept="2" />
-      <node id="1283790316088178334" at="32,27,36,11" concept="5" />
+      <node id="2746054822154422597" at="28,83,29,277" concept="2" />
+      <node id="2746054822154435067" at="29,277,30,80" concept="2" />
+      <node id="6890723800059977557" at="33,95,34,116" concept="2" />
+      <node id="1283790316088178334" at="32,27,35,11" concept="5" />
       <node id="2746054822154165513" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ShowReflectiveThenRegularEditor#()V" />
-      <node id="1283790316088176789" at="32,0,38,0" concept="6" trace="run#()V" />
-      <node id="1283790316088176787" at="30,80,38,9" concept="2" />
-      <node id="2746054822154165513" at="25,0,40,0" concept="6" trace="testMethodImpl#()V" />
+      <node id="1283790316088176789" at="32,0,37,0" concept="6" trace="run#()V" />
+      <node id="1283790316088176787" at="30,80,37,9" concept="2" />
+      <node id="2746054822154165513" at="25,0,39,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="1283790316088178335" at="33,95,34,116" />
       <scope id="2746054822154165513" at="18,85,20,121" />
-      <scope id="1283790316088178335" at="33,95,35,250" />
-      <scope id="1283790316088176791" at="32,27,36,11" />
-      <scope id="1283790316088178334" at="32,27,36,11">
+      <scope id="1283790316088176791" at="32,27,35,11" />
+      <scope id="1283790316088178334" at="32,27,35,11">
         <var name="node" id="1283790316088178364" />
       </scope>
       <scope id="2746054822154165513" at="17,0,22,0" />
-      <scope id="1283790316088176789" at="32,0,38,0" />
-      <scope id="2746054822154165513" at="26,51,38,9" />
-      <scope id="2746054822154165513" at="25,0,40,0" />
-      <unit id="1283790316088176789" at="31,47,38,7" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test$TestBody$1" />
-      <unit id="2746054822154165513" at="23,0,41,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test$TestBody" />
-      <unit id="2746054822154165513" at="15,0,42,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test" />
+      <scope id="1283790316088176789" at="32,0,37,0" />
+      <scope id="2746054822154165513" at="26,51,37,9" />
+      <scope id="2746054822154165513" at="25,0,39,0" />
+      <unit id="1283790316088176789" at="31,47,37,7" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test$TestBody$1" />
+      <unit id="2746054822154165513" at="23,0,40,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test$TestBody" />
+      <unit id="2746054822154165513" at="15,0,41,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2834737865486664156">

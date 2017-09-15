@@ -49,9 +49,9 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="df4k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.deletionApprover(MPS.Editor/)" />
     <import index="tp6m" ref="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
-    <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" />
     <import index="cttk" ref="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -632,6 +632,9 @@
       </concept>
       <concept id="1171983834376" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" flags="nn" index="3vFxKo">
         <child id="1171983854940" name="condition" index="3vFALc" />
+      </concept>
+      <concept id="1172028177041" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull" flags="nn" index="3ykFI1">
+        <child id="1172028236559" name="expression" index="3ykU8v" />
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
@@ -47590,7 +47593,7 @@
           </node>
           <node concept="3JPx81" id="2orW$Z0gRpG" role="2OqNvi">
             <node concept="2pYGij" id="2orW$Z0gQQI" role="25WWJ7">
-              <ref role="2pYH_C" to="tpco:3YRgRgnTV5p" resolve="reflectiveEditor" />
+              <ref role="2pYH_C" to="tpco:676_ZcuIWes" resolve="reflectiveEditorForNode" />
             </node>
           </node>
         </node>
@@ -47605,64 +47608,23 @@
           <node concept="3clFbS" id="17gW7Qsxr2n" role="1bW5cS">
             <node concept="1DcWWT" id="17gW7Qsxrqu" role="3cqZAp">
               <node concept="3clFbS" id="17gW7Qsxrqv" role="2LFqv$">
-                <node concept="3vFxKo" id="17gW7Qsxrqw" role="3cqZAp">
-                  <node concept="2OqwBi" id="17gW7Qsxrqx" role="3vFALc">
-                    <node concept="2OqwBi" id="17gW7Qsxrqy" role="2Oq$k0">
-                      <node concept="2OqwBi" id="17gW7Qsxrqz" role="2Oq$k0">
-                        <node concept="2OqwBi" id="17gW7Qsxrq$" role="2Oq$k0">
-                          <node concept="369mXd" id="17gW7Qsxrq_" role="2Oq$k0" />
-                          <node concept="liA8E" id="17gW7QsxrqA" role="2OqNvi">
-                            <ref role="37wK5l" to="exr9:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="17gW7QsxrqB" role="2OqNvi">
-                          <ref role="37wK5l" to="22ra:~Updater.getExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String[]" resolve="getExplicitEditorHintsForNode" />
-                          <node concept="2OqwBi" id="17gW7QsxrqC" role="37wK5m">
-                            <node concept="37vLTw" id="17gW7QsxrqD" role="2Oq$k0">
-                              <ref role="3cqZAo" node="17gW7QsxrqW" resolve="node" />
-                            </node>
-                            <node concept="liA8E" id="17gW7QsxrqE" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="39bAoz" id="17gW7QsxrqF" role="2OqNvi" />
-                    </node>
-                    <node concept="3JPx81" id="17gW7QsxrqG" role="2OqNvi">
-                      <node concept="2pYGij" id="17gW7QsxrqH" role="25WWJ7">
-                        <ref role="2pYH_C" to="tpco:3YRgRgnTV5p" resolve="reflectiveEditor" />
+                <node concept="3ykFI1" id="5YwLcArTTXl" role="3cqZAp">
+                  <node concept="2OqwBi" id="5YwLcArTU2m" role="3ykU8v">
+                    <node concept="2OqwBi" id="5YwLcArTU2n" role="2Oq$k0">
+                      <node concept="369mXd" id="5YwLcArTU2o" role="2Oq$k0" />
+                      <node concept="liA8E" id="5YwLcArTU2p" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
                       </node>
                     </node>
-                  </node>
-                </node>
-                <node concept="3vFxKo" id="17gW7QsxrqI" role="3cqZAp">
-                  <node concept="2OqwBi" id="17gW7QsxrqJ" role="3vFALc">
-                    <node concept="2OqwBi" id="17gW7QsxrqK" role="2Oq$k0">
-                      <node concept="2OqwBi" id="17gW7QsxrqL" role="2Oq$k0">
-                        <node concept="2OqwBi" id="17gW7QsxrqM" role="2Oq$k0">
-                          <node concept="369mXd" id="17gW7QsxrqN" role="2Oq$k0" />
-                          <node concept="liA8E" id="17gW7QsxrqO" role="2OqNvi">
-                            <ref role="37wK5l" to="exr9:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
-                          </node>
+                    <node concept="liA8E" id="5YwLcArTU2q" role="2OqNvi">
+                      <ref role="37wK5l" to="22ra:~Updater.getExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String[]" resolve="getExplicitEditorHintsForNode" />
+                      <node concept="2OqwBi" id="5YwLcArTU2r" role="37wK5m">
+                        <node concept="37vLTw" id="5YwLcArTU2s" role="2Oq$k0">
+                          <ref role="3cqZAo" node="17gW7QsxrqW" resolve="node" />
                         </node>
-                        <node concept="liA8E" id="17gW7QsxrqP" role="2OqNvi">
-                          <ref role="37wK5l" to="22ra:~Updater.getExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String[]" resolve="getExplicitEditorHintsForNode" />
-                          <node concept="2OqwBi" id="17gW7QsxrqQ" role="37wK5m">
-                            <node concept="37vLTw" id="17gW7QsxrqR" role="2Oq$k0">
-                              <ref role="3cqZAo" node="17gW7QsxrqW" resolve="node" />
-                            </node>
-                            <node concept="liA8E" id="17gW7QsxrqS" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                            </node>
-                          </node>
+                        <node concept="liA8E" id="5YwLcArTU2t" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
                         </node>
-                      </node>
-                      <node concept="39bAoz" id="17gW7QsxrqT" role="2OqNvi" />
-                    </node>
-                    <node concept="3JPx81" id="17gW7QsxrqU" role="2OqNvi">
-                      <node concept="2pYGij" id="17gW7QsxrqV" role="25WWJ7">
-                        <ref role="2pYH_C" to="tpco:5qxS_JiIay_" resolve="noReflectiveEditor" />
                       </node>
                     </node>
                   </node>
@@ -70432,86 +70394,45 @@
           <ref role="1iFR8X" to="ekwn:1ptS745ppI" resolve="ShowRegularEditorsForSelection" />
         </node>
       </node>
-      <node concept="1QHqEK" id="7tgnIdADlXg" role="3cqZAp">
-        <node concept="1QHqEC" id="7tgnIdADlXi" role="1QHqEI">
-          <node concept="3clFbS" id="7tgnIdADlXk" role="1bW5cS">
-            <node concept="1DcWWT" id="17gW7Qsv4eV" role="3cqZAp">
-              <node concept="3clFbS" id="17gW7Qsv4eW" role="2LFqv$">
-                <node concept="3vFxKo" id="17gW7Qsv4eX" role="3cqZAp">
-                  <node concept="2OqwBi" id="17gW7Qsv4eY" role="3vFALc">
-                    <node concept="2OqwBi" id="17gW7Qsv4eZ" role="2Oq$k0">
-                      <node concept="2OqwBi" id="17gW7Qsv4f0" role="2Oq$k0">
-                        <node concept="2OqwBi" id="17gW7Qsv4f1" role="2Oq$k0">
-                          <node concept="369mXd" id="17gW7Qsv4f2" role="2Oq$k0" />
-                          <node concept="liA8E" id="17gW7Qsv4f3" role="2OqNvi">
-                            <ref role="37wK5l" to="exr9:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
-                          </node>
-                        </node>
-                        <node concept="liA8E" id="17gW7Qsv4f4" role="2OqNvi">
-                          <ref role="37wK5l" to="22ra:~Updater.getExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String[]" resolve="getExplicitEditorHintsForNode" />
-                          <node concept="2OqwBi" id="17gW7Qsv4f5" role="37wK5m">
-                            <node concept="37vLTw" id="17gW7Qsv4f6" role="2Oq$k0">
-                              <ref role="3cqZAo" node="17gW7Qsv4fp" resolve="node" />
-                            </node>
-                            <node concept="liA8E" id="17gW7Qsv4f7" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="39bAoz" id="17gW7Qsv4f8" role="2OqNvi" />
-                    </node>
-                    <node concept="3JPx81" id="17gW7Qsv4f9" role="2OqNvi">
-                      <node concept="2pYGij" id="17gW7Qsv4fa" role="25WWJ7">
-                        <ref role="2pYH_C" to="tpco:3YRgRgnTV5p" resolve="reflectiveEditor" />
+      <node concept="1QHqEK" id="5YwLcArPomh" role="3cqZAp">
+        <node concept="1QHqEC" id="5YwLcArPomi" role="1QHqEI">
+          <node concept="3clFbS" id="5YwLcArPomj" role="1bW5cS">
+            <node concept="1DcWWT" id="5YwLcArTUpJ" role="3cqZAp">
+              <node concept="3clFbS" id="5YwLcArTUpK" role="2LFqv$">
+                <node concept="3ykFI1" id="5YwLcArTUpL" role="3cqZAp">
+                  <node concept="2OqwBi" id="5YwLcArTUpM" role="3ykU8v">
+                    <node concept="2OqwBi" id="5YwLcArTUpN" role="2Oq$k0">
+                      <node concept="369mXd" id="5YwLcArTUpO" role="2Oq$k0" />
+                      <node concept="liA8E" id="5YwLcArTUpP" role="2OqNvi">
+                        <ref role="37wK5l" to="exr9:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
                       </node>
                     </node>
-                  </node>
-                </node>
-                <node concept="3vFxKo" id="17gW7Qsv4fb" role="3cqZAp">
-                  <node concept="2OqwBi" id="17gW7Qsv4fc" role="3vFALc">
-                    <node concept="2OqwBi" id="17gW7Qsv4fd" role="2Oq$k0">
-                      <node concept="2OqwBi" id="17gW7Qsv4fe" role="2Oq$k0">
-                        <node concept="2OqwBi" id="17gW7Qsv4ff" role="2Oq$k0">
-                          <node concept="369mXd" id="17gW7Qsv4fg" role="2Oq$k0" />
-                          <node concept="liA8E" id="17gW7Qsv4fh" role="2OqNvi">
-                            <ref role="37wK5l" to="exr9:~EditorComponent.getUpdater():jetbrains.mps.openapi.editor.update.Updater" resolve="getUpdater" />
-                          </node>
+                    <node concept="liA8E" id="5YwLcArTUpQ" role="2OqNvi">
+                      <ref role="37wK5l" to="22ra:~Updater.getExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String[]" resolve="getExplicitEditorHintsForNode" />
+                      <node concept="2OqwBi" id="5YwLcArTUpR" role="37wK5m">
+                        <node concept="37vLTw" id="5YwLcArTUpS" role="2Oq$k0">
+                          <ref role="3cqZAo" node="5YwLcArTUpU" resolve="node" />
                         </node>
-                        <node concept="liA8E" id="17gW7Qsv4fi" role="2OqNvi">
-                          <ref role="37wK5l" to="22ra:~Updater.getExplicitEditorHintsForNode(org.jetbrains.mps.openapi.model.SNodeReference):java.lang.String[]" resolve="getExplicitEditorHintsForNode" />
-                          <node concept="2OqwBi" id="17gW7Qsv4fj" role="37wK5m">
-                            <node concept="37vLTw" id="17gW7Qsv4fk" role="2Oq$k0">
-                              <ref role="3cqZAo" node="17gW7Qsv4fp" resolve="node" />
-                            </node>
-                            <node concept="liA8E" id="17gW7Qsv4fl" role="2OqNvi">
-                              <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
-                            </node>
-                          </node>
+                        <node concept="liA8E" id="5YwLcArTUpT" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getReference" />
                         </node>
-                      </node>
-                      <node concept="39bAoz" id="17gW7Qsv4fm" role="2OqNvi" />
-                    </node>
-                    <node concept="3JPx81" id="17gW7Qsv4fn" role="2OqNvi">
-                      <node concept="2pYGij" id="17gW7Qsv4fo" role="25WWJ7">
-                        <ref role="2pYH_C" to="tpco:5qxS_JiIay_" resolve="noReflectiveEditor" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="3cpWsn" id="17gW7Qsv4fp" role="1Duv9x">
+              <node concept="3cpWsn" id="5YwLcArTUpU" role="1Duv9x">
                 <property role="TrG5h" value="node" />
-                <node concept="3uibUv" id="17gW7Qsv4fq" role="1tU5fm">
+                <node concept="3uibUv" id="5YwLcArTUpV" role="1tU5fm">
                   <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
                 </node>
               </node>
-              <node concept="2YIFZM" id="17gW7Qsv4fr" role="1DdaDG">
-                <ref role="1Pybhc" to="mhbf:~SNodeUtil" resolve="SNodeUtil" />
+              <node concept="2YIFZM" id="5YwLcArTUpW" role="1DdaDG">
                 <ref role="37wK5l" to="mhbf:~SNodeUtil.getDescendants(org.jetbrains.mps.openapi.model.SNode):java.lang.Iterable" resolve="getDescendants" />
-                <node concept="2OqwBi" id="17gW7Qsv4fs" role="37wK5m">
-                  <node concept="369mXd" id="17gW7Qsv4ft" role="2Oq$k0" />
-                  <node concept="liA8E" id="17gW7Qsv4fu" role="2OqNvi">
+                <ref role="1Pybhc" to="mhbf:~SNodeUtil" resolve="SNodeUtil" />
+                <node concept="2OqwBi" id="5YwLcArTUpX" role="37wK5m">
+                  <node concept="369mXd" id="5YwLcArTUpY" role="2Oq$k0" />
+                  <node concept="liA8E" id="5YwLcArTUpZ" role="2OqNvi">
                     <ref role="37wK5l" to="exr9:~EditorComponent.getSelectedNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSelectedNode" />
                   </node>
                 </node>

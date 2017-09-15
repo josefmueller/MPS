@@ -31,8 +31,7 @@ public class DefaultEditor_ShowReflectiveThenRegularEditor2_Test extends BaseTra
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           for (SNode node : SNodeUtil.getDescendants(getEditorComponent().getSelectedNode())) {
-            Assert.assertFalse(Sequence.fromIterable(Sequence.fromArray(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference()))).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
-            Assert.assertFalse(Sequence.fromIterable(Sequence.fromArray(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference()))).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorBarrier"));
+            Assert.assertNull(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference()));
           }
         }
       });

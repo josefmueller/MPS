@@ -26,13 +26,12 @@ public class DefaultEditor_ShowReflectiveThenRegularEditor_Test extends BaseTran
     public void testMethodImpl() throws Exception {
       initEditorComponent("2746054822154165514", "2746054822154165524");
       invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
-      Assert.assertTrue(Sequence.fromIterable(Sequence.fromArray(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(getEditorComponent().getSelectedNode().getReference()))).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
+      Assert.assertTrue(Sequence.fromIterable(Sequence.fromArray(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(getEditorComponent().getSelectedNode().getReference()))).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode"));
       invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           for (SNode node : SNodeUtil.getDescendants(getEditorComponent().getSelectedNode())) {
-            Assert.assertFalse(Sequence.fromIterable(Sequence.fromArray(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference()))).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
-            Assert.assertFalse(Sequence.fromIterable(Sequence.fromArray(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference()))).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorBarrier"));
+            Assert.assertNull(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(node.getReference()));
           }
         }
       });

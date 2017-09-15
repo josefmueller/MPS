@@ -692,8 +692,17 @@
     </node>
     <node concept="2BsEeg" id="5qxS_JiIay_" role="2ABdcP">
       <property role="2gpH_U" value="true" />
-      <property role="TrG5h" value="reflectiveEditorBarrier" />
-      <property role="2BUmq6" value="reflectiveEditorBarrier" />
+      <property role="TrG5h" value="noReflectiveEditor" />
+      <property role="2BUmq6" value="noReflectiveEditor" />
+    </node>
+    <node concept="2BsEeg" id="676_ZcuIWes" role="2ABdcP">
+      <property role="2BUmq6" value="reflectiveEditorForNode" />
+      <property role="TrG5h" value="reflectiveEditorForNode" />
+    </node>
+    <node concept="2BsEeg" id="676_ZcuIWet" role="2ABdcP">
+      <property role="2gpH_U" value="true" />
+      <property role="TrG5h" value="noReflectiveEditorForNode" />
+      <property role="2BUmq6" value="noReflectiveEditorForNode" />
     </node>
   </node>
   <node concept="24kQdi" id="2ETBKOyksop">

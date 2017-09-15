@@ -20,8 +20,13 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
+import static jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT;
 import static jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT;
-import static jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_BARRIER_HINT;
+import static jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_HINT;
 
 public class ReflectiveHintsManager {
 
@@ -30,6 +35,9 @@ public class ReflectiveHintsManager {
     void setHint(@NotNull SNode node, @Nullable String hint);
   }
 
+  private static List<String> REFLECTIVE_HINTS = Arrays.asList(BASE_REFLECTIVE_EDITOR_HINT, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT);
+  private static List<String> NO_REFLECTIVE_HINTS = Arrays.asList(BASE_NO_REFLECTIVE_EDITOR_HINT, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
+
   private ReflectiveHintsProvider myHintsProvider;
 
   public ReflectiveHintsManager(@NotNull ReflectiveHintsProvider hintsProvider) {
@@ -37,15 +45,26 @@ public class ReflectiveHintsManager {
   }
 
   private boolean isReflective(@NotNull SNode node) {
+    String nodeHint = myHintsProvider.getHint(node);
+    if (REFLECTIVE_HINTS.contains(nodeHint)) {
+      return true;
+    } else if (NO_REFLECTIVE_HINTS.contains(nodeHint)) {
+      return false;
+    }
+    node = node.getParent();
+
     while (node != null) {
-      String nodeHint = myHintsProvider.getHint(node);
-      if (BASE_REFLECTIVE_EDITOR_HINT.equals(nodeHint)) {
-        return true;
+      nodeHint = myHintsProvider.getHint(node);
+      if (nodeHint == null) {
+        node = node.getParent();
+      } else switch (nodeHint) {
+        case BASE_REFLECTIVE_EDITOR_HINT:
+        case BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT:
+          return true;
+        case BASE_NO_REFLECTIVE_EDITOR_HINT:
+        case BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT:
+          return false;
       }
-      if (BASE_REFLECTIVE_EDITOR_BARRIER_HINT.equals(nodeHint)) {
-        return false;
-      }
-      node = node.getParent();
     }
     return false;
   }
@@ -58,10 +77,14 @@ public class ReflectiveHintsManager {
     if (canMakeNode(isReflective, node)) {
       return true;
     }
-    String hintToSearch = isReflective ? BASE_REFLECTIVE_EDITOR_BARRIER_HINT : BASE_REFLECTIVE_EDITOR_HINT;
+    String sameHintForNode = isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
+    if (sameHintForNode.equals(myHintsProvider.getHint(node))) {
+      return true;
+    }
+    List<String> hintsToSearch = isReflective ? NO_REFLECTIVE_HINTS : REFLECTIVE_HINTS;
     for (SNode descendant : SNodeUtil.getDescendants(node)) {
       String descendantHint = myHintsProvider.getHint(descendant);
-      if (hintToSearch.equals(descendantHint)) {
+      if (hintsToSearch.contains(descendantHint)) {
         return true;
       }
     }
@@ -69,29 +92,51 @@ public class ReflectiveHintsManager {
   }
 
   public void makeNode(boolean isReflective, @NotNull SNode node) {
-    String thisHint = isReflective ? BASE_REFLECTIVE_EDITOR_HINT : BASE_REFLECTIVE_EDITOR_BARRIER_HINT;
-    String symmetricHint = isReflective ? BASE_REFLECTIVE_EDITOR_BARRIER_HINT : BASE_REFLECTIVE_EDITOR_HINT;
-    if (myHintsProvider.getHint(node) == null) {
-      myHintsProvider.setHint(node, thisHint);
-    } else {
+    String newHint = isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
+    String newHintForSubtree = isReflective ? BASE_REFLECTIVE_EDITOR_HINT : BASE_NO_REFLECTIVE_EDITOR_HINT;
+    String symmetricHint = isReflective ? BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT;
+
+    String nodeHint = myHintsProvider.getHint(node);
+    if (nodeHint == null) {
+      myHintsProvider.setHint(node, newHint);
+    } else if (nodeHint.equals(symmetricHint)) {
       myHintsProvider.setHint(node, null);
-    }
-    for (SNode child : node.getChildren()) {
-      String childHint = myHintsProvider.getHint(child);
-      if (childHint == null) {
-        myHintsProvider.setHint(child, symmetricHint);
-      } else {
-        assert thisHint.equals(childHint);
-        myHintsProvider.setHint(child, null);
+    } else {
+      symmetricHint = isReflective ? BASE_NO_REFLECTIVE_EDITOR_HINT : BASE_REFLECTIVE_EDITOR_HINT;
+      assert nodeHint.equals(symmetricHint);
+
+      myHintsProvider.setHint(node, null);
+      for (SNode child : node.getChildren()) {
+        String childHint = myHintsProvider.getHint(child);
+        if (childHint == null) {
+          myHintsProvider.setHint(child, symmetricHint);
+        } else if (childHint.equals(newHintForSubtree)) {
+          myHintsProvider.setHint(child, null);
+        } else {
+          assert childHint.equals(newHint);
+          myHintsProvider.setHint(child, symmetricHint);
+          makeNode(isReflective, child);
+        }
       }
     }
   }
 
   public void makeSubtree(boolean isReflective, @NotNull SNode node) {
-    if (myHintsProvider.getHint(node) == null) {
-      myHintsProvider.setHint(node, isReflective ? BASE_REFLECTIVE_EDITOR_HINT : BASE_REFLECTIVE_EDITOR_BARRIER_HINT);
-    } else {
+    String nodeHint = myHintsProvider.getHint(node);
+    String newHint = isReflective ? BASE_REFLECTIVE_EDITOR_HINT : BASE_NO_REFLECTIVE_EDITOR_HINT;
+    String newHintForNode = isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
+    List<String> symmetricHints = isReflective ? NO_REFLECTIVE_HINTS : REFLECTIVE_HINTS;
+
+    if (nodeHint == null) {
+      if (canMakeNode(isReflective, node)) {
+        myHintsProvider.setHint(node, newHint);
+      } else {
+        myHintsProvider.setHint(node, null);
+      }
+    } else if (symmetricHints.contains(nodeHint)) {
       myHintsProvider.setHint(node, null);
+    } else if (nodeHint.equals(newHintForNode)) {
+      myHintsProvider.setHint(node, newHint);
     }
     for (SNode descendant : SNodeUtil.getDescendants(node, null, false)) {
       myHintsProvider.setHint(descendant, null);

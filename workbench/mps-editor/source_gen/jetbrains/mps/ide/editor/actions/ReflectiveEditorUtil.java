@@ -39,8 +39,12 @@ import jetbrains.mps.openapi.editor.selection.Selection;
       List<String> hints = getExplicitEditorHintsForNode(node);
       if (hints.contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor")) {
         return "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
-      } else if (hints.contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorBarrier")) {
-        return "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorBarrier";
+      } else if (hints.contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditor")) {
+        return "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditor";
+      } else if (hints.contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode")) {
+        return "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode";
+      } else if (hints.contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode")) {
+        return "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode";
       } else {
         return null;
       }
@@ -48,7 +52,7 @@ import jetbrains.mps.openapi.editor.selection.Selection;
 
     @Override
     public void setHint(@NotNull SNode node, @Nullable String string) {
-      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(node.getReference(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor", "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorBarrier");
+      myEditorComponent.getUpdater().removeExplicitEditorHintsForNode(node.getReference(), "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor", "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditor", "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode", "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode");
       if (string != null) {
         myEditorComponent.getUpdater().addExplicitEditorHintsForNode(node.getReference(), string);
       }
