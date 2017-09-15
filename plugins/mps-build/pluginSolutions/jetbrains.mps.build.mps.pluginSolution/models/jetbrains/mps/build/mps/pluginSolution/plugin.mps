@@ -12563,7 +12563,7 @@
                               </node>
                             </node>
                             <node concept="1zDrgl" id="2OJWaFGOVpJ" role="39821P">
-                              <ref role="1zDrgn" to="ffeo:6Iq8148fw_a" resolve="MPS" />
+                              <ref role="1zDrgn" to="ffeo:6Iq8148fw_a" resolve="JetBrains MPS 2017.2" />
                               <node concept="2c44tb" id="2OJWaFGOXry" role="lGtFl">
                                 <property role="2qtEX8" value="element" />
                                 <property role="P3scX" value="798100da-4f0a-421a-b991-71f8c50ce5d2/7753544965996647428/7753544965996647430" />
@@ -13077,7 +13077,7 @@
                 <node concept="aVJcg" id="3f6C5dcXB1j" role="aVJcv">
                   <node concept="NbPM2" id="3f6C5dcXB1k" role="aVJcq">
                     <node concept="3Mxwew" id="3f6C5dcXB1l" role="3MwsjC">
-                      <property role="3MwjfP" value="2017.2.2" />
+                      <property role="3MwjfP" value="2017.2.3" />
                     </node>
                   </node>
                 </node>

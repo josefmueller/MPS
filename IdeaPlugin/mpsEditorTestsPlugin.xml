@@ -22,7 +22,7 @@
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>jetbrains.mps.lang.editor.tests</id>
         <name>jetbrains.mps.lang.editor.tests</name>
-        <version>2017.2</version>
+        <version>${mpsBootstrapCore.version}</version>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />

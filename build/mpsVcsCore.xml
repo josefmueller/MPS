@@ -73,7 +73,7 @@
         <id>jetbrains.mps.vcs.core</id>
         <name>MPS Vcs Core</name>
         <description>Plugin is only needed to be a dependency of jetbrains.mps.vcs plugin</description>
-        <version>1.0</version>
+        <version>${mpsBootstrapCore.version}</version>
         <depends>jetbrains.mps.core</depends>
         <depends>Git4Idea</depends>
         <depends>Subversion</depends>

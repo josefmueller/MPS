@@ -313,8 +313,8 @@
         </node>
       </node>
       <node concept="3_J27D" id="2pZ8abj52_X" role="m$_w8">
-        <node concept="3Mxwew" id="2pZ8abj52_Y" role="3MwsjC">
-          <property role="3MwjfP" value="1.0" />
+        <node concept="3Mxwey" id="2cbKYGi1tMt" role="3MwsjC">
+          <ref role="3Mxwex" to="ffeo:5HVSRHdVf2d" resolve="version" />
         </node>
       </node>
       <node concept="398BVA" id="2pZ8abj52FN" role="I30fb">
@@ -1758,8 +1758,8 @@
         </node>
       </node>
       <node concept="3_J27D" id="iTJcDIxtN7" role="m$_w8">
-        <node concept="3Mxwew" id="iTJcDIxtNG" role="3MwsjC">
-          <property role="3MwjfP" value="2017.2.2" />
+        <node concept="3Mxwey" id="2cbKYGhWODf" role="3MwsjC">
+          <ref role="3Mxwex" to="ffeo:5HVSRHdVf2d" resolve="version" />
         </node>
       </node>
       <node concept="398BVA" id="iTJcDIxtNM" role="I30fb">
@@ -2183,8 +2183,8 @@
         </node>
       </node>
       <node concept="3_J27D" id="6NEiZqQxZ2N" role="m$_w8">
-        <node concept="3Mxwew" id="6NEiZqQxZ5z" role="3MwsjC">
-          <property role="3MwjfP" value="2017.2" />
+        <node concept="3Mxwey" id="2cbKYGi13is" role="3MwsjC">
+          <ref role="3Mxwex" to="ffeo:5HVSRHdVf2d" resolve="version" />
         </node>
       </node>
     </node>

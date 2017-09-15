@@ -2281,7 +2281,7 @@
       <node concept="aVJcg" id="5HVSRHdVf2e" role="aVJcv">
         <node concept="NbPM2" id="5HVSRHdVf2f" role="aVJcq">
           <node concept="3Mxwew" id="5HVSRHdVf2g" role="3MwsjC">
-            <property role="3MwjfP" value="2017.2.2" />
+            <property role="3MwjfP" value="2017.2.3" />
           </node>
         </node>
       </node>
@@ -17073,7 +17073,7 @@
       <property role="2OjLBK" value="2" />
       <property role="TrG5h" value="MPS" />
       <property role="2OjLBL" value="2017" />
-      <property role="1lNJF1" value="2" />
+      <property role="1lNJF1" value="3" />
       <node concept="NbPM2" id="2FTyjkjSqva" role="2gocG4">
         <node concept="3Mxwew" id="2FTyjkjSqv9" role="3MwsjC">
           <property role="3MwjfP" value="117" />
@@ -17445,7 +17445,7 @@
             </node>
           </node>
           <node concept="1zDrgl" id="6Iq8148gFCu" role="39821P">
-            <ref role="1zDrgn" node="6Iq8148fw_a" resolve="MPS" />
+            <ref role="1zDrgn" node="6Iq8148fw_a" resolve="JetBrains MPS 2017.2" />
           </node>
         </node>
         <node concept="3981dG" id="7u_tNvPwpfJ" role="39821P">
@@ -25479,7 +25479,7 @@
     <property role="TrG5h" value="mps" />
     <property role="3GE5qa" value="ide.data" />
     <property role="26EafI" value="bin" />
-    <ref role="1_kbm$" node="6Iq8148fw_a" resolve="MPS" />
+    <ref role="1_kbm$" node="6Iq8148fw_a" resolve="JetBrains MPS 2017.2" />
     <node concept="26Ea6D" id="2lwFGYOW7EY" role="2hID6k">
       <property role="26Ea6C" value="-client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none" />
     </node>
@@ -30142,8 +30142,8 @@
         <ref role="m$_yA" node="39HJr_hyAl1" resolve="jetbrains.mps.ide.vcs.core" />
       </node>
       <node concept="3_J27D" id="6ifcnI8BosL" role="m$_w8">
-        <node concept="3Mxwew" id="6ifcnI8BouJ" role="3MwsjC">
-          <property role="3MwjfP" value="1.0" />
+        <node concept="3Mxwey" id="2cbKYGi1tJl" role="3MwsjC">
+          <ref role="3Mxwex" node="5HVSRHdVf2d" resolve="version" />
         </node>
       </node>
       <node concept="3_J27D" id="6ifcnI8BosN" role="m$_yQ">
@@ -30779,8 +30779,8 @@
         </node>
       </node>
       <node concept="3_J27D" id="6WtY9M1bDOE" role="m$_w8">
-        <node concept="3Mxwew" id="6WtY9M1bDOF" role="3MwsjC">
-          <property role="3MwjfP" value="1.0" />
+        <node concept="3Mxwey" id="2cbKYGi1tDN" role="3MwsjC">
+          <ref role="3Mxwex" node="5HVSRHdVf2d" resolve="version" />
         </node>
       </node>
       <node concept="398BVA" id="2pZ8abj8Rgh" role="I30fb">
