@@ -12,7 +12,7 @@
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.behavior.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.lang.behavior.typesystem.check_ConceptBehavior_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.behavior.typesystem.check_ConceptBehaviorForNotImplementedMethods_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.typesystem.check_ConceptMethodDeclaration_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.typesystem.typeof_SuperConceptExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.typesystem.typeof_SuperNodeExpression_InferenceRule" />
@@ -22,8 +22,10 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.behavior.typesystem.check_ConceptBehavior_NonTypesystemRule" file="check_ConceptBehavior_NonTypesystemRule.java">
+  <dependency className="jetbrains.mps.lang.behavior.typesystem.check_ConceptBehaviorForNotImplementedMethods_NonTypesystemRule" file="check_ConceptBehaviorForNotImplementedMethods_NonTypesystemRule.java">
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />

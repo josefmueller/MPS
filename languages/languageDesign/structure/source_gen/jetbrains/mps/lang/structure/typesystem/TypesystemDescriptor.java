@@ -63,9 +63,5 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_RedundantSmartReferenceAttribute_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_UnimplementedBehaviorInConceptDeclaration_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
   }
 }
