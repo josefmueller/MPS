@@ -46,7 +46,7 @@ public abstract class BaseMigrationTestBody extends BaseTestBody {
       }
     }
     // we cannot dispose temporary model in the same command to avoid resolving immature references into detached nodes 
-    UndoHelper.getInstance().flushCommand(this.myProject);
+    UndoHelper.getInstance().flushCommand();
     TemporaryModels.getInstance().dispose(model);
   }
   public abstract Collection<SNode> getInputNodes();

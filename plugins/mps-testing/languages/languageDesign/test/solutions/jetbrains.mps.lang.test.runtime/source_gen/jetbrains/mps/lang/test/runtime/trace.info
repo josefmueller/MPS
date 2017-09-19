@@ -2331,8 +2331,8 @@
       <node id="2429858079515195792" at="40,74,41,97" concept="6" />
       <node id="5476670926299501452" at="44,86,45,125" concept="6" />
       <node id="7169675881807047514" at="47,5,48,120" concept="13" />
-      <node id="7169675881806974036" at="48,120,49,58" concept="6" />
-      <node id="8951526261574244787" at="49,58,50,49" concept="6" />
+      <node id="7169675881806974036" at="48,120,49,44" concept="6" />
+      <node id="8951526261574244787" at="49,44,50,49" concept="6" />
       <node id="8951526261572243423" at="52,0,53,0" concept="10" trace="getInputNodes#()Ljava/util/Collection;" />
       <node id="8951526261572243470" at="53,0,54,0" concept="10" trace="getOutputNodes#()Ljava/util/Collection;" />
       <node id="8951526261572243541" at="54,0,55,0" concept="10" trace="getMigrationScript#()[Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />

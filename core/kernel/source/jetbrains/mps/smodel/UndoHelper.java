@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -45,8 +44,8 @@ public class UndoHelper {
     myHandler.addUndoableAction(action);
   }
 
-  public void flushCommand(Project p) {
-    myHandler.flushCommand(p);
+  public void flushCommand() {
+    myHandler.flushCommand();
   }
 
   /**

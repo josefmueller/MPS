@@ -94,7 +94,7 @@ public class SModel implements SModelData, UpdateModeSupport {
    * replacing model nodes in update mode). I could have used the same approach for my model, however, don't want to
    * (a) build my model on top of LazyEditableSModelBase
    * (b) keep this synchronized code (future work, though)
-   *
+   * <p>
    * Lock is not the best primitive to use here. With given API (setUpdateMode(boolean) I need smth like a semaphore I could check for being locked,
    * and wait for release (i.e. without further acquire) if necessary. Neither java's Semaphore, nor Lock are good for this, picked latter just
    * by tossing a coin (well, it respects the thread, its API is more streamlined with the activity, lock() sounds better than acquire())
@@ -205,10 +205,12 @@ public class SModel implements SModelData, UpdateModeSupport {
     enforceFullLoad();
     if (myRoots.contains(node)) {
       myNodeOwner.fireBeforeNodeRemove(null, null, (SNode) node, null);
+      // performing undoable action while node is still in the model because VirtualFiles
+      // (and so documents) are available only for those nodes existing in the model.
+      myNodeOwner.performUndoableAction(node, new RemoveRootUndoableAction(node, myModelDescriptor));
       myRoots.remove(node);
       SNode sn = (SNode) node;
       sn.detach(new DetachedNodeOwner(this));
-      myNodeOwner.performUndoableAction(node, new RemoveRootUndoableAction(node, myModelDescriptor));
       myNodeOwner.fireNodeRemove(null, null, sn, null);
     }
   }
@@ -303,7 +305,9 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   private void fireModelNodesReadAccess() {
-    if (!canFireReadEvent()) return;
+    if (!canFireReadEvent()) {
+      return;
+    }
     if (myModelDescriptor != null) {
       NodeReadEventsCaster.fireModelNodesReadAccess(myModelDescriptor);
     }
@@ -322,7 +326,7 @@ public class SModel implements SModelData, UpdateModeSupport {
     UndoHelper.getInstance().addUndoableAction(action);
   }
 
-    //todo code in the following methods should be written w/o duplication
+  //todo code in the following methods should be written w/o duplication
 
   public boolean canFireEvent() {
     return myModelDescriptor != null && jetbrains.mps.util.SNodeOperations.isRegistered(myModelDescriptor) && !isUpdateMode();
@@ -417,7 +421,9 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   private void fireImportAddedEvent(@NotNull SModelReference modelReference) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelImportEvent event = new SModelImportEvent(getModelDescriptor(), modelReference, true);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -429,7 +435,9 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   private void fireImportRemovedEvent(@NotNull SModelReference modelReference) {
-    if (!canFireEvent()) return;
+    if (!canFireEvent()) {
+      return;
+    }
     final SModelImportEvent event = new SModelImportEvent(getModelDescriptor(), modelReference, false);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -496,7 +504,8 @@ public class SModel implements SModelData, UpdateModeSupport {
     }
   }
 
-  void fireChildAddedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+  void fireChildAddedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
+                           org.jetbrains.mps.openapi.model.SNode anchor) {
     if (!canFireEvent()) {
       return;
     }
@@ -511,7 +520,8 @@ public class SModel implements SModelData, UpdateModeSupport {
     }
   }
 
-  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
+                             org.jetbrains.mps.openapi.model.SNode anchor) {
     if (!canFireEvent()) {
       return;
     }
@@ -526,7 +536,8 @@ public class SModel implements SModelData, UpdateModeSupport {
     }
   }
 
-  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child, org.jetbrains.mps.openapi.model.SNode anchor) {
+  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
+                                   org.jetbrains.mps.openapi.model.SNode anchor) {
     if (!canFireEvent()) {
       return;
     }
@@ -577,7 +588,9 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   void registerNode(@NotNull SNode node) {
     checkNotDisposed();
-    if (myDisposed) return;
+    if (myDisposed) {
+      return;
+    }
 
     enforceFullLoad(); // FIXME dubious need to perform full load if all we do is populating id map
     org.jetbrains.mps.openapi.model.SNodeId id = node.getNodeId();
@@ -614,7 +627,9 @@ public class SModel implements SModelData, UpdateModeSupport {
 
     enforceFullLoad(); // FIXME see registerNode. What's the purpose?
     org.jetbrains.mps.openapi.model.SNodeId id = node.getNodeId();
-    if (myDisposed || id == null) return;
+    if (myDisposed || id == null) {
+      return;
+    }
     myIdToNodeMap.remove(id);
   }
 
@@ -645,7 +660,8 @@ public class SModel implements SModelData, UpdateModeSupport {
   public int getLanguageImportVersion(SLanguage lang) {
     Integer res = myLanguagesIds.get(lang);
     if (res == null) {
-      LOG.error("Model " + getModelDescriptor().getModelName() + ": version for language " + lang.getQualifiedName() + " not found. Using last version instead.");
+      LOG.error(
+          "Model " + getModelDescriptor().getModelName() + ": version for language " + lang.getQualifiedName() + " not found. Using last version instead.");
       return lang.getLanguageVersion();
     }
     return res;
@@ -668,7 +684,8 @@ public class SModel implements SModelData, UpdateModeSupport {
         return;
       }
       if (existingVersion != -1) {
-        throw new IllegalStateException("Can't add language import with different version. Old version: " + existingVersion + "; new version: " + version + "; model: " + getModelDescriptor().getModelName() + "; language: " + language.getQualifiedName());
+        throw new IllegalStateException("Can't add language import with different version. Old version: " + existingVersion + "; new version: " + version +
+                                        "; model: " + getModelDescriptor().getModelName() + "; language: " + language.getQualifiedName());
       }
     }
 
@@ -741,7 +758,7 @@ public class SModel implements SModelData, UpdateModeSupport {
    * This is compatibility method with legacy persistence mechanism, unless used, no implicit imports are tracked.
    * Drop once we no longer need to support serialization of old persistence formats (there's no reason to track
    * implicit imports if we aren't going to serialize them afterwards)
-   *
+   * <p>
    * It looks that there's no longer consumer of implicit imports. There's code to update them, but no code to read values, except
    * for clients of #getAllImportElements()
    */
@@ -756,7 +773,7 @@ public class SModel implements SModelData, UpdateModeSupport {
 
   /**
    * @deprecated though it's our internal API, there's 1 use in mbeddr of this exact method we need to fix first.
-   *             Once mbeddr use and 2 uses in our model persistence gone, remove the method
+   * Once mbeddr use and 2 uses in our model persistence gone, remove the method
    */
   @Deprecated
   @ToRemove(version = 0)
@@ -765,7 +782,9 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   private void markChanged() {
-    if (myModelDescriptor == null) return;
+    if (myModelDescriptor == null) {
+      return;
+    }
     org.jetbrains.mps.openapi.model.SModel model = getModelDescriptor();
     if (model instanceof EditableSModel) {
       ((EditableSModel) model).setChanged(true);
@@ -959,22 +978,31 @@ public class SModel implements SModelData, UpdateModeSupport {
 
     public String toString() {
       return "ImportElement(" +
-          "uid=" + myModelReference + ", " +
-          "referenceId=" + myReferenceID + ", " +
-          "usedVersion=" + myUsedVersion + ")";
+             "uid=" + myModelReference + ", " +
+             "referenceId=" + myReferenceID + ", " +
+             "usedVersion=" + myUsedVersion + ")";
     }
 
     @Override
     public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
 
       ImportElement that = (ImportElement) o;
 
-      if (myReferenceID != that.myReferenceID) return false;
-      if (myUsedVersion != that.myUsedVersion) return false;
-      if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null)
+      if (myReferenceID != that.myReferenceID) {
         return false;
+      }
+      if (myUsedVersion != that.myUsedVersion) {
+        return false;
+      }
+      if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null) {
+        return false;
+      }
 
       return true;
     }

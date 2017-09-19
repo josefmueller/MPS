@@ -1,0 +1,100 @@
+/*
+ * Copyright 2003-2017 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.ide.undo;
+
+import com.intellij.openapi.command.undo.DocumentReference;
+import com.intellij.openapi.command.undo.UndoManager;
+import com.intellij.openapi.editor.Document;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
+import jetbrains.mps.nodefs.NodeVirtualFileSystem;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.SNodeUndoableAction;
+import jetbrains.mps.smodel.undo.UndoContext;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+/**
+ * User: shatalin
+ * Date: 19.09.17
+ */
+public class UndoActionsCollector {
+  private final UndoContext myUndoContext;
+  private List<SNodeUndoableAction> myActions = new ArrayList<>();
+  private boolean myIsGlobal = false;
+  private Set<DocumentReference> myDocumentReferences = new LinkedHashSet<>();
+  private Map<SModelId, Set<Document>> myChangedDocuments = new HashMap<>();
+  private boolean myDisposed = false;
+
+  UndoActionsCollector(UndoContext undoContext) {
+    myUndoContext = undoContext;
+  }
+
+  void addAction(SNodeUndoableAction action) {
+    assert !myDisposed;
+    myActions.add(action);
+    myIsGlobal |= action.isGlobal();
+
+    for (SNode virtualFileNode : myUndoContext.getVirtualFileNodes(Collections.singletonList(action))) {
+      if (virtualFileNode.getModel() == null) {
+        continue;
+      }
+      MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(myUndoContext.getRepository(), virtualFileNode);
+      assert file.hasValidMPSNode() :
+          "Invalid file was returned by VFS node is not available: " + virtualFileNode + ", deleted = " + (virtualFileNode.getModel() == null);
+
+      Document document = MPSUndoUtil.getDoc(file);
+      if (document == null) {
+        continue;
+      }
+      myDocumentReferences.add(MPSUndoUtil.getRefForDoc(document));
+      myChangedDocuments.computeIfAbsent(virtualFileNode.getModel().getModelId(), k -> new HashSet<>()).add(document);
+    }
+  }
+
+  void flushAndDispose() {
+    assert !myDisposed;
+    myDisposed = true;
+    if (myActions.isEmpty()) {
+      return;
+    }
+
+    Project project = ProjectHelper.getProject(myUndoContext.getRepository());
+    if (!(project instanceof MPSProject)) {
+      throw new IllegalStateException("Current project is not instance of MPSProject: " + project);
+    }
+
+    com.intellij.openapi.project.Project ideaProject = ((MPSProject) project).getProject();
+    UndoManager undoManager = UndoManager.getInstance(ideaProject);
+    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(myActions, myUndoContext.getRepository(), myIsGlobal, myDocumentReferences));
+
+    OnReloadingUndoCleaner undoCleaner = ideaProject.getComponent(OnReloadingUndoCleaner.class);
+    for (Entry<SModelId, Set<Document>> modelAndDocuments : myChangedDocuments.entrySet()) {
+      undoCleaner.registerUndo(modelAndDocuments.getKey(), modelAndDocuments.getValue());
+    }
+  }
+}

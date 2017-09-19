@@ -40,9 +40,4 @@ class RemoveRootUndoableAction extends SNodeUndoableAction {
   public boolean isGlobal() {
     return true;
   }
-
-  @Override
-  public boolean hasVirtualFile() {
-    return false;
-  }
 }

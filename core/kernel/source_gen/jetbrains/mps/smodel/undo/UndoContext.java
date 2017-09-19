@@ -5,7 +5,12 @@ package jetbrains.mps.smodel.undo;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.SNodeUndoableAction;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public interface UndoContext {
   Iterable<SNode> getVirtualFileNodes(List<SNodeUndoableAction> actions);
+
+  @NotNull
+  SRepository getRepository();
 }

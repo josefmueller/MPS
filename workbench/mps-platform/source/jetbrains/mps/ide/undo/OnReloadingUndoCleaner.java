@@ -19,27 +19,33 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.command.undo.UndoManager;
-import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelListenerBase;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 // XXX This non-public class is loaded due to ComponentConfigComponentAdapter (instantiated by ComponentManagerImpl, both from
 //     from com.intellij.openapi.components.impl) that defaults to allowNonPublicClasses == true.
-class OnReloadingUndoCleaner implements ApplicationComponent {
+class OnReloadingUndoCleaner implements ProjectComponent {
+  private final Project myProject;
   private final MPSCoreComponents myMPSComponents;
-  private final ProjectManager myProjectManager;
+  // TODO: weak?
+  private Map<SModelId, Set<Document>> myUndoForModel = new HashMap<>();
 
   private final SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
     private final SModelListener myModelListener = new SModelListenerBase() {
@@ -49,20 +55,19 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
         if (repo == null) {
           return;
         }
-        for (SNode root : sm.getRootNodes()) {
-          final MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(repo, root);
-          assert file.hasValidMPSNode() : "invalid file returned by MPS VFS for following model root: " + root;
-          for (final Project p : myProjectManager.getOpenProjects()) {
-            ApplicationManager.getApplication().invokeLater(new Runnable() {
-              @Override
-              public void run() {
-                if (!p.isDisposed() && file.isValid()) {
-                  ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
-                }
-              }
-            }, ModalityState.NON_MODAL);
-          }
+        Set<Document> registeredDocuments = myUndoForModel.remove(sm.getModelId());
+        if (registeredDocuments == null || registeredDocuments.isEmpty()) {
+          return;
         }
+
+        ApplicationManager.getApplication().invokeLater(() -> {
+          if (!myProject.isDisposed()) {
+            UndoManagerImpl undoManager = (UndoManagerImpl) UndoManager.getInstance(myProject);
+            for (Document document : registeredDocuments) {
+              undoManager.clearUndoRedoQueueInTests(document);
+            }
+          }
+        }, ModalityState.NON_MODAL);
       }
     };
 
@@ -82,9 +87,9 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
     }
   };
 
-  OnReloadingUndoCleaner(MPSCoreComponents coreComponents, ProjectManager projectManager) {
+  OnReloadingUndoCleaner(Project project, MPSCoreComponents coreComponents) {
+    myProject = project;
     myMPSComponents = coreComponents;
-    myProjectManager = projectManager;
   }
 
   @Override
@@ -104,5 +109,9 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
   public void disposeComponent() {
     SRepositoryRegistry repoRegistry = myMPSComponents.getPlatform().findComponent(SRepositoryRegistry.class);
     repoRegistry.removeGlobalListener(myListener);
+  }
+
+  void registerUndo(SModelId modelId, Collection<Document> documents) {
+    myUndoForModel.computeIfAbsent(modelId, k -> new HashSet<>()).addAll(documents);
   }
 }

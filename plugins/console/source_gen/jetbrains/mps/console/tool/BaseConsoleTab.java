@@ -200,7 +200,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
       // non-undoable actions should not affect project files 
       throw new IllegalStateException();
     }
-    getProject().getModelAccess().executeCommand(new DefaultCommand() {
+    getProject().getModelAccess().executeCommand(new DefaultCommand(getProject().getRepository()) {
       public void run() {
         createConsoleModel();
         addBuiltInImports();
@@ -519,7 +519,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             // we are not in command here 
-            myProject.getModelAccess().executeCommand(new NodeBasedCommand(myRoot) {
+            myProject.getModelAccess().executeCommand(new NodeBasedCommand(myRoot, getProject().getRepository()) {
               public void run() {
                 addNodeImports(response);
                 ListSequence.fromList(SLinkOperations.getChildren(getLastReponse(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e3b035171a5ba02L, 0x4e3b035171b356edL, "item"))).addElement(response);
@@ -595,7 +595,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
           // non-undoable actions should not affect project files 
           throw new IllegalStateException();
         }
-        myProject.getModelAccess().executeCommand(new NodeBasedCommand(myRoot) {
+        myProject.getModelAccess().executeCommand(new NodeBasedCommand(myRoot, getProject().getRepository()) {
           public void run() {
             ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bafL, "history")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL, 0x63da33792b5df49aL, "item"))).addElement(SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder"))));
             SLinkOperations.setNewChild(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder"), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder"));

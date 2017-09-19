@@ -188,7 +188,7 @@ public class ModelImportHelper {
 
         Runnable command;
         if (myContextNode != null) {
-          command = new NodeBasedCommand(myContextNode) {
+          command = new NodeBasedCommand(myContextNode, myProject.getRepository()) {
             @Override
             public void run() {
               if (confirmed) {
@@ -198,7 +198,7 @@ public class ModelImportHelper {
             }
           };
         } else {
-          command = new DefaultCommand() {
+          command = new DefaultCommand(myProject.getRepository()) {
             @Override
             public void run() {
               if (confirmed) {

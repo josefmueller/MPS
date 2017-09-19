@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.undo;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -15,7 +16,8 @@ public abstract class NodeBasedCommand extends DefaultCommand {
   @NotNull
   private SNode myMainNode;
 
-  public NodeBasedCommand(@NotNull SNode mainNode) {
+  public NodeBasedCommand(@NotNull SNode mainNode, @NotNull SRepository repository) {
+    super(repository);
     myMainNode = mainNode;
   }
 

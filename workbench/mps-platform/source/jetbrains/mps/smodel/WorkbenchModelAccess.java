@@ -32,6 +32,7 @@ import jetbrains.mps.util.Reference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.math.BigDecimal;
@@ -339,7 +340,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
 
   private int myCommandLevel = 0;
 
-  private void incCommandLevel(Runnable command) {
+  private void incCommandLevel(Runnable command, SRepository repository) {
     checkWriteAccess();
     if (myCommandLevel != 0) {
       // LOG.error("command level>0", new Exception());
@@ -348,7 +349,7 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
       if (command instanceof UndoContext) {
         context = (UndoContext) command;
       } else {
-        context = new DefaultUndoContext();
+        context = new DefaultUndoContext(repository);
       }
       UndoHelper.getInstance().startCommand(context);
       onCommandStarted();
@@ -356,11 +357,11 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     myCommandLevel++;
   }
 
-  private void decCommandLevel(Project p) {
+  private void decCommandLevel() {
     checkWriteAccess();
     myCommandLevel--;
     if (myCommandLevel == 0) {
-      UndoHelper.getInstance().flushCommand(p);
+      UndoHelper.getInstance().flushCommand();
       onCommandFinished();
     }
   }
@@ -443,11 +444,11 @@ public final class WorkbenchModelAccess extends ModelAccess implements Disposabl
     @Override
     public void run() {
       WorkbenchModelAccess.this.runWriteAction(() -> {
-        incCommandLevel(myRunnable);
+        incCommandLevel(myRunnable, myProject.getRepository());
         try {
           myRunnable.run();
         } finally {
-          decCommandLevel(myProject);
+          decCommandLevel();
         }
       });
     }

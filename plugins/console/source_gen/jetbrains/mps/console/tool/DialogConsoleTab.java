@@ -145,7 +145,7 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
     }
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
       // current command does not involve anything else 
-      getProject().getModelAccess().executeCommand(new DefaultCommand() {
+      getProject().getModelAccess().executeCommand(new DefaultCommand(getProject().getRepository()) {
         public void run() {
           SNode currentCommand = SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"));
           loadHistory(null);

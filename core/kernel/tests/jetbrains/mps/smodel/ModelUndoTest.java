@@ -89,7 +89,7 @@ public class ModelUndoTest {
     Assert.assertEquals(2, myUndo.actualUndoActionCount());
     r1.addChild(ourRole, freeFloatNode);
     Assert.assertEquals(3, myUndo.actualUndoActionCount());
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
     UnregisteredNodes.instance().disable(); // mimic afterCommand listener behavior
     Assert.assertEquals(initialNodeCount + 1, m1f.countModelNodes());
     Assert.assertNotNull(m1.getNode(freeFloatNode.getNodeId()));
@@ -120,14 +120,14 @@ public class ModelUndoTest {
     // update mode is on, add 1+3 nodes, observe no undo
     r1.addChild(ourRole, m1f.createNode(3));
     Assert.assertEquals(0, myUndo.actualUndoActionCount());
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
     Assert.assertEquals(0, myUndo.myUndoStack.size());
     Assert.assertEquals(6 + 4, countTreeNodes(m1.getRootNodes()));
     modelData.leaveUpdateMode();
     // update is over, modify and see undo/redo commands do get collected
     r1.addChild(ourRole, m1f.createNode(3));
     Assert.assertEquals(1, myUndo.actualUndoActionCount());
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
     Assert.assertEquals(1, myUndo.myUndoStack.size());
     Assert.assertEquals(6 + 4 + 4, countTreeNodes(m1.getRootNodes()));
   }
@@ -142,13 +142,13 @@ public class ModelUndoTest {
     final TestModelFactory m1f = new TestModelFactory();
     SNode n = m1f.createNode(3);
     Assert.assertEquals(0, myUndo.actualUndoActionCount());
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
     Assert.assertEquals(0, myUndo.myUndoStack.size());
     // modify free-floating further
     n.setProperty(SNodeUtil.property_INamedConcept_name, "XXX");
     n.addChild(ourRole, m1f.createNode(5));
     Assert.assertEquals(0, myUndo.actualUndoActionCount());
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
     Assert.assertEquals(0, myUndo.myUndoStack.size());
   }
 
@@ -171,7 +171,7 @@ public class ModelUndoTest {
     final SNode toRemove = r1c2.getChildren().iterator().next();
     toRemove.delete();
     final int expectedNodeCount = initialNodeCount - 4;
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
     //
     Assert.assertEquals(1, IterableUtil.asCollection(r1c2.getChildren()).size());
     Assert.assertEquals(1, myUndo.myUndoStack.size()); // 1 command
@@ -206,7 +206,7 @@ public class ModelUndoTest {
     r1.removeChild(r1c1);
     final SNode c = r1c1.getFirstChild();
     r1c1.removeChild(c);
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
     Assert.assertEquals(1, m1f.countModelNodes());
 
     final UndoUnit undoElement = myUndo.myUndoStack.peek();
@@ -236,13 +236,13 @@ public class ModelUndoTest {
     SNode r3c3 = m1f.getRoot(3).getLastChild();
 
     r1c1.delete();
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
 
     r2c2.delete();
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
 
     r3c3.delete();
-    myUndo.flushCommand(null);
+    myUndo.flushCommand();
     Assert.assertEquals(3, myUndo.actualStackSize());
     Assert.assertEquals(initialNodeCount - 3, m1f.countModelNodes()); // -number of deleted nodes
 
@@ -285,7 +285,7 @@ public class ModelUndoTest {
     }
 
     @Override
-    public void flushCommand(Project p) {
+    public void flushCommand() {
       if (myActions.isEmpty()) {
         return;
       }

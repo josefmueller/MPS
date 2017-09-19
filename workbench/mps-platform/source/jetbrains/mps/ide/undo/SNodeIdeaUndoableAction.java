@@ -18,74 +18,39 @@ package jetbrains.mps.ide.undo;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.UndoableAction;
 import com.intellij.openapi.command.undo.UnexpectedUndoException;
-import jetbrains.mps.nodefs.MPSNodeVirtualFile;
-import jetbrains.mps.nodefs.NodeVirtualFileSystem;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SNodeUndoableAction;
-import jetbrains.mps.smodel.undo.UndoContext;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.Collections;
-import java.util.LinkedList;
+import java.util.Collection;
 import java.util.List;
 
 class SNodeIdeaUndoableAction implements UndoableAction {
   private boolean myIsGlobal;
-  private DocumentReference[] myAffectedDocuments;
+  private final DocumentReference[] myAffectedDocuments;
+  private final SNodeUndoableAction[] myActions;
+  private final SRepository myRepository;
 
-  private final Project myProject;
-  private List<SNodeUndoableAction> myWrapped;
-
-  SNodeIdeaUndoableAction(@NotNull Project project, List<SNodeUndoableAction> wrapped, UndoContext undoContext) {
-    myProject = project;
-    myWrapped = wrapped;
-    List<DocumentReference> affected = new LinkedList<DocumentReference>();
-
-    myIsGlobal = false;
-    for (SNodeUndoableAction a : wrapped) {
-      myIsGlobal |= a.isGlobal();
-    }
-
-    for (SNode virtualFileNode : undoContext.getVirtualFileNodes(wrapped)) {
-      if (virtualFileNode.getModel() == null) {
-        continue;
-      }
-      MPSNodeVirtualFile file = NodeVirtualFileSystem.getInstance().getFileFor(project.getRepository(), virtualFileNode);
-      assert file.hasValidMPSNode() :
-          "Invalid file was returned by VFS node is not available: " + virtualFileNode + ", deleted = " + (virtualFileNode.getModel() == null);
-
-      if (MPSUndoUtil.getDoc(file) == null) {
-        continue;
-      }
-      affected.add(MPSUndoUtil.getRefForDoc(MPSUndoUtil.getDoc(file)));
-    }
-
-    myAffectedDocuments = affected.toArray(new DocumentReference[affected.size()]);
+  SNodeIdeaUndoableAction(List<SNodeUndoableAction> actions, SRepository repository, boolean isGlobal, Collection<DocumentReference> affectedDocuments) {
+    myIsGlobal = isGlobal;
+    myRepository = repository;
+    myActions = actions.toArray(new SNodeUndoableAction[actions.size()]);
+    myAffectedDocuments = affectedDocuments.toArray(new DocumentReference[affectedDocuments.size()]);
   }
 
   @Override
   public final void undo() throws UnexpectedUndoException {
-    myProject.getModelAccess().executeUndoTransparentCommand(new Runnable() {
-      @Override
-      public void run() {
-        List<SNodeUndoableAction> rev = new LinkedList<SNodeUndoableAction>(myWrapped);
-        Collections.reverse(rev);
-        for (SNodeUndoableAction a : rev) {
-          a.undo();
-        }
+    myRepository.getModelAccess().executeUndoTransparentCommand(() -> {
+      for (int i = myActions.length - 1; i >= 0; i--) {
+        myActions[i].undo();
       }
     });
   }
 
   @Override
   public final void redo() throws UnexpectedUndoException {
-    myProject.getModelAccess().executeUndoTransparentCommand(new Runnable() {
-      @Override
-      public void run() {
-        for (SNodeUndoableAction a : myWrapped) {
-          a.redo();
-        }
+    myRepository.getModelAccess().executeUndoTransparentCommand(() -> {
+      for (int i = 0; i < myActions.length; i++) {
+        myActions[i].redo();
       }
     });
   }

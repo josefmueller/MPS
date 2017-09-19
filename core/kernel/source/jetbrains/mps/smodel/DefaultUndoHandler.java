@@ -30,7 +30,7 @@ public class DefaultUndoHandler implements UndoHandler {
   }
 
   @Override
-  public void flushCommand(Project p) {
+  public void flushCommand() {
   }
 
   @Override

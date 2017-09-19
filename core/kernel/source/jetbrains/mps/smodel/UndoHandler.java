@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -25,6 +24,7 @@ public interface UndoHandler {
    * Receives information about a model change in a form suitable for undo.
    * It's up to implementation to react, i.e. to use some platform mechanism to record the action, filter based on internal state or
    * even to ignore it altogether.
+   *
    * @param action never {@code null}
    */
   public void addUndoableAction(SNodeUndoableAction action);
@@ -33,7 +33,7 @@ public interface UndoHandler {
 
   /**
    * @deprecated it's implementation-specific logic (whether {@link #addUndoableAction(SNodeUndoableAction)} shall actually register undoable action
-   *             no reason to keep this in the API.
+   * no reason to keep this in the API.
    */
   @Deprecated
   @ToRemove(version = 2017.1)
@@ -54,8 +54,7 @@ public interface UndoHandler {
   // register undoable action
   // FIXME why it's not a command listener, so that gets notifications about command start and command end? Won't need
   // neither isInsideUndoableCommand and ModelAccess.isInsideCommand, not this flushCommand.
-  // TODO: remove Project parameter, add project into UndoContext passed to startCommand() method
-  void flushCommand(Project p);
+  void flushCommand();
 
   void startCommand(UndoContext context);
 }
