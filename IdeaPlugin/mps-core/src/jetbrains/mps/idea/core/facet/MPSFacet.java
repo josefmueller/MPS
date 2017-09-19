@@ -104,7 +104,8 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     SRepository repository = myMpsProject.getRepository();
     repository.getModelAccess().runWriteAction(() -> {
       LOG.info(MPSBundle.message("facet.module.unloaded", mySolution.getModuleName()));
-      if (!myMpsProject.isDisposed() && myMpsProject.getProjectModules().contains(mySolution)) {
+      ModuleRepositoryFacade facade = new ModuleRepositoryFacade(repository);
+      if (!myMpsProject.isDisposed() && facade.getModules(myMpsProject, SolutionIdea.class).contains(mySolution)) {
         ((SRepositoryExt) repository).unregisterModule(mySolution, myMpsProject);
       }
       mySolution = null;

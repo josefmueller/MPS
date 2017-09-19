@@ -18,7 +18,6 @@ package jetbrains.mps.jps.build;
 
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationSettingsProvider;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.jps.project.JpsMPSProject;
@@ -123,9 +122,7 @@ public class MPSMakeMediator {
   }
 
   private Iterable<MResource> collectResources(final Collection<SModel> models) {
-    boolean dirtyOnly = JavaBuilderUtil.isCompileJavaIncrementally(myContext);
-    Collection<SModel> modifiedModels = dirtyOnly ? myProject.getComponent(ModelGenerationStatusManager.class).getModifiedModels(models) : models;
-    final Iterable<IResource> modelsResources = new ModelsToResources(modifiedModels).resources();
+    final Iterable<IResource> modelsResources = new ModelsToResources(models).resources();
     return Sequence.fromIterable(modelsResources).ofType(MResource.class);
   }
 
