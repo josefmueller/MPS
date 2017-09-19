@@ -234,12 +234,10 @@
                       serviceImplementation="com.intellij.openapi.roots.ui.FileAppearanceServiceImpl"/>
 
   <applicationService serviceImplementation="com.intellij.internal.statistic.UsageTrigger"/>
-    <applicationService serviceImplementation="com.intellij.internal.statistic.customUsageCollectors.ui.ToolbarClicksCollector"/>
-    <applicationService serviceImplementation="com.intellij.internal.statistic.customUsageCollectors.ui.ShortcutsCollector"/>
-    <applicationService serviceImplementation="com.intellij.internal.statistic.customUsageCollectors.actions.ActionsCollector"/>
-
-  <applicationService serviceInterface="com.intellij.openapi.application.PathMacros"
-                      serviceImplementation="com.intellij.application.options.PathMacrosImpl"/>
+  <applicationService serviceImplementation="com.intellij.internal.statistic.customUsageCollectors.ui.ToolbarClicksCollector"/>
+  <applicationService serviceImplementation="com.intellij.internal.statistic.customUsageCollectors.ui.ShortcutsCollector"/>
+  <applicationService serviceImplementation="com.intellij.internal.statistic.customUsageCollectors.actions.ActionsCollector"/>
+  <applicationService serviceImplementation="com.intellij.internal.statistic.customUsageCollectors.actions.MainMenuCollector"/>
 
   <applicationService serviceImplementation="com.intellij.openapi.util.DimensionService"/>
   <applicationService serviceInterface="com.intellij.openapi.util.WindowStateService"
@@ -435,6 +433,7 @@
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.customUsageCollectors.ui.ToolbarClicksCollector$ToolbarClicksUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.customUsageCollectors.ui.ShortcutsCollector$ShortcutUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.customUsageCollectors.actions.ActionsCollector$ActionUsagesCollector"/>
+    <statistics.usagesCollector implementation="com.intellij.internal.statistic.customUsageCollectors.actions.MainMenuCollector$MainMenuUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.customUsageCollectors.ui.LaFUsagesCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.customUsageCollectors.os.OsNameUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.customUsageCollectors.os.OsVersionUsageCollector"/>
@@ -566,6 +565,7 @@
 
   <actionPromoter implementation="com.intellij.execution.testframework.TestTreeViewActionsPromoter"/>
   <smartSelectProvider implementation="com.intellij.ui.tree.TreeSmartSelectProvider"/>
+  <postStartupActivity implementation="com.intellij.tasks.context.BranchContextTracker$TrackerStartupActivity"/>
   <!-- TODO: Uncomment in workbench/mps-workbench/source/META-INF/MPSLangExtensions.xml after fix java.lang.RuntimeException: Service: com.intellij.codeInsight.actions.FormatChangedTextUtil doesn't override anything-->
   <applicationService serviceInterface="com.intellij.codeInsight.actions.FormatChangedTextUtil"
                       serviceImplementation="com.intellij.codeInsight.actions.FormatChangedTextUtil"/>
