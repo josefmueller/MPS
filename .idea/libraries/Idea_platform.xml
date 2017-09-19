@@ -15,7 +15,7 @@
       <root url="jar://$PROJECT_DIR$/lib/jna.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/microba.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/nanoxml-2.2.3.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/sanselan-0.98-snapshot.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/commons-imaging-1.0-SNAPSHOT.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/swingx-core-1.6.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/xpp3-1.1.4-min.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/picocontainer.jar!/" />
