@@ -98,26 +98,33 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends ConceptEditor>> excludedEditors) {
     boolean isPushReflectiveEditorHintInContext = ReflectiveHintsUtil.shouldShowReflectiveEditor(getCellContext().getHints());
-    SConcept concept = node.getConcept();
-    ConceptEditor editor = isPushReflectiveEditorHintInContext ? null : getCachedEditor(concept, excludedEditors);
+    pushCellContext();
     EditorCell result = null;
-    if (editor != null) {
-      try {
-        result = createCell(node, isInspector, editor);
-        assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by " + editor.getClass().getName() + " ConceptEditor.";
-      } catch (RuntimeException | AssertionError | NoClassDefFoundError e) {
-        LOG.warning("Failed to create cell for node: " + SNodeOperations.getDebugText(node) + " using default editor", e, node);
-      }
-    }
+    try {
+      ReflectiveHintsUtil.propagateReflectiveHints(this);
 
-    if (result == null) {
-      boolean shouldShowInterfaceEditor = concept.isValid() && concept.isAbstract() && !isPushReflectiveEditorHintInContext;
-      editor = shouldShowInterfaceEditor ? new DefaultInterfaceEditor(getCellContext()) : AbstractDefaultEditor.createEditor(node);
-      result = createCell(node, isInspector, editor);
-      assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
+      SConcept concept = node.getConcept();
+      ConceptEditor editor = isPushReflectiveEditorHintInContext ? null : getCachedEditor(concept, excludedEditors);
+      if (editor != null) {
+        try {
+          result = createCell(node, isInspector, editor);
+          assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by " + editor.getClass().getName() + " ConceptEditor.";
+        } catch (RuntimeException | AssertionError | NoClassDefFoundError e) {
+          LOG.warning("Failed to create cell for node: " + SNodeOperations.getDebugText(node) + " using default editor", e, node);
+        }
+      }
+
+      if (result == null) {
+        boolean shouldShowInterfaceEditor = concept.isValid() && concept.isAbstract() && !isPushReflectiveEditorHintInContext;
+        editor = shouldShowInterfaceEditor ? new DefaultInterfaceEditor(getCellContext()) : AbstractDefaultEditor.createEditor(node);
+        result = createCell(node, isInspector, editor);
+        assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
+      }
+      //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
+      result.setCellContext(getCellContext());
+    } finally {
+      popCellContext();
     }
-    //TODO: remove this call after MPS 3.5 - CellContext should be correctly set during editor cell creation process
-    result.setCellContext(getCellContext());
     return result;
   }
 

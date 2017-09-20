@@ -26,7 +26,6 @@ import static jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager.B
 
 public class ReflectiveHintsUtil {
   public static void propagateReflectiveHints(EditorCellFactory cellFactory) {
-    System.out.println(cellFactory.getCellContext().getHints());
     cellFactory.removeCellContextHints(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
                                        BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
     if (cellFactory.getCellContext().getHints().contains(BASE_NO_REFLECTIVE_EDITOR_HINT)) {

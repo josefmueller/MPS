@@ -24,7 +24,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
@@ -183,7 +182,6 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
     addLabel("");
     addNewLine();
     getCellFactory().pushCellContext();
-    ReflectiveHintsUtil.propagateReflectiveHints(this.getCellFactory());
     try {
       addChildren();
     } finally {
