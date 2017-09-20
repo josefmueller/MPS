@@ -93,7 +93,6 @@
         <property id="2162403111523065396" name="cellId" index="1lyBwo" />
       </concept>
       <concept id="5944657839003601246" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration" flags="ig" index="2BsEeg">
-        <property id="168363875802087287" name="showInUI" index="2gpH_U" />
         <property id="5944657839012629576" name="presentation" index="2BUmq6" />
       </concept>
       <concept id="8383079901754291618" name="jetbrains.mps.lang.editor.structure.CellModel_NextEditor" flags="ng" index="B$lHz">
@@ -691,7 +690,6 @@
       <property role="TrG5h" value="reflectiveEditor" />
     </node>
     <node concept="2BsEeg" id="5qxS_JiIay_" role="2ABdcP">
-      <property role="2gpH_U" value="true" />
       <property role="TrG5h" value="noReflectiveEditor" />
       <property role="2BUmq6" value="noReflectiveEditor" />
     </node>
@@ -700,7 +698,6 @@
       <property role="TrG5h" value="reflectiveEditorForNode" />
     </node>
     <node concept="2BsEeg" id="676_ZcuIWet" role="2ABdcP">
-      <property role="2gpH_U" value="true" />
       <property role="TrG5h" value="noReflectiveEditorForNode" />
       <property role="2BUmq6" value="noReflectiveEditorForNode" />
     </node>
