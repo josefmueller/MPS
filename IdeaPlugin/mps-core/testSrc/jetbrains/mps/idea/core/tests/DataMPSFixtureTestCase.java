@@ -17,8 +17,8 @@
 package jetbrains.mps.idea.core.tests;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.PathManager;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -35,7 +35,7 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
   protected void setUp() throws Exception {
     super.setUp();
     Reference<Exception> exception = new Reference<>();
-    UIUtil.invokeAndWaitIfNeeded((Runnable) () -> ApplicationManager.getApplication().runWriteAction(() -> {
+    ApplicationManager.getApplication().invokeAndWait(() -> ApplicationManager.getApplication().runWriteAction(() -> {
       try {
         IFile ideaSourceRoot = getMpsFixture().getTheSourceRoot(getMpsFixture().getMpsFacet());
         preConfigureSourceRoot(ideaSourceRoot);
@@ -44,7 +44,7 @@ public abstract class DataMPSFixtureTestCase extends AbstractMPSFixtureTestCase 
       } catch (IOException e) {
         exception.set(e);
       }
-    }));
+    }), ModalityState.defaultModalityState());
     if (!exception.isNull()) {
       throw exception.get();
     }
