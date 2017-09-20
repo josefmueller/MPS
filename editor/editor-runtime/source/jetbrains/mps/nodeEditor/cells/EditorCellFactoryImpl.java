@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.AbstractDefaultEditor;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
@@ -61,10 +62,6 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
     }
   };
   public static final String BASE_COMMENT_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment";
-  public static final String BASE_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
-  public static final String BASE_NO_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditor";
-  public static final String BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode";
-  public static final String BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode";
 
   private final EditorContext myEditorContext;
   private Deque<EditorCellContextImpl> myCellContextStack;
@@ -100,10 +97,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends ConceptEditor>> excludedEditors) {
-    boolean isPushReflectiveEditorHintInContext = getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT) ||
-                                                  (getCellContext().getHints().contains(BASE_REFLECTIVE_EDITOR_HINT) &&
-                                                   !getCellContext().getHints().contains(BASE_NO_REFLECTIVE_EDITOR_HINT) &&
-                                                   !getCellContext().getHints().contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT));
+    boolean isPushReflectiveEditorHintInContext = ReflectiveHintsUtil.shouldShowReflectiveEditor(getCellContext().getHints());
     SConcept concept = node.getConcept();
     ConceptEditor editor = isPushReflectiveEditorHintInContext ? null : getCachedEditor(concept, excludedEditors);
     EditorCell result = null;

@@ -787,9 +787,10 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.actions.ReflectiveEditorUtil" file="ReflectiveEditorUtil.java">
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsManager" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.ReflectiveHintsManager" />
     <classNode dependClassName="java.lang.Iterable" />

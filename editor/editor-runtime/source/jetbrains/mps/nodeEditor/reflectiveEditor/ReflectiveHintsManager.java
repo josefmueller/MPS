@@ -13,42 +13,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.nodeEditor.reflectiveEditor;
 
+import jetbrains.mps.openapi.editor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
-import static jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT;
-import static jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT;
-import static jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_HINT;
-
 public class ReflectiveHintsManager {
 
-  public interface ReflectiveHintsProvider {
-    @Nullable String getHint(@NotNull SNode node);
-    void setHint(@NotNull SNode node, @Nullable String hint);
-  }
+  static final String BASE_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
+  static final String BASE_NO_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditor";
+  static final String BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode";
+  static final String BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditorForNode";
 
-  private static List<String> REFLECTIVE_HINTS = Arrays.asList(BASE_REFLECTIVE_EDITOR_HINT, BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT);
-  private static List<String> NO_REFLECTIVE_HINTS = Arrays.asList(BASE_NO_REFLECTIVE_EDITOR_HINT, BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
+  static final List<String> REFLECTIVENESS_HINTS = Arrays.asList(BASE_REFLECTIVE_EDITOR_HINT,
+                                                                 BASE_NO_REFLECTIVE_EDITOR_HINT,
+                                                                 BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
+                                                                 BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
+  private static List<String> REFLECTIVE_EDITOR_HINTS = Arrays.asList(BASE_REFLECTIVE_EDITOR_HINT,
+                                                                      BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT);
+  private static List<String> NO_REFLECTIVE_EDITOR_HINTS = Arrays.asList(BASE_NO_REFLECTIVE_EDITOR_HINT,
+                                                                         BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
 
   private ReflectiveHintsProvider myHintsProvider;
 
-  public ReflectiveHintsManager(@NotNull ReflectiveHintsProvider hintsProvider) {
-    myHintsProvider = hintsProvider;
+  public ReflectiveHintsManager(@NotNull EditorComponent editorComponent) {
+    myHintsProvider = new ReflectiveHintsProvider(editorComponent);
   }
 
   private boolean isReflective(@NotNull SNode node) {
     String nodeHint = myHintsProvider.getHint(node);
-    if (REFLECTIVE_HINTS.contains(nodeHint)) {
+    if (REFLECTIVE_EDITOR_HINTS.contains(nodeHint)) {
       return true;
-    } else if (NO_REFLECTIVE_HINTS.contains(nodeHint)) {
+    } else if (NO_REFLECTIVE_EDITOR_HINTS.contains(nodeHint)) {
       return false;
     }
     node = node.getParent();
@@ -69,6 +70,14 @@ public class ReflectiveHintsManager {
     return false;
   }
 
+  private String getHintForNode(boolean isReflective) {
+    return isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
+  }
+
+  private String getHint(boolean isReflective) {
+    return isReflective ? BASE_REFLECTIVE_EDITOR_HINT : BASE_NO_REFLECTIVE_EDITOR_HINT;
+  }
+
   public boolean canMakeNode(boolean isReflective, @NotNull SNode node) {
     return isReflective != isReflective(node);
   }
@@ -77,11 +86,11 @@ public class ReflectiveHintsManager {
     if (canMakeNode(isReflective, node)) {
       return true;
     }
-    String sameHintForNode = isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
+    String sameHintForNode = getHintForNode(isReflective);
     if (sameHintForNode.equals(myHintsProvider.getHint(node))) {
       return true;
     }
-    List<String> hintsToSearch = isReflective ? NO_REFLECTIVE_HINTS : REFLECTIVE_HINTS;
+    List<String> hintsToSearch = isReflective ? NO_REFLECTIVE_EDITOR_HINTS : REFLECTIVE_EDITOR_HINTS;
     for (SNode descendant : SNodeUtil.getDescendants(node)) {
       String descendantHint = myHintsProvider.getHint(descendant);
       if (hintsToSearch.contains(descendantHint)) {
@@ -92,17 +101,17 @@ public class ReflectiveHintsManager {
   }
 
   public void makeNode(boolean isReflective, @NotNull SNode node) {
-    String newHint = isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
-    String newHintForSubtree = isReflective ? BASE_REFLECTIVE_EDITOR_HINT : BASE_NO_REFLECTIVE_EDITOR_HINT;
-    String symmetricHint = isReflective ? BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT;
-
     String nodeHint = myHintsProvider.getHint(node);
+    String newHint = getHintForNode(isReflective);
+    String newHintForSubtree = getHint(isReflective);
+    String symmetricHint = getHintForNode(!isReflective);
+
     if (nodeHint == null) {
       myHintsProvider.setHint(node, newHint);
     } else if (nodeHint.equals(symmetricHint)) {
       myHintsProvider.setHint(node, null);
     } else {
-      symmetricHint = isReflective ? BASE_NO_REFLECTIVE_EDITOR_HINT : BASE_REFLECTIVE_EDITOR_HINT;
+      symmetricHint = getHint(!isReflective);
       assert nodeHint.equals(symmetricHint);
 
       myHintsProvider.setHint(node, null);
@@ -123,9 +132,9 @@ public class ReflectiveHintsManager {
 
   public void makeSubtree(boolean isReflective, @NotNull SNode node) {
     String nodeHint = myHintsProvider.getHint(node);
-    String newHint = isReflective ? BASE_REFLECTIVE_EDITOR_HINT : BASE_NO_REFLECTIVE_EDITOR_HINT;
-    String newHintForNode = isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
-    List<String> symmetricHints = isReflective ? NO_REFLECTIVE_HINTS : REFLECTIVE_HINTS;
+    String newHint = getHint(isReflective);
+    String newHintForNode = getHintForNode(isReflective);
+    List<String> symmetricHints = isReflective ? NO_REFLECTIVE_EDITOR_HINTS : REFLECTIVE_EDITOR_HINTS;
 
     if (nodeHint == null) {
       if (canMakeNode(isReflective, node)) {

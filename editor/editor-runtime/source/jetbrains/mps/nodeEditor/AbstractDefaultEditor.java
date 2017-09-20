@@ -19,12 +19,12 @@ import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
@@ -183,12 +183,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements
     addLabel("");
     addNewLine();
     getCellFactory().pushCellContext();
-    getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT,
-                                            EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
-    if (getCellFactory().getCellContext().getHints().contains(EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_HINT)) {
-      getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT,
-                                              EditorCellFactoryImpl.BASE_NO_REFLECTIVE_EDITOR_HINT);
-    }
+    ReflectiveHintsUtil.propagateReflectiveHints(this.getCellFactory());
     try {
       addChildren();
     } finally {
