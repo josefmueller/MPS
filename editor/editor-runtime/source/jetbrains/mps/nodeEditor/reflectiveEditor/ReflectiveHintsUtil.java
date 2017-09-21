@@ -15,7 +15,12 @@
  */
 package jetbrains.mps.nodeEditor.reflectiveEditor;
 
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
 
@@ -45,5 +50,22 @@ public class ReflectiveHintsUtil {
            (hints.contains(BASE_REFLECTIVE_EDITOR_HINT) &&
             !hints.contains(BASE_NO_REFLECTIVE_EDITOR_HINT) &&
             !hints.contains(BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT));
+  }
+
+  public static void addModelHints(SNode node, EditorContext editorContext) {
+    if (node.getModel() == null) {
+      return;
+    }
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.getProject(editorContext.getRepository());
+    if (!(mpsProject instanceof MPSProject)) {
+      return;
+    }
+    Project ideaProject = ((MPSProject) mpsProject).getProject();
+    if (ReflectiveHintsForModelComponent.getInstance(ideaProject)
+                                        .shouldShowReflectiveEditor(node.getModel().getReference())) {
+      editorContext.getEditorComponent()
+                   .getUpdater()
+                   .addExplicitEditorHintsForNode(node.getReference(), BASE_REFLECTIVE_EDITOR_HINT);
+    }
   }
 }

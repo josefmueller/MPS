@@ -186,6 +186,7 @@
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
     <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
     <import index="1ctc" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.stream(JDK/)" />
+    <import index="vq9d" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.reflectiveEditor(MPS.Editor/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="90d" ref="r:421d64ed-8024-497f-aeab-8bddeb389dd2(jetbrains.mps.lang.extension.methods)" implicit="true" />
@@ -1037,6 +1038,12 @@
         <property role="TrG5h" value="showHelp" />
       </node>
       <node concept="2a7GMi" id="3WT5vWoZ9rB" role="ftvYc" />
+      <node concept="tCFHf" id="1OwW6POKvOo" role="ftvYc">
+        <ref role="tCJdB" node="7v0n5HkM4gk" resolve="ShowReflectiveEditorByDefault" />
+      </node>
+      <node concept="tCFHf" id="1mKJl92ebHd" role="ftvYc">
+        <ref role="tCJdB" node="1mKJl92cwMV" resolve="ShowRegularEditorByDefault" />
+      </node>
       <node concept="tCFHf" id="hYoRn0d" role="ftvYc">
         <ref role="tCJdB" node="hYoPViv" resolve="ModelProperties" />
       </node>
@@ -44042,6 +44049,166 @@
               <ref role="37wK5l" to="qkt:~Presentation.setEnabledAndVisible(boolean):void" resolve="setEnabledAndVisible" />
               <node concept="37vLTw" id="3dvEHZag_EX" role="37wK5m">
                 <ref role="3cqZAo" node="3dvEHZag_Em" resolve="isApplicable" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="sE7Ow" id="7v0n5HkM4gk">
+    <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="TrG5h" value="ShowReflectiveEditorByDefault" />
+    <property role="2uzpH1" value="Show Reflective Editor by Default" />
+    <node concept="tnohg" id="7v0n5HkM4gl" role="tncku">
+      <node concept="3clFbS" id="7v0n5HkM4gm" role="2VODD2">
+        <node concept="3clFbF" id="1OwW6POKqzD" role="3cqZAp">
+          <node concept="2OqwBi" id="1OwW6POKrGj" role="3clFbG">
+            <node concept="2YIFZM" id="1mKJl92cwpj" role="2Oq$k0">
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent" resolve="getInstance" />
+              <ref role="1Pybhc" to="vq9d:~ReflectiveHintsForModelComponent" resolve="ReflectiveHintsForModelComponent" />
+              <node concept="2OqwBi" id="1mKJl92cwpk" role="37wK5m">
+                <node concept="2WthIp" id="1mKJl92cwpl" role="2Oq$k0" />
+                <node concept="1DTwFV" id="1mKJl92cwpm" role="2OqNvi">
+                  <ref role="2WH_rO" node="7v0n5HkN2F0" resolve="ideaProject" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="1OwW6POKsiK" role="2OqNvi">
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.showReflectiveEditorByDefault(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="showReflectiveEditorByDefault" />
+              <node concept="2OqwBi" id="1OwW6POKtyD" role="37wK5m">
+                <node concept="2OqwBi" id="1OwW6POKs_3" role="2Oq$k0">
+                  <node concept="2WthIp" id="1OwW6POKsl9" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="1OwW6POKtcb" role="2OqNvi">
+                    <ref role="2WH_rO" node="7v0n5HkN127" resolve="model" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1OwW6POKtJ7" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1DS2jV" id="7v0n5HkN127" role="1NuT2Z">
+      <property role="TrG5h" value="model" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
+      <node concept="1oajcY" id="7v0n5HkN128" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="7v0n5HkN2F0" role="1NuT2Z">
+      <property role="TrG5h" value="ideaProject" />
+      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+      <node concept="1oajcY" id="7v0n5HkN2F1" role="1oa70y" />
+    </node>
+    <node concept="2ScWuX" id="1mKJl92cuPP" role="tmbBb">
+      <node concept="3clFbS" id="1mKJl92cuPQ" role="2VODD2">
+        <node concept="3clFbF" id="1mKJl92cwra" role="3cqZAp">
+          <node concept="3fqX7Q" id="1mKJl92ebTC" role="3clFbG">
+            <node concept="2OqwBi" id="1mKJl92ebTE" role="3fr31v">
+              <node concept="2YIFZM" id="1mKJl92ebTF" role="2Oq$k0">
+                <ref role="1Pybhc" to="vq9d:~ReflectiveHintsForModelComponent" resolve="ReflectiveHintsForModelComponent" />
+                <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent" resolve="getInstance" />
+                <node concept="2OqwBi" id="1mKJl92ebTG" role="37wK5m">
+                  <node concept="2WthIp" id="1mKJl92ebTH" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="1mKJl92ebTI" role="2OqNvi">
+                    <ref role="2WH_rO" node="7v0n5HkN2F0" resolve="ideaProject" />
+                  </node>
+                </node>
+              </node>
+              <node concept="liA8E" id="1mKJl92ebTJ" role="2OqNvi">
+                <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.shouldShowReflectiveEditor(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="shouldShowReflectiveEditor" />
+                <node concept="2OqwBi" id="1mKJl92ebTK" role="37wK5m">
+                  <node concept="2OqwBi" id="1mKJl92ebTL" role="2Oq$k0">
+                    <node concept="2WthIp" id="1mKJl92ebTM" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="1mKJl92ebTN" role="2OqNvi">
+                      <ref role="2WH_rO" node="7v0n5HkN127" resolve="model" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="1mKJl92ebTO" role="2OqNvi">
+                    <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="sE7Ow" id="1mKJl92cwMV">
+    <property role="3GE5qa" value="Menu.ProjectPane.Model.Actions" />
+    <property role="TrG5h" value="ShowRegularEditorByDefault" />
+    <property role="2uzpH1" value="Show Regular Editor by Default" />
+    <node concept="tnohg" id="1mKJl92cwMW" role="tncku">
+      <node concept="3clFbS" id="1mKJl92cwMX" role="2VODD2">
+        <node concept="3clFbF" id="1mKJl92cwMY" role="3cqZAp">
+          <node concept="2OqwBi" id="1mKJl92cwMZ" role="3clFbG">
+            <node concept="2YIFZM" id="1mKJl92cwN0" role="2Oq$k0">
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent" resolve="getInstance" />
+              <ref role="1Pybhc" to="vq9d:~ReflectiveHintsForModelComponent" resolve="ReflectiveHintsForModelComponent" />
+              <node concept="2OqwBi" id="1mKJl92cwN1" role="37wK5m">
+                <node concept="2WthIp" id="1mKJl92cwN2" role="2Oq$k0" />
+                <node concept="1DTwFV" id="1mKJl92cwN3" role="2OqNvi">
+                  <ref role="2WH_rO" node="1mKJl92cwNc" resolve="ideaProject" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="1mKJl92cwN4" role="2OqNvi">
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.showRegularEditorByDefault(org.jetbrains.mps.openapi.model.SModelReference):void" resolve="showRegularEditorByDefault" />
+              <node concept="2OqwBi" id="1mKJl92cwN5" role="37wK5m">
+                <node concept="2OqwBi" id="1mKJl92cwN6" role="2Oq$k0">
+                  <node concept="2WthIp" id="1mKJl92cwN7" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="1mKJl92cwN8" role="2OqNvi">
+                    <ref role="2WH_rO" node="1mKJl92cwNa" resolve="model" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1mKJl92cwN9" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1DS2jV" id="1mKJl92cwNa" role="1NuT2Z">
+      <property role="TrG5h" value="model" />
+      <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.CONTEXT_MODEL" resolve="CONTEXT_MODEL" />
+      <node concept="1oajcY" id="1mKJl92cwNb" role="1oa70y" />
+    </node>
+    <node concept="1DS2jV" id="1mKJl92cwNc" role="1NuT2Z">
+      <property role="TrG5h" value="ideaProject" />
+      <ref role="1DUlNI" to="qkt:~CommonDataKeys.PROJECT" resolve="PROJECT" />
+      <node concept="1oajcY" id="1mKJl92cwNd" role="1oa70y" />
+    </node>
+    <node concept="2ScWuX" id="1mKJl92cwNe" role="tmbBb">
+      <node concept="3clFbS" id="1mKJl92cwNf" role="2VODD2">
+        <node concept="3clFbF" id="1mKJl92cwNg" role="3cqZAp">
+          <node concept="2OqwBi" id="1mKJl92cwNh" role="3clFbG">
+            <node concept="2YIFZM" id="1mKJl92cwNi" role="2Oq$k0">
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.getInstance(com.intellij.openapi.project.Project):jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsForModelComponent" resolve="getInstance" />
+              <ref role="1Pybhc" to="vq9d:~ReflectiveHintsForModelComponent" resolve="ReflectiveHintsForModelComponent" />
+              <node concept="2OqwBi" id="1mKJl92cwNj" role="37wK5m">
+                <node concept="2WthIp" id="1mKJl92cwNk" role="2Oq$k0" />
+                <node concept="1DTwFV" id="1mKJl92cwNl" role="2OqNvi">
+                  <ref role="2WH_rO" node="1mKJl92cwNc" resolve="ideaProject" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="1mKJl92cwNm" role="2OqNvi">
+              <ref role="37wK5l" to="vq9d:~ReflectiveHintsForModelComponent.shouldShowReflectiveEditor(org.jetbrains.mps.openapi.model.SModelReference):boolean" resolve="shouldShowReflectiveEditor" />
+              <node concept="2OqwBi" id="1mKJl92cwNn" role="37wK5m">
+                <node concept="2OqwBi" id="1mKJl92cwNo" role="2Oq$k0">
+                  <node concept="2WthIp" id="1mKJl92cwNp" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="1mKJl92cwNq" role="2OqNvi">
+                    <ref role="2WH_rO" node="1mKJl92cwNa" resolve="model" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="1mKJl92cwNr" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getReference():org.jetbrains.mps.openapi.model.SModelReference" resolve="getReference" />
+                </node>
               </node>
             </node>
           </node>

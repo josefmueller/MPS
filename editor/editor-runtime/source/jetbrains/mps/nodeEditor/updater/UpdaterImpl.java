@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
 import jetbrains.mps.nodeEditor.commands.CommandContextListener;
+import jetbrains.mps.nodeEditor.reflectiveEditor.ReflectiveHintsUtil;
 import jetbrains.mps.openapi.editor.EditorComponentState;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -75,6 +76,8 @@ public class UpdaterImpl implements Updater {
   private boolean myInProgress;
   private boolean myProcessSelection;
 
+  private boolean didAddModelHintsToRoot = false;
+
   public UpdaterImpl(@NotNull EditorComponent editorComponent, CommandContextImpl commandContext) {
     myEditorComponent = editorComponent;
     commandContext.addListener(new CommandContextListenerImpl());
@@ -85,6 +88,7 @@ public class UpdaterImpl implements Updater {
   public void update() {
     assert !myDisposed;
     boolean wasInProgress = fireEditorUpdateStarted();
+    addModelHintsToRoot();
     doUpdate(null);
     myModelListenersController.clearCollectedEvents();
     fireEditorUpdated(wasInProgress);
@@ -222,6 +226,15 @@ public class UpdaterImpl implements Updater {
   @Override
   public void clearExplicitHints() {
     myEditorHintsForNodeMap.clear();
+    didAddModelHintsToRoot = false;
+  }
+
+  private void addModelHintsToRoot() {
+    if (!didAddModelHintsToRoot && myEditorComponent.getEditedNode() != null) {
+      ReflectiveHintsUtil.addModelHints(myEditorComponent.getEditedNode().getContainingRoot(),
+                                        myEditorComponent.getEditorContext());
+      didAddModelHintsToRoot = true;
+    }
   }
 
   private void fireCellSynchronized(EditorCell cell) {
