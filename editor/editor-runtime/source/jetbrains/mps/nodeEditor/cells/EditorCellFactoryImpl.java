@@ -97,14 +97,14 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
   }
 
   private EditorCell createEditorCell_internal(SNode node, boolean isInspector, @NotNull Set<Class<? extends ConceptEditor>> excludedEditors) {
-    boolean isPushReflectiveEditorHintInContext = ReflectiveHintsUtil.shouldShowReflectiveEditor(getCellContext().getHints());
+    boolean shouldShowReflectiveEditor = ReflectiveHintsUtil.shouldShowReflectiveEditor(getCellContext().getHints());
     pushCellContext();
     EditorCell result = null;
     try {
       ReflectiveHintsUtil.propagateReflectiveHints(this);
 
       SConcept concept = node.getConcept();
-      ConceptEditor editor = isPushReflectiveEditorHintInContext ? null : getCachedEditor(concept, excludedEditors);
+      ConceptEditor editor = shouldShowReflectiveEditor ? null : getCachedEditor(concept, excludedEditors);
       if (editor != null) {
         try {
           result = createCell(node, isInspector, editor);
@@ -115,7 +115,7 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       }
 
       if (result == null) {
-        boolean shouldShowInterfaceEditor = concept.isValid() && concept.isAbstract() && !isPushReflectiveEditorHintInContext;
+        boolean shouldShowInterfaceEditor = concept.isValid() && concept.isAbstract() && !shouldShowReflectiveEditor;
         editor = shouldShowInterfaceEditor ? new DefaultInterfaceEditor(getCellContext()) : AbstractDefaultEditor.createEditor(node);
         result = createCell(node, isInspector, editor);
         assert result.isBig() : "Non-big " + (isInspector ? "inspector " : "") + "cell was created by DefaultEditor: " + editor.getClass().getName();
