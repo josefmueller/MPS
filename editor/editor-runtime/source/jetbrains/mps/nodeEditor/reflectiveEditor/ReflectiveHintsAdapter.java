@@ -24,10 +24,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-class ReflectiveHintsProvider {
+class ReflectiveHintsAdapter {
   private EditorComponent myEditorComponent;
 
-  ReflectiveHintsProvider(@NotNull EditorComponent editorComponent) {
+  ReflectiveHintsAdapter(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
   }
 

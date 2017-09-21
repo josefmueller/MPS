@@ -39,10 +39,10 @@ public class ReflectiveHintsManager {
   private static List<String> NO_REFLECTIVE_EDITOR_HINTS = Arrays.asList(BASE_NO_REFLECTIVE_EDITOR_HINT,
                                                                          BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT);
 
-  private ReflectiveHintsProvider myHintsProvider;
+  private ReflectiveHintsAdapter myHintsProvider;
 
   public ReflectiveHintsManager(@NotNull EditorComponent editorComponent) {
-    myHintsProvider = new ReflectiveHintsProvider(editorComponent);
+    myHintsProvider = new ReflectiveHintsAdapter(editorComponent);
   }
 
   private boolean isReflective(@NotNull SNode node) {
