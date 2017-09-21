@@ -16,7 +16,6 @@
     <import index="5zyv" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent(JDK/)" />
     <import index="i5cy" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.concurrent.atomic(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="juxu" ref="r:0d889792-3418-4e28-a9f1-3170d40f46a8(org.jetbrains.mps.samples.SampleJavaExtensions.sandbox.optionalConstants)" />
   </imports>
   <registry>
     <language id="65c13e67-09b6-4695-af88-52024b7d2027" name="org.jetbrains.mps.samples.DecisionTable">
@@ -227,9 +226,6 @@
       <concept id="1494751830318912535" name="org.jetbrains.mps.samples.Constants.structure.Constants" flags="ng" index="3le7z9">
         <child id="1494751830318912552" name="constants" index="3le7zQ" />
       </concept>
-      <concept id="2687243112287752479" name="org.jetbrains.mps.samples.Constants.structure.DistantConstantReference" flags="ng" index="1ojt10">
-        <reference id="2687243112287752727" name="targetSetOfConstants" index="1ojtd8" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -344,13 +340,6 @@
         <node concept="3cmrfG" id="1p0cn97jxpp" role="3uHU7w">
           <property role="3cmrfH" value="50" />
         </node>
-      </node>
-    </node>
-    <node concept="3le7z7" id="5JE01wUf8Oa" role="3le7zQ">
-      <property role="TrG5h" value="OTHER" />
-      <node concept="1ojt10" id="2lb0lXX3IBD" role="2G6nb5">
-        <ref role="1ojtd8" to="juxu:2lb0lXX3IBk" resolve="OtherConstants" />
-        <ref role="32iksQ" to="juxu:2lb0lXX3J_V" resolve="D" />
       </node>
     </node>
     <node concept="3le7z7" id="1p0cn97jxpq" role="3le7zQ">

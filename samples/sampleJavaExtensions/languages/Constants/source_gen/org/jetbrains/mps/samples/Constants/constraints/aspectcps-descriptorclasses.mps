@@ -6,23 +6,21 @@
   <languages />
   <imports>
     <import index="sj3t" ref="r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)" />
-    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
-    <import index="79pl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime.base(MPS.Core/)" />
-    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="2k9e" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
     <import index="e8bb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.ids(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="79pl" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime.base(MPS.Core/)" />
     <import index="35tq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.scope(MPS.Core/)" />
     <import index="nd9w" ref="r:ef9fd842-b350-4ad1-83c7-4b57a2c65330(org.jetbrains.mps.samples.Constants.structure)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
-      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -87,10 +85,6 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
-      <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
-        <child id="1068580123160" name="condition" index="3clFbw" />
-        <child id="1068580123161" name="ifTrue" index="3clFbx" />
-      </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
@@ -106,9 +100,6 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
-      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
-        <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -155,33 +146,14 @@
         <property id="1173996588177" name="fqClassName" index="1nD$Q0" />
         <child id="1179332974947" name="type" index="2lIhxL" />
       </concept>
-      <concept id="1174294166120" name="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall" flags="nn" index="1DoJHT">
-        <property id="1174294288199" name="methodName" index="1Dpdpm" />
-        <child id="1174313653259" name="returnType" index="1Ez5kq" />
-        <child id="1174317636233" name="instance" index="1EMhIo" />
-      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
-        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
-      </concept>
-      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
-        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
-      </concept>
-      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
-        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
-        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
-      </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
-      </concept>
-      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
-        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="6039268229364358244" name="jetbrains.mps.lang.smodel.structure.ExactConceptCase" flags="ng" index="1pnPoh">
         <child id="6039268229364358388" name="body" index="1pnPq1" />
@@ -191,10 +163,6 @@
         <child id="6039268229365417680" name="defaultBlock" index="1prKM_" />
         <child id="5944356402132808753" name="case" index="1_3QMm" />
         <child id="5944356402132808752" name="expression" index="1_3QMn" />
-      </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
-      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
-        <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -583,57 +551,42 @@
             <ref role="3cqZAo" node="2c" resolve="concept" />
           </node>
           <node concept="1pnPoh" id="2i" role="1_3QMm">
-            <node concept="3clFbS" id="2m" role="1pnPq1">
-              <node concept="3cpWs6" id="2o" role="3cqZAp">
-                <node concept="1nCR9W" id="2p" role="3cqZAk">
+            <node concept="3clFbS" id="2l" role="1pnPq1">
+              <node concept="3cpWs6" id="2n" role="3cqZAp">
+                <node concept="1nCR9W" id="2o" role="3cqZAk">
                   <property role="1nD$Q0" value="org.jetbrains.mps.samples.Constants.constraints.Constant_Constraints" />
-                  <node concept="3uibUv" id="2q" role="2lIhxL">
+                  <node concept="3uibUv" id="2p" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="2n" role="1pnPq6">
+            <node concept="3gn64h" id="2m" role="1pnPq6">
               <ref role="3gnhBz" to="nd9w:1iYrdV1xxgp" resolve="Constant" />
             </node>
           </node>
           <node concept="1pnPoh" id="2j" role="1_3QMm">
-            <node concept="3clFbS" id="2r" role="1pnPq1">
-              <node concept="3cpWs6" id="2t" role="3cqZAp">
-                <node concept="1nCR9W" id="2u" role="3cqZAk">
+            <node concept="3clFbS" id="2q" role="1pnPq1">
+              <node concept="3cpWs6" id="2s" role="3cqZAp">
+                <node concept="1nCR9W" id="2t" role="3cqZAk">
                   <property role="1nD$Q0" value="org.jetbrains.mps.samples.Constants.constraints.ConstantReference_Constraints" />
-                  <node concept="3uibUv" id="2v" role="2lIhxL">
+                  <node concept="3uibUv" id="2u" role="2lIhxL">
                     <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3gn64h" id="2s" role="1pnPq6">
+            <node concept="3gn64h" id="2r" role="1pnPq6">
               <ref role="3gnhBz" to="nd9w:3tw0l3Pakp_" resolve="ConstantReference" />
             </node>
           </node>
-          <node concept="1pnPoh" id="2k" role="1_3QMm">
-            <node concept="3clFbS" id="2w" role="1pnPq1">
-              <node concept="3cpWs6" id="2y" role="3cqZAp">
-                <node concept="1nCR9W" id="2z" role="3cqZAk">
-                  <property role="1nD$Q0" value="org.jetbrains.mps.samples.Constants.constraints.DistantConstantReference_Constraints" />
-                  <node concept="3uibUv" id="2$" role="2lIhxL">
-                    <ref role="3uigEE" to="ze1i:~ConstraintsDescriptor" resolve="ConstraintsDescriptor" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3gn64h" id="2x" role="1pnPq6">
-              <ref role="3gnhBz" to="nd9w:2lb0lXX1H4v" resolve="DistantConstantReference" />
-            </node>
-          </node>
-          <node concept="3clFbS" id="2l" role="1prKM_" />
+          <node concept="3clFbS" id="2k" role="1prKM_" />
         </node>
         <node concept="3cpWs6" id="2g" role="3cqZAp">
-          <node concept="2ShNRf" id="2_" role="3cqZAk">
-            <node concept="1pGfFk" id="2A" role="2ShVmc">
+          <node concept="2ShNRf" id="2v" role="3cqZAk">
+            <node concept="1pGfFk" id="2w" role="2ShVmc">
               <ref role="37wK5l" to="79pl:~BaseConstraintsDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="BaseConstraintsDescriptor" />
-              <node concept="37vLTw" id="2B" role="37wK5m">
+              <node concept="37vLTw" id="2x" role="37wK5m">
                 <ref role="3cqZAo" node="2c" resolve="concept" />
               </node>
             </node>
@@ -642,349 +595,6 @@
       </node>
     </node>
   </node>
-  <node concept="312cEu" id="2C">
-    <property role="3GE5qa" value="Constraints" />
-    <property role="TrG5h" value="DistantConstantReference_Constraints" />
-    <node concept="3Tm1VV" id="2D" role="1B3o_S" />
-    <node concept="3uibUv" id="2E" role="1zkMxy">
-      <ref role="3uigEE" to="79pl:~BaseConstraintsDescriptor" resolve="BaseConstraintsDescriptor" />
-    </node>
-    <node concept="3clFbW" id="2F" role="jymVt">
-      <node concept="3cqZAl" id="2I" role="3clF45" />
-      <node concept="3clFbS" id="2J" role="3clF47">
-        <node concept="XkiVB" id="2L" role="3cqZAp">
-          <ref role="37wK5l" to="79pl:~BaseConstraintsDescriptor.&lt;init&gt;(org.jetbrains.mps.openapi.language.SAbstractConcept)" resolve="BaseConstraintsDescriptor" />
-          <node concept="2YIFZM" id="2M" role="37wK5m">
-            <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
-            <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getConcept(long,long,long,java.lang.String):org.jetbrains.mps.openapi.language.SConcept" resolve="getConcept" />
-            <node concept="1adDum" id="2N" role="37wK5m">
-              <property role="1adDun" value="0xd40d465dded40d0L" />
-            </node>
-            <node concept="1adDum" id="2O" role="37wK5m">
-              <property role="1adDun" value="0x8d4c2c6d177f60d7L" />
-            </node>
-            <node concept="1adDum" id="2P" role="37wK5m">
-              <property role="1adDun" value="0x254b015f7d06d11fL" />
-            </node>
-            <node concept="Xl_RD" id="2Q" role="37wK5m">
-              <property role="Xl_RC" value="org.jetbrains.mps.samples.Constants.structure.DistantConstantReference" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="2K" role="1B3o_S" />
-    </node>
-    <node concept="2tJIrI" id="2G" role="jymVt" />
-    <node concept="3clFb_" id="2H" role="jymVt">
-      <property role="IEkAT" value="false" />
-      <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getSpecifiedReferences" />
-      <property role="DiZV1" value="false" />
-      <node concept="3Tmbuc" id="2R" role="1B3o_S" />
-      <node concept="3uibUv" id="2S" role="3clF45">
-        <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-        <node concept="3uibUv" id="2V" role="11_B2D">
-          <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
-        </node>
-        <node concept="3uibUv" id="2W" role="11_B2D">
-          <ref role="3uigEE" to="ze1i:~ReferenceConstraintsDescriptor" resolve="ReferenceConstraintsDescriptor" />
-        </node>
-      </node>
-      <node concept="3clFbS" id="2T" role="3clF47">
-        <node concept="3cpWs8" id="2X" role="3cqZAp">
-          <node concept="3cpWsn" id="30" role="3cpWs9">
-            <property role="TrG5h" value="references" />
-            <node concept="3uibUv" id="31" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
-              <node concept="3uibUv" id="33" role="11_B2D">
-                <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
-              </node>
-              <node concept="3uibUv" id="34" role="11_B2D">
-                <ref role="3uigEE" to="ze1i:~ReferenceConstraintsDescriptor" resolve="ReferenceConstraintsDescriptor" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="32" role="33vP2m">
-              <node concept="1pGfFk" id="35" role="2ShVmc">
-                <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
-                <node concept="3uibUv" id="36" role="1pMfVU">
-                  <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
-                </node>
-                <node concept="3uibUv" id="37" role="1pMfVU">
-                  <ref role="3uigEE" to="ze1i:~ReferenceConstraintsDescriptor" resolve="ReferenceConstraintsDescriptor" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2Y" role="3cqZAp">
-          <node concept="2OqwBi" id="38" role="3clFbG">
-            <node concept="37vLTw" id="39" role="2Oq$k0">
-              <ref role="3cqZAo" node="30" resolve="references" />
-            </node>
-            <node concept="liA8E" id="3a" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
-              <node concept="2YIFZM" id="3b" role="37wK5m">
-                <ref role="1Pybhc" to="2k9e:~MetaAdapterFactory" resolve="MetaAdapterFactory" />
-                <ref role="37wK5l" to="2k9e:~MetaAdapterFactory.getReferenceLink(long,long,long,long,java.lang.String):org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getReferenceLink" />
-                <node concept="1adDum" id="3d" role="37wK5m">
-                  <property role="1adDun" value="0xd40d465dded40d0L" />
-                </node>
-                <node concept="1adDum" id="3e" role="37wK5m">
-                  <property role="1adDun" value="0x8d4c2c6d177f60d7L" />
-                </node>
-                <node concept="1adDum" id="3f" role="37wK5m">
-                  <property role="1adDun" value="0x37600150f5294665L" />
-                </node>
-                <node concept="1adDum" id="3g" role="37wK5m">
-                  <property role="1adDun" value="0x37600150f5294666L" />
-                </node>
-                <node concept="Xl_RD" id="3h" role="37wK5m">
-                  <property role="Xl_RC" value="original" />
-                </node>
-              </node>
-              <node concept="2ShNRf" id="3c" role="37wK5m">
-                <node concept="YeOm9" id="3i" role="2ShVmc">
-                  <node concept="1Y3b0j" id="3j" role="YeSDq">
-                    <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" to="79pl:~BaseReferenceConstraintsDescriptor" resolve="BaseReferenceConstraintsDescriptor" />
-                    <ref role="37wK5l" to="79pl:~BaseReferenceConstraintsDescriptor.&lt;init&gt;(jetbrains.mps.smodel.adapter.ids.SReferenceLinkId,jetbrains.mps.smodel.runtime.ConstraintsDescriptor)" resolve="BaseReferenceConstraintsDescriptor" />
-                    <node concept="2YIFZM" id="3k" role="37wK5m">
-                      <ref role="1Pybhc" to="e8bb:~MetaIdFactory" resolve="MetaIdFactory" />
-                      <ref role="37wK5l" to="e8bb:~MetaIdFactory.refId(long,long,long,long):jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" resolve="refId" />
-                      <node concept="1adDum" id="3p" role="37wK5m">
-                        <property role="1adDun" value="0xd40d465dded40d0L" />
-                      </node>
-                      <node concept="1adDum" id="3q" role="37wK5m">
-                        <property role="1adDun" value="0x8d4c2c6d177f60d7L" />
-                      </node>
-                      <node concept="1adDum" id="3r" role="37wK5m">
-                        <property role="1adDun" value="0x37600150f5294665L" />
-                      </node>
-                      <node concept="1adDum" id="3s" role="37wK5m">
-                        <property role="1adDun" value="0x37600150f5294666L" />
-                      </node>
-                    </node>
-                    <node concept="3Tm1VV" id="3l" role="1B3o_S" />
-                    <node concept="Xjq3P" id="3m" role="37wK5m" />
-                    <node concept="3clFb_" id="3n" role="jymVt">
-                      <property role="IEkAT" value="false" />
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="hasOwnScopeProvider" />
-                      <property role="DiZV1" value="false" />
-                      <node concept="3Tm1VV" id="3t" role="1B3o_S" />
-                      <node concept="10P_77" id="3u" role="3clF45" />
-                      <node concept="3clFbS" id="3v" role="3clF47">
-                        <node concept="3clFbF" id="3x" role="3cqZAp">
-                          <node concept="3clFbT" id="3y" role="3clFbG">
-                            <property role="3clFbU" value="true" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2AHcQZ" id="3w" role="2AJF6D">
-                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                      </node>
-                    </node>
-                    <node concept="3clFb_" id="3o" role="jymVt">
-                      <property role="IEkAT" value="false" />
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="getScopeProvider" />
-                      <property role="DiZV1" value="false" />
-                      <node concept="3Tm1VV" id="3z" role="1B3o_S" />
-                      <node concept="3uibUv" id="3$" role="3clF45">
-                        <ref role="3uigEE" to="ze1i:~ReferenceScopeProvider" resolve="ReferenceScopeProvider" />
-                      </node>
-                      <node concept="2AHcQZ" id="3_" role="2AJF6D">
-                        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-                      </node>
-                      <node concept="3clFbS" id="3A" role="3clF47">
-                        <node concept="3cpWs6" id="3C" role="3cqZAp">
-                          <node concept="2ShNRf" id="3D" role="3cqZAk">
-                            <node concept="YeOm9" id="3E" role="2ShVmc">
-                              <node concept="1Y3b0j" id="3F" role="YeSDq">
-                                <property role="2bfB8j" value="true" />
-                                <ref role="1Y3XeK" to="79pl:~BaseScopeProvider" resolve="BaseScopeProvider" />
-                                <ref role="37wK5l" to="79pl:~BaseScopeProvider.&lt;init&gt;()" resolve="BaseScopeProvider" />
-                                <node concept="3Tm1VV" id="3G" role="1B3o_S" />
-                                <node concept="3clFb_" id="3H" role="jymVt">
-                                  <property role="TrG5h" value="getSearchScopeValidatorNode" />
-                                  <node concept="3Tm1VV" id="3J" role="1B3o_S" />
-                                  <node concept="3clFbS" id="3K" role="3clF47">
-                                    <node concept="3cpWs6" id="3N" role="3cqZAp">
-                                      <node concept="1dyn4i" id="3O" role="3cqZAk">
-                                        <property role="1zomUR" value="true" />
-                                        <property role="1dyqJU" value="breakingNode" />
-                                        <node concept="2ShNRf" id="3P" role="1dyrYi">
-                                          <node concept="1pGfFk" id="3Q" role="2ShVmc">
-                                            <ref role="37wK5l" to="w1kc:~SNodePointer.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="SNodePointer" />
-                                            <node concept="Xl_RD" id="3R" role="37wK5m">
-                                              <property role="Xl_RC" value="r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)" />
-                                            </node>
-                                            <node concept="Xl_RD" id="3S" role="37wK5m">
-                                              <property role="Xl_RC" value="6836281137582851719" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="3uibUv" id="3L" role="3clF45">
-                                    <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
-                                  </node>
-                                  <node concept="2AHcQZ" id="3M" role="2AJF6D">
-                                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                                  </node>
-                                </node>
-                                <node concept="3clFb_" id="3I" role="jymVt">
-                                  <property role="IEkAT" value="false" />
-                                  <property role="1EzhhJ" value="false" />
-                                  <property role="TrG5h" value="createScope" />
-                                  <property role="DiZV1" value="false" />
-                                  <node concept="37vLTG" id="3T" role="3clF46">
-                                    <property role="TrG5h" value="operationContext" />
-                                    <property role="3TUv4t" value="true" />
-                                    <node concept="3uibUv" id="3Z" role="1tU5fm">
-                                      <ref role="3uigEE" to="w1kc:~IOperationContext" resolve="IOperationContext" />
-                                    </node>
-                                  </node>
-                                  <node concept="37vLTG" id="3U" role="3clF46">
-                                    <property role="TrG5h" value="_context" />
-                                    <property role="3TUv4t" value="true" />
-                                    <node concept="3uibUv" id="40" role="1tU5fm">
-                                      <ref role="3uigEE" to="ze1i:~ReferenceConstraintsContext" resolve="ReferenceConstraintsContext" />
-                                    </node>
-                                  </node>
-                                  <node concept="3Tm1VV" id="3V" role="1B3o_S" />
-                                  <node concept="3uibUv" id="3W" role="3clF45">
-                                    <ref role="3uigEE" to="35tq:~Scope" resolve="Scope" />
-                                  </node>
-                                  <node concept="3clFbS" id="3X" role="3clF47">
-                                    <node concept="9aQIb" id="41" role="3cqZAp">
-                                      <node concept="3clFbS" id="42" role="9aQI4">
-                                        <node concept="3clFbJ" id="43" role="3cqZAp">
-                                          <node concept="3clFbS" id="45" role="3clFbx">
-                                            <node concept="3cpWs6" id="47" role="3cqZAp">
-                                              <node concept="10Nm6u" id="48" role="3cqZAk" />
-                                            </node>
-                                          </node>
-                                          <node concept="22lmx$" id="46" role="3clFbw">
-                                            <node concept="3clFbC" id="49" role="3uHU7w">
-                                              <node concept="10Nm6u" id="4b" role="3uHU7w" />
-                                              <node concept="2OqwBi" id="4c" role="3uHU7B">
-                                                <node concept="1PxgMI" id="4d" role="2Oq$k0">
-                                                  <node concept="1DoJHT" id="4f" role="1m5AlR">
-                                                    <property role="1Dpdpm" value="getContextNode" />
-                                                    <node concept="3uibUv" id="4h" role="1Ez5kq">
-                                                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                                    </node>
-                                                    <node concept="37vLTw" id="4i" role="1EMhIo">
-                                                      <ref role="3cqZAo" node="3U" resolve="_context" />
-                                                    </node>
-                                                  </node>
-                                                  <node concept="chp4Y" id="4g" role="3oSUPX">
-                                                    <ref role="cht4Q" to="nd9w:2lb0lXX1H4v" resolve="DistantConstantReference" />
-                                                  </node>
-                                                </node>
-                                                <node concept="3TrEf2" id="4e" role="2OqNvi">
-                                                  <ref role="3Tt5mk" to="nd9w:2lb0lXX1H8n" resolve="targetSetOfConstants" />
-                                                </node>
-                                              </node>
-                                            </node>
-                                            <node concept="22lmx$" id="4a" role="3uHU7B">
-                                              <node concept="3clFbC" id="4j" role="3uHU7B">
-                                                <node concept="1DoJHT" id="4l" role="3uHU7B">
-                                                  <property role="1Dpdpm" value="getContextNode" />
-                                                  <node concept="3uibUv" id="4n" role="1Ez5kq">
-                                                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                                  </node>
-                                                  <node concept="37vLTw" id="4o" role="1EMhIo">
-                                                    <ref role="3cqZAo" node="3U" resolve="_context" />
-                                                  </node>
-                                                </node>
-                                                <node concept="10Nm6u" id="4m" role="3uHU7w" />
-                                              </node>
-                                              <node concept="3fqX7Q" id="4k" role="3uHU7w">
-                                                <node concept="2OqwBi" id="4p" role="3fr31v">
-                                                  <node concept="1DoJHT" id="4q" role="2Oq$k0">
-                                                    <property role="1Dpdpm" value="getContextNode" />
-                                                    <node concept="3uibUv" id="4s" role="1Ez5kq">
-                                                      <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                                    </node>
-                                                    <node concept="37vLTw" id="4t" role="1EMhIo">
-                                                      <ref role="3cqZAo" node="3U" resolve="_context" />
-                                                    </node>
-                                                  </node>
-                                                  <node concept="1mIQ4w" id="4r" role="2OqNvi">
-                                                    <node concept="chp4Y" id="4u" role="cj9EA">
-                                                      <ref role="cht4Q" to="nd9w:2lb0lXX1H4v" resolve="DistantConstantReference" />
-                                                    </node>
-                                                  </node>
-                                                </node>
-                                              </node>
-                                            </node>
-                                          </node>
-                                        </node>
-                                        <node concept="3clFbF" id="44" role="3cqZAp">
-                                          <node concept="2YIFZM" id="4v" role="3clFbG">
-                                            <ref role="1Pybhc" to="o8zo:7ipADkTevLm" resolve="SimpleRoleScope" />
-                                            <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
-                                            <node concept="2OqwBi" id="4w" role="37wK5m">
-                                              <node concept="1PxgMI" id="4y" role="2Oq$k0">
-                                                <node concept="1DoJHT" id="4$" role="1m5AlR">
-                                                  <property role="1Dpdpm" value="getContextNode" />
-                                                  <node concept="3uibUv" id="4A" role="1Ez5kq">
-                                                    <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
-                                                  </node>
-                                                  <node concept="37vLTw" id="4B" role="1EMhIo">
-                                                    <ref role="3cqZAo" node="3U" resolve="_context" />
-                                                  </node>
-                                                </node>
-                                                <node concept="chp4Y" id="4_" role="3oSUPX">
-                                                  <ref role="cht4Q" to="nd9w:2lb0lXX1H4v" resolve="DistantConstantReference" />
-                                                </node>
-                                              </node>
-                                              <node concept="3TrEf2" id="4z" role="2OqNvi">
-                                                <ref role="3Tt5mk" to="nd9w:2lb0lXX1H8n" resolve="targetSetOfConstants" />
-                                              </node>
-                                            </node>
-                                            <node concept="359W_D" id="4x" role="37wK5m">
-                                              <ref role="359W_E" to="nd9w:1iYrdV1xxgn" resolve="Constants" />
-                                              <ref role="359W_F" to="nd9w:1iYrdV1xxgC" resolve="constants" />
-                                            </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                    </node>
-                                  </node>
-                                  <node concept="2AHcQZ" id="3Y" role="2AJF6D">
-                                    <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2AHcQZ" id="3B" role="2AJF6D">
-                        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="2Z" role="3cqZAp">
-          <node concept="37vLTw" id="4C" role="3clFbG">
-            <ref role="3cqZAo" node="30" resolve="references" />
-          </node>
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="2U" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-  </node>
-  <node concept="39dXUE" id="4D" />
+  <node concept="39dXUE" id="2y" />
 </model>
 

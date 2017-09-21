@@ -11,10 +11,7 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Constant;
   private ConceptPresentation props_ConstantReference;
-  private ConceptPresentation props_ConstantReferenceKeeper;
   private ConceptPresentation props_Constants;
-  private ConceptPresentation props_DistantConstantReference;
-  private ConceptPresentation props_GeneratedClassKeeper;
 
   @Override
   @Nullable
@@ -35,13 +32,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ConstantReference = cpb.create();
         }
         return props_ConstantReference;
-      case LanguageConceptSwitch.ConstantReferenceKeeper:
-        if (props_ConstantReferenceKeeper == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ConstantReferenceKeeper");
-          props_ConstantReferenceKeeper = cpb.create();
-        }
-        return props_ConstantReferenceKeeper;
       case LanguageConceptSwitch.Constants:
         if (props_Constants == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -49,20 +39,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Constants = cpb.create();
         }
         return props_Constants;
-      case LanguageConceptSwitch.DistantConstantReference:
-        if (props_DistantConstantReference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("distant");
-          props_DistantConstantReference = cpb.create();
-        }
-        return props_DistantConstantReference;
-      case LanguageConceptSwitch.GeneratedClassKeeper:
-        if (props_GeneratedClassKeeper == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d0f9f20L, 0x254b015f7d15de42L, "clazz", "", "");
-          props_GeneratedClassKeeper = cpb.create();
-        }
-        return props_GeneratedClassKeeper;
     }
     return null;
   }
