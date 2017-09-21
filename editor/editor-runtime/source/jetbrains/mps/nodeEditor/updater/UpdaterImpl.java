@@ -76,8 +76,6 @@ public class UpdaterImpl implements Updater {
   private boolean myInProgress;
   private boolean myProcessSelection;
 
-  private boolean didAddModelHintsToRoot = false;
-
   public UpdaterImpl(@NotNull EditorComponent editorComponent, CommandContextImpl commandContext) {
     myEditorComponent = editorComponent;
     commandContext.addListener(new CommandContextListenerImpl());
@@ -88,7 +86,6 @@ public class UpdaterImpl implements Updater {
   public void update() {
     assert !myDisposed;
     boolean wasInProgress = fireEditorUpdateStarted();
-    addModelHintsToRoot();
     doUpdate(null);
     myModelListenersController.clearCollectedEvents();
     fireEditorUpdated(wasInProgress);
@@ -226,15 +223,7 @@ public class UpdaterImpl implements Updater {
   @Override
   public void clearExplicitHints() {
     myEditorHintsForNodeMap.clear();
-    didAddModelHintsToRoot = false;
-  }
-
-  private void addModelHintsToRoot() {
-    if (!didAddModelHintsToRoot && myEditorComponent.getEditedNode() != null) {
-      ReflectiveHintsUtil.addModelHints(myEditorComponent.getEditedNode().getContainingRoot(),
-                                        myEditorComponent.getEditorContext());
-      didAddModelHintsToRoot = true;
-    }
+    addModelHintsToRoot();
   }
 
   private void fireCellSynchronized(EditorCell cell) {
@@ -334,6 +323,13 @@ public class UpdaterImpl implements Updater {
 
     Set<SNodeReference> refTargets = myRelatedRefTargets.get(cell);
     return refTargets != null && refTargets.contains(modification.o2);
+  }
+
+  public void addModelHintsToRoot() {
+    if (myEditorComponent.getEditedNode() != null) {
+      ReflectiveHintsUtil.addModelHints(myEditorComponent.getEditedNode().getContainingRoot(),
+                                        myEditorComponent.getEditorContext());
+    }
   }
 
   /**
