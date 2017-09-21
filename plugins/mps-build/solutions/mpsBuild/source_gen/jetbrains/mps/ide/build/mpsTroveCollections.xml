@@ -144,7 +144,6 @@
     <echoxml file="${build.tmp}/default/collections_trove.runtime.jar/META-INF/module.xml">
       <module namespace="collections_trove.runtime" type="solution" uuid="134ef213-c518-42b0-b12c-c109aa13d320">
         <dependencies>
-          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
           <module ref="134ef213-c518-42b0-b12c-c109aa13d320(collections_trove.runtime)" />
         </dependencies>
         <library jar="trove-2.1.0.jar" />

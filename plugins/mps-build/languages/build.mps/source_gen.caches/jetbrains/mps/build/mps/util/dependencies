@@ -103,6 +103,7 @@
     <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.extapi.module.SRepositoryBase" />
     <classNode dependClassName="jetbrains.mps.extapi.module.SRepositoryExt" />
+    <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

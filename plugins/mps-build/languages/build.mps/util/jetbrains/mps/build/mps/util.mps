@@ -41,6 +41,7 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="nvd4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.repository(MPS.OpenAPI/)" />
     <import index="32g5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.library(MPS.Core/)" />
+    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -19147,6 +19148,40 @@
         </node>
         <node concept="1DcWWT" id="1Unlav_5QJI" role="3cqZAp">
           <node concept="3clFbS" id="1Unlav_5QJL" role="2LFqv$">
+            <node concept="3SKdUt" id="6036BmxDzRb" role="3cqZAp">
+              <node concept="3SKdUq" id="6036BmxDzRd" role="3SKWNk">
+                <property role="3SKdUp" value="we are going to generate models only that are deemed to, therefore, we don't need to respect dependencies of other models," />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="6036BmxD$3Z" role="3cqZAp">
+              <node concept="3SKdUq" id="6036BmxD$41" role="3SKWNk">
+                <property role="3SKdUp" value="like accessory models that otherwise result in bootstrap dependency." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="6036BmxD$gR" role="3cqZAp">
+              <node concept="3SKdUq" id="6036BmxD$gT" role="3SKWNk">
+                <property role="3SKdUp" value="This check doesn't help to eliminate bootstrap issue completely (i.e. a language is often in use by its typesystem aspect to specify " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="6036BmxD$mc" role="3cqZAp">
+              <node concept="3SKdUq" id="6036BmxD$md" role="3SKWNk">
+                <property role="3SKdUp" value="quoted type instances), but relieves few common scenarions at least." />
+              </node>
+            </node>
+            <node concept="3clFbJ" id="6036BmxDnqj" role="3cqZAp">
+              <node concept="3clFbS" id="6036BmxDnql" role="3clFbx">
+                <node concept="3N13vt" id="6036BmxDzIe" role="3cqZAp" />
+              </node>
+              <node concept="3fqX7Q" id="6036BmxDz_n" role="3clFbw">
+                <node concept="2YIFZM" id="6036BmxDz_p" role="3fr31v">
+                  <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
+                  <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
+                  <node concept="37vLTw" id="6036BmxDz_q" role="37wK5m">
+                    <ref role="3cqZAo" node="1Unlav_5QJM" resolve="m" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="1Unlav_5SZR" role="3cqZAp">
               <node concept="3cpWsn" id="1Unlav_5SZS" role="3cpWs9">
                 <property role="TrG5h" value="imports" />

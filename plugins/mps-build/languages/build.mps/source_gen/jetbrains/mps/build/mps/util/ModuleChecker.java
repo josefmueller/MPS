@@ -47,6 +47,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -855,6 +856,13 @@ public final class ModuleChecker {
       }
     });
     for (SModel m : myLoadedModule.getModels()) {
+      // we are going to generate models only that are deemed to, therefore, we don't need to respect dependencies of other models, 
+      // like accessory models that otherwise result in bootstrap dependency. 
+      // This check doesn't help to eliminate bootstrap issue completely (i.e. a language is often in use by its typesystem aspect to specify  
+      // quoted type instances), but relieves few common scenarions at least. 
+      if (!(GenerationFacade.canGenerate(m))) {
+        continue;
+      }
       ModelImports imports = new ModelImports(m);
       usedLanguage.addAll(imports.getUsedLanguages());
       usedDevkits.addAll(imports.getUsedDevKits());
