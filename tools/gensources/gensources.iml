@@ -813,10 +813,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/workflowDefinition/solutions/jetbrains.mps.samples.workflowDefinition.build/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/source_gen" isTestSource="false" />
@@ -974,10 +970,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/languages/theSimplestLanguage/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/generator/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/sandbox/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../samples/workflowDefinition/solutions/jetbrains.mps.samples.workflowDefinition.build/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/classes_gen" />
