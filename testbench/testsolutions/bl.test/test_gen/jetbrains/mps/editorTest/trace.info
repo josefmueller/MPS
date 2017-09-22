@@ -1125,21 +1125,21 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1283790316087559015">
-    <file name="DefaultEditor_ShowReflectiveThenRegularEditor2_Test.java">
-      <node id="1283790316087559015" at="18,86,19,102" concept="2" />
-      <node id="1283790316087559015" at="19,102,20,122" concept="2" />
+    <file name="DefaultEditor_ShowReflectiveThenRegularEditorForSubtree_Test.java">
+      <node id="1283790316087559015" at="18,95,19,102" concept="2" />
+      <node id="1283790316087559015" at="19,102,20,131" concept="2" />
       <node id="1283790316087559015" at="26,51,27,72" concept="2" />
       <node id="1283790316087559079" at="27,72,28,96" concept="2" />
       <node id="1283790316087559081" at="28,96,29,270" concept="2" />
       <node id="1283790316087559097" at="29,270,30,93" concept="2" />
       <node id="6890723800059979377" at="33,95,34,116" concept="2" />
       <node id="6890723800059979375" at="32,27,35,11" concept="5" />
-      <node id="1283790316087559015" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ShowReflectiveThenRegularEditor2#()V" />
+      <node id="1283790316087559015" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ShowReflectiveThenRegularEditorForSubtree#()V" />
       <node id="6890723800058791314" at="32,0,37,0" concept="6" trace="run#()V" />
       <node id="6890723800058791313" at="30,93,37,9" concept="2" />
       <node id="1283790316087559015" at="25,0,39,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="6890723800059979376" at="33,95,34,116" />
-      <scope id="1283790316087559015" at="18,86,20,122" />
+      <scope id="1283790316087559015" at="18,95,20,131" />
       <scope id="6890723800058791315" at="32,27,35,11" />
       <scope id="6890723800059979375" at="32,27,35,11">
         <var name="node" id="6890723800059979386" />
@@ -1148,9 +1148,9 @@
       <scope id="6890723800058791314" at="32,0,37,0" />
       <scope id="1283790316087559015" at="26,51,37,9" />
       <scope id="1283790316087559015" at="25,0,39,0" />
-      <unit id="6890723800058791314" at="31,47,37,7" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor2_Test$TestBody$1" />
-      <unit id="1283790316087559015" at="23,0,40,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor2_Test$TestBody" />
-      <unit id="1283790316087559015" at="15,0,41,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor2_Test" />
+      <unit id="6890723800058791314" at="31,47,37,7" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditorForSubtree_Test$TestBody$1" />
+      <unit id="1283790316087559015" at="23,0,40,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditorForSubtree_Test$TestBody" />
+      <unit id="1283790316087559015" at="15,0,41,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditorForSubtree_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1413941122942910870">
@@ -2675,21 +2675,21 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2746054822154165513">
-    <file name="DefaultEditor_ShowReflectiveThenRegularEditor_Test.java">
-      <node id="2746054822154165513" at="18,85,19,102" concept="2" />
-      <node id="2746054822154165513" at="19,102,20,121" concept="2" />
+    <file name="DefaultEditor_ShowReflectiveThenRegularEditorForNode_Test.java">
+      <node id="2746054822154165513" at="18,92,19,102" concept="2" />
+      <node id="2746054822154165513" at="19,102,20,128" concept="2" />
       <node id="2746054822154165513" at="26,51,27,72" concept="2" />
       <node id="2746054822154165539" at="27,72,28,83" concept="2" />
       <node id="2746054822154422597" at="28,83,29,277" concept="2" />
       <node id="2746054822154435067" at="29,277,30,80" concept="2" />
       <node id="6890723800059977557" at="33,95,34,116" concept="2" />
       <node id="1283790316088178334" at="32,27,35,11" concept="5" />
-      <node id="2746054822154165513" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ShowReflectiveThenRegularEditor#()V" />
+      <node id="2746054822154165513" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ShowReflectiveThenRegularEditorForNode#()V" />
       <node id="1283790316088176789" at="32,0,37,0" concept="6" trace="run#()V" />
       <node id="1283790316088176787" at="30,80,37,9" concept="2" />
       <node id="2746054822154165513" at="25,0,39,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="1283790316088178335" at="33,95,34,116" />
-      <scope id="2746054822154165513" at="18,85,20,121" />
+      <scope id="2746054822154165513" at="18,92,20,128" />
       <scope id="1283790316088176791" at="32,27,35,11" />
       <scope id="1283790316088178334" at="32,27,35,11">
         <var name="node" id="1283790316088178364" />
@@ -2698,9 +2698,9 @@
       <scope id="1283790316088176789" at="32,0,37,0" />
       <scope id="2746054822154165513" at="26,51,37,9" />
       <scope id="2746054822154165513" at="25,0,39,0" />
-      <unit id="1283790316088176789" at="31,47,37,7" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test$TestBody$1" />
-      <unit id="2746054822154165513" at="23,0,40,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test$TestBody" />
-      <unit id="2746054822154165513" at="15,0,41,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test" />
+      <unit id="1283790316088176789" at="31,47,37,7" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditorForNode_Test$TestBody$1" />
+      <unit id="2746054822154165513" at="23,0,40,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditorForNode_Test$TestBody" />
+      <unit id="2746054822154165513" at="15,0,41,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditorForNode_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2834737865486664156">
@@ -5774,6 +5774,43 @@
       <scope id="3900306178895356122" at="20,0,25,0" />
       <unit id="3900306178895356122" at="18,0,26,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForInterfaceChild_Test$TestBody" />
       <unit id="3900306178895356122" at="10,0,27,0" name="jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveEditorForInterfaceChild_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3904983436469710697">
+    <file name="DefaultEditor_ReflectiveHintsManager_Nested_Test.java">
+      <node id="3904983436469710697" at="18,83,19,102" concept="2" />
+      <node id="3904983436469710697" at="19,102,20,119" concept="2" />
+      <node id="3904983436469710697" at="26,51,27,72" concept="2" />
+      <node id="3904983436470871857" at="29,27,30,92" concept="7" />
+      <node id="3904983436471370328" at="30,92,31,316" concept="2" />
+      <node id="3904983436471383293" at="31,316,32,313" concept="2" />
+      <node id="3904983436471387213" at="32,313,33,316" concept="2" />
+      <node id="3904983436471389871" at="33,316,34,310" concept="2" />
+      <node id="3904983436471413051" at="34,310,35,340" concept="2" />
+      <node id="3904983436474329482" at="35,340,36,0" concept="8" />
+      <node id="8763684698999327271" at="36,0,37,313" concept="2" />
+      <node id="8763684698999334752" at="37,313,38,341" concept="2" />
+      <node id="8763684698999532374" at="38,341,39,0" concept="8" />
+      <node id="8763684698999545892" at="39,0,40,333" concept="2" />
+      <node id="8763684698999543849" at="40,333,41,335" concept="2" />
+      <node id="8763684698999547863" at="41,335,42,0" concept="8" />
+      <node id="8763684698999548531" at="42,0,43,313" concept="2" />
+      <node id="8763684698999556934" at="43,313,44,336" concept="2" />
+      <node id="3904983436469710697" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ReflectiveHintsManager_Nested#()V" />
+      <node id="3904983436472053565" at="29,0,46,0" concept="6" trace="run#()V" />
+      <node id="3904983436472053563" at="27,72,46,9" concept="2" />
+      <node id="3904983436469710697" at="25,0,48,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3904983436469710697" at="18,83,20,119" />
+      <scope id="3904983436469710697" at="17,0,22,0" />
+      <scope id="3904983436472053567" at="29,27,44,336">
+        <var name="manager" id="3904983436470871858" />
+      </scope>
+      <scope id="3904983436472053565" at="29,0,46,0" />
+      <scope id="3904983436469710697" at="26,51,46,9" />
+      <scope id="3904983436469710697" at="25,0,48,0" />
+      <unit id="3904983436472053565" at="28,47,46,7" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Nested_Test$TestBody$1" />
+      <unit id="3904983436469710697" at="23,0,49,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Nested_Test$TestBody" />
+      <unit id="3904983436469710697" at="15,0,50,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Nested_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3912044994180733921">
@@ -14574,6 +14611,42 @@
       <scope id="8763293761094485347" at="20,0,25,0" />
       <unit id="8763293761094485347" at="18,0,26,0" name="jetbrains.mps.editorTest.LT_MulExpressionRArgument_with_Plus_Test$TestBody" />
       <unit id="8763293761094485347" at="10,0,27,0" name="jetbrains.mps.editorTest.LT_MulExpressionRArgument_with_Plus_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8763684699000103877">
+    <file name="DefaultEditor_ReflectiveHintsManager_Subtrees_Test.java">
+      <node id="8763684699000103877" at="18,85,19,102" concept="2" />
+      <node id="8763684699000103877" at="19,102,20,121" concept="2" />
+      <node id="8763684699000103877" at="26,51,27,72" concept="2" />
+      <node id="8763684699000103914" at="29,27,30,92" concept="7" />
+      <node id="8763684699000124679" at="30,92,31,321" concept="2" />
+      <node id="8763684699000134449" at="31,321,32,324" concept="2" />
+      <node id="8763684699000139276" at="32,324,33,0" concept="8" />
+      <node id="8763684699000140466" at="33,0,34,338" concept="2" />
+      <node id="8763684699000103920" at="34,338,35,316" concept="2" />
+      <node id="8763684699000149777" at="35,316,36,340" concept="2" />
+      <node id="8763684699000139489" at="36,340,37,0" concept="8" />
+      <node id="8763684699000112515" at="37,0,38,335" concept="2" />
+      <node id="8763684699000118536" at="38,335,39,313" concept="2" />
+      <node id="8763684699000147447" at="39,313,40,0" concept="8" />
+      <node id="8763684699000148482" at="40,0,41,336" concept="2" />
+      <node id="8763684699000164863" at="41,336,42,344" concept="2" />
+      <node id="8763684699000172741" at="42,344,43,341" concept="2" />
+      <node id="8763684699000103877" at="17,0,22,0" concept="6" trace="test_DefaultEditor_ReflectiveHintsManager_Subtrees#()V" />
+      <node id="8763684699000103912" at="29,0,45,0" concept="6" trace="run#()V" />
+      <node id="8763684699000103911" at="27,72,45,9" concept="2" />
+      <node id="8763684699000103877" at="25,0,47,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="8763684699000103877" at="18,85,20,121" />
+      <scope id="8763684699000103877" at="17,0,22,0" />
+      <scope id="8763684699000103913" at="29,27,43,341">
+        <var name="manager" id="8763684699000103915" />
+      </scope>
+      <scope id="8763684699000103912" at="29,0,45,0" />
+      <scope id="8763684699000103877" at="26,51,45,9" />
+      <scope id="8763684699000103877" at="25,0,47,0" />
+      <unit id="8763684699000103912" at="28,47,45,7" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Subtrees_Test$TestBody$1" />
+      <unit id="8763684699000103877" at="23,0,48,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Subtrees_Test$TestBody" />
+      <unit id="8763684699000103877" at="15,0,49,0" name="jetbrains.mps.editorTest.DefaultEditor_ReflectiveHintsManager_Subtrees_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8777381699079285184">

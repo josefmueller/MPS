@@ -13,21 +13,21 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 @MPSLaunch
-public class DefaultEditor_ShowReflectiveThenRegularEditor_Test extends BaseTransformationTest {
+public class DefaultEditor_ShowReflectiveThenRegularEditorForSubtree_Test extends BaseTransformationTest {
   @Test
-  public void test_DefaultEditor_ShowReflectiveThenRegularEditor() throws Throwable {
+  public void test_DefaultEditor_ShowReflectiveThenRegularEditorForSubtree() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditor_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.DefaultEditor_ShowReflectiveThenRegularEditorForSubtree_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("2746054822154165514", "2746054822154165524");
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditor_Action");
-      Assert.assertTrue(Sequence.fromIterable(Sequence.fromArray(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(getEditorComponent().getSelectedNode().getReference()))).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode"));
-      invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditor_Action");
+      initEditorComponent("1283790316087559016", "1283790316087559047");
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowReflectiveEditorsForSelection_Action");
+      Assert.assertTrue(Sequence.fromIterable(Sequence.fromArray(getEditorComponent().getUpdater().getExplicitEditorHintsForNode(getEditorComponent().getSelectedNode().getReference()))).contains("jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor"));
+      invokeAction("jetbrains.mps.ide.editor.actions.ShowRegularEditorsForSelection_Action");
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           for (SNode node : SNodeUtil.getDescendants(getEditorComponent().getSelectedNode())) {

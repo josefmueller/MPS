@@ -25,6 +25,11 @@ import java.util.List;
 
 public class ReflectiveHintsManager {
 
+  public static final boolean REFLECTIVE = true;
+  public static final boolean REGULAR = false;
+  public static final boolean FOR_SINGLE_NODE = false;
+  public static final boolean FOR_MANY_NODES = true;
+
   static final String BASE_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditor";
   static final String BASE_NO_REFLECTIVE_EDITOR_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.noReflectiveEditor";
   static final String BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT = "jetbrains.mps.lang.core.editor.BaseEditorContextHints.reflectiveEditorForNode";

@@ -11936,10 +11936,14 @@
                 <ref role="2WH_rO" node="5SnwAr0vD32" resolve="editorComponent" />
               </node>
             </node>
-            <node concept="3clFbT" id="3Pwcj9nL3T4" role="37wK5m">
-              <property role="3clFbU" value="true" />
+            <node concept="10M0yZ" id="7AuRcOZocEU" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
-            <node concept="3clFbT" id="3Pwcj9nL4dH" role="37wK5m" />
+            <node concept="10M0yZ" id="7AuRcOZogJm" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.FOR_SINGLE_NODE" resolve="FOR_SINGLE_NODE" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            </node>
           </node>
         </node>
       </node>
@@ -11967,11 +11971,13 @@
                 <ref role="2WH_rO" node="5SnwAr0vD32" resolve="editorComponent" />
               </node>
             </node>
-            <node concept="3clFbT" id="3Pwcj9nKVrP" role="37wK5m">
-              <property role="3clFbU" value="true" />
+            <node concept="10M0yZ" id="7AuRcOZoc1$" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
-            <node concept="3clFbT" id="3Pwcj9nKVrQ" role="37wK5m">
-              <property role="3clFbU" value="false" />
+            <node concept="10M0yZ" id="7AuRcOZogg5" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.FOR_SINGLE_NODE" resolve="FOR_SINGLE_NODE" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
           </node>
         </node>
@@ -12118,9 +12124,13 @@
                 <ref role="2WH_rO" node="1XfowaweGRg" resolve="editorComponent" />
               </node>
             </node>
-            <node concept="3clFbT" id="3Pwcj9nLeue" role="37wK5m" />
-            <node concept="3clFbT" id="3Pwcj9nLeug" role="37wK5m">
-              <property role="3clFbU" value="false" />
+            <node concept="10M0yZ" id="7AuRcOZok2m" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            </node>
+            <node concept="10M0yZ" id="7AuRcOZol6a" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.FOR_SINGLE_NODE" resolve="FOR_SINGLE_NODE" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
           </node>
         </node>
@@ -12149,9 +12159,13 @@
                 <ref role="2WH_rO" node="1XfowaweGRg" resolve="editorComponent" />
               </node>
             </node>
-            <node concept="3clFbT" id="3Pwcj9nLdqn" role="37wK5m" />
-            <node concept="3clFbT" id="3Pwcj9nLdqp" role="37wK5m">
-              <property role="3clFbU" value="false" />
+            <node concept="10M0yZ" id="7AuRcOZoj$z" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            </node>
+            <node concept="10M0yZ" id="7AuRcOZoktV" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.FOR_SINGLE_NODE" resolve="FOR_SINGLE_NODE" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
           </node>
         </node>
@@ -12900,11 +12914,13 @@
                 <ref role="2WH_rO" node="6KvCG2PRuPS" resolve="editorComponent" />
               </node>
             </node>
-            <node concept="3clFbT" id="3Pwcj9nL7Wq" role="37wK5m">
-              <property role="3clFbU" value="true" />
+            <node concept="10M0yZ" id="7AuRcOZohRK" role="37wK5m">
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
             </node>
-            <node concept="3clFbT" id="3Pwcj9nL7Ws" role="37wK5m">
-              <property role="3clFbU" value="true" />
+            <node concept="10M0yZ" id="7AuRcOZoiE0" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.FOR_MANY_NODES" resolve="FOR_MANY_NODES" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
           </node>
         </node>
@@ -12929,11 +12945,13 @@
                 <ref role="2WH_rO" node="6KvCG2PRuPS" resolve="editorComponent" />
               </node>
             </node>
-            <node concept="3clFbT" id="3Pwcj9nKWha" role="37wK5m">
-              <property role="3clFbU" value="true" />
+            <node concept="10M0yZ" id="7AuRcOZohul" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REFLECTIVE" resolve="REFLECTIVE" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
-            <node concept="3clFbT" id="3Pwcj9nKWhc" role="37wK5m">
-              <property role="3clFbU" value="true" />
+            <node concept="10M0yZ" id="7AuRcOZoiaz" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.FOR_MANY_NODES" resolve="FOR_MANY_NODES" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
           </node>
         </node>
@@ -12974,9 +12992,13 @@
                 <ref role="2WH_rO" node="1ptS745ppL" resolve="editorComponent" />
               </node>
             </node>
-            <node concept="3clFbT" id="3Pwcj9nLh$g" role="37wK5m" />
-            <node concept="3clFbT" id="3Pwcj9nLh$i" role="37wK5m">
-              <property role="3clFbU" value="true" />
+            <node concept="10M0yZ" id="7AuRcOZolSj" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            </node>
+            <node concept="10M0yZ" id="7AuRcOZomKt" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.FOR_MANY_NODES" resolve="FOR_MANY_NODES" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
           </node>
         </node>
@@ -13001,9 +13023,13 @@
                 <ref role="2WH_rO" node="1ptS745ppL" resolve="editorComponent" />
               </node>
             </node>
-            <node concept="3clFbT" id="3Pwcj9nLft2" role="37wK5m" />
-            <node concept="3clFbT" id="3Pwcj9nLft4" role="37wK5m">
-              <property role="3clFbU" value="true" />
+            <node concept="10M0yZ" id="7AuRcOZoluS" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.REGULAR" resolve="REGULAR" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
+            </node>
+            <node concept="10M0yZ" id="7AuRcOZomh0" role="37wK5m">
+              <ref role="3cqZAo" to="vq9d:~ReflectiveHintsManager.FOR_MANY_NODES" resolve="FOR_MANY_NODES" />
+              <ref role="1PxDUh" to="vq9d:~ReflectiveHintsManager" resolve="ReflectiveHintsManager" />
             </node>
           </node>
         </node>
