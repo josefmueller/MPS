@@ -44,7 +44,10 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.addEditorCell(createConstant_4ldurz_a0());
     editorCell.addEditorCell(createProperty_4ldurz_b0());
     editorCell.addEditorCell(createConstant_4ldurz_c0());
-    editorCell.addEditorCell(createComponent_4ldurz_d0());
+    editorCell.addEditorCell(createConstant_4ldurz_d0());
+    editorCell.addEditorCell(createComponent_4ldurz_e0());
+    editorCell.addEditorCell(createConstant_4ldurz_f0());
+    editorCell.addEditorCell(createComponent_4ldurz_g0());
     return editorCell;
   }
   private EditorCell createConstant_4ldurz_a0() {
@@ -80,8 +83,36 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createComponent_4ldurz_d0() {
-    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.samples.StateChart.editor.StateChartContents");
+  private EditorCell createConstant_4ldurz_d0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Triggers:");
+    editorCell.setCellId("Constant_4ldurz_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createComponent_4ldurz_e0() {
+    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.samples.StateChart.editor.StateTriggers");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+  private EditorCell createConstant_4ldurz_f0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "States:");
+    editorCell.setCellId("Constant_4ldurz_f0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createComponent_4ldurz_g0() {
+    EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.samples.StateChart.editor.StateStates");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

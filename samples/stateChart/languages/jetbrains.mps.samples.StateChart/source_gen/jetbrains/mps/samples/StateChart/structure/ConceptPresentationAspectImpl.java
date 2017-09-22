@@ -17,6 +17,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Raise;
   private ConceptPresentation props_State;
   private ConceptPresentation props_StateChart;
+  private ConceptPresentation props_Stateful;
   private ConceptPresentation props_Transition;
 
   @Override
@@ -79,6 +80,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_StateChart = cpb.create();
         }
         return props_StateChart;
+      case LanguageConceptSwitch.Stateful:
+        if (props_Stateful == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Stateful = cpb.create();
+        }
+        return props_Stateful;
       case LanguageConceptSwitch.Transition:
         if (props_Transition == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

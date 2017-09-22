@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
-  private final BHDescriptor myStateChart__BehaviorDescriptor = new StateChart__BehaviorDescriptor();
+  private final BHDescriptor myStateful__BehaviorDescriptor = new Stateful__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -22,10 +22,10 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     SAbstractConcept cncpt_a0e = concept;
     switch (index_846f5o_a0e.index(cncpt_a0e)) {
       case 0:
-        return myStateChart__BehaviorDescriptor;
+        return myStateful__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e46aL)).seal();
+  private static final ConceptSwitchIndex index_846f5o_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x2dff568bfe7dd8b5L)).seal();
 }

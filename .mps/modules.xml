@@ -418,9 +418,6 @@
       <modulePath path="$PROJECT_DIR$/samples/stateChart/languages/jetbrains.mps.samples.StateChart/sandbox/jetbrains.mps.samples.StateChart.sandbox.msd" folder="samples.stateChart" />
       <modulePath path="$PROJECT_DIR$/samples/theSimplestLanguage/languages/theSimplestLanguage/jetbrains.mps.samples.theSimplestLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/jetbrains.mps.samples.theSimplestLanguage.sandbox.msd" folder="samples" />
-      <modulePath path="$PROJECT_DIR$/samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/jetbrains.mps.samples.workflowDefinition.mpl" folder="samples.workflowDefinition" />
-      <modulePath path="$PROJECT_DIR$/samples/workflowDefinition/languages/jetbrains.mps.samples.workflowDefinition/sandbox/jetbrains.mps.samples.workflowDefinition.sandbox.msd" folder="samples.workflowDefinition" />
-      <modulePath path="$PROJECT_DIR$/samples/workflowDefinition/solutions/jetbrains.mps.samples.workflowDefinition.build/jetbrains.mps.samples.workflowDefinition.build.msd" folder="samples.workflowDefinition" />
       <modulePath path="$PROJECT_DIR$/samples/xmlLiterals/languages/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/jetbrains.mps.samples.xmlLiterals.sandbox.msd" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/xmlPersistence/languages/jetbrains.mps.samples.xmlPersistence.build/jetbrains.mps.samples.xmlPersistence.build.msd" folder="samples.persistence" />

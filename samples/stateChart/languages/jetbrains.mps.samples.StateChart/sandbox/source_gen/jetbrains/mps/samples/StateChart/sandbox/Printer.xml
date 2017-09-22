@@ -2,8 +2,7 @@
   
   <final id="Off">
     <transition event="Turn On" target="On">
-      <log expr="foo"></log>
-      <raise event="Turn Off"></raise>
+      <log expr="Starting"></log>
     </transition>
   </final>
   <state id="On" initial="Ready">

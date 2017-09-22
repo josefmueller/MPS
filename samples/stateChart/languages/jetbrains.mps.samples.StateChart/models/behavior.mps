@@ -74,6 +74,7 @@
         <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
+        <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -85,6 +86,10 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
+        <child id="1206060619838" name="condition" index="3eO9$A" />
+        <child id="1206060644605" name="statementList" index="3eOfB_" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -148,7 +153,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="5Uf3geaKATg">
-    <ref role="13h7C2" to="oyog:1id1$wMpehE" resolve="StateChart" />
+    <ref role="13h7C2" to="oyog:2RZlCJYvtyP" resolve="Stateful" />
     <node concept="13hLZK" id="5Uf3geaKATh" role="13h7CW">
       <node concept="3clFbS" id="5Uf3geaKATi" role="2VODD2" />
     </node>
@@ -239,8 +244,95 @@
                 <ref role="3cqZAo" node="5Uf3geaKATD" resolve="kind" />
               </node>
               <node concept="3O6GUB" id="5Uf3geaKBNg" role="2OqNvi">
-                <node concept="chp4Y" id="5Uf3geaKBPF" role="3QVz_e">
+                <node concept="chp4Y" id="2RZlCJYy9S$" role="3QVz_e">
                   <ref role="cht4Q" to="oyog:1id1$wMpeiA" resolve="State" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3eNFk2" id="2RZlCJYyeqq" role="3eNLev">
+            <node concept="3clFbS" id="2RZlCJYyeqs" role="3eOfB_">
+              <node concept="3cpWs8" id="2RZlCJYyeQ$" role="3cqZAp">
+                <node concept="3cpWsn" id="2RZlCJYyeQ_" role="3cpWs9">
+                  <property role="TrG5h" value="myEvents" />
+                  <node concept="3uibUv" id="2RZlCJYyeQA" role="1tU5fm">
+                    <ref role="3uigEE" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
+                  </node>
+                  <node concept="2ShNRf" id="2RZlCJYyeQB" role="33vP2m">
+                    <node concept="YeOm9" id="2RZlCJYyeQC" role="2ShVmc">
+                      <node concept="1Y3b0j" id="2RZlCJYyeQD" role="YeSDq">
+                        <property role="2bfB8j" value="true" />
+                        <ref role="1Y3XeK" to="o8zo:4IP40Bi3e_R" resolve="ListScope" />
+                        <ref role="37wK5l" to="o8zo:4IP40Bi3e_T" resolve="ListScope" />
+                        <node concept="3Tm1VV" id="2RZlCJYyeQE" role="1B3o_S" />
+                        <node concept="3clFb_" id="2RZlCJYyeQF" role="jymVt">
+                          <property role="1EzhhJ" value="false" />
+                          <property role="TrG5h" value="getName" />
+                          <node concept="17QB3L" id="2RZlCJYyeQG" role="3clF45" />
+                          <node concept="3Tm1VV" id="2RZlCJYyeQH" role="1B3o_S" />
+                          <node concept="37vLTG" id="2RZlCJYyeQI" role="3clF46">
+                            <property role="TrG5h" value="child" />
+                            <node concept="3Tqbb2" id="2RZlCJYyeQJ" role="1tU5fm" />
+                          </node>
+                          <node concept="3clFbS" id="2RZlCJYyeQK" role="3clF47">
+                            <node concept="3clFbF" id="2RZlCJYyeQL" role="3cqZAp">
+                              <node concept="2OqwBi" id="2RZlCJYyeQM" role="3clFbG">
+                                <node concept="1PxgMI" id="2RZlCJYyeQN" role="2Oq$k0">
+                                  <node concept="chp4Y" id="2RZlCJYylad" role="3oSUPX">
+                                    <ref role="cht4Q" to="oyog:1id1$wMpeiz" resolve="Event" />
+                                  </node>
+                                  <node concept="37vLTw" id="2RZlCJYyeQP" role="1m5AlR">
+                                    <ref role="3cqZAo" node="2RZlCJYyeQI" resolve="child" />
+                                  </node>
+                                </node>
+                                <node concept="3TrcHB" id="2RZlCJYyeQQ" role="2OqNvi">
+                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="2RZlCJYyeQR" role="37wK5m">
+                          <node concept="13iPFW" id="2RZlCJYyeQS" role="2Oq$k0" />
+                          <node concept="3Tsc0h" id="2RZlCJYyfhM" role="2OqNvi">
+                            <ref role="3TtcxE" to="oyog:1id1$wMpeiL" resolve="availableTriggers" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3cpWs6" id="2RZlCJYyeQU" role="3cqZAp">
+                <node concept="2ShNRf" id="2RZlCJYyeQV" role="3cqZAk">
+                  <node concept="1pGfFk" id="2RZlCJYyeQW" role="2ShVmc">
+                    <ref role="37wK5l" to="6xgk:6Kqn2fZxA8P" resolve="HidingByNameScope" />
+                    <node concept="35c_gC" id="2RZlCJYyeQX" role="37wK5m">
+                      <ref role="35c_gD" to="oyog:1id1$wMpeiz" resolve="Event" />
+                    </node>
+                    <node concept="35c_gC" id="2RZlCJYyeQY" role="37wK5m">
+                      <ref role="35c_gD" to="oyog:1id1$wMpeiz" resolve="Event" />
+                    </node>
+                    <node concept="37vLTw" id="2RZlCJYyeQZ" role="37wK5m">
+                      <ref role="3cqZAo" node="2RZlCJYyeQ_" resolve="myEvents" />
+                    </node>
+                    <node concept="iy90A" id="2RZlCJYyeR0" role="37wK5m" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1Wc70l" id="2RZlCJYyeIp" role="3eO9$A">
+              <node concept="iy1fb" id="2RZlCJYyeIq" role="3uHU7w">
+                <ref role="iy1sa" to="oyog:1id1$wMpeiN" resolve="states" />
+              </node>
+              <node concept="2OqwBi" id="2RZlCJYyeIr" role="3uHU7B">
+                <node concept="37vLTw" id="2RZlCJYyeIs" role="2Oq$k0">
+                  <ref role="3cqZAo" node="5Uf3geaKATD" resolve="kind" />
+                </node>
+                <node concept="3O6GUB" id="2RZlCJYyeIt" role="2OqNvi">
+                  <node concept="chp4Y" id="2RZlCJYyeM_" role="3QVz_e">
+                    <ref role="cht4Q" to="oyog:1id1$wMpeiz" resolve="Event" />
+                  </node>
                 </node>
               </node>
             </node>

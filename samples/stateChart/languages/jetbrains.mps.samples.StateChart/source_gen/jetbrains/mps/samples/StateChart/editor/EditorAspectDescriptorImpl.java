@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
+import java.util.Arrays;
 import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
@@ -47,8 +48,22 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     switch (index_xbvbvu_a0c.index(cncpt_a0c)) {
       case 0:
         if (true) {
-          if ("jetbrains.mps.samples.StateChart.editor.StateChartContents".equals(editorComponentId)) {
-            return Collections.<ConceptEditorComponent>singletonList(new StateChartContents());
+          if ("jetbrains.mps.samples.StateChart.editor.StateTransitions".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new StateTransitions());
+          }
+        }
+        break;
+      case 1:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0b1a2, editorComponentId)) {
+            case 0:
+              return Collections.<ConceptEditorComponent>singletonList(new StateChartContents());
+            case 1:
+              return Collections.<ConceptEditorComponent>singletonList(new StateStates());
+            case 2:
+              return Collections.<ConceptEditorComponent>singletonList(new StateTriggers());
+            default:
+              return Collections.<ConceptEditorComponent>emptyList();
           }
         }
         break;
@@ -81,7 +96,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
   }
 
   private static final ConceptSwitchIndex index_xbvbvu_a0a = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26aecL), MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a3L), MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26a92L), MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26ac1L), MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26a70L), MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a6L), MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e46aL), MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a9L)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e46aL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0c = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a6L), MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x2dff568bfe7dd8b5L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0e = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x148d06483264e4a9L)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L, 0x5e8f0d038ab26aecL)).seal();
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a2 = new String[]{"jetbrains.mps.samples.StateChart.editor.StateChartContents", "jetbrains.mps.samples.StateChart.editor.StateStates", "jetbrains.mps.samples.StateChart.editor.StateTriggers"};
 }

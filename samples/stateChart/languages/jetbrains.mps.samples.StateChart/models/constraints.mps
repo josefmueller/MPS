@@ -241,8 +241,8 @@
                   <node concept="2rP1CM" id="5Uf3geaLbki" role="2Oq$k0" />
                   <node concept="z$bX8" id="5Uf3geaLbkj" role="2OqNvi">
                     <node concept="1xMEDy" id="5Uf3geaLbkk" role="1xVPHs">
-                      <node concept="chp4Y" id="5Uf3geaLgLa" role="ri$Ld">
-                        <ref role="cht4Q" to="oyog:1id1$wMpehE" resolve="StateChart" />
+                      <node concept="chp4Y" id="2RZlCJYyaQx" role="ri$Ld">
+                        <ref role="cht4Q" to="oyog:2RZlCJYvtyP" resolve="Stateful" />
                       </node>
                     </node>
                     <node concept="1xIGOp" id="5Uf3geaLbkm" role="1xVPHs" />
@@ -257,7 +257,7 @@
                             <ref role="3cqZAo" node="5Uf3geaLbku" resolve="it" />
                           </node>
                           <node concept="3Tsc0h" id="5Uf3geaLbkt" role="2OqNvi">
-                            <ref role="3TtcxE" to="oyog:1id1$wMpeiL" resolve="triggers" />
+                            <ref role="3TtcxE" to="oyog:1id1$wMpeiL" resolve="availableTriggers" />
                           </node>
                         </node>
                       </node>
@@ -320,6 +320,16 @@
       <ref role="1N5Vy1" to="oyog:1id1$wMpeiG" resolve="target" />
       <node concept="1dDu$B" id="5Uf3geaKADM" role="1N6uqs">
         <ref role="1dDu$A" to="oyog:1id1$wMpeiA" resolve="State" />
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="2RZlCJYyemS">
+    <property role="3GE5qa" value="operations" />
+    <ref role="1M2myG" to="oyog:5Uf3geaGADK" resolve="Raise" />
+    <node concept="1N5Pfh" id="2RZlCJYyemT" role="1Mr941">
+      <ref role="1N5Vy1" to="oyog:5Uf3geaGADL" resolve="event" />
+      <node concept="1dDu$B" id="2RZlCJYyemV" role="1N6uqs">
+        <ref role="1dDu$A" to="oyog:1id1$wMpeiz" resolve="Event" />
       </node>
     </node>
   </node>

@@ -4,14 +4,14 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
-    <classNode dependClassName="jetbrains.mps.samples.StateChart.behavior.StateChart__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.samples.StateChart.behavior.Stateful__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.samples.StateChart.behavior.StateChart__BehaviorDescriptor" file="StateChart__BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.samples.StateChart.behavior.Stateful__BehaviorDescriptor" file="Stateful__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

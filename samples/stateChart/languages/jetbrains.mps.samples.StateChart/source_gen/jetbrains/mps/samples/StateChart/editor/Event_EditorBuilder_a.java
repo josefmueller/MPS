@@ -7,9 +7,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -30,31 +27,18 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
 
   /*package*/ EditorCell createCell() {
-    return createCollection_ymj9mh_a();
+    return createProperty_ymj9mh_a();
   }
 
-  private EditorCell createCollection_ymj9mh_a() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
-    editorCell.setCellId("Collection_ymj9mh_a");
-    editorCell.setBig(true);
-    editorCell.setCellContext(getCellFactory().getCellContext());
-    editorCell.addEditorCell(createConstant_ymj9mh_a0());
-    editorCell.addEditorCell(createProperty_ymj9mh_b0());
-    return editorCell;
-  }
-  private EditorCell createConstant_ymj9mh_a0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Event:");
-    editorCell.setCellId("Constant_ymj9mh_a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_ymj9mh_b0() {
+  private EditorCell createProperty_ymj9mh_a() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(getEditorContext());
     editorCell.setCellId("property_name");
+    editorCell.setBig(true);
+    editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {

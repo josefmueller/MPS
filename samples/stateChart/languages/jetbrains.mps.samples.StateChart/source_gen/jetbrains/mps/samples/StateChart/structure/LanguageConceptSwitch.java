@@ -17,7 +17,8 @@ public final class LanguageConceptSwitch {
   public static final int Raise = 5;
   public static final int State = 6;
   public static final int StateChart = 7;
-  public static final int Transition = 8;
+  public static final int Stateful = 8;
+  public static final int Transition = 9;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xc3b0572e7f864ac7L, 0xac44ef15dc8f5c15L);
@@ -29,6 +30,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x5e8f0d038ab26a70L, Raise);
     builder.put(0x148d06483264e4a6L, State);
     builder.put(0x148d06483264e46aL, StateChart);
+    builder.put(0x2dff568bfe7dd8b5L, Stateful);
     builder.put(0x148d06483264e4a9L, Transition);
     myIndex = builder.seal();
   }

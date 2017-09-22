@@ -51,26 +51,9 @@
     <property role="TrG5h" value="StateChart" />
     <property role="19KtqR" value="true" />
     <property role="34LRSv" value="state chart" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="1id1$wMpeiL" role="1TKVEi">
-      <property role="IQ2ns" value="1480846759627646129" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="triggers" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="1id1$wMpeiz" resolve="Event" />
-    </node>
-    <node concept="1TJgyj" id="1id1$wMpeiN" role="1TKVEi">
-      <property role="IQ2ns" value="1480846759627646131" />
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="states" />
-      <property role="20lbJX" value="0..n" />
-      <ref role="20lvS9" node="1id1$wMpeiA" resolve="State" />
-    </node>
+    <ref role="1TJDcQ" node="2RZlCJYvtyP" resolve="Stateful" />
     <node concept="PrWs8" id="1id1$wMpehF" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
-    </node>
-    <node concept="PrWs8" id="5Uf3geaKASn" role="PzmwI">
-      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
   <node concept="1TIwiD" id="1id1$wMpeiz">
@@ -86,7 +69,7 @@
     <property role="EcuMT" value="1480846759627646118" />
     <property role="TrG5h" value="State" />
     <property role="34LRSv" value="state" />
-    <ref role="1TJDcQ" node="1id1$wMpehE" resolve="StateChart" />
+    <ref role="1TJDcQ" node="2RZlCJYvtyP" resolve="Stateful" />
     <node concept="1TJgyi" id="1id1$wMpoKY" role="1TKVEl">
       <property role="IQ2nx" value="1480846759627689022" />
       <property role="TrG5h" value="isInitial" />
@@ -202,6 +185,30 @@
     <property role="TrG5h" value="EmptyOperation" />
     <property role="34LRSv" value="&lt;empty&gt;" />
     <ref role="1TJDcQ" node="5Uf3geaGACR" resolve="ChartOperation" />
+  </node>
+  <node concept="1TIwiD" id="2RZlCJYvtyP">
+    <property role="EcuMT" value="3314463010038077621" />
+    <property role="TrG5h" value="Stateful" />
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1id1$wMpeiL" role="1TKVEi">
+      <property role="IQ2ns" value="1480846759627646129" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="availableTriggers" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1id1$wMpeiz" resolve="Event" />
+    </node>
+    <node concept="1TJgyj" id="1id1$wMpeiN" role="1TKVEi">
+      <property role="IQ2ns" value="1480846759627646131" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="states" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="1id1$wMpeiA" resolve="State" />
+    </node>
+    <node concept="PrWs8" id="2RZlCJYy94Q" role="PzmwI">
+      <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
+    </node>
   </node>
 </model>
 
