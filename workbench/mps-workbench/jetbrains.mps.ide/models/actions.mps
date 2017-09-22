@@ -1027,6 +1027,13 @@
         <property role="TrG5h" value="scripts" />
       </node>
       <node concept="2a7GMi" id="4pH6NAGIG89" role="ftvYc" />
+      <node concept="tCFHf" id="1OwW6POKvOo" role="ftvYc">
+        <ref role="tCJdB" node="7v0n5HkM4gk" resolve="ShowReflectiveEditorByDefault" />
+      </node>
+      <node concept="tCFHf" id="1mKJl92ebHd" role="ftvYc">
+        <ref role="tCJdB" node="1mKJl92cwMV" resolve="ShowRegularEditorByDefault" />
+      </node>
+      <node concept="2a7GMi" id="2j6uZyiNNhu" role="ftvYc" />
       <node concept="10WQ6h" id="5WjfCaA2my1" role="ftvYc">
         <property role="TrG5h" value="run" />
       </node>
@@ -1038,12 +1045,6 @@
         <property role="TrG5h" value="showHelp" />
       </node>
       <node concept="2a7GMi" id="3WT5vWoZ9rB" role="ftvYc" />
-      <node concept="tCFHf" id="1OwW6POKvOo" role="ftvYc">
-        <ref role="tCJdB" node="7v0n5HkM4gk" resolve="ShowReflectiveEditorByDefault" />
-      </node>
-      <node concept="tCFHf" id="1mKJl92ebHd" role="ftvYc">
-        <ref role="tCJdB" node="1mKJl92cwMV" resolve="ShowRegularEditorByDefault" />
-      </node>
       <node concept="tCFHf" id="hYoRn0d" role="ftvYc">
         <ref role="tCJdB" node="hYoPViv" resolve="ModelProperties" />
       </node>
