@@ -1943,6 +1943,17 @@
         <ref role="35c_gD" to="tpf8:6uPxrhfjpgV" resolve="DropAttributeRule" />
       </node>
     </node>
+    <node concept="Wx3nA" id="2TQHDnQfEx6" role="jymVt">
+      <property role="TrG5h" value="concept_ReferenceReductionRule" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm1VV" id="2TQHDnQfEx7" role="1B3o_S" />
+      <node concept="3uibUv" id="2TQHDnQfEx8" role="1tU5fm">
+        <ref role="3uigEE" to="c17a:~SConcept" resolve="SConcept" />
+      </node>
+      <node concept="35c_gC" id="2TQHDnQfEx9" role="33vP2m">
+        <ref role="35c_gD" to="tpf8:7u6$QPxIdFU" resolve="ReferenceReductionRule" />
+      </node>
+    </node>
     <node concept="Wx3nA" id="7QeCZOGPwHL" role="jymVt">
       <property role="TrG5h" value="concept_MappingScriptReference" />
       <property role="3TUv4t" value="true" />
@@ -3355,6 +3366,62 @@
       <node concept="3Tqbb2" id="6_MLfNWH_tu" role="3clF45">
         <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
       </node>
+    </node>
+    <node concept="2tJIrI" id="2TQHDnQfJ8Q" role="jymVt" />
+    <node concept="2YIFZL" id="2TQHDnQfPc8" role="jymVt">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="TrG5h" value="getReferenceReductionRule_Link" />
+      <node concept="3clFbS" id="2TQHDnQfO$Q" role="3clF47">
+        <node concept="3clFbF" id="2TQHDnQfQey" role="3cqZAp">
+          <node concept="2OqwBi" id="2TQHDnQfQrn" role="3clFbG">
+            <node concept="37vLTw" id="2TQHDnQfQex" role="2Oq$k0">
+              <ref role="3cqZAo" node="2TQHDnQfQ8e" resolve="rule" />
+            </node>
+            <node concept="3TrEf2" id="2TQHDnQfQ_6" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpf8:7u6$QPxIdFX" resolve="link" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="2TQHDnQfPNK" role="3clF45">
+        <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+      </node>
+      <node concept="3Tm1VV" id="2TQHDnQfO$P" role="1B3o_S" />
+      <node concept="37vLTG" id="2TQHDnQfQ8e" role="3clF46">
+        <property role="TrG5h" value="rule" />
+        <node concept="3Tqbb2" id="2TQHDnQfQ8d" role="1tU5fm">
+          <ref role="ehGHo" to="tpf8:7u6$QPxIdFU" resolve="ReferenceReductionRule" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2TQHDnQfQDU" role="jymVt" />
+    <node concept="2YIFZL" id="2TQHDnQfVna" role="jymVt">
+      <property role="TrG5h" value="getReferenceReductionRule_Function" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="2TQHDnQfRR2" role="3clF47">
+        <node concept="3clFbF" id="2TQHDnQfV0f" role="3cqZAp">
+          <node concept="2OqwBi" id="2TQHDnQfVaZ" role="3clFbG">
+            <node concept="37vLTw" id="2TQHDnQfV0e" role="2Oq$k0">
+              <ref role="3cqZAo" node="2TQHDnQfUFS" resolve="rule" />
+            </node>
+            <node concept="3TrEf2" id="2TQHDnQfVkJ" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpf8:2I_OWQOyPKU" resolve="referentFunction" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="2TQHDnQfUFS" role="3clF46">
+        <property role="TrG5h" value="rule" />
+        <node concept="3Tqbb2" id="2TQHDnQfUFT" role="1tU5fm">
+          <ref role="ehGHo" to="tpf8:7u6$QPxIdFU" resolve="ReferenceReductionRule" />
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="2TQHDnQfW1o" role="3clF45">
+        <ref role="ehGHo" to="tpf8:gZ$xsMr" resolve="ReferenceMacro_GetReferent" />
+      </node>
+      <node concept="3Tm1VV" id="2TQHDnQfRR1" role="1B3o_S" />
     </node>
     <node concept="2tJIrI" id="6_MLfNWHAJi" role="jymVt" />
     <node concept="2YIFZL" id="6_MLfNWH_wu" role="jymVt">

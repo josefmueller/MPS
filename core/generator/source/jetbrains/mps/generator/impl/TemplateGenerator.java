@@ -40,6 +40,7 @@ import jetbrains.mps.generator.impl.template.QueryExecutionContextWithTracing;
 import jetbrains.mps.generator.plan.CheckpointIdentity;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodePostProcessor;
+import jetbrains.mps.generator.runtime.ReferenceReductionRule;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropAttributeRule;
@@ -62,6 +63,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -965,6 +967,18 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     private void visitInputNode(SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
       myEnv.getGenerator().recordCopyInputTrace(inputNode, inputNode);
       myEnv.blockReductionsForCopiedNode(inputNode, inputNode); // prevent infinite applying of the same reduction to the 'same' node.
+
+      Map<SReferenceLink, ReferenceReductionRule> referenceRules = myEnv.getGenerator().getRuleManager().getReferenceReductionRules(inputNode);
+      if (!referenceRules.isEmpty()) {
+        for (SReference ref : inputNode.getReferences()) {
+          if (referenceRules.containsKey(ref.getLink())) {
+            ReferenceReductionRule rule = referenceRules.get(ref.getLink());
+            rule.apply(new DefaultTemplateContext(myEnv, inputNode, null));
+            myIsChanged = true;
+          }
+        }
+      }
+
       for (SNode inputChildNode : inputNode.getChildren()) {
         SContainmentLink childRole = inputChildNode.getContainmentLink();
         assert childRole != null;
@@ -1038,7 +1052,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       CopyUtil.copyProperties(inputNode, outputNode);
       CopyUtil.copyUserObjects(inputNode, outputNode);
 
+      final Map<SReferenceLink, ReferenceReductionRule> referenceRules = myEnv.getGenerator().getRuleManager().getReferenceReductionRules(inputNode);
+
       for (SReference inputReference : inputNode.getReferences()) {
+        if (referenceRules.containsKey(inputReference.getLink())) {
+          ReferenceReductionRule rule = referenceRules.get(inputReference.getLink());
+          rule.apply(new DefaultTemplateContext(myEnv, outputNode, null));
+          continue;
+        }
         if (inputNodeModel != null) {
           boolean external = true;
           if (inputReference instanceof PostponedReference){

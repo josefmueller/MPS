@@ -135,4 +135,13 @@ public abstract class MapConfigBase implements TemplateMappingConfiguration {
   public Collection<TemplateDropAttributeRule> getDropAttributeRules() {
     return Collections.emptySet();
   }
+
+  /**
+   * @return empty collection
+   */
+  @NotNull
+  @Override
+  public Collection<ReferenceReductionRule> getReferenceReductionRules() {
+    return Collections.emptySet();
+  }
 }

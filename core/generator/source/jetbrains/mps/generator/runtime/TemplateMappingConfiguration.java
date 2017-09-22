@@ -56,4 +56,10 @@ public interface TemplateMappingConfiguration {
    */
   @NotNull
   Collection<TemplateDropAttributeRule> getDropAttributeRules();
+
+  /**
+   * @return rules to reduce references of copied nodes
+   */
+  @NotNull
+  Collection<ReferenceReductionRule> getReferenceReductionRules();
 }

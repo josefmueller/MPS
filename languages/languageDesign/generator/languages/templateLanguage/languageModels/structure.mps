@@ -319,6 +319,13 @@
       <property role="IQ2ns" value="7473026166162327259" />
       <ref role="20lvS9" node="6uPxrhfjpgV" resolve="DropAttributeRule" />
     </node>
+    <node concept="1TJgyj" id="7u6$QPxJT8L" role="1TKVEi">
+      <property role="IQ2ns" value="8612733435393315377" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="referenceReductionRule" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="7u6$QPxIdFU" resolve="ReferenceReductionRule" />
+    </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRq" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/mappingConf.png" />
     </node>
@@ -2166,6 +2173,30 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="node" />
       <ref role="20lvS9" node="7PoJpZpHudo" resolve="NodeIdentity" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7u6$QPxIdFU">
+    <property role="EcuMT" value="8612733435392875258" />
+    <property role="3GE5qa" value="rule" />
+    <property role="TrG5h" value="ReferenceReductionRule" />
+    <property role="R4oN_" value="reduction rule for a reference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="7u6$QPxIdFV" role="PzmwI">
+      <ref role="PrY4T" node="3misQRF01NX" resolve="ReductionRule" />
+    </node>
+    <node concept="1TJgyj" id="7u6$QPxIdFX" role="1TKVEi">
+      <property role="IQ2ns" value="8612733435392875261" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="link" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+    <node concept="1TJgyj" id="2I_OWQOyPKU" role="1TKVEi">
+      <property role="IQ2ns" value="3145152795238947898" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="referentFunction" />
+      <ref role="20lvS9" node="gZ$xsMr" resolve="ReferenceMacro_GetReferent" />
     </node>
   </node>
 </model>

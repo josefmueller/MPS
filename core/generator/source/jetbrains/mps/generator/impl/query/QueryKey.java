@@ -28,6 +28,9 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  */
 public interface QueryKey {
 
+  /**
+   * @return presumably, an identity of a query host handy to identify problems
+   */
   @Nullable
   SNodeReference getTemplateNode();
 }

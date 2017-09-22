@@ -50,6 +50,7 @@ public final class RuleUtil {
   public static final SConcept concept_CreateRootRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fbbd5854aL, "jetbrains.mps.lang.generator.structure.CreateRootRule");
   public static final SConcept concept_DropRootRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11c0acf58efL, "jetbrains.mps.lang.generator.structure.DropRootRule");
   public static final SConcept concept_DropAttributeRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d943bL, "jetbrains.mps.lang.generator.structure.DropAttributeRule");
+  public static final SConcept concept_ReferenceReductionRule = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, "jetbrains.mps.lang.generator.structure.ReferenceReductionRule");
   public static final SConcept concept_MappingScriptReference = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x116597b27aaL, "jetbrains.mps.lang.generator.structure.MappingScriptReference");
   public static final SConcept concept_TemplateDeclaration = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   public static final SConcept concept_TemplateDeclarationReference = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
@@ -210,6 +211,14 @@ public final class RuleUtil {
 
   public static SNode getDropAttributeRule_ApplicableConcept(SNode rule) {
     return SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x67b585b44f4d943bL, 0x67b585b44f4d943eL, "applicableConcept"));
+  }
+
+  public static SNode getReferenceReductionRule_Link(SNode rule) {
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7786936d61b8dafdL, "link"));
+  }
+
+  public static SNode getReferenceReductionRule_Function(SNode rule) {
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x2ba5d3cdb48b5c3aL, "referentFunction"));
   }
 
   public static boolean getDropAttributeRule_ApplyToSubConcepts(SNode rule) {

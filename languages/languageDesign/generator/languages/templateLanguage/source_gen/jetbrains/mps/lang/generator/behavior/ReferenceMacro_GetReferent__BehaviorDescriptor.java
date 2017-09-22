@@ -18,10 +18,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -37,27 +37,40 @@ public final class ReferenceMacro_GetReferent__BehaviorDescriptor extends BaseBH
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getExpectedReturnType_idhEwIGRD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedReturnType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRD").registry(REGISTRY).build();
+  /*package*/ static final SMethod<SNode> fromMacro_id2I_OWQO_cV$ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("fromMacro").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("2I_OWQO_cV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  /*package*/ static final SMethod<SNode> fromRefReductionRule_id2I_OWQO_d$v = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("fromRefReductionRule").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("2I_OWQO_d$v").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<List<SConcept>> getParameterConcepts_id2xELmDxyi2v = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xELmDxyi2v").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExpectedReturnType_idhEwIGRD, getParameterConcepts_id2xELmDxyi2v);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExpectedReturnType_idhEwIGRD, fromMacro_id2I_OWQO_cV$, fromRefReductionRule_id2I_OWQO_d$v, getParameterConcepts_id2xELmDxyi2v);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
+    SNode link = null;
     SNode referenceMacro = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro"), false, false);
-    SNode attributedNode = SNodeOperations.getParent(referenceMacro);
-    String linkRole = AttributeOperations.getLink(referenceMacro).getName();
-    // here we are still looking at language sources because there is no information about specialized links in compiled language 
-    ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(attributedNode));
-    SNode link = SNodeOperations.cast(linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+    if ((referenceMacro != null)) {
+      link = ReferenceMacro_GetReferent__BehaviorDescriptor.fromMacro_id2I_OWQO_cV$.invoke(__thisNode__, referenceMacro);
+    } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, "jetbrains.mps.lang.generator.structure.ReferenceReductionRule"))) {
+      link = ReferenceMacro_GetReferent__BehaviorDescriptor.fromRefReductionRule_id2I_OWQO_d$v.invoke(__thisNode__, SNodeOperations.as(SNodeOperations.getParent(__thisNode__), MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, "jetbrains.mps.lang.generator.structure.ReferenceReductionRule")));
+    }
     SNode targetConcept = SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
     // reference may be resolved dynamically? 
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(targetConcept), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x116b17c6e46L, "jetbrains.mps.lang.core.structure.IResolveInfo"))) {
-      return _quotation_createNode_mxwyp3_a0a8a0(targetConcept);
+      return _quotation_createNode_mxwyp3_a0a5a0(targetConcept);
     } else {
-      return _quotation_createNode_mxwyp3_a0a0i0a(targetConcept);
+      return _quotation_createNode_mxwyp3_a0a0f0a(targetConcept);
     }
+  }
+  /*package*/ static SNode fromMacro_id2I_OWQO_cV$(@NotNull SNode __thisNode__, SNode refMacro) {
+    SNode attributedNode = SNodeOperations.getParent(refMacro);
+    String linkRole = AttributeOperations.getLink(refMacro).getName();
+    // here we are still looking at language sources because there is no information about specialized links in compiled language 
+    ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(attributedNode));
+    return SNodeOperations.cast(linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+  }
+  /*package*/ static SNode fromRefReductionRule_id2I_OWQO_d$v(@NotNull SNode __thisNode__, SNode reductionRule) {
+    return SLinkOperations.getTarget(reductionRule, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7786936d61b8dafdL, "link"));
   }
   /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
     List<SConcept> result = ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invoke0(__thisNode__, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11b4d0ca830L, "jetbrains.mps.lang.generator.structure.TemplateQueryBase"));
@@ -87,6 +100,10 @@ public final class ReferenceMacro_GetReferent__BehaviorDescriptor extends BaseBH
       case 0:
         return (T) ((SNode) getExpectedReturnType_idhEwIGRD(node));
       case 1:
+        return (T) ((SNode) fromMacro_id2I_OWQO_cV$(node, (SNode) parameters[0]));
+      case 2:
+        return (T) ((SNode) fromRefReductionRule_id2I_OWQO_d$v(node, (SNode) parameters[0]));
+      case 3:
         return (T) ((List<SConcept>) getParameterConcepts_id2xELmDxyi2v(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -116,7 +133,7 @@ public final class ReferenceMacro_GetReferent__BehaviorDescriptor extends BaseBH
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static SNode _quotation_createNode_mxwyp3_a0a8a0(Object parameter_1) {
+  private static SNode _quotation_createNode_mxwyp3_a0a5a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -133,7 +150,7 @@ public final class ReferenceMacro_GetReferent__BehaviorDescriptor extends BaseBH
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"), quotedNode_5);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_mxwyp3_a0a0i0a(Object parameter_1) {
+  private static SNode _quotation_createNode_mxwyp3_a0a0f0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

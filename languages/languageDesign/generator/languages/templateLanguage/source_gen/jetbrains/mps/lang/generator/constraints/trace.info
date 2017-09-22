@@ -16,7 +16,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,53,0" name="jetbrains.mps.lang.generator.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,55,0" name="jetbrains.mps.lang.generator.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)/1213104837507">
@@ -544,6 +544,52 @@
       <unit id="7941504602772991213" at="33,19,42,9" name="jetbrains.mps.lang.generator.constraints.GeneratorParameterReference_Constraints$1$1" />
       <unit id="7941504602772991213" at="29,157,44,5" name="jetbrains.mps.lang.generator.constraints.GeneratorParameterReference_Constraints$1" />
       <unit id="7941504602772991213" at="21,0,48,0" name="jetbrains.mps.lang.generator.constraints.GeneratorParameterReference_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)/8612733435392950225">
+    <file name="ReferenceReductionRule_Constraints.java">
+      <node id="8612733435392950225" at="28,47,29,169" concept="13" />
+      <node id="8612733435392950225" at="33,90,34,131" concept="7" />
+      <node id="8612733435392950225" at="37,44,38,20" concept="8" />
+      <node id="8612733435392950225" at="45,63,46,58" concept="8" />
+      <node id="4547425041528146028" at="53,53,54,370" concept="8" />
+      <node id="8612733435392950225" at="60,7,61,22" concept="8" />
+      <node id="8612733435392950225" at="63,0,64,0" concept="11" trace="breakingNode_l1mhrx_a0a0a0a0a1a0b0a1a2" />
+      <node id="8612733435392950225" at="28,0,31,0" concept="1" trace="ReferenceReductionRule_Constraints#()V" />
+      <node id="8612733435392950225" at="36,0,40,0" concept="6" trace="hasOwnScopeProvider#()Z" />
+      <node id="8612733435392950225" at="44,0,48,0" concept="6" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4547425041528144759" at="52,0,56,0" concept="6" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4547425041528130493" at="49,122,56,14" concept="8" />
+      <node id="8612733435392950225" at="48,0,58,0" concept="6" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="8612733435392950225" at="42,56,58,10" concept="8" />
+      <node id="8612733435392950225" at="40,0,60,0" concept="6" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="8612733435392950225" at="34,131,60,7" concept="2" />
+      <node id="8612733435392950225" at="32,0,63,0" concept="6" trace="getSpecifiedReferences#()Ljava/util/Map;" />
+      <scope id="8612733435392950225" at="28,47,29,169" />
+      <scope id="8612733435392950225" at="37,44,38,20" />
+      <scope id="8612733435392950225" at="45,63,46,58" />
+      <scope id="4547425041528144768" at="53,53,54,370" />
+      <scope id="8612733435392950225" at="28,0,31,0" />
+      <scope id="8612733435392950225" at="36,0,40,0" />
+      <scope id="8612733435392950225" at="44,0,48,0" />
+      <scope id="4547425041528144759" at="52,0,56,0">
+        <var name="node" id="4547425041528144765" />
+      </scope>
+      <scope id="8612733435392950225" at="49,122,56,14" />
+      <scope id="8612733435392950225" at="48,0,58,0">
+        <var name="_context" id="8612733435392950225" />
+        <var name="operationContext" id="8612733435392950225" />
+      </scope>
+      <scope id="8612733435392950225" at="42,56,58,10" />
+      <scope id="8612733435392950225" at="40,0,60,0" />
+      <scope id="8612733435392950225" at="33,90,61,22">
+        <var name="references" id="8612733435392950225" />
+      </scope>
+      <scope id="8612733435392950225" at="32,0,63,0" />
+      <unit id="4547425041528142559" at="50,23,56,13" name="jetbrains.mps.lang.generator.constraints.ReferenceReductionRule_Constraints$1$1$1" />
+      <unit id="8612733435392950225" at="43,19,58,9" name="jetbrains.mps.lang.generator.constraints.ReferenceReductionRule_Constraints$1$1" />
+      <unit id="8612733435392950225" at="35,152,60,5" name="jetbrains.mps.lang.generator.constraints.ReferenceReductionRule_Constraints$1" />
+      <unit id="8612733435392950225" at="27,0,65,0" name="jetbrains.mps.lang.generator.constraints.ReferenceReductionRule_Constraints" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)/982871510068000160">

@@ -22,6 +22,7 @@ import jetbrains.mps.generator.impl.query.MapConfigurationCondition;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.query.QueryKeyImpl;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
+import jetbrains.mps.generator.runtime.ReferenceReductionRule;
 import jetbrains.mps.generator.runtime.TemplateCreateRootRule;
 import jetbrains.mps.generator.runtime.TemplateDropAttributeRule;
 import jetbrains.mps.generator.runtime.TemplateDropRootRule;
@@ -40,6 +41,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -58,6 +60,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   private List<TemplateMappingScript> myPreScripts;
   private List<TemplateMappingScript> myPostScripts;
   private List<TemplateDropAttributeRule> myDropAttributeRules;
+  private List<ReferenceReductionRule> myReferenceReductionRules;
 
   private MapConfigurationCondition myCondition;
   private volatile boolean myInitialized = false;
@@ -72,15 +75,16 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
       return;
     }
     synchronized (this) {
-      myCreateRootRules = new ArrayList<TemplateCreateRootRule>(5);
-      myRootMappingRules = new ArrayList<TemplateRootMappingRule>(5);
-      myWeavingRules = new ArrayList<TemplateWeavingRule>(5);
-      myDropRootRules = new ArrayList<TemplateDropRootRule>(5);
-      myDropAttributeRules = new ArrayList<TemplateDropAttributeRule>(5);
-      myPreScripts = new ArrayList<TemplateMappingScript>(5);
-      myPostScripts = new ArrayList<TemplateMappingScript>(5);
-      ArrayList<TemplateReductionRule> reductionRules = new ArrayList<TemplateReductionRule>(20);
-      ArrayList<TemplateReductionRule> patternRules = new ArrayList<TemplateReductionRule>(5);
+      myCreateRootRules = new ArrayList<>(5);
+      myRootMappingRules = new ArrayList<>(5);
+      myWeavingRules = new ArrayList<>(5);
+      myDropRootRules = new ArrayList<>(5);
+      myDropAttributeRules = new ArrayList<>(5);
+      myReferenceReductionRules = new ArrayList<>(5);
+      myPreScripts = new ArrayList<>(5);
+      myPostScripts = new ArrayList<>(5);
+      ArrayList<TemplateReductionRule> reductionRules = new ArrayList<>(20);
+      ArrayList<TemplateReductionRule> patternRules = new ArrayList<>(5);
 
       for (SNode child : myMappingConfiguration.getChildren()) {
         final SConcept childConcept = child.getConcept();
@@ -96,6 +100,8 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
           myWeavingRules.add(new TemplateWeavingRuleInterpreted(child));
         } else if (RuleUtil.concept_DropRootRule.equals(childConcept)) {
           myDropRootRules.add(new TemplateDropRuleInterpreted(child));
+        } else if (RuleUtil.concept_ReferenceReductionRule.equals(childConcept)) {
+          myReferenceReductionRules.add(new RefReductionRuleInterpreted(child));
         } else if (RuleUtil.concept_MappingScriptReference.equals(childConcept)) {
           SNode mappingScript = RuleUtil.getMappingScriptReference_Script(child);
           if (mappingScript == null) {
@@ -113,7 +119,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
       if (patternRules.isEmpty()) {
         myReductionRules = reductionRules;
       } else {
-        myReductionRules = new ArrayList<TemplateReductionRule>(patternRules.size() + reductionRules.size());
+        myReductionRules = new ArrayList<>(patternRules.size() + reductionRules.size());
         myReductionRules.addAll(patternRules);
         myReductionRules.addAll(reductionRules);
       }
@@ -206,6 +212,13 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
   public Collection<TemplateDropAttributeRule> getDropAttributeRules() {
     init();
     return myDropAttributeRules;
+  }
+
+  @NotNull
+  @Override
+  public Collection<ReferenceReductionRule> getReferenceReductionRules() {
+    init();
+    return myReferenceReductionRules;
   }
 
   @Override

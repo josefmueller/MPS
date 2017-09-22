@@ -76,6 +76,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Reduction_MappingRule;
   private ConceptPresentation props_ReferenceMacro;
   private ConceptPresentation props_ReferenceMacro_GetReferent;
+  private ConceptPresentation props_ReferenceReductionRule;
   private ConceptPresentation props_RootTemplateAnnotation;
   private ConceptPresentation props_Root_MappingRule;
   private ConceptPresentation props_RuleConsequence;
@@ -487,7 +488,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MappingConfiguration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a05b0ee);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a05b0fe);
           props_MappingConfiguration = cpb.create();
         }
         return props_MappingConfiguration;
@@ -510,7 +511,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_MappingScript == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a35b0ee);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a35b0fe);
           props_MappingScript = cpb.create();
         }
         return props_MappingScript;
@@ -603,6 +604,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ReferenceMacro_GetReferent = cpb.create();
         }
         return props_ReferenceMacro_GetReferent;
+      case LanguageConceptSwitch.ReferenceReductionRule:
+        if (props_ReferenceReductionRule == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("reduction rule for a reference");
+          cpb.presentationByReference(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7786936d61b8dafaL, 0x7786936d61b8dafdL, "link", "", "");
+          props_ReferenceReductionRule = cpb.create();
+        }
+        return props_ReferenceReductionRule;
       case LanguageConceptSwitch.RootTemplateAnnotation:
         if (props_RootTemplateAnnotation == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -710,7 +719,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TemplateDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a28b0ee);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a38b0fe);
           props_TemplateDeclaration = cpb.create();
         }
         return props_TemplateDeclaration;
@@ -788,7 +797,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_TemplateSwitch == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.presentationByName();
-          cpb.icon(IconContainer.RESOURCE_a0a2a0a39b0ee);
+          cpb.icon(IconContainer.RESOURCE_a0a2a0a49b0fe);
           props_TemplateSwitch = cpb.create();
         }
         return props_TemplateSwitch;
