@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.StreamSupport;
 
 public class ReflectiveHintsManager {
 
@@ -50,6 +51,9 @@ public class ReflectiveHintsManager {
     myHintsProvider = new ReflectiveHintsAdapter(editorComponent);
   }
 
+  /**
+   * Checks if the node is shown in reflective editor.
+   */
   private boolean isReflective(@NotNull SNode node) {
     String nodeHint = myHintsProvider.getHint(node);
     if (REFLECTIVE_EDITOR_HINTS.contains(nodeHint)) {
@@ -79,7 +83,7 @@ public class ReflectiveHintsManager {
     return isReflective ? BASE_REFLECTIVE_EDITOR_FOR_NODE_HINT : BASE_NO_REFLECTIVE_EDITOR_FOR_NODE_HINT;
   }
 
-  private String getHint(boolean isReflective) {
+  private String getHintForSubtree(boolean isReflective) {
     return isReflective ? BASE_REFLECTIVE_EDITOR_HINT : BASE_NO_REFLECTIVE_EDITOR_HINT;
   }
 
@@ -93,42 +97,48 @@ public class ReflectiveHintsManager {
     }
     String sameHintForNode = getHintForNode(isReflective);
     if (sameHintForNode.equals(myHintsProvider.getHint(node))) {
+      // We can expand the effect of the node for the whole subtree.
       return true;
     }
-    List<String> hintsToSearch = isReflective ? NO_REFLECTIVE_EDITOR_HINTS : REFLECTIVE_EDITOR_HINTS;
-    for (SNode descendant : SNodeUtil.getDescendants(node)) {
-      String descendantHint = myHintsProvider.getHint(descendant);
-      if (hintsToSearch.contains(descendantHint)) {
-        return true;
-      }
-    }
-    return false;
+    List<String> symmetricHints = isReflective ? NO_REFLECTIVE_EDITOR_HINTS : REFLECTIVE_EDITOR_HINTS;
+    return StreamSupport.stream(SNodeUtil.getDescendants(node).spliterator(), false)
+                        .map(myHintsProvider::getHint)
+                        .anyMatch(symmetricHints::contains);
   }
 
   public void makeNode(boolean isReflective, @NotNull SNode node) {
     String nodeHint = myHintsProvider.getHint(node);
     String newHint = getHintForNode(isReflective);
-    String newHintForSubtree = getHint(isReflective);
+    String newHintForSubtree = getHintForSubtree(isReflective);
     String symmetricHint = getHintForNode(!isReflective);
 
     if (nodeHint == null) {
       myHintsProvider.setHint(node, newHint);
     } else if (nodeHint.equals(symmetricHint)) {
+      // Symmetric hint canceled out effect of some ancestor.
+      // We delete it to restore that effect.
       myHintsProvider.setHint(node, null);
     } else {
-      symmetricHint = getHint(!isReflective);
-      assert nodeHint.equals(symmetricHint);
+      String symmetricHintForSubtree = getHintForSubtree(!isReflective);
+      assert nodeHint.equals(symmetricHintForSubtree); // `canMakeNode` is false in other cases.
 
       myHintsProvider.setHint(node, null);
       for (SNode child : node.getChildren()) {
         String childHint = myHintsProvider.getHint(child);
         if (childHint == null) {
-          myHintsProvider.setHint(child, symmetricHint);
+          // Means this child's reflectiveness was defined by `node`.
+          // We need to keep it the same.
+          myHintsProvider.setHint(child, nodeHint);
         } else if (childHint.equals(newHintForSubtree)) {
+          // Means `childHint` canceled out effect of `nodeHint`.
+          // It doesn't need to do that anymore.
           myHintsProvider.setHint(child, null);
         } else {
-          assert childHint.equals(newHint);
-          myHintsProvider.setHint(child, symmetricHint);
+          assert childHint.equals(newHint); // `childHint` can't repeat effect of `nodeHint`
+          // Means `childHint` is no longer necessary.
+          // We can delete it, but we need to change hints of it's children in the same way.
+          // We are making recursive call for that.
+          myHintsProvider.setHint(child, nodeHint);
           makeNode(isReflective, child);
         }
       }
@@ -137,21 +147,24 @@ public class ReflectiveHintsManager {
 
   public void makeSubtree(boolean isReflective, @NotNull SNode node) {
     String nodeHint = myHintsProvider.getHint(node);
-    String newHint = getHint(isReflective);
+    String newHint = getHintForSubtree(isReflective);
     String newHintForNode = getHintForNode(isReflective);
     List<String> symmetricHints = isReflective ? NO_REFLECTIVE_EDITOR_HINTS : REFLECTIVE_EDITOR_HINTS;
 
     if (nodeHint == null) {
       if (canMakeNode(isReflective, node)) {
         myHintsProvider.setHint(node, newHint);
-      } else {
-        myHintsProvider.setHint(node, null);
-      }
+      } // else
+      //   This node reflectiveness doesn't need to be altered,
+      //   but we need to reset hints for it's descendants.
     } else if (symmetricHints.contains(nodeHint)) {
+      // `nodeHint` cancels out effect of some ancestor.
       myHintsProvider.setHint(node, null);
     } else if (nodeHint.equals(newHintForNode)) {
+      // Expand the effect of the node for the whole subtree.
       myHintsProvider.setHint(node, newHint);
     }
+
     for (SNode descendant : SNodeUtil.getDescendants(node, null, false)) {
       myHintsProvider.setHint(descendant, null);
     }
