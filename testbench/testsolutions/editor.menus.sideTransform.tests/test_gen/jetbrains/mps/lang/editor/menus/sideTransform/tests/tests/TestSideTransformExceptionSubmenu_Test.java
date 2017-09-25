@@ -30,6 +30,7 @@ public class TestSideTransformExceptionSubmenu_Test extends BaseTransformationTe
       Assert.assertTrue(nodeSubstituteChooser.isVisible() && nodeSubstituteChooser.getNumberOfActions() == 1);
 
     }
+
     @Override
     protected void populateExpectedEvents(CachingAppender appender) {
       appender.expectEvent(Priority.ERROR_INT, null);

@@ -42,22 +42,22 @@
       <node id="2935000035774418197" at="26,53,27,71" concept="0" />
       <node id="2935000035774418199" at="27,71,28,100" concept="2" />
       <node id="2935000035774418206" at="28,100,29,110" concept="0" />
-      <node id="2935000035774418192" at="32,69,33,53" concept="0" />
-      <node id="2935000035774418192" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="2935000035774418192" at="33,69,34,53" concept="0" />
+      <node id="2935000035774418192" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="2935000035774418192" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionWrapMenu#()V" />
       <node id="2935000035774418192" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="2935000035774418192" at="32,69,33,53" />
+      <scope id="2935000035774418192" at="33,69,34,53" />
       <scope id="2935000035774418192" at="17,71,19,137" />
       <scope id="2935000035774418192" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="2935000035774418200" />
       </scope>
-      <scope id="2935000035774418192" at="31,0,35,0">
+      <scope id="2935000035774418192" at="32,0,36,0">
         <var name="appender" id="2935000035774418192" />
       </scope>
       <scope id="2935000035774418192" at="16,0,21,0" />
       <scope id="2935000035774418192" at="24,0,31,0" />
-      <unit id="2935000035774418192" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionWrapMenu_Test$TestBody" />
-      <unit id="2935000035774418192" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionWrapMenu_Test" />
+      <unit id="2935000035774418192" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionWrapMenu_Test$TestBody" />
+      <unit id="2935000035774418192" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionWrapMenu_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/3021388189909924565">
@@ -450,22 +450,22 @@
       <node id="5511779000991239836" at="26,53,27,71" concept="0" />
       <node id="5511779000991239838" at="27,71,28,100" concept="2" />
       <node id="5511779000991239844" at="28,100,29,110" concept="0" />
-      <node id="5511779000991239831" at="32,69,33,53" concept="0" />
-      <node id="5511779000991239831" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="5511779000991239831" at="33,69,34,53" concept="0" />
+      <node id="5511779000991239831" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="5511779000991239831" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionSubconceptsMenu#()V" />
       <node id="5511779000991239831" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="5511779000991239831" at="32,69,33,53" />
+      <scope id="5511779000991239831" at="33,69,34,53" />
       <scope id="5511779000991239831" at="17,78,19,144" />
       <scope id="5511779000991239831" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="5511779000991239839" />
       </scope>
-      <scope id="5511779000991239831" at="31,0,35,0">
+      <scope id="5511779000991239831" at="32,0,36,0">
         <var name="appender" id="5511779000991239831" />
       </scope>
       <scope id="5511779000991239831" at="16,0,21,0" />
       <scope id="5511779000991239831" at="24,0,31,0" />
-      <unit id="5511779000991239831" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionSubconceptsMenu_Test$TestBody" />
-      <unit id="5511779000991239831" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionSubconceptsMenu_Test" />
+      <unit id="5511779000991239831" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionSubconceptsMenu_Test$TestBody" />
+      <unit id="5511779000991239831" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionSubconceptsMenu_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/5957872731948642291">
@@ -698,22 +698,22 @@
       <node id="7153261420283903322" at="26,53,27,71" concept="0" />
       <node id="7153261420283915528" at="27,71,28,100" concept="2" />
       <node id="7153261420283916151" at="28,100,29,110" concept="0" />
-      <node id="7153261420283722192" at="32,69,33,53" concept="0" />
-      <node id="7153261420283722192" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="7153261420283722192" at="33,69,34,53" concept="0" />
+      <node id="7153261420283722192" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="7153261420283722192" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionActionCanSubstitute#()V" />
       <node id="7153261420283722192" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="7153261420283722192" at="32,69,33,53" />
+      <scope id="7153261420283722192" at="33,69,34,53" />
       <scope id="7153261420283722192" at="17,82,19,148" />
       <scope id="7153261420283722192" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="7153261420283915529" />
       </scope>
-      <scope id="7153261420283722192" at="31,0,35,0">
+      <scope id="7153261420283722192" at="32,0,36,0">
         <var name="appender" id="7153261420283722192" />
       </scope>
       <scope id="7153261420283722192" at="16,0,21,0" />
       <scope id="7153261420283722192" at="24,0,31,0" />
-      <unit id="7153261420283722192" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionCanSubstitute_Test$TestBody" />
-      <unit id="7153261420283722192" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionCanSubstitute_Test" />
+      <unit id="7153261420283722192" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionCanSubstitute_Test$TestBody" />
+      <unit id="7153261420283722192" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionCanSubstitute_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420283929384">
@@ -764,22 +764,22 @@
       <node id="7153261420284025034" at="26,53,27,76" concept="0" />
       <node id="7153261420284025036" at="27,76,28,100" concept="2" />
       <node id="7153261420284025042" at="28,100,29,110" concept="0" />
-      <node id="7153261420284025030" at="32,69,33,53" concept="0" />
-      <node id="7153261420284025030" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="7153261420284025030" at="33,69,34,53" concept="0" />
+      <node id="7153261420284025030" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="7153261420284025030" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionActionType#()V" />
       <node id="7153261420284025030" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="7153261420284025030" at="32,69,33,53" />
+      <scope id="7153261420284025030" at="33,69,34,53" />
       <scope id="7153261420284025030" at="17,73,19,139" />
       <scope id="7153261420284025030" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="7153261420284025037" />
       </scope>
-      <scope id="7153261420284025030" at="31,0,35,0">
+      <scope id="7153261420284025030" at="32,0,36,0">
         <var name="appender" id="7153261420284025030" />
       </scope>
       <scope id="7153261420284025030" at="16,0,21,0" />
       <scope id="7153261420284025030" at="24,0,31,0" />
-      <unit id="7153261420284025030" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionType_Test$TestBody" />
-      <unit id="7153261420284025030" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionType_Test" />
+      <unit id="7153261420284025030" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionType_Test$TestBody" />
+      <unit id="7153261420284025030" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionType_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284032463">
@@ -790,22 +790,22 @@
       <node id="7153261420284032467" at="26,53,27,71" concept="0" />
       <node id="7153261420284032469" at="27,71,28,100" concept="2" />
       <node id="7153261420284032475" at="28,100,29,110" concept="0" />
-      <node id="7153261420284032463" at="32,69,33,53" concept="0" />
-      <node id="7153261420284032463" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="7153261420284032463" at="33,69,34,53" concept="0" />
+      <node id="7153261420284032463" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="7153261420284032463" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionActionMatchingText#()V" />
       <node id="7153261420284032463" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="7153261420284032463" at="32,69,33,53" />
+      <scope id="7153261420284032463" at="33,69,34,53" />
       <scope id="7153261420284032463" at="17,81,19,147" />
       <scope id="7153261420284032463" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="7153261420284032470" />
       </scope>
-      <scope id="7153261420284032463" at="31,0,35,0">
+      <scope id="7153261420284032463" at="32,0,36,0">
         <var name="appender" id="7153261420284032463" />
       </scope>
       <scope id="7153261420284032463" at="16,0,21,0" />
       <scope id="7153261420284032463" at="24,0,31,0" />
-      <unit id="7153261420284032463" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionMatchingText_Test$TestBody" />
-      <unit id="7153261420284032463" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionMatchingText_Test" />
+      <unit id="7153261420284032463" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionMatchingText_Test$TestBody" />
+      <unit id="7153261420284032463" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionActionMatchingText_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284040985">
@@ -816,22 +816,22 @@
       <node id="7153261420284040989" at="26,53,27,71" concept="0" />
       <node id="7153261420284040991" at="27,71,28,100" concept="2" />
       <node id="7153261420284040997" at="28,100,29,110" concept="0" />
-      <node id="7153261420284040985" at="32,69,33,53" concept="0" />
-      <node id="7153261420284040985" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="7153261420284040985" at="33,69,34,53" concept="0" />
+      <node id="7153261420284040985" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="7153261420284040985" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionConceptList#()V" />
       <node id="7153261420284040985" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="7153261420284040985" at="32,69,33,53" />
+      <scope id="7153261420284040985" at="33,69,34,53" />
       <scope id="7153261420284040985" at="17,74,19,140" />
       <scope id="7153261420284040985" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="7153261420284040992" />
       </scope>
-      <scope id="7153261420284040985" at="31,0,35,0">
+      <scope id="7153261420284040985" at="32,0,36,0">
         <var name="appender" id="7153261420284040985" />
       </scope>
       <scope id="7153261420284040985" at="16,0,21,0" />
       <scope id="7153261420284040985" at="24,0,31,0" />
-      <unit id="7153261420284040985" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionConceptList_Test$TestBody" />
-      <unit id="7153261420284040985" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionConceptList_Test" />
+      <unit id="7153261420284040985" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionConceptList_Test$TestBody" />
+      <unit id="7153261420284040985" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionConceptList_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284058097">
@@ -842,22 +842,22 @@
       <node id="7153261420284058101" at="26,53,27,71" concept="0" />
       <node id="7153261420284058103" at="27,71,28,100" concept="2" />
       <node id="7153261420284058109" at="28,100,29,110" concept="0" />
-      <node id="7153261420284058097" at="32,69,33,53" concept="0" />
-      <node id="7153261420284058097" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="7153261420284058097" at="33,69,34,53" concept="0" />
+      <node id="7153261420284058097" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="7153261420284058097" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionGroup#()V" />
       <node id="7153261420284058097" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="7153261420284058097" at="32,69,33,53" />
+      <scope id="7153261420284058097" at="33,69,34,53" />
       <scope id="7153261420284058097" at="17,68,19,134" />
       <scope id="7153261420284058097" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="7153261420284058104" />
       </scope>
-      <scope id="7153261420284058097" at="31,0,35,0">
+      <scope id="7153261420284058097" at="32,0,36,0">
         <var name="appender" id="7153261420284058097" />
       </scope>
       <scope id="7153261420284058097" at="16,0,21,0" />
       <scope id="7153261420284058097" at="24,0,31,0" />
-      <unit id="7153261420284058097" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionGroup_Test$TestBody" />
-      <unit id="7153261420284058097" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionGroup_Test" />
+      <unit id="7153261420284058097" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionGroup_Test$TestBody" />
+      <unit id="7153261420284058097" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionGroup_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284064889">
@@ -868,22 +868,22 @@
       <node id="7153261420284064893" at="26,53,27,71" concept="0" />
       <node id="7153261420284064895" at="27,71,28,100" concept="2" />
       <node id="7153261420284064901" at="28,100,29,110" concept="0" />
-      <node id="7153261420284064889" at="32,69,33,53" concept="0" />
-      <node id="7153261420284064889" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="7153261420284064889" at="33,69,34,53" concept="0" />
+      <node id="7153261420284064889" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="7153261420284064889" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionIncludeMenu#()V" />
       <node id="7153261420284064889" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="7153261420284064889" at="32,69,33,53" />
+      <scope id="7153261420284064889" at="33,69,34,53" />
       <scope id="7153261420284064889" at="17,74,19,140" />
       <scope id="7153261420284064889" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="7153261420284064896" />
       </scope>
-      <scope id="7153261420284064889" at="31,0,35,0">
+      <scope id="7153261420284064889" at="32,0,36,0">
         <var name="appender" id="7153261420284064889" />
       </scope>
       <scope id="7153261420284064889" at="16,0,21,0" />
       <scope id="7153261420284064889" at="24,0,31,0" />
-      <unit id="7153261420284064889" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionIncludeMenu_Test$TestBody" />
-      <unit id="7153261420284064889" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionIncludeMenu_Test" />
+      <unit id="7153261420284064889" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionIncludeMenu_Test$TestBody" />
+      <unit id="7153261420284064889" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionIncludeMenu_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284073353">
@@ -894,22 +894,22 @@
       <node id="7153261420284073357" at="26,53,27,71" concept="0" />
       <node id="7153261420284073359" at="27,71,28,100" concept="2" />
       <node id="7153261420284073365" at="28,100,29,110" concept="0" />
-      <node id="7153261420284073353" at="32,69,33,53" concept="0" />
-      <node id="7153261420284073353" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="7153261420284073353" at="33,69,34,53" concept="0" />
+      <node id="7153261420284073353" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="7153261420284073353" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionParameterized#()V" />
       <node id="7153261420284073353" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="7153261420284073353" at="32,69,33,53" />
+      <scope id="7153261420284073353" at="33,69,34,53" />
       <scope id="7153261420284073353" at="17,76,19,142" />
       <scope id="7153261420284073353" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="7153261420284073360" />
       </scope>
-      <scope id="7153261420284073353" at="31,0,35,0">
+      <scope id="7153261420284073353" at="32,0,36,0">
         <var name="appender" id="7153261420284073353" />
       </scope>
       <scope id="7153261420284073353" at="16,0,21,0" />
       <scope id="7153261420284073353" at="24,0,31,0" />
-      <unit id="7153261420284073353" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionParameterized_Test$TestBody" />
-      <unit id="7153261420284073353" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionParameterized_Test" />
+      <unit id="7153261420284073353" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionParameterized_Test$TestBody" />
+      <unit id="7153261420284073353" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionParameterized_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7153261420284081817">
@@ -940,22 +940,22 @@
       <node id="7153261420284101276" at="26,53,27,71" concept="0" />
       <node id="7153261420284101278" at="27,71,28,100" concept="2" />
       <node id="7153261420284101284" at="28,100,29,110" concept="0" />
-      <node id="7153261420284101272" at="32,69,33,53" concept="0" />
-      <node id="7153261420284101272" at="31,0,35,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
+      <node id="7153261420284101272" at="33,69,34,53" concept="0" />
+      <node id="7153261420284101272" at="32,0,36,0" concept="1" trace="populateExpectedEvents#(Ljetbrains/mps/testbench/util/CachingAppender;)V" />
       <node id="7153261420284101272" at="16,0,21,0" concept="1" trace="test_TestSubstituteExceptionReferenceMatchingText#()V" />
       <node id="7153261420284101272" at="24,0,31,0" concept="1" trace="testMethodImpl#()V" />
-      <scope id="7153261420284101272" at="32,69,33,53" />
+      <scope id="7153261420284101272" at="33,69,34,53" />
       <scope id="7153261420284101272" at="17,84,19,150" />
       <scope id="7153261420284101272" at="25,51,29,110">
         <var name="nodeSubstituteChooser" id="7153261420284101279" />
       </scope>
-      <scope id="7153261420284101272" at="31,0,35,0">
+      <scope id="7153261420284101272" at="32,0,36,0">
         <var name="appender" id="7153261420284101272" />
       </scope>
       <scope id="7153261420284101272" at="16,0,21,0" />
       <scope id="7153261420284101272" at="24,0,31,0" />
-      <unit id="7153261420284101272" at="22,0,36,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionReferenceMatchingText_Test$TestBody" />
-      <unit id="7153261420284101272" at="14,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionReferenceMatchingText_Test" />
+      <unit id="7153261420284101272" at="22,0,37,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionReferenceMatchingText_Test$TestBody" />
+      <unit id="7153261420284101272" at="14,0,38,0" name="jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstituteExceptionReferenceMatchingText_Test" />
     </file>
   </root>
   <root nodeRef="r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)/7688582785734921695">

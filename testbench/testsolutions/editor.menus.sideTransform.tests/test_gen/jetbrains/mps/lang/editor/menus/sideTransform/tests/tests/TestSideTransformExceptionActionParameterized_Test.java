@@ -30,6 +30,7 @@ public class TestSideTransformExceptionActionParameterized_Test extends BaseTran
       Assert.assertTrue(nodeSubstituteChooser.isVisible() && nodeSubstituteChooser.getNumberOfActions() == 1);
 
     }
+
     @Override
     protected void populateExpectedEvents(CachingAppender appender) {
       appender.expectEvent(Priority.ERROR_INT, null);

@@ -28,6 +28,7 @@ public class TestSubstituteExceptionActionType_Test extends BaseTransformationTe
       NodeSubstituteChooser nodeSubstituteChooser = getEditorComponent().getNodeSubstituteChooser();
       Assert.assertTrue(nodeSubstituteChooser.isVisible() && nodeSubstituteChooser.getNumberOfActions() == 1);
     }
+
     @Override
     protected void populateExpectedEvents(CachingAppender appender) {
       appender.expectEvent(Priority.ERROR_INT, null);
