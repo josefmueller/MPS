@@ -859,6 +859,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private abstract static class NodeCopyFacility {
     protected final TemplateExecutionEnvironmentImpl myEnv;
+    // reflects presense of structural changes
     protected boolean myIsChanged = false;
 
     protected NodeCopyFacility(@NotNull TemplateExecutionEnvironmentImpl env) {
@@ -974,7 +975,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           if (referenceRules.containsKey(ref.getLink())) {
             ReferenceReductionRule rule = referenceRules.get(ref.getLink());
             rule.apply(new DefaultTemplateContext(myEnv, inputNode, null));
-            myIsChanged = true;
           }
         }
       }
