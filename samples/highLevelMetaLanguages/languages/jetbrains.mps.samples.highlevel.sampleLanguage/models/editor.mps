@@ -4,7 +4,7 @@
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="11" />
     <use id="c457c5de-6027-4104-ab9c-a31c5404ae8b" name="jetbrains.mps.samples.highlevel.simpleEditor" version="0" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+    <devkit ref="2a8d14e3-c26f-4f2f-ae52-28981c32e97a(jetbrains.mps.samples.highlevel.devkit.editor)" />
   </languages>
   <imports>
     <import index="icbr" ref="r:4d03b397-cc28-4073-ab6e-06a2ea51daa1(jetbrains.mps.samples.highlevel.sampleLanguage.structure)" />

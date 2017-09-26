@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptCDHolder_GeneratorInternal = createDescriptorForCDHolder_GeneratorInternal();
   /*package*/ final ConceptDescriptor myConceptSimpleConceptDeclaration = createDescriptorForSimpleConceptDeclaration();
   /*package*/ final ConceptDescriptor myConceptSimplePropertyDeclaration = createDescriptorForSimplePropertyDeclaration();
   /*package*/ final ConceptDescriptor myConceptStructureAspectDeclaration = createDescriptorForStructureAspectDeclaration();
@@ -24,15 +23,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCDHolder_GeneratorInternal, myConceptSimpleConceptDeclaration, myConceptSimplePropertyDeclaration, myConceptStructureAspectDeclaration);
+    return Arrays.asList(myConceptSimpleConceptDeclaration, myConceptSimplePropertyDeclaration, myConceptStructureAspectDeclaration);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
-      case LanguageConceptSwitch.CDHolder_GeneratorInternal:
-        return myConceptCDHolder_GeneratorInternal;
       case LanguageConceptSwitch.SimpleConceptDeclaration:
         return myConceptSimpleConceptDeclaration;
       case LanguageConceptSwitch.SimplePropertyDeclaration:
@@ -48,13 +45,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForCDHolder_GeneratorInternal() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.highlevel.simpleStructure", "CDHolder_GeneratorInternal", 0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x346ead2c08cdebd8L);
-    b.class_(false, false, false);
-    b.origin("r:e5107c9a-a05a-456e-bf48-05faadc7a98c(jetbrains.mps.samples.highlevel.simpleStructure.structure)/3778147542048304088");
-    b.aggregate("c", 0x346ead2c08cdebe5L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L).optional(false).ordered(true).multiple(false).origin("3778147542048304101").done();
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForSimpleConceptDeclaration() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.highlevel.simpleStructure", "SimpleConceptDeclaration", 0xbaa9238b36da4ccbL, 0xa76b8ad70e222183L, 0x460f3ddb176b0a3cL);
     b.class_(false, false, false);

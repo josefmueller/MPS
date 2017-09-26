@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_CDHolder_GeneratorInternal;
   private ConceptPresentation props_SimpleConceptDeclaration;
   private ConceptPresentation props_SimplePropertyDeclaration;
   private ConceptPresentation props_StructureAspectDeclaration;
@@ -19,13 +18,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.CDHolder_GeneratorInternal:
-        if (props_CDHolder_GeneratorInternal == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("CDHolder_GeneratorInternal");
-          props_CDHolder_GeneratorInternal = cpb.create();
-        }
-        return props_CDHolder_GeneratorInternal;
       case LanguageConceptSwitch.SimpleConceptDeclaration:
         if (props_SimpleConceptDeclaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

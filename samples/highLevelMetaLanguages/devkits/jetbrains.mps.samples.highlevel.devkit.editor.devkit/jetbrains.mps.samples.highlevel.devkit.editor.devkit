@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dev-kit name="jetbrains.mps.samples.highlevel.devkit.editor" uuid="2a8d14e3-c26f-4f2f-ae52-28981c32e97a">
+  <exported-language name="c457c5de-6027-4104-ab9c-a31c5404ae8b(jetbrains.mps.samples.highlevel.simpleEditor)" />
+  <generation-plan model="r:4eb07a03-dce5-40ad-b78d-8affb3b04aa7(jetbrains.mps.samples.highlevel.simpleEditor.gpeditor)" />
+</dev-kit>
+
