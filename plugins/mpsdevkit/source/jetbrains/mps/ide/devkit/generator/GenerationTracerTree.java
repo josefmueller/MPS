@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -39,6 +40,11 @@ final class GenerationTracerTree extends MPSTree {
     myRootTracerNode = root;
     myProject = project;
     myUserFocus = userFocus == null ? null : userFocus.getNodeId();
+  }
+
+  @Override
+  protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
   }
 
   void setRoot(@NotNull TraceNodeUI root) {
