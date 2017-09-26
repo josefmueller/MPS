@@ -46,6 +46,7 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -84,6 +85,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private EditorMessageOwner myMessageOwner;
 
   public TypeSystemTraceTree(Project mpsProject, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
+    myWarnModelAccess = false;
     myProject = mpsProject;
     myContextTracker = new TypecheckingContextTracker(node.getContainingRoot());
     myParent = parent;
@@ -486,6 +488,12 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       rebuildNow();
       expandAll();
       addTreeSelectionListener(new TypeSystemTraceTree.DetailsTree.ShowStateUpdater());
+    }
+
+    @Override
+    protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+      // some operations access SNode properties to compute their presentation during rebuild
+      super.runRebuildAction(new ModelReadRunnable(myProject.getModelAccess(), rebuildAction), saveExpansion);
     }
 
     public void setOperation(AbstractOperation operation) {

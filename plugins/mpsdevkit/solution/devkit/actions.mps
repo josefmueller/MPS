@@ -6246,6 +6246,7 @@
     <property role="TrG5h" value="ShowTypeSystemTrace" />
     <property role="3GE5qa" value="typesystem" />
     <property role="2uzpH1" value="Show Typesystem Trace" />
+    <property role="72QZ$" value="true" />
     <node concept="2S4$dB" id="7oAN7tz7mrk" role="1NuT2Z">
       <property role="TrG5h" value="node" />
       <node concept="1oajcY" id="7HZe2EwZDjA" role="1oa70y" />
@@ -6269,62 +6270,84 @@
     </node>
     <node concept="tnohg" id="7oAN7tz7mrp" role="tncku">
       <node concept="3clFbS" id="7oAN7tz7mrq" role="2VODD2">
-        <node concept="3cpWs8" id="7oAN7tz7mrI" role="3cqZAp">
-          <node concept="3cpWsn" id="7oAN7tz7mrJ" role="3cpWs9">
-            <property role="TrG5h" value="tool" />
-            <node concept="1xUVSX" id="7oAN7tz7mrK" role="1tU5fm">
-              <ref role="1xYkEM" node="7oAN7tz7mpE" resolve="TraceTool" />
-            </node>
-            <node concept="2OqwBi" id="7oAN7tz7mrL" role="33vP2m">
-              <node concept="2OqwBi" id="7oAN7tz7mrM" role="2Oq$k0">
-                <node concept="2WthIp" id="7oAN7tz7mrN" role="2Oq$k0" />
-                <node concept="1DTwFV" id="7oAN7tz7mrO" role="2OqNvi">
-                  <ref role="2WH_rO" node="7oAN7tz7mro" resolve="project" />
-                </node>
-              </node>
-              <node concept="LR4U6" id="7oAN7tz7mrP" role="2OqNvi">
-                <ref role="LR4U5" node="7oAN7tz7mpE" resolve="TraceTool" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7oAN7tz7mrQ" role="3cqZAp">
-          <node concept="2OqwBi" id="7oAN7tz7mrR" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTygb" role="2Oq$k0">
-              <ref role="3cqZAo" node="7oAN7tz7mrJ" resolve="tool" />
-            </node>
-            <node concept="2XshWL" id="7oAN7tz7mrT" role="2OqNvi">
-              <ref role="2WH_rO" node="1rFV26uVVcm" resolve="buildTrace" />
-              <node concept="2OqwBi" id="1rFV26uW3zY" role="2XxRq1">
-                <node concept="2WthIp" id="1rFV26uW3$1" role="2Oq$k0" />
-                <node concept="1DTwFV" id="1rFV26uW3$3" role="2OqNvi">
+        <node concept="3clFbF" id="4YxzM3lI2ik" role="3cqZAp">
+          <node concept="2OqwBi" id="4YxzM3lI3Ct" role="3clFbG">
+            <node concept="2OqwBi" id="4YxzM3lI2x7" role="2Oq$k0">
+              <node concept="2OqwBi" id="4YxzM3lI2XJ" role="2Oq$k0">
+                <node concept="2WthIp" id="4YxzM3lI2XM" role="2Oq$k0" />
+                <node concept="1DTwFV" id="4YxzM3lI2XO" role="2OqNvi">
                   <ref role="2WH_rO" node="1rFV26uVZQf" resolve="mpsProject" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="7oAN7tz7mrY" role="2XxRq1">
-                <node concept="2WthIp" id="7oAN7tz7mrZ" role="2Oq$k0" />
-                <node concept="3gHZIF" id="7oAN7tz7ms0" role="2OqNvi">
-                  <ref role="2WH_rO" node="7oAN7tz7mrk" resolve="node" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="7oAN7tz7ms1" role="2XxRq1">
-                <node concept="2WthIp" id="7oAN7tz7ms2" role="2Oq$k0" />
-                <node concept="1DTwFV" id="7oAN7tz7ms3" role="2OqNvi">
-                  <ref role="2WH_rO" node="7oAN7tz7mrn" resolve="editorComponent" />
-                </node>
+              <node concept="liA8E" id="4YxzM3lI3yN" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="7oAN7tz7ms5" role="3cqZAp">
-          <node concept="2OqwBi" id="7oAN7tz7ms6" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTyuo" role="2Oq$k0">
-              <ref role="3cqZAo" node="7oAN7tz7mrJ" resolve="tool" />
-            </node>
-            <node concept="liA8E" id="7oAN7tz7ms8" role="2OqNvi">
-              <ref role="37wK5l" to="71xd:~BaseTool.openToolLater(boolean):void" resolve="openToolLater" />
-              <node concept="3clFbT" id="7oAN7tz7ms9" role="37wK5m">
-                <property role="3clFbU" value="true" />
+            <node concept="liA8E" id="4YxzM3lI3VY" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.runReadAction(java.lang.Runnable):void" resolve="runReadAction" />
+              <node concept="1bVj0M" id="4YxzM3lI40P" role="37wK5m">
+                <node concept="3clFbS" id="4YxzM3lI40Q" role="1bW5cS">
+                  <node concept="3cpWs8" id="7oAN7tz7mrI" role="3cqZAp">
+                    <node concept="3cpWsn" id="7oAN7tz7mrJ" role="3cpWs9">
+                      <property role="TrG5h" value="tool" />
+                      <node concept="1xUVSX" id="7oAN7tz7mrK" role="1tU5fm">
+                        <ref role="1xYkEM" node="7oAN7tz7mpE" resolve="TraceTool" />
+                      </node>
+                      <node concept="2OqwBi" id="7oAN7tz7mrL" role="33vP2m">
+                        <node concept="2OqwBi" id="7oAN7tz7mrM" role="2Oq$k0">
+                          <node concept="2WthIp" id="7oAN7tz7mrN" role="2Oq$k0" />
+                          <node concept="1DTwFV" id="7oAN7tz7mrO" role="2OqNvi">
+                            <ref role="2WH_rO" node="7oAN7tz7mro" resolve="project" />
+                          </node>
+                        </node>
+                        <node concept="LR4U6" id="7oAN7tz7mrP" role="2OqNvi">
+                          <ref role="LR4U5" node="7oAN7tz7mpE" resolve="TraceTool" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7oAN7tz7mrQ" role="3cqZAp">
+                    <node concept="2OqwBi" id="7oAN7tz7mrR" role="3clFbG">
+                      <node concept="37vLTw" id="3GM_nagTygb" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7oAN7tz7mrJ" resolve="tool" />
+                      </node>
+                      <node concept="2XshWL" id="7oAN7tz7mrT" role="2OqNvi">
+                        <ref role="2WH_rO" node="1rFV26uVVcm" resolve="buildTrace" />
+                        <node concept="2OqwBi" id="1rFV26uW3zY" role="2XxRq1">
+                          <node concept="2WthIp" id="1rFV26uW3$1" role="2Oq$k0" />
+                          <node concept="1DTwFV" id="1rFV26uW3$3" role="2OqNvi">
+                            <ref role="2WH_rO" node="1rFV26uVZQf" resolve="mpsProject" />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="7oAN7tz7mrY" role="2XxRq1">
+                          <node concept="2WthIp" id="7oAN7tz7mrZ" role="2Oq$k0" />
+                          <node concept="3gHZIF" id="7oAN7tz7ms0" role="2OqNvi">
+                            <ref role="2WH_rO" node="7oAN7tz7mrk" resolve="node" />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="7oAN7tz7ms1" role="2XxRq1">
+                          <node concept="2WthIp" id="7oAN7tz7ms2" role="2Oq$k0" />
+                          <node concept="1DTwFV" id="7oAN7tz7ms3" role="2OqNvi">
+                            <ref role="2WH_rO" node="7oAN7tz7mrn" resolve="editorComponent" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="7oAN7tz7ms5" role="3cqZAp">
+                    <node concept="2OqwBi" id="7oAN7tz7ms6" role="3clFbG">
+                      <node concept="37vLTw" id="3GM_nagTyuo" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7oAN7tz7mrJ" resolve="tool" />
+                      </node>
+                      <node concept="liA8E" id="7oAN7tz7ms8" role="2OqNvi">
+                        <ref role="37wK5l" to="71xd:~BaseTool.openToolLater(boolean):void" resolve="openToolLater" />
+                        <node concept="3clFbT" id="7oAN7tz7ms9" role="37wK5m">
+                          <property role="3clFbU" value="true" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>
