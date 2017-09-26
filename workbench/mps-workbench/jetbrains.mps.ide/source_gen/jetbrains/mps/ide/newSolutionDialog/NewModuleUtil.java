@@ -83,8 +83,8 @@ public class NewModuleUtil {
     ((EditableSModel) sandboxModel).save();
 
     VersionFixer fixer = new VersionFixer(project.getRepository(), sandbox);
-    fixer.updateImportVersions();
     fixer.addJustCreatedLanguageVersion(l, language.getLanguageVersion());
+    fixer.updateImportVersions();
     sandbox.save();
     return sandbox;
   }

@@ -623,16 +623,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5pK7k4tcifd" role="3cqZAp">
-          <node concept="2OqwBi" id="5pK7k4tcife" role="3clFbG">
-            <node concept="37vLTw" id="1MbEMJ4fYU2" role="2Oq$k0">
-              <ref role="3cqZAo" node="1MbEMJ4fYTV" resolve="fixer" />
-            </node>
-            <node concept="liA8E" id="5pK7k4tcifl" role="2OqNvi">
-              <ref role="37wK5l" to="6f4m:2V3ml1v0Uym" resolve="updateImportVersions" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1MbEMJ4g86t" role="3cqZAp">
           <node concept="2OqwBi" id="1MbEMJ4g8QO" role="3clFbG">
             <node concept="37vLTw" id="1MbEMJ4g86r" role="2Oq$k0">
@@ -651,6 +641,16 @@
                   <ref role="37wK5l" to="w1kc:~Language.getLanguageVersion():int" resolve="getLanguageVersion" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5pK7k4tcifd" role="3cqZAp">
+          <node concept="2OqwBi" id="5pK7k4tcife" role="3clFbG">
+            <node concept="37vLTw" id="1MbEMJ4fYU2" role="2Oq$k0">
+              <ref role="3cqZAo" node="1MbEMJ4fYTV" resolve="fixer" />
+            </node>
+            <node concept="liA8E" id="5pK7k4tcifl" role="2OqNvi">
+              <ref role="37wK5l" to="6f4m:2V3ml1v0Uym" resolve="updateImportVersions" />
             </node>
           </node>
         </node>
