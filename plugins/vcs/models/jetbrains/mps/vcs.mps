@@ -2476,9 +2476,6 @@
               <node concept="Xl_RD" id="7uoPV6B$Mht" role="37wK5m">
                 <property role="Xl_RC" value="smodel" />
               </node>
-              <node concept="Xl_RD" id="4yD9Mgifi49" role="37wK5m">
-                <property role="Xl_RC" value="mps-core" />
-              </node>
               <node concept="Xl_RD" id="6gjr9XnnBSw" role="37wK5m">
                 <property role="Xl_RC" value="make-runtime" />
               </node>
