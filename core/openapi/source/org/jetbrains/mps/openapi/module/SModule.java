@@ -56,8 +56,21 @@ public interface SModule {
   boolean isPackaged();
 
   /**
-   * The owning repository
+   * The repository module has been registered with. Note, you can rely on non-{@code null} value to indicate module is still in the
+   * repository only if you do so during model read/write. Otherwise, if you ask for module's repository outside of model lock, you
+   * may get stale value, e.g. if some other thread detach the module from the repository, so that in your
+   * thread:
+   * <pre>
+   *   SRepository repo = module.getRepository();
+   *   repo.getModelAccess().runReadAction(() -> {
+   *     SModule actualModule = repo.resolve(module.getModuleReference());
+   *     if (actualModule == null) {
+   *       // legitimate case, module's repo might become stale if obtained outside of model lock
+   *     }
+   *   } );
+   * </pre>
    */
+  @Nullable
   SRepository getRepository();
 
   /**

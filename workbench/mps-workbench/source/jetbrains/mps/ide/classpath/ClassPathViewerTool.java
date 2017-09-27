@@ -19,7 +19,6 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
@@ -31,9 +30,11 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -46,7 +47,6 @@ import java.util.Set;
 public class ClassPathViewerTool extends BaseProjectTool {
   private MyClassPathTree myTree;
   private JPanel myComponent;
-  private SModule myInspectedModule;
 
   public ClassPathViewerTool(Project project) {
     super(project, "Classpath Explorer", -1, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
@@ -72,21 +72,40 @@ public class ClassPathViewerTool extends BaseProjectTool {
   }
 
   public void analyzeModule(SModule m) {
-    myInspectedModule = m;
+    myTree.setModule(m);
     myTree.rebuildLater();
   }
 
-  private class MyClassPathTree extends MPSTree {
+  private static class MyClassPathTree extends MPSTree {
+    private SModule myInspectedModule;
 
     MyClassPathTree() {
-      // it's not a node-backed tree
+      // we manage
       myWarnModelAccess = false;
+    }
+
+    void setModule(SModule m) {
+      myInspectedModule = m;
+    }
+
+    @Override
+    protected void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+      SRepository r = myInspectedModule == null ? null : myInspectedModule.getRepository();
+      if (r == null) {
+        super.runRebuildAction(rebuildAction, saveExpansion);
+      } else {
+        // JMO.collectCompileClasspath uses GMDM and walks modules, therefore needs model access.
+        super.runRebuildAction(new ModelReadRunnable(r, rebuildAction), saveExpansion);
+      }
     }
 
     @Override
     protected MPSTreeNode rebuild() {
       if (myInspectedModule == null) {
         return new TextTreeNode("No Module");
+      }
+      if (myInspectedModule.getRepository() == null) {
+        return new TextTreeNode("Can not calculate classpath for a detached module");
       }
 
       TextTreeNode root = new TextTreeNode("ClassPath of module " + myInspectedModule.getModuleName());
