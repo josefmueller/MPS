@@ -30,6 +30,7 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="kz9k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.navigation(MPS.Editor/)" />
     <import index="ekwn" ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" implicit="true" />
@@ -104,6 +105,7 @@
         <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -560,6 +562,28 @@
                                           </node>
                                         </node>
                                         <node concept="2AHcQZ" id="707jC4eA72S" role="2AJF6D">
+                                          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+                                        </node>
+                                      </node>
+                                      <node concept="2tJIrI" id="2HvflJ0Kc5f" role="jymVt" />
+                                      <node concept="3clFb_" id="2HvflJ0KceV" role="jymVt">
+                                        <property role="1EzhhJ" value="false" />
+                                        <property role="TrG5h" value="getRuleNode" />
+                                        <property role="DiZV1" value="false" />
+                                        <property role="od$2w" value="false" />
+                                        <node concept="3Tm1VV" id="2HvflJ0KceW" role="1B3o_S" />
+                                        <node concept="2AHcQZ" id="2HvflJ0KceY" role="2AJF6D">
+                                          <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+                                        </node>
+                                        <node concept="3uibUv" id="2HvflJ0KceZ" role="3clF45">
+                                          <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+                                        </node>
+                                        <node concept="3clFbS" id="2HvflJ0Kcf1" role="3clF47">
+                                          <node concept="3cpWs6" id="2HvflJ0KcS5" role="3cqZAp">
+                                            <node concept="10Nm6u" id="2HvflJ0KcWD" role="3cqZAk" />
+                                          </node>
+                                        </node>
+                                        <node concept="2AHcQZ" id="2HvflJ0Kcf2" role="2AJF6D">
                                           <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
                                         </node>
                                       </node>

@@ -21,6 +21,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.errors.NullErrorReporter;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.ui.MessageType;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -92,6 +94,12 @@ public class ShowNodeType_Action extends BaseAction {
                 @Override
                 public String reportError() {
                   return "Type was not fully instantiated";
+                }
+
+                @Nullable
+                @Override
+                public SNodeReference getRuleNode() {
+                  return null;
                 }
               };
             }

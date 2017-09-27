@@ -74,8 +74,10 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
     <classNode dependClassName="jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.TypesystemActions_ActionGroup" file="TypesystemActions_ActionGroup.java">
