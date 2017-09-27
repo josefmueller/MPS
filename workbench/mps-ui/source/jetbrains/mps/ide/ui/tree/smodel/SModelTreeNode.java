@@ -75,7 +75,7 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
     myTextSource = showLongName ? new LongModelNameText() : new ShortModelNameText();
     myModelDescriptor = model;
     myNodesCondition = condition;
-    setUserObject(NameUtil.getModelLongName(model));
+    setUserObject(model.getName().getLongName());
     if (myModelDescriptor != null) {
       setNodeIdentifier(myModelDescriptor.toString());
     } else {
@@ -93,6 +93,9 @@ public class SModelTreeNode extends MPSTreeNode implements TreeElement {
   public SModelTreeNode(@NotNull SModel model, @NotNull TreeNodeTextSource<SModelTreeNode> textSource) {
     myModelDescriptor = model;
     myTextSource = textSource;
+    // Though it's odd, we use model name as tree node's user object for centuries. There's code that match tree nodes
+    // based on their user object value, change with extra care, see MPSTree.findNodeWith(). If this scenario persists, have to change to model ref or at least
+    // full name including stereotype, as use of plain name is ambiguous.
     setUserObject(model.getName().getLongName());
     setNodeIdentifier(model.toString());
     Icon icon = IconManager.getIconFor(model);

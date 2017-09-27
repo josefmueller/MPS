@@ -41,12 +41,14 @@ import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.openapi.navigation.EditorNavigator;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
+import javax.swing.tree.TreeNode;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -150,6 +152,39 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
   @Override
   public void select(Object element, VirtualFile file, boolean requestFocus) {
+    TreeNode treeNode = lookupTreeNodeByFavoriteItem(element);
+    if (treeNode != null) {
+      getTree().selectNode(treeNode);
+    }
+  }
+
+  private TreeNode lookupTreeNodeByFavoriteItem(Object element) {
+    SModelReference modelRef = element instanceof SModelReference ? (SModelReference) element : null;
+    SModuleReference moduleRef = element instanceof SModuleReference ? (SModuleReference) element : null;
+    if (element instanceof SNodeReference) {
+      // try to find node
+      // FIXME here come a hack. We assume SNodeTreeNode uses nodeId.toString as user object
+      TreeNode treeNode = getTree().findNodeWith(((SNodeReference) element).getNodeId().toString());
+      if (treeNode != null) {
+        return treeNode;
+      }
+      modelRef = ((SNodeReference) element).getModelReference();
+    }
+    // try to find model
+    if (modelRef != null) {
+      // FIXME another hack. Assume SModelTreeNode uses long model name as user object
+      TreeNode treeNode = getTree().findNodeWith(modelRef.getName().getLongName());
+      if (treeNode != null) {
+        return treeNode;
+      }
+      moduleRef = modelRef.getModuleReference();
+    }
+    // try to find module
+    if (moduleRef != null) {
+      // FIXME and the last hack. Assume ProjectModuleTreeNode uses module name as user object
+      return getTree().findNodeWith(moduleRef.getModuleName());
+    }
+    return null;
   }
 
   @Override
@@ -159,7 +194,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
 
   @Override
   public SelectInTarget createSelectInTarget() {
-    return new FavoritesSelectInTarget(myProject);
+    return new FavoritesSelectInTarget(myProject, this);
   }
 
   @NotNull
@@ -199,7 +234,9 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       }
       for (Object o : objectList.toArray()) {
         FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(myProject, o);
-        if (favoritesRoot == null) continue;
+        if (favoritesRoot == null) {
+          continue;
+        }
         MPSTreeNode newChild = favoritesRoot.createTreeNode();
         if (newChild == null) {
           myFavoritesManager.removeRoots(subId, Collections.singletonList(o));

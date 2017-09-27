@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.ide.projectPane.favorites.root;
 
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -46,5 +47,10 @@ public abstract class FavoritesRoot<T> {
 
   public abstract MPSTreeNode createTreeNode();
 
+  /**
+   * @deprecated dubious contract, single use (abandoned), no reason to keep.
+   */
+  @Deprecated
+  @ToRemove(version = 2017.3)
   public abstract List<SNode> getAvailableNodes();
 }
