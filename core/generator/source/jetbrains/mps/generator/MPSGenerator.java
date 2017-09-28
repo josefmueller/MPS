@@ -21,18 +21,22 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.core.platform.MPSCore;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
+import jetbrains.mps.generator.trace.TraceRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
 /**
- * evgeny, 10/14/11
+ * Pack of generator-related {@linkplain CoreComponent components}.
+ *
+ * @author Artem Tikhomirov
  */
 public final class MPSGenerator extends ComponentPlugin implements ComponentHost {
   private final MPSCore myKernelComponents;
   private FacetFactory myGeneratorFacetFactory = CustomGenerationModuleFacet::new;
   private ModelGenerationStatusManager myGenerationStatusManager;
   private GenerationSettingsProvider mySettingsProvider;
+  private TraceRegistry myTraceRegistry;
 
   public MPSGenerator(MPSCore mpsCore) {
     // it's ok for MPSGenerator ComponentPlugin to depend from another CP, MPSCore (provided the one lives in [kernel] and doesn't drag
@@ -51,12 +55,17 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
     // FIXME odd registration/un-registration mechanism. Factory shall know its facet type
     // and #create there shall take SModule
     myKernelComponents.getModuleFacetRegistry().addFactory(CustomGenerationModuleFacet.FACET_TYPE, myGeneratorFacetFactory);
+    myTraceRegistry = init(new TraceRegistry());
   }
 
   @Override
   public void dispose() {
     myKernelComponents.getModuleFacetRegistry().removeFactory(myGeneratorFacetFactory);
     super.dispose();
+    myGeneratorFacetFactory = null;
+    myGenerationStatusManager = null;
+    mySettingsProvider = null;
+    myTraceRegistry = null;
   }
 
   @Nullable
@@ -67,6 +76,9 @@ public final class MPSGenerator extends ComponentPlugin implements ComponentHost
     }
     if (GenerationSettingsProvider.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(mySettingsProvider);
+    }
+    if (TraceRegistry.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myTraceRegistry);
     }
     return null;
   }
