@@ -167,13 +167,19 @@ public class TextLine {
   }
 
   private void updateStyle(Set<StyleAttribute> attributes) {
-    if (attributes == null || attributes.contains(StyleAttributes.FONT_SIZE) || attributes.contains(StyleAttributes.FONT_STYLE)) {
+    if (attributes == null
+        || attributes.contains(StyleAttributes.FONT_SIZE)
+        || attributes.contains(StyleAttributes.FONT_STYLE)
+        || attributes.contains(StyleAttributes.FONT_FAMILY)) {
       //this is the most expensive calculation
       EditorSettings settings = EditorSettings.getInstance();
       Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
-      String family = settings.getFontFamily();
+      String styleFontFamily = myStyle.get(StyleAttributes.FONT_FAMILY);
+
       Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
+      String family = styleFontFamily != null ? styleFontFamily : settings.getFontFamily();
       int fontSize = styleFontSize != null ? styleFontSize : settings.getFontSize();
+
       myFont = FontRegistry.getInstance().getFont(family, style, fontSize);
       myFontMetrics = null;
       myFontCorrectionRightGap = FontRegistry.getInstance().isFakeItalic(family, style) ? 1 : 0;

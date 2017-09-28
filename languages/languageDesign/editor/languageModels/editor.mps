@@ -224,7 +224,6 @@
         <child id="1221219051630" name="query" index="1mkY_M" />
       </concept>
       <concept id="1186415722038" name="jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem" flags="ln" index="VSNWy">
-        <property id="1221209241505" name="value" index="1lJzqX" />
         <child id="1221064706952" name="query" index="1d8cEk" />
       </concept>
       <concept id="1164996492011" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary" flags="ng" index="ZcVJ$" />
@@ -25970,13 +25969,7 @@
           </node>
         </node>
         <node concept="2biZxu" id="1tcuUjoypdr" role="3F10Kt">
-          <property role="2biZxL" value="URW Chancery L" />
-        </node>
-        <node concept="Vb9p2" id="1tcuUjozRzj" role="3F10Kt">
-          <property role="Vbekb" value="ITALIC" />
-        </node>
-        <node concept="VSNWy" id="1tcuUjo_kxi" role="3F10Kt">
-          <property role="1lJzqX" value="32" />
+          <property role="2biZxL" value="Serif" />
         </node>
       </node>
     </node>
