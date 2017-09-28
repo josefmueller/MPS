@@ -50,6 +50,7 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Color> getTextBackgroundColor_idhL7BhMP = new SMethodBuilder<Color>(new SJavaCompoundTypeImpl(Color.class)).name("getTextBackgroundColor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hL7BhMP").registry(REGISTRY).build();
   public static final SMethod<Boolean> isUnderlined_idhLmqR8u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isUnderlined").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLmqR8u").registry(REGISTRY).build();
   public static final SMethod<Boolean> isStrikeOut_idhNnL8J1 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isStrikeOut").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hNnL8J1").registry(REGISTRY).build();
+  public static final SMethod<String> getFontFamily_id4qPnysr_4es = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getFontFamily").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4qPnysr_4es").registry(REGISTRY).build();
   public static final SMethod<Integer> getFontSize_idhLmaQwP = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getFontSize").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLmaQwP").registry(REGISTRY).build();
   public static final SMethod<Integer> getFontStyle_idhLcv3Z9 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getFontStyle").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLcv3Z9").registry(REGISTRY).build();
   public static final SMethod<String> getOpeningTag_idhKxXtpm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOpeningTag").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hKxXtpm").registry(REGISTRY).build();
@@ -67,7 +68,7 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<SNode> getParentCollectionCell_id7XYaZQUjT8u = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParentCollectionCell").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7XYaZQUjT8u").registry(REGISTRY).build();
   public static final SMethod<Boolean> canBeUsedAsEmptyCell_id6RO52Mcgrfa = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeUsedAsEmptyCell").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6RO52Mcgrfa").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getCellModelKind_idhHfCaJf, getCellId_idhHbewHT, getDefaultCellId_id3VYF6qfIQs_, getUniqueCellIdPrefix_id7c58AbNRrel, getAbbreviation_id7c58AbNSIrP, getFactoryMethodName_idhHfE2BD, getParent_idhJF64sU, isSelectable_idhJF6SX1, setSelectable_idi4bRWUe, getColor_idhPjC$St, getForegroundColor_idhL6TA5F, getBackgroundColor_idhL7rNfN, getTextBackgroundColor_idhL7BhMP, isUnderlined_idhLmqR8u, isStrikeOut_idhNnL8J1, getFontSize_idhLmaQwP, getFontStyle_idhLcv3Z9, getOpeningTag_idhKxXtpm, getClosingTag_idhKxXx_K, getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, getOpeningPrefix_idhKxW98J, getDefaultFontStyle_idhL_r0Mx, isCellIdInitialized_idhTuDsSD, getBooleanStyleValue_idi0pNf1r, isNewLine_idi0pLPAc, isOnNewLine_idi0pUMOG, isIndented_idi0pN94$, isNewLineChildren_idi0pNGlC, getParentCollectionCell_id7XYaZQUjT8u, canBeUsedAsEmptyCell_id6RO52Mcgrfa);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getCellModelKind_idhHfCaJf, getCellId_idhHbewHT, getDefaultCellId_id3VYF6qfIQs_, getUniqueCellIdPrefix_id7c58AbNRrel, getAbbreviation_id7c58AbNSIrP, getFactoryMethodName_idhHfE2BD, getParent_idhJF64sU, isSelectable_idhJF6SX1, setSelectable_idi4bRWUe, getColor_idhPjC$St, getForegroundColor_idhL6TA5F, getBackgroundColor_idhL7rNfN, getTextBackgroundColor_idhL7BhMP, isUnderlined_idhLmqR8u, isStrikeOut_idhNnL8J1, getFontFamily_id4qPnysr_4es, getFontSize_idhLmaQwP, getFontStyle_idhLcv3Z9, getOpeningTag_idhKxXtpm, getClosingTag_idhKxXx_K, getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, getOpeningPrefix_idhKxW98J, getDefaultFontStyle_idhL_r0Mx, isCellIdInitialized_idhTuDsSD, getBooleanStyleValue_idi0pNf1r, isNewLine_idi0pLPAc, isOnNewLine_idi0pUMOG, isIndented_idi0pN94$, isNewLineChildren_idi0pNGlC, getParentCollectionCell_id7XYaZQUjT8u, canBeUsedAsEmptyCell_id6RO52Mcgrfa);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -181,6 +182,13 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   }
   /*package*/ static boolean isStrikeOut_idhNnL8J1(@NotNull SNode __thisNode__) {
     return ((boolean) EditorCellModel__BehaviorDescriptor.getBooleanStyleValue_idi0pNf1r.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd786e1a9L, "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), ((boolean) false)));
+  }
+  /*package*/ static String getFontFamily_id4qPnysr_4es(@NotNull SNode __thisNode__) {
+    SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, "jetbrains.mps.lang.editor.structure.FontFamilyStyleClassItem"))).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, "jetbrains.mps.lang.editor.structure.FontFamilyStyleClassItem"));
+    if ((firstItem == null) || !(firstItem.hasProperty(MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style")))) {
+      return EditorSettings.getInstance().getDefaultEditorFont().getFamily();
+    }
+    return SPropertyOperations.getString(firstItem, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x66f3048aedb8fcd4L, 0x66f3048aedb8fcfbL, "style"));
   }
   /*package*/ static int getFontSize_idhLmaQwP(@NotNull SNode __thisNode__) {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer__BehaviorDescriptor.getClassItems_idhJF5KPu.invoke(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"))).first(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143be33e36L, "jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem"));
@@ -320,36 +328,38 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
       case 14:
         return (T) ((Boolean) isStrikeOut_idhNnL8J1(node));
       case 15:
-        return (T) ((Integer) getFontSize_idhLmaQwP(node));
+        return (T) ((String) getFontFamily_id4qPnysr_4es(node));
       case 16:
-        return (T) ((Integer) getFontStyle_idhLcv3Z9(node));
+        return (T) ((Integer) getFontSize_idhLmaQwP(node));
       case 17:
-        return (T) ((String) getOpeningTag_idhKxXtpm(node));
+        return (T) ((Integer) getFontStyle_idhLcv3Z9(node));
       case 18:
-        return (T) ((String) getClosingTag_idhKxXx_K(node));
+        return (T) ((String) getOpeningTag_idhKxXtpm(node));
       case 19:
-        return (T) ((String) getOpeningText_idhKxU$w9(node));
+        return (T) ((String) getClosingTag_idhKxXx_K(node));
       case 20:
-        return (T) ((String) getClosingText_idhKxUEwj(node));
+        return (T) ((String) getOpeningText_idhKxU$w9(node));
       case 21:
-        return (T) ((String) getOpeningPrefix_idhKxW98J(node));
+        return (T) ((String) getClosingText_idhKxUEwj(node));
       case 22:
-        return (T) ((Integer) getDefaultFontStyle_idhL_r0Mx(node));
+        return (T) ((String) getOpeningPrefix_idhKxW98J(node));
       case 23:
-        return (T) ((Boolean) isCellIdInitialized_idhTuDsSD(node));
+        return (T) ((Integer) getDefaultFontStyle_idhL_r0Mx(node));
       case 24:
-        return (T) ((Boolean) getBooleanStyleValue_idi0pNf1r(node, (SConcept) parameters[0], ((boolean) (Boolean) parameters[1])));
+        return (T) ((Boolean) isCellIdInitialized_idhTuDsSD(node));
       case 25:
-        return (T) ((Boolean) isNewLine_idi0pLPAc(node));
+        return (T) ((Boolean) getBooleanStyleValue_idi0pNf1r(node, (SConcept) parameters[0], ((boolean) (Boolean) parameters[1])));
       case 26:
-        return (T) ((Boolean) isOnNewLine_idi0pUMOG(node));
+        return (T) ((Boolean) isNewLine_idi0pLPAc(node));
       case 27:
-        return (T) ((Boolean) isIndented_idi0pN94$(node));
+        return (T) ((Boolean) isOnNewLine_idi0pUMOG(node));
       case 28:
-        return (T) ((Boolean) isNewLineChildren_idi0pNGlC(node));
+        return (T) ((Boolean) isIndented_idi0pN94$(node));
       case 29:
-        return (T) ((SNode) getParentCollectionCell_id7XYaZQUjT8u(node));
+        return (T) ((Boolean) isNewLineChildren_idi0pNGlC(node));
       case 30:
+        return (T) ((SNode) getParentCollectionCell_id7XYaZQUjT8u(node));
+      case 31:
         return (T) ((Boolean) canBeUsedAsEmptyCell_id6RO52Mcgrfa(node));
       default:
         throw new BHMethodNotFoundException(this, method);
