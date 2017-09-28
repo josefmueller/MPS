@@ -173,6 +173,7 @@ public class StyleAttributes {
   public static final StyleAttribute<CaretPosition> DEFAULT_CARET_POSITION = new SimpleStyleAttribute<CaretPosition>("default-caret-position", null, true);
   public static final StyleAttribute<Boolean> AUTO_DELETABLE = new SimpleStyleAttribute<Boolean>("auto-deletable", false, true);
 
+  public static final StyleAttribute<String> FONT_FAMILY = new InheritableStyleAttribute<String>("font-family", Font.MONOSPACED, true);
   public static final StyleAttribute<Integer> FONT_STYLE = new InheritableStyleAttribute<Integer>("font-style", Font.PLAIN, true);
   public static final StyleAttribute<Integer> FONT_SIZE = new InheritableStyleAttribute<Integer>("font-size", null, true);
 

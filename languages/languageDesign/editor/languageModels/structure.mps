@@ -6671,5 +6671,36 @@
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
+  <node concept="1TIwiD" id="4DrEZjt9c6c">
+    <property role="R5$K7" value="true" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="QueryFunction_FontFamily" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="QueryFunction.Style" />
+    <property role="EcuMT" value="5358065249857880460" />
+    <property role="34LRSv" value="font family function" />
+    <ref role="1TJDcQ" node="hLcOssU" resolve="QueryFunction_StyleParameter" />
+  </node>
+  <node concept="1TIwiD" id="6rN18FHIfNk">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="FontFamilyStyleClassItem" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Stylesheet" />
+    <property role="34LRSv" value="font-family" />
+    <property role="EcuMT" value="7418278005949660372" />
+    <ref role="1TJDcQ" node="hgV6hR6" resolve="StyleClassItem" />
+    <node concept="1TJgyj" id="6rN18FHIfNl" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="query" />
+      <property role="IQ2ns" value="7418278005949660373" />
+      <ref role="20lvS9" node="33FxyQ70GUZ" resolve="QueryFunction_Style" />
+    </node>
+    <node concept="1TJgyi" id="6rN18FHIfNV" role="1TKVEl">
+      <property role="IQ2nx" value="7418278005949660411" />
+      <property role="TrG5h" value="style" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
 </model>
 

@@ -30,6 +30,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java.util.Locale.ENGLISH;
+
 /**
  * User: shatalin
  * Date: 06/08/14
@@ -104,6 +106,10 @@ public class FontRegistry {
       myFontMetricsCache.put(font, result);
     }
     return result;
+  }
+
+  public String[] getAvailableFontFamilyNames() {
+    return GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames(ENGLISH);
   }
 
   private Pair<String, Integer> getRealFontNameAndStyle(String fontName, int style) {

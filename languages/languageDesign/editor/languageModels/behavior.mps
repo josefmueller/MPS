@@ -48,6 +48,7 @@
     <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="dt3s" ref="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -23123,6 +23124,29 @@
     </node>
     <node concept="13hLZK" id="7MsHfaQE9nX" role="13h7CW">
       <node concept="3clFbS" id="7MsHfaQE9nY" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="4DrEZjt9c6I">
+    <property role="3GE5qa" value="QueryFunction.Style" />
+    <ref role="13h7C2" to="tpc2:4DrEZjt9c6c" resolve="QueryFunction_FontFamily" />
+    <node concept="13hLZK" id="4DrEZjt9c6J" role="13h7CW">
+      <node concept="3clFbS" id="4DrEZjt9c6K" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="4DrEZjt9c8i" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0is" value="false" />
+      <property role="TrG5h" value="getExpectedReturnType" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:hEwIGRD" resolve="getExpectedReturnType" />
+      <node concept="3Tm1VV" id="4DrEZjt9c8j" role="1B3o_S" />
+      <node concept="3clFbS" id="4DrEZjt9c8p" role="3clF47">
+        <node concept="3clFbF" id="4DrEZjt9c8u" role="3cqZAp">
+          <node concept="2c44tf" id="4DrEZjt9i4T" role="3clFbG">
+            <node concept="17QB3L" id="4DrEZjt9i4U" role="2c44tc" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="4DrEZjt9c8q" role="3clF45" />
     </node>
   </node>
 </model>
