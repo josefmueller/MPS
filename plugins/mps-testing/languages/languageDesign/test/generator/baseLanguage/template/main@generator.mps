@@ -266,6 +266,7 @@
         <child id="1217960314448" name="messageText" index="2k5Stb" />
         <child id="1217960407512" name="referenceNode" index="2k6f33" />
       </concept>
+      <concept id="1217969995796" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage" flags="nn" index="2kEO4f" />
       <concept id="1218047638031" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" flags="nn" index="2piZGk">
         <child id="1218047638032" name="baseName" index="2piZGb" />
         <child id="1218049772449" name="contextNode" index="2pr8EU" />
@@ -3109,11 +3110,11 @@
                           <node concept="3clFbF" id="5aRyplrTgsv" role="3cqZAp">
                             <node concept="2OqwBi" id="5aRyplrTgNU" role="3clFbG">
                               <node concept="1iwH7S" id="5aRyplrTgst" role="2Oq$k0" />
-                              <node concept="2k5nB$" id="5aRyplrThdK" role="2OqNvi">
+                              <node concept="2kEO4f" id="2LDu0wbBMdS" role="2OqNvi">
                                 <node concept="Xl_RD" id="5aRyplrThCn" role="2k5Stb">
                                   <property role="Xl_RC" value="A node in the 'before' section must have at least one AnonymousCellAnnotation attached" />
                                 </node>
-                                <node concept="30H73N" id="5aRyplrTpGX" role="2k6f33" />
+                                <node concept="30H73N" id="2LDu0wbBPxm" role="2k6f33" />
                               </node>
                             </node>
                           </node>
