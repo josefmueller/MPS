@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.plugins.applicationplugins;
 
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.openapi.application.ApplicationManager;
@@ -68,16 +68,20 @@ public class GroupAdjuster {
 
     addPlace(ModuleActions_ActionGroup.ID, ActionPlace.MODULE_DEPENDENCIES);
 
-    DefaultActionGroup editorPopupGroup = ActionUtils.getDefaultGroup(MPSActions.EDITOR_POPUP_GROUP);
-    List<AnAction> actionList = Arrays.asList(editorPopupGroup.getChildren(null));
-    BaseGroup.addPlaceToActionList(actionList, ActionPlace.EDITOR, null);
+    ActionGroup editorPopupGroup = ActionUtils.getDefaultGroup(MPSActions.EDITOR_POPUP_GROUP);
+    if (editorPopupGroup != null) {
+      List<AnAction> actionList = Arrays.asList(editorPopupGroup.getChildren(null));
+      BaseGroup.addPlaceToActionList(actionList, ActionPlace.EDITOR, null);
+    }
 
-    DefaultActionGroup editorActionsGroup = ActionUtils.getDefaultGroup(MPSActions.EDITOR_ACTIONS_GROUP);
-    actionList = Arrays.asList(editorActionsGroup.getChildren(null));
-    BaseGroup.addPlaceToActionList(actionList, ActionPlace.EDITOR, null);
+    ActionGroup editorActionsGroup = ActionUtils.getDefaultGroup(MPSActions.EDITOR_ACTIONS_GROUP);
+    if (editorActionsGroup != null) {
+      List<AnAction> actionList = Arrays.asList(editorActionsGroup.getChildren(null));
+      BaseGroup.addPlaceToActionList(actionList, ActionPlace.EDITOR, null);
+    }
 
     List<BaseGroup> mainMenuGroups = new ArrayList<>();
-    DefaultActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
+    ActionGroup mainMenuGroup = ActionUtils.getDefaultGroup(IdeActions.GROUP_MAIN_MENU);
     ActionManagerEx manager = ActionManagerEx.getInstanceEx();
     for (String id : manager.getActionIds("")) {
       AnAction action = manager.getAction(id);

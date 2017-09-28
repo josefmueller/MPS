@@ -17,9 +17,11 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.ide.DataManager;
 import com.intellij.ide.actions.RecentProjectsGroup;
+import com.intellij.ide.ui.customization.CustomActionsSchema;
 import com.intellij.openapi.actionSystem.*;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.event.InputEvent;
 
@@ -46,8 +48,9 @@ public class ActionUtils {
     return ((BaseGroup) ActionManager.getInstance().getAction(id));
   }
 
-  public static DefaultActionGroup getDefaultGroup(String id) {
-    return ((DefaultActionGroup) ActionManager.getInstance().getAction(id));
+  @Nullable
+  public static ActionGroup getDefaultGroup(String id) {
+    return (ActionGroup) CustomActionsSchema.getInstance().getCorrectedAction(id);
   }
 
   public static DefaultActionGroup groupFromActions(AnAction... actions) {

@@ -20,6 +20,7 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.PasteProvider;
 import com.intellij.ide.SelectInContext;
+import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -57,7 +58,6 @@ import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CommentOrUncommentCurrentSelectedNode;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.item.ReportItem;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
@@ -1315,7 +1315,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (!myPopupMenuEnabled) {
       return;
     }
-    DefaultActionGroup baseGroup = ActionUtils.getDefaultGroup(myDefaultPopupGroupId);
+    ActionGroup baseGroup = ActionUtils.getDefaultGroup(myDefaultPopupGroupId);
     if (baseGroup == null) {
       return;
     }
