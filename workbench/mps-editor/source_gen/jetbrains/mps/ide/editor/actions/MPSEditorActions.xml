@@ -151,6 +151,9 @@
     <action id="jetbrains.mps.ide.editor.actions.RootHome_Action" class="jetbrains.mps.ide.editor.actions.RootHome_Action">
       <keyboard-shortcut first-keystroke="ctrl HOME" keymap="$default" />
     </action>
+    <action id="jetbrains.mps.ide.editor.actions.SelectAll_Action" class="jetbrains.mps.ide.editor.actions.SelectAll_Action">
+      <keyboard-shortcut first-keystroke="ctrl A" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectDown_Action" class="jetbrains.mps.ide.editor.actions.SelectDown_Action">
       <keyboard-shortcut first-keystroke="ctrl DOWN" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl shift W" keymap="$default" />
@@ -254,6 +257,7 @@
       <reference ref="jetbrains.mps.ide.editor.actions.MoveUp_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.RootEnd_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.RootHome_Action" />
+      <reference ref="jetbrains.mps.ide.editor.actions.SelectAll_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.SelectDown_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.SelectLeft_Action" />
       <reference ref="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action" />

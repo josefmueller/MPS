@@ -48,6 +48,7 @@ public enum CellActionType {
   LOCAL_HOME,
   LOCAL_END,
 
+  SELECT_ALL,
   SELECT_LEFT,
   SELECT_RIGHT,
   SELECT_UP,

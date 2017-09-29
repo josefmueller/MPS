@@ -471,6 +471,28 @@ public class NodeEditorActions {
     }
   }
 
+  public static class SelectAll extends NavigationAction {
+    @Override
+    public boolean canExecute(EditorContext context) {
+      return findTarget(context.getEditorComponent().getSelectionManager()) != null;
+    }
+
+    @Override
+    public void execute(EditorContext context) {
+      SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
+      selectionManager.pushSelection(selectionManager.createSelection(findTarget(selectionManager)));
+    }
+
+    private EditorCell findTarget(SelectionManager selectionManager) {
+      Selection selection = selectionManager.getSelection();
+      if (selection == null) {
+        return null;
+      }
+      EditorCell cell = selection.getSelectedCells().get(0);
+      return cell.getRootParent();
+    }
+  }
+
   public static class SelectUp extends NavigationAction {
     @Override
     public boolean canExecute(EditorContext context) {
