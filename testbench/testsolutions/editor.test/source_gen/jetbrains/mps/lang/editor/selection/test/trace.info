@@ -58,6 +58,39 @@
       <unit id="2025581204008535354" at="10,0,28,0" name="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test" />
     </file>
   </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/4348968319430072522">
+    <file name="SelectAll_Test.java">
+      <node id="4348968319430072522" at="13,49,14,112" concept="0" />
+      <node id="4348968319430072522" at="14,112,15,101" concept="0" />
+      <node id="4348968319430072522" at="21,51,22,72" concept="0" />
+      <node id="4348968319430072540" at="22,72,23,72" concept="0" />
+      <node id="4348968319430072522" at="12,0,17,0" concept="1" trace="test_SelectAll#()V" />
+      <node id="4348968319430072522" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="4348968319430072522" at="13,49,15,101" />
+      <scope id="4348968319430072522" at="21,51,23,72" />
+      <scope id="4348968319430072522" at="12,0,17,0" />
+      <scope id="4348968319430072522" at="20,0,25,0" />
+      <unit id="4348968319430072522" at="18,0,26,0" name="jetbrains.mps.lang.editor.selection.test.SelectAll_Test$TestBody" />
+      <unit id="4348968319430072522" at="10,0,27,0" name="jetbrains.mps.lang.editor.selection.test.SelectAll_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/4348968319430081703">
+    <file name="SelectAllAndEsc_Test.java">
+      <node id="4348968319430081703" at="13,55,14,112" concept="0" />
+      <node id="4348968319430081703" at="14,112,15,107" concept="0" />
+      <node id="4348968319430081703" at="21,51,22,72" concept="0" />
+      <node id="4348968319430081721" at="22,72,23,72" concept="0" />
+      <node id="4348968319430083080" at="23,72,24,69" concept="0" />
+      <node id="4348968319430081703" at="12,0,17,0" concept="1" trace="test_SelectAllAndEsc#()V" />
+      <node id="4348968319430081703" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="4348968319430081703" at="13,55,15,107" />
+      <scope id="4348968319430081703" at="21,51,24,69" />
+      <scope id="4348968319430081703" at="12,0,17,0" />
+      <scope id="4348968319430081703" at="20,0,26,0" />
+      <unit id="4348968319430081703" at="18,0,27,0" name="jetbrains.mps.lang.editor.selection.test.SelectAllAndEsc_Test$TestBody" />
+      <unit id="4348968319430081703" at="10,0,28,0" name="jetbrains.mps.lang.editor.selection.test.SelectAllAndEsc_Test" />
+    </file>
+  </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/5097407566121753122">
     <file name="RootEndWithLineSelectionFromFirstCell_Test.java">
       <node id="5097407566121753122" at="13,77,14,112" concept="0" />
