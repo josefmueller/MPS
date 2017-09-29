@@ -25937,7 +25937,19 @@
       <node concept="3F0A7n" id="6rN18FHKv7m" role="3EZMnx">
         <ref role="1NtTu8" to="tpc2:6rN18FHIfNV" resolve="style" />
         <node concept="2biZxu" id="4qPnysrxxwk" role="3F10Kt">
-          <property role="2biZxL" value="Serif" />
+          <property role="2biZxL" value="qu" />
+          <node concept="2RUkyi" id="SLohPpezxK" role="2biZxv">
+            <node concept="3clFbS" id="SLohPpezxL" role="2VODD2">
+              <node concept="3clFbF" id="SLohPpezEi" role="3cqZAp">
+                <node concept="2OqwBi" id="SLohPpezXG" role="3clFbG">
+                  <node concept="pncrf" id="SLohPpezEh" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="SLohPpe$GN" role="2OqNvi">
+                    <ref role="37wK5l" to="tpcb:SLohPpeqbF" resolve="getFontFamily" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="OXEIz" id="6rN18FHKv7M" role="P5bDN">
           <node concept="1ou48o" id="6rN18FHKv7X" role="OY2wv">

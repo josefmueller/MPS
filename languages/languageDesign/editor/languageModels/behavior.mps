@@ -3461,29 +3461,11 @@
               </node>
             </node>
           </node>
-          <node concept="22lmx$" id="4qPnysr__OK" role="3clFbw">
-            <node concept="3fqX7Q" id="4qPnysr__Yy" role="3uHU7w">
-              <node concept="2OqwBi" id="4qPnysr_BjV" role="3fr31v">
-                <node concept="2JrnkZ" id="4qPnysr_B8s" role="2Oq$k0">
-                  <node concept="37vLTw" id="4qPnysr_A1a" role="2JrQYb">
-                    <ref role="3cqZAo" node="4qPnysr_6jh" resolve="firstItem" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="4qPnysr_B_N" role="2OqNvi">
-                  <ref role="37wK5l" to="mhbf:~SNode.hasProperty(org.jetbrains.mps.openapi.language.SProperty):boolean" resolve="hasProperty" />
-                  <node concept="355D3s" id="4qPnysr_BIV" role="37wK5m">
-                    <ref role="355D3t" to="tpc2:6rN18FHIfNk" resolve="FontFamilyStyleClassItem" />
-                    <ref role="355D3u" to="tpc2:6rN18FHIfNV" resolve="style" />
-                  </node>
-                </node>
-              </node>
+          <node concept="2OqwBi" id="4qPnysr_$Pr" role="3clFbw">
+            <node concept="37vLTw" id="4qPnysr_$zm" role="2Oq$k0">
+              <ref role="3cqZAo" node="4qPnysr_6jh" resolve="firstItem" />
             </node>
-            <node concept="2OqwBi" id="4qPnysr_$Pr" role="3uHU7B">
-              <node concept="37vLTw" id="4qPnysr_$zm" role="2Oq$k0">
-                <ref role="3cqZAo" node="4qPnysr_6jh" resolve="firstItem" />
-              </node>
-              <node concept="3w_OXm" id="4qPnysr__lf" role="2OqNvi" />
-            </node>
+            <node concept="3w_OXm" id="4qPnysr__lf" role="2OqNvi" />
           </node>
         </node>
         <node concept="3cpWs6" id="4qPnysr_Fuj" role="3cqZAp">
@@ -3491,8 +3473,8 @@
             <node concept="37vLTw" id="4qPnysr_FEf" role="2Oq$k0">
               <ref role="3cqZAo" node="4qPnysr_6jh" resolve="firstItem" />
             </node>
-            <node concept="3TrcHB" id="4qPnysr_G$o" role="2OqNvi">
-              <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+            <node concept="2qgKlT" id="SLohPphmv6" role="2OqNvi">
+              <ref role="37wK5l" node="SLohPpeqbF" resolve="getFontFamily" />
             </node>
           </node>
         </node>
@@ -23232,6 +23214,57 @@
         </node>
       </node>
       <node concept="3Tqbb2" id="4DrEZjt9c8q" role="3clF45" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="SLohPpeok3">
+    <property role="3GE5qa" value="Stylesheet" />
+    <ref role="13h7C2" to="tpc2:6rN18FHIfNk" resolve="FontFamilyStyleClassItem" />
+    <node concept="13hLZK" id="SLohPpeok4" role="13h7CW">
+      <node concept="3clFbS" id="SLohPpeok5" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="SLohPpeqbF" role="13h7CS">
+      <property role="TrG5h" value="getFontFamily" />
+      <node concept="3Tm1VV" id="SLohPpeqbG" role="1B3o_S" />
+      <node concept="17QB3L" id="SLohPpeqbH" role="3clF45" />
+      <node concept="3clFbS" id="SLohPpeqbI" role="3clF47">
+        <node concept="3clFbJ" id="SLohPpesKA" role="3cqZAp">
+          <node concept="3clFbS" id="SLohPpesKC" role="3clFbx">
+            <node concept="3cpWs6" id="SLohPpeqbW" role="3cqZAp">
+              <node concept="2OqwBi" id="SLohPpeqbX" role="3cqZAk">
+                <node concept="2OqwBi" id="SLohPpeqbY" role="2Oq$k0">
+                  <node concept="2YIFZM" id="SLohPpeqbZ" role="2Oq$k0">
+                    <ref role="37wK5l" to="exr9:~EditorSettings.getInstance():jetbrains.mps.nodeEditor.EditorSettings" resolve="getInstance" />
+                    <ref role="1Pybhc" to="exr9:~EditorSettings" resolve="EditorSettings" />
+                  </node>
+                  <node concept="liA8E" id="SLohPpeqc0" role="2OqNvi">
+                    <ref role="37wK5l" to="exr9:~EditorSettings.getDefaultEditorFont():java.awt.Font" resolve="getDefaultEditorFont" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="SLohPpeqc1" role="2OqNvi">
+                  <ref role="37wK5l" to="z60i:~Font.getFamily():java.lang.String" resolve="getFamily" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbC" id="SLohPpeubZ" role="3clFbw">
+            <node concept="10Nm6u" id="SLohPpeup1" role="3uHU7w" />
+            <node concept="2OqwBi" id="SLohPpet2S" role="3uHU7B">
+              <node concept="13iPFW" id="SLohPpesPI" role="2Oq$k0" />
+              <node concept="3TrcHB" id="SLohPpetw0" role="2OqNvi">
+                <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="SLohPpeqcc" role="3cqZAp">
+          <node concept="2OqwBi" id="SLohPpeqcd" role="3cqZAk">
+            <node concept="13iPFW" id="SLohPperLy" role="2Oq$k0" />
+            <node concept="3TrcHB" id="SLohPpeqcf" role="2OqNvi">
+              <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
