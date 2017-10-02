@@ -16625,12 +16625,6 @@
             <ref role="3bR37D" node="7Kfy9QB6KZA" resolve="jetbrains.mps.baseLanguage.classifiers" />
           </node>
         </node>
-        <node concept="1SiIV0" id="7YI57w6Kc$F" role="3bR37C">
-          <node concept="3bR9La" id="7YI57w6Kc$G" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
-          </node>
-        </node>
         <node concept="1SiIV0" id="7YI57w6Kc$H" role="3bR37C">
           <node concept="3bR9La" id="7YI57w6Kc$I" role="1SiIV1">
             <property role="3bR36h" value="false" />
@@ -16653,12 +16647,6 @@
           <node concept="3bR9La" id="6IZ_b08qDCD" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="30_Q$GXISq$" role="3bR37C">
-          <node concept="3bR9La" id="30_Q$GXISq_" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="568PkTlOK6f" resolve="jetbrains.mps.core.properties" />
           </node>
         </node>
         <node concept="1SiIV0" id="1$VFM_tv06T" role="3bR37C">
@@ -16744,11 +16732,6 @@
           <ref role="1Busuk" node="7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
         </node>
       </node>
-      <node concept="1SiIV0" id="2a9bszgrv8B" role="3bR37C">
-        <node concept="1Busua" id="2a9bszgrv8A" role="1SiIV1">
-          <ref role="1Busuk" node="7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
-        </node>
-      </node>
       <node concept="398BVA" id="2eDSGe9d1pK" role="3LF7KH">
         <ref role="398BVh" node="2eDSGe9d1qB" resolve="mps_home" />
         <node concept="2Ry0Ak" id="2eDSGe9d1pL" role="iGT6I">
@@ -16787,6 +16770,12 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="1SiIV0" id="2M9gNvyxCBp" role="3bR37C">
+        <node concept="3bR9La" id="2M9gNvyxCBq" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="7Kfy9QB6L0h" resolve="jetbrains.mps.baseLanguage.collections" />
         </node>
       </node>
     </node>
@@ -19967,7 +19956,7 @@
             </node>
           </node>
           <node concept="1zDrgl" id="6Iq8148gFCu" role="39821P">
-            <ref role="1zDrgn" node="6Iq8148fw_a" resolve="MPS" />
+            <ref role="1zDrgn" node="6Iq8148fw_a" resolve="JetBrains MPS 2017.3" />
           </node>
         </node>
         <node concept="3981dG" id="7u_tNvPwpfJ" role="39821P">
@@ -29175,7 +29164,7 @@
     <property role="TrG5h" value="mps" />
     <property role="3GE5qa" value="ide.data" />
     <property role="26EafI" value="bin" />
-    <ref role="1_kbm$" node="6Iq8148fw_a" resolve="MPS" />
+    <ref role="1_kbm$" node="6Iq8148fw_a" resolve="JetBrains MPS 2017.3" />
     <node concept="26Ea6D" id="2lwFGYOW7EY" role="2hID6k">
       <property role="26Ea6C" value="-client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none" />
     </node>

@@ -209,7 +209,6 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-test.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
-      <library file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <library file="${artifacts.mpsVcsCore}/vcs-core/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" />
       <library file="${artifacts.mpsVcsCore}/vcs-core/languages/jetbrains.mps.vcs.mergehints.jar" />
       <library file="${artifacts.mpsVcsCore}/vcs-core/lib/vcs-core.jar" />
