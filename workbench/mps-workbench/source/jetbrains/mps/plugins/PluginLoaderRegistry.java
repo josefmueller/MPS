@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
+import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
@@ -51,8 +53,10 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -215,6 +219,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
    * This is one reason we need to get rid of them
    *
    * @deprecated mechanism will be disabled
+   *             replaced with {@linkplain #getContributorsFromExtPoint() extension point contributions}
    */
   @ToRemove(version = 3.3)
   @Deprecated
@@ -222,6 +227,72 @@ public class PluginLoaderRegistry implements ApplicationComponent {
     final List<PluginContributor> pluginFactoriesRegistryContributors = getPluginFactoriesRegistryContributors();
     return pluginFactoriesRegistryContributors.stream().filter(contributor -> !currentContributors.contains(contributor)).collect(
         toCollection(LinkedHashSet::new));
+  }
+
+  private Set<PluginContributor> getContributorsFromExtPoint() {
+    class ExtPointContributor extends PluginContributor {
+      private final ComponentContributorExtension myExtension;
+
+      ExtPointContributor(ComponentContributorExtension extension) {
+        myExtension = extension;
+      }
+
+      @Override
+      public BaseProjectPlugin createProjectPlugin() {
+        if (myExtension.myProjectPartContributor != null) {
+          return instantiateSafe(myExtension.myProjectPartContributor);
+        }
+        return null;
+      }
+
+      @Override
+      public BaseApplicationPlugin createApplicationPlugin() {
+        if (myExtension.myApplicationPartContributor != null) {
+          return  instantiateSafe(myExtension.myApplicationPartContributor);
+        }
+        return null;
+      }
+
+      private <T> T instantiateSafe(String contributorClassName) {
+        try {
+          Class<T> cls = myExtension.findClass(contributorClassName);
+          return cls.newInstance();
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+          String msg = String.format("Failed to load class %s from plugin %s", contributorClassName, getContributingPluginId());
+          PluginLoaderRegistry.LOG.error(msg, ex);
+          return null;
+        }
+      }
+
+      @Override
+      public int hashCode() {
+        String contributingPlugin = getContributingPluginId();
+        return Objects.hash(contributingPlugin, myExtension.myApplicationPartContributor, myExtension.myProjectPartContributor);
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (false == obj instanceof ExtPointContributor) {
+          return false;
+        }
+        ExtPointContributor other = (ExtPointContributor) obj;
+        return other.getContributingPluginId().equals(getContributingPluginId())
+               && Objects.equals(myExtension.myApplicationPartContributor, other.myExtension.myApplicationPartContributor)
+               && Objects.equals(myExtension.myProjectPartContributor, other.myExtension.myProjectPartContributor);
+      }
+
+      private String getContributingPluginId() {
+        return myExtension.getPluginDescriptor().getPluginId().getIdString();
+      }
+    }
+    HashSet<PluginContributor> rv = new HashSet<>();
+    for (ComponentContributorExtension ext : ComponentContributorExtension.POINT.getExtensions()) {
+      rv.add(new ExtPointContributor(ext));
+    }
+    return rv;
   }
 
   private static List<PluginContributor> getPluginFactoriesRegistryContributors() {
@@ -342,6 +413,9 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
     private void addFactories(ProgressMonitor monitor) {
       Set<PluginContributor> factories = getFactoryContributors(myCurrentContributors);
+      // factory contributors were replaced with extension points, once we drop them (after 2017.3), have to remove
+      // getFactoryContributors() call above and rename the method (e.g. addIdeaNativePluginContributions).
+      factories.addAll(getContributorsFromExtPoint());
       factories.removeAll(myCurrentContributors);
       LOG.debug("Loading " + factories.size() + " Factories");
       loadContributors(factories, myCurrentLoaders, monitor.subTask(1));
