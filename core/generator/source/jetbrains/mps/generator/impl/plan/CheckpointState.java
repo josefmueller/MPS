@@ -137,6 +137,11 @@ public class CheckpointState {
 
   @Nullable
   public SNode getOutputIfSingle(String mappingLabel, SNode input) {
+    // FIXME move the check outside of this code, and don't use this method at all.
+    // ModelCheckpoints.findTransformedNode shall fail if ML present and there are multiple outputs.
+    if (!myState.getMappingNameAndInputNodeToOutputNodeMap().containsKey(mappingLabel)) {
+      return null;
+    }
     Collection<SNode> output = getOutput(mappingLabel, input);
     if (output.size() == 1) {
       return output.iterator().next();

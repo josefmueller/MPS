@@ -29,7 +29,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -99,7 +98,7 @@ public class ModelCheckpoints {
    * @return outputNode a node in CP identified by {@code tp} representing a copy of supplied {@code inputNode}
    */
   @Nullable
-  private SNode findCopiedNode(@NotNull CheckpointIdentity tp, @NotNull SNode inputNode) {
+  public SNode findCopiedNode(@NotNull CheckpointIdentity tp, @NotNull SNode inputNode) {
     // Given M1 and M2, where M1 hosts reference source and M2 is home for reference target, and cp sequence CP1->CP3 for M1, CP1->CP2->CP3 sequence for M2,
     // we need to synchronize @CP3 provided M1 still points to M2@CP1, while M2@CP3 records nodes M2@CP2 as their inputs which do not match nodes of M2@CP1
     // Therefore, we need to walk M2 CP sequence backwards up to CP1, match input and then re-construct transitions forward to CP3.
@@ -119,7 +118,7 @@ public class ModelCheckpoints {
       cpId = cp.getOriginCheckpoint();
     } while (copiedOutput == null && cpId != null);
     if (copiedOutput == null) {
-      // we traced all known CPs of M2 and didn't find any that has a copied output fro inputNode, alas
+      // we traced all known CPs of M2 and didn't find any that has a copied output for inputNode, alas
       return null;
     }
     // at the top of the cpStateStack is CP state with the inputNode->copiedOutput record, discard as we already know copiedOutput node,
@@ -134,28 +133,60 @@ public class ModelCheckpoints {
   }
 
   /**
-   * With {@code inputNode} coming from one of CP previous to the supplied one, try to find a copy of an input node in immediately preceding CP
-   * and use it as a 'proper' input to retrieve values for the specified CP.
-   * @param tp
+   * With {@code inputNode} coming from one of CP previous to the supplied one, try to find a copy of an input node in a preceding CP,
+   * use it as a 'proper' input to retrieve transformed value, and trace this value, if any, up to the target CP.
+   * @param tp target checkpoint
    * @param inputNode
-   * @param withProperInput receives a {@link CheckpointState} identified by {@code tp}, and an input node that could be recorded in the state as an input
-   *                        for some mapping label
-   * @return first non-null result of {@code withProperInput} function, if any.
+   * @param mappingLabel
+   * @return output node from checkpoint model {@code tp} of a labeled transformation, or its copy in there, if any.
    */
   @Nullable
-  public SNode withProperInput(@NotNull CheckpointIdentity tp, @NotNull SNode inputNode, BiFunction<CheckpointState, SNode, SNode> withProperInput) {
-    CheckpointState cp = find(tp);
-    if (cp == null) {
-      // can hardly do anything if we can't trace CPs
+  public SNode findTransformedNode(@NotNull CheckpointIdentity tp, @NotNull SNode inputNode, String mappingLabel) {
+    // general case, inputNode, perhaps copied, was transformed with ML at an earlier transition, and copied up to the target (tp) one
+    // X -> X' (copied); CP1; X ' => Y as ML1; CP2; Y -> Y' (copied); CP3
+    // and we are between CP2 and CP3 (==tp) with a reference to X, eager to get Y'
+    CheckpointIdentity cpId = tp;
+    // stack of states we would need to look for copies in case we find Y (labeled transformation output) in some earlier phase
+    ArrayDeque<CheckpointState> cpStateStack = new ArrayDeque<>();
+    SNode output = null;
+    SNode copiedInput = null;
+    do {
+      CheckpointState cp = find(cpId);
+      if (cp == null) {
+        // can hardly do anything if we can't trace CPs
+        // FIXME shall I report missing checkpoint for a target model?
+        return null;
+      }
+      cpStateStack.push(cp);
+      output = cp.getOutputIfSingle(mappingLabel, inputNode);
+      copiedInput = cp.getCopiedOutput(inputNode);
+      cpId = cp.getOriginCheckpoint();
+    } while (cpId != null && output == null && copiedInput == null);
+    // Three major scenarios to expect (cpId could be null, it just means we've got to the very first transition):
+    // (I) output == null && copiedInput != null (II) output != null && copiedInput == null (III) output == null && copiedInput == null
+    if (output == null && copiedInput == null) {
+      // (III), nothing I could do here, fail fast
       return null;
     }
-    // first, try if inputNode is proper for actual CP
-    SNode output = withProperInput.apply(cp, inputNode);
-    if (output == null && cp.getOriginCheckpoint() != null) {
-      // if not, and there's previous CP known,
-      // find output for inputNode at the previous CP, it will serve as proper input for the current CP.
-      SNode properInput = findCopiedNode(cp.getOriginCheckpoint(), inputNode);
-      output = properInput != null ? withProperInput.apply(cp, properInput) : null;
+    // Now we've got [CP1 top, CP2, CP3 bottom] in the stack and copiedInput X' from CP1
+    assert cpStateStack.size() > 0; // while/push has been executed at least once
+    // As CP1 is the last one we asked for, we don't need to ask again, remove it
+    cpStateStack.pop();
+    // I suspect it's possible to get (IV) both copiedInput != null && output != null, e.g. if I LABEL a node and copy it, preserving id somehow,
+    // but didn't check, and look at this as output != null case.
+    // (I) scenario. Break with the first CPS we find output at.
+    while (!cpStateStack.isEmpty() && output == null && copiedInput != null) {
+      CheckpointState cp = cpStateStack.pop();
+      output = cp.getOutputIfSingle(mappingLabel, copiedInput);
+      // perhaps, it's an extra step and there are further copies, X' -> X'' -> X''' ==> Y
+      // therefore, we need to walk stack for copies
+      copiedInput = cp.getCopiedOutput(copiedInput);
+    }
+    // if output == null, we are screwed, X' was never translated to Y with ML1
+    //
+    // unwind cpStateStack, taking copies for output node
+    while (!cpStateStack.isEmpty() && output != null) {
+      output = cpStateStack.pop().getCopiedOutput(output);
     }
     return output;
   }

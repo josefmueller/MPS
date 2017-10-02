@@ -508,7 +508,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return null;
     }
     CheckpointIdentity cpId = targetPoint.getIdentity();
-    SNode copiedOutput = modelCheckpoints.withProperInput(cpId, inputNode, CheckpointState::getCopiedOutput);
+    SNode copiedOutput = modelCheckpoints.findCopiedNode(cpId, inputNode);
     return copiedOutput;
   }
 
@@ -552,7 +552,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return null;
     }
     CheckpointIdentity cpId = targetPoint.getIdentity();
-    SNode output = modelCheckpoints.withProperInput(cpId, inputNode, (cp, node) -> cp.getOutputIfSingle(mappingName, node));
+    SNode output = modelCheckpoints.findTransformedNode(cpId, inputNode, mappingName);
     return output;
   }
 
