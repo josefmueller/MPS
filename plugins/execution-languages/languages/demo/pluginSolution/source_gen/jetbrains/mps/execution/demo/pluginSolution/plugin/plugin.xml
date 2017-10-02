@@ -8,10 +8,8 @@
   <vendor url="a">a</vendor>
   <idea-version since-build="173.1" />
   
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_PluginInitializer</implementation-class>
-    </component>
-  </application-components>
   
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.PluginComponentContributor application="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+  </extensions>
 </idea-plugin>

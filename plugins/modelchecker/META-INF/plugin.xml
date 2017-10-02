@@ -22,10 +22,6 @@
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.ide.modelchecker.actions.Modelchecker_PluginInitializer</implementation-class>
-    </component>
-
-    <component>
       <implementation-class>jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerSettings</implementation-class>
     </component>
   </application-components>
@@ -44,5 +40,6 @@
     <applicationConfigurable groupId="tools" groupWeight="160" instance="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerPreferencesPage" id="preferences.modelCheckerSettings"/>
     <mps.LanguageLibrary dir=""/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
+    <mps.PluginComponentContributor application="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin" />
   </extensions>
 </idea-plugin>

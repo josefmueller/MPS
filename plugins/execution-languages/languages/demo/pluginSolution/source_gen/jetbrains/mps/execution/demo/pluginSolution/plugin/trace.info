@@ -8,7 +8,6 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -22,11 +21,11 @@
   </root>
   <root nodeRef="r:3efdf908-9d74-483a-b1cf-495292800da4(jetbrains.mps.execution.demo.pluginSolution.plugin)/3642991921658090717">
     <file name="DemoApplication_Producer.java">
-      <node id="3642991921658090717" at="19,0,20,0" concept="9" trace="CONFIGURATION_FACTORY_CLASS_NAME" />
+      <node id="3642991921658090717" at="19,0,20,0" concept="8" trace="CONFIGURATION_FACTORY_CLASS_NAME" />
       <node id="3642991921658090717" at="24,102,25,119" concept="6" />
       <node id="3642991921658090717" at="25,119,26,168" concept="2" />
       <node id="3642991921658090717" at="26,168,27,20" concept="7" />
-      <node id="3642991921658090717" at="31,107,32,44" concept="11" />
+      <node id="3642991921658090717" at="31,107,32,44" concept="10" />
       <node id="3642991921658090717" at="36,51,37,235" concept="7" />
       <node id="3642991921658090717" at="41,87,42,73" concept="2" />
       <node id="226334238991820163" at="43,179,44,20" concept="7" />
@@ -39,7 +38,7 @@
       <node id="226334238991820151" at="42,73,45,7" concept="4" />
       <node id="3642991921658090717" at="35,0,39,0" concept="5" trace="isApplicable#(Ljava/lang/Object;)Z" />
       <node id="3642991921658090717" at="52,0,56,0" concept="5" trace="clone#()Ljetbrains/mps/execution/demo/pluginSolution/plugin/DemoApplication_Producer/ProducerPart_NodeSomeConcept_rh22bz_a;" />
-      <node id="3642991921658090717" at="24,0,29,0" concept="10" trace="getProducers#(Lcom/intellij/execution/configurations/ConfigurationType;)Ljava/util/List;" />
+      <node id="3642991921658090717" at="24,0,29,0" concept="9" trace="getProducers#(Lcom/intellij/execution/configurations/ConfigurationType;)Ljava/util/List;" />
       <node id="3642991921658090717" at="40,0,50,0" concept="5" trace="doCreateConfiguration#(Lorg/jetbrains/mps/openapi/model/SNode;)Lcom/intellij/execution/configurations/RunConfigurationBase;" />
       <scope id="3642991921658090717" at="21,37,21,37" />
       <scope id="3642991921658090717" at="31,107,32,44" />
@@ -99,36 +98,8 @@
     </file>
   </root>
   <root nodeRef="r:3efdf908-9d74-483a-b1cf-495292800da4(jetbrains.mps.execution.demo.pluginSolution.plugin)/7518060231983298939">
-    <file name="PluginSolution_PluginInitializer.java">
-      <node id="7518060231983298939" at="17,51,18,60" concept="7" />
-      <node id="7518060231983298939" at="19,9,20,20" concept="7" />
-      <node id="7518060231983298939" at="26,36,27,83" concept="8" />
-      <node id="7518060231983298939" at="27,83,28,37" concept="7" />
-      <node id="7518060231983298939" at="30,0,32,0" concept="5" trace="initComponent#()V" />
-      <node id="7518060231983298939" at="32,0,34,0" concept="5" trace="disposeComponent#()V" />
-      <node id="7518060231983298939" at="16,43,19,9" concept="4" />
-      <node id="7518060231983298939" at="24,0,30,0" concept="5" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="7518060231983298939" at="15,0,22,0" concept="5" trace="create#(Ljava/lang/Class;)null" />
-      <node id="7518060231983298939" at="13,45,22,7" concept="2" />
-      <node id="7518060231983298939" at="13,0,24,0" concept="1" trace="PluginSolution_PluginInitializer#()V" />
-      <scope id="7518060231983298939" at="30,31,30,31" />
-      <scope id="7518060231983298939" at="32,34,32,34" />
-      <scope id="7518060231983298939" at="17,51,18,60" />
-      <scope id="7518060231983298939" at="26,36,28,37" />
-      <scope id="7518060231983298939" at="30,0,32,0" />
-      <scope id="7518060231983298939" at="32,0,34,0" />
-      <scope id="7518060231983298939" at="16,43,20,20" />
-      <scope id="7518060231983298939" at="24,0,30,0" />
-      <scope id="7518060231983298939" at="15,0,22,0">
-        <var name="klass" id="7518060231983298939" />
-      </scope>
-      <scope id="7518060231983298939" at="13,45,22,7" />
-      <scope id="7518060231983298939" at="13,0,24,0" />
-      <unit id="7518060231983298939" at="14,54,22,5" name="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_PluginInitializer$1" />
-      <unit id="7518060231983298939" at="12,0,35,0" name="jetbrains.mps.execution.demo.pluginSolution.plugin.PluginSolution_PluginInitializer" />
-    </file>
     <file name="plugin.xml">
-      <unit id="7518060231983298939" at="1,0,17,14" name="jetbrains.mps.execution.demo.pluginSolution.plugin.plugin" />
+      <unit id="7518060231983298939" at="1,0,15,14" name="jetbrains.mps.execution.demo.pluginSolution.plugin.plugin" />
     </file>
   </root>
   <root nodeRef="r:3efdf908-9d74-483a-b1cf-495292800da4(jetbrains.mps.execution.demo.pluginSolution.plugin)/7806358006983646762">
@@ -159,7 +130,7 @@
       <node id="3355125556689860021" at="65,0,69,0" concept="5" trace="createDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
       <node id="4318884729311291896" at="54,52,59,10" concept="7" />
       <node id="7806358006983646762" at="63,60,72,6" concept="7" />
-      <node id="7806358006983646762" at="74,0,83,0" concept="10" trace="canExecute#(Ljava/lang/String;)Z" />
+      <node id="7806358006983646762" at="74,0,83,0" concept="9" trace="canExecute#(Ljava/lang/String;)Z" />
       <node id="4318884729311291896" at="50,49,60,5" concept="0" />
       <node id="7806358006983646762" at="62,0,74,0" concept="5" trace="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
       <node id="7806358006983646762" at="48,0,62,0" concept="5" trace="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
@@ -205,7 +176,7 @@
   </root>
   <root nodeRef="r:3efdf908-9d74-483a-b1cf-495292800da4(jetbrains.mps.execution.demo.pluginSolution.plugin)/8750596094204760415">
     <file name="Demo_Kind.java">
-      <node id="7456875308137632425" at="18,0,19,0" concept="9" trace="ICON" />
+      <node id="7456875308137632425" at="18,0,19,0" concept="8" trace="ICON" />
       <node id="8750596094204760415" at="19,0,20,0" concept="3" trace="myForeignFactories" />
       <node id="8750596094204760415" at="22,61,23,101" concept="6" />
       <node id="8750596094204760415" at="23,101,24,94" concept="2" />
@@ -222,7 +193,7 @@
       <node id="8750596094204760415" at="36,0,39,0" concept="5" trace="getConfigurationTypeDescription#()Ljava/lang/String;" />
       <node id="8750596094204760415" at="39,0,42,0" concept="5" trace="getDisplayName#()Ljava/lang/String;" />
       <node id="8750596094204760415" at="42,0,45,0" concept="5" trace="addForeignFactory#(Lcom/intellij/execution/configurations/ConfigurationFactory;)V" />
-      <node id="8750596094204760415" at="45,0,48,0" concept="10" trace="getInstance#()Ljetbrains/mps/execution/demo/pluginSolution/plugin/Demo_Kind;" />
+      <node id="8750596094204760415" at="45,0,48,0" concept="9" trace="getInstance#()Ljetbrains/mps/execution/demo/pluginSolution/plugin/Demo_Kind;" />
       <node id="8750596094204760415" at="28,0,33,0" concept="5" trace="getId#()Ljava/lang/String;" />
       <node id="8750596094204760415" at="22,0,28,0" concept="5" trace="getConfigurationFactories#()[Lcom/intellij/execution/configurations/ConfigurationFactory;" />
       <scope id="8750596094204760415" at="20,22,20,22" />
@@ -250,14 +221,14 @@
   </root>
   <root nodeRef="r:3efdf908-9d74-483a-b1cf-495292800da4(jetbrains.mps.execution.demo.pluginSolution.plugin)/8750596094204760417">
     <file name="DemoApplication_Configuration.java">
-      <node id="8750596094204760417" at="40,0,41,0" concept="9" trace="LOG" />
+      <node id="8750596094204760417" at="40,0,41,0" concept="8" trace="LOG" />
       <node id="1448685625140440252" at="44,39,45,345" concept="7" />
       <node id="1448685625140199409" at="48,117,49,47" concept="2" />
       <node id="8750596094204760417" at="52,76,53,57" concept="2" />
       <node id="8750596094204760417" at="54,5,55,49" concept="6" />
       <node id="8750596094204760417" at="55,49,56,41" concept="2" />
       <node id="8750596094204760417" at="56,41,57,39" concept="2" />
-      <node id="8750596094204760417" at="62,26,63,81" concept="12" />
+      <node id="8750596094204760417" at="62,26,63,81" concept="11" />
       <node id="8750596094204760417" at="64,5,65,83" concept="2" />
       <node id="8750596094204760417" at="66,5,67,54" concept="6" />
       <node id="8750596094204760417" at="68,33,69,42" concept="2" />
@@ -272,7 +243,7 @@
       <node id="8750596094204760417" at="92,5,93,17" concept="7" />
       <node id="8750596094204760417" at="99,61,100,96" concept="6" />
       <node id="8750596094204760417" at="100,96,101,19" concept="7" />
-      <node id="8750596094204760417" at="104,117,105,34" concept="11" />
+      <node id="8750596094204760417" at="104,117,105,34" concept="10" />
       <node id="8750596094204760417" at="108,132,109,90" concept="7" />
       <node id="8750596094204760417" at="112,103,113,16" concept="7" />
       <node id="8750596094204760417" at="115,98,116,16" concept="7" />
@@ -310,7 +281,7 @@
       <node id="8750596094204760417" at="51,0,60,0" concept="5" trace="writeExternal#(Lorg/jdom/Element;)V" />
       <node id="8750596094204760417" at="127,0,136,0" concept="5" trace="checkConfiguration#()V" />
       <node id="8750596094204760417" at="65,83,75,5" concept="0" />
-      <node id="8750596094204760417" at="82,47,92,5" concept="13" />
+      <node id="8750596094204760417" at="82,47,92,5" concept="12" />
       <node id="8750596094204760417" at="80,0,95,0" concept="5" trace="clone#()Ljetbrains/mps/execution/demo/pluginSolution/plugin/DemoApplication_Configuration;" />
       <node id="8750596094204760417" at="60,0,77,0" concept="5" trace="readExternal#(Lorg/jdom/Element;)V" />
       <scope id="8750596094204760417" at="96,22,96,22" />
@@ -439,7 +410,7 @@
       <unit id="8750596094204760417" at="15,0,40,0" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_Editor" />
     </file>
     <file name="DemoApplication_Configuration_Factory.java">
-      <node id="8750596094204760417" at="12,64,13,16" concept="11" />
+      <node id="8750596094204760417" at="12,64,13,16" concept="10" />
       <node id="8750596094204760417" at="15,72,16,86" concept="7" />
       <node id="8750596094204760417" at="19,27,20,30" concept="7" />
       <node id="8750596094204760417" at="23,25,24,32" concept="6" />

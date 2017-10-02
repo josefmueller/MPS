@@ -9,12 +9,6 @@
 
   <xi:include href="../migration-platform/pluginBase.xml" xpointer="xpointer(/idea-plugin/*)"/>
 
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.migration.workbench.plugin.Workbench_PluginInitializer</implementation-class>
-    </component>
-  </application-components>
-
   <project-components>
   <component>
     <interface-class>jetbrains.mps.migration.global.MigrationProblemHandler</interface-class>
@@ -22,4 +16,7 @@
   </component>
   </project-components>
 
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.PluginComponentContributor application="jetbrains.mps.migration.workbench.plugin.Workbench_ApplicationPlugin" />
+  </extensions>
 </idea-plugin>

@@ -194,36 +194,8 @@
     </file>
   </root>
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/3531023421907347091">
-    <file name="Vcs_PluginInitializer.java">
-      <node id="3531023421907347091" at="17,51,18,49" concept="10" />
-      <node id="3531023421907347091" at="19,9,20,20" concept="10" />
-      <node id="3531023421907347091" at="26,36,27,83" concept="11" />
-      <node id="3531023421907347091" at="27,83,28,37" concept="10" />
-      <node id="3531023421907347091" at="30,0,32,0" concept="8" trace="initComponent#()V" />
-      <node id="3531023421907347091" at="32,0,34,0" concept="8" trace="disposeComponent#()V" />
-      <node id="3531023421907347091" at="16,43,19,9" concept="7" />
-      <node id="3531023421907347091" at="24,0,30,0" concept="8" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="3531023421907347091" at="15,0,22,0" concept="8" trace="create#(Ljava/lang/Class;)null" />
-      <node id="3531023421907347091" at="13,34,22,7" concept="4" />
-      <node id="3531023421907347091" at="13,0,24,0" concept="2" trace="Vcs_PluginInitializer#()V" />
-      <scope id="3531023421907347091" at="30,31,30,31" />
-      <scope id="3531023421907347091" at="32,34,32,34" />
-      <scope id="3531023421907347091" at="17,51,18,49" />
-      <scope id="3531023421907347091" at="26,36,28,37" />
-      <scope id="3531023421907347091" at="30,0,32,0" />
-      <scope id="3531023421907347091" at="32,0,34,0" />
-      <scope id="3531023421907347091" at="16,43,20,20" />
-      <scope id="3531023421907347091" at="24,0,30,0" />
-      <scope id="3531023421907347091" at="15,0,22,0">
-        <var name="klass" id="3531023421907347091" />
-      </scope>
-      <scope id="3531023421907347091" at="13,34,22,7" />
-      <scope id="3531023421907347091" at="13,0,24,0" />
-      <unit id="3531023421907347091" at="14,54,22,5" name="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer$1" />
-      <unit id="3531023421907347091" at="12,0,35,0" name="jetbrains.mps.vcs.plugin.Vcs_PluginInitializer" />
-    </file>
     <file name="plugin.xml">
-      <unit id="3531023421907347091" at="1,0,20,14" name="jetbrains.mps.vcs.plugin.plugin" />
+      <unit id="3531023421907347091" at="1,0,18,14" name="jetbrains.mps.vcs.plugin.plugin" />
     </file>
   </root>
   <root nodeRef="r:5ec7bf64-acd2-448b-8f9b-ce1b8d920038(jetbrains.mps.vcs.plugin)/3877003870834324810">

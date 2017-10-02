@@ -18,12 +18,6 @@
     </component>
   </project-components>
 
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer</implementation-class>
-    </component>
-  </application-components>
-
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>

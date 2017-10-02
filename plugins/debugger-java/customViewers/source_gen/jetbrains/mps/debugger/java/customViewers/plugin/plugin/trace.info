@@ -955,36 +955,8 @@
     </file>
   </root>
   <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/5494815557703847191">
-    <file name="Plugin_PluginInitializer.java">
-      <node id="5494815557703847191" at="17,51,18,52" concept="9" />
-      <node id="5494815557703847191" at="19,9,20,20" concept="9" />
-      <node id="5494815557703847191" at="26,36,27,83" concept="10" />
-      <node id="5494815557703847191" at="27,83,28,37" concept="9" />
-      <node id="5494815557703847191" at="30,0,32,0" concept="7" trace="initComponent#()V" />
-      <node id="5494815557703847191" at="32,0,34,0" concept="7" trace="disposeComponent#()V" />
-      <node id="5494815557703847191" at="16,43,19,9" concept="6" />
-      <node id="5494815557703847191" at="24,0,30,0" concept="7" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="5494815557703847191" at="15,0,22,0" concept="7" trace="create#(Ljava/lang/Class;)null" />
-      <node id="5494815557703847191" at="13,37,22,7" concept="2" />
-      <node id="5494815557703847191" at="13,0,24,0" concept="1" trace="Plugin_PluginInitializer#()V" />
-      <scope id="5494815557703847191" at="30,31,30,31" />
-      <scope id="5494815557703847191" at="32,34,32,34" />
-      <scope id="5494815557703847191" at="17,51,18,52" />
-      <scope id="5494815557703847191" at="26,36,28,37" />
-      <scope id="5494815557703847191" at="30,0,32,0" />
-      <scope id="5494815557703847191" at="32,0,34,0" />
-      <scope id="5494815557703847191" at="16,43,20,20" />
-      <scope id="5494815557703847191" at="24,0,30,0" />
-      <scope id="5494815557703847191" at="15,0,22,0">
-        <var name="klass" id="5494815557703847191" />
-      </scope>
-      <scope id="5494815557703847191" at="13,37,22,7" />
-      <scope id="5494815557703847191" at="13,0,24,0" />
-      <unit id="5494815557703847191" at="14,54,22,5" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Plugin_PluginInitializer$1" />
-      <unit id="5494815557703847191" at="12,0,35,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Plugin_PluginInitializer" />
-    </file>
     <file name="plugin.xml">
-      <unit id="5494815557703847191" at="1,0,21,14" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.plugin" />
+      <unit id="5494815557703847191" at="1,0,19,14" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.plugin" />
     </file>
   </root>
   <root nodeRef="r:9d33947d-45a8-4aa4-b61a-9c874e4614d7(jetbrains.mps.debugger.java.customViewers.plugin.plugin)/7162597690968011947">

@@ -11,14 +11,12 @@
   <depends>jetbrains.mps.execution.languages</depends>
   <depends>jetbrains.mps.debugger.java</depends>
   <depends>jetbrains.mps.debugger.api</depends>
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_PluginInitializer</implementation-class>
-    </component>
-  </application-components>
   
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter" />
+  </extensions>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.PluginComponentContributor application="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ApplicationPlugin" project="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ProjectPlugin" />
   </extensions>
 </idea-plugin>

@@ -22,11 +22,6 @@
     <component>
       <implementation-class>jetbrains.mps.debug.api.BreakpointCreatorsManager</implementation-class>
     </component>
-
-    <!--runtime-->
-    <component>
-      <implementation-class>jetbrains.mps.debugger.api.ui.actions.Runtime_PluginInitializer</implementation-class>
-    </component>
   </application-components>
 
   <project-components>
@@ -78,5 +73,6 @@
     <executor implementation="com.intellij.execution.executors.DefaultDebugExecutor" order="after run" id="debug"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <mps.LanguageLibrary dir=""/>
+    <mps.PluginComponentContributor application="jetbrains.mps.debugger.api.ui.actions.Runtime_ApplicationPlugin" />
   </extensions>
 </idea-plugin>

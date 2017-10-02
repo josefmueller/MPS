@@ -13421,7 +13421,6 @@
             <ref role="v9R2y" node="5rqjHHFn5Ka" resolve="switch_PluginExtensions" />
           </node>
         </node>
-        <node concept="3o6iSG" id="7PlemRQ_FLu" role="3o6s8t" />
         <node concept="2pNNFK" id="1XGsQcRF6Jq" role="3o6s8t">
           <property role="qg3DV" value="true" />
           <property role="2pNNFO" value="actions" />

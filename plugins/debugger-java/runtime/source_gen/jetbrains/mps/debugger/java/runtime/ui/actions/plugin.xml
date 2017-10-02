@@ -8,10 +8,8 @@
   <vendor url="url">vendor</vendor>
   <idea-version since-build="173.1" />
   
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer</implementation-class>
-    </component>
-  </application-components>
   
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.PluginComponentContributor application="jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_ApplicationPlugin" />
+  </extensions>
 </idea-plugin>

@@ -12,11 +12,10 @@
   <xi:include href="/jetbrains/mps/ide/platform/actions/PlatformActions.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml" xpointer="xpointer(/components/*)"/>
 
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.ide.actions.Ide_PluginInitializer</implementation-class>
-    </component>
-  </application-components>
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- The only reason this contribution is here is that it replaces Ide_PluginInitializer app component that used to be registered here -->
+    <mps.PluginComponentContributor application="jetbrains.mps.ide.actions.Ide_ApplicationPlugin" project="jetbrains.mps.ide.actions.Ide_ProjectPlugin" />
+  </extensions>
 
   <extensionPoints>
     <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>

@@ -29,7 +29,6 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.DeployListener;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.actions.Ide_PluginInitializer;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
@@ -83,7 +82,7 @@ public class PluginLoaderRegistry implements ApplicationComponent {
 
   private final AtomicBoolean myDirtyFlag = new AtomicBoolean(false);
 
-  public PluginLoaderRegistry(MPSCoreComponents coreComponents, @SuppressWarnings(value="UnusedParameters") Ide_PluginInitializer idePlugin) {
+  public PluginLoaderRegistry(MPSCoreComponents coreComponents) {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
     SRepository repo = coreComponents.getPlatform().findComponent(MPSModuleRepository.class);
     assert repo != null;

@@ -26,6 +26,9 @@ import com.intellij.util.xmlb.annotations.Attribute;
  * or {@code BaseProjectPlugin} subclasses. As the only need for this initializer is to have {@code PluginContributor} adapter for {@code PluginLoaderRegistry}
  * ready, the idea is to replace it with extension point {@code PluginLoaderRegistry} could query when appropriate.
  *
+ * Note, uses of this extension point reside in [mps-workbench], {@code PluginLoaderRegistry}. To me, it looks odd as plugin management is not necessarily part
+ * of workbench only, therefore this extpoint lives in [mps-platform]. I'm open to discussions, though.
+ *
  * @author Artem Tikhomirov
  * @since 2017.3
  */

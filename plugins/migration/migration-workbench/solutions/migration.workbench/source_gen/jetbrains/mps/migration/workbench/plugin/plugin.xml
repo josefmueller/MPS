@@ -8,10 +8,8 @@
   <vendor url="foo">foo</vendor>
   <idea-version since-build="foo" />
   
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.migration.workbench.plugin.Workbench_PluginInitializer</implementation-class>
-    </component>
-  </application-components>
   
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.PluginComponentContributor application="jetbrains.mps.migration.workbench.plugin.Workbench_ApplicationPlugin" />
+  </extensions>
 </idea-plugin>

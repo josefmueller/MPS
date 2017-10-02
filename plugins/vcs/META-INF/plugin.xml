@@ -44,9 +44,6 @@
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.vcs.plugin.Vcs_PluginInitializer</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.vcs.suspicious.SuspiciousModelIndex</implementation-class>
     </component>
     <component>
@@ -119,5 +116,6 @@
                     serviceImplementation="jetbrains.mps.vcs.integration.ModuleVcsPathPresenter"/>
 
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
+    <mps.PluginComponentContributor application="jetbrains.mps.vcs.plugin.Vcs_ApplicationPlugin" />
   </extensions>
 </idea-plugin>
