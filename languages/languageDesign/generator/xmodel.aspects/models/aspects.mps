@@ -14,7 +14,13 @@
       <concept id="1820634577908471810" name="jetbrains.mps.lang.generator.plan.structure.Transform" flags="ng" index="2VgMA2">
         <child id="2944629966652439181" name="languages" index="1t_9vn" />
       </concept>
+      <concept id="2959971211779300533" name="jetbrains.mps.lang.generator.plan.structure.TextDocLine" flags="ng" index="16rNan">
+        <property id="2959971211779300563" name="text" index="16rNbL" />
+      </concept>
       <concept id="6257322641293267918" name="jetbrains.mps.lang.generator.plan.structure.CheckpointDeclaration" flags="ng" index="19BiC4" />
+      <concept id="894680215637491805" name="jetbrains.mps.lang.generator.plan.structure.DocumentationStep" flags="ng" index="1ONwER">
+        <child id="894680215637528532" name="comments" index="1ONSkY" />
+      </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
@@ -32,6 +38,19 @@
     <property role="TrG5h" value="AspectCPS" />
     <node concept="19BiC4" id="52lx2FqH$9v" role="2VgMA7">
       <property role="TrG5h" value="DescriptorClasses" />
+    </node>
+    <node concept="19BiC4" id="4LuITgyAILq" role="2VgMA7">
+      <property role="TrG5h" value="BeforeBaseLang" />
+    </node>
+    <node concept="1ONwER" id="4LuITgyAILy" role="2VgMA7">
+      <node concept="16rNan" id="4LuITgyAILD" role="1ONSkY">
+        <property role="16rNbL" value="BeforeBaseLang is sort of hack to get extra CP after DescriptorClasses to synch with. I'd better have PureBL CP inside" />
+      </node>
+    </node>
+    <node concept="1ONwER" id="4LuITgyAILM" role="2VgMA7">
+      <node concept="16rNan" id="4LuITgyAILV" role="1ONSkY">
+        <property role="16rNbL" value="BaseLanguageWithExtensions CP, after closures and collections, but this would require to regenerate each and every model." />
+      </node>
     </node>
   </node>
   <node concept="2VgMpV" id="2fM90Pxfljd">

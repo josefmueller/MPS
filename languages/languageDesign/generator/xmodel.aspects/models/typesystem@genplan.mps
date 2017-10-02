@@ -7,9 +7,13 @@
   </languages>
   <imports>
     <import index="7j7i" ref="r:647e430d-4f1a-4d18-8ace-69f2d9711419(jetbrains.mps.lang.descriptor.aspects@genplan)" />
+    <import index="x2ac" ref="r:4697de22-9b24-405b-8ea2-e5702094d1dd(jetbrains.mps.lang.descriptor.dataflow@genplan)" />
   </imports>
   <registry>
     <language id="7ab1a6fa-0a11-4b95-9e48-75f363d6cb00" name="jetbrains.mps.lang.generator.plan">
+      <concept id="869728027904920839" name="jetbrains.mps.lang.generator.plan.structure.CheckpointSynchronization" flags="ng" index="26qawf">
+        <child id="3750601816087335480" name="checkpoint" index="3pRG92" />
+      </concept>
       <concept id="3705377275350227759" name="jetbrains.mps.lang.generator.plan.structure.IncludePlan" flags="ng" index="NozSJ">
         <reference id="3705377275350227762" name="plan" index="NozSM" />
       </concept>
@@ -79,6 +83,11 @@
         <property role="16rNbL" value="we need priorities of lang.typesystem to be active, not the extended generators" />
       </node>
     </node>
+    <node concept="2VgMA1" id="p4S6WR3TZu" role="2VgMA7">
+      <node concept="3ps6a7" id="p4S6WR3TZB" role="3ps6aC">
+        <ref role="3ps6dU" to="7j7i:52lx2FqH$9v" resolve="DescriptorClasses" />
+      </node>
+    </node>
     <node concept="2VgMA2" id="p4S6WRbOUx" role="2VgMA7">
       <node concept="2V$Bhx" id="p4S6WR8VTH" role="1t_9vn">
         <property role="2V$B1T" value="7fa12e9c-b949-4976-b4fa-19accbc320b4" />
@@ -93,9 +102,9 @@
         <property role="2V$B1Q" value="jetbrains.mps.lang.pattern" />
       </node>
     </node>
-    <node concept="2VgMA1" id="p4S6WR3TZu" role="2VgMA7">
-      <node concept="3ps6a7" id="p4S6WR3TZB" role="3ps6aC">
-        <ref role="3ps6dU" to="7j7i:52lx2FqH$9v" resolve="DescriptorClasses" />
+    <node concept="26qawf" id="4LuITgyAqcO" role="2VgMA7">
+      <node concept="3ps6a7" id="4LuITgyAILY" role="3pRG92">
+        <ref role="3ps6dU" to="7j7i:4LuITgyAILq" resolve="BeforeBaseLang" />
       </node>
     </node>
     <node concept="2VgMA2" id="p4S6WR6s9J" role="2VgMA7">
