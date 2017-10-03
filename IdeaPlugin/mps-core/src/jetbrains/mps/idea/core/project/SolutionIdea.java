@@ -398,7 +398,7 @@ public class SolutionIdea extends Solution {
 
     @Override
     public void rootsChanged(ModuleRootEvent event) {
-      if (myModule.getProject().equals(event.getSource())) {
+      if (!myModule.isDisposed() && myModule.getProject().equals(event.getSource())) {
         reset();
       }
     }
