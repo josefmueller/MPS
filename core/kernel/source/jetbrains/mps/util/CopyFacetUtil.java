@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -26,9 +27,13 @@ import org.jetbrains.mps.openapi.model.SNode;
  * In the future we should design separate language to perform resource copy operations.
  * This language should be a part of MPS core.
  * <p/>
+ * @deprecated the class has been superseded by {@code @CopyOutput} annotation of jetbrains.mps.lang.makeup language.
+ * <p/>
  * User: shatalin
  * Date: 08/12/15
  */
+@Deprecated
+@ToRemove(version = 2017.3)
 public class CopyFacetUtil {
   private static final String SCRIPTS_TARGET_PROPERTY = CopyFacetUtil.class.getName() + ".target.path";
 

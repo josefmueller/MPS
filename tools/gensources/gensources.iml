@@ -173,6 +173,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/extensionMethod/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/extensionMethod/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/makeup/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/regexp/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" isTestSource="false" />
@@ -344,6 +345,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/extensionMethod/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/extensionMethod/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/util/makeup/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/regexp/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/regexp/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/classes_gen" />
@@ -1061,6 +1063,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/BINARY/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/PER_ROOT/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/XML/source_gen" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/languages/TestLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/languages/TestLanguage/generator/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/languages/TestLanguage_ACCESORIES/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/BINARY/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/PER_ROOT/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testCloneModule/solutions/XML/classes_gen" />
     </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testCompilation">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testCompilation/solutions/TestCompileSolution/source_gen" isTestSource="false" />
