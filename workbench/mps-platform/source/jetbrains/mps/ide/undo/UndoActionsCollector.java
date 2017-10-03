@@ -18,6 +18,7 @@ package jetbrains.mps.ide.undo;
 import com.intellij.openapi.command.undo.DocumentReference;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.editor.Document;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 import jetbrains.mps.nodefs.NodeVirtualFileSystem;
@@ -31,7 +32,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -47,7 +47,7 @@ public class UndoActionsCollector {
   private List<SNodeUndoableAction> myActions = new ArrayList<>();
   private boolean myIsGlobal = false;
   private Set<DocumentReference> myDocumentReferences = new LinkedHashSet<>();
-  private Map<SModelId, Set<Document>> myChangedDocuments = new HashMap<>();
+  private Map<SModelId, List<VirtualFile>> myChangedFiles = new HashMap<>();
   private boolean myDisposed = false;
 
   UndoActionsCollector(UndoContext undoContext) {
@@ -72,7 +72,7 @@ public class UndoActionsCollector {
         continue;
       }
       myDocumentReferences.add(MPSUndoUtil.getRefForDoc(document));
-      myChangedDocuments.computeIfAbsent(virtualFileNode.getModel().getModelId(), k -> new HashSet<>()).add(document);
+      myChangedFiles.computeIfAbsent(virtualFileNode.getModel().getModelId(), k -> new ArrayList<>()).add(file);
     }
   }
 
@@ -90,10 +90,11 @@ public class UndoActionsCollector {
 
     com.intellij.openapi.project.Project ideaProject = ((MPSProject) project).getProject();
     UndoManager undoManager = UndoManager.getInstance(ideaProject);
-    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(myActions, myUndoContext.getRepository(), myIsGlobal, myDocumentReferences));
+    SNodeIdeaUndoableAction undoableAction = new SNodeIdeaUndoableAction(myActions, myUndoContext.getRepository(), myIsGlobal, myDocumentReferences);
+    undoManager.undoableActionPerformed(undoableAction);
 
     OnReloadingUndoCleaner undoCleaner = ideaProject.getComponent(OnReloadingUndoCleaner.class);
-    for (Entry<SModelId, Set<Document>> modelAndDocuments : myChangedDocuments.entrySet()) {
+    for (Entry<SModelId, List<VirtualFile>> modelAndDocuments : myChangedFiles.entrySet()) {
       undoCleaner.registerUndo(modelAndDocuments.getKey(), modelAndDocuments.getValue());
     }
   }

@@ -20,8 +20,9 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.command.undo.UndoManager;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.containers.WeakList;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
@@ -35,7 +36,7 @@ import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -44,8 +45,15 @@ import java.util.Set;
 class OnReloadingUndoCleaner implements ProjectComponent {
   private final Project myProject;
   private final MPSCoreComponents myMPSComponents;
-  // TODO: weak?
-  private Map<SModelId, Set<Document>> myUndoForModel = new HashMap<>();
+
+  /**
+   * Using WeakList here - same collection as used in UndoRedoStackHolder.
+   * <p>
+   * All references to a Document may be removed from all other places. In this case a document should be
+   * garbage-collected. Weak container was used here to NOT prevent it from being garbage-collected.
+   * Same logic (weak container) you can found in {@link com.intellij.openapi.fileEditor.impl.FileDocumentManagerImpl#myDocumentCache}
+   */
+  private Map<SModelId, WeakList<VirtualFile>> myUndoForModel = new HashMap<>();
 
   private final SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
     private final SModelListener myModelListener = new SModelListenerBase() {
@@ -55,16 +63,16 @@ class OnReloadingUndoCleaner implements ProjectComponent {
         if (repo == null) {
           return;
         }
-        Set<Document> registeredDocuments = myUndoForModel.remove(sm.getModelId());
-        if (registeredDocuments == null || registeredDocuments.isEmpty()) {
+        WeakList<VirtualFile> registeredFiles = myUndoForModel.remove(sm.getModelId());
+        if (registeredFiles == null || registeredFiles.isEmpty()) {
           return;
         }
 
         ApplicationManager.getApplication().invokeLater(() -> {
           if (!myProject.isDisposed()) {
             UndoManagerImpl undoManager = (UndoManagerImpl) UndoManager.getInstance(myProject);
-            for (Document document : registeredDocuments) {
-              undoManager.clearUndoRedoQueueInTests(document);
+            for (VirtualFile file : registeredFiles) {
+              undoManager.clearUndoRedoQueueInTests(file);
             }
           }
         }, ModalityState.NON_MODAL);
@@ -111,7 +119,18 @@ class OnReloadingUndoCleaner implements ProjectComponent {
     repoRegistry.removeGlobalListener(myListener);
   }
 
-  void registerUndo(SModelId modelId, Collection<Document> documents) {
-    myUndoForModel.computeIfAbsent(modelId, k -> new HashSet<>()).addAll(documents);
+  void registerUndo(SModelId modelId, Collection<VirtualFile> files) {
+    Set<VirtualFile> additionalFiles = new LinkedHashSet<>(files);
+    WeakList<VirtualFile> trackedFiles = myUndoForModel.computeIfAbsent(modelId, k -> new WeakList<>());
+    for (VirtualFile file : trackedFiles) {
+      if (additionalFiles.contains(file)) {
+        // NOT using .removeAll() here because of WeakList supporting only limited collection API (not supporting .size() operation)
+        additionalFiles.remove(file);
+      }
+    }
+    if (additionalFiles.isEmpty()) {
+      return;
+    }
+    trackedFiles.addAll(additionalFiles);
   }
 }
