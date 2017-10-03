@@ -35,10 +35,10 @@ import java.util.Set;
  * from and reacts to VFS notifications with module reload/update events. Handles File directly registered with {@link #track(IFile, SModule)} only.
  * Respects multiple modules per single file. Doesn't react to create events.
  * <p>
- *   Implements {@link FileListener}, but listens to the files registered only if requested {@link #ModuleFileTracker(boolean)}. Thus, if there's an external code
- *   that listens to file changes, it may delegate to {@link #update(ProgressMonitor, FileSystemEvent)} to handle change/delete in addition to own activity.
+ * Implements {@link FileListener}, but listens to the files registered only if requested {@link #ModuleFileTracker(boolean)}. Thus, if there's an external code
+ * that listens to file changes, it may delegate to {@link #update(ProgressMonitor, FileSystemEvent)} to handle change/delete in addition to own activity.
  * </p>
- *
+ * <p>
  * IMPLEMENTATION NOTE: not thread-safe
  *
  * @author Artem Tikhomirov
@@ -49,7 +49,6 @@ public class ModuleFileTracker implements FileListener {
   private final boolean myListenToTrackedFiles;
 
   /**
-   *
    * @param listenToTrackedFiles {@code true} if this class shall listen to tracked file changes, {@code false} if external code
    *                             invokes {@link #update(ProgressMonitor, FileSystemEvent)} at proper moment.
    */
@@ -60,7 +59,8 @@ public class ModuleFileTracker implements FileListener {
   /**
    * Associates given module with a file. Multiple modules per single file are allowed.
    * Multiple registration of the same File-Module pair is tolerated (XXX this is to avoid massive SLibrary refactoring, which may read same module and file).
-   * @param file origin of a module
+   *
+   * @param file   origin of a module
    * @param module module read from the file
    */
   public void track(@NotNull IFile file, @NotNull SModule module) {
@@ -73,6 +73,7 @@ public class ModuleFileTracker implements FileListener {
 
   /**
    * Discard tracked association between file and modules. Does nothing if no association for the file is known.
+   *
    * @param file origin of a module or few modules
    */
   public void forget(@NotNull IFile file) {
@@ -85,7 +86,8 @@ public class ModuleFileTracker implements FileListener {
    * Discard specific association between file and module. Does nothing if there's no such association.
    * If it's the last association for the file, and the tracker {@link #ModuleFileTracker(boolean) listens to changes}, the tracker
    * unregisters itself from file listeners.
-   * @param file origin of the module
+   *
+   * @param file   origin of the module
    * @param module module read from the file
    */
   public void forget(@NotNull IFile file, @NotNull SModule module) {
@@ -126,6 +128,14 @@ public class ModuleFileTracker implements FileListener {
         }
       }
     }
+
+    //[MM] see MPS-26705
+    modules2remove.removeIf((m) -> {
+      return m.getRepository() == null;
+    });
+    modules2reload.removeIf((m) -> {
+      return m.getRepository() == null;
+    });
     // XXX why not unregister with the owner of the library, perhaps other owners listen to the change and unregister themselves, or have better idea what to
     //     do when a module/file is removed
     // XXX unregisterModule(Language) unregisters its generators as well (Language.dispose() -> MRF.unregister(all with owner == language). Is it nice?

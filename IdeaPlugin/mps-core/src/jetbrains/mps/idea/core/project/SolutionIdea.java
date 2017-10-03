@@ -315,6 +315,11 @@ public class SolutionIdea extends Solution {
 //        super.save();    //To change body of overridden methods use File | Settings | File Templates.
   }
 
+  @Override
+  public IFile getDescriptorFile() {
+    return getFileSystem().getFile(myModule.getModuleFilePath());
+  }
+
   private void handleFacetChanged(Facet facet) {
     if (skipFacetNotification(facet)) {
       return;
@@ -347,6 +352,11 @@ public class SolutionIdea extends Solution {
       facet = new JavaModuleFacetImpl() {
         @Override
         public IFile getClassesGen() {
+          IFile descriptorFile = getDescriptorFile();
+          if (descriptorFile != null && descriptorFile.isReadOnly()) {
+            return super.getClassesGen();
+          }
+
           // FIXME the code here looks like a hack to allow TraceInfoCache to find trace.info files copied after build into classes_gen location.
           //       I see no other reason to mangle getClassesGen() of a module in IDEA, as there are no classloading for these modules.
           //       Perhaps, we shall override getOutputLocation() instead, see TraceInfoCache for further information.

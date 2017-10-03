@@ -150,6 +150,12 @@ public class JpsSolutionIdea extends Solution {
       facet = new JavaModuleFacetImpl() {
         @Override
         public IFile getClassesGen() {
+          IFile descriptorFile = getDescriptorFile();
+          if (descriptorFile != null && descriptorFile.isReadOnly()) {
+            myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " super.ClassesGen " + super.getClassesGen()));
+            return super.getClassesGen();
+          }
+
           // FIX hard-coded forTests=false
           // TODO use ProjectPaths.getModuleOutputDir(myModule, false); (using JpsJavaExtensionService directly to be compatible with IDEA 12.0.0 release)
           File outputDir = JpsJavaExtensionService.getInstance().getOutputDirectory(myModule, false);
