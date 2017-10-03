@@ -175,7 +175,30 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
-      <concept id="3864140621129707969" name="jetbrains.mps.lang.generator.structure.GeneratorDebug_Mappings" flags="nn" index="39dXUE" />
+      <concept id="9032177546941580387" name="jetbrains.mps.lang.generator.structure.TrivialNodeId" flags="nn" index="2$VJBW">
+        <property id="9032177546941580392" name="nodeId" index="2$VJBR" />
+        <child id="8557539026538618631" name="cncpt" index="3iCydw" />
+      </concept>
+      <concept id="5808518347809715508" name="jetbrains.mps.lang.generator.structure.GeneratorDebug_InputNode" flags="nn" index="385nmt">
+        <property id="5808518347809748738" name="presentation" index="385vuF" />
+        <child id="5808518347809747118" name="node" index="385v07" />
+      </concept>
+      <concept id="3864140621129707969" name="jetbrains.mps.lang.generator.structure.GeneratorDebug_Mappings" flags="nn" index="39dXUE">
+        <child id="3864140621129713349" name="labels" index="39e2AI" />
+      </concept>
+      <concept id="3864140621129713351" name="jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeMapEntry" flags="nn" index="39e2AG">
+        <property id="5843998055530255671" name="isNewRoot" index="2mV_xN" />
+        <reference id="3864140621129713371" name="inputOrigin" index="39e2AK" />
+        <child id="5808518347809748862" name="inputNode" index="385vvn" />
+        <child id="3864140621129713365" name="outputNode" index="39e2AY" />
+      </concept>
+      <concept id="3864140621129713348" name="jetbrains.mps.lang.generator.structure.GeneratorDebug_LabelEntry" flags="nn" index="39e2AJ">
+        <property id="3864140621129715945" name="label" index="39e3Y2" />
+        <child id="3864140621129715947" name="entries" index="39e3Y0" />
+      </concept>
+      <concept id="3864140621129713362" name="jetbrains.mps.lang.generator.structure.GeneratorDebug_NodeRef" flags="nn" index="39e2AT">
+        <reference id="3864140621129713363" name="node" index="39e2AS" />
+      </concept>
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1200830824066" name="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" flags="nn" index="2n63Yl">
@@ -224,6 +247,12 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="6911370362349121511" name="jetbrains.mps.lang.smodel.structure.ConceptId" flags="nn" index="2x4n5u">
+        <property id="6911370362349122519" name="conceptName" index="2x4mPI" />
+        <property id="6911370362349121516" name="conceptId" index="2x4n5l" />
+        <property id="6911370362349133804" name="isInterface" index="2x4o5l" />
+        <child id="6911370362349121514" name="languageIdentity" index="2x4n5j" />
+      </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -239,6 +268,10 @@
       <concept id="1883223317721107059" name="jetbrains.mps.lang.smodel.structure.IfInstanceOfVarReference" flags="nn" index="Jnkvi" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
+      <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="nn" index="2V$Bhx">
+        <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
+        <property id="3542851458883439832" name="languageId" index="2V$B1T" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
@@ -3620,71 +3653,216 @@
     </node>
     <node concept="3Tm1VV" id="jJ" role="1B3o_S" />
   </node>
-  <node concept="39dXUE" id="mc" />
-  <node concept="312cEu" id="md">
+  <node concept="39dXUE" id="mc">
+    <node concept="39e2AJ" id="md" role="39e2AI">
+      <property role="39e3Y2" value="classForRule" />
+      <node concept="39e2AG" id="mh" role="39e3Y0">
+        <ref role="39e2AK" to="j875:5WzrsV0ynvo" resolve="DispatchArgsHierarchy" />
+        <node concept="385nmt" id="mj" role="385vvn">
+          <property role="385vuF" value="DispatchArgsHierarchy" />
+          <node concept="2$VJBW" id="ml" role="385v07">
+            <property role="2$VJBR" value="6855443792548952024" />
+            <node concept="2x4n5u" id="mm" role="3iCydw">
+              <property role="2x4mPI" value="NonTypesystemRule" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="f92nru9m" />
+              <node concept="2V$Bhx" id="mn" role="2x4n5j">
+                <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.typesystem" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="mk" role="39e2AY">
+          <ref role="39e2AS" node="0" resolve="DispatchArgsHierarchy_NonTypesystemRule" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="mi" role="39e3Y0">
+        <ref role="39e2AK" to="j875:20YUQaJ$Sh6" resolve="DisptachParamIsClass" />
+        <node concept="385nmt" id="mo" role="385vvn">
+          <property role="385vuF" value="DisptachParamIsClass" />
+          <node concept="2$VJBW" id="mq" role="385v07">
+            <property role="2$VJBR" value="2323553266854757446" />
+            <node concept="2x4n5u" id="mr" role="3iCydw">
+              <property role="2x4mPI" value="NonTypesystemRule" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="f92nru9m" />
+              <node concept="2V$Bhx" id="ms" role="2x4n5j">
+                <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.typesystem" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="mp" role="39e2AY">
+          <ref role="39e2AS" node="jB" resolve="DisptachParamIsClass_NonTypesystemRule" />
+        </node>
+      </node>
+    </node>
+    <node concept="39e2AJ" id="me" role="39e2AI">
+      <property role="39e3Y2" value="isApplicableMethod" />
+      <node concept="39e2AG" id="mt" role="39e3Y0">
+        <ref role="39e2AK" to="j875:5WzrsV0ynvo" resolve="DispatchArgsHierarchy" />
+        <node concept="385nmt" id="mv" role="385vvn">
+          <property role="385vuF" value="DispatchArgsHierarchy" />
+          <node concept="2$VJBW" id="mx" role="385v07">
+            <property role="2$VJBR" value="6855443792548952024" />
+            <node concept="2x4n5u" id="my" role="3iCydw">
+              <property role="2x4mPI" value="NonTypesystemRule" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="f92nru9m" />
+              <node concept="2V$Bhx" id="mz" role="2x4n5j">
+                <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.typesystem" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="mw" role="39e2AY">
+          <ref role="39e2AS" node="4" resolve="isApplicableAndPattern" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="mu" role="39e3Y0">
+        <ref role="39e2AK" to="j875:20YUQaJ$Sh6" resolve="DisptachParamIsClass" />
+        <node concept="385nmt" id="m$" role="385vvn">
+          <property role="385vuF" value="DisptachParamIsClass" />
+          <node concept="2$VJBW" id="mA" role="385v07">
+            <property role="2$VJBR" value="2323553266854757446" />
+            <node concept="2x4n5u" id="mB" role="3iCydw">
+              <property role="2x4mPI" value="NonTypesystemRule" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="f92nru9m" />
+              <node concept="2V$Bhx" id="mC" role="2x4n5j">
+                <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.typesystem" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="m_" role="39e2AY">
+          <ref role="39e2AS" node="jF" resolve="isApplicableAndPattern" />
+        </node>
+      </node>
+    </node>
+    <node concept="39e2AJ" id="mf" role="39e2AI">
+      <property role="39e3Y2" value="mainMethodForRule" />
+      <node concept="39e2AG" id="mD" role="39e3Y0">
+        <ref role="39e2AK" to="j875:5WzrsV0ynvo" resolve="DispatchArgsHierarchy" />
+        <node concept="385nmt" id="mF" role="385vvn">
+          <property role="385vuF" value="DispatchArgsHierarchy" />
+          <node concept="2$VJBW" id="mH" role="385v07">
+            <property role="2$VJBR" value="6855443792548952024" />
+            <node concept="2x4n5u" id="mI" role="3iCydw">
+              <property role="2x4mPI" value="NonTypesystemRule" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="f92nru9m" />
+              <node concept="2V$Bhx" id="mJ" role="2x4n5j">
+                <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.typesystem" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="mG" role="39e2AY">
+          <ref role="39e2AS" node="2" resolve="applyRule" />
+        </node>
+      </node>
+      <node concept="39e2AG" id="mE" role="39e3Y0">
+        <ref role="39e2AK" to="j875:20YUQaJ$Sh6" resolve="DisptachParamIsClass" />
+        <node concept="385nmt" id="mK" role="385vvn">
+          <property role="385vuF" value="DisptachParamIsClass" />
+          <node concept="2$VJBW" id="mM" role="385v07">
+            <property role="2$VJBR" value="2323553266854757446" />
+            <node concept="2x4n5u" id="mN" role="3iCydw">
+              <property role="2x4mPI" value="NonTypesystemRule" />
+              <property role="2x4o5l" value="false" />
+              <property role="2x4n5l" value="f92nru9m" />
+              <node concept="2V$Bhx" id="mO" role="2x4n5j">
+                <property role="2V$B1T" value="7a5dda62-9140-4668-ab76-d5ed1746f2b2" />
+                <property role="2V$B1Q" value="jetbrains.mps.lang.typesystem" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="39e2AT" id="mL" role="39e2AY">
+          <ref role="39e2AS" node="jD" resolve="applyRule" />
+        </node>
+      </node>
+    </node>
+    <node concept="39e2AJ" id="mg" role="39e2AI">
+      <property role="39e3Y2" value="descriptorClass" />
+      <node concept="39e2AG" id="mP" role="39e3Y0">
+        <property role="2mV_xN" value="true" />
+        <node concept="39e2AT" id="mQ" role="39e2AY">
+          <ref role="39e2AS" node="mR" resolve="TypesystemDescriptor" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="312cEu" id="mR">
     <property role="TrG5h" value="TypesystemDescriptor" />
-    <node concept="3clFbW" id="me" role="jymVt">
-      <node concept="3clFbS" id="mh" role="3clF47">
-        <node concept="9aQIb" id="mj" role="3cqZAp">
-          <node concept="3clFbS" id="ml" role="9aQI4">
-            <node concept="3cpWs8" id="mm" role="3cqZAp">
-              <node concept="3cpWsn" id="mo" role="3cpWs9">
+    <node concept="3clFbW" id="mS" role="jymVt">
+      <node concept="3clFbS" id="mV" role="3clF47">
+        <node concept="9aQIb" id="mX" role="3cqZAp">
+          <node concept="3clFbS" id="mZ" role="9aQI4">
+            <node concept="3cpWs8" id="n0" role="3cqZAp">
+              <node concept="3cpWsn" id="n2" role="3cpWs9">
                 <property role="TrG5h" value="nonTypesystemRule" />
-                <node concept="3uibUv" id="mp" role="1tU5fm">
+                <node concept="3uibUv" id="n3" role="1tU5fm">
                   <ref role="3uigEE" to="qurh:~NonTypesystemRule_Runtime" resolve="NonTypesystemRule_Runtime" />
                 </node>
-                <node concept="2ShNRf" id="mq" role="33vP2m">
-                  <node concept="1pGfFk" id="mr" role="2ShVmc">
+                <node concept="2ShNRf" id="n4" role="33vP2m">
+                  <node concept="1pGfFk" id="n5" role="2ShVmc">
                     <ref role="37wK5l" node="1" resolve="DispatchArgsHierarchy_NonTypesystemRule" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="mn" role="3cqZAp">
-              <node concept="2OqwBi" id="ms" role="3clFbG">
-                <node concept="2OqwBi" id="mt" role="2Oq$k0">
-                  <node concept="Xjq3P" id="mv" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="mw" role="2OqNvi">
+            <node concept="3clFbF" id="n1" role="3cqZAp">
+              <node concept="2OqwBi" id="n6" role="3clFbG">
+                <node concept="2OqwBi" id="n7" role="2Oq$k0">
+                  <node concept="Xjq3P" id="n9" role="2Oq$k0" />
+                  <node concept="2OwXpG" id="na" role="2OqNvi">
                     <ref role="2Oxat5" to="qurh:~BaseHelginsDescriptor.myNonTypesystemRules" resolve="myNonTypesystemRules" />
                   </node>
                 </node>
-                <node concept="liA8E" id="mu" role="2OqNvi">
+                <node concept="liA8E" id="n8" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="37vLTw" id="mx" role="37wK5m">
-                    <ref role="3cqZAo" node="mo" resolve="nonTypesystemRule" />
+                  <node concept="37vLTw" id="nb" role="37wK5m">
+                    <ref role="3cqZAo" node="n2" resolve="nonTypesystemRule" />
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node concept="9aQIb" id="mk" role="3cqZAp">
-          <node concept="3clFbS" id="my" role="9aQI4">
-            <node concept="3cpWs8" id="mz" role="3cqZAp">
-              <node concept="3cpWsn" id="m_" role="3cpWs9">
+        <node concept="9aQIb" id="mY" role="3cqZAp">
+          <node concept="3clFbS" id="nc" role="9aQI4">
+            <node concept="3cpWs8" id="nd" role="3cqZAp">
+              <node concept="3cpWsn" id="nf" role="3cpWs9">
                 <property role="TrG5h" value="nonTypesystemRule" />
-                <node concept="3uibUv" id="mA" role="1tU5fm">
+                <node concept="3uibUv" id="ng" role="1tU5fm">
                   <ref role="3uigEE" to="qurh:~NonTypesystemRule_Runtime" resolve="NonTypesystemRule_Runtime" />
                 </node>
-                <node concept="2ShNRf" id="mB" role="33vP2m">
-                  <node concept="1pGfFk" id="mC" role="2ShVmc">
+                <node concept="2ShNRf" id="nh" role="33vP2m">
+                  <node concept="1pGfFk" id="ni" role="2ShVmc">
                     <ref role="37wK5l" node="jC" resolve="DisptachParamIsClass_NonTypesystemRule" />
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="m$" role="3cqZAp">
-              <node concept="2OqwBi" id="mD" role="3clFbG">
-                <node concept="2OqwBi" id="mE" role="2Oq$k0">
-                  <node concept="Xjq3P" id="mG" role="2Oq$k0" />
-                  <node concept="2OwXpG" id="mH" role="2OqNvi">
+            <node concept="3clFbF" id="ne" role="3cqZAp">
+              <node concept="2OqwBi" id="nj" role="3clFbG">
+                <node concept="2OqwBi" id="nk" role="2Oq$k0">
+                  <node concept="Xjq3P" id="nm" role="2Oq$k0" />
+                  <node concept="2OwXpG" id="nn" role="2OqNvi">
                     <ref role="2Oxat5" to="qurh:~BaseHelginsDescriptor.myNonTypesystemRules" resolve="myNonTypesystemRules" />
                   </node>
                 </node>
-                <node concept="liA8E" id="mF" role="2OqNvi">
+                <node concept="liA8E" id="nl" role="2OqNvi">
                   <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="37vLTw" id="mI" role="37wK5m">
-                    <ref role="3cqZAo" node="m_" resolve="nonTypesystemRule" />
+                  <node concept="37vLTw" id="no" role="37wK5m">
+                    <ref role="3cqZAo" node="nf" resolve="nonTypesystemRule" />
                   </node>
                 </node>
               </node>
@@ -3692,10 +3870,10 @@
           </node>
         </node>
       </node>
-      <node concept="3Tm1VV" id="mi" role="1B3o_S" />
+      <node concept="3Tm1VV" id="mW" role="1B3o_S" />
     </node>
-    <node concept="3Tm1VV" id="mf" role="1B3o_S" />
-    <node concept="3uibUv" id="mg" role="1zkMxy">
+    <node concept="3Tm1VV" id="mT" role="1B3o_S" />
+    <node concept="3uibUv" id="mU" role="1zkMxy">
       <ref role="3uigEE" to="qurh:~BaseHelginsDescriptor" resolve="BaseHelginsDescriptor" />
     </node>
   </node>
