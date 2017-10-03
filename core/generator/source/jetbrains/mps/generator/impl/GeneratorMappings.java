@@ -237,6 +237,8 @@ public final class GeneratorMappings {
   /*package*/ Collection<String> getAvailableLabels() {
     return myMappingNameAndInputNodeToOutputNodeMap.keySet();
   }
+
+  // FIXME please, no Object, no Map<SNode,Object>. PLEASE!!!
   /*package*/Map<SNode,Object> getMappings(String label) {
     return myMappingNameAndInputNodeToOutputNodeMap.get(label);
   }

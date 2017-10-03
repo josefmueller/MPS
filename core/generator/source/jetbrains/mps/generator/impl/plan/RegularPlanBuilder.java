@@ -240,6 +240,13 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     return null;
   }
 
+  private boolean isNextStepIsPersistedCheckpoint(TransformEntry entry) {
+    int i = mySteps.indexOf(entry);
+    assert i >= 0; // no one else could pass here anything unexpected
+    return mySteps.size() > i + 1 && mySteps.get(i+1) instanceof CheckpointEntry;
+  }
+
+
   private interface StepEntry {
     /**
      * @param result collections to feed with generators of this step
@@ -297,9 +304,13 @@ public class RegularPlanBuilder implements GenerationPlanBuilder {
     public void createStep(RegularPlanBuilder planBuilder, List<Step> steps) {
       Stream<TemplateModule> generators = Stream.concat(myGenerators.stream(), myExtensions.stream());
       if (!myIsSealed && myRespectPriorityRules) {
+        final boolean isBeforeCheckpoint = planBuilder.isNextStepIsPersistedCheckpoint(this);
         GenerationPartitioner gp = new GenerationPartitioner(generators.collect(Collectors.toList()));
-        for (List<TemplateMappingConfiguration> tmc4Step : gp.createMappingSets()) {
-          steps.add(new Transform(tmc4Step));
+        List<List<TemplateMappingConfiguration>> mappingSets = gp.createMappingSets();
+        // if there's only 1 step, there's no need to collect its labels for propagation, they are already there in the last (and only) set of MLs.
+        final boolean needToPropagateLabeledTransforms = isBeforeCheckpoint && mappingSets.size() > 1;
+        for (List<TemplateMappingConfiguration> tmc4Step : mappingSets) {
+          steps.add(new Transform(tmc4Step, needToPropagateLabeledTransforms));
         }
       } else {
         ArrayList<TemplateMappingConfiguration> tmc = new ArrayList<>();

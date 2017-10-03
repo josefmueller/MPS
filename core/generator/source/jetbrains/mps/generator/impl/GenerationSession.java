@@ -67,6 +67,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -74,6 +75,8 @@ import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Igor Alshannikov
@@ -171,6 +174,8 @@ class GenerationSession {
         ModelTransitions transitionTrace = new ModelTransitions(); // FIXME make it optional, if there are no Checkpoint steps, do not record transitions
         transitionTrace.newTransition(null, currInputModel, null);
 
+        final ArrayDeque<GeneratorMappings> lastBigTransformStepMappings = new ArrayDeque<>();
+
         for (myMajorStep = 0; myMajorStep < myGenerationPlan.getSteps().size(); myMajorStep++) {
           Step planStep = myGenerationPlan.getSteps().get(myMajorStep);
           if (planStep instanceof Transform) {
@@ -191,12 +196,21 @@ class GenerationSession {
               break;
             }
             if (mappingConfigurations.isEmpty()) {
+              // XXX revisit. De we need to break if there were no transformations at a step?
               break;
+            }
+            if (transformStep.isLabeledTransformationsKept()) {
+              // FIXME both transform and checkpoint steps need myStepArgument; need better sharing than just access to the field
+              // another method initialized and generously didn't clean.
+              // FIXME we don't need to keep complete GeneratorMappings, just a subset with labeled input->output and conditional roots
+              lastBigTransformStepMappings.push(myStepArguments.mappingLabels);
             }
             currInputModel = currOutput;
           } else if (planStep instanceof Checkpoint) {
             Checkpoint checkpointStep = (Checkpoint) planStep;
             if (!checkpointStep.isPersisted()) {
+              // not sure there's a reason to clear lastBigTransformStepMappings (although should not happen
+              // provided GenerationPlanBuilder marks Transform steps as 'keep' right in front of Checkpoint only)
               continue;
             }
             CheckpointIdentity checkpointIdentity = checkpointStep.getIdentity();
@@ -209,13 +223,45 @@ class GenerationSession {
               // Shall populate state with last generator's MappingLabels. Note, ML could have been added from post-processing scripts. Generator
               // instance could be different, we keep GeneratorMappings with step arguments, that span all pre/post scripts along with transformations.
               GeneratorMappings stepLabels = myStepArguments.mappingLabels;
+              // stepLabels is likely the last one pushed into lastBigTransformStepMappings when previous Transform step had happened.
+              lastBigTransformStepMappings.remove(stepLabels);
+              for (GeneratorMappings prev : lastBigTransformStepMappings) {
+                for (String l : prev.getConditionalRootLabels()) {
+                  for (SNode conditionalRoot : prev.getConditionalRoots(l)) {
+                    SNode copiedRoot = currInputModel.getNode(conditionalRoot.getNodeId());
+                    if (copiedRoot != null) {
+                      stepLabels.addNewOutputNode(l, copiedRoot);
+                    }
+                  }
+                }
+                for (String l : prev.getAvailableLabels()) {
+                  Map<SNode, Object> lastStepMappings = stepLabels.getMappings(l);
+                  if (lastStepMappings == null) {
+                    lastStepMappings = Collections.emptyMap();
+                  }
+                  for (Entry<SNode, Object> entry : prev.getMappings(l).entrySet()) {
+                    if (lastStepMappings.containsKey(entry.getKey())) {
+                      // there's already labeled transformation for the same input node, no reason to override with value from previous steps
+                      continue;
+                    }
+                    if (entry.getValue() instanceof SNode) {
+                      // intentionally do not care about multiple outputs, just don't want to project multiple outputs into actual transient model
+                      // and it's of no real use anyway as we don't restore x-model references in case there are multiple outputs.
+                      SNode copiedOutput = currInputModel.getNode(((SNode) entry.getValue()).getNodeId());
+                      if (copiedOutput != null) {
+                        stepLabels.addOutputNodeByInputNodeAndMappingName(entry.getKey(), l, copiedOutput);
+                      }
+                    }
+                  }
+                }
+              }
               cpBuilder.addMappings(myOriginalInputModel, stepLabels, myLogger.getImplementation());
             }
             CheckpointState cpState = cpBuilder.create(checkpointIdentity);
             xmodelEnv.publishCheckpoint(myOriginalInputModel.getReference(), cpState);
             myStepArguments = null; // XXX what if there are few subsequent CPs (e.g. from different plans), why do we clear step arguments and
             // prevent other CPs from saving MLs?
-
+            lastBigTransformStepMappings.clear();
           }
         }
         ttrace.pop();

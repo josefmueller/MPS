@@ -102,10 +102,18 @@ public interface ModelGenerationPlan {
 
   final class Transform implements Step {
     private final TemplateMappingConfiguration[] myMapCfg;
+    private final boolean myKeepLabeledTransformations;
 
     public Transform(@NotNull Collection<TemplateMappingConfiguration> tmc) {
       myMapCfg = tmc.toArray(new TemplateMappingConfiguration[tmc.size()]);
+      myKeepLabeledTransformations = false;
     }
+
+    public Transform(@NotNull Collection<TemplateMappingConfiguration> tmc, boolean keepLabeledTransforms) {
+      myMapCfg = tmc.toArray(new TemplateMappingConfiguration[tmc.size()]);
+      myKeepLabeledTransformations = keepLabeledTransforms;
+    }
+
 
     @NotNull
     public List<TemplateMappingConfiguration> getTransformations() {
@@ -122,6 +130,10 @@ public interface ModelGenerationPlan {
         }
       }
       return rv;
+    }
+
+    public boolean isLabeledTransformationsKept() {
+      return myKeepLabeledTransformations;
     }
 
     // alternatively, why not to give control over rule/switch manager to the step?
