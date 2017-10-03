@@ -36,6 +36,7 @@
     <import index="cgca" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.plan(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
+    <import index="tft2" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.impl.plan(MPS.Core/)" />
     <import index="tp2b" ref="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -6304,8 +6305,23 @@
                     </node>
                   </node>
                 </node>
+                <node concept="3SKdUt" id="143UzBooGgN" role="3cqZAp">
+                  <node concept="3SKdUq" id="143UzBooGgP" role="3SKWNk">
+                    <property role="3SKdUp" value="in fact, inputNodeModel when keyInputNode is from the same model is unlikely to be checkpoint, we need its counterpart" />
+                  </node>
+                </node>
+                <node concept="3SKdUt" id="143UzBooJgw" role="3cqZAp">
+                  <node concept="3SKdUq" id="143UzBooJgy" role="3SKWNk">
+                    <property role="3SKdUp" value="from myOriginTrace's checkpoint model, but I have no idea how to get one here." />
+                  </node>
+                </node>
                 <node concept="3clFbJ" id="D1MKDhQjBg" role="3cqZAp">
                   <node concept="3clFbS" id="D1MKDhQjBi" role="3clFbx">
+                    <node concept="3SKdUt" id="52s0aAo_7gm" role="3cqZAp">
+                      <node concept="3SKdUq" id="52s0aAo_7go" role="3SKWNk">
+                        <property role="3SKdUp" value="no reason to save reference to a model that would be disposed and eventually break the reference" />
+                      </node>
+                    </node>
                     <node concept="3clFbF" id="52s0aAo_zd5" role="3cqZAp">
                       <node concept="37vLTI" id="52s0aAo_$yP" role="3clFbG">
                         <node concept="2OqwBi" id="52s0aAo_A7C" role="37vLTx">
@@ -6336,75 +6352,58 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3clFbJ" id="52s0aAo_4d$" role="3cqZAp">
-                      <node concept="3clFbS" id="52s0aAo_4dA" role="3clFbx">
-                        <node concept="3SKdUt" id="52s0aAo_7gm" role="3cqZAp">
-                          <node concept="3SKdUq" id="52s0aAo_7go" role="3SKWNk">
-                            <property role="3SKdUp" value="no reason to save reference to a model that would be disposed and eventually break the reference" />
-                          </node>
-                        </node>
-                        <node concept="3SKdUt" id="52s0aAo_7px" role="3cqZAp">
-                          <node concept="3SKdUq" id="52s0aAo_7pz" role="3SKWNk">
-                            <property role="3SKdUp" value="OTOH, other CP models may be exposed as transients as well, and it's reasonable to keep references" />
-                          </node>
-                        </node>
-                        <node concept="3SKdUt" id="52s0aAo_7yK" role="3cqZAp">
-                          <node concept="3SKdUq" id="52s0aAo_7yM" role="3SKWNk">
-                            <property role="3SKdUp" value="to other CP models. Need better condition (can check stereotype start with 'cp-', but it's a hack" />
-                          </node>
-                        </node>
-                        <node concept="3SKdUt" id="52s0aAo_7G3" role="3cqZAp">
-                          <node concept="3SKdUq" id="52s0aAo_7G5" role="3SKWNk">
-                            <property role="3SKdUp" value="Perhaps, once I start to keep attributes in a CP model (like name of checkpoint in SModelHeader.properties)" />
-                          </node>
-                        </node>
-                        <node concept="3SKdUt" id="52s0aAo_7Pq" role="3cqZAp">
-                          <node concept="3SKdUq" id="52s0aAo_7Ps" role="3SKWNk">
-                            <property role="3SKdUp" value="I can have better logic here (would need t respect change in model reference for persisted CP model" />
-                          </node>
-                        </node>
-                        <node concept="3SKdUt" id="52s0aAo_7YP" role="3cqZAp">
-                          <node concept="3SKdUq" id="52s0aAo_7YR" role="3SKWNk">
-                            <property role="3SKdUp" value="exposed in transients, though)." />
-                          </node>
-                        </node>
-                        <node concept="3clFbF" id="52s0aAo_1Sy" role="3cqZAp">
-                          <node concept="37vLTI" id="52s0aAo_38u" role="3clFbG">
-                            <node concept="37vLTw" id="6aGm$jlJ11K" role="37vLTx">
-                              <ref role="3cqZAo" node="3mwbQJWBq4s" resolve="keyInputNode" />
-                            </node>
-                            <node concept="2OqwBi" id="52s0aAo_2Ep" role="37vLTJ">
-                              <node concept="2OqwBi" id="52s0aAo_2r0" role="2Oq$k0">
-                                <node concept="37vLTw" id="52s0aAo_1Sw" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="3mwbQJWBvdq" resolve="entry" />
-                                </node>
-                                <node concept="3TrEf2" id="52s0aAo_2x6" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tpf8:52s0aAoyvtY" resolve="inputNode" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="52s0aAo_2UL" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tpf8:52s0aAoyvrZ" resolve="nodePtr" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
+                    <node concept="3SKdUt" id="52s0aAo_7Pq" role="3cqZAp">
+                      <node concept="3SKdUq" id="52s0aAo_7Ps" role="3SKWNk">
+                        <property role="3SKdUp" value="The problem with direct reference is that I need to respect change in model reference for persisted CP model if it changes" />
                       </node>
-                      <node concept="3fqX7Q" id="52s0aAo_6pe" role="3clFbw">
-                        <node concept="2ZW3vV" id="52s0aAo_6pg" role="3fr31v">
-                          <node concept="3uibUv" id="52s0aAo_6ph" role="2ZW6by">
-                            <ref role="3uigEE" to="g3l6:~TransientSModel" resolve="TransientSModel" />
+                    </node>
+                    <node concept="3clFbF" id="52s0aAo_1Sy" role="3cqZAp">
+                      <node concept="37vLTI" id="52s0aAo_38u" role="3clFbG">
+                        <node concept="37vLTw" id="6aGm$jlJ11K" role="37vLTx">
+                          <ref role="3cqZAo" node="3mwbQJWBq4s" resolve="keyInputNode" />
+                        </node>
+                        <node concept="2OqwBi" id="52s0aAo_2Ep" role="37vLTJ">
+                          <node concept="2OqwBi" id="52s0aAo_2r0" role="2Oq$k0">
+                            <node concept="37vLTw" id="52s0aAo_1Sw" role="2Oq$k0">
+                              <ref role="3cqZAo" node="3mwbQJWBvdq" resolve="entry" />
+                            </node>
+                            <node concept="3TrEf2" id="52s0aAo_2x6" role="2OqNvi">
+                              <ref role="3Tt5mk" to="tpf8:52s0aAoyvtY" resolve="inputNode" />
+                            </node>
                           </node>
-                          <node concept="37vLTw" id="D1MKDhQek0" role="2ZW6bz">
-                            <ref role="3cqZAo" node="D1MKDhQejT" resolve="inputNodeModel" />
+                          <node concept="3TrEf2" id="52s0aAo_2UL" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tpf8:52s0aAoyvrZ" resolve="nodePtr" />
                           </node>
                         </node>
                       </node>
                     </node>
                   </node>
-                  <node concept="3y3z36" id="D1MKDhQkd9" role="3clFbw">
-                    <node concept="10Nm6u" id="D1MKDhQke1" role="3uHU7w" />
-                    <node concept="37vLTw" id="D1MKDhQk8e" role="3uHU7B">
-                      <ref role="3cqZAo" node="D1MKDhQejT" resolve="inputNodeModel" />
+                  <node concept="1Wc70l" id="NUX2bDTweY" role="3clFbw">
+                    <node concept="3y3z36" id="NUX2bDTzZB" role="3uHU7B">
+                      <node concept="10Nm6u" id="NUX2bDT$2x" role="3uHU7w" />
+                      <node concept="37vLTw" id="NUX2bDTzRz" role="3uHU7B">
+                        <ref role="3cqZAo" node="D1MKDhQejT" resolve="inputNodeModel" />
+                      </node>
+                    </node>
+                    <node concept="1eOMI4" id="NUX2bDT$lx" role="3uHU7w">
+                      <node concept="22lmx$" id="143UzBooI7t" role="1eOMHV">
+                        <node concept="1rXfSq" id="143UzBook9I" role="3uHU7B">
+                          <ref role="37wK5l" node="143UzBoojhb" resolve="isCheckpointModel" />
+                          <node concept="37vLTw" id="143UzBookhJ" role="37wK5m">
+                            <ref role="3cqZAo" node="D1MKDhQejT" resolve="inputNodeModel" />
+                          </node>
+                        </node>
+                        <node concept="3fqX7Q" id="143UzBooIJv" role="3uHU7w">
+                          <node concept="2ZW3vV" id="143UzBooIJx" role="3fr31v">
+                            <node concept="3uibUv" id="143UzBooIJy" role="2ZW6by">
+                              <ref role="3uigEE" to="g3l6:~TransientSModel" resolve="TransientSModel" />
+                            </node>
+                            <node concept="37vLTw" id="143UzBooIJz" role="2ZW6bz">
+                              <ref role="3cqZAo" node="D1MKDhQejT" resolve="inputNodeModel" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -7036,6 +7035,41 @@
             <property role="1dT_AB" value="or that we would mistakenly take a wrong one (i.e. if aforementioned script removes a node registered as an ouput and adds another one with the same id)." />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="143UzBooihC" role="jymVt" />
+    <node concept="3clFb_" id="143UzBoojhb" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isCheckpointModel" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="143UzBoojhe" role="3clF47">
+        <node concept="3SKdUt" id="52s0aAo_7px" role="3cqZAp">
+          <node concept="3SKdUq" id="52s0aAo_7pz" role="3SKWNk">
+            <property role="3SKdUp" value="CP models may be exposed as transients; we need to keep references to CP models" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="52s0aAo_7yK" role="3cqZAp">
+          <node concept="3SKdUq" id="52s0aAo_7yM" role="3SKWNk">
+            <property role="3SKdUp" value="Need better condition than just model attribute, though." />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="143UzBoolsw" role="3cqZAp">
+          <node concept="2YIFZM" id="143UzBooEyK" role="3cqZAk">
+            <ref role="37wK5l" to="tft2:~CrossModelEnvironment.isCheckpointModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isCheckpointModel" />
+            <ref role="1Pybhc" to="tft2:~CrossModelEnvironment" resolve="CrossModelEnvironment" />
+            <node concept="37vLTw" id="143UzBooETP" role="37wK5m">
+              <ref role="3cqZAo" node="143UzBoojHm" resolve="m" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="143UzBooiP5" role="1B3o_S" />
+      <node concept="10P_77" id="143UzBoojh4" role="3clF45" />
+      <node concept="37vLTG" id="143UzBoojHm" role="3clF46">
+        <property role="TrG5h" value="m" />
+        <node concept="H_c77" id="143UzBoojHl" role="1tU5fm" />
       </node>
     </node>
     <node concept="3Tm1VV" id="3mwbQJWBn1$" role="1B3o_S" />

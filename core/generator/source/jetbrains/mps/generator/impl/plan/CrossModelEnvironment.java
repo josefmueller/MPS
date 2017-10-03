@@ -75,6 +75,10 @@ public class CrossModelEnvironment {
     myStreamProvider = streamProvider;
   }
 
+  public static boolean isCheckpointModel(@Nullable SModel m) {
+    return m instanceof ModelWithAttributes && ((ModelWithAttributes) m).getAttribute(CHECKPOINT) != null;
+  }
+
   /**
    * FIXME Given CP could be defined in a plan/CPSet other then the one being executed, is there any sense to
    * pass planIdentity, not CPIdentity here. Perhaps, could hide ModelCheckpoints concept altogether as

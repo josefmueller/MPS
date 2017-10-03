@@ -25,6 +25,7 @@ import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.generator.impl.plan.CrossModelEnvironment;
 
 public class DebugMappingsBuilder {
   private final SRepository myRepo;
@@ -66,17 +67,13 @@ public class DebugMappingsBuilder {
         SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f0aeL, "node"), inputNodeIdentity);
         SPropertyOperations.set(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f702L, "presentation"), keyInputNode.getPresentation());
         SModel inputNodeModel = keyInputNode.getModel();
-        if (inputNodeModel != null) {
+        // in fact, inputNodeModel when keyInputNode is from the same model is unlikely to be checkpoint, we need its counterpart 
+        // from myOriginTrace's checkpoint model, but I have no idea how to get one here. 
+        if (inputNodeModel != null && (isCheckpointModel(inputNodeModel) || !(inputNodeModel instanceof TransientSModel))) {
+          // no reason to save reference to a model that would be disposed and eventually break the reference 
           SPropertyOperations.set(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a9989481dbL, "modelName"), inputNodeModel.getName().getValue());
-          if (!(inputNodeModel instanceof TransientSModel)) {
-            // no reason to save reference to a model that would be disposed and eventually break the reference 
-            // OTOH, other CP models may be exposed as transients as well, and it's reasonable to keep references 
-            // to other CP models. Need better condition (can check stereotype start with 'cp-', but it's a hack 
-            // Perhaps, once I start to keep attributes in a CP model (like name of checkpoint in SModelHeader.properties) 
-            // I can have better logic here (would need t respect change in model reference for persisted CP model 
-            // exposed in transients, though). 
-            SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr"), keyInputNode);
-          }
+          // The problem with direct reference is that I need to respect change in model reference for persisted CP model if it changes 
+          SLinkOperations.setTarget(SLinkOperations.getTarget(entry, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x509c00a99889f77eL, "inputNode")), MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr"), keyInputNode);
         }
         SNodeReference origin = TracingUtil.getInput(keyInputNode);
         SLinkOperations.setTarget(entry, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x35a02f6bfc9806c7L, 0x35a02f6bfc9806dbL, "inputOrigin"), (origin == null ? null : origin.resolve(myRepo)));
@@ -131,5 +128,11 @@ public class DebugMappingsBuilder {
       return n;
     }
     return tn;
+  }
+
+  private boolean isCheckpointModel(SModel m) {
+    // CP models may be exposed as transients; we need to keep references to CP models 
+    // Need better condition than just model attribute, though. 
+    return CrossModelEnvironment.isCheckpointModel(m);
   }
 }

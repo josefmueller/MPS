@@ -29,6 +29,7 @@
     <classNode dependClassName="jetbrains.mps.extapi.model.TransientSModel" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorMappings" />
     <classNode dependClassName="jetbrains.mps.generator.impl.TransitionTrace" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.plan.CrossModelEnvironment" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
