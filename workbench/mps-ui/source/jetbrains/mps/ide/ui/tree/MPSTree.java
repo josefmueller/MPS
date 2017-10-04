@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.wm.IdeFocusManager;
+import com.intellij.ui.DoubleClickListener;
 import com.intellij.ui.TreeUIHelper;
 import com.intellij.util.ui.tree.WideSelectionTreeUI;
 import com.intellij.util.ui.update.MergingUpdateQueue;
@@ -105,6 +106,20 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     addTreeWillExpandListener(new MyTreeWillExpandListener());
     addTreeExpansionListener(new MyTreeExpansionListener());
+
+    new DoubleClickListener() {
+      @Override
+      protected boolean onDoubleClick(MouseEvent e) {
+        MPSTreeNode nodeToClick = getOpenableNode(e);
+        if (nodeToClick == null) {
+          return false;
+        }
+
+        doubleClick(nodeToClick);
+        return true;
+      }
+    }.installOn(this);
+
     addMouseListener(new MyMouseAdapter());
     getModel().addTreeModelListener(new TreeModelListener() {
       @Override
@@ -146,7 +161,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       }
     });
 
-    registerKeyboardAction(new MyOpenNodeAction(), KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(new MyDoubleClickAction(), KeyStroke.getKeyStroke("F4"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     registerKeyboardAction(new MyRefreshAction(), KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     clear();
   }
@@ -278,13 +293,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private void myMouseClicked(MouseEvent e) {
     if (e.isPopupTrigger()) {
       showPopup(e.getX(), e.getY());
-      return;
-    }
-
-    MPSTreeNode nodeToClick = getOpenableNode(e);
-    if (nodeToClick != null && e.getClickCount() == 2) {
-      // shouldn't I use nodeToClick.getToggleClickCount() instead of hardcoded '2' here? Does 'toggle click' mean the same as doubleclick?
-      doubleClick(nodeToClick);
     }
   }
 
@@ -931,7 +939,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     }
   }
 
-  private class MyOpenNodeAction extends AbstractAction {
+  private class MyDoubleClickAction extends AbstractAction {
     @Override
     public void actionPerformed(ActionEvent e) {
       MPSTreeNode selNode = getNodeFromPath(getSelectionPath());
