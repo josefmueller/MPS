@@ -33,7 +33,7 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   protected JComponent createCenterPanel() {
     myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject, myModel);
     JComponent centerPanel = myChooser.getComponent();
-    centerPanel.setPreferredSize(new Dimension(400, 900));
+    centerPanel.setPreferredSize(new Dimension(centerPanel.getPreferredSize().width, 900));
     return centerPanel;
   }
   public void setFilter(MoveNodesDialog.ModelFilter filter) {
