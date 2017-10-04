@@ -122,46 +122,5 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="1TIwiD" id="7ITVRipEe5t">
-    <property role="3GE5qa" value="persistence" />
-    <property role="TrG5h" value="TrivialKeeper" />
-    <property role="EcuMT" value="8915420221429834077" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="7ITVRipEe5u" role="1TKVEl">
-      <property role="TrG5h" value="string1" />
-      <property role="IQ2nx" value="8915420221429834078" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="7ITVRipEe5w" role="1TKVEl">
-      <property role="TrG5h" value="string2" />
-      <property role="IQ2nx" value="8915420221429834080" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="7ITVRipEe5z" role="1TKVEl">
-      <property role="TrG5h" value="string3" />
-      <property role="IQ2nx" value="8915420221429834083" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyi" id="7ITVRipEe5B" role="1TKVEl">
-      <property role="TrG5h" value="int1" />
-      <property role="IQ2nx" value="8915420221429834087" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="7ITVRipEe5G" role="1TKVEl">
-      <property role="TrG5h" value="int2" />
-      <property role="IQ2nx" value="8915420221429834092" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="7ITVRipEe5M" role="1TKVEl">
-      <property role="TrG5h" value="bool1" />
-      <property role="IQ2nx" value="8915420221429834098" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="7ITVRipEe5T" role="1TKVEl">
-      <property role="TrG5h" value="bool2" />
-      <property role="IQ2nx" value="8915420221429834105" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-  </node>
 </model>
 

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptEntry = createDescriptorForEntry();
   /*package*/ final ConceptDescriptor myConceptNodeA = createDescriptorForNodeA();
-  /*package*/ final ConceptDescriptor myConceptTrivialKeeper = createDescriptorForTrivialKeeper();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -23,7 +22,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptEntry, myConceptNodeA, myConceptTrivialKeeper);
+    return Arrays.asList(myConceptEntry, myConceptNodeA);
   }
 
   @Override
@@ -34,8 +33,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptEntry;
       case LanguageConceptSwitch.NodeA:
         return myConceptNodeA;
-      case LanguageConceptSwitch.TrivialKeeper:
-        return myConceptTrivialKeeper;
       default:
         return null;
     }
@@ -63,19 +60,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)/4355167635271935075");
     b.aggregate("entries", 0x3c70a9e3bda9ab7cL).target(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L).optional(true).ordered(true).multiple(true).origin("4355167635271953276").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTrivialKeeper() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.generator.test.crossmodel.entity", "TrivialKeeper", 0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x7bb9ef7499a8e15dL);
-    b.class_(false, false, false);
-    b.origin("r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)/8915420221429834077");
-    b.prop("string1", 0x7bb9ef7499a8e15eL, "8915420221429834078");
-    b.prop("string2", 0x7bb9ef7499a8e160L, "8915420221429834080");
-    b.prop("string3", 0x7bb9ef7499a8e163L, "8915420221429834083");
-    b.prop("int1", 0x7bb9ef7499a8e167L, "8915420221429834087");
-    b.prop("int2", 0x7bb9ef7499a8e16cL, "8915420221429834092");
-    b.prop("bool1", 0x7bb9ef7499a8e172L, "8915420221429834098");
-    b.prop("bool2", 0x7bb9ef7499a8e179L, "8915420221429834105");
     return b.create();
   }
 }

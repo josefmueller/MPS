@@ -46,10 +46,10 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x523c6873cc7e12a2L, 0x523c6873cc7e583fL, "value"));
   }
   public static Object referenceMacro_GetReferent_5925726056274318832(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x523c6873cc7e12a2L, 0x47d6e5da62e55fe3L, "bean")), "BeanToClass");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x523c6873cc7e12a2L, 0x47d6e5da62e55fe3L, "bean")), "Bean2Class");
   }
   public static Object referenceMacro_GetReferent_5925726056274316710(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x523c6873cc7e12a2L, 0x523c6873cc7e167dL, "property")), "PropertyToSetter");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x523c6873cc7e12a2L, 0x523c6873cc7e167dL, "property")), "Property2Setter");
   }
   public static Iterable<SNode> sourceNodesQuery_5176577547833330034(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xdc1cc9486f434687L, 0x90cb17dd5cb27219L, 0x4ccbf1da2ba1fe6dL, 0x523c6873cc802769L, "initializers"));

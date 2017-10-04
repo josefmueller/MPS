@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Entry;
   private ConceptPresentation props_NodeA;
-  private ConceptPresentation props_TrivialKeeper;
 
   @Override
   @Nullable
@@ -32,13 +31,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_NodeA = cpb.create();
         }
         return props_NodeA;
-      case LanguageConceptSwitch.TrivialKeeper:
-        if (props_TrivialKeeper == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TrivialKeeper");
-          props_TrivialKeeper = cpb.create();
-        }
-        return props_TrivialKeeper;
     }
     return null;
   }

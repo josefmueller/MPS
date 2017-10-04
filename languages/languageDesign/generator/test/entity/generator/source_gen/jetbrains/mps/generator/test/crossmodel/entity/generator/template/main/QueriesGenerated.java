@@ -51,10 +51,10 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Bean";
   }
   public static Object referenceMacro_GetReferent_5176577547833570998(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L, 0x3c70a9e3bda9a808L, "use1")), "EntryToBeanProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L, 0x3c70a9e3bda9a808L, "use1")), "Entry2BeanProperty");
   }
   public static Object referenceMacro_GetReferent_5176577547833821221(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeProxy(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L, 0x3c70a9e3bda9a808L, "use1")), MetaAdapterFactory.getReferenceLink(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L, 0x29afbc6cd33f5d6eL, "owner")), "NodeToBean");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L, 0x3c70a9e3bda9a808L, "use1")), MetaAdapterFactory.getReferenceLink(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda965f6L, 0x29afbc6cd33f5d6eL, "owner")), "Node2Bean");
   }
   public static Iterable<SNode> sourceNodesQuery_5176577547833432907(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x4d14758c3ecb486dL, 0xb8c8ea5beb8ae408L, 0x3c70a9e3bda96463L, 0x3c70a9e3bda9ab7cL, "entries"))).where(new IWhereFilter<SNode>() {
