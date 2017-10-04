@@ -3500,7 +3500,7 @@
     </node>
     <node concept="3clFb_" id="4hHBpoi1Ls8" role="jymVt">
       <property role="1EzhhJ" value="false" />
-      <property role="TrG5h" value="getComponent" />
+      <property role="TrG5h" value="getRootComponent" />
       <node concept="3uibUv" id="4hHBpoi1Ls9" role="3clF45">
         <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
       </node>
@@ -3513,6 +3513,24 @@
         </node>
       </node>
       <node concept="2AHcQZ" id="3tYsUK_Sd4P" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3clFb_" id="3EDrOip5His" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getFocusComponent" />
+      <node concept="3uibUv" id="3EDrOip5Hit" role="3clF45">
+        <ref role="3uigEE" to="dxuu:~JComponent" resolve="JComponent" />
+      </node>
+      <node concept="3Tm1VV" id="3EDrOip5Hiu" role="1B3o_S" />
+      <node concept="3clFbS" id="3EDrOip5Hiw" role="3clF47">
+        <node concept="3cpWs6" id="3EDrOip5PSj" role="3cqZAp">
+          <node concept="37vLTw" id="3EDrOip5QFJ" role="3cqZAk">
+            <ref role="3cqZAo" node="3HO6DnBfcO6" resolve="myTree" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="3EDrOip5Hix" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>

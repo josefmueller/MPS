@@ -5,6 +5,7 @@ package jetbrains.mps.ide.platform.refactoring;
 import com.intellij.refactoring.RefactoringBundle;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 
@@ -15,6 +16,11 @@ public abstract class ModelOrNodeChooserDialog extends RefactoringDialog {
   public ModelOrNodeChooserDialog(@NotNull Project project) {
     super(project, true);
     this.myProject = project;
+  }
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    return myChooser.getFocusComponent();
   }
   protected static class Filter {
     private String errorMessage;

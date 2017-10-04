@@ -23,7 +23,7 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   @Override
   protected void doRefactoringAction() {
     NodeLocation selectedObject = myChooser.getSelectedObject();
-    if (myFilter == null || myFilter.checkForObject(selectedObject, myModel, myChooser.getComponent())) {
+    if (myFilter == null || myFilter.checkForObject(selectedObject, myModel, myChooser.getRootComponent())) {
       mySelectedObject = selectedObject;
       super.doRefactoringAction();
     }
@@ -32,8 +32,8 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   @Override
   protected JComponent createCenterPanel() {
     myChooser = RefactoringAccessEx.getInstance().createTargetChooser(myProject, myModel);
-    JComponent centerPanel = myChooser.getComponent();
-    centerPanel.setPreferredSize(new Dimension(centerPanel.getPreferredSize().width, 900));
+    JComponent centerPanel = myChooser.getRootComponent();
+    centerPanel.setPreferredSize(new Dimension(400, 900));
     return centerPanel;
   }
   public void setFilter(MoveNodesDialog.ModelFilter filter) {
