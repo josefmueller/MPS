@@ -31,6 +31,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -84,7 +85,12 @@ public final class GeneratorMappings {
     }
     Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     if (currentMapping == null) {
-      myMappingNameAndInputNodeToOutputNodeMap.putIfAbsent(mappingName, new HashMap<SNode, Object>());
+      // we save labeled transformations, and chances are we get similar input/output nodes with the same ML
+      // (e.g. multipleLoopVarDecl rmt -> rmt_var) more than once - e.g. typesystem makes a copy of some rules
+      // to generate two methods, and if there's an MultiForLoop in the original code, we get two almost identical
+      // ML entries (presentation of output and key's original nodes are the same, see comparator in #getSortedMappingKeys(),
+      // below. Therefore, for nodes that are 'equal' that way, would like to keep an order they were registered at, hence LinkedHashMap
+      myMappingNameAndInputNodeToOutputNodeMap.putIfAbsent(mappingName, new LinkedHashMap<>());
       currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     }
     synchronized (currentMapping) {
