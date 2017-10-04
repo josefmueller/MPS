@@ -136,6 +136,7 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/migration/jetbrains.mps.lang.migration.mpl" folder="core.aspects.migration" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/migration/solutions/actions/jetbrains.mps.lang.migration.actions.msd" folder="core.aspects.migration" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/migration/util/jetbrains.mps.lang.migration.util.mpl" folder="core.aspects.migration" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/modelapi/jetbrains.mps.lang.modelapi.mpl" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/pattern/jetbrains.mps.lang.pattern.mpl" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" folder="core.aspects.plugin" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/plugin/jetbrains.mps.lang.plugin.mpl" folder="core.aspects.plugin" />
