@@ -2626,13 +2626,23 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="3EnpNH2zGjC" role="3cqZAp">
-          <node concept="2OqwBi" id="3EnpNH2zGjD" role="3clFbG">
-            <node concept="37vLTw" id="3GM_nagTsDu" role="2Oq$k0">
-              <ref role="3cqZAo" node="3EnpNH2zGju" resolve="dialog" />
-            </node>
-            <node concept="liA8E" id="3EnpNH2zGjF" role="2OqNvi">
-              <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+        <node concept="3clFbF" id="1e_D5xW3Ybt" role="3cqZAp">
+          <node concept="2YIFZM" id="3J8WCI6nKDr" role="3clFbG">
+            <ref role="37wK5l" to="dxuu:~SwingUtilities.invokeLater(java.lang.Runnable):void" resolve="invokeLater" />
+            <ref role="1Pybhc" to="dxuu:~SwingUtilities" resolve="SwingUtilities" />
+            <node concept="1bVj0M" id="3J8WCI6nKDs" role="37wK5m">
+              <node concept="3clFbS" id="3J8WCI6nKDt" role="1bW5cS">
+                <node concept="3clFbF" id="3J8WCI6nKDu" role="3cqZAp">
+                  <node concept="2OqwBi" id="3J8WCI6nKDv" role="3clFbG">
+                    <node concept="37vLTw" id="3J8WCI6nKDw" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3EnpNH2zGju" resolve="dialog" />
+                    </node>
+                    <node concept="liA8E" id="3J8WCI6nKDx" role="2OqNvi">
+                      <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

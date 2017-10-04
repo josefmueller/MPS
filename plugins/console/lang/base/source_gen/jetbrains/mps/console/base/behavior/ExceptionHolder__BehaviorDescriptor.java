@@ -21,6 +21,7 @@ import java.awt.datatransfer.StringSelection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -41,7 +42,11 @@ public final class ExceptionHolder__BehaviorDescriptor extends BaseBHDescriptor 
     StringSelection contents = new StringSelection(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace")));
     CopyPasteManagerEx.getInstanceEx().setContents(contents);
     final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(project.getProject());
-    dialog.show();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        dialog.show();
+      }
+    });
   }
   /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace")) != null;

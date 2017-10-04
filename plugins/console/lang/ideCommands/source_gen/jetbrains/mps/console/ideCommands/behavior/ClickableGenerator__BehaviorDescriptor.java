@@ -112,7 +112,6 @@ __switch__:
     final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(project.getProject(), configurable, "#MPSPropertiesConfigurable");
     configurable.setParentForCallBack(configurableEditor);
     SwingUtilities.invokeLater(new Runnable() {
-      @Override
       public void run() {
         configurableEditor.show();
       }
