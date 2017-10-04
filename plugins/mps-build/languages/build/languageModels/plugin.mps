@@ -114,6 +114,9 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
+      </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
@@ -344,6 +347,15 @@
               <node concept="1C$qFY" id="3avV6wmpUVI" role="1u1ALe" />
             </node>
             <node concept="3clFbH" id="3avV6wmpW8m" role="3cqZAp" />
+            <node concept="3cpWs8" id="k2ZBl8w9gP" role="3cqZAp">
+              <node concept="3cpWsn" id="k2ZBl8w9gS" role="3cpWs9">
+                <property role="TrG5h" value="showWarning" />
+                <node concept="10P_77" id="k2ZBl8w9gN" role="1tU5fm" />
+                <node concept="3clFbT" id="k2ZBl8waoe" role="33vP2m">
+                  <property role="3clFbU" value="true" />
+                </node>
+              </node>
+            </node>
             <node concept="2Gpval" id="3avV6wmncgq" role="3cqZAp">
               <node concept="2GrKxI" id="3avV6wmncgs" role="2Gsz3X">
                 <property role="TrG5h" value="res" />
@@ -407,6 +419,29 @@
                     </node>
                     <node concept="3clFbJ" id="3avV6wmnY2s" role="3cqZAp">
                       <node concept="3clFbS" id="3avV6wmnY2u" role="3clFbx">
+                        <node concept="3clFbJ" id="k2ZBl8waEp" role="3cqZAp">
+                          <node concept="3clFbS" id="k2ZBl8waEr" role="3clFbx">
+                            <node concept="1daRAt" id="k2ZBl8w7S7" role="3cqZAp">
+                              <property role="1daRAr" value="WARNING" />
+                              <node concept="Xl_RD" id="k2ZBl8wbx4" role="1daK9t">
+                                <property role="Xl_RC" value="Use of CopyGeneratedScript facet, along with its CopyFacetUtil utility, is deprecated. Use jetbrains.mps.lang.makeup language constructs instead" />
+                              </node>
+                            </node>
+                            <node concept="3clFbF" id="k2ZBl8wbf7" role="3cqZAp">
+                              <node concept="37vLTI" id="k2ZBl8wbwn" role="3clFbG">
+                                <node concept="3clFbT" id="k2ZBl8wbwJ" role="37vLTx">
+                                  <property role="3clFbU" value="false" />
+                                </node>
+                                <node concept="37vLTw" id="k2ZBl8wbf5" role="37vLTJ">
+                                  <ref role="3cqZAo" node="k2ZBl8w9gS" resolve="showWarning" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="37vLTw" id="k2ZBl8waWw" role="3clFbw">
+                            <ref role="3cqZAo" node="k2ZBl8w9gS" resolve="showWarning" />
+                          </node>
+                        </node>
                         <node concept="3cpWs8" id="3avV6wmnZ_A" role="3cqZAp">
                           <node concept="3cpWsn" id="3avV6wmnZ_D" role="3cpWs9">
                             <property role="TrG5h" value="fileName" />

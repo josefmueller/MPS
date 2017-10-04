@@ -76,6 +76,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
               final ProgressMonitor subProgress_c0a0a = progressMonitor.subTask(1000);
               subProgress_c0a0a.start("Build language ANT files", Sequence.fromIterable(input).count() + 2);
 
+              boolean showWarning = true;
               for (TextGenOutcomeResource res : Sequence.fromIterable(input)) {
                 subProgress_c0a0a.advance(1);
                 subProgress_c0a0a.step(res.getModel().getModelName());
@@ -84,6 +85,10 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                 for (TextUnit tu : textGenResult.getUnits()) {
                   String targetXml = CopyFacetUtil.getTargetPath(tu.getStartNode());
                   if (targetXml != null) {
+                    if (showWarning) {
+                      monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("Use of CopyGeneratedScript facet, along with its CopyFacetUtil utility, is deprecated. Use jetbrains.mps.lang.makeup language constructs instead")));
+                      showWarning = false;
+                    }
                     String fileName = tu.getFileName();
                     if (!(fileName.endsWith(".xml"))) {
                       String ext = Utils.getExtensionWithDot(fileName);
