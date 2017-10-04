@@ -24,13 +24,13 @@ import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.console.tool.BaseConsoleTab;
 import jetbrains.mps.console.tool.ConsoleUtil;
-import javax.swing.SwingUtilities;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.lang.reflect.Method;
 import org.apache.log4j.Level;
 import java.lang.reflect.InvocationTargetException;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -55,7 +55,7 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
         if (!(result)) {
           return;
         }
-        SwingUtilities.invokeLater(new Runnable() {
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             try {
               SModule module = model.getModule();
@@ -92,7 +92,7 @@ public final class GeneratedCommand__BehaviorDescriptor extends BaseBHDescriptor
               }
             }
           }
-        });
+        }, ModalityState.NON_MODAL);
       }
     });
   }
