@@ -63,7 +63,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetPropertyValue_2990235398086953162(final PropertyMacroContext _context) {
     return (String) OldIconBundle__BehaviorDescriptor.getJavaName_id7Mb2akaesvf.invoke(_context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_1474977673367987868(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_136778981607677972(final PropertyMacroContext _context) {
     return (String) Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon")));
   }
   public static Object propertyMacro_GetPropertyValue_6759767305208041200(final PropertyMacroContext _context) {
@@ -126,7 +126,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_5979521222239280712(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconResourceField");
   }
-  public static boolean ifMacro_Condition_4965310991037828399(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_136778981607677981(final IfMacroContext _context) {
     return Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon"))) != null;
   }
   public static boolean ifMacro_Condition_4786190798786384253(final IfMacroContext _context) {
@@ -141,7 +141,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static SNode sourceNodeQuery_8814893218132245226(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c0L, 0x7c8b08a50a39c6c1L, "iconExpression"));
   }
-  public static SNode sourceNodeQuery_4965310991037946893(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_136778981607677994(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon")), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon")), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x60d1cf8c81faea09L, "iconExpression"));
   }
   public static SNode sourceNodeQuery_4786190798786581656(final SourceSubstituteMacroNodeContext _context) {
@@ -198,7 +198,7 @@ public class QueriesGenerated extends QueryProviderBase {
   {
     int i = 0;
     snqMethods.put("8814893218132245226", new QueriesGenerated.SNQ(i++));
-    snqMethods.put("4965310991037946893", new QueriesGenerated.SNQ(i++));
+    snqMethods.put("136778981607677994", new QueriesGenerated.SNQ(i++));
     snqMethods.put("4786190798786581656", new QueriesGenerated.SNQ(i++));
     snqMethods.put("2565258849285850021", new QueriesGenerated.SNQ(i++));
     snqMethods.put("562388756444871926", new QueriesGenerated.SNQ(i++));
@@ -224,7 +224,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 0:
           return QueriesGenerated.sourceNodeQuery_8814893218132245226(ctx);
         case 1:
-          return QueriesGenerated.sourceNodeQuery_4965310991037946893(ctx);
+          return QueriesGenerated.sourceNodeQuery_136778981607677994(ctx);
         case 2:
           return QueriesGenerated.sourceNodeQuery_4786190798786581656(ctx);
         case 3:
@@ -281,7 +281,7 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("7038317550322744906", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "IconResourceBundle"));
     pvqMethods.put("2990235398086399636", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), ""));
     pvqMethods.put("2990235398086953161", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), null));
-    pvqMethods.put("1474977673367987867", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "pathToIcon"));
+    pvqMethods.put("136778981607677971", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "pathToIcon"));
     pvqMethods.put("6759767305208041199", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ICON"));
     pvqMethods.put("5979521222239286117", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "RESOURCE"));
     pvqMethods.put("5979521222239286106", new QueriesGenerated.PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "pathToIcon"));
@@ -323,7 +323,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 4:
           return QueriesGenerated.propertyMacro_GetPropertyValue_2990235398086953162(ctx);
         case 5:
-          return QueriesGenerated.propertyMacro_GetPropertyValue_1474977673367987868(ctx);
+          return QueriesGenerated.propertyMacro_GetPropertyValue_136778981607677972(ctx);
         case 6:
           return QueriesGenerated.propertyMacro_GetPropertyValue_6759767305208041200(ctx);
         case 7:
@@ -354,7 +354,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, IfMacroCondition> imcMethods = new HashMap<String, IfMacroCondition>();
   {
     int i = 0;
-    imcMethods.put("4965310991037828397", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("136778981607677980", new QueriesGenerated.IfMC(i++));
     imcMethods.put("4786190798786384251", new QueriesGenerated.IfMC(i++));
     imcMethods.put("4786190798786580766", new QueriesGenerated.IfMC(i++));
     imcMethods.put("6638738203687335894", new QueriesGenerated.IfMC(i++));
@@ -377,7 +377,7 @@ public class QueriesGenerated extends QueryProviderBase {
     public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
       switch (methodKey) {
         case 0:
-          return QueriesGenerated.ifMacro_Condition_4965310991037828399(ctx);
+          return QueriesGenerated.ifMacro_Condition_136778981607677981(ctx);
         case 1:
           return QueriesGenerated.ifMacro_Condition_4786190798786384253(ctx);
         case 2:
