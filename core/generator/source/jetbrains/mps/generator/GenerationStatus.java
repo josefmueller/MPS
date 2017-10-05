@@ -34,7 +34,6 @@ public class GenerationStatus extends Status {
   // we initialize it the moment GS is created assuming we can read the input model at this time, so I don't bother with model RA.
   private final SRepository myInputModelRepo;
   private GenerationDependencies myDependencies;
-  private ModelExports myExports;
 
   public GenerationStatus(@NotNull SModel inputModel) {
     super(Code.ERROR, null);
@@ -100,26 +99,9 @@ public class GenerationStatus extends Status {
    * GenerationStatus serves as a container for data associated with model generation step.
    * However, some of these associates has nothing to do with generation (e.g. ModelDependencies are purely textgen aspect),
    * and some are just exposed here to be accessed, and has nothing to do with generation status.
-   * ModelExports object keeps cross-model generation aspect and as such qualifies to be exposed from GS, however, with
+   * CrossModelEnvironment object keeps cross-model generation aspect and as such qualifies to be exposed from GS, however, with
    * better structure of CacheGenerators we unlikely to need it here (this might be generic 'AuxGeneratedDataSupplier' which would
    * tell desired location (sourcegen or caches) and accept StreamHandler to save whatever it needs to save (either exports model or 'trace.info' xml)
-   */
-  @Nullable
-  public ModelExports getModelExports() {
-    return myExports;
-  }
-
-  /**
-   * PROVISIONAL CODE. DO NOT USE!
-   */
-  public void setModelExports(ModelExports exports) {
-    myExports = exports;
-  }
-
-
-  /**
-   * PROVISIONAL CODE. DO NOT USE!
-   * See {@link #getModelExports()} for replacement ideas.
    */
   public void setCrossModelEnvironment(CrossModelEnvironment cme) {
     myCrossModelEnvironment = cme;
@@ -129,8 +111,6 @@ public class GenerationStatus extends Status {
     return myCrossModelEnvironment;
   }
   private CrossModelEnvironment myCrossModelEnvironment;
-
-
 
 
   public static class ERROR extends GenerationStatus {

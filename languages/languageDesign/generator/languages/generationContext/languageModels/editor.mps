@@ -873,44 +873,6 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="rrptlDYVOD">
-    <ref role="1XX52x" to="tpf3:rrptlDYMkB" resolve="GenerationContextOp_GetExport" />
-    <node concept="3EZMnI" id="1yjqjC7KErF" role="2wV5jI">
-      <node concept="3F0ifn" id="1yjqjC7KErG" role="3EZMnx">
-        <property role="3F0ifm" value="getExported" />
-        <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
-      </node>
-      <node concept="3F0ifn" id="rrptlDYWBd" role="3EZMnx">
-        <property role="3F0ifm" value="(" />
-        <ref role="1k5W1q" to="tpen:hFCSAw$" resolve="LeftParen" />
-      </node>
-      <node concept="1iCGBv" id="1yjqjC7KErH" role="3EZMnx">
-        <property role="1$x2rV" value="&lt;choose mapping label&gt;" />
-        <ref role="1k5W1q" to="tpfj:hHcji$G" resolve="mappingLabelReference" />
-        <ref role="1NtTu8" to="tpf3:rrptlDYMkC" resolve="label" />
-        <node concept="1sVBvm" id="1yjqjC7KErI" role="1sWHZn">
-          <node concept="3F0A7n" id="1yjqjC7KErJ" role="2wV5jI">
-            <property role="1Intyy" value="true" />
-            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          </node>
-        </node>
-      </node>
-      <node concept="3F0ifn" id="1yjqjC7KErK" role="3EZMnx">
-        <property role="3F0ifm" value="for" />
-        <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
-        <node concept="VPM3Z" id="1yjqjC7KErL" role="3F10Kt" />
-      </node>
-      <node concept="3F1sOY" id="1yjqjC7KErM" role="3EZMnx">
-        <property role="1$x2rV" value="&lt;no input node&gt;" />
-        <ref role="1NtTu8" to="tpf3:1yjqjC7KDUR" resolve="inputNode" />
-      </node>
-      <node concept="3F0ifn" id="1yjqjC7KErN" role="3EZMnx">
-        <property role="3F0ifm" value=")" />
-        <ref role="1k5W1q" to="tpen:hFCSUmN" resolve="RightParen" />
-      </node>
-      <node concept="l2Vlx" id="1yjqjC7KErO" role="2iSdaV" />
-    </node>
-  </node>
   <node concept="24kQdi" id="6suuiWXJvYV">
     <ref role="1XX52x" to="tpf3:6suuiWXJvTY" resolve="GenerationContextOp_ContextVarRef" />
     <node concept="3F0A7n" id="6suuiWXJwq7" role="2wV5jI">

@@ -457,9 +457,6 @@
           <node concept="Xl_RD" id="12K7KEBkoA6" role="HW$Y0">
             <property role="Xl_RC" value="dependencies" />
           </node>
-          <node concept="Xl_RD" id="7G5CPR2o1sh" role="HW$Y0">
-            <property role="Xl_RC" value="exports" />
-          </node>
         </node>
       </node>
     </node>

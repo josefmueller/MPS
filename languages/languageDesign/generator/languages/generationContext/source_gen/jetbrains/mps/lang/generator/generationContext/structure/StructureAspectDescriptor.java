@@ -21,7 +21,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_DirtyNode = createDescriptorForGenerationContextOp_DirtyNode();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GenParameterRef = createDescriptorForGenerationContextOp_GenParameterRef();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetCopiedOutputByInput = createDescriptorForGenerationContextOp_GetCopiedOutputByInput();
-  /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetExport = createDescriptorForGenerationContextOp_GetExport();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetInputModel = createDescriptorForGenerationContextOp_GetInputModel();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetOriginalCopiedInputByOutput = createDescriptorForGenerationContextOp_GetOriginalCopiedInputByOutput();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetOriginalInputModel = createDescriptorForGenerationContextOp_GetOriginalInputModel();
@@ -57,7 +56,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptGenerationContextOp_Base, myConceptGenerationContextOp_ContextVarRef, myConceptGenerationContextOp_CopyWithTrace, myConceptGenerationContextOp_CreateUniqueName, myConceptGenerationContextOp_DirtyNode, myConceptGenerationContextOp_GenParameterRef, myConceptGenerationContextOp_GetCopiedOutputByInput, myConceptGenerationContextOp_GetExport, myConceptGenerationContextOp_GetInputModel, myConceptGenerationContextOp_GetOriginalCopiedInputByOutput, myConceptGenerationContextOp_GetOriginalInputModel, myConceptGenerationContextOp_GetOutputByLabel, myConceptGenerationContextOp_GetOutputByLabelAndInput, myConceptGenerationContextOp_GetOutputByLabelAndInputAndReferenceScope, myConceptGenerationContextOp_GetOutputListByLabelAndInput, myConceptGenerationContextOp_GetOutputModel, myConceptGenerationContextOp_GetPrevInputByLabel, myConceptGenerationContextOp_GetTemplateNode, myConceptGenerationContextOp_LinkPatternRef, myConceptGenerationContextOp_NodePatternRef, myConceptGenerationContextOp_ParameterRef, myConceptGenerationContextOp_PatternRef, myConceptGenerationContextOp_PropertyPatternRef, myConceptGenerationContextOp_RegisterLabel, myConceptGenerationContextOp_SessionObjectAccess, myConceptGenerationContextOp_ShowErrorMessage, myConceptGenerationContextOp_ShowInfoMessage, myConceptGenerationContextOp_ShowMessageBase, myConceptGenerationContextOp_ShowWarningMessage, myConceptGenerationContextOp_StepObjectAccess, myConceptGenerationContextOp_TransientObjectAccess, myConceptGenerationContextOp_UserObjectAccessBase, myConceptGenerationContextOp_VarRef, myConceptGenerationContextType, myConceptTemplateFunctionParameter_generationContext);
+    return Arrays.asList(myConceptGenerationContextOp_Base, myConceptGenerationContextOp_ContextVarRef, myConceptGenerationContextOp_CopyWithTrace, myConceptGenerationContextOp_CreateUniqueName, myConceptGenerationContextOp_DirtyNode, myConceptGenerationContextOp_GenParameterRef, myConceptGenerationContextOp_GetCopiedOutputByInput, myConceptGenerationContextOp_GetInputModel, myConceptGenerationContextOp_GetOriginalCopiedInputByOutput, myConceptGenerationContextOp_GetOriginalInputModel, myConceptGenerationContextOp_GetOutputByLabel, myConceptGenerationContextOp_GetOutputByLabelAndInput, myConceptGenerationContextOp_GetOutputByLabelAndInputAndReferenceScope, myConceptGenerationContextOp_GetOutputListByLabelAndInput, myConceptGenerationContextOp_GetOutputModel, myConceptGenerationContextOp_GetPrevInputByLabel, myConceptGenerationContextOp_GetTemplateNode, myConceptGenerationContextOp_LinkPatternRef, myConceptGenerationContextOp_NodePatternRef, myConceptGenerationContextOp_ParameterRef, myConceptGenerationContextOp_PatternRef, myConceptGenerationContextOp_PropertyPatternRef, myConceptGenerationContextOp_RegisterLabel, myConceptGenerationContextOp_SessionObjectAccess, myConceptGenerationContextOp_ShowErrorMessage, myConceptGenerationContextOp_ShowInfoMessage, myConceptGenerationContextOp_ShowMessageBase, myConceptGenerationContextOp_ShowWarningMessage, myConceptGenerationContextOp_StepObjectAccess, myConceptGenerationContextOp_TransientObjectAccess, myConceptGenerationContextOp_UserObjectAccessBase, myConceptGenerationContextOp_VarRef, myConceptGenerationContextType, myConceptTemplateFunctionParameter_generationContext);
   }
 
   @Override
@@ -78,8 +77,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptGenerationContextOp_GenParameterRef;
       case LanguageConceptSwitch.GenerationContextOp_GetCopiedOutputByInput:
         return myConceptGenerationContextOp_GetCopiedOutputByInput;
-      case LanguageConceptSwitch.GenerationContextOp_GetExport:
-        return myConceptGenerationContextOp_GetExport;
       case LanguageConceptSwitch.GenerationContextOp_GetInputModel:
         return myConceptGenerationContextOp_GetInputModel;
       case LanguageConceptSwitch.GenerationContextOp_GetOriginalCopiedInputByOutput:
@@ -209,17 +206,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("inputNode", 0x11b8f9620d3L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1217884725459").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("get copied output by input");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForGenerationContextOp_GetExport() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.generator.generationContext", "GenerationContextOp_GetExport", 0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x6db65d569fb2527L);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", 0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x11b5282d0d3L);
-    b.origin("r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)/494100551407707431");
-    b.prop("name_intern", 0x6b1b6e56cb124be9L, "7717883705482693609");
-    b.associate("label", 0x6db65d569fb2528L).target(0xb401a68083254110L, 0x8fd384331ff25befL, 0x6db65d569f9bacaL).optional(false).origin("494100551407707432").done();
-    b.aggregate("inputNode", 0x1893693a07c29eb7L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("1770874776445951671").done();
-    b.alias("getExported");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGenerationContextOp_GetInputModel() {

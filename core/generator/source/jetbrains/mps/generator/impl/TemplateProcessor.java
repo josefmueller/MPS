@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
@@ -77,7 +76,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
   private final TemplateGenerator myGenerator;
   private final SModel myOutputModel;
   private final MacroImplFactory myImplFactory;
-  private final Map<SNode, TemplateNode> myTemplateRuntimeMap = new ConcurrentHashMap<SNode, TemplateNode>();
+  private final Map<SNode, TemplateNode> myTemplateRuntimeMap = new ConcurrentHashMap<>();
 
   public TemplateProcessor(@NotNull TemplateGenerator generator) {
     myGenerator = generator;
@@ -170,7 +169,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
 
   private static class MacroImplFactory implements MacroNode.Factory {
     private final TemplateProcessor myTemplateProcessor;
-    private final Map<SConcept, Integer> macroImplMap = new HashMap<SConcept, Integer>(32);
+    private final Map<SConcept, Integer> macroImplMap = new HashMap<>(32);
 
     MacroImplFactory(@NotNull TemplateProcessor templateProcessor) {
       myTemplateProcessor = templateProcessor;
@@ -189,7 +188,6 @@ public final class TemplateProcessor implements ITemplateProcessor {
       macroImplMap.put(RuleUtil.concept_IncludeMacro, 13);
       macroImplMap.put(RuleUtil.concept_TemplateCallMacro, 14);
       macroImplMap.put(RuleUtil.concept_TraceMacro, 15);
-      macroImplMap.put(RuleUtil.concept_ExportMacro, 16);
     }
 
     @Override
@@ -214,28 +212,8 @@ public final class TemplateProcessor implements ITemplateProcessor {
         case 13 : return new IncludeMacro(macro, templateNode, next, myTemplateProcessor);
         case 14 : return new CallMacro(macro, templateNode, next, myTemplateProcessor);
         case 15 : return new TraceMacro(macro, templateNode, next, myTemplateProcessor);
-        case 16 : return new ExportMacro(macro, templateNode, next, myTemplateProcessor);
         default: return new NoMacro(macro, templateNode, next, myTemplateProcessor);
       }
-    }
-  }
-
-  /**
-   * Record value with name
-   */
-  private static class ExportMacro extends MacroImpl {
-    public ExportMacro(@NotNull SNode macro, @NotNull TemplateNode templateNode, @Nullable MacroNode next, @NotNull TemplateProcessor templateProcessor) {
-      super(macro, templateNode, next, templateProcessor);
-    }
-
-    @NotNull
-    @Override
-    public List<SNode> apply(@NotNull TemplateContext templateContext) throws DismissTopMappingRuleException, GenerationFailureException,
-        GenerationCanceledException {
-      final List<SNode> value = nextMacro(templateContext);
-      final GenerationSessionContext ctx = myTemplateProcessor.getGenerator().getGeneratorSessionContext();
-      ctx.getExports().record(templateContext, macro.getReferenceTarget("label"), value);
-      return value;
     }
   }
 

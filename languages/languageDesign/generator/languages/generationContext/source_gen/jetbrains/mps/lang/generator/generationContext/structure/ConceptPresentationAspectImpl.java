@@ -16,7 +16,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_GenerationContextOp_DirtyNode;
   private ConceptPresentation props_GenerationContextOp_GenParameterRef;
   private ConceptPresentation props_GenerationContextOp_GetCopiedOutputByInput;
-  private ConceptPresentation props_GenerationContextOp_GetExport;
   private ConceptPresentation props_GenerationContextOp_GetInputModel;
   private ConceptPresentation props_GenerationContextOp_GetOriginalCopiedInputByOutput;
   private ConceptPresentation props_GenerationContextOp_GetOriginalInputModel;
@@ -102,14 +101,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_GenerationContextOp_GetCopiedOutputByInput = cpb.create();
         }
         return props_GenerationContextOp_GetCopiedOutputByInput;
-      case LanguageConceptSwitch.GenerationContextOp_GetExport:
-        if (props_GenerationContextOp_GetExport == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("retrieve proxy object for cross-model reference target");
-          cpb.rawPresentation("getExported");
-          props_GenerationContextOp_GetExport = cpb.create();
-        }
-        return props_GenerationContextOp_GetExport;
       case LanguageConceptSwitch.GenerationContextOp_GetInputModel:
         if (props_GenerationContextOp_GetInputModel == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

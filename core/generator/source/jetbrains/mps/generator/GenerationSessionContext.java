@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.impl.ExportsSessionContext;
 import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
@@ -81,8 +80,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
    */
   private final Map<Object, Object> mySessionObjects;
 
-  private final ExportsSessionContext myExportsSession;
-
   // these objects survive through all steps of generation
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
   private final SNodeReference myFakeNameTopContextNode = new SNodePointer((SModelReference) null, null);
@@ -99,7 +96,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     myPerfTrace = performanceTracer;
     myLogger = logger;
     myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
-    myExportsSession = new ExportsSessionContext(environment.getExportModels(), this);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -118,7 +114,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     mySessionObjects = prevContext.mySessionObjects;
     myUsedNames = prevContext.myUsedNames;
     myValidation = prevContext.myValidation;
-    myExportsSession = prevContext.myExportsSession;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -189,10 +184,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public Object getSessionObject(Object key) {
     Object result = mySessionObjects.get(key);
     return result == NULL_OBJECT ? null : result;
-  }
-
-  public ExportsSessionContext getExports() {
-    return myExportsSession;
   }
 
   private static void appendNodeUniqueId(SNode node, StringBuilder sb) {

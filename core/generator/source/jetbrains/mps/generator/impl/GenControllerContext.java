@@ -35,7 +35,6 @@ public final class GenControllerContext {
   private final GenerationOptions myOptions;
   private final TransientModelsProvider myTransientModelProvider;
   private final ModelStreamManager.Provider myStreamProvider;
-  private final ExportsVault myExportsVault;
   private final CrossModelEnvironment myCrossModelEnvironment;
 
   public GenControllerContext(@NotNull SRepository repository, @NotNull GenerationOptions options, @NotNull TransientModelsProvider transientModelsProvider, @NotNull ModelStreamManager.Provider streamProvider) {
@@ -43,7 +42,6 @@ public final class GenControllerContext {
     myOptions = options;
     myTransientModelProvider = transientModelsProvider;
     myStreamProvider = streamProvider;
-    myExportsVault = new ExportsVault(streamProvider);
     myCrossModelEnvironment = new CrossModelEnvironment(transientModelsProvider, streamProvider);
 //    myCrossModelEnvironment = transientModelsProvider.getCrossModelEnvironment();
   }
@@ -67,10 +65,6 @@ public final class GenControllerContext {
 
   public ModelStreamManager.Provider getStreamProvider() {
     return myStreamProvider;
-  }
-
-  public ExportsVault getExportModels() {
-    return myExportsVault;
   }
 
   public CrossModelEnvironment getCrossModelEnvironment() {

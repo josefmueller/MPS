@@ -279,7 +279,6 @@ class GenerationSession {
         //     to facilitate proper classpath calculation
         final GenerationDependencies genDeps = new GenerationDependencies(myOriginalInputModel, myGenerationOptions.getParametersProvider());
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput, genDeps, myLogger.getErrorCount() > 0);
-        generationStatus.setModelExports(mySessionContext.getExports().getExports());
         generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
         return generationStatus;
       } catch (GenerationCanceledException gce) {

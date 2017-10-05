@@ -543,32 +543,6 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
-  <node concept="1TIwiD" id="rrptlDYMkB">
-    <property role="TrG5h" value="GenerationContextOp_GetExport" />
-    <property role="R4oN_" value="retrieve proxy object for cross-model reference target" />
-    <property role="34LRSv" value="getExported" />
-    <property role="EcuMT" value="494100551407707431" />
-    <ref role="1TJDcQ" node="hHiwH3j" resolve="GenerationContextOp_Base" />
-    <node concept="1TJgyi" id="6Grr_rb4$JD" role="1TKVEl">
-      <property role="TrG5h" value="name_intern" />
-      <property role="IQ2nx" value="7717883705482693609" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
-    </node>
-    <node concept="1TJgyj" id="1yjqjC7KDUR" role="1TKVEi">
-      <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="inputNode" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="1770874776445951671" />
-      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
-    </node>
-    <node concept="1TJgyj" id="rrptlDYMkC" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="label" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="494100551407707432" />
-      <ref role="20lvS9" to="tpf8:rrptlDYrFa" resolve="ExportLabel" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="6suuiWXJvTY">
     <property role="TrG5h" value="GenerationContextOp_ContextVarRef" />
     <property role="34LRSv" value="#context variable#" />

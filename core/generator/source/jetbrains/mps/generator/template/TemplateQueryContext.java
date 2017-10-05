@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.impl.ExportsSessionContext;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
@@ -27,7 +26,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -206,23 +204,6 @@ public class TemplateQueryContext {
 
   public Object getSessionObject(Object key) {
     return myGenerator.getGeneratorSessionContext().getSessionObject(key);
-  }
-
-
-  public SNode getOutputNodeProxy(SNode inputNode, String exportLabelName) {
-    if (inputNode == null) {
-      showErrorMessage(null, String.format("Attempt to find proxy for non-existent node. Label %s, model %s", exportLabelName, myGenerator.getInputModel().toString()));
-      return null;
-    }
-    final ExportsSessionContext exports = myGenerator.getGeneratorSessionContext().getExports();
-    final Collection<SNode> exportProxies = exports.find(exportLabelName, getInputModel(), inputNode);
-    if (exportProxies.isEmpty()) {
-      return null;
-    }
-    if (exportProxies.size() > 1) {
-      showErrorMessage(inputNode, String.format("There are %d known exports with label %s for input node %s", exportProxies.size(), exportLabelName, inputNode));
-    }
-    return exportProxies.iterator().next();
   }
 
   public void showInformationMessage(SNode node, String message) {

@@ -38,7 +38,6 @@ public final class RuleUtil {
   public static final SConcept concept_TemplateCallMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x14f7f8a311b8f14fL, "jetbrains.mps.lang.generator.structure.TemplateCallMacro");
   public static final SConcept concept_TraceMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x2b456582595e739bL, "jetbrains.mps.lang.generator.structure.TraceMacro");
   public static final SConcept concept_TemplateSwitchMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xda3dc6e51747593L, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro");
-  public static final SConcept concept_ExportMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7bb9ef7499aab606L, "jetbrains.mps.lang.generator.structure.ExportMacro");
   public static final SConcept concept_PropertyMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47e9f6f0L, "jetbrains.mps.lang.generator.structure.PropertyMacro");
   public static final SConcept concept_ReferenceMacro = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd7f44d616L, "jetbrains.mps.lang.generator.structure.ReferenceMacro");
 
@@ -105,7 +104,6 @@ public final class RuleUtil {
     NodeMacroConcepts.add(concept_VarMacro);
     NodeMacroConcepts.add(concept_WeaveMacro);
     NodeMacroConcepts.add(concept_NodeMacro);
-    NodeMacroConcepts.add(concept_ExportMacro);
   }
   /**
    * Template language concepts one may expect in template models and that are not node macros

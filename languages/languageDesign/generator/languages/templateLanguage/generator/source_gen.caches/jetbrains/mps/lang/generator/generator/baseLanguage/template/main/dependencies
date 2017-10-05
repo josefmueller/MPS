@@ -18,13 +18,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.CrossModelUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GeneratorUtilEx" />
     <classNode dependClassName="jetbrains.mps.generator.impl.RuleUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CallArgumentQuery" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.CreateRootCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.DropRuleCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.IfMacroCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.MapConfigurationCondition" />
@@ -43,7 +41,6 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.template.VariableNameSource" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
-    <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.DropRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MapRootRuleContext" />
