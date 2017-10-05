@@ -6684,7 +6684,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="query" />
       <property role="IQ2ns" value="7418278005949660373" />
-      <ref role="20lvS9" node="33FxyQ70GUZ" resolve="QueryFunction_Style" />
+      <ref role="20lvS9" node="4DrEZjt9c6c" resolve="QueryFunction_FontFamily" />
     </node>
     <node concept="1TJgyi" id="6rN18FHIfNV" role="1TKVEl">
       <property role="IQ2nx" value="7418278005949660411" />
