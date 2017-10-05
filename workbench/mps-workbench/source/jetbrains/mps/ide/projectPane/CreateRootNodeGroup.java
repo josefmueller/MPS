@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,15 +19,11 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.util.NameUtil;
@@ -39,9 +35,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import javax.swing.Icon;
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -109,8 +103,13 @@ public class CreateRootNodeGroup extends BaseGroup {
     enable(event.getPresentation());
 
 
-    Collection<SLanguage> mainLanguages = LanguageAspectSupport.getMainLanguages(targetModel);
-    for (SLanguage mainLang: mainLanguages){
+    ArrayList<SLanguage> mainLanguages = new ArrayList<>();
+    if (SModelStereotype.isGeneratorModel(targetModel)) {
+      // hardcoded case for generator model isn't nice, but still better than these values hidden somewhere among unrelated languages
+      mainLanguages.add(BootstrapLanguages.getGeneratorLang());
+    }
+    mainLanguages.addAll(LanguageAspectSupport.getMainLanguages(targetModel));
+    for (SLanguage mainLang: mainLanguages) {
       addActionsForRoots(mainLang, targetModel, this);
     }
     addSeparator();
@@ -125,9 +124,9 @@ public class CreateRootNodeGroup extends BaseGroup {
     }
     addSeparator();
 
-    List<SLanguage> modelLanguages = new ArrayList<SLanguage>(SModelOperations.getAllLanguageImports(targetModel));
+    List<SLanguage> modelLanguages = new ArrayList<>(SModelOperations.getAllLanguageImports(targetModel));
     modelLanguages.removeAll(mainLanguages);
-    mainLanguages.removeAll(additionalLanguages);
+    modelLanguages.removeAll(additionalLanguages);
     Collections.sort(modelLanguages, new ToStringComparator());
 
     ArrayList<DefaultActionGroup> byLanguage = new ArrayList<DefaultActionGroup>();
@@ -161,8 +160,12 @@ public class CreateRootNodeGroup extends BaseGroup {
 
   private void addActionsForRoots(SLanguage from, SModel target, DefaultActionGroup group) {
     for (SAbstractConcept c : from.getConcepts()) {
-      if (!ModelConstraints.canBeRoot(c, target)) continue;
-      if (CreateRootFilterEP.getInstance().shouldBeRemoved(c)) continue;
+      if (!ModelConstraints.canBeRoot(c, target)) {
+        continue;
+      }
+      if (CreateRootFilterEP.getInstance().shouldBeRemoved(c)) {
+        continue;
+      }
 
       group.add(new NewRootNodeAction(c, target, myPackage));
     }
