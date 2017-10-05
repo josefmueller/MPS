@@ -5,9 +5,7 @@
       <sourceRoot location="models" />
     </modelRoot>
   </models>
-  <accessoryModels>
-    <model modelUID="r:4eb07a03-dce5-40ad-b78d-8affb3b04aa7(jetbrains.mps.samples.highlevel.simpleEditor.gpeditor)" />
-  </accessoryModels>
+  <accessoryModels />
   <generators>
     <generator alias="" namespace="jetbrains.mps.samples.highlevel.simpleEditor#53726815506686314" uuid="36e68e29-6c6e-41ae-bea9-93226f68b150">
       <models>

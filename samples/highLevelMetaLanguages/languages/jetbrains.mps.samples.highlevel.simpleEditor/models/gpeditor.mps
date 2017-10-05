@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:4eb07a03-dce5-40ad-b78d-8affb3b04aa7(jetbrains.mps.samples.highlevel.simpleEditor.gpeditor)">
+<model ref="r:4eb07a03-dce5-40ad-b78d-8affb3b04aa7(jetbrains.mps.samples.highlevel.simpleEditor.gpeditor)" doNotGenerate="true">
   <persistence version="9" />
   <languages>
     <use id="7ab1a6fa-0a11-4b95-9e48-75f363d6cb00" name="jetbrains.mps.lang.generator.plan" version="1" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
-    <import index="3fl4" ref="r:76bfc090-b159-48c2-be6d-12e9e4928f13(jetbrains.mps.lang.descriptor.structure@genplan)" />
     <import index="20ni" ref="r:f1c325a7-63fd-4eab-bdf1-05d40abdcb16(gpstruct)" />
   </imports>
   <registry>
