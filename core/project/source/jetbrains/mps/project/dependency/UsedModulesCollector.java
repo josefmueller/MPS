@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -40,6 +41,20 @@ import static org.jetbrains.mps.openapi.module.SDependencyScope.GENERATES_INTO;
 @Immutable
 public final class UsedModulesCollector {
   private final Map<SLanguage, Collection<SModule>> myLanguageRuntimesCache = new HashMap<>();
+  private final ModuleRepositoryFacade myRepositoryFacade;
+
+  /**
+   * @deprecated please specify which repository to resolve dependencies in, {@link #UsedModulesCollector(ModuleRepositoryFacade)}
+   *             There's no real need to use ModuleRepositoryFacade, SRepository might suffice.
+   */
+  @Deprecated
+  public UsedModulesCollector() {
+    this(ModuleRepositoryFacade.getInstance());
+  }
+
+  public UsedModulesCollector(@NotNull ModuleRepositoryFacade repositoryFacade) {
+    myRepositoryFacade = repositoryFacade;
+  }
 
   @NotNull
   public Collection<SModule> directlyUsedModules(@NotNull SModule module, boolean includeNonReexport, boolean runtimes) {
@@ -67,7 +82,7 @@ public final class UsedModulesCollector {
 
     if (includeNonReexport) {
       if (runtimes) {
-        result.addAll(new RuntimesOfUsedLanguageCalculator(module, myLanguageRuntimesCache, handler).invoke());
+        result.addAll(new RuntimesOfUsedLanguageCalculator(myRepositoryFacade, module, myLanguageRuntimesCache, handler).invoke());
       }
     }
 

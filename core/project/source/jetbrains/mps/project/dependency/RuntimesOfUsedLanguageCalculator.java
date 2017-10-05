@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.dependency;
 
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
 import jetbrains.mps.project.structure.ProjectStructureModule;
@@ -48,18 +49,24 @@ import java.util.Set;
 class RuntimesOfUsedLanguageCalculator {
   private static final Logger LOG = LogManager.getLogger(RuntimesOfUsedLanguageCalculator.class);
 
+  @NotNull
+  private final ModuleRepositoryFacade myRepositoryFacade;
   private final SModule myModule;
   private final Strategy myStrategy;
   private final Map<SLanguage, Collection<SModule>> myLanguageRuntimesCache;
 
-  public RuntimesOfUsedLanguageCalculator(@NotNull SModule module, Map<SLanguage, Collection<SModule>> languageRuntimesCache, ErrorHandler errorHandler) {
+  public RuntimesOfUsedLanguageCalculator(@NotNull ModuleRepositoryFacade repositoryFacade, @NotNull SModule module, Map<SLanguage, Collection<SModule>> languageRuntimesCache, ErrorHandler errorHandler) {
+    myRepositoryFacade = repositoryFacade;
     myModule = module;
     myStrategy = isPackaged() ? new DeploymentStrategy(errorHandler) : new SourceStrategy(errorHandler);
     myLanguageRuntimesCache = languageRuntimesCache;
   }
 
   private boolean isPackaged() {
-    return !(myModule instanceof TempModule) && !(myModule instanceof ProjectStructureModule) && myModule.isPackaged();
+    if (myModule instanceof TempModule || myModule instanceof TransientSModule || myModule instanceof ProjectStructureModule) {
+      return false;
+    }
+    return myModule.isPackaged();
   }
 
   /**
@@ -102,7 +109,7 @@ class RuntimesOfUsedLanguageCalculator {
       Collection<Dependency> dependencies = descriptor.getDependencies();
       for (Dependency dependency : dependencies) {
         SModuleReference runtimeRef = dependency.getModuleRef();
-        SModule runtime = ModuleRepositoryFacade.getInstance().getModule(runtimeRef);
+        SModule runtime = myRepositoryFacade.getModule(runtimeRef);
         if (runtime != null) {
           result.add(runtime);
         } else {
@@ -137,7 +144,7 @@ class RuntimesOfUsedLanguageCalculator {
           List<SModule> runtimes = new ArrayList<>();
           myLanguageRuntimesCache.put(usedLang, runtimes);
           for (SModuleReference runtimeRef : usedLang.getLanguageRuntimes()) {
-            SModule runtime = ModuleRepositoryFacade.getInstance().getModule(runtimeRef);
+            SModule runtime = myRepositoryFacade.getModule(runtimeRef);
             if (runtime != null) {
               runtimes.add(runtime);
             } else {
