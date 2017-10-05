@@ -62,10 +62,14 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
   }
 
   @Override
-  public JComponent getComponent() {
+  public JComponent getRootComponent() {
     return myComponent;
   }
 
+  @Override
+  public JComponent getFocusComponent() {
+    return myTree;
+  }
 
   protected ProjectAbstractTreeStructureBase createStructure() {
     return new ProjectTreeStructure(myProject, ID) {
