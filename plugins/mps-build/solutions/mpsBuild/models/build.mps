@@ -3104,6 +3104,9 @@
           <node concept="L2wRC" id="2d0qgmCdfZQ" role="39821P">
             <ref role="L2wRA" node="7Kfy9QB6L9O" resolve="jetbrains.mps.lang.smodel" />
           </node>
+          <node concept="L2wRC" id="4SM2EuqI3IY" role="39821P">
+            <ref role="L2wRA" node="4SM2EuqHUPF" resolve="jetbrains.mps.lang.modelapi" />
+          </node>
           <node concept="L2wRC" id="74nECH1fghG" role="39821P">
             <ref role="L2wRA" node="74nECH1fdf5" resolve="jetbrains.mps.lang.slanguage" />
           </node>
@@ -15027,6 +15030,27 @@
                   <node concept="2Ry0Ak" id="EpEP7iihLm" role="2Ry0An">
                     <property role="2Ry0Am" value="smodel.query" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1E1JtD" id="4SM2EuqHUPF" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="jetbrains.mps.lang.modelapi" />
+        <property role="3LESm3" value="446c26eb-2b7b-4bf0-9b35-f83fa582753e" />
+        <property role="2GAjPV" value="false" />
+        <node concept="398BVA" id="4SM2EuqHWM1" role="3LF7KH">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="4SM2EuqHXLt" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="4SM2EuqHYhd" role="2Ry0An">
+              <property role="2Ry0Am" value="languageDesign" />
+              <node concept="2Ry0Ak" id="4SM2EuqHZKj" role="2Ry0An">
+                <property role="2Ry0Am" value="modelapi" />
+                <node concept="2Ry0Ak" id="4SM2EuqI1J4" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.lang.modelapi.mpl" />
                 </node>
               </node>
             </node>

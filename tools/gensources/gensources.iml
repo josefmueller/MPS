@@ -122,6 +122,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/solutions/actions/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/modelapi/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/plugin-standalone/generator/source_gen" isTestSource="false" />
@@ -294,6 +295,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/solutions/actions/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/migration/util/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/modelapi/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/pattern/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/plugin-standalone/classes_gen" />
