@@ -20,9 +20,7 @@ import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.errors.NullErrorReporter;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.errors.SimpleErrorReporter;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.ui.MessageType;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -90,18 +88,7 @@ public class ShowNodeType_Action extends BaseAction {
             error.value = typeCheckingContext.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
 
             if (error.value == null && TypesUtil.hasVariablesInside(type.value)) {
-              error.value = new NullErrorReporter() {
-                @Override
-                public String reportError() {
-                  return "Type was not fully instantiated";
-                }
-
-                @Nullable
-                @Override
-                public SNodeReference getRuleNode() {
-                  return null;
-                }
-              };
+              error.value = new SimpleErrorReporter(((SNode) MapSequence.fromMap(_params).get("node")), "Type was not fully instantiated", null);
             }
           }
         }, _params);
