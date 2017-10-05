@@ -11251,6 +11251,12 @@
               <ref role="3bR37D" node="7YI57w6K0rx" resolve="jetbrains.mps.lang.smodel#1139186730696" />
             </node>
           </node>
+          <node concept="1SiIV0" id="7_VW9jwN7A" role="3bR37C">
+            <node concept="3bR9La" id="7_VW9jwN7B" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="2a9bszgruRd" role="3bR37C">
           <node concept="3bR9La" id="2a9bszgruRc" role="1SiIV1">
