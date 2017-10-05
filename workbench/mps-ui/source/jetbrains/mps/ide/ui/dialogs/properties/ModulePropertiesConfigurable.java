@@ -805,7 +805,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public boolean isModified() {
-      return myRuntimeTableModel.isModified();
+      return myRuntimeTableModel.isModified() || myAccessoriesModelsTableModel.isModified();
     }
 
     private class RuntimeTableModel extends AbstractTableModel implements ItemRemovable, Modifiable {
