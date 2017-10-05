@@ -6,9 +6,7 @@
       <sourceRoot location="languageAccessories" />
     </modelRoot>
   </models>
-  <accessoryModels>
-    <model modelUID="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
-  </accessoryModels>
+  <accessoryModels />
   <generators>
     <generator alias="java" namespace="jetbrains.mps.lang.generator#1167163152317" uuid="f1457ec8-c780-4f6f-89b4-c79af7789be1">
       <models>
