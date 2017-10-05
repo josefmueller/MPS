@@ -252,5 +252,33 @@
       <unit id="6609104295326585615" at="18,0,46,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeInheritanceTest_Test" />
     </file>
   </root>
+  <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/8545423393708262847">
+    <file name="FontStyleInheritanceTest_Test.java">
+      <node id="8545423393708262847" at="18,64,19,108" concept="0" />
+      <node id="8545423393708262847" at="19,108,20,112" concept="0" />
+      <node id="8545423393708262847" at="26,51,27,53" concept="0" />
+      <node id="8545423393708727755" at="29,27,30,391" concept="0" />
+      <node id="8545423393708740618" at="30,391,31,381" concept="0" />
+      <node id="8545423393708742558" at="31,381,32,0" concept="3" />
+      <node id="8545423393708729870" at="32,0,33,391" concept="0" />
+      <node id="8545423393708734247" at="33,391,34,381" concept="0" />
+      <node id="8545423393708743042" at="34,381,35,0" concept="3" />
+      <node id="8545423393708736182" at="35,0,36,383" concept="0" />
+      <node id="8545423393708743527" at="36,383,37,381" concept="0" />
+      <node id="8545423393708262847" at="17,0,22,0" concept="1" trace="test_FontStyleInheritanceTest#()V" />
+      <node id="8545423393708670967" at="29,0,39,0" concept="1" trace="run#()V" />
+      <node id="8545423393708670966" at="27,53,39,9" concept="0" />
+      <node id="8545423393708262847" at="25,0,41,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="8545423393708262847" at="18,64,20,112" />
+      <scope id="8545423393708262847" at="17,0,22,0" />
+      <scope id="8545423393708670968" at="29,27,37,381" />
+      <scope id="8545423393708670967" at="29,0,39,0" />
+      <scope id="8545423393708262847" at="26,51,39,9" />
+      <scope id="8545423393708262847" at="25,0,41,0" />
+      <unit id="8545423393708670967" at="28,47,39,7" name="jetbrains.mps.lang.editor.style.test.FontStyleInheritanceTest_Test$TestBody$1" />
+      <unit id="8545423393708262847" at="23,0,42,0" name="jetbrains.mps.lang.editor.style.test.FontStyleInheritanceTest_Test$TestBody" />
+      <unit id="8545423393708262847" at="15,0,43,0" name="jetbrains.mps.lang.editor.style.test.FontStyleInheritanceTest_Test" />
+    </file>
+  </root>
 </debug-info>
 

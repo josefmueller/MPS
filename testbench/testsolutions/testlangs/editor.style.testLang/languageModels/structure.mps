@@ -110,5 +110,21 @@
     <property role="EcuMT" value="4078300376848435002" />
     <ref role="1TJDcQ" node="7jyxAjKlw5c" resolve="NodeContainer" />
   </node>
+  <node concept="1TIwiD" id="7qnskOdiu8K">
+    <property role="EcuMT" value="8545423393708171824" />
+    <property role="TrG5h" value="CustomFontContainer" />
+    <property role="34LRSv" value="customFontContainer" />
+    <ref role="1TJDcQ" node="7jyxAjKlw5c" resolve="NodeContainer" />
+    <node concept="1TJgyi" id="7qnskOdizep" role="1TKVEl">
+      <property role="IQ2nx" value="8545423393708192665" />
+      <property role="TrG5h" value="fontFamily" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="7qnskOdjDdr" role="1TKVEl">
+      <property role="IQ2nx" value="8545423393708479323" />
+      <property role="TrG5h" value="fontSize" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
 </model>
 

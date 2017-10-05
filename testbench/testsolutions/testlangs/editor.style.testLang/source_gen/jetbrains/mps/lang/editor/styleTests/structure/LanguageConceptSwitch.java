@@ -9,18 +9,20 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int HugePriorityStyle = 0;
-  public static final int LeafNode = 1;
-  public static final int NodeContainer = 2;
-  public static final int PriorityStyle = 3;
-  public static final int PriorityStyleCopy = 4;
-  public static final int TestConceptWithStyleAttributes = 5;
-  public static final int TestInheritedAttribute = 6;
-  public static final int TestSimpleAttribute = 7;
-  public static final int UnapplyPriorityStyleCopy = 8;
+  public static final int CustomFontContainer = 0;
+  public static final int HugePriorityStyle = 1;
+  public static final int LeafNode = 2;
+  public static final int NodeContainer = 3;
+  public static final int PriorityStyle = 4;
+  public static final int PriorityStyleCopy = 5;
+  public static final int TestConceptWithStyleAttributes = 6;
+  public static final int TestInheritedAttribute = 7;
+  public static final int TestSimpleAttribute = 8;
+  public static final int UnapplyPriorityStyleCopy = 9;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L);
+    builder.put(0x7697714d0d49e230L, CustomFontContainer);
     builder.put(0x7bc02723c1a36a0aL, HugePriorityStyle);
     builder.put(0x38990895c164873aL, LeafNode);
     builder.put(0x74e28664f056014cL, NodeContainer);

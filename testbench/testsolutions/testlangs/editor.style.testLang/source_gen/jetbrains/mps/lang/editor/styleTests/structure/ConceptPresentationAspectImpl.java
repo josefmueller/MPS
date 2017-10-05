@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_CustomFontContainer;
   private ConceptPresentation props_HugePriorityStyle;
   private ConceptPresentation props_LeafNode;
   private ConceptPresentation props_NodeContainer;
@@ -24,6 +25,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.CustomFontContainer:
+        if (props_CustomFontContainer == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("customFontContainer");
+          props_CustomFontContainer = cpb.create();
+        }
+        return props_CustomFontContainer;
       case LanguageConceptSwitch.HugePriorityStyle:
         if (props_HugePriorityStyle == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

@@ -6671,16 +6671,6 @@
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
   </node>
-  <node concept="1TIwiD" id="4DrEZjt9c6c">
-    <property role="R5$K7" value="true" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="QueryFunction_FontFamily" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="QueryFunction.Style" />
-    <property role="EcuMT" value="5358065249857880460" />
-    <property role="34LRSv" value="font family function" />
-    <ref role="1TJDcQ" node="hLcOssU" resolve="QueryFunction_StyleParameter" />
-  </node>
   <node concept="1TIwiD" id="6rN18FHIfNk">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -6701,6 +6691,16 @@
       <property role="TrG5h" value="style" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="4DrEZjt9c6c">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="QueryFunction_FontFamily" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="QueryFunction.Style" />
+    <property role="EcuMT" value="5358065249857880460" />
+    <property role="34LRSv" value="font family function" />
+    <ref role="1TJDcQ" node="hLcOssU" resolve="QueryFunction_StyleParameter" />
   </node>
 </model>
 

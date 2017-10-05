@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptCustomFontContainer = createDescriptorForCustomFontContainer();
   /*package*/ final ConceptDescriptor myConceptHugePriorityStyle = createDescriptorForHugePriorityStyle();
   /*package*/ final ConceptDescriptor myConceptLeafNode = createDescriptorForLeafNode();
   /*package*/ final ConceptDescriptor myConceptNodeContainer = createDescriptorForNodeContainer();
@@ -29,13 +30,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptHugePriorityStyle, myConceptLeafNode, myConceptNodeContainer, myConceptPriorityStyle, myConceptPriorityStyleCopy, myConceptTestConceptWithStyleAttributes, myConceptTestInheritedAttribute, myConceptTestSimpleAttribute, myConceptUnapplyPriorityStyleCopy);
+    return Arrays.asList(myConceptCustomFontContainer, myConceptHugePriorityStyle, myConceptLeafNode, myConceptNodeContainer, myConceptPriorityStyle, myConceptPriorityStyleCopy, myConceptTestConceptWithStyleAttributes, myConceptTestInheritedAttribute, myConceptTestSimpleAttribute, myConceptUnapplyPriorityStyleCopy);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
+      case LanguageConceptSwitch.CustomFontContainer:
+        return myConceptCustomFontContainer;
       case LanguageConceptSwitch.HugePriorityStyle:
         return myConceptHugePriorityStyle;
       case LanguageConceptSwitch.LeafNode:
@@ -63,6 +66,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForCustomFontContainer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.styleTests", "CustomFontContainer", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7697714d0d49e230L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL);
+    b.origin("r:710d1207-58b1-4fe3-ba47-f417dc16c10c(jetbrains.mps.lang.editor.styleTests.structure)/8545423393708171824");
+    b.prop("fontFamily", 0x7697714d0d4a3399L, "8545423393708192665");
+    b.prop("fontSize", 0x7697714d0d4e935bL, "8545423393708479323");
+    b.alias("customFontContainer");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForHugePriorityStyle() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.styleTests", "HugePriorityStyle", 0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a36a0aL);
     b.class_(false, false, false);

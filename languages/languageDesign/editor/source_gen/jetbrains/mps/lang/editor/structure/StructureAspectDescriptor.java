@@ -3532,7 +3532,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
   private static ConceptDescriptor createDescriptorForQueryFunction_FontFamily() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor", "QueryFunction_FontFamily", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4a5babf4dd24c18cL);
-    b.class_(false, true, false);
+    b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4cd1c73aL);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/5358065249857880460");
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);

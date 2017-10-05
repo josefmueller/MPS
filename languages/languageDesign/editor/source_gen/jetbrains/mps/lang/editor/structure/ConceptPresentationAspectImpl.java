@@ -2138,6 +2138,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.QueryFunction_FontFamily:
         if (props_QueryFunction_FontFamily == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("font family function");
           props_QueryFunction_FontFamily = cpb.create();
         }
         return props_QueryFunction_FontFamily;
