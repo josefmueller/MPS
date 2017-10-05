@@ -4,7 +4,6 @@ package jetbrains.mps.console.actions;
 
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.WeakHashMap;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 
@@ -12,10 +11,10 @@ public class ClosureHoldingNodeUtil {
 
   private static ClosureHoldingNodeUtil myInstance;
 
-  private Map<SNode, _FunctionTypes._void_P0_E0> allActions;
+  private Map<SNode, Runnable> allActions;
 
   private ClosureHoldingNodeUtil() {
-    allActions = new WeakHashMap<SNode, _FunctionTypes._void_P0_E0>();
+    allActions = new WeakHashMap<SNode, Runnable>();
   }
 
   public static ClosureHoldingNodeUtil getInstance() {
@@ -25,15 +24,15 @@ public class ClosureHoldingNodeUtil {
     return myInstance;
   }
 
-  public void register(SNode node, _FunctionTypes._void_P0_E0 closure) {
+  public void register(SNode node, Runnable closure) {
     MapSequence.fromMap(allActions).put(node, closure);
   }
 
-  public _FunctionTypes._void_P0_E0 getClosure(SNode node) {
+  public Runnable getClosure(SNode node) {
     return MapSequence.fromMap(allActions).get(node);
   }
 
   public void executeClosure(SNode node) {
-    getClosure(node).invoke();
+    getClosure(node).run();
   }
 }

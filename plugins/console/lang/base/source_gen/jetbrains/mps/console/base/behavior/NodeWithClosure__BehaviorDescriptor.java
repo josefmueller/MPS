@@ -26,7 +26,7 @@ public final class NodeWithClosure__BehaviorDescriptor extends BaseBHDescriptor 
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
+  public static final SMethod<Runnable> execute_id7oNS25df64x = new SMethodBuilder<Runnable>(new SJavaCompoundTypeImpl(Runnable.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
   public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id7oNS25df64x, canExecute_id2QdC0h7dh1h);
@@ -34,8 +34,8 @@ public final class NodeWithClosure__BehaviorDescriptor extends BaseBHDescriptor 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, MPSProject project) {
-    ClosureHoldingNodeUtil.getInstance().executeClosure(__thisNode__);
+  /*package*/ static Runnable execute_id7oNS25df64x(@NotNull SNode __thisNode__, MPSProject project) {
+    return ClosureHoldingNodeUtil.getInstance().getClosure(__thisNode__);
   }
   /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return ClosureHoldingNodeUtil.getInstance().getClosure(__thisNode__) != null;
@@ -58,8 +58,7 @@ public final class NodeWithClosure__BehaviorDescriptor extends BaseBHDescriptor 
     }
     switch (methodIndex) {
       case 0:
-        execute_id7oNS25df64x(node, (MPSProject) parameters[0]);
-        return null;
+        return (T) ((Runnable) execute_id7oNS25df64x(node, (MPSProject) parameters[0]));
       case 1:
         return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));
       default:

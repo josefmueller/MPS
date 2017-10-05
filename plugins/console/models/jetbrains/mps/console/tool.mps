@@ -8544,8 +8544,8 @@
                   <property role="TrG5h" value="addClosure" />
                   <node concept="37vLTG" id="3ZgZ1njWV6R" role="3clF46">
                     <property role="TrG5h" value="closure" />
-                    <node concept="1ajhzC" id="3ZgZ1njWV6S" role="1tU5fm">
-                      <node concept="3cqZAl" id="3ZgZ1njWV6T" role="1ajl9A" />
+                    <node concept="3uibUv" id="7B2vBh7gO2e" role="1tU5fm">
+                      <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
                     </node>
                   </node>
                   <node concept="37vLTG" id="6_TW7xVHprM" role="3clF46">
@@ -8644,15 +8644,29 @@
                               <ref role="37wK5l" node="3ZgZ1njWV6Q" resolve="addClosure" />
                               <node concept="1bVj0M" id="igjXyur9Iz" role="37wK5m">
                                 <node concept="3clFbS" id="igjXyur9I_" role="1bW5cS">
-                                  <node concept="3clFbF" id="6_TW7xVIkl9" role="3cqZAp">
-                                    <node concept="2YIFZM" id="WMsS6mDJnX" role="3clFbG">
-                                      <ref role="37wK5l" node="YwfKjlX8gC" resolve="show" />
-                                      <ref role="1Pybhc" node="7zdHeh8agf_" resolve="ConsoleUtil" />
-                                      <node concept="37vLTw" id="WMsS6mDJnY" role="37wK5m">
+                                  <node concept="1QHqEK" id="2NHNvU76v24" role="3cqZAp">
+                                    <node concept="1QHqEC" id="2NHNvU76v26" role="1QHqEI">
+                                      <node concept="3clFbS" id="2NHNvU76v28" role="1bW5cS">
+                                        <node concept="3clFbF" id="6_TW7xVIkl9" role="3cqZAp">
+                                          <node concept="2YIFZM" id="WMsS6mDJnX" role="3clFbG">
+                                            <ref role="37wK5l" node="YwfKjlX8gC" resolve="show" />
+                                            <ref role="1Pybhc" node="7zdHeh8agf_" resolve="ConsoleUtil" />
+                                            <node concept="37vLTw" id="WMsS6mDJnY" role="37wK5m">
+                                              <ref role="3cqZAo" node="7OcVEq$so7u" resolve="project" />
+                                            </node>
+                                            <node concept="37vLTw" id="WMsS6mDJnZ" role="37wK5m">
+                                              <ref role="3cqZAo" node="7OcVEq$sqLw" resolve="results" />
+                                            </node>
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="2OqwBi" id="2NHNvU76xX9" role="ukAjM">
+                                      <node concept="37vLTw" id="2NHNvU76wlf" role="2Oq$k0">
                                         <ref role="3cqZAo" node="7OcVEq$so7u" resolve="project" />
                                       </node>
-                                      <node concept="37vLTw" id="WMsS6mDJnZ" role="37wK5m">
-                                        <ref role="3cqZAo" node="7OcVEq$sqLw" resolve="results" />
+                                      <node concept="liA8E" id="2NHNvU76yIP" role="2OqNvi">
+                                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                                       </node>
                                     </node>
                                   </node>
@@ -10216,8 +10230,8 @@
       <property role="TrG5h" value="addClosure" />
       <node concept="37vLTG" id="6_TW7xVHjmt" role="3clF46">
         <property role="TrG5h" value="closure" />
-        <node concept="1ajhzC" id="igjXyurl8w" role="1tU5fm">
-          <node concept="3cqZAl" id="igjXyurlrQ" role="1ajl9A" />
+        <node concept="3uibUv" id="7B2vBh7haU0" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Runnable" resolve="Runnable" />
         </node>
       </node>
       <node concept="37vLTG" id="1ycrhFMLQDe" role="3clF46">

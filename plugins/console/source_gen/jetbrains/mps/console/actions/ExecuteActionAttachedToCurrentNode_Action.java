@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -21,7 +22,7 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   public ExecuteActionAttachedToCurrentNode_Action() {
     super("Execute Attached Action", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
   @Override
   public boolean isDumbAware() {
@@ -59,6 +60,12 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    BHReflection.invoke(event.getData(MPSCommonDataKeys.NODE), SMethodTrimmedId.create("execute", null, "7oNS25df64x"), event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    final Wrappers._T<Runnable> action = new Wrappers._T<Runnable>();
+    event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        action.value = ((Runnable) BHReflection.invoke(event.getData(MPSCommonDataKeys.NODE), SMethodTrimmedId.create("execute", null, "7oNS25df64x"), event.getData(MPSCommonDataKeys.MPS_PROJECT)));
+      }
+    });
+    action.value.run();
   }
 }

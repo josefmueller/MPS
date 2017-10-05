@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -33,7 +34,7 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, "jetbrains.mps.console.base.structure.INodeWithReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
+  public static final SMethod<Runnable> execute_id7oNS25df64x = new SMethodBuilder<Runnable>(new SJavaCompoundTypeImpl(Runnable.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
   public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
   public static final SMethod<String> getText_id5E451QuvdoB = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5E451QuvdoB").registry(REGISTRY).build();
   public static final SMethod<String> getTextWhenBroken_idigjXyuNrou = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTextWhenBroken").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("igjXyuNrou").registry(REGISTRY).build();
@@ -44,9 +45,20 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, MPSProject project) {
-    SNode targetNode = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
-    NavigationSupport.getInstance().openNode(project, targetNode, true, (SNodeOperations.getParent(targetNode) != null));
+  /*package*/ static Runnable execute_id7oNS25df64x(@NotNull SNode __thisNode__, final MPSProject project) {
+    final SNodeReference targetNode = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")).getReference();
+    return new Runnable() {
+      public void run() {
+        project.getRepository().getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            SNode nodeToNavigate = targetNode.resolve(project.getRepository());
+            if (nodeToNavigate != null) {
+              NavigationSupport.getInstance().openNode(project, nodeToNavigate, true, (SNodeOperations.getParent(nodeToNavigate) != null));
+            }
+          }
+        });
+      }
+    };
   }
   /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return !(((boolean) INodeWithReference__BehaviorDescriptor.isBroken_id7m$hACyVN2F.invoke(__thisNode__)));
@@ -81,8 +93,7 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
     }
     switch (methodIndex) {
       case 0:
-        execute_id7oNS25df64x(node, (MPSProject) parameters[0]);
-        return null;
+        return (T) ((Runnable) execute_id7oNS25df64x(node, (MPSProject) parameters[0]));
       case 1:
         return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));
       case 2:

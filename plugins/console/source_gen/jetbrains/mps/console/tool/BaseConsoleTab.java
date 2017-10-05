@@ -94,8 +94,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -544,7 +544,7 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
         SPropertyOperations.set(exceptionHolder, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), t.getClass().getName());
         addNode(exceptionHolder);
       }
-      public void addClosure(_FunctionTypes._void_P0_E0 closure, String text) {
+      public void addClosure(Runnable closure, String text) {
         SNode nodeWithClosure = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xf6d4d958ec2f2c6L, "jetbrains.mps.console.base.structure.NodeWithClosure"));
         SPropertyOperations.set(nodeWithClosure, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x2095ece53bb9f5b0L, 0x360b134fc047ce2aL, "text"), text);
         ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
@@ -554,9 +554,13 @@ public abstract class BaseConsoleTab extends SimpleToolWindowPanel implements Di
         if (resultsCount == 0) {
           addText("empty sequence");
         } else {
-          addClosure(new _FunctionTypes._void_P0_E0() {
-            public void invoke() {
-              ConsoleUtil.show(project, results);
+          addClosure(new Runnable() {
+            public void run() {
+              project.getRepository().getModelAccess().runReadAction(new Runnable() {
+                public void run() {
+                  ConsoleUtil.show(project, results);
+                }
+              });
             }
           }, resultsCount + " " + resultDescription);
         }

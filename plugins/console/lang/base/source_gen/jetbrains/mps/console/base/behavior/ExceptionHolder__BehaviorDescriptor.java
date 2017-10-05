@@ -17,11 +17,10 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.awt.datatransfer.StringSelection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.awt.datatransfer.StringSelection;
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.actions.AnalyzeStacktraceDialog;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -30,7 +29,7 @@ public final class ExceptionHolder__BehaviorDescriptor extends BaseBHDescriptor 
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, "jetbrains.mps.console.base.structure.ExceptionHolder");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
+  public static final SMethod<Runnable> execute_id7oNS25df64x = new SMethodBuilder<Runnable>(new SJavaCompoundTypeImpl(Runnable.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
   public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id7oNS25df64x, canExecute_id2QdC0h7dh1h);
@@ -38,15 +37,16 @@ public final class ExceptionHolder__BehaviorDescriptor extends BaseBHDescriptor 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, MPSProject project) {
-    StringSelection contents = new StringSelection(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace")));
-    CopyPasteManagerEx.getInstanceEx().setContents(contents);
-    final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(project.getProject());
-    SwingUtilities.invokeLater(new Runnable() {
+  /*package*/ static Runnable execute_id7oNS25df64x(@NotNull SNode __thisNode__, final MPSProject project) {
+    final String stackTrace = SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace"));
+    return new Runnable() {
       public void run() {
+        StringSelection contents = new StringSelection(stackTrace);
+        CopyPasteManagerEx.getInstanceEx().setContents(contents);
+        final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(project.getProject());
         dialog.show();
       }
-    });
+    };
   }
   /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5b02f032bc93b714L, 0x5b02f032bc9cb8a9L, "stackTrace")) != null;
@@ -69,8 +69,7 @@ public final class ExceptionHolder__BehaviorDescriptor extends BaseBHDescriptor 
     }
     switch (methodIndex) {
       case 0:
-        execute_id7oNS25df64x(node, (MPSProject) parameters[0]);
-        return null;
+        return (T) ((Runnable) execute_id7oNS25df64x(node, (MPSProject) parameters[0]));
       case 1:
         return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));
       default:

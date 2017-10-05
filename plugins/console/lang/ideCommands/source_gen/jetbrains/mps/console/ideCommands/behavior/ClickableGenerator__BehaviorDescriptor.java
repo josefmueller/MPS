@@ -30,7 +30,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -39,7 +38,7 @@ public final class ClickableGenerator__BehaviorDescriptor extends BaseBHDescript
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, "jetbrains.mps.console.ideCommands.structure.ClickableGenerator");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
+  public static final SMethod<Runnable> execute_id7oNS25df64x = new SMethodBuilder<Runnable>(new SJavaCompoundTypeImpl(Runnable.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
   public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id7oNS25df64x, canExecute_id2QdC0h7dh1h);
@@ -47,7 +46,7 @@ public final class ClickableGenerator__BehaviorDescriptor extends BaseBHDescript
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void execute_id7oNS25df64x(@NotNull SNode __thisNode__, final MPSProject project) {
+  /*package*/ static Runnable execute_id7oNS25df64x(@NotNull SNode __thisNode__, MPSProject project) {
     final SModule module = project.getRepository().getModule(PersistenceFacade.getInstance().createModuleId(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId"))));
 
     final MPSPropertiesConfigurable configurable = new ModulePropertiesConfigurable(module, project);
@@ -111,11 +110,11 @@ __switch__:
     });
     final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(project.getProject(), configurable, "#MPSPropertiesConfigurable");
     configurable.setParentForCallBack(configurableEditor);
-    SwingUtilities.invokeLater(new Runnable() {
+    return new Runnable() {
       public void run() {
         configurableEditor.show();
       }
-    });
+    };
   }
   /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
     return isNotEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x360b134fc0467d73L, 0x360b134fc0525d7fL, "moduleId")));
@@ -138,8 +137,7 @@ __switch__:
     }
     switch (methodIndex) {
       case 0:
-        execute_id7oNS25df64x(node, (MPSProject) parameters[0]);
-        return null;
+        return (T) ((Runnable) execute_id7oNS25df64x(node, (MPSProject) parameters[0]));
       case 1:
         return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));
       default:
