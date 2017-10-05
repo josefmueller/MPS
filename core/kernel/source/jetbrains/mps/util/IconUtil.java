@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,8 +32,13 @@ import java.net.URL;
  * <p/>
  * TODO FIXME remove "this" from core-runtime, move to mps-platform
  */
+@Deprecated
+@ToRemove(version = 2017.3)
+//use IconLoader.findIcon() instead
 public class IconUtil {
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2017.3)
   public static Icon getIcon(final String path) {
     // see MPS-18100 and IDEA-106251 and read IconLoader.getIcon/ReflectionUtil.findCallerClass sources from IDEA
     Class[] stack = MySecurityManager.INSTANCE.getStack();
@@ -52,6 +58,8 @@ public class IconUtil {
   }
 
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2017.3)
   public static Icon getIcon(@NotNull String path, @NotNull final Class aClass) {
     URL url = aClass.getResource(path);
     if (url == null) {
