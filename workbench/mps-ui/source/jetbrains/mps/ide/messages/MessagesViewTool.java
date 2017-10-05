@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.annotations.NotNull;
@@ -48,6 +49,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JList;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -187,6 +189,28 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     return new MsgHandler(availableList);
   }
 
+  /**
+   * Creates/retrieves existing named collection of messages, with respect to supplied options.
+   * @param name name of the list. It's up to caller to provide reasonable name in case of {@link MessageListOptions#AlwaysNew} to tell one list from another.
+   * @param options if no options specified, {@link MessageListOptions#ReuseExisting} + {@link MessageListOptions#ActivateOnMessage} is assumed.
+   * @return UI-backed collection of messages.
+   */
+  @NotNull
+  public IMessageList getMessageList(@NotNull final String name, MessageListOptions... options) {
+    List<MessageListOptions> optionsList = Arrays.asList(options);
+    boolean alwaysNew = optionsList.contains(MessageListOptions.AlwaysNew);
+    boolean reuseExisting = !alwaysNew && (optionsList.isEmpty() || optionsList.contains(MessageListOptions.ReuseExisting));
+    boolean activateOnMessage = !optionsList.contains(MessageListOptions.DeafOnMessage) || optionsList.contains(MessageListOptions.ActivateOnMessage);
+    MessageList list;
+    if (alwaysNew) {
+      list = createList(name);
+    } else {
+      list = getAvailableList(name, reuseExisting);
+    }
+    list.setActivateOnMessage(activateOnMessage);
+    return list;
+  }
+
   private synchronized void addList(String name, MessageList list) {
     List<MessageList> lists = myMessageLists.containsKey(name) ? myMessageLists.get(name) : new ArrayList<MessageList>();
     if (!myMessageLists.containsKey(name)) {
@@ -205,7 +229,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     if (myMessageLists.containsKey(name)) {
       lists = myMessageLists.get(name);
     } else {
-      myMessageLists.put(name, lists = new ArrayList<MessageList>());
+      myMessageLists.put(name, lists = new ArrayList<>());
     }
     for (int i = lists.size() - 1; i >= 0; --i) {
       MessageList messageList = lists.get(i);

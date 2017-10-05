@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ import com.intellij.openapi.ui.SimpleToolWindowPanel;
 import com.intellij.pom.NavigatableAdapter;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
-import com.intellij.ui.components.JBPanel;
 import com.intellij.usageView.UsageViewBundle;
 import com.intellij.util.ExceptionUtil;
 import com.intellij.util.ui.update.MergingUpdateQueue;
@@ -61,7 +60,6 @@ import javax.swing.AbstractListModel;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JList;
-import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.KeyStroke;
@@ -195,7 +193,7 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
   }
 
   @Override
-  public void add(IMessage message) {
+  public void add(@NotNull IMessage message) {
     if (RuntimeFlags.isTestMode()) {
       return;
     }
@@ -281,6 +279,11 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
         }
       }
     });
+  }
+
+  @Override
+  public void wake() {
+    bringToFront();
   }
 
   @Override
