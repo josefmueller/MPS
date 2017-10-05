@@ -41,6 +41,7 @@ public class CellsTree extends MPSTreeWithAction {
 
   public CellsTree() {
     setRootVisible(true);
+    myWarnModelAccess = false;
   }
 
   @Override
