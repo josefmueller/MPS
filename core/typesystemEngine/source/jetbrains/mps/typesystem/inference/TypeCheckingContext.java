@@ -23,7 +23,6 @@ import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -43,14 +42,16 @@ public abstract class TypeCheckingContext {
   public abstract boolean isNonTypesystemComputation();
 
   //errors reporting
-  public abstract IErrorReporter reportTypeError(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget);
+  public abstract void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget);
 
-  public abstract IErrorReporter reportWarning(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget);
+  public abstract void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget);
 
-  public abstract IErrorReporter reportInfo(@NotNull SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget);
+  public abstract void reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget);
 
-  // nullability of nodeWithError detects validness of errorReporter
-  public abstract void reportMessage(@Nullable SNode nodeWithError, IErrorReporter errorReporter);
+  /**
+   * @param errorReporter valid errorReporter
+   */
+  public abstract void reportMessage(IErrorReporter errorReporter);
 
   public abstract SNode createNewRuntimeTypesVariable();
 

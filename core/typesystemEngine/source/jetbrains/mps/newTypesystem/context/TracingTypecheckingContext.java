@@ -20,8 +20,6 @@ import jetbrains.mps.newTypesystem.context.typechecking.TracingTypechecking;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -55,12 +53,8 @@ public class TracingTypecheckingContext extends SimpleTypecheckingContext<Target
   }
 
   @Override
-  public void reportMessage(@Nullable SNode nodeWithError, IErrorReporter errorReporter) {
-    if (nodeWithError == null) {
-      getState().executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.getClass()));
-      return;//todo
-    }
-    getTypechecking().reportTypeError(nodeWithError, errorReporter);
+  public void reportMessage(IErrorReporter errorReporter) {
+    getTypechecking().reportTypeError(errorReporter.getSNode(), errorReporter);
   }
 
 }

@@ -17,7 +17,6 @@ package jetbrains.mps.newTypesystem.state;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.errors.NullErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -202,8 +201,8 @@ public class NodeMaps {
     final IErrorReporter errorReporter;
     final SNode nodeWithError;
     if (info == null || info.getNodeWithError() == null) {
-      nodeWithError = null;
-      errorReporter = new NullErrorReporter();
+      //todo
+      return;
     } else if (info.getErrorString() != null) {
       nodeWithError = info.getNodeWithError();
       errorReporter = new SimpleErrorReporter(nodeWithError, info.getErrorString(), info.getRuleNode());
@@ -216,47 +215,45 @@ public class NodeMaps {
                                                    myState, "incompatible types: ", right, " and ", left, "", info);
     }
     setAdditionalRulesIds(info, errorReporter);
-    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+    myState.getTypeCheckingContext().reportMessage(errorReporter);
   }
 
   public void reportSubTypeError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
     IErrorReporter errorReporter;
-    String errorString = equationInfo.getErrorString();
-    SNode nodeWithError = equationInfo.getNodeWithError();
-    if (nodeWithError == null) {
-      errorReporter = new NullErrorReporter();
-    } else if (errorString == null) {
+    if (equationInfo == null || equationInfo.getNodeWithError() == null) {
+      //todo
+      return;
+    } else if (equationInfo.getErrorString() == null) {
       String strongString = isWeak ? "" : " strong";
-      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType,
+      errorReporter = new EquationErrorReporterNew(equationInfo.getNodeWithError(), myState, "type ", subType,
         " is not a" + strongString + " subtype of ", superType, "", equationInfo);
     } else {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, equationInfo.getRuleNode());
+      errorReporter = new SimpleErrorReporter(equationInfo.getNodeWithError(), equationInfo.getErrorString(), equationInfo.getRuleNode());
     }
     for (QuickFixProvider quickFixProvider : equationInfo.getIntentionProviders()) {
       errorReporter.addIntentionProvider(quickFixProvider);
     }
     setAdditionalRulesIds(equationInfo, errorReporter);
-    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+    myState.getTypeCheckingContext().reportMessage(errorReporter);
   }
 
   public void reportComparableError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
     IErrorReporter errorReporter;
-    String errorString = equationInfo.getErrorString();
-    SNode nodeWithError = equationInfo.getNodeWithError();
-    if (nodeWithError == null) {
-      errorReporter = new NullErrorReporter();
-    } else if (errorString == null) {
+    if (equationInfo == null || equationInfo.getNodeWithError() == null) {
+      //todo
+      return;
+    } else if (equationInfo.getErrorString() == null) {
       String strongString = isWeak ? "" : " strongly";
-      errorReporter = new EquationErrorReporterNew(nodeWithError, myState, "type ", subType, " is not" + strongString + " comparable with ",
+      errorReporter = new EquationErrorReporterNew(equationInfo.getNodeWithError(), myState, "type ", subType, " is not" + strongString + " comparable with ",
         superType, "", equationInfo);
     } else {
-      errorReporter = new SimpleErrorReporter(nodeWithError, errorString, equationInfo.getRuleNode());
+      errorReporter = new SimpleErrorReporter(equationInfo.getNodeWithError(), equationInfo.getErrorString(), equationInfo.getRuleNode());
     }
     for (QuickFixProvider provider : equationInfo.getIntentionProviders()) {
       errorReporter.addIntentionProvider(provider);
     }
     setAdditionalRulesIds(equationInfo, errorReporter);
-    myState.getTypeCheckingContext().reportMessage(nodeWithError, errorReporter);
+    myState.getTypeCheckingContext().reportMessage(errorReporter);
   }
 
   public Map<SNode, SNode> getNodesToTypes() {

@@ -20,18 +20,16 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.util.Computable;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
-import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
+import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.SNodeOperations;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.util.SNodeOperations;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -164,53 +162,23 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
     return myIsNonTypesystemComputation;
   }
 
-  @Override
-  public IErrorReporter reportTypeError(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
-    reporter.addIntentionProvider(intentionProvider);
+  @Nullable
+  public SimpleErrorReporter createErrorReporter(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget, MessageStatus severity) {
     if (nodeWithError == null) {
-      LOG.warn("Node used to report an error is null. Reported from model "+ruleModel+" by rule "+ruleId + ".", new Throwable());
-      return reporter;
+      LOG.warn("Node used to report an error is null. Error was not added. Reported from model "+ruleModel+" by rule "+ruleId + ".", new Throwable());
+      return null;
+    } else if (nodeWithError.getModel() == null) {
+      LOG.warn("Node used to report an error is not in a model. Error was not added. Node=" + SNodeOperations.getDebugText(nodeWithError) + ". Reported from model " + ruleModel + " by rule " + ruleId + ".", new Throwable());
+      return null;
     }
-    else if (nodeWithError.getModel() == null) {
-      LOG.warn("Node used to report an error is not in a model. Node=" + SNodeOperations.getDebugText(nodeWithError) + ". Reported from model "+ruleModel+" by rule "+ruleId + ".", new Throwable());
-      return reporter;
-    }
-    reportMessage(nodeWithError, reporter);
-    return reporter;
-  }
-
-  @Override
-  public IErrorReporter reportWarning(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.WARNING, errorTarget);
+    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, severity, errorTarget);
     reporter.addIntentionProvider(intentionProvider);
-    if (nodeWithError.getModel() == null) {
-      LOG.error("Node to report error for must be in a model. Node=" + SNodeOperations.getDebugText(nodeWithError), new Throwable());
-      return reporter;
-    }
-    reportMessage(nodeWithError, reporter);
     return reporter;
   }
 
   @Override
-  public IErrorReporter reportInfo(@NotNull SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
-    SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithInfo, message, ruleModel, ruleId, MessageStatus.OK, errorTarget);
-    reporter.addIntentionProvider(intentionProvider);
-    if (nodeWithInfo.getModel() == null) {
-      LOG.error("Node to report error for must be in a model. Node=" + SNodeOperations.getDebugText(nodeWithInfo), new Throwable());
-      return reporter;
-    }
-    reportMessage(nodeWithInfo, reporter);
-    return reporter;
-  }
-
-  @Override
-  public void reportMessage(@Nullable SNode nodeWithError, IErrorReporter errorReporter) {
-    if (nodeWithError == null) {
-      getState().executeOperation(new TraceWarningOperation("Error was not added: " + errorReporter.getClass()));
-      return;//todo
-    }
-    getTypechecking().reportTypeError(nodeWithError, errorReporter);
+  public void reportMessage(IErrorReporter errorReporter) {
+    getTypechecking().reportTypeError(errorReporter.getSNode(), errorReporter);
     // the following line messes up the typechecking even if the error is caused by a non-typechecking rule
     // this further complicates incremental types calculation and produces unwanted results MPS-21481
     // TODO: rethink the way errors affect the typechecking

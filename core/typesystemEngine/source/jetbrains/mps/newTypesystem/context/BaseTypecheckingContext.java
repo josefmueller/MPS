@@ -17,7 +17,7 @@ package jetbrains.mps.newTypesystem.context;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.IRuleConflictWarningProducer;
-import jetbrains.mps.errors.NullErrorReporter;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
@@ -27,7 +27,7 @@ import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -55,18 +55,32 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
   }
 
   @Override
-  public IErrorReporter reportTypeError(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
-    return new NullErrorReporter();
+  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
+    IErrorReporter reporter = createErrorReporter(nodeWithError, errorString, ruleModel, ruleId, intentionProvider, errorTarget, MessageStatus.ERROR);
+    if (reporter != null) {
+      reportMessage(reporter);
+    }
   }
 
   @Override
-  public IErrorReporter reportWarning(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
-    return new NullErrorReporter();
+  public void reportWarning(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
+    IErrorReporter reporter = createErrorReporter(nodeWithError, errorString, ruleModel, ruleId, intentionProvider, errorTarget, MessageStatus.WARNING);
+    if (reporter != null) {
+      reportMessage(reporter);
+    }
   }
 
   @Override
-  public IErrorReporter reportInfo(@NotNull SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
-    return new NullErrorReporter();
+  public void reportInfo(SNode nodeWithInfo, String message, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
+    IErrorReporter reporter = createErrorReporter(nodeWithInfo, message, ruleModel, ruleId, intentionProvider, errorTarget, MessageStatus.OK);
+    if (reporter != null) {
+      reportMessage(reporter);
+    }
+  }
+
+  @Nullable
+  public IErrorReporter createErrorReporter(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget, MessageStatus severity) {
+    return null;
   }
 
   @Override
