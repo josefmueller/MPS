@@ -401,6 +401,68 @@
       <unit id="3109406674817557892" at="12,0,58,0" name="jetbrains.mps.smodel.SmartReferentUtil" />
     </file>
   </root>
+  <root nodeRef="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)/4375757543141667420">
+    <file name="EditorDeclarationScanner.java">
+      <node id="4375757543141750107" at="24,0,25,0" concept="3" trace="myExternalConcepts" />
+      <node id="4375757543141798159" at="25,0,26,0" concept="3" trace="myExtendedModels" />
+      <node id="4375757543141798166" at="26,0,27,0" concept="3" trace="myExtendedModules" />
+      <node id="4375757543141774561" at="32,50,33,34" concept="7" />
+      <node id="4375757543141776023" at="34,194,35,180" concept="7" />
+      <node id="4375757543141758679" at="36,76,37,35" concept="2" />
+      <node id="4375757543141819660" at="37,35,38,59" concept="2" />
+      <node id="2512598151680918001" at="41,210,42,126" concept="7" />
+      <node id="2512598151680927766" at="43,76,44,35" concept="2" />
+      <node id="2512598151680927771" at="44,35,45,59" concept="2" />
+      <node id="4375757543141810316" at="48,40,49,44" concept="2" />
+      <node id="4375757543141736610" at="50,5,51,16" concept="8" />
+      <node id="4375757543141805824" at="54,51,55,57" concept="8" />
+      <node id="4375757543141805833" at="58,46,59,58" concept="8" />
+      <node id="4375757543141744293" at="62,43,63,59" concept="8" />
+      <node id="4375757543141702344" at="29,0,31,0" concept="1" trace="EditorDeclarationScanner#()V" />
+      <node id="4375757543141810314" at="47,5,50,5" concept="4" />
+      <node id="4375757543141805819" at="54,0,57,0" concept="6" trace="getExternalStructureModels#()Ljava/util/Set;" />
+      <node id="4375757543141805828" at="58,0,61,0" concept="6" trace="getDependencyModules#()Ljava/util/Set;" />
+      <node id="4375757543141744291" at="62,0,65,0" concept="6" trace="getExternalConcepts#()Ljava/util/Set;" />
+      <node id="4375757543141779971" at="35,180,39,7" concept="5" />
+      <node id="2512598151680918207" at="42,126,46,7" concept="5" />
+      <node id="4375757543141718726" at="33,34,40,5" concept="4" />
+      <node id="2512598151680871151" at="40,5,47,5" concept="4" />
+      <node id="4375757543141707871" at="32,0,53,0" concept="6" trace="scan#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/EditorDeclarationScanner;" />
+      <scope id="4375757543141702349" at="29,37,29,37" />
+      <scope id="4375757543141810315" at="48,40,49,44" />
+      <scope id="4375757543141805823" at="54,51,55,57" />
+      <scope id="4375757543141805832" at="58,46,59,58" />
+      <scope id="4375757543141744292" at="62,43,63,59" />
+      <scope id="4375757543141702344" at="29,0,31,0" />
+      <scope id="4375757543141779973" at="36,76,38,59" />
+      <scope id="2512598151680918209" at="43,76,45,59" />
+      <scope id="4375757543141810314" at="47,5,50,5">
+        <var name="em" id="4375757543141810324" />
+      </scope>
+      <scope id="4375757543141805819" at="54,0,57,0" />
+      <scope id="4375757543141805828" at="58,0,61,0" />
+      <scope id="4375757543141744291" at="62,0,65,0" />
+      <scope id="4375757543141718729" at="34,194,39,7">
+        <var name="cd" id="4375757543141776024" />
+      </scope>
+      <scope id="2512598151680871154" at="41,210,46,7">
+        <var name="cd" id="2512598151680918002" />
+      </scope>
+      <scope id="4375757543141718726" at="33,34,40,5">
+        <var name="ac" id="4375757543141718730" />
+      </scope>
+      <scope id="2512598151680871151" at="40,5,47,5">
+        <var name="menuRef" id="2512598151680871155" />
+      </scope>
+      <scope id="4375757543141707874" at="32,50,51,16">
+        <var name="owner" id="4375757543141774562" />
+      </scope>
+      <scope id="4375757543141707871" at="32,0,53,0">
+        <var name="m" id="4375757543141707899" />
+      </scope>
+      <unit id="4375757543141667420" at="23,0,66,0" name="jetbrains.mps.smodel.EditorDeclarationScanner" />
+    </file>
+  </root>
   <root nodeRef="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)/5073169472575923460">
     <file name="BootstrapLanguages.java">
       <node id="4599227844726258628" at="17,41,18,111" concept="8" />

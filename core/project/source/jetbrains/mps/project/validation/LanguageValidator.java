@@ -21,6 +21,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ConceptDeclarationScanner;
+import jetbrains.mps.smodel.EditorDeclarationScanner;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelOperations;
@@ -68,19 +69,19 @@ public class LanguageValidator {
     }
 
     ArrayDeque<Language> extendedLanguages = new ArrayDeque<>();
+    ArrayDeque<SModuleReference> likelySuperfluousExtends = new ArrayDeque<>();
     Collection<SModuleReference> extendedLanguagesFromStructure = getActuallyExtendedLanguagesFromStructure();
     for (SModuleReference el : myLanguage.getExtendedLanguageRefs()) {
       if (!extendedLanguagesFromStructure.contains(el) && !BootstrapLanguages.coreLanguageRef().equals(el)) {
         // Language.getExtendedLanguageRefs() adds implicitly extended lang.core, we don't need to warn about it.
         // Perhaps, lang.core has not be part of getExtendedLanguageRefs(), but added at RT only? Do we need to manifest it at source level? To reference
         // core stuff without direct import?
-        if (!myProcessor.process(new ModuleValidationProblem(myLanguage, MessageStatus.WARNING, String.format("Superficial extended module %s, not referenced from structure aspect", el.getModuleName())))) {
-          return;
-        }
+        likelySuperfluousExtends.push(el);
       }
       final SModule resolved = el.resolve(myRepository);
       if (resolved instanceof Language) {
-        extendedLanguages.add((Language) resolved);
+        Language language = (Language) resolved;
+        extendedLanguages.add(language);
         continue;
       }
       if (!myProcessor.process(new ModuleValidationProblem(myLanguage, MessageStatus.ERROR, String.format(resolved == null ? "Can't find extended language: %s" : "Module %s is not a language, can't extend it", el.getModuleName())))) {
@@ -88,15 +89,7 @@ public class LanguageValidator {
       }
     }
 
-    // XXX why it's essential to have behavior aspects in extended languages?
-    HashSet<Language> visited = new HashSet<>();
-    if (LanguageAspect.BEHAVIOR.get(myLanguage) == null) {
-      if (!myProcessor.process(new ModuleValidationProblem(myLanguage, MessageStatus.ERROR, "Behavior aspect is absent"))) {
-        return;
-      }
-    }
-    visited.add(myLanguage);
-
+    HashSet<Language> extendedLanguagesClosure = new HashSet<>();
     while (!extendedLanguages.isEmpty()) {
       Language l = extendedLanguages.removeFirst();
       if (l == myLanguage) {
@@ -104,7 +97,9 @@ public class LanguageValidator {
           return;
         }
       }
-      if (!visited.add(l)) {
+      // consume one of actually extended languages, if any - when it's one of those we extend (perhaps, indirectly through another extended language)
+      extendedLanguagesFromStructure.remove(l.getModuleReference());
+      if (!extendedLanguagesClosure.add(l)) {
         continue;
       }
       for (SModuleReference el : l.getExtendedLanguageRefs()) {
@@ -112,7 +107,40 @@ public class LanguageValidator {
         if (resolved instanceof Language) {
           extendedLanguages.add((Language) resolved);
         }
+        // XXX whuy don't we complain some dependency is broken?
+        // Likely, because necessary error would show up for the extended language, the one with direct 'extends' dependency, see above.
       }
+    }
+
+      // if extendedLanguagesFromStructure still is not empty, we miss extends to the language
+    for (SModuleReference el : extendedLanguagesFromStructure) {
+      // XXX this particular problem could have a quick fix
+      String m = String.format("Subconcepts for language %s found, missing extends dependency", el.getModuleName());
+      // would be great to report this as error, but there are quite few languages that use IValidIdentifier from BL, and it's too much
+      // to force them to extend BL just for the sake of this interface. FIXME move IValidIdentifier to lang.core.
+      if (!myProcessor.process(new ModuleValidationProblem(myLanguage, MessageStatus.WARNING, m))) {
+        return;
+      }
+    }
+
+    // for a language to contribute editor extensions, we need 'extends' dependency, albeit unused in structure.
+    likelySuperfluousExtends.removeAll(getRequiredExtendsForEditorAspect());
+    for (SModuleReference el : likelySuperfluousExtends) {
+      // XXX this particular problem could have a quick fix
+      String m = String.format("Superfluous extended module %s, not referenced from structure aspect", el.getModuleName());
+      if (!myProcessor.process(new ModuleValidationProblem(myLanguage, MessageStatus.WARNING, m))) {
+        return;
+      }
+    }
+
+    // XXX why it's essential to have behavior aspects in extended languages?
+    if (LanguageAspect.BEHAVIOR.get(myLanguage) == null) {
+      if (!myProcessor.process(new ModuleValidationProblem(myLanguage, MessageStatus.ERROR, "Behavior aspect is absent"))) {
+        return;
+      }
+    }
+
+    for (Language l : extendedLanguagesClosure) {
       SModel descriptor = LanguageAspect.BEHAVIOR.get(l);
       if (descriptor != null) {
         continue;
@@ -121,7 +149,6 @@ public class LanguageValidator {
         return;
       }
     }
-
 
     for (SModuleReference mr : myLanguage.getRuntimeModulesReferences()) {
       SModule runtimeModule = mr.resolve(myRepository);
@@ -184,6 +211,7 @@ public class LanguageValidator {
    *      However, we shall look into actual references to tell e.g. aggregation of foreign concept from extension
    */
   private Collection<SModuleReference> getActuallyExtendedLanguagesFromStructure() {
+    // XXX can move LanguageAspect.STRUCTURE.get into CDS.scan(SModule|Language)
     SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
     if (structureModel == null) {
       return Collections.emptyList();
@@ -192,5 +220,15 @@ public class LanguageValidator {
     // except for lang.core, which is extended by default.
     ConceptDeclarationScanner cds = new ConceptDeclarationScanner().omitLangCore();
     return cds.scan(structureModel).getDependencyModules().stream().map(SModule::getModuleReference).collect(Collectors.toList());
+  }
+
+  private Collection<SModuleReference> getRequiredExtendsForEditorAspect() {
+    SModel editorModel = LanguageAspect.EDITOR.get(myLanguage);
+    if (editorModel == null) {
+      return Collections.emptyList();
+    }
+    EditorDeclarationScanner eds = new EditorDeclarationScanner();
+    eds.scan(editorModel);
+    return eds.getDependencyModules().stream().map(SModule::getModuleReference).collect(Collectors.toList());
   }
 }
