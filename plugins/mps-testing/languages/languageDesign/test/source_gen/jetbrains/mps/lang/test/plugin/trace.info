@@ -9,7 +9,6 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
@@ -17,12 +16,12 @@
       <unit at="10,0,24,0" name="jetbrains.mps.lang.test.plugin.ExtensionDescriptor" />
     </file>
     <file name="IconContainer.java">
-      <unit at="9,0,14,0" name="jetbrains.mps.lang.test.plugin.IconContainer" />
+      <unit at="7,0,10,0" name="jetbrains.mps.lang.test.plugin.IconContainer" />
     </file>
   </root>
   <root nodeRef="r:00a69138-8767-4011-a710-463511eae7a6(jetbrains.mps.lang.test.plugin)/3193873080290339088">
     <file name="LanguageAspectsEP_extension.java">
-      <node id="3193873080290339088" at="29,40,30,57" concept="11" />
+      <node id="3193873080290339088" at="29,40,30,57" concept="10" />
       <node id="3193873080290339088" at="34,48,35,22" concept="8" />
       <node id="3193873080290339088" at="38,29,39,42" concept="8" />
       <node id="3193873080290339088" at="42,60,43,71" concept="8" />
@@ -48,7 +47,7 @@
       <node id="3193873080290339088" at="34,0,37,0" concept="6" trace="getPresentableAspectName#()Ljava/lang/String;" />
       <node id="3193873080290339088" at="46,73,49,9" concept="5" />
       <node id="3193873080290339088" at="82,0,85,0" concept="6" trace="canCreate#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
-      <node id="3193873080290339088" at="101,0,104,0" concept="10" trace="eq_ecu8yf_a0b0a0a0a0a0c0d0a0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3193873080290339088" at="101,0,104,0" concept="9" trace="eq_ecu8yf_a0b0a0a0a0a0c0d0a0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="3193873080290339088" at="37,0,41,0" concept="6" trace="getId#()Ljava/lang/String;" />
       <node id="3193873080290339088" at="41,0,45,0" concept="6" trace="compareTo#(Ljetbrains/mps/aspects/OrderParticipant;)I" />
       <node id="3193873080290339088" at="52,0,56,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
@@ -119,17 +118,11 @@
       <unit id="3193873080290339088" at="28,0,105,0" name="jetbrains.mps.lang.test.plugin.LanguageAspectsEP_extension" />
     </file>
     <file name="test_Order.java">
-      <node id="6314101850316380918" at="8,23,9,194" concept="11" />
+      <node id="6314101850316380918" at="8,23,9,194" concept="10" />
       <node id="6314101850316380918" at="8,0,11,0" concept="2" trace="test_Order#()V" />
       <scope id="6314101850316380918" at="8,23,9,194" />
       <scope id="6314101850316380918" at="8,0,11,0" />
       <unit id="6314101850316380918" at="7,0,12,0" name="jetbrains.mps.lang.test.plugin.test_Order" />
-    </file>
-  </root>
-  <root nodeRef="r:00a69138-8767-4011-a710-463511eae7a6(jetbrains.mps.lang.test.plugin)/4343640488433004631">
-    <file name="Icons.java">
-      <node id="4343640488433004659" at="9,0,10,0" concept="9" trace="TestModel" />
-      <unit id="4343640488433004631" at="8,0,11,0" name="jetbrains.mps.lang.test.plugin.Icons" />
     </file>
   </root>
 </debug-info>
