@@ -213,6 +213,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_FontFamilyStyleClassItem_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_IExtensibleMenuPart_hasAllRequiredFeatures_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

@@ -29,6 +29,7 @@
     <import index="tpc5" ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)" />
     <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
     <import index="hypd" ref="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
+    <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
@@ -6375,6 +6376,65 @@
     <node concept="1YaCAy" id="V1I2dTBDtA" role="1YuTPh">
       <property role="TrG5h" value="node" />
       <ref role="1YaFvo" to="tpc2:3rSzFHWOd_m" resolve="IIncludeSubstituteMenuPart" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="41eklG9TvFd">
+    <property role="TrG5h" value="check_FontFamilyStyleClassItem" />
+    <property role="3GE5qa" value="Stylesheet" />
+    <node concept="3clFbS" id="41eklG9TvFe" role="18ibNy">
+      <node concept="3clFbJ" id="41eklG9TCJA" role="3cqZAp">
+        <node concept="3clFbS" id="41eklG9TCJC" role="3clFbx">
+          <node concept="a7r0C" id="41eklG9TAUu" role="3cqZAp">
+            <node concept="Xl_RD" id="41eklG9TNyB" role="a7wSD">
+              <property role="Xl_RC" value="The font is not available" />
+            </node>
+            <node concept="1YBJjd" id="41eklG9TN4h" role="2OEOjV">
+              <ref role="1YBMHb" node="41eklG9TvFg" resolve="node" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="41eklG9TLcq" role="3clFbw">
+          <node concept="3y3z36" id="41eklG9TCBf" role="3uHU7B">
+            <node concept="2OqwBi" id="41eklG9TBFz" role="3uHU7B">
+              <node concept="1YBJjd" id="41eklG9TByE" role="2Oq$k0">
+                <ref role="1YBMHb" node="41eklG9TvFg" resolve="node" />
+              </node>
+              <node concept="3TrcHB" id="41eklG9TBZx" role="2OqNvi">
+                <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+              </node>
+            </node>
+            <node concept="10Nm6u" id="41eklG9TCDI" role="3uHU7w" />
+          </node>
+          <node concept="3fqX7Q" id="41eklG9TKHg" role="3uHU7w">
+            <node concept="2OqwBi" id="41eklG9TKHi" role="3fr31v">
+              <node concept="2OqwBi" id="41eklG9TKHj" role="2Oq$k0">
+                <node concept="2YIFZM" id="41eklG9TKHk" role="2Oq$k0">
+                  <ref role="37wK5l" to="g51k:~FontRegistry.getInstance():jetbrains.mps.nodeEditor.cells.FontRegistry" resolve="getInstance" />
+                  <ref role="1Pybhc" to="g51k:~FontRegistry" resolve="FontRegistry" />
+                </node>
+                <node concept="liA8E" id="41eklG9TKHl" role="2OqNvi">
+                  <ref role="37wK5l" to="g51k:~FontRegistry.getAvailableFontFamilyNames():java.util.Set" resolve="getAvailableFontFamilyNames" />
+                </node>
+              </node>
+              <node concept="liA8E" id="41eklG9TKHm" role="2OqNvi">
+                <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                <node concept="2OqwBi" id="41eklG9TKHn" role="37wK5m">
+                  <node concept="1YBJjd" id="41eklG9TKHo" role="2Oq$k0">
+                    <ref role="1YBMHb" node="41eklG9TvFg" resolve="node" />
+                  </node>
+                  <node concept="3TrcHB" id="41eklG9TKHp" role="2OqNvi">
+                    <ref role="3TsBF5" to="tpc2:6rN18FHIfNV" resolve="style" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="41eklG9TvFg" role="1YuTPh">
+      <property role="TrG5h" value="node" />
+      <ref role="1YaFvo" to="tpc2:6rN18FHIfNk" resolve="FontFamilyStyleClassItem" />
     </node>
   </node>
 </model>
