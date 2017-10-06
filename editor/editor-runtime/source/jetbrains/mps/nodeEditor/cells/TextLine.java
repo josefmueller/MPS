@@ -175,6 +175,9 @@ public class TextLine {
       EditorSettings settings = EditorSettings.getInstance();
       Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
       String styleFontFamily = myStyle.get(StyleAttributes.FONT_FAMILY);
+      if (!FontRegistry.getInstance().getAvailableFontFamilyNames().contains(styleFontFamily)) {
+        styleFontFamily = null;
+      }
 
       Integer style = myStyle.get(StyleAttributes.FONT_STYLE);
       String family = styleFontFamily != null ? styleFontFamily : settings.getFontFamily();

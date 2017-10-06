@@ -4417,7 +4417,7 @@
       <node id="1221239223939" at="150,61,151,106" concept="8" />
       <node id="1221239223946" at="153,61,154,102" concept="8" />
       <node id="1221239223953" at="156,61,157,102" concept="8" />
-      <node id="5095082075499803492" at="159,62,160,102" concept="8" />
+      <node id="6965157697220616407" at="159,62,160,102" concept="8" />
       <node id="5095082075498994206" at="162,59,163,93" concept="8" />
       <node id="1221239223960" at="165,59,166,94" concept="8" />
       <node id="1221239223967" at="168,63,169,98" concept="8" />
@@ -4435,7 +4435,7 @@
       <node id="1221239223937" at="150,0,153,0" concept="6" trace="_StyleParameter_QueryFunction_adk1cf_a0b0#()Ljava/awt/Color;" />
       <node id="1221239223944" at="153,0,156,0" concept="6" trace="_StyleParameter_QueryFunction_adk1cf_a1b0#()Ljava/awt/Color;" />
       <node id="1221239223951" at="156,0,159,0" concept="6" trace="_StyleParameter_QueryFunction_adk1cf_a2b0#()Ljava/awt/Color;" />
-      <node id="5095082075499802950" at="159,0,162,0" concept="6" trace="_StyleParameter_QueryFunction_adk1cf_a3b0#()Ljava/lang/String;" />
+      <node id="6965157697220615861" at="159,0,162,0" concept="6" trace="_StyleParameter_QueryFunction_adk1cf_a3b0#()Ljava/lang/String;" />
       <node id="5095082075498992568" at="162,0,165,0" concept="6" trace="_StyleParameter_QueryFunction_adk1cf_a4b0#()I" />
       <node id="1221239223958" at="165,0,168,0" concept="6" trace="_StyleParameter_QueryFunction_adk1cf_a5b0#()I" />
       <node id="1221239223965" at="168,0,171,0" concept="6" trace="_StyleParameter_QueryFunction_adk1cf_a6b0#()Z" />
@@ -4463,7 +4463,7 @@
       <scope id="1221239223938" at="150,61,151,106" />
       <scope id="1221239223945" at="153,61,154,102" />
       <scope id="1221239223952" at="156,61,157,102" />
-      <scope id="5095082075499802951" at="159,62,160,102" />
+      <scope id="6965157697220615862" at="159,62,160,102" />
       <scope id="5095082075498992569" at="162,59,163,93" />
       <scope id="1221239223959" at="165,59,166,94" />
       <scope id="1221239223966" at="168,63,169,98" />
@@ -4483,7 +4483,7 @@
       <scope id="1221239223937" at="150,0,153,0" />
       <scope id="1221239223944" at="153,0,156,0" />
       <scope id="1221239223951" at="156,0,159,0" />
-      <scope id="5095082075499802950" at="159,0,162,0" />
+      <scope id="6965157697220615861" at="159,0,162,0" />
       <scope id="5095082075498992568" at="162,0,165,0" />
       <scope id="1221239223958" at="165,0,168,0" />
       <scope id="1221239223965" at="168,0,171,0" />
@@ -47058,14 +47058,14 @@
       <node id="7418278005949660423" at="125,35,126,87" concept="7" />
       <node id="7418278005949660423" at="126,87,127,112" concept="8" />
       <node id="7418278005949660423" at="128,10,129,22" concept="8" />
-      <node id="3653282105315362318" at="131,62,132,110" concept="8" />
+      <node id="6965157697220574328" at="131,62,132,110" concept="8" />
       <node id="7418278005950909490" at="138,120,139,73" concept="7" />
-      <node id="5095082075494250928" at="139,73,140,89" concept="2" />
-      <node id="5095082075498524486" at="140,89,141,54" concept="2" />
+      <node id="8545423393709147897" at="139,73,140,125" concept="2" />
+      <node id="5095082075498524486" at="140,125,141,54" concept="2" />
       <node id="7418278005950855630" at="141,54,142,18" concept="8" />
       <node id="7418278005950247421" at="144,148,145,101" concept="2" />
       <node id="3653282105314253055" at="148,56,149,169" concept="2" />
-      <node id="5095082075498562128" at="149,169,150,376" concept="2" />
+      <node id="5095082075498562128" at="149,169,150,381" concept="2" />
       <node id="6020170660777737094" at="151,14,152,180" concept="2" />
       <node id="7418278005950247421" at="155,45,156,19" concept="8" />
       <node id="7418278005950247421" at="160,84,161,261" concept="8" />
@@ -47105,7 +47105,7 @@
       <node id="7418278005949660423" at="78,57,81,5" concept="5" />
       <node id="5095082075498093590" at="85,0,88,0" concept="6" trace="nodeCondition_w2alof_a2a#()Z" />
       <node id="7418278005950247349" at="99,0,102,0" concept="6" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="3653282105315340728" at="131,0,134,0" concept="6" trace="_StyleParameter_QueryFunction_w2alof_a0c0#()Ljava/lang/String;" />
+      <node id="6965157697220502190" at="131,0,134,0" concept="6" trace="_StyleParameter_QueryFunction_w2alof_a0c0#()Ljava/lang/String;" />
       <node id="7418278005950247421" at="144,0,147,0" concept="6" trace="handleAction#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="7418278005950247421" at="155,0,158,0" concept="6" trace="isReferentPresentation#()Z" />
       <node id="5095082075498561015" at="163,0,166,0" concept="11" trace="eq_b3el4v_a0a0e51#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -47140,7 +47140,7 @@
       <scope id="5095082075498093591" at="85,46,86,185" />
       <scope id="7418278005950247349" at="99,53,100,155" />
       <scope id="7418278005950247349" at="103,117,104,223" />
-      <scope id="3653282105315340729" at="131,62,132,110" />
+      <scope id="6965157697220502191" at="131,62,132,110" />
       <scope id="7418278005950247421" at="144,148,145,101" />
       <scope id="5095082075498561091" at="151,14,152,180" />
       <scope id="7418278005950247421" at="155,45,156,19" />
@@ -47157,7 +47157,7 @@
         <var name="manager" id="7418278005949660423" />
       </scope>
       <scope id="7418278005950247421" at="135,0,137,0" />
-      <scope id="5095082075498548776" at="148,56,150,376" />
+      <scope id="5095082075498548776" at="148,56,150,381" />
       <scope id="7418278005949660423" at="167,48,169,33">
         <var name="provider" id="7418278005949660423" />
       </scope>
@@ -47165,7 +47165,7 @@
       <scope id="7418278005949660423" at="68,0,71,0" />
       <scope id="5095082075498093590" at="85,0,88,0" />
       <scope id="7418278005950247349" at="99,0,102,0" />
-      <scope id="3653282105315340728" at="131,0,134,0" />
+      <scope id="6965157697220502190" at="131,0,134,0" />
       <scope id="7418278005950247421" at="144,0,147,0">
         <var name="editorContext" id="7418278005950247421" />
         <var name="model" id="7418278005950247421" />

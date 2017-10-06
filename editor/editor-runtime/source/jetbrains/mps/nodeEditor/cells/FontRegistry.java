@@ -26,9 +26,12 @@ import java.awt.FontMetrics;
 import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static java.util.Locale.ENGLISH;
 
@@ -51,6 +54,7 @@ public class FontRegistry {
   private Map<String, FontFamily> myAvailableFonts;
   private Map<String, Font> myFontsCache = new HashMap<String, Font>();
   private Map<Font, FontMetrics> myFontMetricsCache = new HashMap<Font, FontMetrics>();
+  private Set<String> myAvailableFontFamilyNames;
 
   private FontRegistry() {
     loadStyledFonts();
@@ -108,8 +112,18 @@ public class FontRegistry {
     return result;
   }
 
-  public String[] getAvailableFontFamilyNames() {
-    return GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames(ENGLISH);
+  public Set<String> getAvailableFontFamilyNames() {
+    if (myAvailableFontFamilyNames == null) {
+      if (SystemInfo.isMac) {
+        myAvailableFontFamilyNames = Collections.unmodifiableSet(myAvailableFonts.keySet());
+      } else {
+        myAvailableFontFamilyNames = new HashSet<>();
+        Collections.addAll(myAvailableFontFamilyNames,
+                           GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames(ENGLISH));
+        myAvailableFontFamilyNames = Collections.unmodifiableSet(myAvailableFontFamilyNames);
+      }
+    }
+    return myAvailableFontFamilyNames;
   }
 
   private Pair<String, Integer> getRealFontNameAndStyle(String fontName, int style) {

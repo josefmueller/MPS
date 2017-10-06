@@ -27,6 +27,7 @@
       </concept>
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
+      <concept id="5358065249857880460" name="jetbrains.mps.lang.editor.structure.QueryFunction_FontFamily" flags="in" index="2nvQDS" />
       <concept id="1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" flags="nn" index="pncrf" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
@@ -37,7 +38,6 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
-      <concept id="3525058663444303551" name="jetbrains.mps.lang.editor.structure.QueryFunction_Style" flags="in" index="2RUkyi" />
       <concept id="1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" flags="ng" index="V5hpn">
         <child id="1186402402630" name="styleClass" index="V601i" />
       </concept>
@@ -530,12 +530,12 @@
     <node concept="PMmxH" id="7qnskOdiu9j" role="2wV5jI">
       <ref role="PMmxG" node="3yp29n1niqW" resolve="StyleTest_EditorComponent" />
       <node concept="2biZxu" id="7qnskOdi__u" role="3F10Kt">
-        <node concept="2RUkyi" id="7qnskOdiAi3" role="2biZxv">
-          <node concept="3clFbS" id="7qnskOdiAi4" role="2VODD2">
-            <node concept="3clFbF" id="7qnskOdiAqt" role="3cqZAp">
-              <node concept="2OqwBi" id="7qnskOdiAC2" role="3clFbG">
-                <node concept="pncrf" id="7qnskOdiAqs" role="2Oq$k0" />
-                <node concept="3TrcHB" id="7qnskOdiBkf" role="2OqNvi">
+        <node concept="2nvQDS" id="62Ddwnbsh_1" role="2biZxv">
+          <node concept="3clFbS" id="62Ddwnbsh_2" role="2VODD2">
+            <node concept="3clFbF" id="62DdwnbshHr" role="3cqZAp">
+              <node concept="2OqwBi" id="62DdwnbshV0" role="3clFbG">
+                <node concept="pncrf" id="62DdwnbshHq" role="2Oq$k0" />
+                <node concept="3TrcHB" id="62Ddwnbsiuy" role="2OqNvi">
                   <ref role="3TsBF5" to="dekf:7qnskOdizep" resolve="fontFamily" />
                 </node>
               </node>

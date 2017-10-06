@@ -108,6 +108,7 @@
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="1948540814635886374" name="jetbrains.mps.lang.editor.structure.AbstractCellSelector" flags="ng" index="lGBME" />
       <concept id="3308309804690746362" name="jetbrains.mps.lang.editor.structure.QueryFunction_ColorComposit" flags="ig" index="mot77" />
+      <concept id="5358065249857880460" name="jetbrains.mps.lang.editor.structure.QueryFunction_FontFamily" flags="in" index="2nvQDS" />
       <concept id="709996738298806197" name="jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText" flags="in" index="2o9xnK" />
       <concept id="1237375020029" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" flags="ln" index="pj6Ft" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
@@ -189,7 +190,6 @@
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
       <concept id="3738029991950788349" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Named" flags="ng" index="Q6S24" />
-      <concept id="3525058663444303551" name="jetbrains.mps.lang.editor.structure.QueryFunction_Style" flags="in" index="2RUkyi" />
       <concept id="4323500428121233431" name="jetbrains.mps.lang.editor.structure.EditorCellId" flags="ng" index="2SqB2G" />
       <concept id="1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" flags="ng" index="2SsqMj" />
       <concept id="4323500428136740385" name="jetbrains.mps.lang.editor.structure.CellIdReferenceSelector" flags="ng" index="2TlHUq">
@@ -2538,13 +2538,13 @@
             </node>
           </node>
         </node>
-        <node concept="2biZxu" id="4qPnysrC2j1" role="3F10Kt">
-          <node concept="2RUkyi" id="4qPnysrC356" role="2biZxv">
-            <node concept="3clFbS" id="4qPnysrC357" role="2VODD2">
-              <node concept="3clFbF" id="4qPnysrC3d$" role="3cqZAp">
-                <node concept="2OqwBi" id="4qPnysrC3yb" role="3clFbG">
-                  <node concept="pncrf" id="4qPnysrC3dz" role="2Oq$k0" />
-                  <node concept="2qgKlT" id="4qPnysrC4R5" role="2OqNvi">
+        <node concept="2biZxu" id="7qnskOdmtEv" role="3F10Kt">
+          <node concept="2nvQDS" id="62DdwnbqpUP" role="2biZxv">
+            <node concept="3clFbS" id="62DdwnbqpUQ" role="2VODD2">
+              <node concept="3clFbF" id="62Ddwnbqq3n" role="3cqZAp">
+                <node concept="2OqwBi" id="62DdwnbqqnY" role="3clFbG">
+                  <node concept="pncrf" id="62Ddwnbqq3m" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="62DdwnbqrKc" role="2OqNvi">
                     <ref role="37wK5l" to="tpcb:4qPnysr_4es" resolve="getFontFamily" />
                   </node>
                 </node>
@@ -25936,12 +25936,12 @@
       <node concept="3F0A7n" id="6rN18FHKv7m" role="3EZMnx">
         <ref role="1NtTu8" to="tpc2:6rN18FHIfNV" resolve="style" />
         <node concept="2biZxu" id="4qPnysrxxwk" role="3F10Kt">
-          <node concept="2RUkyi" id="3aN4bw7Bb6S" role="2biZxv">
-            <node concept="3clFbS" id="3aN4bw7Bb6T" role="2VODD2">
-              <node concept="3clFbF" id="3aN4bw7Bgoe" role="3cqZAp">
-                <node concept="2OqwBi" id="3aN4bw7BgBn" role="3clFbG">
-                  <node concept="pncrf" id="3aN4bw7Bgod" role="2Oq$k0" />
-                  <node concept="2qgKlT" id="3aN4bw7BhAp" role="2OqNvi">
+          <node concept="2nvQDS" id="62DdwnbpYaI" role="2biZxv">
+            <node concept="3clFbS" id="62DdwnbpYaJ" role="2VODD2">
+              <node concept="3clFbF" id="62DdwnbqfLS" role="3cqZAp">
+                <node concept="2OqwBi" id="62Ddwnbqg11" role="3clFbG">
+                  <node concept="pncrf" id="62DdwnbqfLR" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="62Ddwnbqh8n" role="2OqNvi">
                     <ref role="37wK5l" to="tpcb:SLohPpeqbF" resolve="getFontFamily" />
                   </node>
                 </node>
@@ -25966,20 +25966,20 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbF" id="4qPnysriRAK" role="3cqZAp">
-                  <node concept="2YIFZM" id="4qPnysriSoT" role="3clFbG">
-                    <ref role="37wK5l" to="33ny:~Collections.addAll(java.util.Collection,java.lang.Object...):boolean" resolve="addAll" />
-                    <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
-                    <node concept="37vLTw" id="4qPnysriT4X" role="37wK5m">
+                <node concept="3clFbF" id="7qnskOdmcrT" role="3cqZAp">
+                  <node concept="2OqwBi" id="7qnskOdmdwN" role="3clFbG">
+                    <node concept="37vLTw" id="7qnskOdmcrR" role="2Oq$k0">
                       <ref role="3cqZAo" node="6rN18FHN0KN" resolve="list" />
                     </node>
-                    <node concept="2OqwBi" id="6rN18FHKDq$" role="37wK5m">
-                      <node concept="2YIFZM" id="6rN18FHKD3w" role="2Oq$k0">
-                        <ref role="1Pybhc" to="g51k:~FontRegistry" resolve="FontRegistry" />
-                        <ref role="37wK5l" to="g51k:~FontRegistry.getInstance():jetbrains.mps.nodeEditor.cells.FontRegistry" resolve="getInstance" />
-                      </node>
-                      <node concept="liA8E" id="6rN18FHKDTs" role="2OqNvi">
-                        <ref role="37wK5l" to="g51k:~FontRegistry.getAvailableFontFamilyNames():java.lang.String[]" resolve="getAvailableFontFamilyNames" />
+                    <node concept="X8dFx" id="7qnskOdmg9o" role="2OqNvi">
+                      <node concept="2OqwBi" id="7qnskOdmhxw" role="25WWJ7">
+                        <node concept="2YIFZM" id="7qnskOdmhxx" role="2Oq$k0">
+                          <ref role="1Pybhc" to="g51k:~FontRegistry" resolve="FontRegistry" />
+                          <ref role="37wK5l" to="g51k:~FontRegistry.getInstance():jetbrains.mps.nodeEditor.cells.FontRegistry" resolve="getInstance" />
+                        </node>
+                        <node concept="liA8E" id="7qnskOdmhxy" role="2OqNvi">
+                          <ref role="37wK5l" to="g51k:~FontRegistry.getAvailableFontFamilyNames():java.util.Set" resolve="getAvailableFontFamilyNames" />
+                        </node>
                       </node>
                     </node>
                   </node>
