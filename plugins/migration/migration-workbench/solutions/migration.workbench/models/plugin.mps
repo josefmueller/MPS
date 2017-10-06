@@ -187,6 +187,10 @@
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
       </concept>
+      <concept id="1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" flags="nn" index="Rm8GO">
+        <reference id="1083260308426" name="enumConstantDeclaration" index="Rm8GQ" />
+        <reference id="1144432896254" name="enumClass" index="1Px2BO" />
+      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -6023,16 +6027,28 @@
         </node>
         <node concept="3clFbJ" id="2fg9H9N2hhz" role="3cqZAp">
           <node concept="3clFbS" id="2fg9H9N2hh_" role="3clFbx">
-            <node concept="3clFbF" id="6CdT9mpBjNd" role="3cqZAp">
-              <node concept="2YIFZM" id="6CdT9mpBkGy" role="3clFbG">
-                <ref role="1Pybhc" to="bim2:6CdT9mpAIg7" resolve="MigrationDialogUtil" />
-                <ref role="37wK5l" to="bim2:6CdT9mpBjP3" resolve="showNoMigrationMessage" />
-                <node concept="2OqwBi" id="7FLry2XR3jA" role="37wK5m">
-                  <node concept="2WthIp" id="7FLry2XR3jD" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="7FLry2XR3jF" role="2OqNvi">
+            <node concept="3clFbF" id="285c2S_YjHi" role="3cqZAp">
+              <node concept="2YIFZM" id="285c2S_YiZ6" role="3clFbG">
+                <ref role="37wK5l" to="jkm4:~Messages.showMessageDialog(com.intellij.openapi.project.Project,java.lang.String,java.lang.String,javax.swing.Icon):void" resolve="showMessageDialog" />
+                <ref role="1Pybhc" to="jkm4:~Messages" resolve="Messages" />
+                <node concept="2OqwBi" id="12C4aFiOyz$" role="37wK5m">
+                  <node concept="2WthIp" id="12C4aFiOyzB" role="2Oq$k0" />
+                  <node concept="1DTwFV" id="12C4aFiOyzD" role="2OqNvi">
                     <ref role="2WH_rO" node="2UTM4$6j1gg" resolve="project" />
                   </node>
                 </node>
+                <node concept="3cpWs3" id="285c2S_Ynnd" role="37wK5m">
+                  <node concept="Xl_RD" id="285c2S_YnnS" role="3uHU7w">
+                    <property role="Xl_RC" value="Migration assistant will not be started." />
+                  </node>
+                  <node concept="Xl_RD" id="285c2S_YlfP" role="3uHU7B">
+                    <property role="Xl_RC" value="Project doesn't need to be migrated.\n" />
+                  </node>
+                </node>
+                <node concept="Xl_RD" id="285c2S_YiZ9" role="37wK5m">
+                  <property role="Xl_RC" value="Migration Not Required" />
+                </node>
+                <node concept="10Nm6u" id="285c2S_YiZc" role="37wK5m" />
               </node>
             </node>
             <node concept="3clFbF" id="7FLry2XRg86" role="3cqZAp">
@@ -6975,6 +6991,20 @@
             </node>
             <node concept="37vLTw" id="5pUhUVGMybD" role="37vLTx">
               <ref role="3cqZAo" node="5pUhUVGMxI_" resolve="p" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3ciAo9GojPk" role="3cqZAp">
+          <node concept="2OqwBi" id="3ciAo9Gokps" role="3clFbG">
+            <node concept="1rXfSq" id="3ciAo9GojPi" role="2Oq$k0">
+              <ref role="37wK5l" to="o8ag:cQNMA1F9hm" resolve="getRequiredSteps" />
+            </node>
+            <node concept="liA8E" id="3ciAo9Gol4x" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+              <node concept="Rm8GO" id="3ciAo9Golu$" role="37wK5m">
+                <ref role="1Px2BO" to="o8ag:cQNMA1ENsh" resolve="MigrationSession.MigrationStepKind" />
+                <ref role="Rm8GQ" to="o8ag:cQNMA1EOrF" resolve="MIGRATE" />
+              </node>
             </node>
           </node>
         </node>
