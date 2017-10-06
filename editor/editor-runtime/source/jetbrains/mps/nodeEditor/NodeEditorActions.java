@@ -480,7 +480,14 @@ public class NodeEditorActions {
     @Override
     public void execute(EditorContext context) {
       SelectionManager selectionManager = context.getEditorComponent().getSelectionManager();
-      selectionManager.pushSelection(selectionManager.createSelection(findTarget(selectionManager)));
+      Selection selection = selectionManager.getSelection();
+      EditorCell cell = selection.getSelectedCells().get(0);
+      while (cell.getParent() != null) {
+        cell = cell.getParent();
+        if (cell.isSelectable()) {
+          selectionManager.pushSelection(selectionManager.createSelection(cell));
+        }
+      }
     }
 
     private EditorCell findTarget(SelectionManager selectionManager) {
