@@ -17,7 +17,6 @@ package jetbrains.mps.testsuites;
 
 import jetbrains.mps.generator.impl.plan.GenPlanTest;
 import jetbrains.mps.ide.ThreadUtilsTest;
-import jetbrains.mps.smodel.ModelPerformanceTest;
 import jetbrains.mps.workbench.goTo.matcher.MPSPackageItemProviderTests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -36,6 +35,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({
     GenPlanTest.class,
     MPSPackageItemProviderTests.class,
+    jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
+    jetbrains.mps.ide.blame.command.YouTrackStatsTest.class,
     ThreadUtilsTest.class})
 public class NoPlatformTestSuite {
 }

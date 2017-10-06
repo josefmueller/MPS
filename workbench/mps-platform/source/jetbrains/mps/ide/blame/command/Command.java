@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.httpclient.methods.StringRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.FilePart;
 import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.Part;
@@ -38,7 +39,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 /**
@@ -293,6 +297,49 @@ public class Command {
       availableVersions.add(v.getText());
     }
     return availableVersions;
+  }
+
+  /**
+   * https://www.jetbrains.com/help/youtrack/standalone/Get-Number-of-Issues-for-Several-Queries.html
+   * @param users2counts map of Youtrack login and placeholder value that would get populated on successful execution of the command.
+   * @return modifies map values, reporting number of issues for a user. Note, null value is left in case API didn't answer with number of issues (gave -1).
+   *         You may want to issue request few times to get answer (for whatever reason, Youtrack not necessarily answers at the first request, even with 'sync')
+   * @throws IOException in case of communication error
+   */
+  public Response countUnresolvedIssues(Map<String, Integer> users2counts) throws IOException {
+    // I read the warning regarding use of sync, but it doesn't return anything but -1 if I don't specify it.
+    PostMethod p = new PostMethod(YOUTRACK_BASE_URL + POST_ISSUE + "counts?sync");
+    String fmt = "<query>project:MPS #unresolved Assignee: %s</query>\n";
+    StringBuilder sb = new StringBuilder();
+    users2counts.forEach((s, i) -> sb.append(String.format(fmt, s)));
+    String text = String.format("<?xml version='1.0' encoding='UTF-8' standalone='yes'?>\n<queries>\n%s</queries>", sb);
+    p.setRequestEntity(new StringRequestEntity(text, "text/xml", "UTF-8"));
+    c.executeMethod(p);
+
+    int statusCode = p.getStatusCode();
+    String responseString = p.getResponseBodyAsString();
+    if (statusCode == 200) {
+      Response response = new Response(RESPONSE_SUCCEEDED, responseString, true, null);
+      Element counts = response.getResponseXml();
+      Iterator<Entry<String, Integer>> entryIterator = users2counts.entrySet().iterator();
+      for (Element count : counts.getChildren("count")) {
+        if (!entryIterator.hasNext()) {
+          break;
+        }
+        Entry<String, Integer> nextEntry = entryIterator.next();
+        try {
+          int c = Integer.parseInt(count.getTextTrim(), 10);
+          if (c != -1) {
+            nextEntry.setValue(c);
+          }
+        } catch (Exception ex) {
+          ex.printStackTrace();
+        }
+      }
+      return response;
+    } else {
+      return new Response(RESPONSE_FAILED, responseString, false, null);
+    }
   }
 
   /**
