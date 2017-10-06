@@ -32,6 +32,7 @@ public enum CellActionId {
   ROOT_END("ROOT_END", "root_end_action_id"),
   LOCAL_HOME("LOCAL_HOME", "local_home_action_id"),
   LOCAL_END("LOCAL_END", "local_end_action_id"),
+  SELECT_ALL("SELECT_ALL", "select_all_action_id"),
   SELECT_LEFT("SELECT_LEFT", "select_left_action_id"),
   SELECT_RIGHT("SELECT_RIGHT", "select_right_action_id"),
   SELECT_UP("SELECT_UP", "select_up_action_id"),
@@ -96,6 +97,7 @@ public enum CellActionId {
     ListSequence.fromList(list).addElement(CellActionId.ROOT_END);
     ListSequence.fromList(list).addElement(CellActionId.LOCAL_HOME);
     ListSequence.fromList(list).addElement(CellActionId.LOCAL_END);
+    ListSequence.fromList(list).addElement(CellActionId.SELECT_ALL);
     ListSequence.fromList(list).addElement(CellActionId.SELECT_LEFT);
     ListSequence.fromList(list).addElement(CellActionId.SELECT_RIGHT);
     ListSequence.fromList(list).addElement(CellActionId.SELECT_UP);
@@ -200,6 +202,9 @@ public enum CellActionId {
     }
     if (value.equals(CellActionId.LOCAL_END.getValueAsString())) {
       return CellActionId.LOCAL_END;
+    }
+    if (value.equals(CellActionId.SELECT_ALL.getValueAsString())) {
+      return CellActionId.SELECT_ALL;
     }
     if (value.equals(CellActionId.SELECT_LEFT.getValueAsString())) {
       return CellActionId.SELECT_LEFT;

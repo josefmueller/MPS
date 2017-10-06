@@ -1246,6 +1246,10 @@
       <property role="1uS6qv" value="local_end_action_id" />
       <property role="1uS6qo" value="LOCAL_END" />
     </node>
+    <node concept="M4N5e" id="4qq5P9VLqVA" role="M5hS2">
+      <property role="1uS6qo" value="SELECT_ALL" />
+      <property role="1uS6qv" value="select_all_action_id" />
+    </node>
     <node concept="M4N5e" id="7P1WhNABBi$" role="M5hS2">
       <property role="1uS6qv" value="select_left_action_id" />
       <property role="1uS6qo" value="SELECT_LEFT" />
