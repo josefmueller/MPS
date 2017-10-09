@@ -4897,6 +4897,35 @@
     </node>
     <node concept="tnohg" id="65hwFmZhWrf" role="tncku">
       <node concept="3clFbS" id="65hwFmZhWrg" role="2VODD2">
+        <node concept="3cpWs8" id="2JIWr1XywsW" role="3cqZAp">
+          <node concept="3cpWsn" id="2JIWr1XywsX" role="3cpWs9">
+            <property role="TrG5h" value="project" />
+            <node concept="3uibUv" id="2JIWr1Xywpu" role="1tU5fm">
+              <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+            </node>
+            <node concept="2OqwBi" id="2JIWr1XywsY" role="33vP2m">
+              <node concept="2WthIp" id="2JIWr1XywsZ" role="2Oq$k0" />
+              <node concept="1DTwFV" id="2JIWr1Xywt0" role="2OqNvi">
+                <ref role="2WH_rO" node="65hwFmZi1Wy" resolve="project" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="2JIWr1XywxW" role="3cqZAp">
+          <node concept="3cpWsn" id="2JIWr1XywxX" role="3cpWs9">
+            <property role="TrG5h" value="mpsProject" />
+            <node concept="3uibUv" id="2JIWr1XywxT" role="1tU5fm">
+              <ref role="3uigEE" to="z1c3:~MPSProject" resolve="MPSProject" />
+            </node>
+            <node concept="2OqwBi" id="2JIWr1XywxY" role="33vP2m">
+              <node concept="2WthIp" id="2JIWr1XywxZ" role="2Oq$k0" />
+              <node concept="1DTwFV" id="2JIWr1Xywy0" role="2OqNvi">
+                <ref role="2WH_rO" node="65hwFmZi3UQ" resolve="mpsProject" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="2JIWr1XywWz" role="3cqZAp" />
         <node concept="3cpWs8" id="5pUhUVGCwnh" role="3cqZAp">
           <node concept="3cpWsn" id="5pUhUVGCwni" role="3cpWs9">
             <property role="TrG5h" value="settingsDialog" />
@@ -4906,11 +4935,8 @@
             <node concept="2ShNRf" id="5pUhUVGCwnj" role="33vP2m">
               <node concept="1pGfFk" id="5pUhUVGCwnk" role="2ShVmc">
                 <ref role="37wK5l" node="3EnpNH2zGjR" resolve="MigrationTestConfigDialog" />
-                <node concept="2OqwBi" id="5pUhUVGCwnl" role="37wK5m">
-                  <node concept="2WthIp" id="5pUhUVGCwnm" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="5pUhUVGCwnn" role="2OqNvi">
-                    <ref role="2WH_rO" node="65hwFmZi1Wy" resolve="project" />
-                  </node>
+                <node concept="37vLTw" id="2JIWr1Xywt2" role="37wK5m">
+                  <ref role="3cqZAo" node="2JIWr1XywsX" resolve="project" />
                 </node>
               </node>
             </node>
@@ -4940,11 +4966,8 @@
             <node concept="2ShNRf" id="5pUhUVGCwjQ" role="33vP2m">
               <node concept="1pGfFk" id="5pUhUVGCwjR" role="2ShVmc">
                 <ref role="37wK5l" node="65hwFmZizYX" resolve="TestMigrationSession" />
-                <node concept="2OqwBi" id="6lgfg0gmjiZ" role="37wK5m">
-                  <node concept="2WthIp" id="6lgfg0gmjj2" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="6lgfg0gmjN3" role="2OqNvi">
-                    <ref role="2WH_rO" node="65hwFmZi3UQ" resolve="mpsProject" />
-                  </node>
+                <node concept="37vLTw" id="2JIWr1Xywy1" role="37wK5m">
+                  <ref role="3cqZAo" node="2JIWr1XywxX" resolve="mpsProject" />
                 </node>
                 <node concept="2OqwBi" id="5pUhUVGDXmS" role="37wK5m">
                   <node concept="37vLTw" id="5pUhUVGDXcH" role="2Oq$k0">
@@ -4963,11 +4986,8 @@
             <node concept="2ShNRf" id="65hwFmZiB6y" role="2Oq$k0">
               <node concept="1pGfFk" id="65hwFmZiB6z" role="2ShVmc">
                 <ref role="37wK5l" to="o8ag:5SsFeroaau7" resolve="MigrationWizard" />
-                <node concept="2OqwBi" id="65hwFmZiKgl" role="37wK5m">
-                  <node concept="2WthIp" id="65hwFmZiKgo" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="65hwFmZiLjM" role="2OqNvi">
-                    <ref role="2WH_rO" node="65hwFmZi1Wy" resolve="project" />
-                  </node>
+                <node concept="37vLTw" id="2JIWr1Xywt1" role="37wK5m">
+                  <ref role="3cqZAo" node="2JIWr1XywsX" resolve="project" />
                 </node>
                 <node concept="37vLTw" id="5pUhUVGCwjS" role="37wK5m">
                   <ref role="3cqZAo" node="5pUhUVGCwjP" resolve="session" />

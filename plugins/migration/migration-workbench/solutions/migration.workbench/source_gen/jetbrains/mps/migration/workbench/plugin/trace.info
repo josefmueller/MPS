@@ -1440,25 +1440,28 @@
       <node id="7012529811902416590" at="39,5,40,66" concept="12" />
       <node id="7012529811902416590" at="41,22,42,21" concept="13" />
       <node id="7012529811902416590" at="44,5,45,16" concept="13" />
-      <node id="6231371851040425425" at="48,96,49,116" concept="12" />
-      <node id="6231371851040429826" at="50,41,51,13" concept="13" />
-      <node id="6231371851040425204" at="52,5,53,134" concept="12" />
-      <node id="7012529811902591392" at="53,134,54,85" concept="6" />
+      <node id="3165733328410773308" at="48,96,49,60" concept="12" />
+      <node id="3165733328410773628" at="49,60,50,73" concept="12" />
+      <node id="3165733328410775331" at="50,73,51,0" concept="15" />
+      <node id="6231371851040425425" at="51,0,52,86" concept="12" />
+      <node id="6231371851040429826" at="53,41,54,13" concept="13" />
+      <node id="6231371851040425204" at="55,5,56,100" concept="12" />
+      <node id="7012529811902591392" at="56,100,57,55" concept="6" />
       <node id="7012529811902416590" at="29,95,32,5" concept="10" />
       <node id="7012529811902416590" at="34,56,37,7" concept="10" />
       <node id="7012529811902416590" at="40,66,43,7" concept="10" />
-      <node id="6231371851040428819" at="49,116,52,5" concept="10" />
+      <node id="6231371851040428819" at="52,86,55,5" concept="10" />
       <node id="7012529811902416590" at="24,0,28,0" concept="11" trace="isDumbAware#()Z" />
       <node id="7012529811902416590" at="19,0,24,0" concept="3" trace="TestMigrationWizard_Action#()V" />
       <node id="7012529811902416590" at="32,5,38,5" concept="1" />
       <node id="7012529811902416590" at="38,5,44,5" concept="1" />
-      <node id="7012529811902416590" at="47,0,56,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="7012529811902416590" at="47,0,59,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="7012529811902416590" at="28,0,47,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="7012529811902416590" at="25,32,26,16" />
       <scope id="7012529811902416590" at="30,53,31,19" />
       <scope id="7012529811902416590" at="35,22,36,21" />
       <scope id="7012529811902416590" at="41,22,42,21" />
-      <scope id="6231371851040428821" at="50,41,51,13" />
+      <scope id="6231371851040428821" at="53,41,54,13" />
       <scope id="7012529811902416590" at="19,39,22,40" />
       <scope id="7012529811902416590" at="24,0,28,0" />
       <scope id="7012529811902416590" at="33,5,37,7">
@@ -1468,11 +1471,13 @@
         <var name="p" id="7012529811902416590" />
       </scope>
       <scope id="7012529811902416590" at="19,0,24,0" />
-      <scope id="7012529811902416590" at="48,96,54,85">
+      <scope id="7012529811902416590" at="48,96,57,55">
+        <var name="mpsProject" id="3165733328410773629" />
+        <var name="project" id="3165733328410773309" />
         <var name="session" id="6231371851040425205" />
         <var name="settingsDialog" id="6231371851040425426" />
       </scope>
-      <scope id="7012529811902416590" at="47,0,56,0">
+      <scope id="7012529811902416590" at="47,0,59,0">
         <var name="_params" id="7012529811902416590" />
         <var name="event" id="7012529811902416590" />
       </scope>
@@ -1481,7 +1486,7 @@
         <var name="_params" id="7012529811902416590" />
         <var name="event" id="7012529811902416590" />
       </scope>
-      <unit id="7012529811902416590" at="16,0,57,0" name="jetbrains.mps.migration.workbench.plugin.TestMigrationWizard_Action" />
+      <unit id="7012529811902416590" at="16,0,60,0" name="jetbrains.mps.migration.workbench.plugin.TestMigrationWizard_Action" />
     </file>
   </root>
   <root nodeRef="r:e303f5e6-4651-4e3c-b105-2f02e438900c(jetbrains.mps.migration.workbench.plugin)/7012529811902416611">

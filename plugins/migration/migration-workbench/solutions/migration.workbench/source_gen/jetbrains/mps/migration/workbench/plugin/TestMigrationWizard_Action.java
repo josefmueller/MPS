@@ -46,11 +46,14 @@ public class TestMigrationWizard_Action extends BaseAction {
   }
   @Override
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
-    MigrationTestConfigDialog settingsDialog = new MigrationTestConfigDialog(event.getData(CommonDataKeys.PROJECT));
+    Project project = event.getData(CommonDataKeys.PROJECT);
+    MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+
+    MigrationTestConfigDialog settingsDialog = new MigrationTestConfigDialog(project);
     if (!(settingsDialog.showAndGet())) {
       return;
     }
-    TestMigrationSession session = new TestMigrationSession(event.getData(MPSCommonDataKeys.MPS_PROJECT), settingsDialog.getResult());
-    new MigrationWizard(event.getData(CommonDataKeys.PROJECT), session).showAndGet();
+    TestMigrationSession session = new TestMigrationSession(mpsProject, settingsDialog.getResult());
+    new MigrationWizard(project, session).showAndGet();
   }
 }
