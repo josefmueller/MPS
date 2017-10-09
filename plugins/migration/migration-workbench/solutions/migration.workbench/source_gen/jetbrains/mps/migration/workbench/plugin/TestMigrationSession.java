@@ -114,6 +114,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
   public TestMigrationSession(MPSProject p, MigrationTestConfigDialog.Result settings) {
     mySettings = settings;
     myProject = p;
+    getRequiredSteps().add(MigrationSession.MigrationStepKind.MIGRATE);
   }
   public Project getProject() {
     return myProject;

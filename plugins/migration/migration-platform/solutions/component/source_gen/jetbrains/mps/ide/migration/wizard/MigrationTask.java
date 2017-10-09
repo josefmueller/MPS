@@ -33,11 +33,11 @@ import org.jetbrains.mps.openapi.util.Processor;
 import java.util.HashMap;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.lang.migration.runtime.base.BaseScriptReference;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class MigrationTask {
   private static final Logger LOG = LogManager.getLogger(MigrationTask.class);
@@ -75,31 +75,40 @@ public class MigrationTask {
   }
 
   protected void doRun() throws MigrationError {
-    if (mySession.getCurrentStage().equals(0)) {
-      mySession.setCurrentStage(1);
+    boolean resave = mySession.getRequiredSteps().contains(MigrationSession.MigrationStepKind.RESAVE);
+    boolean migrate = mySession.getRequiredSteps().contains(MigrationSession.MigrationStepKind.MIGRATE);
+
+    if (checkAndIncStage(0)) {
+      if (resave) {
+        // add label to local history if requested 
+        runResave(myMonitor.subTask((migrate ? 10 : 100)));
+        if (!(migrate)) {
+          return;
+        }
+      }
+    }
+
+    if (checkAndIncStage(1)) {
       List<ScriptApplied> missingMigrations = findMissingMigrations(myMonitor.subTask(5));
       if (ListSequence.fromList(missingMigrations).isNotEmpty()) {
         throw new MigrationsMissingError(missingMigrations);
       }
     }
 
-    if (mySession.getCurrentStage().equals(1)) {
-      mySession.setCurrentStage(2);
+    if (checkAndIncStage(2)) {
       if (!((runCleanupMigrations(myMonitor.subTask(10))))) {
         throw new MigrationExceptionError();
       }
     }
 
-    if (mySession.getCurrentStage().equals(2)) {
-      mySession.setCurrentStage(3);
+    if (checkAndIncStage(3)) {
       Map<SModule, SModule> errsToShow = checkMigratedLibs(myMonitor.subTask(5));
       if (MapSequence.fromMap(errsToShow).isNotEmpty()) {
         throw new NotMigratedLibsError(errsToShow);
       }
     }
 
-    if (mySession.getCurrentStage().equals(3)) {
-      mySession.setCurrentStage(4);
+    if (checkAndIncStage(4)) {
       // null - no error, true - must stop, false - can ignore 
       boolean errors = checkModels(myMonitor.subTask(20));
       if (errors) {
@@ -112,7 +121,7 @@ public class MigrationTask {
     if (!((runProjectMigrations(myMonitor.subTask(5))))) {
       throw new MigrationExceptionError();
     }
-    if (!((runLanguageMigrations(myMonitor.subTask(40))))) {
+    if (!((runLanguageMigrations(myMonitor.subTask((resave ? 30 : 40)))))) {
       throw new MigrationExceptionError();
     }
     addGlobalLabel(mySession.getProject(), FINISHED);
@@ -121,6 +130,14 @@ public class MigrationTask {
     if (findNotMigrated(myMonitor.subTask(15))) {
       throw new PostCheckError(mySession.getProject(), myWereRun, false, mySession.getChecker());
     }
+  }
+
+  private boolean checkAndIncStage(int stage) {
+    if (mySession.getCurrentStage().equals(stage)) {
+      mySession.setCurrentStage(stage + 1);
+      return true;
+    }
+    return false;
   }
 
   protected static void addGlobalLabel(Project p, String label) {
@@ -148,7 +165,7 @@ public class MigrationTask {
 
     // todo pass ModalityState to constructor/via session? 
     // in tests, we have EmptyProgressIndicator and use NON_MODAL 
-    JComponent modalityComponent = check_ajmasp_a0e0z(as_ajmasp_a0a0e0ab(myMonitor.getIndicator(), InlineProgressIndicator.class));
+    JComponent modalityComponent = check_ajmasp_a0e0bb(as_ajmasp_a0a0e0cb(myMonitor.getIndicator(), InlineProgressIndicator.class));
     ModalityState modalityState = (modalityComponent == null ? ModalityState.NON_MODAL : ModalityState.stateForComponent(modalityComponent));
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
@@ -254,6 +271,31 @@ public class MigrationTask {
     return hasErrors.value;
   }
 
+  private void runResave(ProgressMonitor m) {
+    final Wrappers._T<List<SModule>> allModules = new Wrappers._T<List<SModule>>();
+    final Project project = mySession.getProject();
+    project.getRepository().getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        allModules.value = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(project)).toListSequence();
+      }
+    });
+    m.start("Resaving modules...", ListSequence.fromList(allModules.value).count());
+    for (final SModule module : ListSequence.fromList(allModules.value)) {
+      m.advance(1);
+      project.getRepository().getModelAccess().runWriteAction(new Runnable() {
+        public void run() {
+          mySession.getMigrationRegistry().doUpdateImportVersions(module);
+        }
+      });
+    }
+    project.getRepository().getModelAccess().runWriteAction(new Runnable() {
+      public void run() {
+        project.getRepository().saveAll();
+      }
+    });
+    m.done();
+  }
+
   private boolean runProjectMigrations(ProgressMonitor m) {
     m.start("Running project migrations...", projectStepsCount(false));
     boolean success = true;
@@ -304,7 +346,7 @@ public class MigrationTask {
           if (next == null) {
             return false;
           }
-          return eq_ajmasp_a0c0a0a3a0h0e0mb(sa.getScriptReference(), next.getScriptReference());
+          return eq_ajmasp_a0c0a0a3a0h0e0qb(sa.getScriptReference(), next.getScriptReference());
         }
       }))) {
         success = false;
@@ -352,16 +394,16 @@ public class MigrationTask {
     });
     return res.value;
   }
-  private static JComponent check_ajmasp_a0e0z(InlineProgressIndicator checkedDotOperand) {
+  private static JComponent check_ajmasp_a0e0bb(InlineProgressIndicator checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent();
     }
     return null;
   }
-  private static <T> T as_ajmasp_a0a0e0ab(Object o, Class<T> type) {
+  private static <T> T as_ajmasp_a0a0e0cb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static boolean eq_ajmasp_a0c0a0a3a0h0e0mb(Object a, Object b) {
+  private static boolean eq_ajmasp_a0c0a0a3a0h0e0qb(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

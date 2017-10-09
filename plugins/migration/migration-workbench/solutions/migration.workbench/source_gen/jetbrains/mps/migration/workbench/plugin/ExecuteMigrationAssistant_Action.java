@@ -17,7 +17,7 @@ import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.migration.MigrationRegistry;
 import jetbrains.mps.lang.migration.runtime.base.MigrationModuleUtil;
-import jetbrains.mps.ide.migration.MigrationDialogUtil;
+import com.intellij.openapi.ui.Messages;
 
 public class ExecuteMigrationAssistant_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -66,7 +66,7 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
       }
     });
     if (!(migrationRequired.value)) {
-      MigrationDialogUtil.showNoMigrationMessage(((Project) MapSequence.fromMap(_params).get("project")));
+      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), "Project doesn't need to be migrated.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
       mt.resetMigrationQueuedFlag();
     } else {
       mt.postponeMigration();

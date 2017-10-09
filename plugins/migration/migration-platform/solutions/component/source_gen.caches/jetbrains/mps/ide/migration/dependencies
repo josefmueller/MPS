@@ -97,13 +97,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.MigrationChecker" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.migration.MigrationDialogUtil" file="MigrationDialogUtil.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.ui.Messages" />
-    <classNode dependClassName="java.lang.StringBuilder" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.migration.MigrationExecutor" file="MigrationExecutor.java">
     <classNode dependClassName="jetbrains.mps.ide.migration.ScriptApplied" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
@@ -242,7 +235,6 @@
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationChecker" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationCheckerImpl" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.MigrationDialogUtil" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationExecutor" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationExecutorImpl" />
     <classNode dependClassName="jetbrains.mps.ide.migration.MigrationRegistry" />
@@ -267,7 +259,6 @@
     <classNode dependClassName="jetbrains.mps.migration.global.MigrationProblemHandler" />
     <classNode dependClassName="jetbrains.mps.module.ReloadableModuleBase" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -290,7 +281,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.migration.IStartupMigrationExecutor" />
   </dependency>

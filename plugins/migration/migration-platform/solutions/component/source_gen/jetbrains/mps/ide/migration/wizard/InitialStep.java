@@ -7,9 +7,11 @@ import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
 import javax.swing.JComponent;
 import java.util.HashMap;
 import java.awt.Dimension;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import com.intellij.ui.IdeBorderFactory;
-import javax.swing.JPanel;
 import javax.swing.Box;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -44,7 +46,6 @@ import javax.swing.tree.DefaultTreeCellRenderer;
 import java.awt.Component;
 import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.ui.components.JBScrollPane;
-import java.awt.BorderLayout;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -63,17 +64,23 @@ public class InitialStep extends BaseStep {
   @Override
   protected void doCreateComponent(JComponent mainPanel) {
     // Set preferred size to avoid trim of Help button (if no icon presented) 
-    mainPanel.setPreferredSize(new Dimension(400, 200));
+    mainPanel.setPreferredSize(new Dimension(600, 400));
+    mainPanel.setLayout(new BorderLayout());
 
-    mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
-    mainPanel.setBorder(IdeBorderFactory.createTitledBorder("Migrations to be applied", false));
+    mainPanel.add(new JLabel(createText()), BorderLayout.NORTH);
+
+    JPanel migrationsPanel = new JPanel();
+    mainPanel.add(migrationsPanel, BorderLayout.CENTER);
+
+    migrationsPanel.setLayout(new BoxLayout(migrationsPanel, BoxLayout.Y_AXIS));
+    migrationsPanel.setBorder(IdeBorderFactory.createTitledBorder("Migrations to be applied", false));
 
     JPanel infoPanel = new JPanel();
     infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.X_AXIS));
     infoPanel.add(Box.createRigidArea(new Dimension()));
     infoPanel.add(createMigrationsInfo());
     infoPanel.add(Box.createRigidArea(new Dimension()));
-    mainPanel.add(infoPanel);
+    migrationsPanel.add(infoPanel);
 
     List<ProjectMigrationWithOptions.Option> options = mySession.getOptions().optionsList();
 
@@ -93,8 +100,23 @@ public class InitialStep extends BaseStep {
       }
       settingsPanel.add(internalPanel);
       settingsPanel.add(Box.createHorizontalGlue());
-      mainPanel.add(settingsPanel);
+      migrationsPanel.add(settingsPanel);
     }
+  }
+
+  public String createText() {
+    StringBuilder text = new StringBuilder();
+    text.append("<html>");
+    text.append("This project needs to be migrated.<br><br>");
+
+    text.append("This project uses older versions of languages and/or outdated project format. ");
+    text.append("To work correctly in the current environment, some migrations should be applied to the project. ");
+    text.append("If the migration is postponed, it is still possible to work with the project. ");
+    text.append("However, not migrated code may work slower or worse in some aspect, and typically will not work in next release. ");
+    text.append("It is strongly recommended to run the migrations as soon as possible and only use not-migrated project to fix any problems in it before migrating.<br><br>");
+
+    text.append("</html>");
+    return text.toString();
   }
 
   private JComponent createMigrationsInfo() {
@@ -106,6 +128,12 @@ public class InitialStep extends BaseStep {
       public void run() {
         MigrationRegistry manager = mySession.getMigrationRegistry();
         final Icon migrationIcon = ApplicationManager.getApplication().getComponent(GlobalIconManager.class).getIconFor(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x73e8a2c68b62c6a3L, "jetbrains.mps.lang.migration.structure.MigrationScript"));
+
+        // module resave 
+        if (mySession.getRequiredSteps().contains(MigrationSession.MigrationStepKind.RESAVE)) {
+          DefaultMutableTreeNode uroot = new InitialStep.MyTreeNode("Update Descriptors", migrationIcon);
+          root.add(uroot);
+        }
 
         // project migrations 
         final DefaultMutableTreeNode croot = new DefaultMutableTreeNode("Cleanups");
@@ -218,7 +246,7 @@ public class InitialStep extends BaseStep {
       public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
         super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
         if (value instanceof InitialStep.MyTreeNode) {
-          setIcon(as_nznoqw_a0a0a0b0a0a0a0i0j(value, InitialStep.MyTreeNode.class).getIcon());
+          setIcon(as_nznoqw_a0a0a0b0a0a0a0i0l(value, InitialStep.MyTreeNode.class).getIcon());
         } else {
           setIcon((expanded ? IdeIcons.OPENED_FOLDER : IdeIcons.CLOSED_FOLDER));
         }
@@ -277,7 +305,7 @@ public class InitialStep extends BaseStep {
       return myIcon;
     }
   }
-  private static <T> T as_nznoqw_a0a0a0b0a0a0a0i0j(Object o, Class<T> type) {
+  private static <T> T as_nznoqw_a0a0a0b0a0a0a0i0l(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
