@@ -283,7 +283,18 @@ public abstract class MessageList implements IMessageList, SearchHistoryStorage,
 
   @Override
   public void wake() {
-    bringToFront();
+    // for reasons why I use new identity for each call see #clear().
+    // I don't expect a lot of wake calls, and see no reason to merge these calls (unless can ensure the last one added is respected)
+    myUpdateQueue.queue(new Update(new Object()) {
+      @Override
+      public void run() {
+        if (myIsDisposed) {
+          return;
+        }
+        // perhaps, could record a state with number of messages and bring tool window to front only if the number has changed since last 'toFront' call?
+        bringToFront();
+      }
+    });
   }
 
   @Override

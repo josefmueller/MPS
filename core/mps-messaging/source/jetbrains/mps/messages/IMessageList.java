@@ -27,8 +27,10 @@ public interface IMessageList extends IMessageHandler {
   void clear();
 
   /**
-   * request to bring this list to user's attention.
+   * Request to bring this list to user's attention.
    * Could show a balloon, bring a view to front, blink window header, or do nothing at all, solely at implementation discretion.
+   * There's no limit on which thread may initiate this {@code wake}-up, however, it is expected to reflect state of the list prior to the call,
+   * e.g. with a sequence {@code add(m1); add(m2); add(m3); wake();} it's reasonable to expect wake would bring all three messages visible.
    * @since 2017.3
    */
   void wake();
