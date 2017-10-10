@@ -228,10 +228,11 @@ public abstract class MpsLoadTask extends Task {
     }
   }
 
-  private void checkMpsHome() {
+  protected void checkMpsHome() {
     if (myMpsHome == null) {
       myMpsHome = MPSClasspathUtil.resolveMPSHome(getProject(), true);
     }
+    assert myMpsHome != null : "MPS home folder must be specified. Use either mpshome task attribute or mps_home or mps.home Ant property to specify home folder.";
     outputBuildNumber();
   }
 

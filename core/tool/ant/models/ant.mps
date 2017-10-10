@@ -181,6 +181,10 @@
         <child id="1154542793668" name="componentType" index="3g7fb8" />
         <child id="1154542803372" name="initValue" index="3g7hyw" />
       </concept>
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
+        <child id="1160998916832" name="message" index="1gVpfI" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -3254,7 +3258,7 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="checkMpsHome" />
       <property role="DiZV1" value="false" />
-      <node concept="3Tm6S6" id="3t7WP23YQwR" role="1B3o_S" />
+      <node concept="3Tmbuc" id="7M_5VSChHDH" role="1B3o_S" />
       <node concept="3cqZAl" id="3ufQioQQtwi" role="3clF45" />
       <node concept="3clFbS" id="3ufQioQQtwj" role="3clF47">
         <node concept="3clFbJ" id="3ufQioQQtwk" role="3cqZAp">
@@ -3282,6 +3286,17 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="1gVbGN" id="10simrr3N0t" role="3cqZAp">
+          <node concept="3y3z36" id="10simrr3Ngw" role="1gVkn0">
+            <node concept="10Nm6u" id="10simrr3Nm_" role="3uHU7w" />
+            <node concept="37vLTw" id="10simrr3N3C" role="3uHU7B">
+              <ref role="3cqZAo" node="3ufQioQQtjb" resolve="myMpsHome" />
+            </node>
+          </node>
+          <node concept="Xl_RD" id="10simrr3NoU" role="1gVpfI">
+            <property role="Xl_RC" value="MPS home folder must be specified. Use either mpshome task attribute or mps_home or mps.home Ant property to specify home folder." />
           </node>
         </node>
         <node concept="3clFbF" id="3ufQioQQtwS" role="3cqZAp">
@@ -7294,6 +7309,17 @@
         <node concept="10P_77" id="1oo0A63FYV3" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="1oo0A63FYV4" role="3clF47">
+        <node concept="3SKdUt" id="7M_5VSChNxi" role="3cqZAp">
+          <node concept="3SKdUq" id="7M_5VSChNxk" role="3SKWNk">
+            <property role="3SKdUp" value="todo try using super method" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="7M_5VSChLth" role="3cqZAp">
+          <node concept="1rXfSq" id="7M_5VSChLtf" role="3clFbG">
+            <ref role="37wK5l" node="3ufQioQQtwg" resolve="checkMpsHome" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="7M_5VSChMa3" role="3cqZAp" />
         <node concept="3SKdUt" id="1oo0A63FYVH" role="3cqZAp">
           <node concept="3SKdUq" id="1oo0A63FYVG" role="3SKWNk">
             <property role="3SKdUp" value="copied from GenerationTask" />
@@ -7360,19 +7386,38 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="10simrr3kC4" role="3cqZAp">
+          <node concept="3cpWsn" id="10simrr3kC5" role="3cpWs9">
+            <property role="TrG5h" value="mpsHome" />
+            <node concept="3uibUv" id="10simrr3kC3" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~File" resolve="File" />
+            </node>
+            <node concept="1rXfSq" id="10simrr3kC6" role="33vP2m">
+              <ref role="37wK5l" node="3ufQioQQtjK" resolve="getMpsHome" />
+            </node>
+          </node>
+        </node>
+        <node concept="1gVbGN" id="10simrr3m5F" role="3cqZAp">
+          <node concept="3y3z36" id="10simrr3nuR" role="1gVkn0">
+            <node concept="10Nm6u" id="10simrr3o26" role="3uHU7w" />
+            <node concept="37vLTw" id="10simrr3mOT" role="3uHU7B">
+              <ref role="3cqZAo" node="10simrr3kC5" resolve="mpsHome" />
+            </node>
+          </node>
+          <node concept="Xl_RD" id="10simrr3pFl" role="1gVpfI">
+            <property role="Xl_RC" value="MPSLoadTask.getMpsHome() == null. MPS home folder was not specified." />
+          </node>
+        </node>
         <node concept="3cpWs8" id="1oo0A63GPjg" role="3cqZAp">
           <node concept="3cpWsn" id="1oo0A63GPjh" role="3cpWs9">
-            <property role="TrG5h" value="mpsHome" />
+            <property role="TrG5h" value="mpsHomePath" />
             <node concept="17QB3L" id="1oo0A63GPji" role="1tU5fm" />
-            <node concept="2OqwBi" id="1oo0A63GY4l" role="33vP2m">
-              <node concept="1rXfSq" id="1oo0A63GZ97" role="2Oq$k0">
-                <ref role="37wK5l" to="gola:~ProjectComponent.getProject():org.apache.tools.ant.Project" resolve="getProject" />
+            <node concept="2OqwBi" id="10simrr35og" role="33vP2m">
+              <node concept="37vLTw" id="10simrr3kC7" role="2Oq$k0">
+                <ref role="3cqZAo" node="10simrr3kC5" resolve="mpsHome" />
               </node>
-              <node concept="liA8E" id="1oo0A63GY4n" role="2OqNvi">
-                <ref role="37wK5l" to="gola:~Project.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
-                <node concept="Xl_RD" id="1oo0A63GY4o" role="37wK5m">
-                  <property role="Xl_RC" value="mps_home" />
-                </node>
+              <node concept="liA8E" id="10simrr35CQ" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
               </node>
             </node>
           </node>
@@ -7389,7 +7434,7 @@
                   <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                   <node concept="3cpWs3" id="1oo0A63GPO7" role="37wK5m">
                     <node concept="37vLTw" id="1oo0A63GPQO" role="3uHU7B">
-                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHome" />
+                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHomePath" />
                     </node>
                     <node concept="Xl_RD" id="1oo0A63FYVr" role="3uHU7w">
                       <property role="Xl_RC" value="/plugins/mps-build/languages/build/jetbrains.mps.build.migration.jar" />
@@ -7412,7 +7457,7 @@
                   <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                   <node concept="3cpWs3" id="1oo0A63IrnU" role="37wK5m">
                     <node concept="37vLTw" id="1oo0A63IrnV" role="3uHU7B">
-                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHome" />
+                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHomePath" />
                     </node>
                     <node concept="Xl_RD" id="1oo0A63IrnW" role="3uHU7w">
                       <property role="Xl_RC" value="/plugins/modelchecker.jar" />
@@ -7435,7 +7480,7 @@
                   <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                   <node concept="3cpWs3" id="1oo0A63Iro0" role="37wK5m">
                     <node concept="37vLTw" id="1oo0A63Iro1" role="3uHU7B">
-                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHome" />
+                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHomePath" />
                     </node>
                     <node concept="Xl_RD" id="1oo0A63Iro2" role="3uHU7w">
                       <property role="Xl_RC" value="/plugins/migration/lib/migration.jar" />
@@ -7458,7 +7503,7 @@
                   <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                   <node concept="3cpWs3" id="7a4PwPPTBtr" role="37wK5m">
                     <node concept="37vLTw" id="7a4PwPPTBts" role="3uHU7B">
-                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHome" />
+                      <ref role="3cqZAo" node="1oo0A63GPjh" resolve="mpsHomePath" />
                     </node>
                     <node concept="Xl_RD" id="7a4PwPPTBtt" role="3uHU7w">
                       <property role="Xl_RC" value="/plugins/migration/lib/migration-platform.jar" />

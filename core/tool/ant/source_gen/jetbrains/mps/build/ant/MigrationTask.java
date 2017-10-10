@@ -22,17 +22,22 @@ public class MigrationTask extends MpsLoadTask {
 
   @Override
   protected Set<File> calculateClassPath(boolean fork) {
+    // todo try using super method 
+    checkMpsHome();
+
     // copied from GenerationTask 
     List<File> classPathRoots = MPSClasspathUtil.getClassPathRootsFromDependencies(getProject());
     if (classPathRoots.isEmpty()) {
       throw new BuildException("Dependency on MPS build scripts is required to generate MPS modules.");
     }
     Set<File> classPath = new LinkedHashSet<File>();
-    String mpsHome = getProject().getProperty("mps_home");
-    classPath.add(new File(mpsHome + "/plugins/mps-build/languages/build/jetbrains.mps.build.migration.jar"));
-    classPath.add(new File(mpsHome + "/plugins/modelchecker.jar"));
-    classPath.add(new File(mpsHome + "/plugins/migration/lib/migration.jar"));
-    classPath.add(new File(mpsHome + "/plugins/migration/lib/migration-platform.jar"));
+    File mpsHome = getMpsHome();
+    assert mpsHome != null : "MPSLoadTask.getMpsHome() == null. MPS home folder was not specified.";
+    String mpsHomePath = mpsHome.getAbsolutePath();
+    classPath.add(new File(mpsHomePath + "/plugins/mps-build/languages/build/jetbrains.mps.build.migration.jar"));
+    classPath.add(new File(mpsHomePath + "/plugins/modelchecker.jar"));
+    classPath.add(new File(mpsHomePath + "/plugins/migration/lib/migration.jar"));
+    classPath.add(new File(mpsHomePath + "/plugins/migration/lib/migration-platform.jar"));
     for (File file : classPathRoots) {
       MPSClasspathUtil.gatherAllClassesAndJarsUnder(file, classPath);
     }
