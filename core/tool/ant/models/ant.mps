@@ -19,6 +19,7 @@
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="zf81" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.net(JDK/)" />
     <import index="t6h5" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang.reflect(JDK/)" />
+    <import index="644x" ref="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -3288,17 +3289,92 @@
             </node>
           </node>
         </node>
-        <node concept="1gVbGN" id="10simrr3N0t" role="3cqZAp">
-          <node concept="3y3z36" id="10simrr3Ngw" role="1gVkn0">
-            <node concept="10Nm6u" id="10simrr3Nm_" role="3uHU7w" />
-            <node concept="37vLTw" id="10simrr3N3C" role="3uHU7B">
+        <node concept="3clFbH" id="10simrr4dgq" role="3cqZAp" />
+        <node concept="3SKdUt" id="10simrr4bEC" role="3cqZAp">
+          <node concept="3SKdUq" id="10simrr4bEB" role="3SKWNk">
+            <property role="3SKdUp" value="the following code checks mps home is specified correctly" />
+          </node>
+        </node>
+        <node concept="1gVbGN" id="10simrr4bEc" role="3cqZAp">
+          <node concept="3y3z36" id="10simrr4bE8" role="1gVkn0">
+            <node concept="37vLTw" id="10simrr4bE9" role="3uHU7B">
               <ref role="3cqZAo" node="3ufQioQQtjb" resolve="myMpsHome" />
             </node>
+            <node concept="10Nm6u" id="10simrr4bEa" role="3uHU7w" />
           </node>
-          <node concept="Xl_RD" id="10simrr3NoU" role="1gVpfI">
+          <node concept="Xl_RD" id="10simrr4bEb" role="1gVpfI">
             <property role="Xl_RC" value="MPS home folder must be specified. Use either mpshome task attribute or mps_home or mps.home Ant property to specify home folder." />
           </node>
         </node>
+        <node concept="3cpWs8" id="10simrr4bEe" role="3cqZAp">
+          <node concept="3cpWsn" id="10simrr4bEd" role="3cpWs9">
+            <property role="3TUv4t" value="false" />
+            <property role="TrG5h" value="containsBuildTxt" />
+            <node concept="10P_77" id="10simrr4bEf" role="1tU5fm" />
+            <node concept="3clFbT" id="10simrr4bEg" role="33vP2m">
+              <property role="3clFbU" value="false" />
+            </node>
+          </node>
+        </node>
+        <node concept="1DcWWT" id="10simrr4bEh" role="3cqZAp">
+          <node concept="2OqwBi" id="10simrr4bTR" role="1DdaDG">
+            <node concept="37vLTw" id="10simrr4bTQ" role="2Oq$k0">
+              <ref role="3cqZAo" node="3ufQioQQtjb" resolve="myMpsHome" />
+            </node>
+            <node concept="liA8E" id="10simrr4bTS" role="2OqNvi">
+              <ref role="37wK5l" to="guwi:~File.listFiles():java.io.File[]" resolve="listFiles" />
+            </node>
+          </node>
+          <node concept="3cpWsn" id="10simrr4bEw" role="1Duv9x">
+            <property role="3TUv4t" value="false" />
+            <property role="TrG5h" value="child" />
+            <node concept="3uibUv" id="10simrr4bEy" role="1tU5fm">
+              <ref role="3uigEE" to="guwi:~File" resolve="File" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="10simrr4bEj" role="2LFqv$">
+            <node concept="3clFbJ" id="10simrr4bEk" role="3cqZAp">
+              <node concept="2OqwBi" id="10simrr4bEl" role="3clFbw">
+                <node concept="2OqwBi" id="10simrr4bQb" role="2Oq$k0">
+                  <node concept="37vLTw" id="10simrr4bQa" role="2Oq$k0">
+                    <ref role="3cqZAo" node="10simrr4bEw" resolve="child" />
+                  </node>
+                  <node concept="liA8E" id="10simrr4bQc" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="10simrr4bEn" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                  <node concept="Xl_RD" id="10simrr4bEo" role="37wK5m">
+                    <property role="Xl_RC" value="build.txt" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="10simrr4bEq" role="3clFbx">
+                <node concept="3clFbF" id="10simrr4bEr" role="3cqZAp">
+                  <node concept="37vLTI" id="10simrr4bEs" role="3clFbG">
+                    <node concept="37vLTw" id="10simrr4bEt" role="37vLTJ">
+                      <ref role="3cqZAo" node="10simrr4bEd" resolve="containsBuildTxt" />
+                    </node>
+                    <node concept="3clFbT" id="10simrr4bEu" role="37vLTx">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3zACq4" id="10simrr4bEv" role="3cqZAp" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1gVbGN" id="10simrr4bEA" role="3cqZAp">
+          <node concept="37vLTw" id="10simrr4bE$" role="1gVkn0">
+            <ref role="3cqZAo" node="10simrr4bEd" resolve="containsBuildTxt" />
+          </node>
+          <node concept="Xl_RD" id="10simrr4bE_" role="1gVpfI">
+            <property role="Xl_RC" value="MPS home folder is the folder where build.txt file is located. Please correct mpshome attribute, mps_home/mps.home property, depending on which was set" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="10simrr4bBK" role="3cqZAp" />
         <node concept="3clFbF" id="3ufQioQQtwS" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzk1D" role="3clFbG">
             <ref role="37wK5l" node="3ufQioQQttr" resolve="outputBuildNumber" />
