@@ -1981,7 +1981,7 @@
           <node concept="3clFbS" id="7qnskOdknZS" role="1bW5cS">
             <node concept="3vlDli" id="7qnskOdk_Rb" role="3cqZAp">
               <node concept="Xl_RD" id="7qnskOdkAc7" role="3tpDZB">
-                <property role="Xl_RC" value="URW Chancery L" />
+                <property role="Xl_RC" value="Serif" />
               </node>
               <node concept="2OqwBi" id="7qnskOdk$d0" role="3tpDZA">
                 <node concept="2OqwBi" id="7qnskOdkzB1" role="2Oq$k0">
@@ -2041,7 +2041,7 @@
             <node concept="3clFbH" id="7qnskOdkDuu" role="3cqZAp" />
             <node concept="3vlDli" id="7qnskOdkAoe" role="3cqZAp">
               <node concept="Xl_RD" id="7qnskOdkAof" role="3tpDZB">
-                <property role="Xl_RC" value="URW Chancery L" />
+                <property role="Xl_RC" value="Serif" />
               </node>
               <node concept="2OqwBi" id="7qnskOdkAog" role="3tpDZA">
                 <node concept="2OqwBi" id="7qnskOdkAoh" role="2Oq$k0">
@@ -2101,7 +2101,7 @@
             <node concept="3clFbH" id="7qnskOdkDA2" role="3cqZAp" />
             <node concept="3vlDli" id="7qnskOdkBUQ" role="3cqZAp">
               <node concept="Xl_RD" id="7qnskOdkBUR" role="3tpDZB">
-                <property role="Xl_RC" value="Ubuntu" />
+                <property role="Xl_RC" value="SansSerif" />
               </node>
               <node concept="2OqwBi" id="7qnskOdkBUS" role="3tpDZA">
                 <node concept="2OqwBi" id="7qnskOdkBUT" role="2Oq$k0">
@@ -2164,7 +2164,7 @@
     </node>
     <node concept="1VRDdX" id="7qnskOdkdNG" role="LiRBU">
       <property role="1VQu8m" value="50" />
-      <property role="1VRkbk" value="URW Chancery L" />
+      <property role="1VRkbk" value="Serif" />
       <node concept="3TZoYJ" id="7qnskOdkn_w" role="24H8fa">
         <node concept="3xLA65" id="7qnskOdkn_Q" role="lGtFl">
           <property role="TrG5h" value="nodeWithoutCustomFont" />
@@ -2180,7 +2180,7 @@
       </node>
       <node concept="1VRDdX" id="7qnskOdkdP9" role="24H8fa">
         <property role="1VQu8m" value="25" />
-        <property role="1VRkbk" value="Ubuntu" />
+        <property role="1VRkbk" value="SansSerif" />
         <node concept="3TZoYJ" id="7qnskOdkEgl" role="24H8fa">
           <node concept="3xLA65" id="7qnskOdkEAt" role="lGtFl">
             <property role="TrG5h" value="nodeWithCustomFontSizeAndFamily" />

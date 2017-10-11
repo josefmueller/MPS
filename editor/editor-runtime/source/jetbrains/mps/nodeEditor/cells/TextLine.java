@@ -180,7 +180,7 @@ public class TextLine {
       Integer styleFontSize = myStyle.get(StyleAttributes.FONT_SIZE);
       String styleFontFamily = myStyle.get(StyleAttributes.FONT_FAMILY);
       if (styleFontFamily != null && !FontRegistry.getInstance().getAvailableFontFamilyNames().contains(styleFontFamily)) {
-        LOG.error("Unknown font " + styleFontFamily);
+        LOG.warn("Unknown font " + styleFontFamily);
         styleFontFamily = null;
       }
 
