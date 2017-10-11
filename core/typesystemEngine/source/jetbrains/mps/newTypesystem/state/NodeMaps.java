@@ -204,7 +204,6 @@ public class NodeMaps {
   }
 
   private void reportEquationError(@NotNull EquationInfo equationInfo, Function<SNode, EquationErrorReporterNew> defaultReporterForNode) {
-    IErrorReporter errorReporter;
      if (equationInfo.getNodeWithError() == null) {
        String message = "Typing equation did not provide node to report.";
        if (equationInfo.getRuleNode() != null) {
@@ -217,7 +216,9 @@ public class NodeMaps {
          message += " Error message: " + equationInfo.getErrorString();
        }
        LOG.error(message);
+       return;
     }
+    final IErrorReporter errorReporter;
     if (equationInfo.getErrorString() == null) {
       errorReporter = defaultReporterForNode.apply(equationInfo.getNodeWithError());
     } else {
