@@ -279,20 +279,31 @@ public class MigrationTask {
         allModules.value = Sequence.fromIterable(MigrationModuleUtil.getMigrateableModulesFromProject(project)).toListSequence();
       }
     });
-    m.start("Resaving modules...", ListSequence.fromList(allModules.value).count());
+    m.start("Resaving modules...", ListSequence.fromList(allModules.value).count() + 10);
+    JComponent modalityComponent = check_ajmasp_a0e0lb(as_ajmasp_a0a0e0mb(myMonitor.getIndicator(), InlineProgressIndicator.class));
+    ModalityState modalityState = (modalityComponent == null ? ModalityState.NON_MODAL : ModalityState.stateForComponent(modalityComponent));
+
     for (final SModule module : ListSequence.fromList(allModules.value)) {
       m.advance(1);
-      project.getRepository().getModelAccess().runWriteAction(new Runnable() {
+      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {
-          mySession.getMigrationRegistry().doUpdateImportVersions(module);
+          project.getRepository().getModelAccess().executeCommand(new Runnable() {
+            public void run() {
+              mySession.getMigrationRegistry().doUpdateImportVersions(module);
+            }
+          });
         }
-      });
+      }, modalityState);
     }
-    project.getRepository().getModelAccess().runWriteAction(new Runnable() {
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
-        project.getRepository().saveAll();
+        project.getRepository().getModelAccess().executeCommand(new Runnable() {
+          public void run() {
+            project.getRepository().saveAll();
+          }
+        });
       }
-    });
+    }, modalityState);
     m.done();
   }
 
@@ -400,7 +411,16 @@ public class MigrationTask {
     }
     return null;
   }
+  private static JComponent check_ajmasp_a0e0lb(InlineProgressIndicator checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent();
+    }
+    return null;
+  }
   private static <T> T as_ajmasp_a0a0e0cb(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
+  private static <T> T as_ajmasp_a0a0e0mb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
   private static boolean eq_ajmasp_a0c0a0a3a0h0e0qb(Object a, Object b) {
