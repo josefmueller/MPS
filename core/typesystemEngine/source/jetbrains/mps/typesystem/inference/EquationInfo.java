@@ -30,7 +30,9 @@ import java.util.List;
 public class EquationInfo {
 
   private final String myErrorString;
-  @NotNull
+
+  // Node can be null in case where language designer is sure that the equation can never fail. If such equation fails it is considered as an error.
+  @Nullable
   private final SNode myNodeWithError;
 
   private final SNodeReference myRule;
@@ -41,19 +43,19 @@ public class EquationInfo {
   private int myInequationPriority = 0;
 
 
-  public EquationInfo(@NotNull SNode nodeWithError, String errorString) {
+  public EquationInfo(@Nullable SNode nodeWithError, String errorString) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
     myRule = null;
   }
 
-  public EquationInfo(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority, QuickFixProvider intentionProvider) {
+  public EquationInfo(@Nullable SNode nodeWithError, String errorString, String ruleModel, String ruleId, int inequationPriority, QuickFixProvider intentionProvider) {
     this(nodeWithError, errorString, ruleModel, ruleId);
     myInequationPriority = inequationPriority;
     addIntentionProvider(intentionProvider);
   }
 
-  public EquationInfo(@NotNull SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+  public EquationInfo(@Nullable SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     myErrorString = errorString;
     myNodeWithError = nodeWithError;
     myRule = ruleModel != null && ruleId != null ? new SNodePointer(ruleModel, ruleId) : null;
@@ -76,7 +78,7 @@ public class EquationInfo {
     return myErrorString;
   }
 
-  @NotNull
+  @Nullable
   public SNode getNodeWithError() {
     return myNodeWithError;
   }
