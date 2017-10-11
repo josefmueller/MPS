@@ -470,6 +470,15 @@
         <ref role="3uigEE" node="PobQbOdOMD" resolve="MigrationTask" />
       </node>
     </node>
+    <node concept="2tJIrI" id="5L2z0zs$1cS" role="jymVt" />
+    <node concept="312cEg" id="5L2z0zs$cLp" role="jymVt">
+      <property role="TrG5h" value="myShouldSleepOnInit" />
+      <node concept="3Tm6S6" id="5L2z0zs$cLq" role="1B3o_S" />
+      <node concept="10P_77" id="5L2z0zs$etH" role="1tU5fm" />
+      <node concept="3clFbT" id="5L2z0zs$hwB" role="33vP2m">
+        <property role="3clFbU" value="true" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="2QIvLbam1Ak" role="jymVt" />
     <node concept="312cEg" id="2QIvLbalWyl" role="jymVt">
       <property role="TrG5h" value="myErrorPanel" />
@@ -773,37 +782,54 @@
           </node>
         </node>
         <node concept="3clFbH" id="301Q3qjjQlN" role="3cqZAp" />
-        <node concept="SfApY" id="1zaRC58xUbc" role="3cqZAp">
-          <node concept="3clFbS" id="1zaRC58xUbe" role="SfCbr">
-            <node concept="3SKdUt" id="5cfG2XjGT0l" role="3cqZAp">
-              <node concept="3SKdUq" id="5cfG2XjGT0n" role="3SKWNk">
-                <property role="3SKdUp" value="this is to allow Idea UI to finish the &quot;transition&quot; to a new wizard step before running task" />
+        <node concept="3clFbJ" id="5L2z0zs$$Z_" role="3cqZAp">
+          <node concept="3clFbS" id="5L2z0zs$$ZB" role="3clFbx">
+            <node concept="SfApY" id="1zaRC58xUbc" role="3cqZAp">
+              <node concept="3clFbS" id="1zaRC58xUbe" role="SfCbr">
+                <node concept="3SKdUt" id="5cfG2XjGT0l" role="3cqZAp">
+                  <node concept="3SKdUq" id="5cfG2XjGT0n" role="3SKWNk">
+                    <property role="3SKdUp" value="this is to allow Idea UI to finish the &quot;transition&quot; to a new wizard step before running task" />
+                  </node>
+                </node>
+                <node concept="3clFbF" id="1zaRC58xwBK" role="3cqZAp">
+                  <node concept="2YIFZM" id="1zaRC58xwRF" role="3clFbG">
+                    <ref role="37wK5l" to="wyt6:~Thread.sleep(long):void" resolve="sleep" />
+                    <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
+                    <node concept="3cmrfG" id="1zaRC58xxg4" role="37wK5m">
+                      <property role="3cmrfH" value="1000" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="TDmWw" id="1zaRC58xUbf" role="TEbGg">
+                <node concept="3cpWsn" id="1zaRC58xUbh" role="TDEfY">
+                  <property role="TrG5h" value="e" />
+                  <node concept="3uibUv" id="1zaRC58xVbR" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="1zaRC58xUbl" role="TDEfX">
+                  <node concept="3SKdUt" id="1zaRC58xVZA" role="3cqZAp">
+                    <node concept="3SKdUq" id="1zaRC58xVZB" role="3SKWNk">
+                      <property role="3SKdUp" value="do nothing" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
-            <node concept="3clFbF" id="1zaRC58xwBK" role="3cqZAp">
-              <node concept="2YIFZM" id="1zaRC58xwRF" role="3clFbG">
-                <ref role="37wK5l" to="wyt6:~Thread.sleep(long):void" resolve="sleep" />
-                <ref role="1Pybhc" to="wyt6:~Thread" resolve="Thread" />
-                <node concept="3cmrfG" id="1zaRC58xxg4" role="37wK5m">
-                  <property role="3cmrfH" value="1000" />
+            <node concept="3clFbF" id="5L2z0zs$Akx" role="3cqZAp">
+              <node concept="37vLTI" id="5L2z0zs$ASA" role="3clFbG">
+                <node concept="3clFbT" id="5L2z0zs$B2S" role="37vLTx">
+                  <property role="3clFbU" value="true" />
+                </node>
+                <node concept="37vLTw" id="5L2z0zs$Akv" role="37vLTJ">
+                  <ref role="3cqZAo" node="5L2z0zs$cLp" resolve="myShouldSleepOnInit" />
                 </node>
               </node>
             </node>
           </node>
-          <node concept="TDmWw" id="1zaRC58xUbf" role="TEbGg">
-            <node concept="3cpWsn" id="1zaRC58xUbh" role="TDEfY">
-              <property role="TrG5h" value="e" />
-              <node concept="3uibUv" id="1zaRC58xVbR" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~InterruptedException" resolve="InterruptedException" />
-              </node>
-            </node>
-            <node concept="3clFbS" id="1zaRC58xUbl" role="TDEfX">
-              <node concept="3SKdUt" id="1zaRC58xVZA" role="3cqZAp">
-                <node concept="3SKdUq" id="1zaRC58xVZB" role="3SKWNk">
-                  <property role="3SKdUp" value="do nothing" />
-                </node>
-              </node>
-            </node>
+          <node concept="37vLTw" id="5L2z0zs$_jN" role="3clFbw">
+            <ref role="3cqZAo" node="5L2z0zs$cLp" resolve="myShouldSleepOnInit" />
           </node>
         </node>
         <node concept="3clFbH" id="301Q3qjjTte" role="3cqZAp" />
@@ -1127,20 +1153,35 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
       <node concept="3clFbS" id="5SsFeroaazD" role="3clF47">
-        <node concept="3clFbF" id="301Q3qjkQVG" role="3cqZAp">
-          <node concept="3K4zz7" id="301Q3qjkS5X" role="3clFbG">
-            <node concept="10Nm6u" id="301Q3qjkSvX" role="3K4E3e" />
-            <node concept="37vLTw" id="301Q3qjkSWJ" role="3K4GZi">
-              <ref role="3cqZAo" node="5SsFeroaavK" resolve="ID" />
+        <node concept="3clFbJ" id="5L2z0zs$i9X" role="3cqZAp">
+          <node concept="3clFbS" id="5L2z0zs$i9Z" role="3clFbx">
+            <node concept="3cpWs6" id="5L2z0zs$k7t" role="3cqZAp">
+              <node concept="10Nm6u" id="5L2z0zs$lAH" role="3cqZAk" />
             </node>
-            <node concept="2OqwBi" id="301Q3qjkRuH" role="3K4Cdx">
-              <node concept="37vLTw" id="301Q3qjkRgF" role="2Oq$k0">
-                <ref role="3cqZAo" node="PobQbOgkyz" resolve="myTask" />
-              </node>
-              <node concept="liA8E" id="301Q3qjkRNZ" role="2OqNvi">
-                <ref role="37wK5l" node="PobQbOdfwK" resolve="isComplete" />
-              </node>
+          </node>
+          <node concept="2OqwBi" id="5L2z0zs$jd$" role="3clFbw">
+            <node concept="37vLTw" id="5L2z0zs$iJ$" role="2Oq$k0">
+              <ref role="3cqZAo" node="PobQbOgkyz" resolve="myTask" />
             </node>
+            <node concept="liA8E" id="5L2z0zs$jBN" role="2OqNvi">
+              <ref role="37wK5l" node="PobQbOdfwK" resolve="isComplete" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5L2z0zs$rfi" role="3cqZAp" />
+        <node concept="3clFbF" id="5L2z0zs$oUm" role="3cqZAp">
+          <node concept="37vLTI" id="5L2z0zs$qLI" role="3clFbG">
+            <node concept="3clFbT" id="5L2z0zs$qYl" role="37vLTx">
+              <property role="3clFbU" value="false" />
+            </node>
+            <node concept="37vLTw" id="5L2z0zs$oUk" role="37vLTJ">
+              <ref role="3cqZAo" node="5L2z0zs$cLp" resolve="myShouldSleepOnInit" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5L2z0zs$u_d" role="3cqZAp">
+          <node concept="37vLTw" id="5L2z0zs$xCN" role="3cqZAk">
+            <ref role="3cqZAo" node="5SsFeroaavK" resolve="ID" />
           </node>
         </node>
       </node>
@@ -1346,14 +1387,14 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="301Q3qjlCok" role="3cqZAp">
-              <node concept="1rXfSq" id="301Q3qjlCoi" role="3clFbG">
-                <ref role="37wK5l" node="301Q3qjkbpQ" resolve="executeToFirstError" />
-              </node>
-            </node>
           </node>
           <node concept="1rXfSq" id="301Q3qjnjrA" role="3clFbw">
             <ref role="37wK5l" node="301Q3qjneFt" resolve="isErrorReplyState" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5L2z0zs$PNk" role="3cqZAp">
+          <node concept="3SKdUq" id="5L2z0zs$PNm" role="3SKWNk">
+            <property role="3SKdUp" value="the &quot;next&quot; action will invoke _init(), which will continue running the task" />
           </node>
         </node>
       </node>
@@ -5666,7 +5707,6 @@
     <property role="2bfB8j" value="true" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="false" />
-    <node concept="2tJIrI" id="44NRCusQR4b" role="jymVt" />
     <node concept="3Tm1VV" id="5SsFeroaau5" role="1B3o_S" />
     <node concept="3uibUv" id="5SsFeroaau6" role="1zkMxy">
       <ref role="3uigEE" to="uxeh:~AbstractWizardEx" resolve="AbstractWizardEx" />
@@ -5712,100 +5752,6 @@
             </node>
             <node concept="3cmrfG" id="4QZ_xUfNjpa" role="37wK5m">
               <property role="3cmrfH" value="400" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="301Q3qjmSKu" role="3cqZAp" />
-        <node concept="3clFbF" id="301Q3qjmSSR" role="3cqZAp">
-          <node concept="2OqwBi" id="301Q3qjmTvp" role="3clFbG">
-            <node concept="1rXfSq" id="301Q3qjmSSP" role="2Oq$k0">
-              <ref role="37wK5l" to="uxeh:~AbstractWizard.getNextButton():javax.swing.JButton" resolve="getNextButton" />
-            </node>
-            <node concept="liA8E" id="301Q3qjmUvN" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~AbstractButton.addActionListener(java.awt.event.ActionListener):void" resolve="addActionListener" />
-              <node concept="2ShNRf" id="301Q3qjmUyE" role="37wK5m">
-                <node concept="YeOm9" id="301Q3qjn32_" role="2ShVmc">
-                  <node concept="1Y3b0j" id="301Q3qjn32C" role="YeSDq">
-                    <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" to="hyam:~ActionListener" resolve="ActionListener" />
-                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                    <node concept="3Tm1VV" id="301Q3qjn32D" role="1B3o_S" />
-                    <node concept="3clFb_" id="301Q3qjn32E" role="jymVt">
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="actionPerformed" />
-                      <property role="DiZV1" value="false" />
-                      <property role="od$2w" value="false" />
-                      <node concept="3Tm1VV" id="301Q3qjn32F" role="1B3o_S" />
-                      <node concept="3cqZAl" id="301Q3qjn32H" role="3clF45" />
-                      <node concept="37vLTG" id="301Q3qjn32I" role="3clF46">
-                        <property role="TrG5h" value="e" />
-                        <node concept="3uibUv" id="301Q3qjn32J" role="1tU5fm">
-                          <ref role="3uigEE" to="hyam:~ActionEvent" resolve="ActionEvent" />
-                        </node>
-                      </node>
-                      <node concept="3clFbS" id="301Q3qjn32K" role="3clF47">
-                        <node concept="3clFbF" id="301Q3qjn4zx" role="3cqZAp">
-                          <node concept="2OqwBi" id="301Q3qjn4Rc" role="3clFbG">
-                            <node concept="1rXfSq" id="301Q3qjn4zw" role="2Oq$k0">
-                              <ref role="37wK5l" node="301Q3qjn3bA" resolve="getStep" />
-                            </node>
-                            <node concept="liA8E" id="301Q3qjn5eN" role="2OqNvi">
-                              <ref role="37wK5l" node="301Q3qjml4q" resolve="nextButtonAction" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="301Q3qjn5zQ" role="3cqZAp" />
-        <node concept="3clFbF" id="301Q3qjn5fX" role="3cqZAp">
-          <node concept="2OqwBi" id="301Q3qjn5fY" role="3clFbG">
-            <node concept="1rXfSq" id="301Q3qjn5fZ" role="2Oq$k0">
-              <ref role="37wK5l" to="uxeh:~AbstractWizard.getCancelButton():javax.swing.JButton" resolve="getCancelButton" />
-            </node>
-            <node concept="liA8E" id="301Q3qjn5g0" role="2OqNvi">
-              <ref role="37wK5l" to="dxuu:~AbstractButton.addActionListener(java.awt.event.ActionListener):void" resolve="addActionListener" />
-              <node concept="2ShNRf" id="301Q3qjn5g1" role="37wK5m">
-                <node concept="YeOm9" id="301Q3qjn5g2" role="2ShVmc">
-                  <node concept="1Y3b0j" id="301Q3qjn5g3" role="YeSDq">
-                    <property role="2bfB8j" value="true" />
-                    <ref role="1Y3XeK" to="hyam:~ActionListener" resolve="ActionListener" />
-                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
-                    <node concept="3Tm1VV" id="301Q3qjn5g4" role="1B3o_S" />
-                    <node concept="3clFb_" id="301Q3qjn5g5" role="jymVt">
-                      <property role="1EzhhJ" value="false" />
-                      <property role="TrG5h" value="actionPerformed" />
-                      <property role="DiZV1" value="false" />
-                      <property role="od$2w" value="false" />
-                      <node concept="3Tm1VV" id="301Q3qjn5g6" role="1B3o_S" />
-                      <node concept="3cqZAl" id="301Q3qjn5g7" role="3clF45" />
-                      <node concept="37vLTG" id="301Q3qjn5g8" role="3clF46">
-                        <property role="TrG5h" value="e" />
-                        <node concept="3uibUv" id="301Q3qjn5g9" role="1tU5fm">
-                          <ref role="3uigEE" to="hyam:~ActionEvent" resolve="ActionEvent" />
-                        </node>
-                      </node>
-                      <node concept="3clFbS" id="301Q3qjn5ga" role="3clF47">
-                        <node concept="3clFbF" id="301Q3qjn5gb" role="3cqZAp">
-                          <node concept="2OqwBi" id="301Q3qjn5gc" role="3clFbG">
-                            <node concept="1rXfSq" id="301Q3qjn5gd" role="2Oq$k0">
-                              <ref role="37wK5l" node="301Q3qjn3bA" resolve="getStep" />
-                            </node>
-                            <node concept="liA8E" id="301Q3qjn5ge" role="2OqNvi">
-                              <ref role="37wK5l" node="301Q3qjml4k" resolve="cancelButtonAction" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>
@@ -6088,6 +6034,74 @@
       </node>
     </node>
     <node concept="2tJIrI" id="301Q3qjn3Lk" role="jymVt" />
+    <node concept="3clFb_" id="5L2z0zs$IkQ" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="doNextAction" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tmbuc" id="5L2z0zs$IkR" role="1B3o_S" />
+      <node concept="3cqZAl" id="5L2z0zs$IkT" role="3clF45" />
+      <node concept="3clFbS" id="5L2z0zs$IkU" role="3clF47">
+        <node concept="3clFbF" id="5L2z0zs$IRj" role="3cqZAp">
+          <node concept="2OqwBi" id="5L2z0zs$Jc_" role="3clFbG">
+            <node concept="1rXfSq" id="5L2z0zs$IRg" role="2Oq$k0">
+              <ref role="37wK5l" node="301Q3qjn3bA" resolve="getStep" />
+            </node>
+            <node concept="liA8E" id="5L2z0zs$J$7" role="2OqNvi">
+              <ref role="37wK5l" node="301Q3qjml4q" resolve="nextButtonAction" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2mJHX4FfyEQ" role="3cqZAp">
+          <node concept="3SKdUq" id="2mJHX4FfyES" role="3SKWNk">
+            <property role="3SKdUp" value="it's important to call step's listener first not to affect state in which it's called" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="5L2z0zs$LKT" role="3cqZAp">
+          <node concept="3nyPlj" id="5L2z0zs$LKR" role="3clFbG">
+            <ref role="37wK5l" to="uxeh:~AbstractWizardEx.doNextAction():void" resolve="doNextAction" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5L2z0zs$IkV" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5L2z0zs$LYs" role="jymVt" />
+    <node concept="3clFb_" id="5L2z0zs$Mlv" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="doCancelAction" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="5L2z0zs$Mlw" role="1B3o_S" />
+      <node concept="3cqZAl" id="5L2z0zs$Mly" role="3clF45" />
+      <node concept="3clFbS" id="5L2z0zs$MlA" role="3clF47">
+        <node concept="3clFbF" id="5L2z0zs$MNx" role="3cqZAp">
+          <node concept="2OqwBi" id="5L2z0zs$Nbg" role="3clFbG">
+            <node concept="1rXfSq" id="5L2z0zs$MNv" role="2Oq$k0">
+              <ref role="37wK5l" node="301Q3qjn3bA" resolve="getStep" />
+            </node>
+            <node concept="liA8E" id="5L2z0zs$NNb" role="2OqNvi">
+              <ref role="37wK5l" node="301Q3qjml4k" resolve="cancelButtonAction" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2mJHX4FfyGd" role="3cqZAp">
+          <node concept="3SKdUq" id="2mJHX4FfyGe" role="3SKWNk">
+            <property role="3SKdUp" value="it's important to call step's listener first not to affect state in which it's called" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="5L2z0zs$MlD" role="3cqZAp">
+          <node concept="3nyPlj" id="5L2z0zs$MlC" role="3clFbG">
+            <ref role="37wK5l" to="jkm4:~DialogWrapper.doCancelAction():void" resolve="doCancelAction" />
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="5L2z0zs$MlB" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5L2z0zs$NOb" role="jymVt" />
     <node concept="3clFb_" id="301Q3qjn3bA" role="jymVt">
       <property role="TrG5h" value="getStep" />
       <node concept="3Tm6S6" id="301Q3qjn3bB" role="1B3o_S" />

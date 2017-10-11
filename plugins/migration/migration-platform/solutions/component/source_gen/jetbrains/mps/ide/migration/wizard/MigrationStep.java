@@ -30,6 +30,8 @@ public class MigrationStep extends BaseStep {
   private MigrationSession mySession;
   private MigrationTask myTask;
 
+  private boolean myShouldSleepOnInit = true;
+
   private JPanel myErrorPanel;
   private JLabel myErrorLabel;
 
@@ -61,11 +63,14 @@ public class MigrationStep extends BaseStep {
   public void _init() {
     super._init();
 
-    try {
-      // this is to allow Idea UI to finish the "transition" to a new wizard step before running task 
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      // do nothing 
+    if (myShouldSleepOnInit) {
+      try {
+        // this is to allow Idea UI to finish the "transition" to a new wizard step before running task 
+        Thread.sleep(1000);
+      } catch (InterruptedException e) {
+        // do nothing 
+      }
+      myShouldSleepOnInit = true;
     }
 
     executeToFirstError();
@@ -123,7 +128,12 @@ public class MigrationStep extends BaseStep {
 
   @Override
   public Object getNextStepId() {
-    return (myTask.isComplete() ? null : ID);
+    if (myTask.isComplete()) {
+      return null;
+    }
+
+    myShouldSleepOnInit = false;
+    return ID;
   }
 
   @Override
@@ -160,8 +170,8 @@ public class MigrationStep extends BaseStep {
   public void nextButtonAction() {
     if (isErrorReplyState()) {
       myErrorPanel.setVisible(false);
-      executeToFirstError();
     }
+    // the "next" action will invoke _init(), which will continue running the task 
   }
 
   @Override

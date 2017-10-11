@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.wizard;
 
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.openapi.project.Project;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -16,22 +14,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 public class MigrationWizard extends AbstractWizardEx {
-
   public MigrationWizard(Project project, MigrationSession session) {
     super("Migration Assistant Wizard", project, createSteps(session));
     setSize(700, 400);
-
-    getNextButton().addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        getStep().nextButtonAction();
-      }
-    });
-
-    getCancelButton().addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        getStep().cancelButtonAction();
-      }
-    });
   }
 
   private static List<BaseStep> createSteps(final MigrationSession session) {
@@ -68,6 +53,20 @@ public class MigrationWizard extends AbstractWizardEx {
     if (cancelLabel != null) {
       getCancelButton().setText(cancelLabel);
     }
+  }
+
+  @Override
+  protected void doNextAction() {
+    getStep().nextButtonAction();
+    // it's important to call step's listener first not to affect state in which it's called 
+    super.doNextAction();
+  }
+
+  @Override
+  public void doCancelAction() {
+    getStep().cancelButtonAction();
+    // it's important to call step's listener first not to affect state in which it's called 
+    super.doCancelAction();
   }
 
   private BaseStep getStep() {

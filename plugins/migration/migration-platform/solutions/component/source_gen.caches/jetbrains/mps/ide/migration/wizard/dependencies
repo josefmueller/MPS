@@ -196,8 +196,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.wizard.MigrationWizard" file="MigrationWizard.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
