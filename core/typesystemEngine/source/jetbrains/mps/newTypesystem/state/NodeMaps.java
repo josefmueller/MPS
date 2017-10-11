@@ -28,6 +28,7 @@ import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.validation.IModelValidationSettings;
 import jetbrains.mps.validation.ValidationSettings;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -197,30 +198,27 @@ public class NodeMaps {
     return myNodesToTypes.keySet();
   }
 
-  public void reportEquationBroken(EquationInfo info, SNode left, SNode right) {
+  public void reportEquationBroken(@NotNull EquationInfo info, SNode left, SNode right) {
     final IErrorReporter errorReporter;
-    final SNode nodeWithError;
-    if (info == null || info.getNodeWithError() == null) {
+    if (info.getNodeWithError() == null) {
       //todo
       return;
     } else if (info.getErrorString() != null) {
-      nodeWithError = info.getNodeWithError();
-      errorReporter = new SimpleErrorReporter(nodeWithError, info.getErrorString(), info.getRuleNode());
+      errorReporter = new SimpleErrorReporter(info.getNodeWithError(), info.getErrorString(), info.getRuleNode());
       for (QuickFixProvider quickFixProvider : info.getIntentionProviders()) {
         errorReporter.addIntentionProvider(quickFixProvider);
       }
     } else {
-      nodeWithError = info.getNodeWithError();
-      errorReporter = new EquationErrorReporterNew(nodeWithError,
+      errorReporter = new EquationErrorReporterNew(info.getNodeWithError(),
                                                    myState, "incompatible types: ", right, " and ", left, "", info);
     }
     setAdditionalRulesIds(info, errorReporter);
     myState.getTypeCheckingContext().reportMessage(errorReporter);
   }
 
-  public void reportSubTypeError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
+  public void reportSubTypeError(SNode subType, SNode superType, @NotNull EquationInfo equationInfo, boolean isWeak) {
     IErrorReporter errorReporter;
-    if (equationInfo == null || equationInfo.getNodeWithError() == null) {
+    if (equationInfo.getNodeWithError() == null) {
       //todo
       return;
     } else if (equationInfo.getErrorString() == null) {
@@ -237,15 +235,15 @@ public class NodeMaps {
     myState.getTypeCheckingContext().reportMessage(errorReporter);
   }
 
-  public void reportComparableError(SNode subType, SNode superType, EquationInfo equationInfo, boolean isWeak) {
+  public void reportComparableError(SNode subType, SNode superType, @NotNull EquationInfo equationInfo, boolean isWeak) {
     IErrorReporter errorReporter;
-    if (equationInfo == null || equationInfo.getNodeWithError() == null) {
+    if (equationInfo.getNodeWithError() == null) {
       //todo
       return;
     } else if (equationInfo.getErrorString() == null) {
       String strongString = isWeak ? "" : " strongly";
       errorReporter = new EquationErrorReporterNew(equationInfo.getNodeWithError(), myState, "type ", subType, " is not" + strongString + " comparable with ",
-        superType, "", equationInfo);
+                                                   superType, "", equationInfo);
     } else {
       errorReporter = new SimpleErrorReporter(equationInfo.getNodeWithError(), equationInfo.getErrorString(), equationInfo.getRuleNode());
     }

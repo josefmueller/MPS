@@ -133,10 +133,8 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     return myTypeErrorComponent != null ? myTypeErrorComponent : getTypecheckingComponent();
   }
 
-  public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
-    if (nodeWithError != null) {
-      putError(nodeWithError, errorReporter);
-    }
+  public void reportTypeError(IErrorReporter errorReporter) {
+    putError(errorReporter.getSNode(), errorReporter);
   }
 
   public void applyRuleToNode(@NotNull SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status, TypeCheckingContext typeCheckingContext) {

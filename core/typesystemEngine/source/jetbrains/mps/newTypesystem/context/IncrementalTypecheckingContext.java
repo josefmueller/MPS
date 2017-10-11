@@ -178,7 +178,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
 
   @Override
   public void reportMessage(IErrorReporter errorReporter) {
-    getTypechecking().reportTypeError(errorReporter.getSNode(), errorReporter);
+    getTypechecking().reportTypeError(errorReporter);
     // the following line messes up the typechecking even if the error is caused by a non-typechecking rule
     // this further complicates incremental types calculation and produces unwanted results MPS-21481
     // TODO: rethink the way errors affect the typechecking

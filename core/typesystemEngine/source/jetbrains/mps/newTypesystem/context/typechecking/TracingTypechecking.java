@@ -44,10 +44,8 @@ public class TracingTypechecking extends BaseTypechecking<TargetState, TargetTyp
     return false;
   }
 
-  public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
-    if (nodeWithError != null) {
-      putError(nodeWithError, errorReporter);
-    }
+  public void reportTypeError(IErrorReporter errorReporter) {
+    putError(errorReporter.getSNode(), errorReporter);
   }
 
   private void putError(SNode node, IErrorReporter reporter) {
