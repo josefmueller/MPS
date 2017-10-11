@@ -930,6 +930,26 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="2YVXvcLbP4G" role="3cqZAp">
+          <node concept="3SKdUq" id="2YVXvcLbP4I" role="3SKWNk">
+            <property role="3SKdUp" value="As it is specified in a constraints of First/LastPositionAllowedStyleClassItem," />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2YVXvcLbRof" role="3cqZAp">
+          <node concept="3SKdUq" id="2YVXvcLbRoh" role="3SKWNk">
+            <property role="3SKdUp" value="they can only be appliedto a sub-concepts of CellModel_AbstractLabel" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2YVXvcLbSNG" role="3cqZAp">
+          <node concept="3SKdUq" id="2YVXvcLbSNI" role="3SKWNk">
+            <property role="3SKdUp" value="so, if the editor model was created without mistakes, both following conditions " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="2YVXvcLbXYK" role="3cqZAp">
+          <node concept="3SKdUq" id="2YVXvcLbXYL" role="3SKWNk">
+            <property role="3SKdUp" value="should be evaluated to false" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="7dwhomQPrDY" role="3cqZAp">
           <node concept="3clFbS" id="7dwhomQPrDZ" role="3clFbx">
             <node concept="3clFbF" id="5PQzQx6_bpB" role="3cqZAp">
@@ -1037,6 +1057,17 @@
                             </node>
                             <node concept="3uibUv" id="5PQzQx6Artb" role="1tU5fm">
                               <ref role="3uigEE" to="f4zo:~CellAction" resolve="CellAction" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbJ" id="2YVXvcLc1eX" role="3cqZAp">
+                          <node concept="3clFbS" id="2YVXvcLc1eZ" role="3clFbx">
+                            <node concept="3cpWs6" id="2YVXvcLc3Xc" role="3cqZAp" />
+                          </node>
+                          <node concept="3clFbC" id="2YVXvcLc2Pm" role="3clFbw">
+                            <node concept="10Nm6u" id="2YVXvcLc3dc" role="3uHU7w" />
+                            <node concept="37vLTw" id="2YVXvcLc2bI" role="3uHU7B">
+                              <ref role="3cqZAo" node="5PQzQx6Art1" resolve="ltAction" />
                             </node>
                           </node>
                         </node>

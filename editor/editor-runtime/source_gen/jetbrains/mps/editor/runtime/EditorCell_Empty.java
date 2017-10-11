@@ -86,6 +86,10 @@ public class EditorCell_Empty extends EditorCell_Basic implements WithCaret {
     myCaretState.touch();
     repaintCaret();
     final CellActionType actionType;
+    // As it is specified in a constraints of First/LastPositionAllowedStyleClassItem, 
+    // they can only be appliedto a sub-concepts of CellModel_AbstractLabel 
+    // so, if the editor model was created without mistakes, both following conditions  
+    // should be evaluated to false 
     if (isFirstCaretPosition()) {
       actionType = CellActionType.LEFT_TRANSFORM;
     } else if (isLastCaretPosition()) {
@@ -97,6 +101,9 @@ public class EditorCell_Empty extends EditorCell_Basic implements WithCaret {
     editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
       protected void doExecute() {
         CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(EditorCell_Empty.this, actionType);
+        if (ltAction == null) {
+          return;
+        }
         ltAction.execute(editorContext);
         EditorCell_STHint stHintCell = EditorCell_STHint.getSTHintCell(getSNode(), getEditorComponent());
         if (stHintCell != null) {
